@@ -1,4 +1,3 @@
-require("pl.strict").module("_G", _G)
 require "Math"
 require "Coroutine"
 local Audio = require "System.Audio"
@@ -105,6 +104,7 @@ function love.quit()
 end
 
 function love.run()
+    require("pl.strict").module("_G", _G)
     cute.go(love.arg.parseGameArguments(arg))
 
     Config.load(game.defaultconfig)

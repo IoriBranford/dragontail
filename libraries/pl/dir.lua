@@ -52,7 +52,7 @@ end
 
 --- Return a list of all file names within an array which match a pattern.
 -- @tab filenames An array containing file names.
--- @string pattern A shell pattern.
+-- @string pattern A shell pattern (see `fnmatch`).
 -- @treturn List(string) List of matching file names.
 -- @raise dir and mask must be strings
 function dir.filter(filenames,pattern)
@@ -82,11 +82,12 @@ local function _listfiles(dirname,filemode,match)
 end
 
 --- return a list of all files in a directory which match a shell pattern.
--- @string dirname A directory. If not given, all files in current directory are returned.
--- @string mask  A shell pattern. If not given, all files are returned.
+-- @string[opt='.'] dirname A directory.
+-- @string[opt] mask A shell pattern (see `fnmatch`). If not given, all files are returned.
 -- @treturn {string} list of files
 -- @raise dirname and mask must be strings
 function dir.getfiles(dirname,mask)
+    dirname = dirname or '.'
     assert_dir(1,dirname)
     if mask then assert_string(2,mask) end
     local match
@@ -100,10 +101,11 @@ function dir.getfiles(dirname,mask)
 end
 
 --- return a list of all subdirectories of the directory.
--- @string dirname A directory
+-- @string[opt='.'] dirname A directory.
 -- @treturn {string} a list of directories
--- @raise dir must be a a valid directory
+-- @raise dir must be a valid directory
 function dir.getdirectories(dirname)
+    dirname = dirname or '.'
     assert_dir(1,dirname)
     return _listfiles(dirname,false)
 end
@@ -317,7 +319,8 @@ function dir.walk(root,bottom_up,follow_links)
 end
 
 --- remove a whole directory tree.
--- @string fullpath A directory path
+-- Symlinks in the tree will be deleted without following them.
+-- @string fullpath A directory path (must be an actual directory, not a symlink)
 -- @return true or nil
 -- @return error if failed
 -- @raise fullpath must be a string
@@ -325,52 +328,69 @@ function dir.rmtree(fullpath)
     assert_dir(1,fullpath)
     if path.islink(fullpath) then return false,'will not follow symlink' end
     for root,dirs,files in dir.walk(fullpath,true) do
-        for i,f in ipairs(files) do
-            local res, err = remove(path.join(root,f))
-            if not res then return nil,err end
+        if path.islink(root) then
+            -- sub dir is a link, remove link, do not follow
+            if is_windows then
+                -- Windows requires using "rmdir". Deleting the link like a file
+                -- will instead delete all files from the target directory!!
+                local res, err = rmdir(root)
+                if not res then return nil,err .. ": " .. root end
+            else
+                local res, err = remove(root)
+                if not res then return nil,err .. ": " .. root end
+            end
+        else
+            for i,f in ipairs(files) do
+                local res, err = remove(path.join(root,f))
+                if not res then return nil,err .. ": " .. path.join(root,f) end
+            end
+            local res, err = rmdir(root)
+            if not res then return nil,err .. ": " .. root end
         end
-        local res, err = rmdir(root)
-        if not res then return nil,err end
     end
     return true
 end
 
-local dirpat
-if path.is_windows then
-    dirpat = '(.+)\\[^\\]+$'
-else
-    dirpat = '(.+)/[^/]+$'
-end
 
-local _makepath
-function _makepath(p)
-    -- windows root drive case
-    if p:find '^%a:[\\]*$' then
-        return true
-    end
-   if not path.isdir(p) then
-    local subp = p:match(dirpat)
-    local ok, err = _makepath(subp)
-    if not ok then return nil, err end
-    return mkdir(p)
-   else
-    return true
-   end
-end
+do
+  local dirpat
+  if path.is_windows then
+      dirpat = '(.+)\\[^\\]+$'
+  else
+      dirpat = '(.+)/[^/]+$'
+  end
 
---- create a directory path.
--- This will create subdirectories as necessary!
--- @string p A directory path
--- @return true on success, nil + errormsg on failure
--- @raise failure to create
-function dir.makepath (p)
-    assert_string(1,p)
-    if path.is_windows then
-        p = p:gsub("/", "\\")
-    end
-    return _makepath(path.abspath(p))
-end
+  local _makepath
+  function _makepath(p)
+      -- windows root drive case
+      if p:find '^%a:[\\]*$' then
+          return true
+      end
+      if not path.isdir(p) then
+          local subp = p:match(dirpat)
+          if subp then
+            local ok, err = _makepath(subp)
+            if not ok then return nil, err end
+          end
+          return mkdir(p)
+      else
+          return true
+      end
+  end
 
+  --- create a directory path.
+  -- This will create subdirectories as necessary!
+  -- @string p A directory path
+  -- @return true on success, nil + errormsg on failure
+  -- @raise failure to create
+  function dir.makepath (p)
+      assert_string(1,p)
+      if path.is_windows then
+          p = p:gsub("/", "\\")
+      end
+      return _makepath(path.abspath(p))
+  end
+end
 
 --- clone a directory tree. Will always try to create a new directory structure
 -- if necessary.
@@ -479,13 +499,14 @@ function dir.dirtree( d )
 end
 
 
---- Recursively returns all the file starting at _path_. It can optionally take a shell pattern and
--- only returns files that match _shell_pattern_. If a pattern is given it will do a case insensitive search.
--- @string start_path  A directory. If not given, all files in current directory are returned.
--- @string shell_pattern A shell pattern. If not given, all files are returned.
--- @treturn List(string) containing all the files found recursively starting at _path_ and filtered by _shell_pattern_.
+--- Recursively returns all the file starting at 'path'. It can optionally take a shell pattern and
+-- only returns files that match 'shell_pattern'. If a pattern is given it will do a case insensitive search.
+-- @string[opt='.'] start_path  A directory.
+-- @string[opt='*'] shell_pattern A shell pattern (see `fnmatch`).
+-- @treturn List(string) containing all the files found recursively starting at 'path' and filtered by 'shell_pattern'.
 -- @raise start_path must be a directory
 function dir.getallfiles( start_path, shell_pattern )
+    start_path = start_path or '.'
     assert_dir(1,start_path)
     shell_pattern = shell_pattern or "*"
 
