@@ -1,28 +1,31 @@
 local Scene = require "System.Scene"
-local Physics = require "System.Physics"
+local Character = require "Dragontail.Character"
+local Controls  = require "System.Controls"
 local Stage = {}
 
 local scene
+local player
 
 function Stage.init()
     scene = Scene.new()
-    scene:addTextObject({
-        id = 1,
-        width = 640,
-        height = 32,
-        string = "HELLO DRAGONTAIL",
-        halign = "center"
+
+    player = Character.new({
+        x = 320, y = 180, speed = 4, bodyradius = 24, attackradius = 48, attackarc = math.pi/2
     })
-    Physics.init()
+    scene:add(1, player)
 end
 
 function Stage.quit()
     scene = nil
-    Physics.clear()
+    player = nil
 end
 
 function Stage.fixedupdate()
-    Physics.fixedupdate()
+    local dx, dy = Controls.getDirectionInput()
+    player:move(dx, dy)
+    if dx ~= 0 or dy ~= 0 then
+        player.attackangle = math.atan2(dy, dx) + math.pi
+    end
 end
 
 function Stage.draw()

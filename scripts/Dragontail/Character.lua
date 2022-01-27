@@ -17,6 +17,8 @@ function Character.new(chprefab)
     ch.health = ch.health or 1
     ch.x = ch.x or 0
     ch.y = ch.y or 0
+    ch.z = ch.z or 0
+    ch.speed = ch.speed or 1
     ch.bodyradius = ch.bodyradius or 1
     ch.attackradius = ch.attackradius or 0
     ch.attackangle = ch.attackangle or 0
@@ -28,8 +30,8 @@ function Character.new(chprefab)
 end
 
 function Character:move(dx, dy)
-    self.x = self.x + dx
-    self.y = self.y + dy
+    self.x = self.x + dx * self.speed
+    self.y = self.y + dy * self.speed
 end
 
 function Character:separateColliding(other)
@@ -62,6 +64,16 @@ function Character:takeHit(other)
             self.hitstun = other.attackstun
         end
     end
+end
+
+function Character:draw()
+    love.graphics.setColor(.5, .5, 1, .5)
+    love.graphics.circle("fill", self.x, self.y, self.bodyradius)
+    if self.attackradius > 0 and self.attackarc > 0 then
+        love.graphics.setColor(1, .5, .5, .5)
+        love.graphics.arc("fill", self.x, self.y, self.attackradius, self.attackangle - self.attackarc/2, self.attackangle + self.attackarc/2)
+    end
+    love.graphics.setColor(1,1,1)
 end
 
 return Character
