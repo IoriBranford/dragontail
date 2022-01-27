@@ -34,6 +34,17 @@ function Character:move(dx, dy)
     self.y = self.y + dy * self.speed
 end
 
+function Character:rotateAttack(dangle)
+    dangle = math.fmod(dangle + 3*math.pi, 2*math.pi) - math.pi
+    self.attackangle = self.attackangle + dangle
+end
+
+function Character:rotateAttackTowards(targetangle, turnspeed)
+    local dangle = math.fmod(targetangle - self.attackangle + 3*math.pi, 2*math.pi) - math.pi
+    dangle = math.max(-turnspeed, math.min(turnspeed, dangle))
+    self.attackangle = self.attackangle + dangle
+end
+
 function Character:separateColliding(other)
     local dx, dy = self.x - other.x, self.y - other.y
     local distsq = math.lensq(dx, dy)

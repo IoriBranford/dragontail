@@ -24,7 +24,7 @@ function Stage.fixedupdate()
     local dx, dy = Controls.getDirectionInput()
     player:move(dx, dy)
     if dx ~= 0 or dy ~= 0 then
-        player.attackangle = math.atan2(dy, dx) + math.pi
+        player:rotateAttackTowards(math.atan2(dy, dx) + math.pi, math.pi/6)
     end
 end
 
