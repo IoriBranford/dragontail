@@ -9,15 +9,16 @@ function Character.new(chprefab)
     local ch = {}
     if chprefab then
         for k,v in pairs(chprefab) do
-            if ch[k] == nil then
-                ch[k] = v
-            end
+            ch[k] = v
         end
     end
     ch.health = ch.health or 1
     ch.x = ch.x or 0
     ch.y = ch.y or 0
     ch.z = ch.z or 0
+    ch.velx = ch.velx or 0
+    ch.vely = ch.vely or 0
+    ch.velz = ch.velz or 0
     ch.speed = ch.speed or 1
     ch.bodyradius = ch.bodyradius or 1
     ch.attackradius = ch.attackradius or 0
@@ -32,6 +33,16 @@ end
 function Character:move(dx, dy)
     self.x = self.x + dx * self.speed
     self.y = self.y + dy * self.speed
+end
+
+function Character:accelerate(ax, ay)
+    self.velx = self.velx + ax
+    self.vely = self.vely + ay
+end
+
+function Character:updatePosition()
+    self.x = self.x + self.velx
+    self.y = self.y + self.vely
 end
 
 function Character:rotateAttack(dangle)

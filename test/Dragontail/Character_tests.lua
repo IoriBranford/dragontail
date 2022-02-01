@@ -67,3 +67,12 @@ notion("Character not damaged by out-of-range attack", function()
     a:takeHit(b)
     check(a.health).is(2)
 end)
+
+notion("Character moving by acceleration", function()
+    local a = Character.new()
+    a:accelerate(1, 2)
+    a:updatePosition() -- pos = 1,2
+    a:accelerate(1, 2) -- vel = 2,4
+    a:updatePosition() -- pos = 3,6
+    check({x = a.x, y = a.y}).shallowMatches({x = 3, y = 6})
+end)
