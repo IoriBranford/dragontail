@@ -83,15 +83,19 @@ notion("Character accelerating to target velocity", function()
     local t = 8
     local e = 1/256
     local velxs = {}
-    repeat
+    while true do
         local velx = velxs[#velxs] or 0
-        velxs[#velxs+1] = velx + (targetvelx - velx) / t
-    until targetvelx - velxs[#velxs] <= e
-    velxs[#velxs] = targetvelx
+        local accelx = (targetvelx - velx) / t
+        if accelx < e then
+            velxs[#velxs+1] = targetvelx
+            break
+        end
+        velx = velx + accelx
+        velxs[#velxs+1] = velx
+    end
     for i = 1, #velxs do
         a:accelerateTowardsVel(targetvelx, 0, t, e)
         a:updatePosition()
-        -- check(a.velx).is(velxs[i])
+        check(a.velx).is(velxs[i])
     end
-    check(a.velx).is(targetvelx)
 end)
