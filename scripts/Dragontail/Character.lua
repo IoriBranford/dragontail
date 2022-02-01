@@ -40,6 +40,23 @@ function Character:accelerate(ax, ay)
     self.vely = self.vely + ay
 end
 
+function Character:accelerateTowardsVel(targetvelx, targetvely, t, e)
+    assert(t > 0, "t <= 0")
+    e = e or (1/256)
+    local accelx = (targetvelx - self.velx) / t
+    local accely = (targetvely - self.vely) / t
+    if math.abs(accelx) < e then
+        self.velx = targetvelx
+    else
+        self.velx = self.velx + accelx
+    end
+    if math.abs(accely) < e then
+        self.vely = targetvely
+    else
+        self.vely = self.vely + accely
+    end
+end
+
 function Character:updatePosition()
     self.x = self.x + self.velx
     self.y = self.y + self.vely

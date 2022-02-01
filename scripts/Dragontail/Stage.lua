@@ -21,10 +21,13 @@ function Stage.quit()
 end
 
 function Stage.fixedupdate()
-    local dx, dy = Controls.getDirectionInput()
-    player:move(dx, dy)
-    if dx ~= 0 or dy ~= 0 then
-        player:rotateAttackTowards(math.atan2(dy, dx) + math.pi, math.pi/6)
+    local targetvelx, targetvely = Controls.getDirectionInput()
+    targetvelx = targetvelx * 8
+    targetvely = targetvely * 8
+    player:accelerateTowardsVel(targetvelx, targetvely, 8)
+    player:updatePosition()
+    if targetvelx ~= 0 or targetvely ~= 0 then
+        player:rotateAttackTowards(math.atan2(targetvely, targetvelx) + math.pi, math.pi/10)
     end
 end
 

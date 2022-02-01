@@ -76,3 +76,22 @@ notion("Character moving by acceleration", function()
     a:updatePosition() -- pos = 3,6
     check({x = a.x, y = a.y}).shallowMatches({x = 3, y = 6})
 end)
+
+notion("Character accelerating to target velocity", function()
+    local a = Character.new()
+    local targetvelx = 8
+    local t = 8
+    local e = 1/256
+    local velxs = {}
+    repeat
+        local velx = velxs[#velxs] or 0
+        velxs[#velxs+1] = velx + (targetvelx - velx) / t
+    until targetvelx - velxs[#velxs] <= e
+    velxs[#velxs] = targetvelx
+    for i = 1, #velxs do
+        a:accelerateTowardsVel(targetvelx, 0, t, e)
+        a:updatePosition()
+        -- check(a.velx).is(velxs[i])
+    end
+    check(a.velx).is(targetvelx)
+end)
