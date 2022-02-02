@@ -29,11 +29,18 @@ function Stage.quit()
 end
 
 function Stage.fixedupdate()
+    if enemy:takeHit(player) then
+        player.hitstun = player.attackstun
+        Audio.play("sounds/hit.mp3")
+    end
+
     local targetvelx, targetvely = Controls.getDirectionInput()
+    local b1, b2 = Controls.getButtonsDown()
     if targetvelx ~= 0 or targetvely ~= 0 then
         targetvelx, targetvely = math.norm(targetvelx, targetvely)
-        targetvelx = targetvelx * 8
-        targetvely = targetvely * 8
+        local speed = b2 and 4 or 8
+        targetvelx = targetvelx * speed
+        targetvely = targetvely * speed
         lasttargetvelx = targetvelx
         lasttargetvely = targetvely
     end
@@ -54,11 +61,6 @@ function Stage.fixedupdate()
         end
     else
         player.attackradius = 0
-    end
-
-    if enemy:takeHit(player) then
-        player.hitstun = player.attackstun
-        Audio.play("sounds/hit.mp3")
     end
 end
 

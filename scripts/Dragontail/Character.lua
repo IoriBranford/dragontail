@@ -67,8 +67,6 @@ end
 function Character:fixedupdate()
     if self.hitstun > 0 then
         self.hitstun = self.hitstun - 1
-    end
-    if self.hitstun > 0 then
         return
     end
     self.x = self.x + self.velx
