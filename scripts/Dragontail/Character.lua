@@ -1,7 +1,9 @@
+local SceneObject = require "System.SceneObject"
 local Character = {}
 
 Character.metatable = {
-    __index = Character
+    __index = Character,
+    __lt = SceneObject.__lt
 }
 local Metatable = Character.metatable
 
@@ -62,6 +64,17 @@ function Character:updatePosition()
     self.y = self.y + self.vely
 end
 
+function Character:fixedupdate()
+    if self.hitstun > 0 then
+        self.hitstun = self.hitstun - 1
+    end
+    if self.hitstun > 0 then
+        return
+    end
+    self.x = self.x + self.velx
+    self.y = self.y + self.vely
+end
+
 function Character:rotateAttack(dangle)
     dangle = math.fmod(dangle + 3*math.pi, 2*math.pi) - math.pi
     self.attackangle = self.attackangle + dangle
@@ -98,15 +111,16 @@ function Character:takeHit(other)
         local dist = math.sqrt(distsq)
         local attackx, attacky = math.cos(other.attackangle), math.sin(other.attackangle)
         local dot = math.dot(dx, dy, attackx, attacky)
-        if dot >= dist then
+        if dot >= dist * math.cos(other.attackarc/2) then
             self.health = self.health - other.attackdamage
             self.hitstun = other.attackstun
+            return true
         end
     end
 end
 
 function Character:draw()
-    love.graphics.setColor(.5, .5, 1, .5)
+    love.graphics.setColor(.5, .5, 1, self.hitstun > 0 and .25 or .5)
     love.graphics.circle("fill", self.x, self.y, self.bodyradius)
     if self.attackradius > 0 and self.attackarc > 0 then
         love.graphics.setColor(1, .5, .5, .5)
