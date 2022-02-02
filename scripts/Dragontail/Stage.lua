@@ -6,6 +6,7 @@ local Stage = {}
 
 local scene
 local player, enemy
+local lasttargetvelx, lasttargetvely
 
 function Stage.init()
     scene = Scene.new()
@@ -18,6 +19,8 @@ function Stage.init()
     })
     scene:add(1, player)
     scene:add(2, enemy)
+    lasttargetvelx = 0
+    lasttargetvely = 0
 end
 
 function Stage.quit()
@@ -27,21 +30,35 @@ end
 
 function Stage.fixedupdate()
     local targetvelx, targetvely = Controls.getDirectionInput()
-    targetvelx = targetvelx * 8
-    targetvely = targetvely * 8
+    if targetvelx ~= 0 or targetvely ~= 0 then
+        targetvelx, targetvely = math.norm(targetvelx, targetvely)
+        targetvelx = targetvelx * 8
+        targetvely = targetvely * 8
+        lasttargetvelx = targetvelx
+        lasttargetvely = targetvely
+    end
+
     player:accelerateTowardsVel(targetvelx, targetvely, 8)
     player:fixedupdate()
     enemy:fixedupdate()
     player:separateColliding(enemy)
+
+    if lasttargetvelx ~= 0 or lasttargetvely ~= 0 then
+        local targetspeed = math.len(lasttargetvelx, lasttargetvely)
+        local dot = math.dot(-lasttargetvelx, -lasttargetvely, math.cos(player.attackangle), math.sin(player.attackangle))
+        if dot < targetspeed then
+            player.attackradius = 48
+            player:rotateAttackTowards(math.atan2(-lasttargetvely, -lasttargetvelx), math.pi/10)
+        else
+            player.attackradius = 0
+        end
+    else
+        player.attackradius = 0
+    end
+
     if enemy:takeHit(player) then
         player.hitstun = player.attackstun
         Audio.play("sounds/hit.mp3")
-    end
-    if targetvelx ~= 0 or targetvely ~= 0 then
-        player.attackradius = 48
-        player:rotateAttackTowards(math.atan2(targetvely, targetvelx) + math.pi, math.pi/10)
-    else
-        player.attackradius = 0
     end
 end
 
