@@ -45,7 +45,7 @@ DATA STRUCTURE
 local LG = love.graphics
 local lg_draw = love.graphics.draw
 local pretty = require "pl.pretty"
-local Assets = require "System.Assets"
+local json   = require "json"
 
 local Aseprite = {}
 Aseprite.__index = Aseprite
@@ -166,12 +166,12 @@ local function load_cel(cel, filename, ase, layers, image)
 end
 
 local function loadAseprite(jsonfile)
-	local doc = Assets.get(jsonfile)
+	local doc = json.decode(love.filesystem.read(jsonfile))
 	local cels = doc.frames
 	local meta = doc.meta
 	local image = meta.image
     local directory = string.match(jsonfile, "^(.+/)") or ""
-	image = Assets.get(directory..image)
+	image = love.graphics.newImage(directory..image)
 	image:setFilter("nearest", "nearest")
 
 	local layers = meta.layers
