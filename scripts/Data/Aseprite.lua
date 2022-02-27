@@ -79,8 +79,6 @@ function Aseprite:getAnimationFrame(tag, tagframe)
 end
 
 function Aseprite:drawFrame(frame, x, y, r, sx, sy, ox, oy, kx, ky)
-	x = x - self.offsetx
-	y = y - self.offsety
 	frame = self[frame]
 	local image = self.image
 	for i = 1, #self.layers do
@@ -121,13 +119,11 @@ function Aseprite:startSpriteBatchAnimation(spritebatch, tag)
 end
 
 function Aseprite:setSpriteBatchFrame(spritebatch, frame)
-	local offsetx = self.offsetx
-	local offsety = self.offsety
 	frame = self[frame]
 	for i = 1, #self.layers do
 		local cel = frame[i]
 		if cel then
-			spritebatch:set(i, cel.quad, cel.x - offsetx, cel.y - offsety)
+			spritebatch:set(i, cel.quad, cel.x, cel.y)
 		else
 			spritebatch:set(i, 0, 0, 0, 0, 0)
 		end
@@ -194,7 +190,8 @@ local function loadAseprite(jsonfile)
 	end
 
 	local ase = {}
-	local size = next(cels).sourceSize
+	local _, cel1 = next(cels)
+	local size = cel1.sourceSize
 	ase.width = size.w
 	ase.height = size.h
 
