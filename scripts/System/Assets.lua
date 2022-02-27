@@ -1,4 +1,5 @@
 local Cache = require "Data.Cache"
+local Aseprite = require "Data.Aseprite"
 local json_decode = (require "json").decode
 local Assets = {}
 
@@ -10,7 +11,8 @@ local loaders = {
     ogg = love.audio.newSource,
     wav = love.audio.newSource,
     lua = love.filesystem.load,
-    json = function (path) return json_decode(lfs_read(path)) end
+    json = function (path) return json_decode(lfs_read(path)) end,
+    jase = Aseprite.load
 }
 
 function Assets.load(path, ...)
