@@ -169,7 +169,7 @@ local function load_cel(cel, filename, ase, layers, image)
 	}
 end
 
-local function loadAseprite(jsonfile)
+function Aseprite.load(jsonfile)
 	local doc = json.decode(love.filesystem.read(jsonfile))
 	local cels = doc.frames
 	local meta = doc.meta
@@ -246,6 +246,4 @@ local function loadAseprite(jsonfile)
 	return ase
 end
 
-return {
-	load = loadAseprite
-}
+return Aseprite
