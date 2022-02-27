@@ -315,13 +315,17 @@ function Tiled.getAnimationUpdate(animation, i, t)
 end
 
 local function decodeGids(data, encoding, compression)
+    if encoding == "lua" then
+        return data
+    end
     local gids = {}
-    if encoding == "csv" then
-        for gid in data:gmatch("%d+") do
-            gids[#gids + 1] = tonumber(gid)
-        end
-        return gids
-    elseif encoding == "base64" then
+    -- if encoding == "csv" then
+    --     for gid in data:gmatch("%d+") do
+    --         gids[#gids + 1] = tonumber(gid)
+    --     end
+    --     return gids
+    -- else
+    if encoding == "base64" then
         data = love.data.decode("data", encoding, data)
         if compression then
             data = love.data.decompress("data", compression, data)
