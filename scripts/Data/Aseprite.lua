@@ -46,9 +46,17 @@ local LG = love.graphics
 local lg_draw = love.graphics.draw
 local pretty = require "pl.pretty"
 local json   = require "json"
+local Time   = require "System.Time"
 
 local Aseprite = {}
 Aseprite.__index = Aseprite
+Aseprite.animationtimeunit = "milliseconds"
+
+local AnimationTimeUnits = {
+    milliseconds = 1,
+    seconds = 1 / 1000,
+    fixedupdates = Time.FixedUpdateRate / 1000
+}
 
 function Aseprite:getAnimationUpdate(tag, tagframe, t, dt)
 	t = t + dt
@@ -199,6 +207,12 @@ local function loadAseprite(jsonfile)
 		for k,v in pairs(cels) do
 			load_cel(v, k, ase, layers, image)
 		end
+	end
+
+	local animationtimescale = AnimationTimeUnits[Aseprite.animationtimeunit] or 1
+	for i = 1, #ase do
+		local frame = ase[i]
+		frame.duration = frame.duration * animationtimescale
 	end
 
 	local animations = meta.frameTags
