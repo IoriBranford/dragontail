@@ -1,4 +1,6 @@
 local SceneObject = require "System.SceneObject"
+require "System.SceneObject.Tiled"
+require "System.SceneObject.Aseprite"
 local Color       = require "Data.Color"
 
 local Scene = {}
