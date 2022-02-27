@@ -54,7 +54,6 @@ function SceneObject.setTile(sceneobject, tile)
     sceneobject.animation = tile.animation
     sceneobject.animationframe = 1
     sceneobject.animationtime = 0
-    sceneobject.animate = animateTile
 end
 
 function SceneObject.applyTransform(sceneobject)
@@ -318,6 +317,7 @@ end
 
 function SceneObject.newTile(id, tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
     local sceneobject = SceneObject.new(id, drawQuad, tile.image, nil, nil, nil, x, y, z, r, sx, sy, nil, nil, kx, ky)
+    sceneobject.animate = animateTile
     setTile(sceneobject, tile)
     if ox then
         sceneobject.ox = ox
@@ -395,6 +395,64 @@ function SceneObject.newTileParticles(id, tile, z)
     local sceneobject = SceneObject.new(id, drawGeneric, particlesystem, nil, nil, nil, 0, 0, z)
     sceneobject.animate = animateParticles
     sceneobject.updateFromUnit = updateParticleSystem
+    return sceneobject
+end
+
+function SceneObject.setAseprite(sceneobject, aseprite, frame)
+    sceneobject.aseprite = aseprite
+    sceneobject.asepriteframe = frame or 1
+end
+local setAseprite = SceneObject.setAseprite
+
+function SceneObject.setAsepriteAnimated(sceneobject, aseprite, tag, tagframe)
+    tagframe = tagframe or 1
+    sceneobject.aseprite = aseprite
+    sceneobject.animation = tag
+    sceneobject.animationframe = tagframe
+    sceneobject.animationtime = 0
+    sceneobject.asepriteframe = aseprite:getAnimationFrame(tag, tagframe)
+end
+local setAsepriteAnimated = SceneObject.setAsepriteAnimated
+
+function SceneObject.animateAseprite(sceneobject, dt)
+    local animation = sceneobject.animation
+    if animation then
+        local aframe = sceneobject.animationframe
+        local atime = sceneobject.animationtime
+        local aseprite = sceneobject.aseprite
+        aframe, atime = aseprite:getAnimationUpdate(animation, aframe, atime, dt)
+        sceneobject.animationframe = aframe
+        sceneobject.animationtime = atime
+        sceneobject.asepriteframe = aseprite:getAnimationFrame(animation, aframe)
+    end
+end
+local animateAseprite = SceneObject.animateAseprite
+
+function SceneObject.drawAseprite(sceneobject)
+    love.graphics.setColor(sceneobject.red, sceneobject.green, sceneobject.blue, sceneobject.alpha)
+    sceneobject.aseprite:drawFrame(sceneobject.asepriteframe,
+        (sceneobject.x),
+        (sceneobject.y),
+        sceneobject.r,
+        sceneobject.sx, sceneobject.sy,
+        sceneobject.ox, sceneobject.oy,
+        sceneobject.kx, sceneobject.ky)
+end
+local drawAseprite = SceneObject.drawAseprite
+
+function SceneObject.newAseprite(id, aseprite, frame, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    local sceneobject = SceneObject.new(id, drawAseprite, nil, nil, aseprite.width, aseprite.height,
+                                        x, y, z, r, sx, sy, ox, oy, kx, ky)
+    sceneobject.animate = animateAseprite
+    setAseprite(sceneobject, aseprite, frame)
+    return sceneobject
+end
+
+function SceneObject.newAnimatedAseprite(id, aseprite, tag, tagframe, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    local sceneobject = SceneObject.new(id, drawAseprite, nil, nil, aseprite.width, aseprite.height,
+                                        x, y, z, r, sx, sy, ox, oy, kx, ky)
+    sceneobject.animate = animateAseprite
+    setAsepriteAnimated(sceneobject, aseprite, tag, tagframe)
     return sceneobject
 end
 

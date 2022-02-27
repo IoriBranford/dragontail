@@ -44,6 +44,12 @@ function Scene:addAnimatedTile(id, tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
     return sceneobject
 end
 
+function Scene:addAnimatedAseprite(id, aseprite, tag, tagframe, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    local sceneobject = SceneObject.newAnimatedAseprite(id, aseprite, tag, tagframe or 1, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    self.animating[id] = sceneobject
+    return self:add(id, sceneobject)
+end
+
 function Scene:addTextObject(textobject)
     local sceneobject = SceneObject.newTextObject(textobject)
     return self:add(sceneobject.id, sceneobject)
