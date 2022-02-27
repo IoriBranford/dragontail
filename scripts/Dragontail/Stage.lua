@@ -2,6 +2,7 @@ local Scene = require "System.Scene"
 local Character = require "Dragontail.Character"
 local Controls  = require "System.Controls"
 local Audio     = require "System.Audio"
+local Aseprite  = require "Data.Aseprite"
 local Stage = {}
 
 local scene
@@ -15,12 +16,14 @@ function Stage.init()
         x = 160, y = 180, bodyradius = 24, attackradius = 48, attackarc = math.pi/2, attackstun = 10
     })
     enemy = Character.new({
-        x = 480, y = 180, bodyradius = 24
+        x = 480, y = 180, bodyradius = 16
     })
     scene:add(1, player)
-    scene:add(2, enemy)
     lasttargetvelx = 0
     lasttargetvely = 0
+
+    local enemyaseprite = Aseprite.load("data/sprites/bandit-dagger.json")
+    scene:addAnimatedAseprite(2, enemyaseprite, "walk2", 1, enemy.x, enemy.y, 0, 0, 1, 1, 32, 48)
 end
 
 function Stage.quit()
@@ -62,6 +65,7 @@ function Stage.fixedupdate()
     else
         player.attackradius = 0
     end
+    scene:animate(1)
 end
 
 function Stage.draw()

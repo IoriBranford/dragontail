@@ -2,6 +2,7 @@ local Tiled = require "Data.Tiled"
 local Audio = require "System.Audio"
 local Config = require "System.Config"
 local Wallpaper             = require "System.Wallpaper"
+local Aseprite              = require "Data.Aseprite"
 
 local firstphase = "Dragontail.GamePhase"
 local firstmap = "data/stage_demonrealm.lua"
@@ -34,6 +35,7 @@ function love.load(args)
     love.window.setTitle(love.filesystem.getIdentity())
 
     Tiled.animationtimeunit = "fixedupdates"
+    Aseprite.animationtimeunit = "fixedupdates"
     Tiled.setFontPath("data/fonts/")
     love.graphics.setLineStyle("rough")
 
