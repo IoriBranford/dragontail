@@ -84,7 +84,23 @@ function Character:rotateAttackTowards(targetangle, turnspeed)
     self.attackangle = self.attackangle + dangle
 end
 
-function Character:separateColliding(other)
+function Character:keepInBounds(bx, by, bw, bh)
+    local x, y = self.x, self.y
+    local bodyradius = self.bodyradius
+    local dx, dy, dw, dh = x - bx, y - by, bw - bodyradius, bh - bodyradius
+    if dx < bodyradius then
+        self.x = bx + bodyradius
+    elseif dx > dw then
+        self.x = bx + dw
+    end
+    if dy < bodyradius then
+        self.y = by + bodyradius
+    elseif dy > dh then
+        self.y = by + dh
+    end
+end
+
+function Character:collideWithCharacterBody(other)
     local dx, dy = self.x - other.x, self.y - other.y
     local distsq = math.lensq(dx, dy)
     local radii = self.bodyradius + other.bodyradius
@@ -97,7 +113,7 @@ function Character:separateColliding(other)
     end
 end
 
-function Character:takeHit(other)
+function Character:collideWithCharacterAttack(other)
     if self.hitstun > 0 then
         return
     end

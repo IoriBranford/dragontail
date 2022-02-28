@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="80" height="12" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="1">
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="80" height="12" tilewidth="32" tileheight="32" infinite="0" nextlayerid="10" nextobjectid="6">
  <editorsettings>
   <export target="jam_village.lua" format="lua"/>
  </editorsettings>
@@ -7,7 +7,7 @@
  <tileset firstgid="2817" source="tilesets/village_houses.tsx"/>
  <tileset firstgid="3537" source="tilesets/village_props.tsx"/>
  <tileset firstgid="3793" source="tilesets/propsA.tsx"/>
- <group id="8" name="Group 1">
+ <group id="8" name="tilelayers">
   <properties>
    <property name="z" type="float" value="-1"/>
   </properties>
@@ -27,9 +27,15 @@
   </data>
   </layer>
  </group>
- <objectgroup id="2" name="Object Layer 1">
+ <objectgroup id="2" name="bounds">
   <properties>
    <property name="z" type="float" value="0"/>
   </properties>
+  <object id="1" name="stagebounds" x="0" y="128" width="2560" height="256"/>
+  <object id="2" name="roombounds1" x="0" y="128" width="640" height="256"/>
+  <object id="3" name="roombounds2" x="640" y="128" width="640" height="256"/>
+  <object id="4" name="roombounds3" x="1280" y="128" width="640" height="256"/>
+  <object id="5" name="roombounds4" x="1920" y="128" width="640" height="256"/>
  </objectgroup>
+ <objectgroup id="9" name="characters"/>
 </map>

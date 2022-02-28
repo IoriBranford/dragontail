@@ -9,11 +9,12 @@ local Stage = {}
 local scene
 local player, enemy
 local lasttargetvelx, lasttargetvely
+local currentbounds
 
 function Stage.init(stagefile)
     scene = Scene.new()
     local map = Tiled.load(stagefile)
-    scene:addMap(map)
+    scene:addMap(map, "group,tilelayer")
     player = Character.new({
         x = 160, y = 180, bodyradius = 24, attackradius = 48, attackarc = math.pi/2, attackstun = 10
     })
@@ -23,6 +24,8 @@ function Stage.init(stagefile)
     scene:add(1, player)
     lasttargetvelx = 0
     lasttargetvely = 0
+    local bounds = map.layers.bounds
+    currentbounds = bounds and bounds.stagebounds or {0, 0, 640, 360}
 
     local enemyaseprite = Aseprite.load("data/sprites/bandit-dagger.json")
     scene:addAnimatedAseprite(2, enemyaseprite, "walk2", 1, enemy.x, enemy.y, 0, 0, 1, 1, 32, 48)
@@ -34,7 +37,7 @@ function Stage.quit()
 end
 
 function Stage.fixedupdate()
-    if enemy:takeHit(player) then
+    if enemy:collideWithCharacterAttack(player) then
         player.hitstun = player.attackstun
         Audio.play("sounds/hit.mp3")
     end
@@ -53,7 +56,8 @@ function Stage.fixedupdate()
     player:accelerateTowardsVel(targetvelx, targetvely, 8)
     player:fixedupdate()
     enemy:fixedupdate()
-    player:separateColliding(enemy)
+    player:keepInBounds(currentbounds.x, currentbounds.y, currentbounds.width, currentbounds.height)
+    player:collideWithCharacterBody(enemy)
 
     if lasttargetvelx ~= 0 or lasttargetvely ~= 0 then
         local targetspeed = math.len(lasttargetvelx, lasttargetvely)
