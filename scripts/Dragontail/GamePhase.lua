@@ -5,7 +5,7 @@ local GamePhase = {}
 
 function GamePhase.loadphase()
     Canvas.init(Config.basewindowwidth, Config.basewindowheight)
-    Stage.init()
+    Stage.init("data/jam_village.lua")
 end
 
 function GamePhase.quitphase()

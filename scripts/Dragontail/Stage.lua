@@ -3,15 +3,17 @@ local Character = require "Dragontail.Character"
 local Controls  = require "System.Controls"
 local Audio     = require "System.Audio"
 local Aseprite  = require "Data.Aseprite"
+local Tiled     = require "Data.Tiled"
 local Stage = {}
 
 local scene
 local player, enemy
 local lasttargetvelx, lasttargetvely
 
-function Stage.init()
+function Stage.init(stagefile)
     scene = Scene.new()
-
+    local map = Tiled.load(stagefile)
+    scene:addMap(map)
     player = Character.new({
         x = 160, y = 180, bodyradius = 24, attackradius = 48, attackarc = math.pi/2, attackstun = 10
     })
