@@ -84,19 +84,24 @@ function Character:rotateAttackTowards(targetangle, turnspeed)
     self.attackangle = self.attackangle + dangle
 end
 
-function Character:keepInBounds(bx, by, bw, bh)
+function Character:keepInBounds(bx, by, bw, bh, bounce)
+    bounce = bounce or 0
     local x, y = self.x, self.y
     local bodyradius = self.bodyradius
     local dx, dy, dw, dh = x - bx, y - by, bw - bodyradius, bh - bodyradius
     if dx < bodyradius then
         self.x = bx + bodyradius
+        self.velx = bounce * -self.velx
     elseif dx > dw then
         self.x = bx + dw
+        self.velx = bounce * -self.velx
     end
     if dy < bodyradius then
         self.y = by + bodyradius
+        self.vely = bounce * -self.vely
     elseif dy > dh then
         self.y = by + dh
+        self.vely = bounce * -self.vely
     end
 end
 
