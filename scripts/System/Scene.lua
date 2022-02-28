@@ -128,10 +128,10 @@ function Scene:addMap(map, layerfilter)
         for i = 1, #layers do
             local layer = layers[i]
             local layertype = layer.type
-            if layer.type == "group" then
-                addLayers(layer)
-            elseif not layerfilter or layerfilter:find(layertype) then
-                if layertype == "tilelayer" then
+            if not layerfilter or layerfilter:find(layertype) then
+                if layer.type == "group" then
+                    addLayers(layer)
+                elseif layertype == "tilelayer" then
                     layer.sprites = self:addTileLayer(layer)
                 elseif layertype == "objectgroup" then
                     for i = 1, #layer do
