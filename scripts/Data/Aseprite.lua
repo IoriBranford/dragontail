@@ -86,7 +86,11 @@ end
 
 function Aseprite:getAnimationFrame(tag, tagframe)
 	local animation = self.animations[tag]
-	return animation and animation[tagframe]
+	if not animation then
+		print("Unknown animation "..tag)
+		return nil
+	end
+	return animation[tagframe]
 end
 
 function Aseprite:drawFrame(frame, x, y, r, sx, sy, ox, oy, kx, ky)
