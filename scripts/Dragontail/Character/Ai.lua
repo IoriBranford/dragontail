@@ -9,6 +9,16 @@ local waitfor = coroutine.waitfor
 local pi = math.pi
 local Ai = {}
 
+local function moveTo(self, destx, desty, speed)
+    waitfor(function()
+        local x, y = self.x, self.y
+        if x == destx and y == desty then
+            return true
+        end
+        self.velx, self.vely = Movement.getVelocity_speed(x, y, destx, desty, speed)
+    end)
+end
+
 function Ai:stand(duration)
     self.velx, self.vely = 0, 0
     local x, y = self.x, self.y
@@ -16,10 +26,8 @@ function Ai:stand(duration)
     waitfor(function()
         local opponent = self.opponent
         local destx, desty = opponent.x, opponent.y
-        local faceangle = math.atan2(desty - y, destx - x) + (pi / 4)
-        local facedir = math.floor(faceangle * 2 / pi)
-        facedir = (facedir + 4) % 4
-        local standanimation = "stand"..facedir
+        local faceangle = math.atan2(desty - y, destx - x)
+        local standanimation = self.getDirectionalAnimation_angle("stand", faceangle)
         self.sprite:changeAsepriteAnimation(standanimation)
         i = i + 1
         return i > duration
@@ -41,21 +49,11 @@ function Ai:approach()
     local desty = oppoy + math.sin(destanglefromoppo) * attackradius
 
     -- choose animation
-    local faceangle = math.atan2(desty - y, destx - x) + (pi / 4)
-    local facedir = math.floor(faceangle * 2 / pi)
-    facedir = (facedir + 4) % 4
-    local walkanimation = "walk"..facedir
+    local todestangle = math.atan2(desty - y, destx - x)
+    local walkanimation = self.getDirectionalAnimation_angle("walk", todestangle)
     self.sprite:changeAsepriteAnimation(walkanimation)
 
-    -- move
-    local speed = self.speed or 2
-    coroutine.waitfor(function()
-        x, y = self.x, self.y
-        if x == destx and y == desty then
-            return true
-        end
-        self.velx, self.vely = Movement.getVelocity_speed(x, y, destx, desty, speed)
-    end)
+    moveTo(self, destx, desty, self.speed or 2)
 
     -- oppox, oppoy = opponent.x, opponent.y
     -- tooppox, tooppoy = oppox - x, oppoy - y

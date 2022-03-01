@@ -1,6 +1,9 @@
 local SceneObject = require "System.SceneObject"
 local Assets      = require "System.Assets"
 local Sheets      = require "Data.Sheets"
+local pi = math.pi
+local floor = math.floor
+
 local Character = {}
 
 Character.metatable = {
@@ -172,6 +175,13 @@ function Character:collideWithCharacterAttack(other)
             return true
         end
     end
+end
+
+function Character.getDirectionalAnimation_angle(basename, angle)
+    local faceangle = angle + (pi / 4)
+    local facedir = floor(faceangle * 2 / pi)
+    facedir = ((facedir % 4) + 4) % 4
+    return basename..facedir
 end
 
 function Character:draw()
