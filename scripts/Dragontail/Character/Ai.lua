@@ -33,16 +33,22 @@ function Ai:approach()
     local oppox, oppoy = opponent.x, opponent.y
     local tooppox, tooppoy = oppox - x, oppoy - y
     local tooppoangle = math.atan2(tooppoy, tooppox)
-    local destanglefromoppo = tooppoangle + love.math.random(-1, 1)*pi/2
+
+    -- choose dest
+    local destanglefromoppo = tooppoangle + love.math.random(3)*pi/2
     local attackradius = (self.attackradius or 32) + opponent.bodyradius
     local destx = oppox + math.cos(destanglefromoppo) * attackradius
     local desty = oppoy + math.sin(destanglefromoppo) * attackradius
-    local speed = self.speed or 2
+
+    -- choose animation
     local faceangle = math.atan2(desty - y, destx - x) + (pi / 4)
     local facedir = math.floor(faceangle * 2 / pi)
     facedir = (facedir + 4) % 4
     local walkanimation = "walk"..facedir
     self.sprite:changeAsepriteAnimation(walkanimation)
+
+    -- move
+    local speed = self.speed or 2
     coroutine.waitfor(function()
         x, y = self.x, self.y
         if x == destx and y == desty then
@@ -56,7 +62,7 @@ function Ai:approach()
     -- if math.distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
     --     return "attack"
     -- end
-    return "stand", 60
+    return "stand", 30
 end
 
 function Ai:attack()
