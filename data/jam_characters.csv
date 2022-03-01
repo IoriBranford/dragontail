@@ -1,5 +1,5 @@
 type,asepritefile,spriteoriginx,spriteoriginy,health,bodyradius,playsound,nextanimation,attackradius,attackarc,attackdamage,attackstun,attackangle
-bandit-dagger,sprites/bandit-dagger.json,32,56,50,16,,,,,,,
+bandit-dagger,sprites/bandit-dagger.jase,32,56,50,16,,,,,,,
 bandit-dagger-walk0,,,,,,,walk0,,,,,
 bandit-dagger-walk1,,,,,,,walk1,,,,,
 bandit-dagger-walk2,,,,,,,walk2,,,,,
@@ -24,7 +24,7 @@ bandit-dagger-spin,,,,,,,spin,16,6.28318530717959,10,10,0
 bandit-dagger-collapseA,,,,,,sounds/man_light/damage1.mp3,nil,0,0,0,0,0
 bandit-dagger-collapse,,,,,,sounds/man_light/damage2.mp3,nil,0,0,0,0,0
 bandit-dagger-collapse-4,,,,,,sounds/combat/bodydrop.mp3,,,,,,
-bandit-spear,sprites/bandit-spear.json,48,72,50,16,,,,,,,
+bandit-spear,sprites/bandit-spear.jase,48,72,50,16,,,,,,,
 bandit-spear-walk0,,,,,,,walk0,,,,,
 bandit-spear-walk1,,,,,,,walk1,,,,,
 bandit-spear-walk2,,,,,,,walk2,,,,,

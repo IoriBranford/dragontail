@@ -1,4 +1,5 @@
 local SceneObject = require "System.SceneObject"
+local Assets      = require "System.Assets"
 local Character = {}
 
 Character.metatable = {
@@ -30,6 +31,17 @@ function Character.new(chprefab)
     ch.attackstun = ch.attackstun or 1
     ch.hitstun = ch.hitstun or 0
     return setmetatable(ch, Metatable)
+end
+
+function Character:addToScene(scene)
+    local asepritefile = self.asepritefile
+    local aseprite = asepritefile and Assets.get(asepritefile)
+    if aseprite then
+        self.animation = self.animation or "stand1"
+        self.sprite = scene:addAnimatedAseprite(aseprite, self.animation, 1,
+            self.x, self.y, self.z,
+            0, 1, 1, self.spriteoriginx or 0, self.spriteoriginy or 0)
+    end
 end
 
 function Character:move(dx, dy)

@@ -1,15 +1,26 @@
 local Canvas= require "System.Canvas"
 local Config= require "System.Config"
 local Stage = require "Dragontail.Stage"
+local Sheets= require "Data.Sheets"
+local Assets= require "System.Assets"
 local GamePhase = {}
 
 function GamePhase.loadphase()
     Canvas.init(Config.basewindowwidth, Config.basewindowheight)
+
+    Sheets.load("data/jam_characters.csv")
+    Sheets.forEach(function(_, properties)
+        local asepritefile = properties.asepritefile
+        if asepritefile then Assets.get(asepritefile) end
+    end)
+
     Stage.init("data/jam_village.lua")
 end
 
 function GamePhase.quitphase()
     Stage.quit()
+    Sheets.clear()
+    Assets.clear()
 end
 
 function GamePhase.fixedupdate()

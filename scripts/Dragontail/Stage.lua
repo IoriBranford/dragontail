@@ -2,8 +2,8 @@ local Scene = require "System.Scene"
 local Character = require "Dragontail.Character"
 local Controls  = require "System.Controls"
 local Audio     = require "System.Audio"
-local Aseprite  = require "Data.Aseprite"
 local Tiled     = require "Data.Tiled"
+local Sheets    = require "Data.Sheets"
 local Stage = {}
 
 local scene
@@ -13,22 +13,25 @@ local currentbounds
 
 function Stage.init(stagefile)
     scene = Scene.new()
+
     local map = Tiled.load(stagefile)
     scene:addMap(map, "group,tilelayer")
+
     player = Character.new({
         x = 160, y = 180, bodyradius = 24, attackradius = 48, attackarc = math.pi/2, attackstun = 10
     })
-    enemy = Character.new({
-        x = 480, y = 180, bodyradius = 16
-    })
     scene:add(player)
+
+    enemy = Character.new({
+        x = 480, y = 180, bodyradius = 16, type = "bandit-dagger", animation = "walk2"
+    })
+    Sheets.fillBlanks(enemy, enemy.type)
+    enemy:addToScene(scene)
+
     lasttargetvelx = 0
     lasttargetvely = 0
     local bounds = map.layers.bounds
     currentbounds = bounds and bounds.stagebounds or {0, 0, 640, 360}
-
-    local enemyaseprite = Aseprite.load("data/sprites/bandit-dagger.json")
-    enemy.aseprite = scene:addAnimatedAseprite(enemyaseprite, "walk2", 1, enemy.x, enemy.y, 0, 0, 1, 1, 32, 48)
 end
 
 function Stage.quit()
@@ -39,7 +42,7 @@ end
 function Stage.fixedupdate()
     if enemy:collideWithCharacterAttack(player) then
         player.hitstun = player.attackstun
-        Audio.play("sounds/hit.mp3")
+        Audio.play("sounds/combat/hit1.mp3")
     end
 
     local targetvelx, targetvely = Controls.getDirectionInput()
@@ -56,8 +59,8 @@ function Stage.fixedupdate()
     player:accelerateTowardsVel(targetvelx, targetvely, 8)
     player:fixedupdate()
     enemy:fixedupdate()
-    player:keepInBounds(currentbounds.x, currentbounds.y, currentbounds.width, currentbounds.height)
     player:collideWithCharacterBody(enemy)
+    player:keepInBounds(currentbounds.x, currentbounds.y, currentbounds.width, currentbounds.height)
 
     if lasttargetvelx ~= 0 or lasttargetvely ~= 0 then
         local targetspeed = math.len(lasttargetvelx, lasttargetvely)
