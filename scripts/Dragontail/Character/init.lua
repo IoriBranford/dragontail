@@ -1,5 +1,6 @@
 local SceneObject = require "System.SceneObject"
 local Assets      = require "System.Assets"
+local Sheets      = require "Data.Sheets"
 local Character = {}
 
 Character.metatable = {
@@ -14,6 +15,10 @@ function Character.new(chprefab)
         for k,v in pairs(chprefab) do
             ch[k] = v
         end
+    end
+    local type = ch.type
+    if type then
+        Sheets.fillBlanks(ch, type)
     end
     ch.health = ch.health or 1
     ch.x = ch.x or 0

@@ -3,7 +3,6 @@ local Character = require "Dragontail.Character"
 local Controls  = require "System.Controls"
 local Audio     = require "System.Audio"
 local Tiled     = require "Data.Tiled"
-local Sheets    = require "Data.Sheets"
 local Stage = {}
 
 local scene
@@ -18,14 +17,13 @@ function Stage.init(stagefile)
     scene:addMap(map, "group,tilelayer")
 
     player = Character.new({
-        x = 160, y = 180, bodyradius = 24, attackradius = 48, attackarc = math.pi/2, attackstun = 10
+        x = 160, y = 180, bodyradius = 16, attackradius = 32, attackarc = math.pi/2, attackstun = 10
     })
     scene:add(player)
 
     enemy = Character.new({
-        x = 480, y = 180, bodyradius = 16, type = "bandit-dagger", animation = "walk2"
+        x = 480, y = 180, bodyradius = 16, type = "bandit-dagger", animation = "walk2", opponent = player
     })
-    Sheets.fillBlanks(enemy, enemy.type)
     enemy:addToScene(scene)
 
     lasttargetvelx = 0
