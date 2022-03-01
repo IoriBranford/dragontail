@@ -45,10 +45,17 @@ function Scene:addAnimatedTile(tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
     return sceneobject
 end
 
-function Scene:addAnimatedAseprite(aseprite, tag, tagframe, x, y, z, r, sx, sy, ox, oy, kx, ky)
+function Scene:addManualAnimatedAseprite(aseprite, tag, tagframe, x, y, z, r, sx, sy, ox, oy, kx, ky)
     local sceneobject = SceneObject.newAnimatedAseprite(aseprite, tag, tagframe or 1, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    self.animating[#self.animating+1] = sceneobject
     return self:add(sceneobject)
+end
+
+local addManualAnimatedAseprite = Scene.addManualAnimatedAseprite
+
+function Scene:addAnimatedAseprite(aseprite, tag, tagframe, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    local sceneobject = addManualAnimatedAseprite(aseprite, tag, tagframe or 1, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    self.animating[#self.animating+1] = sceneobject
+    return sceneobject
 end
 
 function Scene:addTextObject(textobject)
