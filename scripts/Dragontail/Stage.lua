@@ -1,5 +1,6 @@
 local Scene = require "System.Scene"
 local Character = require "Dragontail.Character"
+require "Dragontail.Character.Ai"
 local Controls  = require "System.Controls"
 local Audio     = require "System.Audio"
 local Tiled     = require "Data.Tiled"
@@ -25,6 +26,7 @@ function Stage.init(stagefile)
         x = 480, y = 180, bodyradius = 16, type = "bandit-dagger", animation = "walk2", opponent = player
     })
     enemy:addToScene(scene)
+    enemy:startAi("stand", 60)
 
     lasttargetvelx = 0
     lasttargetvely = 0
@@ -54,25 +56,32 @@ function Stage.fixedupdate()
         lasttargetvely = targetvely
     end
 
-    player:accelerateTowardsVel(targetvelx, targetvely, 8)
+    player:accelerateTowardsVel(targetvelx, targetvely, b2 and 8 or 16)
     player:fixedupdate()
     enemy:fixedupdate()
     player:collideWithCharacterBody(enemy)
     player:keepInBounds(currentbounds.x, currentbounds.y, currentbounds.width, currentbounds.height)
 
-    if lasttargetvelx ~= 0 or lasttargetvely ~= 0 then
-        local targetspeed = math.len(lasttargetvelx, lasttargetvely)
-        local dot = math.dot(-lasttargetvelx, -lasttargetvely, math.cos(player.attackangle), math.sin(player.attackangle))
-        if dot < targetspeed then
-            player.attackradius = 48
-            player:rotateAttackTowards(math.atan2(-lasttargetvely, -lasttargetvelx), math.pi/10)
+    if player.attackangle then
+        if lasttargetvelx ~= 0 or lasttargetvely ~= 0 then
+            local targetspeed = math.len(lasttargetvelx, lasttargetvely)
+            local dot = math.dot(-lasttargetvelx, -lasttargetvely, math.cos(player.attackangle), math.sin(player.attackangle))
+            if dot < targetspeed then
+                player.attackradius = 48
+                player:rotateAttackTowards(math.atan2(-lasttargetvely, -lasttargetvelx), math.pi/10)
+            else
+                player.attackradius = 0
+            end
         else
             player.attackradius = 0
         end
-    else
-        player.attackradius = 0
     end
     scene:animate(1)
+end
+
+function Stage.update(dsecs, fixedfrac)
+    player:update(dsecs, fixedfrac)
+    enemy:update(dsecs, fixedfrac)
 end
 
 function Stage.draw()

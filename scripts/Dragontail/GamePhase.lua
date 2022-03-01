@@ -28,6 +28,10 @@ function GamePhase.fixedupdate()
     Stage.fixedupdate()
 end
 
+function GamePhase.update(dsecs, fixedfrac)
+    Stage.update(dsecs, fixedfrac)
+end
+
 function GamePhase.resize(w, h)
     Canvas.init(Config.basewindowwidth, Config.basewindowheight)
 end

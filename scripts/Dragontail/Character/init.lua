@@ -30,7 +30,7 @@ function Character.new(chprefab)
     ch.speed = ch.speed or 1
     ch.bodyradius = ch.bodyradius or 1
     ch.attackradius = ch.attackradius or 0
-    ch.attackangle = ch.attackangle or 0
+    -- ch.attackangle = ch.attackangle or 0
     ch.attackarc = ch.attackarc or 0
     ch.attackdamage = ch.attackdamage or 1
     ch.attackstun = ch.attackstun or 1
@@ -82,20 +82,26 @@ function Character:updatePosition()
 end
 
 function Character:fixedupdate()
-    local sprite = self.sprite
+    self:runAi()
     if self.hitstun > 0 then
         self.hitstun = self.hitstun - 1
-        if sprite then
-            sprite.ox = self.spriteoriginx + 2*math.sin(self.hitstun)
-        end
         return
     end
     self.x = self.x + self.velx
     self.y = self.y + self.vely
+    local sprite = self.sprite
     if sprite then
         if sprite.animate then
             sprite:animate(1)
         end
+    end
+end
+
+function Character:update(dsecs, fixedfrac)
+    local sprite = self.sprite
+    if sprite then
+        sprite.ox = self.spriteoriginx + 2*math.sin(self.hitstun)
+        sprite:updateFromUnit(self, fixedfrac)
     end
 end
 
@@ -148,13 +154,17 @@ function Character:collideWithCharacterAttack(other)
     if self.hitstun > 0 then
         return
     end
+    local attackangle = other.attackangle
+    if not attackangle then
+        return
+    end
     local dx, dy = self.x - other.x, self.y - other.y
     local distsq = math.lensq(dx, dy)
     local radii = self.bodyradius + other.attackradius
     local radiisq = radii * radii
     if distsq < radiisq then
         local dist = math.sqrt(distsq)
-        local attackx, attacky = math.cos(other.attackangle), math.sin(other.attackangle)
+        local attackx, attacky = math.cos(attackangle), math.sin(attackangle)
         local dot = math.dot(dx, dy, attackx, attacky)
         if dot >= dist * math.cos(other.attackarc/2) then
             self.health = self.health - other.attackdamage
@@ -167,7 +177,7 @@ end
 function Character:draw()
     love.graphics.setColor(.5, .5, 1, self.hitstun > 0 and .25 or .5)
     love.graphics.circle("fill", self.x, self.y, self.bodyradius)
-    if self.attackradius > 0 and self.attackarc > 0 then
+    if self.attackradius > 0 and self.attackarc > 0 and self.attackangle then
         love.graphics.setColor(1, .5, .5, .5)
         love.graphics.arc("fill", self.x, self.y, self.attackradius, self.attackangle - self.attackarc/2, self.attackangle + self.attackarc/2)
     end
