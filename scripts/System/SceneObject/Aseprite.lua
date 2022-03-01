@@ -2,18 +2,19 @@ local SceneObject = require "System.SceneObject"
 
 local new = SceneObject.new
 
-function SceneObject.setAsepriteAnimated(sceneobject, aseprite, tag, tagframe)
+function SceneObject.setAsepriteAnimation(sceneobject, aseprite, tag, tagframe, onend)
     tagframe = tagframe or 1
     sceneobject.aseprite = aseprite
     sceneobject.animation = tag
     sceneobject.animationframe = tagframe
     sceneobject.animationtime = 0
+    sceneobject.onanimationend = onend
     sceneobject.asepriteframe = aseprite:getAnimationFrame(tag, tagframe)
 end
-local setAsepriteAnimated = SceneObject.setAsepriteAnimated
+local setAsepriteAnimation = SceneObject.setAsepriteAnimation
 
-function SceneObject.changeAsepriteAnimation(sceneobject, tag, tagframe)
-    setAsepriteAnimated(sceneobject, sceneobject.aseprite, tag, tagframe)
+function SceneObject.changeAsepriteAnimation(sceneobject, tag, tagframe, onend)
+    setAsepriteAnimation(sceneobject, sceneobject.aseprite, tag, tagframe, onend)
 end
 
 function SceneObject.animateAseprite(sceneobject, dt)
@@ -22,7 +23,7 @@ function SceneObject.animateAseprite(sceneobject, dt)
         local aframe = sceneobject.animationframe
         local atime = sceneobject.animationtime
         local aseprite = sceneobject.aseprite
-        aframe, atime = aseprite:getAnimationUpdate(animation, aframe, atime, dt)
+        aframe, atime = aseprite:getAnimationUpdate(animation, aframe, atime, dt, sceneobject.onanimationend)
         sceneobject.animationframe = aframe
         sceneobject.animationtime = atime
         sceneobject.asepriteframe = aseprite:getAnimationFrame(animation, aframe)
@@ -60,7 +61,7 @@ function SceneObject.newAnimatedAseprite(aseprite, tag, tagframe, x, y, z, r, sx
     local sceneobject = new(drawAseprite, nil, nil, aseprite.width, aseprite.height,
                                         x, y, z, r, sx, sy, ox, oy, kx, ky)
     sceneobject.animate = animateAseprite
-    setAsepriteAnimated(sceneobject, aseprite, tag, tagframe)
+    setAsepriteAnimation(sceneobject, aseprite, tag, tagframe)
     return sceneobject
 end
 

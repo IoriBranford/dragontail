@@ -44,6 +44,7 @@ DATA STRUCTURE
 
 local LG = love.graphics
 local lg_draw = love.graphics.draw
+local type = type
 local pretty = require "pl.pretty"
 local json   = require "json"
 local Time   = require "System.Time"
@@ -58,7 +59,7 @@ local AnimationTimeUnits = {
     fixedupdates = Time.FixedUpdateRate / 1000
 }
 
-function Aseprite:getAnimationUpdate(tag, tagframe, t, dt)
+function Aseprite:getAnimationUpdate(tag, tagframe, t, dt, onend)
 	t = t + dt
 	local animation = self.animations[tag]
 	if not animation then
@@ -66,8 +67,18 @@ function Aseprite:getAnimationUpdate(tag, tagframe, t, dt)
 	end
 	local duration = self[animation[tagframe]].duration
 	while t >= duration do
+		if tagframe == #animation then
+			if type(onend) == "function" then
+				return onend(tag, tagframe, duration)
+			elseif onend == "stop" then
+				return tagframe, duration
+			else
+				tagframe = 1
+			end
+		else
+			tagframe = (tagframe + 1)
+		end
 		t = t - duration
-		tagframe = (tagframe == #animation) and 1 or (tagframe + 1)
 		duration = self[animation[tagframe]].duration
 	end
 	return tagframe, t
@@ -130,8 +141,8 @@ function Aseprite:setSpriteBatchFrame(spritebatch, frame)
 	end
 end
 
-function Aseprite:animateSpriteBatch(spritebatch, tag, tagframe, timer, dt)
-	local f, t = self:getAnimationUpdate(tag, tagframe, timer, dt)
+function Aseprite:animateSpriteBatch(spritebatch, tag, tagframe, timer, dt, loop)
+	local f, t = self:getAnimationUpdate(tag, tagframe, timer, dt, loop)
 	if tagframe ~= f then
 		self:setSpriteBatchFrame(spritebatch, self.animations[tag][f])
 	end
