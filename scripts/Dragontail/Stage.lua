@@ -23,7 +23,7 @@ function Stage.init(stagefile)
     scene:add(player)
 
     enemy = Character.new({
-        x = 480, y = 180, bodyradius = 16, type = "bandit-dagger", animation = "walk2", opponent = player
+        x = 480, y = 180, type = "bandit-dagger", opponent = player
     })
     enemy:addToScene(scene)
     enemy:startAi("stand", 60)
