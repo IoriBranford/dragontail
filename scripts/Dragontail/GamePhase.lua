@@ -13,6 +13,7 @@ function GamePhase.loadphase()
         local asepritefile = properties.asepritefile
         if asepritefile then Assets.get(asepritefile) end
     end)
+    Sheets.load("data/jam_animations.csv")
 
     Stage.init("data/jam_village.lua")
 end
