@@ -6,7 +6,13 @@ local resume = coroutine.resume
 local status = coroutine.status
 local wait = coroutine.wait
 local waitfor = coroutine.waitfor
+local distsq = math.distsq
 local pi = math.pi
+local floor = math.floor
+local atan2 = math.atan2
+local random = love.math.random
+local cos = math.cos
+local sin = math.sin
 local Ai = {}
 
 local function moveTo(self, destx, desty, speed)
@@ -23,15 +29,21 @@ function Ai:stand(duration)
     self.velx, self.vely = 0, 0
     local x, y = self.x, self.y
     local i = 1
+    local opponent = self.opponent
+    local oppox, oppoy
     waitfor(function()
-        local opponent = self.opponent
-        local destx, desty = opponent.x, opponent.y
-        local faceangle = math.atan2(desty - y, destx - x)
+        oppox, oppoy = opponent.x, opponent.y
+        local faceangle = atan2(oppoy - y, oppox - x)
         local standanimation = self.getDirectionalAnimation_angle("stand", faceangle)
         self.sprite:changeAsepriteAnimation(standanimation)
         i = i + 1
         return i > duration
     end)
+
+    local attackradius = (self.attackradius or 32) + opponent.bodyradius
+    if math.distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
+        return "attack"
+    end
     return "approach"
 end
 
@@ -40,38 +52,55 @@ function Ai:approach()
     local opponent = self.opponent
     local oppox, oppoy = opponent.x, opponent.y
     local tooppox, tooppoy = oppox - x, oppoy - y
-    local tooppoangle = math.atan2(tooppoy, tooppox)
+    local tooppoangle = atan2(tooppoy, tooppox)
 
     -- choose dest
-    local destanglefromoppo = tooppoangle + love.math.random(3)*pi/2
+    local destanglefromoppo = tooppoangle + random(3)*pi/2
     local attackradius = (self.attackradius or 32) + opponent.bodyradius
-    local destx = oppox + math.cos(destanglefromoppo) * attackradius
-    local desty = oppoy + math.sin(destanglefromoppo) * attackradius
+    local destx = oppox + cos(destanglefromoppo) * attackradius
+    local desty = oppoy + sin(destanglefromoppo) * attackradius
 
     -- choose animation
-    local todestangle = math.atan2(desty - y, destx - x)
+    local todestangle = atan2(desty - y, destx - x)
     local walkanimation = self.getDirectionalAnimation_angle("walk", todestangle)
     self.sprite:changeAsepriteAnimation(walkanimation)
 
-    moveTo(self, destx, desty, self.speed or 2)
-
-    -- oppox, oppoy = opponent.x, opponent.y
-    -- tooppox, tooppoy = oppox - x, oppoy - y
-    -- if math.distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
-    --     return "attack"
-    -- end
-    return "stand", 30
+    local speed = self.speed or 2
+    if distsq(x, y, oppox, oppoy) > 320*320 then
+        speed = speed * 1.5
+    end
+    moveTo(self, destx, desty, speed)
+    return "stand", 10
 end
 
 function Ai:attack()
-    -- throw attack
-    -- return to walk
+    self.velx, self.vely = 0, 0
+
+    local x, y = self.x, self.y
+    local opponent = self.opponent
+    local oppox, oppoy = opponent.x, opponent.y
+    local tooppox, tooppoy = oppox - x, oppoy - y
+    local tooppoangle = atan2(tooppoy, tooppox)
+
+    local animation = self.getDirectionalAnimation_angle("attackA", tooppoangle)
+    self.sprite:changeAsepriteAnimation(animation, 1, "stop")
+    wait(24)
+
+    self.attackangle = floor((tooppoangle + (pi/4)) / (pi/2)) * pi/2
+
+    animation = self.getDirectionalAnimation_angle("attackB", tooppoangle)
+    self.sprite:changeAsepriteAnimation(animation, 1, "stop")
+    wait(24)
+
+    self.attackangle = nil
+
+    return "stand", 20
 end
 
 function Ai:hurt()
-    while self.hitstun > 0 do
-        yield()
-    end
+    waitfor(function()
+        return self.hitstun <= 0
+    end)
     if self.health <= 0 then
         return "dizzy", 300
     else
