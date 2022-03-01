@@ -12,6 +12,10 @@ function SceneObject.setAsepriteAnimated(sceneobject, aseprite, tag, tagframe)
 end
 local setAsepriteAnimated = SceneObject.setAsepriteAnimated
 
+function SceneObject.changeAsepriteAnimation(sceneobject, tag, tagframe)
+    setAsepriteAnimated(sceneobject, sceneobject.aseprite, tag, tagframe)
+end
+
 function SceneObject.animateAseprite(sceneobject, dt)
     local animation = sceneobject.animation
     if animation then
