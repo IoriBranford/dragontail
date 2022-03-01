@@ -38,7 +38,7 @@ function Character:addToScene(scene)
     local aseprite = asepritefile and Assets.get(asepritefile)
     if aseprite then
         self.animation = self.animation or "stand1"
-        self.sprite = scene:addAnimatedAseprite(aseprite, self.animation, 1,
+        self.sprite = scene:addManualAnimatedAseprite(aseprite, self.animation, 1,
             self.x, self.y, self.z,
             0, 1, 1, self.spriteoriginx or 0, self.spriteoriginy or 0)
     end
@@ -77,12 +77,21 @@ function Character:updatePosition()
 end
 
 function Character:fixedupdate()
+    local sprite = self.sprite
     if self.hitstun > 0 then
         self.hitstun = self.hitstun - 1
+        if sprite then
+            sprite.ox = self.spriteoriginx + 2*math.sin(self.hitstun)
+        end
         return
     end
     self.x = self.x + self.velx
     self.y = self.y + self.vely
+    if sprite then
+        if sprite.animate then
+            sprite:animate(1)
+        end
+    end
 end
 
 function Character:rotateAttack(dangle)
