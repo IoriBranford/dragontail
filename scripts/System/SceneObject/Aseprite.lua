@@ -44,16 +44,16 @@ function SceneObject.setAseprite(sceneobject, aseprite, frame)
 end
 local setAseprite = SceneObject.setAseprite
 
-function SceneObject.newAseprite(id, aseprite, frame, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = new(id, drawAseprite, nil, nil, aseprite.width, aseprite.height,
+function SceneObject.newAseprite(aseprite, frame, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    local sceneobject = new(drawAseprite, nil, nil, aseprite.width, aseprite.height,
                                         x, y, z, r, sx, sy, ox, oy, kx, ky)
     sceneobject.animate = animateAseprite
     setAseprite(sceneobject, aseprite, frame)
     return sceneobject
 end
 
-function SceneObject.newAnimatedAseprite(id, aseprite, tag, tagframe, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = new(id, drawAseprite, nil, nil, aseprite.width, aseprite.height,
+function SceneObject.newAnimatedAseprite(aseprite, tag, tagframe, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    local sceneobject = new(drawAseprite, nil, nil, aseprite.width, aseprite.height,
                                         x, y, z, r, sx, sy, ox, oy, kx, ky)
     sceneobject.animate = animateAseprite
     setAsepriteAnimated(sceneobject, aseprite, tag, tagframe)

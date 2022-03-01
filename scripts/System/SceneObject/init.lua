@@ -1,6 +1,8 @@
 local SceneObject = {}
 SceneObject.__index = SceneObject
 
+local t_sort = table.sort
+
 local temptransform = love.math.newTransform()
 
 function SceneObject.__lt(a, b)
@@ -165,9 +167,8 @@ function SceneObject.updateGeneric(sceneobject, unit, fixedfrac)
 end
 local updateGeneric = SceneObject.updateGeneric
 
-function SceneObject.new(id, draw, drawable, quad, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky)
+function SceneObject.new(draw, drawable, quad, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky)
     local sceneobject = setmetatable({}, SceneObject)
-    sceneobject.id = id
     sceneobject.draw = draw
     sceneobject.drawable = drawable
     if type(drawable) == "string" then
@@ -197,8 +198,23 @@ function SceneObject.new(id, draw, drawable, quad, w, h, x, y, z, r, sx, sy, ox,
     return sceneobject
 end
 
-function SceneObject.newImage(id, image, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    return SceneObject.new(id, drawGeneric, image, nil, image:getWidth(), image:getHeight(), x, y, z, r, sx, sy, ox, oy, kx, ky)
+function SceneObject.newImage(image, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    return SceneObject.new(drawGeneric, image, nil, image:getWidth(), image:getHeight(), x, y, z, r, sx, sy, ox, oy, kx, ky)
+end
+
+function SceneObject.markRemove(sceneobject)
+    sceneobject.z = math.huge
+end
+
+function SceneObject.sortAndPruneObjects(sceneobjects, sort)
+    t_sort(sceneobjects, sort)
+    for i = #sceneobjects, 1, -1 do
+        local sceneobject = sceneobjects[i]
+        if sceneobject.z < math.huge then
+            break
+        end
+        sceneobjects[i] = nil
+    end
 end
 
 return SceneObject

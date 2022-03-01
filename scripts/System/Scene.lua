@@ -8,73 +8,71 @@ Scene.__index = Scene
 
 function Scene.new()
     local scene = {
-        byid = {},
         animating = {}
     }
     return setmetatable(scene, Scene)
 end
 
-function Scene:add(id, sceneobject)
-    self.byid[id] = sceneobject
+function Scene:add(sceneobject)
+    self[#self+1] = sceneobject
     return sceneobject
 end
 
 function Scene:addShapeObject(shapeobject)
     local sceneobject = SceneObject.newShapeObject(shapeobject)
-    return self:add(sceneobject.id, sceneobject)
+    return self:add(sceneobject)
 end
 
-function Scene:addChunk(id, chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = SceneObject.newChunk(id, chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    return self:add(id, sceneobject)
+function Scene:addChunk(chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    local sceneobject = SceneObject.newChunk(chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    return self:add(sceneobject)
 end
 
-function Scene:addAnimatedChunk(id, chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = SceneObject.newAnimatedChunk(id, chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    self.animating[id] = sceneobject
-    return self:add(id, sceneobject)
+function Scene:addAnimatedChunk(chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    local sceneobject = SceneObject.newAnimatedChunk(chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    self.animating[#self.animating+1] = sceneobject
+    return self:add(sceneobject)
 end
 
-function Scene:addTile(id, tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = SceneObject.newTile(id, tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    return self:add(id, sceneobject)
+function Scene:addTile(tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    local sceneobject = SceneObject.newTile(tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    return self:add(sceneobject)
 end
 
-function Scene:addAnimatedTile(id, tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = self:addTile(id, tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    self.animating[id] = sceneobject
+function Scene:addAnimatedTile(tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    local sceneobject = self:addTile(tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    self.animating[#self.animating+1] = sceneobject
     return sceneobject
 end
 
-function Scene:addAnimatedAseprite(id, aseprite, tag, tagframe, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = SceneObject.newAnimatedAseprite(id, aseprite, tag, tagframe or 1, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    self.animating[id] = sceneobject
-    return self:add(id, sceneobject)
+function Scene:addAnimatedAseprite(aseprite, tag, tagframe, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    local sceneobject = SceneObject.newAnimatedAseprite(aseprite, tag, tagframe or 1, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    self.animating[#self.animating+1] = sceneobject
+    return self:add(sceneobject)
 end
 
 function Scene:addTextObject(textobject)
     local sceneobject = SceneObject.newTextObject(textobject)
-    return self:add(sceneobject.id, sceneobject)
+    return self:add(sceneobject)
 end
 
-function Scene:addImage(id, image, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = SceneObject.newImage(id, image, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    return self:add(id, sceneobject)
+function Scene:addImage(image, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    local sceneobject = SceneObject.newImage(image, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    return self:add(sceneobject)
 end
 
 function Scene:addImageLayer(imagelayer)
     local sceneobject = SceneObject.newImageLayer(imagelayer)
-    return self:add(sceneobject.id, sceneobject)
+    return self:add(sceneobject)
 end
 
 function Scene:addTileLayer(tilelayer)
     local tilebatch = tilelayer.tilebatch
-    local id = 'l'..tilelayer.id
     local layerx = tilelayer.x
     local layery = tilelayer.y
     local layerz = tilelayer.z
     if tilebatch then
-        return {self:addAnimatedChunk(id, tilelayer, layerx, layery, layerz)}
+        return {self:addAnimatedChunk(tilelayer, layerx, layery, layerz)}
     end
     local chunks = tilelayer.chunks
     if chunks then
@@ -83,12 +81,11 @@ function Scene:addTileLayer(tilelayer)
         local sceneobjects = {}
         for i = 1, #chunks do
             local chunk = chunks[i]
-            local chunkid = id .. 'c' .. i
             local w = chunk.width * cellwidth
             local h = chunk.height * cellheight
             local cx = chunk.x * cellwidth
             local cy = chunk.y * cellheight
-            sceneobjects[i] = self:addAnimatedChunk(chunkid, chunk, layerx+cx, layery+cy, layerz)
+            sceneobjects[i] = self:addAnimatedChunk(chunk, layerx+cx, layery+cy, layerz)
         end
         return sceneobjects
     end
@@ -96,13 +93,12 @@ end
 
 function Scene:addTileObject(tileobject)
     local tile = tileobject.tile
-    local id = tileobject.id
     local x = tileobject.x
     local y = tileobject.y
     local z = tileobject.z
     local sprite = tileobject.animated == false
-        and self:addTile(id, tile, x, y, z, tileobject.rotation, tileobject.scalex, tileobject.scaley)
-        or self:addAnimatedTile(id, tile, x, y, z, tileobject.rotation, tileobject.scalex, tileobject.scaley)
+        and self:addTile(tile, x, y, z, tileobject.rotation, tileobject.scalex, tileobject.scaley)
+        or self:addAnimatedTile(tile, x, y, z, tileobject.rotation, tileobject.scalex, tileobject.scaley)
     local color = tileobject.color
     if color then
         sprite.red, sprite.green, sprite.blue, sprite.alpha = Color.unpack(color)
@@ -148,31 +144,20 @@ function Scene:addMap(map, layerfilter)
     addLayers(map.layers)
 end
 
-function Scene:addTileParticles(id, tile, z)
-    local sceneobject = SceneObject.newTileParticles(id, tile, z)
-    self.animating[id] = sceneobject
-    return self:add(sceneobject.id, sceneobject)
+function Scene:addTileParticles(tile, z)
+    local sceneobject = SceneObject.newTileParticles(tile, z)
+    self.animating[self.animating+1] = sceneobject
+    return self:add(sceneobject)
 end
 
 function Scene:addTileParticlesObject(object)
-    return self:addTileParticles(object.id, object.tile, object.z)
-end
-
-function Scene:get(id)
-    return self.byid[id]
-end
-
-function Scene:remove(id)
-    self.byid[id] = nil
-    self.animating[id] = nil
+    return self:addTileParticles(object.tile, object.z)
 end
 
 function Scene:clear()
-    local byid = self.byid
     local animating = self.animating
-    for id, _ in pairs(byid) do
-        byid[id] = nil
-        animating[id] = nil
+    for i = #animating, 1, -1 do
+        animating[i] = nil
     end
     for i = #self, 1, -1 do
         self[i] = nil
@@ -199,44 +184,22 @@ function Scene:updateFromBody(id, body, fixedfrac)
     end
 end
 
+local sortAndPrune = SceneObject.sortAndPruneObjects
+
+local function sortAnimated(a, b)
+    return a.z ~= math.huge and b.z == math.huge
+end
+
 function Scene:animate(dt)
-    for id, sceneobject in pairs(self.animating) do
-        sceneobject:animate(dt)
+    local animating = self.animating
+    sortAndPrune(animating, sortAnimated)
+    for i = 1, #animating do
+        animating[i]:animate(dt)
     end
 end
 
--- local sqrt2 = math.sqrt(2)
 function Scene:draw()
-    -- local viewr = viewx + vieww
-    -- local viewb = viewy + viewh
-    local count = 0
-    for id, sceneobject in pairs(self.byid) do
-        -- local x = sceneobject.x
-        -- local y = sceneobject.y
-        -- local ox = sceneobject.ox
-        -- local oy = sceneobject.oy
-        -- local sx = sceneobject.sx
-        -- local sy = sceneobject.sy
-        -- local sxsqrt2 = sx*sqrt2
-        -- local sysqrt2 = sy*sqrt2
-        -- local l = x - sxsqrt2*ox
-        -- local t = y - sysqrt2*oy
-        -- local r = l + sxsqrt2*sceneobject.w
-        -- local b = t + sysqrt2*sceneobject.h
-        -- l, r = math.min(l, r), math.max(l, r)
-        -- t, b = math.min(t, b), math.max(t, b)
-        -- if r > viewx and viewr > l and b > viewy and viewb > t then
-        if not sceneobject.hidden then
-            count = count + 1
-            self[count] = sceneobject
-        end
-        -- end
-    end
-    for i = #self, count+1, -1 do
-        self[i] = nil
-    end
-    table.sort(self)
-
+    sortAndPrune(self)
     for i = 1, #self do
         self[i]:draw()
     end

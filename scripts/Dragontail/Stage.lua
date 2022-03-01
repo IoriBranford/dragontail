@@ -21,14 +21,14 @@ function Stage.init(stagefile)
     enemy = Character.new({
         x = 480, y = 180, bodyradius = 16
     })
-    scene:add(1, player)
+    scene:add(player)
     lasttargetvelx = 0
     lasttargetvely = 0
     local bounds = map.layers.bounds
     currentbounds = bounds and bounds.stagebounds or {0, 0, 640, 360}
 
     local enemyaseprite = Aseprite.load("data/sprites/bandit-dagger.json")
-    scene:addAnimatedAseprite(2, enemyaseprite, "walk2", 1, enemy.x, enemy.y, 0, 0, 1, 1, 32, 48)
+    enemy.aseprite = scene:addAnimatedAseprite(enemyaseprite, "walk2", 1, enemy.x, enemy.y, 0, 0, 1, 1, 32, 48)
 end
 
 function Stage.quit()
