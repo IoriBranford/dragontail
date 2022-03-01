@@ -156,10 +156,10 @@ end
 local drawGeneric = SceneObject.drawGeneric
 
 function SceneObject.updateGeneric(sceneobject, unit, fixedfrac)
-    local vx, vy, vz = unit.velx, unit.vely, unit.velz or 0
-    local av = unit.avel
+    local vx, vy, vz = unit.velx or 0, unit.vely or 0, unit.velz or 0
+    local av = unit.avel or 0
     local x, y, z = unit.x, unit.y, unit.z
-    local r = unit.rotation
+    local r = unit.rotation or 0
     sceneobject.x = x + vx * fixedfrac
     sceneobject.y = y + vy * fixedfrac
     sceneobject.z = z + vz * fixedfrac
