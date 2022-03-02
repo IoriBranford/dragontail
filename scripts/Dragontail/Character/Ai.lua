@@ -167,7 +167,7 @@ function Ai:spin(dirx, diry)
     self.sprite:changeAsepriteAnimation("spin")
     local knockedspeed = self.knockedspeed or 8
     self.velx, self.vely = dirx*knockedspeed, diry*knockedspeed
-    self.attackangle = 0
+    self.attackangle = nil
     local bounds = self.bounds
     waitfor(function()
         local oobx, ooby = self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
