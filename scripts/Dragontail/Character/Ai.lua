@@ -53,11 +53,9 @@ function Ai:approach()
     local x, y = self.x, self.y
     local opponent = self.opponent
     local oppox, oppoy = opponent.x, opponent.y
-    local tooppox, tooppoy = oppox - x, oppoy - y
-    local tooppoangle = atan2(tooppoy, tooppox)
 
     -- choose dest
-    local destanglefromoppo = tooppoangle + random(3)*pi/2
+    local destanglefromoppo = random(4)*pi/2
     local attackradius = (self.attackradius or 32) + opponent.bodyradius
     local destx = oppox + cos(destanglefromoppo) * attackradius
     local desty = oppoy + sin(destanglefromoppo) * attackradius
