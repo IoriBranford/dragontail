@@ -1,3 +1,3 @@
-attack,windupsound,swingsound,hitsound
-bandit-dagger-attack,sounds/man_light/attack1.mp3,sounds/combat/swing1.mp3,sounds/combat/cut.mp3
-bandit-spear-attack,sounds/man_medium/attack1.mp3,sounds/combat/swingblade.mp3,sounds/combat/cut.mp3
+attack,attackradius,attackarc,attackdamage,attackstun,windupsound,swingsound,hitsound
+bandit-dagger-attack,32,0.785398163397448,10,10,sounds/man_light/attack1.mp3,sounds/combat/swing1.mp3,sounds/combat/cut.mp3
+bandit-spear-attack,48,0.196349540849362,10,10,sounds/man_medium/attack1.mp3,sounds/combat/swingblade.mp3,sounds/combat/cut.mp3

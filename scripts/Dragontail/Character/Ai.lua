@@ -42,6 +42,8 @@ function Ai:stand(duration)
         return i > duration
     end)
 
+    local attackname = "attack" -- TODO decide between multiple
+    Sheets.fill(self, self.type.."-"..attackname)
     local attackradius = (self.attackradius or 32) + opponent.bodyradius
     if math.distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
         return "attack"
@@ -82,18 +84,13 @@ function Ai:attack(attackname)
     local oppox, oppoy = opponent.x, opponent.y
     local tooppox, tooppoy = oppox - x, oppoy - y
     local tooppoangle = atan2(tooppoy, tooppox)
-    local attackproperties = Sheets.get(self.type.."-"..attackname)
-    if attackproperties then
-        Audio.play(attackproperties.windupsound)
-    end
+    Audio.play(self.windupsound)
 
     local animation = self.getDirectionalAnimation_angle(attackname.."A", tooppoangle)
     self.sprite:changeAsepriteAnimation(animation, 1, "stop")
     wait(24)
 
-    if attackproperties then
-        Audio.play(attackproperties.swingsound)
-    end
+    Audio.play(self.swingsound)
     self.attackangle = floor((tooppoangle + (pi/4)) / (pi/2)) * pi/2
 
     animation = self.getDirectionalAnimation_angle(attackname.."B", tooppoangle)

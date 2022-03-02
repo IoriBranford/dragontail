@@ -1,3 +1,3 @@
-type,asepritefile,spriteoriginx,spriteoriginy,health,bodyradius,speed,attackradius,attackarc,attackdamage,attackstun
-bandit-dagger,sprites/bandit-dagger.jase,32,56,50,16,2,24,0.523598775598299,10,10
-bandit-spear,sprites/bandit-spear.jase,48,72,50,16,3,48,0.196349540849362,10,10
+type,asepritefile,spriteoriginx,spriteoriginy,health,bodyradius,speed
+bandit-dagger,sprites/bandit-dagger.jase,32,56,50,16,2
+bandit-spear,sprites/bandit-spear.jase,48,72,50,16,3
