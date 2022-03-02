@@ -41,11 +41,6 @@ function love.load(args)
 
     -- Wallpaper.load()
 
-    local files = love.filesystem.getDirectoryItems("data/sounds/")
-    for _, file in ipairs(files) do
-        Audio.load("sounds/"..file)
-    end
-
     local stagestart = args.stagestart
     love.event.loadphase(firstphase, firstmap, stagestart)
 end

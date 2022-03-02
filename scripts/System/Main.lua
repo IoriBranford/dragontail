@@ -95,7 +95,7 @@ function love.quit()
     if love.quitphase then
         love.quitphase()
     end
-    Audio.clear()
+    Audio.stop()
     Config.save()
 	if profile then
 		local filename = os.date("profile_%Y-%m-%d_%H-%M-%S")..".txt"

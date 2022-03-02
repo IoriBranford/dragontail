@@ -1,47 +1,18 @@
 local Config = require "System.Config"
-local Cache = require "Data.Cache"
-local Audio = {}
-local GameMusicEmu = require "GameMusicEmu"
+local Assets = require "System.Assets"
 
-local clips = Cache.new("data/")
+local Audio = {}
+
 local music
 local musicfadespeed = 0
 
-local types = {
-    ogg = true,
-    mp3 = true,
-    wav = true,
-    xm = true,
-    it = true,
-    s3m = true,
-    mod = true
-}
-
-function Audio.clear()
+function Audio.stop()
     Audio.stopMusic()
     love.audio.stop()
-    clips:clear()
-end
-
-function Audio.isAudioFile(file)
-    return types[string.match(file, "%.(%w+)$")]
-end
-
-function Audio.load(file, mode)
-    if not file then
-        return
-    end
-    local clip
-    if GameMusicEmu and GameMusicEmu.isSupported(file) then
-        clip = clips:load(GameMusicEmu.new, file)
-    elseif Audio.isAudioFile(file) then
-        clip = clips:load(love.audio.newSource, file, mode or "static")
-    end
-    return clip
 end
 
 function Audio.play(file, track)
-    local clip = clips[file] or Audio.load(file)
+    local clip = Assets.get(file)
     if clip then
         clip:stop()
         clip:play(track)
