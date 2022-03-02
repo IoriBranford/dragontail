@@ -1,6 +1,8 @@
 local DataCache = {}
 DataCache.__index = DataCache
 
+local lfs_getInfo = love.filesystem.getInfo
+
 function DataCache.new(root)
     root = root or './'
     local info = love.filesystem.getInfo(root, "directory")
@@ -15,7 +17,11 @@ function DataCache.new(root)
 end
 
 function DataCache:load(loader, file, ...)
-    local asset = loader(self.root..file, ...)
+    local rootfile = self.root..file
+    if not lfs_getInfo(rootfile) then
+        error("File not found "..rootfile)
+    end
+    local asset = loader(rootfile, ...)
     self[file] = asset
     return asset
 end
