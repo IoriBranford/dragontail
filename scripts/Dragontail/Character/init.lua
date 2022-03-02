@@ -3,6 +3,7 @@ local Assets      = require "System.Assets"
 local Sheets      = require "Data.Sheets"
 local Audio       = require "System.Audio"
 local pi = math.pi
+local abs = math.abs
 local floor = math.floor
 
 local Character = {}
@@ -91,11 +92,13 @@ function Character:updatePosition()
 end
 
 function Character:fixedupdate()
-    self:runAi()
     if self.hitstun > 0 then
         self.hitstun = self.hitstun - 1
-        return
+        if self.hitstun > 0 then
+            return
+        end
     end
+    self:runAi()
     self.x = self.x + self.velx
     self.y = self.y + self.vely
     local sprite = self.sprite
@@ -115,12 +118,12 @@ function Character:update(dsecs, fixedfrac)
 end
 
 function Character:rotateAttack(dangle)
-    dangle = math.fmod(dangle + 3*math.pi, 2*math.pi) - math.pi
+    dangle = math.fmod(dangle + 3*pi, 2*pi) - pi
     self.attackangle = self.attackangle + dangle
 end
 
 function Character:rotateAttackTowards(targetangle, turnspeed)
-    local dangle = math.fmod(targetangle - self.attackangle + 3*math.pi, 2*math.pi) - math.pi
+    local dangle = math.fmod(targetangle - self.attackangle + 3*pi, 2*pi) - pi
     dangle = math.max(-turnspeed, math.min(turnspeed, dangle))
     self.attackangle = self.attackangle + dangle
 end
@@ -147,6 +150,9 @@ function Character:keepInBounds(bx, by, bw, bh, bounce)
 end
 
 function Character:collideWithCharacterBody(other)
+    if other.health < 0 then
+        return
+    end
     local dx, dy = self.x - other.x, self.y - other.y
     local distsq = math.lensq(dx, dy)
     local radii = self.bodyradius + other.bodyradius
@@ -160,7 +166,7 @@ function Character:collideWithCharacterBody(other)
 end
 
 function Character:collideWithCharacterAttack(other)
-    if self.hitstun > 0 then
+    if self.hitstun > 0 or self.health < 0 then
         return
     end
     local attackangle = other.attackangle
@@ -176,9 +182,20 @@ function Character:collideWithCharacterAttack(other)
         local attackx, attacky = math.cos(attackangle), math.sin(attackangle)
         local dot = math.dot(dx, dy, attackx, attacky)
         if dot >= dist * math.cos(other.attackarc/2) then
-            self.health = self.health - other.attackdamage
-            self.hitstun = other.attackstun
             Audio.play(other.hitsound)
+            if self.health == 0 then
+                self.health = -1
+                self:startAi(self.defeatai or "defeat")
+            else
+                self.health = self.health - other.attackdamage
+                self.hitstun = other.attackstun
+                if self.health <= 0 then
+                    self.health = 0
+                    self:startAi(self.stunai or "stun")
+                else
+                    self:startAi(self.hurtai or "hurt", self.hurtrecoverai)
+                end
+            end
             return true
         end
     end
@@ -199,6 +216,13 @@ function Character:draw()
         love.graphics.arc("fill", self.x, self.y, self.attackradius, self.attackangle - self.attackarc/2, self.attackangle + self.attackarc/2)
     end
     love.graphics.setColor(1,1,1)
+end
+
+function Character:disappear()
+    self.disappeared = true
+    if self.sprite then
+        self.sprite:markRemove()
+    end
 end
 
 return Character

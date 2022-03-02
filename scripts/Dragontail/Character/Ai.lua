@@ -57,6 +57,7 @@ function Ai:playerControl()
 end
 
 function Ai:stand(duration)
+    duration = duration or 60
     self.velx, self.vely = 0, 0
     local x, y = self.x, self.y
     local i = 1
@@ -131,27 +132,36 @@ function Ai:attack(attackname)
     return "stand", 20
 end
 
-function Ai:hurt()
-    waitfor(function()
-        return self.hitstun <= 0
-    end)
-    if self.health <= 0 then
-        return "dizzy", 300
-    else
-        return "stand", 60
-    end
+function Ai:hurt(recoverai)
+    self.attackangle = nil
+    yield()
+    return recoverai
 end
 
-function Ai:dizzy(duration)
+function Ai:stun(duration)
+    self.attackangle = nil
+    self.velx, self.vely = 0, 0
+    self.sprite:changeAsepriteAnimation("collapseA", 1, "stop")
+    Audio.play(self.stunsound)
+    duration = duration or 120
     wait(duration)
-    return "defeat"
+    return "defeat", "collapseB"
 end
 
 function Ai:spin()
+    self.attackangle = nil
+    self.sprite:changeAsepriteAnimation("spin")
 end
 
-function Ai:defeat()
-    -- remove self
+function Ai:defeat(defeatanimation)
+    self.attackangle = nil
+    self.velx, self.vely = 0, 0
+    self.sprite:changeAsepriteAnimation(defeatanimation or "collapse", 1, "stop")
+    Audio.play(self.defeatsound)
+    wait(12)
+    Audio.play(self.bodydropsound)
+    wait(60)
+    self:disappear()
 end
 
 function Character:startAi(ainame, ...)
