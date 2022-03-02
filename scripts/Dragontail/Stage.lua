@@ -13,6 +13,9 @@ function Stage.init(stagefile)
     scene = Scene.new()
 
     local map = Tiled.load(stagefile)
+    local bounds = map.layers.bounds
+    currentbounds = bounds and bounds.roombounds1 or {0, 0, 640, 360}
+
     scene:addMap(map, "group,tilelayer")
 
     player = Character.new({
@@ -34,13 +37,11 @@ function Stage.init(stagefile)
     for i, e in ipairs(firstenemies) do
         local enemy = Character.new(e)
         enemy.opponent = player
+        enemy.bounds = currentbounds
         enemy:addToScene(scene)
         enemy:startAi("stand", 60)
         enemies[#enemies+1] = enemy
     end
-
-    local bounds = map.layers.bounds
-    currentbounds = bounds and bounds.stagebounds or {0, 0, 640, 360}
 end
 
 function Stage.quit()

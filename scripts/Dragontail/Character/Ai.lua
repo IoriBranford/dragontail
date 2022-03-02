@@ -90,12 +90,20 @@ function Ai:approach()
     local x, y = self.x, self.y
     local opponent = self.opponent
     local oppox, oppoy = opponent.x, opponent.y
+    local bodyradius = self.bodyradius
+    local bounds = self.bounds
+    local minx, miny = bounds.x + bodyradius, bounds.y + bodyradius
+    local maxx, maxy = bounds.x + bounds.width - bodyradius, bounds.y + bounds.height - bodyradius
 
     -- choose dest
     local destanglefromoppo = random(4)*pi/2
     local attackradius = (self.attackradius or 32) + opponent.bodyradius
-    local destx = oppox + cos(destanglefromoppo) * attackradius
-    local desty = oppoy + sin(destanglefromoppo) * attackradius
+    local destx, desty
+    repeat
+        destx = oppox + cos(destanglefromoppo) * attackradius
+        desty = oppoy + sin(destanglefromoppo) * attackradius
+        destanglefromoppo = destanglefromoppo + pi/2
+    until minx <= destx and destx <= maxx and miny <= desty and desty <= maxy and destanglefromoppo <= pi*4
 
     -- choose animation
     local todestangle = atan2(desty - y, destx - x)
@@ -154,9 +162,13 @@ function Ai:stun(duration)
     return "defeat", "collapseB"
 end
 
-function Ai:spin()
-    self.attackangle = nil
+function Ai:spin(velx, vely)
     self.sprite:changeAsepriteAnimation("spin")
+    -- self.velx, self.vely = velx, vely
+    -- self.attackangle = 0
+    -- waitfor(function()
+    --     return self.velx == 0 and self.vely == 0
+    -- end)
 end
 
 function Ai:defeat(defeatanimation)
