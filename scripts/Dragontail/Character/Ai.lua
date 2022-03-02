@@ -52,6 +52,11 @@ function Ai:playerControl()
         else
             self.attackangle = nil
         end
+        if velx ~= 0 or vely ~= 0 then
+            self.sprite:changeAsepriteAnimation("run2")
+        else
+            self.sprite:changeAsepriteAnimation("stand2")
+        end
         yield()
     end
 end

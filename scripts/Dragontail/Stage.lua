@@ -19,7 +19,7 @@ function Stage.init(stagefile)
         x = 160, y = 180, type = "Rose"
     })
     Sheets.fill(player, "Rose-attack")
-    scene:add(player)
+    player:addToScene(scene)
     player:startAi("playerControl")
 
     local firstenemies = {
