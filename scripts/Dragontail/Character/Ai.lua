@@ -1,5 +1,7 @@
 local Character = require "Dragontail.Character"
 local Movement  = require "Object.Movement"
+local Audio     = require "System.Audio"
+local Sheets    = require "Data.Sheets"
 local co_create = coroutine.create
 local yield = coroutine.yield
 local resume = coroutine.resume
@@ -73,7 +75,8 @@ function Ai:approach()
     return "stand", 10
 end
 
-function Ai:attack()
+function Ai:attack(attackname)
+    attackname = attackname or "attack"
     self.velx, self.vely = 0, 0
 
     local x, y = self.x, self.y
@@ -81,14 +84,21 @@ function Ai:attack()
     local oppox, oppoy = opponent.x, opponent.y
     local tooppox, tooppoy = oppox - x, oppoy - y
     local tooppoangle = atan2(tooppoy, tooppox)
+    local attackproperties = Sheets.get(self.type.."-"..attackname)
+    if attackproperties then
+        Audio.play(attackproperties.windupsound)
+    end
 
-    local animation = self.getDirectionalAnimation_angle("attackA", tooppoangle)
+    local animation = self.getDirectionalAnimation_angle(attackname.."A", tooppoangle)
     self.sprite:changeAsepriteAnimation(animation, 1, "stop")
     wait(24)
 
+    if attackproperties then
+        Audio.play(attackproperties.swingsound)
+    end
     self.attackangle = floor((tooppoangle + (pi/4)) / (pi/2)) * pi/2
 
-    animation = self.getDirectionalAnimation_angle("attackB", tooppoangle)
+    animation = self.getDirectionalAnimation_angle(attackname.."B", tooppoangle)
     self.sprite:changeAsepriteAnimation(animation, 1, "stop")
     wait(24)
 
@@ -126,8 +136,12 @@ function Character:startAi(ainame, ...)
         error("No AI function "..ainame)
     end
     local ai = co_create(f)
+    local ok, msg = resume(ai, self, ...)
+    assert(ok, msg)
+    if status(ai) == "dead" then
+        ai = nil
+    end
     self.ai = ai
-    resume(ai, self, ...)
 end
 
 function Character:runAi()
