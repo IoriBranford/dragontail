@@ -1,6 +1,7 @@
 local Sheets = {}
 local Audio = require "System.Audio"
 local Csv   = require "Data.Csv"
+local type = type
 
 local sheets = {}
 
@@ -28,6 +29,10 @@ function Sheets.load(csvfilename)
     return loaded
 end
 
+function Sheets.get(key)
+    return sheets[key]
+end
+
 function Sheets.clear()
     sheets = {}
 end
@@ -38,7 +43,7 @@ local function set(unit, k, v)
 end
 
 function Sheets.fillBlanks(unit, key)
-    local sheet = sheets[key]
+    local sheet = type(key) == "table" and key or sheets[key]
     if sheet then
         for k,v in pairs(sheet) do
             if unit[k] == nil then
@@ -49,7 +54,7 @@ function Sheets.fillBlanks(unit, key)
 end
 
 function Sheets.fill(unit, key)
-    local sheet = sheets[key]
+    local sheet = type(key) == "table" and key or sheets[key]
     if sheet then
         for k,v in pairs(sheet) do
             set(unit, k, v)
