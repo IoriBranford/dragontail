@@ -14,7 +14,9 @@ end
 local setAsepriteAnimation = SceneObject.setAsepriteAnimation
 
 function SceneObject.changeAsepriteAnimation(sceneobject, tag, tagframe, onend)
-    setAsepriteAnimation(sceneobject, sceneobject.aseprite, tag, tagframe, onend)
+    if tag ~= sceneobject.animation then
+        setAsepriteAnimation(sceneobject, sceneobject.aseprite, tag, tagframe, onend)
+    end
 end
 
 function SceneObject.animateAseprite(sceneobject, dt)
