@@ -45,6 +45,9 @@ function Assets.isAsset(path)
 end
 
 function Assets.load(path, ...)
+    if type(path) ~= "string" then
+        return
+    end
     local ext = path:match("%.(%w-)$")
     local loader = loaders[ext] or lfs_read
     return cache:load(loader, path, ...)
