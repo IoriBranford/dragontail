@@ -187,7 +187,6 @@ function love.run()
             for i = 1, numfixed do
                 love.fixedupdate()
                 Controls.clearButtonsPressed()
-                collectgarbage("step", 1)
             end
         end
 
@@ -216,7 +215,7 @@ function love.run()
             love.graphics.present()
         end
 
-        collectgarbage("step", 2)
+        collectgarbage("step", 1)
         if love.timer then
             love.timer.sleep(0.001)
         end
