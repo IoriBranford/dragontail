@@ -128,25 +128,36 @@ function Character:rotateAttackTowards(targetangle, turnspeed)
     self.attackangle = self.attackangle + dangle
 end
 
-function Character:keepInBounds(bx, by, bw, bh, bounce)
-    bounce = bounce or 0
+function Character:getBoundsPenetration(bx, by, bw, bh)
     local x, y = self.x, self.y
     local bodyradius = self.bodyradius
     local dx, dy, dw, dh = x - bx, y - by, bw - bodyradius, bh - bodyradius
+    local penex, peney
     if dx < bodyradius then
-        self.x = bx + bodyradius
-        self.velx = bounce * -self.velx
+        penex = dx - bodyradius
     elseif dx > dw then
-        self.x = bx + dw
-        self.velx = bounce * -self.velx
+        penex = dx - dw
     end
     if dy < bodyradius then
-        self.y = by + bodyradius
-        self.vely = bounce * -self.vely
+        peney = dy - bodyradius
     elseif dy > dh then
-        self.y = by + dh
+        peney = dy - dh
+    end
+    return penex, peney
+end
+
+function Character:keepInBounds(bx, by, bw, bh, bounce)
+    local penex, peney = self:getBoundsPenetration(bx, by, bw, bh)
+    bounce = bounce or 0
+    if penex then
+        self.x = self.x - penex
+        self.velx = bounce * -self.velx
+    end
+    if peney then
+        self.y = self.y - peney
         self.vely = bounce * -self.vely
     end
+    return penex, peney
 end
 
 function Character:collideWithCharacterBody(other)
@@ -182,10 +193,14 @@ function Character:collideWithCharacterAttack(other)
         local attackx, attacky = math.cos(attackangle), math.sin(attackangle)
         local dot = math.dot(dx, dy, attackx, attacky)
         if dot >= dist * math.cos(other.attackarc/2) then
-            Audio.play(other.hitsound)
+            local sound = other.hitsound
             if self.health == 0 then
-                self.health = -1
-                self:startAi(self.defeatai or "defeat")
+                sound = other.knockoutsound or sound
+                if self.knockedai then
+                    self:startAi(self.knockedai, attackx, attacky)
+                else
+                    self:startAi(self.defeatai or "defeat")
+                end
             else
                 self.health = self.health - other.attackdamage
                 self.hitstun = other.attackstun
@@ -196,6 +211,7 @@ function Character:collideWithCharacterAttack(other)
                     self:startAi(self.hurtai or "hurt", self.hurtrecoverai)
                 end
             end
+            Audio.play(sound)
             return true
         end
     end

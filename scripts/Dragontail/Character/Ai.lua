@@ -162,13 +162,21 @@ function Ai:stun(duration)
     return "defeat", "collapseB"
 end
 
-function Ai:spin(velx, vely)
+function Ai:spin(dirx, diry)
+    self.health = -1
     self.sprite:changeAsepriteAnimation("spin")
-    -- self.velx, self.vely = velx, vely
-    -- self.attackangle = 0
-    -- waitfor(function()
-    --     return self.velx == 0 and self.vely == 0
-    -- end)
+    local knockedspeed = self.knockedspeed or 8
+    self.velx, self.vely = dirx*knockedspeed, diry*knockedspeed
+    self.attackangle = 0
+    local bounds = self.bounds
+    waitfor(function()
+        local oobx, ooby = self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+        return oobx or ooby
+    end)
+    Audio.play(self.bodyslamsound)
+    self.hitstun = self.wallslamstun or 20
+    yield()
+    return "defeat"
 end
 
 function Ai:defeat(defeatanimation)

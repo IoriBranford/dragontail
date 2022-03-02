@@ -1,4 +1,4 @@
-type,asepritefile,spriteoriginx,spriteoriginy,health,bodyradius,speed,initialai,hurtai,hurtrecoverai,stunai,knockedawayai,defeatai,hurtsound,stunsound,defeatsound,bodydropsound
-Rose,sprites/rose.jase,32,56,100,16,,playerControl,hurt,playerControl,,,,sounds/player/damage1.mp3,sounds/player/damage3.mp3,sounds/player/defeat.mp3,sounds/combat/bodydrop.mp3
-bandit-dagger,sprites/bandit-dagger.jase,32,48,50,16,2,stand,hurt,stand,stun,spin,defeat,,sounds/man_light/damage1.mp3,sounds/man_light/damage2.mp3,sounds/combat/bodydrop.mp3
-bandit-spear,sprites/bandit-spear.jase,48,96,50,16,3,stand,hurt,stand,stun,spin,defeat,,sounds/man_medium/damage1.mp3,sounds/man_medium/damage2.mp3,sounds/combat/bodydrop.mp3
+type,asepritefile,spriteoriginx,spriteoriginy,health,bodyradius,speed,initialai,hurtai,hurtrecoverai,stunai,knockedai,knockedspeed,defeatai,hurtsound,stunsound,defeatsound,bodydropsound,bodyslamsound
+Rose,sprites/rose.jase,32,56,100,16,,playerControl,hurt,playerControl,,,,,sounds/player/damage1.mp3,sounds/player/damage3.mp3,sounds/player/defeat.mp3,sounds/combat/bodydrop.mp3,sounds/combat/bodyslam.mp3
+bandit-dagger,sprites/bandit-dagger.jase,32,48,50,16,2,stand,hurt,stand,stun,spin,8,defeat,,sounds/man_light/damage1.mp3,sounds/man_light/damage2.mp3,sounds/combat/bodydrop.mp3,sounds/combat/bodyslam.mp3
+bandit-spear,sprites/bandit-spear.jase,48,96,50,16,3,stand,hurt,stand,stun,spin,8,defeat,,sounds/man_medium/damage1.mp3,sounds/man_medium/damage2.mp3,sounds/combat/bodydrop.mp3,sounds/combat/bodyslam.mp3
