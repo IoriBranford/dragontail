@@ -60,6 +60,7 @@ function Stage.fixedupdate()
     player:fixedupdate()
     enemy:fixedupdate()
     player:collideWithCharacterBody(enemy)
+    player:collideWithCharacterAttack(enemy)
     player:keepInBounds(currentbounds.x, currentbounds.y, currentbounds.width, currentbounds.height)
 
     if player.attackangle then

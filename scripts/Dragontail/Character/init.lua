@@ -1,6 +1,7 @@
 local SceneObject = require "System.SceneObject"
 local Assets      = require "System.Assets"
 local Sheets      = require "Data.Sheets"
+local Audio       = require "System.Audio"
 local pi = math.pi
 local floor = math.floor
 
@@ -49,6 +50,11 @@ function Character:addToScene(scene)
         self.sprite = scene:addManualAnimatedAseprite(aseprite, self.animation, 1,
             self.x, self.y, self.z,
             0, 1, 1, self.spriteoriginx or 0, self.spriteoriginy or 0)
+        local baseDraw = self.sprite.draw
+        self.sprite.draw = function(sprite)
+            baseDraw(sprite)
+            self:draw()
+        end
     end
 end
 
@@ -172,6 +178,7 @@ function Character:collideWithCharacterAttack(other)
         if dot >= dist * math.cos(other.attackarc/2) then
             self.health = self.health - other.attackdamage
             self.hitstun = other.attackstun
+            Audio.play(other.hitsound)
             return true
         end
     end
