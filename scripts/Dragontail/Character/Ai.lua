@@ -2,12 +2,14 @@ local Character = require "Dragontail.Character"
 local Movement  = require "Object.Movement"
 local Audio     = require "System.Audio"
 local Sheets    = require "Data.Sheets"
+local Controls  = require "System.Controls"
 local co_create = coroutine.create
 local yield = coroutine.yield
 local resume = coroutine.resume
 local status = coroutine.status
 local wait = coroutine.wait
 local waitfor = coroutine.waitfor
+local norm = math.norm
 local distsq = math.distsq
 local pi = math.pi
 local floor = math.floor
@@ -15,6 +17,8 @@ local atan2 = math.atan2
 local random = love.math.random
 local cos = math.cos
 local sin = math.sin
+local dot = math.dot
+local len = math.len
 local Ai = {}
 
 local function moveTo(self, destx, desty, speed)
@@ -25,6 +29,31 @@ local function moveTo(self, destx, desty, speed)
         end
         self.velx, self.vely = Movement.getVelocity_speed(x, y, destx, desty, speed)
     end)
+end
+
+function Ai:playerControl()
+    while true do
+        local targetvelx, targetvely = Controls.getDirectionInput()
+        local b1, b2 = Controls.getButtonsDown()
+        local speed = b2 and 4 or 8
+        if targetvelx ~= 0 or targetvely ~= 0 then
+            targetvelx, targetvely = norm(targetvelx, targetvely)
+            targetvelx = targetvelx * speed
+            targetvely = targetvely * speed
+        end
+
+        self:accelerateTowardsVel(targetvelx, targetvely, b2 and 8 or 16)
+
+        local velx, vely = self.velx, self.vely
+        local veldot = dot(velx, vely, targetvelx, targetvely)
+        if (targetvelx ~= 0 or targetvely ~= 0)
+        and veldot <= len(velx, vely) * speed * cos(pi/4) then
+            self.attackangle = atan2(-targetvely, -targetvelx)
+        else
+            self.attackangle = nil
+        end
+        yield()
+    end
 end
 
 function Ai:stand(duration)
@@ -45,7 +74,7 @@ function Ai:stand(duration)
     local attackname = "attack" -- TODO decide between multiple
     Sheets.fill(self, self.type.."-"..attackname)
     local attackradius = (self.attackradius or 32) + opponent.bodyradius
-    if math.distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
+    if distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
         return "attack"
     end
     return "approach"
