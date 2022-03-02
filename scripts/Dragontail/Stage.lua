@@ -7,7 +7,7 @@ local Tiled     = require "Data.Tiled"
 local Stage = {}
 
 local scene
-local player, enemy
+local player, enemies
 local lasttargetvelx, lasttargetvely
 local currentbounds
 
@@ -22,11 +22,21 @@ function Stage.init(stagefile)
     })
     scene:add(player)
 
-    enemy = Character.new({
-        x = 480, y = 180, type = "bandit-dagger", opponent = player
-    })
-    enemy:addToScene(scene)
-    enemy:startAi("stand", 60)
+    local firstenemies = {
+        {
+            x = 480, y = 120, type = "bandit-dagger", opponent = player
+        },
+        {
+            x = 480, y = 240, type = "bandit-spear", opponent = player
+        }
+    }
+    enemies = {}
+    for i, e in ipairs(firstenemies) do
+        local enemy = Character.new(e)
+        enemy:addToScene(scene)
+        enemy:startAi("stand", 60)
+        enemies[#enemies+1] = enemy
+    end
 
     lasttargetvelx = 0
     lasttargetvely = 0
@@ -37,14 +47,10 @@ end
 function Stage.quit()
     scene = nil
     player = nil
+    enemies = nil
 end
 
 function Stage.fixedupdate()
-    if enemy:collideWithCharacterAttack(player) then
-        player.hitstun = player.attackstun
-        Audio.play("sounds/combat/hit1.mp3")
-    end
-
     local targetvelx, targetvely = Controls.getDirectionInput()
     local b1, b2 = Controls.getButtonsDown()
     if targetvelx ~= 0 or targetvely ~= 0 then
@@ -55,13 +61,6 @@ function Stage.fixedupdate()
         lasttargetvelx = targetvelx
         lasttargetvely = targetvely
     end
-
-    player:accelerateTowardsVel(targetvelx, targetvely, b2 and 8 or 16)
-    player:fixedupdate()
-    enemy:fixedupdate()
-    player:collideWithCharacterBody(enemy)
-    player:collideWithCharacterAttack(enemy)
-    player:keepInBounds(currentbounds.x, currentbounds.y, currentbounds.width, currentbounds.height)
 
     if player.attackangle then
         if lasttargetvelx ~= 0 or lasttargetvely ~= 0 then
@@ -77,12 +76,34 @@ function Stage.fixedupdate()
             player.attackradius = 0
         end
     end
+
+    player:accelerateTowardsVel(targetvelx, targetvely, b2 and 8 or 16)
+    player:fixedupdate()
+    for i, enemy in ipairs(enemies) do
+        enemy:fixedupdate()
+        if enemy:collideWithCharacterAttack(player) then
+            player.hitstun = player.attackstun
+            Audio.play("sounds/combat/hit1.mp3")
+        end
+        for j = i+1, #enemies do
+            local otherenemy = enemies[j]
+            if enemy:collideWithCharacterAttack(otherenemy) then
+                -- infighting!
+                -- enemy.opponent = otherenemy
+            end
+        end
+        player:collideWithCharacterBody(enemy)
+        player:collideWithCharacterAttack(enemy)
+    end
+    player:keepInBounds(currentbounds.x, currentbounds.y, currentbounds.width, currentbounds.height)
     scene:animate(1)
 end
 
 function Stage.update(dsecs, fixedfrac)
     player:update(dsecs, fixedfrac)
-    enemy:update(dsecs, fixedfrac)
+    for i, enemy in ipairs(enemies) do
+        enemy:update(dsecs, fixedfrac)
+    end
 end
 
 function Stage.draw()
