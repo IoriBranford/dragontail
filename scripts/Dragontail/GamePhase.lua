@@ -23,6 +23,16 @@ function GamePhase.loadphase()
     Stage.init("data/jam_village.lua")
 end
 
+local keypressed = {}
+function keypressed.f2()
+    love.event.loadphase("Dragontail.GamePhase")
+end
+
+function GamePhase.keypressed(key)
+    local kp = keypressed[key]
+    if kp then kp() end
+end
+
 function GamePhase.quitphase()
     Stage.quit()
     Sheets.clear()
