@@ -134,6 +134,7 @@ end
 
 function Ai:hurt(recoverai)
     self.attackangle = nil
+    Audio.play(self.hurtsound)
     yield()
     return recoverai
 end
@@ -154,6 +155,7 @@ function Ai:spin()
 end
 
 function Ai:defeat(defeatanimation)
+    self.health = -1
     self.attackangle = nil
     self.velx, self.vely = 0, 0
     self.sprite:changeAsepriteAnimation(defeatanimation or "collapse", 1, "stop")
