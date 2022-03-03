@@ -173,6 +173,7 @@ function Character:collideWithCharacterBody(other)
         local normx, normy = dx/dist, dy/dist
         self.x = other.x + normx*radii
         self.y = other.y + normy*radii
+        return dx, dy
     end
 end
 

@@ -61,6 +61,31 @@ function Ai:playerControl()
     end
 end
 
+function Ai:playerHold(enemy)
+    enemy.hitstun = enemy.holdstun or 120
+    local x, y = self.x, self.y
+    local radii = self.bodyradius + enemy.bodyradius
+    Audio.play(self.holdsound)
+    while enemy.hitstun > 0 do
+        self:accelerateTowardsVel(0, 0, 8)
+
+        local holddirx, holddiry = Controls.getDirectionInput()
+        local b1, b2 = Controls.getButtonsDown()
+        if holddirx ~= 0 or holddiry ~= 0 then
+            enemy.x = x + holddirx*radii
+            enemy.y = y + holddiry*radii
+        end
+
+        if b1 then
+            enemy:startAi(enemy.knockedai, holddirx, holddiry)
+            Audio.play(self.throwsound)
+            return "playerControl"
+        end
+        yield()
+    end
+    return "playerControl"
+end
+
 function Ai:stand(duration)
     duration = duration or 60
     self.velx, self.vely = 0, 0
@@ -162,8 +187,15 @@ function Ai:stun(duration)
     return "defeat", "collapseB"
 end
 
+function Ai:held(holder)
+    self.attackangle = nil
+    self.velx, self.vely = 0, 0
+
+end
+
 function Ai:spin(dirx, diry)
     self.health = -1
+    self.hitstun = 0
     self.sprite:changeAsepriteAnimation("spin")
     local knockedspeed = self.knockedspeed or 8
     self.velx, self.vely = dirx*knockedspeed, diry*knockedspeed

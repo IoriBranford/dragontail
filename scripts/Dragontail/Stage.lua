@@ -64,7 +64,9 @@ function Stage.fixedupdate()
                 -- enemy.opponent = otherenemy
             end
         end
-        player:collideWithCharacterBody(enemy)
+        if player:collideWithCharacterBody(enemy) then
+            player:startAi("playerHold", enemy)
+        end
         player:collideWithCharacterAttack(enemy)
     end
     player:keepInBounds(currentbounds.x, currentbounds.y, currentbounds.width, currentbounds.height)
