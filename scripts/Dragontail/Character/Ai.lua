@@ -33,32 +33,33 @@ end
 
 function Ai:playerControl()
     while true do
-        local targetvelx, targetvely = Controls.getDirectionInput()
+        local inx, iny = Controls.getDirectionInput()
         local b1, b2 = Controls.getButtonsDown()
+
         local speed = b2 and 4 or 8
-        if targetvelx ~= 0 or targetvely ~= 0 then
-            targetvelx, targetvely = norm(targetvelx, targetvely)
-            targetvelx = targetvelx * speed
-            targetvely = targetvely * speed
+        if inx ~= 0 or iny ~= 0 then
+            inx, iny = norm(inx, iny)
+            inx = inx * speed
+            iny = iny * speed
         end
 
-        self:accelerateTowardsVel(targetvelx, targetvely, b2 and 8 or 16)
+        self:accelerateTowardsVel(inx, iny, b2 and 8 or 16)
 
         local velx, vely = self.velx, self.vely
-        local veldot = dot(velx, vely, targetvelx, targetvely)
+        local veldot = dot(velx, vely, inx, iny)
         local attackangle
-        if (targetvelx ~= 0 or targetvely ~= 0)
+        if not b2
+        and (inx ~= 0 or iny ~= 0)
         and veldot <= len(velx, vely) * speed * cos(pi/4) then
-            attackangle = atan2(-targetvely, -targetvelx)
+            attackangle = atan2(-iny, -inx)
         else
             attackangle = nil
         end
         self.attackangle = attackangle
-        -- if attackangle then
-        --     local attackanimation = self.getDirectionalAnimation_angle("attackA", attackangle)
-        --     self.sprite:changeAsepriteAnimation(attackanimation)
-        -- else
-        if velx ~= 0 or vely ~= 0 then
+        if attackangle then
+            local attackanimation = self.getDirectionalAnimation_angle("attackA", attackangle, 8)
+            self.sprite:changeAsepriteAnimation(attackanimation)
+        elseif velx ~= 0 or vely ~= 0 then
             self.sprite:changeAsepriteAnimation("run2")
         else
             self.sprite:changeAsepriteAnimation("stand2")
@@ -87,6 +88,9 @@ function Ai:playerHold(enemy)
         enemy.x = x + holddirx*radii
         enemy.y = y + holddiry*radii
 
+        local holdanimation = self.getDirectionalAnimation_angle("hold", atan2(holddiry, holddirx), 8)
+        self.sprite:changeAsepriteAnimation(holdanimation)
+
         if b1 then
             enemy:startAi(enemy.knockedai, holddirx, holddiry)
             Audio.play(self.throwsound)
@@ -108,7 +112,7 @@ function Ai:stand(duration)
     waitfor(function()
         oppox, oppoy = opponent.x, opponent.y
         local faceangle = atan2(oppoy - y, oppox - x)
-        local standanimation = self.getDirectionalAnimation_angle("stand", faceangle)
+        local standanimation = self.getDirectionalAnimation_angle("stand", faceangle, 4)
         self.sprite:changeAsepriteAnimation(standanimation)
         i = i + 1
         return i > duration
@@ -144,7 +148,7 @@ function Ai:approach()
 
     -- choose animation
     local todestangle = atan2(desty - y, destx - x)
-    local walkanimation = self.getDirectionalAnimation_angle("walk", todestangle)
+    local walkanimation = self.getDirectionalAnimation_angle("walk", todestangle, 4)
     self.sprite:changeAsepriteAnimation(walkanimation)
 
     local speed = self.speed or 2
@@ -166,14 +170,14 @@ function Ai:attack(attackname)
     local tooppoangle = atan2(tooppoy, tooppox)
     Audio.play(self.windupsound)
 
-    local animation = self.getDirectionalAnimation_angle(attackname.."A", tooppoangle)
+    local animation = self.getDirectionalAnimation_angle(attackname.."A", tooppoangle, 4)
     self.sprite:changeAsepriteAnimation(animation, 1, "stop")
     wait(24)
 
     Audio.play(self.swingsound)
     self.attackangle = floor((tooppoangle + (pi/4)) / (pi/2)) * pi/2
 
-    animation = self.getDirectionalAnimation_angle(attackname.."B", tooppoangle)
+    animation = self.getDirectionalAnimation_angle(attackname.."B", tooppoangle, 4)
     self.sprite:changeAsepriteAnimation(animation, 1, "stop")
     wait(24)
 
