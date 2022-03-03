@@ -46,12 +46,18 @@ function Ai:playerControl()
 
         local velx, vely = self.velx, self.vely
         local veldot = dot(velx, vely, targetvelx, targetvely)
+        local attackangle
         if (targetvelx ~= 0 or targetvely ~= 0)
         and veldot <= len(velx, vely) * speed * cos(pi/4) then
-            self.attackangle = atan2(-targetvely, -targetvelx)
+            attackangle = atan2(-targetvely, -targetvelx)
         else
-            self.attackangle = nil
+            attackangle = nil
         end
+        self.attackangle = attackangle
+        -- if attackangle then
+        --     local attackanimation = self.getDirectionalAnimation_angle("attackA", attackangle)
+        --     self.sprite:changeAsepriteAnimation(attackanimation)
+        -- else
         if velx ~= 0 or vely ~= 0 then
             self.sprite:changeAsepriteAnimation("run2")
         else
@@ -62,27 +68,33 @@ function Ai:playerControl()
 end
 
 function Ai:playerHold(enemy)
+    self.attackangle = nil
+    self.heldopponent = enemy
     enemy.hitstun = enemy.holdstun or 120
     local x, y = self.x, self.y
     local radii = self.bodyradius + enemy.bodyradius
     Audio.play(self.holdsound)
+    local holddirx, holddiry = norm(enemy.x - x, enemy.y - y)
     while enemy.hitstun > 0 do
         self:accelerateTowardsVel(0, 0, 8)
 
-        local holddirx, holddiry = Controls.getDirectionInput()
+        local inx, iny = Controls.getDirectionInput()
         local b1, b2 = Controls.getButtonsDown()
-        if holddirx ~= 0 or holddiry ~= 0 then
-            enemy.x = x + holddirx*radii
-            enemy.y = y + holddiry*radii
+        if inx ~= 0 or iny ~= 0 then
+            holddirx, holddiry = norm(inx, iny)
         end
+        x, y = self.x, self.y
+        enemy.x = x + holddirx*radii
+        enemy.y = y + holddiry*radii
 
         if b1 then
             enemy:startAi(enemy.knockedai, holddirx, holddiry)
             Audio.play(self.throwsound)
-            return "playerControl"
+            break
         end
         yield()
     end
+    self.heldopponent = nil
     return "playerControl"
 end
 
@@ -172,6 +184,7 @@ end
 
 function Ai:hurt(recoverai)
     self.attackangle = nil
+    self.heldopponent = nil
     Audio.play(self.hurtsound)
     yield()
     return recoverai
