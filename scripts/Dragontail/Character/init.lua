@@ -3,8 +3,13 @@ local Assets      = require "System.Assets"
 local Sheets      = require "Data.Sheets"
 local Audio       = require "System.Audio"
 local pi = math.pi
-local abs = math.abs
 local floor = math.floor
+local sqrt = math.sqrt
+local cos = math.cos
+local sin = math.sin
+local asin = math.asin
+local lensq = math.lensq
+local dot = math.dot
 
 local Character = {}
 
@@ -186,14 +191,17 @@ function Character:collideWithCharacterAttack(other)
         return
     end
     local dx, dy = self.x - other.x, self.y - other.y
-    local distsq = math.lensq(dx, dy)
-    local radii = self.bodyradius + other.attackradius
+    local distsq = lensq(dx, dy)
+    local bodyradius = self.bodyradius
+    local radii = bodyradius + other.attackradius
     local radiisq = radii * radii
-    if distsq < radiisq then
-        local dist = math.sqrt(distsq)
-        local attackx, attacky = math.cos(attackangle), math.sin(attackangle)
-        local dot = math.dot(dx, dy, attackx, attacky)
-        if dot >= dist * math.cos(other.attackarc/2) then
+    if distsq <= radiisq then
+        local dist = sqrt(distsq)
+        local attackx, attacky = cos(attackangle), sin(attackangle)
+        local dotDA = dot(dx, dy, attackx, attacky)
+        local attackarc = other.attackarc
+        local bodyarc = asin(bodyradius/dist)
+        if dotDA >= dist * cos(bodyarc + attackarc/2) then
             local sound = other.hitsound
             if self.health == 0 then
                 sound = other.knockoutsound or sound
@@ -218,10 +226,11 @@ function Character:collideWithCharacterAttack(other)
     end
 end
 
-function Character.getDirectionalAnimation_angle(basename, angle)
-    local faceangle = angle + (pi / 4)
-    local facedir = floor(faceangle * 2 / pi)
-    facedir = ((facedir % 4) + 4) % 4
+function Character.getDirectionalAnimation_angle(basename, angle, numanimations)
+    numanimations = numanimations or 4
+    local faceangle = angle + (pi / numanimations)
+    local facedir = floor(faceangle * numanimations / pi / 2)
+    facedir = ((facedir % numanimations) + numanimations) % numanimations
     return basename..facedir
 end
 
