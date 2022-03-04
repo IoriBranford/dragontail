@@ -78,8 +78,10 @@ function Stage.fixedupdate()
     end
     for i, enemy in ipairs(enemies) do
         if enemy:collideWithCharacterAttack(player) then
-            player.hitstun = player.attackstun
         end
+        if player:collideWithCharacterBody(enemy) then
+        end
+        player:collideWithCharacterAttack(enemy)
         for j = i+1, #enemies do
             local otherenemy = enemies[j]
             if enemy:collideWithCharacterAttack(otherenemy) then
@@ -87,10 +89,6 @@ function Stage.fixedupdate()
                 -- enemy.opponent = otherenemy
             end
         end
-        if not player.heldopponent and player:collideWithCharacterBody(enemy) then
-            player:startAi("playerHold", enemy)
-        end
-        player:collideWithCharacterAttack(enemy)
     end
     player:keepInBounds(currentbounds.x, currentbounds.y, currentbounds.width, currentbounds.height)
 

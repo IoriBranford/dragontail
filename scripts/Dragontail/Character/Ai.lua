@@ -32,6 +32,7 @@ local function moveTo(self, destx, desty, speed)
 end
 
 function Ai:playerControl()
+    local opponents = self.opponents
     while true do
         local inx, iny = Controls.getDirectionInput()
         local b1, b2 = Controls.getButtonsDown()
@@ -41,6 +42,12 @@ function Ai:playerControl()
             inx, iny = norm(inx, iny)
             inx = inx * speed
             iny = iny * speed
+        end
+
+        for i, opponent in ipairs(opponents) do
+            if not self.heldopponent and opponent.canbegrabbed and self:collideWithCharacterBody(opponent) then
+                return "playerHold", opponent
+            end
         end
 
         self:accelerateTowardsVel(inx, iny, b2 and 8 or 16)
@@ -77,6 +84,7 @@ function Ai:playerHold(enemy)
     Audio.play(self.holdsound)
     local holddirx, holddiry = norm(enemy.x - x, enemy.y - y)
     while enemy.hitstun > 0 do
+        yield()
         self:accelerateTowardsVel(0, 0, 8)
 
         local inx, iny = Controls.getDirectionInput()
@@ -96,7 +104,6 @@ function Ai:playerHold(enemy)
             Audio.play(self.throwsound)
             break
         end
-        yield()
     end
     self.heldopponent = nil
     return "playerControl"
@@ -172,14 +179,14 @@ function Ai:attack(attackname)
 
     local animation = self.getDirectionalAnimation_angle(attackname.."A", tooppoangle, 4)
     self.sprite:changeAsepriteAnimation(animation, 1, "stop")
-    wait(24)
+    wait(self.attackdelay or 24)
 
     Audio.play(self.swingsound)
     self.attackangle = floor((tooppoangle + (pi/4)) / (pi/2)) * pi/2
 
     animation = self.getDirectionalAnimation_angle(attackname.."B", tooppoangle, 4)
     self.sprite:changeAsepriteAnimation(animation, 1, "stop")
-    wait(24)
+    wait(self.attackstun or 24)
 
     self.attackangle = nil
 
@@ -199,8 +206,11 @@ function Ai:stun(duration)
     self.velx, self.vely = 0, 0
     self.sprite:changeAsepriteAnimation("collapseA", 1, "stop")
     Audio.play(self.stunsound)
+    wait(30)
+    self.canbegrabbed = true
     duration = duration or 120
     wait(duration)
+    self.canbegrabbed = nil
     return "defeat", "collapseB"
 end
 
@@ -211,6 +221,7 @@ function Ai:held(holder)
 end
 
 function Ai:spin(dirx, diry)
+    self.canbegrabbed = nil
     self.health = -1
     self.hitstun = 0
     self.sprite:changeAsepriteAnimation("spin")
@@ -278,16 +289,25 @@ function Ai:itemDrop(y0)
     self.z = 0
     self.vely = 0
     self.velz = 0
+    return "itemWaitForPickup"
+end
 
+function Ai:itemWaitForPickup()
+    local opponent = self.opponent
     while true do
-        local opponent = self.opponent
-        if self:collideWithCharacterBody(opponent) then
+        local finished
+        if self:testBodyCollision(opponent) then
             if self.healhealth then
-                Audio.play(self.healsound)
-                opponent:heal(self.healhealth)
+                if opponent.health < opponent.maxhealth then
+                    Audio.play(self.healsound)
+                    opponent:heal(self.healhealth)
+                    finished = true
+                end
             end
+        end
+        if finished then
             self:disappear()
-            return
+            break
         end
         yield()
     end
