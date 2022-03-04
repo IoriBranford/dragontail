@@ -113,14 +113,18 @@ function Stage.update(dsecs, fixedfrac)
     end
 end
 
+local NameX, NameY = 16, 16
+local BarX, BarY = NameX + 40, NameY
+local BarH = 16
+
 function Stage.draw()
     scene:draw()
     love.graphics.setColor(.75, .25, .25)
-    love.graphics.rectangle("fill", 16, 32, player.health, 16)
+    love.graphics.rectangle("fill", BarX, BarY, player.health, BarH)
     love.graphics.setColor(1, .5, .5)
-    love.graphics.rectangle("line", 15.5, 31.5, player.maxhealth, 17, 2)
+    love.graphics.rectangle("line", BarX - .5, BarY - .5, player.maxhealth, BarH + 1, 2)
     love.graphics.setColor(1,1,1)
-    love.graphics.printf("Rose", 16, 16, 32, "left")
+    love.graphics.printf("Rose", NameX, NameY, 40, "left")
 end
 
 return Stage
