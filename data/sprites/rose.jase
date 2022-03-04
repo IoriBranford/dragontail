@@ -293,7 +293,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 19, "y": 8, "w": 39, "h": 56 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 100
+    "duration": 200
    },
    "Sprite Sheet#38": {
     "frame": { "x": 1, "y": 297, "w": 35, "h": 57 },
@@ -301,7 +301,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 19, "y": 7, "w": 35, "h": 57 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 100
+    "duration": 200
    },
    "Sprite Sheet#39": {
     "frame": { "x": 312, "y": 230, "w": 38, "h": 55 },
@@ -389,7 +389,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 6, "y": 8, "w": 39, "h": 56 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 100
+    "duration": 200
    },
    "Sprite Sheet#50": {
     "frame": { "x": 74, "y": 294, "w": 35, "h": 57 },
@@ -397,7 +397,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 10, "y": 7, "w": 35, "h": 57 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 100
+    "duration": 200
    },
    "Sprite Sheet#51": {
     "frame": { "x": 401, "y": 1, "w": 38, "h": 55 },
