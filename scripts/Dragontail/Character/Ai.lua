@@ -103,7 +103,7 @@ function Ai:playerAttack(angle, spinvel, spintime)
     repeat
         self.attackangle = angle
         local spindir = spinvel < 0 and "B" or "A"
-        local attackanimation = self.getDirectionalAnimation_angle("attack"..spindir, angle, 8)
+        local attackanimation = self.getDirectionalAnimation_angle("attack"..spindir, angle, 4)
         self.sprite:changeAsepriteAnimation(attackanimation)
 
         for i, enemy in ipairs(opponents) do
