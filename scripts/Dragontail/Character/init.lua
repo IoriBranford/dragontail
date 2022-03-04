@@ -218,7 +218,7 @@ function Character:collideWithCharacterAttack(other)
         local dotDA = dot(dx, dy, attackx, attacky)
         local attackarc = other.attackarc
         local bodyarc = asin(bodyradius/dist)
-        if dotDA >= dist * cos(bodyarc + attackarc/2) then
+        if attackarc >= 2*pi or dotDA >= dist * cos(bodyarc + attackarc/2) then
             local sound = other.hitsound
             if self.health == 0 then
                 sound = other.knockoutsound or sound
@@ -270,7 +270,6 @@ function Character:drawShadow()
     local attackradius = self.attackradius
     if attackradius > 0 and attackangle then
         local attackarc = self.attackarc
-        love.graphics.setColor(1, 0, 0)
         if attackarc > 0 then
             love.graphics.arc("fill", x, y, attackradius, attackangle - attackarc/2, attackangle + attackarc/2)
         else
