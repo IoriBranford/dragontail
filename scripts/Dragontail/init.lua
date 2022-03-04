@@ -73,7 +73,7 @@ return {
         canvasresolution = "HIGH",
         canvasscaleint = true,
         canvasscalesoft = false,
-        musicvolume = 0.5,
+        musicvolume = 0.25,
         soundvolume = 0.5,
         resizable = false,
     
