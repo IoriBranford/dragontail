@@ -56,7 +56,7 @@ function Ai:playerControl()
             end
         end
 
-        self:accelerateTowardsVel(inx, iny, b2 and 8 or 16)
+        self:accelerateTowardsVel(inx, iny, b2 and 4 or 8)
 
         local velx, vely = self.velx, self.vely
         local veldot = dot(velx, vely, inx, iny)
@@ -104,7 +104,7 @@ function Ai:playerHold(enemy)
             break
         end
         time = time - 1
-        self:accelerateTowardsVel(0, 0, 8)
+        self:accelerateTowardsVel(0, 0, 4)
 
         local inx, iny = Controls.getDirectionInput()
         local b1, b2 = Controls.getButtonsDown()
