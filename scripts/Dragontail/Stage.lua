@@ -63,9 +63,9 @@ function Stage.init(stagefile)
     player:addToScene(scene)
     player:startAi("playerControl")
 
-    for i, enemy in ipairs(enemies) do
-        if enemy.initialai then
-            enemy:startAi(enemy.initialai, 60)
+    for i, character in ipairs(allcharacters) do
+        if character.initialai then
+            character:startAi(character.initialai, 60)
         end
     end
 end
