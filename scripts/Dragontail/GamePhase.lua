@@ -8,6 +8,8 @@ local getAsset = Assets.get
 local GamePhase = {}
 
 function GamePhase.loadphase()
+    local unifont = Assets.get("fonts/Unifont 16.fnt")
+    love.graphics.setFont(unifont)
     Canvas.init(Config.basewindowwidth, Config.basewindowheight)
 
     Sheets.load("data/jam_characters.csv")
