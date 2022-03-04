@@ -83,13 +83,14 @@ function Stage.openNextRoom()
     currentbounds = map.layers.stage.bounds
 
     roomindex = roomindex + 1
-    print(debug.traceback())
     local room = map.layers["room"..roomindex]
     if room then
         addCharacters(room)
         gamestatus = "goingToNextRoom"
     else
         gamestatus = "victory"
+        player:startAi("playerVictory")
+        Audio.fadeMusic()
     end
 end
 

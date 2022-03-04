@@ -163,6 +163,16 @@ function Ai:playerHold(enemy)
     return "playerControl"
 end
 
+function Ai:playerVictory()
+    self.sprite:changeAsepriteAnimation("win")
+    local i = 0
+    while true do
+        self.sprite.oy = self.spriteoriginy + math.abs(sin(i*pi/30) * 8)
+        yield()
+        i = i + 1
+    end
+end
+
 function Ai:stand(duration)
     duration = duration or 60
     self.velx, self.vely = 0, 0
