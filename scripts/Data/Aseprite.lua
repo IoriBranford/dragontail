@@ -93,6 +93,10 @@ function Aseprite:getAnimationFrame(tag, tagframe)
 	return animation[tagframe]
 end
 
+function Aseprite:getAnimation(tag)
+	return self.animations[tag]
+end
+
 function Aseprite:drawFrame(frame, x, y, r, sx, sy, ox, oy, kx, ky)
 	frame = self[frame]
 	local image = self.image
