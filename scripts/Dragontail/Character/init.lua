@@ -11,6 +11,7 @@ local asin = math.asin
 local lensq = math.lensq
 local dot = math.dot
 local min = math.min
+local testcircles = math.testcircles
 
 local Character = {}
 
@@ -171,16 +172,19 @@ function Character:keepInBounds(bx, by, bw, bh, bounce)
     return penex, peney
 end
 
+function Character:testBodyCollision(other)
+    return testcircles(self.x, self.y, self.bodyradius, other.x, other.y, other.bodyradius)
+end
+
 function Character:collideWithCharacterBody(other)
     if other.health < 0 then
         return
     end
-    local dx, dy = self.x - other.x, self.y - other.y
-    local distsq = math.lensq(dx, dy)
-    local radii = self.bodyradius + other.bodyradius
-    local radiisq = radii * radii
-    if distsq < radiisq then
+    local distsq = self:testBodyCollision(other)
+    if distsq then
+        local radii = self.bodyradius + other.bodyradius
         local dist = math.sqrt(distsq)
+        local dx, dy = self.x - other.x, self.y - other.y
         local normx, normy = dx/dist, dy/dist
         self.x = other.x + normx*radii
         self.y = other.y + normy*radii
