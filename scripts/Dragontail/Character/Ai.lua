@@ -37,7 +37,7 @@ function Ai:playerControl()
         local inx, iny = Controls.getDirectionInput()
         local b1, b2 = Controls.getButtonsDown()
 
-        local speed = b2 and 4 or 8
+        local speed = b2 and 2 or 5
         if inx ~= 0 or iny ~= 0 then
             inx, iny = norm(inx, iny)
             inx = inx * speed
@@ -83,13 +83,16 @@ end
 function Ai:playerHold(enemy)
     self.attackangle = nil
     self.heldopponent = enemy
+    enemy.heldby = self
     enemy.hurtstun = enemy.holdstun or 120
     local x, y = self.x, self.y
     local radii = self.bodyradius + enemy.bodyradius
     Audio.play(self.holdsound)
     local holddirx, holddiry = norm(enemy.x - x, enemy.y - y)
-    while enemy.hurtstun > 0 do
+    local time = enemy.hurtstun
+    while self.heldopponent == enemy and time > 0 do
         yield()
+        time = time - 1
         self:accelerateTowardsVel(0, 0, 8)
 
         local inx, iny = Controls.getDirectionInput()
@@ -199,15 +202,23 @@ function Ai:attack(attackname)
 end
 
 function Ai:hurt(recoverai)
+    assert(recoverai, debug.traceback())
     self.velx, self.vely = 0, 0
     self.attackangle = nil
     local heldopponent = self.heldopponent
+    local heldby = self.heldby
+    self.heldopponent = nil
+    self.heldby = nil
     if heldopponent then
         heldopponent.hurtstun = 0
+        heldopponent.heldby = nil
     end
-    self.heldopponent = nil
-    Audio.play(self.hurtsound)
+    if heldby then
+        self.hurtstun = 0
+        heldby.heldopponent = nil
+    end
     yield()
+    Audio.play(self.hurtsound)
     return recoverai
 end
 
@@ -216,7 +227,6 @@ function Ai:stun(duration)
     self.velx, self.vely = 0, 0
     self.sprite:changeAsepriteAnimation("collapseA", 1, "stop")
     Audio.play(self.stunsound)
-    wait(12)
     self.canbegrabbed = true
     duration = duration or 120
     wait(duration)
