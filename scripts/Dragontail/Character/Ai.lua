@@ -262,7 +262,7 @@ function Ai:itemDrop(y0)
         self.vely = self.vely + gravity
         self.velz = self.velz - gravity
         yield()
-    until self.y >= y0
+    until self.y + self.vely >= y0
 
     self.y = y0
     self.z = 0
