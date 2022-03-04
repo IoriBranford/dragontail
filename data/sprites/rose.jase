@@ -16,7 +16,7 @@
     "duration": 500
    },
    "Sprite Sheet#3": {
-    "frame": { "x": 212, "y": 196, "w": 26, "h": 55 },
+    "frame": { "x": 1, "y": 198, "w": 26, "h": 55 },
     "rotated": false,
     "trimmed": true,
     "spriteSourceSize": { "x": 19, "y": 5, "w": 26, "h": 55 },
@@ -40,7 +40,7 @@
     "duration": 100
    },
    "Sprite Sheet#6": {
-    "frame": { "x": 1, "y": 198, "w": 26, "h": 55 },
+    "frame": { "x": 212, "y": 196, "w": 26, "h": 55 },
     "rotated": false,
     "trimmed": true,
     "spriteSourceSize": { "x": 19, "y": 5, "w": 26, "h": 55 },
@@ -88,7 +88,7 @@
     "duration": 100
    },
    "Sprite Sheet#12": {
-    "frame": { "x": 45, "y": 114, "w": 45, "h": 43 },
+    "frame": { "x": 92, "y": 114, "w": 45, "h": 43 },
     "rotated": false,
     "trimmed": true,
     "spriteSourceSize": { "x": 14, "y": 19, "w": 45, "h": 43 },
@@ -128,7 +128,7 @@
     "duration": 100
    },
    "Sprite Sheet#17": {
-    "frame": { "x": 92, "y": 114, "w": 45, "h": 43 },
+    "frame": { "x": 45, "y": 114, "w": 45, "h": 43 },
     "rotated": false,
     "trimmed": true,
     "spriteSourceSize": { "x": 17, "y": 6, "w": 45, "h": 43 },
@@ -254,6 +254,30 @@
     "spriteSourceSize": { "x": 1, "y": 6, "w": 48, "h": 56 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
+   },
+   "Sprite Sheet#33": {
+    "frame": { "x": 310, "y": 1, "w": 1, "h": 1 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1, "h": 1 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 100
+   },
+   "Sprite Sheet#34": {
+    "frame": { "x": 310, "y": 1, "w": 1, "h": 1 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1, "h": 1 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 100
+   },
+   "Sprite Sheet#35": {
+    "frame": { "x": 310, "y": 1, "w": 1, "h": 1 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1, "h": 1 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 100
    }
  },
  "meta": {
@@ -289,7 +313,10 @@
    { "name": "hold4", "from": 28, "to": 28, "direction": "forward" },
    { "name": "hold5", "from": 29, "to": 29, "direction": "forward" },
    { "name": "hold6", "from": 30, "to": 30, "direction": "forward" },
-   { "name": "hold7", "from": 31, "to": 31, "direction": "forward" }
+   { "name": "hold7", "from": 31, "to": 31, "direction": "forward" },
+   { "name": "hurt0", "from": 32, "to": 32, "direction": "forward" },
+   { "name": "hurt1", "from": 33, "to": 33, "direction": "forward" },
+   { "name": "collapse", "from": 34, "to": 34, "direction": "forward" }
   ],
   "layers": [
    { "name": "Sprite Sheet", "opacity": 255, "blendMode": "normal" }
