@@ -84,9 +84,8 @@ function Stage.fixedupdate()
     for i, enemy in ipairs(enemies) do
         if player:collideWithCharacterBody(enemy) then
         end
-        for j = i+1, #enemies do
-            local otherenemy = enemies[j]
-            if enemy:collideWithCharacterAttack(otherenemy) then
+        for j, otherenemy in ipairs(enemies) do
+            if j ~= i and enemy:collideWithCharacterAttack(otherenemy) then
                 -- infighting!
                 -- enemy.opponent = otherenemy
             end
