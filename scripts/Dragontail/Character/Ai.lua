@@ -78,8 +78,14 @@ function Ai:playerControl()
                 end
             end
         elseif velx ~= 0 or vely ~= 0 then
-            local runanimation = self.getDirectionalAnimation_angle("run", atan2(self.facey, self.facex), 8)
-            self.sprite:changeAsepriteAnimation(runanimation)
+            if false --[[b2]]
+            then
+                local holdanimation = self.getDirectionalAnimation_angle("hold", atan2(self.facey, self.facex), 8)
+                self.sprite:changeAsepriteAnimation(holdanimation)
+            else
+                local runanimation = self.getDirectionalAnimation_angle("run", atan2(self.facey, self.facex), 8)
+                self.sprite:changeAsepriteAnimation(runanimation)
+            end
         else
             local standanimation = self.getDirectionalAnimation_angle("stand", atan2(self.facey, self.facex), 8)
             self.sprite:changeAsepriteAnimation(standanimation)
@@ -148,6 +154,9 @@ function Ai:stand(duration)
         return i > duration
     end)
 
+    if opponent.health <= 0 then
+        return "stand"
+    end
     local attackname = "attack" -- TODO decide between multiple
     Sheets.fill(self, self.type.."-"..attackname)
     local attackradius = (self.attackradius or 32) + opponent.bodyradius
@@ -231,6 +240,11 @@ function Ai:hurt(recoverai)
     if heldby then
         self.hurtstun = 0
         heldby.heldopponent = nil
+    end
+    local facex, facey = self.facex or 1, self.facey or 0
+    local hurtanimation = self.getDirectionalAnimation_angle("hurt", atan2(facey, facex), 2)
+    if self.sprite.aseprite:getAnimation(hurtanimation) then
+        self.sprite:changeAsepriteAnimation(hurtanimation, 1, "stop")
     end
     yield()
     Audio.play(self.hurtsound)
