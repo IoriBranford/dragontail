@@ -36,7 +36,7 @@ function Stage.init(stagefile)
 
     for i, character in ipairs(allcharacters) do
         if character.initialai then
-            character:startAi(character.initialai, 60)
+            character:startAi(character.initialai, 30)
         end
     end
     Audio.playMusic("music/retro-chiptune-guitar.ogg")
@@ -71,7 +71,7 @@ function Stage.addCharacters(objects)
                 local character = addCharacter(object)
                 character.opponent = player
                 if character.initialai then
-                    character:startAi(character.initialai, 60)
+                    character:startAi(character.initialai, 30)
                 end
             end
         end
@@ -98,9 +98,11 @@ function Stage.updateGoingToNextRoom()
     local room = map.layers["room"..roomindex]
     assert(room, "No room "..roomindex)
     local roombounds = room.bounds
-    camerax = math.max(0,
-            math.min(map.width * map.tilewidth - 640,
-            Movement.moveTowards(camerax, player.x - 640/2, 8)))
+    local stagebounds = map.layers.stage.bounds
+    camerax = math.max(stagebounds.x,
+            math.min(stagebounds.x + stagebounds.width - 640,
+            Movement.moveTowards(camerax, player.x - 640/2,
+                camerax <= player.x - 640/2 and 5 or -5)))
     if camerax + 640 >= roombounds.x + roombounds.width then
         camerax = roombounds.x + roombounds.width - 640
         Stage.startNextFight()
@@ -112,6 +114,9 @@ function Stage.startNextFight()
     local room = map.layers["room"..roomindex]
     assert(room, "No room "..roomindex)
     currentbounds = room.bounds
+    local stagebounds = map.layers.stage.bounds
+    stagebounds.width = stagebounds.width - currentbounds.x
+    stagebounds.x = currentbounds.x
     local fight = map.layers["fight"..roomindex]
     assert(fight, "No fight "..roomindex)
     addCharacters(fight)
