@@ -10,6 +10,7 @@ local sin = math.sin
 local asin = math.asin
 local lensq = math.lensq
 local dot = math.dot
+local min = math.min
 
 local Character = {}
 
@@ -19,8 +20,7 @@ Character.metatable = {
 }
 local Metatable = Character.metatable
 
-function Character.new(chprefab)
-    local ch = {}
+function Character.init(ch, chprefab)
     if chprefab then
         for k,v in pairs(chprefab) do
             ch[k] = v
@@ -31,6 +31,7 @@ function Character.new(chprefab)
         Sheets.fillBlanks(ch, type)
     end
     ch.health = ch.health or 1
+    ch.maxhealth = ch.maxhealth or ch.health
     ch.x = ch.x or 0
     ch.y = ch.y or 0
     ch.z = ch.z or 0
@@ -47,6 +48,11 @@ function Character.new(chprefab)
     ch.hitstun = ch.hitstun or 0
     return setmetatable(ch, Metatable)
 end
+local init = Character.init
+
+function Character.new(chprefab)
+    return init({}, chprefab)
+end
 
 function Character:addToScene(scene)
     local asepritefile = self.asepritefile
@@ -58,8 +64,8 @@ function Character:addToScene(scene)
             0, 1, 1, self.spriteoriginx or 0, self.spriteoriginy or 0)
         local baseDraw = self.sprite.draw
         self.sprite.draw = function(sprite)
+            self:drawShadow()
             baseDraw(sprite)
-            self:draw()
         end
     end
 end
@@ -215,7 +221,11 @@ function Character:collideWithCharacterAttack(other)
                 self.hitstun = other.attackstun
                 if self.health <= 0 then
                     self.health = 0
-                    self:startAi(self.stunai or "stun")
+                    if self.stunai then
+                        self:startAi(self.stunai or "stun")
+                    else
+                        self:startAi(self.defeatai or "defeat")
+                    end
                 else
                     self:startAi(self.hurtai or "hurt", self.hurtrecoverai)
                 end
@@ -226,6 +236,10 @@ function Character:collideWithCharacterAttack(other)
     end
 end
 
+function Character:heal(amount)
+    self.health = min(self.health + amount, self.maxhealth)
+end
+
 function Character.getDirectionalAnimation_angle(basename, angle, numanimations)
     numanimations = numanimations or 4
     local faceangle = angle + (pi / numanimations)
@@ -234,14 +248,24 @@ function Character.getDirectionalAnimation_angle(basename, angle, numanimations)
     return basename..facedir
 end
 
-function Character:draw()
-    love.graphics.setColor(.5, .5, 1, self.hitstun > 0 and .25 or .5)
-    love.graphics.circle("fill", self.x, self.y, self.bodyradius)
-    if self.attackradius > 0 and self.attackarc > 0 and self.attackangle then
-        love.graphics.setColor(1, .5, .5, .5)
-        love.graphics.arc("fill", self.x, self.y, self.attackradius, self.attackangle - self.attackarc/2, self.attackangle + self.attackarc/2)
+function Character:drawShadow()
+    local x, y = self.x, self.y+self.z
+    love.graphics.setColor(0,0,0,.25)
+
+    love.graphics.circle("fill", x, y, self.bodyradius)
+
+    local attackangle = self.attackangle
+    local attackradius = self.attackradius
+    if attackradius > 0 and attackangle then
+        local attackarc = self.attackarc
+        if attackarc > 0 then
+            love.graphics.arc("fill", x, y, attackradius, attackangle - attackarc/2, attackangle + attackarc/2)
+        else
+            love.graphics.line(x, y, x + cos(attackangle), y + sin(attackangle))
+        end
     end
-    love.graphics.setColor(1,1,1)
+
+    love.graphics.setColor(1,1,1,1)
 end
 
 function Character:disappear()
