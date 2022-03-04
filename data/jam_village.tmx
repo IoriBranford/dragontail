@@ -58,16 +58,22 @@
   <properties>
    <property name="z" value="0"/>
   </properties>
-  <object id="10" type="food-fish" x="1584" y="144">
+  <object id="10" type="food-fish" x="1584" y="161">
    <point/>
   </object>
-  <object id="24" type="food-fish" x="1616" y="144">
+  <object id="24" type="food-fish" x="1616" y="161">
    <point/>
   </object>
   <object id="11" type="food-container" x="1584" y="160">
+   <properties>
+    <property name="item" type="object" value="10"/>
+   </properties>
    <point/>
   </object>
   <object id="23" type="food-container" x="1616" y="160">
+   <properties>
+    <property name="item" type="object" value="24"/>
+   </properties>
    <point/>
   </object>
   <object id="5" name="bounds" x="1120" y="128" width="640" height="256"/>
@@ -125,10 +131,13 @@
   <properties>
    <property name="z" value="0"/>
   </properties>
-  <object id="8" type="food-fish" x="832" y="144">
+  <object id="8" type="food-fish" x="832" y="161">
    <point/>
   </object>
   <object id="9" type="food-container" x="832" y="160">
+   <properties>
+    <property name="item" type="object" value="8"/>
+   </properties>
    <point/>
   </object>
   <object id="4" name="bounds" x="480" y="128" width="640" height="256"/>

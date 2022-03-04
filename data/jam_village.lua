@@ -3873,7 +3873,7 @@ return {
           type = "food-fish",
           shape = "point",
           x = 1584,
-          y = 144,
+          y = 161,
           width = 0,
           height = 0,
           rotation = 0,
@@ -3886,7 +3886,7 @@ return {
           type = "food-fish",
           shape = "point",
           x = 1616,
-          y = 144,
+          y = 161,
           width = 0,
           height = 0,
           rotation = 0,
@@ -3904,7 +3904,9 @@ return {
           height = 0,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["item"] = { id = 10 }
+          }
         },
         {
           id = 23,
@@ -3917,7 +3919,9 @@ return {
           height = 0,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["item"] = { id = 24 }
+          }
         },
         {
           id = 5,
@@ -4129,7 +4133,7 @@ return {
           type = "food-fish",
           shape = "point",
           x = 832,
-          y = 144,
+          y = 161,
           width = 0,
           height = 0,
           rotation = 0,
@@ -4147,7 +4151,9 @@ return {
           height = 0,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["item"] = { id = 8 }
+          }
         },
         {
           id = 4,
