@@ -32,6 +32,7 @@ local loaders = {
     s3m = load_audio,
     mod = load_audio,
     lua = love.filesystem.load,
+    fnt = love.graphics.newFont,
     json = function (path) return json_decode(lfs_read(path)) end,
     jase = Aseprite.load
 }
