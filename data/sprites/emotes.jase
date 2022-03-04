@@ -1,0 +1,91 @@
+{ "frames": {
+   "Sprite Sheet#1": {
+    "frame": { "x": 41, "y": 34, "w": 9, "h": 8 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 6, "y": 7, "w": 9, "h": 8 },
+    "sourceSize": { "w": 24, "h": 16 },
+    "duration": 100
+   },
+   "Sprite Sheet#2": {
+    "frame": { "x": 27, "y": 34, "w": 11, "h": 10 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 5, "y": 3, "w": 11, "h": 10 },
+    "sourceSize": { "w": 24, "h": 16 },
+    "duration": 100
+   },
+   "Sprite Sheet#3": {
+    "frame": { "x": 1, "y": 38, "w": 13, "h": 8 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 5, "y": 8, "w": 13, "h": 8 },
+    "sourceSize": { "w": 24, "h": 16 },
+    "duration": 100
+   },
+   "Sprite Sheet#4": {
+    "frame": { "x": 1, "y": 1, "w": 24, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 24, "h": 16 },
+    "sourceSize": { "w": 24, "h": 16 },
+    "duration": 100
+   },
+   "Sprite Sheet#5": {
+    "frame": { "x": 1, "y": 20, "w": 23, "h": 15 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 1, "y": 1, "w": 23, "h": 15 },
+    "sourceSize": { "w": 24, "h": 16 },
+    "duration": 100
+   },
+   "Sprite Sheet#6": {
+    "frame": { "x": 28, "y": 1, "w": 24, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 24, "h": 16 },
+    "sourceSize": { "w": 24, "h": 16 },
+    "duration": 100
+   },
+   "Sprite Sheet#7": {
+    "frame": { "x": 55, "y": 19, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 4, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 24, "h": 16 },
+    "duration": 100
+   },
+   "Sprite Sheet#8": {
+    "frame": { "x": 55, "y": 1, "w": 18, "h": 15 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 1, "w": 18, "h": 15 },
+    "sourceSize": { "w": 24, "h": 16 },
+    "duration": 100
+   },
+   "Sprite Sheet#9": {
+    "frame": { "x": 27, "y": 20, "w": 19, "h": 11 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 0, "w": 19, "h": 11 },
+    "sourceSize": { "w": 24, "h": 16 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.33-x64",
+  "image": "emotes.png",
+  "format": "RGBA8888",
+  "size": { "w": 74, "h": 47 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "sweat", "from": 0, "to": 2, "direction": "forward" },
+   { "name": "stun", "from": 3, "to": 5, "direction": "forward" },
+   { "name": "anger", "from": 6, "to": 8, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Sprite Sheet", "opacity": 255, "blendMode": "normal" }
+  ]
+ }
+}
