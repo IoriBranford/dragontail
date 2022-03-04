@@ -33,6 +33,8 @@ end
 
 function Ai:playerControl()
     local opponents = self.opponents
+    self.facex = self.facex or 1
+    self.facey = self.facey or 0
     while true do
         yield()
         local inx, iny = Controls.getDirectionInput()
@@ -41,6 +43,7 @@ function Ai:playerControl()
         local speed = b2 and 2 or 5
         if inx ~= 0 or iny ~= 0 then
             inx, iny = norm(inx, iny)
+            self.facex, self.facey = inx, iny
             inx = inx * speed
             iny = iny * speed
         end
@@ -75,9 +78,11 @@ function Ai:playerControl()
                 end
             end
         elseif velx ~= 0 or vely ~= 0 then
-            self.sprite:changeAsepriteAnimation("run2")
+            local runanimation = self.getDirectionalAnimation_angle("run", atan2(self.facey, self.facex), 8)
+            self.sprite:changeAsepriteAnimation(runanimation)
         else
-            self.sprite:changeAsepriteAnimation("stand2")
+            local standanimation = self.getDirectionalAnimation_angle("stand", atan2(self.facey, self.facex), 8)
+            self.sprite:changeAsepriteAnimation(standanimation)
         end
     end
 end
@@ -104,6 +109,7 @@ function Ai:playerHold(enemy)
         local inx, iny = Controls.getDirectionInput()
         local b1, b2 = Controls.getButtonsDown()
         if inx ~= 0 or iny ~= 0 then
+            self.facex, self.facey = inx, iny
             holddirx, holddiry = norm(inx, iny)
         end
         x, y = self.x, self.y
