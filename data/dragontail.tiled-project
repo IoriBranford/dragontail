@@ -6,7 +6,7 @@
     "folders": [
         "."
     ],
-    "objectTypesFile": "",
+    "objectTypesFile": "objecttypes.xml",
     "propertyTypes": [
     ]
 }
