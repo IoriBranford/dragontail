@@ -167,6 +167,7 @@ function Ai:playerVictory()
     self.sprite:changeAsepriteAnimation("win")
     local i = 0
     while true do
+        self:accelerateTowardsVel(0, 0, 4)
         self.sprite.oy = self.spriteoriginy + math.abs(sin(i*pi/30) * 8)
         yield()
         i = i + 1
