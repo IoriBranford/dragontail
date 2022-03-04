@@ -1,5 +1,5 @@
 attack,attackradius,attackarc,attackdamage,attackstun,attackstunself,windupsound,swingsound,hitsound,knockoutsound
 Rose-attack,32,1.5707963267949,25,24,12,,sounds/combat/swing2.mp3,sounds/combat/hit1.mp3,sounds/combat/hit3.mp3
-bandit-dagger-attack,32,0.785398163397448,10,24,,sounds/man_light/attack1.mp3,sounds/combat/swing1.mp3,sounds/combat/cut.mp3,
-bandit-spear-attack,48,0.196349540849362,10,24,,sounds/man_medium/attack1.mp3,sounds/combat/swingblade.mp3,sounds/combat/cut.mp3,
-human-spinout,16,6.28318530717959,10,24,24,,sounds/combat/spin.mp3,sounds/combat/hit2.mp3,
+bandit-dagger-attack,32,0.785398163397448,10,12,,sounds/man_light/attack1.mp3,sounds/combat/swing1.mp3,sounds/combat/cut.mp3,
+bandit-spear-attack,48,0.196349540849362,10,12,,sounds/man_medium/attack1.mp3,sounds/combat/swingblade.mp3,sounds/combat/cut.mp3,
+human-spinout,16,6.28318530717959,25,6,6,,sounds/combat/spin.mp3,sounds/combat/hit2.mp3,

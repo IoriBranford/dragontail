@@ -242,6 +242,7 @@ function Character:collideWithCharacterAttack(other)
                 end
             end
             Audio.play(sound)
+            other.hitstun = other.attackstunself or 3
             return true
         end
     end

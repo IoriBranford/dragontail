@@ -69,7 +69,6 @@ function Ai:playerControl()
 
             for i, enemy in ipairs(opponents) do
                 if enemy:collideWithCharacterAttack(self) then
-                    self.hitstun = self.attackstunself or 12
                 end
             end
         elseif velx ~= 0 or vely ~= 0 then
@@ -200,7 +199,12 @@ function Ai:attack(attackname)
 end
 
 function Ai:hurt(recoverai)
+    self.velx, self.vely = 0, 0
     self.attackangle = nil
+    local heldopponent = self.heldopponent
+    if heldopponent then
+        heldopponent.hurtstun = 0
+    end
     self.heldopponent = nil
     Audio.play(self.hurtsound)
     yield()
@@ -234,7 +238,7 @@ function Ai:spin(dirx, diry)
     Sheets.fill(self, "human-spinout")
     local knockedspeed = self.knockedspeed or 8
     self.velx, self.vely = dirx*knockedspeed, diry*knockedspeed
-    self.attackangle = 0
+    self.attackangle = atan2(diry, dirx)
     local spinsound = Audio.newSource(self.swingsound)
     spinsound:play()
     local bounds = self.bounds

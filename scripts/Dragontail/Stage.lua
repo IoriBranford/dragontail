@@ -87,7 +87,6 @@ function Stage.fixedupdate()
         for j = i+1, #enemies do
             local otherenemy = enemies[j]
             if enemy:collideWithCharacterAttack(otherenemy) then
-                enemy.hitstun = enemy.attackstunself or 12
                 -- infighting!
                 -- enemy.opponent = otherenemy
             end
