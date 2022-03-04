@@ -47,6 +47,7 @@ function Character.init(ch, chprefab)
     ch.attackdamage = ch.attackdamage or 1
     ch.attackstun = ch.attackstun or 1
     ch.hitstun = ch.hitstun or 0
+    ch.hurtstun = ch.hurtstun or 0
     return setmetatable(ch, Metatable)
 end
 local init = Character.init
@@ -110,6 +111,12 @@ function Character:fixedupdate()
             return
         end
     end
+    if self.hurtstun > 0 then
+        self.hurtstun = self.hurtstun - 1
+        if self.hurtstun > 0 then
+            return
+        end
+    end
     self:runAi()
     self.x = self.x + self.velx
     self.y = self.y + self.vely
@@ -124,7 +131,7 @@ end
 function Character:update(dsecs, fixedfrac)
     local sprite = self.sprite
     if sprite then
-        sprite.ox = self.spriteoriginx + 2*math.sin(self.hitstun)
+        sprite.ox = self.spriteoriginx + 2*math.sin(self.hurtstun)
         sprite:updateFromUnit(self, fixedfrac)
     end
 end
@@ -193,7 +200,7 @@ function Character:collideWithCharacterBody(other)
 end
 
 function Character:collideWithCharacterAttack(other)
-    if self.hitstun > 0 or self.health < 0 then
+    if self.hurtstun > 0 or self.health < 0 then
         return
     end
     local attackangle = other.attackangle
@@ -222,7 +229,7 @@ function Character:collideWithCharacterAttack(other)
                 end
             else
                 self.health = self.health - other.attackdamage
-                self.hitstun = other.attackstun
+                self.hurtstun = other.attackstun
                 if self.health <= 0 then
                     self.health = 0
                     if self.stunai then
@@ -262,6 +269,7 @@ function Character:drawShadow()
     local attackradius = self.attackradius
     if attackradius > 0 and attackangle then
         local attackarc = self.attackarc
+        love.graphics.setColor(1, 0, 0)
         if attackarc > 0 then
             love.graphics.arc("fill", x, y, attackradius, attackangle - attackarc/2, attackangle + attackarc/2)
         else

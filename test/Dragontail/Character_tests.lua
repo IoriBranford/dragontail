@@ -46,7 +46,7 @@ notion("Character getting damaged by other's attack", function()
     check(a.health).is(1)
 end)
 
-notion("Character not damaged during hitstun", function()
+notion("Character not damaged during hurtstun", function()
     local a = Character.new({x = 0, y = 0, health = 2, bodyradius = 2})
     local b = Character.new({x = 4, y = 0, attackradius = 4, attackangle = math.pi, attackarc = math.pi/2, attackdamage = 1, attackstun = 1})
     a:collideWithCharacterAttack(b)

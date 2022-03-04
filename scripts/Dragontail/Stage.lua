@@ -34,13 +34,18 @@ function Stage.init(stagefile)
             x = 480, y = 120, type = "bandit-dagger"
         },
         {
-            x = 480, y = 240, type = "bandit-spear"
+            x = 480, y = 300, type = "bandit-spear"
         },
         {
             x = 512, y = 180, type = "food-container", item = food
         },
         food
     }
+    for i = 0, 4 do
+        firstcharacters[#firstcharacters+1] = {
+            y = 240, x = 240 + i*40, type = "bandit-dagger"
+        }
+    end
 
     for i, c in ipairs(firstcharacters) do
         local character = Character.init(c)
@@ -77,18 +82,17 @@ function Stage.fixedupdate()
         character:fixedupdate()
     end
     for i, enemy in ipairs(enemies) do
-        if enemy:collideWithCharacterAttack(player) then
-        end
         if player:collideWithCharacterBody(enemy) then
         end
-        player:collideWithCharacterAttack(enemy)
         for j = i+1, #enemies do
             local otherenemy = enemies[j]
             if enemy:collideWithCharacterAttack(otherenemy) then
+                enemy.hitstun = enemy.attackstunself or 12
                 -- infighting!
                 -- enemy.opponent = otherenemy
             end
         end
+        player:collideWithCharacterAttack(enemy)
     end
     player:keepInBounds(currentbounds.x, currentbounds.y, currentbounds.width, currentbounds.height)
 

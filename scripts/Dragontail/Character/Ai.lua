@@ -66,6 +66,12 @@ function Ai:playerControl()
         if attackangle then
             local attackanimation = self.getDirectionalAnimation_angle("attackA", attackangle, 8)
             self.sprite:changeAsepriteAnimation(attackanimation)
+
+            for i, enemy in ipairs(opponents) do
+                if enemy:collideWithCharacterAttack(self) then
+                    self.hitstun = self.attackstunself or 12
+                end
+            end
         elseif velx ~= 0 or vely ~= 0 then
             self.sprite:changeAsepriteAnimation("run2")
         else
@@ -78,12 +84,12 @@ end
 function Ai:playerHold(enemy)
     self.attackangle = nil
     self.heldopponent = enemy
-    enemy.hitstun = enemy.holdstun or 120
+    enemy.hurtstun = enemy.holdstun or 120
     local x, y = self.x, self.y
     local radii = self.bodyradius + enemy.bodyradius
     Audio.play(self.holdsound)
     local holddirx, holddiry = norm(enemy.x - x, enemy.y - y)
-    while enemy.hitstun > 0 do
+    while enemy.hurtstun > 0 do
         yield()
         self:accelerateTowardsVel(0, 0, 8)
 
@@ -206,7 +212,7 @@ function Ai:stun(duration)
     self.velx, self.vely = 0, 0
     self.sprite:changeAsepriteAnimation("collapseA", 1, "stop")
     Audio.play(self.stunsound)
-    wait(30)
+    wait(12)
     self.canbegrabbed = true
     duration = duration or 120
     wait(duration)
@@ -223,18 +229,23 @@ end
 function Ai:spin(dirx, diry)
     self.canbegrabbed = nil
     self.health = -1
-    self.hitstun = 0
+    self.hurtstun = 0
     self.sprite:changeAsepriteAnimation("spin")
+    Sheets.fill(self, "human-spinout")
     local knockedspeed = self.knockedspeed or 8
     self.velx, self.vely = dirx*knockedspeed, diry*knockedspeed
-    self.attackangle = nil
+    self.attackangle = 0
+    local spinsound = Audio.newSource(self.swingsound)
+    spinsound:play()
     local bounds = self.bounds
     waitfor(function()
         local oobx, ooby = self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
         return oobx or ooby
     end)
+    spinsound:stop()
+    self.attackangle = nil
     Audio.play(self.bodyslamsound)
-    self.hitstun = self.wallslamstun or 20
+    self.hurtstun = self.wallslamstun or 20
     yield()
     return "defeat"
 end
