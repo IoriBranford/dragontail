@@ -34,6 +34,7 @@ end
 function Ai:playerControl()
     local opponents = self.opponents
     while true do
+        yield()
         local inx, iny = Controls.getDirectionInput()
         local b1, b2 = Controls.getButtonsDown()
 
@@ -44,9 +45,11 @@ function Ai:playerControl()
             iny = iny * speed
         end
 
-        for i, opponent in ipairs(opponents) do
-            if not self.heldopponent and opponent.canbegrabbed and self:collideWithCharacterBody(opponent) then
-                return "playerHold", opponent
+        if b2 and not self.heldopponent then
+            for i, opponent in ipairs(opponents) do
+                if opponent.canbegrabbed and self:testBodyCollision(opponent) then
+                    return "playerHold", opponent
+                end
             end
         end
 
@@ -76,7 +79,6 @@ function Ai:playerControl()
         else
             self.sprite:changeAsepriteAnimation("stand2")
         end
-        yield()
     end
 end
 
@@ -90,8 +92,12 @@ function Ai:playerHold(enemy)
     Audio.play(self.holdsound)
     local holddirx, holddiry = norm(enemy.x - x, enemy.y - y)
     local time = enemy.hurtstun
-    while self.heldopponent == enemy and time > 0 do
+    while time > 0 do
         yield()
+        enemy = self.heldopponent
+        if not enemy then
+            break
+        end
         time = time - 1
         self:accelerateTowardsVel(0, 0, 8)
 
@@ -107,11 +113,14 @@ function Ai:playerHold(enemy)
         local holdanimation = self.getDirectionalAnimation_angle("hold", atan2(holddiry, holddirx), 8)
         self.sprite:changeAsepriteAnimation(holdanimation)
 
-        if b1 then
+        if not b2 then
             enemy:startAi(enemy.knockedai, holddirx, holddiry)
             Audio.play(self.throwsound)
             break
         end
+    end
+    if enemy then
+        enemy.heldby = nil
     end
     self.heldopponent = nil
     return "playerControl"
@@ -347,8 +356,11 @@ function Character:startAi(ainame, ...)
     local ok, msg = resume(ai, self, ...)
     assert(ok, msg)
     if status(ai) == "dead" then
+        assert(self.disappeared or not self.type or not self.type:find("Rose"), "Player lost ai after "..ainame)
         ai = nil
+        ainame = nil
     end
+    self.currentainame = ainame
     self.ai = ai
 end
 
@@ -362,6 +374,8 @@ function Character:runAi()
     if nextainame then
         self:startAi(nextainame, a, b, c, d, e)
     elseif status(ai) == "dead" then
+        assert(self.disappeared or not self.type or not self.type:find("Rose"), "Player lost ai after "..self.currentainame)
+        self.currentainame = nil
         self.ai = nil
     end
 end
