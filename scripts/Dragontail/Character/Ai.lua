@@ -38,17 +38,26 @@ function Ai:playerControl()
     while true do
         yield()
         local inx, iny = Controls.getDirectionInput()
-        local b1, b2 = Controls.getButtonsDown()
+        local b1pressed = Controls.getButtonsPressed()
+        local _, b2down = Controls.getButtonsDown()
 
-        local speed = b2 and 2 or 5
+        local facex, facey = self.facex, self.facey
+        local targetvelx, targetvely = 0, 0
+        local speed = b2down and 2 or 5
         if inx ~= 0 or iny ~= 0 then
             inx, iny = norm(inx, iny)
-            self.facex, self.facey = inx, iny
-            inx = inx * speed
-            iny = iny * speed
+            facex, facey = inx, iny
+            self.facex, self.facey = facex, facey
+            targetvelx = inx * speed
+            targetvely = iny * speed
         end
 
-        if b2 and not self.heldopponent then
+
+        if b1pressed then
+            return "playerAttack", atan2(-facey, -facex), self.attackspinspeed or (2*pi/15), self.attackspintime or 15
+        end
+
+        if b2down and not self.heldopponent then
             for i, opponent in ipairs(opponents) do
                 if opponent.canbegrabbed and self:testBodyCollision(opponent) then
                     return "playerHold", opponent
@@ -56,45 +65,61 @@ function Ai:playerControl()
             end
         end
 
-        self:accelerateTowardsVel(inx, iny, b2 and 4 or 8)
+        self:accelerateTowardsVel(targetvelx, targetvely, b2down and 4 or 8)
 
         local velx, vely = self.velx, self.vely
-        local veldot = dot(velx, vely, inx, iny)
+        -- local veldot = dot(velx, vely, inx, iny)
         local attackangle
-        if not b2
-        and (inx ~= 0 or iny ~= 0)
-        and veldot <= len(velx, vely) * speed * cos(pi/4) then
-            attackangle = atan2(-iny, -inx)
-        else
-            attackangle = nil
-        end
-        self.attackangle = attackangle
+        -- if not b2
+        -- and (inx ~= 0 or iny ~= 0)
+        -- and veldot <= len(velx, vely) * speed * cos(pi/4) then
+        --     attackangle = atan2(-iny, -inx)
+        -- else
+        --     attackangle = nil
+        -- end
+        -- self:startAttack(attackangle)
         if attackangle then
-            local attackanimation = self.getDirectionalAnimation_angle("attackA", attackangle, 8)
-            self.sprite:changeAsepriteAnimation(attackanimation)
-
-            for i, enemy in ipairs(opponents) do
-                if enemy:collideWithCharacterAttack(self) then
-                end
-            end
+            -- local attackanimation = self.getDirectionalAnimation_angle("attackA", attackangle, 8)
+            -- self.sprite:changeAsepriteAnimation(attackanimation)
         elseif velx ~= 0 or vely ~= 0 then
             if false --[[b2]]
             then
-                local holdanimation = self.getDirectionalAnimation_angle("hold", atan2(self.facey, self.facex), 8)
+                local holdanimation = self.getDirectionalAnimation_angle("hold", atan2(facey, facex), 8)
                 self.sprite:changeAsepriteAnimation(holdanimation)
             else
-                local runanimation = self.getDirectionalAnimation_angle("run", atan2(self.facey, self.facex), 8)
+                local runanimation = self.getDirectionalAnimation_angle("run", atan2(facey, facex), 8)
                 self.sprite:changeAsepriteAnimation(runanimation)
             end
         else
-            local standanimation = self.getDirectionalAnimation_angle("stand", atan2(self.facey, self.facex), 8)
+            local standanimation = self.getDirectionalAnimation_angle("stand", atan2(facey, facex), 8)
             self.sprite:changeAsepriteAnimation(standanimation)
         end
     end
 end
 
+function Ai:playerAttack(angle, spinvel, spintime)
+    local opponents = self.opponents
+    Audio.play(self.swingsound)
+    repeat
+        self.attackangle = angle
+        local spindir = spinvel < 0 and "B" or "A"
+        local attackanimation = self.getDirectionalAnimation_angle("attack"..spindir, angle, 8)
+        self.sprite:changeAsepriteAnimation(attackanimation)
+
+        for i, enemy in ipairs(opponents) do
+            if enemy:collideWithCharacterAttack(self) then
+            end
+        end
+        yield()
+        angle = angle + spinvel
+        spintime = spintime - 1
+    until spintime <= 0
+    self:stopAttack()
+    return "playerControl"
+end
+
 function Ai:playerHold(enemy)
-    self.attackangle = nil
+    self:stopAttack()
     self.heldopponent = enemy
     enemy.heldby = self
     enemy.hurtstun = enemy.holdstun or 120
@@ -214,13 +239,13 @@ function Ai:attack(attackname)
     wait(self.attackdelay or 24)
 
     Audio.play(self.swingsound)
-    self.attackangle = floor((tooppoangle + (pi/4)) / (pi/2)) * pi/2
+    self:startAttack(floor((tooppoangle + (pi/4)) / (pi/2)) * pi/2)
 
     animation = self.getDirectionalAnimation_angle(attackname.."B", tooppoangle, 4)
     self.sprite:changeAsepriteAnimation(animation, 1, "stop")
     wait(self.attackstun or 24)
 
-    self.attackangle = nil
+    self:stopAttack()
 
     return "stand", 20
 end
@@ -228,7 +253,7 @@ end
 function Ai:hurt(recoverai)
     assert(recoverai, debug.traceback())
     self.velx, self.vely = 0, 0
-    self.attackangle = nil
+    self:stopAttack()
     local heldopponent = self.heldopponent
     local heldby = self.heldby
     self.heldopponent = nil
@@ -252,7 +277,7 @@ function Ai:hurt(recoverai)
 end
 
 function Ai:stun(duration)
-    self.attackangle = nil
+    self:stopAttack()
     self.velx, self.vely = 0, 0
     self.sprite:changeAsepriteAnimation("collapseA", 1, "stop")
     Audio.play(self.stunsound)
@@ -264,7 +289,7 @@ function Ai:stun(duration)
 end
 
 function Ai:held(holder)
-    self.attackangle = nil
+    self:stopAttack()
     self.velx, self.vely = 0, 0
 
 end
@@ -277,7 +302,7 @@ function Ai:spin(dirx, diry)
     Sheets.fill(self, "human-spinout")
     local knockedspeed = self.knockedspeed or 8
     self.velx, self.vely = dirx*knockedspeed, diry*knockedspeed
-    self.attackangle = atan2(diry, dirx)
+    self:startAttack(atan2(diry, dirx))
     local spinsound = Audio.newSource(self.swingsound)
     spinsound:play()
     local bounds = self.bounds
@@ -286,7 +311,7 @@ function Ai:spin(dirx, diry)
         return oobx or ooby
     end)
     spinsound:stop()
-    self.attackangle = nil
+    self:stopAttack()
     Audio.play(self.bodyslamsound)
     self.hurtstun = self.wallslamstun or 20
     yield()
@@ -295,7 +320,7 @@ end
 
 function Ai:defeat(defeatanimation)
     self.health = -1
-    self.attackangle = nil
+    self:stopAttack()
     self.velx, self.vely = 0, 0
     self.sprite:changeAsepriteAnimation(defeatanimation or "collapse", 1, "stop")
     Audio.play(self.defeatsound)

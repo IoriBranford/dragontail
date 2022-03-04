@@ -136,6 +136,18 @@ function Character:update(dsecs, fixedfrac)
     end
 end
 
+function Character:startAttack(attackangle, attackspinvel, attackspintime)
+    self.attackangle = attackangle
+    self.attackspinvel = attackspinvel
+    self.attackspintime = attackspintime
+end
+
+function Character:stopAttack()
+    self.attackangle = nil
+    self.attackspinvel = nil
+    self.attackspintime = nil
+end
+
 function Character:rotateAttack(dangle)
     dangle = math.fmod(dangle + 3*pi, 2*pi) - pi
     self.attackangle = self.attackangle + dangle
