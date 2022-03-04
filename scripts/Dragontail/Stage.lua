@@ -115,6 +115,12 @@ end
 
 function Stage.draw()
     scene:draw()
+    love.graphics.setColor(.75, .25, .25)
+    love.graphics.rectangle("fill", 16, 32, player.health, 16)
+    love.graphics.setColor(1, .5, .5)
+    love.graphics.rectangle("line", 15.5, 31.5, player.maxhealth, 17, 2)
+    love.graphics.setColor(1,1,1)
+    love.graphics.printf("Rose", 16, 16, 32, "left")
 end
 
 return Stage
