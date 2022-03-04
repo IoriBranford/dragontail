@@ -21,6 +21,11 @@ function Audio.play(file, track)
     return clip
 end
 
+function Audio.newSource(file)
+    local clip = Assets.get(file)
+    return clip and clip:clone()
+end
+
 function Audio.setMusicVolume(volume)
     if music then
         music:setVolume(volume)
