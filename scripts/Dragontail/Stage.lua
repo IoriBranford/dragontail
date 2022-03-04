@@ -4,65 +4,35 @@ require "Dragontail.Character.Ai"
 local Tiled     = require "Data.Tiled"
 local Sheets    = require "Data.Sheets"
 local Audio     = require "System.Audio"
+local Movement  = require "Object.Movement"
 local Stage = {}
 
 local scene
 local player, enemies, allcharacters
 local currentbounds
+local map
+local roomindex
+local gamestatus
+local camerax, cameray
 
 function Stage.init(stagefile)
     scene = Scene.new()
     allcharacters = {}
     enemies = {}
 
-    local map = Tiled.load(stagefile)
-    local bounds = map.layers.bounds
-    currentbounds = bounds and bounds.roombounds1 or {0, 0, 640, 360}
+    map = Tiled.load(stagefile)
+    roomindex = 0
+
+    currentbounds = map.layers.stage.bounds
+    camerax, cameray = 0, (map.height*map.tileheight) - 360
 
     scene:addMap(map, "group,tilelayer")
 
-    player = Character.new({
+    player = Stage.addCharacter({
         x = 160, y = 180, type = "Rose"
     })
     Sheets.fill(player, "Rose-attack")
-    allcharacters[#allcharacters+1] = player
-
-    local food = {
-        x = 512, y = 180-16, z = 16, type = "food-fish"
-    }
-    local firstcharacters = {
-        {
-            x = 480, y = 120, type = "bandit-dagger"
-        },
-        {
-            x = 480, y = 300, type = "bandit-spear"
-        },
-        {
-            x = 512, y = 180, type = "food-container", item = food
-        },
-        food
-    }
-    for i = 0, 4 do
-        firstcharacters[#firstcharacters+1] = {
-            y = 240, x = 240 + i*40, type = "bandit-dagger"
-        }
-    end
-
-    for i, c in ipairs(firstcharacters) do
-        local character = Character.init(c)
-        character.opponent = player
-        character.bounds = currentbounds
-        character:addToScene(scene)
-        allcharacters[#allcharacters+1] = character
-        if character.team == "enemy" then
-            enemies[#enemies+1] = character
-        end
-    end
-
     player.opponents = enemies
-    player.bounds = currentbounds
-    player:addToScene(scene)
-    player:startAi("playerControl")
 
     for i, character in ipairs(allcharacters) do
         if character.initialai then
@@ -70,6 +40,7 @@ function Stage.init(stagefile)
         end
     end
     Audio.playMusic("music/retro-chiptune-guitar.ogg")
+    Stage.openNextRoom()
 end
 
 function Stage.quit()
@@ -77,6 +48,90 @@ function Stage.quit()
     player = nil
     enemies = nil
     allcharacters = nil
+end
+
+function Stage.addCharacter(object)
+    local character = Character.init(object)
+    character.bounds = currentbounds
+    character:addToScene(scene)
+    allcharacters[#allcharacters+1] = character
+    if character.team == "enemy" then
+        enemies[#enemies+1] = character
+    end
+    return character
+end
+local addCharacter = Stage.addCharacter
+
+function Stage.addCharacters(objects)
+    for i, object in ipairs(objects) do
+        local typ = object.type
+        if typ ~= "" then
+            if typ == "bounds" then
+            else
+                local character = addCharacter(object)
+                character.opponent = player
+                if character.initialai then
+                    character:startAi(character.initialai, 60)
+                end
+            end
+        end
+    end
+end
+local addCharacters = Stage.addCharacters
+
+function Stage.openNextRoom()
+    currentbounds = map.layers.stage.bounds
+
+    roomindex = roomindex + 1
+    print(debug.traceback())
+    local room = map.layers["room"..roomindex]
+    if room then
+        addCharacters(room)
+        gamestatus = "goingToNextRoom"
+    else
+        gamestatus = "victory"
+    end
+end
+
+function Stage.updateGoingToNextRoom()
+    local room = map.layers["room"..roomindex]
+    assert(room, "No room "..roomindex)
+    local roombounds = room.bounds
+    camerax = math.max(0,
+            math.min(map.width * map.tilewidth - 640,
+            Movement.moveTowards(camerax, player.x - 640/2, 8)))
+    if camerax + 640 >= roombounds.x + roombounds.width then
+        camerax = roombounds.x + roombounds.width - 640
+        Stage.startNextFight()
+    end
+end
+
+function Stage.startNextFight()
+    gamestatus = nil
+    local room = map.layers["room"..roomindex]
+    assert(room, "No room "..roomindex)
+    currentbounds = room.bounds
+    local fight = map.layers["fight"..roomindex]
+    assert(fight, "No fight "..roomindex)
+    addCharacters(fight)
+end
+
+local function compDisappeared(a,b)
+    return not a.disappeared and b.disappeared
+end
+
+local function sortAndPruneDisappeared(characters, onempty, ...)
+    table.sort(characters, compDisappeared)
+    local n = #characters
+    for i = #characters, 1, -1 do
+        if not characters[i].disappeared then
+            break
+        end
+        characters[i] = nil
+    end
+    if onempty and n > 0 and #characters == 0 then
+        onempty(...)
+    end
 end
 
 function Stage.fixedupdate()
@@ -96,14 +151,11 @@ function Stage.fixedupdate()
     end
     player:keepInBounds(currentbounds.x, currentbounds.y, currentbounds.width, currentbounds.height)
 
-    table.sort(allcharacters, function(a,b)
-        return not a.disappeared and b.disappeared
-    end)
-    for i = #allcharacters, 1, -1 do
-        if not allcharacters[i].disappeared then
-            break
-        end
-        allcharacters[i] = nil
+    sortAndPruneDisappeared(enemies, Stage.openNextRoom)
+    sortAndPruneDisappeared(allcharacters)
+
+    if gamestatus == "goingToNextRoom" then
+        Stage.updateGoingToNextRoom()
     end
 
     scene:animate(1)
@@ -120,7 +172,10 @@ local BarX, BarY = NameX + 40, NameY
 local BarH = 16
 
 function Stage.draw()
+    love.graphics.push()
+    love.graphics.translate(-camerax, -cameray)
     scene:draw()
+    love.graphics.pop()
     love.graphics.setColor(.75, .25, .25)
     love.graphics.rectangle("fill", BarX, BarY, player.health, BarH)
     love.graphics.setColor(1, .5, .5)
