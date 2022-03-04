@@ -13,6 +13,7 @@ end
 function math.lensq(x, y)
     return x*x+y*y
 end
+local lensq = math.lensq
 
 function math.distsq(x1, y1, x2, y2)
     local dx, dy = x2-x1, y2-y1
@@ -48,6 +49,14 @@ function math.testrects(ax, ay, aw, ah, bx, by, bw, bh)
     if ay + ah < by then return false end
     if by + bh < ay then return false end
     return true
+end
+
+function math.testcircles(ax, ay, ar, bx, by, br)
+    local dx, dy = ax - bx, ay - by
+    local distsq = lensq(dx, dy)
+    local radii = ar + br
+    local radiisq = radii * radii
+    return distsq < radiisq and distsq
 end
 
 function math.table_rad(t, k)
