@@ -237,8 +237,8 @@ function Character:collideWithCharacterAttack(other)
                     else
                         self:startAi(self.defeatai or "defeat")
                     end
-                else
-                    self:startAi(self.hurtai or "hurt", self.hurtrecoverai)
+                elseif self.hurtai and self.hurtrecoverai then
+                    self:startAi(self.hurtai, self.hurtrecoverai)
                 end
             end
             Audio.play(sound)
