@@ -240,6 +240,49 @@ function Ai:defeat(defeatanimation)
     self:disappear()
 end
 
+function Ai:containerBreak()
+    self.health = -1
+    Audio.play(self.defeatsound)
+    self.sprite:changeAsepriteAnimation("collapse", 1, "stop")
+    local item = self.item
+    if item then
+        item.opponent = self.opponent
+        item:startAi("itemDrop", self.y)
+    end
+    wait(30)
+    self:disappear()
+end
+
+function Ai:itemDrop(y0)
+    local popoutspeed = self.popoutspeed or 8
+    local gravity = self.dropgravity or .5
+    self.vely = -popoutspeed
+    self.velz = popoutspeed
+    repeat
+        self.vely = self.vely + gravity
+        self.velz = self.velz - gravity
+        yield()
+    until self.y >= y0
+
+    self.y = y0
+    self.z = 0
+    self.vely = 0
+    self.velz = 0
+
+    while true do
+        local opponent = self.opponent
+        if self:collideWithCharacterBody(opponent) then
+            if self.healhealth then
+                Audio.play(self.healsound)
+                opponent:heal(self.healhealth)
+            end
+            self:disappear()
+            return
+        end
+        yield()
+    end
+end
+
 function Character:startAi(ainame, ...)
     local f = Ai[ainame]
     if not f then
