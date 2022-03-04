@@ -335,6 +335,12 @@ function Ai:defeat(defeatanimation)
     self:disappear()
 end
 
+function Ai:playerDefeat(defeatanimation)
+    Audio.fadeMusic()
+    yield()
+    return "defeat", defeatanimation
+end
+
 function Ai:containerBreak()
     self.health = -1
     Audio.play(self.defeatsound)
