@@ -234,9 +234,14 @@ function Ai:defeat(defeatanimation)
     self.velx, self.vely = 0, 0
     self.sprite:changeAsepriteAnimation(defeatanimation or "collapse", 1, "stop")
     Audio.play(self.defeatsound)
-    wait(12)
+    wait(20)
     Audio.play(self.bodydropsound)
-    wait(60)
+    local i = 1
+    repeat
+        self.sprite.alpha = cos(i)
+        yield()
+        i = i + 1
+    until i > 60
     self:disappear()
 end
 
@@ -249,7 +254,12 @@ function Ai:containerBreak()
         item.opponent = self.opponent
         item:startAi("itemDrop", self.y)
     end
-    wait(30)
+    local i = 1
+    repeat
+        self.sprite.alpha = cos(i)
+        yield()
+        i = i + 1
+    until i > 30
     self:disappear()
 end
 
