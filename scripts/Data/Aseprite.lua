@@ -188,14 +188,14 @@ function Aseprite.load(jsonfile)
 	local doc = json.decode(love.filesystem.read(jsonfile))
 	local cels = doc.frames
 	local meta = doc.meta
-	local image = meta.image
+	local imagefile = meta.image
     local directory = string.match(jsonfile, "^(.+/)") or ""
-	image = love.graphics.newImage(directory..image)
+	local image = love.graphics.newImage(directory..imagefile)
 	image:setFilter("nearest", "nearest")
 
 	local layers = meta.layers
 	if not cels[1] and not layers then
-		error("Aseprite "..image.." was exported with hash frames and no layer list. There is no way to ensure the correct layer order.")
+		error("Aseprite "..imagefile.." was exported with hash frames and no layer list. There is no way to ensure the correct layer order.")
 	end
 
 	layers = layers or {}
@@ -207,6 +207,7 @@ function Aseprite.load(jsonfile)
 	local ase = {}
 	local _, cel1 = next(cels)
 	local size = cel1.sourceSize
+	ase.imagefile = imagefile
 	ase.width = size.w
 	ase.height = size.h
 
