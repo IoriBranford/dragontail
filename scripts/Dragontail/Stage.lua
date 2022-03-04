@@ -3,6 +3,7 @@ local Character = require "Dragontail.Character"
 require "Dragontail.Character.Ai"
 local Tiled     = require "Data.Tiled"
 local Sheets    = require "Data.Sheets"
+local Audio     = require "System.Audio"
 local Stage = {}
 
 local scene
@@ -68,6 +69,7 @@ function Stage.init(stagefile)
             character:startAi(character.initialai, 60)
         end
     end
+    Audio.playMusic("music/retro-chiptune-guitar.ogg")
 end
 
 function Stage.quit()

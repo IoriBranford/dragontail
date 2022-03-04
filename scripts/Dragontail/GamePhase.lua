@@ -3,6 +3,7 @@ local Config= require "System.Config"
 local Stage = require "Dragontail.Stage"
 local Sheets= require "Data.Sheets"
 local Assets= require "System.Assets"
+local Audio = require "System.Audio"
 local isAsset = Assets.isAsset
 local getAsset = Assets.get
 local GamePhase = {}
@@ -11,6 +12,7 @@ function GamePhase.loadphase()
     local unifont = Assets.get("fonts/Unifont 16.fnt")
     love.graphics.setFont(unifont)
     Canvas.init(Config.basewindowwidth, Config.basewindowheight)
+    Assets.load("music/retro-chiptune-guitar.ogg", "stream")
 
     Sheets.load("data/jam_characters.csv")
     Sheets.load("data/jam_attacks.csv")
@@ -47,6 +49,7 @@ end
 
 function GamePhase.update(dsecs, fixedfrac)
     Stage.update(dsecs, fixedfrac)
+    Audio.update(dsecs)
 end
 
 function GamePhase.resize(w, h)
