@@ -80,13 +80,17 @@ end
 local addCharacters = Stage.addCharacters
 
 function Stage.openNextRoom()
-    currentbounds = map.layers.stage.bounds
+    local stagebounds = map.layers.stage.bounds
+    currentbounds = stagebounds
 
     roomindex = roomindex + 1
     local room = map.layers["room"..roomindex]
     if room then
         addCharacters(room)
         gamestatus = "goingToNextRoom"
+
+        local roombounds = room.bounds
+        stagebounds.width = roombounds.x + roombounds.width - stagebounds.x
     else
         gamestatus = "victory"
         player:startAi("playerVictory")
@@ -115,7 +119,6 @@ function Stage.startNextFight()
     assert(room, "No room "..roomindex)
     currentbounds = room.bounds
     local stagebounds = map.layers.stage.bounds
-    stagebounds.width = stagebounds.width - currentbounds.x
     stagebounds.x = currentbounds.x
     local fight = map.layers["fight"..roomindex]
     assert(fight, "No fight "..roomindex)
