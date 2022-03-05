@@ -8,7 +8,9 @@ local isAsset = Assets.isAsset
 local getAsset = Assets.get
 local GamePhase = {}
 
+local paused
 function GamePhase.loadphase()
+    paused = false
     local unifont = Assets.get("fonts/Unifont 16.fnt")
     love.graphics.setFont(unifont)
     Canvas.init(Config.basewindowwidth, Config.basewindowheight)
@@ -32,7 +34,15 @@ function keypressed.f2()
     love.event.loadphase("Dragontail.GamePhase")
 end
 
+function keypressed.pause()
+    paused = not paused
+end
+
 function GamePhase.keypressed(key)
+    if paused then
+        paused = false
+        return
+    end
     local kp = keypressed[key]
     if kp then kp() end
 end
@@ -44,11 +54,13 @@ function GamePhase.quitphase()
 end
 
 function GamePhase.fixedupdate()
-    Stage.fixedupdate()
+    if not paused then
+        Stage.fixedupdate()
+    end
 end
 
 function GamePhase.update(dsecs, fixedfrac)
-    Stage.update(dsecs, fixedfrac)
+    Stage.update(dsecs, paused and 0 or fixedfrac)
     Audio.update(dsecs)
 end
 
@@ -60,6 +72,9 @@ function GamePhase.draw()
     Canvas.drawOnCanvas(function()
         love.graphics.clear(.25, .25, .25)
         Stage.draw()
+        if paused then
+            love.graphics.printf("PAUSE\n\nPress any key to resume", 0, 128, 640, "center")
+        end
     end)
     Canvas.drawCanvas()
 end
