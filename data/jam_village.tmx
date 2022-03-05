@@ -122,70 +122,70 @@
   <properties>
    <property name="z" value="0"/>
   </properties>
-  <object id="63" type="bandit-spear" x="1408" y="256">
+  <object id="63" type="bandit-spear" x="1840" y="144">
    <properties>
     <property name="initialai" value="approach"/>
    </properties>
    <point/>
   </object>
-  <object id="74" type="bandit-spear" x="1312" y="256">
+  <object id="74" type="bandit-spear" x="2000" y="144">
    <point/>
   </object>
-  <object id="64" type="bandit-dagger" x="2144" y="272">
+  <object id="64" type="bandit-dagger" x="1376" y="272">
    <properties>
     <property name="initialai" value="approach"/>
    </properties>
    <point/>
   </object>
-  <object id="69" type="bandit-dagger" x="2208" y="240">
+  <object id="69" type="bandit-dagger" x="1312" y="240">
    <properties>
     <property name="initialai" value="approach"/>
    </properties>
    <point/>
   </object>
-  <object id="72" type="bandit-dagger" x="2208" y="304">
+  <object id="72" type="bandit-dagger" x="1312" y="304">
    <properties>
     <property name="initialai" value="approach"/>
    </properties>
    <point/>
   </object>
-  <object id="65" type="bandit-dagger" x="2112" y="256">
+  <object id="65" type="bandit-dagger" x="1408" y="256">
    <properties>
     <property name="initialai" value="approach"/>
    </properties>
    <point/>
   </object>
-  <object id="68" type="bandit-dagger" x="2176" y="224">
+  <object id="68" type="bandit-dagger" x="1344" y="224">
    <properties>
     <property name="initialai" value="approach"/>
    </properties>
    <point/>
   </object>
-  <object id="71" type="bandit-dagger" x="2176" y="288">
+  <object id="71" type="bandit-dagger" x="1344" y="288">
    <properties>
     <property name="initialai" value="approach"/>
    </properties>
    <point/>
   </object>
-  <object id="73" type="bandit-dagger" x="2176" y="256">
+  <object id="73" type="bandit-dagger" x="1344" y="256">
    <properties>
     <property name="initialai" value="approach"/>
    </properties>
    <point/>
   </object>
-  <object id="66" type="bandit-dagger" x="2144" y="240">
+  <object id="66" type="bandit-dagger" x="1376" y="240">
    <properties>
     <property name="initialai" value="approach"/>
    </properties>
    <point/>
   </object>
-  <object id="67" type="bandit-dagger" x="2208" y="208">
+  <object id="67" type="bandit-dagger" x="1312" y="208">
    <properties>
     <property name="initialai" value="approach"/>
    </properties>
    <point/>
   </object>
-  <object id="70" type="bandit-dagger" x="2208" y="272">
+  <object id="70" type="bandit-dagger" x="1312" y="272">
    <properties>
     <property name="initialai" value="approach"/>
    </properties>
