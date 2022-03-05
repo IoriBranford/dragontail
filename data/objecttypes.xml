@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objecttypes>
- <objecttype name="bandit-dagger" color="#ff0000"/>
- <objecttype name="bandit-spear" color="#ff0000"/>
+ <objecttype name="bandit-dagger" color="#ffaaff"/>
+ <objecttype name="bandit-spear" color="#ff5500"/>
  <objecttype name="food-bigfish" color="#aaff00"/>
  <objecttype name="food-container" color="#c0c0c0"/>
  <objecttype name="food-fish" color="#aaff00"/>
