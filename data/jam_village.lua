@@ -8,8 +8,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 20,
-  nextobjectid = 62,
+  nextlayerid = 22,
+  nextobjectid = 75,
   properties = {},
   tilesets = {
     {
@@ -3786,8 +3786,8 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 19,
-      name = "fight4",
+      id = 20,
+      name = "room5",
       visible = true,
       opacity = 1,
       offsetx = 0,
@@ -3799,131 +3799,14 @@ return {
       },
       objects = {
         {
-          id = 25,
-          name = "",
-          type = "bandit-spear",
-          shape = "point",
-          x = 960,
-          y = 288,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 58,
-          name = "",
-          type = "bandit-spear",
-          shape = "point",
-          x = 992,
-          y = 256,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 26,
-          name = "",
-          type = "bandit-spear",
-          shape = "point",
-          x = 960,
-          y = 224,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 27,
-          name = "",
-          type = "bandit-spear",
-          shape = "point",
-          x = 1200,
-          y = 144,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 53,
-          name = "",
-          type = "bandit-dagger",
-          shape = "point",
-          x = 1056,
-          y = 192,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 61,
-          name = "",
-          type = "bandit-dagger",
-          shape = "point",
-          x = 1008,
-          y = 192,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 54,
-          name = "",
-          type = "bandit-dagger",
-          shape = "point",
-          x = 1088,
-          y = 256,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 60,
-          name = "",
-          type = "bandit-dagger",
-          shape = "point",
-          x = 1040,
-          y = 256,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 55,
-          name = "",
-          type = "bandit-dagger",
-          shape = "point",
-          x = 1056,
-          y = 320,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 59,
-          name = "",
-          type = "bandit-dagger",
-          shape = "point",
-          x = 1008,
-          y = 320,
-          width = 0,
-          height = 0,
+          id = 62,
+          name = "bounds",
+          type = "",
+          shape = "rectangle",
+          x = 1440,
+          y = 128,
+          width = 640,
+          height = 256,
           rotation = 0,
           visible = true,
           properties = {}
@@ -4058,114 +3941,6 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 17,
-      name = "fight3",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {
-        ["z"] = "0"
-      },
-      objects = {
-        {
-          id = 41,
-          name = "",
-          type = "bandit-spear",
-          shape = "point",
-          x = 688,
-          y = 288,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 43,
-          name = "",
-          type = "bandit-spear",
-          shape = "point",
-          x = 688,
-          y = 224,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 40,
-          name = "",
-          type = "bandit-dagger",
-          shape = "point",
-          x = 656,
-          y = 192,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 45,
-          name = "",
-          type = "bandit-dagger",
-          shape = "point",
-          x = 656,
-          y = 320,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 42,
-          name = "",
-          type = "bandit-dagger",
-          shape = "point",
-          x = 608,
-          y = 192,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 44,
-          name = "",
-          type = "bandit-dagger",
-          shape = "point",
-          x = 608,
-          y = 320,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 17,
-          name = "",
-          type = "bandit-dagger",
-          shape = "point",
-          x = 880,
-          y = 144,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
       id = 12,
       name = "room3",
       visible = true,
@@ -4238,6 +4013,574 @@ return {
           type = "bandit-spear",
           shape = "point",
           x = 1200,
+          y = 144,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 14,
+      name = "room2",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {
+        ["z"] = "0"
+      },
+      objects = {
+        {
+          id = 8,
+          name = "",
+          type = "food-fish",
+          shape = "point",
+          x = 800,
+          y = 161,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 9,
+          name = "",
+          type = "food-container",
+          shape = "point",
+          x = 800,
+          y = 160,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["item"] = { id = 8 }
+          }
+        },
+        {
+          id = 4,
+          name = "bounds",
+          type = "",
+          shape = "rectangle",
+          x = 512,
+          y = 128,
+          width = 640,
+          height = 256,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 11,
+      name = "room1",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {
+        ["z"] = "0"
+      },
+      objects = {
+        {
+          id = 2,
+          name = "bounds",
+          type = "",
+          shape = "rectangle",
+          x = 128,
+          y = 128,
+          width = 640,
+          height = 256,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 21,
+      name = "fight5",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {
+        ["z"] = "0"
+      },
+      objects = {
+        {
+          id = 63,
+          name = "",
+          type = "bandit-spear",
+          shape = "point",
+          x = 1408,
+          y = 256,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 74,
+          name = "",
+          type = "bandit-spear",
+          shape = "point",
+          x = 1312,
+          y = 256,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 64,
+          name = "",
+          type = "bandit-dagger",
+          shape = "point",
+          x = 2144,
+          y = 272,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 69,
+          name = "",
+          type = "bandit-dagger",
+          shape = "point",
+          x = 2208,
+          y = 240,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 72,
+          name = "",
+          type = "bandit-dagger",
+          shape = "point",
+          x = 2208,
+          y = 304,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 65,
+          name = "",
+          type = "bandit-dagger",
+          shape = "point",
+          x = 2112,
+          y = 256,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 68,
+          name = "",
+          type = "bandit-dagger",
+          shape = "point",
+          x = 2176,
+          y = 224,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 71,
+          name = "",
+          type = "bandit-dagger",
+          shape = "point",
+          x = 2176,
+          y = 288,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 73,
+          name = "",
+          type = "bandit-dagger",
+          shape = "point",
+          x = 2176,
+          y = 256,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 66,
+          name = "",
+          type = "bandit-dagger",
+          shape = "point",
+          x = 2144,
+          y = 240,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 67,
+          name = "",
+          type = "bandit-dagger",
+          shape = "point",
+          x = 2208,
+          y = 208,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 70,
+          name = "",
+          type = "bandit-dagger",
+          shape = "point",
+          x = 2208,
+          y = 272,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 19,
+      name = "fight4",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {
+        ["z"] = "0"
+      },
+      objects = {
+        {
+          id = 25,
+          name = "",
+          type = "bandit-spear",
+          shape = "point",
+          x = 960,
+          y = 288,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 58,
+          name = "",
+          type = "bandit-spear",
+          shape = "point",
+          x = 992,
+          y = 256,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 26,
+          name = "",
+          type = "bandit-spear",
+          shape = "point",
+          x = 960,
+          y = 224,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 27,
+          name = "",
+          type = "bandit-spear",
+          shape = "point",
+          x = 1200,
+          y = 144,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 53,
+          name = "",
+          type = "bandit-dagger",
+          shape = "point",
+          x = 1056,
+          y = 192,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 61,
+          name = "",
+          type = "bandit-dagger",
+          shape = "point",
+          x = 1008,
+          y = 192,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 54,
+          name = "",
+          type = "bandit-dagger",
+          shape = "point",
+          x = 1088,
+          y = 256,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 60,
+          name = "",
+          type = "bandit-dagger",
+          shape = "point",
+          x = 1040,
+          y = 256,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 55,
+          name = "",
+          type = "bandit-dagger",
+          shape = "point",
+          x = 1056,
+          y = 320,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 59,
+          name = "",
+          type = "bandit-dagger",
+          shape = "point",
+          x = 1008,
+          y = 320,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 17,
+      name = "fight3",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {
+        ["z"] = "0"
+      },
+      objects = {
+        {
+          id = 41,
+          name = "",
+          type = "bandit-spear",
+          shape = "point",
+          x = 688,
+          y = 288,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 43,
+          name = "",
+          type = "bandit-spear",
+          shape = "point",
+          x = 688,
+          y = 224,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 40,
+          name = "",
+          type = "bandit-dagger",
+          shape = "point",
+          x = 656,
+          y = 192,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 45,
+          name = "",
+          type = "bandit-dagger",
+          shape = "point",
+          x = 656,
+          y = 320,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 42,
+          name = "",
+          type = "bandit-dagger",
+          shape = "point",
+          x = 608,
+          y = 192,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 44,
+          name = "",
+          type = "bandit-dagger",
+          shape = "point",
+          x = 608,
+          y = 320,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 17,
+          name = "",
+          type = "bandit-dagger",
+          shape = "point",
+          x = 880,
           y = 144,
           width = 0,
           height = 0,
@@ -4402,64 +4745,6 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 14,
-      name = "room2",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {
-        ["z"] = "0"
-      },
-      objects = {
-        {
-          id = 8,
-          name = "",
-          type = "food-fish",
-          shape = "point",
-          x = 800,
-          y = 161,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 9,
-          name = "",
-          type = "food-container",
-          shape = "point",
-          x = 800,
-          y = 160,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["item"] = { id = 8 }
-          }
-        },
-        {
-          id = 4,
-          name = "bounds",
-          type = "",
-          shape = "rectangle",
-          x = 512,
-          y = 128,
-          width = 640,
-          height = 256,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
       id = 16,
       name = "fight1",
       visible = true,
@@ -4576,36 +4861,6 @@ return {
           properties = {
             ["initialai"] = "approach"
           }
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 11,
-      name = "room1",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {
-        ["z"] = "0"
-      },
-      objects = {
-        {
-          id = 2,
-          name = "bounds",
-          type = "",
-          shape = "rectangle",
-          x = 128,
-          y = 128,
-          width = 640,
-          height = 256,
-          rotation = 0,
-          visible = true,
-          properties = {}
         }
       }
     }
