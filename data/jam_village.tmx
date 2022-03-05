@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="80" height="12" tilewidth="32" tileheight="32" infinite="0" nextlayerid="20" nextobjectid="29">
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="80" height="12" tilewidth="32" tileheight="32" infinite="0" nextlayerid="20" nextobjectid="62">
  <editorsettings>
   <export target="jam_village.lua" format="lua"/>
  </editorsettings>
@@ -41,16 +41,34 @@
   <properties>
    <property name="z" value="0"/>
   </properties>
-  <object id="25" type="bandit-spear" x="1088" y="288">
+  <object id="25" type="bandit-spear" x="960" y="288">
    <point/>
   </object>
-  <object id="26" type="bandit-spear" x="1088" y="224">
+  <object id="58" type="bandit-spear" x="992" y="256">
+   <point/>
+  </object>
+  <object id="26" type="bandit-spear" x="960" y="224">
    <point/>
   </object>
   <object id="27" type="bandit-spear" x="1200" y="144">
    <point/>
   </object>
-  <object id="28" type="bandit-dagger" x="1360" y="144">
+  <object id="53" type="bandit-dagger" x="1056" y="192">
+   <point/>
+  </object>
+  <object id="61" type="bandit-dagger" x="1008" y="192">
+   <point/>
+  </object>
+  <object id="54" type="bandit-dagger" x="1088" y="256">
+   <point/>
+  </object>
+  <object id="60" type="bandit-dagger" x="1040" y="256">
+   <point/>
+  </object>
+  <object id="55" type="bandit-dagger" x="1056" y="320">
+   <point/>
+  </object>
+  <object id="59" type="bandit-dagger" x="1008" y="320">
    <point/>
   </object>
  </objectgroup>
@@ -77,21 +95,39 @@
    <point/>
   </object>
   <object id="5" name="bounds" x="1120" y="128" width="640" height="256"/>
+  <object id="28" type="bandit-dagger" x="1520" y="144">
+   <point/>
+  </object>
+  <object id="56" type="bandit-spear" x="1680" y="144">
+   <point/>
+  </object>
+  <object id="52" type="bandit-dagger" x="1360" y="144">
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup id="17" name="fight3">
   <properties>
    <property name="z" value="0"/>
   </properties>
-  <object id="15" type="bandit-spear" x="880" y="144">
+  <object id="41" type="bandit-spear" x="688" y="288">
    <point/>
   </object>
-  <object id="16" type="bandit-dagger" x="1040" y="144">
+  <object id="43" type="bandit-spear" x="688" y="224">
    <point/>
   </object>
-  <object id="17" type="bandit-dagger" x="1200" y="144">
+  <object id="40" type="bandit-dagger" x="656" y="192">
    <point/>
   </object>
-  <object id="18" type="bandit-spear" x="1360" y="144">
+  <object id="45" type="bandit-dagger" x="656" y="320">
+   <point/>
+  </object>
+  <object id="42" type="bandit-dagger" x="608" y="192">
+   <point/>
+  </object>
+  <object id="44" type="bandit-dagger" x="608" y="320">
+   <point/>
+  </object>
+  <object id="17" type="bandit-dagger" x="880" y="144">
    <point/>
   </object>
  </objectgroup>
@@ -99,31 +135,79 @@
   <properties>
    <property name="z" value="0"/>
   </properties>
-  <object id="3" name="bounds" x="800" y="128" width="640" height="256"/>
+  <object id="3" name="bounds" x="720" y="128" width="640" height="256"/>
+  <object id="50" type="food-fish" x="1280" y="161">
+   <point/>
+  </object>
+  <object id="51" type="food-container" x="1280" y="160">
+   <properties>
+    <property name="item" type="object" value="50"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="16" type="bandit-dagger" x="1040" y="144">
+   <point/>
+  </object>
+  <object id="18" type="bandit-spear" x="1200" y="144">
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup id="18" name="fight2">
   <properties>
    <property name="z" value="0"/>
   </properties>
-  <object id="19" type="bandit-spear" x="1152" y="256">
+  <object id="19" type="bandit-spear" x="1184" y="256">
    <properties>
     <property name="initialai" value="approach"/>
    </properties>
    <point/>
   </object>
-  <object id="20" type="bandit-dagger" x="1184" y="320">
+  <object id="36" type="bandit-spear" x="480" y="256">
    <properties>
     <property name="initialai" value="approach"/>
    </properties>
    <point/>
   </object>
-  <object id="22" type="bandit-dagger" x="1184" y="192">
+  <object id="20" type="bandit-dagger" x="1216" y="320">
    <properties>
     <property name="initialai" value="approach"/>
    </properties>
    <point/>
   </object>
-  <object id="21" type="bandit-dagger" x="1216" y="256">
+  <object id="35" type="bandit-dagger" x="448" y="320">
+   <properties>
+    <property name="initialai" value="approach"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="22" type="bandit-dagger" x="1216" y="192">
+   <properties>
+    <property name="initialai" value="approach"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="34" type="bandit-dagger" x="448" y="192">
+   <properties>
+    <property name="initialai" value="approach"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="21" type="bandit-dagger" x="1248" y="288">
+   <properties>
+    <property name="initialai" value="approach"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="33" type="bandit-dagger" x="1248" y="224">
+   <properties>
+    <property name="initialai" value="approach"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="57" type="bandit-dagger" x="416" y="256">
+   <properties>
+    <property name="initialai" value="approach"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>
@@ -131,34 +215,58 @@
   <properties>
    <property name="z" value="0"/>
   </properties>
-  <object id="8" type="food-fish" x="832" y="161">
+  <object id="8" type="food-fish" x="800" y="161">
    <point/>
   </object>
-  <object id="9" type="food-container" x="832" y="160">
+  <object id="9" type="food-container" x="800" y="160">
    <properties>
     <property name="item" type="object" value="8"/>
    </properties>
    <point/>
   </object>
-  <object id="4" name="bounds" x="480" y="128" width="640" height="256"/>
+  <object id="4" name="bounds" x="512" y="128" width="640" height="256"/>
  </objectgroup>
  <objectgroup id="16" name="fight1">
   <properties>
    <property name="z" value="0"/>
   </properties>
-  <object id="12" type="bandit-dagger" x="864" y="192">
+  <object id="12" type="bandit-dagger" x="832" y="192">
    <properties>
     <property name="initialai" value="approach"/>
    </properties>
    <point/>
   </object>
-  <object id="13" type="bandit-dagger" x="832" y="256">
+  <object id="31" type="bandit-dagger" x="64" y="192">
    <properties>
     <property name="initialai" value="approach"/>
    </properties>
    <point/>
   </object>
-  <object id="14" type="bandit-dagger" x="864" y="320">
+  <object id="13" type="bandit-dagger" x="800" y="256">
+   <properties>
+    <property name="initialai" value="approach"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="30" type="bandit-dagger" x="96" y="256">
+   <properties>
+    <property name="initialai" value="approach"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="32" type="bandit-dagger" x="32" y="256">
+   <properties>
+    <property name="initialai" value="approach"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="14" type="bandit-dagger" x="832" y="320">
+   <properties>
+    <property name="initialai" value="approach"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="29" type="bandit-dagger" x="64" y="320">
    <properties>
     <property name="initialai" value="approach"/>
    </properties>
@@ -169,6 +277,6 @@
   <properties>
    <property name="z" value="0"/>
   </properties>
-  <object id="2" name="bounds" x="160" y="128" width="640" height="256"/>
+  <object id="2" name="bounds" x="128" y="128" width="640" height="256"/>
  </objectgroup>
 </map>
