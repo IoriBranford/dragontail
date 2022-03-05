@@ -39,7 +39,10 @@ function Stage.init(stagefile)
             character:startAi(character.initialai, 30)
         end
     end
-    Audio.playMusic("music/retro-chiptune-guitar.ogg")
+    local music = Audio.playMusic("music/retro-chiptune-guitar.ogg")
+    if music then
+        music:setLooping(true)
+    end
     Stage.openNextRoom()
 end
 
