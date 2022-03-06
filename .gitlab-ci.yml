@@ -208,7 +208,7 @@ windows:
         <<: *build-windows
         <<: *full
 
-osx:
+.osx:
         <<: *build-osx
         <<: *full
 
