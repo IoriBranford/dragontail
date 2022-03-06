@@ -223,14 +223,14 @@ function Character:checkAttackCollision(attacker)
     local radiisq = radii * radii
     if distsq <= radiisq then
         local attackarc = attacker.attackarc
-        if attackarc >= 2*pi then
+        if attackarc >= pi then
             return true
         end
         local dist = sqrt(distsq)
         local attackx, attacky = cos(attackangle), sin(attackangle)
         local dotDA = dot(fromattackerx, fromattackery, attackx, attacky)
         local bodyarc = asin(bodyradius/dist)
-        return dotDA >= dist * cos(bodyarc + attackarc/2)
+        return dotDA >= dist * cos(bodyarc + attackarc)
     end
 end
 
@@ -269,7 +269,7 @@ function Character:drawShadow()
     if attackradius > 0 and attackangle then
         local attackarc = self.attackarc
         if attackarc > 0 then
-            love.graphics.arc("fill", x, y, attackradius, attackangle - attackarc/2, attackangle + attackarc/2)
+            love.graphics.arc("fill", x, y, attackradius, attackangle - attackarc, attackangle + attackarc)
         else
             love.graphics.line(x, y, x + cos(attackangle), y + sin(attackangle))
         end

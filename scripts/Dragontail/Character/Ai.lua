@@ -274,12 +274,13 @@ function Ai:hurt(attacker)
         heldopponent.heldby = nil
     end
     if heldby then
-        self.hurtstun = 0
         heldby.heldopponent = nil
     end
+    self.hurtstun = attacker.attackstun or 3
     local facex, facey = self.facex or 1, self.facey or 0
     local hurtanimation = self.getDirectionalAnimation_angle("hurt", atan2(facey, facex), 2)
-    if self.sprite.aseprite:getAnimation(hurtanimation) then
+    local aseprite = self.sprite and self.sprite.aseprite
+    if aseprite and aseprite:getAnimation(hurtanimation) then
         self.sprite:changeAsepriteAnimation(hurtanimation, 1, "stop")
     end
 
@@ -322,7 +323,14 @@ function Ai:held(holder)
 end
 
 function Ai:thrown(thrower)
-    local dirx, diry = norm(self.x - thrower.x, self.y - thrower.y)
+    local attackangle = thrower.attackangle
+    local dirx, diry
+    if attackangle then
+        dirx, diry = cos(attackangle), sin(attackangle)
+    else
+        dirx, diry = norm(self.x - thrower.x, self.y - thrower.y)
+        attackangle = atan2(diry, dirx)
+    end
     self.canbegrabbed = nil
     self.bodysolid = false
     self.hurtstun = 0
@@ -330,7 +338,7 @@ function Ai:thrown(thrower)
     Sheets.fill(self, "human-thrown")
     local knockedspeed = self.knockedspeed or 8
     self.velx, self.vely = dirx*knockedspeed, diry*knockedspeed
-    self:startAttack(atan2(diry, dirx))
+    self:startAttack(attackangle)
     local thrownsound = Audio.newSource(self.swingsound)
     thrownsound:play()
     local bounds = self.bounds
