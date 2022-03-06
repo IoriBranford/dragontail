@@ -2,9 +2,9 @@
 
 # Fill in the project info
 variables:
-        PROJECT: dragontail
-        PROJECT_TITLE: Dragontail
-        PROJECT_TITLE_NOSPACE: Dragontail
+        PROJECT: rose-of-dragontail
+        PROJECT_TITLE: Rose of Dragontail
+        PROJECT_TITLE_NOSPACE: Rose_of_Dragontail
         DESCRIPTION: "Smash evil in a swing of a tail"
         COPYRIGHT: "© 2022 IoriBranford"
         APPLICATION_ID_BASE: "io.itch.ioribranford.dragontail"
