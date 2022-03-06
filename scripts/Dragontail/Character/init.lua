@@ -196,7 +196,7 @@ function Character:testBodyCollision(other)
 end
 
 function Character:collideWithCharacterBody(other)
-    if other.health < 0 then
+    if not other.bodysolid then
         return
     end
     local distsq = self:testBodyCollision(other)
@@ -212,7 +212,7 @@ function Character:collideWithCharacterBody(other)
 end
 
 function Character:collideWithCharacterAttack(other)
-    if self.hurtstun > 0 or self.health < 0 then
+    if self.hurtstun > 0 or not self.bodysolid then
         return
     end
     local attackangle = other.attackangle

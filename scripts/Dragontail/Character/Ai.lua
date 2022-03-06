@@ -307,7 +307,7 @@ end
 
 function Ai:spin(dirx, diry)
     self.canbegrabbed = nil
-    self.health = -1
+    self.bodysolid = false
     self.hurtstun = 0
     self.sprite:changeAsepriteAnimation("spin")
     Sheets.fill(self, "human-spinout")
@@ -330,7 +330,7 @@ function Ai:spin(dirx, diry)
 end
 
 function Ai:defeat(defeatanimation)
-    self.health = -1
+    self.bodysolid = false
     self:stopAttack()
     self.velx, self.vely = 0, 0
     self.sprite:changeAsepriteAnimation(defeatanimation or "collapse", 1, "stop")
@@ -361,7 +361,7 @@ function Ai:containerWaitForBreak()
 end
 
 function Ai:containerBreak()
-    self.health = -1
+    self.bodysolid = false
     Audio.play(self.defeatsound)
     self.sprite:changeAsepriteAnimation("collapse", 1, "stop")
     local item = self.item
