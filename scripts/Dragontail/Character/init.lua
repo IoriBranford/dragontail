@@ -211,52 +211,38 @@ function Character:collideWithCharacterBody(other)
     end
 end
 
-function Character:collideWithCharacterAttack(other)
-    if self.hurtstun > 0 or not self.bodysolid then
-        return
-    end
-    local attackangle = other.attackangle
+function Character:checkAttackCollision(attacker)
+    local attackangle = attacker.attackangle
     if not attackangle then
         return
     end
-    local dx, dy = self.x - other.x, self.y - other.y
-    local distsq = lensq(dx, dy)
+    local fromattackerx, fromattackery = self.x - attacker.x, self.y - attacker.y
+    local distsq = lensq(fromattackerx, fromattackery)
     local bodyradius = self.bodyradius
-    local radii = bodyradius + other.attackradius
+    local radii = bodyradius + attacker.attackradius
     local radiisq = radii * radii
     if distsq <= radiisq then
-        local dist = sqrt(distsq)
-        local attackx, attacky = cos(attackangle), sin(attackangle)
-        local dotDA = dot(dx, dy, attackx, attacky)
-        local attackarc = other.attackarc
-        local bodyarc = asin(bodyradius/dist)
-        if attackarc >= 2*pi or dotDA >= dist * cos(bodyarc + attackarc/2) then
-            local sound = other.hitsound
-            if self.health == 0 then
-                sound = other.knockoutsound or sound
-                if self.knockedai then
-                    self:startAi(self.knockedai, attackx, attacky)
-                else
-                    self:startAi(self.defeatai or "defeat")
-                end
-            else
-                self.health = self.health - other.attackdamage
-                self.hurtstun = other.attackstun
-                if self.health <= 0 then
-                    self.health = 0
-                    if self.stunai then
-                        self:startAi(self.stunai or "stun")
-                    else
-                        self:startAi(self.defeatai or "defeat")
-                    end
-                elseif self.hurtai and self.hurtrecoverai then
-                    self:startAi(self.hurtai, self.hurtrecoverai)
-                end
-            end
-            Audio.play(sound)
-            other.hitstun = other.attackstunself or 3
+        local attackarc = attacker.attackarc
+        if attackarc >= 2*pi then
             return true
         end
+        local dist = sqrt(distsq)
+        local attackx, attacky = cos(attackangle), sin(attackangle)
+        local dotDA = dot(fromattackerx, fromattackery, attackx, attacky)
+        local bodyarc = asin(bodyradius/dist)
+        return dotDA >= dist * cos(bodyarc + attackarc/2)
+    end
+end
+
+function Character:collideWithCharacterAttack(attacker)
+    if self.hurtstun > 0 or not self.bodysolid then
+        return
+    end
+    if self:checkAttackCollision(attacker) then
+        local hurtai = self.hurtai or "hurt"
+        self:startAi(hurtai, attacker)
+        attacker.hitstun = attacker.attackstunself or 3
+        return true
     end
 end
 

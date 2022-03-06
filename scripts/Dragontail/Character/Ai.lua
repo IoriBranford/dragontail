@@ -151,7 +151,7 @@ function Ai:playerHold(enemy)
         self.sprite:changeAsepriteAnimation(holdanimation)
 
         if not b2 then
-            enemy:startAi(enemy.knockedai, holddirx, holddiry)
+            enemy:startAi(enemy.thrownai or "thrown", holddirx, holddiry)
             Audio.play(self.throwsound)
             break
         end
@@ -261,8 +261,8 @@ function Ai:attack(attackname)
     return "stand", 20
 end
 
-function Ai:hurt(recoverai)
-    assert(recoverai, debug.traceback())
+function Ai:hurt(attacker)
+    self.health = self.health - attacker.attackdamage
     self.velx, self.vely = 0, 0
     self:stopAttack()
     local heldopponent = self.heldopponent
@@ -282,8 +282,24 @@ function Ai:hurt(recoverai)
     if self.sprite.aseprite:getAnimation(hurtanimation) then
         self.sprite:changeAsepriteAnimation(hurtanimation, 1, "stop")
     end
+
+    local hitsound = attacker.hitsound
+    if self.health <= 0 then
+        hitsound = attacker.attackdefeatsound or hitsound
+    end
+    Audio.play(hitsound)
     yield()
+
+    if self.health <= 0 then
+        local defeateffect = attacker.attackdefeateffect or self.defeatai or "defeat"
+        return defeateffect, attacker
+    end
     Audio.play(self.hurtsound)
+    local recoverai = self.hurtrecoverai
+    if not recoverai then
+        print("No hurtrecoverai for "..self.type)
+        return "defeat"
+    end
     return recoverai
 end
 
@@ -305,23 +321,24 @@ function Ai:held(holder)
 
 end
 
-function Ai:spin(dirx, diry)
+function Ai:thrown(thrower)
+    local dirx, diry = norm(self.x - thrower.x, self.y - thrower.y)
     self.canbegrabbed = nil
     self.bodysolid = false
     self.hurtstun = 0
     self.sprite:changeAsepriteAnimation("spin")
-    Sheets.fill(self, "human-spinout")
+    Sheets.fill(self, "human-thrown")
     local knockedspeed = self.knockedspeed or 8
     self.velx, self.vely = dirx*knockedspeed, diry*knockedspeed
     self:startAttack(atan2(diry, dirx))
-    local spinsound = Audio.newSource(self.swingsound)
-    spinsound:play()
+    local thrownsound = Audio.newSource(self.swingsound)
+    thrownsound:play()
     local bounds = self.bounds
     waitfor(function()
         local oobx, ooby = self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
         return oobx or ooby
     end)
-    spinsound:stop()
+    thrownsound:stop()
     self:stopAttack()
     Audio.play(self.bodyslamsound)
     self.hurtstun = self.wallslamstun or 20
@@ -329,11 +346,12 @@ function Ai:spin(dirx, diry)
     return "defeat"
 end
 
-function Ai:defeat(defeatanimation)
+function Ai:defeat(defeatedby)
     self.bodysolid = false
     self:stopAttack()
     self.velx, self.vely = 0, 0
-    self.sprite:changeAsepriteAnimation(defeatanimation or "collapse", 1, "stop")
+    local defeatanimation = self.defeatanimation or "collapse"
+    self.sprite:changeAsepriteAnimation(defeatanimation, 1, "stop")
     Audio.play(self.defeatsound)
     wait(20)
     Audio.play(self.bodydropsound)
