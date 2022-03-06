@@ -34,7 +34,7 @@ function keypressed.f2()
     love.event.loadphase("Dragontail.GamePhase")
 end
 
-function keypressed.pause()
+function keypressed.p()
     paused = not paused
 end
 
