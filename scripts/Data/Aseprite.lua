@@ -65,7 +65,11 @@ function Aseprite:getAnimationUpdate(tag, tagframe, t, dt, onend)
 	if not animation then
 		return tagframe, t
 	end
-	local duration = self[animation[tagframe]].duration
+	local frame = animation[tagframe]
+	if not frame then
+		error("Animation "..tag.." does not have a frame "..tagframe)
+	end
+	local duration = self[frame].duration
 	while t >= duration do
 		if tagframe == #animation then
 			if type(onend) == "function" then
@@ -240,7 +244,7 @@ function Aseprite.load(jsonfile)
 		animation.to = animation.to + 1
 		local direction = animation.direction
 		if direction == "reverse" then
-			for f = animation.to, animation.from do
+			for f = animation.to, animation.from, -1 do
 				animation[#animation + 1] = f
 			end
 		else
@@ -248,7 +252,7 @@ function Aseprite.load(jsonfile)
 				animation[#animation + 1] = f
 			end
 			if direction == "pingpong" then
-				for f = animation.to-1, animation.from+1 do
+				for f = animation.to-1, animation.from+1, -1 do
 					animation[#animation + 1] = f
 				end
 			end
