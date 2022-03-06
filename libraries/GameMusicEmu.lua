@@ -307,6 +307,9 @@ function GameMusicEmu:stop()
 	self.source:stop()
 end
 
+function GameMusicEmu:setLooping()
+end
+
 function GameMusicEmu:setVolume(v)
 	self.source:setVolume(v)
 end
