@@ -204,6 +204,7 @@ function love.run()
 
             if love.draw then
                 love.draw(fixedfrac)
+                love.graphics.setColor(1,1,1)
                 cute.draw()
             end
 
