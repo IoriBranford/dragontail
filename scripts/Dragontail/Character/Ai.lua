@@ -151,7 +151,7 @@ function Ai:playerHold(enemy)
         self.sprite:changeAsepriteAnimation(holdanimation)
 
         if not b2 then
-            enemy:startAi(enemy.thrownai or "thrown", holddirx, holddiry)
+            enemy:startAi(enemy.thrownai or "thrown", self)
             Audio.play(self.throwsound)
             break
         end
@@ -299,22 +299,22 @@ function Ai:hurt(attacker)
     local recoverai = self.hurtrecoverai
     if not recoverai then
         print("No hurtrecoverai for "..self.type)
-        return "defeat"
+        return "defeat", attacker
     end
     return recoverai
 end
 
-function Ai:stun(duration)
-    self:stopAttack()
-    self.velx, self.vely = 0, 0
-    self.sprite:changeAsepriteAnimation("collapseA", 1, "stop")
-    Audio.play(self.stunsound)
-    self.canbegrabbed = true
-    duration = duration or 120
-    wait(duration)
-    self.canbegrabbed = nil
-    return "defeat", "collapseB"
-end
+-- function Ai:stun(duration)
+--     self:stopAttack()
+--     self.velx, self.vely = 0, 0
+--     self.sprite:changeAsepriteAnimation("collapseA", 1, "stop")
+--     Audio.play(self.stunsound)
+--     self.canbegrabbed = true
+--     duration = duration or 120
+--     wait(duration)
+--     self.canbegrabbed = nil
+--     return "defeat", "collapseB"
+-- end
 
 function Ai:held(holder)
     self:stopAttack()
@@ -351,18 +351,32 @@ function Ai:thrown(thrower)
     Audio.play(self.bodyslamsound)
     self.hurtstun = self.wallslamstun or 20
     yield()
-    return "defeat"
+    return "fall", thrower
 end
 
-function Ai:defeat(defeatedby)
-    self.bodysolid = false
+function Ai:fall(attacker)
+    self.canbegrabbed = nil
+    self:stopAttack()
+    self.velx, self.vely = 0, 0
+    local defeatanimation = self.defeatanimation or "collapse"
+    self.sprite:changeAsepriteAnimation(defeatanimation, 1, "stop")
+    wait(20)
+    Audio.play(self.bodydropsound)
+
+    if self.health > 0 then
+        wait(self.downtime or 30)
+        return self.getupai or "getup", attacker
+    end
+    return "defeat", attacker
+end
+
+function Ai:defeat(attacker)
+    self.canbegrabbed = nil
     self:stopAttack()
     self.velx, self.vely = 0, 0
     local defeatanimation = self.defeatanimation or "collapse"
     self.sprite:changeAsepriteAnimation(defeatanimation, 1, "stop")
     Audio.play(self.defeatsound)
-    wait(20)
-    Audio.play(self.bodydropsound)
     local i = 1
     repeat
         self.sprite.alpha = cos(i)
@@ -370,6 +384,19 @@ function Ai:defeat(defeatedby)
         i = i + 1
     until i > 60
     self:disappear()
+end
+
+function Ai:getup(attacker)
+    self.sprite:changeAsepriteAnimation("getup", 1, "stop")
+    wait(27)
+    local recoverai = self.hurtrecoverai
+    if not recoverai then
+        print("No hurtrecoverai for "..self.type)
+        return "defeat", attacker
+    end
+    self.canbegrabbed = true
+    self.bodysolid = true
+    return recoverai
 end
 
 function Ai:playerDefeat(defeatanimation)

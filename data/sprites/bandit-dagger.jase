@@ -590,6 +590,7 @@
    { "name": "attackA0", "from": 58, "to": 60, "direction": "forward" },
    { "name": "attackB0", "from": 61, "to": 63, "direction": "forward" },
    { "name": "collapse", "from": 64, "to": 69, "direction": "forward" },
+   { "name": "getup", "from": 64, "to": 69, "direction": "reverse" },
    { "name": "collapseA", "from": 64, "to": 66, "direction": "forward" },
    { "name": "collapseB", "from": 67, "to": 69, "direction": "forward" }
   ],
