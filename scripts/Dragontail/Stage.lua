@@ -10,17 +10,31 @@ local max = math.max
 local min = math.min
 
 local scene
-local player, enemies, allcharacters
+local player, enemies, solids, allcharacters
 local bounds
 local map
 local roomindex
 local gamestatus
 local camerax, cameray
 
+function Stage.quit()
+    scene = nil
+    player = nil
+    enemies = nil
+    solids = nil
+    allcharacters = nil
+    bounds = nil
+    map = nil
+    roomindex = nil
+    gamestatus = nil
+    camerax, cameray = nil, nil
+end
+
 function Stage.init(stagefile)
     scene = Scene.new()
     allcharacters = {}
     enemies = {}
+    solids = {}
 
     map = Tiled.load(stagefile)
     roomindex = 0
@@ -36,6 +50,7 @@ function Stage.init(stagefile)
     })
     Sheets.fill(player, "Rose-attack")
     player.opponents = enemies
+    player.solids = solids
 
     for i, character in ipairs(allcharacters) do
         if character.initialai then
@@ -49,18 +64,14 @@ function Stage.init(stagefile)
     Stage.openNextRoom()
 end
 
-function Stage.quit()
-    scene = nil
-    player = nil
-    enemies = nil
-    allcharacters = nil
-end
-
 function Stage.addCharacter(object)
     local character = Character.init(object)
     character.bounds = bounds
     character:addToScene(scene)
     allcharacters[#allcharacters+1] = character
+    if character.bodysolid then
+        solids[#solids+1] = character
+    end
     if character.team == "enemy" then
         enemies[#enemies+1] = character
     end
@@ -127,7 +138,7 @@ local function compDisappeared(a,b)
     return not a.disappeared and b.disappeared
 end
 
-local function sortAndPruneDisappeared(characters, onempty, ...)
+local function pruneDisappeared(characters, onempty, ...)
     table.sort(characters, compDisappeared)
     local n = #characters
     for i = #characters, 1, -1 do
@@ -145,9 +156,10 @@ function Stage.fixedupdate()
     for i, character in ipairs(allcharacters) do
         character:fixedupdate()
     end
+    for i, solid in ipairs(solids) do
+        player:collideWithCharacterBody(solid)
+    end
     for i, enemy in ipairs(enemies) do
-        if player:collideWithCharacterBody(enemy) then
-        end
         for j, otherenemy in ipairs(enemies) do
             if j ~= i and enemy:collideWithCharacterAttack(otherenemy) then
                 -- infighting!
@@ -158,8 +170,9 @@ function Stage.fixedupdate()
     end
     player:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
 
-    sortAndPruneDisappeared(enemies, Stage.openNextRoom)
-    sortAndPruneDisappeared(allcharacters)
+    pruneDisappeared(enemies, Stage.openNextRoom)
+    pruneDisappeared(solids)
+    pruneDisappeared(allcharacters)
 
     if gamestatus == "goingToNextRoom" then
         Stage.updateGoingToNextRoom()

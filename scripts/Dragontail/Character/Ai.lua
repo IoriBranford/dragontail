@@ -352,6 +352,14 @@ function Ai:playerDefeat(defeatanimation)
     return "defeat", defeatanimation
 end
 
+function Ai:containerWaitForBreak()
+    local opponent = self.opponent
+    repeat
+        yield()
+    until self:collideWithCharacterAttack(opponent)
+    return "containerBreak"
+end
+
 function Ai:containerBreak()
     self.health = -1
     Audio.play(self.defeatsound)
