@@ -6,10 +6,12 @@ local Sheets    = require "Data.Sheets"
 local Audio     = require "System.Audio"
 local Movement  = require "Object.Movement"
 local Stage = {}
+local max = math.max
+local min = math.min
 
 local scene
 local player, enemies, allcharacters
-local currentbounds
+local bounds
 local map
 local roomindex
 local gamestatus
@@ -23,7 +25,8 @@ function Stage.init(stagefile)
     map = Tiled.load(stagefile)
     roomindex = 0
 
-    currentbounds = map.layers.stage.bounds
+    bounds = map.layers.stage.bounds
+    bounds.width = 640
     camerax, cameray = 0, (map.height*map.tileheight) - 360
 
     scene:addMap(map, "group,tilelayer")
@@ -55,7 +58,7 @@ end
 
 function Stage.addCharacter(object)
     local character = Character.init(object)
-    character.bounds = currentbounds
+    character.bounds = bounds
     character:addToScene(scene)
     allcharacters[#allcharacters+1] = character
     if character.team == "enemy" then
@@ -83,17 +86,11 @@ end
 local addCharacters = Stage.addCharacters
 
 function Stage.openNextRoom()
-    local stagebounds = map.layers.stage.bounds
-    currentbounds = stagebounds
-
     roomindex = roomindex + 1
     local room = map.layers["room"..roomindex]
     if room then
         addCharacters(room)
         gamestatus = "goingToNextRoom"
-
-        local roombounds = room.bounds
-        stagebounds.width = roombounds.x + roombounds.width - stagebounds.x
     else
         gamestatus = "victory"
         player:startAi("playerVictory")
@@ -105,24 +102,22 @@ function Stage.updateGoingToNextRoom()
     local room = map.layers["room"..roomindex]
     assert(room, "No room "..roomindex)
     local roombounds = room.bounds
-    local stagebounds = map.layers.stage.bounds
-    camerax = math.max(stagebounds.x,
-            math.min(stagebounds.x + stagebounds.width - 640,
-            Movement.moveTowards(camerax, player.x - 640/2,
-                camerax <= player.x - 640/2 and 5 or -5)))
-    if camerax + 640 >= roombounds.x + roombounds.width then
-        camerax = roombounds.x + roombounds.width - 640
+    local cameradestx = player.x - 640/2
+    if camerax < cameradestx then
+        camerax = Movement.moveTowards(camerax, cameradestx, 6)
+    end
+    camerax = max(0, camerax)
+    bounds.x = camerax
+    local roomright = roombounds.x + roombounds.width
+    local cameraxmax = roomright - 640
+    if camerax >= cameraxmax then
+        camerax = cameraxmax
         Stage.startNextFight()
     end
 end
 
 function Stage.startNextFight()
-    gamestatus = nil
-    local room = map.layers["room"..roomindex]
-    assert(room, "No room "..roomindex)
-    currentbounds = room.bounds
-    local stagebounds = map.layers.stage.bounds
-    stagebounds.x = currentbounds.x
+    gamestatus = "fight"
     local fight = map.layers["fight"..roomindex]
     assert(fight, "No fight "..roomindex)
     addCharacters(fight)
@@ -161,7 +156,7 @@ function Stage.fixedupdate()
         end
         player:collideWithCharacterAttack(enemy)
     end
-    player:keepInBounds(currentbounds.x, currentbounds.y, currentbounds.width, currentbounds.height)
+    player:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
 
     sortAndPruneDisappeared(enemies, Stage.openNextRoom)
     sortAndPruneDisappeared(allcharacters)
@@ -188,6 +183,11 @@ function Stage.draw()
     love.graphics.translate(-camerax, -cameray)
     scene:draw()
     love.graphics.pop()
+
+    local hurtstun = player.hurtstun
+    love.graphics.setColor(1, 0, 0, min(.5, hurtstun/20))
+    love.graphics.rectangle("fill", 0,0,640,360)
+
     love.graphics.setColor(.75, .25, .25)
     love.graphics.rectangle("fill", BarX, BarY, player.health, BarH)
     love.graphics.setColor(1, .5, .5)
