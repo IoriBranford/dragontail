@@ -48,7 +48,6 @@ function Stage.init(stagefile)
     player = Stage.addCharacter({
         x = 160, y = 180, type = "Rose"
     })
-    Sheets.fill(player, "Rose-attack")
     player.opponents = enemies
 
     for i, character in ipairs(allcharacters) do

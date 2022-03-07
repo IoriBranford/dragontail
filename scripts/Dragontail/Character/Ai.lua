@@ -53,7 +53,9 @@ function Ai:playerControl()
         end
 
         if b1pressed then
-            return "playerAttack", atan2(-facey, -facex), self.attackspinspeed or (2*pi/16), self.attackspintime or 16
+            Sheets.fill(self, self.type.."-attack")
+            return "playerAttack", atan2(-facey, -facex),
+                self.attackspinspeed or (2*pi/16), self.attackhittime or 16
         end
 
         if b2down and not self.heldopponent then
@@ -105,10 +107,6 @@ function Ai:playerAttack(angle, spinvel, spintime)
         local attackanimation = self.getDirectionalAnimation_angle("attack"..spindir, angle, 4)
         self.sprite:changeAsepriteAnimation(attackanimation)
 
-        for i, enemy in ipairs(opponents) do
-            if enemy:collideWithCharacterAttack(self) then
-            end
-        end
         yield()
         angle = angle + spinvel
         spintime = spintime - 1
@@ -246,16 +244,17 @@ function Ai:attack(attackname)
 
     local animation = self.getDirectionalAnimation_angle(attackname.."A", tooppoangle, 4)
     self.sprite:changeAsepriteAnimation(animation, 1, "stop")
-    wait(self.attackdelay or 24)
+    wait(self.attackwinduptime or 20)
 
     Audio.play(self.swingsound)
     self:startAttack(floor((tooppoangle + (pi/4)) / (pi/2)) * pi/2)
 
     animation = self.getDirectionalAnimation_angle(attackname.."B", tooppoangle, 4)
     self.sprite:changeAsepriteAnimation(animation, 1, "stop")
-    wait(self.attackstun or 24)
+    wait(self.attackhittime or 10)
 
     self:stopAttack()
+    wait(self.attackafterhittime or 30)
 
     return "stand", 20
 end
