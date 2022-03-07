@@ -2,4 +2,4 @@ attack,attackradius,attackarc,attackdamage,attackstun,attackstunself,attackspins
 Rose-attack,32,0.314159265358979,25,12,12,0.628318530717959,10,thrown,,sounds/combat/swing2.mp3,sounds/combat/hit1.mp3,sounds/combat/hit3.mp3
 bandit-dagger-attack,32,0.196349540849362,10,12,,,,,sounds/man_light/attack1.mp3,sounds/combat/swing1.mp3,sounds/combat/cut.mp3,
 bandit-spear-attack,48,0,10,12,,,,,sounds/man_medium/attack1.mp3,sounds/combat/swingblade.mp3,sounds/combat/cut.mp3,
-human-thrown,16,1.5707963267949,25,12,6,,,thrown,,sounds/combat/spin.mp3,sounds/combat/hit2.mp3,
+human-thrown,16,0.785398163397448,25,12,6,,,thrown,,sounds/combat/spin.mp3,sounds/combat/hit2.mp3,
