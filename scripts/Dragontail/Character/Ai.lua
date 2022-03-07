@@ -54,7 +54,7 @@ function Ai:playerControl()
 
 
         if b1pressed then
-            return "playerAttack", atan2(-facey, -facex), self.attackspinspeed or (2*pi/15), self.attackspintime or 15
+            return "playerAttack", atan2(-facey, -facex), self.attackspinspeed or (2*pi/16), self.attackspintime or 16
         end
 
         if b2down and not self.heldopponent then
@@ -336,22 +336,49 @@ function Ai:thrown(thrower)
     self.hurtstun = 0
     self.sprite:changeAsepriteAnimation("spin")
     Sheets.fill(self, "human-thrown")
-    local knockedspeed = self.knockedspeed or 8
-    self.velx, self.vely = dirx*knockedspeed, diry*knockedspeed
+    local thrownspeed = self.knockedspeed or 8
+    self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
     self:startAttack(attackangle)
     local thrownsound = Audio.newSource(self.swingsound)
     thrownsound:play()
     local bounds = self.bounds
-    waitfor(function()
-        local oobx, ooby = self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
-        return oobx or ooby
-    end)
+    local recovertime = math.huge
+    if self.health > 0 then
+        recovertime = self.thrownrecovertime or 30
+    end
+    local oobx, ooby
+    repeat
+        yield()
+        oobx, ooby = self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+        recovertime = recovertime - 1
+    until recovertime <= 0 or oobx or ooby
     thrownsound:stop()
     self:stopAttack()
-    Audio.play(self.bodyslamsound)
-    self.hurtstun = self.wallslamstun or 20
-    yield()
-    return "fall", thrower
+    if oobx or ooby then
+        Audio.play(self.bodyslamsound)
+        self.health = self.health - (self.wallslamdamage or 25)
+        self.hurtstun = self.wallslamstun or 20
+        yield()
+        return "fall", thrower
+    end
+    return self.thrownrecoverai or self.hurtrecoverai
+end
+
+function Ai:thrownRecover(thrower)
+    self.canbegrabbed = true
+    self.bodysolid = true
+    if self.thrownrecoveranimation then
+        self.sprite:changeAsepriteAnimation(self.thrownrecoveranimation, 1, "stop")
+    end
+    Audio.play(self.thrownrecoversound)
+    local bounds = self.bounds
+    repeat
+        yield()
+        self:accelerateTowardsVel(0, 0, self.thrownrecovertime or 10)
+        self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+    until self.velx == 0 and self.vely == 0
+
+    return self.hurtrecoverai
 end
 
 function Ai:fall(attacker)

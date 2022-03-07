@@ -592,6 +592,7 @@
    { "name": "collapse", "from": 64, "to": 69, "direction": "forward" },
    { "name": "getup", "from": 64, "to": 69, "direction": "reverse" },
    { "name": "collapseA", "from": 64, "to": 66, "direction": "forward" },
+   { "name": "getupfromkneel", "from": 64, "to": 66, "direction": "reverse" },
    { "name": "collapseB", "from": 67, "to": 69, "direction": "forward" }
   ],
   "layers": [
