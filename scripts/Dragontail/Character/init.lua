@@ -2,6 +2,7 @@ local SceneObject = require "System.SceneObject"
 local Assets      = require "System.Assets"
 local Sheets      = require "Data.Sheets"
 local Audio       = require "System.Audio"
+local Config      = require "System.Config"
 local pi = math.pi
 local floor = math.floor
 local sqrt = math.sqrt
@@ -212,6 +213,9 @@ function Character:collideWithCharacterBody(other)
 end
 
 function Character:checkAttackCollision(attacker)
+    if self == attacker then
+        return
+    end
     local attackangle = attacker.attackangle
     if not attackangle then
         return
@@ -272,6 +276,20 @@ function Character:drawShadow()
             love.graphics.arc("fill", x, y, attackradius, attackangle - attackarc, attackangle + attackarc)
         else
             love.graphics.line(x, y, x + attackradius*cos(attackangle), y + attackradius*sin(attackangle))
+        end
+    end
+
+    if Config.drawbodies then
+        love.graphics.setColor(.5, .5, 1)
+        love.graphics.circle("line", x, y, self.bodyradius)
+        if attackradius > 0 and attackangle then
+            local attackarc = self.attackarc
+            love.graphics.setColor(1, .5, .5)
+            if attackarc > 0 then
+                love.graphics.arc("line", x, y, attackradius, attackangle - attackarc, attackangle + attackarc)
+            else
+                love.graphics.line(x, y, x + attackradius*cos(attackangle), y + attackradius*sin(attackangle))
+            end
         end
     end
 
