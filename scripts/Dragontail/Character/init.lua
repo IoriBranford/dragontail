@@ -137,16 +137,12 @@ function Character:update(dsecs, fixedfrac)
     end
 end
 
-function Character:startAttack(attackangle, attackspinvel, attackspintime)
+function Character:startAttack(attackangle)
     self.attackangle = attackangle
-    self.attackspinvel = attackspinvel
-    self.attackspintime = attackspintime
 end
 
 function Character:stopAttack()
     self.attackangle = nil
-    self.attackspinvel = nil
-    self.attackspintime = nil
 end
 
 function Character:rotateAttack(dangle)
