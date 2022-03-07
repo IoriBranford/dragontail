@@ -161,6 +161,7 @@ function Ai:playerHold(enemy)
 end
 
 function Ai:playerVictory()
+    Audio.play(self.victorysound)
     self.sprite:changeAsepriteAnimation("win")
     local i = 0
     while true do
