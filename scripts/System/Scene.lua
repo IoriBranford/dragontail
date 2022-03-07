@@ -45,6 +45,11 @@ function Scene:addAnimatedTile(tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
     return sceneobject
 end
 
+function Scene:addAseprite(aseprite, frame, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    local sceneobject = SceneObject.newAseprite(aseprite, frame or 1, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    return self:add(sceneobject)
+end
+
 function Scene:addManualAnimatedAseprite(aseprite, tag, tagframe, x, y, z, r, sx, sy, ox, oy, kx, ky)
     local sceneobject = SceneObject.newAnimatedAseprite(aseprite, tag, tagframe or 1, x, y, z, r, sx, sy, ox, oy, kx, ky)
     return self:add(sceneobject)
@@ -208,7 +213,10 @@ end
 function Scene:draw()
     sortAndPrune(self)
     for i = 1, #self do
-        self[i]:draw()
+        local sceneobject = self[i]
+        if not sceneobject.hidden then
+            self[i]:draw()
+        end
     end
 end
 
