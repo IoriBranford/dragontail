@@ -56,7 +56,7 @@ function math.testcircles(ax, ay, ar, bx, by, br)
     local distsq = lensq(dx, dy)
     local radii = ar + br
     local radiisq = radii * radii
-    return distsq < radiisq and distsq
+    return distsq <= radiisq and distsq
 end
 
 function math.table_rad(t, k)
