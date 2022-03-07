@@ -57,19 +57,66 @@ function Character.new(chprefab)
     return init({}, chprefab)
 end
 
+function Character:addSprite(scene, file, frameortag, tagframe, ox, oy)
+    local ase = file and Assets.get(file)
+    if ase then
+        local sprite
+        if type(frameortag) == "string" then
+            sprite = scene:addManualAnimatedAseprite(ase, frameortag, tagframe,
+                self.x, self.y, self.z,
+                0, 1, 1, ox or 0, oy or 0)
+        else
+            sprite = scene:addAseprite(ase, frameortag,
+                self.x, self.y, self.z,
+                0, 1, 1, ox or 0, oy or 0)
+        end
+        return sprite
+    end
+end
+
+function Character:removeSprite(key)
+    local sprite = self[key]
+    if sprite then
+        sprite:markRemove()
+        self[key] = nil
+    end
+end
+
+function Character:animateSprite(sprite)
+    if sprite then
+        if sprite.animate then
+            sprite:animate(1)
+        end
+    end
+end
+
+function Character:updateSprite(sprite, fixedfrac)
+    if sprite then
+        sprite:updateFromUnit(self, fixedfrac)
+    end
+end
+
 function Character:addToScene(scene)
     local asepritefile = self.asepritefile
-    local aseprite = asepritefile and Assets.get(asepritefile)
-    if aseprite then
-        self.animation = self.animation or "stand1"
-        self.sprite = scene:addManualAnimatedAseprite(aseprite, self.animation, 1,
-            self.x, self.y, self.z,
-            0, 1, 1, self.spriteoriginx or 0, self.spriteoriginy or 0)
-        local baseDraw = self.sprite.draw
-        self.sprite.draw = function(sprite)
+    local sprite = asepritefile and self:addSprite(scene,
+        asepritefile, self.animation or 1, nil,
+        self.spriteoriginx, self.spriteoriginy)
+    if sprite then
+        self.sprite = sprite
+        local baseDraw = sprite.draw
+        sprite.draw = function(sprite)
             self:drawShadow()
             baseDraw(sprite)
         end
+    end
+    local emoteasepritefile = self.emoteasepritefile
+    local emote = emoteasepritefile and self:addSprite(scene,
+        emoteasepritefile, 1, nil,
+        self.emoteoriginx or (emoteasepritefile.width/2),
+        self.emoteoriginy or (emoteasepritefile.height + (self.spriteoriginy or 0)))
+    if emote then
+        self.emote = emote
+        emote.hidden = true
     end
 end
 
@@ -121,19 +168,15 @@ function Character:fixedupdate()
     self:runAi()
     self.x = self.x + self.velx
     self.y = self.y + self.vely
-    local sprite = self.sprite
-    if sprite then
-        if sprite.animate then
-            sprite:animate(1)
-        end
-    end
+    self:animateSprite(self.sprite)
+    self:animateSprite(self.emote)
 end
 
 function Character:update(dsecs, fixedfrac)
-    local sprite = self.sprite
-    if sprite then
-        sprite.ox = self.spriteoriginx + 2*math.sin(self.hurtstun)
-        sprite:updateFromUnit(self, fixedfrac)
+    self:updateSprite(self.sprite, fixedfrac)
+    self:updateSprite(self.emote, fixedfrac)
+    if self.sprite then
+        self.sprite.ox = self.spriteoriginx + 2*math.sin(self.hurtstun)
     end
 end
 
@@ -258,6 +301,18 @@ function Character.getDirectionalAnimation_angle(basename, angle, numanimations)
     return basename..facedir
 end
 
+function Character:setEmote(emotename)
+    local emote = self.emote
+    if emote then
+        if emotename then
+            emote.hidden = nil
+            emote:changeAsepriteAnimation(emotename)
+        else
+            emote.hidden = true
+        end
+    end
+end
+
 function Character:drawShadow()
     local x, y = self.x, self.y+self.z
     love.graphics.setColor(0,0,0,.25)
@@ -294,9 +349,8 @@ end
 
 function Character:disappear()
     self.disappeared = true
-    if self.sprite then
-        self.sprite:markRemove()
-    end
+    self:removeSprite("sprite")
+    self:removeSprite("emote")
 end
 
 return Character
