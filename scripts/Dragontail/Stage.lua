@@ -50,7 +50,6 @@ function Stage.init(stagefile)
     })
     Sheets.fill(player, "Rose-attack")
     player.opponents = enemies
-    player.solids = solids
 
     for i, character in ipairs(allcharacters) do
         if character.initialai then
@@ -67,6 +66,7 @@ end
 function Stage.addCharacter(object)
     local character = Character.init(object)
     character.bounds = bounds
+    character.solids = solids
     character:addToScene(scene)
     allcharacters[#allcharacters+1] = character
     if character.bodysolid then
@@ -160,8 +160,8 @@ function Stage.fixedupdate()
         player:collideWithCharacterBody(solid)
     end
     for i, enemy in ipairs(enemies) do
-        for j, otherenemy in ipairs(enemies) do
-            if j ~= i and enemy:collideWithCharacterAttack(otherenemy) then
+        for j, solid in ipairs(solids) do
+            if enemy:collideWithCharacterAttack(solid) then
                 -- infighting!
                 -- enemy.opponent = otherenemy
             end
