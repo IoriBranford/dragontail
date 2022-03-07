@@ -52,7 +52,6 @@ function Ai:playerControl()
             targetvely = iny * speed
         end
 
-
         if b1pressed then
             return "playerAttack", atan2(-facey, -facex), self.attackspinspeed or (2*pi/16), self.attackspintime or 16
         end
@@ -151,7 +150,7 @@ function Ai:playerHold(enemy)
         self.sprite:changeAsepriteAnimation(holdanimation)
 
         if not b2 then
-            enemy:startAi(enemy.thrownai or "thrown", self)
+            enemy:startAi(enemy.thrownai or "thrown", self, atan2(holddiry, holddirx))
             Audio.play(self.throwsound)
             break
         end
@@ -289,11 +288,12 @@ function Ai:hurt(attacker)
         hitsound = attacker.attackdefeatsound or hitsound
     end
     Audio.play(hitsound)
+    local attackangle = attacker.attackangle
     yield()
 
     if self.health <= 0 then
         local defeateffect = attacker.attackdefeateffect or self.defeatai or "defeat"
-        return defeateffect, attacker
+        return defeateffect, attacker, attackangle
     end
     Audio.play(self.hurtsound)
     local recoverai = self.hurtrecoverai
@@ -322,14 +322,18 @@ function Ai:held(holder)
 
 end
 
-function Ai:thrown(thrower)
-    local attackangle = thrower.attackangle
+function Ai:thrown(thrower, attackangle)
     local dirx, diry
     if attackangle then
         dirx, diry = cos(attackangle), sin(attackangle)
+        self:startAttack(attackangle)
     else
-        dirx, diry = norm(self.x - thrower.x, self.y - thrower.y)
-        attackangle = atan2(diry, dirx)
+        local velx, vely = thrower.velx, thrower.vely
+        if velx ~= 0 or vely ~= 0 then
+            dirx, diry = norm(velx, vely)
+        else
+            dirx, diry = norm(self.x - thrower.x, self.y - thrower.y)
+        end
     end
     self.canbegrabbed = nil
     self.bodysolid = false
@@ -338,7 +342,6 @@ function Ai:thrown(thrower)
     Sheets.fill(self, "human-thrown")
     local thrownspeed = self.knockedspeed or 8
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
-    self:startAttack(attackangle)
     local thrownsound = Audio.newSource(self.swingsound)
     thrownsound:play()
     local bounds = self.bounds
@@ -353,8 +356,8 @@ function Ai:thrown(thrower)
         recovertime = recovertime - 1
     until recovertime <= 0 or oobx or ooby
     thrownsound:stop()
-    self:stopAttack()
     if oobx or ooby then
+        self:stopAttack()
         Audio.play(self.bodyslamsound)
         self.health = self.health - (self.wallslamdamage or 25)
         self.hurtstun = self.wallslamstun or 20
@@ -366,18 +369,29 @@ end
 
 function Ai:thrownRecover(thrower)
     self.canbegrabbed = true
-    self.bodysolid = true
     if self.thrownrecoveranimation then
         self.sprite:changeAsepriteAnimation(self.thrownrecoveranimation, 1, "stop")
     end
     Audio.play(self.thrownrecoversound)
     local bounds = self.bounds
+    local recovertime = self.thrownrecovertime or 10
+    local oobx, ooby
     repeat
         yield()
-        self:accelerateTowardsVel(0, 0, self.thrownrecovertime or 10)
-        self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
-    until self.velx == 0 and self.vely == 0
+        self:accelerateTowardsVel(0, 0, recovertime)
+        oobx, ooby = self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+        recovertime = recovertime - 1
+    until recovertime <= 0 or oobx or ooby
 
+    self:stopAttack()
+    if oobx or ooby then
+        Audio.play(self.bodyslamsound)
+        self.health = self.health - (self.wallslamdamage or 25)
+        self.hurtstun = self.wallslamstun or 20
+        return "fall", thrower
+    end
+
+    self.bodysolid = true
     return self.hurtrecoverai
 end
 
@@ -433,14 +447,18 @@ function Ai:playerDefeat(defeatanimation)
 end
 
 function Ai:containerWaitForBreak()
-    local opponent = self.opponent
-    repeat
+    local solids = self.solids
+    while true do
         yield()
-    until self:collideWithCharacterAttack(opponent)
-    return "containerBreak"
+        for _, solid in ipairs(solids) do
+            if self:collideWithCharacterAttack(solid) then
+                return "containerBreak"
+            end
+        end
+    end
 end
 
-function Ai:containerBreak()
+function Ai:containerBreak(attacker)
     self.bodysolid = false
     Audio.play(self.defeatsound)
     self.sprite:changeAsepriteAnimation("collapse", 1, "stop")
