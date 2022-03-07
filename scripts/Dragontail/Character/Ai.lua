@@ -98,6 +98,28 @@ function Ai:playerControl()
     end
 end
 
+function Ai:playerQueueableAttack(angle, spinvel, spintime)
+    Audio.play(self.swingsound)
+    local attackagain = false
+    local t = spintime
+    repeat
+        self.attackangle = angle
+        local spindir = spinvel < 0 and "B" or "A"
+        local attackanimation = self.getDirectionalAnimation_angle("attack"..spindir, angle, 4)
+        self.sprite:changeAsepriteAnimation(attackanimation)
+
+        yield()
+        attackagain = attackagain or Controls.getButtonsPressed()
+        angle = angle + spinvel
+        t = t - 1
+    until t <= 0
+    self:stopAttack()
+    if attackagain then
+        return "playerQueueableAttack", angle, spinvel, spintime
+    end
+    return "playerControl"
+end
+
 function Ai:playerAttack(angle, spinvel, spintime)
     local opponents = self.opponents
     Audio.play(self.swingsound)
