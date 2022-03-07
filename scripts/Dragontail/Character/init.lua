@@ -192,7 +192,7 @@ function Character:keepInBounds(bx, by, bw, bh, bounce)
 end
 
 function Character:testBodyCollision(other)
-    return testcircles(self.x, self.y, self.bodyradius, other.x, other.y, other.bodyradius)
+    return self ~= other and testcircles(self.x, self.y, self.bodyradius, other.x, other.y, other.bodyradius)
 end
 
 function Character:collideWithCharacterBody(other)
@@ -271,7 +271,7 @@ function Character:drawShadow()
         if attackarc > 0 then
             love.graphics.arc("fill", x, y, attackradius, attackangle - attackarc, attackangle + attackarc)
         else
-            love.graphics.line(x, y, x + cos(attackangle), y + sin(attackangle))
+            love.graphics.line(x, y, x + attackradius*cos(attackangle), y + attackradius*sin(attackangle))
         end
     end
 
