@@ -33,24 +33,30 @@
  </layer>
  <objectgroup id="2" name="stage">
   <properties>
-   <property name="z" value="0"/>
+   <property name="z" type="int" value="0"/>
   </properties>
   <object id="1" name="bounds" x="0" y="128" width="2560" height="256"/>
  </objectgroup>
  <objectgroup id="20" name="room5">
   <properties>
-   <property name="z" value="0"/>
+   <property name="z" type="int" value="0"/>
   </properties>
   <object id="62" name="bounds" x="1440" y="128" width="640" height="256"/>
  </objectgroup>
  <objectgroup id="15" name="room4">
   <properties>
-   <property name="z" value="0"/>
+   <property name="z" type="int" value="0"/>
   </properties>
   <object id="10" type="food-fish" x="1584" y="161">
+   <properties>
+    <property name="z" type="int" value="16"/>
+   </properties>
    <point/>
   </object>
   <object id="24" type="food-fish" x="1616" y="161">
+   <properties>
+    <property name="z" type="int" value="16"/>
+   </properties>
    <point/>
   </object>
   <object id="11" type="food-container" x="1584" y="160">
@@ -78,10 +84,13 @@
  </objectgroup>
  <objectgroup id="12" name="room3">
   <properties>
-   <property name="z" value="0"/>
+   <property name="z" type="int" value="0"/>
   </properties>
   <object id="3" name="bounds" x="720" y="128" width="640" height="256"/>
   <object id="50" type="food-fish" x="1280" y="161">
+   <properties>
+    <property name="z" type="int" value="16"/>
+   </properties>
    <point/>
   </object>
   <object id="51" type="food-container" x="1280" y="160">
@@ -99,9 +108,12 @@
  </objectgroup>
  <objectgroup id="14" name="room2">
   <properties>
-   <property name="z" value="0"/>
+   <property name="z" type="int" value="0"/>
   </properties>
   <object id="8" type="food-fish" x="800" y="161">
+   <properties>
+    <property name="z" type="int" value="16"/>
+   </properties>
    <point/>
   </object>
   <object id="9" type="food-container" x="800" y="160">
@@ -114,13 +126,13 @@
  </objectgroup>
  <objectgroup id="11" name="room1">
   <properties>
-   <property name="z" value="0"/>
+   <property name="z" type="int" value="0"/>
   </properties>
   <object id="2" name="bounds" x="128" y="128" width="640" height="256"/>
  </objectgroup>
  <objectgroup id="21" name="fight5">
   <properties>
-   <property name="z" value="0"/>
+   <property name="z" type="int" value="0"/>
   </properties>
   <object id="63" type="bandit-spear" x="1840" y="144">
    <properties>
@@ -194,7 +206,7 @@
  </objectgroup>
  <objectgroup id="19" name="fight4">
   <properties>
-   <property name="z" value="0"/>
+   <property name="z" type="int" value="0"/>
   </properties>
   <object id="25" type="bandit-spear" x="960" y="288">
    <properties>
@@ -256,7 +268,7 @@
  </objectgroup>
  <objectgroup id="17" name="fight3">
   <properties>
-   <property name="z" value="0"/>
+   <property name="z" type="int" value="0"/>
   </properties>
   <object id="41" type="bandit-spear" x="688" y="288">
    <properties>
@@ -300,7 +312,7 @@
  </objectgroup>
  <objectgroup id="18" name="fight2">
   <properties>
-   <property name="z" value="0"/>
+   <property name="z" type="int" value="0"/>
   </properties>
   <object id="19" type="bandit-spear" x="1184" y="256">
    <properties>
@@ -359,7 +371,7 @@
  </objectgroup>
  <objectgroup id="16" name="fight1">
   <properties>
-   <property name="z" value="0"/>
+   <property name="z" type="int" value="0"/>
   </properties>
   <object id="12" type="bandit-dagger" x="832" y="192">
    <properties>

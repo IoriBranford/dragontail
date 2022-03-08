@@ -3765,7 +3765,7 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {
-        ["z"] = "0"
+        ["z"] = 0
       },
       objects = {
         {
@@ -3795,7 +3795,7 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {
-        ["z"] = "0"
+        ["z"] = 0
       },
       objects = {
         {
@@ -3825,7 +3825,7 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {
-        ["z"] = "0"
+        ["z"] = 0
       },
       objects = {
         {
@@ -3839,7 +3839,9 @@ return {
           height = 0,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["z"] = 16
+          }
         },
         {
           id = 24,
@@ -3852,7 +3854,9 @@ return {
           height = 0,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["z"] = 16
+          }
         },
         {
           id = 11,
@@ -3950,7 +3954,7 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {
-        ["z"] = "0"
+        ["z"] = 0
       },
       objects = {
         {
@@ -3977,7 +3981,9 @@ return {
           height = 0,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["z"] = 16
+          }
         },
         {
           id = 51,
@@ -4034,7 +4040,7 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {
-        ["z"] = "0"
+        ["z"] = 0
       },
       objects = {
         {
@@ -4048,7 +4054,9 @@ return {
           height = 0,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["z"] = 16
+          }
         },
         {
           id = 9,
@@ -4092,7 +4100,7 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {
-        ["z"] = "0"
+        ["z"] = 0
       },
       objects = {
         {
@@ -4122,7 +4130,7 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {
-        ["z"] = "0"
+        ["z"] = 0
       },
       objects = {
         {
@@ -4317,7 +4325,7 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {
-        ["z"] = "0"
+        ["z"] = 0
       },
       objects = {
         {
@@ -4482,7 +4490,7 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {
-        ["z"] = "0"
+        ["z"] = 0
       },
       objects = {
         {
@@ -4602,7 +4610,7 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {
-        ["z"] = "0"
+        ["z"] = 0
       },
       objects = {
         {
@@ -4754,7 +4762,7 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {
-        ["z"] = "0"
+        ["z"] = 0
       },
       objects = {
         {
