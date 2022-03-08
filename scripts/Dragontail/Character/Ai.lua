@@ -21,14 +21,17 @@ local dot = math.dot
 local len = math.len
 local Ai = {}
 
-local function moveTo(self, destx, desty, speed)
+local function moveTo(self, destx, desty, speed, timelimit)
+    timelimit = timelimit or math.huge
     waitfor(function()
         local x, y = self.x, self.y
-        if x == destx and y == desty then
+        timelimit = timelimit - 1
+        if timelimit <= 0 or x == destx and y == desty then
             return true
         end
         self.velx, self.vely = Movement.getVelocity_speed(x, y, destx, desty, speed)
     end)
+    return self.x == destx and self.y == desty
 end
 
 function Ai:playerControl()
@@ -250,8 +253,10 @@ function Ai:approach()
     if distsq(x, y, oppox, oppoy) > 320*320 then
         speed = speed * 1.5
     end
-    moveTo(self, destx, desty, speed)
-    return "stand", 10
+    if moveTo(self, destx, desty, speed, self.approachtime or 60) then
+        return "stand", 10
+    end
+    return "approach"
 end
 
 function Ai:attack(attackname)
