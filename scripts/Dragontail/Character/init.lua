@@ -63,11 +63,11 @@ function Character:addSprite(scene, file, frameortag, tagframe, ox, oy)
         local sprite
         if type(frameortag) == "string" then
             sprite = scene:addManualAnimatedAseprite(ase, frameortag, tagframe,
-                self.x, self.y, self.z,
+                self.x, self.y, 0,
                 0, 1, 1, ox or 0, oy or 0)
         else
             sprite = scene:addAseprite(ase, frameortag,
-                self.x, self.y, self.z,
+                self.x, self.y, 0,
                 0, 1, 1, ox or 0, oy or 0)
         end
         return sprite
@@ -92,7 +92,11 @@ end
 
 function Character:updateSprite(sprite, fixedfrac)
     if sprite then
-        sprite:updateFromUnit(self, fixedfrac)
+        local vx, vy = self.velx or 0, self.vely or 0
+        local x, y, z = self.x, self.y, self.z
+        sprite.x = x + vx * fixedfrac
+        sprite.y = y + vy * fixedfrac
+        sprite.oy = (self.spriteoriginy or 0) + z
     end
 end
 
@@ -314,7 +318,7 @@ function Character:setEmote(emotename)
 end
 
 function Character:drawShadow()
-    local x, y = self.x, self.y+self.z
+    local x, y = self.x, self.y
     love.graphics.setColor(0,0,0,.25)
 
     love.graphics.circle("fill", x, y, self.bodyradius)

@@ -191,7 +191,7 @@ function Ai:playerVictory()
     local i = 0
     while true do
         self:accelerateTowardsVel(0, 0, 4)
-        self.sprite.oy = self.spriteoriginy + math.abs(sin(i*pi/30) * 8)
+        self.z = math.abs(sin(i*pi/30) * 8)
         yield()
         i = i + 1
     end
@@ -492,7 +492,7 @@ function Ai:containerBreak(attacker)
     local item = self.item
     if item then
         item.opponent = self.opponent
-        item:startAi("itemDrop", self.y)
+        item:startAi("itemDrop")
     end
     local i = 1
     repeat
@@ -506,18 +506,12 @@ end
 function Ai:itemDrop(y0)
     local popoutspeed = self.popoutspeed or 8
     local gravity = self.dropgravity or .5
-    self.vely = -popoutspeed
-    self.velz = popoutspeed
     repeat
-        self.vely = self.vely + gravity
-        self.velz = self.velz - gravity
         yield()
-    until self.y + self.vely >= y0
-
-    self.y = y0
+        popoutspeed = popoutspeed - gravity
+        self.z = self.z + popoutspeed
+    until self.z <= 0
     self.z = 0
-    self.vely = 0
-    self.velz = 0
     return "itemWaitForPickup"
 end
 
