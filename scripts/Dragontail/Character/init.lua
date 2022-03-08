@@ -288,7 +288,9 @@ function Character:collideWithCharacterAttack(attacker)
     if self:checkAttackCollision(attacker) then
         local hurtai = self.hurtai or "hurt"
         self:startAi(hurtai, attacker)
-        attacker.hitstun = attacker.attackstunself or 3
+        if attacker.hitstun <= 0 then
+            attacker.hitstun = attacker.attackstunself or 3
+        end
         return true
     end
 end
