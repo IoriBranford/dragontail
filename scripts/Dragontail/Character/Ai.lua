@@ -57,7 +57,7 @@ function Ai:playerControl()
 
         if b1pressed then
             Sheets.fill(self, self.type.."-attack")
-            return "playerAttack", atan2(-facey, -facex),
+            return "playerQueueableAttack", atan2(-facey, -facex),
                 self.attackspinspeed or (2*pi/16), self.attackhittime or 16
         end
 
@@ -106,6 +106,17 @@ function Ai:playerQueueableAttack(angle, spinvel, spintime)
     local attackagain = false
     local t = spintime
     repeat
+        local inx, iny = Controls.getDirectionInput()
+        local targetvelx, targetvely = 0, 0
+        local speed = 2
+        if inx ~= 0 or iny ~= 0 then
+            inx, iny = norm(inx, iny)
+            targetvelx = inx * speed
+            targetvely = iny * speed
+        end
+
+        self:accelerateTowardsVel(targetvelx, targetvely, 16)
+
         self.attackangle = angle
         local spindir = spinvel < 0 and "B" or "A"
         local attackanimation = self.getDirectionalAnimation_angle("attack"..spindir, angle, 4)
@@ -186,6 +197,7 @@ function Ai:playerHold(enemy)
 end
 
 function Ai:playerVictory()
+    self:stopAttack()
     Audio.play(self.victorysound)
     self.sprite:changeAsepriteAnimation("win")
     local i = 0
