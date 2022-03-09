@@ -69,8 +69,8 @@ function GamePhase.resize(w, h)
 end
 
 function GamePhase.draw()
+    love.graphics.clear(.25, .25, .25)
     Canvas.drawOnCanvas(function()
-        love.graphics.clear(.25, .25, .25)
         Stage.draw()
         if paused then
             love.graphics.printf("PAUSE\n\nPress any key to resume", 0, 128, 640, "center")
