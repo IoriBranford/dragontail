@@ -200,8 +200,11 @@ function Stage.draw()
     love.graphics.setColor(1, 0, 0, min(.5, hurtstun/20))
     love.graphics.rectangle("fill", 0,0,640,360)
 
-    love.graphics.setColor(.75, .25, .25)
-    love.graphics.rectangle("fill", BarX, BarY, player.health, BarH)
+    local health = player.health
+    if health > 0 then
+        love.graphics.setColor(.75, .25, .25)
+        love.graphics.rectangle("fill", BarX, BarY, health, BarH)
+    end
     love.graphics.setColor(1, .5, .5)
     love.graphics.rectangle("line", BarX - .5, BarY - .5, player.maxhealth, BarH + 1, 2)
     love.graphics.setColor(1,1,1)
