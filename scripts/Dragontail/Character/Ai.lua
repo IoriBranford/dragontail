@@ -129,6 +129,7 @@ function Ai:playerQueueableAttack(angle, spinvel, spintime)
         t = t - 1
     until t <= 0
     self:stopAttack()
+    self.facex, self.facey = -cos(angle), -sin(angle)
     if attackagain then
         return "playerQueueableAttack", angle, spinvel, spintime
     end
