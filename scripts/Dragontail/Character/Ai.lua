@@ -19,6 +19,7 @@ local cos = math.cos
 local sin = math.sin
 local dot = math.dot
 local len = math.len
+local max = math.max
 local Ai = {}
 
 local function moveTo(self, destx, desty, speed, timelimit)
@@ -271,11 +272,19 @@ function Ai:approach()
     return "approach"
 end
 
+local function updateLungeAttack(self, attackangle, lungespeed)
+    self.velx = lungespeed * cos(attackangle)
+    self.vely = lungespeed * sin(attackangle)
+    lungespeed = max(0, lungespeed - 1)
+    return lungespeed
+end
+
 function Ai:attack(attackname)
     attackname = attackname or "attack"
     self.velx, self.vely = 0, 0
 
     local x, y = self.x, self.y
+    local bounds = self.bounds
     local opponent = self.opponent
     local oppox, oppoy = opponent.x, opponent.y
     local tooppox, tooppoy = oppox - x, oppoy - y
@@ -287,14 +296,30 @@ function Ai:attack(attackname)
     wait(self.attackwinduptime or 20)
 
     Audio.play(self.swingsound)
-    self:startAttack(floor((tooppoangle + (pi/4)) / (pi/2)) * pi/2)
+    local attackangle = floor((tooppoangle + (pi/4)) / (pi/2)) * pi/2
+    self:startAttack(attackangle)
+
+    local lungespeed = self.attacklungespeed or 0
 
     animation = self.getDirectionalAnimation_angle(attackname.."B", tooppoangle, 4)
     self.sprite:changeAsepriteAnimation(animation, 1, "stop")
-    wait(self.attackhittime or 10)
+    local hittime = self.attackhittime or 10
+    repeat
+        lungespeed = updateLungeAttack(self, attackangle, lungespeed)
+        hittime = hittime - 1
+        yield()
+        self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+    until hittime <= 0
 
     self:stopAttack()
-    wait(self.attackafterhittime or 30)
+
+    local afterhittime = self.attackafterhittime or 30
+    repeat
+        lungespeed = updateLungeAttack(self, attackangle, lungespeed)
+        afterhittime = afterhittime - 1
+        yield()
+        self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+    until afterhittime <= 0
 
     return "stand", 20
 end
