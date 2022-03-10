@@ -1,5 +1,12 @@
-function math.clamp(x, min, max)
-    return math.max(min, math.min(x, max))
+local min = math.min
+local max = math.max
+local cos = math.cos
+local sin = math.sin
+local rad = math.rad
+local sqrt = math.sqrt
+
+function math.clamp(x, a, b)
+    return max(a, min(x, b))
 end
 
 function math.dot(x, y, x2, y2)
@@ -22,15 +29,15 @@ end
 
 function math.dist(x1, y1, x2, y2)
     local dx, dy = x2-x1, y2-y1
-    return math.sqrt(dx*dx + dy*dy)
+    return sqrt(dx*dx + dy*dy)
 end
 
 function math.len(x, y)
-    return math.sqrt(x*x + y*y)
+    return sqrt(x*x + y*y)
 end
 
 function math.norm(x, y)
-    local len = math.sqrt(x*x + y*y)
+    local len = sqrt(x*x + y*y)
     return x/len, y/len
 end
 
@@ -39,8 +46,8 @@ function math.mid(x1, y1, x2, y2)
 end
 
 function math.rot(x, y, a)
-    local cos, sin = math.cos(a), math.sin(a)
-    return x*cos - y*sin, y*cos + x*sin
+    local cosa, sina = cos(a), sin(a)
+    return x*cosa - y*sina, y*cosa + x*sina
 end
 
 function math.testrects(ax, ay, aw, ah, bx, by, bw, bh)
@@ -62,6 +69,6 @@ end
 function math.table_rad(t, k)
     local x = t[k]
     if type(x) == "number" then
-        t[k] = math.rad(x)
+        t[k] = rad(x)
     end
 end
