@@ -17,6 +17,7 @@ local atan2 = math.atan2
 local random = love.math.random
 local cos = math.cos
 local sin = math.sin
+local acos = math.acos
 local asin = math.asin
 local dot = math.dot
 local det = math.det
@@ -165,6 +166,8 @@ function Ai:playerHold(enemy)
     else
         holddirx = 1
     end
+    local holdangle = atan2(holddiry, holddirx)
+    local holddestangle = holdangle
     local time = enemy.hurtstun
     while time > 0 do
         yield()
@@ -179,14 +182,30 @@ function Ai:playerHold(enemy)
         local b1pressed = Controls.getButtonsPressed()
         local _, b2down = Controls.getButtonsDown()
         if inx ~= 0 or iny ~= 0 then
-            holddirx, holddiry = norm(inx, iny)
-            self.facex, self.facey = holddirx, holddiry
+            inx, iny = norm(inx, iny)
+            local turnamt = 0
+            local turndir = det(holddirx, holddiry, inx, iny)
+            if turndir < 0 then
+                turnamt = -acos(dot(holddirx, holddiry, inx, iny))
+            else
+                turnamt = acos(dot(holddirx, holddiry, inx, iny))
+            end
+            holddestangle = holdangle + turnamt
         end
+
+        local avel = 0
+        if holddestangle < holdangle then
+            avel = -pi/16
+        elseif holddestangle > holdangle then
+            avel = pi/16
+        end
+        holdangle = Movement.moveTowards(holdangle, holddestangle, avel)
+        holddirx, holddiry = cos(holdangle), sin(holdangle)
         x, y = self.x, self.y
         enemy.x = x + holddirx*radii
         enemy.y = y + holddiry*radii
+        self.facex, self.facey = holddirx, holddiry
 
-        local holdangle = atan2(holddiry, holddirx)
         local holdanimation = self.getDirectionalAnimation_angle("hold", holdangle, 8)
         self.sprite:changeAsepriteAnimation(holdanimation)
 
@@ -196,7 +215,7 @@ function Ai:playerHold(enemy)
             return "playerAttack", self.type.."-attack", holdangle
         end
         if not b2down then
-            enemy:startAi(enemy.thrownai or "thrown", self, atan2(holddiry, holddirx))
+            enemy:startAi(enemy.thrownai or "thrown", self, holdangle)
             Audio.play(self.throwsound)
             break
         end
