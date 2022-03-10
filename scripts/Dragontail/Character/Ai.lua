@@ -49,6 +49,17 @@ local function stopHolding(self, held)
     end
 end
 
+local function attackLungeDist(speed)
+    if speed <= 0 then
+        return 0
+    end
+    return speed + attackLungeDist(speed-1)
+end
+
+local function totalAttackRange(attackradius, attacklungespeed)
+    return attackradius + attackLungeDist(attacklungespeed or 0)
+end
+
 function Ai:playerControl()
     local opponents = self.opponents
     self.facex = self.facex or 1
@@ -267,7 +278,7 @@ function Ai:stand(duration)
     end
     local attackname = "attack" -- TODO decide between multiple
     Sheets.fill(self, self.type.."-"..attackname)
-    local attackradius = (self.attackradius or 32) + opponent.bodyradius
+    local attackradius = totalAttackRange(self.attackradius or 32, self.attacklungespeed or 0) + opponent.bodyradius
     if distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
         return "attack"
     end
@@ -285,7 +296,7 @@ function Ai:approach()
 
     -- choose dest
     local destanglefromoppo = random(4)*pi/2
-    local attackradius = (self.attackradius or 32) + opponent.bodyradius
+    local attackradius = totalAttackRange(self.attackradius or 32, self.attacklungespeed or 0) + opponent.bodyradius
     local destx, desty
     repeat
         destx = oppox + cos(destanglefromoppo) * attackradius
