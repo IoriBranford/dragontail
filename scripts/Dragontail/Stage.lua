@@ -65,9 +65,10 @@ function Stage.init(stagefile)
     end
     Stage.openNextRoom()
 
-    local faceasepritefile = player.faceasepritefile or "sprites/rose-face.jase"
-    local facease = Assets.get(faceasepritefile)
-    facesprite = SceneObject.newAseprite(facease, 1, 16, 16)
+    local faceasepritefile = player.faceasepritefile
+    local facease = faceasepritefile and Assets.get(faceasepritefile)
+    facesprite = facease and SceneObject.newAseprite(facease, 1, 32, 32)
+    facesprite.ox, facesprite.oy = 16, 16
 end
 
 function Stage.addCharacter(object)
@@ -194,9 +195,9 @@ function Stage.update(dsecs, fixedfrac)
     end
 end
 
-local NameX, NameY = 16, 24
-local BarX, BarY = NameX + 40, NameY
-local BarH = 16
+local NameX, NameY = 48, 16
+local BarX, BarY = NameX, NameY + 17
+local BarH = 14
 
 function Stage.draw()
     love.graphics.push()
@@ -216,18 +217,21 @@ function Stage.draw()
     love.graphics.setColor(1, .5, .5)
     love.graphics.rectangle("line", BarX - .5, BarY - .5, player.maxhealth, BarH + 1, 2)
     love.graphics.setColor(1,1,1)
-    -- love.graphics.printf("Rose", NameX, NameY, 40, "left")
+    love.graphics.printf(" Rose", NameX, NameY, 64, "left")
 
-    if gamestatus == "victory" then
-        facesprite:changeAsepriteAnimation("win")
-    elseif hurtstun > 0 then
-        facesprite:changeAsepriteAnimation("hit")
-    elseif health <= player.maxhealth/2 then
-        facesprite:changeAsepriteAnimation("wounded")
-    else
-        facesprite:changeAsepriteAnimation("normal")
+    if facesprite then
+        if gamestatus == "victory" then
+            facesprite:changeAsepriteAnimation("win")
+        elseif hurtstun > 0 or health <= player.maxhealth/2 then
+            facesprite:changeAsepriteAnimation("hurt")
+        elseif player.attackangle then
+            facesprite:changeAsepriteAnimation("attack")
+        else
+            facesprite:changeAsepriteAnimation("normal")
+        end
+        facesprite:draw()
+        love.graphics.rectangle("line", facesprite.x - facesprite.ox, facesprite.y - facesprite.oy, facesprite.w, facesprite.h)
     end
-    facesprite:draw()
 end
 
 return Stage
