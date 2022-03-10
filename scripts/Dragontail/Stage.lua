@@ -5,6 +5,9 @@ local Tiled     = require "Data.Tiled"
 local Sheets    = require "Data.Sheets"
 local Audio     = require "System.Audio"
 local Movement  = require "Object.Movement"
+local Assets    = require "System.Assets"
+local SceneObject = require "System.SceneObject"
+require "System.SceneObject.Aseprite"
 local Stage = {}
 local max = math.max
 local min = math.min
@@ -16,6 +19,7 @@ local map
 local roomindex
 local gamestatus
 local camerax, cameray
+local facesprite
 
 function Stage.quit()
     scene = nil
@@ -60,6 +64,10 @@ function Stage.init(stagefile)
         music:setLooping(true)
     end
     Stage.openNextRoom()
+
+    local faceasepritefile = player.faceasepritefile or "sprites/rose-face.jase"
+    local facease = Assets.get(faceasepritefile)
+    facesprite = SceneObject.newAseprite(facease, 1, 16, 16)
 end
 
 function Stage.addCharacter(object)
@@ -186,7 +194,7 @@ function Stage.update(dsecs, fixedfrac)
     end
 end
 
-local NameX, NameY = 16, 16
+local NameX, NameY = 16, 24
 local BarX, BarY = NameX + 40, NameY
 local BarH = 16
 
@@ -208,7 +216,18 @@ function Stage.draw()
     love.graphics.setColor(1, .5, .5)
     love.graphics.rectangle("line", BarX - .5, BarY - .5, player.maxhealth, BarH + 1, 2)
     love.graphics.setColor(1,1,1)
-    love.graphics.printf("Rose", NameX, NameY, 40, "left")
+    -- love.graphics.printf("Rose", NameX, NameY, 40, "left")
+
+    if gamestatus == "victory" then
+        facesprite:changeAsepriteAnimation("win")
+    elseif hurtstun > 0 then
+        facesprite:changeAsepriteAnimation("hit")
+    elseif health <= player.maxhealth/2 then
+        facesprite:changeAsepriteAnimation("wounded")
+    else
+        facesprite:changeAsepriteAnimation("normal")
+    end
+    facesprite:draw()
 end
 
 return Stage
