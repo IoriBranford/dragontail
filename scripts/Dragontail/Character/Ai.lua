@@ -352,7 +352,7 @@ function Ai:attack(attackname)
     self.sprite:changeAsepriteAnimation(animation, 1, "stop")
     local hittime = self.attackhittime or 10
     repeat
-        lungespeed = updateLungeAttack(self, attackangle, lungespeed)
+        lungespeed = updateLungeAttack(self, tooppoangle, lungespeed)
         hittime = hittime - 1
         yield()
         self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
@@ -362,7 +362,7 @@ function Ai:attack(attackname)
 
     local afterhittime = self.attackafterhittime or 30
     repeat
-        lungespeed = updateLungeAttack(self, attackangle, lungespeed)
+        lungespeed = updateLungeAttack(self, tooppoangle, lungespeed)
         afterhittime = afterhittime - 1
         yield()
         self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
