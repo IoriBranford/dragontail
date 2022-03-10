@@ -17,9 +17,14 @@ local atan2 = math.atan2
 local random = love.math.random
 local cos = math.cos
 local sin = math.sin
+local asin = math.asin
 local dot = math.dot
+local det = math.det
 local len = math.len
+local abs = math.abs
+local min = math.min
 local max = math.max
+local rot = math.rot
 local Ai = {}
 
 local function moveTo(self, destx, desty, speed, timelimit)
@@ -33,6 +38,15 @@ local function moveTo(self, destx, desty, speed, timelimit)
         self.velx, self.vely = Movement.getVelocity_speed(x, y, destx, desty, speed)
     end)
     return self.x == destx and self.y == desty
+end
+
+local function stopHolding(self, held)
+    if self then
+        self.heldopponent = nil
+    end
+    if held then
+        held.heldby = nil
+    end
 end
 
 function Ai:playerControl()
@@ -57,9 +71,7 @@ function Ai:playerControl()
         end
 
         if b1pressed then
-            Sheets.fill(self, self.type.."-attack")
-            return "playerQueueableAttack", atan2(-facey, -facex),
-                self.attackspinspeed or (2*pi/16), self.attackhittime or 16
+            return "playerAttack", self.type.."-attack", atan2(-facey, -facex)
         end
 
         if b2down and not self.heldopponent then
@@ -102,7 +114,10 @@ function Ai:playerControl()
     end
 end
 
-function Ai:playerQueueableAttack(angle, spinvel, spintime)
+function Ai:playerAttack(attacktype, angle)
+    Sheets.fill(self, attacktype)
+    local spinvel = self.attackspinspeed or (2*pi/16)
+    local spintime = self.attackhittime or 16
     Audio.play(self.swingsound)
     local attackagain = false
     local t = spintime
@@ -116,9 +131,9 @@ function Ai:playerQueueableAttack(angle, spinvel, spintime)
             targetvely = iny * speed
         end
 
-        self:accelerateTowardsVel(targetvelx, targetvely, 16)
+        self:accelerateTowardsVel(targetvelx, targetvely, 8)
 
-        self.attackangle = angle
+        self:startAttack(angle)
         local spindir = spinvel < 0 and "B" or "A"
         local attackanimation = self.getDirectionalAnimation_angle("attack"..spindir, angle, 4)
         self.sprite:changeAsepriteAnimation(attackanimation)
@@ -131,25 +146,8 @@ function Ai:playerQueueableAttack(angle, spinvel, spintime)
     self:stopAttack()
     self.facex, self.facey = -cos(angle), -sin(angle)
     if attackagain then
-        return "playerQueueableAttack", angle, spinvel, spintime
+        return "playerAttack", attacktype, angle
     end
-    return "playerControl"
-end
-
-function Ai:playerAttack(angle, spinvel, spintime)
-    local opponents = self.opponents
-    Audio.play(self.swingsound)
-    repeat
-        self.attackangle = angle
-        local spindir = spinvel < 0 and "B" or "A"
-        local attackanimation = self.getDirectionalAnimation_angle("attack"..spindir, angle, 4)
-        self.sprite:changeAsepriteAnimation(attackanimation)
-
-        yield()
-        angle = angle + spinvel
-        spintime = spintime - 1
-    until spintime <= 0
-    self:stopAttack()
     return "playerControl"
 end
 
@@ -161,7 +159,12 @@ function Ai:playerHold(enemy)
     local x, y = self.x, self.y
     local radii = self.bodyradius + enemy.bodyradius
     Audio.play(self.holdsound)
-    local holddirx, holddiry = norm(enemy.x - x, enemy.y - y)
+    local holddirx, holddiry = enemy.x - x, enemy.y - y
+    if holddirx ~= 0 or holddiry ~= 0 then
+        holddirx, holddiry = norm(holddirx, holddiry)
+    else
+        holddirx = 1
+    end
     local time = enemy.hurtstun
     while time > 0 do
         yield()
@@ -173,28 +176,32 @@ function Ai:playerHold(enemy)
         self:accelerateTowardsVel(0, 0, 4)
 
         local inx, iny = Controls.getDirectionInput()
-        local b1, b2 = Controls.getButtonsDown()
+        local b1pressed = Controls.getButtonsPressed()
+        local _, b2down = Controls.getButtonsDown()
         if inx ~= 0 or iny ~= 0 then
-            self.facex, self.facey = inx, iny
             holddirx, holddiry = norm(inx, iny)
+            self.facex, self.facey = holddirx, holddiry
         end
         x, y = self.x, self.y
         enemy.x = x + holddirx*radii
         enemy.y = y + holddiry*radii
 
-        local holdanimation = self.getDirectionalAnimation_angle("hold", atan2(holddiry, holddirx), 8)
+        local holdangle = atan2(holddiry, holddirx)
+        local holdanimation = self.getDirectionalAnimation_angle("hold", holdangle, 8)
         self.sprite:changeAsepriteAnimation(holdanimation)
 
-        if not b2 then
+        if b1pressed then
+            stopHolding(self, enemy)
+            enemy.hurtstun = 0
+            return "playerAttack", self.type.."-attack", holdangle
+        end
+        if not b2down then
             enemy:startAi(enemy.thrownai or "thrown", self, atan2(holddiry, holddirx))
             Audio.play(self.throwsound)
             break
         end
     end
-    if enemy then
-        enemy.heldby = nil
-    end
-    self.heldopponent = nil
+    stopHolding(self, enemy)
     return "playerControl"
 end
 
@@ -331,14 +338,10 @@ function Ai:hurt(attacker)
     self:stopAttack()
     local heldopponent = self.heldopponent
     local heldby = self.heldby
-    self.heldopponent = nil
-    self.heldby = nil
+    stopHolding(self, heldopponent)
+    stopHolding(heldby, self)
     if heldopponent then
         heldopponent.hurtstun = 0
-        heldopponent.heldby = nil
-    end
-    if heldby then
-        heldby.heldopponent = nil
     end
     self.hurtstun = attacker.attackstun or 3
     local facex, facey = self.facex or 1, self.facey or 0
