@@ -4,6 +4,7 @@ local new = SceneObject.new
 
 function SceneObject.setAsepriteAnimation(sceneobject, aseprite, tag, tagframe, onend)
     tagframe = tagframe or 1
+    aseprite = aseprite or sceneobject.aseprite
     sceneobject.aseprite = aseprite
     sceneobject.animation = tag
     sceneobject.animationframe = tagframe
