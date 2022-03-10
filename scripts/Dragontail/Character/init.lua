@@ -359,4 +359,6 @@ function Character:disappear()
     self:removeSprite("emote")
 end
 
+require "Dragontail.Character.Ai"(Character)
+
 return Character

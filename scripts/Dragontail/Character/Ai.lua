@@ -1,4 +1,3 @@
-local Character = require "Dragontail.Character"
 local Movement  = require "Object.Movement"
 local Audio     = require "System.Audio"
 local Sheets    = require "Data.Sheets"
@@ -596,6 +595,7 @@ function Ai:itemWaitForPickup()
     end
 end
 
+return function(Character)
 function Character:startAi(ainame, ...)
     local f = Ai[ainame]
     if not f then
@@ -628,5 +628,4 @@ function Character:runAi()
         self.ai = nil
     end
 end
-
-return Character
+end

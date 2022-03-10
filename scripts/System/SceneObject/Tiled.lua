@@ -1,8 +1,18 @@
-local SceneObject = require "System.SceneObject"
+local SceneTiled = {}
 local Tiled       = require "Data.Tiled"
 local Color = require "Data.Color"
 
-function SceneObject.animateTile(sceneobject, dt)
+-- from SceneObject
+local new
+local drawLine
+local drawPolygon
+local drawRectangle
+local drawEllipse
+local drawQuad
+local drawString
+local drawGeneric
+
+function SceneTiled.animateTile(sceneobject, dt)
     local animation = sceneobject.animation
     if animation then
         local aframe = sceneobject.animationframe
@@ -13,9 +23,9 @@ function SceneObject.animateTile(sceneobject, dt)
         sceneobject.quad = animation[aframe].tile.quad
     end
 end
-local animateTile = SceneObject.animateTile
+local animateTile = SceneTiled.animateTile
 
-function SceneObject.setTile(sceneobject, tile)
+function SceneTiled.setTile(sceneobject, tile)
     sceneobject.drawable = tile.image
     sceneobject.quad = tile.quad
     sceneobject.width = tile.width
@@ -26,17 +36,9 @@ function SceneObject.setTile(sceneobject, tile)
     sceneobject.animationframe = 1
     sceneobject.animationtime = 0
 end
+local setTile = SceneTiled.setTile
 
-local setTile = SceneObject.setTile
-local drawLine = SceneObject.drawLine
-local drawPolygon = SceneObject.drawPolygon
-local drawRectangle = SceneObject.drawRectangle
-local drawEllipse = SceneObject.drawEllipse
-local drawQuad = SceneObject.drawQuad
-local drawString = SceneObject.drawString
-local drawGeneric = SceneObject.drawGeneric
-
-function SceneObject.newShapeObject(shapeobject)
+function SceneTiled.newShapeObject(shapeobject)
     local w, h, x, y, z, r, sx, sy
         = shapeobject.width, shapeobject.height,
         shapeobject.x, shapeobject.y, shapeobject.z,
@@ -46,18 +48,18 @@ function SceneObject.newShapeObject(shapeobject)
     local shape = shapeobject.shape
     local id = shapeobject.id
     if shape == "rectangle" then
-        sceneobject = SceneObject.new(drawRectangle, nil, nil, w, h, x, y, z, r, sx, sy)
+        sceneobject = new(drawRectangle, nil, nil, w, h, x, y, z, r, sx, sy)
     elseif shape == "ellipse" then
-        sceneobject = SceneObject.new(drawEllipse, nil, nil, w, h, x, y, z, r, sx, sy)
+        sceneobject = new(drawEllipse, nil, nil, w, h, x, y, z, r, sx, sy)
     elseif shape == "polyline" then
-        sceneobject = SceneObject.new(drawLine, shapeobject.points, nil, w, h, x, y, z, r, sx, sy)
+        sceneobject = new(drawLine, shapeobject.points, nil, w, h, x, y, z, r, sx, sy)
     elseif shape == "polygon" then
         local triangles = shapeobject.triangles
         if triangles then
-            sceneobject = SceneObject.new(drawPolygon, triangles, nil, w, h, x, y, z, r, sx, sy)
+            sceneobject = new(drawPolygon, triangles, nil, w, h, x, y, z, r, sx, sy)
             sceneobject.points = shapeobject.points -- for drawing outline
         else
-            sceneobject = SceneObject.new(drawLine, shapeobject.points, nil, w, h, x, y, z, r, sx, sy)
+            sceneobject = new(drawLine, shapeobject.points, nil, w, h, x, y, z, r, sx, sy)
         end
     end
 
@@ -80,15 +82,15 @@ function SceneObject.newShapeObject(shapeobject)
     return sceneobject
 end
 
-function SceneObject.newChunk(chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
+function SceneTiled.newChunk(chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
     local w = chunk.width * chunk.tilewidth
     local h = chunk.height * chunk.tileheight
-    local sceneobject = SceneObject.new(drawGeneric, chunk.tilebatch, nil, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    local sceneobject = SceneTiled.new(drawGeneric, chunk.tilebatch, nil, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky)
     return sceneobject
 end
 
-function SceneObject.newAnimatedChunk(chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = SceneObject.newChunk(chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
+function SceneTiled.newAnimatedChunk(chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    local sceneobject = SceneTiled.newChunk(chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
     sceneobject.batchanimations = chunk.batchanimations
     sceneobject.animationtime = 0
     sceneobject.animate = Tiled.animateChunk
@@ -99,8 +101,8 @@ function SceneObject.newAnimatedChunk(chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
     return sceneobject
 end
 
-function SceneObject.newTile(tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = SceneObject.new(drawQuad, tile.image, nil, nil, nil, x, y, z, r, sx, sy, nil, nil, kx, ky)
+function SceneTiled.newTile(tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    local sceneobject = SceneTiled.new(drawQuad, tile.image, nil, nil, nil, x, y, z, r, sx, sy, nil, nil, kx, ky)
     sceneobject.animate = animateTile
     setTile(sceneobject, tile)
     if ox then
@@ -112,8 +114,8 @@ function SceneObject.newTile(tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
     return sceneobject
 end
 
-function SceneObject.newTextObject(textobject)
-    local sceneobject = SceneObject.new(drawString, textobject.string, nil,
+function SceneTiled.newTextObject(textobject)
+    local sceneobject = SceneTiled.new(drawString, textobject.string, nil,
         textobject.width, textobject.height, textobject.x, textobject.y, textobject.z,
         textobject.rotation, textobject.scalex, textobject.scaley,
         textobject.originx, textobject.originy,
@@ -128,20 +130,20 @@ function SceneObject.newTextObject(textobject)
     return sceneobject
 end
 
-function SceneObject.newImageLayer(imagelayer)
+function SceneTiled.newImageLayer(imagelayer)
     local image = imagelayer.image
-    local sceneobject = SceneObject.newImage(image, imagelayer.x, imagelayer.y, imagelayer.z)
+    local sceneobject = SceneTiled.newImage(image, imagelayer.x, imagelayer.y, imagelayer.z)
     sceneobject.alpha = imagelayer.opacity
     return sceneobject
 end
 
-function SceneObject.newTileObject(tileobject)
+function SceneTiled.newTileObject(tileobject)
     local tile = tileobject.tile
     local id = tileobject.id
     local x = tileobject.x
     local y = tileobject.y
     local z = tileobject.z
-    local sceneobject = SceneObject.newTile(tile, x, y, z, tileobject.rotation, tileobject.scalex, tileobject.scaley)
+    local sceneobject = SceneTiled.newTile(tile, x, y, z, tileobject.rotation, tileobject.scalex, tileobject.scaley)
     local color = tileobject.color
     if color then
         sceneobject.red, sceneobject.green, sceneobject.blue, sceneobject.alpha = Color.unpack(color)
@@ -165,13 +167,13 @@ local function updateParticleSystem(sceneobject, unit, fixedfrac)
     particlesystem:setDirection(r)
 end
 
-function SceneObject.animateParticles(sceneobject, dt)
+function SceneTiled.animateParticles(sceneobject, dt)
     sceneobject.particlesystem:update(dt)
 end
-local animateParticles = SceneObject.animateParticles
+local animateParticles = SceneTiled.animateParticles
 
 local addTileParticles_quads = {}
-function SceneObject.newTileParticles(tile, z)
+function SceneTiled.newTileParticles(tile, z)
     local particlesystem = love.graphics.newParticleSystem(tile.image)
     local animation = tile.animation
     if animation then
@@ -190,10 +192,23 @@ function SceneObject.newTileParticles(tile, z)
     end
     particlesystem:setOffset(tile.objectoriginx, tile.objectoriginy)
 
-    local sceneobject = SceneObject.new(drawGeneric, particlesystem, nil, nil, nil, 0, 0, z)
+    local sceneobject = new(drawGeneric, particlesystem, nil, nil, nil, 0, 0, z)
     sceneobject.animate = animateParticles
     sceneobject.updateFromUnit = updateParticleSystem
     return sceneobject
 end
 
-return SceneObject
+return function(SceneObject)
+    new = SceneObject.new
+    drawLine        = SceneObject.drawLine
+    drawPolygon     = SceneObject.drawPolygon
+    drawRectangle   = SceneObject.drawRectangle
+    drawEllipse     = SceneObject.drawEllipse
+    drawQuad        = SceneObject.drawQuad
+    drawString      = SceneObject.drawString
+    drawGeneric     = SceneObject.drawGeneric
+    for k,v in pairs(SceneTiled) do
+        SceneObject[k] = v
+    end
+    SceneTiled = SceneObject
+end

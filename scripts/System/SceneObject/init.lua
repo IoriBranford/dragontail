@@ -217,4 +217,6 @@ function SceneObject.sortAndPruneObjects(sceneobjects, sort)
     end
 end
 
+require("System.SceneObject.Tiled")(SceneObject)
+require("System.SceneObject.Aseprite")(SceneObject)
 return SceneObject

@@ -1,13 +1,11 @@
 local Scene = require "System.Scene"
 local Character = require "Dragontail.Character"
-require "Dragontail.Character.Ai"
 local Tiled     = require "Data.Tiled"
 local Sheets    = require "Data.Sheets"
 local Audio     = require "System.Audio"
 local Movement  = require "Object.Movement"
 local Assets    = require "System.Assets"
 local SceneObject = require "System.SceneObject"
-require "System.SceneObject.Aseprite"
 local Stage = {}
 local max = math.max
 local min = math.min

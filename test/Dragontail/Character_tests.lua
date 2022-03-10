@@ -1,7 +1,6 @@
 local cute = require("cute")
 
 local Character = require "Dragontail.Character"
-require "Dragontail.Character.Ai"
 
 notion("Character moving on XY plane", function()
     local character = Character.new({x = 0, y = 0})
