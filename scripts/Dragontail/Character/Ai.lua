@@ -154,6 +154,7 @@ end
 function Ai:playerHold(enemy)
     self:stopAttack()
     self.heldopponent = enemy
+    enemy.bodysolid = nil
     enemy.heldby = self
     enemy.hurtstun = enemy.holdstun or 120
     local x, y = self.x, self.y
@@ -175,11 +176,12 @@ function Ai:playerHold(enemy)
             break
         end
         time = time - 1
-        self:accelerateTowardsVel(0, 0, 4)
 
         local inx, iny = Controls.getDirectionInput()
         local b1pressed = Controls.getButtonsPressed()
         local _, b2down = Controls.getButtonsDown()
+        local targetvelx, targetvely = 0, 0
+        local speed = 2
         if inx ~= 0 or iny ~= 0 then
             inx, iny = norm(inx, iny)
             local turnamt = 0
@@ -190,7 +192,12 @@ function Ai:playerHold(enemy)
                 turnamt = acos(dot(holddirx, holddiry, inx, iny))
             end
             holddestangle = holdangle + turnamt
+            targetvelx = inx * speed
+            targetvely = iny * speed
         end
+
+        self:accelerateTowardsVel(targetvelx, targetvely, 4)
+        local velx, vely = self.velx, self.vely
 
         local avel = 0
         if holddestangle < holdangle then
@@ -201,15 +208,17 @@ function Ai:playerHold(enemy)
         holdangle = Movement.moveTowards(holdangle, holddestangle, avel)
         holddirx, holddiry = cos(holdangle), sin(holdangle)
         x, y = self.x, self.y
-        enemy.x = x + holddirx*radii
-        enemy.y = y + holddiry*radii
+        enemy.x = x + velx + holddirx*radii
+        enemy.y = y + velx + holddiry*radii
         self.facex, self.facey = holddirx, holddiry
 
-        local holdanimation = self.getDirectionalAnimation_angle("hold", holdangle, 8)
+        local holdanimation = (velx ~= 0 or vely ~= 0) and "holdwalk" or "hold"
+        holdanimation = self.getDirectionalAnimation_angle(holdanimation, holdangle, 8)
         self.sprite:changeAsepriteAnimation(holdanimation)
 
         if b1pressed then
             stopHolding(self, enemy)
+            enemy.bodysolid = true
             enemy.hurtstun = 0
             return "playerAttack", self.type.."-attack", holdangle
         end
@@ -219,6 +228,7 @@ function Ai:playerHold(enemy)
             break
         end
     end
+    enemy.bodysolid = true
     stopHolding(self, enemy)
     return "playerControl"
 end
