@@ -805,7 +805,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 17, "y": 12, "w": 40, "h": 52 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 100
+    "duration": 50
    },
    "Flattened#102": {
     "frame": { "x": 259, "y": 355, "w": 40, "h": 52 },
@@ -813,7 +813,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 7, "y": 12, "w": 40, "h": 52 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 100
+    "duration": 50
    },
    "Flattened#103": {
     "frame": { "x": 267, "y": 522, "w": 45, "h": 38 },
@@ -912,6 +912,7 @@
    { "name": "holdwalk6", "from": 91, "to": 94, "direction": "forward" },
    { "name": "hold7", "from": 95, "to": 95, "direction": "forward" },
    { "name": "holdwalk7", "from": 96, "to": 99, "direction": "forward" },
+   { "name": "spin", "from": 100, "to": 101, "direction": "forward" },
    { "name": "hurt0", "from": 100, "to": 100, "direction": "forward" },
    { "name": "hurt1", "from": 101, "to": 101, "direction": "forward" },
    { "name": "collapse", "from": 102, "to": 105, "direction": "forward" },
