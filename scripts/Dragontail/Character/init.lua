@@ -291,6 +291,10 @@ function Character:collideWithCharacterAttack(attacker)
         if attacker.hitstun <= 0 then
             attacker.hitstun = attacker.attackstunself or 3
         end
+        local hitai = attacker.attackhitai
+        if hitai then
+            attacker:startAi(hitai, self)
+        end
         return true
     end
 end
