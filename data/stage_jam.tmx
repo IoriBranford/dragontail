@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="80" height="12" tilewidth="32" tileheight="32" infinite="0" nextlayerid="24" nextobjectid="79">
  <editorsettings>
-  <export target="jam_village.lua" format="lua"/>
+  <export target="stage_jam.lua" format="lua"/>
  </editorsettings>
  <tileset firstgid="1" source="tilesets/grassland.tsx"/>
  <tileset firstgid="2817" source="tilesets/village_houses.tsx"/>

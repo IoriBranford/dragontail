@@ -1,11 +1,11 @@
-local Sheets = {}
+local Database = {}
 local Audio = require "System.Audio"
 local Csv   = require "Data.Csv"
 local type = type
 
 local sheets = {}
 
-function Sheets.load(csvfilename)
+function Database.load(csvfilename)
     local loaded = Csv.load(csvfilename)
     local fieldnames = loaded[1]
     for i = 1, #fieldnames do
@@ -29,11 +29,11 @@ function Sheets.load(csvfilename)
     return loaded
 end
 
-function Sheets.get(key)
+function Database.get(key)
     return sheets[key]
 end
 
-function Sheets.clear()
+function Database.clear()
     sheets = {}
 end
 
@@ -42,7 +42,7 @@ local function set(unit, k, v)
     unit[k] = var and unit[var] or v ~= "nil" and v or nil
 end
 
-function Sheets.fillBlanks(unit, key)
+function Database.fillBlanks(unit, key)
     local sheet = type(key) == "table" and key or sheets[key]
     if sheet then
         for k,v in pairs(sheet) do
@@ -53,7 +53,7 @@ function Sheets.fillBlanks(unit, key)
     end
 end
 
-function Sheets.fill(unit, key)
+function Database.fill(unit, key)
     local sheet = type(key) == "table" and key or sheets[key]
     if sheet then
         for k,v in pairs(sheet) do
@@ -69,10 +69,10 @@ function Sheets.fill(unit, key)
     end
 end
 
-function Sheets.forEach(func)
+function Database.forEach(func)
     for name, properties in pairs(sheets) do
         func(name, properties)
     end
 end
 
-return Sheets
+return Database

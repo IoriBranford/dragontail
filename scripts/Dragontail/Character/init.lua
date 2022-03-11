@@ -1,6 +1,6 @@
 local SceneObject = require "System.SceneObject"
 local Assets      = require "System.Assets"
-local Sheets      = require "Data.Sheets"
+local Database      = require "Data.Database"
 local Audio       = require "System.Audio"
 local Config      = require "System.Config"
 local pi = math.pi
@@ -30,7 +30,7 @@ function Character.init(ch, chprefab)
     end
     local type = ch.type
     if type then
-        Sheets.fillBlanks(ch, type)
+        Database.fillBlanks(ch, type)
     end
     ch.health = ch.health or 1
     ch.maxhealth = ch.maxhealth or ch.health

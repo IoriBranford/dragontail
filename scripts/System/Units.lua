@@ -1,5 +1,5 @@
 local Physics = require "System.Physics"
-local Sheets   = require "Data.Sheets"
+local Database   = require "Data.Database"
 local Prefabs  = require "Data.Prefabs"
 
 local Unit
@@ -114,7 +114,7 @@ function Units.addUnit(unit)
         unit.id = id
     end
 
-    Sheets.fillBlanks(unit, unit.type)
+    Database.fillBlanks(unit, unit.type)
 
     unit.age = unit.age or 0
     unit.width = unit.width or 0

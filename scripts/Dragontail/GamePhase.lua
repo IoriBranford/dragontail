@@ -1,7 +1,7 @@
 local Canvas= require "System.Canvas"
 local Config= require "System.Config"
 local Stage = require "Dragontail.Stage"
-local Sheets= require "Data.Sheets"
+local Database= require "Data.Database"
 local Assets= require "System.Assets"
 local Audio = require "System.Audio"
 local isAsset = Assets.isAsset
@@ -16,9 +16,9 @@ function GamePhase.loadphase()
     Canvas.init(Config.basewindowwidth, Config.basewindowheight)
     Assets.load("music/retro-chiptune-guitar.ogg", "stream")
 
-    Sheets.load("data/jam_characters.csv")
-    Sheets.load("data/jam_attacks.csv")
-    Sheets.forEach(function(_, properties)
+    Database.load("data/db_characters.csv")
+    Database.load("data/db_attacks.csv")
+    Database.forEach(function(_, properties)
         for k,v in pairs(properties) do
             if isAsset(v) then
                 getAsset(v)
@@ -26,7 +26,7 @@ function GamePhase.loadphase()
         end
     end)
 
-    Stage.init("data/jam_village.lua")
+    Stage.init("data/stage_jam.lua")
 end
 
 local keypressed = {}
@@ -49,7 +49,7 @@ end
 
 function GamePhase.quitphase()
     Stage.quit()
-    Sheets.clear()
+    Database.clear()
     Assets.clear()
 end
 

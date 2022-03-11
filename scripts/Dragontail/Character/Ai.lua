@@ -1,6 +1,6 @@
 local Movement  = require "Object.Movement"
 local Audio     = require "System.Audio"
-local Sheets    = require "Data.Sheets"
+local Database    = require "Data.Database"
 local Controls  = require "System.Controls"
 local co_create = coroutine.create
 local yield = coroutine.yield
@@ -126,7 +126,7 @@ function Ai:playerControl()
 end
 
 function Ai:playerAttack(attacktype, angle)
-    Sheets.fill(self, attacktype)
+    Database.fill(self, attacktype)
     local spinvel = self.attackspinspeed or (2*pi/16)
     local spintime = self.attackhittime or 16
     Audio.play(self.swingsound)
@@ -277,7 +277,7 @@ function Ai:stand(duration)
         return "stand"
     end
     local attackname = "attack" -- TODO decide between multiple
-    Sheets.fill(self, self.type.."-"..attackname)
+    Database.fill(self, self.type.."-"..attackname)
     local attackradius = totalAttackRange(self.attackradius or 32, self.attacklungespeed or 0) + opponent.bodyradius
     if distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
         return "attack"
@@ -446,7 +446,7 @@ function Ai:thrown(thrower, attackangle)
     self.bodysolid = false
     self.hurtstun = 0
     self.sprite:changeAsepriteAnimation("spin")
-    Sheets.fill(self, "human-thrown")
+    Database.fill(self, "human-thrown")
     local thrownspeed = self.knockedspeed or 8
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
     local thrownsound = Audio.newSource(self.swingsound)
