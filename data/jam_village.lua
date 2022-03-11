@@ -3808,6 +3808,36 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 77,
+          name = "",
+          type = "food-bigfish",
+          shape = "point",
+          x = 2240,
+          y = 145,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["z"] = 16
+          }
+        },
+        {
+          id = 78,
+          name = "",
+          type = "food-container",
+          shape = "point",
+          x = 2240,
+          y = 144,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["item"] = { id = 77 }
+          }
         }
       }
     },
