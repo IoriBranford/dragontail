@@ -152,18 +152,6 @@
    </properties>
    <point/>
   </object>
-  <object id="77" type="food-bigfish" x="2240" y="145">
-   <properties>
-    <property name="z" type="int" value="16"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="78" type="food-container" x="2240" y="144">
-   <properties>
-    <property name="item" type="object" value="77"/>
-   </properties>
-   <point/>
-  </object>
  </objectgroup>
  <objectgroup id="21" name="fight5">
   <properties>
