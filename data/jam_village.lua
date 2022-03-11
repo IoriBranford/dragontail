@@ -8,8 +8,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 22,
-  nextobjectid = 75,
+  nextlayerid = 24,
+  nextobjectid = 79,
   properties = {},
   tilesets = {
     {
@@ -3786,6 +3786,34 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
+      id = 22,
+      name = "room6",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 75,
+          name = "bounds",
+          type = "",
+          shape = "rectangle",
+          x = 1920,
+          y = 128,
+          width = 640,
+          height = 256,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
       id = 20,
       name = "room5",
       visible = true,
@@ -4115,6 +4143,66 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 23,
+      name = "fight6",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 76,
+          name = "",
+          type = "bandit-axe",
+          shape = "point",
+          x = 2592,
+          y = 256,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["startai"] = "approach"
+          }
+        },
+        {
+          id = 77,
+          name = "",
+          type = "food-bigfish",
+          shape = "point",
+          x = 2240,
+          y = 145,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["z"] = 16
+          }
+        },
+        {
+          id = 78,
+          name = "",
+          type = "food-container",
+          shape = "point",
+          x = 2240,
+          y = 144,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["item"] = { id = 77 }
+          }
         }
       }
     },
