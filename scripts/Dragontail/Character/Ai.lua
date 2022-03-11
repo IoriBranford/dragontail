@@ -2,6 +2,7 @@ local Movement  = require "Object.Movement"
 local Audio     = require "System.Audio"
 local Database    = require "Data.Database"
 local Controls  = require "System.Controls"
+local Stage
 local co_create = coroutine.create
 local yield = coroutine.yield
 local resume = coroutine.resume
@@ -280,7 +281,7 @@ function Ai:stand(duration)
     Database.fill(self, self.type.."-"..attackname)
     local attackradius = totalAttackRange(self.attackradius or 32, self.attacklungespeed or 0) + opponent.bodyradius
     if distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
-        return "attack"
+        return "attack", attackname
     end
     return "approach"
 end
@@ -343,8 +344,13 @@ function Ai:attack(attackname)
     wait(self.attackwinduptime or 20)
 
     Audio.play(self.swingsound)
-    local attackangle = floor((tooppoangle + (pi/4)) / (pi/2)) * pi/2
-    self:startAttack(attackangle)
+    local attackprojectile = self.attackprojectile
+    if attackprojectile then
+        Stage.addCharacter({x = x, y = y, type = attackprojectile, attackangle = tooppoangle})
+    else
+        local attackangle = floor((tooppoangle + (pi/4)) / (pi/2)) * pi/2
+        self:startAttack(attackangle)
+    end
 
     local lungespeed = self.attacklungespeed or 0
 
@@ -518,6 +524,17 @@ function Ai:fall(attacker)
     return "defeat", attacker
 end
 
+function Ai:flashOut(t)
+    local sprite = self.sprite
+    if type(t)=="number" and sprite then
+        for i = 1, t do
+            sprite.alpha = cos(i)
+            yield()
+        end
+    end
+    self:disappear()
+end
+
 function Ai:defeat(attacker)
     self.canbegrabbed = nil
     self:stopAttack()
@@ -525,13 +542,8 @@ function Ai:defeat(attacker)
     local defeatanimation = self.defeatanimation or "collapse"
     self.sprite:changeAsepriteAnimation(defeatanimation, 1, "stop")
     Audio.play(self.defeatsound)
-    local i = 1
-    repeat
-        self.sprite.alpha = cos(i)
-        yield()
-        i = i + 1
-    until i > 60
-    self:disappear()
+    yield()
+    return "flashOut", 60
 end
 
 function Ai:getup(attacker)
@@ -574,13 +586,8 @@ function Ai:containerBreak(attacker)
         item.opponent = self.opponent
         item:startAi("itemDrop")
     end
-    local i = 1
-    repeat
-        self.sprite.alpha = cos(i)
-        yield()
-        i = i + 1
-    until i > 30
-    self:disappear()
+    yield()
+    return "flashOut", 30
 end
 
 function Ai:itemDrop(y0)
@@ -616,8 +623,43 @@ function Ai:itemWaitForPickup()
     end
 end
 
+function Ai:projectileHit(opponent)
+    if opponent then
+        Audio.play(self.hitsound)
+    else
+        Audio.play(self.bodyslamsound)
+    end
+    local attackhitanimation = self.attackhitanimation
+    local sprite = self.sprite
+    if sprite and attackhitanimation then
+        attackhitanimation = self.getDirectionalAnimation_angle(attackhitanimation, self.attackangle, 4)
+        self.sprite:changeAsepriteAnimation(attackhitanimation)
+    end
+    self.bodysolid = false
+    self:stopAttack()
+    self.velx, self.vely = 0, 0
+    yield()
+    return "flashOut", 30
+end
+
+function Ai:projectileFly(shooter, angle)
+    angle = angle or self.attackangle
+    Database.fill(self, self.type.."-attack")
+    local bounds = self.bounds
+    local speed = self.speed
+    self.velx = speed*cos(angle)
+    self.vely = speed*sin(angle)
+    local oobx, ooby
+    repeat
+        yield()
+        oobx, ooby = self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+    until oobx or ooby
+    return "projectileHit"
+end
+
 return function(Character)
 function Character:startAi(ainame, ...)
+    Stage = Stage or require "Dragontail.Stage"
     local f = Ai[ainame]
     if not f then
         error("No AI function "..ainame)
