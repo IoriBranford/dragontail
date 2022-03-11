@@ -50,13 +50,7 @@ function Stage.init(stagefile)
     player = Stage.addCharacter({
         x = 160, y = 180, type = "Rose"
     })
-    player.opponents = enemies
 
-    for i, character in ipairs(allcharacters) do
-        if character.initialai then
-            character:startAi(character.initialai, 30)
-        end
-    end
     local music = Audio.playMusic("music/retro-chiptune-guitar.ogg")
     if music then
         music:setLooping(true)
@@ -73,6 +67,11 @@ function Stage.addCharacter(object)
     local character = Character.init(object)
     character.bounds = bounds
     character.solids = solids
+    if character.team == "player" then
+        character.opponents = enemies
+    else
+        character.opponent = player
+    end
     character:addToScene(scene)
     allcharacters[#allcharacters+1] = character
     if character.bodysolid then
@@ -80,6 +79,9 @@ function Stage.addCharacter(object)
     end
     if character.team == "enemy" then
         enemies[#enemies+1] = character
+    end
+    if character.initialai then
+        character:startAi(character.initialai)
     end
     return character
 end
@@ -91,11 +93,7 @@ function Stage.addCharacters(objects)
         if typ ~= "" then
             if typ == "bounds" then
             else
-                local character = addCharacter(object)
-                character.opponent = player
-                if character.initialai then
-                    character:startAi(character.initialai, 30)
-                end
+                addCharacter(object)
             end
         end
     end
