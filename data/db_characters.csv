@@ -5,5 +5,5 @@ bandit-spear,sprites/bandit-spear.jase,48,96,sprites/emotes.jase,12,56,,enemy,75
 food-container,sprites/food-container.jase,16,24,,,,,container,1,16,TRUE,,,,,,,container,containerWaitForBreak,,containerBreak,,,,,,containerBreak,,,,,,sounds/combat/containerbreak.mp3,,,,
 food-fish,sprites/food-container.jase,16,16,,,,,item,,18,,,,,,,25,fish,itemWaitForPickup,,,,,,,,,,,,,,,,,sounds/combat/heal.mp3,
 food-bigfish,sprites/food-container.jase,16,16,,,,,item,,18,,,,,,,100,bigfish,itemWaitForPickup,,,,,,,,,,,,,,,,,sounds/combat/heal.mp3,
-bandit-axe,sprites/bandit-axe.jase,32,48,sprites/emotes.jase,12,64,,enemy,200,16,TRUE,TRUE,3,attack throw,thrownRecover,10,,,stand,,hurt,stand,stun,thrown,5,collapseA,defeat,,sounds/combat/grab.mp3,,sounds/combat/slide.mp3,,sounds/man_medium/damage2.mp3,sounds/combat/bodydrop.mp3,sounds/combat/bodyslam.mp3,,
-thrown-axe,sprites/bandit-axe.jase,32,56,,,,,enemy,1,16,TRUE,FALSE,10,,,,,thrownaxe0,projectileFly,,,,,projectileFly,10,,,,,,,,,,sounds/combat/cutwall.mp3,,
+bandit-axe,sprites/bandit-axe.jase,32,48,sprites/emotes.jase,12,64,,enemy,200,16,TRUE,TRUE,3,throw,thrownRecover,10,,,stand,,hurt,stand,stun,thrown,5,collapseA,defeat,,sounds/combat/grab.mp3,,sounds/combat/slide.mp3,,sounds/man_medium/damage2.mp3,sounds/combat/bodydrop.mp3,sounds/combat/bodyslam.mp3,,
+thrown-axe,sprites/bandit-axe.jase,32,56,,,,,enemy,1,16,TRUE,FALSE,10,,,,,thrownaxe0,projectileFly,,projectileDeflected,,,projectileFly,10,,,,,,,,,,sounds/combat/cutwall.mp3,,

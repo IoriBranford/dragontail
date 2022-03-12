@@ -375,7 +375,8 @@ function Ai:attack(attackname)
             x = x + bodyradius*cos(tooppoangle),
             y = y + bodyradius*sin(tooppoangle),
             type = attackprojectile,
-            attackangle = tooppoangle
+            attackangle = tooppoangle,
+            shooter = self
         })
     else
         local attackangle = floor((tooppoangle + (pi/4)) / (pi/2)) * pi/2
@@ -688,6 +689,21 @@ function Ai:projectileFly(shooter, angle)
         oobx, ooby = self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
     until oobx or ooby
     return "projectileHit"
+end
+
+function Ai:projectileDeflected(deflector)
+    self.hurtstun = deflector.attackstun or 3
+
+    Audio.play(deflector.hitsound)
+    local attackangle = deflector.attackangle
+    yield()
+
+    local shooter = self.shooter
+    if shooter then
+        attackangle = atan2(shooter.y - self.y, shooter.x - self.x)
+    end
+    self.shooter = deflector
+    return "projectileFly", deflector, attackangle
 end
 
 return function(Character)
