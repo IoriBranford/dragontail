@@ -287,14 +287,15 @@ function Ai:stand(duration)
         attackchoices = choices
         self.attackchoices = choices
     end
-    local attackname = "attack"
+    local attacktype = "attack"
     if attackchoices and #attackchoices > 0 then
-        attackname = attackchoices[love.math.random(#attackchoices)]
+        attacktype = attackchoices[love.math.random(#attackchoices)]
     end
-    Database.fill(self, self.type.."-"..attackname)
+    self.attacktype = attacktype
+    Database.fill(self, self.type.."-"..attacktype)
     local attackradius = totalAttackRange(self.attackradius or 32, self.attacklungespeed or 0) + opponent.bodyradius
     if distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
-        return "attack", attackname
+        return "attack", attacktype
     end
     return "approach"
 end
@@ -330,7 +331,12 @@ function Ai:approach()
     if distsq(x, y, oppox, oppoy) > 320*320 then
         speed = speed * 1.5
     end
-    if moveTo(self, destx, desty, speed, self.approachtime or 60) then
+    local reached = moveTo(self, destx, desty, speed, self.approachtime or 60)
+    local attacktype = self.attacktype
+    if attacktype and distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
+        return "attack", attacktype
+    end
+    if reached then
         return "stand", 10
     end
     return "approach"
