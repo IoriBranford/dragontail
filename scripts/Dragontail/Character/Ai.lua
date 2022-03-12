@@ -332,6 +332,7 @@ function Ai:approach()
         speed = speed * 1.5
     end
     local reached = moveTo(self, destx, desty, speed, self.approachtime or 60)
+    oppox, oppoy = opponent.x, opponent.y
     local attacktype = self.attacktype
     if attacktype and distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
         return "attack", attacktype
@@ -339,7 +340,7 @@ function Ai:approach()
     if reached then
         return "stand", 10
     end
-    return "approach"
+    return "stand", 5
 end
 
 local function updateLungeAttack(self, attackangle, lungespeed)
@@ -408,6 +409,7 @@ end
 
 function Ai:hurt(attacker)
     self.health = self.health - attacker.attackdamage
+    self.canbegrabbed = nil
     self.velx, self.vely = 0, 0
     self:stopAttack()
     local heldopponent = self.heldopponent
@@ -443,6 +445,7 @@ function Ai:hurt(attacker)
         print("No hurtrecoverai for "..self.type)
         return "defeat", attacker
     end
+    self.canbegrabbed = true
     return recoverai
 end
 
