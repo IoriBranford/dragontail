@@ -316,7 +316,10 @@ function Ai:approach()
         destx = oppox + cos(destanglefromoppo) * attackradius
         desty = oppoy + sin(destanglefromoppo) * attackradius
         destanglefromoppo = destanglefromoppo + pi/2
-    until minx <= destx and destx <= maxx and miny <= desty and desty <= maxy and destanglefromoppo <= pi*4
+        if destanglefromoppo > 4*pi then
+            return "stand", 10
+        end
+    until minx <= destx and destx <= maxx and miny <= desty and desty <= maxy
 
     -- choose animation
     local todestangle = atan2(desty - y, destx - x)
