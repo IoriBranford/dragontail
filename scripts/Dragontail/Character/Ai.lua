@@ -556,9 +556,10 @@ function Ai:fall(attacker)
     return "defeat", attacker
 end
 
-function Ai:flashOut(t)
+function Ai:blinkOut(t)
+    t = t or 30
     local sprite = self.sprite
-    if type(t)=="number" and sprite then
+    if sprite then
         for i = 1, t do
             sprite.alpha = cos(i)
             yield()
@@ -575,7 +576,7 @@ function Ai:defeat(attacker)
     self.sprite:changeAsepriteAnimation(defeatanimation, 1, "stop")
     Audio.play(self.defeatsound)
     yield()
-    return "flashOut", 60
+    return "blinkOut", 60
 end
 
 function Ai:getup(attacker)
@@ -619,7 +620,7 @@ function Ai:containerBreak(attacker)
         item:startAi("itemDrop")
     end
     yield()
-    return "flashOut", 30
+    return "blinkOut", 30
 end
 
 function Ai:itemDrop(y0)
@@ -671,7 +672,7 @@ function Ai:projectileHit(opponent)
     self:stopAttack()
     self.velx, self.vely = 0, 0
     yield()
-    return "flashOut", 30
+    return "blinkOut", 30
 end
 
 function Ai:projectileFly(shooter, angle)
