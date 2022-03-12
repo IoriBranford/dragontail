@@ -277,7 +277,20 @@ function Ai:stand(duration)
     if opponent.health <= 0 then
         return "stand"
     end
-    local attackname = "attack" -- TODO decide between multiple
+
+    local attackchoices = self.attackchoices
+    if type(attackchoices) == "string" then
+        local choices = {}
+        for attack in attackchoices:gmatch("%S+") do
+            choices[#choices+1] = attack
+        end
+        attackchoices = choices
+        self.attackchoices = choices
+    end
+    local attackname = "attack"
+    if attackchoices and #attackchoices > 0 then
+        attackname = attackchoices[love.math.random(#attackchoices)]
+    end
     Database.fill(self, self.type.."-"..attackname)
     local attackradius = totalAttackRange(self.attackradius or 32, self.attacklungespeed or 0) + opponent.bodyradius
     if distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
@@ -346,7 +359,14 @@ function Ai:attack(attackname)
     Audio.play(self.swingsound)
     local attackprojectile = self.attackprojectile
     if attackprojectile then
-        Stage.addCharacter({x = x, y = y, type = attackprojectile, attackangle = tooppoangle})
+        local bodyradius = self.bodyradius or 0
+
+        Stage.addCharacter({
+            x = x + bodyradius*cos(tooppoangle),
+            y = y + bodyradius*sin(tooppoangle),
+            type = attackprojectile,
+            attackangle = tooppoangle
+        })
     else
         local attackangle = floor((tooppoangle + (pi/4)) / (pi/2)) * pi/2
         self:startAttack(attackangle)
