@@ -368,6 +368,10 @@ end
 
 function Ai:attack(attackname)
     attackname = attackname or "attack"
+    self:stopGuarding()
+    if self.attackwindupinvuln then
+        self.hitreactiondisabled = true
+    end
     self.velx, self.vely = 0, 0
 
     local x, y = self.x, self.y
@@ -375,12 +379,15 @@ function Ai:attack(attackname)
     local opponent = self.opponent
     local oppox, oppoy = opponent.x, opponent.y
     local tooppox, tooppoy = oppox - x, oppoy - y
-    faceDir(self, tooppox, tooppoy)
-    local tooppoangle = atan2(tooppoy, tooppox)
-    Audio.play(self.windupsound)
-
+    local tooppoangle = 0
+    if oppox ~= x and oppoy ~= y then
+        faceDir(self, tooppox, tooppoy)
+        tooppoangle = atan2(tooppoy, tooppox)
+    end
     local animation = self.getDirectionalAnimation_angle(attackname.."A", tooppoangle, 4)
     self.sprite:changeAsepriteAnimation(animation, 1, "stop")
+
+    Audio.play(self.windupsound)
     wait(self.attackwinduptime or 20)
 
     Audio.play(self.swingsound)
@@ -413,6 +420,7 @@ function Ai:attack(attackname)
     until hittime <= 0
 
     self:stopAttack()
+    self.hitreactiondisabled = nil
 
     local afterhittime = self.attackafterhittime or 30
     repeat
@@ -429,15 +437,16 @@ function Ai:guard()
     self.velx, self.vely = 0, 0
     local t = self.guardtime or 60
     local opponent = self.opponent
-    self:startGuarding(true)
     repeat
-        yield()
-        t = t - 1
         local guardangle = atan2(opponent.y - self.y, opponent.x - self.x)
+        self:startGuarding(guardangle)
         local guardanimation = self.getDirectionalAnimation_angle("guard", guardangle, 4)
         self.sprite:changeAsepriteAnimation(guardanimation, 1, "stop")
+        yield()
+        t = t - 1
     until t <= 0
-    self:stopGuarding(true)
+    self:stopGuarding()
+    self.numguardedhits = 0
     return "stand"
 end
 
@@ -449,10 +458,23 @@ function Ai:guardHit(attacker)
     -- local toattackerdist = len(toattackerx, toattackery)
     -- local dotGA = dot(toattackerx, toattackery, facex, facey)
     -- if dotGA >= cos(guardarc) * toattackerdist then
-        Audio.play(self.guardhitsound)
-        self.hurtstun = attacker.attackguardstun or 6
-        yield()
-        return "guard"
+    Audio.play(self.guardhitsound)
+    self.hurtstun = attacker.attackguardstun or 6
+    yield()
+
+    self.numguardedhits = (self.numguardedhits or 0) + 1
+    local guardcounterattack = self.guardcounterattack
+    local guardhitstocounterattack = self.guardhitstocounterattack or 3
+    if guardcounterattack then
+        Database.fill(self, self.type..'-'..guardcounterattack)
+        -- print(guardcounterattack, guardhitstocounterattack, self.numguardedhits, self.attackwindupinvuln)
+        if self.numguardedhits >= guardhitstocounterattack then
+            self.numguardedhits = 0
+            self:stopGuarding()
+            return "attack", guardcounterattack
+        end
+    end
+    return "guard"
         -- local afterguardattacktype = self.afterguardattacktype
         -- if afterguardattacktype then
         --     return "attack", afterguardattacktype
@@ -557,14 +579,29 @@ function Ai:thrown(thrower, attackangle)
     until recovertime <= 0 or oobx or ooby
     thrownsound:stop()
     if oobx or ooby then
-        self:stopAttack()
-        Audio.play(self.bodyslamsound)
-        self.health = self.health - (self.wallslamdamage or 25)
-        self.hurtstun = self.wallslamstun or 20
-        yield()
-        return "fall", thrower
+        return "wallSlammed", thrower, oobx, ooby
     end
-    return self.thrownrecoverai or self.hurtrecoverai
+    local thrownrecoverai = self.thrownrecoverai
+    if thrownrecoverai then
+        return thrownrecoverai, thrower
+    end
+    return self.hurtrecoverai
+end
+
+function Ai:wallSlammed(thrower, oobx, ooby)
+    self:stopAttack()
+    Audio.play(self.bodyslamsound)
+    self.health = self.health - (self.wallslamdamage or 25)
+    self.hurtstun = self.wallslamstun or 20
+    yield()
+    local wallslamcounterattack = self.wallslamcounterattack
+    if self.health > 0 and wallslamcounterattack then
+        Database.fill(self, self.type.."-"..wallslamcounterattack)
+        self.canbegrabbed = true
+        self.bodysolid = true
+        return "attack", wallslamcounterattack, atan2(-(ooby or 0), -(oobx or 0))
+    end
+    return "fall", thrower
 end
 
 function Ai:thrownRecover(thrower)
@@ -585,10 +622,7 @@ function Ai:thrownRecover(thrower)
 
     self:stopAttack()
     if oobx or ooby then
-        Audio.play(self.bodyslamsound)
-        self.health = self.health - (self.wallslamdamage or 25)
-        self.hurtstun = self.wallslamstun or 20
-        return "fall", thrower
+        return "wallSlammed", thrower, oobx, ooby
     end
 
     self.bodysolid = true
@@ -713,7 +747,7 @@ end
 
 function Ai:projectileHit(opponent)
     if opponent then
-        Audio.play(self.hitsound)
+        -- Audio.play(self.hitsound)
     else
         Audio.play(self.bodyslamsound)
     end
