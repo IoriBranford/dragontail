@@ -268,7 +268,7 @@ function Ai:playerVictory()
 end
 
 function Ai:stand(duration)
-    duration = duration or 60
+    duration = duration or 20
     self.velx, self.vely = 0, 0
     local x, y = self.x, self.y
     local i = 1
@@ -291,6 +291,7 @@ function Ai:stand(duration)
         return "stand"
     end
 
+    local toopposq = distsq(x, y, oppox, oppoy)
     local attackchoices = self.attackchoices
     if type(attackchoices) == "string" then
         local choices = {}
@@ -300,14 +301,28 @@ function Ai:stand(duration)
         attackchoices = choices
         self.attackchoices = choices
     end
-    local attacktype = "attack"
+    local attacktype
     if attackchoices and #attackchoices > 0 then
-        attacktype = attackchoices[love.math.random(#attackchoices)]
+        for i, attackchoice in ipairs(attackchoices) do
+            local attack = Database.get(self.type.."-"..attackchoice)
+            if attack then
+                local attackrange = totalAttackRange(attack.attackradius or 0, attack.attacklungespeed or 0)
+                if attackrange*attackrange >= toopposq then
+                    attacktype = attackchoice
+                    break
+                end
+            end
+        end
+        if not attacktype then
+            attacktype = attackchoices[love.math.random(#attackchoices)]
+        end
+    else
+        attacktype = "attack"
     end
     self.attacktype = attacktype
     Database.fill(self, self.type.."-"..attacktype)
     local attackradius = totalAttackRange(self.attackradius or 32, self.attacklungespeed or 0) + opponent.bodyradius
-    if distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
+    if toopposq <= attackradius*attackradius then
         return "attack", attacktype
     end
     return "approach"
@@ -324,7 +339,7 @@ function Ai:approach()
 
     -- choose dest
     local destanglefromoppo = random(4)*pi/2
-    local attackradius = totalAttackRange(self.attackradius or 32, self.attacklungespeed or 0) + opponent.bodyradius
+    local attackradius = totalAttackRange(self.attackradius or 64, self.attacklungespeed or 0) + opponent.bodyradius
     local destx, desty
     repeat
         destx = oppox + cos(destanglefromoppo) * attackradius
@@ -788,7 +803,7 @@ function Ai:projectileDeflected(deflector)
     yield()
 
     local shooter = self.shooter
-    if shooter then
+    if shooter and shooter.team == "player" then
         attackangle = atan2(shooter.y - self.y, shooter.x - self.x)
     end
     self.shooter = deflector
