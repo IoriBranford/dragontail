@@ -61,6 +61,14 @@ local function totalAttackRange(attackradius, attacklungespeed)
     return attackradius + attackLungeDist(attacklungespeed or 0)
 end
 
+local function faceDir(self, dx, dy)
+    self.facex, self.facey = norm(dx, dy)
+end
+
+local function faceAngle(self, angle)
+    self.facex, self.facey = cos(angle), sin(angle)
+end
+
 function Ai:playerControl()
     local opponents = self.opponents
     self.facex = self.facex or 1
@@ -146,6 +154,7 @@ function Ai:playerAttack(attacktype, angle)
         self:accelerateTowardsVel(targetvelx, targetvely, 8)
 
         self:startAttack(angle)
+        faceAngle(self, angle+pi)
         local spindir = spinvel < 0 and "B" or "A"
         local attackanimation = self.getDirectionalAnimation_angle("attack"..spindir, angle, 4)
         self.sprite:changeAsepriteAnimation(attackanimation)
@@ -156,7 +165,6 @@ function Ai:playerAttack(attacktype, angle)
         t = t - 1
     until t <= 0
     self:stopAttack()
-    self.facex, self.facey = -cos(angle), -sin(angle)
     if attackagain then
         return "playerAttack", attacktype, angle
     end
@@ -267,9 +275,13 @@ function Ai:stand(duration)
     local oppox, oppoy
     waitfor(function()
         oppox, oppoy = opponent.x, opponent.y
-        local faceangle = atan2(oppoy - y, oppox - x)
-        local standanimation = self.getDirectionalAnimation_angle("stand", faceangle, 4)
-        self.sprite:changeAsepriteAnimation(standanimation)
+        if oppox ~= x or oppoy ~= y then
+            local tooppoy, tooppox = oppoy - y, oppox - x
+            faceDir(self, tooppox, tooppoy)
+            local faceangle = atan2(tooppoy, tooppox)
+            local standanimation = self.getDirectionalAnimation_angle("stand", faceangle, 4)
+            self.sprite:changeAsepriteAnimation(standanimation)
+        end
         i = i + 1
         return i > duration
     end)
@@ -323,9 +335,13 @@ function Ai:approach()
     until minx <= destx and destx <= maxx and miny <= desty and desty <= maxy
 
     -- choose animation
-    local todestangle = atan2(desty - y, destx - x)
-    local walkanimation = self.getDirectionalAnimation_angle("walk", todestangle, 4)
-    self.sprite:changeAsepriteAnimation(walkanimation)
+    if desty ~= y or destx ~= x then
+        local todesty, todestx = desty - y, destx - x
+        faceDir(self, todestx, todesty)
+        local todestangle = atan2(todesty, todestx)
+        local walkanimation = self.getDirectionalAnimation_angle("walk", todestangle, 4)
+        self.sprite:changeAsepriteAnimation(walkanimation)
+    end
 
     local speed = self.speed or 2
     if distsq(x, y, oppox, oppoy) > 320*320 then
@@ -359,6 +375,7 @@ function Ai:attack(attackname)
     local opponent = self.opponent
     local oppox, oppoy = opponent.x, opponent.y
     local tooppox, tooppoy = oppox - x, oppoy - y
+    faceDir(self, tooppox, tooppoy)
     local tooppoangle = atan2(tooppoy, tooppox)
     Audio.play(self.windupsound)
 
@@ -406,6 +423,35 @@ function Ai:attack(attackname)
     until afterhittime <= 0
 
     return "stand", 20
+end
+
+function Ai:guard()
+    self.velx, self.vely = 0, 0
+    local facingangle = atan2(self.facey or 0, self.facex or 1)
+    local guardanimation = self.getDirectionalAnimation_angle("guard", facingangle, 4)
+    self.sprite:changeAsepriteAnimation(guardanimation, 1, "stop")
+    wait(self.guardtime or 60)
+    return "stand"
+end
+
+function Ai:guardHit(attacker)
+    local facex, facey = self.facex, self.facey
+    local guardarc = self.guardarc or (pi/4)
+    local toattackerx = -self.x + attacker.x
+    local toattackery = -self.y + attacker.y
+    local toattackerdist = len(toattackerx, toattackery)
+    local dotGA = dot(toattackerx, toattackery, facex, facey)
+    if dotGA >= cos(guardarc) * toattackerdist then
+        Audio.play(self.guardhitsound)
+        self.hurtstun = attacker.attackguardstun or 6
+        yield()
+        local afterguardattacktype = self.afterguardattacktype
+        if afterguardattacktype then
+            return "attack", afterguardattacktype
+        end
+        return self.afterguardhitai or "stand"
+    end
+    return self:hurt(attacker)
 end
 
 function Ai:hurt(attacker)
