@@ -7,6 +7,7 @@ local Movement  = require "Object.Movement"
 local Assets    = require "System.Assets"
 local SceneObject = require "System.SceneObject"
 local Stage = {}
+local sin = math.sin
 local max = math.max
 local min = math.min
 
@@ -60,7 +61,7 @@ function Stage.init(stagefile)
     local faceasepritefile = player.faceasepritefile
     local facease = faceasepritefile and Assets.get(faceasepritefile)
     facesprite = facease and SceneObject.newAseprite(facease, 1, 32, 32)
-    facesprite.ox, facesprite.oy = 16, 16
+    facesprite.ox, facesprite.oy = facesprite.w/2, facesprite.h/2
 end
 
 function Stage.addCharacter(object)
@@ -216,6 +217,7 @@ function Stage.draw()
     love.graphics.printf(" Rose", NameX, NameY, 64, "left")
 
     if facesprite then
+        facesprite.ox = facesprite.w/2 + sin(hurtstun)
         if gamestatus == "victory" then
             facesprite:changeAsepriteAnimation("win")
         elseif hurtstun > 0 or health <= player.maxhealth/2 then
