@@ -427,31 +427,39 @@ end
 
 function Ai:guard()
     self.velx, self.vely = 0, 0
-    local facingangle = atan2(self.facey or 0, self.facex or 1)
-    local guardanimation = self.getDirectionalAnimation_angle("guard", facingangle, 4)
-    self.sprite:changeAsepriteAnimation(guardanimation, 1, "stop")
-    wait(self.guardtime or 60)
+    local t = self.guardtime or 60
+    local opponent = self.opponent
+    self:startGuarding(true)
+    repeat
+        yield()
+        t = t - 1
+        local guardangle = atan2(opponent.y - self.y, opponent.x - self.x)
+        local guardanimation = self.getDirectionalAnimation_angle("guard", guardangle, 4)
+        self.sprite:changeAsepriteAnimation(guardanimation, 1, "stop")
+    until t <= 0
+    self:stopGuarding(true)
     return "stand"
 end
 
 function Ai:guardHit(attacker)
-    local facex, facey = self.facex, self.facey
-    local guardarc = self.guardarc or (pi/4)
-    local toattackerx = -self.x + attacker.x
-    local toattackery = -self.y + attacker.y
-    local toattackerdist = len(toattackerx, toattackery)
-    local dotGA = dot(toattackerx, toattackery, facex, facey)
-    if dotGA >= cos(guardarc) * toattackerdist then
+    -- local facex, facey = self.facex, self.facey
+    -- local guardarc = self.guardarc or (pi/2)
+    -- local toattackerx = -self.x + attacker.x
+    -- local toattackery = -self.y + attacker.y
+    -- local toattackerdist = len(toattackerx, toattackery)
+    -- local dotGA = dot(toattackerx, toattackery, facex, facey)
+    -- if dotGA >= cos(guardarc) * toattackerdist then
         Audio.play(self.guardhitsound)
         self.hurtstun = attacker.attackguardstun or 6
         yield()
-        local afterguardattacktype = self.afterguardattacktype
-        if afterguardattacktype then
-            return "attack", afterguardattacktype
-        end
-        return self.afterguardhitai or "stand"
-    end
-    return self:hurt(attacker)
+        return "guard"
+        -- local afterguardattacktype = self.afterguardattacktype
+        -- if afterguardattacktype then
+        --     return "attack", afterguardattacktype
+        -- end
+        -- return self.afterguardhitai or "stand"
+    -- end
+    -- return self:hurt(attacker)
 end
 
 function Ai:hurt(attacker)

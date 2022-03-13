@@ -192,6 +192,14 @@ function Character:stopAttack()
     self.attackangle = nil
 end
 
+function Character:startGuarding(guardangle)
+    self.guardangle = guardangle
+end
+
+function Character:stopGuarding()
+    self.guardangle = nil
+end
+
 function Character:rotateAttack(dangle)
     dangle = math.fmod(dangle + 3*pi, 2*pi) - pi
     self.attackangle = self.attackangle + dangle
@@ -286,10 +294,15 @@ function Character:collideWithCharacterAttack(attacker)
         return
     end
     if self:checkAttackCollision(attacker) then
+        local guardhitai = self.guardai or "guardHit"
         local hurtai = self.hurtai or "hurt"
-        self:startAi(hurtai, attacker)
-        if attacker.hitstun <= 0 then
-            attacker.hitstun = attacker.attackstunself or 3
+        if self.guardangle then
+            self:startAi(guardhitai, attacker)
+        else
+            self:startAi(hurtai, attacker)
+            if attacker.hitstun <= 0 then
+                attacker.hitstun = attacker.attackstunself or 3
+            end
         end
         local hitai = attacker.attackhitai
         if hitai then
