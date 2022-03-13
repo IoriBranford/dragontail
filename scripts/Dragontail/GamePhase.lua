@@ -41,6 +41,18 @@ function keypressed.p()
     paused = not paused
 end
 
+function GamePhase.gamepadpressed(gamepad, button)
+    if paused then
+        if button == "back" then
+            love.event.loadphase("Dragontail.GamePhase")
+        end
+        paused = false
+        return
+    elseif button == "start" then
+        paused = true
+    end
+end
+
 function GamePhase.keypressed(key)
     if paused then
         paused = false
