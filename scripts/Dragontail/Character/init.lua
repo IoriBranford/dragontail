@@ -108,9 +108,11 @@ function Character:addToScene(scene)
     if sprite then
         self.sprite = sprite
         local baseDraw = sprite.draw
-        sprite.draw = function(sprite)
-            self:drawShadow()
-            baseDraw(sprite)
+        if self.shadowtype then
+            sprite.draw = function(sprite)
+                self:drawShadow()
+                baseDraw(sprite)
+            end
         end
     end
     local emoteasepritefile = self.emoteasepritefile
