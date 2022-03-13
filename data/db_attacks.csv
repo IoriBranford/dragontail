@@ -4,6 +4,6 @@ Rose-swing-held-enemy,,32,0.392699081698724,10,12,6,0.196349540849362,,,,,,,,,,s
 bandit-dagger-attack,,32,0.196349540849362,10,12,,,,,,5,,,,sounds/man_light/attack1.mp3,sounds/combat/swing1.mp3,sounds/combat/cut.mp3,,
 bandit-spear-attack,,48,0,10,12,,,,,,10,,,,sounds/man_medium/attack1.mp3,sounds/combat/swingblade.mp3,sounds/combat/cut.mp3,,
 human-thrown,,16,0.785398163397448,50,12,3,,,,,,,,thrown,,sounds/combat/spin.mp3,sounds/combat/hit2.mp3,,
-bandit-axe-swing,4,40,0.785398163397448,50,20,10,,TRUE,10,,8,,,,sounds/man_heavy/lightattack3.mp3,sounds/combat/swing3.mp3,sounds/combat/cut2.mp3,,nil
+bandit-axe-swing,4,40,0.785398163397448,25,20,10,,TRUE,10,,8,,,,sounds/man_heavy/lightattack3.mp3,sounds/combat/swing3.mp3,sounds/combat/cut2.mp3,,nil
 bandit-axe-throw,3,100,0,0,0,0,,FALSE,30,,5,,,,sounds/man_heavy/attack4.mp3,sounds/combat/swing3.mp3,,,thrown-axe
-thrown-axe-attack,,16,1.5707963267949,25,20,20,,,,,,thrownaxehit,projectileHit,,,sounds/combat/spin.mp3,sounds/combat/cut2.mp3,,
+thrown-axe-attack,,16,1.5707963267949,25,20,10,,,,,,thrownaxehit,projectileHit,,,sounds/combat/spin.mp3,sounds/combat/cut2.mp3,,
