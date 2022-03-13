@@ -14,7 +14,7 @@ local distsq = math.distsq
 local pi = math.pi
 local floor = math.floor
 local atan2 = math.atan2
-local random = love.math.random
+local lm_random = love.math.random
 local cos = math.cos
 local sin = math.sin
 local acos = math.acos
@@ -26,10 +26,17 @@ local abs = math.abs
 local min = math.min
 local max = math.max
 local rot = math.rot
+local mid = math.mid
+local huge = math.huge
 local Ai = {}
 
+function Ai:spark()
+    wait(self.sparktime or 30)
+    self:disappear()
+end
+
 local function moveTo(self, destx, desty, speed, timelimit)
-    timelimit = timelimit or math.huge
+    timelimit = timelimit or huge
     waitfor(function()
         local x, y = self.x, self.y
         timelimit = timelimit - 1
@@ -261,7 +268,7 @@ function Ai:playerVictory()
     local i = 0
     while true do
         self:accelerateTowardsVel(0, 0, 4)
-        self.z = math.abs(sin(i*pi/30) * 8)
+        self.z = abs(sin(i*pi/30) * 8)
         yield()
         i = i + 1
     end
@@ -314,7 +321,7 @@ function Ai:stand(duration)
             end
         end
         if not attacktype then
-            attacktype = attackchoices[love.math.random(#attackchoices)]
+            attacktype = attackchoices[lm_random(#attackchoices)]
         end
     else
         attacktype = "attack"
@@ -338,7 +345,7 @@ function Ai:approach()
     local maxx, maxy = bounds.x + bounds.width - bodyradius, bounds.y + bounds.height - bodyradius
 
     -- choose dest
-    local destanglefromoppo = random(4)*pi/2
+    local destanglefromoppo = lm_random(4)*pi/2
     local attackradius = totalAttackRange(self.attackradius or 64, self.attacklungespeed or 0) + opponent.bodyradius
     local destx, desty
     repeat
@@ -475,6 +482,14 @@ function Ai:guardHit(attacker)
     -- local dotGA = dot(toattackerx, toattackery, facex, facey)
     -- if dotGA >= cos(guardarc) * toattackerdist then
     Audio.play(self.guardhitsound)
+    local hitspark = attacker.guardhitspark
+    if hitspark then
+        local hitsparkcharacter = {
+            type = hitspark,
+        }
+        hitsparkcharacter.x, hitsparkcharacter.y = mid(attacker.x, attacker.y, self.x, self.y)
+        Stage.addCharacter(hitsparkcharacter)
+    end
     self.hurtstun = attacker.attackguardstun or 6
     yield()
 
@@ -501,6 +516,14 @@ function Ai:guardHit(attacker)
 end
 
 function Ai:hurt(attacker)
+    local hitspark = attacker.hitspark
+    if hitspark then
+        local hitsparkcharacter = {
+            type = hitspark,
+        }
+        hitsparkcharacter.x, hitsparkcharacter.y = mid(attacker.x, attacker.y, self.x, self.y)
+        Stage.addCharacter(hitsparkcharacter)
+    end
     self.health = self.health - attacker.attackdamage
     self.canbegrabbed = nil
     self.velx, self.vely = 0, 0
@@ -583,7 +606,7 @@ function Ai:thrown(thrower, attackangle)
     local thrownsound = Audio.newSource(self.swingsound)
     thrownsound:play()
     local bounds = self.bounds
-    local recovertime = math.huge
+    local recovertime = huge
     if self.health > 0 then
         recovertime = self.thrownrecovertime or 30
     end
