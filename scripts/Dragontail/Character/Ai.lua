@@ -193,7 +193,7 @@ function Ai:playerHold(enemy)
         yield()
         enemy = self.heldopponent
         if not enemy then
-            break
+            return "playerControl"
         end
         time = time - 1
 
@@ -245,7 +245,8 @@ function Ai:playerHold(enemy)
         if not b2down then
             enemy:startAi(enemy.thrownai or "thrown", self, holdangle)
             Audio.play(self.throwsound)
-            break
+            stopHolding(self, enemy)
+            return "playerControl"
         end
     end
     enemy.bodysolid = true
