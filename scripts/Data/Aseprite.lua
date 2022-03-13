@@ -48,6 +48,8 @@ local type = type
 local pretty = require "pl.pretty"
 local json   = require "json"
 local Time   = require "System.Time"
+local max = math.max
+local min = math.min
 
 local Aseprite = {}
 Aseprite.__index = Aseprite
@@ -94,6 +96,7 @@ function Aseprite:getAnimationFrame(tag, tagframe)
 		print("Unknown animation "..tag)
 		return nil
 	end
+	tagframe = max(1, min(tagframe, #animation))
 	return animation[tagframe]
 end
 
