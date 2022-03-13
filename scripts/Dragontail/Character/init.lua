@@ -294,14 +294,16 @@ function Character:collideWithCharacterAttack(attacker)
         return
     end
     if self:checkAttackCollision(attacker) then
-        local guardhitai = self.guardai or "guardHit"
-        local hurtai = self.hurtai or "hurt"
-        if self.guardangle then
-            self:startAi(guardhitai, attacker)
-        else
-            self:startAi(hurtai, attacker)
-            if attacker.hitstun <= 0 then
-                attacker.hitstun = attacker.attackstunself or 3
+        if not self.hitreactiondisabled then
+            local guardhitai = self.guardai or "guardHit"
+            local hurtai = self.hurtai or "hurt"
+            if self.guardangle then
+                self:startAi(guardhitai, attacker)
+            else
+                self:startAi(hurtai, attacker)
+                if attacker.hitstun <= 0 then
+                    attacker.hitstun = attacker.attackstunself or 3
+                end
             end
         end
         local hitai = attacker.attackhitai
