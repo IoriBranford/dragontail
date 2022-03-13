@@ -9,7 +9,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 24,
-  nextobjectid = 79,
+  nextobjectid = 80,
   properties = {},
   tilesets = {
     {
@@ -4195,13 +4195,28 @@ return {
           type = "bandit-axe",
           shape = "point",
           x = 2592,
-          y = 256,
+          y = 192,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           properties = {
-            ["startai"] = "approach"
+            ["initialai"] = "approach"
+          }
+        },
+        {
+          id = 79,
+          name = "",
+          type = "bandit-axe",
+          shape = "point",
+          x = 2592,
+          y = 320,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["initialai"] = "approach"
           }
         }
       }
