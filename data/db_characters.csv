@@ -5,5 +5,5 @@ bandit-spear,enemy,75,16,TRUE,TRUE,4,,,thrownRecover,15,,,stand,,hurt,,,stand,,,
 food-container,container,1,16,TRUE,,,,,,,,container,containerWaitForBreak,,containerBreak,,,,,,,,,,,,containerBreak
 food-fish,item,,18,,,,,,,,25,fish,itemWaitForPickup,,,,,,,,,,,,,,
 food-bigfish,item,,18,,,,,,,,100,bigfish,itemWaitForPickup,,,,,,,,,,,,,,
-bandit-axe,enemy,150,16,TRUE,TRUE,3,30,swing throw,thrownRecover,10,,,stand,,hurt,guardHit,30,guard,swing,5,stun,60,thrown,5,swing,collapseA,defeat
+bandit-axe,enemy,150,16,TRUE,TRUE,3,30,swing throw,thrownRecover,10,,,stand,,hurt,guardHit,30,guard,swing,11,stun,60,thrown,5,swing,collapseA,defeat
 thrown-axe,enemy,1,16,TRUE,FALSE,10,,,,,,thrownaxe0,projectileFly,,projectileDeflected,,,,,,,,projectileFly,10,,,
