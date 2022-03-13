@@ -1,0 +1,9 @@
+character,asepritefile,spriteoriginx,spriteoriginy,emoteasepritefile,emoteoriginx,emoteoriginy,faceasepritefile
+Rose,sprites/rose.jase,32,56,sprites/emotes.jase,12,64,sprites/rose-face.jase
+bandit-dagger,sprites/bandit-dagger.jase,32,48,sprites/emotes.jase,12,56,
+bandit-spear,sprites/bandit-spear.jase,48,96,sprites/emotes.jase,12,56,
+food-container,sprites/food-container.jase,16,24,,,,
+food-fish,sprites/food-container.jase,16,16,,,,
+food-bigfish,sprites/food-container.jase,16,16,,,,
+bandit-axe,sprites/bandit-axe.jase,32,48,sprites/emotes.jase,12,64,
+thrown-axe,sprites/bandit-axe.jase,32,56,,,,

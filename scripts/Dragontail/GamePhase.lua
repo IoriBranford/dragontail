@@ -17,6 +17,8 @@ function GamePhase.loadphase()
     Assets.load("music/retro-chiptune-guitar.ogg", "stream")
 
     Database.load("data/db_characters.csv")
+    Database.load("data/db_charactersprites.csv")
+    Database.load("data/db_charactersounds.csv")
     Database.load("data/db_attacks.csv")
     Database.forEach(function(_, properties)
         for k,v in pairs(properties) do
