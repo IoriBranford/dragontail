@@ -156,7 +156,7 @@ end
 
 function Scene:addTileParticles(tile, z)
     local sceneobject = SceneObject.newTileParticles(tile, z)
-    self.animating[self.animating+1] = sceneobject
+    self.animating[#self.animating+1] = sceneobject
     return self:add(sceneobject)
 end
 
