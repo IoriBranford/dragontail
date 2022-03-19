@@ -54,6 +54,8 @@ local function stopHolding(self, held)
     end
     if held then
         held.heldby = nil
+        held.bodysolid = true
+        held.hurtstun = 0
     end
 end
 
@@ -245,8 +247,6 @@ function Ai:playerHold(enemy)
 
         if b1pressed then
             stopHolding(self, enemy)
-            enemy.bodysolid = true
-            enemy.hurtstun = 0
             return "playerAttack", self.type.."-attack", holdangle
         end
         if not b2down then
@@ -256,7 +256,6 @@ function Ai:playerHold(enemy)
             return "playerControl"
         end
     end
-    enemy.bodysolid = true
     stopHolding(self, enemy)
     return "playerControl"
 end
@@ -532,9 +531,6 @@ function Ai:hurt(attacker)
     local heldby = self.heldby
     stopHolding(self, heldopponent)
     stopHolding(heldby, self)
-    if heldopponent then
-        heldopponent.hurtstun = 0
-    end
     self.hurtstun = attacker.attackstun or 3
     local facex, facey = self.facex or 1, self.facey or 0
     local hurtanimation = self.getDirectionalAnimation_angle("hurt", atan2(facey, facex), 2)
