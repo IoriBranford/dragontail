@@ -11,13 +11,6 @@ then
 	exit 1
 fi
 
-MASTER=$(git branch --all --contains ${VERSION} | grep -c master)
-if [ $MASTER != "0" ]
-then
-	echo "ERROR: $VERSION is on the master branch. It very likely contains WIP content."
-	exit 1
-fi
-
 PROJECT=${PROJECT:=${PWD##*/}}
 BUTLER=${BUTLER:=butler}
 
@@ -29,19 +22,6 @@ publish() {
 	fi
 }
 
-publish win-32
 publish win-64
-publish osx
-publish android
 publish linux-x86_64
-publish linux-i686
-publish linux-armhf
 publish data
-publish demo-win-32
-publish demo-win-64
-publish demo-osx
-publish demo-android
-publish demo-linux-x86_64
-publish demo-linux-i686
-publish demo-linux-armhf
-publish demo-data
