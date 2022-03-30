@@ -35,7 +35,7 @@ local AnimationTimeUnitToSecs = {
     tileset[name]                       Access the tile by name if it has a string property "name"
     tileset[i].image                    Image
     tileset[i].quad                     Area of the image
-    tileset[i].tileset                  Name of tileset
+    tileset[i].tileset                  Reference back to tile's tileset
     tileset[i].originx                  Origin x (negative of tile offset)
     tileset[i].originy                  Origin y (negative of tile offset)
     tileset[i][prop]=val                Tile properties become fields of the tile*
@@ -108,6 +108,14 @@ local AnimationTimeUnitToSecs = {
 ]] --
 
 function Tiled.clearCache()
+    local tilesets = Tiled.tilesets
+    if tilesets then
+        for _, tileset in pairs(Tiled.tilesets) do
+            for i = 0, tileset.tilecount - 1 do
+                tileset[i].tileset = nil
+            end
+        end
+    end
     Tiled.tilesets = {}
     Tiled.images = {}
     Tiled.fonts = {}
@@ -187,6 +195,10 @@ local function processPoly(object)
     end
 end
 
+function Tiled.getTile(tileset, tileid)
+    return Tiled.tilesets[tileset][tileid]
+end
+
 function Tiled.addTileset(tileset)
     -- assert(tileset.objectalignment == "topleft", "Unsupported objectalignment "..tileset.objectalignment)
     assert(not tileset.source,
@@ -235,7 +247,7 @@ function Tiled.addTileset(tileset)
         local tx = c * tw
         local ty = r * th
         local tile = {
-            tileset = tilesetname,
+            tileset = tileset,
             image = image,
             quad = love.graphics.newQuad(tx, ty, tw, th, image),
             width = tw,

@@ -1,9 +1,54 @@
 local Database = {}
 local Audio = require "System.Audio"
 local Csv   = require "Data.Csv"
+local Tiled = require "Data.Tiled"
 local type = type
+local pairs = pairs
 
 local database = {}
+
+function Database.add(key, row)
+    local existingrow = database[key]
+    if existingrow then
+        for k,v in pairs(row) do
+            existingrow[k] = v
+        end
+    else
+        database[key] = row
+    end
+end
+local add = Database.add
+
+function Database.addArray(keyfield, rows)
+    for i = 1, #rows do
+        local row = rows[i]
+        add(row[keyfield], row)
+    end
+end
+local addArray = Database.addArray
+
+function Database.addHash(keyfield, hash)
+    for _, row in pairs(hash) do
+        add(row[keyfield], row)
+    end
+end
+local addHash = Database.addHash
+
+function Database.addMapObjectGroup(objectgroup)
+    for i = 1, #objectgroup do
+        objectgroup[i].id = nil
+    end
+    addArray("name", objectgroup)
+end
+
+function Database.loadMapObjects(mapfilename)
+    local map = Tiled.load(mapfilename)
+    local objects = map.objects
+    for _, object in pairs(objects) do
+        object.id = nil
+    end
+    addHash("name", objects)
+end
 
 function Database.load(csvfilename)
     local loadedrows = Csv.load(csvfilename)
@@ -21,14 +66,7 @@ function Database.load(csvfilename)
             end
             row[i] = nil
         end
-        local existingrow = database[key]
-        if existingrow then
-            for k,v in pairs(row) do
-                existingrow[k] = v
-            end
-        else
-            database[key] = row
-        end
+        add(key, row)
     end
     for i = #loadedrows, 1, -1 do
         loadedrows[i] = nil

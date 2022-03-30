@@ -164,6 +164,10 @@ function Scene:addTileParticlesObject(object)
     return self:addTileParticles(object.tile, object.z)
 end
 
+function Scene:addCustom(draw, drawable, quad, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    return self:add(SceneObject.new(draw, drawable, quad, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky))
+end
+
 function Scene:clear()
     local animating = self.animating
     for i = #animating, 1, -1 do

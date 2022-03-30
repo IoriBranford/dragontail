@@ -26,6 +26,7 @@ end
 local animateTile = SceneTiled.animateTile
 
 function SceneTiled.setTile(sceneobject, tile)
+    sceneobject.tile = tile
     sceneobject.drawable = tile.image
     sceneobject.quad = tile.quad
     sceneobject.width = tile.width
@@ -37,6 +38,14 @@ function SceneTiled.setTile(sceneobject, tile)
     sceneobject.animationtime = 0
 end
 local setTile = SceneTiled.setTile
+
+function SceneTiled.changeTile(sceneobject, tileid)
+    local tile = sceneobject.tile
+    local newtile = tile.tileset[tileid]
+    if newtile ~= tile then
+        setTile(sceneobject, newtile)
+    end
+end
 
 function SceneTiled.newShapeObject(shapeobject)
     local w, h, x, y, z, r, sx, sy
