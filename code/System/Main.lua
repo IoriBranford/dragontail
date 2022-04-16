@@ -5,9 +5,9 @@ local Config = require "System.Config"
 local Time   = require "System.Time"
 local Controls= require "System.Controls"
 local cute = require "cute"
-local hasmobdebug, mobdebug = pcall(require, "mobdebug")
-if not hasmobdebug then
-    mobdebug = nil
+local haslldebugger, lldebugger = pcall(require, "lldebugger")
+if not haslldebugger then
+    lldebugger = nil
 end
 
 local profile
@@ -115,7 +115,7 @@ function love.run()
         --console               Output to a console window
         --version               Print LOVE version
         --fused                 Force running in fused mode
-        -debug                  Debug in Zerobrane Studio
+        --debug                 Debug in Zerobrane Studio
         --cute                  Run Cute unit tests
         --fullscreen            Start in fullscreen mode
         --windowed              Start in windowed mode
@@ -143,9 +143,9 @@ function love.run()
 	end
 
     Config.debug = args.debug
-	if args.debug and mobdebug then
-		mobdebug.start()
-		mobdebug.off()
+	if args.debug and lldebugger then
+		lldebugger.start()
+		-- lldebugger.off()
 	end
 
     if love.load then
@@ -203,7 +203,7 @@ function love.run()
             love.graphics.clear(love.graphics.getBackgroundColor())
 
             if love.draw then
-                love.draw(fixedfrac)
+                love.draw(variableupdate and fixedfrac or 0)
                 love.graphics.setColor(1,1,1)
                 cute.draw()
             end

@@ -41,13 +41,16 @@ function Database.addMapObjectGroup(objectgroup)
     addArray("name", objectgroup)
 end
 
-function Database.loadMapObjects(mapfilename)
-    local map = Tiled.load(mapfilename)
-    local objects = map.objects
-    for _, object in pairs(objects) do
+function Database.addMapObjects(mapobjects)
+    for _, object in pairs(mapobjects) do
         object.id = nil
     end
-    addHash("name", objects)
+    addHash("name", mapobjects)
+end
+
+function Database.loadMapObjects(mapfilename)
+    local map = Tiled.load(mapfilename)
+    Database.addMapObjects(map.objects)
 end
 
 function Database.load(csvfilename)

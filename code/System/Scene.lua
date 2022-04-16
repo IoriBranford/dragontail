@@ -4,6 +4,8 @@ local Color       = require "Data.Color"
 local Scene = {}
 Scene.__index = Scene
 
+local insert = table.insert
+
 function Scene.new()
     local scene = {
         animating = {}
@@ -12,7 +14,13 @@ function Scene.new()
 end
 
 function Scene:add(sceneobject)
-    self[#self+1] = sceneobject
+    insert(self, sceneobject)
+    return sceneobject
+end
+
+function Scene:addAnimating(sceneobject)
+    insert(self, sceneobject)
+    insert(self.animating, sceneobject)
     return sceneobject
 end
 
@@ -28,7 +36,7 @@ end
 
 function Scene:addAnimatedChunk(chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
     local sceneobject = SceneObject.newAnimatedChunk(chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    self.animating[#self.animating+1] = sceneobject
+    insert(self.animating, sceneobject)
     return self:add(sceneobject)
 end
 
@@ -39,7 +47,7 @@ end
 
 function Scene:addAnimatedTile(tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
     local sceneobject = self:addTile(tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    self.animating[#self.animating+1] = sceneobject
+    insert(self.animating, sceneobject)
     return sceneobject
 end
 
@@ -57,7 +65,7 @@ local addManualAnimatedAseprite = Scene.addManualAnimatedAseprite
 
 function Scene:addAnimatedAseprite(aseprite, tag, tagframe, x, y, z, r, sx, sy, ox, oy, kx, ky)
     local sceneobject = addManualAnimatedAseprite(aseprite, tag, tagframe or 1, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    self.animating[#self.animating+1] = sceneobject
+    insert(self.animating, sceneobject)
     return sceneobject
 end
 
@@ -156,7 +164,7 @@ end
 
 function Scene:addTileParticles(tile, z)
     local sceneobject = SceneObject.newTileParticles(tile, z)
-    self.animating[#self.animating+1] = sceneobject
+    insert(self.animating, sceneobject)
     return self:add(sceneobject)
 end
 
@@ -175,26 +183,6 @@ function Scene:clear()
     end
     for i = #self, 1, -1 do
         self[i] = nil
-    end
-end
-
-function Scene:updateFromUnit(id, unit, fixedfrac)
-    local sceneobject = self.byid[id]
-    if sceneobject then
-        sceneobject:updateFromUnit(unit, fixedfrac)
-    end
-end
-
-function Scene:updateFromBody(id, body, fixedfrac)
-    local sceneobject = self.byid[id]
-    if sceneobject then
-        local vx, vy = body:getLinearVelocity()
-        local av = body:getAngularVelocity()
-        local x, y = body:getPosition()
-        local r = body:getAngle()
-        sceneobject.x = x + vx * fixedfrac
-        sceneobject.y = y + vy * fixedfrac
-        sceneobject.r = r + av * fixedfrac
     end
 end
 

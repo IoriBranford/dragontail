@@ -9,7 +9,6 @@ local drawPolygon
 local drawRectangle
 local drawEllipse
 local drawQuad
-local drawString
 local drawGeneric
 
 function SceneTiled.animateTile(sceneobject, dt)
@@ -26,6 +25,9 @@ end
 local animateTile = SceneTiled.animateTile
 
 function SceneTiled.setTile(sceneobject, tile)
+    if not tile then
+        return
+    end
     sceneobject.tile = tile
     sceneobject.drawable = tile.image
     sceneobject.quad = tile.quad
@@ -111,7 +113,7 @@ function SceneTiled.newAnimatedChunk(chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
 end
 
 function SceneTiled.newTile(tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = SceneTiled.new(drawQuad, tile.image, nil, nil, nil, x, y, z, r, sx, sy, nil, nil, kx, ky)
+    local sceneobject = SceneTiled.new(drawQuad, tile.image, nil, tile.width, tile.height, x, y, z, r, sx, sy, nil, nil, kx, ky)
     sceneobject.animate = animateTile
     setTile(sceneobject, tile)
     if ox then
@@ -124,8 +126,9 @@ function SceneTiled.newTile(tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
 end
 
 function SceneTiled.newTextObject(textobject)
-    local sceneobject = SceneTiled.new(drawString, textobject.string, nil,
-        textobject.width, textobject.height, textobject.x, textobject.y, textobject.z,
+    local sceneobject = SceneTiled.newText(textobject.string, textobject.font,
+        textobject.width, textobject.height,
+        textobject.halign, textobject.valign, textobject.x, textobject.y, textobject.z,
         textobject.rotation, textobject.scalex, textobject.scaley,
         textobject.originx, textobject.originy,
         textobject.skewx, textobject.skewy)
@@ -214,7 +217,6 @@ return function(SceneObject)
     drawRectangle   = SceneObject.drawRectangle
     drawEllipse     = SceneObject.drawEllipse
     drawQuad        = SceneObject.drawQuad
-    drawString      = SceneObject.drawString
     drawGeneric     = SceneObject.drawGeneric
     for k,v in pairs(SceneTiled) do
         SceneObject[k] = v

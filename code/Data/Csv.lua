@@ -2,13 +2,19 @@ local Tiled = require "Data.Tiled"
 
 local Csv = {}
 
+local s_gmatch = string.gmatch
+local s_match = string.match
+local s_lower = string.lower
+local tonumber = tonumber
+
 local function parseValue(v)
-    if v == "true" or v == "TRUE" then
+    local vlower = s_lower(v)
+    if vlower == "true" then
         v = true
-    elseif v == "false" or v == "FALSE" then
+    elseif vlower == "false" then
         v = false
     else
-        local tileset, tile = v:match("^tile/(%w+)/(%w+)$")
+        local tileset, tile = s_match(v, "^tile/(%w+)/(%w+)$")
         tileset = tileset and Tiled.tilesets[tileset]
         tile = tileset and tileset[tile]
         v = tile or tonumber(v) or v or ""
@@ -20,10 +26,10 @@ function Csv.load(filename)
     local rows = {}
     for line in love.filesystem.lines(filename) do
         local row = {}
-        for v in line:gmatch("%s*([^,]-)%s*,") do
+        for v in s_gmatch(line, "%s*([^,]-)%s*,") do
             row[#row+1] = parseValue(v)
         end
-        row[#row+1] = parseValue(line:match("%s*([^,]-)%s*$"))
+        row[#row+1] = parseValue(s_match(line, "%s*([^,]-)%s*$"))
         rows[#rows+1] = row
     end
     return rows

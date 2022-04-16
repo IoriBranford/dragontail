@@ -25,6 +25,19 @@ function SceneObject.__lt(a, b)
     end
 end
 
+function SceneObject.setHidden(sceneobject, hidden)
+    sceneobject.hidden = hidden
+end
+
+function SceneObject.setColor(sceneobject, red, green, blue, alpha)
+    sceneobject.red = red
+    sceneobject.green = green
+    sceneobject.blue = blue
+    if alpha then
+        sceneobject.alpha = alpha
+    end
+end
+
 function SceneObject.applyTransform(sceneobject)
     temptransform:setTransformation(
         (sceneobject.x),
@@ -119,29 +132,32 @@ function SceneObject.drawQuad(sceneobject)
         sceneobject.kx, sceneobject.ky)
 end
 
-function SceneObject.drawString(sceneobject)
+function SceneObject.drawText(sceneobject)
     love.graphics.setColor(sceneobject.red, sceneobject.green, sceneobject.blue, sceneobject.alpha)
-    local font = sceneobject.font
-    if font then
-        love.graphics.printf(sceneobject.string, font,
-            (sceneobject.x),
-            (sceneobject.y),
+    local font = sceneobject.font or love.graphics.getFont()
+    local str = sceneobject.string
+    local x, y = sceneobject.x, sceneobject.y
+    local w, h = sceneobject.w, sceneobject.h
+    local _, lines = font:getWrap(str, w)
+    local n = #lines
+    local lineh = font:getHeight()
+    local valign = sceneobject.valign
+    if valign == "bottom" then
+        y = y + h - lineh*n
+    elseif valign == "center" then
+        y = y + (h - lineh*n) / 2
+    end
+    for i = 1, n do
+        love.graphics.printf(lines[i], font, x, y,
             sceneobject.w, sceneobject.halign,
             sceneobject.r,
             sceneobject.sx, sceneobject.sy,
             sceneobject.ox, sceneobject.oy,
             sceneobject.kx, sceneobject.ky)
-    else
-        love.graphics.printf(sceneobject.string,
-            (sceneobject.x),
-            (sceneobject.y),
-            sceneobject.w, sceneobject.halign,
-            sceneobject.r,
-            sceneobject.sx, sceneobject.sy,
-            sceneobject.ox, sceneobject.oy,
-            sceneobject.kx, sceneobject.ky)
+        y = y + lineh
     end
 end
+local drawText = SceneObject.drawText
 
 function SceneObject.drawGeneric(sceneobject)
     love.graphics.setColor(sceneobject.red, sceneobject.green, sceneobject.blue, sceneobject.alpha)
@@ -196,6 +212,18 @@ function SceneObject.new(draw, drawable, quad, w, h, x, y, z, r, sx, sy, ox, oy,
     sceneobject.alpha = sceneobject.alpha or 1
     sceneobject.updateFromUnit = updateGeneric
     return sceneobject
+end
+
+function SceneObject.newText(string, font, width, height, halign, valign, x, y, z, rotation, scalex, scaley, originx, originy, skewx, skewy)
+    local text = SceneObject.new(drawText, string, nil, width, height, x, y, z, rotation, scalex, scaley, originx, originy, skewx, skewy)
+    text.font = font
+    text.halign = halign or "left"
+    text.valign = valign or "top"
+    return text
+end
+
+function SceneObject.setTextString(sceneobject, string)
+    sceneobject.string = string
 end
 
 function SceneObject.newImage(image, x, y, z, r, sx, sy, ox, oy, kx, ky)
