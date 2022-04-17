@@ -124,22 +124,17 @@ function Ai:playerControl()
         --     attackangle = nil
         -- end
         -- self:startAttack(attackangle)
+        local animation
         if attackangle then
             -- local attackanimation = self.getDirectionalAnimation_angle("attackA", attackangle, 8)
             -- self.sprite:changeAsepriteAnimation(attackanimation)
         elseif velx ~= 0 or vely ~= 0 then
-            if false --[[b2]]
-            then
-                local holdanimation = self.getDirectionalAnimation_angle("hold", atan2(facey, facex), 8)
-                self.sprite:changeAsepriteAnimation(holdanimation)
-            else
-                local runanimation = self.getDirectionalAnimation_angle("run", atan2(facey, facex), 8)
-                self.sprite:changeAsepriteAnimation(runanimation)
-            end
+            animation = "run"
         else
-            local standanimation = self.getDirectionalAnimation_angle("stand", atan2(facey, facex), 8)
-            self.sprite:changeAsepriteAnimation(standanimation)
+            animation = "stand"
         end
+        animation = self.getDirectionalAnimation_angle(animation, atan2(facey, facex), 8)
+        self.sprite:changeAsepriteAnimation(animation)
     end
 end
 
@@ -247,7 +242,7 @@ function Ai:playerHold(enemy)
 
         if b1pressed then
             stopHolding(self, enemy)
-            return "playerAttack", self.type.."-attack", holdangle
+            return "playerHoldAttack", self.type.."-kick-held-enemy", holdangle
         end
         if not b2down then
             enemy:startAi(enemy.thrownai or "thrown", self, holdangle)
@@ -257,6 +252,18 @@ function Ai:playerHold(enemy)
         end
     end
     stopHolding(self, enemy)
+    return "playerControl"
+end
+
+function Ai:playerHoldAttack(attacktype, angle)
+    Database.fill(self, attacktype)
+    Audio.play(self.throwsound)
+    self:startAttack(angle)
+    self.velx, self.vely = 0, 0
+    local attackanimation = self.getDirectionalAnimation_angle("kick", angle, 8)
+    self.sprite:changeAsepriteAnimation(attackanimation)
+    yield()
+    self:stopAttack()
     return "playerControl"
 end
 
@@ -550,6 +557,11 @@ function Ai:hurt(attacker)
     if self.health <= 0 then
         local defeateffect = attacker.attackdefeateffect or self.defeatai or "defeat"
         return defeateffect, attacker, attackangle
+    else
+        local hiteffect = attacker.attackhiteffect
+        if hiteffect then
+            return hiteffect, attacker, attackangle
+        end
     end
     Audio.play(self.hurtsound)
     local recoverai = self.hurtrecoverai
