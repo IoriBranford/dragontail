@@ -10,6 +10,7 @@ local Stage = {}
 local sin = math.sin
 local max = math.max
 local min = math.min
+local t_remove = table.remove
 
 local scene
 local player, enemies, solids, allcharacters
@@ -144,15 +145,16 @@ local function compDisappeared(a,b)
 end
 
 local function pruneDisappeared(characters, onempty, ...)
-    table.sort(characters, compDisappeared)
     local n = #characters
-    for i = #characters, 1, -1 do
-        if not characters[i].disappeared then
-            break
+    local n0 = n
+    for i = n, 1, -1 do
+        if characters[i].disappeared then
+            characters[i] = characters[n]
+            t_remove(characters)
+            n = n - 1
         end
-        characters[i] = nil
     end
-    if onempty and n > 0 and #characters == 0 then
+    if onempty and n0 > 0 and n == 0 then
         onempty(...)
     end
 end
