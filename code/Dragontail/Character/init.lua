@@ -3,6 +3,7 @@ local Assets      = require "System.Assets"
 local Database      = require "Data.Database"
 local Audio       = require "System.Audio"
 local Config      = require "System.Config"
+local Script      = require "Component.Script"
 local pi = math.pi
 local floor = math.floor
 local sqrt = math.sqrt
@@ -171,7 +172,7 @@ function Character:fixedupdate()
             return
         end
     end
-    self:runAi()
+    Script.run(self)
     self.x = self.x + self.velx
     self.y = self.y + self.vely
     self:animateSprite(self.sprite)
@@ -300,9 +301,9 @@ function Character:collideWithCharacterAttack(attacker)
             local guardhitai = self.guardai or "guardHit"
             local hurtai = self.hurtai or "hurt"
             if self.guardangle then
-                self:startAi(guardhitai, attacker)
+                Script.start(self, guardhitai, attacker)
             else
-                self:startAi(hurtai, attacker)
+                Script.start(self, hurtai, attacker)
                 if attacker.hitstun <= 0 then
                     attacker.hitstun = attacker.attackstunself or 3
                 end
@@ -310,7 +311,7 @@ function Character:collideWithCharacterAttack(attacker)
         end
         local hitai = attacker.attackhitai
         if hitai then
-            attacker:startAi(hitai, self)
+            Script.start(attacker, hitai, self)
         end
         return true
     end
@@ -379,7 +380,5 @@ function Character:disappear()
     self:removeSprite("sprite")
     self:removeSprite("emote")
 end
-
-require "Dragontail.Character.Ai"(Character)
 
 return Character

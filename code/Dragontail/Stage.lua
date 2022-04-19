@@ -3,9 +3,10 @@ local Character = require "Dragontail.Character"
 local Tiled     = require "Data.Tiled"
 local Database    = require "Data.Database"
 local Audio     = require "System.Audio"
-local Movement  = require "Object.Movement"
+local Movement  = require "Component.Movement"
 local Assets    = require "System.Assets"
 local SceneObject = require "System.SceneObject"
+local Script      = require "Component.Script"
 local Stage = {}
 local sin = math.sin
 local max = math.max
@@ -82,8 +83,11 @@ function Stage.addCharacter(object)
     if character.team == "enemy" then
         enemies[#enemies+1] = character
     end
-    if character.initialai then
-        character:startAi(character.initialai)
+    if character.script then
+        Script.load(character, character.script)
+        if character.initialai then
+            Script.start(character, character.initialai)
+        end
     end
     return character
 end
@@ -110,7 +114,7 @@ function Stage.openNextRoom()
         gamestatus = "goingToNextRoom"
     else
         gamestatus = "victory"
-        player:startAi("playerVictory")
+        Script.start(player, "victory")
         Audio.fadeMusic()
     end
 end
