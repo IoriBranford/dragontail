@@ -1,3 +1,3 @@
 vfx,asepritefile,script,initialai,animation,animationend,spriteoriginx,spriteoriginy,sparktime
-spark-hit,sprites/vfx.jase,Dragontail.Character.Ai,spark,hit,stop,108,80,10
-spark-guard,sprites/vfx.jase,Dragontail.Character.Ai,spark,guard,stop,106,64,10
+spark-hit,sprites/vfx.jase,Dragontail.Character.Common,spark,hit,stop,108,80,10
+spark-guard,sprites/vfx.jase,Dragontail.Character.Common,spark,guard,stop,106,64,10

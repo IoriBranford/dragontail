@@ -2,13 +2,11 @@ local Controls = require "System.Controls"
 local Database = require "Data.Database"
 local Audio    = require "System.Audio"
 local Movement = require "Component.Movement"
-local Ai       = require "Dragontail.Character.Ai"
 local Script   = require "Component.Script"
+local Fighter  = require "Dragontail.Character.Fighter"
 local tablex   = require "pl.tablex"
 
-local Player = tablex.copy(Ai)
-local baseDefeat = Ai.defeat
-local stopHolding = Ai.stopHolding
+local Player = tablex.copy(Fighter)
 
 local pi = math.pi
 local cos = math.cos
@@ -47,13 +45,13 @@ function Player:control()
         end
 
         if b1pressed then
-            return "attack", self.type.."-attack", atan2(-facey, -facex)
+            return Player.attack, self.type.."-attack", atan2(-facey, -facex)
         end
 
         if b2down and not self.heldopponent then
             for i, opponent in ipairs(opponents) do
                 if opponent.canbegrabbed and self:testBodyCollision(opponent) then
-                    return "hold", opponent
+                    return Player.hold, opponent
                 end
             end
         end
@@ -117,9 +115,9 @@ function Player:attack(attacktype, angle)
     until t <= 0
     self:stopAttack()
     if attackagain then
-        return "attack", attacktype, angle
+        return Player.attack, attacktype, angle
     end
-    return "control"
+    return Player.control
 end
 
 function Player:hold(enemy)
@@ -144,7 +142,7 @@ function Player:hold(enemy)
         yield()
         enemy = self.heldopponent
         if not enemy then
-            return "control"
+            return Player.control
         end
         time = time - 1
 
@@ -188,18 +186,18 @@ function Player:hold(enemy)
         self.sprite:changeAsepriteAnimation(holdanimation)
 
         if b1pressed then
-            stopHolding(self, enemy)
-            return "holdAttack", self.type.."-kick-held-enemy", holdangle
+            Fighter.stopHolding(self, enemy)
+            return Player.holdAttack, self.type.."-kick-held-enemy", holdangle
         end
         if not b2down then
             Script.start(enemy, enemy.thrownai or "thrown", self, holdangle)
             Audio.play(self.throwsound)
-            stopHolding(self, enemy)
-            return "control"
+            Fighter.stopHolding(self, enemy)
+            return Player.control
         end
     end
-    stopHolding(self, enemy)
-    return "control"
+    Fighter.stopHolding(self, enemy)
+    return Player.control
 end
 
 function Player:holdAttack(attacktype, angle)
@@ -211,7 +209,7 @@ function Player:holdAttack(attacktype, angle)
     self.sprite:changeAsepriteAnimation(attackanimation)
     yield()
     self:stopAttack()
-    return "control"
+    return Player.control
 end
 
 function Player:victory()
@@ -230,7 +228,7 @@ end
 function Player:defeat(defeatanimation)
     Audio.fadeMusic()
     yield()
-    return baseDefeat, defeatanimation
+    return Fighter.defeat, defeatanimation
 end
 
 return Player
