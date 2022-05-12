@@ -17,6 +17,7 @@ local dot = math.dot
 local det = math.det
 local norm = math.norm
 local abs = math.abs
+local rot = math.rot
 local yield = coroutine.yield
 
 local function faceAngle(self, angle)
@@ -27,6 +28,7 @@ function Player:control()
     local opponents = self.opponents
     self.facex = self.facex or 1
     self.facey = self.facey or 0
+    local targetfacex, targetfacey = self.facex, self.facey
     while true do
         yield()
         local inx, iny = Controls.getDirectionInput()
@@ -38,11 +40,24 @@ function Player:control()
         local speed = b2down and 2 or 5
         if inx ~= 0 or iny ~= 0 then
             inx, iny = norm(inx, iny)
-            facex, facey = inx, iny
-            self.facex, self.facey = facex, facey
+            targetfacex, targetfacey = inx, iny
             targetvelx = inx * speed
             targetvely = iny * speed
         end
+
+        local turnspeed = self.turnspeed or pi/8
+        local facedot = dot(facex, facey, targetfacex, targetfacey)
+        if acos(facedot) <= turnspeed then
+            facex, facey = targetfacex, targetfacey
+        else
+            local facedet = det(facex, facey, targetfacex, targetfacey)
+            if facedet < 0 then
+                turnspeed = -turnspeed
+            end
+            facex, facey = rot(facex, facey, turnspeed)
+            facex, facey = norm(facex, facey)
+        end
+        self.facex, self.facey = facex, facey
 
         if b1pressed then
             return Player.attack, self.type.."-attack", atan2(-facey, -facex)
