@@ -19,7 +19,7 @@ local bounds
 local map
 local roomindex
 local gamestatus
-local camerax, cameray
+local camerax, cameray, cameravelx, cameravely
 local facesprite
 
 function Stage.quit()
@@ -47,6 +47,7 @@ function Stage.init(stagefile)
     bounds = map.layers.stage.bounds
     bounds.width = 640
     camerax, cameray = 0, (map.height*map.tileheight) - 360
+    cameravelx, cameravely = 0, 0
 
     scene:addMap(map, "group,tilelayer")
 
@@ -120,19 +121,23 @@ function Stage.openNextRoom()
 end
 
 function Stage.updateGoingToNextRoom()
+    camerax = camerax + cameravelx
+    camerax = max(0, camerax)
+    bounds.x = camerax
     local room = map.layers["room"..roomindex]
     assert(room, "No room "..roomindex)
     local roombounds = room.bounds
     local cameradestx = player.x - 640/2
     if camerax < cameradestx then
-        camerax = Movement.moveTowards(camerax, cameradestx, 6)
+        cameravelx = Movement.moveTowards(camerax, cameradestx, 6) - camerax
+    else
+        cameravelx = 0
     end
-    camerax = max(0, camerax)
-    bounds.x = camerax
     local roomright = roombounds.x + roombounds.width
     local cameraxmax = roomright - 640
     if camerax >= cameraxmax then
         camerax = cameraxmax
+        cameravelx = 0
         Stage.startNextFight()
     end
 end
@@ -202,9 +207,9 @@ local NameX, NameY = 48, 16
 local BarX, BarY = NameX, NameY + 17
 local BarH = 14
 
-function Stage.draw()
+function Stage.draw(fixedfrac)
     love.graphics.push()
-    love.graphics.translate(-camerax, -cameray)
+    love.graphics.translate(-camerax - cameravelx*fixedfrac, -cameray - cameravely*fixedfrac)
     scene:draw()
     love.graphics.pop()
 
