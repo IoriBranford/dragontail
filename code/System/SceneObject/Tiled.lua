@@ -49,6 +49,11 @@ function SceneTiled.changeTile(sceneobject, tileid)
     end
 end
 
+function SceneTiled.getObjectTileset(sceneobject)
+    local tile = sceneobject.tile
+    return tile and tile.tileset
+end
+
 function SceneTiled.newShapeObject(shapeobject)
     local w, h, x, y, z, r, sx, sy
         = shapeobject.width, shapeobject.height,

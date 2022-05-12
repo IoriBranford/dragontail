@@ -84,7 +84,8 @@ function Sprite.getDirectionalTileId_vector(basetileid, numdirections, vecx, vec
 end
 
 function Sprite.setDirectionalTile_vector(sprite, basetileid, numdirections, vecx, vecy)
-    if sprite then
+    local tileset = sprite and sprite:getObjectTileset()
+    if tileset then
         sprite:changeTile(Sprite.getDirectionalTileId_vector(basetileid, numdirections, vecx, vecy))
     end
 end
