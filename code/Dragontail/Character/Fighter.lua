@@ -12,14 +12,22 @@ local atan2 = math.atan2
 local mid = math.mid
 local yield = coroutine.yield
 
-function Fighter:stopHolding(held)
+function Fighter:startHolding(opponent)
+    Audio.play(self.holdsound)
+    self.heldopponent = opponent
+    opponent.bodysolid = nil
+    opponent.heldby = self
+    opponent.hurtstun = opponent.holdstun or 120
+end
+
+function Fighter:stopHolding(opponent)
     if self then
         self.heldopponent = nil
     end
-    if held then
-        held.heldby = nil
-        held.bodysolid = true
-        held.hurtstun = 0
+    if opponent then
+        opponent.heldby = nil
+        opponent.bodysolid = true
+        opponent.hurtstun = 0
     end
 end
 

@@ -136,14 +136,10 @@ function Player:attack(attacktype, angle)
 end
 
 function Player:hold(enemy)
+    Fighter.startHolding(self, enemy)
     self:stopAttack()
-    self.heldopponent = enemy
-    enemy.bodysolid = nil
-    enemy.heldby = self
-    enemy.hurtstun = enemy.holdstun or 120
     local x, y = self.x, self.y
     local radii = self.bodyradius + enemy.bodyradius
-    Audio.play(self.holdsound)
     local holddirx, holddiry = enemy.x - x, enemy.y - y
     if holddirx ~= 0 or holddiry ~= 0 then
         holddirx, holddiry = norm(holddirx, holddiry)
