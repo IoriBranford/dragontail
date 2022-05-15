@@ -15,6 +15,7 @@ local dot = math.dot
 local min = math.min
 local testcircles = math.testcircles
 
+---@class Character
 local Character = {}
 
 Character.metatable = {
@@ -172,9 +173,9 @@ function Character:fixedupdate()
             return
         end
     end
-    Script.run(self)
     self.x = self.x + self.velx
     self.y = self.y + self.vely
+    Script.run(self)
     self:animateSprite(self.sprite)
     self:animateSprite(self.emote)
 end
