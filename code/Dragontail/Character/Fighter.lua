@@ -145,7 +145,16 @@ function Fighter:thrown(thrower, attackangle)
 end
 
 function Fighter:wallSlammed(thrower, oobx, ooby)
+    oobx, ooby = norm(oobx or 0, ooby or 0)
     self:stopAttack()
+    local bodyradius = self.bodyradius or 1
+    Stage.addCharacter(
+        {
+            type = "spark-bighit",
+            x = self.x + oobx*bodyradius,
+            y = self.y + ooby*bodyradius
+        }
+    )
     Audio.play(self.bodyslamsound)
     self.health = self.health - (self.wallslamdamage or 25)
     self.hurtstun = self.wallslamstun or 20
