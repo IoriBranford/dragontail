@@ -1362,7 +1362,7 @@
  },
  "meta": {
   "app": "https://www.aseprite.org/",
-  "version": "1.2.33-x64",
+  "version": "1.2.34.1-x64",
   "image": "bandit-axe.png",
   "format": "RGBA8888",
   "size": { "w": 520, "h": 506 },
@@ -1415,7 +1415,9 @@
    { "name": "throwA0", "from": 148, "to": 150, "direction": "forward" },
    { "name": "throwB0", "from": 151, "to": 153, "direction": "forward" },
    { "name": "thrownaxe1", "from": 154, "to": 161, "direction": "forward" },
+   { "name": "thrownaxe3", "from": 154, "to": 161, "direction": "forward" },
    { "name": "thrownaxe0", "from": 162, "to": 169, "direction": "forward" },
+   { "name": "thrownaxe2", "from": 162, "to": 169, "direction": "forward" },
    { "name": "thrownaxehit1", "from": 163, "to": 163, "direction": "forward" },
    { "name": "thrownaxehit2", "from": 165, "to": 165, "direction": "forward" },
    { "name": "thrownaxehit3", "from": 167, "to": 167, "direction": "forward" },
