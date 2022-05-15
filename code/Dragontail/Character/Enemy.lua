@@ -63,7 +63,7 @@ function Enemy:stand(duration)
             local tooppoy, tooppox = oppoy - y, oppox - x
             faceDir(self, tooppox, tooppoy)
             local faceangle = atan2(tooppoy, tooppox)
-            local standanimation = self.getDirectionalAnimation_angle("stand", faceangle, 4)
+            local standanimation = self.getDirectionalAnimation_angle("stand", faceangle, self.animationdirections)
             self.sprite:changeAsepriteAnimation(standanimation)
         end
         i = i + 1
@@ -84,10 +84,10 @@ function Enemy:stand(duration)
         attackchoices = choices
         self.attackchoices = choices
     end
-    local attacktype
+    local attacktype = self.attacktype
     if attackchoices and #attackchoices > 0 then
         for i, attackchoice in ipairs(attackchoices) do
-            local attack = Database.get(self.type.."-"..attackchoice)
+            local attack = Database.get(attackchoice)
             if attack then
                 local attackrange = totalAttackRange(attack.attackradius or 0, attack.attacklungespeed or 0)
                 if attackrange*attackrange >= toopposq then
@@ -99,11 +99,9 @@ function Enemy:stand(duration)
         if not attacktype then
             attacktype = attackchoices[lm_random(#attackchoices)]
         end
-    else
-        attacktype = "attack"
+        self.attacktype = attacktype
     end
-    self.attacktype = attacktype
-    Database.fill(self, self.type.."-"..attacktype)
+    Database.fill(self, attacktype)
     local attackradius = totalAttackRange(self.attackradius or 32, self.attacklungespeed or 0) + opponent.bodyradius
     if toopposq <= attackradius*attackradius then
         return Enemy.attack, attacktype
@@ -138,7 +136,7 @@ function Enemy:approach()
         local todesty, todestx = desty - y, destx - x
         faceDir(self, todestx, todesty)
         local todestangle = atan2(todesty, todestx)
-        local walkanimation = self.getDirectionalAnimation_angle("walk", todestangle, 4)
+        local walkanimation = self.getDirectionalAnimation_angle("walk", todestangle, self.animationdirections)
         self.sprite:changeAsepriteAnimation(walkanimation)
     end
 
@@ -183,8 +181,11 @@ function Enemy:attack(attackname)
         faceDir(self, tooppox, tooppoy)
         tooppoangle = atan2(tooppoy, tooppox)
     end
-    local animation = self.getDirectionalAnimation_angle(attackname.."A", tooppoangle, 4)
-    self.sprite:changeAsepriteAnimation(animation, 1, "stop")
+    local animation = self.windupanimation
+    if animation then
+        animation = self.getDirectionalAnimation_angle(animation, tooppoangle, self.animationdirections)
+        self.sprite:changeAsepriteAnimation(animation, 1, "stop")
+    end
 
     Audio.play(self.windupsound)
     coroutine.wait(self.attackwinduptime or 20)
@@ -208,8 +209,11 @@ function Enemy:attack(attackname)
 
     local lungespeed = self.attacklungespeed or 0
 
-    animation = self.getDirectionalAnimation_angle(attackname.."B", tooppoangle, 4)
-    self.sprite:changeAsepriteAnimation(animation, 1, "stop")
+    animation = self.swinganimation
+    if animation then
+        animation = self.getDirectionalAnimation_angle(animation, tooppoangle, self.animationdirections)
+        self.sprite:changeAsepriteAnimation(animation, 1, "stop")
+    end
     local hittime = self.attackhittime or 10
     repeat
         lungespeed = updateLungeAttack(self, tooppoangle, lungespeed)
@@ -239,7 +243,7 @@ function Enemy:guard()
     repeat
         local guardangle = atan2(opponent.y - self.y, opponent.x - self.x)
         self:startGuarding(guardangle)
-        local guardanimation = self.getDirectionalAnimation_angle("guard", guardangle, 4)
+        local guardanimation = self.getDirectionalAnimation_angle("guard", guardangle, self.animationdirections)
         self.sprite:changeAsepriteAnimation(guardanimation, 1, "stop")
         yield()
         t = t - 1
@@ -273,7 +277,7 @@ function Enemy:guardHit(attacker)
     local guardcounterattack = self.guardcounterattack
     local guardhitstocounterattack = self.guardhitstocounterattack or 3
     if guardcounterattack then
-        Database.fill(self, self.type..'-'..guardcounterattack)
+        Database.fill(self, guardcounterattack)
         -- print(guardcounterattack, guardhitstocounterattack, self.numguardedhits, self.attackwindupinvuln)
         if self.numguardedhits >= guardhitstocounterattack then
             self.numguardedhits = 0

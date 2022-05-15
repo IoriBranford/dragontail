@@ -50,7 +50,7 @@ function Fighter:hurt(attacker)
     Fighter.stopHolding(heldby, self)
     self.hurtstun = attacker.attackstun or 3
     local facex, facey = self.facex or 1, self.facey or 0
-    local hurtanimation = self.getDirectionalAnimation_angle("hurt", atan2(facey, facex), 2)
+    local hurtanimation = self.getDirectionalAnimation_angle("hurt", atan2(facey, facex), self.animationdirections)
     local aseprite = self.sprite and self.sprite.aseprite
     if aseprite and aseprite:getAnimation(hurtanimation) then
         self.sprite:changeAsepriteAnimation(hurtanimation, 1, "stop")
@@ -161,7 +161,7 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
     yield()
     local wallslamcounterattack = self.wallslamcounterattack
     if self.health > 0 and wallslamcounterattack and self.script.attack then
-        Database.fill(self, self.type.."-"..wallslamcounterattack)
+        Database.fill(self, wallslamcounterattack)
         self.canbegrabbed = true
         self.bodysolid = true
         return self.script.attack, wallslamcounterattack, atan2(-(ooby or 0), -(oobx or 0))

@@ -60,7 +60,8 @@ function Player:control()
         self.facex, self.facey = facex, facey
 
         if b1pressed then
-            return Player.attack, self.type.."-attack", atan2(-facey, -facex)
+            local spindir = facex < 0 and "ccw" or "cw"
+            return Player.spinAttack, "tail-swing-"..spindir, atan2(-facey, -facex)
         end
 
         if b2down and not self.heldopponent then
@@ -93,15 +94,15 @@ function Player:control()
         else
             animation = "stand"
         end
-        animation = self.getDirectionalAnimation_angle(animation, atan2(facey, facex), 8)
+        animation = self.getDirectionalAnimation_angle(animation, atan2(facey, facex), self.animationdirections)
         self.sprite:changeAsepriteAnimation(animation)
     end
 end
 
-function Player:attack(attacktype, angle)
+function Player:spinAttack(attacktype, angle)
     Database.fill(self, attacktype)
-    local spinvel = self.attackspinspeed or (2*pi/16)
-    local spintime = self.attackhittime or 16
+    local spinvel = self.attackspinspeed or 0
+    local spintime = self.attackhittime or 0
     Audio.play(self.swingsound)
     local attackagain = false
     local t = spintime
@@ -119,9 +120,11 @@ function Player:attack(attacktype, angle)
 
         self:startAttack(angle)
         faceAngle(self, angle+pi)
-        local spindir = spinvel < 0 and "B" or "A"
-        local attackanimation = self.getDirectionalAnimation_angle("attack"..spindir, angle, 4)
-        self.sprite:changeAsepriteAnimation(attackanimation)
+        local attackanimation = self.swinganimation
+        if attackanimation then
+            attackanimation = self.getDirectionalAnimation_angle(attackanimation, angle, self.animationdirections)
+            self.sprite:changeAsepriteAnimation(attackanimation)
+        end
 
         yield()
         attackagain = attackagain or Controls.getButtonsPressed()
@@ -130,7 +133,7 @@ function Player:attack(attacktype, angle)
     until t <= 0
     self:stopAttack()
     if attackagain then
-        return Player.attack, attacktype, angle
+        return Player.spinAttack, attacktype, angle
     end
     return Player.control
 end
@@ -158,8 +161,7 @@ function Player:hold(enemy)
         time = time - 1
 
         local inx, iny = Controls.getDirectionInput()
-        local b1pressed = Controls.getButtonsPressed()
-        local _, b2down = Controls.getButtonsDown()
+        local b1pressed, b2pressed = Controls.getButtonsPressed()
         local targetvelx, targetvely = 0, 0
         local speed = 2
         if inx ~= 0 or iny ~= 0 then
@@ -193,14 +195,14 @@ function Player:hold(enemy)
         self.facex, self.facey = holddirx, holddiry
 
         local holdanimation = (velx ~= 0 or vely ~= 0) and "holdwalk" or "hold"
-        holdanimation = self.getDirectionalAnimation_angle(holdanimation, holdangle, 8)
+        holdanimation = self.getDirectionalAnimation_angle(holdanimation, holdangle, self.animationdirections)
         self.sprite:changeAsepriteAnimation(holdanimation)
 
         if b1pressed then
             Fighter.stopHolding(self, enemy)
-            return Player.holdAttack, self.type.."-kick-held-enemy", holdangle
+            return Player.straightAttack, "kick-held-enemy", holdangle
         end
-        if not b2down then
+        if b2pressed then
             Script.start(enemy, enemy.thrownai or "thrown", self, holdangle)
             Audio.play(self.throwsound)
             Fighter.stopHolding(self, enemy)
@@ -211,13 +213,16 @@ function Player:hold(enemy)
     return Player.control
 end
 
-function Player:holdAttack(attacktype, angle)
+function Player:straightAttack(attacktype, angle)
     Database.fill(self, attacktype)
-    Audio.play(self.throwsound)
+    Audio.play(self.swingsound)
     self:startAttack(angle)
     self.velx, self.vely = 0, 0
-    local attackanimation = self.getDirectionalAnimation_angle("kick", angle, 8)
-    self.sprite:changeAsepriteAnimation(attackanimation)
+    local attackanimation = self.swinganimation
+    if attackanimation then
+        attackanimation = self.getDirectionalAnimation_angle(attackanimation, angle, self.animationdirections)
+        self.sprite:changeAsepriteAnimation(attackanimation)
+    end
     yield()
     self:stopAttack()
     return Player.control

@@ -92,7 +92,7 @@ function Common:projectileHit(opponent)
     local attackhitanimation = self.attackhitanimation
     local sprite = self.sprite
     if sprite and attackhitanimation then
-        attackhitanimation = self.getDirectionalAnimation_angle(attackhitanimation, self.attackangle, 4)
+        attackhitanimation = self.getDirectionalAnimation_angle(attackhitanimation, self.attackangle, self.animationdirections)
         self.sprite:changeAsepriteAnimation(attackhitanimation)
     end
     self.bodysolid = false
@@ -104,7 +104,7 @@ end
 
 function Common:projectileFly(shooter, angle)
     angle = angle or self.attackangle
-    Database.fill(self, self.type.."-attack")
+    Database.fill(self, self.attacktype)
     local bounds = self.bounds
     local speed = self.speed
     self.velx = speed*cos(angle)
