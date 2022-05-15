@@ -11,7 +11,6 @@ local Stage = {}
 local sin = math.sin
 local max = math.max
 local min = math.min
-local t_remove = table.remove
 
 local scene
 local player, enemies, solids, allcharacters
@@ -52,7 +51,7 @@ function Stage.init(stagefile)
     scene:addMap(map, "group,tilelayer")
 
     player = Stage.addCharacter({
-        x = 160, y = 180, type = "Rose"
+        x = 160, y = 180, type = "Rose", bounds = bounds
     })
 
     local music = Audio.playMusic("music/retro-chiptune-guitar.ogg")
@@ -159,7 +158,7 @@ local function pruneDisappeared(characters, onempty, ...)
     for i = n, 1, -1 do
         if characters[i].disappeared then
             characters[i] = characters[n]
-            t_remove(characters)
+            characters[n] = nil
             n = n - 1
         end
     end
