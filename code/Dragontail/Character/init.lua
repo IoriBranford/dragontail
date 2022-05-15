@@ -323,7 +323,10 @@ function Character:heal(amount)
 end
 
 function Character.getDirectionalAnimation_angle(basename, angle, numanimations)
-    numanimations = numanimations or 4
+    numanimations = numanimations or 1
+    if numanimations < 2 then
+        return basename
+    end
     local faceangle = angle + (pi / numanimations)
     local facedir = floor(faceangle * numanimations / pi / 2)
     facedir = ((facedir % numanimations) + numanimations) % numanimations
