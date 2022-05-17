@@ -18,6 +18,7 @@ local det = math.det
 local norm = math.norm
 local abs = math.abs
 local rot = math.rot
+local lensq = math.lensq
 local yield = coroutine.yield
 
 local function faceAngle(self, angle)
@@ -64,17 +65,22 @@ function Player:control()
             return Player.spinAttack, "tail-swing-"..spindir, atan2(-facey, -facex)
         end
 
-        if b2down and not self.heldopponent then
-            for i, opponent in ipairs(opponents) do
+        self:accelerateTowardsVel(targetvelx, targetvely, b2down and 4 or 8)
+
+        local x, y = self.x, self.y
+        local velx, vely = self.velx, self.vely
+
+        for i, opponent in ipairs(opponents) do
+            if dot(opponent.x - x, opponent.y - y, velx, vely) > 0 then
                 if opponent.canbegrabbed and self:testBodyCollision(opponent) then
-                    return Player.hold, opponent
+                    if b2down or lensq(velx, vely) < 16 then
+                        return Player.hold, opponent
+                    else
+                        return Player.straightAttack, "running-elbow", atan2(vely, velx)
+                    end
                 end
             end
         end
-
-        self:accelerateTowardsVel(targetvelx, targetvely, b2down and 4 or 8)
-
-        local velx, vely = self.velx, self.vely
         -- local veldot = dot(velx, vely, inx, iny)
         local attackangle
         -- if not b2
@@ -217,13 +223,17 @@ function Player:straightAttack(attacktype, angle)
     Database.fill(self, attacktype)
     Audio.play(self.swingsound)
     self:startAttack(angle)
-    self.velx, self.vely = 0, 0
     local attackanimation = self.swinganimation
     if attackanimation then
         attackanimation = self.getDirectionalAnimation_angle(attackanimation, angle, self.animationdirections)
         self.sprite:changeAsepriteAnimation(attackanimation)
     end
-    yield()
+    local t = self.attackhittime or 1
+    repeat
+        yield()
+        self:accelerateTowardsVel(0, 0, self.attackhittime or 1)
+        t = t - 1
+    until t <= 0
     self:stopAttack()
     return Player.control
 end
