@@ -104,7 +104,7 @@ end
 
 function Common:projectileFly(shooter, angle)
     angle = angle or self.attackangle
-    Database.fill(self, self.attacktype)
+    Database.fill(self, self.defaultattack)
     local bounds = self.bounds
     local speed = self.speed
     self.velx = speed*cos(angle)

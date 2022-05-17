@@ -84,7 +84,7 @@ function Enemy:stand(duration)
         attackchoices = choices
         self.attackchoices = choices
     end
-    local attacktype = self.attacktype
+    local attacktype = self.defaultattack
     if attackchoices and #attackchoices > 0 then
         for i, attackchoice in ipairs(attackchoices) do
             local attack = Database.get(attackchoice)
