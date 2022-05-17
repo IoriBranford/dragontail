@@ -136,6 +136,7 @@ function Stage.updateGoingToNextRoom()
     local cameraxmax = roomright - 640
     if camerax >= cameraxmax then
         camerax = cameraxmax
+        bounds.x = camerax
         cameravelx = 0
         Stage.startNextFight()
     end
