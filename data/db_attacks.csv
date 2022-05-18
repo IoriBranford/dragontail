@@ -3,7 +3,7 @@ tail-swing-cw,,32,0.314159265358979,25,20,10,0.628318530717959,,,20,,,,nil,throw
 tail-swing-ccw,,32,0.314159265358979,25,20,10,-0.628318530717959,,,20,,,,nil,thrown,,attackB,,sounds/combat/swing2.mp3,sounds/combat/hit1.mp3,sounds/combat/hit3.mp3,nil,spark-hit,spark-guard
 swing-held-enemy,,32,0.392699081698724,10,12,6,0.196349540849362,,,0,,,,nil,nil,,nil,,nil,sounds/combat/hit2.mp3,,nil,spark-hit,spark-guard
 kick-held-enemy,,32,0,25,20,20,,,,10,,,,thrown,thrown,,kick,,sounds/player/attack2.mp3,sounds/combat/hit3.mp3,,nil,spark-hit,spark-guard
-running-elbow,,20,1.5707963267949,10,12,6,,,,10,,,,nil,thrown,,elbow,,nil,sounds/combat/hit1.mp3,,nil,spark-hit,spark-guard
+running-elbow,,20,1.5707963267949,10,12,3,,,,10,,,,nil,thrown,,elbow,,nil,sounds/combat/hit1.mp3,,nil,spark-hit,spark-guard
 dagger-swing,,32,0.196349540849362,10,12,,,,,,5,,,,nil,attackA,attackB,sounds/man_light/attack1.mp3,sounds/combat/swing1.mp3,sounds/combat/cut.mp3,,,nil,nil
 spear-thrust,,48,0,10,12,,,,,,10,,,,nil,attackA,attackB,sounds/man_medium/attack1.mp3,sounds/combat/swingblade.mp3,sounds/combat/cut.mp3,,,nil,nil
 human-thrown,,16,0.785398163397448,50,12,3,,,,,,,,,thrown,,,,sounds/combat/spin.mp3,sounds/combat/hit2.mp3,,,spark-hit,spark-guard

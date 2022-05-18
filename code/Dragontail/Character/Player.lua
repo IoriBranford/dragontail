@@ -38,7 +38,7 @@ function Player:control()
 
         local facex, facey = self.facex, self.facey
         local targetvelx, targetvely = 0, 0
-        local speed = b2down and 2 or 5
+        local speed = b2down and 2 or 6
         if inx ~= 0 or iny ~= 0 then
             inx, iny = norm(inx, iny)
             targetfacex, targetfacey = inx, iny
@@ -73,7 +73,7 @@ function Player:control()
         for i, opponent in ipairs(opponents) do
             if dot(opponent.x - x, opponent.y - y, velx, vely) > 0 then
                 if opponent.canbegrabbed and self:testBodyCollision(opponent) then
-                    if b2down or lensq(velx, vely) < 16 then
+                    if b2down or lensq(velx, vely) <= 9 then
                         return Player.hold, opponent
                     else
                         return Player.straightAttack, "running-elbow", atan2(vely, velx)
@@ -231,7 +231,7 @@ function Player:straightAttack(attacktype, angle)
     local t = self.attackhittime or 1
     repeat
         yield()
-        self:accelerateTowardsVel(0, 0, self.attackhittime or 1)
+        self:accelerateTowardsVel(0, 0, 4)
         t = t - 1
     until t <= 0
     self:stopAttack()
