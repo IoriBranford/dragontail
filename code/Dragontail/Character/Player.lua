@@ -151,6 +151,7 @@ end
 function Player:hold(enemy)
     Audio.play(self.holdsound)
     Fighter.startHolding(self, enemy)
+    Script.start(enemy, enemy.heldai or "held", self)
     self:stopAttack()
     local x, y = self.x, self.y
     local radii = self.bodyradius + enemy.bodyradius
@@ -162,7 +163,7 @@ function Player:hold(enemy)
     end
     local holdangle = atan2(holddiry, holddirx)
     local holddestangle = holdangle
-    local time = enemy.hurtstun
+    local time = enemy.holdstun
     while time > 0 do
         yield()
         enemy = self.heldopponent

@@ -16,9 +16,7 @@ function Fighter:startHolding(opponent)
     self.heldopponent = opponent
     opponent:stopAttack()
     opponent:stopGuarding()
-    opponent.bodysolid = nil
     opponent.heldby = self
-    opponent.hurtstun = opponent.holdstun or 120
 end
 
 function Fighter:stopHolding(opponent)
@@ -27,8 +25,6 @@ function Fighter:stopHolding(opponent)
     end
     if opponent then
         opponent.heldby = nil
-        opponent.bodysolid = true
-        opponent.hurtstun = 0
     end
 end
 
@@ -98,7 +94,23 @@ end
 
 function Fighter:held(holder)
     self:stopAttack()
+    self:stopGuarding()
     self.velx, self.vely = 0, 0
+    while self.heldby == holder do
+        local dx, dy = holder.x - self.x, holder.y - self.y
+        local hurtanimation = self.getDirectionalAnimation_angle(self.heldanimation or "stand", atan2(dy, dx), self.animationdirections)
+        local aseprite = self.sprite and self.sprite.aseprite
+        if aseprite and aseprite:getAnimation(hurtanimation) then
+            self.sprite:changeAsepriteAnimation(hurtanimation, 1, "stop")
+        end
+        yield()
+    end
+    local recoverai = self.hurtrecoverai
+    if not recoverai then
+        print("No aiafterheld or recoverai for "..self.type)
+        return "defeat", holder
+    end
+    return recoverai
 end
 
 function Fighter:thrown(thrower, attackangle)
