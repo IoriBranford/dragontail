@@ -294,7 +294,7 @@ function Character:checkAttackCollision(attacker)
 end
 
 function Character:collideWithCharacterAttack(attacker)
-    if self.hurtstun > 0 or not self.bodysolid then
+    if self.hurtstun > 0 or not self.canbeattacked then
         return
     end
     if self:checkAttackCollision(attacker) then
