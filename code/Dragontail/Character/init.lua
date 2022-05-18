@@ -327,6 +327,9 @@ function Character.getDirectionalAnimation_angle(basename, angle, numanimations)
     if numanimations < 2 then
         return basename
     end
+    if angle ~= angle then
+        return basename..0
+    end
     local faceangle = angle + (pi / numanimations)
     local facedir = floor(faceangle * numanimations / pi / 2)
     facedir = ((facedir % numanimations) + numanimations) % numanimations
