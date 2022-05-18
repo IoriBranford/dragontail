@@ -26,6 +26,7 @@ local function faceAngle(self, angle)
 end
 
 function Player:control()
+    self.bodysolid = true
     local opponents = self.opponents
     self.facex = self.facex or 1
     self.facey = self.facey or 0
@@ -38,7 +39,7 @@ function Player:control()
 
         local facex, facey = self.facex, self.facey
         local targetvelx, targetvely = 0, 0
-        local speed = b3down and 2 or 6
+        local speed = b3down and 3 or 6
         if inx ~= 0 or iny ~= 0 then
             inx, iny = norm(inx, iny)
             targetfacex, targetfacey = inx, iny
@@ -76,7 +77,7 @@ function Player:control()
         for i, opponent in ipairs(opponents) do
             if dot(opponent.x - x, opponent.y - y, velx, vely) > 0 then
                 if opponent.canbegrabbed and self:testBodyCollision(opponent) then
-                    if lensq(velx, vely) <= 9 then
+                    if b3down or lensq(velx, vely) <= 9 then
                         return Player.hold, opponent
                     else
                         return Player.straightAttack, "running-elbow", atan2(vely, velx)
@@ -225,7 +226,6 @@ function Player:spinThrow(attacktype, angle, enemy)
     Database.fill(self, attacktype)
     local spinvel = self.attackspinspeed or 0
     local spintime = self.attackhittime or 0
-    Audio.play(self.throwsound)
     -- local attackagain = false
     local t = spintime
     local x, y = self.x, self.y
@@ -237,6 +237,7 @@ function Player:spinThrow(attacktype, angle, enemy)
         holddirx = 1
     end
     local spunmag = 0
+    local spinmag = abs(spinvel)
     local keepspinning = false
     repeat
         local inx, iny = Controls.getDirectionInput()
@@ -268,9 +269,16 @@ function Player:spinThrow(attacktype, angle, enemy)
         keepspinning = Controls.getButtonsDown()
         -- attackagain = attackagain or Controls.getButtonsPressed()
         angle = angle + spinvel
-        spunmag = spunmag + abs(spinvel)
+        if math.ceil(spunmag / 2 / pi) < math.ceil((spunmag+spinmag) / 2 / pi) then
+            Audio.play(self.windupsound)
+            if self.attackdamage then
+                enemy.health = enemy.health - self.attackdamage
+            end
+        end
+        spunmag = spunmag + spinmag
         t = t - 1
     until 2*pi <= spunmag and (not keepspinning or 6*pi <= spunmag)
+    Audio.play(self.throwsound)
     self:stopAttack()
     Fighter.stopHolding(self, enemy)
     Script.start(enemy, enemy.thrownai or "thrown", self, angle)
