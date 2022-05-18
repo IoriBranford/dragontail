@@ -14,6 +14,7 @@ local yield = coroutine.yield
 
 function Fighter:startHolding(opponent)
     self.heldopponent = opponent
+    opponent:stopGuarding()
     opponent.bodysolid = nil
     opponent.heldby = self
     opponent.hurtstun = opponent.holdstun or 120
@@ -100,6 +101,7 @@ function Fighter:held(holder)
 end
 
 function Fighter:thrown(thrower, attackangle)
+    Audio.play(self.hurtsound)
     local dirx, diry
     if attackangle then
         dirx, diry = cos(attackangle), sin(attackangle)
@@ -122,10 +124,7 @@ function Fighter:thrown(thrower, attackangle)
     local thrownsound = Audio.newSource(self.swingsound)
     thrownsound:play()
     local bounds = self.bounds
-    local recovertime = huge
-    if self.health > 0 then
-        recovertime = self.thrownrecovertime or 30
-    end
+    local recovertime = self.thrownrecovertime or 30
     local oobx, ooby
     repeat
         yield()
@@ -157,6 +156,7 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
     Audio.play(self.bodyslamsound)
     self.health = self.health - (self.wallslamdamage or 25)
     self.hurtstun = self.wallslamstun or 20
+    self.velx, self.vely = 0, 0
     yield()
     local wallslamcounterattack = self.wallslamcounterattack
     if self.health > 0 and wallslamcounterattack and self.script.attack then
@@ -196,14 +196,26 @@ end
 function Fighter:fall(attacker)
     self.canbegrabbed = nil
     self:stopAttack()
-    self.velx, self.vely = 0, 0
     local defeatanimation = self.defeatanimation or "collapse"
+    local bounds = self.bounds
     self.sprite:changeAsepriteAnimation(defeatanimation, 1, "stop")
-    coroutine.wait(20)
+    local t = 1
+    repeat
+        self:accelerateTowardsVel(0, 0, 8)
+        yield()
+        self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+        t = t + 1
+    until t > 20
     Audio.play(self.bodydropsound)
 
     if self.health > 0 then
-        coroutine.wait(self.downtime or 30)
+        t = 1
+        repeat
+            self:accelerateTowardsVel(0, 0, 8)
+            yield()
+            self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+            t = t + 1
+        until t > 20
         return self.getupai or "getup", attacker
     end
     return Fighter.defeat, attacker
