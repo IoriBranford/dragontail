@@ -105,6 +105,7 @@ end
 function Common:projectileFly(shooter, angle)
     angle = angle or self.attackangle
     Database.fill(self, self.defaultattack)
+    self:startAttack(angle)
     local bounds = self.bounds
     local speed = self.speed
     self.velx = speed*cos(angle)
@@ -125,7 +126,7 @@ function Common:projectileDeflected(deflector)
     yield()
 
     local shooter = self.shooter
-    if shooter and deflector.team == "player" then
+    if shooter and shooter.team ~= "player" and deflector.team == "player" then
         attackangle = atan2(shooter.y - self.y, shooter.x - self.x)
     end
     self.shooter = deflector
