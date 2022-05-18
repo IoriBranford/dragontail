@@ -13,7 +13,6 @@ local mid = math.mid
 local yield = coroutine.yield
 
 function Fighter:startHolding(opponent)
-    Audio.play(self.holdsound)
     self.heldopponent = opponent
     opponent.bodysolid = nil
     opponent.heldby = self

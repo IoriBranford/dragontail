@@ -33,12 +33,12 @@ function Player:control()
     while true do
         yield()
         local inx, iny = Controls.getDirectionInput()
-        local b1pressed = Controls.getButtonsPressed()
-        local _, b2down = Controls.getButtonsDown()
+        local b1pressed, b2pressed = Controls.getButtonsPressed()
+        local _, _, b3down = Controls.getButtonsDown()
 
         local facex, facey = self.facex, self.facey
         local targetvelx, targetvely = 0, 0
-        local speed = b2down and 2 or 6
+        local speed = b3down and 2 or 6
         if inx ~= 0 or iny ~= 0 then
             inx, iny = norm(inx, iny)
             targetfacex, targetfacey = inx, iny
@@ -64,8 +64,11 @@ function Player:control()
             local spindir = facex < 0 and "ccw" or "cw"
             return Player.spinAttack, "tail-swing-"..spindir, atan2(-facey, -facex)
         end
+        if b2pressed then
+            return Player.straightAttack, "kick", atan2(facey, facex)
+        end
 
-        self:accelerateTowardsVel(targetvelx, targetvely, b2down and 4 or 8)
+        self:accelerateTowardsVel(targetvelx, targetvely, b3down and 4 or 8)
 
         local x, y = self.x, self.y
         local velx, vely = self.velx, self.vely
@@ -73,7 +76,7 @@ function Player:control()
         for i, opponent in ipairs(opponents) do
             if dot(opponent.x - x, opponent.y - y, velx, vely) > 0 then
                 if opponent.canbegrabbed and self:testBodyCollision(opponent) then
-                    if b2down or lensq(velx, vely) <= 9 then
+                    if lensq(velx, vely) <= 9 then
                         return Player.hold, opponent
                     else
                         return Player.straightAttack, "running-elbow", atan2(vely, velx)
@@ -145,6 +148,7 @@ function Player:spinAttack(attacktype, angle)
 end
 
 function Player:hold(enemy)
+    Audio.play(self.holdsound)
     Fighter.startHolding(self, enemy)
     self:stopAttack()
     local x, y = self.x, self.y
@@ -197,25 +201,82 @@ function Player:hold(enemy)
         holddirx, holddiry = cos(holdangle), sin(holdangle)
         x, y = self.x, self.y
         enemy.x = x + velx + holddirx*radii
-        enemy.y = y + velx + holddiry*radii
+        enemy.y = y + vely + holddiry*radii
         self.facex, self.facey = holddirx, holddiry
 
         local holdanimation = (velx ~= 0 or vely ~= 0) and "holdwalk" or "hold"
         holdanimation = self.getDirectionalAnimation_angle(holdanimation, holdangle, self.animationdirections)
         self.sprite:changeAsepriteAnimation(holdanimation)
 
-        if b1pressed then
-            Fighter.stopHolding(self, enemy)
-            return Player.straightAttack, "kick-held-enemy", holdangle
-        end
         if b2pressed then
-            Script.start(enemy, enemy.thrownai or "thrown", self, holdangle)
-            Audio.play(self.throwsound)
             Fighter.stopHolding(self, enemy)
-            return Player.control
+            return Player.straightAttack, "kick", holdangle
+        end
+        if b1pressed then
+            return Player.spinThrow, "spinning-throw", holdangle, enemy
         end
     end
     Fighter.stopHolding(self, enemy)
+    return Player.control
+end
+
+function Player:spinThrow(attacktype, angle, enemy)
+    Fighter.startHolding(self, enemy)
+    Database.fill(self, attacktype)
+    local spinvel = self.attackspinspeed or 0
+    local spintime = self.attackhittime or 0
+    Audio.play(self.throwsound)
+    -- local attackagain = false
+    local t = spintime
+    local x, y = self.x, self.y
+    local radii = self.bodyradius + enemy.bodyradius
+    local holddirx, holddiry = enemy.x - x, enemy.y - y
+    if holddirx ~= 0 or holddiry ~= 0 then
+        holddirx, holddiry = norm(holddirx, holddiry)
+    else
+        holddirx = 1
+    end
+    local spunmag = 0
+    local keepspinning = false
+    repeat
+        local inx, iny = Controls.getDirectionInput()
+        local targetvelx, targetvely = 0, 0
+        local speed = 2
+        if inx ~= 0 or iny ~= 0 then
+            inx, iny = norm(inx, iny)
+            targetvelx = inx * speed
+            targetvely = iny * speed
+        end
+
+        self:accelerateTowardsVel(targetvelx, targetvely, 4)
+        local velx, vely = self.velx, self.vely
+
+        self:startAttack(angle)
+        faceAngle(self, angle)
+        local attackanimation = self.swinganimation
+        if attackanimation then
+            attackanimation = self.getDirectionalAnimation_angle(attackanimation, angle, self.animationdirections)
+            self.sprite:changeAsepriteAnimation(attackanimation)
+        end
+
+        holddirx, holddiry = cos(angle), sin(angle)
+        x, y = self.x, self.y
+        enemy.x = x + velx + holddirx*radii
+        enemy.y = y + vely + holddiry*radii
+
+        yield()
+        keepspinning = Controls.getButtonsDown()
+        -- attackagain = attackagain or Controls.getButtonsPressed()
+        angle = angle + spinvel
+        spunmag = spunmag + abs(spinvel)
+        t = t - 1
+    until 2*pi <= spunmag and (not keepspinning or 6*pi <= spunmag)
+    self:stopAttack()
+    Fighter.stopHolding(self, enemy)
+    Script.start(enemy, enemy.thrownai or "thrown", self, angle)
+    -- if attackagain then
+    --     return Player.spinAttack, "tail-swing-ccw", angle
+    -- end
     return Player.control
 end
 
@@ -231,7 +292,7 @@ function Player:straightAttack(attacktype, angle)
     local t = self.attackhittime or 1
     repeat
         yield()
-        self:accelerateTowardsVel(0, 0, 4)
+        self:accelerateTowardsVel(0, 0, self.attackdecel or 8)
         t = t - 1
     until t <= 0
     self:stopAttack()
