@@ -172,8 +172,10 @@ function Stage.fixedupdate()
     for i, character in ipairs(allcharacters) do
         character:fixedupdate()
     end
-    for i, solid in ipairs(solids) do
-        player:collideWithCharacterBody(solid)
+    if player.bodysolid then
+        for i, solid in ipairs(solids) do
+            player:collideWithCharacterBody(solid)
+        end
     end
     for i, enemy in ipairs(enemies) do
         for j, solid in ipairs(solids) do
