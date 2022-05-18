@@ -71,9 +71,9 @@ function Fighter:hurt(attacker)
         end
     end
     Audio.play(self.hurtsound)
-    local recoverai = self.hurtrecoverai
+    local recoverai = self.aiafterhurt or self.recoverai
     if not recoverai then
-        print("No hurtrecoverai for "..self.type)
+        print("No aiafterhurt or recoverai for "..self.type)
         return "defeat", attacker
     end
     self.canbegrabbed = true
@@ -105,7 +105,7 @@ function Fighter:held(holder)
         end
         yield()
     end
-    local recoverai = self.hurtrecoverai
+    local recoverai = self.aiafterheld or self.recoverai
     if not recoverai then
         print("No aiafterheld or recoverai for "..self.type)
         return "defeat", holder
@@ -127,6 +127,7 @@ function Fighter:thrown(thrower, attackangle)
             dirx, diry = norm(self.x - thrower.x, self.y - thrower.y)
         end
     end
+    self.canbeattacked = false
     self.canbegrabbed = nil
     self.bodysolid = false
     self.hurtstun = 0
@@ -148,14 +149,12 @@ function Fighter:thrown(thrower, attackangle)
     if oobx or ooby then
         return Fighter.wallSlammed, thrower, oobx, ooby
     end
-    local thrownrecoverai = self.thrownrecoverai
-    if thrownrecoverai then
-        return thrownrecoverai, thrower
-    end
-    return self.hurtrecoverai
+
+    return self.aiafterthrown or "fall"
 end
 
 function Fighter:wallSlammed(thrower, oobx, ooby)
+    self.bodysolid = true
     oobx, ooby = norm(oobx or 0, ooby or 0)
     self:stopAttack()
     local bodyradius = self.bodyradius or 1
@@ -174,15 +173,14 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
     local wallslamcounterattack = self.wallslamcounterattack
     if self.health > 0 and wallslamcounterattack and self.script.attack then
         Database.fill(self, wallslamcounterattack)
+        self.canbeattacked = true
         self.canbegrabbed = true
-        self.bodysolid = true
         return self.script.attack, wallslamcounterattack, atan2(-(ooby or 0), -(oobx or 0))
     end
     return Fighter.fall, thrower
 end
 
 function Fighter:thrownRecover(thrower)
-    self.canbegrabbed = true
     if self.thrownrecoveranimation then
         self.sprite:changeAsepriteAnimation(self.thrownrecoveranimation, 1, "stop")
     end
@@ -203,13 +201,20 @@ function Fighter:thrownRecover(thrower)
     end
 
     self.bodysolid = true
-    return self.hurtrecoverai
+    self.canbeattacked = true
+    self.canbegrabbed = true
+    local recoverai = self.recoverai
+    if not recoverai then
+        print("No recoverai for "..self.type)
+        return "defeat", thrower
+    end
+    return recoverai
 end
 
 function Fighter:fall(attacker)
     self.canbegrabbed = nil
-    self.bodysolid = false
-    self:stopAttack()
+    self.canbeattacked = false
+    self.bodysolid = true
     local defeatanimation = self.defeatanimation or "collapse"
     local bounds = self.bounds
     self.sprite:changeAsepriteAnimation(defeatanimation, 1, "stop")
@@ -221,6 +226,7 @@ function Fighter:fall(attacker)
         t = t + 1
     until t > 20
     Audio.play(self.bodydropsound)
+    self:stopAttack()
 
     if self.health > 0 then
         t = 1
@@ -237,6 +243,7 @@ end
 
 function Fighter:defeat(attacker)
     self.bodysolid = false
+    self.canbeattacked = false
     self.canbegrabbed = nil
     self:stopAttack()
     self.velx, self.vely = 0, 0
@@ -250,11 +257,12 @@ end
 function Fighter:getup(attacker)
     self.sprite:changeAsepriteAnimation("getup", 1, "stop")
     coroutine.wait(27)
-    local recoverai = self.hurtrecoverai
+    local recoverai = self.aiaftergetup or self.recoverai
     if not recoverai then
-        print("No hurtrecoverai for "..self.type)
+        print("No aiaftergetup or recoverai for "..self.type)
         return "defeat", attacker
     end
+    self.canbeattacked = true
     self.canbegrabbed = true
     self.bodysolid = true
     return recoverai

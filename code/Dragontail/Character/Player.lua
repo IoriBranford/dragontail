@@ -27,6 +27,8 @@ end
 
 function Player:control()
     self.bodysolid = true
+    self.canbeattacked = true
+    self.canbegrabbed = true
     local opponents = self.opponents
     self.facex = self.facex or 1
     self.facey = self.facey or 0
@@ -223,8 +225,11 @@ function Player:hold(enemy)
 end
 
 function Player:spinThrow(attacktype, angle, enemy)
-    Fighter.startHolding(self, enemy)
+    enemy.canbeattacked = false
+    self.canbeattacked = false
+    self.canbegrabbed = false
     Database.fill(self, attacktype)
+    Database.fill(enemy, "human-in-spinning-throw")
     local spinvel = self.attackspinspeed or 0
     local spintime = self.attackhittime or 0
     -- local attackagain = false
@@ -253,7 +258,7 @@ function Player:spinThrow(attacktype, angle, enemy)
         self:accelerateTowardsVel(targetvelx, targetvely, 4)
         local velx, vely = self.velx, self.vely
 
-        self:startAttack(angle)
+        enemy:startAttack(angle)
         faceAngle(self, angle)
         local attackanimation = self.swinganimation
         if attackanimation then
@@ -280,12 +285,15 @@ function Player:spinThrow(attacktype, angle, enemy)
         t = t - 1
     until 2*pi <= spunmag and (not keepspinning or 6*pi <= spunmag)
     Audio.play(self.throwsound)
-    self:stopAttack()
+    enemy:stopAttack()
     Fighter.stopHolding(self, enemy)
+    enemy.canbeattacked = true
     Script.start(enemy, enemy.thrownai or "thrown", self, angle)
     -- if attackagain then
     --     return Player.spinAttack, "tail-swing-ccw", angle
     -- end
+    self.canbeattacked = true
+    self.canbegrabbed = true
     return Player.control
 end
 
