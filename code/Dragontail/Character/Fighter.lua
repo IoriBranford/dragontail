@@ -14,6 +14,7 @@ local yield = coroutine.yield
 
 function Fighter:startHolding(opponent)
     self.heldopponent = opponent
+    opponent:stopAttack()
     opponent:stopGuarding()
     opponent.bodysolid = nil
     opponent.heldby = self
@@ -77,7 +78,7 @@ function Fighter:hurt(attacker)
     local recoverai = self.hurtrecoverai
     if not recoverai then
         print("No hurtrecoverai for "..self.type)
-        return Fighter.defeat, attacker
+        return "defeat", attacker
     end
     self.canbegrabbed = true
     return recoverai
@@ -219,7 +220,7 @@ function Fighter:fall(attacker)
         until t > 20
         return self.getupai or "getup", attacker
     end
-    return Fighter.defeat, attacker
+    return "defeat", attacker
 end
 
 function Fighter:defeat(attacker)
@@ -240,7 +241,7 @@ function Fighter:getup(attacker)
     local recoverai = self.hurtrecoverai
     if not recoverai then
         print("No hurtrecoverai for "..self.type)
-        return Fighter.defeat, attacker
+        return "defeat", attacker
     end
     self.canbegrabbed = true
     self.bodysolid = true
