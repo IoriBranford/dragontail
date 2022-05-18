@@ -39,6 +39,7 @@ end
 
 function Common:containerBreak(attacker)
     self.bodysolid = false
+    self.canbeattacked = false
     Audio.play(self.defeatsound)
     self.sprite:changeAsepriteAnimation("collapse", 1, "stop")
     local item = self.item
@@ -96,6 +97,7 @@ function Common:projectileHit(opponent)
         self.sprite:changeAsepriteAnimation(attackhitanimation)
     end
     self.bodysolid = false
+    self.canbeattacked = false
     self:stopAttack()
     self.velx, self.vely = 0, 0
     yield()
