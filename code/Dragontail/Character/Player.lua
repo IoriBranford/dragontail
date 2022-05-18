@@ -39,7 +39,7 @@ function Player:control()
 
         local facex, facey = self.facex, self.facey
         local targetvelx, targetvely = 0, 0
-        local speed = b3down and 3 or 6
+        local speed = b3down and 2 or 5
         if inx ~= 0 or iny ~= 0 then
             inx, iny = norm(inx, iny)
             targetfacex, targetfacey = inx, iny
