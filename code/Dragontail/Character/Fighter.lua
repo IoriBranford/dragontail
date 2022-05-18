@@ -195,6 +195,7 @@ end
 
 function Fighter:fall(attacker)
     self.canbegrabbed = nil
+    self.bodysolid = false
     self:stopAttack()
     local defeatanimation = self.defeatanimation or "collapse"
     local bounds = self.bounds
@@ -222,6 +223,7 @@ function Fighter:fall(attacker)
 end
 
 function Fighter:defeat(attacker)
+    self.bodysolid = false
     self.canbegrabbed = nil
     self:stopAttack()
     self.velx, self.vely = 0, 0
