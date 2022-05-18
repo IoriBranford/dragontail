@@ -163,8 +163,7 @@ local function updateLungeAttack(self, attackangle, lungespeed)
     return lungespeed
 end
 
-function Enemy:attack(attackname)
-    attackname = attackname or "attack"
+function Enemy:attack()
     self:stopGuarding()
     if self.attackwindupinvuln then
         self.hitreactiondisabled = true
@@ -177,7 +176,7 @@ function Enemy:attack(attackname)
     local oppox, oppoy = opponent.x, opponent.y
     local tooppox, tooppoy = oppox - x, oppoy - y
     local tooppoangle = 0
-    if oppox ~= x and oppoy ~= y then
+    if oppox ~= x or oppoy ~= y then
         faceDir(self, tooppox, tooppoy)
         tooppoangle = atan2(tooppoy, tooppox)
     end
