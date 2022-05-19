@@ -232,7 +232,6 @@ function Player:spinThrow(attacktype, angle, enemy)
     Database.fill(enemy, "human-in-spinning-throw")
     local spinvel = self.attackspinspeed or 0
     local spintime = self.attackhittime or 0
-    -- local attackagain = false
     local t = spintime
     local x, y = self.x, self.y
     local radii = self.bodyradius + enemy.bodyradius
@@ -242,15 +241,16 @@ function Player:spinThrow(attacktype, angle, enemy)
     else
         holddirx = 1
     end
+    local throwx, throwy = cos(angle), sin(angle)
     local spunmag = 0
     local spinmag = abs(spinvel)
-    local keepspinning = false
     repeat
         local inx, iny = Controls.getDirectionInput()
         local targetvelx, targetvely = 0, 0
         local speed = 2
         if inx ~= 0 or iny ~= 0 then
             inx, iny = norm(inx, iny)
+            throwx, throwy = inx, iny
             targetvelx = inx * speed
             targetvely = iny * speed
         end
@@ -272,26 +272,21 @@ function Player:spinThrow(attacktype, angle, enemy)
         enemy.y = y + vely + holddiry*radii
 
         yield()
-        keepspinning = Controls.getButtonsDown()
-        -- attackagain = attackagain or Controls.getButtonsPressed()
         angle = angle + spinvel
         if math.ceil(spunmag / 2 / pi) < math.ceil((spunmag+spinmag) / 2 / pi) then
             Audio.play(self.windupsound)
-            if self.attackdamage then
-                enemy.health = enemy.health - self.attackdamage
-            end
         end
         spunmag = spunmag + spinmag
         t = t - 1
-    until 2*pi <= spunmag and (not keepspinning or 6*pi <= spunmag)
+    until 2*pi <= spunmag and (dot(throwx, throwy, holddirx, holddiry) >= cos(spinmag))
     Audio.play(self.throwsound)
     enemy:stopAttack()
     Fighter.stopHolding(self, enemy)
     enemy.canbeattacked = true
-    Script.start(enemy, enemy.thrownai or "thrown", self, angle)
-    -- if attackagain then
-    --     return Player.spinAttack, "tail-swing-ccw", angle
-    -- end
+    if self.attackdamage then
+        enemy.health = enemy.health - self.attackdamage
+    end
+    Script.start(enemy, enemy.thrownai or "thrown", self, atan2(throwy, throwx))
     self.canbeattacked = true
     self.canbegrabbed = true
     return Player.control
