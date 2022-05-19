@@ -16,7 +16,7 @@ zip -r ${GAME_ASSET} \
         conf.lua \
         main.lua \
         libraries \
-        scripts \
+        code \
         shaders \
         version \
         data
