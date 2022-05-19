@@ -11,6 +11,7 @@ local norm = math.norm
 local atan2 = math.atan2
 local mid = math.mid
 local yield = coroutine.yield
+local dist = math.dist
 
 function Fighter:startHolding(opponent)
     self.heldopponent = opponent
@@ -209,6 +210,39 @@ function Fighter:thrownRecover(thrower)
         return "defeat", thrower
     end
     return recoverai
+end
+
+function Fighter:breakaway(other)
+    Audio.play(self.breakawaysound)
+    Fighter.stopHolding(other, self)
+    Fighter.stopHolding(self, other)
+    local breakspeed = 10
+    local dirx, diry = norm(other.x - self.x, other.y - self.y)
+    local bodyradius = self.bodyradius
+    local hitsparkcharacter = {
+        type = "spark-hit",
+        x = self.x + dirx*bodyradius,
+        y = self.y + diry*bodyradius,
+    }
+    Stage.addCharacter(hitsparkcharacter)
+    self.velx, self.vely = -dirx * breakspeed, -diry * breakspeed
+
+    local bounds = self.bounds
+    local t = 1
+    -- self.hurtstun = self.breakawaystun or 15
+    repeat
+        yield()
+        self:accelerateTowardsVel(0, 0, 8)
+        self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+        t = t + 1
+    until t > 15
+
+    self.velx, self.vely = 0, 0
+    local attackafterbreakaway = self.attackafterbreakaway
+    if attackafterbreakaway then
+        Database.fill(self, attackafterbreakaway)
+    end
+    return self.aiafterbreakaway or self.recoverai
 end
 
 function Fighter:fall(attacker)

@@ -165,7 +165,7 @@ function Player:hold(enemy)
     end
     local holdangle = atan2(holddiry, holddirx)
     local holddestangle = holdangle
-    local time = enemy.holdstun
+    local time = enemy.timetobreakhold or 60
     while time > 0 do
         yield()
         enemy = self.heldopponent
@@ -220,8 +220,8 @@ function Player:hold(enemy)
             return Player.spinThrow, "spinning-throw", holdangle, enemy
         end
     end
-    Fighter.stopHolding(self, enemy)
-    return Player.control
+    Script.start(enemy, Fighter.breakaway, self)
+    return Fighter.breakaway, enemy
 end
 
 function Player:spinThrow(attacktype, angle, enemy)
