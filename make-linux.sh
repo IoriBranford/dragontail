@@ -101,9 +101,9 @@ then
 	set_property love.desktop Icon "appicon"
 fi
 mv love.desktop ${PROJECT_TITLE_NOSPACE}.desktop
-cat usr/bin/love ../${GAME_ASSET} > love-fused
-mv love-fused usr/bin/love
-chmod +x usr/bin/love
+cat bin/love ../${GAME_ASSET} > love-fused
+mv love-fused bin/love
+chmod +x bin/love
 cd ..
 
 mkdir -p $GAME_DIR
