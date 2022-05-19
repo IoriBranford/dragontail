@@ -7,8 +7,8 @@ variables:
         PROJECT_TITLE_NOSPACE: Rose_of_Dragontail
         DESCRIPTION: "Smash evil in a swing of a tail"
         COPYRIGHT: "© 2022 IoriBranford"
-        APPLICATION_ID_BASE: "io.itch.ioribranford.dragontail"
-        LOVE_VERSION: "11.3"
+        APPLICATION_ID_BASE: "io.itch.ioribranford.roseofdragontail"
+        LOVE_VERSION: "11.4"
         SCREEN_ORIENTATION: "landscape"
         GAME_TYPE: game
         VERSION: "${CI_COMMIT_REF_NAME}"
