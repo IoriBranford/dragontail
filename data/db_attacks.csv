@@ -2,7 +2,7 @@ attacktype,speed,attackradius,attackarc,attackdamage,attackstun,attackstunself,a
 tail-swing-cw,,32,0.314159265358979,25,20,10,0.628318530717959,,,,20,,,,nil,thrown,,attackA,,sounds/combat/swing2.mp3,sounds/combat/hit1.mp3,sounds/combat/hit3.mp3,nil,spark-hit,spark-guard
 tail-swing-ccw,,32,0.314159265358979,25,20,10,-0.628318530717959,,,,20,,,,nil,thrown,,attackB,,sounds/combat/swing2.mp3,sounds/combat/hit1.mp3,sounds/combat/hit3.mp3,nil,spark-hit,spark-guard
 spinning-throw,,0,0,25,0,0,0.392699081698724,,,,,,,,,,,spinthrow,sounds/combat/swing3.mp3,sounds/combat/swing2.mp3,,,nil,spark-hit,spark-guard
-human-in-spinning-throw,,16,1.5707963267949,10,12,3,,,,,20,,,,thrown,thrown,,,,,sounds/combat/hit2.mp3,,nil,spark-hit,spark-guard
+human-in-spinning-throw,,24,1.5707963267949,10,12,3,,,,,20,,,,thrown,thrown,,,,,sounds/combat/hit2.mp3,,nil,spark-hit,spark-guard
 kick,,32,0.261799387799149,25,20,10,,32,,,10,,,,thrown,thrown,,kick,,sounds/combat/swing1.mp3,sounds/combat/hit3.mp3,,nil,spark-hit,spark-guard
 running-elbow,,20,1.5707963267949,10,12,3,,4,,,10,,,,nil,nil,,elbow,,nil,sounds/combat/hit1.mp3,,nil,spark-hit,spark-guard
 dagger-swing,,32,0.196349540849362,10,12,,,,,,,5,,,nil,nil,attackA,attackB,sounds/man_light/attack1.mp3,sounds/combat/swing1.mp3,sounds/combat/cut.mp3,,,nil,nil
