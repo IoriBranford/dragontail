@@ -218,17 +218,19 @@ end
 function Character:getBoundsPenetration(bx, by, bw, bh)
     local x, y = self.x, self.y
     local bodyradius = self.bodyradius
-    local dx, dy, dw, dh = x - bx, y - by, bw - bodyradius, bh - bodyradius
+    local x1, x2 = x - bodyradius, x + bodyradius
+    local y1, y2 = y - bodyradius, y + bodyradius
+    local bx2, by2 = bx + bw, by + bh
     local penex, peney
-    if dx < bodyradius then
-        penex = dx - bodyradius
-    elseif dx > dw then
-        penex = dx - dw
+    if x1 < bx then
+        penex = x1 - bx
+    elseif x2 > bx2 then
+        penex = x2 - bx2
     end
-    if dy < bodyradius then
-        peney = dy - bodyradius
-    elseif dy > dh then
-        peney = dy - dh
+    if y1 < by then
+        peney = y1 - by
+    elseif y2 > by2 then
+        peney = y2 - by2
     end
     return penex, peney
 end
@@ -238,11 +240,15 @@ function Character:keepInBounds(bx, by, bw, bh, bounce)
     bounce = bounce or 0
     if penex then
         self.x = self.x - penex
-        self.velx = bounce * -self.velx
+        if self.velx * penex > 0 then
+            self.velx = bounce * -self.velx
+        end
     end
     if peney then
         self.y = self.y - peney
-        self.vely = bounce * -self.vely
+        if self.vely * peney > 0 then
+            self.vely = bounce * -self.vely
+        end
     end
     return penex, peney
 end
