@@ -144,10 +144,37 @@ function Fighter:knockedBack(thrower, attackangle)
         recovertime = recovertime - 1
     until recovertime <= 0 or oobx or ooby
     -- if oobx or ooby then
-    --     return Fighter.wallSlammed, thrower, oobx, ooby
+    --     return Fighter.wallBump, thrower, oobx, ooby
     -- end
 
     return self.aiafterthrown or "fall"
+end
+
+function Fighter:wallBump(thrower, oobx, ooby)
+    self.bodysolid = true
+    oobx, ooby = norm(oobx or 0, ooby or 0)
+    self:stopAttack()
+    local bodyradius = self.bodyradius or 1
+    Stage.addCharacter(
+        {
+            type = "spark-hit",
+            x = self.x + oobx*bodyradius,
+            y = self.y + ooby*bodyradius
+        }
+    )
+    Audio.play(self.bodybumpsound)
+    self.health = self.health - (self.wallbumpdamage or 10)
+    self.hurtstun = self.wallbumpstun or 3
+    self.velx, self.vely = 0, 0
+    yield()
+    local wallslamcounterattack = self.wallslamcounterattack
+    if self.health > 0 and wallslamcounterattack and self.script.attack then
+        Database.fill(self, wallslamcounterattack)
+        self.canbeattacked = true
+        self.canbegrabbed = true
+        return self.script.attack, wallslamcounterattack, atan2(-(ooby or 0), -(oobx or 0))
+    end
+    return Fighter.fall, thrower
 end
 
 function Fighter:thrown(thrower, attackangle)
