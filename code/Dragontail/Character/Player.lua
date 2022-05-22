@@ -77,7 +77,7 @@ function Player:control()
         local velx, vely = self.velx, self.vely
 
         for i, opponent in ipairs(opponents) do
-            if dot(opponent.x - x, opponent.y - y, velx, vely) > 0 then
+            if dot(opponent.x - x, opponent.y - y, inx, iny) > 0 then
                 if opponent.canbegrabbed and self:testBodyCollision(opponent) then
                     if b3down or lensq(velx, vely) <= 9 then
                         return Player.hold, opponent
