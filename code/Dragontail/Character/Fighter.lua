@@ -114,6 +114,42 @@ function Fighter:held(holder)
     return recoverai
 end
 
+function Fighter:knockedBack(thrower, attackangle)
+    Audio.play(self.hurtsound)
+    local dirx, diry
+    if attackangle then
+        dirx, diry = cos(attackangle), sin(attackangle)
+    else
+        local velx, vely = thrower.velx, thrower.vely
+        if velx ~= 0 or vely ~= 0 then
+            dirx, diry = norm(velx, vely)
+        else
+            dirx, diry = norm(self.x - thrower.x, self.y - thrower.y)
+        end
+    end
+    self.canbeattacked = false
+    self.canbegrabbed = nil
+    self.bodysolid = false
+    self.hurtstun = 0
+    -- self.sprite:changeAsepriteAnimation("knockedback")
+    self:stopAttack()
+    local thrownspeed = self.knockedbackspeed or 10
+    self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
+    local bounds = self.bounds
+    local recovertime = self.knockedbacktime or 6
+    local oobx, ooby
+    repeat
+        yield()
+        oobx, ooby = self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+        recovertime = recovertime - 1
+    until recovertime <= 0 or oobx or ooby
+    -- if oobx or ooby then
+    --     return Fighter.wallSlammed, thrower, oobx, ooby
+    -- end
+
+    return self.aiafterthrown or "fall"
+end
+
 function Fighter:thrown(thrower, attackangle)
     Audio.play(self.hurtsound)
     local dirx, diry
@@ -134,7 +170,7 @@ function Fighter:thrown(thrower, attackangle)
     self.hurtstun = 0
     self.sprite:changeAsepriteAnimation("spin")
     Database.fill(self, "human-thrown")
-    local thrownspeed = self.knockedspeed or 8
+    local thrownspeed = self.thrownspeed or 8
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
     local thrownsound = Audio.newSource(self.swingsound)
     thrownsound:play()
