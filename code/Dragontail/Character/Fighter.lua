@@ -136,16 +136,16 @@ function Fighter:knockedBack(thrower, attackangle)
     local thrownspeed = self.knockedbackspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
     local bounds = self.bounds
-    local recovertime = self.knockedbacktime or 6
+    local recovertime = self.knockedbacktime or 10
     local oobx, ooby
     repeat
         yield()
         oobx, ooby = self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
         recovertime = recovertime - 1
     until recovertime <= 0 or oobx or ooby
-    -- if oobx or ooby then
-    --     return Fighter.wallBump, thrower, oobx, ooby
-    -- end
+    if oobx or ooby then
+        return Fighter.wallBump, thrower, oobx, ooby
+    end
 
     return self.aiafterthrown or "fall"
 end
