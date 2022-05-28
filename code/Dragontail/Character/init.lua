@@ -13,6 +13,7 @@ local asin = math.asin
 local lensq = math.lensq
 local dot = math.dot
 local min = math.min
+local max = math.max
 local testcircles = math.testcircles
 
 ---@class Character
@@ -128,6 +129,20 @@ function Character:addToScene(scene)
     end
 end
 
+function Character:makeAfterImage()
+    local Stage = require "Dragontail.Stage"
+    Stage.addCharacter({
+        x = self.x,
+        y = self.y,
+        asepritefile = self.asepritefile,
+        animation = self.sprite.asepriteframe,
+        spriteoriginx = self.spriteoriginx,
+        spriteoriginy = self.spriteoriginy,
+        script = "Dragontail.Character.Common",
+        initialai = "afterimage"
+    })
+end
+
 function Character:move(dx, dy)
     self.x = self.x + dx * self.speed
     self.y = self.y + dy * self.speed
@@ -178,6 +193,14 @@ function Character:fixedupdate()
     Script.run(self)
     self:animateSprite(self.sprite)
     self:animateSprite(self.emote)
+end
+
+function Character:fixedupdateShake(time)
+    time = max(0, time - 1)
+    if self.sprite then
+        self.sprite.ox = self.spriteoriginx + 2*math.sin(time)
+    end
+    return time
 end
 
 function Character:update(dsecs, fixedfrac)

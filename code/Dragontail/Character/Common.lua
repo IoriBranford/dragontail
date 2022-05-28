@@ -6,10 +6,22 @@ local wait = coroutine.wait
 local atan2 = math.atan2
 local cos = math.cos
 local sin = math.sin
+local max = math.max
 local Common = {}
 
 function Common:spark()
     wait(self.sparktime or 30)
+    self:disappear()
+end
+
+function Common:afterimage()
+    local sprite = self.sprite
+    local afterimagetime = max(1, self.afterimagetime or 30)
+    local deltaalpha = 1/afterimagetime
+    for i = 1, afterimagetime do
+        sprite.alpha = sprite.alpha - deltaalpha
+        yield()
+    end
     self:disappear()
 end
 
