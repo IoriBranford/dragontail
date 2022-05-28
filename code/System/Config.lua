@@ -18,8 +18,11 @@ function Config.load(defaultconfig)
 	Config.reset(defaultconfig)
 	if love.filesystem.getInfo(filename) then
 		local fileconfig = love.filesystem.load(filename)()
-		for k,v in pairs(fileconfig) do
-			Config[k] = v
+		if fileconfig._version < defaultconfig._version then
+		else
+			for k,v in pairs(fileconfig) do
+				Config[k] = v
+			end
 		end
 	end
 end
