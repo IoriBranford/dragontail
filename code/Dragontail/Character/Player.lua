@@ -36,12 +36,12 @@ function Player:control()
     while true do
         yield()
         local inx, iny = Controls.getDirectionInput()
-        local b1pressed, b2pressed = Controls.getButtonsPressed()
+        local b1pressed, b2pressed, b3pressed = Controls.getButtonsPressed()
         local _, _, b3down = Controls.getButtonsDown()
 
         local facex, facey = self.facex, self.facey
         local targetvelx, targetvely = 0, 0
-        local speed = b3down and 2 or 5
+        local speed = b3down and 8 or 4
         if inx ~= 0 or iny ~= 0 then
             inx, iny = norm(inx, iny)
             targetfacex, targetfacey = inx, iny
@@ -70,19 +70,27 @@ function Player:control()
         if b2pressed then
             return Player.straightAttack, "kick", atan2(facey, facex)
         end
+        if b3pressed then
+            Audio.play(self.dashsound)
+        end
 
         self:accelerateTowardsVel(targetvelx, targetvely, b3down and 4 or 8)
 
         local x, y = self.x, self.y
         local velx, vely = self.velx, self.vely
 
+        if b3down then
+            if math.floor(love.timer.getTime() * 60) % 3 == 0 then
+                self:makeAfterImage()
+            end
+        end
         for i, opponent in ipairs(opponents) do
             if dot(opponent.x - x, opponent.y - y, inx, iny) > 0 then
                 if opponent.canbegrabbed and self:testBodyCollision(opponent) then
-                    if b3down or lensq(velx, vely) <= 9 then
-                        return Player.hold, opponent
-                    else
+                    if b3down and lensq(velx, vely) > 16 then
                         return Player.straightAttack, "running-elbow", atan2(vely, velx)
+                    else
+                        return Player.hold, opponent
                     end
                 end
             end
