@@ -42,8 +42,12 @@ function Player:control()
         local targetvelx, targetvely = 0, 0
         local speed = b3down and 8 or 4
         if inx ~= 0 or iny ~= 0 then
+            if lensq(inx, iny) > 1 then
                 inx, iny = norm(inx, iny)
                 targetfacex, targetfacey = inx, iny
+            else
+                targetfacex, targetfacey = norm(inx, iny)
+            end
             targetvelx = inx * speed
             targetvely = iny * speed
         end
