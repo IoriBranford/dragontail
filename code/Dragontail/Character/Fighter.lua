@@ -129,7 +129,6 @@ function Fighter:knockedBack(thrower, attackangle)
     end
     self.canbeattacked = false
     self.canbegrabbed = nil
-    self.bodysolid = false
     self.hurtstun = 0
     -- self.sprite:changeAsepriteAnimation("knockedback")
     self:stopAttack()
@@ -151,7 +150,6 @@ function Fighter:knockedBack(thrower, attackangle)
 end
 
 function Fighter:wallBump(thrower, oobx, ooby)
-    self.bodysolid = true
     oobx, ooby = norm(oobx or 0, ooby or 0)
     self:stopAttack()
     local bodyradius = self.bodyradius or 1
@@ -193,7 +191,6 @@ function Fighter:thrown(thrower, attackangle)
     end
     self.canbeattacked = false
     self.canbegrabbed = nil
-    self.bodysolid = false
     self.hurtstun = 0
     self.sprite:changeAsepriteAnimation("spin")
     Database.fill(self, "human-thrown")
@@ -218,7 +215,6 @@ function Fighter:thrown(thrower, attackangle)
 end
 
 function Fighter:wallSlammed(thrower, oobx, ooby)
-    self.bodysolid = true
     oobx, ooby = norm(oobx or 0, ooby or 0)
     self:stopAttack()
     local bodyradius = self.bodyradius or 1
@@ -264,7 +260,6 @@ function Fighter:thrownRecover(thrower)
         return Fighter.wallSlammed, thrower, oobx, ooby
     end
 
-    self.bodysolid = true
     self.canbeattacked = true
     self.canbegrabbed = true
     local recoverai = self.recoverai
@@ -311,7 +306,6 @@ end
 function Fighter:fall(attacker)
     self.canbegrabbed = nil
     self.canbeattacked = false
-    self.bodysolid = true
     local defeatanimation = self.defeatanimation or "collapse"
     local bounds = self.bounds
     self.sprite:changeAsepriteAnimation(defeatanimation, 1, "stop")
@@ -339,7 +333,6 @@ function Fighter:fall(attacker)
 end
 
 function Fighter:defeat(attacker)
-    self.bodysolid = false
     self.canbeattacked = false
     self.canbegrabbed = nil
     self:stopAttack()
@@ -361,7 +354,6 @@ function Fighter:getup(attacker)
     end
     self.canbeattacked = true
     self.canbegrabbed = true
-    self.bodysolid = true
     return recoverai
 end
 

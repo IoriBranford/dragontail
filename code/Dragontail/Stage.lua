@@ -13,7 +13,10 @@ local max = math.max
 local min = math.min
 
 local scene
-local player, enemies, solids, allcharacters
+local player -- character controlled by player
+local enemies -- characters player must beat to advance
+local solids -- characters who should block others' movement
+local allcharacters
 local bounds
 local map
 local roomindex
@@ -94,7 +97,7 @@ end
 local addCharacter = Stage.addCharacter
 
 function Stage.addCharacters(objects)
-    for i, object in ipairs(objects) do
+    for _, object in ipairs(objects) do
         local typ = object.type
         if typ ~= "" then
             if typ == "bounds" then
@@ -169,22 +172,26 @@ local function pruneDisappeared(characters, onempty, ...)
 end
 
 function Stage.fixedupdate()
-    for i, character in ipairs(allcharacters) do
+    for _, character in ipairs(allcharacters) do
         character:fixedupdate()
     end
-    if player.bodysolid then
-        for i, solid in ipairs(solids) do
-            player:collideWithCharacterBody(solid)
+    for _, solid in ipairs(solids) do
+        solid:collideWithCharacterAttack(player)
+        for _, enemy in ipairs(enemies) do
+            solid:collideWithCharacterAttack(enemy)
         end
     end
-    for i, enemy in ipairs(enemies) do
-        for j, solid in ipairs(solids) do
-            if enemy:collideWithCharacterAttack(solid) then
-                -- infighting!
-                -- enemy.opponent = otherenemy
-            end
+    for _, enemy in ipairs(enemies) do
+        enemy:collideWithCharacterAttack(player)
+        for _, enemy2 in ipairs(enemies) do
+            enemy:collideWithCharacterAttack(enemy2)
         end
+    end
+    for _, enemy in ipairs(enemies) do
         player:collideWithCharacterAttack(enemy)
+    end
+    for _, solid in ipairs(solids) do
+        player:collideWithCharacterBody(solid)
     end
     player:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
 
@@ -200,7 +207,7 @@ function Stage.fixedupdate()
 end
 
 function Stage.update(dsecs, fixedfrac)
-    for i, character in ipairs(allcharacters) do
+    for _, character in ipairs(allcharacters) do
         character:update(dsecs, fixedfrac)
     end
 end

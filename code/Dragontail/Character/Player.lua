@@ -26,7 +26,6 @@ local function faceAngle(self, angle)
 end
 
 function Player:control()
-    self.bodysolid = true
     self.canbeattacked = true
     self.canbegrabbed = true
     local opponents = self.opponents
@@ -43,8 +42,8 @@ function Player:control()
         local targetvelx, targetvely = 0, 0
         local speed = b3down and 8 or 4
         if inx ~= 0 or iny ~= 0 then
-            inx, iny = norm(inx, iny)
-            targetfacex, targetfacey = inx, iny
+                inx, iny = norm(inx, iny)
+                targetfacex, targetfacey = inx, iny
             targetvelx = inx * speed
             targetvely = iny * speed
         end

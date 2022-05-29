@@ -37,18 +37,6 @@ function Common:blinkOut(t)
     self:disappear()
 end
 
-function Common:containerWaitForBreak()
-    local solids = self.solids
-    while true do
-        yield()
-        for _, solid in ipairs(solids) do
-            if self:collideWithCharacterAttack(solid) then
-                return Common.containerBreak
-            end
-        end
-    end
-end
-
 function Common:containerBreak(attacker)
     self.bodysolid = false
     self.canbeattacked = false
@@ -108,7 +96,6 @@ function Common:projectileHit(opponent)
         attackhitanimation = self.getDirectionalAnimation_angle(attackhitanimation, self.attackangle, self.animationdirections)
         self.sprite:changeAsepriteAnimation(attackhitanimation)
     end
-    self.bodysolid = false
     self.canbeattacked = false
     self:stopAttack()
     self.velx, self.vely = 0, 0
