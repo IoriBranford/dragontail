@@ -126,11 +126,11 @@ function Common:projectileDeflected(deflector)
     local attackangle = deflector.attackangle
     yield()
 
-    local shooter = self.shooter
-    if shooter and shooter.team ~= "player" and deflector.team == "player" then
-        attackangle = atan2(shooter.y - self.y, shooter.x - self.x)
+    local thrower = self.thrower
+    if thrower and thrower.team ~= "player" and deflector.team == "player" then
+        attackangle = atan2(thrower.y - self.y, thrower.x - self.x)
     end
-    self.shooter = deflector
+    self.thrower = deflector
     return Common.projectileFly, deflector, attackangle
 end
 

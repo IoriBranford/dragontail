@@ -199,7 +199,7 @@ function Enemy:attack()
             y = y + bodyradius*sin(tooppoangle),
             type = attackprojectile,
             attackangle = tooppoangle,
-            shooter = self
+            thrower = self
         })
     else
         local attackangle = floor((tooppoangle + (pi/4)) / (pi/2)) * pi/2
