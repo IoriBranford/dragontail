@@ -36,11 +36,10 @@ function Player:control()
         yield()
         local inx, iny = Controls.getDirectionInput()
         local b1pressed, b2pressed, b3pressed = Controls.getButtonsPressed()
-        local _, _, b3down = Controls.getButtonsDown()
 
         local facex, facey = self.facex, self.facey
         local targetvelx, targetvely = 0, 0
-        local speed = b3down and 8 or 4
+        local speed = 4
         if inx ~= 0 or iny ~= 0 then
             if lensq(inx, iny) > 1 then
                 inx, iny = norm(inx, iny)
@@ -74,49 +73,135 @@ function Player:control()
             return Player.straightAttack, "kick", atan2(facey, facex)
         end
         if b3pressed then
-            Audio.play(self.dashsound)
+            return Player.run
         end
 
-        self:accelerateTowardsVel(targetvelx, targetvely, b3down and 4 or 8)
+        self:accelerateTowardsVel(targetvelx, targetvely, 8)
 
         local x, y = self.x, self.y
         local velx, vely = self.velx, self.vely
 
-        if b3down then
-            if math.floor(love.timer.getTime() * 60) % 3 == 0 then
-                self:makeAfterImage()
-            end
-        end
         for i, opponent in ipairs(opponents) do
             if dot(opponent.x - x, opponent.y - y, inx, iny) > 0 then
                 if opponent.canbegrabbed and self:testBodyCollision(opponent) then
-                    if b3down and lensq(velx, vely) > 16 then
-                        return Player.straightAttack, "running-elbow", atan2(vely, velx)
-                    else
-                        return Player.hold, opponent
-                    end
+                    return Player.hold, opponent
                 end
             end
         end
-        -- local veldot = dot(velx, vely, inx, iny)
-        local attackangle
-        -- if not b2
-        -- and (inx ~= 0 or iny ~= 0)
-        -- and veldot <= len(velx, vely) * speed * cos(pi/4) then
-        --     attackangle = atan2(-iny, -inx)
-        -- else
-        --     attackangle = nil
-        -- end
-        -- self:startAttack(attackangle)
+
         local animation
-        if attackangle then
-            -- local attackanimation = self.getDirectionalAnimation_angle("attackA", attackangle, 8)
-            -- self.sprite:changeAsepriteAnimation(attackanimation)
-        elseif velx ~= 0 or vely ~= 0 then
+        if velx ~= 0 or vely ~= 0 then
             animation = "run"
         else
             animation = "stand"
         end
+        animation = self.getDirectionalAnimation_angle(animation, atan2(facey, facex), self.animationdirections)
+        self.sprite:changeAsepriteAnimation(animation)
+    end
+end
+
+function Player:run()
+    Audio.play(self.dashsound)
+    self.canbeattacked = true
+    self.canbegrabbed = false
+    local bounds = self.bounds
+    local solids = self.solids
+    local opponents = self.opponents
+    local inx, iny = Controls.getDirectionInput()
+    if inx ~= 0 or iny ~= 0 then
+        self.facex, self.facey = norm(inx, iny)
+    else
+        self.facex = self.facex or 1
+        self.facey = self.facey or 0
+    end
+    local targetfacex, targetfacey = self.facex, self.facey
+    local facex, facey
+    while true do
+        yield()
+        inx, iny = Controls.getDirectionInput()
+        local b1pressed, b2pressed, b3pressed = Controls.getButtonsPressed()
+
+        facex, facey = self.facex, self.facey
+        local speed = 8
+        if inx ~= 0 or iny ~= 0 then
+            if lensq(inx, iny) > 1 then
+                inx, iny = norm(inx, iny)
+                targetfacex, targetfacey = inx, iny
+            else
+                targetfacex, targetfacey = norm(inx, iny)
+            end
+        end
+
+        local turnspeed = self.runturnspeed or pi/60
+        local facedot = dot(facex, facey, targetfacex, targetfacey)
+        local acosfacedot = acos(facedot)
+        if acosfacedot <= turnspeed then
+            facex, facey = targetfacex, targetfacey
+        elseif acosfacedot <= pi/2 then
+            local facedet = det(facex, facey, targetfacex, targetfacey)
+            if facedet < 0 then
+                turnspeed = -turnspeed
+            end
+            facex, facey = rot(facex, facey, turnspeed)
+            facex, facey = norm(facex, facey)
+        else
+            Audio.play(self.stopdashsound)
+            return Player.control
+        end
+        self.facex, self.facey = facex, facey
+        self.velx = facex * speed
+        self.vely = facey * speed
+
+        if b1pressed then
+            local spindir = facex < 0 and "ccw" or "cw"
+            return Player.spinAttack, "tail-swing-"..spindir, atan2(-facey, -facex)
+        end
+        if b2pressed then
+            return Player.straightAttack, "kick", atan2(facey, facex)
+        end
+        if b3pressed then
+            Audio.play(self.stopdashsound)
+            return Player.control
+        end
+
+        local x, y = self.x, self.y
+        local velx, vely = self.velx, self.vely
+
+        if math.floor(love.timer.getTime() * 60) % 3 == 0 then
+            self:makeAfterImage()
+        end
+
+        local oobx, ooby = self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+        if oobx or ooby then
+            oobx, ooby = norm(oobx or 0, ooby or 0)
+            Audio.play(self.bodyslamsound)
+            local Stage = require "Dragontail.Stage"
+            Stage.addCharacter(
+                {
+                    type = "spark-bighit",
+                    x = self.x + oobx*self.bodyradius,
+                    y = self.y + ooby*self.bodyradius
+                }
+            )
+            return Player.straightAttack, "running-elbow", atan2(vely, velx)
+        end
+
+        for i, opponent in ipairs(opponents) do
+            if dot(opponent.x - x, opponent.y - y, inx, iny) > 0 then
+                if opponent.canbeattacked and self:testBodyCollision(opponent) then
+                    return Player.straightAttack, "running-elbow", atan2(vely, velx)
+                end
+            end
+        end
+        for i, solid in ipairs(solids) do
+            if dot(solid.x - x, solid.y - y, inx, iny) > 0 then
+                if solid.canbeattacked and self:testBodyCollision(solid) then
+                    return Player.straightAttack, "running-elbow", atan2(vely, velx)
+                end
+            end
+        end
+
+        local animation = "run"
         animation = self.getDirectionalAnimation_angle(animation, atan2(facey, facex), self.animationdirections)
         self.sprite:changeAsepriteAnimation(animation)
     end
