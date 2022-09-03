@@ -35,7 +35,7 @@ function Player:control()
     while true do
         yield()
         local inx, iny = Controls.getDirectionInput()
-        local b1pressed, b2pressed, b3pressed = Controls.getButtonsPressed()
+        local attackpressed, runpressed = Controls.getButtonsPressed()
 
         local facex, facey = self.facex, self.facey
         local targetvelx, targetvely = 0, 0
@@ -65,14 +65,11 @@ function Player:control()
         end
         self.facex, self.facey = facex, facey
 
-        if b1pressed then
+        if attackpressed then
             local spindir = facex < 0 and "ccw" or "cw"
             return Player.spinAttack, "tail-swing-"..spindir, atan2(-facey, -facex)
         end
-        if b2pressed then
-            return Player.straightAttack, "kick", atan2(facey, facex)
-        end
-        if b3pressed then
+        if runpressed then
             return Player.run
         end
 
@@ -119,7 +116,7 @@ function Player:run()
     while true do
         yield()
         inx, iny = Controls.getDirectionInput()
-        local b1pressed, b2pressed, b3pressed = Controls.getButtonsPressed()
+        local attackpressed, runpressed = Controls.getButtonsPressed()
 
         facex, facey = self.facex, self.facey
         local speed = 8
@@ -152,14 +149,10 @@ function Player:run()
         self.velx = facex * speed
         self.vely = facey * speed
 
-        if b1pressed then
-            local spindir = facex < 0 and "ccw" or "cw"
-            return Player.spinAttack, "tail-swing-"..spindir, atan2(-facey, -facex)
+        if attackpressed then
+            return Player.straightAttack, "running-kick", atan2(facey, facex)
         end
-        if b2pressed then
-            return Player.straightAttack, "kick", atan2(facey, facex)
-        end
-        if b3pressed then
+        if runpressed then
             Audio.play(self.stopdashsound)
             return Player.control
         end
@@ -271,7 +264,7 @@ function Player:hold(enemy)
         time = time - 1
 
         local inx, iny = Controls.getDirectionInput()
-        local b1pressed, b2pressed = Controls.getButtonsPressed()
+        local attackpressed, runpressed = Controls.getButtonsPressed()
         local targetvelx, targetvely = 0, 0
         local speed = 2
         if inx ~= 0 or iny ~= 0 then
@@ -308,11 +301,10 @@ function Player:hold(enemy)
         holdanimation = self.getDirectionalAnimation_angle(holdanimation, holdangle, self.animationdirections)
         self.sprite:changeAsepriteAnimation(holdanimation)
 
-        if b2pressed then
-            Fighter.stopHolding(self, enemy)
-            return Player.straightAttack, "kick", holdangle
+        if runpressed then
+            -- run with enemy
         end
-        if b1pressed then
+        if attackpressed then
             return Player.spinThrow, "spinning-throw", holdangle, enemy
         end
     end
@@ -401,6 +393,10 @@ function Player:straightAttack(attacktype, angle)
     repeat
         yield()
         self:accelerateTowardsVel(0, 0, self.attackdecel or 8)
+        local afterimageinterval = self.afterimageinterval or 0
+        if afterimageinterval ~= 0 and t % afterimageinterval == 0 then
+            self:makeAfterImage()
+        end
         t = t - 1
     until t <= 0
     self:stopAttack()
