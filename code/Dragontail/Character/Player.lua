@@ -282,7 +282,7 @@ function Player:hold(enemy)
         self.sprite:changeAsepriteAnimation(holdanimation)
 
         if runpressed then
-            -- run with enemy
+            return Player.runWithEnemy, enemy
         end
         if attackpressed then
             return Player.spinThrow, "spinning-throw", holdangle, enemy
@@ -290,6 +290,40 @@ function Player:hold(enemy)
     end
     Script.start(enemy, Fighter.breakaway, self)
     return Fighter.breakaway, enemy
+end
+
+function Player:runWithEnemy(enemy)
+    Audio.play(self.dashsound)
+    enemy.canbeattacked = false
+    self.canbeattacked = false
+    self.canbegrabbed = false
+    local facex, facey = self.facex or 1, self.facey or 0
+    local speed = 8
+    local radii = self.bodyradius + enemy.bodyradius
+    local holdangle = atan2(facey, facex)
+    local holdanimation = "holdwalk"
+    holdanimation = self.getDirectionalAnimation_angle(holdanimation, holdangle, self.animationdirections)
+    self.sprite:changeAsepriteAnimation(holdanimation)
+    Database.fill(self, "running-with-enemy")
+    self:startAttack(holdangle)
+    while true do
+        yield()
+        self.velx, self.vely = speed*facex, speed*facey
+
+        local x, y = self.x, self.y
+        enemy.x = x + self.velx + facex*radii
+        enemy.y = y + self.vely + facey*radii
+
+        if math.floor(love.timer.getTime() * 60) % 3 == 0 then
+            self:makeAfterImage()
+        end
+
+        local oobx, ooby = findWallCollision(enemy)
+        if oobx or ooby then
+            Script.start(enemy, Fighter.wallSlammed, self, oobx, ooby)
+            return Player.straightAttack, "running-elbow", holdangle
+        end
+    end
 end
 
 function Player:spinThrow(attacktype, angle, enemy)
