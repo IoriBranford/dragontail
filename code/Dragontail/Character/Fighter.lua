@@ -216,6 +216,8 @@ function Fighter:thrown(thrower, attackangle)
 end
 
 function Fighter:wallSlammed(thrower, oobx, ooby)
+    self.canbeattacked = false
+    self.canbegrabbed = nil
     oobx, ooby = norm(oobx or 0, ooby or 0)
     self:stopAttack()
     self.thrower = nil
