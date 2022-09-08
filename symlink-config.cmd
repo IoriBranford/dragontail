@@ -1,0 +1,1 @@
+mklink config.lua "%APPDATA%\LOVE\Rose of Dragontail\config.lua"
