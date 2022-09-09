@@ -63,6 +63,9 @@ local function findWallCollision(self)
 end
 
 function Player:control()
+    self.runenergy = self.runenergy or 100
+    self.runenergymax = self.runenergymax or self.runenergy
+    self.runenergycost = self.runenergycost or 25
     self.canbeattacked = true
     self.canbegrabbed = true
     self.facex = self.facex or 1
@@ -85,11 +88,12 @@ function Player:control()
             end
         end
 
-        if not running and runpressed then
+        if runpressed and self.runenergy >= self.runenergycost then
             Audio.play(self.dashsound)
             running = true
             runpressed = false
             facex, facey = targetfacex or facex, targetfacey or facey
+            self.runenergy = self.runenergy - self.runenergycost
         end
 
         local movespeed, turnspeed, acceltime
@@ -153,11 +157,13 @@ function Player:control()
                 return Player.straightAttack, "running-elbow", atan2(vely, velx)
             end
 
-            if runpressed or acosfacedot > pi/2 then
+            self.runenergy = self.runenergy - 1
+            if self.runenergy <= 0 then
                 running = false
                 Audio.play(self.stopdashsound)
             end
         else
+            self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
             if attackpressed then
                 local spindir = facex < 0 and "ccw" or "cw"
                 return Player.spinAttack, "tail-swing-"..spindir, atan2(-facey, -facex)
@@ -281,7 +287,8 @@ function Player:hold(enemy)
         holdanimation = self.getDirectionalAnimation_angle(holdanimation, holdangle, self.animationdirections)
         self.sprite:changeAsepriteAnimation(holdanimation)
 
-        if runpressed then
+        self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
+        if runpressed and self.runenergy >= self.runenergycost then
             return Player.runWithEnemy, enemy
         end
         if attackpressed then
