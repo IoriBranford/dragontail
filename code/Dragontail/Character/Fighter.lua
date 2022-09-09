@@ -132,7 +132,7 @@ function Fighter:knockedBack(thrower, attackangle)
     self.hurtstun = 0
     -- self.sprite:changeAsepriteAnimation("knockedback")
     self:stopAttack()
-    local thrownspeed = self.knockedbackspeed or 10
+    local thrownspeed = thrower.attacklaunchspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
     local bounds = self.bounds
     local recovertime = self.knockedbacktime or 10
@@ -195,7 +195,7 @@ function Fighter:thrown(thrower, attackangle)
     self.hurtstun = 0
     self.sprite:changeAsepriteAnimation("spin")
     Database.fill(self, "human-thrown")
-    local thrownspeed = self.thrownspeed or 8
+    local thrownspeed = thrower.attacklaunchspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
     local thrownsound = Audio.newSource(self.swingsound)
     thrownsound:play()
