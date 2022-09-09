@@ -311,10 +311,11 @@ function Player:runWithEnemy(enemy)
     local holdanimation = "holdwalk"
     holdanimation = self.getDirectionalAnimation_angle(holdanimation, holdangle, self.animationdirections)
     self.sprite:changeAsepriteAnimation(holdanimation)
-    Database.fill(self, "running-with-enemy")
-    self:startAttack(holdangle)
+    Database.fill(enemy, "human-in-spinning-throw")
+    enemy:startAttack(holdangle)
     while true do
         yield()
+        local attackpressed = Controls.getButtonsPressed()
         self.velx, self.vely = speed*facex, speed*facey
 
         local x, y = self.x, self.y
@@ -325,10 +326,29 @@ function Player:runWithEnemy(enemy)
             self:makeAfterImage()
         end
 
+
+        if attackpressed then
+            enemy:stopAttack()
+            Fighter.stopHolding(self, enemy)
+            enemy.canbeattacked = true
+            return Player.straightAttack, "running-kick", holdangle
+        end
+
         local oobx, ooby = findWallCollision(enemy)
         if oobx or ooby then
             Script.start(enemy, Fighter.wallSlammed, self, oobx, ooby)
             return Player.straightAttack, "running-elbow", holdangle
+        end
+
+        self.runenergy = self.runenergy - 2
+        if self.runenergy <= 0 then
+            Audio.play(self.stopdashsound)
+            Audio.play(self.throwsound)
+            enemy:stopAttack()
+            Fighter.stopHolding(self, enemy)
+            enemy.canbeattacked = true
+            Script.start(enemy, Fighter.knockedBack, self, holdangle)
+            return Player.control
         end
     end
 end
