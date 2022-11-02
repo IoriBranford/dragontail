@@ -1,11 +1,13 @@
 local SceneObject = require "System.SceneObject"
 local Color       = require "Data.Color"
 
+---@class Scene
 local Scene = {}
 Scene.__index = Scene
 
 local insert = table.insert
 
+---@return Scene
 function Scene.new()
     local scene = {
         animating = {}
@@ -85,12 +87,15 @@ function Scene:addImageLayer(imagelayer)
 end
 
 function Scene:addTileLayer(tilelayer)
+    local hidden = not tilelayer.visible
     local tilebatch = tilelayer.tilebatch
     local layerx = tilelayer.x
     local layery = tilelayer.y
     local layerz = tilelayer.z
     if tilebatch then
-        return {self:addAnimatedChunk(tilelayer, layerx, layery, layerz)}
+        local spritebatch = self:addAnimatedChunk(tilelayer, layerx, layery, layerz)
+        spritebatch.hidden = hidden
+        return {spritebatch}
     end
     local chunks = tilelayer.chunks
     if chunks then
@@ -103,7 +108,10 @@ function Scene:addTileLayer(tilelayer)
             local h = chunk.height * cellheight
             local cx = chunk.x * cellwidth
             local cy = chunk.y * cellheight
-            sceneobjects[i] = self:addAnimatedChunk(chunk, layerx+cx, layery+cy, layerz)
+            local spritebatch = self:addAnimatedChunk(chunk, layerx+cx, layery+cy, layerz)
+            spritebatch.hidden = hidden
+            chunk.sprite = spritebatch
+            sceneobjects[i] = spritebatch
         end
         return sceneobjects
     end
@@ -137,29 +145,35 @@ function Scene:addObject(object)
     return self:addShapeObject(object)
 end
 
-function Scene:addMap(map, layerfilter)
-    local function addLayers(layers)
-        for i = 1, #layers do
-            local layer = layers[i]
-            local layertype = layer.type
-            if not layerfilter or layerfilter:find(layertype) then
-                if layer.type == "group" then
-                    addLayers(layer)
-                elseif layertype == "tilelayer" then
-                    layer.sprites = self:addTileLayer(layer)
-                elseif layertype == "objectgroup" then
-                    for i = 1, #layer do
-                        local object = layer[i]
-                        object.sprite = self:addObject(object)
-                    end
-                elseif layertype == "imagelayer" then
-                    layer.sprite = self:addImageLayer(layer)
-                end
-            end
+function Scene:addLayer(layer, layerfilter)
+    local layerhidden = not layer.visible
+    local layertype = layer.type
+    if layertype == "group" then
+        self:addLayers(layer, layerfilter)
+    elseif layertype == "tilelayer" then
+        layer.sprites = self:addTileLayer(layer)
+    elseif layertype == "objectgroup" then
+        for i = 1, #layer do
+            local object = layer[i]
+            object.sprite = self:addObject(object)
+            object.sprite.hidden = object.sprite.hidden or layerhidden
+        end
+    elseif layertype == "imagelayer" then
+        layer.sprite = self:addImageLayer(layer)
+    end
+end
+
+function Scene:addLayers(layers, layerfilter)
+    for i = 1, #layers do
+        local layer = layers[i]
+        if not layerfilter or layerfilter:find(layer.type) then
+            self:addLayer(layers[i], layerfilter)
         end
     end
+end
 
-    addLayers(map.layers)
+function Scene:addMap(map, layerfilter)
+    self:addLayers(map.layers, layerfilter)
 end
 
 function Scene:addTileParticles(tile, z)

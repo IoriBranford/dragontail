@@ -36,7 +36,9 @@ local addHash = Database.addHash
 
 function Database.addMapObjectGroup(objectgroup)
     for i = 1, #objectgroup do
-        objectgroup[i].id = nil
+        local object = objectgroup[i]
+        object.id = nil
+        Database.fillBlanks(object, object.type)
     end
     addArray("name", objectgroup)
 end
@@ -44,6 +46,7 @@ end
 function Database.addMapObjects(mapobjects)
     for _, object in pairs(mapobjects) do
         object.id = nil
+        Database.fillBlanks(object, object.type)
     end
     addHash("name", mapobjects)
 end
@@ -59,15 +62,20 @@ function Database.load(csvfilename)
     for i = 1, #fieldnames do
         fieldnames[i] = fieldnames[i]:match("^([_A-Za-z]+)")
     end
-    for i = 2, #loadedrows do
-        local row = loadedrows[i]
+    for r = 2, #loadedrows do
+        local row = loadedrows[r]
         local key = row[1]
         loadedrows[key] = row
-        for i = #row, 1, -1 do
-            if row[i] ~= "" then
-                row[fieldnames[i]] = row[i]
+        for c = #row, 1, -1 do
+            local field = fieldnames[c]
+            if field then
+                if row[c] ~= "" then
+                    row[field] = row[c]
+                end
+            else
+                print(string.format("%s no field name for data at %d,%d", csvfilename, c, r))
             end
-            row[i] = nil
+            row[c] = nil
         end
         add(key, row)
     end

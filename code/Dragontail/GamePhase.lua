@@ -13,7 +13,7 @@ function GamePhase.loadphase()
     paused = false
     local unifont = Assets.get("fonts/Unifont 16.fnt")
     love.graphics.setFont(unifont)
-    Canvas.init(Config.basewindowwidth, Config.basewindowheight)
+    Canvas.init(640, 360)
     Assets.load("music/retro-chiptune-guitar.ogg", "stream")
 
     Database.load("data/db_characters.csv")
@@ -80,7 +80,7 @@ function GamePhase.update(dsecs, fixedfrac)
 end
 
 function GamePhase.resize(w, h)
-    Canvas.init(Config.basewindowwidth, Config.basewindowheight)
+    Canvas.init(640, 360)
 end
 
 function GamePhase.draw(fixedfrac)

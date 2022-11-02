@@ -1,10 +1,14 @@
+---@class Grid
 local Grid = {}
 Grid.__index = Grid
 
+---@return Grid
 function Grid.new(width, height, cellwidth, cellheight, margin)
     margin = margin or 0
     width = width + 2*margin
     height = height + 2*margin
+
+    ---@class Grid
     local grid = {
         cellwidth = cellwidth or 1,
         cellheight = cellheight or 1,
@@ -21,9 +25,9 @@ function Grid.setmetatable(grid)
 end
 
 function Grid:inBounds(column, row)
-    -- local margin = self.margin
-    -- column = column + margin
-    -- row = row + margin
+    local margin = self.margin
+    column = column + margin
+    row = row + margin
     if column < 1 then return end
     if row < 1 then return end
     if column > self.width then return end
@@ -50,13 +54,14 @@ function Grid:toIndex(column, row)
     return row*self.width + column
 end
 
-function Grid:getWidth()
-    return self.width - 2*self.margin
-end
+-- TBD if this includes margins or not
+-- function Grid:getWidth()
+--     return self.width - 2*self.margin
+-- end
 
-function Grid:getHeight()
-    return self.height - 2*self.margin
-end
+-- function Grid:getHeight()
+--     return self.height - 2*self.margin
+-- end
 
 function Grid:get(column, row)
     return self:inBounds(column, row) and self[self:toIndex(column, row)]

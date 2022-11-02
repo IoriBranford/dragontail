@@ -31,18 +31,21 @@ function love.load(args)
     elseif args.windowed then
         Config.fullscreen = false
     end
-    Config.applyDisplayMode()
+    Config.applyDisplayMode(640, 360, 2)
     love.window.setTitle(love.filesystem.getIdentity())
-
+    local iconfile = "appicon/appicon.png"
+    if love.filesystem.getInfo(iconfile) then
+        love.window.setIcon(love.image.newImageData(iconfile))
+    end
     Tiled.animationtimeunit = "fixedupdates"
     Aseprite.animationtimeunit = "fixedupdates"
     Tiled.setFontPath("data/fonts/")
     love.graphics.setLineStyle("rough")
 
-    -- Wallpaper.load()
+    -- Wallpaper.reload()
 
-    local stagestart = args.stagestart
-    love.event.loadphase(firstphase, firstmap, stagestart)
+    local startpoint = args.startpoint
+    love.event.loadphase(firstphase, firstmap, startpoint)
 end
 
 return {
@@ -58,24 +61,9 @@ return {
     ]],
     defaultconfig = {
         _version = 2,
-        debug = false,
         drawbodies = false,
-        drawstats = false,
         drawai = false,
-        exclusive = false,
         exhibit = false,
-        rotation = 0,
-        fullscreen = true,
-        vsync = false,
-        usedpiscale = false,
-        basewindowwidth = 640,
-        basewindowheight = 360,
-        canvasresolution = "HIGH",
-        canvasscaleint = true,
-        canvasscalesoft = false,
-        musicvolume = 0.25,
-        soundvolume = 0.5,
-        resizable = false,
     
         key_left = "left",
         key_right = "right",
@@ -88,17 +76,17 @@ return {
         key_pausemenu = "escape",
         key_restart = "none",
     
-        game_rules = "ORIGINAL",
-        game_difficulty = "NORMAL",
-        game_dialogue = true,
-        player_character = "Amy",
-        player_hitbox = "FOCUSFIRE",
-        player_burst = 4,
-        practice_lives = 2,
-        practice_bombs = 1,
-        practice_wingmen = 0,
-        practice_powerlevel = 0,
-        practice_stage = "DEMONREALM",
+        -- game_rules = "ORIGINAL",
+        -- game_difficulty = "NORMAL",
+        -- game_dialogue = true,
+        -- player_character = "Amy",
+        -- player_hitbox = "FOCUSFIRE",
+        -- player_burst = 4,
+        -- practice_lives = 2,
+        -- practice_bombs = 1,
+        -- practice_wingmen = 0,
+        -- practice_powerlevel = 0,
+        -- practice_stage = "DEMONREALM",
     
         joy_deadzone = 0.25,
         joy_move1 = "left",
@@ -111,12 +99,12 @@ return {
         joy_pausemenu = "start",
         joy_namingscheme = "XBOX",
     
-        hud_inner = "AUTO",
-        hud_outer = true,
+        -- hud_inner = "AUTO",
+        -- hud_outer = true,
     
-        backgroundstyle = "ART2",
-        highscores_difficulty = "NORMAL",
-        highscores_character = "Amy",
-        highscores_onlineposition = "TOP",
+        -- backgroundstyle = "ART2",
+        -- highscores_difficulty = "NORMAL",
+        -- highscores_character = "Amy",
+        -- highscores_onlineposition = "TOP",
     }
 }

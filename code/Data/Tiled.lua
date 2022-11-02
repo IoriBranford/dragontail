@@ -1,6 +1,7 @@
 local Time = require "System.Time"
 local Color= require "Data.Color"
 local TilePacking = require "Data.TilePacking"
+local Platform    = require "System.Platform"
 local Tiled = {}
 Tiled.fontpath = ""
 Tiled.animationtimeunit = "milliseconds"
@@ -71,6 +72,7 @@ local AnimationTimeUnitToSecs = {
     objectgroup[i]                      Each object in the object group
     objectgroup[name]                   You can access the object by name if it has one
     object.z                            Drawing order, default is objectgroup's z, set with object property "z" (float)
+    object.type                         Copy of Tiled 1.9's object.class for backward compatibility
     object.tile                         Object tile from gid
     object.rotation                     Converted from degrees to radians, LOVE's standard rotation unit
     object.scalex                       Object scale x from gid flipx and tile width
@@ -300,7 +302,7 @@ function Tiled.addTileset(tileset)
 
         local tile = tileset[tileid]
         tile.id = tileid
-        tile.type = tiledata.type
+        tile.type = tiledata.class or tiledata.type
         local properties = tiledata.properties
         local name = properties and properties.name
         if name then
@@ -314,6 +316,18 @@ function Tiled.addTileset(tileset)
 
     propertiesToFields(tileset)
     return tileset
+end
+
+function Tiled.isAnimationEnded(animation, i, t)
+    local duration = animation[i].duration
+    while t >= duration do
+        if i >= #animation then
+            return true
+        end
+        t = t - duration
+        i = i + 1
+        duration = animation[i].duration
+    end
 end
 
 function Tiled.getAnimationUpdate(animation, i, t)
@@ -330,25 +344,18 @@ local function decodeGids(data, encoding, compression)
     if encoding == "lua" then
         return data
     end
-    local gids = {}
-    -- if encoding == "csv" then
-    --     for gid in data:gmatch("%d+") do
-    --         gids[#gids + 1] = tonumber(gid)
-    --     end
-    --     return gids
-    -- else
+
     if encoding == "base64" then
         data = love.data.decode("data", encoding, data)
         if compression then
             data = love.data.decompress("data", compression, data)
         end
     end
-    local ffi = require "ffi"
-    local pointer = ffi.cast("uint32_t*", data:getFFIPointer())
-    local n = math.floor(data:getSize() / ffi.sizeof("uint32_t"))
 
-    for i = 0, n - 1 do
-        gids[#gids + 1] = pointer[i]
+    local gids = {}
+    local i, n = 1, data:getSize()
+    while i <= n do
+        gids[#gids + 1], i = love.data.unpack("I4", data, i)
     end
     return gids
 end
@@ -460,6 +467,8 @@ local function setLayersZ(layers, z1, dz)
     end
 end
 
+---@param mapfile string
+---@return table
 function Tiled.load(mapfile)
     local map, err = love.filesystem.load(mapfile)
     assert(map, err)
@@ -477,7 +486,7 @@ function Tiled.load(mapfile)
 
     if map.backgroundcolor then
         for i, c in ipairs(map.backgroundcolor) do
-            map.backgroundcolor[i] = (1+c) / 256
+            map.backgroundcolor[i] = c / 256
         end
     end
 
@@ -511,8 +520,14 @@ function Tiled.load(mapfile)
         end
     end
 
-    local packimagedata = TilePacking.pack(map)
-    -- TilePacking.save(map, mapfile..".quads", mapfile..".png", packimagedata)
+    if Platform.supports("tilepacking") then
+        local packimagedata, packimageerr = TilePacking.pack(map)
+        if packimagedata then
+            -- TilePacking.save(map, mapfile..".quads", mapfile..".png", packimagedata)
+        else
+            print(packimageerr)
+        end
+    end
 
     local cellwidth = map.tilewidth
     local cellheight = map.tileheight
@@ -543,6 +558,8 @@ function Tiled.load(mapfile)
             local chunks = layer.chunks
             local encoding = layer.encoding
             local compression = layer.compression
+            layer.tilewidth = cellwidth
+            layer.tileheight = cellheight
             if chunks then
                 for i = 1, #chunks do
                     local chunk = chunks[i]
@@ -556,8 +573,6 @@ function Tiled.load(mapfile)
             else
                 local gids = decodeGids(layer.data, encoding, compression)
                 layer.data = gids
-                layer.tilewidth = cellwidth
-                layer.tileheight = cellheight
                 layer.tilebatch, layer.batchanimations = Tiled.newTileBatch(maptiles, gids, cellwidth, cellheight, cols, rows)
             end
         elseif layertype == "objectgroup" then
@@ -569,6 +584,7 @@ function Tiled.load(mapfile)
                 if objectname ~= "" then
                     addIfNew(layer, objectname, object)
                 end
+                local objecttype = object.class or object.type
                 local gid = object.gid
                 if gid then
                     local sx, sy
@@ -578,11 +594,11 @@ function Tiled.load(mapfile)
                     object.scalex = sx * object.width / tile.width
                     object.scaley = sy * object.height / tile.height
 
-                    local objecttype = object.type
                     if objecttype == "" then
-                        object.type = tile.type
+                        objecttype = tile.type
                     end
                 end
+                object.type = objecttype
                 processPoly(object)
                 local text = object.text
                 if text then

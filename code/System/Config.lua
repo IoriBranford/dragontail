@@ -3,26 +3,39 @@ local pl_pretty = require "pl.pretty"
 
 local filename = "config.lua"
 
-local config = {}
+local config
 
 function Config.reset(defaultconfig)
-	config = {}
+	config = {
+        debug = false,
+        fullscreen = false,
+		maximize = true,
+        exclusive = false,
+        vsync = false,
+        usedpiscale = false,
+        canvasscaleint = true,
+        canvasscalesoft = false,
+        musicvolume = 0.5,
+        soundvolume = 0.5,
+        resizable = true,
+        drawstats = false,
+        rotation = 0,
+		variableupdate = false
+	}
 	if defaultconfig then
 		for k,v in pairs(defaultconfig) do
 			config[k] = v
 		end
 	end
 end
+Config.reset()
 
 function Config.load(defaultconfig)
 	Config.reset(defaultconfig)
 	if love.filesystem.getInfo(filename) then
 		local fileconfig = love.filesystem.load(filename)()
-		if fileconfig._version < defaultconfig._version then
-		else
-			for k,v in pairs(fileconfig) do
-				Config[k] = v
-			end
+		for k,v in pairs(fileconfig) do
+			Config[k] = v
 		end
 	end
 end
@@ -42,21 +55,23 @@ function Config.isPortraitDimensions()
 	return w < h
 end
 
-function Config.applyDisplayMode()
+function Config.isVertical()
+    local portraitrotation = Config.isPortraitRotation()
+    local portraitdimensions = Config.isPortraitDimensions()
+    return portraitrotation and not portraitdimensions
+    	or portraitdimensions and not portraitrotation
+end
+
+function Config.applyDisplayMode(basew, baseh, winmaxscale)
 	local w, h, flags = love.window.getMode()
 	local modes = love.window.getFullscreenModes()
 	local exclusive = Config.exclusive
 	local fullscreen = Config.fullscreen
-	local basew, baseh
 	if Config.isPortraitRotation() then
-		basew = Config.basewindowheight
-		baseh = Config.basewindowwidth
-	else
-		basew = Config.basewindowwidth
-		baseh = Config.basewindowheight
+		basew, baseh = baseh, basew
 	end
 	local bestmode
-	local maxscale = 1
+	local maxscale = winmaxscale or 1
 
 	if fullscreen and exclusive then
 		for i = 1, #modes do
@@ -73,7 +88,7 @@ function Config.applyDisplayMode()
 		if bestmode then
 			maxscale = math.min(bestmode.width/basew, bestmode.height/baseh)
 		end
-	else
+	elseif config.maximize then
 		local deskwidth, deskheight = love.window.getDesktopDimensions()
 		maxscale = math.min(deskwidth/basew, deskheight/baseh)
 	end
@@ -89,6 +104,9 @@ function Config.applyDisplayMode()
 	flags.x = nil
 	flags.y = nil
 	love.window.setMode(w, h, flags)
+	w, h, flags = love.window.getMode()
+	local refreshrate = flags.refreshrate or 0
+	Config.variableupdate = refreshrate == 0 or refreshrate % 15 ~= 0
 end
 
 setmetatable(Config, {
