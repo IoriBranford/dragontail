@@ -10,7 +10,7 @@ return {
   tilewidth = 8,
   tileheight = 8,
   nextlayerid = 4,
-  nextobjectid = 6,
+  nextobjectid = 7,
   properties = {},
   tilesets = {
     {
@@ -84,54 +84,37 @@ return {
       properties = {},
       objects = {
         {
-          id = 2,
-          name = "portraitbox",
-          class = "",
+          id = 4,
+          name = "run",
+          class = "Gui.Gauge",
           shape = "rectangle",
-          x = 16,
-          y = 16,
-          width = 32,
-          height = 32,
+          x = 48,
+          y = 33,
+          width = 100,
+          height = 8,
           rotation = 0,
           visible = true,
           properties = {
-            ["color"] = "#00000000",
-            ["linecolor"] = "#ffffffff",
-            ["z"] = 2
+            ["color"] = "#ff8080ff",
+            ["z"] = 0
           }
         },
         {
-          id = 5,
-          name = "healthbox",
+          id = 6,
+          name = "runbox",
           class = "",
           shape = "rectangle",
           x = 47.5,
-          y = 15.5,
+          y = 32.5,
           width = 101,
-          height = 17,
+          height = 9,
           rotation = 0,
           visible = true,
           properties = {
             ["color"] = "#00000000",
-            ["linecolor"] = "#ffff8080",
+            ["linecolor"] = "#ffc0c0ff",
             ["roundcorners"] = 2,
             ["z"] = 1
-          }
-        },
-        {
-          id = 1,
-          name = "portrait",
-          class = "",
-          shape = "rectangle",
-          x = 32,
-          y = 32,
-          width = 32,
-          height = 32,
-          rotation = 0,
-          gid = 1,
-          visible = true,
-          properties = {
-            ["z"] = 0
           }
         },
         {
@@ -151,18 +134,55 @@ return {
           }
         },
         {
-          id = 4,
-          name = "run",
-          class = "Gui.Gauge",
+          id = 5,
+          name = "healthbox",
+          class = "",
           shape = "rectangle",
-          x = 48,
-          y = 32,
-          width = 100,
-          height = 8,
+          x = 47.5,
+          y = 15.5,
+          width = 101,
+          height = 17,
           rotation = 0,
-          visible = false,
+          visible = true,
+          properties = {
+            ["color"] = "#00000000",
+            ["linecolor"] = "#ffff8080",
+            ["roundcorners"] = 2,
+            ["z"] = 2
+          }
+        },
+        {
+          id = 1,
+          name = "portrait",
+          class = "",
+          shape = "rectangle",
+          x = 32,
+          y = 32,
+          width = 32,
+          height = 32,
+          rotation = 0,
+          gid = 1,
+          visible = true,
           properties = {
             ["z"] = 0
+          }
+        },
+        {
+          id = 2,
+          name = "portraitbox",
+          class = "",
+          shape = "rectangle",
+          x = 16,
+          y = 16,
+          width = 32,
+          height = 32,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["color"] = "#00000000",
+            ["linecolor"] = "#ffffffff",
+            ["roundcorners"] = 0,
+            ["z"] = 3
           }
         }
       }

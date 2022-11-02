@@ -1,28 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="80" height="45" tilewidth="8" tileheight="8" infinite="0" nextlayerid="4" nextobjectid="6">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="80" height="45" tilewidth="8" tileheight="8" infinite="0" nextlayerid="4" nextobjectid="7">
  <editorsettings>
   <export target="gui_gameplay.lua" format="lua"/>
  </editorsettings>
  <tileset firstgid="1" source="tilesets/ui/rose-face.tsx"/>
  <objectgroup id="2" name="hud">
-  <object id="2" name="portraitbox" x="16" y="16" width="32" height="32">
+  <object id="4" name="run" class="Gui.Gauge" x="48" y="33" width="100" height="8">
    <properties>
-    <property name="color" type="color" value="#00000000"/>
-    <property name="linecolor" type="color" value="#ffffffff"/>
-    <property name="z" type="float" value="2"/>
+    <property name="color" type="color" value="#ff8080ff"/>
+    <property name="z" type="float" value="0"/>
    </properties>
   </object>
-  <object id="5" name="healthbox" x="47.5" y="15.5" width="101" height="17">
+  <object id="6" name="runbox" x="47.5" y="32.5" width="101" height="9">
    <properties>
     <property name="color" type="color" value="#00000000"/>
-    <property name="linecolor" type="color" value="#ffff8080"/>
+    <property name="linecolor" type="color" value="#ffc0c0ff"/>
     <property name="roundcorners" type="float" value="2"/>
     <property name="z" type="float" value="1"/>
-   </properties>
-  </object>
-  <object id="1" name="portrait" gid="1" x="32" y="32" width="32" height="32">
-   <properties>
-    <property name="z" type="float" value="0"/>
    </properties>
   </object>
   <object id="3" name="health" class="Gui.Gauge" x="48" y="16" width="100" height="16">
@@ -31,9 +25,25 @@
     <property name="z" type="float" value="0"/>
    </properties>
   </object>
-  <object id="4" name="run" class="Gui.Gauge" x="48" y="32" width="100" height="8" visible="0">
+  <object id="5" name="healthbox" x="47.5" y="15.5" width="101" height="17">
+   <properties>
+    <property name="color" type="color" value="#00000000"/>
+    <property name="linecolor" type="color" value="#ffff8080"/>
+    <property name="roundcorners" type="float" value="2"/>
+    <property name="z" type="float" value="2"/>
+   </properties>
+  </object>
+  <object id="1" name="portrait" gid="1" x="32" y="32" width="32" height="32">
    <properties>
     <property name="z" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="2" name="portraitbox" x="16" y="16" width="32" height="32">
+   <properties>
+    <property name="color" type="color" value="#00000000"/>
+    <property name="linecolor" type="color" value="#ffffffff"/>
+    <property name="roundcorners" type="float" value="0"/>
+    <property name="z" type="float" value="3"/>
    </properties>
   </object>
  </objectgroup>

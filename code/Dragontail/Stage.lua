@@ -223,6 +223,9 @@ function Stage.fixedupdateGui(gui)
     else
         portrait:changeTile("normal")
     end
+
+    local runpercent = player.runenergy / player.runenergymax
+    hud.run:setPercent(runpercent)
 end
 
 function Stage.update(dsecs, fixedfrac)
