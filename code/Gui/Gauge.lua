@@ -1,6 +1,5 @@
 local class = require "pl.class"
 local GuiObject = require "Gui.GuiObject"
-local Color     = require "Data.Color"
 
 local Gauge = class(GuiObject)
 
@@ -11,7 +10,11 @@ function Gauge:init()
 
     local basedraw = self.sprite.draw
     self.sprite.draw = function(sprite)
-        love.graphics.setScissor(self.gaugex, self.gaugey, self.gaugewidth, self.gaugeheight)
+        local w, h = self.gaugewidth, self.gaugeheight
+        if w <= 0 or h <= 0 then
+            return
+        end
+        love.graphics.setScissor(self.gaugex, self.gaugey, w, h)
         basedraw(sprite)
         love.graphics.setScissor()
     end
