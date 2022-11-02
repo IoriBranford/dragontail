@@ -6,7 +6,135 @@
     "folders": [
         "."
     ],
-    "objectTypesFile": "objecttypes.xml",
     "propertyTypes": [
+        {
+            "color": "#ffff0004",
+            "id": 1,
+            "members": [
+            ],
+            "name": "bandit-axe",
+            "type": "class",
+            "useAs": [
+                "object",
+                "tile"
+            ]
+        },
+        {
+            "color": "#ffffaaff",
+            "id": 2,
+            "members": [
+            ],
+            "name": "bandit-dagger",
+            "type": "class",
+            "useAs": [
+                "object",
+                "tile"
+            ]
+        },
+        {
+            "color": "#ffff5500",
+            "id": 3,
+            "members": [
+            ],
+            "name": "bandit-spear",
+            "type": "class",
+            "useAs": [
+                "object",
+                "tile"
+            ]
+        },
+        {
+            "color": "#ffaaff00",
+            "id": 4,
+            "members": [
+            ],
+            "name": "food-bigfish",
+            "type": "class",
+            "useAs": [
+                "object",
+                "tile"
+            ]
+        },
+        {
+            "color": "#ffc0c0c0",
+            "id": 5,
+            "members": [
+            ],
+            "name": "food-container",
+            "type": "class",
+            "useAs": [
+                "object",
+                "tile"
+            ]
+        },
+        {
+            "color": "#ffaaff00",
+            "id": 6,
+            "members": [
+            ],
+            "name": "food-fish",
+            "type": "class",
+            "useAs": [
+                "object",
+                "tile"
+            ]
+        },
+        {
+            "id": 8,
+            "name": "GaugeDirection",
+            "storageType": "string",
+            "type": "enum",
+            "values": [
+                "right",
+                "down",
+                "left",
+                "up"
+            ],
+            "valuesAsFlags": false
+        },
+        {
+            "color": "#ffa0a0a4",
+            "id": 7,
+            "members": [
+                {
+                    "name": "color",
+                    "type": "color",
+                    "value": "#ffffffff"
+                },
+                {
+                    "name": "gaugedirection",
+                    "propertyType": "GaugeDirection",
+                    "type": "string",
+                    "value": "right"
+                },
+                {
+                    "name": "gaugepercent",
+                    "type": "float",
+                    "value": 1
+                },
+                {
+                    "name": "linecolor",
+                    "type": "color",
+                    "value": ""
+                },
+                {
+                    "name": "roundcorners",
+                    "type": "float",
+                    "value": 0
+                }
+            ],
+            "name": "Gui.Gauge",
+            "type": "class",
+            "useAs": [
+                "property",
+                "map",
+                "layer",
+                "object",
+                "tile",
+                "tileset",
+                "wangcolor",
+                "wangset"
+            ]
+        }
     ]
 }
