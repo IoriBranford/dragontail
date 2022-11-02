@@ -206,50 +206,36 @@ function Stage.fixedupdate()
     scene:animate(1)
 end
 
+function Stage.fixedupdateGui(gui)
+    local healthpercent = player.health / player.maxhealth
+    local hud = gui.hud
+
+    hud.health:setPercent(healthpercent)
+
+    local portrait = hud.portrait
+    portrait.sprite.ox = portrait.sprite.w/2 + sin(player.hurtstun)
+    if gamestatus == "victory" then
+        portrait:changeTile("win")
+    elseif player.hurtstun > 0 or healthpercent <= 0.5 then
+        portrait:changeTile("hurt")
+    elseif player.attackangle then
+        portrait:changeTile("attack")
+    else
+        portrait:changeTile("normal")
+    end
+end
+
 function Stage.update(dsecs, fixedfrac)
     for _, character in ipairs(allcharacters) do
         character:update(dsecs, fixedfrac)
     end
 end
 
-local NameX, NameY = 48, 16
-local BarX, BarY = NameX, NameY + 17
-local BarH = 14
-
 function Stage.draw(fixedfrac)
     love.graphics.push()
     love.graphics.translate(-camerax - cameravelx*fixedfrac, -cameray - cameravely*fixedfrac)
     scene:draw()
     love.graphics.pop()
-
-    local hurtstun = player.hurtstun
-    love.graphics.setColor(1, 0, 0, min(.5, hurtstun/20))
-    love.graphics.rectangle("fill", 0,0,640,360)
-
-    local health = player.health
-    if health > 0 then
-        love.graphics.setColor(.75, .25, .25)
-        love.graphics.rectangle("fill", BarX, BarY, health, BarH)
-    end
-    love.graphics.setColor(1, .5, .5)
-    love.graphics.rectangle("line", BarX - .5, BarY - .5, player.maxhealth, BarH + 1, 2)
-    love.graphics.setColor(1,1,1)
-    love.graphics.printf(" Rose", NameX, NameY, 64, "left")
-
-    if facesprite then
-        facesprite.ox = facesprite.w/2 + sin(hurtstun)
-        if gamestatus == "victory" then
-            facesprite:changeAsepriteAnimation("win")
-        elseif hurtstun > 0 or health <= player.maxhealth/2 then
-            facesprite:changeAsepriteAnimation("hurt")
-        elseif player.attackangle then
-            facesprite:changeAsepriteAnimation("attack")
-        else
-            facesprite:changeAsepriteAnimation("normal")
-        end
-        facesprite:draw()
-        love.graphics.rectangle("line", facesprite.x - facesprite.ox, facesprite.y - facesprite.oy, facesprite.w, facesprite.h)
-    end
 end
 
 return Stage

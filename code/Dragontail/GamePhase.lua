@@ -1,14 +1,16 @@
 local Canvas= require "System.Canvas"
-local Config= require "System.Config"
 local Stage = require "Dragontail.Stage"
 local Database= require "Data.Database"
 local Assets= require "System.Assets"
 local Audio = require "System.Audio"
+local Gui = require "Gui"
 local isAsset = Assets.isAsset
 local getAsset = Assets.get
 local GamePhase = {}
 
 local paused
+local gui
+
 function GamePhase.loadphase()
     paused = false
     local unifont = Assets.get("fonts/Unifont 16.fnt")
@@ -29,6 +31,7 @@ function GamePhase.loadphase()
         end
     end)
 
+    gui = Gui.new("data/gui_gameplay.lua")
     Stage.init("data/stage_jam.lua")
 end
 
@@ -66,12 +69,15 @@ function GamePhase.quitphase()
     Stage.quit()
     Database.clear()
     Assets.clear()
+    gui = nil
 end
 
 function GamePhase.fixedupdate()
     if not paused then
         Stage.fixedupdate()
+        Stage.fixedupdateGui(gui)
     end
+    gui:fixedupdate()
 end
 
 function GamePhase.update(dsecs, fixedfrac)
@@ -87,6 +93,7 @@ function GamePhase.draw(fixedfrac)
     love.graphics.clear(.25, .25, .25)
     Canvas.drawOnCanvas(function()
         Stage.draw(fixedfrac)
+        gui:draw()
         if paused then
             love.graphics.printf("PAUSE\n\nPress any key to resume", 0, 128, 640, "center")
         end
