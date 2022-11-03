@@ -311,6 +311,7 @@ function Player:runWithEnemy(enemy)
     local holdanimation = "holdwalk"
     holdanimation = self.getDirectionalAnimation_angle(holdanimation, holdangle, self.animationdirections)
     self.sprite:changeAsepriteAnimation(holdanimation)
+    Database.fill(self, "running-with-enemy")
     Database.fill(enemy, "human-in-spinning-throw")
     enemy:startAttack(holdangle)
     while true do
