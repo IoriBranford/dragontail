@@ -304,20 +304,49 @@ function Player:runWithEnemy(enemy)
     enemy.canbeattacked = false
     self.canbeattacked = false
     self.canbegrabbed = false
-    local facex, facey = self.facex or 1, self.facey or 0
-    local speed = 8
+    self.facex = self.facex or 1
+    self.facey = self.facey or 0
+    local targetfacex, targetfacey = self.facex, self.facey
     local radii = self.bodyradius + enemy.bodyradius
-    local holdangle = atan2(facey, facex)
-    local holdanimation = "holdwalk"
-    holdanimation = self.getDirectionalAnimation_angle(holdanimation, holdangle, self.animationdirections)
-    self.sprite:changeAsepriteAnimation(holdanimation)
+    local holdangle = atan2(targetfacey, targetfacex)
     Database.fill(self, "running-with-enemy")
     Database.fill(enemy, "human-in-spinning-throw")
     enemy:startAttack(holdangle)
     while true do
         yield()
+        local movespeed, turnspeed, acceltime = 8, pi/120, 1
+        local facex, facey = self.facex, self.facey
+        local inx, iny = Controls.getDirectionInput()
         local attackpressed = Controls.getButtonsPressed()
-        self.velx, self.vely = speed*facex, speed*facey
+
+        local targetvelx, targetvely = 0, 0
+        if inx ~= 0 or iny ~= 0 then
+            if lensq(inx, iny) > 1 then
+                inx, iny = norm(inx, iny)
+                targetfacex, targetfacey = inx, iny
+            else
+                targetfacex, targetfacey = norm(inx, iny)
+            end
+        end
+
+        local facedot = dot(facex, facey, targetfacex, targetfacey)
+        local acosfacedot = acos(facedot)
+        if acosfacedot <= turnspeed then
+            facex, facey = targetfacex, targetfacey
+        else
+            local facedet = det(facex, facey, targetfacex, targetfacey)
+            if facedet < 0 then
+                turnspeed = -turnspeed
+            end
+            facex, facey = rot(facex, facey, turnspeed)
+            facex, facey = norm(facex, facey)
+        end
+        self.facex, self.facey = facex, facey
+        holdangle = atan2(facey, facex)
+        targetvelx = facex * movespeed
+        targetvely = facey * movespeed
+
+        self:accelerateTowardsVel(targetvelx, targetvely, acceltime)
 
         local x, y = self.x, self.y
         enemy.x = x + self.velx + facex*radii
@@ -325,8 +354,8 @@ function Player:runWithEnemy(enemy)
 
         if math.floor(love.timer.getTime() * 60) % 3 == 0 then
             self:makeAfterImage()
+            enemy:makeAfterImage()
         end
-
 
         if attackpressed then
             enemy:stopAttack()
@@ -351,6 +380,10 @@ function Player:runWithEnemy(enemy)
             Script.start(enemy, Fighter.knockedBack, self, holdangle)
             return Player.control
         end
+
+        local holdanimation = "holdwalk"
+        holdanimation = self.getDirectionalAnimation_angle(holdanimation, holdangle, self.animationdirections)
+        self.sprite:changeAsepriteAnimation(holdanimation)
     end
 end
 
