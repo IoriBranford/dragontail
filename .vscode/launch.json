@@ -11,7 +11,7 @@
             "program": {
                 "command": "love"
             },
-            "args": ["${workspaceFolder}", "--debug"]
+            "args": ["${workspaceFolder}/game", "--debug"]
         },
         {
             "name": "With unit tests",
@@ -20,7 +20,7 @@
             "program": {
                 "command": "love"
             },
-            "args": ["${workspaceFolder}", "--debug", "--cute"]
+            "args": ["${workspaceFolder}/game", "--debug", "--cute"]
         }
     ]
 }
