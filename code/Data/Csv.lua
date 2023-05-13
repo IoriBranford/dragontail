@@ -1,5 +1,3 @@
-local Tiled = require "Data.Tiled"
-
 local Csv = {}
 
 local s_gmatch = string.gmatch

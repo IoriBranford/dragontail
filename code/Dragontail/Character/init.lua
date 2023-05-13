@@ -99,7 +99,7 @@ function Character:updateSprite(sprite, fixedfrac)
         local x, y, z = self.x, self.y, self.z
         sprite.x = x + vx * fixedfrac
         sprite.y = y + vy * fixedfrac
-        sprite.oy = (self.spriteoriginy or 0) + z
+        sprite.originy = (self.spriteoriginy or 0) + z
     end
 end
 
@@ -125,7 +125,7 @@ function Character:addToScene(scene)
         self.emoteoriginy or (emoteasepritefile.height + (self.spriteoriginy or 0)))
     if emote then
         self.emote = emote
-        emote.hidden = true
+        emote.visible = false
     end
 end
 
@@ -198,7 +198,7 @@ end
 function Character:fixedupdateShake(time)
     time = max(0, time - 1)
     if self.sprite then
-        self.sprite.ox = self.spriteoriginx + 2*math.sin(time)
+        self.sprite.originx = self.spriteoriginx + 2*math.sin(time)
     end
     return time
 end
@@ -207,7 +207,7 @@ function Character:update(dsecs, fixedfrac)
     self:updateSprite(self.sprite, fixedfrac)
     self:updateSprite(self.emote, fixedfrac)
     if self.sprite then
-        self.sprite.ox = self.spriteoriginx + 2*math.sin(self.hurtstun)
+        self.sprite.originx = self.spriteoriginx + 2*math.sin(self.hurtstun)
     end
 end
 
@@ -369,10 +369,10 @@ function Character:setEmote(emotename)
     local emote = self.emote
     if emote then
         if emotename then
-            emote.hidden = nil
+            emote.visible = true
             emote:changeAsepriteAnimation(emotename)
         else
-            emote.hidden = true
+            emote.visible = false
         end
     end
 end

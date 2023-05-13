@@ -1,77 +1,72 @@
-local SceneAseprite = {}
+local SceneObject = require "System.SceneObject"
 
-local new
+---@class AsepriteSceneObject:SceneObject
+local AsepriteSceneObject = class(SceneObject)
 
-function SceneAseprite.setAsepriteAnimation(sceneobject, aseprite, tag, tagframe, onend)
+function AsepriteSceneObject:setAsepriteAnimation(aseprite, tag, tagframe, onend)
     tagframe = tagframe or 1
-    aseprite = aseprite or sceneobject.aseprite
-    sceneobject.aseprite = aseprite
-    sceneobject.animation = tag
-    sceneobject.animationframe = tagframe
-    sceneobject.animationtime = 0
-    sceneobject.onanimationend = onend
-    sceneobject.asepriteframe = aseprite:getAnimationFrame(tag, tagframe)
+    aseprite = aseprite or self.aseprite
+    self.aseprite = aseprite
+    self.animation = tag
+    self.animationframe = tagframe
+    self.animationtime = 0
+    self.onanimationend = onend
+    self.asepriteframe = aseprite:getAnimationFrame(tag, tagframe)
 end
-local setAsepriteAnimation = SceneAseprite.setAsepriteAnimation
+local setAsepriteAnimation = AsepriteSceneObject.setAsepriteAnimation
 
-function SceneAseprite.changeAsepriteAnimation(sceneobject, tag, tagframe, onend)
-    if tag ~= sceneobject.animation then
-        setAsepriteAnimation(sceneobject, sceneobject.aseprite, tag, tagframe, onend)
+function AsepriteSceneObject:changeAsepriteAnimation(tag, tagframe, onend)
+    if tag ~= self.animation then
+        setAsepriteAnimation(self, self.aseprite, tag, tagframe, onend)
     end
 end
 
-function SceneAseprite.animateAseprite(sceneobject, dt)
-    local animation = sceneobject.animation
+function AsepriteSceneObject:animateAseprite(dt)
+    local animation = self.animation
     if animation then
-        local aframe = sceneobject.animationframe
-        local atime = sceneobject.animationtime
-        local aseprite = sceneobject.aseprite
-        aframe, atime = aseprite:getAnimationUpdate(animation, aframe, atime, dt, sceneobject.onanimationend)
-        sceneobject.animationframe = aframe
-        sceneobject.animationtime = atime
-        sceneobject.asepriteframe = aseprite:getAnimationFrame(animation, aframe)
+        local aframe = self.animationframe
+        local atime = self.animationtime
+        local aseprite = self.aseprite
+        aframe, atime = aseprite:getAnimationUpdate(animation, aframe, atime, dt, self.onanimationend)
+        self.animationframe = aframe
+        self.animationtime = atime
+        self.asepriteframe = aseprite:getAnimationFrame(animation, aframe)
     end
 end
-local animateAseprite = SceneAseprite.animateAseprite
+local animateAseprite = AsepriteSceneObject.animateAseprite
 
-function SceneAseprite.drawAseprite(sceneobject)
-    love.graphics.setColor(sceneobject.red, sceneobject.green, sceneobject.blue, sceneobject.alpha)
-    sceneobject.aseprite:drawFrame(sceneobject.asepriteframe,
-        (sceneobject.x),
-        (sceneobject.y),
-        sceneobject.r,
-        sceneobject.sx, sceneobject.sy,
-        sceneobject.ox, sceneobject.oy,
-        sceneobject.kx, sceneobject.ky)
+function AsepriteSceneObject:drawAseprite()
+    love.graphics.setColor(self.red, self.green, self.blue, self.alpha)
+    self.aseprite:drawFrame(self.asepriteframe,
+        (self.x),
+        (self.y),
+        self.rotation,
+        self.scalex, self.scaley,
+        self.originx, self.originy,
+        self.skewx, self.skewy)
 end
-local drawAseprite = SceneAseprite.drawAseprite
+local drawAseprite = AsepriteSceneObject.drawAseprite
 
-function SceneAseprite.setAseprite(sceneobject, aseprite, frame)
-    sceneobject.aseprite = aseprite
-    sceneobject.asepriteframe = frame or 1
+function AsepriteSceneObject:setAseprite(aseprite, frame)
+    self.aseprite = aseprite
+    self.asepriteframe = frame or 1
 end
-local setAseprite = SceneAseprite.setAseprite
+local setAseprite = AsepriteSceneObject.setAseprite
 
-function SceneAseprite.newAseprite(aseprite, frame, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = new(drawAseprite, nil, nil, aseprite.width, aseprite.height,
+function AsepriteSceneObject.newAseprite(aseprite, frame, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    local sceneobject = AsepriteSceneObject(drawAseprite, nil, nil, aseprite.width, aseprite.height,
                                         x, y, z, r, sx, sy, ox, oy, kx, ky)
     sceneobject.animate = animateAseprite
     setAseprite(sceneobject, aseprite, frame)
     return sceneobject
 end
 
-function SceneAseprite.newAnimatedAseprite(aseprite, tag, tagframe, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = new(drawAseprite, nil, nil, aseprite.width, aseprite.height,
+function AsepriteSceneObject.newAnimatedAseprite(aseprite, tag, tagframe, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    local sceneobject = AsepriteSceneObject(drawAseprite, nil, nil, aseprite.width, aseprite.height,
                                         x, y, z, r, sx, sy, ox, oy, kx, ky)
     sceneobject.animate = animateAseprite
     setAsepriteAnimation(sceneobject, aseprite, tag, tagframe)
     return sceneobject
 end
 
-return function(SceneObject)
-    new = SceneObject.new
-    for k,v in pairs(SceneAseprite) do
-        SceneObject[k] = v
-    end
-    SceneAseprite = SceneObject
-end
+return AsepriteSceneObject

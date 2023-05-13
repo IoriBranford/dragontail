@@ -1,18 +1,18 @@
 local SceneObject = require "System.SceneObject"
-local Color       = require "Data.Color"
+local AsepriteSceneObject = require "System.SceneObject.Aseprite"
 
 ---@class Scene
-local Scene = {}
-Scene.__index = Scene
+local Scene = class()
 
 local insert = table.insert
 
----@return Scene
+function Scene:_init()
+    self.animating = {}
+end
+
+---@deprecated
 function Scene.new()
-    local scene = {
-        animating = {}
-    }
-    return setmetatable(scene, Scene)
+    return Scene()
 end
 
 function Scene:add(sceneobject)
@@ -26,40 +26,13 @@ function Scene:addAnimating(sceneobject)
     return sceneobject
 end
 
-function Scene:addShapeObject(shapeobject)
-    local sceneobject = SceneObject.newShapeObject(shapeobject)
-    return self:add(sceneobject)
-end
-
-function Scene:addChunk(chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = SceneObject.newChunk(chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    return self:add(sceneobject)
-end
-
-function Scene:addAnimatedChunk(chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = SceneObject.newAnimatedChunk(chunk, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    insert(self.animating, sceneobject)
-    return self:add(sceneobject)
-end
-
-function Scene:addTile(tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = SceneObject.newTile(tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    return self:add(sceneobject)
-end
-
-function Scene:addAnimatedTile(tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = self:addTile(tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    insert(self.animating, sceneobject)
-    return sceneobject
-end
-
 function Scene:addAseprite(aseprite, frame, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = SceneObject.newAseprite(aseprite, frame or 1, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    local sceneobject = AsepriteSceneObject.newAseprite(aseprite, frame or 1, x, y, z, r, sx, sy, ox, oy, kx, ky)
     return self:add(sceneobject)
 end
 
 function Scene:addManualAnimatedAseprite(aseprite, tag, tagframe, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = SceneObject.newAnimatedAseprite(aseprite, tag, tagframe or 1, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    local sceneobject = AsepriteSceneObject.newAnimatedAseprite(aseprite, tag, tagframe or 1, x, y, z, r, sx, sy, ox, oy, kx, ky)
     return self:add(sceneobject)
 end
 
@@ -71,95 +44,24 @@ function Scene:addAnimatedAseprite(aseprite, tag, tagframe, x, y, z, r, sx, sy, 
     return sceneobject
 end
 
-function Scene:addTextObject(textobject)
-    local sceneobject = SceneObject.newTextObject(textobject)
-    return self:add(sceneobject)
-end
-
 function Scene:addImage(image, x, y, z, r, sx, sy, ox, oy, kx, ky)
     local sceneobject = SceneObject.newImage(image, x, y, z, r, sx, sy, ox, oy, kx, ky)
     return self:add(sceneobject)
 end
 
-function Scene:addImageLayer(imagelayer)
-    local sceneobject = SceneObject.newImageLayer(imagelayer)
-    return self:add(sceneobject)
-end
-
-function Scene:addTileLayer(tilelayer)
-    local hidden = not tilelayer.visible
-    local tilebatch = tilelayer.tilebatch
-    local layerx = tilelayer.x
-    local layery = tilelayer.y
-    local layerz = tilelayer.z
-    if tilebatch then
-        local spritebatch = self:addAnimatedChunk(tilelayer, layerx, layery, layerz)
-        spritebatch.hidden = hidden
-        return {spritebatch}
-    end
-    local chunks = tilelayer.chunks
-    if chunks then
-        local cellwidth = tilelayer.tilewidth
-        local cellheight = tilelayer.tileheight
-        local sceneobjects = {}
-        for i = 1, #chunks do
-            local chunk = chunks[i]
-            local w = chunk.width * cellwidth
-            local h = chunk.height * cellheight
-            local cx = chunk.x * cellwidth
-            local cy = chunk.y * cellheight
-            local spritebatch = self:addAnimatedChunk(chunk, layerx+cx, layery+cy, layerz)
-            spritebatch.hidden = hidden
-            chunk.sprite = spritebatch
-            sceneobjects[i] = spritebatch
-        end
-        return sceneobjects
-    end
-end
-
-function Scene:addTileObject(tileobject)
-    local tile = tileobject.tile
-    local x = tileobject.x
-    local y = tileobject.y
-    local z = tileobject.z
-    local sprite = tileobject.animated == false
-        and self:addTile(tile, x, y, z, tileobject.rotation, tileobject.scalex, tileobject.scaley)
-        or self:addAnimatedTile(tile, x, y, z, tileobject.rotation, tileobject.scalex, tileobject.scaley)
-    local color = tileobject.color
-    if color then
-        sprite.red, sprite.green, sprite.blue, sprite.alpha = Color.unpack(color)
-    end
-    sprite.hidden = not tileobject.visible
-    return sprite
-end
-
-function Scene:addObject(object)
-    local str = object.string
-    if str then
-        return self:addTextObject(object)
-    end
-    local tile = object.tile
-    if tile then
-        return self:addTileObject(object)
-    end
-    return self:addShapeObject(object)
-end
-
 function Scene:addLayer(layer, layerfilter)
-    local layerhidden = not layer.visible
     local layertype = layer.type
     if layertype == "group" then
         self:addLayers(layer, layerfilter)
     elseif layertype == "tilelayer" then
-        layer.sprites = self:addTileLayer(layer)
+        self:addAnimating(layer)
     elseif layertype == "objectgroup" then
         for i = 1, #layer do
             local object = layer[i]
-            object.sprite = self:addObject(object)
-            object.sprite.hidden = object.sprite.hidden or layerhidden
+            self:addAnimating(object)
         end
     elseif layertype == "imagelayer" then
-        layer.sprite = self:addImageLayer(layer)
+        self:add(layer)
     end
 end
 
@@ -176,18 +78,8 @@ function Scene:addMap(map, layerfilter)
     self:addLayers(map.layers, layerfilter)
 end
 
-function Scene:addTileParticles(tile, z)
-    local sceneobject = SceneObject.newTileParticles(tile, z)
-    insert(self.animating, sceneobject)
-    return self:add(sceneobject)
-end
-
-function Scene:addTileParticlesObject(object)
-    return self:addTileParticles(object.tile, object.z)
-end
-
 function Scene:addCustom(draw, drawable, quad, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    return self:add(SceneObject.new(draw, drawable, quad, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky))
+    return self:add(SceneObject(draw, drawable, quad, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky))
 end
 
 function Scene:clear()
@@ -214,12 +106,35 @@ function Scene:animate(dt)
     end
 end
 
+local function zsort(a, b)
+    local az = a.z or 0
+    local bz = b.z or 0
+    if az < bz then
+        return true
+    end
+    if az == bz then
+        local ay = a.y or 0
+        local by = b.y or 0
+        if ay < by then
+            return true
+        end
+        if ay == by then
+            local ax = a.x or 0
+            local bx = b.x or 0
+            return ax < bx
+        end
+    end
+end
+
 function Scene:draw()
-    sortAndPrune(self)
+    sortAndPrune(self, zsort)
     for i = 1, #self do
         local sceneobject = self[i]
-        if not sceneobject.hidden then
-            self[i]:draw()
+        if sceneobject.visible then
+            if not sceneobject.draw then
+                print(sceneobject.name, sceneobject.type)
+            end
+            sceneobject:draw()
         end
     end
 end

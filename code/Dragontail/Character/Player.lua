@@ -1,4 +1,4 @@
-local Controls = require "System.Controls"
+local Controls = require "Dragontail.Controls"
 local Database = require "Data.Database"
 local Audio    = require "System.Audio"
 local Movement = require "Component.Movement"

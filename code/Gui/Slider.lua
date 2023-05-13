@@ -1,17 +1,13 @@
-local Config = require "System.Config"
 local Audio     = require "System.Audio"
 local Button    = require "Gui.Button"
-local class     = require "pl.class"
+local Config    = require "System.Config"
 
+---@class Slider:Button
 local Slider = class(Button)
 Slider.ismenuitem = true
 
-function Slider:init()
-    Slider:cast(self)
-
-    local value = Config[self.name]
-    self:setString(tostring(value))
-
+function Slider:_init()
+    Button._init(self)
     local valuestrings = {}
     self.valuestrings = valuestrings
     for i = 1, 16 do
@@ -24,12 +20,18 @@ function Slider:init()
     end
 end
 
-function Slider:change(dir)
+function Slider:setValue(value)
+    self.value = value
+    self:setString(tostring(value))
+    self:doAction("valuechangeaction")
+end
+
+function Slider:changeValue(dir)
     if self.action == "bindInput" then
         return
     end
     dir = dir / math.abs(dir)
-    local value = Config[self.name]
+    local value = self.value
     local valuetype = type(value)
     if valuetype == "number" then
         local increment = self.increment
@@ -67,9 +69,16 @@ function Slider:change(dir)
         if newvalue == "false" then newvalue = false end
         value = newvalue or value
     end
-    Config[self.name] = value
-    self:setString(tostring(value))
     Audio.play(self.changesound)
+    self:setValue(value)
+end
+
+function Slider:loadConfigValue()
+    self:setValue(Config[self.configkey])
+end
+
+function Slider:storeConfigValue()
+    Config[self.configkey] = self.value
 end
 
 return Slider

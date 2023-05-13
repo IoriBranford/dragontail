@@ -1,11 +1,10 @@
 local Scene = require "System.Scene"
 local Character = require "Dragontail.Character"
-local Tiled     = require "Data.Tiled"
+local Tiled     = require "Tiled"
 local Database    = require "Data.Database"
 local Audio     = require "System.Audio"
 local Movement  = require "Component.Movement"
 local Assets    = require "System.Assets"
-local SceneObject = require "System.SceneObject"
 local Script      = require "Component.Script"
 local Stage = {}
 local sin = math.sin
@@ -22,7 +21,6 @@ local map
 local roomindex
 local gamestatus
 local camerax, cameray, cameravelx, cameravely
-local facesprite
 
 function Stage.quit()
     scene = nil
@@ -43,7 +41,7 @@ function Stage.init(stagefile)
     enemies = {}
     solids = {}
 
-    map = Tiled.load(stagefile)
+    map = Tiled.Map.load(stagefile)
     roomindex = 0
 
     bounds = map.layers.stage.bounds
@@ -63,10 +61,6 @@ function Stage.init(stagefile)
     end
     Stage.openNextRoom()
 
-    local faceasepritefile = player.faceasepritefile
-    local facease = faceasepritefile and Assets.get(faceasepritefile)
-    facesprite = facease and SceneObject.newAseprite(facease, 1, 32, 32)
-    facesprite.ox, facesprite.oy = facesprite.w/2, facesprite.h/2
 end
 
 function Stage.addCharacter(object)
@@ -213,7 +207,7 @@ function Stage.fixedupdateGui(gui)
     hud.health:setPercent(healthpercent)
 
     local portrait = hud.portrait
-    portrait.sprite.ox = portrait.sprite.w/2 + sin(player.hurtstun)
+    portrait.originx = portrait.width/2 + sin(player.hurtstun)
     if gamestatus == "victory" then
         portrait:changeTile("win")
     elseif player.hurtstun > 0 or healthpercent <= 0.5 then

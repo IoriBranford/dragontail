@@ -1,29 +1,35 @@
-local class = require "pl.class"
 local GuiObject = require "Gui.GuiObject"
+local TiledObject    = require "Tiled.Object"
 
 local Gauge = class(GuiObject)
 
-function Gauge:init()
-    Gauge:cast(self)
+function Gauge:_init()
+    GuiObject._init(self)
     self.gaugedirection = self.gaugedirection or "right"
     self:setPercent(self.gaugepercent or 1)
+    self.baseDraw = self.draw
+    self.draw = Gauge.draw
+end
 
-    local basedraw = self.sprite.draw
-    self.sprite.draw = function(sprite)
-        local w, h = self.gaugewidth, self.gaugeheight
-        if w <= 0 or h <= 0 then
-            return
-        end
-        love.graphics.setScissor(self.gaugex, self.gaugey, w, h)
-        basedraw(sprite)
-        love.graphics.setScissor()
-    end
+function Gauge:draw()
+    local w, h = self.gaugewidth, self.gaugeheight
+    -- if w <= 0 or h <= 0 then
+    --     return
+    -- end
+    love.graphics.setScissor(self.gaugex, self.gaugey, w, h)
+    self:baseDraw()
+    love.graphics.setScissor()
 end
 
 function Gauge:setPercent(percent)
     self.gaugepercent = percent
-    self.gaugex = self.sprite.x - self.sprite.ox
-    self.gaugey = self.sprite.y - self.sprite.oy
+    self.gaugex = self.x
+    self.gaugey = self.y
+    local tile = self.tile
+    if tile then
+        self.gaugex = self.gaugex - self.tile.objectoriginx
+        self.gaugey = self.gaugey - self.tile.objectoriginy
+    end
     self.gaugewidth = self.width
     self.gaugeheight = self.height
     if self.gaugedirection == "right" or self.gaugedirection == "left" then

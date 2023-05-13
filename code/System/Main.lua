@@ -1,7 +1,9 @@
+class = require "class"
 require "Math"
 require "Coroutine"
 local Audio = require "System.Audio"
 local Config = require "System.Config"
+local Platform = require "System.Platform"
 local Time   = require "System.Time"
 local Controls= require "System.Controls"
 local cute = require "cute"
@@ -97,8 +99,7 @@ function love.quit()
     Audio.stop()
     Config.save()
 	if profile then
-		local filename = os.date("profile_%Y-%m-%d_%H-%M-%S")..".txt"
-		love.filesystem.write(filename, profile.report())
+        profile.stop()
 	end
 end
 
@@ -107,26 +108,27 @@ function love.run()
     cute.go(love.arg.parseGameArguments(arg))
 
     Config.load(game.defaultconfig)
+    Controls = game.controls or Controls
     Controls.init()
 
     local cli = love.filesystem.getIdentity()..[[
 
-        --console               Output to a console window
-        --version               Print LOVE version
-        --fused                 Force running in fused mode
-        --debug                 Debug in Zerobrane Studio
-        --cute                  Run Cute unit tests
-        --fullscreen            Start in fullscreen mode
-        --windowed              Start in windowed mode
-        --drawstats             Draw performance stats
-        --profile               Profile code performance
-        --exclusive             Exclusive fullscreen
-    ]]
+    --console               Output to a console window
+    --version               Print LOVE version
+    --fused                 Force running in fused mode
+    --debug                 Debug in Zerobrane Studio
+    --cute                  Run Cute unit tests
+    --fullscreen            Start in fullscreen mode
+    --windowed              Start in windowed mode
+    --drawstats             Draw performance stats
+    --profile               Profile code performance
+    --exclusive             Exclusive fullscreen
+    --os (optional string)  Fake a certain OS for testing
+]]
     if not love.filesystem.isFused() then
-        cli = cli ..
-    [[
-        <game> (string)         Game assets location
-    ]]
+        cli = cli .. [[
+    <game> (string)         Game assets location
+]]
     end
     if game.cli then
         cli = cli..game.cli
@@ -136,9 +138,12 @@ function love.run()
 	lapp.slack = true
 	local args = lapp (cli)
 
+    Platform.setOS(args.os)
+
 	if args.profile then
-        profile = require "profile"
-		profile.start()
+        profile = require("jit.p")
+        local filename = love.filesystem.getSaveDirectory().."/"..os.date("profile_%Y-%m-%d_%H-%M-%S")..".txt"
+		profile.start("Fli1", filename)
 	end
 
     Config.debug = args.debug

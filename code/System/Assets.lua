@@ -4,7 +4,7 @@ local json_decode = (require "json").decode
 local GameMusicEmu = require "GameMusicEmu"
 local Assets = {}
 
-local cache = Cache.new("data/")
+local cache
 
 local lfs_read = love.filesystem.read
 
@@ -36,6 +36,10 @@ local loaders = {
     json = function (path) return json_decode(lfs_read(path)) end,
     jase = Aseprite.load
 }
+
+function Assets.init(root)
+    cache = Cache.new(root or "data/")
+end
 
 function Assets.isAsset(path)
     if type(path) ~= "string" then

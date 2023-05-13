@@ -1,7 +1,6 @@
 local Database = {}
-local Audio = require "System.Audio"
 local Csv   = require "Data.Csv"
-local Tiled = require "Data.Tiled"
+local Tiled = require "Tiled"
 local type = type
 local pairs = pairs
 
@@ -52,7 +51,7 @@ function Database.addMapObjects(mapobjects)
 end
 
 function Database.loadMapObjects(mapfilename)
-    local map = Tiled.load(mapfilename)
+    local map = Tiled.Map.load(mapfilename)
     Database.addMapObjects(map.objects)
 end
 
@@ -115,13 +114,6 @@ function Database.fill(unit, key)
         for k,v in pairs(row) do
             set(unit, k, v)
         end
-
-        local think = unit[row.think]
-        if type(think) == "function" then
-            unit.think = think
-        end
-
-        Audio.play(unit.typesound)
     end
 end
 

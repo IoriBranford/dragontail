@@ -1,13 +1,14 @@
-local Tiled = require "Data.Tiled"
+local Tiled = require "Tiled"
 local Audio = require "System.Audio"
 local Config = require "System.Config"
 local Wallpaper             = require "System.Wallpaper"
 local Aseprite              = require "Data.Aseprite"
-
+local Assets = require "System.Assets"
 local firstphase = "Dragontail.GamePhase"
 local firstmap = "data/stage_demonrealm.lua"
 
 function love.load(args)
+    Assets.init()
     local mapname = args.stage or args.test
     if mapname then
         local map = args.stage and string.format("data/stage_%s.lua", mapname)
@@ -39,7 +40,7 @@ function love.load(args)
     end
     Tiled.animationtimeunit = "fixedupdates"
     Aseprite.animationtimeunit = "fixedupdates"
-    Tiled.setFontPath("data/fonts/")
+    Tiled.Assets.setFontPath("data/fonts/")
     love.graphics.setLineStyle("rough")
 
     -- Wallpaper.reload()
@@ -49,6 +50,7 @@ function love.load(args)
 end
 
 return {
+    controls = require "Dragontail.Controls",
     cli = [[
         --rotation                              (number default -1)	Screen orientation in degrees clockwise
         --drawbodies                            Draw physical bodies
