@@ -1,0 +1,22 @@
+{
+    "Lua.workspace.checkThirdParty": false,
+    "Lua.workspace.library": [
+        "${3rd}/love2d/library"
+    ],
+    "Lua.runtime.version": "LuaJIT",
+    "Lua.runtime.path": [
+        "?.lua",
+        "?/init.lua",
+        "libraries/?.lua",
+        "libraries/?/init.lua",
+        "code/?.lua",
+        "code/?/init.lua"
+    ],
+    "Lua.workspace.ignoreDir": [
+        ".vscode",
+    ],
+    "Lua.diagnostics.globals": [
+        "class",
+        "lfs"
+    ]
+}
