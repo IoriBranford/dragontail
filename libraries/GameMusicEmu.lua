@@ -1,22 +1,22 @@
 local has_ffi, ffi = pcall(require, "ffi")
 if not has_ffi then
-	return false
+    return false
 end
 
 local gmes = {
-	"gme",
-	"libgme.so.0"
+    "gme",
+    "libgme.so.0"
 }
 local ok, lib
 for _, gme in ipairs(gmes) do
-	ok, lib = pcall(ffi.load, gme)
-	if ok then
-		break
-	end
+    ok, lib = pcall(ffi.load, gme)
+    if ok then
+        break
+    end
 end
 if not ok then
-	print(lib)
-	return false
+    print(lib)
+    return false
 end
 
 ffi.cdef[[
@@ -97,27 +97,27 @@ void gme_free_info( gme_info_t* );
 
 struct gme_info_t
 {
-	/* times in milliseconds; -1 if unknown */
-	int length;			/* total length, if file specifies it */
-	int intro_length;	/* length of song up to looping section */
-	int loop_length;	/* length of looping section */
-	
-	/* Length if available, otherwise intro_length+loop_length*2 if available,
-	otherwise a default of 150000 (2.5 minutes). */
-	int play_length;
-	
-	int i4,i5,i6,i7,i8,i9,i10,i11,i12,i13,i14,i15; /* reserved */
-	
-	/* empty string ("") if not available */
-	const char* system;
-	const char* game;
-	const char* song;
-	const char* author;
-	const char* copyright;
-	const char* comment;
-	const char* dumper;
-	
-	const char *s7,*s8,*s9,*s10,*s11,*s12,*s13,*s14,*s15; /* reserved */
+    /* times in milliseconds; -1 if unknown */
+    int length;			/* total length, if file specifies it */
+    int intro_length;	/* length of song up to looping section */
+    int loop_length;	/* length of looping section */
+    
+    /* Length if available, otherwise intro_length+loop_length*2 if available,
+    otherwise a default of 150000 (2.5 minutes). */
+    int play_length;
+    
+    int i4,i5,i6,i7,i8,i9,i10,i11,i12,i13,i14,i15; /* reserved */
+    
+    /* empty string ("") if not available */
+    const char* system;
+    const char* game;
+    const char* song;
+    const char* author;
+    const char* copyright;
+    const char* comment;
+    const char* dumper;
+    
+    const char *s7,*s8,*s9,*s10,*s11,*s12,*s13,*s14,*s15; /* reserved */
 };
 
 
@@ -152,10 +152,10 @@ void gme_mute_voices( Music_Emu*, int muting_mask );
 /* Implementers: If modified, also adjust Music_Emu::make_equalizer as needed */
 typedef struct gme_equalizer_t
 {
-	double treble; /* -50.0 = muffled, 0 = flat, +5.0 = extra-crisp */
-	double bass;   /* 1 = full bass, 90 = average, 16000 = almost no bass */
-	
-	double d2,d3,d4,d5,d6,d7,d8,d9; /* reserved */
+    double treble; /* -50.0 = muffled, 0 = flat, +5.0 = extra-crisp */
+    double bass;   /* 1 = full bass, 90 = average, 16000 = almost no bass */
+    
+    double d2,d3,d4,d5,d6,d7,d8,d9; /* reserved */
 } gme_equalizer_t;
 
 /* Get current frequency equalizater parameters */
@@ -175,17 +175,17 @@ typedef const struct gme_type_t_* gme_type_t;
 
 /* Emulator type constants for each supported file type */
 extern const gme_type_t
-	gme_ay_type,
-	gme_gbs_type,
-	gme_gym_type,
-	gme_hes_type,
-	gme_kss_type,
-	gme_nsf_type,
-	gme_nsfe_type,
-	gme_sap_type,
-	gme_spc_type,
-	gme_vgm_type,
-	gme_vgz_type;
+    gme_ay_type,
+    gme_gbs_type,
+    gme_gym_type,
+    gme_hes_type,
+    gme_kss_type,
+    gme_nsf_type,
+    gme_nsfe_type,
+    gme_sap_type,
+    gme_spc_type,
+    gme_vgm_type,
+    gme_vgz_type;
 
 /* Type of this emulator */
 gme_type_t gme_type( Music_Emu const* );
@@ -255,107 +255,106 @@ void gme_set_user_cleanup( Music_Emu*, gme_user_cleanup_t func );
 ]]
 
 ffi.metatype("Music_Emu", {
-	__gc = function(musicemu)
-		lib.gme_delete(musicemu)
-	end
+    __gc = function(musicemu)
+        lib.gme_delete(musicemu)
+    end
 })
 
 ffi.metatype("gme_info_t", {
-	__gc = function(trackinfo)
-		lib.gme_free_info(trackinfo)
-	end
+    __gc = function(trackinfo)
+        lib.gme_free_info(trackinfo)
+    end
 })
 
 local GameMusicEmu = {}
 GameMusicEmu.__index = GameMusicEmu
 
 function GameMusicEmu:getType()
-	return "stream"
+    return "stream"
 end
 
 function GameMusicEmu:play(track)
-	lib.gme_start_track(self.musicemu, track or 0)
-	lib.gme_play(self.musicemu, self.sounddata:getSize()*.5, self.sounddata:getPointer())
+    lib.gme_start_track(self.musicemu, track or 0)
+    self:update()
+    self.source:play()
 end
 
 function GameMusicEmu:getTrackInfo(track)
-	local trackinfo = ffi.new("gme_info_t*[1]")
-	lib.gme_track_info(self.musicemu, trackinfo, track);
-	return trackinfo[0]
+    local trackinfo = ffi.new("gme_info_t*[1]")
+    lib.gme_track_info(self.musicemu, trackinfo, track);
+    return trackinfo[0]
 end
 
 function GameMusicEmu:update()
-	--self.source:step()
-
-	while self.source:getFreeBufferCount() > 0 do
-		lib.gme_play(self.musicemu, self.buffersamples*2, -- 2 stereo channels
-				self.sounddata:getFFIPointer())
-		self.source:queue(self.sounddata)
-		self.source:play()
-	end
+    while self.source:getFreeBufferCount() > 0 do
+        lib.gme_play(self.musicemu, self.buffersamples, self.sounddata:getFFIPointer())
+        self.source:queue(self.sounddata)
+    end
 end
 
 function GameMusicEmu:unpause()
-	self.source:play()
+    self.source:play()
 end
 
 function GameMusicEmu:pause()
-	self.source:pause()
+    self.source:pause()
 end
 
 function GameMusicEmu:stop()
-	self.source:stop()
+    self.source:stop()
 end
 
 function GameMusicEmu:setLooping()
 end
 
 function GameMusicEmu:setVolume(v)
-	self.source:setVolume(v)
+    self.source:setVolume(v)
 end
 
 function GameMusicEmu:getVolume()
-	return self.source:getVolume()
+    return self.source:getVolume()
 end
 
 function GameMusicEmu:fade()
-	lib.gme_set_fade(self.musicemu, lib.gme_tell(self.musicemu))
+    lib.gme_set_fade(self.musicemu, lib.gme_tell(self.musicemu))
 end
 
 function GameMusicEmu:isPlaying()
-	return lib.gme_track_ended(self.musicemu) == 0
+    return lib.gme_track_ended(self.musicemu) == 0
 end
 
 function GameMusicEmu.isSupported(filename)
-	return lib.gme_identify_extension(filename) ~= nil
+    return lib.gme_identify_extension(filename) ~= nil
 end
 
 function GameMusicEmu.new(filename, buffersamples, rate)
-	local filetype = lib.gme_identify_extension(filename)
-	if filetype == nil then
-		return nil, filename.." is not an emulated music file"
-	end
-	local data, error = love.filesystem.newFileData(filename)
-	if not data then
-		return nil, error
-	end
-	if data:getExtension() == "vgz" then
-		local str = love.data.decompress(data, "gzip")
-		data = love.filesystem.newFileData(str, "decompressedmusic")
-	end
+    local filetype = lib.gme_identify_extension(filename)
+    if filetype == nil then
+        return nil, filename.." is not an emulated music file"
+    end
+    local data, error = love.filesystem.newFileData(filename)
+    if not data then
+        return nil, error
+    end
+    if data:getExtension() == "vgz" then
+        local str = love.data.decompress(data, "gzip")
+        data = love.filesystem.newFileData(str, "decompressedmusic")
+    end
 
-	local musicemu = {}
-	setmetatable(musicemu, GameMusicEmu)
-	musicemu.buffersamples = buffersamples or 2048
-	musicemu.rate = rate or 44100
+    local musicemu = {}
+    setmetatable(musicemu, GameMusicEmu)
+    musicemu.buffersamples = buffersamples or 1024
+    musicemu.rate = rate or 44100
 
-	musicemu.musicemu = ffi.new("Music_Emu*[1]")
-	lib.gme_open_data(data:getFFIPointer(), data:getSize(), musicemu.musicemu,
-				musicemu.rate)
-	musicemu.musicemu = musicemu.musicemu[0]
-	musicemu.source = love.audio.newQueueableSource(musicemu.rate, 16, 2, 2)
-	musicemu.sounddata = love.sound.newSoundData(musicemu.buffersamples, musicemu.rate)
-	return musicemu
+    musicemu.musicemu = ffi.new("Music_Emu*[1]")
+    lib.gme_open_data(data:getFFIPointer(), data:getSize(), musicemu.musicemu,
+                musicemu.rate)
+    musicemu.musicemu = musicemu.musicemu[0]
+    musicemu.source = love.audio.newQueueableSource(musicemu.rate, 16, 2)
+    musicemu.sounddata = love.sound.newSoundData(
+                            musicemu.buffersamples/2, -- 2 stereo channels
+                            musicemu.rate)
+    return musicemu
 end
 
 return GameMusicEmu
