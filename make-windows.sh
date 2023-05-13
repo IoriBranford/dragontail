@@ -1,12 +1,14 @@
 #!/bin/sh
 set -e
 
+. ./make-vars.sh
+
 PROJECT=${PROJECT:=${PWD##*/}}
-PROJECT_TITLE=${PROJECT_TITLE:=${PROJECT}${GAME_TYPE}}
-GAME_DIR=${GAME_DIR:="${PROJECT_TITLE}"}
+GAME_TITLE=${GAME_TITLE:=${PROJECT}${GAME_TYPE}}
+OUT_DIR=${OUT_DIR:="${GAME_TITLE}"}
 GAME_TYPE=${GAME_TYPE:=game}
 GAME_ASSET=${GAME_ASSET:=${GAME_TYPE}.love}
-GAME_EXE=game-win/${PROJECT_TITLE}.exe
+GAME_EXE=game-win/${GAME_TITLE}.exe
 #PROJECT_ZIP=${PROJECT}-win${ARCH_BITS}.zip
 
 ARCH_BITS=${ARCH_BITS:=64}
@@ -41,27 +43,28 @@ getZip () {
 ./make-game.sh
 mkdir -p game-win
 
-if ! [ -e ${LOVE_DIR} ]
+if ! [ -d ${LOVE_DIR} ]
 then
 	getZip ${LOVE_ZIP} ${LOVE_URL}
 fi
 
-ICO=${ICO:=${LOVE_DIR}/game.ico}
-if [ -e $ICO ]
+ICO="appicon/appicon.ico"
+if ! [ -f "$ICO" ]
 then
-	if ! [ -e ${RCEDIT} ]
-	then
-		wget -N ${RCEDIT_URL}
-	fi
-	case $(uname | tr '[:upper:]' '[:lower:]') in
-		windows*|mingw*|msys*|cygwin*)
-			;;
-		*)
-			WINE="wine"
-			;;
-	esac
-	${WINE} ./${RCEDIT} ${LOVE_EXE} --set-icon "$ICO"
+	ICO="${LOVE_DIR}/game.ico"
 fi
+if ! [ -f ${RCEDIT} ]
+then
+	wget -N ${RCEDIT_URL}
+fi
+case $(uname | tr '[:upper:]' '[:lower:]') in
+	windows*|mingw*|msys*|cygwin*)
+		;;
+	*)
+		WINE="wine"
+		;;
+esac
+${WINE} ./${RCEDIT} ${LOVE_EXE} --set-icon "$ICO"
 
 cat ${LOVE_EXE} ${GAME_ASSET} > $GAME_EXE
 cp ${LOVE_DIR}/*.dll game-win
@@ -105,4 +108,4 @@ then
 	cp README.md game-win
 fi
 
-mv game-win "${GAME_DIR}"
+mv game-win "${OUT_DIR}"

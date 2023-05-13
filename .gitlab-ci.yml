@@ -2,16 +2,8 @@
 
 # Fill in the project info
 variables:
-        PROJECT: rose-of-dragontail
-        PROJECT_TITLE: Rose of Dragontail
-        PROJECT_TITLE_NOSPACE: Rose_of_Dragontail
-        DESCRIPTION: "Smash evil in a swing of a tail"
-        COPYRIGHT: "© 2022 IoriBranford"
-        APPLICATION_ID_BASE: "io.itch.ioribranford.roseofdragontail"
-        LOVE_VERSION: "11.4"
-        SCREEN_ORIENTATION: "landscape"
-        GAME_TYPE: game
-        VERSION: "${CI_COMMIT_REF_NAME}"
+        GAME_TITLE: "Rose of Dragontail"
+        GAME_TITLE_NOSPACE: Rose_of_Dragontail
         GIT_DEPTH: "1"
         GIT_SUBMODULE_STRATEGY: recursive
 
@@ -25,8 +17,8 @@ variables:
       - if: '$CI_COMMIT_TAG =~ /demo/'
   variables:
     <<: &demo-variables
-      PROJECT_TITLE: "Dragontail Demo"
-      PROJECT_TITLE_NOSPACE: "Dragontail_Demo"
+      GAME_TITLE: "Rose of Dragontail Demo"
+      GAME_TITLE_NOSPACE: "Rose_of_Dragontail_Demo"
       GAME_TYPE: demo
   artifacts:
     <<: &demo-artifacts-exclude
@@ -64,7 +56,7 @@ before_script:
                 - apk add wget xz
                 - ./make-game.sh
         artifacts:
-                name: "${PROJECT}-${VERSION}-data"
+                name: "${CI_PROJECT_NAME}-${CI_COMMIT_REF_NAME}-data"
                 paths:
                         - "${GAME_ASSET}"
 
@@ -76,16 +68,16 @@ before_script:
                 - apt-get install -y -qq file wget fuse libglib2.0-0 curl
                 - ./make-linux.sh
         cache:
-                key: "${PROJECT}-linux-${ARCH}"
+                key: "${CI_PROJECT_NAME}-linux-${ARCH}"
                 paths:
                         - "love-${LOVE_VERSION}-${ARCH}.AppImage"
                         - "appimagetool"
                         - "*.deb"
         artifacts:
                 <<: &build-linux-artifacts
-                    name: "${PROJECT}-${VERSION}-linux-${ARCH}"
+                    name: "${CI_PROJECT_NAME}-${CI_COMMIT_REF_NAME}-linux-${ARCH}"
                     paths:
-                        - ${PROJECT_TITLE_NOSPACE}-${ARCH}
+                        - ${GAME_TITLE_NOSPACE}-${ARCH}
 
 .build-windows: &build-windows
         <<: *debian
@@ -100,7 +92,7 @@ before_script:
                 - apt-get install -y -qq wget curl
                 - ./make-windows.sh
         cache:
-                key: "${PROJECT}-win-${ARCH_BITS}"
+                key: "${CI_PROJECT_NAME}-win-${ARCH_BITS}"
                 paths:
                         - "love-${LOVE_VERSION}-win${ARCH_BITS}"
                         - "bin"
@@ -108,9 +100,9 @@ before_script:
                         - ".wine${ARCH_BITS}"
         artifacts:
                 <<: &build-windows-artifacts
-                    name: "${PROJECT}-${VERSION}-win-${ARCH_BITS}"
+                    name: "${CI_PROJECT_NAME}-${CI_COMMIT_REF_NAME}-win-${ARCH_BITS}"
                     paths:
-                        - "${PROJECT_TITLE}"
+                        - "${GAME_TITLE}"
 
 .build-dev-windows: &build-dev-windows
         stage: build
@@ -120,21 +112,21 @@ before_script:
                 - apk add wget
                 - ./make-dev-windows.sh
         cache:
-                key: "${PROJECT}-win-${ARCH_BITS}"
+                key: "${CI_PROJECT_NAME}-win-${ARCH_BITS}"
                 paths:
-                        - "love-${LOVE_VERSION}-win${ARCH_BITS}"
+                        - "love-*-win${ARCH_BITS}/"
                         - "bin"
         artifacts:
-                name: "${PROJECT}-dev-win-${ARCH_BITS}"
+                name: "${CI_PROJECT_NAME}-dev-win-${ARCH_BITS}"
                 paths:
-                        - "${PROJECT_TITLE}"
+                        - "${GAME_TITLE}"
 
 .build-osx: &build-osx
         <<: *debian
         stage: build
         image: fzwoch/osxcross
         variables:
-                CFBundleIdentifier: "${APPLICATION_ID_BASE}"
+                CFBundleIdentifier: "${APPLICATION_ID}"
                 <<: &build-osx-variables
                         NSHumanReadableCopyright: "${COPYRIGHT}"
                         INSTALL_NAME_TOOL: x86_64-apple-darwin12-install_name_tool
@@ -142,45 +134,39 @@ before_script:
                 - apt-get install -y -qq wget
                 - ./make-macosx.sh
         cache:
-                key: "${PROJECT}-osx"
+                key: "${CI_PROJECT_NAME}-osx"
                 paths:
                         - "love.app"
                         - "game-music-emu"
         artifacts:
-                name: "${PROJECT}-${VERSION}-osx"
+                name: "${CI_PROJECT_NAME}-${CI_COMMIT_REF_NAME}-osx"
                 paths:
-                        - "${PROJECT_TITLE}.app"
+                        - "${GAME_TITLE}.app"
 
 .build-android: &build-android
         <<: *debian
         stage: build
-        image: mingc/android-build-box:1.20.0
+        image: ioribranford/build-love-android:11.4
         variables:
-                APPLICATION_ID: "${APPLICATION_ID_BASE}"
                 GRADLE_USER_HOME: "$CI_PROJECT_DIR/.gradle"
-                GAME_TYPE: "4kids"
-        before_script:
-          - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-          - apt-get update
-          - apt-get install -y -qq git zip luajit make file
         script:
+                - ./setup-android.sh
                 - ./make-android.sh
         cache:
-                key: "${PROJECT}-android"
+                key: "${CI_PROJECT_NAME}-android"
                 paths:
-                        - love-apk-src
-                        - apktool.jar
-                        - uber-apk-signer.jar
-                        - apktool
+                        - love-android
                         - .gradle
         artifacts:
-                name: "${PROJECT}-${VERSION}-android"
+                name: "${CI_PROJECT_NAME}-${CI_COMMIT_REF_NAME}-android"
                 paths:
-                        - "${PROJECT_TITLE_NOSPACE}.apk"
+                        - "${GAME_TITLE_NOSPACE}*.apk"
+                        - "${GAME_TITLE_NOSPACE}*.aab"
+                        - native-debug-symbols.zip
 
 data:
         variables:
-                GAME_ASSET: "${PROJECT}-${GAME_TYPE}.love"
+                GAME_ASSET: "${CI_PROJECT_NAME}.love"
         <<: *build-data
         <<: *full
 
@@ -219,7 +205,7 @@ windows:
 .demo-data:
         variables:
                 <<: *demo-variables
-                GAME_ASSET: "${PROJECT}-${GAME_TYPE}.love"
+                GAME_ASSET: "${CI_PROJECT_NAME}-${GAME_TYPE}.love"
         <<: *build-data
         <<: *demo
 
@@ -258,7 +244,7 @@ windows:
         variables:
                 <<: *demo-variables
                 <<: *build-osx-variables
-                CFBundleIdentifier: "${APPLICATION_ID_BASE}demo"
+                CFBundleIdentifier: "${APPLICATION_ID}demo"
 
 .dev-windows:
         <<: *build-dev-windows

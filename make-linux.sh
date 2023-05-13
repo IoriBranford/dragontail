@@ -1,14 +1,21 @@
 #!/bin/sh
 set -e
 
+. ./make-vars.sh
+
 PROJECT=${PROJECT:=${PWD##*/}}
-PROJECT_TITLE=${PROJECT_TITLE:="${PROJECT}${GAME_TYPE}"}
-PROJECT_TITLE_NOSPACE=${PROJECT_TITLE_NOSPACE:="$(echo ${PROJECT_TITLE} | sed -e 's/\s\+/_/g')"}
+GAME_TITLE=${GAME_TITLE:="${PROJECT}${GAME_TYPE}"}
+GAME_TITLE_NOSPACE=${GAME_TITLE_NOSPACE:="$(echo ${GAME_TITLE} | sed -e 's/\s\+/_/g')"}
 GAME_TYPE=${GAME_TYPE:=game}
 GAME_ASSET=${GAME_ASSET:="${GAME_TYPE}.love"}
 DESCRIPTION=${DESCRIPTION:="No description"}
 
 LOVE_VERSION=${LOVE_VERSION:="11.4"}
+LOVE_EXE=bin/love
+if [ "$LOVE_VERSION" = "11.3" ]
+then
+	LOVE_EXE=usr/bin/love
+fi
 
 ARCH=${ARCH:="x86_64"}
 if [ ${ARCH} = x86_64 ]; then
@@ -24,13 +31,13 @@ LOVE_APPIMAGE_URL=https://github.com/love2d/love/releases/download/${LOVE_VERSIO
 LOVE_APPIMAGE=love-${LOVE_VERSION}-${ARCH}.AppImage
 
 APPIMAGETOOL=appimagetool-${ARCH}.AppImage
-APPIMAGETOOL_RELEASE=12
+APPIMAGETOOL_RELEASE=13
 APPIMAGETOOL_URL=https://github.com/AppImage/AppImageKit/releases/download/${APPIMAGETOOL_RELEASE}
 
-GAME_APPDIR=${PROJECT_TITLE_NOSPACE}.AppDir
-GAME_DESKTOPFILE=${PROJECT_TITLE_NOSPACE}.desktop
-GAME_DIR=${GAME_DIR:="${PROJECT_TITLE_NOSPACE}-${ARCH}"}
-GAME_APPIMAGE=${GAME_APPIMAGE:="${PROJECT_TITLE_NOSPACE}-${ARCH}.AppImage"}
+GAME_APPDIR=${GAME_TITLE_NOSPACE}.AppDir
+GAME_DESKTOPFILE=${GAME_TITLE_NOSPACE}.desktop
+OUT_DIR=${OUT_DIR:="${GAME_TITLE_NOSPACE}-${ARCH}"}
+GAME_APPIMAGE=${GAME_APPIMAGE:="${GAME_TITLE_NOSPACE}-${ARCH}.AppImage"}
 
 LIBGME_VERSION=0.6.3-2
 LIBGME_DEB=libgme0_${LIBGME_VERSION}_${DEB_ARCH}.deb
@@ -86,38 +93,41 @@ set_property() {
 	fi
 }
 
-if [ -f appicon.png ]
+if [ -f "appicon/appicon.png" ]
 then
-	cp appicon.png ${GAME_APPDIR}
+	zip $GAME_ASSET appicon/appicon.png
+	cp appicon/appicon.png $GAME_APPDIR
 fi
 cd ${GAME_APPDIR}
-set_property love.desktop Name "${PROJECT_TITLE}"
+set_property love.desktop Name "${GAME_TITLE}"
 set_property love.desktop Comment "${DESCRIPTION}"
 set_property love.desktop MimeType ""
 set_property love.desktop Categories "Game;"
 set_property love.desktop NoDisplay "false"
 if [ -f appicon.png ]
 then
+	ln -sf appicon.png .DirIcon
 	set_property love.desktop Icon "appicon"
 fi
-mv love.desktop ${PROJECT_TITLE_NOSPACE}.desktop
-cat bin/love ../${GAME_ASSET} > love-fused
-mv love-fused bin/love
-chmod +x bin/love
+mv love.desktop ${GAME_TITLE_NOSPACE}.desktop
+cat $LOVE_EXE ../${GAME_ASSET} > love-fused
+mv love-fused $LOVE_EXE
+chmod +x $LOVE_EXE
+
 cd ..
 
-mkdir -p $GAME_DIR
-appimagetool/AppRun ${GAME_APPDIR} $GAME_DIR/${GAME_APPIMAGE}
+mkdir -p $OUT_DIR
+appimagetool/AppRun ${GAME_APPDIR} $OUT_DIR/${GAME_APPIMAGE}
 
 STEAM_DLL=linux${ARCH_BITS}/libsteam_api.so
 LUASTEAM_DLL=https://github.com/uspgamedev/luasteam/releases/download/v1.0.4/linux${ARCH_BITS}_luasteam.so
 
 if [ -e $STEAM_DLL ]
 then
-	curl -Lk -o $GAME_DIR/luasteam.so $LUASTEAM_DLL
-	cp $STEAM_DLL $GAME_DIR
+	curl -Lk -o $OUT_DIR/luasteam.so $LUASTEAM_DLL
+	cp $STEAM_DLL $OUT_DIR
 fi
 if [ -e steam_appid.txt ]
 then
-	cp steam_appid.txt $GAME_DIR
+	cp steam_appid.txt $OUT_DIR
 fi
