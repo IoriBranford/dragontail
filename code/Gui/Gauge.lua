@@ -13,9 +13,9 @@ end
 
 function Gauge:draw()
     local w, h = self.gaugewidth, self.gaugeheight
-    -- if w <= 0 or h <= 0 then
-    --     return
-    -- end
+    if w <= 0 or h <= 0 then
+        return
+    end
     love.graphics.setScissor(self.gaugex, self.gaugey, w, h)
     self:baseDraw()
     love.graphics.setScissor()
