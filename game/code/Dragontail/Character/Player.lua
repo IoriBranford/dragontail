@@ -62,6 +62,22 @@ local function findWallCollision(self)
     end
 end
 
+local function updateFace(facex, facey, targetfacex, targetfacey, turnspeed)
+    local facedot = dot(facex, facey, targetfacex, targetfacey)
+    local acosfacedot = acos(facedot)
+    if acosfacedot <= turnspeed then
+        facex, facey = targetfacex, targetfacey
+    else
+        local facedet = det(facex, facey, targetfacex, targetfacey)
+        if facedet < 0 then
+            turnspeed = -turnspeed
+        end
+        facex, facey = rot(facex, facey, turnspeed)
+        facex, facey = norm(facex, facey)
+    end
+    return facex, facey
+end
+
 function Player:control()
     self.runenergy = self.runenergy or 100
     self.runenergymax = self.runenergymax or self.runenergy
@@ -103,18 +119,7 @@ function Player:control()
             movespeed, turnspeed, acceltime = 4, pi/8, 8
         end
 
-        local facedot = dot(facex, facey, targetfacex, targetfacey)
-        local acosfacedot = acos(facedot)
-        if acosfacedot <= turnspeed then
-            facex, facey = targetfacex, targetfacey
-        else
-            local facedet = det(facex, facey, targetfacex, targetfacey)
-            if facedet < 0 then
-                turnspeed = -turnspeed
-            end
-            facex, facey = rot(facex, facey, turnspeed)
-            facex, facey = norm(facex, facey)
-        end
+        facex, facey = updateFace(facex, facey, targetfacex, targetfacey, turnspeed)
         self.facex, self.facey = facex, facey
 
         if runningtime then
@@ -318,7 +323,6 @@ function Player:runWithEnemy(enemy)
     local runningtime = 0
     while true do
         yield()
-        local movespeed, turnspeed, acceltime = 8, pi/120, 1
         local facex, facey = self.facex, self.facey
         local inx, iny = Controls.getDirectionInput()
         local attackpressed = Controls.getButtonsPressed()
@@ -334,18 +338,9 @@ function Player:runWithEnemy(enemy)
             end
         end
 
-        local facedot = dot(facex, facey, targetfacex, targetfacey)
-        local acosfacedot = acos(facedot)
-        if acosfacedot <= turnspeed then
-            facex, facey = targetfacex, targetfacey
-        else
-            local facedet = det(facex, facey, targetfacex, targetfacey)
-            if facedet < 0 then
-                turnspeed = -turnspeed
-            end
-            facex, facey = rot(facex, facey, turnspeed)
-            facex, facey = norm(facex, facey)
-        end
+        local movespeed, turnspeed, acceltime = 8, pi/120, 1
+
+        facex, facey = updateFace(facex, facey, targetfacex, targetfacey, turnspeed)
         self.facex, self.facey = facex, facey
         holdangle = atan2(facey, facex)
         targetvelx = facex * movespeed
