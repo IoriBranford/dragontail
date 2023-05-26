@@ -71,12 +71,13 @@ function Player:control()
     self.facex = self.facex or 1
     self.facey = self.facey or 0
     local targetfacex, targetfacey = self.facex, self.facey
-    local running
+    local runningtime
     while true do
         yield()
         local facex, facey = self.facex, self.facey
         local inx, iny = Controls.getDirectionInput()
         local attackpressed, runpressed = Controls.getButtonsPressed()
+        local _, rundown = Controls.getButtonsDown()
 
         local targetvelx, targetvely = 0, 0
         if inx ~= 0 or iny ~= 0 then
@@ -88,16 +89,15 @@ function Player:control()
             end
         end
 
-        if runpressed and self.runenergy >= self.runenergycost then
+        if runpressed and not runningtime and self.runenergy >= self.runenergycost then
             Audio.play(self.dashsound)
-            running = true
-            runpressed = false
+            runningtime = 0
             facex, facey = targetfacex or facex, targetfacey or facey
             self.runenergy = self.runenergy - self.runenergycost
         end
 
         local movespeed, turnspeed, acceltime
-        if running then
+        if runningtime then
             movespeed, turnspeed, acceltime = 8, pi/60, 1
         else
             movespeed, turnspeed, acceltime = 4, pi/8, 8
@@ -117,7 +117,7 @@ function Player:control()
         end
         self.facex, self.facey = facex, facey
 
-        if running then
+        if runningtime then
             targetvelx = facex * movespeed
             targetvely = facey * movespeed
         else
@@ -129,7 +129,7 @@ function Player:control()
 
         local velx, vely = self.velx, self.vely
 
-        if running then
+        if runningtime then
             if math.floor(love.timer.getTime() * 60) % 3 == 0 then
                 self:makeAfterImage()
             end
@@ -157,9 +157,12 @@ function Player:control()
                 return Player.straightAttack, "running-elbow", atan2(vely, velx)
             end
 
-            self.runenergy = self.runenergy - 1
-            if self.runenergy <= 0 then
-                running = false
+            if runningtime < 15 then
+                runningtime = runningtime + 1
+            elseif self.runenergy > 0 and rundown then
+                self.runenergy = self.runenergy - 1
+            else
+                runningtime = nil
                 Audio.play(self.stopdashsound)
             end
         else
@@ -312,12 +315,14 @@ function Player:runWithEnemy(enemy)
     Database.fill(self, "running-with-enemy")
     Database.fill(enemy, "human-in-spinning-throw")
     enemy:startAttack(holdangle)
+    local runningtime = 0
     while true do
         yield()
         local movespeed, turnspeed, acceltime = 8, pi/120, 1
         local facex, facey = self.facex, self.facey
         local inx, iny = Controls.getDirectionInput()
         local attackpressed = Controls.getButtonsPressed()
+        local _, rundown = Controls.getButtonsDown()
 
         local targetvelx, targetvely = 0, 0
         if inx ~= 0 or iny ~= 0 then
@@ -370,8 +375,11 @@ function Player:runWithEnemy(enemy)
             return Player.straightAttack, "running-elbow", holdangle
         end
 
-        self.runenergy = self.runenergy - 2
-        if self.runenergy <= 0 then
+        if runningtime < 15 then
+            runningtime = runningtime + 1
+        elseif self.runenergy > 0 and rundown then
+            self.runenergy = self.runenergy - 2
+        else
             Audio.play(self.stopdashsound)
             Audio.play(self.throwsound)
             enemy:stopAttack()
