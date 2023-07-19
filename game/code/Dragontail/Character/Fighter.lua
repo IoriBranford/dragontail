@@ -71,6 +71,7 @@ function Fighter:hurt(attacker)
     local attackangle = attacker.attackangle
     local defeateffect = attacker.attackdefeateffect
     local hiteffect = attacker.attackhiteffect
+    local pushbackspeed = attacker.attackpushbackspeed or 0
     yield()
 
     if self.health <= 0 then
@@ -80,6 +81,10 @@ function Fighter:hurt(attacker)
         return hiteffect, attacker, attackangle
     end
     Audio.play(self.hurtsound)
+    while pushbackspeed > 0 do
+        pushbackspeed = Fighter.updateAttackLungeSpeed(self, attackangle, pushbackspeed)
+        yield()
+    end
     local recoverai = self.aiafterhurt or self.recoverai
     if not recoverai then
         print("No aiafterhurt or recoverai for "..self.type)
