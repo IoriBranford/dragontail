@@ -217,6 +217,9 @@ end
 
 function Character:stopAttack()
     self.attackangle = nil
+    if self.opponent and self.opponent.attacker == self then
+        self.opponent.attacker = nil
+    end
 end
 
 function Character:startGuarding(guardangle)

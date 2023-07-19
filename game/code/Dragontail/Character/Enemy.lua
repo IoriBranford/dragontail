@@ -104,7 +104,7 @@ function Enemy:stand(duration)
     end
     Database.fill(self, attacktype)
     local attackradius = totalAttackRange(self.attackradius or 32, self.attacklungespeed or 0) + opponent.bodyradius
-    if toopposq <= attackradius*attackradius then
+    if not opponent.attacker and toopposq <= attackradius*attackradius then
         return Enemy.attack, attacktype
     end
     return Enemy.approach
@@ -147,7 +147,7 @@ function Enemy:approach()
     end
     local reached = moveTo(self, destx, desty, speed, self.approachtime or 60)
     oppox, oppoy = opponent.x, opponent.y
-    local attacktype = self.attacktype
+    local attacktype = not opponent.attacker and self.attacktype
     if attacktype and distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
         return Enemy.attack, attacktype
     end
@@ -167,6 +167,7 @@ function Enemy:attack()
     local x, y = self.x, self.y
     local bounds = self.bounds
     local opponent = self.opponent
+    opponent.attacker = self
     local oppox, oppoy = opponent.x, opponent.y
     local tooppox, tooppoy = oppox - x, oppoy - y
     local tooppoangle = 0
