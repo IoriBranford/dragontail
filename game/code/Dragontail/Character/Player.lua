@@ -195,6 +195,7 @@ function Player:control()
 end
 
 function Player:spinAttack(attacktype, angle)
+    local originalfacex, originalfacey = self.facex, self.facey
     Database.fill(self, attacktype)
     local spinvel = self.attackspinspeed or 0
     local spintime = self.attackhittime or 0
@@ -230,6 +231,7 @@ function Player:spinAttack(attacktype, angle)
     if attackagain then
         return Player.spinAttack, attacktype, angle
     end
+    self.facex, self.facey = originalfacex, originalfacey
     return Player.control
 end
 
