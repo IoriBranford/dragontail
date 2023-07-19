@@ -207,6 +207,7 @@ function Player:control()
 end
 
 function Player:spinAttack(attacktype, angle)
+    local lungeangle = angle + pi
     local originalfacex, originalfacey = self.facex, self.facey
     Database.fill(self, attacktype)
     local spinvel = self.attackspinspeed or 0
@@ -214,6 +215,7 @@ function Player:spinAttack(attacktype, angle)
     Audio.play(self.swingsound)
     local attackagain = false
     local t = spintime
+    local lungespeed = self.attacklungespeed
     repeat
         local inx, iny = Controls.getDirectionInput()
         local targetvelx, targetvely = 0, 0
@@ -224,7 +226,11 @@ function Player:spinAttack(attacktype, angle)
             targetvely = iny * speed
         end
 
-        self:accelerateTowardsVel(targetvelx, targetvely, 8)
+        if lungespeed then
+            lungespeed = Fighter.updateAttackLungeSpeed(self, lungeangle, lungespeed)
+        else
+            self:accelerateTowardsVel(targetvelx, targetvely, 8)
+        end
 
         self:startAttack(angle)
         faceAngle(self, angle+pi)
@@ -484,10 +490,15 @@ function Player:straightAttack(attacktype, angle)
         self.sprite:changeAsepriteAnimation(attackanimation)
     end
     local t = self.attackhittime or 1
+    local lungespeed = self.attacklungespeed
     repeat
         yield()
         attackagain = attackagain or Controls.getButtonsPressed()
-        self:accelerateTowardsVel(0, 0, self.attackdecel or 8)
+        if lungespeed then
+            lungespeed = Fighter.updateAttackLungeSpeed(self, angle, lungespeed)
+        else
+            self:accelerateTowardsVel(0, 0, self.attackdecel or 8)
+        end
         local afterimageinterval = self.afterimageinterval or 0
         if afterimageinterval ~= 0 and t % afterimageinterval == 0 then
             self:makeAfterImage()
