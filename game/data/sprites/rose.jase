@@ -29,7 +29,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 10, "y": 8, "w": 51, "h": 56 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "main#5": {
     "frame": { "x": 147, "y": 129, "w": 47, "h": 56 },
@@ -109,7 +109,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 19, "y": 7, "w": 38, "h": 57 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "main#15": {
     "frame": { "x": 186, "y": 538, "w": 35, "h": 51 },
@@ -221,7 +221,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 17, "y": 7, "w": 31, "h": 57 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "main#29": {
     "frame": { "x": 409, "y": 540, "w": 31, "h": 57 },
@@ -301,7 +301,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 7, "y": 7, "w": 38, "h": 57 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "main#39": {
     "frame": { "x": 339, "y": 540, "w": 35, "h": 51 },
@@ -381,7 +381,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 9, "y": 8, "w": 53, "h": 56 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "main#49": {
     "frame": { "x": 196, "y": 177, "w": 47, "h": 56 },
@@ -461,7 +461,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 3, "y": 9, "w": 50, "h": 55 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "main#59": {
     "frame": { "x": 470, "y": 312, "w": 41, "h": 54 },
@@ -541,7 +541,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 17, "y": 4, "w": 31, "h": 57 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "main#69": {
     "frame": { "x": 223, "y": 541, "w": 31, "h": 57 },
@@ -621,7 +621,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 11, "y": 9, "w": 50, "h": 55 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "main#79": {
     "frame": { "x": 427, "y": 312, "w": 41, "h": 54 },
@@ -1221,7 +1221,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 28, "y": 36, "w": 1, "h": 1 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#5": {
     "frame": { "x": 539, "y": 59, "w": 1, "h": 1 },
@@ -1301,7 +1301,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 26, "y": 35, "w": 1, "h": 1 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#15": {
     "frame": { "x": 539, "y": 59, "w": 1, "h": 1 },
@@ -1413,7 +1413,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 20, "y": 33, "w": 1, "h": 1 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#29": {
     "frame": { "x": 527, "y": 59, "w": 1, "h": 1 },
@@ -1493,7 +1493,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 37, "y": 35, "w": 1, "h": 1 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#39": {
     "frame": { "x": 524, "y": 59, "w": 1, "h": 1 },
@@ -1573,7 +1573,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 41, "y": 36, "w": 1, "h": 1 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#49": {
     "frame": { "x": 524, "y": 59, "w": 1, "h": 1 },
@@ -1653,7 +1653,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 18, "y": 35, "w": 1, "h": 1 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#59": {
     "frame": { "x": 542, "y": 59, "w": 1, "h": 1 },
@@ -1733,7 +1733,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 44, "y": 25, "w": 1, "h": 1 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#69": {
     "frame": { "x": 530, "y": 59, "w": 1, "h": 1 },
@@ -1813,7 +1813,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 45, "y": 35, "w": 1, "h": 1 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#79": {
     "frame": { "x": 530, "y": 59, "w": 1, "h": 1 },
@@ -2413,7 +2413,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 24, "y": 33, "w": 8, "h": 7 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "weaponhand#5": {
     "frame": { "x": 301, "y": 177, "w": 8, "h": 7 },
@@ -2493,7 +2493,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 23, "y": 32, "w": 6, "h": 7 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "weaponhand#15": {
     "frame": { "x": 228, "y": 294, "w": 6, "h": 6 },
@@ -2605,7 +2605,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 17, "y": 30, "w": 7, "h": 7 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "weaponhand#29": {
     "frame": { "x": 177, "y": 276, "w": 7, "h": 7 },
@@ -2685,7 +2685,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 35, "y": 32, "w": 6, "h": 7 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "weaponhand#39": {
     "frame": { "x": 123, "y": 359, "w": 6, "h": 6 },
@@ -2765,7 +2765,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 38, "y": 33, "w": 8, "h": 7 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "weaponhand#49": {
     "frame": { "x": 528, "y": 235, "w": 8, "h": 7 },
@@ -2845,7 +2845,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 15, "y": 32, "w": 7, "h": 7 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "weaponhand#59": {
     "frame": { "x": 470, "y": 312, "w": 41, "h": 54 },
@@ -2925,7 +2925,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 20, "y": 4, "w": 28, "h": 29 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "weaponhand#69": {
     "frame": { "x": 510, "y": 604, "w": 28, "h": 29 },
@@ -3005,7 +3005,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 42, "y": 32, "w": 7, "h": 7 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 50
+    "duration": 100
    },
    "weaponhand#79": {
     "frame": { "x": 32, "y": 605, "w": 26, "h": 29 },
@@ -3585,49 +3585,49 @@
   "scale": "1",
   "frameTags": [
    { "name": "stand0", "from": 0, "to": 1, "direction": "forward" },
-   { "name": "fastkick0", "from": 2, "to": 3, "direction": "forward" },
+   { "name": "fastkick0", "from": 2, "to": 3, "direction": "pingpong" },
    { "name": "hardkick0", "from": 3, "to": 3, "direction": "forward" },
    { "name": "elbow0", "from": 4, "to": 4, "direction": "forward" },
    { "name": "throw0", "from": 5, "to": 5, "direction": "forward" },
    { "name": "run0", "from": 6, "to": 9, "direction": "forward" },
    { "name": "stand1", "from": 10, "to": 11, "direction": "forward" },
-   { "name": "fastkick1", "from": 12, "to": 13, "direction": "forward" },
+   { "name": "fastkick1", "from": 12, "to": 13, "direction": "pingpong" },
    { "name": "hardkick1", "from": 13, "to": 13, "direction": "forward" },
    { "name": "elbow1", "from": 14, "to": 14, "direction": "forward" },
    { "name": "throw1", "from": 15, "to": 15, "direction": "forward" },
    { "name": "run1", "from": 16, "to": 19, "direction": "forward" },
    { "name": "stand2", "from": 20, "to": 25, "direction": "forward" },
-   { "name": "fastkick2", "from": 26, "to": 27, "direction": "forward" },
+   { "name": "fastkick2", "from": 26, "to": 27, "direction": "pingpong" },
    { "name": "hardkick2", "from": 27, "to": 27, "direction": "forward" },
    { "name": "elbow2", "from": 28, "to": 28, "direction": "forward" },
    { "name": "throw2", "from": 29, "to": 29, "direction": "forward" },
    { "name": "run2", "from": 30, "to": 33, "direction": "forward" },
    { "name": "stand3", "from": 34, "to": 35, "direction": "forward" },
-   { "name": "fastkick3", "from": 36, "to": 37, "direction": "forward" },
+   { "name": "fastkick3", "from": 36, "to": 37, "direction": "pingpong" },
    { "name": "hardkick3", "from": 37, "to": 37, "direction": "forward" },
    { "name": "elbow3", "from": 38, "to": 38, "direction": "forward" },
    { "name": "throw3", "from": 39, "to": 39, "direction": "forward" },
    { "name": "run3", "from": 40, "to": 43, "direction": "forward" },
    { "name": "stand4", "from": 44, "to": 45, "direction": "forward" },
-   { "name": "fastkick4", "from": 46, "to": 47, "direction": "forward" },
+   { "name": "fastkick4", "from": 46, "to": 47, "direction": "pingpong" },
    { "name": "hardkick4", "from": 47, "to": 47, "direction": "forward" },
    { "name": "elbow4", "from": 48, "to": 48, "direction": "forward" },
    { "name": "throw4", "from": 49, "to": 49, "direction": "forward" },
    { "name": "run4", "from": 50, "to": 53, "direction": "forward" },
    { "name": "stand5", "from": 54, "to": 55, "direction": "forward" },
-   { "name": "fastkick5", "from": 56, "to": 57, "direction": "forward" },
+   { "name": "fastkick5", "from": 56, "to": 57, "direction": "pingpong" },
    { "name": "hardkick5", "from": 57, "to": 57, "direction": "forward" },
    { "name": "elbow5", "from": 58, "to": 58, "direction": "forward" },
    { "name": "throw5", "from": 59, "to": 59, "direction": "forward" },
    { "name": "run5", "from": 60, "to": 63, "direction": "forward" },
    { "name": "stand6", "from": 64, "to": 65, "direction": "forward" },
-   { "name": "fastkick6", "from": 66, "to": 67, "direction": "forward" },
+   { "name": "fastkick6", "from": 66, "to": 67, "direction": "pingpong" },
    { "name": "hardkick6", "from": 67, "to": 67, "direction": "forward" },
    { "name": "elbow6", "from": 68, "to": 68, "direction": "forward" },
    { "name": "throw6", "from": 69, "to": 69, "direction": "forward" },
    { "name": "run6", "from": 70, "to": 73, "direction": "forward" },
    { "name": "stand7", "from": 74, "to": 75, "direction": "forward" },
-   { "name": "fastkick7", "from": 76, "to": 77, "direction": "forward" },
+   { "name": "fastkick7", "from": 76, "to": 77, "direction": "pingpong" },
    { "name": "hardkick7", "from": 77, "to": 77, "direction": "forward" },
    { "name": "elbow7", "from": 78, "to": 78, "direction": "forward" },
    { "name": "throw7", "from": 79, "to": 79, "direction": "forward" },
