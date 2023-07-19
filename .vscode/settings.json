@@ -7,12 +7,12 @@
     ],
     "Lua.runtime.version": "LuaJIT",
     "Lua.runtime.path": [
-        "?.lua",
-        "?/init.lua",
-        "libraries/?.lua",
-        "libraries/?/init.lua",
-        "code/?.lua",
-        "code/?/init.lua"
+        "game/?.lua",
+        "game/?/init.lua",
+        "game/libraries/?.lua",
+        "game/libraries/?/init.lua",
+        "game/code/?.lua",
+        "game/code/?/init.lua"
     ],
     "Lua.workspace.ignoreDir": [
         ".vscode",
