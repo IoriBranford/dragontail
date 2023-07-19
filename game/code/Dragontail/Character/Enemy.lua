@@ -5,6 +5,7 @@ local Stage    = require "Dragontail.Stage"
 local tablex   = require "pl.tablex"
 local Fighter  = require "Dragontail.Character.Fighter"
 
+---@class Enemy:Fighter
 local Enemy = tablex.copy(Fighter)
 
 local pi = math.pi
@@ -156,13 +157,6 @@ function Enemy:approach()
     return Enemy.stand, 5
 end
 
-local function updateLungeAttack(self, attackangle, lungespeed)
-    self.velx = lungespeed * cos(attackangle)
-    self.vely = lungespeed * sin(attackangle)
-    lungespeed = max(0, lungespeed - 1)
-    return lungespeed
-end
-
 function Enemy:attack()
     self:stopGuarding()
     if self.attackwindupinvuln then
@@ -215,7 +209,7 @@ function Enemy:attack()
     end
     local hittime = self.attackhittime or 10
     repeat
-        lungespeed = updateLungeAttack(self, tooppoangle, lungespeed)
+        lungespeed = Fighter.updateAttackLungeSpeed(self, tooppoangle, lungespeed)
         hittime = hittime - 1
         yield()
         self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
@@ -226,7 +220,7 @@ function Enemy:attack()
 
     local afterhittime = self.attackafterhittime or 30
     repeat
-        lungespeed = updateLungeAttack(self, tooppoangle, lungespeed)
+        lungespeed = Fighter.updateAttackLungeSpeed(self, tooppoangle, lungespeed)
         afterhittime = afterhittime - 1
         yield()
         self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)

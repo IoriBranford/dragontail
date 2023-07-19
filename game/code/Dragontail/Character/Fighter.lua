@@ -2,6 +2,8 @@ local Stage = require "Dragontail.Stage"
 local Audio = require "System.Audio"
 local Database = require "Data.Database"
 local Common   = require "Dragontail.Character.Common"
+
+---@class Fighter:Character
 local Fighter = {}
 
 local huge = math.huge
@@ -27,6 +29,13 @@ function Fighter:stopHolding(opponent)
     if opponent then
         opponent.heldby = nil
     end
+end
+
+function Fighter:updateAttackLungeSpeed(attackangle, lungespeed)
+    self.velx = lungespeed * cos(attackangle)
+    self.vely = lungespeed * sin(attackangle)
+    lungespeed = math.max(0, lungespeed - 1)
+    return lungespeed
 end
 
 function Fighter:hurt(attacker)
