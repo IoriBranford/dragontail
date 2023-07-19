@@ -22,8 +22,9 @@ function Script:run(...)
     local thread = self.thread
     if thread then
         local ok, nextaction, a,b,c,d,e,f,g = co_resume(thread, self, ...)
-        assert(ok, nextaction)
-        if nextaction then
+        if not ok then
+            error(debug.traceback(thread, nextaction))
+        elseif nextaction then
             start(self, nextaction, a,b,c,d,e,f,g)
         elseif co_status(thread) == "dead" then
             stop(self)
