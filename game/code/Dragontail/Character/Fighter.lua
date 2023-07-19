@@ -60,16 +60,15 @@ function Fighter:hurt(attacker)
     end
     Audio.play(hitsound)
     local attackangle = attacker.attackangle
+    local defeateffect = attacker.attackdefeateffect
+    local hiteffect = attacker.attackhiteffect
     yield()
 
     if self.health <= 0 then
-        local defeateffect = attacker.attackdefeateffect or self.defeatai or "defeat"
+        defeateffect = defeateffect or self.defeatai or "defeat"
         return defeateffect, attacker, attackangle
-    else
-        local hiteffect = attacker.attackhiteffect
-        if hiteffect then
-            return hiteffect, attacker, attackangle
-        end
+    elseif hiteffect then
+        return hiteffect, attacker, attackangle
     end
     Audio.play(self.hurtsound)
     local recoverai = self.aiafterhurt or self.recoverai

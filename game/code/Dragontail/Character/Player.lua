@@ -78,7 +78,19 @@ local function updateFace(facex, facey, targetfacex, targetfacey, turnspeed)
     return facex, facey
 end
 
+local function doComboAttack(self, facex, facey)
+    if self.comboindex >= 2 then
+        self.comboindex = 0
+        local spindir = facex < 0 and "ccw" or "cw"
+        return Player.spinAttack, "tail-swing-"..spindir, atan2(-facey, -facex)
+    else
+        self.comboindex = self.comboindex + 1
+        return Player.straightAttack, "kick", atan2(facey, facex)
+    end
+end
+
 function Player:control()
+    self.comboindex = self.comboindex or 0
     self.runenergy = self.runenergy or 100
     self.runenergymax = self.runenergymax or self.runenergy
     self.runenergycost = self.runenergycost or 25
@@ -106,6 +118,7 @@ function Player:control()
         end
 
         if runpressed and not runningtime and self.runenergy >= self.runenergycost then
+            self.comboindex = 0
             Audio.play(self.dashsound)
             runningtime = 0
             facex, facey = targetfacex or facex, targetfacey or facey
@@ -173,8 +186,7 @@ function Player:control()
         else
             self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
             if attackpressed then
-                local spindir = facex < 0 and "ccw" or "cw"
-                return Player.spinAttack, "tail-swing-"..spindir, atan2(-facey, -facex)
+                return doComboAttack(self, facex, facey)
             end
 
             local opponenttohold = findOpponentToHold(self, inx, iny)
@@ -228,14 +240,15 @@ function Player:spinAttack(attacktype, angle)
         t = t - 1
     until t <= 0
     self:stopAttack()
-    if attackagain then
-        return Player.spinAttack, attacktype, angle
-    end
     self.facex, self.facey = originalfacex, originalfacey
+    if attackagain then
+        return doComboAttack(self, originalfacex, originalfacey)
+    end
     return Player.control
 end
 
 function Player:hold(enemy)
+    self.comboindex = 0
     Audio.play(self.holdsound)
     Fighter.startHolding(self, enemy)
     Script.start(enemy, enemy.heldai or "held", self)
@@ -463,6 +476,7 @@ end
 function Player:straightAttack(attacktype, angle)
     Database.fill(self, attacktype)
     Audio.play(self.swingsound)
+    local attackagain = false
     self:startAttack(angle)
     local attackanimation = self.swinganimation
     if attackanimation then
@@ -472,6 +486,7 @@ function Player:straightAttack(attacktype, angle)
     local t = self.attackhittime or 1
     repeat
         yield()
+        attackagain = attackagain or Controls.getButtonsPressed()
         self:accelerateTowardsVel(0, 0, self.attackdecel or 8)
         local afterimageinterval = self.afterimageinterval or 0
         if afterimageinterval ~= 0 and t % afterimageinterval == 0 then
@@ -480,6 +495,9 @@ function Player:straightAttack(attacktype, angle)
         t = t - 1
     until t <= 0
     self:stopAttack()
+    if attackagain then
+        return doComboAttack(self, self.facex, self.facey)
+    end
     return Player.control
 end
 
