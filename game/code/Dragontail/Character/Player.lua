@@ -186,7 +186,7 @@ function Player:control()
         else
             self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
             if attackpressed then
-                return doComboAttack(self, facex, facey)
+                return doComboAttack(self, targetfacex, targetfacey)
             end
 
             local opponenttohold = findOpponentToHold(self, inx, iny)
@@ -248,6 +248,10 @@ function Player:spinAttack(attacktype, angle)
     self:stopAttack()
     self.facex, self.facey = originalfacex, originalfacey
     if attackagain then
+        local inx, iny = Controls.getDirectionInput()
+        if inx ~= 0 or iny ~= 0 then
+            originalfacex, originalfacey = inx, iny
+        end
         return doComboAttack(self, originalfacex, originalfacey)
     end
     return Player.control
@@ -507,7 +511,12 @@ function Player:straightAttack(attacktype, angle)
     until t <= 0
     self:stopAttack()
     if attackagain then
-        return doComboAttack(self, self.facex, self.facey)
+        local facex, facey = self.facex, self.facey
+        local inx, iny = Controls.getDirectionInput()
+        if inx ~= 0 or iny ~= 0 then
+            facex, facey = inx, iny
+        end
+        return doComboAttack(self, facex, facey)
     end
     return Player.control
 end
