@@ -307,6 +307,9 @@ function Character:checkAttackCollision(attacker)
     local fromattackerx, fromattackery = self.x - attacker.x, self.y - attacker.y
     local distsq = lensq(fromattackerx, fromattackery)
     local bodyradius = self.bodyradius
+    if distsq <= bodyradius * bodyradius then
+        return true
+    end
     local radii = bodyradius + attacker.attackradius
     local radiisq = radii * radii
     if distsq <= radiisq then
