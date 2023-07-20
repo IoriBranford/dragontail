@@ -29,7 +29,8 @@ local function findOpponentToHold(self, inx, iny)
     local x, y, opponents = self.x, self.y, self.opponents
     for i, opponent in ipairs(opponents) do
         if dot(opponent.x - x, opponent.y - y, inx, iny) > 0 then
-            if opponent.canbegrabbed and self:testBodyCollision(opponent) then
+            if opponent.canbegrabbed
+            and math.testcircles(self.x, self.y, 0, opponent.x, opponent.y, opponent.bodyradius) then
                 return opponent
             end
         end
