@@ -91,7 +91,7 @@ end
 local addCharacter = Stage.addCharacter
 
 function Stage.addCharacters(objects)
-    for _, object in ipairs(objects) do
+    for i = 1, #objects do local object = objects[i]
         local typ = object.type
         if typ ~= "" then
             if typ == "bounds" then
@@ -166,25 +166,25 @@ local function pruneDisappeared(characters, onempty, ...)
 end
 
 function Stage.fixedupdate()
-    for _, character in ipairs(allcharacters) do
+    for i = 1, #allcharacters do local character = allcharacters[i]
         character:fixedupdate()
     end
-    for _, solid in ipairs(solids) do
+    for i = 1, #solids do local solid = solids[i]
         solid:collideWithCharacterAttack(player)
-        for _, enemy in ipairs(enemies) do
+        for j = 1, #enemies do local enemy = enemies[j]
             solid:collideWithCharacterAttack(enemy)
         end
     end
-    for _, enemy in ipairs(enemies) do
+    for i = 1, #enemies do local enemy = enemies[i]
         enemy:collideWithCharacterAttack(player)
-        for _, enemy2 in ipairs(enemies) do
+        for j = 1, #enemies do local enemy2 = enemies[j]
             enemy:collideWithCharacterAttack(enemy2)
         end
     end
-    for _, enemy in ipairs(enemies) do
+    for i = 1, #enemies do local enemy = enemies[i]
         player:collideWithCharacterAttack(enemy)
     end
-    for _, solid in ipairs(solids) do
+    for i = 1, #solids do local solid = solids[i]
         player:collideWithCharacterBody(solid)
     end
     player:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
@@ -223,7 +223,7 @@ function Stage.fixedupdateGui(gui)
 end
 
 function Stage.update(dsecs, fixedfrac)
-    for _, character in ipairs(allcharacters) do
+    for i = 1, #allcharacters do local character = allcharacters[i]
         character:update(dsecs, fixedfrac)
     end
 end
