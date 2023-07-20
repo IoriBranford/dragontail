@@ -165,8 +165,6 @@ end
 
 function Enemy:attack()
     self:stopGuarding()
-    local originalcanbeattacked = self.canbeattacked
-    local originalcanbegrabbed = self.canbegrabbed
     if self.attackwindupinvuln then
         self.canbeattacked = false
         self.canbegrabbed = false
@@ -226,8 +224,10 @@ function Enemy:attack()
     until hittime <= 0
 
     self:stopAttack()
-    self.canbeattacked = originalcanbeattacked
-    self.canbegrabbed = originalcanbegrabbed
+    if self.attackwindupinvuln then
+        self.canbeattacked = true
+        self.canbegrabbed = true
+    end
 
     local afterhittime = self.attackafterhittime or 30
     repeat
