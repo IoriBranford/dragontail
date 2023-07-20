@@ -5,5 +5,5 @@ bandit-spear,enemy,75,16,,true,TRUE,4,,spear-thrust,,fall,24,,,4,Dragontail.Char
 food-container,container,1,16,TRUE,true,,,,,,,,,container,,Dragontail.Character.Common,,,containerBreak,,,,,,,,,,,,,,,containerBreak,,,,
 food-fish,item,,18,,,,,,,,,,25,fish,,Dragontail.Character.Common,itemWaitForPickup,,,,,,,,,,,,,,,,,,,,,
 food-bigfish,item,,18,,,,,,,,,,100,bigfish,,Dragontail.Character.Common,itemWaitForPickup,,,,,,,,,,,,,,,,,,,,,
-bandit-axe,enemy,150,16,,true,TRUE,3,30,axe-throw,axe-swing axe-throw,fall,18,,,4,Dragontail.Character.Enemy,stand,,hurt,guardHit,30,guard,axe-swing,11,stun,60,thrown,8,,8,,axe-swing,collapseA,defeat,stand,guard,attack,axe-swing
+bandit-axe,enemy,150,16,,true,TRUE,3,30,axe-throw,axe-swing axe-throw,fall,18,,,4,Dragontail.Character.Enemy,stand,,hurt,guardHit,30,guard,axe-swing-counter,11,stun,60,thrown,8,,8,,axe-swing-counter,collapseA,defeat,stand,guard,attack,axe-swing
 thrown-axe,enemy,1,16,,true,FALSE,10,,thrown-axe-attack,,,,,thrownaxe0,4,Dragontail.Character.Common,projectileFly,,projectileDeflected,,,,,,,,projectileFly,,,10,,,,,,,,
