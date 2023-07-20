@@ -300,7 +300,7 @@ function Character:collideWithCharacterBody(other)
 end
 
 function Character:checkAttackCollision(attacker)
-    if self == attacker or self == attacker.thrower then
+    if self == attacker or self == attacker.thrower or self.thrower == attacker then
         return
     end
     local attackangle = attacker.attackangle
