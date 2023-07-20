@@ -57,6 +57,9 @@ function Fighter:hurt(attacker)
     Fighter.stopHolding(heldby, self)
     self.hurtstun = attacker.attackstun or 3
     local facex, facey = self.facex or 1, self.facey or 0
+    if facex == 0 and facey == 0 then
+        facex = 1
+    end
     local hurtanimation = self.getDirectionalAnimation_angle("hurt", atan2(facey, facex), self.animationdirections)
     local aseprite = self.sprite and self.sprite.aseprite
     if aseprite and aseprite:getAnimation(hurtanimation) then
@@ -112,6 +115,9 @@ function Fighter:held(holder)
     self.velx, self.vely = 0, 0
     while self.heldby == holder do
         local dx, dy = holder.x - self.x, holder.y - self.y
+        if dx == 0 and dy == 0 then
+            dx = 1
+        end
         local hurtanimation = self.getDirectionalAnimation_angle(self.heldanimation or "stand", atan2(dy, dx), self.animationdirections)
         local aseprite = self.sprite and self.sprite.aseprite
         if aseprite and aseprite:getAnimation(hurtanimation) then

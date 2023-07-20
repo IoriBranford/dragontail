@@ -62,6 +62,9 @@ function Enemy:stand(duration)
         oppox, oppoy = opponent.x, opponent.y
         if oppox ~= x or oppoy ~= y then
             local tooppoy, tooppox = oppoy - y, oppox - x
+            if tooppox == 0 and tooppoy == 0 then
+                tooppox = 1
+            end
             faceDir(self, tooppox, tooppoy)
             local faceangle = atan2(tooppoy, tooppox)
             local standanimation = self.getDirectionalAnimation_angle("stand", faceangle, self.animationdirections)
@@ -135,6 +138,9 @@ function Enemy:approach()
     -- choose animation
     if desty ~= y or destx ~= x then
         local todesty, todestx = desty - y, destx - x
+        if todestx == 0 and todesty == 0 then
+            todestx = 1
+        end
         faceDir(self, todestx, todesty)
         local todestangle = atan2(todesty, todestx)
         local walkanimation = self.getDirectionalAnimation_angle("walk", todestangle, self.animationdirections)
@@ -239,7 +245,10 @@ function Enemy:guard()
     local t = self.guardtime or 60
     local opponent = self.opponent
     repeat
-        local guardangle = atan2(opponent.y - self.y, opponent.x - self.x)
+        local guardangle = 0
+        if opponent.y ~= self.y or opponent.x ~= self.x then
+            guardangle = atan2(opponent.y - self.y, opponent.x - self.x)
+        end
         self:startGuarding(guardangle)
         local guardanimation = self.getDirectionalAnimation_angle("guard", guardangle, self.animationdirections)
         self.sprite:changeAsepriteAnimation(guardanimation, 1, "stop")
