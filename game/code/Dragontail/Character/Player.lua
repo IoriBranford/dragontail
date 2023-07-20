@@ -101,7 +101,6 @@ function Player:control()
     local targetfacex, targetfacey = self.facex, self.facey
     local runningtime
     while true do
-        yield()
         local facex, facey = self.facex, self.facey
         local inx, iny = Controls.getDirectionInput()
         local attackpressed, runpressed = Controls.getButtonsPressed()
@@ -203,6 +202,8 @@ function Player:control()
         end
         animation = self.getDirectionalAnimation_angle(animation, atan2(facey, facex), self.animationdirections)
         self.sprite:changeAsepriteAnimation(animation)
+
+        yield()
     end
 end
 
@@ -519,6 +520,26 @@ function Player:straightAttack(attacktype, angle)
         return doComboAttack(self, facex, facey)
     end
     return Player.control
+end
+
+function Player:getup(attacker)
+    self.sprite:changeAsepriteAnimation("getup", 1, "stop")
+    local t = self.getuptime or 27
+    local recoverai = self.aiaftergetup or self.recoverai
+    if not recoverai then
+        print("No aiaftergetup or recoverai for "..self.type)
+        return "defeat", attacker
+    end
+    for i = 1, t do
+        yield()
+        local _, runpressed = Controls.getButtonsPressed()
+        if runpressed then
+            break
+        end
+    end
+    self.canbeattacked = true
+    self.canbegrabbed = true
+    return recoverai
 end
 
 function Player:victory()
