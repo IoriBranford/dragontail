@@ -48,6 +48,7 @@ function Fighter:hurt(attacker)
         Stage.addCharacter(hitsparkcharacter)
     end
     self.health = self.health - attacker.attackdamage
+    self.canbeattacked = nil
     self.canbegrabbed = nil
     self.velx, self.vely = 0, 0
     self:stopAttack()
@@ -84,8 +85,10 @@ function Fighter:hurt(attacker)
         return hiteffect, attacker, attackangle
     end
     Audio.play(self.hurtsound)
+    local bounds = self.bounds
     while pushbackspeed > 0 do
         pushbackspeed = Fighter.updateAttackLungeSpeed(self, attackangle, pushbackspeed)
+        self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
         yield()
     end
     local recoverai = self.aiafterhurt or self.recoverai
@@ -93,6 +96,7 @@ function Fighter:hurt(attacker)
         print("No aiafterhurt or recoverai for "..self.type)
         return "defeat", attacker
     end
+    self.canbeattacked = true
     self.canbegrabbed = true
     return recoverai
 end
