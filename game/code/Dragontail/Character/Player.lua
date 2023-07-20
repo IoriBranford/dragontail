@@ -523,6 +523,7 @@ function Player:straightAttack(attacktype, angle)
 end
 
 function Player:getup(attacker)
+    Audio.play(self.getupsound)
     self.sprite:changeAsepriteAnimation("getup", 1, "stop")
     local t = self.getuptime or 27
     local recoverai = self.aiaftergetup or self.recoverai

@@ -128,7 +128,7 @@ function Fighter:held(holder)
 end
 
 function Fighter:knockedBack(thrower, attackangle)
-    Audio.play(self.hurtsound)
+    Audio.play(self.thrownsound)
     local dirx, diry
     if attackangle then
         dirx, diry = cos(attackangle), sin(attackangle)
@@ -190,7 +190,7 @@ end
 
 function Fighter:thrown(thrower, attackangle)
     self.thrower = thrower
-    Audio.play(self.hurtsound)
+    Audio.play(self.thrownsound)
     local dirx, diry
     if attackangle then
         dirx, diry = cos(attackangle), sin(attackangle)
