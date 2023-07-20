@@ -227,6 +227,7 @@ function Fighter:thrown(thrower, attackangle)
         recovertime = recovertime - 1
     until recovertime <= 0 or oobx or ooby
     thrownsound:stop()
+    self.thrower = nil
     if oobx or ooby then
         return Fighter.wallSlammed, thrower, oobx, ooby
     end
@@ -239,7 +240,6 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
     self.canbegrabbed = nil
     oobx, ooby = norm(oobx or 0, ooby or 0)
     self:stopAttack()
-    self.thrower = nil
     local bodyradius = self.bodyradius or 1
     Stage.addCharacter(
         {
@@ -279,7 +279,6 @@ function Fighter:thrownRecover(thrower)
     until recovertime <= 0 or oobx or ooby
 
     self:stopAttack()
-    self.thrower = nil
     if oobx or ooby then
         return Fighter.wallSlammed, thrower, oobx, ooby
     end
