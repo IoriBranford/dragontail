@@ -333,16 +333,14 @@ function Character:collideWithCharacterAttack(attacker)
         return
     end
     if self:checkAttackCollision(attacker) then
-        if not self.hitreactiondisabled then
-            local guardhitai = self.guardai or "guardHit"
-            local hurtai = self.hurtai or "hurt"
-            if self.guardangle then
-                Script.start(self, guardhitai, attacker)
-            else
-                Script.start(self, hurtai, attacker)
-                if attacker.hitstun <= 0 then
-                    attacker.hitstun = attacker.attackstunself or 3
-                end
+        local guardhitai = self.guardai or "guardHit"
+        local hurtai = self.hurtai or "hurt"
+        if self.guardangle then
+            Script.start(self, guardhitai, attacker)
+        else
+            Script.start(self, hurtai, attacker)
+            if attacker.hitstun <= 0 then
+                attacker.hitstun = attacker.attackstunself or 3
             end
         end
         local hitai = attacker.attackhitai
