@@ -108,5 +108,7 @@ return {
         -- highscores_difficulty = "NORMAL",
         -- highscores_character = "Amy",
         -- highscores_onlineposition = "TOP",
+        musicvolume = 0.25,
+        soundvolume = 0.75,
     }
 }
