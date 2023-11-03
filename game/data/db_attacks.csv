@@ -4,7 +4,8 @@ tail-swing-cw,,40,0.523598775598299,30,10,5,0.628318530717959,,,,20,6,6,10,,,kno
 tail-swing-ccw,,40,0.523598775598299,30,10,5,-0.628318530717959,,,,20,6,6,10,,,knockedBack,knockedBack,,attackB,,sounds/combat/swing2.mp3,sounds/combat/hit3.mp3,sounds/combat/hit3.mp3,nil,spark-hit,spark-guard,nil
 spinning-throw,,0,0,25,0,0,0.392699081698724,,,,,nil,nil,12,,,nil,knockedBack,,spinthrow,sounds/combat/swing3.mp3,sounds/combat/swing2.mp3,,,nil,spark-hit,spark-guard,nil
 human-in-spinning-throw,,24,1.5707963267949,10,12,3,,,,,20,,,,,,knockedBack,knockedBack,,,,,sounds/combat/hit2.mp3,,nil,spark-hit,spark-guard,nil
-holding-kick,,32,0.261799387799149,25,10,10,,64,,,10,nil,nil,12,,,thrown,thrown,,hardkick,,sounds/combat/swing1.mp3,sounds/combat/hit3.mp3,,nil,spark-hit,spark-guard,nil
+holding-knee,,16,0.261799387799149,10,10,5,,4,,,6,2,nil,5,,,nil,knockedBack,,holdknee,,sounds/combat/swing1.mp3,sounds/combat/hit2.mp3,,nil,spark-hit,spark-guard,nil
+holding-kick,,32,0.261799387799149,30,10,5,,4,,,9,nil,nil,12,,,thrown,thrown,,hardkick,,sounds/combat/swing1.mp3,sounds/combat/hit3.mp3,,nil,spark-hit,spark-guard,nil
 running-kick,,32,0.523598775598299,25,10,10,,64,,,20,nil,nil,12,,,thrown,thrown,,hardkick,,sounds/player/attack2.mp3,sounds/combat/hit3.mp3,,nil,spark-hit,spark-guard,3
 running-elbow,,20,1.5707963267949,10,12,3,,2,,,10,nil,nil,5,,,nil,knockedBack,,elbow,,nil,sounds/combat/hit1.mp3,,nil,spark-hit,spark-guard,nil
 running-with-enemy,,24,1.5707963267949,10,12,3,,,,,,nil,nil,10,,,knockedBack,knockedBack,,,,sounds/player/attack2.mp3,sounds/combat/hit2.mp3,,nil,spark-hit,spark-guard,nil
