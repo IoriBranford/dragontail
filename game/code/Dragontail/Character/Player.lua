@@ -307,9 +307,9 @@ function Player:hold(enemy)
 
         local avel = 0
         if holddestangle < holdangle then
-            avel = -pi/16
+            avel = -pi/64
         elseif holddestangle > holdangle then
-            avel = pi/16
+            avel = pi/64
         end
         holdangle = Movement.moveTowards(holdangle, holddestangle, avel)
         holddirx, holddiry = cos(holdangle), sin(holdangle)
