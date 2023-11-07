@@ -481,6 +481,8 @@ function Player:spinAndKickEnemy(attacktype, angle, enemy)
         spunmag = spunmag + spinmag
         t = t - 1
     until (dot(throwx, throwy, holddirx, holddiry) >= cos(spinmag))
+    enemy.x = x + self.velx + throwx*radii
+    enemy.y = y + self.vely + throwy*radii
     Audio.play(self.throwsound)
     enemy:stopAttack()
     Fighter.stopHolding(self, enemy)
