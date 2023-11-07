@@ -260,10 +260,12 @@ function Player:spinAttack(attacktype, angle)
 end
 
 function Player:hold(enemy)
-    self.comboindex = 0
-    Audio.play(self.holdsound)
-    Fighter.startHolding(self, enemy)
-    Script.start(enemy, enemy.heldai or "held", self)
+    if self.heldopponent ~= enemy then
+        self.comboindex = 0
+        Audio.play(self.holdsound)
+        Fighter.startHolding(self, enemy)
+        Script.start(enemy, enemy.heldai or "held", self)
+    end
     self:stopAttack()
     local x, y = self.x, self.y
     local radii = self.bodyradius + enemy.bodyradius
