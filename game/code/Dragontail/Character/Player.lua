@@ -79,14 +79,17 @@ local function updateFace(facex, facey, targetfacex, targetfacey, turnspeed)
     return facex, facey
 end
 
-local function doComboAttack(self, facex, facey)
+local function doComboAttack(self, facex, facey, heldenemy)
     if self.comboindex >= 2 then
         self.comboindex = 0
+        if heldenemy then
+            return Player.spinAndKickEnemy, "spinning-throw", atan2(facey, facex), heldenemy
+        end
         local spindir = facex < 0 and "ccw" or "cw"
         return Player.spinAttack, "tail-swing-"..spindir, atan2(-facey, -facex)
     else
         self.comboindex = self.comboindex + 1
-        return Player.straightAttack, "kick", atan2(facey, facex)
+        return Player.straightAttack, heldenemy and "holding-knee" or "kick", atan2(facey, facex), heldenemy
     end
 end
 
@@ -496,7 +499,7 @@ function Player:spinAndKickEnemy(attacktype, angle, enemy)
     return Player.straightAttack, "holding-kick", atan2(throwy, throwx)
 end
 
-function Player:straightAttack(attacktype, angle)
+function Player:straightAttack(attacktype, angle, heldenemy)
     Database.fill(self, attacktype)
     Audio.play(self.swingsound)
     local attackagain = false
@@ -530,10 +533,15 @@ function Player:straightAttack(attacktype, angle)
     if attackagain then
         local facex, facey = self.facex, self.facey
         local inx, iny = Controls.getDirectionInput()
-        if inx ~= 0 or iny ~= 0 then
-            facex, facey = inx, iny
+        if not heldenemy then
+            if inx ~= 0 or iny ~= 0 then
+                facex, facey = inx, iny
+            end
         end
-        return doComboAttack(self, facex, facey)
+        return doComboAttack(self, facex, facey, heldenemy)
+    end
+    if heldenemy then
+        return Player.hold, heldenemy
     end
     return Player.control
 end
