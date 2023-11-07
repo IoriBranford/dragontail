@@ -336,10 +336,11 @@ function Player:hold(enemy)
             return Player.runWithEnemy, enemy
         end
         if attackpressed then
-            -- if self.comboindex < 2 then
-            --     return doComboAttack(self, holddirx, holddiry, enemy)
+            -- if dot(inx, iny, holddirx, holddiry) < 0 then
+            --     self.comboindex = 0
+            --     return Player.spinAndKickEnemy, "spinning-throw", holdangle, enemy
             -- end
-            return Player.spinAndKickEnemy, "spinning-throw", holdangle, enemy
+            return doComboAttack(self, holddirx, holddiry, enemy)
         end
     end
     Script.start(enemy, Fighter.breakaway, self)
