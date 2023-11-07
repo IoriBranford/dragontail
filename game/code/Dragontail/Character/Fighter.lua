@@ -114,6 +114,8 @@ end
 -- end
 
 function Fighter:held(holder)
+    self.canbeattacked = true
+    self.canbegrabbed = true
     self:stopAttack()
     self:stopGuarding()
     self.velx, self.vely = 0, 0
