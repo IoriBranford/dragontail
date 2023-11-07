@@ -209,6 +209,8 @@ function Player:control()
 end
 
 function Player:spinAttack(attacktype, angle)
+    self.canbeattacked = false
+    self.canbegrabbed = false
     local lungeangle = angle + pi
     local originalfacex, originalfacey = self.facex, self.facey
     Database.fill(self, attacktype)
@@ -249,6 +251,8 @@ function Player:spinAttack(attacktype, angle)
     until t <= 0
     self:stopAttack()
     self.facex, self.facey = originalfacex, originalfacey
+    self.canbeattacked = true
+    self.canbegrabbed = true
     if attackagain then
         local inx, iny = Controls.getDirectionInput()
         if inx ~= 0 or iny ~= 0 then
@@ -495,6 +499,8 @@ function Player:straightAttack(attacktype, angle)
     Audio.play(self.swingsound)
     local attackagain = false
     self:startAttack(angle)
+    self.canbeattacked = false
+    self.canbegrabbed = false
     local attackanimation = self.swinganimation
     if attackanimation then
         attackanimation = self.getDirectionalAnimation_angle(attackanimation, angle, self.animationdirections)
@@ -517,6 +523,8 @@ function Player:straightAttack(attacktype, angle)
         t = t - 1
     until t <= 0
     self:stopAttack()
+    self.canbeattacked = true
+    self.canbegrabbed = true
     if attackagain then
         local facex, facey = self.facex, self.facey
         local inx, iny = Controls.getDirectionInput()
