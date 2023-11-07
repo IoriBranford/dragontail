@@ -52,10 +52,7 @@ function Fighter:hurt(attacker)
     self.canbegrabbed = nil
     self.velx, self.vely = 0, 0
     self:stopAttack()
-    local heldopponent = self.heldopponent
-    local heldby = self.heldby
-    Fighter.stopHolding(self, heldopponent)
-    Fighter.stopHolding(heldby, self)
+    Fighter.stopHolding(self, self.heldopponent)
     self.hurtstun = attacker.attackstun or 3
     local facex, facey = self.facex or 1, self.facey or 0
     if facex == 0 and facey == 0 then
@@ -79,9 +76,11 @@ function Fighter:hurt(attacker)
     yield()
 
     if self.health <= 0 then
+        Fighter.stopHolding(self.heldby, self)
         defeateffect = defeateffect or self.defeatai or "defeat"
         return defeateffect, attacker, attackangle
     elseif hiteffect then
+        Fighter.stopHolding(self.heldby, self)
         return hiteffect, attacker, attackangle
     end
     Audio.play(self.hurtsound)
@@ -94,10 +93,14 @@ function Fighter:hurt(attacker)
     local recoverai = self.aiafterhurt or self.recoverai
     if not recoverai then
         print("No aiafterhurt or recoverai for "..self.type)
+        Fighter.stopHolding(self.heldby, self)
         return "defeat", attacker
     end
     self.canbeattacked = true
     self.canbegrabbed = true
+    if self.heldby then
+        return "held", self.heldby
+    end
     return recoverai
 end
 
