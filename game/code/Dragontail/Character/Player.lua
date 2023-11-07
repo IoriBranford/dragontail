@@ -19,6 +19,7 @@ local norm = math.norm
 local abs = math.abs
 local rot = math.rot
 local lensq = math.lensq
+local testcircles = math.testcircles
 local yield = coroutine.yield
 
 local function faceAngle(self, angle)
@@ -27,11 +28,16 @@ end
 
 local function findOpponentToHold(self, inx, iny)
     local x, y, opponents = self.x, self.y, self.opponents
+    local grabradius = self.grabradius or 8
     for i, opponent in ipairs(opponents) do
-        if dot(opponent.x - x, opponent.y - y, inx, iny) > 0 then
-            if opponent.canbegrabbed
-            and math.testcircles(self.x, self.y, 0, opponent.x, opponent.y, opponent.bodyradius) then
-                return opponent
+        if opponent.canbegrabbed then
+            local oppox, oppoy = opponent.x, opponent.y
+            if testcircles(x, y, grabradius, oppox, oppoy, opponent.bodyradius) then
+                local distx = oppox - x
+                local disty = oppoy - y
+                if dot(distx, disty, inx, iny) > 0 then
+                    return opponent
+                end
             end
         end
     end
