@@ -327,7 +327,10 @@ function Player:hold(enemy)
             return Player.runWithEnemy, enemy
         end
         if attackpressed then
-            return Player.spinThrow, "spinning-throw", holdangle, enemy
+            -- if self.comboindex < 2 then
+            --     return doComboAttack(self, holddirx, holddiry, enemy)
+            -- end
+            return Player.spinAndKickEnemy, "spinning-throw", holdangle, enemy
         end
     end
     Script.start(enemy, Fighter.breakaway, self)
@@ -417,7 +420,7 @@ function Player:runWithEnemy(enemy)
     end
 end
 
-function Player:spinThrow(attacktype, angle, enemy)
+function Player:spinAndKickEnemy(attacktype, angle, enemy)
     enemy.canbeattacked = false
     self.canbeattacked = false
     self.canbegrabbed = false
@@ -471,18 +474,18 @@ function Player:spinThrow(attacktype, angle, enemy)
         end
         spunmag = spunmag + spinmag
         t = t - 1
-    until 2*pi <= spunmag and (dot(throwx, throwy, holddirx, holddiry) >= cos(spinmag))
+    until (dot(throwx, throwy, holddirx, holddiry) >= cos(spinmag))
     Audio.play(self.throwsound)
     enemy:stopAttack()
     Fighter.stopHolding(self, enemy)
     enemy.canbeattacked = true
-    if self.attackdamage then
-        enemy.health = enemy.health - self.attackdamage
-    end
-    Script.start(enemy, enemy.thrownai or "thrown", self, atan2(throwy, throwx))
+    -- if self.attackdamage then
+    --     enemy.health = enemy.health - self.attackdamage
+    -- end
+    -- Script.start(enemy, enemy.thrownai or "thrown", self, atan2(throwy, throwx))
     self.canbeattacked = true
     self.canbegrabbed = true
-    return Player.control
+    return Player.straightAttack, "holding-kick", atan2(throwy, throwx)
 end
 
 function Player:straightAttack(attacktype, angle)
