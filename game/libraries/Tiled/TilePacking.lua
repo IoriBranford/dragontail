@@ -48,25 +48,22 @@ end
 ---@class TilePacking
 local TilePacking = {}
 
---- Pack tiles in a map.
+--- Pack all tiles in a list of tilesets into one image.
 --- Do not use with gamma-correct rendering - tiles will be darkened.
---- @param map table map with unpacked tiles
---- @return table? imagedata packed image data for saving
+--- @param tilesets {[integer|string]:Tileset}
+--- @return love.ImageData? imagedata packed image data for saving
 --- @return string? error if no imagedata, what went wrong
-function TilePacking.pack(map)
+function TilePacking.pack(tilesets)
     if not love.graphics then
         return nil, "Megatileset requires love.graphics"
     end
 
-    local tilesets = map.tilesets
-
     local packarea = 0
     local maxtilewidth = 0
     local maxtileheight = 0
-    for i = 1, #tilesets do
-        local tileset = tilesets[i]
-        local tilewidth = tileset.tilewidth *1.5
-        local tileheight = tileset.tileheight *1.5
+    for _, tileset in pairs(tilesets) do
+        local tilewidth = tileset.tilewidth
+        local tileheight = tileset.tileheight
         if maxtilewidth < tilewidth then
             maxtilewidth = tilewidth
         end
@@ -89,9 +86,10 @@ function TilePacking.pack(map)
     end
 
     local sizesortedtiles = {}
-    local maptiles = map.tiles
-    for i = 1, #maptiles do
-        sizesortedtiles[i] = maptiles[i]
+    for _, tileset in pairs(tilesets) do
+        for t = 0, tileset.tilecount-1 do
+            sizesortedtiles[#sizesortedtiles+1] = tileset[t]
+        end
     end
     table.sort(sizesortedtiles, function(a, b)
         return a.width*a.height > b.width*b.height
@@ -158,7 +156,7 @@ function TilePacking.pack(map)
                 quad:setViewport(ex, ey, ew, eh, iw, ih)
                 love.graphics.draw(image, quad, destx, desty)
             end
-            tile.quad = love.graphics.newQuad(dx1, dy1, tw, th,
+            tile.quad:setViewport(dx1, dy1, tw, th,
                 packwidth, packheight)
         end
         --DEBUG
@@ -177,8 +175,7 @@ function TilePacking.pack(map)
     local imagedata = canvas:newImageData()
     local image = love.graphics.newImage(imagedata)
     image:setFilter("nearest", "nearest")
-    for i = 1, #tilesets do
-        local tileset = tilesets[i]
+    for _, tileset in pairs(tilesets) do
         tileset.image = image
         -- local firstgid = tileset.firstgid
         -- for t = 0, #tileset-1 do
@@ -190,71 +187,69 @@ function TilePacking.pack(map)
         --         end
         --     end
         -- end
-    end
-    for i = 1, #maptiles do
-        maptiles[i].image = image
+        for i = 0, tileset.tilecount-1 do
+            tileset[i].image = image
+        end
     end
 
     return imagedata
 end
 
 --- Save the packed tiles as an image and a table of quads
----@param map table map with packed tiles
+---@param tilesets {[integer|string]:Tileset} dict of packed tiles
 ---@param quadspath string quad table file path
 ---@param imagepath string image file path
 ---@param imagedata love.ImageData image data returned from packing
-function TilePacking.save(map, quadspath, imagepath, imagedata)
-    local tiles = map.tiles
+function TilePacking.save(tilesets, quadspath, imagepath, imagedata)
     imagedata:encode("png", imagepath)
 
     local quadscode = { "return {" }
-    for i = 1, #tiles do
-        local x, y, w, h = tiles[i].quad:getViewport()
-        quadscode[#quadscode+1] = string.format("%d,%d,%d,%d,", x, y, w, h)
+    for _, tileset in pairs(tilesets) do
+        quadscode[#quadscode+1] = tileset.name.."={"
+        for i = 0, tileset.tilecount-1 do
+            local x, y, w, h = tileset[i].quad:getViewport()
+            quadscode[#quadscode+1] = string.format("%d,%d,%d,%d,", x, y, w, h)
+        end
+        quadscode[#quadscode+1] = "},"
     end
     quadscode[#quadscode+1] = "}"
     love.filesystem.write(quadspath, table.concat(quadscode))
 end
 
 --- Load packed tiles into map
----@param map table map whose packed tiles were saved
+---@deprecated
+---@param tilesets {[integer|string]:Tileset} map whose packed tiles were saved
 ---@param quadspath string quad table file path
 ---@param imagepath string image file path
 ---@return boolean success
 ---@return string? err
-function TilePacking.load(map, quadspath, imagepath)
+function TilePacking.load(tilesets, quadspath, imagepath)
     local quadsfunction, err = love.filesystem.load(quadspath)
     if not quadsfunction then
         return false, err
     end
 
-    local tiles = map.tiles
-    local tilesets = map.tilesets
-
-    local quads = quadsfunction()
+    local tilesetquads = quadsfunction()
 
     -- if type(imagepath) == "string" then
     local image = love.graphics.newImage(imagepath)
     image:setFilter("nearest", "nearest")
 
-    for i = 1, #tilesets do
-        tilesets[i].image = image
-    end
-    for i = 1, #tiles do
-        tiles[i].image = image
+    local iw, ih = image:getDimensions()
+    for _, tileset in pairs(tilesets) do
+        tileset.image = image
+        local quads = tilesetquads[tileset.name]
+        local qi = 4
+        for i = 0, tileset.tilecount-1 do
+            local tile = tileset[i]
+            tile.image = image
+            tile.quad:setViewport(quads[qi-3], quads[qi-2], quads[qi-1], quads[qi], iw, ih)
+            qi = qi + 4
+        end
     end
     -- elseif not megaimage.typeOf or not megaimage:typeOf("Image") then
     --     megaimage = tilesets[1].image
     -- end
-
-    local iw, ih = image:getDimensions()
-
-    local t = 1
-    for i = 4, #quads, 4 do
-        tiles[t].quad = love.graphics.newQuad(
-            quads[i-3], quads[i-2], quads[i-1], quads[i], iw, ih)
-        t = t + 1
-    end
 
     return true
 end

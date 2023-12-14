@@ -1,46 +1,29 @@
 local TiledObject = require "Tiled.Object"
-local Color       = require "Data.Color"
+local Color       = require "Tiled.Color"
+local GuiActions  = require "Gui.GuiActions"
+local Config      = require "System.Config"
 
----@class GuiObject
+---@class GuiObject:TiledObject
 ---@field gui Gui
 ----@field sprite SceneObject
 local GuiObject = class(TiledObject)
 
-function GuiObject:_init()
-    local points = self.points
-    if points then
-        local x1, y1, x2, y2 = math.huge, math.huge, -math.huge, -math.huge
-        for i = 2, #points, 2 do
-            local x, y = points[i-1], points[i]
-            x1 = math.min(x1, x)
-            y1 = math.min(y1, y)
-            x2 = math.max(x2, x)
-            y2 = math.max(y2, y)
-        end
-        self.leftx = self.x + x1
-        self.topy = self.y + y1
-        self.width = x2-x1
-        self.height = y2-y1
-    elseif self.tile then
-        self.leftx = self.x - self.tile.objectoriginx
-        self.topy = self.y - self.tile.objectoriginy
-    else
-        self.leftx, self.topy = self.x, self.y
-    end
+function GuiObject:spawn()
     self.x0, self.y0 = self.x, self.y
 end
 
+---@param self GuiObject|Menu
 function GuiObject:doAction(action)
     if type(action) ~= "function" then
-        action = self[action]
+        local ok, actions = pcall(require, self.actionsmodule or "Gui.GuiActions")
+        action = ok and actions[action] or GuiActions.playInvalidSound
     end
-    if type(action) == "function" then
-        action(self)
-    end
+    action(self.gui, self)
 end
 
 function GuiObject:setString(string)
     self.text = string
+    self.text0 = nil
 end
 
 function GuiObject:setColor(r, g, b, a)
@@ -48,56 +31,7 @@ function GuiObject:setColor(r, g, b, a)
 end
 
 function GuiObject:resetPosition()
-    self:setPosition(self.x0, self.y0)
-end
-
-function GuiObject:translate(dx, dy)
-    local x = self.x + dx
-    local y = self.y + dy
-    self.x, self.y = x, y
-    self.leftx = self.leftx + dx
-    self.topy = self.topy + dy
-    for i = 1, #self do
-        self[i]:translate(dx, dy)
-    end
-end
-
-function GuiObject:setPosition(x, y)
-    self:translate(x - self.x, y - self.y)
-end
-
-function GuiObject:setVisible(visible)
-    self.visible = visible
-end
-
-function GuiObject:hideChildrenIf(condition)
-    if not condition then
-        return
-    end
-    for _, child in ipairs(self) do
-        child:setVisible(condition(child))
-    end
-end
-
-function GuiObject:showOnlyChildren(...)
-    local n = select("#", ...)
-    if n < 1 then
-        return
-    end
-
-    for _, child in ipairs(self) do
-        local name = child.name or ""
-        local visible = false
-        if name ~= "" then
-            for arg = 1, n do
-                if name == select(arg, ...) then
-                    visible = true
-                    break
-                end
-            end
-        end
-        child:setVisible(visible)
-    end
+    self.x, self.y = self.x0, self.y0
 end
 
 function GuiObject:reanchor(guiwidth, guiheight, screenwidth, screenheight)
@@ -106,9 +40,20 @@ function GuiObject:reanchor(guiwidth, guiheight, screenwidth, screenheight)
     local dx = anchorx * (screenwidth-guiwidth)/2
     local dy = anchory * (screenheight-guiheight)/2
     self:resetPosition()
-    self:translate(dx, dy)
+    self:move(dx, dy)
     for i = 1, #self do
         self[i]:reanchor(guiwidth, guiheight, screenwidth, screenheight)
+    end
+end
+
+function GuiObject:loadConfigValue()
+    local text0 = self.text0 or self.text ---@type string
+    if text0 then
+        local text = Config.gsub(text0)
+        if text ~= text0 then
+            self.text0 = text0
+            self.text = text
+        end
     end
 end
 

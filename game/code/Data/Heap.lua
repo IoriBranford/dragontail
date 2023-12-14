@@ -1,3 +1,4 @@
+---@class Heap
 local Heap = {}
 Heap.__index = Heap
 

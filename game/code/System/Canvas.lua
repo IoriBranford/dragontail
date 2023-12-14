@@ -1,73 +1,90 @@
-local Config = require "System.Config"
-local Canvas = {}
+---@class Canvas
+local Canvas = class()
 
-local maincanvas
-local canvases
-local transform
-local rotscale
-local canvasscale
+function Canvas:_init(width, height)
+    self.canvas = love.graphics.newCanvas(width, height)
+    self.rotscale = love.math.newTransform()
+    self.transform = love.math.newTransform()
+end
 
-function Canvas.init(width, height, screenwidth, screenheight)
-    maincanvas = love.graphics.newCanvas(width, height)
-    canvases = {maincanvas}
-    if love.graphics.getCanvasFormats().stencil8 then
-        canvases.depthstencil = love.graphics.newCanvas(width, height, { format = "stencil8" })
-    end
-
+function Canvas.GetScaleFactor(canvaswidth, canvasheight, screenwidth, screenheight, rotation, integerscale)
     local ghw = screenwidth / 2
     local ghh = screenheight / 2
-    local chw = maincanvas:getWidth() / 2
-    local chh = maincanvas:getHeight() / 2
+    local chw = canvaswidth / 2
+    local chh = canvasheight / 2
 
-    local rotation = math.rad(Config.rotation)
-    local portraitrotation = Config.isPortraitRotation()
-    if portraitrotation then
+    local canvasscale
+    if math.abs(math.sin(rotation)) > math.sqrt(2)/2 then
         canvasscale = math.min(ghh / chw, ghw / chh)
     else
         canvasscale = math.min(ghw / chw, ghh / chh)
     end
 
-    if Config.canvasscaleint then
+    if integerscale then
         canvasscale = math.floor(canvasscale)
     end
+    return canvasscale
+end
 
-    local filter = Config.canvasscalesoft and "linear" or "nearest"
-    maincanvas:setFilter(filter, filter)
+function Canvas:transformToScreen(screenwidth, screenheight, rotation, integerscale)
+    local canvas = self.canvas
+    local ghw = screenwidth / 2
+    local ghh = screenheight / 2
+    local chw = canvas:getWidth() / 2
+    local chh = canvas:getHeight() / 2
 
-    rotscale = love.math.newTransform()
+    local canvasscale = Canvas.GetScaleFactor(canvas:getWidth(), canvas:getHeight(), screenwidth, screenheight, rotation, integerscale)
+
+    local rotscale = love.math.newTransform()
     rotscale:rotate(rotation)
     rotscale:scale(canvasscale)
+    self.rotscale = rotscale
 
-    transform = love.math.newTransform()
+    local transform = love.math.newTransform()
     transform:translate(math.floor(ghw), math.floor(ghh))
     transform:apply(rotscale)
     transform:translate(-chw, -chh)
+    self.transform = transform
 end
 
-function Canvas.drawOnCanvas(draw)
-    love.graphics.setCanvas(canvases)
+function Canvas:setFiltered(filtered)
+    local filter = filtered and "linear" or "nearest"
+    self.canvas:setFilter(filter, filter)
+end
+
+function Canvas:drawOn(draw)
+    local oldcanvas = love.graphics.getCanvas()
+    love.graphics.setCanvas(self.canvas)
     draw()
-    love.graphics.setCanvas()
+    love.graphics.setCanvas(oldcanvas)
 end
 
-function Canvas.drawCanvas()
-    love.graphics.setColor(1, 1, 1)
-    love.graphics.draw(maincanvas, transform)
-end
-
-function Canvas.drawScaledToCanvas(draw)
+function Canvas:drawScaledTo(draw)
     love.graphics.push()
-    love.graphics.applyTransform(transform)
+    love.graphics.applyTransform(self.transform)
     draw()
     love.graphics.pop()
 end
 
-function Canvas.inverseTransformVector(vecx, vecy)
-    return rotscale:inverseTransformPoint(vecx, vecy)
+function Canvas:draw()
+    love.graphics.setColor(1, 1, 1)
+    love.graphics.draw(self.canvas, self.transform)
 end
 
-function Canvas.inverseTransformPoint(x, y)
-    return transform:inverseTransformPoint(x, y)
+function Canvas:inverseTransformVector(vecx, vecy)
+    return self.rotscale:inverseTransformPoint(vecx, vecy)
+end
+
+function Canvas:inverseTransformPoint(x, y)
+    return self.transform:inverseTransformPoint(x, y)
+end
+
+function Canvas:transformVector(vecx, vecy)
+    return self.rotscale:transformPoint(vecx, vecy)
+end
+
+function Canvas:transformPoint(x, y)
+    return self.transform:transformPoint(x, y)
 end
 
 return Canvas

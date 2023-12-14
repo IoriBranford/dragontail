@@ -12,13 +12,11 @@ function Wallpaper.reload()
     local scale
     local rotation = math.rad(Config.rotation)
     local portraitrotation = Config.isPortraitRotation()
-    if Config.isVertical() then
-        local filename = string.format("data/wallpaper/%s-vert.png", Config.backgroundstyle)
-        wallpaper = love.graphics.newImage(filename)
-    else
-        local filename = string.format("data/wallpaper/%s-hori.png", Config.backgroundstyle)
-        wallpaper = love.graphics.newImage(filename)
-    end
+    local backgroundstyle = Config.backgroundstyle
+    local filename = Config.isVertical()
+        and string.format("data/wallpaper/%s-vert.png", backgroundstyle)
+         or string.format("data/wallpaper/%s-hori.png", backgroundstyle)
+    wallpaper = love.filesystem.getInfo(filename) and love.graphics.newImage(filename)
     if not wallpaper then
         return
     end

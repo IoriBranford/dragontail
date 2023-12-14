@@ -1,10 +1,12 @@
 local GuiObject = require "Gui.GuiObject"
-local TiledObject    = require "Tiled.Object"
 
+---@class Gauge:GuiObject
+---@field gaugedirection "right"|"down"|"left"|"up"
+---@field roundmode "up"|"down"
 local Gauge = class(GuiObject)
 
-function Gauge:_init()
-    GuiObject._init(self)
+function Gauge:spawn()
+    GuiObject.spawn(self)
     self.gaugedirection = self.gaugedirection or "right"
     self:setPercent(self.gaugepercent or 1)
     self.baseDraw = self.draw
@@ -16,7 +18,8 @@ function Gauge:draw()
     if w <= 0 or h <= 0 then
         return
     end
-    love.graphics.setScissor(self.gaugex, self.gaugey, w, h)
+    local x, y = self.gui.x + self.gaugex, self.gui.y + self.gaugey
+    love.graphics.setScissor(x, y, w, h)
     self:baseDraw()
     love.graphics.setScissor()
 end
@@ -27,15 +30,17 @@ function Gauge:setPercent(percent)
     self.gaugey = self.y
     local tile = self.tile
     if tile then
-        self.gaugex = self.gaugex - self.tile.objectoriginx
-        self.gaugey = self.gaugey - self.tile.objectoriginy
+        self.gaugex = self.gaugex - tile.objectoriginx
+        self.gaugey = self.gaugey - tile.objectoriginy
     end
     self.gaugewidth = self.width
     self.gaugeheight = self.height
+
+    local round = self.roundmode == "up" and math.ceil or math.floor
     if self.gaugedirection == "right" or self.gaugedirection == "left" then
-        self.gaugewidth = self.gaugewidth*percent
+        self.gaugewidth = round(self.gaugewidth*percent)
     elseif self.gaugedirection == "down" or self.gaugedirection == "up" then
-        self.gaugeheight = self.gaugeheight*percent
+        self.gaugeheight = round(self.gaugeheight*percent)
     end
     if self.gaugedirection == "up" then
         self.gaugey = self.gaugey + self.height - self.gaugeheight

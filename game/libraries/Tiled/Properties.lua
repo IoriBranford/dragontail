@@ -1,16 +1,10 @@
 local Properties = {}
 
-local function addIfNew(t, k, v)
-    if t[k] then
-        print(string.format("W: tried to overwrite duplicate or reserved field name %s in %s", k, t.name or t))
-    else
-        t[k] = v
-    end
-end
+local addIfNew = require "Tiled.addIfNew"
 
 function Properties.resolveObjectRefs(properties, mapobjects)
     for k,v in pairs(properties) do
-        if type(v) == "table" then
+        if type(v) == "table" and v.id then
             properties[k] = mapobjects[v.id]
         end
     end

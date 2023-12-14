@@ -1,21 +1,25 @@
-local Timeline = {}
-Timeline.__index = Timeline
+---@class Timeline
+local Timeline = class()
 
-function Timeline.new()
-    ---@class Timeline
-    return setmetatable({
-        time = 0,
-        eventindex = 1,
-    }, Timeline)
+---@class TimelineEvent
+---@field time number
+---@field func function
+---@field [integer] any function arguments
+
+function Timeline:_init()
+    self.time = 0
+    self.eventindex = 1
 end
 
 function Timeline:addEvent(time, func, ...)
     assert(type(func) == "function")
+    
+    ---@type TimelineEvent
     local event = {
-        ...
+        ...,
+        time = time,
+        func = func
     }
-    event.time = time
-    event.func = func
     self[#self + 1] = event
 end
 

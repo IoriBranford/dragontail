@@ -8,6 +8,7 @@ local ValidOSes = {
     Android = true,
     iOS = true,
     Web = true,
+    ["Nintendo Switch"] = true
 }
 
 function Platform.setOS(os)
@@ -31,6 +32,7 @@ local features = {
         Android = true,
         iOS = true,
         -- Web = true,
+        ["Nintendo Switch"] = true
     },
     saveconfig = {
         Windows = true,
@@ -39,6 +41,13 @@ local features = {
         Android = true,
         iOS = true,
         Web = true,
+    },
+    ffi = {
+        Windows = true,
+        ["Mac OS X"] = true,
+        Linux = true,
+        Android = true,
+        iOS = true,
     }
 }
 
@@ -50,6 +59,11 @@ local configoverrides = {
     Android = {
         key_pausemenu = "p",
         fullscreen = true,
+        resizable = false
+    },
+    ["Nintendo Switch"] = {
+        fullscreen = true,
+        fullscreenexclusive = true,
         resizable = false
     }
 }

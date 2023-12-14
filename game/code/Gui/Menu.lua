@@ -1,15 +1,14 @@
 local Config    = require "System.Config"
-local Canvas    = require "System.Canvas"
 local Platform  = require "System.Platform"
 local GuiObject = require "Gui.GuiObject"
 local ObjectGroup = require "Tiled.ObjectGroup"
+local InputSetter = require "Gui.InputSetter"
 
----@class Menu:GuiObject
+---@class Menu:ObjectGroup
 local Menu = class(ObjectGroup)
 Menu.doAction = GuiObject.doAction
-Menu.setVisible = GuiObject.setVisible
 
-function Menu:_init()
+function Menu:spawn()
     local platform = Platform.OS
 
     local cursors = {}
@@ -22,8 +21,10 @@ function Menu:_init()
         if platforms == "all" or platforms:find(platform) then
             if object.iscursor then
                 cursors[#cursors+1] = object
+                object.menu = self
             elseif object.ismenuitem then
                 menuitems[#menuitems + 1] = object
+                object.menu = self
             end
         else
             object:setVisible(false)
@@ -36,12 +37,35 @@ function Menu:_init()
         return a.y < b.y
     end)
 
-    self:selectButton()
+    if Platform.IsMobile then
+        self:selectButton()
+    elseif self.initialcursorposition then
+        self:selectButton(self.initialcursorposition)
+    elseif not self.cursorposition then
+        self:selectButton(1)
+    end
+
     return self
 end
 
+function Menu:setActiveInputSetter(inputsetter)
+    self.activeinputsetter = inputsetter
+end
+
 function Menu:keypressed(key)
-    if key == Config.key_fire then
+    local inputsetter = self.activeinputsetter
+    if inputsetter then
+        if inputsetter.inputdevice == "keyboard" and not InputSetter.ReservedKeys[key] then
+            inputsetter:setValue(key)
+            inputsetter:storeConfigValue()
+            self.activeinputsetter = nil
+        elseif key == "escape" then
+            inputsetter:loadConfigValue()
+            self.activeinputsetter = nil
+        end
+        return
+    end
+    if key == "return" or key == Config.key_fire then
         self:pressSelectedButton()
     elseif key == Config.key_up then
         self:moveCursor(-1)
@@ -57,6 +81,18 @@ function Menu:keypressed(key)
 end
 
 function Menu:gamepadpressed(gamepad, button)
+    local inputsetter = self.activeinputsetter
+    if inputsetter then
+        if inputsetter.inputdevice == "controller" and not InputSetter.ReservedButtons[button] then
+            inputsetter:setValue(button)
+            inputsetter:storeConfigValue()
+            self.activeinputsetter = nil
+        elseif button == "back" then
+            inputsetter:loadConfigValue()
+            self.activeinputsetter = nil
+        end
+        return
+    end
     if button == "dpup" then
         self:moveCursor(-1)
     elseif button == "dpdown" then
@@ -65,7 +101,7 @@ function Menu:gamepadpressed(gamepad, button)
         self:changeSelectedSlider(-1)
     elseif button == "dpright" then
         self:changeSelectedSlider(1)
-    elseif button == Config.joy_fire then
+    elseif button == "start" or button == Config.joy_fire then
         self:pressSelectedButton()
     elseif button == "back" then
         self:doAction(self.backaction)
@@ -75,10 +111,10 @@ end
 function Menu:itemAtPoint(x, y)
     for i, menuitem in ipairs(self.menuitems) do
         if menuitem.visible then
+            local x1, y1, x2, y2 = menuitem:getExtents()
             if math.testrects(
                 x, y, 0, 0,
-                menuitem.leftx, menuitem.topy,
-                menuitem.width, menuitem.height
+                x1, y1, x2-x1, y2-y1
             ) then
                 return i, menuitem
             end
@@ -90,7 +126,7 @@ function Menu:touchpressed(id, x, y)
     if self.menutouchid then
         return
     end
-    x, y = Canvas.inverseTransformPoint(x, y)
+    x, y = self.gui.canvas:inverseTransformPoint(x, y)
     local i = self:itemAtPoint(x, y)
     if not i then
         return
@@ -103,7 +139,7 @@ function Menu:touchmoved(id, x, y, dx, dy)
     if self.menutouchid ~= id then
         return
     end
-    x, y = Canvas.inverseTransformPoint(x, y)
+    x, y = self.gui.canvas:inverseTransformPoint(x, y)
     local i = self:itemAtPoint(x, y)
     if i ~= self.cursorposition then
         self:selectButton(i)
@@ -129,7 +165,7 @@ function Menu:selectButton(i)
         menuitem:onSelect()
         for _, cursor in ipairs(self.cursors) do
             cursor:setVisible(true)
-            cursor:moveTo(menuitem)
+            cursor:moveToMenuItem(menuitem)
             cursor:onSelect(i, menuitem)
         end
     else
@@ -170,21 +206,9 @@ function Menu:pressSelectedButton()
     end
 end
 
-function Menu:closeMenu()
-    self.gui:popMenu()
-end
-
-function Menu:quitGame()
-    if Platform.supports("quit") then
-        love.event.quit()
-    end
-end
-
 function Menu:loadConfigValues()
-    for _, menuitem in ipairs(self.menuitems) do
-        if menuitem.loadConfigValue then
-            menuitem:loadConfigValue()
-        end
+    for _, guiobject in ipairs(self) do
+        guiobject:loadConfigValue()
     end
 end
 

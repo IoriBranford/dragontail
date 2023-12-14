@@ -3,27 +3,54 @@ local Button    = require "Gui.Button"
 local Config    = require "System.Config"
 
 ---@class Slider:Button
+---@field increment number
+---@field max number
+---@field min number
+---@field units "percent"?
+---@field valuedescription GuiObject?
+---@field valuesetaction string?
+---@field refreshaction string?
 local Slider = class(Button)
 Slider.ismenuitem = true
 
-function Slider:_init()
-    Button._init(self)
-    local valuestrings = {}
-    self.valuestrings = valuestrings
-    for i = 1, 16 do
-        local valuestr = self["valuestr"..i]
-        if not valuestr then
-            break
+function Slider:spawn()
+    Button.spawn(self)
+    local valuestrings
+    if type(self.valuestrings) == "string" then
+        valuestrings = {}
+        for valuestring in self.valuestrings:gmatch("[^\n^$]+") do
+            valuestrings[#valuestrings+1] = valuestring
         end
-        valuestrings = valuestrings or {}
-        valuestrings[i] = valuestr
+    else
+        for i = 1, 16 do
+            local valuestr = self["valuestr"..i]
+            if not valuestr then
+                break
+            end
+            valuestrings = valuestrings or {}
+            valuestrings[i] = valuestr
+        end
     end
+    self.valuestrings = valuestrings
+end
+
+function Slider:getValueAsString(value)
+    local typ = type(value)
+    if typ == "number" then
+        local units = self.units
+        if units == "percent" then
+            return tostring(math.floor(value*100))
+        end
+    elseif typ == "boolean" then
+        return value and "ON" or "OFF"
+    end
+    return tostring(value)
 end
 
 function Slider:setValue(value)
     self.value = value
-    self:setString(tostring(value))
-    self:doAction("valuechangeaction")
+    self:setString(self:getValueAsString(value))
+    self:doAction(self.valuesetaction)
 end
 
 function Slider:changeValue(dir)
@@ -70,8 +97,12 @@ function Slider:changeValue(dir)
         value = newvalue or value
     end
     Audio.play(self.changesound)
-    self:setValue(value)
+    Config[self.configkey] = value
+    self.menu:loadConfigValues()
+    self:doAction(self.refreshaction)
 end
+
+Slider.action = "incSlider"
 
 function Slider:loadConfigValue()
     self:setValue(Config[self.configkey])
@@ -79,6 +110,13 @@ end
 
 function Slider:storeConfigValue()
     Config[self.configkey] = self.value
+end
+
+function Slider:setValueDescription(text)
+    local valuedescription = self.valuedescription
+    if valuedescription then
+        valuedescription:setString(text)
+    end
 end
 
 return Slider

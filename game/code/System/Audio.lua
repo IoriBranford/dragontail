@@ -1,7 +1,7 @@
 local Config = require "System.Config"
 local Assets = require "System.Assets"
 
----@class Audio
+---@module 'Audio'
 local Audio = {}
 
 local music
@@ -12,12 +12,12 @@ function Audio.stop()
     love.audio.stop()
 end
 
-function Audio.play(file, track)
-    local clip = Assets.get(file)
+function Audio.play(file)
+    local clip = Assets.get(file) ---@type love.Source?
     if clip then
         clip:stop()
-        clip:play(track)
         clip:setVolume(Config.soundvolume)
+        clip:play()
     end
     return clip
 end
@@ -35,10 +35,6 @@ end
 
 function Audio.update(dsecs)
     if music then
-        if music.update then
-            music:update()
-        end
-
         if musicfadespeed > 0 then
             local volume = music:getVolume() - musicfadespeed * dsecs
             if volume <= 0 then
@@ -60,9 +56,10 @@ end
 
 function Audio.playMusic(file, track)
     Audio.stopMusic()
-    music = Audio.play(file, track)
+    music = Assets.get(file) ---@type GameMusicEmu?
     if music then
         music:setVolume(Config.musicvolume)
+        music:play(track)
     end
     return music
 end

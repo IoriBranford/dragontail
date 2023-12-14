@@ -6,12 +6,16 @@ local Audio     = require "System.Audio"
 local Movement  = require "Component.Movement"
 local Assets    = require "System.Assets"
 local Script      = require "Component.Script"
-local Stage = {}
+local SceneObject = require "System.SceneObject"
+local Stage = {
+    CameraWidth = 640,
+    CameraHeight = 360
+}
 local sin = math.sin
 local max = math.max
 local min = math.min
 
-local scene
+local scene ---@type Scene
 local player -- character controlled by player
 local enemies -- characters player must beat to advance
 local solids -- characters who should block others' movement
@@ -36,17 +40,19 @@ function Stage.quit()
 end
 
 function Stage.init(stagefile)
-    scene = Scene.new()
+    scene = Scene()
     allcharacters = {}
     enemies = {}
     solids = {}
 
     map = Tiled.Map.load(stagefile)
+    map:indexLayersByName()
+    map:indexLayerObjectsByName()
     roomindex = 0
 
     bounds = map.layers.stage.bounds
-    bounds.width = 640
-    camerax, cameray = 0, (map.height*map.tileheight) - 360
+    bounds.width = Stage.CameraWidth
+    camerax, cameray = 0, (map.height*map.tileheight) - Stage.CameraHeight
     cameravelx, cameravely = 0, 0
 
     scene:addMap(map, "group,tilelayer")
@@ -123,14 +129,14 @@ function Stage.updateGoingToNextRoom()
     local room = map.layers["room"..roomindex]
     assert(room, "No room "..roomindex)
     local roombounds = room.bounds
-    local cameradestx = player.x - 640/2
+    local cameradestx = player.x - Stage.CameraWidth/2
     if camerax < cameradestx then
         cameravelx = Movement.moveTowards(camerax, cameradestx, 6) - camerax
     else
         cameravelx = 0
     end
     local roomright = roombounds.x + roombounds.width
-    local cameraxmax = roomright - 640
+    local cameraxmax = roomright - Stage.CameraWidth
     if camerax >= cameraxmax then
         camerax = cameraxmax
         bounds.x = camerax
@@ -192,6 +198,7 @@ function Stage.fixedupdate()
     pruneDisappeared(enemies, Stage.openNextRoom)
     pruneDisappeared(solids)
     pruneDisappeared(allcharacters)
+    scene:prune(SceneObject.isMarkedRemove)
 
     if gamestatus == "goingToNextRoom" then
         Stage.updateGoingToNextRoom()

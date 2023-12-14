@@ -1,20 +1,63 @@
 local class = require "Tiled.class"
+local indexElementsByName = require "Tiled.indexElementsByName"
 local Graphics = require "Tiled.Graphics"
+local Layer    = require "Tiled.Layer"
 
 ---@class LayerGroup:Layer
----@field layers Layer[] Copied to layer's array part
 ---@field [integer] Layer Copied from layers
----@field [string] Layer Layers in group by name
-local LayerGroup = class()
-
-local _transform = love.math.newTransform()
+---@field [string] Layer? Layers in group by name, after Map:indexLayersByName is called
+----@field layers Layer[] Copied to layer's array part
+local LayerGroup = class(Layer)
 
 function LayerGroup:_init()
-    local grouplayers = self.layers
+    local grouplayers = self.layers ---@type Layer[]
     for i = 1, #grouplayers do
-        self[i] = grouplayers[i]
+        local layer = grouplayers[i]
+        layer.layer = self
+        self[i] = layer
     end
     self.layers = nil
+end
+
+function LayerGroup:indexLayersByName(recursive)
+    indexElementsByName(self)
+    if recursive then
+        for _, layer in ipairs(self) do
+            if layer.type == "group" then
+                ---@cast layer LayerGroup
+                layer:indexLayersByName(recursive)
+            end
+        end
+    end
+end
+
+function LayerGroup:indexLayerObjectsByName()
+    for _, layer in ipairs(self) do
+        local layertype = layer.type
+        if layertype == "group" then
+            ---@cast layer LayerGroup
+            layer:indexLayerObjectsByName()
+        elseif layertype == "objectgroup" then
+            ---@cast layer ObjectGroup
+            layer:indexObjectsByName()
+        end
+    end
+end
+
+LayerGroup.showOnlyNamed = require "Tiled.showOnlyNamed"
+
+function LayerGroup:bindClasses()
+    class.reqcast(self, self.class)
+    for _, layer in ipairs(self) do
+        if layer.type == "group" then
+            layer:bindClasses()
+        else
+            class.reqcast(layer, layer.class)
+            for _, object in ipairs(layer) do
+                class.reqcast(object, object.type)
+            end
+        end
+    end
 end
 
 function LayerGroup:animate(dt)

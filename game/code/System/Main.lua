@@ -8,6 +8,7 @@ local Time   = require "System.Time"
 local Controls= require "System.Controls"
 local cute = require "cute"
 local haslldebugger, lldebugger = pcall(require, "lldebugger")
+local Account                   = require("System.Account")
 if not haslldebugger then
     lldebugger = nil
 end
@@ -66,6 +67,7 @@ function love.handlers.loadphase(name, ...)
     if love.quitphase then
         love.quitphase()
     end
+    love.currentphase = nextphase
     for k, v in pairs(blankphase) do
         love[k] = nextphase[k] or v
     end
@@ -98,6 +100,8 @@ function love.quit()
     end
     Audio.stop()
     Config.save()
+    Account.quit()
+    Controls.quit()
 	if profile then
         profile.stop()
 	end
@@ -116,15 +120,12 @@ function love.run()
     --console               Output to a console window
     --version               Print LOVE version
     --fused                 Force running in fused mode
-    --debug                 Debug in Zerobrane Studio
+    --debug                 Debug with tomblind.local-lua-debugger-vscode
     --cute                  Run Cute unit tests
-    --fullscreen            Start in fullscreen mode
-    --windowed              Start in windowed mode
-    --drawstats             Draw performance stats
     --profile               Profile code performance
-    --exclusive             Exclusive fullscreen
     --os (optional string)  Fake a certain OS for testing
-]]
+]]..Config.cli
+
     if not love.filesystem.isFused() then
         cli = cli .. [[
     <game> (string)         Game assets location
@@ -157,6 +158,10 @@ function love.run()
     end
     collectgarbage()
 
+    Account.init()
+
+    local SystemFont = love.graphics.newFont(12)
+
     -- We don't want the first frame's dsecs to include time taken by love.load.
     if love.timer then
         love.timer.step()
@@ -176,6 +181,8 @@ function love.run()
                 end
             end
         end
+
+        Account.update()
 
         -- Update dsecs, as we'll be passing it to update
         if love.timer then
@@ -210,11 +217,13 @@ function love.run()
 
             if love.draw then
                 love.draw(variableupdate and fixedfrac or 0)
-                love.graphics.setColor(1,1,1)
-                cute.draw()
             end
 
+            love.graphics.setFont(SystemFont)
+            cute.draw()
+
             if Config.drawstats then
+                love.graphics.setColor(1,1,1)
                 love.graphics.printf(tostring(love.timer.getFPS()).." fps", 0, 0, love.graphics.getWidth(), "right")
                 love.graphics.printf(tostring(math.floor(collectgarbage("count"))).." kb", 0, 16, love.graphics.getWidth(), "right")
             end

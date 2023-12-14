@@ -1,29 +1,24 @@
+local Gid = require "Tiled.Gid"
 ---@class Grid
-local Grid = {}
-Grid.__index = Grid
+local Grid = class()
 
+local type = type
 local floor, ceil = math.floor, math.ceil
 local abs = math.abs
 local distsq =  math.distsq
 local dist = math.dist
 local sqrt2 = math.sqrt(2)
 
----@return Grid
-function Grid.new(width, height, cellwidth, cellheight, margin)
+function Grid:_init(width, height, cellwidth, cellheight, margin)
     margin = margin or 0
     width = width + 2*margin
     height = height + 2*margin
 
-    ---@class Grid
-    local grid = {
-        cellwidth = cellwidth or 1,
-        cellheight = cellheight or 1,
-        width = width,
-        height = height,
-        margin = margin
-    }
-    setmetatable(grid, Grid)
-    return grid
+    self.cellwidth = cellwidth or 1
+    self.cellheight = cellheight or 1
+    self.width = width
+    self.height = height
+    self.margin = margin
 end
 
 function Grid.setmetatable(grid)
@@ -232,10 +227,71 @@ function Grid:set(column, row, value)
         self[toIndex(self, column, row)] = value
     end
 end
+local set = Grid.set
 
 function Grid:fill(value)
     for i = 1, self.width*self.height do
         self[i] = value
+    end
+end
+
+local parseGid = Gid.parse
+
+function Grid:readTileLayers(layers, maptiles, flagshape, flagvalue)
+    local layerpath = {}
+    local layerworldx, layerworldy = layers.x or 0, layers.y or 0
+
+    ---@param chunk TileLayer|Chunk
+    local function readLayerTiles(chunk, layer)
+        local parentcol = math.floor(layerworldx / layer.tilewidth)
+        local parentrow = math.floor(layerworldy / layer.tileheight)
+        local chunkx = chunk.x + parentcol
+        local chunky = chunk.y + parentrow
+        local chunkwidth = chunk.width
+        local data = chunk.data
+        local i = 0
+        for gridy = chunky + 1, chunky + chunk.height do
+            for gridx = chunkx + 1, chunkx + chunkwidth do
+                i = i + 1
+                local tilei = parseGid(data[i])
+                local tile = maptiles[tilei]
+                if tile then
+                    local shapes = tile.shapes
+                    if shapes and shapes[flagshape] then
+                        set(self, gridx, gridy, flagvalue)
+                    end
+                end
+            end
+        end
+    end
+
+    local function readLayer(layer)
+        layerworldx = layerworldx + layer.x
+        layerworldy = layerworldy + layer.y
+        layerpath[#layerpath+1] = layer.name
+        local layertype = layer.type
+        if layertype == "group" then
+            for _, sublayer in ipairs(layer) do
+                readLayer(sublayer)
+            end
+        elseif layertype == "tilelayer" then
+            if layer.usetileinfo then
+                if layer.chunks then
+                    for _, chunk in ipairs(layer.chunks) do
+                        readLayerTiles(chunk, layer)
+                    end
+                else
+                    readLayerTiles(layer, layer)
+                end
+            end
+        end
+        layerworldx = layerworldx - layer.x
+        layerworldy = layerworldy - layer.y
+        layerpath[#layerpath] = nil
+    end
+
+    for _, layer in ipairs(layers) do
+        readLayer(layer)
     end
 end
 
@@ -260,6 +316,84 @@ function Grid:fillRect(x, y, width, height, value)
     end
 end
 
+function Grid:searchRect(x, y, w, h, cond)
+    if type(cond) == "function" then
+        for c, r, v in self:cellsTouchingRect(x, y, w, h) do
+            if cond(v) then
+                return c, r, v
+            end
+        end
+    elseif cond then
+        for c, r, v in self:cellsTouchingRect(x, y, w, h) do
+            if cond == v then
+                return c, r, v
+            end
+        end
+    else
+        for c, r, v in self:cellsTouchingRect(x, y, w, h) do
+            if v then
+                return c, r, v
+            end
+        end
+    end
+end
+
+function Grid:incRectValues(x, y, w, h, inc)
+    for c, r, v in self:cellsTouchingRect(x, y, w, h) do
+        set(self, c, r, (v or 0) + inc)
+    end
+end
+
+function Grid:clearRect(x, y, w, h, cond)
+    if type(cond) == "function" then
+        for c, r, v in self:cellsTouchingRect(x, y, w, h) do
+            if cond(v, c, r) then
+                set(self, c, r, nil)
+            end
+        end
+    elseif cond then
+        for c, r, v in self:cellsTouchingRect(x, y, w, h) do
+            if cond == v then
+                set(self, c, r, nil)
+            end
+        end
+    else
+        for c, r, v in self:cellsTouchingRect(x, y, w, h) do
+            if v then
+                set(self, c, r, nil)
+            end
+        end
+    end
+end
+
+function Grid:searchLine(c1, r1, c2, r2, cond)
+    if type(cond) == "function" then
+        for c, r, v in self:cellsTouchingLine(c1, r1, c2, r2) do
+            if cond(v, c, r) then
+                return v, c, r
+            end
+        end
+    elseif cond then
+        for c, r, v in self:cellsTouchingLine(c1, r1, c2, r2) do
+            if cond == v then
+                return v, c, r
+            end
+        end
+    else
+        for c, r, v in self:cellsTouchingLine(c1, r1, c2, r2) do
+            if v then
+                return v, c, r
+            end
+        end
+    end
+end
+
+function Grid:drawCell(x, y, data)
+    if data then
+        love.graphics.printf(tostring(data), x, y)
+    end
+end
+
 function Grid:draw(x, y)
     local cellwidth = self.cellwidth
     local cellheight = self.cellheight
@@ -271,12 +405,11 @@ function Grid:draw(x, y)
     y = (y or 0) - margin*cellheight
     local x1 = x
     local i = 1
+    local drawCell = self.drawCell
     for r = 1, height do
         for c = 1, width do
             local data = self[i]
-            if data then
-                love.graphics.printf(tostring(data), x, y, cellwidth)
-            end
+            drawCell(self, x, y, data)
             i = i + 1
             x = x + cellwidth
         end

@@ -5,8 +5,9 @@ local class = require "Tiled.class"
 ---@field tile Tile
 ---@field tileid integer The local ID of a tile within the parent <tileset>.
 
----@class Animation
+---@class Animation:Class
 ---@field duration number Total duration, in Tiled.animationtimeunit
+---@field loopframe integer Frame index that should follow the last one. 0 = hold the last frame. -1 = last frame - 1, etc. Default is 1.
 ---@field [integer] AnimationFrame
 local Animation = class()
 
@@ -21,7 +22,15 @@ function Animation:_init(tileset)
         frame.tile = tileset[frame.tileid]
     end
     self.duration = totalduration * animationtimescale
+    self.loopframe = 1
     return self
+end
+
+function Animation:setLoopFrame(loopframe)
+    if loopframe <= 0 then
+        loopframe = #self + loopframe
+    end
+    self.loopframe = loopframe
 end
 
 function Animation:isFinished(i, t)
@@ -36,11 +45,12 @@ function Animation:isFinished(i, t)
     end
 end
 
-function Animation:getUpdate(i, t)
+function Animation:getUpdate(i, t, loopi)
+    loopi = loopi or self.loopframe
     local duration = self[i].duration
     while t >= duration do
         t = t - duration
-        i = (i >= #self) and 1 or (i + 1)
+        i = (i >= #self) and loopi or (i + 1)
         duration = self[i].duration
     end
     return i, t

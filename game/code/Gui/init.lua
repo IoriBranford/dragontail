@@ -1,6 +1,10 @@
 local Tiled = require "Tiled"
 local GuiObject = require "Gui.GuiObject"
 local LayerGroup= require "Tiled.LayerGroup"
+local Object      = require "Tiled.Object"
+local Canvas      = require "System.Canvas"
+local Config      = require "System.Config"
+
 ---@class Gui:LayerGroup
 ---@field activemenu Menu
 ---@field menustack Menu[]
@@ -12,33 +16,35 @@ local Gui = class(LayerGroup)
 function Gui.new(map, rootpath)
     if type(map) == "string" then
         map = Tiled.Map.load(map)
+        map:indexEverythingByName()
     end
     local self = Gui.get(map.layers, rootpath) or map.layers
+    assert(self.type == "group", "GUI root layer must be a group")
     self.width = map.width*map.tilewidth
     self.height = map.height*map.tileheight
     self.class = "Gui"
     self.visible = true
     self.menustack = {}
+    self:bindClasses()
 
     local function init(element)
         for i = 1, #element do
             init(element[i])
         end
 
-        local cls = element.class or ""
-        if cls == "" then
-            cls = element.type or ""
+        if getmetatable(element) == Object then
+            GuiObject.cast(element)
         end
-        if cls == "" then
-            GuiObject.castinit(element)
-        end
-        if element ~= self then
-            element.gui = self
-        end
-    end
 
-    Gui.cast(self)
-    init(self)
+        if element.spawn then
+            element:spawn()
+        end
+        element.gui = self
+    end
+    for _, layer in ipairs(self) do
+        init(layer)
+    end
+    self:resize(love.graphics.getWidth(), love.graphics.getHeight())
     return self
 end
 
@@ -59,9 +65,28 @@ function Gui:get(path)
 end
 
 function Gui:resize(screenwidth, screenheight)
-    for i = 1, #self do
-        self[i]:reanchor(self.width, self.height, screenwidth, screenheight)
+    -- for i = 1, #self do
+    --     self[i]:reanchor(self.width, self.height, screenwidth, screenheight)
+    -- end
+
+    local scalefactor = Canvas.GetScaleFactor(self.width, self.height, screenwidth, screenheight, math.rad(Config.rotation))
+    local canvaswidth = math.ceil(screenwidth/scalefactor)
+    local canvasheight = math.ceil(screenheight/scalefactor)
+    if canvaswidth % 2 == 1 then
+        canvaswidth = canvaswidth - 1
     end
+    if canvasheight % 2 == 1 then
+        canvasheight = canvasheight - 1
+    end
+    if Config.isPortraitRotation() then
+        canvaswidth, canvasheight = canvasheight, canvaswidth
+    end
+    local canvas = Canvas(canvaswidth, canvasheight)
+    canvas:transformToScreen(screenwidth, screenheight, math.rad(Config.rotation), Config.canvasscaleint)
+    canvas:setFiltered(Config.canvasscalesoft)
+    self.canvas = canvas
+    self.x = (canvaswidth - self.width) / 2
+    self.y = (canvasheight - self.height) / 2
 end
 
 function Gui:setActiveMenu(menu)
@@ -77,14 +102,11 @@ function Gui:pushMenu(menu)
         return
     end
     for _, m in ipairs(self.menustack) do
-        m:setVisible(true)
+        m:setVisible(false)
     end
     self.menustack[#self.menustack+1] = menu
     self:setActiveMenu(menu)
-    local initialbutton = menu.initialbutton
-    if initialbutton then
-        menu:selectButton(initialbutton)
-    end
+    menu:selectButton(menu.initialbutton or 1)
 end
 
 function Gui:popMenu()
@@ -92,7 +114,7 @@ function Gui:popMenu()
     if not menu then
         return
     end
-    menu:setVisible(true)
+    menu:setVisible(false)
     menu:doAction(menu.closeaction)
     self.menustack[#self.menustack] = nil
     self:setActiveMenu(self.menustack[#self.menustack])
@@ -101,7 +123,7 @@ end
 function Gui:clearMenuStack()
     for i = #self.menustack, 1, -1 do
         local menu = self.menustack[i]
-        menu:setVisible(true)
+        menu:setVisible(false)
         self.menustack[i] = nil
     end
     self:setActiveMenu()
@@ -139,6 +161,15 @@ end
 
 function Gui:fixedupdate()
     self:animate(1)
+end
+
+function Gui:draw()
+    local canvas = self.canvas
+    canvas:drawOn(function()
+        love.graphics.clear()
+        LayerGroup.draw(self)
+    end)
+    canvas:draw()
 end
 
 return Gui

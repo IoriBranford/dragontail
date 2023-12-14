@@ -13,9 +13,10 @@ local function createObject(class, ...)
     return initObject({}, class, ...)
 end
 
----@param base table?
+---@param base Class?
 ---@param init function?
 local function createClass(base, init)
+    ---@class Class
     local class = {
         _init = init
     }
@@ -25,8 +26,15 @@ local function createClass(base, init)
         return setmetatable(t, class)
     end
 
-    function class.castinit(t, ...)
+    function class.from(t, ...)
         return initObject(t, class, ...)
+    end
+
+    function class.super(t)
+        local baseinit = base and base._init
+        if baseinit then
+            baseinit(t)
+        end
     end
 
     if base then
@@ -42,7 +50,7 @@ local function createClass(base, init)
     return setmetatable(class, classmt)
 end
 
-local function requireCastInit(object, requirestr, ...)
+local function reqCast(object, requirestr)
     requirestr = requirestr or ""
     if requirestr == "" then
         return
@@ -51,11 +59,24 @@ local function requireCastInit(object, requirestr, ...)
     if not ok then
         return nil, class
     end
-    return class.castinit(object, ...)
+    return setmetatable(object, class)
+end
+
+local function initAs(object, requirestr, ...)
+    requirestr = requirestr or ""
+    if requirestr == "" then
+        return
+    end
+    local ok, class = pcall(require, requirestr)
+    if not ok then
+        return nil, class
+    end
+    return class.from(object, ...)
 end
 
 return setmetatable({
-    requirecastinit = requireCastInit
+    reqcast = reqCast,
+    init_as = initAs
 }, {
     __call = function(_, ...)
         return createClass(...)

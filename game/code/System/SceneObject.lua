@@ -292,6 +292,10 @@ function SceneObject:markRemove()
     self.z = math.huge
 end
 
+function SceneObject:isMarkedRemove()
+    return self.z == math.huge
+end
+
 function SceneObject.sortAndPruneObjects(sceneobjects, sort)
     t_sort(sceneobjects, sort)
     for i = #sceneobjects, 1, -1 do

@@ -1,14 +1,14 @@
 local Tileset = require "Tiled.Tileset"
 local TileLayer = require "Tiled.TileLayer"
-local addIfNew  = require "Tiled.addIfNew"
+local indexElementsByName = require "Tiled.indexElementsByName"
 local ObjectGroup = require "Tiled.ObjectGroup"
 local Properties  = require "Tiled.Properties"
-local TilePacking = require "Tiled.TilePacking"
 local LayerGroup  = require "Tiled.LayerGroup"
 local ImageLayer  = require "Tiled.ImageLayer"
 local class = require "Tiled.class"
+local Assets= require "Tiled.Assets"
 
----@class TiledMap
+---@class TiledMap:Class
 ---@field version string The TMX format version. Was “1.0” so far, and will be incremented to match minor Tiled releases.
 ---@field tiledversion string The Tiled version used to save the file (since Tiled 1.0.1). May be a date (for snapshot builds). (optional)
 ---@field class string The class of this map (since 1.9, defaults to “”).
@@ -28,56 +28,118 @@ local class = require "Tiled.class"
 ---@field nextlayerid integer Stores the next available ID for new layers. This number is stored to prevent reuse of the same ID after layers have been removed. (since 1.2) (defaults to the highest layer id in the file + 1)
 ---@field nextobjectid integer Stores the next available ID for new objects. This number is stored to prevent reuse of the same ID after objects have been removed. (since 0.11) (defaults to the highest object id in the file + 1)
 ---@field infinite boolean Whether this map is infinite. An infinite map has no fixed size and can grow in all directions. Its layer data is stored in chunks. (0 for false, 1 for true, defaults to 0)
----@field tilesets Tileset[] Access by index or tileset name
----@field layers Layer[] Access by index or layer name
+---@field tilesets Tileset[] Access by index (or by tileset name after calling indexTilesetsByName)
+---@field layers LayerGroup Access by index (or by layer name after calling indexLayersByName)
 ---@field directory string Directory path containing the map file
+---@field file string Path of the map file
 ---@field objects TiledObject[] All map objects by their id
 ---@field tiles Tile[] All tileset tiles by their gid
 ---@field properties table Moved into map itself
-local TiledMap = {}
-TiledMap.__index = TiledMap
-
----@class Layer
----@field type string "tilelayer", "objectgroup", "imagelayer", or "group"
----@field id integer Unique ID of the layer (defaults to 0, with valid IDs being at least 1). Each layer that added to a map gets a unique id. Even if a layer is deleted, no layer ever gets the same ID. Can not be changed in Tiled. (since Tiled 1.2)
----@field name string The name of the image layer. (defaults to “”)
----@field class string The class of the image layer (since 1.9, defaults to “”).
----@field parallaxx number Horizontal parallax factor for this layer. Defaults to 1. (since 1.5)
----@field parallaxy number Vertical parallax factor for this layer. Defaults to 1. (since 1.5)
----@field x number The x position of the image layer in pixels. Copy of offsetx
----@field y number The y position of the image layer in pixels. Copy of offsety
----@field opacity number The opacity of the layer as a value from 0 to 1. (defaults to 1)
----@field visible boolean Whether the layer is shown (1) or hidden (0). (defaults to 1)
----@field tintcolor Color A color that is multiplied with the image drawn by this layer in #AARRGGBB or #RRGGBB format (optional).
----@field z number Drawing order, default depends on layer order, set with layer property "z" (float)
+local TiledMap = class()
 
 ----@field offsetx number Horizontal offset of the image layer in pixels. (defaults to 0) (since 0.15)
 ----@field offsety number Vertical offset of the image layer in pixels. (defaults to 0) (since 0.15)
 ----@field properties table Moved into layer itself
 
-local function setLayersZ(layers, z1, dz)
-    local layer1 = layers[1]
-    if layer1 then
-        layer1.z = layer1.properties.z or z1
-        layer1.properties.z = nil
+function TiledMap:initLayersZ(z1, layerfilter)
+    local function initLayerZ(layer, z, groupscalez)
+        local layertype = layer.type
+        if layerfilter and not layerfilter:find(layertype) then
+            return
+        end
+        layer.z = layer.z or z
+        if layertype == "group" then
+            groupscalez = (groupscalez or 1) / #layer
+            local subz = z
+            for i = 1, #layer do
+                initLayerZ(layer[i], subz, groupscalez)
+                subz = layer[i].z + groupscalez
+            end
+        elseif layertype == "objectgroup" then
+            for _, object in ipairs(layer) do
+                object.z = object.z or z
+            end
+        end
     end
-    for i = 2, #layers do
-        local layer = layers[i]
-        layer.z = layer.properties.z or (layers[i-1].z + dz)
-        layer.properties.z = nil
+
+    local z = z1 or 1
+    for _, layer in ipairs(self.layers) do
+        initLayerZ(layer, z)
+        z = layer.z + 1
+    end
+end
+
+function TiledMap:indexEverythingByName()
+    self:indexTilesetsByName()
+    self:indexTilesetTilesByName()
+    self:indexTileShapesByName()
+    self:indexLayersByName()
+    self:indexLayerObjectsByName()
+end
+
+function TiledMap:indexTilesetsByName()
+    indexElementsByName(self.tilesets)
+end
+
+function TiledMap:indexTilesetTilesByName()
+    for _, tileset in ipairs(self.tilesets) do
+        indexElementsByName(tileset, 0)
+    end
+end
+
+function TiledMap:indexTileShapesByName()
+    for _, tile in ipairs(self.tiles) do
+        if tile.shapes then
+            indexElementsByName(tile.shapes)
+        end
+    end
+end
+
+function TiledMap:indexLayersByName()
+    self.layers:indexLayersByName(true)
+end
+
+function TiledMap:indexLayerObjectsByName()
+    self.layers:indexLayerObjectsByName()
+end
+
+function TiledMap:bindClasses()
+    class.reqcast(self, self.class)
+    self.layers:bindClasses()
+end
+
+function TiledMap:batchLayerTiles()
+    local function batch(layer)
+        local layertype = layer.type
+        if layertype == "tilelayer" then
+            layer:batchTiles()
+        elseif layertype == "group" then
+            for _, sublayer in ipairs(layer) do
+                batch(sublayer)
+            end
+        end
+    end
+    for _, layer in ipairs(self.layers) do
+        batch(layer)
     end
 end
 
 ---@param mapfile string
 ---@return TiledMap
 function TiledMap.load(mapfile)
+    local map = Assets.maps[mapfile]
+    if map then
+        return map
+    end
     local mapf, err = love.filesystem.load(mapfile)
     assert(mapf, err)
-    local map = mapf() ---@type TiledMap
+    map = mapf() ---@type TiledMap
     setmetatable(map, TiledMap)
+    Assets.maps[mapfile] = map
 
     local directory = string.match(mapfile, "^(.+/)") or ""
     map.directory = directory
+    map.file = mapfile
 
     if map.backgroundcolor then
         for i, c in ipairs(map.backgroundcolor) do
@@ -98,6 +160,9 @@ function TiledMap.load(mapfile)
                 for i = 1, #objects do
                     local object = objects[i]
                     mapobjects[object.id] = object
+                    if object.rotation then
+                        object.rotation = math.rad(object.rotation)
+                    end
                 end
             elseif layer.layers then
                 findObjects(layer.layers)
@@ -105,69 +170,53 @@ function TiledMap.load(mapfile)
         end
     end
 
-    local tilesets = map.tilesets
-    for i = 1, #tilesets do
-        local tileset = tilesets[i]
-        tileset.image = directory..tileset.image
-        Tileset.castinit(tileset)
+    local maptilesets = map.tilesets
+    local alltilesets = Assets.tilesets
+    for i = 1, #maptilesets do
+        local tileset = maptilesets[i]
+        if alltilesets[tileset.name] then
+            tileset = alltilesets[tileset.name]
+            maptilesets[i] = tileset
+        else
+            Tileset.from(tileset, directory)
+            alltilesets[tileset.name] = tileset
+        end
         for t = 0, tileset.tilecount - 1 do
             maptiles[#maptiles + 1] = tileset[t]
         end
     end
 
-    local packimagedata, packimageerr = TilePacking.pack(map)
-    if packimagedata then
-        -- TilePacking.save(map, mapfile..".quads", mapfile..".png", packimagedata)
-    else
-        print(packimageerr)
-    end
-
-    local function doLayer(layer, parent)
-        local layername = layer.name
-        if layername ~= "" then
-            addIfNew(parent, layername, layer)
-        end
+    local function doLayer(layer)
         local layertype = layer.type
         layer.x = layer.offsetx
         layer.y = layer.offsety
-        local z = layer.z
         if layertype == "group" then
-            LayerGroup.castinit(layer)
-            local scalez = (parent.scalez or 1) / #layer
-            layer.scalez = scalez
-            setLayersZ(layer, z, scalez)
+            LayerGroup.from(layer)
             for i = 1, #layer do
-                doLayer(layer[i], layer)
+                doLayer(layer[i])
             end
         elseif layertype == "tilelayer" then
-            TileLayer.castinit(layer, map)
+            TileLayer.from(layer, map)
         elseif layertype == "objectgroup" then
-            ObjectGroup.castinit(layer, map)
-            for _, object in ipairs(layer) do
-                object.z = object.z or z
-            end
+            ObjectGroup.from(layer, map)
         elseif layertype == "imagelayer" then
-            ImageLayer.castinit(layer, directory)
+            ImageLayer.from(layer, directory)
         end
         Properties.resolveObjectRefs(layer.properties, mapobjects)
         Properties.moveUp(layer)
-
-        class.requirecastinit(layer, layer.class)
     end
 
     local layers = map.layers
+    layers.type = "group"
     LayerGroup.cast(layers)
-    setLayersZ(layers, 1, 1)
     findObjects(layers)
 
     for i = 1, #layers do
         local layer = layers[i]
-        doLayer(layer, layers)
+        doLayer(layer)
     end
     Properties.resolveObjectRefs(map.properties, mapobjects)
     Properties.moveUp(map)
-
-    class.requirecastinit(map, map.class)
 
     return map
 end

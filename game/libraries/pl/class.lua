@@ -101,7 +101,7 @@ end
 --- cast an object to another class.
 -- It is not clever (or safe!) so use carefully.
 -- @param some_instance the object to be changed
--- @function some_class:cast
+-- @function some_class.cast
 local function cast (klass, obj)
     return setmetatable(obj,klass)
 end

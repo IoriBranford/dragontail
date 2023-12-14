@@ -1,21 +1,23 @@
 local Canvas= require "System.Canvas"
 local Stage = require "Dragontail.Stage"
+local Tiled = require "Tiled"
 local Database= require "Data.Database"
 local Assets= require "System.Assets"
 local Audio = require "System.Audio"
 local Gui = require "Gui"
+local Config = require "System.Config"
 local isAsset = Assets.isAsset
 local getAsset = Assets.get
 local GamePhase = {}
 
 local paused
 local gui
+local stagecanvas
 
 function GamePhase.loadphase()
     paused = false
     local unifont = Assets.get("fonts/Unifont 16.fnt")
     love.graphics.setFont(unifont)
-    Canvas.init(640, 360, love.graphics.getWidth(), love.graphics.getHeight())
     Assets.load("music/retro-chiptune-guitar.ogg", "stream")
 
     Database.load("data/db_characters.csv")
@@ -31,8 +33,29 @@ function GamePhase.loadphase()
         end
     end)
 
-    gui = Gui.new("data/gui_gameplay.lua")
     Stage.init("data/stage_jam.lua")
+
+    gui = Gui.new("data/gui_gameplay.lua")
+    Tiled.Assets.packTiles()
+    Tiled.Assets.uncacheMarked()
+
+    GamePhase.resize(love.graphics.getWidth(), love.graphics.getHeight())
+
+end
+
+function GamePhase.resize(screenwidth, screenheight)
+    stagecanvas = Canvas(Stage.CameraWidth, Stage.CameraHeight)
+    stagecanvas:transformToScreen(screenwidth, screenheight, math.rad(Config.rotation), Config.canvasscaleint)
+    stagecanvas:setFiltered(Config.canvasscalesoft)
+    gui:resize(screenwidth, screenheight)
+end
+
+function GamePhase.quitphase()
+    Stage.quit()
+    Tiled.Assets.markAllToUncache()
+    Assets.clear()
+    Database.clear()
+    gui = nil
 end
 
 local keypressed = {}
@@ -65,13 +88,6 @@ function GamePhase.keypressed(key)
     if kp then kp() end
 end
 
-function GamePhase.quitphase()
-    Stage.quit()
-    Database.clear()
-    Assets.clear()
-    gui = nil
-end
-
 function GamePhase.fixedupdate()
     if not paused then
         Stage.fixedupdate()
@@ -85,20 +101,16 @@ function GamePhase.update(dsecs, fixedfrac)
     Audio.update(dsecs)
 end
 
-function GamePhase.resize(w, h)
-    Canvas.init(640, 360, love.graphics.getWidth(), love.graphics.getHeight())
-end
-
 function GamePhase.draw(fixedfrac)
     love.graphics.clear(.25, .25, .25)
-    Canvas.drawOnCanvas(function()
+    stagecanvas:drawOn(function()
         Stage.draw(fixedfrac)
-        gui:draw()
         if paused then
             love.graphics.printf("PAUSE\n\nPress any key to resume", 0, 128, 640, "center")
         end
     end)
-    Canvas.drawCanvas()
+    stagecanvas:draw()
+    gui:draw()
 end
 
 return GamePhase

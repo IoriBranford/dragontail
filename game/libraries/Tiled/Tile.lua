@@ -3,7 +3,7 @@ local ObjectGroup = require "Tiled.ObjectGroup"
 local Properties  = require "Tiled.Properties"
 local Animation   = require "Tiled.Animation"
 
----@class Tile
+---@class Tile:Class
 ---@field id integer The local tile ID within its tileset.
 ---@field name string?
 ---@field type string The class of the tile. Is inherited by tile objects. (since 1.0, defaults to “”, was saved as class in 1.9)
@@ -15,14 +15,15 @@ local Animation   = require "Tiled.Animation"
 ---@field height number? The height of the sub-rectangle representing this tile (defaults to the image height)
 ---@field image love.Image
 ---@field quad love.Quad
----@field originx number Negative of tile offset x
----@field originy number Negative of tile offset y
+---@field offsetx number Copy of tileset's tile offset x
+---@field offsety number Copy of tileset's tile offset y
 ---@field objectoriginx number originx adjusted by object alignment
 ---@field objectoriginy number originy adjusted by object alignment
 ---@field tileset Tileset
----@field shapes ObjectGroup? Collision shapes copied from objectGroup and offset by (-originx, -originy)
+---@field shapes ObjectGroup? Collision shapes copied from objectGroup and offset by (-originx, -originy). Can access shapes by name after calling Map:indexTileShapesByName.
 ---@field animation Animation?
----@field objectGroup ObjectGroup? Original name of shapes 
+---@field loopframe integer? Initial value of animation's loopframe if applicable
+---@field objectGroup ObjectGroup? Original name of shapes
 ---@field properties table These get moved into tile itself
 local Tile = class()
 
@@ -31,7 +32,7 @@ function Tile:_init(tiledata)
     local objectox, objectoy = self.objectoriginx, self.objectoriginy
     local shapes = tiledata.objectGroup
     if shapes then
-        ObjectGroup.castinit(shapes)
+        ObjectGroup.from(shapes)
         for _, shape in ipairs(shapes) do
             shape.x = shape.x - objectox
             shape.y = shape.y - objectoy
@@ -43,10 +44,22 @@ function Tile:_init(tiledata)
     self.type = tiledata.class or tiledata.type
     local animation = tiledata.animation
     if animation then
-        self.animation = Animation.castinit(animation, self.tileset)
+        animation = Animation.from(animation, self.tileset) ---@type Animation
+        local properties = tiledata.properties
+        local loopframe = properties and properties.loopframe
+        if loopframe then
+            animation:setLoopFrame(loopframe)
+        end
+        self.animation = animation
     end
 
     Properties.moveUp(tiledata, self)
+end
+
+---@param key string|integer
+function Tile:getShape(key)
+    local shapes = self.shapes
+    return shapes and shapes[key]
 end
 
 return Tile

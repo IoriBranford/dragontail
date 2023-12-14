@@ -3,7 +3,10 @@ local Audio = require "System.Audio"
 local Config = require "System.Config"
 local Wallpaper             = require "System.Wallpaper"
 local Aseprite              = require "Data.Aseprite"
+local Platform              = require "System.Platform"
 local Assets = require "System.Assets"
+local Window = require "System.Window"
+local Stage  = require "Dragontail.Stage"
 local firstphase = "Dragontail.GamePhase"
 local firstmap = "data/stage_demonrealm.lua"
 
@@ -19,20 +22,13 @@ function love.load(args)
         end
     end
 
+    Config.parseArgs(args)
     Config.exhibit = args.exhibit
     Config.drawbodies = args.drawbodies
     Config.drawstats = args.drawstats
     Config.drawai = args.drawai
-    Config.exclusive = args.exclusive
-    if args.rotation ~= -1 then
-        Config.rotation = args.rotation
-    end
-    if args.fullscreen then
-        Config.fullscreen = true
-    elseif args.windowed then
-        Config.fullscreen = false
-    end
-    Config.applyDisplayMode(640, 360, 2)
+
+    Window.init(Stage.CameraWidth, Stage.CameraHeight)
     love.window.setTitle(love.filesystem.getIdentity())
     local iconfile = "appicon/appicon.png"
     if love.filesystem.getInfo(iconfile) then
@@ -61,11 +57,12 @@ return {
         --test (optional string)                Name of test to start
         --stagestart (optional string)          Name of stage start point
     ]],
-    defaultconfig = {
+    defaultconfig = Platform.overrideConfig {
         _version = 2,
         drawbodies = false,
         drawai = false,
         exhibit = false,
+        maximize = Platform.supports("maximize"),
     
         key_left = "left",
         key_right = "right",

@@ -116,6 +116,12 @@ function math.testpointtri(px, py, ax, ay, bx, by, cx, cy)
 end
 
 function math.testsegments(ax, ay, bx, by, cx, cy, dx, dy)
+    if ax == cx and ay == cy or ax == dx and ay == dy then
+        return ax, ay
+    end
+    if bx == cx and by == cy or bx == dx and by == dy then
+        return bx, by
+    end
     local abx = bx-ax
     local aby = by-ay
     local cdx = dx-cx
@@ -131,6 +137,12 @@ function math.testsegments(ax, ay, bx, by, cx, cy, dx, dy)
 end
 
 function math.intersectsegments(ax, ay, bx, by, cx, cy, dx, dy)
+    if ax == cx and ay == cy or ax == dx and ay == dy then
+        return ax, ay
+    end
+    if bx == cx and by == cy or bx == dx and by == dy then
+        return bx, by
+    end
     local abx = bx-ax
     local aby = by-ay
     local cdx = dx-cx

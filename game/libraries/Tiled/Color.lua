@@ -55,10 +55,10 @@ local parseARGBInt = Color.parseARGBInt
 
 function Color.asARGBInt(r, g, b, a)
     a = a or 1
-    local color = min(255, b*256)
-    color = color + min(255, g*256)*0x100
-    color = color + min(255, r*256)*0x10000
-    color = color + min(255, a*256)*0x1000000
+    local color =   min(255, floor(b*256))
+    color = color + min(255, floor(g*256))*0x100
+    color = color + min(255, floor(r*256))*0x10000
+    color = color + min(255, floor(a*256))*0x1000000
     return color
 end
 

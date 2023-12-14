@@ -2,14 +2,12 @@ local Csv = {}
 
 local s_gmatch = string.gmatch
 local s_match = string.match
-local s_lower = string.lower
 local tonumber = tonumber
 
 local function parseValue(v)
-    local vlower = s_lower(v)
-    if vlower == "true" then
+    if v == "true" or v == "TRUE" then
         v = true
-    elseif vlower == "false" then
+    elseif v == "false" or v == "FALSE" then
         v = false
     else
         v = tonumber(v) or v or ""
