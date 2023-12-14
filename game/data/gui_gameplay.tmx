@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="80" height="45" tilewidth="8" tileheight="8" infinite="0" nextlayerid="4" nextobjectid="7">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="80" height="45" tilewidth="8" tileheight="8" infinite="0" nextlayerid="4" nextobjectid="7">
  <editorsettings>
   <export target="gui_gameplay.lua" format="lua"/>
  </editorsettings>
  <tileset firstgid="1" source="tilesets/ui/rose-face.tsx"/>
- <objectgroup id="2" name="hud">
-  <object id="4" name="run" class="Gui.Gauge" x="48" y="33" width="100" height="8">
+ <objectgroup draworder="index" id="2" name="hud">
+  <object id="4" name="run" type="Gui.Gauge" x="48" y="33" width="100" height="8">
    <properties>
     <property name="color" type="color" value="#ff8080ff"/>
     <property name="z" type="float" value="0"/>
    </properties>
   </object>
-  <object id="6" name="runbox" x="47.5" y="32.5" width="101" height="9">
+  <object id="6" name="runbox" x="48" y="33" width="100" height="8">
    <properties>
     <property name="color" type="color" value="#00000000"/>
     <property name="linecolor" type="color" value="#ffc0c0ff"/>
@@ -19,13 +19,13 @@
     <property name="z" type="float" value="1"/>
    </properties>
   </object>
-  <object id="3" name="health" class="Gui.Gauge" x="48" y="16" width="100" height="16">
+  <object id="3" name="health" type="Gui.Gauge" x="48" y="16" width="100" height="16">
    <properties>
     <property name="color" type="color" value="#ffc04040"/>
     <property name="z" type="float" value="0"/>
    </properties>
   </object>
-  <object id="5" name="healthbox" x="47.5" y="15.5" width="101" height="17">
+  <object id="5" name="healthbox" x="48" y="16" width="100" height="16">
    <properties>
     <property name="color" type="color" value="#00000000"/>
     <property name="linecolor" type="color" value="#ffff8080"/>
@@ -42,7 +42,7 @@
    <properties>
     <property name="color" type="color" value="#00000000"/>
     <property name="linecolor" type="color" value="#ffffffff"/>
-    <property name="roundcorners" type="float" value="0"/>
+    <property name="roundcorners" type="float" value="2"/>
     <property name="z" type="float" value="3"/>
    </properties>
   </object>

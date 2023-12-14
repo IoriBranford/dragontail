@@ -1,7 +1,7 @@
 return {
-  version = "1.9",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.9.2",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -71,7 +71,7 @@ return {
   layers = {
     {
       type = "objectgroup",
-      draworder = "topdown",
+      draworder = "index",
       id = 2,
       name = "hud",
       class = "",
@@ -86,7 +86,7 @@ return {
         {
           id = 4,
           name = "run",
-          class = "Gui.Gauge",
+          type = "Gui.Gauge",
           shape = "rectangle",
           x = 48,
           y = 33,
@@ -102,12 +102,12 @@ return {
         {
           id = 6,
           name = "runbox",
-          class = "",
+          type = "",
           shape = "rectangle",
-          x = 47.5,
-          y = 32.5,
-          width = 101,
-          height = 9,
+          x = 48,
+          y = 33,
+          width = 100,
+          height = 8,
           rotation = 0,
           visible = true,
           properties = {
@@ -120,7 +120,7 @@ return {
         {
           id = 3,
           name = "health",
-          class = "Gui.Gauge",
+          type = "Gui.Gauge",
           shape = "rectangle",
           x = 48,
           y = 16,
@@ -136,12 +136,12 @@ return {
         {
           id = 5,
           name = "healthbox",
-          class = "",
+          type = "",
           shape = "rectangle",
-          x = 47.5,
-          y = 15.5,
-          width = 101,
-          height = 17,
+          x = 48,
+          y = 16,
+          width = 100,
+          height = 16,
           rotation = 0,
           visible = true,
           properties = {
@@ -154,7 +154,7 @@ return {
         {
           id = 1,
           name = "portrait",
-          class = "",
+          type = "",
           shape = "rectangle",
           x = 32,
           y = 32,
@@ -170,7 +170,7 @@ return {
         {
           id = 2,
           name = "portraitbox",
-          class = "",
+          type = "",
           shape = "rectangle",
           x = 16,
           y = 16,
@@ -181,7 +181,7 @@ return {
           properties = {
             ["color"] = "#00000000",
             ["linecolor"] = "#ffffffff",
-            ["roundcorners"] = 0,
+            ["roundcorners"] = 2,
             ["z"] = 3
           }
         }
