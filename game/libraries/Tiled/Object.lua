@@ -38,6 +38,7 @@ local Graphics   = require "Tiled.Graphics"
 ---@field linewidth number? Line thickness for lines and polygons
 ---@field velx number? Used with dt param in draw() to smooth movement at any framerate
 ---@field vely number? Used with dt param in draw() to smooth movement at any framerate
+---@field shader love.Shader?
 local TiledObject = class()
 
 ---@class ParticleSystemObject:TiledObject
@@ -108,12 +109,15 @@ local function processPoly(object)
     if poly then
         local points = {}
         object.points = points
+        local offsetx, offsety = -poly[1].x, -poly[1].y
+        object.x = object.x - offsetx
+        object.y = object.y - offsety
         for i = 1, #poly do
             local point = poly[i]
             local px = point.x
             local py = point.y
-            points[#points+1] = px
-            points[#points+1] = py
+            points[#points+1] = px + offsetx
+            points[#points+1] = py + offsety
         end
         if object.shape == "polygon" then
             object.triangles = triangulate(points)
@@ -374,6 +378,11 @@ function TiledObject:getExtents()
     return x, y, x + (self.width or 0), y + (self.height or 0)
 end
 
+function TiledObject:getWorldPosition()
+    local layerx, layery = self.layer:getWorldPosition()
+    return self.x + layerx, self.y + layery
+end
+
 function TiledObject:move(dx, dy)
     self.x, self.y = self.x + dx, self.y + dy
 end
@@ -387,6 +396,7 @@ function TiledObject:drawTile(fixedfrac)
     love.graphics.setColor(r,g,b,a)
     local velx, vely = self.velx or 0, self.vely or 0
     fixedfrac = fixedfrac or 0
+    love.graphics.setShader(self.shader)
     love.graphics.draw(tile.image,
         self.animationquad or tile.quad,
         (self.x + velx * fixedfrac),
@@ -403,6 +413,7 @@ function TiledObject:drawLine()
     local r,g,b,a = Color.unpack(self.color)
     love.graphics.setColor(r,g,b,a)
     love.graphics.setLineWidth(self.linewidth or 1)
+    love.graphics.setShader(self.shader)
     love.graphics.line(self.points)
 
     love.graphics.pop()
@@ -415,6 +426,7 @@ function TiledObject:drawPolygon()
     local linecolor = self.linecolor
     local r,g,b,a = Color.unpack(color)
     local triangles = self.triangles
+    love.graphics.setShader(self.shader)
     if triangles then
         love.graphics.setColor(r,g,b,a)
         for i = 6, #triangles, 6 do
@@ -448,6 +460,7 @@ end
 
 function TiledObject:drawRectangle()
     pushTransform(self)
+    love.graphics.setShader(self.shader)
     drawAsColorRect(self, self.color, "fill")
     if self.linecolor then
         drawAsColorRect(self, self.linecolor, "line")
@@ -462,6 +475,7 @@ function TiledObject:drawEllipse()
 
     local r,g,b,a = Color.unpack(self.color)
     love.graphics.setColor(r,g,b,a)
+    love.graphics.setShader(self.shader)
     love.graphics.ellipse("fill", hw, hh, hw, hh)
 
     if self.linecolor then
@@ -491,6 +505,7 @@ function TiledObject:drawText(fixedfrac)
 
     local r,g,b,a = Color.unpack(self.color)
     love.graphics.setColor(r,g,b,a)
+    love.graphics.setShader(self.shader)
     local font = self.font or love.graphics.getFont()
     local str = self.text
     local velx, vely = self.velx or 0, self.vely or 0
@@ -530,6 +545,7 @@ function TiledObject:emitParticles(x, y, num, direction)
 end
 
 function TiledObject:drawParticleSystem()
+    love.graphics.setShader(self.shader)
     love.graphics.draw(self.particlesystem)
 end
 

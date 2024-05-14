@@ -9,6 +9,7 @@ local Layer  = require "Tiled.Layer"
 ---@field repeaty boolean Whether the image drawn by this layer is repeated along the Y axis. (since Tiled 1.8)
 ---@field imagefile string
 ---@field image love.Image
+---@field shader love.Shader?
 local ImageLayer = class(Layer)
 
 function ImageLayer:_init(directory)
@@ -20,6 +21,7 @@ end
 function ImageLayer:draw()
     local r,g,b,a = Color.unpack(self.tintcolor)
     love.graphics.setColor(r,g,b,a)
+    love.graphics.setShader(self.shader)
     love.graphics.draw(self.image,
         (self.x), (self.y),
         self.rotation or 0,

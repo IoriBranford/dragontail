@@ -21,6 +21,17 @@ function Layer:setVisible(visible)
     self.visible = visible
 end
 
+function Layer:getWorldPosition()
+    local x, y = self.x, self.y
+    local parent = self.layer
+    while parent do
+        x = x + parent.x
+        y = y + parent.y
+        parent = parent.layer
+    end
+    return x, y
+end
+
 function Layer:move(dx, dy)
     local x = self.x + dx
     local y = self.y + dy

@@ -25,6 +25,7 @@ local parseGid = Gid.parse
 ---@field tileheight integer Copy of map.tileheight
 ---@field tilebatch love.SpriteBatch? In finite maps
 ---@field batchanimations Animation[]? Indices in the data which have animated tiles
+---@field shader love.Shader?
 local TileLayer = class(Layer)
 
 ---@param f fun(x:number, y: number, tile:Tile, flipx:number, flipy:number): any
@@ -215,6 +216,7 @@ function TileLayer:draw()
     else
         love.graphics.setColor(1,1,1)
     end
+    love.graphics.setShader(self.shader)
 
     local chunks = self.chunks
     if chunks then
