@@ -1,4 +1,5 @@
 ---@class Canvas
+---@field shader love.Shader?
 local Canvas = class()
 
 function Canvas:_init(width, height)
@@ -68,6 +69,7 @@ end
 
 function Canvas:draw()
     love.graphics.setColor(1, 1, 1)
+    love.graphics.setShader(self.shader)
     love.graphics.draw(self.canvas, self.transform)
 end
 

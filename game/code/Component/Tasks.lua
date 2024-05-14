@@ -88,6 +88,13 @@ function Tasks:removeLabel(label)
     end
 end
 
+function Tasks:isRunning(i)
+    if type(i) == "string" then
+        i = self.labeled and self.labeled[i]
+    end
+    return self[i] and true or false
+end
+
 function Tasks:startNext()
     local next = self.next
     if next then

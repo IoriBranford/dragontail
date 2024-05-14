@@ -11,6 +11,7 @@ local defaultconfig
 
 function Config.reset()
 	---@class BaseConfig
+	---@field [string] number|boolean|string
 	config = {
         debug = false,
         fullscreen = false,

@@ -2,7 +2,14 @@ local Cache = require "Data.Cache"
 local Aseprite = require "Data.Aseprite"
 local json_decode = (require "json").decode
 local Platform     = require "System.Platform"
-local GameMusicEmu = Platform.supports("ffi") and require "GameMusicEmu"
+local VGMPlayer
+local GameMusicEmu
+if Platform.supports("ffi") then
+    VGMPlayer = require "VGMPlayer"
+    if not VGMPlayer then
+        GameMusicEmu = require "GameMusicEmu"
+    end
+end
 local Assets = {}
 
 local cache
@@ -10,10 +17,17 @@ local cache
 local lfs_read = love.filesystem.read
 
 local function load_audio(path, mode)
-    return love.audio.newSource(path, mode or "static")
+    local ok, source = pcall(love.audio.newSource, path, mode or "static")
+    if ok then
+        return source
+    end
+    print(source)
 end
 
 local load_vgm = function(path, ...)
+    if VGMPlayer then
+        return VGMPlayer.new(path, ...)
+    end
     if GameMusicEmu and GameMusicEmu.isSupported(path) then
         return GameMusicEmu.new(path, ...)
     end
@@ -34,7 +48,9 @@ local loaders = {
     lua = love.filesystem.load,
     fnt = love.graphics.newFont,
     json = function (path) return json_decode(lfs_read(path)) end,
-    jase = Aseprite.load
+    jase = Aseprite.load,
+    vert = love.graphics.newShader,
+    frag = love.graphics.newShader,
 }
 
 function Assets.init(root)

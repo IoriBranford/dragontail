@@ -1,9 +1,24 @@
 local GuiObject    = require "Gui.GuiObject"
+local GuiActions   = require "Gui.GuiActions"
+local Graphics     = require "Tiled.Graphics"
+local Color        = require "Tiled.Color"
 
 ---@class Button:GuiObject
 ---@field label GuiObject?
+---@field disabled boolean
+---@field disabledcolor Color?
 local Button = class(GuiObject)
 Button.ismenuitem = true
+
+function Button:spawn()
+    self.color0 = self.color
+end
+
+function Button:setDisabled(disabled)
+    self.disabled = disabled
+    local disabledcolor = self.disabledcolor or Color.Grey
+    self.color = disabled and disabledcolor or self.color0
+end
 
 function Button:setVisible(visible)
     GuiObject.setVisible(self, visible)
@@ -19,8 +34,12 @@ function Button:setLabelString(string)
 end
 
 function Button:press()
-    self:onDeselect()
-    self:doAction(self.action)
+    if self.disabled then
+        GuiActions.playInvalidSound(self.gui, self)
+    else
+        self:onDeselect()
+        self:doAction(self.action)
+    end
 end
 
 function Button:onSelect()

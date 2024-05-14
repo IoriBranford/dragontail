@@ -11,8 +11,8 @@ Menu.doAction = GuiObject.doAction
 function Menu:spawn()
     local platform = Platform.OS
 
-    local cursors = {}
-    local menuitems = {}
+    local cursors = {} ---@type Cursor[]
+    local menuitems = {} ---@type Button[]
     self.cursors = cursors
     self.menuitems = menuitems
 

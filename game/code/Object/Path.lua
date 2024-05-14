@@ -1,5 +1,5 @@
 ---@class Path:TiledObject
----@field triggers PathTrigger[][]
+---@field triggers CharacterTrigger[][]
 local Path = class()
 
 function Path:_init()

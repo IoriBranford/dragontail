@@ -1,4 +1,3 @@
-local Gid = require "Tiled.Gid"
 ---@class Grid
 local Grid = class()
 
@@ -235,64 +234,36 @@ function Grid:fill(value)
     end
 end
 
-local parseGid = Gid.parse
-
-function Grid:readTileLayers(layers, maptiles, flagshape, flagvalue)
-    local layerpath = {}
-    local layerworldx, layerworldy = layers.x or 0, layers.y or 0
-
-    ---@param chunk TileLayer|Chunk
-    local function readLayerTiles(chunk, layer)
-        local parentcol = math.floor(layerworldx / layer.tilewidth)
-        local parentrow = math.floor(layerworldy / layer.tileheight)
-        local chunkx = chunk.x + parentcol
-        local chunky = chunk.y + parentrow
-        local chunkwidth = chunk.width
-        local data = chunk.data
-        local i = 0
-        for gridy = chunky + 1, chunky + chunk.height do
-            for gridx = chunkx + 1, chunkx + chunkwidth do
-                i = i + 1
-                local tilei = parseGid(data[i])
-                local tile = maptiles[tilei]
-                if tile then
-                    local shapes = tile.shapes
-                    if shapes and shapes[flagshape] then
-                        set(self, gridx, gridy, flagvalue)
-                    end
-                end
-            end
+---@param layer TileLayer
+---@param shapename string
+---@param value any
+function Grid:setAtLayerTilesWithShape(layer, shapename, value)
+    local cellhw, cellhh = self.cellwidth/2, self.cellheight/2
+    layer:forCells(function (left, bottom, tile)
+        local shapes = tile and tile.shapes
+        if shapes and shapes[shapename] then
+            local c, r = cellAt(self, left + cellhw, bottom - cellhh)
+            set(self, c, r, value)
         end
-    end
+    end)
+end
 
-    local function readLayer(layer)
-        layerworldx = layerworldx + layer.x
-        layerworldy = layerworldy + layer.y
-        layerpath[#layerpath+1] = layer.name
-        local layertype = layer.type
-        if layertype == "group" then
-            for _, sublayer in ipairs(layer) do
-                readLayer(sublayer)
+---@param layer TileLayer
+---@param shapename string
+---@param delta number
+function Grid:incAtLayerTilesWithShape(layer, shapename, delta)
+    local cellhw, cellhh = self.cellwidth/2, self.cellheight/2
+    layer:forCells(function (left, bottom, tile)
+        local shapes = tile and tile.shapes
+        if shapes and shapes[shapename] then
+            local c, r = cellAt(self, left + cellhw, bottom - cellhh)
+            local value = (get(self, c, r) or 0) + delta
+            if value == 0 then
+                value = nil
             end
-        elseif layertype == "tilelayer" then
-            if layer.usetileinfo then
-                if layer.chunks then
-                    for _, chunk in ipairs(layer.chunks) do
-                        readLayerTiles(chunk, layer)
-                    end
-                else
-                    readLayerTiles(layer, layer)
-                end
-            end
+            set(self, c, r, value)
         end
-        layerworldx = layerworldx - layer.x
-        layerworldy = layerworldy - layer.y
-        layerpath[#layerpath] = nil
-    end
-
-    for _, layer in ipairs(layers) do
-        readLayer(layer)
-    end
+    end)
 end
 
 function Grid:fillRect(x, y, width, height, value)

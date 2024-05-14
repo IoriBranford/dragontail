@@ -56,7 +56,7 @@ end
 
 function Audio.playMusic(file, track)
     Audio.stopMusic()
-    music = Assets.get(file) ---@type GameMusicEmu?
+    music = Assets.get(file) ---@type VGMPlayer|GameMusicEmu?
     if music then
         music:setVolume(Config.musicvolume)
         music:play(track)
