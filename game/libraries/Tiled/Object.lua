@@ -29,6 +29,7 @@ local Graphics   = require "Tiled.Graphics"
 ---@field animationframe integer?
 ---@field animationtime integer?
 ---@field animationquad love.Quad?
+---@field animationspeed number?
 ---@field particlesystem love.ParticleSystem?
 ---@field properties table? These get moved into object itself
 ---@field color Color?
@@ -284,7 +285,8 @@ function TiledObject:isAnimationEnding(dt)
     local animation = self.tile and self.tile.animation or self.aseanimation or self.aseprite
     if animation then
         local aframe = self.animationframe
-        local atime = self.animationtime + dt
+        local aspeed = self.animationspeed or 1
+        local atime = self.animationtime + dt*aspeed
         return animation:isFinished(aframe, atime)
     end
 end
@@ -301,7 +303,9 @@ function TiledObject:animateTile(dt)
         local aframe = self.animationframe
         local atime = self.animationtime
         local aloop = self.loopframe
-        aframe, atime = animation:getUpdate(aframe, atime + dt, aloop)
+        local aspeed = self.animationspeed or 1
+
+        aframe, atime = animation:getUpdate(aframe, atime + dt*aspeed, aloop)
         self.animationframe = aframe
         self.animationtime = atime
         self.animationquad = animation[aframe].tile.quad
@@ -316,7 +320,9 @@ function TiledObject:animateAseprite(dt)
     local aframe = self.animationframe
     local atime = self.animationtime
     local aloop = self.loopframe
-    aframe, atime = animation:getUpdate(aframe, atime + dt, aloop)
+    local aspeed = self.animationspeed or 1
+
+    aframe, atime = animation:getUpdate(aframe, atime + dt*aspeed, aloop)
     self.animationframe = aframe
     self.animationtime = atime
 end
