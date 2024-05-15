@@ -1,4 +1,5 @@
 local TilePacking = require "Tiled.TilePacking"
+local hasAseprite, Aseprite = pcall(require, "Aseprite")
 
 ---@alias AssetGroup {[string]:Tileset}|{[string]:love.Image}|{[string]:love.Font}
 
@@ -6,6 +7,7 @@ local Assets = {
     fontpath = "",
     maps = {}, ---@type {[string]:TiledMap}
     tilesets = {}, ---@type {[string]:Tileset}
+    aseprites = {}, ---@type {[string]:Aseprite}
     images = {},---@type {[string]:love.Image}
     fonts = {}, ---@type {[string]:love.Font}
     touncache = {}, ---@type {[string]:AssetGroup}
@@ -23,6 +25,11 @@ function Assets.markAllToUncache()
         if not permanent[file] then
             touncache[file] = assetgroup
         end
+    end
+
+    local aseprites = Assets.aseprites
+    for k in pairs(aseprites) do
+        markToUncache(k, aseprites)
     end
 
     local images = Assets.images
@@ -128,6 +135,18 @@ function Assets.loadFont(fontfamily, pixelsize, bold, italic, fontformat)
         Assets.fonts[fontname] = font
     end
     return font
+end
+
+function Assets.loadAseprite(asefile)
+    assert(hasAseprite, "Missing the Aseprite library")
+    Assets.touncache[asefile] = nil
+    local ase = Assets.aseprites[asefile]
+    if ase then
+        return ase
+    end
+    ase = Aseprite.load(asefile)
+    Assets.aseprites[asefile] = ase
+    return ase
 end
 
 function Assets.getTile(tileset, tileid)
