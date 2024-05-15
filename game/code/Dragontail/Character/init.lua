@@ -67,7 +67,6 @@ end
 
 ---@param scene Scene
 function Character:addToScene(scene)
-    self:initAseprite()
     scene:addAnimating(self)
     self.originx = self.spriteoriginx
     self.originy = self.spriteoriginy
