@@ -6,7 +6,6 @@ local Audio     = require "System.Audio"
 local Movement  = require "Component.Movement"
 local Assets    = require "System.Assets"
 local Script      = require "Component.Script"
-local SceneObject = require "System.SceneObject"
 local Stage = {
     CameraWidth = 640,
     CameraHeight = 360
@@ -198,7 +197,7 @@ function Stage.fixedupdate()
     pruneDisappeared(enemies, Stage.openNextRoom)
     pruneDisappeared(solids)
     pruneDisappeared(allcharacters)
-    scene:prune(SceneObject.isMarkedRemove)
+    scene:prune(Character.hasDisappeared)
 
     if gamestatus == "goingToNextRoom" then
         Stage.updateGoingToNextRoom()

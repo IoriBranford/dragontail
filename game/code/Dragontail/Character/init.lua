@@ -1,9 +1,9 @@
-local SceneObject = require "System.SceneObject"
 local Assets      = require "System.Assets"
 local Database      = require "Data.Database"
 local Audio       = require "System.Audio"
 local Config      = require "System.Config"
 local Script      = require "Component.Script"
+local Object      = require "Tiled.Object"
 local pi = math.pi
 local floor = math.floor
 local sqrt = math.sqrt
@@ -16,15 +16,10 @@ local min = math.min
 local max = math.max
 local testcircles = math.testcircles
 
----@class Character
-local Character = {}
+---@class Character:AsepriteObject
+local Character = class(Object)
 
-Character.metatable = {
-    __index = Character,
-    __lt = SceneObject.__lt
-}
-local Metatable = Character.metatable
-
+---@return Character
 function Character.init(ch, chprefab)
     if chprefab then
         for k,v in pairs(chprefab) do
@@ -52,45 +47,12 @@ function Character.init(ch, chprefab)
     ch.attackstun = ch.attackstun or 1
     ch.hitstun = ch.hitstun or 0
     ch.hurtstun = ch.hurtstun or 0
-    return setmetatable(ch, Metatable)
+    return Character.from(ch)
 end
 local init = Character.init
 
 function Character.new(chprefab)
     return init({}, chprefab)
-end
-
-function Character:addSprite(scene, file, frameortag, tagframe, ox, oy)
-    local ase = file and Assets.get(file)
-    if ase then
-        local sprite
-        if type(frameortag) == "string" then
-            sprite = scene:addManualAnimatedAseprite(ase, frameortag, tagframe,
-                self.x, self.y, 0,
-                0, 1, 1, ox or 0, oy or 0)
-        else
-            sprite = scene:addAseprite(ase, frameortag,
-                self.x, self.y, 0,
-                0, 1, 1, ox or 0, oy or 0)
-        end
-        return sprite
-    end
-end
-
-function Character:removeSprite(key)
-    local sprite = self[key]
-    if sprite then
-        sprite:markRemove()
-        self[key] = nil
-    end
-end
-
-function Character:animateSprite(sprite)
-    if sprite then
-        if sprite.animate then
-            sprite:animate(1)
-        end
-    end
 end
 
 function Character:updateSprite(sprite, fixedfrac)
@@ -103,44 +65,35 @@ function Character:updateSprite(sprite, fixedfrac)
     end
 end
 
+---@param scene Scene
 function Character:addToScene(scene)
-    local asepritefile = self.asepritefile
-    local sprite = asepritefile and self:addSprite(scene,
-        asepritefile, self.animation or 1, nil,
-        self.spriteoriginx, self.spriteoriginy)
-    if sprite then
-        self.sprite = sprite
-        local baseDraw = sprite.draw
-        if self.shadowtype then
-            sprite.draw = function(sprite)
-                self:drawShadow()
-                baseDraw(sprite)
-            end
+    self:initAseprite()
+    scene:addAnimating(self)
+    self.originx = self.spriteoriginx
+    self.originy = self.spriteoriginy
+
+    local baseDraw = self.draw
+    if self.shadowtype then
+        self.draw = function(sprite)
+            self:drawShadow()
+            baseDraw(sprite)
         end
-    end
-    local emoteasepritefile = self.emoteasepritefile
-    local emote = emoteasepritefile and self:addSprite(scene,
-        emoteasepritefile, 1, nil,
-        self.emoteoriginx or (emoteasepritefile.width/2),
-        self.emoteoriginy or (emoteasepritefile.height + (self.spriteoriginy or 0)))
-    if emote then
-        self.emote = emote
-        emote.visible = false
     end
 end
 
 function Character:makeAfterImage()
     local Stage = require "Dragontail.Stage"
-    Stage.addCharacter({
+    local afterimage = Stage.addCharacter({
         x = self.x,
         y = self.y,
-        asepritefile = self.asepritefile,
-        animation = self.sprite.asepriteframe,
+        asefile = self.asefile,
+        animationspeed = 0,
         spriteoriginx = self.spriteoriginx,
         spriteoriginy = self.spriteoriginy,
         script = "Dragontail.Character.Common",
         initialai = "afterimage"
     })
+    afterimage:setAseAnimation(self.aseanimation, self.animationframe)
 end
 
 function Character:move(dx, dy)
@@ -191,24 +144,17 @@ function Character:fixedupdate()
     self.x = self.x + self.velx
     self.y = self.y + self.vely
     Script.run(self)
-    self:animateSprite(self.sprite)
-    self:animateSprite(self.emote)
 end
 
 function Character:fixedupdateShake(time)
     time = max(0, time - 1)
-    if self.sprite then
-        self.sprite.originx = self.spriteoriginx + 2*math.sin(time)
-    end
+    self.originx = self.spriteoriginx + 2*math.sin(time)
     return time
 end
 
 function Character:update(dsecs, fixedfrac)
-    self:updateSprite(self.sprite, fixedfrac)
-    self:updateSprite(self.emote, fixedfrac)
-    if self.sprite then
-        self.sprite.originx = self.spriteoriginx + 2*math.sin(self.hurtstun)
-    end
+    self.originx = self.spriteoriginx + 2*math.sin(self.hurtstun)
+    self.originy = (self.spriteoriginy or 0) + self.z
 end
 
 function Character:startAttack(attackangle)
@@ -417,8 +363,10 @@ end
 
 function Character:disappear()
     self.disappeared = true
-    self:removeSprite("sprite")
-    self:removeSprite("emote")
+end
+
+function Character:hasDisappeared()
+    return self.disappeared
 end
 
 return Character

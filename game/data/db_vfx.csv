@@ -1,4 +1,4 @@
-vfx,asepritefile,script,initialai,animation,animationend,spriteoriginx,spriteoriginy,sparktime
-spark-hit,sprites/vfx.jase,Dragontail.Character.Common,spark,hit,stop,108,80,6
-spark-guard,sprites/vfx.jase,Dragontail.Character.Common,spark,guard,stop,106,64,9
-spark-bighit,sprites/vfx.jase,Dragontail.Character.Common,spark,bighit,stop,98,80,9
+vfx,asefile,script,initialai,asetag,loopframe,spriteoriginx,spriteoriginy,sparktime
+spark-hit,data/sprites/vfx.jase,Dragontail.Character.Common,spark,hit,0,108,80,6
+spark-guard,data/sprites/vfx.jase,Dragontail.Character.Common,spark,guard,0,106,64,9
+spark-bighit,data/sprites/vfx.jase,Dragontail.Character.Common,spark,bighit,0,98,80,9

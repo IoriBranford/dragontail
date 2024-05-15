@@ -4,9 +4,9 @@ local Audio    = require "System.Audio"
 local Movement = require "Component.Movement"
 local Script   = require "Component.Script"
 local Fighter  = require "Dragontail.Character.Fighter"
-local tablex   = require "pl.tablex"
 
-local Player = tablex.copy(Fighter)
+---@class Player:Fighter
+local Player = class(Fighter)
 
 local pi = math.pi
 local cos = math.cos
@@ -211,7 +211,7 @@ function Player:control()
             animation = "stand"
         end
         animation = self.getDirectionalAnimation_angle(animation, atan2(facey, facex), self.animationdirections)
-        self.sprite:changeAsepriteAnimation(animation)
+        self:changeAseAnimation(animation)
 
         yield()
     end
@@ -250,7 +250,7 @@ function Player:spinAttack(attacktype, angle)
         local attackanimation = self.swinganimation
         if attackanimation then
             attackanimation = self.getDirectionalAnimation_angle(attackanimation, angle, self.animationdirections)
-            self.sprite:changeAsepriteAnimation(attackanimation)
+            self:changeAseAnimation(attackanimation)
         end
 
         yield()
@@ -335,7 +335,7 @@ function Player:hold(enemy)
 
         local holdanimation = (velx ~= 0 or vely ~= 0) and "holdwalk" or "hold"
         holdanimation = self.getDirectionalAnimation_angle(holdanimation, holdangle, self.animationdirections)
-        self.sprite:changeAsepriteAnimation(holdanimation)
+        self:changeAseAnimation(holdanimation)
 
         self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
         if runpressed and self.runenergy >= self.runenergycost then
@@ -432,7 +432,7 @@ function Player:runWithEnemy(enemy)
 
         local holdanimation = "holdwalk"
         holdanimation = self.getDirectionalAnimation_angle(holdanimation, holdangle, self.animationdirections)
-        self.sprite:changeAsepriteAnimation(holdanimation)
+        self:changeAseAnimation(holdanimation)
     end
 end
 
@@ -475,7 +475,7 @@ function Player:spinAndKickEnemy(attacktype, angle, enemy)
         local attackanimation = self.swinganimation
         if attackanimation then
             attackanimation = self.getDirectionalAnimation_angle(attackanimation, angle, self.animationdirections)
-            self.sprite:changeAsepriteAnimation(attackanimation)
+            self:changeAseAnimation(attackanimation)
         end
 
         holddirx, holddiry = cos(angle), sin(angle)
@@ -516,7 +516,7 @@ function Player:straightAttack(attacktype, angle, heldenemy)
     local attackanimation = self.swinganimation
     if attackanimation then
         attackanimation = self.getDirectionalAnimation_angle(attackanimation, angle, self.animationdirections)
-        self.sprite:changeAsepriteAnimation(attackanimation)
+        self:changeAseAnimation(attackanimation)
     end
     local t = self.attackhittime or 1
     local lungespeed = self.attacklungespeed
@@ -555,7 +555,7 @@ end
 
 function Player:getup(attacker)
     Audio.play(self.getupsound)
-    self.sprite:changeAsepriteAnimation("getup", 1, "stop")
+    self:changeAseAnimation("getup", 1, 0)
     local t = self.getuptime or 27
     local recoverai = self.aiaftergetup or self.recoverai
     if not recoverai then
@@ -577,7 +577,7 @@ end
 function Player:victory()
     self:stopAttack()
     Audio.play(self.victorysound)
-    self.sprite:changeAsepriteAnimation("win")
+    self:changeAseAnimation("win")
     local i = 0
     while true do
         self:accelerateTowardsVel(0, 0, 4)

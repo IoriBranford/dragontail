@@ -1,13 +1,18 @@
 local Audio     = require "System.Audio"
 local Database    = require "Data.Database"
 local Script      = require "Component.Script"
+local Color       = require "Tiled.Color"
+local Character   = require "Dragontail.Character"
+
 local yield = coroutine.yield
 local wait = coroutine.wait
 local atan2 = math.atan2
 local cos = math.cos
 local sin = math.sin
 local max = math.max
-local Common = {}
+
+---@class Common:Character
+local Common = class(Character)
 
 function Common:spark()
     wait(self.sparktime or 30)
@@ -15,11 +20,12 @@ function Common:spark()
 end
 
 function Common:afterimage()
-    local sprite = self.sprite
     local afterimagetime = max(1, self.afterimagetime or 30)
     local deltaalpha = 1/afterimagetime
     for i = 1, afterimagetime do
-        sprite.alpha = sprite.alpha - deltaalpha
+        local r, g, b, a = Color.unpack(self.color)
+        a = a - deltaalpha
+        self.color = Color.asARGBInt(r, g, b, a)
         yield()
     end
     self:disappear()
@@ -27,12 +33,10 @@ end
 
 function Common:blinkOut(t)
     t = t or 30
-    local sprite = self.sprite
-    if sprite then
-        for i = 1, t do
-            sprite.alpha = cos(i)
-            yield()
-        end
+    for i = 1, t do
+        local r, g, b = Color.unpack(self.color)
+        self.color = Color.asARGBInt(r, g, b, cos(i))
+        yield()
     end
     self:disappear()
 end
@@ -41,7 +45,7 @@ function Common:containerBreak(attacker)
     self.bodysolid = false
     self.canbeattacked = false
     Audio.play(self.defeatsound)
-    self.sprite:changeAsepriteAnimation("collapse", 1, "stop")
+    self:changeAseAnimation("collapse", 1, 0)
     local item = self.item
     if item then
         item.opponent = self.opponent
@@ -91,10 +95,9 @@ function Common:projectileHit(opponent)
         Audio.play(self.bodyslamsound)
     end
     local attackhitanimation = self.attackhitanimation
-    local sprite = self.sprite
-    if sprite and attackhitanimation then
+    if attackhitanimation then
         attackhitanimation = self.getDirectionalAnimation_angle(attackhitanimation, self.attackangle, self.animationdirections)
-        self.sprite:changeAsepriteAnimation(attackhitanimation)
+        self:changeAseAnimation(attackhitanimation)
     end
     self.canbeattacked = false
     self:stopAttack()

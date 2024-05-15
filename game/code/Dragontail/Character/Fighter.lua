@@ -2,9 +2,10 @@ local Stage = require "Dragontail.Stage"
 local Audio = require "System.Audio"
 local Database = require "Data.Database"
 local Common   = require "Dragontail.Character.Common"
+local Character= require "Dragontail.Character"
 
 ---@class Fighter:Character
-local Fighter = {}
+local Fighter = class(Character)
 
 local huge = math.huge
 local cos = math.cos
@@ -59,9 +60,9 @@ function Fighter:hurt(attacker)
         facex = 1
     end
     local hurtanimation = self.getDirectionalAnimation_angle("hurt", atan2(facey, facex), self.animationdirections)
-    local aseprite = self.sprite and self.sprite.aseprite
-    if aseprite and aseprite:getAnimation(hurtanimation) then
-        self.sprite:changeAsepriteAnimation(hurtanimation, 1, "stop")
+    local aseprite = self.aseprite
+    if aseprite and aseprite.animations[hurtanimation] then
+        self:changeAseAnimation(hurtanimation, 1, 0)
     end
 
     local hitsound = attacker.hitsound
@@ -107,7 +108,7 @@ end
 -- function Fighter:stun(duration)
 --     self:stopAttack()
 --     self.velx, self.vely = 0, 0
---     self.sprite:changeAsepriteAnimation("collapseA", 1, "stop")
+--     self:changeAseAnimation("collapseA", 1, 0)
 --     Audio.play(self.stunsound)
 --     self.canbegrabbed = true
 --     duration = duration or 120
@@ -128,9 +129,9 @@ function Fighter:held(holder)
             dx = 1
         end
         local hurtanimation = self.getDirectionalAnimation_angle(self.heldanimation or "stand", atan2(dy, dx), self.animationdirections)
-        local aseprite = self.sprite and self.sprite.aseprite
-        if aseprite and aseprite:getAnimation(hurtanimation) then
-            self.sprite:changeAsepriteAnimation(hurtanimation, 1, "stop")
+        local aseprite = self.aseprite
+        if aseprite and aseprite.animations[hurtanimation] then
+            self:changeAseAnimation(hurtanimation, 1, 0)
         end
         yield()
     end
@@ -158,7 +159,7 @@ function Fighter:knockedBack(thrower, attackangle)
     self.canbeattacked = false
     self.canbegrabbed = nil
     self.hurtstun = 0
-    -- self.sprite:changeAsepriteAnimation("knockedback")
+    -- self:changeAseAnimation("knockedback")
     self:stopAttack()
     local thrownspeed = thrower.attacklaunchspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
@@ -221,7 +222,7 @@ function Fighter:thrown(thrower, attackangle)
     self.canbeattacked = false
     self.canbegrabbed = nil
     self.hurtstun = 0
-    self.sprite:changeAsepriteAnimation("spin")
+    self:changeAseAnimation("spin")
     Database.fill(self, "human-thrown")
     local thrownspeed = thrower.attacklaunchspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
@@ -274,7 +275,7 @@ end
 
 function Fighter:thrownRecover(thrower)
     if self.thrownrecoveranimation then
-        self.sprite:changeAsepriteAnimation(self.thrownrecoveranimation, 1, "stop")
+        self:changeAseAnimation(self.thrownrecoveranimation, 1, 0)
     end
     Audio.play(self.thrownrecoversound)
     local bounds = self.bounds
@@ -340,7 +341,7 @@ function Fighter:fall(attacker)
     self.canbeattacked = false
     local defeatanimation = self.defeatanimation or "collapse"
     local bounds = self.bounds
-    self.sprite:changeAsepriteAnimation(defeatanimation, 1, "stop")
+    self:changeAseAnimation(defeatanimation, 1, 0)
     local t = 1
     repeat
         self:accelerateTowardsVel(0, 0, 8)
@@ -370,14 +371,14 @@ function Fighter:defeat(attacker)
     self:stopAttack()
     self.velx, self.vely = 0, 0
     local defeatanimation = self.defeatanimation or "collapse"
-    self.sprite:changeAsepriteAnimation(defeatanimation, 1, "stop")
+    self:changeAseAnimation(defeatanimation, 1, 0)
     Audio.play(self.defeatsound)
     yield()
     return Common.blinkOut, 60
 end
 
 function Fighter:getup(attacker)
-    self.sprite:changeAsepriteAnimation("getup", 1, "stop")
+    self:changeAseAnimation("getup", 1, 0)
     coroutine.wait(27)
     local recoverai = self.aiaftergetup or self.recoverai
     if not recoverai then

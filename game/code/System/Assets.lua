@@ -1,5 +1,4 @@
 local Cache = require "Data.Cache"
-local Aseprite = require "Data.Aseprite"
 local json_decode = (require "json").decode
 local Platform     = require "System.Platform"
 local VGMPlayer
@@ -48,7 +47,6 @@ local loaders = {
     lua = love.filesystem.load,
     fnt = love.graphics.newFont,
     json = function (path) return json_decode(lfs_read(path)) end,
-    jase = Aseprite.load,
     vert = love.graphics.newShader,
     frag = love.graphics.newShader,
 }

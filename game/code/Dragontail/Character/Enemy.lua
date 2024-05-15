@@ -2,11 +2,10 @@ local Database = require "Data.Database"
 local Movement = require "Component.Movement"
 local Audio    = require "System.Audio"
 local Stage    = require "Dragontail.Stage"
-local tablex   = require "pl.tablex"
 local Fighter  = require "Dragontail.Character.Fighter"
 
 ---@class Enemy:Fighter
-local Enemy = tablex.copy(Fighter)
+local Enemy = class(Fighter)
 
 local pi = math.pi
 local huge = math.huge
@@ -68,7 +67,7 @@ function Enemy:stand(duration)
             faceDir(self, tooppox, tooppoy)
             local faceangle = atan2(tooppoy, tooppox)
             local standanimation = self.getDirectionalAnimation_angle("stand", faceangle, self.animationdirections)
-            self.sprite:changeAsepriteAnimation(standanimation)
+            self:changeAseAnimation(standanimation)
         end
         i = i + 1
         return i > duration
@@ -144,7 +143,7 @@ function Enemy:approach()
         faceDir(self, todestx, todesty)
         local todestangle = atan2(todesty, todestx)
         local walkanimation = self.getDirectionalAnimation_angle("walk", todestangle, self.animationdirections)
-        self.sprite:changeAsepriteAnimation(walkanimation)
+        self:changeAseAnimation(walkanimation)
     end
 
     local speed = self.speed or 2
@@ -185,7 +184,7 @@ function Enemy:attack()
     local animation = self.windupanimation
     if animation then
         animation = self.getDirectionalAnimation_angle(animation, tooppoangle, self.animationdirections)
-        self.sprite:changeAsepriteAnimation(animation, 1, "stop")
+        self:changeAseAnimation(animation, 1, 0)
     end
 
     Audio.play(self.windupsound)
@@ -213,7 +212,7 @@ function Enemy:attack()
     animation = self.swinganimation
     if animation then
         animation = self.getDirectionalAnimation_angle(animation, tooppoangle, self.animationdirections)
-        self.sprite:changeAsepriteAnimation(animation, 1, "stop")
+        self:changeAseAnimation(animation, 1, 0)
     end
     local hittime = self.attackhittime or 10
     repeat
@@ -251,7 +250,7 @@ function Enemy:guard()
         end
         self:startGuarding(guardangle)
         local guardanimation = self.getDirectionalAnimation_angle("guard", guardangle, self.animationdirections)
-        self.sprite:changeAsepriteAnimation(guardanimation, 1, "stop")
+        self:changeAseAnimation(guardanimation, 1, 0)
         yield()
         t = t - 1
     until t <= 0
