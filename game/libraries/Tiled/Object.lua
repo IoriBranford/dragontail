@@ -310,7 +310,7 @@ end
 
 ---@param self AsepriteObject
 function TiledObject:animateAseprite(dt)
-    local animation = self.aseanimation or self.aseprite
+    local animation = self.aseanimation
     if not animation then return end
 
     local aframe = self.animationframe
