@@ -13,15 +13,15 @@ function Graphics.pushTransform(element, excludeflags)
         element.originx or 0, element.originy or 0,
         element.skewx or 0, element.skewy or 0
     if excludeflags then
-        if bit.band(excludeflags, 1) then x = 0 end
-        if bit.band(excludeflags, 2) then y = 0 end
-        if bit.band(excludeflags, 4) then r = 0 end
-        if bit.band(excludeflags, 8) then sx = 1 end
-        if bit.band(excludeflags, 16) then sy = 1 end
-        if bit.band(excludeflags, 32) then ox = 0 end
-        if bit.band(excludeflags, 64) then oy = 0 end
-        if bit.band(excludeflags, 128) then kx = 0 end
-        if bit.band(excludeflags, 256) then ky = 0 end
+        if bit.band(excludeflags, 0x001) ~= 0 then x = 0 end
+        if bit.band(excludeflags, 0x002) ~= 0 then y = 0 end
+        if bit.band(excludeflags, 0x004) ~= 0 then r = 0 end
+        if bit.band(excludeflags, 0x008) ~= 0 then sx = 1 end
+        if bit.band(excludeflags, 0x010) ~= 0 then sy = 1 end
+        if bit.band(excludeflags, 0x020) ~= 0 then ox = 0 end
+        if bit.band(excludeflags, 0x040) ~= 0 then oy = 0 end
+        if bit.band(excludeflags, 0x080) ~= 0 then kx = 0 end
+        if bit.band(excludeflags, 0x100) ~= 0 then ky = 0 end
     end
     love.graphics.push()
     _transform:setTransformation(x, y, r, sx, sy, ox, oy, kx, ky)
