@@ -46,7 +46,9 @@ end
 
 ---@return Aseprite ase
 function Aseprite.load(jsonfile)
-	local doc = json.decode(love.filesystem.read(jsonfile))
+	local jsondata, err = love.filesystem.read(jsonfile)
+	assert(jsondata, err)
+	local doc = json.decode(jsondata)
 	local cels = doc.frames
 	local meta = doc.meta
 	local imagefile = meta.image
