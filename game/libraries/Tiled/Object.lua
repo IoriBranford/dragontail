@@ -201,7 +201,7 @@ function TiledObject:initAseprite()
     local ase = Assets.loadAseprite(asefile)
     local tag = self.asetag
     self.aseprite = ase
-    self.aseanimation = ase and tag and ase.animations[tag]
+    self:setAseAnimation(ase and tag and ase.animations[tag], 1, self.loopframe)
     self.animate = self.animateAseprite
     self.draw = self.drawAseprite
 end
@@ -382,19 +382,23 @@ function TiledObject:randomizeTile()
     setTile(self, newtile)
 end
 
-function TiledObject:setAseAnimation(animation)
+function TiledObject:setAseAnimation(animation, frame1, loopframe)
     self.aseanimation = animation
-    self.animationframe = 1
+    self.animationframe = frame1 or 1
     self.animationtime = 0
+    if animation and loopframe and loopframe <= 0 then
+        loopframe = #animation + loopframe
+    end
+    self.loopframe = loopframe
 end
 
-function TiledObject:changeAseAnimation(animation)
+function TiledObject:changeAseAnimation(animation, frame1, loopframe)
     local aseprite = self.aseprite
     if type(animation) == "string" then
         animation = aseprite and aseprite.animations[animation]
     end
     if animation and animation ~= self.aseanimation then
-        self:setAseAnimation(animation)
+        self:setAseAnimation(animation, frame1, loopframe)
     end
 end
 
