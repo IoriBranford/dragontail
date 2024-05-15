@@ -50,7 +50,7 @@ function AseTag:isFinished(i, t)
 end
 
 function AseTag:getUpdate(i, t, loopi)
-    loopi = loopi or self.loopframe
+    loopi = loopi or self.loopframe or 1
     local duration = self[i].duration
     while t >= duration do
         t = t - duration
