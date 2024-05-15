@@ -21,11 +21,14 @@ local Graphics   = require "Tiled.Graphics"
 ---@field gid integer? A reference to a tile. (optional)
 ---@field visible boolean Whether the object is shown (1) or hidden (0). (defaults to 1)
 ---@field template string? A reference to a template file. (optional)
----@field shape "rectangle"|"ellipse"|"polyline"|"polygon"|"point"|"text"|"particlesystem"
+---@field shape "rectangle"|"ellipse"|"polyline"|"polygon"|"point"|"text"|"particlesystem"|"aseprite"
 ---@field points number[]? Converted to array [x1, y1, x2, y2, x3, y3, ...]
 ---@field triangles number[]? Triangle coordinates if polygon - 6 per triangle
 ---@field layer ObjectGroup?
 ---@field tile Tile?
+---@field animationframe integer?
+---@field animationtime integer?
+---@field animationquad love.Quad?
 ---@field particlesystem love.ParticleSystem?
 ---@field properties table? These get moved into object itself
 ---@field color Color?
@@ -88,6 +91,12 @@ local TiledObject = class()
 --- "fontfamily Bold Italic [pixelsize].fnt"
 ---@field backcolor Color Color to fill the rectangle behind the text in #AARRGGBB or #RRGGBB format (defaults to #000000)
 ---@field bordercolor Color  Color to outline the rectangle around the text in #AARRGGBB or #RRGGBB format (defaults to #000000)
+
+---@class AsepriteObject:TiledObject
+---@field aseprite Aseprite
+---@field aseanimation AseTag?
+---@field asefile string
+---@field asetag string?
 
 local function triangulate(points)
     local cantriangulate, triangles = pcall(love.math.triangulate, points)
@@ -169,6 +178,7 @@ function TiledObject:_init(map)
     self.type = objecttype
     processPoly(self)
     self:initText()
+    self:initAseprite()
 
     if map then
         local mapobjects = map.objects
@@ -180,6 +190,20 @@ end
 
 function TiledObject:setVisible(visible)
     self.visible = visible
+end
+
+---@param self AsepriteObject|TiledObject
+function TiledObject:initAseprite()
+    local asefile = self.asefile
+    if not asefile then
+        return
+    end
+    local ase = Assets.loadAseprite(asefile)
+    local tag = self.asetag
+    self.aseprite = ase
+    self.aseanimation = ase and tag and ase.animations[tag]
+    self.animate = self.animateAseprite
+    self.draw = self.drawAseprite
 end
 
 ---@param self TextObject|TiledObject
@@ -255,10 +279,9 @@ function TiledObject:initParticleSystem()
     return particlesystem
 end
 
+---@param self TiledObject|AsepriteObject
 function TiledObject:isAnimationEnding(dt)
-    local tile = self.tile
-    if not tile then return end
-    local animation = tile.animation
+    local animation = self.tile and self.tile.animation or self.aseanimation or self.aseprite
     if animation then
         local aframe = self.animationframe
         local atime = self.animationtime + dt
@@ -285,11 +308,24 @@ function TiledObject:animateTile(dt)
     end
 end
 
-function TiledObject:getAnimationFrame()
-    local tile = self.tile
-    if not tile then return end
+---@param self AsepriteObject
+function TiledObject:animateAseprite(dt)
+    local animation = self.aseanimation or self.aseprite
+    if not animation then return end
 
-    local animation = tile.animation
+    local aframe = self.animationframe
+    local atime = self.animationtime
+    local aloop = self.loopframe
+    aframe, atime = animation:getUpdate(aframe, atime + dt, aloop)
+    self.animationframe = aframe
+    self.animationtime = atime
+end
+
+---@param self TiledObject|AsepriteObject
+---@return (AnimationFrame|AseFrame)?
+function TiledObject:getAnimationFrame()
+    local animation = self.tile and self.tile.animation
+        or self.aseanimation or self.aseprite
     return animation and animation[self.animationframe]
 end
 
@@ -344,6 +380,22 @@ function TiledObject:randomizeTile()
     local tileid = love.math.random(#tile.tileset)
     local newtile = tile.tileset[tileid]
     setTile(self, newtile)
+end
+
+function TiledObject:setAseAnimation(animation)
+    self.aseanimation = animation
+    self.animationframe = 1
+    self.animationtime = 0
+end
+
+function TiledObject:changeAseAnimation(animation)
+    local aseprite = self.aseprite
+    if type(animation) == "string" then
+        animation = aseprite and aseprite.animations[animation]
+    end
+    if animation and animation ~= self.aseanimation then
+        self:setAseAnimation(animation)
+    end
 end
 
 function TiledObject:getTileset()
@@ -547,6 +599,27 @@ end
 function TiledObject:drawParticleSystem()
     love.graphics.setShader(self.shader)
     love.graphics.draw(self.particlesystem)
+end
+
+---@param self AsepriteObject
+function TiledObject:drawAseprite(fixedfrac)
+    local animation = self.aseanimation or self.aseprite
+    local aframe = self.animationframe or 1
+    local frame = animation[aframe]
+    if not frame then
+        return
+    end
+
+    local r,g,b,a = Color.unpack(self.color)
+    love.graphics.setColor(r,g,b,a)
+    love.graphics.setShader(self.shader)
+
+    local velx, vely = self.velx or 0, self.vely or 0
+    fixedfrac = fixedfrac or 0
+
+    pushTransform(self, 3)
+    frame:draw(self.x + velx*fixedfrac, self.y + vely*fixedfrac)
+    love.graphics.pop()
 end
 
 function TiledObject:draw()
