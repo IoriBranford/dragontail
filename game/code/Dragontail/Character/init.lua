@@ -66,7 +66,7 @@ end
 
 ---@param scene Scene
 function Character:addToScene(scene)
-    scene:addAnimating(self)
+    scene:add(self)
     self.originx = self.spriteoriginx
     self.originy = self.spriteoriginy
 
@@ -142,6 +142,7 @@ function Character:fixedupdate()
     self.x = self.x + self.velx
     self.y = self.y + self.vely
     Script.run(self)
+    self:animate(1)
 end
 
 function Character:fixedupdateShake(time)
