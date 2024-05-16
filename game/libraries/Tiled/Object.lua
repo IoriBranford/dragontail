@@ -199,7 +199,7 @@ function TiledObject:initAseprite()
     if not asefile then
         return
     end
-    local ase = Assets.loadAseprite(asefile)
+    local ase = Assets.get(asefile)
     local tag = self.asetag
     self.aseprite = ase
     self:setAseAnimation(ase and tag and ase.animations[tag], 1, self.loopframe)
@@ -214,7 +214,7 @@ function TiledObject:initText()
         if type(self.color) == "table" then
             self.color = Color.asARGBInt(Color.normalize(self.color))
         end
-        local font = Assets.loadFont(self.fontfamily, self.pixelsize, self.bold, self.italic)
+        local font = Assets.getFont(self.fontfamily, self.pixelsize, self.bold, self.italic)
         self.font = font
         self.draw = self.drawText
     end

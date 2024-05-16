@@ -1,4 +1,3 @@
-local Assets      = require "System.Assets"
 local Database      = require "Data.Database"
 local Audio       = require "System.Audio"
 local Config      = require "System.Config"

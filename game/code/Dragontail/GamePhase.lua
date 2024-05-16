@@ -2,7 +2,7 @@ local Canvas= require "System.Canvas"
 local Stage = require "Dragontail.Stage"
 local Tiled = require "Tiled"
 local Database= require "Data.Database"
-local Assets= require "System.Assets"
+local Assets= require "Tiled.Assets"
 local Audio = require "System.Audio"
 local Gui = require "Gui"
 local Config = require "System.Config"
@@ -16,9 +16,9 @@ local stagecanvas
 
 function GamePhase.loadphase()
     paused = false
-    local unifont = Assets.get("fonts/Unifont 16.fnt")
+    local unifont = Assets.get("data/fonts/Unifont 16.fnt")
     love.graphics.setFont(unifont)
-    Assets.load("music/retro-chiptune-guitar.ogg", "stream")
+    Assets.load("data/music/retro-chiptune-guitar.ogg", "stream")
 
     Database.load("data/db_characters.csv")
     Database.load("data/db_charactersprites.csv")
@@ -52,8 +52,7 @@ end
 
 function GamePhase.quitphase()
     Stage.quit()
-    Tiled.Assets.markAllToUncache()
-    Assets.clear()
+    Assets.markAllToUncache()
     Database.clear()
     gui = nil
 end

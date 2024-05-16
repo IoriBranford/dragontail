@@ -15,7 +15,7 @@ local ImageLayer = class(Layer)
 function ImageLayer:_init(directory)
     directory = directory or ""
     self.imagefile = directory..self.image
-    self.image = Assets.loadImage(self.imagefile)
+    self.image = Assets.get(self.imagefile)
 end
 
 function ImageLayer:draw()

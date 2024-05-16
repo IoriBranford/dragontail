@@ -4,7 +4,6 @@ local Tiled     = require "Tiled"
 local Database    = require "Data.Database"
 local Audio     = require "System.Audio"
 local Movement  = require "Component.Movement"
-local Assets    = require "System.Assets"
 local Script      = require "Component.Script"
 local Stage = {
     CameraWidth = 640,
@@ -60,7 +59,7 @@ function Stage.init(stagefile)
         x = 160, y = 180, type = "Rose", bounds = bounds
     })
 
-    local music = Audio.playMusic("music/retro-chiptune-guitar.ogg")
+    local music = Audio.playMusic("data/music/retro-chiptune-guitar.ogg")
     if music then
         music:setLooping(true)
     end

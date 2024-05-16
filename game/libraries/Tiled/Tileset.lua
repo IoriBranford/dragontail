@@ -32,7 +32,7 @@ function Tileset:_init(directory)
     directory = directory or ""
     local imagefile = directory..self.image
     self.imagefile = imagefile
-    local image = Assets.loadImage(imagefile)
+    local image = Assets.get(imagefile)
     self.image = image
     local columns = self.columns
     local n = self.tilecount
