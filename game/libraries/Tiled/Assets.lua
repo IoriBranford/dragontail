@@ -5,7 +5,7 @@ local hasAseprite, Aseprite = pcall(require, "Aseprite")
 
 local Assets = {
     loaders = {},---@type {[string]:function}
-    prefix = "",
+    rootpath = "",
     fontpath = "",
     all = {},
     bytype = {}, ---@type {[string]:AssetGroup}
@@ -111,7 +111,7 @@ function Assets.load(path, ...)
     end
     local ext = path:match("%.(%w-)$")
     local loader = Assets.loaders[ext] or love.filesystem.read
-    local asset = loader(Assets.prefix..path, ...)
+    local asset = loader(Assets.rootpath..path, ...)
     Assets.all[path] = asset
     local bytype = Assets.bytype[ext] or {}
     Assets.bytype[ext] = bytype
