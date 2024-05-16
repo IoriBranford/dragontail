@@ -108,13 +108,13 @@ end
 -- function Fighter:stun(duration)
 --     self:stopAttack()
 --     self.velx, self.vely = 0, 0
---     self:changeAseAnimation("collapseA", 1, 0)
+--     self:changeAseAnimation("FallKnees", 1, 0)
 --     Audio.play(self.stunsound)
 --     self.canbegrabbed = true
 --     duration = duration or 120
 --     wait(duration)
 --     self.canbegrabbed = nil
---     return Fighter.defeat, "collapseB"
+--     return Fighter.defeat, "FallFlat"
 -- end
 
 function Fighter:held(holder)
@@ -128,7 +128,7 @@ function Fighter:held(holder)
         if dx == 0 and dy == 0 then
             dx = 1
         end
-        local hurtanimation = self.getDirectionalAnimation_angle(self.heldanimation or "stand", atan2(dy, dx), self.animationdirections)
+        local hurtanimation = self.getDirectionalAnimation_angle(self.heldanimation or "Stand", atan2(dy, dx), self.animationdirections)
         local aseprite = self.aseprite
         if aseprite and aseprite.animations[hurtanimation] then
             self:changeAseAnimation(hurtanimation, 1, 0)
@@ -339,7 +339,7 @@ end
 function Fighter:fall(attacker)
     self.canbegrabbed = nil
     self.canbeattacked = false
-    local defeatanimation = self.defeatanimation or "collapse"
+    local defeatanimation = self.defeatanimation or "Fall"
     local bounds = self.bounds
     self:changeAseAnimation(defeatanimation, 1, 0)
     local t = 1
@@ -370,7 +370,7 @@ function Fighter:defeat(attacker)
     self.canbegrabbed = nil
     self:stopAttack()
     self.velx, self.vely = 0, 0
-    local defeatanimation = self.defeatanimation or "collapse"
+    local defeatanimation = self.defeatanimation or "Fall"
     self:changeAseAnimation(defeatanimation, 1, 0)
     Audio.play(self.defeatsound)
     yield()
@@ -378,7 +378,7 @@ function Fighter:defeat(attacker)
 end
 
 function Fighter:getup(attacker)
-    self:changeAseAnimation("getup", 1, 0)
+    self:changeAseAnimation("FallRiseToFeet", 1, 0)
     coroutine.wait(27)
     local recoverai = self.aiaftergetup or self.recoverai
     if not recoverai then

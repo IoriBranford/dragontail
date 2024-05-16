@@ -66,7 +66,7 @@ function Enemy:stand(duration)
             end
             faceDir(self, tooppox, tooppoy)
             local faceangle = atan2(tooppoy, tooppox)
-            local standanimation = self.getDirectionalAnimation_angle("stand", faceangle, self.animationdirections)
+            local standanimation = self.getDirectionalAnimation_angle("Stand", faceangle, self.animationdirections)
             self:changeAseAnimation(standanimation)
         end
         i = i + 1
@@ -142,7 +142,7 @@ function Enemy:approach()
         end
         faceDir(self, todestx, todesty)
         local todestangle = atan2(todesty, todestx)
-        local walkanimation = self.getDirectionalAnimation_angle("walk", todestangle, self.animationdirections)
+        local walkanimation = self.getDirectionalAnimation_angle("Walk", todestangle, self.animationdirections)
         self:changeAseAnimation(walkanimation)
     end
 

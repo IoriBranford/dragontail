@@ -555,7 +555,7 @@ end
 
 function Player:getup(attacker)
     Audio.play(self.getupsound)
-    self:changeAseAnimation("getup", 1, 0)
+    self:changeAseAnimation("FallRiseToFeet", 1, 0)
     local t = self.getuptime or 27
     local recoverai = self.aiaftergetup or self.recoverai
     if not recoverai then
