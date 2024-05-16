@@ -1,9 +1,9 @@
 character,asefile,spriteoriginx,spriteoriginy,emoteasepritefile,emoteoriginx,emoteoriginy,faceasepritefile,shadowtype
-Rose,data/sprites/rose.jase,32,56,data/sprites/emotes.jase,12,64,data/sprites/rose-face.jase,TRUE
-bandit-dagger,data/sprites/bandit-dagger.jase,32,48,data/sprites/emotes.jase,12,56,,TRUE
-bandit-spear,data/sprites/bandit-spear.jase,48,96,data/sprites/emotes.jase,12,56,,TRUE
-food-container,data/sprites/food-container.jase,16,24,,,,,TRUE
-food-fish,data/sprites/food-container.jase,16,16,,,,,
-food-bigfish,data/sprites/food-container.jase,16,16,,,,,
-bandit-axe,data/sprites/bandit-axe.jase,32,48,data/sprites/emotes.jase,12,64,,TRUE
-thrown-axe,data/sprites/bandit-axe.jase,32,56,,,,,TRUE
+Rose,sprites/rose.jase,32,56,sprites/emotes.jase,12,64,sprites/rose-face.jase,TRUE
+bandit-dagger,sprites/bandit-dagger.jase,32,48,sprites/emotes.jase,12,56,,TRUE
+bandit-spear,sprites/bandit-spear.jase,48,96,sprites/emotes.jase,12,56,,TRUE
+food-container,sprites/food-container.jase,16,24,,,,,TRUE
+food-fish,sprites/food-container.jase,16,16,,,,,
+food-bigfish,sprites/food-container.jase,16,16,,,,,
+bandit-axe,sprites/bandit-axe.jase,32,48,sprites/emotes.jase,12,64,,TRUE
+thrown-axe,sprites/bandit-axe.jase,32,56,,,,,TRUE

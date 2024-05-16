@@ -12,9 +12,8 @@ local Layer  = require "Tiled.Layer"
 ---@field shader love.Shader?
 local ImageLayer = class(Layer)
 
-function ImageLayer:_init(directory)
-    directory = directory or ""
-    self.imagefile = directory..self.image
+function ImageLayer:_init()
+    self.imagefile = self.image
     self.image = Assets.get(self.imagefile)
 end
 

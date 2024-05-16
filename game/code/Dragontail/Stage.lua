@@ -59,7 +59,7 @@ function Stage.init(stagefile)
         x = 160, y = 180, type = "Rose", bounds = bounds
     })
 
-    local music = Audio.playMusic("data/music/retro-chiptune-guitar.ogg")
+    local music = Audio.playMusic("music/retro-chiptune-guitar.ogg")
     if music then
         music:setLooping(true)
     end

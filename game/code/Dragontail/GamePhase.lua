@@ -16,9 +16,9 @@ local stagecanvas
 
 function GamePhase.loadphase()
     paused = false
-    local unifont = Assets.get("data/fonts/Unifont 16.fnt")
+    local unifont = Assets.get("fonts/Unifont 16.fnt")
     love.graphics.setFont(unifont)
-    Assets.load("data/music/retro-chiptune-guitar.ogg", "stream")
+    Assets.load("music/retro-chiptune-guitar.ogg", "stream")
 
     Database.load("data/db_characters.csv")
     Database.load("data/db_charactersprites.csv")

@@ -24,13 +24,12 @@ local Tile       = require "Tiled.Tile"
 ----@field properties table Moved into tileset itself
 local Tileset = class()
 
-function Tileset:_init(directory)
+function Tileset:_init()
     -- assert(tileset.objectalignment == "topleft", "Unsupported objectalignment "..tileset.objectalignment)
     assert(not self.source,
         "External tilesets unsupported. Please export with 'Embed Tilesets' enabled in export options.")
 
-    directory = directory or ""
-    local imagefile = directory..self.image
+    local imagefile = self.image
     self.imagefile = imagefile
     local image = Assets.get(imagefile)
     self.image = image

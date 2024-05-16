@@ -11,6 +11,7 @@ local firstphase = "Dragontail.GamePhase"
 local firstmap = "data/stage_demonrealm.lua"
 
 function love.load(args)
+    Assets.prefix = "data/"
     local mapname = args.stage or args.test
     if mapname then
         local map = args.stage and string.format("data/stage_%s.lua", mapname)
@@ -35,7 +36,7 @@ function love.load(args)
     end
     Tiled.animationtimeunit = "fixedupdates"
     Aseprite.animationtimeunit = "fixedupdates"
-    Assets.setFontPath("data/fonts/")
+    Assets.setFontPath("fonts/")
     love.graphics.setLineStyle("rough")
 
     -- Wallpaper.reload()
