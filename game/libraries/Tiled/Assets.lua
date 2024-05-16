@@ -105,6 +105,10 @@ function Assets.isAsset(path)
     return ext and Assets.loaders[ext] ~= nil
 end
 
+function Assets.fileInfo(path)
+    return love.filesystem.getInfo(Assets.rootpath..path)
+end
+
 function Assets.load(path, ...)
     if type(path) ~= "string" then
         return
@@ -136,20 +140,20 @@ end
 function Assets.buildFontNameWithSize(fontfamily, pixelsize, bold, italic)
     fontfamily = fontfamily or "default"
     local fontname = Assets.buildFontName(fontfamily, bold, italic)
-    pixelsize = pixelsize or 16
-    return string.format("%s %d", fontname, pixelsize)
+    return string.format("%s %d", fontname, pixelsize or 16)
 end
 
 ---@param fontformat "ttf"?
 function Assets.getFont(fontfamily, pixelsize, bold, italic, fontformat)
+    pixelsize = pixelsize or 16
     local font
     if fontformat ~= "ttf" then
         local fnt = Assets.fontpath .. Assets.buildFontNameWithSize(fontfamily, pixelsize, bold, italic) .. ".fnt"
-        font = love.filesystem.getInfo(fnt) and Assets.get(fnt)
+        font = Assets.fileInfo(fnt) and Assets.get(fnt)
     end
     if not font then
         local ttf = Assets.fontpath .. Assets.buildFontName(fontfamily, bold, italic) .. ".ttf"
-        font = love.filesystem.getInfo(ttf) and Assets.get(ttf, pixelsize)
+        font = Assets.fileInfo(ttf) and Assets.get(ttf, pixelsize)
     end
     if not font then
         font = Assets.get(pixelsize..".defaultfont")
