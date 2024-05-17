@@ -4,9 +4,6 @@
   <export target="stage_jam.lua" format="lua"/>
  </editorsettings>
  <tileset firstgid="1" source="tilesets/grassland.tsx"/>
- <tileset firstgid="2817" source="tilesets/village_houses.tsx"/>
- <tileset firstgid="3537" source="tilesets/village_props.tsx"/>
- <tileset firstgid="3793" source="tilesets/propsA.tsx"/>
  <layer id="1" name="ground" width="80" height="12">
   <properties>
    <property name="z" type="int" value="-3"/>
@@ -15,20 +12,12 @@
    eJztV0ty00AQ9coaZR87+JOTgGEn+wB8Ctk3gYSdrQsAVZY4SSBZITkHoCCOb2IHupn3mLbAlL3JKotXnunpfv0dTbJ0jcatYCqYCIaCuSDFugBS6GSCMXRnggp6Fc4TwQq/yrOEPAeP2iwEI3CsDE8C3RKyHOcTE0MJ5NAv4GMEWYp8cmBu1gX8zJHHCLIS+9TEO4TN0HBavSH0GHtm4sqgn8JXAl82v4mJu0BNM+Rb4Zy1nGF/C/0MftivDDVlbRn3FNwL6I7huzBx0WaJeHP4YV3GLsxDiv0Y3GPY0R9rk+CscmFWWHf2aGR6uzA9SfHLuZu6ME+cG/bc+qmgxzhZ59zYFOBm3VYAc6HeyoV7MMQZ61mZPqQ17gn2t6YeI6AEX1nLZQb9CrLShXmzs8ceDl24A8pz3fQcWo+1rI8iL+MMv5X9T0FDcBV5PY31q+g0o+25UbuByFzkuTby+0XwDDgTPBZEgkrOY8N7ARvl1bNN0+8XTc+rPO8Qy2fYryEfYO9wdgY+jf0u8vFqXk8E5zjXmN8grgvEMUDuEdZqq/5V5xKyc8hi5KE8KtMaq3/ewWvorKPwHSuRy7GsHznv8zIKvUzMnCwB3tulmWvOg66Vqxt7vrnRVfmJC3LelYmZb84T4+MsT1yIMcM59wXuBPeaz1P0ZYOaX6EPDrVmTZuQKxg3eUpwtrCnnLn0Yw+1ORV0sNYc24Cue3Gwr69ZJ/pSG+VqHXm+PvhOjPzG1LJvOEam9irvmR4cuxBjm/noebzt97XhqPNUNb9/5aSxCj4570dluv6Gva0Rc9kXnXi7Lta+gxj35azbU9Zyh8n78Xa/dnFb/V267Ev3H3m+F/krd1i9HhDwQvDyoX4HQ2dOa/dBfr8LPkLe0Tuvc+/C/vQe6ruPn/uK5X/Qb6CtTUvvvvNo4Ztb4Xupdfz9Da7ZkIPrHmpOrrY57+7IuV6LHy74Ia/yWfsb6NAH47Y6HRMLuVrx7hj6e8bH/bxWmwx/A/D9TVz4f2OF91j/XnmOWNRmZt631LzXfJvt+0d/zLOH3NkX1lrfxrz2bvLt5dv3p7fmXSwR31a/azGktbq3DV9p+LsugPExZu5/ARwLQQU=
   </data>
  </layer>
- <layer id="7" name="decor0" width="80" height="12">
-  <properties>
-   <property name="z" type="int" value="-2"/>
-  </properties>
-  <data encoding="base64" compression="zlib">
-   eJxjYBgFo4B64A4vA8NdIP4IxJ+A+DMv/ezm4mNg4OYjrC6Mn4Ehmh9VjB2ojwNNrxIWs4i1g1zwBhheb4GYEWgHExAzE7DLBU1+DpAviSYG8m8oP6ZYMZqYFFCfNJreYizqQGEXiSYmDtQngabXiA/TfdjsALk3Cs08YgG6vj/AsPsLxIJAM4WAWBjJrmAy7RgFo2AUjIJRMApGwSgYBcMHAAAkNBJ2
-  </data>
- </layer>
- <layer id="3" name="houses" width="80" height="12">
+ <layer id="3" name="wall" width="80" height="12">
   <properties>
    <property name="z" type="int" value="-1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzty7ENgmAUReHXOxdhCUDmELBkBRC0cwUptCUuAEZsDYNwCiqSP4GS5J7ka27eCw5mISIcESPQtno7IUGKDGdtm7YSF1SocUWx2G6OO/2aNfCQw8cTD7Tz9sbLcadfsx4f3PHFgA7/eRvxc9zp15RSSimldtcElpryyQ==
+   eJztk0EOgjAQRUsCdENBQK+lci8R0GsJCHgg/2TG6JIFXTk/eZnyO39aSHDWmBK8Yq4ZqIwxZ1DIegRXcAQDmNDboR6wX6PuLT9TZo65ZgHPTAPO5AH30/xBstRLPvW3ch7tpZJ1lmfnYAcvQU0tn/+Z61Ab1N7wXSc5m97lhPUid6XZ5Nfme59EenrJpL/78l1aWVcyg+bRd0hk3YToAR24gXvoz7uAeoW3ddanN4InmMAMFo/eA/QrvK2zPr0swr8BclCAMvLnJcCt8LbO+vRUKpVKpVKpVP+lNwhdlUI=
   </data>
  </layer>
  <objectgroup id="2" name="stage">
@@ -87,13 +76,13 @@
    <point/>
   </object>
   <object id="5" name="bounds" x="1120" y="128" width="640" height="256"/>
-  <object id="28" type="bandit-dagger" x="1520" y="144">
+  <object id="28" type="bandit-dagger" x="1536" y="128">
    <point/>
   </object>
   <object id="56" type="bandit-spear" x="1680" y="144">
    <point/>
   </object>
-  <object id="52" type="bandit-dagger" x="1360" y="144">
+  <object id="52" type="bandit-dagger" x="1376" y="128">
    <point/>
   </object>
  </objectgroup>
@@ -114,7 +103,7 @@
    </properties>
    <point/>
   </object>
-  <object id="16" type="bandit-dagger" x="1040" y="144">
+  <object id="16" type="bandit-dagger" x="1056" y="128">
    <point/>
   </object>
   <object id="18" type="bandit-spear" x="1200" y="144">
@@ -335,7 +324,7 @@
    </properties>
    <point/>
   </object>
-  <object id="17" type="bandit-dagger" x="880" y="144">
+  <object id="17" type="bandit-dagger" x="896" y="128">
    <point/>
   </object>
  </objectgroup>
