@@ -581,7 +581,7 @@ function Player:victory()
     local i = 0
     while true do
         self:accelerateTowardsVel(0, 0, 4)
-        self.z = abs(sin(i*pi/30) * 8)
+        self.altitude = abs(sin(i*pi/30) * 8)
         yield()
         i = i + 1
     end

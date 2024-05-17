@@ -61,9 +61,9 @@ function Common:itemDrop(y0)
     repeat
         yield()
         popoutspeed = popoutspeed - gravity
-        self.z = self.z + popoutspeed
-    until self.z <= 0
-    self.z = 0
+        self.altitude = self.altitude + popoutspeed
+    until self.altitude <= 0
+    self.altitude = 0
     return Common.itemWaitForPickup
 end
 

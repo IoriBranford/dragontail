@@ -34,6 +34,7 @@ function Character.init(ch, chprefab)
     ch.x = ch.x or 0
     ch.y = ch.y or 0
     ch.z = ch.z or 0
+    ch.altitude = ch.altitude or 0
     ch.velx = ch.velx or 0
     ch.vely = ch.vely or 0
     ch.velz = ch.velz or 0
@@ -153,7 +154,7 @@ end
 
 function Character:update(dsecs, fixedfrac)
     self.originx = self.spriteoriginx + 2*math.sin(self.hurtstun)
-    self.originy = (self.spriteoriginy or 0) + self.z
+    self.originy = (self.spriteoriginy or 0) + self.altitude
 end
 
 function Character:startAttack(attackangle)
