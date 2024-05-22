@@ -26,24 +26,8 @@ local function faceDir(self, dx, dy)
     self.facex, self.facey = norm(dx, dy)
 end
 
-local function moveTo(self, destx, desty, speed, timelimit)
-    timelimit = timelimit or huge
-    coroutine.waitfor(function()
-        local x, y = self.x, self.y
-        timelimit = timelimit - 1
-        if timelimit <= 0 or x == destx and y == desty then
-            return true
-        end
-        self.velx, self.vely = Movement.getVelocity_speed(x, y, destx, desty, speed)
-    end)
-    return self.x == destx and self.y == desty
-end
-
 local function attackLungeDist(speed)
-    if speed <= 0 then
-        return 0
-    end
-    return speed + attackLungeDist(speed-1)
+    return speed * (speed+1) / 2
 end
 
 local function totalAttackRange(attackradius, attacklungespeed)
@@ -150,7 +134,7 @@ function Enemy:approach()
     if distsq(x, y, oppox, oppoy) > 320*320 then
         speed = speed * 1.5
     end
-    local reached = moveTo(self, destx, desty, speed, self.approachtime or 60)
+    local reached = self:moveTo(destx, desty, speed, self.approachtime or 60)
     oppox, oppoy = opponent.x, opponent.y
     local attacktype = not opponent.attacker and self.attacktype
     if attacktype and distsq(x, y, oppox, oppoy) <= attackradius*attackradius then

@@ -3,6 +3,7 @@ local Audio       = require "System.Audio"
 local Config      = require "System.Config"
 local Script      = require "Component.Script"
 local Object      = require "Tiled.Object"
+local Movement    = require "Component.Movement"
 local pi = math.pi
 local floor = math.floor
 local sqrt = math.sqrt
@@ -155,6 +156,19 @@ end
 function Character:update(dsecs, fixedfrac)
     self.originx = self.spriteoriginx + 2*math.sin(self.hurtstun)
     self.originy = (self.spriteoriginy or 0) + self.altitude
+end
+
+function Character:moveTo(destx, desty, speed, timelimit)
+    timelimit = timelimit or math.huge
+    coroutine.waitfor(function()
+        local x, y = self.x, self.y
+        timelimit = timelimit - 1
+        if timelimit <= 0 or x == destx and y == desty then
+            return true
+        end
+        self.velx, self.vely = Movement.getVelocity_speed(x, y, destx, desty, speed)
+    end)
+    return self.x == destx and self.y == desty
 end
 
 function Character:startAttack(attackangle)
