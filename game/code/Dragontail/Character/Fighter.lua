@@ -32,11 +32,24 @@ function Fighter:stopHolding(opponent)
     end
 end
 
-function Fighter:updateAttackLungeSpeed(attackangle, lungespeed)
-    self.velx = lungespeed * cos(attackangle)
-    self.vely = lungespeed * sin(attackangle)
-    lungespeed = math.max(0, lungespeed - 1)
-    return lungespeed
+--- Burst of speed towards angle (away from angle if speed < 0) then slow to 0
+function Fighter:slide(angle, speed, decel)
+    repeat
+        speed = self:updateSlideSpeed(angle, speed, decel)
+        yield()
+    until speed == 0
+end
+
+function Fighter:updateSlideSpeed(angle, speed, decel)
+    decel = decel or 1
+    self.velx = speed * cos(angle)
+    self.vely = speed * sin(angle)
+    if speed < 0 then
+        speed = math.min(0, speed + decel)
+    else
+        speed = math.max(0, speed - decel)
+    end
+    return speed
 end
 
 function Fighter:hurt(attacker)
@@ -87,7 +100,7 @@ function Fighter:hurt(attacker)
     Audio.play(self.hurtsound)
     local bounds = self.bounds
     while pushbackspeed > 0 do
-        pushbackspeed = Fighter.updateAttackLungeSpeed(self, attackangle, pushbackspeed)
+        pushbackspeed = Fighter.updateSlideSpeed(self, attackangle, pushbackspeed)
         self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
         yield()
     end

@@ -200,7 +200,7 @@ function Enemy:attack()
     end
     local hittime = self.attackhittime or 10
     repeat
-        lungespeed = Fighter.updateAttackLungeSpeed(self, tooppoangle, lungespeed)
+        lungespeed = Fighter.updateSlideSpeed(self, tooppoangle, lungespeed)
         hittime = hittime - 1
         yield()
         self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
@@ -214,7 +214,7 @@ function Enemy:attack()
 
     local afterhittime = self.attackafterhittime or 30
     repeat
-        lungespeed = Fighter.updateAttackLungeSpeed(self, tooppoangle, lungespeed)
+        lungespeed = Fighter.updateSlideSpeed(self, tooppoangle, lungespeed)
         afterhittime = afterhittime - 1
         yield()
         self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)

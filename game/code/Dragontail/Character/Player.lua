@@ -240,7 +240,7 @@ function Player:spinAttack(attacktype, angle)
         end
 
         if lungespeed then
-            lungespeed = Fighter.updateAttackLungeSpeed(self, lungeangle, lungespeed)
+            lungespeed = Fighter.updateSlideSpeed(self, lungeangle, lungespeed)
         else
             self:accelerateTowardsVel(targetvelx, targetvely, 8)
         end
@@ -524,7 +524,7 @@ function Player:straightAttack(attacktype, angle, heldenemy)
         yield()
         attackagain = attackagain or Controls.getButtonsPressed()
         if lungespeed then
-            lungespeed = Fighter.updateAttackLungeSpeed(self, angle, lungespeed)
+            lungespeed = Fighter.updateSlideSpeed(self, angle, lungespeed)
         else
             self:accelerateTowardsVel(0, 0, self.attackdecel or 8)
         end
