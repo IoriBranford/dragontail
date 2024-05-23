@@ -187,7 +187,7 @@ function Player:control()
             if runningtime < 15 then
                 runningtime = runningtime + 1
             elseif self.runenergy > 0 and rundown then
-                self.runenergy = self.runenergy - 1
+                -- self.runenergy = self.runenergy - 1
             else
                 runningtime = nil
                 Audio.play(self.stopdashsound)

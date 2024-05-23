@@ -10,7 +10,7 @@ return {
   tilewidth = 8,
   tileheight = 8,
   nextlayerid = 4,
-  nextobjectid = 7,
+  nextobjectid = 8,
   properties = {},
   tilesets = {
     {
@@ -93,7 +93,7 @@ return {
           width = 100,
           height = 8,
           rotation = 0,
-          visible = true,
+          visible = false,
           properties = {
             ["color"] = "#ff8080ff",
             ["z"] = 0
@@ -109,7 +109,7 @@ return {
           width = 100,
           height = 8,
           rotation = 0,
-          visible = true,
+          visible = false,
           properties = {
             ["color"] = "#00000000",
             ["linecolor"] = "#ffc0c0ff",
@@ -123,7 +123,7 @@ return {
           type = "Gui.Gauge",
           shape = "rectangle",
           x = 48,
-          y = 16,
+          y = 32,
           width = 100,
           height = 16,
           rotation = 0,
@@ -139,7 +139,7 @@ return {
           type = "",
           shape = "rectangle",
           x = 48,
-          y = 16,
+          y = 32,
           width = 100,
           height = 16,
           rotation = 0,
@@ -184,6 +184,23 @@ return {
             ["roundcorners"] = 2,
             ["z"] = 3
           }
+        },
+        {
+          id = 7,
+          name = "name",
+          type = "",
+          shape = "text",
+          x = 56,
+          y = 16,
+          width = 96,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          text = "Rose",
+          fontfamily = "Unifont",
+          wrap = true,
+          color = { 255, 255, 255 },
+          properties = {}
         }
       }
     }
