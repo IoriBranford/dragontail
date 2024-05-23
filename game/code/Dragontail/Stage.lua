@@ -69,6 +69,10 @@ end
 
 function Stage.addCharacter(object)
     local character = Character.init(object)
+    local script = character.script or "Dragontail.Character"
+    Script.load(character, script)
+    character.script.from(character)
+
     character.bounds = bounds
     character.solids = solids
     if character.team == "player" then
@@ -76,20 +80,17 @@ function Stage.addCharacter(object)
     else
         character.opponent = player
     end
-    character:addToScene(scene)
-    allcharacters[#allcharacters+1] = character
     if character.bodysolid then
         solids[#solids+1] = character
     end
     if character.team == "enemy" then
         enemies[#enemies+1] = character
     end
-    if character.script then
-        Script.load(character, character.script)
-        if character.initialai then
-            Script.start(character, character.initialai)
-        end
+    if character.initialai then
+        Script.start(character, character.initialai)
     end
+    character:addToScene(scene)
+    allcharacters[#allcharacters+1] = character
     return character
 end
 local addCharacter = Stage.addCharacter

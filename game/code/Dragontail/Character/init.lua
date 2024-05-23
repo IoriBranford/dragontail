@@ -48,7 +48,7 @@ function Character.init(ch, chprefab)
     ch.attackstun = ch.attackstun or 1
     ch.hitstun = ch.hitstun or 0
     ch.hurtstun = ch.hurtstun or 0
-    return Character.from(ch)
+    return ch
 end
 local init = Character.init
 
