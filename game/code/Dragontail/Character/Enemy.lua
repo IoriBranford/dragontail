@@ -26,22 +26,77 @@ local function faceDir(self, dx, dy)
     self.facex, self.facey = norm(dx, dy)
 end
 
-local function attackLungeDist(speed)
-    return speed * (speed+1) / 2
+local function totalAttackRange(attackradius, attacklungespeed, attacklungedecel)
+    return attackradius + Fighter.GetSlideDistance(attacklungespeed or 0, attacklungedecel or 1)
 end
 
-local function totalAttackRange(attackradius, attacklungespeed)
-    return attackradius + attackLungeDist(attacklungespeed or 0)
+local function findAngleToDodgeIncoming(self, incoming)
+    local dodgewithindist = self.dodgewithindist or 100
+    local dodgespeed = self.dodgespeed
+    if not dodgespeed then
+        return
+    end
+    local oppox, oppoy, oppovelx, oppovely
+    oppox, oppoy = incoming.x, incoming.y
+    oppovelx, oppovely = incoming.velx, incoming.vely
+    local tooppoy, tooppox = oppoy - self.y, oppox - self.x
+    local vdotd = math.dot(oppovelx, oppovely, tooppox, tooppoy)
+    local oppospeed = math.len(oppovelx, oppovely)
+    if vdotd < -dodgewithindist*oppospeed or vdotd >= 0 then
+        return
+    end
+
+    local dodgeangle = atan2(-tooppoy, -tooppox)
+    if oppospeed >= dodgespeed then
+        dodgeangle = dodgeangle + (love.math.random(2) == 0 and -pi/2 or pi/2)
+    end
+    local dodgedist = Fighter.GetSlideDistance(dodgespeed, self.dodgedecel or 1)
+    local dodgedx, dodgedy = dodgedist*cos(dodgeangle), dodgedist*sin(dodgeangle)
+    local dodgeendx, dodgeendy = self.x + dodgedx, self.y + dodgedy
+    local bounds = self.bounds
+    local dodgeblockedx1 = dodgeendx <= bounds.x + self.bodyradius
+    local dodgeblockedx2 = dodgeendx >= bounds.x + bounds.width - self.bodyradius
+    local dodgeblockedy1 = dodgeendy <= bounds.y + self.bodyradius
+    local dodgeblockedy2 = dodgeendy >= bounds.y + bounds.height - self.bodyradius
+    if dodgeblockedx1 then
+        if dodgeblockedy1 then
+            dodgeangle = love.math.random(2) == 0 and 0 or pi/2
+        elseif dodgeblockedy2 then
+            dodgeangle = love.math.random(2) == 0 and 0 or -pi/2
+        elseif self.y - (bounds.y + bounds.height/2) < 0 then
+            dodgeangle = -pi/2
+        else
+            dodgeangle = pi/2
+        end
+    elseif dodgeblockedx2 then
+        if dodgeblockedy1 then
+            dodgeangle = love.math.random(2) == 0 and pi or pi/2
+        elseif dodgeblockedy2 then
+            dodgeangle = love.math.random(2) == 0 and pi or -pi/2
+        elseif self.y - (bounds.y + bounds.height/2) < 0 then
+            dodgeangle = -pi/2
+        else
+            dodgeangle = pi/2
+        end
+    elseif dodgeblockedy1 or dodgeblockedy2 then
+        if not dodgeblockedx1 and not dodgeblockedx2 then
+            if self.x - (bounds.x + bounds.width/2) < 0 then
+                dodgeangle = 0
+            else
+                dodgeangle = pi
+            end
+        end
+    end
+    return dodgeangle
 end
 
 function Enemy:stand(duration)
     duration = duration or 20
     self.velx, self.vely = 0, 0
     local x, y = self.x, self.y
-    local i = 1
     local opponent = self.opponent
     local oppox, oppoy
-    coroutine.waitfor(function()
+    for _ = 1, duration do
         oppox, oppoy = opponent.x, opponent.y
         if oppox ~= x or oppoy ~= y then
             local tooppoy, tooppox = oppoy - y, oppox - x
@@ -52,10 +107,14 @@ function Enemy:stand(duration)
             local faceangle = atan2(tooppoy, tooppox)
             local standanimation = self.getDirectionalAnimation_angle("Stand", faceangle, self.animationdirections)
             self:changeAseAnimation(standanimation)
+
+            local dodgeangle = findAngleToDodgeIncoming(self, opponent)
+            if dodgeangle then
+                return Enemy.dodgeIncoming, dodgeangle
+            end
         end
-        i = i + 1
-        return i > duration
-    end)
+        yield()
+    end
 
     if opponent.health <= 0 then
         return Enemy.stand
@@ -76,7 +135,7 @@ function Enemy:stand(duration)
         for i, attackchoice in ipairs(attackchoices) do
             local attack = Database.get(attackchoice)
             if attack then
-                local attackrange = totalAttackRange(attack.attackradius or 0, attack.attacklungespeed or 0)
+                local attackrange = totalAttackRange(attack.attackradius or 0, attack.attacklungespeed or 0, attack.attacklungedecel or 1)
                 if attackrange*attackrange >= toopposq then
                     attacktype = attackchoice
                     break
@@ -89,11 +148,35 @@ function Enemy:stand(duration)
         self.attacktype = attacktype
     end
     Database.fill(self, attacktype)
-    local attackradius = totalAttackRange(self.attackradius or 32, self.attacklungespeed or 0) + opponent.bodyradius
+    local attackradius = totalAttackRange(self.attackradius or 32, self.attacklungespeed or 0, self.attacklungedecel or 1) + opponent.bodyradius
     if not opponent.attacker and toopposq <= attackradius*attackradius then
         return Enemy.attack, attacktype
     end
     return Enemy.approach
+end
+
+function Enemy:dodgeIncoming(dodgeangle)
+    local opponent = self.opponent
+    local x, y, oppox, oppoy = self.x, self.y, opponent.x, opponent.y
+    local tooppox, tooppoy = oppox - x, oppoy - y
+    if tooppox == 0 and tooppoy == 0 then
+        tooppox = 1
+    end
+
+    faceDir(self, tooppox, tooppoy)
+    self:setDirectionalAnimation("Walk", math.atan2(tooppoy, tooppox))
+    Audio.play(self.stopdashsound)
+    self:slide(dodgeangle, self.dodgespeed, self.dodgedecel)
+
+    local attacktype = not opponent.attacker and self.attacktype
+    if attacktype then
+        local attackradius = self.attackradius
+        x, y, oppox, oppoy = self.x, self.y, opponent.x, opponent.y
+        if distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
+            return Enemy.attack, attacktype
+        end
+    end
+    return Enemy.stand
 end
 
 function Enemy:approach()
@@ -107,7 +190,7 @@ function Enemy:approach()
 
     -- choose dest
     local destanglefromoppo = lm_random(4)*pi/2
-    local attackradius = totalAttackRange(self.attackradius or 64, self.attacklungespeed or 0) + opponent.bodyradius
+    local attackradius = totalAttackRange(self.attackradius or 64, self.attacklungespeed or 0, self.attacklungedecel or 1) + opponent.bodyradius
     local destx, desty
     repeat
         destx = oppox + cos(destanglefromoppo) * attackradius
@@ -134,8 +217,24 @@ function Enemy:approach()
     if distsq(x, y, oppox, oppoy) > 320*320 then
         speed = speed * 1.5
     end
-    local reached = self:moveTo(destx, desty, speed, self.approachtime or 60)
-    oppox, oppoy = opponent.x, opponent.y
+
+    local reached = false
+    for i = 1, (self.approachtime or 60) do
+        oppox, oppoy = opponent.x, opponent.y
+        local tooppox, tooppoy = oppox - x, oppoy - y
+        -- local seesopponent = math.dot(self.facex, self.facey, tooppox, tooppoy) >= 0
+        local dodgeangle = findAngleToDodgeIncoming(self, opponent)
+        if dodgeangle then
+            return Enemy.dodgeIncoming, dodgeangle
+        end
+        self.velx, self.vely = Movement.getVelocity_speed(self.x, self.y, destx, desty, speed)
+        yield()
+        if self.x == destx and self.y == desty then
+            reached = true
+            break
+        end
+    end
+
     local attacktype = not opponent.attacker and self.attacktype
     if attacktype and distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
         return Enemy.attack, attacktype
@@ -172,7 +271,14 @@ function Enemy:attack()
     end
 
     Audio.play(self.windupsound)
-    coroutine.wait(self.attackwinduptime or 20)
+    for i = 1, (self.attackwinduptime or 20) do
+        local dodgeangle = findAngleToDodgeIncoming(self, opponent)
+        if dodgeangle then
+            opponent.attacker = nil
+            return Enemy.dodgeIncoming, dodgeangle
+        end
+        yield()
+    end
 
     Audio.play(self.swingsound)
     local attackprojectile = self.attackprojectile
