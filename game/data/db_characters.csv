@@ -1,9 +1,9 @@
-character,team,health,bodyradius,bodysolid,canbeattacked,canbegrabbed,speed,approachtime,defaultattack,attackchoices,aiafterthrown,thrownrecovertime,healhealth,asetag,animationdirections,script,initialai,holdai,hurtai,guardhitai,guardtime,aiafterhurt,guardcounterattack,guardhitstocounterattack,stunai,timetobreakhold,thrownai,knockedbackspeed,knockedbacktime,thrownspeed,wallslamdamage,wallslamcounterattack,thrownrecoveranimation,defeatai,recoverai,aiaftergetup,aiafterbreakaway,attackafterbreakaway
-Rose,player,100,16,,true,,,,,,fall,,,,8,Dragontail.Character.Player,control,hold,hurt,,,control,,,,,,,,,10,,FallRiseToFeet,defeat,control,,,
-bandit-dagger,enemy,50,16,,true,TRUE,3,,dagger-swing,,fall,24,,,4,Dragontail.Character.Enemy,stand,,hurt,,,stand,,,stun,120,thrown,,,10,,,FallKnees,defeat,stand,,approach,
-bandit-spear,enemy,75,16,,true,TRUE,4,,spear-thrust,,fall,24,,,4,Dragontail.Character.Enemy,stand,,hurt,,,stand,,,stun,120,thrown,,,10,,,FallKnees,defeat,stand,,approach,
-food-container,container,1,16,TRUE,true,,,,,,,,,container,,Dragontail.Character.Common,,,containerBreak,,,,,,,,,,,,,,,containerBreak,,,,
-food-fish,item,,18,,,,,,,,,,25,fish,,Dragontail.Character.Common,itemWaitForPickup,,,,,,,,,,,,,,,,,,,,,
-food-bigfish,item,,18,,,,,,,,,,100,bigfish,,Dragontail.Character.Common,itemWaitForPickup,,,,,,,,,,,,,,,,,,,,,
-bandit-axe,enemy,150,16,,true,TRUE,3,30,axe-throw,axe-swing axe-throw,fall,18,,,4,Dragontail.Character.Enemy,stand,,hurt,guardHit,30,guard,axe-swing-counter,11,stun,60,thrown,8,,8,,axe-swing-counter,FallKnees,defeat,stand,guard,attack,axe-swing
-thrown-axe,enemy,1,16,,true,FALSE,10,,thrown-axe-attack,,,,,thrownaxe0,4,Dragontail.Character.Common,projectileFly,,projectileDeflected,,,,,,,,projectileFly,,,10,,,,,,,,
+character,team,health,bodyradius,bodysolid,canbeattacked,canbegrabbed,speed,dodgespeed,dodgedecel,approachtime,defaultattack,attackchoices,aiafterthrown,thrownrecovertime,healhealth,asetag,animationdirections,script,initialai,holdai,hurtai,guardhitai,guardtime,aiafterhurt,guardcounterattack,guardhitstocounterattack,stunai,timetobreakhold,thrownai,knockedbackspeed,knockedbacktime,thrownspeed,wallslamdamage,wallslamcounterattack,thrownrecoveranimation,defeatai,recoverai,aiaftergetup,aiafterbreakaway,attackafterbreakaway
+Rose,player,100,16,,true,,,,,,,,fall,,,,8,Dragontail.Character.Player,control,hold,hurt,,,control,,,,,,,,,10,,FallRiseToFeet,defeat,control,,,
+bandit-dagger,enemy,50,16,,true,TRUE,3,,,,dagger-swing,,fall,24,,,4,Dragontail.Character.Enemy,stand,,hurt,,,stand,,,stun,120,thrown,,,10,,,FallKnees,defeat,stand,,approach,
+bandit-spear,enemy,75,16,,true,TRUE,4,8,0.25,,spear-thrust,,fall,24,,,4,Dragontail.Character.Enemy,stand,,hurt,,,stand,,,stun,120,thrown,,,10,,,FallKnees,defeat,stand,,approach,
+food-container,container,1,16,TRUE,true,,,,,,,,,,,container,,Dragontail.Character.Common,,,containerBreak,,,,,,,,,,,,,,,containerBreak,,,,
+food-fish,item,,18,,,,,,,,,,,,25,fish,,Dragontail.Character.Common,itemWaitForPickup,,,,,,,,,,,,,,,,,,,,,
+food-bigfish,item,,18,,,,,,,,,,,,100,bigfish,,Dragontail.Character.Common,itemWaitForPickup,,,,,,,,,,,,,,,,,,,,,
+bandit-axe,enemy,150,16,,true,TRUE,3,,,30,axe-throw,axe-swing axe-throw,fall,18,,,4,Dragontail.Character.Enemy,stand,,hurt,guardHit,30,guard,axe-swing-counter,11,stun,60,thrown,8,,8,,axe-swing-counter,FallKnees,defeat,stand,guard,attack,axe-swing
+thrown-axe,enemy,1,16,,true,FALSE,10,,,,thrown-axe-attack,,,,,thrownaxe0,4,Dragontail.Character.Common,projectileFly,,projectileDeflected,,,,,,,,projectileFly,,,10,,,,,,,,
