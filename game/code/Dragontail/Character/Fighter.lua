@@ -34,8 +34,12 @@ end
 
 --- Burst of speed towards angle (away from angle if speed < 0) then slow to 0
 function Fighter:slide(angle, speed, decel)
+    local bounds = self.bounds
     repeat
         speed = self:updateSlideSpeed(angle, speed, decel)
+        if bounds then
+            self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+        end
         yield()
     until speed == 0
 end
