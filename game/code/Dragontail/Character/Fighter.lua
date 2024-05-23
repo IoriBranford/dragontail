@@ -32,6 +32,10 @@ function Fighter:stopHolding(opponent)
     end
 end
 
+function Fighter.GetSlideDistance(speed, decel)
+    return speed * (speed+decel) / 2
+end
+
 --- Burst of speed towards angle (away from angle if speed < 0) then slow to 0
 function Fighter:slide(angle, speed, decel)
     local bounds = self.bounds
