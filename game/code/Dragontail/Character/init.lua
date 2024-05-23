@@ -329,6 +329,11 @@ function Character.getDirectionalAnimation_angle(basename, angle, numanimations)
     return basename..facedir
 end
 
+function Character:setDirectionalAnimation(basename, angle, frame1, loopframe)
+    local animation = self.getDirectionalAnimation_angle(basename, angle, self.animationdirections)
+    self:changeAseAnimation(animation, frame1, loopframe)
+end
+
 function Character:setEmote(emotename)
     local emote = self.emote
     if emote then
