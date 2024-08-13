@@ -70,7 +70,6 @@ function Aseprite.load(jsonfile)
 	local imagefile = meta.image
     local directory = string.match(jsonfile, "^(.+/)") or ""
 	local image = love.graphics.newImage(directory..imagefile)
-	image:setFilter("nearest", "nearest")
 
 	local layers = meta.layers
 	if not cels[1] and not layers then
