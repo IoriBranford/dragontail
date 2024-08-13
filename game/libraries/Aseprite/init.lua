@@ -1,3 +1,19 @@
+--[[
+EXPORT SETTINGS
+
+	Required:
+		JSON Data = ON
+			Hash or Array
+			Layers = ON if data format = Hash
+			Tags = ON for animations
+			Item filename = "{layer}#{frame1}"
+ 	Recommended:
+		Split layers = ON
+		Sheet type = Packed
+		Trim cels = ON
+		Extrude = ON
+]]
+
 local class = require "Aseprite.class"
 local json   = require "Aseprite.json"
 local AseFrame = require "Aseprite.Frame"
