@@ -36,8 +36,9 @@ function GamePhase.loadphase()
     Stage.init("data/stage_jam.lua")
 
     gui = Gui.new("data/gui_gameplay.lua")
-    Tiled.Assets.packTiles()
     Tiled.Assets.uncacheMarked()
+    Tiled.Assets.packTiles()
+    Tiled.Assets.setFilter("nearest", "nearest")
 
     GamePhase.resize(love.graphics.getWidth(), love.graphics.getHeight())
 
