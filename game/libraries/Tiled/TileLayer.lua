@@ -3,17 +3,14 @@ local Gid = require "Tiled.Gid"
 local Graphics = require "Tiled.Graphics"
 local Color    = require "Tiled.Color"
 local Layer    = require "Tiled.Layer"
+local forCells = require "Tiled.forCells"
+local Chunk    = require "Tiled.Chunk"
+local drawTile = require "Tiled.drawTile"
 
-local parseGid = Gid.parse
-
----@class Chunk
----@field x integer The x coordinate of the chunk in tiles.
----@field y integer The y coordinate of the chunk in tiles.
----@field width integer The width of the chunk in tiles.
----@field height integer The height of the chunk in tiles.
----@field data integer[]|string
----@field tilebatch love.SpriteBatch?
----@field batchanimations Animation[]? Indices in the data which have animated tiles
+local TileBatching = require "Tiled.TileBatching"
+local newTileBatch = TileBatching.batchTiles
+local animate = TileBatching.animateBatch
+local love_graphics_draw = love.graphics.draw
 
 ---@class TileLayer:Layer
 ---@field type string "tilelayer"
@@ -27,63 +24,6 @@ local parseGid = Gid.parse
 ---@field batchanimations Animation[]? Indices in the data which have animated tiles
 ---@field shader love.Shader?
 local TileLayer = class(Layer)
-
----@param f fun(x:number, y: number, tile:Tile, flipx:number, flipy:number): any
----@param data integer[]
----@param cols number
----@param rows number
----@param maptiles Tile[]
----@param x0 number? origin
----@param y0 number? origin
----@param dx number?
----@param dy number?
-local function forCells(f, data, cols, rows, maptiles, x0, y0, dx, dy)
-    local i = 1
-    local y = y0 or 0
-    x0 = x0 or 0
-    dx = dx or 1
-    dy = dy or 1
-    for _ = 1, rows do
-        local x = x0
-        for _ = 1, cols do
-            local gid, sx, sy = parseGid(data[i])
-            local tile = maptiles[gid]
-            f(x, y, tile, sx, sy)
-            i = i + 1
-            x = x + dx
-        end
-        y = y + dy
-    end
-end
-
-local function newTileBatch(maptiles, data, cellwidth, cellheight, cols, rows)
-    local tile1
-    for i = 1, #data do
-        tile1 = maptiles[data[i]]
-        if tile1 then
-            break
-        end
-    end
-    if not tile1 then
-        return
-    end
-
-    local tilebatch = love.graphics.newSpriteBatch(tile1.image, cols * rows)
-    local batchanimations = {}
-    local i = 1
-    forCells(function(x, y, tile, sx, sy)
-        if tile then
-            local hw, hh = tile.width / 2, tile.height / 2
-            x, y = x + hw + tile.offsetx, y - hh + tile.offsety
-            tilebatch:add(tile.quad, x, y, 0, sx, sy, hw, hh)
-            batchanimations[i] = tile.animation
-        else
-            tilebatch:add(x, y, 0, 0, 0)
-        end
-    end, data, cols, rows, maptiles, 0, cellheight, cellwidth, cellheight)
-
-    return tilebatch, batchanimations
-end
 
 ---@param map TiledMap
 function TileLayer:_init(map)
@@ -100,13 +40,7 @@ function TileLayer:_init(map)
     self.tileheight = cellheight
     if chunks then
         for i = 1, #chunks do
-            local chunk = chunks[i]
-            -- local chunkcol, chunkrow = chunk.x, chunk.y
-            -- chunk.columns = chunk.width
-            -- chunk.rows = chunk.height
-            -- chunk[chunkcol..','..chunkrow] = chunk
-            local gids = Gid.decode(chunk.data, encoding, compression)
-            chunk.data = gids
+            Chunk.from(chunks[i], self)
         end
     else
         local gids = Gid.decode(self.data, encoding, compression)
@@ -122,6 +56,15 @@ function TileLayer:_init(map)
     return self
 end
 
+function TileLayer:setVisible(visible)
+    self.visible = visible
+    if self.chunks then
+        for _, chunk in ipairs(self.chunks) do
+            chunk.visible = visible
+        end
+    end
+end
+
 ---@param f fun(left:number, bottom: number, tile:Tile, flipx:number, flipy:number): any
 function TileLayer:forCells(f)
     local maptiles = self.maptiles
@@ -130,8 +73,8 @@ function TileLayer:forCells(f)
     local x, y = self.x, self.y + cellheight
     if chunks then
         for _, chunk in ipairs(self.chunks) do
-            forCells(f, chunk.data, chunk.width, chunk.height, maptiles,
-                x + chunk.x*cellwidth, y + chunk.y*cellheight,
+            forCells(f, chunk.data, chunk.columns, chunk.rows, maptiles,
+                x + chunk.x, y + chunk.y,
                 cellwidth, cellheight)
         end
     else
@@ -149,13 +92,9 @@ function TileLayer:batchTiles()
     if chunks then
         for i = 1, #chunks do
             local chunk = chunks[i]
-            -- local chunkcol, chunkrow = chunk.x, chunk.y
-            -- chunk.columns = chunk.width
-            -- chunk.rows = chunk.height
-            -- chunk[chunkcol..','..chunkrow] = chunk
             local gids = chunk.data
             chunk.tilebatch, chunk.batchanimations = newTileBatch(maptiles, gids,
-                cellwidth, cellheight, chunk.width, chunk.height)
+                cellwidth, cellheight, chunk.columns, chunk.rows)
         end
     else
         local cols = self.mapcols
@@ -163,32 +102,6 @@ function TileLayer:batchTiles()
         local gids = self.data
         self.tilebatch, self.batchanimations = newTileBatch(maptiles, gids,
             cellwidth, cellheight, cols, rows)
-    end
-end
-
----@param self TileLayer|Chunk
-local function animate(self, animationtime, tilewidth, tileheight)
-    local batchanimations = self.batchanimations
-    if not batchanimations then
-        return
-    end
-
-    local width = self.width
-    local gids = self.data
-    local tilebatch = self.tilebatch
-    for i, animation in pairs(batchanimations) do
-        local _, sx, sy = Gid.parse(gids[i])
-        local nframes = #animation
-        local _, progress = math.modf(animationtime / animation.duration)
-        local frameindex = math.floor(nframes * progress) + 1
-        local tile = animation[frameindex].tile
-        local r = math.floor((i-1) / width) + 1
-        local c =           ((i-1) % width)
-        local x = c*tilewidth
-        local y = r*tileheight
-        local hw, hh = tile.width / 2, tile.height / 2
-        x, y = x + hw + tile.offsetx, y - hh + tile.offsety
-        tilebatch:set(i, tile.quad, x, y, 0, sx, sy, hw, hh)
     end
 end
 
@@ -210,49 +123,39 @@ end
 local pushTransform = Graphics.pushTransform
 
 function TileLayer:draw()
+    local r, g, b, a = 1, 1, 1, self.opacity or 1
     local tintcolor = self.tintcolor
     if tintcolor then
-        love.graphics.setColor(Color.unpack(tintcolor))
-    else
-        love.graphics.setColor(1,1,1)
+        r, g, b = Color.unpack(tintcolor)
     end
-    love.graphics.setShader(self.shader)
+    love.graphics.setColor(r, g, b, a)
 
     local chunks = self.chunks
     if chunks then
         pushTransform(self)
-        local tilewidth = self.tilewidth
-        local tileheight = self.tileheight
-        local maptiles = self.maptiles
+        local maptiles, cellwidth, cellheight = self.maptiles, self.tilewidth, self.tileheight
         for _, chunk in ipairs(chunks) do
-            if not chunk.tilebatch then
-                local gids = chunk.data
-                chunk.tilebatch, chunk.batchanimations = newTileBatch(maptiles, gids,
-                    tilewidth, tileheight, chunk.width, chunk.height)
+            if chunk.tilebatch then
+                love_graphics_draw(chunk.tilebatch, chunk.x, chunk.y)
+            else
+                forCells(drawTile, chunk.data, chunk.columns, chunk.rows, maptiles,
+                    chunk.x, chunk.y + cellheight, cellwidth, cellheight)
             end
-            love.graphics.draw(chunk.tilebatch, chunk.x*tilewidth, chunk.y*tileheight)
         end
         love.graphics.pop()
     else
         local batch = self.tilebatch
-        if not batch then
-            local maptiles = self.maptiles
-            local tilewidth = self.tilewidth
-            local tileheight = self.tileheight
-            local cols = self.mapcols
-            local rows = self.maprows
-
-            batch, self.batchanimations = newTileBatch(maptiles, self.data,
-                tilewidth, tileheight, cols, rows)
-            self.tilebatch = batch
+        if batch then
+            love_graphics_draw(batch,
+                (self.x), (self.y),
+                self.rotation or 0,
+                self.scalex or 1, self.scaley or 1,
+                self.originx or 0, self.originy or 0,
+                self.skewx or 0, self.skewy or 0)
+        else
+            forCells(drawTile, self.data, self.mapcols, self.maprows, self.maptiles,
+                0, self.tileheight, self.tilewidth, self.tileheight)
         end
-
-        love.graphics.draw(batch,
-            (self.x), (self.y),
-            self.rotation or 0,
-            self.scalex or 1, self.scaley or 1,
-            self.originx or 0, self.originy or 0,
-            self.skewx or 0, self.skewy or 0)
     end
     if tintcolor then
         love.graphics.setColor(1,1,1)

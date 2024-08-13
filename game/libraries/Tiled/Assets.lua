@@ -22,17 +22,19 @@ function Assets.addLoaders(loaders)
 end
 
 function Assets.markAllToUncache()
-    for k in pairs(Assets.maps) do
-        Assets.maps[k] = nil
-        Assets.all[k] = nil
-    end
-    for k in pairs(Assets.tilesets) do
-        Assets.tilesets[k] = nil
-        Assets.all[k] = nil
+    local permanent = Assets.permanent
+    for m, map in pairs(Assets.maps) do
+        if not permanent[m] then
+            Assets.maps[m] = nil
+            Assets.all[m] = nil
+
+            for ts in pairs(map.tilesets) do
+                Assets.tilesets[ts] = nil
+            end
+        end
     end
 
     local touncache = Assets.touncache
-    local permanent = Assets.permanent
 
     for _, assetgroup in pairs(Assets.bytype) do
         for file in pairs(assetgroup) do
@@ -59,25 +61,35 @@ function Assets.markMapAssetsPermanent(map, ispermanent)
     for _, tileset in ipairs(map.tilesets) do
         markPermanent(tileset.imagefile)
     end
-    for _, layer in ipairs(map.layers) do
-        if layer.type == "imagelayer" then
-            ---@cast layer ImageLayer
-            markPermanent(layer.imagefile)
-        elseif layer.type == "objectgroup" then
-            ---@cast layer ObjectGroup
-            for _, object in ipairs(layer) do
-                if object.shape == "text" then
+    local function markLayersPermanent(layers)
+        for _, layer in ipairs(layers) do
+            if layer.type == "group" then
+                markLayersPermanent(layer)
+            elseif layer.type == "imagelayer" then
+                ---@cast layer ImageLayer
+                markPermanent(layer.imagefile)
+            elseif layer.type == "objectgroup" then
+                ---@cast layer ObjectGroup
+                for _, object in ipairs(layer) do
                     ---@cast object TextObject
-                    local fontname = Assets.buildFontNameWithSize(
-                        object.fontfamily,
-                        object.pixelsize,
-                        object.bold,
-                        object.italic)
-                    markPermanent(fontname)
+                    local fontfamily = object.fontfamily
+                    if fontfamily then
+                        local pixelsize, bold, italic
+                            = object.pixelsize, object.bold, object.italic
+                        local fnt = Assets.fontpath
+                            .. Assets.buildFontNameWithSize(fontfamily, pixelsize, bold, italic)
+                            .. ".fnt"
+                        local ttf = Assets.fontpath
+                            .. Assets.buildFontName(fontfamily, bold, italic)
+                            .. ".ttf"
+                        markPermanent(fnt)
+                        markPermanent(ttf)
+                    end
                 end
             end
         end
     end
+    markLayersPermanent(map.layers)
 end
 
 function Assets.uncacheMarked()
@@ -116,11 +128,16 @@ function Assets.load(path, ...)
     local ext = path:match("%.(%w-)$")
     local loader = Assets.loaders[ext] or love.filesystem.read
     local asset = loader(Assets.rootpath..path, ...)
+    Assets.put(path, asset)
+    return asset
+end
+
+function Assets.put(path, asset)
+    local ext = path:match("%.(%w-)$")
     Assets.all[path] = asset
     local bytype = Assets.bytype[ext] or {}
     Assets.bytype[ext] = bytype
     bytype[path] = asset
-    return asset
 end
 
 function Assets.get(path, ...)
@@ -169,16 +186,39 @@ end
 function Assets.packTiles()
     local packimagedata, packimageerr = TilePacking.pack(Assets.tilesets)
     if packimagedata then
-        -- for _, tileset in pairs(Assets.tilesets) do
-        --     Assets.images[tileset.imagefile] = nil
-        -- end
-        for _, map in pairs(Assets.maps) do
-            map:batchLayerTiles()
-        end
+        local _, tileset1 = next(Assets.tilesets)
+        Assets.put("packedtiles.png", tileset1.image)
         -- TilePacking.save(Assets.tilesets, "packedtiles.lua", "packedtiles.png", packimagedata)
     else
         print(packimageerr)
     end
+end
+
+function Assets.batchAllMapsLayers()
+    for _, map in pairs(Assets.maps) do
+        map:batchLayerTiles()
+    end
+end
+
+function Assets.setFilter(min, mag, aniso)
+    for i = 1, 3 do
+        local assets = select(i,
+            Assets.bytype.png,
+            Assets.bytype.fnt,
+            Assets.bytype.ttf)
+        if assets then
+            for _, asset in pairs(assets) do
+                asset:setFilter(min, mag, aniso)
+            end
+        end
+    end
+end
+
+function Assets.listGroup(list, assetgroup)
+    for src, asset in pairs(assetgroup) do
+        list[#list+1] = src..":"..tostring(asset)
+    end
+    return list
 end
 
 Assets.addLoaders {
@@ -189,7 +229,12 @@ Assets.addLoaders {
         local size = tonumber(path:match("(%d+).defaultfont"))
         return size and love.graphics.newFont(size)
     end,
-    jase = hasAseprite and Aseprite.load
+    jase = hasAseprite and function(path)
+        local ase = Aseprite.load(path)
+        local directory = string.match(path, "^(.+/)") or ""
+        Assets.put(directory..ase.imagefile, ase.image)
+        return ase
+    end
 }
 
 return Assets

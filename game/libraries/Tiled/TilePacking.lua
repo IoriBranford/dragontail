@@ -174,7 +174,6 @@ function TilePacking.pack(tilesets)
 
     local imagedata = canvas:newImageData()
     local image = love.graphics.newImage(imagedata)
-    image:setFilter("nearest", "nearest")
     for _, tileset in pairs(tilesets) do
         tileset.image = image
         -- local firstgid = tileset.firstgid
@@ -233,7 +232,6 @@ function TilePacking.load(tilesets, quadspath, imagepath)
 
     -- if type(imagepath) == "string" then
     local image = love.graphics.newImage(imagepath)
-    image:setFilter("nearest", "nearest")
 
     local iw, ih = image:getDimensions()
     for _, tileset in pairs(tilesets) do

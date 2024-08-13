@@ -136,6 +136,7 @@ function TiledMap.load(mapfile)
     map = mapf() ---@type TiledMap
     setmetatable(map, TiledMap)
     Assets.maps[mapfile] = map
+    Assets.all[mapfile] = map
 
     local directory = string.match(mapfile, "^(.+/)") or ""
     map.directory = directory

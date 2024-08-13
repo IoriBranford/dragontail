@@ -20,7 +20,6 @@ end
 function ImageLayer:draw()
     local r,g,b,a = Color.unpack(self.tintcolor)
     love.graphics.setColor(r,g,b,a)
-    love.graphics.setShader(self.shader)
     love.graphics.draw(self.image,
         (self.x), (self.y),
         self.rotation or 0,

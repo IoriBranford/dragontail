@@ -458,7 +458,6 @@ function TiledObject:drawTile(fixedfrac)
     love.graphics.setColor(r,g,b,a)
     local velx, vely = self.velx or 0, self.vely or 0
     fixedfrac = fixedfrac or 0
-    love.graphics.setShader(self.shader)
     love.graphics.draw(tile.image,
         self.animationquad or tile.quad,
         (self.x + velx * fixedfrac),
@@ -475,7 +474,6 @@ function TiledObject:drawLine()
     local r,g,b,a = Color.unpack(self.color)
     love.graphics.setColor(r,g,b,a)
     love.graphics.setLineWidth(self.linewidth or 1)
-    love.graphics.setShader(self.shader)
     love.graphics.line(self.points)
 
     love.graphics.pop()
@@ -488,7 +486,6 @@ function TiledObject:drawPolygon()
     local linecolor = self.linecolor
     local r,g,b,a = Color.unpack(color)
     local triangles = self.triangles
-    love.graphics.setShader(self.shader)
     if triangles then
         love.graphics.setColor(r,g,b,a)
         for i = 6, #triangles, 6 do
@@ -522,7 +519,6 @@ end
 
 function TiledObject:drawRectangle()
     pushTransform(self)
-    love.graphics.setShader(self.shader)
     drawAsColorRect(self, self.color, "fill")
     if self.linecolor then
         drawAsColorRect(self, self.linecolor, "line")
@@ -537,7 +533,6 @@ function TiledObject:drawEllipse()
 
     local r,g,b,a = Color.unpack(self.color)
     love.graphics.setColor(r,g,b,a)
-    love.graphics.setShader(self.shader)
     love.graphics.ellipse("fill", hw, hh, hw, hh)
 
     if self.linecolor then
@@ -567,7 +562,6 @@ function TiledObject:drawText(fixedfrac)
 
     local r,g,b,a = Color.unpack(self.color)
     love.graphics.setColor(r,g,b,a)
-    love.graphics.setShader(self.shader)
     local font = self.font or love.graphics.getFont()
     local str = self.text
     local velx, vely = self.velx or 0, self.vely or 0
@@ -607,7 +601,6 @@ function TiledObject:emitParticles(x, y, num, direction)
 end
 
 function TiledObject:drawParticleSystem()
-    love.graphics.setShader(self.shader)
     love.graphics.draw(self.particlesystem)
 end
 
@@ -622,7 +615,6 @@ function TiledObject:drawAseprite(fixedfrac)
 
     local r,g,b,a = Color.unpack(self.color)
     love.graphics.setColor(r,g,b,a)
-    love.graphics.setShader(self.shader)
 
     local velx, vely = self.velx or 0, self.vely or 0
     fixedfrac = fixedfrac or 0
