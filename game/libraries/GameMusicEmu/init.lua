@@ -44,7 +44,7 @@ function GameMusicEmu:stop()
     end
 end
 
-function GameMusicEmu:setLooping()
+function GameMusicEmu:setLooping(_)
 end
 
 function GameMusicEmu:setVolume(v)

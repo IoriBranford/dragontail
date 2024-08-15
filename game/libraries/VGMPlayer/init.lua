@@ -38,7 +38,7 @@ function VGMPlayer:stop()
     end
 end
 
-function VGMPlayer:setLooping()
+function VGMPlayer:setLooping(_)
 end
 
 function VGMPlayer:setVolume(v)
