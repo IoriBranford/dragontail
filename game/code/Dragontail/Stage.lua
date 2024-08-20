@@ -68,10 +68,20 @@ function Stage.init(stagefile)
 end
 
 function Stage.addCharacter(object)
-    local character = Character.init(object)
-    local script = character.script or "Dragontail.Character"
-    Script.load(character, script)
-    character.script.from(character)
+    local type = object.type
+    if type then
+        Database.fillBlanks(object, type)
+    end
+    local ok, script = false, object.script
+    if script then
+        ok, script = pcall(require, script)
+    end
+    if not ok then
+        script = Character
+    end
+    local character = script.cast(object) ---@type Character
+    character:init()
+    character:initAseprite()
 
     character.bounds = bounds
     character.solids = solids

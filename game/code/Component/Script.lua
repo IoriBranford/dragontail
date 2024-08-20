@@ -1,6 +1,4 @@
-local require = require
 local type = type
-local assert = assert
 local co_create = coroutine.create
 local co_resume = coroutine.resume
 local co_status = coroutine.status
@@ -35,23 +33,13 @@ local run = Script.run
 
 function Script:start(action, ...)
     if type(action) ~= "function" then
-        local script = self.script
-        action = script and script[action]
+        action = self[action]
     end
-    if action then
+    if type(action) == "function" then
         self.thread = co_create(action)
         run(self, ...)
     end
 end
 start = Script.start
-
-function Script:load(requirestring)
-    self.script = requirestring and require(requirestring)
-end
-
-function Script:unload()
-    stop(self)
-    self.script = nil
-end
 
 return Script

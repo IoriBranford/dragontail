@@ -216,11 +216,11 @@ function Fighter:wallBump(thrower, oobx, ooby)
     self.velx, self.vely = 0, 0
     yield()
     local wallslamcounterattack = self.wallslamcounterattack
-    if self.health > 0 and wallslamcounterattack and self.script.attack then
+    if self.health > 0 and wallslamcounterattack and self.attack then
         Database.fill(self, wallslamcounterattack)
         self.canbeattacked = true
         self.canbegrabbed = true
-        return self.script.attack, wallslamcounterattack, atan2(-(ooby or 0), -(oobx or 0))
+        return self.attack, wallslamcounterattack, atan2(-(ooby or 0), -(oobx or 0))
     end
     return Fighter.fall, thrower
 end
@@ -285,11 +285,11 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
     self.velx, self.vely = 0, 0
     yield()
     local wallslamcounterattack = self.wallslamcounterattack
-    if self.health > 0 and wallslamcounterattack and self.script.attack then
+    if self.health > 0 and wallslamcounterattack and self.attack then
         Database.fill(self, wallslamcounterattack)
         self.canbeattacked = true
         self.canbegrabbed = true
-        return self.script.attack, wallslamcounterattack, atan2(-(ooby or 0), -(oobx or 0))
+        return self.attack, wallslamcounterattack, atan2(-(ooby or 0), -(oobx or 0))
     end
     return Fighter.fall, thrower
 end

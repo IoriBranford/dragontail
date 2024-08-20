@@ -19,41 +19,28 @@ local testcircles = math.testcircles
 ---@class Character:AsepriteObject
 local Character = class(Object)
 
----@return Character
-function Character.init(ch, chprefab)
-    if chprefab then
-        for k,v in pairs(chprefab) do
-            ch[k] = v
-        end
+function Character:init()
+    if self.visible == nil then
+        self.visible = true
     end
-    local type = ch.type
-    if type then
-        Database.fillBlanks(ch, type)
-    end
-    ch.health = ch.health or 1
-    ch.maxhealth = ch.maxhealth or ch.health
-    ch.x = ch.x or 0
-    ch.y = ch.y or 0
-    ch.z = ch.z or 0
-    ch.altitude = ch.altitude or 0
-    ch.velx = ch.velx or 0
-    ch.vely = ch.vely or 0
-    ch.velz = ch.velz or 0
-    ch.speed = ch.speed or 1
-    ch.bodyradius = ch.bodyradius or 1
-    ch.attackradius = ch.attackradius or 0
+    self.health = self.health or 1
+    self.maxhealth = self.maxhealth or self.health
+    self.x = self.x or 0
+    self.y = self.y or 0
+    self.z = self.z or 0
+    self.altitude = self.altitude or 0
+    self.velx = self.velx or 0
+    self.vely = self.vely or 0
+    self.velz = self.velz or 0
+    self.speed = self.speed or 1
+    self.bodyradius = self.bodyradius or 1
+    self.attackradius = self.attackradius or 0
     -- ch.attackangle = ch.attackangle or 0
-    ch.attackarc = ch.attackarc or 0
-    ch.attackdamage = ch.attackdamage or 1
-    ch.attackstun = ch.attackstun or 1
-    ch.hitstun = ch.hitstun or 0
-    ch.hurtstun = ch.hurtstun or 0
-    return ch
-end
-local init = Character.init
-
-function Character.new(chprefab)
-    return init({}, chprefab)
+    self.attackarc = self.attackarc or 0
+    self.attackdamage = self.attackdamage or 1
+    self.attackstun = self.attackstun or 1
+    self.hitstun = self.hitstun or 0
+    self.hurtstun = self.hurtstun or 0
 end
 
 function Character:updateSprite(sprite, fixedfrac)
