@@ -569,10 +569,9 @@ function Player:victory()
     end
 end
 
-function Player:defeat(defeatanimation)
+function Player:defeat(attacker)
     Audio.fadeMusic()
-    yield()
-    return "defeat", defeatanimation
+    return Fighter.defeat(self, attacker)
 end
 
 return Player
