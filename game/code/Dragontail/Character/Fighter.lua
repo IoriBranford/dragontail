@@ -77,11 +77,6 @@ function Fighter:hurt(attacker)
     if facex == 0 and facey == 0 then
         facex = 1
     end
-    local hurtanimation = self.getDirectionalAnimation_angle("hurt", atan2(facey, facex), self.animationdirections)
-    local aseprite = self.aseprite
-    if aseprite and aseprite.animations[hurtanimation] then
-        self:changeAseAnimation(hurtanimation, 1, 0)
-    end
 
     local hitsound = attacker.hitsound
     if self.health <= 0 then
@@ -124,7 +119,6 @@ end
 -- function Fighter:stun(duration)
 --     self:stopAttack()
 --     self.velx, self.vely = 0, 0
---     self:changeAseAnimation("FallKnees", 1, 0)
 --     Audio.play(self.stunsound)
 --     self.canbegrabbed = true
 --     duration = duration or 120
@@ -141,11 +135,6 @@ function Fighter:held(holder)
         local dx, dy = holder.x - self.x, holder.y - self.y
         if dx == 0 and dy == 0 then
             dx = 1
-        end
-        local hurtanimation = self.getDirectionalAnimation_angle(self.heldanimation or "Stand", atan2(dy, dx), self.animationdirections)
-        local aseprite = self.aseprite
-        if aseprite and aseprite.animations[hurtanimation] then
-            self:changeAseAnimation(hurtanimation, 1, 0)
         end
         yield()
     end
@@ -171,7 +160,6 @@ function Fighter:knockedBack(thrower, attackangle)
         end
     end
     self.hurtstun = 0
-    -- self:changeAseAnimation("knockedback")
     self:stopAttack()
     local thrownspeed = thrower.attacklaunchspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
@@ -230,7 +218,6 @@ function Fighter:thrown(thrower, attackangle)
         end
     end
     self.hurtstun = 0
-    self:changeAseAnimation("spin")
     Database.fill(self, "human-thrown")
     local thrownspeed = thrower.attacklaunchspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
@@ -278,9 +265,6 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
 end
 
 function Fighter:thrownRecover(thrower)
-    if self.thrownrecoveranimation then
-        self:changeAseAnimation(self.thrownrecoveranimation, 1, 0)
-    end
     Audio.play(self.thrownrecoversound)
     local bounds = self.bounds
     local recovertime = self.thrownrecovertime or 10
@@ -339,9 +323,7 @@ function Fighter:breakaway(other)
 end
 
 function Fighter:fall(attacker)
-    local defeatanimation = self.defeatanimation or "Fall"
     local bounds = self.bounds
-    self:changeAseAnimation(defeatanimation, 1, 0)
     local t = 1
     repeat
         self:accelerateTowardsVel(0, 0, 8)
@@ -368,15 +350,12 @@ end
 function Fighter:defeat(attacker)
     self:stopAttack()
     self.velx, self.vely = 0, 0
-    local defeatanimation = self.defeatanimation or "Fall"
-    self:changeAseAnimation(defeatanimation, 1, 0)
     Audio.play(self.defeatsound)
     yield()
     return "blinkOut", 60
 end
 
 function Fighter:getup(attacker)
-    self:changeAseAnimation("FallRiseToFeet", 1, 0)
     coroutine.wait(27)
     local recoverai = self.aiaftergetup or self.recoverai
     if not recoverai then
