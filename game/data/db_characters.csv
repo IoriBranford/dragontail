@@ -7,3 +7,5 @@ food-fish,item,,18,,,,,,,,,,,,25,fish,,Dragontail.Character.Common,itemWaitForPi
 food-bigfish,item,,18,,,,,,,,,,,,100,bigfish,,Dragontail.Character.Common,itemWaitForPickup,,,,,,,,,,,,,,,,,,,,,
 bandit-axe,enemy,150,16,,true,TRUE,3,,,30,axe-throw,axe-swing axe-throw,fall,18,,,4,Dragontail.Character.Enemy,stand,,hurt,guardHit,30,guard,axe-swing-counter,11,stun,60,thrown,8,,8,,axe-swing-counter,FallKnees,defeat,stand,guard,attack,axe-swing
 thrown-axe,enemy,1,16,,true,FALSE,10,,,,thrown-axe-attack,,,,,thrownaxe0,4,Dragontail.Character.Common,projectileFly,,projectileDeflected,,,,,,,,projectileFly,,,10,,,,,,,,
+bandit-bow,enemy,25,16,,true,TRUE,5,10,0.25,30,bow-shot,,fall,18,,,4,Dragontail.Character.Enemy,stand,,hurt,,,stand,,,stun,120,thrown,,,10,,,FallKnees,defeat,stand,,attack,bow-shot
+bandit-arrow,enemy,1,2,,true,FALSE,15,,,,bandit-arrow-attack,,,,,,4,Dragontail.Character.Common,projectileFly,,projectileDeflected,,,,,,,,projectileFly,,,10,,,,,,,,

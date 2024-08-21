@@ -7,3 +7,5 @@ food-fish,sprites/food-container.jase,16,16,,,,,
 food-bigfish,sprites/food-container.jase,16,16,,,,,
 bandit-axe,sprites/bandit-axe.jase,32,48,sprites/emotes.jase,12,64,,TRUE
 thrown-axe,sprites/bandit-axe.jase,32,56,,,,,TRUE
+bandit-bow,sprites/bandit/bow.jase,64,88,,,,,TRUE
+bandit-arrow,sprites/bandit/arrow.jase,16,40,,,,,TRUE
