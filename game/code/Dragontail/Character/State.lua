@@ -1,5 +1,8 @@
 local Database = require "Data.Database"
-local Script   = require "Component.Script"
+
+local co_create = coroutine.create
+local co_resume = coroutine.resume
+local co_status = coroutine.status
 
 ---@class State
 ---@field action function
@@ -10,6 +13,7 @@ local Script   = require "Component.Script"
 ---@field canbegrabbed boolean
 ---@field sound string
 
+---@module 'Dragontail.Character.State'
 local State = {}
 
 local StateVarsOnChange = {
@@ -18,7 +22,7 @@ local StateVarsOnChange = {
 }
 
 ---@param self Character
-function State.change(self, statename, ...)
+function State.start(self, statename, ...)
     local state = Database.get(statename) ---@type State
     if state then
         for _, var in ipairs(StateVarsOnChange) do
@@ -43,8 +47,34 @@ function State.change(self, statename, ...)
                 self:changeAseAnimation(animationname, frame, state.loop)
             end
         end
-        Script.start(self, state.action, ...)
+        local action = self[state.action]
+        if type(action) == "function" then
+            self.thread = co_create(action)
+            State.run(self, ...)
+        end
+    else
+        print("W: no state "..statename)
     end
+end
+
+---@param self Character
+function State.run(self, ...)
+    local thread = self.thread
+    if thread then
+        local ok, nextstate, a,b,c,d,e,f,g = co_resume(thread, self, ...)
+        if not ok then
+            error(debug.traceback(thread, nextstate))
+        elseif nextstate then
+            State.start(self, nextstate, a,b,c,d,e,f,g)
+        elseif co_status(thread) == "dead" then
+            State.stop(self)
+        end
+    end
+end
+
+---@param self Character
+function State.stop(self)
+    self.thread = nil
 end
 
 return State
