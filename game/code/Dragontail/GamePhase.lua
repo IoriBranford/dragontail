@@ -43,6 +43,10 @@ function GamePhase.loadphase()
 
     GamePhase.resize(love.graphics.getWidth(), love.graphics.getHeight())
 
+    local music = Audio.playMusic("music/retro-chiptune-guitar.ogg")
+    if music then
+        music:setLooping(true)
+    end
 end
 
 function GamePhase.resize(screenwidth, screenheight)
