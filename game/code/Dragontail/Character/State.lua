@@ -30,23 +30,23 @@ function State.start(self, statename, ...)
                 self[var] = state[var]
             end
         end
-        local animationname = state.animation
-        local frame = state.frame
-        if animationname or frame then
-            local aseprite = self.aseprite
-            if aseprite then
-                local dirs = self.animationdirections or 1
-                if dirs > 1 then
-                    local facex, facey = self.facex, self.facey
-                    if facex and facey then
-                        local angle = math.atan2(facey, facex)
-                        animationname = self.getDirectionalAnimation_angle(animationname, angle, dirs)
-                    end
-                end
+        -- local animationname = state.animation
+        -- local frame = state.frame
+        -- if animationname or frame then
+        --     local aseprite = self.aseprite
+        --     if aseprite then
+        --         local dirs = self.animationdirections or 1
+        --         if dirs > 1 then
+        --             local facex, facey = self.facex, self.facey
+        --             if facex and facey then
+        --                 local angle = math.atan2(facey, facex)
+        --                 animationname = self.getDirectionalAnimation_angle(animationname, angle, dirs)
+        --             end
+        --         end
 
-                self:changeAseAnimation(animationname, frame, state.loop)
-            end
-        end
+        --         self:changeAseAnimation(animationname, frame, state.loop)
+        --     end
+        -- end
         local action = self[state.action]
         if type(action) == "function" then
             self.thread = co_create(action)
