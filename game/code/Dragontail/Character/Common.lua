@@ -112,6 +112,11 @@ function Common:projectileFly(shooter, angle)
     local speed = self.speed
     self.velx = speed*cos(angle)
     self.vely = speed*sin(angle)
+    local animation = self.swinganimation
+    if animation then
+        animation = self.getDirectionalAnimation_angle(animation, angle, self.animationdirections)
+        self:changeAseAnimation(animation)
+    end
     local oobx, ooby
     repeat
         yield()
