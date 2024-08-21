@@ -2,7 +2,7 @@ local Controls = require "Dragontail.Controls"
 local Database = require "Data.Database"
 local Audio    = require "System.Audio"
 local Movement = require "Component.Movement"
-local Script   = require "Component.Script"
+local State   = require "Dragontail.Character.State"
 local Fighter  = require "Dragontail.Character.Fighter"
 
 ---@class Player:Fighter
@@ -89,13 +89,13 @@ local function doComboAttack(self, facex, facey, heldenemy)
     if self.comboindex >= 2 then
         self.comboindex = 0
         if heldenemy then
-            return Player.spinAndKickEnemy, "spinning-throw", atan2(facey, facex), heldenemy
+            return "spinAndKickEnemy", "spinning-throw", atan2(facey, facex), heldenemy
         end
         local spindir = facex < 0 and "ccw" or "cw"
-        return Player.spinAttack, "tail-swing-"..spindir, atan2(-facey, -facex)
+        return "spinAttack", "tail-swing-"..spindir, atan2(-facey, -facex)
     else
         self.comboindex = self.comboindex + 1
-        return Player.straightAttack, heldenemy and "holding-knee" or "kick", atan2(facey, facex), heldenemy
+        return "straightAttack", heldenemy and "holding-knee" or "kick", atan2(facey, facex), heldenemy
     end
 end
 
@@ -104,8 +104,6 @@ function Player:control()
     self.runenergy = self.runenergy or 100
     self.runenergymax = self.runenergymax or self.runenergy
     self.runenergycost = self.runenergycost or 25
-    self.canbeattacked = true
-    self.canbegrabbed = true
     self.facex = self.facex or 1
     self.facey = self.facey or 0
     local targetfacex, targetfacey = self.facex, self.facey
@@ -162,12 +160,12 @@ function Player:control()
             end
 
             if attackpressed then
-                return Player.straightAttack, "running-kick", atan2(vely, velx)
+                return "straightAttack", "running-kick", atan2(vely, velx)
             end
 
             local attacktarget = findSomethingToRunningAttack(self, velx, vely)
             if attacktarget then
-                return Player.straightAttack, "running-elbow", atan2(vely, velx)
+                return "straightAttack", "running-elbow", atan2(vely, velx)
             end
 
             local oobx, ooby = findWallCollision(self)
@@ -181,7 +179,7 @@ function Player:control()
                         y = self.y + ooby*self.bodyradius
                     }
                 )
-                return Player.straightAttack, "running-elbow", atan2(vely, velx)
+                return "straightAttack", "running-elbow", atan2(vely, velx)
             end
 
             if runningtime < 15 then
@@ -200,7 +198,7 @@ function Player:control()
 
             local opponenttohold = findOpponentToHold(self, inx, iny)
             if opponenttohold then
-                return Player.hold, opponenttohold
+                return "hold", opponenttohold
             end
         end
 
@@ -218,8 +216,6 @@ function Player:control()
 end
 
 function Player:spinAttack(attacktype, angle)
-    self.canbeattacked = false
-    self.canbegrabbed = false
     local lungeangle = angle + pi
     local originalfacex, originalfacey = self.facex, self.facey
     Database.fill(self, attacktype)
@@ -260,8 +256,6 @@ function Player:spinAttack(attacktype, angle)
     until t <= 0
     self:stopAttack()
     self.facex, self.facey = originalfacex, originalfacey
-    self.canbeattacked = true
-    self.canbegrabbed = true
     if attackagain then
         local inx, iny = Controls.getDirectionInput()
         if inx ~= 0 or iny ~= 0 then
@@ -269,7 +263,7 @@ function Player:spinAttack(attacktype, angle)
         end
         return doComboAttack(self, originalfacex, originalfacey)
     end
-    return Player.control
+    return "control"
 end
 
 function Player:hold(enemy)
@@ -277,7 +271,7 @@ function Player:hold(enemy)
         self.comboindex = 0
         Audio.play(self.holdsound)
         Fighter.startHolding(self, enemy)
-        Script.start(enemy, enemy.heldai or "held", self)
+        State.start(enemy, enemy.heldai or "held", self)
     end
     self:stopAttack()
     local x, y = self.x, self.y
@@ -295,7 +289,7 @@ function Player:hold(enemy)
         yield()
         enemy = self.heldopponent
         if not enemy then
-            return Player.control
+            return "control"
         end
         time = time - 1
 
@@ -339,25 +333,23 @@ function Player:hold(enemy)
 
         self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
         if runpressed and self.runenergy >= self.runenergycost then
-            return Player.runWithEnemy, enemy
+            return "runWithEnemy", enemy
         end
         if attackpressed then
             if inx ~= 0 or iny ~= 0 then
                 self.comboindex = 0
-                return Player.spinAndKickEnemy, "spinning-throw", holdangle, enemy
+                return "spinAndKickEnemy", "spinning-throw", holdangle, enemy
             end
             return doComboAttack(self, holddirx, holddiry, enemy)
         end
     end
-    Script.start(enemy, Fighter.breakaway, self)
-    return Fighter.breakaway, enemy
+    State.start(enemy, "breakaway", self)
+    return "breakaway", enemy
 end
 
 function Player:runWithEnemy(enemy)
     Audio.play(self.dashsound)
     enemy.canbeattacked = false
-    self.canbeattacked = false
-    self.canbegrabbed = false
     self.facex = self.facex or 1
     self.facey = self.facey or 0
     local targetfacex, targetfacey = self.facex, self.facey
@@ -407,13 +399,13 @@ function Player:runWithEnemy(enemy)
             enemy:stopAttack()
             Fighter.stopHolding(self, enemy)
             enemy.canbeattacked = true
-            return Player.straightAttack, "running-kick", holdangle
+            return "straightAttack", "running-kick", holdangle
         end
 
         local oobx, ooby = findWallCollision(enemy)
         if oobx or ooby then
-            Script.start(enemy, Fighter.wallSlammed, self, oobx, ooby)
-            return Player.straightAttack, "running-elbow", holdangle
+            State.start(enemy, "wallSlammed", self, oobx, ooby)
+            return "straightAttack", "running-elbow", holdangle
         end
 
         if runningtime < 15 then
@@ -426,8 +418,8 @@ function Player:runWithEnemy(enemy)
             enemy:stopAttack()
             Fighter.stopHolding(self, enemy)
             enemy.canbeattacked = true
-            Script.start(enemy, Fighter.knockedBack, self, holdangle)
-            return Player.control
+            State.start(enemy, "knockedBack", self, holdangle)
+            return "control"
         end
 
         local holdanimation = "holdwalk"
@@ -438,8 +430,6 @@ end
 
 function Player:spinAndKickEnemy(attacktype, angle, enemy)
     enemy.canbeattacked = false
-    self.canbeattacked = false
-    self.canbegrabbed = false
     Database.fill(self, attacktype)
     Database.fill(enemy, "human-in-spinning-throw")
     local spinvel = self.attackspinspeed or 0
@@ -500,10 +490,8 @@ function Player:spinAndKickEnemy(attacktype, angle, enemy)
     -- if self.attackdamage then
     --     enemy.health = enemy.health - self.attackdamage
     -- end
-    -- Script.start(enemy, enemy.thrownai or "thrown", self, atan2(throwy, throwx))
-    self.canbeattacked = true
-    self.canbegrabbed = true
-    return Player.straightAttack, "holding-kick", atan2(throwy, throwx)
+    -- State.start(enemy, enemy.thrownai or "thrown", self, atan2(throwy, throwx))
+    return "straightAttack", "holding-kick", atan2(throwy, throwx)
 end
 
 function Player:straightAttack(attacktype, angle, heldenemy)
@@ -511,8 +499,6 @@ function Player:straightAttack(attacktype, angle, heldenemy)
     Audio.play(self.swingsound)
     local attackagain = false
     self:startAttack(angle)
-    self.canbeattacked = false
-    self.canbegrabbed = false
     local attackanimation = self.swinganimation
     if attackanimation then
         attackanimation = self.getDirectionalAnimation_angle(attackanimation, angle, self.animationdirections)
@@ -535,8 +521,6 @@ function Player:straightAttack(attacktype, angle, heldenemy)
         t = t - 1
     until t <= 0
     self:stopAttack()
-    self.canbeattacked = true
-    self.canbegrabbed = true
     if attackagain then
         local facex, facey = self.facex, self.facey
         local inx, iny = Controls.getDirectionInput()
@@ -548,9 +532,9 @@ function Player:straightAttack(attacktype, angle, heldenemy)
         return doComboAttack(self, facex, facey, heldenemy)
     end
     if heldenemy then
-        return Player.hold, heldenemy
+        return "hold", heldenemy
     end
-    return Player.control
+    return "control"
 end
 
 function Player:getup(attacker)
@@ -569,8 +553,6 @@ function Player:getup(attacker)
             break
         end
     end
-    self.canbeattacked = true
-    self.canbegrabbed = true
     return recoverai
 end
 
@@ -590,7 +572,7 @@ end
 function Player:defeat(defeatanimation)
     Audio.fadeMusic()
     yield()
-    return Fighter.defeat, defeatanimation
+    return "defeat", defeatanimation
 end
 
 return Player

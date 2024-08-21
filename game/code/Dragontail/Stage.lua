@@ -4,7 +4,7 @@ local Tiled     = require "Tiled"
 local Database    = require "Data.Database"
 local Audio     = require "System.Audio"
 local Movement  = require "Component.Movement"
-local Script      = require "Component.Script"
+local State       = require "Dragontail.Character.State"
 local Stage = {
     CameraWidth = 640,
     CameraHeight = 360
@@ -97,7 +97,7 @@ function Stage.addCharacter(object)
         enemies[#enemies+1] = character
     end
     if character.initialai then
-        Script.start(character, character.initialai)
+        State.start(character, character.initialai)
     end
     character:addToScene(scene)
     allcharacters[#allcharacters+1] = character
@@ -126,7 +126,7 @@ function Stage.openNextRoom()
         gamestatus = "goingToNextRoom"
     else
         gamestatus = "victory"
-        Script.start(player, "victory")
+        State.start(player, "victory")
         Audio.fadeMusic()
     end
 end

@@ -2,10 +2,9 @@ local Stage = require "Dragontail.Stage"
 local Audio = require "System.Audio"
 local Database = require "Data.Database"
 local Common   = require "Dragontail.Character.Common"
-local Character= require "Dragontail.Character"
 
----@class Fighter:Character
-local Fighter = class(Character)
+---@class Fighter:Common
+local Fighter = class(Common)
 
 local huge = math.huge
 local cos = math.cos
@@ -70,8 +69,6 @@ function Fighter:hurt(attacker)
         Stage.addCharacter(hitsparkcharacter)
     end
     self.health = self.health - attacker.attackdamage
-    self.canbeattacked = nil
-    self.canbegrabbed = nil
     self.velx, self.vely = 0, 0
     self:stopAttack()
     Fighter.stopHolding(self, self.heldopponent)
@@ -118,8 +115,6 @@ function Fighter:hurt(attacker)
         Fighter.stopHolding(self.heldby, self)
         return "defeat", attacker
     end
-    self.canbeattacked = true
-    self.canbegrabbed = true
     if self.heldby then
         return "held", self.heldby
     end
@@ -139,8 +134,6 @@ end
 -- end
 
 function Fighter:held(holder)
-    self.canbeattacked = true
-    self.canbegrabbed = true
     self:stopAttack()
     self:stopGuarding()
     self.velx, self.vely = 0, 0
@@ -177,8 +170,6 @@ function Fighter:knockedBack(thrower, attackangle)
             dirx, diry = norm(self.x - thrower.x, self.y - thrower.y)
         end
     end
-    self.canbeattacked = false
-    self.canbegrabbed = nil
     self.hurtstun = 0
     -- self:changeAseAnimation("knockedback")
     self:stopAttack()
@@ -193,7 +184,7 @@ function Fighter:knockedBack(thrower, attackangle)
         recovertime = recovertime - 1
     until recovertime <= 0 or oobx or ooby
     if oobx or ooby then
-        return Fighter.wallBump, thrower, oobx, ooby
+        return "wallBump", thrower, oobx, ooby
     end
 
     return self.aiafterthrown or "fall"
@@ -218,11 +209,9 @@ function Fighter:wallBump(thrower, oobx, ooby)
     local wallslamcounterattack = self.wallslamcounterattack
     if self.health > 0 and wallslamcounterattack and self.attack then
         Database.fill(self, wallslamcounterattack)
-        self.canbeattacked = true
-        self.canbegrabbed = true
-        return self.attack, wallslamcounterattack, atan2(-(ooby or 0), -(oobx or 0))
+        return "attack", wallslamcounterattack, atan2(-(ooby or 0), -(oobx or 0))
     end
-    return Fighter.fall, thrower
+    return "fall", thrower
 end
 
 function Fighter:thrown(thrower, attackangle)
@@ -240,8 +229,6 @@ function Fighter:thrown(thrower, attackangle)
             dirx, diry = norm(self.x - thrower.x, self.y - thrower.y)
         end
     end
-    self.canbeattacked = false
-    self.canbegrabbed = nil
     self.hurtstun = 0
     self:changeAseAnimation("spin")
     Database.fill(self, "human-thrown")
@@ -260,15 +247,13 @@ function Fighter:thrown(thrower, attackangle)
     thrownsound:stop()
     self.thrower = nil
     if oobx or ooby then
-        return Fighter.wallSlammed, thrower, oobx, ooby
+        return "wallSlammed", thrower, oobx, ooby
     end
 
     return self.aiafterthrown or "fall"
 end
 
 function Fighter:wallSlammed(thrower, oobx, ooby)
-    self.canbeattacked = false
-    self.canbegrabbed = nil
     oobx, ooby = norm(oobx or 0, ooby or 0)
     self:stopAttack()
     local bodyradius = self.bodyradius or 1
@@ -287,11 +272,9 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
     local wallslamcounterattack = self.wallslamcounterattack
     if self.health > 0 and wallslamcounterattack and self.attack then
         Database.fill(self, wallslamcounterattack)
-        self.canbeattacked = true
-        self.canbegrabbed = true
-        return self.attack, wallslamcounterattack, atan2(-(ooby or 0), -(oobx or 0))
+        return "attack", wallslamcounterattack, atan2(-(ooby or 0), -(oobx or 0))
     end
-    return Fighter.fall, thrower
+    return "fall", thrower
 end
 
 function Fighter:thrownRecover(thrower)
@@ -311,11 +294,9 @@ function Fighter:thrownRecover(thrower)
 
     self:stopAttack()
     if oobx or ooby then
-        return Fighter.wallSlammed, thrower, oobx, ooby
+        return "wallSlammed", thrower, oobx, ooby
     end
 
-    self.canbeattacked = true
-    self.canbegrabbed = true
     local recoverai = self.recoverai
     if not recoverai then
         print("No recoverai for "..self.type)
@@ -358,8 +339,6 @@ function Fighter:breakaway(other)
 end
 
 function Fighter:fall(attacker)
-    self.canbegrabbed = nil
-    self.canbeattacked = false
     local defeatanimation = self.defeatanimation or "Fall"
     local bounds = self.bounds
     self:changeAseAnimation(defeatanimation, 1, 0)
@@ -387,15 +366,13 @@ function Fighter:fall(attacker)
 end
 
 function Fighter:defeat(attacker)
-    self.canbeattacked = false
-    self.canbegrabbed = nil
     self:stopAttack()
     self.velx, self.vely = 0, 0
     local defeatanimation = self.defeatanimation or "Fall"
     self:changeAseAnimation(defeatanimation, 1, 0)
     Audio.play(self.defeatsound)
     yield()
-    return Common.blinkOut, 60
+    return "blinkOut", 60
 end
 
 function Fighter:getup(attacker)
@@ -406,8 +383,6 @@ function Fighter:getup(attacker)
         print("No aiaftergetup or recoverai for "..self.type)
         return "defeat", attacker
     end
-    self.canbeattacked = true
-    self.canbegrabbed = true
     return recoverai
 end
 

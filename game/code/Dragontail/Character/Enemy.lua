@@ -110,14 +110,14 @@ function Enemy:stand(duration)
 
             local dodgeangle = findAngleToDodgeIncoming(self, opponent)
             if dodgeangle then
-                return Enemy.dodgeIncoming, dodgeangle
+                return "dodgeIncoming", dodgeangle
             end
         end
         yield()
     end
 
     if opponent.health <= 0 then
-        return Enemy.stand
+        return "stand"
     end
 
     local toopposq = distsq(x, y, oppox, oppoy)
@@ -150,9 +150,9 @@ function Enemy:stand(duration)
     Database.fill(self, attacktype)
     local attackradius = totalAttackRange(self.attackradius or 32, self.attacklungespeed or 0, self.attacklungedecel or 1) + opponent.bodyradius
     if not opponent.attacker and toopposq <= attackradius*attackradius then
-        return Enemy.attack, attacktype
+        return "attack", attacktype
     end
-    return Enemy.approach
+    return "approach"
 end
 
 function Enemy:dodgeIncoming(dodgeangle)
@@ -173,10 +173,10 @@ function Enemy:dodgeIncoming(dodgeangle)
         local attackradius = self.attackradius
         x, y, oppox, oppoy = self.x, self.y, opponent.x, opponent.y
         if distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
-            return Enemy.attack, attacktype
+            return "attack", attacktype
         end
     end
-    return Enemy.stand
+    return "stand"
 end
 
 function Enemy:approach()
@@ -197,7 +197,7 @@ function Enemy:approach()
         desty = oppoy + sin(destanglefromoppo) * attackradius
         destanglefromoppo = destanglefromoppo + pi/2
         if destanglefromoppo > 4*pi then
-            return Enemy.stand, 10
+            return "stand", 10
         end
     until minx <= destx and destx <= maxx and miny <= desty and desty <= maxy
 
@@ -225,7 +225,7 @@ function Enemy:approach()
         -- local seesopponent = math.dot(self.facex, self.facey, tooppox, tooppoy) >= 0
         local dodgeangle = findAngleToDodgeIncoming(self, opponent)
         if dodgeangle then
-            return Enemy.dodgeIncoming, dodgeangle
+            return "dodgeIncoming", dodgeangle
         end
         self.velx, self.vely = Movement.getVelocity_speed(self.x, self.y, destx, desty, speed)
         yield()
@@ -237,20 +237,18 @@ function Enemy:approach()
 
     local attacktype = not opponent.attacker and self.attacktype
     if attacktype and distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
-        return Enemy.attack, attacktype
+        return "attack", attacktype
     end
     if reached then
-        return Enemy.stand, 10
+        return "stand", 10
     end
-    return Enemy.stand, 5
+    return "stand", 5
 end
 
 function Enemy:attack()
     self:stopGuarding()
-    if self.attackwindupinvuln then
-        self.canbeattacked = false
-        self.canbegrabbed = false
-    end
+    self.canbeattacked = not self.attackwindupinvuln
+    self.canbegrabbed = not self.attackwindupinvuln
     self.velx, self.vely = 0, 0
 
     local x, y = self.x, self.y
@@ -275,7 +273,7 @@ function Enemy:attack()
         local dodgeangle = findAngleToDodgeIncoming(self, opponent)
         if dodgeangle then
             opponent.attacker = nil
-            return Enemy.dodgeIncoming, dodgeangle
+            return "dodgeIncoming", dodgeangle
         end
         yield()
     end
@@ -326,7 +324,7 @@ function Enemy:attack()
         self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
     until afterhittime <= 0
 
-    return Enemy.stand, 20
+    return "stand", 20
 end
 
 function Enemy:guard()
@@ -346,7 +344,7 @@ function Enemy:guard()
     until t <= 0
     self:stopGuarding()
     self.numguardedhits = 0
-    return Enemy.stand
+    return "stand"
 end
 
 function Enemy:guardHit(attacker)
@@ -378,15 +376,15 @@ function Enemy:guardHit(attacker)
         if self.numguardedhits >= guardhitstocounterattack then
             self.numguardedhits = 0
             self:stopGuarding()
-            return Enemy.attack, guardcounterattack
+            return "attack", guardcounterattack
         end
     end
-    return Enemy.guard
+    return "guard"
         -- local afterguardattacktype = self.afterguardattacktype
         -- if afterguardattacktype then
         --     return "attack", afterguardattacktype
         -- end
-        -- return self.afterguardhitai or "stand"
+        -- return afterguardhitai or "stand"
     -- end
     -- return self:hurt(attacker)
 end

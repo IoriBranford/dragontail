@@ -1,6 +1,6 @@
 local Audio     = require "System.Audio"
 local Database    = require "Data.Database"
-local Script      = require "Component.Script"
+local State       = require "Dragontail.Character.State"
 local Color       = require "Tiled.Color"
 local Character   = require "Dragontail.Character"
 
@@ -43,16 +43,15 @@ end
 
 function Common:containerBreak(attacker)
     self.bodysolid = false
-    self.canbeattacked = false
     Audio.play(self.defeatsound)
     self:changeAseAnimation("collapse", 1, 0)
     local item = self.item
     if item then
         item.opponent = self.opponent
-        Script.start(item, "itemDrop")
+        State.start(item, "itemDrop")
     end
     yield()
-    return Common.blinkOut, 30
+    return "blinkOut", 30
 end
 
 function Common:itemDrop(y0)
@@ -64,7 +63,7 @@ function Common:itemDrop(y0)
         self.altitude = self.altitude + popoutspeed
     until self.altitude <= 0
     self.altitude = 0
-    return Common.itemWaitForPickup
+    return "itemWaitForPickup"
 end
 
 function Common:itemWaitForPickup()
@@ -99,11 +98,10 @@ function Common:projectileHit(opponent)
         attackhitanimation = self.getDirectionalAnimation_angle(attackhitanimation, self.attackangle, self.animationdirections)
         self:changeAseAnimation(attackhitanimation)
     end
-    self.canbeattacked = false
     self:stopAttack()
     self.velx, self.vely = 0, 0
     yield()
-    return Common.blinkOut, 30
+    return "blinkOut", 30
 end
 
 function Common:projectileFly(shooter, angle)
@@ -119,7 +117,7 @@ function Common:projectileFly(shooter, angle)
         yield()
         oobx, ooby = self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
     until oobx or ooby
-    return Common.projectileHit
+    return "projectileHit"
 end
 
 function Common:projectileDeflected(deflector)
@@ -137,7 +135,7 @@ function Common:projectileDeflected(deflector)
         end
     end
     self.thrower = deflector
-    return Common.projectileFly, deflector, attackangle
+    return "projectileFly", deflector, attackangle
 end
 
 return Common

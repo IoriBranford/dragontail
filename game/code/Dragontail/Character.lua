@@ -1,7 +1,7 @@
 local Database      = require "Data.Database"
 local Audio       = require "System.Audio"
 local Config      = require "System.Config"
-local Script      = require "Component.Script"
+local State       = require "Dragontail.Character.State"
 local Object      = require "Tiled.Object"
 local Movement    = require "Component.Movement"
 local pi = math.pi
@@ -130,7 +130,7 @@ function Character:fixedupdate()
     end
     self.x = self.x + self.velx
     self.y = self.y + self.vely
-    Script.run(self)
+    State.run(self)
     self:animate(1)
 end
 
@@ -283,16 +283,16 @@ function Character:collideWithCharacterAttack(attacker)
         local guardhitai = self.guardai or "guardHit"
         local hurtai = self.hurtai or "hurt"
         if self.guardangle then
-            Script.start(self, guardhitai, attacker)
+            State.start(self, guardhitai, attacker)
         else
-            Script.start(self, hurtai, attacker)
+            State.start(self, hurtai, attacker)
             if attacker.hitstun <= 0 then
                 attacker.hitstun = attacker.attackstunself or 3
             end
         end
         local hitai = attacker.attackhitai
         if hitai then
-            Script.start(attacker, hitai, self)
+            State.start(attacker, hitai, self)
         end
         return true
     end
