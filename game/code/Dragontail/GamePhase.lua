@@ -23,6 +23,7 @@ function GamePhase.loadphase()
     Database.load("data/db_characters.csv")
     Database.load("data/db_charactersprites.csv")
     Database.load("data/db_charactersounds.csv")
+    Database.load("data/db_characterstates.csv")
     Database.load("data/db_attacks.csv")
     Database.load("data/db_vfx.csv")
     Database.forEach(function(_, properties)
@@ -65,6 +66,17 @@ end
 
 function keypressed.p()
     paused = not paused
+end
+
+function keypressed.s()
+    if love.keyboard.isDown("lctrl") then
+        local filename = os.date("screenshot-%Y%m%d-%H%M%S.png")
+        local i = 1
+        while love.filesystem.getInfo(filename) do
+            filename = os.date("screenshot-%Y%m%d-%H%M%S-"..i..".png")
+        end
+        love.graphics.captureScreenshot(filename)
+    end
 end
 
 function GamePhase.gamepadpressed(gamepad, button)
