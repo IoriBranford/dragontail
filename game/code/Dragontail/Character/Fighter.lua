@@ -189,7 +189,6 @@ function Fighter:wallBump(thrower, oobx, ooby)
             y = self.y + ooby*bodyradius
         }
     )
-    Audio.play(self.bodybumpsound)
     self.health = self.health - (self.wallbumpdamage or 10)
     self.hurtstun = self.wallbumpstun or 3
     self.velx, self.vely = 0, 0
@@ -251,7 +250,6 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
             y = self.y + ooby*bodyradius
         }
     )
-    Audio.play(self.bodyslamsound)
     self.health = self.health - (self.wallslamdamage or 25)
     self.hurtstun = self.wallslamstun or 20
     self.velx, self.vely = 0, 0
@@ -265,7 +263,6 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
 end
 
 function Fighter:thrownRecover(thrower)
-    Audio.play(self.thrownrecoversound)
     local bounds = self.bounds
     local recovertime = self.thrownrecovertime or 10
     local oobx, ooby
@@ -290,7 +287,6 @@ function Fighter:thrownRecover(thrower)
 end
 
 function Fighter:breakaway(other)
-    Audio.play(self.breakawaysound)
     Fighter.stopHolding(other, self)
     Fighter.stopHolding(self, other)
     local breakspeed = 10

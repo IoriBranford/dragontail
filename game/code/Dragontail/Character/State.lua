@@ -1,4 +1,5 @@
 local Database = require "Data.Database"
+local Audio    = require "System.Audio"
 
 local co_create = coroutine.create
 local co_resume = coroutine.resume
@@ -51,6 +52,8 @@ function State.start(self, statename, ...)
                 self:changeAseAnimation(animationname, frame, state.loop)
             end
         end
+
+        Audio.play(state.sound)
 
         local action = self[state.action]
         if type(action) == "function" then
