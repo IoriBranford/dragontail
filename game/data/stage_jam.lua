@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.11.0",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -868,7 +868,7 @@ return {
       type = "objectgroup",
       draworder = "topdown",
       id = 2,
-      name = "stage",
+      name = "room0",
       class = "",
       visible = true,
       opacity = 1,

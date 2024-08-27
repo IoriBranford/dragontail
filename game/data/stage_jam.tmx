@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="80" height="12" tilewidth="32" tileheight="32" infinite="0" nextlayerid="24" nextobjectid="80">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="80" height="12" tilewidth="32" tileheight="32" infinite="0" nextlayerid="24" nextobjectid="80">
  <editorsettings>
   <export target="stage_jam.lua" format="lua"/>
  </editorsettings>
@@ -20,7 +20,7 @@
    eJztk0EOgjAQRUsCdENBQK+lci8R0GsJCHgg/2TG6JIFXTk/eZnyO39aSHDWmBK8Yq4ZqIwxZ1DIegRXcAQDmNDboR6wX6PuLT9TZo65ZgHPTAPO5AH30/xBstRLPvW3ch7tpZJ1lmfnYAcvQU0tn/+Z61Ab1N7wXSc5m97lhPUid6XZ5Nfme59EenrJpL/78l1aWVcyg+bRd0hk3YToAR24gXvoz7uAeoW3ddanN4InmMAMFo/eA/QrvK2zPr0swr8BclCAMvLnJcCt8LbO+vRUKpVKpVKpVP+lNwhdlUI=
   </data>
  </layer>
- <objectgroup id="2" name="stage">
+ <objectgroup id="2" name="room0">
   <properties>
    <property name="z" type="int" value="0"/>
   </properties>

@@ -48,7 +48,7 @@ function Stage.init(stagefile)
     map:indexLayerObjectsByName()
     roomindex = 0
 
-    bounds = map.layers.stage.bounds
+    bounds = map.layers.room0.bounds
     bounds.width = Stage.CameraWidth
     camerax, cameray = 0, (map.height*map.tileheight) - Stage.CameraHeight
     cameravelx, cameravely = 0, 0
@@ -140,6 +140,8 @@ function Stage.updateGoingToNextRoom()
         cameravelx = 0
     end
     local roomright = roombounds.x + roombounds.width
+    bounds.y = roombounds.y
+    bounds.height = roombounds.height
     local cameraxmax = roomright - Stage.CameraWidth
     if camerax >= cameraxmax then
         camerax = cameraxmax
