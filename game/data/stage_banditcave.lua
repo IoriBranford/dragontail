@@ -5,12 +5,12 @@ return {
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
-  width = 30,
-  height = 20,
+  width = 200,
+  height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 5,
-  nextobjectid = 8,
+  nextlayerid = 9,
+  nextobjectid = 17,
   properties = {},
   tilesets = {
     {
@@ -2122,6 +2122,100 @@ return {
       },
       tilecount = 2816,
       tiles = {}
+    },
+    {
+      name = "bandits",
+      firstgid = 5265,
+      class = "",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 16,
+      image = "objects/bandit/bandits.png",
+      imagewidth = 1024,
+      imageheight = 64,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 64,
+        height = 64
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 16,
+      tiles = {
+        {
+          id = 0,
+          type = "bandit-dagger"
+        },
+        {
+          id = 1,
+          type = "bandit-dagger"
+        },
+        {
+          id = 2,
+          type = "bandit-dagger"
+        },
+        {
+          id = 3,
+          type = "bandit-dagger"
+        },
+        {
+          id = 4,
+          type = "bandit-spear"
+        },
+        {
+          id = 5,
+          type = "bandit-spear"
+        },
+        {
+          id = 6,
+          type = "bandit-spear"
+        },
+        {
+          id = 7,
+          type = "bandit-spear"
+        },
+        {
+          id = 8,
+          type = "bandit-bow"
+        },
+        {
+          id = 9,
+          type = "bandit-bow"
+        },
+        {
+          id = 10,
+          type = "bandit-bow"
+        },
+        {
+          id = 11,
+          type = "bandit-bow"
+        },
+        {
+          id = 12,
+          type = "bandit-arrow"
+        },
+        {
+          id = 13,
+          type = "bandit-arrow"
+        },
+        {
+          id = 14,
+          type = "bandit-arrow"
+        },
+        {
+          id = 15,
+          type = "bandit-arrow"
+        }
+      }
     }
   },
   layers = {
@@ -2129,8 +2223,8 @@ return {
       type = "tilelayer",
       x = 0,
       y = 0,
-      width = 30,
-      height = 20,
+      width = 200,
+      height = 12,
       id = 2,
       name = "floor",
       class = "",
@@ -2158,7 +2252,7 @@ return {
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJxjYBhZgJFzFI/i4YMB70MHCQ=="
+          data = "eJxjYBhZYLrwKB7FwwcDAAabd4k="
         },
         {
           x = 80, y = 0, width = 20, height = 12,
@@ -2167,6 +2261,22 @@ return {
         {
           x = 100, y = 0, width = 20, height = 12,
           data = "eJxjYBhZgJFzFI/i4YMB70MHCQ=="
+        },
+        {
+          x = 120, y = 0, width = 20, height = 12,
+          data = "eJxjYBhZgJFzFI/i4YMB70MHCQ=="
+        },
+        {
+          x = 140, y = 0, width = 20, height = 12,
+          data = "eJxjYBhZgJFzFI/i4YMB70MHCQ=="
+        },
+        {
+          x = 160, y = 0, width = 20, height = 12,
+          data = "eJxjYBhZgJFzFI/i4YMB70MHCQ=="
+        },
+        {
+          x = 180, y = 0, width = 20, height = 12,
+          data = "eJxjYBhZgJFzFI/i4YMB70MHCQ=="
         }
       }
     },
@@ -2174,8 +2284,8 @@ return {
       type = "tilelayer",
       x = 0,
       y = 0,
-      width = 30,
-      height = 20,
+      width = 200,
+      height = 12,
       id = 1,
       name = "wall",
       class = "",
@@ -2203,7 +2313,7 @@ return {
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJztx8cJACAUwFDFMpJlJMtIllXNDn7wYuAdYrRSFg4e5vIDIhKywBdUNHSBH5hY2AL/+73sABO2GaE="
+          data = "eJybLszAMJ2KWISPgUEUiMWAWByIJfgoEwsB4lAgDgPicCCOoFBsChBPBeJpQDwdiGdQKDYKRsFAAgB8eiS5"
         },
         {
           x = 80, y = 0, width = 20, height = 12,
@@ -2212,6 +2322,22 @@ return {
         {
           x = 100, y = 0, width = 20, height = 12,
           data = "eJztx8cJACAUwFDFMpJlJMtIllXNDn7wYuAdYrRSFg4e5vIDIhKywBdUNHSBH5hY2AL/+73sABO2GaE="
+        },
+        {
+          x = 120, y = 0, width = 20, height = 12,
+          data = "eJztx8cJACAUwFDFMpJlJMtIllXNDn7wYuAdYrRSFg4e5vIDIhKywBdUNHSBH5hY2AL/+73sABO2GaE="
+        },
+        {
+          x = 140, y = 0, width = 20, height = 12,
+          data = "eJztx8cJACAUwFDFMpJlJMtIllXNDn7wYuAdYrRSFg4e5vIDIhKywBdUNHSBH5hY2AL/+73sABO2GaE="
+        },
+        {
+          x = 160, y = 0, width = 20, height = 12,
+          data = "eJztx8cJACAUwFDFMpJlJMtIllXNDn7wYuAdYrRSFg4e5vIDIhKywBdUNHSBH5hY2AL/+73sABO2GaE="
+        },
+        {
+          x = 180, y = 0, width = 20, height = 12,
+          data = "eJztx8cJACAUwFDFMpJlJMtIllXNDn7wYuAdYrRSFg4e5vIDIhKywBdUNHSBH5hY2AL/+73sABO2GaE="
         }
       }
     },
@@ -2219,8 +2345,8 @@ return {
       type = "tilelayer",
       x = 0,
       y = 0,
-      width = 30,
-      height = 20,
+      width = 200,
+      height = 12,
       id = 4,
       name = "ceiling",
       class = "",
@@ -2234,6 +2360,136 @@ return {
       encoding = "base64",
       compression = "zlib",
       chunks = {}
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 5,
+      name = "room0",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 12,
+          name = "bounds",
+          type = "",
+          shape = "rectangle",
+          x = 0,
+          y = 128,
+          width = 640,
+          height = 256,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 7,
+      name = "room1",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 10,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 704,
+          y = 184,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 5266,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 11,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 672,
+          y = 216,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 5266,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 14,
+          name = "bounds",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 128,
+          width = 640,
+          height = 256,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 8,
+      name = "fight1",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 15,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1024,
+          y = 216,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 5266,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 16,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 992,
+          y = 248,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 5266,
+          visible = true,
+          properties = {}
+        }
+      }
     },
     {
       type = "objectgroup",
@@ -2254,13 +2510,13 @@ return {
           name = "",
           type = "",
           shape = "text",
-          x = 0,
+          x = 640,
           y = -360,
           width = 640,
           height = 360,
           rotation = 0,
           visible = true,
-          text = "Room 1\n\nTeach basic moving and attacking\nIntroduce first low-level enemies",
+          text = "Room 1\n\nTeach basic combat with first low-level enemies",
           fontfamily = "Unifont",
           pixelsize = 32,
           wrap = true,
@@ -2273,13 +2529,13 @@ return {
           name = "",
           type = "",
           shape = "text",
-          x = 640,
+          x = 1280,
           y = -360,
           width = 640,
           height = 360,
           rotation = 0,
           visible = true,
-          text = "Room 2\n\nIntroduce dodging enemy encouraging player to run",
+          text = "Room 2\n\nIntroduce dodging enemy encouraging player to use run in combat",
           fontfamily = "Unifont",
           pixelsize = 32,
           wrap = true,
@@ -2292,13 +2548,13 @@ return {
           name = "",
           type = "",
           shape = "text",
-          x = 1280,
+          x = 1920,
           y = -360,
           width = 640,
           height = 360,
           rotation = 0,
           visible = true,
-          text = "Room 3\n\nTeach grabbing with guarding enemy and door broken only by thrown enemy",
+          text = "Room 3\n\nTeach grabbing with guarding enemy and barrier broken only by thrown enemy",
           fontfamily = "Unifont",
           pixelsize = 32,
           wrap = true,
@@ -2311,7 +2567,7 @@ return {
           name = "",
           type = "",
           shape = "text",
-          x = 1920,
+          x = 2560,
           y = -360,
           width = 640,
           height = 360,
@@ -2330,7 +2586,7 @@ return {
           name = "",
           type = "",
           shape = "text",
-          x = 2560,
+          x = 3200,
           y = -360,
           width = 640,
           height = 360,
@@ -2349,7 +2605,7 @@ return {
           name = "",
           type = "",
           shape = "text",
-          x = 3200,
+          x = 3840,
           y = -360,
           width = 640,
           height = 360,
@@ -2368,13 +2624,70 @@ return {
           name = "",
           type = "",
           shape = "text",
-          x = 3840,
+          x = 4480,
           y = -360,
           width = 640,
           height = 360,
           rotation = 0,
           visible = true,
-          text = "Room 7\n\nMess hall with food, breakable furniture, stronger mix of enemies",
+          text = "Room 7\n\nMess hall with food, throwable and breakable furniture, stronger mix of enemies",
+          fontfamily = "Unifont",
+          pixelsize = 32,
+          wrap = true,
+          color = { 255, 255, 255 },
+          valign = "bottom",
+          properties = {}
+        },
+        {
+          id = 8,
+          name = "",
+          type = "",
+          shape = "text",
+          x = 5120,
+          y = -360,
+          width = 640,
+          height = 360,
+          rotation = 0,
+          visible = true,
+          text = "Room 8\n\nBoss arena",
+          fontfamily = "Unifont",
+          pixelsize = 32,
+          wrap = true,
+          color = { 255, 255, 255 },
+          valign = "bottom",
+          properties = {}
+        },
+        {
+          id = 9,
+          name = "",
+          type = "",
+          shape = "text",
+          x = 5760,
+          y = -360,
+          width = 640,
+          height = 360,
+          rotation = 0,
+          visible = true,
+          text = "End room\n\nHolding cells with captured kids",
+          fontfamily = "Unifont",
+          pixelsize = 32,
+          wrap = true,
+          color = { 255, 255, 255 },
+          valign = "bottom",
+          properties = {}
+        },
+        {
+          id = 13,
+          name = "",
+          type = "",
+          shape = "text",
+          x = 0,
+          y = -360,
+          width = 640,
+          height = 360,
+          rotation = 0,
+          visible = true,
+          text = "Room 0\n\nTeach movement - walking and running",
           fontfamily = "Unifont",
           pixelsize = 32,
           wrap = true,
