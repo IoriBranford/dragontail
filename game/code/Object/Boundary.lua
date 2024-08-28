@@ -104,25 +104,27 @@ end
 
 function Boundary:drawCollisionDebug(x, y, r)
     local selfx, selfy = self.x, self.y
+    x, y = x - selfx, y - selfy
+    love.graphics.push()
+    love.graphics.translate(selfx, selfy)
+
     local triangles = self.triangles
     if triangles then
         love.graphics.setColor(.25, .25, .25)
         for i = 6, #triangles, 6 do
             love.graphics.polygon("line",
-                selfx + triangles[i-5],
-                selfy + triangles[i-4],
-                selfx + triangles[i-3],
-                selfy + triangles[i-2],
-                selfx + triangles[i-1],
-                selfy + triangles[i])
+                triangles[i-5], triangles[i-4],
+                triangles[i-3], triangles[i-2],
+                triangles[i-1], triangles[i])
         end
     end
+
     local points = self.points
     if points then
         local sarea = self.signedarea
-        local x1, y1 = selfx + points[#points-1], selfy + points[#points]
+        local x1, y1 = points[#points-1], points[#points]
         for i = 2, #points, 2 do
-            local x2, y2 = selfx + points[i-1], selfy + points[i]
+            local x2, y2 = points[i-1], points[i]
             local projx, projy = projpointsegment(x, y, x1, y1, x2, y2)
             love.graphics.setColor(1, 0, 0)
             love.graphics.circle("fill", projx, projy, 2)
@@ -136,7 +138,9 @@ function Boundary:drawCollisionDebug(x, y, r)
             x1, y1 = x2, y2
         end
     end
+
     love.graphics.setColor(1, 1, 1)
+    love.graphics.pop()
     self:draw()
 end
 
