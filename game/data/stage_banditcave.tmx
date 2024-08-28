@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" nextlayerid="9" nextobjectid="17">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" nextlayerid="11" nextobjectid="21">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -78,17 +78,28 @@
  <layer id="4" name="ceiling" width="200" height="12">
   <data encoding="base64" compression="zlib"/>
  </layer>
- <objectgroup id="5" name="room0">
-  <object id="12" name="bounds" x="0" y="128" width="640" height="256"/>
+ <objectgroup id="5" name="room0" visible="0">
+  <object id="12" template="objects/RectBoundary.tx" x="0" y="128" width="960" height="256"/>
  </objectgroup>
  <objectgroup id="7" name="room1">
-  <object id="10" gid="5266" x="704" y="184" width="64" height="64"/>
-  <object id="11" gid="5266" x="672" y="216" width="64" height="64"/>
-  <object id="14" name="bounds" x="320" y="128" width="640" height="256"/>
+  <object id="14" template="objects/PolyBoundary.tx" x="0" y="128">
+   <polygon points="40,40 384,24 640,0 816,48 776,192 640,256 352,200 24,208"/>
+  </object>
  </objectgroup>
  <objectgroup id="8" name="fight1">
   <object id="15" gid="5266" x="1024" y="216" width="64" height="64"/>
   <object id="16" gid="5266" x="992" y="248" width="64" height="64"/>
+ </objectgroup>
+ <objectgroup id="9" name="room2">
+  <object id="18" template="objects/PolyBoundary.tx" x="320" y="128">
+   <polygon points="0,0 640,0 768,48 880,40 992,-16 1096,72 1088,184 984,232 872,200 768,192 640,256 0,256"/>
+  </object>
+ </objectgroup>
+ <objectgroup id="10" name="fight2">
+  <object id="19" gid="5266" x="1408" y="160" width="64" height="64"/>
+  <object id="20" gid="5266" x="1384" y="360" width="64" height="64"/>
+  <object id="10" gid="5266" x="704" y="184" width="64" height="64"/>
+  <object id="11" gid="5266" x="672" y="216" width="64" height="64"/>
  </objectgroup>
  <objectgroup id="3" name="notes">
   <object id="1" x="640" y="-360" width="640" height="360">

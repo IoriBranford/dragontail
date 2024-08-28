@@ -37,12 +37,9 @@ end
 
 --- Burst of speed towards angle (away from angle if speed < 0) then slow to 0
 function Fighter:slide(angle, speed, decel)
-    local bounds = self.bounds
     repeat
         speed = self:updateSlideSpeed(angle, speed, decel)
-        if bounds then
-            self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
-        end
+        self:keepInBounds()
         yield()
     until speed == 0
 end
@@ -98,10 +95,9 @@ function Fighter:hurt(attacker)
         return hiteffect, attacker, attackangle
     end
     Audio.play(self.hurtsound)
-    local bounds = self.bounds
     while pushbackspeed > 0 do
         pushbackspeed = Fighter.updateSlideSpeed(self, attackangle, pushbackspeed)
-        self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+        self:keepInBounds()
         yield()
     end
     local recoverai = self.aiafterhurt or self.recoverai
@@ -163,12 +159,11 @@ function Fighter:knockedBack(thrower, attackangle)
     self:stopAttack()
     local thrownspeed = thrower.attacklaunchspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
-    local bounds = self.bounds
     local recovertime = self.knockedbacktime or 10
     local oobx, ooby
     repeat
         yield()
-        oobx, ooby = self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+        oobx, ooby = self:keepInBounds()
         recovertime = recovertime - 1
     until recovertime <= 0 or oobx or ooby
     if oobx or ooby then
@@ -222,12 +217,11 @@ function Fighter:thrown(thrower, attackangle)
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
     local thrownsound = Audio.newSource(self.swingsound)
     thrownsound:play()
-    local bounds = self.bounds
     local recovertime = self.thrownrecovertime or 30
     local oobx, ooby
     repeat
         yield()
-        oobx, ooby = self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+        oobx, ooby = self:keepInBounds()
         recovertime = recovertime - 1
     until recovertime <= 0 or oobx or ooby
     thrownsound:stop()
@@ -263,13 +257,12 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
 end
 
 function Fighter:thrownRecover(thrower)
-    local bounds = self.bounds
     local recovertime = self.thrownrecovertime or 10
     local oobx, ooby
     repeat
         yield()
         self:accelerateTowardsVel(0, 0, recovertime)
-        oobx, ooby = self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+        oobx, ooby = self:keepInBounds()
         recovertime = recovertime - 1
     until recovertime <= 0 or oobx or ooby
 
@@ -300,13 +293,12 @@ function Fighter:breakaway(other)
     Stage.addCharacter(hitsparkcharacter)
     self.velx, self.vely = -dirx * breakspeed, -diry * breakspeed
 
-    local bounds = self.bounds
     local t = 1
     -- self.hurtstun = self.breakawaystun or 15
     repeat
         yield()
         self:accelerateTowardsVel(0, 0, 8)
-        self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+        self:keepInBounds()
         t = t + 1
     until t > 15
 
@@ -319,12 +311,11 @@ function Fighter:breakaway(other)
 end
 
 function Fighter:fall(attacker)
-    local bounds = self.bounds
     local t = 1
     repeat
         self:accelerateTowardsVel(0, 0, 8)
         yield()
-        self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+        self:keepInBounds()
         t = t + 1
     until t > 20
     Audio.play(self.bodydropsound)
@@ -335,7 +326,7 @@ function Fighter:fall(attacker)
         repeat
             self:accelerateTowardsVel(0, 0, 8)
             yield()
-            self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+            self:keepInBounds()
             t = t + 1
         until t > 20
         return self.getupai or "getup", attacker

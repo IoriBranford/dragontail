@@ -883,7 +883,7 @@ return {
         {
           id = 1,
           name = "bounds",
-          type = "",
+          type = "Boundary",
           shape = "rectangle",
           x = 0,
           y = 128,
@@ -912,7 +912,7 @@ return {
         {
           id = 75,
           name = "bounds",
-          type = "",
+          type = "Boundary",
           shape = "rectangle",
           x = 1920,
           y = 128,
@@ -973,7 +973,7 @@ return {
         {
           id = 62,
           name = "bounds",
-          type = "",
+          type = "Boundary",
           shape = "rectangle",
           x = 1440,
           y = 128,
@@ -1064,7 +1064,7 @@ return {
         {
           id = 5,
           name = "bounds",
-          type = "",
+          type = "Boundary",
           shape = "rectangle",
           x = 1120,
           y = 128,
@@ -1134,7 +1134,7 @@ return {
         {
           id = 3,
           name = "bounds",
-          type = "",
+          type = "Boundary",
           shape = "rectangle",
           x = 720,
           y = 128,
@@ -1251,7 +1251,7 @@ return {
         {
           id = 4,
           name = "bounds",
-          type = "",
+          type = "Boundary",
           shape = "rectangle",
           x = 512,
           y = 128,
@@ -1282,7 +1282,7 @@ return {
         {
           id = 2,
           name = "bounds",
-          type = "",
+          type = "Boundary",
           shape = "rectangle",
           x = 128,
           y = 128,

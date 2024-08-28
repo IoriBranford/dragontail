@@ -183,23 +183,23 @@ function Enemy:approach()
     local x, y = self.x, self.y
     local opponent = self.opponent
     local oppox, oppoy = opponent.x, opponent.y
-    local bodyradius = self.bodyradius
-    local bounds = self.bounds
-    local minx, miny = bounds.x + bodyradius, bounds.y + bodyradius
-    local maxx, maxy = bounds.x + bounds.width - bodyradius, bounds.y + bounds.height - bodyradius
+    -- local bodyradius = self.bodyradius
+    -- local bounds = self.bounds
+    -- local minx, miny = bounds.x + bodyradius, bounds.y + bodyradius
+    -- local maxx, maxy = bounds.x + bounds.width - bodyradius, bounds.y + bounds.height - bodyradius
 
     -- choose dest
     local destanglefromoppo = lm_random(4)*pi/2
     local attackradius = totalAttackRange(self.attackradius or 64, self.attacklungespeed or 0, self.attacklungedecel or 1) + opponent.bodyradius
     local destx, desty
-    repeat
+    -- repeat
         destx = oppox + cos(destanglefromoppo) * attackradius
         desty = oppoy + sin(destanglefromoppo) * attackradius
-        destanglefromoppo = destanglefromoppo + pi/2
-        if destanglefromoppo > 4*pi then
-            return "stand", 10
-        end
-    until minx <= destx and destx <= maxx and miny <= desty and desty <= maxy
+    --     destanglefromoppo = destanglefromoppo + pi/2
+    --     if destanglefromoppo > 4*pi then
+    --         return "stand", 10
+    --     end
+    -- until minx <= destx and destx <= maxx and miny <= desty and desty <= maxy
 
     -- choose animation
     if desty ~= y or destx ~= x then
@@ -252,7 +252,6 @@ function Enemy:attack()
     self.velx, self.vely = 0, 0
 
     local x, y = self.x, self.y
-    local bounds = self.bounds
     local opponent = self.opponent
     opponent.attacker = self
     local oppox, oppoy = opponent.x, opponent.y
@@ -307,7 +306,7 @@ function Enemy:attack()
         lungespeed = Fighter.updateSlideSpeed(self, tooppoangle, lungespeed)
         hittime = hittime - 1
         yield()
-        self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+        self:keepInBounds()
     until hittime <= 0
 
     self:stopAttack()
@@ -321,7 +320,7 @@ function Enemy:attack()
         lungespeed = Fighter.updateSlideSpeed(self, tooppoangle, lungespeed)
         afterhittime = afterhittime - 1
         yield()
-        self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+        self:keepInBounds()
     until afterhittime <= 0
 
     return "stand", 20

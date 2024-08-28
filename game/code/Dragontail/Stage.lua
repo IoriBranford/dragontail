@@ -5,6 +5,7 @@ local Database    = require "Data.Database"
 local Audio     = require "System.Audio"
 local Movement  = require "Component.Movement"
 local State       = require "Dragontail.Character.State"
+local Boundary    = require "Object.Boundary"
 local Stage = {
     CameraWidth = 640,
     CameraHeight = 360
@@ -18,11 +19,11 @@ local player -- character controlled by player
 local enemies -- characters player must beat to advance
 local solids -- characters who should block others' movement
 local allcharacters
-local bounds
 local map
 local roomindex
 local gamestatus
-local camerax, cameray, cameravelx, cameravely
+
+---@class Camera:Boundary
 
 function Stage.quit()
     scene = nil
@@ -30,11 +31,11 @@ function Stage.quit()
     enemies = nil
     solids = nil
     allcharacters = nil
-    bounds = nil
+    Stage.bounds = nil
     map = nil
     roomindex = nil
     gamestatus = nil
-    camerax, cameray = nil, nil
+    Stage.camera = nil
 end
 
 function Stage.init(stagefile)
@@ -48,15 +49,24 @@ function Stage.init(stagefile)
     map:indexLayerObjectsByName()
     roomindex = 0
 
-    bounds = map.layers.room0.bounds
-    bounds.width = Stage.CameraWidth
-    camerax, cameray = 0, (map.height*map.tileheight) - Stage.CameraHeight
-    cameravelx, cameravely = 0, 0
+    for id, object in pairs(map.objects) do
+        if object.type == "Boundary" then
+            Boundary.cast(object)
+            object:init()
+        end
+    end
+
+    Stage.bounds = map.layers.room0.bounds ---@type Boundary
+    Stage.camera = Boundary.from({
+        shape = "rectangle",
+        x = 0, y = 0, velx = 0, vely = 0,
+        width = Stage.CameraWidth, height = Stage.CameraHeight
+    })
 
     scene:addMap(map, "group,tilelayer")
 
     player = Stage.addCharacter({
-        x = 160, y = 180, type = "Rose", bounds = bounds
+        x = 160, y = 180, type = "Rose"
     })
 
     Stage.openNextRoom()
@@ -78,7 +88,6 @@ function Stage.addCharacter(object)
     character:init()
     character:initAseprite()
 
-    character.bounds = bounds
     character.solids = solids
     if character.team == "player" then
         character.opponents = enemies
@@ -104,7 +113,7 @@ function Stage.addCharacters(objects)
     for i = 1, #objects do local object = objects[i]
         local typ = object.type
         if typ ~= "" then
-            if typ == "bounds" then
+            if typ == "Boundary" then
             else
                 addCharacter(object)
             end
@@ -117,6 +126,7 @@ function Stage.openNextRoom()
     roomindex = roomindex + 1
     local room = map.layers["room"..roomindex]
     if room then
+        Stage.bounds = room.bounds
         addCharacters(room)
         gamestatus = "goingToNextRoom"
     else
@@ -127,26 +137,22 @@ function Stage.openNextRoom()
 end
 
 function Stage.updateGoingToNextRoom()
-    camerax = camerax + cameravelx
-    camerax = max(0, camerax)
-    bounds.x = camerax
+    local camera = Stage.camera
+    camera.x = camera.x + camera.velx
+    camera.x = max(0, camera.x)
     local room = map.layers["room"..roomindex]
     assert(room, "No room "..roomindex)
-    local roombounds = room.bounds
     local cameradestx = player.x - Stage.CameraWidth/2
-    if camerax < cameradestx then
-        cameravelx = Movement.moveTowards(camerax, cameradestx, 6) - camerax
+    if camera.x < cameradestx then
+        camera.velx = Movement.moveTowards(camera.x, cameradestx, 6) - camera.x
     else
-        cameravelx = 0
+        camera.velx = 0
     end
-    local roomright = roombounds.x + roombounds.width
-    bounds.y = roombounds.y
-    bounds.height = roombounds.height
+    local roomright = Stage.bounds.right
     local cameraxmax = roomright - Stage.CameraWidth
-    if camerax >= cameraxmax then
-        camerax = cameraxmax
-        bounds.x = camerax
-        cameravelx = 0
+    if camera.x >= cameraxmax then
+        camera.x = cameraxmax
+        camera.velx = 0
         Stage.startNextFight()
     end
 end
@@ -199,7 +205,7 @@ function Stage.fixedupdate()
     for i = 1, #solids do local solid = solids[i]
         player:collideWithCharacterBody(solid)
     end
-    player:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+    player:keepInBounds()
 
     pruneDisappeared(enemies, Stage.openNextRoom)
     pruneDisappeared(solids)
@@ -243,8 +249,11 @@ end
 
 function Stage.draw(fixedfrac)
     love.graphics.push()
-    love.graphics.translate(-camerax - cameravelx*fixedfrac, -cameray - cameravely*fixedfrac)
+    local camera = Stage.camera
+    love.graphics.translate(-camera.x - camera.velx*fixedfrac, -camera.y - camera.vely*fixedfrac)
     scene:draw(fixedfrac)
+    -- Stage.bounds:draw()
+    -- Stage.bounds:drawCollisionDebug(player.x, player.y, player.bodyradius)
     love.graphics.pop()
 end
 

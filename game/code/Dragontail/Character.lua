@@ -188,42 +188,32 @@ function Character:rotateAttackTowards(targetangle, turnspeed)
     self.attackangle = self.attackangle + dangle
 end
 
-function Character:getBoundsPenetration(bx, by, bw, bh)
+function Character:keepInBounds()
+    local Stage = require "Dragontail.Stage"
+    local bounds = Stage.bounds
     local x, y = self.x, self.y
-    local bodyradius = self.bodyradius
-    local x1, x2 = x - bodyradius, x + bodyradius
-    local y1, y2 = y - bodyradius, y + bodyradius
-    local bx2, by2 = bx + bw, by + bh
-    local penex, peney
-    if x1 < bx then
-        penex = x1 - bx
-    elseif x2 > bx2 then
-        penex = x2 - bx2
-    end
-    if y1 < by then
-        peney = y1 - by
-    elseif y2 > by2 then
-        peney = y2 - by2
-    end
-    return penex, peney
-end
-
-function Character:keepInBounds(bx, by, bw, bh, bounce)
-    local penex, peney = self:getBoundsPenetration(bx, by, bw, bh)
-    bounce = bounce or 0
-    if penex then
-        self.x = self.x - penex
-        if self.velx * penex > 0 then
-            self.velx = bounce * -self.velx
+    local totalpenex, totalpeney, penex, peney
+    if bounds then
+        x, y, penex, peney = bounds:keepCircleInside(x, y, self.bodyradius)
+        if penex then
+            totalpenex = (totalpenex or 0) + penex
+        end
+        if peney then
+            totalpeney = (totalpeney or 0) + peney
         end
     end
-    if peney then
-        self.y = self.y - peney
-        if self.vely * peney > 0 then
-            self.vely = bounce * -self.vely
+    bounds = Stage.camera
+    if bounds then
+        x, y, penex, peney = bounds:keepCircleInside(x, y, self.bodyradius)
+        if penex then
+            totalpenex = (totalpenex or 0) + penex
+        end
+        if peney then
+            totalpeney = (totalpeney or 0) + peney
         end
     end
-    return penex, peney
+    self.x, self.y = x, y
+    return totalpenex, totalpeney
 end
 
 function Character:testBodyCollision(other)

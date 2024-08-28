@@ -62,10 +62,10 @@ local function findSomethingToRunningAttack(self, velx, vely)
 end
 
 local function findWallCollision(self)
-    local x, y, bounds = self.x, self.y, self.bounds
-    local oobx, ooby = self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
-    if oobx or ooby then
-        return norm(oobx or 0, ooby or 0)
+    local oobx, ooby = self:keepInBounds()
+    oobx, ooby = oobx or 0, ooby or 0
+    if oobx ~= 0 or ooby ~= 0 then
+        return norm(oobx, ooby)
     end
 end
 

@@ -108,7 +108,6 @@ function Common:projectileFly(shooter, angle)
     angle = angle or self.attackangle
     Database.fill(self, self.defaultattack)
     self:startAttack(angle)
-    local bounds = self.bounds
     local speed = self.speed
     self.velx = speed*cos(angle)
     self.vely = speed*sin(angle)
@@ -120,7 +119,7 @@ function Common:projectileFly(shooter, angle)
     local oobx, ooby
     repeat
         yield()
-        oobx, ooby = self:keepInBounds(bounds.x, bounds.y, bounds.width, bounds.height)
+        oobx, ooby = self:keepInBounds()
     until oobx or ooby
     return "projectileHit"
 end
