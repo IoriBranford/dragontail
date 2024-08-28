@@ -252,7 +252,6 @@ function Stage.draw(fixedfrac)
     local camera = Stage.camera
     love.graphics.translate(-camera.x - camera.velx*fixedfrac, -camera.y - camera.vely*fixedfrac)
     scene:draw(fixedfrac)
-    -- Stage.bounds:draw()
     -- Stage.bounds:drawCollisionDebug(player.x, player.y, player.bodyradius)
     love.graphics.pop()
 end
