@@ -21,6 +21,7 @@ end
 function math.dot(x, y, x2, y2)
     return x2*x + y2*y
 end
+local dot = math.dot
 
 function math.det(x, y, x2, y2)
     return x*y2 - y*x2
@@ -99,6 +100,35 @@ function math.frombary(a, b, c, ax, ay, bx, by, cx, cy)
     local x = a*ax + b*bx + c*cx
     local y = a*ay + b*by + c*cy
     return x, y
+end
+
+---Gets point on line segment from (ax, ay) to (bx, by) that is closest to point (px, py)
+---@return number projx closest point on segment x
+---@return number projy closest point on segment y
+function math.projpointsegment(px, py, ax, ay, bx, by)
+    local apx, apy = px-ax, py-ay
+    local abx, aby = bx-ax, by-ay
+    local t = dot(apx, apy, abx, aby)
+    if t <= 0 then
+        return ax, ay
+    end
+    local ablensq = lensq(abx, aby)
+    if t >= ablensq then
+        return bx, by
+    end
+    t = t / ablensq
+    return ax + t*abx, ay + t*aby
+end
+
+function math.polysignedarea(points)
+    local area = 0
+    local x1, y1 = points[#points-1], points[#points]
+    for i = 2, #points, 2 do
+        local x2, y2 = points[i-1], points[i]
+        area = area + det(x1, y1, x2, y2)
+        x1, y1 = x2, y2
+    end
+    return area
 end
 
 function math.testpointtri(px, py, ax, ay, bx, by, cx, cy)
