@@ -102,6 +102,73 @@ function Boundary:keepCircleInside(x, y, r)
     return x, y
 end
 
+---@class RayHit
+---@field hitx number where ray hit wall
+---@field hity number where ray hit wall
+---@field hitdist number
+---@field ax number first wall endpoint
+---@field ay number first wall endpoint
+---@field bx number second wall endpoint
+---@field by number second wall endpoint
+local RayHit = class()
+
+local function castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, hit)
+    local hitx, hity = math.intersectsegments(rx0, ry0, rx1, ry1, ax, ay, bx, by)
+    if hitx and hity then
+        hit = hit or {}
+        local hitdist = hit.hitdist or math.huge
+        local dist = math.dist(rx0, ry0, hitx, hity)
+        if dist < hitdist then
+            hit.hitx, hit.hity = hitx, hity
+            hit.hitdist = dist
+            hit.ax, hit.ay = ax, ay
+            hit.bx, hit.by = bx, by
+        end
+    end
+    return hit
+end
+
+---@param hit RayHit?
+function Boundary:castRayOnPolygon(rx0, ry0, rx1, ry1, hit)
+    local points = self.points
+    if not points then
+        return
+    end
+    local selfx, selfy = self.x, self.y
+    rx0, ry0 = rx0 - selfx, ry0 - selfy
+    rx1, ry1 = rx1 - selfx, ry1 - selfy
+    local ax, ay = points[#points-1], points[#points]
+    for b = 2, #points, 2 do
+        local bx, by = points[b-1], points[b]
+        hit = castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, hit)
+        ax, ay = bx, by
+    end
+    return hit
+end
+
+function Boundary:castRayOnRectangle(rx0, ry0, rx1, ry1, hit)
+    local width, height = self.width, self.height
+    local ax, ay = self.x, self.y
+    local bx, by = ax + width, ay
+    hit = castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, hit)
+    ax, by = ax + width, by + height
+    hit = castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, hit)
+    bx, ay = bx - width, ay + height
+    hit = castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, hit)
+    ax, by = ax - width, by - height
+    hit = castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, hit)
+    return hit
+end
+
+function Boundary:castRay(rx0, ry0, rx1, ry1, hit)
+    if self.shape == "polygon" then
+        return self:castRayOnPolygon(rx0, ry0, rx1, ry1, hit)
+    end
+    if self.shape == "rectangle" then
+        return self:castRayOnRectangle(rx0, ry0, rx1, ry1, hit)
+    end
+end
+
 function Boundary:drawCollisionDebug(x, y, r)
     local selfx, selfy = self.x, self.y
     x, y = x - selfx, y - selfy
