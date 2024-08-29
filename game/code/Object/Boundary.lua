@@ -143,6 +143,14 @@ function Boundary:castRayOnPolygon(rx0, ry0, rx1, ry1, hit)
         hit = castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, hit)
         ax, ay = bx, by
     end
+    if hit then
+        hit.hitx = hit.hitx + selfx
+        hit.hity = hit.hity + selfy
+        hit.ax = hit.ax + selfx
+        hit.ay = hit.ay + selfy
+        hit.bx = hit.bx + selfx
+        hit.by = hit.by + selfy
+    end
     return hit
 end
 
