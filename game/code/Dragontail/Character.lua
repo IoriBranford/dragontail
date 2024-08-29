@@ -4,6 +4,7 @@ local Config      = require "System.Config"
 local State       = require "Dragontail.Character.State"
 local Object      = require "Tiled.Object"
 local Movement    = require "Component.Movement"
+local Boundaries  = require "Dragontail.Stage.Boundaries"
 local pi = math.pi
 local floor = math.floor
 local sqrt = math.sqrt
@@ -189,30 +190,9 @@ function Character:rotateAttackTowards(targetangle, turnspeed)
 end
 
 function Character:keepInBounds()
-    local Stage = require "Dragontail.Stage"
-    local bounds = Stage.bounds
-    local x, y = self.x, self.y
-    local totalpenex, totalpeney, penex, peney
-    if bounds then
-        x, y, penex, peney = bounds:keepCircleInside(x, y, self.bodyradius)
-        if penex then
-            totalpenex = (totalpenex or 0) + penex
-        end
-        if peney then
-            totalpeney = (totalpeney or 0) + peney
-        end
-    end
-    bounds = Stage.camera
-    if bounds then
-        x, y, penex, peney = bounds:keepCircleInside(x, y, self.bodyradius)
-        if penex then
-            totalpenex = (totalpenex or 0) + penex
-        end
-        if peney then
-            totalpeney = (totalpeney or 0) + peney
-        end
-    end
-    self.x, self.y = x, y
+    local x, y, r = self.x, self.y, self.bodyradius
+    local totalpenex, totalpeney
+    self.x, self.y, totalpenex, totalpeney = Boundaries.keepCircleIn(x, y, r)
     return totalpenex, totalpeney
 end
 

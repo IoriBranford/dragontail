@@ -6,6 +6,7 @@ local Audio     = require "System.Audio"
 local Movement  = require "Component.Movement"
 local State       = require "Dragontail.Character.State"
 local Boundary    = require "Object.Boundary"
+local Boundaries  = require "Dragontail.Stage.Boundaries"
 local Stage = {
     CameraWidth = 640,
     CameraHeight = 360
@@ -22,6 +23,7 @@ local allcharacters
 local map
 local roomindex
 local gamestatus
+local camera ---@type Camera
 
 ---@class Camera:Boundary
 
@@ -31,11 +33,10 @@ function Stage.quit()
     enemies = nil
     solids = nil
     allcharacters = nil
-    Stage.bounds = nil
     map = nil
     roomindex = nil
     gamestatus = nil
-    Stage.camera = nil
+    camera = nil
 end
 
 function Stage.init(stagefile)
@@ -56,12 +57,12 @@ function Stage.init(stagefile)
         end
     end
 
-    Stage.bounds = map.layers.room0.bounds ---@type Boundary
-    Stage.camera = Boundary.from({
+    camera = Boundary.from({
         shape = "rectangle",
         x = 0, y = 0, velx = 0, vely = 0,
         width = Stage.CameraWidth, height = Stage.CameraHeight
     })
+    Boundaries.put("camera", camera)
 
     scene:addMap(map, "group,tilelayer")
 
@@ -126,7 +127,7 @@ function Stage.openNextRoom()
     roomindex = roomindex + 1
     local room = map.layers["room"..roomindex]
     if room then
-        Stage.bounds = room.bounds
+        Boundaries.put("room", room.bounds)
         addCharacters(room)
         gamestatus = "goingToNextRoom"
     else
@@ -137,7 +138,6 @@ function Stage.openNextRoom()
 end
 
 function Stage.updateGoingToNextRoom()
-    local camera = Stage.camera
     camera.x = camera.x + camera.velx
     camera.x = max(0, camera.x)
     local room = map.layers["room"..roomindex]
@@ -148,7 +148,8 @@ function Stage.updateGoingToNextRoom()
     else
         camera.velx = 0
     end
-    local roomright = Stage.bounds.right
+    local roombounds = Boundaries.get("room")
+    local roomright = roombounds.right
     local cameraxmax = roomright - Stage.CameraWidth
     if camera.x >= cameraxmax then
         camera.x = cameraxmax
@@ -249,10 +250,9 @@ end
 
 function Stage.draw(fixedfrac)
     love.graphics.push()
-    local camera = Stage.camera
     love.graphics.translate(-camera.x - camera.velx*fixedfrac, -camera.y - camera.vely*fixedfrac)
     scene:draw(fixedfrac)
-    -- Stage.bounds:drawCollisionDebug(player.x, player.y, player.bodyradius)
+    -- Boundaries.get("room"):drawCollisionDebug(player.x, player.y, player.bodyradius)
     love.graphics.pop()
 end
 
