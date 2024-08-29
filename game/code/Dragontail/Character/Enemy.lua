@@ -94,7 +94,7 @@ function Enemy:stand(duration)
     duration = duration or 20
     self.velx, self.vely = 0, 0
     local x, y = self.x, self.y
-    local opponent = self.opponent
+    local opponent = self.opponents[1]
     local oppox, oppoy
     for _ = 1, duration do
         oppox, oppoy = opponent.x, opponent.y
@@ -156,7 +156,7 @@ function Enemy:stand(duration)
 end
 
 function Enemy:dodgeIncoming(dodgeangle)
-    local opponent = self.opponent
+    local opponent = self.opponents[1]
     local x, y, oppox, oppoy = self.x, self.y, opponent.x, opponent.y
     local tooppox, tooppoy = oppox - x, oppoy - y
     if tooppox == 0 and tooppoy == 0 then
@@ -181,7 +181,7 @@ end
 
 function Enemy:approach()
     local x, y = self.x, self.y
-    local opponent = self.opponent
+    local opponent = self.opponents[1]
     local oppox, oppoy = opponent.x, opponent.y
     -- local bodyradius = self.bodyradius
     -- local bounds = self.bounds
@@ -252,7 +252,7 @@ function Enemy:attack()
     self.velx, self.vely = 0, 0
 
     local x, y = self.x, self.y
-    local opponent = self.opponent
+    local opponent = self.opponents[1]
     opponent.attacker = self
     local oppox, oppoy = opponent.x, opponent.y
     local tooppox, tooppoy = oppox - x, oppoy - y
@@ -329,7 +329,7 @@ end
 function Enemy:guard()
     self.velx, self.vely = 0, 0
     local t = self.guardtime or 60
-    local opponent = self.opponent
+    local opponent = self.opponents[1]
     repeat
         local guardangle = 0
         if opponent.y ~= self.y or opponent.x ~= self.x then

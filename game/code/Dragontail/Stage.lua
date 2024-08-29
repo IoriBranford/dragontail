@@ -17,9 +17,10 @@ local min = math.min
 
 local scene ---@type Scene
 local player -- character controlled by player
+local players
 local enemies -- characters player must beat to advance
 local solids -- characters who should block others' movement
-local allcharacters
+local allcharacters ---@type Character[]
 local map
 local roomindex
 local gamestatus
@@ -30,6 +31,7 @@ local camera ---@type Camera
 function Stage.quit()
     scene = nil
     player = nil
+    players = nil
     enemies = nil
     solids = nil
     allcharacters = nil
@@ -42,6 +44,7 @@ end
 function Stage.init(stagefile)
     scene = Scene()
     allcharacters = {}
+    players = {}
     enemies = {}
     solids = {}
 
@@ -69,6 +72,7 @@ function Stage.init(stagefile)
     player = Stage.addCharacter({
         x = 160, y = 180, type = "Rose"
     })
+    players[#players+1] = player
 
     Stage.openNextRoom()
 end
@@ -93,7 +97,7 @@ function Stage.addCharacter(object)
     if character.team == "player" then
         character.opponents = enemies
     else
-        character.opponent = player
+        character.opponents = players
     end
     if character.bodysolid then
         solids[#solids+1] = character

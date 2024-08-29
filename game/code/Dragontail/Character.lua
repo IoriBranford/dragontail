@@ -169,8 +169,14 @@ end
 
 function Character:stopAttack()
     self.attackangle = nil
-    if self.opponent and self.opponent.attacker == self then
-        self.opponent.attacker = nil
+    local opponents = self.opponents
+    if opponents then
+        for i = 1, #opponents do
+            local opponent = opponents[i]
+            if opponent.attacker == self then
+                opponent.attacker = nil
+            end
+        end
     end
 end
 

@@ -47,7 +47,7 @@ function Common:containerBreak(attacker)
     self:changeAseAnimation("collapse", 1, 0)
     local item = self.item
     if item then
-        item.opponent = self.opponent
+        item.opponents = self.opponents
         State.start(item, "itemDrop")
     end
     yield()
@@ -67,7 +67,7 @@ function Common:itemDrop(y0)
 end
 
 function Common:itemWaitForPickup()
-    local opponent = self.opponent
+    local opponent = self.opponents[1]
     while true do
         local finished
         if self:testBodyCollision(opponent) then
