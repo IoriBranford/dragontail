@@ -1,12 +1,11 @@
 local Scene = require "System.Scene"
-local Character = require "Dragontail.Character"
 local Tiled     = require "Tiled"
-local Database    = require "Data.Database"
 local Audio     = require "System.Audio"
 local Movement  = require "Component.Movement"
 local State       = require "Dragontail.Character.State"
 local Boundary    = require "Object.Boundary"
 local Boundaries  = require "Dragontail.Stage.Boundaries"
+local Characters  = require "Dragontail.Stage.Characters"
 local Stage = {
     CameraWidth = 640,
     CameraHeight = 360
@@ -16,11 +15,6 @@ local max = math.max
 local min = math.min
 
 local scene ---@type Scene
-local player -- character controlled by player
-local players
-local enemies -- characters player must beat to advance
-local solids -- characters who should block others' movement
-local allcharacters ---@type Character[]
 local map
 local roomindex
 local gamestatus
@@ -30,23 +24,16 @@ local camera ---@type Camera
 
 function Stage.quit()
     scene = nil
-    player = nil
-    players = nil
-    enemies = nil
-    solids = nil
-    allcharacters = nil
     map = nil
     roomindex = nil
     gamestatus = nil
     camera = nil
+    Characters.quit()
 end
 
 function Stage.init(stagefile)
     scene = Scene()
-    allcharacters = {}
-    players = {}
-    enemies = {}
-    solids = {}
+    Characters.init(scene)
 
     map = Tiled.Map.load(stagefile)
     map:indexLayersByName()
@@ -69,74 +56,28 @@ function Stage.init(stagefile)
 
     scene:addMap(map, "group,tilelayer")
 
-    player = Stage.addCharacter({
+    Characters.spawn({
         x = 160, y = 180, type = "Rose"
     })
-    players[#players+1] = player
 
     Stage.openNextRoom()
 end
 
-function Stage.addCharacter(object)
-    local type = object.type
-    if type then
-        Database.fillBlanks(object, type)
-    end
-    local ok, script = false, object.script
-    if script then
-        ok, script = pcall(require, script)
-    end
-    if not ok then
-        script = Character
-    end
-    local character = script.cast(object) ---@type Character
-    character:init()
-    character:initAseprite()
-
-    character.solids = solids
-    if character.team == "player" then
-        character.opponents = enemies
-    else
-        character.opponents = players
-    end
-    if character.bodysolid then
-        solids[#solids+1] = character
-    end
-    if character.team == "enemy" then
-        enemies[#enemies+1] = character
-    end
-    if character.initialai then
-        State.start(character, character.initialai)
-    end
-    character:addToScene(scene)
-    allcharacters[#allcharacters+1] = character
-    return character
-end
-local addCharacter = Stage.addCharacter
-
-function Stage.addCharacters(objects)
-    for i = 1, #objects do local object = objects[i]
-        local typ = object.type
-        if typ ~= "" then
-            if typ == "Boundary" then
-            else
-                addCharacter(object)
-            end
-        end
-    end
-end
-local addCharacters = Stage.addCharacters
+Stage.addCharacter = Characters.spawn
+Stage.addCharacters = Characters.spawnArray
 
 function Stage.openNextRoom()
     roomindex = roomindex + 1
     local room = map.layers["room"..roomindex]
     if room then
         Boundaries.put("room", room.bounds)
-        addCharacters(room)
+        Characters.spawnArray(room)
         gamestatus = "goingToNextRoom"
     else
         gamestatus = "victory"
-        State.start(player, "victory")
+        for _, player in ipairs(Characters.getGroup("players")) do
+            State.start(player, "victory")
+        end
         Audio.fadeMusic()
     end
 end
@@ -146,7 +87,12 @@ function Stage.updateGoingToNextRoom()
     camera.x = max(0, camera.x)
     local room = map.layers["room"..roomindex]
     assert(room, "No room "..roomindex)
-    local cameradestx = player.x - Stage.CameraWidth/2
+    local cameradestx = 0
+    local players = Characters.getGroup("players")
+    for _, player in ipairs(players) do
+        cameradestx = cameradestx + player.x
+    end
+    cameradestx = cameradestx/#players - Stage.CameraWidth/2
     if camera.x < cameradestx then
         camera.velx = Movement.moveTowards(camera.x, cameradestx, 6) - camera.x
     else
@@ -166,56 +112,18 @@ function Stage.startNextFight()
     gamestatus = "fight"
     local fight = map.layers["fight"..roomindex]
     assert(fight, "No fight "..roomindex)
-    addCharacters(fight)
-end
-
-local function compDisappeared(a,b)
-    return not a.disappeared and b.disappeared
-end
-
-local function pruneDisappeared(characters, onempty, ...)
-    local n = #characters
-    local n0 = n
-    for i = n, 1, -1 do
-        if characters[i].disappeared then
-            characters[i] = characters[n]
-            characters[n] = nil
-            n = n - 1
-        end
-    end
-    if onempty and n0 > 0 and n == 0 then
-        onempty(...)
-    end
+    Characters.spawnArray(fight)
 end
 
 function Stage.fixedupdate()
-    for i = 1, #allcharacters do local character = allcharacters[i]
-        character:fixedupdate()
-    end
-    for i = 1, #solids do local solid = solids[i]
-        solid:collideWithCharacterAttack(player)
-        for j = 1, #enemies do local enemy = enemies[j]
-            solid:collideWithCharacterAttack(enemy)
-        end
-    end
-    for i = 1, #enemies do local enemy = enemies[i]
-        enemy:collideWithCharacterAttack(player)
-        for j = 1, #enemies do local enemy2 = enemies[j]
-            enemy:collideWithCharacterAttack(enemy2)
-        end
-    end
-    for i = 1, #enemies do local enemy = enemies[i]
-        player:collideWithCharacterAttack(enemy)
-    end
-    for i = 1, #solids do local solid = solids[i]
-        player:collideWithCharacterBody(solid)
-    end
-    player:keepInBounds()
+    Characters.fixedupdate()
 
-    pruneDisappeared(enemies, Stage.openNextRoom)
-    pruneDisappeared(solids)
-    pruneDisappeared(allcharacters)
-    scene:prune(Character.hasDisappeared)
+    local enemies = Characters.getGroup("enemies")
+    local nenemies = #enemies
+    Characters.pruneDisappeared()
+    if nenemies > 0 and #enemies <= 0 then
+        Stage.openNextRoom()
+    end
 
     if gamestatus == "goingToNextRoom" then
         Stage.updateGoingToNextRoom()
@@ -225,6 +133,9 @@ function Stage.fixedupdate()
 end
 
 function Stage.fixedupdateGui(gui)
+    local players = Characters.getGroup("players")
+    local player = players[1]
+
     local healthpercent = player.health / player.maxhealth
     local hud = gui.hud
 
@@ -247,16 +158,16 @@ function Stage.fixedupdateGui(gui)
 end
 
 function Stage.update(dsecs, fixedfrac)
-    for i = 1, #allcharacters do local character = allcharacters[i]
-        character:update(dsecs, fixedfrac)
-    end
+    Characters.update(dsecs, fixedfrac)
 end
 
 function Stage.draw(fixedfrac)
     love.graphics.push()
     love.graphics.translate(-camera.x - camera.velx*fixedfrac, -camera.y - camera.vely*fixedfrac)
     scene:draw(fixedfrac)
-    -- Boundaries.get("room"):drawCollisionDebug(player.x, player.y, player.bodyradius)
+    local players = Characters.getGroup("players")
+    local player = players[1]
+    Boundaries.get("room"):drawCollisionDebug(player.x, player.y, player.bodyradius)
     love.graphics.pop()
 end
 
