@@ -34,7 +34,7 @@ function GamePhase.loadphase()
         end
     end)
 
-    Stage.init("data/stage_jam.lua")
+    Stage.init("data/stage_banditcave.lua")
 
     gui = Gui.new("data/gui_gameplay.lua")
     Tiled.Assets.uncacheMarked()
