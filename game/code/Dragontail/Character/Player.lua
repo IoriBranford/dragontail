@@ -4,6 +4,9 @@ local Audio    = require "System.Audio"
 local Movement = require "Component.Movement"
 local State   = require "Dragontail.Character.State"
 local Fighter  = require "Dragontail.Character.Fighter"
+local Character= require "Dragontail.Character"
+local Boundaries = require "Dragontail.Stage.Boundaries"
+local AttackerSlot = require "Dragontail.Character.AttackerSlot"
 
 ---@class Player:Fighter
 local Player = class(Fighter)
@@ -99,13 +102,67 @@ local function doComboAttack(self, facex, facey, heldenemy)
     end
 end
 
+function Player:init()
+    Character.init(self)
+    self.comboindex = 0
+    self.runenergy = 100
+    self.runenergymax = self.runenergy
+    self.runenergycost = 25
+    self.facex = 1
+    self.facey = 0
+
+    ---@type AttackerSlot[]
+    self.attackerslots = {
+        AttackerSlot.from({dirx = 1, diry = 0}),
+        AttackerSlot.from({dirx = 0, diry = 1}),
+        AttackerSlot.from({dirx = -1, diry = 0}),
+        AttackerSlot.from({dirx = 0, diry = -1}),
+    }
+end
+
+function Player:findRandomAttackerSlot(attackrange)
+    local attackerslots = self.attackerslots
+    local i = love.math.random(#attackerslots)
+    for _ = 1, #attackerslots do
+        local slot = attackerslots[i]
+        if slot:hasSpace(attackrange) then
+            return slot
+        end
+        if i >= #attackerslots then
+            i = 1
+        else
+            i = i + 1
+        end
+    end
+end
+
+function Player:findClosestAttackerSlot(attackerx, attackery, attackrange)
+    local attackerslots = self.attackerslots
+    local x, y = self.x, self.y
+    local bestslot, bestslotdsq
+    for _, slot in ipairs(attackerslots) do
+        if slot:hasSpace(attackrange) then
+            local slotx, sloty = slot:getPosition(x, y, attackrange)
+            local slotdsq = math.distsq(attackerx, attackery, slotx, sloty)
+            if slotdsq < bestslotdsq then
+                bestslot, bestslotdsq = slot, slotdsq
+            end
+        end
+    end
+    return bestslot
+end
+
+function Player:updateAttackerSlots()
+    local attackerslots = self.attackerslots
+    local x, y = self.x, self.y
+    for _, slot in ipairs(attackerslots) do
+        slot.hitdist = nil
+        local x2, y2 = x + slot.dirx*65536, y + slot.diry*65536
+        Boundaries.castRay(x, y, x2, y2, slot)
+    end
+end
+
 function Player:control()
-    self.comboindex = self.comboindex or 0
-    self.runenergy = self.runenergy or 100
-    self.runenergymax = self.runenergymax or self.runenergy
-    self.runenergycost = self.runenergycost or 25
-    self.facex = self.facex or 1
-    self.facey = self.facey or 0
     local targetfacex, targetfacey = self.facex, self.facey
     local runningtime
     while true do
