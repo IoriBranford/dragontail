@@ -84,11 +84,6 @@ function Character:makeAfterImage()
     afterimage:setAseAnimation(self.aseanimation, self.animationframe)
 end
 
-function Character:move(dx, dy)
-    self.x = self.x + dx * self.speed
-    self.y = self.y + dy * self.speed
-end
-
 function Character:accelerate(ax, ay)
     self.velx = self.velx + ax
     self.vely = self.vely + ay
@@ -116,23 +111,32 @@ function Character:updatePosition()
     self.y = self.y + self.vely
 end
 
-function Character:fixedupdate()
+function Character:isHitStopOver()
+    return self.hitstun <= 0 and self.hurtstun <= 0
+end
+
+function Character:fixedupdateHitStop()
     if self.hitstun > 0 then
         self.hitstun = self.hitstun - 1
         if self.hitstun > 0 then
-            return
+            return false
         end
     end
     if self.hurtstun > 0 then
         self.hurtstun = self.hurtstun - 1
         if self.hurtstun > 0 then
-            return
+            return false
         end
     end
-    self.x = self.x + self.velx
-    self.y = self.y + self.vely
-    State.run(self)
-    self:animate(1)
+    return true
+end
+
+function Character:fixedupdate()
+    if self:fixedupdateHitStop() then
+        self:animate(1)
+        self:updatePosition()
+        State.run(self)
+    end
 end
 
 function Character:fixedupdateShake(time)
