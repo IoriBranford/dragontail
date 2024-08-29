@@ -5,6 +5,7 @@ local State       = require "Dragontail.Character.State"
 local Object      = require "Tiled.Object"
 local Movement    = require "Component.Movement"
 local Boundaries  = require "Dragontail.Stage.Boundaries"
+
 local pi = math.pi
 local floor = math.floor
 local sqrt = math.sqrt
@@ -70,8 +71,8 @@ function Character:addToScene(scene)
 end
 
 function Character:makeAfterImage()
-    local Stage = require "Dragontail.Stage"
-    local afterimage = Stage.addCharacter({
+    local Characters  = require "Dragontail.Stage.Characters"
+    local afterimage = Characters.spawn({
         x = self.x,
         y = self.y,
         asefile = self.asefile,

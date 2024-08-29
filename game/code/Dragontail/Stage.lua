@@ -63,9 +63,6 @@ function Stage.init(stagefile)
     Stage.openNextRoom()
 end
 
-Stage.addCharacter = Characters.spawn
-Stage.addCharacters = Characters.spawnArray
-
 function Stage.openNextRoom()
     roomindex = roomindex + 1
     local room = map.layers["room"..roomindex]

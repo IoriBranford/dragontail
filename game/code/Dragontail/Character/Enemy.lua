@@ -1,8 +1,8 @@
 local Database = require "Data.Database"
 local Movement = require "Component.Movement"
 local Audio    = require "System.Audio"
-local Stage    = require "Dragontail.Stage"
 local Fighter  = require "Dragontail.Character.Fighter"
+local Characters = require "Dragontail.Stage.Characters"
 
 ---@class Enemy:Fighter
 local Enemy = class(Fighter)
@@ -282,7 +282,7 @@ function Enemy:attack()
     if attackprojectile then
         local bodyradius = self.bodyradius or 0
 
-        Stage.addCharacter({
+        Characters.spawn({
             x = x + bodyradius*cos(tooppoangle),
             y = y + bodyradius*sin(tooppoangle),
             type = attackprojectile,
@@ -361,7 +361,7 @@ function Enemy:guardHit(attacker)
             type = hitspark,
         }
         hitsparkcharacter.x, hitsparkcharacter.y = mid(attacker.x, attacker.y, self.x, self.y)
-        Stage.addCharacter(hitsparkcharacter)
+        Characters.spawn(hitsparkcharacter)
     end
     self.hurtstun = attacker.attackguardstun or 6
     yield()

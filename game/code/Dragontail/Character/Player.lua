@@ -7,6 +7,7 @@ local Fighter  = require "Dragontail.Character.Fighter"
 local Character= require "Dragontail.Character"
 local Boundaries = require "Dragontail.Stage.Boundaries"
 local AttackerSlot = require "Dragontail.Character.AttackerSlot"
+local Characters   = require "Dragontail.Stage.Characters"
 
 ---@class Player:Fighter
 local Player = class(Fighter)
@@ -228,8 +229,7 @@ function Player:control()
             local oobx, ooby = findWallCollision(self)
             if oobx or ooby then
                 Audio.play(self.bodyslamsound)
-                local Stage = require "Dragontail.Stage"
-                Stage.addCharacter(
+                Characters.spawn(
                     {
                         type = "spark-bighit",
                         x = self.x + oobx*self.bodyradius,

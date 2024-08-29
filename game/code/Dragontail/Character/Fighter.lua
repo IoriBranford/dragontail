@@ -1,7 +1,7 @@
-local Stage = require "Dragontail.Stage"
 local Audio = require "System.Audio"
 local Database = require "Data.Database"
 local Common   = require "Dragontail.Character.Common"
+local Characters = require "Dragontail.Stage.Characters"
 
 ---@class Fighter:Common
 local Fighter = class(Common)
@@ -63,7 +63,7 @@ function Fighter:hurt(attacker)
             type = hitspark,
         }
         hitsparkcharacter.x, hitsparkcharacter.y = mid(attacker.x, attacker.y, self.x, self.y)
-        Stage.addCharacter(hitsparkcharacter)
+        Characters.spawn(hitsparkcharacter)
     end
     self.health = self.health - attacker.attackdamage
     self.velx, self.vely = 0, 0
@@ -177,7 +177,7 @@ function Fighter:wallBump(thrower, oobx, ooby)
     oobx, ooby = norm(oobx or 0, ooby or 0)
     self:stopAttack()
     local bodyradius = self.bodyradius or 1
-    Stage.addCharacter(
+    Characters.spawn(
         {
             type = "spark-hit",
             x = self.x + oobx*bodyradius,
@@ -237,7 +237,7 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
     oobx, ooby = norm(oobx or 0, ooby or 0)
     self:stopAttack()
     local bodyradius = self.bodyradius or 1
-    Stage.addCharacter(
+    Characters.spawn(
         {
             type = "spark-bighit",
             x = self.x + oobx*bodyradius,
@@ -290,7 +290,7 @@ function Fighter:breakaway(other)
         x = self.x + dirx*bodyradius,
         y = self.y + diry*bodyradius,
     }
-    Stage.addCharacter(hitsparkcharacter)
+    Characters.spawn(hitsparkcharacter)
     self.velx, self.vely = -dirx * breakspeed, -diry * breakspeed
 
     local t = 1
