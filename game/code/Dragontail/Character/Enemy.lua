@@ -3,6 +3,7 @@ local Movement = require "Component.Movement"
 local Audio    = require "System.Audio"
 local Fighter  = require "Dragontail.Character.Fighter"
 local Characters = require "Dragontail.Stage.Characters"
+local Boundaries = require "Dragontail.Stage.Boundaries"
 
 ---@class Enemy:Fighter
 local Enemy = class(Fighter)
@@ -46,48 +47,38 @@ local function findAngleToDodgeIncoming(self, incoming)
         return
     end
 
-    local dodgeangle = atan2(-tooppoy, -tooppox)
-    if oppospeed >= dodgespeed then
-        dodgeangle = dodgeangle + (love.math.random(2) == 0 and -pi/2 or pi/2)
-    end
     local dodgedist = Fighter.GetSlideDistance(dodgespeed, self.dodgedecel or 1)
-    local dodgedx, dodgedy = dodgedist*cos(dodgeangle), dodgedist*sin(dodgeangle)
-    local dodgeendx, dodgeendy = self.x + dodgedx, self.y + dodgedy
-    local bounds = self.bounds
-    local dodgeblockedx1 = dodgeendx <= bounds.x + self.bodyradius
-    local dodgeblockedx2 = dodgeendx >= bounds.x + bounds.width - self.bodyradius
-    local dodgeblockedy1 = dodgeendy <= bounds.y + self.bodyradius
-    local dodgeblockedy2 = dodgeendy >= bounds.y + bounds.height - self.bodyradius
-    if dodgeblockedx1 then
-        if dodgeblockedy1 then
-            dodgeangle = love.math.random(2) == 0 and 0 or pi/2
-        elseif dodgeblockedy2 then
-            dodgeangle = love.math.random(2) == 0 and 0 or -pi/2
-        elseif self.y - (bounds.y + bounds.height/2) < 0 then
-            dodgeangle = -pi/2
+    local dodgedirx, dodgediry = math.norm(-tooppox, -tooppoy) -- cos(dodgeangle), sin(dodgeangle)
+    local dodgespace = dodgedist + self.bodyradius
+    local dodgespacex, dodgespacey = dodgedirx * dodgespace, dodgediry * dodgespace
+    local wallhit = Boundaries.castRay(self.x, self.y, self.x + dodgespacex, self.y + dodgespacey)
+
+    if oppospeed >= dodgespeed or wallhit then
+        dodgespacex, dodgespacey = dodgespacey, dodgespacex
+        if lm_random(2) == 1 then
+            dodgespacex = -dodgespacex
         else
-            dodgeangle = pi/2
+            dodgespacey = -dodgespacey
         end
-    elseif dodgeblockedx2 then
-        if dodgeblockedy1 then
-            dodgeangle = love.math.random(2) == 0 and pi or pi/2
-        elseif dodgeblockedy2 then
-            dodgeangle = love.math.random(2) == 0 and pi or -pi/2
-        elseif self.y - (bounds.y + bounds.height/2) < 0 then
-            dodgeangle = -pi/2
-        else
-            dodgeangle = pi/2
+        if Boundaries.castRay(self.x, self.y, self.x + dodgespacex, self.y + dodgespacey) then
+            dodgespacex, dodgespacey = -dodgespacex, -dodgespacey
         end
-    elseif dodgeblockedy1 or dodgeblockedy2 then
-        if not dodgeblockedx1 and not dodgeblockedx2 then
-            if self.x - (bounds.x + bounds.width/2) < 0 then
-                dodgeangle = 0
-            else
-                dodgeangle = pi
-            end
-        end
+
+        -- if wallhit then
+        --     -- Dodge along wall
+        --     local hitx, hity = wallhit.hitx, wallhit.hity
+        --     local ax, ay = wallhit.ax, wallhit.ay
+        --     local bx, by = wallhit.bx, wallhit.by
+        --     if math.dot(dodgedirx, dodgediry, ax-hitx, ay-hity)
+        --     >= math.dot(dodgedirx, dodgediry, bx-hitx, by-hity) then
+        --         dodgedirx, dodgediry = math.norm(ax - hitx, ay - hity)
+        --     else
+        --         dodgedirx, dodgediry = math.norm(bx-hitx, by-hity)
+        --     end
+        --     dodgespacex, dodgespacey = dodgedirx * dodgespace, dodgediry * dodgespace
+        -- end
     end
-    return dodgeangle
+    return math.atan2(dodgespacey, dodgespacex)
 end
 
 function Enemy:stand(duration)
