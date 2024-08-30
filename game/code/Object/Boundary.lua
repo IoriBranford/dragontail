@@ -18,8 +18,17 @@ local function getPolygonCornerNormal(points, i, sarea)
     local h = (i <= 2) and #points or (i - 2)
     local j = (i >= #points) and 2 or (i + 2)
     local hx, hy = points[h-1], points[h]
+    local ix, iy = points[i-1], points[i]
     local jx, jy = points[j-1], points[j]
-    local nx, ny = math.rot90(jx-hx, jy-hy, sarea)
+    local ihnx, ihny = math.norm(hx-ix, hy-iy)
+    local ijnx, ijny = math.norm(jx-ix, jy-iy)
+    local nx, ny = ihnx+ijnx, ihny+ijny
+    if nx == 0 and ny == 0 then
+        return math.rot90(ijnx, ijny, sarea)
+    end
+    if sarea * math.det(ijnx, ijny, ihnx, ihny) < 0 then
+        nx, ny = -nx, -ny
+    end
     return math.norm(nx, ny)
 end
 
@@ -229,10 +238,15 @@ function Boundary:drawCollisionDebug(x, y, r)
 
     local points = self.points
     if points then
+        local cornernormals = self.cornernormals
         local sarea = self.signedarea
         local x1, y1 = points[#points-1], points[#points]
         for i = 2, #points, 2 do
             local x2, y2 = points[i-1], points[i]
+            local cnx, cny = cornernormals[i-1], cornernormals[i]
+            love.graphics.setColor(1, 1, 0)
+            love.graphics.line(x2, y2, x2 + cnx*16, y2 + cny*16)
+
             local projx, projy = projpointsegment(x, y, x1, y1, x2, y2)
             love.graphics.setColor(1, 0, 0)
             love.graphics.circle("fill", projx, projy, 2)
