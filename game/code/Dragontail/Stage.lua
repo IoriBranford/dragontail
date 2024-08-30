@@ -28,6 +28,7 @@ function Stage.quit()
     roomindex = nil
     gamestatus = nil
     camera = nil
+    Boundaries.clear()
     Characters.quit()
 end
 
