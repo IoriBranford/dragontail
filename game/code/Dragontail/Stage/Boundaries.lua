@@ -18,6 +18,7 @@ function Boundaries.clear()
     end
 end
 
+---@return RayHit
 function Boundaries.castRay(rx0, ry0, rx1, ry1, hit)
     if hit then
         hit.hitdist = nil
