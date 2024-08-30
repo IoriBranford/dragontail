@@ -11,7 +11,7 @@
             "program": {
                 "command": "love"
             },
-            "args": ["${workspaceFolder}/game", "--debug"]
+            "args": ["${workspaceFolder}/game", "--debug", "--drawstats"]
         },
         {
             "name": "With unit tests",
