@@ -79,9 +79,10 @@ local function keepCircleInPolygon(self, x, y, r)
     local sarea = self.signedarea
     local totalpenex, totalpeney
     local selfx, selfy = self.x, self.y
-    local x1, y1 = selfx + points[#points-1], selfy + points[#points]
+    x, y = x - selfx, y - selfy
+    local x1, y1 = points[#points-1], points[#points]
     for i = 2, #points, 2 do
-        local x2, y2 = selfx + points[i-1], selfy + points[i]
+        local x2, y2 = points[i-1], points[i]
         local penex, peney = getCirclePenetrationOfPolygonSegment(x, y, r, x1, y1, x2, y2, sarea)
         if penex and peney then
             x, y = x - penex, y - peney
@@ -90,6 +91,7 @@ local function keepCircleInPolygon(self, x, y, r)
         end
         x1, y1 = x2, y2
     end
+    x, y = x + selfx, y + selfy
     return x, y, totalpenex, totalpeney
 end
 
