@@ -14,17 +14,37 @@ function Boundary:_init()
     self:init()
 end
 
+local function getPolygonCornerNormal(points, i, sarea)
+    local h = (i <= 2) and #points or (i - 2)
+    local j = (i >= #points) and 2 or (i + 2)
+    local hx, hy = points[h-1], points[h]
+    local jx, jy = points[j-1], points[j]
+    local nx, ny = math.rot90(jx-hx, jy-hy)
+    return math.norm(nx, ny)
+end
+
 function Boundary:init()
     local points = self.points
     if self.shape == "polygon" and points then
-        self.signedarea = math.polysignedarea(points)
+        local sarea = math.polysignedarea(points)
+        self.signedarea = sarea
+        local cornernormals = {}
+        self.cornernormals = cornernormals
         local right = -math.huge
         for i = 2, #points, 2 do
             right = math.max(right, points[i-1])
+            cornernormals[i-1], cornernormals[i] = getPolygonCornerNormal(points, i, sarea)
         end
         self.right = self.x + right
     elseif self.shape == "rectangle" then
         self.right = self.x + self.width
+        local sqrt2 = math.sqrt(2)
+        self.cornernormals = {
+            sqrt2, sqrt2,
+            -sqrt2, sqrt2,
+            -sqrt2, -sqrt2,
+            sqrt2, -sqrt2,
+        }
     end
 end
 
