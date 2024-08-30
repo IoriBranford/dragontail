@@ -51,7 +51,7 @@ local function findAngleToDodgeIncoming(self, incoming)
     local dodgedirx, dodgediry = math.norm(-tooppox, -tooppoy) -- cos(dodgeangle), sin(dodgeangle)
     local dodgespace = dodgedist + self.bodyradius
     local dodgespacex, dodgespacey = dodgedirx * dodgespace, dodgediry * dodgespace
-    local wallhit = Boundaries.castRay(self.x, self.y, self.x + dodgespacex, self.y + dodgespacey)
+    local wallhit = Boundaries.castRay(self.x, self.y, self.x + dodgespacex, self.y + dodgespacey, 1)
 
     if oppospeed >= dodgespeed or wallhit then
         dodgespacex, dodgespacey = dodgespacey, dodgespacex
@@ -60,7 +60,7 @@ local function findAngleToDodgeIncoming(self, incoming)
         else
             dodgespacey = -dodgespacey
         end
-        if Boundaries.castRay(self.x, self.y, self.x + dodgespacex, self.y + dodgespacey) then
+        if Boundaries.castRay(self.x, self.y, self.x + dodgespacex, self.y + dodgespacey, 1) then
             dodgespacex, dodgespacey = -dodgespacex, -dodgespacey
         end
 
@@ -172,25 +172,30 @@ end
 
 function Enemy:approach()
     local x, y = self.x, self.y
-    local opponent = self.opponents[1]
+    local opponent = self.opponents[1] ---@type Player
     local oppox, oppoy = opponent.x, opponent.y
-    -- local bodyradius = self.bodyradius
-    -- local bounds = self.bounds
-    -- local minx, miny = bounds.x + bodyradius, bounds.y + bodyradius
-    -- local maxx, maxy = bounds.x + bounds.width - bodyradius, bounds.y + bounds.height - bodyradius
+    local bodyradius = self.bodyradius
 
-    -- choose dest
-    local destanglefromoppo = lm_random(4)*pi/2
     local attackradius = totalAttackRange(self.attackradius or 64, self.attacklungespeed or 0, self.attacklungedecel or 1) + opponent.bodyradius
-    local destx, desty
-    -- repeat
-        destx = oppox + cos(destanglefromoppo) * attackradius
-        desty = oppoy + sin(destanglefromoppo) * attackradius
-    --     destanglefromoppo = destanglefromoppo + pi/2
-    --     if destanglefromoppo > 4*pi then
-    --         return "stand", 10
-    --     end
-    -- until minx <= destx and destx <= maxx and miny <= desty and desty <= maxy
+    local attackerslot = opponent:findRandomAttackerSlot(attackradius + bodyradius)
+    if not attackerslot then
+        return "stand", 10
+    end
+    local destx, desty = attackerslot:getPosition(oppox, oppoy, attackradius)
+    local wallhit = Boundaries.castRay(x, y, destx, desty, 1)
+    if wallhit then
+        local todestx, todesty = destx - x, desty - y
+        local frontendx, frontendy = wallhit.ax, wallhit.ay
+        local backendx, backendy = wallhit.bx, wallhit.by
+        local wallvecx, wallvecy = frontendx - backendx, frontendy - backendy
+        if math.dot(wallvecx, wallvecy, todestx, todesty) < 0 then
+            frontendx, backendx = backendx, frontendx
+            frontendy, backendy = backendy, frontendy
+            wallvecx, wallvecy = -wallvecx, -wallvecy
+        end
+        local projx, projy = math.projpointsegment(x, y, backendx, backendy, frontendx, frontendy)
+        destx, desty = x + frontendx - projx, y + frontendy - projy
+    end
 
     -- choose animation
     if desty ~= y or destx ~= x then

@@ -106,13 +106,18 @@ end
 ---@field hitx number where ray hit wall
 ---@field hity number where ray hit wall
 ---@field hitdist number
+---@field hitside number >0 = from inside, <0 = from outside
 ---@field ax number first wall endpoint
 ---@field ay number first wall endpoint
 ---@field bx number second wall endpoint
 ---@field by number second wall endpoint
 local RayHit = class()
 
-local function castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, hit)
+local function castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, allowedhitside, hit)
+    local walldir = math.det(rx1-rx0, ry1-ry0, bx-ax, by-ay)
+    if allowedhitside ~= 0 and walldir * allowedhitside < 0 then
+        return hit
+    end
     local hitx, hity = math.intersectsegments(rx0, ry0, rx1, ry1, ax, ay, bx, by)
     if hitx and hity then
         hit = hit or {}
@@ -123,16 +128,20 @@ local function castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, hit)
             hit.hitdist = dist
             hit.ax, hit.ay = ax, ay
             hit.bx, hit.by = bx, by
+            hit.hitside = walldir
         end
     end
     return hit
 end
 
 ---@param hit RayHit?
-function Boundary:castRayOnPolygon(rx0, ry0, rx1, ry1, hit)
+function Boundary:castRayOnPolygon(rx0, ry0, rx1, ry1, allowedhitside, hit)
     local points = self.points
     if not points then
         return
+    end
+    if self.signedarea < 0 then
+        allowedhitside = -allowedhitside
     end
     local selfx, selfy = self.x, self.y
     rx0, ry0 = rx0 - selfx, ry0 - selfy
@@ -140,7 +149,7 @@ function Boundary:castRayOnPolygon(rx0, ry0, rx1, ry1, hit)
     local ax, ay = points[#points-1], points[#points]
     for b = 2, #points, 2 do
         local bx, by = points[b-1], points[b]
-        hit = castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, hit)
+        hit = castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, allowedhitside, hit)
         ax, ay = bx, by
     end
     if hit then
@@ -150,30 +159,34 @@ function Boundary:castRayOnPolygon(rx0, ry0, rx1, ry1, hit)
         hit.ay = hit.ay + selfy
         hit.bx = hit.bx + selfx
         hit.by = hit.by + selfy
+        if self.signedarea < 0 then
+            hit.hitside = -hit.hitside
+        end
     end
     return hit
 end
 
-function Boundary:castRayOnRectangle(rx0, ry0, rx1, ry1, hit)
+function Boundary:castRayOnRectangle(rx0, ry0, rx1, ry1, allowedhitside, hit)
     local width, height = self.width, self.height
     local ax, ay = self.x, self.y
     local bx, by = ax + width, ay
-    hit = castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, hit)
+    hit = castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, allowedhitside, hit)
     ax, by = ax + width, by + height
-    hit = castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, hit)
+    hit = castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, allowedhitside, hit)
     bx, ay = bx - width, ay + height
-    hit = castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, hit)
+    hit = castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, allowedhitside, hit)
     ax, by = ax - width, by - height
-    hit = castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, hit)
+    hit = castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, allowedhitside, hit)
     return hit
 end
 
-function Boundary:castRay(rx0, ry0, rx1, ry1, hit)
+function Boundary:castRay(rx0, ry0, rx1, ry1, allowedhitside, hit)
+    allowedhitside = allowedhitside or 0
     if self.shape == "polygon" then
-        return self:castRayOnPolygon(rx0, ry0, rx1, ry1, hit)
+        return self:castRayOnPolygon(rx0, ry0, rx1, ry1, allowedhitside, hit)
     end
     if self.shape == "rectangle" then
-        return self:castRayOnRectangle(rx0, ry0, rx1, ry1, hit)
+        return self:castRayOnRectangle(rx0, ry0, rx1, ry1, allowedhitside, hit)
     end
 end
 

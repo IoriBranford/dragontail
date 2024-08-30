@@ -114,10 +114,10 @@ function Player:init()
 
     ---@type AttackerSlot[]
     self.attackerslots = {
-        AttackerSlot.from({dirx = 1, diry = 0}),
-        AttackerSlot.from({dirx = 0, diry = 1}),
-        AttackerSlot.from({dirx = -1, diry = 0}),
-        AttackerSlot.from({dirx = 0, diry = -1}),
+        AttackerSlot(1, 0),
+        AttackerSlot(0, 1),
+        AttackerSlot(-1, 0),
+        AttackerSlot(0, -1)
     }
 end
 
@@ -159,7 +159,7 @@ function Player:updateAttackerSlots()
     for _, slot in ipairs(attackerslots) do
         slot.hitdist = nil
         local x2, y2 = x + slot.dirx*65536, y + slot.diry*65536
-        Boundaries.castRay(x, y, x2, y2, slot)
+        Boundaries.castRay(x, y, x2, y2, 1, slot)
     end
 end
 

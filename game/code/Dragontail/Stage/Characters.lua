@@ -123,6 +123,7 @@ function Characters.fixedupdate()
     end
     for i = 1, #players do local player = players[i]
         player:keepInBounds()
+        player:updateAttackerSlots()
     end
 end
 
