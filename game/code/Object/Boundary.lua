@@ -19,7 +19,7 @@ local function getPolygonCornerNormal(points, i, sarea)
     local j = (i >= #points) and 2 or (i + 2)
     local hx, hy = points[h-1], points[h]
     local jx, jy = points[j-1], points[j]
-    local nx, ny = math.rot90(jx-hx, jy-hy)
+    local nx, ny = math.rot90(jx-hx, jy-hy, sarea)
     return math.norm(nx, ny)
 end
 
