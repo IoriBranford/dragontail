@@ -61,6 +61,13 @@ function math.rot(x, y, a)
     return x*cosa - y*sina, y*cosa + x*sina
 end
 
+function math.rot90(x, y, dir)
+    if dir < 0 then
+        return y, -x
+    end
+    return -y, x
+end
+
 function math.testrects(ax, ay, aw, ah, bx, by, bw, bh)
     if ax + aw < bx then return false end
     if bx + bw < ax then return false end
