@@ -14,12 +14,7 @@ function Boundary:_init()
     self:init()
 end
 
-local function getPolygonCornerNormal(points, i, sarea)
-    local h = (i <= 2) and #points or (i - 2)
-    local j = (i >= #points) and 2 or (i + 2)
-    local hx, hy = points[h-1], points[h]
-    local ix, iy = points[i-1], points[i]
-    local jx, jy = points[j-1], points[j]
+local function getPolygonCornerNormal(hx, hy, ix, iy, jx, jy, sarea)
     local ihnx, ihny = math.norm(hx-ix, hy-iy)
     local ijnx, ijny = math.norm(jx-ix, jy-iy)
     local nx, ny = ihnx+ijnx, ihny+ijny
@@ -33,28 +28,33 @@ local function getPolygonCornerNormal(points, i, sarea)
 end
 
 function Boundary:init()
+    assert(self.shape == "polygon", "Boundary must be a polygon object")
     local points = self.points
-    if self.shape == "polygon" and points then
-        local sarea = math.polysignedarea(points)
-        self.signedarea = sarea
-        local cornernormals = {}
-        self.cornernormals = cornernormals
-        local right = -math.huge
-        for i = 2, #points, 2 do
-            right = math.max(right, points[i-1])
-            cornernormals[i-1], cornernormals[i] = getPolygonCornerNormal(points, i, sarea)
-        end
-        self.right = self.x + right
-    elseif self.shape == "rectangle" then
-        self.right = self.x + self.width
-        local sqrt2 = math.sqrt(2)
-        self.cornernormals = {
-            sqrt2, sqrt2,
-            -sqrt2, sqrt2,
-            -sqrt2, -sqrt2,
-            sqrt2, -sqrt2,
-        }
+
+    local sarea = math.polysignedarea(points)
+    self.signedarea = sarea
+    local cornernormals = {}
+    for i = 1, #points do
+        cornernormals[i] = false
     end
+    self.cornernormals = cornernormals
+
+    local x0, y0 = points[#points-3], points[#points-2]
+    local x1, y1 = points[#points-1], points[#points]
+    local x2, y2 = points[1], points[2]
+    local cnx, cny = getPolygonCornerNormal(x0, y0, x1, y1, x2, y2, sarea)
+    cornernormals[#points-1], cornernormals[#points] = cnx, cny
+    local right = x2
+
+    for i = 2, #points-2, 2 do
+        x0, y0 = x1, y1
+        x1, y1 = x2, y2
+        x2, y2 = points[i+1], points[i+2]
+        right = math.max(right, x2)
+        cnx, cny = getPolygonCornerNormal(x0, y0, x1, y1, x2, y2, sarea)
+        cornernormals[i-1], cornernormals[i] = cnx, cny
+    end
+    self.right = self.x + right
 end
 
 local function getCirclePenetrationOfPolygonSegment(x, y, r, x1, y1, x2, y2, sarea)
@@ -74,7 +74,11 @@ local function getCirclePenetrationOfPolygonSegment(x, y, r, x1, y1, x2, y2, sar
     return nx*pene, ny*pene
 end
 
-local function keepCircleInPolygon(self, x, y, r)
+---@return number x
+---@return number y
+---@return number? penex x penetration. Non-0 = penetrating; 0 = touching; nil = no contact
+---@return number? peney y penetration. Non-0 = penetrating; 0 = touching; nil = no contact
+function Boundary:keepCircleInside(x, y, r)
     local points = self.points
     if not points then
         return x, y
@@ -96,44 +100,6 @@ local function keepCircleInPolygon(self, x, y, r)
     end
     x, y = x + selfx, y + selfy
     return x, y, totalpenex, totalpeney
-end
-
-local function keepCircleInRectangle(self, x, y, r)
-    local bx, by, bw, bh = self.x, self.y, self.width, self.height
-    local x1, x2 = x - r, x + r
-    local y1, y2 = y - r, y + r
-    local bx2, by2 = bx + bw, by + bh
-    local penex, peney
-    if x1 <= bx then
-        penex = x1 - bx
-    elseif x2 >= bx2 then
-        penex = x2 - bx2
-    end
-    if y1 <= by then
-        peney = y1 - by
-    elseif y2 >= by2 then
-        peney = y2 - by2
-    end
-    if penex then
-        x = x - penex
-    end
-    if peney then
-        y = y - peney
-    end
-    return x, y, penex, peney
-end
-
----@return number x
----@return number y
----@return number? penex x penetration. Non-0 = penetrating; 0 = touching; nil = no contact
----@return number? peney y penetration. Non-0 = penetrating; 0 = touching; nil = no contact
-function Boundary:keepCircleInside(x, y, r)
-    if self.shape == "polygon" then
-        return keepCircleInPolygon(self, x, y, r)
-    elseif self.shape == "rectangle" then
-        return keepCircleInRectangle(self, x, y, r)
-    end
-    return x, y
 end
 
 ---@class RayHit
@@ -169,7 +135,7 @@ local function castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, allowedhitsi
 end
 
 ---@param hit RayHit?
-function Boundary:castRayOnPolygon(rx0, ry0, rx1, ry1, allowedhitside, hit)
+function Boundary:castRay(rx0, ry0, rx1, ry1, allowedhitside, hit)
     local points = self.points
     if not points then
         return
@@ -199,30 +165,6 @@ function Boundary:castRayOnPolygon(rx0, ry0, rx1, ry1, allowedhitside, hit)
         end
     end
     return hit
-end
-
-function Boundary:castRayOnRectangle(rx0, ry0, rx1, ry1, allowedhitside, hit)
-    allowedhitside = allowedhitside or 0
-    local width, height = self.width, self.height
-    local ax, ay = self.x, self.y
-    local bx, by = ax + width, ay
-    hit = castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, allowedhitside, hit)
-    ax, by = ax + width, by + height
-    hit = castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, allowedhitside, hit)
-    bx, ay = bx - width, ay + height
-    hit = castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, allowedhitside, hit)
-    ax, by = ax - width, by - height
-    hit = castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, allowedhitside, hit)
-    return hit
-end
-
-function Boundary:castRay(rx0, ry0, rx1, ry1, allowedhitside, hit)
-    if self.shape == "polygon" then
-        return self:castRayOnPolygon(rx0, ry0, rx1, ry1, allowedhitside, hit)
-    end
-    if self.shape == "rectangle" then
-        return self:castRayOnRectangle(rx0, ry0, rx1, ry1, allowedhitside, hit)
-    end
 end
 
 function Boundary:drawCollisionDebug(x, y, r)

@@ -49,9 +49,15 @@ function Stage.init(stagefile)
     end
 
     camera = Boundary.from({
-        shape = "rectangle",
+        shape = "polygon",
         x = 0, y = 0, velx = 0, vely = 0,
-        width = Stage.CameraWidth, height = Stage.CameraHeight
+        width = Stage.CameraWidth, height = Stage.CameraHeight,
+        points = {
+            0, 0,
+            Stage.CameraWidth, 0,
+            Stage.CameraWidth, Stage.CameraHeight,
+            0, Stage.CameraHeight
+        }
     })
     Boundaries.put("camera", camera)
 
