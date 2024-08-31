@@ -114,10 +114,10 @@ function Player:init()
 
     ---@type AttackerSlot[]
     self.attackerslots = {
-        AttackerSlot(1, 0),
-        AttackerSlot(0, 1),
-        AttackerSlot(-1, 0),
-        AttackerSlot(0, -1)
+        AttackerSlot(1024, 0),
+        AttackerSlot(0, 1024),
+        AttackerSlot(-1024, 0),
+        AttackerSlot(0, -1024)
     }
 end
 
@@ -157,9 +157,7 @@ function Player:updateAttackerSlots()
     local attackerslots = self.attackerslots
     local x, y = self.x, self.y
     for _, slot in ipairs(attackerslots) do
-        slot.hitdist = nil
-        local x2, y2 = x + slot.dirx*65536, y + slot.diry*65536
-        Boundaries.castRay(x, y, x2, y2, 1, slot)
+        Boundaries.castRay(slot, x, y)
     end
 end
 

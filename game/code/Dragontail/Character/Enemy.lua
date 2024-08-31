@@ -4,6 +4,7 @@ local Audio    = require "System.Audio"
 local Fighter  = require "Dragontail.Character.Fighter"
 local Characters = require "Dragontail.Stage.Characters"
 local Boundaries = require "Dragontail.Stage.Boundaries"
+local Raycast    = require "Object.Raycast"
 
 ---@class Enemy:Fighter
 local Enemy = class(Fighter)
@@ -51,17 +52,14 @@ local function findAngleToDodgeIncoming(self, incoming)
     local dodgedirx, dodgediry = math.norm(-tooppox, -tooppoy) -- cos(dodgeangle), sin(dodgeangle)
     local dodgespace = dodgedist + self.bodyradius
     local dodgespacex, dodgespacey = dodgedirx * dodgespace, dodgediry * dodgespace
-    local wallhit = Boundaries.castRay(self.x, self.y, self.x + dodgespacex, self.y + dodgespacey, 1)
+    local raycast = Raycast(dodgespacex, dodgespacey, 1)
 
-    if oppospeed >= dodgespeed or wallhit then
+    if oppospeed >= dodgespeed or Boundaries.castRay(raycast, self.x, self.y) then
         dodgespacex, dodgespacey = dodgespacey, dodgespacex
-        if lm_random(2) == 1 then
-            dodgespacex = -dodgespacex
-        else
-            dodgespacey = -dodgespacey
-        end
-        if Boundaries.castRay(self.x, self.y, self.x + dodgespacex, self.y + dodgespacey, 1) then
-            dodgespacex, dodgespacey = -dodgespacex, -dodgespacey
+        local rot90dir = lm_random(2) == 1 and 1 or -1
+        raycast.dx, raycast.dy = math.rot90(raycast.dx, raycast.dy, rot90dir)
+        if Boundaries.castRay(raycast, self.x, self.y) then
+            raycast.dx, raycast.dy = -raycast.dx, -raycast.dy
         end
 
         -- if wallhit then
@@ -78,7 +76,7 @@ local function findAngleToDodgeIncoming(self, incoming)
         --     dodgespacex, dodgespacey = dodgedirx * dodgespace, dodgediry * dodgespace
         -- end
     end
-    return math.atan2(dodgespacey, dodgespacex)
+    return math.atan2(raycast.dy, raycast.dx)
 end
 
 function Enemy:stand(duration)
@@ -182,11 +180,11 @@ function Enemy:approach()
         return "stand", 10
     end
     local destx, desty = attackerslot:getPosition(oppox, oppoy, attackradius)
-    local wallhit = Boundaries.castRay(x, y, destx, desty, 1)
-    if wallhit then
+    local raycast = Raycast(destx - x, desty - y, 1)
+    if Boundaries.castRay(raycast, x, y) then
         local todestx, todesty = destx - x, desty - y
-        local frontendx, frontendy = wallhit.ax, wallhit.ay
-        local backendx, backendy = wallhit.bx, wallhit.by
+        local frontendx, frontendy = raycast.hitwallx, raycast.hitwally
+        local backendx, backendy = raycast.hitwallx2, raycast.hitwally2
         local wallvecx, wallvecy = frontendx - backendx, frontendy - backendy
         if math.dot(wallvecx, wallvecy, todestx, todesty) < 0 then
             frontendx, backendx = backendx, frontendx

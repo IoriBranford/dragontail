@@ -28,8 +28,8 @@ local function getPolygonCornerNormal(hx, hy, ix, iy, jx, jy, sarea)
 end
 
 function Boundary:init()
-    assert(self.shape == "polygon", "Boundary must be a polygon object")
     local points = self.points
+    assert(points, "Boundary must be a polygon object")
 
     local sarea = math.polysignedarea(points)
     self.signedarea = sarea
@@ -102,69 +102,52 @@ function Boundary:keepCircleInside(x, y, r)
     return x, y, totalpenex, totalpeney
 end
 
----@class RayHit
----@field hitx number where ray hit wall
----@field hity number where ray hit wall
----@field hitdist number
----@field hitside number >0 = from inside, <0 = from outside
----@field ax number first wall endpoint
----@field ay number first wall endpoint
----@field bx number second wall endpoint
----@field by number second wall endpoint
-local RayHit = class()
-
-local function castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, allowedhitside, hit)
-    local walldir = math.det(rx1-rx0, ry1-ry0, bx-ax, by-ay)
-    if allowedhitside ~= 0 and walldir * allowedhitside < 0 then
-        return hit
-    end
-    local hitx, hity = math.intersectsegments(rx0, ry0, rx1, ry1, ax, ay, bx, by)
-    if hitx and hity then
-        hit = hit or {}
-        local hitdist = hit.hitdist or math.huge
-        local dist = math.dist(rx0, ry0, hitx, hity)
-        if dist < hitdist then
-            hit.hitx, hit.hity = hitx, hity
-            hit.hitdist = dist
-            hit.ax, hit.ay = ax, ay
-            hit.bx, hit.by = bx, by
-            hit.hitside = walldir
-        end
-    end
-    return hit
-end
-
----@param hit RayHit?
-function Boundary:castRay(rx0, ry0, rx1, ry1, allowedhitside, hit)
+---@param raycast Raycast
+function Boundary:castRay(raycast, rx, ry)
     local points = self.points
-    if not points then
-        return
-    end
-    allowedhitside = allowedhitside or 0
-    if self.signedarea < 0 then
-        allowedhitside = -allowedhitside
-    end
+    if not points then return end
+
+    local canhitside = self.signedarea < 0
+        and -raycast.canhitside or raycast.canhitside
     local selfx, selfy = self.x, self.y
-    rx0, ry0 = rx0 - selfx, ry0 - selfy
-    rx1, ry1 = rx1 - selfx, ry1 - selfy
+    rx, ry = rx - selfx, ry - selfy
+    local rdx, rdy = raycast.dx, raycast.dy
+    local rx2, ry2 = rx + rdx, ry + rdy
+
     local ax, ay = points[#points-1], points[#points]
+    local hitdsq = raycast.hitdist
+    hitdsq = hitdsq and hitdsq*hitdsq or 0x10000000
+    local hitx, hity, hitwallx, hitwally, hitwallx2, hitwally2, hitside
     for b = 2, #points, 2 do
         local bx, by = points[b-1], points[b]
-        hit = castRayOnSegment(rx0, ry0, rx1, ry1, ax, ay, bx, by, allowedhitside, hit)
+        local walldir = math.det(rdx, rdy, bx-ax, by-ay)
+        if walldir * canhitside >= 0 then
+            local hx, hy = math.intersectsegments(rx, ry, rx2, ry2, ax, ay, bx, by)
+            if hx and hy then
+                local distsq = math.distsq(rx, ry, hx, hy)
+                if distsq < hitdsq then
+                    hitdsq = distsq
+                    hitx, hity = hx, hy
+                    hitwallx, hitwally = ax, ay
+                    hitwallx2, hitwally2 = bx, by
+                    hitside = walldir
+                end
+            end
+        end
         ax, ay = bx, by
     end
-    if hit then
-        hit.hitx = hit.hitx + selfx
-        hit.hity = hit.hity + selfy
-        hit.ax = hit.ax + selfx
-        hit.ay = hit.ay + selfy
-        hit.bx = hit.bx + selfx
-        hit.by = hit.by + selfy
-        if self.signedarea < 0 then
-            hit.hitside = -hit.hitside
-        end
+
+    if hitx then
+        raycast.hitdist = sqrt(hitdsq)
+        raycast.hitx = hitx + selfx
+        raycast.hity = hity + selfy
+        raycast.hitwallx = hitwallx + selfx
+        raycast.hitwally = hitwally + selfy
+        raycast.hitwallx2 = hitwallx2 + selfx
+        raycast.hitwally2 = hitwally2 + selfy
+        raycast.hitside = self.signedarea < 0 and -hitside or hitside
+        return true
     end
-    return hit
 end
 
 function Boundary:drawCollisionDebug(x, y, r)

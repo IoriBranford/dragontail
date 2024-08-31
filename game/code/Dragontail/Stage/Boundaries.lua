@@ -1,3 +1,4 @@
+local Raycast = require "Object.Raycast"
 
 ---@module 'Dragontail.Stage.Boundaries'
 local Boundaries = {}
@@ -18,18 +19,18 @@ function Boundaries.clear()
     end
 end
 
----@return RayHit?
-function Boundaries.castRay(rx0, ry0, rx1, ry1, allowedhitside, hit)
-    if hit then
-        hit.hitdist = nil
-    end
+function Boundaries.castRay(raycast, rx, ry)
+    raycast.hitdist = nil
+    local hitsomething
+    local rdx, rdy = raycast.rdx, raycast.rdy
     for _, bound in pairs(boundaries) do
-        hit = bound:castRay(rx0, ry0, rx1, ry1, allowedhitside, hit)
-        if hit then
-            rx1, ry1 = hit.hitx, hit.hity
+        if bound:castRay(raycast, rx, ry) then
+            raycast.rdx, raycast.rdy = raycast.hitx - rx, raycast.hity - ry
+            hitsomething = true
         end
     end
-    return hit
+    raycast.rdx, raycast.rdy = rdx, rdy
+    return hitsomething
 end
 
 function Boundaries.keepCircleIn(x, y, r)
