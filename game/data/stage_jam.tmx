@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="80" height="12" tilewidth="32" tileheight="32" infinite="0" nextlayerid="24" nextobjectid="80">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="80" height="12" tilewidth="32" tileheight="32" infinite="0" nextlayerid="24" nextobjectid="80">
  <editorsettings>
   <export target="stage_jam.lua" format="lua"/>
  </editorsettings>
@@ -20,14 +20,10 @@
    eJztk0EOgjAQRUsCdENBQK+lci8R0GsJCHgg/2TG6JIFXTk/eZnyO39aSHDWmBK8Yq4ZqIwxZ1DIegRXcAQDmNDboR6wX6PuLT9TZo65ZgHPTAPO5AH30/xBstRLPvW3ch7tpZJ1lmfnYAcvQU0tn/+Z61Ab1N7wXSc5m97lhPUid6XZ5Nfme59EenrJpL/78l1aWVcyg+bRd0hk3YToAR24gXvoz7uAeoW3ddanN4InmMAMFo/eA/QrvK2zPr0swr8BclCAMvLnJcCt8LbO+vRUKpVKpVKpVP+lNwhdlUI=
   </data>
  </layer>
- <objectgroup id="2" name="room0">
-  <properties>
-   <property name="z" type="int" value="0"/>
-  </properties>
-  <object id="1" name="bounds" type="Boundary" x="0" y="128" width="2560" height="256"/>
- </objectgroup>
  <objectgroup id="22" name="room6">
-  <object id="75" name="bounds" type="Boundary" x="1920" y="128" width="640" height="256"/>
+  <object id="75" name="bounds" type="Boundary" x="1920" y="128" width="640" height="256">
+   <polygon points="-480,0 640,0 640,256 -480,256"/>
+  </object>
   <object id="77" type="food-bigfish" x="2240" y="145">
    <properties>
     <property name="altitude" type="int" value="16"/>
@@ -45,7 +41,9 @@
   <properties>
    <property name="z" type="int" value="0"/>
   </properties>
-  <object id="62" name="bounds" type="Boundary" x="1440" y="128" width="640" height="256"/>
+  <object id="62" name="bounds" type="Boundary" x="1440" y="128" width="640" height="256">
+   <polygon points="-320,0 640,0 640,256 -320,256"/>
+  </object>
  </objectgroup>
  <objectgroup id="15" name="room4">
   <properties>
@@ -75,7 +73,9 @@
    </properties>
    <point/>
   </object>
-  <object id="5" name="bounds" type="Boundary" x="1120" y="128" width="640" height="256"/>
+  <object id="5" name="bounds" type="Boundary" x="1120" y="128" width="640" height="256">
+   <polygon points="-400,0 640,0 640,256 -400,256"/>
+  </object>
   <object id="28" type="bandit-dagger" x="1536" y="128">
    <point/>
   </object>
@@ -90,7 +90,9 @@
   <properties>
    <property name="z" type="int" value="0"/>
   </properties>
-  <object id="3" name="bounds" type="Boundary" x="720" y="128" width="640" height="256"/>
+  <object id="3" name="bounds" type="Boundary" x="720" y="128" width="640" height="256">
+   <polygon points="-208,0 640,0 640,256 -208,256"/>
+  </object>
   <object id="50" type="food-fish" x="1280" y="161">
    <properties>
     <property name="altitude" type="int" value="16"/>
@@ -126,13 +128,17 @@
    </properties>
    <point/>
   </object>
-  <object id="4" name="bounds" type="Boundary" x="512" y="128" width="640" height="256"/>
+  <object id="4" name="bounds" type="Boundary" x="512" y="128" width="640" height="256">
+   <polygon points="-384,0 640,0 640,256 -384,256"/>
+  </object>
  </objectgroup>
  <objectgroup id="11" name="room1">
   <properties>
    <property name="z" type="int" value="0"/>
   </properties>
-  <object id="2" name="bounds" type="Boundary" x="128" y="128" width="640" height="256"/>
+  <object id="2" name="bounds" type="Boundary" x="128" y="128" width="640" height="256">
+   <polygon points="-128,0 640,0 640,256 -128,256"/>
+  </object>
  </objectgroup>
  <objectgroup id="23" name="fight6">
   <object id="76" type="bandit-axe" x="2592" y="192">

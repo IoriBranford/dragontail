@@ -1,7 +1,7 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.0",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -867,37 +867,6 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 2,
-      name = "room0",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {
-        ["z"] = 0
-      },
-      objects = {
-        {
-          id = 1,
-          name = "bounds",
-          type = "Boundary",
-          shape = "rectangle",
-          x = 0,
-          y = 128,
-          width = 2560,
-          height = 256,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
       id = 22,
       name = "room6",
       class = "",
@@ -913,13 +882,19 @@ return {
           id = 75,
           name = "bounds",
           type = "Boundary",
-          shape = "rectangle",
+          shape = "polygon",
           x = 1920,
           y = 128,
           width = 640,
           height = 256,
           rotation = 0,
           visible = true,
+          polygon = {
+            { x = -480, y = 0 },
+            { x = 640, y = 0 },
+            { x = 640, y = 256 },
+            { x = -480, y = 256 }
+          },
           properties = {}
         },
         {
@@ -974,13 +949,19 @@ return {
           id = 62,
           name = "bounds",
           type = "Boundary",
-          shape = "rectangle",
+          shape = "polygon",
           x = 1440,
           y = 128,
           width = 640,
           height = 256,
           rotation = 0,
           visible = true,
+          polygon = {
+            { x = -320, y = 0 },
+            { x = 640, y = 0 },
+            { x = 640, y = 256 },
+            { x = -320, y = 256 }
+          },
           properties = {}
         }
       }
@@ -1065,13 +1046,19 @@ return {
           id = 5,
           name = "bounds",
           type = "Boundary",
-          shape = "rectangle",
+          shape = "polygon",
           x = 1120,
           y = 128,
           width = 640,
           height = 256,
           rotation = 0,
           visible = true,
+          polygon = {
+            { x = -400, y = 0 },
+            { x = 640, y = 0 },
+            { x = 640, y = 256 },
+            { x = -400, y = 256 }
+          },
           properties = {}
         },
         {
@@ -1135,13 +1122,19 @@ return {
           id = 3,
           name = "bounds",
           type = "Boundary",
-          shape = "rectangle",
+          shape = "polygon",
           x = 720,
           y = 128,
           width = 640,
           height = 256,
           rotation = 0,
           visible = true,
+          polygon = {
+            { x = -208, y = 0 },
+            { x = 640, y = 0 },
+            { x = 640, y = 256 },
+            { x = -208, y = 256 }
+          },
           properties = {}
         },
         {
@@ -1252,13 +1245,19 @@ return {
           id = 4,
           name = "bounds",
           type = "Boundary",
-          shape = "rectangle",
+          shape = "polygon",
           x = 512,
           y = 128,
           width = 640,
           height = 256,
           rotation = 0,
           visible = true,
+          polygon = {
+            { x = -384, y = 0 },
+            { x = 640, y = 0 },
+            { x = 640, y = 256 },
+            { x = -384, y = 256 }
+          },
           properties = {}
         }
       }
@@ -1283,13 +1282,19 @@ return {
           id = 2,
           name = "bounds",
           type = "Boundary",
-          shape = "rectangle",
+          shape = "polygon",
           x = 128,
           y = 128,
           width = 640,
           height = 256,
           rotation = 0,
           visible = true,
+          polygon = {
+            { x = -128, y = 0 },
+            { x = 640, y = 0 },
+            { x = 640, y = 256 },
+            { x = -128, y = 256 }
+          },
           properties = {}
         }
       }
