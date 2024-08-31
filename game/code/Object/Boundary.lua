@@ -68,7 +68,7 @@ local function getCirclePenetrationOfPolygonSegment(x, y, r, x1, y1, x2, y2, sar
     local dist = sqrt(distsq)
     local nx, ny = distx/dist, disty/dist
     if sarea * math.det(x2-x1, y2-y1, distx, disty) < 0 then
-        dist = -dist
+        r = -r
     end
     local pene = dist - r
     return nx*pene, ny*pene
