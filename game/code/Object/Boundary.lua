@@ -15,16 +15,16 @@ function Boundary:_init()
 end
 
 local function getPolygonCornerNormal(hx, hy, ix, iy, jx, jy, sarea)
-    local ihnx, ihny = math.norm(hx-ix, hy-iy)
-    local ijnx, ijny = math.norm(jx-ix, jy-iy)
-    local nx, ny = ihnx+ijnx, ihny+ijny
-    if nx == 0 and ny == 0 then
-        return math.rot90(ijnx, ijny, sarea)
+    local hix, hiy = ix-hx, iy-hy
+    local ijx, ijy = jx-ix, jy-iy
+    local hipx, hipy = math.norm(math.rot90(hix, hiy, sarea))
+    local ijpx, ijpy = math.norm(math.rot90(ijx, ijy, sarea))
+    local nx, ny = math.norm(hipx + ijpx, hipy + ijpy)
+    if sarea * math.det(hipx, hipy, ijpx, ijpy) > 0 then
+        local cos = math.dot(nx, ny, hipx, hipy)
+        nx, ny = nx / cos, ny / cos
     end
-    if sarea * math.det(ijnx, ijny, ihnx, ihny) < 0 then
-        nx, ny = -nx, -ny
-    end
-    return math.norm(nx, ny)
+    return nx, ny
 end
 
 function Boundary:init()
