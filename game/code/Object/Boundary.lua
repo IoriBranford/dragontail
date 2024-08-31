@@ -85,9 +85,9 @@ function Boundary:keepCircleInside(x, y, r)
     if not points then
         return x, y
     end
-    local cn = self.cornernormals
     local selfx, selfy = self.x, self.y
     x, y = x - selfx, y - selfy
+    local cn = self.cornernormals
     local cnx, cny = cn[#points-1], cn[#points]
     local x1, y1 = points[#points-1] + cnx*r, points[#points] + cny*r
     local inside = false
@@ -135,13 +135,16 @@ function Boundary:castRay(raycast, rx, ry)
     rx, ry = rx - selfx, ry - selfy
     local rdx, rdy = raycast.dx, raycast.dy
     local rx2, ry2 = rx + rdx, ry + rdy
-
-    local ax, ay = points[#points-1], points[#points]
+    local r = raycast.radius
+    local cn = self.cornernormals
+    local cnx, cny = cn[#points-1], cn[#points]
+    local ax, ay = points[#points-1] + cnx*r, points[#points] + cny*r
     local hitdsq = raycast.hitdist
     hitdsq = hitdsq and hitdsq*hitdsq or 0x10000000
     local hitx, hity, hitwallx, hitwally, hitwallx2, hitwally2, hitside
     for b = 2, #points, 2 do
-        local bx, by = points[b-1], points[b]
+        cnx, cny = cn[b-1], cn[b]
+        local bx, by = points[b-1] + cnx*r, points[b] + cny*r
         local walldir = math.det(rdx, rdy, bx-ax, by-ay)
         if walldir * canhitside >= 0 then
             local hx, hy = math.intersectsegments(rx, ry, rx2, ry2, ax, ay, bx, by)
