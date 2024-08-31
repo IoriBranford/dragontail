@@ -59,15 +59,18 @@ end
 
 local function getCirclePenetrationOfPolygonSegment(x, y, r, x1, y1, x2, y2, sarea)
     local projx, projy = projpointsegment(x, y, x1, y1, x2, y2)
-    local tosegx, tosegy = projx - x, projy - y
-    local distsq = lensq(tosegx, tosegy)
+    local distx, disty = x - projx, y - projy
+    local distsq = lensq(distx, disty)
     if r*r < distsq then
         return
     end
 
     local dist = sqrt(distsq)
-    local nx, ny = tosegx/dist, tosegy/dist
-    local pene = r - dist
+    local nx, ny = distx/dist, disty/dist
+    if sarea * math.det(x2-x1, y2-y1, distx, disty) < 0 then
+        dist = -dist
+    end
+    local pene = dist - r
     return nx*pene, ny*pene
 end
 
@@ -171,6 +174,7 @@ function Boundary:castRayOnPolygon(rx0, ry0, rx1, ry1, allowedhitside, hit)
     if not points then
         return
     end
+    allowedhitside = allowedhitside or 0
     if self.signedarea < 0 then
         allowedhitside = -allowedhitside
     end
@@ -198,6 +202,7 @@ function Boundary:castRayOnPolygon(rx0, ry0, rx1, ry1, allowedhitside, hit)
 end
 
 function Boundary:castRayOnRectangle(rx0, ry0, rx1, ry1, allowedhitside, hit)
+    allowedhitside = allowedhitside or 0
     local width, height = self.width, self.height
     local ax, ay = self.x, self.y
     local bx, by = ax + width, ay
@@ -212,7 +217,6 @@ function Boundary:castRayOnRectangle(rx0, ry0, rx1, ry1, allowedhitside, hit)
 end
 
 function Boundary:castRay(rx0, ry0, rx1, ry1, allowedhitside, hit)
-    allowedhitside = allowedhitside or 0
     if self.shape == "polygon" then
         return self:castRayOnPolygon(rx0, ry0, rx1, ry1, allowedhitside, hit)
     end
