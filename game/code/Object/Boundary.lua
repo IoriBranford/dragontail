@@ -37,6 +37,8 @@ function Boundary:init()
     for i = 1, #points do
         cornernormals[i] = false
     end
+
+    -- Not always the true normal, rather the offset such that a circle of radius 1 will collide correctly
     self.cornernormals = cornernormals
 
     local x0, y0 = points[#points-3], points[#points-2]
@@ -83,23 +85,43 @@ function Boundary:keepCircleInside(x, y, r)
     if not points then
         return x, y
     end
-    local sarea = self.signedarea
-    local totalpenex, totalpeney
+    local cn = self.cornernormals
     local selfx, selfy = self.x, self.y
     x, y = x - selfx, y - selfy
-    local x1, y1 = points[#points-1], points[#points]
+    local cnx, cny = cn[#points-1], cn[#points]
+    local x1, y1 = points[#points-1] + cnx*r, points[#points] + cny*r
+    local inside = false
+    local nearestx, nearesty
+    local nearestdsq = math.huge
     for i = 2, #points, 2 do
-        local x2, y2 = points[i-1], points[i]
-        local penex, peney = getCirclePenetrationOfPolygonSegment(x, y, r, x1, y1, x2, y2, sarea)
-        if penex and peney then
-            x, y = x - penex, y - peney
-            totalpenex = (totalpenex or 0) + penex
-            totalpeney = (totalpeney or 0) + peney
+        cnx, cny = cn[i-1], cn[i]
+        local x2, y2 = points[i-1] + cnx*r, points[i] + cny*r
+
+        if y > math.min(y1, y2) then
+            if y <= math.max(y1, y2) then
+                if x <= math.max(x1, x2) then
+                    local hitx = (y - y1) * (x2 - x1) / (y2 - y1) + x1;
+                    if x1 == x2 or x <= hitx then
+                        inside = not inside
+                    end
+                end
+            end
+        end
+
+        local projx, projy = projpointsegment(x, y, x1, y1, x2, y2)
+        local projdsq = math.distsq(x, y, projx, projy)
+        if projdsq < nearestdsq then
+            nearestdsq, nearestx, nearesty = projdsq, projx, projy
         end
         x1, y1 = x2, y2
     end
+    local penex, peney
+    if not inside then
+        penex, peney = x - nearestx, y - nearesty
+        x, y = nearestx, nearesty
+    end
     x, y = x + selfx, y + selfy
-    return x, y, totalpenex, totalpeney
+    return x, y, penex, peney
 end
 
 ---@param raycast Raycast
