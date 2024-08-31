@@ -20,8 +20,8 @@ local function getPolygonCornerNormal(hx, hy, ix, iy, jx, jy, sarea)
     local hipx, hipy = math.norm(math.rot90(hix, hiy, sarea))
     local ijpx, ijpy = math.norm(math.rot90(ijx, ijy, sarea))
     local nx, ny = math.norm(hipx + ijpx, hipy + ijpy)
-    local cos = math.dot(nx, ny, hipx, hipy)
-    if cos > 0 then
+    if math.dot(nx, ny, ijx, ijy) > 0 then
+        local cos = math.dot(nx, ny, hipx, hipy)
         nx, ny = nx / cos, ny / cos
     end
     return nx, ny
