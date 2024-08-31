@@ -50,12 +50,10 @@ local function findAngleToDodgeIncoming(self, incoming)
 
     local dodgedist = Fighter.GetSlideDistance(dodgespeed, self.dodgedecel or 1)
     local dodgedirx, dodgediry = math.norm(-tooppox, -tooppoy) -- cos(dodgeangle), sin(dodgeangle)
-    local dodgespace = dodgedist + self.bodyradius
-    local dodgespacex, dodgespacey = dodgedirx * dodgespace, dodgediry * dodgespace
-    local raycast = Raycast(dodgespacex, dodgespacey, 1)
+    local dodgespacex, dodgespacey = dodgedirx * dodgedist, dodgediry * dodgedist
+    local raycast = Raycast(dodgespacex, dodgespacey, 1, self.bodyradius)
 
     if oppospeed >= dodgespeed or Boundaries.castRay(raycast, self.x, self.y) then
-        dodgespacex, dodgespacey = dodgespacey, dodgespacex
         local rot90dir = lm_random(2) == 1 and 1 or -1
         raycast.dx, raycast.dy = math.rot90(raycast.dx, raycast.dy, rot90dir)
         if Boundaries.castRay(raycast, self.x, self.y) then
@@ -180,7 +178,7 @@ function Enemy:approach()
         return "stand", 10
     end
     local destx, desty = attackerslot:getPosition(oppox, oppoy, attackradius)
-    local raycast = Raycast(destx - x, desty - y, 1)
+    local raycast = Raycast(destx - x, desty - y, 1, bodyradius)
     if Boundaries.castRay(raycast, x, y) then
         local todestx, todesty = destx - x, desty - y
         local frontendx, frontendy = raycast.hitwallx, raycast.hitwally
