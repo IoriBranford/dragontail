@@ -626,7 +626,9 @@ end
 
 function Player:defeat(attacker)
     Audio.fadeMusic()
-    return Fighter.defeat(self, attacker)
+    self:stopAttack()
+    self.velx, self.vely = 0, 0
+    Audio.play(self.defeatsound)
 end
 
 return Player
