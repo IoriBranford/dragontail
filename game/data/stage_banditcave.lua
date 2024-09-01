@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.11.0",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 11,
-  nextobjectid = 21,
+  nextobjectid = 23,
   properties = {},
   tilesets = {
     {
@@ -1100,25 +1100,21 @@ return {
       properties = {},
       objects = {
         {
-          id = 14,
+          id = 21,
           name = "bounds",
           type = "Boundary",
           shape = "polygon",
           x = 0,
-          y = 128,
+          y = 0,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           polygon = {
-            { x = 40, y = 40 },
-            { x = 384, y = 24 },
-            { x = 640, y = 0 },
-            { x = 816, y = 48 },
-            { x = 776, y = 192 },
-            { x = 640, y = 256 },
-            { x = 352, y = 200 },
-            { x = 24, y = 208 }
+            { x = 0, y = 0 },
+            { x = 0, y = 128 },
+            { x = 640, y = 128 },
+            { x = 640, y = 0 }
           },
           properties = {}
         }
@@ -1183,29 +1179,21 @@ return {
       properties = {},
       objects = {
         {
-          id = 18,
+          id = 22,
           name = "bounds",
           type = "Boundary",
           shape = "polygon",
-          x = 320,
-          y = 128,
+          x = 0,
+          y = 0,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
-            { x = 640, y = 0 },
-            { x = 768, y = 48 },
-            { x = 880, y = 40 },
-            { x = 992, y = -16 },
-            { x = 1096, y = 72 },
-            { x = 1088, y = 184 },
-            { x = 984, y = 232 },
-            { x = 872, y = 200 },
-            { x = 768, y = 192 },
-            { x = 640, y = 256 },
-            { x = 0, y = 256 }
+            { x = 0, y = 128 },
+            { x = 1344, y = 128 },
+            { x = 1344, y = 0 }
           },
           properties = {}
         }
