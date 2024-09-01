@@ -14,6 +14,20 @@ function Boundary:_init()
     self:init()
 end
 
+local function forLines(self, r, f)
+    r = r or 0
+    local points = assert(self.points)
+    local cn = self.cornernormals
+    local cnx, cny = cn[#points-1], cn[#points]
+    local x1, y1 = points[#points-1] + cnx*r, points[#points] + cny*r
+    for i = 2, #points, 2 do
+        cnx, cny = cn[i-1], cn[i]
+        local x2, y2 = points[i-1] + cnx*r, points[i] + cny*r
+        f(x1, y1, x2, y2)
+        x1, y1 = x2, y2
+    end
+end
+
 local function getPolygonCornerNormal(hx, hy, ix, iy, jx, jy, sarea)
     local hix, hiy = ix-hx, iy-hy
     local ijx, ijy = jx-ix, jy-iy
@@ -76,27 +90,10 @@ local function getCirclePenetrationOfPolygonSegment(x, y, r, x1, y1, x2, y2, sar
     return nx*pene, ny*pene
 end
 
----@return number x
----@return number y
----@return number? penex x penetration. Non-0 = penetrating; 0 = touching; nil = no contact
----@return number? peney y penetration. Non-0 = penetrating; 0 = touching; nil = no contact
-function Boundary:keepCircleInside(x, y, r)
-    local points = self.points
-    if not points then
-        return x, y
-    end
-    local selfx, selfy = self.x, self.y
-    x, y = x - selfx, y - selfy
-    local cn = self.cornernormals
-    local cnx, cny = cn[#points-1], cn[#points]
-    local x1, y1 = points[#points-1] + cnx*r, points[#points] + cny*r
+function Boundary:isCircleInside(x, y, r)
+    x, y = x - self.x, y - self.y
     local inside = false
-    local nearestx, nearesty
-    local nearestdsq = math.huge
-    for i = 2, #points, 2 do
-        cnx, cny = cn[i-1], cn[i]
-        local x2, y2 = points[i-1] + cnx*r, points[i] + cny*r
-
+    forLines(self, r, function(x1, y1, x2, y2)
         if y > math.min(y1, y2) then
             if y <= math.max(y1, y2) then
                 if x <= math.max(x1, x2) then
@@ -107,20 +104,34 @@ function Boundary:keepCircleInside(x, y, r)
                 end
             end
         end
+    end)
+    return inside
+end
 
+---@return number x
+---@return number y
+---@return number? penex x penetration. Non-0 = penetrating; 0 = touching; nil = no contact
+---@return number? peney y penetration. Non-0 = penetrating; 0 = touching; nil = no contact
+function Boundary:keepCircleInside(x, y, r)
+    if self:isCircleInside(x, y, r) then
+        return x, y
+    end
+
+    local selfx, selfy = self.x, self.y
+    x, y = x - selfx, y - selfy
+    local nearestx, nearesty
+    local nearestdsq = math.huge
+
+    forLines(self, r, function(x1, y1, x2, y2)
         local projx, projy = projpointsegment(x, y, x1, y1, x2, y2)
         local projdsq = math.distsq(x, y, projx, projy)
         if projdsq < nearestdsq then
             nearestdsq, nearestx, nearesty = projdsq, projx, projy
         end
-        x1, y1 = x2, y2
-    end
-    local penex, peney
-    if not inside then
-        penex, peney = x - nearestx, y - nearesty
-        x, y = nearestx, nearesty
-    end
-    x, y = x + selfx, y + selfy
+    end)
+
+    local penex, peney = x - nearestx, y - nearesty
+    x, y = x - penex + selfx, y - peney + selfy
     return x, y, penex, peney
 end
 
