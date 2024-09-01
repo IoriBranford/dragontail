@@ -31,11 +31,11 @@ end
 local function getPolygonCornerNormal(hx, hy, ix, iy, jx, jy, sarea)
     local hix, hiy = ix-hx, iy-hy
     local ijx, ijy = jx-ix, jy-iy
-    local hipx, hipy = math.norm(math.rot90(hix, hiy, sarea))
-    local ijpx, ijpy = math.norm(math.rot90(ijx, ijy, sarea))
+    local hipx, hipy = math.norm(math.rot90(hix, hiy, 1))
+    local ijpx, ijpy = math.norm(math.rot90(ijx, ijy, 1))
     local nx, ny = math.norm(hipx + ijpx, hipy + ijpy)
-    if math.dot(nx, ny, ijx, ijy) > 0 then
-        local cos = math.dot(nx, ny, hipx, hipy)
+    local cos = math.dot(nx, ny, hipx, hipy)
+    if cos ~= 0 then
         nx, ny = nx / cos, ny / cos
     end
     return nx, ny
@@ -46,7 +46,7 @@ function Boundary:init()
     assert(points, "Boundary must be a polygon object")
 
     local sarea = math.polysignedarea(points)
-    self.signedarea = sarea
+    self.outward = sarea < 0
     local cornernormals = {}
     for i = 1, #points do
         cornernormals[i] = false
@@ -73,22 +73,22 @@ function Boundary:init()
     self.right = self.x + right
 end
 
-function Boundary:isCircleInside(x, y, r)
+function Boundary:isCircleColliding(x, y, r)
     x, y = x - self.x, y - self.y
-    local inside = false
+    local colliding = self.outward
     forLines(self, r, function(x1, y1, x2, y2)
         if y > math.min(y1, y2) then
             if y <= math.max(y1, y2) then
                 if x <= math.max(x1, x2) then
                     local hitx = (y - y1) * (x2 - x1) / (y2 - y1) + x1;
                     if x1 == x2 or x <= hitx then
-                        inside = not inside
+                        colliding = not colliding
                     end
                 end
             end
         end
     end)
-    return inside
+    return colliding
 end
 
 ---@return number x
@@ -96,7 +96,7 @@ end
 ---@return number? penex x penetration. Non-0 = penetrating; 0 = touching; nil = no contact
 ---@return number? peney y penetration. Non-0 = penetrating; 0 = touching; nil = no contact
 function Boundary:keepCircleInside(x, y, r)
-    if self:isCircleInside(x, y, r) then
+    if self:isCircleColliding(x, y, r) then
         return x, y
     end
 
@@ -123,8 +123,7 @@ function Boundary:castRay(raycast, rx, ry)
     local points = self.points
     if not points then return end
 
-    local canhitside = self.signedarea < 0
-        and -raycast.canhitside or raycast.canhitside
+    local canhitside = raycast.canhitside
     local selfx, selfy = self.x, self.y
     rx, ry = rx - selfx, ry - selfy
     local rdx, rdy = raycast.dx, raycast.dy
@@ -158,7 +157,7 @@ function Boundary:castRay(raycast, rx, ry)
         raycast.hitwally = hitwally + selfy
         raycast.hitwallx2 = hitwallx2 + selfx
         raycast.hitwally2 = hitwally2 + selfy
-        raycast.hitside = self.signedarea < 0 and -hitside or hitside
+        raycast.hitside = hitside
         return true
     end
 end
