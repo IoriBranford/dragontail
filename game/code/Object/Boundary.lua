@@ -73,23 +73,6 @@ function Boundary:init()
     self.right = self.x + right
 end
 
-local function getCirclePenetrationOfPolygonSegment(x, y, r, x1, y1, x2, y2, sarea)
-    local projx, projy = projpointsegment(x, y, x1, y1, x2, y2)
-    local distx, disty = x - projx, y - projy
-    local distsq = lensq(distx, disty)
-    if r*r < distsq then
-        return
-    end
-
-    local dist = sqrt(distsq)
-    local nx, ny = distx/dist, disty/dist
-    if sarea * math.det(x2-x1, y2-y1, distx, disty) < 0 then
-        r = -r
-    end
-    local pene = dist - r
-    return nx*pene, ny*pene
-end
-
 function Boundary:isCircleInside(x, y, r)
     x, y = x - self.x, y - self.y
     local inside = false
@@ -200,7 +183,6 @@ function Boundary:drawCollisionDebug(x, y, r)
     local points = self.points
     if points then
         local cornernormals = self.cornernormals
-        local sarea = self.signedarea
         local x1, y1 = points[#points-1], points[#points]
         for i = 2, #points, 2 do
             local x2, y2 = points[i-1], points[i]
@@ -212,11 +194,11 @@ function Boundary:drawCollisionDebug(x, y, r)
             love.graphics.setColor(1, 0, 0)
             love.graphics.circle("fill", projx, projy, 2)
 
-            local penex, peney = getCirclePenetrationOfPolygonSegment(x, y, r, x1, y1, x2, y2, sarea)
-            if penex and peney then
-                love.graphics.setColor(0, 1, 0)
-                love.graphics.line(projx, projy, projx + penex, projy + peney)
-            end
+            -- local penex, peney = getCirclePenetrationOfPolygonSegment(x, y, r, x1, y1, x2, y2)
+            -- if penex and peney then
+            --     love.graphics.setColor(0, 1, 0)
+            --     love.graphics.line(projx, projy, projx + penex, projy + peney)
+            -- end
 
             x1, y1 = x2, y2
         end
