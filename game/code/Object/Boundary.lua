@@ -96,26 +96,34 @@ end
 ---@return number? penex x penetration. Non-0 = penetrating; 0 = touching; nil = no contact
 ---@return number? peney y penetration. Non-0 = penetrating; 0 = touching; nil = no contact
 function Boundary:keepCircleInside(x, y, r)
-    if self:isCircleColliding(x, y, r) then
-        return x, y
-    end
-
     local selfx, selfy = self.x, self.y
     x, y = x - selfx, y - selfy
-    local nearestx, nearesty
-    local nearestdsq = math.huge
+    local rsq = r*r
+    local totalpenex, totalpeney
 
-    forLines(self, r, function(x1, y1, x2, y2)
-        local projx, projy = projpointsegment(x, y, x1, y1, x2, y2)
-        local projdsq = math.distsq(x, y, projx, projy)
-        if projdsq < nearestdsq then
-            nearestdsq, nearestx, nearesty = projdsq, projx, projy
+    forLines(self, 0, function(x1, y1, x2, y2)
+        local hitx, hity = projpointsegment(x, y, x1, y1, x2, y2)
+        local dsq = math.distsq(x, y, hitx, hity)
+        if dsq > rsq then
+            return
         end
+        local dist = sqrt(dsq)
+        local nx, ny = (hitx - x)/dist, (hity - y)/dist
+        local pene
+        if hitx == x1 and hity == y1
+        or hitx == x2 and hity == y2
+        or math.det(nx, ny, x2-x1, y2-y1) >= 0 then
+            pene = r - dist
+        else
+            pene = -r - dist
+        end
+        local penex, peney = nx * pene, ny * pene
+        totalpenex = (totalpenex or 0) + penex
+        totalpeney = (totalpeney or 0) + peney
+        x, y = x - penex, y - peney
     end)
 
-    local penex, peney = x - nearestx, y - nearesty
-    x, y = x - penex + selfx, y - peney + selfy
-    return x, y, penex, peney
+    return x + selfx, y + selfy, totalpenex, totalpeney
 end
 
 ---@param raycast Raycast
