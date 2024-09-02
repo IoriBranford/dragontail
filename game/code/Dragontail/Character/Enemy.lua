@@ -178,7 +178,7 @@ function Enemy:approach()
         return "stand", 10
     end
     local destx, desty = attackerslot:getPosition(oppox, oppoy, attackradius)
-    local raycast = Raycast(destx - x, desty - y, 1, bodyradius)
+    local raycast = Raycast(destx - x, desty - y, 1, bodyradius/2)
     if Boundaries.castRay(raycast, x, y) then
         local todestx, todesty = destx - x, desty - y
         local frontendx, frontendy = raycast.hitwallx, raycast.hitwally
