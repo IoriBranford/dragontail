@@ -76,6 +76,22 @@ function math.testrects(ax, ay, aw, ah, bx, by, bw, bh)
     return true
 end
 
+function math.rectintersection(ax, ay, aw, ah, bx, by, bw, bh)
+    local ax2 = ax + aw
+    if ax2 < bx then return end
+    local bx2 = bx + bw
+    if bx2 < ax then return end
+    local ay2 = ay + ah
+    if ay2 < by then return end
+    local by2 = by + bh
+    if by2 < ay then return end
+    local ix = max(ax, ay)
+    local iy = max(ay, by)
+    local ix2 = min(ax2, bx2)
+    local iy2 = min(ay2, by2)
+    return ix, iy, ix2-ix, iy2-iy
+end
+
 function math.testcircles(ax, ay, ar, bx, by, br)
     local dx, dy = ax - bx, ay - by
     local distsq = lensq(dx, dy)
