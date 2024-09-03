@@ -149,8 +149,11 @@ function Boundary:castRay(raycast, rx, ry)
     forLines(self, r, function(ax, ay, bx, by)
         local walldir = det(rdx, rdy, bx-ax, by-ay)
         if walldir * canhitside >= 0 then
-            local hx, hy = intersectsegments(rx, ry, rx2, ry2, ax, ay, bx, by)
+            local hx, hy, hx2, hy2 = intersectsegments(rx, ry, rx2, ry2, ax, ay, bx, by)
             if hx and hy then
+                if hx2 and hy2 and dot(rdx, rdy, hx2, hy2) < dot(rdx, rdy, hx, hy) then
+                    hx, hy = hx2, hy2
+                end
                 local dsq = distsq(rx, ry, hx, hy)
                 if dsq < hitdsq then
                     hitdsq = dsq
