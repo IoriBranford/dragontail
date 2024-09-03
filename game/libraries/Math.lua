@@ -125,6 +125,29 @@ function math.frombary(a, b, c, ax, ay, bx, by, cx, cy)
     return x, y
 end
 
+---@param points number[] Every 2 elements is 1 point
+---@param x number
+---@param y number
+function math.pointinpolygon(points, x, y)
+    local inside = false
+    local x1, y1 = points[#points-1], points[#points]
+    for i = 2, #points, 2 do
+        local x2, y2 = points[i-1], points[i]
+        if y > min(y1, y2) then
+            if y <= max(y1, y2) then
+                if x <= max(x1, x2) then
+                    local hitx = (y - y1) * (x2 - x1) / (y2 - y1) + x1;
+                    if x1 == x2 or x <= hitx then
+                        inside = not inside
+                    end
+                end
+            end
+        end
+        x1, y1 = x2, y2
+    end
+    return inside
+end
+
 ---Gets point on line segment from (ax, ay) to (bx, by) that is closest to point (px, py)
 ---@return number projx closest point on segment x
 ---@return number projy closest point on segment y
