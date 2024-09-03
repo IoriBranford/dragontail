@@ -192,11 +192,9 @@ function math.testpointtri(px, py, ax, ay, bx, by, cx, cy)
 end
 
 function math.testsegments(ax, ay, bx, by, cx, cy, dx, dy)
-    if ax == cx and ay == cy or ax == dx and ay == dy then
-        return ax, ay
-    end
-    if bx == cx and by == cy or bx == dx and by == dy then
-        return bx, by
+    if ax == cx and ay == cy or ax == dx and ay == dy
+    or bx == cx and by == cy or bx == dx and by == dy then
+        return true
     end
     local abx = bx-ax
     local aby = by-ay
@@ -204,7 +202,8 @@ function math.testsegments(ax, ay, bx, by, cx, cy, dx, dy)
     local cdy = dy-cy
     local div = det(abx, aby, cdx, cdy)
     if div == 0 then
-        return -- "coincide"
+        return det(abx, aby, cx-ax, cy-ay) == 0 and
+            math.rectintersection(ax, ay, bx, by, cx, cy, dx, dy) ~= nil
     end
     local cax, cay = ax-cx, ay-cy
     local s = det(abx, aby, cax, cay)/div
@@ -225,7 +224,22 @@ function math.intersectsegments(ax, ay, bx, by, cx, cy, dx, dy)
     local cdy = dy-cy
     local div = det(abx, aby, cdx, cdy)
     if div == 0 then
-        return -- "coincide"
+        if det(abx, aby, cx-ax, cy-ay) ~= 0 then
+            return
+        end
+        local abminx = min(ax, bx)
+        local abminy = abminx == ax and ay or by
+        local cdminx = min(cx, dx)
+        local cdminy = cdminx == cx and cy or dy
+        local ix, iy, iw, ih = math.rectintersection(
+            abminx, abminy,
+            math.abs(abx), math.abs(aby),
+            cdminx, cdminy,
+            math.abs(cdx), math.abs(cdy))
+        if not ix then
+            return
+        end
+        return ix, iy, ix+iw, iy+ih
     end
     local cax, cay = ax-cx, ay-cy
     local s = det(abx, aby, cax, cay)/div
