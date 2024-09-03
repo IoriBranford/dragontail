@@ -32,7 +32,7 @@ local Assets= require "Tiled.Assets"
 ---@field layers LayerGroup Access by index (or by layer name after calling indexLayersByName)
 ---@field directory string Directory path containing the map file
 ---@field file string Path of the map file
----@field objects TiledObject[] All map objects by their id
+---@field objects {[integer]: TiledObject} All map objects by their id
 ---@field tiles Tile[] All tileset tiles by their gid
 ---@field properties table Moved into map itself
 local TiledMap = class()
