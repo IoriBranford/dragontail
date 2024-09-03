@@ -1,8 +1,14 @@
 local Tiled = require "Tiled"
 
 local projpointsegment = math.projpointsegment
-local lensq = math.lensq
+local distsq = math.distsq
 local sqrt = math.sqrt
+local norm = math.norm
+local rot90 = math.rot90
+local max, min = math.max, math.min
+local dot, det = math.dot, math.det
+local polysignedarea = math.polysignedarea
+local intersectsegments = math.intersectsegments
 
 ---@class Boundary:TiledObject
 local Boundary = class(Tiled.Object)
@@ -31,10 +37,10 @@ end
 local function getPolygonCornerNormal(hx, hy, ix, iy, jx, jy, sarea)
     local hix, hiy = ix-hx, iy-hy
     local ijx, ijy = jx-ix, jy-iy
-    local hipx, hipy = math.norm(math.rot90(hix, hiy, 1))
-    local ijpx, ijpy = math.norm(math.rot90(ijx, ijy, 1))
-    local nx, ny = math.norm(hipx + ijpx, hipy + ijpy)
-    local cos = math.dot(nx, ny, hipx, hipy)
+    local hipx, hipy = norm(rot90(hix, hiy, 1))
+    local ijpx, ijpy = norm(rot90(ijx, ijy, 1))
+    local nx, ny = norm(hipx + ijpx, hipy + ijpy)
+    local cos = dot(nx, ny, hipx, hipy)
     if cos ~= 0 then
         nx, ny = nx / cos, ny / cos
     end
@@ -45,7 +51,7 @@ function Boundary:init()
     local points = self.points
     assert(points, "Boundary must be a polygon object")
 
-    local sarea = math.polysignedarea(points)
+    local sarea = polysignedarea(points)
     self.outward = sarea < 0
     local cornernormals = {}
     for i = 1, #points do
@@ -66,7 +72,7 @@ function Boundary:init()
         x0, y0 = x1, y1
         x1, y1 = x2, y2
         x2, y2 = points[i+1], points[i+2]
-        right = math.max(right, x2)
+        right = max(right, x2)
         cnx, cny = getPolygonCornerNormal(x0, y0, x1, y1, x2, y2, sarea)
         cornernormals[i-1], cornernormals[i] = cnx, cny
     end
@@ -77,9 +83,9 @@ function Boundary:isCircleColliding(x, y, r)
     x, y = x - self.x, y - self.y
     local colliding = self.outward
     forLines(self, r, function(x1, y1, x2, y2)
-        if y > math.min(y1, y2) then
-            if y <= math.max(y1, y2) then
-                if x <= math.max(x1, x2) then
+        if y > min(y1, y2) then
+            if y <= max(y1, y2) then
+                if x <= max(x1, x2) then
                     local hitx = (y - y1) * (x2 - x1) / (y2 - y1) + x1;
                     if x1 == x2 or x <= hitx then
                         colliding = not colliding
@@ -103,7 +109,7 @@ function Boundary:keepCircleInside(x, y, r)
 
     forLines(self, 0, function(x1, y1, x2, y2)
         local hitx, hity = projpointsegment(x, y, x1, y1, x2, y2)
-        local dsq = math.distsq(x, y, hitx, hity)
+        local dsq = distsq(x, y, hitx, hity)
         if dsq > rsq then
             return
         end
@@ -112,7 +118,7 @@ function Boundary:keepCircleInside(x, y, r)
         local pene
         if hitx == x1 and hity == y1
         or hitx == x2 and hity == y2
-        or math.det(nx, ny, x2-x1, y2-y1) >= 0 then
+        or det(nx, ny, x2-x1, y2-y1) >= 0 then
             pene = r - dist
         else
             pene = -r - dist
@@ -141,11 +147,11 @@ function Boundary:castRay(raycast, rx, ry)
     hitdsq = hitdsq and hitdsq*hitdsq or 0x10000000
     local hitx, hity, hitwallx, hitwally, hitwallx2, hitwally2, hitside
     forLines(self, r, function(ax, ay, bx, by)
-        local walldir = math.det(rdx, rdy, bx-ax, by-ay)
+        local walldir = det(rdx, rdy, bx-ax, by-ay)
         if walldir * canhitside >= 0 then
-            local hx, hy = math.intersectsegments(rx, ry, rx2, ry2, ax, ay, bx, by)
+            local hx, hy = intersectsegments(rx, ry, rx2, ry2, ax, ay, bx, by)
             if hx and hy then
-                local distsq = math.distsq(rx, ry, hx, hy)
+                local distsq = distsq(rx, ry, hx, hy)
                 if distsq < hitdsq then
                     hitdsq = distsq
                     hitx, hity = hx, hy
