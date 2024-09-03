@@ -151,9 +151,9 @@ function Boundary:castRay(raycast, rx, ry)
         if walldir * canhitside >= 0 then
             local hx, hy = intersectsegments(rx, ry, rx2, ry2, ax, ay, bx, by)
             if hx and hy then
-                local distsq = distsq(rx, ry, hx, hy)
-                if distsq < hitdsq then
-                    hitdsq = distsq
+                local dsq = distsq(rx, ry, hx, hy)
+                if dsq < hitdsq then
+                    hitdsq = dsq
                     hitx, hity = hx, hy
                     hitwallx, hitwally = ax, ay
                     hitwallx2, hitwally2 = bx, by
