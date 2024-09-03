@@ -130,7 +130,11 @@ local function processPoly(object)
             points[#points+1] = py + offsety
         end
         if object.shape == "polygon" then
-            object.triangles = triangulate(points)
+            local errormsg
+            object.triangles, errormsg = triangulate(points)
+            if not object.triangles then
+                print("Object "..(object.id or object), errormsg)
+            end
         end
     end
 end
