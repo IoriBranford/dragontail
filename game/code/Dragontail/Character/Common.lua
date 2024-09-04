@@ -77,6 +77,12 @@ function Common:itemWaitForPickup()
                     opponent:heal(self.healhealth)
                     finished = true
                 end
+            elseif self.giveweapon then
+                if not opponent.weaponinhand then
+                    Audio.play(opponent.holdsound)
+                    opponent.weaponinhand = self.giveweapon
+                    finished = true
+                end
             end
         end
         if finished then
