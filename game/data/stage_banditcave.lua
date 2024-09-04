@@ -856,7 +856,7 @@ return {
       spacing = 0,
       margin = 0,
       columns = 16,
-      image = "objects/bandit/bandits.png",
+      image = "mapobjects/bandit/bandits.png",
       imagewidth = 1024,
       imageheight = 64,
       objectalignment = "bottom",

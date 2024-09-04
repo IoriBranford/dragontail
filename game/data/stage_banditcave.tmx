@@ -6,7 +6,7 @@
  </editorsettings>
  <tileset firstgid="1" source="tilesets/caves/caves.tsx"/>
  <tileset firstgid="2449" source="tilesets/grassland.tsx"/>
- <tileset firstgid="5265" source="objects/bandit/bandits.tsx"/>
+ <tileset firstgid="5265" source="mapobjects/bandit/bandits.tsx"/>
  <layer id="2" name="floor" width="200" height="12">
   <data encoding="base64" compression="zlib">
    <chunk x="0" y="0" width="20" height="12">
@@ -79,7 +79,7 @@
   <data encoding="base64" compression="zlib"/>
  </layer>
  <objectgroup id="7" name="room1">
-  <object id="21" template="objects/OutwardBoundary.tx" x="0" y="0">
+  <object id="21" template="mapobjects/OutwardBoundary.tx" x="0" y="0">
    <polygon points="0,0 0,128 640,128 640,0"/>
   </object>
  </objectgroup>
@@ -88,7 +88,7 @@
   <object id="16" gid="5266" x="992" y="248" width="64" height="64"/>
  </objectgroup>
  <objectgroup id="9" name="room2">
-  <object id="22" template="objects/OutwardBoundary.tx" x="0" y="0">
+  <object id="22" template="mapobjects/OutwardBoundary.tx" x="0" y="0">
    <polygon points="0,0 0,128 1344,128 1344,0"/>
   </object>
  </objectgroup>
