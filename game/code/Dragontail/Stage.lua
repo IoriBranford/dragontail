@@ -125,8 +125,10 @@ function Stage.fixedupdate()
     local enemies = Characters.getGroup("enemies")
     local nenemies = #enemies
     Characters.pruneDisappeared()
-    if nenemies > 0 and #enemies <= 0 then
-        Stage.openNextRoom()
+    if gamestatus == "fight" then
+        if nenemies > 0 and #enemies <= 0 then
+            Stage.openNextRoom()
+        end
     end
 
     if gamestatus == "goingToNextRoom" then
