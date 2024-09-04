@@ -54,7 +54,7 @@ local function loadCel(self, cel, filename, layers, image)
 	framei = tonumber(framei)
 	local frame = self[framei]
 	if not frame then
-		frame = AseFrame(image, cel.duration)
+		frame = AseFrame(framei, image, cel.duration)
 		self[framei] = frame
 	end
     frame:putCel(layeri, cel)

@@ -10,6 +10,7 @@ local love_graphics_draw = love.graphics.draw
 ---@alias Size {w: number, h: number}
 
 ---@class AseFrame
+---@field index integer
 ---@field image love.Image
 ---@field frame Rect
 ---@field rotated boolean
@@ -20,7 +21,8 @@ local love_graphics_draw = love.graphics.draw
 ---@field [integer] AseCel
 local AseFrame = class()
 
-function AseFrame:_init(image, duration)
+function AseFrame:_init(i, image, duration)
+    self.index = i
     self.image = image
     self.duration = duration or 0
 end
