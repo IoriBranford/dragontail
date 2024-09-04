@@ -347,7 +347,7 @@ function Player:control()
         local velx, vely = self.velx, self.vely
 
         if runningtime then
-            if math.floor(love.timer.getTime() * 60) % 3 == 0 then
+            if self.animationtime % 3 == 0 then
                 self:makeAfterImage()
             end
 
@@ -581,7 +581,7 @@ function Player:runWithEnemy(enemy)
         enemy.x = x + self.velx + facex*radii
         enemy.y = y + self.vely + facey*radii
 
-        if math.floor(love.timer.getTime() * 60) % 3 == 0 then
+        if self.animationtime % 3 == 0 then
             self:makeAfterImage()
             enemy:makeAfterImage()
         end
