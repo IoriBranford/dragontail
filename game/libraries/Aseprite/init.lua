@@ -67,9 +67,9 @@ function Aseprite.load(jsonfile)
 	local doc = json.decode(jsondata)
 	local cels = doc.frames
 	local meta = doc.meta
-	local imagefile = meta.image
     local directory = string.match(jsonfile, "^(.+/)") or ""
-	local image = love.graphics.newImage(directory..imagefile)
+	local imagefile = directory..meta.image
+	local image = love.graphics.newImage(imagefile)
 
 	local layers = meta.layers
 	if not cels[1] and not layers then
