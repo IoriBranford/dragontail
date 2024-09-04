@@ -352,6 +352,9 @@ function Player:control()
             end
 
             if attackpressed then
+                if self.weaponinhand then
+                    return "throwWeapon"
+                end
                 return "straightAttack", "running-kick", atan2(vely, velx)
             end
 
@@ -384,6 +387,9 @@ function Player:control()
         else
             self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
             if attackpressed then
+                if self.weaponinhand then
+                    return "throwWeapon"
+                end
                 return doComboAttack(self, targetfacex, targetfacey)
             end
 
@@ -454,6 +460,23 @@ function Player:spinAttack(attacktype, angle)
         end
         return doComboAttack(self, originalfacex, originalfacey)
     end
+    return "control"
+end
+
+function Player:throwWeapon()
+    local inx, iny = Controls.getDirectionInput()
+    local angle = atan2(iny, inx)
+    self.facex, self.facey = norm(inx, iny)
+    self:setDirectionalAnimation("throw", angle, 1)
+    self:launchProjectile(self.weaponinhand, angle)
+    self.weaponinhand = nil
+    Audio.play(self.throwsound)
+    local t = self.throwtime or 6
+    repeat
+        self:accelerateTowardsVel(0, 0, 4)
+        yield()
+        t = t - 1
+    until t <= 0
     return "control"
 end
 

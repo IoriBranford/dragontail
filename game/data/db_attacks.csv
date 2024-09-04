@@ -15,6 +15,6 @@ human-thrown,,16,0.785398163397448,10,12,3,,,,,,,,,,,,knockedBack,knockedBack,,,
 axe-swing,4,40,0.785398163397448,25,20,10,,,FALSE,10,,8,,,,,,thrown,thrown,SwingWindup,SwingAttack,sounds/man_heavy/lightattack3.mp3,sounds/combat/swing3.mp3,sounds/combat/cut2.mp3,,nil,nil,nil,nil
 axe-swing-counter,4,40,0.785398163397448,25,20,10,,,TRUE,10,,8,,,,,,thrown,thrown,SwingWindup,SwingAttack,sounds/man_heavy/lightattack3.mp3,sounds/combat/swing3.mp3,sounds/combat/cut2.mp3,,nil,nil,nil,nil
 axe-throw,3,100,0,0,0,0,,,FALSE,30,,5,,,,,,nil,nil,throwA,throwB,sounds/man_heavy/attack4.mp3,sounds/combat/swing3.mp3,,,thrown-axe,nil,nil,nil
-thrown-axe-attack,,16,1.5707963267949,25,20,10,,,,,,,,,,thrownaxehit,projectileHit,,,,thrownaxe,,sounds/combat/spin.mp3,sounds/combat/cut2.mp3,,,nil,nil,nil
+thrown-axe-attack,,16,1.5707963267949,25,20,10,,,,,,,,,,thrownaxehit,projectileHit,knockedBack,knockedBack,,thrownaxe,,sounds/combat/spin.mp3,sounds/combat/cut2.mp3,,,nil,nil,nil
 bow-shot,3,300,0,0,0,0,,,FALSE,30,,0,,,,,,nil,nil,ShootWindup,ShootAttack,sounds/combat/bowdraw.mp3,sounds/combat/arrowfly.mp3,,,bandit-arrow,nil,nil,nil
 bandit-arrow-attack,,20,0,25,12,,,,,,,,,,,,projectileHit,,,,Fly,,,sounds/combat/cut.mp3,,,nil,nil,nil
