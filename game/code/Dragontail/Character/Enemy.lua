@@ -272,15 +272,7 @@ function Enemy:attack()
     Audio.play(self.swingsound)
     local attackprojectile = self.attackprojectile
     if attackprojectile then
-        local bodyradius = self.bodyradius or 0
-
-        Characters.spawn({
-            x = x + bodyradius*cos(tooppoangle),
-            y = y + bodyradius*sin(tooppoangle),
-            type = attackprojectile,
-            attackangle = tooppoangle,
-            thrower = self
-        })
+        self:launchProjectile(attackprojectile, tooppoangle)
     else
         local attackangle = floor((tooppoangle + (pi/4)) / (pi/2)) * pi/2
         self:startAttack(attackangle)

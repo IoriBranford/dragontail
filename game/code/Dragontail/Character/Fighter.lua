@@ -352,4 +352,15 @@ function Fighter:getup(attacker)
     return recoverai
 end
 
+function Fighter:launchProjectile(type, angle)
+    local x, y = self.x, self.y
+    local bodyradius = self.bodyradius or 0
+    return Characters.spawn({
+        x = x + bodyradius*cos(angle),
+        y = y + bodyradius*sin(angle),
+        type = type,
+        attackangle = angle,
+        thrower = self
+    })
+end
 return Fighter
