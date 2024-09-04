@@ -1,5 +1,4 @@
 local SceneObject = require "System.SceneObject"
-local AsepriteSceneObject = require "System.SceneObject.Aseprite"
 
 ---@class Scene
 local Scene = class()
@@ -23,24 +22,6 @@ end
 
 function Scene:addAnimating(sceneobject)
     insert(self, sceneobject)
-    insert(self.animating, sceneobject)
-    return sceneobject
-end
-
-function Scene:addAseprite(aseprite, frame, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = AsepriteSceneObject.newAseprite(aseprite, frame or 1, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    return self:add(sceneobject)
-end
-
-function Scene:addManualAnimatedAseprite(aseprite, tag, tagframe, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = AsepriteSceneObject.newAnimatedAseprite(aseprite, tag, tagframe or 1, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    return self:add(sceneobject)
-end
-
-local addManualAnimatedAseprite = Scene.addManualAnimatedAseprite
-
-function Scene:addAnimatedAseprite(aseprite, tag, tagframe, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = addManualAnimatedAseprite(aseprite, tag, tagframe or 1, x, y, z, r, sx, sy, ox, oy, kx, ky)
     insert(self.animating, sceneobject)
     return sceneobject
 end
