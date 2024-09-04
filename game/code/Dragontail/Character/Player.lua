@@ -122,8 +122,6 @@ function Player:init()
         AttackerSlot(-1024, 0),
         AttackerSlot(0, -1024)
     }
-
-    self.weaponinhand = "thrown-axe"
 end
 
 ---@param imagedata love.ImageData
