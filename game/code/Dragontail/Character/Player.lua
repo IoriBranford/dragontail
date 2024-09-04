@@ -191,7 +191,7 @@ function Player:initAseprite()
             x, y, r, sy = readWeaponTransform(imagedata, cel)
         end
         if not x then
-            x, y, r, sy = spritehw, 0, 0, 1
+            x, y, r, sy = 0, 0, 0, 0
         end
         weapontransforms[#weapontransforms+1] = x
         weapontransforms[#weapontransforms+1] = y
@@ -209,8 +209,8 @@ function Player:drawWeaponInHand(frame, x, y)
 
     local i = frame.index*4
     local weaponx, weapony, weaponr, weaponsy =
-        weapontransforms[i-3], weapontransforms[i-2], weapontransforms[i-1], weapontransforms[i]
-    if not weaponx then
+        weapontransforms[i-3], weapontransforms[i-2], weapontransforms[i-1], (weapontransforms[i] or 0)
+    if weaponsy == 0 then
         return
     end
 
