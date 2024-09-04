@@ -44,11 +44,14 @@ local AnimationTimeUnits = {
 
 local function loadCel(self, cel, filename, layers, image)
     local layername, framei = filename:match("(.*)#(%d+)")
-	local layeri = layers[layername]
-	if not layeri then
-		layers[#layers+1] = { name = layername }
-		layeri = #layers
-		layers[layername] = layeri
+	local layeri = 1
+	if #layers > 1 then
+		layeri = layers[layername]
+		if not layeri then
+			layers[#layers+1] = { name = layername }
+			layeri = #layers
+			layers[layername] = layeri
+		end
 	end
 
 	framei = tonumber(framei)
