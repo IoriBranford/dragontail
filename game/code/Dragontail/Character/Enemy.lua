@@ -33,7 +33,6 @@ local function totalAttackRange(attackradius, attacklungespeed, attacklungedecel
 end
 
 local function findAngleToDodgeIncoming(self, incoming)
-    local dodgewithindist = self.dodgewithindist or 100
     local dodgespeed = self.dodgespeed
     if not dodgespeed then
         return
@@ -41,38 +40,43 @@ local function findAngleToDodgeIncoming(self, incoming)
     local oppox, oppoy, oppovelx, oppovely
     oppox, oppoy = incoming.x, incoming.y
     oppovelx, oppovely = incoming.velx, incoming.vely
-    local tooppoy, tooppox = oppoy - self.y, oppox - self.x
-    local vdotd = math.dot(oppovelx, oppovely, tooppox, tooppoy)
-    local oppospeed = math.len(oppovelx, oppovely)
-    if vdotd < -dodgewithindist*oppospeed or vdotd >= 0 then
+    local fromoppoy, fromoppox = self.y - oppoy, self.x - oppox
+    local oppospeedsq = math.lensq(oppovelx, oppovely)
+    local dsq = math.lensq(fromoppox, fromoppoy)
+    local dodgewithintime = self.dodgewithintime or 30
+    if dsq > oppospeedsq * dodgewithintime * dodgewithintime then
+        return
+    end
+    local vdotd = math.dot(oppovelx, oppovely, fromoppox, fromoppoy)
+    if vdotd <= math.sqrt(dsq)*math.sqrt(oppospeedsq)/2 then
         return
     end
 
     local dodgedist = Fighter.GetSlideDistance(dodgespeed, self.dodgedecel or 1)
-    local dodgedirx, dodgediry = math.norm(-tooppox, -tooppoy) -- cos(dodgeangle), sin(dodgeangle)
+    local dodgedirx, dodgediry = math.norm(fromoppox, fromoppoy) -- cos(dodgeangle), sin(dodgeangle)
     local dodgespacex, dodgespacey = dodgedirx * dodgedist, dodgediry * dodgedist
-    local raycast = Raycast(dodgespacex, dodgespacey, 1, self.bodyradius)
+    local raycast = Raycast(dodgespacex, dodgespacey, 1, self.bodyradius/2)
 
-    if oppospeed >= dodgespeed or Boundaries.castRay(raycast, self.x, self.y) then
-        local rot90dir = lm_random(2) == 1 and 1 or -1
+    if Boundaries.castRay(raycast, self.x, self.y) then
+        -- Dodge along wall
+        local ax, ay = raycast.hitwallx, raycast.hitwally
+        local bx, by = raycast.hitwallx2, raycast.hitwally2
+
+        raycast.dx, raycast.dy = math.norm(bx - ax, by - ay)
+        raycast.dx = raycast.dx * dodgedist
+        raycast.dy = raycast.dy * dodgedist
+        if math.dot(dodgedirx, dodgediry, raycast.dx, raycast.dy) < 0 then
+            raycast.dx, raycast.dy = -raycast.dx, -raycast.dy
+        end
+        if Boundaries.castRay(raycast, self.x, self.y) then
+            raycast.dx, raycast.dy = -raycast.dx, -raycast.dy
+        end
+    elseif oppospeedsq >= dodgespeed*dodgespeed then
+        local rot90dir = math.det(oppovelx, oppovely, fromoppox, fromoppoy)
         raycast.dx, raycast.dy = math.rot90(raycast.dx, raycast.dy, rot90dir)
         if Boundaries.castRay(raycast, self.x, self.y) then
             raycast.dx, raycast.dy = -raycast.dx, -raycast.dy
         end
-
-        -- if wallhit then
-        --     -- Dodge along wall
-        --     local hitx, hity = wallhit.hitx, wallhit.hity
-        --     local ax, ay = wallhit.ax, wallhit.ay
-        --     local bx, by = wallhit.bx, wallhit.by
-        --     if math.dot(dodgedirx, dodgediry, ax-hitx, ay-hity)
-        --     >= math.dot(dodgedirx, dodgediry, bx-hitx, by-hity) then
-        --         dodgedirx, dodgediry = math.norm(ax - hitx, ay - hity)
-        --     else
-        --         dodgedirx, dodgediry = math.norm(bx-hitx, by-hity)
-        --     end
-        --     dodgespacex, dodgespacey = dodgedirx * dodgespace, dodgediry * dodgespace
-        -- end
     end
     return math.atan2(raycast.dy, raycast.dx)
 end
