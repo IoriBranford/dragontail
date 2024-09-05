@@ -1,0 +1,2717 @@
+{
+    "formatVersion": 31,
+    "id": "{cac93e95-6196-4f7e-892e-c34743193cd4}",
+    "objectLinks": {
+        "BeatAlias.beatObject": [
+            {
+                "id1": "{4b5080a8-b5e2-498b-9ae2-bcacbfbd4bb4}",
+                "id2": "{5db99104-f21d-4be0-ab95-b8e529622ba1}"
+            },
+            {
+                "id1": "{50c5badf-7b5b-4d09-937d-a7cdcb5ebfaa}",
+                "id2": "{5e8aab5e-ceaa-4d47-885a-4a71ffea0e49}"
+            },
+            {
+                "id1": "{69098adb-f786-46eb-b914-dd5c2cbbe951}",
+                "id2": "{c6f54eea-af90-41ec-9e4c-d504d066ffd8}"
+            },
+            {
+                "id1": "{71eb08a2-df52-4605-8e44-acbc98b4d021}",
+                "id2": "{474cd4e8-0424-4c1c-a38a-06cc037744b1}"
+            },
+            {
+                "id1": "{9bb8d738-40de-41d0-a38e-184d07e01013}",
+                "id2": "{032c84cb-c1c2-4099-89e7-b03c98e4477a}"
+            },
+            {
+                "id1": "{bf81f526-b006-41e6-be18-9c252cbbf159}",
+                "id2": "{b825066b-29ce-4207-91d3-0dae34560919}"
+            },
+            {
+                "id1": "{c8e9167d-04df-48c3-b088-ae4f1ae15f0b}",
+                "id2": "{f2c4d812-297a-445a-a3bf-6e8341900c87}"
+            },
+            {
+                "id1": "{d5747e8b-363d-49d5-a440-d66b08d95b05}",
+                "id2": "{14c7ee74-2a74-467c-a556-e101e2ce0be2}"
+            },
+            {
+                "id1": "{defa35af-f46a-4fc2-a5b2-fdb91621111b}",
+                "id2": "{ca2a4ea9-f5a0-465b-a90e-17130fdc6406}"
+            }
+        ],
+        "BeatAlias.whiteboardBlock": [
+            {
+                "id1": "{4b5080a8-b5e2-498b-9ae2-bcacbfbd4bb4}",
+                "id2": "{2184acd8-6f94-4550-9a8a-5e5e45f558b3}"
+            },
+            {
+                "id1": "{50c5badf-7b5b-4d09-937d-a7cdcb5ebfaa}",
+                "id2": "{2184acd8-6f94-4550-9a8a-5e5e45f558b3}"
+            },
+            {
+                "id1": "{69098adb-f786-46eb-b914-dd5c2cbbe951}",
+                "id2": "{2184acd8-6f94-4550-9a8a-5e5e45f558b3}"
+            },
+            {
+                "id1": "{71eb08a2-df52-4605-8e44-acbc98b4d021}",
+                "id2": "{2184acd8-6f94-4550-9a8a-5e5e45f558b3}"
+            },
+            {
+                "id1": "{9bb8d738-40de-41d0-a38e-184d07e01013}",
+                "id2": "{2184acd8-6f94-4550-9a8a-5e5e45f558b3}"
+            },
+            {
+                "id1": "{bf81f526-b006-41e6-be18-9c252cbbf159}",
+                "id2": "{2184acd8-6f94-4550-9a8a-5e5e45f558b3}"
+            },
+            {
+                "id1": "{c8e9167d-04df-48c3-b088-ae4f1ae15f0b}",
+                "id2": "{2184acd8-6f94-4550-9a8a-5e5e45f558b3}"
+            },
+            {
+                "id1": "{d5747e8b-363d-49d5-a440-d66b08d95b05}",
+                "id2": "{2184acd8-6f94-4550-9a8a-5e5e45f558b3}"
+            },
+            {
+                "id1": "{defa35af-f46a-4fc2-a5b2-fdb91621111b}",
+                "id2": "{2184acd8-6f94-4550-9a8a-5e5e45f558b3}"
+            }
+        ],
+        "BeatCharacterUsage.beatObject": [
+            {
+                "id1": "{080e3e85-2c8b-41a8-b16a-8cf7476167d0}",
+                "id2": "{5db99104-f21d-4be0-ab95-b8e529622ba1}"
+            },
+            {
+                "id1": "{085fb75a-dad0-4660-8e84-880218418508}",
+                "id2": "{5da8e6ef-539d-4075-8359-1407a6cae244}"
+            },
+            {
+                "id1": "{0acb072b-458d-4493-97a7-3e429e55a45c}",
+                "id2": "{032c84cb-c1c2-4099-89e7-b03c98e4477a}"
+            },
+            {
+                "id1": "{0bf9c251-3a72-43f1-a5af-d38b134c3e58}",
+                "id2": "{f2c4d812-297a-445a-a3bf-6e8341900c87}"
+            },
+            {
+                "id1": "{138fe462-a1e3-421a-9a15-3ca4270997db}",
+                "id2": "{5db99104-f21d-4be0-ab95-b8e529622ba1}"
+            },
+            {
+                "id1": "{20d03fa9-d012-46f1-a65e-a8f205d062bc}",
+                "id2": "{032c84cb-c1c2-4099-89e7-b03c98e4477a}"
+            },
+            {
+                "id1": "{221332ee-605d-43bf-9f36-d1c7db9a3dca}",
+                "id2": "{c6f54eea-af90-41ec-9e4c-d504d066ffd8}"
+            },
+            {
+                "id1": "{2ce53d02-d948-4e48-b7ba-e9fe3f53c6c1}",
+                "id2": "{474cd4e8-0424-4c1c-a38a-06cc037744b1}"
+            },
+            {
+                "id1": "{4e8a3cee-5717-4fad-be6f-43ba2ae05d73}",
+                "id2": "{ca2a4ea9-f5a0-465b-a90e-17130fdc6406}"
+            },
+            {
+                "id1": "{5ba23bff-a33a-40b3-b206-98a058ab2984}",
+                "id2": "{5e8aab5e-ceaa-4d47-885a-4a71ffea0e49}"
+            },
+            {
+                "id1": "{6f009470-b8ea-4157-bf9c-a2f0e27a764a}",
+                "id2": "{5e8aab5e-ceaa-4d47-885a-4a71ffea0e49}"
+            },
+            {
+                "id1": "{88b412e4-19f8-4505-b169-e8001bf713b7}",
+                "id2": "{474cd4e8-0424-4c1c-a38a-06cc037744b1}"
+            },
+            {
+                "id1": "{8dc01708-ed79-450b-a72b-4cea26e38cdb}",
+                "id2": "{14c7ee74-2a74-467c-a556-e101e2ce0be2}"
+            },
+            {
+                "id1": "{bd336104-1e33-45d6-81fb-cbdf2131f5bc}",
+                "id2": "{817023a6-3c2e-4b63-808a-71acdf5c4aff}"
+            },
+            {
+                "id1": "{c8b5b432-f737-4e63-be09-5f47debbb4d5}",
+                "id2": "{474cd4e8-0424-4c1c-a38a-06cc037744b1}"
+            },
+            {
+                "id1": "{daadc1c8-891f-4185-91fd-a7c25c772f71}",
+                "id2": "{5e8aab5e-ceaa-4d47-885a-4a71ffea0e49}"
+            },
+            {
+                "id1": "{eb2f6c58-2071-438a-9166-45fae9b302d4}",
+                "id2": "{b825066b-29ce-4207-91d3-0dae34560919}"
+            }
+        ],
+        "BeatCharacterUsage.character": [
+            {
+                "id1": "{080e3e85-2c8b-41a8-b16a-8cf7476167d0}",
+                "id2": "{5532596c-ab58-49d5-b596-15d90328055d}"
+            },
+            {
+                "id1": "{085fb75a-dad0-4660-8e84-880218418508}",
+                "id2": "{dbb2db1d-817f-4825-a55f-304b4f175c09}"
+            },
+            {
+                "id1": "{0acb072b-458d-4493-97a7-3e429e55a45c}",
+                "id2": "{5532596c-ab58-49d5-b596-15d90328055d}"
+            },
+            {
+                "id1": "{0bf9c251-3a72-43f1-a5af-d38b134c3e58}",
+                "id2": "{5532596c-ab58-49d5-b596-15d90328055d}"
+            },
+            {
+                "id1": "{138fe462-a1e3-421a-9a15-3ca4270997db}",
+                "id2": "{dbb2db1d-817f-4825-a55f-304b4f175c09}"
+            },
+            {
+                "id1": "{20d03fa9-d012-46f1-a65e-a8f205d062bc}",
+                "id2": "{dbb2db1d-817f-4825-a55f-304b4f175c09}"
+            },
+            {
+                "id1": "{221332ee-605d-43bf-9f36-d1c7db9a3dca}",
+                "id2": "{5532596c-ab58-49d5-b596-15d90328055d}"
+            },
+            {
+                "id1": "{2ce53d02-d948-4e48-b7ba-e9fe3f53c6c1}",
+                "id2": "{5532596c-ab58-49d5-b596-15d90328055d}"
+            },
+            {
+                "id1": "{4e8a3cee-5717-4fad-be6f-43ba2ae05d73}",
+                "id2": "{5532596c-ab58-49d5-b596-15d90328055d}"
+            },
+            {
+                "id1": "{5ba23bff-a33a-40b3-b206-98a058ab2984}",
+                "id2": "{5532596c-ab58-49d5-b596-15d90328055d}"
+            },
+            {
+                "id1": "{6f009470-b8ea-4157-bf9c-a2f0e27a764a}",
+                "id2": "{dbb2db1d-817f-4825-a55f-304b4f175c09}"
+            },
+            {
+                "id1": "{88b412e4-19f8-4505-b169-e8001bf713b7}",
+                "id2": "{80ae50d8-d161-480f-99e2-a085cf7a028f}"
+            },
+            {
+                "id1": "{8dc01708-ed79-450b-a72b-4cea26e38cdb}",
+                "id2": "{5532596c-ab58-49d5-b596-15d90328055d}"
+            },
+            {
+                "id1": "{bd336104-1e33-45d6-81fb-cbdf2131f5bc}",
+                "id2": "{dbb2db1d-817f-4825-a55f-304b4f175c09}"
+            },
+            {
+                "id1": "{c8b5b432-f737-4e63-be09-5f47debbb4d5}",
+                "id2": "{dbb2db1d-817f-4825-a55f-304b4f175c09}"
+            },
+            {
+                "id1": "{daadc1c8-891f-4185-91fd-a7c25c772f71}",
+                "id2": "{80ae50d8-d161-480f-99e2-a085cf7a028f}"
+            },
+            {
+                "id1": "{eb2f6c58-2071-438a-9166-45fae9b302d4}",
+                "id2": "{5532596c-ab58-49d5-b596-15d90328055d}"
+            }
+        ],
+        "BeatObject.activeSnippet": [
+            {
+                "id1": "{032c84cb-c1c2-4099-89e7-b03c98e4477a}",
+                "id2": "{26c243bb-be15-4fb4-a009-b3cd9c1909a6}"
+            },
+            {
+                "id1": "{14c7ee74-2a74-467c-a556-e101e2ce0be2}",
+                "id2": "{079f269a-935c-48c6-b248-a0ba62b238db}"
+            },
+            {
+                "id1": "{474cd4e8-0424-4c1c-a38a-06cc037744b1}",
+                "id2": "{4a005fef-7d96-4cf9-8afc-9ff4aaaac1a2}"
+            },
+            {
+                "id1": "{5da8e6ef-539d-4075-8359-1407a6cae244}",
+                "id2": "{4222a228-7cc6-4f3e-b900-5346e034ed6b}"
+            },
+            {
+                "id1": "{5db99104-f21d-4be0-ab95-b8e529622ba1}",
+                "id2": "{202dacbf-e81e-4f45-817b-81ed15ec6049}"
+            },
+            {
+                "id1": "{5e8aab5e-ceaa-4d47-885a-4a71ffea0e49}",
+                "id2": "{e9d6c394-91be-49ff-b79d-f31dd2f0b552}"
+            },
+            {
+                "id1": "{817023a6-3c2e-4b63-808a-71acdf5c4aff}",
+                "id2": "{c3e22b6f-ea95-469c-baa4-562bf3fc7be2}"
+            },
+            {
+                "id1": "{b825066b-29ce-4207-91d3-0dae34560919}",
+                "id2": "{9cdac8b8-bc15-460e-b645-539c657e9193}"
+            },
+            {
+                "id1": "{c6f54eea-af90-41ec-9e4c-d504d066ffd8}",
+                "id2": "{8f68d4ea-1c35-413f-b3bf-18ffa6b3b1fc}"
+            },
+            {
+                "id1": "{ca2a4ea9-f5a0-465b-a90e-17130fdc6406}",
+                "id2": "{3472d5bd-9023-49ae-b65c-a40114d1a02f}"
+            },
+            {
+                "id1": "{f2c4d812-297a-445a-a3bf-6e8341900c87}",
+                "id2": "{d0f62270-85d9-40bf-85b8-e657eb065a00}"
+            }
+        ],
+        "BeatObject.researchObject": [
+            {
+                "id1": "{032c84cb-c1c2-4099-89e7-b03c98e4477a}",
+                "id2": "{f6175390-5b21-491b-b50d-f697a5558f1e}"
+            },
+            {
+                "id1": "{14c7ee74-2a74-467c-a556-e101e2ce0be2}",
+                "id2": "{a52b6253-3c60-4956-ae90-0c4cba9dd0c7}"
+            },
+            {
+                "id1": "{474cd4e8-0424-4c1c-a38a-06cc037744b1}",
+                "id2": "{c30d1882-ab68-47af-85e4-6bb45ae3925b}"
+            },
+            {
+                "id1": "{5da8e6ef-539d-4075-8359-1407a6cae244}",
+                "id2": "{fdb5df92-89d6-4cff-8fbc-f446c7308935}"
+            },
+            {
+                "id1": "{5db99104-f21d-4be0-ab95-b8e529622ba1}",
+                "id2": "{59ff21b2-3a8d-4822-b0fb-364525611c30}"
+            },
+            {
+                "id1": "{5e8aab5e-ceaa-4d47-885a-4a71ffea0e49}",
+                "id2": "{84d4d4a5-647c-4b0d-94d9-0db3eb67fca2}"
+            },
+            {
+                "id1": "{817023a6-3c2e-4b63-808a-71acdf5c4aff}",
+                "id2": "{a58e7d63-1ba9-4eaa-b664-27c5adeeb226}"
+            },
+            {
+                "id1": "{b825066b-29ce-4207-91d3-0dae34560919}",
+                "id2": "{f7fadf80-7665-43b6-a78d-128d9543819e}"
+            },
+            {
+                "id1": "{c6f54eea-af90-41ec-9e4c-d504d066ffd8}",
+                "id2": "{622b959a-96e9-41ee-86d5-81d025be5b4a}"
+            },
+            {
+                "id1": "{ca2a4ea9-f5a0-465b-a90e-17130fdc6406}",
+                "id2": "{96687fa5-8fe8-4153-a3e9-70075936b463}"
+            },
+            {
+                "id1": "{f2c4d812-297a-445a-a3bf-6e8341900c87}",
+                "id2": "{69a3d86d-a915-4326-8930-e37489c69751}"
+            }
+        ],
+        "BeatObject.timeslice": [
+            {
+                "id1": "{032c84cb-c1c2-4099-89e7-b03c98e4477a}",
+                "id2": "{8692600b-b05c-40ae-bbda-b5b41e865f86}"
+            },
+            {
+                "id1": "{14c7ee74-2a74-467c-a556-e101e2ce0be2}",
+                "id2": "{453c2402-bd7a-417b-bdc9-52a1bd50ad4d}"
+            },
+            {
+                "id1": "{474cd4e8-0424-4c1c-a38a-06cc037744b1}",
+                "id2": "{08088fc9-f743-4af1-946a-cb382b953460}"
+            },
+            {
+                "id1": "{5db99104-f21d-4be0-ab95-b8e529622ba1}",
+                "id2": "{2ef0d818-58ee-4df9-b4fa-ae297b438c2a}"
+            },
+            {
+                "id1": "{5e8aab5e-ceaa-4d47-885a-4a71ffea0e49}",
+                "id2": "{62251267-0bf6-4d58-ae8f-077ee730b506}"
+            },
+            {
+                "id1": "{b825066b-29ce-4207-91d3-0dae34560919}",
+                "id2": "{8c92841e-ab0d-4fce-863b-01e9c8030418}"
+            },
+            {
+                "id1": "{c6f54eea-af90-41ec-9e4c-d504d066ffd8}",
+                "id2": "{dd9b5f39-0ea0-4e29-b60a-2b5a9470dd44}"
+            },
+            {
+                "id1": "{ca2a4ea9-f5a0-465b-a90e-17130fdc6406}",
+                "id2": "{02e6b2cf-1a11-45da-a286-b23da4bac2eb}"
+            },
+            {
+                "id1": "{f2c4d812-297a-445a-a3bf-6e8341900c87}",
+                "id2": "{5e84af9d-3645-404d-b955-0c981baac21c}"
+            }
+        ],
+        "Character.researchObject": [
+            {
+                "id1": "{1c7d681a-10c4-4e93-bb65-99c1914c5c32}",
+                "id2": "{c1d8fa77-c704-4076-81b5-e82a16d10467}"
+            },
+            {
+                "id1": "{5532596c-ab58-49d5-b596-15d90328055d}",
+                "id2": "{1c4f0300-729d-4dfd-b042-8b495aeb262f}"
+            },
+            {
+                "id1": "{80ae50d8-d161-480f-99e2-a085cf7a028f}",
+                "id2": "{65fbca8f-8076-455b-a3d3-d8adbed9a831}"
+            },
+            {
+                "id1": "{883d7e3b-6a53-4f44-bcc2-0d2cc9e091ef}",
+                "id2": "{64ae9372-cb9d-461f-907d-dfbd489b1678}"
+            },
+            {
+                "id1": "{dbb2db1d-817f-4825-a55f-304b4f175c09}",
+                "id2": "{fba95ded-d22a-45d9-8c1c-d02713ee5af8}"
+            },
+            {
+                "id1": "{ecbf312b-805c-4f13-923b-6818fe0dfa39}",
+                "id2": "{cc9ff792-4d3b-43c1-abcc-af5aa7679df8}"
+            },
+            {
+                "id1": "{f04652e6-3b66-41e2-9be0-be676b0c872e}",
+                "id2": "{80d1d0f2-66e4-4d5d-82f9-0e2da75f4f3b}"
+            }
+        ],
+        "DependencyObject.sourceBeat": [
+            {
+                "id1": "{0631b300-a5f7-4703-9ae6-a05d157ecb5f}",
+                "id2": "{5da8e6ef-539d-4075-8359-1407a6cae244}"
+            },
+            {
+                "id1": "{15c0f5ce-3e73-481b-92e9-018560c0cc81}",
+                "id2": "{817023a6-3c2e-4b63-808a-71acdf5c4aff}"
+            },
+            {
+                "id1": "{1dfc3c80-4d30-4a90-9cd7-adb826a289a7}",
+                "id2": "{ca2a4ea9-f5a0-465b-a90e-17130fdc6406}"
+            },
+            {
+                "id1": "{40513bbf-cf2b-4ff5-b990-85068e69bc6e}",
+                "id2": "{474cd4e8-0424-4c1c-a38a-06cc037744b1}"
+            },
+            {
+                "id1": "{490d1788-fec9-458d-beb2-98eedc0cbd50}",
+                "id2": "{b825066b-29ce-4207-91d3-0dae34560919}"
+            },
+            {
+                "id1": "{4a8c322c-d767-450c-b330-aafff197f61e}",
+                "id2": "{14c7ee74-2a74-467c-a556-e101e2ce0be2}"
+            },
+            {
+                "id1": "{5c0ebf70-5ba7-4cd5-be71-a52e02dce13f}",
+                "id2": "{f2c4d812-297a-445a-a3bf-6e8341900c87}"
+            },
+            {
+                "id1": "{75650a49-8820-4b3d-ae05-536f80bd0f56}",
+                "id2": "{5e8aab5e-ceaa-4d47-885a-4a71ffea0e49}"
+            },
+            {
+                "id1": "{94e8ba40-f7a5-4ad5-a98a-cb631b6631bf}",
+                "id2": "{5db99104-f21d-4be0-ab95-b8e529622ba1}"
+            },
+            {
+                "id1": "{a2f8b101-fef0-4cd8-b7a1-be2874a1cd58}",
+                "id2": "{c6f54eea-af90-41ec-9e4c-d504d066ffd8}"
+            },
+            {
+                "id1": "{c2b2cfcf-7a84-49fb-8975-bc598f03435c}",
+                "id2": "{032c84cb-c1c2-4099-89e7-b03c98e4477a}"
+            }
+        ],
+        "DependencyObject.sourceBlock": [
+            {
+                "id1": "{43b2414f-c604-49f0-8039-098a2ec99929}",
+                "id2": "{2184acd8-6f94-4550-9a8a-5e5e45f558b3}"
+            }
+        ],
+        "ResearchObject.parentObject": [
+            {
+                "id1": "{0c429e64-2c1e-4128-b23e-74bac9943d19}",
+                "id2": "{c023e06e-588a-4cf6-96b5-c75968729c82}"
+            },
+            {
+                "id1": "{19d700af-e309-46b7-9414-abe28d5fa988}",
+                "id2": "{c023e06e-588a-4cf6-96b5-c75968729c82}"
+            },
+            {
+                "id1": "{1c4f0300-729d-4dfd-b042-8b495aeb262f}",
+                "id2": "{a8424545-6860-465e-a0af-9af04d93cc7f}"
+            },
+            {
+                "id1": "{58bfc8c6-6671-4cc5-96a4-c6302e985d55}",
+                "id2": "{c023e06e-588a-4cf6-96b5-c75968729c82}"
+            },
+            {
+                "id1": "{59ff21b2-3a8d-4822-b0fb-364525611c30}",
+                "id2": "{19d700af-e309-46b7-9414-abe28d5fa988}"
+            },
+            {
+                "id1": "{622b959a-96e9-41ee-86d5-81d025be5b4a}",
+                "id2": "{19d700af-e309-46b7-9414-abe28d5fa988}"
+            },
+            {
+                "id1": "{64ae9372-cb9d-461f-907d-dfbd489b1678}",
+                "id2": "{a8424545-6860-465e-a0af-9af04d93cc7f}"
+            },
+            {
+                "id1": "{65fbca8f-8076-455b-a3d3-d8adbed9a831}",
+                "id2": "{d4891892-0a80-4a56-9cf6-480d6192fcb5}"
+            },
+            {
+                "id1": "{69a3d86d-a915-4326-8930-e37489c69751}",
+                "id2": "{19d700af-e309-46b7-9414-abe28d5fa988}"
+            },
+            {
+                "id1": "{7f563acb-a7b8-4b5c-b109-9f467ab17af2}",
+                "id2": "{c023e06e-588a-4cf6-96b5-c75968729c82}"
+            },
+            {
+                "id1": "{80d1d0f2-66e4-4d5d-82f9-0e2da75f4f3b}",
+                "id2": "{a8424545-6860-465e-a0af-9af04d93cc7f}"
+            },
+            {
+                "id1": "{84d4d4a5-647c-4b0d-94d9-0db3eb67fca2}",
+                "id2": "{19d700af-e309-46b7-9414-abe28d5fa988}"
+            },
+            {
+                "id1": "{96687fa5-8fe8-4153-a3e9-70075936b463}",
+                "id2": "{19d700af-e309-46b7-9414-abe28d5fa988}"
+            },
+            {
+                "id1": "{a52b6253-3c60-4956-ae90-0c4cba9dd0c7}",
+                "id2": "{19d700af-e309-46b7-9414-abe28d5fa988}"
+            },
+            {
+                "id1": "{a58e7d63-1ba9-4eaa-b664-27c5adeeb226}",
+                "id2": "{7f563acb-a7b8-4b5c-b109-9f467ab17af2}"
+            },
+            {
+                "id1": "{a8424545-6860-465e-a0af-9af04d93cc7f}",
+                "id2": "{c023e06e-588a-4cf6-96b5-c75968729c82}"
+            },
+            {
+                "id1": "{b051b143-6579-452a-8d6a-1ce4176732ce}",
+                "id2": "{c023e06e-588a-4cf6-96b5-c75968729c82}"
+            },
+            {
+                "id1": "{c1d8fa77-c704-4076-81b5-e82a16d10467}",
+                "id2": "{a8424545-6860-465e-a0af-9af04d93cc7f}"
+            },
+            {
+                "id1": "{c30d1882-ab68-47af-85e4-6bb45ae3925b}",
+                "id2": "{19d700af-e309-46b7-9414-abe28d5fa988}"
+            },
+            {
+                "id1": "{cc9ff792-4d3b-43c1-abcc-af5aa7679df8}",
+                "id2": "{a8424545-6860-465e-a0af-9af04d93cc7f}"
+            },
+            {
+                "id1": "{d4891892-0a80-4a56-9cf6-480d6192fcb5}",
+                "id2": "{c023e06e-588a-4cf6-96b5-c75968729c82}"
+            },
+            {
+                "id1": "{f6175390-5b21-491b-b50d-f697a5558f1e}",
+                "id2": "{19d700af-e309-46b7-9414-abe28d5fa988}"
+            },
+            {
+                "id1": "{f7fadf80-7665-43b6-a78d-128d9543819e}",
+                "id2": "{19d700af-e309-46b7-9414-abe28d5fa988}"
+            },
+            {
+                "id1": "{fba95ded-d22a-45d9-8c1c-d02713ee5af8}",
+                "id2": "{d4891892-0a80-4a56-9cf6-480d6192fcb5}"
+            },
+            {
+                "id1": "{fdb5df92-89d6-4cff-8fbc-f446c7308935}",
+                "id2": "{7f563acb-a7b8-4b5c-b109-9f467ab17af2}"
+            }
+        ],
+        "Snippet.beatObject": [
+            {
+                "id1": "{032c84cb-c1c2-4099-89e7-b03c98e4477a}",
+                "id2": "{26c243bb-be15-4fb4-a009-b3cd9c1909a6}"
+            },
+            {
+                "id1": "{14c7ee74-2a74-467c-a556-e101e2ce0be2}",
+                "id2": "{079f269a-935c-48c6-b248-a0ba62b238db}"
+            },
+            {
+                "id1": "{474cd4e8-0424-4c1c-a38a-06cc037744b1}",
+                "id2": "{4a005fef-7d96-4cf9-8afc-9ff4aaaac1a2}"
+            },
+            {
+                "id1": "{5da8e6ef-539d-4075-8359-1407a6cae244}",
+                "id2": "{4222a228-7cc6-4f3e-b900-5346e034ed6b}"
+            },
+            {
+                "id1": "{5db99104-f21d-4be0-ab95-b8e529622ba1}",
+                "id2": "{202dacbf-e81e-4f45-817b-81ed15ec6049}"
+            },
+            {
+                "id1": "{5e8aab5e-ceaa-4d47-885a-4a71ffea0e49}",
+                "id2": "{e9d6c394-91be-49ff-b79d-f31dd2f0b552}"
+            },
+            {
+                "id1": "{817023a6-3c2e-4b63-808a-71acdf5c4aff}",
+                "id2": "{c3e22b6f-ea95-469c-baa4-562bf3fc7be2}"
+            },
+            {
+                "id1": "{b825066b-29ce-4207-91d3-0dae34560919}",
+                "id2": "{9cdac8b8-bc15-460e-b645-539c657e9193}"
+            },
+            {
+                "id1": "{c6f54eea-af90-41ec-9e4c-d504d066ffd8}",
+                "id2": "{8f68d4ea-1c35-413f-b3bf-18ffa6b3b1fc}"
+            },
+            {
+                "id1": "{ca2a4ea9-f5a0-465b-a90e-17130fdc6406}",
+                "id2": "{3472d5bd-9023-49ae-b65c-a40114d1a02f}"
+            },
+            {
+                "id1": "{f2c4d812-297a-445a-a3bf-6e8341900c87}",
+                "id2": "{d0f62270-85d9-40bf-85b8-e657eb065a00}"
+            }
+        ],
+        "Timeslice.timeline": [
+            {
+                "id1": "{02e6b2cf-1a11-45da-a286-b23da4bac2eb}",
+                "id2": "{d11a34a7-75e1-47f8-9973-8a9c4a071a0e}"
+            },
+            {
+                "id1": "{08088fc9-f743-4af1-946a-cb382b953460}",
+                "id2": "{d11a34a7-75e1-47f8-9973-8a9c4a071a0e}"
+            },
+            {
+                "id1": "{2ef0d818-58ee-4df9-b4fa-ae297b438c2a}",
+                "id2": "{d11a34a7-75e1-47f8-9973-8a9c4a071a0e}"
+            },
+            {
+                "id1": "{453c2402-bd7a-417b-bdc9-52a1bd50ad4d}",
+                "id2": "{d11a34a7-75e1-47f8-9973-8a9c4a071a0e}"
+            },
+            {
+                "id1": "{5e84af9d-3645-404d-b955-0c981baac21c}",
+                "id2": "{d11a34a7-75e1-47f8-9973-8a9c4a071a0e}"
+            },
+            {
+                "id1": "{62251267-0bf6-4d58-ae8f-077ee730b506}",
+                "id2": "{d11a34a7-75e1-47f8-9973-8a9c4a071a0e}"
+            },
+            {
+                "id1": "{8692600b-b05c-40ae-bbda-b5b41e865f86}",
+                "id2": "{d11a34a7-75e1-47f8-9973-8a9c4a071a0e}"
+            },
+            {
+                "id1": "{8c92841e-ab0d-4fce-863b-01e9c8030418}",
+                "id2": "{d11a34a7-75e1-47f8-9973-8a9c4a071a0e}"
+            },
+            {
+                "id1": "{dd3316c2-daec-4c1f-b6a7-ecd471614af0}",
+                "id2": "{d11a34a7-75e1-47f8-9973-8a9c4a071a0e}"
+            },
+            {
+                "id1": "{dd9b5f39-0ea0-4e29-b60a-2b5a9470dd44}",
+                "id2": "{d11a34a7-75e1-47f8-9973-8a9c4a071a0e}"
+            }
+        ],
+        "WhiteboardBlock.timeslice": [
+            {
+                "id1": "{2184acd8-6f94-4550-9a8a-5e5e45f558b3}",
+                "id2": "{dd3316c2-daec-4c1f-b6a7-ecd471614af0}"
+            }
+        ],
+        "WhiteboardBlock.whiteboardLane": [
+            {
+                "id1": "{2184acd8-6f94-4550-9a8a-5e5e45f558b3}",
+                "id2": "{e33acd67-2826-42d8-bb4a-b714a99c5f95}"
+            }
+        ]
+    },
+    "objects": {
+        "beatAliases": {
+            "{4b5080a8-b5e2-498b-9ae2-bcacbfbd4bb4}": {
+                "id": "{4b5080a8-b5e2-498b-9ae2-bcacbfbd4bb4}",
+                "localYHint": 0,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{50c5badf-7b5b-4d09-937d-a7cdcb5ebfaa}": {
+                "id": "{50c5badf-7b5b-4d09-937d-a7cdcb5ebfaa}",
+                "localYHint": 0,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{69098adb-f786-46eb-b914-dd5c2cbbe951}": {
+                "id": "{69098adb-f786-46eb-b914-dd5c2cbbe951}",
+                "localYHint": 0,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{71eb08a2-df52-4605-8e44-acbc98b4d021}": {
+                "id": "{71eb08a2-df52-4605-8e44-acbc98b4d021}",
+                "localYHint": 0,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{9bb8d738-40de-41d0-a38e-184d07e01013}": {
+                "id": "{9bb8d738-40de-41d0-a38e-184d07e01013}",
+                "localYHint": 0,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{bf81f526-b006-41e6-be18-9c252cbbf159}": {
+                "id": "{bf81f526-b006-41e6-be18-9c252cbbf159}",
+                "localYHint": 0,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{c8e9167d-04df-48c3-b088-ae4f1ae15f0b}": {
+                "id": "{c8e9167d-04df-48c3-b088-ae4f1ae15f0b}",
+                "localYHint": 0,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{d5747e8b-363d-49d5-a440-d66b08d95b05}": {
+                "id": "{d5747e8b-363d-49d5-a440-d66b08d95b05}",
+                "localYHint": 0,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{defa35af-f46a-4fc2-a5b2-fdb91621111b}": {
+                "id": "{defa35af-f46a-4fc2-a5b2-fdb91621111b}",
+                "localYHint": 0,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            }
+        },
+        "beatCharacterUsages": {
+            "{080e3e85-2c8b-41a8-b16a-8cf7476167d0}": {
+                "id": "{080e3e85-2c8b-41a8-b16a-8cf7476167d0}",
+                "indexHint": 3,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{085fb75a-dad0-4660-8e84-880218418508}": {
+                "id": "{085fb75a-dad0-4660-8e84-880218418508}",
+                "indexHint": 1,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{0acb072b-458d-4493-97a7-3e429e55a45c}": {
+                "id": "{0acb072b-458d-4493-97a7-3e429e55a45c}",
+                "indexHint": 3,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{0bf9c251-3a72-43f1-a5af-d38b134c3e58}": {
+                "id": "{0bf9c251-3a72-43f1-a5af-d38b134c3e58}",
+                "indexHint": 1,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{138fe462-a1e3-421a-9a15-3ca4270997db}": {
+                "id": "{138fe462-a1e3-421a-9a15-3ca4270997db}",
+                "indexHint": 1,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{20d03fa9-d012-46f1-a65e-a8f205d062bc}": {
+                "id": "{20d03fa9-d012-46f1-a65e-a8f205d062bc}",
+                "indexHint": 1,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{221332ee-605d-43bf-9f36-d1c7db9a3dca}": {
+                "id": "{221332ee-605d-43bf-9f36-d1c7db9a3dca}",
+                "indexHint": 1,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{2ce53d02-d948-4e48-b7ba-e9fe3f53c6c1}": {
+                "id": "{2ce53d02-d948-4e48-b7ba-e9fe3f53c6c1}",
+                "indexHint": 1,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{4e8a3cee-5717-4fad-be6f-43ba2ae05d73}": {
+                "id": "{4e8a3cee-5717-4fad-be6f-43ba2ae05d73}",
+                "indexHint": 1,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{5ba23bff-a33a-40b3-b206-98a058ab2984}": {
+                "id": "{5ba23bff-a33a-40b3-b206-98a058ab2984}",
+                "indexHint": 1,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{6f009470-b8ea-4157-bf9c-a2f0e27a764a}": {
+                "id": "{6f009470-b8ea-4157-bf9c-a2f0e27a764a}",
+                "indexHint": 3,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{88b412e4-19f8-4505-b169-e8001bf713b7}": {
+                "id": "{88b412e4-19f8-4505-b169-e8001bf713b7}",
+                "indexHint": 5,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{8dc01708-ed79-450b-a72b-4cea26e38cdb}": {
+                "id": "{8dc01708-ed79-450b-a72b-4cea26e38cdb}",
+                "indexHint": 1,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{bd336104-1e33-45d6-81fb-cbdf2131f5bc}": {
+                "id": "{bd336104-1e33-45d6-81fb-cbdf2131f5bc}",
+                "indexHint": 1,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{c8b5b432-f737-4e63-be09-5f47debbb4d5}": {
+                "id": "{c8b5b432-f737-4e63-be09-5f47debbb4d5}",
+                "indexHint": 3,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{daadc1c8-891f-4185-91fd-a7c25c772f71}": {
+                "id": "{daadc1c8-891f-4185-91fd-a7c25c772f71}",
+                "indexHint": 5,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{eb2f6c58-2071-438a-9166-45fae9b302d4}": {
+                "id": "{eb2f6c58-2071-438a-9166-45fae9b302d4}",
+                "indexHint": 1,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            }
+        },
+        "beatObjects": {
+            "{032c84cb-c1c2-4099-89e7-b03c98e4477a}": {
+                "beatState": "ObjectState.Enabled",
+                "id": "{032c84cb-c1c2-4099-89e7-b03c98e4477a}",
+                "name": "Rose saves DTBoy but falls in a pit",
+                "synopsis": "",
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{14c7ee74-2a74-467c-a556-e101e2ce0be2}": {
+                "beatState": "ObjectState.Enabled",
+                "id": "{14c7ee74-2a74-467c-a556-e101e2ce0be2}",
+                "name": "Rose cannot escape Fountain Chamber 1 while human",
+                "synopsis": "",
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{474cd4e8-0424-4c1c-a38a-06cc037744b1}": {
+                "beatState": "ObjectState.Enabled",
+                "id": "{474cd4e8-0424-4c1c-a38a-06cc037744b1}",
+                "name": "Rose enters Dragontail cave with DTBoy and DTGirl",
+                "synopsis": "",
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{5da8e6ef-539d-4075-8359-1407a6cae244}": {
+                "beatState": "ObjectState.Enabled",
+                "id": "{5da8e6ef-539d-4075-8359-1407a6cae244}",
+                "name": "DTBoy steps on a weak floor",
+                "synopsis": "",
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{5db99104-f21d-4be0-ab95-b8e529622ba1}": {
+                "beatState": "ObjectState.Enabled",
+                "id": "{5db99104-f21d-4be0-ab95-b8e529622ba1}",
+                "name": "DTBoy begs to take the lead; Rose relents",
+                "synopsis": "",
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{5e8aab5e-ceaa-4d47-885a-4a71ffea0e49}": {
+                "beatState": "ObjectState.Enabled",
+                "id": "{5e8aab5e-ceaa-4d47-885a-4a71ffea0e49}",
+                "name": "Rose hears DTBoy and DTGirl scream",
+                "synopsis": "",
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{817023a6-3c2e-4b63-808a-71acdf5c4aff}": {
+                "beatState": "ObjectState.Enabled",
+                "id": "{817023a6-3c2e-4b63-808a-71acdf5c4aff}",
+                "name": "DTVBoy takes the lead",
+                "synopsis": "",
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{b825066b-29ce-4207-91d3-0dae34560919}": {
+                "beatState": "ObjectState.Enabled",
+                "id": "{b825066b-29ce-4207-91d3-0dae34560919}",
+                "name": "Rose drinks from Fountain 1",
+                "synopsis": "",
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{c6f54eea-af90-41ec-9e4c-d504d066ffd8}": {
+                "beatState": "ObjectState.Enabled",
+                "id": "{c6f54eea-af90-41ec-9e4c-d504d066ffd8}",
+                "name": "Rose undergoes Transformation 1",
+                "synopsis": "",
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{ca2a4ea9-f5a0-465b-a90e-17130fdc6406}": {
+                "beatState": "ObjectState.Enabled",
+                "id": "{ca2a4ea9-f5a0-465b-a90e-17130fdc6406}",
+                "name": "Rose falls into Fountain Chamber 1",
+                "synopsis": "",
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{f2c4d812-297a-445a-a3bf-6e8341900c87}": {
+                "beatState": "ObjectState.Enabled",
+                "id": "{f2c4d812-297a-445a-a3bf-6e8341900c87}",
+                "name": "Rose breaks out of Fountain Chamber 1",
+                "synopsis": "",
+                "timeStamp": "2024-09-05T22:18:43Z"
+            }
+        },
+        "characters": {
+            "{1c7d681a-10c4-4e93-bb65-99c1914c5c32}": {
+                "actorName": "",
+                "color": "#ffc9c91d",
+                "detectionWords": [
+                    "Lisbeth"
+                ],
+                "id": "{1c7d681a-10c4-4e93-bb65-99c1914c5c32}",
+                "name": "Lisbeth",
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{5532596c-ab58-49d5-b596-15d90328055d}": {
+                "actorName": "",
+                "color": "#ffc91d1d",
+                "detectionWords": [
+                    "Rose"
+                ],
+                "id": "{5532596c-ab58-49d5-b596-15d90328055d}",
+                "name": "Rose",
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{80ae50d8-d161-480f-99e2-a085cf7a028f}": {
+                "actorName": "",
+                "color": "#ff0d590d",
+                "detectionWords": [
+                    "DTGirl"
+                ],
+                "id": "{80ae50d8-d161-480f-99e2-a085cf7a028f}",
+                "name": "DTGirl",
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{883d7e3b-6a53-4f44-bcc2-0d2cc9e091ef}": {
+                "actorName": "",
+                "color": "#ffc91dc9",
+                "detectionWords": [
+                    "Prince"
+                ],
+                "id": "{883d7e3b-6a53-4f44-bcc2-0d2cc9e091ef}",
+                "name": "Prince",
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{dbb2db1d-817f-4825-a55f-304b4f175c09}": {
+                "actorName": "",
+                "color": "#ff0d0d59",
+                "detectionWords": [
+                    "DTBoy"
+                ],
+                "id": "{dbb2db1d-817f-4825-a55f-304b4f175c09}",
+                "name": "DTBoy",
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{ecbf312b-805c-4f13-923b-6818fe0dfa39}": {
+                "actorName": "",
+                "color": "#ff1dc91d",
+                "detectionWords": [
+                    "King"
+                ],
+                "id": "{ecbf312b-805c-4f13-923b-6818fe0dfa39}",
+                "name": "King",
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{f04652e6-3b66-41e2-9be0-be676b0c872e}": {
+                "actorName": "",
+                "color": "#ff1d73c9",
+                "detectionWords": [
+                    "Princess Crystal"
+                ],
+                "id": "{f04652e6-3b66-41e2-9be0-be676b0c872e}",
+                "name": "Crystal",
+                "timeStamp": "2024-09-05T22:18:43Z"
+            }
+        },
+        "dependencyObjects": {
+            "{0631b300-a5f7-4703-9ae6-a05d157ecb5f}": {
+                "id": "{0631b300-a5f7-4703-9ae6-a05d157ecb5f}",
+                "position": {
+                    "x": 0,
+                    "y": 0
+                },
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{15c0f5ce-3e73-481b-92e9-018560c0cc81}": {
+                "id": "{15c0f5ce-3e73-481b-92e9-018560c0cc81}",
+                "position": {
+                    "x": 0,
+                    "y": 0
+                },
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{1dfc3c80-4d30-4a90-9cd7-adb826a289a7}": {
+                "id": "{1dfc3c80-4d30-4a90-9cd7-adb826a289a7}",
+                "position": {
+                    "x": 0,
+                    "y": 0
+                },
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{40513bbf-cf2b-4ff5-b990-85068e69bc6e}": {
+                "id": "{40513bbf-cf2b-4ff5-b990-85068e69bc6e}",
+                "position": {
+                    "x": 0,
+                    "y": 0
+                },
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{43b2414f-c604-49f0-8039-098a2ec99929}": {
+                "id": "{43b2414f-c604-49f0-8039-098a2ec99929}",
+                "position": {
+                    "x": 0,
+                    "y": 0
+                },
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{490d1788-fec9-458d-beb2-98eedc0cbd50}": {
+                "id": "{490d1788-fec9-458d-beb2-98eedc0cbd50}",
+                "position": {
+                    "x": 0,
+                    "y": 0
+                },
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{4a8c322c-d767-450c-b330-aafff197f61e}": {
+                "id": "{4a8c322c-d767-450c-b330-aafff197f61e}",
+                "position": {
+                    "x": 0,
+                    "y": 0
+                },
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{5c0ebf70-5ba7-4cd5-be71-a52e02dce13f}": {
+                "id": "{5c0ebf70-5ba7-4cd5-be71-a52e02dce13f}",
+                "position": {
+                    "x": 0,
+                    "y": 0
+                },
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{75650a49-8820-4b3d-ae05-536f80bd0f56}": {
+                "id": "{75650a49-8820-4b3d-ae05-536f80bd0f56}",
+                "position": {
+                    "x": 0,
+                    "y": 0
+                },
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{94e8ba40-f7a5-4ad5-a98a-cb631b6631bf}": {
+                "id": "{94e8ba40-f7a5-4ad5-a98a-cb631b6631bf}",
+                "position": {
+                    "x": 0,
+                    "y": 0
+                },
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{a2f8b101-fef0-4cd8-b7a1-be2874a1cd58}": {
+                "id": "{a2f8b101-fef0-4cd8-b7a1-be2874a1cd58}",
+                "position": {
+                    "x": 0,
+                    "y": 0
+                },
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            },
+            "{c2b2cfcf-7a84-49fb-8975-bc598f03435c}": {
+                "id": "{c2b2cfcf-7a84-49fb-8975-bc598f03435c}",
+                "position": {
+                    "x": 0,
+                    "y": 0
+                },
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z"
+            }
+        },
+        "researchObjects": {
+            "{0c429e64-2c1e-4128-b23e-74bac9943d19}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{0c429e64-2c1e-4128-b23e-74bac9943d19}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.NewIdeasFolder"
+            },
+            "{19d700af-e309-46b7-9414-abe28d5fa988}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{19d700af-e309-46b7-9414-abe28d5fa988}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.UnsortedFolder"
+            },
+            "{1c4f0300-729d-4dfd-b042-8b495aeb262f}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{1c4f0300-729d-4dfd-b042-8b495aeb262f}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.CharacterFolder"
+            },
+            "{58bfc8c6-6671-4cc5-96a4-c6302e985d55}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{58bfc8c6-6671-4cc5-96a4-c6302e985d55}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.TagsFolder"
+            },
+            "{59ff21b2-3a8d-4822-b0fb-364525611c30}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{59ff21b2-3a8d-4822-b0fb-364525611c30}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.Item"
+            },
+            "{622b959a-96e9-41ee-86d5-81d025be5b4a}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{622b959a-96e9-41ee-86d5-81d025be5b4a}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.Item"
+            },
+            "{64ae9372-cb9d-461f-907d-dfbd489b1678}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{64ae9372-cb9d-461f-907d-dfbd489b1678}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.CharacterFolder"
+            },
+            "{65fbca8f-8076-455b-a3d3-d8adbed9a831}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{65fbca8f-8076-455b-a3d3-d8adbed9a831}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.CharacterFolder"
+            },
+            "{69a3d86d-a915-4326-8930-e37489c69751}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{69a3d86d-a915-4326-8930-e37489c69751}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.Item"
+            },
+            "{7f563acb-a7b8-4b5c-b109-9f467ab17af2}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{7f563acb-a7b8-4b5c-b109-9f467ab17af2}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.BoneyardFolder"
+            },
+            "{80d1d0f2-66e4-4d5d-82f9-0e2da75f4f3b}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{80d1d0f2-66e4-4d5d-82f9-0e2da75f4f3b}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.CharacterFolder"
+            },
+            "{84d4d4a5-647c-4b0d-94d9-0db3eb67fca2}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{84d4d4a5-647c-4b0d-94d9-0db3eb67fca2}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.Item"
+            },
+            "{96687fa5-8fe8-4153-a3e9-70075936b463}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{96687fa5-8fe8-4153-a3e9-70075936b463}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.Item"
+            },
+            "{a52b6253-3c60-4956-ae90-0c4cba9dd0c7}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{a52b6253-3c60-4956-ae90-0c4cba9dd0c7}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.Item"
+            },
+            "{a58e7d63-1ba9-4eaa-b664-27c5adeeb226}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{a58e7d63-1ba9-4eaa-b664-27c5adeeb226}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.Item"
+            },
+            "{a8424545-6860-465e-a0af-9af04d93cc7f}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{a8424545-6860-465e-a0af-9af04d93cc7f}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "Main Characters",
+                "type": "ResearchObjectType.CharactersFolder"
+            },
+            "{b051b143-6579-452a-8d6a-1ce4176732ce}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{b051b143-6579-452a-8d6a-1ce4176732ce}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.PhysicalLocationsFolder"
+            },
+            "{c023e06e-588a-4cf6-96b5-c75968729c82}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{c023e06e-588a-4cf6-96b5-c75968729c82}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.RootFolder"
+            },
+            "{c1d8fa77-c704-4076-81b5-e82a16d10467}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{c1d8fa77-c704-4076-81b5-e82a16d10467}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.CharacterFolder"
+            },
+            "{c30d1882-ab68-47af-85e4-6bb45ae3925b}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{c30d1882-ab68-47af-85e4-6bb45ae3925b}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.Item"
+            },
+            "{cc9ff792-4d3b-43c1-abcc-af5aa7679df8}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{cc9ff792-4d3b-43c1-abcc-af5aa7679df8}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.CharacterFolder"
+            },
+            "{d4891892-0a80-4a56-9cf6-480d6192fcb5}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{d4891892-0a80-4a56-9cf6-480d6192fcb5}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "Dragontail Villagers",
+                "type": "ResearchObjectType.CharactersFolder"
+            },
+            "{f6175390-5b21-491b-b50d-f697a5558f1e}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{f6175390-5b21-491b-b50d-f697a5558f1e}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.Item"
+            },
+            "{f7fadf80-7665-43b6-a78d-128d9543819e}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{f7fadf80-7665-43b6-a78d-128d9543819e}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.Item"
+            },
+            "{fba95ded-d22a-45d9-8c1c-d02713ee5af8}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{fba95ded-d22a-45d9-8c1c-d02713ee5af8}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.CharacterFolder"
+            },
+            "{fdb5df92-89d6-4cff-8fbc-f446c7308935}": {
+                "canvasPosition": {
+                    "x": 0,
+                    "y": 0
+                },
+                "id": "{fdb5df92-89d6-4cff-8fbc-f446c7308935}",
+                "inASequence": false,
+                "showOnCanvas": false,
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "title": "",
+                "type": "ResearchObjectType.Item"
+            }
+        },
+        "snippets": {
+            "{079f269a-935c-48c6-b248-a0ba62b238db}": {
+                "content": "<p class=\"action\">If Rose attacks the wall of Fountain Chamber 1 while human, she only hurts herself.</p>",
+                "forceSceneHeading": false,
+                "id": "{079f269a-935c-48c6-b248-a0ba62b238db}",
+                "manualTimeDurationSeconds": -1,
+                "sceneIntExt": "INT",
+                "sceneLocation": "DRAGON FOUNTAIN CHAMBER 1",
+                "sceneMasterLocation": "",
+                "sceneNumber": {
+                    "letters": "",
+                    "number": 9999999
+                },
+                "scenePhysicalLocation": "",
+                "sceneTime": "DAY",
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "type": "DocumentType.UseDefault",
+                "versionName": ""
+            },
+            "{202dacbf-e81e-4f45-817b-81ed15ec6049}": {
+                "content": "",
+                "forceSceneHeading": false,
+                "id": "{202dacbf-e81e-4f45-817b-81ed15ec6049}",
+                "manualTimeDurationSeconds": -1,
+                "sceneIntExt": "INT",
+                "sceneLocation": "CAVE OUTSIDE DRAGONTAIL VILLAGE",
+                "sceneMasterLocation": "",
+                "sceneNumber": {
+                    "letters": "",
+                    "number": 9999999
+                },
+                "scenePhysicalLocation": "",
+                "sceneTime": "DAY",
+                "timeStamp": "2024-09-05T22:20:03Z",
+                "type": "DocumentType.UseDefault",
+                "versionName": ""
+            },
+            "{26c243bb-be15-4fb4-a009-b3cd9c1909a6}": {
+                "content": "",
+                "forceSceneHeading": false,
+                "id": "{26c243bb-be15-4fb4-a009-b3cd9c1909a6}",
+                "manualTimeDurationSeconds": -1,
+                "sceneIntExt": "INT",
+                "sceneLocation": "CAVE OUTSIDE DRAGONTAIL VILLAGE",
+                "sceneMasterLocation": "",
+                "sceneNumber": {
+                    "letters": "",
+                    "number": 9999999
+                },
+                "scenePhysicalLocation": "",
+                "sceneTime": "DAY",
+                "timeStamp": "2024-09-05T22:20:03Z",
+                "type": "DocumentType.UseDefault",
+                "versionName": ""
+            },
+            "{3472d5bd-9023-49ae-b65c-a40114d1a02f}": {
+                "content": "",
+                "forceSceneHeading": false,
+                "id": "{3472d5bd-9023-49ae-b65c-a40114d1a02f}",
+                "manualTimeDurationSeconds": -1,
+                "sceneIntExt": "INT",
+                "sceneLocation": "DRAGON FOUNTAIN CHAMBER 1",
+                "sceneMasterLocation": "",
+                "sceneNumber": {
+                    "letters": "",
+                    "number": 9999999
+                },
+                "scenePhysicalLocation": "",
+                "sceneTime": "DAY",
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "type": "DocumentType.UseDefault",
+                "versionName": ""
+            },
+            "{4222a228-7cc6-4f3e-b900-5346e034ed6b}": {
+                "content": "",
+                "forceSceneHeading": false,
+                "id": "{4222a228-7cc6-4f3e-b900-5346e034ed6b}",
+                "manualTimeDurationSeconds": -1,
+                "sceneIntExt": "",
+                "sceneLocation": "",
+                "sceneMasterLocation": "",
+                "sceneNumber": {
+                    "letters": "",
+                    "number": 9999999
+                },
+                "scenePhysicalLocation": "",
+                "sceneTime": "",
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "type": "DocumentType.UseDefault",
+                "versionName": ""
+            },
+            "{4a005fef-7d96-4cf9-8afc-9ff4aaaac1a2}": {
+                "content": "<p class=\"action\"></p>",
+                "forceSceneHeading": false,
+                "id": "{4a005fef-7d96-4cf9-8afc-9ff4aaaac1a2}",
+                "manualTimeDurationSeconds": -1,
+                "sceneIntExt": "INT",
+                "sceneLocation": "CAVE OUTSIDE DRAGONTAIL VILLAGE",
+                "sceneMasterLocation": "",
+                "sceneNumber": {
+                    "letters": "",
+                    "number": 9999999
+                },
+                "scenePhysicalLocation": "",
+                "sceneTime": "DAY",
+                "timeStamp": "2024-09-05T22:20:03Z",
+                "type": "DocumentType.UseDefault",
+                "versionName": ""
+            },
+            "{8f68d4ea-1c35-413f-b3bf-18ffa6b3b1fc}": {
+                "content": "<p class=\"action\"></p>",
+                "forceSceneHeading": false,
+                "id": "{8f68d4ea-1c35-413f-b3bf-18ffa6b3b1fc}",
+                "manualTimeDurationSeconds": -1,
+                "sceneIntExt": "INT",
+                "sceneLocation": "DRAGON FOUNTAIN CHAMBER 1",
+                "sceneMasterLocation": "",
+                "sceneNumber": {
+                    "letters": "",
+                    "number": 9999999
+                },
+                "scenePhysicalLocation": "",
+                "sceneTime": "DAY",
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "type": "DocumentType.UseDefault",
+                "versionName": ""
+            },
+            "{9cdac8b8-bc15-460e-b645-539c657e9193}": {
+                "content": "",
+                "forceSceneHeading": false,
+                "id": "{9cdac8b8-bc15-460e-b645-539c657e9193}",
+                "manualTimeDurationSeconds": -1,
+                "sceneIntExt": "INT",
+                "sceneLocation": "DRAGON FOUNTAIN CHAMBER 1",
+                "sceneMasterLocation": "",
+                "sceneNumber": {
+                    "letters": "",
+                    "number": 9999999
+                },
+                "scenePhysicalLocation": "",
+                "sceneTime": "DAY",
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "type": "DocumentType.UseDefault",
+                "versionName": ""
+            },
+            "{c3e22b6f-ea95-469c-baa4-562bf3fc7be2}": {
+                "content": "",
+                "forceSceneHeading": false,
+                "id": "{c3e22b6f-ea95-469c-baa4-562bf3fc7be2}",
+                "manualTimeDurationSeconds": -1,
+                "sceneIntExt": "",
+                "sceneLocation": "",
+                "sceneMasterLocation": "",
+                "sceneNumber": {
+                    "letters": "",
+                    "number": 9999999
+                },
+                "scenePhysicalLocation": "",
+                "sceneTime": "",
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "type": "DocumentType.UseDefault",
+                "versionName": ""
+            },
+            "{d0f62270-85d9-40bf-85b8-e657eb065a00}": {
+                "content": "",
+                "forceSceneHeading": false,
+                "id": "{d0f62270-85d9-40bf-85b8-e657eb065a00}",
+                "manualTimeDurationSeconds": -1,
+                "sceneIntExt": "INT",
+                "sceneLocation": "DRAGON FOUNTAIN CHAMBER 1",
+                "sceneMasterLocation": "",
+                "sceneNumber": {
+                    "letters": "",
+                    "number": 9999999
+                },
+                "scenePhysicalLocation": "",
+                "sceneTime": "DAY",
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "type": "DocumentType.UseDefault",
+                "versionName": ""
+            },
+            "{e9d6c394-91be-49ff-b79d-f31dd2f0b552}": {
+                "content": "",
+                "forceSceneHeading": false,
+                "id": "{e9d6c394-91be-49ff-b79d-f31dd2f0b552}",
+                "manualTimeDurationSeconds": -1,
+                "sceneIntExt": "INT",
+                "sceneLocation": "DRAGON FOUNTAIN CHAMBER 1",
+                "sceneMasterLocation": "",
+                "sceneNumber": {
+                    "letters": "",
+                    "number": 9999999
+                },
+                "scenePhysicalLocation": "",
+                "sceneTime": "DAY",
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "type": "DocumentType.UseDefault",
+                "versionName": ""
+            }
+        },
+        "timeline": {
+            "{d11a34a7-75e1-47f8-9973-8a9c4a071a0e}": {
+                "id": "{d11a34a7-75e1-47f8-9973-8a9c4a071a0e}",
+                "sceneNumberingMode": "NumberingMode.Before",
+                "timeStamp": "2024-09-05T22:18:43Z"
+            }
+        },
+        "timeslices": {
+            "{02e6b2cf-1a11-45da-a286-b23da4bac2eb}": {
+                "approvedNeighbourBefore": "{8692600b-b05c-40ae-bbda-b5b41e865f86}",
+                "id": "{02e6b2cf-1a11-45da-a286-b23da4bac2eb}",
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "userDistance": 0
+            },
+            "{08088fc9-f743-4af1-946a-cb382b953460}": {
+                "approvedNeighbourBefore": "{dd9b5f39-0ea0-4e29-b60a-2b5a9470dd44}",
+                "id": "{08088fc9-f743-4af1-946a-cb382b953460}",
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "userDistance": 0
+            },
+            "{2ef0d818-58ee-4df9-b4fa-ae297b438c2a}": {
+                "approvedNeighbourBefore": "{0b4bc265-fe57-491e-89e5-edf2bfa468eb}",
+                "id": "{2ef0d818-58ee-4df9-b4fa-ae297b438c2a}",
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "userDistance": 0
+            },
+            "{453c2402-bd7a-417b-bdc9-52a1bd50ad4d}": {
+                "approvedNeighbourBefore": "{02e6b2cf-1a11-45da-a286-b23da4bac2eb}",
+                "id": "{453c2402-bd7a-417b-bdc9-52a1bd50ad4d}",
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "userDistance": 0
+            },
+            "{5e84af9d-3645-404d-b955-0c981baac21c}": {
+                "approvedNeighbourBefore": "{62251267-0bf6-4d58-ae8f-077ee730b506}",
+                "id": "{5e84af9d-3645-404d-b955-0c981baac21c}",
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "userDistance": 0
+            },
+            "{62251267-0bf6-4d58-ae8f-077ee730b506}": {
+                "approvedNeighbourBefore": "{dd9b5f39-0ea0-4e29-b60a-2b5a9470dd44}",
+                "id": "{62251267-0bf6-4d58-ae8f-077ee730b506}",
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "userDistance": 0
+            },
+            "{8692600b-b05c-40ae-bbda-b5b41e865f86}": {
+                "approvedNeighbourBefore": "{a6d58610-165a-434e-80d8-89b663ed9522}",
+                "id": "{8692600b-b05c-40ae-bbda-b5b41e865f86}",
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "userDistance": 0
+            },
+            "{8c92841e-ab0d-4fce-863b-01e9c8030418}": {
+                "approvedNeighbourBefore": "{453c2402-bd7a-417b-bdc9-52a1bd50ad4d}",
+                "id": "{8c92841e-ab0d-4fce-863b-01e9c8030418}",
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "userDistance": 0
+            },
+            "{dd3316c2-daec-4c1f-b6a7-ecd471614af0}": {
+                "approvedNeighbourBefore": "{00000000-0000-0000-0000-000000000000}",
+                "id": "{dd3316c2-daec-4c1f-b6a7-ecd471614af0}",
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "userDistance": 0
+            },
+            "{dd9b5f39-0ea0-4e29-b60a-2b5a9470dd44}": {
+                "approvedNeighbourBefore": "{8c92841e-ab0d-4fce-863b-01e9c8030418}",
+                "id": "{dd9b5f39-0ea0-4e29-b60a-2b5a9470dd44}",
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "userDistance": 0
+            }
+        },
+        "versionedSettings": {
+            "{4396ee2b-7555-49af-9baa-f7b0ae063f4d}": {
+                "id": "{4396ee2b-7555-49af-9baa-f7b0ae063f4d}",
+                "timeStamp": "2024-09-05T22:18:43Z"
+            }
+        },
+        "viewModes": {
+            "{59c5b2ac-a904-48c0-ba2d-da97fa97630f}": {
+                "charactersHighlightedOnPrint": [
+                ],
+                "collapsedResearchObjects": [
+                ],
+                "collapsedWhiteboardLanes": [
+                ],
+                "dimUnrelatedBeats": true,
+                "hiddenWhiteboardLanes": [
+                ],
+                "id": "{59c5b2ac-a904-48c0-ba2d-da97fa97630f}",
+                "invertedCollapsed": [
+                ],
+                "invertedExpanded": [
+                ],
+                "marginsBig": "Margins.Normal",
+                "marginsSmall": "Margins.SuperSqueezed",
+                "showFlowLines": true,
+                "showProductionLocations": false,
+                "showSnippetBlocksGroups": false,
+                "showSnippetCharacters": true,
+                "showSnippetDescription": false,
+                "showSnippetTags": true,
+                "snippetDisplayBig": "SnippetDisplay.ReadingView",
+                "snippetDisplaySmall": "SnippetDisplay.NormalSnippets",
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "zoomFactorBig": 1,
+                "zoomFactorSmall": 1
+            }
+        },
+        "whiteboardBlocks": {
+            "{2184acd8-6f94-4550-9a8a-5e5e45f558b3}": {
+                "baseColor": "#ff457087",
+                "hasBaseColor": false,
+                "id": "{2184acd8-6f94-4550-9a8a-5e5e45f558b3}",
+                "localYHint": 0,
+                "name": "First Block",
+                "synopsis": "",
+                "timeStamp": "2024-09-05T22:18:43Z",
+                "userSize": {
+                    "height": -1,
+                    "width": -1
+                }
+            }
+        },
+        "whiteboardLanes": {
+            "{e33acd67-2826-42d8-bb4a-b714a99c5f95}": {
+                "baseColor": "#ffc91d1d",
+                "freestyle": true,
+                "hasBaseColor": true,
+                "id": "{e33acd67-2826-42d8-bb4a-b714a99c5f95}",
+                "indexHint": 0,
+                "name": "Rose's Story",
+                "timeStamp": "2024-09-05T22:18:43Z"
+            }
+        }
+    },
+    "orderLinks": {
+        "researchObjects": [
+            {
+                "id1": "{0c429e64-2c1e-4128-b23e-74bac9943d19}",
+                "id2": "{19d700af-e309-46b7-9414-abe28d5fa988}"
+            },
+            {
+                "id1": "{19d700af-e309-46b7-9414-abe28d5fa988}",
+                "id2": "{7f563acb-a7b8-4b5c-b109-9f467ab17af2}"
+            },
+            {
+                "id1": "{7f563acb-a7b8-4b5c-b109-9f467ab17af2}",
+                "id2": "{58bfc8c6-6671-4cc5-96a4-c6302e985d55}"
+            },
+            {
+                "id1": "{58bfc8c6-6671-4cc5-96a4-c6302e985d55}",
+                "id2": "{b051b143-6579-452a-8d6a-1ce4176732ce}"
+            },
+            {
+                "id1": "{b051b143-6579-452a-8d6a-1ce4176732ce}",
+                "id2": "{a8424545-6860-465e-a0af-9af04d93cc7f}"
+            },
+            {
+                "id1": "{a8424545-6860-465e-a0af-9af04d93cc7f}",
+                "id2": "{d4891892-0a80-4a56-9cf6-480d6192fcb5}"
+            },
+            {
+                "id1": "{1c4f0300-729d-4dfd-b042-8b495aeb262f}",
+                "id2": "{80d1d0f2-66e4-4d5d-82f9-0e2da75f4f3b}"
+            },
+            {
+                "id1": "{80d1d0f2-66e4-4d5d-82f9-0e2da75f4f3b}",
+                "id2": "{c1d8fa77-c704-4076-81b5-e82a16d10467}"
+            },
+            {
+                "id1": "{c1d8fa77-c704-4076-81b5-e82a16d10467}",
+                "id2": "{cc9ff792-4d3b-43c1-abcc-af5aa7679df8}"
+            },
+            {
+                "id1": "{cc9ff792-4d3b-43c1-abcc-af5aa7679df8}",
+                "id2": "{64ae9372-cb9d-461f-907d-dfbd489b1678}"
+            },
+            {
+                "id1": "{622b959a-96e9-41ee-86d5-81d025be5b4a}",
+                "id2": "{c30d1882-ab68-47af-85e4-6bb45ae3925b}"
+            },
+            {
+                "id1": "{c30d1882-ab68-47af-85e4-6bb45ae3925b}",
+                "id2": "{59ff21b2-3a8d-4822-b0fb-364525611c30}"
+            },
+            {
+                "id1": "{59ff21b2-3a8d-4822-b0fb-364525611c30}",
+                "id2": "{f6175390-5b21-491b-b50d-f697a5558f1e}"
+            },
+            {
+                "id1": "{f6175390-5b21-491b-b50d-f697a5558f1e}",
+                "id2": "{96687fa5-8fe8-4153-a3e9-70075936b463}"
+            },
+            {
+                "id1": "{96687fa5-8fe8-4153-a3e9-70075936b463}",
+                "id2": "{f7fadf80-7665-43b6-a78d-128d9543819e}"
+            },
+            {
+                "id1": "{f7fadf80-7665-43b6-a78d-128d9543819e}",
+                "id2": "{a52b6253-3c60-4956-ae90-0c4cba9dd0c7}"
+            },
+            {
+                "id1": "{a52b6253-3c60-4956-ae90-0c4cba9dd0c7}",
+                "id2": "{84d4d4a5-647c-4b0d-94d9-0db3eb67fca2}"
+            },
+            {
+                "id1": "{84d4d4a5-647c-4b0d-94d9-0db3eb67fca2}",
+                "id2": "{69a3d86d-a915-4326-8930-e37489c69751}"
+            },
+            {
+                "id1": "{a58e7d63-1ba9-4eaa-b664-27c5adeeb226}",
+                "id2": "{fdb5df92-89d6-4cff-8fbc-f446c7308935}"
+            },
+            {
+                "id1": "{fba95ded-d22a-45d9-8c1c-d02713ee5af8}",
+                "id2": "{65fbca8f-8076-455b-a3d3-d8adbed9a831}"
+            }
+        ],
+        "timeslices": [
+            {
+                "id1": "{dd3316c2-daec-4c1f-b6a7-ecd471614af0}",
+                "id2": "{08088fc9-f743-4af1-946a-cb382b953460}"
+            },
+            {
+                "id1": "{08088fc9-f743-4af1-946a-cb382b953460}",
+                "id2": "{2ef0d818-58ee-4df9-b4fa-ae297b438c2a}"
+            },
+            {
+                "id1": "{2ef0d818-58ee-4df9-b4fa-ae297b438c2a}",
+                "id2": "{8692600b-b05c-40ae-bbda-b5b41e865f86}"
+            },
+            {
+                "id1": "{8692600b-b05c-40ae-bbda-b5b41e865f86}",
+                "id2": "{02e6b2cf-1a11-45da-a286-b23da4bac2eb}"
+            },
+            {
+                "id1": "{02e6b2cf-1a11-45da-a286-b23da4bac2eb}",
+                "id2": "{453c2402-bd7a-417b-bdc9-52a1bd50ad4d}"
+            },
+            {
+                "id1": "{453c2402-bd7a-417b-bdc9-52a1bd50ad4d}",
+                "id2": "{8c92841e-ab0d-4fce-863b-01e9c8030418}"
+            },
+            {
+                "id1": "{8c92841e-ab0d-4fce-863b-01e9c8030418}",
+                "id2": "{dd9b5f39-0ea0-4e29-b60a-2b5a9470dd44}"
+            },
+            {
+                "id1": "{dd9b5f39-0ea0-4e29-b60a-2b5a9470dd44}",
+                "id2": "{62251267-0bf6-4d58-ae8f-077ee730b506}"
+            },
+            {
+                "id1": "{62251267-0bf6-4d58-ae8f-077ee730b506}",
+                "id2": "{5e84af9d-3645-404d-b955-0c981baac21c}"
+            }
+        ]
+    },
+    "settings": {
+        "autoAssignMasterLocations": true,
+        "colorCoding": "ColorCoding.Soft",
+        "currentFilter": {
+            "categories": [
+                {
+                    "filterMode": "FilterMode.Or",
+                    "filterType": "FilterType.Additive",
+                    "objectIds": [
+                    ],
+                    "objectType": "FilterObjectType.Lanes"
+                },
+                {
+                    "filterMode": "FilterMode.Or",
+                    "filterType": "FilterType.Additive",
+                    "objectIds": [
+                    ],
+                    "objectType": "FilterObjectType.Characters"
+                },
+                {
+                    "filterMode": "FilterMode.Or",
+                    "filterType": "FilterType.Additive",
+                    "objectIds": [
+                    ],
+                    "objectType": "FilterObjectType.Blocks"
+                },
+                {
+                    "filterMode": "FilterMode.Or",
+                    "filterType": "FilterType.Additive",
+                    "objectIds": [
+                    ],
+                    "objectType": "FilterObjectType.Tags"
+                },
+                {
+                    "filterMode": "FilterMode.Or",
+                    "filterType": "FilterType.Additive",
+                    "objectIds": [
+                    ],
+                    "objectType": "FilterObjectType.Beats"
+                }
+            ],
+            "id": "{1ab72dcf-5c7c-46fe-bf6d-e41d82ea4d82}",
+            "locationFilterAdditive": true,
+            "name": ""
+        },
+        "defaultSceneHeadingsLock3": true,
+        "documentType": "DocumentType.Screenplay",
+        "episodeFilter": [
+        ],
+        "filterDisplayMode": "TimeFrameUnits.PageUnits",
+        "filters": [
+        ],
+        "hideBreaks": false,
+        "hideDisabledSnippets": false,
+        "hideEmptySnippets": false,
+        "hideFilterGaps": false,
+        "hideSceneHeadings": false,
+        "highlightFilteredCharacters": false,
+        "intExtList": [
+            "EXT",
+            "I/E",
+            "INT"
+        ],
+        "languages": [
+            {
+                "presetId": "latin",
+                "variantId": "en_US"
+            }
+        ],
+        "locationFilterAdditive": true,
+        "overallFontStyle": "OverallFontStyle.TypewriterFont",
+        "parentheticalsList": [
+            "BULLHORN",
+            "CHAT",
+            "COM",
+            "MESSAGE",
+            "O.C.",
+            "O.S.",
+            "P.A.",
+            "PHONE",
+            "PLAYBACK",
+            "RADIO",
+            "SPEAKERS",
+            "SUB",
+            "TV",
+            "V.O."
+        ],
+        "printSettings": {
+            "centerFooterTemplate": "",
+            "centerHeaderTemplate": "",
+            "characterListText": "Characters",
+            "clusterBeatSynopsis": false,
+            "dialogueBreakAtBottomText": "(MORE)",
+            "dialogueBreakAtTopText": "(CONT'D)",
+            "endOfActBreakTemplate": "END OF {acttitle}",
+            "flags": "PrintSettingsFlags.PS_Defaults",
+            "footerDistanceFromBottomInches": 0.5,
+            "headerDistanceFromTopInches": 0.5,
+            "leftFooterTemplate": "",
+            "leftHeaderTemplate": "",
+            "leftSceneNumbersMarginInches": 0.75,
+            "pageSize": "PageSize.Letter",
+            "printLineScaleFactor": 1,
+            "rightFooterTemplate": "",
+            "rightHeaderTemplate": "{page}.",
+            "rightSceneNumbersMarginInches": 1.125,
+            "sceneBreakAtBottomText": "(CONTINUED)",
+            "sceneBreakAtTopText": "CONTINUED:",
+            "screenLineScaleFactor": 1,
+            "showBeatSynopsis": false,
+            "showBlockSynopsis": false,
+            "showBlockTitles": false,
+            "showGroupSynopsis": false,
+            "showGroupTitles": false,
+            "tagListText": "Tags",
+            "textBottomMarginInches": 1,
+            "textLeftMarginInches": 1.5,
+            "textRightMarginInches": 1,
+            "textTopMarginInches": 1,
+            "widowOrphanControl": true
+        },
+        "secondsPerPage": 60,
+        "selectedFilterId": "",
+        "shotTypesList": [
+            "AERIAL",
+            "ANGLE",
+            "BACK",
+            "CAMERA",
+            "CLOSE",
+            "CLOSEUP",
+            "CRANE",
+            "DOLLY",
+            "DOWN",
+            "ESTABLISHING",
+            "EXTREME",
+            "GROUP",
+            "HANDHELD",
+            "HIGH",
+            "INSERT",
+            "LOW",
+            "MED.",
+            "MEDIUM",
+            "MOVE",
+            "MOVES",
+            "NEW",
+            "ON",
+            "POV",
+            "PULL",
+            "PULLS",
+            "REVEAL",
+            "REVEALS",
+            "REVERSE",
+            "SCENE",
+            "SHOT",
+            "THREE",
+            "TRACKING",
+            "TWO",
+            "UNDERWATER",
+            "UP",
+            "WIDE"
+        ],
+        "spellCheckDialogue": true,
+        "spellCheckerMode": "SpellCheckerMode.SmartSpellChecking",
+        "spellCheckingEnabled": true,
+        "storyLogicScale": 0.8264462809917354,
+        "storyPointColoring": "StoryPointColoring.ByTag",
+        "storylogicPosition": {
+            "x": 227,
+            "y": 65
+        },
+        "syncTimeline": true,
+        "textStyles": [
+            {
+                "align": "Alignment.AlignHCenter",
+                "background": "#ffffffff",
+                "bottomMarginEm": 1,
+                "builtinType": "BuiltinParagraphType.ActBreak",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": true,
+                    "bold": true,
+                    "families": [
+                    ],
+                    "italic": false,
+                    "pointSize": 12,
+                    "strikeOut": false,
+                    "underline": true
+                },
+                "foreground": "#ff000000",
+                "id": "actbreak",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1,
+                "name": "Act Break (Print)",
+                "pageBreak": "PageBreakType.StartOnANewPage",
+                "rightMarginInches": 0.5,
+                "shortcut": 0,
+                "topMarginEm": 2
+            },
+            {
+                "align": "Alignment.AlignLeft|AlignLeading",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.Action",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": false,
+                    "bold": false,
+                    "families": [
+                    ],
+                    "italic": false,
+                    "pointSize": 12,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "action",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1,
+                "name": "Action",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0,
+                "shortcut": 2,
+                "topMarginEm": 1
+            },
+            {
+                "align": "Alignment.AlignLeft|AlignLeading",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.WhiteboardBlockTitle",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": false,
+                    "bold": false,
+                    "families": [
+                        "Arial"
+                    ],
+                    "italic": false,
+                    "pointSize": 20,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "blocktitles",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1,
+                "name": "Block Titles (Print)",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0,
+                "shortcut": 0,
+                "topMarginEm": 1
+            },
+            {
+                "align": "Alignment.AlignLeft|AlignLeading",
+                "background": "#ffffffff",
+                "bottomMarginEm": 1,
+                "builtinType": "BuiltinParagraphType.Book",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": false,
+                    "bold": false,
+                    "families": [
+                    ],
+                    "italic": false,
+                    "pointSize": 12,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "bookdefault",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1.3,
+                "name": "Book",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0,
+                "shortcut": 0,
+                "topMarginEm": 0
+            },
+            {
+                "align": "Alignment.AlignHCenter",
+                "background": "#ffffffff",
+                "bottomMarginEm": 2,
+                "builtinType": "BuiltinParagraphType.ChapterBreak",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": false,
+                    "bold": false,
+                    "families": [
+                    ],
+                    "italic": false,
+                    "pointSize": 24,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "chapterbreak",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1,
+                "name": "Chapter Break (Print)",
+                "pageBreak": "PageBreakType.StartOnANewPage",
+                "rightMarginInches": 0,
+                "shortcut": 0,
+                "topMarginEm": 4
+            },
+            {
+                "align": "Alignment.AlignLeft|AlignLeading",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.Character",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": true,
+                    "bold": false,
+                    "families": [
+                    ],
+                    "italic": false,
+                    "pointSize": 12,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "character",
+                "leftMarginInches": 2,
+                "lineScaleFactor": 1,
+                "name": "Character",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0.25,
+                "shortcut": 3,
+                "topMarginEm": 1
+            },
+            {
+                "align": "Alignment.AlignLeft|AlignLeading",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.Dialogue",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": false,
+                    "bold": false,
+                    "families": [
+                    ],
+                    "italic": false,
+                    "pointSize": 12,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "dialogue",
+                "leftMarginInches": 1,
+                "lineScaleFactor": 1,
+                "name": "Dialogue",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 1.5,
+                "shortcut": 5,
+                "topMarginEm": 0
+            },
+            {
+                "align": "Alignment.AlignHCenter",
+                "background": "#ffffffff",
+                "bottomMarginEm": 1,
+                "builtinType": "BuiltinParagraphType.FilterGap",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": false,
+                    "bold": false,
+                    "families": [
+                    ],
+                    "italic": false,
+                    "pointSize": 12,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "filtergap",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1,
+                "name": "Filter Gap",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 1,
+                "shortcut": 0,
+                "topMarginEm": 3
+            },
+            {
+                "align": "Alignment.AlignLeft|AlignLeading",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.WhiteboardGroupTitle",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": false,
+                    "bold": false,
+                    "families": [
+                        "Arial"
+                    ],
+                    "italic": true,
+                    "pointSize": 17,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "grouptitles",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1,
+                "name": "Group Titles (Print)",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0,
+                "shortcut": 0,
+                "topMarginEm": 1
+            },
+            {
+                "align": "Alignment.AlignLeft|AlignLeading",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.HeaderAndFooter",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": false,
+                    "bold": false,
+                    "families": [
+                    ],
+                    "italic": false,
+                    "pointSize": 12,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "headerandfooter",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1,
+                "name": "Header and Footer (Print)",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0,
+                "shortcut": 0,
+                "topMarginEm": 0
+            },
+            {
+                "align": "Alignment.AlignLeft|AlignLeading",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.Lyrics",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": true,
+                    "bold": false,
+                    "families": [
+                    ],
+                    "italic": false,
+                    "pointSize": 12,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "lyrics",
+                "leftMarginInches": 0.5,
+                "lineScaleFactor": 1,
+                "name": "Lyrics",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0,
+                "shortcut": 8,
+                "topMarginEm": 0
+            },
+            {
+                "align": "Alignment.AlignLeft|AlignLeading",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.Comment",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": false,
+                    "bold": false,
+                    "families": [
+                    ],
+                    "italic": false,
+                    "pointSize": 12,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff909090",
+                "id": "comment",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1,
+                "name": "Note",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0,
+                "shortcut": 9,
+                "topMarginEm": 1
+            },
+            {
+                "align": "Alignment.AlignLeft|AlignLeading",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.Novel",
+                "firstLineIndentInches": 0.5,
+                "font": {
+                    "allCaps": false,
+                    "bold": false,
+                    "families": [
+                    ],
+                    "italic": false,
+                    "pointSize": 12,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "noveldefault",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1.3,
+                "name": "Novel",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0,
+                "shortcut": 0,
+                "topMarginEm": 0
+            },
+            {
+                "align": "Alignment.AlignHCenter",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.PageBreak",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": false,
+                    "bold": false,
+                    "families": [
+                    ],
+                    "italic": false,
+                    "pointSize": 12,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "pagebreak",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1,
+                "name": "Page Break",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0,
+                "shortcut": 0,
+                "topMarginEm": 0
+            },
+            {
+                "align": "Alignment.AlignLeft|AlignLeading",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.Parenthetical",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": false,
+                    "bold": false,
+                    "families": [
+                    ],
+                    "italic": false,
+                    "pointSize": 12,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "parenthetical",
+                "leftMarginInches": 1.5,
+                "lineScaleFactor": 1,
+                "name": "Parenthetical",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 2,
+                "shortcut": 4,
+                "topMarginEm": 0
+            },
+            {
+                "align": "Alignment.AlignLeft|AlignLeading",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.SceneBreak",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": false,
+                    "bold": true,
+                    "families": [
+                    ],
+                    "italic": false,
+                    "pointSize": 12,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "scenebreak",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1,
+                "name": "Scene Heading",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0,
+                "shortcut": 0,
+                "topMarginEm": 2
+            },
+            {
+                "align": "Alignment.AlignLeft|AlignLeading",
+                "background": "#ffffffff",
+                "bottomMarginEm": 1,
+                "builtinType": "BuiltinParagraphType.SectionBreak",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": false,
+                    "bold": false,
+                    "families": [
+                    ],
+                    "italic": false,
+                    "pointSize": 18,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "sectionbreak",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1,
+                "name": "Section Break (Print)",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0,
+                "shortcut": 0,
+                "topMarginEm": 2
+            },
+            {
+                "align": "Alignment.AlignLeft|AlignLeading",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.Shot",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": true,
+                    "bold": false,
+                    "families": [
+                    ],
+                    "italic": false,
+                    "pointSize": 12,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "shot",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1,
+                "name": "Shot",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0,
+                "shortcut": 7,
+                "topMarginEm": 1
+            },
+            {
+                "align": "Alignment.AlignLeft|AlignLeading",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.SnippetCharacters",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": false,
+                    "bold": true,
+                    "families": [
+                        "Arial"
+                    ],
+                    "italic": true,
+                    "pointSize": 12,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "snippetcharacters",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1,
+                "name": "Snippet Characters (Print)",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0,
+                "shortcut": 0,
+                "topMarginEm": 1
+            },
+            {
+                "align": "Alignment.AlignLeft|AlignLeading",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.SnippetSynopsis",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": false,
+                    "bold": true,
+                    "families": [
+                        "Arial"
+                    ],
+                    "italic": true,
+                    "pointSize": 12,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "snippetsynopsis",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1,
+                "name": "Snippet Synopsis (Print)",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0,
+                "shortcut": 0,
+                "topMarginEm": 1
+            },
+            {
+                "align": "Alignment.AlignLeft|AlignLeading",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.SnippetTags",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": false,
+                    "bold": true,
+                    "families": [
+                        "Arial"
+                    ],
+                    "italic": true,
+                    "pointSize": 12,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "snippettags",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1,
+                "name": "Snippet Tags (Print)",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0,
+                "shortcut": 0,
+                "topMarginEm": 1
+            },
+            {
+                "align": "Alignment.AlignLeft|AlignLeading",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.SnippetTitle",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": false,
+                    "bold": false,
+                    "families": [
+                        "Arial"
+                    ],
+                    "italic": false,
+                    "pointSize": 16,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "snippettitle",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1,
+                "name": "Snippet Title (Print)",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0,
+                "shortcut": 0,
+                "topMarginEm": 1.5
+            },
+            {
+                "align": "Alignment.AlignHCenter",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.TitlePageBody",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": false,
+                    "bold": false,
+                    "families": [
+                    ],
+                    "italic": false,
+                    "pointSize": 12,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "titlepagebody",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1,
+                "name": "Title Page Body (Print)",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0,
+                "shortcut": 0,
+                "topMarginEm": 0
+            },
+            {
+                "align": "Alignment.AlignLeft|AlignLeading",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.TitlePageBottomLeft",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": false,
+                    "bold": false,
+                    "families": [
+                    ],
+                    "italic": false,
+                    "pointSize": 12,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "titlepagebottomleft",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1,
+                "name": "Title Page Bottom Left (Print)",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0,
+                "shortcut": 0,
+                "topMarginEm": 0
+            },
+            {
+                "align": "Alignment.AlignRight|AlignTrailing",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.TitlePageBottomRight",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": false,
+                    "bold": false,
+                    "families": [
+                    ],
+                    "italic": false,
+                    "pointSize": 12,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "titlepagebottomright",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1,
+                "name": "Title Page Bottom Right (Print)",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0,
+                "shortcut": 0,
+                "topMarginEm": 0
+            },
+            {
+                "align": "Alignment.AlignHCenter",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.TitlePageTitle",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": false,
+                    "bold": false,
+                    "families": [
+                    ],
+                    "italic": false,
+                    "pointSize": 20,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "titlepagetitle",
+                "leftMarginInches": 0,
+                "lineScaleFactor": 1,
+                "name": "Title Page Title (Print)",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0,
+                "shortcut": 0,
+                "topMarginEm": 0
+            },
+            {
+                "align": "Alignment.AlignRight|AlignTrailing",
+                "background": "#ffffffff",
+                "bottomMarginEm": 0,
+                "builtinType": "BuiltinParagraphType.Transition",
+                "firstLineIndentInches": 0,
+                "font": {
+                    "allCaps": true,
+                    "bold": false,
+                    "families": [
+                    ],
+                    "italic": false,
+                    "pointSize": 12,
+                    "strikeOut": false,
+                    "underline": false
+                },
+                "foreground": "#ff000000",
+                "id": "transition",
+                "leftMarginInches": 4,
+                "lineScaleFactor": 1,
+                "name": "Transition",
+                "pageBreak": "PageBreakType.Continuous",
+                "rightMarginInches": 0.4,
+                "shortcut": 6,
+                "topMarginEm": 1
+            }
+        ],
+        "timeBaseCursor": "TimeFrameUnits.EventUnits",
+        "timeBaseCursor2": "TimeFrameUnits.SecondUnits",
+        "timelineColorCoding": "ColorCoding.Soft",
+        "timelineSnippetLines": 2,
+        "timesOfDayList": [
+            "AFTERNOON",
+            "CONTINUOUS",
+            "DAY",
+            "EVENING",
+            "LATER",
+            "MOMENTS LATER",
+            "MORNING",
+            "NIGHT",
+            "THE NEXT DAY"
+        ],
+        "trackSequenceChanges": false,
+        "transitionsList": [
+            "BACK TO",
+            "CUT TO",
+            "DISSOLVE TO",
+            "FADE OUT",
+            "FADE TO",
+            "FADE TO BLACK",
+            "FADE TO WHITE",
+            "JUMP CUT TO",
+            "MATCH CUT TO",
+            "MATCH DISSOLVE TO"
+        ],
+        "visibleTracksMiniTimeline": "VisibleTracks.MiniDefaults",
+        "visibleTracksRegularTimeline": "VisibleTracks.RegularDefaults|MiniDefaults",
+        "wordList": [
+        ],
+        "zoomType": "ZoomType.CustomZoom"
+    },
+    "timeStamp": "2024-09-05T22:20:07Z"
+}
