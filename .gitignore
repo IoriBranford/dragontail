@@ -54,3 +54,5 @@ steamcmd/
 .~lock*
 
 *.log
+
+*.bak
