@@ -119,18 +119,22 @@ function Stage.updateGoingToNextRoom()
         return
     end
 
-    local focusx, focusy = 0, 0
+    local centerx, centery = 0, 0
     local players = Characters.getGroup("players")
     for _, player in ipairs(players) do
-        focusx = focusx + player.x
-        focusy = focusy + player.y
+        centerx = centerx + player.x
+        centery = centery + player.y
     end
-    focusx, focusy = focusx/#players, focusy/#players
-    focusx, focusy = camerapath:getCameraCenter(focusx, focusy)
-    focusx = max(camera.x + camhalfw, focusx)
+    centerx, centery = centerx/#players, centery/#players
 
-    camera.velx, camera.vely = Movement.getVelocity_speed(camera.x, camera.y,
-        focusx - camhalfw, focusy - camhalfh, 6)
+    local pathx1, pathy1, pathx2, pathy2
+    centerx, centery, pathx1, pathy1, pathx2, pathy2 = camerapath:getCameraCenter(centerx, centery)
+
+    local destx, desty = centerx - camhalfw, centery - camhalfh
+    destx = pathx2 >= pathx1 and max(camera.x, destx) or min(camera.x, destx)
+    desty = pathy2 >= pathy1 and max(camera.y, desty) or min(camera.y, desty)
+
+    camera.velx, camera.vely = Movement.getVelocity_speed(camera.x, camera.y, destx, desty, 6)
 end
 
 function Stage.startNextFight()
