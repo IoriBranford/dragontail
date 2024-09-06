@@ -16,7 +16,7 @@ local max = math.max
 local min = math.min
 
 local scene ---@type Scene
-local map
+local map ---@type TiledMap
 local roomindex
 local gamestatus
 local camera ---@type Camera
