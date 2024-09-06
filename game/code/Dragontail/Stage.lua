@@ -225,6 +225,7 @@ function Stage.draw(fixedfrac)
     -- local players = Characters.getGroup("players")
     -- local player = players[1]
     -- Boundaries.get("room"):drawCollisionDebug(player.x, player.y, player.bodyradius)
+    Boundaries.draw()
     love.graphics.pop()
 end
 
