@@ -87,10 +87,11 @@ function Stage.openNextRoom()
         Characters.spawnArray(room.characters)
         gamestatus = "goingToNextRoom"
         room.camerapath = room.camerapath or CameraPath.from({
-            x = camera.x + Stage.CameraWidth/2,
-            y = camera.y + Stage.CameraHeight/2,
-            shape = "polyline",
-            points = {0, 0, roombounds.x + roombounds.right - camera.width/2, 0}
+            x = 0, y = camera.y + camera.height/2, shape = "polyline",
+            points = {
+                camera.x + camera.width/2, 0,
+                roombounds.x + roombounds.right - camera.width/2, 0
+            }
         })
     else
         gamestatus = "victory"
