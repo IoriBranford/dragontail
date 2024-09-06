@@ -66,17 +66,24 @@ function Boundary:init()
     local x2, y2 = points[1], points[2]
     local cnx, cny = getPolygonCornerNormal(x0, y0, x1, y1, x2, y2, sarea)
     cornernormals[#points-1], cornernormals[#points] = cnx, cny
-    local right = x2
+    local left, right = x2, x2
+    local top, bottom = y2, y2
 
     for i = 2, #points-2, 2 do
         x0, y0 = x1, y1
         x1, y1 = x2, y2
         x2, y2 = points[i+1], points[i+2]
-        right = max(right, x2)
+        left, right = min(left, x2), max(right, x2)
+        top, bottom = min(top, y2), min(bottom, y2)
         cnx, cny = getPolygonCornerNormal(x0, y0, x1, y1, x2, y2, sarea)
         cornernormals[i-1], cornernormals[i] = cnx, cny
     end
-    self.right = self.x + right
+    self.left, self.right, self.top, self.bottom = left, right, top, bottom
+end
+
+function Boundary:boundingBox()
+    local x, y = self.x, self.y
+    return x+self.left, y+self.top, x+self.right, y+self.bottom
 end
 
 function Boundary:isCircleColliding(x, y, r)

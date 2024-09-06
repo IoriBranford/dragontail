@@ -103,7 +103,7 @@ function Stage.updateGoingToNextRoom()
         camera.velx = 0
     end
     local roombounds = Boundaries.get("room")
-    local roomright = roombounds.right
+    local roomright = roombounds.x + roombounds.right
     local cameraxmax = roomright - Stage.CameraWidth
     if camera.x >= cameraxmax then
         camera.x = cameraxmax
