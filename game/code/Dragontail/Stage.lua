@@ -56,13 +56,15 @@ function Stage.init(stagefile)
         end
     end
 
+    local CameraTopMargin = 32
+
     camera = Boundary.from({
         shape = "polygon",
         x = 0, y = 0, velx = 0, vely = 0,
         width = Stage.CameraWidth, height = Stage.CameraHeight,
         points = {
-            0, 0,
-            Stage.CameraWidth, 0,
+            0, CameraTopMargin,
+            Stage.CameraWidth, CameraTopMargin,
             Stage.CameraWidth, Stage.CameraHeight,
             0, Stage.CameraHeight
         }
