@@ -46,6 +46,9 @@ function Stage.init(stagefile)
         if object.type == "Boundary" then
             Boundary.cast(object)
             object:init()
+            local boundaries = object.layer.boundaries or {}
+            object.layer.boundaries = boundaries
+            boundaries[#boundaries+1] = object
         elseif object.type == "CameraPath" then
             CameraPath.cast(object)
             object:init()
@@ -88,8 +91,8 @@ function Stage.openNextRoom()
     roomindex = roomindex + 1
     local room = map.layers["room"..roomindex]
     if room then
-        local roombounds = room.bounds
-        Boundaries.put("room"..roomindex, roombounds)
+        local roombounds = room.boundaries
+        Boundaries.putArray(roombounds)
         Characters.spawnArray(room.characters)
         gamestatus = "goingToNextRoom"
         room.camerapath = room.camerapath or CameraPath.from({
