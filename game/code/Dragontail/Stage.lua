@@ -6,6 +6,7 @@ local State       = require "Dragontail.Character.State"
 local Boundary    = require "Object.Boundary"
 local Boundaries  = require "Dragontail.Stage.Boundaries"
 local Characters  = require "Dragontail.Stage.Characters"
+local CameraPath  = require "Object.CameraPath"
 local Stage = {
     CameraWidth = 640,
     CameraHeight = 360
@@ -45,6 +46,9 @@ function Stage.init(stagefile)
         if object.type == "Boundary" then
             Boundary.cast(object)
             object:init()
+        elseif object.type == "CameraPath" then
+            CameraPath.cast(object)
+            object:init()
         else
             local characters = object.layer.characters or {}
             object.layer.characters = characters
@@ -78,9 +82,16 @@ function Stage.openNextRoom()
     roomindex = roomindex + 1
     local room = map.layers["room"..roomindex]
     if room then
-        Boundaries.put("room"..roomindex, room.bounds)
+        local roombounds = room.bounds
+        Boundaries.put("room"..roomindex, roombounds)
         Characters.spawnArray(room.characters)
         gamestatus = "goingToNextRoom"
+        room.camerapath = room.camerapath or CameraPath.from({
+            x = camera.x + Stage.CameraWidth/2,
+            y = camera.y + Stage.CameraHeight/2,
+            shape = "polyline",
+            points = {0, 0, roombounds.x + roombounds.right - camera.width/2, 0}
+        })
     else
         gamestatus = "victory"
         for _, player in ipairs(Characters.getGroup("players")) do
@@ -91,29 +102,34 @@ function Stage.openNextRoom()
 end
 
 function Stage.updateGoingToNextRoom()
-    camera.x = camera.x + camera.velx
-    camera.x = max(0, camera.x)
     local room = map.layers["room"..roomindex]
     assert(room, "No room "..roomindex)
-    local cameradestx = 0
+
+    local camerapath = room.camerapath ---@type CameraPath
+
+    camera.x, camera.y = camera.x + camera.velx, camera.y + camera.vely
+
+    local camhalfw, camhalfh = camera.width/2, camera.height/2
+
+    if camerapath:isEnd(camera.x + camhalfw, camera.y + camhalfh) then
+        camera.velx = 0
+        camera.vely = 0
+        Stage.startNextFight()
+        return
+    end
+
+    local focusx, focusy = 0, 0
     local players = Characters.getGroup("players")
     for _, player in ipairs(players) do
-        cameradestx = cameradestx + player.x
+        focusx = focusx + player.x
+        focusy = focusy + player.y
     end
-    cameradestx = cameradestx/#players - Stage.CameraWidth/2
-    if camera.x < cameradestx then
-        camera.velx = Movement.moveTowards(camera.x, cameradestx, 6) - camera.x
-    else
-        camera.velx = 0
-    end
-    local roombounds = Boundaries.get("room"..roomindex)
-    local roomright = roombounds.x + roombounds.right
-    local cameraxmax = roomright - Stage.CameraWidth
-    if camera.x >= cameraxmax then
-        camera.x = cameraxmax
-        camera.velx = 0
-        Stage.startNextFight()
-    end
+    focusx, focusy = focusx/#players, focusy/#players
+    focusx, focusy = camerapath:getCameraCenter(focusx, focusy)
+    focusx = max(camera.x + camhalfw, focusx)
+
+    camera.velx, camera.vely = Movement.getVelocity_speed(camera.x, camera.y,
+        focusx - camhalfw, focusy - camhalfh, 6)
 end
 
 function Stage.startNextFight()
