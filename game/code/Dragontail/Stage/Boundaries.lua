@@ -17,6 +17,13 @@ function Boundaries.put(k, bound)
     boundaries[k] = bound
 end
 
+function Boundaries.putArray(array)
+    if not array then return end
+    for _, bounds in ipairs(array) do
+        Boundaries.put(bounds.id, bounds)
+    end
+end
+
 function Boundaries.clear()
     for k in pairs(boundaries) do
         boundaries[k] = nil
@@ -49,6 +56,12 @@ function Boundaries.keepCircleIn(x, y, r)
         end
     end
     return x, y, totalpenex, totalpeney
+end
+
+function Boundaries.draw()
+    for _, boundary in pairs(boundaries) do
+        boundary:draw()
+    end
 end
 
 return Boundaries
