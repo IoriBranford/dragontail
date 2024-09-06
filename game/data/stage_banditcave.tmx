@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" nextlayerid="11" nextobjectid="27">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="11" nextobjectid="37">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -9,107 +9,61 @@
  <tileset firstgid="5265" source="mapobjects/bandit/bandits.tsx"/>
  <tileset firstgid="5281" source="mapobjects/items.tsx"/>
  <layer id="2" name="floor" width="200" height="12">
-  <data encoding="base64" compression="zlib">
-   <chunk x="0" y="0" width="20" height="12">
-   eJxjYBhZYLrwKB7FwwcDAAabd4k=
-  </chunk>
-   <chunk x="20" y="0" width="20" height="12">
-   eJxjYBhZYLrwKB7FwwcDAAabd4k=
-  </chunk>
-   <chunk x="40" y="0" width="20" height="12">
-   eJxjYBhZYLrwKB7FwwcDAAabd4k=
-  </chunk>
-   <chunk x="60" y="0" width="20" height="12">
-   eJxjYBhZYLrwKB7FwwcDAAabd4k=
-  </chunk>
-   <chunk x="80" y="0" width="20" height="12">
-   eJxjYBhZgJFzFI/i4YMB70MHCQ==
-  </chunk>
-   <chunk x="100" y="0" width="20" height="12">
-   eJxjYBhZgJFzFI/i4YMB70MHCQ==
-  </chunk>
-   <chunk x="120" y="0" width="20" height="12">
-   eJxjYBhZgJFzFI/i4YMB70MHCQ==
-  </chunk>
-   <chunk x="140" y="0" width="20" height="12">
-   eJxjYBhZgJFzFI/i4YMB70MHCQ==
-  </chunk>
-   <chunk x="160" y="0" width="20" height="12">
-   eJxjYBhZgJFzFI/i4YMB70MHCQ==
-  </chunk>
-   <chunk x="180" y="0" width="20" height="12">
-   eJxjYBhZgJFzFI/i4YMB70MHCQ==
-  </chunk>
-  </data>
+  <data encoding="base64" compression="zlib"/>
  </layer>
  <layer id="1" name="wall" width="200" height="12">
-  <data encoding="base64" compression="zlib">
-   <chunk x="0" y="0" width="20" height="12">
-   eJzVjm0KgkAURe8CdKAyC1uVYh/YqoxsxHZWm+n040EIzY9JhC4ceFwel+NXkp+JZyJtnLSFDNaQu3D3batIpR0c+TlBDXs4uHA39lnQLaFh6wyeu4crdHBz4c5iPiVdBQP3PVVU3l7m07J1gUfklnn94vMZ84r1GWcqL8tUXv+SFwPXNPA=
-  </chunk>
-   <chunk x="20" y="0" width="20" height="12">
-   eJybLszAMJ2KWISPgUEUiMWAWByIJfgoEwsB4lAgDgPicCCOoFBsChBPBeJpQDwdiGdQKDYKRsFAAgB8eiS5
-  </chunk>
-   <chunk x="40" y="0" width="20" height="12">
-   eJybLszAMJ2KWISPgUEUiMWAWByIJfgoEwsB4lAgDgPicCCOoFBsChBPBeJpQDwdiGdQKDYKRsFAAgB8eiS5
-  </chunk>
-   <chunk x="60" y="0" width="20" height="12">
-   eJybLszAMJ2KWISPgUEUiMWAWByIJfgoEwsB4lAgDgPicCCOoFBsChBPBeJpQDwdiGdQKDYKRsFAAgB8eiS5
-  </chunk>
-   <chunk x="80" y="0" width="20" height="12">
-   eJztx8cJACAUwFDFMpJlJMtIllXNDn7wYuAdYrRSFg4e5vIDIhKywBdUNHSBH5hY2AL/+73sABO2GaE=
-  </chunk>
-   <chunk x="100" y="0" width="20" height="12">
-   eJztx8cJACAUwFDFMpJlJMtIllXNDn7wYuAdYrRSFg4e5vIDIhKywBdUNHSBH5hY2AL/+73sABO2GaE=
-  </chunk>
-   <chunk x="120" y="0" width="20" height="12">
-   eJztx8cJACAUwFDFMpJlJMtIllXNDn7wYuAdYrRSFg4e5vIDIhKywBdUNHSBH5hY2AL/+73sABO2GaE=
-  </chunk>
-   <chunk x="140" y="0" width="20" height="12">
-   eJztx8cJACAUwFDFMpJlJMtIllXNDn7wYuAdYrRSFg4e5vIDIhKywBdUNHSBH5hY2AL/+73sABO2GaE=
-  </chunk>
-   <chunk x="160" y="0" width="20" height="12">
-   eJztx8cJACAUwFDFMpJlJMtIllXNDn7wYuAdYrRSFg4e5vIDIhKywBdUNHSBH5hY2AL/+73sABO2GaE=
-  </chunk>
-   <chunk x="180" y="0" width="20" height="12">
-   eJztx8cJACAUwFDFMpJlJMtIllXNDn7wYuAdYrRSFg4e5vIDIhKywBdUNHSBH5hY2AL/+73sABO2GaE=
-  </chunk>
-  </data>
+  <data encoding="base64" compression="zlib"/>
  </layer>
  <layer id="4" name="ceiling" width="200" height="12">
   <data encoding="base64" compression="zlib"/>
  </layer>
  <objectgroup id="7" name="room1">
-  <object id="21" template="mapobjects/OutwardBoundary.tx" x="0" y="0">
-   <polygon points="0,0 0,320 128,192 192,192 256,128 640,128 640,0"/>
+  <object id="21" template="mapobjects/OutwardBoundary.tx" name="" x="0" y="0">
+   <polygon points="0,0 0,384 960,384 960,352 320,352 256,288 192,288 160,256 128,256 64,192 128,128 192,128 256,64 960,64 960,0"/>
   </object>
+  <object id="27" template="mapobjects/CameraPath.tx" x="320" y="192">
+   <polyline points="0,0 320,0"/>
+  </object>
+  <object id="23" gid="5283" x="728" y="224" width="64" height="32"/>
+  <object id="24" gid="5283" x="864" y="168" width="64" height="32"/>
+  <object id="25" gid="5281" x="784" y="136" width="64" height="32"/>
+  <object id="26" gid="5282" x="848" y="248" width="64" height="32"/>
  </objectgroup>
  <objectgroup id="8" name="fight1">
-  <object id="15" gid="5266" x="704" y="248" width="64" height="64"/>
-  <object id="16" gid="5266" x="672" y="280" width="64" height="64"/>
-  <object id="23" gid="5283" x="288" y="272" width="64" height="32"/>
-  <object id="24" gid="5283" x="424" y="216" width="64" height="32"/>
-  <object id="25" gid="5281" x="344" y="184" width="64" height="32"/>
-  <object id="26" gid="5282" x="408" y="296" width="64" height="32"/>
+  <object id="15" gid="5266" x="992" y="120" width="64" height="64"/>
+  <object id="16" gid="5266" x="992" y="344" width="64" height="64"/>
+  <object id="10" gid="5266" x="1088" y="152" width="64" height="64"/>
+  <object id="11" gid="5266" x="1088" y="312" width="64" height="64"/>
  </objectgroup>
  <objectgroup id="9" name="room2">
-  <object id="22" template="mapobjects/OutwardBoundary.tx" x="640" y="0">
-   <polygon points="0,0 0,128 640,128 640,0"/>
+  <object id="22" template="mapobjects/OutwardBoundary.tx" name="" x="960" y="0">
+   <polygon points="0,64 32,64 96,0 640,0 640,-160 0,-160"/>
   </object>
+  <object id="28" template="mapobjects/OutwardBoundary.tx" name="" gid="0" x="1600" y="256" rotation="0">
+   <polygon points="0,32 -352,32 -416,96 -640,96 -640,128 0,128"/>
+  </object>
+  <object id="29" template="mapobjects/CameraPath.tx" x="640" y="192">
+   <polyline points="0,0 320,0 640,-64"/>
+  </object>
+  <object id="19" gid="5266" x="1280" y="120" width="64" height="64"/>
+  <object id="36" gid="5266" x="1408" y="88" width="64" height="64"/>
+  <object id="30" gid="5266" x="1536" y="56" width="64" height="64"/>
+  <object id="20" gid="5266" x="1280" y="216" width="64" height="64"/>
+  <object id="35" gid="5266" x="1408" y="184" width="64" height="64"/>
+  <object id="31" gid="5266" x="1536" y="152" width="64" height="64"/>
  </objectgroup>
  <objectgroup id="10" name="fight2">
-  <object id="19" gid="5266" x="1336" y="176" width="64" height="64"/>
-  <object id="20" gid="5266" x="1312" y="376" width="64" height="64"/>
-  <object id="10" gid="5266" x="608" y="184" width="64" height="64"/>
-  <object id="11" gid="5266" x="576" y="216" width="64" height="64"/>
+  <object id="32" gid="5270" x="1632" y="56" width="64" height="64"/>
+  <object id="33" gid="5270" x="1632" y="152" width="64" height="64"/>
+  <object id="34" gid="5270" x="1632" y="248" width="64" height="64"/>
  </objectgroup>
  <objectgroup id="3" name="notes">
-  <object id="1" x="640" y="-360" width="640" height="360">
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Room 1
+  <object id="1" x="320" y="384" width="640" height="360">
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff">Room 1
 
 Teach basic combat with first low-level enemies</text>
   </object>
-  <object id="2" x="1280" y="-360" width="640" height="360">
+  <object id="2" x="960" y="-520" width="640" height="360">
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Room 2
 
 Introduce dodging enemy encouraging player to use run in combat</text>
