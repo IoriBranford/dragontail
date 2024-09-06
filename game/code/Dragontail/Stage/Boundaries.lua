@@ -9,6 +9,10 @@ function Boundaries.get(k)
     return boundaries[k]
 end
 
+function Boundaries.getAll()
+    return boundaries
+end
+
 function Boundaries.put(k, bound)
     boundaries[k] = bound
 end
