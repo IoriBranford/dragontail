@@ -74,7 +74,7 @@ function Stage.openNextRoom()
     roomindex = roomindex + 1
     local room = map.layers["room"..roomindex]
     if room then
-        Boundaries.put("room", room.bounds)
+        Boundaries.put("room"..roomindex, room.bounds)
         Characters.spawnArray(room)
         gamestatus = "goingToNextRoom"
     else
@@ -102,7 +102,7 @@ function Stage.updateGoingToNextRoom()
     else
         camera.velx = 0
     end
-    local roombounds = Boundaries.get("room")
+    local roombounds = Boundaries.get("room"..roomindex)
     local roomright = roombounds.x + roombounds.right
     local cameraxmax = roomright - Stage.CameraWidth
     if camera.x >= cameraxmax then
@@ -135,6 +135,17 @@ function Stage.fixedupdate()
         Stage.updateGoingToNextRoom()
     end
 
+    local cx, cy, cw, ch = camera.x, camera.y, camera.width, camera.height
+    local room = map.layers["room"..roomindex]
+    local boundaries = Boundaries.getAll()
+    for id, boundary in pairs(boundaries) do
+        if boundary.layer ~= room then
+            local x1, y1, x2, y2 = boundary:boundingBox()
+            if not math.testrects(cx, cy, cw, ch, x1, y1, x2-x1, y2-y1) then
+                boundaries[id] = nil
+            end
+        end
+    end
     scene:animate(1)
 end
 

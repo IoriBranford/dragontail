@@ -45,7 +45,7 @@
  <layer id="1" name="wall" width="200" height="12">
   <data encoding="base64" compression="zlib">
    <chunk x="0" y="0" width="20" height="12">
-   eJybLszAMJ2KWISPgUEUiMWAWByIJfgoEwsB4lAgDgPicCCOoFBsChBPBeJpQDwdiGdQKDYKRsFAAgB8eiS5
+   eJzVjm0KgkAURe8CdKAyC1uVYh/YqoxsxHZWm+n040EIzY9JhC4ceFwel+NXkp+JZyJtnLSFDNaQu3D3batIpR0c+TlBDXs4uHA39lnQLaFh6wyeu4crdHBz4c5iPiVdBQP3PVVU3l7m07J1gUfklnn94vMZ84r1GWcqL8tUXv+SFwPXNPA=
   </chunk>
    <chunk x="20" y="0" width="20" height="12">
    eJybLszAMJ2KWISPgUEUiMWAWByIJfgoEwsB4lAgDgPicCCOoFBsChBPBeJpQDwdiGdQKDYKRsFAAgB8eiS5
@@ -81,7 +81,7 @@
  </layer>
  <objectgroup id="7" name="room1">
   <object id="21" template="mapobjects/OutwardBoundary.tx" x="0" y="0">
-   <polygon points="0,0 0,128 640,128 640,0"/>
+   <polygon points="0,0 0,320 128,192 192,192 256,128 640,128 640,0"/>
   </object>
  </objectgroup>
  <objectgroup id="8" name="fight1">
@@ -93,15 +93,15 @@
   <object id="26" gid="5282" x="408" y="296" width="64" height="32"/>
  </objectgroup>
  <objectgroup id="9" name="room2">
-  <object id="22" template="mapobjects/OutwardBoundary.tx" x="0" y="0">
-   <polygon points="0,0 0,128 1344,128 1344,0"/>
+  <object id="22" template="mapobjects/OutwardBoundary.tx" x="640" y="0">
+   <polygon points="0,0 0,128 640,128 640,0"/>
   </object>
  </objectgroup>
  <objectgroup id="10" name="fight2">
-  <object id="19" gid="5266" x="1408" y="160" width="64" height="64"/>
-  <object id="20" gid="5266" x="1384" y="360" width="64" height="64"/>
-  <object id="10" gid="5266" x="704" y="184" width="64" height="64"/>
-  <object id="11" gid="5266" x="672" y="216" width="64" height="64"/>
+  <object id="19" gid="5266" x="1336" y="176" width="64" height="64"/>
+  <object id="20" gid="5266" x="1312" y="376" width="64" height="64"/>
+  <object id="10" gid="5266" x="608" y="184" width="64" height="64"/>
+  <object id="11" gid="5266" x="576" y="216" width="64" height="64"/>
  </objectgroup>
  <objectgroup id="3" name="notes">
   <object id="1" x="640" y="-360" width="640" height="360">
