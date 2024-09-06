@@ -79,15 +79,10 @@ function Characters.spawn(object)
 end
 local spawn = Characters.spawn
 
-function Characters.spawnArray(objects)
-    for i = 1, #objects do local object = objects[i]
-        local typ = object.type
-        if typ ~= "" then
-            if typ == "Boundary" then
-            else
-                spawn(object)
-            end
-        end
+function Characters.spawnArray(characters)
+    if not characters then return end
+    for i = 1, #characters do local object = characters[i]
+        spawn(object)
     end
 end
 

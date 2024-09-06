@@ -45,6 +45,10 @@ function Stage.init(stagefile)
         if object.type == "Boundary" then
             Boundary.cast(object)
             object:init()
+        else
+            local characters = object.layer.characters or {}
+            object.layer.characters = characters
+            characters[#characters+1] = object
         end
     end
 
@@ -75,7 +79,7 @@ function Stage.openNextRoom()
     local room = map.layers["room"..roomindex]
     if room then
         Boundaries.put("room"..roomindex, room.bounds)
-        Characters.spawnArray(room)
+        Characters.spawnArray(room.characters)
         gamestatus = "goingToNextRoom"
     else
         gamestatus = "victory"
@@ -116,7 +120,7 @@ function Stage.startNextFight()
     gamestatus = "fight"
     local fight = map.layers["fight"..roomindex]
     assert(fight, "No fight "..roomindex)
-    Characters.spawnArray(fight)
+    Characters.spawnArray(fight.characters)
 end
 
 function Stage.fixedupdate()
