@@ -78,6 +78,10 @@ function Stage.init(stagefile)
     })
 
     Stage.openNextRoom()
+    local room = map.layers["room"..roomindex]
+    local camerapath = room.camerapath
+    camera.x = camerapath.x + camerapath.points[1] - camera.width/2
+    camera.y = camerapath.y + camerapath.points[2] - camera.height/2
 end
 
 function Stage.openNextRoom()
