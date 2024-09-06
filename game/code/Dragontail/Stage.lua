@@ -143,7 +143,7 @@ function Stage.fixedupdateGui(gui)
     local player = players[1]
 
     local healthpercent = player.health / player.maxhealth
-    local hud = gui.hud
+    local hud = gui.gameplay.hud
 
     hud.health:setPercent(healthpercent)
 

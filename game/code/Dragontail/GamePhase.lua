@@ -4,14 +4,13 @@ local Tiled = require "Tiled"
 local Database= require "Data.Database"
 local Assets= require "Tiled.Assets"
 local Audio = require "System.Audio"
-local Gui = require "Gui"
+local Gui = require "Dragontail.Gui"
 local Config = require "System.Config"
 local isAsset = Assets.isAsset
 local getAsset = Assets.get
 local GamePhase = {}
 
 local paused
-local gui
 local stagecanvas
 
 function GamePhase.loadphase()
@@ -36,7 +35,6 @@ function GamePhase.loadphase()
 
     Stage.init("data/stage_banditcave.lua")
 
-    gui = Gui.new("data/gui_gameplay.lua")
     Tiled.Assets.uncacheMarked()
     Tiled.Assets.packTiles()
     Tiled.Assets.setFilter("nearest", "nearest")
@@ -53,14 +51,16 @@ function GamePhase.resize(screenwidth, screenheight)
     stagecanvas = Canvas(Stage.CameraWidth, Stage.CameraHeight)
     stagecanvas:transformToScreen(screenwidth, screenheight, math.rad(Config.rotation), Config.canvasscaleint)
     stagecanvas:setFiltered(Config.canvasscalesoft)
-    gui:resize(screenwidth, screenheight)
+
+    Gui:showOnlyNamed("gameplay")
+    Gui.gameplay:showOnlyNamed("hud")
+    Gui:resize(screenwidth, screenheight)
 end
 
 function GamePhase.quitphase()
     Stage.quit()
     Assets.markAllToUncache()
     Database.clear()
-    gui = nil
 end
 
 local keypressed = {}
@@ -107,9 +107,9 @@ end
 function GamePhase.fixedupdate()
     if not paused then
         Stage.fixedupdate()
-        Stage.fixedupdateGui(gui)
+        Stage.fixedupdateGui(Gui)
     end
-    gui:fixedupdate()
+    Gui:fixedupdate()
 end
 
 function GamePhase.update(dsecs, fixedfrac)
@@ -126,7 +126,7 @@ function GamePhase.draw(fixedfrac)
         end
     end)
     stagecanvas:draw()
-    gui:draw()
+    Gui:draw()
 end
 
 return GamePhase

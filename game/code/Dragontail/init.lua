@@ -41,6 +41,8 @@ function love.load(args)
 
     -- Wallpaper.reload()
 
+    require "Dragontail.Gui"
+
     local startpoint = args.startpoint
     love.event.loadphase(firstphase, firstmap, startpoint)
 end
