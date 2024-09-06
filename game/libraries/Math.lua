@@ -148,20 +148,23 @@ function math.pointinpolygon(points, x, y)
     return inside
 end
 
-function math.nearestpointonpolygon(points, x, y)
-    local x1, y1 = points[#points-1], points[#points]
-    local nearestx, nearesty
+---@param polyline number[] Every 2 is a point
+function math.nearestpolylinepoint(polyline, x, y)
+    local x1, y1 = polyline[1], polyline[2]
+    local nearestx, nearesty, nearestx1, nearesty1, nearestx2, nearesty2
     local nearestdsq = math.huge
-    for i = 2, #points, 2 do
-        local x2, y2 = points[i-1], points[i]
+    for i = 4, #polyline, 2 do
+        local x2, y2 = polyline[i-1], polyline[i]
         local projx, projy = math.projpointsegment(x, y, x1, y1, x2, y2)
         local dsq = math.distsq(x, y, projx, projy)
         if dsq < nearestdsq then
             nearestx, nearesty, nearestdsq = projx, projy, dsq
+            nearestx1, nearesty1 = x1, y1
+            nearestx2, nearesty2 = x2, y2
         end
         x1, y1 = x2, y2
     end
-    return nearestx, nearesty
+    return nearestx, nearesty, nearestx1, nearesty1, nearestx2, nearesty2
 end
 
 ---Gets point on line segment from (ax, ay) to (bx, by) that is closest to point (px, py)

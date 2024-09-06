@@ -12,8 +12,11 @@ function CameraPath:init()
 end
 
 function CameraPath:getCameraCenter(focusx, focusy)
-    local x, y = math.nearestpointonpolygon(self.points, focusx - self.x, focusy - self.y)
-    return x + self.x, y + self.y
+    local selfx, selfy = self.x, self.y
+    local x, y, x1, y1, x2, y2 = math.nearestpolylinepoint(self.points, focusx - selfx, focusy - selfy)
+    return x + selfx, y + selfy,
+        x1 + selfx, y1 + selfy,
+        x2 + selfx, y2 + selfy
 end
 
 function CameraPath:isEnd(x, y)
