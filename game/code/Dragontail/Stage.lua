@@ -204,6 +204,12 @@ function Stage.update(dsecs, fixedfrac)
 end
 
 function Stage.draw(fixedfrac)
+    if map.backgroundcolor then
+        love.graphics.clear(
+            map.backgroundcolor[1],
+            map.backgroundcolor[2],
+            map.backgroundcolor[3])
+    end
     love.graphics.push()
     love.graphics.translate(-camera.x - camera.velx*fixedfrac, -camera.y - camera.vely*fixedfrac)
     scene:draw(fixedfrac)
