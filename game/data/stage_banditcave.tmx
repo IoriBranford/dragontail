@@ -18,7 +18,7 @@
   <data encoding="base64" compression="zlib"/>
  </layer>
  <objectgroup id="7" name="room1">
-  <object id="21" template="mapobjects/OutwardBoundary.tx" name="" x="0" y="0">
+  <object id="21" template="mapobjects/OutwardBoundary.tx" x="0" y="0">
    <polygon points="0,0 0,384 960,384 960,352 320,352 256,288 192,288 160,256 128,256 64,192 128,128 192,128 256,64 960,64 960,0"/>
   </object>
   <object id="27" template="mapobjects/CameraPath.tx" x="320" y="192">
@@ -36,10 +36,10 @@
   <object id="11" gid="5266" x="1088" y="312" width="64" height="64"/>
  </objectgroup>
  <objectgroup id="9" name="room2">
-  <object id="22" template="mapobjects/OutwardBoundary.tx" name="" x="960" y="0">
+  <object id="22" template="mapobjects/OutwardBoundary.tx" x="960" y="0">
    <polygon points="0,64 32,64 96,0 640,0 640,-160 0,-160"/>
   </object>
-  <object id="28" template="mapobjects/OutwardBoundary.tx" name="" gid="0" x="1600" y="256" rotation="0">
+  <object id="28" template="mapobjects/OutwardBoundary.tx" x="1600" y="256" rotation="0">
    <polygon points="0,32 -352,32 -416,96 -640,96 -640,128 0,128"/>
   </object>
   <object id="29" template="mapobjects/CameraPath.tx" x="640" y="192">
@@ -59,44 +59,28 @@
  </objectgroup>
  <objectgroup id="3" name="notes">
   <object id="1" x="320" y="384" width="640" height="360">
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff">Room 1
-
-Teach basic combat with first low-level enemies</text>
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff">Teach basic combat with first low-level enemies</text>
   </object>
   <object id="2" x="960" y="-520" width="640" height="360">
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Room 2
-
-Introduce dodging enemy encouraging player to use run in combat</text>
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Introduce dodging enemy encouraging player to use run in combat</text>
   </object>
   <object id="3" x="1920" y="-360" width="640" height="360">
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Room 3
-
-Teach grabbing with guarding enemy and barrier broken only by thrown enemy</text>
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Teach grabbing with guarding enemy and barrier broken only by thrown enemy</text>
   </object>
   <object id="4" x="2560" y="-360" width="640" height="360">
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Room 4
-
-Entry hall with archers shooting from arrow slits</text>
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Entry hall with archers shooting from arrow slits</text>
   </object>
   <object id="5" x="3200" y="-360" width="640" height="360">
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Room 5
-
-Guard room introducing mace enemies</text>
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Guard room introducing mace enemies</text>
   </object>
   <object id="6" x="3840" y="-360" width="640" height="360">
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Room 6
-
-Armory with mixed enemies and introducing throwable weapons</text>
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Armory with mixed enemies and introducing throwable weapons</text>
   </object>
   <object id="7" x="4480" y="-360" width="640" height="360">
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Room 7
-
-Mess hall with food, throwable and breakable furniture, stronger mix of enemies</text>
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Mess hall with food, throwable and breakable furniture, stronger mix of enemies</text>
   </object>
   <object id="8" x="5120" y="-360" width="640" height="360">
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Room 8
-
-Boss arena</text>
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Boss arena</text>
   </object>
   <object id="9" x="5760" y="-360" width="640" height="360">
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">End room
@@ -104,9 +88,7 @@ Boss arena</text>
 Holding cells with captured kids</text>
   </object>
   <object id="13" x="0" y="-360" width="640" height="360">
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Room 0
-
-Teach movement - walking and running</text>
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Teach movement - walking and running</text>
   </object>
  </objectgroup>
 </map>
