@@ -140,10 +140,11 @@ function Stage.updateGoingToNextRoom()
     centerx, centery, pathx1, pathy1, pathx2, pathy2 = camerapath:getCameraCenter(centerx, centery)
 
     local destx, desty = centerx - camhalfw, centery - camhalfh
-    destx = pathx2 >= pathx1 and max(camera.x, destx) or min(camera.x, destx)
-    desty = pathy2 >= pathy1 and max(camera.y, desty) or min(camera.y, desty)
-
-    camera.velx, camera.vely = Movement.getVelocity_speed(camera.x, camera.y, destx, desty, 6)
+    if math.dot(destx - camera.x, desty - camera.y, pathx2-pathx1, pathy2-pathy1) < 0 then
+        camera.velx, camera.vely = 0, 0
+    else
+        camera.velx, camera.vely = Movement.getVelocity_speed(camera.x, camera.y, destx, desty, 6)
+    end
 end
 
 function Stage.startNextFight()
