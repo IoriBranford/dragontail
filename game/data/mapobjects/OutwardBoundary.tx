@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template>
- <object name="bounds" type="Boundary">
+ <object type="Boundary">
   <properties>
    <property name="color" type="color" value="#80808080"/>
    <property name="linecolor" type="color" value="#80ffffff"/>

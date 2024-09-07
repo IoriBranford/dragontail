@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template>
- <object name="bounds" type="Boundary">
+ <object type="Boundary">
   <polygon points="0,0 640,0 640,360 0,360"/>
  </object>
 </template>
