@@ -221,11 +221,8 @@ function Stage.draw(fixedfrac)
     end
     love.graphics.push()
     love.graphics.translate(-camera.x - camera.velx*fixedfrac, -camera.y - camera.vely*fixedfrac)
-    scene:draw(fixedfrac)
-    -- local players = Characters.getGroup("players")
-    -- local player = players[1]
-    -- Boundaries.get("room"):drawCollisionDebug(player.x, player.y, player.bodyradius)
     Boundaries.draw()
+    scene:draw(fixedfrac)
     love.graphics.pop()
 end
 
