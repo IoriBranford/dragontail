@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="11" nextobjectid="37">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="11" nextobjectid="38">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -58,36 +58,40 @@
   <object id="34" gid="5270" x="1632" y="248" width="64" height="64"/>
  </objectgroup>
  <objectgroup id="3" name="notes">
-  <object id="1" x="320" y="384" width="640" height="360">
+  <object id="1" x="320" y="384" width="640" height="128">
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff">Teach basic combat with first low-level enemies</text>
   </object>
-  <object id="2" x="960" y="-520" width="640" height="360">
+  <object id="2" x="960" y="-288" width="640" height="128">
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Introduce dodging enemy encouraging player to use run in combat</text>
   </object>
-  <object id="3" x="1920" y="-360" width="640" height="360">
+  <object id="37" x="1408" y="-416" width="640" height="128">
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Teach long-range combat with stones to throw at slingers
+Avoid their stones then pick up and throw them back</text>
+  </object>
+  <object id="3" x="1920" y="-360" width="640" height="128">
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Teach grabbing with guarding enemy and barrier broken only by thrown enemy</text>
   </object>
-  <object id="4" x="2560" y="-360" width="640" height="360">
+  <object id="4" x="2560" y="-360" width="640" height="128">
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Entry hall with archers shooting from arrow slits</text>
   </object>
-  <object id="5" x="3200" y="-360" width="640" height="360">
+  <object id="5" x="3200" y="-360" width="640" height="128">
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Guard room introducing mace enemies</text>
   </object>
-  <object id="6" x="3840" y="-360" width="640" height="360">
+  <object id="6" x="3840" y="-360" width="640" height="128">
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Armory with mixed enemies and introducing throwable weapons</text>
   </object>
-  <object id="7" x="4480" y="-360" width="640" height="360">
+  <object id="7" x="4480" y="-360" width="640" height="128">
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Mess hall with food, throwable and breakable furniture, stronger mix of enemies</text>
   </object>
-  <object id="8" x="5120" y="-360" width="640" height="360">
+  <object id="8" x="5120" y="-360" width="640" height="128">
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Boss arena</text>
   </object>
-  <object id="9" x="5760" y="-360" width="640" height="360">
+  <object id="9" x="5760" y="-360" width="640" height="128">
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">End room
 
 Holding cells with captured kids</text>
   </object>
-  <object id="13" x="0" y="-360" width="640" height="360">
+  <object id="13" x="0" y="-128" width="640" height="128">
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Teach movement - walking and running</text>
   </object>
  </objectgroup>
