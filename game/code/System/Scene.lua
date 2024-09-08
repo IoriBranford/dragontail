@@ -137,8 +137,8 @@ local function zsort(a, b)
     end
 end
 
-function Scene:draw(fixedfrac)
-    sort(self, zsort)
+function Scene:draw(fixedfrac, sortfunc)
+    sort(self, sortfunc or zsort)
     for i = 1, #self do
         local sceneobject = self[i]
         if sceneobject.visible then
