@@ -18,7 +18,7 @@ local love_graphics_draw = love.graphics.draw
 ---@field spriteSourceSize Rect
 ---@field sourceSize Size
 ---@field duration number
----@field [integer] AseCel
+---@field [integer] AseCel|boolean
 local AseFrame = class()
 
 function AseFrame:_init(i, image, duration)
@@ -36,6 +36,9 @@ end
 function AseFrame:putCel(i, cel)
     local rect = cel.frame
     local pos = cel.spriteSourceSize
+    for h = #self+1, i-1 do
+        self[h] = false
+    end
     self[i] = {
         x = pos.x,
         y = pos.y,
