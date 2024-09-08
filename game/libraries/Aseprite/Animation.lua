@@ -15,7 +15,10 @@ function AseTag:load(ase)
     self.to = self.to + 1
     local direction = self.direction
     if direction == "reverse" then
-        for f = self.to, self.from, -1 do
+        -- from can be first or last frame depending on aseprite version used to export
+        local from = math.max(self.from, self.to)
+        local to = math.min(self.from, self.to)
+        for f = from, to, -1 do
             self[#self + 1] = ase[f]
         end
     else
