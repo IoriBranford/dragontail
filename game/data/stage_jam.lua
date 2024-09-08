@@ -909,7 +909,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["altitude"] = 16
+            ["z"] = 16
           }
         },
         {
@@ -994,7 +994,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["altitude"] = 16
+            ["z"] = 16
           }
         },
         {
@@ -1009,7 +1009,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["altitude"] = 16
+            ["z"] = 16
           }
         },
         {
@@ -1149,7 +1149,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["altitude"] = 16
+            ["z"] = 16
           }
         },
         {
@@ -1223,7 +1223,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["altitude"] = 16
+            ["z"] = 16
           }
         },
         {

@@ -26,7 +26,7 @@
   </object>
   <object id="77" type="food-bigfish" x="2240" y="145">
    <properties>
-    <property name="altitude" type="int" value="16"/>
+    <property name="z" type="int" value="16"/>
    </properties>
    <point/>
   </object>
@@ -51,13 +51,13 @@
   </properties>
   <object id="10" type="food-fish" x="1584" y="161">
    <properties>
-    <property name="altitude" type="int" value="16"/>
+    <property name="z" type="int" value="16"/>
    </properties>
    <point/>
   </object>
   <object id="24" type="food-fish" x="1616" y="161">
    <properties>
-    <property name="altitude" type="int" value="16"/>
+    <property name="z" type="int" value="16"/>
    </properties>
    <point/>
   </object>
@@ -95,7 +95,7 @@
   </object>
   <object id="50" type="food-fish" x="1280" y="161">
    <properties>
-    <property name="altitude" type="int" value="16"/>
+    <property name="z" type="int" value="16"/>
    </properties>
    <point/>
   </object>
@@ -118,7 +118,7 @@
   </properties>
   <object id="8" type="food-fish" x="800" y="161">
    <properties>
-    <property name="altitude" type="int" value="16"/>
+    <property name="z" type="int" value="16"/>
    </properties>
    <point/>
   </object>

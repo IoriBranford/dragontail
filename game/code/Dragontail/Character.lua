@@ -30,7 +30,7 @@ function Character:init()
     self.x = self.x or 0
     self.y = self.y or 0
     self.z = self.z or 0
-    self.altitude = self.altitude or 0
+    self.drawz = self.drawz or 0
     self.velx = self.velx or 0
     self.vely = self.vely or 0
     self.velz = self.velz or 0
@@ -148,7 +148,7 @@ end
 
 function Character:update(dsecs, fixedfrac)
     self.originx = self.spriteoriginx + 2*math.sin(self.hurtstun)
-    self.originy = (self.spriteoriginy or 0) + self.altitude
+    self.originy = (self.spriteoriginy or 0) + self.z
 end
 
 function Character:moveTo(destx, desty, speed, timelimit)
@@ -354,6 +354,33 @@ end
 
 function Character:hasDisappeared()
     return self.disappeared
+end
+
+---@param other Character
+function Character:isDrawnBefore(other)
+    local az = self.drawz or 0
+    local bz = other.drawz or 0
+    if az < bz then
+        return true
+    elseif az > bz then
+        return false
+    end
+
+    local ay = self.y or 0
+    local by = other.y or 0
+    if ay < by then
+        return true
+    elseif ay > by then
+        return false
+    end
+
+    local ax = self.x or 0
+    local bx = other.x or 0
+    if ax < bx then
+        return true
+    elseif ax > bx then
+        return false
+    end
 end
 
 return Character

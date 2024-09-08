@@ -7,6 +7,7 @@ local Boundary    = require "Object.Boundary"
 local Boundaries  = require "Dragontail.Stage.Boundaries"
 local Characters  = require "Dragontail.Stage.Characters"
 local CameraPath  = require "Object.CameraPath"
+local Character   = require "Dragontail.Character"
 local Stage = {
     CameraWidth = 640,
     CameraHeight = 360
@@ -223,7 +224,7 @@ function Stage.draw(fixedfrac)
     love.graphics.push()
     love.graphics.translate(-camera.x - camera.velx*fixedfrac, -camera.y - camera.vely*fixedfrac)
     Boundaries.draw()
-    scene:draw(fixedfrac)
+    scene:draw(fixedfrac, Character.isDrawnBefore)
     love.graphics.pop()
 end
 
