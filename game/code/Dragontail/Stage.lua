@@ -88,6 +88,30 @@ function Stage.init(stagefile)
     camera.y = camerapath.y + camerapath.points[2] - camera.height/2
 end
 
+local function genDefaultCameraPath(roombounds)
+    local rightmost
+    for _, bound in ipairs(roombounds) do
+        if bound.right then
+            if not rightmost or rightmost.x + rightmost.right < bound.x + bound.right then
+                rightmost = bound
+            end
+        end
+    end
+    local endx
+    if rightmost then
+        endx = rightmost.x + rightmost.right - camera.width/2
+    else
+        endx = camera.x + camera.width
+    end
+    return CameraPath.from({
+        x = 0, y = camera.y + camera.height/2, shape = "polyline",
+        points = {
+            camera.x + camera.width/2, 0,
+            endx, 0
+        }
+    })
+end
+
 function Stage.openNextRoom()
     roomindex = roomindex + 1
     local room = map.layers["room"..roomindex]
@@ -96,13 +120,9 @@ function Stage.openNextRoom()
         Boundaries.putArray(roombounds)
         Characters.spawnArray(room.characters)
         gamestatus = "goingToNextRoom"
-        room.camerapath = room.camerapath or CameraPath.from({
-            x = 0, y = camera.y + camera.height/2, shape = "polyline",
-            points = {
-                camera.x + camera.width/2, 0,
-                roombounds.x + roombounds.right - camera.width/2, 0
-            }
-        })
+        if not room.camerapath then
+            room.camerapath = genDefaultCameraPath(roombounds)
+        end
     else
         gamestatus = "victory"
         for _, player in ipairs(Characters.getGroup("players")) do
