@@ -4,6 +4,9 @@ local love_graphics_draw = love.graphics.draw
 ---@class AseCel
 ---@field x number
 ---@field y number
+---@field width number
+---@field height number
+---@field image love.Image
 ---@field quad love.Quad
 
 ---@alias Rect {x: number, y: number, w: number, h: number}
@@ -42,6 +45,8 @@ function AseFrame:putCel(i, cel)
     self[i] = {
         x = pos.x,
         y = pos.y,
+        width = pos.w,
+        height = pos.h,
         image = self.image,
         quad = love.graphics.newQuad(rect.x, rect.y, rect.w, rect.h,
                 self.image:getWidth(), self.image:getHeight()),
