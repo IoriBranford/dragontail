@@ -174,6 +174,7 @@ function Player:initAseprite()
     if not weaponposasefile then return end
 
     local weaponposase = Assets.load(weaponposasefile, true)
+    Assets.uncache(weaponposase.imagefile)
     Assets.uncache(weaponposasefile)
     local imagedata = weaponposase.imagedata
 
