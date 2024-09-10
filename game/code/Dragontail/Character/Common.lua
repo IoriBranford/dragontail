@@ -47,6 +47,7 @@ end
 function Common:blinkOut(t)
     t = t or 30
     for i = 1, t do
+        self:updateDropToGround()
         local r, g, b = Color.unpack(self.color)
         self.color = Color.asARGBInt(r, g, b, cos(i))
         yield()
