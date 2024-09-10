@@ -216,10 +216,6 @@ function Assets.packTiles()
                 Assets.put(ase.imagefile, packimage)
             end
         end
-
-        for _, path in ipairs(Assets.listGroup({}, Assets.bytype.png)) do
-            print(path)
-        end
     else
         print(packimageerr)
     end
