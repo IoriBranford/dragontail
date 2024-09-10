@@ -120,6 +120,11 @@ function Stage.openNextRoom()
     if room then
         local roombounds = room.boundaries
         Boundaries.putArray(roombounds)
+        if roombounds then
+            for _, boundary in ipairs(roombounds) do
+                scene:add(boundary)
+            end
+        end
         Characters.spawnArray(room.characters)
     else
         winningteam = "players"
@@ -184,6 +189,7 @@ function Stage.fixedupdate()
         if boundary.layer ~= room then
             local x1, y1, x2, y2 = boundary:boundingBox()
             if not math.testrects(cx, cy, cw, ch, x1, y1, x2-x1, y2-y1) then
+                boundary.disappeared = true
                 boundaries[id] = nil
             end
         end
@@ -229,7 +235,6 @@ function Stage.draw(fixedfrac)
     end
     love.graphics.push()
     love.graphics.translate(-camera.x - camera.velx*fixedfrac, -camera.y - camera.vely*fixedfrac)
-    Boundaries.draw()
     scene:draw(fixedfrac, Character.isDrawnBefore)
     love.graphics.pop()
 end
