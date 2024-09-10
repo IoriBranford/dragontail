@@ -35,6 +35,7 @@ function Character:init()
     self.vely = self.vely or 0
     self.velz = self.velz or 0
     self.speed = self.speed or 1
+    self.bodyheight = self.bodyheight or 1
     self.bodyradius = self.bodyradius or 1
     self.attackradius = self.attackradius or 0
     -- ch.attackangle = ch.attackangle or 0
@@ -208,7 +209,10 @@ function Character:keepInBounds()
 end
 
 function Character:testBodyCollision(other)
-    return self ~= other and testcircles(self.x, self.y, self.bodyradius, other.x, other.y, other.bodyradius)
+    return self ~= other
+        and self.z <= other.z + other.bodyheight
+        and other.z <= self.z + self.bodyheight
+        and testcircles(self.x, self.y, self.bodyradius, other.x, other.y, other.bodyradius)
 end
 
 function Character:collideWithCharacterBody(other)
@@ -233,6 +237,10 @@ function Character:checkAttackCollision(attacker)
     end
     local attackangle = attacker.attackangle
     if not attackangle then
+        return
+    end
+    if self.z + self.bodyheight < attacker.z
+    or self.z > attacker.z + attacker.bodyheight then
         return
     end
     local fromattackerx, fromattackery = self.x - attacker.x, self.y - attacker.y
