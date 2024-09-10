@@ -82,7 +82,7 @@ function Stage.init(stagefile)
     })
 
     Stage.openNextRoom()
-    local room = map.layers["room"..roomindex]
+    local room = map.layers.rooms[roomindex]
     local camerapath = room.camerapath
     camera.x = camerapath.x + camerapath.points[1] - camera.width/2
     camera.y = camerapath.y + camerapath.points[2] - camera.height/2
@@ -114,7 +114,7 @@ end
 
 function Stage.openNextRoom()
     roomindex = roomindex + 1
-    local room = map.layers["room"..roomindex]
+    local room = map.layers.rooms[roomindex]
     if room then
         local roombounds = room.boundaries
         Boundaries.putArray(roombounds)
@@ -133,7 +133,7 @@ function Stage.openNextRoom()
 end
 
 function Stage.updateGoingToNextRoom()
-    local room = map.layers["room"..roomindex]
+    local room = map.layers.rooms[roomindex]
     assert(room, "No room "..roomindex)
 
     local camerapath = room.camerapath ---@type CameraPath
@@ -170,7 +170,8 @@ end
 
 function Stage.startNextFight()
     gamestatus = "fight"
-    local fight = map.layers["fight"..roomindex]
+    roomindex = roomindex + 1
+    local fight = map.layers.rooms[roomindex]
     assert(fight, "No fight "..roomindex)
     Characters.spawnArray(fight.characters)
 end
@@ -192,7 +193,7 @@ function Stage.fixedupdate()
     end
 
     local cx, cy, cw, ch = camera.x, camera.y, camera.width, camera.height
-    local room = map.layers["room"..roomindex]
+    local room = map.layers.rooms[roomindex]
     local boundaries = Boundaries.getAll()
     for id, boundary in pairs(boundaries) do
         if boundary.layer ~= room then
