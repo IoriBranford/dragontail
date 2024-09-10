@@ -242,10 +242,9 @@ Assets.addLoaders {
         local size = tonumber(path:match("(%d+).defaultfont"))
         return size and love.graphics.newFont(size)
     end,
-    jase = hasAseprite and function(path)
-        local ase = Aseprite.load(path)
-        local directory = string.match(path, "^(.+/)") or ""
-        Assets.put(directory..ase.imagefile, ase.image)
+    jase = hasAseprite and function(path, ...)
+        local ase = Aseprite.load(path, ...)
+        Assets.put(ase.imagefile, ase.image)
         return ase
     end
 }
