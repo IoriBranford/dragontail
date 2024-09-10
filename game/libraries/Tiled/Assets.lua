@@ -1,7 +1,8 @@
 local TilePacking = require "Tiled.TilePacking"
 local hasAseprite, Aseprite = pcall(require, "Aseprite")
 
----@alias AssetGroup {[string]:Tileset}|{[string]:love.Image}|{[string]:love.Font}
+---@alias Asset Tileset|love.Image|love.Font|Aseprite
+---@alias AssetGroup {[string]:Asset}
 
 local Assets = {
     loaders = {},---@type {[string]:function}
