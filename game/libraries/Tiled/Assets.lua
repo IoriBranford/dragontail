@@ -258,6 +258,7 @@ Assets.addLoaders {
     end,
     jase = hasAseprite and function(path, ...)
         local ase = Aseprite.load(path, ...)
+        ase.imagefile = ase.imagefile:match("^"..Assets.rootpath.."(.+)") or ase.imagefile
         Assets.put(ase.imagefile, ase.image)
         return ase
     end
