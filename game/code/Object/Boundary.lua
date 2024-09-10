@@ -79,6 +79,8 @@ function Boundary:init()
         cornernormals[i-1], cornernormals[i] = cnx, cny
     end
     self.left, self.right, self.top, self.bottom = left, right, top, bottom
+
+    self.draw = Boundary.draw
 end
 
 function Boundary:boundingBox()
@@ -230,6 +232,23 @@ function Boundary:drawCollisionDebug(x, y, r)
     love.graphics.setColor(1, 1, 1)
     love.graphics.pop()
     self:draw()
+end
+
+function Boundary:draw()
+    self:drawPolygon()
+    local bodyheight = self.bodyheight or 0
+    if bodyheight > 0 then
+        love.graphics.push()
+        love.graphics.translate(0, -bodyheight)
+        self:drawPolygon()
+        love.graphics.translate(self.x, self.y)
+        local points = self.points
+        for i = 2, #points, 2 do
+            local x, y = points[i-1], points[i]
+            love.graphics.line(x, y, x, y + bodyheight)
+        end
+        love.graphics.pop()
+    end
 end
 
 return Boundary
