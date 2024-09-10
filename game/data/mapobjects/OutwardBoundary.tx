@@ -2,7 +2,9 @@
 <template>
  <object type="Boundary">
   <properties>
+   <property name="bodyheight" type="float" value="0"/>
    <property name="color" type="color" value="#80808080"/>
+   <property name="drawz" type="float" value="0"/>
    <property name="linecolor" type="color" value="#80ffffff"/>
   </properties>
   <polygon points="0,0 0,36 64,36 64,0"/>
