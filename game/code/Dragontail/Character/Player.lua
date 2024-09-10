@@ -170,20 +170,20 @@ end
 
 function Player:initAseprite()
     Character.initAseprite(self)
-    local aseprite = self.aseprite
-    local weaponlayer = aseprite.layers["weapon"]
-    if not weaponlayer then return end
+    local weaponposasefile = self.weaponposasefile
+    if not weaponposasefile then return end
 
-    local imagedata = love.image.newImageData(aseprite.imagefile)
+    local weaponposase = Assets.load(weaponposasefile, true)
+    Assets.uncache(weaponposasefile)
+    local imagedata = weaponposase.imagedata
 
     ---@type number[]
     local weapontransforms = {}
     self.weapontransforms = weapontransforms
 
-    local spritehw = aseprite.width/2
-
-    for i = 1, #aseprite do
-        local cel = aseprite[i][weaponlayer]
+    for i = 1, #weaponposase do
+        local frame = weaponposase[i]
+        local cel = frame and frame[1]
         local x, y, r, sy
         if cel then
             x, y, r, sy = readWeaponTransform(imagedata, cel)
