@@ -111,6 +111,7 @@ end
 function Character:updatePosition()
     self.x = self.x + self.velx
     self.y = self.y + self.vely
+    self.z = self.z + self.velz
 end
 
 function Character:isHitStopOver()
