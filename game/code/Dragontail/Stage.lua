@@ -19,7 +19,7 @@ local min = math.min
 local scene ---@type Scene
 local map ---@type TiledMap
 local roomindex
-local gamestatus
+local winningteam
 local camera ---@type Camera
 
 ---@class Camera:Boundary
@@ -28,7 +28,7 @@ function Stage.quit()
     scene = nil
     map = nil
     roomindex = nil
-    gamestatus = nil
+    winningteam = nil
     camera = nil
     Boundaries.clear()
     Characters.quit()
@@ -88,7 +88,6 @@ function Stage.init(stagefile)
         camera.x = camerapath.x + camerapath.points[1] - camera.width/2
         camera.y = camerapath.y + camerapath.points[2] - camera.height/2
     end
-    gamestatus = "playing"
 end
 
 local function genDefaultCameraPath(roombounds)
@@ -123,7 +122,7 @@ function Stage.openNextRoom()
         Boundaries.putArray(roombounds)
         Characters.spawnArray(room.characters)
     else
-        gamestatus = "victory"
+        winningteam = "players"
         for _, player in ipairs(Characters.getGroup("players")) do
             State.start(player, "victory")
         end
@@ -133,7 +132,9 @@ end
 
 function Stage.updateGoingToNextRoom()
     local room = map.layers.rooms[roomindex]
-    assert(room, "No room "..roomindex)
+    if not room then
+        return
+    end
 
     local camerapath = room.camerapath ---@type CameraPath
 
@@ -174,9 +175,7 @@ function Stage.fixedupdate()
     Characters.fixedupdate()
     Characters.pruneDisappeared()
 
-    if gamestatus == "playing" then
-        Stage.updateGoingToNextRoom()
-    end
+    Stage.updateGoingToNextRoom()
 
     local cx, cy, cw, ch = camera.x, camera.y, camera.width, camera.height
     local room = map.layers.rooms[roomindex]
@@ -203,7 +202,7 @@ function Stage.fixedupdateGui(gui)
 
     local portrait = hud.portrait
     portrait.originx = portrait.width/2 + sin(player.hurtstun)
-    if gamestatus == "victory" then
+    if winningteam == "players" then
         portrait:changeTile("win")
     elseif player.hurtstun > 0 or healthpercent <= 0.5 then
         portrait:changeTile("hurt")
