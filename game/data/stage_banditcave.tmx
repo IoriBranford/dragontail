@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="15" nextobjectid="44">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="15" nextobjectid="45">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -7,7 +7,7 @@
  <tileset firstgid="1" source="tilesets/caves/caves.tsx"/>
  <tileset firstgid="2449" source="tilesets/grassland.tsx"/>
  <tileset firstgid="5265" source="mapobjects/bandit/bandits.tsx"/>
- <tileset firstgid="5281" source="mapobjects/items.tsx"/>
+ <tileset firstgid="5285" source="mapobjects/items.tsx"/>
  <layer id="2" name="floor" width="200" height="12">
   <data encoding="base64" compression="zlib"/>
  </layer>
@@ -20,15 +20,26 @@
  <group id="14" name="rooms">
   <objectgroup id="7" name="learnmovement">
    <object id="21" template="mapobjects/OutwardBoundary.tx" x="0" y="0">
-    <polygon points="0,-160 0,480 960,480 960,352 320,352 256,288 192,288 160,256 128,256 64,192 128,128 192,128 256,64 960,64 960,-160"/>
+    <properties>
+     <property name="bodyheight" type="float" value="64"/>
+     <property name="drawz" type="float" value="-1"/>
+    </properties>
+    <polygon points="0,-160 0,256 128,128 192,128 256,64 960,64 960,-160"/>
+   </object>
+   <object id="44" template="mapobjects/OutwardBoundary.tx" x="0" y="352" visible="1">
+    <properties>
+     <property name="bodyheight" type="float" value="32"/>
+     <property name="drawz" type="float" value="1"/>
+    </properties>
+    <polygon points="0,-160 0,128 960,128 960,0 320,0 256,-64 160,-64 64,-160"/>
    </object>
    <object id="27" template="mapobjects/CameraPath.tx" x="320" y="192">
     <polyline points="0,0 320,0"/>
    </object>
-   <object id="23" gid="5284" x="728" y="224" width="64" height="32"/>
-   <object id="24" gid="5284" x="864" y="168" width="64" height="32"/>
-   <object id="25" gid="5281" x="784" y="136" width="64" height="32"/>
-   <object id="26" gid="5282" x="848" y="248" width="64" height="32"/>
+   <object id="23" gid="5288" x="728" y="224" width="64" height="32"/>
+   <object id="24" gid="5288" x="864" y="168" width="64" height="32"/>
+   <object id="25" gid="5285" x="784" y="136" width="64" height="32"/>
+   <object id="26" gid="5286" x="848" y="248" width="64" height="32"/>
   </objectgroup>
   <objectgroup id="8" name="learnattack">
    <object id="15" gid="5266" x="992" y="120" width="64" height="64"/>
@@ -38,9 +49,17 @@
   </objectgroup>
   <objectgroup id="9" name="tolearnrunning">
    <object id="22" template="mapobjects/OutwardBoundary.tx" x="960" y="0">
+    <properties>
+     <property name="bodyheight" type="float" value="64"/>
+     <property name="drawz" type="float" value="-1"/>
+    </properties>
     <polygon points="0,64 32,64 96,0 640,0 640,-160 0,-160"/>
    </object>
    <object id="28" template="mapobjects/OutwardBoundary.tx" x="1600" y="256" rotation="0">
+    <properties>
+     <property name="bodyheight" type="float" value="32"/>
+     <property name="drawz" type="float" value="1"/>
+    </properties>
     <polygon points="0,32 -352,32 -416,96 -640,96 -640,224 0,224"/>
    </object>
    <object id="29" template="mapobjects/CameraPath.tx" x="640" y="192">
@@ -60,16 +79,24 @@
   </objectgroup>
   <objectgroup id="11" name="tolearnthrowing">
    <object id="38" template="mapobjects/OutwardBoundary.tx" x="1600" y="-160">
+    <properties>
+     <property name="bodyheight" type="float" value="64"/>
+     <property name="drawz" type="float" value="-1"/>
+    </properties>
     <polygon points="0,0 0,160 160,160 320,320 320,480 448,608 640,608 640,0"/>
    </object>
    <object id="39" template="mapobjects/OutwardBoundary.tx" x="1600" y="288">
+    <properties>
+     <property name="bodyheight" type="float" value="32"/>
+     <property name="drawz" type="float" value="1"/>
+    </properties>
     <polygon points="0,0 0,384 640,384 640,352 256,352 32,128 32,32"/>
    </object>
    <object id="40" template="mapobjects/CameraPath.tx" x="1440" y="128">
     <polyline points="0,0 288,0 416,96 480,256 480,352"/>
    </object>
-   <object id="42" gid="5284" x="1728" y="320" width="64" height="32"/>
-   <object id="43" gid="5284" x="1776" y="376" width="64" height="32"/>
+   <object id="42" gid="5288" x="1728" y="320" width="64" height="32"/>
+   <object id="43" gid="5288" x="1776" y="376" width="64" height="32"/>
   </objectgroup>
   <objectgroup id="13" name="learnthrowing">
    <object id="41" gid="5270" x="2272" y="568" width="64" height="64"/>

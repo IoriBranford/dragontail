@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 15,
-  nextobjectid = 44,
+  nextobjectid = 45,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -4080,10 +4080,10 @@ return {
       tileheight = 64,
       spacing = 0,
       margin = 0,
-      columns = 16,
+      columns = 4,
       image = "mapobjects/bandit/bandits.png",
-      imagewidth = 1024,
-      imageheight = 64,
+      imagewidth = 256,
+      imageheight = 320,
       objectalignment = "bottom",
       tilerendersize = "tile",
       fillmode = "stretch",
@@ -4098,7 +4098,7 @@ return {
       },
       properties = {},
       wangsets = {},
-      tilecount = 16,
+      tilecount = 20,
       tiles = {
         {
           id = 0,
@@ -4150,25 +4150,41 @@ return {
         },
         {
           id = 12,
-          type = "bandit-arrow"
+          type = "bandit-sling"
         },
         {
           id = 13,
-          type = "bandit-arrow"
+          type = "bandit-sling"
         },
         {
           id = 14,
-          type = "bandit-arrow"
+          type = "bandit-sling"
         },
         {
           id = 15,
+          type = "bandit-sling"
+        },
+        {
+          id = 16,
+          type = "bandit-arrow"
+        },
+        {
+          id = 17,
+          type = "bandit-arrow"
+        },
+        {
+          id = 18,
+          type = "bandit-arrow"
+        },
+        {
+          id = 19,
           type = "bandit-arrow"
         }
       }
     },
     {
       name = "items",
-      firstgid = 5281,
+      firstgid = 5285,
       class = "",
       tilewidth = 64,
       tileheight = 32,
@@ -4314,15 +4330,7 @@ return {
               visible = true,
               polygon = {
                 { x = 0, y = -160 },
-                { x = 0, y = 480 },
-                { x = 960, y = 480 },
-                { x = 960, y = 352 },
-                { x = 320, y = 352 },
-                { x = 256, y = 288 },
-                { x = 192, y = 288 },
-                { x = 160, y = 256 },
-                { x = 128, y = 256 },
-                { x = 64, y = 192 },
+                { x = 0, y = 256 },
                 { x = 128, y = 128 },
                 { x = 192, y = 128 },
                 { x = 256, y = 64 },
@@ -4330,7 +4338,37 @@ return {
                 { x = 960, y = -160 }
               },
               properties = {
+                ["bodyheight"] = 64,
                 ["color"] = "#80808080",
+                ["drawz"] = -1,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 44,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 0,
+              y = 352,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = -160 },
+                { x = 0, y = 128 },
+                { x = 960, y = 128 },
+                { x = 960, y = 0 },
+                { x = 320, y = 0 },
+                { x = 256, y = -64 },
+                { x = 160, y = -64 },
+                { x = 64, y = -160 }
+              },
+              properties = {
+                ["bodyheight"] = 32,
+                ["color"] = "#80808080",
+                ["drawz"] = 1,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -4361,7 +4399,7 @@ return {
               width = 64,
               height = 32,
               rotation = 0,
-              gid = 5284,
+              gid = 5288,
               visible = true,
               properties = {}
             },
@@ -4375,7 +4413,7 @@ return {
               width = 64,
               height = 32,
               rotation = 0,
-              gid = 5284,
+              gid = 5288,
               visible = true,
               properties = {}
             },
@@ -4389,7 +4427,7 @@ return {
               width = 64,
               height = 32,
               rotation = 0,
-              gid = 5281,
+              gid = 5285,
               visible = true,
               properties = {}
             },
@@ -4403,7 +4441,7 @@ return {
               width = 64,
               height = 32,
               rotation = 0,
-              gid = 5282,
+              gid = 5286,
               visible = true,
               properties = {}
             }
@@ -4515,7 +4553,9 @@ return {
                 { x = 0, y = -160 }
               },
               properties = {
+                ["bodyheight"] = 64,
                 ["color"] = "#80808080",
+                ["drawz"] = -1,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -4539,7 +4579,9 @@ return {
                 { x = 0, y = 224 }
               },
               properties = {
+                ["bodyheight"] = 32,
                 ["color"] = "#80808080",
+                ["drawz"] = 1,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -4741,7 +4783,9 @@ return {
                 { x = 640, y = 0 }
               },
               properties = {
+                ["bodyheight"] = 64,
                 ["color"] = "#80808080",
+                ["drawz"] = -1,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -4766,7 +4810,9 @@ return {
                 { x = 32, y = 32 }
               },
               properties = {
+                ["bodyheight"] = 32,
                 ["color"] = "#80808080",
+                ["drawz"] = 1,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -4800,7 +4846,7 @@ return {
               width = 64,
               height = 32,
               rotation = 0,
-              gid = 5284,
+              gid = 5288,
               visible = true,
               properties = {}
             },
@@ -4814,7 +4860,7 @@ return {
               width = 64,
               height = 32,
               rotation = 0,
-              gid = 5284,
+              gid = 5288,
               visible = true,
               properties = {}
             }
