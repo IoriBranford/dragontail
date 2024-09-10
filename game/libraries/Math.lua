@@ -85,7 +85,7 @@ function math.rectintersection(ax, ay, aw, ah, bx, by, bw, bh)
     if ay2 < by then return end
     local by2 = by + bh
     if by2 < ay then return end
-    local ix = max(ax, ay)
+    local ix = max(ax, bx)
     local iy = max(ay, by)
     local ix2 = min(ax2, bx2)
     local iy2 = min(ay2, by2)
