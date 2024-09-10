@@ -84,8 +84,11 @@ function Stage.init(stagefile)
     Stage.openNextRoom()
     local room = map.layers.rooms[roomindex]
     local camerapath = room.camerapath
-    camera.x = camerapath.x + camerapath.points[1] - camera.width/2
-    camera.y = camerapath.y + camerapath.points[2] - camera.height/2
+    if camerapath then
+        camera.x = camerapath.x + camerapath.points[1] - camera.width/2
+        camera.y = camerapath.y + camerapath.points[2] - camera.height/2
+    end
+    gamestatus = "playing"
 end
 
 local function genDefaultCameraPath(roombounds)
@@ -119,10 +122,7 @@ function Stage.openNextRoom()
         local roombounds = room.boundaries
         Boundaries.putArray(roombounds)
         Characters.spawnArray(room.characters)
-        gamestatus = "goingToNextRoom"
-        if not room.camerapath then
-            room.camerapath = genDefaultCameraPath(roombounds)
-        end
+        room.nenemies = #Characters.getGroup("enemies")
     else
         gamestatus = "victory"
         for _, player in ipairs(Characters.getGroup("players")) do
@@ -142,11 +142,10 @@ function Stage.updateGoingToNextRoom()
 
     local camhalfw, camhalfh = camera.width/2, camera.height/2
 
-    if camerapath:isEnd(camera.x + camhalfw, camera.y + camhalfh) then
+    if not camerapath or camerapath:isEnd(camera.x + camhalfw, camera.y + camhalfh) then
         camera.velx = 0
         camera.vely = 0
-        Stage.startNextFight()
-        return
+        return true
     end
 
     local centerx, centery = 0, 0
@@ -168,28 +167,18 @@ function Stage.updateGoingToNextRoom()
     end
 end
 
-function Stage.startNextFight()
-    gamestatus = "fight"
-    roomindex = roomindex + 1
-    local fight = map.layers.rooms[roomindex]
-    assert(fight, "No fight "..roomindex)
-    Characters.spawnArray(fight.characters)
-end
-
 function Stage.fixedupdate()
     Characters.fixedupdate()
 
     local enemies = Characters.getGroup("enemies")
     local nenemies = #enemies
     Characters.pruneDisappeared()
-    if gamestatus == "fight" then
-        if nenemies > 0 and #enemies <= 0 then
+
+    if gamestatus == "playing" and Stage.updateGoingToNextRoom() then
+        local room = map.layers.rooms[roomindex]
+        if room.nenemies <= 0 or nenemies > 0 and #enemies <= 0 then
             Stage.openNextRoom()
         end
-    end
-
-    if gamestatus == "goingToNextRoom" then
-        Stage.updateGoingToNextRoom()
     end
 
     local cx, cy, cw, ch = camera.x, camera.y, camera.width, camera.height
