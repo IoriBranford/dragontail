@@ -198,11 +198,28 @@ function Assets.getTile(tileset, tileid)
 end
 
 function Assets.packTiles()
-    local packimagedata, packimageerr = TilePacking.pack(Assets.tilesets)
+    local tilesets, aseprites = Assets.tilesets, Assets.bytype.jase
+    local packimagedata, packimageerr = TilePacking.pack(tilesets, aseprites)
     if packimagedata then
         local _, tileset1 = next(Assets.tilesets)
-        Assets.put("packedtiles.png", tileset1.image)
-        -- TilePacking.save(Assets.tilesets, "packedtiles.lua", "packedtiles.png", packimagedata)
+        local packimage = tileset1.image
+        Assets.put("packedtiles.png", packimage)
+        -- TilePacking.save(tilesets, "packedtiles.lua", "packedtiles.png", packimagedata)
+
+        for _, tileset in pairs(tilesets) do
+            Assets.permanent[tileset.imagefile] = nil
+            Assets.put(tileset.imagefile, packimage)
+        end
+        if aseprites then
+            for _, ase in pairs(aseprites) do
+                Assets.permanent[ase.imagefile] = nil
+                Assets.put(ase.imagefile, packimage)
+            end
+        end
+
+        for _, path in ipairs(Assets.listGroup({}, Assets.bytype.png)) do
+            print(path)
+        end
     else
         print(packimageerr)
     end
