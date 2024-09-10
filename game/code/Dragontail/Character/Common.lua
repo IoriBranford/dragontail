@@ -119,7 +119,9 @@ function Common:projectileHit(opponent)
         self:changeAseAnimation(attackhitanimation)
     end
     self:stopAttack()
-    self.velx, self.vely = 0, 0
+    local hitbounce = self.attackhitbounce or 2
+    local normx, normy = math.norm(-self.velx, -self.vely)
+    self.velx, self.vely = normx*hitbounce, normy*hitbounce
     yield()
     return "blinkOut", 30
 end
