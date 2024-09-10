@@ -14,6 +14,19 @@ local max = math.max
 ---@class Common:Character
 local Common = class(Character)
 
+function Common:updateDropToGround()
+    local groundz = self.groundz or 0
+    if self.z <= groundz then
+        self.z = groundz
+        self.velx = 0
+        self.vely = 0
+        self.velz = 0
+        return
+    end
+    local gravity = self.gravity or .125
+    self.velz = self.velz - gravity
+end
+
 function Common:spark()
     wait(self.sparktime or 30)
     self:disappear()
