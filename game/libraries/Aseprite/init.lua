@@ -42,6 +42,8 @@ local AnimationTimeUnits = {
     fixedupdates = 60 / 1000
 }
 
+---@param self Aseprite
+---@param cel AseCel
 local function loadCel(self, cel, filename, layers, image)
     local layername, framei = filename:match("(.*)#(%d+)")
 	local layeri = 1
@@ -67,7 +69,7 @@ local function loadCel(self, cel, filename, layers, image)
 end
 
 ---@return Aseprite ase
-function Aseprite.load(jsonfile)
+function Aseprite.load(jsonfile, withimagedata)
 	local jsondata, err = love.filesystem.read(jsonfile)
 	assert(jsondata, err)
 	local doc = json.decode(jsondata)
@@ -75,7 +77,8 @@ function Aseprite.load(jsonfile)
 	local meta = doc.meta
     local directory = string.match(jsonfile, "^(.+/)") or ""
 	local imagefile = directory..meta.image
-	local image = love.graphics.newImage(imagefile)
+	local imagedata = love.image.newImageData(imagefile)
+	local image = love.graphics.newImage(imagedata)
 
 	local layers = meta.layers
 	if not cels[1] and not layers then
@@ -94,6 +97,7 @@ function Aseprite.load(jsonfile)
 	local ase = Aseprite.cast({
         image = image,
         imagefile = imagefile,
+		imagedata = withimagedata and imagedata,
         width = size.w,
         height = size.h,
         layers = layers,
@@ -114,7 +118,9 @@ function Aseprite.load(jsonfile)
 	local animationtimescale = AnimationTimeUnits[Aseprite.animationtimeunit] or 1
 	for i = 1, #ase do
 		local frame = ase[i]
-		frame.duration = frame.duration * animationtimescale
+		if frame then
+			frame.duration = frame.duration * animationtimescale
+		end
 	end
 
 	for i = 1, #animations do
@@ -127,6 +133,10 @@ function Aseprite.load(jsonfile)
 	end
 
 	return ase
+end
+
+function Aseprite.loadWithPixelData(jsonfile)
+	return Aseprite.load(jsonfile, true)
 end
 
 return Aseprite
