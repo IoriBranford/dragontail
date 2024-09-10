@@ -45,6 +45,19 @@ function Assets.markAllToUncache()
     end
 end
 
+function Assets.uncache(path)
+    if Assets.permanent[path] then
+        return
+    end
+    local ext = path:match("%.(%w-)$")
+    local assetgroup = Assets.bytype[ext]
+    if assetgroup then
+        assetgroup[path] = nil
+        Assets.touncache[path] = nil
+        Assets.all[path] = nil
+    end
+end
+
 ---@param map TiledMap
 function Assets.markMapAssetsPermanent(map, ispermanent)
     local touncache = Assets.touncache
