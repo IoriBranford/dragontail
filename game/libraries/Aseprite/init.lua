@@ -31,7 +31,7 @@ local Animation= require "Aseprite.Animation"
 ---@field imagefile string
 ---@field layers {[string|integer]: integer|AseLayer}
 ---@field animations {[string]: AseTag}
----@field [integer] AseFrame
+---@field [integer] AseFrame|false
 local Aseprite = class(Animation)
 Aseprite.Frame = AseFrame
 Aseprite.Animation = require "Aseprite.Animation"
@@ -57,6 +57,9 @@ local function loadCel(self, cel, filename, layers, image)
 	framei = tonumber(framei)
 	local frame = self[framei]
 	if not frame then
+		for i = #self+1, framei-1 do
+			self[i] = false
+		end
 		frame = AseFrame(framei, image, cel.duration)
 		self[framei] = frame
 	end
