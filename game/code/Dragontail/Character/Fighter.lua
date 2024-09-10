@@ -353,11 +353,17 @@ function Fighter:getup(attacker)
 end
 
 function Fighter:launchProjectile(type, angle)
+    local projectiledata = Database.get(type)
+    if not projectiledata then
+        return
+    end
+
     local x, y = self.x, self.y
-    local bodyradius = self.bodyradius or 0
+    local bodyradius, bodyheight = self.bodyradius or 0, self.bodyheight or 0
     return Characters.spawn({
         x = x + bodyradius*cos(angle),
         y = y + bodyradius*sin(angle),
+        z = self.z + bodyheight / 2,
         type = type,
         attackangle = angle,
         thrower = self
