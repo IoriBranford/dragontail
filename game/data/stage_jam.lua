@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 25,
-  nextobjectid = 87,
+  nextobjectid = 93,
   properties = {},
   tilesets = {
     {
@@ -2855,13 +2855,30 @@ return {
               polygon = {
                 { x = 0, y = 0 },
                 { x = 0, y = 128 },
-                { x = 768, y = 128 },
-                { x = 768, y = 0 }
+                { x = 2560, y = 128 },
+                { x = 2560, y = 0 }
               },
               properties = {
                 ["color"] = "#80808080",
                 ["linecolor"] = "#80ffffff"
               }
+            },
+            {
+              id = 87,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 320,
+              y = 192,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = 0, y = 0 },
+                { x = 128, y = 0 }
+              },
+              properties = {}
             }
           }
         },
@@ -3035,26 +3052,21 @@ return {
               }
             },
             {
-              id = 82,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 768,
-              y = 0,
+              id = 88,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 704,
+              y = 192,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
-              polygon = {
-                { x = 0, y = 0 },
-                { x = 0, y = 128 },
-                { x = 384, y = 128 },
-                { x = 384, y = 0 }
+              polyline = {
+                { x = -96, y = 0 },
+                { x = 128, y = 0 }
               },
-              properties = {
-                ["color"] = "#80808080",
-                ["linecolor"] = "#80ffffff"
-              }
+              properties = {}
             }
           }
         },
@@ -3284,26 +3296,21 @@ return {
               properties = {}
             },
             {
-              id = 83,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 1152,
-              y = 0,
+              id = 89,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 400,
+              y = 192,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
-              polygon = {
-                { x = 0, y = 0 },
-                { x = 0, y = 128 },
-                { x = 208, y = 128 },
-                { x = 208, y = 0 }
+              polyline = {
+                { x = 480, y = 0 },
+                { x = 640, y = 0 }
               },
-              properties = {
-                ["color"] = "#80808080",
-                ["linecolor"] = "#80ffffff"
-              }
+              properties = {}
             }
           }
         },
@@ -3544,26 +3551,21 @@ return {
               properties = {}
             },
             {
-              id = 84,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 1360,
-              y = 0,
+              id = 90,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 800,
+              y = 192,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
-              polygon = {
-                { x = 0, y = 0 },
-                { x = 0, y = 128 },
-                { x = 400, y = 128 },
-                { x = 400, y = 0 }
+              polyline = {
+                { x = 400, y = 0 },
+                { x = 640, y = 0 }
               },
-              properties = {
-                ["color"] = "#80808080",
-                ["linecolor"] = "#80ffffff"
-              }
+              properties = {}
             }
           }
         },
@@ -3750,26 +3752,21 @@ return {
           },
           objects = {
             {
-              id = 85,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 1760,
-              y = 0,
+              id = 91,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 1248,
+              y = 192,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
-              polygon = {
-                { x = 0, y = 0 },
-                { x = 0, y = 128 },
-                { x = 320, y = 128 },
-                { x = 320, y = 0 }
+              polyline = {
+                { x = 352, y = 0 },
+                { x = 640, y = 0 }
               },
-              properties = {
-                ["color"] = "#80808080",
-                ["linecolor"] = "#80ffffff"
-              }
+              properties = {}
             }
           }
         },
@@ -4014,26 +4011,21 @@ return {
               }
             },
             {
-              id = 86,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 2080,
-              y = 0,
+              id = 92,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 1600,
+              y = 192,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
-              polygon = {
-                { x = 0, y = 0 },
-                { x = 0, y = 128 },
-                { x = 480, y = 128 },
-                { x = 480, y = 0 }
+              polyline = {
+                { x = 448, y = 0 },
+                { x = 640, y = 0 }
               },
-              properties = {
-                ["color"] = "#80808080",
-                ["linecolor"] = "#80ffffff"
-              }
+              properties = {}
             }
           }
         },
