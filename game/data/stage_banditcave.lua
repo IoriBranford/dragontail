@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 15,
-  nextobjectid = 42,
+  nextobjectid = 44,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -4174,9 +4174,9 @@ return {
       tileheight = 32,
       spacing = 0,
       margin = 0,
-      columns = 3,
+      columns = 4,
       image = "mapobjects/items.png",
-      imagewidth = 192,
+      imagewidth = 256,
       imageheight = 32,
       objectalignment = "center",
       tilerendersize = "tile",
@@ -4192,7 +4192,7 @@ return {
       },
       properties = {},
       wangsets = {},
-      tilecount = 3,
+      tilecount = 4,
       tiles = {
         {
           id = 0,
@@ -4205,6 +4205,10 @@ return {
         {
           id = 2,
           type = "item-throwing-axe"
+        },
+        {
+          id = 3,
+          type = "item-stone"
         }
       }
     }
@@ -4357,7 +4361,7 @@ return {
               width = 64,
               height = 32,
               rotation = 0,
-              gid = 5283,
+              gid = 5284,
               visible = true,
               properties = {}
             },
@@ -4371,7 +4375,7 @@ return {
               width = 64,
               height = 32,
               rotation = 0,
-              gid = 5283,
+              gid = 5284,
               visible = true,
               properties = {}
             },
@@ -4784,6 +4788,34 @@ return {
                 { x = 480, y = 256 },
                 { x = 480, y = 352 }
               },
+              properties = {}
+            },
+            {
+              id = 42,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1728,
+              y = 320,
+              width = 64,
+              height = 32,
+              rotation = 0,
+              gid = 5284,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 43,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1776,
+              y = 376,
+              width = 64,
+              height = 32,
+              rotation = 0,
+              gid = 5284,
+              visible = true,
               properties = {}
             }
           }
