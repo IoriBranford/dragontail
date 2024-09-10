@@ -51,9 +51,10 @@ local TilePacking = {}
 --- Pack all tiles in a list of tilesets into one image.
 --- Do not use with gamma-correct rendering - tiles will be darkened.
 --- @param tilesets {[integer|string]:Tileset}
+--- @param aseprites {[string]:Aseprite}
 --- @return love.ImageData? imagedata packed image data for saving
 --- @return string? error if no imagedata, what went wrong
-function TilePacking.pack(tilesets)
+function TilePacking.pack(tilesets, aseprites)
     if not love.graphics then
         return nil, "Megatileset requires love.graphics"
     end
@@ -62,8 +63,8 @@ function TilePacking.pack(tilesets)
     local maxtilewidth = 0
     local maxtileheight = 0
     for _, tileset in pairs(tilesets) do
-        local tilewidth = tileset.tilewidth
-        local tileheight = tileset.tileheight
+        local tilewidth = tileset.tilewidth+2
+        local tileheight = tileset.tileheight+2
         if maxtilewidth < tilewidth then
             maxtilewidth = tilewidth
         end
@@ -72,6 +73,36 @@ function TilePacking.pack(tilesets)
         end
         local tilearea = tilewidth*tileheight
         packarea = packarea + tilearea*tileset.tilecount
+    end
+
+    local asecelsbysrcpos = {}
+    if aseprites then
+        for path, aseprite in pairs(aseprites) do
+            local celsbysrcpos = {}
+            asecelsbysrcpos[path] = celsbysrcpos
+            local imagewidth = aseprite.image:getWidth()
+            for _, frame in ipairs(aseprite) do
+                for _, cel in ipairs(frame) do
+                    if cel then
+                        local srcx, srcy = cel.quad:getViewport()
+                        local key = srcx + srcy*imagewidth
+                        if not celsbysrcpos[key] then
+                            celsbysrcpos[key] = cel
+                            local celwidth = cel.width + 2
+                            local celheight = cel.height + 2
+                            if maxtilewidth < celwidth then
+                                maxtilewidth = celwidth
+                            end
+                            if maxtileheight < celheight then
+                                maxtileheight = celheight
+                            end
+                            local celarea = celwidth*celheight
+                            packarea = packarea + celarea
+                        end
+                    end
+                end
+            end
+        end
     end
 
     local packwidth = 1
@@ -89,6 +120,13 @@ function TilePacking.pack(tilesets)
     for _, tileset in pairs(tilesets) do
         for t = 0, tileset.tilecount-1 do
             sizesortedtiles[#sizesortedtiles+1] = tileset[t]
+        end
+    end
+    if aseprites then
+        for _, cels in pairs(asecelsbysrcpos) do
+            for _, cel in pairs(cels) do
+                sizesortedtiles[#sizesortedtiles+1] = cel
+            end
         end
     end
     table.sort(sizesortedtiles, function(a, b)
@@ -172,10 +210,10 @@ function TilePacking.pack(tilesets)
     drawSpace(allspace)
     love.graphics.setCanvas()
 
-    local imagedata = canvas:newImageData()
-    local image = love.graphics.newImage(imagedata)
+    local packimagedata = canvas:newImageData()
+    local packimage = love.graphics.newImage(packimagedata)
     for _, tileset in pairs(tilesets) do
-        tileset.image = image
+        tileset.image = packimage
         -- local firstgid = tileset.firstgid
         -- for t = 0, #tileset-1 do
         --     local tile = tileset[t]
@@ -187,11 +225,34 @@ function TilePacking.pack(tilesets)
         --     end
         -- end
         for i = 0, tileset.tilecount-1 do
-            tileset[i].image = image
+            tileset[i].image = packimage
         end
     end
 
-    return imagedata
+    if aseprites then
+        for path, aseprite in pairs(aseprites) do
+            aseprite.image = packimage
+            local cels = asecelsbysrcpos[path]
+            for _, frame in ipairs(aseprite) do
+                frame.image = packimage
+                for _, cel in ipairs(frame) do
+                    if cel then
+                        cel.image = packimage
+                        local iw, ih = cel.quad:getTextureDimensions()
+                        if iw ~= packwidth or ih ~= packheight then
+                            local srcx, srcy = cel.quad:getViewport()
+                            local key = srcx + srcy*iw
+                            if cels[key] ~= cel then
+                                cel.quad = cels[key].quad
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    return packimagedata
 end
 
 --- Save the packed tiles as an image and a table of quads
