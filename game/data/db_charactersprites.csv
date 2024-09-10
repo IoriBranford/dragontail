@@ -6,7 +6,10 @@ food-container,sprites/food-container.jase,16,24,,,,,TRUE
 food-fish,sprites/items.jase,32,16,,,,,
 food-bigfish,sprites/items.jase,32,16,,,,,
 item-throwing-axe,sprites/items.jase,32,16,,,,,
+item-stone,sprites/items.jase,32,16,,,,,
 bandit-axe,sprites/bandit-axe.jase,32,48,sprites/emotes.jase,12,64,,TRUE
 thrown-axe,sprites/weapons/throwing-axe.jase,40,64,,,,,TRUE
 bandit-bow,sprites/bandit/bow.jase,64,88,,,,,TRUE
 bandit-arrow,sprites/bandit/arrow.jase,16,40,,,,,TRUE
+bandit-sling,sprites/bandit/sling.jase,32,52,,,,,
+thrown-stone,sprites/weapons/stone.jase,8,8,,,,,TRUE
