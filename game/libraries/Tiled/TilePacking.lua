@@ -82,22 +82,24 @@ function TilePacking.pack(tilesets, aseprites)
             asecelsbysrcpos[path] = celsbysrcpos
             local imagewidth = aseprite.image:getWidth()
             for _, frame in ipairs(aseprite) do
-                for _, cel in ipairs(frame) do
-                    if cel then
-                        local srcx, srcy = cel.quad:getViewport()
-                        local key = srcx + srcy*imagewidth
-                        if not celsbysrcpos[key] then
-                            celsbysrcpos[key] = cel
-                            local celwidth = cel.width + 2
-                            local celheight = cel.height + 2
-                            if maxtilewidth < celwidth then
-                                maxtilewidth = celwidth
+                if frame then
+                    for _, cel in ipairs(frame) do
+                        if cel then
+                            local srcx, srcy = cel.quad:getViewport()
+                            local key = srcx + srcy*imagewidth
+                            if not celsbysrcpos[key] then
+                                celsbysrcpos[key] = cel
+                                local celwidth = cel.width + 2
+                                local celheight = cel.height + 2
+                                if maxtilewidth < celwidth then
+                                    maxtilewidth = celwidth
+                                end
+                                if maxtileheight < celheight then
+                                    maxtileheight = celheight
+                                end
+                                local celarea = celwidth*celheight
+                                packarea = packarea + celarea
                             end
-                            if maxtileheight < celheight then
-                                maxtileheight = celheight
-                            end
-                            local celarea = celwidth*celheight
-                            packarea = packarea + celarea
                         end
                     end
                 end
@@ -234,16 +236,18 @@ function TilePacking.pack(tilesets, aseprites)
             aseprite.image = packimage
             local cels = asecelsbysrcpos[path]
             for _, frame in ipairs(aseprite) do
-                frame.image = packimage
-                for _, cel in ipairs(frame) do
-                    if cel then
-                        cel.image = packimage
-                        local iw, ih = cel.quad:getTextureDimensions()
-                        if iw ~= packwidth or ih ~= packheight then
-                            local srcx, srcy = cel.quad:getViewport()
-                            local key = srcx + srcy*iw
-                            if cels[key] ~= cel then
-                                cel.quad = cels[key].quad
+                if frame then
+                    frame.image = packimage
+                    for _, cel in ipairs(frame) do
+                        if cel then
+                            cel.image = packimage
+                            local iw, ih = cel.quad:getTextureDimensions()
+                            if iw ~= packwidth or ih ~= packheight then
+                                local srcx, srcy = cel.quad:getViewport()
+                                local key = srcx + srcy*iw
+                                if cels[key] ~= cel then
+                                    cel.quad = cels[key].quad
+                                end
                             end
                         end
                     end
