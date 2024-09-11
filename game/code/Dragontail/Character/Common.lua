@@ -20,7 +20,7 @@ function Common:updateDropToGround()
         self.velz = 0
         return
     end
-    local gravity = self.gravity or .125
+    local gravity = self.fallgravity or .25
     self.velz = self.velz - gravity
 end
 
@@ -67,7 +67,7 @@ end
 
 function Common:itemDrop(y0)
     local popoutspeed = self.popoutspeed or 8
-    local gravity = self.dropgravity or .5
+    local gravity = self.fallgravity or .5
     repeat
         yield()
         popoutspeed = popoutspeed - gravity
