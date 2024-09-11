@@ -58,6 +58,23 @@ function Boundaries.keepCircleIn(x, y, r)
     return x, y, totalpenex, totalpeney
 end
 
+function Boundaries.keepCylinderIn(x, y, z, r, h)
+    local totalpenex, totalpeney, totalpenez, penex, peney, penez
+    for _, bounds in pairs(boundaries) do
+        x, y, z, penex, peney, penez = bounds:keepCylinderInside(x, y, z, r, h)
+        if penex then
+            totalpenex = (totalpenex or 0) + penex
+        end
+        if peney then
+            totalpeney = (totalpeney or 0) + peney
+        end
+        if penez then
+            totalpenez = (totalpenez or 0) + penez
+        end
+    end
+    return x, y, z, totalpenex, totalpeney, totalpenez
+end
+
 function Boundaries.draw()
     for _, boundary in pairs(boundaries) do
         boundary:draw()

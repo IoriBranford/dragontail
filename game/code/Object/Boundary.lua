@@ -53,6 +53,10 @@ function Boundary:init()
 
     local sarea = polysignedarea(points)
     self.outward = sarea < 0
+
+    self.z = self.z or 0
+    self.bodyheight = self.bodyheight or 512
+
     local cornernormals = {}
     for i = 1, #points do
         cornernormals[i] = false
@@ -86,6 +90,15 @@ end
 function Boundary:boundingBox()
     local x, y = self.x, self.y
     return x+self.left, y+self.top, x+self.right, y+self.bottom
+end
+
+function Boundary:isCylinderColliding(x, y, z, r, h)
+    local selfz, selfh = self.z, self.bodyheight
+    if self.outward and (z + h < selfz or selfz + selfh < z)
+    or (z + h < selfz + selfh or selfz < z) then
+        return false
+    end
+    return self:isCircleColliding(x, y, r)
 end
 
 function Boundary:isCircleColliding(x, y, r)
@@ -139,6 +152,37 @@ function Boundary:keepCircleInside(x, y, r)
     end)
 
     return x + selfx, y + selfy, totalpenex, totalpeney
+end
+
+---@return number x
+---@return number y
+---@return number z
+---@return number? penex x penetration. Non-0 = penetrating; 0 = touching; nil = no contact
+---@return number? peney y penetration. Non-0 = penetrating; 0 = touching; nil = no contact
+---@return number? penez z penetration. Non-0 = penetrating; 0 = touching; nil = no contact
+function Boundary:keepCylinderInside(x, y, z, r, h)
+    local selfz, selfh = self.z, self.bodyheight
+    local penez
+    if self.outward and z + h >= selfz and selfz + selfh >= z
+    or z + h >= selfz + selfh or selfz >= z then
+        if math.pointinpolygon(self.points, x - self.x, y - self.y) then
+            local iz, iz2
+            if self.outward then
+                iz, iz2 = max(z, selfz), min(z+h, selfz+selfh)
+            else
+                if z <= selfz then
+                    iz, iz2 = z, selfz
+                else
+                    iz, iz2 = selfz + selfh, z + h
+                end
+            end
+            penez = iz == z and iz - iz2 or iz2 - iz
+            z = z - penez
+        end
+    end
+    local penex, peney
+    x, y, penex, peney = self:keepCircleInside(x, y, r)
+    return x, y, z, penex, peney, penez
 end
 
 ---@param raycast Raycast
