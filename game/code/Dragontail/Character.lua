@@ -343,33 +343,34 @@ function Character:drawShadow()
     if Config.drawbodies then
         love.graphics.setColor(.5, .5, 1)
         local bodyradius, bodyheight = self.bodyradius, self.bodyheight
-        love.graphics.circle("line", x, y, bodyradius)
-        love.graphics.circle("line", x, y - bodyheight, bodyradius)
-        love.graphics.line(x - bodyradius, y, x - bodyradius, y - bodyheight)
-        love.graphics.line(x + bodyradius, y, x + bodyradius, y - bodyheight)
+        local screeny = y - self.z
+        love.graphics.circle("line", x, screeny, bodyradius)
+        love.graphics.circle("line", x, screeny - bodyheight, bodyradius)
+        love.graphics.line(x - bodyradius, screeny, x - bodyradius, screeny - bodyheight)
+        love.graphics.line(x + bodyradius, screeny, x + bodyradius, screeny - bodyheight)
         if attackradius > 0 and attackangle then
             local attackarc = self.attackarc
             love.graphics.setColor(1, .5, .5)
             if attackarc > 0 then
-                love.graphics.arc("line", x, y, attackradius, attackangle - attackarc, attackangle + attackarc)
-                love.graphics.arc("line", x, y - bodyheight, attackradius, attackangle - attackarc, attackangle + attackarc)
+                love.graphics.arc("line", x, screeny, attackradius, attackangle - attackarc, attackangle + attackarc)
+                love.graphics.arc("line", x, screeny - bodyheight, attackradius, attackangle - attackarc, attackangle + attackarc)
                 local c1, s1 = attackradius*cos(attackangle-attackarc), attackradius*sin(attackangle-attackarc)
                 local c2, s2 = attackradius*cos(attackangle+attackarc), attackradius*sin(attackangle+attackarc)
-                love.graphics.line(x + c1, y + s1, x + c1, y + s1 - bodyheight)
-                love.graphics.line(x + c2, y + s2, x + c2, y + s2 - bodyheight)
+                love.graphics.line(x + c1, screeny + s1, x + c1, screeny + s1 - bodyheight)
+                love.graphics.line(x + c2, screeny + s2, x + c2, screeny + s2 - bodyheight)
                 local c = cos(attackangle)
                 local d = cos(attackarc)
                 if c > d then
-                    love.graphics.line(x + attackradius, y, x + attackradius, y - bodyheight)
+                    love.graphics.line(x + attackradius, screeny, x + attackradius, screeny - bodyheight)
                 elseif c < -d then
-                    love.graphics.line(x - attackradius, y, x - attackradius, y - bodyheight)
+                    love.graphics.line(x - attackradius, screeny, x - attackradius, screeny - bodyheight)
                 end
             else
                 local c, s = attackradius*cos(attackangle), attackradius*sin(attackangle)
-                love.graphics.line(x, y,
-                    x + c, y + s,
-                    x + c, y + s - bodyheight,
-                    x, y - bodyheight)
+                love.graphics.line(x, screeny,
+                    x + c, screeny + s,
+                    x + c, screeny + s - bodyheight,
+                    x, screeny - bodyheight)
             end
         end
     end
