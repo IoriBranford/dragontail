@@ -17,10 +17,15 @@ function Boundaries.put(k, bound)
     boundaries[k] = bound
 end
 
-function Boundaries.putArray(array)
+function Boundaries.putArray(array, scene)
     if not array then return end
     for _, bounds in ipairs(array) do
         Boundaries.put(bounds.id, bounds)
+    end
+    if scene then
+        for _, boundary in ipairs(array) do
+            scene:add(boundary)
+        end
     end
 end
 
