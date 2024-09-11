@@ -203,10 +203,10 @@ function Character:rotateAttackTowards(targetangle, turnspeed)
 end
 
 function Character:keepInBounds()
-    local x, y, r = self.x, self.y, self.bodyradius
-    local totalpenex, totalpeney
-    self.x, self.y, totalpenex, totalpeney = Boundaries.keepCircleIn(x, y, r)
-    return totalpenex, totalpeney
+    local x, y, z, r, h = self.x, self.y, self.z, self.bodyradius, self.bodyheight
+    local totalpenex, totalpeney, totalpenez
+    self.x, self.y, self.z, totalpenex, totalpeney, totalpenez = Boundaries.keepCylinderIn(x, y, z, r, h)
+    return totalpenex, totalpeney, totalpenez
 end
 
 function Character:testBodyCollision(other)
