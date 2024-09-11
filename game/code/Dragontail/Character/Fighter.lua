@@ -159,15 +159,19 @@ function Fighter:knockedBack(thrower, attackangle)
     self:stopAttack()
     local thrownspeed = thrower.attacklaunchspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
-    local recovertime = self.knockedbacktime or 10
-    local oobx, ooby
+    self.velz = thrower.attackpopupspeed or 4
+    local gravity = self.fallgravity or .5
+    local oobx, ooby, oobz
     repeat
         yield()
-        oobx, ooby = self:keepInBounds()
-        recovertime = recovertime - 1
-    until recovertime <= 0 or oobx or ooby
+        oobx, ooby, oobz = self:keepInBounds()
+        self.velz = self.velz - gravity
+    until oobx or ooby or oobz
     if oobx or ooby then
         return "wallBump", thrower, oobx, ooby
+    end
+    if oobz then
+        self.velz = 0
     end
 
     return self.aiafterthrown or "fall"
@@ -186,7 +190,7 @@ function Fighter:wallBump(thrower, oobx, ooby)
     )
     self.health = self.health - (self.wallbumpdamage or 10)
     self.hurtstun = self.wallbumpstun or 3
-    self.velx, self.vely = 0, 0
+    self.velx, self.vely, self.velz = 0, 0, 0
     yield()
     local wallslamcounterattack = self.wallslamcounterattack
     if self.health > 0 and wallslamcounterattack and self.attack then
@@ -215,15 +219,22 @@ function Fighter:thrown(thrower, attackangle)
     Database.fill(self, "human-thrown")
     local thrownspeed = thrower.attacklaunchspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
+    self.velz = thrower.attackpopupspeed or 4
+    local gravity = self.fallgravity or .5
     local thrownsound = Audio.newSource(self.swingsound)
     thrownsound:play()
-    local recovertime = self.thrownrecovertime or 30
-    local oobx, ooby
+    local thrownslidetime = self.thrownslidetime or 10
+    local oobx, ooby, oobz
     repeat
         yield()
-        oobx, ooby = self:keepInBounds()
-        recovertime = recovertime - 1
-    until recovertime <= 0 or oobx or ooby
+        oobx, ooby, oobz = self:keepInBounds()
+        if oobz then
+            self.velz = 0
+            thrownslidetime = thrownslidetime - 1
+        else
+            self.velz = self.velz - gravity
+        end
+    until thrownslidetime <= 0 or oobx or ooby
     thrownsound:stop()
     self.thrower = nil
     if oobx or ooby then
@@ -246,7 +257,7 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
     )
     self.health = self.health - (self.wallslamdamage or 25)
     self.hurtstun = self.wallslamstun or 20
-    self.velx, self.vely = 0, 0
+    self.velx, self.vely, self.velz = 0, 0, 0
     yield()
     local wallslamcounterattack = self.wallslamcounterattack
     if self.health > 0 and wallslamcounterattack and self.attack then
@@ -312,11 +323,19 @@ end
 
 function Fighter:fall(attacker)
     local t = 1
+    local _, penez
+    local gravity = self.fallgravity or .5
     repeat
         self:accelerateTowardsVel(0, 0, 8)
         yield()
-        self:keepInBounds()
-        t = t + 1
+        _, _, penez = self:keepInBounds()
+        if penez then
+            t = t + 1
+            self.velz = 0
+            self:changeAseAnimation("Fall", 1, 0)
+        else
+            self.velz = self.velz - gravity
+        end
     until t > 20
     Audio.play(self.bodydropsound)
     self:stopAttack()
