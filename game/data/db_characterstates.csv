@@ -7,7 +7,7 @@ thrown,thrown,spin,,,FALSE,FALSE,
 wallSlammed,wallSlammed,hurt,,,FALSE,FALSE,sounds/combat/bodyslam.mp3
 thrownRecover,thrownRecover,FallKnees,,0,FALSE,FALSE,sounds/combat/slide.mp3
 breakaway,breakaway,,,,FALSE,FALSE,sounds/combat/slap.mp3
-fall,fall,Fall,,0,FALSE,FALSE,
+fall,fall,,,0,FALSE,FALSE,
 defeat,defeat,Fall,,0,FALSE,FALSE,
 getup,getup,FallRiseToFeet,,0,FALSE,FALSE,
 stand,stand,Stand,,,TRUE,TRUE,
