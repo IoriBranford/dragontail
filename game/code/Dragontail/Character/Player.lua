@@ -463,10 +463,16 @@ function Player:spinAttack(attacktype, angle)
 end
 
 function Player:throwWeapon()
-    local inx, iny = math.norm(Controls.getDirectionInput())
+    local inx, iny = Controls.getDirectionInput()
     local inz = 0 -- TODO adjust for higher or lower enemy
+    if inx == 0 and iny == 0 then
+        inx, iny = self.facex, self.facey
+    else
+        inx, iny = norm(inx, iny)
+        self.facex, self.facey = inx, iny
+    end
     local angle = atan2(iny, inx)
-    self.facex, self.facey = norm(inx, iny)
+    inx, iny, inz = norm(inx, iny, inz)
     self:setDirectionalAnimation("throw", angle, 1)
     self:launchProjectile(self.weaponinhand, inx, iny, inz)
     self.weaponinhand = nil
