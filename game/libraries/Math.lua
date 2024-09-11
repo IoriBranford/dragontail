@@ -43,13 +43,15 @@ function math.dist(x1, y1, x2, y2)
     return sqrt(dx*dx + dy*dy)
 end
 
-function math.len(x, y)
-    return sqrt(x*x + y*y)
+function math.len(x, y, z)
+    z = z or 0
+    return sqrt(x*x + y*y + z*z)
 end
 
-function math.norm(x, y)
-    local len = sqrt(x*x + y*y)
-    return x/len, y/len
+function math.norm(x, y, z)
+    z = z or 0
+    local len = sqrt(x*x + y*y + z*z)
+    return x/len, y/len, z/len
 end
 
 function math.mid(x1, y1, x2, y2)
