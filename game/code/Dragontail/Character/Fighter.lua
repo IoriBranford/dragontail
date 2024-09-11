@@ -371,20 +371,30 @@ function Fighter:getup(attacker)
     return recoverai
 end
 
-function Fighter:launchProjectile(type, angle)
+function Fighter:launchProjectileAtObject(type, object)
+    local distx, disty, distz = object.x - self.x, object.y - self.y, object.z - self.z
+    local dirx, diry, dirz = norm(distx, disty, distz)
+    return self:launchProjectile(type, dirx, diry, dirz)
+end
+
+function Fighter:launchProjectile(type, dirx, diry, dirz)
     local projectiledata = Database.get(type)
     if not projectiledata then
         return
     end
 
-    local x, y = self.x, self.y
+    local x, y, z = self.x, self.y, self.z
     local bodyradius, bodyheight = self.bodyradius or 0, self.bodyheight or 0
+    local speed = projectiledata.speed or 1
     return Characters.spawn({
-        x = x + bodyradius*cos(angle),
-        y = y + bodyradius*sin(angle),
-        z = self.z + bodyheight / 2,
+        x = x + bodyradius*dirx,
+        y = y + bodyradius*diry,
+        z = z + bodyheight / 2,
+        velx = speed*dirx,
+        vely = speed*diry,
+        velz = speed*dirz,
         type = type,
-        attackangle = angle,
+        attackangle = atan2(diry, dirx),
         thrower = self
     })
 end

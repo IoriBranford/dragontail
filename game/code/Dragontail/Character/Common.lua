@@ -123,23 +123,29 @@ function Common:projectileHit(opponent)
     return "blinkOut", 30
 end
 
-function Common:projectileFly(shooter, angle)
-    angle = angle or self.attackangle
+function Common:projectileFly(shooter)
+    local angle = self.attackangle
     Database.fill(self, self.defaultattack)
-    self:startAttack(angle)
-    local speed = self.speed
-    self.velx = speed*cos(angle)
-    self.vely = speed*sin(angle)
+    if not angle then
+        local velx = self.velx
+        local vely = self.vely
+        if velx ~= 0 or vely ~= 0 then
+            angle = atan2(vely, velx)
+        else
+            angle = 0
+        end
+        self:startAttack(angle)
+    end
     local animation = self.swinganimation
     if animation then
         animation = self.getDirectionalAnimation_angle(animation, angle, self.animationdirections)
         self:changeAseAnimation(animation)
     end
-    local oobx, ooby
+    local oobx, ooby, oobz
     repeat
         yield()
-        oobx, ooby = self:keepInBounds()
-    until oobx or ooby
+        oobx, ooby, oobz = self:keepInBounds()
+    until oobx or ooby or oobz
     return "projectileHit"
 end
 
@@ -148,17 +154,22 @@ function Common:projectileDeflected(deflector)
 
     Audio.play(deflector.hitsound)
     local attackangle = deflector.attackangle
+    local dirx, diry, dirz = cos(attackangle), sin(attackangle), 0
     yield()
 
+    local speed = self.speed or 1
     local thrower = self.thrower
     if thrower and thrower.team ~= "player" and deflector.team == "player" then
-        attackangle = 0
+        dirx, diry, dirz = 1, 0, 0
         if thrower.y ~= self.y or thrower.x ~= self.x then
-            attackangle = atan2(thrower.y - self.y, thrower.x - self.x)
+            dirx, diry, dirz = math.norm(thrower.x - self.x, thrower.y - self.y, thrower.z - self.z)
         end
     end
     self.thrower = deflector
-    return "projectileFly", deflector, attackangle
+    self.velx = speed*dirx
+    self.vely = speed*diry
+    self.velz = speed*dirz
+    return "projectileFly", deflector
 end
 
 return Common

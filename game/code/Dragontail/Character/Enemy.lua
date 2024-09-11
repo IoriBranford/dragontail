@@ -247,11 +247,11 @@ function Enemy:attack()
     self.canbegrabbed = not self.attackwindupinvuln
     self.velx, self.vely = 0, 0
 
-    local x, y = self.x, self.y
+    local x, y, z = self.x, self.y, self.z
     local opponent = self.opponents[1]
     opponent.attacker = self
-    local oppox, oppoy = opponent.x, opponent.y
-    local tooppox, tooppoy = oppox - x, oppoy - y
+    local oppox, oppoy, oppoz = opponent.x, opponent.y, opponent.z
+    local tooppox, tooppoy, tooppoz = oppox - x, oppoy - y, oppoz - z
     local tooppoangle = 0
     if oppox ~= x or oppoy ~= y then
         faceDir(self, tooppox, tooppoy)
@@ -276,7 +276,7 @@ function Enemy:attack()
     Audio.play(self.swingsound)
     local attackprojectile = self.attackprojectile
     if attackprojectile then
-        self:launchProjectile(attackprojectile, tooppoangle)
+        self:launchProjectile(attackprojectile, norm(tooppox, tooppoy, tooppoz))
     else
         local attackangle = floor((tooppoangle + (pi/4)) / (pi/2)) * pi/2
         self:startAttack(attackangle)
