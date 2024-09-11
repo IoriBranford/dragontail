@@ -41,7 +41,6 @@ function Stage.init(stagefile)
     map = Tiled.Map.load(stagefile)
     map:indexLayersByName()
     map:indexLayerObjectsByName()
-    roomindex = 0
 
     for id, object in pairs(map.objects) do
         if object.type == "Boundary" then
@@ -78,17 +77,30 @@ function Stage.init(stagefile)
 
     scene:addMap(map, "group,tilelayer")
 
-    Characters.spawn({
-        x = 160, y = 180, type = "Rose"
-    })
-
-    Stage.openNextRoom()
-    local room = map.layers.rooms[roomindex]
-    local camerapath = room.camerapath
+    local firstroomindex = 1
+    local firstroom = map.layers.rooms[firstroomindex]
+    local camerapath = firstroom.camerapath
+    while not camerapath do
+        firstroomindex = firstroomindex - 1
+        firstroom = map.layers.rooms[firstroomindex]
+        camerapath = firstroom.camerapath
+    end
     if camerapath then
         camera.x = camerapath.x + camerapath.points[1] - camera.width/2
         camera.y = camerapath.y + camerapath.points[2] - camera.height/2
     end
+
+    Characters.spawn({
+        x = camera.x + 160, y = camera.y + 180, type = "Rose"
+    })
+    for i = firstroomindex - 1, 1, -1 do
+        local prevroom = map.layers.rooms[i]
+        if prevroom.boundaries then
+            Boundaries.putArray(prevroom.boundaries, scene)
+            break
+        end
+    end
+    Stage.openRoom(firstroomindex)
 end
 
 local function genDefaultCameraPath(roombounds)
@@ -115,17 +127,12 @@ local function genDefaultCameraPath(roombounds)
     })
 end
 
-function Stage.openNextRoom()
-    roomindex = roomindex + 1
-    local room = map.layers.rooms[roomindex]
+function Stage.openRoom(i)
+    local room = map.layers.rooms[i]
     if room then
+        roomindex = i
         local roombounds = room.boundaries
-        Boundaries.putArray(roombounds)
-        if roombounds then
-            for _, boundary in ipairs(roombounds) do
-                scene:add(boundary)
-            end
-        end
+        Boundaries.putArray(roombounds, scene)
         Characters.spawnArray(room.characters)
     else
         winningteam = "players"
@@ -153,7 +160,7 @@ function Stage.updateGoingToNextRoom()
         camera.vely = 0
         local enemies = Characters.getGroup("enemies")
         if #enemies <= 0 then
-            Stage.openNextRoom()
+            Stage.openRoom(roomindex + 1)
         end
         return
     end
@@ -181,7 +188,9 @@ function Stage.fixedupdate()
     Characters.fixedupdate()
     Characters.pruneDisappeared()
 
-    Stage.updateGoingToNextRoom()
+    if not winningteam then
+        Stage.updateGoingToNextRoom()
+    end
 
     local cx, cy, cw, ch = camera.x, camera.y, camera.width, camera.height
     local room = map.layers.rooms[roomindex]
