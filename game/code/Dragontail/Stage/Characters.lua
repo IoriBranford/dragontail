@@ -122,17 +122,22 @@ function Characters.fixedupdate()
     end
 end
 
-function Characters.pruneDisappeared()
-    for _, characters in pairs(groups) do
-        local n = #characters
-        for i = n, 1, -1 do
-            if characters[i].disappeared then
-                characters[i] = characters[n]
-                characters[n] = nil
-                n = n - 1
-            end
+local function pruneCharacters(characters)
+    local n = #characters
+    for i = n, 1, -1 do
+        if characters[i].disappeared then
+            characters[i] = characters[n]
+            characters[n] = nil
+            n = n - 1
         end
     end
+end
+
+function Characters.pruneDisappeared()
+    for _, characters in pairs(groups) do
+        pruneCharacters(characters)
+    end
+    pruneCharacters(allcharacters)
     scene:prune(Character.hasDisappeared)
 end
 
