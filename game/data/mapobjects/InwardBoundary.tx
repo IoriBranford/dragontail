@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template>
  <object type="Boundary">
+  <properties>
+   <property name="bodyheight" type="float" value="512"/>
+   <property name="drawz" type="float" value="0"/>
+   <property name="linecolor" type="color" value="#80ffffff"/>
+  </properties>
   <polygon points="0,0 640,0 640,360 0,360"/>
  </object>
 </template>
