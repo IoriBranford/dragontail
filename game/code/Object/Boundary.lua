@@ -181,7 +181,9 @@ function Boundary:keepCylinderInside(x, y, z, r, h)
         end
     end
     local penex, peney
-    x, y, penex, peney = self:keepCircleInside(x, y, r)
+    if not self.outward or z + h > selfz and selfz + selfh > z then
+        x, y, penex, peney = self:keepCircleInside(x, y, r)
+    end
     return x, y, z, penex, peney, penez
 end
 
