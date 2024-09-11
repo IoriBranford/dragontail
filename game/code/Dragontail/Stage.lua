@@ -57,6 +57,7 @@ function Stage.init(stagefile)
             local characters = object.layer.characters or {}
             object.layer.characters = characters
             characters[#characters+1] = object
+            object.y = object.y + (object.z or 0)
         end
     end
 
