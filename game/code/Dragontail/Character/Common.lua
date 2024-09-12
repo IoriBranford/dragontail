@@ -162,7 +162,7 @@ function Common:projectileDeflected(deflector)
     if thrower and thrower.team ~= "player" and deflector.team == "player" then
         dirx, diry, dirz = 1, 0, 0
         if thrower.y ~= self.y or thrower.x ~= self.x then
-            dirx, diry, dirz = math.norm(thrower.x - self.x, thrower.y - self.y, thrower.z - self.z)
+            dirx, diry, dirz = math.norm(thrower.x - self.x, thrower.y - self.y, thrower.z + thrower.bodyheight/2 - self.z)
         end
     end
     self.thrower = deflector
