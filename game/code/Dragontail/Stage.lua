@@ -159,7 +159,8 @@ function Stage.updateGoingToNextRoom()
         camera.velx = 0
         camera.vely = 0
         local enemies = Characters.getGroup("enemies")
-        if #enemies <= 0 then
+        local donewhenenemiesleft = room.donewhenenemiesleft or 0
+        if #enemies <= donewhenenemiesleft then
             Stage.openRoom(roomindex + 1)
         end
         return
