@@ -10,45 +10,6 @@
     ],
     "propertyTypes": [
         {
-            "color": "#ffff0004",
-            "drawFill": true,
-            "id": 1,
-            "members": [
-            ],
-            "name": "bandit-axe",
-            "type": "class",
-            "useAs": [
-                "object",
-                "tile"
-            ]
-        },
-        {
-            "color": "#ffffaaff",
-            "drawFill": true,
-            "id": 2,
-            "members": [
-            ],
-            "name": "bandit-dagger",
-            "type": "class",
-            "useAs": [
-                "object",
-                "tile"
-            ]
-        },
-        {
-            "color": "#ffff5500",
-            "drawFill": true,
-            "id": 3,
-            "members": [
-            ],
-            "name": "bandit-spear",
-            "type": "class",
-            "useAs": [
-                "object",
-                "tile"
-            ]
-        },
-        {
             "color": "#ffa0a0a4",
             "drawFill": true,
             "id": 10,
@@ -59,45 +20,6 @@
             "useAs": [
                 "object",
                 "project"
-            ]
-        },
-        {
-            "color": "#ffaaff00",
-            "drawFill": true,
-            "id": 4,
-            "members": [
-            ],
-            "name": "food-bigfish",
-            "type": "class",
-            "useAs": [
-                "object",
-                "tile"
-            ]
-        },
-        {
-            "color": "#ffc0c0c0",
-            "drawFill": true,
-            "id": 5,
-            "members": [
-            ],
-            "name": "food-container",
-            "type": "class",
-            "useAs": [
-                "object",
-                "tile"
-            ]
-        },
-        {
-            "color": "#ffaaff00",
-            "drawFill": true,
-            "id": 6,
-            "members": [
-            ],
-            "name": "food-fish",
-            "type": "class",
-            "useAs": [
-                "object",
-                "tile"
             ]
         },
         {
