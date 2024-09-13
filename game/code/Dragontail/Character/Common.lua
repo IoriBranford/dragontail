@@ -142,9 +142,11 @@ function Common:projectileFly(shooter)
         self:changeAseAnimation(animation)
     end
     local oobx, ooby, oobz
+    local gravity = self.fallgravity or 0
     repeat
         yield()
         oobx, ooby, oobz = self:keepInBounds()
+        self.velz = self.velz - gravity
     until oobx or ooby or oobz
     return "projectileHit"
 end
