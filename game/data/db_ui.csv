@@ -1,0 +1,3 @@
+type,asefile,spriteoriginx,spriteoriginy,drawz
+go-word,sprites/ui/go-word.jase,16,8,100
+go-wings,sprites/ui/go-wings.jase,16,32,99
