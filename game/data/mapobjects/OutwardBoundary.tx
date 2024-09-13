@@ -7,6 +7,6 @@
    <property name="drawz" type="float" value="0"/>
    <property name="linecolor" type="color" value="#80ffffff"/>
   </properties>
-  <polygon points="0,0 0,36 64,36 64,0"/>
+  <polygon points="0,0 0,32 640,32 640,0"/>
  </object>
 </template>
