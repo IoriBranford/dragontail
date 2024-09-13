@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 15,
-  nextobjectid = 45,
+  nextlayerid = 21,
+  nextobjectid = 82,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -4308,7 +4308,7 @@ return {
           draworder = "topdown",
           id = 7,
           name = "learnmovement",
-          class = "",
+          class = "Room",
           visible = true,
           opacity = 1,
           offsetx = 0,
@@ -4452,7 +4452,7 @@ return {
           draworder = "topdown",
           id = 8,
           name = "learnattack",
-          class = "",
+          class = "Room",
           visible = true,
           opacity = 1,
           offsetx = 0,
@@ -4476,12 +4476,54 @@ return {
               properties = {}
             },
             {
+              id = 50,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 184,
+              y = 160,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
               id = 16,
               name = "",
               type = "",
               shape = "rectangle",
               x = 992,
               y = 344,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 45,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 992,
+              y = 224,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 47,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 184,
+              y = 264,
               width = 64,
               height = 64,
               rotation = 0,
@@ -4504,12 +4546,54 @@ return {
               properties = {}
             },
             {
+              id = 49,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 280,
+              y = 192,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
               id = 11,
               name = "",
               type = "",
               shape = "rectangle",
               x = 1088,
               y = 312,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 46,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1088,
+              y = 224,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 48,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 280,
+              y = 264,
               width = 64,
               height = 64,
               rotation = 0,
@@ -4524,14 +4608,16 @@ return {
           draworder = "topdown",
           id = 9,
           name = "tolearnrunning",
-          class = "",
+          class = "Room",
           visible = true,
           opacity = 1,
           offsetx = 0,
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = 5
+          },
           objects = {
             {
               id = 22,
@@ -4632,6 +4718,34 @@ return {
               properties = {}
             },
             {
+              id = 52,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1144,
+              y = 144,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 54,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1016,
+              y = 168,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
               id = 30,
               name = "",
               type = "",
@@ -4674,6 +4788,34 @@ return {
               properties = {}
             },
             {
+              id = 51,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1144,
+              y = 240,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 53,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1016,
+              y = 264,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
               id = 31,
               name = "",
               type = "",
@@ -4694,7 +4836,7 @@ return {
           draworder = "topdown",
           id = 10,
           name = "learnrunning",
-          class = "",
+          class = "Room",
           visible = true,
           opacity = 1,
           offsetx = 0,
@@ -4732,12 +4874,40 @@ return {
               properties = {}
             },
             {
+              id = 56,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 928,
+              y = 168,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
+            },
+            {
               id = 34,
               name = "",
               type = "",
               shape = "rectangle",
               x = 1632,
               y = 248,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 55,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 928,
+              y = 264,
               width = 64,
               height = 64,
               rotation = 0,
@@ -4752,7 +4922,7 @@ return {
           draworder = "topdown",
           id = 11,
           name = "tolearnthrowing",
-          class = "",
+          class = "Room",
           visible = true,
           opacity = 1,
           offsetx = 0,
@@ -4863,6 +5033,48 @@ return {
               gid = 5288,
               visible = true,
               properties = {}
+            },
+            {
+              id = 58,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1872,
+              y = 288,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5278,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 59,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1952,
+              y = 408,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5278,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 60,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1920,
+              y = 376,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5278,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -4871,7 +5083,7 @@ return {
           draworder = "topdown",
           id = 13,
           name = "learnthrowing",
-          class = "",
+          class = "Room",
           visible = true,
           opacity = 1,
           offsetx = 0,
@@ -4892,6 +5104,600 @@ return {
               rotation = 0,
               gid = 5270,
               visible = true,
+              properties = {}
+            },
+            {
+              id = 61,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1728,
+              y = 280,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 57,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2336,
+              y = 504,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5278,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 62,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2272,
+              y = 504,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5278,
+              visible = true,
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 15,
+          name = "tolearngrab",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 63,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 2240,
+              y = 640,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = 0 },
+                { x = 0, y = 32 },
+                { x = 640, y = 32 },
+                { x = 640, y = -160 },
+                { x = 480, y = -320 },
+                { x = 480, y = -160 },
+                { x = 320, y = 0 }
+              },
+              properties = {
+                ["bodyheight"] = 32,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 64,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 2240,
+              y = 416,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = -224 },
+                { x = 0, y = 32 },
+                { x = 32, y = 32 },
+                { x = 256, y = -192 },
+                { x = 256, y = -224 }
+              },
+              properties = {
+                ["bodyheight"] = 64,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 65,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 2656,
+              y = 512,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = -32, y = -320 },
+                { x = -32, y = -288 },
+                { x = 224, y = -32 },
+                { x = 224, y = -320 }
+              },
+              properties = {
+                ["bodyheight"] = 64,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 66,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 2080,
+              y = 480,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = 0, y = 0 },
+                { x = 160, y = 0 },
+                { x = 320, y = -32 },
+                { x = 480, y = -96 }
+              },
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 16,
+          name = "entryhall",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 67,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 2464,
+              y = -160,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = -32 },
+                { x = 0, y = 352 },
+                { x = 32, y = 352 },
+                { x = 32, y = 224 },
+                { x = 224, y = 32 },
+                { x = 640, y = 32 },
+                { x = 704, y = 96 },
+                { x = 736, y = 96 },
+                { x = 736, y = -32 }
+              },
+              properties = {
+                ["bodyheight"] = 512,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 68,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 2624,
+              y = 160,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = 0 },
+                { x = 0, y = 32 },
+                { x = 576, y = 32 },
+                { x = 576, y = -96 },
+                { x = 544, y = -96 },
+                { x = 448, y = 0 }
+              },
+              properties = {
+                ["bodyheight"] = 32,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 69,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 2560,
+              y = 216,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = 0, y = 0 },
+                { x = 0, y = -88 },
+                { x = 128, y = -216 },
+                { x = 320, y = -216 }
+              },
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 17,
+          name = "guardroom",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 70,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 3200,
+              y = -160,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = 0 },
+                { x = 0, y = 96 },
+                { x = 32, y = 96 },
+                { x = 96, y = 32 },
+                { x = 512, y = 32 },
+                { x = 640, y = 160 },
+                { x = 640, y = 0 }
+              },
+              properties = {
+                ["bodyheight"] = 512,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 71,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 3200,
+              y = 160,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = -96 },
+                { x = 0, y = 64 },
+                { x = 480, y = 64 },
+                { x = 480, y = 32 },
+                { x = 448, y = 0 },
+                { x = 96, y = 0 }
+              },
+              properties = {
+                ["bodyheight"] = 32,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 78,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 2880,
+              y = 0,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = 0, y = 0 },
+                { x = 640, y = 0 }
+              },
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 18,
+          name = "armory",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 72,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 3680,
+              y = 192,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = 0 },
+                { x = 0, y = 320 },
+                { x = 800, y = 320 },
+                { x = 800, y = 128 },
+                { x = 736, y = 128 },
+                { x = 672, y = 192 },
+                { x = 352, y = 192 },
+                { x = 288, y = 128 },
+                { x = 128, y = 128 }
+              },
+              properties = {
+                ["bodyheight"] = 32,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 73,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 3840,
+              y = -32,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = 0 },
+                { x = 0, y = 32 },
+                { x = 128, y = 160 },
+                { x = 192, y = 96 },
+                { x = 448, y = 96 },
+                { x = 512, y = 160 },
+                { x = 640, y = 160 },
+                { x = 640, y = 0 }
+              },
+              properties = {
+                ["bodyheight"] = 512,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 79,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 3520,
+              y = 0,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = 0, y = 0 },
+                { x = 640, y = 192 }
+              },
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 19,
+          name = "messhall",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 74,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 4480,
+              y = 96,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = -312 },
+                { x = 0, y = 32 },
+                { x = 64, y = 32 },
+                { x = 160, y = -64 },
+                { x = 512, y = -64 },
+                { x = 608, y = 32 },
+                { x = 640, y = 32 },
+                { x = 640, y = -312 }
+              },
+              properties = {
+                ["bodyheight"] = 512,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 75,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 4480,
+              y = 384,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = -64 },
+                { x = 0, y = 128 },
+                { x = 640, y = 128 },
+                { x = 640, y = -32 },
+                { x = 608, y = 0 },
+                { x = 64, y = 0 }
+              },
+              properties = {
+                ["bodyheight"] = 32,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 81,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 4160,
+              y = 192,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = 0, y = 0 },
+                { x = 640, y = 0 }
+              },
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 20,
+          name = "arena",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 76,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 5120,
+              y = 0,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = 0 },
+                { x = 0, y = 128 },
+                { x = 40, y = 128 },
+                { x = 104, y = 64 },
+                { x = 544, y = 64 },
+                { x = 608, y = 128 },
+                { x = 640, y = 128 },
+                { x = 640, y = 0 }
+              },
+              properties = {
+                ["bodyheight"] = 512,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 77,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 5120,
+              y = 352,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = 0 },
+                { x = 0, y = 32 },
+                { x = 640, y = 32 },
+                { x = 640, y = -224 },
+                { x = 608, y = -224 },
+                { x = 608, y = -32 },
+                { x = 576, y = 0 }
+              },
+              properties = {
+                ["bodyheight"] = 32,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 80,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 4800,
+              y = 192,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = 0, y = 0 },
+                { x = 640, y = 0 }
+              },
               properties = {}
             }
           }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="15" nextobjectid="45">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="21" nextobjectid="82">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -18,7 +18,7 @@
   <data encoding="base64" compression="zlib"/>
  </layer>
  <group id="14" name="rooms">
-  <objectgroup id="7" name="learnmovement">
+  <objectgroup id="7" name="learnmovement" class="Room">
    <object id="21" template="mapobjects/OutwardBoundary.tx" x="0" y="0">
     <properties>
      <property name="bodyheight" type="float" value="64"/>
@@ -41,13 +41,22 @@
    <object id="25" gid="5285" x="784" y="136" width="64" height="32"/>
    <object id="26" gid="5286" x="848" y="248" width="64" height="32"/>
   </objectgroup>
-  <objectgroup id="8" name="learnattack">
+  <objectgroup id="8" name="learnattack" class="Room">
    <object id="15" gid="5266" x="992" y="120" width="64" height="64"/>
+   <object id="50" gid="5266" x="184" y="160" width="64" height="64"/>
    <object id="16" gid="5266" x="992" y="344" width="64" height="64"/>
+   <object id="45" gid="5266" x="992" y="224" width="64" height="64"/>
+   <object id="47" gid="5266" x="184" y="264" width="64" height="64"/>
    <object id="10" gid="5266" x="1088" y="152" width="64" height="64"/>
+   <object id="49" gid="5266" x="280" y="192" width="64" height="64"/>
    <object id="11" gid="5266" x="1088" y="312" width="64" height="64"/>
+   <object id="46" gid="5266" x="1088" y="224" width="64" height="64"/>
+   <object id="48" gid="5266" x="280" y="264" width="64" height="64"/>
   </objectgroup>
-  <objectgroup id="9" name="tolearnrunning">
+  <objectgroup id="9" name="tolearnrunning" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="5"/>
+   </properties>
    <object id="22" template="mapobjects/OutwardBoundary.tx" x="960" y="0">
     <properties>
      <property name="bodyheight" type="float" value="64"/>
@@ -67,17 +76,23 @@
    </object>
    <object id="19" gid="5266" x="1280" y="120" width="64" height="64"/>
    <object id="36" gid="5266" x="1408" y="88" width="64" height="64"/>
+   <object id="52" gid="5266" x="1144" y="144" width="64" height="64"/>
+   <object id="54" gid="5266" x="1016" y="168" width="64" height="64"/>
    <object id="30" gid="5266" x="1536" y="56" width="64" height="64"/>
    <object id="20" gid="5266" x="1280" y="216" width="64" height="64"/>
    <object id="35" gid="5266" x="1408" y="184" width="64" height="64"/>
+   <object id="51" gid="5266" x="1144" y="240" width="64" height="64"/>
+   <object id="53" gid="5266" x="1016" y="264" width="64" height="64"/>
    <object id="31" gid="5266" x="1536" y="152" width="64" height="64"/>
   </objectgroup>
-  <objectgroup id="10" name="learnrunning">
+  <objectgroup id="10" name="learnrunning" class="Room">
    <object id="32" gid="5270" x="1632" y="56" width="64" height="64"/>
    <object id="33" gid="5270" x="1632" y="152" width="64" height="64"/>
+   <object id="56" gid="5270" x="928" y="168" width="64" height="64"/>
    <object id="34" gid="5270" x="1632" y="248" width="64" height="64"/>
+   <object id="55" gid="5270" x="928" y="264" width="64" height="64"/>
   </objectgroup>
-  <objectgroup id="11" name="tolearnthrowing">
+  <objectgroup id="11" name="tolearnthrowing" class="Room">
    <object id="38" template="mapobjects/OutwardBoundary.tx" x="1600" y="-160">
     <properties>
      <property name="bodyheight" type="float" value="64"/>
@@ -97,9 +112,102 @@
    </object>
    <object id="42" gid="5288" x="1728" y="320" width="64" height="32"/>
    <object id="43" gid="5288" x="1776" y="376" width="64" height="32"/>
+   <object id="58" gid="5278" x="1872" y="288" width="64" height="64"/>
+   <object id="59" gid="5278" x="1952" y="408" width="64" height="64"/>
+   <object id="60" gid="5278" x="1920" y="376" width="64" height="64"/>
   </objectgroup>
-  <objectgroup id="13" name="learnthrowing">
+  <objectgroup id="13" name="learnthrowing" class="Room">
    <object id="41" gid="5270" x="2272" y="568" width="64" height="64"/>
+   <object id="61" gid="5270" x="1728" y="280" width="64" height="64"/>
+   <object id="57" gid="5278" x="2336" y="504" width="64" height="64"/>
+   <object id="62" gid="5278" x="2272" y="504" width="64" height="64"/>
+  </objectgroup>
+  <objectgroup id="15" name="tolearngrab">
+   <object id="63" template="mapobjects/OutwardBoundary.tx" x="2240" y="640">
+    <properties>
+     <property name="bodyheight" type="float" value="32"/>
+    </properties>
+    <polygon points="0,0 0,32 640,32 640,-160 480,-320 480,-160 320,0"/>
+   </object>
+   <object id="64" template="mapobjects/OutwardBoundary.tx" x="2240" y="416">
+    <properties>
+     <property name="bodyheight" type="float" value="64"/>
+    </properties>
+    <polygon points="0,-224 0,32 32,32 256,-192 256,-224"/>
+   </object>
+   <object id="65" template="mapobjects/OutwardBoundary.tx" x="2656" y="512">
+    <properties>
+     <property name="bodyheight" type="float" value="64"/>
+    </properties>
+    <polygon points="-32,-320 -32,-288 224,-32 224,-320"/>
+   </object>
+   <object id="66" template="mapobjects/CameraPath.tx" x="2080" y="480">
+    <polyline points="0,0 160,0 320,-32 480,-96"/>
+   </object>
+  </objectgroup>
+  <objectgroup id="16" name="entryhall">
+   <object id="67" template="mapobjects/OutwardBoundary.tx" x="2464" y="-160">
+    <polygon points="0,-32 0,352 32,352 32,224 224,32 640,32 704,96 736,96 736,-32"/>
+   </object>
+   <object id="68" template="mapobjects/OutwardBoundary.tx" x="2624" y="160">
+    <properties>
+     <property name="bodyheight" type="float" value="32"/>
+    </properties>
+    <polygon points="0,0 0,32 576,32 576,-96 544,-96 448,0"/>
+   </object>
+   <object id="69" template="mapobjects/CameraPath.tx" x="2560" y="216">
+    <polyline points="0,0 0,-88 128,-216 320,-216"/>
+   </object>
+  </objectgroup>
+  <objectgroup id="17" name="guardroom">
+   <object id="70" template="mapobjects/OutwardBoundary.tx" x="3200" y="-160">
+    <polygon points="0,0 0,96 32,96 96,32 512,32 640,160 640,0"/>
+   </object>
+   <object id="71" template="mapobjects/OutwardBoundary.tx" x="3200" y="160">
+    <properties>
+     <property name="bodyheight" type="float" value="32"/>
+    </properties>
+    <polygon points="0,-96 0,64 480,64 480,32 448,0 96,0"/>
+   </object>
+   <object id="78" template="mapobjects/CameraPath.tx" x="2880" y="0"/>
+  </objectgroup>
+  <objectgroup id="18" name="armory">
+   <object id="72" template="mapobjects/OutwardBoundary.tx" x="3680" y="192">
+    <properties>
+     <property name="bodyheight" type="float" value="32"/>
+    </properties>
+    <polygon points="0,0 0,320 800,320 800,128 736,128 672,192 352,192 288,128 128,128"/>
+   </object>
+   <object id="73" template="mapobjects/OutwardBoundary.tx" x="3840" y="-32">
+    <polygon points="0,0 0,32 128,160 192,96 448,96 512,160 640,160 640,0"/>
+   </object>
+   <object id="79" template="mapobjects/CameraPath.tx" x="3520" y="0">
+    <polyline points="0,0 640,192"/>
+   </object>
+  </objectgroup>
+  <objectgroup id="19" name="messhall">
+   <object id="74" template="mapobjects/OutwardBoundary.tx" x="4480" y="96">
+    <polygon points="0,-312 0,32 64,32 160,-64 512,-64 608,32 640,32 640,-312"/>
+   </object>
+   <object id="75" template="mapobjects/OutwardBoundary.tx" x="4480" y="384">
+    <properties>
+     <property name="bodyheight" type="float" value="32"/>
+    </properties>
+    <polygon points="0,-64 0,128 640,128 640,-32 608,0 64,0"/>
+   </object>
+   <object id="81" template="mapobjects/CameraPath.tx" x="4160" y="192"/>
+  </objectgroup>
+  <objectgroup id="20" name="arena">
+   <object id="76" template="mapobjects/OutwardBoundary.tx" x="5120" y="0">
+    <polygon points="0,0 0,128 40,128 104,64 544,64 608,128 640,128 640,0"/>
+   </object>
+   <object id="77" template="mapobjects/OutwardBoundary.tx" x="5120" y="352">
+    <properties>
+     <property name="bodyheight" type="float" value="32"/>
+    </properties>
+    <polygon points="0,0 0,32 640,32 640,-224 608,-224 608,-32 576,0"/>
+   </object>
+   <object id="80" template="mapobjects/CameraPath.tx" x="4800" y="192"/>
   </objectgroup>
  </group>
  <objectgroup id="3" name="notes">
