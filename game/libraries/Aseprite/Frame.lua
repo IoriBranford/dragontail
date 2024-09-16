@@ -54,21 +54,20 @@ function AseFrame:putCel(i, cel)
     }
 end
 
-function AseFrame:drawCels(i, j, x, y, r, sx, sy, ox, oy, kx, ky)
+function AseFrame:drawCels(i, j, x, y)
     local image = self.image
     for l = i, j do
         local cel = self[l]
         if cel then
             love_graphics_draw(image, cel.quad,
-                (x or 0) + cel.x, (y or 0) + cel.y,
-                r or 0, sx or 1, sy or 1, ox, oy, kx, ky)
+                (x or 0) + cel.x, (y or 0) + cel.y)
         end
     end
 end
 local drawCels = AseFrame.drawCels
 
-function AseFrame:draw(x, y, r, sx, sy, ox, oy, kx, ky)
-    drawCels(self, 1, #self, x, y, r, sx, sy, ox, oy, kx, ky)
+function AseFrame:draw(x, y)
+    drawCels(self, 1, #self, x, y)
 end
 
 return AseFrame
