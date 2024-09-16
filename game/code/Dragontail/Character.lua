@@ -64,9 +64,13 @@ function Character:addToScene(scene)
 
     local baseDraw = self.draw
     if self.shadowtype then
-        self.draw = function(sprite)
-            self:drawShadow()
-            baseDraw(sprite)
+        self.draw = function(self, fixedfrac)
+            self:drawSpriteShadow(fixedfrac)
+            baseDraw(self, fixedfrac)
+            if Config.drawbodies then
+                self:drawBodyShape(fixedfrac)
+                self:drawAttackShape(fixedfrac)
+            end
         end
     end
 end
@@ -323,8 +327,9 @@ function Character:setEmote(emotename)
     end
 end
 
-function Character:drawShadow()
-    local x, y = self.x, self.y
+function Character:drawShapeShadow(fixedfrac)
+    fixedfrac = fixedfrac or 0
+    local x, y = self.x + self.velx * fixedfrac, self.y + self.vely * fixedfrac
     love.graphics.setColor(0,0,0,.25)
 
     love.graphics.circle("fill", x, y, self.bodyradius)
@@ -339,43 +344,75 @@ function Character:drawShadow()
             love.graphics.line(x, y, x + attackradius*cos(attackangle), y + attackradius*sin(attackangle))
         end
     end
+end
 
-    if Config.drawbodies then
-        love.graphics.setColor(.5, .5, 1)
-        local bodyradius, bodyheight = self.bodyradius, self.bodyheight
-        local screeny = y - self.z
-        love.graphics.circle("line", x, screeny, bodyradius)
-        love.graphics.circle("line", x, screeny - bodyheight, bodyradius)
-        love.graphics.line(x - bodyradius, screeny, x - bodyradius, screeny - bodyheight)
-        love.graphics.line(x + bodyradius, screeny, x + bodyradius, screeny - bodyheight)
-        if attackradius > 0 and attackangle then
-            local attackarc = self.attackarc
-            love.graphics.setColor(1, .5, .5)
-            if attackarc > 0 then
-                love.graphics.arc("line", x, screeny, attackradius, attackangle - attackarc, attackangle + attackarc)
-                love.graphics.arc("line", x, screeny - bodyheight, attackradius, attackangle - attackarc, attackangle + attackarc)
-                local c1, s1 = attackradius*cos(attackangle-attackarc), attackradius*sin(attackangle-attackarc)
-                local c2, s2 = attackradius*cos(attackangle+attackarc), attackradius*sin(attackangle+attackarc)
-                love.graphics.line(x + c1, screeny + s1, x + c1, screeny + s1 - bodyheight)
-                love.graphics.line(x + c2, screeny + s2, x + c2, screeny + s2 - bodyheight)
-                local c = cos(attackangle)
-                local d = cos(attackarc)
-                if c > d then
-                    love.graphics.line(x + attackradius, screeny, x + attackradius, screeny - bodyheight)
-                elseif c < -d then
-                    love.graphics.line(x - attackradius, screeny, x - attackradius, screeny - bodyheight)
-                end
-            else
-                local c, s = attackradius*cos(attackangle), attackradius*sin(attackangle)
-                love.graphics.line(x, screeny,
-                    x + c, screeny + s,
-                    x + c, screeny + s - bodyheight,
-                    x, screeny - bodyheight)
-            end
-        end
+function Character:drawSpriteShadow(fixedfrac)
+    fixedfrac = fixedfrac or 0
+    local x, y = self.x + self.velx * fixedfrac, self.y + self.vely * fixedfrac
+    love.graphics.setColor(0,0,0,.25)
+
+    local drawable =
+        self.aseanimation and self.aseanimation[self.animationframe or 1] or
+        self.aseprite and self.aseprite[self.animationframe or 1] or
+        self.tile
+
+    if drawable then
+        love.graphics.push()
+        love.graphics.translate(x, y)
+        love.graphics.rotate(self.rotation or 0)
+        love.graphics.scale(self.scalex or 1, (self.scaley or 1) / 2)
+        love.graphics.translate(-self.spriteoriginx or 0, -self.spriteoriginy or 0)
+        drawable:draw()
+        love.graphics.pop()
+    end
+end
+
+function Character:drawBodyShape(fixedfrac)
+    fixedfrac = fixedfrac or 0
+    local x, y = self.x + self.velx * fixedfrac, self.y + self.vely * fixedfrac
+    love.graphics.setColor(.5, .5, 1)
+    local bodyradius, bodyheight = self.bodyradius, self.bodyheight
+    local screeny = y - self.z
+    love.graphics.circle("line", x, screeny, bodyradius)
+    love.graphics.circle("line", x, screeny - bodyheight, bodyradius)
+    love.graphics.line(x - bodyradius, screeny, x - bodyradius, screeny - bodyheight)
+    love.graphics.line(x + bodyradius, screeny, x + bodyradius, screeny - bodyheight)
+end
+
+function Character:drawAttackShape(fixedfrac)
+    local attackangle = self.attackangle
+    local attackradius = self.attackradius
+    if attackradius <= 0 or not attackangle then
+        return
     end
 
-    love.graphics.setColor(1,1,1,1)
+    fixedfrac = fixedfrac or 0
+    local x, y = self.x + self.velx * fixedfrac, self.y + self.vely * fixedfrac
+    local bodyheight = self.bodyheight
+    local screeny = y - self.z
+    local attackarc = self.attackarc
+    love.graphics.setColor(1, .5, .5)
+    if attackarc > 0 then
+        love.graphics.arc("line", x, screeny, attackradius, attackangle - attackarc, attackangle + attackarc)
+        love.graphics.arc("line", x, screeny - bodyheight, attackradius, attackangle - attackarc, attackangle + attackarc)
+        local c1, s1 = attackradius*cos(attackangle-attackarc), attackradius*sin(attackangle-attackarc)
+        local c2, s2 = attackradius*cos(attackangle+attackarc), attackradius*sin(attackangle+attackarc)
+        love.graphics.line(x + c1, screeny + s1, x + c1, screeny + s1 - bodyheight)
+        love.graphics.line(x + c2, screeny + s2, x + c2, screeny + s2 - bodyheight)
+        local c = cos(attackangle)
+        local d = cos(attackarc)
+        if c > d then
+            love.graphics.line(x + attackradius, screeny, x + attackradius, screeny - bodyheight)
+        elseif c < -d then
+            love.graphics.line(x - attackradius, screeny, x - attackradius, screeny - bodyheight)
+        end
+    else
+        local c, s = attackradius*cos(attackangle), attackradius*sin(attackangle)
+        love.graphics.line(x, screeny,
+            x + c, screeny + s,
+            x + c, screeny + s - bodyheight,
+            x, screeny - bodyheight)
+    end
 end
 
 function Character:disappear()
