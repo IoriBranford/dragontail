@@ -123,7 +123,7 @@ end
 ---@return number y
 ---@return number? penex x penetration. Non-0 = penetrating; 0 = touching; nil = no contact
 ---@return number? peney y penetration. Non-0 = penetrating; 0 = touching; nil = no contact
-function Boundary:keepCircleInside(x, y, r)
+function Boundary:old_keepCircleInside(x, y, r)
     local selfx, selfy = self.x, self.y
     x, y = x - selfx, y - selfy
     local rsq = r*r
@@ -152,6 +152,46 @@ function Boundary:keepCircleInside(x, y, r)
     end)
 
     return x + selfx, y + selfy, totalpenex, totalpeney
+end
+
+function Boundary:keepCircleInside(x, y, r)
+    -- get if point in polygon
+    local points = assert(self.points)
+    x, y = x - self.x, y - self.y
+    local inside = math.pointinpolygon(points, x, y)
+    if not self.outward then
+        inside = not inside
+    end
+    -- get nearest point on polygon
+    local nearestx, nearesty, nearesti, nearestj = math.nearestpolygonpoint(points, x, y)
+    local nearestdsq = distsq(x, y, nearestx, nearesty)
+    -- if not in polygon, and nearest point farther than radius, then no collision
+    if not inside and nearestdsq > r*r then
+        return x + self.x, y + self.y
+    end
+
+    -- move circle out of polygon in direction of nearest point
+    local dist = sqrt(nearestdsq)
+    local nx, ny
+    if dist == 0 then
+        local x1, y1 = points[nearesti-1], points[nearesti]
+        local x2, y2 = points[nearestj-1], points[nearestj]
+        nx, ny = norm(rot90(x2-x1, y2-y1, 1))
+    else
+        nx, ny = (nearestx - x)/dist, (nearesty - y)/dist
+    end
+    local pene
+    if inside then
+        pene = -r - dist
+    else
+        pene = r - dist
+    end
+    local penex, peney = nx * pene, ny * pene
+    x, y = x - penex, y - peney
+
+    return x + self.x, y + self.y, penex, peney
+
+    -- TODO if needed, collision vs concave corners
 end
 
 ---@return number x
