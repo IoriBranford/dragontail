@@ -327,7 +327,7 @@ function Player:control()
         if runningtime then
             movespeed, turnspeed, acceltime = 8, pi/60, 1
         else
-            movespeed, turnspeed, acceltime = 4, pi/8, 8
+            movespeed, turnspeed, acceltime = 4, pi/8, 4
         end
 
         facex, facey = updateFace(facex, facey, targetfacex, targetfacey, turnspeed)
