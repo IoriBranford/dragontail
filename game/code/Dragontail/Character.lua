@@ -349,7 +349,7 @@ end
 function Character:drawSpriteShadow(fixedfrac)
     fixedfrac = fixedfrac or 0
     local x, y = self.x + self.velx * fixedfrac, self.y + self.vely * fixedfrac
-    love.graphics.setColor(0,0,0,.25)
+    love.graphics.setColor(0,0,0)
 
     local drawable =
         self.aseanimation and self.aseanimation[self.animationframe or 1] or
