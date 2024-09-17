@@ -91,7 +91,7 @@ function Stage.init(stagefile)
     end
 
     Characters.spawn({
-        x = camera.x + 160, y = camera.y + 180, type = "Rose"
+        x = camera.x + camera.width/4, y = camera.y + camera.height/2, type = "Rose"
     })
     for i = firstroomindex - 1, 1, -1 do
         local prevroom = map.layers.rooms[i]
