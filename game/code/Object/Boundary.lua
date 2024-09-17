@@ -162,29 +162,35 @@ end
 ---@return number? penez z penetration. Non-0 = penetrating; 0 = touching; nil = no contact
 function Boundary:keepCylinderInside(x, y, z, r, h)
     local selfz, selfh = self.z, self.bodyheight
-    local penez
-    if self.outward and z + h >= selfz and selfz + selfh >= z
-    or z + h >= selfz + selfh or selfz >= z then
-        if math.pointinpolygon(self.points, x - self.x, y - self.y) then
-            local iz, iz2
-            if self.outward then
-                iz, iz2 = max(z, selfz), min(z+h, selfz+selfh)
-            else
-                if z <= selfz then
-                    iz, iz2 = z, selfz
+    local penex, peney, penez
+    local newx, newy, newz = x, y, z
+    if self.outward then
+        if z + h >= selfz and selfz + selfh >= z then
+            local nearestx, nearesty = math.nearestpolygonpoint(self.points, x - self.x, y - self.y)
+            if math.pointinpolygon(self.points, x - self.x, y - self.y)
+            or distsq(nearestx, nearesty, x - self.x, y - self.y) <= r*r then
+                local iz, iz2 = max(z, selfz), min(z+h, selfz+selfh)
+                penez = iz == z and iz - iz2 or iz2 - iz
+                newz = z - penez
+                newx, newy, penex, peney = self:keepCircleInside(x, y, r)
+                if penex and peney and math.lensq(penex, peney) <= penez*penez then
+                    newz, penez = z, nil
                 else
-                    iz, iz2 = selfz + selfh, z + h
+                    newx, newy, penex, peney = x, y, nil, nil
                 end
             end
-            penez = iz == z and iz - iz2 or iz2 - iz
-            z = z - penez
         end
+    else
+        if z <= selfz then
+            penez = z - selfz
+            newz = z - penez
+        elseif z + h >= selfz + selfh then
+            penez = (z + h) - (selfz + selfh)
+            newz = z - penez
+        end
+        newx, newy, penex, peney = self:keepCircleInside(x, y, r)
     end
-    local penex, peney
-    if not self.outward or z + h > selfz and selfz + selfh > z then
-        x, y, penex, peney = self:keepCircleInside(x, y, r)
-    end
-    return x, y, z, penex, peney, penez
+    return newx, newy, newz, penex, peney, penez
 end
 
 ---@param raycast Raycast
