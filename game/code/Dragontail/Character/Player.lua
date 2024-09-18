@@ -364,15 +364,20 @@ function Player:control()
 
             local oobx, ooby = findWallCollision(self)
             if oobx or ooby then
-                Audio.play(self.bodyslamsound)
-                Characters.spawn(
-                    {
-                        type = "spark-bighit",
-                        x = self.x + oobx*self.bodyradius,
-                        y = self.y + ooby*self.bodyradius
-                    }
-                )
-                return "straightAttack", "running-elbow", atan2(vely, velx)
+                local oobdotvel = dot(oobx, ooby, velx, vely)
+                local speed = math.len(velx, vely)
+                local ooblen = math.len(oobx, ooby)
+                if oobdotvel > speed*ooblen/2 then
+                    Audio.play(self.bodyslamsound)
+                    Characters.spawn(
+                        {
+                            type = "spark-bighit",
+                            x = self.x + oobx*self.bodyradius,
+                            y = self.y + ooby*self.bodyradius
+                        }
+                    )
+                    return "straightAttack", "running-elbow", atan2(vely, velx)
+                end
             end
 
             if runningtime < 15 then
