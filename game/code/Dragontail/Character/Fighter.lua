@@ -22,6 +22,11 @@ function Fighter:startHolding(opponent)
     opponent.heldby = self
 end
 
+function Fighter:isHolding(opponent)
+    return self.heldopponent == opponent
+        and opponent.heldby == self
+end
+
 function Fighter:stopHolding(opponent)
     if self then
         self.heldopponent = nil
@@ -127,7 +132,7 @@ function Fighter:held(holder)
     self:stopAttack()
     self:stopGuarding()
     self.velx, self.vely = 0, 0
-    while self.heldby == holder do
+    while holder:isHolding(self) do
         local dx, dy = holder.x - self.x, holder.y - self.y
         if dx == 0 and dy == 0 then
             dx = 1
