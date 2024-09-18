@@ -100,6 +100,12 @@ function Fighter:hurt(attacker)
         return hiteffect, attacker, attackangle
     end
     Audio.play(self.hurtsound)
+    if self.heldby then
+        if self.heldby:isHolding(self) then
+            return "held", self.heldby
+        end
+        self.heldby:stopHolding(self)
+    end
     while pushbackspeed > 0 do
         pushbackspeed = Fighter.updateSlideSpeed(self, attackangle, pushbackspeed)
         self:keepInBounds()
@@ -110,9 +116,6 @@ function Fighter:hurt(attacker)
         print("No aiafterhurt or recoverai for "..self.type)
         Fighter.stopHolding(self.heldby, self)
         return "defeat", attacker
-    end
-    if self.heldby then
-        return "held", self.heldby
     end
     return recoverai
 end
