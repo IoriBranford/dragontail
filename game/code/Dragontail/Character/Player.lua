@@ -751,7 +751,7 @@ function Player:straightAttack(attacktype, angle, heldenemy)
         end
         return doComboAttack(self, facex, facey, heldenemy)
     end
-    if heldenemy then
+    if heldenemy and heldenemy.health > 0 then
         return "hold", heldenemy
     end
     return "control"
