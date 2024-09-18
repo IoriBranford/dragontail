@@ -1,0 +1,73 @@
+{
+    "bodyTypeName": "male",
+    "url": "https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator/#?body=Body_color_light&head=Human_male_light&bandana=Bandana_slate&vest=Vest_open_slate&legs=Pants_slate&shoes=Sandals_tan&weapon=Dagger_dagger&eyes=Eyes_gray",
+    "spritesheets": "https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator/spritesheets/",
+    "version": 1,
+    "datetime": "9/18/2024, 11:45:52 AM",
+    "credits": "Authors: bluecarrot16, Benjamin K. Smith (BenCreating), Evert, Eliza Wyatt (ElizaWy), TheraHedwig, MuffinElZangano, Durrani, Johannes Sj?lund (wulax), Stephen Challener (Redshrike), Mark Weyer, Johannes Sjölund (wulax), Matthew Krohn (makrohn), Fabzy, Thane Brimhall (pennomi), laetissima, JaidynReiman, Joe White, Nila122\n\n- body/bodies/male/light.png: by bluecarrot16, Benjamin K. Smith (BenCreating), Evert, Eliza Wyatt (ElizaWy), TheraHedwig, MuffinElZangano, Durrani, Johannes Sj?lund (wulax), Stephen Challener (Redshrike). License(s): CC-BY-SA 3.0, GPL 3.0. see details at https://opengameart.org/content/lpc-character-bases; 'Thick' Male Revised Run/Climb by JaidynReiman (based on ElizaWy's LPC Revised)\n    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles\n    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites\n    - https://opengameart.org/content/lpc-male-jumping-animation-by-durrani\n    - https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle\n    - https://opengameart.org/content/lpc-revised-character-basics\n\n- head/heads/human/male/light.png: by bluecarrot16, Benjamin K. Smith (BenCreating), Stephen Challener (Redshrike). License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. original head by Redshrike; tweaks by BenCreating; modular version by bluecarrot16\n    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles\n    - https://opengameart.org/content/lpc-character-bases\n\n- eyes/human/adult/gray.png: by Mark Weyer, Johannes Sjölund (wulax), Matthew Krohn (makrohn), Stephen Challener (Redshrike). License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. original by Redshrike, color by Mark Weyer & Wulax, mapped to all frames by Matthew Krohn & JaidynReiman\n    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles\n    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites\n\n- hat/pirate/bandana/male/slate.png: by bluecarrot16, Fabzy. License(s): CC-BY-SA 3.0. \n    - https://opengameart.org/content/the-revolution-hair\n    - https://opengameart.org/content/lpc-pirates\n\n- torso/clothes/vest_open/male/slate.png: by bluecarrot16, Thane Brimhall (pennomi), laetissima. License(s): CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/lpc-2-characters\n    - https://opengameart.org/content/lpc-gentleman\n    - https://opengameart.org/content/lpc-pirates\n\n- legs/pants/male/slate.png: by bluecarrot16, JaidynReiman, Joe White, Matthew Krohn (makrohn), Johannes Sjölund (wulax). License(s): CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles\n    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites\n\n- feet/sandals/male/tan.png: by Nila122, JaidynReiman, Matthew Krohn (makrohn), Johannes Sjölund (wulax). License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 2.0, GPL 3.0. \n    - https://opengameart.org/content/lpc-roman-armor\n\n- weapon/sword/dagger/dagger.png: by bluecarrot16, Johannes Sjölund (wulax), Matthew Krohn (makrohn). License(s): CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites\n    - https://opengameart.org/content/lpc-extended-weapon-animations\n\n- weapon/sword/dagger/behind/dagger.png: by bluecarrot16, Johannes Sjölund (wulax), Matthew Krohn (makrohn). License(s): CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites\n    - https://opengameart.org/content/lpc-extended-weapon-animations",
+    "layers": [
+      {
+        "fileName": "weapon/sword/dagger/behind/dagger.png",
+        "zPos": 9,
+        "parentName": "weapon",
+        "name": "Dagger",
+        "variant": "dagger"
+      },
+      {
+        "fileName": "body/bodies/male/light.png",
+        "zPos": 10,
+        "parentName": "body",
+        "name": "Body color",
+        "variant": "light"
+      },
+      {
+        "fileName": "feet/sandals/male/tan.png",
+        "zPos": 15,
+        "parentName": "shoes",
+        "name": "Sandals",
+        "variant": "tan"
+      },
+      {
+        "fileName": "legs/pants/male/slate.png",
+        "zPos": 20,
+        "parentName": "legs",
+        "name": "Pants",
+        "variant": "slate"
+      },
+      {
+        "fileName": "torso/clothes/vest_open/male/slate.png",
+        "zPos": 45,
+        "parentName": "vest",
+        "name": "Vest open",
+        "variant": "slate"
+      },
+      {
+        "fileName": "head/heads/human/male/light.png",
+        "zPos": 100,
+        "parentName": "head",
+        "name": "Human male",
+        "variant": "light"
+      },
+      {
+        "fileName": "eyes/human/adult/gray.png",
+        "zPos": 105,
+        "parentName": "eyes",
+        "name": "Eyes",
+        "variant": "gray"
+      },
+      {
+        "fileName": "hat/pirate/bandana/male/slate.png",
+        "zPos": 120,
+        "parentName": "bandana",
+        "name": "Bandana",
+        "variant": "slate"
+      },
+      {
+        "fileName": "weapon/sword/dagger/dagger.png",
+        "zPos": 140,
+        "parentName": "weapon",
+        "name": "Dagger",
+        "variant": "dagger"
+      }
+    ]
+  }
