@@ -2,29 +2,32 @@
 ---@field shader love.Shader?
 local Canvas = class()
 
-function Canvas:_init(width, height)
+function Canvas:_init(width, height, inputscale)
+    inputscale = inputscale or 1
+    width, height = math.floor(width*inputscale), math.floor(height*inputscale)
     self.canvas = love.graphics.newCanvas(width, height)
     self.rotscale = love.math.newTransform()
     self.transform = love.math.newTransform()
+    self.inputscale = inputscale
 end
 
-function Canvas.GetScaleFactor(canvaswidth, canvasheight, screenwidth, screenheight, rotation, integerscale)
+function Canvas.GetOutputScaleFactor(canvaswidth, canvasheight, screenwidth, screenheight, rotation, integerscale)
     local ghw = screenwidth / 2
     local ghh = screenheight / 2
     local chw = canvaswidth / 2
     local chh = canvasheight / 2
 
-    local canvasscale
+    local outputscale
     if math.abs(math.sin(rotation)) > math.sqrt(2)/2 then
-        canvasscale = math.min(ghh / chw, ghw / chh)
+        outputscale = math.min(ghh / chw, ghw / chh)
     else
-        canvasscale = math.min(ghw / chw, ghh / chh)
+        outputscale = math.min(ghw / chw, ghh / chh)
     end
 
-    if integerscale then
-        canvasscale = math.floor(canvasscale)
+    if integerscale and outputscale >= 1 then
+        outputscale = math.floor(outputscale)
     end
-    return canvasscale
+    return outputscale
 end
 
 function Canvas:transformToScreen(screenwidth, screenheight, rotation, integerscale)
@@ -34,11 +37,11 @@ function Canvas:transformToScreen(screenwidth, screenheight, rotation, integersc
     local chw = canvas:getWidth() / 2
     local chh = canvas:getHeight() / 2
 
-    local canvasscale = Canvas.GetScaleFactor(canvas:getWidth(), canvas:getHeight(), screenwidth, screenheight, rotation, integerscale)
+    local outputscale = Canvas.GetOutputScaleFactor(canvas:getWidth(), canvas:getHeight(), screenwidth, screenheight, rotation, integerscale)
 
     local rotscale = love.math.newTransform()
     rotscale:rotate(rotation)
-    rotscale:scale(canvasscale)
+    rotscale:scale(outputscale)
     self.rotscale = rotscale
 
     local transform = love.math.newTransform()
@@ -56,7 +59,10 @@ end
 function Canvas:drawOn(draw)
     local oldcanvas = love.graphics.getCanvas()
     love.graphics.setCanvas(self.canvas)
+    love.graphics.push()
+    love.graphics.scale(self.inputscale)
     draw()
+    love.graphics.pop()
     love.graphics.setCanvas(oldcanvas)
 end
 

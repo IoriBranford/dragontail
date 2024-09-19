@@ -69,7 +69,7 @@ function Gui:resize(screenwidth, screenheight)
     --     self[i]:reanchor(self.width, self.height, screenwidth, screenheight)
     -- end
 
-    local scalefactor = Canvas.GetScaleFactor(self.width, self.height, screenwidth, screenheight, math.rad(Config.rotation))
+    local scalefactor = Canvas.GetOutputScaleFactor(self.width, self.height, screenwidth, screenheight, math.rad(Config.rotation))
     local canvaswidth = math.ceil(screenwidth/scalefactor)
     local canvasheight = math.ceil(screenheight/scalefactor)
     if canvaswidth % 2 == 1 then
