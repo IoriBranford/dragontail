@@ -63,13 +63,18 @@ function GamePhase.quitphase()
     Database.clear()
 end
 
+function GamePhase.setPaused(newpaused)
+    paused = newpaused
+    Gui.gameplay.pausemenu.visible = paused
+end
+
 local keypressed = {}
 function keypressed.f2()
     love.event.loadphase("Dragontail.GamePhase")
 end
 
 function keypressed.p()
-    paused = not paused
+    GamePhase.setPaused(not paused)
 end
 
 function keypressed.s()
@@ -83,21 +88,20 @@ function keypressed.s()
     end
 end
 
+---@param gamepad love.Joystick
 function GamePhase.gamepadpressed(gamepad, button)
-    if paused then
-        if button == "back" then
+    if button == "back" then
+        if gamepad:isGamepadDown("start") then
             love.event.loadphase("Dragontail.GamePhase")
         end
-        paused = false
-        return
     elseif button == "start" then
-        paused = true
+        GamePhase.setPaused(not paused)
     end
 end
 
 function GamePhase.keypressed(key)
     if paused then
-        paused = false
+        GamePhase.setPaused(false)
         return
     end
     local kp = keypressed[key]
@@ -121,9 +125,6 @@ function GamePhase.draw(fixedfrac)
     love.graphics.clear(.25, .25, .25)
     stagecanvas:drawOn(function()
         Stage.draw(fixedfrac)
-        if paused then
-            love.graphics.printf("PAUSE\n\nPress any key to resume", 0, 128, 640, "center")
-        end
     end)
     stagecanvas:draw()
     Gui:draw()
