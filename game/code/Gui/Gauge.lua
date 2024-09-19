@@ -18,8 +18,11 @@ function Gauge:draw()
     if w <= 0 or h <= 0 then
         return
     end
-    local x, y = self.gui.x + self.gaugex, self.gui.y + self.gaugey
-    love.graphics.setScissor(x, y, w, h)
+    local x, y = self.layer:getWorldPosition()
+    x, y = x + self.gaugex, y + self.gaugey
+    local x2, y2 = love.graphics.transformPoint(x+w, y+h)
+    x, y = love.graphics.transformPoint(x, y)
+    love.graphics.setScissor(x, y, x2-x, y2-y)
     self:baseDraw()
     love.graphics.setScissor()
 end
