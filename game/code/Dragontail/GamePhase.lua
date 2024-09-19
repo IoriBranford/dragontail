@@ -48,13 +48,15 @@ function GamePhase.loadphase()
 end
 
 function GamePhase.resize(screenwidth, screenheight)
-    stagecanvas = Canvas(Stage.CameraWidth, Stage.CameraHeight)
+    local camerawidth, cameraheight = Stage.CameraWidth, Stage.CameraHeight
+    local inputscale = math.ceil(math.min(screenwidth/camerawidth, screenheight/cameraheight))
+    stagecanvas = Canvas(camerawidth, cameraheight, inputscale)
     stagecanvas:transformToScreen(screenwidth, screenheight, math.rad(Config.rotation), Config.canvasscaleint)
     stagecanvas:setFiltered(Config.canvasscalesoft)
 
     Gui:showOnlyNamed("gameplay")
     Gui.gameplay:showOnlyNamed("hud")
-    Gui:resize(screenwidth, screenheight)
+    Gui.canvas = stagecanvas
 end
 
 function GamePhase.quitphase()

@@ -61,6 +61,10 @@ return {
     ]],
     defaultconfig = Platform.overrideConfig {
         _version = 2,
+
+        canvasscaleint = false,
+        canvasscalesoft = true,
+
         drawbodies = false,
         drawai = false,
         exhibit = false,
