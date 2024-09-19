@@ -104,7 +104,7 @@ function Fighter:hurt(attacker)
         if self.heldby:isHolding(self) then
             return "held", self.heldby
         end
-        self.heldby:stopHolding(self)
+        self.heldby = nil
     end
     while pushbackspeed > 0 do
         pushbackspeed = Fighter.updateSlideSpeed(self, attackangle, pushbackspeed)
