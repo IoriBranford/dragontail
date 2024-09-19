@@ -9,8 +9,8 @@ local Characters  = require "Dragontail.Stage.Characters"
 local CameraPath  = require "Object.CameraPath"
 local Character   = require "Dragontail.Character"
 local Stage = {
-    CameraWidth = 640,
-    CameraHeight = 360
+    CameraWidth = 480,
+    CameraHeight = 270
 }
 local sin = math.sin
 local max = math.max

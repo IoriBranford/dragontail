@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="23" nextobjectid="105">
+ <editorsettings>
+  <chunksize width="20" height="12"/>
+  <export target="stage_banditcave.lua" format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" source="tilesets/caves/caves.tsx"/>
+ <tileset firstgid="2449" source="tilesets/grassland.tsx"/>
+ <tileset firstgid="5265" source="mapobjects/bandit/bandits.tsx"/>
+ <tileset firstgid="5285" source="mapobjects/items.tsx"/>
+ <layer id="2" name="floor" width="200" height="12">
+  <data encoding="base64" compression="zlib"/>
+ </layer>
+ <layer id="1" name="wall" width="200" height="12">
+  <data encoding="base64" compression="zlib"/>
+ </layer>
+ <layer id="4" name="ceiling" width="200" height="12">
+  <data encoding="base64" compression="zlib"/>
+ </layer>
+ <group id="14" name="rooms">
+  <objectgroup id="7" name="learnmovement" class="Room">
+   <object id="21" template="mapobjects/OutwardBoundary.tx" x="0" y="0">
+    <properties>
+     <property name="bodyheight" type="float" value="64"/>
+     <property name="drawz" type="float" value="-1"/>
+    </properties>
+    <polygon points="0,-160 0,256 128,128 192,128 256,64 960,64 960,-160"/>
+   </object>
+   <object id="44" template="mapobjects/OutwardBoundary.tx" x="0" y="352" visible="1">
+    <properties>
+     <property name="bodyheight" type="float" value="32"/>
+     <property name="drawz" type="float" value="1"/>
+    </properties>
+    <polygon points="0,-160 0,128 960,128 960,0 320,0 256,-64 160,-64 64,-160"/>
+   </object>
+   <object id="27" template="mapobjects/CameraPath.tx" x="320" y="192">
+    <polyline points="0,0 320,0"/>
+   </object>
+   <object id="23" gid="5288" x="728" y="224" width="64" height="32"/>
+   <object id="24" gid="5288" x="864" y="168" width="64" height="32"/>
+   <object id="25" gid="5285" x="784" y="136" width="64" height="32"/>
+   <object id="26" gid="5286" x="848" y="248" width="64" height="32"/>
+  </objectgroup>
+  <objectgroup id="8" name="learnattack" class="Room">
+   <object id="15" gid="5266" x="992" y="120" width="64" height="64"/>
+   <object id="50" gid="5266" x="184" y="160" width="64" height="64"/>
+   <object id="16" gid="5266" x="992" y="344" width="64" height="64"/>
+   <object id="45" gid="5266" x="992" y="224" width="64" height="64"/>
+   <object id="47" gid="5266" x="184" y="264" width="64" height="64"/>
+   <object id="10" gid="5266" x="1088" y="152" width="64" height="64"/>
+   <object id="49" gid="5266" x="280" y="192" width="64" height="64"/>
+   <object id="11" gid="5266" x="1088" y="312" width="64" height="64"/>
+   <object id="46" gid="5266" x="1088" y="224" width="64" height="64"/>
+   <object id="48" gid="5266" x="280" y="264" width="64" height="64"/>
+  </objectgroup>
+  <objectgroup id="9" name="tolearnrunning" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="5"/>
+   </properties>
+   <object id="22" template="mapobjects/OutwardBoundary.tx" x="960" y="0">
+    <properties>
+     <property name="bodyheight" type="float" value="64"/>
+     <property name="drawz" type="float" value="-1"/>
+    </properties>
+    <polygon points="0,64 32,64 96,0 640,0 640,-160 0,-160"/>
+   </object>
+   <object id="28" template="mapobjects/OutwardBoundary.tx" x="1600" y="256" rotation="0">
+    <properties>
+     <property name="bodyheight" type="float" value="32"/>
+     <property name="drawz" type="float" value="1"/>
+    </properties>
+    <polygon points="0,32 -352,32 -416,96 -640,96 -640,224 0,224"/>
+   </object>
+   <object id="29" template="mapobjects/CameraPath.tx" x="640" y="192">
+    <polyline points="0,0 320,0 640,-64"/>
+   </object>
+   <object id="19" gid="5266" x="1280" y="120" width="64" height="64"/>
+   <object id="36" gid="5266" x="1408" y="88" width="64" height="64"/>
+   <object id="52" gid="5266" x="1144" y="144" width="64" height="64"/>
+   <object id="54" gid="5266" x="1016" y="168" width="64" height="64"/>
+   <object id="30" gid="5266" x="1536" y="56" width="64" height="64"/>
+   <object id="20" gid="5266" x="1280" y="216" width="64" height="64"/>
+   <object id="35" gid="5266" x="1408" y="184" width="64" height="64"/>
+   <object id="51" gid="5266" x="1144" y="240" width="64" height="64"/>
+   <object id="53" gid="5266" x="1016" y="264" width="64" height="64"/>
+   <object id="31" gid="5266" x="1536" y="152" width="64" height="64"/>
+  </objectgroup>
+  <objectgroup id="10" name="learnrunning" class="Room">
+   <object id="32" gid="5270" x="1632" y="56" width="64" height="64"/>
+   <object id="33" gid="5270" x="1632" y="152" width="64" height="64"/>
+   <object id="56" gid="5270" x="928" y="168" width="64" height="64"/>
+   <object id="34" gid="5270" x="1632" y="248" width="64" height="64"/>
+   <object id="55" gid="5270" x="928" y="264" width="64" height="64"/>
+  </objectgroup>
+  <objectgroup id="11" name="tolearnthrowing" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="5"/>
+   </properties>
+   <object id="38" template="mapobjects/OutwardBoundary.tx" x="1600" y="-160">
+    <properties>
+     <property name="bodyheight" type="float" value="64"/>
+     <property name="drawz" type="float" value="-1"/>
+    </properties>
+    <polygon points="0,0 0,160 160,160 320,320 320,480 448,608 640,608 640,0"/>
+   </object>
+   <object id="39" template="mapobjects/OutwardBoundary.tx" x="1600" y="288">
+    <properties>
+     <property name="bodyheight" type="float" value="32"/>
+     <property name="drawz" type="float" value="1"/>
+    </properties>
+    <polygon points="0,0 0,384 640,384 640,352 256,352 32,128 32,32"/>
+   </object>
+   <object id="40" template="mapobjects/CameraPath.tx" x="1440" y="128">
+    <polyline points="0,0 288,0 416,96 480,256 480,352"/>
+   </object>
+   <object id="42" gid="5288" x="1728" y="320" width="64" height="32"/>
+   <object id="43" gid="5288" x="1776" y="376" width="64" height="32"/>
+   <object id="58" gid="5278" x="1808" y="304" width="64" height="64"/>
+   <object id="84" gid="5278" x="2000" y="608" width="64" height="64"/>
+   <object id="59" gid="5278" x="1864" y="232" width="64" height="64"/>
+   <object id="87" gid="5278" x="2056" y="536" width="64" height="64"/>
+   <object id="60" gid="5266" x="1736" y="288" width="64" height="64"/>
+   <object id="85" gid="5266" x="1928" y="592" width="64" height="64"/>
+   <object id="82" gid="5266" x="1792" y="240" width="64" height="64"/>
+   <object id="86" gid="5266" x="1984" y="544" width="64" height="64"/>
+   <object id="83" gid="5266" x="1848" y="184" width="64" height="64"/>
+   <object id="88" gid="5266" x="2040" y="488" width="64" height="64"/>
+  </objectgroup>
+  <objectgroup id="13" name="learnthrowing" class="Room">
+   <object id="41" gid="5270" x="2272" y="568" width="64" height="64"/>
+   <object id="61" gid="5270" x="1768" y="296" width="64" height="64"/>
+   <object id="57" gid="5278" x="2272" y="624" width="64" height="64"/>
+   <object id="90" gid="5278" x="1880" y="296" width="64" height="64"/>
+   <object id="62" gid="5278" x="2272" y="504" width="64" height="64"/>
+   <object id="89" gid="5278" x="1664" y="296" width="64" height="64"/>
+  </objectgroup>
+  <objectgroup id="15" name="tolearngrab" class="Room">
+   <object id="63" template="mapobjects/OutwardBoundary.tx" x="2240" y="640">
+    <properties>
+     <property name="bodyheight" type="float" value="32"/>
+    </properties>
+    <polygon points="0,0 0,32 640,32 640,-160 480,-320 480,-160 320,0"/>
+   </object>
+   <object id="64" template="mapobjects/OutwardBoundary.tx" x="2240" y="416">
+    <properties>
+     <property name="bodyheight" type="float" value="64"/>
+    </properties>
+    <polygon points="0,-224 0,32 32,32 192,-128 256,-128 256,-224"/>
+   </object>
+   <object id="65" template="mapobjects/OutwardBoundary.tx" x="2656" y="512">
+    <properties>
+     <property name="bodyheight" type="float" value="64"/>
+    </properties>
+    <polygon points="-32,-320 -32,-224 32,-224 224,-32 224,-320"/>
+   </object>
+   <object id="66" template="mapobjects/CameraPath.tx" x="2080" y="480">
+    <polyline points="0,0 160,0 320,-32 480,-96"/>
+   </object>
+  </objectgroup>
+  <objectgroup id="16" name="intoentryhall" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="3"/>
+   </properties>
+   <object id="67" template="mapobjects/OutwardBoundary.tx" x="2464" y="-160">
+    <polygon points="0,-32 0,352 32,352 32,224 224,32 1120,32 1184,96 1184,288 1248,352 1280,352 1280,-32"/>
+   </object>
+   <object id="68" template="mapobjects/OutwardBoundary.tx" x="2624" y="160">
+    <properties>
+     <property name="bodyheight" type="float" value="32"/>
+    </properties>
+    <polygon points="0,0 0,32 672,32 640,0"/>
+   </object>
+   <object id="69" template="mapobjects/CameraPath.tx" x="2560" y="216">
+    <polyline points="0,0 128,-216 320,-216"/>
+   </object>
+   <object id="99" gid="5266" x="2672" y="0" width="64" height="64"/>
+   <object id="100" gid="5266" x="2760" y="128" width="64" height="64"/>
+   <object id="102" gid="5266" x="2720" y="56" width="64" height="64"/>
+  </objectgroup>
+  <objectgroup id="22" name="entryhall" class="Room">
+   <object id="94" gid="5274" x="3552" y="-72" width="64" height="64"/>
+   <object id="95" gid="5274" x="3504" y="-8" width="64" height="64"/>
+   <object id="96" gid="5270" x="3232" y="48" width="64" height="64"/>
+   <object id="97" gid="5274" x="3504" y="112" width="64" height="64"/>
+   <object id="98" gid="5274" x="3568" y="160" width="64" height="64"/>
+   <object id="104" template="mapobjects/CameraPath.tx" x="2688" y="0">
+    <polyline points="192,0 640,0"/>
+   </object>
+   <object id="101" gid="5270" x="3224" y="-64" width="64" height="64"/>
+   <object id="103" gid="5270" x="3224" y="144" width="64" height="64"/>
+  </objectgroup>
+  <objectgroup id="17" name="guardroom" class="Room">
+   <object id="70" template="mapobjects/OutwardBoundary.tx" x="3232" y="192">
+    <polygon points="480,0 512,32 768,32 768,0"/>
+   </object>
+   <object id="71" template="mapobjects/OutwardBoundary.tx" x="3200" y="416">
+    <properties>
+     <property name="bodyheight" type="float" value="32"/>
+    </properties>
+    <polygon points="0,-224 0,64 512,64 480,32 96,32 32,-32 32,-160 96,-224"/>
+   </object>
+   <object id="78" template="mapobjects/CameraPath.tx" x="3392" y="96">
+    <polyline points="0,0 128,192"/>
+   </object>
+  </objectgroup>
+  <objectgroup id="18" name="armory" class="Room">
+   <object id="72" template="mapobjects/OutwardBoundary.tx" x="3680" y="448">
+    <properties>
+     <property name="bodyheight" type="float" value="32"/>
+    </properties>
+    <polygon points="32,32 0,32 0,320 800,320 800,192 672,192 608,256 256,256"/>
+   </object>
+   <object id="73" template="mapobjects/OutwardBoundary.tx" x="3840" y="256">
+    <polygon points="0,-32 192,160 512,160 576,224 640,224 640,-32"/>
+   </object>
+   <object id="79" template="mapobjects/CameraPath.tx" x="3520" y="288">
+    <polyline points="0,0 640,288"/>
+   </object>
+  </objectgroup>
+  <objectgroup id="19" name="messhall" class="Room">
+   <object id="74" template="mapobjects/OutwardBoundary.tx" x="4480" y="96">
+    <polygon points="0,-96 0,320 32,288 32,32 128,-64 512,-64 608,32 640,32 640,-96"/>
+   </object>
+   <object id="75" template="mapobjects/OutwardBoundary.tx" x="4480" y="640">
+    <properties>
+     <property name="bodyheight" type="float" value="32"/>
+    </properties>
+    <polygon points="0,0 0,128 640,128 640,-384 608,-352 608,64 576,96 64,96 32,64 32,0"/>
+   </object>
+   <object id="81" template="mapobjects/CameraPath.tx" x="4160" y="576">
+    <polyline points="160,0 640,0"/>
+   </object>
+  </objectgroup>
+  <objectgroup id="21" name="messhall2" class="Room">
+   <object id="93" template="mapobjects/CameraPath.tx" x="4640" y="576">
+    <polyline points="160,0 160,-384"/>
+   </object>
+  </objectgroup>
+  <objectgroup id="20" name="arena" class="Room">
+   <object id="76" template="mapobjects/OutwardBoundary.tx" x="5120" y="0">
+    <polygon points="0,0 0,128 32,128 96,64 544,64 608,128 640,128 640,0"/>
+   </object>
+   <object id="77" template="mapobjects/OutwardBoundary.tx" x="5120" y="352">
+    <properties>
+     <property name="bodyheight" type="float" value="32"/>
+    </properties>
+    <polygon points="32,-64 0,-96 0,32 640,32 640,-224 608,-224 608,-32 576,0 64,0 32,-32"/>
+   </object>
+   <object id="80" template="mapobjects/CameraPath.tx" x="4800" y="192">
+    <polyline points="160,0 640,0"/>
+   </object>
+  </objectgroup>
+ </group>
+ <objectgroup id="3" name="notes">
+  <object id="1" x="320" y="352" width="640" height="128">
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff">Teach basic combat with first low-level enemies</text>
+  </object>
+  <object id="2" x="960" y="-160" width="640" height="128">
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Introduce dodging enemy encouraging player to use run in combat</text>
+  </object>
+  <object id="37" x="1600" y="-160" width="640" height="128">
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Teach long-range combat with stones to throw at slingers
+Avoid their stones then pick up and throw them back</text>
+  </object>
+  <object id="3" x="1920" y="-360" width="640" height="128">
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Teach grabbing with guarding enemy and barrier broken only by thrown enemy</text>
+  </object>
+  <object id="4" x="2560" y="-360" width="640" height="128">
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Entry hall with archers shooting from arrow slits</text>
+  </object>
+  <object id="5" x="3200" y="-360" width="640" height="128">
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Guard room introducing mace enemies</text>
+  </object>
+  <object id="6" x="3840" y="-360" width="640" height="128">
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Armory with mixed enemies and introducing throwable weapons</text>
+  </object>
+  <object id="7" x="4480" y="-360" width="640" height="128">
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Mess hall with food, throwable and breakable furniture, stronger mix of enemies</text>
+  </object>
+  <object id="8" x="5120" y="-360" width="640" height="128">
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Boss arena</text>
+  </object>
+  <object id="9" x="5760" y="-360" width="640" height="128">
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">End room
+
+Holding cells with captured kids</text>
+  </object>
+  <object id="13" x="0" y="-128" width="640" height="128">
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Teach movement - walking and running</text>
+  </object>
+ </objectgroup>
+</map>

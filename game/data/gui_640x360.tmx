@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="60" height="30" tilewidth="8" tileheight="9" infinite="0" nextlayerid="6" nextobjectid="8">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="80" height="45" tilewidth="8" tileheight="8" infinite="0" nextlayerid="6" nextobjectid="8">
  <editorsettings>
-  <export target="gui_480x270.lua" format="lua"/>
+  <export target="gui.lua" format="lua"/>
  </editorsettings>
  <tileset firstgid="1" source="tilesets/ui/rose-face.tsx"/>
  <group id="4" name="gameplay">
