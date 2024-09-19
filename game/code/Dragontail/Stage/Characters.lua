@@ -147,4 +147,17 @@ function Characters.update(dsecs, fixedfrac)
     end
 end
 
+local function nop() end
+
+---@param eval fun(character: Character):"break"|"return"?
+function Characters.search(eval)
+    eval = eval or nop
+    for i = 1, #allcharacters do local character = allcharacters[i]
+        local result = eval(character)
+        if result == "break" or result == "return" then
+            break
+        end
+    end
+end
+
 return Characters
