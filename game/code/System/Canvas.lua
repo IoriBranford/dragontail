@@ -80,19 +80,31 @@ function Canvas:draw()
 end
 
 function Canvas:inverseTransformVector(vecx, vecy)
-    return self.rotscale:inverseTransformPoint(vecx, vecy)
+    local inputscale = self.inputscale
+    vecx, vecy = self.rotscale:inverseTransformPoint(vecx, vecy)
+    vecx, vecy = vecx/inputscale, vecy/inputscale
+    return vecx, vecy
 end
 
 function Canvas:inverseTransformPoint(x, y)
-    return self.transform:inverseTransformPoint(x, y)
+    local inputscale = self.inputscale
+    x, y = self.transform:inverseTransformPoint(x, y)
+    x, y = x/inputscale, y/inputscale
+    return x, y
 end
 
 function Canvas:transformVector(vecx, vecy)
-    return self.rotscale:transformPoint(vecx, vecy)
+    local inputscale = self.inputscale
+    vecx, vecy = vecx*inputscale, vecy*inputscale
+    vecx, vecy = self.rotscale:transformPoint(vecx, vecy)
+    return vecx, vecy
 end
 
 function Canvas:transformPoint(x, y)
-    return self.transform:transformPoint(x, y)
+    local inputscale = self.inputscale
+    x, y = x*inputscale, y*inputscale
+    x, y = self.transform:transformPoint(x, y)
+    return x, y
 end
 
 return Canvas
