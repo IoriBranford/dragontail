@@ -380,6 +380,7 @@ function Player:control()
                             y = self.y + ooby*self.bodyradius
                         }
                     )
+                    self.hurtstun = 10
                     return "straightAttack", "running-elbow", atan2(vely, velx)
                 end
             end
