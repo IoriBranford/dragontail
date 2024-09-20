@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="60" height="30" tilewidth="8" tileheight="9" infinite="0" nextlayerid="7" nextobjectid="9">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="8" nextobjectid="12">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -51,11 +51,22 @@
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Rose</text>
    </object>
   </objectgroup>
-  <objectgroup id="6" name="pausemenu" visible="0">
+  <objectgroup id="6" name="pausemenu">
    <object id="8" name="name" x="200" y="18" width="80" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">PAUSE</text>
    </object>
   </objectgroup>
  </group>
- <group id="5" name="title"/>
+ <objectgroup id="7" name="title">
+  <object id="9" name="title" x="0" y="18" width="480" height="144">
+   <text fontfamily="Lady Radical" pixelsize="32" wrap="1" color="#ff0000" halign="center" valign="center">ROSE of
+DRAGONTAIL</text>
+  </object>
+  <object id="10" name="pressstart" x="0" y="162" width="480" height="54">
+   <text fontfamily="Lady Radical" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">press any key or button</text>
+  </object>
+  <object id="11" name="copyright" x="0" y="234" width="480" height="18">
+   <text fontfamily="Press Start 2P" pixelsize="8" wrap="1" color="#ffffff" halign="center" valign="center">© 2024 Iori Branford</text>
+  </object>
+ </objectgroup>
 </map>
