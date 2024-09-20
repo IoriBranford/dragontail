@@ -175,7 +175,13 @@ function Fighter:knockedBack(thrower, attackangle)
         oobx, ooby, oobz = self:keepInBounds()
         self.velz = self.velz - gravity
     until oobx or ooby or oobz
-    if oobx or ooby then
+    local oobdotvel = math.dot(oobx or 0, ooby or 0, self.velx, self.vely)
+    if oobdotvel > 0 then
+        oobdotvel = oobdotvel
+            / math.len(self.velx, self.vely)
+            / math.len(oobx, ooby)
+    end
+    if oobdotvel > .5 then
         return "wallBump", thrower, oobx, ooby
     end
     if oobz then
@@ -233,6 +239,7 @@ function Fighter:thrown(thrower, attackangle)
     thrownsound:play()
     local thrownslidetime = self.thrownslidetime or 10
     local oobx, ooby, oobz
+    local oobdotvel = 0
     repeat
         yield()
         oobx, ooby, oobz = self:keepInBounds()
@@ -242,10 +249,16 @@ function Fighter:thrown(thrower, attackangle)
         else
             self.velz = self.velz - gravity
         end
-    until thrownslidetime <= 0 or oobx or ooby
+        oobdotvel = math.dot(oobx or 0, ooby or 0, self.velx, self.vely)
+        if oobdotvel > 0 then
+            oobdotvel = oobdotvel
+                / math.len(self.velx, self.vely)
+                / math.len(oobx, ooby)
+        end
+    until thrownslidetime <= 0 or oobdotvel > .5
     thrownsound:stop()
     self.thrower = nil
-    if oobx or ooby then
+    if oobdotvel > .5 then
         return "wallSlammed", thrower, oobx, ooby
     end
 
