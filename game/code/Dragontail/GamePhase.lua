@@ -45,6 +45,9 @@ function GamePhase.loadphase()
     if music then
         music:setLooping(true)
     end
+
+    Gui:showOnlyNamed("gameplay")
+    Gui.gameplay:showOnlyNamed("hud")
 end
 
 function GamePhase.resize(screenwidth, screenheight)
@@ -53,9 +56,6 @@ function GamePhase.resize(screenwidth, screenheight)
     stagecanvas = Canvas(camerawidth, cameraheight, inputscale)
     stagecanvas:transformToScreen(screenwidth, screenheight, math.rad(Config.rotation), Config.canvasscaleint)
     stagecanvas:setFiltered(Config.canvasscalesoft)
-
-    Gui:showOnlyNamed("gameplay")
-    Gui.gameplay:showOnlyNamed("hud")
     Gui.canvas = stagecanvas
 end
 
