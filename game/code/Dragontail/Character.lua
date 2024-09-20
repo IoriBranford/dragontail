@@ -153,7 +153,9 @@ function Character:fixedupdateShake(time)
 end
 
 function Character:update(dsecs, fixedfrac)
-    self.originx = self.spriteoriginx + 2*math.sin(self.hurtstun)
+    local s = min(4, self.hurtstun) * sin(self.hurtstun)
+    self.scalex = 1 + s/8
+    self.scaley = 1 - s/32
     self.originy = (self.spriteoriginy or 0) + self.z
 end
 
