@@ -359,6 +359,12 @@ function Fighter:fall(attacker)
         end
     until t > 20
     Audio.play(self.bodydropsound)
+    Characters.spawn({
+        type = "spark-fall-down-dust",
+        x = self.x,
+        y = self.y + 1,
+        z = self.z,
+    })
     self:stopAttack()
 
     if self.health > 0 then
