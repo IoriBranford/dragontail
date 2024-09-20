@@ -1,4 +1,5 @@
-vfx,asefile,script,initialai,asetag,loopframe,spriteoriginx,spriteoriginy,sparktime
-spark-hit,sprites/vfx.jase,Dragontail.Character.Common,spark,hit,0,108,80,6
-spark-guard,sprites/vfx.jase,Dragontail.Character.Common,spark,guard,0,106,64,9
-spark-bighit,sprites/vfx.jase,Dragontail.Character.Common,spark,bighit,0,98,80,9
+vfx,asefile,script,initialai,asetag,loopframe,spriteoriginx,spriteoriginy,sparktime,velz
+spark-hit,sprites/vfx.jase,Dragontail.Character.Common,spark,hit,0,108,80,6,
+spark-guard,sprites/vfx.jase,Dragontail.Character.Common,spark,guard,0,106,64,9,
+spark-bighit,sprites/vfx.jase,Dragontail.Character.Common,spark,bighit,0,98,80,9,
+spark-fall-down-dust,sprites/vfx/dust-on-person-fall.jase,Dragontail.Character.Common,spark,Complete,0,32,24,24,0.5
