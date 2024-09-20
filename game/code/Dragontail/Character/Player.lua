@@ -249,10 +249,14 @@ function Player:drawAseprite(fixedfrac)
     local velx, vely = self.velx or 0, self.vely or 0
     fixedfrac = fixedfrac or 0
 
-    Graphics.pushTransform(self, 3)
-    local x, y = self.x + velx*fixedfrac, self.y + vely*fixedfrac
-    frame:draw(x, y)
-    self:drawWeaponInHand(frame, x, y)
+    love.graphics.push()
+    love.graphics.translate(self.x + velx*fixedfrac, self.y + vely*fixedfrac)
+    love.graphics.rotate(self.rotation or 0)
+    love.graphics.shear(self.skewx or 0, self.skewy or 0)
+    love.graphics.scale(self.scalex or 1, self.scaley or 1)
+    love.graphics.translate(-self.originx or 0, -self.originy or 0)
+    frame:draw()
+    self:drawWeaponInHand(frame, 0, 0)
     love.graphics.pop()
 end
 
