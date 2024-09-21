@@ -132,7 +132,7 @@ function Stage.openRoom(i)
     if room then
         roomindex = i
         local roombounds = room.boundaries
-        Boundaries.putArray(roombounds)--, scene)
+        Boundaries.putArray(roombounds, scene)
         Characters.spawnArray(room.characters)
     else
         winningteam = "players"
