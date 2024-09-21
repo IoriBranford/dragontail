@@ -450,6 +450,16 @@ function Character:isDrawnBefore(other)
     elseif ax > bx then
         return false
     end
+
+    az = self.z or 0
+    bz = other.z or 0
+    if az < bz then
+        return true
+    elseif az > bz then
+        return false
+    end
+
+    return self.id < other.id
 end
 
 return Character
