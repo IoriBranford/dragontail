@@ -156,11 +156,11 @@ end
 
 local function nop() end
 
----@param eval fun(character: Character):"break"|"return"?
-function Characters.search(eval)
-    eval = eval or nop
-    for i = 1, #allcharacters do local character = allcharacters[i]
-        local result = eval(character)
+---@param eval fun(character: Character, i: integer?, characters: Character[]?):"break"|"return"?
+function Characters.search(group, eval)
+    local characters = groups[group] or allcharacters
+    for i = 1, #characters do local character = characters[i]
+        local result = eval(character, i, characters)
         if result == "break" or result == "return" then
             break
         end
