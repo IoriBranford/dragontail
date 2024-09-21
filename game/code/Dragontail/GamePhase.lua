@@ -25,6 +25,7 @@ function GamePhase.loadphase()
     Database.load("data/db_characterstates.csv")
     Database.load("data/db_attacks.csv")
     Database.load("data/db_vfx.csv")
+    Database.load("data/db_ui.csv")
     Database.forEach(function(_, properties)
         for k,v in pairs(properties) do
             if isAsset(v) then
