@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="80" height="12" tilewidth="32" tileheight="32" infinite="0" nextlayerid="25" nextobjectid="93">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="80" height="9" tilewidth="32" tileheight="32" infinite="0" nextlayerid="25" nextobjectid="93">
  <editorsettings>
+  <chunksize width="15" height="9"/>
   <export target="stage_jam.lua" format="lua"/>
  </editorsettings>
  <tileset firstgid="1" source="tilesets/grassland.tsx"/>
- <layer id="1" name="ground" width="80" height="12">
+ <layer id="1" name="ground" width="80" height="9">
   <properties>
    <property name="z" type="int" value="-3"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztV0ty00AQ9coaZR87+JOTgGEn+wB8Ctk3gYSdrQsAVZY4SSBZITkHoCCOb2IHupn3mLbAlL3JKotXnunpfv0dTbJ0jcatYCqYCIaCuSDFugBS6GSCMXRnggp6Fc4TwQq/yrOEPAeP2iwEI3CsDE8C3RKyHOcTE0MJ5NAv4GMEWYp8cmBu1gX8zJHHCLIS+9TEO4TN0HBavSH0GHtm4sqgn8JXAl82v4mJu0BNM+Rb4Zy1nGF/C/0MftivDDVlbRn3FNwL6I7huzBx0WaJeHP4YV3GLsxDiv0Y3GPY0R9rk+CscmFWWHf2aGR6uzA9SfHLuZu6ME+cG/bc+qmgxzhZ59zYFOBm3VYAc6HeyoV7MMQZ61mZPqQ17gn2t6YeI6AEX1nLZQb9CrLShXmzs8ceDl24A8pz3fQcWo+1rI8iL+MMv5X9T0FDcBV5PY31q+g0o+25UbuByFzkuTby+0XwDDgTPBZEgkrOY8N7ARvl1bNN0+8XTc+rPO8Qy2fYryEfYO9wdgY+jf0u8vFqXk8E5zjXmN8grgvEMUDuEdZqq/5V5xKyc8hi5KE8KtMaq3/ewWvorKPwHSuRy7GsHznv8zIKvUzMnCwB3tulmWvOg66Vqxt7vrnRVfmJC3LelYmZb84T4+MsT1yIMcM59wXuBPeaz1P0ZYOaX6EPDrVmTZuQKxg3eUpwtrCnnLn0Yw+1ORV0sNYc24Cue3Gwr69ZJ/pSG+VqHXm+PvhOjPzG1LJvOEam9irvmR4cuxBjm/noebzt97XhqPNUNb9/5aSxCj4570dluv6Gva0Rc9kXnXi7Lta+gxj35azbU9Zyh8n78Xa/dnFb/V267Ev3H3m+F/krd1i9HhDwQvDyoX4HQ2dOa/dBfr8LPkLe0Tuvc+/C/vQe6ruPn/uK5X/Qb6CtTUvvvvNo4Ztb4Xupdfz9Da7ZkIPrHmpOrrY57+7IuV6LHy74Ia/yWfsb6NAH47Y6HRMLuVrx7hj6e8bH/bxWmwx/A/D9TVz4f2OF91j/XnmOWNRmZt631LzXfJvt+0d/zLOH3NkX1lrfxrz2bvLt5dv3p7fmXSwR31a/azGktbq3DV9p+LsugPExZu5/ARwLQQU=
+   eJztVEFOg1AQZVU+7qWVll7FZeECakSOoi61F1ATwJsY3YEewGixN9HojP9NmKIYGpOuSvLC/Pkzb2beh+842+c/T20c541wQUgJESEjJLALIEHMnHCC2EtChbgK+zPCEm/mqeHPwcM5j4QYHEvFM0NsCV+O/VT1UAI54gvUiOFLME8OZMouUCfDHDF8JdaJ6jdCTqQ4dVyEOO7z3LX7xrX73PPTwHE8Wr+7jQ7lwPp3yd4jOLR37zZ6zBRvDaSoXaN2gdgSNnONPcuXqVj2j0zjFx1TdZYZeKS/pfoOpMc59mVdQBdZ8zz7NMMn4YNwSngg3LlWjzPXxrj0HsDPkL6FpwSnj7X4ZZbQs+CcKSGAzTMOAbYnXpPftkUnqcU5zOXvWL4QfCPlXygtQ8URK+3ZP1FnsGuaHocyD+97q3WPFUebp2rV/TET90q4NbYO+9h+xlprJLP0ReCt6qLzA/TYl7OdLz7frOcPvdXz6uLW8V2xci7jX+a8Iv+RWU+vLRocEA63+q0N/uZYu2t6vxBu4A/4n+fv3jTr6Qb07VNnU738Bb4DtTY+//vGwsedW+G+ZB2/7+BWjnCIPYHmwjVU++OOmdtavJqmjvAyn85fIEZqSN86JlC9CJfvdfcQ9uxP1l9T56KP
   </data>
  </layer>
- <layer id="3" name="wall" width="80" height="12">
+ <layer id="3" name="wall" width="80" height="9">
   <properties>
    <property name="z" type="int" value="-1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztk0EOgjAQRUsCdENBQK+lci8R0GsJCHgg/2TG6JIFXTk/eZnyO39aSHDWmBK8Yq4ZqIwxZ1DIegRXcAQDmNDboR6wX6PuLT9TZo65ZgHPTAPO5AH30/xBstRLPvW3ch7tpZJ1lmfnYAcvQU0tn/+Z61Ab1N7wXSc5m97lhPUid6XZ5Nfme59EenrJpL/78l1aWVcyg+bRd0hk3YToAR24gXvoz7uAeoW3ddanN4InmMAMFo/eA/QrvK2zPr0swr8BclCAMvLnJcCt8LbO+vRUKpVKpVKpVP+lNwhdlUI=
+   eJztjzkKgEAQBCfQTPH6trIe31K8PmQ9YdlhjbqgkoIOOhRmMy644oYhUxtximieraelfDvxwhsffDO2HY+I5tl6Wsq3pjRrscMehzJfq7COaJ6tp6V8E0IIIcT/fDNMdy8=
   </data>
  </layer>
  <group id="24" name="rooms">
@@ -25,10 +26,10 @@
    <properties>
     <property name="z" type="int" value="0"/>
    </properties>
-   <object id="81" template="mapobjects/OutwardBoundary.tx" x="0" y="0">
-    <polygon points="0,0 0,128 2560,128 2560,0"/>
+   <object id="81" template="mapobjects/OutwardBoundary.tx" x="0" y="24">
+    <polygon points="0,0 0,64 2560,64 2560,0"/>
    </object>
-   <object id="87" template="mapobjects/CameraPath.tx" x="320" y="192">
+   <object id="87" template="mapobjects/CameraPath.tx" x="320" y="144">
     <polyline points="0,0 128,0"/>
    </object>
   </objectgroup>
@@ -36,43 +37,43 @@
    <properties>
     <property name="z" type="int" value="0"/>
    </properties>
-   <object id="12" type="bandit-dagger" x="832" y="192">
+   <object id="12" type="bandit-dagger" x="832" y="144">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="31" type="bandit-dagger" x="64" y="192">
+   <object id="31" type="bandit-dagger" x="64" y="144">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="13" type="bandit-dagger" x="800" y="256">
+   <object id="13" type="bandit-dagger" x="800" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="30" type="bandit-dagger" x="96" y="256">
+   <object id="30" type="bandit-dagger" x="96" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="32" type="bandit-dagger" x="32" y="256">
+   <object id="32" type="bandit-dagger" x="32" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="14" type="bandit-dagger" x="832" y="320">
+   <object id="14" type="bandit-dagger" x="832" y="272">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="29" type="bandit-dagger" x="64" y="320">
+   <object id="29" type="bandit-dagger" x="64" y="272">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
@@ -83,19 +84,19 @@
    <properties>
     <property name="z" type="int" value="0"/>
    </properties>
-   <object id="8" type="food-fish" x="800" y="161">
+   <object id="8" type="food-fish" x="800" y="96">
     <properties>
      <property name="z" type="int" value="16"/>
     </properties>
     <point/>
    </object>
-   <object id="9" type="food-container" x="800" y="160">
+   <object id="9" type="food-container" x="800" y="112">
     <properties>
      <property name="item" type="object" value="8"/>
     </properties>
     <point/>
    </object>
-   <object id="88" template="mapobjects/CameraPath.tx" x="704" y="192">
+   <object id="88" template="mapobjects/CameraPath.tx" x="704" y="144">
     <polyline points="-96,0 128,0"/>
    </object>
   </objectgroup>
@@ -103,55 +104,55 @@
    <properties>
     <property name="z" type="int" value="0"/>
    </properties>
-   <object id="19" type="bandit-spear" x="1184" y="256">
+   <object id="19" type="bandit-spear" x="1184" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="36" type="bandit-spear" x="480" y="256">
+   <object id="36" type="bandit-spear" x="480" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="20" type="bandit-dagger" x="1216" y="320">
+   <object id="20" type="bandit-dagger" x="1216" y="272">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="35" type="bandit-dagger" x="448" y="320">
+   <object id="35" type="bandit-dagger" x="448" y="272">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="22" type="bandit-dagger" x="1216" y="192">
+   <object id="22" type="bandit-dagger" x="1216" y="144">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="34" type="bandit-dagger" x="448" y="192">
+   <object id="34" type="bandit-dagger" x="448" y="144">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="21" type="bandit-dagger" x="1248" y="288">
+   <object id="21" type="bandit-dagger" x="1248" y="240">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="33" type="bandit-dagger" x="1248" y="224">
+   <object id="33" type="bandit-dagger" x="1248" y="176">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="57" type="bandit-dagger" x="416" y="256">
+   <object id="57" type="bandit-dagger" x="416" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
@@ -162,25 +163,25 @@
    <properties>
     <property name="z" type="int" value="0"/>
    </properties>
-   <object id="50" type="food-fish" x="1280" y="161">
+   <object id="50" type="food-fish" x="1280" y="96">
     <properties>
      <property name="z" type="int" value="16"/>
     </properties>
     <point/>
    </object>
-   <object id="51" type="food-container" x="1280" y="160">
+   <object id="51" type="food-container" x="1280" y="112">
     <properties>
      <property name="item" type="object" value="50"/>
     </properties>
     <point/>
    </object>
-   <object id="16" type="bandit-dagger" x="1056" y="128">
+   <object id="16" type="bandit-dagger" x="1056" y="80">
     <point/>
    </object>
-   <object id="18" type="bandit-spear" x="1200" y="144">
+   <object id="18" type="bandit-spear" x="1200" y="96">
     <point/>
    </object>
-   <object id="89" template="mapobjects/CameraPath.tx" x="400" y="192">
+   <object id="89" template="mapobjects/CameraPath.tx" x="400" y="144">
     <polyline points="480,0 640,0"/>
    </object>
   </objectgroup>
@@ -188,43 +189,43 @@
    <properties>
     <property name="z" type="int" value="0"/>
    </properties>
-   <object id="41" type="bandit-spear" x="688" y="288">
+   <object id="41" type="bandit-spear" x="688" y="240">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="43" type="bandit-spear" x="688" y="224">
+   <object id="43" type="bandit-spear" x="688" y="176">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="40" type="bandit-dagger" x="656" y="192">
+   <object id="40" type="bandit-dagger" x="656" y="144">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="45" type="bandit-dagger" x="656" y="320">
+   <object id="45" type="bandit-dagger" x="656" y="272">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="42" type="bandit-dagger" x="608" y="192">
+   <object id="42" type="bandit-dagger" x="608" y="144">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="44" type="bandit-dagger" x="608" y="320">
+   <object id="44" type="bandit-dagger" x="608" y="272">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="17" type="bandit-dagger" x="896" y="128">
+   <object id="17" type="bandit-dagger" x="896" y="80">
     <point/>
    </object>
   </objectgroup>
@@ -232,40 +233,40 @@
    <properties>
     <property name="z" type="int" value="0"/>
    </properties>
-   <object id="10" type="food-fish" x="1584" y="161">
+   <object id="10" type="food-fish" x="1584" y="96">
     <properties>
      <property name="z" type="int" value="16"/>
     </properties>
     <point/>
    </object>
-   <object id="24" type="food-fish" x="1616" y="161">
+   <object id="24" type="food-fish" x="1616" y="96">
     <properties>
      <property name="z" type="int" value="16"/>
     </properties>
     <point/>
    </object>
-   <object id="11" type="food-container" x="1584" y="160">
+   <object id="11" type="food-container" x="1584" y="112">
     <properties>
      <property name="item" type="object" value="10"/>
     </properties>
     <point/>
    </object>
-   <object id="23" type="food-container" x="1616" y="160">
+   <object id="23" type="food-container" x="1616" y="112">
     <properties>
      <property name="item" type="object" value="24"/>
     </properties>
     <point/>
    </object>
-   <object id="28" type="bandit-dagger" x="1536" y="128">
+   <object id="28" type="bandit-dagger" x="1536" y="80">
     <point/>
    </object>
-   <object id="56" type="bandit-spear" x="1680" y="144">
+   <object id="56" type="bandit-spear" x="1696" y="80">
     <point/>
    </object>
-   <object id="52" type="bandit-dagger" x="1376" y="128">
+   <object id="52" type="bandit-dagger" x="1376" y="80">
     <point/>
    </object>
-   <object id="90" template="mapobjects/CameraPath.tx" x="800" y="192">
+   <object id="90" template="mapobjects/CameraPath.tx" x="800" y="144">
     <polyline points="400,0 640,0"/>
    </object>
   </objectgroup>
@@ -273,58 +274,58 @@
    <properties>
     <property name="z" type="int" value="0"/>
    </properties>
-   <object id="25" type="bandit-spear" x="960" y="288">
+   <object id="25" type="bandit-spear" x="960" y="240">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="58" type="bandit-spear" x="992" y="256">
+   <object id="58" type="bandit-spear" x="992" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="26" type="bandit-spear" x="960" y="224">
+   <object id="26" type="bandit-spear" x="960" y="176">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="27" type="bandit-spear" x="1200" y="144">
+   <object id="27" type="bandit-spear" x="1200" y="96">
     <point/>
    </object>
-   <object id="53" type="bandit-dagger" x="1056" y="192">
+   <object id="53" type="bandit-dagger" x="1056" y="144">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="61" type="bandit-dagger" x="1008" y="192">
+   <object id="61" type="bandit-dagger" x="1008" y="144">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="54" type="bandit-dagger" x="1088" y="256">
+   <object id="54" type="bandit-dagger" x="1088" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="60" type="bandit-dagger" x="1040" y="256">
+   <object id="60" type="bandit-dagger" x="1040" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="55" type="bandit-dagger" x="1056" y="320">
+   <object id="55" type="bandit-dagger" x="1056" y="272">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="59" type="bandit-dagger" x="1008" y="320">
+   <object id="59" type="bandit-dagger" x="1008" y="272">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
@@ -335,7 +336,7 @@
    <properties>
     <property name="z" type="int" value="0"/>
    </properties>
-   <object id="91" template="mapobjects/CameraPath.tx" x="1248" y="192">
+   <object id="91" template="mapobjects/CameraPath.tx" x="1248" y="144">
     <polyline points="352,0 640,0"/>
    </object>
   </objectgroup>
@@ -343,70 +344,70 @@
    <properties>
     <property name="z" type="int" value="0"/>
    </properties>
-   <object id="63" type="bandit-spear" x="1840" y="144">
+   <object id="63" type="bandit-spear" x="1856" y="80">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="74" type="bandit-spear" x="2000" y="144">
+   <object id="74" type="bandit-spear" x="2016" y="80">
     <point/>
    </object>
-   <object id="64" type="bandit-dagger" x="1376" y="272">
+   <object id="64" type="bandit-dagger" x="1376" y="224">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="69" type="bandit-dagger" x="1312" y="240">
+   <object id="69" type="bandit-dagger" x="1312" y="192">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="72" type="bandit-dagger" x="1312" y="304">
+   <object id="72" type="bandit-dagger" x="1312" y="256">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="65" type="bandit-dagger" x="1408" y="256">
+   <object id="65" type="bandit-dagger" x="1408" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="68" type="bandit-dagger" x="1344" y="224">
+   <object id="68" type="bandit-dagger" x="1344" y="176">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="71" type="bandit-dagger" x="1344" y="288">
+   <object id="71" type="bandit-dagger" x="1344" y="240">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="73" type="bandit-dagger" x="1344" y="256">
+   <object id="73" type="bandit-dagger" x="1344" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="66" type="bandit-dagger" x="1376" y="240">
+   <object id="66" type="bandit-dagger" x="1376" y="192">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="67" type="bandit-dagger" x="1312" y="208">
+   <object id="67" type="bandit-dagger" x="1312" y="160">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="70" type="bandit-dagger" x="1312" y="272">
+   <object id="70" type="bandit-dagger" x="1312" y="224">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
@@ -414,30 +415,30 @@
    </object>
   </objectgroup>
   <objectgroup id="22" name="room6">
-   <object id="77" type="food-bigfish" x="2240" y="145">
+   <object id="77" type="food-bigfish" x="2240" y="80">
     <properties>
      <property name="z" type="int" value="16"/>
     </properties>
     <point/>
    </object>
-   <object id="78" type="food-container" x="2240" y="144">
+   <object id="78" type="food-container" x="2240" y="96">
     <properties>
      <property name="item" type="object" value="77"/>
     </properties>
     <point/>
    </object>
-   <object id="92" template="mapobjects/CameraPath.tx" x="1600" y="192">
+   <object id="92" template="mapobjects/CameraPath.tx" x="1600" y="144">
     <polyline points="448,0 640,0"/>
    </object>
   </objectgroup>
   <objectgroup id="23" name="fight6">
-   <object id="76" type="bandit-axe" x="2592" y="192">
+   <object id="76" type="bandit-axe" x="2592" y="144">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="79" type="bandit-axe" x="2592" y="320">
+   <object id="79" type="bandit-axe" x="2592" y="272">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
