@@ -356,7 +356,12 @@ function Player:control()
 
             if attackpressed then
                 if self.weaponinhand then
-                    return "throwWeapon"
+                    local throwdirx, throwdiry, throwdirz = self.facex, self.facey, 0
+                    -- local e = self:findLockOnEnemy(self.facex*550, self.facey*550)
+                    -- if e then
+                    --     throwdirx, throwdiry, throwdirz = norm(e.x - self.x, e.y - self.y, e.z - self.z)
+                    -- end
+                    return "throwWeapon", throwdirx, throwdiry, throwdirz
                 end
                 return "straightAttack", "running-kick", atan2(vely, velx)
             end
@@ -397,7 +402,11 @@ function Player:control()
             self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
             if attackpressed then
                 if self.weaponinhand then
-                    return "throwWeapon"
+                    local throwdirx, throwdiry, throwdirz = self.facex, self.facey, 0
+                    -- if lockonenemy then
+                    --     throwdirx, throwdiry, throwdirz = norm(lockonenemy.x - self.x, lockonenemy.y - self.y, lockonenemy.z - self.z)
+                    -- end
+                    return "throwWeapon", throwdirx, throwdiry, throwdirz
                 end
                 return doComboAttack(self, targetfacex, targetfacey)
             end
@@ -472,19 +481,11 @@ function Player:spinAttack(attacktype, angle)
     return "control"
 end
 
-function Player:throwWeapon()
-    local inx, iny = Controls.getDirectionInput()
-    local inz = 0 -- TODO adjust for higher or lower enemy
-    if inx == 0 and iny == 0 then
-        inx, iny = self.facex, self.facey
-    else
-        inx, iny = norm(inx, iny)
-        self.facex, self.facey = inx, iny
-    end
-    local angle = atan2(iny, inx)
-    inx, iny, inz = norm(inx, iny, inz)
+function Player:throwWeapon(dirx, diry, dirz)
+    self.facex, self.facey = norm(dirx, diry)
+    local angle = atan2(diry, dirx)
     self:setDirectionalAnimation("throw", angle, 1)
-    self:launchProjectile(self.weaponinhand, inx, iny, inz)
+    self:launchProjectile(self.weaponinhand, dirx, diry, dirz)
     self.weaponinhand = nil
     Audio.play(self.throwsound)
     local t = self.throwtime or 6
