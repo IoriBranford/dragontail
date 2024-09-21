@@ -11,8 +11,10 @@ local solids -- characters who should block others' movement
 local allcharacters ---@type Character[]
 local groups
 local scene
+local nextid
 
-function Characters.init(scene_)
+function Characters.init(scene_, nextid_)
+    nextid = nextid_ or 1
     allcharacters = {}
     players = {}
     enemies = {}
@@ -33,6 +35,7 @@ function Characters.quit()
     solids = nil
     groups = nil
     scene = nil
+    nextid = 1
 end
 
 function Characters.getGroup(group)
@@ -52,6 +55,10 @@ function Characters.spawn(object)
         script = Character
     end
     local character = script.cast(object) ---@type Character
+    if not character.id then
+        character.id = nextid
+        nextid = nextid + 1
+    end
     character:init()
     character:initAseprite()
 

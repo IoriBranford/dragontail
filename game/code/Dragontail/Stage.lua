@@ -35,12 +35,12 @@ function Stage.quit()
 end
 
 function Stage.init(stagefile)
-    scene = Scene()
-    Characters.init(scene)
-
     map = Tiled.Map.load(stagefile)
     map:indexLayersByName()
     map:indexLayerObjectsByName()
+
+    scene = Scene()
+    Characters.init(scene, map.nextobjectid)
 
     for id, object in pairs(map.objects) do
         if object.type == "Boundary" then
@@ -132,7 +132,7 @@ function Stage.openRoom(i)
     if room then
         roomindex = i
         local roombounds = room.boundaries
-        Boundaries.putArray(roombounds, scene)
+        Boundaries.putArray(roombounds)--, scene)
         Characters.spawnArray(room.characters)
     else
         winningteam = "players"
