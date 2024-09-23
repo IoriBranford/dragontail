@@ -413,7 +413,26 @@ function Player:control()
                         return "aimThrow"
                     end
                 elseif attackdowntime > 0 then
-                    return "throwWeapon", targetfacex, targetfacey, 0
+                    local throwdirx, throwdiry, throwdirz = targetfacex, targetfacey, 0
+                    local enemy, enemytargetingscore = nil, 128
+                    local throwz = self.z + self.bodyheight/2
+                    Characters.search("enemies",
+                    function(e)
+                        local etop, ebottom = e.z + self.bodyheight, e.z
+                        if not e.getTargetingScore
+                        or ebottom <= throwz and throwz <= etop then
+                            return
+                        end
+                        local score = e:getTargetingScore(self.x, self.y, targetfacex, targetfacey)
+                        if score < enemytargetingscore then
+                            enemy, enemytargetingscore = e, score
+                        end
+                    end)
+                    if enemy then
+                        throwdirx, throwdiry, throwdirz = norm(enemy.x - self.x, enemy.y - self.y,
+                            (enemy.z + enemy.bodyheight/2) - (self.z + self.bodyheight/2))
+                    end
+                    return "throwWeapon", throwdirx, throwdiry, throwdirz
                 end
             elseif attackpressed then
                 return doComboAttack(self, targetfacex, targetfacey)
