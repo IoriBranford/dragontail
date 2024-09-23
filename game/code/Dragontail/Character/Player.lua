@@ -514,7 +514,7 @@ function Player:aimThrow()
 
         local lockonenemyscore = 128
         if lockonenemy then
-            local score = lockonenemy:getTargetingScore(self)
+            local score = lockonenemy:getTargetingScore(self.x, self.y, targetfacex, targetfacey)
             if score > lockonenemyscore then
                 lockonenemy = nil
             else
@@ -525,7 +525,7 @@ function Player:aimThrow()
         Characters.search("enemies",
         function(enemy)
             local score = enemy.getTargetingScore
-                and enemy:getTargetingScore(self)
+                and enemy:getTargetingScore(self.x, self.y, targetfacex, targetfacey)
                 or math.huge
             if score < lockonenemyscore then
                 lockonenemy, lockonenemyscore = enemy, score

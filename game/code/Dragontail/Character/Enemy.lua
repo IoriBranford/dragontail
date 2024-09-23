@@ -81,15 +81,15 @@ local function findAngleToDodgeIncoming(self, incoming)
     return math.atan2(raycast.dy, raycast.dx)
 end
 
-function Enemy:getTargetingScore(opponent)
+function Enemy:getTargetingScore(oppox, oppoy, oppofacex, oppofacey)
     if not self.canbeattacked then
         return huge
     end
-    local tooppox, tooppoy = self.x - opponent.x, self.y - self.z - opponent.y
-    if math.dot(opponent.facex, opponent.facey, tooppox, tooppoy) < 0 then
+    local tooppox, tooppoy = self.x - oppox, self.y - self.z - oppoy
+    if math.dot(oppofacex, oppofacey, tooppox, tooppoy) < 0 then
         return huge
     end
-    return math.abs(math.det(opponent.facex, opponent.facey, tooppox, tooppoy))
+    return math.abs(math.det(oppofacex, oppofacey, tooppox, tooppoy))
 end
 
 function Enemy:stand(duration)
