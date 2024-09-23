@@ -308,11 +308,12 @@ end
 function Player:control()
     local targetfacex, targetfacey = self.facex, self.facey
     local runningtime
+    local attackdowntime = 0
     while true do
         local facex, facey = self.facex, self.facey
         local inx, iny = Controls.getDirectionInput()
         local attackpressed, runpressed = Controls.getButtonsPressed()
-        local _, rundown = Controls.getButtonsDown()
+        local attackdown, rundown = Controls.getButtonsDown()
 
         local targetvelx, targetvely = 0, 0
         if inx ~= 0 or iny ~= 0 then
@@ -405,14 +406,16 @@ function Player:control()
             end
         else
             self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
-            if attackpressed then
-                if self.weaponinhand then
-                    local throwdirx, throwdiry, throwdirz = self.facex, self.facey, 0
-                    -- if lockonenemy then
-                    --     throwdirx, throwdiry, throwdirz = norm(lockonenemy.x - self.x, lockonenemy.y - self.y, lockonenemy.z - self.z)
-                    -- end
-                    return "throwWeapon", throwdirx, throwdiry, throwdirz
+            if self.weaponinhand then
+                if attackdown then
+                    attackdowntime = attackdowntime + 1
+                    if attackdowntime > 10 then
+                        return "aimThrow"
+                    end
+                elseif attackdowntime > 0 then
+                    return "throwWeapon", targetfacex, targetfacey, 0
                 end
+            elseif attackpressed then
                 return doComboAttack(self, targetfacex, targetfacey)
             end
 
@@ -530,6 +533,7 @@ function Player:aimThrow()
         end)
 
         if runbutton then
+            self.crosshair.visible = false
             return "control"
         end
 
