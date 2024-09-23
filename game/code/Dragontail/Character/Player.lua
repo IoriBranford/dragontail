@@ -122,6 +122,11 @@ function Player:init()
         AttackerSlot(-1024, 0),
         AttackerSlot(0, -1024)
     }
+
+    self.crosshair = Characters.spawn({
+        type = "rose-crosshair",
+        visible = false
+    })
 end
 
 ---@param imagedata love.ImageData
@@ -479,6 +484,74 @@ function Player:spinAttack(attacktype, angle)
         return doComboAttack(self, originalfacex, originalfacey)
     end
     return "control"
+end
+
+function Player:hurt(attacker)
+    self.crosshair.visible = false
+    return Fighter.hurt(self, attacker)
+end
+
+function Player:aimThrow()
+    local targetfacex, targetfacey = self.facex, self.facey
+    local lockonenemy
+    while true do
+        local attackbutton, runbutton = Controls.getButtonsDown()
+        local inx, iny = Controls.getDirectionInput()
+        if inx ~= 0 or iny ~= 0 then
+            if lensq(inx, iny) > 1 then
+                inx, iny = norm(inx, iny)
+                targetfacex, targetfacey = inx, iny
+            else
+                targetfacex, targetfacey = norm(inx, iny)
+            end
+        end
+
+        self:accelerateTowardsVel(0, 0, 4)
+        self.facex, self.facey = updateFace(self.facex, self.facey, targetfacex, targetfacey, pi/8)
+
+        local lockonenemyscore = 128
+        if lockonenemy then
+            local score = lockonenemy:getTargetingScore(self)
+            if score > lockonenemyscore then
+                lockonenemy = nil
+            else
+                lockonenemyscore = score
+            end
+        end
+
+        Characters.search("enemies",
+        function(enemy)
+            local score = enemy.getTargetingScore
+                and enemy:getTargetingScore(self)
+                or math.huge
+            if score < lockonenemyscore then
+                lockonenemy, lockonenemyscore = enemy, score
+            end
+        end)
+
+        if runbutton then
+            return "control"
+        end
+
+        if not attackbutton then
+            self.crosshair.visible = false
+            local throwx, throwy, throwz = self.facex, self.facey, 0
+            if lockonenemy then
+                throwx, throwy, throwz = norm(lockonenemy.x - self.x, lockonenemy.y - self.y,
+                    (lockonenemy.z + lockonenemy.bodyheight/2) - (self.z + self.bodyheight/2))
+            end
+            return "throwWeapon", throwx, throwy, throwz
+        end
+
+        self:setDirectionalAnimation("stand", atan2(self.facey, self.facex), 1, 0)
+        self.crosshair.visible = lockonenemy ~= nil
+        if lockonenemy then
+            self.crosshair.x, self.crosshair.y = lockonenemy.x, lockonenemy.y
+            self.crosshair.z = lockonenemy.z + lockonenemy.bodyheight/2
+            self.crosshair.velx, self.crosshair.vely, self.crosshair.velz = lockonenemy.velx, lockonenemy.vely, lockonenemy.velz
+        end
+        yield()
+    end
 end
 
 function Player:throwWeapon(dirx, diry, dirz)
