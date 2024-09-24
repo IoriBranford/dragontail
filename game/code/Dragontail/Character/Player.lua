@@ -106,6 +106,32 @@ local function doComboAttack(self, facex, facey, heldenemy)
     end
 end
 
+local function findInstantThrowDir(self, targetfacex, targetfacey)
+    local throwdirx, throwdiry, throwdirz = targetfacex, targetfacey, 0
+    local enemy, enemytargetingscore = nil, 128
+    local throwz = self.z + self.bodyheight/2
+    Characters.search("enemies",
+    function(e)
+        if not e.getTargetingScore then
+            return
+        end
+        local score = e:getTargetingScore(self.x, self.y, targetfacex, targetfacey)
+
+        local etop, ebottom = e.z + self.bodyheight, e.z
+        if ebottom <= throwz and throwz <= etop then
+            score = score * 2
+        end
+        if score < enemytargetingscore then
+            enemy, enemytargetingscore = e, score
+        end
+    end)
+    if enemy then
+        throwdirx, throwdiry, throwdirz = norm(enemy.x - self.x, enemy.y - self.y,
+            (enemy.z + enemy.bodyheight/2) - (self.z + self.bodyheight/2))
+    end
+    return throwdirx, throwdiry, throwdirz
+end
+
 function Player:init()
     Character.init(self)
     self.comboindex = 0
@@ -362,12 +388,7 @@ function Player:control()
 
             if attackpressed then
                 if self.weaponinhand then
-                    local throwdirx, throwdiry, throwdirz = self.facex, self.facey, 0
-                    -- local e = self:findLockOnEnemy(self.facex*550, self.facey*550)
-                    -- if e then
-                    --     throwdirx, throwdiry, throwdirz = norm(e.x - self.x, e.y - self.y, e.z - self.z)
-                    -- end
-                    return "throwWeapon", throwdirx, throwdiry, throwdirz
+                    return "throwWeapon", findInstantThrowDir(self, targetfacex, targetfacey)
                 end
                 return "straightAttack", "running-kick", atan2(vely, velx)
             end
@@ -419,26 +440,7 @@ function Player:control()
                         return "aimThrow"
                     end
                 else
-                    local throwdirx, throwdiry, throwdirz = targetfacex, targetfacey, 0
-                    local enemy, enemytargetingscore = nil, 128
-                    local throwz = self.z + self.bodyheight/2
-                    Characters.search("enemies",
-                    function(e)
-                        local etop, ebottom = e.z + self.bodyheight, e.z
-                        if not e.getTargetingScore
-                        or ebottom <= throwz and throwz <= etop then
-                            return
-                        end
-                        local score = e:getTargetingScore(self.x, self.y, targetfacex, targetfacey)
-                        if score < enemytargetingscore then
-                            enemy, enemytargetingscore = e, score
-                        end
-                    end)
-                    if enemy then
-                        throwdirx, throwdiry, throwdirz = norm(enemy.x - self.x, enemy.y - self.y,
-                            (enemy.z + enemy.bodyheight/2) - (self.z + self.bodyheight/2))
-                    end
-                    return "throwWeapon", throwdirx, throwdiry, throwdirz
+                    return "throwWeapon", findInstantThrowDir(self, targetfacex, targetfacey)
                 end
             end
 
