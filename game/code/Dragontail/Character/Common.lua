@@ -169,7 +169,7 @@ function Common:projectileBounce(opponent, ooby, oobz)
         oobx, ooby, oobz = self:keepInBounds()
     until oobz and oobz < 0
     self.velx, self.vely, self.velz = 0, 0, 0
-    if self.itemtype then
+    if not opponent and self.itemtype then
         Characters.spawn({
             type = self.itemtype,
             x = self.x, y = self.y, z = self.z
