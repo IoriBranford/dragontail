@@ -534,16 +534,22 @@ function Player:aimThrow()
             end
         end
 
-        self:accelerateTowardsVel(0, 0, 4)
-        self.facex, self.facey = updateFace(self.facex, self.facey, targetfacex, targetfacey, pi/8)
+        local targetvelx, targetvely
+        local movespeed, turnspeed, acceltime
+        movespeed, turnspeed, acceltime = 2, pi/8, 4
+
+        targetvelx = inx * movespeed
+        targetvely = iny * movespeed
+
+        self:accelerateTowardsVel(targetvelx, targetvely, acceltime)
 
         local lockonenemyscore = 128
         if lockonenemy then
-            local score = lockonenemy:getTargetingScore(self.x, self.y, targetfacex, targetfacey)
+            local score = lockonenemy:getTargetingScore(self.x, self.y, self.facex, self.facey)
             if score > lockonenemyscore then
                 lockonenemy = nil
             else
-                lockonenemyscore = score
+                lockonenemyscore = lockonenemy:getTargetingScore(self.x, self.y, targetfacex, targetfacey)
             end
         end
 
@@ -556,6 +562,15 @@ function Player:aimThrow()
                 lockonenemy, lockonenemyscore = enemy, score
             end
         end)
+
+        if lockonenemy then
+            targetfacex, targetfacey = norm(lockonenemy.x - self.x, lockonenemy.y - self.y)
+            if targetfacex ~= targetfacex then
+                targetfacex, targetfacey = 1, 0
+            end
+        end
+        local facex, facey = updateFace(self.facex, self.facey, targetfacex, targetfacey, turnspeed)
+        self.facex, self.facey = facex, facey
 
         if runbutton then
             self.crosshair.visible = false
@@ -572,7 +587,14 @@ function Player:aimThrow()
             return "throwWeapon", throwx, throwy, throwz
         end
 
-        self:setDirectionalAnimation("stand", atan2(self.facey, self.facex), 1, 0)
+        local animation
+        if self.velx ~= 0 or self.vely ~= 0 then
+            animation = "run"
+        else
+            animation = "stand"
+        end
+        self:setDirectionalAnimation(animation, atan2(facey, facex))
+
         self.crosshair.visible = lockonenemy ~= nil
         if lockonenemy then
             self.crosshair.x, self.crosshair.y = lockonenemy.x, lockonenemy.y
