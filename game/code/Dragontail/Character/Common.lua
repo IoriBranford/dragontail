@@ -146,6 +146,10 @@ function Common:projectileBounce(opponent, ooby, oobz)
     self:stopAttack()
     local oobx = type(opponent) == "number" and opponent
     opponent = type(opponent) == "table" and opponent or nil
+    if opponent then
+    else
+        Audio.play(self.bodyslamsound)
+    end
     local gravity = self.fallgravity or .25
     local bouncefactor = self.bouncefactor or .5
     if opponent then
