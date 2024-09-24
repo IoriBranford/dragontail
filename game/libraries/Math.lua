@@ -175,6 +175,30 @@ function math.nearestpolygonpoint(polygon, x, y)
     return math.nearestpolylinepoint(polygon, x, y, #polygon, 2)
 end
 
+---Gets point on line through (ax, ay) and (bx, by) that is closest to point (px, py)
+---@return number projx closest point on segment x
+---@return number projy closest point on segment y
+function math.projpointline(px, py, ax, ay, bx, by)
+    local abx, aby = bx-ax, by-ay
+    if abx == 0 and aby == 0 then
+        return ax, ay
+    end
+    local apx, apy = px-ax, py-ay
+    local t = dot(apx, apy, abx, aby)
+    local ablensq = lensq(abx, aby)
+    t = t / ablensq
+    return ax + t*abx, ay + t*aby
+end
+
+---@param vx number vector to reflect
+---@param vy number vector to reflect
+---@param nx number vector out of surface to reflect against
+---@param ny number vector out of surface to reflect against
+function math.reflect(vx, vy, nx, ny)
+    local projx, projy = math.projpointline(vx, vy, 0, 0, nx, ny)
+    return vx - 2*projx, vy - 2*projy
+end
+
 ---Gets point on line segment from (ax, ay) to (bx, by) that is closest to point (px, py)
 ---@return number projx closest point on segment x
 ---@return number projy closest point on segment y
