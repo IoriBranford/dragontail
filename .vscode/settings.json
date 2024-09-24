@@ -3,9 +3,7 @@
     "Lua.workspace.checkThirdParty": false,
     "Lua.workspace.useGitIgnore": false,
     "Lua.workspace.library": [
-        "${3rd}/love2d/library",
-        "/home/kevin/.vscode/extensions/sumneko.lua-3.6.20-linux-x64/server/meta/5393ac01",
-        "/home/kevin/.vscode/extensions/sumneko.lua-3.6.20-linux-x64/server/meta/125fe28b"
+        "${3rd}/love2d/library"
     ],
     "Lua.runtime.version": "LuaJIT",
     "Lua.runtime.path": [
