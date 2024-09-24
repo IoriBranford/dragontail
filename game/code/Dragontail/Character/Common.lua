@@ -3,6 +3,7 @@ local Database    = require "Data.Database"
 local State       = require "Dragontail.Character.State"
 local Color       = require "Tiled.Color"
 local Character   = require "Dragontail.Character"
+local Characters  = require "Dragontail.Stage.Characters"
 
 local yield = coroutine.yield
 local wait = coroutine.wait
@@ -41,12 +42,15 @@ function Common:afterimage()
     self:disappear()
 end
 
+local function updateBlinkOut(t, color)
+    local r, g, b = Color.unpack(color)
+    return Color.asARGBInt(r, g, b, cos(t))
+end
+
 function Common:blinkOut(t)
     t = t or 30
     for i = 1, t do
-        self:updateDropToGround()
-        local r, g, b = Color.unpack(self.color)
-        self.color = Color.asARGBInt(r, g, b, cos(i))
+        self.color = updateBlinkOut(i, self.color)
         yield()
     end
     self:disappear()
@@ -123,6 +127,59 @@ function Common:projectileHit(opponent)
     return "blinkOut", 30
 end
 
+function Common:projectileEmbeddedBlinkOut(opponent, ooby, oobz)
+    self:stopAttack()
+    local oobx = type(opponent) == "number" and opponent
+    opponent = type(opponent) == "table" and opponent or nil
+    self.velx, self.vely, self.velz = 0, 0, 0
+    for t = 1, 30 do
+        if opponent then
+            self.velx, self.vely, self.velz = opponent.velx, opponent.vely, opponent.velz
+        end
+        self.color = updateBlinkOut(t, self.color)
+        yield()
+    end
+    self:disappear()
+end
+
+function Common:projectileBounce(opponent, ooby, oobz)
+    self:stopAttack()
+    local oobx = type(opponent) == "number" and opponent
+    opponent = type(opponent) == "table" and opponent or nil
+    local gravity = self.fallgravity or .25
+    local bouncefactor = self.bouncefactor or .5
+    if opponent then
+        if opponent.z <= self.z and self.z <= opponent.z + opponent.bodyheight then
+            self.velx, self.vely = -self.velx*bouncefactor, -self.vely*bouncefactor
+        else
+            self.velz = -self.velz*bouncefactor
+        end
+    else
+        if oobx or ooby then
+            self.velx, self.vely = math.reflect(self.velx*bouncefactor, self.vely*bouncefactor, -oobx or 0, -ooby or 0)
+        end
+        if oobz then
+            self.velz = -self.velz*bouncefactor
+        end
+    end
+    oobz = nil
+    repeat
+        yield()
+        self.velz = self.velz - gravity
+        oobx, ooby, oobz = self:keepInBounds()
+    until oobz and oobz < 0
+    self.velx, self.vely, self.velz = 0, 0, 0
+    if self.itemtype then
+        Characters.spawn({
+            type = self.itemtype,
+            x = self.x, y = self.y, z = self.z
+        })
+        self:disappear()
+    else
+        return "blinkOut", 30
+    end
+end
+
 function Common:projectileFly(shooter)
     local angle = self.attackangle
     Database.fill(self, self.defaultattack)
@@ -148,7 +205,10 @@ function Common:projectileFly(shooter)
         oobx, ooby, oobz = self:keepInBounds()
         self.velz = self.velz - gravity
     until oobx or ooby or oobz
-    return "projectileHit"
+    if self.attackhitai then
+        return self.attackhitai, oobx, ooby, oobz
+    end
+    self:disappear()
 end
 
 function Common:projectileDeflected(deflector)
