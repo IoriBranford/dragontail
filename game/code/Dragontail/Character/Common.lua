@@ -127,19 +127,32 @@ function Common:projectileHit(opponent)
     return "blinkOut", 30
 end
 
-function Common:projectileEmbeddedBlinkOut(opponent, ooby, oobz)
+function Common:projectileEmbed(opponent, ooby, oobz)
     self:stopAttack()
     local oobx = type(opponent) == "number" and opponent
     opponent = type(opponent) == "table" and opponent or nil
     self.velx, self.vely, self.velz = 0, 0, 0
-    for t = 1, 30 do
-        if opponent then
-            self.velx, self.vely, self.velz = opponent.velx, opponent.vely, opponent.velz
+    if opponent then
+        for t = 1, 30 do
+            if opponent then
+                self.velx, self.vely, self.velz = opponent.velx, opponent.vely, opponent.velz
+            end
+            self.color = updateBlinkOut(t, self.color)
+            yield()
         end
-        self.color = updateBlinkOut(t, self.color)
-        yield()
+        self:disappear()
+    else
+        Audio.play(self.bodyslamsound)
+        if self.itemtype then
+            Characters.spawn({
+                type = self.itemtype,
+                x = self.x, y = self.y, z = self.z
+            })
+            self:disappear()
+        else
+            return "blinkOut", 30
+        end
     end
-    self:disappear()
 end
 
 function Common:projectileBounce(opponent, ooby, oobz)
