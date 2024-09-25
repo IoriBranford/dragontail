@@ -417,6 +417,22 @@ function Character:drawAttackShape(fixedfrac)
     end
 end
 
+function Character:isOnCamera(cx, cy, cw, ch)
+    local ox, oy = self.originx, self.originy
+    local w, h = 0, 0
+    if self.aseprite then
+        w, h = self.aseprite.width, self.aseprite.height
+        ox = ox or 0
+        oy = oy or 0
+    elseif self.tile then
+        w, h = self.tile.width, self.tile.height
+        ox = ox or self.tile.objectoriginx
+        oy = oy or self.tile.objectoriginy
+    end
+    local x, y = self.x - (self.originx or 0), self.y - self.z - (self.originy or 0)
+    return math.testrects(x, y, w, h, cx, cy, cw, ch)
+end
+
 function Character:disappear()
     self.disappeared = true
 end
@@ -443,19 +459,19 @@ function Character:isDrawnBefore(other)
         return false
     end
 
-    local ax = self.x or 0
-    local bx = other.x or 0
-    if ax < bx then
-        return true
-    elseif ax > bx then
-        return false
-    end
-
     az = self.z or 0
     bz = other.z or 0
     if az < bz then
         return true
     elseif az > bz then
+        return false
+    end
+
+    local ax = self.x or 0
+    local bx = other.x or 0
+    if ax < bx then
+        return true
+    elseif ax > bx then
         return false
     end
 
