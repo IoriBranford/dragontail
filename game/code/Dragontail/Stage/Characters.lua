@@ -22,6 +22,7 @@ function Characters.init(scene_, nextid_)
     groups = {
         players = players,
         enemies = enemies,
+        items = {},
         solids = solids,
         all = allcharacters
     }
@@ -76,6 +77,9 @@ function Characters.spawn(object)
     end
     if character.team == "enemy" then
         enemies[#enemies+1] = character
+    end
+    if character.team == "item" then
+        groups.items[#groups.items+1] = character
     end
     if character.initialai then
         State.start(character, character.initialai)
