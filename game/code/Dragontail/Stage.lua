@@ -205,6 +205,15 @@ function Stage.fixedupdate()
             end
         end
     end
+
+    local items = Characters.getGroup("items")
+    for _, item in ipairs(items) do
+        if item.layer ~= room then
+            if not item:isOnCamera(cx, cy, cw, ch) then
+                item:disappear()
+            end
+        end
+    end
     scene:animate(1)
 end
 
