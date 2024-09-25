@@ -4,8 +4,9 @@ local Raycast = require "Object.Raycast"
 ---@field enemy Enemy?
 local AttackerSlot = class(Raycast)
 
-function AttackerSlot:_init(dx, dy)
+function AttackerSlot:_init(slottype, dx, dy)
     Raycast._init(self, dx, dy, 1)
+    self.type = slottype ---@type "melee"|"missile"
     self.dirx, self.diry = math.norm(self.dx, self.dy)
 end
 

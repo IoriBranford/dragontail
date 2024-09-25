@@ -188,7 +188,7 @@ function Enemy:approach()
     local bodyradius = self.bodyradius
 
     local attackradius = totalAttackRange(self.attackradius or 64, self.attacklungespeed or 0, self.attacklungedecel or 1) + opponent.bodyradius
-    local attackerslot = opponent:findRandomAttackerSlot(attackradius + bodyradius)
+    local attackerslot = opponent:findRandomAttackerSlot(attackradius + bodyradius, self.attackprojectile and "missile" or "melee")
     if not attackerslot then
         return "stand", 10
     end

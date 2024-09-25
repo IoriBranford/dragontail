@@ -143,11 +143,28 @@ function Player:init()
 
     ---@type AttackerSlot[]
     self.attackerslots = {
-        AttackerSlot(1024, 0),
-        AttackerSlot(0, 1024),
-        AttackerSlot(-1024, 0),
-        AttackerSlot(0, -1024)
+        AttackerSlot("melee", 1024, 0), -- 3 o clock
+        AttackerSlot("melee", 0, 1024), -- 6 o clock
+        AttackerSlot("melee", -1024, 0),-- 9 o clock
+        AttackerSlot("melee", 0, -1024), -- 12 o clock
+        AttackerSlot("missile", 1024*cos(1*pi/6), 1024*sin(1*pi/6)), -- 4 o clock
+        AttackerSlot("missile", 1024*cos(2*pi/6), 1024*sin(2*pi/6)), -- 5 o clock
+        AttackerSlot("missile", 1024*cos(4*pi/6), 1024*sin(4*pi/6)), -- 7 o clock
+        AttackerSlot("missile", 1024*cos(5*pi/6), 1024*sin(5*pi/6)), -- 8 o clock
+        AttackerSlot("missile", 1024*cos(7*pi/6), 1024*sin(7*pi/6)), -- 10 o clock
+        AttackerSlot("missile", 1024*cos(8*pi/6), 1024*sin(8*pi/6)), -- 11 o clock
+        AttackerSlot("missile", 1024*cos(10*pi/6), 1024*sin(10*pi/6)), -- 1 o clock
+        AttackerSlot("missile", 1024*cos(11*pi/6), 1024*sin(11*pi/6)), -- 2 o clock
+        melee = {},
+        missile = {}
     }
+
+    for _, slot in ipairs(self.attackerslots) do
+        local slotgroup = self.attackerslots[slot.type]
+        if slotgroup then
+            slotgroup[#slotgroup+1] = slot
+        end
+    end
 
     self.crosshair = Characters.spawn({
         type = "rose-crosshair",
@@ -291,8 +308,9 @@ function Player:drawAseprite(fixedfrac)
     love.graphics.pop()
 end
 
-function Player:findRandomAttackerSlot(attackrange)
+function Player:findRandomAttackerSlot(attackrange, slottype)
     local attackerslots = self.attackerslots
+    attackerslots = slottype and attackerslots[slottype] or attackerslots
     local i = love.math.random(#attackerslots)
     for _ = 1, #attackerslots do
         local slot = attackerslots[i]
@@ -307,8 +325,9 @@ function Player:findRandomAttackerSlot(attackrange)
     end
 end
 
-function Player:findClosestAttackerSlot(attackerx, attackery, attackrange)
+function Player:findClosestAttackerSlot(attackerx, attackery, attackrange, slottype)
     local attackerslots = self.attackerslots
+    attackerslots = slottype and attackerslots[slottype] or attackerslots
     local x, y = self.x, self.y
     local bestslot, bestslotdsq
     for _, slot in ipairs(attackerslots) do
