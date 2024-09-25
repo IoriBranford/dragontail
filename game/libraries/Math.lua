@@ -228,6 +228,44 @@ function math.polysignedarea(points)
     return doublearea/2
 end
 
+---@param points number[] every 2 is a 2D point
+function math.meancenter(points)
+    local cx, cy = 0, 0
+    for i = 2, #points, 2 do
+        cx = cx + points[i-1]
+        cy = cy + points[i]
+    end
+    local n = #points/2
+    return cx/n, cy/n
+end
+
+---@param points number[] every 2 is a 2D point
+function math.centerofgrav(points)
+    local cx, cy = 0, 0
+    local x1, y1 = points[#points-1], points[#points]
+    for i = 2, #points, 2 do
+        local x2, y2 = points[i-1], points[i]
+        local d = det(x1, y1, x2, y2)
+        cx = cx + d * (x1 + x2)
+        cy = cy + d * (y1 + y2)
+        x1, y1 = x2, y2
+    end
+    local sareaX6 = math.polysignedarea(points)*6
+    return cx/sareaX6, cy/sareaX6
+end
+
+---@return number centerx
+---@return number centery
+---@return number radius
+function math.boundingcircle(points)
+    local cx, cy = math.meancenter(points)
+    local rsq = 0
+    for i = 2, #points, 2 do
+        rsq = max(rsq, math.distsq(points[i-1], points[i], cx, cy))
+    end
+    return cx, cy, sqrt(rsq)
+end
+
 function math.testpointtri(px, py, ax, ay, bx, by, cx, cy)
     local acx, acy = cx - ax, cy - ay
     local abx, aby = bx - ax, by - ay
