@@ -218,14 +218,14 @@ function math.projpointsegment(px, py, ax, ay, bx, by)
 end
 
 function math.polysignedarea(points)
-    local area = 0
+    local doublearea = 0
     local x1, y1 = points[#points-1], points[#points]
     for i = 2, #points, 2 do
         local x2, y2 = points[i-1], points[i]
-        area = area + det(x1, y1, x2, y2)
+        doublearea = doublearea + det(x1, y1, x2, y2)
         x1, y1 = x2, y2
     end
-    return area
+    return doublearea/2
 end
 
 function math.testpointtri(px, py, ax, ay, bx, by, cx, cy)
