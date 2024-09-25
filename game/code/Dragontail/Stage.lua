@@ -181,7 +181,7 @@ function Stage.updateGoingToNextRoom()
     if math.dot(destx - camera.x, desty - camera.y, pathx2-pathx1, pathy2-pathy1) < 0 then
         camera.velx, camera.vely = 0, 0
     else
-        camera.velx, camera.vely = Movement.getVelocity_speed(camera.x, camera.y, destx, desty, 6)
+        camera.velx, camera.vely = Movement.getVelocity_speed(camera.x, camera.y, destx, desty, 8)
     end
 end
 
