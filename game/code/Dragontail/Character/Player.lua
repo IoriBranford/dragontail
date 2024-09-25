@@ -118,8 +118,8 @@ local function findInstantThrowDir(self, targetfacex, targetfacey)
         local score = e:getTargetingScore(self.x, self.y, targetfacex, targetfacey)
 
         local etop, ebottom = e.z + self.bodyheight, e.z
-        if ebottom <= throwz and throwz <= etop then
-            score = score * 2
+        if ebottom > throwz or throwz > etop then
+            score = score / 2
         end
         if score < enemytargetingscore then
             enemy, enemytargetingscore = e, score
