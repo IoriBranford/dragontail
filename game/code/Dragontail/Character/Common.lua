@@ -12,6 +12,8 @@ local cos = math.cos
 local sin = math.sin
 local max = math.max
 
+local MaxProjectileItems = 16
+
 ---@class Common:Character
 local Common = class(Character)
 
@@ -143,7 +145,8 @@ function Common:projectileEmbed(opponent, ooby, oobz)
         self:disappear()
     else
         Audio.play(self.bodyslamsound)
-        if self.itemtype then
+        local items = Characters.getGroup("items")
+        if self.itemtype and #items < MaxProjectileItems then
             Characters.spawn({
                 type = self.itemtype,
                 x = self.x, y = self.y, z = self.z
@@ -186,7 +189,8 @@ function Common:projectileBounce(opponent, ooby, oobz)
         oobx, ooby, oobz = self:keepInBounds()
     until oobz and oobz < 0
     self.velx, self.vely, self.velz = 0, 0, 0
-    if not opponent and self.itemtype then
+    local items = Characters.getGroup("items")
+    if not opponent and self.itemtype and #items < MaxProjectileItems then
         Characters.spawn({
             type = self.itemtype,
             x = self.x, y = self.y, z = self.z
