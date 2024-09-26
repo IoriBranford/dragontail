@@ -233,6 +233,27 @@ function Boundary:keepCylinderInside(x, y, z, r, h)
     return newx, newy, newz, penex, peney, penez
 end
 
+function Boundary:getCylinderFloorZ(x, y, z, r, h)
+    local floorz = self.z
+    if self.outward then
+        floorz = floorz + self.bodyheight
+    end
+    if z < floorz then
+        -- underneath
+        return
+    end
+
+    x, y = x - self.x, y - self.y
+    local points = assert(self.points)
+    local nearestx, nearesty = math.nearestpolygonpoint(points, x, y)
+    if not math.pointinpolygon(points, x, y)
+    and distsq(nearestx, nearesty, x, y) > r*r then
+        -- off edge
+        return
+    end
+    return floorz
+end
+
 ---@param raycast Raycast
 function Boundary:castRay(raycast, rx, ry)
     local points = self.points
