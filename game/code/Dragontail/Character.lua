@@ -359,8 +359,9 @@ function Character:drawSpriteShadow(fixedfrac)
         self.tile
 
     if drawable then
+        local floorz = Boundaries.getCylinderFloorZ(x, y, self.z, self.bodyradius, self.bodyheight) or 0
         love.graphics.push()
-        love.graphics.translate(x, y)
+        love.graphics.translate(x, y - floorz)
         love.graphics.rotate(self.rotation or 0)
         love.graphics.scale(self.scalex or 1, (self.scaley or 1) / 2)
         love.graphics.translate(-self.spriteoriginx or 0, -self.spriteoriginy or 0)
