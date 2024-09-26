@@ -80,6 +80,17 @@ function Boundaries.keepCylinderIn(x, y, z, r, h)
     return x, y, z, totalpenex, totalpeney, totalpenez
 end
 
+function Boundaries.getCylinderFloorZ(x, y, z, r, h)
+    local floorz
+    for _, bounds in pairs(boundaries) do
+        local fz = bounds:getCylinderFloorZ(x, y, z, r, h)
+        if fz then
+            floorz = math.max(floorz or fz, fz)
+        end
+    end
+    return floorz
+end
+
 function Boundaries.draw()
     for _, boundary in pairs(boundaries) do
         boundary:draw()
