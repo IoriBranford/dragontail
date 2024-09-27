@@ -659,6 +659,10 @@ function Player:hold(enemy)
     local holdangle = atan2(holddiry, holddirx)
     local holddestangle = holdangle
     local time = enemy.timetobreakhold or 60
+    local holdfrombehind = dot(enemy.facex, enemy.facey, self.facex, self.facey) >= 0
+    if holdfrombehind then
+        -- DESIGNME
+    end
     while time > 0 do
         yield()
         enemy = self.heldopponent
@@ -700,6 +704,13 @@ function Player:hold(enemy)
         enemy.x = x + velx + holddirx*radii
         enemy.y = y + vely + holddiry*radii
         self.facex, self.facey = holddirx, holddiry
+
+        if holdfrombehind then
+            enemy.facex, enemy.facey = holddirx, holddiry
+        else
+            enemy.facex, enemy.facey = -holddirx, -holddiry
+        end
+        enemy:setDirectionalAnimation("Hurt", atan2(enemy.facey, enemy.facex))
 
         local holdanimation = (velx ~= 0 or vely ~= 0) and "holdwalk" or "hold"
         holdanimation = self.getDirectionalAnimation_angle(holdanimation, holdangle, self.animationdirections)
