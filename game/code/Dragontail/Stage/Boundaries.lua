@@ -52,11 +52,13 @@ end
 function Boundaries.keepCircleIn(x, y, r)
     local totalpenex, totalpeney, penex, peney
     for _, bounds in pairs(boundaries) do
-        x, y, penex, peney = bounds:keepCircleInside(x, y, r)
+        penex, peney = bounds:getCirclePenetration(x, y, r)
         if penex then
+            x = x - penex
             totalpenex = (totalpenex or 0) + penex
         end
         if peney then
+            y = y - peney
             totalpeney = (totalpeney or 0) + peney
         end
     end
@@ -66,14 +68,17 @@ end
 function Boundaries.keepCylinderIn(x, y, z, r, h)
     local totalpenex, totalpeney, totalpenez, penex, peney, penez
     for _, bounds in pairs(boundaries) do
-        x, y, z, penex, peney, penez = bounds:keepCylinderInside(x, y, z, r, h)
+        penex, peney, penez = bounds:getCylinderPenetration(x, y, z, r, h)
         if penex then
+            x = x - penex
             totalpenex = (totalpenex or 0) + penex
         end
         if peney then
+            y = y - peney
             totalpeney = (totalpeney or 0) + peney
         end
         if penez then
+            z = z - penez
             totalpenez = (totalpenez or 0) + penez
         end
     end

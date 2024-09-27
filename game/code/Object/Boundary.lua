@@ -119,42 +119,7 @@ function Boundary:isCircleColliding(x, y, r)
     return colliding
 end
 
----@return number x
----@return number y
----@return number? penex x penetration. Non-0 = penetrating; 0 = touching; nil = no contact
----@return number? peney y penetration. Non-0 = penetrating; 0 = touching; nil = no contact
-function Boundary:old_keepCircleInside(x, y, r)
-    local selfx, selfy = self.x, self.y
-    x, y = x - selfx, y - selfy
-    local rsq = r*r
-    local totalpenex, totalpeney
-
-    forLines(self, 0, function(x1, y1, x2, y2)
-        local hitx, hity = projpointsegment(x, y, x1, y1, x2, y2)
-        local dsq = distsq(x, y, hitx, hity)
-        if dsq > rsq then
-            return
-        end
-        local dist = sqrt(dsq)
-        local nx, ny = (hitx - x)/dist, (hity - y)/dist
-        local pene
-        if hitx == x1 and hity == y1
-        or hitx == x2 and hity == y2
-        or det(nx, ny, x2-x1, y2-y1) >= 0 then
-            pene = r - dist
-        else
-            pene = -r - dist
-        end
-        local penex, peney = nx * pene, ny * pene
-        totalpenex = (totalpenex or 0) + penex
-        totalpeney = (totalpeney or 0) + peney
-        x, y = x - penex, y - peney
-    end)
-
-    return x + selfx, y + selfy, totalpenex, totalpeney
-end
-
-function Boundary:keepCircleInside(x, y, r)
+function Boundary:getCirclePenetration(x, y, r)
     -- get if point in polygon
     local points = assert(self.points)
     x, y = x - self.x, y - self.y
@@ -167,7 +132,7 @@ function Boundary:keepCircleInside(x, y, r)
     local nearestdsq = distsq(x, y, nearestx, nearesty)
     -- if not in polygon, and nearest point farther than radius, then no collision
     if not inside and nearestdsq > r*r then
-        return x + self.x, y + self.y
+        return
     end
 
     -- move circle out of polygon in direction of nearest point
@@ -180,30 +145,18 @@ function Boundary:keepCircleInside(x, y, r)
     else
         nx, ny = (nearestx - x)/dist, (nearesty - y)/dist
     end
-    local pene
-    if inside then
-        pene = -r - dist
-    else
-        pene = r - dist
-    end
-    local penex, peney = nx * pene, ny * pene
-    x, y = x - penex, y - peney
-
-    return x + self.x, y + self.y, penex, peney
+    local pene = (inside and -r or r) - dist
+    return nx * pene, ny * pene
 
     -- TODO if needed, collision vs concave corners
 end
 
----@return number x
----@return number y
----@return number z
 ---@return number? penex x penetration. Non-0 = penetrating; 0 = touching; nil = no contact
 ---@return number? peney y penetration. Non-0 = penetrating; 0 = touching; nil = no contact
 ---@return number? penez z penetration. Non-0 = penetrating; 0 = touching; nil = no contact
-function Boundary:keepCylinderInside(x, y, z, r, h)
+function Boundary:getCylinderPenetration(x, y, z, r, h)
     local selfz, selfh = self.z, self.bodyheight
     local penex, peney, penez
-    local newx, newy, newz = x, y, z
     if self.outward then
         if z + h >= selfz and selfz + selfh >= z then
             local nearestx, nearesty = math.nearestpolygonpoint(self.points, x - self.x, y - self.y)
@@ -211,26 +164,23 @@ function Boundary:keepCylinderInside(x, y, z, r, h)
             or distsq(nearestx, nearesty, x - self.x, y - self.y) <= r*r then
                 local iz, iz2 = max(z, selfz), min(z+h, selfz+selfh)
                 penez = iz == z and iz - iz2 or iz2 - iz
-                newz = z - penez
-                newx, newy, penex, peney = self:keepCircleInside(x, y, r)
+                penex, peney = self:getCirclePenetration(x, y, r)
                 if penex and peney and math.lensq(penex, peney) <= penez*penez then
-                    newz, penez = z, nil
+                    penez = nil
                 else
-                    newx, newy, penex, peney = x, y, nil, nil
+                    penex, peney = nil, nil
                 end
             end
         end
     else
         if z <= selfz then
             penez = z - selfz
-            newz = z - penez
         elseif z + h >= selfz + selfh then
             penez = (z + h) - (selfz + selfh)
-            newz = z - penez
         end
-        newx, newy, penex, peney = self:keepCircleInside(x, y, r)
+        penex, peney = self:getCirclePenetration(x, y, r)
     end
-    return newx, newy, newz, penex, peney, penez
+    return penex, peney, penez
 end
 
 function Boundary:getCylinderFloorZ(x, y, z, r, h)
