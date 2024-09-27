@@ -1,10 +1,10 @@
 state,action,animation,frame,loop,canbeattacked,canbegrabbed,sound
-hurt,hurt,hurt,,0,FALSE,FALSE,
-held,held,hurt,,,TRUE,FALSE,
-knockedBack,knockedBack,hurt,,,FALSE,FALSE,
-wallBump,wallBump,hurt,,,FALSE,FALSE,sounds/combat/bodybump.mp3
+hurt,hurt,Hurt,,0,FALSE,FALSE,
+held,held,Hurt,,,TRUE,FALSE,
+knockedBack,knockedBack,Hurt,,,FALSE,FALSE,
+wallBump,wallBump,Hurt,,,FALSE,FALSE,sounds/combat/bodybump.mp3
 thrown,thrown,spin,,,FALSE,FALSE,
-wallSlammed,wallSlammed,hurt,,,FALSE,FALSE,sounds/combat/bodyslam.mp3
+wallSlammed,wallSlammed,Hurt,,,FALSE,FALSE,sounds/combat/bodyslam.mp3
 thrownRecover,thrownRecover,FallKnees,,0,FALSE,FALSE,sounds/combat/slide.mp3
 breakaway,breakaway,,,,FALSE,FALSE,sounds/combat/slap.mp3
 fall,fall,,,0,FALSE,FALSE,
