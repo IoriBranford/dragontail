@@ -20,11 +20,11 @@ end
 function Boundaries.putArray(array, scene)
     if not array then return end
     for _, bounds in ipairs(array) do
-        Boundaries.put(bounds.id, bounds)
-    end
-    if scene then
-        for _, boundary in ipairs(array) do
-            scene:add(boundary)
+        if bounds.visible then
+            Boundaries.put(bounds.id, bounds)
+            if scene then
+                scene:add(bounds)
+            end
         end
     end
 end
