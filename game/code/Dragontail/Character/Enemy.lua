@@ -305,7 +305,9 @@ function Enemy:attack()
         lungespeed = Fighter.updateSlideSpeed(self, tooppoangle, lungespeed)
         hittime = hittime - 1
         yield()
-        self:keepInBounds()
+        if self.velx ~= 0 or self.vely ~= 0 then
+            self:keepInBounds()
+        end
     until hittime <= 0
 
     self:stopAttack()
@@ -319,7 +321,9 @@ function Enemy:attack()
         lungespeed = Fighter.updateSlideSpeed(self, tooppoangle, lungespeed)
         afterhittime = afterhittime - 1
         yield()
-        self:keepInBounds()
+        if self.velx ~= 0 or self.vely ~= 0 then
+            self:keepInBounds()
+        end
     until afterhittime <= 0
 
     return "stand", 20
