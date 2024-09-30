@@ -252,6 +252,63 @@ function Enemy:approach()
     return "stand", 5
 end
 
+function Enemy:walkToDest(destx, desty, timelimit)
+    if type(destx) == "table" then
+        destx, desty = destx.x, destx.y
+    end
+
+    if desty ~= self.y or destx ~= self.x then
+        local todesty, todestx = desty - self.y, destx - self.x
+        if todestx == 0 and todesty == 0 then
+            todestx = 1
+        end
+        faceDir(self, todestx, todesty)
+        local todestangle = atan2(todesty, todestx)
+        self:setDirectionalAnimation("Walk", todestangle)
+    end
+
+    timelimit = timelimit or 600
+    for i = 1, timelimit do
+        if self.x == destx and self.y == desty then
+            return true
+        end
+        self.velx, self.vely = Movement.getVelocity_speed(self.x, self.y, destx, desty, self.speed or 1)
+        yield()
+    end
+end
+
+function Enemy:leave(exitx, exity)
+    self.recoverai = "leave"
+    self:walkToDest(exitx, exity)
+    self:disappear()
+end
+
+function Enemy:enterShootLeave()
+    self.recoverai = "enterShootLeave"
+
+    if self.entrypoint then
+        if self:walkToDest(self.entrypoint) then
+            self.entrypoint = nil
+        end
+    end
+
+    local attacktype = self.defaultattack
+    if attacktype then
+        Database.fill(self, attacktype)
+        local ammo = self.ammo or 10
+        for i = ammo-1, 0, -1 do
+            self.ammo = i
+            self:attack()
+        end
+    end
+
+    if self.exitpoint then
+        return "leave", self.exitpoint
+    end
+
+    self:disappear()
+end
+
 function Enemy:attack()
     self:stopGuarding()
     self.canbeattacked = not self.attackwindupinvuln
