@@ -353,20 +353,31 @@ function Character:drawSpriteShadow(fixedfrac)
     local x, y = self.x + self.velx * fixedfrac, self.y + self.vely * fixedfrac
     love.graphics.setColor(0,0,0)
 
-    local drawable =
+    local aseframe =
         self.aseanimation and self.aseanimation[self.animationframe or 1] or
-        self.aseprite and self.aseprite[self.animationframe or 1] or
-        self.tile
+        self.aseprite and self.aseprite[self.animationframe or 1]
 
-    if drawable then
+    if aseframe then
         local floorz = Boundaries.getCylinderFloorZ(x, y, self.z, self.bodyradius, self.bodyheight) or 0
         love.graphics.push()
         love.graphics.translate(x, y - floorz)
         love.graphics.rotate(self.rotation or 0)
         love.graphics.scale(self.scalex or 1, (self.scaley or 1) / 2)
         love.graphics.translate(-self.spriteoriginx or 0, -self.spriteoriginy or 0)
-        drawable:draw()
+        aseframe:draw()
         love.graphics.pop()
+        return
+    end
+
+    local tile = self.tile
+    if tile then
+        love.graphics.draw(tile.image, self.animationquad or tile.quad,
+            x, y,
+            self.rotation or 0,
+            self.scalex or 1, (self.scaley or 1) / 2,
+            self.originx or tile.objectoriginx, self.originy or tile.objectoriginy,
+            self.skewx or 0, self.skewy or 0)
+        return
     end
 end
 
