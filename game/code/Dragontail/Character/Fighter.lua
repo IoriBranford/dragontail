@@ -404,7 +404,7 @@ function Fighter:launchProjectileAtObject(type, object)
     return self:launchProjectile(type, dirx, diry, dirz)
 end
 
-function Fighter:launchProjectile(type, dirx, diry, dirz)
+function Fighter:launchProjectile(type, dirx, diry, dirz, attackid)
     local projectiledata = Database.get(type)
     if not projectiledata then
         return
@@ -413,7 +413,7 @@ function Fighter:launchProjectile(type, dirx, diry, dirz)
     local x, y, z = self.x, self.y, self.z
     local bodyradius, bodyheight = self.bodyradius or 0, self.bodyheight or 0
     local speed = projectiledata.speed or 1
-    return Characters.spawn({
+    local projectile = {
         x = x + bodyradius*dirx,
         y = y + bodyradius*diry,
         z = z + bodyheight / 2,
@@ -423,6 +423,10 @@ function Fighter:launchProjectile(type, dirx, diry, dirz)
         type = type,
         attackangle = atan2(diry, dirx),
         thrower = self
-    })
+    }
+    if Database.get(attackid) then
+        projectile.defaultattack = attackid
+    end
+    return Characters.spawn(projectile)
 end
 return Fighter
