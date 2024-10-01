@@ -266,6 +266,17 @@ function math.boundingcircle(points)
     return cx, cy, sqrt(rsq)
 end
 
+function math.farthestpoint(points, x, y)
+    local fari, fardsq = nil, -1
+    for i = 2, #points, 2 do
+        local dsq = math.distsq(x, y, points[i-1], points[i])
+        if dsq > fardsq then
+            fari, fardsq = i, dsq
+        end
+    end
+    return fari, fardsq
+end
+
 function math.testpointtri(px, py, ax, ay, bx, by, cx, cy)
     local acx, acy = cx - ax, cy - ay
     local abx, aby = bx - ax, by - ay
