@@ -483,6 +483,7 @@ function Player:control()
 end
 
 function Player:spinAttack(attacktype, angle)
+    self.numopponentshit = 0
     local lungeangle = angle + pi
     local originalfacex, originalfacey = self.facex, self.facey
     Database.fill(self, attacktype)
@@ -880,6 +881,7 @@ function Player:spinAndKickEnemy(attacktype, angle, enemy)
 end
 
 function Player:straightAttack(attacktype, angle, heldenemy)
+    self.numopponentshit = 0
     Database.fill(self, attacktype)
     Audio.play(self.swingsound)
     local attackagain = false

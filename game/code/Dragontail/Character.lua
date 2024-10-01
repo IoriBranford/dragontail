@@ -398,15 +398,18 @@ function Character:collideWithCharacterAttack(attacker)
     if self:checkAttackCollision(attacker) then
         local guardhitai = self.guardai or "guardHit"
         local hurtai = self.hurtai or "hurt"
+        local hitai = attacker.attackhitai
         if self.guardangle then
             State.start(self, guardhitai, attacker)
+            hitai = attacker.attackguardedai or hitai
         else
             State.start(self, hurtai, attacker)
             if attacker.hitstun <= 0 then
                 attacker.hitstun = attacker.attackstunself or 3
             end
+            hitai = attacker.attackhitopponentai or hitai
+            attacker.numopponentshit = (attacker.numopponentshit or 0) + 1
         end
-        local hitai = attacker.attackhitai
         if hitai then
             State.start(attacker, hitai, self)
         end

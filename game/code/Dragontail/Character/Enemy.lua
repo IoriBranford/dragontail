@@ -310,6 +310,7 @@ function Enemy:enterShootLeave()
 end
 
 function Enemy:attack()
+    self.numopponentshit = 0
     self:stopGuarding()
     self.canbeattacked = not self.attackwindupinvuln
     self.canbegrabbed = not self.attackwindupinvuln
