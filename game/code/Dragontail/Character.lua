@@ -44,15 +44,34 @@ function Character:init()
     self.attackstun = self.attackstun or 1
     self.hitstun = self.hitstun or 0
     self.hurtstun = self.hurtstun or 0
+    if self.points then
+        self:initPolygonBody(self.points)
+    elseif self.tile then
+        self.spriteoriginx = self.tile.objectoriginx
+        self.spriteoriginy = self.tile.objectoriginy
+        local shapes = self.tile.shapes
+        if shapes then
+            for _, shape in ipairs(shapes) do
+                if shape.shape == "polygon" and shape.collidable then
+                    self:initPolygonBody(shape.points, shape.x, shape.y)
+                    break
+                end
+            end
+        end
+    end
 end
 
-function Character:updateSprite(sprite, fixedfrac)
-    if sprite then
-        local vx, vy = self.velx or 0, self.vely or 0
-        local x, y, z = self.x, self.y, self.z
-        sprite.x = x + vx * fixedfrac
-        sprite.y = y + vy * fixedfrac
-        sprite.originy = (self.spriteoriginy or 0) + z
+function Character:initPolygonBody(points, dx, dy)
+    dx = dx or 0
+    dy = dy or 0
+    local _, rsq = math.farthestpoint(points, 0, 0)
+    self.bodyradius = math.sqrt(rsq)
+    self.points = {}
+    self.points.outward = math.polysignedarea(points) < 0
+    for i = 2, #points, 2 do
+        local px, py = points[i-1], points[i]
+        self.points[i-1] = px + dx
+        self.points[i] = py + dy
     end
 end
 
@@ -216,26 +235,127 @@ function Character:keepInBounds()
 end
 
 function Character:testBodyCollision(other)
-    return self ~= other
+    if self ~= other
         and self.z <= other.z + other.bodyheight
         and other.z <= self.z + self.bodyheight
         and testcircles(self.x, self.y, self.bodyradius, other.x, other.y, other.bodyradius)
+    then
+        local points = self.points
+        if not points then
+            return true
+        end
+        local otherx, othery = other.x - self.x, other.y - self.y
+        if math.pointinpolygon(points, otherx, othery) then
+            return true
+        end
+        local nearestx, nearesty = math.nearestpolygonpoint(points, otherx, othery)
+        return math.distsq(otherx, othery, nearestx, nearesty) <= other.bodyradius
+    end
 end
 
+function Character:getCirclePenetration(x, y, r)
+    local distsq = testcircles(self.x, self.y, self.bodyradius, x, y, r)
+    if not distsq then
+        return
+    end
+
+    local points = self.points
+    if not points then
+        local radii = self.bodyradius + r
+        local dist = sqrt(distsq)
+        local pene = radii - dist
+        local dx, dy = self.x - x, self.y - y
+        local nx, ny = dx/dist, dy/dist
+        return nx*pene, ny*pene
+    end
+
+    -- get if point in polygon
+    x, y = x - self.x, y - self.y
+    local inside = math.pointinpolygon(points, x, y)
+    if not points.outward then
+        inside = not inside
+    end
+    -- get nearest point on polygon
+    local nearestx, nearesty, nearesti, nearestj = math.nearestpolygonpoint(points, x, y)
+    local nearestdsq = math.distsq(x, y, nearestx, nearesty)
+    -- if not in polygon, and nearest point farther than radius, then no collision
+    if not inside and nearestdsq > r*r then
+        return
+    end
+
+    -- move circle out of polygon in direction of nearest point
+    local dist = sqrt(nearestdsq)
+    local nx, ny
+    if dist == 0 then
+        local x1, y1 = points[nearesti-1], points[nearesti]
+        local x2, y2 = points[nearestj-1], points[nearestj]
+        nx, ny = math.norm(math.rot90(x2-x1, y2-y1, 1))
+    else
+        nx, ny = (nearestx - x)/dist, (nearesty - y)/dist
+    end
+    local pene = (inside and -r or r) - dist
+    return nx * pene, ny * pene
+
+    -- TODO if needed, collision vs concave corners
+end
+
+---@return number? penex x penetration. Non-0 = penetrating; 0 = touching; nil = no contact
+---@return number? peney y penetration. Non-0 = penetrating; 0 = touching; nil = no contact
+---@return number? penez z penetration. Non-0 = penetrating; 0 = touching; nil = no contact
+function Character:getCylinderPenetration(x, y, z, r, h)
+    local selfz, selfh = self.z, self.bodyheight
+    local penex, peney, penez
+    local points = self.points
+    if not points then
+        -- I am a cylinder
+        if z + h >= selfz and selfz + selfh >= z then
+            local iz, iz2 = max(z, selfz), min(z+h, selfz+selfh)
+            penez = iz == z and iz - iz2 or iz2 - iz
+            penex, peney = self:getCirclePenetration(x, y, r)
+            if penex and peney and math.lensq(penex, peney) <= penez*penez then
+                penez = nil
+            else
+                penex, peney = nil, nil
+            end
+        end
+    elseif points.outward then
+        -- I am an outward polygon
+        if z + h >= selfz and selfz + selfh >= z then
+            local nearestx, nearesty = math.nearestpolygonpoint(points, x - self.x, y - self.y)
+            if math.pointinpolygon(points, x - self.x, y - self.y)
+            or math.distsq(nearestx, nearesty, x - self.x, y - self.y) <= r*r then
+                local iz, iz2 = max(z, selfz), min(z+h, selfz+selfh)
+                penez = iz == z and iz - iz2 or iz2 - iz
+                penex, peney = self:getCirclePenetration(x, y, r)
+                if penex and peney and math.lensq(penex, peney) <= penez*penez then
+                    penez = nil
+                else
+                    penex, peney = nil, nil
+                end
+            end
+        end
+    else
+        -- I am an inward polygon
+        if z <= selfz then
+            penez = z - selfz
+        elseif z + h >= selfz + selfh then
+            penez = (z + h) - (selfz + selfh)
+        end
+        penex, peney = self:getCirclePenetration(x, y, r)
+    end
+    return penex, peney, penez
+end
+
+---@param other Character
 function Character:collideWithCharacterBody(other)
     if not other.bodysolid then
         return
     end
-    local distsq = self:testBodyCollision(other)
-    if distsq then
-        local radii = self.bodyradius + other.bodyradius
-        local dist = math.sqrt(distsq)
-        local dx, dy = self.x - other.x, self.y - other.y
-        local normx, normy = dx/dist, dy/dist
-        self.x = other.x + normx*radii
-        self.y = other.y + normy*radii
-        return dx, dy
-    end
+    local penex, peney, penez = other:getCylinderPenetration(self.x, self.y, self.z, self.bodyradius, self.bodyheight)
+    self.x = self.x - (penex or 0)
+    self.y = self.y - (peney or 0)
+    self.z = self.z - (penez or 0)
+    return penex, peney, penez
 end
 
 function Character:checkAttackCollision(attacker)
@@ -391,6 +511,21 @@ function Character:drawBodyShape(fixedfrac)
     love.graphics.circle("line", x, screeny - bodyheight, bodyradius)
     love.graphics.line(x - bodyradius, screeny, x - bodyradius, screeny - bodyheight)
     love.graphics.line(x + bodyradius, screeny, x + bodyradius, screeny - bodyheight)
+    local points = self.points
+    if points then
+        local spriteoriginx, spriteoriginy = self.spriteoriginx or 0, self.spriteoriginy or 0
+        love.graphics.push()
+        love.graphics.translate(spriteoriginx, spriteoriginy)
+        self:drawPolygon()
+        love.graphics.translate(0, -bodyheight)
+        self:drawPolygon()
+        love.graphics.translate(self.x - spriteoriginx, self.y - spriteoriginy)
+        for i = 2, #points, 2 do
+            local px, py = points[i-1], points[i]
+            love.graphics.line(px, py, px, py + bodyheight)
+        end
+        love.graphics.pop()
+    end
 end
 
 function Character:drawAttackShape(fixedfrac)
