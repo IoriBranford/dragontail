@@ -190,7 +190,8 @@ function Common:projectileBounce(opponent, ooby, oobz)
     until oobz and oobz < 0
     self.velx, self.vely, self.velz = 0, 0, 0
     local items = Characters.getGroup("items")
-    if not opponent and self.itemtype and #items < MaxProjectileItems then
+    local numopponentshit = self.numopponentshit or 0
+    if not opponent and self.itemtype and #items < MaxProjectileItems and numopponentshit <= 0 then
         Characters.spawn({
             type = self.itemtype,
             x = self.x, y = self.y, z = self.z
@@ -226,8 +227,9 @@ function Common:projectileFly(shooter)
         oobx, ooby, oobz = self:keepInBounds()
         self.velz = self.velz - gravity
     until oobx or ooby or oobz
-    if self.attackhitai then
-        return self.attackhitai, oobx, ooby, oobz
+    local attackhitai = self.attackhitboundaryai or self.attackhitai
+    if attackhitai then
+        return attackhitai, oobx, ooby, oobz
     end
     self:disappear()
 end
