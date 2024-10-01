@@ -30,6 +30,12 @@ function GamePhase.loadphase()
         for k,v in pairs(properties) do
             if isAsset(v) then
                 getAsset(v)
+            elseif k == "attackchoices" then
+                local choices = {}
+                for attackid in v:gmatch("%S+") do
+                    choices[#choices+1] = attackid
+                end
+                properties[k] = choices
             end
         end
     end)
