@@ -499,7 +499,7 @@ function TiledObject:drawPolygon()
                 triangles[i-1], triangles[i-0])
         end
     else
-        linecolor = linecolor or color
+        linecolor = linecolor or color or Color.White
     end
     if linecolor then
         r,g,b,a = Color.unpack(linecolor)
