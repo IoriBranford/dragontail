@@ -407,7 +407,11 @@ function Player:control()
 
             if attackpressed then
                 if self.weaponinhand then
-                    return "throwWeapon", findInstantThrowDir(self, targetfacex, targetfacey)
+                    local projectiledata = Database.get(self.weaponinhand)
+                    local attackchoices = projectiledata and projectiledata.attackchoices
+                    local attackid = attackchoices and attackchoices[math.min(#attackchoices, 2)]
+                    local dirx, diry, dirz = findInstantThrowDir(self, targetfacex, targetfacey)
+                    return "throwWeapon", dirx, diry, dirz, attackid
                 end
                 return "straightAttack", "running-kick", atan2(vely, velx)
             end
@@ -625,11 +629,11 @@ function Player:aimThrow()
     end
 end
 
-function Player:throwWeapon(dirx, diry, dirz)
+function Player:throwWeapon(dirx, diry, dirz, attackid)
     self.facex, self.facey = norm(dirx, diry)
     local angle = atan2(diry, dirx)
     self:setDirectionalAnimation("throw", angle, 1)
-    self:launchProjectile(self.weaponinhand, dirx, diry, dirz)
+    self:launchProjectile(self.weaponinhand, dirx, diry, dirz, attackid)
     self.weaponinhand = nil
     Audio.play(self.throwsound)
     local t = self.throwtime or 6
