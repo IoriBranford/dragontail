@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.11.0" name="bandits" tilewidth="64" tileheight="64" tilecount="20" columns="4" objectalignment="bottom">
+<tileset version="1.11" tiledversion="1.11.0" name="bandits" tilewidth="64" tileheight="64" tilecount="24" columns="4" objectalignment="bottom">
  <tileoffset x="0" y="8"/>
- <image source="bandits.png" width="256" height="320"/>
+ <image source="bandits.png" width="256" height="384"/>
  <tile id="0" type="bandit-dagger"/>
  <tile id="1" type="bandit-dagger"/>
  <tile id="2" type="bandit-dagger"/>
@@ -22,4 +22,14 @@
  <tile id="17" type="bandit-arrow"/>
  <tile id="18" type="bandit-arrow"/>
  <tile id="19" type="bandit-arrow"/>
+ <tile id="20" type="bandit-cave-door">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="48" width="64" height="16">
+    <properties>
+     <property name="collidable" type="bool" value="true"/>
+    </properties>
+    <polygon points="0,0 0,16 64,16 64,0"/>
+   </object>
+  </objectgroup>
+ </tile>
 </tileset>

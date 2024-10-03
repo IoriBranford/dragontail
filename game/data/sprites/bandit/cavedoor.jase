@@ -24,6 +24,7 @@
   "size": { "w": 128, "h": 64 },
   "scale": "1",
   "frameTags": [
+   { "name": "collapse", "from": 1, "to": 1, "direction": "forward", "color": "#000000ff" }
   ],
   "layers": [
    { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
