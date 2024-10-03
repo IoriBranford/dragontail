@@ -64,7 +64,7 @@ end
 function Character:initPolygonBody(points, dx, dy)
     dx = dx or 0
     dy = dy or 0
-    local _, rsq = math.farthestpoint(points, 0, 0)
+    local _, rsq = math.farthestpoint(points, -dx, -dy)
     self.bodyradius = math.sqrt(rsq)
     self.points = {}
     self.points.outward = math.polysignedarea(points) < 0
