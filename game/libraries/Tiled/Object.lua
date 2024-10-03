@@ -412,6 +412,14 @@ function TiledObject:changeAseAnimation(animation, frame1, loopframe)
     end
 end
 
+function TiledObject:changeAnimation(animation, frame1, loopframe)
+    if self.aseprite then
+        self:changeAseAnimation(animation, frame1, loopframe)
+    elseif self.tile then
+        self:changeTile(animation)
+    end
+end
+
 function TiledObject:getTileset()
     local tile = self.tile
     return tile and tile.tileset
