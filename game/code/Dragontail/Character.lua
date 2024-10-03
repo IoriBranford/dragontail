@@ -46,9 +46,9 @@ function Character:init()
     self.hurtstun = self.hurtstun or 0
     if self.points then
         self:initPolygonBody(self.points)
-    elseif self.tile and not self.asefile then
-        self.spriteoriginx = self.tile.objectoriginx
-        self.spriteoriginy = self.tile.objectoriginy
+    elseif self.tile then
+        self.spriteoriginx = self.spriteoriginx or self.tile.objectoriginx
+        self.spriteoriginy = self.spriteoriginy or self.tile.objectoriginy
         local shapes = self.tile.shapes
         if shapes then
             for _, shape in ipairs(shapes) do
