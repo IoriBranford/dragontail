@@ -234,22 +234,28 @@ function Character:keepInBounds()
     return totalpenex, totalpeney, totalpenez
 end
 
+local function testBodyCollision_polygonAndCircle(polygon, circle)
+    local points = polygon.points
+    local otherx, othery = circle.x - polygon.x, circle.y - polygon.y
+    if math.pointinpolygon(points, otherx, othery) then
+        return true
+    end
+    local nearestx, nearesty = math.nearestpolygonpoint(points, otherx, othery)
+    return math.distsq(otherx, othery, nearestx, nearesty) <= circle.bodyradius
+end
+
 function Character:testBodyCollision(other)
     if self ~= other
         and self.z <= other.z + other.bodyheight
         and other.z <= self.z + self.bodyheight
         and testcircles(self.x, self.y, self.bodyradius, other.x, other.y, other.bodyradius)
     then
-        local points = self.points
-        if not points then
-            return true
+        if self.points and not other.points then
+            return testBodyCollision_polygonAndCircle(self, other)
+        elseif other.points then
+            return testBodyCollision_polygonAndCircle(other, self)
         end
-        local otherx, othery = other.x - self.x, other.y - self.y
-        if math.pointinpolygon(points, otherx, othery) then
-            return true
-        end
-        local nearestx, nearesty = math.nearestpolygonpoint(points, otherx, othery)
-        return math.distsq(otherx, othery, nearestx, nearesty) <= other.bodyradius
+        return true
     end
 end
 
