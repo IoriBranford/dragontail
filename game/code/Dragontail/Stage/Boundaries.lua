@@ -38,14 +38,14 @@ end
 function Boundaries.castRay(raycast, rx, ry)
     raycast.hitdist = nil
     local hitsomething
-    local rdx, rdy = raycast.rdx, raycast.rdy
+    local rdx, rdy = raycast.dx, raycast.dy
     for _, bound in pairs(boundaries) do
         if bound:castRay(raycast, rx, ry) then
-            raycast.rdx, raycast.rdy = raycast.hitx - rx, raycast.hity - ry
+            raycast.dx, raycast.dy = raycast.hitx - rx, raycast.hity - ry
             hitsomething = true
         end
     end
-    raycast.rdx, raycast.rdy = rdx, rdy
+    raycast.dx, raycast.dy = rdx, rdy
     return hitsomething
 end
 
