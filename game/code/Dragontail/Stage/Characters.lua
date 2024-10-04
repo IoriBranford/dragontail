@@ -158,6 +158,22 @@ function Characters.update(dsecs, fixedfrac)
     end
 end
 
+---@param raycast Raycast
+function Characters.castRay(raycast, rx, ry)
+    raycast.hitdist = nil
+    local hitsomething
+    local rdx, rdy = raycast.dx, raycast.dy
+    local group = groups[raycast.canhitgroup] or allcharacters
+    for _, character in ipairs(group) do
+        if character:collideWithRaycast(raycast, rx, ry) then
+            raycast.dx, raycast.dy = raycast.hitx - rx, raycast.hity - ry
+            hitsomething = true
+        end
+    end
+    raycast.dx, raycast.dy = rdx, rdy
+    return hitsomething
+end
+
 local function nop() end
 
 ---@param eval fun(character: Character, i: integer?, characters: Character[]?):"break"|"return"?
@@ -169,6 +185,53 @@ function Characters.search(group, eval)
             break
         end
     end
+end
+
+function Characters.keepCircleIn(x, y, r)
+    local totalpenex, totalpeney, penex, peney
+    for _, bounds in ipairs(solids) do
+        penex, peney = bounds:getCirclePenetration(x, y, r)
+        if penex then
+            x = x - penex
+            totalpenex = (totalpenex or 0) + penex
+        end
+        if peney then
+            y = y - peney
+            totalpeney = (totalpeney or 0) + peney
+        end
+    end
+    return x, y, totalpenex, totalpeney
+end
+
+function Characters.keepCylinderIn(x, y, z, r, h)
+    local totalpenex, totalpeney, totalpenez, penex, peney, penez
+    for _, bounds in ipairs(solids) do
+        penex, peney, penez = bounds:getCylinderPenetration(x, y, z, r, h)
+        if penex then
+            x = x - penex
+            totalpenex = (totalpenex or 0) + penex
+        end
+        if peney then
+            y = y - peney
+            totalpeney = (totalpeney or 0) + peney
+        end
+        if penez then
+            z = z - penez
+            totalpenez = (totalpenez or 0) + penez
+        end
+    end
+    return x, y, z, totalpenex, totalpeney, totalpenez
+end
+
+function Characters.getCylinderFloorZ(x, y, z, r, h)
+    local floorz
+    for _, bounds in ipairs(solids) do
+        local fz = bounds:getCylinderFloorZ(x, y, z, r, h)
+        if fz then
+            floorz = math.max(floorz or fz, fz)
+        end
+    end
+    return floorz
 end
 
 return Characters
