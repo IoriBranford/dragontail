@@ -2807,7 +2807,7 @@ return {
       columns = 4,
       image = "mapobjects/bandit/bandits.png",
       imagewidth = 256,
-      imageheight = 320,
+      imageheight = 384,
       objectalignment = "bottom",
       tilerendersize = "tile",
       fillmode = "stretch",
@@ -2822,7 +2822,7 @@ return {
       },
       properties = {},
       wangsets = {},
-      tilecount = 20,
+      tilecount = 24,
       tiles = {
         {
           id = 0,
@@ -2903,12 +2903,53 @@ return {
         {
           id = 19,
           type = "bandit-arrow"
+        },
+        {
+          id = 20,
+          type = "bandit-cave-door",
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            class = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "polygon",
+                x = 0,
+                y = 48,
+                width = 64,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                polygon = {
+                  { x = 0, y = 0 },
+                  { x = 0, y = 16 },
+                  { x = 64, y = 16 },
+                  { x = 64, y = 0 }
+                },
+                properties = {
+                  ["collidable"] = true
+                }
+              }
+            }
+          }
         }
       }
     },
     {
       name = "items",
-      firstgid = 5285,
+      firstgid = 5289,
       class = "",
       tilewidth = 64,
       tileheight = 32,
@@ -3067,6 +3108,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 64,
+                ["bodysolid"] = true,
                 ["color"] = "#80808080",
                 ["drawz"] = -1,
                 ["linecolor"] = "#80ffffff"
@@ -3098,6 +3140,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 32,
+                ["bodysolid"] = true,
                 ["color"] = "#80808080",
                 ["drawz"] = 1,
                 ["linecolor"] = "#80ffffff"
@@ -3130,7 +3173,7 @@ return {
               width = 64,
               height = 32,
               rotation = 0,
-              gid = 5288,
+              gid = 5292,
               visible = true,
               properties = {}
             },
@@ -3144,7 +3187,7 @@ return {
               width = 64,
               height = 32,
               rotation = 0,
-              gid = 5288,
+              gid = 5292,
               visible = true,
               properties = {}
             },
@@ -3158,7 +3201,7 @@ return {
               width = 64,
               height = 32,
               rotation = 0,
-              gid = 5285,
+              gid = 5289,
               visible = true,
               properties = {}
             },
@@ -3172,7 +3215,7 @@ return {
               width = 64,
               height = 32,
               rotation = 0,
-              gid = 5286,
+              gid = 5290,
               visible = true,
               properties = {}
             }
@@ -3371,6 +3414,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 64,
+                ["bodysolid"] = true,
                 ["color"] = "#80808080",
                 ["drawz"] = -1,
                 ["linecolor"] = "#80ffffff"
@@ -3398,6 +3442,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 32,
+                ["bodysolid"] = true,
                 ["color"] = "#80808080",
                 ["drawz"] = 1,
                 ["linecolor"] = "#80ffffff"
@@ -3646,6 +3691,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 64,
+                ["bodysolid"] = true,
                 ["color"] = "#80808080",
                 ["drawz"] = -1,
                 ["linecolor"] = "#80ffffff"
@@ -3673,6 +3719,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 32,
+                ["bodysolid"] = true,
                 ["color"] = "#80808080",
                 ["drawz"] = 1,
                 ["linecolor"] = "#80ffffff"
@@ -3708,7 +3755,7 @@ return {
               width = 64,
               height = 32,
               rotation = 0,
-              gid = 5288,
+              gid = 5292,
               visible = true,
               properties = {}
             },
@@ -3722,7 +3769,7 @@ return {
               width = 64,
               height = 32,
               rotation = 0,
-              gid = 5288,
+              gid = 5292,
               visible = true,
               properties = {}
             },
@@ -3915,6 +3962,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 32,
+                ["bodysolid"] = true,
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -3939,6 +3987,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 64,
+                ["bodysolid"] = true,
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -3963,6 +4012,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 64,
+                ["bodysolid"] = true,
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -4046,6 +4096,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 512,
+                ["bodysolid"] = true,
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -4086,6 +4137,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 32,
+                ["bodysolid"] = true,
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -4334,6 +4386,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 512,
+                ["bodysolid"] = true,
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -4364,6 +4417,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 32,
+                ["bodysolid"] = true,
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -4429,6 +4483,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 32,
+                ["bodysolid"] = true,
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -4491,6 +4546,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 512,
+                ["bodysolid"] = true,
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -4520,6 +4576,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 32,
+                ["bodysolid"] = true,
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -4614,6 +4671,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 512,
+                ["bodysolid"] = true,
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -4640,6 +4698,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 32,
+                ["bodysolid"] = true,
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
