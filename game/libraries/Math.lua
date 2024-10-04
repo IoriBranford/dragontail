@@ -266,6 +266,18 @@ function math.boundingcircle(points)
     return cx, cy, sqrt(rsq)
 end
 
+function math.boundingbox(points)
+    local px1, py1, px2, py2 = math.huge, math.huge, -math.huge, -math.huge
+    for i = 2, #points, 2 do
+        local px, py = points[i-1], points[i]
+        px1 = math.min(px1, px)
+        py1 = math.min(py1, py)
+        px2 = math.max(px2, px)
+        py2 = math.max(py2, py)
+    end
+    return px1, py1, px2, py2
+end
+
 function math.farthestpoint(points, x, y)
     local fari, fardsq = nil, -1
     for i = 2, #points, 2 do
