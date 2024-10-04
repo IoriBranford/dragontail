@@ -45,7 +45,9 @@ function Character:init()
     self.hitstun = self.hitstun or 0
     self.hurtstun = self.hurtstun or 0
     if self.points then
-        self:initPolygonBody(self.points)
+        local _, rsq = math.farthestpoint(self.points, 0, 0)
+        self.bodyradius = math.sqrt(rsq)
+        self.points.outward = math.polysignedarea(self.points) < 0
     elseif self.tile then
         self.spriteoriginx = self.spriteoriginx or self.tile.objectoriginx
         self.spriteoriginy = self.spriteoriginy or self.tile.objectoriginy
