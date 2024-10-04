@@ -429,22 +429,17 @@ function TiledObject:getExtents()
     local x, y = self.x, self.y
     local points = self.points
     if points then
-        local px1, py1, px2, py2 = math.huge, math.huge, -math.huge, -math.huge
-        for i = 2, #points, 2 do
-            local px, py = points[i-1], points[i]
-            px1 = math.min(px1, px)
-            py1 = math.min(py1, py)
-            px2 = math.max(px2, px)
-            py2 = math.max(py2, py)
-        end
+        local px1, py1, px2, py2 = math.boundingbox(points)
         return x + px1, y + py1, x + px2, y + py2
     end
     local tile = self.tile
     if tile then
         local sx = self.scalex or 1
         local sy = self.scaley or 1
-        local x1 = x - tile.objectoriginx * sx
-        local y1 = y - tile.objectoriginy * sy
+        local ox = self.originx or tile.objectoriginx
+        local oy = self.originy or tile.objectoriginy
+        local x1 = x - ox * sx
+        local y1 = y - oy * sy
         local x2 = x1 + tile.width  * sx
         local y2 = y1 + tile.height * sy
         return x1, y1, x2, y2
