@@ -701,41 +701,4 @@ function Character:hasDisappeared()
     return self.disappeared
 end
 
----@param other Character
-function Character:isDrawnBefore(other)
-    local az = self.drawz or 0
-    local bz = other.drawz or 0
-    if az < bz then
-        return true
-    elseif az > bz then
-        return false
-    end
-
-    local ay = self.y or 0
-    local by = other.y or 0
-    if ay < by then
-        return true
-    elseif ay > by then
-        return false
-    end
-
-    az = self.z or 0
-    bz = other.z or 0
-    if az < bz then
-        return true
-    elseif az > bz then
-        return false
-    end
-
-    local ax = self.x or 0
-    local bx = other.x or 0
-    if ax < bx then
-        return true
-    elseif ax > bx then
-        return false
-    end
-
-    return self.id < other.id
-end
-
 return Character

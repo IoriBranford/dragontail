@@ -234,4 +234,42 @@ function Characters.getCylinderFloorZ(x, y, z, r, h)
     return floorz
 end
 
+---@param a Character
+---@param b Character
+function Characters.isDrawnBefore(a, b)
+    local az = a.drawz or 0
+    local bz = b.drawz or 0
+    if az < bz then
+        return true
+    elseif az > bz then
+        return false
+    end
+
+    local ay = a.y or 0
+    local by = b.y or 0
+    if ay < by then
+        return true
+    elseif ay > by then
+        return false
+    end
+
+    az = a.z or 0
+    bz = b.z or 0
+    if az < bz then
+        return true
+    elseif az > bz then
+        return false
+    end
+
+    local ax = a.x or 0
+    local bx = b.x or 0
+    if ax < bx then
+        return true
+    elseif ax > bx then
+        return false
+    end
+
+    return a.id < b.id
+end
+
 return Characters

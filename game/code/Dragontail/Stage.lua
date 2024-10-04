@@ -255,7 +255,7 @@ function Stage.draw(fixedfrac)
     end
     love.graphics.push()
     love.graphics.translate(-camera.x - camera.velx*fixedfrac, -camera.y - camera.vely*fixedfrac)
-    scene:draw(fixedfrac, Character.isDrawnBefore)
+    scene:draw(fixedfrac, Characters.isDrawnBefore)
     love.graphics.pop()
 end
 
