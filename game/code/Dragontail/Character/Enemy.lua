@@ -311,58 +311,88 @@ function Enemy:enterShootLeave()
     self:disappear()
 end
 
-function Enemy:attack()
+function Enemy:prepareAttack(attacktype, dirx, diry)
+    if attacktype then
+        self.attacktype = attacktype
+        Database.fill(self, attacktype)
+    end
     self.numopponentshit = 0
     self:stopGuarding()
     self.canbeattacked = not self.attackwindupinvuln
     self.canbegrabbed = not self.attackwindupinvuln
     self.velx, self.vely = 0, 0
 
-    local x, y, z = self.x, self.y, self.z
-    local opponent = self.opponents[1]
-    opponent.attacker = self
-    local oppox, oppoy, oppoz = opponent.x, opponent.y, opponent.z
-    local tooppox, tooppoy, tooppoz = oppox - x, oppoy - y, oppoz - z
-    local tooppoangle = 0
-    if oppox ~= x or oppoy ~= y then
-        faceDir(self, tooppox, tooppoy)
-        tooppoangle = atan2(tooppoy, tooppox)
+    local target
+    if type(dirx) == "table" then
+        target = dirx
+        target.attacker = self
+        dirx, diry = math.norm(target.x - self.x, target.y - self.y)
     end
+
+    if dirx and diry then
+        self.facex, self.facey = dirx, diry
+    end
+
+    local angle = atan2(self.facey, self.facex)
     local animation = self.windupanimation
     if animation then
-        animation = self.getDirectionalAnimation_angle(animation, tooppoangle, self.animationdirections)
+        animation = self.getDirectionalAnimation_angle(animation, angle, self.animationdirections)
         self:changeAseAnimation(animation, 1, 0)
     end
 
     Audio.play(self.windupsound)
     for i = 1, (self.attackwinduptime or 20) do
-        local dodgeangle = findAngleToDodgeIncoming(self, opponent)
-        if dodgeangle then
-            opponent.attacker = nil
-            return "dodgeIncoming", dodgeangle
+        if target then
+            local dodgeangle = findAngleToDodgeIncoming(self, target)
+            if dodgeangle then
+                target.attacker = nil
+                return "dodgeIncoming", dodgeangle
+            end
         end
         yield()
     end
+end
+
+function Enemy:executeAttack(attacktype, dirx, diry, dirz)
+    if attacktype then
+        Database.fill(self, attacktype)
+    end
+    self.numopponentshit = 0
+    self:stopGuarding()
+
+    if type(dirx) == "table" then
+        local target = dirx
+        target.attacker = self
+        dirx, diry = math.norm(target.x - self.x, target.y - self.y)
+    end
+
+    if dirx and diry then
+        self.facex, self.facey = dirx, diry
+    else
+        dirx, diry = self.facex, self.facey
+    end
+
+    local angle = atan2(diry, dirx)
 
     Audio.play(self.swingsound)
     local attackprojectile = self.attackprojectile
     if attackprojectile then
-        self:launchProjectile(attackprojectile, norm(tooppox, tooppoy, tooppoz))
+        self:launchProjectile(attackprojectile, norm(dirx, diry, dirz))
     else
-        local attackangle = floor((tooppoangle + (pi/4)) / (pi/2)) * pi/2
+        local attackangle = floor((angle + (pi/4)) / (pi/2)) * pi/2
         self:startAttack(attackangle)
     end
 
     local lungespeed = self.attacklungespeed or 0
 
-    animation = self.swinganimation
+    local animation = self.swinganimation
     if animation then
-        animation = self.getDirectionalAnimation_angle(animation, tooppoangle, self.animationdirections)
+        animation = self.getDirectionalAnimation_angle(animation, angle, self.animationdirections)
         self:changeAseAnimation(animation, 1, 0)
     end
     local hittime = self.attackhittime or 10
     repeat
-        lungespeed = Fighter.updateSlideSpeed(self, tooppoangle, lungespeed)
+        lungespeed = Fighter.updateSlideSpeed(self, angle, lungespeed)
         hittime = hittime - 1
         yield()
         if self.velx ~= 0 or self.vely ~= 0 then
@@ -378,14 +408,20 @@ function Enemy:attack()
 
     local afterhittime = self.attackafterhittime or 30
     repeat
-        lungespeed = Fighter.updateSlideSpeed(self, tooppoangle, lungespeed)
+        lungespeed = Fighter.updateSlideSpeed(self, angle, lungespeed)
         afterhittime = afterhittime - 1
         yield()
         if self.velx ~= 0 or self.vely ~= 0 then
             self:keepInBounds()
         end
     until afterhittime <= 0
+end
 
+function Enemy:attack(attacktype)
+    local opponent = self.opponents[1]
+    local dirx, diry, dirz = norm(opponent.x - self.x, opponent.y - self.y, opponent.z - self.z)
+    self:prepareAttack(attacktype, opponent)
+    self:executeAttack(attacktype, dirx, diry, dirz)
     return "stand", 20
 end
 

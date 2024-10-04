@@ -209,7 +209,7 @@ function Fighter:wallBump(thrower, oobx, ooby)
     local wallslamcounterattack = self.wallslamcounterattack
     if self.health > 0 and wallslamcounterattack and self.attack then
         Database.fill(self, wallslamcounterattack)
-        return "attack", wallslamcounterattack, atan2(-(ooby or 0), -(oobx or 0))
+        return "attack", wallslamcounterattack
     end
     return "fall", thrower
 end
@@ -283,7 +283,7 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
     local wallslamcounterattack = self.wallslamcounterattack
     if self.health > 0 and wallslamcounterattack and self.attack then
         Database.fill(self, wallslamcounterattack)
-        return "attack", wallslamcounterattack, atan2(-(ooby or 0), -(oobx or 0))
+        return "attack", wallslamcounterattack
     end
     return "fall", thrower
 end
