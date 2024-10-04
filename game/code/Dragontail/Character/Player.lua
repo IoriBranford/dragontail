@@ -5,7 +5,6 @@ local Movement = require "Component.Movement"
 local State   = require "Dragontail.Character.State"
 local Fighter  = require "Dragontail.Character.Fighter"
 local Character= require "Dragontail.Character"
-local Boundaries = require "Dragontail.Stage.Boundaries"
 local AttackerSlot = require "Dragontail.Character.AttackerSlot"
 local Characters   = require "Dragontail.Stage.Characters"
 local Color        = require "Tiled.Color"
@@ -297,8 +296,9 @@ function Player:drawAseprite(fixedfrac)
     local velx, vely = self.velx or 0, self.vely or 0
     fixedfrac = fixedfrac or 0
 
+    local x, y = self.x + velx*fixedfrac, self.y + vely*fixedfrac
     love.graphics.push()
-    love.graphics.translate(self.x + velx*fixedfrac, self.y + vely*fixedfrac)
+    love.graphics.translate(x, y)
     love.graphics.rotate(self.rotation or 0)
     love.graphics.shear(self.skewx or 0, self.skewy or 0)
     love.graphics.scale(self.scalex or 1, self.scaley or 1)
@@ -346,7 +346,7 @@ function Player:updateAttackerSlots()
     local attackerslots = self.attackerslots
     local x, y = self.x, self.y
     for _, slot in ipairs(attackerslots) do
-        Boundaries.castRay(slot, x, y)
+        Characters.castRay(slot, x, y)
     end
 end
 

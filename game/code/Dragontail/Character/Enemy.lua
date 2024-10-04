@@ -3,7 +3,6 @@ local Movement = require "Component.Movement"
 local Audio    = require "System.Audio"
 local Fighter  = require "Dragontail.Character.Fighter"
 local Characters = require "Dragontail.Stage.Characters"
-local Boundaries = require "Dragontail.Stage.Boundaries"
 local Raycast    = require "Object.Raycast"
 
 ---@class Enemy:Fighter
@@ -56,8 +55,9 @@ local function findAngleToDodgeIncoming(self, incoming)
     local dodgedirx, dodgediry = math.norm(fromoppox, fromoppoy) -- cos(dodgeangle), sin(dodgeangle)
     local dodgespacex, dodgespacey = dodgedirx * dodgedist, dodgediry * dodgedist
     local raycast = Raycast(dodgespacex, dodgespacey, 0, 1, self.bodyradius/2)
+    raycast.canhitgroup = "solids"
 
-    if Boundaries.castRay(raycast, self.x, self.y) then
+    if Characters.castRay(raycast, self.x, self.y) then
         -- Dodge along wall
         local ax, ay = raycast.hitwallx, raycast.hitwally
         local bx, by = raycast.hitwallx2, raycast.hitwally2
@@ -68,13 +68,13 @@ local function findAngleToDodgeIncoming(self, incoming)
         if math.dot(dodgedirx, dodgediry, raycast.dx, raycast.dy) < 0 then
             raycast.dx, raycast.dy = -raycast.dx, -raycast.dy
         end
-        if Boundaries.castRay(raycast, self.x, self.y) then
+        if Characters.castRay(raycast, self.x, self.y) then
             raycast.dx, raycast.dy = -raycast.dx, -raycast.dy
         end
     elseif oppospeedsq >= dodgespeed*dodgespeed then
         local rot90dir = math.det(oppovelx, oppovely, fromoppox, fromoppoy)
         raycast.dx, raycast.dy = math.rot90(raycast.dx, raycast.dy, rot90dir)
-        if Boundaries.castRay(raycast, self.x, self.y) then
+        if Characters.castRay(raycast, self.x, self.y) then
             raycast.dx, raycast.dy = -raycast.dx, -raycast.dy
         end
     end
@@ -194,7 +194,8 @@ function Enemy:approach()
     end
     local destx, desty = attackerslot:getPosition(oppox, oppoy, attackradius)
     local raycast = Raycast(destx - x, desty - y, 0, 1, bodyradius/2)
-    if Boundaries.castRay(raycast, x, y) then
+    raycast.canhitgroup = "solids"
+    if Characters.castRay(raycast, x, y) then
         local todestx, todesty = destx - x, desty - y
         local frontendx, frontendy = raycast.hitwallx, raycast.hitwally
         local backendx, backendy = raycast.hitwallx2, raycast.hitwally2

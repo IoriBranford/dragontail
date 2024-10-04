@@ -6,6 +6,7 @@ local AttackerSlot = class(Raycast)
 
 function AttackerSlot:_init(slottype, dx, dy)
     Raycast._init(self, dx, dy, 1)
+    self.canhitgroup = "solids"
     self.type = slottype ---@type "melee"|"missile"
     self.dirx, self.diry = math.norm(self.dx, self.dy)
 end

@@ -4,7 +4,7 @@ local Config      = require "System.Config"
 local State       = require "Dragontail.Character.State"
 local Object      = require "Tiled.Object"
 local Movement    = require "Component.Movement"
-local Boundaries  = require "Dragontail.Stage.Boundaries"
+local Characters
 
 local pi = math.pi
 local floor = math.floor
@@ -22,6 +22,7 @@ local testcircles = math.testcircles
 local Character = class(Object)
 
 function Character:init()
+    Characters = Characters or require "Dragontail.Stage.Characters"
     if self.visible == nil then
         self.visible = true
     end
@@ -232,7 +233,7 @@ end
 function Character:keepInBounds()
     local x, y, z, r, h = self.x, self.y, self.z, self.bodyradius, self.bodyheight
     local totalpenex, totalpeney, totalpenez
-    self.x, self.y, self.z, totalpenex, totalpeney, totalpenez = Boundaries.keepCylinderIn(x, y, z, r, h)
+    self.x, self.y, self.z, totalpenex, totalpeney, totalpenez = Characters.keepCylinderIn(x, y, z, r, h)
     return totalpenex, totalpeney, totalpenez
 end
 
@@ -591,7 +592,7 @@ function Character:drawSpriteShadow(fixedfrac)
         self.aseprite and self.aseprite[self.animationframe or 1]
 
     if aseframe then
-        local floorz = Boundaries.getCylinderFloorZ(x, y, self.z, self.bodyradius, self.bodyheight) or 0
+        local floorz = Characters.getCylinderFloorZ(x, y, self.z, self.bodyradius, self.bodyheight) or 0
         love.graphics.push()
         love.graphics.translate(x, y - floorz)
         love.graphics.rotate(self.rotation or 0)

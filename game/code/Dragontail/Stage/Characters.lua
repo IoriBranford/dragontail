@@ -122,11 +122,6 @@ function Characters.fixedupdate()
             player:collideWithCharacterAttack(enemy)
         end
     end
-    for i = 1, #solids do local solid = solids[i]
-        for j = 1, #players do local player = players[j]
-            player:collideWithCharacterBody(solid)
-        end
-    end
     for i = 1, #players do local player = players[i]
         player:keepInBounds()
         player:updateAttackerSlots()
@@ -205,8 +200,8 @@ end
 
 function Characters.keepCylinderIn(x, y, z, r, h)
     local totalpenex, totalpeney, totalpenez, penex, peney, penez
-    for _, bounds in ipairs(solids) do
-        penex, peney, penez = bounds:getCylinderPenetration(x, y, z, r, h)
+    for _, solid in ipairs(solids) do
+        penex, peney, penez = solid:getCylinderPenetration(x, y, z, r, h)
         if penex then
             x = x - penex
             totalpenex = (totalpenex or 0) + penex

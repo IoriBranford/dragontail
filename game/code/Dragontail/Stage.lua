@@ -3,11 +3,8 @@ local Tiled     = require "Tiled"
 local Audio     = require "System.Audio"
 local Movement  = require "Component.Movement"
 local State       = require "Dragontail.Character.State"
-local Boundary    = require "Object.Boundary"
-local Boundaries  = require "Dragontail.Stage.Boundaries"
 local Characters  = require "Dragontail.Stage.Characters"
 local CameraPath  = require "Object.CameraPath"
-local Character   = require "Dragontail.Character"
 local Stage = {
     CameraWidth = 480,
     CameraHeight = 270
@@ -30,7 +27,6 @@ function Stage.quit()
     roomindex = nil
     winningteam = nil
     camera = nil
-    Boundaries.clear()
     Characters.quit()
 end
 
@@ -42,14 +38,8 @@ function Stage.init(stagefile)
     scene = Scene()
     Characters.init(scene, map.nextobjectid)
 
-    for id, object in pairs(map.objects) do
-        if object.type == "Boundary" then
-            Boundary.cast(object)
-            object:init()
-            local boundaries = object.layer.boundaries or {}
-            object.layer.boundaries = boundaries
-            boundaries[#boundaries+1] = object
-        elseif object.type == "CameraPath" then
+    for _, object in pairs(map.objects) do
+        if object.type == "CameraPath" then
             CameraPath.cast(object)
             object:init()
         else
@@ -62,8 +52,10 @@ function Stage.init(stagefile)
 
     local CameraTopMargin = 32
 
-    camera = Boundary.from({
+    camera = Characters.spawn({
         shape = "polygon",
+        bodysolid = true,
+        bodyheight = 512,
         x = 0, y = 0, velx = 0, vely = 0,
         width = Stage.CameraWidth, height = Stage.CameraHeight,
         points = {
@@ -73,7 +65,6 @@ function Stage.init(stagefile)
             0, Stage.CameraHeight
         }
     })
-    Boundaries.put("camera", camera)
 
     scene:addMap(map, "group,tilelayer")
 
@@ -95,9 +86,21 @@ function Stage.init(stagefile)
     })
     for i = firstroomindex - 1, 1, -1 do
         local prevroom = map.layers.rooms[i]
-        if prevroom.boundaries then
-            Boundaries.putArray(prevroom.boundaries, scene)
-            break
+        local characters = prevroom.characters
+        if characters then
+            local n = 0
+            for c = #characters, 1, -1 do
+                local character = characters[c]
+                if character.type == "Boundary" then
+                    Characters.spawn(character)
+                    characters[c] = characters[#characters]
+                    characters[#characters] = nil
+                    n = n + 1
+                end
+            end
+            if n > 0 then
+                break
+            end
         end
     end
     Stage.openRoom(firstroomindex)
@@ -131,8 +134,6 @@ function Stage.openRoom(i)
     local room = map.layers.rooms[i]
     if room then
         roomindex = i
-        local roombounds = room.boundaries
-        Boundaries.putArray(roombounds, scene)
         Characters.spawnArray(room.characters)
     else
         winningteam = "players"
@@ -150,8 +151,6 @@ function Stage.updateGoingToNextRoom()
     end
 
     local camerapath = room.camerapath ---@type CameraPath
-
-    camera.x, camera.y = camera.x + camera.velx, camera.y + camera.vely
 
     local camhalfw, camhalfh = camera.width/2, camera.height/2
 
@@ -195,13 +194,11 @@ function Stage.fixedupdate()
 
     local cx, cy, cw, ch = camera.x, camera.y, camera.width, camera.height
     local room = map.layers.rooms[roomindex]
-    local boundaries = Boundaries.getAll()
-    for id, boundary in pairs(boundaries) do
-        if boundary.layer ~= room then
-            local x1, y1, x2, y2 = boundary:boundingBox()
-            if not math.testrects(cx, cy, cw, ch, x1, y1, x2-x1, y2-y1) then
-                boundary.disappeared = true
-                boundaries[id] = nil
+    local solids = Characters.getGroup("solids")
+    for _, solid in ipairs(solids) do
+        if solid.layer ~= room then
+            if not solid:isOnCamera(cx, cy, cw, ch) then
+                solid:disappear()
             end
         end
     end
