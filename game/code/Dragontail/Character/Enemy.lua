@@ -170,14 +170,14 @@ function Enemy:dodgeIncoming(dodgeangle)
     Audio.play(self.stopdashsound)
     self:slide(dodgeangle, self.dodgespeed, self.dodgedecel)
 
-    local attacktype = not opponent.attacker and self.attacktype
-    if attacktype then
-        local attackradius = self.attackradius
-        x, y, oppox, oppoy = self.x, self.y, opponent.x, opponent.y
-        if distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
-            return "attack", attacktype
-        end
-    end
+    -- local attacktype = not opponent.attacker and self.attacktype
+    -- if attacktype then
+    --     local attackradius = self.attackradius
+    --     x, y, oppox, oppoy = self.x, self.y, opponent.x, opponent.y
+    --     if distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
+    --         return "attack", attacktype
+    --     end
+    -- end
     return "stand"
 end
 
@@ -342,13 +342,13 @@ function Enemy:prepareAttack(attacktype, dirx, diry)
 
     Audio.play(self.windupsound)
     for i = 1, (self.attackwinduptime or 20) do
-        if target then
-            local dodgeangle = findAngleToDodgeIncoming(self, target)
-            if dodgeangle then
-                target.attacker = nil
-                return "dodgeIncoming", dodgeangle
-            end
-        end
+        -- if target then
+        --     local dodgeangle = findAngleToDodgeIncoming(self, target)
+        --     if dodgeangle then
+        --         target.attacker = nil
+        --         return "dodgeIncoming", dodgeangle
+        --     end
+        -- end
         yield()
     end
 end
@@ -469,7 +469,6 @@ function Enemy:guardHit(attacker)
     local guardcounterattack = self.guardcounterattack
     local guardhitstocounterattack = self.guardhitstocounterattack or 3
     if guardcounterattack then
-        Database.fill(self, guardcounterattack)
         -- print(guardcounterattack, guardhitstocounterattack, self.numguardedhits, self.attackwindupinvuln)
         if self.numguardedhits >= guardhitstocounterattack then
             self.numguardedhits = 0
