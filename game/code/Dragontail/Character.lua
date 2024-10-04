@@ -678,6 +678,11 @@ function Character:drawAttackShape(fixedfrac)
 end
 
 function Character:isOnCamera(cx, cy, cw, ch)
+    if self.points then
+        local x, y, x2, y2 = self:getExtents()
+        y = y - self.z - self.bodyheight
+        return math.testrects(x, y, x2-x, y2-y, cx, cy, cw, ch)
+    end
     local ox, oy = self.originx, self.originy
     local w, h = 0, 0
     if self.aseprite then
@@ -689,7 +694,7 @@ function Character:isOnCamera(cx, cy, cw, ch)
         ox = ox or self.tile.objectoriginx
         oy = oy or self.tile.objectoriginy
     end
-    local x, y = self.x - (self.originx or 0), self.y - self.z - (self.originy or 0)
+    local x, y = self.x - ox, self.y - self.z - oy
     return math.testrects(x, y, w, h, cx, cy, cw, ch)
 end
 
