@@ -330,6 +330,9 @@ function Enemy:prepareAttack(attacktype, dirx, diry)
     end
 
     if dirx and diry then
+        if dirx == 0 and diry == 0 then
+            dirx = 1
+        end
         self.facex, self.facey = dirx, diry
     end
 
@@ -367,6 +370,9 @@ function Enemy:executeAttack(attacktype, dirx, diry, dirz)
     end
 
     if dirx and diry then
+        if dirx == 0 and diry == 0 then
+            dirx = 1
+        end
         self.facex, self.facey = dirx, diry
     else
         dirx, diry = self.facex, self.facey
