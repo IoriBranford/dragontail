@@ -431,6 +431,31 @@ function Enemy:attack(attacktype)
     return "stand", 20
 end
 
+function Enemy:enterAndAmbush()
+    if self.entrypoint then
+        if self:walkToDest(self.entrypoint) then
+            self.entrypoint = nil
+        end
+    end
+    self:prepareAttack(self.defaultattack)
+    local opponents = self.opponents
+    local sighted
+    local cossightarc = cos(self.ambushsightarc or (pi/6))
+    repeat
+        yield()
+        for _, opponent in ipairs(opponents) do
+            local tooppox, tooppoy = norm(opponent.x - self.x, opponent.y - self.y)
+            local fDotD = math.dot(tooppox, tooppoy, self.facex, self.facey)
+            if fDotD >= cossightarc then
+                sighted = opponent
+                break
+            end
+        end
+    until sighted
+    self:executeAttack(self.defaultattack, sighted)
+    return "stand", 20
+end
+
 function Enemy:guard()
     self.velx, self.vely = 0, 0
     local t = self.guardtime or 60
