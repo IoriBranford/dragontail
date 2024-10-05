@@ -184,15 +184,17 @@ end
 
 function Characters.keepCircleIn(x, y, r)
     local totalpenex, totalpeney, penex, peney
-    for _, bounds in ipairs(solids) do
-        penex, peney = bounds:getCirclePenetration(x, y, r)
-        if penex then
-            x = x - penex
-            totalpenex = (totalpenex or 0) + penex
-        end
-        if peney then
-            y = y - peney
-            totalpeney = (totalpeney or 0) + peney
+    for _, solid in ipairs(solids) do
+        if solid.bodysolid then
+            penex, peney = solid:getCirclePenetration(x, y, r)
+            if penex then
+                x = x - penex
+                totalpenex = (totalpenex or 0) + penex
+            end
+            if peney then
+                y = y - peney
+                totalpeney = (totalpeney or 0) + peney
+            end
         end
     end
     return x, y, totalpenex, totalpeney
@@ -201,18 +203,20 @@ end
 function Characters.keepCylinderIn(x, y, z, r, h)
     local totalpenex, totalpeney, totalpenez, penex, peney, penez
     for _, solid in ipairs(solids) do
-        penex, peney, penez = solid:getCylinderPenetration(x, y, z, r, h)
-        if penex then
-            x = x - penex
-            totalpenex = (totalpenex or 0) + penex
-        end
-        if peney then
-            y = y - peney
-            totalpeney = (totalpeney or 0) + peney
-        end
-        if penez then
-            z = z - penez
-            totalpenez = (totalpenez or 0) + penez
+        if solid.bodysolid then
+            penex, peney, penez = solid:getCylinderPenetration(x, y, z, r, h)
+            if penex then
+                x = x - penex
+                totalpenex = (totalpenex or 0) + penex
+            end
+            if peney then
+                y = y - peney
+                totalpeney = (totalpeney or 0) + peney
+            end
+            if penez then
+                z = z - penez
+                totalpenez = (totalpenez or 0) + penez
+            end
         end
     end
     return x, y, z, totalpenex, totalpeney, totalpenez
