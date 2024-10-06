@@ -15,6 +15,7 @@ local Tile       = require "Tiled.Tile"
 ---@field tilecount integer The number of tiles in this tileset (since 0.13). Note that there can be tiles with a higher ID than the tile count, in case the tileset is an image collection from which tiles have been removed.
 ---@field columns integer The number of tile columns in the tileset. For image collection tilesets it is editable and is used when displaying the tileset. (since 0.15)
 ---@field objectalignment string Controls the alignment for tile objects. Valid values are unspecified, topleft, top, topright, left, center, right, bottomleft, bottom and bottomright. The default value is unspecified, for compatibility reasons. When unspecified, tile objects use bottomleft in orthogonal mode and bottom in isometric mode. (since 1.4)
+---@field numempty integer Number of tiles whose pixels are all fully transparent (alpha = 0)
 ---@field tiles Tile[] Moved to array part of tileset
 ---@field image love.Image
 ---@field imagefile string
@@ -24,6 +25,10 @@ local Tile       = require "Tiled.Tile"
 ----@field properties table Moved into tileset itself
 local Tileset = class()
 
+local ImageLoadSettings = {
+    asimagedata = true
+}
+
 function Tileset:_init()
     -- assert(tileset.objectalignment == "topleft", "Unsupported objectalignment "..tileset.objectalignment)
     assert(not self.source,
@@ -31,7 +36,10 @@ function Tileset:_init()
 
     local imagefile = self.image
     self.imagefile = imagefile
-    local image = Assets.get(imagefile)
+    local imagedata = Assets.get(imagefile, ImageLoadSettings)
+    ---@cast imagedata love.ImageData
+    local image = love.graphics.newImage(imagedata)
+    Assets.put(imagefile, image)
     self.image = image
     local columns = self.columns
     local n = self.tilecount
@@ -61,15 +69,33 @@ function Tileset:_init()
     end
 
     local iw, ih = image:getDimensions()
+    local numempty = n
     for id = 0, n - 1 do
         local c = id % columns
         local r = math.floor(id / columns)
         local tx = c * tw
         local ty = r * th
+
+        local empty = true
+        for y = ty, ty+th-1 do
+            for x = tx, tx+tw-1 do
+                local _, _, _, alpha = imagedata:getPixel(x, y)
+                if alpha ~= 0 then
+                    empty = false
+                    numempty = numempty - 1
+                    break
+                end
+            end
+            if not empty then
+                break
+            end
+        end
+
         local tile = Tile.cast {
             id = id,
             tileset = self,
             image = image,
+            empty = empty,
             quad = love.graphics.newQuad(tx, ty, tw, th, iw, ih),
             width = tw,
             height = th,
@@ -80,6 +106,7 @@ function Tileset:_init()
         }
         self[id] = tile
     end
+    self.numempty = numempty
 
     local tilesdata = self.tiles
     if tilesdata then

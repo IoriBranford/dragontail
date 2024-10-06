@@ -19,6 +19,7 @@ local Animation   = require "Tiled.Animation"
 ---@field offsety number Copy of tileset's tile offset y
 ---@field objectoriginx number originx adjusted by object alignment
 ---@field objectoriginy number originy adjusted by object alignment
+---@field empty boolean Contains only transparent pixels
 ---@field tileset Tileset
 ---@field shapes ObjectGroup? Collision shapes copied from objectGroup and offset by (-originx, -originy). Can access shapes by name after calling Map:indexTileShapesByName.
 ---@field animation Animation?
