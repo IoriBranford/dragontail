@@ -139,6 +139,7 @@ function TilePacking.pack(tilesets, aseprites)
     end)
 
     local allspace = newSpace(0, 0, packwidth, packheight)
+    allspace.tile = "empty"
     splitSpace(allspace, EmptyTileSize, EmptyTileSize)
 
     for i = 1, #heightsortedtiles do
@@ -168,8 +169,8 @@ function TilePacking.pack(tilesets, aseprites)
     local drawSpace_quad = love.graphics.newQuad(0, 0, 1, 1, 1, 1)
     local function drawSpace(space)
         local quad = drawSpace_quad
-        local tile = space.tile
-        if tile then
+        local tile = space.tile or "empty"
+        if tile ~= "empty" then
             local tw, th = tile.width, tile.height
             local dx0, dy0 = space.x, space.y
             local dx1, dy1 = dx0+1, dy0+1
