@@ -59,9 +59,10 @@ function TilePacking.pack(tilesets, aseprites)
         return nil, "Megatileset requires love.graphics"
     end
 
-    local packarea = 0
-    local maxtilewidth = 0
-    local maxtileheight = 0
+    local EmptyTileSize = 4
+    local packarea = EmptyTileSize*EmptyTileSize
+    local maxtilewidth = EmptyTileSize
+    local maxtileheight = EmptyTileSize
     for _, tileset in pairs(tilesets) do
         local tilewidth = tileset.tilewidth+2
         local tileheight = tileset.tileheight+2
@@ -72,7 +73,7 @@ function TilePacking.pack(tilesets, aseprites)
             maxtileheight = tileheight
         end
         local tilearea = tilewidth*tileheight
-        packarea = packarea + tilearea*tileset.tilecount
+        packarea = packarea + tilearea*(tileset.tilecount - tileset.numempty)
     end
 
     local asecelsbysrcpos = {}
@@ -107,8 +108,8 @@ function TilePacking.pack(tilesets, aseprites)
         end
     end
 
-    local packwidth = 1
-    local packheight = 1
+    local packwidth = EmptyTileSize
+    local packheight = EmptyTileSize
 
     while packarea > packwidth*packheight do
         if packheight < packwidth then
@@ -121,7 +122,9 @@ function TilePacking.pack(tilesets, aseprites)
     local sizesortedtiles = {}
     for _, tileset in pairs(tilesets) do
         for t = 0, tileset.tilecount-1 do
-            sizesortedtiles[#sizesortedtiles+1] = tileset[t]
+            if not tileset[t].empty then
+                sizesortedtiles[#sizesortedtiles+1] = tileset[t]
+            end
         end
     end
     if aseprites then
@@ -136,6 +139,7 @@ function TilePacking.pack(tilesets, aseprites)
     end)
 
     local allspace = newSpace(0, 0, packwidth, packheight)
+    splitSpace(allspace, EmptyTileSize, EmptyTileSize)
 
     for i = 1, #sizesortedtiles do
         local tile = sizesortedtiles[i]
@@ -214,6 +218,7 @@ function TilePacking.pack(tilesets, aseprites)
 
     local packimagedata = canvas:newImageData()
     local packimage = love.graphics.newImage(packimagedata)
+    local emptyquad = love.graphics.newQuad(0, 0, 1, 1, packwidth, packheight)
     for _, tileset in pairs(tilesets) do
         tileset.image = packimage
         -- local firstgid = tileset.firstgid
@@ -227,6 +232,9 @@ function TilePacking.pack(tilesets, aseprites)
         --     end
         -- end
         for i = 0, tileset.tilecount-1 do
+            if tileset[i].empty then
+                tileset[i].quad = emptyquad
+            end
             tileset[i].image = packimage
         end
     end
