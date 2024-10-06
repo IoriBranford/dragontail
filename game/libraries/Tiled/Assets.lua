@@ -1,7 +1,7 @@
 local TilePacking = require "Tiled.TilePacking"
 local hasAseprite, Aseprite = pcall(require, "Aseprite")
 
----@alias Asset Tileset|love.Image|love.Font|Aseprite
+---@alias Asset Tileset|love.Image|love.ImageData|love.Font|Aseprite
 ---@alias AssetGroup {[string]:Asset}
 
 local Assets = {
@@ -154,6 +154,7 @@ function Assets.put(path, asset)
     bytype[path] = asset
 end
 
+---@return Asset
 function Assets.get(path, ...)
     if path then
         Assets.touncache[path] = nil
@@ -249,7 +250,12 @@ function Assets.listGroup(list, assetgroup)
 end
 
 Assets.addLoaders {
-    png = love.graphics.newImage,
+    png = function(path, settings)
+        if settings and settings.asimagedata then
+            return love.image.newImageData(path)
+        end
+        return love.graphics.newImage(path, settings)
+    end,
     fnt = love.graphics.newFont,
     ttf = love.graphics.newFont,
     defaultfont = function(path)
