@@ -119,30 +119,30 @@ function TilePacking.pack(tilesets, aseprites)
         end
     end
 
-    local sizesortedtiles = {}
+    local heightsortedtiles = {}
     for _, tileset in pairs(tilesets) do
         for t = 0, tileset.tilecount-1 do
             if not tileset[t].empty then
-                sizesortedtiles[#sizesortedtiles+1] = tileset[t]
+                heightsortedtiles[#heightsortedtiles+1] = tileset[t]
             end
         end
     end
     if aseprites then
         for _, cels in pairs(asecelsbysrcpos) do
             for _, cel in pairs(cels) do
-                sizesortedtiles[#sizesortedtiles+1] = cel
+                heightsortedtiles[#heightsortedtiles+1] = cel
             end
         end
     end
-    table.sort(sizesortedtiles, function(a, b)
-        return a.width*a.height > b.width*b.height
+    table.sort(heightsortedtiles, function(a, b)
+        return a.height > b.height
     end)
 
     local allspace = newSpace(0, 0, packwidth, packheight)
     splitSpace(allspace, EmptyTileSize, EmptyTileSize)
 
-    for i = 1, #sizesortedtiles do
-        local tile = sizesortedtiles[i]
+    for i = 1, #heightsortedtiles do
+        local tile = heightsortedtiles[i]
         local width = tile.width + 2
         local height = tile.height + 2
         local subspace = findSubspace(allspace, width, height)
