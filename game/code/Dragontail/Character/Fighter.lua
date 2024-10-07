@@ -61,15 +61,22 @@ function Fighter:updateSlideSpeed(angle, speed, decel)
     return speed
 end
 
-function Fighter:hurt(attacker)
-    local hitspark = attacker.hitspark
-    if hitspark then
+function Fighter:makeImpactSpark(attacker, sparktype)
+    if sparktype then
         local hitsparkcharacter = {
-            type = hitspark,
+            type = sparktype,
         }
         hitsparkcharacter.x, hitsparkcharacter.y = mid(attacker.x, attacker.y, self.x, self.y)
-        Characters.spawn(hitsparkcharacter)
+        local z1, z2 =
+            math.max(self.z, attacker.z),
+            math.min(self.z + self.bodyheight, attacker.z + attacker.bodyheight)
+        hitsparkcharacter.z = z1 + (z2-z1)/2
+        return Characters.spawn(hitsparkcharacter)
     end
+end
+
+function Fighter:hurt(attacker)
+    self:makeImpactSpark(attacker, attacker.hitspark)
     self.health = self.health - attacker.attackdamage
     self.velx, self.vely = 0, 0
     self:stopAttack()
@@ -316,13 +323,7 @@ function Fighter:breakaway(other)
     Fighter.stopHolding(self, other)
     local breakspeed = 10
     local dirx, diry = norm(other.x - self.x, other.y - self.y)
-    local bodyradius = self.bodyradius
-    local hitsparkcharacter = {
-        type = "spark-hit",
-        x = self.x + dirx*bodyradius,
-        y = self.y + diry*bodyradius,
-    }
-    Characters.spawn(hitsparkcharacter)
+    self:makeImpactSpark(other, "spark-hit")
     self.velx, self.vely = -dirx * breakspeed, -diry * breakspeed
 
     local t = 1

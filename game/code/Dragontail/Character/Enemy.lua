@@ -485,14 +485,7 @@ function Enemy:guardHit(attacker)
     -- local dotGA = dot(toattackerx, toattackery, facex, facey)
     -- if dotGA >= cos(guardarc) * toattackerdist then
     Audio.play(self.guardhitsound)
-    local hitspark = attacker.guardhitspark
-    if hitspark then
-        local hitsparkcharacter = {
-            type = hitspark,
-        }
-        hitsparkcharacter.x, hitsparkcharacter.y = mid(attacker.x, attacker.y, self.x, self.y)
-        Characters.spawn(hitsparkcharacter)
-    end
+    self:makeImpactSpark(attacker, attacker.guardhitspark)
     self.hurtstun = attacker.attackguardstun or 6
     yield()
 
