@@ -657,7 +657,8 @@ function Player:hold(enemy)
     end
     self:stopAttack()
     local x, y = self.x, self.y
-    local radii = self.bodyradius + enemy.bodyradius
+    local grabradius = self.grabradius or 8
+    local radii = grabradius + enemy.bodyradius
     local holddirx, holddiry = enemy.x - x, enemy.y - y
     if holddirx ~= 0 or holddiry ~= 0 then
         holddirx, holddiry = norm(holddirx, holddiry)
@@ -829,7 +830,8 @@ function Player:spinAndKickEnemy(attacktype, angle, enemy)
     local spintime = self.attackhittime or 0
     local t = spintime
     local x, y = self.x, self.y
-    local radii = self.bodyradius + enemy.bodyradius
+    local grabradius = self.grabradius or 8
+    local radii = grabradius + enemy.bodyradius
     local holddirx, holddiry = enemy.x - x, enemy.y - y
     if holddirx ~= 0 or holddiry ~= 0 then
         holddirx, holddiry = norm(holddirx, holddiry)
