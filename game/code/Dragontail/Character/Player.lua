@@ -35,10 +35,13 @@ end
 local function findOpponentToHold(self, inx, iny)
     local x, y, opponents = self.x, self.y, self.opponents
     local grabradius = self.grabradius or 8
+    local handsheight = self.handsheight or (self.bodyradius/2)
     for i, opponent in ipairs(opponents) do
         if opponent.canbegrabbed then
-            local oppox, oppoy = opponent.x, opponent.y
-            if testcircles(x, y, grabradius, oppox, oppoy, opponent.bodyradius) then
+            local oppox, oppoy, oppoz = opponent.x, opponent.y, opponent.z
+            if oppoz <= handsheight
+            and handsheight <= oppoz + opponent.bodyheight
+            and testcircles(x, y, grabradius, oppox, oppoy, opponent.bodyradius) then
                 local distx = oppox - x
                 local disty = oppoy - y
                 if dot(distx, disty, inx, iny) > 0 then
