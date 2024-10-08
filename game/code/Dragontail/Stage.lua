@@ -34,6 +34,7 @@ function Stage.init(stagefile)
     map = Tiled.Map.load(stagefile)
     map:indexLayersByName()
     map:indexLayerObjectsByName()
+    map:indexTilesetTilesByName()
 
     scene = Scene()
     Characters.init(scene, map.nextobjectid)
@@ -69,7 +70,7 @@ function Stage.init(stagefile)
     scene:addMap(map, "group,tilelayer")
 
     local rooms = map.layers.rooms
-    local firstroomindex = 1
+    local firstroomindex = 7
     firstroomindex = min(firstroomindex, #rooms)
     local firstroom = rooms[firstroomindex]
     local camerapath = firstroom.camerapath
