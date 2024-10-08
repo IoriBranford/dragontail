@@ -68,8 +68,10 @@ function Stage.init(stagefile)
 
     scene:addMap(map, "group,tilelayer")
 
+    local rooms = map.layers.rooms
     local firstroomindex = 1
-    local firstroom = map.layers.rooms[firstroomindex]
+    firstroomindex = min(firstroomindex, #rooms)
+    local firstroom = rooms[firstroomindex]
     local camerapath = firstroom.camerapath
     while not camerapath do
         firstroomindex = firstroomindex - 1
