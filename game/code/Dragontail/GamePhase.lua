@@ -133,7 +133,7 @@ end
 function GamePhase.draw(fixedfrac)
     love.graphics.clear(.25, .25, .25)
     stagecanvas:drawOn(function()
-        Stage.draw(fixedfrac)
+        Stage.draw(paused and 0 or fixedfrac)
     end)
     stagecanvas:draw()
     Gui:draw()
