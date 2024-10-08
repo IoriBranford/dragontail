@@ -321,10 +321,10 @@ function Character:getCylinderPenetration(x, y, z, r, h)
             local iz, iz2 = max(z, selfz), min(z+h, selfz+selfh)
             penez = iz == z and iz - iz2 or iz2 - iz
             penex, peney = self:getCirclePenetration(x, y, r)
-            if penex and peney and math.lensq(penex, peney) <= penez*penez then
-                penez = nil
-            else
+            if penex and peney and math.lensq(penex, peney) > penez*penez then
                 penex, peney = nil, nil
+            else
+                penez = nil
             end
         end
     elseif points.outward then
@@ -336,10 +336,10 @@ function Character:getCylinderPenetration(x, y, z, r, h)
                 local iz, iz2 = max(z, selfz), min(z+h, selfz+selfh)
                 penez = iz == z and iz - iz2 or iz2 - iz
                 penex, peney = self:getCirclePenetration(x, y, r)
-                if penex and peney and math.lensq(penex, peney) <= penez*penez then
-                    penez = nil
-                else
+                if penex and peney and math.lensq(penex, peney) > penez*penez then
                     penex, peney = nil, nil
+                else
+                    penez = nil
                 end
             end
         end
