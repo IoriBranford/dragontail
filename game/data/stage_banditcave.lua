@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 23,
-  nextobjectid = 231,
+  nextlayerid = 24,
+  nextobjectid = 232,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -2890,19 +2890,19 @@ return {
         },
         {
           id = 16,
-          type = "bandit-arrow"
+          type = "bandit-boss"
         },
         {
           id = 17,
-          type = "bandit-arrow"
+          type = "bandit-boss"
         },
         {
           id = 18,
-          type = "bandit-arrow"
+          type = "bandit-boss"
         },
         {
           id = 19,
-          type = "bandit-arrow"
+          type = "bandit-boss"
         },
         {
           id = 20,
@@ -4719,6 +4719,36 @@ return {
                 { x = 160, y = 0 },
                 { x = 640, y = 0 }
               },
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 23,
+          name = "boss",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 231,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4808,
+              y = -104,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5283,
+              visible = true,
               properties = {}
             }
           }
