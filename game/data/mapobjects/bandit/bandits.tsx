@@ -18,10 +18,10 @@
  <tile id="13" type="bandit-sling"/>
  <tile id="14" type="bandit-sling"/>
  <tile id="15" type="bandit-sling"/>
- <tile id="16" type="bandit-arrow"/>
- <tile id="17" type="bandit-arrow"/>
- <tile id="18" type="bandit-arrow"/>
- <tile id="19" type="bandit-arrow"/>
+ <tile id="16" type="bandit-boss"/>
+ <tile id="17" type="bandit-boss"/>
+ <tile id="18" type="bandit-boss"/>
+ <tile id="19" type="bandit-boss"/>
  <tile id="20" type="bandit-cave-door">
   <objectgroup draworder="index" id="2">
    <object id="1" x="0" y="48" width="64" height="16">
