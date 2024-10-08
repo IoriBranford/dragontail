@@ -367,7 +367,7 @@ function Character:collideWithCharacterBody(other)
     return penex, peney, penez
 end
 
-function Character:checkAttackCollision(attacker)
+function Character:checkAttackCollision_pieslice(attacker)
     if self == attacker or self == attacker.thrower or self.thrower == attacker then
         return
     end
@@ -399,6 +399,25 @@ function Character:checkAttackCollision(attacker)
         return dotDA >= dist * cos(bodyarc + attackarc)
     end
 end
+
+function Character:checkAttackCollision_circle(attacker)
+    if self == attacker or self == attacker.thrower or self.thrower == attacker then
+        return
+    end
+    local attackangle = attacker.attackangle
+    if not attackangle then
+        return
+    end
+    local attackz = attacker.z
+    local attackheight = attacker.bodyheight
+    local attacklen = attacker.attackradius
+    local attackr = attacklen * sin(attacker.attackarc or 0)
+    local attackx = attacker.x + cos(attackangle)*(attacklen - attackr)
+    local attacky = attacker.y + sin(attackangle)*(attacklen - attackr)
+    return self:getCylinderPenetration(attackx, attacky, attackz, attackr, attackheight)
+end
+
+Character.checkAttackCollision = Character.checkAttackCollision_circle
 
 function Character:collideWithCharacterAttack(attacker)
     if self.hurtstun > 0 or not self.canbeattacked then
@@ -642,7 +661,7 @@ function Character:drawBodyShape(fixedfrac)
     end
 end
 
-function Character:drawAttackShape(fixedfrac)
+function Character:drawAttackPieslice(fixedfrac)
     local attackangle = self.attackangle
     local attackradius = self.attackradius
     if attackradius <= 0 or not attackangle then
@@ -677,6 +696,31 @@ function Character:drawAttackShape(fixedfrac)
             x, screeny - bodyheight)
     end
 end
+
+function Character:drawAttackCircle(fixedfrac)
+    local attackangle = self.attackangle
+    local attackradius = self.attackradius
+    if attackradius <= 0 or not attackangle then
+        return
+    end
+
+    fixedfrac = fixedfrac or 0
+    local attackarc = self.attackarc
+    local attackr = max(1, attackradius * sin(attackarc))
+    local x = self.x + self.velx*fixedfrac + cos(attackangle)*(attackradius - attackr)
+    local y = self.y + self.vely*fixedfrac + sin(attackangle)*(attackradius - attackr)
+    local z = self.z + self.velz*fixedfrac
+    local bodyheight = self.bodyheight
+    local screeny = y - z
+    local attackheight = bodyheight
+    love.graphics.setColor(1, .5, .5)
+    love.graphics.circle("line", x, screeny, attackr)
+    love.graphics.circle("line", x, screeny - attackheight, attackr)
+    love.graphics.line(x - attackr, screeny, x - attackr, screeny - attackheight)
+    love.graphics.line(x + attackr, screeny, x + attackr, screeny - attackheight)
+end
+
+Character.drawAttackShape = Character.drawAttackCircle
 
 function Character:isOnCamera(cx, cy, cw, ch)
     if self.points then
