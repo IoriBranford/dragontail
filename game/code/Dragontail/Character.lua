@@ -414,7 +414,8 @@ function Character:checkAttackCollision_circle(attacker)
     local attackr = attacklen * sin(attacker.attackarc or 0)
     local attackx = attacker.x + cos(attackangle)*(attacklen - attackr)
     local attacky = attacker.y + sin(attackangle)*(attacklen - attackr)
-    return self:getCylinderPenetration(attackx, attacky, attackz, attackr, attackheight)
+    local penex, peney, penez = self:getCylinderPenetration(attackx, attacky, attackz, attackr, attackheight)
+    return penex or peney or penez
 end
 
 Character.checkAttackCollision = Character.checkAttackCollision_circle
