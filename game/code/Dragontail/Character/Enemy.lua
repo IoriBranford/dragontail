@@ -398,7 +398,7 @@ function Enemy:executeAttack(attacktype, dirx, diry, dirz)
     end
     local hittime = self.attackhittime or 10
     repeat
-        lungespeed = Fighter.updateSlideSpeed(self, angle, lungespeed)
+        lungespeed = Fighter.updateSlideSpeed(self, angle, lungespeed, self.attacklungedecel or 1)
         hittime = hittime - 1
         yield()
         if self.velx ~= 0 or self.vely ~= 0 then
