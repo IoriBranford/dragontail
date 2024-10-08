@@ -61,7 +61,7 @@ end
 function Common:containerBreak(attacker)
     self.bodysolid = false
     Audio.play(self.defeatsound)
-    self:changeAseAnimation("collapse", 1, 0)
+    self:changeAnimation("collapse", 1, 0)
     local item = self.item
     if item then
         item.opponents = self.opponents
