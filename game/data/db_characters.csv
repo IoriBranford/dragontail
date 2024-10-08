@@ -14,3 +14,4 @@ bandit-arrow,enemy,1,2,2,,true,FALSE,15,,,,bandit-arrow-attack,,,,,,,4,Dragontai
 bandit-sling,enemy,15,16,32,,true,TRUE,5,,,30,sling-shot,,fall,18,,,,4,Dragontail.Character.Enemy,stand,,hurt,,,,,,stun,120,thrown,,,10,,,FallKnees,defeat,stand,,attack,bow-shot,
 thrown-stone,enemy,1,4,8,,true,FALSE,10,,,,thrown-stone-attack,thrown-stone-attack thrown-stone-strong-attack,,,,,,1,Dragontail.Character.Common,projectileFly,,projectileDeflected,,,,,,,,projectileFly,,,10,,,,,,,,,item-stone
 bandit-cave-door,container,1,,64,TRUE,true,,,,,,,,,,,,container,,Dragontail.Character.Common,,,containerBreak,,,,,,,,,,,,,,,containerBreak,,,,,
+bandit-boss,enemy,1000,16,32,,true,TRUE,4,8,0.25,,bandit-boss-charge,,fall,24,,,,4,Dragontail.Character.Enemy,stand,,hurt,,,,,,stun,120,thrown,,,10,,,FallKnees,defeat,stand,,approach,,
