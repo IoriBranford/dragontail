@@ -916,6 +916,9 @@ function Player:straightAttack(attacktype, angle, heldenemy)
         end
         t = t - 1
     until t <= 0
+    if self.numopponentshit <= 0 then
+        self.comboindex = 0
+    end
     self:stopAttack()
     if attackagain then
         local facex, facey = self.facex, self.facey
