@@ -215,11 +215,7 @@ function Common:projectileFly(shooter)
         end
         self:startAttack(angle)
     end
-    local animation = self.swinganimation
-    if animation then
-        animation = self.getDirectionalAnimation_angle(animation, angle, self.animationdirections)
-        self:changeAseAnimation(animation)
-    end
+    self:setDirectionalAnimation(self.swinganimation, angle, 1, self.swinganimationloopframe or 1)
     local oobx, ooby, oobz
     local gravity = self.fallgravity or 0
     repeat

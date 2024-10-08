@@ -337,11 +337,7 @@ function Enemy:prepareAttack(attacktype, dirx, diry)
     end
 
     local angle = atan2(self.facey, self.facex)
-    local animation = self.windupanimation
-    if animation then
-        animation = self.getDirectionalAnimation_angle(animation, angle, self.animationdirections)
-        self:changeAseAnimation(animation, 1, 0)
-    end
+    self:setDirectionalAnimation(self.windupanimation, angle, 1, self.windupanimationloopframe or 0)
 
     Audio.play(self.windupsound)
     for i = 1, (self.attackwinduptime or 20) do
@@ -390,12 +386,7 @@ function Enemy:executeAttack(attacktype, dirx, diry, dirz)
     end
 
     local lungespeed = self.attacklungespeed or 0
-
-    local animation = self.swinganimation
-    if animation then
-        animation = self.getDirectionalAnimation_angle(animation, angle, self.animationdirections)
-        self:changeAseAnimation(animation, 1, 0)
-    end
+    self:setDirectionalAnimation(self.swinganimation, angle, 1, self.swinganimationloopframe or 0)
     local hittime = self.attackhittime or 10
     repeat
         lungespeed = Fighter.updateSlideSpeed(self, angle, lungespeed, self.attacklungedecel or 1)
