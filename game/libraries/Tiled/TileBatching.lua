@@ -30,6 +30,7 @@ function TileBatching.batchTiles(maptiles, data, cellwidth, cellheight, cols, ro
         else
             tilebatch:add(x, y, 0, 0, 0)
         end
+        i = i + 1
     end, data, cols, rows, maptiles, 0, cellheight, cellwidth, cellheight)
 
     return tilebatch, batchanimations
@@ -43,7 +44,7 @@ function TileBatching.animateBatch(self, animationtime, tilewidth, tileheight)
         return
     end
 
-    local width = self.width
+    local columns = self.columns
     local gids = self.data
     for i, animation in pairs(batchanimations) do
         local _, sx, sy = parseGid(gids[i])
@@ -51,8 +52,8 @@ function TileBatching.animateBatch(self, animationtime, tilewidth, tileheight)
         local _, progress = math.modf(animationtime / animation.duration)
         local frameindex = math.floor(nframes * progress) + 1
         local tile = animation[frameindex].tile
-        local r = math.floor((i-1) / width) + 1
-        local c =           ((i-1) % width)
+        local r = math.floor((i-1) / columns) + 1
+        local c =           ((i-1) % columns)
         local x = c*tilewidth
         local y = r*tileheight
         local hw, hh = tile.width / 2, tile.height / 2
