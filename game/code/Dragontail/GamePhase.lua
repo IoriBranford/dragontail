@@ -45,6 +45,7 @@ function GamePhase.loadphase()
     Tiled.Assets.uncacheMarked()
     Tiled.Assets.packTiles()
     Tiled.Assets.setFilter("nearest", "nearest")
+    Tiled.Assets.batchAllMapsLayers()
 
     GamePhase.resize(love.graphics.getWidth(), love.graphics.getHeight())
 
