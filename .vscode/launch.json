@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Normal",
+            "name": "Debug",
             "type": "lua-local",
             "request": "launch",
             "program": {
@@ -21,6 +21,15 @@
                 "command": "love"
             },
             "args": ["${workspaceFolder}/game", "--profile"]
+        },
+        {
+            "name": "Release",
+            "type": "lua-local",
+            "request": "launch",
+            "program": {
+                "command": "love"
+            },
+            "args": ["${workspaceFolder}/game"]
         },
         {
             "name": "With unit tests",
