@@ -1885,7 +1885,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 17, "y": 29, "w": 37, "h": 32 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 350
+    "duration": 100
    },
    "new#237": {
     "frame": { "x": 480, "y": 645, "w": 34, "h": 46 },
