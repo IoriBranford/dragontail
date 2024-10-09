@@ -133,10 +133,28 @@ local function genDefaultCameraPath(roombounds)
     })
 end
 
+function Stage.warpCamera(warpx, warpy)
+    camera.x = warpx - camera.width/2
+    camera.y = warpy - camera.height/2
+    local players = Characters.getGroup("players")
+    local spacebetween = 64
+    local playerx = camera.x + camera.width/4 + spacebetween*(#players - 1)/2
+    local playery = camera.y + camera.height/2 - spacebetween*(#players - 1)/2
+    for _, player in ipairs(players) do
+        player.x, player.y = playerx, playery
+        playerx = playerx - spacebetween
+        playery = playery + spacebetween
+    end
+end
+
 function Stage.openRoom(i)
     local room = map.layers.rooms[i]
     if room then
         roomindex = i
+        local camerawarp = room.camerawarp
+        if camerawarp then
+            Stage.warpCamera(camerawarp.x, camerawarp.y)
+        end
         Characters.spawnArray(room.characters)
     else
         winningteam = "players"
