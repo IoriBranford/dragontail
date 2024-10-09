@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="24" nextobjectid="237">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="30" nextobjectid="265">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -9,30 +9,131 @@
  <tileset firstgid="5265" source="mapobjects/bandit/bandits.tsx"/>
  <tileset firstgid="5289" source="mapobjects/items.tsx"/>
  <tileset firstgid="5293" source="sprites/bandit/cavedoor2-diagonal.tsx"/>
+ <tileset firstgid="5297" source="tilesets/veg/grassland/bushes.tsx"/>
+ <tileset firstgid="5313" source="tilesets/veg/vegA1.tsx"/>
+ <tileset firstgid="5361" source="tilesets/veg/grassland/tree2B_ss.tsx"/>
+ <tileset firstgid="5617" source="tilesets/veg/grassland/tree3D_ss.tsx"/>
+ <tileset firstgid="5873" source="tilesets/veg/grassland/tree2A_ss.tsx"/>
+ <tileset firstgid="6129" source="tilesets/veg/vegA2.tsx"/>
+ <tileset firstgid="6177" source="tilesets/veg/vegA3.tsx"/>
+ <tileset firstgid="6225" source="tilesets/veg/vegA4.tsx"/>
+ <tileset firstgid="6273" source="tilesets/veg/vegB1.tsx"/>
+ <tileset firstgid="6321" source="tilesets/veg/vegB2.tsx"/>
+ <tileset firstgid="6369" source="tilesets/veg/vegB3.tsx"/>
+ <tileset firstgid="6417" source="tilesets/veg/vegC1.tsx"/>
+ <tileset firstgid="6465" source="tilesets/veg/vegC2.tsx"/>
+ <tileset firstgid="6513" source="tilesets/veg/vegC3.tsx"/>
+ <tileset firstgid="6561" source="tilesets/veg/vegC4.tsx"/>
  <layer id="2" name="floor" width="200" height="12">
+  <properties>
+   <property name="drawz" type="float" value="-2"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   <chunk x="0" y="0" width="20" height="12">
+   eJzNUUsKwjAQDbgrSJukHkdBcCdC2/RjeiJP4G3EpQsRRLR4HGeYCan9uOrCgeHN92UmI8Q08lJCZPFEZCAlcBk9no8hZ6CmArTaI86wZz9nO2uh68WcBiw5XoC+wd6GQuykECnGWSvI5YwWuXg2VNxbaaqvY5rbsmZcg331wN+spLdnbDea5kix58f+Y3IOv/0jcNwhFkjixF3dvzQw+xpyS9mf5xT1uTdQu4C+AnQuac5LSJhExG9ab1QD9zCtW7h7lPxXD0VcXb1GhDd+6yB9Loi8nXR2fyq6m439HZyPWvEtLceN9nFn/7t8ALMBPSw=
+  </chunk>
+   <chunk x="20" y="0" width="20" height="12">
+   eJytUksOgjAQ7c6VoWXKhVy7gaK0HoYTGOVkmBhDvI3OpNO0RYMxYZKXeVPKm1+nUqxqJ72uXqM9HAhh0LeIDjwajh1zOrOIaaEnh/cM3ScN7WNCyzGdE7fID+i3Sgj1Q5NsV3ye9TKPj9rnIN066cUm/bxmOv0X3bk9Sl+z4bq7pJ+1zSW10j4sRDQch50QB1jWe+L3m/Q+QOLM98rzAb9dkJ85VhBzGJ2/D4C4W5rxwP9cg+c8YxH1NjLygEL5mupkfhXPlvQdz9gkbybM/l7mWqPM+/vXKtYO+wz5LO/4DUacQuU=
+  </chunk>
+   <chunk x="40" y="0" width="20" height="12">
+   eJzdkk0KwjAQhecCpT8JHkqKYqO29UxWPZYbweLG4/gek6GhuBK6MfDx0mR+St6I/Nc6OpEO9GDvRRrQOoXn35aPsRZPDVEP4I37uhQZwA77JoF9rEeI+czZInadi4wV6jgluGnP3BZxq9k/8cxgXO81z/RVLf+GSy0/84X8UoPvTC8r8CjUH8Pqd27yxPxs473NB6FXA2rk8OsKLaDPQn3m+2/wfSvVT/Y6QzPoPdd+vKMy5wKyUpVnjK3jzJhvqZdh5m8TtUuwOeM8WMwpebcPtbE3Iw==
+  </chunk>
+   <chunk x="60" y="0" width="20" height="12">
+   eJxjYKAuuCrEwBAiwsAQJAKho4QpM08IqP8GFAcIMjBMpNC8S0IQs/iBZvUB8SwKzbsCNC8S6M8IkJ+BZkWJUGYeNiAiDAnPa0LUMU8UaBYf0O+3yPB7OFBPBNQ9wdA4hsWRIBALk2gmSN8FAQaGLqB7jvND+CcEILQPUOwiieaB4iFYGBIXIcIIPogdDmRfplIYDhYAALebHLg=
+  </chunk>
+  </data>
+ </layer>
+ <layer id="27" name="onfloor" width="200" height="12">
+  <properties>
+   <property name="drawz" type="float" value="-1.5"/>
+  </properties>
   <data encoding="base64" compression="zlib"/>
  </layer>
  <layer id="1" name="wall" width="200" height="12">
-  <data encoding="base64" compression="zlib"/>
+  <properties>
+   <property name="drawz" type="float" value="-1"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   <chunk x="0" y="0" width="20" height="12">
+   eJzrF2Bg4BdkYOAG0gFA2oOfgaEXyO4D4ts8DAwifAwMonwIWgyIxYFYAoeYH1CfFC9EThCIhZDkpIHiIUA6lA9BhwFxOBBH4BADuSEKqi8QiIOQ5KKB4lOA9FQ+BD0NiKcD8QwcYiA3zILqmwjEk5DkZgPFSQUgN9wiQx8uQI4bRsHIBQA9iR1R
+  </chunk>
+   <chunk x="20" y="0" width="20" height="12">
+   eJztzjEOgkAQheF3AGcFguiRaCwgoF4KEo2Kd6LCE/kTssVWG6l5yZfZzCYvkzvpgAJHnJBHdtNO6hMpSaUzSvQY91LDf4sLrri5+C41KbOlo5vRbTPeT/5feGPAx8V3FV21hTf7uSZ3uh4W3uzn2nwtvNnPLVv+yQ/flR37
+  </chunk>
+   <chunk x="40" y="0" width="20" height="12">
+   eJztjDsOwjAQROcAcSBSAghOBJULAgguRBEQBT+FQ5GaXIbnwrJkmY4yKz2NPbOzzVi6QDeSLKwK6cT/jHboGxreBl0Wwe8zaZJLU5hBCRVk5NZ1wPI+wtyEPO54f8HOBt3CDtZQJ+67/t6EPO54/8DOHX3AE65wS9x3/daEPO54/8VOauL7rv/5sTvMMP+eL8HWI7s=
+  </chunk>
+   <chunk x="60" y="0" width="20" height="12">
+   eJzdzjEKg0AUhOHpxJjVXYvopSy0cHMoBU0RPZSgpvE6mWURbMVXOfDzuo/3ioGM5Wx9AoUBAg20bEpwejUdy97MKCBlHc2F3qzPe186AxtZSatS/s9Ie/fKeuXv/mdz0TvO/WkjOe9DbxD0fvQ2Qc9tDWU985D17rg/sz8Rew==
+  </chunk>
+  </data>
  </layer>
- <layer id="4" name="ceiling" width="200" height="12">
-  <data encoding="base64" compression="zlib"/>
+ <layer id="4" name="onwall" width="200" height="12">
+  <properties>
+   <property name="drawz" type="float" value="-0.5"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   <chunk x="0" y="-12" width="20" height="12">
+   eJxjYBgFo2AU0BPsF6GeWQBCUADU
+  </chunk>
+   <chunk x="20" y="-12" width="20" height="12">
+   eJxjYBgFo2AUDDawTYQ4dQAjPADL
+  </chunk>
+   <chunk x="-20" y="0" width="20" height="12">
+   eJxjYBi8YKfIQLtgFIyCwQ0Ah54Azg==
+  </chunk>
+   <chunk x="0" y="0" width="20" height="12">
+   eJw7KMIABoESDAyboexCIPsAlD0KRsEoGLwAAIhYA2M=
+  </chunk>
+   <chunk x="20" y="0" width="20" height="12">
+   eJxjYCAPGIkzMBgDsYk4mQZgARtFGBgcJRgYPkpQz8xRMAqGMwAA624DBg==
+  </chunk>
+   <chunk x="40" y="0" width="20" height="12">
+   eJxjYMAEDyVQ+YVofEE0Pi7wEarOkUj1o2AUjALSAADDkgMO
+  </chunk>
+   <chunk x="60" y="0" width="20" height="12">
+   eJxjYEAFH8UZGJTEGBiUgVhFjIEqwAhojjEQm1DJPFoBQ4mBdsEoGAWkAQDj2ALY
+  </chunk>
+  </data>
+ </layer>
+ <layer id="24" name="tree1" width="200" height="12">
+  <properties>
+   <property name="drawz" type="float" value="1"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   <chunk x="0" y="0" width="20" height="12">
+   eJxjYBhZ4LMIA8MXEeqZxyzKwMAiSj3zhIFmiVDRPGWgWSpUNM8YaJYJFc0bBZQBAKiIA5Q=
+  </chunk>
+  </data>
+ </layer>
+ <layer id="25" name="tree2" width="200" height="12">
+  <properties>
+   <property name="drawz" type="float" value="1.125"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   <chunk x="0" y="0" width="20" height="12">
+   eJxjYBgFgwl8FmVg+CJKPfOYxRgYWMSoZ54w0CwRKpqnDDRLhYrmjTQAAPOBAws=
+  </chunk>
+  </data>
+ </layer>
+ <layer id="26" name="tree3" width="200" height="12">
+  <properties>
+   <property name="drawz" type="float" value="1.25"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   <chunk x="0" y="0" width="20" height="12">
+   eJxjYBgFo4B48FGMgeETEH8G4i9ilJvHKM7AwATEzEDMAsQfRYHmA/FnIP4iSrn5wx0AAKd9CKc=
+  </chunk>
+  </data>
  </layer>
  <group id="14" name="rooms">
   <objectgroup draworder="index" id="7" name="learnmovement" class="Room">
-   <object id="21" template="mapobjects/OutwardBoundary.tx" x="0" y="0">
+   <object id="21" template="mapobjects/OutwardBoundary.tx" x="0" y="0" visible="1">
     <properties>
      <property name="bodyheight" type="float" value="64"/>
      <property name="drawz" type="float" value="-1"/>
     </properties>
-    <polygon points="0,0 0,160 64,96 160,96 192,64 352,64 384,96 448,96 480,64 960,64 960,0"/>
-   </object>
-   <object id="44" template="mapobjects/OutwardBoundary.tx" x="0" y="874.667" visible="1">
-    <properties>
-     <property name="bodyheight" type="float" value="32"/>
-     <property name="drawz" type="float" value="1"/>
-    </properties>
-    <polygon points="0,-106.667 0,-10.6667 960,-10.6667 960,-42.6667 384,-42.6667 320,-106.667 256,-106.667 224,-74.6667 160,-74.6667 128,-42.6667 64,-42.6667"/>
+    <polygon points="0,0 0,288 32,288 32,160 64,128 224,128 256,96 448,96 448,0"/>
    </object>
    <object id="27" template="mapobjects/CameraPath.tx" x="240" y="144">
     <polyline points="0,0 480,0"/>
@@ -41,229 +142,276 @@
    <object id="24" gid="5292" x="864" y="168" width="64" height="32"/>
    <object id="25" gid="5289" x="784" y="136" width="64" height="32"/>
    <object id="26" gid="5290" x="848" y="248" width="64" height="32"/>
+   <object id="237" template="mapobjects/OutwardBoundary.tx" x="448" y="32" visible="1">
+    <polygon points="0,-32 0,64 512,64 512,-32"/>
+   </object>
   </objectgroup>
   <objectgroup id="8" name="learnattack" class="Room">
-   <object id="15" gid="5266" x="976" y="136" width="64" height="64"/>
-   <object id="50" gid="5266" x="400" y="144" width="64" height="64"/>
-   <object id="16" gid="5266" x="1040" y="184" width="64" height="64"/>
-   <object id="45" gid="5266" x="976" y="200" width="64" height="64"/>
-   <object id="47" gid="5266" x="400" y="216" width="64" height="64"/>
-   <object id="10" gid="5266" x="1104" y="112" width="64" height="64"/>
+   <object id="15" gid="5266" x="976" y="176" width="64" height="64"/>
+   <object id="16" gid="5266" x="1040" y="256" width="64" height="64"/>
+   <object id="45" gid="5266" x="976" y="240" width="64" height="64"/>
    <object id="49" gid="5266" x="464" y="160" width="64" height="64"/>
-   <object id="11" gid="5266" x="1040" y="120" width="64" height="64"/>
-   <object id="46" gid="5266" x="1104" y="176" width="64" height="64"/>
+   <object id="11" gid="5266" x="1040" y="192" width="64" height="64"/>
    <object id="48" gid="5266" x="464" y="232" width="64" height="64"/>
   </objectgroup>
   <objectgroup id="9" name="tolearnrunning" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="5"/>
    </properties>
-   <object id="22" template="mapobjects/OutwardBoundary.tx" x="960" y="-32">
+   <object id="29" template="mapobjects/CameraPath.tx" x="720" y="144">
+    <polyline points="96,0 224,0 416,64 640,64"/>
+   </object>
+   <object id="19" gid="5266" x="1136" y="208" width="64" height="64"/>
+   <object id="36" gid="5266" x="1200" y="224" width="64" height="64"/>
+   <object id="52" gid="5266" x="1072" y="192" width="64" height="64"/>
+   <object id="54" gid="5266" x="1008" y="176" width="64" height="64"/>
+   <object id="20" gid="5266" x="1168" y="304" width="64" height="64"/>
+   <object id="35" gid="5266" x="1232" y="320" width="64" height="64"/>
+   <object id="51" gid="5266" x="1104" y="288" width="64" height="64"/>
+   <object id="53" gid="5266" x="1040" y="272" width="64" height="64"/>
+   <object id="238" template="mapobjects/OutwardBoundary.tx" x="1024" y="64" visible="1">
+    <polygon points="-64,-64 -64,32 32,32 96,96 96,96 96,-64"/>
+   </object>
+   <object id="239" template="mapobjects/OutwardBoundary.tx" x="1120" y="0" visible="1">
     <properties>
      <property name="bodyheight" type="float" value="64"/>
-     <property name="drawz" type="float" value="-1"/>
     </properties>
-    <polygon points="0,96 32,96 64,64 480,64 480,0 0,0"/>
+    <polygon points="0,0 0,160 320,160 352,128 480,128 480,0"/>
    </object>
-   <object id="28" template="mapobjects/OutwardBoundary.tx" x="1600" y="736" rotation="0">
-    <properties>
-     <property name="bodyheight" type="float" value="32"/>
-     <property name="drawz" type="float" value="1"/>
-    </properties>
-    <polygon points="-160,32 -192,32 -224,64 -608,64 -640,96 -640,128 -160,128"/>
-   </object>
-   <object id="29" template="mapobjects/CameraPath.tx" x="720" y="144">
-    <polyline points="0,0 240,0 480,-32"/>
-   </object>
-   <object id="19" gid="5266" x="1232" y="96" width="64" height="64"/>
-   <object id="36" gid="5266" x="1296" y="88" width="64" height="64"/>
-   <object id="52" gid="5266" x="1168" y="104" width="64" height="64"/>
-   <object id="54" gid="5266" x="1104" y="112" width="64" height="64"/>
-   <object id="20" gid="5266" x="1232" y="192" width="64" height="64"/>
-   <object id="35" gid="5266" x="1296" y="184" width="64" height="64"/>
-   <object id="51" gid="5266" x="1168" y="200" width="64" height="64"/>
-   <object id="53" gid="5266" x="1104" y="208" width="64" height="64"/>
   </objectgroup>
   <objectgroup id="10" name="learnrunning" class="Room">
-   <object id="32" gid="5270" x="1472" y="88" width="64" height="64"/>
-   <object id="56" gid="5270" x="928" y="152" width="64" height="64"/>
-   <object id="34" gid="5270" x="1472" y="152" width="64" height="64"/>
-   <object id="55" gid="5270" x="928" y="216" width="64" height="64"/>
+   <object id="32" gid="5270" x="1616" y="216" width="64" height="64"/>
+   <object id="56" gid="5270" x="1104" y="216" width="64" height="64"/>
+   <object id="34" gid="5266" x="1664" y="184" width="64" height="64"/>
+   <object id="264" gid="5266" x="1664" y="248" width="64" height="64"/>
+   <object id="55" gid="5266" x="1064" y="176" width="64" height="64"/>
+   <object id="261" gid="5266" x="1064" y="232" width="64" height="64"/>
   </objectgroup>
-  <objectgroup id="11" name="tolearnthrowing" class="Room">
+  <objectgroup id="11" name="learnthrowingweapons" class="Room">
    <properties>
-    <property name="donewhenenemiesleft" type="int" value="5"/>
+    <property name="donewhenenemiesleft" type="int" value="2"/>
    </properties>
-   <object id="38" template="mapobjects/OutwardBoundary.tx" x="1440" y="-160">
+   <object id="38" template="mapobjects/OutwardBoundary.tx" x="1600" y="-64" visible="1">
     <properties>
      <property name="bodyheight" type="float" value="64"/>
      <property name="drawz" type="float" value="-1"/>
     </properties>
-    <polygon points="0,128 0,192 192,192 320,320 320,480 384,544 480,544 480,128"/>
+    <polygon points="0,64 0,192 128,192 160,160 256,160 256,64"/>
    </object>
-   <object id="39" template="mapobjects/OutwardBoundary.tx" x="1440" y="768">
+   <object id="40" template="mapobjects/CameraPath.tx" x="1392" y="208">
+    <polyline points="32,-64 224,-64"/>
+   </object>
+   <object id="58" gid="5278" x="1712" y="-40" width="64" height="64">
     <properties>
-     <property name="bodyheight" type="float" value="32"/>
-     <property name="drawz" type="float" value="1"/>
-    </properties>
-    <polygon points="0,0 0,384 480,384 480,352 96,352 32,288 32,32"/>
-   </object>
-   <object id="40" template="mapobjects/CameraPath.tx" x="1200" y="112">
-    <polyline points="0,0 288,0 384,80 464,200 480,320"/>
-   </object>
-   <object id="42" gid="5292" x="1728" y="320" width="64" height="32"/>
-   <object id="43" gid="5292" x="1776" y="376" width="64" height="32"/>
-   <object id="58" gid="5278" x="1728" y="56" width="64" height="64">
-    <properties>
+     <property name="ammo" type="int" value="10"/>
+     <property name="entrypoint" type="object" value="241"/>
+     <property name="exitpoint" type="object" value="244"/>
+     <property name="initialai" value="enterShootLeave"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="59" gid="5278" x="1696" y="24" width="64" height="64">
+   <object id="59" gid="5278" x="1584" y="-8" width="64" height="64">
     <properties>
+     <property name="ammo" type="int" value="10"/>
+     <property name="entrypoint" type="object" value="240"/>
+     <property name="exitpoint" type="object" value="243"/>
+     <property name="initialai" value="enterShootLeave"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="87" gid="5278" x="1760" y="88" width="64" height="64">
+   <object id="87" gid="5278" x="1840" y="-72" width="64" height="64">
+    <properties>
+     <property name="ammo" type="int" value="10"/>
+     <property name="entrypoint" type="object" value="242"/>
+     <property name="exitpoint" type="object" value="245"/>
+     <property name="initialai" value="enterShootLeave"/>
+     <property name="z" type="float" value="64"/>
+    </properties>
+   </object>
+   <object id="240" name="entrypoint" x="1520" y="56">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
+    <point/>
+   </object>
+   <object id="241" name="entrypoint" x="1616" y="56">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="242" name="entrypoint" x="1712" y="56">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="243" name="exitpoint" x="1616" y="-40">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="244" name="exitpoint" x="1712" y="-40">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="245" name="exitpoint" x="1808" y="-40">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
    </object>
   </objectgroup>
-  <objectgroup id="13" name="learnthrowing" class="Room">
-   <object id="41" gid="5270" x="1552" y="280" width="64" height="64"/>
-   <object id="61" gid="5270" x="1936" y="440" width="64" height="64"/>
-   <object id="57" gid="5270" x="1680" y="280" width="64" height="64"/>
-   <object id="90" gid="5278" x="1888" y="312" width="64" height="64">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-   </object>
-   <object id="62" gid="5270" x="1936" y="504" width="64" height="64"/>
-   <object id="89" gid="5278" x="1840" y="312" width="64" height="64">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-   </object>
-  </objectgroup>
-  <objectgroup id="15" name="tolearngrab" class="Room">
-   <object id="63" template="mapobjects/OutwardBoundary.tx" x="1920" y="1120">
-    <properties>
-     <property name="bodyheight" type="float" value="32"/>
-    </properties>
-    <polygon points="0,0 0,32 480,32 480,-160 448,-192 256,0"/>
-   </object>
-   <object id="64" template="mapobjects/OutwardBoundary.tx" x="1920" y="352">
-    <properties>
-     <property name="bodyheight" type="float" value="64"/>
-    </properties>
-    <polygon points="0,-160 0,32 160,-128 160,-160"/>
-   </object>
-   <object id="65" template="mapobjects/OutwardBoundary.tx" x="2240" y="480">
-    <properties>
-     <property name="bodyheight" type="float" value="64"/>
-    </properties>
-    <polygon points="0,-288 0,-256 160,-96 160,-288"/>
-   </object>
-   <object id="66" template="mapobjects/CameraPath.tx" x="1808" y="432">
-    <polyline points="0,0 160,0 256,-16 352,-64"/>
-   </object>
-   <object id="234" gid="5296" x="2160" y="232" width="64" height="128"/>
-   <object id="235" gid="5294" x="2160" y="232" width="64" height="128"/>
-   <object id="236" gid="5293" x="2160" y="232" width="64" height="128"/>
-  </objectgroup>
-  <objectgroup id="16" name="intoentryhall" class="Room">
+  <objectgroup id="28" name="+knives" class="Room">
    <properties>
-    <property name="donewhenenemiesleft" type="int" value="3"/>
+    <property name="donewhenenemiesleft" type="int" value="2"/>
    </properties>
-   <object id="67" template="mapobjects/OutwardBoundary.tx" x="2048" y="-160">
-    <polygon points="0,64 0,352 32,352 32,256 160,128 352,128 352,96 416,96 416,128 480,128 480,96 544,96 544,128 608,128 608,96 672,96 672,128 736,128 736,96 800,96 800,128 992,128 1056,192 1056,352 1088,352 1088,64"/>
-   </object>
-   <object id="68" template="mapobjects/OutwardBoundary.tx" x="2240" y="160">
+   <object id="246" gid="5266" x="1776" y="216" width="64" height="64"/>
+   <object id="248" gid="5266" x="1296" y="216" width="64" height="64"/>
+   <object id="250" gid="5266" x="1776" y="248" width="64" height="64"/>
+   <object id="253" gid="5266" x="1296" y="248" width="64" height="64"/>
+  </objectgroup>
+  <objectgroup id="13" name="+spears" class="Room">
+   <object id="41" gid="5270" x="1296" y="280" width="64" height="64"/>
+   <object id="62" gid="5270" x="1776" y="280" width="64" height="64"/>
+  </objectgroup>
+  <objectgroup id="15" name="tolearngrabandthrowenemies" class="Room">
+   <object id="65" template="mapobjects/OutwardBoundary.tx" x="2016" y="288" visible="1">
     <properties>
-     <property name="bodyheight" type="float" value="32"/>
+     <property name="bodyheight" type="float" value="64"/>
     </properties>
-    <polygon points="32,0 0,32 0,64 32,96 640,96 672,64 672,32 640,0 544,0 544,32 480,32 480,0 416,0 416,32 352,32 352,0 288,0 288,32 224,32 224,0 160,0 160,32 96,32 96,0"/>
+    <polygon points="-160,-288 -160,-192 0,-192 32,-160 64,-160 96,-128 96,-96 128,-64 128,0 160,0 160,-288"/>
    </object>
-   <object id="69" template="mapobjects/CameraPath.tx" x="2160" y="240">
-    <polyline points="0,0 0,-64 48,-144 96,-192"/>
+   <object id="66" template="mapobjects/CameraPath.tx" x="1616" y="144">
+    <polyline points="0,0 320,0"/>
+   </object>
+   <object id="234" gid="5296" x="2112" y="64" width="64" height="128"/>
+   <object id="235" gid="5294" x="2112" y="64" width="64" height="128"/>
+   <object id="236" gid="5293" x="2112" y="64" width="64" height="128"/>
+  </objectgroup>
+  <objectgroup id="29" name="learngrabandthrowenemies">
+   <object id="254" gid="5278" x="2112" y="-8" width="64" height="64">
+    <properties>
+     <property name="ammo" type="int" value="10"/>
+     <property name="entrypoint" type="object" value="255"/>
+     <property name="exitpoint" type="object" value="256"/>
+     <property name="initialai" value="enterShootLeave"/>
+     <property name="z" type="float" value="64"/>
+    </properties>
+   </object>
+   <object id="255" name="entrypoint" x="2048" y="56">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="256" name="exitpoint" x="2144" y="-40">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="257" gid="5278" x="2192" y="72" width="64" height="64">
+    <properties>
+     <property name="ammo" type="int" value="10"/>
+     <property name="entrypoint" type="object" value="258"/>
+     <property name="exitpoint" type="object" value="259"/>
+     <property name="initialai" value="enterShootLeave"/>
+     <property name="z" type="float" value="64"/>
+    </properties>
+   </object>
+   <object id="258" name="entrypoint" x="2128" y="136">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="259" name="exitpoint" x="2224" y="40">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
    </object>
   </objectgroup>
   <objectgroup id="22" name="entryhall" class="Room">
-   <object id="94" gid="5274" x="2488" y="144" width="64" height="64"/>
-   <object id="106" gid="5274" x="2552" y="-40" width="64" height="64"/>
-   <object id="95" gid="5274" x="2360" y="144" width="64" height="64"/>
-   <object id="105" gid="5274" x="2424" y="-40" width="64" height="64"/>
-   <object id="96" gid="5270" x="2992" y="80" width="64" height="64"/>
-   <object id="97" gid="5274" x="2616" y="144" width="64" height="64"/>
-   <object id="107" gid="5274" x="2680" y="-40" width="64" height="64"/>
-   <object id="98" gid="5274" x="2744" y="144" width="64" height="64"/>
-   <object id="108" gid="5274" x="2808" y="-40" width="64" height="64"/>
-   <object id="104" template="mapobjects/CameraPath.tx" x="2064" y="48">
+   <object id="94" gid="5274" x="2848" y="296" width="64" height="64"/>
+   <object id="106" gid="5274" x="2912" y="80" width="64" height="64"/>
+   <object id="95" gid="5274" x="2720" y="296" width="64" height="64"/>
+   <object id="105" gid="5274" x="2784" y="80" width="64" height="64"/>
+   <object id="96" gid="5270" x="3344" y="208" width="64" height="64"/>
+   <object id="97" gid="5274" x="2976" y="296" width="64" height="64"/>
+   <object id="107" gid="5274" x="3040" y="80" width="64" height="64"/>
+   <object id="98" gid="5274" x="3104" y="296" width="64" height="64"/>
+   <object id="108" gid="5274" x="3168" y="80" width="64" height="64"/>
+   <object id="104" template="mapobjects/CameraPath.tx" x="2448" y="144">
     <polyline points="192,0 816,0"/>
    </object>
-   <object id="101" gid="5270" x="2944" y="24" width="64" height="64"/>
-   <object id="103" gid="5270" x="3040" y="136" width="64" height="64"/>
-  </objectgroup>
-  <objectgroup id="17" name="guardroom" class="Room">
-   <object id="70" template="mapobjects/OutwardBoundary.tx" x="2592" y="192">
-    <polygon points="512,0 576,64 736,64 832,160 1248,160 1248,0"/>
+   <object id="101" gid="5270" x="3296" y="152" width="64" height="64"/>
+   <object id="103" gid="5270" x="3392" y="264" width="64" height="64"/>
+   <object id="260" name="camerawarp" x="2640" y="144">
+    <point/>
    </object>
-   <object id="71" template="mapobjects/OutwardBoundary.tx" x="2688" y="992">
+   <object id="67" template="mapobjects/OutwardBoundary.tx" x="2400" y="-32">
+    <polygon points="0,32 0,192 64,128 352,128 352,64 416,64 416,128 480,128 480,64 544,64 544,128 608,128 608,64 672,64 672,128 736,128 736,64 800,64 800,128 992,128 1056,192 1056,352 1088,352 1088,32"/>
+   </object>
+   <object id="68" template="mapobjects/OutwardBoundary.tx" x="2592" y="256">
     <properties>
      <property name="bodyheight" type="float" value="32"/>
     </properties>
-    <polygon points="64,-224 64,64 512,64 480,32 160,32 96,-32 96,-128 128,-160 160,-160 224,-224"/>
+    <polygon points="32,0 0,32 0,64 32,96 640,96 672,64 672,32 640,0 544,0 544,64 480,64 480,0 416,0 416,64 352,64 352,0 288,0 288,64 224,64 224,0 160,0 160,64 96,64 96,0"/>
    </object>
-   <object id="78" template="mapobjects/CameraPath.tx" x="2880" y="48">
+  </objectgroup>
+  <objectgroup id="17" name="guardroom" class="Room">
+   <object id="70" template="mapobjects/OutwardBoundary.tx" x="2944" y="320">
+    <polygon points="512,0 576,64 736,64 832,160 1248,160 1248,0"/>
+   </object>
+   <object id="78" template="mapobjects/CameraPath.tx" x="3264" y="144">
     <polyline points="0,0 48,48 96,136 112,256"/>
    </object>
   </objectgroup>
   <objectgroup id="18" name="armory" class="Room">
-   <object id="72" template="mapobjects/OutwardBoundary.tx" x="3168" y="1024">
-    <properties>
-     <property name="bodyheight" type="float" value="32"/>
-    </properties>
-    <polygon points="32,32 0,32 0,128 672,128 672,64 640,64 608,96 224,96 192,64 64,64"/>
-   </object>
-   <object id="79" template="mapobjects/CameraPath.tx" x="2992" y="304">
+   <object id="79" template="mapobjects/CameraPath.tx" x="3344" y="432">
     <polyline points="0,0 608,128"/>
    </object>
   </objectgroup>
   <objectgroup id="19" name="messhall" class="Room">
-   <object id="74" template="mapobjects/OutwardBoundary.tx" x="3840" y="32">
+   <object id="74" template="mapobjects/OutwardBoundary.tx" x="4192" y="160">
     <polygon points="0,-320 0,320 32,288 32,-224 96,-288 384,-288 448,-224 480,-224 480,-320"/>
    </object>
-   <object id="75" template="mapobjects/OutwardBoundary.tx" x="3840" y="448">
+   <object id="75" template="mapobjects/OutwardBoundary.tx" x="4192" y="576">
     <properties>
      <property name="bodyheight" type="float" value="32"/>
     </properties>
     <polygon points="480,128 480,-448 448,-416 448,64 392,128"/>
    </object>
-   <object id="81" template="mapobjects/CameraPath.tx" x="3440" y="432">
+   <object id="81" template="mapobjects/CameraPath.tx" x="3792" y="560">
     <polyline points="160,0 640,0"/>
    </object>
   </objectgroup>
   <objectgroup id="21" name="messhall2" class="Room">
-   <object id="93" template="mapobjects/CameraPath.tx" x="3920" y="432">
+   <object id="93" template="mapobjects/CameraPath.tx" x="4272" y="560">
     <polyline points="160,0 160,-576"/>
    </object>
   </objectgroup>
   <objectgroup id="20" name="arena" class="Room">
-   <object id="76" template="mapobjects/OutwardBoundary.tx" x="4320" y="-320">
+   <object id="76" template="mapobjects/OutwardBoundary.tx" x="4672" y="-192">
     <polygon points="0,32 0,128 32,128 64,96 416,96 448,128 480,128 480,32"/>
    </object>
-   <object id="77" template="mapobjects/OutwardBoundary.tx" x="4320" y="256">
+   <object id="77" template="mapobjects/OutwardBoundary.tx" x="4672" y="384">
     <properties>
      <property name="bodyheight" type="float" value="32"/>
     </properties>
     <polygon points="32,0 0,-32 0,32 480,32 480,-32 448,0"/>
    </object>
-   <object id="80" template="mapobjects/CameraPath.tx" x="3920" y="-144">
+   <object id="80" template="mapobjects/CameraPath.tx" x="4272" y="-16">
     <polyline points="160,0 640,0"/>
    </object>
   </objectgroup>
-  <objectgroup id="23" name="boss">
-   <object id="231" gid="5283" x="4808" y="-104" width="64" height="64"/>
+  <objectgroup id="23" name="boss" class="Room">
+   <object id="231" gid="5283" x="5160" y="24" width="64" height="64"/>
   </objectgroup>
  </group>
  <objectgroup id="3" name="notes">
@@ -277,49 +425,31 @@
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Teach long-range combat with stones to throw at slingers
 Avoid their stones then pick up and throw them back</text>
   </object>
-  <object id="3" x="1920" y="-360" width="480" height="128">
+  <object id="3" x="2272" y="-232" width="480" height="128">
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Teach grabbing with guarding enemy and barrier broken only by thrown enemy</text>
   </object>
-  <object id="4" x="2560" y="-360" width="480" height="128">
+  <object id="4" x="2912" y="-232" width="480" height="128">
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Entry hall with archers shooting from arrow slits</text>
   </object>
-  <object id="5" x="2464" y="480" width="480" height="128">
+  <object id="5" x="2816" y="608" width="480" height="128">
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Guard room introducing mace enemies</text>
   </object>
-  <object id="6" x="3360" y="64" width="480" height="128">
+  <object id="6" x="3712" y="192" width="480" height="128">
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Armory with mixed enemies and introducing throwable weapons</text>
   </object>
-  <object id="7" x="3840" y="-416" width="480" height="128">
+  <object id="7" x="4192" y="-288" width="480" height="128">
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Mess hall with food, throwable and breakable furniture, stronger mix of enemies</text>
   </object>
-  <object id="8" x="4320" y="-416" width="480" height="128">
+  <object id="8" x="4672" y="-288" width="480" height="128">
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Boss arena</text>
   </object>
-  <object id="9" x="4800" y="-416" width="480" height="128">
+  <object id="9" x="5152" y="-288" width="480" height="128">
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">End room
 
 Holding cells with captured kids</text>
   </object>
   <object id="13" x="0" y="-128" width="480" height="128">
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Teach movement - walking and running</text>
-  </object>
-  <object id="109" x="0" y="192" width="480" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Flowers, bushes, plants, rocks</text>
-  </object>
-  <object id="114" x="480" y="240" width="480" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Flowers, bushes, plants, rocks</text>
-  </object>
-  <object id="117" x="960" y="208" width="480" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Flowers, bushes, plants, rocks</text>
   </object>
   <object id="110" x="192" y="0" width="160" height="64">
    <properties>
@@ -339,42 +469,11 @@ Holding cells with captured kids</text>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Vines</text>
   </object>
-  <object id="116" x="1240" y="-32" width="128" height="64">
+  <object id="116" x="1232" y="80" width="128" height="64">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Vines</text>
-  </object>
-  <object id="118" x="1792" y="-32" width="128" height="320">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Tree, plants, flowers, bushes, rocks</text>
-  </object>
-  <object id="112" x="368" y="-16" width="96" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Plants</text>
-  </object>
-  <object id="111" x="64" y="32" width="96" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Cave
-exit</text>
-  </object>
-  <object id="119" x="1920" y="192" width="128" height="160">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Flowers, bushes, plants, rocks</text>
-  </object>
-  <object id="126" x="2080" y="192" width="160" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Door</text>
   </object>
   <object id="127" x="2080" y="-64" width="160" height="32">
    <properties>
@@ -382,283 +481,271 @@ exit</text>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Torches</text>
   </object>
-  <object id="120" x="2272" y="192" width="128" height="160">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Flowers, bushes, plants, rocks</text>
-  </object>
-  <object id="122" x="2096" y="280" width="32" height="32">
+  <object id="122" x="2016" y="112" width="32" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Stool</text>
   </object>
-  <object id="124" x="2192" y="280" width="32" height="32">
+  <object id="124" x="2080" y="192" width="32" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Stool</text>
   </object>
-  <object id="123" x="2064" y="264" width="32" height="48">
+  <object id="123" x="1984" y="80" width="32" height="48">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Small table</text>
   </object>
-  <object id="125" x="2224" y="264" width="32" height="48">
+  <object id="125" x="2112" y="208" width="32" height="48">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Small table</text>
   </object>
-  <object id="140" x="2256" y="248" width="32" height="48">
+  <object id="140" x="2112" y="240" width="32" height="48">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Barrel</text>
   </object>
-  <object id="141" x="2080" y="216" width="32" height="48">
+  <object id="141" x="1952" y="80" width="32" height="48">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Barrel</text>
   </object>
-  <object id="121" x="2240" y="416" width="160" height="160">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Flowers, bushes, plants, rocks</text>
-  </object>
-  <object id="128" x="2944" y="-64" width="160" height="32">
+  <object id="128" x="3216" y="48" width="160" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Torches</text>
   </object>
-  <object id="131" x="2816" y="304" width="96" height="64">
+  <object id="131" x="3168" y="432" width="96" height="64">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Table</text>
   </object>
-  <object id="129" x="2336" y="160" width="512" height="32">
+  <object id="129" x="2728" y="320" width="512" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Torches between alcoves</text>
   </object>
-  <object id="130" x="2336" y="-96" width="512" height="32">
+  <object id="130" x="2792" y="0" width="512" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Torches between alcoves</text>
   </object>
-  <object id="132" x="2816" y="368" width="32" height="32">
+  <object id="132" x="3168" y="496" width="32" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Stool</text>
   </object>
-  <object id="133" x="2880" y="368" width="32" height="32">
+  <object id="133" x="3232" y="496" width="32" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Stool</text>
   </object>
-  <object id="134" x="2880" y="264" width="32" height="32">
+  <object id="134" x="3232" y="392" width="32" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Stool</text>
   </object>
-  <object id="135" x="2816" y="264" width="32" height="32">
+  <object id="135" x="3168" y="392" width="32" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Stool</text>
   </object>
-  <object id="136" x="3440" y="304" width="96" height="64">
+  <object id="136" x="3440" y="432" width="96" height="64">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Weapon table</text>
   </object>
-  <object id="137" x="3568" y="304" width="96" height="64">
+  <object id="137" x="3920" y="432" width="96" height="64">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Weapon table</text>
   </object>
-  <object id="138" x="3696" y="304" width="96" height="64">
+  <object id="138" x="4048" y="432" width="96" height="64">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Weapon table</text>
   </object>
-  <object id="139" x="3200" y="256" width="64" height="64">
+  <object id="139" x="3200" y="384" width="64" height="64">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Anvil</text>
   </object>
-  <object id="145" x="3264" y="256" width="64" height="64">
+  <object id="145" x="3264" y="384" width="64" height="64">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Forge</text>
   </object>
-  <object id="143" x="3168" y="256" width="32" height="32">
+  <object id="143" x="3168" y="384" width="32" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Hammer</text>
   </object>
-  <object id="144" x="3168" y="288" width="32" height="32">
+  <object id="144" x="3168" y="416" width="32" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Table</text>
   </object>
-  <object id="146" x="3904" y="288" width="128" height="64">
+  <object id="146" x="4256" y="416" width="128" height="64">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Table</text>
   </object>
-  <object id="216" x="3904" y="128" width="128" height="64">
+  <object id="216" x="4256" y="256" width="128" height="64">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Table</text>
   </object>
-  <object id="222" x="3904" y="-32" width="128" height="64">
+  <object id="222" x="4256" y="96" width="128" height="64">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Table</text>
   </object>
-  <object id="226" x="3904" y="-192" width="128" height="64">
+  <object id="226" x="4256" y="-64" width="128" height="64">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Table</text>
   </object>
-  <object id="211" x="4128" y="416" width="128" height="64">
+  <object id="211" x="4480" y="544" width="128" height="64">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Table</text>
   </object>
-  <object id="215" x="4128" y="256" width="128" height="64">
+  <object id="215" x="4480" y="384" width="128" height="64">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Table</text>
   </object>
-  <object id="221" x="4128" y="96" width="128" height="64">
+  <object id="221" x="4480" y="224" width="128" height="64">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Table</text>
   </object>
-  <object id="229" x="4128" y="-64" width="128" height="64">
+  <object id="229" x="4480" y="64" width="128" height="64">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Table</text>
   </object>
-  <object id="208" x="3904" y="352" width="128" height="32">
+  <object id="208" x="4256" y="480" width="128" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
   </object>
-  <object id="214" x="3904" y="192" width="128" height="32">
+  <object id="214" x="4256" y="320" width="128" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
   </object>
-  <object id="220" x="3904" y="32" width="128" height="32">
+  <object id="220" x="4256" y="160" width="128" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
   </object>
-  <object id="225" x="3904" y="-128" width="128" height="32">
+  <object id="225" x="4256" y="0" width="128" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
   </object>
-  <object id="210" x="4128" y="480" width="128" height="32">
+  <object id="210" x="4480" y="608" width="128" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
   </object>
-  <object id="213" x="4128" y="320" width="128" height="32">
+  <object id="213" x="4480" y="448" width="128" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
   </object>
-  <object id="219" x="4128" y="160" width="128" height="32">
+  <object id="219" x="4480" y="288" width="128" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
   </object>
-  <object id="228" x="4128" y="0" width="128" height="32">
+  <object id="228" x="4480" y="128" width="128" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
   </object>
-  <object id="209" x="3904" y="256" width="128" height="32">
+  <object id="209" x="4256" y="384" width="128" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
   </object>
-  <object id="218" x="3904" y="96" width="128" height="32">
+  <object id="218" x="4256" y="224" width="128" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
   </object>
-  <object id="224" x="3904" y="-64" width="128" height="32">
+  <object id="224" x="4256" y="64" width="128" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
   </object>
-  <object id="227" x="3904" y="-224" width="128" height="32">
+  <object id="227" x="4256" y="-96" width="128" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
   </object>
-  <object id="212" x="4128" y="384" width="128" height="32">
+  <object id="212" x="4480" y="512" width="128" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
   </object>
-  <object id="217" x="4128" y="224" width="128" height="32">
+  <object id="217" x="4480" y="352" width="128" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
   </object>
-  <object id="223" x="4128" y="64" width="128" height="32">
+  <object id="223" x="4480" y="192" width="128" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
   </object>
-  <object id="230" x="4128" y="-96" width="128" height="32">
+  <object id="230" x="4480" y="32" width="128" height="32">
    <properties>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
