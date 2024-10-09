@@ -390,7 +390,7 @@ function Fighter:defeat(attacker)
 end
 
 function Fighter:getup(attacker)
-    coroutine.wait(27)
+    coroutine.wait(self.getuptime or 27)
     local recoverai = self.aiaftergetup or self.recoverai
     if not recoverai then
         print("No aiaftergetup or recoverai for "..self.type)
