@@ -5,6 +5,7 @@ local Movement  = require "Component.Movement"
 local State       = require "Dragontail.Character.State"
 local Characters  = require "Dragontail.Stage.Characters"
 local CameraPath  = require "Object.CameraPath"
+local Config      = require "System.Config"
 local Stage = {
     CameraWidth = 480,
     CameraHeight = 270
@@ -48,6 +49,9 @@ function Stage.init(stagefile)
             object.layer.characters = characters
             characters[#characters+1] = object
             object.y = object.y + (object.z or 0)
+            if object.type == "Boundary" then
+                object.visible = Config.drawbodies
+            end
         end
     end
 
