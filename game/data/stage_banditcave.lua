@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 24,
-  nextobjectid = 232,
+  nextobjectid = 237,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -2992,6 +2992,83 @@ return {
           type = "item-stone"
         }
       }
+    },
+    {
+      name = "cavedoor2-diagonal",
+      firstgid = 5293,
+      class = "",
+      tilewidth = 64,
+      tileheight = 128,
+      spacing = 0,
+      margin = 0,
+      columns = 4,
+      image = "sprites/bandit/cavedoor2-diagonal.png",
+      imagewidth = 256,
+      imageheight = 128,
+      objectalignment = "topright",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 64,
+        height = 128
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 4,
+      tiles = {
+        {
+          id = 1,
+          type = "bandit-cave-door",
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            class = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "polygon",
+                x = 0,
+                y = 64,
+                width = 0,
+                height = 0,
+                rotation = 0,
+                visible = true,
+                polygon = {
+                  { x = 0, y = 0 },
+                  { x = 64, y = 64 },
+                  { x = 80, y = 64 },
+                  { x = 16, y = 0 }
+                },
+                properties = {
+                  ["collidable"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 2,
+          properties = {
+            ["name"] = "collapse"
+          }
+        }
+      }
     }
   },
   layers = {
@@ -3120,7 +3197,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 0,
-              y = 298.667,
+              y = 874.667,
               width = 0,
               height = 0,
               rotation = 0,
@@ -3426,7 +3503,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 1600,
-              y = 160,
+              y = 736,
               width = 0,
               height = 0,
               rotation = 0,
@@ -3703,7 +3780,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 1440,
-              y = 192,
+              y = 768,
               width = 0,
               height = 0,
               rotation = 0,
@@ -3947,7 +4024,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 1920,
-              y = 544,
+              y = 1120,
               width = 0,
               height = 0,
               rotation = 0,
@@ -4036,6 +4113,48 @@ return {
                 { x = 352, y = -64 }
               },
               properties = {}
+            },
+            {
+              id = 234,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2160,
+              y = 232,
+              width = 64,
+              height = 128,
+              rotation = 0,
+              gid = 5296,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 235,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2160,
+              y = 232,
+              width = 64,
+              height = 128,
+              rotation = 0,
+              gid = 5294,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 236,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2160,
+              y = 232,
+              width = 64,
+              height = 128,
+              rotation = 0,
+              gid = 5293,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -4114,26 +4233,30 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 64, y = -32 },
+                { x = 32, y = 0 },
                 { x = 0, y = 32 },
+                { x = 0, y = 64 },
+                { x = 32, y = 96 },
+                { x = 640, y = 96 },
+                { x = 672, y = 64 },
                 { x = 672, y = 32 },
-                { x = 608, y = -32 },
-                { x = 544, y = -32 },
+                { x = 640, y = 0 },
                 { x = 544, y = 0 },
+                { x = 544, y = 32 },
+                { x = 480, y = 32 },
                 { x = 480, y = 0 },
-                { x = 480, y = -32 },
-                { x = 416, y = -32 },
                 { x = 416, y = 0 },
+                { x = 416, y = 32 },
+                { x = 352, y = 32 },
                 { x = 352, y = 0 },
-                { x = 352, y = -32 },
-                { x = 288, y = -32 },
                 { x = 288, y = 0 },
+                { x = 288, y = 32 },
+                { x = 224, y = 32 },
                 { x = 224, y = 0 },
-                { x = 224, y = -32 },
-                { x = 160, y = -32 },
                 { x = 160, y = 0 },
-                { x = 96, y = 0 },
-                { x = 96, y = -32 }
+                { x = 160, y = 32 },
+                { x = 96, y = 32 },
+                { x = 96, y = 0 }
               },
               properties = {
                 ["bodyheight"] = 32,
@@ -4398,7 +4521,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 2688,
-              y = 416,
+              y = 992,
               width = 0,
               height = 0,
               rotation = 0,
@@ -4464,7 +4587,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 3168,
-              y = 448,
+              y = 1024,
               width = 0,
               height = 0,
               rotation = 0,
@@ -4564,15 +4687,11 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 0, y = 64 },
-                { x = 0, y = 128 },
                 { x = 480, y = 128 },
-                { x = 480, y = -512 },
-                { x = 448, y = -480 },
+                { x = 480, y = -448 },
+                { x = 448, y = -416 },
                 { x = 448, y = 64 },
-                { x = 416, y = 96 },
-                { x = 64, y = 96 },
-                { x = 32, y = 64 }
+                { x = 392, y = 128 }
               },
               properties = {
                 ["bodyheight"] = 32,
@@ -4683,7 +4802,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 4320,
-              y = -32,
+              y = 256,
               width = 0,
               height = 0,
               rotation = 0,
