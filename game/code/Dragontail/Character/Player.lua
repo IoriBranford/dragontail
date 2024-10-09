@@ -939,7 +939,7 @@ end
 function Player:getup(attacker)
     Audio.play(self.getupsound)
     self:changeAseAnimation("FallRiseToFeet", 1, 0)
-    local t = self.getuptime or 27
+    local t = self.getuptime or 30
     local recoverai = self.aiaftergetup or self.recoverai
     if not recoverai then
         print("No aiaftergetup or recoverai for "..self.type)
