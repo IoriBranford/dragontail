@@ -47,6 +47,7 @@ function Character:init()
     self.hurtstun = self.hurtstun or 0
     if self.points then
         local _, rsq = math.farthestpoint(self.points, 0, 0)
+        assert(#self.points >= 6, self.id)
         self.bodyradius = math.sqrt(rsq)
         self.points.outward = math.polysignedarea(self.points) < 0
     elseif self.tile then
@@ -71,6 +72,7 @@ function Character:initPolygonBody(points, dx, dy)
     self.bodyradius = math.sqrt(rsq)
     self.points = {}
     self.points.outward = math.polysignedarea(points) < 0
+    assert(#points >= 6, self.id)
     for i = 2, #points, 2 do
         local px, py = points[i-1], points[i]
         self.points[i-1] = px + dx
@@ -244,7 +246,8 @@ local function testBodyCollision_polygonAndCircle(polygon, circle)
         return true
     end
     local nearestx, nearesty = math.nearestpolygonpoint(points, otherx, othery)
-    return math.distsq(otherx, othery, nearestx, nearesty) <= circle.bodyradius
+    return nearestx and nearesty
+        and math.distsq(otherx, othery, nearestx, nearesty) <= circle.bodyradius
 end
 
 function Character:testBodyCollision(other)
@@ -286,9 +289,9 @@ function Character:getCirclePenetration(x, y, r)
     end
     -- get nearest point on polygon
     local nearestx, nearesty, nearesti, nearestj = math.nearestpolygonpoint(points, x, y)
-    local nearestdsq = math.distsq(x, y, nearestx, nearesty)
+    local nearestdsq = nearestx and nearesty and math.distsq(x, y, nearestx, nearesty)
     -- if not in polygon, and nearest point farther than radius, then no collision
-    if not inside and nearestdsq > r*r then
+    if not inside and (not nearestdsq or nearestdsq > r*r) then
         return
     end
 
@@ -332,7 +335,7 @@ function Character:getCylinderPenetration(x, y, z, r, h)
         if z + h >= selfz and selfz + selfh >= z then
             local nearestx, nearesty = math.nearestpolygonpoint(points, x - self.x, y - self.y)
             if math.pointinpolygon(points, x - self.x, y - self.y)
-            or math.distsq(nearestx, nearesty, x - self.x, y - self.y) <= r*r then
+            or nearestx and nearesty and math.distsq(nearestx, nearesty, x - self.x, y - self.y) <= r*r then
                 local iz, iz2 = max(z, selfz), min(z+h, selfz+selfh)
                 penez = iz == z and iz - iz2 or iz2 - iz
                 penex, peney = self:getCirclePenetration(x, y, r)
