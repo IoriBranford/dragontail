@@ -63,6 +63,12 @@ function Common:containerBreak(attacker)
     Audio.play(self.defeatsound)
     self:changeAnimation("collapse", 1, 0)
     local item = self.item
+    if not item and self.itemtype then
+        item = Characters.spawn({
+            type = self.itemtype,
+            x = self.x, y = self.y, z = self.z,
+        })
+    end
     if item then
         item.opponents = self.opponents
         State.start(item, "itemDrop")
