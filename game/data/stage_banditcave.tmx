@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="30" nextobjectid="265">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="30" nextobjectid="267">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -33,7 +33,7 @@
    eJzNUUsKwjAQDbgrSJukHkdBcCdC2/RjeiJP4G3EpQsRRLR4HGeYCan9uOrCgeHN92UmI8Q08lJCZPFEZCAlcBk9no8hZ6CmArTaI86wZz9nO2uh68WcBiw5XoC+wd6GQuykECnGWSvI5YwWuXg2VNxbaaqvY5rbsmZcg331wN+spLdnbDea5kix58f+Y3IOv/0jcNwhFkjixF3dvzQw+xpyS9mf5xT1uTdQu4C+AnQuac5LSJhExG9ab1QD9zCtW7h7lPxXD0VcXb1GhDd+6yB9Loi8nXR2fyq6m439HZyPWvEtLceN9nFn/7t8ALMBPSw=
   </chunk>
    <chunk x="20" y="0" width="20" height="12">
-   eJytUksOgjAQ7c6VoWXKhVy7gaK0HoYTGOVkmBhDvI3OpNO0RYMxYZKXeVPKm1+nUqxqJ72uXqM9HAhh0LeIDjwajh1zOrOIaaEnh/cM3ScN7WNCyzGdE7fID+i3Sgj1Q5NsV3ye9TKPj9rnIN066cUm/bxmOv0X3bk9Sl+z4bq7pJ+1zSW10j4sRDQch50QB1jWe+L3m/Q+QOLM98rzAb9dkJ85VhBzGJ2/D4C4W5rxwP9cg+c8YxH1NjLygEL5mupkfhXPlvQdz9gkbybM/l7mWqPM+/vXKtYO+wz5LO/4DUacQuU=
+   eJytUs0OwiAM5uZFBVZ8Ic/GZGM68GH2BEb3ZPNiFt9G21ACm2Ze1uRLWyhf/xgKsahczLJ8lQnwIIRFXSMaCKjY92zTmUMMMz15jLMUTxwm+ISafTon26F9Qr3RQug/nCR7+X3WqrF/NiEH8ZZZLy7r5z3haX/wTuVZhJot191k/SwtPquV9uEgoWI/7oRsgHm+F94/VNARCmd+0MHu8O6G9pV9DSmHNeP/AZB2SzPu+M09as7Ty8S3UsmOkDrUVGbz2/Fsid9ne6T4LcYfEWuEnPTSq3F/c7Lj+uMeKU/MGfcZ/6jjHX8APZxEFw==
   </chunk>
    <chunk x="40" y="0" width="20" height="12">
    eJzdkk0KwjAQhecCpT8JHkqKYqO29UxWPZYbweLG4/gek6GhuBK6MfDx0mR+St6I/Nc6OpEO9GDvRRrQOoXn35aPsRZPDVEP4I37uhQZwA77JoF9rEeI+czZInadi4wV6jgluGnP3BZxq9k/8cxgXO81z/RVLf+GSy0/84X8UoPvTC8r8CjUH8Pqd27yxPxs473NB6FXA2rk8OsKLaDPQn3m+2/wfSvVT/Y6QzPoPdd+vKMy5wKyUpVnjK3jzJhvqZdh5m8TtUuwOeM8WMwpebcPtbE3Iw==
@@ -264,19 +264,25 @@
     </properties>
     <point/>
    </object>
+   <object id="265" template="mapobjects/OutwardBoundary.tx" x="1216" y="-32">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <polygon points="0,0 0,48 960,48 960,0"/>
+   </object>
   </objectgroup>
   <objectgroup id="28" name="+knives" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="2"/>
    </properties>
-   <object id="246" gid="5266" x="1776" y="216" width="64" height="64"/>
-   <object id="248" gid="5266" x="1296" y="216" width="64" height="64"/>
-   <object id="250" gid="5266" x="1776" y="248" width="64" height="64"/>
-   <object id="253" gid="5266" x="1296" y="248" width="64" height="64"/>
+   <object id="246" gid="5266" x="1872" y="168" width="64" height="64"/>
+   <object id="248" gid="5266" x="1360" y="200" width="64" height="64"/>
+   <object id="250" gid="5266" x="1872" y="200" width="64" height="64"/>
+   <object id="253" gid="5266" x="1360" y="232" width="64" height="64"/>
   </objectgroup>
   <objectgroup id="13" name="+spears" class="Room">
-   <object id="41" gid="5270" x="1296" y="280" width="64" height="64"/>
-   <object id="62" gid="5270" x="1776" y="280" width="64" height="64"/>
+   <object id="41" gid="5270" x="1360" y="264" width="64" height="64"/>
+   <object id="62" gid="5270" x="1872" y="232" width="64" height="64"/>
   </objectgroup>
   <objectgroup id="15" name="tolearngrabandthrowenemies" class="Room">
    <object id="65" template="mapobjects/OutwardBoundary.tx" x="2016" y="288" visible="1">
