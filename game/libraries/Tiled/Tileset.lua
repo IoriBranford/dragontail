@@ -25,10 +25,6 @@ local Tile       = require "Tiled.Tile"
 ----@field properties table Moved into tileset itself
 local Tileset = class()
 
-local ImageLoadSettings = {
-    asimagedata = true
-}
-
 function Tileset:_init()
     -- assert(tileset.objectalignment == "topleft", "Unsupported objectalignment "..tileset.objectalignment)
     assert(not self.source,
@@ -36,10 +32,7 @@ function Tileset:_init()
 
     local imagefile = self.image
     self.imagefile = imagefile
-    local imagedata = Assets.get(imagefile, ImageLoadSettings)
-    ---@cast imagedata love.ImageData
-    local image = love.graphics.newImage(imagedata)
-    Assets.put(imagefile, image)
+    local image = Assets.get(imagefile)
     self.image = image
     local columns = self.columns
     local n = self.tilecount
@@ -69,6 +62,48 @@ function Tileset:_init()
     end
 
     local iw, ih = image:getDimensions()
+    for id = 0, n - 1 do
+        local c = id % columns
+        local r = math.floor(id / columns)
+        local tx = c * tw
+        local ty = r * th
+
+        local tile = Tile.cast {
+            id = id,
+            tileset = self,
+            image = image,
+            quad = love.graphics.newQuad(tx, ty, tw, th, iw, ih),
+            width = tw,
+            height = th,
+            offsetx = offsetx,
+            offsety = offsety,
+            objectoriginx = objectox,
+            objectoriginy = objectoy
+        }
+        self[id] = tile
+    end
+
+    local tilesdata = self.tiles
+    if tilesdata then
+        for i = 1, #tilesdata do
+            local tiledata = tilesdata[i]
+            local tileid = tiledata.id
+            Tile.from(self[tileid], tiledata)
+        end
+    end
+
+    Properties.moveUp(self)
+    self.numempty = self.numempty or 0
+end
+
+function Tileset:markAndCountEmpty()
+    local imagedata = Assets.load(self.imagefile, { asimagedata = true })
+    ---@cast imagedata love.ImageData
+
+    local n = self.tilecount
+    local columns = self.columns
+    local tw = self.tilewidth
+    local th = self.tileheight
     local numempty = n
     for id = 0, n - 1 do
         local c = id % columns
@@ -90,34 +125,9 @@ function Tileset:_init()
                 break
             end
         end
-
-        local tile = Tile.cast {
-            id = id,
-            tileset = self,
-            image = image,
-            empty = empty,
-            quad = love.graphics.newQuad(tx, ty, tw, th, iw, ih),
-            width = tw,
-            height = th,
-            offsetx = offsetx,
-            offsety = offsety,
-            objectoriginx = objectox,
-            objectoriginy = objectoy
-        }
-        self[id] = tile
+        self[id].empty = empty
     end
     self.numempty = numempty
-
-    local tilesdata = self.tiles
-    if tilesdata then
-        for i = 1, #tilesdata do
-            local tiledata = tilesdata[i]
-            local tileid = tiledata.id
-            Tile.from(self[tileid], tiledata)
-        end
-    end
-
-    Properties.moveUp(self)
 end
 
 return Tileset
