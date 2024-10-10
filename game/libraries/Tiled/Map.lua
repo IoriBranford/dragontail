@@ -124,6 +124,12 @@ function TiledMap:batchLayerTiles()
     end
 end
 
+function TiledMap:markAndCountEmptyTiles()
+    for _, tileset in ipairs(self.tilesets) do
+        tileset:markAndCountEmpty()
+    end
+end
+
 ---@param mapfile string
 ---@return TiledMap
 function TiledMap.load(mapfile)
