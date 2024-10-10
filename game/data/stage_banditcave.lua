@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 30,
-  nextobjectid = 267,
+  nextobjectid = 271,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -9673,7 +9673,7 @@ return {
       columns = 4,
       image = "mapobjects/bandit/bandits.png",
       imagewidth = 256,
-      imageheight = 384,
+      imageheight = 320,
       objectalignment = "bottom",
       tilerendersize = "tile",
       fillmode = "stretch",
@@ -9688,7 +9688,7 @@ return {
       },
       properties = {},
       wangsets = {},
-      tilecount = 24,
+      tilecount = 20,
       tiles = {
         {
           id = 0,
@@ -9769,53 +9769,12 @@ return {
         {
           id = 19,
           type = "bandit-boss"
-        },
-        {
-          id = 20,
-          type = "bandit-cave-door",
-          objectGroup = {
-            type = "objectgroup",
-            draworder = "index",
-            id = 2,
-            name = "",
-            class = "",
-            visible = true,
-            opacity = 1,
-            offsetx = 0,
-            offsety = 0,
-            parallaxx = 1,
-            parallaxy = 1,
-            properties = {},
-            objects = {
-              {
-                id = 1,
-                name = "",
-                type = "",
-                shape = "polygon",
-                x = 0,
-                y = 48,
-                width = 64,
-                height = 16,
-                rotation = 0,
-                visible = true,
-                polygon = {
-                  { x = 0, y = 0 },
-                  { x = 0, y = 16 },
-                  { x = 64, y = 16 },
-                  { x = 64, y = 0 }
-                },
-                properties = {
-                  ["collidable"] = true
-                }
-              }
-            }
-          }
         }
       }
     },
     {
       name = "items",
-      firstgid = 5289,
+      firstgid = 5285,
       class = "",
       tilewidth = 64,
       tileheight = 32,
@@ -9861,7 +9820,7 @@ return {
     },
     {
       name = "cavedoor2-diagonal",
-      firstgid = 5293,
+      firstgid = 5289,
       class = "",
       tilewidth = 64,
       tileheight = 128,
@@ -9938,7 +9897,7 @@ return {
     },
     {
       name = "bushes",
-      firstgid = 5297,
+      firstgid = 5293,
       class = "",
       tilewidth = 48,
       tileheight = 32,
@@ -9967,7 +9926,7 @@ return {
     },
     {
       name = "vegA1",
-      firstgid = 5313,
+      firstgid = 5309,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -10132,7 +10091,7 @@ return {
     },
     {
       name = "tree2B_ss",
-      firstgid = 5361,
+      firstgid = 5357,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -10792,7 +10751,7 @@ return {
     },
     {
       name = "tree3D_ss",
-      firstgid = 5617,
+      firstgid = 5613,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -11497,7 +11456,7 @@ return {
     },
     {
       name = "tree2A_ss",
-      firstgid = 5873,
+      firstgid = 5869,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -12157,7 +12116,7 @@ return {
     },
     {
       name = "vegA2",
-      firstgid = 6129,
+      firstgid = 6125,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -12322,7 +12281,7 @@ return {
     },
     {
       name = "vegA3",
-      firstgid = 6177,
+      firstgid = 6173,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -12487,7 +12446,7 @@ return {
     },
     {
       name = "vegA4",
-      firstgid = 6225,
+      firstgid = 6221,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -12652,7 +12611,7 @@ return {
     },
     {
       name = "vegB1",
-      firstgid = 6273,
+      firstgid = 6269,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -12805,7 +12764,7 @@ return {
     },
     {
       name = "vegB2",
-      firstgid = 6321,
+      firstgid = 6317,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -12946,7 +12905,7 @@ return {
     },
     {
       name = "vegB3",
-      firstgid = 6369,
+      firstgid = 6365,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -13135,7 +13094,7 @@ return {
     },
     {
       name = "vegC1",
-      firstgid = 6417,
+      firstgid = 6413,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -13300,7 +13259,7 @@ return {
     },
     {
       name = "vegC2",
-      firstgid = 6465,
+      firstgid = 6461,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -13465,7 +13424,7 @@ return {
     },
     {
       name = "vegC3",
-      firstgid = 6513,
+      firstgid = 6509,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -13630,7 +13589,7 @@ return {
     },
     {
       name = "vegC4",
-      firstgid = 6561,
+      firstgid = 6557,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -13792,6 +13751,96 @@ return {
           }
         }
       }
+    },
+    {
+      name = "barrelA",
+      firstgid = 6605,
+      class = "",
+      tilewidth = 32,
+      tileheight = 32,
+      spacing = 0,
+      margin = 0,
+      columns = 3,
+      image = "sprites/containers/barrelA.png",
+      imagewidth = 96,
+      imageheight = 32,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 32
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 3,
+      tiles = {
+        {
+          id = 0,
+          type = "container-barrel"
+        },
+        {
+          id = 1,
+          type = "container-barrel",
+          properties = {
+            ["name"] = "collapse"
+          }
+        },
+        {
+          id = 2,
+          type = "container-barrel"
+        }
+      }
+    },
+    {
+      name = "barrelB",
+      firstgid = 6608,
+      class = "",
+      tilewidth = 32,
+      tileheight = 32,
+      spacing = 0,
+      margin = 0,
+      columns = 3,
+      image = "sprites/containers/barrelB.png",
+      imagewidth = 96,
+      imageheight = 32,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 32
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 3,
+      tiles = {
+        {
+          id = 0,
+          type = "container-barrel"
+        },
+        {
+          id = 1,
+          type = "container-barrel",
+          properties = {
+            ["name"] = "collapse"
+          }
+        },
+        {
+          id = 2,
+          type = "container-barrel"
+        }
+      }
     }
   },
   layers = {
@@ -13918,31 +13967,31 @@ return {
       chunks = {
         {
           x = 0, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AU0BPsF6GeWQBCUADU"
+          data = "eJxjYBgFo2AU0BPsFqGeWQBBIADQ"
         },
         {
           x = 20, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUDDawTYQ4dQAjPADL"
+          data = "eJxjYBgFo2AUDDawSYQ4dQAinADH"
         },
         {
           x = -20, y = 0, width = 20, height = 12,
-          data = "eJxjYBi8YKfIQLtgFIyCwQ0Ah54Azg=="
+          data = "eJxjYBi8YKvIQLtgFIyCwQ0Aew4Ayg=="
         },
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJw7KMIABoESDAyboexCIPsAlD0KRsEoGLwAAIhYA2M="
+          data = "eJzbK8IABr4SDAzroexcIHsPlD0KRsEoGLwAAD5YA08="
         },
         {
           x = 20, y = 0, width = 20, height = 12,
-          data = "eJxjYCAPGIkzMBgDsYk4mQZgARtFGBgcJRgYPkpQz8xRMAqGMwAA624DBg=="
+          data = "eJxjYCAP6IkzMOgDsYE4mQZgAWtFGBhsJRgY3kpQz8xRMAqGMwAAmv4C7g=="
         },
         {
           x = 40, y = 0, width = 20, height = 12,
-          data = "eJxjYMAEDyVQ+YVofEE0Pi7wEarOkUj1o2AUjALSAADDkgMO"
+          data = "eJxjYMAEdyVQ+blofF40Pi7wFqrOlkj1o2AUjALSAAB9QgL6"
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJxjYEAFH8UZGJTEGBiUgVhFjIEqwAhojjEQm1DJPFoBQ4mBdsEoGAWkAQDj2ALY"
+          data = "eJxjYEAFb8UZGOTEGBjkgVhBjIEqQA9ojj4QG1DJPFoBXYmBdsEoGAWkAQB2SAK4"
         }
       }
     },
@@ -13969,7 +14018,7 @@ return {
       chunks = {
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJxjYBhZ4LMIA8MXEeqZxyzKwMAiSj3zhIFmiVDRPGWgWSpUNM8YaJYJFc0bBZQBAKiIA5Q="
+          data = "eJxjYBhZ4L0IA8MHEeqZ9x9klij1zOMHmiVARfPkgWYpUNE8faBZBlQ0bxRQBgDO9wRr"
         }
       }
     },
@@ -13996,7 +14045,7 @@ return {
       chunks = {
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJxjYBgFgwl8FmVg+CJKPfOYxRgYWMSoZ54w0CwRKpqnDDRLhYrmjTQAAPOBAws="
+          data = "eJxjYBgFgwm8F2Vg+CBKPfP+g8wSo555/ECzBKhonjzQLAUqmjfSAACbAAPq"
         }
       }
     },
@@ -14023,7 +14072,7 @@ return {
       chunks = {
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJxjYBgFo4B48FGMgeETEH8G4i9ilJvHKM7AwATEzEDMAsQfRYHmA/FnIP4iSrn5wx0AAKd9CKc="
+          data = "eJxjYBgFo4B48FaMgeEdEL8H4g9ilJv3F2jGPyD+DzJLHGi+KNB8IH4PxB9EKTd/uAMAGSgLdA=="
         }
       }
     },
@@ -14111,7 +14160,7 @@ return {
               width = 64,
               height = 32,
               rotation = 0,
-              gid = 5292,
+              gid = 5288,
               visible = true,
               properties = {}
             },
@@ -14125,7 +14174,7 @@ return {
               width = 64,
               height = 32,
               rotation = 0,
-              gid = 5292,
+              gid = 5288,
               visible = true,
               properties = {}
             },
@@ -14139,7 +14188,7 @@ return {
               width = 64,
               height = 32,
               rotation = 0,
-              gid = 5289,
+              gid = 5285,
               visible = true,
               properties = {}
             },
@@ -14153,7 +14202,7 @@ return {
               width = 64,
               height = 32,
               rotation = 0,
-              gid = 5290,
+              gid = 5286,
               visible = true,
               properties = {}
             },
@@ -15016,7 +15065,7 @@ return {
               width = 64,
               height = 128,
               rotation = 0,
-              gid = 5296,
+              gid = 5292,
               visible = true,
               properties = {}
             },
@@ -15030,7 +15079,7 @@ return {
               width = 64,
               height = 128,
               rotation = 0,
-              gid = 5294,
+              gid = 5290,
               visible = true,
               properties = {}
             },
@@ -15044,9 +15093,73 @@ return {
               width = 64,
               height = 128,
               rotation = 0,
-              gid = 5293,
+              gid = 5289,
               visible = true,
               properties = {}
+            },
+            {
+              id = 267,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2000,
+              y = 104,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6607,
+              visible = true,
+              properties = {
+                ["itemtype"] = "food-fish"
+              }
+            },
+            {
+              id = 270,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2120,
+              y = 240,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6607,
+              visible = true,
+              properties = {
+                ["itemtype"] = "food-fish"
+              }
+            },
+            {
+              id = 268,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2128,
+              y = 264,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6610,
+              visible = true,
+              properties = {
+                ["itemtype"] = "food-fish"
+              }
+            },
+            {
+              id = 269,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2016,
+              y = 120,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6610,
+              visible = true,
+              properties = {
+                ["itemtype"] = "food-fish"
+              }
             }
           }
         },
@@ -16159,90 +16272,6 @@ return {
           rotation = 0,
           visible = true,
           text = "Stool",
-          fontfamily = "TinyUnicode",
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 123,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 1984,
-          y = 80,
-          width = 32,
-          height = 48,
-          rotation = 0,
-          visible = true,
-          text = "Small table",
-          fontfamily = "TinyUnicode",
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 125,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 2112,
-          y = 208,
-          width = 32,
-          height = 48,
-          rotation = 0,
-          visible = true,
-          text = "Small table",
-          fontfamily = "TinyUnicode",
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 140,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 2112,
-          y = 240,
-          width = 32,
-          height = 48,
-          rotation = 0,
-          visible = true,
-          text = "Barrel",
-          fontfamily = "TinyUnicode",
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 141,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 1952,
-          y = 80,
-          width = 32,
-          height = 48,
-          rotation = 0,
-          visible = true,
-          text = "Barrel",
           fontfamily = "TinyUnicode",
           wrap = true,
           color = { 255, 255, 255 },

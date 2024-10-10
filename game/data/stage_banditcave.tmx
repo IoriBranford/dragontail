@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="30" nextobjectid="267">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="30" nextobjectid="271">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -7,23 +7,25 @@
  <tileset firstgid="1" source="tilesets/caves/caves.tsx"/>
  <tileset firstgid="2449" source="tilesets/grassland.tsx"/>
  <tileset firstgid="5265" source="mapobjects/bandit/bandits.tsx"/>
- <tileset firstgid="5289" source="mapobjects/items.tsx"/>
- <tileset firstgid="5293" source="sprites/bandit/cavedoor2-diagonal.tsx"/>
- <tileset firstgid="5297" source="tilesets/veg/grassland/bushes.tsx"/>
- <tileset firstgid="5313" source="tilesets/veg/vegA1.tsx"/>
- <tileset firstgid="5361" source="tilesets/veg/grassland/tree2B_ss.tsx"/>
- <tileset firstgid="5617" source="tilesets/veg/grassland/tree3D_ss.tsx"/>
- <tileset firstgid="5873" source="tilesets/veg/grassland/tree2A_ss.tsx"/>
- <tileset firstgid="6129" source="tilesets/veg/vegA2.tsx"/>
- <tileset firstgid="6177" source="tilesets/veg/vegA3.tsx"/>
- <tileset firstgid="6225" source="tilesets/veg/vegA4.tsx"/>
- <tileset firstgid="6273" source="tilesets/veg/vegB1.tsx"/>
- <tileset firstgid="6321" source="tilesets/veg/vegB2.tsx"/>
- <tileset firstgid="6369" source="tilesets/veg/vegB3.tsx"/>
- <tileset firstgid="6417" source="tilesets/veg/vegC1.tsx"/>
- <tileset firstgid="6465" source="tilesets/veg/vegC2.tsx"/>
- <tileset firstgid="6513" source="tilesets/veg/vegC3.tsx"/>
- <tileset firstgid="6561" source="tilesets/veg/vegC4.tsx"/>
+ <tileset firstgid="5285" source="mapobjects/items.tsx"/>
+ <tileset firstgid="5289" source="sprites/bandit/cavedoor2-diagonal.tsx"/>
+ <tileset firstgid="5293" source="tilesets/veg/grassland/bushes.tsx"/>
+ <tileset firstgid="5309" source="tilesets/veg/vegA1.tsx"/>
+ <tileset firstgid="5357" source="tilesets/veg/grassland/tree2B_ss.tsx"/>
+ <tileset firstgid="5613" source="tilesets/veg/grassland/tree3D_ss.tsx"/>
+ <tileset firstgid="5869" source="tilesets/veg/grassland/tree2A_ss.tsx"/>
+ <tileset firstgid="6125" source="tilesets/veg/vegA2.tsx"/>
+ <tileset firstgid="6173" source="tilesets/veg/vegA3.tsx"/>
+ <tileset firstgid="6221" source="tilesets/veg/vegA4.tsx"/>
+ <tileset firstgid="6269" source="tilesets/veg/vegB1.tsx"/>
+ <tileset firstgid="6317" source="tilesets/veg/vegB2.tsx"/>
+ <tileset firstgid="6365" source="tilesets/veg/vegB3.tsx"/>
+ <tileset firstgid="6413" source="tilesets/veg/vegC1.tsx"/>
+ <tileset firstgid="6461" source="tilesets/veg/vegC2.tsx"/>
+ <tileset firstgid="6509" source="tilesets/veg/vegC3.tsx"/>
+ <tileset firstgid="6557" source="tilesets/veg/vegC4.tsx"/>
+ <tileset firstgid="6605" source="sprites/containers/barrelA.tsx"/>
+ <tileset firstgid="6608" source="sprites/containers/barrelB.tsx"/>
  <layer id="2" name="floor" width="200" height="12">
   <properties>
    <property name="drawz" type="float" value="-2"/>
@@ -74,25 +76,25 @@
   </properties>
   <data encoding="base64" compression="zlib">
    <chunk x="0" y="-12" width="20" height="12">
-   eJxjYBgFo2AU0BPsF6GeWQBCUADU
+   eJxjYBgFo2AU0BPsFqGeWQBBIADQ
   </chunk>
    <chunk x="20" y="-12" width="20" height="12">
-   eJxjYBgFo2AUDDawTYQ4dQAjPADL
+   eJxjYBgFo2AUDDawSYQ4dQAinADH
   </chunk>
    <chunk x="-20" y="0" width="20" height="12">
-   eJxjYBi8YKfIQLtgFIyCwQ0Ah54Azg==
+   eJxjYBi8YKvIQLtgFIyCwQ0Aew4Ayg==
   </chunk>
    <chunk x="0" y="0" width="20" height="12">
-   eJw7KMIABoESDAyboexCIPsAlD0KRsEoGLwAAIhYA2M=
+   eJzbK8IABr4SDAzroexcIHsPlD0KRsEoGLwAAD5YA08=
   </chunk>
    <chunk x="20" y="0" width="20" height="12">
-   eJxjYCAPGIkzMBgDsYk4mQZgARtFGBgcJRgYPkpQz8xRMAqGMwAA624DBg==
+   eJxjYCAP6IkzMOgDsYE4mQZgAWtFGBhsJRgY3kpQz8xRMAqGMwAAmv4C7g==
   </chunk>
    <chunk x="40" y="0" width="20" height="12">
-   eJxjYMAEDyVQ+YVofEE0Pi7wEarOkUj1o2AUjALSAADDkgMO
+   eJxjYMAEdyVQ+blofF40Pi7wFqrOlkj1o2AUjALSAAB9QgL6
   </chunk>
    <chunk x="60" y="0" width="20" height="12">
-   eJxjYEAFH8UZGJTEGBiUgVhFjIEqwAhojjEQm1DJPFoBQ4mBdsEoGAWkAQDj2ALY
+   eJxjYEAFb8UZGOTEGBjkgVhBjIEqQA9ojj4QG1DJPFoBXYmBdsEoGAWkAQB2SAK4
   </chunk>
   </data>
  </layer>
@@ -102,7 +104,7 @@
   </properties>
   <data encoding="base64" compression="zlib">
    <chunk x="0" y="0" width="20" height="12">
-   eJxjYBhZ4LMIA8MXEeqZxyzKwMAiSj3zhIFmiVDRPGWgWSpUNM8YaJYJFc0bBZQBAKiIA5Q=
+   eJxjYBhZ4L0IA8MHEeqZ9x9klij1zOMHmiVARfPkgWYpUNE8faBZBlQ0bxRQBgDO9wRr
   </chunk>
   </data>
  </layer>
@@ -112,7 +114,7 @@
   </properties>
   <data encoding="base64" compression="zlib">
    <chunk x="0" y="0" width="20" height="12">
-   eJxjYBgFgwl8FmVg+CJKPfOYxRgYWMSoZ54w0CwRKpqnDDRLhYrmjTQAAPOBAws=
+   eJxjYBgFgwm8F2Vg+CBKPfP+g8wSo555/ECzBKhonjzQLAUqmjfSAACbAAPq
   </chunk>
   </data>
  </layer>
@@ -122,7 +124,7 @@
   </properties>
   <data encoding="base64" compression="zlib">
    <chunk x="0" y="0" width="20" height="12">
-   eJxjYBgFo4B48FGMgeETEH8G4i9ilJvHKM7AwATEzEDMAsQfRYHmA/FnIP4iSrn5wx0AAKd9CKc=
+   eJxjYBgFo4B48FaMgeEdEL8H4g9ilJv3F2jGPyD+DzJLHGi+KNB8IH4PxB9EKTd/uAMAGSgLdA==
   </chunk>
   </data>
  </layer>
@@ -138,10 +140,10 @@
    <object id="27" template="mapobjects/CameraPath.tx" x="240" y="144">
     <polyline points="0,0 480,0"/>
    </object>
-   <object id="23" gid="5292" x="728" y="224" width="64" height="32"/>
-   <object id="24" gid="5292" x="864" y="168" width="64" height="32"/>
-   <object id="25" gid="5289" x="784" y="136" width="64" height="32"/>
-   <object id="26" gid="5290" x="848" y="248" width="64" height="32"/>
+   <object id="23" gid="5288" x="728" y="224" width="64" height="32"/>
+   <object id="24" gid="5288" x="864" y="168" width="64" height="32"/>
+   <object id="25" gid="5285" x="784" y="136" width="64" height="32"/>
+   <object id="26" gid="5286" x="848" y="248" width="64" height="32"/>
    <object id="237" template="mapobjects/OutwardBoundary.tx" x="448" y="32" visible="1">
     <polygon points="0,-32 0,64 512,64 512,-32"/>
    </object>
@@ -294,9 +296,29 @@
    <object id="66" template="mapobjects/CameraPath.tx" x="1616" y="144">
     <polyline points="0,0 320,0"/>
    </object>
-   <object id="234" gid="5296" x="2112" y="64" width="64" height="128"/>
-   <object id="235" gid="5294" x="2112" y="64" width="64" height="128"/>
-   <object id="236" gid="5293" x="2112" y="64" width="64" height="128"/>
+   <object id="234" gid="5292" x="2112" y="64" width="64" height="128"/>
+   <object id="235" gid="5290" x="2112" y="64" width="64" height="128"/>
+   <object id="236" gid="5289" x="2112" y="64" width="64" height="128"/>
+   <object id="267" gid="6607" x="2000" y="104" width="32" height="32">
+    <properties>
+     <property name="itemtype" value="food-fish"/>
+    </properties>
+   </object>
+   <object id="270" gid="6607" x="2120" y="240" width="32" height="32">
+    <properties>
+     <property name="itemtype" value="food-fish"/>
+    </properties>
+   </object>
+   <object id="268" gid="6610" x="2128" y="264" width="32" height="32">
+    <properties>
+     <property name="itemtype" value="food-fish"/>
+    </properties>
+   </object>
+   <object id="269" gid="6610" x="2016" y="120" width="32" height="32">
+    <properties>
+     <property name="itemtype" value="food-fish"/>
+    </properties>
+   </object>
   </objectgroup>
   <objectgroup id="29" name="learngrabandthrowenemies">
    <object id="254" gid="5278" x="2112" y="-8" width="64" height="64">
@@ -498,30 +520,6 @@ Holding cells with captured kids</text>
     <property name="bordercolor" type="color" value="#ffffffff"/>
    </properties>
    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Stool</text>
-  </object>
-  <object id="123" x="1984" y="80" width="32" height="48">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Small table</text>
-  </object>
-  <object id="125" x="2112" y="208" width="32" height="48">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Small table</text>
-  </object>
-  <object id="140" x="2112" y="240" width="32" height="48">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Barrel</text>
-  </object>
-  <object id="141" x="1952" y="80" width="32" height="48">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Barrel</text>
   </object>
   <object id="128" x="3216" y="48" width="160" height="32">
    <properties>
