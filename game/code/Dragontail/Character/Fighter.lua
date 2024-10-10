@@ -206,7 +206,8 @@ function Fighter:wallBump(thrower, oobx, ooby)
         {
             type = "spark-hit",
             x = self.x + oobx*bodyradius,
-            y = self.y + ooby*bodyradius
+            y = self.y + ooby*bodyradius,
+            z = self.z + self.bodyheight/2
         }
     )
     self.health = self.health - (self.wallbumpdamage or 10)
