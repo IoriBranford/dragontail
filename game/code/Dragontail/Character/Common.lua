@@ -236,7 +236,6 @@ function Common:projectileDeflected(deflector)
     Audio.play(deflector.hitsound)
     local attackangle = deflector.attackangle
     local dirx, diry, dirz = cos(attackangle), sin(attackangle), 0
-    yield()
 
     local speed = self.speed or 1
     local thrower = self.thrower
@@ -250,6 +249,10 @@ function Common:projectileDeflected(deflector)
     self.velx = speed*dirx
     self.vely = speed*diry
     self.velz = speed*dirz
+    local angle = atan2(self.vely, self.velx)
+    self.attackangle = angle
+    self:setDirectionalAnimation(self.swinganimation, angle, 1, self.swinganimationloopframe or 1)
+    yield()
     return "projectileFly", deflector
 end
 
