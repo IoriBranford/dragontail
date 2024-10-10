@@ -191,11 +191,21 @@ function Enemy:approach()
     local bodyradius = self.bodyradius
 
     local attackradius = totalAttackRange(self.attackradius or 64, self.attacklungespeed or 0, self.attacklungedecel or 1) + opponent.bodyradius
-    local attackerslot = opponent:findRandomAttackerSlot(attackradius + bodyradius, self.attackprojectile and "missile" or "melee")
+    local attackerslot
+    if self.attackprojectile then
+        attackerslot = opponent:findRandomAttackerSlot(bodyradius, "missile")
+    else
+        attackerslot = opponent:findRandomAttackerSlot(attackradius + bodyradius, "melee")
+    end
     if not attackerslot then
         return "stand", 10
     end
-    local destx, desty = attackerslot:getPosition(oppox, oppoy, attackradius)
+    local destx, desty
+    if self.attackprojectile then
+        destx, desty = attackerslot:getFarPosition(oppox, oppoy, bodyradius)
+    else
+        destx, desty = attackerslot:getPosition(oppox, oppoy, attackradius)
+    end
     local raycast = Raycast(destx - x, desty - y, 0, 1, bodyradius/2)
     raycast.canhitgroup = "solids"
     if Characters.castRay(raycast, x, y) then
