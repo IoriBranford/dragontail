@@ -2,6 +2,7 @@ character,team,health,bodyradius,bodyheight,bodysolid,canbeattacked,canbegrabbed
 Rose,player,100,16,32,,true,,,,,,,,fall,,,,,8,Dragontail.Character.Player,control,hold,hurt,,,control,,,,,,,,,10,,FallRiseToFeet,defeat,control,,,,
 bandit-dagger,enemy,50,16,32,,true,TRUE,3,,,,dagger-swing,,fall,24,,,,4,Dragontail.Character.Enemy,stand,,hurt,,,,,,stun,120,thrown,,,10,,,FallKnees,defeat,stand,,approach,,
 bandit-spear,enemy,75,16,32,,true,TRUE,4,8,0.25,,spear-thrust,,fall,24,,,,4,Dragontail.Character.Enemy,stand,,hurt,,,,,,stun,120,thrown,,,10,,,FallKnees,defeat,stand,,approach,,
+container-barrel,container,1,12,24,TRUE,true,,,,,,,,,,,,container,,Dragontail.Character.Common,,,containerBreak,,,,,,,,,,,,,,,containerBreak,,,,,
 food-container,container,1,16,16,TRUE,true,,,,,,,,,,,,container,,Dragontail.Character.Common,,,containerBreak,,,,,,,,,,,,,,,containerBreak,,,,,
 food-fish,item,,18,8,,,,,,,,,,,,25,,fish,,Dragontail.Character.Common,itemWaitForPickup,,,,,,,,,,,,,,,,,,,,,,
 food-bigfish,item,,18,8,,,,,,,,,,,,100,,bigfish,,Dragontail.Character.Common,itemWaitForPickup,,,,,,,,,,,,,,,,,,,,,,
