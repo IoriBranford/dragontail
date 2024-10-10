@@ -17,7 +17,7 @@ function GamePhase.loadphase()
     paused = false
     local unifont = Assets.get("fonts/Unifont 16.fnt")
     love.graphics.setFont(unifont)
-    Assets.load("music/retro-chiptune-guitar.ogg", "stream")
+    Assets.get("music/retro-chiptune-guitar.ogg", "stream")
 
     Database.load("data/db_characters.csv")
     Database.load("data/db_charactersprites.csv")
