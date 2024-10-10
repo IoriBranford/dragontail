@@ -8,7 +8,11 @@ function AttackerSlot:_init(slottype, dx, dy)
     Raycast._init(self, dx, dy, 1)
     self.canhitgroup = "solids"
     self.type = slottype ---@type "melee"|"missile"
-    self.dirx, self.diry = math.norm(self.dx, self.dy)
+    if self.dx == 0 and self.dy == 0 and self.dz == 0 then
+        self.dx = 1
+    end
+    self.length = math.len(self.dx, self.dy, self.dz)
+    self.dirx, self.diry = self.dx/self.length, self.dy/self.length
 end
 
 function AttackerSlot:hasSpace(space)
@@ -16,6 +20,11 @@ function AttackerSlot:hasSpace(space)
 end
 
 function AttackerSlot:getPosition(targetx, targety, distfromtarget)
+    return targetx + self.dirx*distfromtarget, targety + self.diry*distfromtarget
+end
+
+function AttackerSlot:getFarPosition(targetx, targety, distfromwall)
+    local distfromtarget = math.min(self.hitdist or math.huge, self.length) - distfromwall
     return targetx + self.dirx*distfromtarget, targety + self.diry*distfromtarget
 end
 
