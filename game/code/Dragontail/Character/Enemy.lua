@@ -52,7 +52,10 @@ local function findAngleToDodgeIncoming(self, incoming)
     end
 
     local dodgedist = Fighter.GetSlideDistance(dodgespeed, self.dodgedecel or 1)
-    local dodgedirx, dodgediry = math.norm(fromoppox, fromoppoy) -- cos(dodgeangle), sin(dodgeangle)
+    local dodgedirx, dodgediry = 1, 0
+    if dsq > 0 then
+        dodgedirx, dodgediry = math.norm(fromoppox, fromoppoy)
+    end
     local dodgespacex, dodgespacey = dodgedirx * dodgedist, dodgediry * dodgedist
     local raycast = Raycast(dodgespacex, dodgespacey, 0, 1, self.bodyradius/2)
     raycast.canhitgroup = "solids"
@@ -326,7 +329,11 @@ function Enemy:prepareAttack(attacktype, dirx, diry)
     if type(dirx) == "table" then
         target = dirx
         target.attacker = self
-        dirx, diry = math.norm(target.x - self.x, target.y - self.y)
+        dirx, diry = 1, 0
+        local distx, disty = target.x - self.x, target.y - self.y
+        if distx ~= 0 or disty ~= 0 then
+            dirx, diry = math.norm(distx, disty)
+        end
     end
 
     if dirx and diry then
@@ -362,7 +369,11 @@ function Enemy:executeAttack(attacktype, dirx, diry, dirz)
     if type(dirx) == "table" then
         local target = dirx
         target.attacker = self
-        dirx, diry = math.norm(target.x - self.x, target.y - self.y)
+        dirx, diry = 1, 0
+        local distx, disty = target.x - self.x, target.y - self.y
+        if distx ~= 0 or disty ~= 0 then
+            dirx, diry = math.norm(distx, disty)
+        end
     end
 
     if dirx and diry then
@@ -416,7 +427,12 @@ end
 
 function Enemy:attack(attacktype)
     local opponent = self.opponents[1]
-    local dirx, diry, dirz = norm(opponent.x - self.x, opponent.y - self.y, opponent.z - self.z)
+    local dirx, diry, dirz = opponent.x - self.x, opponent.y - self.y, opponent.z - self.z
+    if dirx == 0 and diry == 0 and dirz == 0 then
+        dirx, diry, dirz = 1, 0, 0
+    else
+        dirx, diry, dirz = norm(dirx, diry, dirz)
+    end
     self:prepareAttack(attacktype, opponent)
     self:executeAttack(attacktype, dirx, diry, dirz)
     return "stand", 20
@@ -435,7 +451,12 @@ function Enemy:enterAndAmbush()
     repeat
         yield()
         for _, opponent in ipairs(opponents) do
-            local tooppox, tooppoy = norm(opponent.x - self.x, opponent.y - self.y)
+            local tooppox, tooppoy = opponent.x - self.x, opponent.y - self.y
+            if tooppox == 0 and tooppoy == 0 then
+                tooppox = 1
+            else
+                tooppox, tooppoy = norm(tooppox, tooppoy)
+            end
             local fDotD = math.dot(tooppox, tooppoy, self.facex, self.facey)
             if fDotD >= cossightarc then
                 sighted = opponent
