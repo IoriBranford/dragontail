@@ -142,7 +142,6 @@ function Assets.load(path, ...)
     local ext = path:match("%.(%w-)$")
     local loader = Assets.loaders[ext] or love.filesystem.read
     local asset = loader(Assets.rootpath..path, ...)
-    Assets.put(path, asset)
     return asset
 end
 
@@ -154,11 +153,16 @@ function Assets.put(path, asset)
     bytype[path] = asset
 end
 
----@return Asset
+---@return Asset?
 function Assets.get(path, ...)
     if path then
         Assets.touncache[path] = nil
-        return Assets.all[path] or Assets.load(path, ...)
+        local asset = Assets.all[path]
+        if not asset then
+            asset = Assets.load(path, ...)
+            Assets.put(path, asset)
+        end
+        return asset
     end
 end
 
