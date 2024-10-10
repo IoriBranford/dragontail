@@ -135,7 +135,7 @@ function TilePacking.pack(tilesets, aseprites)
         end
     end
     table.sort(heightsortedtiles, function(a, b)
-        return a.height > b.height
+        return a.height > b.height or a.height == b.height and a.width > b.width
     end)
 
     local allspace = newSpace(0, 0, packwidth, packheight)
