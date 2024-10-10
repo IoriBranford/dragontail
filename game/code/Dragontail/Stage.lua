@@ -36,6 +36,7 @@ function Stage.init(stagefile)
     map:indexLayersByName()
     map:indexLayerObjectsByName()
     map:indexTilesetTilesByName()
+    map:markAndCountEmptyTiles()
 
     scene = Scene()
     Characters.init(scene, map.nextobjectid)
