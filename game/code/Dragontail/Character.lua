@@ -87,14 +87,14 @@ function Character:addToScene(scene)
     self.originy = self.spriteoriginy
 
     local baseDraw = self.draw
-    if self.shadowtype then
-        self.draw = function(self, fixedfrac)
+    self.draw = function(self, fixedfrac)
+        if self.shadowtype then
             self:drawSpriteShadow(fixedfrac)
-            baseDraw(self, fixedfrac)
-            if Config.drawbodies then
-                self:drawBodyShape(fixedfrac)
-                self:drawAttackShape(fixedfrac)
-            end
+        end
+        baseDraw(self, fixedfrac)
+        if Config.drawbodies then
+            self:drawBodyShape(fixedfrac)
+            self:drawAttackShape(fixedfrac)
         end
     end
 end
