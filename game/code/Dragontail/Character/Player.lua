@@ -710,6 +710,7 @@ function Player:hold(enemy)
         x, y = self.x, self.y
         enemy.x = x + velx + holddirx*radii
         enemy.y = y + vely + holddiry*radii
+        enemy.z = self.z + math.max(0, (self.bodyheight - enemy.bodyheight)/2)
         self.facex, self.facey = holddirx, holddiry
 
         if holdfrombehind then
@@ -779,6 +780,7 @@ function Player:runWithEnemy(enemy)
         local x, y = self.x, self.y
         enemy.x = x + self.velx + facex*radii
         enemy.y = y + self.vely + facey*radii
+        enemy.z = self.z + math.max(0, (self.bodyheight - enemy.bodyheight)/2)
 
         if self.animationtime % 3 == 0 then
             self:makeAfterImage()
