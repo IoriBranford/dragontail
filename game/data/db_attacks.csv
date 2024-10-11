@@ -11,7 +11,7 @@ running-elbow,,20,1.5707963267949,10,12,3,,2,,,10,nil,,nil,5,,,,,nil,knockedBack
 running-with-enemy,,24,1.5707963267949,10,12,3,,,,,,nil,,nil,10,,,,,knockedBack,knockedBack,,,,,,sounds/player/attack2.mp3,sounds/combat/hit2.mp3,,nil,spark-hit,spark-guard,nil
 dagger-swing,,32,0.196349540849362,10,12,,,,,,,5,,,,,,,,nil,nil,SwingWindup,,SwingAttack,,sounds/man_light/attack1.mp3,sounds/combat/swing1.mp3,sounds/combat/cut.mp3,,,nil,nil,nil
 spear-thrust,,48,0,10,12,,,,,30,,15,0.25,,,,,,,knockedBack,nil,ThrustWindup,,ThrustAttack,,sounds/man_medium/attack1.mp3,sounds/combat/swingblade.mp3,sounds/combat/cut.mp3,,,nil,nil,nil
-human-thrown,,16,0.785398163397448,10,12,3,,,,,,,,,,,,,,knockedBack,knockedBack,,,,,,sounds/combat/spin.mp3,sounds/combat/hit2.mp3,,,spark-hit,spark-guard,nil
+human-thrown,,24,0.785398163397448,10,12,3,,,,,,,,,,,,,,knockedBack,knockedBack,,,,,,sounds/combat/spin.mp3,sounds/combat/hit2.mp3,,,spark-hit,spark-guard,nil
 axe-swing,4,40,0.785398163397448,25,20,10,,,FALSE,10,,8,,,,,,,,thrown,thrown,SwingWindup,,SwingAttack,,sounds/man_heavy/lightattack3.mp3,sounds/combat/swing3.mp3,sounds/combat/cut2.mp3,,nil,nil,nil,nil
 axe-swing-counter,4,40,0.785398163397448,25,20,10,,,TRUE,10,,8,,,,,,,,thrown,thrown,SwingWindup,,SwingAttack,,sounds/man_heavy/lightattack3.mp3,sounds/combat/swing3.mp3,sounds/combat/cut2.mp3,,nil,nil,nil,nil
 axe-throw,3,100,0,0,0,0,,,FALSE,30,,5,,,,,,,,nil,nil,throwA,,throwB,,sounds/man_heavy/attack4.mp3,sounds/combat/swing3.mp3,,,thrown-axe,nil,nil,nil
