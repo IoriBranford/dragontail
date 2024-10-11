@@ -731,23 +731,8 @@ end
 Character.drawAttackShape = Character.drawAttackCircle
 
 function Character:isOnCamera(cx, cy, cw, ch)
-    if self.points then
-        local x, y, x2, y2 = self:getExtents()
-        y = y - self.z - self.bodyheight
-        return math.testrects(x, y, x2-x, y2-y, cx, cy, cw, ch)
-    end
-    local ox, oy = self.originx, self.originy
-    local w, h = 0, 0
-    if self.aseprite then
-        w, h = self.aseprite.width, self.aseprite.height
-        ox = ox or 0
-        oy = oy or 0
-    elseif self.tile then
-        w, h = self.tile.width, self.tile.height
-        ox = ox or self.tile.objectoriginx
-        oy = oy or self.tile.objectoriginy
-    end
-    local x, y = self.x - ox, self.y - self.z - oy
+    local x, y, x2, y2 = self:getExtents()
+    local w, h = x2-x, y2-y
     return math.testrects(x, y, w, h, cx, cy, cw, ch)
 end
 
