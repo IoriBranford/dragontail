@@ -235,7 +235,7 @@ end
 function Character:keepInBounds()
     local x, y, z, r, h = self.x, self.y, self.z, self.bodyradius, self.bodyheight
     local totalpenex, totalpeney, totalpenez
-    self.x, self.y, self.z, totalpenex, totalpeney, totalpenez = Characters.keepCylinderIn(x, y, z, r, h)
+    self.x, self.y, self.z, totalpenex, totalpeney, totalpenez = Characters.keepCylinderIn(x, y, z, r, h, self)
     return totalpenex, totalpeney, totalpenez
 end
 

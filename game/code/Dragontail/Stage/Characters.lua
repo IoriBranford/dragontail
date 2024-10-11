@@ -201,10 +201,10 @@ function Characters.keepCircleIn(x, y, r)
     return x, y, totalpenex, totalpeney
 end
 
-function Characters.keepCylinderIn(x, y, z, r, h)
+function Characters.keepCylinderIn(x, y, z, r, h, self)
     local totalpenex, totalpeney, totalpenez, penex, peney, penez
     for _, solid in ipairs(solids) do
-        if solid.bodysolid then
+        if solid ~= self and solid.bodysolid then
             penex, peney, penez = solid:getCylinderPenetration(x, y, z, r, h)
             if penex then
                 x = x - penex
