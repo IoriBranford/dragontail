@@ -428,10 +428,11 @@ function Fighter:launchProjectile(type, dirx, diry, dirz, attackid)
     local x, y, z = self.x, self.y, self.z
     local bodyradius, bodyheight = self.bodyradius or 0, self.bodyheight or 0
     local speed = projectiledata.speed or 1
+    local projectileheight = self.projectilelaunchheight or (bodyheight / 2)
     local projectile = {
         x = x + bodyradius*dirx,
         y = y + bodyradius*diry,
-        z = z + bodyheight / 2,
+        z = z + projectileheight,
         velx = speed*dirx,
         vely = speed*diry,
         velz = speed*dirz,
