@@ -3,7 +3,6 @@ Rose,sprites/rose.jase,32,56,sprites/emotes.jase,12,64,sprites/rose-face.jase,TR
 bandit-dagger,sprites/bandit/knife.jase,32,52,sprites/emotes.jase,12,56,,TRUE,
 bandit-spear,sprites/bandit/spear.jase,32,52,sprites/emotes.jase,12,56,,TRUE,
 food-container,sprites/food-container.jase,16,24,,,,,TRUE,
-container-barrel,,,,,,,,TRUE,
 food-fish,sprites/items.jase,32,16,,,,,TRUE,
 food-bigfish,sprites/items.jase,32,16,,,,,TRUE,
 item-throwing-axe,sprites/items.jase,32,16,,,,,TRUE,
