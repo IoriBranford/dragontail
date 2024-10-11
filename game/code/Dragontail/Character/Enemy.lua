@@ -300,6 +300,7 @@ function Enemy:leave(exitx, exity)
     self.recoverai = "leave"
     exitx = exitx or self.exitpoint
     self:walkToDest(exitx, exity)
+    self.exitpoint:disappear()
     self:disappear()
 end
 
@@ -308,6 +309,7 @@ function Enemy:enterShootLeave()
 
     if self.entrypoint then
         if self:walkToDest(self.entrypoint) then
+            self.entrypoint:disappear()
             self.entrypoint = nil
         end
     end
