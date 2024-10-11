@@ -34,7 +34,7 @@
  </tile>
  <tile id="5">
   <properties>
-   <property name="name" value="collapse"/>
+   <property name="name" value="defeated"/>
   </properties>
  </tile>
 </tileset>
