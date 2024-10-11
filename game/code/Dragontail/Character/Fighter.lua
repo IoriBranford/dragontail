@@ -282,7 +282,6 @@ end
 
 function Fighter:wallSlammed(thrower, oobx, ooby)
     oobx, ooby = norm(oobx or 0, ooby or 0)
-    self:stopAttack()
     local bodyradius = self.bodyradius or 1
     Characters.spawn(
         {
@@ -292,8 +291,10 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
         }
     )
     self.health = self.health - (self.wallslamdamage or 25)
-    self.hurtstun = self.wallslamstun or 20
     self.velx, self.vely, self.velz = 0, 0, 0
+    yield()
+    self:stopAttack()
+    self.hurtstun = self.wallslamstun or 20
     yield()
     local wallslamcounterattack = self.wallslamcounterattack
     if self.health > 0 and wallslamcounterattack and self.attack then
