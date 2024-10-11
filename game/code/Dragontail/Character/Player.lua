@@ -663,18 +663,20 @@ function Player:hold(enemy)
     end
     local holdangle = atan2(holddiry, holddirx)
     local holddestangle = holdangle
-    local time = enemy.timetobreakhold or 60
+    local time = enemy.timetobreakhold
     local holdfrombehind = dot(enemy.facex, enemy.facey, self.facex, self.facey) >= 0
     if holdfrombehind then
         -- DESIGNME
     end
-    while time > 0 do
+    while not time or time > 0 do
         yield()
         enemy = self.heldopponent
         if not enemy then
             return "control"
         end
-        time = time - 1
+        if time then
+            time = time - 1
+        end
 
         local inx, iny = Controls.getDirectionInput()
         local attackpressed, runpressed = Controls.getButtonsPressed()
