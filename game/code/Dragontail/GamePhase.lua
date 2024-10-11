@@ -131,6 +131,15 @@ function GamePhase.update(dsecs, fixedfrac)
     Audio.update(dsecs)
 end
 
+function GamePhase.debug_drawStageUnzoomed(fixedfrac)
+    love.graphics.push()
+    love.graphics.translate(
+        (love.graphics.getWidth()  - Stage.CameraWidth ) / 2,
+        (love.graphics.getHeight() - Stage.CameraHeight) / 2)
+    Stage.draw(paused and 0 or fixedfrac)
+    love.graphics.pop()
+end
+
 function GamePhase.draw(fixedfrac)
     love.graphics.clear(.25, .25, .25)
     stagecanvas:drawOn(function()
