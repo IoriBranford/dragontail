@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset version="1.11" tiledversion="1.11.0" name="caves" tilewidth="32" tileheight="32" tilecount="2448" columns="51">
  <image source="caves.png" width="1632" height="1536"/>
+ <tile id="1408" probability="0.1"/>
+ <tile id="1410" probability="0.1"/>
+ <tile id="1510" probability="0.1"/>
+ <tile id="1512" probability="0.1"/>
  <tile id="2040" probability="0.005"/>
  <tile id="2041" probability="0.005"/>
  <tile id="2042" probability="0.005"/>
