@@ -163,13 +163,19 @@ function Gui:fixedupdate()
     self:animate(1)
 end
 
-function Gui:draw()
-    local canvas = self.canvas
-    canvas:drawOn(function()
+function Gui:drawOnOwnCanvas()
+    self.canvas:drawOn(function()
         love.graphics.clear()
-        LayerGroup.draw(self)
+        self:draw()
     end)
-    canvas:draw()
 end
+
+function Gui:drawOnCanvas(canvas)
+    canvas:drawOn(function()
+        self:draw()
+    end)
+end
+
+Gui.draw = LayerGroup.draw
 
 return Gui
