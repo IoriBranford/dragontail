@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 32,
-  nextobjectid = 313,
+  nextlayerid = 33,
+  nextobjectid = 318,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -2988,23 +2988,23 @@ return {
         },
         {
           id = 2044,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2045,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2046,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2047,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2048,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2049,
@@ -3024,23 +3024,23 @@ return {
         },
         {
           id = 2053,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2054,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2055,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2056,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2057,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2058,
@@ -3132,59 +3132,59 @@ return {
         },
         {
           id = 2095,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2096,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2097,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2098,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2099,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2100,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2101,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2102,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2103,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2104,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2105,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2106,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2107,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2108,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2109,
@@ -3260,75 +3260,75 @@ return {
         },
         {
           id = 2142,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2143,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2144,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2145,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2146,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2147,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2148,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2149,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2150,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2151,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2152,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2153,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2154,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2155,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2156,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2157,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2158,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2159,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2160,
@@ -3404,75 +3404,75 @@ return {
         },
         {
           id = 2193,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2194,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2195,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2196,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2197,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2198,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2199,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2200,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2201,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2202,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2203,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2204,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2205,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2206,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2207,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2208,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2209,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2210,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2211,
@@ -3548,39 +3548,39 @@ return {
         },
         {
           id = 2244,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2245,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2246,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2247,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2248,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2249,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2250,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2251,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2252,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2253,
@@ -3600,23 +3600,23 @@ return {
         },
         {
           id = 2257,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2258,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2259,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2260,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2261,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2262,
@@ -3708,59 +3708,59 @@ return {
         },
         {
           id = 2299,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2300,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2301,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2302,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2303,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2304,
-          probability = 0.005
+          probability = 0.25
         },
         {
           id = 2305,
-          probability = 0.005
+          probability = 0.25
         },
         {
           id = 2306,
-          probability = 0.005
+          probability = 0.25
         },
         {
           id = 2307,
-          probability = 0.005
+          probability = 0.25
         },
         {
           id = 2308,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2309,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2310,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2311,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2312,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2313,
@@ -3836,75 +3836,75 @@ return {
         },
         {
           id = 2346,
-          probability = 0.005
+          probability = 0.25
         },
         {
           id = 2347,
-          probability = 0.005
+          probability = 0.25
         },
         {
           id = 2348,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2349,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2350,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2351,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2352,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2353,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2354,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2355,
-          probability = 0.005
+          probability = 0.25
         },
         {
           id = 2356,
-          probability = 0.005
+          probability = 0.25
         },
         {
           id = 2357,
-          probability = 0.005
+          probability = 0.25
         },
         {
           id = 2358,
-          probability = 0.005
+          probability = 0.25
         },
         {
           id = 2359,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2360,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2361,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2362,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2363,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2364,
@@ -3980,75 +3980,75 @@ return {
         },
         {
           id = 2397,
-          probability = 0.005
+          probability = 0.25
         },
         {
           id = 2398,
-          probability = 0.005
+          probability = 0.25
         },
         {
           id = 2399,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2400,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2401,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2402,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2403,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2404,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2405,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2406,
-          probability = 0.005
+          probability = 0.25
         },
         {
           id = 2407,
-          probability = 0.005
+          probability = 0.25
         },
         {
           id = 2408,
-          probability = 0.005
+          probability = 0.25
         },
         {
           id = 2409,
-          probability = 0.005
+          probability = 0.25
         },
         {
           id = 2410,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2411,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2412,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2413,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2414,
-          probability = 0.005
+          probability = 0.05
         },
         {
           id = 2415,
@@ -14119,6 +14119,10 @@ return {
       compression = "zlib",
       chunks = {
         {
+          x = 100, y = -12, width = 20, height = 12,
+          data = "eJzNzMkRgkAQRuF2QQbjkR3jkR3zcQPMSMB4fAdP6qUtD3bVd5p/nsj7VZZIjcb68PjFtXQ69D/qDXRGTM/eyojYMHCwNrqey96DjwAhIsRIsFX2UvYZchQoUaFGg72yd2B/xAlnXNCiQ4+rsvd6N/4PGDHhruzNHJE5FljCwgo2DBxH19uwd+HBR4AQEWIkyt6OfYoMOQqUqFCjUfb+6R6bZx2K"
+        },
+        {
           x = 0, y = 0, width = 20, height = 12,
           data = "eJzNUUsKwjAQDbgrSJukHkdBcCdC2/RjeiJP4G3EpQsRRLR4HGeYCan9uOrCgeHN92UmI8Q08lJCZPFEZCAlcBk9no8hZ6CmArTaI86wZz9nO2uh68WcBiw5XoC+wd6GQuykECnGWSvI5YwWuXg2VNxbaaqvY5rbsmZcg331wN+spLdnbDea5kix58f+Y3IOv/0jcNwhFkjixF3dvzQw+xpyS9mf5xT1uTdQu4C+AnQuac5LSJhExG9ab1QD9zCtW7h7lPxXD0VcXb1GhDd+6yB9Loi8nXR2fyq6m439HZyPWvEtLceN9nFn/7t8ALMBPSw="
         },
@@ -14140,7 +14144,19 @@ return {
         },
         {
           x = 100, y = 0, width = 20, height = 12,
-          data = "eJxbyMrAsICDgWEhKwSbcDJQBGDmgLAZJ4SmlnmmQPM4OahjXgYngk0t9w1G87KR4hbGptR9rMCwy4SaxUaF9JLLQT3/jjQAAIL7GTQ="
+          data = "eJzlkgtqwzAMhl1WD/s+ayjsQE077BypTq/kuOeZjD8RFXqDBn70sB6/pKzeuRKcW/3AT3TuV3ATbGJnwSG+vmfkjH4ktvg9rmMi75vYDX+jbkFPggd6Q9/8Hq84SY0YRnzF13kmanV8ib2IjMZ/gOdias1mpgd5F3znMHw95hlGj5kdVWpu8F7fYOEtwaERX82b7uEWhu8ehv2uXiG3mjoN/8L+M3NkZq/c9c/cVvVET73XEZ6RuZVjQU7xlbcX+xr22+rtm8mrYeeZzC0n9lzZufKx8+rOdG/6r1zh0WXn3OCaTY9P+/4BCYJjww=="
+        },
+        {
+          x = 120, y = 0, width = 20, height = 12,
+          data = "eJzlUQluwjAQdEKirv9ToEXqewotxHyIKkmf5KTvYYYdC/+hkUbj7DF7TX0I+xjCBD6BV/AGPIBHoJGP9mwhXIEOtqz4S++YgR18n7B9AW94v5v85hqMKbrkVPEROTtgwdukO8rH2jfppUrjNTozl5hVg7Wo9R09nvO0wFkaWTGD4pOYtf/M95FVN5kz9RvtpcxN+7baHTVMPXaqtwdm4Me838e80fMG7e4A36+5jfWGqj/2clA/R80zmfeadJON9JLulbUf3mIxn31VfB+fOyrz5/qG0vkw/x+1l063aXTforGqR5OtUf4pPnNn7bzkLcq9adZFN2Jeq7yy01zmrHpuFftS+Uuv/+27A6wjWR0="
+        },
+        {
+          x = 140, y = 0, width = 20, height = 12,
+          data = "eJzlUglywjAMNLSZkf5TeoTwHgptzIMYSgJPMuY91aL12H8gMzuWbWm9WiV1IWTDxRANg3p8MHxKCN/cj4aT7X/U88TipcULw45nybBHvnj+TM4vqXd7i3txzsycmTFqtpbzariyppy/qddHnmVqnHg/8M2xq/qhHUDundrb/nKTj7XXqqdw3RqNpQ46sK6o9Si+juL61o0fF3IAWbxuoCb4NrEH5ILjl76+GDb0Ce9Ay4c6DziEWov3M/uFT6gHX9TqM2rAB58O4jxKzxbk3bGv1PSdOPdM/cj5k+pH5LvFl+LVWepcwbUmR2I/E9clY2Wv71pn95gD6yLnEam3/Avt/LF/tu8f56JcbA=="
+        },
+        {
+          x = 160, y = 0, width = 20, height = 12,
+          data = "eJztkcsJgDAQRFclsCnIkwVpEGNFQrQlP/U4w6YAYa8OvGMes5kSRHZwgBRFGuAJXSsY4GnBFXy+tfoeFRnh6539umi3siddxdnvxPspWrdS/9ETvqeHPbnHrD4f/39TuzUH/x5J7WaSK55whwXc3KRu/Od7Xs7UF70="
         }
       }
     },
@@ -14214,7 +14230,19 @@ return {
         },
         {
           x = 100, y = 0, width = 20, height = 12,
-          data = "eJxjY2RgsGBgYGAB0heANDOQpgRYAPVbArEZEJtDaUpANlB/DhBnAnEWlKYEzAPqnw/Ec4B4LpQeBaNgqAIA45gHYQ=="
+          data = "eJxjY2RgsGBgYGAB0heANDOQvgmkzYC0OUgOiHmAOBOIs4A4G4hz0PjcjKjqLZH4Zlj02wPxHCCeC8TzgHg+Gt8Oj32ZWPQXATE+UIjHvjlE6B8Fo2CwAgDl4Bf8"
+        },
+        {
+          x = 120, y = 0, width = 20, height = 12,
+          data = "eJyzYGRgsARicyDmAeIsIM4G4hwgziSBzw3EZkhyIHF7IJ4LxPOAeD4QzyGBbwc1HyYHEi8CYnJBIdT8UTAKhhMAAIF0FRQ="
+        },
+        {
+          x = 140, y = 0, width = 20, height = 12,
+          data = "eJwzZ2RgsABiSyA2A2JzLPwbDAwMC4CYFci+DKSzoHw2kFogzQKkL0D5WUCcDcQ5QJyJg8+NxS5s9oL4c4F4HhDPB+I5OPh2WOzC5Q5iQCEWu3C5YxSMgoEEAFYWHSI="
+        },
+        {
+          x = 160, y = 0, width = 20, height = 12,
+          data = "eJyzYGBgYGFkYLgApJmB9FwGyoAl0AwzIDaH0iBMCcgB6s8E4iwonUmhefOB+ueA/Aml51Bo3igYBQMJAP4bB/E="
         }
       }
     },
@@ -14274,6 +14302,14 @@ return {
         {
           x = 100, y = 0, width = 20, height = 12,
           data = "eJyzYmJgsELC1kBMCchlQsV5FJo3CkbBKMANAMl5A1o="
+        },
+        {
+          x = 140, y = 0, width = 20, height = 12,
+          data = "eJxjYCAO2DIyMNgBcRYQZwKxJRMDgxUWTAooBJozF4jnAHEOUG8uFjwKRsEowA0AVA4HAA=="
+        },
+        {
+          x = 160, y = 0, width = 20, height = 12,
+          data = "eJyzYmJgsIJiayC2Z2SgCOQyIXAeEBdRaN4oGAWjADcAAOXDA2I="
         }
       }
     },
@@ -14305,6 +14341,14 @@ return {
         {
           x = 80, y = 0, width = 20, height = 12,
           data = "eJxjYBgFwxmwATE7FHMgiTNj4fMSYZ4VEF8C4iwgNmJCiJszYfIdiDBzPtQskJmpQD0ZQJwJxFlMmPxiBoiZrES6dSQAADuNCMU="
+        },
+        {
+          x = 120, y = 0, width = 20, height = 12,
+          data = "eJxjYBgFo4B+gAeIWYGYDYjZKTTLDojtgXgeEOcC8XwK3VUIxEVQc3KA2JJC99EDAADCBQR5"
+        },
+        {
+          x = 140, y = 0, width = 20, height = 12,
+          data = "eJztzDsOQEAUheGZZDwK1uNVsB6Gxn6wJjbkn7iF6G4n4iRfcqrfmH9fXgaHCPHjJ8iVvRY7SvjQsfTQ81d0SBW9Q3pemsutX2BGo+htGFBjRCXN0HL2ak+K3tt3AlW3DC0="
         }
       }
     },
@@ -15708,15 +15752,9 @@ return {
                 { x = 64, y = 0 },
                 { x = 64, y = 112 },
                 { x = 320, y = 112 },
-                { x = 352, y = 80 },
-                { x = 352, y = 48 },
-                { x = 416, y = 48 },
-                { x = 416, y = 80 },
+                { x = 384, y = 48 },
                 { x = 448, y = 112 },
-                { x = 480, y = 80 },
-                { x = 480, y = 48 },
-                { x = 544, y = 48 },
-                { x = 544, y = 80 },
+                { x = 512, y = 48 },
                 { x = 576, y = 112 },
                 { x = 576, y = 0 }
               },
@@ -15742,10 +15780,7 @@ return {
               polygon = {
                 { x = 576, y = 0 },
                 { x = 576, y = 112 },
-                { x = 608, y = 80 },
-                { x = 608, y = 48 },
-                { x = 672, y = 48 },
-                { x = 672, y = 80 },
+                { x = 640, y = 48 },
                 { x = 704, y = 112 },
                 { x = 768, y = 112 },
                 { x = 832, y = 176 },
@@ -15777,12 +15812,11 @@ return {
               polygon = {
                 { x = -320, y = -224 },
                 { x = -320, y = 96 },
-                { x = 224, y = 96 },
-                { x = 224, y = 0 },
-                { x = 160, y = 0 },
-                { x = 160, y = 64 },
-                { x = 96, y = 64 },
-                { x = 96, y = 0 },
+                { x = 256, y = 96 },
+                { x = 256, y = 64 },
+                { x = 192, y = 0 },
+                { x = 128, y = 64 },
+                { x = 64, y = 0 },
                 { x = -64, y = 0 },
                 { x = -96, y = 32 },
                 { x = -224, y = 32 },
@@ -15816,8 +15850,8 @@ return {
                 { x = 448, y = 64 },
                 { x = 384, y = 64 },
                 { x = 320, y = 0 },
-                { x = 288, y = 0 },
-                { x = 288, y = 160 }
+                { x = 256, y = 64 },
+                { x = 256, y = 160 }
               },
               properties = {
                 ["bodyheight"] = 64,
@@ -16332,6 +16366,318 @@ return {
         {
           type = "objectgroup",
           draworder = "topdown",
+          id = 18,
+          name = "armory",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 79,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 3120,
+              y = 144,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = 96, y = 0 },
+                { x = 480, y = 0 }
+              },
+              properties = {}
+            },
+            {
+              id = 317,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 3360,
+              y = 0,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = 0 },
+                { x = 0, y = 112 },
+                { x = 32, y = 80 },
+                { x = 128, y = 80 },
+                { x = 160, y = 48 },
+                { x = 384, y = 48 },
+                { x = 416, y = 80 },
+                { x = 480, y = 80 },
+                { x = 480, y = 0 }
+              },
+              properties = {
+                ["bodyheight"] = 512,
+                ["bodysolid"] = true,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 19,
+          name = "messhall",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 81,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 3440,
+              y = 144,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = 256, y = 0 },
+                { x = 640, y = 0 }
+              },
+              properties = {}
+            },
+            {
+              id = 74,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 3840,
+              y = 320,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = -320 },
+                { x = 0, y = -240 },
+                { x = 96, y = -240 },
+                { x = 128, y = -272 },
+                { x = 480, y = -272 },
+                { x = 480, y = -320 }
+              },
+              properties = {
+                ["bodyheight"] = 512,
+                ["bodysolid"] = true,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 20,
+          name = "arena",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 76,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 4800,
+              y = 32,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = -32 },
+                { x = 0, y = 80 },
+                { x = 480, y = 80 },
+                { x = 480, y = -32 }
+              },
+              properties = {
+                ["bodyheight"] = 64,
+                ["bodysolid"] = true,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 77,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 4352,
+              y = 288,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = -32, y = 32 },
+                { x = 448, y = 32 },
+                { x = 448, y = 0 },
+                { x = 384, y = -64 },
+                { x = 160, y = -64 },
+                { x = 128, y = -32 },
+                { x = 32, y = -32 }
+              },
+              properties = {
+                ["bodyheight"] = 32,
+                ["bodysolid"] = true,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 80,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 4400,
+              y = 144,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = -128, y = 0 },
+                { x = 640, y = 0 }
+              },
+              properties = {}
+            },
+            {
+              id = 313,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 4800,
+              y = -32,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = 0 },
+                { x = 0, y = 80 },
+                { x = 144, y = 80 },
+                { x = 144, y = 32 },
+                { x = 424, y = 32 },
+                { x = 424, y = 80 },
+                { x = 480, y = 80 },
+                { x = 480, y = 0 }
+              },
+              properties = {
+                ["bodyheight"] = 512,
+                ["bodysolid"] = true,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 316,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 4352,
+              y = 0,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = -32, y = 0 },
+                { x = -32, y = 48 },
+                { x = 64, y = 48 },
+                { x = 96, y = 80 },
+                { x = 416, y = 80 },
+                { x = 448, y = 112 },
+                { x = 448, y = 0 }
+              },
+              properties = {
+                ["bodyheight"] = 512,
+                ["bodysolid"] = true,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 23,
+          name = "boss",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 231,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 5328,
+              y = 184,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5283,
+              visible = true,
+              properties = {}
+            }
+          }
+        }
+      }
+    },
+    {
+      type = "group",
+      id = 32,
+      name = "unused",
+      class = "",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      layers = {
+        {
+          type = "objectgroup",
+          draworder = "topdown",
           id = 17,
           name = "guardroom",
           class = "Room",
@@ -16394,128 +16740,6 @@ return {
         {
           type = "objectgroup",
           draworder = "topdown",
-          id = 18,
-          name = "armory",
-          class = "Room",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {},
-          objects = {
-            {
-              id = 79,
-              name = "camerapath",
-              type = "CameraPath",
-              shape = "polyline",
-              x = 3344,
-              y = 432,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polyline = {
-                { x = 0, y = 0 },
-                { x = 608, y = 128 }
-              },
-              properties = {}
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
-          id = 19,
-          name = "messhall",
-          class = "Room",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {},
-          objects = {
-            {
-              id = 74,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 4192,
-              y = 160,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polygon = {
-                { x = 0, y = -320 },
-                { x = 0, y = 320 },
-                { x = 32, y = 288 },
-                { x = 32, y = -224 },
-                { x = 96, y = -288 },
-                { x = 384, y = -288 },
-                { x = 448, y = -224 },
-                { x = 480, y = -224 },
-                { x = 480, y = -320 }
-              },
-              properties = {
-                ["bodyheight"] = 512,
-                ["bodysolid"] = true,
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["linecolor"] = "#80ffffff"
-              }
-            },
-            {
-              id = 75,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 4192,
-              y = 576,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polygon = {
-                { x = 480, y = 128 },
-                { x = 480, y = -448 },
-                { x = 448, y = -416 },
-                { x = 448, y = 64 },
-                { x = 392, y = 128 }
-              },
-              properties = {
-                ["bodyheight"] = 32,
-                ["bodysolid"] = true,
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["linecolor"] = "#80ffffff"
-              }
-            },
-            {
-              id = 81,
-              name = "camerapath",
-              type = "CameraPath",
-              shape = "polyline",
-              x = 3792,
-              y = 560,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polyline = {
-                { x = 160, y = 0 },
-                { x = 640, y = 0 }
-              },
-              properties = {}
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
           id = 21,
           name = "messhall2",
           class = "Room",
@@ -16545,125 +16769,6 @@ return {
               properties = {}
             }
           }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
-          id = 20,
-          name = "arena",
-          class = "Room",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {},
-          objects = {
-            {
-              id = 76,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 4672,
-              y = -192,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polygon = {
-                { x = 0, y = 32 },
-                { x = 0, y = 128 },
-                { x = 32, y = 128 },
-                { x = 64, y = 96 },
-                { x = 416, y = 96 },
-                { x = 448, y = 128 },
-                { x = 480, y = 128 },
-                { x = 480, y = 32 }
-              },
-              properties = {
-                ["bodyheight"] = 512,
-                ["bodysolid"] = true,
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["linecolor"] = "#80ffffff"
-              }
-            },
-            {
-              id = 77,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 4672,
-              y = 384,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polygon = {
-                { x = 32, y = 0 },
-                { x = 0, y = -32 },
-                { x = 0, y = 32 },
-                { x = 480, y = 32 },
-                { x = 480, y = -32 },
-                { x = 448, y = 0 }
-              },
-              properties = {
-                ["bodyheight"] = 32,
-                ["bodysolid"] = true,
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["linecolor"] = "#80ffffff"
-              }
-            },
-            {
-              id = 80,
-              name = "camerapath",
-              type = "CameraPath",
-              shape = "polyline",
-              x = 4272,
-              y = -16,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polyline = {
-                { x = 160, y = 0 },
-                { x = 640, y = 0 }
-              },
-              properties = {}
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
-          id = 23,
-          name = "boss",
-          class = "Room",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {},
-          objects = {
-            {
-              id = 231,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 5160,
-              y = 24,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5283,
-              visible = true,
-              properties = {}
-            }
-          }
         }
       }
     },
@@ -16673,7 +16778,7 @@ return {
       id = 3,
       name = "notes",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
