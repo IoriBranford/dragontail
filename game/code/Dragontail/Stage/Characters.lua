@@ -101,38 +101,52 @@ function Characters.fixedupdate()
     for i = 1, #allcharacters do local character = allcharacters[i]
         character:fixedupdate()
     end
-    for i = 1, #solids do local solid = solids[i]
-        for j = 1, #players do local player = players[j]
-            solid:collideWithCharacterAttack(player)
-        end
-        for j = 1, #enemies do local enemy = enemies[j]
-            solid:collideWithCharacterAttack(enemy)
-        end
-        for j = 1, #solids do local solid2 = solids[j]
-            solid:collideWithCharacterAttack(solid2)
-        end
-    end
-    for i = 1, #enemies do local enemy = enemies[i]
-        for j = 1, #players do local player = players[j]
-            enemy:collideWithCharacterAttack(player)
-        end
-        for j = 1, #enemies do local enemy2 = enemies[j]
-            enemy:collideWithCharacterAttack(enemy2)
-        end
-        for j = 1, #solids do local solid = solids[j]
-            enemy:collideWithCharacterAttack(solid)
+    for i = 1, #players do local player = players[i]
+        if player:isAttacking() then
+            for j = 1, #enemies do local enemy = enemies[j]
+                enemy:collideWithCharacterAttack(player)
+            end
+            for j = 1, #solids do local solid = solids[j]
+                solid:collideWithCharacterAttack(player)
+            end
         end
     end
     for i = 1, #enemies do local enemy = enemies[i]
-        for j = 1, #players do local player = players[j]
-            player:collideWithCharacterAttack(enemy)
+        if enemy:isAttacking() then
+            for j = 1, #enemies do local enemy2 = enemies[j]
+                enemy2:collideWithCharacterAttack(enemy)
+            end
+            for j = 1, #solids do local solid = solids[j]
+                solid:collideWithCharacterAttack(enemy)
+            end
         end
     end
     for i = 1, #solids do local solid = solids[i]
-        for j = 1, #players do local player = players[j]
-            player:collideWithCharacterAttack(solid)
+        if solid:isAttacking() then
+            for j = 1, #enemies do local enemy = enemies[j]
+                enemy:collideWithCharacterAttack(solid)
+            end
+            for j = 1, #solids do local solid2 = solids[j]
+                solid2:collideWithCharacterAttack(solid)
+            end
         end
     end
+
+    for i = 1, #solids do local solid = solids[i]
+        if solid:isAttacking() then
+            for j = 1, #players do local player = players[j]
+                player:collideWithCharacterAttack(solid)
+            end
+        end
+    end
+    for i = 1, #enemies do local enemy = enemies[i]
+        if enemy:isAttacking() then
+            for j = 1, #players do local player = players[j]
+                player:collideWithCharacterAttack(enemy)
+            end
+        end
+    end
+
     for i = 1, #players do local player = players[i]
         player:keepInBounds()
         player:updateAttackerSlots()

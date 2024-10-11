@@ -196,6 +196,10 @@ function Character:moveTo(destx, desty, speed, timelimit)
     return self.x == destx and self.y == desty
 end
 
+function Character:isAttacking()
+    return self.attackangle
+end
+
 function Character:startAttack(attackangle)
     self.attackangle = attackangle
 end
