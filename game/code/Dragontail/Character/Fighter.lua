@@ -118,6 +118,7 @@ function Fighter:hurt(attacker)
         self:keepInBounds()
         yield()
     end
+    self.velx, self.vely, self.velz = 0, 0, 0
     local recoverai = self.aiafterhurt or self.recoverai
     if not recoverai then
         print("No aiafterhurt or recoverai for "..self.type)
