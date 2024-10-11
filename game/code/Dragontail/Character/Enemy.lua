@@ -271,19 +271,24 @@ function Enemy:walkToDest(destx, desty, timelimit)
         destx, desty = destx.x, destx.y
     end
 
+    local todestangle
     if desty ~= self.y or destx ~= self.x then
         local todesty, todestx = desty - self.y, destx - self.x
         if todestx == 0 and todesty == 0 then
             todestx = 1
         end
         faceDir(self, todestx, todesty)
-        local todestangle = atan2(todesty, todestx)
+        todestangle = atan2(todesty, todestx)
         self:setDirectionalAnimation("Walk", todestangle)
     end
 
     timelimit = timelimit or 600
     for i = 1, timelimit do
         if self.x == destx and self.y == desty then
+            self.velx, self.vely, self.velz = 0, 0, 0
+            if todestangle then
+                self:setDirectionalAnimation("Stand", todestangle)
+            end
             return true
         end
         self.velx, self.vely = Movement.getVelocity_speed(self.x, self.y, destx, desty, self.speed or 1)
