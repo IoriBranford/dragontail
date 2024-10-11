@@ -353,9 +353,10 @@ function Fighter:breakaway(other)
 end
 
 function Fighter:fall(attacker)
-    local t = 1
+    local t = 0
     local _, penez
     local gravity = self.fallgravity or .5
+    local fallanimationtime = self.fallanimationtime or 1
     repeat
         self:accelerateTowardsVel(0, 0, 8)
         yield()
@@ -367,7 +368,7 @@ function Fighter:fall(attacker)
         else
             self.velz = self.velz - gravity
         end
-    until t > 20
+    until t >= fallanimationtime
     Audio.play(self.bodydropsound)
     Characters.spawn({
         type = "spark-fall-down-dust",
@@ -385,8 +386,10 @@ function Fighter:fall(attacker)
             self:keepInBounds()
             t = t + 1
         until t > 20
+        self.velx, self.vely, self.velz = 0, 0, 0
         return self.getupai or "getup", attacker
     end
+    self.velx, self.vely, self.velz = 0, 0, 0
     return "defeat", attacker
 end
 
