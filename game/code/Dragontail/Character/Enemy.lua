@@ -318,7 +318,25 @@ function Enemy:enterShootLeave()
     if attacktype then
         Database.fill(self, attacktype)
         local ammo = self.ammo or 10
+        local opponent = self.opponents[1]
+        local raycast = Raycast(1, 0, 0, 1)
         for i = ammo-1, 0, -1 do
+            local hitcharacter
+            repeat
+                yield()
+                if opponent.health <= 0 then
+                    break
+                end
+                raycast.dx, raycast.dy = opponent.x - self.x, opponent.y - self.y
+                local angle = atan2(raycast.dy, raycast.dx)
+                if angle == angle then
+                    self:setDirectionalAnimation("Stand", angle)
+                end
+                hitcharacter = Characters.castRay(raycast, self.x, self.y, self)
+            until hitcharacter == opponent
+            if opponent.health <= 0 then
+                break
+            end
             self.ammo = i
             self:attack()
         end
