@@ -15,6 +15,12 @@ local mid = math.mid
 local yield = coroutine.yield
 local dist = math.dist
 
+function Fighter:init()
+    Common.init(self)
+    self.facex = self.facex or 1
+    self.facey = self.facey or 0
+end
+
 function Fighter:startHolding(opponent)
     self.heldopponent = opponent
     opponent:stopAttack()

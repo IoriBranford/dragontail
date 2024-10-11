@@ -135,13 +135,11 @@ local function findInstantThrowDir(self, targetfacex, targetfacey)
 end
 
 function Player:init()
-    Character.init(self)
+    Fighter.init(self)
     self.comboindex = 0
     self.runenergy = 100
     self.runenergymax = self.runenergy
     self.runenergycost = 25
-    self.facex = 1
-    self.facey = 0
 
     ---@type AttackerSlot[]
     self.attackerslots = {
@@ -744,8 +742,6 @@ end
 function Player:runWithEnemy(enemy)
     Audio.play(self.dashsound)
     enemy.canbeattacked = false
-    self.facex = self.facex or 1
-    self.facey = self.facey or 0
     local targetfacex, targetfacey = self.facex, self.facey
     local radii = self.bodyradius + enemy.bodyradius
     local holdangle = atan2(targetfacey, targetfacex)
