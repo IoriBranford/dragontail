@@ -320,6 +320,7 @@ function Enemy:enterShootLeave()
         local ammo = self.ammo or 10
         local opponent = self.opponents[1]
         local raycast = Raycast(1, 0, 0, 1)
+        raycast.canhitgroup = "enemies"
         for i = ammo-1, 0, -1 do
             local hitcharacter
             repeat
@@ -333,7 +334,7 @@ function Enemy:enterShootLeave()
                     self:setDirectionalAnimation("Stand", angle)
                 end
                 hitcharacter = Characters.castRay(raycast, self.x, self.y, self)
-            until hitcharacter == opponent
+            until not hitcharacter
             if opponent.health <= 0 then
                 break
             end
