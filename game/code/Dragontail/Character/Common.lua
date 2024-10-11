@@ -58,10 +58,7 @@ function Common:blinkOut(t)
     self:disappear()
 end
 
-function Common:containerBreak(attacker)
-    self.bodysolid = false
-    Audio.play(self.defeatsound)
-    self:changeAnimation("collapse", 1, 0)
+function Common:dropDefeatItem()
     local item = self.item
     if not item and self.itemtype then
         item = Characters.spawn({
@@ -73,6 +70,12 @@ function Common:containerBreak(attacker)
         item.opponents = self.opponents
         State.start(item, "itemDrop")
     end
+end
+
+function Common:containerBreak(attacker)
+    Audio.play(self.defeatsound)
+    self:changeAnimation("collapse", 1, 0)
+    self:dropDefeatItem()
     yield()
     return "blinkOut", 30
 end
