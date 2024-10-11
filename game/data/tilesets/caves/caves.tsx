@@ -9,20 +9,20 @@
  <tile id="2041" probability="0.005"/>
  <tile id="2042" probability="0.005"/>
  <tile id="2043" probability="0.005"/>
- <tile id="2044" probability="0.005"/>
- <tile id="2045" probability="0.005"/>
- <tile id="2046" probability="0.005"/>
- <tile id="2047" probability="0.005"/>
- <tile id="2048" probability="0.005"/>
+ <tile id="2044" probability="0.05"/>
+ <tile id="2045" probability="0.05"/>
+ <tile id="2046" probability="0.05"/>
+ <tile id="2047" probability="0.05"/>
+ <tile id="2048" probability="0.05"/>
  <tile id="2049" probability="0.005"/>
  <tile id="2050" probability="0.005"/>
  <tile id="2051" probability="0.005"/>
  <tile id="2052" probability="0.005"/>
- <tile id="2053" probability="0.005"/>
- <tile id="2054" probability="0.005"/>
- <tile id="2055" probability="0.005"/>
- <tile id="2056" probability="0.005"/>
- <tile id="2057" probability="0.005"/>
+ <tile id="2053" probability="0.05"/>
+ <tile id="2054" probability="0.05"/>
+ <tile id="2055" probability="0.05"/>
+ <tile id="2056" probability="0.05"/>
+ <tile id="2057" probability="0.05"/>
  <tile id="2058" probability="0.005"/>
  <tile id="2059" probability="0.005"/>
  <tile id="2060" probability="0.005"/>
@@ -45,20 +45,20 @@
  <tile id="2092" probability="0.005"/>
  <tile id="2093" probability="0.005"/>
  <tile id="2094" probability="0.005"/>
- <tile id="2095" probability="0.005"/>
- <tile id="2096" probability="0.005"/>
- <tile id="2097" probability="0.005"/>
- <tile id="2098" probability="0.005"/>
- <tile id="2099" probability="0.005"/>
- <tile id="2100" probability="0.005"/>
- <tile id="2101" probability="0.005"/>
- <tile id="2102" probability="0.005"/>
- <tile id="2103" probability="0.005"/>
- <tile id="2104" probability="0.005"/>
- <tile id="2105" probability="0.005"/>
- <tile id="2106" probability="0.005"/>
- <tile id="2107" probability="0.005"/>
- <tile id="2108" probability="0.005"/>
+ <tile id="2095" probability="0.05"/>
+ <tile id="2096" probability="0.05"/>
+ <tile id="2097" probability="0.05"/>
+ <tile id="2098" probability="0.05"/>
+ <tile id="2099" probability="0.05"/>
+ <tile id="2100" probability="0.05"/>
+ <tile id="2101" probability="0.05"/>
+ <tile id="2102" probability="0.05"/>
+ <tile id="2103" probability="0.05"/>
+ <tile id="2104" probability="0.05"/>
+ <tile id="2105" probability="0.05"/>
+ <tile id="2106" probability="0.05"/>
+ <tile id="2107" probability="0.05"/>
+ <tile id="2108" probability="0.05"/>
  <tile id="2109" probability="0.005"/>
  <tile id="2110" probability="0.005"/>
  <tile id="2111" probability="0.005"/>
@@ -77,24 +77,24 @@
  <tile id="2124" probability="0.005"/>
  <tile id="2125" probability="0.005"/>
  <tile id="2126" probability="0.005"/>
- <tile id="2142" probability="0.005"/>
- <tile id="2143" probability="0.005"/>
- <tile id="2144" probability="0.005"/>
- <tile id="2145" probability="0.005"/>
- <tile id="2146" probability="0.005"/>
- <tile id="2147" probability="0.005"/>
- <tile id="2148" probability="0.005"/>
- <tile id="2149" probability="0.005"/>
- <tile id="2150" probability="0.005"/>
- <tile id="2151" probability="0.005"/>
- <tile id="2152" probability="0.005"/>
- <tile id="2153" probability="0.005"/>
- <tile id="2154" probability="0.005"/>
- <tile id="2155" probability="0.005"/>
- <tile id="2156" probability="0.005"/>
- <tile id="2157" probability="0.005"/>
- <tile id="2158" probability="0.005"/>
- <tile id="2159" probability="0.005"/>
+ <tile id="2142" probability="0.05"/>
+ <tile id="2143" probability="0.05"/>
+ <tile id="2144" probability="0.05"/>
+ <tile id="2145" probability="0.05"/>
+ <tile id="2146" probability="0.05"/>
+ <tile id="2147" probability="0.05"/>
+ <tile id="2148" probability="0.05"/>
+ <tile id="2149" probability="0.05"/>
+ <tile id="2150" probability="0.05"/>
+ <tile id="2151" probability="0.05"/>
+ <tile id="2152" probability="0.05"/>
+ <tile id="2153" probability="0.05"/>
+ <tile id="2154" probability="0.05"/>
+ <tile id="2155" probability="0.05"/>
+ <tile id="2156" probability="0.05"/>
+ <tile id="2157" probability="0.05"/>
+ <tile id="2158" probability="0.05"/>
+ <tile id="2159" probability="0.05"/>
  <tile id="2160" probability="0.005"/>
  <tile id="2161" probability="0.005"/>
  <tile id="2162" probability="0.005"/>
@@ -113,24 +113,24 @@
  <tile id="2175" probability="0.005"/>
  <tile id="2176" probability="0.005"/>
  <tile id="2177" probability="0.005"/>
- <tile id="2193" probability="0.005"/>
- <tile id="2194" probability="0.005"/>
- <tile id="2195" probability="0.005"/>
- <tile id="2196" probability="0.005"/>
- <tile id="2197" probability="0.005"/>
- <tile id="2198" probability="0.005"/>
- <tile id="2199" probability="0.005"/>
- <tile id="2200" probability="0.005"/>
- <tile id="2201" probability="0.005"/>
- <tile id="2202" probability="0.005"/>
- <tile id="2203" probability="0.005"/>
- <tile id="2204" probability="0.005"/>
- <tile id="2205" probability="0.005"/>
- <tile id="2206" probability="0.005"/>
- <tile id="2207" probability="0.005"/>
- <tile id="2208" probability="0.005"/>
- <tile id="2209" probability="0.005"/>
- <tile id="2210" probability="0.005"/>
+ <tile id="2193" probability="0.05"/>
+ <tile id="2194" probability="0.05"/>
+ <tile id="2195" probability="0.05"/>
+ <tile id="2196" probability="0.05"/>
+ <tile id="2197" probability="0.05"/>
+ <tile id="2198" probability="0.05"/>
+ <tile id="2199" probability="0.05"/>
+ <tile id="2200" probability="0.05"/>
+ <tile id="2201" probability="0.05"/>
+ <tile id="2202" probability="0.05"/>
+ <tile id="2203" probability="0.05"/>
+ <tile id="2204" probability="0.05"/>
+ <tile id="2205" probability="0.05"/>
+ <tile id="2206" probability="0.05"/>
+ <tile id="2207" probability="0.05"/>
+ <tile id="2208" probability="0.05"/>
+ <tile id="2209" probability="0.05"/>
+ <tile id="2210" probability="0.05"/>
  <tile id="2211" probability="0.005"/>
  <tile id="2212" probability="0.005"/>
  <tile id="2213" probability="0.005"/>
@@ -149,24 +149,24 @@
  <tile id="2226" probability="0.005"/>
  <tile id="2227" probability="0.005"/>
  <tile id="2228" probability="0.005"/>
- <tile id="2244" probability="0.005"/>
- <tile id="2245" probability="0.005"/>
- <tile id="2246" probability="0.005"/>
- <tile id="2247" probability="0.005"/>
- <tile id="2248" probability="0.005"/>
- <tile id="2249" probability="0.005"/>
- <tile id="2250" probability="0.005"/>
- <tile id="2251" probability="0.005"/>
- <tile id="2252" probability="0.005"/>
+ <tile id="2244" probability="0.05"/>
+ <tile id="2245" probability="0.05"/>
+ <tile id="2246" probability="0.05"/>
+ <tile id="2247" probability="0.05"/>
+ <tile id="2248" probability="0.05"/>
+ <tile id="2249" probability="0.05"/>
+ <tile id="2250" probability="0.05"/>
+ <tile id="2251" probability="0.05"/>
+ <tile id="2252" probability="0.05"/>
  <tile id="2253" probability="0.005"/>
  <tile id="2254" probability="0.005"/>
  <tile id="2255" probability="0.005"/>
  <tile id="2256" probability="0.005"/>
- <tile id="2257" probability="0.005"/>
- <tile id="2258" probability="0.005"/>
- <tile id="2259" probability="0.005"/>
- <tile id="2260" probability="0.005"/>
- <tile id="2261" probability="0.005"/>
+ <tile id="2257" probability="0.05"/>
+ <tile id="2258" probability="0.05"/>
+ <tile id="2259" probability="0.05"/>
+ <tile id="2260" probability="0.05"/>
+ <tile id="2261" probability="0.05"/>
  <tile id="2262" probability="0.005"/>
  <tile id="2263" probability="0.005"/>
  <tile id="2264" probability="0.005"/>
@@ -189,20 +189,20 @@
  <tile id="2296" probability="0.005"/>
  <tile id="2297" probability="0.005"/>
  <tile id="2298" probability="0.005"/>
- <tile id="2299" probability="0.005"/>
- <tile id="2300" probability="0.005"/>
- <tile id="2301" probability="0.005"/>
- <tile id="2302" probability="0.005"/>
- <tile id="2303" probability="0.005"/>
- <tile id="2304" probability="0.005"/>
- <tile id="2305" probability="0.005"/>
- <tile id="2306" probability="0.005"/>
- <tile id="2307" probability="0.005"/>
- <tile id="2308" probability="0.005"/>
- <tile id="2309" probability="0.005"/>
- <tile id="2310" probability="0.005"/>
- <tile id="2311" probability="0.005"/>
- <tile id="2312" probability="0.005"/>
+ <tile id="2299" probability="0.05"/>
+ <tile id="2300" probability="0.05"/>
+ <tile id="2301" probability="0.05"/>
+ <tile id="2302" probability="0.05"/>
+ <tile id="2303" probability="0.05"/>
+ <tile id="2304" probability="0.25"/>
+ <tile id="2305" probability="0.25"/>
+ <tile id="2306" probability="0.25"/>
+ <tile id="2307" probability="0.25"/>
+ <tile id="2308" probability="0.05"/>
+ <tile id="2309" probability="0.05"/>
+ <tile id="2310" probability="0.05"/>
+ <tile id="2311" probability="0.05"/>
+ <tile id="2312" probability="0.05"/>
  <tile id="2313" probability="0.005"/>
  <tile id="2314" probability="0.005"/>
  <tile id="2315" probability="0.005"/>
@@ -221,24 +221,24 @@
  <tile id="2328" probability="0.005"/>
  <tile id="2329" probability="0.005"/>
  <tile id="2330" probability="0.005"/>
- <tile id="2346" probability="0.005"/>
- <tile id="2347" probability="0.005"/>
- <tile id="2348" probability="0.005"/>
- <tile id="2349" probability="0.005"/>
- <tile id="2350" probability="0.005"/>
- <tile id="2351" probability="0.005"/>
- <tile id="2352" probability="0.005"/>
- <tile id="2353" probability="0.005"/>
- <tile id="2354" probability="0.005"/>
- <tile id="2355" probability="0.005"/>
- <tile id="2356" probability="0.005"/>
- <tile id="2357" probability="0.005"/>
- <tile id="2358" probability="0.005"/>
- <tile id="2359" probability="0.005"/>
- <tile id="2360" probability="0.005"/>
- <tile id="2361" probability="0.005"/>
- <tile id="2362" probability="0.005"/>
- <tile id="2363" probability="0.005"/>
+ <tile id="2346" probability="0.25"/>
+ <tile id="2347" probability="0.25"/>
+ <tile id="2348" probability="0.05"/>
+ <tile id="2349" probability="0.05"/>
+ <tile id="2350" probability="0.05"/>
+ <tile id="2351" probability="0.05"/>
+ <tile id="2352" probability="0.05"/>
+ <tile id="2353" probability="0.05"/>
+ <tile id="2354" probability="0.05"/>
+ <tile id="2355" probability="0.25"/>
+ <tile id="2356" probability="0.25"/>
+ <tile id="2357" probability="0.25"/>
+ <tile id="2358" probability="0.25"/>
+ <tile id="2359" probability="0.05"/>
+ <tile id="2360" probability="0.05"/>
+ <tile id="2361" probability="0.05"/>
+ <tile id="2362" probability="0.05"/>
+ <tile id="2363" probability="0.05"/>
  <tile id="2364" probability="0.005"/>
  <tile id="2365" probability="0.005"/>
  <tile id="2366" probability="0.005"/>
@@ -257,24 +257,24 @@
  <tile id="2379" probability="0.005"/>
  <tile id="2380" probability="0.005"/>
  <tile id="2381" probability="0.005"/>
- <tile id="2397" probability="0.005"/>
- <tile id="2398" probability="0.005"/>
- <tile id="2399" probability="0.005"/>
- <tile id="2400" probability="0.005"/>
- <tile id="2401" probability="0.005"/>
- <tile id="2402" probability="0.005"/>
- <tile id="2403" probability="0.005"/>
- <tile id="2404" probability="0.005"/>
- <tile id="2405" probability="0.005"/>
- <tile id="2406" probability="0.005"/>
- <tile id="2407" probability="0.005"/>
- <tile id="2408" probability="0.005"/>
- <tile id="2409" probability="0.005"/>
- <tile id="2410" probability="0.005"/>
- <tile id="2411" probability="0.005"/>
- <tile id="2412" probability="0.005"/>
- <tile id="2413" probability="0.005"/>
- <tile id="2414" probability="0.005"/>
+ <tile id="2397" probability="0.25"/>
+ <tile id="2398" probability="0.25"/>
+ <tile id="2399" probability="0.05"/>
+ <tile id="2400" probability="0.05"/>
+ <tile id="2401" probability="0.05"/>
+ <tile id="2402" probability="0.05"/>
+ <tile id="2403" probability="0.05"/>
+ <tile id="2404" probability="0.05"/>
+ <tile id="2405" probability="0.05"/>
+ <tile id="2406" probability="0.25"/>
+ <tile id="2407" probability="0.25"/>
+ <tile id="2408" probability="0.25"/>
+ <tile id="2409" probability="0.25"/>
+ <tile id="2410" probability="0.05"/>
+ <tile id="2411" probability="0.05"/>
+ <tile id="2412" probability="0.05"/>
+ <tile id="2413" probability="0.05"/>
+ <tile id="2414" probability="0.05"/>
  <tile id="2415" probability="0.005"/>
  <tile id="2416" probability="0.005"/>
  <tile id="2417" probability="0.005"/>
