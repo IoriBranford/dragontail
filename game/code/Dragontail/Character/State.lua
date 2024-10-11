@@ -59,6 +59,8 @@ function State.start(self, statename, ...)
         if type(action) == "function" then
             self.thread = co_create(action)
             State.run(self, ...)
+        else
+            self.thread = nil
         end
     else
         print("W: no state "..statename)
