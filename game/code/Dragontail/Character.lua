@@ -733,7 +733,8 @@ Character.drawAttackShape = Character.drawAttackCircle
 function Character:isOnCamera(cx, cy, cw, ch)
     local x, y, x2, y2 = self:getExtents()
     local w, h = x2-x, y2-y
-    return math.testrects(x, y, w, h, cx, cy, cw, ch)
+    local _, _, iw, ih = math.rectintersection(x, y, w, h, cx, cy, cw, ch)
+    return iw and iw > 0 and ih > 0
 end
 
 function Character:disappear()
