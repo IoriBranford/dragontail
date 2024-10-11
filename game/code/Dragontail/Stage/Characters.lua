@@ -108,6 +108,9 @@ function Characters.fixedupdate()
         for j = 1, #enemies do local enemy = enemies[j]
             solid:collideWithCharacterAttack(enemy)
         end
+        for j = 1, #solids do local solid2 = solids[j]
+            solid:collideWithCharacterAttack(solid2)
+        end
     end
     for i = 1, #enemies do local enemy = enemies[i]
         for j = 1, #players do local player = players[j]
@@ -116,10 +119,18 @@ function Characters.fixedupdate()
         for j = 1, #enemies do local enemy2 = enemies[j]
             enemy:collideWithCharacterAttack(enemy2)
         end
+        for j = 1, #solids do local solid = solids[j]
+            enemy:collideWithCharacterAttack(solid)
+        end
     end
     for i = 1, #enemies do local enemy = enemies[i]
         for j = 1, #players do local player = players[j]
             player:collideWithCharacterAttack(enemy)
+        end
+    end
+    for i = 1, #solids do local solid = solids[i]
+        for j = 1, #players do local player = players[j]
+            player:collideWithCharacterAttack(solid)
         end
     end
     for i = 1, #players do local player = players[i]
