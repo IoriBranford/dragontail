@@ -81,14 +81,15 @@ function Common:containerBreak(attacker)
 end
 
 function Common:itemDrop(y0)
-    local popoutspeed = self.popoutspeed or 8
+    self.velz = self.popoutspeed or 8
     local gravity = self.fallgravity or .5
+    local floorz = Characters.getCylinderFloorZ(self.x, self.y, self.z, self.bodyradius, self.bodyheight) or 0
     repeat
+        self.velz = self.velz - gravity
         yield()
-        popoutspeed = popoutspeed - gravity
-        self.z = self.z + popoutspeed
-    until self.z <= 0
-    self.z = 0
+    until self.z <= floorz
+    self.z = floorz
+    self.velz = 0
     return "itemWaitForPickup"
 end
 
