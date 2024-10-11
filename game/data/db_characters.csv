@@ -3,7 +3,7 @@ Rose,player,100,16,32,,true,,,,,,,,fall,,,,,8,Dragontail.Character.Player,contro
 bandit-dagger,enemy,50,16,32,,true,TRUE,3,,,,dagger-swing,,fall,24,,,,4,Dragontail.Character.Enemy,stand,,hurt,,,,,,stun,120,thrown,,,10,,,FallKnees,defeat,stand,,approach,,
 bandit-spear,enemy,75,16,32,,true,TRUE,4,8,0.25,,spear-thrust,,fall,24,,,,4,Dragontail.Character.Enemy,stand,,hurt,,,,,,stun,120,thrown,,,10,,,FallKnees,defeat,stand,,approach,,
 container-crate-tall,container,15,16,30,TRUE,true,TRUE,,,,,,,,,,,container,,Dragontail.Character.Fighter,containerIdle,,hurt,,,,,,,,,,,,,,,containerBreak,containerIdle,,,,
-container-barrel,container,1,12,24,TRUE,true,,,,,,,,,,,,container,,Dragontail.Character.Common,,,containerBreak,,,,,,,,,,,,,,,containerBreak,,,,,
+container-barrel,container,15,12,24,TRUE,true,TRUE,,,,,,,,,,,container,,Dragontail.Character.Fighter,containerIdle,,hurt,,,,,,,,,,,,,,,containerBreak,containerIdle,,,,
 food-container,container,1,16,16,TRUE,true,,,,,,,,,,,,container,,Dragontail.Character.Common,,,containerBreak,,,,,,,,,,,,,,,containerBreak,,,,,
 food-fish,item,,18,8,,,,,,,,,,,,25,,fish,,Dragontail.Character.Common,itemWaitForPickup,,,,,,,,,,,,,,,,,,,,,,
 food-bigfish,item,,18,8,,,,,,,,,,,,100,,bigfish,,Dragontail.Character.Common,itemWaitForPickup,,,,,,,,,,,,,,,,,,,,,,
@@ -16,4 +16,4 @@ bandit-arrow,enemy,1,2,2,,true,FALSE,15,,,,bandit-arrow-attack,,,,,,,4,Dragontai
 bandit-sling,enemy,15,16,32,,true,TRUE,5,,,30,sling-shot,,fall,18,,,,4,Dragontail.Character.Enemy,stand,,hurt,,,,,,stun,120,thrown,,,10,,,FallKnees,defeat,stand,,attack,bow-shot,
 thrown-stone,enemy,1,4,8,,true,FALSE,10,,,,thrown-stone-attack,thrown-stone-attack thrown-stone-strong-attack,,,,,,1,Dragontail.Character.Common,projectileFly,,projectileDeflected,,,,,,,,projectileFly,,,10,,,,,,,,,item-stone
 bandit-cave-door,container,1,,64,TRUE,true,,,,,,,,,,,,container,,Dragontail.Character.Common,,,containerBreak,,,,,,,,,,,,,,,containerBreak,,,,,
-bandit-boss,enemy,1000,16,32,,true,TRUE,4,8,0.25,,bandit-boss-charge,,fall,24,,,,4,Dragontail.Character.Enemy,stand,,hurt,,,,,,stun,120,thrown,,,10,,,FallKnees,defeat,stand,,approach,,
+bandit-boss,enemy,1000,16,32,,true,TRUE,4,8,0.25,,bandit-boss-charge,,fall,24,,,,4,Dragontail.Character.Enemy,stand,,hurt,,,,,,stun,60,thrown,,,10,,,FallKnees,defeat,stand,,approach,,
