@@ -145,8 +145,8 @@ function GamePhase.draw(fixedfrac)
     stagecanvas:drawOn(function()
         Stage.draw(paused and 0 or fixedfrac)
     end)
+    Gui:drawOnCanvas(stagecanvas)
     stagecanvas:draw()
-    Gui:draw()
 end
 
 return GamePhase
