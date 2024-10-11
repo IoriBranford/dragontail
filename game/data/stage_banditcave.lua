@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 33,
-  nextobjectid = 318,
+  nextlayerid = 35,
+  nextobjectid = 351,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -14094,6 +14094,199 @@ return {
           }
         }
       }
+    },
+    {
+      name = "tables-hori",
+      firstgid = 6620,
+      class = "",
+      tilewidth = 96,
+      tileheight = 48,
+      spacing = 0,
+      margin = 0,
+      columns = 3,
+      image = "sprites/banditcave/tables-hori.png",
+      imagewidth = 288,
+      imageheight = 48,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 12
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 96,
+        height = 48
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 3,
+      tiles = {
+        {
+          id = 0,
+          type = "furniture-table",
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            class = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 2,
+                name = "",
+                type = "",
+                shape = "polygon",
+                x = 8,
+                y = 24,
+                width = 80,
+                height = 24,
+                rotation = 0,
+                visible = true,
+                polygon = {
+                  { x = 0, y = 0 },
+                  { x = 0, y = 24 },
+                  { x = 80, y = 24 },
+                  { x = 80, y = 0 }
+                },
+                properties = {
+                  ["collidable"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 1,
+          type = "furniture-table",
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            class = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "polygon",
+                x = 8,
+                y = 24,
+                width = 80,
+                height = 24,
+                rotation = 0,
+                visible = true,
+                polygon = {
+                  { x = 0, y = 0 },
+                  { x = 0, y = 24 },
+                  { x = 80, y = 24 },
+                  { x = 80, y = 0 }
+                },
+                properties = {
+                  ["collidable"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 2,
+          type = "furniture-table",
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            class = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "polygon",
+                x = 8,
+                y = 24,
+                width = 80,
+                height = 24,
+                rotation = 0,
+                visible = true,
+                polygon = {
+                  { x = 0, y = 0 },
+                  { x = 0, y = 24 },
+                  { x = 80, y = 24 },
+                  { x = 80, y = 0 }
+                },
+                properties = {
+                  ["collidable"] = true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      name = "stools",
+      firstgid = 6623,
+      class = "",
+      tilewidth = 32,
+      tileheight = 32,
+      spacing = 0,
+      margin = 0,
+      columns = 3,
+      image = "sprites/banditcave/stools.png",
+      imagewidth = 96,
+      imageheight = 32,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 32
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 3,
+      tiles = {
+        {
+          id = 0,
+          type = "container-stool"
+        },
+        {
+          id = 1,
+          type = "container-stool"
+        },
+        {
+          id = 2,
+          type = "container-stool"
+        }
+      }
     }
   },
   layers = {
@@ -16438,7 +16631,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = 3
+          },
           objects = {
             {
               id = 81,
@@ -16483,6 +16678,571 @@ return {
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
               }
+            },
+            {
+              id = 318,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4008,
+              y = 112,
+              width = 96,
+              height = 48,
+              rotation = 0,
+              gid = 6620,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 16,
+                ["bodysolid"] = true
+              }
+            },
+            {
+              id = 319,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4128,
+              y = 120,
+              width = 96,
+              height = 48,
+              rotation = 0,
+              gid = 6622,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 16,
+                ["bodysolid"] = true
+              }
+            },
+            {
+              id = 320,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3928,
+              y = 248,
+              width = 96,
+              height = 48,
+              rotation = 0,
+              gid = 6622,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 16,
+                ["bodysolid"] = true
+              }
+            },
+            {
+              id = 321,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4064,
+              y = 240,
+              width = 96,
+              height = 48,
+              rotation = 0,
+              gid = 6621,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 16,
+                ["bodysolid"] = true
+              }
+            },
+            {
+              id = 322,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4208,
+              y = 232,
+              width = 96,
+              height = 48,
+              rotation = 0,
+              gid = 6620,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 16,
+                ["bodysolid"] = true
+              }
+            },
+            {
+              id = 323,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4256,
+              y = 104,
+              width = 96,
+              height = 48,
+              rotation = 0,
+              gid = 6621,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 16,
+                ["bodysolid"] = true
+              }
+            },
+            {
+              id = 324,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4096,
+              y = 80,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6623,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 12,
+                ["bodysolid"] = true
+              }
+            },
+            {
+              id = 325,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4216,
+              y = 72,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6625,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 12,
+                ["bodysolid"] = true
+              }
+            },
+            {
+              id = 326,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4160,
+              y = 272,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6624,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 12,
+                ["bodysolid"] = true
+              }
+            },
+            {
+              id = 327,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3872,
+              y = 272,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6623,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 12,
+                ["bodysolid"] = true
+              }
+            },
+            {
+              id = 328,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3976,
+              y = 280,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6624,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 12,
+                ["bodysolid"] = true
+              }
+            },
+            {
+              id = 329,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4112,
+              y = 264,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6625,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 12,
+                ["bodysolid"] = true
+              }
+            },
+            {
+              id = 330,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4016,
+              y = 280,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6623,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 12,
+                ["bodysolid"] = true
+              }
+            },
+            {
+              id = 331,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4272,
+              y = 264,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6625,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 12,
+                ["bodysolid"] = true
+              }
+            },
+            {
+              id = 332,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4168,
+              y = 72,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6624,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 12,
+                ["bodysolid"] = true
+              }
+            },
+            {
+              id = 333,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4296,
+              y = 64,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6623,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 12,
+                ["bodysolid"] = true
+              }
+            },
+            {
+              id = 334,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3976,
+              y = 72,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6625,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 335,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4048,
+              y = 80,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6624,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 12,
+                ["bodysolid"] = true
+              }
+            },
+            {
+              id = 336,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4016,
+              y = 72,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5278,
+              visible = true,
+              properties = {
+                ["ammo"] = 999999999,
+                ["initialai"] = "enterShootLeave"
+              }
+            },
+            {
+              id = 337,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4136,
+              y = 80,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5278,
+              visible = true,
+              properties = {
+                ["ammo"] = 999999999,
+                ["initialai"] = "enterShootLeave"
+              }
+            },
+            {
+              id = 338,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4256,
+              y = 72,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5274,
+              visible = true,
+              properties = {
+                ["ammo"] = 999999999,
+                ["initialai"] = "enterShootLeave"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 33,
+          name = "+spears",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = 3
+          },
+          objects = {
+            {
+              id = 339,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3824,
+              y = 176,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 340,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4336,
+              y = 176,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 21,
+          name = "+shooters",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 341,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3928,
+              y = 328,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5274,
+              visible = true,
+              properties = {
+                ["ammo"] = 999999999,
+                ["entrypoint"] = { id = 344 },
+                ["initialai"] = "enterShootLeave"
+              }
+            },
+            {
+              id = 342,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4064,
+              y = 360,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5278,
+              visible = true,
+              properties = {
+                ["ammo"] = 999999999,
+                ["entrypoint"] = { id = 345 },
+                ["initialai"] = "enterShootLeave"
+              }
+            },
+            {
+              id = 343,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4208,
+              y = 392,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5278,
+              visible = true,
+              properties = {
+                ["ammo"] = 999999999,
+                ["entrypoint"] = { id = 346 },
+                ["initialai"] = "enterShootLeave"
+              }
+            },
+            {
+              id = 344,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 3928,
+              y = 272,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 345,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 4064,
+              y = 272,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 346,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 4208,
+              y = 272,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 347,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3824,
+              y = 144,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 348,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4336,
+              y = 144,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 349,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3824,
+              y = 216,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 350,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4336,
+              y = 216,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -16565,7 +17325,7 @@ return {
               rotation = 0,
               visible = true,
               polyline = {
-                { x = -128, y = 0 },
+                { x = -224, y = 0 },
                 { x = 640, y = 0 }
               },
               properties = {}
@@ -16732,39 +17492,6 @@ return {
                 { x = 48, y = 48 },
                 { x = 96, y = 136 },
                 { x = 112, y = 256 }
-              },
-              properties = {}
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
-          id = 21,
-          name = "messhall2",
-          class = "Room",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {},
-          objects = {
-            {
-              id = 93,
-              name = "camerapath",
-              type = "CameraPath",
-              shape = "polyline",
-              x = 4272,
-              y = 560,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polyline = {
-                { x = 160, y = 0 },
-                { x = 160, y = -576 }
               },
               properties = {}
             }

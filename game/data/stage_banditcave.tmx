@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="33" nextobjectid="318">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="35" nextobjectid="351">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -28,6 +28,8 @@
  <tileset firstgid="6608" source="sprites/containers/barrelB.tsx"/>
  <tileset firstgid="6611" source="sprites/containers/crates.tsx"/>
  <tileset firstgid="6617" source="sprites/banditcave/wall-torch.tsx"/>
+ <tileset firstgid="6620" source="sprites/banditcave/tables-hori.tsx"/>
+ <tileset firstgid="6623" source="sprites/banditcave/stools.tsx"/>
  <layer id="2" name="floor" width="200" height="12">
   <properties>
    <property name="drawz" type="float" value="-2"/>
@@ -631,12 +633,179 @@
    </object>
   </objectgroup>
   <objectgroup id="19" name="messhall" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="3"/>
+   </properties>
    <object id="81" template="mapobjects/CameraPath.tx" x="3440" y="144">
     <polyline points="256,0 640,0"/>
    </object>
    <object id="74" template="mapobjects/OutwardBoundary.tx" x="3840" y="320">
     <polygon points="0,-320 0,-240 96,-240 128,-272 480,-272 480,-320"/>
    </object>
+   <object id="318" gid="6620" x="4008" y="112" width="96" height="48">
+    <properties>
+     <property name="bodyheight" type="float" value="16"/>
+     <property name="bodysolid" type="bool" value="true"/>
+    </properties>
+   </object>
+   <object id="319" gid="6622" x="4128" y="120" width="96" height="48">
+    <properties>
+     <property name="bodyheight" type="float" value="16"/>
+     <property name="bodysolid" type="bool" value="true"/>
+    </properties>
+   </object>
+   <object id="320" gid="6622" x="3928" y="248" width="96" height="48">
+    <properties>
+     <property name="bodyheight" type="float" value="16"/>
+     <property name="bodysolid" type="bool" value="true"/>
+    </properties>
+   </object>
+   <object id="321" gid="6621" x="4064" y="240" width="96" height="48">
+    <properties>
+     <property name="bodyheight" type="float" value="16"/>
+     <property name="bodysolid" type="bool" value="true"/>
+    </properties>
+   </object>
+   <object id="322" gid="6620" x="4208" y="232" width="96" height="48">
+    <properties>
+     <property name="bodyheight" type="float" value="16"/>
+     <property name="bodysolid" type="bool" value="true"/>
+    </properties>
+   </object>
+   <object id="323" gid="6621" x="4256" y="104" width="96" height="48">
+    <properties>
+     <property name="bodyheight" type="float" value="16"/>
+     <property name="bodysolid" type="bool" value="true"/>
+    </properties>
+   </object>
+   <object id="324" gid="6623" x="4096" y="80" width="32" height="32">
+    <properties>
+     <property name="bodyheight" type="float" value="12"/>
+     <property name="bodysolid" type="bool" value="true"/>
+    </properties>
+   </object>
+   <object id="325" gid="6625" x="4216" y="72" width="32" height="32">
+    <properties>
+     <property name="bodyheight" type="float" value="12"/>
+     <property name="bodysolid" type="bool" value="true"/>
+    </properties>
+   </object>
+   <object id="326" gid="6624" x="4160" y="272" width="32" height="32">
+    <properties>
+     <property name="bodyheight" type="float" value="12"/>
+     <property name="bodysolid" type="bool" value="true"/>
+    </properties>
+   </object>
+   <object id="327" gid="6623" x="3872" y="272" width="32" height="32">
+    <properties>
+     <property name="bodyheight" type="float" value="12"/>
+     <property name="bodysolid" type="bool" value="true"/>
+    </properties>
+   </object>
+   <object id="328" gid="6624" x="3976" y="280" width="32" height="32">
+    <properties>
+     <property name="bodyheight" type="float" value="12"/>
+     <property name="bodysolid" type="bool" value="true"/>
+    </properties>
+   </object>
+   <object id="329" gid="6625" x="4112" y="264" width="32" height="32">
+    <properties>
+     <property name="bodyheight" type="float" value="12"/>
+     <property name="bodysolid" type="bool" value="true"/>
+    </properties>
+   </object>
+   <object id="330" gid="6623" x="4016" y="280" width="32" height="32">
+    <properties>
+     <property name="bodyheight" type="float" value="12"/>
+     <property name="bodysolid" type="bool" value="true"/>
+    </properties>
+   </object>
+   <object id="331" gid="6625" x="4272" y="264" width="32" height="32">
+    <properties>
+     <property name="bodyheight" type="float" value="12"/>
+     <property name="bodysolid" type="bool" value="true"/>
+    </properties>
+   </object>
+   <object id="332" gid="6624" x="4168" y="72" width="32" height="32">
+    <properties>
+     <property name="bodyheight" type="float" value="12"/>
+     <property name="bodysolid" type="bool" value="true"/>
+    </properties>
+   </object>
+   <object id="333" gid="6623" x="4296" y="64" width="32" height="32">
+    <properties>
+     <property name="bodyheight" type="float" value="12"/>
+     <property name="bodysolid" type="bool" value="true"/>
+    </properties>
+   </object>
+   <object id="334" gid="6625" x="3976" y="72" width="32" height="32"/>
+   <object id="335" gid="6624" x="4048" y="80" width="32" height="32">
+    <properties>
+     <property name="bodyheight" type="float" value="12"/>
+     <property name="bodysolid" type="bool" value="true"/>
+    </properties>
+   </object>
+   <object id="336" gid="5278" x="4016" y="72" width="64" height="64">
+    <properties>
+     <property name="ammo" type="int" value="999999999"/>
+     <property name="initialai" value="enterShootLeave"/>
+    </properties>
+   </object>
+   <object id="337" gid="5278" x="4136" y="80" width="64" height="64">
+    <properties>
+     <property name="ammo" type="int" value="999999999"/>
+     <property name="initialai" value="enterShootLeave"/>
+    </properties>
+   </object>
+   <object id="338" gid="5274" x="4256" y="72" width="64" height="64">
+    <properties>
+     <property name="ammo" type="int" value="999999999"/>
+     <property name="initialai" value="enterShootLeave"/>
+    </properties>
+   </object>
+  </objectgroup>
+  <objectgroup id="33" name="+spears" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="3"/>
+   </properties>
+   <object id="339" gid="5270" x="3824" y="176" width="64" height="64"/>
+   <object id="340" gid="5270" x="4336" y="176" width="64" height="64"/>
+  </objectgroup>
+  <objectgroup id="21" name="+shooters" class="Room">
+   <object id="341" gid="5274" x="3928" y="328" width="64" height="64">
+    <properties>
+     <property name="ammo" type="int" value="999999999"/>
+     <property name="entrypoint" type="object" value="344"/>
+     <property name="initialai" value="enterShootLeave"/>
+    </properties>
+   </object>
+   <object id="342" gid="5278" x="4064" y="360" width="64" height="64">
+    <properties>
+     <property name="ammo" type="int" value="999999999"/>
+     <property name="entrypoint" type="object" value="345"/>
+     <property name="initialai" value="enterShootLeave"/>
+    </properties>
+   </object>
+   <object id="343" gid="5278" x="4208" y="392" width="64" height="64">
+    <properties>
+     <property name="ammo" type="int" value="999999999"/>
+     <property name="entrypoint" type="object" value="346"/>
+     <property name="initialai" value="enterShootLeave"/>
+    </properties>
+   </object>
+   <object id="344" name="entrypoint" x="3928" y="272">
+    <point/>
+   </object>
+   <object id="345" name="entrypoint" x="4064" y="272">
+    <point/>
+   </object>
+   <object id="346" name="entrypoint" x="4208" y="272">
+    <point/>
+   </object>
+   <object id="347" gid="5270" x="3824" y="144" width="64" height="64"/>
+   <object id="348" gid="5270" x="4336" y="144" width="64" height="64"/>
+   <object id="349" gid="5270" x="3824" y="216" width="64" height="64"/>
+   <object id="350" gid="5270" x="4336" y="216" width="64" height="64"/>
   </objectgroup>
   <objectgroup id="20" name="arena" class="Room">
    <object id="76" template="mapobjects/OutwardBoundary.tx" x="4800" y="32">
@@ -652,7 +821,7 @@
     <polygon points="-32,32 448,32 448,0 384,-64 160,-64 128,-32 32,-32"/>
    </object>
    <object id="80" template="mapobjects/CameraPath.tx" x="4400" y="144">
-    <polyline points="-128,0 640,0"/>
+    <polyline points="-224,0 640,0"/>
    </object>
    <object id="313" template="mapobjects/OutwardBoundary.tx" x="4800" y="-32">
     <properties>
@@ -675,11 +844,6 @@
    </object>
    <object id="78" template="mapobjects/CameraPath.tx" x="3264" y="144">
     <polyline points="0,0 48,48 96,136 112,256"/>
-   </object>
-  </objectgroup>
-  <objectgroup id="21" name="messhall2" class="Room">
-   <object id="93" template="mapobjects/CameraPath.tx" x="4272" y="560">
-    <polyline points="160,0 160,-576"/>
    </object>
   </objectgroup>
  </group>
