@@ -386,6 +386,8 @@ function Fighter:defeat(attacker)
     self:stopAttack()
     self.velx, self.vely = 0, 0
     Audio.play(self.defeatsound)
+    self:changeAnimation(self.defeatedanimation or "defeated", 1, 0)
+    self:dropDefeatItem()
     yield()
     return "blinkOut", 60
 end
