@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 30,
-  nextobjectid = 271,
+  nextlayerid = 32,
+  nextobjectid = 313,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -2954,6 +2954,22 @@ return {
       },
       tilecount = 2448,
       tiles = {
+        {
+          id = 1408,
+          probability = 0.1
+        },
+        {
+          id = 1410,
+          probability = 0.1
+        },
+        {
+          id = 1510,
+          probability = 0.1
+        },
+        {
+          id = 1512,
+          probability = 0.1
+        },
         {
           id = 2040,
           probability = 0.005
@@ -13841,6 +13857,243 @@ return {
           type = "container-barrel"
         }
       }
+    },
+    {
+      name = "crates",
+      firstgid = 6611,
+      class = "",
+      tilewidth = 32,
+      tileheight = 48,
+      spacing = 0,
+      margin = 0,
+      columns = 3,
+      image = "sprites/containers/crates.png",
+      imagewidth = 96,
+      imageheight = 96,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 48
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 6,
+      tiles = {
+        {
+          id = 0,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            class = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "polygon",
+                x = 16,
+                y = 48,
+                width = 0,
+                height = 0,
+                rotation = 0,
+                visible = true,
+                polygon = {
+                  { x = 0, y = 0 },
+                  { x = 10, y = -6 },
+                  { x = 0, y = -12 },
+                  { x = -10, y = -6 }
+                },
+                properties = {
+                  ["collidable"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 1,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            class = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "polygon",
+                x = 16,
+                y = 48,
+                width = 0,
+                height = 0,
+                rotation = 0,
+                visible = true,
+                polygon = {
+                  { x = 0, y = 0 },
+                  { x = 16, y = -8 },
+                  { x = 0, y = -16 },
+                  { x = -16, y = -8 }
+                },
+                properties = {
+                  ["collidable"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 2,
+          type = "container-crate-tall",
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            class = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "polygon",
+                x = 16,
+                y = 48,
+                width = 0,
+                height = 0,
+                rotation = 0,
+                visible = true,
+                polygon = {
+                  { x = 0, y = 0 },
+                  { x = 16, y = -8 },
+                  { x = 0, y = -16 },
+                  { x = -16, y = -8 }
+                },
+                properties = {
+                  ["collidable"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 5,
+          properties = {
+            ["name"] = "defeated"
+          }
+        }
+      }
+    },
+    {
+      name = "wall-torch",
+      firstgid = 6617,
+      class = "",
+      tilewidth = 32,
+      tileheight = 48,
+      spacing = 0,
+      margin = 0,
+      columns = 3,
+      image = "sprites/banditcave/wall-torch.png",
+      imagewidth = 96,
+      imageheight = 48,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 48
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 3,
+      tiles = {
+        {
+          id = 0,
+          animation = {
+            {
+              tileid = 0,
+              duration = 100
+            },
+            {
+              tileid = 1,
+              duration = 100
+            },
+            {
+              tileid = 2,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 1,
+          animation = {
+            {
+              tileid = 1,
+              duration = 100
+            },
+            {
+              tileid = 2,
+              duration = 100
+            },
+            {
+              tileid = 0,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 2,
+          animation = {
+            {
+              tileid = 2,
+              duration = 100
+            },
+            {
+              tileid = 0,
+              duration = 100
+            },
+            {
+              tileid = 1,
+              duration = 100
+            }
+          }
+        }
+      }
     }
   },
   layers = {
@@ -13879,7 +14132,15 @@ return {
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJxjYKAuuCrEwBAiwsAQJAKho4QpM08IqP8GFAcIMjBMpNC8S0IQs/iBZvUB8SwKzbsCNC8S6M8IkJ+BZkWJUGYeNiAiDAnPa0LUMU8UaBYf0O+3yPB7OFBPBNQ9wdA4hsWRIBALk2gmSN8FAQaGLqB7jvND+CcEILQPUOwiieaB4iFYGBIXIcIIPogdDmRfplIYDhYAALebHLg="
+          data = "eJxjYCAeLGSF4MscCHYeJwNDBieCf1WIgSFEhIEhSARCRwnjNm8+kjnImB3JPCGg/htQHCDIwDARj3nIZuQAzc6Dmn8JyZ5LQhCz+IFm9QHxLCLNw4ZBfr8CNC8S6M8IkJ+BZkWJ4DfPihPhPzYs/scGRIQh4XlNiLD7cjkImycKNIsP6PdbwoTNQ4+jcKCeCKh7gqFxDIsjQSAWFsZv3mw080D6LggwMHQB3XOcH8I/IQChfYBiFwmYx8yJygfFQ7AwJC5ChBF8EDscyL6MFoZDHQAAs4BNvw=="
+        },
+        {
+          x = 80, y = 0, width = 20, height = 12,
+          data = "eJxbyMrAsJBMbMaBXdySE0JfhsqzAPmLODDlkXE+UMwUi3nmWNSCcB5QnA1NPStUrSkOPXM5EHqR3YfuJ5j+q1B5MyTz2KFsdqCcNQgjyVmgmZeLI3xAeB4OOVA42eBwPyGcTaS+fKg6K06I+2ejucUWic+FxZ1X8PgLPU7YyfBLJlAPB9QcSzTz8tD4c9D4Iw0AAHxAaA4="
+        },
+        {
+          x = 100, y = 0, width = 20, height = 12,
+          data = "eJxbyMrAsICDgWEhKwSbcDJQBGDmgLAZJ4SmlnmmQPM4OahjXgYngk0t9w1G87KR4hbGptR9rMCwy4SaxUaF9JLLQT3/jjQAAIL7GTQ="
         }
       }
     },
@@ -13903,7 +14164,12 @@ return {
       },
       encoding = "base64",
       compression = "zlib",
-      chunks = {}
+      chunks = {
+        {
+          x = 80, y = 0, width = 20, height = 12,
+          data = "eJxjYGBgMGGCYGMgNoViY6iYGRCPglEwCgYnAABA6gGz"
+        }
+      }
     },
     {
       type = "tilelayer",
@@ -13940,7 +14206,15 @@ return {
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJzdzjEKg0AUhOHpxJjVXYvopSy0cHMoBU0RPZSgpvE6mWURbMVXOfDzuo/3ioGM5Wx9AoUBAg20bEpwejUdy97MKCBlHc2F3qzPe186AxtZSatS/s9Ie/fKeuXv/mdz0TvO/WkjOe9DbxD0fvQ2Qc9tDWU985D17rg/sz8Rew=="
+          data = "eJzdzk8OwUAUgPFnFv60ytQCFxFKHMGChfYMlDgICRZqgwtJqjau42saC2ols/KSXyaTzHx5zZpIC20kVZGRK1LSIhtc65IbC0XFG5TRLYj04CHGlI6PAK4j0sCW5o1erPO9ITw6fQwwozFHCMX9QCfCEWNaEyfb09ZZ93NWCPm3wBInOmdc0FHvb3dOdr72XH/p/Trpnr5trrenFxns3ek9DPbSSSpme65ltveP8wRzgxkl"
+        },
+        {
+          x = 80, y = 0, width = 20, height = 12,
+          data = "eJwzZ2RgsAJiGDAlwOcGss2A2ByIlwD5S4H4EhCXAPECIM4Ciuciqc8gwLcDsjMZIfquA/k3gJgVyF7OALFjLhAvQFI/mwC/EMieA9XHxQhxrwUQ34K6jRJgywhxbzYQ80LtoBSA3DsPiB2oYNYoGHkAAKkyFRE="
+        },
+        {
+          x = 100, y = 0, width = 20, height = 12,
+          data = "eJxjY2RgsGBgYGAB0heANDOQpgRYAPVbArEZEJtDaUpANlB/DhBnAnEWlKYEzAPqnw/Ec4B4LpQeBaNgqAIA45gHYQ=="
         }
       }
     },
@@ -13992,6 +14266,45 @@ return {
         {
           x = 60, y = 0, width = 20, height = 12,
           data = "eJxjYEAFb8UZGOTEGBjkgVhBjIEqQA9ojj4QG1DJPFoBXYmBdsEoGAWkAQB2SAK4"
+        },
+        {
+          x = 80, y = 0, width = 20, height = 12,
+          data = "eJxjYMAPZjMyMMwF4vlAPI8Rwp8DFeMCYm4gtgTiW0C1lkwEDCMAbIHm2AFxDhDzgmgKzQOBQqjbHRgpN2sUjILBBgCHIwhw"
+        },
+        {
+          x = 100, y = 0, width = 20, height = 12,
+          data = "eJyzYmJgsELC1kBMCchlQsV5FJo3CkbBKMANAMl5A1o="
+        }
+      }
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 200,
+      height = 12,
+      id = 30,
+      name = "bottomwall",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {
+        ["drawz"] = 1
+      },
+      encoding = "base64",
+      compression = "zlib",
+      chunks = {
+        {
+          x = 60, y = 0, width = 20, height = 12,
+          data = "eJxjYCAe5JKglhhgQ2Xz8qls3iIgXkxF864C8TUqmmfNCAxDRuqZl8rEwJAGxLxY5HiAmJVE81iBbrsEpB2AmAWqnw2I2YHYngEiRwqYD9IPNDMHSJsDsQUQWwKxFdQuSxLNGw4AAIrdCeE="
+        },
+        {
+          x = 80, y = 0, width = 20, height = 12,
+          data = "eJxjYBgFwxmwATE7FHMgiTNj4fMSYZ4VEF8C4iwgNmJCiJszYfIdiDBzPtQskJmpQD0ZQJwJxFlMmPxiBoiZrES6dSQAADuNCMU="
         }
       }
     },
@@ -14019,6 +14332,14 @@ return {
         {
           x = 0, y = 0, width = 20, height = 12,
           data = "eJxjYBhZ4L0IA8MHEeqZ9x9klij1zOMHmiVARfPkgWYpUNE8faBZBlQ0bxRQBgDO9wRr"
+        },
+        {
+          x = 80, y = 0, width = 20, height = 12,
+          data = "eJxjYBg5oI+NuuYdpLJ5o2AUkAoAmw0BXA=="
+        },
+        {
+          x = 100, y = 0, width = 20, height = 12,
+          data = "eJxjYBjcoJ+NgWECFE8E4klslJl3CKj/MBQfAeKjFJr3FUn/dwrNGgWjgFQAAOwECNg="
         }
       }
     },
@@ -15276,6 +15597,34 @@ return {
               properties = {
                 ["z"] = 64
               }
+            },
+            {
+              id = 307,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1424,
+              y = 184,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 308,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1680,
+              y = 264,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -15291,133 +15640,28 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = 999
+          },
           objects = {
-            {
-              id = 94,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2848,
-              y = 296,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5274,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 106,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2912,
-              y = 80,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5274,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 95,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2720,
-              y = 296,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5274,
-              visible = true,
-              properties = {}
-            },
             {
               id = 105,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2784,
-              y = 80,
+              x = 2640,
+              y = 32,
               width = 64,
               height = 64,
               rotation = 0,
               gid = 5274,
               visible = true,
-              properties = {}
-            },
-            {
-              id = 96,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3344,
-              y = 208,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5270,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 97,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2976,
-              y = 296,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5274,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 107,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3040,
-              y = 80,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5274,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 98,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3104,
-              y = 296,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5274,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 108,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3168,
-              y = 80,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5274,
-              visible = true,
-              properties = {}
+              properties = {
+                ["entrypoint"] = { id = 273 },
+                ["facex"] = 0,
+                ["facey"] = 1,
+                ["initialai"] = "enterAndAmbush"
+              }
             },
             {
               id = 104,
@@ -15431,37 +15675,9 @@ return {
               rotation = 0,
               visible = true,
               polyline = {
-                { x = 192, y = 0 },
-                { x = 816, y = 0 }
+                { x = 64, y = 0 },
+                { x = 672, y = 0 }
               },
-              properties = {}
-            },
-            {
-              id = 101,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3296,
-              y = 152,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5270,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 103,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3392,
-              y = 264,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5270,
-              visible = true,
               properties = {}
             },
             {
@@ -15469,7 +15685,7 @@ return {
               name = "camerawarp",
               type = "",
               shape = "point",
-              x = 2640,
+              x = 2512,
               y = 144,
               width = 0,
               height = 0,
@@ -15482,37 +15698,62 @@ return {
               name = "",
               type = "Boundary",
               shape = "polygon",
-              x = 2400,
+              x = 2272,
               y = -32,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 0, y = 32 },
-                { x = 0, y = 192 },
-                { x = 64, y = 128 },
-                { x = 352, y = 128 },
-                { x = 352, y = 64 },
-                { x = 416, y = 64 },
-                { x = 416, y = 128 },
-                { x = 480, y = 128 },
-                { x = 480, y = 64 },
-                { x = 544, y = 64 },
-                { x = 544, y = 128 },
-                { x = 608, y = 128 },
-                { x = 608, y = 64 },
-                { x = 672, y = 64 },
-                { x = 672, y = 128 },
-                { x = 736, y = 128 },
-                { x = 736, y = 64 },
-                { x = 800, y = 64 },
-                { x = 800, y = 128 },
-                { x = 992, y = 128 },
-                { x = 1056, y = 192 },
-                { x = 1056, y = 352 },
-                { x = 1088, y = 352 },
-                { x = 1088, y = 32 }
+                { x = 64, y = 0 },
+                { x = 64, y = 112 },
+                { x = 320, y = 112 },
+                { x = 352, y = 80 },
+                { x = 352, y = 48 },
+                { x = 416, y = 48 },
+                { x = 416, y = 80 },
+                { x = 448, y = 112 },
+                { x = 480, y = 80 },
+                { x = 480, y = 48 },
+                { x = 544, y = 48 },
+                { x = 544, y = 80 },
+                { x = 576, y = 112 },
+                { x = 576, y = 0 }
+              },
+              properties = {
+                ["bodyheight"] = 512,
+                ["bodysolid"] = true,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 312,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 2272,
+              y = -32,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 576, y = 0 },
+                { x = 576, y = 112 },
+                { x = 608, y = 80 },
+                { x = 608, y = 48 },
+                { x = 672, y = 48 },
+                { x = 672, y = 80 },
+                { x = 704, y = 112 },
+                { x = 768, y = 112 },
+                { x = 832, y = 176 },
+                { x = 864, y = 176 },
+                { x = 896, y = 144 },
+                { x = 896, y = 128 },
+                { x = 1088, y = 128 },
+                { x = 1088, y = 0 }
               },
               properties = {
                 ["bodyheight"] = 512,
@@ -15528,44 +15769,563 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 2592,
-              y = 256,
+              y = 224,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 32, y = 0 },
-                { x = 0, y = 32 },
-                { x = 0, y = 64 },
-                { x = 32, y = 96 },
-                { x = 640, y = 96 },
-                { x = 672, y = 64 },
-                { x = 672, y = 32 },
-                { x = 640, y = 0 },
-                { x = 544, y = 0 },
-                { x = 544, y = 64 },
-                { x = 480, y = 64 },
-                { x = 480, y = 0 },
-                { x = 416, y = 0 },
-                { x = 416, y = 64 },
-                { x = 352, y = 64 },
-                { x = 352, y = 0 },
-                { x = 288, y = 0 },
-                { x = 288, y = 64 },
-                { x = 224, y = 64 },
+                { x = -320, y = -224 },
+                { x = -320, y = 96 },
+                { x = 224, y = 96 },
                 { x = 224, y = 0 },
                 { x = 160, y = 0 },
                 { x = 160, y = 64 },
                 { x = 96, y = 64 },
-                { x = 96, y = 0 }
+                { x = 96, y = 0 },
+                { x = -64, y = 0 },
+                { x = -96, y = 32 },
+                { x = -224, y = 32 },
+                { x = -256, y = 0 },
+                { x = -288, y = 0 },
+                { x = -288, y = -112 },
+                { x = -256, y = -144 },
+                { x = -256, y = -224 }
               },
               properties = {
-                ["bodyheight"] = 32,
+                ["bodyheight"] = 64,
                 ["bodysolid"] = true,
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
               }
+            },
+            {
+              id = 311,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 2592,
+              y = 224,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 448, y = 160 },
+                { x = 448, y = 64 },
+                { x = 384, y = 64 },
+                { x = 320, y = 0 },
+                { x = 288, y = 0 },
+                { x = 288, y = 160 }
+              },
+              properties = {
+                ["bodyheight"] = 64,
+                ["bodysolid"] = true,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 271,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2480,
+              y = 56,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              gid = 6617,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            },
+            {
+              id = 309,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2576,
+              y = 56,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              gid = 6617,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            },
+            {
+              id = 273,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 2640,
+              y = 48,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 274,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2768,
+              y = 32,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5274,
+              visible = true,
+              properties = {
+                ["entrypoint"] = { id = 275 },
+                ["facex"] = 0,
+                ["facey"] = 1,
+                ["initialai"] = "enterAndAmbush"
+              }
+            },
+            {
+              id = 275,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 2768,
+              y = 48,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 280,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2704,
+              y = 256,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5274,
+              visible = true,
+              properties = {
+                ["entrypoint"] = { id = 281 },
+                ["facex"] = 0,
+                ["facey"] = -1,
+                ["initialai"] = "enterAndAmbush"
+              }
+            },
+            {
+              id = 282,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2832,
+              y = 264,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5274,
+              visible = true,
+              properties = {
+                ["entrypoint"] = { id = 283 },
+                ["facex"] = 0,
+                ["facey"] = -1,
+                ["initialai"] = "enterAndAmbush"
+              }
+            },
+            {
+              id = 281,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 2704,
+              y = 248,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 283,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 2832,
+              y = 248,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 286,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2896,
+              y = 32,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5274,
+              visible = true,
+              properties = {
+                ["entrypoint"] = { id = 287 },
+                ["facex"] = 0,
+                ["facey"] = 1,
+                ["initialai"] = "enterAndAmbush"
+              }
+            },
+            {
+              id = 287,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 2896,
+              y = 48,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 298,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 3168,
+              y = 0,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = 0 },
+                { x = 0, y = 112 },
+                { x = 192, y = 112 },
+                { x = 192, y = 0 }
+              },
+              properties = {
+                ["bodyheight"] = 64,
+                ["bodysolid"] = true,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 299,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3192,
+              y = 144,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              gid = 6613,
+              visible = true,
+              properties = {
+                ["itemtype"] = "item-throwing-axe"
+              }
+            },
+            {
+              id = 306,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3288,
+              y = 152,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              gid = 6613,
+              visible = true,
+              properties = {
+                ["itemtype"] = "item-throwing-axe"
+              }
+            },
+            {
+              id = 300,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3184,
+              y = 168,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              gid = 6613,
+              visible = true,
+              properties = {
+                ["itemtype"] = "item-stone"
+              }
+            },
+            {
+              id = 305,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3296,
+              y = 176,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              gid = 6613,
+              visible = true,
+              properties = {
+                ["itemtype"] = "item-stone"
+              }
+            },
+            {
+              id = 301,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3208,
+              y = 176,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              gid = 6613,
+              visible = true,
+              properties = {
+                ["itemtype"] = "item-stone"
+              }
+            },
+            {
+              id = 304,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3328,
+              y = 176,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              gid = 6613,
+              visible = true,
+              properties = {
+                ["itemtype"] = "item-stone"
+              }
+            },
+            {
+              id = 302,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3240,
+              y = 160,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              gid = 6613,
+              visible = true,
+              properties = {
+                ["itemtype"] = "item-throwing-axe"
+              }
+            },
+            {
+              id = 303,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3336,
+              y = 144,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              gid = 6613,
+              visible = true,
+              properties = {
+                ["itemtype"] = "item-throwing-axe"
+              }
+            },
+            {
+              id = 310,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3040,
+              y = 56,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              gid = 6617,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 31,
+          name = "endofentryhall",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 291,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3248,
+              y = -96,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5274,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["entrypoint"] = { id = 294 },
+                ["exitpoint"] = { id = 296 },
+                ["initialai"] = "enterShootLeave",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 292,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3248,
+              y = -8,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5274,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["entrypoint"] = { id = 293 },
+                ["exitpoint"] = { id = 295 },
+                ["initialai"] = "enterShootLeave",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 293,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 3216,
+              y = 80,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 294,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 3312,
+              y = 88,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 295,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 3248,
+              y = -16,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 296,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 3280,
+              y = -16,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 96,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3344,
+              y = 328,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 101,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3376,
+              y = 192,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 103,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3056,
+              y = 328,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
             }
           }
         },
