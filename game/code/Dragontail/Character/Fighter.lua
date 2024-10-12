@@ -182,12 +182,10 @@ function Fighter:knockedBack(thrower, attackangle)
     local thrownspeed = thrower.attacklaunchspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
     self.velz = thrower.attackpopupspeed or 4
-    local gravity = self.fallgravity or .5
     local oobx, ooby, oobz
     repeat
         yield()
         oobx, ooby, oobz = self:keepInBounds()
-        self.velz = self.velz - gravity
     until oobx or ooby or oobz
     local oobdotvel = math.dot(oobx or 0, ooby or 0, self.velx, self.vely)
     if oobdotvel > 0 then
@@ -249,7 +247,6 @@ function Fighter:thrown(thrower, attackangle)
     local thrownspeed = thrower.attacklaunchspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
     self.velz = thrower.attackpopupspeed or 4
-    local gravity = self.fallgravity or .5
     local thrownsound = Audio.newSource(self.swingsound)
     thrownsound:play()
     local thrownslidetime = self.thrownslidetime or 10
@@ -261,8 +258,6 @@ function Fighter:thrown(thrower, attackangle)
         if oobz then
             self.velz = 0
             thrownslidetime = thrownslidetime - 1
-        else
-            self.velz = self.velz - gravity
         end
         oobdotvel = math.dot(oobx or 0, ooby or 0, self.velx, self.vely)
         if oobdotvel > 0 then
@@ -355,7 +350,6 @@ end
 function Fighter:fall(attacker)
     local t = 0
     local _, penez
-    local gravity = self.fallgravity or .5
     local fallanimationtime = self.fallanimationtime or 1
     repeat
         self:accelerateTowardsVel(0, 0, 8)
@@ -365,8 +359,6 @@ function Fighter:fall(attacker)
             t = t + 1
             self.velz = 0
             self:changeAseAnimation("Fall", 1, 0)
-        else
-            self.velz = self.velz - gravity
         end
     until t >= fallanimationtime
     Audio.play(self.bodydropsound)

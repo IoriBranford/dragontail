@@ -176,6 +176,7 @@ function Character:fixedupdate()
         self:animate(1)
         self:updatePosition()
         State.run(self)
+        self:updateGravity()
     end
 end
 

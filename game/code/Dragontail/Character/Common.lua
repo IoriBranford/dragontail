@@ -17,16 +17,6 @@ local MaxProjectileItems = 16
 ---@class Common:Character
 local Common = class(Character)
 
-function Common:updateDropToGround()
-    local _, _, penez = self:keepInBounds()
-    if penez then
-        self.velz = 0
-        return
-    end
-    local gravity = self.fallgravity or .25
-    self.velz = self.velz - gravity
-end
-
 function Common:spark()
     wait(self.sparktime or 30)
     self:disappear()
@@ -68,7 +58,7 @@ function Common:dropDefeatItem()
     end
     if item then
         item.opponents = self.opponents
-        State.start(item, "itemDrop")
+        State.start(item, "itemWaitForPickup")
     end
 end
 
@@ -81,15 +71,15 @@ function Common:containerBreak(attacker)
 end
 
 function Common:itemDrop(y0)
-    self.velz = self.popoutspeed or 8
-    local gravity = self.fallgravity or .5
-    local floorz = Characters.getCylinderFloorZ(self.x, self.y, self.z, self.bodyradius, self.bodyheight) or 0
-    repeat
-        self.velz = self.velz - gravity
-        yield()
-    until self.z <= floorz
-    self.z = floorz
-    self.velz = 0
+    -- self.velz = self.popoutspeed or 8
+    -- local gravity = self.fallgravity or .5
+    -- local floorz = Characters.getCylinderFloorZ(self.x, self.y, self.z, self.bodyradius, self.bodyheight) or 0
+    -- repeat
+    --     self.velz = self.velz - gravity
+    --     yield()
+    -- until self.z <= floorz
+    -- self.z = floorz
+    -- self.velz = 0
     return "itemWaitForPickup"
 end
 
@@ -176,7 +166,7 @@ function Common:projectileBounce(opponent, ooby, oobz)
     else
         Audio.play(self.bodyslamsound)
     end
-    local gravity = self.fallgravity or .25
+    self.gravity = max(self.gravity or 0, .25)
     local bouncefactor = self.bouncefactor or .5
     if opponent then
         if opponent.z <= self.z and self.z <= opponent.z + opponent.bodyheight then
@@ -195,9 +185,8 @@ function Common:projectileBounce(opponent, ooby, oobz)
     oobz = nil
     repeat
         yield()
-        self.velz = self.velz - gravity
         oobx, ooby, oobz = self:keepInBounds()
-    until oobz and oobz < 0
+    until oobz and oobz <= 0
     self.velx, self.vely, self.velz = 0, 0, 0
     local items = Characters.getGroup("items")
     local numopponentshit = self.numopponentshit or 0
@@ -227,11 +216,9 @@ function Common:projectileFly(shooter)
     end
     self:setDirectionalAnimation(self.swinganimation, angle, 1, self.swinganimationloopframe or 1)
     local oobx, ooby, oobz
-    local gravity = self.fallgravity or 0
     repeat
         yield()
         oobx, ooby, oobz = self:keepInBounds()
-        self.velz = self.velz - gravity
     until oobx or ooby or oobz
     local attackhitai = self.attackhitboundaryai or self.attackhitai
     if attackhitai then
