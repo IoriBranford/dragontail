@@ -1,6 +1,7 @@
 local Database = require "Data.Database"
 local Character= require "Dragontail.Character"
 local State    = require "Dragontail.Character.State"
+local Assets = require "Tiled.Assets"
 
 ---@module 'Dragontail.Stage.Characters'
 local Characters = {}
@@ -44,9 +45,9 @@ function Characters.getGroup(group)
 end
 
 function Characters.spawn(object)
-    local type = object.type
-    if type then
-        Database.fillBlanks(object, type)
+    local typ = object.type
+    if typ then
+        Database.fillBlanks(object, typ)
     end
     local ok, script = false, object.script
     if script then
@@ -54,6 +55,15 @@ function Characters.spawn(object)
     end
     if not ok then
         script = Character
+    end
+    if not object.tile then
+        local tileset, tile = object.tileset, object.tileid
+        if type(tileset) == "string" then
+            tile = Assets.getTile(tileset, tile)
+            if tile then
+                object:initTile(tile)
+            end
+        end
     end
     local character = script.cast(object) ---@type Character
     if not character.id then
