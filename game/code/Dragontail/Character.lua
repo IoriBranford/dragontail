@@ -88,9 +88,7 @@ function Character:addToScene(scene)
 
     local baseDraw = self.draw
     self.draw = function(self, fixedfrac)
-        if self.shadowtype then
-            self:drawSpriteShadow(fixedfrac)
-        end
+        self:drawSpriteShadow(fixedfrac)
         baseDraw(self, fixedfrac)
         if Config.drawbodies then
             self:drawBodyShape(fixedfrac)
@@ -100,7 +98,6 @@ function Character:addToScene(scene)
 end
 
 function Character:makeAfterImage()
-    local Characters  = require "Dragontail.Stage.Characters"
     local afterimage = Characters.spawn({
         x = self.x,
         y = self.y,
