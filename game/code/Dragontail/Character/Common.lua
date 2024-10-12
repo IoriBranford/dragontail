@@ -146,7 +146,8 @@ function Common:projectileEmbed(opponent, ooby, oobz)
     else
         Audio.play(self.bodyslamsound)
         local items = Characters.getGroup("items")
-        if self.itemtype and #items < MaxProjectileItems then
+        local numopponentshit = self.numopponentshit or 0
+        if self.itemtype and #items < MaxProjectileItems and numopponentshit <= 0 then
             Characters.spawn({
                 type = self.itemtype,
                 x = self.x, y = self.y, z = self.z
