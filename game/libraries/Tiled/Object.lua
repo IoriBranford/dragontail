@@ -144,6 +144,7 @@ function TiledObject:_init(map)
         self.visible = true
     end
     local objecttype = self.class or self.type or ""
+    self.type = objecttype
     local gid = self.gid
     local tile = self.tile
     local maptiles = map and map.tiles
@@ -152,20 +153,9 @@ function TiledObject:_init(map)
     if maptiles and gid then
         gid, flipx, flipy = Gid.parse(gid)
         tile = maptiles[gid]
-        self:setTile(tile)
     end
     if tile then
-        width = width or tile.width
-        height = height or tile.height
-        self.width = width
-        self.height = height
-        self.scalex = self.scalex or (flipx * (width / tile.width))
-        self.scaley = self.scaley or (flipy * (height / tile.height))
-        if objecttype == "" then
-            objecttype = tile.type
-        end
-        self.animate = self.animateTile
-        self.draw = self.drawTile
+        self:initTile(tile, flipx, flipy)
     else
         self.width = width or 2
         self.height = height or 2
@@ -180,7 +170,6 @@ function TiledObject:_init(map)
             self.draw = self.drawPolygon
         end
     end
-    self.type = objecttype
     processPoly(self)
     self:initText()
     self:initAseprite()
@@ -195,6 +184,24 @@ end
 
 function TiledObject:setVisible(visible)
     self.visible = visible
+end
+
+---@param tile Tile
+function TiledObject:initTile(tile, flipx, flipy)
+    flipx = flipx or 1
+    flipy = flipy or 1
+    if tile then
+        local width = self.width or tile.width
+        local height = self.height or tile.height
+        self.scalex = self.scalex or (flipx * (width / tile.width))
+        self.scaley = self.scaley or (flipy * (height / tile.height))
+        if (self.type or "") == "" then
+            self.type = tile.type
+        end
+    end
+    self.animate = self.animateTile
+    self.draw = self.drawTile
+    self:setTile(tile)
 end
 
 ---@param self AsepriteObject|TiledObject
