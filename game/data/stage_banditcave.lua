@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 35,
-  nextobjectid = 351,
+  nextobjectid = 359,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -14287,6 +14287,35 @@ return {
           type = "container-stool"
         }
       }
+    },
+    {
+      name = "graffiti-skull-bones",
+      firstgid = 6626,
+      class = "",
+      tilewidth = 16,
+      tileheight = 16,
+      spacing = 0,
+      margin = 0,
+      columns = 14,
+      image = "sprites/banditcave/graffiti-skull-bones.png",
+      imagewidth = 224,
+      imageheight = 16,
+      objectalignment = "center",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 14,
+      tiles = {}
     }
   },
   layers = {
@@ -16394,6 +16423,108 @@ return {
               visible = true,
               properties = {
                 ["z"] = 16
+              }
+            },
+            {
+              id = 351,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2552,
+              y = 136,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 6639,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5
+              }
+            },
+            {
+              id = 354,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2554,
+              y = 145,
+              width = 16,
+              height = 16,
+              rotation = 345,
+              gid = 6632,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5
+              }
+            },
+            {
+              id = 355,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2530,
+              y = 168,
+              width = 16,
+              height = 16,
+              rotation = 15,
+              gid = 6637,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5
+              }
+            },
+            {
+              id = 356,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2528,
+              y = 176,
+              width = 16,
+              height = 16,
+              rotation = 15,
+              gid = 6631,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5
+              }
+            },
+            {
+              id = 357,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2573.66,
+              y = 96,
+              width = 16,
+              height = 16,
+              rotation = 45,
+              gid = 6636,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5
+              }
+            },
+            {
+              id = 358,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2568,
+              y = 101.657,
+              width = 16,
+              height = 16,
+              rotation = 45,
+              gid = 6630,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5
               }
             }
           }
