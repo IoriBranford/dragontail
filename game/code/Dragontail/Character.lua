@@ -620,33 +620,25 @@ function Character:drawSpriteShadow(fixedfrac)
     fixedfrac = fixedfrac or 0
     local x, y = self.x + self.velx * fixedfrac, self.y + self.vely * fixedfrac
     love.graphics.setColor(0,0,0)
+    local floorz = Characters.getCylinderFloorZ(x, y, self.z, self.bodyradius, self.bodyheight) or 0
+    love.graphics.push()
+    love.graphics.translate(x, y - floorz)
+    love.graphics.rotate(self.rotation or 0)
+    love.graphics.scale(self.scalex or 1, (self.scaley or 1) / 2)
 
     local aseframe =
         self.aseanimation and self.aseanimation[self.animationframe or 1] or
         self.aseprite and self.aseprite[self.animationframe or 1]
+    local tile = self.tile
 
     if aseframe then
-        local floorz = Characters.getCylinderFloorZ(x, y, self.z, self.bodyradius, self.bodyheight) or 0
-        love.graphics.push()
-        love.graphics.translate(x, y - floorz)
-        love.graphics.rotate(self.rotation or 0)
-        love.graphics.scale(self.scalex or 1, (self.scaley or 1) / 2)
         love.graphics.translate(-self.spriteoriginx or 0, -self.spriteoriginy or 0)
         aseframe:draw()
-        love.graphics.pop()
-        return
+    elseif tile then
+        love.graphics.translate(-tile.objectoriginx or 0, -tile.objectoriginy or 0)
+        love.graphics.draw(tile.image, self.animationquad or tile.quad)
     end
-
-    local tile = self.tile
-    if tile then
-        love.graphics.draw(tile.image, self.animationquad or tile.quad,
-            x, y,
-            self.rotation or 0,
-            self.scalex or 1, (self.scaley or 1) / 2,
-            self.originx or tile.objectoriginx, self.originy or tile.objectoriginy,
-            self.skewx or 0, self.skewy or 0)
-        return
-    end
+    love.graphics.pop()
 end
 
 function Character:drawBodyShape(fixedfrac)
