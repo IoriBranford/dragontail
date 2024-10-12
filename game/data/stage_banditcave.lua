@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.11.0",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 35,
-  nextobjectid = 359,
+  nextobjectid = 383,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -14107,12 +14107,12 @@ return {
       image = "sprites/banditcave/tables-hori.png",
       imagewidth = 288,
       imageheight = 48,
-      objectalignment = "bottom",
+      objectalignment = "top",
       tilerendersize = "tile",
       fillmode = "stretch",
       tileoffset = {
         x = 0,
-        y = 12
+        y = -24
       },
       grid = {
         orientation = "orthogonal",
@@ -14316,6 +14316,225 @@ return {
       wangsets = {},
       tilecount = 14,
       tiles = {}
+    },
+    {
+      name = "Dishes A",
+      firstgid = 6640,
+      class = "",
+      tilewidth = 32,
+      tileheight = 32,
+      spacing = 0,
+      margin = 0,
+      columns = 8,
+      image = "sprites/banditcave/Dishes A.png",
+      imagewidth = 256,
+      imageheight = 64,
+      objectalignment = "center",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 32
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 16,
+      tiles = {
+        {
+          id = 0,
+          type = "item-dish",
+          properties = {
+            ["name"] = "dish-small"
+          }
+        }
+      }
+    },
+    {
+      name = "Meats A",
+      firstgid = 6656,
+      class = "",
+      tilewidth = 32,
+      tileheight = 32,
+      spacing = 0,
+      margin = 0,
+      columns = 5,
+      image = "sprites/items/Meats A.png",
+      imagewidth = 160,
+      imageheight = 352,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 16
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 32
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 55,
+      tiles = {
+        {
+          id = 5,
+          type = "food-medium"
+        },
+        {
+          id = 6,
+          type = "food-medium"
+        },
+        {
+          id = 8,
+          type = "food-medium"
+        },
+        {
+          id = 9,
+          type = "food-medium"
+        },
+        {
+          id = 10,
+          type = "food-medium"
+        },
+        {
+          id = 11,
+          type = "food-medium"
+        },
+        {
+          id = 13,
+          type = "food-medium"
+        },
+        {
+          id = 14,
+          type = "food-medium"
+        },
+        {
+          id = 18,
+          type = "food-medium"
+        }
+      }
+    },
+    {
+      name = "Bread A",
+      firstgid = 6711,
+      class = "",
+      tilewidth = 32,
+      tileheight = 32,
+      spacing = 0,
+      margin = 0,
+      columns = 4,
+      image = "sprites/items/Bread A.png",
+      imagewidth = 128,
+      imageheight = 64,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 32
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 8,
+      tiles = {
+        {
+          id = 0,
+          type = "food-medium"
+        },
+        {
+          id = 5,
+          type = "food-small"
+        }
+      }
+    },
+    {
+      name = "Cheese A",
+      firstgid = 6719,
+      class = "",
+      tilewidth = 32,
+      tileheight = 32,
+      spacing = 0,
+      margin = 0,
+      columns = 6,
+      image = "sprites/items/Cheese A.png",
+      imagewidth = 192,
+      imageheight = 96,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 32
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 18,
+      tiles = {
+        {
+          id = 0,
+          type = "food-medium"
+        },
+        {
+          id = 1,
+          type = "food-medium"
+        },
+        {
+          id = 2,
+          type = "food-medium"
+        },
+        {
+          id = 3,
+          type = "food-medium"
+        },
+        {
+          id = 4,
+          type = "food-medium"
+        },
+        {
+          id = 5,
+          type = "food-medium"
+        },
+        {
+          id = 6,
+          type = "food-large"
+        },
+        {
+          id = 7,
+          type = "food-large"
+        },
+        {
+          id = 8,
+          type = "food-large"
+        },
+        {
+          id = 9,
+          type = "food-large"
+        },
+        {
+          id = 10,
+          type = "food-large"
+        },
+        {
+          id = 11,
+          type = "food-large"
+        }
+      }
     }
   },
   layers = {
@@ -16744,7 +16963,7 @@ return {
         },
         {
           type = "objectgroup",
-          draworder = "topdown",
+          draworder = "index",
           id = 19,
           name = "messhall",
           class = "Room",
@@ -16808,7 +17027,7 @@ return {
               type = "",
               shape = "rectangle",
               x = 4008,
-              y = 112,
+              y = 104,
               width = 96,
               height = 48,
               rotation = 0,
@@ -16825,7 +17044,7 @@ return {
               type = "",
               shape = "rectangle",
               x = 4128,
-              y = 120,
+              y = 112,
               width = 96,
               height = 48,
               rotation = 0,
@@ -16842,7 +17061,7 @@ return {
               type = "",
               shape = "rectangle",
               x = 3928,
-              y = 248,
+              y = 240,
               width = 96,
               height = 48,
               rotation = 0,
@@ -16859,7 +17078,7 @@ return {
               type = "",
               shape = "rectangle",
               x = 4064,
-              y = 240,
+              y = 232,
               width = 96,
               height = 48,
               rotation = 0,
@@ -16876,7 +17095,7 @@ return {
               type = "",
               shape = "rectangle",
               x = 4208,
-              y = 232,
+              y = 224,
               width = 96,
               height = 48,
               rotation = 0,
@@ -16893,7 +17112,7 @@ return {
               type = "",
               shape = "rectangle",
               x = 4256,
-              y = 104,
+              y = 96,
               width = 96,
               height = 48,
               rotation = 0,
@@ -17154,6 +17373,390 @@ return {
               properties = {
                 ["ammo"] = 999999999,
                 ["initialai"] = "enterShootLeave"
+              }
+            },
+            {
+              id = 359,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3984,
+              y = 88,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6640,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            },
+            {
+              id = 362,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4048,
+              y = 224,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6640,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            },
+            {
+              id = 360,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4024,
+              y = 96,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6640,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            },
+            {
+              id = 361,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4088,
+              y = 216,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6640,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            },
+            {
+              id = 363,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3984,
+              y = 96,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6723,
+              visible = true,
+              properties = {
+                ["z"] = 18
+              }
+            },
+            {
+              id = 364,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4024,
+              y = 104,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6716,
+              visible = true,
+              properties = {
+                ["z"] = 18
+              }
+            },
+            {
+              id = 365,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4056,
+              y = 224,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6665,
+              visible = true,
+              properties = {
+                ["z"] = 18
+              }
+            },
+            {
+              id = 366,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4104,
+              y = 96,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6640,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            },
+            {
+              id = 367,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4144,
+              y = 104,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6640,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            },
+            {
+              id = 368,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4240,
+              y = 88,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6640,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            },
+            {
+              id = 369,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4280,
+              y = 80,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6640,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            },
+            {
+              id = 370,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3912,
+              y = 224,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6640,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            },
+            {
+              id = 371,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3952,
+              y = 232,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6640,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            },
+            {
+              id = 372,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4184,
+              y = 208,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6640,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            },
+            {
+              id = 373,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4224,
+              y = 216,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6640,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            },
+            {
+              id = 374,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4108,
+              y = 98,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6664,
+              visible = true,
+              properties = {
+                ["z"] = 18
+              }
+            },
+            {
+              id = 375,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4140,
+              y = 112,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6722,
+              visible = true,
+              properties = {
+                ["z"] = 18
+              }
+            },
+            {
+              id = 376,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4288,
+              y = 80,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6665,
+              visible = true,
+              properties = {
+                ["z"] = 18
+              }
+            },
+            {
+              id = 377,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4240,
+              y = 96,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6716,
+              visible = true,
+              properties = {
+                ["z"] = 18
+              }
+            },
+            {
+              id = 378,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3910,
+              y = 232,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6716,
+              visible = true,
+              properties = {
+                ["z"] = 18
+              }
+            },
+            {
+              id = 381,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4181,
+              y = 215,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6716,
+              visible = true,
+              properties = {
+                ["z"] = 18
+              }
+            },
+            {
+              id = 379,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4220,
+              y = 224,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6720,
+              visible = true,
+              properties = {
+                ["z"] = 18
+              }
+            },
+            {
+              id = 380,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3954,
+              y = 234,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6664,
+              visible = true,
+              properties = {
+                ["z"] = 18
+              }
+            },
+            {
+              id = 382,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4085,
+              y = 224,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6724,
+              visible = true,
+              properties = {
+                ["z"] = 18
               }
             }
           }

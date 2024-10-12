@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="35" nextobjectid="359">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="35" nextobjectid="383">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -31,6 +31,10 @@
  <tileset firstgid="6620" source="sprites/banditcave/tables-hori.tsx"/>
  <tileset firstgid="6623" source="sprites/banditcave/stools.tsx"/>
  <tileset firstgid="6626" source="sprites/banditcave/graffiti-skull-bones.tsx"/>
+ <tileset firstgid="6640" source="sprites/weapons/Dishes A.tsx"/>
+ <tileset firstgid="6656" source="sprites/items/Meats A.tsx"/>
+ <tileset firstgid="6711" source="sprites/items/Bread A.tsx"/>
+ <tileset firstgid="6719" source="sprites/items/Cheese A.tsx"/>
  <layer id="2" name="floor" width="200" height="12">
   <properties>
    <property name="drawz" type="float" value="-2"/>
@@ -663,7 +667,7 @@
     <polygon points="0,0 0,112 32,80 128,80 160,48 384,48 416,80 480,80 480,0"/>
    </object>
   </objectgroup>
-  <objectgroup id="19" name="messhall" class="Room">
+  <objectgroup draworder="index" id="19" name="messhall" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="3"/>
    </properties>
@@ -673,37 +677,37 @@
    <object id="74" template="mapobjects/OutwardBoundary.tx" x="3840" y="320">
     <polygon points="0,-320 0,-240 96,-240 128,-272 480,-272 480,-320"/>
    </object>
-   <object id="318" gid="6620" x="4008" y="112" width="96" height="48">
+   <object id="318" gid="6620" x="4008" y="104" width="96" height="48">
     <properties>
      <property name="bodyheight" type="float" value="16"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="319" gid="6622" x="4128" y="120" width="96" height="48">
+   <object id="319" gid="6622" x="4128" y="112" width="96" height="48">
     <properties>
      <property name="bodyheight" type="float" value="16"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="320" gid="6622" x="3928" y="248" width="96" height="48">
+   <object id="320" gid="6622" x="3928" y="240" width="96" height="48">
     <properties>
      <property name="bodyheight" type="float" value="16"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="321" gid="6621" x="4064" y="240" width="96" height="48">
+   <object id="321" gid="6621" x="4064" y="232" width="96" height="48">
     <properties>
      <property name="bodyheight" type="float" value="16"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="322" gid="6620" x="4208" y="232" width="96" height="48">
+   <object id="322" gid="6620" x="4208" y="224" width="96" height="48">
     <properties>
      <property name="bodyheight" type="float" value="16"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="323" gid="6621" x="4256" y="104" width="96" height="48">
+   <object id="323" gid="6621" x="4256" y="96" width="96" height="48">
     <properties>
      <property name="bodyheight" type="float" value="16"/>
      <property name="bodysolid" type="bool" value="true"/>
@@ -792,6 +796,126 @@
     <properties>
      <property name="ammo" type="int" value="999999999"/>
      <property name="initialai" value="enterShootLeave"/>
+    </properties>
+   </object>
+   <object id="359" gid="6640" x="3984" y="88" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="16"/>
+    </properties>
+   </object>
+   <object id="362" gid="6640" x="4048" y="224" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="16"/>
+    </properties>
+   </object>
+   <object id="360" gid="6640" x="4024" y="96" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="16"/>
+    </properties>
+   </object>
+   <object id="361" gid="6640" x="4088" y="216" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="16"/>
+    </properties>
+   </object>
+   <object id="363" gid="6723" x="3984" y="96" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="18"/>
+    </properties>
+   </object>
+   <object id="364" gid="6716" x="4024" y="104" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="18"/>
+    </properties>
+   </object>
+   <object id="365" gid="6665" x="4056" y="224" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="18"/>
+    </properties>
+   </object>
+   <object id="366" gid="6640" x="4104" y="96" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="16"/>
+    </properties>
+   </object>
+   <object id="367" gid="6640" x="4144" y="104" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="16"/>
+    </properties>
+   </object>
+   <object id="368" gid="6640" x="4240" y="88" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="16"/>
+    </properties>
+   </object>
+   <object id="369" gid="6640" x="4280" y="80" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="16"/>
+    </properties>
+   </object>
+   <object id="370" gid="6640" x="3912" y="224" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="16"/>
+    </properties>
+   </object>
+   <object id="371" gid="6640" x="3952" y="232" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="16"/>
+    </properties>
+   </object>
+   <object id="372" gid="6640" x="4184" y="208" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="16"/>
+    </properties>
+   </object>
+   <object id="373" gid="6640" x="4224" y="216" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="16"/>
+    </properties>
+   </object>
+   <object id="374" gid="6664" x="4108" y="98" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="18"/>
+    </properties>
+   </object>
+   <object id="375" gid="6722" x="4140" y="112" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="18"/>
+    </properties>
+   </object>
+   <object id="376" gid="6665" x="4288" y="80" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="18"/>
+    </properties>
+   </object>
+   <object id="377" gid="6716" x="4240" y="96" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="18"/>
+    </properties>
+   </object>
+   <object id="378" gid="6716" x="3910" y="232" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="18"/>
+    </properties>
+   </object>
+   <object id="381" gid="6716" x="4181" y="215" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="18"/>
+    </properties>
+   </object>
+   <object id="379" gid="6720" x="4220" y="224" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="18"/>
+    </properties>
+   </object>
+   <object id="380" gid="6664" x="3954" y="234" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="18"/>
+    </properties>
+   </object>
+   <object id="382" gid="6724" x="4085" y="224" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="18"/>
     </properties>
    </object>
   </objectgroup>
