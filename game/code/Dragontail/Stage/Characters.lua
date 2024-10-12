@@ -250,10 +250,12 @@ end
 
 function Characters.getCylinderFloorZ(x, y, z, r, h)
     local floorz
-    for _, bounds in ipairs(solids) do
-        local fz = bounds:getCylinderFloorZ(x, y, z, r, h)
-        if fz then
-            floorz = math.max(floorz or fz, fz)
+    for _, solid in ipairs(solids) do
+        if solid.bodysolid then
+            local fz = solid:getCylinderFloorZ(x, y, z, r, h)
+            if fz then
+                floorz = math.max(floorz or fz, fz)
+            end
         end
     end
     return floorz
