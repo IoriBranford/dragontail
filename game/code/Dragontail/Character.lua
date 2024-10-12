@@ -582,7 +582,7 @@ end
 
 function Character:setDirectionalAnimation(basename, angle, frame1, loopframe)
     local animation = self.getDirectionalAnimation_angle(basename, angle, self.animationdirections)
-    self:changeAseAnimation(animation, frame1, loopframe)
+    self:changeAnimation(animation, frame1, loopframe)
 end
 
 function Character:setEmote(emotename)
