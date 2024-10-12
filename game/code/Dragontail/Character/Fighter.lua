@@ -2,6 +2,7 @@ local Audio = require "System.Audio"
 local Database = require "Data.Database"
 local Common   = require "Dragontail.Character.Common"
 local Characters = require "Dragontail.Stage.Characters"
+local TiledObject = require "Tiled.Object"
 
 ---@class Fighter:Common
 local Fighter = class(Common)
@@ -421,7 +422,7 @@ function Fighter:launchProjectile(type, dirx, diry, dirz, attackid)
     local bodyradius, bodyheight = self.bodyradius or 0, self.bodyheight or 0
     local speed = projectiledata.speed or 1
     local projectileheight = self.projectilelaunchheight or (bodyheight / 2)
-    local projectile = {
+    local projectile = TiledObject.from {
         x = x + bodyradius*dirx,
         y = y + bodyradius*diry,
         z = z + projectileheight,
