@@ -744,7 +744,8 @@ function Player:runWithEnemy(enemy)
     Audio.play(self.dashsound)
     enemy.canbeattacked = false
     local targetfacex, targetfacey = self.facex, self.facey
-    local radii = self.bodyradius + enemy.bodyradius
+    local grabradius = self.grabradius or 8
+    local radii = grabradius + enemy.bodyradius
     local holdangle = atan2(targetfacey, targetfacex)
     Database.fill(self, "running-with-enemy")
     Database.fill(enemy, "human-in-spinning-throw")
