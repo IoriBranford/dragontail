@@ -456,6 +456,9 @@
     </properties>
    </object>
    <object id="104" template="mapobjects/CameraPath.tx" x="2448" y="144">
+    <properties>
+     <property name="shadowcolor" type="color" value="#00000000"/>
+    </properties>
     <polyline points="64,0 672,0"/>
    </object>
    <object id="260" name="camerawarp" x="2512" y="144">
@@ -579,36 +582,42 @@
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
+     <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
    <object id="354" gid="6632" x="2554" y="145" width="16" height="16" rotation="345">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
+     <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
    <object id="355" gid="6637" x="2530" y="168" width="16" height="16" rotation="15">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
+     <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
    <object id="356" gid="6631" x="2528" y="176" width="16" height="16" rotation="15">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
+     <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
    <object id="357" gid="6636" x="2573.66" y="96" width="16" height="16" rotation="45">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
+     <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
    <object id="358" gid="6630" x="2568" y="101.657" width="16" height="16" rotation="45">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
+     <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
   </objectgroup>

@@ -16155,7 +16155,9 @@ return {
                 { x = 64, y = 0 },
                 { x = 672, y = 0 }
               },
-              properties = {}
+              properties = {
+                ["shadowcolor"] = "#00000000"
+              }
             },
             {
               id = 260,
@@ -16650,7 +16652,8 @@ return {
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
-                ["drawz"] = -0.5
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
               }
             },
             {
@@ -16667,7 +16670,8 @@ return {
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
-                ["drawz"] = -0.5
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
               }
             },
             {
@@ -16684,7 +16688,8 @@ return {
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
-                ["drawz"] = -0.5
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
               }
             },
             {
@@ -16701,7 +16706,8 @@ return {
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
-                ["drawz"] = -0.5
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
               }
             },
             {
@@ -16718,7 +16724,8 @@ return {
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
-                ["drawz"] = -0.5
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
               }
             },
             {
@@ -16735,7 +16742,8 @@ return {
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
-                ["drawz"] = -0.5
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
               }
             }
           }
