@@ -136,6 +136,15 @@ function Character:accelerateTowardsVel(targetvelx, targetvely, t, e)
     end
 end
 
+function Character:updateGravity()
+    local gravity = self.gravity or 0
+    if gravity == 0 then
+        return
+    end
+    local floorz = Characters.getCylinderFloorZ(self.x, self.y, self.z, self.bodyradius, self.bodyheight) or 0
+    self.velz = max(floorz - self.z, self.velz - gravity)
+end
+
 function Character:updatePosition()
     self.x = self.x + self.velx
     self.y = self.y + self.vely
