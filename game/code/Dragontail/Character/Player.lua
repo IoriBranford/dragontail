@@ -259,21 +259,33 @@ function Player:drawWeaponInHand(frame, x, y)
         return
     end
 
-    local weaponasefile = weapontype.asefile
-    local weaponase = Assets.get(weaponasefile) ---@type Aseprite
-    if not weaponase then return end
+    local weaponase = Assets.get(weapontype.asefile)
+    ---@cast weaponase Aseprite
+    if weaponase then
+        local weaponanim = weaponase.animations["inhand"]
+        local weaponframe = weaponanim and weaponanim[1]
+        if not weaponframe then return end
 
-    local weaponanim = weaponase.animations["inhand"]
-    local weaponframe = weaponanim and weaponanim[1]
-    if not weaponframe then return end
+        love.graphics.push()
+        love.graphics.translate(x + weaponx, y + weapony)
+        love.graphics.rotate(weaponr)
+        love.graphics.scale(1, weaponsy)
+        love.graphics.translate(-weapontype.spriteoriginx, -weapontype.spriteoriginy)
+        weaponframe:draw()
+        love.graphics.pop()
+    else
+        local weapontile = Assets.getTile(weapontype.tileset, weapontype.tileid)
+        if not weapontile then
+            return
+        end
 
-    love.graphics.push()
-    love.graphics.translate(x + weaponx, y + weapony)
-    love.graphics.rotate(weaponr)
-    love.graphics.scale(1, weaponsy)
-    love.graphics.translate(-weapontype.spriteoriginx, -weapontype.spriteoriginy)
-    weaponframe:draw()
-    love.graphics.pop()
+        love.graphics.draw(weapontile.image,
+            weapontile.quad,
+            x + weaponx, y + weapony,
+            weaponr,
+            1, weaponsy,
+            weapontile.objectoriginx, weapontile.objectoriginy)
+    end
 
     local weaponhandlayer = self.aseprite.layers["weaponhand"]
     if weaponhandlayer then
