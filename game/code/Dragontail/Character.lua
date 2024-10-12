@@ -549,7 +549,8 @@ end
 function Character:getCylinderFloorZ(x, y, z, r, h)
     local floorz = self.z
     local points = self.points
-    if not points or points.outward then
+    local outward = not points or points.outward
+    if outward then
         floorz = floorz + self.bodyheight
     end
     if z < floorz then
@@ -557,8 +558,7 @@ function Character:getCylinderFloorZ(x, y, z, r, h)
         return
     end
 
-    if not self:getCirclePenetration(x, y, r) then
-        -- off edge
+    if outward and not self:getCirclePenetration(x, y, r) then
         return
     end
     return floorz
