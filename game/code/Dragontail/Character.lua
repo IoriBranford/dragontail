@@ -1,5 +1,5 @@
 local Database      = require "Data.Database"
-local Audio       = require "System.Audio"
+local Color      = require "Tiled.Color"
 local Config      = require "System.Config"
 local State       = require "Dragontail.Character.State"
 local Object      = require "Tiled.Object"
@@ -106,7 +106,8 @@ function Character:makeAfterImage()
         spriteoriginx = self.spriteoriginx,
         spriteoriginy = self.spriteoriginy,
         script = "Dragontail.Character.Common",
-        initialai = "afterimage"
+        initialai = "afterimage",
+        shadowcolor = 0
     })
     afterimage:setAseAnimation(self.aseanimation, self.animationframe)
 end
@@ -617,9 +618,13 @@ function Character:drawShapeShadow(fixedfrac)
 end
 
 function Character:drawSpriteShadow(fixedfrac)
+    local red, green, blue, alpha = Color.unpack(self.shadowcolor or 0xFF000000)
+    if alpha <= 0 then
+        return
+    end
     fixedfrac = fixedfrac or 0
     local x, y = self.x + self.velx * fixedfrac, self.y + self.vely * fixedfrac
-    love.graphics.setColor(0,0,0)
+    love.graphics.setColor(red, green, blue, alpha)
     local floorz = Characters.getCylinderFloorZ(x, y, self.z, self.bodyradius, self.bodyheight) or 0
     love.graphics.push()
     love.graphics.translate(x, y - floorz)
