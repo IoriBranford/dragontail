@@ -132,6 +132,34 @@ local function findInstantThrowDir(self, targetfacex, targetfacey)
     return throwdirx, throwdiry, throwdirz
 end
 
+local function findInstantThrowTarget(self, targetfacex, targetfacey)
+    local projectileheight = self.projectilelaunchheight or (self.bodyheight / 2)
+    local projectilez = self.z + projectileheight
+    local enemy, enemytargetingscore = nil, 128
+    Characters.search("enemies",
+    function(e)
+        if not e.getTargetingScore then
+            return
+        end
+        local score = e:getTargetingScore(self.x, self.y, targetfacex, targetfacey)
+
+        local etop, ebottom = e.z + self.bodyheight, e.z
+        if ebottom > projectilez or projectilez > etop then
+            score = score / 2
+        end
+        if score < enemytargetingscore then
+            enemy, enemytargetingscore = e, score
+        end
+    end)
+    if enemy then
+        return enemy.x, enemy.y, enemy.z
+    end
+    return self.x + targetfacex*512,
+        self.y + targetfacey*512,
+        self.z
+end
+
+
 function Player:init()
     Fighter.init(self)
     self.comboindex = 0
@@ -421,8 +449,8 @@ function Player:control()
                     local projectiledata = Database.get(self.weaponinhand)
                     local attackchoices = projectiledata and projectiledata.attackchoices
                     local attackid = attackchoices and attackchoices[math.min(#attackchoices, 2)]
-                    local dirx, diry, dirz = findInstantThrowDir(self, targetfacex, targetfacey)
-                    return "throwWeapon", dirx, diry, dirz, attackid
+                    local targetx, targety, targetz = findInstantThrowTarget(self, targetfacex, targetfacey)
+                    return "throwWeapon", targetx, targety, targetz, attackid
                 end
                 return "straightAttack", "running-kick", atan2(vely, velx)
             end
@@ -474,7 +502,7 @@ function Player:control()
                         return "aimThrow"
                     end
                 else
-                    return "throwWeapon", findInstantThrowDir(self, targetfacex, targetfacey)
+                    return "throwWeapon", findInstantThrowTarget(self, targetfacex, targetfacey)
                 end
             end
 
@@ -614,10 +642,11 @@ function Player:aimThrow()
 
         if not attackbutton then
             self.crosshair.visible = false
-            local throwx, throwy, throwz = self.facex, self.facey, 0
+            local throwx, throwy, throwz
             if lockonenemy then
-                throwx, throwy, throwz = norm(lockonenemy.x - self.x, lockonenemy.y - self.y,
-                    (lockonenemy.z + lockonenemy.bodyheight/2) - (self.z + self.bodyheight/2))
+                throwx, throwy, throwz = lockonenemy.x, lockonenemy.y, lockonenemy.z
+            else
+                throwx, throwy, throwz = self.x + self.facex*512, self.y + self.facey*512, self.z
             end
             return "throwWeapon", throwx, throwy, throwz
         end
@@ -640,11 +669,16 @@ function Player:aimThrow()
     end
 end
 
-function Player:throwWeapon(dirx, diry, dirz, attackid)
-    self.facex, self.facey = norm(dirx, diry)
-    local angle = atan2(diry, dirx)
+function Player:throwWeapon(targetx, targety, targetz, attackid)
+    if targetx ~= self.x or targety ~= self.y then
+        self.facex, self.facey = norm(targetx-self.x, targety-self.y)
+    end
+    local angle = atan2(self.facey, self.facex)
     self:setDirectionalAnimation("throw", angle, 1)
-    self:launchProjectile(self.weaponinhand, dirx, diry, dirz, attackid)
+    self:launchProjectileAtPosition({
+        type = self.weaponinhand,
+        gravity = 1/16
+    }, targetx, targety, targetz, attackid)
     self.weaponinhand = nil
     Audio.play(self.throwsound)
     local t = self.throwtime or 6
