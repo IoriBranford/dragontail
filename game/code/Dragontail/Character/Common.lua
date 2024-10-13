@@ -134,6 +134,7 @@ function Common:projectileEmbed(opponent, ooby, oobz)
     local oobx = type(opponent) == "number" and opponent
     opponent = type(opponent) == "table" and opponent or nil
     self.velx, self.vely, self.velz = 0, 0, 0
+    self.gravity = 0
     if opponent then
         for t = 1, 30 do
             if opponent then
@@ -150,7 +151,8 @@ function Common:projectileEmbed(opponent, ooby, oobz)
         if self.itemtype and #items < MaxProjectileItems and numopponentshit <= 0 then
             Characters.spawn({
                 type = self.itemtype,
-                x = self.x, y = self.y, z = self.z
+                x = self.x, y = self.y, z = self.z,
+                gravity = 0
             })
             self:disappear()
         else
