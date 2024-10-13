@@ -410,11 +410,12 @@ function Fighter:launchProjectileAtObject(type, object, attackid)
     return self:launchProjectileAtPosition(type, object.x, object.y, object.z, attackid)
 end
 
-function Fighter:launchProjectileAtPosition(typ, targetx, targety, targetz, attackid)
-    local projectiledata = Database.get(typ)
-    if not projectiledata then
-        return
+function Fighter:launchProjectileAtPosition(projectile, targetx, targety, targetz, attackid)
+    if type(projectile) == "string" then
+        projectile = { type = projectile }
     end
+    local projectiledata = Database.get(projectile.type)
+    Database.fillBlanks(projectile, projectiledata)
 
     local x, y, z = self.x, self.y, self.z
     local distx, disty, distz = targetx - x, targety - y, targetz - z
@@ -425,8 +426,8 @@ function Fighter:launchProjectileAtPosition(typ, targetx, targety, targetz, atta
     local dst = math.len(distx, disty, distz)
     local dirx, diry = distx/dst, disty/dst
 
-    local gravity = projectiledata.gravity or 0
-    local speed = projectiledata.speed or 1
+    local gravity = projectile.gravity or 0
+    local speed = projectile.speed or 1
     if speed == 0 then
         speed = 1
     end
@@ -441,17 +442,14 @@ function Fighter:launchProjectileAtPosition(typ, targetx, targety, targetz, atta
     -- v0 = dz/t - gravity*t/2
     local velz = distz/time + gravity * time * .5
     local projectileheight = self.projectilelaunchheight or (self.bodyheight / 2)
-    local projectile = {
-        x = x,
-        y = y,
-        z = z + projectileheight,
-        velx = velx,
-        vely = vely,
-        velz = velz,
-        type = typ,
-        attackangle = atan2(diry, dirx),
-        thrower = self
-    }
+    projectile.x = x
+    projectile.y = y
+    projectile.z = z + projectileheight
+    projectile.velx = velx
+    projectile.vely = vely
+    projectile.velz = velz
+    projectile.attackangle = atan2(diry, dirx)
+    projectile.thrower = self
 
     if Database.get(attackid) then
         projectile.defaultattack = attackid
