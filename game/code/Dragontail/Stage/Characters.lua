@@ -2,6 +2,7 @@ local Database = require "Data.Database"
 local Character= require "Dragontail.Character"
 local State    = require "Dragontail.Character.State"
 local Assets = require "Tiled.Assets"
+local TiledObject  = require "Tiled.Object"
 
 ---@module 'Dragontail.Stage.Characters'
 local Characters = {}
@@ -45,6 +46,9 @@ function Characters.getGroup(group)
 end
 
 function Characters.spawn(object)
+    if not getmetatable(object) then
+        TiledObject.from(object)
+    end
     local typ = object.type
     if typ then
         Database.fillBlanks(object, typ)

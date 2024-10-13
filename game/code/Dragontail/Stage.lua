@@ -59,6 +59,7 @@ function Stage.init(stagefile)
     local CameraTopMargin = 32
 
     camera = Characters.spawn({
+        visible = false,
         shape = "polygon",
         bodysolid = true,
         bodyheight = 512,
