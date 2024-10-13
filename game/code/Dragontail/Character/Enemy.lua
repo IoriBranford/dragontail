@@ -350,7 +350,7 @@ function Enemy:enterShootLeave()
     self:disappear()
 end
 
-function Enemy:prepareAttack(attacktype, dirx, diry)
+function Enemy:prepareAttack(attacktype, targetx, targety)
     if attacktype then
         self.attacktype = attacktype
         Database.fill(self, attacktype)
@@ -359,24 +359,19 @@ function Enemy:prepareAttack(attacktype, dirx, diry)
     self:stopGuarding()
     self.canbeattacked = not self.attackwindupinvuln
     self.canbegrabbed = not self.attackwindupinvuln
-    self.velx, self.vely = 0, 0
 
     local target
-    if type(dirx) == "table" then
-        target = dirx
+    if type(targetx) == "table" then
+        target = targetx
         target.attacker = self
-        dirx, diry = 1, 0
-        local distx, disty = target.x - self.x, target.y - self.y
-        if distx ~= 0 or disty ~= 0 then
-            dirx, diry = math.norm(distx, disty)
-        end
+        targetx, targety = target.x, target.y
     end
 
-    if dirx and diry then
-        if dirx == 0 and diry == 0 then
-            dirx = 1
+    if targetx and targety then
+        local dirx, diry = norm(targetx - self.x, targety - self.y)
+        if dirx == dirx then
+            self.facex, self.facey = dirx, diry
         end
-        self.facex, self.facey = dirx, diry
     end
 
     local angle = atan2(self.facey, self.facex)
@@ -384,6 +379,7 @@ function Enemy:prepareAttack(attacktype, dirx, diry)
 
     Audio.play(self.windupsound)
     for i = 1, (self.attackwinduptime or 20) do
+        self:accelerateTowardsVel(0, 0, 4)
         -- if target then
         --     local dodgeangle = findAngleToDodgeIncoming(self, target)
         --     if dodgeangle then
@@ -395,45 +391,40 @@ function Enemy:prepareAttack(attacktype, dirx, diry)
     end
 end
 
-function Enemy:executeAttack(attacktype, dirx, diry, dirz)
+function Enemy:executeAttack(attacktype, targetx, targety, targetz)
     if attacktype then
         Database.fill(self, attacktype)
     end
     self.numopponentshit = 0
     self:stopGuarding()
 
-    if type(dirx) == "table" then
-        local target = dirx
+    local target
+    if type(targetx) == "table" then
+        target = targetx
         target.attacker = self
-        dirx, diry = 1, 0
-        local distx, disty = target.x - self.x, target.y - self.y
-        if distx ~= 0 or disty ~= 0 then
-            dirx, diry = math.norm(distx, disty)
+        targetx, targety, targetz = target.x, target.y, target.z
+    end
+
+    if targetx and targety then
+        local dirx, diry = norm(targetx - self.x, targety - self.y)
+        if dirx == dirx then
+            self.facex, self.facey = dirx, diry
         end
     end
 
-    if dirx and diry then
-        if dirx == 0 and diry == 0 then
-            dirx = 1
-        end
-        self.facex, self.facey = dirx, diry
-    else
-        dirx, diry = self.facex, self.facey
-    end
-
-    local angle = atan2(diry, dirx)
+    local angle = atan2(self.facey, self.facex)
+    self:setDirectionalAnimation(self.swinganimation, angle, 1, self.swinganimationloopframe or 0)
 
     Audio.play(self.swingsound)
     local attackprojectile = self.attackprojectile
     if attackprojectile then
-        self:launchProjectile(attackprojectile, norm(dirx, diry, dirz))
+        self:launchProjectileAtPosition(attackprojectile, targetx, targety, targetz)
     else
         local attackangle = floor((angle + (pi/4)) / (pi/2)) * pi/2
         self:startAttack(attackangle)
     end
 
     local lungespeed = self.attacklungespeed or 0
-    self:setDirectionalAnimation(self.swinganimation, angle, 1, self.swinganimationloopframe or 0)
     local hittime = self.attackhittime or 10
     repeat
         lungespeed = Fighter.updateSlideSpeed(self, angle, lungespeed, self.attacklungedecel or 1)
@@ -463,14 +454,9 @@ end
 
 function Enemy:attack(attacktype)
     local opponent = self.opponents[1]
-    local dirx, diry, dirz = opponent.x - self.x, opponent.y - self.y, opponent.z - self.z
-    if dirx == 0 and diry == 0 and dirz == 0 then
-        dirx, diry, dirz = 1, 0, 0
-    else
-        dirx, diry, dirz = norm(dirx, diry, dirz)
-    end
+    local targetx, targety, targetz = opponent.x, opponent.y, opponent.z
     self:prepareAttack(attacktype, opponent)
-    self:executeAttack(attacktype, dirx, diry, dirz)
+    self:executeAttack(attacktype, targetx, targety, targetz)
     return "stand", 20
 end
 
