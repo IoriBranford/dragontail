@@ -406,10 +406,57 @@ function Fighter:getup(attacker)
     return recoverai
 end
 
-function Fighter:launchProjectileAtObject(type, object)
-    local distx, disty, distz = object.x - self.x, object.y - self.y, object.z - self.z
-    local dirx, diry, dirz = norm(distx, disty, distz)
-    return self:launchProjectile(type, dirx, diry, dirz)
+function Fighter:launchProjectileAtObject(type, object, attackid)
+    return self:launchProjectileAtPosition(type, object.x, object.y, object.z, attackid)
+end
+
+function Fighter:launchProjectileAtPosition(typ, targetx, targety, targetz, attackid)
+    local projectiledata = Database.get(typ)
+    if not projectiledata then
+        return
+    end
+
+    local x, y, z = self.x, self.y, self.z
+    local distx, disty, distz = targetx - x, targety - y, targetz - z
+    if distx == 0 and disty == 0 then
+        distx = 1
+    end
+
+    local dst = math.len(distx, disty, distz)
+    local dirx, diry = distx/dst, disty/dst
+
+    local gravity = projectiledata.gravity or 0
+    local speed = projectiledata.speed or 1
+    if speed == 0 then
+        speed = 1
+    end
+    local time = dst / speed
+
+    local velx = dirx * speed
+    local vely = diry * speed
+
+    -- z = gravity*t^2/2 + v0*t + z0
+    -- dz = gravity*t^2/2 + v0*t
+    -- dz/t = gravity*t/2 + v0
+    -- v0 = dz/t - gravity*t/2
+    local velz = distz/time + gravity * time * .5
+    local projectileheight = self.projectilelaunchheight or (self.bodyheight / 2)
+    local projectile = {
+        x = x,
+        y = y,
+        z = z + projectileheight,
+        velx = velx,
+        vely = vely,
+        velz = velz,
+        type = typ,
+        attackangle = atan2(diry, dirx),
+        thrower = self
+    }
+
+    if Database.get(attackid) then
+        projectile.defaultattack = attackid
+    end
+    return Characters.spawn(projectile)
 end
 
 function Fighter:launchProjectile(type, dirx, diry, dirz, attackid)
@@ -422,7 +469,7 @@ function Fighter:launchProjectile(type, dirx, diry, dirz, attackid)
     local bodyradius, bodyheight = self.bodyradius or 0, self.bodyheight or 0
     local speed = projectiledata.speed or 1
     local projectileheight = self.projectilelaunchheight or (bodyheight / 2)
-    local projectile = TiledObject.from {
+    local projectile = {
         x = x + bodyradius*dirx,
         y = y + bodyradius*diry,
         z = z + projectileheight,
