@@ -149,6 +149,30 @@ function Character:updatePosition()
     self.z = self.z + self.velz
 end
 
+function Character:makeHurtParticle()
+    local particletype = Database.get(self.hurtparticle)
+    if not particletype then
+        return
+    end
+
+    local hurtangle = self.hurtangle or 0
+    local speed = particletype.speed or 0
+    local arc = particletype.conearc or 0
+    hurtangle = hurtangle + (2*love.math.random() - 1)*arc
+    local cosangle = cos(hurtangle)
+    local sinangle = sin(hurtangle)
+    local velx = cosangle*speed
+    local vely = sinangle*speed
+    return Characters.spawn {
+        type = self.hurtparticle,
+        x = self.x + velx,
+        y = self.y + vely,
+        z = self.z + self.bodyheight/2,
+        velx = velx,
+        vely = vely
+    }
+end
+
 function Character:isHitStopOver()
     return self.hitstun <= 0 and self.hurtstun <= 0
 end
@@ -161,10 +185,14 @@ function Character:fixedupdateHitStop()
         end
     end
     if self.hurtstun > 0 then
+        self:makeHurtParticle()
         self.hurtstun = self.hurtstun - 1
         if self.hurtstun > 0 then
             return false
         end
+        self.hurtparticle = nil
+        self.scalex = 1
+        self.scaley = 1
     end
     return true
 end
@@ -185,9 +213,11 @@ function Character:fixedupdateShake(time)
 end
 
 function Character:update(dsecs, fixedfrac)
-    local s = min(4, self.hurtstun) * sin(self.hurtstun)
-    self.scalex = 1 + s/8
-    self.scaley = 1 - s/32
+    if self.hurtstun > 0 then
+        local s = min(4, self.hurtstun) * sin(self.hurtstun)
+        self.scalex = 1 + s/8
+        self.scaley = 1 - s/32
+    end
     self.originy = (self.spriteoriginy or 0) + self.z
 end
 

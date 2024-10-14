@@ -18,7 +18,7 @@ local MaxProjectileItems = 16
 local Common = class(Character)
 
 function Common:spark()
-    wait(self.sparktime or 30)
+    wait(self.lifetime or 30)
     self:disappear()
 end
 

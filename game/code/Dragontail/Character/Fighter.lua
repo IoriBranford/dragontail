@@ -83,6 +83,12 @@ function Fighter:makeImpactSpark(attacker, sparktype)
 end
 
 function Fighter:hurt(attacker)
+    local hurtangle = atan2(attacker.y - self.y, attacker.x - self.x)
+    if not hurtangle == hurtangle then
+        hurtangle = 0
+    end
+    self.hurtangle = hurtangle
+    self.hurtparticle = attacker.attackhurtparticle
     self:makeImpactSpark(attacker, attacker.hitspark)
     self.health = self.health - attacker.attackdamage
     self.velx, self.vely = 0, 0
