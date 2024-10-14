@@ -677,7 +677,8 @@ function Player:throwWeapon(targetx, targety, targetz, attackid)
     self:setDirectionalAnimation("throw", angle, 1)
     self:launchProjectileAtPosition({
         type = self.weaponinhand,
-        gravity = 1/16
+        gravity = 1/8,
+        speed = 16
     }, targetx, targety, targetz, attackid)
     self.weaponinhand = nil
     Audio.play(self.throwsound)
