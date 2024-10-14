@@ -148,7 +148,6 @@ function TiledObject:_init(map)
     local gid = self.gid
     local tile = self.tile
     local maptiles = map and map.tiles
-    local width, height = self.width, self.height
     local flipx, flipy = 1, 1
     if maptiles and gid then
         gid, flipx, flipy = Gid.parse(gid)
@@ -157,8 +156,6 @@ function TiledObject:_init(map)
     if tile then
         self:initTile(tile, flipx, flipy)
     else
-        self.width = width or 2
-        self.height = height or 2
         local shape = self.shape
         if shape == "rectangle" then
             self.draw = self.drawRectangle
@@ -369,6 +366,8 @@ function TiledObject:getTileRect()
     local ox, oy = 0, 0
     if tile then
         ox, oy = tile.objectoriginx, tile.objectoriginy
+        w = w or tile.width
+        h = h or tile.height
     end
     return x - ox, y - oy, w, h
 end
@@ -528,7 +527,7 @@ local function drawAsColorRect(self, color, mode)
     if mode == "line" then
         x, y = .5, .5
     end
-    love.graphics.rectangle(mode, x, y, self.width, self.height, self.roundcorners or 0)
+    love.graphics.rectangle(mode, x, y, self.width or 2, self.height or 2, self.roundcorners or 0)
 end
 
 function TiledObject:drawRectangle()
@@ -543,7 +542,7 @@ end
 function TiledObject:drawEllipse()
     pushTransform(self)
 
-    local hw, hh = self.width/2, self.height/2
+    local hw, hh = (self.width or 2)/2, (self.height or 2)/2
 
     local r,g,b,a = Color.unpack(self.color)
     love.graphics.setColor(r,g,b,a)
@@ -581,10 +580,10 @@ function TiledObject:drawText(fixedfrac)
     local velx, vely = self.velx or 0, self.vely or 0
     fixedfrac = fixedfrac or 0
     local x, y = self.x + velx * fixedfrac, self.y + vely * fixedfrac
-    local w, h = self.width, self.height
+    local lineh = font:getHeight()
+    local w, h = self.width or love.graphics.getWidth(), self.height or lineh
     local _, lines = font:getWrap(str, w)
     local n = #lines
-    local lineh = font:getHeight()
     local valign = self.valign
     if valign == "bottom" then
         y = y + h - lineh*n
@@ -593,7 +592,7 @@ function TiledObject:drawText(fixedfrac)
     end
     for i = 1, n do
         love.graphics.printf(lines[i], font, x, y,
-            self.width, self.halign,
+            w, self.halign,
             self.rotation,
             self.scalex, self.scaley,
             self.originx or 0, self.originy or 0,
