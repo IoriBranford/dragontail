@@ -48,6 +48,20 @@ function Common:blinkOut(t)
     self:disappear()
 end
 
+function Common:shrinkOut(t)
+    t = t or self.lifetime or 60
+    local sx, sy = self.scalex or 1, self.scaley or 1
+    self.scalex, self.scaley = sx, sy
+    local shrinkspeedx = -sx/t
+    local shrinkspeedy = -sy/t
+    for i = 1, t do
+        self.scalex = self.scalex + shrinkspeedx
+        self.scaley = self.scaley + shrinkspeedy
+        yield()
+    end
+    self:disappear()
+end
+
 function Common:dropDefeatItem()
     local item = self.item
     if not item and self.itemtype then
