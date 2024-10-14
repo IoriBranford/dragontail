@@ -4,4 +4,5 @@ spark-guard,sprites/vfx.jase,Dragontail.Character.Common,spark,guard,0,106,34,9,
 spark-bighit,sprites/vfx.jase,Dragontail.Character.Common,spark,bighit,0,98,58,9,,,,,
 spark-fall-down-dust,sprites/vfx/dust-on-person-fall.jase,Dragontail.Character.Common,spark,Complete,0,32,24,24,0.5,,,,
 spark-stone-shatter,sprites/weapons/stone.jase,Dragontail.Character.Common,spark,Shatter,0,8,8,12,,,,,
-particle-blood,sprites/vfx.jase,Dragontail.Character.Common,shrinkOut,blood,,3,3,30,,5,0.392699081698724,0.125,4290772992
+particle-blood,sprites/vfx.jase,Dragontail.Character.Common,shrinkOut,liquid,,3,3,30,,3,0.392699081698724,0.125,4290772992
+particle-hit-sweat,sprites/vfx.jase,Dragontail.Character.Common,shrinkOut,liquid,,3,3,6,,4,1.0471975511966,,
