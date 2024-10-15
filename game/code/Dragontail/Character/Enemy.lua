@@ -30,6 +30,7 @@ end
 local function totalAttackRange(attackradius, attacklungespeed, attacklungedecel)
     return attackradius + Fighter.GetSlideDistance(attacklungespeed or 0, attacklungedecel or 1)
 end
+Enemy.TotalAttackRange = totalAttackRange
 
 function Enemy:findAngleToDodgeIncoming(incoming)
     local dodgespeed = self.dodgespeed
