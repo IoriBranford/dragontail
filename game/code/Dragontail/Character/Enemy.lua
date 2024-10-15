@@ -31,7 +31,7 @@ local function totalAttackRange(attackradius, attacklungespeed, attacklungedecel
     return attackradius + Fighter.GetSlideDistance(attacklungespeed or 0, attacklungedecel or 1)
 end
 
-local function findAngleToDodgeIncoming(self, incoming)
+function Enemy:findAngleToDodgeIncoming(incoming)
     local dodgespeed = self.dodgespeed
     if not dodgespeed then
         return
@@ -113,7 +113,7 @@ function Enemy:stand(duration)
             local standanimation = self.getDirectionalAnimation_angle("Stand", faceangle, self.animationdirections)
             self:changeAseAnimation(standanimation)
 
-            local dodgeangle = findAngleToDodgeIncoming(self, opponent)
+            local dodgeangle = self:findAngleToDodgeIncoming(opponent)
             if dodgeangle then
                 return "dodgeIncoming", dodgeangle
             end
@@ -244,7 +244,7 @@ function Enemy:approach()
         oppox, oppoy = opponent.x, opponent.y
         local tooppox, tooppoy = oppox - x, oppoy - y
         -- local seesopponent = math.dot(self.facex, self.facey, tooppox, tooppoy) >= 0
-        local dodgeangle = findAngleToDodgeIncoming(self, opponent)
+        local dodgeangle = self:findAngleToDodgeIncoming(opponent)
         if dodgeangle then
             return "dodgeIncoming", dodgeangle
         end
@@ -381,7 +381,7 @@ function Enemy:prepareAttack(attacktype, targetx, targety)
     for i = 1, (self.attackwinduptime or 20) do
         self:accelerateTowardsVel(0, 0, 4)
         -- if target then
-        --     local dodgeangle = findAngleToDodgeIncoming(self, target)
+        --     local dodgeangle = self:findAngleToDodgeIncoming(target)
         --     if dodgeangle then
         --         target.attacker = nil
         --         return "dodgeIncoming", dodgeangle
