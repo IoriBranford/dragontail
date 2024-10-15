@@ -15881,7 +15881,9 @@ return {
               rotation = 0,
               gid = 5296,
               visible = true,
-              properties = {}
+              properties = {
+                ["shadowcolor"] = ""
+              }
             },
             {
               id = 235,
@@ -15909,7 +15911,9 @@ return {
               rotation = 0,
               gid = 5293,
               visible = true,
-              properties = {}
+              properties = {
+                ["shadowcolor"] = "#00000000"
+              }
             },
             {
               id = 267,
