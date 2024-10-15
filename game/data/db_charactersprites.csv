@@ -6,6 +6,7 @@ container-stool,,,,,,,,4278190080,,,
 furniture-table,,,,,,,,4278190080,,,
 container-crate-tall,,,,,,,,4278190080,,,
 container-barrel,,,,,,,,4278190080,,,
+container-barrel-infinite,,,,,,,,4278190080,,barrelA,closed
 food-container,sprites/food-container.jase,16,24,,,,,4278190080,,,
 food-fish,sprites/items.jase,32,16,,,,,4278190080,,,
 food-bigfish,sprites/items.jase,32,16,,,,,4278190080,,,

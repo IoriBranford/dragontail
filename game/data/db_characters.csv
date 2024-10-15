@@ -6,6 +6,7 @@ container-stool,container,10,16,12,TRUE,true,,TRUE,,0.5,,,,,,,,,,,,,Dragontail.C
 furniture-table,container,20,16,16,TRUE,true,,,,0.5,,,,,,,,,,,,,Dragontail.Character.Fighter,furnitureIdle,,hurt,,,,,,,,,,,,,,,1,0,containerBreak,furnitureIdle,,,,
 container-crate-tall,container,15,16,30,TRUE,true,,TRUE,,0.5,,,,,,,,,,,,,Dragontail.Character.Fighter,containerIdle,,hurt,,,,,,,,,,,,,,,1,0,containerBreak,containerIdle,,,,
 container-barrel,container,15,12,24,TRUE,true,,TRUE,,0.5,,,,,,,,,,,,,Dragontail.Character.Fighter,containerIdle,,hurt,,,,,,,,,,,,,,,1,0,containerBreak,containerIdle,,,,
+container-barrel-infinite,container,15,12,24,TRUE,true,,TRUE,,0.5,,,,,,,,,,,,,Dragontail.Character.Fighter,containerIdle,,hurt,,,,,,,,,,,,,,,1,0,containerBreak,containerIdle,,,,container-barrel-infinite
 food-container,container,1,16,16,TRUE,true,,,,0.5,,,,,,,,,,,container,,Dragontail.Character.Common,,,containerBreak,,,,,,,,,,,,,,,1,0,containerBreak,,,,,
 food-fish,item,,18,8,,,,,,0.25,,,,,,,,,25,,fish,,Dragontail.Character.Common,itemWaitForPickup,,,,,,,,,,,,,,,,,,,,,,,,
 food-bigfish,item,,18,8,,,,,,0.25,,,,,,,,,100,,bigfish,,Dragontail.Character.Common,itemWaitForPickup,,,,,,,,,,,,,,,,,,,,,,,,

@@ -8,5 +8,9 @@
    <property name="name" value="collapse"/>
   </properties>
  </tile>
- <tile id="2" type="container-barrel"/>
+ <tile id="2" type="container-barrel">
+  <properties>
+   <property name="name" value="closed"/>
+  </properties>
+ </tile>
 </tileset>
