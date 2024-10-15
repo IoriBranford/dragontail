@@ -15818,7 +15818,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = 1
+          },
           objects = {
             {
               id = 65,
@@ -15882,7 +15884,7 @@ return {
               gid = 5296,
               visible = true,
               properties = {
-                ["shadowcolor"] = ""
+                ["shadowcolor"] = "#00000000"
               }
             },
             {

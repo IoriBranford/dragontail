@@ -364,6 +364,9 @@
    <object id="62" gid="5270" x="1872" y="232" width="64" height="64"/>
   </objectgroup>
   <objectgroup id="15" name="tolearngrabandthrowenemies" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="1"/>
+   </properties>
    <object id="65" template="mapobjects/OutwardBoundary.tx" x="2016" y="288" visible="1">
     <properties>
      <property name="bodyheight" type="float" value="64"/>
@@ -375,7 +378,7 @@
    </object>
    <object id="234" gid="5296" x="2112" y="64" width="64" height="128">
     <properties>
-     <property name="shadowcolor" type="" value=""/>
+     <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
    <object id="235" gid="5294" x="2112" y="64" width="64" height="128"/>
