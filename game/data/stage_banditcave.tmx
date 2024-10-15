@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="35" nextobjectid="383">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="36" nextobjectid="385">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -7,34 +7,34 @@
  <tileset firstgid="1" source="tilesets/caves/caves.tsx"/>
  <tileset firstgid="2449" source="tilesets/grassland.tsx"/>
  <tileset firstgid="5265" source="mapobjects/bandit/bandits.tsx"/>
- <tileset firstgid="5285" source="mapobjects/items.tsx"/>
- <tileset firstgid="5289" source="sprites/bandit/cavedoor2-diagonal.tsx"/>
- <tileset firstgid="5293" source="tilesets/veg/grassland/bushes.tsx"/>
- <tileset firstgid="5309" source="tilesets/veg/vegA1.tsx"/>
- <tileset firstgid="5357" source="tilesets/veg/grassland/tree2B_ss.tsx"/>
- <tileset firstgid="5613" source="tilesets/veg/grassland/tree3D_ss.tsx"/>
- <tileset firstgid="5869" source="tilesets/veg/grassland/tree2A_ss.tsx"/>
- <tileset firstgid="6125" source="tilesets/veg/vegA2.tsx"/>
- <tileset firstgid="6173" source="tilesets/veg/vegA3.tsx"/>
- <tileset firstgid="6221" source="tilesets/veg/vegA4.tsx"/>
- <tileset firstgid="6269" source="tilesets/veg/vegB1.tsx"/>
- <tileset firstgid="6317" source="tilesets/veg/vegB2.tsx"/>
- <tileset firstgid="6365" source="tilesets/veg/vegB3.tsx"/>
- <tileset firstgid="6413" source="tilesets/veg/vegC1.tsx"/>
- <tileset firstgid="6461" source="tilesets/veg/vegC2.tsx"/>
- <tileset firstgid="6509" source="tilesets/veg/vegC3.tsx"/>
- <tileset firstgid="6557" source="tilesets/veg/vegC4.tsx"/>
- <tileset firstgid="6605" source="sprites/containers/barrelA.tsx"/>
- <tileset firstgid="6608" source="sprites/containers/barrelB.tsx"/>
- <tileset firstgid="6611" source="sprites/containers/crates.tsx"/>
- <tileset firstgid="6617" source="sprites/banditcave/wall-torch.tsx"/>
- <tileset firstgid="6620" source="sprites/banditcave/tables-hori.tsx"/>
- <tileset firstgid="6623" source="sprites/banditcave/stools.tsx"/>
- <tileset firstgid="6626" source="sprites/banditcave/graffiti-skull-bones.tsx"/>
- <tileset firstgid="6640" source="sprites/weapons/Dishes A.tsx"/>
- <tileset firstgid="6656" source="sprites/items/Meats A.tsx"/>
- <tileset firstgid="6711" source="sprites/items/Bread A.tsx"/>
- <tileset firstgid="6719" source="sprites/items/Cheese A.tsx"/>
+ <tileset firstgid="5289" source="mapobjects/items.tsx"/>
+ <tileset firstgid="5293" source="sprites/bandit/cavedoor2-diagonal.tsx"/>
+ <tileset firstgid="5297" source="tilesets/veg/grassland/bushes.tsx"/>
+ <tileset firstgid="5313" source="tilesets/veg/vegA1.tsx"/>
+ <tileset firstgid="5361" source="tilesets/veg/grassland/tree2B_ss.tsx"/>
+ <tileset firstgid="5617" source="tilesets/veg/grassland/tree3D_ss.tsx"/>
+ <tileset firstgid="5873" source="tilesets/veg/grassland/tree2A_ss.tsx"/>
+ <tileset firstgid="6129" source="tilesets/veg/vegA2.tsx"/>
+ <tileset firstgid="6177" source="tilesets/veg/vegA3.tsx"/>
+ <tileset firstgid="6225" source="tilesets/veg/vegA4.tsx"/>
+ <tileset firstgid="6273" source="tilesets/veg/vegB1.tsx"/>
+ <tileset firstgid="6321" source="tilesets/veg/vegB2.tsx"/>
+ <tileset firstgid="6369" source="tilesets/veg/vegB3.tsx"/>
+ <tileset firstgid="6417" source="tilesets/veg/vegC1.tsx"/>
+ <tileset firstgid="6465" source="tilesets/veg/vegC2.tsx"/>
+ <tileset firstgid="6513" source="tilesets/veg/vegC3.tsx"/>
+ <tileset firstgid="6561" source="tilesets/veg/vegC4.tsx"/>
+ <tileset firstgid="6609" source="sprites/containers/barrelA.tsx"/>
+ <tileset firstgid="6612" source="sprites/containers/barrelB.tsx"/>
+ <tileset firstgid="6615" source="sprites/containers/crates.tsx"/>
+ <tileset firstgid="6621" source="sprites/banditcave/wall-torch.tsx"/>
+ <tileset firstgid="6624" source="sprites/banditcave/tables-hori.tsx"/>
+ <tileset firstgid="6627" source="sprites/banditcave/stools.tsx"/>
+ <tileset firstgid="6630" source="sprites/banditcave/graffiti-skull-bones.tsx"/>
+ <tileset firstgid="6644" source="sprites/weapons/Dishes A.tsx"/>
+ <tileset firstgid="6660" source="sprites/items/Meats A.tsx"/>
+ <tileset firstgid="6715" source="sprites/items/Bread A.tsx"/>
+ <tileset firstgid="6723" source="sprites/items/Cheese A.tsx"/>
  <layer id="2" name="floor" width="200" height="12">
   <properties>
    <property name="drawz" type="float" value="-2"/>
@@ -122,25 +122,25 @@
   </properties>
   <data encoding="base64" compression="zlib">
    <chunk x="0" y="-12" width="20" height="12">
-   eJxjYBgFo2AU0BPsFqGeWQBBIADQ
+   eJxjYBgFo2AU0BPsF6GeWQBCUADU
   </chunk>
    <chunk x="20" y="-12" width="20" height="12">
-   eJxjYBgFo2AUDDawSYQ4dQAinADH
+   eJxjYBgFo2AUDDawTYQ4dQAjPADL
   </chunk>
    <chunk x="-20" y="0" width="20" height="12">
-   eJxjYBi8YKvIQLtgFIyCwQ0Aew4Ayg==
+   eJxjYBi8YKfIQLtgFIyCwQ0Ah54Azg==
   </chunk>
    <chunk x="0" y="0" width="20" height="12">
-   eJzbK8IABr4SDAzroexcIHsPlD0KRsEoGLwAAD5YA08=
+   eJw7KMIABoESDAyboexCIPsAlD0KRsEoGLwAAIhYA2M=
   </chunk>
    <chunk x="20" y="0" width="20" height="12">
-   eJxjYCAP6IkzMOgDsYE4mQZgAWtFGBhsJRgY3kpQz8xRMAqGMwAAmv4C7g==
+   eJxjYCAPGIkzMBgDsYk4mQZgARtFGBgcJRgYPkpQz8xRMAqGMwAA624DBg==
   </chunk>
    <chunk x="40" y="0" width="20" height="12">
-   eJxjYMAEdyVQ+blofF40Pi7wFqrOlkj1o2AUjALSAAB9QgL6
+   eJxjYMAEDyVQ+YVofEE0Pi7wEarOkUj1o2AUjALSAADDkgMO
   </chunk>
    <chunk x="60" y="0" width="20" height="12">
-   eJxjYEAFb8UZGOTEGBjkgVhBjIEqQA9ojj4QG1DJPFoBXYmBdsEoGAWkAQB2SAK4
+   eJxjYEAFH8UZGJTEGBiUgVhFjIEqwAhojjEQm1DJPFoBQ4mBdsEoGAWkAQDj2ALY
   </chunk>
    <chunk x="80" y="0" width="20" height="12">
    eJxjYMAPZjMyMMwF4vlAPI8Rwp8DFeMCYm4gtgTiW0C1lkwEDCMAbIHm2AFxDhDzgmgKzQOBQqjbHRgpN2sUjILBBgCHIwhw
@@ -181,7 +181,7 @@
   </properties>
   <data encoding="base64" compression="zlib">
    <chunk x="0" y="0" width="20" height="12">
-   eJxjYBhZ4L0IA8MHEeqZ9x9klij1zOMHmiVARfPkgWYpUNE8faBZBlQ0bxRQBgDO9wRr
+   eJxjYBhZ4LMIA8MXEeqZxyzKwMAiSj3zhIFmiVDRPGWgWSpUNM8YaJYJFc0bBZQBAKiIA5Q=
   </chunk>
   </data>
  </layer>
@@ -191,7 +191,7 @@
   </properties>
   <data encoding="base64" compression="zlib">
    <chunk x="0" y="0" width="20" height="12">
-   eJxjYBgFgwm8F2Vg+CBKPfP+g8wSo555/ECzBKhonjzQLAUqmjfSAACbAAPq
+   eJxjYBgFgwl8FmVg+CJKPfOYxRgYWMSoZ54w0CwRKpqnDDRLhYrmjTQAAPOBAws=
   </chunk>
   </data>
  </layer>
@@ -201,7 +201,7 @@
   </properties>
   <data encoding="base64" compression="zlib">
    <chunk x="0" y="0" width="20" height="12">
-   eJxjYBgFo4B48FaMgeEdEL8H4g9ilJv3F2jGPyD+DzJLHGi+KNB8IH4PxB9EKTd/uAMAGSgLdA==
+   eJxjYBgFo4B48FGMgeETEH8G4i9ilJvHKM7AwATEzEDMAsQfRYHmA/FnIP4iSrn5wx0AAKd9CKc=
   </chunk>
   </data>
  </layer>
@@ -217,10 +217,10 @@
    <object id="27" template="mapobjects/CameraPath.tx" x="240" y="144">
     <polyline points="0,0 480,0"/>
    </object>
-   <object id="23" gid="5288" x="728" y="224" width="64" height="32"/>
-   <object id="24" gid="5288" x="864" y="168" width="64" height="32"/>
-   <object id="25" gid="5285" x="784" y="136" width="64" height="32"/>
-   <object id="26" gid="5286" x="848" y="248" width="64" height="32"/>
+   <object id="23" gid="5292" x="728" y="224" width="64" height="32"/>
+   <object id="24" gid="5292" x="864" y="168" width="64" height="32"/>
+   <object id="25" gid="5289" x="784" y="136" width="64" height="32"/>
+   <object id="26" gid="5290" x="848" y="248" width="64" height="32"/>
    <object id="237" template="mapobjects/OutwardBoundary.tx" x="448" y="32" visible="1">
     <polygon points="0,-32 0,64 512,64 512,-32"/>
    </object>
@@ -373,25 +373,25 @@
    <object id="66" template="mapobjects/CameraPath.tx" x="1616" y="144">
     <polyline points="0,0 320,0"/>
    </object>
-   <object id="234" gid="5292" x="2112" y="64" width="64" height="128"/>
-   <object id="235" gid="5290" x="2112" y="64" width="64" height="128"/>
-   <object id="236" gid="5289" x="2112" y="64" width="64" height="128"/>
-   <object id="267" gid="6607" x="2000" y="104" width="32" height="32">
+   <object id="234" gid="5296" x="2112" y="64" width="64" height="128"/>
+   <object id="235" gid="5294" x="2112" y="64" width="64" height="128"/>
+   <object id="236" gid="5293" x="2112" y="64" width="64" height="128"/>
+   <object id="267" gid="6611" x="2000" y="104" width="32" height="32">
     <properties>
      <property name="itemtype" value="food-fish"/>
     </properties>
    </object>
-   <object id="270" gid="6607" x="2120" y="240" width="32" height="32">
+   <object id="270" gid="6611" x="2120" y="240" width="32" height="32">
     <properties>
      <property name="itemtype" value="food-fish"/>
     </properties>
    </object>
-   <object id="268" gid="6610" x="2128" y="264" width="32" height="32">
+   <object id="268" gid="6614" x="2128" y="264" width="32" height="32">
     <properties>
      <property name="itemtype" value="food-fish"/>
     </properties>
    </object>
-   <object id="269" gid="6610" x="2016" y="120" width="32" height="32">
+   <object id="269" gid="6614" x="2016" y="120" width="32" height="32">
     <properties>
      <property name="itemtype" value="food-fish"/>
     </properties>
@@ -537,83 +537,83 @@
     </properties>
     <polygon points="0,0 0,112 192,112 192,0"/>
    </object>
-   <object id="299" gid="6613" x="3192" y="144" width="32" height="48">
+   <object id="299" gid="6617" x="3192" y="144" width="32" height="48">
     <properties>
      <property name="itemtype" value="item-throwing-axe"/>
     </properties>
    </object>
-   <object id="306" gid="6613" x="3280" y="128" width="32" height="48">
+   <object id="306" gid="6617" x="3280" y="128" width="32" height="48">
     <properties>
      <property name="itemtype" value="item-throwing-axe"/>
     </properties>
    </object>
-   <object id="300" gid="6613" x="3184" y="168" width="32" height="48">
+   <object id="300" gid="6617" x="3184" y="168" width="32" height="48">
     <properties>
      <property name="itemtype" value="item-stone"/>
     </properties>
    </object>
-   <object id="305" gid="6613" x="3296" y="160" width="32" height="48">
+   <object id="305" gid="6617" x="3296" y="160" width="32" height="48">
     <properties>
      <property name="itemtype" value="item-stone"/>
     </properties>
    </object>
-   <object id="301" gid="6613" x="3248" y="160" width="32" height="48">
+   <object id="301" gid="6617" x="3248" y="160" width="32" height="48">
     <properties>
      <property name="itemtype" value="item-stone"/>
     </properties>
    </object>
-   <object id="304" gid="6613" x="3328" y="176" width="32" height="48">
+   <object id="304" gid="6617" x="3328" y="176" width="32" height="48">
     <properties>
      <property name="itemtype" value="item-stone"/>
     </properties>
    </object>
-   <object id="302" gid="6613" x="3232" y="128" width="32" height="48">
+   <object id="302" gid="6617" x="3232" y="128" width="32" height="48">
     <properties>
      <property name="itemtype" value="item-throwing-axe"/>
     </properties>
    </object>
-   <object id="303" gid="6613" x="3336" y="144" width="32" height="48">
+   <object id="303" gid="6617" x="3336" y="144" width="32" height="48">
     <properties>
      <property name="itemtype" value="item-throwing-axe"/>
     </properties>
    </object>
    <object id="310" template="mapobjects/banditcave/wall-torch.tx" x="3040" y="56"/>
-   <object id="351" gid="6639" x="2552" y="136" width="16" height="16">
+   <object id="351" gid="6643" x="2552" y="136" width="16" height="16">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="354" gid="6632" x="2554" y="145" width="16" height="16" rotation="345">
+   <object id="354" gid="6636" x="2554" y="145" width="16" height="16" rotation="345">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="355" gid="6637" x="2530" y="168" width="16" height="16" rotation="15">
+   <object id="355" gid="6641" x="2530" y="168" width="16" height="16" rotation="15">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="356" gid="6631" x="2528" y="176" width="16" height="16" rotation="15">
+   <object id="356" gid="6635" x="2528" y="176" width="16" height="16" rotation="15">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="357" gid="6636" x="2573.66" y="96" width="16" height="16" rotation="45">
+   <object id="357" gid="6640" x="2573.66" y="96" width="16" height="16" rotation="45">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="358" gid="6630" x="2568" y="101.657" width="16" height="16" rotation="45">
+   <object id="358" gid="6634" x="2568" y="101.657" width="16" height="16" rotation="45">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
@@ -676,6 +676,10 @@
     <polygon points="0,0 0,112 32,80 128,80 160,48 384,48 416,80 480,80 480,0"/>
    </object>
   </objectgroup>
+  <objectgroup id="35" name="+axes">
+   <object id="383" gid="5286" x="3856" y="120" width="64" height="64"/>
+   <object id="384" gid="5286" x="3856" y="240" width="64" height="64"/>
+  </objectgroup>
   <objectgroup draworder="index" id="19" name="messhall" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="3"/>
@@ -686,104 +690,104 @@
    <object id="74" template="mapobjects/OutwardBoundary.tx" x="3840" y="320">
     <polygon points="0,-320 0,-240 96,-240 128,-272 480,-272 480,-320"/>
    </object>
-   <object id="318" gid="6620" x="4008" y="104" width="96" height="48">
+   <object id="318" gid="6624" x="4008" y="104" width="96" height="48">
     <properties>
      <property name="bodyheight" type="float" value="16"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="319" gid="6622" x="4128" y="112" width="96" height="48">
+   <object id="319" gid="6626" x="4128" y="112" width="96" height="48">
     <properties>
      <property name="bodyheight" type="float" value="16"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="320" gid="6622" x="3928" y="240" width="96" height="48">
+   <object id="320" gid="6626" x="3928" y="240" width="96" height="48">
     <properties>
      <property name="bodyheight" type="float" value="16"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="321" gid="6621" x="4064" y="232" width="96" height="48">
+   <object id="321" gid="6625" x="4064" y="232" width="96" height="48">
     <properties>
      <property name="bodyheight" type="float" value="16"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="322" gid="6620" x="4208" y="224" width="96" height="48">
+   <object id="322" gid="6624" x="4208" y="224" width="96" height="48">
     <properties>
      <property name="bodyheight" type="float" value="16"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="323" gid="6621" x="4256" y="96" width="96" height="48">
+   <object id="323" gid="6625" x="4256" y="96" width="96" height="48">
     <properties>
      <property name="bodyheight" type="float" value="16"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="324" gid="6623" x="4096" y="80" width="32" height="32">
+   <object id="324" gid="6627" x="4096" y="80" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="325" gid="6625" x="4216" y="72" width="32" height="32">
+   <object id="325" gid="6629" x="4216" y="72" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="326" gid="6624" x="4160" y="272" width="32" height="32">
+   <object id="326" gid="6628" x="4160" y="272" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="327" gid="6623" x="3872" y="272" width="32" height="32">
+   <object id="327" gid="6627" x="3872" y="272" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="328" gid="6624" x="3976" y="280" width="32" height="32">
+   <object id="328" gid="6628" x="3976" y="280" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="329" gid="6625" x="4112" y="264" width="32" height="32">
+   <object id="329" gid="6629" x="4112" y="264" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="330" gid="6623" x="4016" y="280" width="32" height="32">
+   <object id="330" gid="6627" x="4016" y="280" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="331" gid="6625" x="4272" y="264" width="32" height="32">
+   <object id="331" gid="6629" x="4272" y="264" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="332" gid="6624" x="4168" y="72" width="32" height="32">
+   <object id="332" gid="6628" x="4168" y="72" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="333" gid="6623" x="4296" y="64" width="32" height="32">
+   <object id="333" gid="6627" x="4296" y="64" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="334" gid="6625" x="3976" y="72" width="32" height="32"/>
-   <object id="335" gid="6624" x="4048" y="80" width="32" height="32">
+   <object id="334" gid="6629" x="3976" y="72" width="32" height="32"/>
+   <object id="335" gid="6628" x="4048" y="80" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
@@ -807,122 +811,122 @@
      <property name="initialai" value="enterShootLeave"/>
     </properties>
    </object>
-   <object id="359" gid="6640" x="3984" y="88" width="32" height="32">
+   <object id="359" gid="6644" x="3984" y="88" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="362" gid="6640" x="4048" y="224" width="32" height="32">
+   <object id="362" gid="6644" x="4048" y="224" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="360" gid="6640" x="4024" y="96" width="32" height="32">
+   <object id="360" gid="6644" x="4024" y="96" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="361" gid="6640" x="4088" y="216" width="32" height="32">
+   <object id="361" gid="6644" x="4088" y="216" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="363" gid="6723" x="3984" y="96" width="32" height="32">
+   <object id="363" gid="6727" x="3984" y="96" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="364" gid="6716" x="4024" y="104" width="32" height="32">
+   <object id="364" gid="6720" x="4024" y="104" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="365" gid="6665" x="4056" y="224" width="32" height="32">
+   <object id="365" gid="6669" x="4056" y="224" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="366" gid="6640" x="4104" y="96" width="32" height="32">
+   <object id="366" gid="6644" x="4104" y="96" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="367" gid="6640" x="4144" y="104" width="32" height="32">
+   <object id="367" gid="6644" x="4144" y="104" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="368" gid="6640" x="4240" y="88" width="32" height="32">
+   <object id="368" gid="6644" x="4240" y="88" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="369" gid="6640" x="4280" y="80" width="32" height="32">
+   <object id="369" gid="6644" x="4280" y="80" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="370" gid="6640" x="3912" y="224" width="32" height="32">
+   <object id="370" gid="6644" x="3912" y="224" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="371" gid="6640" x="3952" y="232" width="32" height="32">
+   <object id="371" gid="6644" x="3952" y="232" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="372" gid="6640" x="4184" y="208" width="32" height="32">
+   <object id="372" gid="6644" x="4184" y="208" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="373" gid="6640" x="4224" y="216" width="32" height="32">
+   <object id="373" gid="6644" x="4224" y="216" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="374" gid="6664" x="4108" y="98" width="32" height="32">
+   <object id="374" gid="6668" x="4108" y="98" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="375" gid="6722" x="4140" y="112" width="32" height="32">
+   <object id="375" gid="6726" x="4140" y="112" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="376" gid="6665" x="4288" y="80" width="32" height="32">
+   <object id="376" gid="6669" x="4288" y="80" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="377" gid="6716" x="4240" y="96" width="32" height="32">
+   <object id="377" gid="6720" x="4240" y="96" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="378" gid="6716" x="3910" y="232" width="32" height="32">
+   <object id="378" gid="6720" x="3910" y="232" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="381" gid="6716" x="4181" y="215" width="32" height="32">
+   <object id="381" gid="6720" x="4181" y="215" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="379" gid="6720" x="4220" y="224" width="32" height="32">
+   <object id="379" gid="6724" x="4220" y="224" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="380" gid="6664" x="3954" y="234" width="32" height="32">
+   <object id="380" gid="6668" x="3954" y="234" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="382" gid="6724" x="4085" y="224" width="32" height="32">
+   <object id="382" gid="6728" x="4085" y="224" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
