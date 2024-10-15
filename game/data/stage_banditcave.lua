@@ -13825,7 +13825,10 @@ return {
         },
         {
           id = 2,
-          type = "container-barrel"
+          type = "container-barrel",
+          properties = {
+            ["name"] = "closed"
+          }
         }
       }
     },
@@ -15920,7 +15923,7 @@ return {
             {
               id = 267,
               name = "",
-              type = "",
+              type = "container-barrel-infinite",
               shape = "rectangle",
               x = 2000,
               y = 104,
@@ -15929,9 +15932,7 @@ return {
               rotation = 0,
               gid = 6611,
               visible = true,
-              properties = {
-                ["itemtype"] = "food-fish"
-              }
+              properties = {}
             },
             {
               id = 270,

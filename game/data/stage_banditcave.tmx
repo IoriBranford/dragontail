@@ -387,11 +387,7 @@
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="267" gid="6611" x="2000" y="104" width="32" height="32">
-    <properties>
-     <property name="itemtype" value="food-fish"/>
-    </properties>
-   </object>
+   <object id="267" type="container-barrel-infinite" gid="6611" x="2000" y="104" width="32" height="32"/>
    <object id="270" gid="6611" x="2120" y="240" width="32" height="32">
     <properties>
      <property name="itemtype" value="food-fish"/>
