@@ -71,6 +71,11 @@ function Common:dropDefeatItem()
         })
     end
     if item then
+        local popouttime = self.itempopouttime or 15
+        if popouttime > 0 then
+            item.gravity = item.gravity or .125
+            item.velz = item.gravity * popouttime / 2
+        end
         item.opponents = self.opponents
         State.start(item, "itemWaitForPickup")
     end
