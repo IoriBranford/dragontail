@@ -473,7 +473,16 @@ function Character:collideWithCharacterAttack(attacker)
         local guardhitai = self.guardai or "guardHit"
         local hurtai = self.hurtai or "hurt"
         local hitai = attacker.attackhitai
-        if self.guardangle then
+        local attacktype = attacker.attacktype
+        local canbedamagedbyattack = self.canbedamagedbyattack
+        if type(attacktype) == "string"
+        and type(canbedamagedbyattack) == "string" then
+            canbedamagedbyattack = attacktype:find(canbedamagedbyattack) ~= nil
+        else
+            canbedamagedbyattack = true
+        end
+
+        if self.guardangle or not canbedamagedbyattack then
             State.start(self, guardhitai, attacker)
             hitai = attacker.attackguardedai or hitai
         else

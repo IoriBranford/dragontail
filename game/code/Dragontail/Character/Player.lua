@@ -529,6 +529,7 @@ function Player:spinAttack(attacktype, angle)
     self.numopponentshit = 0
     local lungeangle = angle + pi
     local originalfacex, originalfacey = self.facex, self.facey
+    self.attacktype = attacktype
     Database.fill(self, attacktype)
     local spinvel = self.attackspinspeed or 0
     local spintime = self.attackhittime or 0
@@ -795,6 +796,7 @@ function Player:runWithEnemy(enemy)
     local radii = grabradius + enemy.bodyradius
     local holdangle = atan2(targetfacey, targetfacex)
     Database.fill(self, "running-with-enemy")
+    enemy.attacktype = "human-in-spinning-throw"
     Database.fill(enemy, "human-in-spinning-throw")
     enemy:startAttack(holdangle)
     local runningtime = 0
@@ -870,7 +872,9 @@ end
 
 function Player:spinAndKickEnemy(attacktype, angle, enemy)
     enemy.canbeattacked = false
+    self.attacktype = attacktype
     Database.fill(self, attacktype)
+    enemy.attacktype = "human-in-spinning-throw"
     Database.fill(enemy, "human-in-spinning-throw")
     local spinvel = self.attackspinspeed or 0
     local spintime = self.attackhittime or 0
@@ -937,6 +941,7 @@ end
 
 function Player:straightAttack(attacktype, angle, heldenemy)
     self.numopponentshit = 0
+    self.attacktype = attacktype
     Database.fill(self, attacktype)
     Audio.play(self.swingsound)
     local attackagain = false

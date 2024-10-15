@@ -250,6 +250,7 @@ function Fighter:thrown(thrower, attackangle)
         end
     end
     self.hurtstun = 0
+    self.attacktype = "human-thrown"
     Database.fill(self, "human-thrown")
     local thrownspeed = thrower.attacklaunchspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
