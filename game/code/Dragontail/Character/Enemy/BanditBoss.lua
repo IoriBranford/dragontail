@@ -21,28 +21,40 @@ local floor = math.floor
 local mid = math.mid
 local yield = coroutine.yield
 
+function BanditBoss:facePosition(px, py, animation)
+    local x, y = self.x, self.y
+    local distx, disty = py - y, px - x
+    if distx == 0 and disty == 0 then
+        return
+    end
+    self.facex, self.facey = math.norm(disty, distx)
+    local faceangle = math.atan2(distx, disty)
+    self:setDirectionalAnimation(animation or "Stand", faceangle)
+end
+
+function BanditBoss:getBestAttack(opponent)
+    local targetx, targety = opponent.x, opponent.y
+    local distx, disty = targetx - self.x, targety - self.y
+    local facex, facey = self.facex, self.facey
+    local isoppobehind = math.dot(facex, facey, distx, disty) <= 0
+    if isoppobehind or math.lensq(distx, disty) <= 64*64 then
+        local turndir = math.det(facex, facey, distx, disty)
+        return turndir < 0 and "bandit-boss-spin-ccw" or "bandit-boss-spin-cw"
+    end
+    return "bandit-boss-charge"
+end
+
 function BanditBoss:stand(duration)
     duration = duration or 20
     self.velx, self.vely = 0, 0
     local x, y = self.x, self.y
     local opponents = Characters.getGroup("players")
     local opponent = opponents[1]
-    local oppox, oppoy
     for _ = 1, duration do
-        oppox, oppoy = opponent.x, opponent.y
-        if oppox ~= x or oppoy ~= y then
-            local tooppoy, tooppox = oppoy - y, oppox - x
-            if tooppox == 0 and tooppoy == 0 then
-                tooppox = 1
-            end
-            self.facex, self.facey = math.norm(tooppox, tooppoy)
-            local faceangle = math.atan2(tooppoy, tooppox)
-            self:setDirectionalAnimation("Stand", faceangle)
-
-            local dodgeangle = self:findAngleToDodgeIncoming(opponent)
-            if dodgeangle then
-                return "dodgeIncoming", dodgeangle
-            end
+        self:facePosition(opponent.x, opponent.y)
+        local dodgeangle = self:findAngleToDodgeIncoming(opponent)
+        if dodgeangle then
+            return "dodgeIncoming", dodgeangle
         end
         coroutine.yield()
     end
@@ -51,36 +63,17 @@ function BanditBoss:stand(duration)
         return "stand"
     end
 
-    local toopposq = math.distsq(x, y, oppox, oppoy)
-    local attackchoices = self.attackchoices
-    if type(attackchoices) == "string" then
-        local choices = {}
-        for attack in attackchoices:gmatch("%S+") do
-            choices[#choices+1] = attack
-        end
-        attackchoices = choices
-        self.attackchoices = choices
-    end
-    local attacktype = self.defaultattack
-    if attackchoices and #attackchoices > 0 then
-        for i, attackchoice in ipairs(attackchoices) do
-            local attack = Database.get(attackchoice)
-            if attack then
-                local attackrange = self.TotalAttackRange(attack.attackradius or 0, attack.attacklungespeed or 0, attack.attacklungedecel or 1)
-                if attackrange*attackrange >= toopposq then
-                    attacktype = attackchoice
-                    break
-                end
-            end
-        end
-        if not attacktype then
-            attacktype = attackchoices[love.math.random(#attackchoices)]
-        end
-        self.attacktype = attacktype
-    end
-    Database.fill(self, attacktype)
+    local attacktype = self:getBestAttack(opponent)
+    self.attacktype = attacktype
+    Database.fill(self, self.attacktype)
+
+    local toopposq = math.distsq(x, y, opponent.x, opponent.y)
     local attackradius = self.TotalAttackRange(self.attackradius or 32, self.attacklungespeed or 0, self.attacklungedecel or 1) + opponent.bodyradius
-    if not opponent.attacker and toopposq <= attackradius*attackradius then
+    if not opponent.attacker
+    and opponent.canbeattacked
+    and toopposq <= attackradius*attackradius then
+        self.attackswitchesleft = 1
+        self:facePosition(opponent.x, opponent.y)
         return "attack", attacktype
     end
     return "approach"
@@ -160,7 +153,9 @@ function BanditBoss:approach()
     end
 
     local attacktype = not opponent.attacker and self.attacktype
-    if attacktype and math.distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
+    if attacktype and opponent.canbeattacked
+    and math.distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
+        self:facePosition(opponent.x, opponent.y)
         return "attack", attacktype
     end
     if reached then
@@ -186,12 +181,12 @@ function BanditBoss:prepareAttack(attacktype, targetx, targety)
         targetx, targety = target.x, target.y
     end
 
-    if targetx and targety then
-        local dirx, diry = math.norm(targetx - self.x, targety - self.y)
-        if dirx == dirx then
-            self.facex, self.facey = dirx, diry
-        end
-    end
+    -- if targetx and targety then
+    --     local dirx, diry = math.norm(targetx - self.x, targety - self.y)
+    --     if dirx == dirx then
+    --         self.facex, self.facey = dirx, diry
+    --     end
+    -- end
 
     local angle = math.atan2(self.facey, self.facex)
     self:setDirectionalAnimation(self.windupanimation, angle, 1, self.windupanimationloopframe or 0)
@@ -200,15 +195,28 @@ function BanditBoss:prepareAttack(attacktype, targetx, targety)
     for i = 1, (self.attackwinduptime or 20) do
         self:accelerateTowardsVel(0, 0, 4)
 
+        if target and target.canbeattacked then
+            local switchesleft = self.attackswitchesleft or 0
+            local newattack = switchesleft > 0 and self:getBestAttack(target) or self.attacktype
+            if newattack ~= self.attacktype then
+                self.attackswitchesleft = switchesleft - 1
+                return "attack", newattack
+            end
+        end
+
         -- depending on health:
         -- dodge when player approaches
         -- cancel into another attack which is better for player position
         coroutine.yield()
+        if self.velx ~= 0 or self.vely ~= 0 then
+            self:keepInBounds()
+        end
     end
 end
 
 function BanditBoss:executeAttack(attacktype, targetx, targety, targetz)
     if attacktype then
+        self.attacktype = attacktype
         Database.fill(self, attacktype)
     end
     self.numopponentshit = 0
@@ -242,8 +250,22 @@ function BanditBoss:executeAttack(attacktype, targetx, targety, targetz)
 
     local lungespeed = self.attacklungespeed or 0
     local hittime = self.attackhittime or 10
+    local turnspeed = self.attackspinspeed or 0
     repeat
         lungespeed = Fighter.updateSlideSpeed(self, angle, lungespeed, self.attacklungedecel or 1)
+        if turnspeed ~= 0 then
+            self.attackangle = self.attackangle + turnspeed
+            self:setDirectionalAnimation(self.swinganimation, self.attackangle, 1, self.swinganimationloopframe or 0)
+        end
+        if target and target.canbeattacked then
+            local switchesleft = self.attackswitchesleft or 0
+            local newattack = switchesleft > 0 and self:getBestAttack(target) or self.attacktype
+            if newattack ~= self.attacktype then
+                self.attackswitchesleft = switchesleft - 1
+                self:stopAttack()
+                return "attack", newattack
+            end
+        end
         hittime = hittime - 1
         yield()
         if self.velx ~= 0 or self.vely ~= 0 then
@@ -271,10 +293,29 @@ end
 function BanditBoss:attack(attacktype)
     local opponents = Characters.getGroup("players")
     local opponent = opponents[1]
-    local targetx, targety, targetz = opponent.x, opponent.y, opponent.z
-    self:prepareAttack(attacktype, opponent)
-    self:executeAttack(attacktype, targetx, targety, targetz)
+    local nextstate, a, b, c = self:prepareAttack(attacktype, opponent)
+    if nextstate then
+        return nextstate, a, b, c
+    end
+    nextstate, a, b, c = self:executeAttack(attacktype, opponent)
+    if nextstate then
+        return nextstate, a, b, c
+    end
     return "stand", 20
+end
+
+function BanditBoss:getup(attacker)
+    local attack = self:getBestAttack(attacker) or ""
+    if attack:find("^bandit%-boss%-spin") then
+        self.attacktype = attack
+        Database.fill(self, attack)
+        self.attackswitchesleft = 0
+        Audio.play(self.windupsound)
+        coroutine.wait(self.attackwinduptime or 0)
+        self:executeAttack(nil, attacker)
+        return self.aiaftergetup or self.recoverai
+    end
+    return Fighter.getup(self, attacker)
 end
 
 function BanditBoss:defeat(attacker)
