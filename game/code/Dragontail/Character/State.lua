@@ -21,7 +21,8 @@ local StateVarsOnChange = {
     "canbeattacked",
     "canbegrabbed",
     "canbejuggled",
-    "bodysolid"
+    "bodysolid",
+    "color"
 }
 
 ---@param self Character
