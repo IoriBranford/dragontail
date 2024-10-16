@@ -846,6 +846,7 @@ function Player:runWithEnemy(enemy)
 
         local oobx, ooby = findWallCollision(enemy)
         if oobx or ooby then
+            Fighter.stopHolding(self, enemy)
             State.start(enemy, "wallSlammed", self, oobx, ooby)
             return "straightAttack", "running-elbow", holdangle
         end
