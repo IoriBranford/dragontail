@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 36,
-  nextobjectid = 385,
+  nextlayerid = 37,
+  nextobjectid = 400,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -14554,6 +14554,330 @@ return {
           type = "food-large"
         }
       }
+    },
+    {
+      name = "Forge A",
+      firstgid = 6741,
+      class = "",
+      tilewidth = 32,
+      tileheight = 32,
+      spacing = 0,
+      margin = 0,
+      columns = 16,
+      image = "tilesets/Forge A.png",
+      imagewidth = 512,
+      imageheight = 256,
+      objectalignment = "unspecified",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 32
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 128,
+      tiles = {
+        {
+          id = 88,
+          animation = {
+            {
+              tileid = 88,
+              duration = 100
+            },
+            {
+              tileid = 92,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 89,
+          animation = {
+            {
+              tileid = 89,
+              duration = 100
+            },
+            {
+              tileid = 93,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 90,
+          animation = {
+            {
+              tileid = 90,
+              duration = 100
+            },
+            {
+              tileid = 94,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 91,
+          animation = {
+            {
+              tileid = 91,
+              duration = 100
+            },
+            {
+              tileid = 95,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 104,
+          animation = {
+            {
+              tileid = 104,
+              duration = 100
+            },
+            {
+              tileid = 108,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 105,
+          animation = {
+            {
+              tileid = 105,
+              duration = 100
+            },
+            {
+              tileid = 109,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 106,
+          animation = {
+            {
+              tileid = 106,
+              duration = 100
+            },
+            {
+              tileid = 110,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 107,
+          animation = {
+            {
+              tileid = 107,
+              duration = 100
+            },
+            {
+              tileid = 111,
+              duration = 100
+            }
+          }
+        }
+      }
+    },
+    {
+      name = "Workbench, Smith",
+      firstgid = 6869,
+      class = "",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 3,
+      image = "sprites/banditcave/Workbench, Smith.png",
+      imagewidth = 192,
+      imageheight = 128,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 64,
+        height = 64
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 6,
+      tiles = {
+        {
+          id = 0,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            class = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "polygon",
+                x = 0,
+                y = 64,
+                width = 0,
+                height = 0,
+                rotation = 0,
+                visible = true,
+                polygon = {
+                  { x = 0, y = 0 },
+                  { x = 64, y = 0 },
+                  { x = 64, y = -32 },
+                  { x = 0, y = -32 }
+                },
+                properties = {
+                  ["collidable"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 1,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            class = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "polygon",
+                x = 0,
+                y = 64,
+                width = 0,
+                height = 0,
+                rotation = 0,
+                visible = true,
+                polygon = {
+                  { x = 0, y = 0 },
+                  { x = 64, y = 0 },
+                  { x = 64, y = -32 },
+                  { x = 0, y = -32 }
+                },
+                properties = {
+                  ["collidable"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 4,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            class = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "polygon",
+                x = 0,
+                y = 48,
+                width = 64,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                polygon = {
+                  { x = 0, y = 0 },
+                  { x = 0, y = 16 },
+                  { x = 64, y = 16 },
+                  { x = 64, y = 0 }
+                },
+                properties = {
+                  ["collidable"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 5,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            class = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "polygon",
+                x = 0,
+                y = 48,
+                width = 64,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                polygon = {
+                  { x = 0, y = 16 },
+                  { x = 16, y = 16 },
+                  { x = 64, y = 0 },
+                  { x = 48, y = 0 }
+                },
+                properties = {
+                  ["collidable"] = true
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   layers = {
@@ -14736,6 +15060,10 @@ return {
           data = "eJxjYBgFo2AUDDawTYQ4dQAjPADL"
         },
         {
+          x = 100, y = -12, width = 20, height = 12,
+          data = "eJxjYBgFo2AUDDYwVwrBXiCFWx0ANHwBcg=="
+        },
+        {
           x = -20, y = 0, width = 20, height = 12,
           data = "eJxjYBi8YKfIQLtgFIyCwQ0Ah54Azg=="
         },
@@ -14761,7 +15089,7 @@ return {
         },
         {
           x = 100, y = 0, width = 20, height = 12,
-          data = "eJyzYmJgsELC1kBMCchlQsV5FJo3CkbBKMANAMl5A1o="
+          data = "eJyzYmJgsELC1kCMDayVYmBYB8TrgXiDFHY1IJDLhIrzcJi3F2jGPiDeD8QH8JhHLDgLNOMcEJ8H4gtUMG8UjIKhAACxwA2A"
         },
         {
           x = 140, y = 0, width = 20, height = 12,
@@ -14770,6 +15098,31 @@ return {
         {
           x = 160, y = 0, width = 20, height = 12,
           data = "eJyzYmJgsIJiayC2Z2SgCOQyIXAeEBdRaN4oGAWjADcAAOXDA2I="
+        }
+      }
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 200,
+      height = 12,
+      id = 36,
+      name = "onwall2",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      chunks = {
+        {
+          x = 100, y = 0, width = 20, height = 12,
+          data = "eJxjYCAOtEoxMLQBcTsQd0gRqWkUjIJRQFMAAPfgAoM="
         }
       }
     },
@@ -16941,7 +17294,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = 2
+          },
           objects = {
             {
               id = 79,
@@ -16977,6 +17332,10 @@ return {
                 { x = 32, y = 80 },
                 { x = 128, y = 80 },
                 { x = 160, y = 48 },
+                { x = 176, y = 48 },
+                { x = 208, y = 16 },
+                { x = 240, y = 16 },
+                { x = 272, y = 48 },
                 { x = 384, y = 48 },
                 { x = 416, y = 80 },
                 { x = 480, y = 80 },
@@ -16988,6 +17347,88 @@ return {
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 385,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 3520,
+              y = -64,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = 16 },
+                { x = 8, y = 32 },
+                { x = 24, y = 40 },
+                { x = 48, y = 48 },
+                { x = 80, y = 48 },
+                { x = 104, y = 40 },
+                { x = 120, y = 32 },
+                { x = 128, y = 16 },
+                { x = 128, y = 0 },
+                { x = 0, y = 0 }
+              },
+              properties = {
+                ["bodyheight"] = 16,
+                ["bodysolid"] = true,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 393,
+              name = "",
+              type = "forge-fire",
+              shape = "ellipse",
+              x = 3584,
+              y = 16,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              visible = false,
+              properties = {
+                ["originx"] = 8,
+                ["originy"] = 8,
+                ["z"] = 16
+              }
+            },
+            {
+              id = 394,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3712,
+              y = 88,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 6870,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 28,
+                ["bodysolid"] = true
+              }
+            },
+            {
+              id = 395,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3464,
+              y = 96,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 6874,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 48,
+                ["bodysolid"] = true
               }
             }
           }
@@ -17011,7 +17452,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3856,
+              x = 3952,
               y = 120,
               width = 64,
               height = 64,
@@ -17025,12 +17466,40 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3856,
-              y = 240,
+              x = 3952,
+              y = 216,
               width = 64,
               height = 64,
               rotation = 0,
               gid = 5286,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 397,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3296,
+              y = 208,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 398,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3296,
+              y = 264,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
               visible = true,
               properties = {}
             }
