@@ -21,6 +21,10 @@ local floor = math.floor
 local mid = math.mid
 local yield = coroutine.yield
 
+local GetUpAttackHealthPercent = .75
+local OneSwitchAttackHealthPercent = .5
+local TwoSwitchAttackHealthPercent = .25
+
 function BanditBoss:facePosition(px, py, animation)
     local x, y = self.x, self.y
     local distx, disty = py - y, px - x
@@ -72,7 +76,14 @@ function BanditBoss:stand(duration)
     if not opponent.attacker
     and opponent.canbeattacked
     and toopposq <= attackradius*attackradius then
-        self.attackswitchesleft = 1
+        local healthpct = self.health/self.maxhealth
+        if healthpct <= TwoSwitchAttackHealthPercent then
+            self.attackswitchesleft = 2
+        elseif healthpct <= OneSwitchAttackHealthPercent then
+            self.attackswitchesleft = 1
+        else
+            self.attackswitchesleft = 0
+        end
         self:facePosition(opponent.x, opponent.y)
         return "attack", attacktype
     end
@@ -308,15 +319,17 @@ function BanditBoss:getup(attacker)
     local time = self.getuptime or 27
     for _ = 1, time do
         yield()
-        local attack = self:getBestAttack(attacker) or ""
-        if attack:find("^bandit%-boss%-spin") then
-            self.attacktype = attack
-            Database.fill(self, attack)
-            self.attackswitchesleft = 0
-            Audio.play(self.windupsound)
-            coroutine.wait(self.attackwinduptime or 0)
-            self:executeAttack(nil, attacker)
-            return self.aiaftergetup or self.recoverai
+        if self.health/self.maxhealth <= GetUpAttackHealthPercent then
+            local attack = self:getBestAttack(attacker) or ""
+            if attack:find("^bandit%-boss%-spin") then
+                self.attacktype = attack
+                Database.fill(self, attack)
+                self.attackswitchesleft = 0
+                Audio.play(self.windupsound)
+                coroutine.wait(self.attackwinduptime or 0)
+                self:executeAttack(nil, attacker)
+                return self.aiaftergetup or self.recoverai
+            end
         end
     end
     local recoverai = self.aiaftergetup or self.recoverai
