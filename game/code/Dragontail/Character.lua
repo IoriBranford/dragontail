@@ -471,8 +471,13 @@ end
 Character.checkAttackCollision = Character.checkAttackCollision_circle
 
 function Character:collideWithCharacterAttack(attacker)
-    if self.hurtstun > 0 or not self.canbeattacked then
+    if self.hurtstun > 0 then
         return
+    end
+    if not self.canbeattacked then
+        if not attacker.attackcanjuggle or not self.canbejuggled then
+            return
+        end
     end
     if self:checkAttackCollision(attacker) then
         local guardhitai = self.guardai or "guardHit"

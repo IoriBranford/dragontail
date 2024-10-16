@@ -20,6 +20,7 @@ local State = {}
 local StateVarsOnChange = {
     "canbeattacked",
     "canbegrabbed",
+    "canbejuggled",
     "bodysolid"
 }
 
