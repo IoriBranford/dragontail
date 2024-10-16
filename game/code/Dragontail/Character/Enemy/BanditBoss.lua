@@ -305,17 +305,26 @@ function BanditBoss:attack(attacktype)
 end
 
 function BanditBoss:getup(attacker)
-    local attack = self:getBestAttack(attacker) or ""
-    if attack:find("^bandit%-boss%-spin") then
-        self.attacktype = attack
-        Database.fill(self, attack)
-        self.attackswitchesleft = 0
-        Audio.play(self.windupsound)
-        coroutine.wait(self.attackwinduptime or 0)
-        self:executeAttack(nil, attacker)
-        return self.aiaftergetup or self.recoverai
+    local time = self.getuptime or 27
+    for _ = 1, time do
+        yield()
+        local attack = self:getBestAttack(attacker) or ""
+        if attack:find("^bandit%-boss%-spin") then
+            self.attacktype = attack
+            Database.fill(self, attack)
+            self.attackswitchesleft = 0
+            Audio.play(self.windupsound)
+            coroutine.wait(self.attackwinduptime or 0)
+            self:executeAttack(nil, attacker)
+            return self.aiaftergetup or self.recoverai
+        end
     end
-    return Fighter.getup(self, attacker)
+    local recoverai = self.aiaftergetup or self.recoverai
+    if not recoverai then
+        print("No aiaftergetup or recoverai for "..self.type)
+        return "defeat", attacker
+    end
+    return recoverai
 end
 
 function BanditBoss:defeat(attacker)
