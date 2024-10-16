@@ -193,7 +193,7 @@ function Fighter:knockedBack(thrower, attackangle)
         self.velz = 0
     end
 
-    return self.aiafterthrown or "fall"
+    return self.aiafterthrown or "fall", thrower
 end
 
 function Fighter:wallBump(thrower, oobx, ooby)
@@ -266,7 +266,7 @@ function Fighter:thrown(thrower, attackangle)
         return "wallSlammed", thrower, oobx, ooby
     end
 
-    return self.aiafterthrown or "fall"
+    return self.aiafterthrown or "fall", thrower
 end
 
 function Fighter:wallSlammed(thrower, oobx, ooby)
