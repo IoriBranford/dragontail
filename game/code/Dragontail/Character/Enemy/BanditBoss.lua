@@ -37,7 +37,7 @@ function BanditBoss:getBestAttack(opponent)
     local distx, disty = targetx - self.x, targety - self.y
     local facex, facey = self.facex, self.facey
     local isoppobehind = math.dot(facex, facey, distx, disty) <= 0
-    if isoppobehind or math.lensq(distx, disty) <= 64*64 then
+    if isoppobehind or math.lensq(distx, disty) <= 100*100 then
         local turndir = math.det(facex, facey, distx, disty)
         return turndir < 0 and "bandit-boss-spin-ccw" or "bandit-boss-spin-cw"
     end
