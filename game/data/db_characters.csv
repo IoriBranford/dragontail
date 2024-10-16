@@ -19,7 +19,7 @@ bandit-arrow,enemy,1,2,2,,true,,FALSE,15,0.125,,,,bandit-arrow-attack,,,,,,,,4,D
 bandit-sling,enemy,15,16,32,,true,,TRUE,5,0.5,,,30,sling-shot,,24,fall,18,,,,4,Dragontail.Character.Enemy,stand,,hurt,,,,,,stun,120,thrown,,,10,,,FallKnees,20,27,defeat,stand,,attack,bow-shot,
 thrown-stone,enemy,1,4,8,,true,,FALSE,10,0.25,,,,thrown-stone-attack,thrown-stone-attack thrown-stone-strong-attack,,,,,,,1,Dragontail.Character.Common,projectileFly,,projectileDeflected,,,,,,,,projectileFly,,,10,,,,,,,,,,,item-stone
 bandit-cave-door,enemy,1,,64,TRUE,true,^human%-thrown$,,,0.5,,,,,,,,,,,container,,Dragontail.Character.Common,furnitureIdle,,containerBreak,,,,,,,,,,,,,,,,,containerBreak,furnitureIdle,,,,
-bandit-boss,enemy,1000,16,32,,true,,TRUE,4,0.5,8,0.25,,bandit-boss-charge,,,fall,24,,,,4,Dragontail.Character.Enemy.BanditBoss,stand,,hurt,,,,,,stun,60,thrown,,,10,,,FallKnees,20,27,defeat,stand,,approach,,
+bandit-boss,enemy,500,16,32,,true,,TRUE,4,0.5,12,0.5,,bandit-boss-charge,,,fall,24,,,,4,Dragontail.Character.Enemy.BanditBoss,stand,,hurt,,,,,,stun,60,thrown,,,10,,,FallKnees,20,27,defeat,stand,,approach,,
 item-dish,item,,12,2,,,,,,0.25,,,,,,,,,,projectile-dish,,,Dragontail.Character.Common,itemWaitForPickup,,,,,,,,,,,,,,,,,,,,,,,,
 projectile-dish,enemy,1,12,2,,true,,FALSE,12,0.25,,,,projectile-dish-attack,,,,,,,,1,Dragontail.Character.Common,projectileFly,,projectileDeflected,,,,,,,,projectileFly,,,10,,,,,,,,,,,item-dish
 food-small,item,,8,8,,,,,,0.25,,,,,,,,,25,,fish,,Dragontail.Character.Common,itemWaitForPickup,,,,,,,,,,,,,,,,,,,,,,,,
