@@ -392,7 +392,7 @@ end
 function Player:control()
     local targetfacex, targetfacey = self.facex, self.facey
     local runningtime
-    local attackdowntime
+    -- local attackdowntime
     while true do
         local facex, facey = self.facex, self.facey
         local inx, iny = Controls.getDirectionInput()
@@ -492,15 +492,15 @@ function Player:control()
             if attackpressed then
                 if not self.weaponinhand then
                     return doComboAttack(self, targetfacex, targetfacey)
-                end
-                attackdowntime = 0
-            end
-            if attackdowntime and self.weaponinhand then
-                if attackdown then
-                    attackdowntime = attackdowntime + 1
-                    if attackdowntime > 10 then
-                        return "aimThrow"
-                    end
+            --     end
+            --     attackdowntime = 0
+            -- end
+            -- if attackdowntime and self.weaponinhand then
+            --     if attackdown then
+            --         attackdowntime = attackdowntime + 1
+            --         if attackdowntime > 10 then
+            --             return "aimThrow"
+            --         end
                 else
                     return "throwWeapon", findInstantThrowTarget(self, targetfacex, targetfacey)
                 end
