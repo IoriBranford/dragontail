@@ -1011,11 +1011,11 @@ end
 function Player:victory()
     self:stopAttack()
     Audio.play(self.victorysound)
-    self:changeAseAnimation("win")
+    self:changeAseAnimation("win", 1, 0)
     local i = 0
     while true do
         self:accelerateTowardsVel(0, 0, 4)
-        self.z = abs(sin(i*pi/30) * 8)
+        -- self.z = abs(sin(i*pi/30) * 8)
         yield()
         i = i + 1
     end
