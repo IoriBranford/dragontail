@@ -139,12 +139,11 @@ function Character:updateGravity()
     if gravity == 0 then
         return
     end
+    self.velz = self.velz - gravity
     local floorz = Characters.getCylinderFloorZ(self.x, self.y, self.z, self.bodyradius, self.bodyheight) or 0
-    if floorz >= self.z then
+    if floorz >= self.z + self.velz then
         self.z = floorz
         self.velz = 0
-    else
-        self.velz = self.velz - gravity
     end
 end
 
