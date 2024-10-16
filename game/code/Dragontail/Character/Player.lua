@@ -759,6 +759,7 @@ function Player:hold(enemy)
         enemy.x = x + velx + holddirx*radii
         enemy.y = y + vely + holddiry*radii
         enemy.z = self.z + math.max(0, (self.bodyheight - enemy.bodyheight)/2)
+        enemy.velz = 0
         self.facex, self.facey = holddirx, holddiry
 
         if holdfrombehind then
