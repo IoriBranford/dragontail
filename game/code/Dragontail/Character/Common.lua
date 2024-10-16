@@ -104,8 +104,15 @@ end
 
 function Common:itemWaitForPickup()
     local opponent = self.opponents[1]
+    local t = -1
     while true do
         local finished
+        t = t + 1
+        if self.healhealth then
+            local redblue = (t%30)/15
+            self.color = Color.asARGBInt(redblue, 1, redblue, 1)
+        end
+
         if self:testBodyCollision(opponent) then
             if self.healhealth then
                 if opponent.health < opponent.maxhealth then
