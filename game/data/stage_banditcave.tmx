@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="39" nextobjectid="418">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="39" nextobjectid="421">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -719,6 +719,9 @@
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
+   <object id="418" gid="5291" x="3540" y="66" width="64" height="32" rotation="330"/>
+   <object id="419" gid="5291" x="3584" y="78" width="64" height="32" rotation="270"/>
+   <object id="420" gid="5291" x="3624" y="68" width="64" height="32" rotation="225"/>
   </objectgroup>
   <objectgroup id="35" name="+axes">
    <object id="383" gid="5286" x="3952" y="120" width="64" height="64"/>

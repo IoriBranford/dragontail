@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 39,
-  nextobjectid = 418,
+  nextobjectid = 421,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -17374,6 +17374,48 @@ return {
                 ["bodyheight"] = 48,
                 ["bodysolid"] = true
               }
+            },
+            {
+              id = 418,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3540,
+              y = 66,
+              width = 64,
+              height = 32,
+              rotation = 330,
+              gid = 5291,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 419,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3584,
+              y = 78,
+              width = 64,
+              height = 32,
+              rotation = 270,
+              gid = 5291,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 420,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3624,
+              y = 68,
+              width = 64,
+              height = 32,
+              rotation = 225,
+              gid = 5291,
+              visible = true,
+              properties = {}
             }
           }
         },
