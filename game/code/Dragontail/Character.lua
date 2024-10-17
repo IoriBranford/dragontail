@@ -177,6 +177,28 @@ function Character:makeHurtParticle()
     }
 end
 
+function Character:updateHurtColorCycle(t)
+    local hurtcolorcycle = self.hurtcolorcycle
+    if not hurtcolorcycle then
+        return
+    end
+    if type(hurtcolorcycle) == "string" then
+        local colors = {}
+        for colorstr in hurtcolorcycle:gmatch("%d+") do
+            local color = tonumber(colorstr)
+            if color then
+                colors[#colors+1] = color
+            end
+        end
+        hurtcolorcycle = colors
+        self.hurtcolorcycle = colors
+    end
+    if #hurtcolorcycle <= 0 then
+        return
+    end
+    return hurtcolorcycle[1 + (t % #hurtcolorcycle)]
+end
+
 function Character:isHitStopOver()
     return self.hitstun <= 0 and self.hurtstun <= 0
 end
@@ -190,11 +212,16 @@ function Character:fixedupdateHitStop()
     end
     if self.hurtstun > 0 then
         self:makeHurtParticle()
+        local color = self:updateHurtColorCycle(self.hurtstun)
+        if color then
+            self.color = color
+        end
         self.hurtstun = self.hurtstun - 1
         if self.hurtstun > 0 then
             return false
         end
         self.hurtparticle = nil
+        self.hurtcolorcycle = nil
         self.scalex = 1
         self.scaley = 1
     end

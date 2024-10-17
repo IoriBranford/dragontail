@@ -75,6 +75,7 @@ function Fighter:hurt(attacker)
     end
     self.hurtangle = hurtangle
     self.hurtparticle = attacker.attackhurtparticle
+    self.hurtcolorcycle = attacker.attackhurtcolorcycle
     self:makeImpactSpark(attacker, attacker.hitspark)
     self.health = self.health - attacker.attackdamage
     self.velx, self.vely = 0, 0
