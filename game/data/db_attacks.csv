@@ -26,4 +26,4 @@ bandit-boss-charge,,64,0.261799387799149,15,20,5,0,,,30,30,16,0.25,,,10,,,,,,kno
 projectile-dish-attack,12,8,3.14159265358979,10,10,,,,,,,,,,,5,,disappear,,,,,knockedBack,,,Fly,,,,sounds/combat/breakglass.mp3,,,spark-hit,spark-guard,nil,nil,
 bandit-boss-spin-cw,,64,0.785398163397448,20,20,5,0.628318530717959,,,15,20,10,0.5,0,,5,,,,,,knockedBack,knockedBack,LookRight,,SpinCW,,sounds/man_heavy/lightattack3.mp3,sounds/combat/swing3.mp3,sounds/combat/cut2.mp3,,nil,spark-hit,spark-guard,nil,particle-blood,
 bandit-boss-spin-ccw,,64,0.785398163397448,20,20,5,-0.628318530717959,,,15,20,10,0.5,0,,5,,,,,,knockedBack,knockedBack,LookLeft,,SpinCCW,,sounds/man_heavy/lightattack3.mp3,sounds/combat/swing3.mp3,sounds/combat/cut2.mp3,,nil,spark-hit,spark-guard,nil,particle-blood,
-forge-fire,,36,1.5707963267949,20,10,,,,,,,,,,,5,,,,,,juggled,juggled,,,,,,,sounds/combat/ignite.mp3,,,spark-hit,,,,TRUE
+forge-fire,,36,1.5707963267949,999,10,,,,,,,,,,,5,,,,,,juggled,juggled,,,,,,,sounds/combat/ignite.mp3,,,spark-hit,,,,TRUE
