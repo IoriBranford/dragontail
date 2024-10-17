@@ -1044,7 +1044,7 @@
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
-    <polygon points="0,0 0,80 144,80 144,32 424,32 424,80 480,80 480,0"/>
+    <polygon points="0,0 0,80 144,80 144,48 424,48 424,80 480,80 480,0"/>
    </object>
    <object id="316" template="mapobjects/OutwardBoundary.tx" x="4352" y="0">
     <polygon points="-32,0 -32,48 64,48 96,80 416,80 448,112 448,0"/>
@@ -1056,28 +1056,31 @@
   <objectgroup id="38" name="+slingers" class="Room">
    <object id="409" gid="5278" x="5088" y="-40" width="64" height="64">
     <properties>
-     <property name="ammo" type="int" value="3"/>
+     <property name="ammo" type="int" value="20"/>
      <property name="entrypoint" type="object" value="412"/>
      <property name="exitpoint" type="object" value="415"/>
      <property name="initialai" value="enterShootLeave"/>
+     <property name="itemtype" value="food-fish"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
    <object id="410" gid="5278" x="4992" y="-72" width="64" height="64">
     <properties>
-     <property name="ammo" type="int" value="3"/>
+     <property name="ammo" type="int" value="20"/>
      <property name="entrypoint" type="object" value="413"/>
      <property name="exitpoint" type="object" value="416"/>
      <property name="initialai" value="enterShootLeave"/>
+     <property name="itemtype" value="food-fish"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
    <object id="411" gid="5278" x="5184" y="-8" width="64" height="64">
     <properties>
-     <property name="ammo" type="int" value="3"/>
+     <property name="ammo" type="int" value="20"/>
      <property name="entrypoint" type="object" value="414"/>
      <property name="exitpoint" type="object" value="417"/>
      <property name="initialai" value="enterShootLeave"/>
+     <property name="itemtype" value="food-fish"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
@@ -1112,28 +1115,31 @@
   <objectgroup id="37" name="+archers" class="Room">
    <object id="400" gid="5274" x="5088" y="-40" width="64" height="64">
     <properties>
-     <property name="ammo" type="int" value="5"/>
+     <property name="ammo" type="int" value="20"/>
      <property name="entrypoint" type="object" value="401"/>
      <property name="exitpoint" type="object" value="402"/>
      <property name="initialai" value="enterShootLeave"/>
+     <property name="itemtype" value="food-fish"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="403" gid="5274" x="4992" y="-72" width="64" height="64">
+   <object id="403" gid="5278" x="4992" y="-72" width="64" height="64">
     <properties>
-     <property name="ammo" type="int" value="5"/>
+     <property name="ammo" type="int" value="20"/>
      <property name="entrypoint" type="object" value="404"/>
      <property name="exitpoint" type="object" value="405"/>
      <property name="initialai" value="enterShootLeave"/>
+     <property name="itemtype" value="food-fish"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
    <object id="406" gid="5274" x="5184" y="-8" width="64" height="64">
     <properties>
-     <property name="ammo" type="int" value="5"/>
+     <property name="ammo" type="int" value="20"/>
      <property name="entrypoint" type="object" value="407"/>
      <property name="exitpoint" type="object" value="408"/>
      <property name="initialai" value="enterShootLeave"/>
+     <property name="itemtype" value="food-fish"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>

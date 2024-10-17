@@ -18601,8 +18601,8 @@ return {
                 { x = 0, y = 0 },
                 { x = 0, y = 80 },
                 { x = 144, y = 80 },
-                { x = 144, y = 32 },
-                { x = 424, y = 32 },
+                { x = 144, y = 48 },
+                { x = 424, y = 48 },
                 { x = 424, y = 80 },
                 { x = 480, y = 80 },
                 { x = 480, y = 0 }
@@ -18703,10 +18703,11 @@ return {
               gid = 5278,
               visible = true,
               properties = {
-                ["ammo"] = 3,
+                ["ammo"] = 20,
                 ["entrypoint"] = { id = 412 },
                 ["exitpoint"] = { id = 415 },
                 ["initialai"] = "enterShootLeave",
+                ["itemtype"] = "food-fish",
                 ["z"] = 64
               }
             },
@@ -18723,10 +18724,11 @@ return {
               gid = 5278,
               visible = true,
               properties = {
-                ["ammo"] = 3,
+                ["ammo"] = 20,
                 ["entrypoint"] = { id = 413 },
                 ["exitpoint"] = { id = 416 },
                 ["initialai"] = "enterShootLeave",
+                ["itemtype"] = "food-fish",
                 ["z"] = 64
               }
             },
@@ -18743,10 +18745,11 @@ return {
               gid = 5278,
               visible = true,
               properties = {
-                ["ammo"] = 3,
+                ["ammo"] = 20,
                 ["entrypoint"] = { id = 414 },
                 ["exitpoint"] = { id = 417 },
                 ["initialai"] = "enterShootLeave",
+                ["itemtype"] = "food-fish",
                 ["z"] = 64
               }
             },
@@ -18863,10 +18866,11 @@ return {
               gid = 5274,
               visible = true,
               properties = {
-                ["ammo"] = 5,
+                ["ammo"] = 20,
                 ["entrypoint"] = { id = 401 },
                 ["exitpoint"] = { id = 402 },
                 ["initialai"] = "enterShootLeave",
+                ["itemtype"] = "food-fish",
                 ["z"] = 64
               }
             },
@@ -18880,13 +18884,14 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5274,
+              gid = 5278,
               visible = true,
               properties = {
-                ["ammo"] = 5,
+                ["ammo"] = 20,
                 ["entrypoint"] = { id = 404 },
                 ["exitpoint"] = { id = 405 },
                 ["initialai"] = "enterShootLeave",
+                ["itemtype"] = "food-fish",
                 ["z"] = 64
               }
             },
@@ -18903,10 +18908,11 @@ return {
               gid = 5274,
               visible = true,
               properties = {
-                ["ammo"] = 5,
+                ["ammo"] = 20,
                 ["entrypoint"] = { id = 407 },
                 ["exitpoint"] = { id = 408 },
                 ["initialai"] = "enterShootLeave",
+                ["itemtype"] = "food-fish",
                 ["z"] = 64
               }
             },
