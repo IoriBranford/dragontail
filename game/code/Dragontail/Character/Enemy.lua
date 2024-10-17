@@ -329,12 +329,12 @@ function Enemy:enterShootLeave()
         local raycast = Raycast(1, 0, 0, 1)
         raycast.canhitgroup = "enemies"
         for i = ammo-1, 0, -1 do
+            while opponent.health <= 0 do
+                yield()
+            end
             local hitcharacter
             repeat
                 yield()
-                if opponent.health <= 0 then
-                    break
-                end
                 raycast.dx, raycast.dy = opponent.x - self.x, opponent.y - self.y
                 local angle = atan2(raycast.dy, raycast.dx)
                 if angle == angle then
@@ -342,9 +342,6 @@ function Enemy:enterShootLeave()
                 end
                 hitcharacter = Characters.castRay(raycast, self.x, self.y, self)
             until not hitcharacter
-            if opponent.health <= 0 then
-                break
-            end
             self.ammo = i
             self:attack()
         end
