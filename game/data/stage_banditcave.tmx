@@ -229,10 +229,6 @@
    <object id="27" template="mapobjects/CameraPath.tx" x="240" y="144">
     <polyline points="0,0 480,0"/>
    </object>
-   <object id="23" gid="5292" x="728" y="224" width="64" height="32"/>
-   <object id="24" gid="5292" x="864" y="168" width="64" height="32"/>
-   <object id="25" gid="5289" x="784" y="136" width="64" height="32"/>
-   <object id="26" gid="5290" x="848" y="248" width="64" height="32"/>
    <object id="237" template="mapobjects/OutwardBoundary.tx" x="448" y="32" visible="1">
     <polygon points="0,-32 0,64 512,64 512,-32"/>
    </object>
