@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 37,
-  nextobjectid = 400,
+  nextlayerid = 39,
+  nextobjectid = 418,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -17355,7 +17355,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 3520,
-              y = -64,
+              y = 48,
               width = 0,
               height = 0,
               rotation = 0,
@@ -17373,7 +17373,7 @@ return {
                 { x = 0, y = 0 }
               },
               properties = {
-                ["bodyheight"] = 16,
+                ["bodyheight"] = 10,
                 ["bodysolid"] = true,
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
@@ -17402,7 +17402,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3712,
+              x = 3720,
               y = 88,
               width = 64,
               height = 64,
@@ -17419,7 +17419,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3464,
+              x = 3448,
               y = 96,
               width = 64,
               height = 64,
@@ -18685,6 +18685,326 @@ return {
               height = 64,
               rotation = 0,
               gid = 5283,
+              visible = true,
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 38,
+          name = "+slingers",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 409,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 5088,
+              y = -40,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5278,
+              visible = true,
+              properties = {
+                ["ammo"] = 3,
+                ["entrypoint"] = { id = 412 },
+                ["exitpoint"] = { id = 415 },
+                ["initialai"] = "enterShootLeave",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 410,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4992,
+              y = -72,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5278,
+              visible = true,
+              properties = {
+                ["ammo"] = 3,
+                ["entrypoint"] = { id = 413 },
+                ["exitpoint"] = { id = 416 },
+                ["initialai"] = "enterShootLeave",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 411,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 5184,
+              y = -8,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5278,
+              visible = true,
+              properties = {
+                ["ammo"] = 3,
+                ["entrypoint"] = { id = 414 },
+                ["exitpoint"] = { id = 417 },
+                ["initialai"] = "enterShootLeave",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 412,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 5088,
+              y = 40,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 413,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 4992,
+              y = 40,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 414,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 5184,
+              y = 40,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 415,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 5088,
+              y = -64,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 416,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 4992,
+              y = -64,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 417,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 5184,
+              y = -64,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 37,
+          name = "+archers",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 400,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 5088,
+              y = -40,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5274,
+              visible = true,
+              properties = {
+                ["ammo"] = 5,
+                ["entrypoint"] = { id = 401 },
+                ["exitpoint"] = { id = 402 },
+                ["initialai"] = "enterShootLeave",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 403,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4992,
+              y = -72,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5274,
+              visible = true,
+              properties = {
+                ["ammo"] = 5,
+                ["entrypoint"] = { id = 404 },
+                ["exitpoint"] = { id = 405 },
+                ["initialai"] = "enterShootLeave",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 406,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 5184,
+              y = -8,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5274,
+              visible = true,
+              properties = {
+                ["ammo"] = 5,
+                ["entrypoint"] = { id = 407 },
+                ["exitpoint"] = { id = 408 },
+                ["initialai"] = "enterShootLeave",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 401,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 5088,
+              y = 40,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 404,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 4992,
+              y = 40,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 407,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 5184,
+              y = 40,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 402,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 5088,
+              y = -64,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 405,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 4992,
+              y = -64,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 408,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 5184,
+              y = -64,
+              width = 0,
+              height = 0,
+              rotation = 0,
               visible = true,
               properties = {}
             }

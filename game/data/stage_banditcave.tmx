@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="37" nextobjectid="400">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="39" nextobjectid="418">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -697,9 +697,9 @@
    <object id="317" template="mapobjects/OutwardBoundary.tx" x="3360" y="0">
     <polygon points="0,0 0,112 32,80 128,80 160,48 176,48 208,16 240,16 272,48 384,48 416,80 480,80 480,0"/>
    </object>
-   <object id="385" template="mapobjects/OutwardBoundary.tx" x="3520" y="-64">
+   <object id="385" template="mapobjects/OutwardBoundary.tx" x="3520" y="48">
     <properties>
-     <property name="bodyheight" type="float" value="16"/>
+     <property name="bodyheight" type="float" value="10"/>
     </properties>
     <polygon points="0,16 8,32 24,40 48,48 80,48 104,40 120,32 128,16 128,0 0,0"/>
    </object>
@@ -711,13 +711,13 @@
     </properties>
     <ellipse/>
    </object>
-   <object id="394" gid="6870" x="3712" y="88" width="64" height="64">
+   <object id="394" gid="6870" x="3720" y="88" width="64" height="64">
     <properties>
      <property name="bodyheight" type="float" value="28"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="395" gid="6874" x="3464" y="96" width="64" height="64">
+   <object id="395" gid="6874" x="3448" y="96" width="64" height="64">
     <properties>
      <property name="bodyheight" type="float" value="48"/>
      <property name="bodysolid" type="bool" value="true"/>
@@ -1053,6 +1053,118 @@
   </objectgroup>
   <objectgroup id="23" name="boss" class="Room">
    <object id="231" gid="5283" x="5328" y="184" width="64" height="64"/>
+  </objectgroup>
+  <objectgroup id="38" name="+slingers" class="Room">
+   <object id="409" gid="5278" x="5088" y="-40" width="64" height="64">
+    <properties>
+     <property name="ammo" type="int" value="3"/>
+     <property name="entrypoint" type="object" value="412"/>
+     <property name="exitpoint" type="object" value="415"/>
+     <property name="initialai" value="enterShootLeave"/>
+     <property name="z" type="float" value="64"/>
+    </properties>
+   </object>
+   <object id="410" gid="5278" x="4992" y="-72" width="64" height="64">
+    <properties>
+     <property name="ammo" type="int" value="3"/>
+     <property name="entrypoint" type="object" value="413"/>
+     <property name="exitpoint" type="object" value="416"/>
+     <property name="initialai" value="enterShootLeave"/>
+     <property name="z" type="float" value="64"/>
+    </properties>
+   </object>
+   <object id="411" gid="5278" x="5184" y="-8" width="64" height="64">
+    <properties>
+     <property name="ammo" type="int" value="3"/>
+     <property name="entrypoint" type="object" value="414"/>
+     <property name="exitpoint" type="object" value="417"/>
+     <property name="initialai" value="enterShootLeave"/>
+     <property name="z" type="float" value="64"/>
+    </properties>
+   </object>
+   <object id="412" x="5088" y="40">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="413" x="4992" y="40">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="414" x="5184" y="40">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="415" name="exitpoint" x="5088" y="-64">
+    <point/>
+   </object>
+   <object id="416" name="exitpoint" x="4992" y="-64">
+    <point/>
+   </object>
+   <object id="417" name="exitpoint" x="5184" y="-64">
+    <point/>
+   </object>
+  </objectgroup>
+  <objectgroup id="37" name="+archers" class="Room">
+   <object id="400" gid="5274" x="5088" y="-40" width="64" height="64">
+    <properties>
+     <property name="ammo" type="int" value="5"/>
+     <property name="entrypoint" type="object" value="401"/>
+     <property name="exitpoint" type="object" value="402"/>
+     <property name="initialai" value="enterShootLeave"/>
+     <property name="z" type="float" value="64"/>
+    </properties>
+   </object>
+   <object id="403" gid="5274" x="4992" y="-72" width="64" height="64">
+    <properties>
+     <property name="ammo" type="int" value="5"/>
+     <property name="entrypoint" type="object" value="404"/>
+     <property name="exitpoint" type="object" value="405"/>
+     <property name="initialai" value="enterShootLeave"/>
+     <property name="z" type="float" value="64"/>
+    </properties>
+   </object>
+   <object id="406" gid="5274" x="5184" y="-8" width="64" height="64">
+    <properties>
+     <property name="ammo" type="int" value="5"/>
+     <property name="entrypoint" type="object" value="407"/>
+     <property name="exitpoint" type="object" value="408"/>
+     <property name="initialai" value="enterShootLeave"/>
+     <property name="z" type="float" value="64"/>
+    </properties>
+   </object>
+   <object id="401" x="5088" y="40">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="404" x="4992" y="40">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="407" x="5184" y="40">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="402" name="exitpoint" x="5088" y="-64">
+    <point/>
+   </object>
+   <object id="405" name="exitpoint" x="4992" y="-64">
+    <point/>
+   </object>
+   <object id="408" name="exitpoint" x="5184" y="-64">
+    <point/>
+   </object>
   </objectgroup>
  </group>
  <group id="32" name="unused" visible="0">

@@ -6,6 +6,7 @@ local Raycast    = require "Object.Raycast"
 local Movement   = require "Component.Movement"
 local Fighter    = require "Dragontail.Character.Fighter"
 local Color      = require "Tiled.Color"
+local Stage      = require "Dragontail.Stage"
 
 --- Attacks:
 --- - Lance charge
@@ -38,6 +39,8 @@ local yield = coroutine.yield
 local GetUpAttackHealthPercent = .75
 local OneSwitchAttackHealthPercent = .5
 local TwoSwitchAttackHealthPercent = .25
+local FirstSummonHealthPercent = .6
+local SecondSummonHealthPercent = .3
 
 function BanditBoss:facePosition(px, py, animation)
     local x, y = self.x, self.y
@@ -333,6 +336,13 @@ function BanditBoss:attack(attacktype)
 end
 
 function BanditBoss:getup(attacker)
+    local healthpct = self.health/self.maxhealth
+    local numsummons = self.numsummons or 0
+    if healthpct <= FirstSummonHealthPercent and numsummons < 1
+    or healthpct <= SecondSummonHealthPercent and numsummons < 2 then
+        Stage.openNextRoom()
+        self.numsummons = numsummons + 1
+    end
     local time = self.getuptime or 27
     for _ = 1, time do
         yield()
@@ -362,6 +372,8 @@ end
 
 function BanditBoss:defeat(attacker)
     Audio.fadeMusic()
+    Characters.clearEnemies(self)
+    Stage.setToLastRoom()
     return Enemy.defeat(self, attacker)
 end
 
