@@ -313,4 +313,12 @@ function Characters.isDrawnBefore(a, b)
     return a.id < b.id
 end
 
+function Characters.clearEnemies(boss)
+    for _, enemy in ipairs(enemies) do
+        if enemy ~= boss then
+            enemy:disappear()
+        end
+    end
+end
+
 return Characters
