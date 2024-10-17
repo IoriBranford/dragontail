@@ -257,6 +257,9 @@ function Common:projectileFly(shooter)
 end
 
 function Common:projectileDeflected(deflector)
+    if not deflector.attackdeflectsprojectile then
+        return "projectileBounce", deflector
+    end
     self.hurtstun = deflector.attackstun or 3
 
     Audio.play(deflector.hitsound)
