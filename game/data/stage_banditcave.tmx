@@ -395,19 +395,30 @@
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="267" type="container-barrel-infinite" gid="6611" x="2000" y="104" width="32" height="32"/>
+   <object id="267" type="container-barrel-infinite" gid="6611" x="2000" y="104" width="32" height="32">
+    <properties>
+     <property name="facex" type="float" value="0"/>
+     <property name="facey" type="float" value="0"/>
+    </properties>
+   </object>
    <object id="270" gid="6611" x="2120" y="240" width="32" height="32">
     <properties>
+     <property name="facex" type="float" value="0"/>
+     <property name="facey" type="float" value="0"/>
      <property name="itemtype" value="food-fish"/>
     </properties>
    </object>
    <object id="268" gid="6614" x="2128" y="264" width="32" height="32">
     <properties>
+     <property name="facex" type="float" value="0"/>
+     <property name="facey" type="float" value="0"/>
      <property name="itemtype" value="food-fish"/>
     </properties>
    </object>
    <object id="269" gid="6614" x="2016" y="120" width="32" height="32">
     <properties>
+     <property name="facex" type="float" value="0"/>
+     <property name="facey" type="float" value="0"/>
      <property name="itemtype" value="food-fish"/>
     </properties>
    </object>
@@ -554,41 +565,57 @@
    </object>
    <object id="299" gid="6617" x="3192" y="144" width="32" height="48">
     <properties>
-     <property name="itemtype" value="item-throwing-axe"/>
+     <property name="facex" type="float" value="0"/>
+     <property name="facey" type="float" value="0"/>
+     <property name="itemtype" value="food-fish"/>
     </properties>
    </object>
    <object id="306" gid="6617" x="3280" y="128" width="32" height="48">
     <properties>
+     <property name="facex" type="float" value="0"/>
+     <property name="facey" type="float" value="0"/>
      <property name="itemtype" value="item-throwing-axe"/>
     </properties>
    </object>
    <object id="300" gid="6617" x="3184" y="168" width="32" height="48">
     <properties>
+     <property name="facex" type="float" value="0"/>
+     <property name="facey" type="float" value="0"/>
      <property name="itemtype" value="item-stone"/>
     </properties>
    </object>
    <object id="305" gid="6617" x="3296" y="160" width="32" height="48">
     <properties>
-     <property name="itemtype" value="item-stone"/>
+     <property name="facex" type="float" value="0"/>
+     <property name="facey" type="float" value="0"/>
+     <property name="itemtype" value="food-fish"/>
     </properties>
    </object>
    <object id="301" gid="6617" x="3248" y="160" width="32" height="48">
     <properties>
+     <property name="facex" type="float" value="0"/>
+     <property name="facey" type="float" value="0"/>
      <property name="itemtype" value="item-stone"/>
     </properties>
    </object>
    <object id="304" gid="6617" x="3328" y="176" width="32" height="48">
     <properties>
-     <property name="itemtype" value="item-stone"/>
+     <property name="facex" type="float" value="0"/>
+     <property name="facey" type="float" value="0"/>
+     <property name="itemtype" value="food-fish"/>
     </properties>
    </object>
    <object id="302" gid="6617" x="3232" y="128" width="32" height="48">
     <properties>
-     <property name="itemtype" value="item-throwing-axe"/>
+     <property name="facex" type="float" value="0"/>
+     <property name="facey" type="float" value="0"/>
+     <property name="itemtype" value="food-fish"/>
     </properties>
    </object>
    <object id="303" gid="6617" x="3336" y="144" width="32" height="48">
     <properties>
+     <property name="facex" type="float" value="0"/>
+     <property name="facey" type="float" value="0"/>
      <property name="itemtype" value="item-throwing-axe"/>
     </properties>
    </object>
@@ -643,6 +670,7 @@
      <property name="entrypoint" type="object" value="294"/>
      <property name="exitpoint" type="object" value="296"/>
      <property name="initialai" value="enterShootLeave"/>
+     <property name="itemtype" value="food-fish"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
@@ -652,6 +680,7 @@
      <property name="entrypoint" type="object" value="293"/>
      <property name="exitpoint" type="object" value="295"/>
      <property name="initialai" value="enterShootLeave"/>
+     <property name="itemtype" value="food-fish"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>

@@ -16229,7 +16229,10 @@ return {
               rotation = 0,
               gid = 6611,
               visible = true,
-              properties = {}
+              properties = {
+                ["facex"] = 0,
+                ["facey"] = 0
+              }
             },
             {
               id = 270,
@@ -16244,6 +16247,8 @@ return {
               gid = 6611,
               visible = true,
               properties = {
+                ["facex"] = 0,
+                ["facey"] = 0,
                 ["itemtype"] = "food-fish"
               }
             },
@@ -16260,6 +16265,8 @@ return {
               gid = 6614,
               visible = true,
               properties = {
+                ["facex"] = 0,
+                ["facey"] = 0,
                 ["itemtype"] = "food-fish"
               }
             },
@@ -16276,6 +16283,8 @@ return {
               gid = 6614,
               visible = true,
               properties = {
+                ["facex"] = 0,
+                ["facey"] = 0,
                 ["itemtype"] = "food-fish"
               }
             }
@@ -16827,7 +16836,9 @@ return {
               gid = 6617,
               visible = true,
               properties = {
-                ["itemtype"] = "item-throwing-axe"
+                ["facex"] = 0,
+                ["facey"] = 0,
+                ["itemtype"] = "food-fish"
               }
             },
             {
@@ -16843,6 +16854,8 @@ return {
               gid = 6617,
               visible = true,
               properties = {
+                ["facex"] = 0,
+                ["facey"] = 0,
                 ["itemtype"] = "item-throwing-axe"
               }
             },
@@ -16859,6 +16872,8 @@ return {
               gid = 6617,
               visible = true,
               properties = {
+                ["facex"] = 0,
+                ["facey"] = 0,
                 ["itemtype"] = "item-stone"
               }
             },
@@ -16875,7 +16890,9 @@ return {
               gid = 6617,
               visible = true,
               properties = {
-                ["itemtype"] = "item-stone"
+                ["facex"] = 0,
+                ["facey"] = 0,
+                ["itemtype"] = "food-fish"
               }
             },
             {
@@ -16891,6 +16908,8 @@ return {
               gid = 6617,
               visible = true,
               properties = {
+                ["facex"] = 0,
+                ["facey"] = 0,
                 ["itemtype"] = "item-stone"
               }
             },
@@ -16907,7 +16926,9 @@ return {
               gid = 6617,
               visible = true,
               properties = {
-                ["itemtype"] = "item-stone"
+                ["facex"] = 0,
+                ["facey"] = 0,
+                ["itemtype"] = "food-fish"
               }
             },
             {
@@ -16923,7 +16944,9 @@ return {
               gid = 6617,
               visible = true,
               properties = {
-                ["itemtype"] = "item-throwing-axe"
+                ["facex"] = 0,
+                ["facey"] = 0,
+                ["itemtype"] = "food-fish"
               }
             },
             {
@@ -16939,6 +16962,8 @@ return {
               gid = 6617,
               visible = true,
               properties = {
+                ["facex"] = 0,
+                ["facey"] = 0,
                 ["itemtype"] = "item-throwing-axe"
               }
             },
@@ -17099,6 +17124,7 @@ return {
                 ["entrypoint"] = { id = 294 },
                 ["exitpoint"] = { id = 296 },
                 ["initialai"] = "enterShootLeave",
+                ["itemtype"] = "food-fish",
                 ["z"] = 64
               }
             },
@@ -17119,6 +17145,7 @@ return {
                 ["entrypoint"] = { id = 293 },
                 ["exitpoint"] = { id = 295 },
                 ["initialai"] = "enterShootLeave",
+                ["itemtype"] = "food-fish",
                 ["z"] = 64
               }
             },
