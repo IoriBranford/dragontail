@@ -64,7 +64,6 @@ end
 
 function Common:dropDefeatItem()
     local item = self.item
-    local facex, facey = self.facex or 0, self.facey or 0
     if not item and self.itemtype then
         item = Characters.spawn({
             type = self.itemtype,
@@ -73,10 +72,11 @@ function Common:dropDefeatItem()
     end
     if item then
         local popouttime = self.itempopouttime or 15
+        local velx, vely = self.itemvelx or 0, self.itemvely or 0
         if popouttime > 0 then
             item.gravity = item.gravity or .125
-            item.velx = facex*10
-            item.vely = facey*10
+            item.velx = velx
+            item.vely = vely
             item.velz = item.gravity * popouttime / 2
         end
         item.opponents = self.opponents

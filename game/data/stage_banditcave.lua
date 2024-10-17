@@ -17125,6 +17125,8 @@ return {
                 ["exitpoint"] = { id = 296 },
                 ["initialai"] = "enterShootLeave",
                 ["itemtype"] = "food-fish",
+                ["itemvelx"] = 0,
+                ["itemvely"] = 4,
                 ["z"] = 64
               }
             },
@@ -17146,6 +17148,8 @@ return {
                 ["exitpoint"] = { id = 295 },
                 ["initialai"] = "enterShootLeave",
                 ["itemtype"] = "food-fish",
+                ["itemvelx"] = 0,
+                ["itemvely"] = 4,
                 ["z"] = 64
               }
             },
@@ -18735,6 +18739,8 @@ return {
                 ["exitpoint"] = { id = 415 },
                 ["initialai"] = "enterShootLeave",
                 ["itemtype"] = "food-fish",
+                ["itemvelx"] = 0,
+                ["itemvely"] = 4,
                 ["z"] = 64
               }
             },
@@ -18756,6 +18762,8 @@ return {
                 ["exitpoint"] = { id = 416 },
                 ["initialai"] = "enterShootLeave",
                 ["itemtype"] = "food-fish",
+                ["itemvelx"] = 0,
+                ["itemvely"] = 4,
                 ["z"] = 64
               }
             },
@@ -18777,6 +18785,8 @@ return {
                 ["exitpoint"] = { id = 417 },
                 ["initialai"] = "enterShootLeave",
                 ["itemtype"] = "food-fish",
+                ["itemvelx"] = 0,
+                ["itemvely"] = 4,
                 ["z"] = 64
               }
             },
@@ -18898,6 +18908,8 @@ return {
                 ["exitpoint"] = { id = 402 },
                 ["initialai"] = "enterShootLeave",
                 ["itemtype"] = "food-fish",
+                ["itemvelx"] = 0,
+                ["itemvely"] = 4,
                 ["z"] = 64
               }
             },
@@ -18919,6 +18931,8 @@ return {
                 ["exitpoint"] = { id = 405 },
                 ["initialai"] = "enterShootLeave",
                 ["itemtype"] = "food-fish",
+                ["itemvelx"] = 0,
+                ["itemvely"] = 4,
                 ["z"] = 64
               }
             },
@@ -18940,6 +18954,8 @@ return {
                 ["exitpoint"] = { id = 408 },
                 ["initialai"] = "enterShootLeave",
                 ["itemtype"] = "food-fish",
+                ["itemvelx"] = 0,
+                ["itemvely"] = 4,
                 ["z"] = 64
               }
             },
