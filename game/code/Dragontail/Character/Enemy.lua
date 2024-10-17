@@ -4,6 +4,7 @@ local Audio    = require "System.Audio"
 local Fighter  = require "Dragontail.Character.Fighter"
 local Characters = require "Dragontail.Stage.Characters"
 local Raycast    = require "Object.Raycast"
+local Color      = require "Tiled.Color"
 
 ---@class Enemy:Fighter
 local Enemy = class(Fighter)
@@ -31,6 +32,11 @@ local function totalAttackRange(attackradius, attacklungespeed, attacklungedecel
     return attackradius + Fighter.GetSlideDistance(attacklungespeed or 0, attacklungedecel or 1)
 end
 Enemy.TotalAttackRange = totalAttackRange
+
+function Enemy:getAttackFlashColor(t)
+    local greenblue = (1+sin(t))/2
+    return Color.asARGBInt(1, greenblue, greenblue, 1)
+end
 
 function Enemy:findAngleToDodgeIncoming(incoming)
     local dodgespeed = self.dodgespeed
@@ -379,8 +385,9 @@ function Enemy:prepareAttack(attacktype, targetx, targety)
     self:setDirectionalAnimation(self.windupanimation, angle, 1, self.windupanimationloopframe or 0)
 
     Audio.play(self.windupsound)
-    for i = 1, (self.attackwinduptime or 20) do
+    for t = 1, (self.attackwinduptime or 20) do
         self:accelerateTowardsVel(0, 0, 4)
+        self.color = self:getAttackFlashColor(t)
         -- if target then
         --     local dodgeangle = self:findAngleToDodgeIncoming(target)
         --     if dodgeangle then
@@ -430,12 +437,13 @@ function Enemy:executeAttack(attacktype, targetx, targety, targetz)
     repeat
         lungespeed = Fighter.updateSlideSpeed(self, angle, lungespeed, self.attacklungedecel or 1)
         hittime = hittime - 1
+        self.color = self:getAttackFlashColor(hittime)
         yield()
         if self.velx ~= 0 or self.vely ~= 0 then
             self:keepInBounds()
         end
     until hittime <= 0
-
+    self.color = Color.White
     self:stopAttack()
     if self.attackwindupinvuln then
         self.canbeattacked = true

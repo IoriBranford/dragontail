@@ -5,7 +5,21 @@ local Characters = require "Dragontail.Stage.Characters"
 local Raycast    = require "Object.Raycast"
 local Movement   = require "Component.Movement"
 local Fighter    = require "Dragontail.Character.Fighter"
+local Color      = require "Tiled.Color"
 
+--- Attacks:
+--- - Lance charge
+--- - Lance spin
+--- Both can be stopped by hitting wall and recoiling
+--- 
+--- Logic:
+--- - Charge at long distance or spin at short distance
+--- - At medium health
+---     - If player moves past or close while preparing charge, cancel into spin
+---     - If player moves away during early spin, cancel into charge
+---     - Call backup between some number of attacks
+--- - At low health
+---     - Spin constantly in desperation
 ---@class BanditBoss:Enemy
 local BanditBoss = class(Enemy)
 
@@ -203,8 +217,9 @@ function BanditBoss:prepareAttack(attacktype, targetx, targety)
     self:setDirectionalAnimation(self.windupanimation, angle, 1, self.windupanimationloopframe or 0)
 
     Audio.play(self.windupsound)
-    for i = 1, (self.attackwinduptime or 20) do
+    for t = 1, (self.attackwinduptime or 20) do
         self:accelerateTowardsVel(0, 0, 4)
+        self.color = self:getAttackFlashColor(t)
 
         if target and target.canbeattacked then
             local switchesleft = self.attackswitchesleft or 0
@@ -278,11 +293,13 @@ function BanditBoss:executeAttack(attacktype, targetx, targety, targetz)
             end
         end
         hittime = hittime - 1
+        self.color = self:getAttackFlashColor(hittime)
         yield()
         if self.velx ~= 0 or self.vely ~= 0 then
             self:keepInBounds()
         end
     until hittime <= 0
+    self.color = Color.White
 
     self:stopAttack()
     if self.attackwindupinvuln then
@@ -326,7 +343,10 @@ function BanditBoss:getup(attacker)
                 Database.fill(self, attack)
                 self.attackswitchesleft = 0
                 Audio.play(self.windupsound)
-                coroutine.wait(self.attackwinduptime or 0)
+                for t = 1, (self.attackwinduptime or 0) do
+                    self.color = self:getAttackFlashColor(t)
+                    yield()
+                end
                 self:executeAttack(nil, attacker)
                 return self.aiaftergetup or self.recoverai
             end
