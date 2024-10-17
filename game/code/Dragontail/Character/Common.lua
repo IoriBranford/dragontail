@@ -64,6 +64,7 @@ end
 
 function Common:dropDefeatItem()
     local item = self.item
+    local facex, facey = self.facex or 0, self.facey or 0
     if not item and self.itemtype then
         item = Characters.spawn({
             type = self.itemtype,
@@ -74,6 +75,8 @@ function Common:dropDefeatItem()
         local popouttime = self.itempopouttime or 15
         if popouttime > 0 then
             item.gravity = item.gravity or .125
+            item.velx = facex*10
+            item.vely = facey*10
             item.velz = item.gravity * popouttime / 2
         end
         item.opponents = self.opponents
@@ -108,6 +111,7 @@ function Common:itemWaitForPickup()
     while true do
         local finished
         t = t + 1
+        self:accelerateTowardsVel(0, 0, 10)
         if self.healhealth then
             local redblue = (t%30)/15
             self.color = Color.asARGBInt(redblue, 1, redblue, 1)
