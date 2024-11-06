@@ -79,8 +79,11 @@
    <property name="drawz" type="float" value="-1.5"/>
   </properties>
   <data encoding="base64" compression="zlib">
+   <chunk x="60" y="0" width="20" height="12">
+   eJxjYKAeMGGiomGjYBSMAoIAAL42ADc=
+  </chunk>
    <chunk x="80" y="0" width="20" height="12">
-   eJxjYGBgMGGCYGMgNoViY6iYGRCPglEwCgYnAABA6gGz
+   eJwzYWJgMAZiUygGsU2A2AyIR8EoGAWDGwAAgxUBfQ==
   </chunk>
   </data>
  </layer>
@@ -99,10 +102,10 @@
    eJztjDsOwjAQROcAcSBSAghOBJULAgguRBEQBT+FQ5GaXIbnwrJkmY4yKz2NPbOzzVi6QDeSLKwK6cT/jHboGxreBl0Wwe8zaZJLU5hBCRVk5NZ1wPI+wtyEPO54f8HOBt3CDtZQJ+67/t6EPO54/8DOHX3AE65wS9x3/daEPO54/8VOauL7rv/5sTvMMP+eL8HWI7s=
   </chunk>
    <chunk x="60" y="0" width="20" height="12">
-   eJzdzk8OwUAUgPFnFv60ytQCFxFKHMGChfYMlDgICRZqgwtJqjau42saC2ols/KSXyaTzHx5zZpIC20kVZGRK1LSIhtc65IbC0XFG5TRLYj04CHGlI6PAK4j0sCW5o1erPO9ITw6fQwwozFHCMX9QCfCEWNaEyfb09ZZ93NWCPm3wBInOmdc0FHvb3dOdr72XH/p/Trpnr5trrenFxns3ek9DPbSSSpme65ltveP8wRzgxkl
+   eJzdzk0OwUAYh/G3Fj5aw9QCN6EVR7Bgoc5AKw5CgoXa+DiQhNq4jqdpLKiVzMo/+WU2kydvsybSQhtJVWTgipS0yAqXuuRmo1jgD8roWCJdePAxphNgAleJNLCmeaN31fleHx4dHz1MacwQIsKOTow9hrRGKrvT0Vn3cwuEdCLMcaBxxAln6/3vRmXv687ll96vS+8MHHO9Lb3YYO9O72Gwly6pmO25ttneP+4J6bEZZA==
   </chunk>
    <chunk x="80" y="0" width="20" height="12">
-   eJwzZ2RgsAJiGDAlwOcGss2A2ByIlwD5S4H4EhCXAPECIM4Ciuciqc8gwLcDsjMZIfquA/k3gJgVyF7OALFjLhAvQFI/mwC/EMieA9XHxQhxrwUQ34K6jRJgywhxbzYQ80LtoBSA3DsPiB2oYNYoGHkAAKkyFRE=
+   eJxjYIAAU0YGBitGBjhA53MD2WZAbA7EFkBsCcRLgOJLgfgSEJcA8QKEcoYMoHwuI26+HZCdCcRZQJwNxDlAfB0ofgOIWYHs5QwQu2BgNpC9AA+/EMieA8RzgXgeEM8HYi5GiLtB7r3FALGLEmDLCHE3yL28ULsoBYVQ9zpQwaxRMPIAAGcyFRE=
   </chunk>
    <chunk x="100" y="0" width="20" height="12">
    eJxjY2RgsGBgYGAB0heANDOQvgmkzYC0OUgOiHmAOBOIs4A4G4hz0PjcjKjqLZH4Zlj02wPxHCCeC8TzgHg+Gt8Oj32ZWPQXATE+UIjHvjlE6B8Fo2CwAgDl4Bf8
@@ -148,7 +151,7 @@
    eJxjYEAFH8UZGJTEGBiUgVhFjIEqwAhojjEQm1DJPFoBQ4mBdsEoGAWkAQDj2ALY
   </chunk>
    <chunk x="80" y="0" width="20" height="12">
-   eJxjYMAPZjMyMMwF4vlAPI8Rwp8DFeMCYm4gtgTiW0C1lkwEDCMAbIHm2AFxDhDzgmgKzQOBQqjbHRgpN2sUjILBBgCHIwhw
+   eJxjYMAOZjMyMMwF4vlAPI8Rwp8DFZsHFecCYm4gtgTiW0A9lkw4DCMS2ALNsQPiHCDmBdEUmgcChVC3OjBSbtYoGAWDDQAAEuAJrw==
   </chunk>
    <chunk x="100" y="0" width="20" height="12">
    eJyzYmJgsELC1kCMDayVYmBYB8TrgXiDFHY1IJDLhIrzcJi3F2jGPiDeD8QH8JhHLDgLNOMcEJ8H4gtUMG8UjIKhAACxwA2A
@@ -174,10 +177,10 @@
   </properties>
   <data encoding="base64" compression="zlib">
    <chunk x="60" y="0" width="20" height="12">
-   eJxjYCAe5JKglhhgQ2Xz8qls3iIgXkxF864C8TUqmmfNCAxDRuqZl8rEwJAGxLxY5HiAmJVE81iBbrsEpB2AmAWqnw2I2YHYngEiRwqYD9IPNDMHSJsDsQUQWwKxFdQuSxLNGw4AAIrdCeE=
+   eJxjYCAe5JKglhhgQ2Xz8qls3iIgXkxF864C8TUqmmfNCAxDRuqZl8rEwJAGxLxIYjxAzArEbEDMTqJ5rEC3XQLSDkDMAjXHngEiZgWlSQHzQe4AmpkDpM2B2AKILaEYJJdFonnDAQAArbwLtg==
   </chunk>
    <chunk x="80" y="0" width="20" height="12">
-   eJxjYBgFwxmwATE7FHMgiTNj4fMSYZ4VEF8C4iwgNmJCiJszYfIdiDBzPtQskJmpQD0ZQJwJxFlMmPxiBoiZrES6dSQAADuNCMU=
+   eJxjYBgFwxmwAzEHEp8ZC5+XBPOygNiICcE3Z8LkO5Bg5iUgTgXqyQDiTCDOYsLkFzNAzGQl0a0jAQAAbxwGow==
   </chunk>
    <chunk x="120" y="0" width="20" height="12">
    eJxjYBgFo4B+gAeIWYGYDYjZKTTLDojtgXgeEOcC8XwK3VUIxEVQc3KA2JJC99EDAADCBQR5
@@ -473,7 +476,7 @@
    <properties>
     <property name="donewhenenemiesleft" type="int" value="999"/>
    </properties>
-   <object id="105" gid="5274" x="2640" y="32" width="64" height="64">
+   <object id="105" gid="5274" x="2592" y="32" width="64" height="64">
     <properties>
      <property name="entrypoint" type="object" value="273"/>
      <property name="facex" type="float" value="0"/>
@@ -491,29 +494,29 @@
     <point/>
    </object>
    <object id="67" template="mapobjects/OutwardBoundary.tx" x="2272" y="-32" visible="1">
-    <polygon points="64,0 64,112 320,112 384,48 448,112 512,48 576,112 576,0"/>
+    <polygon points="64,0 64,112 256,112 320,48 384,112 448,48 512,112 576,48 576,0"/>
    </object>
    <object id="312" template="mapobjects/OutwardBoundary.tx" x="2272" y="-32" visible="1">
-    <polygon points="576,0 576,112 640,48 704,112 768,112 832,176 864,176 896,144 896,128 1088,128 1088,0"/>
+    <polygon points="576,0 576,48 640,112 768,112 832,176 864,176 896,144 896,128 1088,128 1088,0"/>
    </object>
    <object id="68" template="mapobjects/OutwardBoundary.tx" x="2592" y="224">
     <properties>
      <property name="bodyheight" type="float" value="64"/>
     </properties>
-    <polygon points="-320,-224 -320,96 256,96 256,64 192,0 128,64 64,0 -64,0 -96,32 -224,32 -256,0 -288,0 -288,-112 -256,-144 -256,-224"/>
+    <polygon points="-320,-224 -320,96 256,96 256,0 192,64 128,0 64,64 0,0 -128,0 -160,32 -224,32 -256,0 -288,0 -288,-112 -256,-144 -256,-224"/>
    </object>
    <object id="311" template="mapobjects/OutwardBoundary.tx" x="2592" y="224">
     <properties>
      <property name="bodyheight" type="float" value="64"/>
     </properties>
-    <polygon points="448,160 448,64 384,64 320,0 256,64 256,160"/>
+    <polygon points="384,160 384,64 320,64 256,0 256,160"/>
    </object>
    <object id="271" template="mapobjects/banditcave/wall-torch.tx" x="2480" y="56"/>
-   <object id="309" template="mapobjects/banditcave/wall-torch.tx" x="2576" y="56"/>
-   <object id="273" name="entrypoint" x="2640" y="48">
+   <object id="309" template="mapobjects/banditcave/wall-torch.tx" x="2944" y="48"/>
+   <object id="273" name="entrypoint" x="2592" y="48">
     <point/>
    </object>
-   <object id="274" gid="5274" x="2768" y="32" width="64" height="64">
+   <object id="274" gid="5274" x="2720" y="32" width="64" height="64">
     <properties>
      <property name="entrypoint" type="object" value="275"/>
      <property name="facex" type="float" value="0"/>
@@ -521,10 +524,10 @@
      <property name="initialai" value="enterAndAmbush"/>
     </properties>
    </object>
-   <object id="275" name="entrypoint" x="2768" y="48">
+   <object id="275" name="entrypoint" x="2720" y="48">
     <point/>
    </object>
-   <object id="280" gid="5274" x="2704" y="256" width="64" height="64">
+   <object id="280" gid="5274" x="2656" y="256" width="64" height="64">
     <properties>
      <property name="entrypoint" type="object" value="281"/>
      <property name="facex" type="float" value="0"/>
@@ -532,7 +535,7 @@
      <property name="initialai" value="enterAndAmbush"/>
     </properties>
    </object>
-   <object id="282" gid="5274" x="2832" y="264" width="64" height="64">
+   <object id="282" gid="5274" x="2784" y="264" width="64" height="64">
     <properties>
      <property name="entrypoint" type="object" value="283"/>
      <property name="facex" type="float" value="0"/>
@@ -540,13 +543,13 @@
      <property name="initialai" value="enterAndAmbush"/>
     </properties>
    </object>
-   <object id="281" name="entrypoint" x="2704" y="248">
+   <object id="281" name="entrypoint" x="2656" y="248">
     <point/>
    </object>
-   <object id="283" name="entrypoint" x="2832" y="248">
+   <object id="283" name="entrypoint" x="2784" y="248">
     <point/>
    </object>
-   <object id="286" gid="5274" x="2896" y="32" width="64" height="64">
+   <object id="286" gid="5274" x="2848" y="32" width="64" height="64">
     <properties>
      <property name="entrypoint" type="object" value="287"/>
      <property name="facex" type="float" value="0"/>
@@ -554,7 +557,7 @@
      <property name="initialai" value="enterAndAmbush"/>
     </properties>
    </object>
-   <object id="287" name="entrypoint" x="2896" y="48">
+   <object id="287" name="entrypoint" x="2848" y="48">
     <point/>
    </object>
    <object id="298" template="mapobjects/OutwardBoundary.tx" x="3168" y="0">
@@ -619,43 +622,43 @@
      <property name="itemtype" value="item-throwing-axe"/>
     </properties>
    </object>
-   <object id="310" template="mapobjects/banditcave/wall-torch.tx" x="3040" y="56"/>
-   <object id="351" gid="6643" x="2552" y="136" width="16" height="16">
+   <object id="310" template="mapobjects/banditcave/wall-torch.tx" x="3008" y="48"/>
+   <object id="351" gid="6643" x="2496" y="136" width="16" height="16">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="354" gid="6636" x="2554" y="145" width="16" height="16" rotation="345">
+   <object id="354" gid="6636" x="2498" y="145" width="16" height="16" rotation="345">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="355" gid="6641" x="2530" y="168" width="16" height="16" rotation="15">
+   <object id="355" gid="6641" x="2474" y="168" width="16" height="16" rotation="15">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="356" gid="6635" x="2528" y="176" width="16" height="16" rotation="15">
+   <object id="356" gid="6635" x="2472" y="176" width="16" height="16" rotation="15">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="357" gid="6640" x="2573.66" y="96" width="16" height="16" rotation="45">
+   <object id="357" gid="6640" x="2517.66" y="96" width="16" height="16" rotation="45">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="358" gid="6634" x="2568" y="101.657" width="16" height="16" rotation="45">
+   <object id="358" gid="6634" x="2512" y="101.657" width="16" height="16" rotation="45">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
