@@ -14890,7 +14890,7 @@ return {
       columns = 20,
       image = "tilesets/ui/gamepad-buttons.png",
       imagewidth = 320,
-      imageheight = 48,
+      imageheight = 80,
       objectalignment = "unspecified",
       tilerendersize = "tile",
       fillmode = "stretch",
@@ -14905,7 +14905,7 @@ return {
       },
       properties = {},
       wangsets = {},
-      tilecount = 60,
+      tilecount = 100,
       tiles = {
         {
           id = 9,
@@ -14925,6 +14925,58 @@ return {
             {
               tileid = 1,
               duration = 100
+            }
+          }
+        },
+        {
+          id = 60,
+          animation = {
+            {
+              tileid = 20,
+              duration = 100
+            },
+            {
+              tileid = 21,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 71,
+          animation = {
+            {
+              tileid = 30,
+              duration = 100
+            },
+            {
+              tileid = 31,
+              duration = 900
+            }
+          }
+        },
+        {
+          id = 80,
+          animation = {
+            {
+              tileid = 40,
+              duration = 100
+            },
+            {
+              tileid = 41,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 91,
+          animation = {
+            {
+              tileid = 50,
+              duration = 100
+            },
+            {
+              tileid = 51,
+              duration = 900
             }
           }
         }
@@ -15558,7 +15610,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6895,
+              gid = 6935,
               visible = true,
               properties = {}
             },
@@ -15572,7 +15624,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6915,
+              gid = 6955,
               visible = true,
               properties = {}
             }
@@ -15937,7 +15989,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6905,
+              gid = 6946,
               visible = true,
               properties = {}
             },
@@ -15951,7 +16003,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6925,
+              gid = 6966,
               visible = true,
               properties = {}
             }
@@ -16234,7 +16286,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6895,
+              gid = 6935,
               visible = true,
               properties = {}
             },
@@ -16265,7 +16317,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6915,
+              gid = 6955,
               visible = true,
               properties = {}
             }
@@ -16755,12 +16807,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1808,
+              x = 1840,
               y = 88,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6895,
+              gid = 6935,
               visible = true,
               properties = {
                 ["drawz"] = 2
@@ -16777,7 +16829,7 @@ return {
               height = 32,
               rotation = 0,
               visible = true,
-              text = "Then hold an    direction and tap   /   to launch him",
+              text = "Then hold    toward the door and tap   /   to launch him",
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
@@ -16790,12 +16842,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1832,
+              x = 1864,
               y = 88,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6915,
+              gid = 6955,
               visible = true,
               properties = {
                 ["drawz"] = 2
@@ -16806,32 +16858,13 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1880,
+              x = 1856,
               y = 72,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6884,
+              gid = 6880,
               visible = true,
-              properties = {
-                ["drawz"] = 2
-              }
-            },
-            {
-              id = 446,
-              name = "Instruction",
-              type = "",
-              shape = "text",
-              x = 1728,
-              y = 240,
-              width = 336,
-              height = 32,
-              rotation = 0,
-              visible = true,
-              text = "Launch one into the door to break it open!",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
               properties = {
                 ["drawz"] = 2
               }
