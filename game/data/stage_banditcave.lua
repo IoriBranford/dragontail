@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 39,
-  nextobjectid = 447,
+  nextobjectid = 463,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -14981,6 +14981,62 @@ return {
           }
         }
       }
+    },
+    {
+      name = "keyboard-keys",
+      firstgid = 6975,
+      class = "",
+      tilewidth = 16,
+      tileheight = 16,
+      spacing = 0,
+      margin = 0,
+      columns = 17,
+      image = "tilesets/ui/keyboard-keys.png",
+      imagewidth = 272,
+      imageheight = 256,
+      objectalignment = "unspecified",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 272,
+      tiles = {
+        {
+          id = 206,
+          animation = {
+            {
+              tileid = 70,
+              duration = 100
+            },
+            {
+              tileid = 206,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 207,
+          animation = {
+            {
+              tileid = 71,
+              duration = 100
+            },
+            {
+              tileid = 207,
+              duration = 900
+            }
+          }
+        }
+      }
     }
   },
   layers = {
@@ -15457,9 +15513,9 @@ return {
               name = "Instruction",
               type = "",
               shape = "text",
-              x = 296,
+              x = 288,
               y = 48,
-              width = 136,
+              width = 128,
               height = 32,
               rotation = 0,
               visible = true,
@@ -15474,12 +15530,68 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 272,
-              y = 64,
+              x = 304,
+              y = 48,
               width = 16,
               height = 16,
               rotation = 0,
               gid = 6884,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 447,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 336,
+              y = 48,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7056,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 448,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 352,
+              y = 48,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7057,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 449,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 368,
+              y = 48,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7058,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 450,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 384,
+              y = 48,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7059,
               visible = true,
               properties = {}
             }
@@ -15588,13 +15700,13 @@ return {
               name = "Instruction",
               type = "",
               shape = "text",
-              x = 640,
-              y = 48,
-              width = 152,
+              x = 672,
+              y = 64,
+              width = 104,
               height = 16,
               rotation = 0,
               visible = true,
-              text = "  /   Tap to attack",
+              text = "Tap to attack",
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
@@ -15605,7 +15717,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 640,
+              x = 680,
               y = 64,
               width = 16,
               height = 16,
@@ -15619,12 +15731,26 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 664,
+              x = 712,
               y = 64,
               width = 16,
               height = 16,
               rotation = 0,
               gid = 6955,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 451,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 744,
+              y = 64,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7181,
               visible = true,
               properties = {}
             }
@@ -15967,45 +16093,67 @@ return {
               name = "Instruction",
               type = "",
               shape = "text",
-              x = 1136,
-              y = 112,
-              width = 304,
-              height = 32,
+              x = 1232,
+              y = 304,
+              width = 264,
+              height = 16,
               rotation = 0,
               visible = true,
-              text = "  /   Hold to sprint\n      after fast enemies",
+              text = "Hold to sprint after fast enemies",
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
-              properties = {}
+              properties = {
+                ["drawz"] = 2
+              }
             },
             {
               id = 426,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1136,
-              y = 128,
+              x = 1320,
+              y = 304,
               width = 16,
               height = 16,
               rotation = 0,
               gid = 6946,
               visible = true,
-              properties = {}
+              properties = {
+                ["drawz"] = 2
+              }
             },
             {
               id = 428,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1160,
-              y = 128,
+              x = 1352,
+              y = 304,
               width = 16,
               height = 16,
               rotation = 0,
               gid = 6966,
               visible = true,
-              properties = {}
+              properties = {
+                ["drawz"] = 2
+              }
+            },
+            {
+              id = 452,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1384,
+              y = 304,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7182,
+              visible = true,
+              properties = {
+                ["drawz"] = 2
+              }
             }
           }
         },
@@ -16250,10 +16398,10 @@ return {
               name = "Instruction",
               type = "",
               shape = "text",
-              x = 1520,
-              y = 72,
-              width = 240,
-              height = 32,
+              x = 1504,
+              y = 80,
+              width = 160,
+              height = 16,
               rotation = 0,
               visible = true,
               text = "Move to pick up rock",
@@ -16267,8 +16415,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1496,
-              y = 88,
+              x = 1536,
+              y = 80,
               width = 16,
               height = 16,
               rotation = 0,
@@ -16281,8 +16429,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1472,
-              y = 112,
+              x = 1544,
+              y = 116,
               width = 16,
               height = 16,
               rotation = 0,
@@ -16295,16 +16443,17 @@ return {
               name = "Instruction",
               type = "",
               shape = "text",
-              x = 1472,
-              y = 96,
-              width = 224,
-              height = 32,
+              x = 1512,
+              y = 112,
+              width = 144,
+              height = 16,
               rotation = 0,
               visible = true,
-              text = "  /   Tap to throw rock",
+              text = "Tap to throw rock",
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
+              halign = "center",
               properties = {}
             },
             {
@@ -16312,12 +16461,82 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1496,
-              y = 112,
+              x = 1576,
+              y = 116,
               width = 16,
               height = 16,
               rotation = 0,
               gid = 6955,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 453,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1568,
+              y = 80,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7056,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 454,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1584,
+              y = 80,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7057,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 455,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1600,
+              y = 80,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7058,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 456,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1616,
+              y = 80,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7059,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 457,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1608,
+              y = 116,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7181,
               visible = true,
               properties = {}
             }
@@ -16772,19 +16991,17 @@ return {
               name = "Instruction",
               type = "",
               shape = "text",
-              x = 1880,
-              y = 16,
-              width = 200,
+              x = 1792,
+              y = 56,
+              width = 224,
               height = 32,
               rotation = 0,
               visible = true,
-              text = "Move into an enemy or barrel to grab",
+              text = "Move into an enemy or barrel to grab him",
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
-              properties = {
-                ["drawz"] = 2
-              }
+              properties = {}
             },
             {
               id = 437,
@@ -16792,23 +17009,21 @@ return {
               type = "",
               shape = "rectangle",
               x = 1856,
-              y = 32,
+              y = 56,
               width = 16,
               height = 16,
               rotation = 0,
               gid = 6884,
               visible = true,
-              properties = {
-                ["drawz"] = 2
-              }
+              properties = {}
             },
             {
               id = 438,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1840,
-              y = 88,
+              x = 1792,
+              y = 256,
               width = 16,
               height = 16,
               rotation = 0,
@@ -16823,13 +17038,13 @@ return {
               name = "Instruction",
               type = "",
               shape = "text",
-              x = 1776,
-              y = 56,
-              width = 240,
+              x = 1728,
+              y = 224,
+              width = 288,
               height = 32,
               rotation = 0,
               visible = true,
-              text = "Then hold    toward the door and tap   /   to launch him",
+              text = "Then hold direction toward the door and tap   /  /   to launch him",
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
@@ -16842,8 +17057,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1864,
-              y = 88,
+              x = 1816,
+              y = 256,
               width = 16,
               height = 16,
               rotation = 0,
@@ -16854,20 +17069,74 @@ return {
               }
             },
             {
-              id = 441,
+              id = 458,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1856,
-              y = 72,
+              x = 1840,
+              y = 256,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6880,
+              gid = 7181,
               visible = true,
-              properties = {
-                ["drawz"] = 2
-              }
+              properties = {}
+            },
+            {
+              id = 459,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1888,
+              y = 56,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7056,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 460,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1904,
+              y = 56,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7057,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 461,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1920,
+              y = 56,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7058,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 462,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1936,
+              y = 56,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7059,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -17539,7 +17808,7 @@ return {
               height = 32,
               rotation = 0,
               visible = true,
-              text = "Hold   /   with an    direction\nto sprint past archers",
+              text = "Hold   /  /   and a direction\nto sprint past archers",
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
@@ -17584,12 +17853,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2456,
+              x = 2392,
               y = 240,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6884,
+              gid = 7182,
               visible = true,
               properties = {
                 ["drawz"] = 2
