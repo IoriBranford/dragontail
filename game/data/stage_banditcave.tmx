@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="39" nextobjectid="421">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="39" nextobjectid="447">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -37,6 +37,7 @@
  <tileset firstgid="6723" source="sprites/items/Cheese A.tsx"/>
  <tileset firstgid="6741" source="tilesets/Forge A.tsx"/>
  <tileset firstgid="6869" source="sprites/banditcave/Workbench, Smith.tsx"/>
+ <tileset firstgid="6875" source="tilesets/ui/gamepad-buttons.tsx"/>
  <layer id="2" name="floor" width="200" height="12">
   <properties>
    <property name="drawz" type="float" value="-2"/>
@@ -235,6 +236,10 @@
    <object id="237" template="mapobjects/OutwardBoundary.tx" x="448" y="32" visible="1">
     <polygon points="0,-32 0,64 512,64 512,-32"/>
    </object>
+   <object id="421" name="Instruction" x="296" y="48" width="136" height="32">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Push a direction to move</text>
+   </object>
+   <object id="422" gid="6884" x="272" y="64" width="16" height="16"/>
   </objectgroup>
   <objectgroup id="8" name="learnattack" class="Room">
    <object id="15" gid="5266" x="976" y="176" width="64" height="64"/>
@@ -243,6 +248,11 @@
    <object id="49" gid="5266" x="464" y="160" width="64" height="64"/>
    <object id="11" gid="5266" x="1040" y="192" width="64" height="64"/>
    <object id="48" gid="5266" x="464" y="232" width="64" height="64"/>
+   <object id="423" name="Instruction" x="640" y="48" width="152" height="16">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">  /   Tap to attack</text>
+   </object>
+   <object id="424" gid="6895" x="640" y="64" width="16" height="16"/>
+   <object id="427" gid="6915" x="664" y="64" width="16" height="16"/>
   </objectgroup>
   <objectgroup id="9" name="tolearnrunning" class="Room">
    <properties>
@@ -268,6 +278,10 @@
     </properties>
     <polygon points="0,0 0,160 320,160 352,128 480,128 480,0"/>
    </object>
+   <object id="430" name="Instruction" x="1216" y="160" width="192" height="32" visible="0">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Steer while sprinting</text>
+   </object>
+   <object id="429" gid="6884" x="1192" y="176" width="16" height="16" visible="0"/>
   </objectgroup>
   <objectgroup id="10" name="learnrunning" class="Room">
    <object id="32" gid="5270" x="1616" y="216" width="64" height="64"/>
@@ -276,6 +290,12 @@
    <object id="264" gid="5266" x="1664" y="248" width="64" height="64"/>
    <object id="55" gid="5266" x="1064" y="176" width="64" height="64"/>
    <object id="261" gid="5266" x="1064" y="232" width="64" height="64"/>
+   <object id="425" name="Instruction" x="1136" y="112" width="304" height="32">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">  /   Hold to sprint
+      after fast enemies</text>
+   </object>
+   <object id="426" gid="6905" x="1136" y="128" width="16" height="16"/>
+   <object id="428" gid="6925" x="1160" y="128" width="16" height="16"/>
   </objectgroup>
   <objectgroup id="11" name="learnthrowingweapons" class="Room">
    <properties>
@@ -360,6 +380,15 @@
     </properties>
     <polygon points="0,0 0,48 960,48 960,0"/>
    </object>
+   <object id="431" name="Instruction" x="1520" y="72" width="240" height="32">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Move to pick up rock</text>
+   </object>
+   <object id="432" gid="6884" x="1496" y="88" width="16" height="16"/>
+   <object id="433" gid="6895" x="1472" y="112" width="16" height="16"/>
+   <object id="434" name="Instruction" x="1472" y="96" width="224" height="32">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">  /   Tap to throw rock</text>
+   </object>
+   <object id="435" gid="6915" x="1496" y="112" width="16" height="16"/>
   </objectgroup>
   <objectgroup id="28" name="+knives" class="Room">
    <properties>
@@ -374,7 +403,7 @@
    <object id="41" gid="5270" x="1360" y="264" width="64" height="64"/>
    <object id="62" gid="5270" x="1872" y="232" width="64" height="64"/>
   </objectgroup>
-  <objectgroup id="15" name="tolearngrabandthrowenemies" class="Room">
+  <objectgroup draworder="index" id="15" name="tolearngrabandthrowenemies" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="1"/>
    </properties>
@@ -398,7 +427,7 @@
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="267" type="container-barrel-infinite" gid="6611" x="2000" y="104" width="32" height="32">
+   <object id="267" type="container-barrel-infinite" gid="6611" x="2008" y="120" width="32" height="32">
     <properties>
      <property name="facex" type="float" value="0"/>
      <property name="facey" type="float" value="0"/>
@@ -418,7 +447,7 @@
      <property name="itemtype" value="food-fish"/>
     </properties>
    </object>
-   <object id="269" gid="6614" x="2016" y="120" width="32" height="32">
+   <object id="269" gid="6614" x="2032" y="128" width="32" height="32">
     <properties>
      <property name="facex" type="float" value="0"/>
      <property name="facey" type="float" value="0"/>
@@ -427,7 +456,7 @@
    </object>
   </objectgroup>
   <objectgroup id="29" name="learngrabandthrowenemies">
-   <object id="254" gid="5278" x="2112" y="-8" width="64" height="64">
+   <object id="254" gid="5278" x="2080" y="0" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
      <property name="entrypoint" type="object" value="255"/>
@@ -436,13 +465,13 @@
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="255" name="entrypoint" x="2048" y="56">
+   <object id="255" name="entrypoint" x="2080" y="64">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="256" name="exitpoint" x="2144" y="-40">
+   <object id="256" name="exitpoint" x="2080" y="-32">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
@@ -471,8 +500,46 @@
    </object>
    <object id="307" gid="5266" x="1424" y="184" width="64" height="64"/>
    <object id="308" gid="5266" x="1680" y="264" width="64" height="64"/>
+   <object id="436" name="Instruction" x="1880" y="16" width="200" height="32">
+    <properties>
+     <property name="drawz" type="float" value="2"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Move into an enemy or barrel to grab</text>
+   </object>
+   <object id="437" gid="6884" x="1856" y="32" width="16" height="16">
+    <properties>
+     <property name="drawz" type="float" value="2"/>
+    </properties>
+   </object>
+   <object id="438" gid="6895" x="1808" y="88" width="16" height="16">
+    <properties>
+     <property name="drawz" type="float" value="2"/>
+    </properties>
+   </object>
+   <object id="439" name="Instruction" x="1776" y="56" width="240" height="32">
+    <properties>
+     <property name="drawz" type="float" value="2"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Then hold an    direction and tap   /   to launch him</text>
+   </object>
+   <object id="440" gid="6915" x="1832" y="88" width="16" height="16">
+    <properties>
+     <property name="drawz" type="float" value="2"/>
+    </properties>
+   </object>
+   <object id="441" gid="6884" x="1880" y="72" width="16" height="16">
+    <properties>
+     <property name="drawz" type="float" value="2"/>
+    </properties>
+   </object>
+   <object id="446" name="Instruction" x="1728" y="240" width="336" height="32">
+    <properties>
+     <property name="drawz" type="float" value="2"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Launch one into the door to break it open!</text>
+   </object>
   </objectgroup>
-  <objectgroup id="22" name="entryhall" class="Room">
+  <objectgroup draworder="index" id="22" name="entryhall" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="999"/>
    </properties>
@@ -663,6 +730,28 @@
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
+    </properties>
+   </object>
+   <object id="442" name="Instruction" x="2304" y="224" width="304" height="32">
+    <properties>
+     <property name="drawz" type="float" value="2"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Hold   /   with an    direction
+to sprint past archers</text>
+   </object>
+   <object id="443" gid="6905" x="2344" y="240" width="16" height="16">
+    <properties>
+     <property name="drawz" type="float" value="2"/>
+    </properties>
+   </object>
+   <object id="444" gid="6925" x="2368" y="240" width="16" height="16">
+    <properties>
+     <property name="drawz" type="float" value="2"/>
+    </properties>
+   </object>
+   <object id="445" gid="6884" x="2456" y="240" width="16" height="16">
+    <properties>
+     <property name="drawz" type="float" value="2"/>
     </properties>
    </object>
   </objectgroup>
