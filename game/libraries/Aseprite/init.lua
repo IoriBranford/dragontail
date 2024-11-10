@@ -30,7 +30,7 @@ local Animation= require "Aseprite.Animation"
 ---@field image love.Image
 ---@field imagefile string
 ---@field layers {[string|integer]: integer|AseLayer}
----@field animations {[string]: AseTag}
+---@field animations {[string]: AseTag} '*' means the aseprite itself, i.e. all frames
 ---@field [integer] AseFrame|false
 local Aseprite = class(Animation)
 Aseprite.Frame = AseFrame
@@ -94,6 +94,8 @@ function Aseprite.load(jsonfile, withimagedata)
 	local animations = meta.frameTags
 	local _, cel1 = next(cels)
 	local size = cel1.sourceSize
+
+	---@type Aseprite
 	local ase = Aseprite.cast({
         image = image,
         imagefile = imagefile,
@@ -128,6 +130,7 @@ function Aseprite.load(jsonfile, withimagedata)
 		animations[animation.name] = animation
 		animation:load(ase)
 	end
+	animations['*'] = ase
 	for i = #animations, 1, -1 do
 		animations[i] = nil
 	end
