@@ -476,7 +476,16 @@ function Enemy:enterAndDropDown()
     repeat
         yield()
     until self.z == Characters.getCylinderFloorZ(self.x, self.y, self.z, self.bodyradius, self.bodyheight)
-    return "stand", 20
+    Audio.play(self.jumplandsound)
+    self:changeAnimation("FallRiseFromKnees", 1, 0)
+    Characters.spawn({
+        type = "spark-land-on-feet-dust",
+        x = self.x,
+        y = self.y + 1,
+        z = self.z,
+    })
+    coroutine.wait(9)
+    return "stand", 3
 end
 
 function Enemy:enterAndAmbush()
