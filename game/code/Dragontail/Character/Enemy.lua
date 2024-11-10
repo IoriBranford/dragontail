@@ -466,6 +466,19 @@ function Enemy:attack(attacktype)
     return "stand", 20
 end
 
+function Enemy:enterAndDropDown()
+    if self.entrypoint then
+        if self:walkToDest(self.entrypoint) then
+            self.entrypoint = nil
+        end
+    end
+    self.gravity = max(self.gravity or 0.25, 0.25)
+    repeat
+        yield()
+    until self.z == Characters.getCylinderFloorZ(self.x, self.y, self.z, self.bodyradius, self.bodyheight)
+    return "stand", 20
+end
+
 function Enemy:enterAndAmbush()
     if self.entrypoint then
         if self:walkToDest(self.entrypoint) then
