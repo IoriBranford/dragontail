@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 39,
-  nextobjectid = 463,
+  nextlayerid = 40,
+  nextobjectid = 465,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -17135,6 +17135,50 @@ return {
               height = 16,
               rotation = 0,
               gid = 7059,
+              visible = true,
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 39,
+          name = "entercaveevent",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["eventfunction"] = "playerEnterNextArea"
+          },
+          objects = {
+            {
+              id = 463,
+              name = "playerwarpentrance",
+              type = "",
+              shape = "point",
+              x = 2080,
+              y = 160,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 464,
+              name = "playerwarpdest",
+              type = "",
+              shape = "point",
+              x = 2384,
+              y = 96,
+              width = 0,
+              height = 0,
+              rotation = 0,
               visible = true,
               properties = {}
             }
