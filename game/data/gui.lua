@@ -9,8 +9,8 @@ return {
   height = 15,
   tilewidth = 16,
   tileheight = 18,
-  nextlayerid = 8,
-  nextobjectid = 12,
+  nextlayerid = 10,
+  nextobjectid = 14,
   properties = {},
   tilesets = {
     {
@@ -326,6 +326,88 @@ return {
           halign = "center",
           valign = "center",
           properties = {}
+        }
+      }
+    },
+    {
+      type = "group",
+      id = 8,
+      name = "wipe",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      layers = {
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 9,
+          name = "diagonalCurtains",
+          class = "Gui.Wipe",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["closeandopenfunction"] = "twoCurtainsCloseAndOpen",
+            ["closefunction"] = "twoCurtainsClose",
+            ["openfunction"] = "twoCurtainsOpen",
+            ["speed"] = 32
+          },
+          objects = {
+            {
+              id = 12,
+              name = "left",
+              type = "",
+              shape = "polygon",
+              x = 0,
+              y = 0,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = 0 },
+                { x = -240, y = 270 },
+                { x = -360, y = 270 },
+                { x = -360, y = 0 }
+              },
+              properties = {
+                ["closedx"] = 360,
+                ["color"] = "#ff000000",
+                ["openx"] = 0
+              }
+            },
+            {
+              id = 13,
+              name = "right",
+              type = "",
+              shape = "polygon",
+              x = 480,
+              y = 270,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = 0 },
+                { x = 240, y = -270 },
+                { x = 360, y = -270 },
+                { x = 360, y = 0 }
+              },
+              properties = {
+                ["closedx"] = 120,
+                ["color"] = "#ff000000",
+                ["openx"] = 480
+              }
+            }
+          }
         }
       }
     }
