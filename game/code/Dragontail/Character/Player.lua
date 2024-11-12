@@ -514,9 +514,9 @@ function Player:control()
 
         local animation
         if velx ~= 0 or vely ~= 0 then
-            animation = "run"
+            animation = "Walk"
         else
-            animation = "stand"
+            animation = "Stand"
         end
         animation = self.getDirectionalAnimation_angle(animation, atan2(facey, facex), self.animationdirections)
         self:changeAseAnimation(animation)
@@ -654,9 +654,9 @@ function Player:aimThrow()
 
         local animation
         if self.velx ~= 0 or self.vely ~= 0 then
-            animation = "run"
+            animation = "Walk"
         else
-            animation = "stand"
+            animation = "Stand"
         end
         self:setDirectionalAnimation(animation, atan2(facey, facex))
 
