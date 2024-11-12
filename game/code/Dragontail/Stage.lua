@@ -6,6 +6,7 @@ local State       = require "Dragontail.Character.State"
 local Characters  = require "Dragontail.Stage.Characters"
 local CameraPath  = require "Object.CameraPath"
 local Config      = require "System.Config"
+local Events      = require "Dragontail.Stage.Events"
 local Stage = {
     CameraWidth = 480,
     CameraHeight = 270
@@ -77,7 +78,7 @@ function Stage.init(stagefile)
     scene:addMap(map, "group,tilelayer")
 
     local rooms = map.layers.rooms
-    local firstroomindex = 9
+    local firstroomindex = 1
     firstroomindex = min(firstroomindex, #rooms)
     local firstroom = rooms[firstroomindex]
     local camerapath = firstroom.camerapath
@@ -174,7 +175,7 @@ function Stage.openRoom(i)
             Stage.warpCamera(camerawarp.x, camerawarp.y)
         end
         Characters.spawnArray(room.characters)
-        local eventfunction = Stage[room.eventfunction]
+        local eventfunction = Events[room.eventfunction]
         if type(eventfunction) == "function" then
             eventthread = coroutine.create(eventfunction)
         end
@@ -308,32 +309,6 @@ function Stage.draw(fixedfrac)
     love.graphics.translate(-camera.x - camera.velx*fixedfrac, -camera.y - camera.vely*fixedfrac)
     scene:draw(fixedfrac, Characters.isDrawnBefore)
     love.graphics.pop()
-end
-
-function Stage.playerEnterNextArea()
-    local room = Stage.getCurrentRoom()
-    local players = Characters.getGroup("players")
-    ---@cast players Player[]
-    local warpentrance = room.playerwarpentrance
-    for _, player in ipairs(players) do
-        State.start(player, "eventWalkTo", warpentrance.x, warpentrance.y)
-    end
-    local t = 0
-    coroutine.waitfor(function()
-        t = t + 1
-        if t >= 600 then
-            return true
-        end
-        for _, player in ipairs(players) do
-            if player.x ~= warpentrance.x or player.y ~= warpentrance.y then
-                return false
-            end
-        end
-        return true
-    end)
-    for _, player in ipairs(players) do
-        State.start(player, "control")
-    end
 end
 
 return Stage
