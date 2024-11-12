@@ -1035,4 +1035,9 @@ function Player:defeat(attacker)
     Audio.play(self.defeatsound)
 end
 
+function Player:eventWalkTo(destx, desty, timelimit)
+    self:stopHolding(self.heldopponent)
+    self:walkTo(destx, desty, timelimit)
+end
+
 return Player
