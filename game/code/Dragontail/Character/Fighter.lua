@@ -3,6 +3,7 @@ local Database = require "Data.Database"
 local Common   = require "Dragontail.Character.Common"
 local Characters = require "Dragontail.Stage.Characters"
 local TiledObject = require "Tiled.Object"
+local Movement    = require "Component.Movement"
 
 ---@class Fighter:Common
 local Fighter = class(Common)
@@ -126,6 +127,35 @@ function Fighter:hurt(attacker)
         return "defeat", attacker
     end
     return recoverai
+end
+
+function Fighter:walkTo(destx, desty, timelimit)
+    if type(destx) == "table" then
+        destx, desty = destx.x, destx.y
+    end
+
+    local todestangle
+    if desty ~= self.y or destx ~= self.x then
+        local todesty, todestx = desty - self.y, destx - self.x
+        if todestx ~= 0 or todesty ~= 0 then
+            self.facex, self.facey = math.norm(todestx, todesty)
+            todestangle = atan2(todesty, todestx)
+            self:setDirectionalAnimation("Walk", todestangle)
+        end
+    end
+
+    timelimit = timelimit or 600
+    for i = 1, timelimit do
+        if self.x == destx and self.y == desty then
+            self.velx, self.vely, self.velz = 0, 0, 0
+            if todestangle then
+                self:setDirectionalAnimation("Stand", todestangle)
+            end
+            return true
+        end
+        self.velx, self.vely = Movement.getVelocity_speed(self.x, self.y, destx, desty, self.speed or 1)
+        yield()
+    end
 end
 
 -- function Fighter:stun(duration)

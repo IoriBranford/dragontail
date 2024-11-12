@@ -273,40 +273,10 @@ function Enemy:approach()
     return "stand", 5
 end
 
-function Enemy:walkToDest(destx, desty, timelimit)
-    if type(destx) == "table" then
-        destx, desty = destx.x, destx.y
-    end
-
-    local todestangle
-    if desty ~= self.y or destx ~= self.x then
-        local todesty, todestx = desty - self.y, destx - self.x
-        if todestx == 0 and todesty == 0 then
-            todestx = 1
-        end
-        faceDir(self, todestx, todesty)
-        todestangle = atan2(todesty, todestx)
-        self:setDirectionalAnimation("Walk", todestangle)
-    end
-
-    timelimit = timelimit or 600
-    for i = 1, timelimit do
-        if self.x == destx and self.y == desty then
-            self.velx, self.vely, self.velz = 0, 0, 0
-            if todestangle then
-                self:setDirectionalAnimation("Stand", todestangle)
-            end
-            return true
-        end
-        self.velx, self.vely = Movement.getVelocity_speed(self.x, self.y, destx, desty, self.speed or 1)
-        yield()
-    end
-end
-
 function Enemy:leave(exitx, exity)
     self.recoverai = "leave"
     exitx = exitx or self.exitpoint
-    self:walkToDest(exitx, exity)
+    self:walkTo(exitx, exity)
     self.exitpoint:disappear()
     self:disappear()
 end
@@ -315,7 +285,7 @@ function Enemy:enterShootLeave()
     self.recoverai = "enterShootLeave"
 
     if self.entrypoint then
-        if self:walkToDest(self.entrypoint) then
+        if self:walkTo(self.entrypoint) then
             self.entrypoint:disappear()
             self.entrypoint = nil
         end
@@ -468,7 +438,7 @@ end
 
 function Enemy:enterAndDropDown()
     if self.entrypoint then
-        if self:walkToDest(self.entrypoint) then
+        if self:walkTo(self.entrypoint) then
             self.entrypoint = nil
         end
     end
@@ -490,7 +460,7 @@ end
 
 function Enemy:enterAndAmbush()
     if self.entrypoint then
-        if self:walkToDest(self.entrypoint) then
+        if self:walkTo(self.entrypoint) then
             self.entrypoint = nil
         end
     end
