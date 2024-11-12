@@ -23,6 +23,14 @@ function Fighter:init()
     self.facey = self.facey or 0
 end
 
+function Fighter:faceDir(facex, facey, animation, frame1, loopframe)
+    self.facex, self.facey = facex, facey
+    if animation and (facex ~= 0 or facey ~= 0) then
+        local angle = atan2(facey, facex)
+        self:setDirectionalAnimation(animation, angle, frame1, loopframe)
+    end
+end
+
 function Fighter:startHolding(opponent)
     self.heldopponent = opponent
     opponent:stopAttack()
