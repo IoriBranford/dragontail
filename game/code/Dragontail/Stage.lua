@@ -19,6 +19,7 @@ local map ---@type TiledMap
 local roomindex
 local winningteam
 local camera ---@type Camera
+local eventthread ---@type thread?
 
 ---@class Camera:Boundary
 
@@ -76,7 +77,7 @@ function Stage.init(stagefile)
     scene:addMap(map, "group,tilelayer")
 
     local rooms = map.layers.rooms
-    local firstroomindex = 1
+    local firstroomindex = 9
     firstroomindex = min(firstroomindex, #rooms)
     local firstroom = rooms[firstroomindex]
     local camerapath = firstroom.camerapath
@@ -173,6 +174,10 @@ function Stage.openRoom(i)
             Stage.warpCamera(camerawarp.x, camerawarp.y)
         end
         Characters.spawnArray(room.characters)
+        local eventfunction = Stage[room.eventfunction]
+        if type(eventfunction) == "function" then
+            eventthread = coroutine.create(eventfunction)
+        end
     else
         winningteam = "players"
         for _, player in ipairs(Characters.getGroup("players")) do
@@ -180,6 +185,10 @@ function Stage.openRoom(i)
         end
         Audio.fadeMusic()
     end
+end
+
+function Stage.getCurrentRoom()
+    return map.layers.rooms[roomindex]
 end
 
 function Stage.updateGoingToNextRoom()
@@ -197,7 +206,7 @@ function Stage.updateGoingToNextRoom()
         camera.vely = 0
         local enemies = Characters.getGroup("enemies")
         local donewhenenemiesleft = room.donewhenenemiesleft or 0
-        if #enemies <= donewhenenemiesleft then
+        if #enemies <= donewhenenemiesleft and not eventthread then
             Stage.openRoom(roomindex + 1)
         end
         return
@@ -223,6 +232,13 @@ function Stage.updateGoingToNextRoom()
 end
 
 function Stage.fixedupdate()
+    if eventthread then
+        coroutine.resume(eventthread)
+        if coroutine.status(eventthread) == "dead" then
+            eventthread = nil
+        end
+    end
+
     Characters.fixedupdate()
     Characters.pruneDisappeared()
 
