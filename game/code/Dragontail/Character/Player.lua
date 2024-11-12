@@ -1038,6 +1038,8 @@ end
 function Player:eventWalkTo(destx, desty, timelimit)
     self:stopHolding(self.heldopponent)
     self:walkTo(destx, desty, timelimit)
+    self.velx, self.vely, self.velz = 0, 0, 0
+    self:faceDir(1, 0, "Stand")
 end
 
 return Player
