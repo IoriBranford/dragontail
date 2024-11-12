@@ -340,7 +340,7 @@ function BanditBoss:getup(attacker)
     local numsummons = self.numsummons or 0
     if healthpct <= FirstSummonHealthPercent and numsummons < 1
     or healthpct <= SecondSummonHealthPercent and numsummons < 2 then
-        Stage.openNextRoom()
+        Stage.openNextRoomIfNotLast()
         self.numsummons = numsummons + 1
     end
     local time = self.getuptime or 27
