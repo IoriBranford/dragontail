@@ -90,4 +90,9 @@ function State.stop(self)
     self.thread = nil
 end
 
+---@param self Character
+function State.isRunning(self)
+    return self.thread ~= nil
+end
+
 return State
