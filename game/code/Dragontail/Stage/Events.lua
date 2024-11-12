@@ -4,28 +4,51 @@ local State      = require "Dragontail.Character.State"
 ---@module 'Dragontail.Stage.Events'
 local Events = {}
 
-function Events.playerEnterNextArea()
+function Events.playerExitToNextArea()
     local Stage = require "Dragontail.Stage"
     local room = Stage.getCurrentRoom()
     local players = Characters.getGroup("players")
     ---@cast players Player[]
     local warpentrance = room.playerwarpentrance
+    local TimeLimit = 120
     for _, player in ipairs(players) do
-        State.start(player, "eventWalkTo", warpentrance.x, warpentrance.y)
+        State.start(player, "eventWalkTo", warpentrance.x, warpentrance.y, TimeLimit)
     end
-    local t = 0
     coroutine.waitfor(function()
-        t = t + 1
-        if t >= 600 then
-            return true
-        end
         for _, player in ipairs(players) do
-            if player.x ~= warpentrance.x or player.y ~= warpentrance.y then
+            if not State.isRunning(player)
+            or math.distsq(player.x, player.y, warpentrance.x, warpentrance.y) <= 64*64 then
+                return true
+            end
+        end
+    end)
+
+    local Gui        = require "Dragontail.Gui"
+    local wipe = Gui.wipe.diagonalCurtains ---@cast wipe Wipe
+    wipe:start("close")
+    coroutine.waitfor(function()
+        for _, player in ipairs(players) do
+            if State.isRunning(player) then
                 return false
             end
         end
-        return true
+        return wipe:isDone()
     end)
+end
+
+function Events.playerEnterNextArea()
+    local Stage = require "Dragontail.Stage"
+    local room = Stage.getCurrentRoom()
+    local players = Characters.getGroup("players")
+
+    local camerawarp = room.camerawarp
+    Stage.warpCamera(camerawarp.x, camerawarp.y)
+
+    local Gui        = require "Dragontail.Gui"
+    local wipe = Gui.wipe.diagonalCurtains ---@cast wipe Wipe
+    wipe:start("open")
+    coroutine.waitfor(function() return wipe:isDone() end)
+
     for _, player in ipairs(players) do
         State.start(player, "control")
     end

@@ -9,7 +9,7 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 40,
+  nextlayerid = 41,
   nextobjectid = 465,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
@@ -17153,7 +17153,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["eventfunction"] = "playerEnterNextArea"
+            ["eventfunction"] = "playerExitToNextArea"
           },
           objects = {
             {
@@ -17163,19 +17163,6 @@ return {
               shape = "point",
               x = 2080,
               y = 160,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 464,
-              name = "playerwarpdest",
-              type = "",
-              shape = "point",
-              x = 2384,
-              y = 96,
               width = 0,
               height = 0,
               rotation = 0,
@@ -17197,7 +17184,8 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 999
+            ["donewhenenemiesleft"] = 999,
+            ["eventfunction"] = "playerEnterNextArea"
           },
           objects = {
             {

@@ -170,10 +170,6 @@ function Stage.openRoom(i)
     local room = map.layers.rooms[i]
     if room then
         roomindex = i
-        local camerawarp = room.camerawarp
-        if camerawarp then
-            Stage.warpCamera(camerawarp.x, camerawarp.y)
-        end
         Characters.spawnArray(room.characters)
         local eventfunction = Events[room.eventfunction]
         if type(eventfunction) == "function" then
