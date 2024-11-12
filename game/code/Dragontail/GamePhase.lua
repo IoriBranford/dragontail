@@ -54,7 +54,7 @@ function GamePhase.loadphase()
         music:setLooping(true)
     end
 
-    Gui:showOnlyNamed("gameplay")
+    Gui:showOnlyNamed("gameplay", "wipe")
     Gui.gameplay:showOnlyNamed("hud")
 end
 
