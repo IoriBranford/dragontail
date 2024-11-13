@@ -4,6 +4,17 @@ local State      = require "Dragontail.Character.State"
 ---@module 'Dragontail.Stage.Events'
 local Events = {}
 
+function Events.introBanditStage()
+    local Gui        = require "Dragontail.Gui"
+    local wipe = Gui.wipe.diagonalCurtains ---@cast wipe Wipe
+    wipe:start("open")
+    coroutine.waitfor(function() return wipe:isDone() end)
+    local players = Characters.getGroup("players")
+    for _, player in ipairs(players) do
+        State.start(player, "control")
+    end
+end
+
 function Events.playerExitToNextArea()
     local Stage = require "Dragontail.Stage"
     local room = Stage.getCurrentRoom()
