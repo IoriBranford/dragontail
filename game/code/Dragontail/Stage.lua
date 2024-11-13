@@ -115,6 +115,13 @@ function Stage.init(stagefile)
         end
     end
     Stage.openRoom(firstroomindex)
+
+    if not eventthread then
+        local players = Characters.getGroup("players")
+        for _, player in ipairs(players) do
+            State.start(player, "control")
+        end
+    end
 end
 
 local function genDefaultCameraPath(roombounds)
