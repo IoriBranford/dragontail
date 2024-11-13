@@ -1,38 +1,38 @@
 {
-    "bodyTypeName": "child",
-    "url": "https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator/#?sex=child&shadow=none&body=Body_color_olive&legs=Child_pants_blue&hair=Tied_Back_black&head=Human_child_olive",
-    "spritesheets": "https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator/spritesheets/",
-    "version": 1,
-    "datetime": "4/17/2024, 10:36:11 AM",
-    "credits": "Authors: bluecarrot16, Benjamin K. Smith (BenCreating), ElizaWy, MuffinElZangano, Durrani, Nila122, kheftel, Stephen Challener (Redshrike), JaidynReiman\n\n- body/bodies/child/universal/olive.png: by bluecarrot16, Benjamin K. Smith (BenCreating), ElizaWy, MuffinElZangano, Durrani, Nila122, kheftel, Stephen Challener (Redshrike). License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles\n    - https://opengameart.org/content/lpc-child-standing-template\n    - https://opengameart.org/content/lpc-children-walk-animation\n    - https://opengameart.org/content/lpc-male-jumping-animation-by-durrani\n    - https://opengameart.org/content/lpc-male-jumping-animation-by-durrani\n\n- head/heads/human_child/universal/olive.png: by Stephen Challener (Redshrike), kheftel, bluecarrot16. License(s): OGA-BY 3.0, CC-BY 3.0, GPL 3.0. \n    - https://opengameart.org/content/\n    - https://opengameart.org/content/lpc-child-standing-template\n    - https://opengameart.org/content/lpc-character-bases\n\n- hair/tied_back/universal/child/black.png: by JaidynReiman. License(s): OGA-BY 3.0+, CC-BY 3.0+, GPL 3.0. \n    - https://opengameart.org/content/lpc-relm-hairstyle-pieces-xlong-ponytail-bangs-and-braids-headband\n\n- legs/pants/child/blue.png: by Nila122. License(s): CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/lpc-clothes-for-children",
-    "layers": [
-      {
-        "fileName": "body/bodies/child/universal/olive.png",
-        "zPos": 10,
-        "parentName": "body",
-        "name": "Body color",
-        "variant": "olive"
-      },
-      {
-        "fileName": "legs/pants/child/blue.png",
-        "zPos": 20,
-        "parentName": "legs",
-        "name": "Child pants",
-        "variant": "blue"
-      },
-      {
-        "fileName": "head/heads/human_child/universal/olive.png",
-        "zPos": 100,
-        "parentName": "head",
-        "name": "Human child",
-        "variant": "olive"
-      },
-      {
-        "fileName": "hair/tied_back/universal/child/black.png",
-        "zPos": 120,
-        "parentName": "hair",
-        "name": "Tied Back",
-        "variant": "black"
-      }
-    ]
-  }
+  "bodyTypeName": "child",
+  "url": "https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator/#?sex=child&shadow=none&body=Body_color_olive&legs=Child_pants_blue&hair=Relm_Short_black&head=Human_child_olive",
+  "spritesheets": "https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator/spritesheets/",
+  "version": 1,
+  "datetime": "11/12/2024, 4:57:59 PM",
+  "credits": "Authors: bluecarrot16, Benjamin K. Smith (BenCreating), ElizaWy, MuffinElZangano, Durrani, Nila122, kheftel, Stephen Challener (Redshrike), JaidynReiman\n\n- body/bodies/child/olive.png: by bluecarrot16, Benjamin K. Smith (BenCreating), ElizaWy, MuffinElZangano, Durrani, Nila122, kheftel, Stephen Challener (Redshrike). License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles\n    - https://opengameart.org/content/lpc-child-standing-template\n    - https://opengameart.org/content/lpc-children-walk-animation\n    - https://opengameart.org/content/lpc-male-jumping-animation-by-durrani\n    - https://opengameart.org/content/lpc-male-jumping-animation-by-durrani\n\n- head/heads/human/child/olive.png: by Stephen Challener (Redshrike), kheftel, bluecarrot16. License(s): OGA-BY 3.0, CC-BY 3.0, GPL 3.0. \n    - https://opengameart.org/content/\n    - https://opengameart.org/content/lpc-child-standing-template\n    - https://opengameart.org/content/lpc-character-bases\n\n- hair/relm_short/child/black.png: by JaidynReiman. License(s): OGA-BY 3.0+, CC-BY 3.0+, GPL 3.0. \n    - https://opengameart.org/content/lpc-relm-hairstyle-pieces-xlong-ponytail-bangs-and-braids-headband\n\n- legs/pants/child/blue.png: by Nila122. License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/lpc-clothes-for-children",
+  "layers": [
+    {
+      "fileName": "body/bodies/child/olive.png",
+      "zPos": 10,
+      "parentName": "body",
+      "name": "Body color",
+      "variant": "olive"
+    },
+    {
+      "fileName": "legs/pants/child/blue.png",
+      "zPos": 20,
+      "parentName": "legs",
+      "name": "Child pants",
+      "variant": "blue"
+    },
+    {
+      "fileName": "head/heads/human/child/olive.png",
+      "zPos": 100,
+      "parentName": "head",
+      "name": "Human child",
+      "variant": "olive"
+    },
+    {
+      "fileName": "hair/relm_short/child/black.png",
+      "zPos": 120,
+      "parentName": "hair",
+      "name": "Relm Short",
+      "variant": "black"
+    }
+  ]
+}
