@@ -15434,7 +15434,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["eventfunction"] = "introBanditStage"
+          },
           objects = {
             {
               id = 21,

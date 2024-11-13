@@ -224,6 +224,9 @@
  </layer>
  <group id="14" name="rooms">
   <objectgroup draworder="index" id="7" name="learnmovement" class="Room">
+   <properties>
+    <property name="eventfunction" value="introBanditStage"/>
+   </properties>
    <object id="21" template="mapobjects/OutwardBoundary.tx" x="0" y="0" visible="1">
     <properties>
      <property name="bodyheight" type="float" value="64"/>
