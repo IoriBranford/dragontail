@@ -1189,7 +1189,7 @@ to sprint past archers</text>
     <polygon points="-32,32 448,32 448,0 384,-64 160,-64 128,-32 32,-32"/>
    </object>
    <object id="80" template="mapobjects/CameraPath.tx" x="4400" y="144">
-    <polyline points="-224,0 640,0"/>
+    <polyline points="-288,0 640,0"/>
    </object>
    <object id="313" template="mapobjects/OutwardBoundary.tx" x="4800" y="-32">
     <properties>
@@ -1205,7 +1205,7 @@ to sprint past archers</text>
    <object id="231" gid="5283" x="5328" y="184" width="64" height="64"/>
   </objectgroup>
   <objectgroup id="38" name="+slingers" class="Room">
-   <object id="409" gid="5278" x="5088" y="-40" width="64" height="64">
+   <object id="409" gid="5278" x="5040" y="-40" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="20"/>
      <property name="entrypoint" type="object" value="412"/>
@@ -1213,23 +1213,11 @@ to sprint past archers</text>
      <property name="initialai" value="enterShootLeave"/>
      <property name="itemtype" value="food-fish"/>
      <property name="itemvelx" type="float" value="0"/>
-     <property name="itemvely" type="float" value="4"/>
+     <property name="itemvely" type="float" value="5"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="410" gid="5278" x="4992" y="-72" width="64" height="64">
-    <properties>
-     <property name="ammo" type="int" value="20"/>
-     <property name="entrypoint" type="object" value="413"/>
-     <property name="exitpoint" type="object" value="416"/>
-     <property name="initialai" value="enterShootLeave"/>
-     <property name="itemtype" value="food-fish"/>
-     <property name="itemvelx" type="float" value="0"/>
-     <property name="itemvely" type="float" value="4"/>
-     <property name="z" type="float" value="64"/>
-    </properties>
-   </object>
-   <object id="411" gid="5278" x="5184" y="-8" width="64" height="64">
+   <object id="411" gid="5278" x="5136" y="-8" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="20"/>
      <property name="entrypoint" type="object" value="414"/>
@@ -1237,40 +1225,31 @@ to sprint past archers</text>
      <property name="initialai" value="enterShootLeave"/>
      <property name="itemtype" value="food-fish"/>
      <property name="itemvelx" type="float" value="0"/>
-     <property name="itemvely" type="float" value="4"/>
+     <property name="itemvely" type="float" value="5"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="412" x="5088" y="40">
+   <object id="412" x="5040" y="40">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="413" x="4992" y="40">
+   <object id="414" x="5136" y="40">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="414" x="5184" y="40">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
+   <object id="415" name="exitpoint" x="5040" y="-64">
     <point/>
    </object>
-   <object id="415" name="exitpoint" x="5088" y="-64">
-    <point/>
-   </object>
-   <object id="416" name="exitpoint" x="4992" y="-64">
-    <point/>
-   </object>
-   <object id="417" name="exitpoint" x="5184" y="-64">
+   <object id="417" name="exitpoint" x="5136" y="-64">
     <point/>
    </object>
   </objectgroup>
   <objectgroup id="37" name="+archers" class="Room">
-   <object id="400" gid="5274" x="5088" y="-40" width="64" height="64">
+   <object id="400" gid="5274" x="4992" y="-40" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="20"/>
      <property name="entrypoint" type="object" value="401"/>
@@ -1278,11 +1257,11 @@ to sprint past archers</text>
      <property name="initialai" value="enterShootLeave"/>
      <property name="itemtype" value="food-fish"/>
      <property name="itemvelx" type="float" value="0"/>
-     <property name="itemvely" type="float" value="4"/>
+     <property name="itemvely" type="float" value="5"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="403" gid="5278" x="4992" y="-72" width="64" height="64">
+   <object id="403" gid="5278" x="5088" y="-72" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="20"/>
      <property name="entrypoint" type="object" value="404"/>
@@ -1290,7 +1269,7 @@ to sprint past archers</text>
      <property name="initialai" value="enterShootLeave"/>
      <property name="itemtype" value="food-fish"/>
      <property name="itemvelx" type="float" value="0"/>
-     <property name="itemvely" type="float" value="4"/>
+     <property name="itemvely" type="float" value="5"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
@@ -1302,17 +1281,17 @@ to sprint past archers</text>
      <property name="initialai" value="enterShootLeave"/>
      <property name="itemtype" value="food-fish"/>
      <property name="itemvelx" type="float" value="0"/>
-     <property name="itemvely" type="float" value="4"/>
+     <property name="itemvely" type="float" value="5"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="401" x="5088" y="40">
+   <object id="401" x="4992" y="40">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="404" x="4992" y="40">
+   <object id="404" x="5088" y="40">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
@@ -1324,10 +1303,10 @@ to sprint past archers</text>
     </properties>
     <point/>
    </object>
-   <object id="402" name="exitpoint" x="5088" y="-64">
+   <object id="402" name="exitpoint" x="4992" y="-64">
     <point/>
    </object>
-   <object id="405" name="exitpoint" x="4992" y="-64">
+   <object id="405" name="exitpoint" x="5088" y="-64">
     <point/>
    </object>
    <object id="408" name="exitpoint" x="5184" y="-64">
