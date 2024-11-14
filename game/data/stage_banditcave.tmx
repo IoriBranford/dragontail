@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="41" nextobjectid="465">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="41" nextobjectid="466">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -484,7 +484,10 @@
     </properties>
    </object>
   </objectgroup>
-  <objectgroup id="29" name="learngrabandthrowenemies">
+  <objectgroup id="29" name="learngrabandthrowenemies" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="-1"/>
+   </properties>
    <object id="254" gid="5278" x="2080" y="0" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
@@ -494,7 +497,7 @@
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="255" name="entrypoint" x="2080" y="64">
+   <object id="255" name="entrypoint" x="2040" y="48">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
@@ -554,19 +557,20 @@
    <object id="460" gid="7057" x="1904" y="56" width="16" height="16"/>
    <object id="461" gid="7058" x="1920" y="56" width="16" height="16"/>
    <object id="462" gid="7059" x="1936" y="56" width="16" height="16"/>
-  </objectgroup>
-  <objectgroup id="39" name="entercaveevent">
-   <properties>
-    <property name="eventfunction" value="playerExitToNextArea"/>
-   </properties>
-   <object id="463" name="playerwarpentrance" x="2080" y="160">
+   <object id="465" template="mapobjects/trigger/startStageEvent.tx" type="Trigger" x="2080" y="128">
+    <properties>
+     <property name="event" value="playerExitToNextArea"/>
+    </properties>
+    <polygon points="-24,0 0,0 32,32 32,56"/>
+   </object>
+   <object id="260" name="camerawarpwhendone" x="2512" y="144">
     <point/>
    </object>
   </objectgroup>
   <objectgroup draworder="index" id="22" name="entryhall" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="999"/>
-    <property name="eventfunction" value="playerEnterNextArea"/>
+    <property name="eventfunction" value="playerEnterArea"/>
    </properties>
    <object id="105" gid="5274" x="2592" y="32" width="64" height="64">
     <properties>
@@ -581,9 +585,6 @@
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
     <polyline points="64,0 672,0"/>
-   </object>
-   <object id="260" name="camerawarp" x="2512" y="144">
-    <point/>
    </object>
    <object id="67" template="mapobjects/OutwardBoundary.tx" x="2272" y="-32" visible="1">
     <polygon points="64,0 64,112 256,112 320,48 384,112 448,48 512,112 576,48 576,0"/>

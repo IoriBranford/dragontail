@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 41,
-  nextobjectid = 465,
+  nextobjectid = 466,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -16851,14 +16851,16 @@ return {
           draworder = "topdown",
           id = 29,
           name = "learngrabandthrowenemies",
-          class = "",
+          class = "Room",
           visible = true,
           opacity = 1,
           offsetx = 0,
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = -1
+          },
           objects = {
             {
               id = 254,
@@ -16885,8 +16887,8 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 2080,
-              y = 64,
+              x = 2040,
+              y = 48,
               width = 0,
               height = 0,
               rotation = 0,
@@ -17139,32 +17141,41 @@ return {
               gid = 7059,
               visible = true,
               properties = {}
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
-          id = 39,
-          name = "entercaveevent",
-          class = "",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {
-            ["eventfunction"] = "playerExitToNextArea"
-          },
-          objects = {
+            },
             {
-              id = 463,
-              name = "playerwarpentrance",
+              id = 465,
+              name = "startStageEvent",
+              type = "Trigger",
+              shape = "polygon",
+              x = 2080,
+              y = 128,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = -24, y = 0 },
+                { x = 0, y = 0 },
+                { x = 32, y = 32 },
+                { x = 32, y = 56 }
+              },
+              properties = {
+                ["action"] = "startStageEvent",
+                ["bodyheight"] = 64,
+                ["color"] = "#80008000",
+                ["event"] = "playerExitToNextArea",
+                ["linecolor"] = "#8000ff00",
+                ["script"] = "Dragontail.Character.Trigger",
+                ["usesleft"] = 1
+              }
+            },
+            {
+              id = 260,
+              name = "camerawarpwhendone",
               type = "",
               shape = "point",
-              x = 2080,
-              y = 160,
+              x = 2512,
+              y = 144,
               width = 0,
               height = 0,
               rotation = 0,
@@ -17187,7 +17198,7 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = 999,
-            ["eventfunction"] = "playerEnterNextArea"
+            ["eventfunction"] = "playerEnterArea"
           },
           objects = {
             {
@@ -17227,19 +17238,6 @@ return {
               properties = {
                 ["shadowcolor"] = "#00000000"
               }
-            },
-            {
-              id = 260,
-              name = "camerawarp",
-              type = "",
-              shape = "point",
-              x = 2512,
-              y = 144,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {}
             },
             {
               id = 67,
