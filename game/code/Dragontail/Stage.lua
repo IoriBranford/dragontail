@@ -241,9 +241,12 @@ end
 
 function Stage.fixedupdate()
     if eventthread then
-        coroutine.resume(eventthread)
+        local ok, err = coroutine.resume(eventthread)
         if coroutine.status(eventthread) == "dead" then
             eventthread = nil
+            if not ok then
+                print(err)
+            end
         end
     end
 
