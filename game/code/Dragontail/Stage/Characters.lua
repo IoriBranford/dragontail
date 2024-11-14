@@ -26,6 +26,7 @@ function Characters.init(scene_, nextid_)
         enemies = enemies,
         items = {},
         solids = solids,
+        triggers = {},
         all = allcharacters
     }
     scene = scene_
@@ -94,6 +95,11 @@ function Characters.spawn(object)
     end
     if character.team == "item" then
         groups.items[#groups.items+1] = character
+    end
+    if character.team == "trigger" then
+        groups.triggers[#groups.triggers+1] = character
+        local ok, err = character:validateAction()
+        if not ok then print(err) end
     end
     if character.initialai then
         State.start(character, character.initialai)
@@ -164,6 +170,7 @@ function Characters.fixedupdate()
     for i = 1, #players do local player = players[i]
         player:keepInBounds()
         player:updateAttackerSlots()
+        Characters.hitTriggers(player)
     end
 end
 
@@ -273,6 +280,15 @@ function Characters.getCylinderFloorZ(x, y, z, r, h)
         end
     end
     return floorz
+end
+
+function Characters.hitTriggers(hitter)
+    for _, trigger in ipairs(groups.triggers) do
+        ---@cast trigger Trigger
+        if trigger:testBodyCollision(hitter) then
+            trigger:activate(hitter)
+        end
+    end
 end
 
 ---@param a Character
