@@ -173,15 +173,19 @@ function Stage.setToLastRoom()
     roomindex = #map.layers.rooms
 end
 
+function Stage.startEvent(event)
+    local eventfunction = Events[event]
+    if type(eventfunction) == "function" then
+        eventthread = coroutine.create(eventfunction)
+    end
+end
+
 function Stage.openRoom(i)
     local room = map.layers.rooms[i]
     if room then
         roomindex = i
         Characters.spawnArray(room.characters)
-        local eventfunction = Events[room.eventfunction]
-        if type(eventfunction) == "function" then
-            eventthread = coroutine.create(eventfunction)
-        end
+        Stage.startEvent(room.eventfunction)
     else
         winningteam = "players"
         for _, player in ipairs(Characters.getGroup("players")) do
