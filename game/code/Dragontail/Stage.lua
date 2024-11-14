@@ -162,6 +162,10 @@ function Stage.warpCamera(warpx, warpy)
     end
 end
 
+function Stage.openNextRoom()
+    Stage.openRoom(roomindex + 1)
+end
+
 function Stage.openNextRoomIfNotLast()
     local rooms = map.layers.rooms
     if roomindex < #rooms then
