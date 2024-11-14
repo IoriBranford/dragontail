@@ -52,7 +52,8 @@ function Stage.init(stagefile)
             object.layer.characters = characters
             characters[#characters+1] = object
             object.y = object.y + (object.z or 0)
-            if object.type == "Boundary" then
+            if object.type == "Boundary"
+            or object.type == "Trigger" then
                 object.visible = Config.drawbodies
             end
         end
