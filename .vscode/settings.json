@@ -16,6 +16,7 @@
     ],
     "Lua.workspace.ignoreDir": [
         ".vscode",
+        "game/data"
     ],
     "Lua.diagnostics.globals": [
         "class",
