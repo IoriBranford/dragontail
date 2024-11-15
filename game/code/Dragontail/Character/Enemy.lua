@@ -120,7 +120,7 @@ function Enemy:stand(duration)
             local standanimation = self.getDirectionalAnimation_angle("Stand", faceangle, self.animationdirections)
             self:changeAseAnimation(standanimation)
 
-            local dodgeangle = self:findAngleToDodgeIncoming(opponent)
+            local dodgeangle = self:isFullyOnCamera(self.camera) and self:findAngleToDodgeIncoming(opponent)
             if dodgeangle then
                 return "dodgeIncoming", dodgeangle
             end
@@ -254,7 +254,7 @@ function Enemy:approach()
         oppox, oppoy = opponent.x, opponent.y
         local tooppox, tooppoy = oppox - x, oppoy - y
         -- local seesopponent = math.dot(self.facex, self.facey, tooppox, tooppoy) >= 0
-        local dodgeangle = self:findAngleToDodgeIncoming(opponent)
+        local dodgeangle = self:isFullyOnCamera(self.camera) and self:findAngleToDodgeIncoming(opponent)
         if dodgeangle then
             return "dodgeIncoming", dodgeangle
         end
