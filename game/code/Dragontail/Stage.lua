@@ -7,6 +7,8 @@ local Characters  = require "Dragontail.Stage.Characters"
 local CameraPath  = require "Object.CameraPath"
 local Config      = require "System.Config"
 local Events      = require "Dragontail.Stage.Events"
+local Database    = require "Data.Database"
+local Assets      = require "Tiled.Assets"
 local Stage = {
     CameraWidth = 480,
     CameraHeight = 270
@@ -307,6 +309,33 @@ function Stage.fixedupdateGui(gui)
 
     local runpercent = player.runenergy / player.runenergymax
     hud.run:setPercent(runpercent)
+
+    local weapontype = player.weaponinhand
+    local weapondata = Database.get(weapontype)
+    local weaponhud = gui.gameplay.hud_weapon
+    weaponhud.visible = weapondata ~= nil
+
+    if weapondata then
+        weaponhud.weaponname.text = weapondata.name
+        weaponhud.count.text = player.numweaponinhand
+        weaponhud.max.text = weapondata.maxplayercancarry
+        local asefile, asetag = weapondata.asefile, weapondata.asetag
+        local tileset, tileid = weapondata.tileset, weapondata.tileid
+        if asefile then
+            weaponhud.icon.asefile = asefile
+            weaponhud.icon.asetag = asetag
+            weaponhud.icon.originx = weapondata.spriteoriginx or 0
+            weaponhud.icon.originy = weapondata.spriteoriginy or 0
+            weaponhud.icon:initAseprite()
+        else
+            local tile = tileset and tileid and Assets.getTile(tileset, tileid)
+            if tile then
+                weaponhud.icon.originx = tile.width/2
+                weaponhud.icon.originy = tile.height/2
+                weaponhud.icon:initTile(tile)
+            end
+        end
+    end
 end
 
 function Stage.update(dsecs, fixedfrac)

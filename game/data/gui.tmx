@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="10" nextobjectid="14">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="11" nextobjectid="21">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -47,8 +47,35 @@
      <property name="z" type="float" value="0"/>
     </properties>
    </object>
-   <object id="7" name="name" x="52" y="9" width="90" height="18">
+   <object id="7" name="playername" x="48" y="9" width="90" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Rose</text>
+   </object>
+  </objectgroup>
+  <objectgroup id="10" name="hud_weapon">
+   <object id="15" name="weaponname" x="48" y="45" width="90" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Weapon</text>
+   </object>
+   <object id="16" name="count" x="48" y="63" width="16" height="9">
+    <text fontfamily="Press Start 2P" pixelsize="8" wrap="1" color="#ffffff" halign="center">99</text>
+   </object>
+   <object id="18" name="/" x="64" y="58.5" width="16" height="18">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">/</text>
+   </object>
+   <object id="17" name="max" x="80" y="63" width="16" height="9">
+    <text fontfamily="Press Start 2P" pixelsize="8" wrap="1" color="#ffffff" halign="center">99</text>
+   </object>
+   <object id="14" name="box" x="8" y="45" width="36" height="27">
+    <properties>
+     <property name="color" type="color" value="#00000000"/>
+     <property name="linecolor" type="color" value="#ffffffff"/>
+     <property name="roundcorners" type="float" value="2"/>
+     <property name="z" type="float" value="3"/>
+    </properties>
+   </object>
+   <object id="20" name="icon" gid="1" x="26" y="59" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="0"/>
+    </properties>
    </object>
   </objectgroup>
   <objectgroup id="6" name="pausemenu">
