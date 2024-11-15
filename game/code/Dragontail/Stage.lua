@@ -43,7 +43,6 @@ function Stage.init(stagefile)
     map:markAndCountEmptyTiles()
 
     scene = Scene()
-    Characters.init(scene, map.nextobjectid)
 
     for _, object in pairs(map.objects) do
         if object.type == "CameraPath" then
@@ -63,7 +62,7 @@ function Stage.init(stagefile)
 
     local CameraTopMargin = 32
 
-    camera = Characters.spawn({
+    camera = {
         visible = false,
         shape = "polygon",
         bodysolid = true,
@@ -76,7 +75,8 @@ function Stage.init(stagefile)
             Stage.CameraWidth, Stage.CameraHeight,
             0, Stage.CameraHeight
         }
-    })
+    }
+    Characters.init(scene, map.nextobjectid, camera)
 
     scene:addMap(map, "group,tilelayer")
 

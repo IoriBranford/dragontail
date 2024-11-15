@@ -14,8 +14,9 @@ local allcharacters ---@type Character[]
 local groups
 local scene
 local nextid
+local camera
 
-function Characters.init(scene_, nextid_)
+function Characters.init(scene_, nextid_, camera_)
     nextid = nextid_ or 1
     allcharacters = {}
     players = {}
@@ -30,6 +31,7 @@ function Characters.init(scene_, nextid_)
         all = allcharacters
     }
     scene = scene_
+    camera = Characters.spawn(camera_)
 end
 
 function Characters.quit()
@@ -40,6 +42,7 @@ function Characters.quit()
     groups = nil
     scene = nil
     nextid = 1
+    camera = nil
 end
 
 function Characters.getGroup(group)
@@ -77,7 +80,7 @@ function Characters.spawn(object)
     end
     character:init()
     character:initAseprite()
-
+    character.camera = camera
     character.solids = solids
     if character.team == "player" then
         character.opponents = enemies
