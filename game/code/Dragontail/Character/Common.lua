@@ -112,22 +112,30 @@ function Common:itemWaitForPickup()
         local finished
         t = t + 1
         self:accelerateTowardsVel(0, 0, 10)
-        if self.healhealth then
-            local redblue = (t%30)/15
-            self.color = Color.asARGBInt(redblue, 1, redblue, 1)
-        end
 
-        if self:testBodyCollision(opponent) then
-            if self.healhealth then
-                if opponent.health < opponent.maxhealth then
+        if self.healhealth then
+            if opponent.health < opponent.maxhealth then
+                local redblue = (t%30)/15
+                self.color = Color.asARGBInt(redblue, 1, redblue, 1)
+                if self:testBodyCollision(opponent) then
                     Audio.play(self.healsound)
                     opponent:heal(self.healhealth)
                     finished = true
                 end
-            elseif self.giveweapon then
-                if not opponent.weaponinhand then
+            else
+                self.color = Color.White
+            end
+        elseif self.giveweapon then
+            local weapondata = Database.get(self.giveweapon)
+            local maxplayercancarry = weapondata and weapondata.maxplayercancarry or 1
+            local weaponinhand = opponent.weaponinhand
+            local numcarried = opponent.numweaponinhand or 0
+            if not weaponinhand
+            or weaponinhand == self.giveweapon and numcarried < maxplayercancarry then
+                if self:testBodyCollision(opponent) then
                     Audio.play(opponent.holdsound)
                     opponent.weaponinhand = self.giveweapon
+                    opponent.numweaponinhand = numcarried + 1
                     finished = true
                 end
             end

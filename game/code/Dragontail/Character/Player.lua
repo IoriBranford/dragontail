@@ -681,7 +681,11 @@ function Player:throwWeapon(targetx, targety, targetz, attackid)
         gravity = 1/8,
         speed = 16
     }, targetx, targety, targetz, attackid)
-    self.weaponinhand = nil
+    self.numweaponinhand = self.numweaponinhand - 1
+    if self.numweaponinhand <= 0 then
+        self.numweaponinhand = nil
+        self.weaponinhand = nil
+    end
     Audio.play(self.throwsound)
     local t = self.throwtime or 6
     repeat
