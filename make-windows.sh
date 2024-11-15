@@ -107,5 +107,5 @@ if [ -e README.md ]
 then
 	cp README.md game-win
 fi
-
+rm -rf "$OUT_DIR"
 mv game-win "${OUT_DIR}"
