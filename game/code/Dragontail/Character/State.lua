@@ -29,6 +29,7 @@ local StateVarsOnChange = {
 function State.start(self, statename, ...)
     local state = Database.get(statename) ---@type State
     if state then
+        self.state = statename
         for _, var in ipairs(StateVarsOnChange) do
             if state[var] ~= nil then
                 self[var] = state[var]
