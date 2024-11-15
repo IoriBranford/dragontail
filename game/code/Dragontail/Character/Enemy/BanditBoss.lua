@@ -73,7 +73,7 @@ function BanditBoss:stand(duration)
     local opponent = opponents[1]
     for _ = 1, duration do
         self:facePosition(opponent.x, opponent.y)
-        local dodgeangle = self:findAngleToDodgeIncoming(opponent)
+        local dodgeangle = self:isFullyOnCamera(self.camera) and self:findAngleToDodgeIncoming(opponent)
         if dodgeangle then
             return "dodgeIncoming", dodgeangle
         end
@@ -92,7 +92,8 @@ function BanditBoss:stand(duration)
     local attackradius = self.TotalAttackRange(self.attackradius or 32, self.attacklungespeed or 0, self.attacklungedecel or 1) + opponent.bodyradius
     if not opponent.attacker
     and opponent.canbeattacked
-    and toopposq <= attackradius*attackradius then
+    and toopposq <= attackradius*attackradius
+    and self:isFullyOnCamera(self.camera) then
         local healthpct = self.health/self.maxhealth
         if healthpct <= TwoSwitchAttackHealthPercent then
             self.attackswitchesleft = 2
@@ -168,7 +169,7 @@ function BanditBoss:approach()
         oppox, oppoy = opponent.x, opponent.y
         local tooppox, tooppoy = oppox - x, oppoy - y
         -- local seesopponent = math.dot(self.facex, self.facey, tooppox, tooppoy) >= 0
-        local dodgeangle = self:findAngleToDodgeIncoming(opponent)
+        local dodgeangle = self:isFullyOnCamera(self.camera) and self:findAngleToDodgeIncoming(opponent)
         if dodgeangle then
             return "dodgeIncoming", dodgeangle
         end
