@@ -161,7 +161,10 @@ function Enemy:stand(duration)
     end
     Database.fill(self, attacktype)
     local attackradius = totalAttackRange(self.attackradius or 32, self.attacklungespeed or 0, self.attacklungedecel or 1) + opponent.bodyradius
-    if not opponent.attacker and toopposq <= attackradius*attackradius then
+    if not opponent.attacker
+    and toopposq <= attackradius*attackradius
+    and self:isFullyOnCamera(self.camera)
+    then
         return "attack", attacktype
     end
     return "approach"
