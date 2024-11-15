@@ -269,12 +269,11 @@ function Stage.fixedupdate()
         Stage.updateGoingToNextRoom()
     end
 
-    local cx, cy, cw, ch = camera.x, camera.y, camera.width, camera.height
     local room = map.layers.rooms[roomindex]
     local solids = Characters.getGroup("solids")
     for _, solid in ipairs(solids) do
         if solid.layer ~= room then
-            if not solid:isOnCamera(cx, cy, cw, ch) then
+            if not solid:isOnCamera(camera) then
                 solid:disappear()
             end
         end
@@ -283,7 +282,7 @@ function Stage.fixedupdate()
     local items = Characters.getGroup("items")
     for _, item in ipairs(items) do
         if item.layer ~= room then
-            if not item:isOnCamera(cx, cy, cw, ch) then
+            if not item:isOnCamera(camera) then
                 item:disappear()
             end
         end
