@@ -2,7 +2,7 @@ character,asefile,spriteoriginx,spriteoriginy,emoteasepritefile,emoteoriginx,emo
 Rose,sprites/rose-new.jase,32,56,sprites/emotes.jase,12,64,sprites/rose-face.jase,4278190080,sprites/rose-new-weaponpos.jase,,
 bandit-dagger,sprites/bandit/knife.jase,32,56,sprites/emotes.jase,12,56,,4278190080,,,
 bandit-spear,sprites/bandit/spear.jase,32,56,sprites/emotes.jase,12,56,,4278190080,,,
-container-stool,,,,,,,,4278190080,,,
+container-chair,,,,,,,,4278190080,,,
 furniture-table,,,,,,,,4278190080,,,
 container-crate-tall,,,,,,,,4278190080,,,
 container-barrel,,,,,,,,4278190080,,,

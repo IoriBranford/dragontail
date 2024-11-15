@@ -2,7 +2,7 @@ character,name,team,health,bodyradius,bodyheight,bodysolid,canbeattacked,canbeda
 Rose,Rose,player,100,16,32,,true,,,4,0.5,,,,,,,24,fall,,,,Stand0,8,Dragontail.Character.Player,,hold,hurt,,,control,,,,,,,,,10,,FallRiseToFeet,20,18,defeat,control,,,,,
 bandit-dagger,,enemy,50,16,32,,true,,TRUE,3,0.5,,,,,dagger-swing,,,fall,24,,,,4,Dragontail.Character.Enemy,stand,,hurt,,,,,,stun,120,thrown,,,10,,,FallKnees,20,18,defeat,stand,,approach,,,
 bandit-spear,,enemy,75,16,32,,true,,TRUE,4,0.5,8,0.25,,,spear-thrust,,,fall,24,,,,4,Dragontail.Character.Enemy,stand,,hurt,,,,,,stun,120,thrown,,,10,,,FallKnees,20,18,defeat,stand,,approach,,,
-container-stool,,container,10,16,12,TRUE,true,,TRUE,,0.5,,,,,,,,,,,,,,Dragontail.Character.Fighter,containerIdle,,hurt,,,,,,,,,,,,,,,1,0,containerBreak,containerIdle,,,,,
+container-chair,,container,10,12,24,TRUE,true,,TRUE,,0.5,,,,,,,,,,,,,,Dragontail.Character.Fighter,containerIdle,,hurt,,,,,,,,,,,,,,,1,0,containerBreak,containerIdle,,,,,
 furniture-table,,container,20,16,16,TRUE,true,,,,0.5,,,,,,,,,,,,,,Dragontail.Character.Fighter,furnitureIdle,,hurt,,,,,,,,,,,,,,,1,0,containerBreak,furnitureIdle,,,,,
 container-crate-tall,,container,15,16,30,TRUE,true,,TRUE,,0.5,,,,,,,,,,,,,,Dragontail.Character.Fighter,containerIdle,,hurt,,,,,,,,,,,,,,,1,0,containerBreak,containerIdle,,,,,
 container-barrel,,container,15,12,24,TRUE,true,,TRUE,,0.5,,,,,,,,,,,,,,Dragontail.Character.Fighter,containerIdle,,hurt,,,,,,,,,,,,,,,1,0,containerBreak,containerIdle,,,,,
