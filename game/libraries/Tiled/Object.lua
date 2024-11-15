@@ -637,7 +637,7 @@ function TiledObject:drawAseprite(fixedfrac)
     love.graphics.rotate(self.rotation or 0)
     love.graphics.shear(self.skewx or 0, self.skewy or 0)
     love.graphics.scale(self.scalex or 1, self.scaley or 1)
-    love.graphics.translate(-self.originx or 0, -self.originy or 0)
+    love.graphics.translate(-(self.originx or 0), -(self.originy or 0))
     frame:draw()
     love.graphics.pop()
 end
