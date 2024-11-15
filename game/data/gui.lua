@@ -9,8 +9,8 @@ return {
   height = 15,
   tilewidth = 16,
   tileheight = 18,
-  nextlayerid = 11,
-  nextobjectid = 21,
+  nextlayerid = 12,
+  nextobjectid = 29,
   properties = {},
   tilesets = {
     {
@@ -63,6 +63,165 @@ return {
           id = 3,
           properties = {
             ["name"] = "win"
+          }
+        }
+      }
+    },
+    {
+      name = "keyboard-keys",
+      firstgid = 5,
+      class = "",
+      tilewidth = 16,
+      tileheight = 16,
+      spacing = 0,
+      margin = 0,
+      columns = 17,
+      image = "tilesets/ui/keyboard-keys.png",
+      imagewidth = 272,
+      imageheight = 256,
+      objectalignment = "unspecified",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 272,
+      tiles = {
+        {
+          id = 206,
+          animation = {
+            {
+              tileid = 70,
+              duration = 100
+            },
+            {
+              tileid = 206,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 207,
+          animation = {
+            {
+              tileid = 71,
+              duration = 100
+            },
+            {
+              tileid = 207,
+              duration = 900
+            }
+          }
+        }
+      }
+    },
+    {
+      name = "gamepad-buttons",
+      firstgid = 277,
+      class = "",
+      tilewidth = 16,
+      tileheight = 16,
+      spacing = 0,
+      margin = 0,
+      columns = 20,
+      image = "tilesets/ui/gamepad-buttons.png",
+      imagewidth = 320,
+      imageheight = 80,
+      objectalignment = "unspecified",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 100,
+      tiles = {
+        {
+          id = 9,
+          animation = {
+            {
+              tileid = 5,
+              duration = 100
+            },
+            {
+              tileid = 7,
+              duration = 100
+            },
+            {
+              tileid = 3,
+              duration = 100
+            },
+            {
+              tileid = 1,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 60,
+          animation = {
+            {
+              tileid = 20,
+              duration = 100
+            },
+            {
+              tileid = 21,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 71,
+          animation = {
+            {
+              tileid = 30,
+              duration = 100
+            },
+            {
+              tileid = 31,
+              duration = 900
+            }
+          }
+        },
+        {
+          id = 80,
+          animation = {
+            {
+              tileid = 40,
+              duration = 100
+            },
+            {
+              tileid = 41,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 91,
+          animation = {
+            {
+              tileid = 50,
+              duration = 100
+            },
+            {
+              tileid = 51,
+              duration = 900
+            }
           }
         }
       }
@@ -373,6 +532,146 @@ return {
               properties = {}
             }
           }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 11,
+          name = "gameover",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 21,
+              name = "playagain",
+              type = "",
+              shape = "text",
+              x = 176,
+              y = 144,
+              width = 128,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Play again",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {}
+            },
+            {
+              id = 22,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 284,
+              y = 144,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 23,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 180,
+              y = 144,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 293,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 24,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 204,
+              y = 144,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 295,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 25,
+              name = "+",
+              type = "",
+              shape = "text",
+              x = 196,
+              y = 126,
+              width = 8,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "+",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {}
+            },
+            {
+              id = 26,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 232,
+              y = 144,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 333,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 27,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 256,
+              y = 144,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 335,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 28,
+              name = "+",
+              type = "",
+              shape = "text",
+              x = 248,
+              y = 126,
+              width = 8,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "+",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {}
+            }
+          }
         }
       }
     },
@@ -382,7 +681,7 @@ return {
       id = 7,
       name = "title",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="11" nextobjectid="21">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="12" nextobjectid="29">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
  <tileset firstgid="1" source="tilesets/ui/rose-face.tsx"/>
+ <tileset firstgid="5" source="tilesets/ui/keyboard-keys.tsx"/>
+ <tileset firstgid="277" source="tilesets/ui/gamepad-buttons.tsx"/>
  <group id="4" name="gameplay">
   <objectgroup draworder="index" id="2" name="hud">
    <object id="4" name="run" type="Gui.Gauge" x="52" y="33" width="100" height="8" visible="0">
@@ -83,8 +85,24 @@
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">PAUSE</text>
    </object>
   </objectgroup>
+  <objectgroup id="11" name="gameover">
+   <object id="21" name="playagain" x="176" y="144" width="128" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">Play again</text>
+   </object>
+   <object id="22" gid="7" x="284" y="144" width="16" height="16"/>
+   <object id="23" gid="293" x="180" y="144" width="16" height="16"/>
+   <object id="24" gid="295" x="204" y="144" width="16" height="16"/>
+   <object id="25" name="+" x="196" y="126" width="8" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">+</text>
+   </object>
+   <object id="26" gid="333" x="232" y="144" width="16" height="16"/>
+   <object id="27" gid="335" x="256" y="144" width="16" height="16"/>
+   <object id="28" name="+" x="248" y="126" width="8" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">+</text>
+   </object>
+  </objectgroup>
  </group>
- <objectgroup id="7" name="title">
+ <objectgroup id="7" name="title" visible="0">
   <object id="9" name="title" x="0" y="18" width="480" height="144">
    <text fontfamily="Lady Radical" pixelsize="32" wrap="1" color="#ff0000" halign="center" valign="center">ROSE of
 DRAGONTAIL</text>
