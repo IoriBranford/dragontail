@@ -105,6 +105,10 @@ function GamePhase.gamepadpressed(gamepad, button)
             love.event.loadphase("Dragontail.GamePhase")
         end
     elseif button == "start" then
+        if gamepad:isGamepadDown("back") then
+            love.event.loadphase("Dragontail.GamePhase")
+            return
+        end
         GamePhase.setPaused(not paused)
     end
 end
