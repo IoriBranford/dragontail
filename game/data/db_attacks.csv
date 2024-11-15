@@ -23,7 +23,8 @@ sling-shot,3,300,0,0,0,0,,,FALSE,30,,0,,,,,,,,,,nil,nil,ShootWindup,,ShootAttack
 thrown-stone-attack,12,8,3.14159265358979,10,10,,,,,,,,,,,5,,projectileBounce,,,,,knockedBack,,,Fly,,,,sounds/combat/hit1.mp3,,,spark-hit,spark-guard,nil,nil,,
 thrown-stone-strong-attack,16,12,3.14159265358979,15,10,,,,,,,,,,,12,,disappear,,,,knockedBack,knockedBack,,,Fly,,,,sounds/combat/hit3.mp3,,,spark-stone-shatter,spark-stone-shatter,nil,nil,,
 bandit-boss-charge,,64,0.261799387799149,15,20,5,0,,,30,30,16,0.25,,,10,,,,,,knockedBack,knockedBack,Charge,1,Charge,1,sounds/man_heavy/heavyattack3.mp3,sounds/combat/swingblade.mp3,sounds/combat/cut2.mp3,,nil,spark-bighit,spark-guard,3,particle-blood,,
-projectile-dish-attack,12,8,3.14159265358979,10,10,,,,,,,,,,,5,,disappear,,,,,knockedBack,,,Fly,,,,sounds/combat/breakglass.mp3,,,spark-hit,spark-guard,nil,nil,,
+projectile-dish-attack,12,8,3.14159265358979,10,10,,,,,,,,,,,3,,disappear,,,,,knockedBack,,,Fly,,,,sounds/combat/breakglass.mp3,,,spark-hit,spark-guard,nil,nil,,
+projectile-dish-strong-attack,12,8,3.14159265358979,15,10,,,,,,,,,,,3,,disappear,,,,knockedBack,knockedBack,,,Fly,,,,sounds/combat/breakglass.mp3,,,spark-hit,spark-guard,nil,nil,,
 bandit-boss-spin-cw,,64,0.785398163397448,20,20,5,0.628318530717959,,,15,20,10,0.5,0,,5,,,,,,knockedBack,knockedBack,LookRight,,SpinCW,,sounds/man_heavy/lightattack3.mp3,sounds/combat/swing3.mp3,sounds/combat/cut2.mp3,,nil,spark-hit,spark-guard,nil,particle-blood,,
 bandit-boss-spin-ccw,,64,0.785398163397448,20,20,5,-0.628318530717959,,,15,20,10,0.5,0,,5,,,,,,knockedBack,knockedBack,LookLeft,,SpinCCW,,sounds/man_heavy/lightattack3.mp3,sounds/combat/swing3.mp3,sounds/combat/cut2.mp3,,nil,spark-hit,spark-guard,nil,particle-blood,,
 forge-fire,,36,1.5707963267949,999,20,,,,,,,,,,,5,,,,,,juggled,juggled,,,,,,,sounds/combat/ignite.mp3,,,spark-hit,,,,TRUE,4294904836 4294946828
