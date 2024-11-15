@@ -7,8 +7,6 @@
     ],
     "Lua.runtime.version": "LuaJIT",
     "Lua.runtime.path": [
-        "game/?.lua",
-        "game/?/init.lua",
         "game/libraries/?.lua",
         "game/libraries/?/init.lua",
         "game/code/?.lua",
