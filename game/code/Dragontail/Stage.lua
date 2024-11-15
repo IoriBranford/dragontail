@@ -184,6 +184,19 @@ function Stage.startEvent(event)
     local eventfunction = Events[event]
     if type(eventfunction) == "function" then
         eventthread = coroutine.create(eventfunction)
+        Stage.updateEvent()
+    end
+end
+
+function Stage.updateEvent()
+    if eventthread then
+        local ok, err = coroutine.resume(eventthread)
+        if coroutine.status(eventthread) == "dead" then
+            eventthread = nil
+            if not ok then
+                print(err)
+            end
+        end
     end
 end
 
@@ -247,15 +260,7 @@ function Stage.updateGoingToNextRoom()
 end
 
 function Stage.fixedupdate()
-    if eventthread then
-        local ok, err = coroutine.resume(eventthread)
-        if coroutine.status(eventthread) == "dead" then
-            eventthread = nil
-            if not ok then
-                print(err)
-            end
-        end
-    end
+    Stage.updateEvent()
 
     Characters.fixedupdate()
     Characters.pruneDisappeared()
