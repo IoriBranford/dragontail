@@ -11,11 +11,11 @@ function Wipe:start(direction)
     local func = self[funcname]
     if type(func) == "function" then
         self.thread = coroutine.create(func)
+        self:run(0)
     end
 end
 
-function Wipe:animate(dt)
-    ObjectGroup.animate(self, dt)
+function Wipe:run(dt)
     if self.thread then
         local ok, err = coroutine.resume(self.thread, self, dt)
         if coroutine.status(self.thread) == "dead" then
@@ -25,6 +25,11 @@ function Wipe:animate(dt)
             end
         end
     end
+end
+
+function Wipe:animate(dt)
+    ObjectGroup.animate(self, dt)
+    self:run(dt)
 end
 
 function Wipe:isDone()
