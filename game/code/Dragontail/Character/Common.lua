@@ -112,7 +112,13 @@ function Common:itemWaitForPickup()
         local finished
         t = t + 1
         self:accelerateTowardsVel(0, 0, 10)
-
+        if self.gravity == 0 then
+            local _, _, _, penex
+                = Characters.keepCylinderIn(self.x, self.y, self.z, self.bodyradius, self.bodyheight)
+            if not penex then
+                self.gravity = 0.25
+            end
+        end
         if self.healhealth then
             if opponent.health < opponent.maxhealth then
                 local redblue = (t%30)/15
