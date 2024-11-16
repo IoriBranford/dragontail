@@ -26,6 +26,7 @@ function Characters.init(scene_, nextid_, camera_)
         players = players,
         enemies = enemies,
         items = {},
+        projectiles = {},
         solids = solids,
         triggers = {},
         all = allcharacters
@@ -99,6 +100,9 @@ function Characters.spawn(object)
     if character.team == "item" then
         groups.items[#groups.items+1] = character
     end
+    if character.team == "projectile" then
+        groups.projectiles[#groups.projectiles+1] = character
+    end
     if character.team == "trigger" then
         groups.triggers[#groups.triggers+1] = character
         local ok, err = character:validateAction()
@@ -124,6 +128,8 @@ function Characters.fixedupdate()
     for i = 1, #allcharacters do local character = allcharacters[i]
         character:fixedupdate()
     end
+
+    local projectiles = groups.projectiles
     for i = 1, #players do local player = players[i]
         if player:isAttacking() then
             for j = 1, #enemies do local enemy = enemies[j]
@@ -131,6 +137,16 @@ function Characters.fixedupdate()
             end
             for j = 1, #solids do local solid = solids[j]
                 solid:collideWithCharacterAttack(player)
+            end
+        end
+    end
+    for i = 1, #projectiles do local projectile = projectiles[i]
+        if projectile:isAttacking() then
+            for j = 1, #enemies do local enemy = enemies[j]
+                enemy:collideWithCharacterAttack(projectile)
+            end
+            for j = 1, #solids do local solid = solids[j]
+                solid:collideWithCharacterAttack(projectile)
             end
         end
     end
@@ -155,6 +171,13 @@ function Characters.fixedupdate()
         end
     end
 
+    for i = 1, #projectiles do local projectile = projectiles[i]
+        if projectile:isAttacking() then
+            for j = 1, #players do local player = players[j]
+                player:collideWithCharacterAttack(projectile)
+            end
+        end
+    end
     for i = 1, #solids do local solid = solids[i]
         if solid:isAttacking() then
             for j = 1, #players do local player = players[j]
