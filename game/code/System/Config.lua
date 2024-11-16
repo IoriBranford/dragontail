@@ -58,8 +58,17 @@ function Config.load(defaultcfg)
 	Config.reset()
 	if love.filesystem.getInfo(filename) then
 		local fileconfig = love.filesystem.load(filename)()
-		for k,v in pairs(fileconfig) do
-			Config[k] = v
+		local fileversion = fileconfig._version or 0
+		if fileversion == defaultconfig._version then
+			for k,v in pairs(fileconfig) do
+				Config[k] = v
+			end
+		else
+			local oldfilename = filename.."."..fileversion
+			if Platform.supports("saveconfig") then
+				local configtext = "return "..pl_pretty.write(fileconfig)
+				love.filesystem.write(oldfilename, configtext)
+			end
 		end
 	end
 	Config.clamp("fullscreendevice", 1, love.window.getDisplayCount())
