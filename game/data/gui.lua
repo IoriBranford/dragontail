@@ -1,7 +1,7 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.0",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 18,
   nextlayerid = 12,
-  nextobjectid = 29,
+  nextobjectid = 30,
   properties = {},
   tilesets = {
     {
@@ -372,6 +372,24 @@ return {
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 29,
+              name = "",
+              type = "",
+              shape = "text",
+              x = 360,
+              y = 252,
+              width = 112,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "DEVELOPMENT VER. 2024",
+              fontfamily = "TinyUnicode",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "right",
               properties = {}
             }
           }
