@@ -8,13 +8,14 @@
 ---
 ---What happens to them on impact?
 ---@field damage number
----@field opponentstuntime integer
 ---@field damagestate string
----@field defeatstate string
----@field damageparticle string
----@field damagecolorcycle string
----@field pushforce number
----@field launchforce number
+---These could be part of fighter data or damage states
+----@field opponentstuntime integer
+----@field defeatstate string
+----@field damageparticle string
+----@field damagecolorcycle string
+----@field pushforce number
+----@field launchforce number
 ---
 ---What happens to me on impact?
 ---@field selfstuntime integer
