@@ -18,7 +18,38 @@ local min = math.min
 local max = math.max
 local testcircles = math.testcircles
 
----@class Character:AsepriteObject
+---@class Body
+---@field velx number
+---@field vely number
+---@field velz number
+---@field speed number
+---@field bodysolid boolean
+---@field bodyheight number
+---@field bodyradius number
+---@field gravity number
+
+---@class Attack
+---@field attacktype string?
+---@field attackdata AttackData?
+---@field attackangle number?
+---@field hitstun number
+---@field thrower Character
+
+---@class Hurt
+---@field health number
+---@field maxhealth number
+---@field canbeattacked boolean
+---@field canbejuggled boolean
+---@field canbedamagedbyattack string?
+---@field hurtstun number
+---@field hurtangle number?
+---@field attacker Character
+
+---@class Character:AsepriteObject,Body,Attack,Hurt
+---@field camera Camera
+---@field opponents Character[]
+---@field shadowcolor Color?
+---@field animationdirections integer?
 local Character = class(Object)
 
 function Character:init()
@@ -496,6 +527,7 @@ end
 
 Character.checkAttackCollision = Character.checkAttackCollision_circle
 
+---@param attacker Character
 function Character:collideWithCharacterAttack(attacker)
     if self.hurtstun > 0 then
         return

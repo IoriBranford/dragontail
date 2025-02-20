@@ -5,7 +5,48 @@ local Characters = require "Dragontail.Stage.Characters"
 local TiledObject = require "Tiled.Object"
 local Movement    = require "Component.Movement"
 
----@class Fighter:Common
+---@class Mana
+---@field mana number?
+---@field manamax number?
+
+---@class BreakHold
+---@field aiafterbreakaway string?
+---@field attackafterbreakaway string?
+
+---@class Thrown
+---@field thrownslidetime integer?
+---@field thrownrecovertime integer?
+---@field aiafterthrown string?
+---@field thrownsound string?
+
+---@class Fall
+---@field fallanimationtime number?
+---@field bodydropsound string?
+
+---@class GetUp
+---@field getupai string?
+---@field getuptime integer?
+---@field aiaftergetup string?
+
+---@class WallHit
+---@field wallbumpdamage number?
+---@field wallbumpstun integer?
+---@field wallslamdamage number?
+---@field wallslamstun integer?
+---@field wallslamcounterattack string?
+
+---@class Defeat
+---@field defeatsound string?
+---@field defeatedanimation string?
+
+---@class Fighter:Common,Mana,BreakHold,Thrown,Fall,GetUp,WallHit,Defeat
+---@field facex number
+---@field facey number
+---@field aiafterhurt string?
+---@field aiafterheld string?
+---@field hurtsound string?
+---@field recoverai string?
+---@field defeatai string?
 local Fighter = class(Common)
 
 local huge = math.huge

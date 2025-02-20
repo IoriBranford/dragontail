@@ -6,7 +6,25 @@ local Characters = require "Dragontail.Stage.Characters"
 local Raycast    = require "Object.Raycast"
 local Color      = require "Tiled.Color"
 
----@class Enemy:Fighter
+---@class Dodge
+---@field dodgespeed number?
+---@field dodgewithintime number?
+---@field dodgedecel number?
+---@field dodgesound string?
+
+---@class Guard
+---@field guardtime integer?
+---@field guardhitsound string?
+---@field guardcounterattack string?
+---@field guardhitstocounterattack integer?
+
+---@class Ambush
+---@field ambushsightarc number?
+
+---@class Enemy:Fighter,Dodge,Guard,Ambush
+---@field opponents Player[]
+---@field approachtime integer?
+---@field defaultattack string?
 local Enemy = class(Fighter)
 
 local pi = math.pi
