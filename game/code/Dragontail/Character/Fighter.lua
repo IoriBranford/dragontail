@@ -77,12 +77,12 @@ function Fighter:updateSlideSpeed(angle, speed, decel)
     return speed
 end
 
-function Fighter:giveMana(flame)
+function Fighter:giveMana(mana)
     if not self.mana or not self.manamax then
         return
     end
 
-    local mana = self.mana + flame
+    mana = self.mana + mana
     if mana > self.manamax then
         mana = self.manamax
     end
@@ -106,6 +106,11 @@ function Fighter:hurt(attacker)
     local facex, facey = self.facex or 1, self.facey or 0
     if facex == 0 and facey == 0 then
         facex = 1
+    end
+
+    if attacker.giveMana then
+        local mana = math.max(1, math.floor(attacker.attackdamage/4))
+        attacker:giveMana(mana)
     end
 
     local hitsound = attacker.hitsound
