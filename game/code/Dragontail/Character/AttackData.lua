@@ -1,5 +1,5 @@
 
----@class Attack
+---@class AttackData
 ---
 ---How is the attack placed in the world?
 ---@field radius number
