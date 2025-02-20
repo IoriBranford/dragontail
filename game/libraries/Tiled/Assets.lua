@@ -136,6 +136,7 @@ function Assets.fileInfo(path)
     return love.filesystem.getInfo(Assets.rootpath..path)
 end
 
+---@return Asset? asset
 function Assets.load(path, ...)
     if type(path) ~= "string" then
         return
