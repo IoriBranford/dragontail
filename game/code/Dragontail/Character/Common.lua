@@ -154,6 +154,12 @@ function Common:itemWaitForPickup()
     end
 end
 
+function Common:giveMana(mana)
+    if self.thrower and self.thrower.giveMana then
+        self.thrower:giveMana(mana)
+    end
+end
+
 function Common:projectileHit(opponent)
     if opponent then
         -- Audio.play(self.hitsound)
