@@ -13,7 +13,7 @@ end
 ---@module 'Audio'
 local Audio = {}
 
-local music
+local music ---@type Music?
 local musicfadespeed = 0
 
 local function load_audio(path, mode)
@@ -52,8 +52,9 @@ function Audio.stop()
 end
 
 function Audio.play(file)
-    local clip = Assets.get(file) ---@type love.Source?
+    local clip = Assets.get(file)
     if clip then
+        ---@cast clip love.Source
         clip:stop()
         clip:setVolume(Config.soundvolume)
         clip:play()
@@ -63,6 +64,7 @@ end
 
 function Audio.newSource(file)
     local clip = Assets.get(file)
+    ---@cast clip love.Source
     return clip and clip:clone()
 end
 
@@ -95,8 +97,10 @@ end
 
 function Audio.playMusic(file, track)
     Audio.stopMusic()
-    music = Assets.get(file) ---@type VGMPlayer|GameMusicEmu?
-    if music then
+    local newmusic = Assets.get(file)
+    if newmusic then
+        ---@cast newmusic Music
+        music = newmusic
         music:setVolume(Config.musicvolume)
         music:play(track)
     end
