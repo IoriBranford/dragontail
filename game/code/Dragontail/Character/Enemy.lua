@@ -437,8 +437,14 @@ end
 function Enemy:attack(attacktype)
     local opponent = self.opponents[1]
     local targetx, targety, targetz = opponent.x, opponent.y, opponent.z
-    self:prepareAttack(attacktype, opponent)
-    self:executeAttack(attacktype, targetx, targety, targetz)
+    local state, a, b, c, d, e, f = self:prepareAttack(attacktype, opponent)
+    if state then
+        return state, a, b, c, d, e, f
+    end
+    state, a, b, c, d, e, f = self:executeAttack(attacktype, targetx, targety, targetz)
+    if state then
+        return state, a, b, c, d, e, f
+    end
     return "stand", 20
 end
 
