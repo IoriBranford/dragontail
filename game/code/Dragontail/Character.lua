@@ -18,6 +18,9 @@ local min = math.min
 local max = math.max
 local testcircles = math.testcircles
 
+---@class DropAfterimage
+---@field afterimageinterval integer?
+
 ---@class Body
 ---@field velx number
 ---@field vely number
@@ -29,11 +32,17 @@ local testcircles = math.testcircles
 ---@field gravity number
 
 ---@class Attack
+---@field defaultattack string?
 ---@field attacktype string?
 ---@field attackdata AttackData?
 ---@field attackangle number?
 ---@field hitstun number
 ---@field thrower Character
+---@field numopponentshit integer?
+---@field attackhitai string?
+---@field attackhitopponentai string?
+---@field attackhitboundaryai string?
+---@field attackguardedai string?
 
 ---@class Hurt
 ---@field health number
@@ -44,12 +53,18 @@ local testcircles = math.testcircles
 ---@field hurtstun number
 ---@field hurtangle number?
 ---@field attacker Character
+---@field hurtai string?
+---@field recoverai string?
+---@field aiafterhurt string?
+---@field hurtsound string?
 
----@class Character:AsepriteObject,Body,Attack,Hurt
+---@class Character:AsepriteObject,DropAfterimage,Body,Attack,Hurt
+---@field initialai string
 ---@field camera Camera
 ---@field opponents Character[]
 ---@field shadowcolor Color?
 ---@field animationdirections integer?
+---@field emote Character?
 local Character = class(Object)
 
 function Character:init()
@@ -698,7 +713,7 @@ function Character:setEmote(emotename)
     if emote then
         if emotename then
             emote.visible = true
-            emote:changeAsepriteAnimation(emotename)
+            emote:changeAseAnimation(emotename)
         else
             emote.visible = false
         end

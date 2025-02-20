@@ -14,7 +14,38 @@ local max = math.max
 
 local MaxProjectileItems = 16
 
----@class Common:Character
+---@class DropItem
+---@field item Character?
+---@field itempopouttime integer?
+---@field itemvelx number?
+---@field itemvely number?
+
+---@class Item
+---@field itemtype string?
+---@field healhealth number?
+---@field healsound string?
+---@field giveweapon string?
+
+---@class Projectile
+---@field bouncefactor number?
+
+---@class WallHit
+---@field wallbumpdamage number?
+---@field wallbumpstun integer?
+---@field wallslamdamage number?
+---@field wallslamstun integer?
+---@field wallslamcounterattack string?
+---@field bodyslamsound string?
+
+---@class Defeat
+---@field defeatai string?
+---@field defeatsound string?
+---@field defeatedanimation string?
+
+---@class Common:Character,DropItem,Item,Projectile,WallHit,Defeat
+---@field lifetime integer?
+---@field afterimagetime integer?
+---@field opponents Fighter[]
 local Common = class(Character)
 
 function Common:spark()

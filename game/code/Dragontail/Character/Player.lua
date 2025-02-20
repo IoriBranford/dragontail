@@ -92,6 +92,7 @@ local function updateFace(facex, facey, targetfacex, targetfacey, turnspeed)
     return facex, facey
 end
 
+---@param self Player
 local function doComboAttack(self, facex, facey, heldenemy)
     if self.comboindex >= 2 then
         self.comboindex = 0
@@ -111,6 +112,7 @@ local function findInstantThrowDir(self, targetfacex, targetfacey)
     local enemy, enemytargetingscore = nil, 128
     local throwz = self.z + self.bodyheight/2
     Characters.search("enemies",
+    ---@param e Enemy
     function(e)
         if not e.getTargetingScore then
             return
@@ -137,6 +139,7 @@ local function findInstantThrowTarget(self, targetfacex, targetfacey)
     local projectilez = self.z + projectileheight
     local enemy, enemytargetingscore = nil, 128
     Characters.search("enemies",
+    ---@param e Enemy
     function(e)
         if not e.getTargetingScore then
             return
@@ -163,14 +166,13 @@ end
 function Player:init()
     Fighter.init(self)
     self.comboindex = 0
-    self.runenergy = 100
-    self.runenergymax = self.runenergy
-    self.runenergycost = 25
-    self.mana = 0
-    self.manaunitsize = 30
-    self.manamax = self.manaunitsize * 3
+    self.runenergy = self.runenergy or 100
+    self.runenergymax = self.runenergymax or self.runenergy
+    self.runenergycost = self.runenergycost or 25
+    self.mana = self.mana or 0
+    self.manaunitsize = self.manaunitsize or 30
+    self.manamax = self.manamax or (self.manaunitsize * 3)
 
-    ---@type AttackerSlot[]
     self.attackerslots = {
         AttackerSlot("melee", 1024, 0), -- 3 o clock
         AttackerSlot("melee", 0, 1024), -- 6 o clock
@@ -248,12 +250,15 @@ end
 function Player:initAseprite()
     Character.initAseprite(self)
     local weaponposasefile = self.weaponposasefile
-    if not weaponposasefile then return end
+    local weaponposase = weaponposasefile and
+        Assets.load(weaponposasefile, true)
+    if not weaponposase then return end
 
-    local weaponposase = Assets.load(weaponposasefile, true)
+    ---@cast weaponposase Aseprite
     Assets.uncache(weaponposase.imagefile)
     Assets.uncache(weaponposasefile)
     local imagedata = weaponposase.imagedata
+    if not imagedata then return end
 
     ---@type number[]
     local weapontransforms = {}
@@ -621,6 +626,7 @@ function Player:aimThrow()
         end
 
         Characters.search("enemies",
+        ---@param enemy Enemy
         function(enemy)
             local score = enemy.getTargetingScore
                 and enemy:getTargetingScore(self.x, self.y, targetfacex, targetfacey)

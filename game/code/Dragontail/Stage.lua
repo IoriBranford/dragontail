@@ -291,7 +291,7 @@ function Stage.fixedupdate()
 end
 
 function Stage.fixedupdateGui(gui)
-    local players = Characters.getGroup("players")
+    local players = Characters.getGroup("players") ---@type Player[]
     local player = players[1]
 
     local healthpercent = player.health / player.maxhealth

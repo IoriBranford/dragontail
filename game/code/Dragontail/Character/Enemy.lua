@@ -6,18 +6,6 @@ local Characters = require "Dragontail.Stage.Characters"
 local Raycast    = require "Object.Raycast"
 local Color      = require "Tiled.Color"
 
----@class Dodge
----@field dodgespeed number?
----@field dodgewithintime number?
----@field dodgedecel number?
----@field dodgesound string?
-
----@class Guard
----@field guardtime integer?
----@field guardhitsound string?
----@field guardcounterattack string?
----@field guardhitstocounterattack integer?
-
 ---@class Ambush
 ---@field ambushsightarc number?
 

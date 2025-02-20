@@ -5,13 +5,59 @@ local Characters = require "Dragontail.Stage.Characters"
 local TiledObject = require "Tiled.Object"
 local Movement    = require "Component.Movement"
 
+---@class Face
+---@field facex number
+---@field facey number
+
 ---@class Mana
 ---@field mana number?
 ---@field manamax number?
+---@field manaunitsize number?
 
----@class BreakHold
+---@class Combo
+---@field comboindex integer?
+
+---@class Dash
+---@field dashsound string?
+---@field stopdashsound string?
+
+---@class Run
+---@field runenergy number?
+---@field runenergymax number?
+---@field runenergycost number?
+
+---@class Jump
+---@field jumplandsound string?
+
+---@class Dodge
+---@field dodgespeed number?
+---@field dodgewithintime number?
+---@field dodgedecel number?
+---@field dodgesound string?
+
+---@class Guard
+---@field guardtime integer?
+---@field guardhitsound string?
+---@field guardcounterattack string?
+---@field guardhitstocounterattack integer?
+
+---@class WeaponInHand
+---@field weaponposasefile string?
+---@field weaponinhand string?
+---@field numweaponinhand integer?
+
+---@class ThrowWeapon
+---@field throwtime integer?
+---@field throwsound string?
+
+---@class Hold
+---@field grabradius number?
+---@field holdsound string?
+
+---@class Held
 ---@field aiafterbreakaway string?
 ---@field attackafterbreakaway string?
+---@field aiafterheld string?
 
 ---@class Thrown
 ---@field thrownslidetime integer?
@@ -27,26 +73,14 @@ local Movement    = require "Component.Movement"
 ---@field getupai string?
 ---@field getuptime integer?
 ---@field aiaftergetup string?
+---@field getupsound string?
 
----@class WallHit
----@field wallbumpdamage number?
----@field wallbumpstun integer?
----@field wallslamdamage number?
----@field wallslamstun integer?
----@field wallslamcounterattack string?
+---@class Win
+---@field victorysound string?
 
----@class Defeat
----@field defeatsound string?
----@field defeatedanimation string?
-
----@class Fighter:Common,Mana,BreakHold,Thrown,Fall,GetUp,WallHit,Defeat
----@field facex number
----@field facey number
----@field aiafterhurt string?
----@field aiafterheld string?
----@field hurtsound string?
----@field recoverai string?
----@field defeatai string?
+---@class Fighter:Common,Face,Mana,Combo,Dash,Run,Jump,Dodge,Guard,WeaponInHand,ThrowWeapon,Hold,Held,Thrown,Fall,GetUp,Win
+---@field heldopponent Fighter?
+---@field heldby Fighter?
 local Fighter = class(Common)
 
 local huge = math.huge
