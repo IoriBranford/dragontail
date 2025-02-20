@@ -28,6 +28,7 @@ local Animation= require "Aseprite.Animation"
 ---@field width number
 ---@field height number
 ---@field image love.Image
+---@field imagedata love.ImageData?
 ---@field imagefile string
 ---@field layers {[string|integer]: integer|AseLayer}
 ---@field animations {[string]: AseTag} '*' means the aseprite itself, i.e. all frames
