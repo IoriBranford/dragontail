@@ -1,4 +1,4 @@
----@alias Color string|integer|table "#aarrggbb" or "#rrggbb" or 0xAARRGGBB or [r, g, b, a]
+---@alias Color string|integer|number[] "#aarrggbb" or "#rrggbb" or 0xAARRGGBB or [r, g, b, a]
 local Color = {
     Red     = 0xffff0000,
     Green   = 0xff00ff00,
