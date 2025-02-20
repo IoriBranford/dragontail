@@ -166,6 +166,9 @@ function Player:init()
     self.runenergy = 100
     self.runenergymax = self.runenergy
     self.runenergycost = 25
+    self.mana = 0
+    self.manaunitsize = 30
+    self.manamax = self.manaunitsize * 3
 
     ---@type AttackerSlot[]
     self.attackerslots = {
