@@ -77,6 +77,18 @@ function Fighter:updateSlideSpeed(angle, speed, decel)
     return speed
 end
 
+function Fighter:giveMana(flame)
+    if not self.mana or not self.manamax then
+        return
+    end
+
+    local mana = self.mana + flame
+    if mana > self.manamax then
+        mana = self.manamax
+    end
+    self.mana = mana
+end
+
 function Fighter:hurt(attacker)
     local hurtangle = atan2(attacker.y - self.y, attacker.x - self.x)
     if not hurtangle == hurtangle then
