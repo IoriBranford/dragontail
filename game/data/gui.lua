@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 18,
   nextlayerid = 12,
-  nextobjectid = 30,
+  nextobjectid = 36,
   properties = {},
   tilesets = {
     {
@@ -295,7 +295,7 @@ return {
               type = "Gui.Gauge",
               shape = "rectangle",
               x = 44,
-              y = 27,
+              y = 12,
               width = 100,
               height = 9,
               rotation = 0,
@@ -311,7 +311,7 @@ return {
               type = "",
               shape = "rectangle",
               x = 44,
-              y = 27,
+              y = 12,
               width = 100,
               height = 9,
               rotation = 0,
@@ -320,6 +320,108 @@ return {
                 ["color"] = "#00000000",
                 ["linecolor"] = "#ffff8080",
                 ["roundcorners"] = 2,
+                ["z"] = 2
+              }
+            },
+            {
+              id = 30,
+              name = "flame1",
+              type = "Gui.Gauge",
+              shape = "rectangle",
+              x = 46,
+              y = 26,
+              width = 30,
+              height = 6,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#ffe06000",
+                ["z"] = 0
+              }
+            },
+            {
+              id = 31,
+              name = "flame2",
+              type = "Gui.Gauge",
+              shape = "rectangle",
+              x = 78,
+              y = 26,
+              width = 30,
+              height = 6,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#ffe06000",
+                ["z"] = 0
+              }
+            },
+            {
+              id = 32,
+              name = "flame3",
+              type = "Gui.Gauge",
+              shape = "rectangle",
+              x = 110,
+              y = 26,
+              width = 30,
+              height = 6,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#ffe06000",
+                ["z"] = 0
+              }
+            },
+            {
+              id = 33,
+              name = "flamebox",
+              type = "",
+              shape = "rectangle",
+              x = 46,
+              y = 26,
+              width = 30,
+              height = 6,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#00000000",
+                ["linecolor"] = "#ffffa040",
+                ["roundcorners"] = 1,
+                ["z"] = 2
+              }
+            },
+            {
+              id = 34,
+              name = "flamebox",
+              type = "",
+              shape = "rectangle",
+              x = 78,
+              y = 26,
+              width = 30,
+              height = 6,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#00000000",
+                ["linecolor"] = "#ffffa040",
+                ["roundcorners"] = 1,
+                ["z"] = 2
+              }
+            },
+            {
+              id = 35,
+              name = "flamebox",
+              type = "",
+              shape = "rectangle",
+              x = 110,
+              y = 26,
+              width = 30,
+              height = 6,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#00000000",
+                ["linecolor"] = "#ffffa040",
+                ["roundcorners"] = 1,
                 ["z"] = 2
               }
             },
@@ -356,23 +458,6 @@ return {
               properties = {
                 ["z"] = 0
               }
-            },
-            {
-              id = 7,
-              name = "playername",
-              type = "",
-              shape = "text",
-              x = 48,
-              y = 9,
-              width = 90,
-              height = 18,
-              rotation = 0,
-              visible = true,
-              text = "Rose",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
-              properties = {}
             },
             {
               id = 29,

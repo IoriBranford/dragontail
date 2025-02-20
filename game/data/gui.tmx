@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="12" nextobjectid="30">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="12" nextobjectid="36">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -22,17 +22,59 @@
      <property name="z" type="float" value="1"/>
     </properties>
    </object>
-   <object id="3" name="health" type="Gui.Gauge" x="44" y="27" width="100" height="9">
+   <object id="3" name="health" type="Gui.Gauge" x="44" y="12" width="100" height="9">
     <properties>
      <property name="color" type="color" value="#ffc04040"/>
      <property name="z" type="float" value="0"/>
     </properties>
    </object>
-   <object id="5" name="healthbox" x="44" y="27" width="100" height="9">
+   <object id="5" name="healthbox" x="44" y="12" width="100" height="9">
     <properties>
      <property name="color" type="color" value="#00000000"/>
      <property name="linecolor" type="color" value="#ffff8080"/>
      <property name="roundcorners" type="float" value="2"/>
+     <property name="z" type="float" value="2"/>
+    </properties>
+   </object>
+   <object id="30" name="flame1" type="Gui.Gauge" x="46" y="26" width="30" height="6">
+    <properties>
+     <property name="color" type="color" value="#ffe06000"/>
+     <property name="z" type="float" value="0"/>
+    </properties>
+   </object>
+   <object id="31" name="flame2" type="Gui.Gauge" x="78" y="26" width="30" height="6">
+    <properties>
+     <property name="color" type="color" value="#ffe06000"/>
+     <property name="z" type="float" value="0"/>
+    </properties>
+   </object>
+   <object id="32" name="flame3" type="Gui.Gauge" x="110" y="26" width="30" height="6">
+    <properties>
+     <property name="color" type="color" value="#ffe06000"/>
+     <property name="z" type="float" value="0"/>
+    </properties>
+   </object>
+   <object id="33" name="flamebox" x="46" y="26" width="30" height="6">
+    <properties>
+     <property name="color" type="color" value="#00000000"/>
+     <property name="linecolor" type="color" value="#ffffa040"/>
+     <property name="roundcorners" type="float" value="1"/>
+     <property name="z" type="float" value="2"/>
+    </properties>
+   </object>
+   <object id="34" name="flamebox" x="78" y="26" width="30" height="6">
+    <properties>
+     <property name="color" type="color" value="#00000000"/>
+     <property name="linecolor" type="color" value="#ffffa040"/>
+     <property name="roundcorners" type="float" value="1"/>
+     <property name="z" type="float" value="2"/>
+    </properties>
+   </object>
+   <object id="35" name="flamebox" x="110" y="26" width="30" height="6">
+    <properties>
+     <property name="color" type="color" value="#00000000"/>
+     <property name="linecolor" type="color" value="#ffffa040"/>
+     <property name="roundcorners" type="float" value="1"/>
      <property name="z" type="float" value="2"/>
     </properties>
    </object>
@@ -48,9 +90,6 @@
     <properties>
      <property name="z" type="float" value="0"/>
     </properties>
-   </object>
-   <object id="7" name="playername" x="48" y="9" width="90" height="18">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Rose</text>
    </object>
    <object id="29" x="360" y="252" width="112" height="18">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="right">DEVELOPMENT VER. 2024</text>
