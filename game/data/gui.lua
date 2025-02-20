@@ -461,7 +461,7 @@ return {
             },
             {
               id = 29,
-              name = "",
+              name = "development ver.",
               type = "",
               shape = "text",
               x = 360,
@@ -470,7 +470,7 @@ return {
               height = 18,
               rotation = 0,
               visible = true,
-              text = "DEVELOPMENT VER. 2024",
+              text = "DEVELOPMENT VER. 2025",
               fontfamily = "TinyUnicode",
               wrap = true,
               color = { 255, 255, 255 },
