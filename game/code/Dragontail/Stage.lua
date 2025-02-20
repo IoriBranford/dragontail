@@ -301,6 +301,17 @@ function Stage.fixedupdateGui(gui)
 
     hud.health:setPercent(healthpercent)
 
+    local mana = player.mana
+    local manaunitsize = player.manaunitsize
+    for i = 1, 3 do
+        local flamegauge = hud["flame"..i] ---@type Gauge
+        if not flamegauge then
+            break
+        end
+        flamegauge:setPercent(mana/manaunitsize)
+        mana = mana - manaunitsize
+    end
+
     local portrait = hud.portrait
     portrait.originx = portrait.width/2 + sin(player.hurtstun)
     if winningteam == "players" then
