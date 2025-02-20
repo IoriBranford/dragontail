@@ -34,7 +34,7 @@ end
 Enemy.TotalAttackRange = totalAttackRange
 
 function Enemy:getAttackFlashColor(t)
-    local greenblue = (1+sin(t))/2
+    local greenblue = (1+cos(t))/2
     return Color.asARGBInt(1, greenblue, greenblue, 1)
 end
 
