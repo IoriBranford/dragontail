@@ -305,10 +305,13 @@ function Stage.fixedupdateGui(gui)
     local manaunitsize = player.manaunitsize
     for i = 1, 3 do
         local flamegauge = hud["flame"..i] ---@type Gauge
-        if not flamegauge then
-            break
+        if flamegauge then
+            flamegauge:setPercent(mana/manaunitsize)
         end
-        flamegauge:setPercent(mana/manaunitsize)
+        local flamefull = hud["flamefull"..i] ---@type GuiObject
+        if flamefull then
+            flamefull.visible = mana >= manaunitsize
+        end
         mana = mana - manaunitsize
     end
 

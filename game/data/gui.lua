@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 18,
   nextlayerid = 12,
-  nextobjectid = 36,
+  nextobjectid = 39,
   properties = {},
   tilesets = {
     {
@@ -225,6 +225,73 @@ return {
           }
         }
       }
+    },
+    {
+      name = "flamegaugefull",
+      firstgid = 377,
+      class = "",
+      tilewidth = 40,
+      tileheight = 20,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "tilesets/ui/flamegaugefull.png",
+      imagewidth = 40,
+      imageheight = 160,
+      objectalignment = "unspecified",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 40,
+        height = 20
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 8,
+      tiles = {
+        {
+          id = 0,
+          animation = {
+            {
+              tileid = 0,
+              duration = 50
+            },
+            {
+              tileid = 1,
+              duration = 50
+            },
+            {
+              tileid = 2,
+              duration = 50
+            },
+            {
+              tileid = 3,
+              duration = 50
+            },
+            {
+              tileid = 4,
+              duration = 50
+            },
+            {
+              tileid = 5,
+              duration = 50
+            },
+            {
+              tileid = 6,
+              duration = 50
+            },
+            {
+              tileid = 7,
+              duration = 50
+            }
+          }
+        }
+      }
     }
   },
   layers = {
@@ -324,108 +391,6 @@ return {
               }
             },
             {
-              id = 30,
-              name = "flame1",
-              type = "Gui.Gauge",
-              shape = "rectangle",
-              x = 46,
-              y = 26,
-              width = 30,
-              height = 6,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["color"] = "#ffe06000",
-                ["z"] = 0
-              }
-            },
-            {
-              id = 31,
-              name = "flame2",
-              type = "Gui.Gauge",
-              shape = "rectangle",
-              x = 78,
-              y = 26,
-              width = 30,
-              height = 6,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["color"] = "#ffe06000",
-                ["z"] = 0
-              }
-            },
-            {
-              id = 32,
-              name = "flame3",
-              type = "Gui.Gauge",
-              shape = "rectangle",
-              x = 110,
-              y = 26,
-              width = 30,
-              height = 6,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["color"] = "#ffe06000",
-                ["z"] = 0
-              }
-            },
-            {
-              id = 33,
-              name = "flamebox",
-              type = "",
-              shape = "rectangle",
-              x = 46,
-              y = 26,
-              width = 30,
-              height = 6,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["color"] = "#00000000",
-                ["linecolor"] = "#ffffa040",
-                ["roundcorners"] = 1,
-                ["z"] = 2
-              }
-            },
-            {
-              id = 34,
-              name = "flamebox",
-              type = "",
-              shape = "rectangle",
-              x = 78,
-              y = 26,
-              width = 30,
-              height = 6,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["color"] = "#00000000",
-                ["linecolor"] = "#ffffa040",
-                ["roundcorners"] = 1,
-                ["z"] = 2
-              }
-            },
-            {
-              id = 35,
-              name = "flamebox",
-              type = "",
-              shape = "rectangle",
-              x = 110,
-              y = 26,
-              width = 30,
-              height = 6,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["color"] = "#00000000",
-                ["linecolor"] = "#ffffa040",
-                ["roundcorners"] = 1,
-                ["z"] = 2
-              }
-            },
-            {
               id = 2,
               name = "portraitbox",
               type = "",
@@ -458,6 +423,150 @@ return {
               properties = {
                 ["z"] = 0
               }
+            },
+            {
+              id = 30,
+              name = "flame1",
+              type = "Gui.Gauge",
+              shape = "rectangle",
+              x = 47,
+              y = 26,
+              width = 30,
+              height = 6,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#ffe06000",
+                ["z"] = 0
+              }
+            },
+            {
+              id = 31,
+              name = "flame2",
+              type = "Gui.Gauge",
+              shape = "rectangle",
+              x = 80,
+              y = 26,
+              width = 30,
+              height = 6,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#ffe06000",
+                ["z"] = 0
+              }
+            },
+            {
+              id = 32,
+              name = "flame3",
+              type = "Gui.Gauge",
+              shape = "rectangle",
+              x = 113,
+              y = 26,
+              width = 30,
+              height = 6,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#ffe06000",
+                ["z"] = 0
+              }
+            },
+            {
+              id = 33,
+              name = "flamebox",
+              type = "",
+              shape = "rectangle",
+              x = 47,
+              y = 26,
+              width = 30,
+              height = 6,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#00000000",
+                ["linecolor"] = "#ffffa040",
+                ["roundcorners"] = 1,
+                ["z"] = 2
+              }
+            },
+            {
+              id = 34,
+              name = "flamebox",
+              type = "",
+              shape = "rectangle",
+              x = 80,
+              y = 26,
+              width = 30,
+              height = 6,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#00000000",
+                ["linecolor"] = "#ffffa040",
+                ["roundcorners"] = 1,
+                ["z"] = 2
+              }
+            },
+            {
+              id = 35,
+              name = "flamebox",
+              type = "",
+              shape = "rectangle",
+              x = 113,
+              y = 26,
+              width = 30,
+              height = 6,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#00000000",
+                ["linecolor"] = "#ffffa040",
+                ["roundcorners"] = 1,
+                ["z"] = 2
+              }
+            },
+            {
+              id = 36,
+              name = "flamefull1",
+              type = "",
+              shape = "rectangle",
+              x = 42,
+              y = 36,
+              width = 40,
+              height = 20,
+              rotation = 0,
+              gid = 377,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 37,
+              name = "flamefull2",
+              type = "",
+              shape = "rectangle",
+              x = 75,
+              y = 36,
+              width = 40,
+              height = 20,
+              rotation = 0,
+              gid = 377,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 38,
+              name = "flamefull3",
+              type = "",
+              shape = "rectangle",
+              x = 108,
+              y = 36,
+              width = 40,
+              height = 20,
+              rotation = 0,
+              gid = 377,
+              visible = true,
+              properties = {}
             },
             {
               id = 29,
