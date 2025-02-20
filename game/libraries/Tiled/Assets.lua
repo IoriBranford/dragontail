@@ -1,7 +1,8 @@
 local TilePacking = require "Tiled.TilePacking"
 local hasAseprite, Aseprite = pcall(require, "Aseprite")
 
----@alias Asset Tileset|love.Image|love.ImageData|love.Font|Aseprite|love.Source
+---@alias Music love.Source|VGMPlayer|GameMusicEmu
+---@alias Asset Tileset|love.Image|love.ImageData|love.Font|Aseprite|love.Source|Music
 ---@alias AssetGroup {[string]:Asset}
 
 local Assets = {
