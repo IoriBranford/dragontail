@@ -368,7 +368,8 @@ return {
               rotation = 0,
               visible = true,
               properties = {
-                ["color"] = "#ffc04040",
+                ["color"] = "#ffff1f1f",
+                ["roundcorners"] = 1,
                 ["z"] = 0
               }
             },
@@ -385,7 +386,7 @@ return {
               visible = true,
               properties = {
                 ["color"] = "#00000000",
-                ["linecolor"] = "#ffff8080",
+                ["linecolor"] = "#ffffffff",
                 ["roundcorners"] = 2,
                 ["z"] = 2
               }
@@ -436,7 +437,7 @@ return {
               rotation = 0,
               visible = true,
               properties = {
-                ["color"] = "#ffe06000",
+                ["color"] = "#ffffaa00",
                 ["z"] = 0
               }
             },
@@ -452,7 +453,7 @@ return {
               rotation = 0,
               visible = true,
               properties = {
-                ["color"] = "#ffe06000",
+                ["color"] = "#ffffaa00",
                 ["z"] = 0
               }
             },
@@ -468,7 +469,7 @@ return {
               rotation = 0,
               visible = true,
               properties = {
-                ["color"] = "#ffe06000",
+                ["color"] = "#ffffaa00",
                 ["z"] = 0
               }
             },
@@ -485,7 +486,7 @@ return {
               visible = true,
               properties = {
                 ["color"] = "#00000000",
-                ["linecolor"] = "#ffffa040",
+                ["linecolor"] = "#ffffffff",
                 ["roundcorners"] = 1,
                 ["z"] = 2
               }
@@ -503,7 +504,7 @@ return {
               visible = true,
               properties = {
                 ["color"] = "#00000000",
-                ["linecolor"] = "#ffffa040",
+                ["linecolor"] = "#ffffffff",
                 ["roundcorners"] = 1,
                 ["z"] = 2
               }
@@ -521,7 +522,7 @@ return {
               visible = true,
               properties = {
                 ["color"] = "#00000000",
-                ["linecolor"] = "#ffffa040",
+                ["linecolor"] = "#ffffffff",
                 ["roundcorners"] = 1,
                 ["z"] = 2
               }
@@ -532,7 +533,7 @@ return {
               type = "",
               shape = "rectangle",
               x = 42,
-              y = 36,
+              y = 37,
               width = 40,
               height = 20,
               rotation = 0,
@@ -546,7 +547,7 @@ return {
               type = "",
               shape = "rectangle",
               x = 75,
-              y = 36,
+              y = 37,
               width = 40,
               height = 20,
               rotation = 0,
@@ -560,7 +561,7 @@ return {
               type = "",
               shape = "rectangle",
               x = 108,
-              y = 36,
+              y = 37,
               width = 40,
               height = 20,
               rotation = 0,
