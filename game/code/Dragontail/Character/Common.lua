@@ -300,10 +300,14 @@ function Common:projectileFly(shooter)
     end
     self:setDirectionalAnimation(self.swinganimation, angle, 1, self.swinganimationloopframe or 1)
     local oobx, ooby, oobz
+    local lifetime = self.lifetime
     repeat
         yield()
         oobx, ooby, oobz = self:keepInBounds()
-    until oobx or ooby or oobz
+        if lifetime then
+            lifetime = lifetime - 1
+        end
+    until oobx or ooby or oobz or lifetime and lifetime <= 0
     local attackhitai = self.attackhitboundaryai or self.attackhitai
     if attackhitai then
         return attackhitai, oobx, ooby, oobz
