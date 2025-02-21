@@ -160,6 +160,8 @@ function Fighter:giveMana(mana)
     mana = self.mana + mana
     if mana > self.manamax then
         mana = self.manamax
+    elseif mana < 0 then
+        mana = 0
     end
     self.mana = mana
 end
