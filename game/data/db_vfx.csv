@@ -7,3 +7,4 @@ spark-stone-shatter,sprites/weapons/stone.jase,Dragontail.Character.Common,spark
 particle-blood,sprites/vfx.jase,Dragontail.Character.Common,shrinkOut,liquid,,3,3,30,,3,0.392699081698724,0.125,4290772992
 particle-hit-sweat,sprites/vfx.jase,Dragontail.Character.Common,shrinkOut,liquid,,3,3,6,,4,1.0471975511966,,
 spark-land-on-feet-dust,sprites/vfx/dust-land-on-feet.jase,Dragontail.Character.Common,spark,*,0,12,6,21,,,,,
+spark-fireball-shatter,sprites/rose-fireball.jase,Dragontail.Character.Common,spark,Shatter,0,32,40,15,,,,,
