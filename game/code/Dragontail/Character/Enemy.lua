@@ -9,7 +9,7 @@ local Color      = require "Tiled.Color"
 ---@class Ambush
 ---@field ambushsightarc number?
 
----@class Enemy:Fighter,Dodge,Guard,Ambush
+---@class Enemy:Fighter,Ambush
 ---@field opponents Player[]
 ---@field approachtime integer?
 ---@field defaultattack string?
