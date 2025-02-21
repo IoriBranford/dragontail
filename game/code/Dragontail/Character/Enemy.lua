@@ -30,10 +30,6 @@ local yield = coroutine.yield
 
 local lm_random = love.math.random
 
-local function faceDir(self, dx, dy)
-    self.facex, self.facey = norm(dx, dy)
-end
-
 local function totalAttackRange(attackradius, attacklungespeed, attacklungedecel)
     return attackradius + Fighter.GetSlideDistance(attacklungespeed or 0, attacklungedecel or 1)
 end
@@ -121,10 +117,7 @@ function Enemy:stand(duration)
             if tooppox == 0 and tooppoy == 0 then
                 tooppox = 1
             end
-            faceDir(self, tooppox, tooppoy)
-            local faceangle = atan2(tooppoy, tooppox)
-            local standanimation = self.getDirectionalAnimation_angle("Stand", faceangle, self.animationdirections)
-            self:changeAseAnimation(standanimation)
+            self:faceDir(tooppox, tooppoy, "Stand")
 
             local dodgeangle = self:isFullyOnCamera(self.camera) and self:findAngleToDodgeIncoming(opponent)
             if dodgeangle then
@@ -184,9 +177,8 @@ function Enemy:dodgeIncoming(dodgeangle)
     if tooppox == 0 and tooppoy == 0 then
         tooppox = 1
     end
-
-    faceDir(self, tooppox, tooppoy)
-    self:setDirectionalAnimation("Walk", math.atan2(tooppoy, tooppox))
+    tooppox, tooppoy = math.norm(tooppox, tooppoy)
+    self:faceDir(tooppox, tooppoy, "Walk")
     Audio.play(self.stopdashsound)
     self:slide(dodgeangle, self.dodgespeed, self.dodgedecel)
 
@@ -245,10 +237,8 @@ function Enemy:approach()
         if todestx == 0 and todesty == 0 then
             todestx = 1
         end
-        faceDir(self, todestx, todesty)
-        local todestangle = atan2(todesty, todestx)
-        local walkanimation = self.getDirectionalAnimation_angle("Walk", todestangle, self.animationdirections)
-        self:changeAseAnimation(walkanimation)
+        todestx, todesty = math.norm(todestx, todesty)
+        self:faceDir(todestx, todesty, "Walk")
     end
 
     local speed = self.speed or 2
