@@ -44,12 +44,12 @@ local SecondSummonHealthPercent = .3
 
 function BanditBoss:facePosition(px, py, animation)
     local x, y = self.x, self.y
-    local distx, disty = py - y, px - x
+    local distx, disty = px - x, py - y
     if distx == 0 and disty == 0 then
         return
     end
-    self.facex, self.facey = math.norm(disty, distx)
-    local faceangle = math.atan2(distx, disty)
+    self.facex, self.facey = math.norm(distx, disty)
+    local faceangle = math.atan2(disty, distx)
     self:setDirectionalAnimation(animation or "Stand", faceangle)
 end
 
