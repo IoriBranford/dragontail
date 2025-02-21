@@ -545,7 +545,24 @@ function Player:spinAttack(attacktype, angle)
     local attackagain = false
     local t = spintime
     local lungespeed = self.attacklungespeed
+    local shootingfireballs
+    local buttonholdtimeforfireball = spintime/2
     repeat
+        if t == buttonholdtimeforfireball then
+            if self.mana >= self.manaunitsize then
+                local attackdown = Controls.getButtonsDown()
+                if attackdown then
+                    shootingfireballs = true
+                    self:giveMana(-self.manaunitsize)
+                end
+            end
+        end
+        if shootingfireballs then
+            local fireballangle = angle + pi
+            local fireball = self:launchProjectile("Rose-fireball", cos(fireballangle), sin(fireballangle), 0)
+            fireball.rotation = fireballangle
+        end
+
         local inx, iny = Controls.getDirectionInput()
         local targetvelx, targetvely = 0, 0
         local speed = 2
