@@ -169,9 +169,9 @@ function Player:init()
     self.runenergy = self.runenergy or 100
     self.runenergymax = self.runenergymax or self.runenergy
     self.runenergycost = self.runenergycost or 25
-    self.mana = self.mana or 0
-    self.manaunitsize = self.manaunitsize or 30
+    self.manaunitsize = self.manaunitsize or 60
     self.manamax = self.manamax or (self.manaunitsize * 3)
+    self.mana = self.mana or self.manaunitsize
 
     self.attackerslots = {
         AttackerSlot("melee", 1024, 0), -- 3 o clock
