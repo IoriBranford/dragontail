@@ -13,6 +13,7 @@ local Assets       = require "Tiled.Assets"
 local Slide      = require "Dragontail.Character.Action.Slide"
 local Face       = require "Dragontail.Character.Action.Face"
 local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
+local Shoot        = require "Dragontail.Character.Action.Shoot"
 
 ---@class Player:Fighter
 local Player = class(Fighter)
@@ -557,7 +558,7 @@ function Player:spinAttack(attacktype, angle)
         end
         if shootingfireballs then
             local fireballangle = angle + pi
-            local fireball = self:launchProjectile("Rose-fireball", cos(fireballangle), sin(fireballangle), 0)
+            local fireball = Shoot.launchProjectile(self, "Rose-fireball", cos(fireballangle), sin(fireballangle), 0)
             fireball.rotation = fireballangle
         end
 
@@ -692,7 +693,7 @@ end
 
 function Player:throwWeapon(targetx, targety, targetz, attackid)
     Face.faceVector(self, targetx - self.x, targety - self.y, "throw")
-    self:launchProjectileAtPosition({
+    Shoot.launchProjectileAtPosition(self, {
         type = self.weaponinhand,
         gravity = 1/8,
         speed = 16

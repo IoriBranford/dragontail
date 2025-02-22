@@ -10,6 +10,7 @@ local Stage      = require "Dragontail.Stage"
 local Dodge      = require "Dragontail.Character.Action.Dodge"
 local Slide      = require "Dragontail.Character.Action.Slide"
 local Face       = require "Dragontail.Character.Action.Face"
+local Shoot      = require "Dragontail.Character.Action.Shoot"
 
 --- Attacks:
 --- - Lance charge
@@ -244,7 +245,7 @@ function BanditBoss:executeAttack(attacktype, targetx, targety, targetz)
     Audio.play(self.swingsound)
     local attackprojectile = self.attackprojectile
     if attackprojectile then
-        self:launchProjectileAtPosition(attackprojectile, targetx, targety, targetz)
+        Shoot.launchProjectileAtPosition(self, attackprojectile, targetx, targety, targetz)
     else
         local attackangle = floor((self.faceangle + (pi/4)) / (pi/2)) * pi/2
         self:startAttack(attackangle)
