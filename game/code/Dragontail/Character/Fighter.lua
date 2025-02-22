@@ -5,9 +5,7 @@ local Characters = require "Dragontail.Stage.Characters"
 local TiledObject = require "Tiled.Object"
 local Movement    = require "Component.Movement"
 local Slide      = require "Dragontail.Character.Action.Slide"
-
----@class Face
----@field faceangle number
+local Face       = require "Dragontail.Character.Action.Face"
 
 ---@class Mana
 ---@field mana number?
@@ -89,23 +87,6 @@ local dist = math.dist
 function Fighter:init()
     Common.init(self)
     self.faceangle = self.faceangle or 0
-end
-
-function Fighter:facePosition(x, y, animation, frame1, loopframe)
-    self:faceVector(x - self.x, y - self.y, animation, frame1, loopframe)
-end
-
-function Fighter:faceVector(vx, vy, animation, frame1, loopframe)
-    self:faceAngle((vx ~= 0 or vy ~= 0) and atan2(vy, vx), animation, frame1, loopframe)
-end
-
-function Fighter:faceAngle(angle, animation, frame1, loopframe)
-    if angle then
-        self.faceangle = angle
-    end
-    if animation then
-        self:setDirectionalAnimation(animation, angle or self.faceangle, frame1, loopframe)
-    end
 end
 
 function Fighter:startHolding(opponent)
@@ -211,7 +192,7 @@ function Fighter:walkTo(destx, desty, timelimit)
 
     local todestangle = (desty ~= self.y or destx ~= self.x) and atan2(desty - self.y, destx - self.x)
     if todestangle then
-        self:faceAngle(todestangle, "Walk")
+        Face.faceAngle(self, todestangle, "Walk")
     end
 
     timelimit = timelimit or 600

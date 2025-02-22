@@ -11,6 +11,7 @@ local Color        = require "Tiled.Color"
 local Graphics     = require "Tiled.Graphics"
 local Assets       = require "Tiled.Assets"
 local Slide      = require "Dragontail.Character.Action.Slide"
+local Face       = require "Dragontail.Character.Action.Face"
 
 ---@class Player:Fighter
 local Player = class(Fighter)
@@ -575,7 +576,7 @@ function Player:spinAttack(attacktype, angle)
         end
 
         self:startAttack(angle)
-        self:faceAngle(angle+pi)
+        Face.faceAngle(self, angle+pi)
         self:setDirectionalAnimation(self.swinganimation, angle)
 
         yield()
@@ -689,7 +690,7 @@ function Player:aimThrow()
 end
 
 function Player:throwWeapon(targetx, targety, targetz, attackid)
-    self:faceVector(targetx - self.x, targety - self.y, "throw")
+    Face.faceVector(self, targetx - self.x, targety - self.y, "throw")
     self:launchProjectileAtPosition({
         type = self.weaponinhand,
         gravity = 1/8,
@@ -787,10 +788,10 @@ function Player:hold(enemy)
         enemy.velz = 0
 
         local holdanimation = (velx ~= 0 or vely ~= 0) and "holdwalk" or "hold"
-        self:faceAngle(holdangle, holdanimation)
+        Face.faceAngle(self, holdangle, holdanimation)
 
         local enemyfaceangle = holdfrombehind and self.faceangle or (self.faceangle + pi)
-        enemy:faceAngle(enemyfaceangle, "Hurt")
+        Face.faceAngle(enemy, enemyfaceangle, "Hurt")
 
         self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
         if runpressed and self.runenergy >= self.runenergycost then
@@ -841,7 +842,7 @@ function Player:runWithEnemy(enemy)
 
         facex, facey = rotateVectorTo(facex, facey, targetfacex, targetfacey, turnspeed)
         holdangle = atan2(facey, facex)
-        self:faceAngle(holdangle, "holdwalk")
+        Face.faceAngle(self, holdangle, "holdwalk")
         targetvelx = facex * movespeed
         targetvely = facey * movespeed
 
@@ -923,7 +924,7 @@ function Player:spinAndKickEnemy(attacktype, angle, enemy)
         local velx, vely = self.velx, self.vely
 
         enemy:startAttack(angle)
-        self:faceAngle(angle, self.swinganimation)
+        Face.faceAngle(self, angle, self.swinganimation)
 
         holddirx, holddiry = cos(angle), sin(angle)
         x, y = self.x, self.y
@@ -1042,7 +1043,7 @@ function Player:eventWalkTo(destx, desty, timelimit)
     self:stopHolding(self.heldopponent)
     self:walkTo(destx, desty, timelimit)
     self.velx, self.vely, self.velz = 0, 0, 0
-    self:faceVector(1, 0, "Stand")
+    Face.faceVector(self, 1, 0, "Stand")
 end
 
 return Player

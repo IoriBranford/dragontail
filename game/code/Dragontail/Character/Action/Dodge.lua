@@ -2,6 +2,7 @@ local Characters = require "Dragontail.Stage.Characters"
 local Raycast    = require "Object.Raycast"
 local Slide      = require "Dragontail.Character.Action.Slide"
 local Audio      = require "System.Audio"
+local Face       = require "Dragontail.Character.Action.Face"
 
 ---@class Dodge:Character
 ---@field dodgespeed number?
@@ -73,7 +74,7 @@ function Dodge:dodge(opponent, dodgeangle)
         tooppox = 1
     end
     tooppox, tooppoy = math.norm(tooppox, tooppoy)
-    self:faceVector(tooppox, tooppoy, "Walk")
+    Face.faceVector(self, tooppox, tooppoy, "Walk")
     Audio.play(self.stopdashsound)
     Slide.slide(self, dodgeangle, self.dodgespeed, self.dodgedecel)
 end

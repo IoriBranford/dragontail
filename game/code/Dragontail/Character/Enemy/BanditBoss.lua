@@ -9,6 +9,7 @@ local Color      = require "Tiled.Color"
 local Stage      = require "Dragontail.Stage"
 local Dodge      = require "Dragontail.Character.Action.Dodge"
 local Slide      = require "Dragontail.Character.Action.Slide"
+local Face       = require "Dragontail.Character.Action.Face"
 
 --- Attacks:
 --- - Lance charge
@@ -63,7 +64,7 @@ function BanditBoss:stand(duration)
     local opponents = Characters.getGroup("players")
     local opponent = opponents[1]
     for _ = 1, duration do
-        self:facePosition(opponent.x, opponent.y)
+        Face.facePosition(self, opponent.x, opponent.y)
         local dodgeangle = self:isFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self, opponent)
         if dodgeangle then
             return "dodgeIncoming", dodgeangle
@@ -93,7 +94,7 @@ function BanditBoss:stand(duration)
         else
             self.attackswitchesleft = 0
         end
-        self:facePosition(opponent.x, opponent.y)
+        Face.facePosition(self, opponent.x, opponent.y)
         return "attack", attacktype
     end
     return "approach"
@@ -138,7 +139,7 @@ function BanditBoss:approach()
         destx, desty = x + frontendx - projx, y + frontendy - projy
     end
 
-    self:faceVector(destx - x, desty - y, "Walk")
+    Face.faceVector(self, destx - x, desty - y, "Walk")
 
     local speed = self.speed or 2
     if math.distsq(x, y, oppox, oppoy) > 320*320 then
@@ -165,7 +166,7 @@ function BanditBoss:approach()
     local attacktype = not opponent.attacker and self.attacktype
     if attacktype and opponent.canbeattacked
     and math.distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
-        self:facePosition(opponent.x, opponent.y)
+        Face.facePosition(self, opponent.x, opponent.y)
         return "attack", attacktype
     end
     if reached then
@@ -193,9 +194,9 @@ function BanditBoss:prepareAttack(attacktype, targetx, targety)
 
     -- targetx = targetx or self.x
     -- targety = targety or self.y
-    -- self:faceVector(targetx - self.x, targety - self.y, self.windupanimation, 1, self.windupanimationloopframe or 0)
+    -- Face.faceVector(self, targetx - self.x, targety - self.y, self.windupanimation, 1, self.windupanimationloopframe or 0)
 
-    self:faceAngle(self.faceangle, self.windupanimation, 1, self.windupanimationloopframe or 0)
+    Face.faceAngle(self, self.faceangle, self.windupanimation, 1, self.windupanimationloopframe or 0)
 
     Audio.play(self.windupsound)
     for t = 1, (self.attackwinduptime or 20) do
@@ -238,7 +239,7 @@ function BanditBoss:executeAttack(attacktype, targetx, targety, targetz)
 
     targetx = targetx or self.x
     targety = targety or self.y
-    self:faceVector(targetx - self.x, targety - self.y, self.swinganimation, 1, self.swinganimationloopframe or 0)
+    Face.faceVector(self, targetx - self.x, targety - self.y, self.swinganimation, 1, self.swinganimationloopframe or 0)
 
     Audio.play(self.swingsound)
     local attackprojectile = self.attackprojectile
