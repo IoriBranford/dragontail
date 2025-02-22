@@ -10,6 +10,7 @@ local Characters   = require "Dragontail.Stage.Characters"
 local Color        = require "Tiled.Color"
 local Graphics     = require "Tiled.Graphics"
 local Assets       = require "Tiled.Assets"
+local Slide      = require "Dragontail.Character.Action.Slide"
 
 ---@class Player:Fighter
 local Player = class(Fighter)
@@ -568,13 +569,14 @@ function Player:spinAttack(attacktype, angle)
         end
 
         if lungespeed then
-            lungespeed = Fighter.updateSlideSpeed(self, lungeangle, lungespeed)
+            lungespeed = Slide.updateSlideSpeed(self, lungeangle, lungespeed)
         else
             self:accelerateTowardsVel(targetvelx, targetvely, 8)
         end
 
         self:startAttack(angle)
-        self:faceAngle(angle+pi, self.swinganimation)
+        self:faceAngle(angle+pi)
+        self:setDirectionalAnimation(self.swinganimation, angle)
 
         yield()
         attackagain = attackagain or Controls.getButtonsPressed()
@@ -967,7 +969,7 @@ function Player:straightAttack(attacktype, angle, heldenemy)
         yield()
         attackagain = attackagain or Controls.getButtonsPressed()
         if lungespeed then
-            lungespeed = Fighter.updateSlideSpeed(self, angle, lungespeed)
+            lungespeed = Slide.updateSlideSpeed(self, angle, lungespeed)
         else
             self:accelerateTowardsVel(0, 0, self.attackdecel or 8)
         end

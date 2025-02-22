@@ -7,6 +7,8 @@ local Movement   = require "Component.Movement"
 local Fighter    = require "Dragontail.Character.Fighter"
 local Color      = require "Tiled.Color"
 local Stage      = require "Dragontail.Stage"
+local Dodge      = require "Dragontail.Character.Action.Dodge"
+local Slide      = require "Dragontail.Character.Action.Slide"
 
 --- Attacks:
 --- - Lance charge
@@ -62,7 +64,7 @@ function BanditBoss:stand(duration)
     local opponent = opponents[1]
     for _ = 1, duration do
         self:facePosition(opponent.x, opponent.y)
-        local dodgeangle = self:isFullyOnCamera(self.camera) and self:findAngleToDodgeIncoming(opponent)
+        local dodgeangle = self:isFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self, opponent)
         if dodgeangle then
             return "dodgeIncoming", dodgeangle
         end
@@ -148,7 +150,7 @@ function BanditBoss:approach()
         oppox, oppoy = opponent.x, opponent.y
         local tooppox, tooppoy = oppox - x, oppoy - y
         -- local seesopponent = math.dot(math.cos(self.faceangle), math.sin(self.faceangle), tooppox, tooppoy) >= 0
-        local dodgeangle = self:isFullyOnCamera(self.camera) and self:findAngleToDodgeIncoming(opponent)
+        local dodgeangle = self:isFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self, opponent)
         if dodgeangle then
             return "dodgeIncoming", dodgeangle
         end
@@ -251,7 +253,7 @@ function BanditBoss:executeAttack(attacktype, targetx, targety, targetz)
     local hittime = self.attackhittime or 10
     local turnspeed = self.attackspinspeed or 0
     repeat
-        lungespeed = Fighter.updateSlideSpeed(self, self.faceangle, lungespeed, self.attacklungedecel or 1)
+        lungespeed = Slide.updateSlideSpeed(self, self.faceangle, lungespeed, self.attacklungedecel or 1)
         if turnspeed ~= 0 then
             self.attackangle = self.attackangle + turnspeed
             self:setDirectionalAnimation(self.swinganimation, self.attackangle, 1, self.swinganimationloopframe or 0)
@@ -282,7 +284,7 @@ function BanditBoss:executeAttack(attacktype, targetx, targety, targetz)
 
     local afterhittime = self.attackafterhittime or 30
     repeat
-        lungespeed = Fighter.updateSlideSpeed(self, self.faceangle, lungespeed)
+        lungespeed = Slide.updateSlideSpeed(self, self.faceangle, lungespeed)
         afterhittime = afterhittime - 1
         yield()
         if self.velx ~= 0 or self.vely ~= 0 then

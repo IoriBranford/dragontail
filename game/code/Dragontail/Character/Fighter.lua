@@ -4,6 +4,7 @@ local Common   = require "Dragontail.Character.Common"
 local Characters = require "Dragontail.Stage.Characters"
 local TiledObject = require "Tiled.Object"
 local Movement    = require "Component.Movement"
+local Slide      = require "Dragontail.Character.Action.Slide"
 
 ---@class Face
 ---@field faceangle number
@@ -27,12 +28,6 @@ local Movement    = require "Component.Movement"
 
 ---@class Jump
 ---@field jumplandsound string?
-
----@class Dodge
----@field dodgespeed number?
----@field dodgewithintime number?
----@field dodgedecel number?
----@field dodgesound string?
 
 ---@class Guard
 ---@field guardtime integer?
@@ -134,31 +129,6 @@ function Fighter:stopHolding(opponent)
     end
 end
 
-function Fighter.GetSlideDistance(speed, decel)
-    return speed * (speed+decel) / 2
-end
-
---- Burst of speed towards angle (away from angle if speed < 0) then slow to 0
-function Fighter:slide(angle, speed, decel)
-    repeat
-        speed = self:updateSlideSpeed(angle, speed, decel)
-        self:keepInBounds()
-        yield()
-    until speed == 0
-end
-
-function Fighter:updateSlideSpeed(angle, speed, decel)
-    decel = decel or 1
-    self.velx = speed * cos(angle)
-    self.vely = speed * sin(angle)
-    if speed < 0 then
-        speed = math.min(0, speed + decel)
-    else
-        speed = math.max(0, speed - decel)
-    end
-    return speed
-end
-
 function Fighter:giveMana(mana)
     if not self.mana or not self.manamax then
         return
@@ -220,7 +190,7 @@ function Fighter:hurt(attacker)
         self.heldby = nil
     end
     while pushbackspeed > 0 do
-        pushbackspeed = Fighter.updateSlideSpeed(self, attackangle, pushbackspeed)
+        pushbackspeed = Slide.updateSlideSpeed(self, attackangle, pushbackspeed)
         self:keepInBounds()
         yield()
     end
