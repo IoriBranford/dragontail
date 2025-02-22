@@ -5,7 +5,7 @@ local co_create = coroutine.create
 local co_resume = coroutine.resume
 local co_status = coroutine.status
 
----@class State
+---@class StateData
 ---@field action function
 ---@field animation string
 ---@field frame integer
@@ -14,7 +14,9 @@ local co_status = coroutine.status
 ---@field canbegrabbed boolean
 ---@field sound string
 
----@module 'Dragontail.Character.State'
+---@class State:Character,Face
+---@field state string?
+---@field thread thread?
 local State = {}
 
 local StateVarsOnChange = {
@@ -25,9 +27,8 @@ local StateVarsOnChange = {
     "color"
 }
 
----@param self Character
 function State.start(self, statename, ...)
-    local state = Database.get(statename) ---@type State
+    local state = Database.get(statename) ---@type StateData
     if state then
         self.state = statename
         for _, var in ipairs(StateVarsOnChange) do
@@ -70,7 +71,6 @@ function State.start(self, statename, ...)
     end
 end
 
----@param self Character
 function State.run(self, ...)
     local thread = self.thread
     if thread then
@@ -85,12 +85,10 @@ function State.run(self, ...)
     end
 end
 
----@param self Character
 function State.stop(self)
     self.thread = nil
 end
 
----@param self Character
 function State.isRunning(self)
     return self.thread ~= nil
 end
