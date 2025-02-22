@@ -558,8 +558,7 @@ function Player:spinAttack(attacktype, angle)
         end
         if shootingfireballs then
             local fireballangle = angle + pi
-            local fireball = Shoot.launchProjectile(self, "Rose-fireball", cos(fireballangle), sin(fireballangle), 0)
-            fireball.rotation = fireballangle
+            Shoot.launchProjectile(self, "Rose-fireball", cos(fireballangle), sin(fireballangle), 0)
         end
 
         local inx, iny = Controls.getDirectionInput()
