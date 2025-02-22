@@ -28,10 +28,6 @@ local lensq = math.lensq
 local testcircles = math.testcircles
 local yield = coroutine.yield
 
-local function faceAngle(self, angle)
-    self.facex, self.facey = cos(angle), sin(angle)
-end
-
 ---@param self Player
 local function findOpponentToHold(self, inx, iny)
     local x, y, opponents = self.x, self.y, Characters.getGroup("all")
@@ -76,34 +72,34 @@ local function findWallCollision(self)
     end
 end
 
-local function updateFace(facex, facey, targetfacex, targetfacey, turnspeed)
-    local facedot = dot(facex, facey, targetfacex, targetfacey)
+local function rotateVectorTo(vx, vy, tx, ty, turnspeed)
+    local facedot = dot(vx, vy, tx, ty)
     local acosfacedot = acos(facedot)
     if acosfacedot <= turnspeed then
-        facex, facey = targetfacex, targetfacey
+        vx, vy = tx, ty
     else
-        local facedet = det(facex, facey, targetfacex, targetfacey)
+        local facedet = det(vx, vy, tx, ty)
         if facedet < 0 then
             turnspeed = -turnspeed
         end
-        facex, facey = rot(facex, facey, turnspeed)
-        facex, facey = norm(facex, facey)
+        vx, vy = rot(vx, vy, turnspeed)
+        vx, vy = norm(vx, vy)
     end
-    return facex, facey
+    return vx, vy
 end
 
 ---@param self Player
-local function doComboAttack(self, facex, facey, heldenemy)
+local function doComboAttack(self, faceangle, heldenemy)
     if self.comboindex >= 2 then
         self.comboindex = 0
         if heldenemy then
-            return "spinAndKickEnemy", "spinning-throw", atan2(facey, facex), heldenemy
+            return "spinAndKickEnemy", "spinning-throw", faceangle, heldenemy
         end
-        local spindir = facex < 0 and "ccw" or "cw"
-        return "spinAttack", "tail-swing-"..spindir, atan2(-facey, -facex)
+        local spindir = pi*0.5 <= faceangle and faceangle < pi*1.5 and "ccw" or "cw"
+        return "spinAttack", "tail-swing-"..spindir, faceangle
     else
         self.comboindex = self.comboindex + 1
-        return "straightAttack", heldenemy and "holding-knee" or "kick", atan2(facey, facex), heldenemy
+        return "straightAttack", heldenemy and "holding-knee" or "kick", faceangle, heldenemy
     end
 end
 
@@ -398,11 +394,11 @@ function Player:updateAttackerSlots()
 end
 
 function Player:control()
-    local targetfacex, targetfacey = self.facex, self.facey
+    local targetfacex, targetfacey = math.cos(self.faceangle), math.sin(self.faceangle)
     local runningtime
     -- local attackdowntime
     while true do
-        local facex, facey = self.facex, self.facey
+        local facex, facey = math.cos(self.faceangle), math.sin(self.faceangle)
         local inx, iny = Controls.getDirectionInput()
         local attackpressed, runpressed = Controls.getButtonsPressed()
         local attackdown, rundown = Controls.getButtonsDown()
@@ -432,8 +428,8 @@ function Player:control()
             movespeed, turnspeed, acceltime = 4, pi/8, 4
         end
 
-        facex, facey = updateFace(facex, facey, targetfacex, targetfacey, turnspeed)
-        self.facex, self.facey = facex, facey
+        facex, facey = rotateVectorTo(facex, facey, targetfacex, targetfacey, turnspeed)
+        self.faceangle = atan2(facey, facex)
 
         if runningtime then
             targetvelx = facex * movespeed
@@ -499,7 +495,7 @@ function Player:control()
             self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
             if attackpressed then
                 if not self.weaponinhand then
-                    return doComboAttack(self, targetfacex, targetfacey)
+                    return doComboAttack(self, atan2(targetfacey, targetfacex))
             --     end
             --     attackdowntime = 0
             -- end
@@ -526,8 +522,7 @@ function Player:control()
         else
             animation = "Stand"
         end
-        animation = self.getDirectionalAnimation_angle(animation, atan2(facey, facex), self.animationdirections)
-        self:changeAseAnimation(animation)
+        self:setDirectionalAnimation(animation, atan2(facey, facex))
 
         yield()
     end
@@ -536,7 +531,7 @@ end
 function Player:spinAttack(attacktype, angle)
     self.numopponentshit = 0
     local lungeangle = angle + pi
-    local originalfacex, originalfacey = self.facex, self.facey
+    local originalfaceangle = self.faceangle
     self.attacktype = attacktype
     Database.fill(self, attacktype)
     local spinvel = self.attackspinspeed or 0
@@ -579,12 +574,7 @@ function Player:spinAttack(attacktype, angle)
         end
 
         self:startAttack(angle)
-        faceAngle(self, angle+pi)
-        local attackanimation = self.swinganimation
-        if attackanimation then
-            attackanimation = self.getDirectionalAnimation_angle(attackanimation, angle, self.animationdirections)
-            self:changeAseAnimation(attackanimation)
-        end
+        self:faceAngle(angle+pi, self.swinganimation)
 
         yield()
         attackagain = attackagain or Controls.getButtonsPressed()
@@ -592,13 +582,13 @@ function Player:spinAttack(attacktype, angle)
         t = t - 1
     until t <= 0
     self:stopAttack()
-    self.facex, self.facey = originalfacex, originalfacey
+    self.faceangle = originalfaceangle
     if attackagain then
         local inx, iny = Controls.getDirectionInput()
         if inx ~= 0 or iny ~= 0 then
-            originalfacex, originalfacey = inx, iny
+            originalfaceangle = atan2(iny, inx)
         end
-        return doComboAttack(self, originalfacex, originalfacey)
+        return doComboAttack(self, originalfaceangle)
     end
     return "control"
 end
@@ -609,7 +599,7 @@ function Player:hurt(attacker)
 end
 
 function Player:aimThrow()
-    local targetfacex, targetfacey = self.facex, self.facey
+    local targetfacex, targetfacey = math.cos(self.faceangle), math.sin(self.faceangle)
     local lockonenemy
     while true do
         local attackbutton, runbutton = Controls.getButtonsDown()
@@ -634,7 +624,7 @@ function Player:aimThrow()
 
         local lockonenemyscore = 128
         if lockonenemy then
-            local score = lockonenemy:getTargetingScore(self.x, self.y, self.facex, self.facey)
+            local score = lockonenemy:getTargetingScore(self.x, self.y, math.cos(self.faceangle), math.sin(self.faceangle))
             if score > lockonenemyscore then
                 lockonenemy = nil
             else
@@ -659,8 +649,8 @@ function Player:aimThrow()
                 targetfacex, targetfacey = 1, 0
             end
         end
-        local facex, facey = updateFace(self.facex, self.facey, targetfacex, targetfacey, turnspeed)
-        self.facex, self.facey = facex, facey
+        local facex, facey = rotateVectorTo(math.cos(self.faceangle), math.sin(self.faceangle), targetfacex, targetfacey, turnspeed)
+        self.faceangle = atan2(facey, facex)
 
         if runbutton then
             self.crosshair.visible = false
@@ -673,7 +663,7 @@ function Player:aimThrow()
             if lockonenemy then
                 throwx, throwy, throwz = lockonenemy.x, lockonenemy.y, lockonenemy.z
             else
-                throwx, throwy, throwz = self.x + self.facex*512, self.y + self.facey*512, self.z
+                throwx, throwy, throwz = self.x + math.cos(self.faceangle)*512, self.y + math.sin(self.faceangle)*512, self.z
             end
             return "throwWeapon", throwx, throwy, throwz
         end
@@ -697,11 +687,7 @@ function Player:aimThrow()
 end
 
 function Player:throwWeapon(targetx, targety, targetz, attackid)
-    if targetx ~= self.x or targety ~= self.y then
-        self.facex, self.facey = norm(targetx-self.x, targety-self.y)
-    end
-    local angle = atan2(self.facey, self.facex)
-    self:setDirectionalAnimation("throw", angle, 1)
+    self:faceVector(targetx - self.x, targety - self.y, "throw")
     self:launchProjectileAtPosition({
         type = self.weaponinhand,
         gravity = 1/8,
@@ -742,7 +728,7 @@ function Player:hold(enemy)
     local holdangle = atan2(holddiry, holddirx)
     local holddestangle = holdangle
     local time = enemy.timetobreakhold
-    local holdfrombehind = dot(enemy.facex, enemy.facey, self.facex, self.facey) >= 0
+    local holdfrombehind = dot(math.cos(enemy.faceangle), math.sin(enemy.faceangle), math.cos(self.faceangle), math.sin(self.faceangle)) >= 0
     if holdfrombehind then
         -- DESIGNME
     end
@@ -797,18 +783,12 @@ function Player:hold(enemy)
         end
 
         enemy.velz = 0
-        self.facex, self.facey = holddirx, holddiry
-
-        if holdfrombehind then
-            enemy.facex, enemy.facey = holddirx, holddiry
-        else
-            enemy.facex, enemy.facey = -holddirx, -holddiry
-        end
-        enemy:setDirectionalAnimation("Hurt", atan2(enemy.facey, enemy.facex))
 
         local holdanimation = (velx ~= 0 or vely ~= 0) and "holdwalk" or "hold"
-        holdanimation = self.getDirectionalAnimation_angle(holdanimation, holdangle, self.animationdirections)
-        self:changeAseAnimation(holdanimation)
+        self:faceAngle(holdangle, holdanimation)
+
+        local enemyfaceangle = holdfrombehind and self.faceangle or (self.faceangle + pi)
+        enemy:faceAngle(enemyfaceangle, "Hurt")
 
         self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
         if runpressed and self.runenergy >= self.runenergycost then
@@ -819,7 +799,7 @@ function Player:hold(enemy)
                 self.comboindex = 0
                 return "spinAndKickEnemy", "spinning-throw", holdangle, enemy
             end
-            return doComboAttack(self, holddirx, holddiry, enemy)
+            return doComboAttack(self, holdangle, enemy)
         end
     end
     State.start(enemy, "breakaway", self)
@@ -829,7 +809,7 @@ end
 function Player:runWithEnemy(enemy)
     Audio.play(self.dashsound)
     enemy.canbeattacked = false
-    local targetfacex, targetfacey = self.facex, self.facey
+    local targetfacex, targetfacey = math.cos(self.faceangle), math.sin(self.faceangle)
     local grabradius = self.grabradius or 8
     local radii = grabradius + enemy.bodyradius
     local holdangle = atan2(targetfacey, targetfacex)
@@ -840,7 +820,7 @@ function Player:runWithEnemy(enemy)
     local runningtime = 0
     while true do
         yield()
-        local facex, facey = self.facex, self.facey
+        local facex, facey = math.cos(self.faceangle), math.sin(self.faceangle)
         local inx, iny = Controls.getDirectionInput()
         local attackpressed = Controls.getButtonsPressed()
         local _, rundown = Controls.getButtonsDown()
@@ -857,9 +837,9 @@ function Player:runWithEnemy(enemy)
 
         local movespeed, turnspeed, acceltime = 8, pi/120, 1
 
-        facex, facey = updateFace(facex, facey, targetfacex, targetfacey, turnspeed)
-        self.facex, self.facey = facex, facey
+        facex, facey = rotateVectorTo(facex, facey, targetfacex, targetfacey, turnspeed)
         holdangle = atan2(facey, facex)
+        self:faceAngle(holdangle, "holdwalk")
         targetvelx = facex * movespeed
         targetvely = facey * movespeed
 
@@ -902,10 +882,6 @@ function Player:runWithEnemy(enemy)
             State.start(enemy, "knockedBack", self, holdangle)
             return "control"
         end
-
-        local holdanimation = "holdwalk"
-        holdanimation = self.getDirectionalAnimation_angle(holdanimation, holdangle, self.animationdirections)
-        self:changeAseAnimation(holdanimation)
     end
 end
 
@@ -945,12 +921,7 @@ function Player:spinAndKickEnemy(attacktype, angle, enemy)
         local velx, vely = self.velx, self.vely
 
         enemy:startAttack(angle)
-        faceAngle(self, angle)
-        local attackanimation = self.swinganimation
-        if attackanimation then
-            attackanimation = self.getDirectionalAnimation_angle(attackanimation, angle, self.animationdirections)
-            self:changeAseAnimation(attackanimation)
-        end
+        self:faceAngle(angle, self.swinganimation)
 
         holddirx, holddiry = cos(angle), sin(angle)
         x, y = self.x, self.y
@@ -1011,14 +982,14 @@ function Player:straightAttack(attacktype, angle, heldenemy)
     end
     self:stopAttack()
     if attackagain then
-        local facex, facey = self.facex, self.facey
+        local faceangle = self.faceangle
         local inx, iny = Controls.getDirectionInput()
         if not heldenemy then
             if inx ~= 0 or iny ~= 0 then
-                facex, facey = inx, iny
+                faceangle = atan2(iny, inx)
             end
         end
-        return doComboAttack(self, facex, facey, heldenemy)
+        return doComboAttack(self, faceangle, heldenemy)
     end
     if heldenemy and heldenemy.health > 0 then
         return "hold", heldenemy
@@ -1069,7 +1040,7 @@ function Player:eventWalkTo(destx, desty, timelimit)
     self:stopHolding(self.heldopponent)
     self:walkTo(destx, desty, timelimit)
     self.velx, self.vely, self.velz = 0, 0, 0
-    self:faceDir(1, 0, "Stand")
+    self:faceVector(1, 0, "Stand")
 end
 
 return Player

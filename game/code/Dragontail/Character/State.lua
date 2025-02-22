@@ -43,9 +43,8 @@ function State.start(self, statename, ...)
             if aseprite then
                 local dirs = self.animationdirections or 1
                 if animationname and dirs > 1 then
-                    local facex, facey = self.facex, self.facey
-                    if facex and facey then
-                        local angle = math.atan2(facey, facex)
+                    local angle = self.faceangle
+                    if angle then
                         local diranimationname = self.getDirectionalAnimation_angle(animationname, angle, dirs)
                         if aseprite.animations[diranimationname] then
                             animationname = diranimationname

@@ -42,21 +42,10 @@ local TwoSwitchAttackHealthPercent = .25
 local FirstSummonHealthPercent = .6
 local SecondSummonHealthPercent = .3
 
-function BanditBoss:facePosition(px, py, animation)
-    local x, y = self.x, self.y
-    local distx, disty = px - x, py - y
-    if distx == 0 and disty == 0 then
-        return
-    end
-    self.facex, self.facey = math.norm(distx, disty)
-    local faceangle = math.atan2(disty, distx)
-    self:setDirectionalAnimation(animation or "Stand", faceangle)
-end
-
 function BanditBoss:getBestAttack(opponent)
     local targetx, targety = opponent.x, opponent.y
     local distx, disty = targetx - self.x, targety - self.y
-    local facex, facey = self.facex, self.facey
+    local facex, facey = math.cos(self.faceangle), math.sin(self.faceangle)
     local isoppobehind = math.dot(facex, facey, distx, disty) <= 0
     if isoppobehind or math.lensq(distx, disty) <= 100*100 then
         local turndir = math.det(facex, facey, distx, disty)
@@ -147,17 +136,7 @@ function BanditBoss:approach()
         destx, desty = x + frontendx - projx, y + frontendy - projy
     end
 
-    -- choose animation
-    if desty ~= y or destx ~= x then
-        local todesty, todestx = desty - y, destx - x
-        if todestx == 0 and todesty == 0 then
-            todestx = 1
-        end
-        self.facex, self.facey = math.norm(todestx, todesty)
-        local todestangle = math.atan2(todesty, todestx)
-        local walkanimation = self.getDirectionalAnimation_angle("Walk", todestangle, self.animationdirections)
-        self:changeAseAnimation(walkanimation)
-    end
+    self:faceVector(destx - x, desty - y, "Walk")
 
     local speed = self.speed or 2
     if math.distsq(x, y, oppox, oppoy) > 320*320 then
@@ -168,7 +147,7 @@ function BanditBoss:approach()
     for i = 1, (self.approachtime or 60) do
         oppox, oppoy = opponent.x, opponent.y
         local tooppox, tooppoy = oppox - x, oppoy - y
-        -- local seesopponent = math.dot(self.facex, self.facey, tooppox, tooppoy) >= 0
+        -- local seesopponent = math.dot(math.cos(self.faceangle), math.sin(self.faceangle), tooppox, tooppoy) >= 0
         local dodgeangle = self:isFullyOnCamera(self.camera) and self:findAngleToDodgeIncoming(opponent)
         if dodgeangle then
             return "dodgeIncoming", dodgeangle
@@ -210,15 +189,11 @@ function BanditBoss:prepareAttack(attacktype, targetx, targety)
         targetx, targety = target.x, target.y
     end
 
-    -- if targetx and targety then
-    --     local dirx, diry = math.norm(targetx - self.x, targety - self.y)
-    --     if dirx == dirx then
-    --         self.facex, self.facey = dirx, diry
-    --     end
-    -- end
+    -- targetx = targetx or self.x
+    -- targety = targety or self.y
+    -- self:faceVector(targetx - self.x, targety - self.y, self.windupanimation, 1, self.windupanimationloopframe or 0)
 
-    local angle = math.atan2(self.facey, self.facex)
-    self:setDirectionalAnimation(self.windupanimation, angle, 1, self.windupanimationloopframe or 0)
+    self:faceAngle(self.faceangle, self.windupanimation, 1, self.windupanimationloopframe or 0)
 
     Audio.play(self.windupsound)
     for t = 1, (self.attackwinduptime or 20) do
@@ -259,22 +234,16 @@ function BanditBoss:executeAttack(attacktype, targetx, targety, targetz)
         targetx, targety, targetz = target.x, target.y, target.z
     end
 
-    if targetx and targety then
-        local dirx, diry = norm(targetx - self.x, targety - self.y)
-        if dirx == dirx then
-            self.facex, self.facey = dirx, diry
-        end
-    end
-
-    local angle = atan2(self.facey, self.facex)
-    self:setDirectionalAnimation(self.swinganimation, angle, 1, self.swinganimationloopframe or 0)
+    targetx = targetx or self.x
+    targety = targety or self.y
+    self:faceVector(targetx - self.x, targety - self.y, self.swinganimation, 1, self.swinganimationloopframe or 0)
 
     Audio.play(self.swingsound)
     local attackprojectile = self.attackprojectile
     if attackprojectile then
         self:launchProjectileAtPosition(attackprojectile, targetx, targety, targetz)
     else
-        local attackangle = floor((angle + (pi/4)) / (pi/2)) * pi/2
+        local attackangle = floor((self.faceangle + (pi/4)) / (pi/2)) * pi/2
         self:startAttack(attackangle)
     end
 
@@ -282,7 +251,7 @@ function BanditBoss:executeAttack(attacktype, targetx, targety, targetz)
     local hittime = self.attackhittime or 10
     local turnspeed = self.attackspinspeed or 0
     repeat
-        lungespeed = Fighter.updateSlideSpeed(self, angle, lungespeed, self.attacklungedecel or 1)
+        lungespeed = Fighter.updateSlideSpeed(self, self.faceangle, lungespeed, self.attacklungedecel or 1)
         if turnspeed ~= 0 then
             self.attackangle = self.attackangle + turnspeed
             self:setDirectionalAnimation(self.swinganimation, self.attackangle, 1, self.swinganimationloopframe or 0)
@@ -313,7 +282,7 @@ function BanditBoss:executeAttack(attacktype, targetx, targety, targetz)
 
     local afterhittime = self.attackafterhittime or 30
     repeat
-        lungespeed = Fighter.updateSlideSpeed(self, angle, lungespeed)
+        lungespeed = Fighter.updateSlideSpeed(self, self.faceangle, lungespeed)
         afterhittime = afterhittime - 1
         yield()
         if self.velx ~= 0 or self.vely ~= 0 then

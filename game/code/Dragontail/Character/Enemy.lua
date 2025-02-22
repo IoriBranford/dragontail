@@ -117,7 +117,7 @@ function Enemy:stand(duration)
             if tooppox == 0 and tooppoy == 0 then
                 tooppox = 1
             end
-            self:faceDir(tooppox, tooppoy, "Stand")
+            self:faceVector(tooppox, tooppoy, "Stand")
 
             local dodgeangle = self:isFullyOnCamera(self.camera) and self:findAngleToDodgeIncoming(opponent)
             if dodgeangle then
@@ -178,7 +178,7 @@ function Enemy:dodgeIncoming(dodgeangle)
         tooppox = 1
     end
     tooppox, tooppoy = math.norm(tooppox, tooppoy)
-    self:faceDir(tooppox, tooppoy, "Walk")
+    self:faceVector(tooppox, tooppoy, "Walk")
     Audio.play(self.stopdashsound)
     self:slide(dodgeangle, self.dodgespeed, self.dodgedecel)
 
@@ -238,7 +238,7 @@ function Enemy:approach()
             todestx = 1
         end
         todestx, todesty = math.norm(todestx, todesty)
-        self:faceDir(todestx, todesty, "Walk")
+        self:faceVector(todestx, todesty, "Walk")
     end
 
     local speed = self.speed or 2
@@ -250,7 +250,7 @@ function Enemy:approach()
     for i = 1, (self.approachtime or 60) do
         oppox, oppoy = opponent.x, opponent.y
         local tooppox, tooppoy = oppox - x, oppoy - y
-        -- local seesopponent = math.dot(self.facex, self.facey, tooppox, tooppoy) >= 0
+        -- local seesopponent = math.dot(math.cos(self.faceangle), math.sin(self.faceangle), tooppox, tooppoy) >= 0
         local dodgeangle = self:isFullyOnCamera(self.camera) and self:findAngleToDodgeIncoming(opponent)
         if dodgeangle then
             return "dodgeIncoming", dodgeangle
@@ -343,15 +343,9 @@ function Enemy:prepareAttack(attacktype, targetx, targety)
         targetx, targety = target.x, target.y
     end
 
-    if targetx and targety then
-        local dirx, diry = norm(targetx - self.x, targety - self.y)
-        if dirx == dirx then
-            self.facex, self.facey = dirx, diry
-        end
-    end
-
-    local angle = atan2(self.facey, self.facex)
-    self:setDirectionalAnimation(self.windupanimation, angle, 1, self.windupanimationloopframe or 0)
+    targetx = targetx or self.x
+    targety = targety or self.y
+    self:faceVector(targetx - self.x, targety - self.y, self.windupanimation, 1, self.windupanimationloopframe or 0)
 
     Audio.play(self.windupsound)
     for t = 1, (self.attackwinduptime or 20) do
@@ -375,36 +369,29 @@ function Enemy:executeAttack(attacktype, targetx, targety, targetz)
     self.numopponentshit = 0
     self:stopGuarding()
 
-    local target
     if type(targetx) == "table" then
-        target = targetx
+        local target = targetx
         target.attacker = self
         targetx, targety, targetz = target.x, target.y, target.z
     end
 
-    if targetx and targety then
-        local dirx, diry = norm(targetx - self.x, targety - self.y)
-        if dirx == dirx then
-            self.facex, self.facey = dirx, diry
-        end
-    end
-
-    local angle = atan2(self.facey, self.facex)
-    self:setDirectionalAnimation(self.swinganimation, angle, 1, self.swinganimationloopframe or 0)
+    targetx = targetx or self.x
+    targety = targety or self.y
+    self:faceVector(targetx - self.x, targety - self.y, self.swinganimation, 1, self.swinganimationloopframe or 0)
 
     Audio.play(self.swingsound)
     local attackprojectile = self.attackprojectile
     if attackprojectile then
         self:launchProjectileAtPosition(attackprojectile, targetx, targety, targetz)
     else
-        local attackangle = floor((angle + (pi/4)) / (pi/2)) * pi/2
+        local attackangle = floor((self.faceangle + (pi/4)) / (pi/2)) * pi/2
         self:startAttack(attackangle)
     end
 
     local lungespeed = self.attacklungespeed or 0
     local hittime = self.attackhittime or 10
     repeat
-        lungespeed = Fighter.updateSlideSpeed(self, angle, lungespeed, self.attacklungedecel or 1)
+        lungespeed = Fighter.updateSlideSpeed(self, self.faceangle, lungespeed, self.attacklungedecel or 1)
         hittime = hittime - 1
         self.color = self:getAttackFlashColor(hittime)
         yield()
@@ -421,7 +408,7 @@ function Enemy:executeAttack(attacktype, targetx, targety, targetz)
 
     local afterhittime = self.attackafterhittime or 30
     repeat
-        lungespeed = Fighter.updateSlideSpeed(self, angle, lungespeed)
+        lungespeed = Fighter.updateSlideSpeed(self, self.faceangle, lungespeed)
         afterhittime = afterhittime - 1
         yield()
         if self.velx ~= 0 or self.vely ~= 0 then
@@ -485,7 +472,7 @@ function Enemy:enterAndAmbush()
             else
                 tooppox, tooppoy = norm(tooppox, tooppoy)
             end
-            local fDotD = math.dot(tooppox, tooppoy, self.facex, self.facey)
+            local fDotD = math.dot(tooppox, tooppoy, math.cos(self.faceangle), math.sin(self.faceangle))
             if fDotD >= cossightarc then
                 sighted = opponent
                 break
@@ -517,7 +504,7 @@ function Enemy:guard()
 end
 
 function Enemy:guardHit(attacker)
-    -- local facex, facey = self.facex, self.facey
+    -- local facex, facey = math.cos(self.faceangle), math.sin(self.faceangle)
     -- local guardarc = self.guardarc or (pi/2)
     -- local toattackerx = -self.x + attacker.x
     -- local toattackery = -self.y + attacker.y

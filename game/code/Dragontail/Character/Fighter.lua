@@ -6,8 +6,7 @@ local TiledObject = require "Tiled.Object"
 local Movement    = require "Component.Movement"
 
 ---@class Face
----@field facex number
----@field facey number
+---@field faceangle number
 
 ---@class Mana
 ---@field mana number?
@@ -94,15 +93,23 @@ local dist = math.dist
 
 function Fighter:init()
     Common.init(self)
-    self.facex = self.facex or 1
-    self.facey = self.facey or 0
+    self.faceangle = self.faceangle or 0
 end
 
-function Fighter:faceDir(facex, facey, animation, frame1, loopframe)
-    self.facex, self.facey = facex, facey
-    if animation and (facex ~= 0 or facey ~= 0) then
-        local angle = atan2(facey, facex)
-        self:setDirectionalAnimation(animation, angle, frame1, loopframe)
+function Fighter:facePosition(x, y, animation, frame1, loopframe)
+    self:faceVector(x - self.x, y - self.y, animation, frame1, loopframe)
+end
+
+function Fighter:faceVector(vx, vy, animation, frame1, loopframe)
+    self:faceAngle((vx ~= 0 or vy ~= 0) and atan2(vy, vx), animation, frame1, loopframe)
+end
+
+function Fighter:faceAngle(angle, animation, frame1, loopframe)
+    if angle then
+        self.faceangle = angle
+    end
+    if animation then
+        self:setDirectionalAnimation(animation, angle or self.faceangle, frame1, loopframe)
     end
 end
 
@@ -180,10 +187,6 @@ function Fighter:hurt(attacker)
     self:stopAttack()
     Fighter.stopHolding(self, self.heldopponent)
     self.hurtstun = attacker.attackstun or 3
-    local facex, facey = self.facex or 1, self.facey or 0
-    if facex == 0 and facey == 0 then
-        facex = 1
-    end
 
     if attacker.giveMana then
         local mana = math.max(1, math.floor(attacker.attackdamage/4))
@@ -236,14 +239,9 @@ function Fighter:walkTo(destx, desty, timelimit)
         destx, desty = destx.x, destx.y
     end
 
-    local todestangle
-    if desty ~= self.y or destx ~= self.x then
-        local todesty, todestx = desty - self.y, destx - self.x
-        if todestx ~= 0 or todesty ~= 0 then
-            self.facex, self.facey = math.norm(todestx, todesty)
-            todestangle = atan2(todesty, todestx)
-            self:setDirectionalAnimation("Walk", todestangle)
-        end
+    local todestangle = (desty ~= self.y or destx ~= self.x) and atan2(desty - self.y, destx - self.x)
+    if todestangle then
+        self:faceAngle(todestangle, "Walk")
     end
 
     timelimit = timelimit or 600
