@@ -12,6 +12,7 @@ local Graphics     = require "Tiled.Graphics"
 local Assets       = require "Tiled.Assets"
 local Slide      = require "Dragontail.Character.Action.Slide"
 local Face       = require "Dragontail.Character.Action.Face"
+local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
 
 ---@class Player:Fighter
 local Player = class(Fighter)
@@ -715,7 +716,7 @@ function Player:hold(enemy)
     if self.heldopponent ~= enemy then
         self.comboindex = 0
         Audio.play(self.holdsound)
-        Fighter.startHolding(self, enemy)
+        HoldOpponent.startHolding(self, enemy)
         State.start(enemy, enemy.heldai or "held", self)
     end
     self:stopAttack()
@@ -860,14 +861,14 @@ function Player:runWithEnemy(enemy)
 
         if attackpressed then
             enemy:stopAttack()
-            Fighter.stopHolding(self, enemy)
+            HoldOpponent.stopHolding(self, enemy)
             enemy.canbeattacked = true
             return "straightAttack", "running-kick", holdangle
         end
 
         local oobx, ooby = findWallCollision(enemy)
         if oobx or ooby then
-            Fighter.stopHolding(self, enemy)
+            HoldOpponent.stopHolding(self, enemy)
             State.start(enemy, "wallSlammed", self, oobx, ooby)
             return "straightAttack", "running-elbow", holdangle
         end
@@ -880,7 +881,7 @@ function Player:runWithEnemy(enemy)
             Audio.play(self.stopdashsound)
             Audio.play(self.throwsound)
             enemy:stopAttack()
-            Fighter.stopHolding(self, enemy)
+            HoldOpponent.stopHolding(self, enemy)
             enemy.canbeattacked = true
             State.start(enemy, "knockedBack", self, holdangle)
             return "control"
@@ -943,7 +944,7 @@ function Player:spinAndKickEnemy(attacktype, angle, enemy)
     enemy.y = y + self.vely + throwy*radii
     Audio.play(self.throwsound)
     enemy:stopAttack()
-    Fighter.stopHolding(self, enemy)
+    HoldOpponent.stopHolding(self, enemy)
     enemy.canbeattacked = true
     -- if self.attackdamage then
     --     enemy.health = enemy.health - self.attackdamage
@@ -1040,7 +1041,7 @@ function Player:defeat(attacker)
 end
 
 function Player:eventWalkTo(destx, desty, timelimit)
-    self:stopHolding(self.heldopponent)
+    HoldOpponent.stopHolding(self, self.heldopponent)
     self:walkTo(destx, desty, timelimit)
     self.velx, self.vely, self.velz = 0, 0, 0
     Face.faceVector(self, 1, 0, "Stand")

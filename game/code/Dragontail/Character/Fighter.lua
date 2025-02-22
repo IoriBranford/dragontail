@@ -6,6 +6,7 @@ local TiledObject = require "Tiled.Object"
 local Movement    = require "Component.Movement"
 local Slide      = require "Dragontail.Character.Action.Slide"
 local Face       = require "Dragontail.Character.Action.Face"
+local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
 
 ---@class Mana
 ---@field mana number?
@@ -42,15 +43,6 @@ local Face       = require "Dragontail.Character.Action.Face"
 ---@field throwtime integer?
 ---@field throwsound string?
 
----@class Hold
----@field grabradius number?
----@field holdsound string?
-
----@class Held
----@field aiafterbreakaway string?
----@field attackafterbreakaway string?
----@field aiafterheld string?
-
 ---@class Thrown
 ---@field thrownslidetime integer?
 ---@field thrownrecovertime integer?
@@ -70,7 +62,7 @@ local Face       = require "Dragontail.Character.Action.Face"
 ---@class Win
 ---@field victorysound string?
 
----@class Fighter:Common,Face,Mana,Combo,Dash,Run,Jump,Dodge,Guard,WeaponInHand,ThrowWeapon,Hold,Held,Thrown,Fall,GetUp,Win
+---@class Fighter:Common,Face,Mana,Combo,Dash,Run,Jump,Dodge,Guard,WeaponInHand,ThrowWeapon,HoldOpponent,HeldByOpponent,Thrown,Fall,GetUp,Win
 ---@field heldopponent Fighter?
 ---@field heldby Fighter?
 local Fighter = class(Common)
@@ -87,27 +79,6 @@ local dist = math.dist
 function Fighter:init()
     Common.init(self)
     self.faceangle = self.faceangle or 0
-end
-
-function Fighter:startHolding(opponent)
-    self.heldopponent = opponent
-    opponent:stopAttack()
-    opponent:stopGuarding()
-    opponent.heldby = self
-end
-
-function Fighter:isHolding(opponent)
-    return self.heldopponent == opponent
-        and opponent.heldby == self
-end
-
-function Fighter:stopHolding(opponent)
-    if self then
-        self.heldopponent = nil
-    end
-    if opponent then
-        opponent.heldby = nil
-    end
 end
 
 function Fighter:giveMana(mana)
@@ -136,7 +107,7 @@ function Fighter:hurt(attacker)
     self.health = self.health - attacker.attackdamage
     self.velx, self.vely = 0, 0
     self:stopAttack()
-    Fighter.stopHolding(self, self.heldopponent)
+    HoldOpponent.stopHolding(self, self.heldopponent)
     self.hurtstun = attacker.attackstun or 3
 
     if attacker.giveMana then
@@ -156,16 +127,16 @@ function Fighter:hurt(attacker)
     yield()
 
     if self.health <= 0 then
-        Fighter.stopHolding(self.heldby, self)
+        HoldOpponent.stopHolding(self.heldby, self)
         defeateffect = defeateffect or self.defeatai or "defeat"
         return defeateffect, attacker, attackangle
     elseif hiteffect then
-        Fighter.stopHolding(self.heldby, self)
+        HoldOpponent.stopHolding(self.heldby, self)
         return hiteffect, attacker, attackangle
     end
     Audio.play(self.hurtsound)
     if self.heldby then
-        if self.heldby:isHolding(self) then
+        if HoldOpponent.isHolding(self.heldby, self) then
             return "held", self.heldby
         end
         self.heldby = nil
@@ -179,7 +150,7 @@ function Fighter:hurt(attacker)
     local recoverai = self.aiafterhurt or self.recoverai
     if not recoverai then
         print("No aiafterhurt or recoverai for "..self.type)
-        Fighter.stopHolding(self.heldby, self)
+        HoldOpponent.stopHolding(self.heldby, self)
         return "defeat", attacker
     end
     return recoverai
@@ -221,22 +192,7 @@ end
 -- end
 
 function Fighter:held(holder)
-    self:stopAttack()
-    self:stopGuarding()
-    self.velx, self.vely = 0, 0
-    while holder:isHolding(self) do
-        local dx, dy = holder.x - self.x, holder.y - self.y
-        if dx == 0 and dy == 0 then
-            dx = 1
-        end
-        yield()
-    end
-    local recoverai = self.aiafterheld or self.recoverai
-    if not recoverai then
-        print("No aiafterheld or recoverai for "..self.type)
-        return "defeat", holder
-    end
-    return recoverai
+    return HoldOpponent.heldBy(self, holder)
 end
 
 function Fighter:knockedBack(thrower, attackangle)
@@ -399,8 +355,8 @@ function Fighter:thrownRecover(thrower)
 end
 
 function Fighter:breakaway(other)
-    Fighter.stopHolding(other, self)
-    Fighter.stopHolding(self, other)
+    HoldOpponent.stopHolding(other, self)
+    HoldOpponent.stopHolding(self, other)
     local breakspeed = 10
     local dirx, diry = norm(other.x - self.x, other.y - self.y)
     self:makeImpactSpark(other, "spark-hit")
