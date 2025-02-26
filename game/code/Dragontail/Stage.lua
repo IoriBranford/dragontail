@@ -24,6 +24,7 @@ local winningteam
 local camera ---@type Camera
 local eventthread ---@type thread?
 
+---@class Boundary:TiledObject
 ---@class Camera:Boundary
 
 function Stage.quit()
