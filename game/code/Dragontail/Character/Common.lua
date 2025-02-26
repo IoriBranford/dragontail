@@ -4,6 +4,7 @@ local State       = require "Dragontail.Character.State"
 local Color       = require "Tiled.Color"
 local Character   = require "Dragontail.Character"
 local Characters  = require "Dragontail.Stage.Characters"
+local Body        = require "Dragontail.Character.Body"
 
 local yield = coroutine.yield
 local wait = coroutine.wait
@@ -154,7 +155,7 @@ function Common:itemWaitForPickup()
             if opponent.health < opponent.maxhealth then
                 local redblue = (t%30)/15
                 self.color = Color.asARGBInt(redblue, 1, redblue, 1)
-                if self:testBodyCollision(opponent) then
+                if Body.testBodyCollision(self, opponent) then
                     Audio.play(self.healsound)
                     opponent:heal(self.healhealth)
                     finished = true
@@ -169,7 +170,7 @@ function Common:itemWaitForPickup()
             local numcarried = opponent.numweaponinhand or 0
             if not weaponinhand
             or weaponinhand == self.giveweapon and numcarried < maxplayercancarry then
-                if self:testBodyCollision(opponent) then
+                if Body.testBodyCollision(self, opponent) then
                     Audio.play(opponent.holdsound)
                     opponent.weaponinhand = self.giveweapon
                     opponent.numweaponinhand = numcarried + 1

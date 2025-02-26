@@ -3,6 +3,7 @@ local Character= require "Dragontail.Character"
 local State    = require "Dragontail.Character.State"
 local Assets = require "Tiled.Assets"
 local TiledObject  = require "Tiled.Object"
+local Body         = require "Dragontail.Character.Body"
 
 ---@module 'Dragontail.Stage.Characters'
 local Characters = {}
@@ -194,7 +195,7 @@ function Characters.fixedupdate()
     end
 
     for i = 1, #players do local player = players[i]
-        player:keepInBounds()
+        Body.keepInBounds(player)
         player:updateAttackerSlots()
         Characters.hitTriggers(player)
     end
@@ -232,7 +233,7 @@ function Characters.castRay(raycast, rx, ry, caster)
     local rdx, rdy = raycast.dx, raycast.dy
     local group = groups[raycast.canhitgroup] or allcharacters
     for _, character in ipairs(group) do
-        if character ~= caster and character:collideWithRaycast(raycast, rx, ry) then
+        if character ~= caster and Body.collideWithRaycast(character, raycast, rx, ry) then
             raycast.dx, raycast.dy = raycast.hitx - rx, raycast.hity - ry
             hitsomething = character
         end
@@ -259,7 +260,7 @@ function Characters.keepCircleIn(x, y, r)
     local totalpenex, totalpeney, penex, peney
     for _, solid in ipairs(solids) do
         if solid.bodysolid then
-            penex, peney = solid:getCirclePenetration(x, y, r)
+            penex, peney = Body.getCirclePenetration(solid, x, y, r)
             if penex then
                 x = x - penex
                 totalpenex = (totalpenex or 0) + penex
@@ -277,7 +278,7 @@ function Characters.keepCylinderIn(x, y, z, r, h, self)
     local totalpenex, totalpeney, totalpenez, penex, peney, penez
     for _, solid in ipairs(solids) do
         if solid ~= self and solid.bodysolid then
-            penex, peney, penez = solid:getCylinderPenetration(x, y, z, r, h)
+            penex, peney, penez = Body.getCylinderPenetration(solid, x, y, z, r, h)
             if penex then
                 x = x - penex
                 totalpenex = (totalpenex or 0) + penex
@@ -299,7 +300,7 @@ function Characters.getCylinderFloorZ(x, y, z, r, h)
     local floorz
     for _, solid in ipairs(solids) do
         if solid.bodysolid then
-            local fz = solid:getCylinderFloorZ(x, y, z, r, h)
+            local fz = Body.getCylinderFloorZ(solid, x, y, z, r, h)
             if fz then
                 floorz = math.max(floorz or fz, fz)
             end
@@ -311,7 +312,7 @@ end
 function Characters.hitTriggers(hitter)
     for _, trigger in ipairs(groups.triggers) do
         ---@cast trigger Trigger
-        if trigger:testBodyCollision(hitter) then
+        if Body.testBodyCollision(trigger, hitter) then
             trigger:activate(hitter)
         end
     end

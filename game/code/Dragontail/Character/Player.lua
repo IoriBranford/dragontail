@@ -14,6 +14,7 @@ local Slide      = require "Dragontail.Character.Action.Slide"
 local Face       = require "Dragontail.Character.Action.Face"
 local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
 local Shoot        = require "Dragontail.Character.Action.Shoot"
+local Body         = require "Dragontail.Character.Body"
 
 ---@class Player:Fighter
 local Player = class(Fighter)
@@ -41,7 +42,7 @@ local function findOpponentToHold(self, inx, iny)
             local distx = oppox - x
             local disty = oppoy - y
             if dot(distx, disty, inx, iny) > 0 then
-                local penex, peney = self:getCylinderPenetration(oppox, oppoy, oppoz, opponent.bodyradius, opponent.bodyheight)
+                local penex, peney = Body.getCylinderPenetration(self, oppox, oppoy, oppoz, opponent.bodyradius, opponent.bodyheight)
                 if penex or peney then
                     return opponent
                 end
@@ -54,14 +55,14 @@ local function findSomethingToRunningAttack(self, velx, vely)
     local x, y, opponents, solids = self.x, self.y, self.opponents, self.solids
     for i, opponent in ipairs(opponents) do
         if dot(opponent.x - x, opponent.y - y, velx, vely) > 0 then
-            if opponent.canbeattacked and self:testBodyCollision(opponent) then
+            if opponent.canbeattacked and Body.testBodyCollision(self, opponent) then
                 return opponent
             end
         end
     end
     for i, solid in ipairs(solids) do
         if dot(solid.x - x, solid.y - y, velx, vely) > 0 then
-            if solid.canbeattacked and self:testBodyCollision(solid) then
+            if solid.canbeattacked and Body.testBodyCollision(self, solid) then
                 return solid
             end
         end
