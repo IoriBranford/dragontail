@@ -43,6 +43,7 @@ local Graphics   = require "Tiled.Graphics"
 ---@field velx number? Used with dt param in draw() to smooth movement at any framerate
 ---@field vely number? Used with dt param in draw() to smooth movement at any framerate
 ---@field shader love.Shader?
+---@field [string] any Custom property
 local TiledObject = class()
 
 ---@class ParticleSystemObject:TiledObject
