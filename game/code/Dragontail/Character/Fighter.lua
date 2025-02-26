@@ -7,6 +7,7 @@ local Movement    = require "Component.Movement"
 local Slide      = require "Dragontail.Character.Action.Slide"
 local Face       = require "Dragontail.Character.Action.Face"
 local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
+local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 
 ---@class Mana
 ---@field mana number?
@@ -171,7 +172,7 @@ function Fighter:walkTo(destx, desty, timelimit)
         if self.x == destx and self.y == desty then
             self.velx, self.vely, self.velz = 0, 0, 0
             if todestangle then
-                self:setDirectionalAnimation("Stand", todestangle)
+                DirectionalAnimation.set(self, "Stand", todestangle)
             end
             return true
         end

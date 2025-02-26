@@ -15,6 +15,7 @@ local Face       = require "Dragontail.Character.Action.Face"
 local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
 local Shoot        = require "Dragontail.Character.Action.Shoot"
 local Body         = require "Dragontail.Character.Body"
+local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 
 ---@class Player:Fighter
 local Player = class(Fighter)
@@ -527,7 +528,7 @@ function Player:control()
         else
             animation = "Stand"
         end
-        self:setDirectionalAnimation(animation, atan2(facey, facex))
+        DirectionalAnimation.set(self, animation, atan2(facey, facex))
 
         yield()
     end
@@ -579,7 +580,7 @@ function Player:spinAttack(attacktype, angle)
 
         self:startAttack(angle)
         Face.faceAngle(self, angle+pi)
-        self:setDirectionalAnimation(self.swinganimation, angle)
+        DirectionalAnimation.set(self, self.swinganimation, angle)
 
         yield()
         attackagain = attackagain or Controls.getButtonsPressed()
@@ -679,7 +680,7 @@ function Player:aimThrow()
         else
             animation = "Stand"
         end
-        self:setDirectionalAnimation(animation, atan2(facey, facex))
+        DirectionalAnimation.set(self, animation, atan2(facey, facex))
 
         self.crosshair.visible = lockonenemy ~= nil
         if lockonenemy then
@@ -961,11 +962,7 @@ function Player:straightAttack(attacktype, angle, heldenemy)
     Audio.play(self.swingsound)
     local attackagain = false
     self:startAttack(angle)
-    local attackanimation = self.swinganimation
-    if attackanimation then
-        attackanimation = self.getDirectionalAnimation_angle(attackanimation, angle, self.animationdirections)
-        self:changeAseAnimation(attackanimation)
-    end
+    DirectionalAnimation.set(self, self.swinganimation, angle)
     local t = self.attackhittime or 1
     local lungespeed = self.attacklungespeed
     repeat

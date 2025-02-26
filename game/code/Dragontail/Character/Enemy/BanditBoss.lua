@@ -11,6 +11,7 @@ local Dodge      = require "Dragontail.Character.Action.Dodge"
 local Slide      = require "Dragontail.Character.Action.Slide"
 local Face       = require "Dragontail.Character.Action.Face"
 local Shoot      = require "Dragontail.Character.Action.Shoot"
+local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 
 --- Attacks:
 --- - Lance charge
@@ -258,7 +259,7 @@ function BanditBoss:executeAttack(attacktype, targetx, targety, targetz)
         lungespeed = Slide.updateSlideSpeed(self, self.faceangle, lungespeed, self.attacklungedecel or 1)
         if turnspeed ~= 0 then
             self.attackangle = self.attackangle + turnspeed
-            self:setDirectionalAnimation(self.swinganimation, self.attackangle, 1, self.swinganimationloopframe or 0)
+            DirectionalAnimation.set(self, self.swinganimation, self.attackangle, 1, self.swinganimationloopframe or 0)
         end
         if target and target.canbeattacked then
             local switchesleft = self.attackswitchesleft or 0

@@ -245,29 +245,8 @@ function Character:collideWithCharacterAttack(attacker)
     end
 end
 
-Character.getCylinderFloorZ = Body.getCylinderFloorZ
-
 function Character:heal(amount)
     self.health = min(self.health + amount, self.maxhealth)
-end
-
-function Character.getDirectionalAnimation_angle(basename, angle, numanimations)
-    numanimations = numanimations or 1
-    if numanimations < 2 then
-        return basename
-    end
-    if angle ~= angle then
-        return basename..0
-    end
-    local faceangle = angle + (pi / numanimations)
-    local facedir = floor(faceangle * numanimations / pi / 2)
-    facedir = ((facedir % numanimations) + numanimations) % numanimations
-    return basename..facedir
-end
-
-function Character:setDirectionalAnimation(basename, angle, frame1, loopframe)
-    local animation = self.getDirectionalAnimation_angle(basename, angle, self.animationdirections)
-    self:changeAnimation(animation, frame1, loopframe)
 end
 
 function Character:setEmote(emotename)

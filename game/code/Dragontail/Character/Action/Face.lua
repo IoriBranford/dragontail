@@ -1,4 +1,6 @@
----@class Face:Character
+local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
+
+---@class Face:TiledObject
 ---@field faceangle number
 local Face = {}
 
@@ -19,7 +21,7 @@ function Face:faceAngle(angle, animation, frame1, loopframe)
         self.faceangle = angle
     end
     if animation then
-        self:setDirectionalAnimation(animation, angle or self.faceangle, frame1, loopframe)
+        DirectionalAnimation.set(self, animation, angle or self.faceangle, frame1, loopframe)
     end
 end
 

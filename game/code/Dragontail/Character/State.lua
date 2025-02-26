@@ -1,5 +1,6 @@
 local Database = require "Data.Database"
 local Audio    = require "System.Audio"
+local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 
 local co_create = coroutine.create
 local co_resume = coroutine.resume
@@ -46,7 +47,7 @@ function State.start(self, statename, ...)
                 if animationname and dirs > 1 then
                     local angle = self.faceangle
                     if angle then
-                        local diranimationname = self.getDirectionalAnimation_angle(animationname, angle, dirs)
+                        local diranimationname = DirectionalAnimation.FromAngle(animationname, angle, dirs)
                         if aseprite.animations[diranimationname] then
                             animationname = diranimationname
                         end
@@ -56,6 +57,7 @@ function State.start(self, statename, ...)
                 self:changeAseAnimation(animationname, frame, state.loop)
             end
         end
+        -- DirectionalAnimation.set(self, animationname, angle, frame, state.loop)
 
         Audio.play(state.sound)
 

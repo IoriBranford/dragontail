@@ -5,6 +5,7 @@ local Color       = require "Tiled.Color"
 local Character   = require "Dragontail.Character"
 local Characters  = require "Dragontail.Stage.Characters"
 local Body        = require "Dragontail.Character.Body"
+local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 
 local yield = coroutine.yield
 local wait = coroutine.wait
@@ -198,11 +199,7 @@ function Common:projectileHit(opponent)
     else
         Audio.play(self.bodyslamsound)
     end
-    local attackhitanimation = self.attackhitanimation
-    if attackhitanimation then
-        attackhitanimation = self.getDirectionalAnimation_angle(attackhitanimation, self.attackangle, self.animationdirections)
-        self:changeAseAnimation(attackhitanimation)
-    end
+    DirectionalAnimation.set(self, self.attackhitanimation, self.attackangle)
     self:stopAttack()
     local hitbounce = self.attackhitbounce or 2
     local normx, normy = math.norm(-self.velx, -self.vely)
@@ -299,7 +296,7 @@ function Common:projectileFly(shooter)
         end
         self:startAttack(angle)
     end
-    self:setDirectionalAnimation(self.swinganimation, angle, 1, self.swinganimationloopframe or 1)
+    DirectionalAnimation.set(self, self.swinganimation, angle, 1, self.swinganimationloopframe or 1)
     local oobx, ooby, oobz
     local lifetime = self.lifetime
     repeat
@@ -340,7 +337,7 @@ function Common:projectileDeflected(deflector)
     self.velz = speed*dirz
     local angle = atan2(self.vely, self.velx)
     self.attackangle = angle
-    self:setDirectionalAnimation(self.swinganimation, angle, 1, self.swinganimationloopframe or 1)
+    DirectionalAnimation.set(self, self.swinganimation, angle, 1, self.swinganimationloopframe or 1)
     yield()
     return "projectileFly", deflector
 end

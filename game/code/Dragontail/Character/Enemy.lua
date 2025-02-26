@@ -9,6 +9,7 @@ local Dodge      = require "Dragontail.Character.Action.Dodge"
 local Slide      = require "Dragontail.Character.Action.Slide"
 local Face       = require "Dragontail.Character.Action.Face"
 local Shoot      = require "Dragontail.Character.Action.Shoot"
+local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 
 ---@class Ambush
 ---@field ambushsightarc number?
@@ -252,7 +253,7 @@ function Enemy:enterShootLeave()
                 raycast.dx, raycast.dy = opponent.x - self.x, opponent.y - self.y
                 local angle = atan2(raycast.dy, raycast.dx)
                 if angle == angle then
-                    self:setDirectionalAnimation("Stand", angle)
+                    DirectionalAnimation.set(self, "Stand", angle)
                 end
                 hitcharacter = Characters.castRay(raycast, self.x, self.y, self)
             until not hitcharacter
@@ -435,8 +436,7 @@ function Enemy:guard()
             guardangle = atan2(opponent.y - self.y, opponent.x - self.x)
         end
         self:startGuarding(guardangle)
-        local guardanimation = self.getDirectionalAnimation_angle("guard", guardangle, self.animationdirections)
-        self:changeAseAnimation(guardanimation, 1, 0)
+        DirectionalAnimation.set(self, "guard", guardangle, 1, 0)
         yield()
         t = t - 1
     until t <= 0
