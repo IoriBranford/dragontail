@@ -534,9 +534,10 @@ function Player:control()
     end
 end
 
-function Player:spinAttack(attacktype, angle)
+function Player:spinAttack(attacktype, attackangle)
     self.numopponentshit = 0
-    local lungeangle = angle + pi
+    local tailangle = attackangle
+    local lungeangle = attackangle
     local originalfaceangle = self.faceangle
     self.attacktype = attacktype
     Database.fill(self, attacktype)
@@ -558,9 +559,10 @@ function Player:spinAttack(attacktype, angle)
                 end
             end
         end
+
+        local faceangle = tailangle + pi
         if shootingfireballs then
-            local fireballangle = angle + pi
-            Shoot.launchProjectile(self, "Rose-fireball", cos(fireballangle), sin(fireballangle), 0)
+            Shoot.launchProjectile(self, "Rose-fireball", cos(faceangle), sin(faceangle), 0)
         end
 
         local inx, iny = Controls.getDirectionInput()
@@ -578,13 +580,13 @@ function Player:spinAttack(attacktype, angle)
             self:accelerateTowardsVel(targetvelx, targetvely, 8)
         end
 
-        self:startAttack(angle)
-        Face.faceAngle(self, angle+pi)
-        DirectionalAnimation.set(self, self.swinganimation, angle)
+        self:startAttack(tailangle)
+        Face.faceAngle(self, faceangle)
+        DirectionalAnimation.set(self, self.swinganimation, tailangle)
 
         yield()
         attackagain = attackagain or Controls.getButtonsPressed()
-        angle = angle + spinvel
+        tailangle = tailangle + spinvel
         t = t - 1
     until t <= 0
     self:stopAttack()
