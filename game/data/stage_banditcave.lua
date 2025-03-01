@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 41,
-  nextobjectid = 472,
+  nextobjectid = 480,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -15089,6 +15089,73 @@ return {
           type = "container-chair"
         }
       }
+    },
+    {
+      name = "flamegaugefull",
+      firstgid = 7260,
+      class = "",
+      tilewidth = 40,
+      tileheight = 20,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "tilesets/ui/flamegaugefull.png",
+      imagewidth = 40,
+      imageheight = 160,
+      objectalignment = "unspecified",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 40,
+        height = 20
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 8,
+      tiles = {
+        {
+          id = 0,
+          animation = {
+            {
+              tileid = 0,
+              duration = 50
+            },
+            {
+              tileid = 1,
+              duration = 50
+            },
+            {
+              tileid = 2,
+              duration = 50
+            },
+            {
+              tileid = 3,
+              duration = 50
+            },
+            {
+              tileid = 4,
+              duration = 50
+            },
+            {
+              tileid = 5,
+              duration = 50
+            },
+            {
+              tileid = 6,
+              duration = 50
+            },
+            {
+              tileid = 7,
+              duration = 50
+            }
+          }
+        }
+      }
     }
   },
   layers = {
@@ -15754,13 +15821,13 @@ return {
               name = "Instruction",
               type = "",
               shape = "text",
-              x = 680,
-              y = 48,
+              x = 656,
+              y = 32,
               width = 104,
               height = 16,
               rotation = 0,
               visible = true,
-              text = "Tap to attack",
+              text = "Attack combo",
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
@@ -15771,8 +15838,36 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 656,
-              y = 64,
+              x = 616,
+              y = 48,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 6932,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 472,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 600,
+              y = 48,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 6932,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 473,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 584,
+              y = 48,
               width = 16,
               height = 16,
               rotation = 0,
@@ -15806,6 +15901,93 @@ return {
               rotation = 0,
               gid = 7178,
               visible = false,
+              properties = {}
+            },
+            {
+              id = 474,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 616,
+              y = 72,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 6932,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 477,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 632,
+              y = 72,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 6932,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 475,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 600,
+              y = 72,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 6932,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 476,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 584,
+              y = 72,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 6932,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 478,
+              name = "Instruction",
+              type = "",
+              shape = "text",
+              x = 656,
+              y = 56,
+              width = 200,
+              height = 32,
+              rotation = 0,
+              visible = true,
+              text = "Attack combo + Flame spin\nCost 1",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 479,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 712,
+              y = 88,
+              width = 40,
+              height = 20,
+              rotation = 0,
+              gid = 7260,
+              visible = true,
               properties = {}
             }
           }
