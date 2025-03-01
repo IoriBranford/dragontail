@@ -552,9 +552,9 @@ function Player:spinAttack(attacktype, attackangle)
     repeat
         if t == buttonholdtimeforfireball then
             if self.mana >= self.manaunitsize then
-                local attackdown = Controls.getButtonsDown()
-                if attackdown then
+                if attackagain then
                     shootingfireballs = true
+                    attackagain = false
                     self:giveMana(-self.manaunitsize)
                 end
             end
