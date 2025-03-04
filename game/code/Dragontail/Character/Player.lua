@@ -8,14 +8,13 @@ local Character= require "Dragontail.Character"
 local AttackerSlot = require "Dragontail.Character.AttackerSlot"
 local Characters   = require "Dragontail.Stage.Characters"
 local Color        = require "Tiled.Color"
-local Graphics     = require "Tiled.Graphics"
-local Assets       = require "Tiled.Assets"
 local Slide      = require "Dragontail.Character.Action.Slide"
 local Face       = require "Dragontail.Character.Action.Face"
 local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
 local Shoot        = require "Dragontail.Character.Action.Shoot"
 local Body         = require "Dragontail.Character.Body"
 local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
+local WeaponInHand         = require "Dragontail.Character.Action.WeaponInHand"
 
 ---@class Player:Fighter
 local Player = class(Fighter)
@@ -146,7 +145,6 @@ local function findInstantThrowTarget(self, targetfacex, targetfacey)
         self.z
 end
 
-
 function Player:init()
     Fighter.init(self)
     self.comboindex = 0
@@ -187,130 +185,9 @@ function Player:init()
     })
 end
 
----@param imagedata love.ImageData
----@param cel AseCel
-local function getHandMarkers(imagedata, cel)
-    local palmx, palmy, thumbx, thumby, fingersx, fingersy
-    local x0, y0, w, h = cel.quad:getViewport()
-    local x1, y1 = x0 + w - 1, y0 + h - 1
-    for y = y0, y1 do
-        for x = x0, x1 do
-            local r, g, b, a = imagedata:getPixel(x, y)
-            local color = Color.asARGBInt(r, g, b, a)
-            if color == Color.Red then
-                thumbx, thumby = x, y
-                if palmx and palmy and fingersx and fingersy then
-                    return palmx, palmy, thumbx, thumby, fingersx, fingersy
-                end
-            elseif color == Color.Green then
-                fingersx, fingersy = x, y
-                if palmx and palmy and thumbx and thumby then
-                    return palmx, palmy, thumbx, thumby, fingersx, fingersy
-                end
-            elseif color == Color.Blue then
-                palmx, palmy = x, y
-                if fingersx and fingersy and thumbx and thumby then
-                    return palmx, palmy, thumbx, thumby, fingersx, fingersy
-                end
-            end
-        end
-    end
-end
-
----@param imagedata love.ImageData
----@param cel AseCel
-local function readWeaponTransform(imagedata, cel)
-    local palmx, palmy, thumbx, thumby, fingersx, fingersy
-        = getHandMarkers(imagedata, cel)
-    if not palmx then return end
-
-    local x0, y0 = cel.quad:getViewport()
-    local x = palmx - x0 + cel.x
-    local y = palmy - y0 + cel.y
-    return x, y, atan2(thumby-palmy, thumbx-palmx),
-        det(thumbx-palmx, thumby-palmy, fingersx-palmx, fingersy-palmy) < 0 and -1 or 1
-end
-
 function Player:initAseprite()
     Character.initAseprite(self)
-    local weaponposasefile = self.weaponposasefile
-    local weaponposase = weaponposasefile and
-        Assets.load(weaponposasefile, true)
-    if not weaponposase then return end
-
-    ---@cast weaponposase Aseprite
-    Assets.uncache(weaponposase.imagefile)
-    Assets.uncache(weaponposasefile)
-    local imagedata = weaponposase.imagedata
-    if not imagedata then return end
-
-    ---@type number[]
-    local weapontransforms = {}
-    self.weapontransforms = weapontransforms
-
-    for i = 1, #weaponposase do
-        local frame = weaponposase[i]
-        local cel = frame and frame[1]
-        local x, y, r, sy
-        if cel then
-            x, y, r, sy = readWeaponTransform(imagedata, cel)
-        end
-        if not x then
-            x, y, r, sy = 0, 0, 0, 0
-        end
-        weapontransforms[#weapontransforms+1] = x
-        weapontransforms[#weapontransforms+1] = y
-        weapontransforms[#weapontransforms+1] = r
-        weapontransforms[#weapontransforms+1] = sy
-    end
-end
-
-function Player:drawWeaponInHand(frame, x, y)
-    local weapontype = Database.get(self.weaponinhand)
-    if not weapontype then return end
-
-    local weapontransforms = self.weapontransforms
-    if not weapontransforms then return end
-
-    local i = frame.index*4
-    local weaponx, weapony, weaponr, weaponsy =
-        weapontransforms[i-3], weapontransforms[i-2], weapontransforms[i-1], (weapontransforms[i] or 0)
-    if weaponsy == 0 then
-        return
-    end
-
-    local weaponase = Assets.get(weapontype.asefile)
-    ---@cast weaponase Aseprite
-    if weaponase then
-        local weaponanim = weaponase.animations["inhand"]
-        local weaponframe = weaponanim and weaponanim[1]
-        if not weaponframe then return end
-
-        love.graphics.push()
-        love.graphics.translate(x + weaponx, y + weapony)
-        love.graphics.rotate(weaponr)
-        love.graphics.scale(1, weaponsy)
-        love.graphics.translate(-weapontype.spriteoriginx, -weapontype.spriteoriginy)
-        weaponframe:draw()
-        love.graphics.pop()
-    else
-        local weapontile = Assets.getTile(weapontype.tileset, weapontype.tileid)
-        if not weapontile then
-            return
-        end
-
-        love.graphics.draw(weapontile.image,
-            weapontile.quad,
-            x + weaponx, y + weapony,
-            weaponr,
-            1, weaponsy,
-            weapontile.objectoriginx, weapontile.objectoriginy)
-    end
-
-    local weaponhandlayer = self.aseprite.layers["weaponhand"]
-    if weaponhandlayer then
-        frame:drawCels(weaponhandlayer, weaponhandlayer, x, y)
-    end
+    WeaponInHand.loadHandPositions(self)
 end
 
 function Player:drawAseprite(fixedfrac)
@@ -335,7 +212,7 @@ function Player:drawAseprite(fixedfrac)
     love.graphics.scale(self.scalex or 1, self.scaley or 1)
     love.graphics.translate(-self.originx or 0, -self.originy or 0)
     frame:draw()
-    self:drawWeaponInHand(frame, 0, 0)
+    WeaponInHand.draw(self, frame, 0, 0)
     love.graphics.pop()
 end
 
