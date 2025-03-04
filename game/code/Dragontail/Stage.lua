@@ -328,8 +328,8 @@ function Stage.fixedupdateGui(gui)
         portrait:changeTile("normal")
     end
 
-    local runpercent = player.runenergy / player.runenergymax
-    hud.run:setPercent(runpercent)
+    -- local runpercent = player.runenergy / player.runenergymax
+    -- hud.run:setPercent(runpercent)
 
     local weapontype = player.weaponinhand
     local weapondata = Database.get(weapontype)

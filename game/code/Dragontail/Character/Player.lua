@@ -148,9 +148,9 @@ end
 function Player:init()
     Fighter.init(self)
     self.comboindex = 0
-    self.runenergy = self.runenergy or 100
-    self.runenergymax = self.runenergymax or self.runenergy
-    self.runenergycost = self.runenergycost or 25
+    -- self.runenergy = self.runenergy or 100
+    -- self.runenergymax = self.runenergymax or self.runenergy
+    -- self.runenergycost = self.runenergycost or 25
     self.manaunitsize = self.manaunitsize or 60
     self.manamax = self.manamax or (self.manaunitsize * 3)
     self.mana = self.mana or self.manaunitsize
@@ -278,12 +278,13 @@ function Player:control()
             end
         end
 
-        if runpressed and not runningtime and self.runenergy >= self.runenergycost then
+        if runpressed and not runningtime --and self.runenergy >= self.runenergycost
+        then
             self.comboindex = 0
             Audio.play(self.dashsound)
             runningtime = 0
             facex, facey = targetfacex or facex, targetfacey or facey
-            self.runenergy = self.runenergy - self.runenergycost
+            -- self.runenergy = self.runenergy - self.runenergycost
         end
 
         local movespeed, turnspeed, acceltime
@@ -350,14 +351,14 @@ function Player:control()
 
             if runningtime < 15 then
                 runningtime = runningtime + 1
-            elseif self.runenergy > 0 and rundown then
-                -- self.runenergy = self.runenergy - 1
+            elseif rundown then --self.runenergy > 0 and rundown then
+            --     self.runenergy = self.runenergy - 1
             else
                 runningtime = nil
                 Audio.play(self.stopdashsound)
             end
         else
-            self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
+            -- self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
             if attackpressed then
                 if not self.weaponinhand then
                     return doComboAttack(self, atan2(targetfacey, targetfacex))
@@ -642,8 +643,8 @@ function Player:hold(enemy)
         local enemyfaceangle = holdfrombehind and self.faceangle or (self.faceangle + pi)
         Face.faceAngle(enemy, enemyfaceangle, "Hurt")
 
-        self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
-        if runpressed and self.runenergy >= self.runenergycost then
+        -- self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
+        if runpressed then --and self.runenergy >= self.runenergycost then
             return "runWithEnemy", enemy
         end
         if attackpressed then
@@ -719,8 +720,8 @@ function Player:runWithEnemy(enemy)
 
         if runningtime < 15 then
             runningtime = runningtime + 1
-        elseif self.runenergy > 0 and rundown then
-            self.runenergy = self.runenergy - 2
+        elseif rundown then --self.runenergy > 0 and rundown then
+        --     self.runenergy = self.runenergy - 2
         else
             Audio.play(self.stopdashsound)
             Audio.play(self.throwsound)
