@@ -34,24 +34,6 @@ local lensq = math.lensq
 local testcircles = math.testcircles
 local yield = coroutine.yield
 
----@param self Player
-local function findOpponentToHold(self, inx, iny)
-    local x, y, opponents = self.x, self.y, Characters.getGroup("all")
-    for i, opponent in ipairs(opponents) do
-        if opponent.canbegrabbed then
-            local oppox, oppoy, oppoz = opponent.x, opponent.y, opponent.z
-            local distx = oppox - x
-            local disty = oppoy - y
-            if dot(distx, disty, inx, iny) > 0 then
-                local penex, peney = Body.getCylinderPenetration(self, oppox, oppoy, oppoz, opponent.bodyradius, opponent.bodyheight)
-                if penex or peney then
-                    return opponent
-                end
-            end
-        end
-    end
-end
-
 local function findSomethingToRunningAttack(self, velx, vely)
     local x, y, opponents, solids = self.x, self.y, self.opponents, self.solids
     for i, opponent in ipairs(opponents) do
@@ -516,7 +498,7 @@ function Player:control()
                 end
             end
 
-            local opponenttohold = findOpponentToHold(self, inx, iny)
+            local opponenttohold = HoldOpponent.findOpponentToHold(self, inx, iny)
             if opponenttohold then
                 return "hold", opponenttohold
             end
@@ -719,18 +701,11 @@ end
 function Player:hold(enemy)
     if self.heldopponent ~= enemy then
         self.comboindex = 0
-        Audio.play(self.holdsound)
         HoldOpponent.startHolding(self, enemy)
-        State.start(enemy, enemy.heldai or "held", self)
     end
     self:stopAttack()
-    local x, y = self.x, self.y
-    local grabradius = self.grabradius or 8
-    local radii = grabradius + enemy.bodyradius
-    local holddirx, holddiry = enemy.x - x, enemy.y - y
-    if holddirx ~= 0 or holddiry ~= 0 then
-        holddirx, holddiry = norm(holddirx, holddiry)
-    else
+    local holddirx, holddiry = enemy.x - self.x, enemy.y - self.y
+    if holddirx == 0 and holddiry == 0 then
         holddirx = 1
     end
     local holdangle = atan2(holddiry, holddirx)
@@ -778,18 +753,10 @@ function Player:hold(enemy)
             avel = pi/64
         end
         holdangle = Movement.moveTowards(holdangle, holddestangle, avel)
+        self.holdangle = holdangle
         holddirx, holddiry = cos(holdangle), sin(holdangle)
-        x, y = self.x, self.y
-        enemy.x = x + velx + holddirx*radii
-        enemy.y = y + vely + holddiry*radii
-        enemy.z = self.z + math.max(0, (self.bodyheight - enemy.bodyheight)/2)
-
-        local epenex, epeney = enemy:keepInBounds()
-        if epenex and epeney then
-            self.x = enemy.x - holddirx * radii
-            self.y = enemy.y - holddiry * radii
-        end
-
+        HoldOpponent.updateOpponentPosition(self)
+        HoldOpponent.handleOpponentCollision(self)
         enemy.velz = 0
 
         local holdanimation = (velx ~= 0 or vely ~= 0) and "holdwalk" or "hold"
@@ -818,8 +785,6 @@ function Player:runWithEnemy(enemy)
     Audio.play(self.dashsound)
     enemy.canbeattacked = false
     local targetfacex, targetfacey = math.cos(self.faceangle), math.sin(self.faceangle)
-    local grabradius = self.grabradius or 8
-    local radii = grabradius + enemy.bodyradius
     local holdangle = atan2(targetfacey, targetfacex)
     Database.fill(self, "running-with-enemy")
     enemy.attacktype = "human-in-spinning-throw"
@@ -847,16 +812,14 @@ function Player:runWithEnemy(enemy)
 
         facex, facey = rotateVectorTo(facex, facey, targetfacex, targetfacey, turnspeed)
         holdangle = atan2(facey, facex)
+        self.holdangle = holdangle
         Face.faceAngle(self, holdangle, "holdwalk")
         targetvelx = facex * movespeed
         targetvely = facey * movespeed
 
         self:accelerateTowardsVel(targetvelx, targetvely, acceltime)
 
-        local x, y = self.x, self.y
-        enemy.x = x + self.velx + facex*radii
-        enemy.y = y + self.vely + facey*radii
-        enemy.z = self.z + math.max(0, (self.bodyheight - enemy.bodyheight)/2)
+        HoldOpponent.updateOpponentPosition(self)
 
         if self.animationtime % 3 == 0 then
             self:makeAfterImage()
@@ -870,7 +833,7 @@ function Player:runWithEnemy(enemy)
             return "straightAttack", "running-kick", holdangle
         end
 
-        local oobx, ooby = findWallCollision(enemy)
+        local oobx, ooby = HoldOpponent.handleOpponentCollision(self)
         if oobx or ooby then
             HoldOpponent.stopHolding(self, enemy)
             State.start(enemy, "wallSlammed", self, oobx, ooby)
