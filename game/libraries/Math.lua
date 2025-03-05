@@ -63,19 +63,19 @@ function math.rot(x, y, a)
     return x*cosa - y*sina, y*cosa + x*sina
 end
 
-function math.rotUV2UV(ux, uy, destux, destuy, speed)
-    speed = math.abs(speed)
-    if math.acos(math.dot(ux, uy, destux, destuy)) <= speed then
+function math.rotunitvectortowards(ux, uy, destux, destuy, speed)
+    if math.dot(ux, uy, destux, destuy) >= math.cos(speed) then
         return destux, destuy
     end
+    speed = math.abs(speed)
     if math.det(ux, uy, destux, destuy) < 0 then
         speed = -speed
     end
-    return math.norm(math.rot(ux, uy, speed))
+    return math.rot(ux, uy, speed)
 end
 
 function math.rotangletowards(angle, dest, speed)
-    local x, y = math.rotUV2UV(cos(angle), sin(angle), cos(dest), sin(dest), speed)
+    local x, y = math.rotunitvectortowards(cos(angle), sin(angle), cos(dest), sin(dest), speed)
     return math.atan2(y, x)
 end
 
