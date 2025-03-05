@@ -269,6 +269,20 @@ function Enemy:enterShootLeave()
     self:disappear()
 end
 
+function Enemy:duringPrepareAttack(target)
+    self:accelerateTowardsVel(0, 0, 4)
+end
+
+function Enemy:interruptAttackWithDodge(target)
+    if target then
+        local dodgeangle = Dodge.findDodgeAngle(self, target)
+        if dodgeangle then
+            target.attacker = nil
+            return "dodgeIncoming", dodgeangle
+        end
+    end
+end
+
 function Enemy:prepareAttack(attacktype, targetx, targety)
     if attacktype then
         self.attacktype = attacktype
@@ -292,16 +306,17 @@ function Enemy:prepareAttack(attacktype, targetx, targety)
 
     Audio.play(self.windupsound)
     for t = 1, (self.attackwinduptime or 20) do
-        self:accelerateTowardsVel(0, 0, 4)
         self.color = self:getAttackFlashColor(t)
-        -- if target then
-        --     local dodgeangle = Dodge.findDodgeAngle(self, target)
-        --     if dodgeangle then
-        --         target.attacker = nil
-        --         return "dodgeIncoming", dodgeangle
-        --     end
-        -- end
+
+        local state, a, b, c, d, e, f = self:duringPrepareAttack(target)
+        if state then
+            return state, a, b, c, d, e, f
+        end
+
         yield()
+        if self.velx ~= 0 or self.vely ~= 0 then
+            self:keepInBounds()
+        end
     end
 end
 
