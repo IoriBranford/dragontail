@@ -2,6 +2,7 @@ local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 
 ---@class Face:TiledObject
 ---@field faceangle number
+---@field facedestangle number?
 local Face = {}
 
 function Face:init()
@@ -23,6 +24,29 @@ function Face:faceAngle(angle, animation, frame1, loopframe)
     if animation then
         DirectionalAnimation.set(self, animation, angle or self.faceangle, frame1, loopframe)
     end
+end
+
+function Face:updateTurn(turnspeed, animation, frame1, loopframe)
+    local facedestangle = self.facedestangle
+    if not facedestangle then return end
+
+    local faceangle = self.faceangle
+    local facex, facey = math.cos(faceangle), math.sin(faceangle)
+    local facedestx, facedesty = math.cos(facedestangle), math.sin(facedestangle)
+
+    local facedot = math.dot(facex, facey, facedestx, facedesty)
+    local acosfacedot = math.acos(facedot)
+    if acosfacedot <= turnspeed then
+        facex, facey = facedestx, facedesty
+    else
+        local facedet = math.det(facex, facey, facedestx, facedesty)
+        if facedet < 0 then
+            turnspeed = -turnspeed
+        end
+        facex, facey = math.rot(facex, facey, turnspeed)
+        facex, facey = math.norm(facex, facey)
+    end
+    Face.faceVector(self, facex, facey, animation, frame1, loopframe)
 end
 
 return Face
