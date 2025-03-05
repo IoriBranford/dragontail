@@ -423,8 +423,22 @@ function Fighter:defeat(attacker)
     return "blinkOut", 60
 end
 
+function Fighter:beforeGetUp(attacker)
+end
+
+function Fighter:duringGetUp(attacker)
+end
+
 function Fighter:getup(attacker)
-    coroutine.wait(self.getuptime or 27)
+    self:beforeGetUp()
+    local time = self.getuptime or 27
+    for _ = 1, time do
+        yield()
+        local state, a, b, c, d, e, f = self:duringGetUp(attacker)
+        if state then
+            return state, a, b, c, d, e, f
+        end
+    end
     local recoverai = self.aiaftergetup or self.recoverai
     if not recoverai then
         print("No aiaftergetup or recoverai for "..self.type)
