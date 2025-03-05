@@ -26,28 +26,9 @@ function Face:faceAngle(angle, animation, frame1, loopframe)
     end
 end
 
-function Face.TurnTowards(faceangle, facedestangle, turnspeed)
-    local facex, facey = math.cos(faceangle), math.sin(faceangle)
-    local facedestx, facedesty = math.cos(facedestangle), math.sin(facedestangle)
-
-    local facedot = math.dot(facex, facey, facedestx, facedesty)
-    local acosfacedot = math.acos(facedot)
-    if acosfacedot <= turnspeed then
-        facex, facey = facedestx, facedesty
-    else
-        local facedet = math.det(facex, facey, facedestx, facedesty)
-        if facedet < 0 then
-            turnspeed = -turnspeed
-        end
-        facex, facey = math.rot(facex, facey, turnspeed)
-        facex, facey = math.norm(facex, facey)
-    end
-    return math.atan2(facey, facex)
-end
-
 function Face:updateTurnToDestAngle(turnspeed, animation, frame1, loopframe)
     if self.facedestangle then
-        local faceangle = Face.TurnTowards(self.faceangle, self.facedestangle, turnspeed)
+        local faceangle = math.rotangletowards(self.faceangle, self.facedestangle, turnspeed)
         Face.faceAngle(self, faceangle, animation, frame1, loopframe)
     end
 end
