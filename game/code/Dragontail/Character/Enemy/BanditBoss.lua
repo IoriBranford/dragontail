@@ -59,47 +59,24 @@ function BanditBoss:getBestAttack(opponent)
     return "bandit-boss-charge"
 end
 
-function BanditBoss:stand(duration)
-    duration = duration or 20
-    self.velx, self.vely = 0, 0
-    local x, y = self.x, self.y
-    local opponents = Characters.getGroup("players")
-    local opponent = opponents[1]
-    for _ = 1, duration do
-        Face.facePosition(self, opponent.x, opponent.y)
-        local dodgeangle = self:isFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self, opponent)
-        if dodgeangle then
-            return "dodgeIncoming", dodgeangle
-        end
-        coroutine.yield()
-    end
-
-    if opponent.health <= 0 then
-        return "stand"
-    end
-
+function BanditBoss:decideNextAttack()
+    local opponent = self.opponents[1]
     local attacktype = self:getBestAttack(opponent)
     self.attacktype = attacktype
     Database.fill(self, self.attacktype)
+    return attacktype
+end
 
-    local toopposq = math.distsq(x, y, opponent.x, opponent.y)
-    local attackradius = self.TotalAttackRange(self.attackradius or 32, self.attacklungespeed or 0, self.attacklungedecel or 1) + opponent.bodyradius
-    if not opponent.attacker
-    and opponent.canbeattacked
-    and toopposq <= attackradius*attackradius
-    and self:isFullyOnCamera(self.camera) then
-        local healthpct = self.health/self.maxhealth
-        if healthpct <= TwoSwitchAttackHealthPercent then
-            self.attackswitchesleft = 2
-        elseif healthpct <= OneSwitchAttackHealthPercent then
-            self.attackswitchesleft = 1
-        else
-            self.attackswitchesleft = 0
-        end
-        Face.facePosition(self, opponent.x, opponent.y)
-        return "attack", attacktype
+function BanditBoss:afterStand()
+    local healthpct = self.health/self.maxhealth
+    if healthpct <= TwoSwitchAttackHealthPercent then
+        self.attackswitchesleft = 2
+    elseif healthpct <= OneSwitchAttackHealthPercent then
+        self.attackswitchesleft = 1
+    else
+        self.attackswitchesleft = 0
     end
-    return "approach"
+    return Enemy.afterStand(self)
 end
 
 function BanditBoss:duringPrepareAttack(target)
