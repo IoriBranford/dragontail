@@ -56,34 +56,18 @@ function Enemy:getTargetingScore(oppox, oppoy, oppofacex, oppofacey)
     return math.abs(math.det(oppofacex, oppofacey, tooppox, tooppoy))
 end
 
-function Enemy:stand(duration)
-    duration = duration or 20
-    self.velx, self.vely = 0, 0
-    local x, y = self.x, self.y
+function Enemy:duringStand()
     local opponent = self.opponents[1]
-    local oppox, oppoy
-    for _ = 1, duration do
-        oppox, oppoy = opponent.x, opponent.y
-        if oppox ~= x or oppoy ~= y then
-            local tooppoy, tooppox = oppoy - y, oppox - x
-            if tooppox == 0 and tooppoy == 0 then
-                tooppox = 1
-            end
-            Face.faceVector(self, tooppox, tooppoy, "Stand")
-
-            local dodgeangle = self:isFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self, opponent)
-            if dodgeangle then
-                return "dodgeIncoming", dodgeangle
-            end
-        end
-        yield()
+    Face.facePosition(self, opponent.x, opponent.y, "Stand")
+    local dodgeangle = self:isFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self, opponent)
+    if dodgeangle then
+        return "dodgeIncoming", dodgeangle
     end
+end
 
-    if opponent.health <= 0 then
-        return "stand"
-    end
-
-    local toopposq = distsq(x, y, oppox, oppoy)
+function Enemy:decideNextAttack()
+    local opponent = self.opponents[1]
+    local toopposq = distsq(self.x, self.y, opponent.x, opponent.y)
     local attackchoices = self.attackchoices
     if type(attackchoices) == "string" then
         local choices = {}
@@ -111,6 +95,18 @@ function Enemy:stand(duration)
         self.attacktype = attacktype
     end
     Database.fill(self, attacktype)
+    return attacktype
+end
+
+function Enemy:afterStand()
+    local opponent = self.opponents[1]
+    if opponent.health <= 0 then
+        return "stand"
+    end
+
+    local attacktype = self:decideNextAttack()
+
+    local toopposq = distsq(self.x, self.y, opponent.x, opponent.y)
     local attackradius = totalAttackRange(self.attackradius or 32, self.attacklungespeed or 0, self.attacklungedecel or 1) + opponent.bodyradius
     if not opponent.attacker
     and opponent.canbeattacked
@@ -120,6 +116,19 @@ function Enemy:stand(duration)
         return "attack", attacktype
     end
     return "approach"
+end
+
+function Enemy:stand(duration)
+    duration = duration or 20
+    self.velx, self.vely = 0, 0
+    for _ = 1, duration do
+        local state, a, b, c, d, e, f = self:duringStand()
+        if state then
+            return state, a, b, c, d, e, f
+        end
+        yield()
+    end
+    return self:afterStand() or "stand"
 end
 
 function Enemy:dodgeIncoming(dodgeangle)
