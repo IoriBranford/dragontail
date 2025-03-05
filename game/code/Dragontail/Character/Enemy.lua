@@ -174,15 +174,7 @@ function Enemy:approach()
         destx, desty = x + frontendx - projx, y + frontendy - projy
     end
 
-    -- choose animation
-    if desty ~= y or destx ~= x then
-        local todesty, todestx = desty - y, destx - x
-        if todestx == 0 and todesty == 0 then
-            todestx = 1
-        end
-        todestx, todesty = math.norm(todestx, todesty)
-        Face.faceVector(self, todestx, todesty, "Walk")
-    end
+    Face.faceVector(self, destx - x, desty - y, "Walk")
 
     local speed = self.speed or 2
     if distsq(x, y, oppox, oppoy) > 320*320 then
@@ -210,6 +202,7 @@ function Enemy:approach()
     if attacktype
     and opponent.canbeattacked
     and distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
+        Face.facePosition(self, opponent.x, opponent.y)
         return "attack", attacktype
     end
     if reached then
