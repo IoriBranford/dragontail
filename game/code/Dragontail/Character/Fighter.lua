@@ -35,11 +35,6 @@ local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 ---@field guardcounterattack string?
 ---@field guardhitstocounterattack integer?
 
----@class WeaponInHand
----@field weaponposasefile string?
----@field weaponinhand string?
----@field numweaponinhand integer?
-
 ---@class ThrowWeapon
 ---@field throwtime integer?
 ---@field throwsound string?
