@@ -177,49 +177,14 @@ function BanditBoss:approach()
     return "stand", 5
 end
 
-function BanditBoss:prepareAttack(attacktype, targetx, targety)
-    if attacktype then
-        self.attacktype = attacktype
-        Database.fill(self, attacktype)
-    end
-    self.numopponentshit = 0
-    self:stopGuarding()
-    self.canbeattacked = not self.attackwindupinvuln
-    self.canbegrabbed = not self.attackwindupinvuln
-
-    local target
-    if type(targetx) == "table" then
-        target = targetx
-        target.attacker = self
-        targetx, targety = target.x, target.y
-    end
-
-    -- targetx = targetx or self.x
-    -- targety = targety or self.y
-    -- Face.faceVector(self, targetx - self.x, targety - self.y, self.windupanimation, 1, self.windupanimationloopframe or 0)
-
-    Face.faceAngle(self, self.faceangle, self.windupanimation, 1, self.windupanimationloopframe or 0)
-
-    Audio.play(self.windupsound)
-    for t = 1, (self.attackwinduptime or 20) do
-        self:accelerateTowardsVel(0, 0, 4)
-        self.color = self:getAttackFlashColor(t)
-
-        if target and target.canbeattacked then
-            local switchesleft = self.attackswitchesleft or 0
-            local newattack = switchesleft > 0 and self:getBestAttack(target) or self.attacktype
-            if newattack ~= self.attacktype then
-                self.attackswitchesleft = switchesleft - 1
-                return "attack", newattack
-            end
-        end
-
-        -- depending on health:
-        -- dodge when player approaches
-        -- cancel into another attack which is better for player position
-        coroutine.yield()
-        if self.velx ~= 0 or self.vely ~= 0 then
-            self:keepInBounds()
+function BanditBoss:duringPrepareAttack(target)
+    self:accelerateTowardsVel(0, 0, 4)
+    if target and target.canbeattacked then
+        local switchesleft = self.attackswitchesleft or 0
+        local newattack = switchesleft > 0 and self:getBestAttack(target) or self.attacktype
+        if newattack ~= self.attacktype then
+            self.attackswitchesleft = switchesleft - 1
+            return "attack", newattack
         end
     end
 end
