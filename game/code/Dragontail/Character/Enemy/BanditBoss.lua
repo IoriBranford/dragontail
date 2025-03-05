@@ -275,7 +275,7 @@ function BanditBoss:attack(attacktype)
     return "stand", 20
 end
 
-function BanditBoss:getup(attacker)
+function BanditBoss:beforeGetUp(attacker)
     local healthpct = self.health/self.maxhealth
     local numsummons = self.numsummons or 0
     if healthpct <= FirstSummonHealthPercent and numsummons < 1
@@ -283,31 +283,24 @@ function BanditBoss:getup(attacker)
         Stage.openNextRoomIfNotLast()
         self.numsummons = numsummons + 1
     end
-    local time = self.getuptime or 27
-    for _ = 1, time do
-        yield()
-        if self.health/self.maxhealth <= GetUpAttackHealthPercent then
-            local attack = self:getBestAttack(attacker) or ""
-            if attack:find("^bandit%-boss%-spin") then
-                self.attacktype = attack
-                Database.fill(self, attack)
-                self.attackswitchesleft = 0
-                Audio.play(self.windupsound)
-                for t = 1, (self.attackwinduptime or 0) do
-                    self.color = self:getAttackFlashColor(t)
-                    yield()
-                end
-                self:executeAttack(nil, attacker)
-                return self.aiaftergetup or self.recoverai
+end
+
+function BanditBoss:duringGetUp(attacker)
+    if self.health/self.maxhealth <= GetUpAttackHealthPercent then
+        local attack = self:getBestAttack(attacker) or ""
+        if attack:find("^bandit%-boss%-spin") then
+            self.attacktype = attack
+            Database.fill(self, attack)
+            self.attackswitchesleft = 0
+            Audio.play(self.windupsound)
+            for t = 1, (self.attackwinduptime or 0) do
+                self.color = self:getAttackFlashColor(t)
+                yield()
             end
+            self:executeAttack(nil, attacker)
+            return self.aiaftergetup or self.recoverai
         end
     end
-    local recoverai = self.aiaftergetup or self.recoverai
-    if not recoverai then
-        print("No aiaftergetup or recoverai for "..self.type)
-        return "defeat", attacker
-    end
-    return recoverai
 end
 
 function BanditBoss:defeat(attacker)
