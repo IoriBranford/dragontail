@@ -61,24 +61,7 @@ function BanditBoss:afterStand()
     return Enemy.afterStand(self)
 end
 
-function BanditBoss:duringPrepareAttack(target)
-    self:accelerateTowardsVel(0, 0, 4)
-    if target and target.canbeattacked then
-        local switchesleft = self.attackswitchesleft or 0
-        local newattack = switchesleft > 0 and self:getBestAttack(target) or self.attacktype
-        if newattack ~= self.attacktype then
-            self.attackswitchesleft = switchesleft - 1
-            return "attack", newattack
-        end
-    end
-end
-
-function BanditBoss:duringAttackSwing(target)
-    local turnspeed = self.attackspinspeed or 0
-    if turnspeed ~= 0 then
-        self.attackangle = self.attackangle + turnspeed
-        DirectionalAnimation.set(self, self.swinganimation, self.attackangle, 1, self.swinganimationloopframe or 0)
-    end
+function BanditBoss:getAttackSwitch(target)
     if target and target.canbeattacked then
         local switchesleft = self.attackswitchesleft or 0
         local newattack = switchesleft > 0 and self:getBestAttack(target) or self.attacktype
@@ -88,6 +71,20 @@ function BanditBoss:duringAttackSwing(target)
             return "attack", newattack
         end
     end
+end
+
+function BanditBoss:duringPrepareAttack(target)
+    self:accelerateTowardsVel(0, 0, 4)
+    return self:getAttackSwitch(target)
+end
+
+function BanditBoss:duringAttackSwing(target)
+    local turnspeed = self.attackspinspeed or 0
+    if turnspeed ~= 0 then
+        self.attackangle = self.attackangle + turnspeed
+        DirectionalAnimation.set(self, self.swinganimation, self.attackangle, 1, self.swinganimationloopframe or 0)
+    end
+    return self:getAttackSwitch(target)
 end
 
 function BanditBoss:attack(attacktype)
