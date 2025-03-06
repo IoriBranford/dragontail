@@ -64,10 +64,10 @@ function math.rot(x, y, a)
 end
 
 function math.rotunitvectortowards(ux, uy, destux, destuy, speed)
+    speed = math.min(math.abs(speed), math.pi)
     if math.dot(ux, uy, destux, destuy) >= math.cos(speed) then
         return destux, destuy
     end
-    speed = math.abs(speed)
     if math.det(ux, uy, destux, destuy) < 0 then
         speed = -speed
     end
