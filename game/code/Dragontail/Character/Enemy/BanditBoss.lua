@@ -91,76 +91,21 @@ function BanditBoss:duringPrepareAttack(target)
     end
 end
 
-function BanditBoss:executeAttack(attacktype, targetx, targety, targetz)
-    if attacktype then
-        self.attacktype = attacktype
-        Database.fill(self, attacktype)
-    end
-    self.numopponentshit = 0
-    self:stopGuarding()
-
-    local target
-    if type(targetx) == "table" then
-        target = targetx
-        target.attacker = self
-        targetx, targety, targetz = target.x, target.y, target.z
-    end
-
-    targetx = targetx or self.x
-    targety = targety or self.y
-    Face.faceVector(self, targetx - self.x, targety - self.y, self.swinganimation, 1, self.swinganimationloopframe or 0)
-
-    Audio.play(self.swingsound)
-    local attackprojectile = self.attackprojectile
-    if attackprojectile then
-        Shoot.launchProjectileAtPosition(self, attackprojectile, targetx, targety, targetz)
-    else
-        local attackangle = floor((self.faceangle + (pi/4)) / (pi/2)) * pi/2
-        self:startAttack(attackangle)
-    end
-
-    local lungespeed = self.attacklungespeed or 0
-    local hittime = self.attackhittime or 10
+function BanditBoss:duringAttackSwing(target)
     local turnspeed = self.attackspinspeed or 0
-    repeat
-        lungespeed = Slide.updateSlideSpeed(self, self.faceangle, lungespeed, self.attacklungedecel or 1)
-        if turnspeed ~= 0 then
-            self.attackangle = self.attackangle + turnspeed
-            DirectionalAnimation.set(self, self.swinganimation, self.attackangle, 1, self.swinganimationloopframe or 0)
-        end
-        if target and target.canbeattacked then
-            local switchesleft = self.attackswitchesleft or 0
-            local newattack = switchesleft > 0 and self:getBestAttack(target) or self.attacktype
-            if newattack ~= self.attacktype then
-                self.attackswitchesleft = switchesleft - 1
-                self:stopAttack()
-                return "attack", newattack
-            end
-        end
-        hittime = hittime - 1
-        self.color = self:getAttackFlashColor(hittime)
-        yield()
-        if self.velx ~= 0 or self.vely ~= 0 then
-            self:keepInBounds()
-        end
-    until hittime <= 0
-    self.color = Color.White
-
-    self:stopAttack()
-    if self.attackwindupinvuln then
-        self.canbeattacked = true
-        self.canbegrabbed = true
+    if turnspeed ~= 0 then
+        self.attackangle = self.attackangle + turnspeed
+        DirectionalAnimation.set(self, self.swinganimation, self.attackangle, 1, self.swinganimationloopframe or 0)
     end
-
-    local afterhittime = self.attackafterhittime or 30
-    repeat
-        lungespeed = Slide.updateSlideSpeed(self, self.faceangle, lungespeed)
-        afterhittime = afterhittime - 1
-        yield()
-        if self.velx ~= 0 or self.vely ~= 0 then
-            self:keepInBounds()
+    if target and target.canbeattacked then
+        local switchesleft = self.attackswitchesleft or 0
+        local newattack = switchesleft > 0 and self:getBestAttack(target) or self.attacktype
+        if newattack ~= self.attacktype then
+            self.attackswitchesleft = switchesleft - 1
+            self:stopAttack()
+            return "attack", newattack
         end
-    until afterhittime <= 0
+    end
 end
 
 function BanditBoss:attack(attacktype)
