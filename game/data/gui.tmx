@@ -133,18 +133,18 @@
    </object>
   </objectgroup>
   <objectgroup id="11" name="gameover">
-   <object id="21" name="playagain" x="176" y="144" width="128" height="18">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">Play again</text>
+   <object id="21" name="playagain" x="224" y="126" width="128" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Play again</text>
    </object>
-   <object id="22" gid="7" x="284" y="144" width="16" height="16"/>
+   <object id="22" gid="7" x="284" y="144" width="16" height="16" visible="0"/>
    <object id="23" gid="293" x="180" y="144" width="16" height="16"/>
    <object id="24" gid="295" x="204" y="144" width="16" height="16"/>
    <object id="25" name="+" x="196" y="126" width="8" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">+</text>
    </object>
-   <object id="26" gid="333" x="232" y="144" width="16" height="16"/>
-   <object id="27" gid="335" x="256" y="144" width="16" height="16"/>
-   <object id="28" name="+" x="248" y="126" width="8" height="18">
+   <object id="26" gid="333" x="232" y="144" width="16" height="16" visible="0"/>
+   <object id="27" gid="335" x="256" y="144" width="16" height="16" visible="0"/>
+   <object id="28" name="+" x="248" y="126" width="8" height="18" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">+</text>
    </object>
   </objectgroup>

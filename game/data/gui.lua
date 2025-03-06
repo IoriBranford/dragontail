@@ -765,8 +765,8 @@ return {
               name = "playagain",
               type = "",
               shape = "text",
-              x = 176,
-              y = 144,
+              x = 224,
+              y = 126,
               width = 128,
               height = 18,
               rotation = 0,
@@ -775,7 +775,6 @@ return {
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
-              halign = "center",
               properties = {}
             },
             {
@@ -789,7 +788,7 @@ return {
               height = 16,
               rotation = 0,
               gid = 7,
-              visible = true,
+              visible = false,
               properties = {}
             },
             {
@@ -849,7 +848,7 @@ return {
               height = 16,
               rotation = 0,
               gid = 333,
-              visible = true,
+              visible = false,
               properties = {}
             },
             {
@@ -863,7 +862,7 @@ return {
               height = 16,
               rotation = 0,
               gid = 335,
-              visible = true,
+              visible = false,
               properties = {}
             },
             {
@@ -876,7 +875,7 @@ return {
               width = 8,
               height = 18,
               rotation = 0,
-              visible = true,
+              visible = false,
               text = "+",
               fontfamily = "Unifont",
               wrap = true,
