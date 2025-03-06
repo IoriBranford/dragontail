@@ -322,6 +322,9 @@ function Enemy:prepareAttack(attacktype, targetx, targety)
     end
 end
 
+function Enemy:duringAttackSwing(target)
+end
+
 function Enemy:executeAttack(attacktype, targetx, targety, targetz)
     if attacktype then
         Database.fill(self, attacktype)
@@ -329,8 +332,9 @@ function Enemy:executeAttack(attacktype, targetx, targety, targetz)
     self.numopponentshit = 0
     self:stopGuarding()
 
+    local target
     if type(targetx) == "table" then
-        local target = targetx
+        target = targetx
         target.attacker = self
         targetx, targety, targetz = target.x, target.y, target.z
     end
@@ -352,6 +356,10 @@ function Enemy:executeAttack(attacktype, targetx, targety, targetz)
     local hittime = self.attackhittime or 10
     repeat
         lungespeed = Slide.updateSlideSpeed(self, self.faceangle, lungespeed, self.attacklungedecel or 1)
+        local state, a, b, c, d, e, f = self:duringAttackSwing(target)
+        if state then
+            return state, a, b, c, d, e, f
+        end
         hittime = hittime - 1
         self.color = self:getAttackFlashColor(hittime)
         yield()
