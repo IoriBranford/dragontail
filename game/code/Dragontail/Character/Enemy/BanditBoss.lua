@@ -2,15 +2,7 @@ local Enemy = require "Dragontail.Character.Enemy"
 local Database = require "Data.Database"
 local Audio    = require "System.Audio"
 local Characters = require "Dragontail.Stage.Characters"
-local Raycast    = require "Object.Raycast"
-local Movement   = require "Component.Movement"
-local Fighter    = require "Dragontail.Character.Fighter"
-local Color      = require "Tiled.Color"
 local Stage      = require "Dragontail.Stage"
-local Dodge      = require "Dragontail.Character.Action.Dodge"
-local Slide      = require "Dragontail.Character.Action.Slide"
-local Face       = require "Dragontail.Character.Action.Face"
-local Shoot      = require "Dragontail.Character.Action.Shoot"
 local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 
 --- Attacks:
@@ -29,16 +21,6 @@ local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 ---@class BanditBoss:Enemy
 local BanditBoss = class(Enemy)
 
-local pi = math.pi
-local huge = math.huge
-local max = math.max
-local cos = math.cos
-local sin = math.sin
-local norm = math.norm
-local atan2 = math.atan2
-local distsq = math.distsq
-local floor = math.floor
-local mid = math.mid
 local yield = coroutine.yield
 
 local GetUpAttackHealthPercent = .75
