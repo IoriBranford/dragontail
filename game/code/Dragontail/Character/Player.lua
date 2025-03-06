@@ -139,6 +139,9 @@ function Player:init()
     self.manamax = self.manamax or (self.manaunitsize * 3)
     self.mana = self.mana or self.manaunitsize
 
+    ---@class PlayerAttackerSlots
+    ---@field [integer] AttackerSlot
+    ---@field [string] AttackerSlot[]
     self.attackerslots = {
         AttackerSlot("melee", 1024, 0), -- 3 o clock
         AttackerSlot("melee", 0, 1024), -- 6 o clock
