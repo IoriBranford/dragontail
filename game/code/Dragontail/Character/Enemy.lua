@@ -145,12 +145,8 @@ function Enemy:dodgeIncoming(dodgeangle)
     return "stand"
 end
 
-function Enemy:approach()
-    local x, y = self.x, self.y
-    local opponent = self.opponents[1] ---@type Player
-    local oppox, oppoy = opponent.x, opponent.y
+function Enemy:findAttackerSlot(opponent)
     local bodyradius = self.bodyradius
-
     local attackradius = totalAttackRange(self.attackradius or 64, self.attacklungespeed or 0, self.attacklungedecel or 1) + opponent.bodyradius
     local attackerslot
     if self.attackprojectile then
@@ -158,15 +154,25 @@ function Enemy:approach()
     else
         attackerslot = opponent:findRandomAttackerSlot(attackradius + bodyradius, "melee")
     end
-    if not attackerslot then
-        return "stand", 10
-    end
+    return attackerslot
+end
+
+function Enemy:getAttackerSlotPosition(opponent, attackerslot)
+    local bodyradius = self.bodyradius
+    local attackradius = totalAttackRange(self.attackradius or 64, self.attacklungespeed or 0, self.attacklungedecel or 1) + opponent.bodyradius
+    local oppox, oppoy = opponent.x, opponent.y
     local destx, desty
     if self.attackprojectile then
         destx, desty = attackerslot:getFarPosition(oppox, oppoy, bodyradius)
     else
         destx, desty = attackerslot:getPosition(oppox, oppoy, attackradius)
     end
+    return destx, desty
+end
+
+function Enemy:navigateAroundSolid(destx, desty)
+    local x, y = self.x, self.y
+    local bodyradius = self.bodyradius
     local raycast = Raycast(destx - x, desty - y, 0, 1, bodyradius/2)
     raycast.canhitgroup = "solids"
     if Characters.castRay(raycast, x, y) then
@@ -182,6 +188,29 @@ function Enemy:approach()
         local projx, projy = math.projpointsegment(x, y, backendx, backendy, frontendx, frontendy)
         destx, desty = x + frontendx - projx, y + frontendy - projy
     end
+    return destx, desty
+end
+
+function Enemy:duringApproach(target)
+    -- local oppox, oppoy = opponent.x, opponent.y
+    -- local tooppox, tooppoy = oppox - self.x, oppoy - self.y
+    -- local seesopponent = math.dot(math.cos(self.faceangle), math.sin(self.faceangle), tooppox, tooppoy) >= 0
+    local dodgeangle = self:isFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self, target)
+    if dodgeangle then
+        return "dodgeIncoming", dodgeangle
+    end
+end
+
+function Enemy:approach()
+    local x, y = self.x, self.y
+    local opponent = self.opponents[1] ---@type Player
+    local oppox, oppoy = opponent.x, opponent.y
+
+    local attackerslot = self:findAttackerSlot(opponent)
+    if not attackerslot then
+        return "stand", 10
+    end
+    local destx, desty = self:navigateAroundSolid(self:getAttackerSlotPosition(opponent, attackerslot))
 
     Face.faceVector(self, destx - x, desty - y, "Walk")
 
@@ -192,12 +221,9 @@ function Enemy:approach()
 
     local reached = false
     for i = 1, (self.approachtime or 60) do
-        oppox, oppoy = opponent.x, opponent.y
-        local tooppox, tooppoy = oppox - x, oppoy - y
-        -- local seesopponent = math.dot(math.cos(self.faceangle), math.sin(self.faceangle), tooppox, tooppoy) >= 0
-        local dodgeangle = self:isFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self, opponent)
-        if dodgeangle then
-            return "dodgeIncoming", dodgeangle
+        local state, a, b, c, d, e, f = self:duringApproach(opponent)
+        if state then
+            return state, a, b, c, d, e, f
         end
         self.velx, self.vely = Movement.getVelocity_speed(self.x, self.y, destx, desty, speed)
         yield()
@@ -208,11 +234,13 @@ function Enemy:approach()
     end
 
     local attacktype = not opponent.attacker and self.attacktype
-    if attacktype
-    and opponent.canbeattacked
-    and distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
-        Face.facePosition(self, opponent.x, opponent.y)
-        return "attack", attacktype
+    if attacktype and opponent.canbeattacked then
+        local attackradius = totalAttackRange(self.attackradius or 64, self.attacklungespeed or 0, self.attacklungedecel or 1) + opponent.bodyradius
+
+        if distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
+            Face.facePosition(self, opponent.x, opponent.y)
+            return "attack", attacktype
+        end
     end
     if reached then
         return "stand", 10
@@ -275,11 +303,13 @@ function Enemy:duringPrepareAttack(target)
     self:accelerateTowardsVel(0, 0, 4)
 end
 
-function Enemy:interruptAttackWithDodge(target)
+function Enemy:interruptWithDodge(target)
     if target then
         local dodgeangle = Dodge.findDodgeAngle(self, target)
         if dodgeangle then
-            target.attacker = nil
+            if target.attacker == self then
+                target.attacker = nil
+            end
             return "dodgeIncoming", dodgeangle
         end
     end
