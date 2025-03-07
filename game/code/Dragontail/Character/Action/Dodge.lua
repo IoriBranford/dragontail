@@ -11,12 +11,7 @@ local Face       = require "Dragontail.Character.Action.Face"
 ---@field dodgesound string?
 local Dodge = {}
 
----@param incoming Character
-function Dodge:findDodgeAngle(incoming)
-    local dodgespeed = self.dodgespeed
-    if not dodgespeed then
-        return
-    end
+function Dodge:getDodgeVector(incoming)
     local oppox, oppoy, oppovelx, oppovely
     oppox, oppoy = incoming.x, incoming.y
     oppovelx, oppovely = incoming.velx, incoming.vely
@@ -32,6 +27,7 @@ function Dodge:findDodgeAngle(incoming)
         return
     end
 
+    local dodgespeed = self.dodgespeed
     local dodgedist = Slide.GetSlideDistance(dodgespeed, self.dodgedecel or 1)
     local dodgedirx, dodgediry = 1, 0
     if dsq > 0 then
@@ -62,7 +58,37 @@ function Dodge:findDodgeAngle(incoming)
             raycast.dx, raycast.dy = -raycast.dx, -raycast.dy
         end
     end
-    return math.atan2(raycast.dy, raycast.dx)
+    return raycast.dx, raycast.dy
+end
+
+---@param incoming Character
+function Dodge:findDodgeAngle(incoming)
+    local dodgespeed = self.dodgespeed
+    if not dodgespeed then
+        return
+    end
+    local opponents = self.opponents
+    local projectiles = Characters.getGroup("projectiles")
+
+    local dodgex, dodgey = 0, 0
+    for i = 1, #opponents do
+        local dx, dy = Dodge.getDodgeVector(self, opponents[i])
+        if dx then
+            dodgex, dodgey = dodgex + dx, dodgey + dy
+        end
+    end
+    for i = 1, #projectiles do
+        local dx, dy = Dodge.getDodgeVector(self, projectiles[i])
+        if dx then
+            dodgex, dodgey = dodgex + dx, dodgey + dy
+        end
+    end
+
+    if dodgex == 0 and dodgey == 0 then
+        return
+    end
+
+    return math.atan2(dodgey, dodgex)
 end
 
 ---@param opponent Character
