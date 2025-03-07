@@ -17,8 +17,9 @@ local Tile       = require "Tiled.Tile"
 ---@field objectalignment string Controls the alignment for tile objects. Valid values are unspecified, topleft, top, topright, left, center, right, bottomleft, bottom and bottomright. The default value is unspecified, for compatibility reasons. When unspecified, tile objects use bottomleft in orthogonal mode and bottom in isometric mode. (since 1.4)
 ---@field numempty integer Number of tiles whose pixels are all fully transparent (alpha = 0)
 ---@field tiles Tile[] Moved to array part of tileset
----@field image love.Image
+---@field image love.Image|Aseprite|string
 ---@field imagefile string
+---@field imagetype "image"|"aseprite"
 ---@field tileoffset {x: number, y: number}
 ---@field [integer] Tile All tiles including ones that have no special properties (0-based)
 ---@field [string] Tile All tiles with string property called "name", after calling Map:indexTilesetTilesByName
@@ -31,8 +32,19 @@ function Tileset:_init()
         "External tilesets unsupported. Please export with 'Embed Tilesets' enabled in export options.")
 
     local imagefile = self.image
+    local imagetype
+    ---@cast imagefile string
+    local AseFileType = ".ase"
+    if imagefile:sub(-#AseFileType) == AseFileType then
+        imagefile = imagefile:sub(1, -1-#AseFileType)..".jase"
+        imagetype = "aseprite"
+    else
+        imagetype = "image"
+    end
+    self.imagetype = imagetype
     self.imagefile = imagefile
     local image = Assets.get(imagefile)
+    ---@cast image love.Image|Aseprite
     self.image = image
     local columns = self.columns
     local n = self.tilecount
@@ -61,18 +73,12 @@ function Tileset:_init()
         objectoy = objectoy - offsety
     end
 
-    local iw, ih = image:getDimensions()
-    for id = 0, n - 1 do
-        local c = id % columns
-        local r = math.floor(id / columns)
-        local tx = c * tw
-        local ty = r * th
-
-        local tile = Tile.cast {
+    for id = 0, n-1 do
+        self[id] = Tile.cast {
             id = id,
             tileset = self,
             image = image,
-            quad = love.graphics.newQuad(tx, ty, tw, th, iw, ih),
+            imagetype = imagetype,
             width = tw,
             height = th,
             offsetx = offsetx,
@@ -80,7 +86,17 @@ function Tileset:_init()
             objectoriginx = objectox,
             objectoriginy = objectoy
         }
-        self[id] = tile
+    end
+
+    if self.imagetype == "aseprite" then
+    else
+        ---@cast image love.Image
+        local iw, ih = image:getDimensions()
+        for id = 0, n - 1 do
+            local tx = (id % columns) * tw
+            local ty = (math.floor(id / columns)) * th
+            self[id].quad = love.graphics.newQuad(tx, ty, tw, th, iw, ih)
+        end
     end
 
     local tilesdata = self.tiles
