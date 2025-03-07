@@ -23,6 +23,29 @@
             ]
         },
         {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 11,
+            "members": [
+                {
+                    "name": "isnewpage",
+                    "type": "bool",
+                    "value": false
+                },
+                {
+                    "name": "sound",
+                    "type": "file",
+                    "value": ""
+                }
+            ],
+            "name": "ComicPanel",
+            "type": "class",
+            "useAs": [
+                "layer",
+                "project"
+            ]
+        },
+        {
             "id": 8,
             "name": "GaugeDirection",
             "storageType": "string",
