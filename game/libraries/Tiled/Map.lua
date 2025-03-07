@@ -130,6 +130,10 @@ function TiledMap:markAndCountEmptyTiles()
     end
 end
 
+function TiledMap:draw()
+    self.layers:draw()
+end
+
 ---@param mapfile string
 ---@return TiledMap
 function TiledMap.load(mapfile)
