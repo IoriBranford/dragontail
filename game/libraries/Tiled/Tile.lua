@@ -13,8 +13,9 @@ local Animation   = require "Tiled.Animation"
 ---@field y number? The Y position of the sub-rectangle representing this tile (default: 0)
 ---@field width number? The width of the sub-rectangle representing this tile (defaults to the image width)
 ---@field height number? The height of the sub-rectangle representing this tile (defaults to the image height)
----@field image love.Image
----@field quad love.Quad
+---@field image love.Image|Aseprite
+---@field imagetype "image"|"aseprite"
+---@field quad love.Quad? only for normal image tileset
 ---@field offsetx number Copy of tileset's tile offset x
 ---@field offsety number Copy of tileset's tile offset y
 ---@field objectoriginx number originx adjusted by object alignment
