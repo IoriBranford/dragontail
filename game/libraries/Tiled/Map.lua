@@ -130,6 +130,10 @@ function TiledMap:markAndCountEmptyTiles()
     end
 end
 
+function TiledMap:animate(dt)
+    self.layers:animate(dt)
+end
+
 function TiledMap:draw()
     self.layers:draw()
 end
