@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="15" height="9" tilewidth="32" tileheight="32" infinite="0" nextlayerid="10" nextobjectid="9">
+ <editorsettings>
+  <export target="comic_banditcave_cleared.lua" format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" source="tilesets/caves/caves.tsx"/>
+ <tileset firstgid="2449" source="sprites/rose-new.tsx"/>
+ <group id="6" name="Rose runs into jail" class="ComicPanel">
+  <objectgroup id="7" name="Object Layer 1">
+   <object id="2" gid="2449" x="64" y="120" width="64" height="64">
+    <properties>
+     <property name="asetag" value="Walk0"/>
+     <property name="loopframe" type="int" value="1"/>
+    </properties>
+   </object>
+   <object id="3" template="mapobjects/comic/PanelBorder.tx" x="24" y="24"/>
+  </objectgroup>
+ </group>
+ <group id="2" name="Rose breaks kids out of cage" class="ComicPanel">
+  <objectgroup id="5" name="Object Layer 1">
+   <object id="1" gid="2449" x="336" y="120" width="64" height="64">
+    <properties>
+     <property name="asetag" value="hardkick0"/>
+     <property name="loopframe" type="int" value="1"/>
+    </properties>
+   </object>
+   <object id="4" template="mapobjects/comic/PanelBorder.tx" x="248" y="24"/>
+  </objectgroup>
+ </group>
+ <group id="3" name="Boy tries not to cry" class="ComicPanel">
+  <properties>
+   <property name="isnewpage" type="bool" value="true"/>
+  </properties>
+  <objectgroup id="8" name="Object Layer 1">
+   <object id="5" gid="2449" x="128" y="120" width="64" height="64">
+    <properties>
+     <property name="asetag" value="KneelHug"/>
+     <property name="loopframe" type="int" value="1"/>
+    </properties>
+   </object>
+   <object id="6" template="mapobjects/comic/PanelBorder.tx" x="24" y="24"/>
+  </objectgroup>
+ </group>
+ <group id="4" name="Rose and kids hug" class="ComicPanel">
+  <objectgroup id="9" name="Object Layer 1">
+   <object id="7" gid="2449" x="352" y="120" width="64" height="64">
+    <properties>
+     <property name="asetag" value="KneelHug"/>
+     <property name="loopframe" type="int" value="1"/>
+    </properties>
+   </object>
+   <object id="8" template="mapobjects/comic/PanelBorder.tx" x="248" y="24"/>
+  </objectgroup>
+ </group>
+</map>
