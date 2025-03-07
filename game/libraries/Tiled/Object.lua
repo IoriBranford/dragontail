@@ -170,13 +170,15 @@ function TiledObject:_init(map)
     end
     processPoly(self)
     self:initText()
-    self:initAseprite()
 
     if map then
         local mapobjects = map.objects
         Properties.resolveObjectRefs(self.properties, mapobjects)
     end
     Properties.moveUp(self)
+
+    self:initAseprite()
+
     return self
 end
 
@@ -195,6 +197,12 @@ function TiledObject:initTile(tile, flipx, flipy)
         self.scaley = self.scaley or (flipy * (height / tile.height))
         if (self.type or "") == "" then
             self.type = tile.type
+        end
+        if tile.imagetype == "aseprite" then
+            self.asefile = tile.tileset.imagefile
+            self.originx = self.originx or tile.objectoriginx
+            self.originy = self.originy or tile.objectoriginy
+            return
         end
     end
     self.animate = self.animateTile
