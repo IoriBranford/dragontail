@@ -28,6 +28,12 @@ function math.det(x, y, x2, y2)
 end
 local det = math.det
 
+function math.cross(x, y, z, x2, y2, z2)
+    return det(y, z, y2, z2),
+        det(z, x, z2, x2),
+        det(x, y, x2, y2)
+end
+
 function math.lensq(x, y)
     return x*x+y*y
 end
