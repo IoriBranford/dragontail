@@ -1,0 +1,238 @@
+{
+  "bodyTypeName": "male",
+  "url": "https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/#?body=Body_color_amber&head=Human_male_amber&weapon=Saber_saber&shoes=Ghillies_leather&prosthesis_leg=none_Peg_leg&bandana=none_Bordered_Bandana&hair=Shorthawk_carrot&expression=Angry_amber&beard=Trimmed_Beard_carrot&clothes=Sleeveless_striped_green&legs=Shorts_green&earring_left=Simple_Earring_Left_steel&earring_right=Simple_Earring_Right_steel&eye_color=Eye_Color_green",
+  "spritesheets": "https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/spritesheets/",
+  "version": 1,
+  "datetime": "3/7/2025, 4:56:39 PM",
+  "credits": [
+    {
+      "fileName": "body/bodies/male/amber.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "bluecarrot16,JaidynReiman,Benjamin K. Smith (BenCreating),Evert,Eliza Wyatt (ElizaWy),TheraHedwig,MuffinElZangano,Durrani,Johannes Sjölund (wulax),Stephen Challener (Redshrike)",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-male-jumping-animation-by-durrani,https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle,https://opengameart.org/content/lpc-revised-character-basics,https://opengameart.org/content/lpc-be-seated,https://opengameart.org/content/lpc-runcycle-for-male-muscular-and-pregnant-character-bases-with-modular-heads,https://opengameart.org/content/lpc-jump-expanded,https://opengameart.org/content/lpc-character-bases",
+      "notes": "see details at https://opengameart.org/content/lpc-character-bases; 'Thick' Male Revised Run/Climb by JaidynReiman (based on ElizaWy's LPC Revised)"
+    },
+    {
+      "fileName": "head/heads/human/male/amber.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "bluecarrot16,Benjamin K. Smith (BenCreating),Stephen Challener (Redshrike)",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-character-bases",
+      "notes": "original head by Redshrike, tweaks by BenCreating, modular version by bluecarrot16"
+    },
+    {
+      "fileName": "head/faces/${head}/anger/amber.png",
+      "licenses": "OGA-BY 3.0",
+      "authors": "JaidynReiman,ElizaWy,Stephen Challener (Redshrike)",
+      "urls": "https://github.com/ElizaWy/LPC/tree/main/Characters/Head,https://opengameart.org/content/ulpc-expanded-expressions",
+      "notes": "Original by Redshrike, Expressions by ElizaWy, mapped to all frames by JaidynReiman"
+    },
+    {
+      "fileName": "eyes/human/adult/${expression}/green.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "JaidynReiman,ElizaWy,Stephen Challener (Redshrike)",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+      "notes": "original by Redshrike, Expressions by ElizaWy, eyes split from expressions and mapped to all frames by JaidynReiman"
+    },
+    {
+      "fileName": "beards/beard/trimmed/carrot.png",
+      "licenses": "OGA-BY 3.0",
+      "authors": "ElizaWy",
+      "urls": "https://github.com/ElizaWy/LPC/tree/main/Characters/Hair,https://opengameart.org/content/expanded-universal-lpc-spritesheet-idle-run-jump-lpc-revised-combat-and-assets",
+      "notes": ""
+    },
+    {
+      "fileName": "hair/shorthawk/male/carrot.png",
+      "licenses": "CC-BY-SA 3.0,GPL 3.0",
+      "authors": "Manuel Riecke (MrBeast)",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "notes": ""
+    },
+    {
+      "fileName": "facial/earrings/simple/left/adult/steel.png",
+      "licenses": "CC0",
+      "authors": "bluecarrot16",
+      "urls": "https://opengameart.org/content/lpc-pirates",
+      "notes": ""
+    },
+    {
+      "fileName": "facial/earrings/simple/right/adult/steel.png",
+      "licenses": "CC0",
+      "authors": "bluecarrot16",
+      "urls": "https://opengameart.org/content/lpc-pirates",
+      "notes": ""
+    },
+    {
+      "fileName": "torso/clothes/sleeveless/striped/male/green.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "bluecarrot16,Matthew Krohn (makrohn),JaidynReiman,Marcel van de Steeg (MadMarcel),Nila122,Johannes Sjölund (wulax),Stephen Challener (Redshrike)",
+      "urls": "https://opengameart.org/content/lpc-female-orcogregoblintroll-base-walkcycle,https://opengameart.org/content/lpc-curly-hair-elven-ears-white-cape-with-blue-trim-and-more,https://opengameart.org/content/more-lpc-clothes-and-hair,https://opengameart.org/content/lpc-pirates",
+      "notes": ""
+    },
+    {
+      "fileName": "legs/shorts/shorts/male/green.png",
+      "licenses": "OGA-BY 3.0,GPL 3.0",
+      "authors": "JaidynReiman,ElizaWy,Bluecarrot16,Johannes Sjölund (wulax),Stephen Challener (Redshrike)",
+      "urls": "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-pants",
+      "notes": "Original bases by Redshrike, thrust/shoot bases by Wulax, original overalls and shorts by ElizaWy, base animations adapted from v3 overalls by bluecarrot16, shorts by JaidynReiman"
+    },
+    {
+      "fileName": "feet/shoes/ghillies/male/leather.png",
+      "licenses": "CC-BY-SA 3.0,GPL 3.0",
+      "authors": "bluecarrot16,JaidynReiman,Thane Brimhall (pennomi),laetissima,Matthew Krohn (makrohn)",
+      "urls": "https://opengameart.org/content/lpc-2-characters,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-expanded-socks-shoes",
+      "notes": "original by pennomi, laetissima and makrohn; edited for v3 bases by bluecarrot16, Jump/Sit/Emote/Run/Revised Combat by JaidynReiman"
+    },
+    {
+      "fileName": "weapon/sword/saber/saber.png",
+      "licenses": "CC-BY-SA 3.0",
+      "authors": "Daniel Eddeland (daneeklu),Johannes Sjölund (wulax),gr3yh47,bluecarrot16",
+      "urls": "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-extended-weapon-animations",
+      "notes": ""
+    },
+    {
+      "fileName": "weapon/sword/saber/universal_behind/saber.png",
+      "licenses": "CC-BY-SA 3.0",
+      "authors": "Daniel Eddeland (daneeklu),Johannes Sjölund (wulax),gr3yh47,bluecarrot16",
+      "urls": "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-extended-weapon-animations",
+      "notes": ""
+    },
+    {
+      "fileName": "weapon/sword/saber/attack_slash/behind/saber.png",
+      "licenses": "CC-BY-SA 3.0",
+      "authors": "Daniel Eddeland (daneeklu),Johannes Sjölund (wulax),gr3yh47,bluecarrot16",
+      "urls": "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-extended-weapon-animations",
+      "notes": ""
+    },
+    {
+      "fileName": "weapon/sword/saber/attack_slash/saber.png",
+      "licenses": "CC-BY-SA 3.0",
+      "authors": "Daniel Eddeland (daneeklu),Johannes Sjölund (wulax),gr3yh47,bluecarrot16",
+      "urls": "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-extended-weapon-animations",
+      "notes": ""
+    }
+  ],
+  "layers": [
+    {
+      "fileName": "weapon/sword/saber/attack_slash/behind/saber.png",
+      "zPos": 8,
+      "custom_animation": "slash_oversize",
+      "parentName": "weapon",
+      "name": "Saber",
+      "variant": "saber",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "weapon/sword/saber/universal_behind/saber.png",
+      "zPos": 9,
+      "parentName": "weapon",
+      "name": "Saber",
+      "variant": "saber",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "body/bodies/male/amber.png",
+      "zPos": 10,
+      "parentName": "body",
+      "name": "Body_color",
+      "variant": "amber",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "feet/shoes/ghillies/male/leather.png",
+      "zPos": 15,
+      "parentName": "shoes",
+      "name": "Ghillies",
+      "variant": "leather",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "legs/shorts/shorts/male/green.png",
+      "zPos": 20,
+      "parentName": "legs",
+      "name": "Shorts",
+      "variant": "green",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "torso/clothes/sleeveless/striped/male/green.png",
+      "zPos": 35,
+      "parentName": "clothes",
+      "name": "Sleeveless_striped",
+      "variant": "green",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "head/heads/human/male/amber.png",
+      "zPos": 100,
+      "parentName": "head",
+      "name": "Human_male",
+      "variant": "amber",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "head/faces/male/anger/amber.png",
+      "zPos": 101,
+      "parentName": "expression",
+      "name": "Angry",
+      "variant": "amber",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "eyes/human/adult/anger/green.png",
+      "zPos": 105,
+      "parentName": "eye_color",
+      "name": "Eye_Color",
+      "variant": "green",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "beards/beard/trimmed/carrot.png",
+      "zPos": 110,
+      "parentName": "beard",
+      "name": "Trimmed_Beard",
+      "variant": "carrot",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "facial/earrings/simple/left/adult/steel.png",
+      "zPos": 115,
+      "parentName": "earring_left",
+      "name": "Simple_Earring_Left",
+      "variant": "steel",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "facial/earrings/simple/right/adult/steel.png",
+      "zPos": 115,
+      "parentName": "earring_right",
+      "name": "Simple_Earring_Right",
+      "variant": "steel",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "hair/shorthawk/male/carrot.png",
+      "zPos": 120,
+      "parentName": "hair",
+      "name": "Shorthawk",
+      "variant": "carrot",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "weapon/sword/saber/saber.png",
+      "zPos": 140,
+      "parentName": "weapon",
+      "name": "Saber",
+      "variant": "saber",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "weapon/sword/saber/attack_slash/saber.png",
+      "zPos": 150,
+      "custom_animation": "slash_oversize",
+      "parentName": "weapon",
+      "name": "Saber",
+      "variant": "saber",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    }
+  ]
+}
