@@ -101,7 +101,16 @@ function Dodge:dodge(opponent, dodgeangle)
     tooppox, tooppoy = math.norm(tooppox, tooppoy)
     Face.faceVector(self, tooppox, tooppoy, "Walk")
     Audio.play(self.stopdashsound)
-    Slide.slide(self, dodgeangle, self.dodgespeed, self.dodgedecel)
+    local speed, decel = self.dodgespeed, self.dodgedecel
+    repeat
+        speed = Slide.updateSlideSpeed(self, dodgeangle, speed, decel)
+        coroutine.yield()
+        self:keepInBounds()
+        local newstate, a, b, c, d, e, f = self:duringDodge(opponent)
+        if newstate then
+            return newstate, a, b, c, d, e, f
+        end
+    until speed == 0
 end
 
 return Dodge

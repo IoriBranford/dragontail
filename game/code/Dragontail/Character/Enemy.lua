@@ -133,7 +133,10 @@ end
 
 function Enemy:dodgeIncoming(dodgeangle)
     local opponent = self.opponents[1]
-    Dodge.dodge(self, opponent, dodgeangle)
+    local newstate, a, b, c, d, e, f = Dodge.dodge(self, opponent, dodgeangle)
+    if newstate then
+        return newstate, a, b, c, d, e, f
+    end
     -- local attacktype = not opponent.attacker and self.attacktype
     -- if attacktype then
     --     local attackradius = self.attackradius

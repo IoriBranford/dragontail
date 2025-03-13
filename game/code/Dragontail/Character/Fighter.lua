@@ -429,6 +429,9 @@ end
 function Fighter:duringGetUp(attacker)
 end
 
+function Fighter:duringDodge()
+end
+
 function Fighter:getup(attacker)
     self:beforeGetUp()
     local time = self.getuptime or 27
