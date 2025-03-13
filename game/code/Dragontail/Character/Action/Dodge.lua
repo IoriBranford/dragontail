@@ -61,8 +61,7 @@ function Dodge:getDodgeVector(incoming)
     return raycast.dx, raycast.dy
 end
 
----@param incoming Character
-function Dodge:findDodgeAngle(incoming)
+function Dodge:findDodgeAngle()
     local dodgespeed = self.dodgespeed
     if not dodgespeed then
         return
