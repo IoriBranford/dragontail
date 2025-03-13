@@ -195,13 +195,6 @@ function Enemy:navigateAroundSolid(destx, desty)
 end
 
 function Enemy:duringApproach(target)
-    -- local oppox, oppoy = opponent.x, opponent.y
-    -- local tooppox, tooppoy = oppox - self.x, oppoy - self.y
-    -- local seesopponent = math.dot(math.cos(self.faceangle), math.sin(self.faceangle), tooppox, tooppoy) >= 0
-    local dodgeangle = self:isFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self, target)
-    if dodgeangle then
-        return "dodgeIncoming", dodgeangle
-    end
 end
 
 function Enemy:approach()
