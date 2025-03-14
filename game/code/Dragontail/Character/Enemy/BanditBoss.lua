@@ -4,8 +4,6 @@ local Audio    = require "System.Audio"
 local Characters = require "Dragontail.Stage.Characters"
 local Stage      = require "Dragontail.Stage"
 local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
-local Dodge                = require "Dragontail.Character.Action.Dodge"
-local Face       = require "Dragontail.Character.Action.Face"
 
 --- Attacks:
 --- - Lance charge
@@ -30,48 +28,6 @@ local OneSwitchAttackHealthPercent = .5
 local TwoSwitchAttackHealthPercent = .25
 local FirstSummonHealthPercent = .6
 local SecondSummonHealthPercent = .3
-
-function BanditBoss:duringStand()
-    local opponent = self.opponents[1]
-    Face.facePosition(self, opponent.x, opponent.y, "Stand")
-    -- local oppox, oppoy = opponent.x, opponent.y
-    -- local tooppox, tooppoy = oppox - self.x, oppoy - self.y
-    -- local seesopponent = math.dot(math.cos(self.faceangle), math.sin(self.faceangle), tooppox, tooppoy) >= 0
-    local dodgeangle = self:isFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self)
-    if dodgeangle then
-        self.numdodges = (self.numdodges or 0) + 1
-        return "dodgeIncoming", dodgeangle
-    end
-end
-
-function BanditBoss:duringApproach()
-    -- local oppox, oppoy = opponent.x, opponent.y
-    -- local tooppox, tooppoy = oppox - self.x, oppoy - self.y
-    -- local seesopponent = math.dot(math.cos(self.faceangle), math.sin(self.faceangle), tooppox, tooppoy) >= 0
-    local dodgeangle = self:isFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self)
-    if dodgeangle then
-        self.numdodges = (self.numdodges or 0) + 1
-        return "dodgeIncoming", dodgeangle
-    end
-end
-
-function BanditBoss:duringDodge()
-    if (self.numdodges or 0) >= 1 then
-        if math.abs(self.velx) < 1 and math.abs(self.vely) < 1 then
-            local attacktype = "bandit-boss-thrust"
-            local attackdata = Database.get(attacktype)
-            local opponent = self.opponents[1]
-            local attackradius = opponent.bodyradius + Enemy.TotalAttackRange(
-                attackdata and attackdata.attackradius or 32,
-                attackdata and attackdata.attacklungespeed or 0,
-                attackdata and attackdata.attacklungedecel or 1)
-
-            if math.distsq(self.x, self.y, opponent.x, opponent.y) <= attackradius*attackradius then
-                return "attack", attacktype
-            end
-        end
-    end
-end
 
 function BanditBoss:getBestAttack(opponent)
     local targetx, targety = opponent.x, opponent.y
@@ -118,20 +74,11 @@ function BanditBoss:getAttackSwitch(target)
 end
 
 function BanditBoss:duringPrepareAttack(target)
-    if (self.numdodges or 0) < 1 then
-        local dodgeangle = self:isFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self)
-        if dodgeangle then
-            self.numdodges = (self.numdodges or 0) + 1
-            self.color = self:getAttackFlashColor(0)
-            return "dodgeIncoming", dodgeangle
-        end
-    end
     self:accelerateTowardsVel(0, 0, 4)
     return self:getAttackSwitch(target)
 end
 
 function BanditBoss:duringAttackSwing(target)
-    self.numdodges = 0
     local turnspeed = self.attackspinspeed or 0
     if turnspeed ~= 0 then
         self.attackangle = self.attackangle + turnspeed
