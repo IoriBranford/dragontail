@@ -39,14 +39,10 @@ function SpearBandit:duringDodge()
     if (self.numdodges or 0) >= 2 then
         if math.abs(self.velx) < 1 and math.abs(self.vely) < 1 then
             local attacktype = "spear-poke"
-            local attackdata = Database.get(attacktype)
             local opponent = self.opponents[1]
-            local attackradius = opponent.bodyradius + Enemy.TotalAttackRange(
-                attackdata and attackdata.attackradius or 32,
-                attackdata and attackdata.attacklungespeed or 0,
-                attackdata and attackdata.attacklungedecel or 1)
+            local maxcounterdist = 128
 
-            if math.distsq(self.x, self.y, opponent.x, opponent.y) <= attackradius*attackradius then
+            if math.distsq(self.x, self.y, opponent.x, opponent.y) <= maxcounterdist*maxcounterdist then
                 return "attack", attacktype
             end
         end
@@ -66,7 +62,7 @@ function SpearBandit:duringPrepareAttack(target)
             return "dodgeIncoming", dodgeangle
         end
     end
-    return Enemy.duringPrepareAttack(self, target)
+    self:accelerateTowardsVel(0, 0, 4)
 end
 
 function SpearBandit:duringAttackSwing(target)
