@@ -198,9 +198,7 @@ function Enemy:duringApproach(target)
 end
 
 function Enemy:approach()
-    local x, y = self.x, self.y
     local opponent = self.opponents[1] ---@type Player
-    local oppox, oppoy = opponent.x, opponent.y
 
     local attackerslot = self:findAttackerSlot(opponent)
     if not attackerslot then
@@ -208,10 +206,10 @@ function Enemy:approach()
     end
     local destx, desty = self:navigateAroundSolid(self:getAttackerSlotPosition(opponent, attackerslot))
 
-    Face.faceVector(self, destx - x, desty - y, "Walk")
+    Face.faceVector(self, destx - self.x, desty - self.y, "Walk")
 
     local speed = self.speed or 2
-    if distsq(x, y, oppox, oppoy) > 320*320 then
+    if distsq(self.x, self.y, opponent.x, opponent.y) > 320*320 then
         speed = speed * 1.5
     end
 
@@ -233,7 +231,7 @@ function Enemy:approach()
     if attacktype and opponent.canbeattacked then
         local attackradius = totalAttackRange(self.attackradius or 64, self.attacklungespeed or 0, self.attacklungedecel or 1) + opponent.bodyradius
 
-        if distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
+        if distsq(self.x, self.y, opponent.x, opponent.y) <= attackradius*attackradius then
             Face.facePosition(self, opponent.x, opponent.y)
             return "attack", attacktype
         end
