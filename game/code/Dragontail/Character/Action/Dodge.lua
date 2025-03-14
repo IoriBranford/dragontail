@@ -18,7 +18,7 @@ function Dodge:getDodgeVector(incoming)
     local fromoppoy, fromoppox = self.y - oppoy, self.x - oppox
     local oppospeedsq = math.lensq(oppovelx, oppovely)
     local dsq = math.lensq(fromoppox, fromoppoy)
-    local dodgewithintime = self.dodgewithintime or 30
+    local dodgewithintime = self.dodgewithintime or 60
     if dsq > oppospeedsq * dodgewithintime * dodgewithintime then
         return
     end
