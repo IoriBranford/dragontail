@@ -343,6 +343,7 @@ function Player:control()
         else
             -- self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
             if attackpressed then
+                Face.updateTurnToDestAngle(self, pi)
                 if not self.weaponinhand then
                     return doComboAttack(self, self.facedestangle)
             --     end
