@@ -6,40 +6,24 @@ local co_create = coroutine.create
 local co_resume = coroutine.resume
 local co_status = coroutine.status
 
----@class StateData
----@field action function
----@field animation string
----@field frame integer
----@field loop integer
+---@class State:Character,Face
+---@field state string
+---@field stateaction string?
+---@field stateanimation string?
+---@field stateframe1 integer?
+---@field stateloopframe integer?
 ---@field canbeattacked boolean
 ---@field canbegrabbed boolean
----@field sound string
-
----@class State:Character,Face
----@field state string?
+---@field statesound string?
 ---@field thread thread?
 local State = {}
 
-local StateVarsOnChange = {
-    "canbeattacked",
-    "canbegrabbed",
-    "canbejuggled",
-    "bodysolid",
-    "color"
-}
-
 function State.start(self, statename, ...)
-    local state = Database.get(statename) ---@type StateData
-    if state then
-        self.state = statename
-        for _, var in ipairs(StateVarsOnChange) do
-            if state[var] ~= nil then
-                self[var] = state[var]
-            end
-        end
+    if Database.get(statename) then
+        Database.fill(self, statename)
 
-        local animationname = state.animation
-        local frame = state.frame
+        local animationname = self.stateanimation
+        local frame = self.stateframe1
         if animationname or frame then
             local aseprite = self.aseprite
             if aseprite then
@@ -54,14 +38,14 @@ function State.start(self, statename, ...)
                     end
                 end
 
-                self:changeAseAnimation(animationname, frame, state.loop)
+                self:changeAseAnimation(animationname, frame, self.stateloopframe)
             end
         end
         -- DirectionalAnimation.set(self, animationname, angle, frame, state.loop)
 
-        Audio.play(state.sound)
+        Audio.play(self.statesound)
 
-        local action = self[state.action]
+        local action = self[self.stateaction]
         if type(action) == "function" then
             self.thread = co_create(action)
             State.run(self, ...)

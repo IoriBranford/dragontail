@@ -1,4 +1,4 @@
-state,action,animation,frame,loop,canbeattacked,canbegrabbed,canbejuggled,bodysolid,color,sound
+state,stateaction,stateanimation,stateframe1,stateloopframe,canbeattacked,canbegrabbed,canbejuggled,bodysolid,color,statesound
 hurt,hurt,Hurt,,0,FALSE,FALSE,FALSE,,4294967295,
 held,held,Hurt,,,TRUE,FALSE,FALSE,FALSE,4294967295,
 knockedBack,knockedBack,Hurt,,,FALSE,FALSE,TRUE,,,
