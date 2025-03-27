@@ -230,6 +230,9 @@ function Fighter:knockedBack(thrower, attackangle)
     return self.aiafterthrown or "fall", thrower
 end
 
+function Fighter:afterWallBump(thrower)
+end
+
 function Fighter:wallBump(thrower, oobx, ooby)
     oobx, ooby = norm(oobx or 0, ooby or 0)
     self:stopAttack()
@@ -246,10 +249,9 @@ function Fighter:wallBump(thrower, oobx, ooby)
     self.hurtstun = self.wallbumpstun or 3
     self.velx, self.vely, self.velz = 0, 0, 0
     yield()
-    local wallslamcounterattack = self.wallslamcounterattack
-    if self.health > 0 and wallslamcounterattack and self.attack then
-        Database.fill(self, wallslamcounterattack)
-        return "attack", wallslamcounterattack
+    local nextstate, a, b, c, d, e, f = self:afterWallBump(thrower)
+    if nextstate then
+        return nextstate, a, b, c, d, e, f
     end
     return "fall", thrower
 end
@@ -303,6 +305,9 @@ function Fighter:thrown(thrower, attackangle)
     return self.aiafterthrown or "fall", thrower
 end
 
+function Fighter:afterWallSlammed(thrower)
+end
+
 function Fighter:wallSlammed(thrower, oobx, ooby)
     oobx, ooby = norm(oobx or 0, ooby or 0)
     local bodyradius = self.bodyradius or 1
@@ -319,10 +324,9 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
     self:stopAttack()
     self.hurtstun = self.wallslamstun or 20
     yield()
-    local wallslamcounterattack = self.wallslamcounterattack
-    if self.health > 0 and wallslamcounterattack and self.attack then
-        Database.fill(self, wallslamcounterattack)
-        return "attack", wallslamcounterattack
+    local nextstate, a, b, c, d, e, f = self:afterWallSlammed(thrower)
+    if nextstate then
+        return nextstate, a, b, c, d, e, f
     end
     return "fall", thrower
 end

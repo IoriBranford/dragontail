@@ -36,7 +36,6 @@ local MaxProjectileItems = 16
 ---@field wallbumpstun integer?
 ---@field wallslamdamage number?
 ---@field wallslamstun integer?
----@field wallslamcounterattack string?
 ---@field bodyslamsound string?
 
 ---@class Defeat
