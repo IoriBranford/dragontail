@@ -42,6 +42,7 @@ function Character:init()
     self.maxhealth = self.maxhealth or self.health
 
     Body.init(self)
+    State.init(self)
 
     self.drawz = self.drawz or 0
     self.attackradius = self.attackradius or 0
