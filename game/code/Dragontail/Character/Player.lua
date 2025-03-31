@@ -2,7 +2,7 @@ local Controls = require "Dragontail.Controls"
 local Database = require "Data.Database"
 local Audio    = require "System.Audio"
 local Movement = require "Component.Movement"
-local State   = require "Dragontail.Character.State"
+local StateMachine   = require "Dragontail.Character.StateMachine"
 local Fighter  = require "Dragontail.Character.Fighter"
 local Character= require "Dragontail.Character"
 local AttackerSlot = require "Dragontail.Character.AttackerSlot"
@@ -636,7 +636,7 @@ function Player:hold(enemy)
             return doComboAttack(self, holdangle, enemy)
         end
     end
-    State.start(enemy, "breakaway", self)
+    StateMachine.start(enemy, "breakaway", self)
     return "breakaway", enemy
 end
 
@@ -689,7 +689,7 @@ function Player:runWithEnemy(enemy)
         local oobx, ooby = HoldOpponent.handleOpponentCollision(self)
         if oobx or ooby then
             HoldOpponent.stopHolding(self, enemy)
-            State.start(enemy, "wallSlammed", self, oobx, ooby)
+            StateMachine.start(enemy, "wallSlammed", self, oobx, ooby)
             return "straightAttack", "running-elbow", self.faceangle
         end
 
@@ -703,7 +703,7 @@ function Player:runWithEnemy(enemy)
             enemy:stopAttack()
             HoldOpponent.stopHolding(self, enemy)
             enemy.canbeattacked = true
-            State.start(enemy, "knockedBack", self, self.faceangle)
+            StateMachine.start(enemy, "knockedBack", self, self.faceangle)
             return "control"
         end
     end
@@ -769,7 +769,7 @@ function Player:spinAndKickEnemy(attacktype, angle, enemy)
     -- if self.attackdamage then
     --     enemy.health = enemy.health - self.attackdamage
     -- end
-    -- State.start(enemy, enemy.thrownai or "thrown", self, atan2(throwy, throwx))
+    -- StateMachine.start(enemy, enemy.thrownai or "thrown", self, atan2(throwy, throwx))
     return "straightAttack", "holding-kick", atan2(throwy, throwx)
 end
 

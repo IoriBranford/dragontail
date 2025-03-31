@@ -2,7 +2,7 @@ local Scene = require "System.Scene"
 local Tiled     = require "Tiled"
 local Audio     = require "System.Audio"
 local Movement  = require "Component.Movement"
-local State       = require "Dragontail.Character.State"
+local StateMachine       = require "Dragontail.Character.StateMachine"
 local Characters  = require "Dragontail.Stage.Characters"
 local CameraPath  = require "Object.CameraPath"
 local Config      = require "System.Config"
@@ -123,7 +123,7 @@ function Stage.init(stagefile)
     if not eventthread then
         local players = Characters.getGroup("players")
         for _, player in ipairs(players) do
-            State.start(player, "control")
+            StateMachine.start(player, "control")
         end
     end
 end
@@ -210,7 +210,7 @@ function Stage.openRoom(i)
     else
         winningteam = "players"
         for _, player in ipairs(Characters.getGroup("players")) do
-            State.start(player, "victory")
+            StateMachine.start(player, "victory")
         end
         Audio.fadeMusic()
     end

@@ -1,7 +1,7 @@
 local Database      = require "Data.Database"
 local Color      = require "Tiled.Color"
 local Config      = require "System.Config"
-local State       = require "Dragontail.Character.State"
+local StateMachine       = require "Dragontail.Character.StateMachine"
 local Object      = require "Tiled.Object"
 local Movement    = require "Component.Movement"
 local Attack      = require "Dragontail.Character.Attack"
@@ -42,7 +42,7 @@ function Character:init()
     self.maxhealth = self.maxhealth or self.health
 
     Body.init(self)
-    State.init(self)
+    StateMachine.init(self)
 
     self.drawz = self.drawz or 0
     self.attackradius = self.attackradius or 0
@@ -169,7 +169,7 @@ function Character:fixedupdate()
     if self:fixedupdateHitStop() then
         self:animate(1)
         Body.updatePosition(self)
-        State.run(self)
+        StateMachine.run(self)
         Body.updateGravity(self)
     end
 end
@@ -229,10 +229,10 @@ function Character:collideWithCharacterAttack(attacker)
         end
 
         if self.guardangle or not canbedamagedbyattack then
-            State.start(self, guardhitai, attacker)
+            StateMachine.start(self, guardhitai, attacker)
             hitai = attacker.attackguardedai or hitai
         else
-            State.start(self, hurtai, attacker)
+            StateMachine.start(self, hurtai, attacker)
             if attacker.hitstun <= 0 then
                 attacker.hitstun = attacker.attackstunself or 3
             end
@@ -240,7 +240,7 @@ function Character:collideWithCharacterAttack(attacker)
             attacker.numopponentshit = (attacker.numopponentshit or 0) + 1
         end
         if hitai then
-            State.start(attacker, hitai, self)
+            StateMachine.start(attacker, hitai, self)
         end
         return true
     end

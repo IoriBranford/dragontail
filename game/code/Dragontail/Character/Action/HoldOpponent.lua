@@ -1,7 +1,7 @@
 local Characters = require "Dragontail.Stage.Characters"
 local Body       = require "Dragontail.Character.Body"
 local Audio    = require "System.Audio"
-local State   = require "Dragontail.Character.State"
+local StateMachine   = require "Dragontail.Character.StateMachine"
 
 ---@class HeldByOpponent:Character
 ---@field heldby HoldOpponent?
@@ -24,7 +24,7 @@ function HoldOpponent:startHolding(opponent)
     opponent:stopGuarding()
     opponent.heldby = self
     Audio.play(self.holdsound)
-    State.start(opponent, opponent.heldai or "held", self)
+    StateMachine.start(opponent, opponent.heldai or "held", self)
 end
 
 ---@param opponent HeldByOpponent

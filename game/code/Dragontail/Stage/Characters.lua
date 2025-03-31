@@ -1,6 +1,6 @@
 local Database = require "Data.Database"
 local Character= require "Dragontail.Character"
-local State    = require "Dragontail.Character.State"
+local StateMachine    = require "Dragontail.Character.StateMachine"
 local Assets = require "Tiled.Assets"
 local TiledObject  = require "Tiled.Object"
 local Body         = require "Dragontail.Character.Body"
@@ -110,7 +110,7 @@ function Characters.spawn(object)
         if not ok then print(err) end
     end
     if character.initialai then
-        State.start(character, character.initialai)
+        StateMachine.start(character, character.initialai)
     end
     character:addToScene(scene)
     allcharacters[#allcharacters+1] = character

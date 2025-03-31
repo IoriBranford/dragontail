@@ -1,6 +1,6 @@
 local Audio     = require "System.Audio"
 local Database    = require "Data.Database"
-local State       = require "Dragontail.Character.State"
+local StateMachine       = require "Dragontail.Character.StateMachine"
 local Color       = require "Tiled.Color"
 local Character   = require "Dragontail.Character"
 local Characters  = require "Dragontail.Stage.Characters"
@@ -112,7 +112,7 @@ function Common:dropDefeatItem()
             item.velz = item.gravity * popouttime / 2
         end
         item.opponents = self.opponents
-        State.start(item, "itemWaitForPickup")
+        StateMachine.start(item, "itemWaitForPickup")
     end
 end
 
