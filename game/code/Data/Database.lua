@@ -1,6 +1,7 @@
 local Database = {}
 local Csv   = require "Data.Csv"
 local Tiled = require "Tiled"
+local tablex= require "pl.tablex"
 local type = type
 local pairs = pairs
 
@@ -30,7 +31,7 @@ function Database.add(key, row, overwrite)
         end
         return existingrow
     else
-        database[key] = row
+        database[key] = tablex.copy(row)
         return row
     end
 end
