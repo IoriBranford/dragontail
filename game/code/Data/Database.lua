@@ -75,13 +75,11 @@ function Database.loadMapObjects(mapfilename, overwrite)
 end
 
 function Database.load(csvfilename, overwrite)
-    local loadedrows = Csv.load(csvfilename)
-    local fieldnames = loadedrows[1]
-    for i = 1, #fieldnames do
-        fieldnames[i] = fieldnames[i]:match("^([_A-Za-z]+)")
-    end
-    for r = 2, #loadedrows do
-        local row = loadedrows[r]
+    local tbl = Csv.load(csvfilename)
+    local fieldnames = tbl[1]
+
+    for r = 2, #tbl do
+        local row = tbl[r]
         local key = row[1]
         for c = #row, 1, -1 do
             local field = fieldnames[c]
@@ -94,13 +92,14 @@ function Database.load(csvfilename, overwrite)
             end
             row[c] = nil
         end
-        loadedrows[key] = add(key, row, overwrite)
+        tbl[key] = row
+        add(key, row, overwrite)
     end
-    for i = #loadedrows, 1, -1 do
-        loadedrows[i] = nil
+    for i = #tbl, 1, -1 do
+        tbl[i] = nil
     end
-    tables[csvfilename] = loadedrows
-    return loadedrows
+    tables[csvfilename] = tbl
+    return tbl
 end
 
 function Database.get(key)
