@@ -48,7 +48,7 @@ local StateVarsToCopy = {
 }
 
 function StateMachine.start(self, statename, ...)
-    local state = self.statetable and self.statetable[statename] or Database.get(statename)
+    local state = self.statetable and self.statetable[statename]
     if state then
         self.state = state
         for i = 1, #StateVarsToCopy do
@@ -58,7 +58,7 @@ function StateMachine.start(self, statename, ...)
             end
         end
 
-        local attackdata = self.attacktable and self.attacktable[state.attack] or Database.get(state.attack)
+        local attackdata = self.attacktable and self.attacktable[state.attack]
         if attackdata then
             Database.fill(self, attackdata)
         end
@@ -79,7 +79,7 @@ function StateMachine.start(self, statename, ...)
                     end
                 end
 
-                self:changeAseAnimation(animationname, frame, state.loopframe)
+                self:setAseAnimation(animationname, frame, state.loopframe)
             end
         end
         -- DirectionalAnimation.set(self, animationname, angle, frame, state.loop)
