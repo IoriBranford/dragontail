@@ -60,7 +60,10 @@ function StateMachine.start(self, statename, ...)
 
         local attackdata = self.attacktable and self.attacktable[state.attack]
         if attackdata then
+            self.attacktype = state.attack
             Database.fill(self, attackdata)
+        else
+            self.attacktype = nil
         end
 
         local animationname = state.animation
@@ -111,9 +114,11 @@ function StateMachine.run(self, ...)
             if statetime then
                 if statetime <= 0 then
                     nextstate = self.nextstate
+                    self.statetime = nil
+                else
+                    statetime = statetime - 1
+                    self.statetime = statetime
                 end
-                statetime = statetime - 1
-                self.statetime = statetime
             end
         end
 
