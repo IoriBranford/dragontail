@@ -269,13 +269,11 @@ function Fighter:thrown(thrower, attackangle)
         end
     end
     self.hurtstun = 0
-    self.attacktype = "human-thrown"
-    Database.fill(self, "human-thrown")
     local thrownspeed = thrower.attacklaunchspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
     self.velz = thrower.attackpopupspeed or 4
-    local thrownsound = Audio.newSource(self.swingsound)
-    thrownsound:play()
+    local thrownsound = self.swingsound and Audio.newSource(self.swingsound)
+    if thrownsound then thrownsound:play() end
     local thrownslidetime = self.thrownslidetime or 10
     local oobx, ooby, oobz
     local oobdotvel = 0
@@ -293,7 +291,7 @@ function Fighter:thrown(thrower, attackangle)
                 / math.len(oobx, ooby)
         end
     until thrownslidetime <= 0 or oobdotvel > .5
-    thrownsound:stop()
+    if thrownsound then thrownsound:stop() end
     self.thrower = nil
     if oobdotvel > .5 then
         return "wallSlammed", thrower, oobx, ooby

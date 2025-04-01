@@ -59,7 +59,7 @@ end
 function Enemy:duringStand()
     local opponent = self.opponents[1]
     Face.facePosition(self, opponent.x, opponent.y, "Stand")
-    local dodgeangle = self:isFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self, opponent)
+    local dodgeangle = self:isFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self)
     if dodgeangle then
         return "dodgeIncoming", dodgeangle
     end
@@ -92,9 +92,7 @@ function Enemy:decideNextAttack()
         if not attacktype then
             attacktype = attackchoices[lm_random(#attackchoices)]
         end
-        self.attacktype = attacktype
     end
-    Database.fill(self, attacktype)
     return attacktype
 end
 
@@ -113,7 +111,8 @@ function Enemy:afterStand()
     and toopposq <= attackradius*attackradius
     and self:isFullyOnCamera(self.camera)
     then
-        return "attack", attacktype
+        opponent.attacker = self
+        return attacktype
     end
     return "approach"
 end
@@ -137,14 +136,6 @@ function Enemy:dodgeIncoming(dodgeangle)
     if newstate then
         return newstate, a, b, c, d, e, f
     end
-    -- local attacktype = not opponent.attacker and self.attacktype
-    -- if attacktype then
-    --     local attackradius = self.attackradius
-    --     x, y, oppox, oppoy = self.x, self.y, opponent.x, opponent.y
-    --     if distsq(x, y, oppox, oppoy) <= attackradius*attackradius then
-    --         return "attack", attacktype
-    --     end
-    -- end
     return "stand"
 end
 
@@ -233,7 +224,7 @@ function Enemy:approach()
 
         if distsq(self.x, self.y, opponent.x, opponent.y) <= attackradius*attackradius then
             Face.facePosition(self, opponent.x, opponent.y)
-            return "attack", attacktype
+            return attacktype
         end
     end
     if reached then
@@ -299,7 +290,7 @@ end
 
 function Enemy:interruptWithDodge(target)
     if target then
-        local dodgeangle = Dodge.findDodgeAngle(self, target)
+        local dodgeangle = Dodge.findDodgeAngle(self)
         if dodgeangle then
             if target.attacker == self then
                 target.attacker = nil
@@ -309,11 +300,7 @@ function Enemy:interruptWithDodge(target)
     end
 end
 
-function Enemy:prepareAttack(attacktype, targetx, targety)
-    if attacktype then
-        self.attacktype = attacktype
-        Database.fill(self, attacktype)
-    end
+function Enemy:prepareAttack(targetx, targety)
     self.numopponentshit = 0
     self:stopGuarding()
     self.canbeattacked = not self.attackwindupinvuln
@@ -330,7 +317,6 @@ function Enemy:prepareAttack(attacktype, targetx, targety)
     targety = targety or self.y
     Face.faceVector(self, targetx - self.x, targety - self.y, self.windupanimation, 1, self.windupanimationloopframe or 0)
 
-    Audio.play(self.windupsound)
     for t = 1, (self.attackwinduptime or 20) do
         self.color = self:getAttackFlashColor(t)
 
@@ -349,10 +335,7 @@ end
 function Enemy:duringAttackSwing(target)
 end
 
-function Enemy:executeAttack(attacktype, targetx, targety, targetz)
-    if attacktype then
-        Database.fill(self, attacktype)
-    end
+function Enemy:executeAttack(targetx, targety, targetz)
     self.numopponentshit = 0
     self:stopGuarding()
 
@@ -363,8 +346,8 @@ function Enemy:executeAttack(attacktype, targetx, targety, targetz)
         targetx, targety, targetz = target.x, target.y, target.z
     end
 
-    targetx = targetx or self.x
-    targety = targety or self.y
+    targetx = targetx or (self.x + cos(self.faceangle))
+    targety = targety or (self.y + sin(self.faceangle))
     Face.faceVector(self, targetx - self.x, targety - self.y, self.swinganimation, 1, self.swinganimationloopframe or 0)
 
     Audio.play(self.swingsound)
@@ -409,14 +392,14 @@ function Enemy:executeAttack(attacktype, targetx, targety, targetz)
     until afterhittime <= 0
 end
 
-function Enemy:attack(attacktype)
+function Enemy:attack()
     local opponent = self.opponents[1]
     local targetx, targety, targetz = opponent.x, opponent.y, opponent.z
-    local state, a, b, c, d, e, f = self:prepareAttack(attacktype, opponent)
+    local state, a, b, c, d, e, f = self:prepareAttack(opponent)
     if state then
         return state, a, b, c, d, e, f
     end
-    state, a, b, c, d, e, f = self:executeAttack(attacktype, targetx, targety, targetz)
+    state, a, b, c, d, e, f = self:executeAttack(targetx, targety, targetz)
     if state then
         return state, a, b, c, d, e, f
     end
@@ -515,13 +498,13 @@ function Enemy:guardHit(attacker)
         if self.numguardedhits >= guardhitstocounterattack then
             self.numguardedhits = 0
             self:stopGuarding()
-            return "attack", guardcounterattack
+            return guardcounterattack
         end
     end
     return "guard"
         -- local afterguardattacktype = self.afterguardattacktype
         -- if afterguardattacktype then
-        --     return "attack", afterguardattacktype
+        --     return afterguardattacktype
         -- end
         -- return afterguardhitai or "stand"
     -- end

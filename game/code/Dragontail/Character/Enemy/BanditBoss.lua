@@ -44,8 +44,6 @@ end
 function BanditBoss:decideNextAttack()
     local opponent = self.opponents[1]
     local attacktype = self:getBestAttack(opponent)
-    self.attacktype = attacktype
-    Database.fill(self, self.attacktype)
     return attacktype
 end
 
@@ -68,7 +66,7 @@ function BanditBoss:getAttackSwitch(target)
         if newattack ~= self.attacktype then
             self.attackswitchesleft = switchesleft - 1
             self:stopAttack()
-            return "attack", newattack
+            return newattack
         end
     end
 end
@@ -87,14 +85,14 @@ function BanditBoss:duringAttackSwing(target)
     return self:getAttackSwitch(target)
 end
 
-function BanditBoss:attack(attacktype)
+function BanditBoss:attack()
     local opponents = Characters.getGroup("players")
     local opponent = opponents[1]
-    local nextstate, a, b, c = self:prepareAttack(attacktype, opponent)
+    local nextstate, a, b, c = self:prepareAttack(opponent)
     if nextstate then
         return nextstate, a, b, c
     end
-    nextstate, a, b, c = self:executeAttack(attacktype, opponent)
+    nextstate, a, b, c = self:executeAttack(opponent)
     if nextstate then
         return nextstate, a, b, c
     end

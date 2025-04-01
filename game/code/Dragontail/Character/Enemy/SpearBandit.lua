@@ -43,7 +43,7 @@ function SpearBandit:duringDodge()
             local maxcounterdist = 128
 
             if math.distsq(self.x, self.y, opponent.x, opponent.y) <= maxcounterdist*maxcounterdist then
-                return "attack", attacktype
+                return attacktype
             end
         end
     end
