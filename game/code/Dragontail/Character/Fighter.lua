@@ -130,7 +130,6 @@ function Fighter:hurt(attacker)
         HoldOpponent.stopHolding(self.heldby, self)
         return hiteffect, attacker, attackangle
     end
-    Audio.play(self.hurtsound)
     if self.heldby then
         if HoldOpponent.isHolding(self.heldby, self) then
             return "held", self.heldby
@@ -192,7 +191,6 @@ function Fighter:held(holder)
 end
 
 function Fighter:knockedBack(thrower, attackangle)
-    Audio.play(self.thrownsound)
     local dirx, diry
     if attackangle then
         dirx, diry = cos(attackangle), sin(attackangle)
@@ -258,7 +256,6 @@ end
 
 function Fighter:thrown(thrower, attackangle)
     self.thrower = thrower
-    Audio.play(self.thrownsound)
     local dirx, diry
     if attackangle then
         dirx, diry = cos(attackangle), sin(attackangle)
@@ -420,8 +417,6 @@ end
 function Fighter:defeat(attacker)
     self:stopAttack()
     self.velx, self.vely = 0, 0
-    Audio.play(self.defeatsound)
-    self:changeAnimation(self.defeatedanimation or "defeated", 1, 0)
     self:dropDefeatItem()
     yield()
     return "blinkOut", 60
