@@ -64,13 +64,13 @@ local function doComboAttack(self, faceangle, heldenemy)
     if self.comboindex >= 2 then
         self.comboindex = 0
         if heldenemy then
-            return "spinAndKickEnemy", "spinning-throw", faceangle, heldenemy
+            return "spinning-throw", faceangle, heldenemy
         end
         local spindir = pi*0.5 <= faceangle and faceangle < pi*1.5 and "ccw" or "cw"
-        return "spinAttack", "tail-swing-"..spindir, faceangle
+        return "tail-swing-"..spindir, faceangle
     else
         self.comboindex = self.comboindex + 1
-        return "straightAttack", heldenemy and "holding-knee" or "kick", faceangle, heldenemy
+        return heldenemy and "holding-knee" or "kick", faceangle, heldenemy
     end
 end
 
@@ -305,12 +305,12 @@ function Player:control()
                     local targetx, targety, targetz = findInstantThrowTarget(self, cos(self.facedestangle), sin(self.facedestangle))
                     return "throwWeapon", targetx, targety, targetz, attackid
                 end
-                return "straightAttack", "running-kick", atan2(vely, velx)
+                return "running-kick", atan2(vely, velx)
             end
 
             local attacktarget = findSomethingToRunningAttack(self, velx, vely)
             if attacktarget then
-                return "straightAttack", "running-elbow", atan2(vely, velx)
+                return "running-elbow", atan2(vely, velx)
             end
 
             local oobx, ooby = findWallCollision(self)
@@ -328,7 +328,7 @@ function Player:control()
                         }
                     )
                     self.hurtstun = 10
-                    return "straightAttack", "running-elbow", atan2(vely, velx)
+                    return "running-elbow", atan2(vely, velx)
                 end
             end
 
@@ -378,16 +378,13 @@ function Player:control()
     end
 end
 
-function Player:spinAttack(attacktype, attackangle)
+function Player:spinAttack(attackangle)
     self.numopponentshit = 0
     local tailangle = attackangle
     local lungeangle = attackangle
     local originalfaceangle = self.faceangle
-    self.attacktype = attacktype
-    Database.fill(self, attacktype)
     local spinvel = self.attackspinspeed or 0
     local spintime = self.attackhittime or 0
-    Audio.play(self.swingsound)
     local attackagain = false
     local t = spintime
     local lungespeed = self.attacklungespeed
@@ -425,8 +422,7 @@ function Player:spinAttack(attacktype, attackangle)
         end
 
         self:startAttack(tailangle)
-        Face.faceAngle(self, faceangle)
-        DirectionalAnimation.set(self, self.swinganimation, tailangle)
+        Face.faceAngle(self, faceangle, self.state and self.state.animation)
 
         yield()
         attackagain = attackagain or Controls.getButtonsPressed()
@@ -536,7 +532,7 @@ function Player:aimThrow()
 end
 
 function Player:throwWeapon(targetx, targety, targetz, attackid)
-    Face.faceVector(self, targetx - self.x, targety - self.y, "throw")
+    Face.faceVector(self, targetx - self.x, targety - self.y)
     Shoot.launchProjectileAtPosition(self, {
         type = self.weaponinhand,
         gravity = 1/8,
@@ -547,7 +543,6 @@ function Player:throwWeapon(targetx, targety, targetz, attackid)
         self.numweaponinhand = nil
         self.weaponinhand = nil
     end
-    Audio.play(self.throwsound)
     local t = self.throwtime or 6
     repeat
         self:accelerateTowardsVel(0, 0, 4)
@@ -626,12 +621,12 @@ function Player:hold(enemy)
 
         -- self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
         if runpressed then --and self.runenergy >= self.runenergycost then
-            return "runWithEnemy", enemy
+            return "running-with-enemy", enemy
         end
         if attackpressed then
             if inx ~= 0 or iny ~= 0 then
                 self.comboindex = 0
-                return "spinAndKickEnemy", "spinning-throw", holdangle, enemy
+                return "spinning-throw", holdangle, enemy
             end
             return doComboAttack(self, holdangle, enemy)
         end
@@ -641,10 +636,8 @@ function Player:hold(enemy)
 end
 
 function Player:runWithEnemy(enemy)
-    Audio.play(self.dashsound)
     enemy.canbeattacked = false
     self.facedestangle = self.faceangle
-    Database.fill(self, "running-with-enemy")
     enemy.attacktype = "human-in-spinning-throw"
     Database.fill(enemy, "human-in-spinning-throw")
     enemy:startAttack(self.faceangle)
@@ -683,14 +676,14 @@ function Player:runWithEnemy(enemy)
             enemy:stopAttack()
             HoldOpponent.stopHolding(self, enemy)
             enemy.canbeattacked = true
-            return "straightAttack", "running-kick", self.faceangle
+            return "running-kick", self.faceangle
         end
 
         local oobx, ooby = HoldOpponent.handleOpponentCollision(self)
         if oobx or ooby then
             HoldOpponent.stopHolding(self, enemy)
             StateMachine.start(enemy, "wallSlammed", self, oobx, ooby)
-            return "straightAttack", "running-elbow", self.faceangle
+            return "running-elbow", self.faceangle
         end
 
         if runningtime < 15 then
@@ -709,10 +702,8 @@ function Player:runWithEnemy(enemy)
     end
 end
 
-function Player:spinAndKickEnemy(attacktype, angle, enemy)
+function Player:spinAndKickEnemy(angle, enemy)
     enemy.canbeattacked = false
-    self.attacktype = attacktype
-    Database.fill(self, attacktype)
     enemy.attacktype = "human-in-spinning-throw"
     Database.fill(enemy, "human-in-spinning-throw")
     local spinvel = self.attackspinspeed or 0
@@ -745,7 +736,7 @@ function Player:spinAndKickEnemy(attacktype, angle, enemy)
         local velx, vely = self.velx, self.vely
 
         enemy:startAttack(angle)
-        Face.faceAngle(self, angle, self.swinganimation)
+        Face.faceAngle(self, angle, self.state and self.state.animation)
 
         holddirx, holddiry = cos(angle), sin(angle)
         x, y = self.x, self.y
@@ -770,17 +761,14 @@ function Player:spinAndKickEnemy(attacktype, angle, enemy)
     --     enemy.health = enemy.health - self.attackdamage
     -- end
     -- StateMachine.start(enemy, enemy.thrownai or "thrown", self, atan2(throwy, throwx))
-    return "straightAttack", "holding-kick", atan2(throwy, throwx)
+    return "holding-kick", atan2(throwy, throwx)
 end
 
-function Player:straightAttack(attacktype, angle, heldenemy)
+function Player:straightAttack(angle, heldenemy)
     self.numopponentshit = 0
-    self.attacktype = attacktype
-    Database.fill(self, attacktype)
-    Audio.play(self.swingsound)
     local attackagain = false
     self:startAttack(angle)
-    DirectionalAnimation.set(self, self.swinganimation, angle)
+    Face.faceAngle(self, angle)
     local t = self.attackhittime or 1
     local lungespeed = self.attacklungespeed
     repeat
@@ -818,8 +806,6 @@ function Player:straightAttack(attacktype, angle, heldenemy)
 end
 
 function Player:getup(attacker)
-    Audio.play(self.getupsound)
-    self:changeAseAnimation("FallRiseToFeet", 1, 0)
     local t = self.getuptime or 30
     local recoverai = self.aiaftergetup or self.recoverai
     if not recoverai then
@@ -838,8 +824,6 @@ end
 
 function Player:victory()
     self:stopAttack()
-    Audio.play(self.victorysound)
-    self:changeAseAnimation("win", 1, 0)
     local i = 0
     while true do
         self:accelerateTowardsVel(0, 0, 4)
