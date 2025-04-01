@@ -408,6 +408,12 @@ function TiledObject:randomizeTile()
 end
 
 function TiledObject:setAseAnimation(animation, frame1, loopframe)
+    if type(animation) == "string" then
+        animation = self.aseprite and self.aseprite.animations[animation]
+    end
+    if not animation then
+        return
+    end
     self.aseanimation = animation
     self.animationframe = frame1 or 1
     self.animationtime = 0
