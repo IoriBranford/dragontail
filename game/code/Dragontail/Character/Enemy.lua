@@ -251,7 +251,8 @@ function Enemy:enterShootLeave()
         end
     end
 
-    local attacktype = self.defaultattack
+    local attacktype = self.attacktable
+        and self.attacktable[self.defaultattack]
     if attacktype then
         Database.fill(self, attacktype)
         local ammo = self.ammo or 10
