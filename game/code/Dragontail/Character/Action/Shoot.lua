@@ -47,12 +47,11 @@ function Shoot:launchProjectileAtPosition(projectile, targetx, targety, targetz,
     projectile.velx = velx
     projectile.vely = vely
     projectile.velz = velz
-    projectile.attackangle = math.atan2(diry, dirx)
+    local angle = math.atan2(diry, dirx)
+    projectile.faceangle = angle
+    projectile.attackangle = angle
     projectile.thrower = self
-
-    if Database.get(attackid) then
-        projectile.defaultattack = attackid
-    end
+    projectile.initialai = attackid
     return Characters.spawn(projectile)
 end
 
@@ -66,6 +65,7 @@ function Shoot:launchProjectile(type, dirx, diry, dirz, attackid)
     local bodyradius, bodyheight = self.bodyradius or 0, self.bodyheight or 0
     local speed = projectiledata.speed or 1
     local projectileheight = self.projectilelaunchheight or (bodyheight / 2)
+    local angle = math.atan2(diry, dirx)
     local projectile = {
         x = x + bodyradius*dirx,
         y = y + bodyradius*diry,
@@ -74,12 +74,11 @@ function Shoot:launchProjectile(type, dirx, diry, dirz, attackid)
         vely = speed*diry,
         velz = speed*dirz,
         type = type,
-        attackangle = math.atan2(diry, dirx),
-        thrower = self
+        faceangle = angle,
+        attackangle = angle,
+        thrower = self,
+        initialai = attackid
     }
-    if Database.get(attackid) then
-        projectile.defaultattack = attackid
-    end
     return Characters.spawn(projectile)
 end
 

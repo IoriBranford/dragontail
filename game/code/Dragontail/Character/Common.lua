@@ -284,7 +284,6 @@ end
 
 function Common:projectileFly(shooter)
     local angle = self.attackangle
-    Database.fill(self, self.defaultattack)
     if not angle then
         local velx = self.velx
         local vely = self.vely
@@ -295,7 +294,6 @@ function Common:projectileFly(shooter)
         end
         self:startAttack(angle)
     end
-    DirectionalAnimation.set(self, self.swinganimation, angle, 1, self.swinganimationloopframe or 1)
     local oobx, ooby, oobz
     local lifetime = self.lifetime
     repeat
