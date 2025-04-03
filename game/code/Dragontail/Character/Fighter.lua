@@ -367,10 +367,6 @@ function Fighter:breakaway(other)
     until t > 15
 
     self.velx, self.vely = 0, 0
-    local attackafterbreakaway = self.attackafterbreakaway
-    if attackafterbreakaway then
-        Database.fill(self, attackafterbreakaway)
-    end
     return self.aiafterbreakaway or self.recoverai
 end
 

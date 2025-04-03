@@ -7,7 +7,6 @@ local StateMachine   = require "Dragontail.Character.StateMachine"
 ---@field heldby HoldOpponent?
 ---@field heldai string?
 ---@field aiafterbreakaway string?
----@field attackafterbreakaway string?
 ---@field aiafterheld string?
 
 ---@class HoldOpponent:Character
