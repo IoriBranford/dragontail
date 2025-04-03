@@ -43,6 +43,7 @@ local StateVarsToCopy = {
     "statetime",
     "canbeattacked",
     "canbegrabbed",
+    "canbejuggled",
     "bodysolid",
     "color",
 }
