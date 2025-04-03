@@ -295,13 +295,12 @@ end
 function Enemy:prepareAttack()
     self.numopponentshit = 0
     self:stopGuarding()
-    self.canbeattacked = not self.attackwindupinvuln
-    self.canbegrabbed = not self.attackwindupinvuln
 
     local target = self.opponents[1]
-    Face.facePosition(self, target.x, target.y, self.windupanimation, 1, self.windupanimationloopframe or 0)
 
-    for t = 1, (self.attackwinduptime or 20) do
+    for t = 1, 300 do
+        Face.facePosition(self, target.x, target.y, self.state.animation, self.state.frame1, self.state.loopframe)
+
         self.color = self:getAttackFlashColor(t)
 
         local state, a, b, c, d, e, f = self:duringPrepareAttack(target)
@@ -313,8 +312,6 @@ function Enemy:prepareAttack()
         if self.velx ~= 0 or self.vely ~= 0 then
             self:keepInBounds()
         end
-
-        Face.facePosition(self, target.x, target.y, self.windupanimation, 1, self.windupanimationloopframe or 0)
     end
 end
 
@@ -326,9 +323,8 @@ function Enemy:executeAttack()
     self:stopGuarding()
 
     local target = self.opponents[1]
-    Face.facePosition(self, target.x, target.y, self.swinganimation, 1, self.swinganimationloopframe or 0)
+    Face.facePosition(self, target.x, target.y, self.state.animation, self.state.frame1, self.state.loopframe)
 
-    Audio.play(self.swingsound)
     local attackprojectile = self.attackprojectile
     if attackprojectile then
         Shoot.launchProjectileAtObject(self, attackprojectile, target)
@@ -354,20 +350,14 @@ function Enemy:executeAttack()
     until hittime <= 0
     self.color = Color.White
     self:stopAttack()
-    if self.attackwindupinvuln then
-        self.canbeattacked = true
-        self.canbegrabbed = true
-    end
 
-    local afterhittime = self.attackafterhittime or 30
-    repeat
-        lungespeed = Slide.updateSlideSpeed(self, self.faceangle, lungespeed)
-        afterhittime = afterhittime - 1
+    for i = 1, 300 do
+        lungespeed = Slide.updateSlideSpeed(self, self.faceangle, lungespeed, self.attacklungedecel or 1)
         yield()
         if self.velx ~= 0 or self.vely ~= 0 then
             self:keepInBounds()
         end
-    until afterhittime <= 0
+    end
 end
 
 function Enemy:attack()
