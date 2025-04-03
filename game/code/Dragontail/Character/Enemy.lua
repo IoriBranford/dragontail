@@ -301,22 +301,14 @@ function Enemy:interruptWithDodge(target)
     end
 end
 
-function Enemy:prepareAttack(targetx, targety)
+function Enemy:prepareAttack()
     self.numopponentshit = 0
     self:stopGuarding()
     self.canbeattacked = not self.attackwindupinvuln
     self.canbegrabbed = not self.attackwindupinvuln
 
-    local target
-    if type(targetx) == "table" then
-        target = targetx
-        target.attacker = self
-        targetx, targety = target.x, target.y
-    end
-
-    targetx = targetx or self.x
-    targety = targety or self.y
-    Face.faceVector(self, targetx - self.x, targety - self.y, self.windupanimation, 1, self.windupanimationloopframe or 0)
+    local target = self.opponents[1]
+    Face.facePosition(self, target.x, target.y, self.windupanimation, 1, self.windupanimationloopframe or 0)
 
     for t = 1, (self.attackwinduptime or 20) do
         self.color = self:getAttackFlashColor(t)
@@ -330,31 +322,25 @@ function Enemy:prepareAttack(targetx, targety)
         if self.velx ~= 0 or self.vely ~= 0 then
             self:keepInBounds()
         end
+
+        Face.facePosition(self, target.x, target.y, self.windupanimation, 1, self.windupanimationloopframe or 0)
     end
 end
 
 function Enemy:duringAttackSwing(target)
 end
 
-function Enemy:executeAttack(targetx, targety, targetz)
+function Enemy:executeAttack()
     self.numopponentshit = 0
     self:stopGuarding()
 
-    local target
-    if type(targetx) == "table" then
-        target = targetx
-        target.attacker = self
-        targetx, targety, targetz = target.x, target.y, target.z
-    end
-
-    targetx = targetx or (self.x + cos(self.faceangle))
-    targety = targety or (self.y + sin(self.faceangle))
-    Face.faceVector(self, targetx - self.x, targety - self.y, self.swinganimation, 1, self.swinganimationloopframe or 0)
+    local target = self.opponents[1]
+    Face.facePosition(self, target.x, target.y, self.swinganimation, 1, self.swinganimationloopframe or 0)
 
     Audio.play(self.swingsound)
     local attackprojectile = self.attackprojectile
     if attackprojectile then
-        Shoot.launchProjectileAtPosition(self, attackprojectile, targetx, targety, targetz)
+        Shoot.launchProjectileAtObject(self, attackprojectile, target)
     else
         local attackangle = floor((self.faceangle + (pi/4)) / (pi/2)) * pi/2
         self:startAttack(attackangle)
