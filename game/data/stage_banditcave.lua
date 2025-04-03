@@ -19911,12 +19911,14 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 20,
+                ["defaultattack"] = "sling-shot-until-empty",
                 ["entrypoint"] = { id = 412 },
                 ["exitpoint"] = { id = 415 },
-                ["initialai"] = "enterShootLeave",
+                ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "food-fish",
                 ["itemvelx"] = 0,
                 ["itemvely"] = 5,
+                ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
             },
@@ -19934,12 +19936,14 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 20,
+                ["defaultattack"] = "sling-shot-until-empty",
                 ["entrypoint"] = { id = 414 },
                 ["exitpoint"] = { id = 417 },
-                ["initialai"] = "enterShootLeave",
+                ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "food-fish",
                 ["itemvelx"] = 0,
                 ["itemvely"] = 5,
+                ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
             },
@@ -20029,12 +20033,14 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 20,
+                ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 401 },
                 ["exitpoint"] = { id = 402 },
-                ["initialai"] = "enterShootLeave",
+                ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "food-fish",
                 ["itemvelx"] = 0,
                 ["itemvely"] = 5,
+                ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
             },
@@ -20052,12 +20058,14 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 20,
+                ["defaultattack"] = "sling-shot-until-empty",
                 ["entrypoint"] = { id = 404 },
                 ["exitpoint"] = { id = 405 },
-                ["initialai"] = "enterShootLeave",
+                ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "food-fish",
                 ["itemvelx"] = 0,
                 ["itemvely"] = 5,
+                ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
             },
@@ -20075,12 +20083,14 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 20,
+                ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 407 },
                 ["exitpoint"] = { id = 408 },
-                ["initialai"] = "enterShootLeave",
+                ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "food-fish",
                 ["itemvelx"] = 0,
                 ["itemvely"] = 5,
+                ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
             },

@@ -1268,24 +1268,28 @@ to sprint past archers</text>
    <object id="409" gid="5278" x="5040" y="-40" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="20"/>
+     <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="412"/>
      <property name="exitpoint" type="object" value="415"/>
-     <property name="initialai" value="enterShootLeave"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
      <property name="itemvelx" type="float" value="0"/>
      <property name="itemvely" type="float" value="5"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
    <object id="411" gid="5278" x="5136" y="-8" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="20"/>
+     <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="414"/>
      <property name="exitpoint" type="object" value="417"/>
-     <property name="initialai" value="enterShootLeave"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
      <property name="itemvelx" type="float" value="0"/>
      <property name="itemvely" type="float" value="5"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
@@ -1312,36 +1316,42 @@ to sprint past archers</text>
    <object id="400" gid="5274" x="4992" y="-40" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="20"/>
+     <property name="defaultattack" value="bow-shot-until-empty"/>
      <property name="entrypoint" type="object" value="401"/>
      <property name="exitpoint" type="object" value="402"/>
-     <property name="initialai" value="enterShootLeave"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
      <property name="itemvelx" type="float" value="0"/>
      <property name="itemvely" type="float" value="5"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
    <object id="403" gid="5278" x="5088" y="-72" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="20"/>
+     <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="404"/>
      <property name="exitpoint" type="object" value="405"/>
-     <property name="initialai" value="enterShootLeave"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
      <property name="itemvelx" type="float" value="0"/>
      <property name="itemvely" type="float" value="5"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
    <object id="406" gid="5274" x="5184" y="-8" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="20"/>
+     <property name="defaultattack" value="bow-shot-until-empty"/>
      <property name="entrypoint" type="object" value="407"/>
      <property name="exitpoint" type="object" value="408"/>
-     <property name="initialai" value="enterShootLeave"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
      <property name="itemvelx" type="float" value="0"/>
      <property name="itemvely" type="float" value="5"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
