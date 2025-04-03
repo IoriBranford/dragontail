@@ -15,6 +15,8 @@ thrown-axe-attack,FALSE,FALSE,,projectileFly,thrownaxe,1,TRUE,FALSE,,sounds/comb
 thrown-axe-strong-attack,FALSE,FALSE,,projectileFly,thrownaxe,1,TRUE,FALSE,,sounds/combat/spin.mp3
 bow-shot,30,bow-shot2,bow-shot,prepareAttack,ShootWindup,0,TRUE,TRUE,,sounds/combat/bowdraw.mp3
 bow-shot2,40,stand,bow-shot,executeAttack,ShootAttack,0,TRUE,TRUE,,sounds/combat/arrowfly.mp3
+bow-shot-until-empty,30,bow-shot-until-empty2,bow-shot,prepareAttack,ShootWindup,0,TRUE,TRUE,,sounds/combat/bowdraw.mp3
+bow-shot-until-empty2,40,attackIfAmmoElseLeave,bow-shot,executeAttack,ShootAttack,0,TRUE,TRUE,,sounds/combat/arrowfly.mp3
 bandit-arrow-attack,FALSE,FALSE,,projectileFly,Fly,1,TRUE,FALSE,,sounds/combat/arrowfly.mp3
 sling-shot,30,sling-shot2,sling-shot,prepareAttack,ShootWindup,0,TRUE,TRUE,,sounds/combat/bowdraw.mp3
 sling-shot2,40,stand,sling-shot,executeAttack,ShootAttack,0,TRUE,TRUE,,sounds/combat/arrowfly.mp3
@@ -43,7 +45,7 @@ wallSlammed,FALSE,fall,,wallSlammed,Hurt,,FALSE,FALSE,,sounds/combat/bodyslam.mp
 thrownRecover,FALSE,stand,,thrownRecover,FallKnees,0,FALSE,FALSE,,sounds/combat/slide.mp3
 breakaway,FALSE,stand,,breakaway,,,FALSE,FALSE,,sounds/combat/slap.mp3
 fall,FALSE,getup,,fall,,0,FALSE,FALSE,,
-defeat,FALSE,FALSE,,defeat,Fall,0,FALSE,FALSE,,
+defeat,FALSE,FALSE,,defeat,,0,FALSE,FALSE,,
 getup,18,stand,,getup,FallRiseToFeet,0,FALSE,FALSE,,
 stand,FALSE,FALSE,,stand,Stand,,TRUE,TRUE,,
 dodgeIncoming,FALSE,stand,,dodgeIncoming,Walk,,TRUE,TRUE,,

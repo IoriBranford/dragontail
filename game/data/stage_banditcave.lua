@@ -18280,12 +18280,14 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 10,
+                ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 294 },
                 ["exitpoint"] = { id = 296 },
-                ["initialai"] = "enterShootLeave",
+                ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "food-fish",
                 ["itemvelx"] = 0,
                 ["itemvely"] = 4,
+                ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
             },
@@ -18303,12 +18305,14 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 10,
+                ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 293 },
                 ["exitpoint"] = { id = 295 },
-                ["initialai"] = "enterShootLeave",
+                ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "food-fish",
                 ["itemvelx"] = 0,
                 ["itemvely"] = 4,
+                ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
             },
@@ -19058,7 +19062,9 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
-                ["initialai"] = "enterShootLeave"
+                ["defaultattack"] = "sling-shot-until-empty",
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty"
               }
             },
             {
@@ -19075,7 +19081,9 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
-                ["initialai"] = "enterShootLeave"
+                ["defaultattack"] = "sling-shot-until-empty",
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty"
               }
             },
             {
@@ -19092,7 +19100,9 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
-                ["initialai"] = "enterShootLeave"
+                ["defaultattack"] = "bow-shot-until-empty",
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty"
               }
             },
             {
@@ -19555,8 +19565,10 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
+                ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 344 },
-                ["initialai"] = "enterShootLeave"
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty"
               }
             },
             {
@@ -19573,8 +19585,10 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
+                ["defaultattack"] = "sling-shot-until-empty",
                 ["entrypoint"] = { id = 345 },
-                ["initialai"] = "enterShootLeave"
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty"
               }
             },
             {
@@ -19591,8 +19605,10 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
+                ["defaultattack"] = "sling-shot-until-empty",
                 ["entrypoint"] = { id = 346 },
-                ["initialai"] = "enterShootLeave"
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty"
               }
             },
             {

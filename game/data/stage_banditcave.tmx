@@ -829,24 +829,28 @@ to sprint past archers</text>
    <object id="291" gid="5274" x="3264" y="-48" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
+     <property name="defaultattack" value="bow-shot-until-empty"/>
      <property name="entrypoint" type="object" value="294"/>
      <property name="exitpoint" type="object" value="296"/>
-     <property name="initialai" value="enterShootLeave"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
      <property name="itemvelx" type="float" value="0"/>
      <property name="itemvely" type="float" value="4"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
    <object id="292" gid="5274" x="3264" y="-16" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
+     <property name="defaultattack" value="bow-shot-until-empty"/>
      <property name="entrypoint" type="object" value="293"/>
      <property name="exitpoint" type="object" value="295"/>
-     <property name="initialai" value="enterShootLeave"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
      <property name="itemvelx" type="float" value="0"/>
      <property name="itemvely" type="float" value="4"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
@@ -1040,19 +1044,25 @@ to sprint past archers</text>
    <object id="336" gid="5278" x="4016" y="72" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="999999999"/>
-     <property name="initialai" value="enterShootLeave"/>
+     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
     </properties>
    </object>
    <object id="337" gid="5278" x="4136" y="80" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="999999999"/>
-     <property name="initialai" value="enterShootLeave"/>
+     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
     </properties>
    </object>
    <object id="338" gid="5274" x="4256" y="72" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="999999999"/>
-     <property name="initialai" value="enterShootLeave"/>
+     <property name="defaultattack" value="bow-shot-until-empty"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
     </properties>
    </object>
    <object id="359" gid="6641" x="3984" y="88" width="32" height="32">
@@ -1187,22 +1197,28 @@ to sprint past archers</text>
    <object id="341" gid="5274" x="3928" y="328" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="999999999"/>
+     <property name="defaultattack" value="bow-shot-until-empty"/>
      <property name="entrypoint" type="object" value="344"/>
-     <property name="initialai" value="enterShootLeave"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
     </properties>
    </object>
    <object id="342" gid="5278" x="4064" y="360" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="999999999"/>
+     <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="345"/>
-     <property name="initialai" value="enterShootLeave"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
     </properties>
    </object>
    <object id="343" gid="5278" x="4208" y="392" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="999999999"/>
+     <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="346"/>
-     <property name="initialai" value="enterShootLeave"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
     </properties>
    </object>
    <object id="344" name="entrypoint" x="3928" y="272">
