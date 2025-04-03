@@ -241,41 +241,30 @@ function Enemy:leave(exitx, exity)
     self:disappear()
 end
 
-function Enemy:enterShootLeave()
-    self.recoverai = "enterShootLeave"
+function Enemy:walkToEntryPoint()
+    self:walkTo(self.entrypoint)
+end
 
-    if self.entrypoint then
-        if self:walkTo(self.entrypoint) then
-            self.entrypoint:disappear()
-            self.entrypoint = nil
-        end
-    end
-
-    local attacktype = self.attacktable
-        and self.attacktable[self.defaultattack]
-    if attacktype then
-        Database.fill(self, attacktype)
-        local ammo = self.ammo or 10
-        local opponent = self.opponents[1]
+function Enemy:attackIfAmmoElseLeave()
+    local attacktype = self.defaultattack
+    local attackstate = self.statetable and self.statetable[attacktype]
+    local ammo = self.ammo or 0
+    local opponent = self.opponents[1]
+    if attackstate and ammo > 0 and opponent.health > 0 then
         local raycast = Raycast(1, 0, 0, 1)
         raycast.canhitgroup = "enemies"
-        for i = ammo-1, 0, -1 do
-            while opponent.health <= 0 do
-                yield()
+        local hitcharacter
+        repeat
+            yield()
+            raycast.dx, raycast.dy = opponent.x - self.x, opponent.y - self.y
+            local angle = atan2(raycast.dy, raycast.dx)
+            if angle == angle then
+                DirectionalAnimation.set(self, "Stand", angle)
             end
-            local hitcharacter
-            repeat
-                yield()
-                raycast.dx, raycast.dy = opponent.x - self.x, opponent.y - self.y
-                local angle = atan2(raycast.dy, raycast.dx)
-                if angle == angle then
-                    DirectionalAnimation.set(self, "Stand", angle)
-                end
-                hitcharacter = Characters.castRay(raycast, self.x, self.y, self)
-            until not hitcharacter
-            self.ammo = i
-            self:attack()
-        end
+            hitcharacter = Characters.castRay(raycast, self.x, self.y, self)
+        until not hitcharacter
+        self.ammo = self.ammo - 1
+        return attacktype
     end
 
     if self.exitpoint then

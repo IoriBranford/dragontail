@@ -16484,9 +16484,11 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 10,
+                ["defaultattack"] = "sling-shot-until-empty",
                 ["entrypoint"] = { id = 241 },
                 ["exitpoint"] = { id = 244 },
-                ["initialai"] = "enterShootLeave",
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
             },
@@ -16504,9 +16506,11 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 10,
+                ["defaultattack"] = "sling-shot-until-empty",
                 ["entrypoint"] = { id = 240 },
                 ["exitpoint"] = { id = 243 },
-                ["initialai"] = "enterShootLeave",
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
             },
@@ -16524,9 +16528,11 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 10,
+                ["defaultattack"] = "sling-shot-until-empty",
                 ["entrypoint"] = { id = 242 },
                 ["exitpoint"] = { id = 245 },
-                ["initialai"] = "enterShootLeave",
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
             },
@@ -17188,9 +17194,11 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 10,
+                ["defaultattack"] = "sling-shot-until-empty",
                 ["entrypoint"] = { id = 255 },
                 ["exitpoint"] = { id = 256 },
-                ["initialai"] = "enterShootLeave",
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
             },
@@ -17238,9 +17246,11 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 10,
+                ["defaultattack"] = "sling-shot-until-empty",
                 ["entrypoint"] = { id = 258 },
                 ["exitpoint"] = { id = 259 },
-                ["initialai"] = "enterShootLeave",
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
             },

@@ -353,27 +353,33 @@ Cost 1</text>
    <object id="58" gid="5278" x="1712" y="-40" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
+     <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="241"/>
      <property name="exitpoint" type="object" value="244"/>
-     <property name="initialai" value="enterShootLeave"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
    <object id="59" gid="5278" x="1584" y="-8" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
+     <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="240"/>
      <property name="exitpoint" type="object" value="243"/>
-     <property name="initialai" value="enterShootLeave"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
    <object id="87" gid="5278" x="1840" y="-72" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
+     <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="242"/>
      <property name="exitpoint" type="object" value="245"/>
-     <property name="initialai" value="enterShootLeave"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
@@ -514,9 +520,11 @@ Cost 1</text>
    <object id="254" gid="5278" x="2080" y="0" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
+     <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="255"/>
      <property name="exitpoint" type="object" value="256"/>
-     <property name="initialai" value="enterShootLeave"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
@@ -535,9 +543,11 @@ Cost 1</text>
    <object id="257" gid="5278" x="2192" y="72" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
+     <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="258"/>
      <property name="exitpoint" type="object" value="259"/>
-     <property name="initialai" value="enterShootLeave"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
