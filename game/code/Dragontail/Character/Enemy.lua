@@ -242,7 +242,9 @@ function Enemy:leave(exitx, exity)
 end
 
 function Enemy:walkToEntryPoint()
-    self:walkTo(self.entrypoint)
+    if self.entrypoint then
+        self:walkTo(self.entrypoint)
+    end
 end
 
 function Enemy:attackIfAmmoElseLeave()
