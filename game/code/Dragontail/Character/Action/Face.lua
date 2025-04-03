@@ -26,6 +26,15 @@ function Face:faceAngle(angle, animation, frame1, loopframe)
     end
 end
 
+function Face:turnTowardsPosition(x, y, turnspeed, animation, frame1, loopframe)
+    if x == self.x and y == self.y then
+        return
+    end
+    local destangle = math.atan2(y - self.y, x - self.x)
+    local faceangle = math.rotangletowards(self.faceangle, destangle, turnspeed)
+    Face.faceAngle(self, faceangle, animation, frame1, loopframe)
+end
+
 function Face:updateTurnToDestAngle(turnspeed, animation, frame1, loopframe)
     if self.facedestangle then
         local faceangle = math.rotangletowards(self.faceangle, self.facedestangle, turnspeed)
