@@ -34,8 +34,8 @@ function StateMachine:init()
 end
 
 function StateMachine:setTable(statetable, attacktable)
-    self.statetable = statetable and Database.getTable(statetable) or Database.getTable("data/db_characterstates.csv")
-    self.attacktable = attacktable and Database.getTable(attacktable) or Database.getTable("data/db_attacks.csv")
+    self.statetable = statetable and Database.getTable(statetable)
+    self.attacktable = attacktable and Database.getTable(attacktable)
 end
 
 local StateVarsToCopy = {

@@ -1,0 +1,3 @@
+attacktype,attackradius,attackarc,attackdamage,attackstun,attackstunself,attackhittime,attackdeflectsprojectile,attackhiteffect,attackdefeateffect,swingsound,hitsound,hitspark,guardhitspark
+human-in-spinning-throw,24,1.5707963267949,10,12,3,20,TRUE,knockedBack,knockedBack,,sounds/combat/hit2.mp3,spark-hit,spark-guard
+human-thrown,24,0.785398163397448,10,12,3,,,knockedBack,knockedBack,sounds/combat/spin.mp3,sounds/combat/hit2.mp3,spark-hit,spark-guard

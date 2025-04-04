@@ -80,6 +80,7 @@ function Character:makeAfterImage()
         spriteoriginx = self.spriteoriginx,
         spriteoriginy = self.spriteoriginy,
         script = "Dragontail.Character.Common",
+        statetable = "data/st_objects.csv",
         initialai = "afterimage",
         shadowcolor = 0
     })
