@@ -76,13 +76,9 @@ function Character:makeAfterImage()
         x = self.x,
         y = self.y,
         asefile = self.asefile,
-        animationspeed = 0,
         spriteoriginx = self.spriteoriginx,
         spriteoriginy = self.spriteoriginy,
-        script = "Dragontail.Character.Common",
-        statetable = "data/st_objects.csv",
-        initialai = "afterimage",
-        shadowcolor = 0
+        type = "afterimage"
     })
     afterimage:setAseAnimation(self.aseanimation, self.animationframe)
 end
