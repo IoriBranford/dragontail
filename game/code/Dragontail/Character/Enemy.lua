@@ -324,7 +324,9 @@ function Enemy:executeAttack()
 
     local attackprojectile = self.attackprojectile
     if attackprojectile then
+        -- TODO if target in view then
         Shoot.launchProjectileAtObject(self, attackprojectile, target)
+        -- TODO else shoot at current faceangle
     else
         local attackangle = floor((self.faceangle + (pi/4)) / (pi/2)) * pi/2
         self:startAttack(attackangle)
@@ -393,23 +395,16 @@ function Enemy:enterAndDropDown()
     return "stand", 3
 end
 
-function Enemy:enterAndAmbush()
-    if self.entrypoint then
-        if self:walkTo(self.entrypoint) then
-            self.entrypoint = nil
-        end
-    end
-    self:prepareAttack(self.defaultattack)
+function Enemy:watchForOpponent()
     local opponents = self.opponents
     local sighted
     local cossightarc = cos(self.ambushsightarc or (pi/6))
-    repeat
+    for t = 1, huge do
+        self.color = self:getAttackFlashColor(t)
         yield()
         for _, opponent in ipairs(opponents) do
             local tooppox, tooppoy = opponent.x - self.x, opponent.y - self.y
-            if tooppox == 0 and tooppoy == 0 then
-                tooppox = 1
-            else
+            if tooppox ~= 0 or tooppoy ~= 0 then
                 tooppox, tooppoy = norm(tooppox, tooppoy)
             end
             local fDotD = math.dot(tooppox, tooppoy, math.cos(self.faceangle), math.sin(self.faceangle))
@@ -418,9 +413,10 @@ function Enemy:enterAndAmbush()
                 break
             end
         end
-    until sighted
-    self:executeAttack(self.defaultattack, sighted)
-    return "stand", 20
+        if sighted then
+            break
+        end
+    end
 end
 
 function Enemy:guard()

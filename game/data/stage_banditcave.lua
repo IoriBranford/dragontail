@@ -17103,10 +17103,7 @@ return {
               rotation = 0,
               gid = 6611,
               visible = true,
-              properties = {
-                ["facex"] = 0,
-                ["facey"] = 0
-              }
+              properties = {}
             },
             {
               id = 270,
@@ -17121,8 +17118,6 @@ return {
               gid = 6611,
               visible = true,
               properties = {
-                ["facex"] = 0,
-                ["facey"] = 0,
                 ["itemtype"] = "food-fish"
               }
             },
@@ -17139,8 +17134,6 @@ return {
               gid = 6614,
               visible = true,
               properties = {
-                ["facex"] = 0,
-                ["facey"] = 0,
                 ["itemtype"] = "food-fish"
               }
             },
@@ -17157,8 +17150,6 @@ return {
               gid = 6614,
               visible = true,
               properties = {
-                ["facex"] = 0,
-                ["facey"] = 0,
                 ["itemtype"] = "food-fish"
               }
             }
@@ -17540,25 +17531,6 @@ return {
           },
           objects = {
             {
-              id = 105,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2592,
-              y = 32,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5274,
-              visible = true,
-              properties = {
-                ["entrypoint"] = { id = 273 },
-                ["facex"] = 0,
-                ["facey"] = 1,
-                ["initialai"] = "enterAndAmbush"
-              }
-            },
-            {
               id = 104,
               name = "camerapath",
               type = "CameraPath",
@@ -17702,6 +17674,49 @@ return {
               }
             },
             {
+              id = 298,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 3168,
+              y = 0,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = 0 },
+                { x = 0, y = 112 },
+                { x = 192, y = 112 },
+                { x = 192, y = 0 }
+              },
+              properties = {
+                ["bodyheight"] = 64,
+                ["bodysolid"] = true,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 105,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2592,
+              y = 32,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5274,
+              visible = true,
+              properties = {
+                ["entrypoint"] = { id = 273 },
+                ["facedegrees"] = 90,
+                ["initialai"] = "enterAndPrepareBowAmbush"
+              }
+            },
+            {
               id = 271,
               name = "",
               type = "",
@@ -17760,9 +17775,8 @@ return {
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 275 },
-                ["facex"] = 0,
-                ["facey"] = 1,
-                ["initialai"] = "enterAndAmbush"
+                ["facedegrees"] = 90,
+                ["initialai"] = "enterAndPrepareBowAmbush"
               }
             },
             {
@@ -17792,9 +17806,8 @@ return {
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 281 },
-                ["facex"] = 0,
-                ["facey"] = -1,
-                ["initialai"] = "enterAndAmbush"
+                ["facedegrees"] = 270,
+                ["initialai"] = "enterAndPrepareBowAmbush"
               }
             },
             {
@@ -17811,9 +17824,8 @@ return {
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 283 },
-                ["facex"] = 0,
-                ["facey"] = -1,
-                ["initialai"] = "enterAndAmbush"
+                ["facedegrees"] = 270,
+                ["initialai"] = "enterAndPrepareBowAmbush"
               }
             },
             {
@@ -17856,9 +17868,8 @@ return {
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 287 },
-                ["facex"] = 0,
-                ["facey"] = 1,
-                ["initialai"] = "enterAndAmbush"
+                ["facedegrees"] = 90,
+                ["initialai"] = "enterAndPrepareBowAmbush"
               }
             },
             {
@@ -17875,31 +17886,6 @@ return {
               properties = {}
             },
             {
-              id = 298,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 3168,
-              y = 0,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polygon = {
-                { x = 0, y = 0 },
-                { x = 0, y = 112 },
-                { x = 192, y = 112 },
-                { x = 192, y = 0 }
-              },
-              properties = {
-                ["bodyheight"] = 64,
-                ["bodysolid"] = true,
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["linecolor"] = "#80ffffff"
-              }
-            },
-            {
               id = 299,
               name = "",
               type = "",
@@ -17912,8 +17898,6 @@ return {
               gid = 6617,
               visible = true,
               properties = {
-                ["facex"] = 0,
-                ["facey"] = 0,
                 ["itemtype"] = "food-fish"
               }
             },
@@ -17930,8 +17914,6 @@ return {
               gid = 6617,
               visible = true,
               properties = {
-                ["facex"] = 0,
-                ["facey"] = 0,
                 ["itemtype"] = "item-throwing-axe"
               }
             },
@@ -17948,8 +17930,6 @@ return {
               gid = 6617,
               visible = true,
               properties = {
-                ["facex"] = 0,
-                ["facey"] = 0,
                 ["itemtype"] = "item-stone"
               }
             },
@@ -17966,8 +17946,6 @@ return {
               gid = 6617,
               visible = true,
               properties = {
-                ["facex"] = 0,
-                ["facey"] = 0,
                 ["itemtype"] = "food-fish"
               }
             },
@@ -17984,8 +17962,6 @@ return {
               gid = 6617,
               visible = true,
               properties = {
-                ["facex"] = 0,
-                ["facey"] = 0,
                 ["itemtype"] = "item-stone"
               }
             },
@@ -18002,8 +17978,6 @@ return {
               gid = 6617,
               visible = true,
               properties = {
-                ["facex"] = 0,
-                ["facey"] = 0,
                 ["itemtype"] = "food-fish"
               }
             },
@@ -18020,8 +17994,6 @@ return {
               gid = 6617,
               visible = true,
               properties = {
-                ["facex"] = 0,
-                ["facey"] = 0,
                 ["itemtype"] = "food-fish"
               }
             },
@@ -18038,8 +18010,6 @@ return {
               gid = 6617,
               visible = true,
               properties = {
-                ["facex"] = 0,
-                ["facey"] = 0,
                 ["itemtype"] = "item-throwing-axe"
               }
             },
