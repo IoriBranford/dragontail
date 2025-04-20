@@ -3,10 +3,13 @@ local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 ---@class Face:TiledObject
 ---@field faceangle number
 ---@field facedestangle number?
+---@field facedegrees number?
 local Face = {}
 
 function Face:init()
-    self.faceangle = self.faceangle or 0
+    self.faceangle = self.faceangle
+        or self.facedegrees and math.rad(self.facedegrees)
+        or 0
 end
 
 ---@param object { x: number, y: number }
