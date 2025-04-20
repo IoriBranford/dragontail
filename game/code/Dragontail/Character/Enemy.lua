@@ -299,8 +299,6 @@ function Enemy:prepareAttack()
     local target = self.opponents[1]
 
     for t = 1, 300 do
-        Face.facePosition(self, target.x, target.y, self.state.animation, self.state.frame1, self.state.loopframe)
-
         self.color = self:getAttackFlashColor(t)
 
         local state, a, b, c, d, e, f = self:duringPrepareAttack(target)
@@ -323,7 +321,6 @@ function Enemy:executeAttack()
     self:stopGuarding()
 
     local target = self.opponents[1]
-    Face.facePosition(self, target.x, target.y, self.state.animation, self.state.frame1, self.state.loopframe)
 
     local attackprojectile = self.attackprojectile
     if attackprojectile then
