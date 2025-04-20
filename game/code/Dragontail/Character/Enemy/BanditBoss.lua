@@ -37,6 +37,9 @@ function BanditBoss:getBestAttack(opponent)
     local isoppobehind = math.dot(facex, facey, distx, disty) <= 0
     if isoppobehind or math.lensq(distx, disty) <= 100*100 then
         local turndir = math.det(facex, facey, distx, disty)
+        if self.state.state == "fall" or self.state.state == "getup" then
+            return turndir < 0 and "bandit-boss-getup-spin-ccw" or "bandit-boss-getup-spin-cw"
+        end
         return turndir < 0 and "bandit-boss-spin-ccw" or "bandit-boss-spin-cw"
     end
     return "bandit-boss-charge"
@@ -114,17 +117,9 @@ end
 function BanditBoss:duringGetUp(attacker)
     if self.health/self.maxhealth <= GetUpAttackHealthPercent then
         local attack = self:getBestAttack(attacker) or ""
-        if attack:find("^bandit%-boss%-spin") then
-            self.attacktype = attack
-            Database.fill(self, attack)
-            self.attackswitchesleft = 0
-            Audio.play(self.windupsound)
-            for t = 1, (self.attackwinduptime or 0) do
-                self.color = self:getAttackFlashColor(t)
-                yield()
-            end
-            self:executeAttack(nil, attacker)
-            return self.aiaftergetup or self.recoverai
+        if attack:find("^bandit%-boss%-getup%-spin") then
+            Face.faceObject(self, attacker)
+            return attack
         end
     end
 end
