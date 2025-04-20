@@ -334,8 +334,9 @@ function Enemy:executeAttack()
 
     local lungespeed = self.attacklungespeed or 0
     local hittime = self.attackhittime or 10
+    local slideangle = self.faceangle
     repeat
-        lungespeed = Slide.updateSlideSpeed(self, self.faceangle, lungespeed, self.attacklungedecel or 1)
+        lungespeed = Slide.updateSlideSpeed(self, slideangle, lungespeed, self.attacklungedecel or 1)
         local state, a, b, c, d, e, f = self:duringAttackSwing(target)
         if state then
             return state, a, b, c, d, e, f
@@ -351,7 +352,7 @@ function Enemy:executeAttack()
     self:stopAttack()
 
     for i = 1, 300 do
-        lungespeed = Slide.updateSlideSpeed(self, self.faceangle, lungespeed, self.attacklungedecel or 1)
+        lungespeed = Slide.updateSlideSpeed(self, slideangle, lungespeed, self.attacklungedecel or 1)
         yield()
         if self.velx ~= 0 or self.vely ~= 0 then
             self:keepInBounds()
