@@ -14,7 +14,9 @@ end
 
 ---@param object { x: number, y: number }
 function Face:faceObject(object, animation, frame1, loopframe)
-    Face.facePosition(self, object.x, object.y, animation, frame1, loopframe)
+    if object then
+        Face.facePosition(self, object.x, object.y, animation, frame1, loopframe)
+    end
 end
 
 function Face:facePosition(x, y, animation, frame1, loopframe)
@@ -51,7 +53,9 @@ end
 
 ---@param object { x: number, y: number }
 function Face:turnTowardsObject(object, turnspeed, animation, frame1, loopframe)
-    Face.turnTowardsPosition(self, object.x, object.y, turnspeed, animation, frame1, loopframe)
+    if object then
+        Face.turnTowardsPosition(self, object.x, object.y, turnspeed, animation, frame1, loopframe)
+    end
 end
 
 function Face:updateTurnToDestAngle(turnspeed, animation, frame1, loopframe)
