@@ -4,6 +4,7 @@ local Audio    = require "System.Audio"
 local Characters = require "Dragontail.Stage.Characters"
 local Stage      = require "Dragontail.Stage"
 local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
+local Face                 = require "Dragontail.Character.Action.Face"
 
 --- Attacks:
 --- - Lance charge
@@ -73,6 +74,7 @@ end
 
 function BanditBoss:duringPrepareAttack(target)
     self:accelerateTowardsVel(0, 0, 4)
+    Face.faceObject(self, target, self.state.animation, self.state.frame1, self.state.loopframe)
     return self:getAttackSwitch(target)
 end
 
