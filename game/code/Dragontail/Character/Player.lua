@@ -362,6 +362,7 @@ function Player:control()
 
             local opponenttohold = HoldOpponent.findOpponentToHold(self, inx, iny)
             if opponenttohold then
+                Audio.play(self.holdsound)
                 return "hold", opponenttohold
             end
         end
