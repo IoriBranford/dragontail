@@ -35,11 +35,6 @@ local yield = coroutine.yield
 
 local lm_random = love.math.random
 
-local function totalAttackRange(attackradius, attacklungespeed, attacklungedecel)
-    return attackradius + Slide.GetSlideDistance(attacklungespeed or 0, attacklungedecel or 1)
-end
-Enemy.TotalAttackRange = totalAttackRange
-
 function Enemy:getAttackFlashColor(t)
     local greenblue = (1+cos(t))/2
     return Color.asARGBInt(1, greenblue, greenblue, 1)
@@ -80,9 +75,9 @@ function Enemy:decideNextAttack()
     local attacktype = self.defaultattack
     if attackchoices and #attackchoices > 0 then
         for i, attackchoice in ipairs(attackchoices) do
-            local attack = Database.get(attackchoice)
-            if attack then
-                local attackrange = totalAttackRange(attack.attackradius or 0, attack.attacklungespeed or 0, attack.attacklungedecel or 1)
+            local attackdata = Database.get(attackchoice)
+            if attackdata then
+                local attackrange = (attackdata.attackbestdist or 1) + opponent.bodyradius
                 if attackrange*attackrange >= toopposq then
                     attacktype = attackchoice
                     break
@@ -102,19 +97,20 @@ function Enemy:afterStand()
         return "stand"
     end
 
-    local attacktype = self:decideNextAttack()
+    local nextattacktype = self:decideNextAttack()
 
     local toopposq = distsq(self.x, self.y, opponent.x, opponent.y)
-    local attackradius = totalAttackRange(self.attackradius or 32, self.attacklungespeed or 0, self.attacklungedecel or 1) + opponent.bodyradius
+    local attackdata = Database.get(nextattacktype)
+    local attackrange = (attackdata and attackdata.attackbestdist or 1) + opponent.bodyradius
     if not opponent.attacker
     and opponent.canbeattacked
-    and toopposq <= attackradius*attackradius
+    and toopposq <= attackrange*attackrange
     and self:isFullyOnCamera(self.camera)
     then
         opponent.attacker = self
-        return attacktype
+        return nextattacktype
     end
-    return "approach"
+    return "approach", nextattacktype
 end
 
 function Enemy:stand(duration)
@@ -127,7 +123,11 @@ function Enemy:stand(duration)
         end
         yield()
     end
-    return self:afterStand() or "stand"
+    local state, a, b, c, d, e, f = self:afterStand()
+    if state then
+        return state, a, b, c, d, e, f
+    end
+    return "stand"
 end
 
 function Enemy:dodgeIncoming(dodgeangle)
@@ -139,27 +139,29 @@ function Enemy:dodgeIncoming(dodgeangle)
     return "stand"
 end
 
-function Enemy:findAttackerSlot(opponent)
+function Enemy:findAttackerSlot(opponent, attacktype)
     local bodyradius = self.bodyradius
-    local attackradius = totalAttackRange(self.attackradius or 64, self.attacklungespeed or 0, self.attacklungedecel or 1) + opponent.bodyradius
+    local attackdata = Database.get(attacktype)
+    local attackrange = (attackdata and attackdata.attackbestdist or 1) + opponent.bodyradius
     local attackerslot
     if self.attackprojectile then
         attackerslot = opponent:findRandomAttackerSlot(bodyradius, "missile")
     else
-        attackerslot = opponent:findRandomAttackerSlot(attackradius + bodyradius, "melee")
+        attackerslot = opponent:findRandomAttackerSlot(attackrange + bodyradius, "melee")
     end
     return attackerslot
 end
 
-function Enemy:getAttackerSlotPosition(opponent, attackerslot)
+function Enemy:getAttackerSlotPosition(opponent, attackerslot, attacktype)
     local bodyradius = self.bodyradius
-    local attackradius = totalAttackRange(self.attackradius or 64, self.attacklungespeed or 0, self.attacklungedecel or 1) + opponent.bodyradius
+    local attackdata = Database.get(attacktype)
+    local attackrange = (attackdata and attackdata.attackbestdist or 1)
     local oppox, oppoy = opponent.x, opponent.y
     local destx, desty
     if self.attackprojectile then
         destx, desty = attackerslot:getFarPosition(oppox, oppoy, bodyradius)
     else
-        destx, desty = attackerslot:getPosition(oppox, oppoy, attackradius)
+        destx, desty = attackerslot:getPosition(oppox, oppoy, attackrange)
     end
     return destx, desty
 end
@@ -188,14 +190,14 @@ end
 function Enemy:duringApproach(target)
 end
 
-function Enemy:approach()
+function Enemy:approach(nextattacktype)
     local opponent = self.opponents[1] ---@type Player
 
-    local attackerslot = self:findAttackerSlot(opponent)
+    local attackerslot = self:findAttackerSlot(opponent, nextattacktype)
     if not attackerslot then
         return "stand", 10
     end
-    local destx, desty = self:navigateAroundSolid(self:getAttackerSlotPosition(opponent, attackerslot))
+    local destx, desty = self:navigateAroundSolid(self:getAttackerSlotPosition(opponent, attackerslot, nextattacktype))
 
     Face.faceVector(self, destx - self.x, desty - self.y, "Walk")
 
@@ -218,13 +220,12 @@ function Enemy:approach()
         end
     end
 
-    local attacktype = not opponent.attacker and self.attacktype
-    if attacktype and opponent.canbeattacked then
-        local attackradius = totalAttackRange(self.attackradius or 64, self.attacklungespeed or 0, self.attacklungedecel or 1) + opponent.bodyradius
-
-        if distsq(self.x, self.y, opponent.x, opponent.y) <= attackradius*attackradius then
+    local attackdata = opponent.canbeattacked and not opponent.attacker and Database.get(nextattacktype)
+    if attackdata then
+        local attackrange = (attackdata.attackbestdist or 1) + opponent.bodyradius
+        if distsq(self.x, self.y, opponent.x, opponent.y) <= attackrange*attackrange then
             Face.facePosition(self, opponent.x, opponent.y)
-            return attacktype
+            return nextattacktype
         end
     end
     if reached then
