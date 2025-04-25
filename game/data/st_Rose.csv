@@ -22,6 +22,6 @@ wallSlammed,,wallSlammed,fall,Hurt,1,FALSE,FALSE,FALSE,sounds/combat/bodyslam.mp
 thrownRecover,,thrownRecover,control,FallKnees,0,FALSE,FALSE,FALSE,sounds/combat/slide.mp3,
 breakaway,,breakaway,control,elbow,0,FALSE,FALSE,FALSE,sounds/combat/slap.mp3,
 fall,,fall,getup,,0,FALSE,FALSE,FALSE,,
-defeat,,defeat,,,0,FALSE,FALSE,FALSE,sounds/player/defeat.mp3,
+defeat,,defeat,FALSE,,0,FALSE,FALSE,FALSE,sounds/player/defeat.mp3,
 getup,,getup,control,FallRiseToFeet,0,FALSE,FALSE,FALSE,sounds/player/getup.mp3,
-eventWalkTo,,eventWalkTo,,Walk,1,FALSE,FALSE,FALSE,,
+eventWalkTo,,eventWalkTo,FALSE,Walk,1,FALSE,FALSE,FALSE,,
