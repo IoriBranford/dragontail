@@ -91,6 +91,25 @@ function Enemy:decideNextAttack()
     return attacktype
 end
 
+function Enemy:couldAttackOpponent(opponent, attacktype)
+    if not opponent
+    or opponent.attacker
+    or not opponent.canbeattacked
+    or not self:isFullyOnCamera(self.camera)
+    then
+        return false
+    end
+
+    local attackdata = Database.get(attacktype)
+    if not attackdata then
+        return false
+    end
+
+    local toopposq = distsq(self.x, self.y, opponent.x, opponent.y)
+    local attackrange = (attackdata.attackbestdist or 1) + opponent.bodyradius
+    return toopposq <= attackrange*attackrange
+end
+
 function Enemy:afterStand()
     local opponent = self.opponents[1]
     if opponent.health <= 0 then
@@ -98,16 +117,9 @@ function Enemy:afterStand()
     end
 
     local nextattacktype = self:decideNextAttack()
-
-    local toopposq = distsq(self.x, self.y, opponent.x, opponent.y)
-    local attackdata = Database.get(nextattacktype)
-    local attackrange = (attackdata and attackdata.attackbestdist or 1) + opponent.bodyradius
-    if not opponent.attacker
-    and opponent.canbeattacked
-    and toopposq <= attackrange*attackrange
-    and self:isFullyOnCamera(self.camera)
-    then
+    if self:couldAttackOpponent(opponent, nextattacktype) then
         opponent.attacker = self
+        Face.facePosition(self, opponent.x, opponent.y)
         return nextattacktype
     end
     return "approach", nextattacktype
@@ -220,14 +232,12 @@ function Enemy:approach(nextattacktype)
         end
     end
 
-    local attackdata = opponent.canbeattacked and not opponent.attacker and Database.get(nextattacktype)
-    if attackdata then
-        local attackrange = (attackdata.attackbestdist or 1) + opponent.bodyradius
-        if distsq(self.x, self.y, opponent.x, opponent.y) <= attackrange*attackrange then
-            Face.facePosition(self, opponent.x, opponent.y)
-            return nextattacktype
-        end
+    if self:couldAttackOpponent(opponent, nextattacktype) then
+        opponent.attacker = self
+        Face.facePosition(self, opponent.x, opponent.y)
+        return nextattacktype
     end
+
     if reached then
         return "stand", 10
     end
