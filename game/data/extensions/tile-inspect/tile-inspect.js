@@ -49,3 +49,10 @@ tiled.extendMenu("Map", [
 tiled.extendMenu("Tileset", [
     { action: 'MarkAndCountEmptyTiles' },
 ]);
+
+tiled.assetAboutToBeSaved.connect(asset => {
+    if (asset.isTileset) {
+        if (asset.resolvedProperty("InspectForEmptyTiles") === true)
+            markAndCountEmptyTiles(asset)
+    }
+})
