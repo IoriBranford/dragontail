@@ -1,11 +1,15 @@
 --- Not yet tested
 
+---@class AtlasTile
+---@field image love.Texture
+---@field quad love.Quad
+
 ---@class AtlasSpace
 ---@field x number
 ---@field y number
 ---@field width number
 ---@field height number
----@field quad love.Quad
+---@field tile AtlasTile
 ---@field [integer] AtlasSpace
 local AtlasSpace = {}
 AtlasSpace.__index = AtlasSpace
@@ -21,7 +25,7 @@ function AtlasSpace:findFreeSub(w, h)
             return subspace
         end
     end
-    if w <= self.width and h <= self.height and not self.quad then
+    if w <= self.width and h <= self.height and not self.tile then
         return self
     end
 end
@@ -37,8 +41,11 @@ function AtlasSpace:split(w, h)
     end
 end
 
-function AtlasSpace:reserve(w, h, quad)
-    self.quad = quad
+---@param w integer
+---@param h integer
+---@param tile AtlasTile
+function AtlasSpace:reserve(w, h, tile)
+    self.tile = tile
     self:split(w, h)
 end
 
@@ -72,12 +79,14 @@ function AtlasSpace:grow2x()
     return self:grow(width, height)
 end
 
-function AtlasSpace:onAtlasResized(width, height)
-    local quad = self.quad
-    local x, y, w, h = quad:getViewport()
-    quad:setViewport(x, y, w, h, width, height)
+function AtlasSpace:onCanvasResized(canvas)
+    local tile = self.tile
+    local x, y, w, h = tile.quad:getViewport()
+    local newwidth, newheight = canvas:getDimensions()
+    tile.image = canvas
+    tile.quad:setViewport(x, y, w, h, newwidth, newheight)
     for i = 1, #self do
-        self[i]:onAtlasResized(width, height)
+        self[i]:onCanvasResized(canvas)
     end
 end
 
@@ -107,11 +116,11 @@ function TileAtlas:resizeCanvas(width, height)
     local oldcanvas = self.canvas
     local newcanvas = love.graphics.newCanvas(width, height)
     if oldcanvas then
-        local prevdrawcanvas = love.graphics.getCanvas()
+        local prevcanvas = love.graphics.getCanvas()
         love.graphics.setCanvas(newcanvas)
         love.graphics.draw(oldcanvas, 0, 0)
-        love.graphics.setCanvas(prevdrawcanvas)
-        self.space:onAtlasResized(width, height)
+        love.graphics.setCanvas(prevcanvas)
+        self.space:onCanvasResized(newcanvas)
     end
     self.canvas = newcanvas
 end
@@ -150,43 +159,43 @@ local function drawExtrudedQuad(image, quad, space)
     end
 end
 
----@param imagequads {image: love.Texture, quad: love.Quad}[]
-function TileAtlas:drawQuadsToCanvas(imagequads, quadspaces)
+---@param tiles AtlasTile[]
+function TileAtlas:drawTilesToCanvas(tiles, tilespaces)
     local canvas = self.canvas
     local atlaswidth = self.width
     local atlasheight = self.height
-    for i = 1, #imagequads do
-        local imagequad = imagequads[i]
-        if imagequad then
-            local quad = imagequad.quad
-            local space = quadspaces[i]
+    for i = 1, #tiles do
+        local tile = tiles[i]
+        if tile then
+            local quad = tile.quad
+            local space = tilespaces[i]
             local x, y, tw, th = 1, 1, 2, 2
             if space then
-                local image = imagequad.image
+                local image = tile.image
                 drawExtrudedQuad(image, quad, space)
                 x, y, tw, th = quad:getViewport()
             end
-            imagequad.image = canvas
+            tile.image = canvas
             quad:setViewport(x, y, tw, th, atlaswidth, atlasheight)
         end
     end
 end
 
-function TileAtlas:reserveSpace(w, h, quad)
+function TileAtlas:reserveSpace(w, h, tile)
     local subspace = self.space:findFreeSub(w, h)
     while not subspace do
         self:growSpace2x()
         subspace = self.space:findFreeSub(w, h)
     end
-    subspace:reserve(w, h, quad)
+    subspace:reserve(w, h, tile)
     return subspace
 end
 
----@param imagequads {image: love.Texture, quad: love.Quad}[]
-function TileAtlas:addImageQuads(imagequads)
+---@param tiles AtlasTile[]
+function TileAtlas:addTiles(tiles)
     local quadspaces = {}
-    for i = 1, #imagequads do
-        local imagequad = imagequads[i]
+    for i = 1, #tiles do
+        local imagequad = tiles[i]
         local image, quad
         if imagequad then
             image, quad = imagequad.image, imagequad.quad
@@ -207,7 +216,7 @@ function TileAtlas:addImageQuads(imagequads)
         self:resizeCanvas(atlaswidth, atlasheight)
     end
 
-    self:drawOnCanvas(self.drawQuadsToCanvas, self, imagequads, quadspaces)
+    self:drawOnCanvas(self.drawTilesToCanvas, self, tiles, quadspaces)
 end
 
 ---@param tileset Tileset
@@ -239,7 +248,7 @@ function TileAtlas:addTileset(tileset)
         self:resizeCanvas(atlaswidth, atlasheight)
     end
 
-    self:drawOnCanvas(self.drawQuadsToCanvas, self, tileset, tilespaces)
+    self:drawOnCanvas(self.drawTilesToCanvas, self, tileset, tilespaces)
 end
 
 ---@param aseprite Aseprite
@@ -343,7 +352,9 @@ return function(tilesets, aseprites)
     self.space = newSpace(0, 0, width, height)
     self:resizeCanvas(width, height)
 
-    self.space.quad = love.graphics.newQuad(1, 1, 2, 2, width, height)
-    self.space:split(EmptyTileSize, EmptyTileSize)
+    self.space:reserve(EmptyTileSize, EmptyTileSize, {
+        image = self.canvas,
+        quad = love.graphics.newQuad(1, 1, 2, 2, width, height)
+    })
     return self
 end
