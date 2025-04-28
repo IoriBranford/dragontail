@@ -52,7 +52,7 @@ tiled.extendMenu("Tileset", [
 
 tiled.assetAboutToBeSaved.connect(asset => {
     if (asset.isTileset) {
-        if (asset.resolvedProperty("InspectForEmptyTiles") === true)
+        if (asset.resolvedProperty("OnSaveInspectForEmptyTiles") === true)
             markAndCountEmptyTiles(asset)
     }
 })
