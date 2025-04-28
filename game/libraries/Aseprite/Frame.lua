@@ -1,13 +1,6 @@
 local class = require "Aseprite.class"
+local Cel   = require "Aseprite.Cel"
 local love_graphics_draw = love.graphics.draw
-
----@class AseCel
----@field x number
----@field y number
----@field width number
----@field height number
----@field image love.Image
----@field quad love.Quad
 
 ---@alias Rect {x: number, y: number, w: number, h: number}
 ---@alias Size {w: number, h: number}
@@ -30,28 +23,13 @@ function AseFrame:_init(i, image, duration)
     self.duration = duration or 0
 end
 
-local function drawCel(cel, x, y, r, sx, sy, ox, oy, kx, ky)
-    love_graphics_draw(cel.image, cel.quad,
-        (x or 0) + cel.x, (y or 0) + cel.y,
-        r or 0, sx or 1, sy or 1, ox, oy, kx, ky)
-end
-
 function AseFrame:putCel(i, cel)
     local rect = cel.frame
     local pos = cel.spriteSourceSize
     for h = #self+1, i-1 do
         self[h] = false
     end
-    self[i] = {
-        x = pos.x,
-        y = pos.y,
-        width = pos.w,
-        height = pos.h,
-        image = self.image,
-        quad = love.graphics.newQuad(rect.x, rect.y, rect.w, rect.h,
-                self.image:getWidth(), self.image:getHeight()),
-        draw = drawCel
-    }
+    self[i] = Cel(self.image, pos, rect)
 end
 
 function AseFrame:drawCels(i, j, x, y)
