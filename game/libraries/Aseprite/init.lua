@@ -143,4 +143,25 @@ function Aseprite.loadWithPixelData(jsonfile)
 	return Aseprite.load(jsonfile, true)
 end
 
+---@return {[integer]: AseCel[]} celsbysrcpos
+function Aseprite:mapCelsBySourcePositions()
+	local celsbysrcpos = {}
+    local imagewidth = self.image:getWidth()
+    for f = 1, #self do
+        local frame = self[f]
+        if frame then
+            for _, cel in ipairs(frame) do
+                if cel then
+                    local srcx, srcy = cel.quad:getViewport()
+                    local key = srcx + srcy*imagewidth
+					local celsatsrcpos =  celsbysrcpos[key] or {}
+					celsbysrcpos[key] = celsatsrcpos
+					celsatsrcpos[#celsatsrcpos+1] = cel
+                end
+            end
+        end
+    end
+	return celsbysrcpos
+end
+
 return Aseprite
