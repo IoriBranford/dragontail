@@ -81,10 +81,13 @@ end
 
 function AtlasSpace:onCanvasResized(canvas)
     local tile = self.tile
-    local x, y, w, h = tile.quad:getViewport()
-    local newwidth, newheight = canvas:getDimensions()
-    tile.image = canvas
-    tile.quad:setViewport(x, y, w, h, newwidth, newheight)
+    if tile then
+        local x, y, w, h = tile.quad:getViewport()
+        local iw, ih = canvas:getDimensions()
+        tile.image = canvas
+        tile.quad:setViewport(x, y, w, h, iw, ih)
+    end
+
     for i = 1, #self do
         self[i]:onCanvasResized(canvas)
     end
