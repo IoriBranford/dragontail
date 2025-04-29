@@ -59,6 +59,9 @@ function SpearBandit:duringPrepareAttack(target)
         if dodgeangle then
             self.numdodges = (self.numdodges or 0) + 1
             self.color = self:getAttackFlashColor(0)
+            if target.attacker == self then
+                target.attacker = nil
+            end
             return "dodgeIncoming", dodgeangle
         end
     end
