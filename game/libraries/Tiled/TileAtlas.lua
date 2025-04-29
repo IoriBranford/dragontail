@@ -15,7 +15,7 @@ local AtlasSpace = {}
 AtlasSpace.__index = AtlasSpace
 
 local function newSpace(x, y, w, h)
-    return setmetatable({x = x, y = y, w = w, h = h}, AtlasSpace)
+    return setmetatable({x = x, y = y, width = w, height = h}, AtlasSpace)
 end
 
 function AtlasSpace:findFreeSub(w, h)
