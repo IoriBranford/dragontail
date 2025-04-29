@@ -125,6 +125,17 @@ function Body:keepInBounds()
     return totalpenex, totalpeney, totalpenez
 end
 
+function Body:getVelocityWithinBounds()
+    local x0, y0, z0, r, h = self.x, self.y, self.z, self.bodyradius, self.bodyheight
+    local x1 = x0 + self.velx
+    local y1 = y0 + self.vely
+    local z1 = z0 + self.velz
+    local totalpenex, totalpeney, totalpenez
+    local Characters = require "Dragontail.Stage.Characters"
+    x1, y1, z1, totalpenex, totalpeney, totalpenez = Characters.keepCylinderIn(x1, y1, z1, r, h, self)
+    return x1 - x0, y1 - y0, z1 - z0, totalpenex, totalpeney, totalpenez
+end
+
 local function testBodyCollision_polygonAndCircle(polygon, circle)
     local points = polygon.points
     local otherx, othery = circle.x - polygon.x, circle.y - polygon.y
