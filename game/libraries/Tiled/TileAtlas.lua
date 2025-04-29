@@ -19,14 +19,17 @@ local function newSpace(x, y, w, h)
 end
 
 function AtlasSpace:findFreeSub(w, h)
+    if w > self.width or h > self.height then
+        return
+    end
+    if not self.tile then
+        return self
+    end
     for i = 1, #self do
         local subspace = self[i]:findFreeSub(w, h)
         if subspace then
             return subspace
         end
-    end
-    if w <= self.width and h <= self.height and not self.tile then
-        return self
     end
 end
 
