@@ -274,23 +274,33 @@ function Characters.keepCircleIn(x, y, r)
     return x, y, totalpenex, totalpeney
 end
 
-function Characters.keepCylinderIn(x, y, z, r, h, self)
+function Characters.keepCylinderIn(x, y, z, r, h, self, iterations)
+    iterations = iterations or 3
     local totalpenex, totalpeney, totalpenez, penex, peney, penez
-    for _, solid in ipairs(solids) do
-        if solid ~= self and solid.bodysolid then
-            penex, peney, penez = Body.getCylinderPenetration(solid, x, y, z, r, h)
-            if penex then
-                x = x - penex
-                totalpenex = (totalpenex or 0) + penex
+    for i = 1, iterations do
+        local anycollision = false
+        for _, solid in ipairs(solids) do
+            if solid ~= self and solid.bodysolid then
+                penex, peney, penez = Body.getCylinderPenetration(solid, x, y, z, r, h)
+                if penex then
+                    anycollision = true
+                    x = x - penex
+                    totalpenex = (totalpenex or 0) + penex
+                end
+                if peney then
+                    anycollision = true
+                    y = y - peney
+                    totalpeney = (totalpeney or 0) + peney
+                end
+                if penez then
+                    anycollision = true
+                    z = z - penez
+                    totalpenez = (totalpenez or 0) + penez
+                end
             end
-            if peney then
-                y = y - peney
-                totalpeney = (totalpeney or 0) + peney
-            end
-            if penez then
-                z = z - penez
-                totalpenez = (totalpenez or 0) + penez
-            end
+        end
+        if not anycollision then
+            break
         end
     end
     return x, y, z, totalpenex, totalpeney, totalpenez
