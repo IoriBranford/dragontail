@@ -17,7 +17,7 @@ local Tile       = require "Tiled.Tile"
 ---@field objectalignment string Controls the alignment for tile objects. Valid values are unspecified, topleft, top, topright, left, center, right, bottomleft, bottom and bottomright. The default value is unspecified, for compatibility reasons. When unspecified, tile objects use bottomleft in orthogonal mode and bottom in isometric mode. (since 1.4)
 ---@field numempty integer Number of tiles whose pixels are all fully transparent (alpha = 0)
 ---@field tiles Tile[] Moved to array part of tileset
----@field image love.Image|Aseprite|string
+---@field image love.Texture|Aseprite|string
 ---@field imagefile string
 ---@field imagetype "image"|"aseprite"
 ---@field tileoffset {x: number, y: number}
