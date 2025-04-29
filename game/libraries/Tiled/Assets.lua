@@ -233,21 +233,8 @@ function Assets.packTiles()
             end
         end
     end
-    table.sort(tiles, function(a, b)
-        return a.height > b.height or a.height == b.height and a.width > b.width
-    end)
 
-    local size = 2048*2048
-    local width, height = 2048, 2048
-    while area > size do
-        size = size * 2
-        if width > height then
-            height = height * 2
-        else
-            width = width * 2
-        end
-    end
-    local atlas = TileAtlas.New(width, height)
+    local atlas = TileAtlas.New()
     atlas:addTiles(tiles)
     atlas:updateCanvas()
 
