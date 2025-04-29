@@ -27,7 +27,7 @@ local Animation= require "Aseprite.Animation"
 ---@class Aseprite:AseTag
 ---@field width number
 ---@field height number
----@field image love.Image
+---@field image love.Texture
 ---@field imagedata love.ImageData?
 ---@field imagefile string
 ---@field layers {[string|integer]: integer|AseLayer}

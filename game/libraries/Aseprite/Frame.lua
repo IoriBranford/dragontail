@@ -7,7 +7,7 @@ local love_graphics_draw = love.graphics.draw
 
 ---@class AseFrame
 ---@field index integer
----@field image love.Image
+---@field image love.Texture
 ---@field frame Rect
 ---@field rotated boolean
 ---@field trimmed boolean
