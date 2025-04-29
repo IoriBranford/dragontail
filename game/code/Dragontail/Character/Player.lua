@@ -201,9 +201,9 @@ function Player:drawAseprite(fixedfrac)
     frame:draw()
     WeaponInHand.draw(self, frame, 0, 0)
     love.graphics.pop()
-    if self.attacker then
-        love.graphics.line(self.x, self.y, self.attacker.x, self.attacker.y)
-    end
+    -- if self.attacker then
+    --     love.graphics.line(self.x, self.y, self.attacker.x, self.attacker.y)
+    -- end
 end
 
 function Player:findRandomAttackerSlot(attackrange, slottype)
