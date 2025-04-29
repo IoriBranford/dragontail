@@ -53,6 +53,7 @@ function AtlasSpace:grow(neww, newh)
     local newspace = self
     if self.width < neww then
         newspace = newSpace(0, 0, neww, newh)
+        newspace.tile = self.tile
         newspace[#newspace+1] = newSpace(self.width, 0, neww - self.width, self.height)
     else
         neww = self.width
@@ -60,6 +61,7 @@ function AtlasSpace:grow(neww, newh)
     if self.height < newh then
         if newspace==self then
             newspace = newSpace(0, 0, neww, newh)
+            newspace.tile = self.tile
         end
         newspace[#newspace+1] = newSpace(0, self.height, neww, newh - self.height)
     end
