@@ -132,7 +132,16 @@ function Body:getVelocityWithinBounds()
     local z1 = z0 + self.velz
     local totalpenex, totalpeney, totalpenez
     local Characters = require "Dragontail.Stage.Characters"
-    x1, y1, z1, totalpenex, totalpeney, totalpenez = Characters.keepCylinderIn(x1, y1, z1, r, h, self)
+    for _ = 1, 4 do
+        local penex, peney, penez
+        x1, y1, z1, penex, peney, penez = Characters.keepCylinderIn(x1, y1, z1, r, h, self)
+        if not penex and not peney and not penez then
+            break
+        end
+        if penex then totalpenex = (totalpenex or 0) + penex end
+        if peney then totalpeney = (totalpeney or 0) + peney end
+        if penez then totalpenez = (totalpenez or 0) + penez end
+    end
     return x1 - x0, y1 - y0, z1 - z0, totalpenex, totalpeney, totalpenez
 end
 
