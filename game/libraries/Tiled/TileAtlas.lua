@@ -255,8 +255,8 @@ function TileAtlas:newImageData()
     return self.canvas:newImageData()
 end
 
-function TileAtlas:saveCanvas(path)
-    self.canvas:newImageData():encode("png", path)
+function TileAtlas:save(path)
+    self.canvas:newImageData():encode("png", string.format("%s.png", path))
 end
 
 ---@param tileset Tileset
