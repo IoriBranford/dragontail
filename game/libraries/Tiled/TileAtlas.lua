@@ -112,7 +112,7 @@ local MaxTextureSize
 function TileAtlas.New(width, height)
     MaxTextureSize = MaxTextureSize or love.graphics.getSystemLimits().texturesize
     local self = setmetatable({}, TileAtlas)
-    width = width or 4096
+    width = width or 2048
     height = height or width
     self.width, self.height = width, height
     self.canvas = love.graphics.newCanvas(width, height)
