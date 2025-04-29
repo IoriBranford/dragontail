@@ -97,267 +97,192 @@ end
 ---@field width number
 ---@field height number
 ---@field space AtlasSpace
+---@field newtilespaces AtlasSpace[]
 ---@field canvas love.Canvas
 local TileAtlas = {}
 TileAtlas.__index = TileAtlas
 
-local EmptyTileSize = 4
+local MaxTextureSize
 
-function TileAtlas:growSpace2x()
-    self.space = self.space:grow2x()
-    self.width, self.height = self.space.width, self.space.height
+function TileAtlas.New(width, height)
+    MaxTextureSize = MaxTextureSize or love.graphics.getSystemLimits().texturesize
+    local self = setmetatable({}, TileAtlas)
+    width = width or 4096
+    height = height or width
+    self.width, self.height = width, height
+    self.canvas = love.graphics.newCanvas(width, height)
+    self.space = newSpace(0, 0, width, height)
+    self.space:reserve(4, 4, {
+        image = self.canvas,
+        quad = love.graphics.newQuad(1, 1, 2, 2, width, height)
+    })
+    self.newtilespaces = {}
+    return self
 end
 
-function TileAtlas:drawOnCanvas(draw, ...)
-    local prevdrawcanvas = love.graphics.getCanvas()
-    love.graphics.setCanvas(self.canvas)
-    draw(...)
-    love.graphics.setCanvas(prevdrawcanvas)
-end
-
-function TileAtlas:resizeCanvas(width, height)
-    local oldcanvas = self.canvas
-    local newcanvas = love.graphics.newCanvas(width, height)
-    if oldcanvas then
-        local prevcanvas = love.graphics.getCanvas()
-        love.graphics.setCanvas(newcanvas)
-        love.graphics.draw(oldcanvas, 0, 0)
-        love.graphics.setCanvas(prevcanvas)
-        self.space:onCanvasResized(newcanvas)
+---@param tile AtlasTile
+function TileAtlas:addTile(tile)
+    if not tile or tile.image == self.canvas then
+        return
     end
-    self.canvas = newcanvas
-end
-
-local drawExtrudedQuad_srcquad = love.graphics.newQuad(0, 0, 1, 1, 1, 1)
-
-local function drawExtrudedQuad(image, quad, space)
-    local qx, qy, qw, qh = quad:getViewport()
-    local dx0, dy0 = space.x, space.y
-    local dx1, dy1 = dx0+1, dy0+1
-    local dx2, dy2 = dx1+qw, dy1+qh
-    local qx2 = qx + qw - 1
-    local qy2 = qy + qh - 1
-    local rects = {
-        dx0, dy0, qx, qy, 1, 1,
-        dx1, dy0, qx, qy, qw, 1,
-        dx2, dy0, qx2, qy, 1, 1,
-        dx0, dy1, qx, qy, 1, qh,
-        dx1, dy1, qx, qy, qw, qh,
-        dx2, dy1, qx2, qy, 1, qh,
-        dx0, dy2, qx, qy2, 1, 1,
-        dx1, dy2, qx, qy2, qw, 1,
-        dx2, dy2, qx2, qy2, 1, 1
-    }
-    local outquad = drawExtrudedQuad_srcquad
-    local iw, ih = image:getDimensions()
-    for i = 6, #rects, 6 do
-        local destx = rects[i-5]
-        local desty = rects[i-4]
-        local srcx = rects[i-3]
-        local srcy = rects[i-2]
-        local srcw = rects[i-1]
-        local srch = rects[i-0]
-        outquad:setViewport(srcx, srcy, srcw, srch, iw, ih)
-        love.graphics.draw(image, outquad, destx, desty)
-    end
-end
-
----@param tiles AtlasTile[]
-function TileAtlas:drawTilesToCanvas(tiles, tilespaces)
-    local canvas = self.canvas
-    local atlaswidth = self.width
-    local atlasheight = self.height
-    for i = 1, #tiles do
-        local tile = tiles[i]
-        if tile then
-            local quad = tile.quad
-            local space = tilespaces[i]
-            local x, y, tw, th = 1, 1, 2, 2
-            if space then
-                local image = tile.image
-                drawExtrudedQuad(image, quad, space)
-                x, y, tw, th = quad:getViewport()
-            end
-            tile.image = canvas
-            quad:setViewport(x, y, tw, th, atlaswidth, atlasheight)
-        end
-    end
-end
-
-function TileAtlas:reserveSpace(w, h, tile)
-    local subspace = self.space:findFreeSub(w, h)
-    while not subspace do
-        self:growSpace2x()
-        subspace = self.space:findFreeSub(w, h)
-    end
-    subspace:reserve(w, h, tile)
-    return subspace
+    local quad = tile.quad
+    local _, _, w, h = quad:getViewport()
+    local tilespace = self:takeSpace(w + 2, h + 2, tile)
+    self.newtilespaces[#self.newtilespaces+1] = tilespace
 end
 
 ---@param tiles AtlasTile[]
 function TileAtlas:addTiles(tiles)
-    local quadspaces = {}
     for i = 1, #tiles do
-        local imagequad = tiles[i]
-        local image, quad
-        if imagequad then
-            image, quad = imagequad.image, imagequad.quad
-        end
-        if image and quad then
-            local _, _, w, h = quad:getViewport()
-            quadspaces[i] = self:reserveSpace(w+2, h+2, quad)
-        else
-            quadspaces[i] = false
-        end
+        self:addTile(tiles[i])
     end
+end
 
+---@param w integer
+---@param h integer
+---@param tile AtlasTile
+---@return AtlasSpace
+function TileAtlas:takeSpace(w, h, tile)
+    local tilespace = self.space:findFreeSub(w, h)
+    while not tilespace and
+    (self.width < MaxTextureSize or self.height < MaxTextureSize)
+    do
+        self.space = self.space:grow2x()
+        self.width, self.height = self.space.width, self.space.height
+        tilespace = self.space:findFreeSub(w, h)
+    end
+    if tilespace then
+        tilespace:reserve(w, h, tile)
+    end
+    return tilespace
+end
+
+function TileAtlas:updateCanvas()
     local canvas = self.canvas
-    local atlaswidth = self.width
-    local atlasheight = self.height
-    if canvas:getWidth() < atlaswidth
-    or canvas:getHeight() < atlasheight then
-        self:resizeCanvas(atlaswidth, atlasheight)
+    local width = self.width
+    local height = self.height
+    local resized = canvas:getWidth() < width
+        or canvas:getHeight() < height
+    if resized then
+        local newcanvas = love.graphics.newCanvas(width, height)
+        newcanvas:renderTo(function()
+            love.graphics.draw(canvas, 0, 0)
+        end)
+        canvas = newcanvas
+        self.canvas = newcanvas
     end
 
-    self:drawOnCanvas(self.drawTilesToCanvas, self, tiles, quadspaces)
+    if #self.newtilespaces > 0 then
+        table.sort(self.newtilespaces, function(a, b)
+            local _, _, aw, ah = a.tile.quad:getViewport()
+            local _, _, bw, bh = b.tile.quad:getViewport()
+            return ah > bh or ah == bh and aw > bw
+        end)
+        canvas:renderTo(function()
+            self:drawNewTilesToCanvas()
+        end)
+    end
+
+    if resized then
+        self.space:onCanvasResized(canvas)
+    end
+end
+
+function TileAtlas:drawNewTilesToCanvas()
+    local canvas = self.canvas
+    local width = self.canvas:getWidth()
+    local height = self.canvas:getHeight()
+    local newtilespaces = self.newtilespaces
+    local quad = love.graphics.newQuad(0, 0, 1, 1, 1, 1)
+    for s = 1, #newtilespaces do
+        local space = newtilespaces[s]
+        local tile = space.tile
+        local srcimage = tile.image
+        local tquad = tile.quad
+        local tsorcx, tsorcy, twidth, theigt = tquad:getViewport()
+        local tdstx0, tdsty0 = space.x, space.y
+        local tdestx, tdesty = tdstx0 + 1, tdsty0 + 1
+        local tdstx1, tdsty1 = tdestx + twidth, tdesty + theigt
+
+        tile.image = canvas
+        tquad:setViewport(tdestx, tdesty, twidth, theigt, width, height)
+        assert(tile.width == twidth and tile.height == theigt)
+
+        local tiles = space.tiles
+        if tiles then
+            for t = 1, #tiles do
+                tiles[t].image = canvas
+                tiles[t].quad:setViewport(tdestx, tdesty, twidth, theigt, width, height)
+            end
+        end
+
+        local tsrcx2 = tsorcx + twidth - 1
+        local tsrcy2 = tsorcy + theigt - 1
+        local srciw, srcih = srcimage:getDimensions()
+        local rects = {
+            -- tile
+            tdestx, tdesty, tsorcx, tsorcy, twidth, theigt,
+
+            -- edges
+            tdestx, tdsty0, tsorcx, tsorcy, twidth,      1,
+            tdstx0, tdesty, tsorcx, tsorcy,      1, theigt,
+            tdstx1, tdesty, tsrcx2, tsorcy,      1, theigt,
+            tdestx, tdsty1, tsorcx, tsrcy2, twidth,      1,
+
+            -- corners
+            tdstx0, tdsty0, tsorcx, tsorcy,      1,      1,
+            tdstx1, tdsty0, tsrcx2, tsorcy,      1,      1,
+            tdstx0, tdsty1, tsorcx, tsrcy2,      1,      1,
+            tdstx1, tdsty1, tsrcx2, tsrcy2,      1,      1
+        }
+        for i = 6, #rects, 6 do
+            local destx = rects[i-5]
+            local desty = rects[i-4]
+            local srcx = rects[i-3]
+            local srcy = rects[i-2]
+            local srctw = rects[i-1]
+            local srcth = rects[i-0]
+            quad:setViewport(srcx, srcy, srctw, srcth, srciw, srcih)
+            love.graphics.draw(srcimage, quad, destx, desty)
+        end
+    end
+    for i = #newtilespaces, 1, -1 do
+        newtilespaces[i] = nil
+    end
+end
+
+function TileAtlas:newImageData()
+    return self.canvas:newImageData()
+end
+
+function TileAtlas:saveCanvas(path)
+    self.canvas:newImageData():encode("png", path)
 end
 
 ---@param tileset Tileset
 function TileAtlas:addTileset(tileset)
-    if tileset.atlas == self then
-        return
-    end
-    tileset.atlas = self
     local tilewidth = tileset.tilewidth
     local tileheight = tileset.tileheight
     local extrudedtilewidth = tilewidth + 2
     local extrudedtileheight = tileheight + 2
+    local canvas = self.canvas
+    local width = self.width
+    local height = self.height
+    local emptyx, emptyy, emptyww, emptyh = self.space.tile.quad:getViewport()
 
-    local tilespaces = {}
     for i = 0, tileset.tilecount-1 do
         local tile = tileset[i]
-        if tile.empty then
-            tilespaces[#tilespaces+1] = false
-        else
-            tilespaces[#tilespaces+1] = self:reserveSpace(extrudedtilewidth, extrudedtileheight, tile.quad)
-        end
-    end
-
-    local canvas = self.canvas
-    local atlaswidth = self.width
-    local atlasheight = self.height
-    if canvas:getWidth() < atlaswidth
-    or canvas:getHeight() < atlasheight then
-        self:resizeCanvas(atlaswidth, atlasheight)
-    end
-
-    self:drawOnCanvas(self.drawTilesToCanvas, self, tileset, tilespaces)
-end
-
----@param aseprite Aseprite
-function TileAtlas:addAseprite(aseprite)
-    if aseprite.atlas == self then
-        return
-    end
-    aseprite.atlas = self
-    local celsbysrcpos = aseprite:mapCelsBySourcePositions()
-
-    local posspaces = {}
-    for pos, cels in pairs(celsbysrcpos) do
-        posspaces[pos] = self:reserveSpace(cels[1])
-    end
-
-    local canvas = self.canvas
-    local atlaswidth = self.width
-    local atlasheight = self.height
-    if canvas:getWidth() < atlaswidth
-    or canvas:getHeight() < atlasheight then
-        self:resizeCanvas(atlaswidth, atlasheight)
-    end
-
-    self:drawOnCanvas(self.drawAseCelsToCanvas, self, celsbysrcpos, posspaces)
-end
-
-function TileAtlas:drawAseCelsToCanvas(celsbysrcpos, posspaces)
-    local canvas = self.canvas
-    local atlaswidth = self.width
-    local atlasheight = self.height
-    for pos, cels in pairs(celsbysrcpos) do
-        local cel1 = cels[1]
-        local space = posspaces[pos]
-        local x, y, tw, th = 1, 1, 2, 2
-        if space then
-            local image = cel1.image
-            local quad = cel1.quad
-            drawExtrudedQuad(image, quad, space)
-            x, y, tw, th = quad:getViewport()
-        end
-        for i = 1, #cels do
-            cels[i].image = canvas
-            cels[i].quad:setViewport(x, y, tw, th, atlaswidth, atlasheight)
+        if tile.image ~= canvas then
+            if tile.empty then
+                tile.image = canvas
+                tile.quad:setViewport(emptyx, emptyy, emptyww, emptyh, width, height)
+            else
+                local tilespace = self:takeSpace(extrudedtilewidth, extrudedtileheight, tile)
+                self.newtilespaces[#self.newtilespaces+1] = tilespace
+            end
         end
     end
 end
 
-function TileAtlas.EstimateTextureSize(area)
-    local texturewidth = EmptyTileSize
-    local textureheight = EmptyTileSize
-
-    while area > texturewidth*textureheight do
-        if textureheight < texturewidth then
-            textureheight = textureheight*2
-        else
-            texturewidth = texturewidth*2
-        end
-    end
-    return texturewidth, textureheight
-end
-
----@param tilesets {[string]:Tileset}
-function TileAtlas:estimateTilesArea(tilesets)
-    if not tilesets then return end
-    local area = 0
-    for _, tileset in pairs(tilesets) do
-        local tilewidth = tileset.tilewidth+2
-        local tileheight = tileset.tileheight+2
-        local tilearea = tilewidth*tileheight
-        local n = tileset.tilecount - tileset.numempty
-        area = area + tilearea*n
-    end
-    return area
-end
-
----@param aseprites {[string]:Aseprite}
-function TileAtlas:estimateAsepritesArea(aseprites)
-    if not aseprites then return end
-    local area = 0
-    for _, aseprite in pairs(aseprites) do
-        local celsbysrcpos = aseprite:mapCelsBySourcePositions()
-        for _, cels in pairs(celsbysrcpos) do
-            local cel = cels[1]
-            local celwidth = cel.width + 2
-            local celheight = cel.height + 2
-            local celarea = celwidth*celheight
-            area = area + celarea
-        end
-    end
-    return area
-end
-
-return function(tilesets, aseprites)
-    local self = setmetatable({}, TileAtlas)
-    local area = EmptyTileSize*EmptyTileSize
-        + self:estimateTilesArea(tilesets)
-        + self:estimateAsepritesArea(aseprites)
-
-    local width, height = TileAtlas.EstimateTextureSize(area)
-    self.width, self.height = width, height
-    self.space = newSpace(0, 0, width, height)
-    self:resizeCanvas(width, height)
-
-    self.space:reserve(EmptyTileSize, EmptyTileSize, {
-        image = self.canvas,
-        quad = love.graphics.newQuad(1, 1, 2, 2, width, height)
-    })
-    return self
-end
+setmetatable(TileAtlas, {__call = TileAtlas.New})
+return TileAtlas
