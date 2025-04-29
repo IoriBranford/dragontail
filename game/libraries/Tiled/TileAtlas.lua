@@ -284,5 +284,17 @@ function TileAtlas:addTileset(tileset)
     end
 end
 
+function TileAtlas:addAseFrame(frame)
+    if not frame then
+        return
+    end
+    for i = 1, #frame do
+        local cel = frame[i]
+        if cel then
+            self:addTile(cel)
+        end
+    end
+end
+
 setmetatable(TileAtlas, {__call = TileAtlas.New})
 return TileAtlas
