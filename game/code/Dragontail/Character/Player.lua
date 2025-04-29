@@ -52,7 +52,7 @@ local function findSomethingToRunningAttack(self, velx, vely)
 end
 
 local function findWallCollision(self)
-    local oobx, ooby = self:keepInBounds()
+    local _, _, _, oobx, ooby = self:getVelocityWithinBounds()
     oobx, ooby = oobx or 0, ooby or 0
     if oobx ~= 0 or ooby ~= 0 then
         return norm(oobx, ooby)
@@ -201,6 +201,9 @@ function Player:drawAseprite(fixedfrac)
     frame:draw()
     WeaponInHand.draw(self, frame, 0, 0)
     love.graphics.pop()
+    if self.attacker then
+        love.graphics.line(self.x, self.y, self.attacker.x, self.attacker.y)
+    end
 end
 
 function Player:findRandomAttackerSlot(attackrange, slottype)

@@ -317,10 +317,8 @@ function Enemy:prepareAttack()
             return state, a, b, c, d, e, f
         end
 
+        self.velx, self.vely, self.velz = self:getVelocityWithinBounds()
         yield()
-        if self.velx ~= 0 or self.vely ~= 0 then
-            self:keepInBounds()
-        end
     end
 end
 
@@ -354,20 +352,16 @@ function Enemy:executeAttack()
         end
         hittime = hittime - 1
         self.color = self:getAttackFlashColor(hittime)
+        self.velx, self.vely, self.velz = self:getVelocityWithinBounds()
         yield()
-        if self.velx ~= 0 or self.vely ~= 0 then
-            self:keepInBounds()
-        end
     until hittime <= 0
     self.color = Color.White
     self:stopAttack()
 
     for i = 1, 300 do
         lungespeed = Slide.updateSlideSpeed(self, slideangle, lungespeed, self.attacklungedecel or 1)
+        self.velx, self.vely, self.velz = self:getVelocityWithinBounds()
         yield()
-        if self.velx ~= 0 or self.vely ~= 0 then
-            self:keepInBounds()
-        end
     end
 end
 

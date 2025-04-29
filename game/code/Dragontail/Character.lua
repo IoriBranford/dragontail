@@ -200,7 +200,7 @@ function Character:stopGuarding()
     self.guardangle = nil
 end
 
-Character.keepInBounds = Body.keepInBounds
+Character.getVelocityWithinBounds = Body.getVelocityWithinBounds
 
 ---@param attacker Character
 function Character:collideWithCharacterAttack(attacker)

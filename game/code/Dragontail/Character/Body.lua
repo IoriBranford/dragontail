@@ -117,6 +117,7 @@ function Body:executeMove(destx, desty, speed, timelimit)
     return self.x == destx and self.y == desty
 end
 
+---@deprecated
 function Body:keepInBounds()
     local x, y, z, r, h = self.x, self.y, self.z, self.bodyradius, self.bodyheight
     local totalpenex, totalpeney, totalpenez

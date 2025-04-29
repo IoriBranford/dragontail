@@ -104,8 +104,8 @@ function Dodge:dodge(opponent, dodgeangle)
     local speed, decel = self.dodgespeed, self.dodgedecel
     repeat
         speed = Slide.updateSlideSpeed(self, dodgeangle, speed, decel)
+        self.velx, self.vely, self.velz = self:getVelocityWithinBounds()
         coroutine.yield()
-        self:keepInBounds()
         local newstate, a, b, c, d, e, f = self:duringDodge(opponent)
         if newstate then
             return newstate, a, b, c, d, e, f

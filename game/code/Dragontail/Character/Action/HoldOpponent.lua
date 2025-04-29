@@ -90,22 +90,25 @@ function HoldOpponent:updateOpponentPosition()
     local ox = radii*math.cos(self.holdangle or 0)
     local oy = radii*math.sin(self.holdangle or 0)
     local oz = math.max(0, (self.bodyheight - enemy.bodyheight)/2)
-    enemy.x = self.x + ox
-    enemy.y = self.y + oy
-    enemy.z = self.z + oz
+    enemy.velx = self.x + ox - enemy.x
+    enemy.vely = self.y + oy - enemy.y
+    enemy.velz = self.z + oz - enemy.z
 end
 
 function HoldOpponent:handleOpponentCollision()
     local enemy = self.heldopponent
     if not enemy then return end
-    local epenex, epeney = Body.keepInBounds(enemy)
+    local evelx, evely, evelz, epenex, epeney = Body.getVelocityWithinBounds(enemy)
     if epenex and epeney then
         local grabradius = self.grabradius or 8
         local radii = grabradius + enemy.bodyradius
         local ox = radii*math.cos(self.holdangle or 0)
         local oy = radii*math.sin(self.holdangle or 0)
-        self.x = enemy.x - ox
-        self.y = enemy.y - oy
+        enemy.velx = evelx
+        enemy.vely = evely
+        enemy.velz = evelz
+        self.velx = enemy.x + evelx - ox - self.x
+        self.vely = enemy.y + evely - oy - self.y
         return epenex, epeney
     end
 end

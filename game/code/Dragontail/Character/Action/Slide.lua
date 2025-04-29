@@ -21,7 +21,7 @@ end
 function Slide:slide(angle, speed, decel)
     repeat
         speed = Slide.updateSlideSpeed(self, angle, speed, decel)
-        self:keepInBounds()
+        self.velx, self.vely, self.velz = self:getVelocityWithinBounds()
         coroutine.yield()
     until speed == 0
 end
