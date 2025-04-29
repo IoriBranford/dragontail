@@ -1,8 +1,8 @@
-local TilePacking = require "Tiled.TilePacking"
+local TileAtlas             = require("Tiled.TileAtlas")
 local hasAseprite, Aseprite = pcall(require, "Aseprite")
 
 ---@alias Music love.Source|VGMPlayer|GameMusicEmu
----@alias Asset Tileset|love.Image|love.ImageData|love.Font|Aseprite|love.Source|Music
+---@alias Asset Tileset|love.Texture|love.ImageData|love.Font|Aseprite|love.Source|Music
 ---@alias AssetGroup {[string]:Asset}
 
 local Assets = {
@@ -147,6 +147,8 @@ function Assets.load(path, ...)
     return asset
 end
 
+---@param path string
+---@param asset Asset
 function Assets.put(path, asset)
     local ext = path:match("%.(%w-)$")
     Assets.all[path] = asset
@@ -206,12 +208,55 @@ end
 
 function Assets.packTiles()
     local tilesets, aseprites = Assets.tilesets, Assets.bytype.jase
-    local packimagedata, packimageerr = TilePacking.pack(tilesets, aseprites)
+    local tiles = {}
+    local area = 16
+    for _, tileset in pairs(tilesets) do
+        local tilearea = (tileset.tilewidth + 2) * (tileset.tileheight + 2)
+        for i = 0, tileset.tilecount - 1 do
+
+            if not tileset[i].empty then
+                tiles[#tiles+1] = tileset[i]
+                area = area + tilearea
+            end
+        end
+    end
+    for _, ase in pairs(aseprites) do
+        for _, frame in ipairs(ase) do
+            if frame then
+                for _, cel in ipairs(frame) do
+                    if cel then
+                        local tilearea = (cel.width + 2) * (cel.height + 2)
+                        area = area + tilearea
+                        tiles[#tiles+1] = cel
+                    end
+                end
+            end
+        end
+    end
+    table.sort(tiles, function(a, b)
+        return a.height > b.height or a.height == b.height and a.width > b.width
+    end)
+
+    local size = 2048*2048
+    local width, height = 2048, 2048
+    while area > size do
+        size = size * 2
+        if width > height then
+            height = height * 2
+        else
+            width = width * 2
+        end
+    end
+    local atlas = TileAtlas.New(width, height)
+    atlas:addTiles(tiles)
+    atlas:updateCanvas()
+
+    local packimagedata = atlas:newImageData()
+
     if packimagedata then
-        local _, tileset1 = next(Assets.tilesets)
-        local packimage = tileset1.image
-        Assets.put("packedtiles.png", packimage)
-        -- TilePacking.save(tilesets, "packedtiles.lua", "packedtiles.png", packimagedata)
+        local packimage = atlas.canvas
+        Assets.put("__atlas.png", packimage)
+        -- atlas:save("atlas")
 
         for _, tileset in pairs(tilesets) do
             Assets.permanent[tileset.imagefile] = nil
@@ -223,8 +268,6 @@ function Assets.packTiles()
                 Assets.put(ase.imagefile, packimage)
             end
         end
-    else
-        print(packimageerr)
     end
 end
 
