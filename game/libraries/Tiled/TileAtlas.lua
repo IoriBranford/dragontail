@@ -175,11 +175,6 @@ function TileAtlas:updateCanvas()
     end
 
     if #self.newtilespaces > 0 then
-        table.sort(self.newtilespaces, function(a, b)
-            local _, _, aw, ah = a.tile.quad:getViewport()
-            local _, _, bw, bh = b.tile.quad:getViewport()
-            return ah > bh or ah == bh and aw > bw
-        end)
         canvas:renderTo(function()
             self:drawNewTilesToCanvas()
         end)
