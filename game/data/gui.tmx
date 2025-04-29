@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="12" nextobjectid="39">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="13" nextobjectid="57">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -7,6 +7,7 @@
  <tileset firstgid="5" source="tilesets/ui/keyboard-keys.tsx"/>
  <tileset firstgid="277" source="tilesets/ui/gamepad-buttons.tsx"/>
  <tileset firstgid="377" source="tilesets/ui/flamegaugefull.tsx"/>
+ <tileset firstgid="385" source="tilesets/ui/weapon-frame.tsx"/>
  <group id="4" name="gameplay">
   <objectgroup draworder="index" id="2" name="hud">
    <object id="4" name="run" type="Gui.Gauge" x="52" y="33" width="100" height="8" visible="0">
@@ -126,6 +127,26 @@
      <property name="z" type="float" value="0"/>
     </properties>
    </object>
+  </objectgroup>
+  <objectgroup id="12" name="hud_weaponslots">
+   <object id="39" name="emptyslot1" gid="388" x="20" y="54" width="24" height="24"/>
+   <object id="43" name="fullslot1" gid="385" x="20" y="54" width="24" height="24"/>
+   <object id="40" name="emptyslot2" gid="389" x="44" y="54" width="24" height="24"/>
+   <object id="44" name="fullslot2" gid="386" x="44" y="54" width="24" height="24"/>
+   <object id="41" name="emptyslot3" gid="389" x="68" y="54" width="24" height="24"/>
+   <object id="45" name="fullslot3" gid="386" x="68" y="54" width="24" height="24"/>
+   <object id="42" name="emptyslot4" gid="390" x="92" y="54" width="24" height="24"/>
+   <object id="46" name="fullslot4" gid="387" x="92" y="54" width="24" height="24"/>
+   <object id="54" name="4slotweapon1" gid="389" x="56" y="54" width="24" height="24"/>
+   <object id="56" name="3slotweapon1" gid="389" x="44" y="54" width="24" height="24"/>
+   <object id="55" name="3slotweapon2" gid="389" x="68" y="54" width="24" height="24"/>
+   <object id="51" name="2slotweapon1" gid="389" x="32" y="54" width="24" height="24"/>
+   <object id="52" name="2slotweapon2" gid="389" x="56" y="54" width="24" height="24"/>
+   <object id="53" name="2slotweapon3" gid="389" x="80" y="54" width="24" height="24"/>
+   <object id="47" name="1slotweapon1" gid="389" x="20" y="54" width="24" height="24"/>
+   <object id="48" name="1slotweapon2" gid="389" x="44" y="54" width="24" height="24"/>
+   <object id="49" name="1slotweapon3" gid="389" x="68" y="54" width="24" height="24"/>
+   <object id="50" name="1slotweapon4" gid="389" x="92" y="54" width="24" height="24"/>
   </objectgroup>
   <objectgroup id="6" name="pausemenu">
    <object id="8" name="name" x="200" y="18" width="80" height="18">
