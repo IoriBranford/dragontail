@@ -46,6 +46,7 @@ local function growSpace(space, neww, newh)
 end
 
 ---@class TilePacking
+---@deprecated
 local TilePacking = {}
 
 --- Pack all tiles in a list of tilesets into one image.

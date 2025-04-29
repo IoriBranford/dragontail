@@ -6,7 +6,7 @@ local Tiled = {
     Object = require "Tiled.Object",
     ObjectGroup = require "Tiled.ObjectGroup",
     TileLayer = require "Tiled.TileLayer",
-    TilePacking = require "Tiled.TilePacking",
+    TileAtlas = require "Tiled.TileAtlas",
     Tileset = require "Tiled.Tileset"
 }
 
