@@ -208,52 +208,40 @@ end
 
 function Assets.packTiles()
     local tilesets, aseprites = Assets.tilesets, Assets.bytype.jase
-    local tiles = {}
-    local area = 16
-    for _, tileset in pairs(tilesets) do
-        local tilearea = (tileset.tilewidth + 2) * (tileset.tileheight + 2)
-        for i = 0, tileset.tilecount - 1 do
 
-            if not tileset[i].empty then
-                tiles[#tiles+1] = tileset[i]
-                area = area + tilearea
-            end
-        end
+    local atlas = TileAtlas.New()
+    for _, tileset in pairs(tilesets) do
+        atlas:addTileset(tileset)
     end
     for _, ase in pairs(aseprites) do
         for _, frame in ipairs(ase) do
             if frame then
-                for _, cel in ipairs(frame) do
-                    if cel then
-                        local tilearea = (cel.width + 2) * (cel.height + 2)
-                        area = area + tilearea
-                        tiles[#tiles+1] = cel
-                    end
-                end
+                atlas:addAseFrame(frame)
             end
         end
     end
 
-    local atlas = TileAtlas.New()
-    atlas:addTiles(tiles)
     atlas:updateCanvas()
 
-    local packimagedata = atlas:newImageData()
+    local packimage = atlas.canvas
+    Assets.put("__atlas.png", packimage)
+    -- atlas:save("atlas")
 
-    if packimagedata then
-        local packimage = atlas.canvas
-        Assets.put("__atlas.png", packimage)
-        -- atlas:save("atlas")
-
-        for _, tileset in pairs(tilesets) do
-            Assets.permanent[tileset.imagefile] = nil
-            Assets.put(tileset.imagefile, packimage)
-        end
-        if aseprites then
-            for _, ase in pairs(aseprites) do
-                Assets.permanent[ase.imagefile] = nil
-                Assets.put(ase.imagefile, packimage)
+    for _, tileset in pairs(tilesets) do
+        tileset.image = packimage
+        Assets.permanent[tileset.imagefile] = nil
+        Assets.put(tileset.imagefile, packimage)
+    end
+    if aseprites then
+        for _, ase in pairs(aseprites) do
+            ase.image = packimage
+            for _, frame in ipairs(ase) do
+                if frame then
+                    frame.image = packimage
+                end
             end
+            Assets.permanent[ase.imagefile] = nil
+            Assets.put(ase.imagefile, packimage)
         end
     end
 end
