@@ -15470,7 +15470,7 @@ return {
       chunks = {
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJxjYBhZ4LMIA8MXEeqZxyzKwMAiSj3zhIFmiVDRPGWgWSpUNM8YaJYJFc0bBZQBAKiIA5Q="
+          data = "eJxjYBhZ4LMIA8MXEeqZxyzKwMAiSj3zhIFmiVDRPGUqmgUCxkDzTKhs5iggHwAAPqEDWw=="
         }
       }
     },
