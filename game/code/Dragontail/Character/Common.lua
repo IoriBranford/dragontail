@@ -164,17 +164,15 @@ function Common:itemWaitForPickup()
                 self.color = Color.White
             end
         elseif self.giveweapon then
-            local weapondata = Database.get(self.giveweapon)
-            local maxplayercancarry = weapondata and weapondata.maxplayercancarry or 1
-            local weaponinhand = opponent.weaponinhand
-            local numcarried = opponent.numweaponinhand or 0
-            if not weaponinhand
-            or weaponinhand == self.giveweapon and numcarried < maxplayercancarry then
+            local weapontype = self.giveweapon
+            local inventory = opponent.inventory
+            if inventory and weapontype then
                 if Body.testBodyCollision(self, opponent) then
-                    Audio.play(opponent.holdsound)
-                    opponent.weaponinhand = self.giveweapon
-                    opponent.numweaponinhand = numcarried + 1
-                    finished = true
+                    if inventory:add(weapontype) then
+                        Audio.play(opponent.holdsound)
+                        opponent.weaponinhand = weapontype
+                        finished = true
+                    end
                 end
             end
         end

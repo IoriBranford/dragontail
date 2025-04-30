@@ -101,7 +101,7 @@
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="right">DEVELOPMENT VER. 2025</text>
    </object>
   </objectgroup>
-  <objectgroup id="10" name="hud_weapon">
+  <objectgroup id="10" name="hud_weapon" visible="0">
    <object id="15" name="weaponname" x="48" y="45" width="90" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Weapon</text>
    </object>

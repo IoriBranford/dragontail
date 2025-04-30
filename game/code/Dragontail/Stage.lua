@@ -331,30 +331,58 @@ function Stage.fixedupdateGui(gui)
     -- local runpercent = player.runenergy / player.runenergymax
     -- hud.run:setPercent(runpercent)
 
-    local weapontype = player.weaponinhand
-    local weapondata = Database.get(weapontype)
-    local weaponhud = gui.gameplay.hud_weapon
-    weaponhud.visible = weapondata ~= nil
+    local weaponhud = gui.gameplay.hud_weaponslots
+    if weaponhud then
+        local inventory = player.inventory
+        if #inventory > 0 then
+            weaponhud.visible = true
 
-    if weapondata then
-        weaponhud.weaponname.text = weapondata.name
-        weaponhud.count.text = player.numweaponinhand
-        weaponhud.max.text = weapondata.maxplayercancarry
-        local asefile, asetag = weapondata.asefile, weapondata.asetag
-        local tileset, tileid = weapondata.tileset, weapondata.tileid
-        if asefile then
-            weaponhud.icon.asefile = asefile
-            weaponhud.icon.asetag = asetag
-            weaponhud.icon.originx = weapondata.spriteoriginx or 0
-            weaponhud.icon.originy = weapondata.spriteoriginy or 0
-            weaponhud.icon:initAseprite()
-        else
-            local tile = tileset and tileid and Assets.getTile(tileset, tileid)
-            if tile then
-                weaponhud.icon.originx = tile.width/2
-                weaponhud.icon.originy = tile.height/2
-                weaponhud.icon:initTile(tile)
+            for i = 1, inventory.capacity do
+                local emptyslot = weaponhud["emptyslot"..i]
+                local filledslot = weaponhud["fullslot"..i]
+                local isfilled = i <= inventory.size
+                if filledslot then filledslot.visible = isfilled end
+                if emptyslot then emptyslot.visible = not isfilled end
+                for s = 1, 4 do
+                    local weaponicon = weaponhud[s.."slotweapon"..i]
+                    if weaponicon then weaponicon.visible = false end
+                end
             end
+
+            local sloti = 1
+            for _, itemtype in ipairs(inventory) do
+                local weapondata = Database.get(itemtype)
+                assert(weapondata)
+
+                local asefile, asetag = weapondata.asefile, weapondata.asetag
+                local tileset, tileid = weapondata.tileset, weapondata.tileid
+                local weaponsize = weapondata.itemsize
+
+                local weaponicon = weaponhud[weaponsize.."slotweapon"..sloti]
+                if not weaponicon then break end
+
+                weaponicon.visible = false
+                if asefile then
+                    weaponicon.asefile = asefile
+                    weaponicon.asetag = asetag
+                    weaponicon.originx = weapondata.spriteoriginx or 0
+                    weaponicon.originy = weapondata.spriteoriginy or 0
+                    weaponicon.visible = true
+                    weaponicon:initAseprite()
+                else
+                    local tile = tileset and tileid and Assets.getTile(tileset, tileid)
+                    if tile then
+                        weaponicon.originx = tile.width/2
+                        weaponicon.originy = tile.height/2
+                        weaponicon.visible = true
+                        weaponicon:initTile(tile)
+                    end
+                end
+
+                sloti = sloti + weaponsize
+            end
+        else
+            weaponhud.visible = false
         end
     end
 end

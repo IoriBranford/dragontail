@@ -15,8 +15,10 @@ local Shoot        = require "Dragontail.Character.Action.Shoot"
 local Body         = require "Dragontail.Character.Body"
 local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 local WeaponInHand         = require "Dragontail.Character.Action.WeaponInHand"
+local Inventory            = require "Dragontail.Character.Inventory"
 
 ---@class Player:Fighter
+---@field inventory Inventory
 local Player = class(Fighter)
 
 local pi = math.pi
@@ -131,6 +133,7 @@ end
 
 function Player:init()
     Fighter.init(self)
+    self.inventory = Inventory()
     self.comboindex = 0
     -- self.runenergy = self.runenergy or 100
     -- self.runenergymax = self.runenergymax or self.runenergy
@@ -542,11 +545,8 @@ function Player:throwWeapon(targetx, targety, targetz, attackid)
         gravity = 1/8,
         speed = 16
     }, targetx, targety, targetz, attackid)
-    self.numweaponinhand = self.numweaponinhand - 1
-    if self.numweaponinhand <= 0 then
-        self.numweaponinhand = nil
-        self.weaponinhand = nil
-    end
+    self.inventory:pop()
+    self.weaponinhand = self.inventory:last()
     local t = self.throwtime or 6
     repeat
         self:accelerateTowardsVel(0, 0, 4)

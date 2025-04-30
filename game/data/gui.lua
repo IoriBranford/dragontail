@@ -624,7 +624,7 @@ return {
           id = 10,
           name = "hud_weapon",
           class = "",
-          visible = true,
+          visible = false,
           opacity = 1,
           offsetx = 0,
           offsety = 0,
