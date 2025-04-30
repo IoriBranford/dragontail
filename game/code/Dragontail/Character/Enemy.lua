@@ -272,7 +272,7 @@ function Enemy:attackIfAmmoElseLeave()
             raycast.dx, raycast.dy = opponent.x - self.x, opponent.y - self.y
             Face.faceVector(self, raycast.dx, raycast.dy, "Stand")
             hitcharacter = Characters.castRay(raycast, self.x, self.y, self)
-        until not hitcharacter
+        until self:isOnCamera(self.camera) and not hitcharacter
         self.ammo = self.ammo - 1
         return attacktype
     end
