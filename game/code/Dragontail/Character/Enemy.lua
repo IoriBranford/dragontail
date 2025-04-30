@@ -289,6 +289,9 @@ end
 
 function Enemy:duringPrepareAttack(target)
     self:accelerateTowardsVel(0, 0, 4)
+    if self.velx ~= 0 or self.vely ~= 0 then
+        self.velx, self.vely, self.velz = self:getVelocityWithinBounds()
+    end
 end
 
 function Enemy:interruptWithDodge(target)
@@ -317,7 +320,6 @@ function Enemy:prepareAttack()
             return state, a, b, c, d, e, f
         end
 
-        self.velx, self.vely, self.velz = self:getVelocityWithinBounds()
         yield()
     end
 end
@@ -352,7 +354,9 @@ function Enemy:executeAttack()
         end
         hittime = hittime - 1
         self.color = self:getAttackFlashColor(hittime)
-        self.velx, self.vely, self.velz = self:getVelocityWithinBounds()
+        if self.velx ~= 0 or self.vely ~= 0 then
+            self.velx, self.vely, self.velz = self:getVelocityWithinBounds()
+        end
         yield()
     until hittime <= 0
     self.color = Color.White
@@ -360,7 +364,10 @@ function Enemy:executeAttack()
 
     for i = 1, 300 do
         lungespeed = Slide.updateSlideSpeed(self, slideangle, lungespeed, self.attacklungedecel or 1)
-        self.velx, self.vely, self.velz = self:getVelocityWithinBounds()
+
+        if self.velx ~= 0 or self.vely ~= 0 then
+            self.velx, self.vely, self.velz = self:getVelocityWithinBounds()
+        end
         yield()
     end
 end
