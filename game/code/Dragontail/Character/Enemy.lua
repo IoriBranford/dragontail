@@ -270,10 +270,7 @@ function Enemy:attackIfAmmoElseLeave()
         repeat
             yield()
             raycast.dx, raycast.dy = opponent.x - self.x, opponent.y - self.y
-            local angle = atan2(raycast.dy, raycast.dx)
-            if angle == angle then
-                DirectionalAnimation.set(self, "Stand", angle)
-            end
+            Face.faceVector(self, raycast.dx, raycast.dy, "Stand")
             hitcharacter = Characters.castRay(raycast, self.x, self.y, self)
         until not hitcharacter
         self.ammo = self.ammo - 1
