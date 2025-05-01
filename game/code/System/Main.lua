@@ -87,9 +87,10 @@ function love.handlers.keypressed(...)
     cute.keypressed(...)
 end
 
-local gamepadpressedhandler = love.handlers.gamepadpressed
-function love.handlers.gamepadpressed(...)
-    gamepadpressedhandler(...)
+local joystickaddedhandler = love.handlers.joystickadded
+function love.handlers.joystickadded(...)
+    Inputs.joystickadded(...)
+    joystickaddedhandler(...)
 end
 
 function love.quit()
