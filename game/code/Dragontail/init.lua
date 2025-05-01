@@ -7,6 +7,7 @@ local Platform              = require "System.Platform"
 local Assets = require "Tiled.Assets"
 local Window = require "System.Window"
 local Stage  = require "Dragontail.Stage"
+local Inputs = require "System.Inputs"
 local firstphase = "Dragontail.GamePhase"
 local firstmap = "data/stage_demonrealm.lua"
 
@@ -28,6 +29,8 @@ function love.load(args)
     Config.drawstats = args.drawstats
     Config.drawai = args.drawai
 
+    Inputs.addMappings(Config.inputs)
+
     Window.init(Stage.CameraWidth, Stage.CameraHeight)
     love.window.setTitle(love.filesystem.getIdentity())
     local iconfile = "appicon/appicon.png"
@@ -48,7 +51,6 @@ function love.load(args)
 end
 
 return {
-    controls = require "Dragontail.Controls",
     cli = [[
         --rotation                              (number default -1)	Screen orientation in degrees clockwise
         --drawbodies                            Draw physical bodies
@@ -69,7 +71,22 @@ return {
         drawai = false,
         exhibit = false,
         maximize = Platform.supports("maximize"),
-    
+
+        inputs = {
+            ["keyaxis left right"] = "movex",
+            ["keyaxis up down"] = "movey",
+            ["key z"] = "attack",
+            ["key x"] = "attack2",
+            ["key lshift"] = "sprint",
+            ["pad0 axis leftx"] = "movex",
+            ["pad0 axis lefty"] = "movey",
+            ["pad0 buttonaxis dpleft dpright"] = "movex",
+            ["pad0 buttonaxis dpup dpdown"] = "movey",
+            ["pad0 button x"] = "attack",
+            ["pad0 button y"] = "attack2",
+            ["pad0 button a"] = "sprint",
+        },
+
         key_left = "left",
         key_right = "right",
         key_up = "up",

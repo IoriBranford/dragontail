@@ -1,4 +1,4 @@
-local Controls = require "Dragontail.Controls"
+local Inputs = require "System.Inputs"
 local Database = require "Data.Database"
 local Audio    = require "System.Audio"
 local Movement = require "Component.Movement"
@@ -132,6 +132,10 @@ local function findInstantThrowTarget(self, targetfacex, targetfacey)
 end
 
 function Player:init()
+    self.joystickx = Inputs.getAction("movex")
+    self.joysticky = Inputs.getAction("movey")
+    self.attackbutton = Inputs.getAction("attack")
+    self.sprintbutton = Inputs.getAction("sprint")
     Fighter.init(self)
     self.inventory = Inventory()
     self.comboindex = 0
@@ -256,9 +260,9 @@ function Player:control()
     local runningtime
     -- local attackdowntime
     while true do
-        local inx, iny = Controls.getDirectionInput()
-        local attackpressed, runpressed = Controls.getButtonsPressed()
-        local attackdown, rundown = Controls.getButtonsDown()
+        local inx, iny = self.joystickx.position, self.joysticky.position
+        local attackpressed, runpressed = self.attackbutton.pressed, self.sprintbutton.pressed
+        local rundown = self.sprintbutton.down
 
         local targetvelx, targetvely = 0, 0
         if inx ~= 0 or iny ~= 0 then
@@ -413,7 +417,7 @@ function Player:spinAttack(attackangle)
             Shoot.launchProjectile(self, "Rose-fireball", cos(faceangle), sin(faceangle), 0)
         end
 
-        local inx, iny = Controls.getDirectionInput()
+        local inx, iny = self.joystickx.position, self.joysticky.position
         local targetvelx, targetvely = 0, 0
         local speed = 2
         if inx ~= 0 or iny ~= 0 then
@@ -432,14 +436,14 @@ function Player:spinAttack(attackangle)
         Face.faceAngle(self, faceangle, self.state and self.state.animation)
 
         yield()
-        attackagain = attackagain or Controls.getButtonsPressed()
+        attackagain = attackagain or self.attackbutton.pressed
         tailangle = tailangle + spinvel
         t = t - 1
     until t <= 0
     self:stopAttack()
     self.faceangle = originalfaceangle
     if attackagain then
-        local inx, iny = Controls.getDirectionInput()
+        local inx, iny = self.joystickx.position, self.joysticky.position
         if inx ~= 0 or iny ~= 0 then
             originalfaceangle = atan2(iny, inx)
         end
@@ -457,8 +461,8 @@ function Player:aimThrow()
     self.facedestangle = self.faceangle
     local lockonenemy
     while true do
-        local attackbutton, runbutton = Controls.getButtonsDown()
-        local inx, iny = Controls.getDirectionInput()
+        local attackbutton, runbutton = self.attackbutton.down, self.sprintbutton.down
+        local inx, iny = self.joystickx.position, self.joysticky.position
         if inx ~= 0 or iny ~= 0 then
             if lensq(inx, iny) > 1 then
                 inx, iny = norm(inx, iny)
@@ -583,8 +587,8 @@ function Player:hold(enemy)
             time = time - 1
         end
 
-        local inx, iny = Controls.getDirectionInput()
-        local attackpressed, runpressed = Controls.getButtonsPressed()
+        local inx, iny = self.joystickx.position, self.joysticky.position
+        local attackpressed, runpressed = self.attackbutton.pressed, self.sprintbutton.pressed
         local targetvelx, targetvely = 0, 0
         local speed = 2
         if inx ~= 0 or iny ~= 0 then
@@ -648,9 +652,9 @@ function Player:runWithEnemy(enemy)
     local runningtime = 0
     while true do
         yield()
-        local inx, iny = Controls.getDirectionInput()
-        local attackpressed = Controls.getButtonsPressed()
-        local _, rundown = Controls.getButtonsDown()
+        local inx, iny = self.joystickx.position, self.joysticky.position
+        local attackpressed = self.attackbutton.pressed
+        local _, rundown = self.attackbutton.down, self.sprintbutton.down
 
         local targetvelx, targetvely = 0, 0
         if inx ~= 0 or iny ~= 0 then
@@ -726,7 +730,7 @@ function Player:spinAndKickEnemy(angle, enemy)
     local spunmag = 0
     local spinmag = abs(spinvel)
     repeat
-        local inx, iny = Controls.getDirectionInput()
+        local inx, iny = self.joystickx.position, self.joysticky.position
         local targetvelx, targetvely = 0, 0
         local speed = 2
         if inx ~= 0 or iny ~= 0 then
@@ -777,7 +781,7 @@ function Player:straightAttack(angle, heldenemy)
     local lungespeed = self.attacklungespeed
     repeat
         yield()
-        attackagain = attackagain or Controls.getButtonsPressed()
+        attackagain = attackagain or self.attackbutton.pressed
         if lungespeed then
             lungespeed = Slide.updateSlideSpeed(self, angle, lungespeed)
         else
@@ -795,7 +799,7 @@ function Player:straightAttack(angle, heldenemy)
     self:stopAttack()
     if attackagain then
         local faceangle = self.faceangle
-        local inx, iny = Controls.getDirectionInput()
+        local inx, iny = self.joystickx.position, self.joysticky.position
         if not heldenemy then
             if inx ~= 0 or iny ~= 0 then
                 faceangle = atan2(iny, inx)
@@ -818,7 +822,7 @@ function Player:getup(attacker)
     end
     for i = 1, t do
         yield()
-        local _, runpressed = Controls.getButtonsPressed()
+        local _, runpressed = self.attackbutton.pressed, self.sprintbutton.pressed
         if runpressed then
             break
         end

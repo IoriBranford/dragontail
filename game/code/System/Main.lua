@@ -5,10 +5,10 @@ local Audio = require "System.Audio"
 local Config = require "System.Config"
 local Platform = require "System.Platform"
 local Time   = require "System.Time"
-local Controls= require "System.Controls"
 local cute = require "cute"
 local haslldebugger, lldebugger = pcall(require, "lldebugger")
 local Account                   = require("System.Account")
+local Inputs                    = require("System.Inputs")
 if not haslldebugger then
     lldebugger = nil
 end
@@ -84,14 +84,12 @@ end
 local keypressedhandler = love.handlers.keypressed
 function love.handlers.keypressed(...)
     keypressedhandler(...)
-    Controls.keypressed(...)
     cute.keypressed(...)
 end
 
 local gamepadpressedhandler = love.handlers.gamepadpressed
 function love.handlers.gamepadpressed(...)
     gamepadpressedhandler(...)
-    Controls.gamepadpressed(...)
 end
 
 function love.quit()
@@ -101,7 +99,6 @@ function love.quit()
     Audio.stop()
     Config.save()
     Account.quit()
-    Controls.quit()
 	if profile then
         profile.stop()
 	end
@@ -112,8 +109,6 @@ function love.run()
     cute.go(love.arg.parseGameArguments(arg))
 
     Config.load(game.defaultconfig)
-    Controls = game.controls or Controls
-    Controls.init()
 
     local cli = love.filesystem.getIdentity()..[[
 
@@ -198,8 +193,8 @@ function love.run()
             numfixed, fixedfrac = math.modf(fixedfrac)
             numfixed = math.min(numfixed, fixedlimit)
             for i = 1, numfixed do
+                Inputs.update()
                 love.fixedupdate()
-                Controls.clearButtonsPressed()
             end
         end
 
