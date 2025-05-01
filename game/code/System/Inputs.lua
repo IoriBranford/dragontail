@@ -197,6 +197,10 @@ function Inputs.joystickadded(joystick)
 end
 
 function Inputs.getAction(name)
+    return actions[name]
+end
+
+function Inputs.getOrMakeAction(name)
     local action = actions[name]
     if not action then
         action = {
@@ -216,7 +220,7 @@ end
 function Inputs.addMapping(inputstring, actionname)
     local input = InputParse.parse(inputstring)
     if input then
-        local action = Inputs.getAction(actionname)
+        local action = Inputs.getOrMakeAction(actionname)
         inputs[input] = action
         return action
     end
