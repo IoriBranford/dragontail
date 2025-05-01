@@ -29,6 +29,7 @@ function love.load(args)
     Config.drawstats = args.drawstats
     Config.drawai = args.drawai
 
+    Inputs.initGamepads()
     Inputs.addMappings(Config.inputs)
 
     Window.init(Stage.CameraWidth, Stage.CameraHeight)

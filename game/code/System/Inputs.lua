@@ -1,3 +1,8 @@
+local Inputs = {}
+
+local inputs = {} ---@type {[Input]: InputAction}
+local actions = {} ---@type {[string]: InputAction}
+local gamepadsbyid = {} ---@type {[integer]: love.Joystick} gamepads by id
 
 ---@class InputAction
 ---@field name string
@@ -11,6 +16,7 @@
 ---@alias InputType "key"|"keyaxis"|"gamepadbutton"|"gamepadbuttonaxis"|"gamepadaxis"
 
 ---@class Input
+---@field type InputType
 
 ---@class KeyInput:Input
 ---@field type "key"
@@ -23,28 +29,19 @@
 
 ---@class GamepadButtonInput:Input
 ---@field type "gamepadbutton"
----@field gamepad love.Joystick
+---@field gamepadid integer
 ---@field button love.GamepadButton
 
 ---@class GamepadButtonAxisInput:Input
 ---@field type "gamepadbuttonaxis"
----@field gamepad love.Joystick
+---@field gamepadid integer
 ---@field positive love.GamepadButton
 ---@field negative love.GamepadButton
 
 ---@class GamepadAxisInput:Input
 ---@field type "gamepadaxis"
----@field gamepad love.Joystick
+---@field gamepadid integer
 ---@field axis love.GamepadAxis
-
-local function getGamepadByID(id)
-    local joysticks = love.joystick.getJoysticks() ---@type love.Joystick[]
-    for _, joystick in ipairs(joysticks) do
-        if id == joystick:getID() then
-            return joystick
-        end
-    end
-end
 
 local InputString = {}
 local InputParse = {}
@@ -81,8 +78,7 @@ function InputParse.pad(s)
     local gamepadid, inputtype, values = string.match(s, "^pad(%d+) (%w+) ([%w ]+)$")
     local padparse = InputParse[inputtype]
     return padparse and padparse({
-        gamepadid = gamepadid,
-        gamepad = getGamepadByID(gamepadid)
+        gamepadid = tonumber(gamepadid)
     }, values)
 end
 
@@ -141,31 +137,49 @@ end
 
 ---@param input GamepadAxisInput
 function InputPosition.gamepadaxis(input)
-    return input.gamepad:getGamepadAxis(input.axis)
+    local gamepad = gamepadsbyid[input.gamepadid]
+    return gamepad and gamepad:getGamepadAxis(input.axis) or 0
 end
 
 ---@param input GamepadButtonInput
 function InputPosition.gamepadbutton(input)
-    return input.gamepad:isGamepadDown(input.button) and 1 or 0
+    local gamepad = gamepadsbyid[input.gamepadid]
+    return gamepad and gamepad:isGamepadDown(input.button) and 1 or 0
 end
 
 ---@param input GamepadButtonAxisInput
 function InputPosition.gamepadbuttonaxis(input)
-    return (input.gamepad:isGamepadDown(input.positive) and 1 or 0)
-        - (input.gamepad:isGamepadDown(input.negative) and 1 or 0)
+    local gamepad = gamepadsbyid[input.gamepadid]
+    return gamepad and
+        ((gamepad:isGamepadDown(input.positive) and 1 or 0)
+        - (gamepad:isGamepadDown(input.negative) and 1 or 0))
+        or 0
 end
 
 function InputPosition.get(input)
     return InputPosition[input.type](input)
 end
 
-local Inputs = {}
-
-local inputs = {} ---@type {[Input]: InputAction}
-local actions = {} ---@type {[string]: InputAction}
-
 local function isPositionDown(position)
     return math.abs(position) >= .25
+end
+
+function Inputs.initGamepads()
+    if love.filesystem.getInfo("data/gamecontrollerdb.txt", "file") then
+        love.joystick.loadGamepadMappings("data/gamecontrollerdb.txt")
+    end
+    if love.filesystem.getInfo("gamecontrollerdb.txt", "file") then
+        love.joystick.loadGamepadMappings("gamecontrollerdb.txt")
+    end
+    local joysticks = love.joystick:getJoysticks()
+    for i = 1, #joysticks do
+        Inputs.joystickadded(joysticks[i])
+    end
+end
+
+function Inputs.joystickadded(joystick)
+    local id = joystick:getID()
+    gamepadsbyid[id] = joystick
 end
 
 function Inputs.getAction(name)
