@@ -1,3 +1,5 @@
+local Platform = require "System.Platform"
+
 local Inputs = {}
 
 local inputs = {} ---@type {[Input]: InputAction}
@@ -180,6 +182,18 @@ end
 function Inputs.joystickadded(joystick)
     local id = joystick:getID()
     gamepadsbyid[id] = joystick
+
+    if not joystick:isGamepad() then
+        local DefaultMapping = "%s,%s,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b8,leftshoulder:b4,leftstick:b9,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b10,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:%s,"
+
+        local os = Platform.OS
+        local GCDBOS = {
+            ["OS X"] = "Mac OS X"
+        }
+        os = GCDBOS[os] or os
+        local mapping = string.format(DefaultMapping, joystick:getGUID(), joystick:getName(), os)
+        love.joystick.loadGamepadMappings(mapping)
+    end
 end
 
 function Inputs.getAction(name)
