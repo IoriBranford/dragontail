@@ -121,7 +121,7 @@ function InputString.get(type, ...)
 end
 
 function InputParse.parse(s)
-    local device = string.match(s, "^(%S+)")
+    local device = string.match(s, "^(%a+)")
     local parse = InputParse[device]
     if parse then return parse(s) end
 end
