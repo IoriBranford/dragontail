@@ -1,9 +1,10 @@
 local Platform = require "System.Platform"
 local InputParse = require "System.InputParse"
+local InputString= require "System.InputString"
 
 local Inputs = {}
 
-local inputs = {} ---@type {[Input]: InputAction}
+local inputs = {} ---@type {[string]: Input}
 local actions = {} ---@type {[string]: InputAction}
 local gamepadsbyid = {} ---@type {[integer]: love.Joystick} gamepads by id
 
@@ -20,6 +21,7 @@ local gamepadsbyid = {} ---@type {[integer]: love.Joystick} gamepads by id
 
 ---@class Input
 ---@field type InputType
+---@field action InputAction
 
 ---@class KeyInput:Input
 ---@field type "key"
@@ -142,9 +144,9 @@ end
 function Inputs.addMapping(inputstring, actionname)
     local input = InputParse.parse(inputstring)
     if input then
-        local action = Inputs.getOrMakeAction(actionname)
-        inputs[input] = action
-        return action
+        input.action = Inputs.getOrMakeAction(actionname)
+        inputs[inputstring] = input
+        return input
     end
 end
 
@@ -156,6 +158,7 @@ function Inputs.addKeyMapping(keys, actionname)
         ---@type KeyAxisInput
         input = {
             type = "keyaxis",
+            action = Inputs.getOrMakeAction(actionname),
             negative = key1,
             positive = key2,
         }
@@ -164,14 +167,14 @@ function Inputs.addKeyMapping(keys, actionname)
         ---@type KeyInput
         input = {
             type = "key",
+            action = Inputs.getOrMakeAction(actionname),
             key = key1,
         }
     end
 
     if input then
-        local action = Inputs.getOrMakeAction(actionname)
-        inputs[input] = action
-        return action
+        inputs[InputString.get(input.type, key1, key2)] = input
+        return input
     end
 end
 
@@ -217,6 +220,7 @@ function Inputs.addGamepadInputMapping(gamepadid, gamepadinputs, actionname)
     if input2 then
         input = {
             type = "gamepadbuttonaxis",
+            action = Inputs.getOrMakeAction(actionname),
             gamepadid = gamepadid,
             negative = input1,
             positive = input2,
@@ -226,6 +230,7 @@ function Inputs.addGamepadInputMapping(gamepadid, gamepadinputs, actionname)
         if inputtype then
             input = {
                 type = "gamepad"..inputtype,
+                action = Inputs.getOrMakeAction(actionname),
                 gamepadid = gamepadid,
                 [inputtype] = input1
             }
@@ -233,9 +238,8 @@ function Inputs.addGamepadInputMapping(gamepadid, gamepadinputs, actionname)
     end
 
     if input then
-        local action = Inputs.getOrMakeAction(actionname)
-        inputs[input] = action
-        return action
+        inputs[InputString.get(input.type, gamepadid, input1, input2)] = input
+        return input
     end
 end
 
@@ -264,9 +268,10 @@ function Inputs.update()
         action.numinputsdown = 0
     end
 
-    for input, action in pairs(inputs) do
+    for _, input in pairs(inputs) do
         local position = InputPosition.get(input)
         if isPositionDown(position) then
+            local action = input.action
             action.position = action.position + position
             action.numinputsdown = action.numinputsdown + 1
         end
