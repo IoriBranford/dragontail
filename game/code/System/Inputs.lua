@@ -1,4 +1,5 @@
 local Platform = require "System.Platform"
+local InputParse = require "System.InputParse"
 
 local Inputs = {}
 
@@ -44,85 +45,6 @@ local gamepadsbyid = {} ---@type {[integer]: love.Joystick} gamepads by id
 ---@field type "gamepadaxis"
 ---@field gamepadid integer
 ---@field axis love.GamepadAxis
-
-local InputString = {}
-local InputParse = {}
-
-function InputString.key(key)
-    return string.format("key %s", key)
-end
-
----@return KeyInput?
-function InputParse.key(s)
-    local key = string.match(s, "^key (%S+)$")
-    return {
-        type = "key", key = key
-    }
-end
-
-function InputString.keyaxis(negative, positive)
-    return string.format("keyaxis %s %s", negative, positive)
-end
-
----@return KeyAxisInput?
-function InputParse.keyaxis(s)
-    local negative, positive = string.match(s, "^keyaxis (%S+) (%S+)$")
-    return {
-        type = "keyaxis", negative = negative, positive = positive
-    }
-end
-
-function InputString.gamepadaxis(gamepadid, axis)
-    return string.format("pad%d axis %s", gamepadid, axis)
-end
-
-function InputParse.pad(s)
-    local gamepadid, inputtype, values = string.match(s, "^pad(%d+) (%w+) ([%w ]+)$")
-    local padparse = InputParse[inputtype]
-    return padparse and padparse({
-        gamepadid = tonumber(gamepadid)
-    }, values)
-end
-
----@return GamepadAxisInput?
-function InputParse.axis(input, axis)
-    input.type = "gamepadaxis"
-    input.axis = axis
-    return input
-end
-
-function InputString.gamepadbutton(gamepadid, button)
-    return string.format("pad%d button %s", gamepadid, button)
-end
-
----@return GamepadButtonInput?
-function InputParse.button(input, button)
-    input.type = "gamepadbutton"
-    input.button = button
-    return input
-end
-
-function InputString.gamepadbuttonaxis(gamepadid, negative, positive)
-    return string.format("pad%d buttonaxis %s %s", gamepadid, negative, positive)
-end
-
-function InputParse.buttonaxis(input, values)
-    local negative, positive = string.match(values, "^(%w+) (%w+)$")
-    input.type = "gamepadbuttonaxis"
-    input.negative = negative
-    input.positive = positive
-    return input
-end
-
-function InputString.get(type, ...)
-    return InputString[type](...)
-end
-
-function InputParse.parse(s)
-    local device = string.match(s, "^(%a+)")
-    local parse = InputParse[device]
-    if parse then return parse(s) end
-end
 
 local InputPosition = {}
 
