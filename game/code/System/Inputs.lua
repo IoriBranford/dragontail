@@ -261,6 +261,28 @@ function Inputs.addMappings(mappings)
     end
 end
 
+local InputTypePatterns = {}
+for _, inputtype in pairs({"key", "keyaxis", "gamepadbutton", "gamepadaxis", "gamepadbuttonaxis"}) do
+    InputTypePatterns[inputtype] = "^%f[%g]"..inputtype.."%f[%G]"
+end
+
+function Inputs.getActionsInputs(inputtypes)
+    local actionsinputs = {} ---@type {[InputAction]:Input[]}
+    for input, action in pairs(inputs) do
+        if not inputtypes or inputtypes:find(InputTypePatterns[input.type]) then
+            local actioninputs = actionsinputs[action] or {}
+            actionsinputs[action] = actioninputs
+            actioninputs[#actioninputs+1] = input
+        end
+    end
+
+    return actionsinputs
+end
+
+function Inputs.removeMapping(input)
+    inputs[input] = nil
+end
+
 function Inputs.update()
     for _, action in pairs(actions) do
         action.lastposition = action.position
