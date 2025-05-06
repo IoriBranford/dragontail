@@ -217,7 +217,7 @@ local GamepadInputTypes = {
 function Inputs.addGamepadInputMapping(gamepadid, gamepadinputs, actionname)
     local input1, input2 = string.match(gamepadinputs, "^(%S+) *(%S*)$")
     local input
-    if input2 then
+    if (input2 or "") ~= "" then
         input = {
             type = "gamepadbuttonaxis",
             action = Inputs.getOrMakeAction(actionname),
