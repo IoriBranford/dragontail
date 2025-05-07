@@ -165,12 +165,10 @@ function Common:itemWaitForPickup()
             end
         elseif self.giveweapon then
             local weapontype = self.giveweapon
-            local inventory = opponent.inventory
-            if inventory and weapontype then
+            local tryToGiveWeapon = opponent.tryToGiveWeapon
+            if tryToGiveWeapon and weapontype then
                 if Body.testBodyCollision(self, opponent) then
-                    if inventory:add(weapontype) then
-                        Audio.play(opponent.holdsound)
-                        opponent.weaponinhand = weapontype
+                    if tryToGiveWeapon(opponent, weapontype) then
                         finished = true
                     end
                 end
