@@ -282,16 +282,17 @@ function Player:findProjectileToCatch(parryx, parryy)
         and projectile.z >= z
         and projectile.z <= ztop
         then
+            local catchprojradius = catchradius + math.max(projectile.attackradius, projectile.bodyradius)
             local toprojx = projectile.x - x
             local toprojy = projectile.y - y
             local d = dot(parryx, parryy, toprojx, toprojy)
-            if mindot <= d and d <= catchradius then
+            if mindot <= d and d <= catchprojradius then
                 return projectile
             end
             local toprojx2 = toprojx + projectile.velx
             local toprojy2 = toprojy + projectile.vely
             d = dot(parryx, parryy, toprojx2, toprojy2)
-            if mindot <= d and d <= catchradius then
+            if mindot <= d and d <= catchprojradius then
                 return projectile
             end
         end
