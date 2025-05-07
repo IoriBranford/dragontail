@@ -263,7 +263,7 @@ end
 
 function Player:getParryVector()
     local x1, y1 = self.joysticklog:newest()
-    if x1 == 0 and y1 == 0 then return end
+    if not x1 or not y1 or x1 == 0 and y1 == 0 then return end
     local x0, y0 = self.joysticklog:oldest()
     if dot(x0, y0, x1, y1) <= 0 then
         return math.norm(x1, y1)
