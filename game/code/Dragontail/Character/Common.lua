@@ -237,6 +237,16 @@ function Common:projectileEmbed(opponent, ooby, oobz)
     end
 end
 
+function Common:becomeItem()
+    if Database.get(self.itemtype) then
+        Characters.spawn({
+            type = self.itemtype,
+            x = self.x, y = self.y, z = self.z
+        })
+    end
+    self:disappear()
+end
+
 function Common:projectileBounce(opponent, ooby, oobz)
     self:stopAttack()
     local oobx = type(opponent) == "number" and opponent
@@ -270,11 +280,7 @@ function Common:projectileBounce(opponent, ooby, oobz)
     local items = Characters.getGroup("items")
     local numopponentshit = self.numopponentshit or 0
     if not opponent and self.itemtype and #items < MaxProjectileItems and numopponentshit <= 0 then
-        Characters.spawn({
-            type = self.itemtype,
-            x = self.x, y = self.y, z = self.z
-        })
-        self:disappear()
+        self:becomeItem()
     else
         return "blinkOut", 30
     end
