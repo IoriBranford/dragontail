@@ -202,6 +202,35 @@ end
 
 Character.getVelocityWithinBounds = Body.getVelocityWithinBounds
 
+function Character:onHitByAttack(attacker)
+    local guardhitai = self.guardai or "guardHit"
+    local hurtai = self.hurtai or "hurt"
+    local hitai = attacker.attackhitai
+    local attacktype = attacker.attacktype
+    local canbedamagedbyattack = self.canbedamagedbyattack
+    if type(attacktype) == "string"
+    and type(canbedamagedbyattack) == "string" then
+        canbedamagedbyattack = attacktype:find(canbedamagedbyattack) ~= nil
+    else
+        canbedamagedbyattack = true
+    end
+
+    if self.guardangle or not canbedamagedbyattack then
+        StateMachine.start(self, guardhitai, attacker)
+        hitai = attacker.attackguardedai or hitai
+    else
+        StateMachine.start(self, hurtai, attacker)
+        if attacker.hitstun <= 0 then
+            attacker.hitstun = attacker.attackstunself or 3
+        end
+        hitai = attacker.attackhitopponentai or hitai
+        attacker.numopponentshit = (attacker.numopponentshit or 0) + 1
+    end
+    if hitai then
+        StateMachine.start(attacker, hitai, self)
+    end
+end
+
 ---@param attacker Character
 function Character:collideWithCharacterAttack(attacker)
     if self.hurtstun > 0 then
@@ -213,32 +242,7 @@ function Character:collideWithCharacterAttack(attacker)
         end
     end
     if Attack.checkAttackCollision(attacker, self) then
-        local guardhitai = self.guardai or "guardHit"
-        local hurtai = self.hurtai or "hurt"
-        local hitai = attacker.attackhitai
-        local attacktype = attacker.attacktype
-        local canbedamagedbyattack = self.canbedamagedbyattack
-        if type(attacktype) == "string"
-        and type(canbedamagedbyattack) == "string" then
-            canbedamagedbyattack = attacktype:find(canbedamagedbyattack) ~= nil
-        else
-            canbedamagedbyattack = true
-        end
-
-        if self.guardangle or not canbedamagedbyattack then
-            StateMachine.start(self, guardhitai, attacker)
-            hitai = attacker.attackguardedai or hitai
-        else
-            StateMachine.start(self, hurtai, attacker)
-            if attacker.hitstun <= 0 then
-                attacker.hitstun = attacker.attackstunself or 3
-            end
-            hitai = attacker.attackhitopponentai or hitai
-            attacker.numopponentshit = (attacker.numopponentshit or 0) + 1
-        end
-        if hitai then
-            StateMachine.start(attacker, hitai, self)
-        end
+        self:onHitByAttack(attacker)
         return true
     end
 end
