@@ -217,7 +217,7 @@ local GamepadInputTypes = {
 function Inputs.addGamepadInputMapping(gamepadid, gamepadinputs, actionname)
     local input1, input2 = string.match(gamepadinputs, "^(%S+) *(%S*)$")
     local input
-    if input2 then
+    if (input2 or "") ~= "" then
         input = {
             type = "gamepadbuttonaxis",
             action = Inputs.getOrMakeAction(actionname),
@@ -259,6 +259,28 @@ function Inputs.addMappings(mappings)
     for inputstring, actionname in pairs(mappings) do
         Inputs.addMapping(inputstring, actionname)
     end
+end
+
+local InputTypePatterns = {}
+for _, inputtype in pairs({"key", "keyaxis", "gamepadbutton", "gamepadaxis", "gamepadbuttonaxis"}) do
+    InputTypePatterns[inputtype] = "^%f[%g]"..inputtype.."%f[%G]"
+end
+
+function Inputs.getActionsInputs(inputtypes)
+    local actionsinputs = {} ---@type {[InputAction]:Input[]}
+    for input, action in pairs(inputs) do
+        if not inputtypes or inputtypes:find(InputTypePatterns[input.type]) then
+            local actioninputs = actionsinputs[action] or {}
+            actionsinputs[action] = actioninputs
+            actioninputs[#actioninputs+1] = input
+        end
+    end
+
+    return actionsinputs
+end
+
+function Inputs.removeMapping(input)
+    inputs[input] = nil
 end
 
 function Inputs.update()
