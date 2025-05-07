@@ -16,9 +16,11 @@ local Body         = require "Dragontail.Character.Body"
 local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 local WeaponInHand         = require "Dragontail.Character.Action.WeaponInHand"
 local Inventory            = require "Dragontail.Character.Inventory"
+local JoystickLog          = require "Dragontail.Character.Player.JoystickLog"
 
 ---@class Player:Fighter
 ---@field inventory Inventory
+---@field joysticklog JoystickLog
 local Player = class(Fighter)
 
 local pi = math.pi
@@ -132,6 +134,7 @@ local function findInstantThrowTarget(self, targetfacex, targetfacey)
 end
 
 function Player:init()
+    self.joysticklog = JoystickLog(10)
     self.joystickx = Inputs.getAction("movex")
     self.joysticky = Inputs.getAction("movey")
     self.attackbutton = Inputs.getAction("attack")
@@ -211,6 +214,17 @@ function Player:drawAseprite(fixedfrac)
     -- if self.attacker then
     --     love.graphics.line(self.x, self.y, self.attacker.x, self.attacker.y)
     -- end
+
+    -- local px1, py1 = self.joysticklog:newest()
+    -- local px0, py0 = self.joysticklog:oldest()
+    -- if px0 and py0 and px1 and py1 then
+    --     love.graphics.line(self.x + px0*16, self.y + py0*16, self.x + px1*16, self.y + py1*16)
+    -- end
+
+    local px, py = self:getParryVector()
+    if px and py then
+        love.graphics.line(self.x, self.y, self.x + px*16, self.y + py*16)
+    end
 end
 
 function Player:findRandomAttackerSlot(attackrange, slottype)
@@ -247,6 +261,51 @@ function Player:findClosestAttackerSlot(attackerx, attackery, attackrange, slott
     return bestslot
 end
 
+function Player:getParryVector()
+    local x1, y1 = self.joysticklog:newest()
+    if x1 == 0 and y1 == 0 then return end
+    local x0, y0 = self.joysticklog:oldest()
+    if dot(x0, y0, x1, y1) <= 0 then
+        return math.norm(x1, y1)
+    end
+end
+
+function Player:findProjectileToCatch(parryx, parryy)
+    local catchradius = (self.catchradius or 20)
+    local mindot = cos(pi/4) * catchradius
+    local projectiles = Characters.getGroup("projectiles")
+    local x, y, z = self.x, self.y, self.z
+    local ztop = z + self.bodyheight + catchradius/2
+    for _, projectile in ipairs(projectiles) do
+        if self ~= projectile.thrower
+        and projectile:isAttacking()
+        and projectile.z >= z
+        and projectile.z <= ztop
+        then
+            local toprojx = projectile.x - x
+            local toprojy = projectile.y - y
+            local d = dot(parryx, parryy, toprojx, toprojy)
+            if mindot <= d and d <= catchradius then
+                return projectile
+            end
+            local toprojx2 = toprojx + projectile.velx
+            local toprojy2 = toprojy + projectile.vely
+            d = dot(parryx, parryy, toprojx2, toprojy2)
+            if mindot <= d and d <= catchradius then
+                return projectile
+            end
+        end
+    end
+end
+
+function Player:tryToGiveWeapon(weapontype)
+    if self.inventory:add(weapontype) then
+        Audio.play(self.holdsound)
+        self.weaponinhand = weapontype
+        return true
+    end
+end
+
 function Player:updateAttackerSlots()
     local attackerslots = self.attackerslots
     local x, y = self.x, self.y
@@ -257,6 +316,7 @@ end
 
 function Player:control()
     self.facedestangle = self.faceangle
+    self.joysticklog:clear()
     local runningtime
     -- local attackdowntime
     while true do
@@ -270,6 +330,21 @@ function Player:control()
                 inx, iny = norm(inx, iny)
             end
             self.facedestangle = atan2(iny, inx)
+        end
+
+        self.joysticklog:put(inx, iny)
+        local parryx, parryy = self:getParryVector()
+        if parryx and parryy then
+            local caughtprojectile = self:findProjectileToCatch(parryx, parryy)
+            if caughtprojectile then
+                Audio.play(self.parrysound)
+                caughtprojectile:stopAttack()
+                if self:tryToGiveWeapon(caughtprojectile.type) then
+                    caughtprojectile:disappear()
+                else
+                    caughtprojectile:becomeItem()
+                end
+            end
         end
 
         local movespeed, turnspeed, acceltime
