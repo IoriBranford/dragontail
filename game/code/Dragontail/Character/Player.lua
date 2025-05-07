@@ -315,6 +315,20 @@ function Player:updateAttackerSlots()
     end
 end
 
+function Player:catchProjectile(projectile)
+    projectile:stopAttack()
+    if self:tryToGiveWeapon(projectile.type) then
+        projectile:disappear()
+    else
+        StateMachine.start(projectile, "projectileBounce", self)
+    end
+    for i = 1, 12 do
+        self:accelerateTowardsVel(0, 0, 8)
+        yield()
+    end
+    return "control"
+end
+
 function Player:control()
     self.facedestangle = self.faceangle
     self.joysticklog:clear()
@@ -338,13 +352,8 @@ function Player:control()
         if parryx and parryy then
             local caughtprojectile = self:findProjectileToCatch(parryx, parryy)
             if caughtprojectile then
-                Audio.play(self.parrysound)
-                caughtprojectile:stopAttack()
-                if self:tryToGiveWeapon(caughtprojectile.type) then
-                    caughtprojectile:disappear()
-                else
-                    caughtprojectile:becomeItem()
-                end
+                Face.faceVector(self, parryx, parryy)
+                return "catchProjectile", caughtprojectile
             end
         end
 
