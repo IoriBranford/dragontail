@@ -221,10 +221,10 @@ function Player:drawAseprite(fixedfrac)
     --     love.graphics.line(self.x + px0*16, self.y + py0*16, self.x + px1*16, self.y + py1*16)
     -- end
 
-    local px, py = self:getParryVector()
-    if px and py then
-        love.graphics.line(self.x, self.y, self.x + px*16, self.y + py*16)
-    end
+    -- local px, py = self:getParryVector()
+    -- if px and py then
+    --     love.graphics.line(self.x, self.y, self.x + px*16, self.y + py*16)
+    -- end
 end
 
 function Player:findRandomAttackerSlot(attackrange, slottype)
