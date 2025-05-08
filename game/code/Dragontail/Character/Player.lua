@@ -322,7 +322,7 @@ function Player:catchProjectile(projectile)
     else
         StateMachine.start(projectile, "projectileBounce", self)
     end
-    for i = 1, 12 do
+    for i = 1, 15 do
         self:accelerateTowardsVel(0, 0, 8)
         yield()
     end
