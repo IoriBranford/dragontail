@@ -155,7 +155,7 @@ function Fighter:walkTo(destx, desty, timelimit)
     if type(destx) == "table" then
         destx, desty = destx.x, destx.y
     end
-
+    if not destx or not desty then return end
     local todestangle = (desty ~= self.y or destx ~= self.x) and atan2(desty - self.y, destx - self.x)
     if todestangle then
         Face.faceAngle(self, todestangle, "Walk")
