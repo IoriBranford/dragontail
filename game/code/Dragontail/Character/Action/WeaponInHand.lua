@@ -86,17 +86,24 @@ function WeaponInHand:loadHandPositions()
     end
 end
 
-function WeaponInHand:draw(frame, x, y)
-    local weapontype = Database.get(self.weaponinhand)
-    if not weapontype then return end
-
+function WeaponInHand:getHandPosition(frame)
     local weapontransforms = self.weapontransforms
     if not weapontransforms then return end
 
     local i = frame.index*4
     local weaponx, weapony, weaponr, weaponsy =
-        weapontransforms[i-3], weapontransforms[i-2], weapontransforms[i-1], (weapontransforms[i] or 0)
-    if weaponsy == 0 then
+        weapontransforms[i-3], weapontransforms[i-2], weapontransforms[i-1], weapontransforms[i]
+    if weaponsy then
+        return weaponx, weapony, weaponr, weaponsy
+    end
+end
+
+function WeaponInHand:draw(frame, x, y)
+    local weapontype = Database.get(self.weaponinhand)
+    if not weapontype then return end
+
+    local weaponx, weapony, weaponr, weaponsy = WeaponInHand.getHandPosition(self, frame)
+    if not weaponx or not weapony or not weaponr or not weaponsy then
         return
     end
 
