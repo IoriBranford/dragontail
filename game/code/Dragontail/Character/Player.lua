@@ -64,17 +64,39 @@ local function findWallCollision(self)
 end
 
 ---@param self Player
-local function doComboAttack(self, faceangle, heldenemy)
+local function doComboAttack(self, faceangle, heldenemy, usefire)
     if self.comboindex >= 2 then
         self.comboindex = 0
         if heldenemy then
             return "spinning-throw", faceangle, heldenemy
         end
+
         local spindir = pi*0.5 <= faceangle and faceangle < pi*1.5 and "ccw" or "cw"
+
+        if usefire then
+            local attacktype = "fireball-spin-"..spindir
+            local attackdata = Database.get(attacktype)
+            if attackdata and (attackdata.attackmanacost or 0) <= self.mana then
+                return attacktype, faceangle
+            end
+        end
+
         return "tail-swing-"..spindir, faceangle
     else
+        if heldenemy then
+            self.comboindex = self.comboindex + 1
+            return "holding-knee", faceangle, heldenemy
+        end
+        if usefire then
+            local attacktype = "spit-fireball"
+            local attackdata = Database.get(attacktype)
+            if attackdata and (attackdata.attackmanacost or 0) <= self.mana then
+                self.comboindex = 0
+                return attacktype, faceangle
+            end
+        end
         self.comboindex = self.comboindex + 1
-        return heldenemy and "holding-knee" or "kick", faceangle, heldenemy
+        return "kick", faceangle
     end
 end
 
@@ -138,6 +160,7 @@ function Player:init()
     self.joystickx = Inputs.getAction("movex")
     self.joysticky = Inputs.getAction("movey")
     self.attackbutton = Inputs.getAction("attack")
+    self.fireattackbutton = Inputs.getAction("attack2")
     self.sprintbutton = Inputs.getAction("sprint")
     Fighter.init(self)
     self.inventory = Inventory()
@@ -336,7 +359,9 @@ function Player:control()
     -- local attackdowntime
     while true do
         local inx, iny = self.joystickx.position, self.joysticky.position
-        local attackpressed, runpressed = self.attackbutton.pressed, self.sprintbutton.pressed
+        local normalattackpressed, runpressed = self.attackbutton.pressed, self.sprintbutton.pressed
+        local fireattackpressed = self.fireattackbutton.pressed
+        local anyattackpressed = normalattackpressed or fireattackpressed
         local rundown = self.sprintbutton.down
 
         local targetvelx, targetvely = 0, 0
@@ -392,7 +417,7 @@ function Player:control()
                 self:makeAfterImage()
             end
 
-            if attackpressed then
+            if normalattackpressed then
                 if self.weaponinhand then
                     local projectiledata = Database.get(self.weaponinhand)
                     local attackchoices = projectiledata and projectiledata.attackchoices
@@ -437,10 +462,10 @@ function Player:control()
             end
         else
             -- self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
-            if attackpressed then
+            if anyattackpressed then
                 Face.updateTurnToDestAngle(self, pi)
                 if not self.weaponinhand then
-                    return doComboAttack(self, self.facedestangle)
+                    return doComboAttack(self, self.facedestangle, nil, fireattackpressed)
             --     end
             --     attackdowntime = 0
             -- end
@@ -481,25 +506,16 @@ function Player:spinAttack(attackangle)
     local originalfaceangle = self.faceangle
     local spinvel = self.attackspinspeed or 0
     local spintime = self.attackhittime or 0
-    local attackagain = false
+    local attackagain
     local t = spintime
     local lungespeed = self.attacklungespeed
-    local shootingfireballs
-    local buttonholdtimeforfireball = spintime/2
+    local projectile = self.attackprojectile
+    self:giveMana(-(self.attackmanacost or 0))
+    -- local buttonholdtimeforfireball = spintime/2
     repeat
-        if t == buttonholdtimeforfireball then
-            if self.mana >= self.manaunitsize then
-                if attackagain then
-                    shootingfireballs = true
-                    attackagain = false
-                    self:giveMana(-self.manaunitsize)
-                end
-            end
-        end
-
         local faceangle = tailangle + pi
-        if shootingfireballs then
-            Shoot.launchProjectile(self, "Rose-fireball", cos(faceangle), sin(faceangle), 0)
+        if projectile then
+            Shoot.launchProjectile(self, projectile, cos(faceangle), sin(faceangle), 0)
         end
 
         local inx, iny = self.joystickx.position, self.joysticky.position
@@ -521,7 +537,13 @@ function Player:spinAttack(attackangle)
         Face.faceAngle(self, faceangle, self.state and self.state.animation)
 
         yield()
-        attackagain = attackagain or self.attackbutton.pressed
+        if attackagain ~= "fire" then
+            if self.fireattackbutton.pressed then
+                attackagain = "fire"
+            elseif self.attackbutton.pressed then
+                attackagain = "normal"
+            end
+        end
         tailangle = tailangle + spinvel
         t = t - 1
     until t <= 0
@@ -532,7 +554,7 @@ function Player:spinAttack(attackangle)
         if inx ~= 0 or iny ~= 0 then
             originalfaceangle = atan2(iny, inx)
         end
-        return doComboAttack(self, originalfaceangle)
+        return doComboAttack(self, originalfaceangle, nil, attackagain == "fire")
     end
     return "control"
 end
@@ -860,7 +882,12 @@ end
 function Player:straightAttack(angle, heldenemy)
     self.numopponentshit = 0
     local attackagain = false
-    self:startAttack(angle)
+    if self.attackprojectile then
+        Shoot.launchProjectile(self, self.attackprojectile, cos(angle), sin(angle), 0)
+    else
+        self:startAttack(angle)
+    end
+    self:giveMana(-(self.attackmanacost or 0))
     Face.faceAngle(self, angle)
     local t = self.attackhittime or 1
     local lungespeed = self.attacklungespeed
