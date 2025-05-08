@@ -247,8 +247,12 @@ end
 function Enemy:leave(exitx, exity)
     self.recoverai = "leave"
     exitx = exitx or self.exitpoint
-    self:walkTo(exitx, exity)
-    self.exitpoint:disappear()
+    if exitx and exity then
+        self:walkTo(exitx, exity)
+        if self.exitpoint then
+            self.exitpoint:disappear()
+        end
+    end
     self:disappear()
 end
 
