@@ -14,9 +14,6 @@ local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 ---@field manamax number?
 ---@field manaunitsize number?
 
----@class Combo
----@field comboindex integer?
-
 ---@class Dash
 ---@field dashsound string?
 ---@field stopdashsound string?
