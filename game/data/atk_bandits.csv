@@ -12,4 +12,4 @@ bandit-boss-charge,,64,0.261799387799149,15,20,5,0,,30,194,16,0.25,,10,,,,,knock
 bandit-boss-thrust,,64,0.261799387799149,15,20,5,0,,nil,97,8,0.25,,8,,,,,knockedBack,knockedBack,,sounds/combat/cut2.mp3,nil,spark-hit,spark-guard,nil,particle-blood,,
 bandit-boss-spin-cw,,64,0.785398163397448,20,20,5,0.628318530717959,,20,116.5,10,0.5,0,5,,,,,knockedBack,knockedBack,,sounds/combat/cut2.mp3,nil,spark-hit,spark-guard,nil,particle-blood,,
 bandit-boss-spin-ccw,,64,0.785398163397448,20,20,5,-0.628318530717959,,20,116.5,10,0.5,0,5,,,,,knockedBack,knockedBack,,sounds/combat/cut2.mp3,nil,spark-hit,spark-guard,nil,particle-blood,,
-forge-fire,,36,1.5707963267949,999,20,,,,,,,,,5,,,,,juggled,juggled,,sounds/combat/ignite.mp3,,spark-hit,,,,TRUE,4294904836 4294946828
+forge-fire,,36,1.5707963267949,999,20,,,,,,,,,5,,,,,juggled,juggled,,sounds/combat/firehit.mp3,,spark-hit,,,,TRUE,4294904836 4294946828
