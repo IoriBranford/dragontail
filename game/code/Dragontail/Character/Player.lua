@@ -17,6 +17,7 @@ local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 local WeaponInHand         = require "Dragontail.Character.Action.WeaponInHand"
 local Inventory            = require "Dragontail.Character.Inventory"
 local JoystickLog          = require "Dragontail.Character.Player.JoystickLog"
+local Combo                = require "Dragontail.Character.Action.Combo"
 
 ---@class Player:Fighter
 ---@field inventory Inventory
@@ -63,41 +64,22 @@ local function findWallCollision(self)
     end
 end
 
+local NormalCombo = {"kick", "kick", "tail-swing-cw"}
+local FireCombo = {"spit-fireball", "spit-fireball", "fireball-spin-cw"}
+local HoldCombo = {"holding-knee", "holding-knee", "spinning-throw"}
+local FireHoldCombo = {"holding-knee", "holding-knee", "spinning-throw"}
+
 ---@param self Player
 local function doComboAttack(self, faceangle, heldenemy, usefire)
-    if self.comboindex >= 2 then
-        self.comboindex = 0
-        if heldenemy then
-            return "spinning-throw", faceangle, heldenemy
-        end
-
-        local spindir = pi*0.5 <= faceangle and faceangle < pi*1.5 and "ccw" or "cw"
-
-        if usefire then
-            local attacktype = "fireball-spin-"..spindir
-            local attackdata = Database.get(attacktype)
-            if attackdata and (attackdata.attackmanacost or 0) <= self.mana then
-                return attacktype, faceangle
-            end
-        end
-
-        return "tail-swing-"..spindir, faceangle
+    local desiredcombo, fallbackcombo
+    if heldenemy then
+        desiredcombo = usefire and FireHoldCombo or HoldCombo
+        fallbackcombo = HoldCombo
     else
-        if heldenemy then
-            self.comboindex = self.comboindex + 1
-            return "holding-knee", faceangle, heldenemy
-        end
-        if usefire then
-            local attacktype = "spit-fireball"
-            local attackdata = Database.get(attacktype)
-            if attackdata and (attackdata.attackmanacost or 0) <= self.mana then
-                self.comboindex = 0
-                return attacktype, faceangle
-            end
-        end
-        self.comboindex = self.comboindex + 1
-        return "kick", faceangle
+        desiredcombo = usefire and FireCombo or NormalCombo
+        fallbackcombo = NormalCombo
     end
+    return Combo.advance(self, desiredcombo, fallbackcombo), faceangle, heldenemy
 end
 
 local function findInstantThrowDir(self, targetfacex, targetfacey)
@@ -164,7 +146,7 @@ function Player:init()
     self.sprintbutton = Inputs.getAction("sprint")
     Fighter.init(self)
     self.inventory = Inventory()
-    self.comboindex = 0
+    Combo.reset(self)
     -- self.runenergy = self.runenergy or 100
     -- self.runenergymax = self.runenergymax or self.runenergy
     -- self.runenergycost = self.runenergycost or 25
@@ -391,7 +373,7 @@ function Player:control()
 
         if runpressed and not runningtime --and self.runenergy >= self.runenergycost
         then
-            self.comboindex = 0
+            Combo.reset(self)
             Audio.play(self.dashsound)
             runningtime = 0
             turnspeed = 2*pi
@@ -669,7 +651,7 @@ end
 
 function Player:hold(enemy)
     if self.heldopponent ~= enemy then
-        self.comboindex = 0
+        Combo.reset(self)
         HoldOpponent.startHolding(self, enemy)
     end
     self:stopAttack()
@@ -740,7 +722,7 @@ function Player:hold(enemy)
         end
         if attackpressed then
             if inx ~= 0 or iny ~= 0 then
-                self.comboindex = 0
+                Combo.reset(self)
                 return "spinning-throw", holdangle, enemy
             end
             return doComboAttack(self, holdangle, enemy)
@@ -906,7 +888,7 @@ function Player:straightAttack(angle, heldenemy)
         t = t - 1
     until t <= 0
     if self.numopponentshit <= 0 then
-        self.comboindex = 0
+        Combo.reset(self)
     end
     self:stopAttack()
     if attackagain then
