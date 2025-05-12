@@ -4,7 +4,6 @@ held,held,Hurt,,TRUE,FALSE,FALSE,FALSE,4294967295,
 knockedBack,knockedBack,Hurt,,FALSE,FALSE,TRUE,,,
 wallBump,wallBump,Hurt,,FALSE,FALSE,TRUE,,,sounds/combat/bodybump.mp3
 thrown,thrown,spin,,FALSE,FALSE,TRUE,,,
-juggled,knockedBack,Hurt,,FALSE,FALSE,FALSE,,4280295456,
 wallSlammed,wallSlammed,Hurt,,FALSE,FALSE,TRUE,,,sounds/combat/bodyslam.mp3
 fall,fall,,0,FALSE,FALSE,TRUE,FALSE,,
 defeat,defeat,Fall,0,FALSE,FALSE,FALSE,,,

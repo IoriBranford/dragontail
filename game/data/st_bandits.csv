@@ -35,7 +35,6 @@ held,FALSE,stand,,held,Hurt,,TRUE,FALSE,FALSE,4294967295,
 knockedBack,FALSE,fall,,knockedBack,Hurt,,FALSE,FALSE,TRUE,,
 wallBump,FALSE,fall,,wallBump,Hurt,,FALSE,FALSE,TRUE,,sounds/combat/bodybump.mp3
 thrown,FALSE,fall,human-thrown,thrown,spin,1,FALSE,FALSE,TRUE,,
-juggled,FALSE,fall,,knockedBack,Hurt,,FALSE,FALSE,FALSE,4280295456,
 wallSlammed,FALSE,fall,,wallSlammed,Hurt,,FALSE,FALSE,TRUE,,sounds/combat/bodyslam.mp3
 thrownRecover,FALSE,stand,,thrownRecover,FallKnees,0,FALSE,FALSE,FALSE,,sounds/combat/slide.mp3
 breakaway,FALSE,stand,,breakaway,,,FALSE,FALSE,FALSE,,sounds/combat/slap.mp3
