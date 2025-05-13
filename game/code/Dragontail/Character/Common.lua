@@ -49,8 +49,9 @@ local MaxProjectileItems = 16
 ---@field opponents Fighter[]
 local Common = class(Character)
 
-function Common:spark()
-    wait(self.lifetime or 30)
+function Common:spark(time)
+    time = time or self.lifetime or 30
+    wait(time)
     self:disappear()
 end
 
@@ -186,6 +187,14 @@ function Common:giveMana(mana)
     if self.thrower and self.thrower.giveMana then
         self.thrower:giveMana(mana)
     end
+end
+
+function Common:projectileShatter(opponent)
+    self:stopAttack()
+    self.velx = 0
+    self.vely = 0
+    self.velz = 0
+    self:spark(self.state.statetime or 30)
 end
 
 function Common:projectileHit(opponent)
