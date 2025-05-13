@@ -14305,7 +14305,7 @@ return {
       columns = 8,
       image = "sprites/banditcave/Dishes A.png",
       imagewidth = 256,
-      imageheight = 64,
+      imageheight = 96,
       objectalignment = "center",
       tilerendersize = "tile",
       fillmode = "stretch",
@@ -14320,7 +14320,7 @@ return {
       },
       properties = {},
       wangsets = {},
-      tilecount = 16,
+      tilecount = 24,
       tiles = {
         {
           id = 0,
@@ -14328,12 +14328,36 @@ return {
           properties = {
             ["name"] = "dish-small"
           }
+        },
+        {
+          id = 16,
+          properties = {
+            ["name"] = "Shatter"
+          },
+          animation = {
+            {
+              tileid = 16,
+              duration = 50
+            },
+            {
+              tileid = 17,
+              duration = 50
+            },
+            {
+              tileid = 18,
+              duration = 50
+            },
+            {
+              tileid = 19,
+              duration = 50
+            }
+          }
         }
       }
     },
     {
       name = "Meats A",
-      firstgid = 6657,
+      firstgid = 6665,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14399,7 +14423,7 @@ return {
     },
     {
       name = "Bread A",
-      firstgid = 6712,
+      firstgid = 6720,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14437,7 +14461,7 @@ return {
     },
     {
       name = "Cheese A",
-      firstgid = 6720,
+      firstgid = 6728,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14515,7 +14539,7 @@ return {
     },
     {
       name = "Forge A",
-      firstgid = 6738,
+      firstgid = 6746,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14649,7 +14673,7 @@ return {
     },
     {
       name = "Workbench, Smith",
-      firstgid = 6866,
+      firstgid = 6874,
       class = "",
       tilewidth = 64,
       tileheight = 64,
@@ -14839,7 +14863,7 @@ return {
     },
     {
       name = "gamepad-buttons",
-      firstgid = 6872,
+      firstgid = 6880,
       class = "",
       tilewidth = 16,
       tileheight = 16,
@@ -14942,7 +14966,7 @@ return {
     },
     {
       name = "keyboard-keys",
-      firstgid = 6972,
+      firstgid = 6980,
       class = "",
       tilewidth = 16,
       tileheight = 16,
@@ -14998,7 +15022,7 @@ return {
     },
     {
       name = "Chair, Dining F",
-      firstgid = 7244,
+      firstgid = 7252,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -15092,7 +15116,7 @@ return {
     },
     {
       name = "flamegaugefull",
-      firstgid = 7260,
+      firstgid = 7268,
       class = "",
       tilewidth = 40,
       tileheight = 20,
@@ -15343,7 +15367,7 @@ return {
         },
         {
           x = 100, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUDDYwSwrBniuFWx0AM7ABbA=="
+          data = "eJxjYBgFo2AUDDawSArBXiqFWx0ANdABfA=="
         },
         {
           x = -20, y = 0, width = 20, height = 12,
@@ -15371,7 +15395,7 @@ return {
         },
         {
           x = 100, y = 0, width = 20, height = 12,
-          data = "eJyzYmJgsELC1kCMDaySYmBYDcRrgHitFHY1IJDLhIrzcJi3C2jGbiDeA8R78ZhHLDgFNOM0EJ8B4rNUMG8UjIKhAAA8eA1c"
+          data = "eJyzYmJgsELC1kCMDWySYmDYDMRbgHirFHY1IJDLhIrzcJh3CGjGYSA+AsRH8ZhHLLgENOMyEF8B4qtUMG8UjIKhAAB1Rw28"
         },
         {
           x = 140, y = 0, width = 20, height = 12,
@@ -15404,7 +15428,7 @@ return {
       chunks = {
         {
           x = 100, y = 0, width = 20, height = 12,
-          data = "eJxjYCAONEkxMDQDcQsQt0oRqWkUjIJRQFMAAM0IAnc="
+          data = "eJxjYCAOdEkxMHQDcQ8Q90oRqWkUjIJRQFMAAD9XApc="
         }
       }
     },
@@ -15656,7 +15680,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6881,
+              gid = 6889,
               visible = true,
               properties = {}
             },
@@ -15670,7 +15694,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7053,
+              gid = 7061,
               visible = false,
               properties = {}
             },
@@ -15684,7 +15708,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7054,
+              gid = 7062,
               visible = false,
               properties = {}
             },
@@ -15698,7 +15722,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7055,
+              gid = 7063,
               visible = false,
               properties = {}
             },
@@ -15712,7 +15736,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7056,
+              gid = 7064,
               visible = false,
               properties = {}
             }
@@ -15843,7 +15867,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6932,
+              gid = 6940,
               visible = true,
               properties = {}
             },
@@ -15857,7 +15881,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6932,
+              gid = 6940,
               visible = true,
               properties = {}
             },
@@ -15871,7 +15895,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6932,
+              gid = 6940,
               visible = true,
               properties = {}
             },
@@ -15885,7 +15909,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6952,
+              gid = 6960,
               visible = false,
               properties = {}
             },
@@ -15899,7 +15923,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7178,
+              gid = 7186,
               visible = false,
               properties = {}
             },
@@ -15913,7 +15937,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6932,
+              gid = 6940,
               visible = false,
               properties = {}
             },
@@ -15927,7 +15951,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6932,
+              gid = 6940,
               visible = true,
               properties = {}
             },
@@ -15941,7 +15965,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6932,
+              gid = 6940,
               visible = false,
               properties = {}
             },
@@ -15955,7 +15979,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6932,
+              gid = 6940,
               visible = false,
               properties = {}
             },
@@ -16003,7 +16027,7 @@ return {
               width = 40,
               height = 20,
               rotation = 0,
-              gid = 7260,
+              gid = 7268,
               visible = true,
               properties = {}
             }
@@ -16237,7 +16261,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6881,
+              gid = 6889,
               visible = false,
               properties = {}
             }
@@ -16370,7 +16394,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6943,
+              gid = 6951,
               visible = true,
               properties = {
                 ["drawz"] = 2
@@ -16386,7 +16410,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6963,
+              gid = 6971,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -16402,7 +16426,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7179,
+              gid = 7187,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -16679,7 +16703,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6881,
+              gid = 6889,
               visible = true,
               properties = {}
             },
@@ -16693,7 +16717,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6932,
+              gid = 6940,
               visible = true,
               properties = {}
             },
@@ -16724,7 +16748,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6952,
+              gid = 6960,
               visible = false,
               properties = {}
             },
@@ -16738,7 +16762,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7053,
+              gid = 7061,
               visible = false,
               properties = {}
             },
@@ -16752,7 +16776,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7054,
+              gid = 7062,
               visible = false,
               properties = {}
             },
@@ -16766,7 +16790,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7055,
+              gid = 7063,
               visible = false,
               properties = {}
             },
@@ -16780,7 +16804,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7056,
+              gid = 7064,
               visible = false,
               properties = {}
             },
@@ -16794,7 +16818,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7178,
+              gid = 7186,
               visible = false,
               properties = {}
             },
@@ -16808,7 +16832,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6943,
+              gid = 6951,
               visible = true,
               properties = {}
             },
@@ -16856,7 +16880,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6932,
+              gid = 6940,
               visible = true,
               properties = {}
             }
@@ -17330,7 +17354,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6881,
+              gid = 6889,
               visible = true,
               properties = {}
             },
@@ -17344,7 +17368,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6932,
+              gid = 6940,
               visible = true,
               properties = {
                 ["drawz"] = 2
@@ -17379,7 +17403,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6952,
+              gid = 6960,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -17395,7 +17419,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7178,
+              gid = 7186,
               visible = false,
               properties = {}
             },
@@ -17409,7 +17433,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7053,
+              gid = 7061,
               visible = false,
               properties = {}
             },
@@ -17423,7 +17447,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7054,
+              gid = 7062,
               visible = false,
               properties = {}
             },
@@ -17437,7 +17461,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7055,
+              gid = 7063,
               visible = false,
               properties = {}
             },
@@ -17451,7 +17475,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7056,
+              gid = 7064,
               visible = false,
               properties = {}
             },
@@ -17505,7 +17529,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6877,
+              gid = 6885,
               visible = true,
               properties = {
                 ["drawz"] = 2
@@ -18166,7 +18190,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6902,
+              gid = 6910,
               visible = true,
               properties = {
                 ["drawz"] = 2
@@ -18182,7 +18206,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6922,
+              gid = 6930,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -18198,7 +18222,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7179,
+              gid = 7187,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -18214,7 +18238,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6877,
+              gid = 6885,
               visible = true,
               properties = {
                 ["drawz"] = 2
@@ -18515,7 +18539,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 6867,
+              gid = 6875,
               visible = true,
               properties = {
                 ["bodyheight"] = 28,
@@ -18532,7 +18556,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 6871,
+              gid = 6879,
               visible = true,
               properties = {
                 ["bodyheight"] = 48,
@@ -18827,7 +18851,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7244,
+              gid = 7252,
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
@@ -18844,7 +18868,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7248,
+              gid = 7256,
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
@@ -18861,7 +18885,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7255,
+              gid = 7263,
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
@@ -18878,7 +18902,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7247,
+              gid = 7255,
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
@@ -18895,7 +18919,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7255,
+              gid = 7263,
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
@@ -18912,7 +18936,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7251,
+              gid = 7259,
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
@@ -18929,7 +18953,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7247,
+              gid = 7255,
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
@@ -18946,7 +18970,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7251,
+              gid = 7259,
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
@@ -18963,7 +18987,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7252,
+              gid = 7260,
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
@@ -18980,7 +19004,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7244,
+              gid = 7252,
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
@@ -18997,7 +19021,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7248,
+              gid = 7256,
               visible = true,
               properties = {}
             },
@@ -19011,7 +19035,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7252,
+              gid = 7260,
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
@@ -19149,7 +19173,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6724,
+              gid = 6732,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19165,7 +19189,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6717,
+              gid = 6725,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19181,7 +19205,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6666,
+              gid = 6674,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19325,7 +19349,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6665,
+              gid = 6673,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19341,7 +19365,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6723,
+              gid = 6731,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19357,7 +19381,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6666,
+              gid = 6674,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19373,7 +19397,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6717,
+              gid = 6725,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19389,7 +19413,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6717,
+              gid = 6725,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19405,7 +19429,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6717,
+              gid = 6725,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19421,7 +19445,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6721,
+              gid = 6729,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19437,7 +19461,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6665,
+              gid = 6673,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19453,7 +19477,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6725,
+              gid = 6733,
               visible = true,
               properties = {
                 ["z"] = 18
