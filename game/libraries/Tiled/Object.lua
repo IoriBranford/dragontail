@@ -381,11 +381,20 @@ function TiledObject:getTileRect()
     return x - ox, y - oy, w, h
 end
 
-function TiledObject:setTile(tile)
+function TiledObject:setTile(tile, frame1, loopframe)
+    if type(tile) ~= "table" then
+        local oldtile = self.tile
+        tile = oldtile and oldtile.tileset[tile]
+    end
+    if not tile then return end
     self.tile = tile
-    self.animationframe = 1
+    self.animationframe = frame1 or 1
     self.animationtime = 0
     self.animationquad = nil
+    if tile.animation and loopframe and loopframe <= 0 then
+        loopframe = #tile.animation + loopframe
+    end
+    self.loopframe = loopframe
 end
 local setTile = TiledObject.setTile
 
@@ -438,6 +447,14 @@ function TiledObject:changeAnimation(animation, frame1, loopframe)
         self:changeAseAnimation(animation, frame1, loopframe)
     elseif self.tile then
         self:changeTile(animation)
+    end
+end
+
+function TiledObject:setAnimation(animation, frame1, loopframe)
+    if self.aseprite then
+        self:setAseAnimation(animation, frame1, loopframe)
+    elseif self.tile then
+        self:setTile(animation, frame1, loopframe)
     end
 end
 
