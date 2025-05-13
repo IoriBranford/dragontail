@@ -71,19 +71,21 @@ function StateMachine.start(self, statename, ...)
     local frame = state.frame1
     if animationname or frame then
         local aseprite = self.aseprite
-        if aseprite then
+        local tile = self.tile
+        if aseprite or tile then
             local dirs = self.animationdirections or 1
             if animationname and dirs > 1 then
                 local angle = self.faceangle
                 if angle then
                     local diranimationname = DirectionalAnimation.FromAngle(animationname, angle, dirs)
-                    if aseprite.animations[diranimationname] then
+                    local animations = aseprite and aseprite.animations or tile and tile.tileset
+                    if animations[diranimationname] then
                         animationname = diranimationname
                     end
                 end
             end
 
-            self:setAseAnimation(animationname, frame, state.loopframe)
+            self:setAnimation(animationname, frame, state.loopframe)
         end
     end
     -- DirectionalAnimation.set(self, animationname, angle, frame, state.loop)
