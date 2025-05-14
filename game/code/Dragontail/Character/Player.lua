@@ -437,22 +437,19 @@ function Player:control()
                 self:makeAfterImage()
             end
 
-            if fireattackpressed then
-                local attackdata = Database.get("running-spit-fireball")
-                if attackdata and self.mana >= attackdata.attackmanacost then
-                    self.mana = self.mana - attackdata.attackmanacost
-                    return "running-spit-fireball", atan2(vely, velx)
-                end
-                return "running-kick", atan2(vely, velx)
-            end
-
-            if normalattackpressed then
+            if normalattackpressed or fireattackpressed then
                 if self.weaponinhand then
-                    local projectiledata = Database.get(self.weaponinhand)
-                    local attackchoices = projectiledata and projectiledata.attackchoices
-                    local attackid = attackchoices and attackchoices[math.min(#attackchoices, 2)]
                     local targetx, targety, targetz = findInstantThrowTarget(self, cos(self.facedestangle), sin(self.facedestangle))
-                    return "throwWeapon", targetx, targety, targetz, attackid
+                    local numtothrow = fireattackpressed and #self.inventory or 1
+                    return "throwWeapon", targetx, targety, targetz, 2, numtothrow
+                end
+
+                if fireattackpressed then
+                    local attackdata = Database.get("running-spit-fireball")
+                    if attackdata and self.mana >= attackdata.attackmanacost then
+                        self.mana = self.mana - attackdata.attackmanacost
+                        return "running-spit-fireball", atan2(vely, velx)
+                    end
                 end
                 return "running-kick", atan2(vely, velx)
             end
@@ -491,22 +488,14 @@ function Player:control()
             end
         else
             -- self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
-            if anyattackpressed then
+            if normalattackpressed or fireattackpressed then
                 Face.updateTurnToDestAngle(self, pi)
-                if not self.weaponinhand then
-                    return self:doComboAttack(self.facedestangle, nil, fireattackpressed)
-            --     end
-            --     attackdowntime = 0
-            -- end
-            -- if attackdowntime and self.weaponinhand then
-            --     if attackdown then
-            --         attackdowntime = attackdowntime + 1
-            --         if attackdowntime > 10 then
-            --             return "aimThrow"
-            --         end
-                else
-                    return "throwWeapon", findInstantThrowTarget(self, cos(self.facedestangle), sin(self.facedestangle))
+                if self.weaponinhand then
+                    local targetx, targety, targetz = findInstantThrowTarget(self, cos(self.facedestangle), sin(self.facedestangle))
+                    local numtothrow = fireattackpressed and #self.inventory or 1
+                    return "throwWeapon", targetx, targety, targetz, 1, numtothrow
                 end
+                return self:doComboAttack(self.facedestangle, nil, fireattackpressed)
             end
 
             local opponenttohold = HoldOpponent.findOpponentToHold(self, inx, iny)
@@ -678,15 +667,29 @@ function Player:aimThrow()
     end
 end
 
-function Player:throwWeapon(targetx, targety, targetz, attackid)
-    Face.faceVector(self, targetx - self.x, targety - self.y)
-    Shoot.launchProjectileAtPosition(self, {
-        type = self.weaponinhand,
-        gravity = 1/8,
-        speed = 16
-    }, targetx, targety, targetz, attackid)
-    self.inventory:pop()
-    self.weaponinhand = self.inventory:last()
+function Player:throwWeapon(targetx, targety, targetz, attackchoice, numtothrow)
+    attackchoice = attackchoice or 1
+    numtothrow = math.min(numtothrow or 1, #self.inventory)
+    local distx, disty = targetx - self.x, targety - self.y
+    if distx == 0 and disty == 0 then
+        distx = 1
+    end
+    Face.faceVector(self, distx, disty)
+    local throwdeltaangle = pi/16
+    distx, disty = math.rot(distx, disty, -throwdeltaangle * (numtothrow - 1) / 2)
+    for i = 1, numtothrow do
+        local projectiledata = Database.get(self.weaponinhand)
+        local attackchoices = projectiledata and projectiledata.attackchoices
+        local attackid = attackchoices and attackchoices[math.min(#attackchoices, attackchoice)]
+        Shoot.launchProjectileAtPosition(self, {
+            type = self.weaponinhand,
+            gravity = 1/8,
+            speed = 16
+        }, self.x + distx, self.y + disty, targetz, attackid)
+        self.inventory:pop()
+        self.weaponinhand = self.inventory:last()
+        distx, disty = math.rot(distx, disty, throwdeltaangle)
+    end
     local t = self.throwtime or 6
     repeat
         self:accelerateTowardsVel(0, 0, 4)
