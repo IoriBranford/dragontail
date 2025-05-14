@@ -437,6 +437,15 @@ function Player:control()
                 self:makeAfterImage()
             end
 
+            if fireattackpressed then
+                local attackdata = Database.get("running-spit-fireball")
+                if attackdata and self.mana >= attackdata.attackmanacost then
+                    self.mana = self.mana - attackdata.attackmanacost
+                    return "running-spit-fireball", atan2(vely, velx)
+                end
+                return "running-kick", atan2(vely, velx)
+            end
+
             if normalattackpressed then
                 if self.weaponinhand then
                     local projectiledata = Database.get(self.weaponinhand)
