@@ -790,7 +790,8 @@ function Player:runWithEnemy(enemy)
     while true do
         yield()
         local inx, iny = self.joystickx.position, self.joysticky.position
-        local attackpressed = self.attackbutton.pressed
+        local normalattackpressed = self.attackbutton.pressed
+        local fireattackpressed = self.fireattackbutton.pressed
         local _, rundown = self.attackbutton.down, self.sprintbutton.down
 
         local targetvelx, targetvely = 0, 0
@@ -817,10 +818,19 @@ function Player:runWithEnemy(enemy)
             enemy:makeAfterImage()
         end
 
-        if attackpressed then
+        if normalattackpressed or fireattackpressed then
             enemy:stopAttack()
             HoldOpponent.stopHolding(self, enemy)
             enemy.canbeattacked = true
+
+            if fireattackpressed then
+                local attackdata = Database.get("running-spit-fireball")
+                if attackdata and self.mana >= attackdata.attackmanacost then
+                    self.mana = self.mana - attackdata.attackmanacost
+                    return "running-spit-fireball", self.faceangle
+                end
+            end
+
             return "running-kick", self.faceangle
         end
 
