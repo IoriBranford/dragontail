@@ -786,10 +786,8 @@ function Player:hold(enemy)
 end
 
 function Player:runWithEnemy(enemy)
-    enemy.canbeattacked = false
     self.facedestangle = self.faceangle
-    enemy.attacktype = "human-in-spinning-throw"
-    Database.fill(enemy, "human-in-spinning-throw")
+    StateMachine.start(enemy, "human-in-spinning-throw", self)
     enemy:startAttack(self.faceangle)
     local runningtime = 0
     while true do
@@ -864,9 +862,7 @@ function Player:runWithEnemy(enemy)
 end
 
 function Player:spinAndKickEnemy(angle, enemy)
-    enemy.canbeattacked = false
-    enemy.attacktype = "human-in-spinning-throw"
-    Database.fill(enemy, "human-in-spinning-throw")
+    StateMachine.start(enemy, "human-in-spinning-throw", self)
     local spinvel = self.attackspinspeed or 0
     local spintime = self.attackhittime or 0
     local t = spintime
