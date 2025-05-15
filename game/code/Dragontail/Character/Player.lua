@@ -929,7 +929,8 @@ function Player:straightAttack(angle, heldenemy)
     self.numopponentshit = 0
     local pressedattackbutton
     if self.attackprojectile then
-        Shoot.launchProjectile(self, self.attackprojectile, cos(angle), sin(angle), 0)
+        local targetx, targety, targetz = findInstantThrowTarget(self, cos(angle), sin(angle))
+        Shoot.launchProjectileAtPosition(self, self.attackprojectile, targetx, targety, targetz)
     else
         self:startAttack(angle)
     end
