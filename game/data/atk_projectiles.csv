@@ -1,6 +1,6 @@
 attacktype,speed,attackradius,attackarc,attackdamage,attackstun,attackstunself,attacklaunchspeed,attackhitanimation,attackhitai,attackhitopponentai,attackhitboundaryai,attackhiteffect,attackdefeateffect,hitsound,hitspark,guardhitspark,afterimageinterval,attackhurtparticle,attackcanjuggle,attackhurtcolorcycle
 Rose-fireball-attack,16,16,1.5707963267949,20,10,5,3,,,,projectileShatter,knockedBack,knockedBack,sounds/combat/firehit.mp3,spark-hit,spark-guard,,nil,TRUE,4294904836 4294946828
-Rose-running-fireball-attack,16,32,1.5707963267949,20,10,5,3,,,,projectileShatter,knockedBack,knockedBack,sounds/combat/firehit.mp3,spark-hit,spark-guard,,nil,TRUE,4294904836 4294946828
+Rose-fat-fireball-attack,16,32,1.5707963267949,20,10,5,3,,,,projectileShatter,knockedBack,knockedBack,sounds/combat/firehit.mp3,spark-hit,spark-guard,,nil,TRUE,4294904836 4294946828
 thrown-axe-attack,5,16,1.5707963267949,25,20,10,,thrownaxehit,projectileEmbed,,,knockedBack,knockedBack,sounds/combat/cut2.mp3,nil,nil,nil,particle-blood,,
 thrown-axe-strong-attack,12,16,1.5707963267949,25,20,10,,thrownaxehit,,,projectileEmbed,knockedBack,knockedBack,sounds/combat/cut2.mp3,nil,nil,nil,particle-blood,,
 bandit-arrow-attack,,20,0,25,12,,5,,projectileEmbed,,,,knockedBack,sounds/combat/cut.mp3,nil,nil,nil,particle-blood,,

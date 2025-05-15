@@ -67,6 +67,7 @@ end
 local NormalCombo = {"kick", "kick", "tail-swing-cw"}
 local SpecialCombo = {"spit-fireball", "spit-fireball", "fireball-spin-cw"}
 local HoldCombo = {"holding-knee", "holding-knee", "spinning-throw"}
+local RunningSpecialAttacks = { "running-spit-fat-fireball", "running-spit-fireball" }
 
 function Player:getNextAttackType(heldenemy, special)
     local comboindex = self.comboindex
@@ -445,10 +446,11 @@ function Player:control()
                 end
 
                 if fireattackpressed then
-                    local attackdata = Database.get("running-spit-fireball")
-                    if attackdata and self.mana >= attackdata.attackmanacost then
-                        self.mana = self.mana - attackdata.attackmanacost
-                        return "running-spit-fireball", atan2(vely, velx)
+                    for _, attacktype in ipairs(RunningSpecialAttacks) do
+                        local attackdata = Database.get(attacktype)
+                        if attackdata and self.mana >= attackdata.attackmanacost then
+                            return attacktype, atan2(vely, velx)
+                        end
                     end
                 end
                 return "running-kick", atan2(vely, velx)
@@ -827,10 +829,11 @@ function Player:runWithEnemy(enemy)
             enemy.canbeattacked = true
 
             if fireattackpressed then
-                local attackdata = Database.get("running-spit-fireball")
-                if attackdata and self.mana >= attackdata.attackmanacost then
-                    self.mana = self.mana - attackdata.attackmanacost
-                    return "running-spit-fireball", self.faceangle
+                for _, attacktype in ipairs(RunningSpecialAttacks) do
+                    local attackdata = Database.get(attacktype)
+                    if attackdata and self.mana >= attackdata.attackmanacost then
+                        return attacktype, self.faceangle
+                    end
                 end
             end
 
