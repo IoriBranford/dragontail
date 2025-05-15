@@ -678,7 +678,7 @@ function Player:throwWeapon(targetx, targety, targetz, attackchoice, numtothrow)
     end
     Face.faceVector(self, distx, disty)
     local throwdeltaangle = pi/16
-    distx, disty = math.rot(distx, disty, -throwdeltaangle * (numtothrow - 1) / 2)
+    distx, disty = math.rot(distx, disty, -throwdeltaangle * math.floor((numtothrow - 1) / 2))
     for i = 1, numtothrow do
         local projectiledata = Database.get(self.weaponinhand)
         local attackchoices = projectiledata and projectiledata.attackchoices
