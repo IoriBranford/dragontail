@@ -93,7 +93,9 @@ function love.handlers.joystickadded(...)
     joystickaddedhandler(...)
 end
 
-function love.quit()
+local quithandler = love.handlers.quit
+function love.handlers.quit()
+    quithandler()
     if love.quitphase then
         love.quitphase()
     end
