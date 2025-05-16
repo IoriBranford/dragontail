@@ -3,6 +3,7 @@ kick,kick,straightAttack,control,fastkick,0,FALSE,FALSE,FALSE,sounds/combat/swin
 tail-swing-cw,tail-swing-cw,spinAttack,control,attackA,1,FALSE,FALSE,FALSE,sounds/combat/swing2.mp3,
 tail-swing-ccw,tail-swing-ccw,spinAttack,control,attackB,1,FALSE,FALSE,FALSE,sounds/combat/swing2.mp3,
 spinning-throw,spinning-throw,spinAndKickEnemy,holding-kick,spinthrow,1,FALSE,FALSE,FALSE,sounds/combat/swing3.mp3,
+flaming-spinning-throw,flaming-spinning-throw,spinAndKickEnemy,holding-kick,spinthrow,1,FALSE,FALSE,FALSE,sounds/combat/swing3.mp3,
 holding-knee,holding-knee,straightAttack,hold,holdknee,0,FALSE,FALSE,FALSE,sounds/combat/swing1.mp3,
 holding-kick,holding-kick,straightAttack,control,hardkick,0,FALSE,FALSE,FALSE,sounds/combat/swing1.mp3,
 running-kick,running-kick,straightAttack,control,hardkick,0,FALSE,FALSE,FALSE,sounds/player/attack2.mp3,3
