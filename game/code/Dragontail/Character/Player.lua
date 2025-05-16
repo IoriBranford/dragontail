@@ -787,7 +787,7 @@ end
 
 function Player:runWithEnemy(enemy)
     self.facedestangle = self.faceangle
-    StateMachine.start(enemy, "human-in-spinning-throw", self)
+    StateMachine.start(enemy, self.attackofheldopponent or "human-in-spinning-throw", self)
     enemy:startAttack(self.faceangle)
     local runningtime = 0
     while true do
