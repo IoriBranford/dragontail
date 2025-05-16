@@ -3,7 +3,7 @@ kick,FALSE,FALSE,32,0.392699081698724,10,10,5,,FALSE,FALSE,4,9,4,4,6,TRUE,nil,kn
 tail-swing-cw,TRUE,FALSE,40,0.523598775598299,30,10,5,0.628318530717959,FALSE,FALSE,,20,6,6,6,TRUE,knockedBack,knockedBack,,sounds/combat/hit3.mp3,sounds/combat/hit3.mp3,spark-hit,spark-guard,FALSE,FALSE,0,FALSE
 tail-swing-ccw,TRUE,FALSE,40,0.523598775598299,30,10,5,-0.628318530717959,FALSE,FALSE,,20,6,6,6,TRUE,knockedBack,knockedBack,,sounds/combat/hit3.mp3,sounds/combat/hit3.mp3,spark-hit,spark-guard,FALSE,FALSE,0,FALSE
 spinning-throw,TRUE,TRUE,24,1.5707963267949,10,0,0,0.392699081698724,FALSE,FALSE,,20,nil,nil,,TRUE,knockedBack,knockedBack,sounds/combat/swing3.mp3,,,spark-hit,spark-guard,FALSE,FALSE,0,human-in-spinning-throw
-flaming-spinning-throw,TRUE,TRUE,24,1.5707963267949,10,0,0,0.785398163397448,25.1327412287183,25.1327412287183,,20,nil,nil,,TRUE,knockedBack,knockedBack,sounds/combat/ignite.mp3,,,spark-hit,spark-guard,FALSE,FALSE,120,human-in-flaming-spinning-throw
+flaming-spinning-throw,TRUE,TRUE,24,1.5707963267949,10,0,0,0.523598775598299,12.5663706143592,25.1327412287183,,20,nil,nil,,TRUE,knockedBack,knockedBack,sounds/combat/ignite.mp3,,,spark-hit,spark-guard,FALSE,FALSE,120,human-in-flaming-spinning-throw
 holding-knee,FALSE,TRUE,16,0.261799387799149,10,10,5,,FALSE,FALSE,4,6,2,nil,5,TRUE,nil,knockedBack,,sounds/combat/hit2.mp3,,spark-hit,spark-guard,FALSE,FALSE,0,FALSE
 holding-kick,TRUE,TRUE,32,0.261799387799149,30,10,5,,FALSE,FALSE,4,9,nil,nil,12,TRUE,thrown,thrown,,sounds/combat/hit3.mp3,,spark-hit,spark-guard,FALSE,FALSE,0,FALSE
 running-kick,TRUE,FALSE,32,0.523598775598299,25,10,10,,FALSE,FALSE,64,20,nil,nil,12,TRUE,thrown,thrown,,sounds/combat/hit3.mp3,,spark-hit,spark-guard,FALSE,FALSE,0,FALSE
