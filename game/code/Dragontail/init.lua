@@ -11,6 +11,16 @@ local Inputs = require "System.Inputs"
 local firstphase = "Dragontail.GamePhase"
 local firstmap = "data/stage_demonrealm.lua"
 
+local defaultgamepadconfig =  {
+    ["dpleft dpright"] = "movex",
+    ["dpup dpdown"] = "movey",
+    leftx = "movex",
+    lefty = "movey",
+    x = "attack",
+    y = "attack2",
+    a = "sprint",
+}
+
 function love.load(args)
     Assets.rootpath = "data/"
     local mapname = args.stage or args.test
@@ -29,8 +39,9 @@ function love.load(args)
     Config.drawstats = args.drawstats
     Config.drawai = args.drawai
 
-    Inputs.initGamepads()
-    Inputs.addInputActions(Config.inputs)
+    Config.gamepads = Inputs.configureGamepads(Config.gamepads)
+    Config.keys = Inputs.configureKeyboard(Config.keys)
+    Inputs.initGamepads(defaultgamepadconfig)
 
     Window.init(Stage.CameraWidth, Stage.CameraHeight)
     love.window.setTitle(love.filesystem.getIdentity())
@@ -49,6 +60,10 @@ function love.load(args)
 
     local startpoint = args.startpoint
     love.event.loadphase(firstphase, firstmap, startpoint)
+end
+
+function love.quit()
+    Inputs.saveGamepadMappings()
 end
 
 return {
@@ -73,31 +88,51 @@ return {
         exhibit = false,
         maximize = Platform.supports("maximize"),
 
-        inputs = {
-            ["keyaxis left right"] = "movex",
-            ["keyaxis up down"] = "movey",
-            ["key z"] = "attack",
-            ["key x"] = "attack2",
-            ["key lshift"] = "sprint",
-            ["pad1 axis leftx"] = "movex",
-            ["pad1 axis lefty"] = "movey",
-            ["pad1 buttonaxis dpleft dpright"] = "movex",
-            ["pad1 buttonaxis dpup dpdown"] = "movey",
-            ["pad1 button x"] = "attack",
-            ["pad1 button y"] = "attack2",
-            ["pad1 button a"] = "sprint",
+        keys = {
+            ["left right"] = "movex",
+            ["up down"] = "movey",
+            z = "attack",
+            x = "attack2",
+            lshift = "sprint"
         },
 
-        key_left = "left",
-        key_right = "right",
-        key_up = "up",
-        key_down = "down",
-        key_fire = "z",
-        key_focus = "x",
-        key_bomb = "lshift",
-        key_pause = "pause",
-        key_pausemenu = "escape",
-        key_restart = "none",
+        gamepads = {
+            [0] = defaultgamepadconfig,
+            [1] = defaultgamepadconfig
+        },
+
+        -- inputs = {
+        --     ["keyaxis left right"] = "movex",
+        --     ["keyaxis up down"] = "movey",
+        --     ["key z"] = "attack",
+        --     ["key x"] = "attack2",
+        --     ["key lshift"] = "sprint",
+        --     ["pad0 axis leftx"] = "movex",
+        --     ["pad0 axis lefty"] = "movey",
+        --     ["pad0 buttonaxis dpleft dpright"] = "movex",
+        --     ["pad0 buttonaxis dpup dpdown"] = "movey",
+        --     ["pad0 button x"] = "attack",
+        --     ["pad0 button y"] = "attack2",
+        --     ["pad0 button a"] = "sprint",
+        --     ["pad1 axis leftx"] = "movex",
+        --     ["pad1 axis lefty"] = "movey",
+        --     ["pad1 buttonaxis dpleft dpright"] = "movex",
+        --     ["pad1 buttonaxis dpup dpdown"] = "movey",
+        --     ["pad1 button x"] = "attack",
+        --     ["pad1 button y"] = "attack2",
+        --     ["pad1 button a"] = "sprint",
+        -- },
+
+        -- key_left = "left",
+        -- key_right = "right",
+        -- key_up = "up",
+        -- key_down = "down",
+        -- key_fire = "z",
+        -- key_focus = "x",
+        -- key_bomb = "lshift",
+        -- key_pause = "pause",
+        -- key_pausemenu = "escape",
+        -- key_restart = "none",
     
         -- game_rules = "ORIGINAL",
         -- game_difficulty = "NORMAL",
@@ -111,16 +146,16 @@ return {
         -- practice_powerlevel = 0,
         -- practice_stage = "DEMONREALM",
     
-        joy_deadzone = 0.25,
-        joy_move1 = "left",
-        joy_move2 = "dp",
-        joy_startbackrestart = false,
-        joy_fire = "x",
-        joy_focus = "rightshoulder",
-        joy_bomb = "leftshoulder",
-        joy_pause = "back",
-        joy_pausemenu = "start",
-        joy_namingscheme = "XBOX",
+        -- joy_deadzone = 0.25,
+        -- joy_move1 = "left",
+        -- joy_move2 = "dp",
+        -- joy_startbackrestart = false,
+        -- joy_fire = "x",
+        -- joy_focus = "rightshoulder",
+        -- joy_bomb = "leftshoulder",
+        -- joy_pause = "back",
+        -- joy_pausemenu = "start",
+        -- joy_namingscheme = "XBOX",
     
         -- hud_inner = "AUTO",
         -- hud_outer = true,
