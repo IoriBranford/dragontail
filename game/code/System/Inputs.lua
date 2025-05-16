@@ -272,8 +272,9 @@ end
 
 function Inputs.getActionsInputs(inputtypes)
     local actionsinputs = {} ---@type {[InputAction]:Input[]}
-    for input, action in pairs(inputs) do
+    for _, input in pairs(inputs) do
         if not inputtypes or inputtypes:find(InputTypePatterns[input.type]) then
+            local action = input.action
             local actioninputs = actionsinputs[action] or {}
             actionsinputs[action] = actioninputs
             actioninputs[#actioninputs+1] = input
