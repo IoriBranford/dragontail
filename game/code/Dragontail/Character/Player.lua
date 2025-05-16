@@ -862,10 +862,13 @@ function Player:runWithEnemy(enemy)
 end
 
 function Player:spinAndKickEnemy(angle, enemy)
-    StateMachine.start(enemy, "human-in-spinning-throw", self)
+    if (self.attackmanacost or 0) > 0 then
+        self:giveMana(-self.attackmanacost)
+    end
+    StateMachine.start(enemy, self.attackofheldopponent or "human-in-spinning-throw", self)
     local spinvel = self.attackspinspeed or 0
-    local spintime = self.attackhittime or 0
-    local t = spintime
+    local maxspunmag = self.attackspinmax or (4*pi)
+    local minspunmag = self.attackspinmin or 0
     local x, y = self.x, self.y
     local grabradius = self.grabradius or 8
     local radii = grabradius + enemy.bodyradius
@@ -892,6 +895,19 @@ function Player:spinAndKickEnemy(angle, enemy)
         self:accelerateTowardsVel(targetvelx, targetvely, 4)
         local velx, vely = self.velx, self.vely
 
+        if math.ceil(spunmag / 2 / pi) < math.ceil((spunmag+spinmag) / 2 / pi) then
+            Audio.play(self.windupsound)
+        end
+        local remainder = maxspunmag - spunmag
+        if remainder <= spinmag then
+            angle = angle + (spinvel < 0 and -remainder or remainder)
+            spunmag = maxspunmag
+            throwx, throwy = cos(angle), sin(angle)
+        else
+            angle = angle + spinvel
+            spunmag = spunmag + spinmag
+        end
+
         enemy:startAttack(angle)
         Face.faceAngle(self, angle, self.state and self.state.animation)
 
@@ -901,13 +917,9 @@ function Player:spinAndKickEnemy(angle, enemy)
         enemy.y = y + vely + holddiry*radii
 
         yield()
-        angle = angle + spinvel
-        if math.ceil(spunmag / 2 / pi) < math.ceil((spunmag+spinmag) / 2 / pi) then
-            Audio.play(self.windupsound)
-        end
-        spunmag = spunmag + spinmag
-        t = t - 1
-    until (dot(throwx, throwy, holddirx, holddiry) >= cos(spinmag))
+    until spunmag >= minspunmag
+    and dot(throwx, throwy, holddirx, holddiry) >= cos(spinmag)
+
     enemy.x = x + self.velx + throwx*radii
     enemy.y = y + self.vely + throwy*radii
     Audio.play(self.throwsound)
