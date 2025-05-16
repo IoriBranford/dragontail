@@ -18,6 +18,7 @@ local WeaponInHand         = require "Dragontail.Character.Action.WeaponInHand"
 local Inventory            = require "Dragontail.Character.Inventory"
 local JoystickLog          = require "Dragontail.Character.Player.JoystickLog"
 local Combo                = require "Dragontail.Character.Action.Combo"
+local Mana                 = require "Dragontail.Character.Mana"
 
 ---@class Player:Fighter
 ---@field inventory Inventory
@@ -74,11 +75,9 @@ function Player:getNextAttackType(heldenemy, special)
     if special then
         local i = comboindex
         local specialattacktype, specialattackdata
-        local mana = self.mana
         repeat
             specialattacktype = SpecialCombo[i]
-            specialattackdata = Database.get(specialattacktype)
-            if specialattackdata and specialattackdata.attackmanacost <= mana then
+            if Mana.canAffordAttack(self, specialattacktype) then
                 return specialattacktype
             end
             i = i - 1
@@ -189,9 +188,7 @@ function Player:init()
     -- self.runenergy = self.runenergy or 100
     -- self.runenergymax = self.runenergymax or self.runenergy
     -- self.runenergycost = self.runenergycost or 25
-    self.manaunitsize = self.manaunitsize or 60
-    self.manamax = self.manamax or (self.manaunitsize * 3)
-    self.mana = self.mana or self.manaunitsize
+    Mana.init(self)
 
     ---@class PlayerAttackerSlots
     ---@field [integer] AttackerSlot
@@ -447,8 +444,7 @@ function Player:control()
 
                 if fireattackpressed then
                     for _, attacktype in ipairs(RunningSpecialAttacks) do
-                        local attackdata = Database.get(attacktype)
-                        if attackdata and self.mana >= attackdata.attackmanacost then
+                        if Mana.canAffordAttack(self, attacktype) then
                             return attacktype, atan2(vely, velx)
                         end
                     end
@@ -530,7 +526,7 @@ function Player:spinAttack(attackangle)
     local t = spintime
     local lungespeed = self.attacklungespeed
     local projectile = self.attackprojectile
-    self:giveMana(-(self.attackmanacost or 0))
+    Mana.give(self, -(self.attackmanacost or 0))
     -- local buttonholdtimeforfireball = spintime/2
     repeat
         local faceangle = tailangle + pi
@@ -771,11 +767,12 @@ function Player:hold(enemy)
 
         -- self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
         if runpressed then --and self.runenergy >= self.runenergycost then
+            Combo.reset(self)
             return "running-with-enemy", enemy
         end
         if fireattackpressed then
-            local attackdata = self.attacktable["flaming-spinning-throw"]
-            if attackdata and attackdata.attackmanacost <= self.mana then
+            if Mana.canAffordAttack(self, "flaming-spinning-throw") then
+                Combo.reset(self)
                 return "flaming-spinning-throw", holdangle, enemy
             end
         end
@@ -834,8 +831,7 @@ function Player:runWithEnemy(enemy)
 
             if fireattackpressed then
                 for _, attacktype in ipairs(RunningSpecialAttacks) do
-                    local attackdata = Database.get(attacktype)
-                    if attackdata and self.mana >= attackdata.attackmanacost then
+                    if Mana.canAffordAttack(self, attacktype) then
                         return attacktype, self.faceangle
                     end
                 end
@@ -868,9 +864,7 @@ function Player:runWithEnemy(enemy)
 end
 
 function Player:spinAndKickEnemy(angle, enemy)
-    if (self.attackmanacost or 0) > 0 then
-        self:giveMana(-self.attackmanacost)
-    end
+    Mana.give(self, -(self.attackmanacost or 0))
     StateMachine.start(enemy, self.attackofheldopponent or "human-in-spinning-throw", self)
     local spinvel = self.attackspinspeed or 0
     local maxspunmag = self.attackspinmax or (4*pi)
@@ -948,7 +942,7 @@ function Player:straightAttack(angle, heldenemy)
     else
         self:startAttack(angle)
     end
-    self:giveMana(-(self.attackmanacost or 0))
+    Mana.give(self, -(self.attackmanacost or 0))
     Face.faceAngle(self, angle)
     local t = self.attackhittime or 1
     local lungespeed = self.attacklungespeed
