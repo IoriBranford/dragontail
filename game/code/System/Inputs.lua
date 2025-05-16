@@ -7,6 +7,9 @@ local Inputs = {}
 local inputs = {} ---@type {[string]: Input}
 local actions = {} ---@type {[string]: InputAction}
 local gamepadsbyid = {} ---@type {[integer]: love.Joystick} gamepads by id
+local gamepadconfigs = {}
+local gamepaddefaultconfig = {}
+local keyboardconfig = {}
 
 ---@class InputAction
 ---@field name string
@@ -90,7 +93,10 @@ local function isPositionDown(position)
     return math.abs(position) >= .25
 end
 
-function Inputs.initGamepads()
+function Inputs.initGamepads(defaultconfig)
+    if defaultconfig then
+        gamepaddefaultconfig = defaultconfig
+    end
     if love.filesystem.getInfo("data/gamecontrollerdb.txt", "file") then
         love.joystick.loadGamepadMappings("data/gamecontrollerdb.txt")
     end
@@ -121,6 +127,18 @@ function Inputs.joystickadded(joystick)
         os = GCDBOS[os] or os
         local mapping = string.format(DefaultMapping, joystick:getGUID(), joystick:getName(), os)
         love.joystick.loadGamepadMappings(mapping)
+    end
+
+    local gamepadinputs = gamepadconfigs[id]
+    if not gamepadinputs then
+        gamepadinputs = {}
+        gamepadconfigs[id] = gamepadinputs
+    end
+
+    for gamepadinput, actionname in pairs(gamepaddefaultconfig) do
+        if not gamepadinputs[gamepadinput] then
+            gamepadinputs[gamepadinput] = Inputs.configureGamepadInput(id, gamepadinput, actionname)
+        end
     end
 end
 
@@ -154,7 +172,7 @@ function Inputs.addInputAction(inputstring, actionname)
     end
 end
 
-function Inputs.addKeyInputAction(keyinput, actionname)
+function Inputs.configureKey(keyinput, actionname)
     local key1, key2 = string.match(keyinput, "^(%S+) *(%S*)$")
     local input
 
@@ -177,15 +195,18 @@ function Inputs.addKeyInputAction(keyinput, actionname)
     end
 
     if input then
-        inputs[InputString.get(input.type, key1, key2)] = input
+        local inputstring = InputString.get(input.type, key1, key2)
+        inputs[inputstring] = input
+        keyboardconfig[keyinput] = actionname
         return input
     end
 end
 
-function Inputs.addKeyboardInputActions(keyinputs)
+function Inputs.configureKeyboard(keyinputs)
     for keyinput, actionname in pairs(keyinputs) do
-        Inputs.addKeyInputAction(keyinput, actionname)
+        Inputs.configureKey(keyinput, actionname)
     end
+    return keyboardconfig
 end
 
 local GamepadInputTypes = {
@@ -218,7 +239,7 @@ local GamepadInputTypes = {
     misc1 = "button"
 }
 
-function Inputs.addGamepadInputAction(gamepadid, gamepadinput, actionname)
+function Inputs.configureGamepadInput(gamepadid, gamepadinput, actionname)
     local input1, input2 = string.match(gamepadinput, "^(%S+) *(%S*)$")
     local input
     if (input2 or "") ~= "" then
@@ -242,21 +263,30 @@ function Inputs.addGamepadInputAction(gamepadid, gamepadinput, actionname)
     end
 
     if input then
-        inputs[InputString.get(input.type, gamepadid, input1, input2)] = input
+        local gamepadconfig = gamepadconfigs[gamepadid]
+        if not gamepadconfig then
+            gamepadconfig = {}
+            gamepadconfigs[gamepadid] = gamepadconfig
+        end
+        gamepadconfig[gamepadinput] = actionname
+
+        local inputstring = InputString.get(input.type, gamepadid, input1, input2)
+        inputs[inputstring] = input
         return input
     end
 end
 
-function Inputs.addGamepadInputActions(gamepadid, inputactions)
-    for gamepadinputs, actionname in pairs(inputactions) do
-        Inputs.addGamepadInputAction(gamepadid, gamepadinputs, actionname)
+function Inputs.configureGamepad(gamepadid, gamepadconfig)
+    for input, actionname in pairs(gamepadconfig) do
+        Inputs.configureGamepadInput(gamepadid, input, actionname)
     end
 end
 
-function Inputs.addGamepadsInputActions(inputactions)
-    for gamepadid, gamepadinputs in ipairs(inputactions) do
-        Inputs.addGamepadInputActions(gamepadid, gamepadinputs)
+function Inputs.configureGamepads(newgamepadconfigs)
+    for gamepadid, gamepadconfig in pairs(newgamepadconfigs) do
+        Inputs.configureGamepad(gamepadid, gamepadconfig)
     end
+    return gamepadconfigs
 end
 
 function Inputs.addInputActions(inputactions)
