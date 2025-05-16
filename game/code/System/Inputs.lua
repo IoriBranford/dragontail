@@ -103,6 +103,10 @@ function Inputs.initGamepads()
     end
 end
 
+function Inputs.saveGamepadMappings()
+    love.joystick.saveGamepadMappings("gamecontrollerdb.txt")
+end
+
 function Inputs.joystickadded(joystick)
     local id = joystick:getID()
     gamepadsbyid[id] = joystick
