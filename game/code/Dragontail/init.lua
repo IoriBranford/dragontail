@@ -30,7 +30,7 @@ function love.load(args)
     Config.drawai = args.drawai
 
     Inputs.initGamepads()
-    Inputs.addMappings(Config.inputs)
+    Inputs.addInputActions(Config.inputs)
 
     Window.init(Stage.CameraWidth, Stage.CameraHeight)
     love.window.setTitle(love.filesystem.getIdentity())

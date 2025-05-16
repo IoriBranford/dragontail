@@ -145,7 +145,7 @@ function Inputs.getOrMakeAction(name)
     return action
 end
 
-function Inputs.addMapping(inputstring, actionname)
+function Inputs.addInputAction(inputstring, actionname)
     local input = InputParse.parse(inputstring)
     if input then
         input.action = Inputs.getOrMakeAction(actionname)
@@ -154,8 +154,8 @@ function Inputs.addMapping(inputstring, actionname)
     end
 end
 
-function Inputs.addKeyMapping(keys, actionname)
-    local key1, key2 = string.match(keys, "^(%S+) *(%S*)$")
+function Inputs.addKeyInputAction(keyinput, actionname)
+    local key1, key2 = string.match(keyinput, "^(%S+) *(%S*)$")
     local input
 
     if (key2 or "") ~= "" then
@@ -182,9 +182,9 @@ function Inputs.addKeyMapping(keys, actionname)
     end
 end
 
-function Inputs.addKeyboardMappings(mappings)
-    for keys, actionname in pairs(mappings) do
-        Inputs.addKeyMapping(keys, actionname)
+function Inputs.addKeyboardInputActions(keyinputs)
+    for keyinput, actionname in pairs(keyinputs) do
+        Inputs.addKeyInputAction(keyinput, actionname)
     end
 end
 
@@ -218,8 +218,8 @@ local GamepadInputTypes = {
     misc1 = "button"
 }
 
-function Inputs.addGamepadInputMapping(gamepadid, gamepadinputs, actionname)
-    local input1, input2 = string.match(gamepadinputs, "^(%S+) *(%S*)$")
+function Inputs.addGamepadInputAction(gamepadid, gamepadinput, actionname)
+    local input1, input2 = string.match(gamepadinput, "^(%S+) *(%S*)$")
     local input
     if (input2 or "") ~= "" then
         input = {
@@ -247,21 +247,21 @@ function Inputs.addGamepadInputMapping(gamepadid, gamepadinputs, actionname)
     end
 end
 
-function Inputs.addGamepadMappings(gamepadid, mappings)
-    for gamepadinputs, actionname in pairs(mappings) do
-        Inputs.addGamepadInputMapping(gamepadid, gamepadinputs, actionname)
+function Inputs.addGamepadInputActions(gamepadid, inputactions)
+    for gamepadinputs, actionname in pairs(inputactions) do
+        Inputs.addGamepadInputAction(gamepadid, gamepadinputs, actionname)
     end
 end
 
-function Inputs.addGamepadsMappings(mappings)
-    for gamepadid, gamepadmappings in ipairs(mappings) do
-        Inputs.addGamepadMappings(gamepadid, gamepadmappings)
+function Inputs.addGamepadsInputActions(inputactions)
+    for gamepadid, gamepadinputs in ipairs(inputactions) do
+        Inputs.addGamepadInputActions(gamepadid, gamepadinputs)
     end
 end
 
-function Inputs.addMappings(mappings)
-    for inputstring, actionname in pairs(mappings) do
-        Inputs.addMapping(inputstring, actionname)
+function Inputs.addInputActions(inputactions)
+    for inputstring, actionname in pairs(inputactions) do
+        Inputs.addInputAction(inputstring, actionname)
     end
 end
 
@@ -283,7 +283,7 @@ function Inputs.getActionsInputs(inputtypes)
     return actionsinputs
 end
 
-function Inputs.removeMapping(input)
+function Inputs.removeInput(input)
     inputs[input] = nil
 end
 
