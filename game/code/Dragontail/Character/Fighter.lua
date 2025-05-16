@@ -8,11 +8,7 @@ local Slide      = require "Dragontail.Character.Action.Slide"
 local Face       = require "Dragontail.Character.Action.Face"
 local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
 local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
-
----@class Mana
----@field mana number?
----@field manamax number?
----@field manaunitsize number?
+local Mana                 = require "Dragontail.Character.Mana"
 
 ---@class Dash
 ---@field dashsound string?
@@ -74,19 +70,7 @@ function Fighter:init()
     self.faceangle = self.faceangle or 0
 end
 
-function Fighter:giveMana(mana)
-    if not self.mana or not self.manamax then
-        return
-    end
-
-    mana = self.mana + mana
-    if mana > self.manamax then
-        mana = self.manamax
-    elseif mana < 0 then
-        mana = 0
-    end
-    self.mana = mana
-end
+Fighter.giveMana = Mana.give
 
 function Fighter:hurt(attacker)
     local hurtangle = atan2(attacker.y - self.y, attacker.x - self.x)
