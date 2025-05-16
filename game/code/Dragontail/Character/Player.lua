@@ -729,7 +729,7 @@ function Player:hold(enemy)
         end
 
         local inx, iny = self.joystickx.position, self.joysticky.position
-        local attackpressed, runpressed = self.attackbutton.pressed, self.sprintbutton.pressed
+        local normalattackpressed, runpressed = self.attackbutton.pressed, self.sprintbutton.pressed
         local fireattackpressed = self.fireattackbutton.pressed
         local targetvelx, targetvely = 0, 0
         local speed = 2
@@ -773,11 +773,17 @@ function Player:hold(enemy)
         if runpressed then --and self.runenergy >= self.runenergycost then
             return "running-with-enemy", enemy
         end
-        if attackpressed or fireattackpressed then
-            if not fireattackpressed and (inx ~= 0 or iny ~= 0) then
-                Combo.reset(self)
-                return "spinning-throw", holdangle, enemy
+        if fireattackpressed then
+            local attackdata = self.attacktable["flaming-spinning-throw"]
+            if attackdata and attackdata.attackmanacost <= self.mana then
+                return "flaming-spinning-throw", holdangle, enemy
             end
+        end
+        if fireattackpressed or normalattackpressed and (inx ~= 0 or iny ~= 0) then
+            Combo.reset(self)
+            return "spinning-throw", holdangle, enemy
+        end
+        if normalattackpressed then
             return self:doComboAttack(holdangle, enemy, fireattackpressed)
         end
     end
