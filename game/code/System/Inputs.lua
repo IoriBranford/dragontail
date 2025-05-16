@@ -163,6 +163,7 @@ function Inputs.getOrMakeAction(name)
     return action
 end
 
+---@deprecated
 function Inputs.addInputAction(inputstring, actionname)
     local input = InputParse.parse(inputstring)
     if input then
@@ -289,6 +290,7 @@ function Inputs.configureGamepads(newgamepadconfigs)
     return gamepadconfigs
 end
 
+---@deprecated
 function Inputs.addInputActions(inputactions)
     for inputstring, actionname in pairs(inputactions) do
         Inputs.addInputAction(inputstring, actionname)
