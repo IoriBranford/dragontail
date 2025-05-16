@@ -302,7 +302,7 @@ function Stage.fixedupdateGui(gui)
 
     hud.health:setPercent(healthpercent)
 
-    local mana = player.mana
+    local mana = player.manastore
     local manaunitsize = player.manaunitsize
     for i = 1, 3 do
         local flamegauge = hud["flame"..i] ---@type Gauge

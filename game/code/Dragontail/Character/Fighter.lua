@@ -70,7 +70,7 @@ function Fighter:init()
     self.faceangle = self.faceangle or 0
 end
 
-Fighter.giveMana = Mana.give
+Fighter.storeMana = Mana.store
 
 function Fighter:hurt(attacker)
     local hurtangle = atan2(attacker.y - self.y, attacker.x - self.x)
@@ -87,9 +87,9 @@ function Fighter:hurt(attacker)
     HoldOpponent.stopHolding(self, self.heldopponent)
     self.hurtstun = attacker.attackstun or 3
 
-    if attacker.giveMana then
+    if attacker.storeMana then
         local mana = math.max(1, math.floor(attacker.attackdamage/4))
-        attacker:giveMana(mana)
+        attacker:storeMana(mana)
     end
 
     local hitsound = attacker.hitsound

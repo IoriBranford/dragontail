@@ -526,7 +526,7 @@ function Player:spinAttack(attackangle)
     local t = spintime
     local lungespeed = self.attacklungespeed
     local projectile = self.attackprojectile
-    Mana.give(self, -(self.attackmanacost or 0))
+    Mana.store(self, -(self.attackmanacost or 0))
     -- local buttonholdtimeforfireball = spintime/2
     repeat
         local faceangle = tailangle + pi
@@ -864,7 +864,7 @@ function Player:runWithEnemy(enemy)
 end
 
 function Player:spinAndKickEnemy(angle, enemy)
-    Mana.give(self, -(self.attackmanacost or 0))
+    Mana.store(self, -(self.attackmanacost or 0))
     StateMachine.start(enemy, self.attackofheldopponent or "human-in-spinning-throw", self)
     local spinvel = self.attackspinspeed or 0
     local maxspunmag = self.attackspinmax or (4*pi)
@@ -942,7 +942,7 @@ function Player:straightAttack(angle, heldenemy)
     else
         self:startAttack(angle)
     end
-    Mana.give(self, -(self.attackmanacost or 0))
+    Mana.store(self, -(self.attackmanacost or 0))
     Face.faceAngle(self, angle)
     local t = self.attackhittime or 1
     local lungespeed = self.attacklungespeed

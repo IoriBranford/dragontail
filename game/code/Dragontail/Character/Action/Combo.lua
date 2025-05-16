@@ -21,7 +21,7 @@ function Combo:advance(desiredcombo, fallbackcombo)
     local attacktype = combo[self.comboindex]
     local attackdata = Database.get(attacktype)
     local cost = attackdata and attackdata.attackmanacost
-    if cost and cost > self.mana then
+    if cost and cost > self.manastore then
         combo = fallbackcombo
         attacktype = combo[self.comboindex]
         attackdata = Database.get(attacktype)

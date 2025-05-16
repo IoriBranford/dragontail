@@ -183,9 +183,9 @@ function Common:itemWaitForPickup()
     end
 end
 
-function Common:giveMana(mana)
-    if self.thrower and self.thrower.giveMana then
-        self.thrower:giveMana(mana)
+function Common:storeMana(mana)
+    if self.thrower and self.thrower.storeMana then
+        self.thrower:storeMana(mana)
     end
 end
 
