@@ -129,15 +129,15 @@ function Inputs.joystickadded(joystick)
         love.joystick.loadGamepadMappings(mapping)
     end
 
-    local gamepadinputs = gamepadconfigs[id]
-    if not gamepadinputs then
-        gamepadinputs = {}
-        gamepadconfigs[id] = gamepadinputs
+    local gamepadconfig = gamepadconfigs[id]
+    if not gamepadconfig then
+        gamepadconfig = {}
+        gamepadconfigs[id] = gamepadconfig
     end
 
     for gamepadinput, actionname in pairs(gamepaddefaultconfig) do
-        if not gamepadinputs[gamepadinput] then
-            gamepadinputs[gamepadinput] = Inputs.configureGamepadInput(id, gamepadinput, actionname)
+        if not gamepadconfig[gamepadinput] then
+            Inputs.configureGamepadInput(id, gamepadinput, actionname)
         end
     end
 end
