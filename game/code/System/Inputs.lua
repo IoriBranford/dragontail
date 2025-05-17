@@ -103,7 +103,7 @@ function Inputs.initGamepads(defaultconfig)
     if love.filesystem.getInfo("gamecontrollerdb.txt", "file") then
         love.joystick.loadGamepadMappings("gamecontrollerdb.txt")
     end
-    local joysticks = love.joystick:getJoysticks()
+    local joysticks = love.joystick.getJoysticks()
     for i = 1, #joysticks do
         Inputs.joystickadded(joysticks[i])
     end
@@ -113,6 +113,7 @@ function Inputs.saveGamepadMappings()
     love.joystick.saveGamepadMappings("gamecontrollerdb.txt")
 end
 
+---@param joystick love.Joystick
 function Inputs.joystickadded(joystick)
     local id = joystick:getID()
     gamepadsbyid[id] = joystick
@@ -185,7 +186,6 @@ function Inputs.configureKey(keyinput, actionname)
             negative = key1,
             positive = key2,
         }
-        print(key1, key2)
     elseif key1 then
         ---@type KeyInput
         input = {
