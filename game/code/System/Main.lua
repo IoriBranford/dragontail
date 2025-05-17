@@ -93,9 +93,7 @@ function love.handlers.joystickadded(...)
     joystickaddedhandler(...)
 end
 
-local quithandler = love.handlers.quit
-function love.handlers.quit()
-    quithandler()
+local function OnQuit()
     if love.quitphase then
         love.quitphase()
     end
@@ -172,6 +170,7 @@ function love.run()
             for name, a, b, c, d, e, f in love.event.poll() do
                 if name == "quit" then
                     if not love.quit or not love.quit() then
+                        OnQuit()
                         return a or 0
                     end
                 else
