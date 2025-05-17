@@ -370,6 +370,29 @@ function Player:catchProjectile(projectile)
     return "control"
 end
 
+local ChargeAttacks = {
+    "spit-fat-fireball", "spit-fireball"
+}
+local RunningChargeAttacks = {
+    "running-spit-fat-fireball", "running-spit-fireball"
+}
+
+function Player:updateBreathCharge(chargeattacks)
+    if self.attackbutton.released then
+        for _, chargeattack in ipairs(chargeattacks) do
+            if Mana.hasChargeForAttack(self, chargeattack) then
+                Mana.releaseCharge(self)
+                return chargeattack
+            end
+        end
+        Mana.releaseCharge(self)
+    elseif self.attackbutton.down then
+        Mana.charge(self, 1)
+    else
+        Mana.charge(self, -3)
+    end
+end
+
 function Player:control()
     self.facedestangle = self.faceangle
     self.joysticklog:clear()
@@ -435,6 +458,11 @@ function Player:control()
                 self:makeAfterImage()
             end
 
+            local chargedattack = self:updateBreathCharge(RunningChargeAttacks)
+            if chargedattack then
+                return chargedattack, self.facedestangle
+            end
+
             if normalattackpressed or fireattackpressed then
                 if self.weaponinhand then
                     local targetx, targety, targetz = findInstantThrowTarget(self, cos(self.facedestangle), sin(self.facedestangle))
@@ -486,6 +514,11 @@ function Player:control()
             end
         else
             -- self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
+            local chargedattack = self:updateBreathCharge(ChargeAttacks)
+            if chargedattack then
+                return chargedattack, self.facedestangle
+            end
+
             if normalattackpressed or fireattackpressed then
                 Face.updateTurnToDestAngle(self, pi)
                 if self.weaponinhand then
