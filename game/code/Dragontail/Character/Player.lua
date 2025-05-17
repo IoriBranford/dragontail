@@ -385,8 +385,8 @@ function Player:updateBreathCharge(chargeattacks)
                 return chargeattack
             end
         end
-        Mana.releaseCharge(self)
-    elseif self.attackbutton.down then
+    end
+    if self.attackbutton.down then
         Mana.charge(self, 1)
     else
         Mana.charge(self, -3)
