@@ -1,6 +1,7 @@
 character,asefile,spriteoriginx,spriteoriginy,emoteasepritefile,emoteoriginx,emoteoriginy,faceasepritefile,shadowcolor,weaponposasefile,tileset,tileid
 Rose,sprites/rose-new.jase,40,56,sprites/emotes.jase,12,64,sprites/rose-face.jase,4278190080,sprites/rose-new-weaponpos.jase,,
 Rose-fireball,sprites/rose-fireball.jase,32,40,,,,,4278190080,,,
+Rose-fat-fireball,sprites/rose-fireball-fat.jase,40,52,,,,,4278190080,,,
 Rose-running-fireball,sprites/rose-fireball.jase,32,40,,,,,4278190080,,,
 Rose-running-fat-fireball,sprites/rose-fireball-fat.jase,40,52,,,,,4278190080,,,
 bandit-dagger,sprites/bandit/knife.jase,32,56,sprites/emotes.jase,12,56,,4278190080,,,

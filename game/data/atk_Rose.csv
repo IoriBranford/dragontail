@@ -11,6 +11,7 @@ running-elbow,TRUE,FALSE,20,1.5707963267949,10,12,3,,FALSE,FALSE,2,10,nil,nil,5,
 running-with-enemy,TRUE,FALSE,24,1.5707963267949,10,12,3,,FALSE,FALSE,,,nil,nil,10,TRUE,knockedBack,knockedBack,,sounds/combat/hit2.mp3,,spark-hit,spark-guard,FALSE,FALSE,0,FALSE
 human-thrown,TRUE,FALSE,24,0.785398163397448,10,12,3,,FALSE,FALSE,,,,,,,knockedBack,knockedBack,sounds/combat/spin.mp3,sounds/combat/hit2.mp3,,spark-hit,spark-guard,FALSE,FALSE,0,FALSE
 spit-fireball,TRUE,FALSE,0,0,0,0,0,0,FALSE,FALSE,4,9,-4,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-fireball,60,FALSE
+spit-fat-fireball,TRUE,FALSE,0,0,0,0,0,0,FALSE,FALSE,4,9,-6,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-fat-fireball,120,FALSE
 running-spit-fireball,TRUE,FALSE,0,0,0,0,0,0,FALSE,FALSE,8,20,nil,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-running-fireball,60,FALSE
 running-spit-fat-fireball,TRUE,FALSE,0,0,0,0,0,0,FALSE,FALSE,8,20,nil,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-running-fat-fireball,120,FALSE
 fireball-spin-cw,TRUE,FALSE,0,0,0,0,0,0.628318530717959,FALSE,FALSE,,20,0,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-fireball,120,FALSE
