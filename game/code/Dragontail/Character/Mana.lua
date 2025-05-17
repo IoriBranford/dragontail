@@ -40,6 +40,13 @@ function Mana:releaseCharge()
     self.manacharge = 0
 end
 
+function Mana:hasChargeForAttack(attack)
+    if type(attack) == "string" then
+        attack = self.attacktable[attack]
+    end
+    return attack and self.manacharge >= attack.attackmanacost
+end
+
 function Mana:canAffordAttack(attack)
     if type(attack) == "string" then
         attack = self.attacktable[attack]
