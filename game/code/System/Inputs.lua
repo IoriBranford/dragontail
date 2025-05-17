@@ -103,10 +103,6 @@ function Inputs.initGamepads(defaultconfig)
     if love.filesystem.getInfo("gamecontrollerdb.txt", "file") then
         love.joystick.loadGamepadMappings("gamecontrollerdb.txt")
     end
-    local joysticks = love.joystick.getJoysticks()
-    for i = 1, #joysticks do
-        Inputs.joystickadded(joysticks[i])
-    end
 end
 
 function Inputs.saveGamepadMappings()
