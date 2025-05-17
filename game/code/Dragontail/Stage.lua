@@ -302,18 +302,22 @@ function Stage.fixedupdateGui(gui)
 
     hud.health:setPercent(healthpercent)
 
-    local mana = player.manastore
+    local manastore = player.manastore
+    local manacharge = player.manacharge
     local manaunitsize = player.manaunitsize
     for i = 1, 3 do
         local flamegauge = hud["flame"..i] ---@type Gauge
         if flamegauge then
-            flamegauge:setPercent(mana/manaunitsize)
+            local percent = manastore/manaunitsize
+            flamegauge:setPercent(percent)
+            flamegauge.color = percent < 1 and flamegauge.normalcolor or flamegauge.fullcolor
         end
-        local flamefull = hud["flamefull"..i] ---@type GuiObject
+        local flamefull = hud["flamecharged"..i] ---@type GuiObject
         if flamefull then
-            flamefull.visible = mana >= manaunitsize
+            flamefull.visible = manacharge >= manaunitsize
         end
-        mana = mana - manaunitsize
+        manastore = manastore - manaunitsize
+        manacharge = manacharge - manaunitsize
     end
 
     local portrait = hud.portrait

@@ -55,18 +55,24 @@
    <object id="30" name="flame1" type="Gui.Gauge" x="47" y="26" width="30" height="6">
     <properties>
      <property name="color" type="color" value="#ffffaa00"/>
+     <property name="fullcolor" type="color" value="#ffffd000"/>
+     <property name="normalcolor" type="color" value="#ffffaa00"/>
      <property name="z" type="float" value="0"/>
     </properties>
    </object>
    <object id="31" name="flame2" type="Gui.Gauge" x="80" y="26" width="30" height="6">
     <properties>
      <property name="color" type="color" value="#ffffaa00"/>
+     <property name="fullcolor" type="color" value="#ffffd000"/>
+     <property name="normalcolor" type="color" value="#ffffaa00"/>
      <property name="z" type="float" value="0"/>
     </properties>
    </object>
    <object id="32" name="flame3" type="Gui.Gauge" x="113" y="26" width="30" height="6">
     <properties>
      <property name="color" type="color" value="#ffffaa00"/>
+     <property name="fullcolor" type="color" value="#ffffd000"/>
+     <property name="normalcolor" type="color" value="#ffffaa00"/>
      <property name="z" type="float" value="0"/>
     </properties>
    </object>
@@ -94,9 +100,9 @@
      <property name="z" type="float" value="2"/>
     </properties>
    </object>
-   <object id="36" name="flamefull1" gid="377" x="42" y="37" width="40" height="20"/>
-   <object id="37" name="flamefull2" gid="377" x="75" y="37" width="40" height="20"/>
-   <object id="38" name="flamefull3" gid="377" x="108" y="37" width="40" height="20"/>
+   <object id="36" name="flamecharged1" gid="377" x="42" y="37" width="40" height="20"/>
+   <object id="37" name="flamecharged2" gid="377" x="75" y="37" width="40" height="20"/>
+   <object id="38" name="flamecharged3" gid="377" x="108" y="37" width="40" height="20"/>
    <object id="29" name="development ver." x="360" y="252" width="112" height="18">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="right">DEVELOPMENT VER. 2025</text>
    </object>

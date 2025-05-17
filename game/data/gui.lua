@@ -467,6 +467,8 @@ return {
               visible = true,
               properties = {
                 ["color"] = "#ffffaa00",
+                ["fullcolor"] = "#ffffd000",
+                ["normalcolor"] = "#ffffaa00",
                 ["z"] = 0
               }
             },
@@ -483,6 +485,8 @@ return {
               visible = true,
               properties = {
                 ["color"] = "#ffffaa00",
+                ["fullcolor"] = "#ffffd000",
+                ["normalcolor"] = "#ffffaa00",
                 ["z"] = 0
               }
             },
@@ -499,6 +503,8 @@ return {
               visible = true,
               properties = {
                 ["color"] = "#ffffaa00",
+                ["fullcolor"] = "#ffffd000",
+                ["normalcolor"] = "#ffffaa00",
                 ["z"] = 0
               }
             },
@@ -558,7 +564,7 @@ return {
             },
             {
               id = 36,
-              name = "flamefull1",
+              name = "flamecharged1",
               type = "",
               shape = "rectangle",
               x = 42,
@@ -572,7 +578,7 @@ return {
             },
             {
               id = 37,
-              name = "flamefull2",
+              name = "flamecharged2",
               type = "",
               shape = "rectangle",
               x = 75,
@@ -586,7 +592,7 @@ return {
             },
             {
               id = 38,
-              name = "flamefull3",
+              name = "flamecharged3",
               type = "",
               shape = "rectangle",
               x = 108,
