@@ -16,3 +16,4 @@ running-spit-fireball,TRUE,FALSE,0,0,0,0,0,0,FALSE,FALSE,8,20,nil,0,0,FALSE,FALS
 running-spit-fat-fireball,TRUE,FALSE,0,0,0,0,0,0,FALSE,FALSE,8,20,nil,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-running-fat-fireball,120,FALSE
 fireball-spin-cw,TRUE,FALSE,0,0,0,0,0,0.628318530717959,FALSE,FALSE,,20,0,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-fireball,120,FALSE
 fireball-spin-ccw,TRUE,FALSE,0,0,0,0,0,-0.628318530717959,FALSE,FALSE,,20,0,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-fireball,120,FALSE
+fireball-storm,TRUE,FALSE,0,0,0,0,0,0.589048622548086,FALSE,FALSE,8,60,0,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-running-fireball,180,FALSE
