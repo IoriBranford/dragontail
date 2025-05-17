@@ -371,10 +371,10 @@ function Player:catchProjectile(projectile)
 end
 
 local ChargeAttacks = {
-    "spit-fat-fireball", "spit-fireball"
+    "fireball-storm", "spit-fat-fireball", "spit-fireball"
 }
 local RunningChargeAttacks = {
-    "running-spit-fat-fireball", "running-spit-fireball"
+    "fireball-storm", "running-spit-fat-fireball", "running-spit-fireball"
 }
 
 function Player:updateBreathCharge(chargeattacks)
