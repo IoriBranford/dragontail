@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 18,
   nextlayerid = 13,
-  nextobjectid = 57,
+  nextobjectid = 60,
   properties = {},
   tilesets = {
     {
@@ -473,6 +473,22 @@ return {
               }
             },
             {
+              id = 59,
+              name = "flamecharge1",
+              type = "Gui.Gauge",
+              shape = "rectangle",
+              x = 47,
+              y = 26,
+              width = 30,
+              height = 6,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#ffffffff",
+                ["z"] = 0
+              }
+            },
+            {
               id = 31,
               name = "flame2",
               type = "Gui.Gauge",
@@ -491,6 +507,22 @@ return {
               }
             },
             {
+              id = 58,
+              name = "flamecharge2",
+              type = "Gui.Gauge",
+              shape = "rectangle",
+              x = 80,
+              y = 26,
+              width = 30,
+              height = 6,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#ffffffff",
+                ["z"] = 0
+              }
+            },
+            {
               id = 32,
               name = "flame3",
               type = "Gui.Gauge",
@@ -505,6 +537,22 @@ return {
                 ["color"] = "#ffffaa00",
                 ["fullcolor"] = "#ffffd000",
                 ["normalcolor"] = "#ffffaa00",
+                ["z"] = 0
+              }
+            },
+            {
+              id = 57,
+              name = "flamecharge3",
+              type = "Gui.Gauge",
+              shape = "rectangle",
+              x = 113,
+              y = 26,
+              width = 30,
+              height = 6,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#ffffffff",
                 ["z"] = 0
               }
             },
@@ -564,7 +612,7 @@ return {
             },
             {
               id = 36,
-              name = "flamecharged1",
+              name = "flamefullcharge1",
               type = "",
               shape = "rectangle",
               x = 42,
@@ -578,7 +626,7 @@ return {
             },
             {
               id = 37,
-              name = "flamecharged2",
+              name = "flamefullcharge2",
               type = "",
               shape = "rectangle",
               x = 75,
@@ -592,7 +640,7 @@ return {
             },
             {
               id = 38,
-              name = "flamecharged3",
+              name = "flamefullcharge3",
               type = "",
               shape = "rectangle",
               x = 108,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="13" nextobjectid="57">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="13" nextobjectid="60">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -60,6 +60,12 @@
      <property name="z" type="float" value="0"/>
     </properties>
    </object>
+   <object id="59" name="flamecharge1" type="Gui.Gauge" x="47" y="26" width="30" height="6">
+    <properties>
+     <property name="color" type="color" value="#ffffffff"/>
+     <property name="z" type="float" value="0"/>
+    </properties>
+   </object>
    <object id="31" name="flame2" type="Gui.Gauge" x="80" y="26" width="30" height="6">
     <properties>
      <property name="color" type="color" value="#ffffaa00"/>
@@ -68,11 +74,23 @@
      <property name="z" type="float" value="0"/>
     </properties>
    </object>
+   <object id="58" name="flamecharge2" type="Gui.Gauge" x="80" y="26" width="30" height="6">
+    <properties>
+     <property name="color" type="color" value="#ffffffff"/>
+     <property name="z" type="float" value="0"/>
+    </properties>
+   </object>
    <object id="32" name="flame3" type="Gui.Gauge" x="113" y="26" width="30" height="6">
     <properties>
      <property name="color" type="color" value="#ffffaa00"/>
      <property name="fullcolor" type="color" value="#ffffd000"/>
      <property name="normalcolor" type="color" value="#ffffaa00"/>
+     <property name="z" type="float" value="0"/>
+    </properties>
+   </object>
+   <object id="57" name="flamecharge3" type="Gui.Gauge" x="113" y="26" width="30" height="6">
+    <properties>
+     <property name="color" type="color" value="#ffffffff"/>
      <property name="z" type="float" value="0"/>
     </properties>
    </object>
@@ -100,9 +118,9 @@
      <property name="z" type="float" value="2"/>
     </properties>
    </object>
-   <object id="36" name="flamecharged1" gid="377" x="42" y="37" width="40" height="20"/>
-   <object id="37" name="flamecharged2" gid="377" x="75" y="37" width="40" height="20"/>
-   <object id="38" name="flamecharged3" gid="377" x="108" y="37" width="40" height="20"/>
+   <object id="36" name="flamefullcharge1" gid="377" x="42" y="37" width="40" height="20"/>
+   <object id="37" name="flamefullcharge2" gid="377" x="75" y="37" width="40" height="20"/>
+   <object id="38" name="flamefullcharge3" gid="377" x="108" y="37" width="40" height="20"/>
    <object id="29" name="development ver." x="360" y="252" width="112" height="18">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="right">DEVELOPMENT VER. 2025</text>
    </object>
