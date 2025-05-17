@@ -803,6 +803,10 @@ function Player:hold(enemy)
             Combo.reset(self)
             return "running-with-enemy", enemy
         end
+        local chargedattack = self:updateBreathCharge(ChargeAttacks)
+        if chargedattack then
+            return chargedattack, holddestangle
+        end
         if fireattackpressed then
             if Mana.canAffordAttack(self, "flaming-spinning-throw") then
                 Combo.reset(self)
@@ -855,6 +859,11 @@ function Player:runWithEnemy(enemy)
         if self.animationtime % 3 == 0 then
             self:makeAfterImage()
             enemy:makeAfterImage()
+        end
+
+        local chargedattack = self:updateBreathCharge(RunningChargeAttacks)
+        if chargedattack then
+            return chargedattack, self.facedestangle
         end
 
         if normalattackpressed or fireattackpressed then
