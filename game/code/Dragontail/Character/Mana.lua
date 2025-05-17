@@ -36,7 +36,6 @@ function Mana:charge(mana)
 end
 
 function Mana:releaseCharge()
-    Mana.store(self, -self.manacharge)
     self.manacharge = 0
 end
 
