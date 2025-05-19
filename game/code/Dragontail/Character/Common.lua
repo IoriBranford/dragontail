@@ -6,6 +6,7 @@ local Character   = require "Dragontail.Character"
 local Characters  = require "Dragontail.Stage.Characters"
 local Body        = require "Dragontail.Character.Body"
 local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
+local Face                 = require "Dragontail.Character.Action.Face"
 
 local yield = coroutine.yield
 local wait = coroutine.wait
@@ -250,6 +251,54 @@ function Common:becomeItem()
             type = self.itemtype,
             x = self.x, y = self.y, z = self.z
         })
+    end
+    self:disappear()
+end
+
+local function findNearest(self, objects)
+    local nearest
+    local nearestdsq = math.huge
+    local x, y = self.x, self.y
+    local z = self.z + self.bodyheight/2
+    for _, object in ipairs(objects) do
+        local dsq = math.distsq3(x, y, z, object.x, object.y, object.z + object.bodyheight/2)
+        if dsq < nearestdsq then
+            nearest = object
+            nearestdsq = dsq
+        end
+    end
+    return nearest
+end
+
+function Common:projectileHoming()
+    local oobx, ooby, oobz
+    local lifetime = self.lifetime
+    local opponents = self.opponents
+    repeat
+        local nearest = findNearest(self, opponents)
+        if nearest then
+            local vx = nearest.x - self.x
+            local vy = nearest.y - self.y
+            local vz = nearest.z + nearest.bodyheight/2 - self.z - self.bodyheight/2
+            if vx ~= 0 or vy ~= 0 or vz ~= 0
+            then
+                vx, vy, vz = math.norm(vx, vy, vz)
+                self:accelerateTowardsVel3(vx * self.speed, vy * self.speed, vz * self.speed, 16)
+            end
+        end
+        if self.velx ~= 0 or self.vely ~= 0 then
+            Face.faceVector(self, self.velx, self.vely, self.state.animation)
+            self:startAttack(self.faceangle)
+        end
+        self.velx, self.vely, self.velz, oobx, ooby, oobz = self:getVelocityWithinBounds()
+        yield()
+        if lifetime then
+            lifetime = lifetime - 1
+        end
+    until oobx or ooby or oobz or lifetime and lifetime <= 0
+    local attackhitai = self.attackhitboundaryai or self.attackhitai
+    if attackhitai then
+        return attackhitai, oobx, ooby, oobz
     end
     self:disappear()
 end
