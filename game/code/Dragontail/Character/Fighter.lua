@@ -72,6 +72,8 @@ end
 
 Fighter.storeMana = Mana.store
 
+function Fighter:duringHurt() end
+
 function Fighter:hurt(attacker)
     local hurtangle = atan2(attacker.y - self.y, attacker.x - self.x)
     if not hurtangle == hurtangle then
@@ -120,6 +122,7 @@ function Fighter:hurt(attacker)
     while pushbackspeed > 0 do
         pushbackspeed = Slide.updateSlideSpeed(self, attackangle, pushbackspeed)
         self.velx, self.vely, self.velz = self:getVelocityWithinBounds()
+        self:duringHurt()
         yield()
     end
     self.velx, self.vely, self.velz = 0, 0, 0
@@ -171,6 +174,9 @@ function Fighter:held(holder)
     return HoldOpponent.heldBy(self, holder)
 end
 
+function Fighter:duringKnockedBack()
+end
+
 function Fighter:knockedBack(thrower, attackangle)
     local dirx, diry
     if attackangle then
@@ -191,6 +197,7 @@ function Fighter:knockedBack(thrower, attackangle)
     local oobx, ooby, oobz
     repeat
         self.velx, self.vely, self.velz, oobx, ooby, oobz = self:getVelocityWithinBounds()
+        self:duringKnockedBack()
         yield()
     until oobx or ooby or oobz
     local oobdotvel = math.dot(oobx or 0, ooby or 0, self.velx, self.vely)
@@ -351,6 +358,8 @@ function Fighter:breakaway(other)
     return self.aiafterbreakaway or self.recoverai
 end
 
+function Fighter:duringFall() end
+
 function Fighter:fall(attacker)
     local t = 0
     local _, penez
@@ -359,6 +368,7 @@ function Fighter:fall(attacker)
         self:accelerateTowardsVel(0, 0, 8)
         yield()
         self.velx, self.vely, self.velz, _, _, penez = self:getVelocityWithinBounds()
+        self:duringFall()
         if penez then
             t = t + 1
             self.velz = 0
@@ -378,6 +388,7 @@ function Fighter:fall(attacker)
         t = 1
         repeat
             self.velx, self.vely, self.velz = self:getVelocityWithinBounds()
+            self:duringFall()
             yield()
             self:accelerateTowardsVel(0, 0, 8)
             t = t + 1
