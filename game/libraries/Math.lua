@@ -44,9 +44,19 @@ function math.distsq(x1, y1, x2, y2)
     return dx*dx + dy*dy
 end
 
+function math.distsq3(x1, y1, z1, x2, y2, z2)
+    local dx, dy, dz = x2-x1, y2-y1, z2-z1
+    return dx*dx + dy*dy + dz*dz
+end
+
 function math.dist(x1, y1, x2, y2)
     local dx, dy = x2-x1, y2-y1
     return sqrt(dx*dx + dy*dy)
+end
+
+function math.dist3(x1, y1, x2, y2, z1, z2)
+    local dx, dy, dz = x2-x1, y2-y1, z2-z1
+    return sqrt(dx*dx + dy*dy + dz*dz)
 end
 
 function math.len(x, y, z)
