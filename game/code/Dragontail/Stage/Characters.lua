@@ -84,10 +84,12 @@ function Characters.spawn(object)
     character:initAseprite()
     character.camera = camera
     character.solids = solids
-    if character.team == "player" then
-        character.opponents = enemies
-    else
-        character.opponents = players
+    if not character.opponents then
+        if character.team == "player" then
+            character.opponents = enemies
+        else
+            character.opponents = players
+        end
     end
     if character.bodysolid then
         solids[#solids+1] = character
