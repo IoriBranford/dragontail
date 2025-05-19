@@ -84,6 +84,29 @@ function Body:accelerateTowardsVel(targetvelx, targetvely, t, e)
     end
 end
 
+function Body:accelerateTowardsVel3(targetvelx, targetvely, targetvelz, t, e)
+    t = math.max(t, 1)
+    e = e or (1/256)
+    local accelx = (targetvelx - self.velx) / t
+    local accely = (targetvely - self.vely) / t
+    local accelz = (targetvelz - self.velz) / t
+    if math.abs(accelx) < e then
+        self.velx = targetvelx
+    else
+        self.velx = self.velx + accelx
+    end
+    if math.abs(accely) < e then
+        self.vely = targetvely
+    else
+        self.vely = self.vely + accely
+    end
+    if math.abs(accelz) < e then
+        self.velz = targetvelz
+    else
+        self.velz = self.velz + accelz
+    end
+end
+
 function Body:updateGravity()
     local gravity = self.gravity or 0
     if gravity == 0 then

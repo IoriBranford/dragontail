@@ -85,6 +85,7 @@ end
 
 Character.accelerate = Body.accelerate
 Character.accelerateTowardsVel = Body.accelerateTowardsVel
+Character.accelerateTowardsVel3 = Body.accelerateTowardsVel3
 
 function Character:makeHurtParticle()
     local particletype = Database.get(self.hurtparticle)
