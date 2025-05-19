@@ -52,6 +52,7 @@ function Shoot:launchProjectileAtPosition(projectile, targetx, targety, targetz,
     projectile.attackangle = angle
     projectile.thrower = self
     projectile.initialai = attackid
+    projectile.opponents = self.opponents
     return Characters.spawn(projectile)
 end
 
@@ -77,6 +78,7 @@ function Shoot:launchProjectile(type, dirx, diry, dirz, attackid)
         faceangle = angle,
         attackangle = angle,
         thrower = self,
+        opponents = self.opponents,
         initialai = attackid
     }
     return Characters.spawn(projectile)
