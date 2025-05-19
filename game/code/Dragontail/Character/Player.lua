@@ -377,19 +377,19 @@ local RunningChargeAttacks = {
     "fireball-storm", "running-spit-fat-fireball", "running-spit-fireball"
 }
 
-function Player:updateBreathCharge(chargeattacks)
-    if self.attackbutton.released then
+function Player:updateBreathCharge(chargeattacks, chargerate, decayrate)
+    if self.attackbutton.down then
+        Mana.charge(self, chargerate or 1)
+    else
+        local chargedattack
         for _, chargeattack in ipairs(chargeattacks) do
             if Mana.hasChargeForAttack(self, chargeattack) then
-                Mana.releaseCharge(self)
-                return chargeattack
+                chargedattack = chargeattack
+                break
             end
         end
-    end
-    if self.attackbutton.down then
-        Mana.charge(self, 1)
-    else
-        Mana.charge(self, -3)
+        Mana.charge(self, decayrate or -3)
+        return chargedattack
     end
 end
 
@@ -460,6 +460,7 @@ function Player:control()
 
             local chargedattack = self:updateBreathCharge(RunningChargeAttacks)
             if chargedattack then
+                Mana.releaseCharge(self)
                 return chargedattack, self.facedestangle
             end
 
@@ -516,6 +517,7 @@ function Player:control()
             -- self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
             local chargedattack = self:updateBreathCharge(ChargeAttacks)
             if chargedattack then
+                Mana.releaseCharge(self)
                 return chargedattack, self.facedestangle
             end
 
@@ -606,6 +608,44 @@ function Player:spinAttack(attackangle)
         return self:doComboAttack(originalfaceangle, nil, pressedattackbutton == self.fireattackbutton)
     end
     return "control"
+end
+
+function Player:getReversalChargedAttack()
+    local chargedattack = self:updateBreathCharge(RunningChargeAttacks, 3, -1)
+    if chargedattack then
+        local inx, iny = self.joystickx.position, self.joysticky.position
+        local angle = self.faceangle
+        if inx ~= 0 or iny ~= 0 then
+            angle = atan2(iny, inx)
+        end
+        return chargedattack, angle
+    end
+end
+
+function Player:duringHurt()
+    self:updateBreathCharge(RunningChargeAttacks, 3, -1)
+end
+
+function Player:duringKnockedBack()
+    self:updateBreathCharge(RunningChargeAttacks, 3, -1)
+end
+
+function Player:duringFall()
+    self:updateBreathCharge(RunningChargeAttacks, 3, -1)
+end
+
+function Player:duringGetUp()
+    if self.sprintbutton.pressed then
+        return "control"
+    end
+    self:updateBreathCharge(RunningChargeAttacks, 3, -1)
+
+    -- FIXME doing charge attack now may send player into unknown position
+    -- local chargedattack, angle = self:getReversalChargedAttack()
+    -- if chargedattack then
+    --     Mana.releaseCharge(self)
+    --     return chargedattack, angle
+    -- end
 end
 
 function Player:hurt(attacker)
@@ -805,6 +845,7 @@ function Player:hold(enemy)
         end
         local chargedattack = self:updateBreathCharge(ChargeAttacks)
         if chargedattack then
+            Mana.releaseCharge(self)
             return chargedattack, holddestangle
         end
         if fireattackpressed then
@@ -863,6 +904,7 @@ function Player:runWithEnemy(enemy)
 
         local chargedattack = self:updateBreathCharge(RunningChargeAttacks)
         if chargedattack then
+            Mana.releaseCharge(self)
             return chargedattack, self.facedestangle
         end
 
@@ -1026,23 +1068,6 @@ function Player:straightAttack(angle, heldenemy)
         return "hold", heldenemy
     end
     return "control"
-end
-
-function Player:getup(attacker)
-    local t = self.getuptime or 30
-    local recoverai = self.aiaftergetup or self.recoverai
-    if not recoverai then
-        print("No aiaftergetup or recoverai for "..self.type)
-        return "defeat", attacker
-    end
-    for i = 1, t do
-        yield()
-        local _, runpressed = self.attackbutton.pressed, self.sprintbutton.pressed
-        if runpressed then
-            break
-        end
-    end
-    return recoverai
 end
 
 function Player:victory()
