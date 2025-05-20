@@ -643,14 +643,11 @@ function Player:duringGetUp()
     if self.sprintbutton.pressed then
         return "control"
     end
-    self:updateBreathCharge(RunningChargeAttacks, ReversalChargeRate, ReversalDecayRate)
-
-    -- FIXME doing charge attack now may send player into unknown position
-    -- local chargedattack, angle = self:getReversalChargedAttack()
-    -- if chargedattack then
-    --     Mana.releaseCharge(self)
-    --     return chargedattack, angle
-    -- end
+    local chargedattack, angle = self:getReversalChargedAttack()
+    if chargedattack then
+        Mana.releaseCharge(self)
+        return chargedattack, angle
+    end
 end
 
 function Player:hurt(attacker)
