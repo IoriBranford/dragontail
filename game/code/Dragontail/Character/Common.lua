@@ -274,9 +274,17 @@ end
 
 function Common:projectileHoming()
     local oobx, ooby, oobz
-    local lifetime = self.lifetime
+    local lifetime = self.lifetime or 60
     local opponents = self.opponents
     repeat
+        local _
+        _, _, _, oobx, ooby, oobz = Body.predictCollisionVelocity(self)
+        if oobx or ooby then
+            self.velx, self.vely = math.reflect(self.velx, self.vely, -oobx or 0, -ooby or 0)
+        end
+        if oobz then
+            self.velz = -self.velz
+        end
         local nearest = findHomingTarget(self, opponents)
         if nearest then
             local vx = nearest.x - self.x
@@ -292,12 +300,9 @@ function Common:projectileHoming()
             Face.faceVector(self, self.velx, self.vely, self.state.animation)
             self:startAttack(self.faceangle)
         end
-        self.velx, self.vely, self.velz, oobx, ooby, oobz = self:getVelocityWithinBounds()
         yield()
-        if lifetime then
-            lifetime = lifetime - 1
-        end
-    until oobx or ooby or oobz or lifetime and lifetime <= 0
+        lifetime = lifetime - 1
+    until lifetime <= 0
     local attackhitai = self.attackhitboundaryai or self.attackhitai
     if attackhitai then
         return attackhitai, oobx, ooby, oobz
