@@ -25,6 +25,11 @@ local Mana                 = require "Dragontail.Character.Mana"
 ---@field joysticklog JoystickLog
 local Player = class(Fighter)
 
+local NormalChargeRate = 2
+local NormalDecayRate = -2
+local ReversalChargeRate = 4
+local ReversalDecayRate = -1
+
 local pi = math.pi
 local cos = math.cos
 local sin = math.sin
@@ -379,7 +384,7 @@ local RunningChargeAttacks = {
 
 function Player:updateBreathCharge(chargeattacks, chargerate, decayrate)
     if self.attackbutton.down then
-        Mana.charge(self, chargerate or 1)
+        Mana.charge(self, chargerate or NormalChargeRate)
     else
         local chargedattack
         for _, chargeattack in ipairs(chargeattacks) do
@@ -388,7 +393,7 @@ function Player:updateBreathCharge(chargeattacks, chargerate, decayrate)
                 break
             end
         end
-        Mana.charge(self, decayrate or -3)
+        Mana.charge(self, decayrate or NormalDecayRate)
         return chargedattack
     end
 end
@@ -611,7 +616,7 @@ function Player:spinAttack(attackangle)
 end
 
 function Player:getReversalChargedAttack()
-    local chargedattack = self:updateBreathCharge(RunningChargeAttacks, 3, -1)
+    local chargedattack = self:updateBreathCharge(RunningChargeAttacks, ReversalChargeRate, ReversalDecayRate)
     if chargedattack then
         local inx, iny = self.joystickx.position, self.joysticky.position
         local angle = self.faceangle
@@ -623,22 +628,22 @@ function Player:getReversalChargedAttack()
 end
 
 function Player:duringHurt()
-    self:updateBreathCharge(RunningChargeAttacks, 3, -1)
+    self:updateBreathCharge(RunningChargeAttacks, ReversalChargeRate, ReversalDecayRate)
 end
 
 function Player:duringKnockedBack()
-    self:updateBreathCharge(RunningChargeAttacks, 3, -1)
+    self:updateBreathCharge(RunningChargeAttacks, ReversalChargeRate, ReversalDecayRate)
 end
 
 function Player:duringFall()
-    self:updateBreathCharge(RunningChargeAttacks, 3, -1)
+    self:updateBreathCharge(RunningChargeAttacks, ReversalChargeRate, ReversalDecayRate)
 end
 
 function Player:duringGetUp()
     if self.sprintbutton.pressed then
         return "control"
     end
-    self:updateBreathCharge(RunningChargeAttacks, 3, -1)
+    self:updateBreathCharge(RunningChargeAttacks, ReversalChargeRate, ReversalDecayRate)
 
     -- FIXME doing charge attack now may send player into unknown position
     -- local chargedattack, angle = self:getReversalChargedAttack()
