@@ -90,7 +90,8 @@ function Fighter:hurt(attacker)
     self.hurtstun = attacker.attackstun or 3
 
     if attacker.storeMana then
-        local mana = math.max(1, math.floor(attacker.attackdamage/4))
+        local mana = attacker.attackgivesmanaonhit
+            or math.max(1, math.floor(attacker.attackdamage/4))
         attacker:storeMana(mana)
     end
 
