@@ -18,8 +18,8 @@ function Shoot:launchProjectileAtPosition(projectile, targetx, targety, targetz,
 
     local x, y, z = self.x, self.y, self.z
     local distx, disty, distz = targetx - x, targety - y, targetz - z
-    if distx == 0 and disty == 0 then
-        distx = 1
+    if distx == 0 and disty == 0 and distz == 0 then
+        distz = 1
     end
 
     local dst = math.len(distx, disty, distz)
