@@ -255,7 +255,7 @@ function Common:becomeItem()
     self:disappear()
 end
 
-local function findNearest(self, objects)
+local function findHomingTarget(self, objects)
     local nearest
     local nearestdsq = math.huge
     local x, y = self.x, self.y
@@ -263,8 +263,10 @@ local function findNearest(self, objects)
     for _, object in ipairs(objects) do
         local dsq = math.distsq3(x, y, z, object.x, object.y, object.z + object.bodyheight/2)
         if dsq < nearestdsq then
-            nearest = object
-            nearestdsq = dsq
+            if object.canbeattacked then
+                nearest = object
+                nearestdsq = dsq
+            end
         end
     end
     return nearest
@@ -275,7 +277,7 @@ function Common:projectileHoming()
     local lifetime = self.lifetime
     local opponents = self.opponents
     repeat
-        local nearest = findNearest(self, opponents)
+        local nearest = findHomingTarget(self, opponents)
         if nearest then
             local vx = nearest.x - self.x
             local vy = nearest.y - self.y
