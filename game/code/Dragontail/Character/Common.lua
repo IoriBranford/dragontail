@@ -285,7 +285,7 @@ function Common:projectileHoming()
             if vx ~= 0 or vy ~= 0 or vz ~= 0
             then
                 vx, vy, vz = math.norm(vx, vy, vz)
-                self:accelerateTowardsVel3(vx * self.speed, vy * self.speed, vz * self.speed, 16)
+                self:accelerateTowardsVel3(vx * self.speed, vy * self.speed, vz * self.speed, 8)
             end
         end
         if self.velx ~= 0 or self.vely ~= 0 then
