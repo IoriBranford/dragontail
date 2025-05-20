@@ -140,24 +140,33 @@ function Body:executeMove(destx, desty, speed, timelimit)
     return self.x == destx and self.y == desty
 end
 
+function Body:getCollidedPosition()
+    local x, y, z, r, h = self.x, self.y, self.z, self.bodyradius, self.bodyheight
+    local Characters = require "Dragontail.Stage.Characters"
+    local newx, newy, newz, penex, peney, penez = Characters.keepCylinderIn(x, y, z, r, h, self)
+    return newx, newy, newz, penex, peney, penez
+end
+
 ---@deprecated
 function Body:keepInBounds()
-    local x, y, z, r, h = self.x, self.y, self.z, self.bodyradius, self.bodyheight
-    local totalpenex, totalpeney, totalpenez
+    local newx, newy, newz, penex, peney, penez = Body.getCollidedPosition(self)
+    self.x, self.y, self.z = newx, newy, newz
+    return self.x, self.y, self.z, penex, peney, penez
+end
+
+function Body:predictCollisionVelocity()
+    local r, h = self.bodyradius, self.bodyheight
+    local nextx = self.x + self.velx
+    local nexty = self.y + self.vely
+    local nextz = self.z + self.velz
     local Characters = require "Dragontail.Stage.Characters"
-    self.x, self.y, self.z, totalpenex, totalpeney, totalpenez = Characters.keepCylinderIn(x, y, z, r, h, self)
-    return totalpenex, totalpeney, totalpenez
+    local newx1, newy1, newz1, penex, peney, penez = Characters.keepCylinderIn(nextx, nexty, nextz, r, h, self)
+    return newx1 - nextx, newy1 - nexty, newz1 - nextz, penex, peney, penez
 end
 
 function Body:getVelocityWithinBounds()
-    local x0, y0, z0, r, h = self.x, self.y, self.z, self.bodyradius, self.bodyheight
-    local x1 = x0 + self.velx
-    local y1 = y0 + self.vely
-    local z1 = z0 + self.velz
-    local totalpenex, totalpeney, totalpenez
-    local Characters = require "Dragontail.Stage.Characters"
-    x1, y1, z1, totalpenex, totalpeney, totalpenez = Characters.keepCylinderIn(x1, y1, z1, r, h, self)
-    return x1 - x0, y1 - y0, z1 - z0, totalpenex, totalpeney, totalpenez
+    local cvelx, cvely, cvelz, penex, peney, penez = Body.predictCollisionVelocity(self)
+    return self.velx + cvelx, self.vely + cvely, self.velz + cvelz, penex, peney, penez
 end
 
 local function testBodyCollision_polygonAndCircle(polygon, circle)
