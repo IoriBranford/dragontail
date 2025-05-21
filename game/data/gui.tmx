@@ -121,8 +121,9 @@
    <object id="36" name="flamefullcharge1" gid="377" x="42" y="37" width="40" height="20"/>
    <object id="37" name="flamefullcharge2" gid="377" x="75" y="37" width="40" height="20"/>
    <object id="38" name="flamefullcharge3" gid="377" x="108" y="37" width="40" height="20"/>
-   <object id="29" name="development ver." x="360" y="252" width="112" height="18">
-    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="right">DEVELOPMENT VER. 2025</text>
+   <object id="29" name="development ver." x="328" y="225" width="144" height="36">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="right" valign="bottom">DEVELOPMENT VER. 2025
+ALL CONTENT SUBJECT TO CHANGE</text>
    </object>
   </objectgroup>
   <objectgroup id="10" name="hud_weapon" visible="0">

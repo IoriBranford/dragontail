@@ -657,17 +657,18 @@ return {
               name = "development ver.",
               type = "",
               shape = "text",
-              x = 360,
-              y = 252,
-              width = 112,
-              height = 18,
+              x = 328,
+              y = 225,
+              width = 144,
+              height = 36,
               rotation = 0,
               visible = true,
-              text = "DEVELOPMENT VER. 2025",
+              text = "DEVELOPMENT VER. 2025\nALL CONTENT SUBJECT TO CHANGE",
               fontfamily = "TinyUnicode",
               wrap = true,
               color = { 255, 255, 255 },
               halign = "right",
+              valign = "bottom",
               properties = {}
             }
           }
