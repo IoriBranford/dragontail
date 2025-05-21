@@ -256,20 +256,20 @@ function Common:becomeItem()
 end
 
 local function findHomingTarget(self, objects)
-    local nearest
-    local nearestdsq = math.huge
+    local best
+    local bestdsq = math.huge
     local x, y = self.x, self.y
     local z = self.z + self.bodyheight/2
     for _, object in ipairs(objects) do
-        local dsq = math.distsq3(x, y, z, object.x, object.y, object.z + object.bodyheight/2)
-        if dsq < nearestdsq then
-            if object.canbeattacked then
-                nearest = object
-                nearestdsq = dsq
+        if object.health > 0 and object.canbeattacked then
+            local dsq = math.distsq3(x, y, z, object.x, object.y, object.z + object.bodyheight/2)
+            if dsq < bestdsq then
+                best = object
+                bestdsq = dsq
             end
         end
     end
-    return nearest
+    return best
 end
 
 function Common:projectileHoming()
