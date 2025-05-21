@@ -31,15 +31,15 @@
  <tileset firstgid="6624" source="sprites/banditcave/tables-hori.tsx"/>
  <tileset firstgid="6627" source="sprites/banditcave/graffiti-skull-bones.tsx"/>
  <tileset firstgid="6641" source="sprites/weapons/Dishes A.tsx"/>
- <tileset firstgid="6657" source="sprites/items/Meats A.tsx"/>
- <tileset firstgid="6712" source="sprites/items/Bread A.tsx"/>
- <tileset firstgid="6720" source="sprites/items/Cheese A.tsx"/>
- <tileset firstgid="6738" source="tilesets/Forge A.tsx"/>
- <tileset firstgid="6866" source="sprites/banditcave/Workbench, Smith.tsx"/>
- <tileset firstgid="6872" source="tilesets/ui/gamepad-buttons.tsx"/>
- <tileset firstgid="6972" source="tilesets/ui/keyboard-keys.tsx"/>
- <tileset firstgid="7244" source="sprites/banditcave/Chair, Dining F.tsx"/>
- <tileset firstgid="7260" source="tilesets/ui/flamegaugefull.tsx"/>
+ <tileset firstgid="6665" source="sprites/items/Meats A.tsx"/>
+ <tileset firstgid="6720" source="sprites/items/Bread A.tsx"/>
+ <tileset firstgid="6728" source="sprites/items/Cheese A.tsx"/>
+ <tileset firstgid="6746" source="tilesets/Forge A.tsx"/>
+ <tileset firstgid="6874" source="sprites/banditcave/Workbench, Smith.tsx"/>
+ <tileset firstgid="6880" source="tilesets/ui/gamepad-buttons.tsx"/>
+ <tileset firstgid="6980" source="tilesets/ui/keyboard-keys.tsx"/>
+ <tileset firstgid="7252" source="sprites/banditcave/Chair, Dining F.tsx"/>
+ <tileset firstgid="7268" source="tilesets/ui/flamegaugefull.tsx"/>
  <layer id="2" name="floor" width="200" height="12">
   <properties>
    <property name="drawz" type="float" value="-2"/>
@@ -136,7 +136,7 @@
    eJxjYBgFo2AUDDawTYQ4dQAjPADL
   </chunk>
    <chunk x="100" y="-12" width="20" height="12">
-   eJxjYBgFo2AUDDYwSwrBniuFWx0AM7ABbA==
+   eJxjYBgFo2AUDDawSArBXiqFWx0ANdABfA==
   </chunk>
    <chunk x="-20" y="0" width="20" height="12">
    eJxjYBi8YKfIQLtgFIyCwQ0Ah54Azg==
@@ -157,7 +157,7 @@
    eJxjYMAOZjMyMMwF4vlAPI8Rwp8DFZsHFecCYm4gtgTiW0A9lkw4DCMS2ALNsQPiHCDmBdEUmgcChVC3OjBSbtYoGAWDDQAAEuAJrw==
   </chunk>
    <chunk x="100" y="0" width="20" height="12">
-   eJyzYmJgsELC1kCMDaySYmBYDcRrgHitFHY1IJDLhIrzcJi3C2jGbiDeA8R78ZhHLDgFNOM0EJ8B4rNUMG8UjIKhAAA8eA1c
+   eJyzYmJgsELC1kCMDWySYmDYDMRbgHirFHY1IJDLhIrzcJh3CGjGYSA+AsRH8ZhHLLgENOMyEF8B4qtUMG8UjIKhAAB1Rw28
   </chunk>
    <chunk x="140" y="0" width="20" height="12">
    eJxjYCAO2DIyMNgBcRYQZwKxJRMDgxUWTAooBJozF4jnAHEOUG8uFjwKRsEowA0AVA4HAA==
@@ -170,7 +170,7 @@
  <layer id="36" name="onwall2" width="200" height="12">
   <data encoding="base64" compression="zlib">
    <chunk x="100" y="0" width="20" height="12">
-   eJxjYCAONEkxMDQDcQsQt0oRqWkUjIJRQFMAAM0IAnc=
+   eJxjYCAOdEkxMHQDcQ8Q90oRqWkUjIJRQFMAAD9XApc=
   </chunk>
   </data>
  </layer>
@@ -241,14 +241,14 @@
    <object id="237" template="mapobjects/OutwardBoundary.tx" x="448" y="32" visible="1">
     <polygon points="0,-32 0,64 512,64 512,-32"/>
    </object>
-   <object id="421" name="Instruction" x="296" y="48" width="128" height="32">
+   <object id="421" name="Instruction" x="296" y="48" width="128" height="32" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Push a direction to move</text>
    </object>
-   <object id="422" gid="6881" x="272" y="72" width="16" height="16"/>
-   <object id="447" gid="7053" x="336" y="48" width="16" height="16" visible="0"/>
-   <object id="448" gid="7054" x="352" y="48" width="16" height="16" visible="0"/>
-   <object id="449" gid="7055" x="368" y="48" width="16" height="16" visible="0"/>
-   <object id="450" gid="7056" x="384" y="48" width="16" height="16" visible="0"/>
+   <object id="422" gid="6889" x="272" y="72" width="16" height="16" visible="0"/>
+   <object id="447" gid="7061" x="336" y="48" width="16" height="16" visible="0"/>
+   <object id="448" gid="7062" x="352" y="48" width="16" height="16" visible="0"/>
+   <object id="449" gid="7063" x="368" y="48" width="16" height="16" visible="0"/>
+   <object id="450" gid="7064" x="384" y="48" width="16" height="16" visible="0"/>
   </objectgroup>
   <objectgroup id="8" name="learnattack" class="Room">
    <object id="15" gid="5266" x="976" y="176" width="64" height="64"/>
@@ -257,26 +257,26 @@
    <object id="49" gid="5266" x="464" y="160" width="64" height="64"/>
    <object id="11" gid="5266" x="1040" y="192" width="64" height="64"/>
    <object id="48" gid="5266" x="464" y="232" width="64" height="64"/>
-   <object id="423" name="Instruction" x="776" y="32" width="104" height="16">
+   <object id="423" name="Instruction" x="776" y="32" width="104" height="16" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Attack combo</text>
    </object>
-   <object id="424" gid="6932" x="752" y="48" width="16" height="16"/>
-   <object id="472" gid="6932" x="736" y="48" width="16" height="16"/>
-   <object id="473" gid="6932" x="720" y="48" width="16" height="16"/>
-   <object id="427" gid="6952" x="712" y="64" width="16" height="16" visible="0"/>
-   <object id="451" gid="7178" x="744" y="64" width="16" height="16" visible="0"/>
-   <object id="474" gid="6932" x="760" y="72" width="16" height="16" visible="0"/>
-   <object id="477" gid="6932" x="752" y="72" width="16" height="16"/>
-   <object id="475" gid="6932" x="744" y="72" width="16" height="16" visible="0"/>
-   <object id="476" gid="6932" x="728" y="72" width="16" height="16" visible="0"/>
-   <object id="478" name="Instruction" x="776" y="56" width="128" height="32">
+   <object id="424" gid="6940" x="752" y="48" width="16" height="16" visible="0"/>
+   <object id="472" gid="6940" x="736" y="48" width="16" height="16" visible="0"/>
+   <object id="473" gid="6940" x="720" y="48" width="16" height="16" visible="0"/>
+   <object id="427" gid="6960" x="712" y="64" width="16" height="16" visible="0"/>
+   <object id="451" gid="7186" x="744" y="64" width="16" height="16" visible="0"/>
+   <object id="474" gid="6940" x="760" y="72" width="16" height="16" visible="0"/>
+   <object id="477" gid="6940" x="752" y="72" width="16" height="16" visible="0"/>
+   <object id="475" gid="6940" x="744" y="72" width="16" height="16" visible="0"/>
+   <object id="476" gid="6940" x="728" y="72" width="16" height="16" visible="0"/>
+   <object id="478" name="Instruction" x="776" y="56" width="128" height="32" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Add flame spin
 Cost 1</text>
    </object>
-   <object id="480" name="Instruction" x="744" y="56" width="8" height="16">
+   <object id="480" name="Instruction" x="744" y="56" width="8" height="16" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">+</text>
    </object>
-   <object id="479" gid="7260" x="832" y="88" width="40" height="20"/>
+   <object id="479" gid="7268" x="832" y="88" width="40" height="20" visible="0"/>
   </objectgroup>
   <objectgroup id="9" name="tolearnrunning" class="Room">
    <properties>
@@ -305,7 +305,7 @@ Cost 1</text>
    <object id="430" name="Instruction" x="1216" y="160" width="192" height="32" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Steer while sprinting</text>
    </object>
-   <object id="429" gid="6881" x="1192" y="176" width="16" height="16" visible="0"/>
+   <object id="429" gid="6889" x="1192" y="176" width="16" height="16" visible="0"/>
   </objectgroup>
   <objectgroup id="10" name="learnrunning" class="Room">
    <object id="32" gid="5270" x="1616" y="216" width="64" height="64"/>
@@ -314,23 +314,23 @@ Cost 1</text>
    <object id="264" gid="5266" x="1664" y="248" width="64" height="64"/>
    <object id="55" gid="5266" x="1064" y="176" width="64" height="64"/>
    <object id="261" gid="5266" x="1064" y="232" width="64" height="64"/>
-   <object id="425" name="Instruction" x="1240" y="304" width="264" height="16">
+   <object id="425" name="Instruction" x="1240" y="304" width="264" height="16" visible="0">
     <properties>
      <property name="drawz" type="float" value="2"/>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Hold to sprint after fast enemies</text>
    </object>
-   <object id="426" gid="6943" x="1216" y="320" width="16" height="16">
+   <object id="426" gid="6951" x="1216" y="320" width="16" height="16">
     <properties>
      <property name="drawz" type="float" value="2"/>
     </properties>
    </object>
-   <object id="428" gid="6963" x="1352" y="304" width="16" height="16" visible="0">
+   <object id="428" gid="6971" x="1352" y="304" width="16" height="16" visible="0">
     <properties>
      <property name="drawz" type="float" value="2"/>
     </properties>
    </object>
-   <object id="452" gid="7179" x="1384" y="304" width="16" height="16" visible="0">
+   <object id="452" gid="7187" x="1384" y="304" width="16" height="16" visible="0">
     <properties>
      <property name="drawz" type="float" value="2"/>
     </properties>
@@ -425,28 +425,28 @@ Cost 1</text>
     </properties>
     <polygon points="0,0 0,48 960,48 960,0"/>
    </object>
-   <object id="431" name="Instruction" x="1512" y="72" width="160" height="16">
+   <object id="431" name="Instruction" x="1512" y="72" width="160" height="16" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Move to pick up rock</text>
    </object>
-   <object id="432" gid="6881" x="1488" y="88" width="16" height="16"/>
-   <object id="433" gid="6932" x="1480" y="112" width="16" height="16"/>
-   <object id="434" name="Instruction" x="1504" y="96" width="144" height="16">
+   <object id="432" gid="6889" x="1488" y="88" width="16" height="16" visible="0"/>
+   <object id="433" gid="6940" x="1480" y="112" width="16" height="16" visible="0"/>
+   <object id="434" name="Instruction" x="1504" y="96" width="144" height="16" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Throw</text>
    </object>
-   <object id="435" gid="6952" x="1576" y="116" width="16" height="16" visible="0"/>
-   <object id="453" gid="7053" x="1568" y="80" width="16" height="16" visible="0"/>
-   <object id="454" gid="7054" x="1584" y="80" width="16" height="16" visible="0"/>
-   <object id="455" gid="7055" x="1600" y="80" width="16" height="16" visible="0"/>
-   <object id="456" gid="7056" x="1616" y="80" width="16" height="16" visible="0"/>
-   <object id="457" gid="7178" x="1608" y="116" width="16" height="16" visible="0"/>
-   <object id="468" gid="6943" x="1576" y="112" width="16" height="16"/>
-   <object id="469" name="Instruction" x="1624" y="96" width="96" height="32">
+   <object id="435" gid="6960" x="1576" y="116" width="16" height="16" visible="0"/>
+   <object id="453" gid="7061" x="1568" y="80" width="16" height="16" visible="0"/>
+   <object id="454" gid="7062" x="1584" y="80" width="16" height="16" visible="0"/>
+   <object id="455" gid="7063" x="1600" y="80" width="16" height="16" visible="0"/>
+   <object id="456" gid="7064" x="1616" y="80" width="16" height="16" visible="0"/>
+   <object id="457" gid="7186" x="1608" y="116" width="16" height="16" visible="0"/>
+   <object id="468" gid="6951" x="1576" y="112" width="16" height="16" visible="0"/>
+   <object id="469" name="Instruction" x="1624" y="96" width="96" height="32" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Powerful throw</text>
    </object>
-   <object id="470" name="Instruction" x="1592" y="96" width="40" height="16">
+   <object id="470" name="Instruction" x="1592" y="96" width="40" height="16" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">+</text>
    </object>
-   <object id="471" gid="6932" x="1600" y="112" width="16" height="16"/>
+   <object id="471" gid="6940" x="1600" y="112" width="16" height="16" visible="0"/>
   </objectgroup>
   <objectgroup id="28" name="+knives" class="Room">
    <properties>
@@ -554,32 +554,32 @@ Cost 1</text>
    </object>
    <object id="307" gid="5266" x="1424" y="184" width="64" height="64"/>
    <object id="308" gid="5266" x="1680" y="264" width="64" height="64"/>
-   <object id="436" name="Instruction" x="1864" y="48" width="144" height="32">
+   <object id="436" name="Instruction" x="1864" y="48" width="144" height="32" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Move into an enemy or barrel to grab</text>
    </object>
-   <object id="437" gid="6881" x="1840" y="72" width="16" height="16"/>
-   <object id="438" gid="6932" x="1888" y="256" width="16" height="16">
+   <object id="437" gid="6889" x="1840" y="72" width="16" height="16" visible="0"/>
+   <object id="438" gid="6940" x="1888" y="256" width="16" height="16" visible="0">
     <properties>
      <property name="drawz" type="float" value="2"/>
     </properties>
    </object>
-   <object id="439" name="Instruction" x="1824" y="224" width="224" height="32">
+   <object id="439" name="Instruction" x="1824" y="224" width="224" height="32" visible="0">
     <properties>
      <property name="drawz" type="float" value="2"/>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Then hold    toward the door
 and tap    to throw</text>
    </object>
-   <object id="440" gid="6952" x="1816" y="256" width="16" height="16" visible="0">
+   <object id="440" gid="6960" x="1816" y="256" width="16" height="16" visible="0">
     <properties>
      <property name="drawz" type="float" value="2"/>
     </properties>
    </object>
-   <object id="458" gid="7178" x="1840" y="256" width="16" height="16" visible="0"/>
-   <object id="459" gid="7053" x="1888" y="56" width="16" height="16" visible="0"/>
-   <object id="460" gid="7054" x="1904" y="56" width="16" height="16" visible="0"/>
-   <object id="461" gid="7055" x="1920" y="56" width="16" height="16" visible="0"/>
-   <object id="462" gid="7056" x="1936" y="56" width="16" height="16" visible="0"/>
+   <object id="458" gid="7186" x="1840" y="256" width="16" height="16" visible="0"/>
+   <object id="459" gid="7061" x="1888" y="56" width="16" height="16" visible="0"/>
+   <object id="460" gid="7062" x="1904" y="56" width="16" height="16" visible="0"/>
+   <object id="461" gid="7063" x="1920" y="56" width="16" height="16" visible="0"/>
+   <object id="462" gid="7064" x="1936" y="56" width="16" height="16" visible="0"/>
    <object id="465" template="mapobjects/trigger/startStageEvent.tx" type="Trigger" x="2080" y="128">
     <properties>
      <property name="event" value="playerExitToNextArea"/>
@@ -589,7 +589,7 @@ and tap    to throw</text>
    <object id="260" name="camerawarpwhendone" x="2512" y="144">
     <point/>
    </object>
-   <object id="466" gid="6877" x="1904" y="240" width="16" height="16">
+   <object id="466" gid="6885" x="1904" y="240" width="16" height="16" visible="0">
     <properties>
      <property name="drawz" type="float" value="2"/>
     </properties>
@@ -765,29 +765,29 @@ and tap    to throw</text>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="442" name="Instruction" x="2304" y="224" width="304" height="32">
+   <object id="442" name="Instruction" x="2304" y="224" width="304" height="32" visible="0">
     <properties>
      <property name="drawz" type="float" value="2"/>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Hold    and a direction
 to sprint past archers</text>
    </object>
-   <object id="443" gid="6902" x="2344" y="240" width="16" height="16">
+   <object id="443" gid="6910" x="2344" y="240" width="16" height="16" visible="0">
     <properties>
      <property name="drawz" type="float" value="2"/>
     </properties>
    </object>
-   <object id="444" gid="6922" x="2368" y="240" width="16" height="16" visible="0">
+   <object id="444" gid="6930" x="2368" y="240" width="16" height="16" visible="0">
     <properties>
      <property name="drawz" type="float" value="2"/>
     </properties>
    </object>
-   <object id="445" gid="7179" x="2392" y="240" width="16" height="16" visible="0">
+   <object id="445" gid="7187" x="2392" y="240" width="16" height="16" visible="0">
     <properties>
      <property name="drawz" type="float" value="2"/>
     </properties>
    </object>
-   <object id="467" gid="6877" x="2496" y="240" width="16" height="16">
+   <object id="467" gid="6885" x="2496" y="240" width="16" height="16" visible="0">
     <properties>
      <property name="drawz" type="float" value="2"/>
     </properties>
@@ -874,13 +874,13 @@ to sprint past archers</text>
     </properties>
     <ellipse/>
    </object>
-   <object id="394" gid="6867" x="3720" y="88" width="64" height="64">
+   <object id="394" gid="6875" x="3720" y="88" width="64" height="64">
     <properties>
      <property name="bodyheight" type="float" value="28"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="395" gid="6871" x="3448" y="96" width="64" height="64">
+   <object id="395" gid="6879" x="3448" y="96" width="64" height="64">
     <properties>
      <property name="bodyheight" type="float" value="48"/>
      <property name="bodysolid" type="bool" value="true"/>
@@ -942,68 +942,68 @@ to sprint past archers</text>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="324" gid="7244" x="4096" y="80" width="32" height="32">
+   <object id="324" gid="7252" x="4096" y="80" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="325" gid="7248" x="4216" y="64" width="32" height="32">
+   <object id="325" gid="7256" x="4216" y="64" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="326" gid="7255" x="4168" y="264" width="32" height="32">
+   <object id="326" gid="7263" x="4168" y="264" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="327" gid="7247" x="3872" y="264" width="32" height="32">
+   <object id="327" gid="7255" x="3872" y="264" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="328" gid="7255" x="3976" y="272" width="32" height="32">
+   <object id="328" gid="7263" x="3976" y="272" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="329" gid="7251" x="4096" y="272" width="32" height="32">
+   <object id="329" gid="7259" x="4096" y="272" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="330" gid="7247" x="4024" y="264" width="32" height="32">
+   <object id="330" gid="7255" x="4024" y="264" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="331" gid="7251" x="4248" y="272" width="32" height="32">
+   <object id="331" gid="7259" x="4248" y="272" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="332" gid="7252" x="4168" y="72" width="32" height="32">
+   <object id="332" gid="7260" x="4168" y="72" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="333" gid="7244" x="4296" y="72" width="32" height="32">
+   <object id="333" gid="7252" x="4296" y="72" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
     </properties>
    </object>
-   <object id="334" gid="7248" x="3976" y="64" width="32" height="32"/>
-   <object id="335" gid="7252" x="4048" y="72" width="32" height="32">
+   <object id="334" gid="7256" x="3976" y="64" width="32" height="32"/>
+   <object id="335" gid="7260" x="4048" y="72" width="32" height="32">
     <properties>
      <property name="bodyheight" type="float" value="12"/>
      <property name="bodysolid" type="bool" value="true"/>
@@ -1053,17 +1053,17 @@ to sprint past archers</text>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="363" gid="6724" x="3984" y="96" width="32" height="32">
+   <object id="363" gid="6732" x="3984" y="96" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="364" gid="6717" x="4024" y="104" width="32" height="32">
+   <object id="364" gid="6725" x="4024" y="104" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="365" gid="6666" x="4056" y="224" width="32" height="32">
+   <object id="365" gid="6674" x="4056" y="224" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
@@ -1108,47 +1108,47 @@ to sprint past archers</text>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="374" gid="6665" x="4108" y="98" width="32" height="32">
+   <object id="374" gid="6673" x="4108" y="98" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="375" gid="6723" x="4140" y="112" width="32" height="32">
+   <object id="375" gid="6731" x="4140" y="112" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="376" gid="6666" x="4288" y="80" width="32" height="32">
+   <object id="376" gid="6674" x="4288" y="80" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="377" gid="6717" x="4240" y="96" width="32" height="32">
+   <object id="377" gid="6725" x="4240" y="96" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="378" gid="6717" x="3910" y="232" width="32" height="32">
+   <object id="378" gid="6725" x="3910" y="232" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="381" gid="6717" x="4181" y="215" width="32" height="32">
+   <object id="381" gid="6725" x="4181" y="215" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="379" gid="6721" x="4220" y="224" width="32" height="32">
+   <object id="379" gid="6729" x="4220" y="224" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="380" gid="6665" x="3954" y="234" width="32" height="32">
+   <object id="380" gid="6673" x="3954" y="234" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="382" gid="6725" x="4085" y="224" width="32" height="32">
+   <object id="382" gid="6733" x="4085" y="224" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>

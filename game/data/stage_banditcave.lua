@@ -15663,7 +15663,7 @@ return {
               width = 128,
               height = 32,
               rotation = 0,
-              visible = true,
+              visible = false,
               text = "Push a direction to move",
               fontfamily = "Unifont",
               wrap = true,
@@ -15681,7 +15681,7 @@ return {
               height = 16,
               rotation = 0,
               gid = 6889,
-              visible = true,
+              visible = false,
               properties = {}
             },
             {
@@ -15850,7 +15850,7 @@ return {
               width = 104,
               height = 16,
               rotation = 0,
-              visible = true,
+              visible = false,
               text = "Attack combo",
               fontfamily = "Unifont",
               wrap = true,
@@ -15868,7 +15868,7 @@ return {
               height = 16,
               rotation = 0,
               gid = 6940,
-              visible = true,
+              visible = false,
               properties = {}
             },
             {
@@ -15882,7 +15882,7 @@ return {
               height = 16,
               rotation = 0,
               gid = 6940,
-              visible = true,
+              visible = false,
               properties = {}
             },
             {
@@ -15896,7 +15896,7 @@ return {
               height = 16,
               rotation = 0,
               gid = 6940,
-              visible = true,
+              visible = false,
               properties = {}
             },
             {
@@ -15952,7 +15952,7 @@ return {
               height = 16,
               rotation = 0,
               gid = 6940,
-              visible = true,
+              visible = false,
               properties = {}
             },
             {
@@ -15993,7 +15993,7 @@ return {
               width = 128,
               height = 32,
               rotation = 0,
-              visible = true,
+              visible = false,
               text = "Add flame spin\nCost 1",
               fontfamily = "Unifont",
               wrap = true,
@@ -16010,7 +16010,7 @@ return {
               width = 8,
               height = 16,
               rotation = 0,
-              visible = true,
+              visible = false,
               text = "+",
               fontfamily = "Unifont",
               wrap = true,
@@ -16028,7 +16028,7 @@ return {
               height = 20,
               rotation = 0,
               gid = 7268,
-              visible = true,
+              visible = false,
               properties = {}
             }
           }
@@ -16375,7 +16375,7 @@ return {
               width = 264,
               height = 16,
               rotation = 0,
-              visible = true,
+              visible = false,
               text = "Hold to sprint after fast enemies",
               fontfamily = "Unifont",
               wrap = true,
@@ -16686,7 +16686,7 @@ return {
               width = 160,
               height = 16,
               rotation = 0,
-              visible = true,
+              visible = false,
               text = "Move to pick up rock",
               fontfamily = "Unifont",
               wrap = true,
@@ -16704,7 +16704,7 @@ return {
               height = 16,
               rotation = 0,
               gid = 6889,
-              visible = true,
+              visible = false,
               properties = {}
             },
             {
@@ -16718,7 +16718,7 @@ return {
               height = 16,
               rotation = 0,
               gid = 6940,
-              visible = true,
+              visible = false,
               properties = {}
             },
             {
@@ -16731,7 +16731,7 @@ return {
               width = 144,
               height = 16,
               rotation = 0,
-              visible = true,
+              visible = false,
               text = "Throw",
               fontfamily = "Unifont",
               wrap = true,
@@ -16833,7 +16833,7 @@ return {
               height = 16,
               rotation = 0,
               gid = 6951,
-              visible = true,
+              visible = false,
               properties = {}
             },
             {
@@ -16846,7 +16846,7 @@ return {
               width = 96,
               height = 32,
               rotation = 0,
-              visible = true,
+              visible = false,
               text = "Powerful throw",
               fontfamily = "Unifont",
               wrap = true,
@@ -16863,7 +16863,7 @@ return {
               width = 40,
               height = 16,
               rotation = 0,
-              visible = true,
+              visible = false,
               text = "+",
               fontfamily = "Unifont",
               wrap = true,
@@ -16881,7 +16881,7 @@ return {
               height = 16,
               rotation = 0,
               gid = 6940,
-              visible = true,
+              visible = false,
               properties = {}
             }
           }
@@ -17337,7 +17337,7 @@ return {
               width = 144,
               height = 32,
               rotation = 0,
-              visible = true,
+              visible = false,
               text = "Move into an enemy or barrel to grab",
               fontfamily = "Unifont",
               wrap = true,
@@ -17355,7 +17355,7 @@ return {
               height = 16,
               rotation = 0,
               gid = 6889,
-              visible = true,
+              visible = false,
               properties = {}
             },
             {
@@ -17369,7 +17369,7 @@ return {
               height = 16,
               rotation = 0,
               gid = 6940,
-              visible = true,
+              visible = false,
               properties = {
                 ["drawz"] = 2
               }
@@ -17384,7 +17384,7 @@ return {
               width = 224,
               height = 32,
               rotation = 0,
-              visible = true,
+              visible = false,
               text = "Then hold    toward the door\nand tap    to throw",
               fontfamily = "Unifont",
               wrap = true,
@@ -17530,7 +17530,7 @@ return {
               height = 16,
               rotation = 0,
               gid = 6885,
-              visible = true,
+              visible = false,
               properties = {
                 ["drawz"] = 2
               }
@@ -18171,7 +18171,7 @@ return {
               width = 304,
               height = 32,
               rotation = 0,
-              visible = true,
+              visible = false,
               text = "Hold    and a direction\nto sprint past archers",
               fontfamily = "Unifont",
               wrap = true,
@@ -18191,7 +18191,7 @@ return {
               height = 16,
               rotation = 0,
               gid = 6910,
-              visible = true,
+              visible = false,
               properties = {
                 ["drawz"] = 2
               }
@@ -18239,7 +18239,7 @@ return {
               height = 16,
               rotation = 0,
               gid = 6885,
-              visible = true,
+              visible = false,
               properties = {
                 ["drawz"] = 2
               }
