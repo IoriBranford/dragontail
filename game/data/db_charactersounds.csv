@@ -21,3 +21,4 @@ bandit-boss,,,,,,,,,sounds/man_heavy/bossdeath.mp3,sounds/combat/bodydrop.mp3,so
 projectile-dish,,,,,,,,,,,,sounds/combat/breakglass.mp3,,,,,,
 food-small,,,,,,,,,,,,,sounds/combat/heal.mp3,,,,,
 food-medium,,,,,,,,,,,,,sounds/combat/heal.mp3,,,,,
+mana-small,,,,,,,,,,,,,sounds/combat/ignite.mp3,,,,,
