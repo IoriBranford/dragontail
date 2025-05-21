@@ -6,6 +6,7 @@ local Assets= require "Tiled.Assets"
 local Audio = require "System.Audio"
 local Gui = require "Dragontail.Gui"
 local Config = require "System.Config"
+local Inputs = require "System.Inputs"
 local isAsset = Assets.isAsset
 local getAsset = Assets.get
 local GamePhase = {}
@@ -53,7 +54,7 @@ function GamePhase.loadphase()
     end
 
     Gui:showOnlyNamed("gameplay", "wipe")
-    Gui.gameplay:showOnlyNamed("hud")
+    Gui.gameplay:showOnlyNamed("hud", "input")
 end
 
 function GamePhase.resize(screenwidth, screenheight)
@@ -120,10 +121,33 @@ function GamePhase.keypressed(key)
     if kp then kp() end
 end
 
+local function fixedupdateInputDisplay()
+    local input = Gui.gameplay.input
+    if input then
+        local joystickx = Inputs.getAction("movex")
+        local joysticky = Inputs.getAction("movey")
+        local attackbutton = Inputs.getAction("attack")
+        local sprintbutton = Inputs.getAction("sprint")
+        ---@cast input ObjectGroup
+        local x = joystickx.position
+        local y = joysticky.position
+        if x ~= 0 or y ~= 0 then
+            input.joystickdirection.visible = true
+            input.joystickdirection.rotation = math.atan2(y, x)
+            input.joystickdirection.scalex = math.len(x, y)
+        else
+            input.joystickdirection.visible = false
+        end
+        input.attackbuttondown.visible = attackbutton.down
+        input.sprintbuttondown.visible = sprintbutton.down
+    end
+end
+
 function GamePhase.fixedupdate()
     if not paused then
         Stage.fixedupdate()
         Stage.fixedupdateGui(Gui)
+        fixedupdateInputDisplay()
     end
     Gui:fixedupdate()
 end
