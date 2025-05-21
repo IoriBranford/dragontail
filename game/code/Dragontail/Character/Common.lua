@@ -7,6 +7,7 @@ local Characters  = require "Dragontail.Stage.Characters"
 local Body        = require "Dragontail.Character.Body"
 local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 local Face                 = require "Dragontail.Character.Action.Face"
+local Mana = require "Dragontail.Character.Mana"
 
 local yield = coroutine.yield
 local wait = coroutine.wait
@@ -26,7 +27,7 @@ local MaxProjectileItems = 16
 ---@class Item
 ---@field itemtype string?
 ---@field healhealth number?
----@field healsound string?
+---@field itemgetsound string?
 ---@field giveweapon string?
 
 ---@class Projectile
@@ -158,8 +159,21 @@ function Common:itemWaitForPickup()
                 local redblue = (t%30)/15
                 self.color = Color.asARGBInt(redblue, 1, redblue, 1)
                 if Body.testBodyCollision(self, opponent) then
-                    Audio.play(self.healsound)
+                    Audio.play(self.itemgetsound)
                     opponent:heal(self.healhealth)
+                    finished = true
+                end
+            else
+                self.color = Color.White
+            end
+        elseif self.givemana then
+            if opponent.manastore < opponent.manastoremax then
+                local greenblue = (t%30)/15
+                local red = .5 + greenblue
+                self.color = Color.asARGBInt(red, greenblue, greenblue, 1)
+                if Body.testBodyCollision(self, opponent) then
+                    Audio.play(self.itemgetsound)
+                    Mana.store(opponent, self.givemana)
                     finished = true
                 end
             else
