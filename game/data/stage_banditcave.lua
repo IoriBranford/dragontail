@@ -16395,7 +16395,7 @@ return {
               height = 16,
               rotation = 0,
               gid = 6951,
-              visible = true,
+              visible = false,
               properties = {
                 ["drawz"] = 2
               }

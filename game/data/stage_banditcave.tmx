@@ -320,7 +320,7 @@ Cost 1</text>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Hold to sprint after fast enemies</text>
    </object>
-   <object id="426" gid="6951" x="1216" y="320" width="16" height="16">
+   <object id="426" gid="6951" x="1216" y="320" width="16" height="16" visible="0">
     <properties>
      <property name="drawz" type="float" value="2"/>
     </properties>
