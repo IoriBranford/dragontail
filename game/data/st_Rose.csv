@@ -5,8 +5,8 @@ tail-swing-ccw,tail-swing-ccw,spinAttack,control,attackB,1,FALSE,FALSE,FALSE,sou
 spinning-throw,spinning-throw,spinAndKickEnemy,holding-kick,spinthrow,1,FALSE,FALSE,FALSE,sounds/combat/swing3.mp3,
 flaming-spinning-throw,flaming-spinning-throw,spinAndKickEnemy,holding-kick,spinthrow,1,FALSE,FALSE,FALSE,sounds/combat/swing3.mp3,
 holding-knee,holding-knee,straightAttack,hold,holdknee,0,FALSE,FALSE,FALSE,sounds/combat/swing1.mp3,
-holding-kick,holding-kick,straightAttack,control,hardkick,0,FALSE,FALSE,FALSE,sounds/combat/swing1.mp3,
-running-kick,running-kick,straightAttack,control,hardkick,0,FALSE,FALSE,FALSE,sounds/player/attack2.mp3,3
+holding-kick,holding-kick,straightAttack,control,hardkick,1,FALSE,FALSE,FALSE,sounds/combat/swing1.mp3,
+running-kick,running-kick,straightAttack,control,hardkick,1,FALSE,FALSE,FALSE,sounds/player/attack2.mp3,3
 running-elbow,running-elbow,straightAttack,control,elbow,0,FALSE,FALSE,FALSE,,
 running-with-enemy,running-with-enemy,runWithEnemy,control,holdwalk,1,FALSE,FALSE,FALSE,sounds/combat/dash.mp3,
 spit-fireball,spit-fireball,straightAttack,control,spit,0,FALSE,FALSE,FALSE,,
