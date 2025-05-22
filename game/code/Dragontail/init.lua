@@ -17,7 +17,7 @@ local defaultgamepadconfig =  {
     leftx = "movex",
     lefty = "movey",
     x = "attack",
-    righttrigger = "sprint",
+    triggerright = "sprint",
 }
 
 function love.load(args)
