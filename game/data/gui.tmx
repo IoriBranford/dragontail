@@ -189,8 +189,8 @@ ALL CONTENT SUBJECT TO CHANGE</text>
    <object id="60" name="joystick" gid="281" x="176" y="251" width="16" height="16"/>
    <object id="61" name="attackbutton" gid="297" x="248" y="260" width="16" height="16"/>
    <object id="68" name="attackbuttondown" gid="298" x="248" y="260" width="16" height="16"/>
-   <object id="62" name="sprintbutton" gid="307" x="264" y="242" width="16" height="16"/>
-   <object id="69" name="sprintbuttondown" gid="308" x="264" y="242" width="16" height="16"/>
+   <object id="62" name="sprintbutton" gid="311" x="264" y="242" width="16" height="16"/>
+   <object id="69" name="sprintbuttondown" gid="312" x="264" y="242" width="16" height="16"/>
    <object id="63" name="Move" x="208" y="234" width="20" height="18">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">MOVE</text>
    </object>

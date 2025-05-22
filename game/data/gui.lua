@@ -1186,7 +1186,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 307,
+              gid = 311,
               visible = true,
               properties = {}
             },
@@ -1200,7 +1200,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 308,
+              gid = 312,
               visible = true,
               properties = {}
             },
