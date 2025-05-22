@@ -1,3 +1,5 @@
+local Audio = require "System.Audio"
+
 ---@class Mana:StateMachine
 ---@field manastore number
 ---@field manastoremax number
@@ -26,6 +28,14 @@ function Mana:store(mana)
 end
 
 function Mana:charge(mana)
+    if mana > 0 then
+        local oldunits = math.floor(self.manacharge/self.manaunitsize)
+        local newunits = math.floor((mana + self.manacharge) / self.manaunitsize)
+        if newunits > oldunits then
+            local chargesound = "chargesound"..newunits
+            Audio.play(self[chargesound])
+        end
+    end
     mana = self.manacharge + mana
     if mana > self.manastore then
         mana = self.manastore
