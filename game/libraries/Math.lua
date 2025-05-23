@@ -13,7 +13,7 @@ if Debug_atan0 then
     local atan2 = math.atan2
 
     function math.atan2(y, x)
-        assert(y ~= 0 or x ~= 0)
+        assert(y ~= 0 or x ~= 0, "atan2(0,0)")
         return atan2(y, x)
     end
 end
@@ -85,7 +85,7 @@ end
 if Debug_norm0 then
     local norm = math.norm
     function math.norm(x, y, z)
-        assert(x ~= 0 or y ~= 0 or z ~= 0)
+        assert(x ~= 0 or y ~= 0 or z ~= 0, "norm(0,0,0)")
         return norm(x, y, z)
     end
 end
