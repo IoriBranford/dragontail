@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 41,
-  nextobjectid = 481,
+  nextobjectid = 482,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -15180,6 +15180,63 @@ return {
           }
         }
       }
+    },
+    {
+      name = "vegetables",
+      firstgid = 7276,
+      class = "",
+      tilewidth = 32,
+      tileheight = 32,
+      spacing = 0,
+      margin = 0,
+      columns = 7,
+      image = "sprites/items/vegetables.png",
+      imagewidth = 224,
+      imageheight = 32,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 32
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 7,
+      tiles = {
+        {
+          id = 0,
+          type = "mana-small",
+          properties = {
+            ["name"] = "peppers"
+          }
+        },
+        {
+          id = 1,
+          type = "food-small"
+        },
+        {
+          id = 2,
+          type = "food-small"
+        },
+        {
+          id = 3,
+          type = "food-small"
+        },
+        {
+          id = 4,
+          type = "food-small"
+        },
+        {
+          id = 5,
+          type = "food-small"
+        }
+      }
     }
   },
   layers = {
@@ -17118,31 +17175,33 @@ return {
             {
               id = 267,
               name = "",
-              type = "container-barrel-infinite",
-              shape = "rectangle",
-              x = 2008,
-              y = 120,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              gid = 6611,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 270,
-              name = "",
               type = "",
               shape = "rectangle",
               x = 2120,
-              y = 240,
+              y = 264,
               width = 32,
               height = 32,
               rotation = 0,
               gid = 6611,
               visible = true,
               properties = {
-                ["itemtype"] = "food-fish"
+                ["itemtype"] = "mana-peppers"
+              }
+            },
+            {
+              id = 270,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1976,
+              y = 104,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6611,
+              visible = true,
+              properties = {
+                ["itemtype"] = "mana-peppers"
               }
             },
             {
@@ -17151,14 +17210,14 @@ return {
               type = "",
               shape = "rectangle",
               x = 2128,
-              y = 264,
+              y = 232,
               width = 32,
               height = 32,
               rotation = 0,
               gid = 6614,
               visible = true,
               properties = {
-                ["itemtype"] = "food-fish"
+                ["itemtype"] = "mana-peppers"
               }
             },
             {
@@ -17166,15 +17225,15 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2032,
-              y = 128,
+              x = 2008,
+              y = 112,
               width = 32,
               height = 32,
               rotation = 0,
               gid = 6614,
               visible = true,
               properties = {
-                ["itemtype"] = "food-fish"
+                ["itemtype"] = "mana-peppers"
               }
             }
           }
@@ -17205,11 +17264,11 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 5274,
               visible = true,
               properties = {
                 ["ammo"] = 10,
-                ["defaultattack"] = "sling-shot-until-empty",
+                ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 255 },
                 ["exitpoint"] = { id = 256 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
@@ -17257,11 +17316,11 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 5274,
               visible = true,
               properties = {
                 ["ammo"] = 10,
-                ["defaultattack"] = "sling-shot-until-empty",
+                ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 258 },
                 ["exitpoint"] = { id = 259 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
@@ -17954,7 +18013,7 @@ return {
               gid = 6617,
               visible = true,
               properties = {
-                ["itemtype"] = "item-stone"
+                ["itemtype"] = "mana-peppers"
               }
             },
             {
@@ -17986,7 +18045,7 @@ return {
               gid = 6617,
               visible = true,
               properties = {
-                ["itemtype"] = "item-stone"
+                ["itemtype"] = "mana-peppers"
               }
             },
             {
@@ -19313,7 +19372,7 @@ return {
               type = "",
               shape = "rectangle",
               x = 4184,
-              y = 208,
+              y = 216,
               width = 32,
               height = 32,
               rotation = 0,
@@ -19360,12 +19419,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4140,
-              y = 112,
+              x = 4144,
+              y = 104,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6731,
+              gid = 7276,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19424,12 +19483,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4181,
-              y = 215,
+              x = 4184,
+              y = 216,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6725,
+              gid = 7276,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19461,7 +19520,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6673,
+              gid = 7276,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19909,7 +19968,7 @@ return {
                 ["entrypoint"] = { id = 412 },
                 ["exitpoint"] = { id = 415 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "food-fish",
+                ["itemtype"] = "mana-peppers",
                 ["itemvelx"] = 0,
                 ["itemvely"] = 5,
                 ["recoverai"] = "enterAndAttackUntilEmpty",
@@ -20031,7 +20090,7 @@ return {
                 ["entrypoint"] = { id = 401 },
                 ["exitpoint"] = { id = 402 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "food-fish",
+                ["itemtype"] = "mana-peppers",
                 ["itemvelx"] = 0,
                 ["itemvely"] = 5,
                 ["recoverai"] = "enterAndAttackUntilEmpty",
@@ -20081,7 +20140,7 @@ return {
                 ["entrypoint"] = { id = 407 },
                 ["exitpoint"] = { id = 408 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "food-fish",
+                ["itemtype"] = "mana-peppers",
                 ["itemvelx"] = 0,
                 ["itemvely"] = 5,
                 ["recoverai"] = "enterAndAttackUntilEmpty",

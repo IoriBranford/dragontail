@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="41" nextobjectid="481">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="41" nextobjectid="482">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -40,6 +40,7 @@
  <tileset firstgid="6980" source="tilesets/ui/keyboard-keys.tsx"/>
  <tileset firstgid="7252" source="sprites/banditcave/Chair, Dining F.tsx"/>
  <tileset firstgid="7268" source="tilesets/ui/flamegaugefull.tsx"/>
+ <tileset firstgid="7276" source="sprites/items/vegetables.tsx"/>
  <layer id="2" name="floor" width="200" height="12">
   <properties>
    <property name="drawz" type="float" value="-2"/>
@@ -485,20 +486,24 @@ Cost 1</text>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="267" type="container-barrel-infinite" gid="6611" x="2008" y="120" width="32" height="32"/>
-   <object id="270" gid="6611" x="2120" y="240" width="32" height="32">
+   <object id="267" gid="6611" x="2120" y="264" width="32" height="32">
     <properties>
-     <property name="itemtype" value="food-fish"/>
+     <property name="itemtype" value="mana-peppers"/>
     </properties>
    </object>
-   <object id="268" gid="6614" x="2128" y="264" width="32" height="32">
+   <object id="270" gid="6611" x="1976" y="104" width="32" height="32">
     <properties>
-     <property name="itemtype" value="food-fish"/>
+     <property name="itemtype" value="mana-peppers"/>
     </properties>
    </object>
-   <object id="269" gid="6614" x="2032" y="128" width="32" height="32">
+   <object id="268" gid="6614" x="2128" y="232" width="32" height="32">
     <properties>
-     <property name="itemtype" value="food-fish"/>
+     <property name="itemtype" value="mana-peppers"/>
+    </properties>
+   </object>
+   <object id="269" gid="6614" x="2008" y="112" width="32" height="32">
+    <properties>
+     <property name="itemtype" value="mana-peppers"/>
     </properties>
    </object>
   </objectgroup>
@@ -506,10 +511,10 @@ Cost 1</text>
    <properties>
     <property name="donewhenenemiesleft" type="int" value="-1"/>
    </properties>
-   <object id="254" gid="5278" x="2080" y="0" width="64" height="64">
+   <object id="254" gid="5274" x="2080" y="0" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="defaultattack" value="bow-shot-until-empty"/>
      <property name="entrypoint" type="object" value="255"/>
      <property name="exitpoint" type="object" value="256"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
@@ -529,10 +534,10 @@ Cost 1</text>
     </properties>
     <point/>
    </object>
-   <object id="257" gid="5278" x="2192" y="72" width="64" height="64">
+   <object id="257" gid="5274" x="2192" y="72" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="defaultattack" value="bow-shot-until-empty"/>
      <property name="entrypoint" type="object" value="258"/>
      <property name="exitpoint" type="object" value="259"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
@@ -694,7 +699,7 @@ and tap    to throw</text>
    </object>
    <object id="300" gid="6617" x="3184" y="168" width="32" height="48">
     <properties>
-     <property name="itemtype" value="item-stone"/>
+     <property name="itemtype" value="mana-peppers"/>
     </properties>
    </object>
    <object id="305" gid="6617" x="3296" y="160" width="32" height="48">
@@ -704,7 +709,7 @@ and tap    to throw</text>
    </object>
    <object id="301" gid="6617" x="3248" y="160" width="32" height="48">
     <properties>
-     <property name="itemtype" value="item-stone"/>
+     <property name="itemtype" value="mana-peppers"/>
     </properties>
    </object>
    <object id="304" gid="6617" x="3328" y="176" width="32" height="48">
@@ -1098,7 +1103,7 @@ to sprint past archers</text>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="372" gid="6641" x="4184" y="208" width="32" height="32">
+   <object id="372" gid="6641" x="4184" y="216" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
@@ -1113,7 +1118,7 @@ to sprint past archers</text>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="375" gid="6731" x="4140" y="112" width="32" height="32">
+   <object id="375" gid="7276" x="4144" y="104" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
@@ -1133,7 +1138,7 @@ to sprint past archers</text>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="381" gid="6725" x="4181" y="215" width="32" height="32">
+   <object id="381" gid="7276" x="4184" y="216" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
@@ -1143,7 +1148,7 @@ to sprint past archers</text>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="380" gid="6673" x="3954" y="234" width="32" height="32">
+   <object id="380" gid="7276" x="3954" y="234" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
@@ -1240,7 +1245,7 @@ to sprint past archers</text>
      <property name="entrypoint" type="object" value="412"/>
      <property name="exitpoint" type="object" value="415"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
-     <property name="itemtype" value="food-fish"/>
+     <property name="itemtype" value="mana-peppers"/>
      <property name="itemvelx" type="float" value="0"/>
      <property name="itemvely" type="float" value="5"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
@@ -1288,7 +1293,7 @@ to sprint past archers</text>
      <property name="entrypoint" type="object" value="401"/>
      <property name="exitpoint" type="object" value="402"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
-     <property name="itemtype" value="food-fish"/>
+     <property name="itemtype" value="mana-peppers"/>
      <property name="itemvelx" type="float" value="0"/>
      <property name="itemvely" type="float" value="5"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
@@ -1316,7 +1321,7 @@ to sprint past archers</text>
      <property name="entrypoint" type="object" value="407"/>
      <property name="exitpoint" type="object" value="408"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
-     <property name="itemtype" value="food-fish"/>
+     <property name="itemtype" value="mana-peppers"/>
      <property name="itemvelx" type="float" value="0"/>
      <property name="itemvely" type="float" value="5"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
