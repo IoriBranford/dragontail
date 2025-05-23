@@ -75,9 +75,11 @@ Fighter.storeMana = Mana.store
 function Fighter:duringHurt() end
 
 function Fighter:hurt(attacker)
-    local hurtangle = atan2(attacker.y - self.y, attacker.x - self.x)
-    if not hurtangle == hurtangle then
+    local hurtangle
+    if attacker.y == self.y and attacker.x == self.x then
         hurtangle = 0
+    else
+        hurtangle = atan2(attacker.y - self.y, attacker.x - self.x)
     end
     self.hurtangle = hurtangle
     self.hurtparticle = attacker.attackhurtparticle
