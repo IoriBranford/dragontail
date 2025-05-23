@@ -472,8 +472,7 @@ function Player:control()
             if normalattackpressed or fireattackpressed then
                 if self.weaponinhand then
                     local targetx, targety, targetz = findInstantThrowTarget(self, cos(self.facedestangle), sin(self.facedestangle))
-                    local numtothrow = fireattackpressed and #self.inventory or 1
-                    return "throwWeapon", targetx, targety, targetz, 2, numtothrow
+                    return "throwWeapon", targetx, targety, targetz, 2, #self.inventory
                 end
 
                 if fireattackpressed then
@@ -530,8 +529,7 @@ function Player:control()
                 Face.updateTurnToDestAngle(self, pi)
                 if self.weaponinhand then
                     local targetx, targety, targetz = findInstantThrowTarget(self, cos(self.facedestangle), sin(self.facedestangle))
-                    local numtothrow = fireattackpressed and #self.inventory or 1
-                    return "throwWeapon", targetx, targety, targetz, 1, numtothrow
+                    return "throwWeapon", targetx, targety, targetz, 2, 1
                 end
                 return self:doComboAttack(self.facedestangle, nil, fireattackpressed)
             end
