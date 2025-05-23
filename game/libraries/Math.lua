@@ -6,6 +6,18 @@ local rad = math.rad
 local sqrt = math.sqrt
 local modf = math.modf
 
+local Debug_atan0 = true
+local Debug_norm0 = true
+
+if Debug_atan0 then
+    local atan2 = math.atan2
+
+    function math.atan2(y, x)
+        assert(y ~= 0 or x ~= 0)
+        return atan2(y, x)
+    end
+end
+
 function math.round(x)
     local i, f = modf(x)
     if x < 0 then
@@ -68,6 +80,14 @@ function math.norm(x, y, z)
     z = z or 0
     local len = sqrt(x*x + y*y + z*z)
     return x/len, y/len, z/len
+end
+
+if Debug_norm0 then
+    local norm = math.norm
+    function math.norm(x, y, z)
+        assert(x ~= 0 or y ~= 0 or z ~= 0)
+        return norm(x, y, z)
+    end
 end
 
 function math.mid(x1, y1, x2, y2)
