@@ -475,13 +475,13 @@ Cost 1</text>
    <object id="66" template="mapobjects/CameraPath.tx" x="1616" y="144">
     <polyline points="0,0 320,0"/>
    </object>
-   <object id="234" gid="5296" x="2112" y="64" width="64" height="128">
+   <object id="234" gid="5296" x="2048" y="128" width="64" height="128">
     <properties>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="235" gid="5294" x="2112" y="64" width="64" height="128"/>
-   <object id="236" gid="5293" x="2112" y="64" width="64" height="128">
+   <object id="235" gid="5294" x="2048" y="128" width="64" height="128"/>
+   <object id="236" gid="5293" x="2048" y="128" width="64" height="128">
     <properties>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
