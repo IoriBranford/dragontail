@@ -10,6 +10,7 @@ local Slide      = require "Dragontail.Character.Action.Slide"
 local Face       = require "Dragontail.Character.Action.Face"
 local Shoot      = require "Dragontail.Character.Action.Shoot"
 local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
+local Body                 = require "Dragontail.Character.Body"
 
 ---@class Ambush
 ---@field ambushsightarc number?
@@ -291,7 +292,7 @@ end
 function Enemy:duringPrepareAttack(target)
     self:accelerateTowardsVel(0, 0, 4)
     if self.velx ~= 0 or self.vely ~= 0 then
-        self.velx, self.vely, self.velz = self:getVelocityWithinBounds()
+        Body.keepInBounds(self)
     end
 end
 
@@ -355,21 +356,20 @@ function Enemy:executeAttack()
         end
         hittime = hittime - 1
         self.color = self:getAttackFlashColor(hittime)
-        if self.velx ~= 0 or self.vely ~= 0 then
-            self.velx, self.vely, self.velz = self:getVelocityWithinBounds()
-        end
         yield()
+        if self.velx ~= 0 or self.vely ~= 0 then
+            Body.keepInBounds(self)
+        end
     until hittime <= 0
     self.color = Color.White
     self:stopAttack()
 
     for i = 1, 300 do
         lungespeed = Slide.updateSlideSpeed(self, slideangle, lungespeed, self.attacklungedecel or 1)
-
-        if self.velx ~= 0 or self.vely ~= 0 then
-            self.velx, self.vely, self.velz = self:getVelocityWithinBounds()
-        end
         yield()
+        if self.velx ~= 0 or self.vely ~= 0 then
+            Body.keepInBounds(self)
+        end
     end
 end
 

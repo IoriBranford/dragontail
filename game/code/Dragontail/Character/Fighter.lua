@@ -9,6 +9,7 @@ local Face       = require "Dragontail.Character.Action.Face"
 local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
 local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 local Mana                 = require "Dragontail.Character.Mana"
+local Body                 = require "Dragontail.Character.Body"
 
 ---@class Dash
 ---@field dashsound string?
@@ -124,9 +125,9 @@ function Fighter:hurt(attacker)
     end
     while pushbackspeed > 0 do
         pushbackspeed = Slide.updateSlideSpeed(self, attackangle, pushbackspeed)
-        self.velx, self.vely, self.velz = self:getVelocityWithinBounds()
-        self:duringHurt()
         yield()
+        Body.keepInBounds(self)
+        self:duringHurt()
     end
     self.velx, self.vely, self.velz = 0, 0, 0
     local recoverai = self.aiafterhurt or self.recoverai
@@ -199,9 +200,9 @@ function Fighter:knockedBack(thrower, attackangle)
     self.velz = thrower.attackpopupspeed or 4
     local oobx, ooby, oobz
     repeat
-        self.velx, self.vely, self.velz, oobx, ooby, oobz = self:getVelocityWithinBounds()
-        self:duringKnockedBack()
         yield()
+        oobx, ooby, oobz = Body.keepInBounds(self)
+        self:duringKnockedBack()
     until oobx or ooby or oobz
     local oobdotvel = math.dot(oobx or 0, ooby or 0, self.velx, self.vely)
     if oobdotvel > 0 then
@@ -266,10 +267,11 @@ function Fighter:thrown(thrower, attackangle)
     local thrownsound = self.swingsound and Audio.newSource(self.swingsound)
     if thrownsound then thrownsound:play() end
     local thrownslidetime = self.thrownslidetime or 10
-    local collvelx, collvely, collvelz, oobx, ooby, oobz
+    local oobx, ooby, oobz
     local oobdotvel = 0
     while thrownslidetime > 0 and oobdotvel <= .5 do
-        collvelx, collvely, collvelz, oobx, ooby, oobz = self:getVelocityWithinBounds()
+        yield()
+        oobx, ooby, oobz = Body.keepInBounds(self)
         if oobz then
             thrownslidetime = thrownslidetime - 1
         end
@@ -279,8 +281,6 @@ function Fighter:thrown(thrower, attackangle)
                 / math.len(self.velx, self.vely)
                 / math.len(oobx, ooby)
         end
-        self.velx, self.vely, self.velz = collvelx, collvely, collvelz
-        yield()
     end
     if thrownsound then thrownsound:stop() end
     self.thrower = nil
@@ -321,8 +321,8 @@ function Fighter:thrownRecover(thrower)
     local recovertime = self.thrownrecovertime or 10
     local oobx, ooby, oobz
     repeat
-        self.velx, self.vely, self.velz, oobx, ooby, oobz = self:getVelocityWithinBounds()
         yield()
+        oobx, ooby, oobz = Body.keepInBounds(self)
         self:accelerateTowardsVel(0, 0, recovertime)
         recovertime = recovertime - 1
     until recovertime <= 0 and oobz or oobx or ooby
@@ -351,8 +351,8 @@ function Fighter:breakaway(other)
     local t = 1
     -- self.hurtstun = self.breakawaystun or 15
     repeat
-        self.velx, self.vely, self.velz = self:getVelocityWithinBounds()
         yield()
+        Body.keepInBounds(self)
         self:accelerateTowardsVel(0, 0, 8)
         t = t + 1
     until t > 15
@@ -365,12 +365,11 @@ function Fighter:duringFall() end
 
 function Fighter:fall(attacker)
     local t = 0
-    local _, penez
     local fallanimationtime = self.fallanimationtime or 1
     repeat
         self:accelerateTowardsVel(0, 0, 8)
         yield()
-        self.velx, self.vely, self.velz, _, _, penez = self:getVelocityWithinBounds()
+        local _, _, penez = Body.keepInBounds(self)
         self:duringFall()
         if penez then
             t = t + 1
@@ -390,9 +389,9 @@ function Fighter:fall(attacker)
     if self.health > 0 then
         t = 1
         repeat
-            self.velx, self.vely, self.velz = self:getVelocityWithinBounds()
-            self:duringFall()
             yield()
+            Body.keepInBounds(self)
+            self:duringFall()
             self:accelerateTowardsVel(0, 0, 8)
             t = t + 1
         until t > 20

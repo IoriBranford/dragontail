@@ -147,11 +147,10 @@ function Body:getCollidedPosition()
     return newx, newy, newz, penex, peney, penez
 end
 
----@deprecated
 function Body:keepInBounds()
     local newx, newy, newz, penex, peney, penez = Body.getCollidedPosition(self)
     self.x, self.y, self.z = newx, newy, newz
-    return self.x, self.y, self.z, penex, peney, penez
+    return penex, peney, penez
 end
 
 function Body:predictCollisionVelocity()

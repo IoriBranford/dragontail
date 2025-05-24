@@ -1,3 +1,4 @@
+local Body = require "Dragontail.Character.Body"
 ---@class Slide:Character
 local Slide = {}
 
@@ -21,8 +22,8 @@ end
 function Slide:slide(angle, speed, decel)
     repeat
         speed = Slide.updateSlideSpeed(self, angle, speed, decel)
-        self.velx, self.vely, self.velz = self:getVelocityWithinBounds()
         coroutine.yield()
+        Body.keepInBounds(self)
     until speed == 0
 end
 

@@ -63,7 +63,7 @@ local function findSomethingToRunningAttack(self, velx, vely)
 end
 
 local function findWallCollision(self)
-    local _, _, _, oobx, ooby = self:getVelocityWithinBounds()
+    local oobx, ooby = Body.keepInBounds(self)
     oobx, ooby = oobx or 0, ooby or 0
     if oobx ~= 0 or ooby ~= 0 then
         return norm(oobx, ooby)

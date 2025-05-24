@@ -3,6 +3,7 @@ local Raycast    = require "Object.Raycast"
 local Slide      = require "Dragontail.Character.Action.Slide"
 local Audio      = require "System.Audio"
 local Face       = require "Dragontail.Character.Action.Face"
+local Body       = require "Dragontail.Character.Body"
 
 ---@class Dodge:Character
 ---@field dodgespeed number?
@@ -104,8 +105,8 @@ function Dodge:dodge(opponent, dodgeangle)
     local speed, decel = self.dodgespeed, self.dodgedecel
     repeat
         speed = Slide.updateSlideSpeed(self, dodgeangle, speed, decel)
-        self.velx, self.vely, self.velz = self:getVelocityWithinBounds()
         coroutine.yield()
+        Body.keepInBounds(self)
         local newstate, a, b, c, d, e, f = self:duringDodge(opponent)
         if newstate then
             return newstate, a, b, c, d, e, f

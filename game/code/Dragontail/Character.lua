@@ -201,8 +201,6 @@ function Character:stopGuarding()
     self.guardangle = nil
 end
 
-Character.getVelocityWithinBounds = Body.getVelocityWithinBounds
-
 function Character:onHitByAttack(attacker)
     local guardhitai = self.guardai or "guardHit"
     local hurtai = self.hurtai or "hurt"

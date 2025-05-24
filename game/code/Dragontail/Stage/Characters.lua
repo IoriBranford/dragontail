@@ -197,7 +197,7 @@ function Characters.fixedupdate()
     end
 
     for i = 1, #players do local player = players[i]
-        player.velx, player.vely, player.velz = Body.getVelocityWithinBounds(player)
+        Body.keepInBounds(player)
         player:updateAttackerSlots()
         Characters.hitTriggers(player)
     end

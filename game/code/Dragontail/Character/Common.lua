@@ -350,8 +350,8 @@ function Common:projectileBounce(opponent, ooby, oobz)
     end
     oobz = nil
     repeat
-        self.velx, self.vely, self.velz, oobx, ooby, oobz = self:getVelocityWithinBounds()
         yield()
+        oobx, ooby, oobz = Body.keepInBounds(self)
     until oobz and oobz <= 0
     self.velx, self.vely, self.velz = 0, 0, 0
     local items = Characters.getGroup("items")
@@ -378,8 +378,8 @@ function Common:projectileFly(shooter)
     local oobx, ooby, oobz
     local lifetime = self.lifetime
     repeat
-        self.velx, self.vely, self.velz, oobx, ooby, oobz = self:getVelocityWithinBounds()
         yield()
+        oobx, ooby, oobz = Body.keepInBounds(self)
         if lifetime then
             lifetime = lifetime - 1
         end
