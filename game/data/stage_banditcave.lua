@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 46,
-  nextobjectid = 485,
+  nextlayerid = 50,
+  nextobjectid = 500,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -15811,29 +15811,17 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = 3
+          },
           objects = {
             {
               id = 15,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 976,
-              y = 176,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5266,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 16,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1040,
-              y = 256,
+              x = 1056,
+              y = 152,
               width = 64,
               height = 64,
               rotation = 0,
@@ -15846,8 +15834,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 976,
-              y = 240,
+              x = 1088,
+              y = 256,
               width = 64,
               height = 64,
               rotation = 0,
@@ -15856,40 +15844,12 @@ return {
               properties = {}
             },
             {
-              id = 49,
+              id = 485,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 464,
-              y = 160,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5266,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 11,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1040,
-              y = 192,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5266,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 48,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 464,
-              y = 232,
+              x = 984,
+              y = 184,
               width = 64,
               height = 64,
               rotation = 0,
@@ -16087,6 +16047,120 @@ return {
               gid = 7268,
               visible = false,
               properties = {}
+            },
+            {
+              id = 49,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 376,
+              y = 160,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 48,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 432,
+              y = 208,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 46,
+          name = "+knives",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 16,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 376,
+              y = 264,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 487,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 408,
+              y = 200,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 11,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 984,
+              y = 152,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 488,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1016,
+              y = 240,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 486,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 456,
+              y = 128,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -16102,7 +16176,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = 4
+          },
           objects = {
             {
               id = 482,
@@ -16117,95 +16193,16 @@ return {
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
-                { x = 96, y = 0 }
-              },
-              properties = {}
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
-          id = 9,
-          name = "tolearnrunning2",
-          class = "Room",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {
-            ["donewhenenemiesleft"] = 5
-          },
-          objects = {
-            {
-              id = 29,
-              name = "camerapath",
-              type = "CameraPath",
-              shape = "polyline",
-              x = 720,
-              y = 144,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polyline = {
-                { x = 96, y = 0 },
-                { x = 224, y = 0 },
-                { x = 416, y = 64 },
-                { x = 640, y = 64 }
+                { x = 224, y = 0 }
               },
               properties = {}
             },
             {
-              id = 19,
+              id = 489,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1200,
-              y = 216,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5266,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 36,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1264,
-              y = 232,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5266,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 52,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1136,
-              y = 200,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5266,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 54,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1072,
+              x = 1040,
               y = 184,
               width = 64,
               height = 64,
@@ -16215,12 +16212,12 @@ return {
               properties = {}
             },
             {
-              id = 20,
+              id = 490,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1232,
-              y = 312,
+              x = 976,
+              y = 168,
               width = 64,
               height = 64,
               rotation = 0,
@@ -16229,40 +16226,26 @@ return {
               properties = {}
             },
             {
-              id = 35,
+              id = 491,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1296,
-              y = 328,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5266,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 51,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1168,
-              y = 296,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5266,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 53,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1104,
+              x = 1072,
               y = 280,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 492,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1008,
+              y = 264,
               width = 64,
               height = 64,
               rotation = 0,
@@ -16323,6 +16306,97 @@ return {
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
               }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 9,
+          name = "tolearnrunning2",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = 8
+          },
+          objects = {
+            {
+              id = 29,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 720,
+              y = 144,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = 224, y = 0 },
+                { x = 416, y = 64 }
+              },
+              properties = {}
+            },
+            {
+              id = 52,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1264,
+              y = 192,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 54,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1200,
+              y = 176,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 51,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1296,
+              y = 288,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 53,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1232,
+              y = 272,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
             },
             {
               id = 430,
@@ -16353,6 +16427,97 @@ return {
               rotation = 0,
               gid = 6889,
               visible = false,
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 47,
+          name = "tolearnrunning3",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = 8
+          },
+          objects = {
+            {
+              id = 19,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1392,
+              y = 176,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 36,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1456,
+              y = 192,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 20,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1424,
+              y = 272,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 35,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1488,
+              y = 288,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 493,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 1136,
+              y = 208,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = 0, y = 0 },
+                { x = 224, y = 0 }
+              },
               properties = {}
             }
           }
@@ -16554,25 +16719,7 @@ return {
                 { x = 256, y = -64 }
               },
               properties = {}
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
-          id = 11,
-          name = "learnthrowingweapons",
-          class = "Room",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {
-            ["donewhenenemiesleft"] = 2
-          },
-          objects = {
+            },
             {
               id = 38,
               name = "",
@@ -16601,162 +16748,6 @@ return {
               }
             },
             {
-              id = 58,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1712,
-              y = -40,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5278,
-              visible = true,
-              properties = {
-                ["ammo"] = 10,
-                ["defaultattack"] = "sling-shot-until-empty",
-                ["entrypoint"] = { id = 241 },
-                ["exitpoint"] = { id = 244 },
-                ["initialai"] = "enterAndAttackUntilEmpty",
-                ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
-              }
-            },
-            {
-              id = 59,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1584,
-              y = -8,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5278,
-              visible = true,
-              properties = {
-                ["ammo"] = 10,
-                ["defaultattack"] = "sling-shot-until-empty",
-                ["entrypoint"] = { id = 240 },
-                ["exitpoint"] = { id = 243 },
-                ["initialai"] = "enterAndAttackUntilEmpty",
-                ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
-              }
-            },
-            {
-              id = 87,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1840,
-              y = -72,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5278,
-              visible = true,
-              properties = {
-                ["ammo"] = 10,
-                ["defaultattack"] = "sling-shot-until-empty",
-                ["entrypoint"] = { id = 242 },
-                ["exitpoint"] = { id = 245 },
-                ["initialai"] = "enterAndAttackUntilEmpty",
-                ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
-              }
-            },
-            {
-              id = 240,
-              name = "entrypoint",
-              type = "",
-              shape = "point",
-              x = 1520,
-              y = 56,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
-              id = 241,
-              name = "entrypoint",
-              type = "",
-              shape = "point",
-              x = 1616,
-              y = 56,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
-              id = 242,
-              name = "entrypoint",
-              type = "",
-              shape = "point",
-              x = 1712,
-              y = 56,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
-              id = 243,
-              name = "exitpoint",
-              type = "",
-              shape = "point",
-              x = 1616,
-              y = -40,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
-              id = 244,
-              name = "exitpoint",
-              type = "",
-              shape = "point",
-              x = 1712,
-              y = -40,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
-              id = 245,
-              name = "exitpoint",
-              type = "",
-              shape = "point",
-              x = 1808,
-              y = -40,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
               id = 265,
               name = "",
               type = "Boundary",
@@ -16779,6 +16770,128 @@ return {
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff",
+                ["z"] = 64
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 48,
+          name = "learnthrowingweapons",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = 1
+          },
+          objects = {
+            {
+              id = 58,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1648,
+              y = -40,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5278,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["defaultattack"] = "sling-shot-until-empty",
+                ["entrypoint"] = { id = 241 },
+                ["exitpoint"] = { id = 244 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 59,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1712,
+              y = -8,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5278,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["defaultattack"] = "sling-shot-until-empty",
+                ["entrypoint"] = { id = 240 },
+                ["exitpoint"] = { id = 243 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 240,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 1648,
+              y = 56,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 241,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 1552,
+              y = 56,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 243,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 1744,
+              y = -40,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 244,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 1648,
+              y = -40,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
                 ["z"] = 64
               }
             },
@@ -17005,7 +17118,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 3
+            ["donewhenenemiesleft"] = 4
           },
           objects = {
             {
@@ -17063,6 +17176,198 @@ return {
               gid = 5266,
               visible = true,
               properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 11,
+          name = "+shooter",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = 4
+          },
+          objects = {
+            {
+              id = 87,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1664,
+              y = -8,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5278,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["defaultattack"] = "sling-shot-until-empty",
+                ["entrypoint"] = { id = 242 },
+                ["exitpoint"] = { id = 245 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 242,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 1600,
+              y = 56,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 245,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 1696,
+              y = -40,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 49,
+          name = "+shooters",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = 5
+          },
+          objects = {
+            {
+              id = 494,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1568,
+              y = -8,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5278,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["defaultattack"] = "sling-shot-until-empty",
+                ["entrypoint"] = { id = 495 },
+                ["exitpoint"] = { id = 496 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 498,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1760,
+              y = -8,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5278,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["defaultattack"] = "sling-shot-until-empty",
+                ["entrypoint"] = { id = 497 },
+                ["exitpoint"] = { id = 499 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 495,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 1504,
+              y = 56,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 497,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 1696,
+              y = 56,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 496,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 1600,
+              y = -40,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 499,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 1792,
+              y = -40,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
             }
           }
         },
