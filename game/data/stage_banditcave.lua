@@ -9,7 +9,7 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 44,
+  nextlayerid = 46,
   nextobjectid = 485,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
@@ -19637,7 +19637,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 3
+            ["donewhenenemiesleft"] = 4
           },
           objects = {
             {
@@ -19673,8 +19673,138 @@ return {
         {
           type = "objectgroup",
           draworder = "topdown",
+          id = 44,
+          name = "+shooter&spear",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = 5
+          },
+          objects = {
+            {
+              id = 343,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4208,
+              y = 328,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5278,
+              visible = true,
+              properties = {
+                ["ammo"] = 999999999,
+                ["defaultattack"] = "sling-shot-until-empty",
+                ["entrypoint"] = { id = 346 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty"
+              }
+            },
+            {
+              id = 346,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 4208,
+              y = 272,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 347,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3824,
+              y = 144,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 45,
+          name = "+shooter&spear",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = 5
+          },
+          objects = {
+            {
+              id = 342,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4064,
+              y = 328,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5278,
+              visible = true,
+              properties = {
+                ["ammo"] = 999999999,
+                ["defaultattack"] = "sling-shot-until-empty",
+                ["entrypoint"] = { id = 345 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty"
+              }
+            },
+            {
+              id = 345,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 4064,
+              y = 272,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 348,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4336,
+              y = 144,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
           id = 21,
-          name = "+shooters",
+          name = "+shooter&spears",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -19705,46 +19835,6 @@ return {
               }
             },
             {
-              id = 342,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 4064,
-              y = 360,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5278,
-              visible = true,
-              properties = {
-                ["ammo"] = 999999999,
-                ["defaultattack"] = "sling-shot-until-empty",
-                ["entrypoint"] = { id = 345 },
-                ["initialai"] = "enterAndAttackUntilEmpty",
-                ["recoverai"] = "enterAndAttackUntilEmpty"
-              }
-            },
-            {
-              id = 343,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 4208,
-              y = 392,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5278,
-              visible = true,
-              properties = {
-                ["ammo"] = 999999999,
-                ["defaultattack"] = "sling-shot-until-empty",
-                ["entrypoint"] = { id = 346 },
-                ["initialai"] = "enterAndAttackUntilEmpty",
-                ["recoverai"] = "enterAndAttackUntilEmpty"
-              }
-            },
-            {
               id = 344,
               name = "entrypoint",
               type = "",
@@ -19754,60 +19844,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 345,
-              name = "entrypoint",
-              type = "",
-              shape = "point",
-              x = 4064,
-              y = 272,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 346,
-              name = "entrypoint",
-              type = "",
-              shape = "point",
-              x = 4208,
-              y = 272,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 347,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3824,
-              y = 144,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5270,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 348,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 4336,
-              y = 144,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5270,
               visible = true,
               properties = {}
             },

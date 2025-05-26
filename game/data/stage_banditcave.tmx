@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="44" nextobjectid="485">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="46" nextobjectid="485">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -1173,12 +1173,48 @@ to sprint past archers</text>
   </objectgroup>
   <objectgroup id="33" name="+spears" class="Room">
    <properties>
-    <property name="donewhenenemiesleft" type="int" value="3"/>
+    <property name="donewhenenemiesleft" type="int" value="4"/>
    </properties>
    <object id="339" gid="5270" x="3824" y="176" width="64" height="64"/>
    <object id="340" gid="5270" x="4336" y="176" width="64" height="64"/>
   </objectgroup>
-  <objectgroup id="21" name="+shooters" class="Room">
+  <objectgroup id="44" name="+shooter&amp;spear" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="5"/>
+   </properties>
+   <object id="343" gid="5278" x="4208" y="328" width="64" height="64">
+    <properties>
+     <property name="ammo" type="int" value="999999999"/>
+     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="entrypoint" type="object" value="346"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
+    </properties>
+   </object>
+   <object id="346" name="entrypoint" x="4208" y="272">
+    <point/>
+   </object>
+   <object id="347" gid="5270" x="3824" y="144" width="64" height="64"/>
+  </objectgroup>
+  <objectgroup id="45" name="+shooter&amp;spear" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="5"/>
+   </properties>
+   <object id="342" gid="5278" x="4064" y="328" width="64" height="64">
+    <properties>
+     <property name="ammo" type="int" value="999999999"/>
+     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="entrypoint" type="object" value="345"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
+    </properties>
+   </object>
+   <object id="345" name="entrypoint" x="4064" y="272">
+    <point/>
+   </object>
+   <object id="348" gid="5270" x="4336" y="144" width="64" height="64"/>
+  </objectgroup>
+  <objectgroup id="21" name="+shooter&amp;spears" class="Room">
    <object id="341" gid="5274" x="3928" y="328" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="999999999"/>
@@ -1188,35 +1224,9 @@ to sprint past archers</text>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
     </properties>
    </object>
-   <object id="342" gid="5278" x="4064" y="360" width="64" height="64">
-    <properties>
-     <property name="ammo" type="int" value="999999999"/>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
-     <property name="entrypoint" type="object" value="345"/>
-     <property name="initialai" value="enterAndAttackUntilEmpty"/>
-     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-    </properties>
-   </object>
-   <object id="343" gid="5278" x="4208" y="392" width="64" height="64">
-    <properties>
-     <property name="ammo" type="int" value="999999999"/>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
-     <property name="entrypoint" type="object" value="346"/>
-     <property name="initialai" value="enterAndAttackUntilEmpty"/>
-     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-    </properties>
-   </object>
    <object id="344" name="entrypoint" x="3928" y="272">
     <point/>
    </object>
-   <object id="345" name="entrypoint" x="4064" y="272">
-    <point/>
-   </object>
-   <object id="346" name="entrypoint" x="4208" y="272">
-    <point/>
-   </object>
-   <object id="347" gid="5270" x="3824" y="144" width="64" height="64"/>
-   <object id="348" gid="5270" x="4336" y="144" width="64" height="64"/>
    <object id="349" gid="5270" x="3824" y="216" width="64" height="64"/>
    <object id="350" gid="5270" x="4336" y="216" width="64" height="64"/>
   </objectgroup>
