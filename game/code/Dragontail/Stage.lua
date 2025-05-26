@@ -83,6 +83,13 @@ function Stage.init(stagefile)
 
     local rooms = map.layers.rooms
     local firstroomindex = 1
+    local firstroomid = nil
+    for i, room in ipairs(rooms) do
+        if room.id == firstroomid then
+            firstroomindex = i
+            break
+        end
+    end
     firstroomindex = min(firstroomindex, #rooms)
     local firstroom = rooms[firstroomindex]
     local camerapath = firstroom.camerapath
