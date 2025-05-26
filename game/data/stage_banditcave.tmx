@@ -628,13 +628,13 @@ and tap    to throw</text>
     <properties>
      <property name="bodyheight" type="float" value="64"/>
     </properties>
-    <polygon points="-320,-224 -320,96 256,96 256,0 192,64 128,0 64,64 0,0 -128,0 -160,32 -224,32 -256,0 -288,0 -288,-112 -256,-144 -256,-224"/>
+    <polygon points="-320,-224 -320,96 224,96 128,0 64,64 0,0 -128,0 -160,32 -224,32 -256,0 -288,0 -288,-112 -256,-144 -256,-224"/>
    </object>
    <object id="311" template="mapobjects/OutwardBoundary.tx" x="2592" y="224">
     <properties>
      <property name="bodyheight" type="float" value="64"/>
     </properties>
-    <polygon points="384,160 384,64 320,64 256,0 256,160"/>
+    <polygon points="288,160 384,64 320,64 256,0 192,64"/>
    </object>
    <object id="298" template="mapobjects/OutwardBoundary.tx" x="3168" y="0">
     <properties>
