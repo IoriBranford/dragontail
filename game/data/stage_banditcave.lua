@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 41,
-  nextobjectid = 482,
+  nextlayerid = 44,
+  nextobjectid = 485,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -16093,8 +16093,41 @@ return {
         {
           type = "objectgroup",
           draworder = "topdown",
-          id = 9,
+          id = 41,
           name = "tolearnrunning",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 482,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 720,
+              y = 144,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = 0, y = 0 },
+                { x = 96, y = 0 }
+              },
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 9,
+          name = "tolearnrunning2",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -16130,8 +16163,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1136,
-              y = 208,
+              x = 1200,
+              y = 216,
               width = 64,
               height = 64,
               rotation = 0,
@@ -16144,8 +16177,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1200,
-              y = 224,
+              x = 1264,
+              y = 232,
               width = 64,
               height = 64,
               rotation = 0,
@@ -16158,8 +16191,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1072,
-              y = 192,
+              x = 1136,
+              y = 200,
               width = 64,
               height = 64,
               rotation = 0,
@@ -16172,8 +16205,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1008,
-              y = 176,
+              x = 1072,
+              y = 184,
               width = 64,
               height = 64,
               rotation = 0,
@@ -16186,8 +16219,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1168,
-              y = 304,
+              x = 1232,
+              y = 312,
               width = 64,
               height = 64,
               rotation = 0,
@@ -16200,8 +16233,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1232,
-              y = 320,
+              x = 1296,
+              y = 328,
               width = 64,
               height = 64,
               rotation = 0,
@@ -16214,8 +16247,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1104,
-              y = 288,
+              x = 1168,
+              y = 296,
               width = 64,
               height = 64,
               rotation = 0,
@@ -16228,8 +16261,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1040,
-              y = 272,
+              x = 1104,
+              y = 280,
               width = 64,
               height = 64,
               rotation = 0,
@@ -16494,6 +16527,39 @@ return {
         {
           type = "objectgroup",
           draworder = "topdown",
+          id = 42,
+          name = "tolearnthrowingweapons",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 483,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 1360,
+              y = 208,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = 0, y = 0 },
+                { x = 256, y = -64 }
+              },
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
           id = 11,
           name = "learnthrowingweapons",
           class = "Room",
@@ -16533,23 +16599,6 @@ return {
                 ["drawz"] = -1,
                 ["linecolor"] = "#80ffffff"
               }
-            },
-            {
-              id = 40,
-              name = "camerapath",
-              type = "CameraPath",
-              shape = "polyline",
-              x = 1392,
-              y = 208,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polyline = {
-                { x = 32, y = -64 },
-                { x = 224, y = -64 }
-              },
-              properties = {}
             },
             {
               id = 58,
@@ -18501,7 +18550,7 @@ return {
               rotation = 0,
               visible = true,
               polyline = {
-                { x = 96, y = 0 },
+                { x = 16, y = 0 },
                 { x = 480, y = 0 }
               },
               properties = {}
@@ -18741,6 +18790,154 @@ return {
         {
           type = "objectgroup",
           draworder = "index",
+          id = 43,
+          name = "tomesshall",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 484,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 3600,
+              y = 144,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = 0, y = 0 },
+                { x = 160, y = 0 }
+              },
+              properties = {}
+            },
+            {
+              id = 320,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3928,
+              y = 240,
+              width = 96,
+              height = 48,
+              rotation = 0,
+              gid = 6626,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 16,
+                ["bodysolid"] = true
+              }
+            },
+            {
+              id = 327,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3872,
+              y = 264,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7255,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 12,
+                ["bodysolid"] = true
+              }
+            },
+            {
+              id = 328,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3976,
+              y = 272,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7263,
+              visible = true,
+              properties = {
+                ["bodyheight"] = 12,
+                ["bodysolid"] = true
+              }
+            },
+            {
+              id = 370,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3912,
+              y = 224,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6641,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            },
+            {
+              id = 371,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3952,
+              y = 232,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6641,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            },
+            {
+              id = 378,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3910,
+              y = 232,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 6725,
+              visible = true,
+              properties = {
+                ["z"] = 18
+              }
+            },
+            {
+              id = 380,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3954,
+              y = 234,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7276,
+              visible = true,
+              properties = {
+                ["z"] = 18
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "index",
           id = 19,
           name = "messhall",
           class = "Room",
@@ -18766,7 +18963,7 @@ return {
               rotation = 0,
               visible = true,
               polyline = {
-                { x = 256, y = 0 },
+                { x = 320, y = 0 },
                 { x = 640, y = 0 }
               },
               properties = {}
@@ -18822,23 +19019,6 @@ return {
               shape = "rectangle",
               x = 4128,
               y = 112,
-              width = 96,
-              height = 48,
-              rotation = 0,
-              gid = 6626,
-              visible = true,
-              properties = {
-                ["bodyheight"] = 16,
-                ["bodysolid"] = true
-              }
-            },
-            {
-              id = 320,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3928,
-              y = 240,
               width = 96,
               height = 48,
               rotation = 0,
@@ -18941,40 +19121,6 @@ return {
               shape = "rectangle",
               x = 4168,
               y = 264,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              gid = 7263,
-              visible = true,
-              properties = {
-                ["bodyheight"] = 12,
-                ["bodysolid"] = true
-              }
-            },
-            {
-              id = 327,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3872,
-              y = 264,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              gid = 7255,
-              visible = true,
-              properties = {
-                ["bodyheight"] = 12,
-                ["bodysolid"] = true
-              }
-            },
-            {
-              id = 328,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3976,
-              y = 272,
               width = 32,
               height = 32,
               rotation = 0,
@@ -19335,38 +19481,6 @@ return {
               }
             },
             {
-              id = 370,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3912,
-              y = 224,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              gid = 6641,
-              visible = true,
-              properties = {
-                ["z"] = 16
-              }
-            },
-            {
-              id = 371,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3952,
-              y = 232,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              gid = 6641,
-              visible = true,
-              properties = {
-                ["z"] = 16
-              }
-            },
-            {
               id = 372,
               name = "",
               type = "",
@@ -19463,22 +19577,6 @@ return {
               }
             },
             {
-              id = 378,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3910,
-              y = 232,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              gid = 6725,
-              visible = true,
-              properties = {
-                ["z"] = 18
-              }
-            },
-            {
               id = 381,
               name = "",
               type = "",
@@ -19505,22 +19603,6 @@ return {
               height = 32,
               rotation = 0,
               gid = 6729,
-              visible = true,
-              properties = {
-                ["z"] = 18
-              }
-            },
-            {
-              id = 380,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3954,
-              y = 234,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              gid = 7276,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19841,7 +19923,7 @@ return {
               rotation = 0,
               visible = true,
               polyline = {
-                { x = -288, y = 0 },
+                { x = -320, y = 0 },
                 { x = 640, y = 0 }
               },
               properties = {}
