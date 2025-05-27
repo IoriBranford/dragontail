@@ -19,6 +19,7 @@ local Inventory            = require "Dragontail.Character.Inventory"
 local JoystickLog          = require "Dragontail.Character.Player.JoystickLog"
 local Combo                = require "Dragontail.Character.Action.Combo"
 local Mana                 = require "Dragontail.Character.Mana"
+local Config               = require "System.Config"
 
 ---@class Player:Fighter
 ---@field inventory Inventory
@@ -273,6 +274,22 @@ function Player:drawAseprite(fixedfrac)
     -- end
 end
 
+function Player:getJoystick()
+    local inx, iny = self.joystickx.position, self.joysticky.position
+    local lsq = lensq(inx, iny)
+
+    local deadzone = Config.joy_deadzone or .25
+    if lsq < deadzone*deadzone then
+        return 0, 0
+    end
+
+    if lsq > 1 then
+        return norm(inx, iny)
+    end
+
+    return inx, iny
+end
+
 function Player:findRandomAttackerSlot(attackrange, slottype)
     local attackerslots = self.attackerslots
     attackerslots = slottype and attackerslots[slottype] or attackerslots
@@ -404,17 +421,13 @@ function Player:control()
     local runningtime
     -- local attackdowntime
     while true do
-        local inx, iny = self.joystickx.position, self.joysticky.position
+        local inx, iny = self:getJoystick()
         local normalattackpressed, runpressed = self.attackbutton.pressed, self.sprintbutton.pressed
         local fireattackpressed = self.fireattackbutton.pressed
-        local anyattackpressed = normalattackpressed or fireattackpressed
         local rundown = self.sprintbutton.down
 
         local targetvelx, targetvely = 0, 0
         if inx ~= 0 or iny ~= 0 then
-            if lensq(inx, iny) > 1 then
-                inx, iny = norm(inx, iny)
-            end
             self.facedestangle = atan2(iny, inx)
         end
 
@@ -572,7 +585,7 @@ function Player:spinAttack(attackangle)
             Shoot.launchProjectile(self, projectile, cos(faceangle), sin(faceangle), 0)
         end
 
-        local inx, iny = self.joystickx.position, self.joysticky.position
+        local inx, iny = self:getJoystick()
         local targetvelx, targetvely = 0, 0
         local speed = 2
         if inx ~= 0 or iny ~= 0 then
@@ -604,7 +617,7 @@ function Player:spinAttack(attackangle)
     self:stopAttack()
     self.faceangle = originalfaceangle
     if pressedattackbutton then
-        local inx, iny = self.joystickx.position, self.joysticky.position
+        local inx, iny = self:getJoystick()
         if inx ~= 0 or iny ~= 0 then
             originalfaceangle = atan2(iny, inx)
         end
@@ -616,7 +629,7 @@ end
 function Player:getReversalChargedAttack()
     local chargedattack = self:updateBreathCharge(RunningChargeAttacks, ReversalChargeRate, ReversalDecayRate)
     if chargedattack then
-        local inx, iny = self.joystickx.position, self.joysticky.position
+        local inx, iny = self:getJoystick()
         local angle = self.faceangle
         if inx ~= 0 or iny ~= 0 then
             angle = atan2(iny, inx)
@@ -658,11 +671,8 @@ function Player:aimThrow()
     local lockonenemy
     while true do
         local attackbutton, runbutton = self.attackbutton.down, self.sprintbutton.down
-        local inx, iny = self.joystickx.position, self.joysticky.position
+        local inx, iny = self:getJoystick()
         if inx ~= 0 or iny ~= 0 then
-            if lensq(inx, iny) > 1 then
-                inx, iny = norm(inx, iny)
-            end
             self.facedestangle = atan2(iny, inx)
         end
 
@@ -797,7 +807,7 @@ function Player:hold(enemy)
             time = time - 1
         end
 
-        local inx, iny = self.joystickx.position, self.joysticky.position
+        local inx, iny = self:getJoystick()
         local normalattackpressed, runpressed = self.attackbutton.pressed, self.sprintbutton.pressed
         local fireattackpressed = self.fireattackbutton.pressed
         local targetvelx, targetvely = 0, 0
@@ -873,16 +883,13 @@ function Player:runWithEnemy(enemy)
     local runningtime = 0
     while true do
         yield()
-        local inx, iny = self.joystickx.position, self.joysticky.position
+        local inx, iny = self:getJoystick()
         local normalattackpressed = self.attackbutton.pressed
         local fireattackpressed = self.fireattackbutton.pressed
         local _, rundown = self.attackbutton.down, self.sprintbutton.down
 
         local targetvelx, targetvely = 0, 0
         if inx ~= 0 or iny ~= 0 then
-            if lensq(inx, iny) > 1 then
-                inx, iny = norm(inx, iny)
-            end
             self.facedestangle = atan2(iny, inx)
         end
 
@@ -966,7 +973,7 @@ function Player:spinAndKickEnemy(angle, enemy)
     local spunmag = 0
     local spinmag = abs(spinvel)
     repeat
-        local inx, iny = self.joystickx.position, self.joysticky.position
+        local inx, iny = self:getJoystick()
         local targetvelx, targetvely = 0, 0
         local speed = 2
         if inx ~= 0 or iny ~= 0 then
@@ -1067,7 +1074,7 @@ function Player:straightAttack(angle, heldenemy)
     self:stopAttack()
     if pressedattackbutton then
         local faceangle = self.faceangle
-        local inx, iny = self.joystickx.position, self.joysticky.position
+        local inx, iny = self:getJoystick()
         if not heldenemy then
             if inx ~= 0 or iny ~= 0 then
                 faceangle = atan2(iny, inx)
