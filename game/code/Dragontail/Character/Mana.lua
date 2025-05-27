@@ -51,21 +51,21 @@ function Mana:hasChargeForAttack(attack)
     if type(attack) == "string" then
         attack = self.attacktable[attack]
     end
-    return attack and self.manacharge >= attack.attackmanacost
+    return attack and not attack.attackmanacost or self.manacharge >= attack.attackmanacost
 end
 
 function Mana:canAffordAttack(attack)
     if type(attack) == "string" then
         attack = self.attacktable[attack]
     end
-    return attack and self.manastore >= attack.attackmanacost
+    return attack and not attack.attackmanacost or self.manastore >= attack.attackmanacost
 end
 
 function Mana:consumeForAttack(attack)
     if type(attack) == "string" then
         attack = self.attacktable[attack]
     end
-    if attack then
+    if attack and attack.attackmanacost then
         Mana.store(self, -attack.attackmanacost)
     end
 end
