@@ -2,6 +2,7 @@ local Enemy = require "Dragontail.Character.Enemy"
 local Face       = require "Dragontail.Character.Action.Face"
 local Dodge = require "Dragontail.Character.Action.Dodge"
 local Database = require "Data.Database"
+local Body     = require "Dragontail.Character.Body"
 
 ---@class SpearBandit:Enemy
 ---@field numdodges integer
@@ -67,6 +68,9 @@ function SpearBandit:duringPrepareAttack(target)
         end
     end
     self:accelerateTowardsVel(0, 0, 4)
+    if self.velx ~= 0 or self.vely ~= 0 then
+        Body.keepInBounds(self)
+    end
 end
 
 function SpearBandit:duringAttackSwing(target)
