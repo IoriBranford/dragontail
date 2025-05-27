@@ -27,9 +27,9 @@ local Config               = require "System.Config"
 local Player = class(Fighter)
 
 local NormalChargeRate = 2
-local NormalDecayRate = -2
+local NormalDecayRate = 2
 local ReversalChargeRate = 4
-local ReversalDecayRate = -1
+local ReversalDecayRate = 1
 
 local pi = math.pi
 local cos = math.cos
@@ -410,7 +410,7 @@ function Player:updateBreathCharge(chargeattacks, chargerate, decayrate)
                 break
             end
         end
-        Mana.charge(self, decayrate or NormalDecayRate)
+        Mana.decayCharge(self, decayrate or NormalDecayRate, chargedattack)
         return chargedattack
     end
 end
