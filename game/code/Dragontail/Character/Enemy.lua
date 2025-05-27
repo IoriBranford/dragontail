@@ -1,4 +1,3 @@
-local Database = require "Data.Database"
 local Movement = require "Component.Movement"
 local Audio    = require "System.Audio"
 local Fighter  = require "Dragontail.Character.Fighter"
@@ -76,7 +75,7 @@ function Enemy:decideNextAttack()
     local attacktype = self.defaultattack
     if attackchoices and #attackchoices > 0 then
         for i, attackchoice in ipairs(attackchoices) do
-            local attackdata = Database.get(attackchoice)
+            local attackdata = self.attacktable[attackchoice]
             if attackdata then
                 local attackrange = (attackdata.attackbestdist or 1) + opponent.bodyradius
                 if attackrange*attackrange >= toopposq then
@@ -101,7 +100,7 @@ function Enemy:couldAttackOpponent(opponent, attacktype)
         return false
     end
 
-    local attackdata = Database.get(attacktype)
+    local attackdata = self.attacktable[attacktype]
     if not attackdata then
         return false
     end
@@ -154,7 +153,7 @@ end
 
 function Enemy:findAttackerSlot(opponent, attacktype)
     local bodyradius = self.bodyradius
-    local attackdata = Database.get(attacktype)
+    local attackdata = self.attacktable[attacktype]
     local attackrange = (attackdata and attackdata.attackbestdist or 1) + opponent.bodyradius
     local attackerslot
     if self.attackprojectile then
@@ -167,7 +166,7 @@ end
 
 function Enemy:getAttackerSlotPosition(opponent, attackerslot, attacktype)
     local bodyradius = self.bodyradius
-    local attackdata = Database.get(attacktype)
+    local attackdata = self.attacktable[attacktype]
     local attackrange = (attackdata and attackdata.attackbestdist or 1)
     local oppox, oppoy = opponent.x, opponent.y
     local destx, desty
