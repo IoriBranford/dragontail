@@ -41,8 +41,9 @@ function SpearBandit:duringDodge()
             local attacktype = "spear-poke"
             local opponent = self.opponents[1]
             local maxcounterdist = 128
-
-            if math.distsq(self.x, self.y, opponent.x, opponent.y) <= maxcounterdist*maxcounterdist then
+            local dsq = math.distsq(self.x, self.y, opponent.x, opponent.y)
+            if dsq <= maxcounterdist*maxcounterdist then
+                Face.faceObject(self, opponent)
                 return attacktype
             end
         end
