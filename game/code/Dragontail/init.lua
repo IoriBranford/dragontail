@@ -77,7 +77,7 @@ return {
         --stagestart (optional string)          Name of stage start point
     ]],
     defaultconfig = Platform.overrideConfig {
-        _version = 2,
+        _version = 3,
 
         canvasscaleint = false,
         canvasscalesoft = true,
