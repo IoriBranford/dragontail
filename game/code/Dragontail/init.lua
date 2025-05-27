@@ -91,7 +91,6 @@ return {
             ["left right"] = "movex",
             ["up down"] = "movey",
             z = "attack",
-            x = "attack2",
             lshift = "sprint"
         },
 
