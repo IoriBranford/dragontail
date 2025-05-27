@@ -145,7 +145,7 @@ return {
         -- practice_powerlevel = 0,
         -- practice_stage = "DEMONREALM",
     
-        -- joy_deadzone = 0.25,
+        joy_deadzone = 0.25,
         -- joy_move1 = "left",
         -- joy_move2 = "dp",
         -- joy_startbackrestart = false,
