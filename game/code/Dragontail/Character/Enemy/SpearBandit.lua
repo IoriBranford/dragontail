@@ -36,16 +36,18 @@ function SpearBandit:duringApproach(target)
     end
 end
 
+local DodgesBeforeCounterAttack = 1
+local CounterAttackType = "spear-poke"
+
 function SpearBandit:duringDodge()
-    if (self.numdodges or 0) >= 2 then
-        if math.abs(self.velx) < 1 and math.abs(self.vely) < 1 then
-            local attacktype = "spear-poke"
+    if (self.numdodges or 0) >= DodgesBeforeCounterAttack then
+        if math.lensq(self.velx, self.vely) < 16 then
             local opponent = self.opponents[1]
             local maxcounterdist = 128
             local dsq = math.distsq(self.x, self.y, opponent.x, opponent.y)
             if dsq <= maxcounterdist*maxcounterdist then
                 Face.faceObject(self, opponent)
-                return attacktype
+                return CounterAttackType
             end
         end
     end
@@ -56,7 +58,7 @@ function SpearBandit:decideNextAttack()
 end
 
 function SpearBandit:duringPrepareAttack(target)
-    if (self.numdodges or 0) < 2 then
+    if (self.numdodges or 0) < DodgesBeforeCounterAttack then
         local dodgeangle = self:isFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self)
         if dodgeangle then
             self.numdodges = (self.numdodges or 0) + 1
