@@ -105,6 +105,7 @@ return {
         -- player_character = "Amy",
         -- player_hitbox = "FOCUSFIRE",
         -- player_burst = 4,
+        player_autorevive = true,
         -- practice_lives = 2,
         -- practice_bombs = 1,
         -- practice_wingmen = 0,

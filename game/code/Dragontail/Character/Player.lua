@@ -400,7 +400,7 @@ local RunningChargeAttacks = {
 }
 
 function Player:updateBreathCharge(chargerate, decayrate)
-    if self.attackbutton.down then
+    if Config.player_autorevive and self.health <= 0 or self.attackbutton.down then
         Mana.charge(self, chargerate or NormalChargeRate)
     else
         Mana.decayCharge(self, decayrate or NormalDecayRate)
