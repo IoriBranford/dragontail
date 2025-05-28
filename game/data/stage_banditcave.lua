@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 51,
-  nextobjectid = 505,
+  nextlayerid = 54,
+  nextobjectid = 508,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -18638,7 +18638,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = 2
+          },
           objects = {
             {
               id = 291,
@@ -18751,26 +18753,42 @@ return {
               }
             },
             {
-              id = 96,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3344,
-              y = 328,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5270,
-              visible = true,
-              properties = {}
-            },
-            {
               id = 101,
               name = "",
               type = "",
               shape = "rectangle",
               x = 3376,
               y = 192,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 51,
+          name = "+spears",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 96,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3344,
+              y = 328,
               width = 64,
               height = 64,
               rotation = 0,
@@ -18798,7 +18816,7 @@ return {
           type = "objectgroup",
           draworder = "topdown",
           id = 18,
-          name = "armory",
+          name = "toarmory",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -18823,7 +18841,7 @@ return {
               visible = true,
               polyline = {
                 { x = 16, y = 0 },
-                { x = 480, y = 0 }
+                { x = 288, y = 0 }
               },
               properties = {}
             },
@@ -18990,9 +19008,100 @@ return {
         {
           type = "objectgroup",
           draworder = "topdown",
+          id = 53,
+          name = "armory",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = 4
+          },
+          objects = {
+            {
+              id = 505,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 3408,
+              y = 144,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = 0, y = 0 },
+                { x = 192, y = 0 }
+              },
+              properties = {}
+            },
+            {
+              id = 397,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3808,
+              y = 120,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 398,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3768,
+              y = 208,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 506,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3712,
+              y = 272,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 507,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3640,
+              y = 328,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
           id = 35,
           name = "+axes",
-          class = "",
+          class = "Room",
           visible = true,
           opacity = 1,
           offsetx = 0,
@@ -19006,7 +19115,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3952,
+              x = 3864,
               y = 120,
               width = 64,
               height = 64,
@@ -19020,40 +19129,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3952,
+              x = 3864,
               y = 216,
               width = 64,
               height = 64,
               rotation = 0,
               gid = 5286,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 397,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3296,
-              y = 208,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5270,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 398,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3296,
-              y = 264,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5270,
               visible = true,
               properties = {}
             }

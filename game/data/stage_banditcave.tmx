@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="51" nextobjectid="505">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="54" nextobjectid="508">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -910,6 +910,9 @@ to sprint past archers</text>
    </object>
   </objectgroup>
   <objectgroup id="31" name="endofentryhall" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="2"/>
+   </properties>
    <object id="291" gid="5274" x="3264" y="-48" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
@@ -962,16 +965,18 @@ to sprint past archers</text>
     </properties>
     <point/>
    </object>
-   <object id="96" gid="5270" x="3344" y="328" width="64" height="64"/>
    <object id="101" gid="5270" x="3376" y="192" width="64" height="64"/>
+  </objectgroup>
+  <objectgroup id="51" name="+spears" class="Room">
+   <object id="96" gid="5270" x="3344" y="328" width="64" height="64"/>
    <object id="103" gid="5270" x="3056" y="328" width="64" height="64"/>
   </objectgroup>
-  <objectgroup id="18" name="armory" class="Room">
+  <objectgroup id="18" name="toarmory" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="2"/>
    </properties>
    <object id="79" template="mapobjects/CameraPath.tx" x="3120" y="144">
-    <polyline points="16,0 480,0"/>
+    <polyline points="16,0 288,0"/>
    </object>
    <object id="317" template="mapobjects/OutwardBoundary.tx" x="3360" y="0">
     <polygon points="0,0 0,112 32,80 128,80 160,48 176,48 208,16 240,16 272,48 384,48 416,80 480,80 480,0"/>
@@ -1006,11 +1011,21 @@ to sprint past archers</text>
    <object id="419" gid="5291" x="3584" y="78" width="64" height="32" rotation="270"/>
    <object id="420" gid="5291" x="3624" y="68" width="64" height="32" rotation="225"/>
   </objectgroup>
-  <objectgroup id="35" name="+axes">
-   <object id="383" gid="5286" x="3952" y="120" width="64" height="64"/>
-   <object id="384" gid="5286" x="3952" y="216" width="64" height="64"/>
-   <object id="397" gid="5270" x="3296" y="208" width="64" height="64"/>
-   <object id="398" gid="5270" x="3296" y="264" width="64" height="64"/>
+  <objectgroup id="53" name="armory" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="4"/>
+   </properties>
+   <object id="505" template="mapobjects/CameraPath.tx" x="3408" y="144">
+    <polyline points="0,0 192,0"/>
+   </object>
+   <object id="397" gid="5270" x="3808" y="120" width="64" height="64"/>
+   <object id="398" gid="5270" x="3768" y="208" width="64" height="64"/>
+   <object id="506" gid="5270" x="3712" y="272" width="64" height="64"/>
+   <object id="507" gid="5270" x="3640" y="328" width="64" height="64"/>
+  </objectgroup>
+  <objectgroup id="35" name="+axes" class="Room">
+   <object id="383" gid="5286" x="3864" y="120" width="64" height="64"/>
+   <object id="384" gid="5286" x="3864" y="216" width="64" height="64"/>
   </objectgroup>
   <objectgroup draworder="index" id="43" name="tomesshall" class="Room">
    <object id="484" template="mapobjects/CameraPath.tx" x="3600" y="144">
