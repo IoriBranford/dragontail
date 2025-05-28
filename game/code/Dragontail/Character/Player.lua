@@ -399,20 +399,25 @@ local RunningChargeAttacks = {
     "fireball-storm", "running-spit-multi-fireball", "running-spit-fireball"
 }
 
-function Player:updateBreathCharge(chargeattacks, chargerate, decayrate)
+function Player:updateBreathCharge(chargerate, decayrate)
     if self.attackbutton.down then
         Mana.charge(self, chargerate or NormalChargeRate)
     else
-        local chargedattack
-        for _, chargeattack in ipairs(chargeattacks) do
-            if Mana.hasChargeForAttack(self, chargeattack) then
-                chargedattack = chargeattack
-                break
-            end
-        end
-        Mana.decayCharge(self, decayrate or NormalDecayRate, chargedattack)
-        return chargedattack
+        Mana.decayCharge(self, decayrate or NormalDecayRate)
     end
+end
+
+function Player:getChargedAttack(chargeattacks)
+    for _, chargeattack in ipairs(chargeattacks) do
+        if Mana.hasChargeForAttack(self, chargeattack) then
+            return chargeattack
+        end
+    end
+end
+
+function Player:fixedupdate()
+    self:updateBreathCharge(self.manachargerate, self.manadecayrate)
+    Character.fixedupdate(self)
 end
 
 function Player:control()
@@ -476,7 +481,7 @@ function Player:control()
                 self:makeAfterImage()
             end
 
-            local chargedattack = self:updateBreathCharge(RunningChargeAttacks)
+            local chargedattack = not self.attackbutton.down and self:getChargedAttack(RunningChargeAttacks)
             if chargedattack then
                 Mana.releaseCharge(self)
                 return chargedattack, self.facedestangle
@@ -532,7 +537,7 @@ function Player:control()
             end
         else
             -- self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
-            local chargedattack = self:updateBreathCharge(ChargeAttacks)
+            local chargedattack = not self.attackbutton.down and self:getChargedAttack(ChargeAttacks)
             if chargedattack then
                 Mana.releaseCharge(self)
                 return chargedattack, self.facedestangle
@@ -627,7 +632,7 @@ function Player:spinAttack(attackangle)
 end
 
 function Player:getReversalChargedAttack()
-    local chargedattack = self:updateBreathCharge(RunningChargeAttacks, ReversalChargeRate, ReversalDecayRate)
+    local chargedattack = not self.attackbutton.down and self:getChargedAttack(ChargeAttacks)
     if chargedattack then
         local inx, iny = self:getJoystick()
         local angle = self.faceangle
@@ -636,18 +641,6 @@ function Player:getReversalChargedAttack()
         end
         return chargedattack, angle
     end
-end
-
-function Player:duringHurt()
-    self:updateBreathCharge(RunningChargeAttacks, ReversalChargeRate, ReversalDecayRate)
-end
-
-function Player:duringKnockedBack()
-    self:updateBreathCharge(RunningChargeAttacks, ReversalChargeRate, ReversalDecayRate)
-end
-
-function Player:duringFall()
-    self:updateBreathCharge(RunningChargeAttacks, ReversalChargeRate, ReversalDecayRate)
 end
 
 function Player:duringGetUp()
@@ -853,7 +846,7 @@ function Player:hold(enemy)
             Combo.reset(self)
             return "running-with-enemy", enemy
         end
-        local chargedattack = self:updateBreathCharge(ChargeAttacks)
+        local chargedattack = not self.attackbutton.down and self:getChargedAttack(ChargeAttacks)
         if chargedattack then
             Mana.releaseCharge(self)
             return chargedattack, holddestangle
@@ -909,7 +902,7 @@ function Player:runWithEnemy(enemy)
             enemy:makeAfterImage()
         end
 
-        local chargedattack = self:updateBreathCharge(RunningChargeAttacks)
+        local chargedattack = not self.attackbutton.down and self:getChargedAttack(RunningChargeAttacks)
         if chargedattack then
             Mana.releaseCharge(self)
             return chargedattack, self.facedestangle

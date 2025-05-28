@@ -46,6 +46,9 @@ local StateVarsToCopy = {
     "canbejuggled",
     "bodysolid",
     "color",
+    "afterimageinterval",
+    "manachargerate",
+    "manadecayrate",
 }
 
 function StateMachine.start(self, statename, ...)
