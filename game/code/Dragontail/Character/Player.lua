@@ -116,7 +116,7 @@ knee -> knee -> spinthrow
 ]]
 function Player:doComboAttack(faceangle, heldenemy, special)
     local attacktype = self:getNextAttackType(heldenemy, special)
-    local attackdata = Database.get(attacktype)
+    local attackdata = self.attacktable[attacktype]
     if attackdata and attackdata.attackendscombo or self.comboindex >= 3 then
         self.comboindex = 1
     else
