@@ -236,8 +236,9 @@ function Stage.updateGoingToNextRoom()
     local camerapath = room.camerapath ---@type CameraPath
 
     local camhalfw, camhalfh = camera.width/2, camera.height/2
+    local centerx, centery = camera.x + camhalfw, camera.y + camhalfh
 
-    if not camerapath or camerapath:isEnd(camera.x + camhalfw, camera.y + camhalfh) then
+    if not camerapath or camerapath:isEnd(centerx, centery) then
         camera.velx = 0
         camera.vely = 0
         local enemies = Characters.getGroup("enemies")
@@ -248,23 +249,31 @@ function Stage.updateGoingToNextRoom()
         return
     end
 
-    local centerx, centery = 0, 0
+    local playerscenterx, playerscentery = 0, 0
     local players = Characters.getGroup("players")
     for _, player in ipairs(players) do
-        centerx = centerx + player.x
-        centery = centery + player.y
+        playerscenterx = playerscenterx + player.x
+        playerscentery = playerscentery + player.y
     end
-    centerx, centery = centerx/#players, centery/#players
+    playerscenterx, playerscentery = playerscenterx/#players, playerscentery/#players
 
-    local pathx1, pathy1, pathx2, pathy2
-    centerx, centery, pathx1, pathy1, pathx2, pathy2 = camerapath:getCameraCenter(centerx, centery)
+    local newcenterx, newcentery, pathx1, pathy1, pathx2, pathy2 = camerapath:getCameraCenter(playerscenterx, playerscentery)
 
-    local destx, desty = centerx - camhalfw, centery - camhalfh
-    if math.dot(destx - camera.x, desty - camera.y, pathx2-pathx1, pathy2-pathy1) < 0 then
+    if math.dot(newcenterx - centerx, newcentery - centery, pathx2-pathx1, pathy2-pathy1) < 0 then
         camera.velx, camera.vely = 0, 0
     else
-        camera.velx, camera.vely = Movement.getVelocity_speed(camera.x, camera.y, destx, desty, 8)
+        camera.velx, camera.vely = Movement.getVelocity_speed(centerx, centery, newcenterx, newcentery, 8)
     end
+
+    -- local bestdot = math.dot(camera.velx, camera.vely, pathx2-pathx1, pathy2-pathy1)
+    -- for _, player in ipairs(players) do
+    --     newcenterx, newcentery, pathx1, pathy1, pathx2, pathy2 =
+    --         camerapath:getCameraCenter(centerx + player.velx, centery + player.vely)
+    --     if math.dot(newcenterx - centerx, newcentery - centery, pathx2-pathx1, pathy2-pathy1) >= bestdot then
+    --         camera.velx = newcenterx - centerx
+    --         camera.vely = newcentery - centery
+    --     end
+    -- end
 end
 
 function Stage.fixedupdate()
