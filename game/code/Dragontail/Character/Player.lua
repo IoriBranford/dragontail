@@ -632,7 +632,7 @@ function Player:spinAttack(attackangle)
 end
 
 function Player:getReversalChargedAttack()
-    local chargedattack = not self.attackbutton.down and self:getChargedAttack(ChargeAttacks)
+    local chargedattack = self:getChargedAttack(ChargeAttacks)
     if chargedattack then
         local inx, iny = self:getJoystick()
         local angle = self.faceangle
@@ -647,16 +647,31 @@ function Player:duringGetUp()
     if self.sprintbutton.pressed then
         return "control"
     end
-    local chargedattack, angle = self:getReversalChargedAttack()
-    if chargedattack then
-        Mana.releaseCharge(self)
-        return chargedattack, angle
+    if not self.attackbutton.down then
+        local chargedattack, angle = self:getReversalChargedAttack()
+        if chargedattack then
+            Mana.releaseCharge(self)
+            return chargedattack, angle
+        end
     end
 end
 
 function Player:hurt(attacker)
     self.crosshair.visible = false
     return Fighter.hurt(self, attacker)
+end
+
+function Player:fall(attacker)
+    local nextstate, a, b, c, d, e = Fighter.fall(self, attacker)
+    if self.health <= 0 then
+        local chargedattack, angle = self:getReversalChargedAttack()
+        if chargedattack then
+            self.health = 10
+            Mana.releaseCharge(self)
+            return chargedattack, angle
+        end
+    end
+    return nextstate, a, b, c, d, e
 end
 
 function Player:aimThrow()
