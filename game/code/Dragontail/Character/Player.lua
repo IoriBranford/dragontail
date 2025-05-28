@@ -186,7 +186,6 @@ function Player:init()
     self.joystickx = Inputs.getAction("movex")
     self.joysticky = Inputs.getAction("movey")
     self.attackbutton = Inputs.getAction("attack")
-    self.fireattackbutton = Inputs.getAction("attack2")
     self.sprintbutton = Inputs.getAction("sprint")
     Fighter.init(self)
     self.inventory = Inventory()
@@ -428,7 +427,6 @@ function Player:control()
     while true do
         local inx, iny = self:getJoystick()
         local normalattackpressed, runpressed = self.attackbutton.pressed, self.sprintbutton.pressed
-        local fireattackpressed = self.fireattackbutton.pressed
         local rundown = self.sprintbutton.down
 
         local targetvelx, targetvely = 0, 0
@@ -487,19 +485,19 @@ function Player:control()
                 return chargedattack, self.facedestangle
             end
 
-            if normalattackpressed or fireattackpressed then
+            if normalattackpressed then
                 if self.weaponinhand then
                     local targetx, targety, targetz = findInstantThrowTarget(self, cos(self.facedestangle), sin(self.facedestangle))
                     return "throwWeapon", targetx, targety, targetz, 2, #self.inventory
                 end
 
-                if fireattackpressed then
-                    for _, attacktype in ipairs(RunningSpecialAttacks) do
-                        if Mana.canAffordAttack(self, attacktype) then
-                            return attacktype, atan2(vely, velx)
-                        end
-                    end
-                end
+                -- if fireattackpressed then
+                --     for _, attacktype in ipairs(RunningSpecialAttacks) do
+                --         if Mana.canAffordAttack(self, attacktype) then
+                --             return attacktype, atan2(vely, velx)
+                --         end
+                --     end
+                -- end
                 return "running-kick", atan2(vely, velx)
             end
 
@@ -543,13 +541,13 @@ function Player:control()
                 return chargedattack, self.facedestangle
             end
 
-            if normalattackpressed or fireattackpressed then
+            if normalattackpressed then
                 Face.updateTurnToDestAngle(self, pi)
                 if self.weaponinhand then
                     local targetx, targety, targetz = findInstantThrowTarget(self, cos(self.facedestangle), sin(self.facedestangle))
                     return "throwWeapon", targetx, targety, targetz, 2, 1
                 end
-                return self:doComboAttack(self.facedestangle, nil, fireattackpressed)
+                return self:doComboAttack(self.facedestangle)
             end
 
             local opponenttohold = HoldOpponent.findOpponentToHold(self, inx, iny)
@@ -609,11 +607,12 @@ function Player:spinAttack(attackangle)
         Face.faceAngle(self, faceangle, self.state and self.state.animation)
 
         yield()
-        if pressedattackbutton ~= self.fireattackbutton then
-            if self.fireattackbutton.pressed then
-                pressedattackbutton = self.fireattackbutton
-            elseif self.attackbutton.pressed then
-                pressedattackbutton = self.normalattackbutton
+        if pressedattackbutton ~= self.attackbutton then
+            -- if self.fireattackbutton.pressed then
+            --     pressedattackbutton = self.fireattackbutton
+            --else
+            if self.attackbutton.pressed then
+                pressedattackbutton = self.attackbutton
             end
         end
         tailangle = tailangle + spinvel
@@ -626,7 +625,7 @@ function Player:spinAttack(attackangle)
         if inx ~= 0 or iny ~= 0 then
             originalfaceangle = atan2(iny, inx)
         end
-        return self:doComboAttack(originalfaceangle, nil, pressedattackbutton == self.fireattackbutton)
+        return self:doComboAttack(originalfaceangle)
     end
     return "control"
 end
@@ -817,7 +816,6 @@ function Player:hold(enemy)
 
         local inx, iny = self:getJoystick()
         local normalattackpressed, runpressed = self.attackbutton.pressed, self.sprintbutton.pressed
-        local fireattackpressed = self.fireattackbutton.pressed
         local targetvelx, targetvely = 0, 0
         local speed = 2
         if inx ~= 0 or iny ~= 0 then
@@ -866,18 +864,18 @@ function Player:hold(enemy)
             Mana.releaseCharge(self)
             return chargedattack, holddestangle
         end
-        if fireattackpressed then
-            if Mana.canAffordAttack(self, "flaming-spinning-throw") then
-                Combo.reset(self)
-                return "flaming-spinning-throw", holdangle, enemy
-            end
-        end
-        if fireattackpressed or normalattackpressed and (inx ~= 0 or iny ~= 0) then
+        -- if fireattackpressed then
+        --     if Mana.canAffordAttack(self, "flaming-spinning-throw") then
+        --         Combo.reset(self)
+        --         return "flaming-spinning-throw", holdangle, enemy
+        --     end
+        -- end
+        if normalattackpressed and (inx ~= 0 or iny ~= 0) then
             Combo.reset(self)
             return "spinning-throw", holdangle, enemy
         end
         if normalattackpressed then
-            return self:doComboAttack(holdangle, enemy, fireattackpressed)
+            return self:doComboAttack(holdangle, enemy)
         end
     end
     StateMachine.start(enemy, "breakaway", self)
@@ -893,7 +891,6 @@ function Player:runWithEnemy(enemy)
         yield()
         local inx, iny = self:getJoystick()
         local normalattackpressed = self.attackbutton.pressed
-        local fireattackpressed = self.fireattackbutton.pressed
         local _, rundown = self.attackbutton.down, self.sprintbutton.down
 
         local targetvelx, targetvely = 0, 0
@@ -923,18 +920,18 @@ function Player:runWithEnemy(enemy)
             return chargedattack, self.facedestangle
         end
 
-        if normalattackpressed or fireattackpressed then
+        if normalattackpressed then
             enemy:stopAttack()
             HoldOpponent.stopHolding(self, enemy)
             enemy.canbeattacked = true
 
-            if fireattackpressed then
-                for _, attacktype in ipairs(RunningSpecialAttacks) do
-                    if Mana.canAffordAttack(self, attacktype) then
-                        return attacktype, self.faceangle
-                    end
-                end
-            end
+            -- if fireattackpressed then
+            --     for _, attacktype in ipairs(RunningSpecialAttacks) do
+            --         if Mana.canAffordAttack(self, attacktype) then
+            --             return attacktype, self.faceangle
+            --         end
+            --     end
+            -- end
 
             return "running-kick", self.faceangle
         end
@@ -1058,10 +1055,11 @@ function Player:straightAttack(angle, heldenemy)
     local lungespeed = self.attacklungespeed
     repeat
         yield()
-        if pressedattackbutton ~= self.fireattackbutton then
-            if self.fireattackbutton.pressed then
-                pressedattackbutton = self.fireattackbutton
-            elseif self.attackbutton.pressed then
+        if pressedattackbutton ~= self.attackbutton then
+            -- if self.fireattackbutton.pressed then
+            --     pressedattackbutton = self.fireattackbutton
+            -- else
+            if self.attackbutton.pressed then
                 pressedattackbutton = self.attackbutton
             end
         end
@@ -1088,7 +1086,7 @@ function Player:straightAttack(angle, heldenemy)
                 faceangle = atan2(iny, inx)
             end
         end
-        return self:doComboAttack(faceangle, heldenemy, pressedattackbutton == self.fireattackbutton)
+        return self:doComboAttack(faceangle, heldenemy)
     end
     if heldenemy and heldenemy.health > 0 then
         return "hold", heldenemy
