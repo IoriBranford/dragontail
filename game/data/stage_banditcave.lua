@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 50,
-  nextobjectid = 500,
+  nextlayerid = 51,
+  nextobjectid = 505,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -16265,15 +16265,15 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = -64, y = -64 },
+                { x = -64, y = -96 },
                 { x = -64, y = 32 },
                 { x = 32, y = 32 },
                 { x = 96, y = 96 },
                 { x = 96, y = 96 },
-                { x = 96, y = -64 }
+                { x = 96, y = -96 }
               },
               properties = {
-                ["bodyheight"] = 512,
+                ["bodyheight"] = 64,
                 ["bodysolid"] = true,
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
@@ -16292,12 +16292,12 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 0, y = 0 },
+                { x = 0, y = -32 },
                 { x = 0, y = 160 },
                 { x = 320, y = 160 },
                 { x = 352, y = 128 },
                 { x = 480, y = 128 },
-                { x = 480, y = 0 }
+                { x = 480, y = -32 }
               },
               properties = {
                 ["bodyheight"] = 64,
@@ -16452,56 +16452,64 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1392,
-              y = 176,
+              x = 1184,
+              y = 32,
               width = 64,
               height = 64,
               rotation = 0,
               gid = 5266,
               visible = true,
-              properties = {}
+              properties = {
+                ["z"] = 64
+              }
             },
             {
               id = 36,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1456,
-              y = 192,
+              x = 1256,
+              y = 56,
               width = 64,
               height = 64,
               rotation = 0,
               gid = 5266,
               visible = true,
-              properties = {}
+              properties = {
+                ["z"] = 64
+              }
             },
             {
               id = 20,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1424,
-              y = 272,
+              x = 1320,
+              y = 56,
               width = 64,
               height = 64,
               rotation = 0,
               gid = 5266,
               visible = true,
-              properties = {}
+              properties = {
+                ["z"] = 64
+              }
             },
             {
               id = 35,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1488,
-              y = 288,
+              x = 1392,
+              y = 32,
               width = 64,
               height = 64,
               rotation = 0,
               gid = 5266,
               visible = true,
-              properties = {}
+              properties = {
+                ["z"] = 64
+              }
             },
             {
               id = 493,
@@ -16565,20 +16573,6 @@ return {
               properties = {}
             },
             {
-              id = 34,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1664,
-              y = 184,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5266,
-              visible = true,
-              properties = {}
-            },
-            {
               id = 264,
               name = "",
               type = "",
@@ -16588,21 +16582,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 55,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1064,
-              y = 176,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5266,
+              gid = 5270,
               visible = true,
               properties = {}
             },
@@ -16616,7 +16596,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 5270,
               visible = true,
               properties = {}
             },
@@ -16732,12 +16712,12 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 0, y = 64 },
+                { x = 0, y = 32 },
                 { x = 0, y = 192 },
                 { x = 128, y = 192 },
                 { x = 160, y = 160 },
                 { x = 256, y = 160 },
-                { x = 256, y = 64 }
+                { x = 256, y = 32 }
               },
               properties = {
                 ["bodyheight"] = 64,
@@ -16753,16 +16733,16 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 1216,
-              y = -32,
+              y = -80,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 0, y = 0 },
-                { x = 0, y = 48 },
-                { x = 960, y = 48 },
-                { x = 960, y = 0 }
+                { x = 224, y = 0 },
+                { x = 224, y = 96 },
+                { x = 544, y = 96 },
+                { x = 544, y = 0 }
               },
               properties = {
                 ["bodyheight"] = 512,
@@ -17252,6 +17232,52 @@ return {
         {
           type = "objectgroup",
           draworder = "topdown",
+          id = 50,
+          name = "+spears",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = 5
+          },
+          objects = {
+            {
+              id = 500,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1360,
+              y = 264,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 501,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1872,
+              y = 232,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
           id = 49,
           name = "+shooters",
           class = "Room",
@@ -17262,7 +17288,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 5
+            ["donewhenenemiesleft"] = 6
           },
           objects = {
             {
@@ -17443,7 +17469,7 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = -160, y = -288 },
+                { x = -160, y = -320 },
                 { x = -160, y = -192 },
                 { x = 0, y = -192 },
                 { x = 32, y = -160 },
@@ -17453,7 +17479,7 @@ return {
                 { x = 128, y = -64 },
                 { x = 128, y = 0 },
                 { x = 160, y = 0 },
-                { x = 160, y = -288 }
+                { x = 160, y = -320 }
               },
               properties = {
                 ["bodyheight"] = 64,
@@ -17717,26 +17743,58 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1424,
-              y = 184,
+              x = 1568,
+              y = 256,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 5270,
               visible = true,
               properties = {}
+            },
+            {
+              id = 503,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1808,
+              y = -8,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
             },
             {
               id = 308,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1680,
-              y = 264,
+              x = 1936,
+              y = -8,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 5270,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 502,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1672,
+              y = 184,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5270,
               visible = true,
               properties = {}
             },
@@ -17946,6 +18004,32 @@ return {
               visible = false,
               properties = {
                 ["drawz"] = 2
+              }
+            },
+            {
+              id = 504,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 1216,
+              y = -80,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 768, y = 0 },
+                { x = 768, y = 96 },
+                { x = 960, y = 96 },
+                { x = 960, y = 0 }
+              },
+              properties = {
+                ["bodyheight"] = 512,
+                ["bodysolid"] = true,
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["linecolor"] = "#80ffffff",
+                ["z"] = 64
               }
             }
           }
