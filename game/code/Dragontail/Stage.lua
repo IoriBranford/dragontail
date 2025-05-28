@@ -305,7 +305,8 @@ function Stage.fixedupdateGui(gui)
     local healthpercent = player.health / player.maxhealth
     local hud = gui.gameplay.hud
 
-    gui.gameplay.gameover.visible = healthpercent <= 0 or player.state and player.state.state == "victory"
+    gui.gameplay.gameover.visible = player.state and
+        (player.state.state == "victory" or player.state.state == "defeat")
 
     hud.health:setPercent(healthpercent)
 
