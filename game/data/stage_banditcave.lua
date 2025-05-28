@@ -15812,7 +15812,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 3
+            ["donewhenenemiesleft"] = 2
           },
           objects = {
             {
@@ -15820,22 +15820,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1056,
-              y = 152,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5266,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 45,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1088,
-              y = 256,
+              x = 1072,
+              y = 160,
               width = 64,
               height = 64,
               rotation = 0,
@@ -15848,8 +15834,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 984,
-              y = 184,
+              x = 1176,
+              y = 240,
               width = 64,
               height = 64,
               rotation = 0,
@@ -16053,7 +16039,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 376,
+              x = 408,
               y = 160,
               width = 64,
               height = 64,
@@ -16067,7 +16053,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 432,
+              x = 464,
               y = 208,
               width = 64,
               height = 64,
@@ -16097,8 +16083,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 376,
-              y = 264,
+              x = 248,
+              y = 240,
               width = 64,
               height = 64,
               rotation = 0,
@@ -16153,8 +16139,22 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 456,
+              x = 272,
               y = 128,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 45,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1192,
+              y = 256,
               width = 64,
               height = 64,
               rotation = 0,
@@ -16177,7 +16177,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 4
+            ["donewhenenemiesleft"] = 3
           },
           objects = {
             {
@@ -16198,26 +16198,12 @@ return {
               properties = {}
             },
             {
-              id = 489,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1040,
-              y = 184,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5266,
-              visible = true,
-              properties = {}
-            },
-            {
               id = 490,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 976,
-              y = 168,
+              x = 1048,
+              y = 160,
               width = 64,
               height = 64,
               rotation = 0,
@@ -16230,8 +16216,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1072,
-              y = 280,
+              x = 1128,
+              y = 224,
               width = 64,
               height = 64,
               rotation = 0,
@@ -16244,8 +16230,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1008,
-              y = 264,
+              x = 1040,
+              y = 248,
               width = 64,
               height = 64,
               rotation = 0,
@@ -16322,7 +16308,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 8
+            ["donewhenenemiesleft"] = 5
           },
           objects = {
             {
@@ -16338,7 +16324,8 @@ return {
               visible = true,
               polyline = {
                 { x = 224, y = 0 },
-                { x = 416, y = 64 }
+                { x = 416, y = 64 },
+                { x = 640, y = 64 }
               },
               properties = {}
             },
@@ -16349,20 +16336,6 @@ return {
               shape = "rectangle",
               x = 1264,
               y = 192,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5266,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 54,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1200,
-              y = 176,
               width = 64,
               height = 64,
               rotation = 0,
@@ -16444,7 +16417,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 8
+            ["donewhenenemiesleft"] = 4
           },
           objects = {
             {
@@ -16454,22 +16427,6 @@ return {
               shape = "rectangle",
               x = 1184,
               y = 32,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5266,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
-              id = 36,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1256,
-              y = 56,
               width = 64,
               height = 64,
               rotation = 0,
@@ -16496,24 +16453,8 @@ return {
               }
             },
             {
-              id = 35,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1392,
-              y = 32,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5266,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
               id = 493,
-              name = "camerapath",
+              name = "camerapathDisabled",
               type = "CameraPath",
               shape = "polyline",
               x = 1136,
@@ -16551,34 +16492,6 @@ return {
               shape = "rectangle",
               x = 1616,
               y = 216,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5270,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 56,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1104,
-              y = 216,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5270,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 264,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1664,
-              y = 248,
               width = 64,
               height = 64,
               rotation = 0,
@@ -17242,23 +17155,9 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 5
+            ["donewhenenemiesleft"] = 4
           },
           objects = {
-            {
-              id = 500,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1360,
-              y = 264,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5270,
-              visible = true,
-              properties = {}
-            },
             {
               id = 501,
               name = "",
@@ -17288,7 +17187,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 6
+            ["donewhenenemiesleft"] = 5
           },
           objects = {
             {
@@ -17783,20 +17682,6 @@ return {
               properties = {
                 ["z"] = 64
               }
-            },
-            {
-              id = 502,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1672,
-              y = 184,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 5270,
-              visible = true,
-              properties = {}
             },
             {
               id = 436,
