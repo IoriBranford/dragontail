@@ -54,13 +54,9 @@ function Mana:hasChargeForAttack(attack)
     return attack and not attack.attackmanacost or self.manacharge >= attack.attackmanacost
 end
 
-function Mana:decayCharge(decay, chargedattack)
-    if type(chargedattack) == "string" then
-        chargedattack = self.attacktable[chargedattack]
-    end
-    if chargedattack and chargedattack.attackmanacost then
-        decay = math.max(0, math.min(decay, self.manacharge - chargedattack.attackmanacost))
-    end
+function Mana:decayCharge(decay)
+    local manaunits = math.floor(self.manacharge/self.manaunitsize)
+    decay = math.max(0, math.min(decay, self.manacharge - manaunits*self.manaunitsize))
     Mana.charge(self, -decay)
 end
 
