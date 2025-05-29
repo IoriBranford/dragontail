@@ -154,11 +154,11 @@
   "frameTags": [
    { "name": "thrownaxe3", "from": 0, "to": 7, "direction": "forward" },
    { "name": "thrownaxe1", "from": 0, "to": 7, "direction": "forward" },
+   { "name": "embedded3", "from": 5, "to": 5, "direction": "forward" },
+   { "name": "embedded2", "from": 7, "to": 7, "direction": "forward" },
    { "name": "thrownaxe2", "from": 8, "to": 15, "direction": "forward" },
    { "name": "thrownaxe0", "from": 8, "to": 15, "direction": "forward" },
    { "name": "embedded1", "from": 9, "to": 9, "direction": "forward" },
-   { "name": "embedded2", "from": 11, "to": 11, "direction": "forward" },
-   { "name": "embedded3", "from": 13, "to": 13, "direction": "forward" },
    { "name": "embedded0", "from": 15, "to": 15, "direction": "forward" },
    { "name": "inhand", "from": 16, "to": 16, "direction": "forward", "color": "#000000ff" },
    { "name": "onground", "from": 17, "to": 17, "direction": "forward", "color": "#000000ff" }
