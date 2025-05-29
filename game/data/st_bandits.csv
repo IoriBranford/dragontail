@@ -35,6 +35,8 @@ forge-fire,FALSE,FALSE,forge-fire,,,1,FALSE,FALSE,FALSE,,,0
 hurt,FALSE,stand,,hurt,Hurt,0,FALSE,FALSE,FALSE,4294967295,,0
 held,FALSE,stand,,held,Hurt,,TRUE,FALSE,FALSE,4294967295,,0
 knockedBack,FALSE,fall,,knockedBack,Hurt,,FALSE,FALSE,TRUE,,,0
+knockedBackBurnt,FALSE,fall,,knockedBack,Hurt,,FALSE,FALSE,TRUE,4280295456,,0
+knockedBackBurntJuggled,FALSE,fall,,knockedBack,Hurt,,FALSE,FALSE,FALSE,4280295456,,0
 wallBump,FALSE,fall,,wallBump,Hurt,,FALSE,FALSE,TRUE,,sounds/combat/bodybump.mp3,0
 thrown,FALSE,fall,human-thrown,thrown,spin,1,FALSE,FALSE,TRUE,,,0
 wallSlammed,FALSE,fall,,wallSlammed,Hurt,,FALSE,FALSE,TRUE,,sounds/combat/bodyslam.mp3,0
@@ -42,7 +44,7 @@ thrownRecover,FALSE,stand,,thrownRecover,FallKnees,0,FALSE,FALSE,FALSE,,sounds/c
 breakaway,FALSE,stand,,breakaway,,,FALSE,FALSE,FALSE,,sounds/combat/slap.mp3,0
 fall,FALSE,getup,,fall,,0,FALSE,FALSE,TRUE,,,0
 defeat,FALSE,FALSE,,defeat,,0,FALSE,FALSE,FALSE,,,0
-getup,18,stand,,getup,FallRiseToFeet,0,FALSE,FALSE,FALSE,,,0
+getup,18,stand,,getup,FallRiseToFeet,0,FALSE,FALSE,FALSE,4294967295,,0
 stand,FALSE,FALSE,,stand,Stand,,TRUE,TRUE,FALSE,,,0
 dodgeIncoming,FALSE,stand,,dodgeIncoming,Walk,,TRUE,TRUE,FALSE,,,0
 approach,FALSE,stand,,approach,Walk,,TRUE,TRUE,FALSE,,,0

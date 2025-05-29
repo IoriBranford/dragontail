@@ -12,6 +12,6 @@ bandit-boss-charge,,64,0.261799387799149,15,20,5,0,,30,194,16,0.25,,10,10,,,,,kn
 bandit-boss-thrust,,64,0.261799387799149,15,20,5,0,,nil,97,8,0.25,,8,5,,,,,knockedBack,knockedBack,,sounds/combat/cut2.mp3,nil,spark-hit,spark-guard,particle-blood,,FALSE,TRUE
 bandit-boss-spin-cw,,64,0.785398163397448,20,20,5,0.628318530717959,,20,116.5,10,0.5,0,5,5,,,,,knockedBack,knockedBack,,sounds/combat/cut2.mp3,nil,spark-hit,spark-guard,particle-blood,,FALSE,TRUE
 bandit-boss-spin-ccw,,64,0.785398163397448,20,20,5,-0.628318530717959,,20,116.5,10,0.5,0,5,5,,,,,knockedBack,knockedBack,,sounds/combat/cut2.mp3,nil,spark-hit,spark-guard,particle-blood,,FALSE,TRUE
-forge-fire,,36,1.5707963267949,999,20,,,,,,,,,5,5,,,,,knockedBack,knockedBack,,sounds/combat/firehit.mp3,,spark-hit,,,TRUE,4294904836 4294946828,FALSE
+forge-fire,,36,1.5707963267949,999,20,,,,,,,,,5,5,,,,,knockedBackBurntJuggled,knockedBackBurntJuggled,,sounds/combat/firehit.mp3,,spark-hit,,,TRUE,4294904836 4294946828,FALSE
 human-in-spinning-throw,,24,1.5707963267949,10,12,3,,,20,,,,,,5,,,,,knockedBack,knockedBack,,sounds/combat/hit2.mp3,,spark-hit,spark-guard,,,FALSE,TRUE
 human-in-flaming-spinning-throw,,32,1.5707963267949,10,6,3,,,20,,,,,,10,,,,,knockedBack,knockedBack,,sounds/combat/firehit.mp3,,spark-hit,spark-guard,,,4294904836 4294946828,TRUE

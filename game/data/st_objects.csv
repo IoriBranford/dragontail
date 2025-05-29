@@ -2,6 +2,8 @@ state,attack,action,animation,loopframe,canbeattacked,canbegrabbed,canbejuggled,
 hurt,,hurt,Hurt,0,FALSE,FALSE,FALSE,,4294967295,
 held,,held,Hurt,,TRUE,FALSE,FALSE,FALSE,4294967295,
 knockedBack,,knockedBack,Hurt,,FALSE,FALSE,TRUE,,,
+knockedBackBurnt,,knockedBack,Hurt,,FALSE,FALSE,TRUE,,4280295456,
+knockedBackBurntJuggled,,knockedBack,Hurt,,FALSE,FALSE,FALSE,,4280295456,
 wallBump,,wallBump,Hurt,,FALSE,FALSE,TRUE,,,sounds/combat/bodybump.mp3
 thrown,,thrown,spin,,FALSE,FALSE,TRUE,,,
 wallSlammed,,wallSlammed,Hurt,,FALSE,FALSE,TRUE,,,sounds/combat/bodyslam.mp3

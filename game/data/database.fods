@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <office:document xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.spreadsheet">
- <office:meta><dc:date>2025-05-28T22:08:24.772748712</dc:date><meta:editing-duration>P5DT40M51S</meta:editing-duration><meta:editing-cycles>1030</meta:editing-cycles><meta:generator>LibreOffice/24.2.7.2$Linux_X86_64 LibreOffice_project/420$Build-2</meta:generator><meta:document-statistic meta:table-count="13" meta:cell-count="3456" meta:object-count="0"/></office:meta>
+ <office:meta><dc:date>2025-05-29T13:06:26.713234627</dc:date><meta:editing-duration>P5DT1H2M7S</meta:editing-duration><meta:editing-cycles>1042</meta:editing-cycles><meta:generator>LibreOffice/24.2.7.2$Linux_X86_64 LibreOffice_project/420$Build-2</meta:generator><meta:document-statistic meta:table-count="13" meta:cell-count="3560" meta:object-count="0"/></office:meta>
  <office:settings>
   <config:config-item-set config:name="ooo:view-settings">
    <config:config-item config:name="VisibleAreaTop" config:type="int">0</config:config-item>
    <config:config-item config:name="VisibleAreaLeft" config:type="int">0</config:config-item>
-   <config:config-item config:name="VisibleAreaWidth" config:type="int">97686</config:config-item>
-   <config:config-item config:name="VisibleAreaHeight" config:type="int">9483</config:config-item>
+   <config:config-item config:name="VisibleAreaWidth" config:type="int">97532</config:config-item>
+   <config:config-item config:name="VisibleAreaHeight" config:type="int">7676</config:config-item>
    <config:config-item-map-indexed config:name="Views">
     <config:config-item-map-entry>
      <config:config-item config:name="ViewId" config:type="string">view1</config:config-item>
      <config:config-item-map-named config:name="Tables">
       <config:config-item-map-entry config:name="atk_Rose">
-       <config:config-item config:name="CursorPositionX" config:type="int">11</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">14</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">5</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">26</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">1</config:config-item>
@@ -25,7 +25,7 @@
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionBottom" config:type="int">1</config:config-item>
        <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
-       <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
+       <config:config-item config:name="ZoomValue" config:type="int">120</config:config-item>
        <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
        <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
@@ -34,19 +34,19 @@
        <config:config-item config:name="IgnoreBreakAfterMultilineField" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
       <config:config-item-map-entry config:name="atk_bandits">
-       <config:config-item config:name="CursorPositionX" config:type="int">27</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">17</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">4</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">14</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">1</config:config-item>
        <config:config-item config:name="VerticalSplitPosition" config:type="int">1</config:config-item>
        <config:config-item config:name="ActiveSplitRange" config:type="short">3</config:config-item>
        <config:config-item config:name="PositionLeft" config:type="int">0</config:config-item>
-       <config:config-item config:name="PositionRight" config:type="int">21</config:config-item>
+       <config:config-item config:name="PositionRight" config:type="int">1</config:config-item>
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionBottom" config:type="int">1</config:config-item>
        <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
-       <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
+       <config:config-item config:name="ZoomValue" config:type="int">120</config:config-item>
        <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
        <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
@@ -67,7 +67,7 @@
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionBottom" config:type="int">1</config:config-item>
        <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
-       <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
+       <config:config-item config:name="ZoomValue" config:type="int">120</config:config-item>
        <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
        <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
@@ -76,7 +76,7 @@
        <config:config-item config:name="IgnoreBreakAfterMultilineField" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
       <config:config-item-map-entry config:name="atk_projectiles">
-       <config:config-item config:name="CursorPositionX" config:type="int">4</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">12</config:config-item>
        <config:config-item config:name="CursorPositionY" config:type="int">1</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">2</config:config-item>
@@ -84,11 +84,11 @@
        <config:config-item config:name="VerticalSplitPosition" config:type="int">1</config:config-item>
        <config:config-item config:name="ActiveSplitRange" config:type="short">3</config:config-item>
        <config:config-item config:name="PositionLeft" config:type="int">0</config:config-item>
-       <config:config-item config:name="PositionRight" config:type="int">1</config:config-item>
+       <config:config-item config:name="PositionRight" config:type="int">9</config:config-item>
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionBottom" config:type="int">1</config:config-item>
        <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
-       <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
+       <config:config-item config:name="ZoomValue" config:type="int">120</config:config-item>
        <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
        <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
@@ -97,8 +97,8 @@
        <config:config-item config:name="IgnoreBreakAfterMultilineField" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
       <config:config-item-map-entry config:name="db_characters">
-       <config:config-item config:name="CursorPositionX" config:type="int">4</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">6</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">5</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">29</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">1</config:config-item>
@@ -109,7 +109,7 @@
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionBottom" config:type="int">1</config:config-item>
        <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
-       <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
+       <config:config-item config:name="ZoomValue" config:type="int">120</config:config-item>
        <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
        <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
@@ -130,7 +130,7 @@
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionBottom" config:type="int">1</config:config-item>
        <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
-       <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
+       <config:config-item config:name="ZoomValue" config:type="int">120</config:config-item>
        <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
        <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
@@ -151,7 +151,7 @@
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionBottom" config:type="int">3</config:config-item>
        <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
-       <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
+       <config:config-item config:name="ZoomValue" config:type="int">120</config:config-item>
        <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
        <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
@@ -172,7 +172,7 @@
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionBottom" config:type="int">1</config:config-item>
        <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
-       <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
+       <config:config-item config:name="ZoomValue" config:type="int">120</config:config-item>
        <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
        <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
@@ -193,7 +193,7 @@
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionBottom" config:type="int">1</config:config-item>
        <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
-       <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
+       <config:config-item config:name="ZoomValue" config:type="int">120</config:config-item>
        <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
        <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
@@ -202,19 +202,19 @@
        <config:config-item config:name="IgnoreBreakAfterMultilineField" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
       <config:config-item-map-entry config:name="st_Rose">
-       <config:config-item config:name="CursorPositionX" config:type="int">11</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">7</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">9</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">29</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">1</config:config-item>
        <config:config-item config:name="VerticalSplitPosition" config:type="int">1</config:config-item>
        <config:config-item config:name="ActiveSplitRange" config:type="short">3</config:config-item>
        <config:config-item config:name="PositionLeft" config:type="int">0</config:config-item>
-       <config:config-item config:name="PositionRight" config:type="int">9</config:config-item>
+       <config:config-item config:name="PositionRight" config:type="int">1</config:config-item>
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionBottom" config:type="int">1</config:config-item>
        <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
-       <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
+       <config:config-item config:name="ZoomValue" config:type="int">120</config:config-item>
        <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
        <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
@@ -223,8 +223,8 @@
        <config:config-item config:name="IgnoreBreakAfterMultilineField" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
       <config:config-item-map-entry config:name="st_bandits">
-       <config:config-item config:name="CursorPositionX" config:type="int">12</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">4</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">10</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">37</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">1</config:config-item>
@@ -233,9 +233,9 @@
        <config:config-item config:name="PositionLeft" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionRight" config:type="int">1</config:config-item>
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
-       <config:config-item config:name="PositionBottom" config:type="int">1</config:config-item>
+       <config:config-item config:name="PositionBottom" config:type="int">22</config:config-item>
        <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
-       <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
+       <config:config-item config:name="ZoomValue" config:type="int">120</config:config-item>
        <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
        <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
@@ -244,19 +244,19 @@
        <config:config-item config:name="IgnoreBreakAfterMultilineField" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
       <config:config-item-map-entry config:name="st_objects">
-       <config:config-item config:name="CursorPositionX" config:type="int">5</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">21</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">7</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">6</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">1</config:config-item>
        <config:config-item config:name="VerticalSplitPosition" config:type="int">1</config:config-item>
-       <config:config-item config:name="ActiveSplitRange" config:type="short">3</config:config-item>
+       <config:config-item config:name="ActiveSplitRange" config:type="short">2</config:config-item>
        <config:config-item config:name="PositionLeft" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionRight" config:type="int">1</config:config-item>
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionBottom" config:type="int">1</config:config-item>
        <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
-       <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
+       <config:config-item config:name="ZoomValue" config:type="int">120</config:config-item>
        <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
        <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
@@ -277,7 +277,7 @@
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionBottom" config:type="int">1</config:config-item>
        <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
-       <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
+       <config:config-item config:name="ZoomValue" config:type="int">120</config:config-item>
        <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
        <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
@@ -289,7 +289,7 @@
      <config:config-item config:name="ActiveTable" config:type="string">atk_bandits</config:config-item>
      <config:config-item config:name="HorizontalScrollbarWidth" config:type="int">1900</config:config-item>
      <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
-     <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
+     <config:config-item config:name="ZoomValue" config:type="int">120</config:config-item>
      <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
      <config:config-item config:name="ShowPageBreakPreview" config:type="boolean">false</config:config-item>
      <config:config-item config:name="ShowZeroValues" config:type="boolean">true</config:config-item>
@@ -348,7 +348,7 @@
    <config:config-item config:name="LoadReadonly" config:type="boolean">false</config:config-item>
    <config:config-item config:name="PrinterName" config:type="string">Brother_MFC_J1010DW</config:config-item>
    <config:config-item config:name="PrinterPaperFromSetup" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="PrinterSetup" config:type="base64Binary">7AH+/0Jyb3RoZXJfTUZDX0oxMDEwRFcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ1VQUzpCcm90aGVyX01GQ19KMTAxMERXAAAAAAAAAAAWAAMAwwAAAAAAAAAIAFZUAAAkbQAASm9iRGF0YSAxCnByaW50ZXI9QnJvdGhlcl9NRkNfSjEwMTBEVwpvcmllbnRhdGlvbj1Qb3J0cmFpdApjb3BpZXM9MQpjb2xsYXRlPWZhbHNlCm1hcmdpbmFkanVzdG1lbnQ9MCwwLCcwLDAKY29sb3JkZXB0aD0yNApjb2xvcmRldmljZT0wClBQRENvbnRleHREYXRhCklucHV0U2xvdDpBdXRvAER1cGxleDpOb25lAFBhZ2VTaXplOkxldHRlcgAAEgBDT01QQVRfRFVQTEVYX01PREUPAER1cGxleE1vZGU6Ok9mZgwAUFJJTlRFUl9OQU1FEwBCcm90aGVyX01GQ19KMTAxMERXCwBEUklWRVJfTkFNRRgAQ1VQUzpCcm90aGVyX01GQ19KMTAxMERX</config:config-item>
+   <config:config-item config:name="PrinterSetup" config:type="base64Binary">7AH+/0Jyb3RoZXJfTUZDX0oxMDEwRFcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ1VQUzpCcm90aGVyX01GQ19KMTAxMERXAAAAAAAAAAAWAAMAwwAAAAAAAAAIAFZUAAAkbQAASm9iRGF0YSAxCnByaW50ZXI9QnJvdGhlcl9NRkNfSjEwMTBEVwpvcmllbnRhdGlvbj1Qb3J0cmFpdApjb3BpZXM9MQpjb2xsYXRlPWZhbHNlCm1hcmdpbmFkanVzdG1lbnQ9MCwwLCcwLDAKY29sb3JkZXB0aD0yNApjb2xvcmRldmljZT0wClBQRENvbnRleHREYXRhClBhZ2VTaXplOkxldHRlcgBEdXBsZXg6Tm9uZQBJbnB1dFNsb3Q6QXV0bwAAEgBDT01QQVRfRFVQTEVYX01PREUPAER1cGxleE1vZGU6Ok9mZgwAUFJJTlRFUl9OQU1FEwBCcm90aGVyX01GQ19KMTAxMERXCwBEUklWRVJfTkFNRRgAQ1VQUzpCcm90aGVyX01GQ19KMTAxMERX</config:config-item>
    <config:config-item config:name="RasterIsVisible" config:type="boolean">false</config:config-item>
    <config:config-item config:name="RasterResolutionX" config:type="int">1270</config:config-item>
    <config:config-item config:name="RasterResolutionY" config:type="int">1270</config:config-item>
@@ -442,6 +442,7 @@ Sub ExportCSV
 End Sub
 
 
+      
       
       
       
@@ -1034,7 +1035,7 @@ End Sub
    <style:table-column-properties fo:break-before="auto" style:column-width="1.9752in"/>
   </style:style>
   <style:style style:name="co121" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="1.6701in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.8583in"/>
   </style:style>
   <style:style style:name="co122" style:family="table-column">
    <style:table-column-properties fo:break-before="auto" style:column-width="1.302in"/>
@@ -1055,7 +1056,7 @@ End Sub
    <style:table-column-properties fo:break-before="auto" style:column-width="2.0744in"/>
   </style:style>
   <style:style style:name="co128" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="1.6835in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.939in"/>
   </style:style>
   <style:style style:name="co129" style:family="table-column">
    <style:table-column-properties fo:break-before="auto" style:column-width="1.7591in"/>
@@ -1215,7 +1216,7 @@ End Sub
      <text:p><text:sheet-name>???</text:sheet-name><text:s/>(<text:title>???</text:title>)</text:p>
     </style:region-left>
     <style:region-right>
-     <text:p><text:date style:data-style-name="N2" text:date-value="2025-05-28">00/00/0000</text:date>, <text:time style:data-style-name="N2" text:time-value="21:53:36.708314631">00:00:00</text:time></text:p>
+     <text:p><text:date style:data-style-name="N2" text:date-value="2025-05-29">00/00/0000</text:date>, <text:time style:data-style-name="N2" text:time-value="12:45:05.567860671">00:00:00</text:time></text:p>
     </style:region-right>
    </style:header>
    <style:header-left style:display="false"/>
@@ -5961,7 +5962,7 @@ End Sub
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="4"/>
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
-      <text:p>knockedBack</text:p>
+      <text:p>knockedBackBurntJuggled</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -6204,7 +6205,7 @@ End Sub
       <text:p>projectileShatter</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
-      <text:p>knockedBack</text:p>
+      <text:p>knockedBackBurnt</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>sounds/combat/firehit.mp3</text:p>
@@ -6259,7 +6260,7 @@ End Sub
       <text:p>projectileShatter</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
-      <text:p>knockedBack</text:p>
+      <text:p>knockedBackBurnt</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>sounds/combat/firehit.mp3</text:p>
@@ -7922,6 +7923,69 @@ End Sub
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>knockedBackBurnt</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>fall</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>knockedBack</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+      <text:p>Hurt</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:number-columns-repeated="2" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
+      <text:p>TRUE</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6" table:formula="of:=ORG.LIBREOFFICE.COLOR(32;32;32;255)" office:value-type="float" office:value="4280295456" calcext:value-type="float">
+      <text:p>4280295456</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="25"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>knockedBackBurntJuggled</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>fall</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>knockedBack</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+      <text:p>Hurt</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6" table:formula="of:=ORG.LIBREOFFICE.COLOR(32;32;32;255)" office:value-type="float" office:value="4280295456" calcext:value-type="float">
+      <text:p>4280295456</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="25"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>wallBump</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
@@ -8157,7 +8221,10 @@ End Sub
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:style-name="ce6" table:formula="of:=ORG.LIBREOFFICE.COLOR(255;255;255;255)" office:value-type="float" office:value="4294967295" calcext:value-type="float">
+      <text:p>4294967295</text:p>
+     </table:table-cell>
+     <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
@@ -9107,6 +9174,51 @@ End Sub
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>knockedBackBurnt</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>knockedBack</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+      <text:p>Hurt</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:number-columns-repeated="2" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
+      <text:p>TRUE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:style-name="ce6" table:formula="of:=ORG.LIBREOFFICE.COLOR(32;32;32;255)" office:value-type="float" office:value="4280295456" calcext:value-type="float">
+      <text:p>4280295456</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1014"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>knockedBackBurntJuggled</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>knockedBack</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+      <text:p>Hurt</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:style-name="ce6" table:formula="of:=ORG.LIBREOFFICE.COLOR(32;32;32;255)" office:value-type="float" office:value="4280295456" calcext:value-type="float">
+      <text:p>4280295456</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1014"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>wallBump</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -9411,7 +9523,7 @@ End Sub
     <table:table-column table:style-name="co34" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co132" table:default-cell-style-name="ce4"/>
     <table:table-column table:style-name="co69" table:default-cell-style-name="ce4"/>
-    <table:table-column table:style-name="co18" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co18" table:number-columns-repeated="3" table:default-cell-style-name="ce4"/>
     <table:table-column table:style-name="co133" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co134" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co135" table:default-cell-style-name="Default"/>
@@ -9441,6 +9553,12 @@ End Sub
      </table:table-cell>
      <table:table-cell table:style-name="Default" office:value-type="string" calcext:value-type="string">
       <text:p>canbegrabbed</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="string" calcext:value-type="string">
+      <text:p>canbejuggled</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="string" calcext:value-type="string">
+      <text:p>color</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Default" office:value-type="string" calcext:value-type="string">
       <text:p>bodysolid</text:p>
@@ -9478,6 +9596,10 @@ End Sub
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>sounds/combat/swing1.mp3</text:p>
      </table:table-cell>
@@ -9504,6 +9626,10 @@ End Sub
       <text:p>1</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -9534,6 +9660,10 @@ End Sub
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>sounds/combat/swing2.mp3</text:p>
      </table:table-cell>
@@ -9562,6 +9692,10 @@ End Sub
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>sounds/combat/swing3.mp3</text:p>
      </table:table-cell>
@@ -9588,6 +9722,10 @@ End Sub
       <text:p>1</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -9621,6 +9759,10 @@ End Sub
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>sounds/combat/swing1.mp3</text:p>
      </table:table-cell>
@@ -9649,6 +9791,10 @@ End Sub
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>sounds/combat/swing1.mp3</text:p>
      </table:table-cell>
@@ -9675,6 +9821,10 @@ End Sub
       <text:p>1</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -9709,6 +9859,10 @@ End Sub
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
@@ -9735,6 +9889,10 @@ End Sub
       <text:p>1</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -9769,6 +9927,10 @@ End Sub
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
@@ -9792,6 +9954,10 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -9821,6 +9987,10 @@ End Sub
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
@@ -9844,6 +10014,10 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -9873,6 +10047,10 @@ End Sub
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
@@ -9899,6 +10077,10 @@ End Sub
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
@@ -9922,6 +10104,10 @@ End Sub
       <text:p>1</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -9952,6 +10138,10 @@ End Sub
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>sounds/combat/swing2.mp3</text:p>
      </table:table-cell>
@@ -9978,6 +10168,10 @@ End Sub
       <text:p>1</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -10013,6 +10207,10 @@ End Sub
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
@@ -10041,6 +10239,10 @@ End Sub
      <table:table-cell table:number-columns-repeated="2" office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
       <text:p>TRUE</text:p>
      </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
      <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
@@ -10077,6 +10279,10 @@ End Sub
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
@@ -10103,6 +10309,10 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -10133,6 +10343,10 @@ End Sub
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>sounds/player/attack2.mp3</text:p>
      </table:table-cell>
@@ -10156,6 +10370,10 @@ End Sub
       <text:p>1</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -10184,6 +10402,10 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -10224,6 +10446,10 @@ End Sub
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
@@ -10252,7 +10478,97 @@ End Sub
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
       <text:p>1</text:p>
      </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
+      <text:p>TRUE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>sounds/player/damage3.mp3</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
+      <text:p>4</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="8"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>knockedBackBurnt</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>knockedBack</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>fall</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+      <text:p>Hurt</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
+      <text:p>TRUE</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6" table:formula="of:=ORG.LIBREOFFICE.COLOR(32;32;32;255)" office:value-type="float" office:value="4280295456" calcext:value-type="float">
+      <text:p>4280295456</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>sounds/player/damage3.mp3</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
+      <text:p>4</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="8"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>knockedBackBurntJuggled</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>knockedBack</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>fall</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+      <text:p>Hurt</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6" table:formula="of:=ORG.LIBREOFFICE.COLOR(32;32;32;255)" office:value-type="float" office:value="4280295456" calcext:value-type="float">
+      <text:p>4280295456</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -10286,7 +10602,14 @@ End Sub
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
       <text:p>1</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:number-columns-repeated="2" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
+      <text:p>TRUE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -10322,7 +10645,14 @@ End Sub
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
       <text:p>1</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:number-columns-repeated="2" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
+      <text:p>TRUE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -10356,7 +10686,14 @@ End Sub
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
       <text:p>1</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:number-columns-repeated="2" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
+      <text:p>TRUE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -10393,6 +10730,10 @@ End Sub
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>sounds/combat/slide.mp3</text:p>
      </table:table-cell>
@@ -10427,6 +10768,10 @@ End Sub
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>sounds/combat/slap.mp3</text:p>
      </table:table-cell>
@@ -10456,7 +10801,14 @@ End Sub
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:number-columns-repeated="2" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
+      <text:p>TRUE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -10487,6 +10839,10 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -10521,6 +10877,12 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6" table:formula="of:=ORG.LIBREOFFICE.COLOR(255;255;255;255)" office:value-type="float" office:value="4294967295" calcext:value-type="float">
+      <text:p>4294967295</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -10558,6 +10920,10 @@ End Sub
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
@@ -10581,6 +10947,10 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
