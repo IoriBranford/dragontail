@@ -358,10 +358,10 @@ function Enemy:executeAttack()
             self:stopAttack()
         else
             self.color = self:getAttackFlashColor(t)
+            self:makePeriodicAfterImage(t, self.afterimageinterval)
         end
         yield()
         if self.velx ~= 0 or self.vely ~= 0 then
-            self:makePeriodicAfterImage(t, self.afterimageinterval)
             Body.keepInBounds(self)
         end
     end
