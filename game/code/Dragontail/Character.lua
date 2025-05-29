@@ -75,12 +75,19 @@ function Character:makeAfterImage()
     local afterimage = Characters.spawn({
         x = self.x,
         y = self.y,
+        z = self.z,
         asefile = self.asefile,
         spriteoriginx = self.spriteoriginx,
         spriteoriginy = self.spriteoriginy,
         type = "afterimage"
     })
     afterimage:setAseAnimation(self.aseanimation, self.animationframe)
+end
+
+function Character:makePeriodicAfterImage(t, interval)
+    if (interval or 0) ~= 0 and t % interval == 0 then
+        self:makeAfterImage()
+    end
 end
 
 Character.accelerate = Body.accelerate
