@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <office:document xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.spreadsheet">
- <office:meta><dc:date>2025-05-29T15:55:30.590027248</dc:date><meta:editing-duration>P5DT1H13M37S</meta:editing-duration><meta:editing-cycles>1045</meta:editing-cycles><meta:generator>LibreOffice/24.2.7.2$Linux_X86_64 LibreOffice_project/420$Build-2</meta:generator><meta:document-statistic meta:table-count="13" meta:cell-count="3561" meta:object-count="0"/></office:meta>
+ <office:meta><dc:date>2025-05-29T16:23:41.000474366</dc:date><meta:editing-duration>P5DT1H16M47S</meta:editing-duration><meta:editing-cycles>1046</meta:editing-cycles><meta:generator>LibreOffice/24.2.7.2$Linux_X86_64 LibreOffice_project/420$Build-2</meta:generator><meta:document-statistic meta:table-count="13" meta:cell-count="3562" meta:object-count="0"/></office:meta>
  <office:settings>
   <config:config-item-set config:name="ooo:view-settings">
    <config:config-item config:name="VisibleAreaTop" config:type="int">0</config:config-item>
    <config:config-item config:name="VisibleAreaLeft" config:type="int">0</config:config-item>
-   <config:config-item config:name="VisibleAreaWidth" config:type="int">97532</config:config-item>
-   <config:config-item config:name="VisibleAreaHeight" config:type="int">7676</config:config-item>
+   <config:config-item config:name="VisibleAreaWidth" config:type="int">46224</config:config-item>
+   <config:config-item config:name="VisibleAreaHeight" config:type="int">1355</config:config-item>
    <config:config-item-map-indexed config:name="Views">
     <config:config-item-map-entry>
      <config:config-item config:name="ViewId" config:type="string">view1</config:config-item>
@@ -265,15 +265,15 @@
        <config:config-item config:name="IgnoreBreakAfterMultilineField" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
       <config:config-item-map-entry config:name="st_projectiles">
-       <config:config-item config:name="CursorPositionX" config:type="int">9</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">3</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">3</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">15</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">1</config:config-item>
        <config:config-item config:name="VerticalSplitPosition" config:type="int">1</config:config-item>
        <config:config-item config:name="ActiveSplitRange" config:type="short">3</config:config-item>
        <config:config-item config:name="PositionLeft" config:type="int">0</config:config-item>
-       <config:config-item config:name="PositionRight" config:type="int">5</config:config-item>
+       <config:config-item config:name="PositionRight" config:type="int">1</config:config-item>
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionBottom" config:type="int">1</config:config-item>
        <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
@@ -286,7 +286,7 @@
        <config:config-item config:name="IgnoreBreakAfterMultilineField" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
      </config:config-item-map-named>
-     <config:config-item config:name="ActiveTable" config:type="string">atk_objects</config:config-item>
+     <config:config-item config:name="ActiveTable" config:type="string">st_projectiles</config:config-item>
      <config:config-item config:name="HorizontalScrollbarWidth" config:type="int">1900</config:config-item>
      <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
      <config:config-item config:name="ZoomValue" config:type="int">120</config:config-item>
@@ -348,7 +348,7 @@
    <config:config-item config:name="LoadReadonly" config:type="boolean">false</config:config-item>
    <config:config-item config:name="PrinterName" config:type="string">Brother_MFC_J1010DW</config:config-item>
    <config:config-item config:name="PrinterPaperFromSetup" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="PrinterSetup" config:type="base64Binary">7AH+/0Jyb3RoZXJfTUZDX0oxMDEwRFcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ1VQUzpCcm90aGVyX01GQ19KMTAxMERXAAAAAAAAAAAWAAMAwwAAAAAAAAAIAFZUAAAkbQAASm9iRGF0YSAxCnByaW50ZXI9QnJvdGhlcl9NRkNfSjEwMTBEVwpvcmllbnRhdGlvbj1Qb3J0cmFpdApjb3BpZXM9MQpjb2xsYXRlPWZhbHNlCm1hcmdpbmFkanVzdG1lbnQ9MCwwLCcwLDAKY29sb3JkZXB0aD0yNApjb2xvcmRldmljZT0wClBQRENvbnRleHREYXRhCklucHV0U2xvdDpBdXRvAER1cGxleDpOb25lAFBhZ2VTaXplOkxldHRlcgAAEgBDT01QQVRfRFVQTEVYX01PREUPAER1cGxleE1vZGU6Ok9mZgwAUFJJTlRFUl9OQU1FEwBCcm90aGVyX01GQ19KMTAxMERXCwBEUklWRVJfTkFNRRgAQ1VQUzpCcm90aGVyX01GQ19KMTAxMERX</config:config-item>
+   <config:config-item config:name="PrinterSetup" config:type="base64Binary">7AH+/0Jyb3RoZXJfTUZDX0oxMDEwRFcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ1VQUzpCcm90aGVyX01GQ19KMTAxMERXAAAAAAAAAAAWAAMAwwAAAAAAAAAIAFZUAAAkbQAASm9iRGF0YSAxCnByaW50ZXI9QnJvdGhlcl9NRkNfSjEwMTBEVwpvcmllbnRhdGlvbj1Qb3J0cmFpdApjb3BpZXM9MQpjb2xsYXRlPWZhbHNlCm1hcmdpbmFkanVzdG1lbnQ9MCwwLCcwLDAKY29sb3JkZXB0aD0yNApjb2xvcmRldmljZT0wClBQRENvbnRleHREYXRhClBhZ2VTaXplOkxldHRlcgBEdXBsZXg6Tm9uZQBJbnB1dFNsb3Q6QXV0bwAAEgBDT01QQVRfRFVQTEVYX01PREUPAER1cGxleE1vZGU6Ok9mZgwAUFJJTlRFUl9OQU1FEwBCcm90aGVyX01GQ19KMTAxMERXCwBEUklWRVJfTkFNRRgAQ1VQUzpCcm90aGVyX01GQ19KMTAxMERX</config:config-item>
    <config:config-item config:name="RasterIsVisible" config:type="boolean">false</config:config-item>
    <config:config-item config:name="RasterResolutionX" config:type="int">1270</config:config-item>
    <config:config-item config:name="RasterResolutionY" config:type="int">1270</config:config-item>
@@ -442,6 +442,7 @@ Sub ExportCSV
 End Sub
 
 
+      
       
       
       
@@ -726,9 +727,6 @@ End Sub
   <style:style style:name="co17" style:family="table-column">
    <style:table-column-properties fo:break-before="auto" style:column-width="2.0354in"/>
   </style:style>
-  <style:style style:name="co18" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="0.889in"/>
-  </style:style>
   <style:style style:name="co19" style:family="table-column">
    <style:table-column-properties fo:break-before="auto" style:column-width="1.5484in"/>
   </style:style>
@@ -779,6 +777,9 @@ End Sub
   </style:style>
   <style:style style:name="co35" style:family="table-column">
    <style:table-column-properties fo:break-before="auto" style:column-width="1.8228in"/>
+  </style:style>
+  <style:style style:name="co18" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="0.889in"/>
   </style:style>
   <style:style style:name="co36" style:family="table-column">
    <style:table-column-properties fo:break-before="auto" style:column-width="1.6618in"/>
@@ -1041,12 +1042,6 @@ End Sub
   <style:style style:name="co122" style:family="table-column">
    <style:table-column-properties fo:break-before="auto" style:column-width="2.4661in"/>
   </style:style>
-  <style:style style:name="co123" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="1.8335in"/>
-  </style:style>
-  <style:style style:name="co124" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="1.9752in"/>
-  </style:style>
   <style:style style:name="co125" style:family="table-column">
    <style:table-column-properties fo:break-before="auto" style:column-width="1.8583in"/>
   </style:style>
@@ -1170,6 +1165,12 @@ End Sub
   <style:style style:name="co165" style:family="table-column">
    <style:table-column-properties fo:break-before="auto" style:column-width="1.4047in"/>
   </style:style>
+  <style:style style:name="co166" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.8335in"/>
+  </style:style>
+  <style:style style:name="co167" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.9752in"/>
+  </style:style>
   <style:style style:name="ro1" style:family="table-row">
    <style:table-row-properties style:row-height="0.178in" fo:break-before="auto" style:use-optimal-row-height="true"/>
   </style:style>
@@ -1185,9 +1186,12 @@ End Sub
   <number:text-style style:name="N100">
    <number:text-content/>
   </number:text-style>
-  <style:style style:name="ce5" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N100"/>
   <style:style style:name="ce4" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N99"/>
+  <style:style style:name="ce5" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N100"/>
   <style:style style:name="ce6" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N0"/>
+  <style:style style:name="ce7" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N100"/>
+  <style:style style:name="ce8" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N99"/>
+  <style:style style:name="ce9" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N0"/>
   <style:page-layout style:name="pm1">
    <style:page-layout-properties style:writing-mode="lr-tb"/>
    <style:header-style>
@@ -1211,6 +1215,9 @@ End Sub
    </style:footer-style>
   </style:page-layout>
   <style:style style:name="T1" style:family="text">
+   <style:text-properties style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Liberation Sans" fo:font-size="10pt" fo:language="en" fo:country="US" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:text-underline-mode="continuous" style:text-overline-mode="continuous" style:text-line-through-mode="continuous" style:font-name-asian="Microsoft YaHei" style:font-size-asian="10pt" style:language-asian="zh" style:country-asian="CN" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-name-complex="Arial" style:font-size-complex="10pt" style:language-complex="hi" style:country-complex="IN" style:font-style-complex="normal" style:font-weight-complex="normal" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+  </style:style>
+  <style:style style:name="T2" style:family="text">
    <style:text-properties style:font-name="Liberation Sans" fo:font-size="10pt" fo:font-weight="normal" style:text-underline-style="none" style:text-underline-color="font-color" style:text-line-through-type="none" fo:font-style="normal" style:text-outline="false" fo:text-shadow="none" style:text-line-through-mode="continuous" fo:language="en" fo:country="US" style:language-asian="zh" style:country-asian="CN" style:language-complex="hi" style:country-complex="IN" style:font-name-asian="Microsoft YaHei" style:font-name-complex="Arial" style:font-size-asian="10pt" style:font-size-complex="10pt" style:font-weight-asian="normal" style:font-weight-complex="normal" style:font-style-asian="normal" style:font-style-complex="normal" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
   </style:style>
  </office:automatic-styles>
@@ -1229,7 +1236,7 @@ End Sub
      <text:p><text:sheet-name>???</text:sheet-name><text:s/>(<text:title>???</text:title>)</text:p>
     </style:region-left>
     <style:region-right>
-     <text:p><text:date style:data-style-name="N2" text:date-value="2025-05-29">00/00/0000</text:date>, <text:time style:data-style-name="N2" text:time-value="15:43:59.254957890">00:00:00</text:time></text:p>
+     <text:p><text:date style:data-style-name="N2" text:date-value="2025-05-29">00/00/0000</text:date>, <text:time style:data-style-name="N2" text:time-value="16:20:30.692334797">00:00:00</text:time></text:p>
     </style:region-right>
    </style:header>
    <style:header-left style:display="false"/>
@@ -2212,9 +2219,9 @@ End Sub
     <table:table-column table:style-name="co37" table:number-columns-repeated="2" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co38" table:number-columns-repeated="2" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co39" table:number-columns-repeated="2" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co40" table:default-cell-style-name="ce5"/>
-    <table:table-column table:style-name="co41" table:default-cell-style-name="ce5"/>
-    <table:table-column table:style-name="co42" table:default-cell-style-name="ce5"/>
+    <table:table-column table:style-name="co40" table:default-cell-style-name="ce7"/>
+    <table:table-column table:style-name="co41" table:default-cell-style-name="ce7"/>
+    <table:table-column table:style-name="co42" table:default-cell-style-name="ce7"/>
     <table:table-column table:style-name="co41" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co38" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co43" table:default-cell-style-name="Default"/>
@@ -2530,9 +2537,9 @@ End Sub
      <table:table-cell office:value-type="float" office:value="16" calcext:value-type="float">
       <text:p>16</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
      <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
      <table:table-cell office:value-type="float" office:value="12" calcext:value-type="float">
       <text:p>12</text:p>
      </table:table-cell>
@@ -2577,9 +2584,9 @@ End Sub
      <table:table-cell office:value-type="float" office:value="24" calcext:value-type="float">
       <text:p>24</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
      <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
      <table:table-cell office:value-type="float" office:value="12" calcext:value-type="float">
       <text:p>12</text:p>
      </table:table-cell>
@@ -2627,7 +2634,7 @@ End Sub
       <text:p>true</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce7" office:value-type="string" calcext:value-type="string">
       <text:p>TRUE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="3" calcext:value-type="float">
@@ -2726,7 +2733,7 @@ End Sub
       <text:p>true</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce7" office:value-type="string" calcext:value-type="string">
       <text:p>TRUE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
@@ -2833,7 +2840,7 @@ End Sub
       <text:p>true</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce7" office:value-type="string" calcext:value-type="string">
       <text:p>TRUE</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -2954,7 +2961,7 @@ End Sub
       <text:p>true</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce7" office:value-type="string" calcext:value-type="string">
       <text:p>TRUE</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -3018,7 +3025,7 @@ End Sub
       <text:p>true</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce7" office:value-type="string" calcext:value-type="string">
       <text:p>TRUE</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -3082,7 +3089,7 @@ End Sub
       <text:p>true</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce7" office:value-type="string" calcext:value-type="string">
       <text:p>TRUE</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -3378,7 +3385,7 @@ End Sub
       <text:p>true</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce7" office:value-type="string" calcext:value-type="string">
       <text:p>TRUE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="3" calcext:value-type="float">
@@ -3494,12 +3501,12 @@ End Sub
      <table:table-cell office:value-type="float" office:value="16" calcext:value-type="float">
       <text:p>16</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>true</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="5" calcext:value-type="float">
@@ -3571,7 +3578,7 @@ End Sub
       <text:p>true</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce7" office:value-type="string" calcext:value-type="string">
       <text:p>TRUE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="5" calcext:value-type="float">
@@ -3677,12 +3684,12 @@ End Sub
      <table:table-cell table:number-columns-repeated="2" office:value-type="float" office:value="2" calcext:value-type="float">
       <text:p>2</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>true</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="15" calcext:value-type="float">
@@ -3790,7 +3797,7 @@ End Sub
       <text:p>true</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce7" office:value-type="string" calcext:value-type="string">
       <text:p>TRUE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="5" calcext:value-type="float">
@@ -3896,12 +3903,12 @@ End Sub
      <table:table-cell office:value-type="float" office:value="8" calcext:value-type="float">
       <text:p>8</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>true</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="10" calcext:value-type="float">
@@ -4029,7 +4036,7 @@ End Sub
       <text:p>true</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce7" office:value-type="string" calcext:value-type="string">
       <text:p>TRUE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
@@ -4174,12 +4181,12 @@ End Sub
      <table:table-cell office:value-type="float" office:value="2" calcext:value-type="float">
       <text:p>2</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>true</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="12" calcext:value-type="float">
@@ -4316,7 +4323,7 @@ End Sub
      <table:table-cell office:value-type="float" office:value="48" calcext:value-type="float">
       <text:p>48</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
       <text:p>TRUE</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Default" table:number-columns-repeated="2"/>
@@ -4416,7 +4423,7 @@ End Sub
     <table:table-column table:style-name="co77" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co78" table:number-columns-repeated="2" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co79" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co18" table:default-cell-style-name="ce6"/>
+    <table:table-column table:style-name="co18" table:default-cell-style-name="ce9"/>
     <table:table-column table:style-name="co80" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co18" table:number-columns-repeated="2" table:default-cell-style-name="Default"/>
     <table:table-row table:style-name="ro1">
@@ -5027,7 +5034,7 @@ End Sub
      <table:table-cell office:value-type="float" office:value="20" calcext:value-type="float">
       <text:p>20</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
       <text:p>TRUE</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
@@ -5087,13 +5094,12 @@ End Sub
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell table:number-columns-repeated="7"/>
-     <table:table-cell table:style-name="ce6"/>
+     <table:table-cell table:style-name="ce9"/>
      <table:table-cell table:number-columns-repeated="8"/>
-     <table:table-cell table:style-name="ce4" table:number-columns-repeated="2"/>
+     <table:table-cell table:style-name="ce8" table:number-columns-repeated="2"/>
     </table:table-row>
    </table:table>
    <table:table table:name="atk_bandits" table:style-name="ta1">
-    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co94" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co95" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co82" table:default-cell-style-name="Default"/>
@@ -5119,8 +5125,8 @@ End Sub
     <table:table-column table:style-name="co89" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co102" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co95" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co103" table:default-cell-style-name="ce4"/>
-    <table:table-column table:style-name="co18" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co103" table:default-cell-style-name="ce8"/>
+    <table:table-column table:style-name="co18" table:default-cell-style-name="ce8"/>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>attacktype</text:p>
@@ -5298,7 +5304,7 @@ End Sub
       <text:p>0.5</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:style-name="ce6" office:value-type="float" office:value="10" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" office:value-type="float" office:value="10" calcext:value-type="float">
       <text:p>10</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="4"/>
@@ -5396,7 +5402,7 @@ End Sub
       <text:p>3</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="8"/>
-     <table:table-cell table:style-name="ce6" office:value-type="float" office:value="5" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" office:value-type="float" office:value="5" calcext:value-type="float">
       <text:p>5</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="4"/>
@@ -5447,7 +5453,7 @@ End Sub
       <text:p>10</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -5506,7 +5512,7 @@ End Sub
       <text:p>10</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
       <text:p>TRUE</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -5556,7 +5562,7 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -5606,7 +5612,7 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -5656,7 +5662,7 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -5899,7 +5905,7 @@ End Sub
      </table:table-cell>
     </table:table-row>
     <table:table-row table:style-name="ro1">
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">bandit-boss-spin</text:span>-ccw</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T2">bandit-boss-spin</text:span>-ccw</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="64" calcext:value-type="float">
@@ -5998,7 +6004,7 @@ End Sub
       <text:p>spark-hit</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
       <text:p>TRUE</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Default" office:value-type="string" calcext:value-type="string">
@@ -6033,12 +6039,12 @@ End Sub
       <text:p>20</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce4" table:number-columns-repeated="3"/>
-     <table:table-cell table:style-name="ce6"/>
+     <table:table-cell table:style-name="ce8" table:number-columns-repeated="3"/>
+     <table:table-cell table:style-name="ce9"/>
      <table:table-cell office:value-type="float" office:value="5" calcext:value-type="float">
       <text:p>5</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" table:number-columns-repeated="4"/>
+     <table:table-cell table:style-name="ce8" table:number-columns-repeated="4"/>
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
       <text:p>knockedBack</text:p>
      </table:table-cell>
@@ -6086,12 +6092,12 @@ End Sub
       <text:p>20</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce4" table:number-columns-repeated="3"/>
-     <table:table-cell table:style-name="ce6"/>
+     <table:table-cell table:style-name="ce8" table:number-columns-repeated="3"/>
+     <table:table-cell table:style-name="ce9"/>
      <table:table-cell office:value-type="float" office:value="10" calcext:value-type="float">
       <text:p>10</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" table:number-columns-repeated="4"/>
+     <table:table-cell table:style-name="ce8" table:number-columns-repeated="4"/>
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
       <text:p>knockedBack</text:p>
      </table:table-cell>
@@ -6116,7 +6122,6 @@ End Sub
     </table:table-row>
    </table:table>
    <table:table table:name="atk_projectiles" table:style-name="ta1">
-    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co104" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co105" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co106" table:default-cell-style-name="Default"/>
@@ -6245,7 +6250,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>nil</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
       <text:p>TRUE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -6300,7 +6305,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>nil</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
       <text:p>TRUE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -6614,7 +6619,6 @@ End Sub
     </table:table-row>
    </table:table>
    <table:table table:name="st_bandits" table:style-name="ta1">
-    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co112" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co113" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co15" table:default-cell-style-name="Default"/>
@@ -6622,9 +6626,9 @@ End Sub
     <table:table-column table:style-name="co115" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co116" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co83" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co116" table:default-cell-style-name="ce4"/>
-    <table:table-column table:style-name="co83" table:default-cell-style-name="ce4"/>
-    <table:table-column table:style-name="co117" table:number-columns-repeated="2" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co116" table:default-cell-style-name="ce8"/>
+    <table:table-column table:style-name="co83" table:default-cell-style-name="ce8"/>
+    <table:table-column table:style-name="co117" table:number-columns-repeated="2" table:default-cell-style-name="ce8"/>
     <table:table-column table:style-name="co118" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co119" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co96" table:default-cell-style-name="Default"/>
@@ -7646,14 +7650,14 @@ End Sub
      <table:table-cell table:number-columns-repeated="25"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">bandit-boss-spin</text:span>-ccw</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T2">bandit-boss-spin</text:span>-ccw</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="15" calcext:value-type="float">
       <text:p>15</text:p>
      </table:table-cell>
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">bandit-boss-spin</text:span>-ccw2</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T2">bandit-boss-spin</text:span>-ccw2</text:p>
      </table:table-cell>
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">bandit-boss-spin</text:span>-ccw</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T2">bandit-boss-spin</text:span>-ccw</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>prepareAttack</text:p>
@@ -7680,7 +7684,7 @@ End Sub
      <table:table-cell table:number-columns-repeated="25"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">bandit-boss-spin</text:span>-ccw2</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T2">bandit-boss-spin</text:span>-ccw2</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="20" calcext:value-type="float">
       <text:p>20</text:p>
@@ -7688,7 +7692,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>stand</text:p>
      </table:table-cell>
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">bandit-boss-spin</text:span>-ccw</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T2">bandit-boss-spin</text:span>-ccw</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>executeAttack</text:p>
@@ -7744,14 +7748,14 @@ End Sub
      <table:table-cell table:number-columns-repeated="25"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">bandit-boss-getup-spin</text:span>-ccw</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T2">bandit-boss-getup-spin</text:span>-ccw</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="18" calcext:value-type="float">
       <text:p>18</text:p>
      </table:table-cell>
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">bandit-boss-spin</text:span>-ccw2</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T2">bandit-boss-spin</text:span>-ccw2</text:p>
      </table:table-cell>
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">bandit-boss-spin</text:span>-ccw</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T2">bandit-boss-spin</text:span>-ccw</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>prepareAttack</text:p>
@@ -7773,7 +7777,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>human-in-spinning-throw</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -7802,7 +7806,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>human-in-flaming-spinning-throw</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -7831,7 +7835,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>forge-fire</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2" table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:number-columns-repeated="2" table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -7849,13 +7853,13 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="24"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>hurt</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -7865,16 +7869,16 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>hurt</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Hurt</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce6" office:value-type="float" office:value="0" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce6" table:formula="of:=ORG.LIBREOFFICE.COLOR(255;255;255;255)" office:value-type="float" office:value="4294967295" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" table:formula="of:=ORG.LIBREOFFICE.COLOR(255;255;255;255)" office:value-type="float" office:value="4294967295" calcext:value-type="float">
       <text:p>4294967295</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -7887,7 +7891,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>held</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -7897,7 +7901,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>held</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Hurt</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -7907,7 +7911,7 @@ End Sub
      <table:table-cell table:number-columns-repeated="2" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce6" table:formula="of:=ORG.LIBREOFFICE.COLOR(255;255;255;255)" office:value-type="float" office:value="4294967295" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" table:formula="of:=ORG.LIBREOFFICE.COLOR(255;255;255;255)" office:value-type="float" office:value="4294967295" calcext:value-type="float">
       <text:p>4294967295</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -7920,7 +7924,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>knockedBack</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -7930,7 +7934,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>knockedBack</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Hurt</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -7950,7 +7954,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>knockedBackBurnt</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -7960,7 +7964,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>knockedBack</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Hurt</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -7970,7 +7974,7 @@ End Sub
      <table:table-cell office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
       <text:p>TRUE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce6" table:formula="of:=ORG.LIBREOFFICE.COLOR(32;32;32;255)" office:value-type="float" office:value="4280295456" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" table:formula="of:=ORG.LIBREOFFICE.COLOR(32;32;32;255)" office:value-type="float" office:value="4280295456" calcext:value-type="float">
       <text:p>4280295456</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -7983,7 +7987,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>knockedBackBurntJuggled</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -7993,14 +7997,14 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>knockedBack</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Hurt</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce6" table:formula="of:=ORG.LIBREOFFICE.COLOR(32;32;32;255)" office:value-type="float" office:value="4280295456" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" table:formula="of:=ORG.LIBREOFFICE.COLOR(32;32;32;255)" office:value-type="float" office:value="4280295456" calcext:value-type="float">
       <text:p>4280295456</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -8013,7 +8017,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>wallBump</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -8023,7 +8027,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>wallBump</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Hurt</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -8046,7 +8050,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>thrown</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -8080,7 +8084,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>wallSlammed</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -8090,7 +8094,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>wallSlammed</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Hurt</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -8113,7 +8117,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>thrownRecover</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -8145,7 +8149,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>breakaway</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -8172,7 +8176,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>fall</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -8202,7 +8206,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>defeat</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2" table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:number-columns-repeated="2" table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -8216,7 +8220,7 @@ End Sub
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce6"/>
+     <table:table-cell table:style-name="ce9"/>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
@@ -8246,7 +8250,7 @@ End Sub
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce6" table:formula="of:=ORG.LIBREOFFICE.COLOR(255;255;255;255)" office:value-type="float" office:value="4294967295" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" table:formula="of:=ORG.LIBREOFFICE.COLOR(255;255;255;255)" office:value-type="float" office:value="4294967295" calcext:value-type="float">
       <text:p>4294967295</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -8259,7 +8263,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>stand</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2" table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:number-columns-repeated="2" table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -8286,7 +8290,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>dodgeIncoming</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -8316,7 +8320,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>approach</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -8346,7 +8350,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>guard</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -8373,7 +8377,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>guardHit</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -8400,7 +8404,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>leave</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2" table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:number-columns-repeated="2" table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -8418,7 +8422,7 @@ End Sub
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
@@ -8428,10 +8432,10 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>enterAndAttackUntilEmpty</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>attackIfAmmoElseLeave</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -8449,7 +8453,7 @@ End Sub
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
@@ -8459,7 +8463,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>attackIfAmmoElseLeave</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -8480,7 +8484,7 @@ End Sub
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
@@ -8490,7 +8494,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>enterAndPrepareBowAmbush</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -8511,7 +8515,7 @@ End Sub
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
@@ -8558,10 +8562,10 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>waitForBowAmbush</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>bow-shot2</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -8586,14 +8590,14 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>blinkOut</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2" table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:number-columns-repeated="2" table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>blinkOut</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" table:number-columns-repeated="2"/>
+     <table:table-cell table:style-name="ce8" table:number-columns-repeated="2"/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
@@ -8607,7 +8611,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>disappear</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2" table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:number-columns-repeated="2" table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -8627,12 +8631,13 @@ End Sub
     </table:table-row>
    </table:table>
    <table:table table:name="st_projectiles" table:style-name="ta1">
-    <table:table-column table:style-name="co123" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co124" table:default-cell-style-name="Default"/>
+    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
+    <table:table-column table:style-name="co166" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co167" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co115" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co116" table:number-columns-repeated="2" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co116" table:number-columns-repeated="3" table:default-cell-style-name="ce4"/>
-    <table:table-column table:style-name="co83" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co116" table:number-columns-repeated="3" table:default-cell-style-name="ce8"/>
+    <table:table-column table:style-name="co83" table:default-cell-style-name="ce8"/>
     <table:table-column table:style-name="co118" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co98" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co96" table:default-cell-style-name="Default"/>
@@ -8707,7 +8712,7 @@ End Sub
      <table:table-cell table:number-columns-repeated="4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>sounds/combat/firebreath.mp3</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="26"/>
@@ -8731,7 +8736,7 @@ End Sub
      <table:table-cell table:number-columns-repeated="4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>sounds/combat/firebreath.mp3</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="26"/>
@@ -8755,7 +8760,7 @@ End Sub
      <table:table-cell table:number-columns-repeated="4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>sounds/combat/firebreath.mp3</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="26"/>
@@ -8945,7 +8950,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>blinkOut</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
       <text:p>1</text:p>
      </table:table-cell>
@@ -8996,14 +9001,16 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>projectileEmbed</text:p>
      </table:table-cell>
-     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>embedded</text:p>
+     </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
       <text:p>1</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" table:number-columns-repeated="2"/>
+     <table:table-cell table:style-name="ce8" table:number-columns-repeated="2"/>
      <table:table-cell table:number-columns-repeated="25"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
@@ -9021,7 +9028,7 @@ End Sub
      <table:table-cell table:number-columns-repeated="4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" table:number-columns-repeated="2"/>
+     <table:table-cell table:style-name="ce8" table:number-columns-repeated="2"/>
      <table:table-cell table:number-columns-repeated="25"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
@@ -9047,7 +9054,7 @@ End Sub
      <table:table-cell table:number-columns-repeated="2" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" table:number-columns-repeated="3"/>
+     <table:table-cell table:style-name="ce8" table:number-columns-repeated="3"/>
      <table:table-cell table:number-columns-repeated="24"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
@@ -9076,22 +9083,21 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>sounds/combat/breakglass.mp3</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" table:number-columns-repeated="2"/>
+     <table:table-cell table:style-name="ce8" table:number-columns-repeated="2"/>
      <table:table-cell table:number-columns-repeated="24"/>
     </table:table-row>
    </table:table>
    <table:table table:name="st_objects" table:style-name="ta1">
-    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co125" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co84" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co126" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co127" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co25" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co128" table:default-cell-style-name="ce4"/>
-    <table:table-column table:style-name="co129" table:default-cell-style-name="ce4"/>
-    <table:table-column table:style-name="co130" table:default-cell-style-name="ce4"/>
-    <table:table-column table:style-name="co24" table:default-cell-style-name="ce4"/>
-    <table:table-column table:style-name="co26" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co128" table:default-cell-style-name="ce8"/>
+    <table:table-column table:style-name="co129" table:default-cell-style-name="ce8"/>
+    <table:table-column table:style-name="co130" table:default-cell-style-name="ce8"/>
+    <table:table-column table:style-name="co24" table:default-cell-style-name="ce8"/>
+    <table:table-column table:style-name="co26" table:default-cell-style-name="ce8"/>
     <table:table-column table:style-name="co131" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co33" table:number-columns-repeated="1013" table:default-cell-style-name="Default"/>
     <table:table-row table:style-name="ro1">
@@ -9138,17 +9144,17 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>hurt</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Hurt</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce6" office:value-type="float" office:value="0" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce6" table:formula="of:=ORG.LIBREOFFICE.COLOR(255;255;255;255)" office:value-type="float" office:value="4294967295" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" table:formula="of:=ORG.LIBREOFFICE.COLOR(255;255;255;255)" office:value-type="float" office:value="4294967295" calcext:value-type="float">
       <text:p>4294967295</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="1014"/>
@@ -9161,7 +9167,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>held</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Hurt</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -9171,7 +9177,7 @@ End Sub
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce6" table:formula="of:=ORG.LIBREOFFICE.COLOR(255;255;255;255)" office:value-type="float" office:value="4294967295" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" table:formula="of:=ORG.LIBREOFFICE.COLOR(255;255;255;255)" office:value-type="float" office:value="4294967295" calcext:value-type="float">
       <text:p>4294967295</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="1014"/>
@@ -9184,7 +9190,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>knockedBack</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Hurt</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -9204,7 +9210,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>knockedBack</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Hurt</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -9215,7 +9221,7 @@ End Sub
       <text:p>TRUE</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce6" table:formula="of:=ORG.LIBREOFFICE.COLOR(32;32;32;255)" office:value-type="float" office:value="4280295456" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" table:formula="of:=ORG.LIBREOFFICE.COLOR(32;32;32;255)" office:value-type="float" office:value="4280295456" calcext:value-type="float">
       <text:p>4280295456</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="1014"/>
@@ -9228,7 +9234,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>knockedBack</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Hurt</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -9236,7 +9242,7 @@ End Sub
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce6" table:formula="of:=ORG.LIBREOFFICE.COLOR(32;32;32;255)" office:value-type="float" office:value="4280295456" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" table:formula="of:=ORG.LIBREOFFICE.COLOR(32;32;32;255)" office:value-type="float" office:value="4280295456" calcext:value-type="float">
       <text:p>4280295456</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="1014"/>
@@ -9249,7 +9255,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>wallBump</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Hurt</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -9295,7 +9301,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>wallSlammed</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Hurt</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -9352,7 +9358,7 @@ End Sub
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell table:style-name="ce6"/>
+     <table:table-cell table:style-name="ce9"/>
      <table:table-cell table:number-columns-repeated="1014"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
@@ -9540,16 +9546,15 @@ End Sub
     </table:table-row>
    </table:table>
    <table:table table:name="st_Rose" table:style-name="ta1">
-    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co132" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co133" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co134" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co65" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co135" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co34" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co136" table:default-cell-style-name="ce4"/>
-    <table:table-column table:style-name="co69" table:default-cell-style-name="ce4"/>
-    <table:table-column table:style-name="co18" table:number-columns-repeated="3" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co136" table:default-cell-style-name="ce8"/>
+    <table:table-column table:style-name="co69" table:default-cell-style-name="ce8"/>
+    <table:table-column table:style-name="co18" table:number-columns-repeated="3" table:default-cell-style-name="ce8"/>
     <table:table-column table:style-name="co137" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co138" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co139" table:default-cell-style-name="Default"/>
@@ -9633,7 +9638,7 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="7"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
@@ -9665,7 +9670,7 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="7"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
@@ -9697,7 +9702,7 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="7"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
@@ -9729,7 +9734,7 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="7"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
@@ -9764,7 +9769,7 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="7"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
@@ -9796,7 +9801,7 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="7"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
@@ -9828,7 +9833,7 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="7"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
@@ -9863,7 +9868,7 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="7"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
@@ -9896,7 +9901,7 @@ End Sub
       <text:p>2</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="7"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
@@ -9931,7 +9936,7 @@ End Sub
       <text:p>2</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="7"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
@@ -9961,7 +9966,7 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="7"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
@@ -9991,7 +9996,7 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="7"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
@@ -10021,7 +10026,7 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="7"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
@@ -10051,7 +10056,7 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="7"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
@@ -10081,7 +10086,7 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="7"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
@@ -10111,7 +10116,7 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="7"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
@@ -10143,7 +10148,7 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="7"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
@@ -10175,7 +10180,7 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="7"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
@@ -10210,7 +10215,7 @@ End Sub
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="7"/>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
     </table:table-row>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -10272,7 +10277,7 @@ End Sub
      <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4"/>
+     <table:table-cell table:style-name="ce8"/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
@@ -10418,13 +10423,13 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>hurt</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>control</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Hurt</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce6" office:value-type="float" office:value="0" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
@@ -10459,7 +10464,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>breakaway</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Hurt</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -10498,7 +10503,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>fall</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Hurt</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -10539,7 +10544,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>fall</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Hurt</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -10551,7 +10556,7 @@ End Sub
      <table:table-cell office:value-type="boolean" office:boolean-value="true" calcext:value-type="boolean">
       <text:p>TRUE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce6" table:formula="of:=ORG.LIBREOFFICE.COLOR(32;32;32;255)" office:value-type="float" office:value="4280295456" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" table:formula="of:=ORG.LIBREOFFICE.COLOR(32;32;32;255)" office:value-type="float" office:value="4280295456" calcext:value-type="float">
       <text:p>4280295456</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
@@ -10582,7 +10587,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>fall</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Hurt</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -10591,7 +10596,7 @@ End Sub
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce6" table:formula="of:=ORG.LIBREOFFICE.COLOR(32;32;32;255)" office:value-type="float" office:value="4280295456" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" table:formula="of:=ORG.LIBREOFFICE.COLOR(32;32;32;255)" office:value-type="float" office:value="4280295456" calcext:value-type="float">
       <text:p>4280295456</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
@@ -10622,7 +10627,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>fall</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Hurt</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -10706,7 +10711,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>fall</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Hurt</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -10744,7 +10749,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>thrownRecover</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>control</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -10782,7 +10787,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>breakaway</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>control</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -10857,7 +10862,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>defeat</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -10905,7 +10910,7 @@ End Sub
      <table:table-cell table:number-columns-repeated="3" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce6" table:formula="of:=ORG.LIBREOFFICE.COLOR(255;255;255;255)" office:value-type="float" office:value="4294967295" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" table:formula="of:=ORG.LIBREOFFICE.COLOR(255;255;255;255)" office:value-type="float" office:value="4294967295" calcext:value-type="float">
       <text:p>4294967295</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
@@ -10933,7 +10938,7 @@ End Sub
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>eventWalkTo</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -10995,35 +11000,34 @@ End Sub
     </table:table-row>
    </table:table>
    <table:table table:name="atk_Rose" table:style-name="ta1">
-    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co141" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co142" table:default-cell-style-name="ce4"/>
-    <table:table-column table:style-name="co143" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co142" table:default-cell-style-name="ce8"/>
+    <table:table-column table:style-name="co143" table:default-cell-style-name="ce8"/>
     <table:table-column table:style-name="co144" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co30" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co145" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co146" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co145" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co147" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co1" table:default-cell-style-name="ce4"/>
-    <table:table-column table:style-name="co148" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co1" table:default-cell-style-name="ce8"/>
+    <table:table-column table:style-name="co148" table:default-cell-style-name="ce8"/>
     <table:table-column table:style-name="co149" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co150" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co151" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co152" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co153" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co154" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co154" table:default-cell-style-name="ce8"/>
     <table:table-column table:style-name="co155" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co156" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co157" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co158" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co159" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co160" table:number-columns-repeated="2" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co161" table:default-cell-style-name="ce4"/>
-    <table:table-column table:style-name="co162" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co161" table:default-cell-style-name="ce8"/>
+    <table:table-column table:style-name="co162" table:default-cell-style-name="ce8"/>
     <table:table-column table:style-name="co163" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co164" table:default-cell-style-name="ce4"/>
-    <table:table-column table:style-name="co165" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co164" table:default-cell-style-name="ce8"/>
+    <table:table-column table:style-name="co165" table:default-cell-style-name="ce8"/>
     <table:table-column table:style-name="co33" table:number-columns-repeated="995" table:default-cell-style-name="Default"/>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -11399,10 +11403,10 @@ End Sub
      <table:table-cell table:formula="of:=PI()/6" office:value-type="float" office:value="0.523598775598299" calcext:value-type="float">
       <text:p>0.523598775598299</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce6" table:formula="of:=4*PI()" office:value-type="float" office:value="12.5663706143592" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" table:formula="of:=4*PI()" office:value-type="float" office:value="12.5663706143592" calcext:value-type="float">
       <text:p>12.5663706143592</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce6" table:formula="of:=8*PI()" office:value-type="float" office:value="25.1327412287183" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" table:formula="of:=8*PI()" office:value-type="float" office:value="25.1327412287183" calcext:value-type="float">
       <text:p>25.1327412287183</text:p>
      </table:table-cell>
      <table:table-cell/>
@@ -11872,7 +11876,7 @@ End Sub
      <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2" table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:number-columns-repeated="2" table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3"/>
@@ -11930,7 +11934,7 @@ End Sub
      <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2" table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:number-columns-repeated="2" table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3"/>
@@ -11988,7 +11992,7 @@ End Sub
      <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2" table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:number-columns-repeated="2" table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3"/>
@@ -12046,7 +12050,7 @@ End Sub
      <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2" table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:number-columns-repeated="2" table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3"/>
@@ -12102,7 +12106,7 @@ End Sub
      <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2" table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:number-columns-repeated="2" table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3"/>
@@ -12124,7 +12128,7 @@ End Sub
      <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce6" office:value-type="float" office:value="20" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" office:value-type="float" office:value="20" calcext:value-type="float">
       <text:p>20</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="995"/>
@@ -12158,7 +12162,7 @@ End Sub
      <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2" table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:number-columns-repeated="2" table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3"/>
@@ -12180,7 +12184,7 @@ End Sub
      <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce6" office:value-type="float" office:value="20" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" office:value-type="float" office:value="20" calcext:value-type="float">
       <text:p>20</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="995"/>
@@ -12216,7 +12220,7 @@ End Sub
      <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2" table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:number-columns-repeated="2" table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3"/>
@@ -12238,7 +12242,7 @@ End Sub
      <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce6" office:value-type="float" office:value="60" calcext:value-type="float">
+     <table:table-cell table:style-name="ce9" office:value-type="float" office:value="60" calcext:value-type="float">
       <text:p>60</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="995"/>
@@ -12280,7 +12284,7 @@ End Sub
      <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2" table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:number-columns-repeated="2" table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3"/>
@@ -12344,7 +12348,7 @@ End Sub
      <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2" table:style-name="ce4" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+     <table:table-cell table:number-columns-repeated="2" table:style-name="ce8" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3"/>
