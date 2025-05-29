@@ -247,11 +247,12 @@ function Common:projectileEmbed(opponent, ooby, oobz)
         local items = Characters.getGroup("items")
         local numopponentshit = self.numopponentshit or 0
         if self.itemtype and #items < MaxProjectileItems and numopponentshit <= 0 then
-            Characters.spawn({
+            local item = Characters.spawn({
                 type = self.itemtype,
                 x = self.x, y = self.y, z = self.z,
                 gravity = 0
             })
+            item:setAseAnimation(self.aseanimation, self.animationframe)
             self:disappear()
         else
             return "blinkOut", 30
