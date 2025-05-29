@@ -357,7 +357,7 @@ function Enemy:executeAttack()
             self.color = Color.White
             self:stopAttack()
         else
-            self.color = self:getAttackFlashColor(hittime)
+            self.color = self:getAttackFlashColor(t)
         end
         yield()
         if self.velx ~= 0 or self.vely ~= 0 then
