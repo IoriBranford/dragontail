@@ -545,7 +545,7 @@ function Player:control()
                 Face.updateTurnToDestAngle(self, pi)
                 if self.weaponinhand then
                     local targetx, targety, targetz = findInstantThrowTarget(self, cos(self.facedestangle), sin(self.facedestangle))
-                    return "throwWeapon", targetx, targety, targetz, 2, 1
+                    return "throwWeapon", targetx, targety, targetz, 1, 1
                 end
                 return self:doComboAttack(self.facedestangle)
             end
