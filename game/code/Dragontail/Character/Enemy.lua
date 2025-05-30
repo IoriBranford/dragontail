@@ -93,7 +93,7 @@ function Enemy:debugPrint_couldAttackOpponent(opponent, attacktype)
         print(".attacker", opponent.attacker)
         print(".canbeattacked", opponent.canbeattacked)
     end
-    print("isFullyOnCamera", self:isFullyOnCamera(self.camera))
+    print("isCylinderFullyOnCamera", self:isCylinderFullyOnCamera(self.camera))
 
     local attackdata = self.attacktable[attacktype]
     print("attackdata", attackdata)
@@ -110,7 +110,7 @@ function Enemy:couldAttackOpponent(opponent, attacktype)
     if not opponent
     or opponent.attacker
     or not opponent.canbeattacked
-    or not self:isFullyOnCamera(self.camera)
+    or not self:isCylinderFullyOnCamera(self.camera)
     then
         return false
     end
