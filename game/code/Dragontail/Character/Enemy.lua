@@ -91,6 +91,25 @@ function Enemy:decideNextAttack()
     return attacktype
 end
 
+function Enemy:debugPrint_couldAttackOpponent(opponent, attacktype)
+    print("opponent", opponent)
+    if opponent then
+        print(".attacker", opponent.attacker)
+        print(".canbeattacked", opponent.canbeattacked)
+    end
+    print("isFullyOnCamera", self:isFullyOnCamera(self.camera))
+
+    local attackdata = self.attacktable[attacktype]
+    print("attackdata", attackdata)
+    if attackdata then
+        local toopposq = distsq(self.x, self.y, opponent.x, opponent.y)
+        local attackrange = (attackdata.attackbestdist or 1) + opponent.bodyradius
+        print("dist", math.sqrt(toopposq))
+        print("attackrange", attackrange, '=', (attackdata.attackbestdist or 1), '+', opponent.bodyradius)
+        print("closeEnough", toopposq <= attackrange*attackrange)
+    end
+end
+
 function Enemy:couldAttackOpponent(opponent, attacktype)
     if not opponent
     or opponent.attacker
