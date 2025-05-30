@@ -37,6 +37,7 @@ function love.load(args)
     Config.drawbodies = args.drawbodies
     Config.drawstats = args.drawstats
     Config.drawai = args.drawai
+    Config.cuecards = args.cuecards
 
     Config.gamepads = Inputs.configureGamepads(Config.gamepads)
     Config.keys = Inputs.configureKeyboard(Config.keys)
@@ -75,6 +76,7 @@ return {
         --stage (optional string)               Name of stage to start
         --test (optional string)                Name of test to start
         --stagestart (optional string)          Name of stage start point
+        --cuecards                              Use title bar as a cue card for video recording
     ]],
     defaultconfig = Platform.overrideConfig {
         _version = 3,
@@ -85,6 +87,7 @@ return {
         drawbodies = false,
         drawai = false,
         exhibit = false,
+        cuecards = false,
         maximize = Platform.supports("maximize"),
 
         keys = {

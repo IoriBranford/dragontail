@@ -214,6 +214,12 @@ function Stage.openRoom(i)
         roomindex = i
         Characters.spawnArray(room.characters)
         Stage.startEvent(room.eventfunction)
+        if Config.cuecards then
+            local cuecard = room.titlebarcuecard or ""
+            if cuecard ~= "" then
+                love.window.setTitle(cuecard)
+            end
+        end
     else
         winningteam = "players"
         for _, player in ipairs(Characters.getGroup("players")) do
