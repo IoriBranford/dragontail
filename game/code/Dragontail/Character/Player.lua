@@ -646,7 +646,8 @@ function Player:getReversalChargedAttack()
 end
 
 function Player:duringGetUp()
-    if self.sprintbutton.pressed then
+    if self.sprintbutton.down then
+        self.sprintbutton.pressed = true
         return "control"
     end
     if not self.attackbutton.down then
