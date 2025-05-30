@@ -15812,7 +15812,8 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 2
+            ["donewhenenemiesleft"] = 2,
+            ["titlebarcuecard"] = "ATTACK"
           },
           objects = {
             {
@@ -16076,7 +16077,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["titlebarcuecard"] = "GRAB ATTACK & THROW"
+          },
           objects = {
             {
               id = 16,
@@ -16177,7 +16180,8 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 3
+            ["donewhenenemiesleft"] = 3,
+            ["titlebarcuecard"] = "RUNNING TACKLE"
           },
           objects = {
             {
@@ -16308,7 +16312,8 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 5
+            ["donewhenenemiesleft"] = 5,
+            ["titlebarcuecard"] = "RUNNING KICK"
           },
           objects = {
             {
@@ -16417,7 +16422,8 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 4
+            ["donewhenenemiesleft"] = 4,
+            ["titlebarcuecard"] = "RUN WITH ENEMY"
           },
           objects = {
             {
@@ -16483,7 +16489,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["titlebarcuecard"] = "WALK INTO SPEAR THEN RUN"
+          },
           objects = {
             {
               id = 32,
@@ -16681,7 +16689,8 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 1
+            ["donewhenenemiesleft"] = 1,
+            ["titlebarcuecard"] = "THROW SINGLE ROCKS"
           },
           objects = {
             {
@@ -17187,7 +17196,8 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 5
+            ["donewhenenemiesleft"] = 5,
+            ["titlebarcuecard"] = "THROW MULTIPLE ROCKS"
           },
           objects = {
             {
@@ -17530,7 +17540,8 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = -1
+            ["donewhenenemiesleft"] = -1,
+            ["titlebarcuecard"] = "CATCH AND THROW ARROW, LV1 FIREBALL"
           },
           objects = {
             {
@@ -17933,7 +17944,8 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = 999,
-            ["eventfunction"] = "playerEnterArea"
+            ["eventfunction"] = "playerEnterArea",
+            ["titlebarcuecard"] = "RUN"
           },
           objects = {
             {
@@ -18639,7 +18651,8 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 2
+            ["donewhenenemiesleft"] = 2,
+            ["titlebarcuecard"] = "LV2 FIREBALL"
           },
           objects = {
             {
@@ -18824,9 +18837,7 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {
-            ["donewhenenemiesleft"] = 2
-          },
+          properties = {},
           objects = {
             {
               id = 79,
@@ -19018,7 +19029,8 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 4
+            ["donewhenenemiesleft"] = 2,
+            ["titlebarcuecard"] = "THROW ENEMY INTO FIRE"
           },
           objects = {
             {
@@ -19108,7 +19120,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["titlebarcuecard"] = "LV2 REVENGE"
+          },
           objects = {
             {
               id = 383,
@@ -20167,7 +20181,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["titlebarcuecard"] = "LV3 REVENGE"
+          },
           objects = {
             {
               id = 341,
@@ -20389,7 +20405,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["titlebarcuecard"] = "AVOID BOSS ENTRY ATTACK"
+          },
           objects = {
             {
               id = 231,

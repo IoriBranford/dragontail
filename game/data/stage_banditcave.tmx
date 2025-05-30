@@ -254,6 +254,7 @@
   <objectgroup id="8" name="learnattack" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="2"/>
+    <property name="titlebarcuecard" value="ATTACK"/>
    </properties>
    <object id="15" gid="5266" x="1072" y="160" width="64" height="64"/>
    <object id="485" gid="5266" x="1176" y="240" width="64" height="64"/>
@@ -281,6 +282,9 @@ Cost 1</text>
    <object id="48" gid="5266" x="464" y="208" width="64" height="64"/>
   </objectgroup>
   <objectgroup id="46" name="+knives" class="Room">
+   <properties>
+    <property name="titlebarcuecard" value="GRAB ATTACK &amp; THROW"/>
+   </properties>
    <object id="16" gid="5266" x="248" y="240" width="64" height="64"/>
    <object id="487" gid="5266" x="408" y="200" width="64" height="64"/>
    <object id="11" gid="5266" x="984" y="152" width="64" height="64"/>
@@ -291,6 +295,7 @@ Cost 1</text>
   <objectgroup id="41" name="tolearnrunning" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="3"/>
+    <property name="titlebarcuecard" value="RUNNING TACKLE"/>
    </properties>
    <object id="482" template="mapobjects/CameraPath.tx" x="720" y="144">
     <polyline points="0,0 224,0"/>
@@ -314,6 +319,7 @@ Cost 1</text>
   <objectgroup id="9" name="tolearnrunning2" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="5"/>
+    <property name="titlebarcuecard" value="RUNNING KICK"/>
    </properties>
    <object id="29" template="mapobjects/CameraPath.tx" x="720" y="144">
     <polyline points="224,0 416,64 640,64"/>
@@ -329,6 +335,7 @@ Cost 1</text>
   <objectgroup id="47" name="tolearnrunning3" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="4"/>
+    <property name="titlebarcuecard" value="RUN WITH ENEMY"/>
    </properties>
    <object id="19" gid="5266" x="1184" y="32" width="64" height="64">
     <properties>
@@ -345,6 +352,9 @@ Cost 1</text>
    </object>
   </objectgroup>
   <objectgroup id="10" name="learnrunning" class="Room">
+   <properties>
+    <property name="titlebarcuecard" value="WALK INTO SPEAR THEN RUN"/>
+   </properties>
    <object id="32" gid="5270" x="1616" y="216" width="64" height="64"/>
    <object id="261" gid="5270" x="1064" y="232" width="64" height="64"/>
    <object id="425" name="Instruction" x="1240" y="304" width="264" height="16" visible="0">
@@ -390,6 +400,7 @@ Cost 1</text>
   <objectgroup id="48" name="learnthrowingweapons" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="1"/>
+    <property name="titlebarcuecard" value="THROW SINGLE ROCKS"/>
    </properties>
    <object id="58" gid="5278" x="1648" y="-40" width="64" height="64">
     <properties>
@@ -506,6 +517,7 @@ Cost 1</text>
   <objectgroup id="49" name="+shooters" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="5"/>
+    <property name="titlebarcuecard" value="THROW MULTIPLE ROCKS"/>
    </properties>
    <object id="494" gid="5278" x="1568" y="-8" width="64" height="64">
     <properties>
@@ -606,6 +618,7 @@ Cost 1</text>
   <objectgroup id="29" name="learngrabandthrowenemies" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="-1"/>
+    <property name="titlebarcuecard" value="CATCH AND THROW ARROW, LV1 FIREBALL"/>
    </properties>
    <object id="254" gid="5274" x="2080" y="0" width="64" height="64">
     <properties>
@@ -715,6 +728,7 @@ and tap    to throw</text>
    <properties>
     <property name="donewhenenemiesleft" type="int" value="999"/>
     <property name="eventfunction" value="playerEnterArea"/>
+    <property name="titlebarcuecard" value="RUN"/>
    </properties>
    <object id="104" template="mapobjects/CameraPath.tx" x="2448" y="144">
     <properties>
@@ -912,6 +926,7 @@ to sprint past archers</text>
   <objectgroup id="31" name="endofentryhall" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="2"/>
+    <property name="titlebarcuecard" value="LV2 FIREBALL"/>
    </properties>
    <object id="291" gid="5274" x="3264" y="-48" width="64" height="64">
     <properties>
@@ -972,9 +987,6 @@ to sprint past archers</text>
    <object id="103" gid="5270" x="3056" y="328" width="64" height="64"/>
   </objectgroup>
   <objectgroup id="18" name="toarmory" class="Room">
-   <properties>
-    <property name="donewhenenemiesleft" type="int" value="2"/>
-   </properties>
    <object id="79" template="mapobjects/CameraPath.tx" x="3120" y="144">
     <polyline points="16,0 288,0"/>
    </object>
@@ -1013,7 +1025,8 @@ to sprint past archers</text>
   </objectgroup>
   <objectgroup id="53" name="armory" class="Room">
    <properties>
-    <property name="donewhenenemiesleft" type="int" value="4"/>
+    <property name="donewhenenemiesleft" type="int" value="2"/>
+    <property name="titlebarcuecard" value="THROW ENEMY INTO FIRE"/>
    </properties>
    <object id="505" template="mapobjects/CameraPath.tx" x="3408" y="144">
     <polyline points="0,0 192,0"/>
@@ -1024,6 +1037,9 @@ to sprint past archers</text>
    <object id="507" gid="5270" x="3640" y="328" width="64" height="64"/>
   </objectgroup>
   <objectgroup id="35" name="+axes" class="Room">
+   <properties>
+    <property name="titlebarcuecard" value="LV2 REVENGE"/>
+   </properties>
    <object id="383" gid="5286" x="3864" y="120" width="64" height="64"/>
    <object id="384" gid="5286" x="3864" y="216" width="64" height="64"/>
   </objectgroup>
@@ -1334,6 +1350,9 @@ to sprint past archers</text>
    <object id="348" gid="5270" x="4336" y="144" width="64" height="64"/>
   </objectgroup>
   <objectgroup id="21" name="+shooter&amp;spears" class="Room">
+   <properties>
+    <property name="titlebarcuecard" value="LV3 REVENGE"/>
+   </properties>
    <object id="341" gid="5274" x="3928" y="328" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="999999999"/>
@@ -1376,6 +1395,9 @@ to sprint past archers</text>
    </object>
   </objectgroup>
   <objectgroup id="23" name="boss" class="Room">
+   <properties>
+    <property name="titlebarcuecard" value="AVOID BOSS ENTRY ATTACK"/>
+   </properties>
    <object id="231" gid="5283" x="5328" y="184" width="64" height="64"/>
   </objectgroup>
   <objectgroup id="38" name="+slingers" class="Room">
