@@ -1398,7 +1398,11 @@ to sprint past archers</text>
    <properties>
     <property name="titlebarcuecard" value="AVOID BOSS ENTRY ATTACK"/>
    </properties>
-   <object id="231" gid="5283" x="5328" y="184" width="64" height="64"/>
+   <object id="231" gid="5283" x="5296" y="168" width="64" height="64">
+    <properties>
+     <property name="initialai" value="bandit-boss-charge"/>
+    </properties>
+   </object>
   </objectgroup>
   <objectgroup id="38" name="+slingers" class="Room">
    <object id="409" gid="5278" x="5040" y="-40" width="64" height="64">

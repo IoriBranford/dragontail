@@ -20414,14 +20414,16 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 5328,
-              y = 184,
+              x = 5296,
+              y = 168,
               width = 64,
               height = 64,
               rotation = 0,
               gid = 5283,
               visible = true,
-              properties = {}
+              properties = {
+                ["initialai"] = "bandit-boss-charge"
+              }
             }
           }
         },
