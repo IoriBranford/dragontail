@@ -225,10 +225,14 @@ function Enemy:approach(nextattacktype)
     local opponent = self.opponents[1] ---@type Player
 
     local attackerslot = self:findAttackerSlot(opponent, nextattacktype)
-    if not attackerslot then
-        return "stand", 10
+    local destx, desty = self.x, self.y
+    if attackerslot then
+        destx, desty = self:getAttackerSlotPosition(opponent, attackerslot, nextattacktype)
     end
-    local destx, desty = self:navigateAroundSolid(self:getAttackerSlotPosition(opponent, attackerslot, nextattacktype))
+
+    local reached = destx == self.x and desty == self.y
+    if not reached then
+destx, desty = self:navigateAroundSolid(destx, desty)
 
     Face.faceVector(self, destx - self.x, desty - self.y, "Walk")
 
@@ -237,8 +241,7 @@ function Enemy:approach(nextattacktype)
         speed = speed * 1.5
     end
 
-    local reached = false
-    for i = 1, (self.approachtime or 60) do
+        for i = 1, (self.approachtime or 60) do
         local state, a, b, c, d, e, f = self:duringApproach(opponent)
         if state then
             return state, a, b, c, d, e, f
@@ -248,6 +251,7 @@ function Enemy:approach(nextattacktype)
         if self.x == destx and self.y == desty then
             reached = true
             break
+end
         end
     end
 
