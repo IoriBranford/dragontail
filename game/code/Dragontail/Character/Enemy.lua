@@ -367,16 +367,15 @@ function Enemy:executeAttack()
 
     local lungespeed = self.attacklungespeed or 0
     local hittime = self.attackhittime or 10
+    hittime = math.min(hittime, self.state.statetime)
     local slideangle = self.faceangle
-    for t = 0, 300 do
+    for t = 1, math.min(300, self.state.statetime) do
         lungespeed = Slide.updateSlideSpeed(self, slideangle, lungespeed, self.attacklungedecel or 1)
         local state, a, b, c, d, e, f = self:duringAttackSwing(target)
         if state then
             return state, a, b, c, d, e, f
         end
-        if t > hittime then
-            self.color = Color.White
-            self:stopAttack()
+        if t >= hittime then
         else
             self.color = self:getAttackFlashColor(t)
             self:makePeriodicAfterImage(t, self.afterimageinterval)
@@ -384,6 +383,10 @@ function Enemy:executeAttack()
         yield()
         if self.velx ~= 0 or self.vely ~= 0 then
             Body.keepInBounds(self)
+        end
+        if t >= hittime then
+            self.color = Color.White
+            self:stopAttack()
         end
     end
 end
