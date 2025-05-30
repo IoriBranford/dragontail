@@ -10,6 +10,7 @@ local Face       = require "Dragontail.Character.Action.Face"
 local Shoot      = require "Dragontail.Character.Action.Shoot"
 local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 local Body                 = require "Dragontail.Character.Body"
+local Character            = require "Dragontail.Character"
 
 ---@class Ambush
 ---@field ambushsightarc number?
@@ -34,6 +35,13 @@ local mid = math.mid
 local yield = coroutine.yield
 
 local lm_random = love.math.random
+
+function Enemy:fixedupdate()
+    Character.fixedupdate(self)
+    if self:isCylinderFullyOnCamera(self.camera) then
+        self.enteredcamera = true
+    end
+end
 
 function Enemy:getAttackFlashColor(t)
     local greenblue = (1+cos(t))/2
@@ -311,7 +319,7 @@ end
 
 function Enemy:duringPrepareAttack(target)
     self:accelerateTowardsVel(0, 0, 4)
-    if self.velx ~= 0 or self.vely ~= 0 then
+    if self.enteredcamera and (self.velx ~= 0 or self.vely ~= 0) then
         Body.keepInBounds(self)
     end
 end
@@ -381,7 +389,7 @@ function Enemy:executeAttack()
             self:makePeriodicAfterImage(t, self.afterimageinterval)
         end
         yield()
-        if self.velx ~= 0 or self.vely ~= 0 then
+        if self.enteredcamera and (self.velx ~= 0 or self.vely ~= 0) then
             Body.keepInBounds(self)
         end
         if t >= hittime then
