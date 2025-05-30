@@ -54,11 +54,7 @@ end
 function Enemy:duringStand()
     local opponent = self.opponents[1]
     Face.facePosition(self, opponent.x, opponent.y, "Stand")
-    local dodgeangle = self:isFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self)
-    if dodgeangle then
-        return "dodgeIncoming", dodgeangle
     end
-end
 
 function Enemy:decideNextAttack()
     local opponent = self.opponents[1]
