@@ -47,7 +47,7 @@ function Shoot:launchProjectileAtPosition(projectile, targetx, targety, targetz,
     projectile.velx = velx
     projectile.vely = vely
     projectile.velz = velz
-    local angle = math.atan2(diry, dirx)
+    local angle = dirx == 0 and diry == 0 and 0 or math.atan2(diry, dirx)
     projectile.faceangle = angle
     projectile.attackangle = angle
     projectile.thrower = self
@@ -66,7 +66,7 @@ function Shoot:launchProjectile(type, dirx, diry, dirz, attackid)
     local bodyradius, bodyheight = self.bodyradius or 0, self.bodyheight or 0
     local speed = projectiledata.speed or 1
     local projectileheight = self.projectilelaunchheight or (bodyheight / 2)
-    local angle = math.atan2(diry, dirx)
+    local angle = dirx == 0 and diry == 0 and 0 or math.atan2(diry, dirx)
     local projectile = {
         x = x + bodyradius*dirx,
         y = y + bodyradius*diry,
