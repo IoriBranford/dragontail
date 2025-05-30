@@ -14,7 +14,7 @@ function SpearBandit:duringStand()
     -- local oppox, oppoy = opponent.x, opponent.y
     -- local tooppox, tooppoy = oppox - self.x, oppoy - self.y
     -- local seesopponent = math.dot(math.cos(self.faceangle), math.sin(self.faceangle), tooppox, tooppoy) >= 0
-    local dodgeangle = self:isFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self)
+    local dodgeangle = self:isCylinderFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self)
     if dodgeangle then
         self.numdodges = (self.numdodges or 0) + 1
         return "dodgeIncoming", dodgeangle
@@ -29,7 +29,7 @@ function SpearBandit:duringApproach(target)
     -- local oppox, oppoy = opponent.x, opponent.y
     -- local tooppox, tooppoy = oppox - self.x, oppoy - self.y
     -- local seesopponent = math.dot(math.cos(self.faceangle), math.sin(self.faceangle), tooppox, tooppoy) >= 0
-    local dodgeangle = self:isFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self)
+    local dodgeangle = self:isCylinderFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self)
     if dodgeangle then
         self.numdodges = (self.numdodges or 0) + 1
         return "dodgeIncoming", dodgeangle
@@ -59,7 +59,7 @@ end
 
 function SpearBandit:duringPrepareAttack(target)
     if (self.numdodges or 0) < DodgesBeforeCounterAttack then
-        local dodgeangle = self:isFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self)
+        local dodgeangle = self:isCylinderFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self)
         if dodgeangle then
             self.numdodges = (self.numdodges or 0) + 1
             self.color = self:getAttackFlashColor(0)
