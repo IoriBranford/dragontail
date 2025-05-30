@@ -289,13 +289,16 @@ function Player:getJoystick()
     return inx, iny
 end
 
-function Player:findRandomAttackerSlot(attackrange, slottype)
+function Player:findRandomAttackerSlot(attackrange, slottype, fromx, fromy)
     local attackerslots = self.attackerslots
     attackerslots = slottype and attackerslots[slottype] or attackerslots
     local i = love.math.random(#attackerslots)
+    local vx, vy = fromx - self.x, fromy - self.y
+    local mindot = math.len(vx, vy)*cos(pi*.75)
     for _ = 1, #attackerslots do
         local slot = attackerslots[i]
-        if slot:hasSpace(attackrange) then
+        if slot:hasSpace(attackrange)
+        and dot(slot.dirx, slot.diry, vx, vy) > mindot then
             return slot
         end
         if i >= #attackerslots then

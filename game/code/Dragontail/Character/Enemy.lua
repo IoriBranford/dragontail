@@ -54,7 +54,7 @@ end
 function Enemy:duringStand()
     local opponent = self.opponents[1]
     Face.facePosition(self, opponent.x, opponent.y, "Stand")
-    end
+end
 
 function Enemy:decideNextAttack()
     local opponent = self.opponents[1]
@@ -172,9 +172,10 @@ function Enemy:findAttackerSlot(opponent, attacktype)
     local attackrange = (attackdata and attackdata.attackbestdist or 1) + opponent.bodyradius
     local attackerslot
     if self.attackprojectile then
-        attackerslot = opponent:findRandomAttackerSlot(bodyradius, "missile")
+        attackerslot = opponent:findRandomAttackerSlot(bodyradius, "missile", self.x, self.y)
     else
-        attackerslot = opponent:findRandomAttackerSlot(attackrange + bodyradius, "melee")
+        attackerslot = opponent:findRandomAttackerSlot(attackrange + bodyradius, "melee", self.x, self.y)
+            or opponent:findRandomAttackerSlot(attackrange + bodyradius, "missile", self.x, self.y)
     end
     return attackerslot
 end
@@ -228,26 +229,26 @@ function Enemy:approach(nextattacktype)
 
     local reached = destx == self.x and desty == self.y
     if not reached then
-destx, desty = self:navigateAroundSolid(destx, desty)
+        destx, desty = self:navigateAroundSolid(destx, desty)
 
-    Face.faceVector(self, destx - self.x, desty - self.y, "Walk")
+        Face.faceVector(self, destx - self.x, desty - self.y, "Walk")
 
-    local speed = self.speed or 2
-    if distsq(self.x, self.y, opponent.x, opponent.y) > 320*320 then
-        speed = speed * 1.5
-    end
+        local speed = self.speed or 2
+        if distsq(self.x, self.y, opponent.x, opponent.y) > 320*320 then
+            speed = speed * 1.5
+        end
 
         for i = 1, (self.approachtime or 60) do
-        local state, a, b, c, d, e, f = self:duringApproach(opponent)
-        if state then
-            return state, a, b, c, d, e, f
-        end
-        self.velx, self.vely = Movement.getVelocity_speed(self.x, self.y, destx, desty, speed)
-        yield()
-        if self.x == destx and self.y == desty then
-            reached = true
-            break
-end
+            local state, a, b, c, d, e, f = self:duringApproach(opponent)
+            if state then
+                return state, a, b, c, d, e, f
+            end
+            self.velx, self.vely = Movement.getVelocity_speed(self.x, self.y, destx, desty, speed)
+            yield()
+            if self.x == destx and self.y == desty then
+                reached = true
+                break
+            end
         end
     end
 
@@ -256,6 +257,7 @@ end
         Face.facePosition(self, opponent.x, opponent.y)
         return nextattacktype
     end
+    -- self:debugPrint_couldAttackOpponent(opponent, nextattacktype)
 
     if reached then
         return "stand", 10
