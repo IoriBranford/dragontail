@@ -281,6 +281,15 @@ function Character:isFullyOnCamera(camera)
     local cx, cy, cw, ch = camera.x, camera.y, camera.width, camera.height
     local x, y, x2, y2 = self:getExtents()
     local w, h = x2-x, y2-y
+    local _, _, iw, ih = math.rectintersection(x, y-self.z, w, h, cx, cy, cw, ch)
+    return iw and iw == w and ih == h
+end
+
+function Character:isCylinderFullyOnCamera(camera)
+    local cx, cy, cw, ch = camera.x, camera.y, camera.width, camera.height
+    local radius = self.bodyradius
+    local x, y, x2, y2 = self.x - radius, self.y - radius, self.x + radius, self.y + radius
+    local w, h = x2-x, y2-y
     local _, _, iw, ih = math.rectintersection(x, y, w, h, cx, cy, cw, ch)
     return iw and iw == w and ih == h
 end
