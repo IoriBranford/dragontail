@@ -58,7 +58,7 @@ function Common:spark(time)
 end
 
 function Common:afterimage()
-    local afterimagetime = max(1, self.afterimagetime or 30)
+    local afterimagetime = max(1, self.afterimagetime or 10)
     local deltaalpha = 1/afterimagetime
     for i = 1, afterimagetime do
         local r, g, b, a = Color.unpack(self.color)
