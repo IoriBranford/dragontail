@@ -381,7 +381,7 @@ Cost 1</text>
   </objectgroup>
   <objectgroup id="42" name="tolearnthrowingweapons" class="Room">
    <object id="483" template="mapobjects/CameraPath.tx" x="1360" y="208">
-    <polyline points="0,0 256,-64"/>
+    <polyline points="0,0 240,-64"/>
    </object>
    <object id="38" template="mapobjects/OutwardBoundary.tx" x="1600" y="-64" visible="1">
     <properties>
@@ -402,7 +402,7 @@ Cost 1</text>
     <property name="donewhenenemiesleft" type="int" value="1"/>
     <property name="titlebarcuecard" value="THROW SINGLE ROCKS"/>
    </properties>
-   <object id="58" gid="5278" x="1648" y="-40" width="64" height="64">
+   <object id="58" gid="5278" x="1664" y="-40" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
      <property name="defaultattack" value="sling-shot-until-empty"/>
@@ -413,7 +413,7 @@ Cost 1</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="59" gid="5278" x="1712" y="-8" width="64" height="64">
+   <object id="59" gid="5278" x="1728" y="-8" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
      <property name="defaultattack" value="sling-shot-until-empty"/>
@@ -424,25 +424,25 @@ Cost 1</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="240" name="entrypoint" x="1648" y="56">
+   <object id="240" name="entrypoint" x="1664" y="56">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="241" name="entrypoint" x="1552" y="56">
+   <object id="241" name="entrypoint" x="1568" y="56">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="243" name="exitpoint" x="1744" y="-40">
+   <object id="243" name="exitpoint" x="1760" y="-40">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="244" name="exitpoint" x="1648" y="-40">
+   <object id="244" name="exitpoint" x="1664" y="-40">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
@@ -484,7 +484,7 @@ Cost 1</text>
    <properties>
     <property name="donewhenenemiesleft" type="int" value="4"/>
    </properties>
-   <object id="87" gid="5278" x="1664" y="-8" width="64" height="64">
+   <object id="87" gid="5278" x="1680" y="-8" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
      <property name="defaultattack" value="sling-shot-until-empty"/>
@@ -495,13 +495,13 @@ Cost 1</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="242" name="entrypoint" x="1600" y="56">
+   <object id="242" name="entrypoint" x="1616" y="56">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="245" name="exitpoint" x="1696" y="-40">
+   <object id="245" name="exitpoint" x="1712" y="-40">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
@@ -519,7 +519,7 @@ Cost 1</text>
     <property name="donewhenenemiesleft" type="int" value="5"/>
     <property name="titlebarcuecard" value="THROW MULTIPLE ROCKS"/>
    </properties>
-   <object id="494" gid="5278" x="1568" y="-8" width="64" height="64">
+   <object id="494" gid="5278" x="1584" y="-8" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
      <property name="defaultattack" value="sling-shot-until-empty"/>
@@ -530,7 +530,7 @@ Cost 1</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="498" gid="5278" x="1760" y="-8" width="64" height="64">
+   <object id="498" gid="5278" x="1776" y="-8" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
      <property name="defaultattack" value="sling-shot-until-empty"/>
@@ -541,25 +541,25 @@ Cost 1</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="495" name="entrypoint" x="1504" y="56">
+   <object id="495" name="entrypoint" x="1520" y="56">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="497" name="entrypoint" x="1696" y="56">
+   <object id="497" name="entrypoint" x="1712" y="56">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="496" name="exitpoint" x="1600" y="-40">
+   <object id="496" name="exitpoint" x="1616" y="-40">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="499" name="exitpoint" x="1792" y="-40">
+   <object id="499" name="exitpoint" x="1808" y="-40">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
@@ -581,7 +581,7 @@ Cost 1</text>
     <polygon points="-160,-320 -160,-192 0,-192 32,-160 64,-160 96,-128 96,-96 128,-64 128,0 160,0 160,-320"/>
    </object>
    <object id="66" template="mapobjects/CameraPath.tx" x="1616" y="144">
-    <polyline points="0,0 320,0"/>
+    <polyline points="-16,0 320,0"/>
    </object>
    <object id="234" gid="5296" x="2048" y="128" width="64" height="128">
     <properties>
