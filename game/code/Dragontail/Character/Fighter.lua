@@ -195,6 +195,7 @@ function Fighter:knockedBack(thrower, attackangle)
     end
     self.hurtstun = 0
     self:stopAttack()
+    self.thrower = thrower
     local thrownspeed = thrower.attacklaunchspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
     self.velz = thrower.attackpopupspeed or 4
@@ -210,6 +211,7 @@ function Fighter:knockedBack(thrower, attackangle)
             / math.len(self.velx, self.vely)
             / math.len(oobx, ooby)
     end
+    self.thrower = nil
     if oobdotvel > .5 then
         return "wallBump", thrower, oobx, ooby
     end
