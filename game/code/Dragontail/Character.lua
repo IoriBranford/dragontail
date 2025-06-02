@@ -237,6 +237,16 @@ function Character:onHitByAttack(attacker)
     end
 end
 
+function Character:debugPrint_collideWithCharacterAttack(attacker)
+    print("hurtstun", self.hurtstun)
+    print("canbeattacked", self.canbeattacked)
+    print("attacker.attackcanjuggle", attacker.attackcanjuggle)
+    print("canbejuggled", self.canbejuggled)
+    if not Attack.checkAttackCollision(attacker, self) then
+        Attack.debugPrint_checkAttackCollision_circle(attacker, self)
+    end
+end
+
 ---@param attacker Character
 function Character:collideWithCharacterAttack(attacker)
     if self.hurtstun > 0 then

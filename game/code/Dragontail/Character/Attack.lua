@@ -94,6 +94,13 @@ function Attack:checkAttackCollision_pieslice(target)
     end
 end
 
+function Attack:debugPrint_checkAttackCollision_circle(target)
+    print("self == target", self == target)
+    print("self.thrower == target", self.thrower == target)
+    print("target.thrower == self", target.thrower == self)
+    print("attackangle", self.attackangle)
+end
+
 function Attack:checkAttackCollision_circle(target)
     if target == self or target == self.thrower or target.thrower == self then
         return
