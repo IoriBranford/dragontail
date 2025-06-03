@@ -223,6 +223,59 @@ function Fighter:knockedBack(thrower, attackangle)
     return self.aiafterthrown or "fall", thrower
 end
 
+function Fighter:knockedBackOrThrown(thrower, attackangle)
+    local dirx, diry
+    if attackangle then
+        dirx, diry = cos(attackangle), sin(attackangle)
+    else
+        local velx, vely = thrower.velx, thrower.vely
+        if velx ~= 0 or vely ~= 0 then
+            dirx, diry = norm(velx, vely)
+        else
+            dirx, diry = norm(self.x - thrower.x, self.y - thrower.y)
+        end
+    end
+    self.hurtstun = 0
+    if attackangle and self.attacktype then
+        self:startAttack(attackangle)
+    else
+        self:stopAttack()
+    end
+    self.thrower = thrower
+    local thrownspeed = thrower.attacklaunchspeed or 10
+    self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
+    self.velz = thrower.attackpopupspeed or 4
+    local thrownsound = self.swingsound and Audio.newSource(self.swingsound)
+    if thrownsound then thrownsound:play() end
+    local thrownslidetime = self.thrownslidetime or 1
+    local oobx, ooby, oobz
+    local oobdotvel = 0
+    while thrownslidetime > 0 and oobdotvel <= .5 do
+        yield()
+        oobx, ooby, oobz = Body.keepInBounds(self)
+        self:duringKnockedBack()
+        if oobz then
+            thrownslidetime = thrownslidetime - 1
+        end
+        oobdotvel = math.dot(oobx or 0, ooby or 0, self.velx, self.vely)
+        if oobdotvel > 0 then
+            oobdotvel = oobdotvel
+                / math.len(self.velx, self.vely)
+                / math.len(oobx, ooby)
+        end
+    end
+    if thrownsound then thrownsound:stop() end
+    self.thrower = nil
+    if oobdotvel > .5 then
+        return self.knockedintowallstate or "wallBump", thrower, oobx, ooby
+    end
+    if oobz then
+        self.velz = 0
+    end
+
+    return self.aiafterthrown or "fall", thrower
+end
+
 function Fighter:afterWallBump(thrower)
 end
 
