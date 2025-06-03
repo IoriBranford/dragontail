@@ -10,6 +10,7 @@ local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
 local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 local Mana                 = require "Dragontail.Character.Mana"
 local Body                 = require "Dragontail.Character.Body"
+local Color                = require "Tiled.Color"
 
 ---@class Dash
 ---@field dashsound string?
@@ -387,6 +388,32 @@ function Fighter:fall(attacker)
         z = self.z,
     })
     self:stopAttack()
+
+    local color = self.color
+    if color ~= Color.White then
+        self.color = Color.White
+        for i = 1, 8 do
+            local offsetangle = love.math.random()*2*math.pi
+            local offsetdist = love.math.random()*self.bodyradius
+            local offsetx = offsetdist*cos(offsetangle)
+            local offsety = offsetdist*sin(offsetangle)
+            local velx = offsetx/8
+            local vely = offsety/8
+
+            Characters.spawn({
+                type = "particle",
+                x = self.x + offsetx,
+                y = self.y + offsety,
+                z = self.z,
+                velx = velx,
+                vely = vely,
+                velz = 30/16,
+                color = color,
+                gravity = 1/16,
+                lifetime = 30
+            })
+        end
+    end
 
     if self.health > 0 then
         t = 1
