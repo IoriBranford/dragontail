@@ -51,6 +51,10 @@ local MaxProjectileItems = 16
 ---@field opponents Fighter[]
 local Common = class(Character)
 
+function Common:idle()
+    while true do yield() end
+end
+
 function Common:spark(time)
     time = time or self.lifetime or 30
     wait(time)
