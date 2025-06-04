@@ -17474,7 +17474,7 @@ return {
               gid = 6611,
               visible = true,
               properties = {
-                ["itemtype"] = "mana-peppers"
+                ["itemtype"] = "food-fish"
               }
             },
             {
@@ -17490,7 +17490,7 @@ return {
               gid = 6611,
               visible = true,
               properties = {
-                ["itemtype"] = "mana-peppers"
+                ["itemtype"] = "food-fish"
               }
             },
             {
