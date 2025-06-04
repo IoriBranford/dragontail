@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="54" nextobjectid="508">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="55" nextobjectid="509">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -588,7 +588,7 @@ Cost 1</text>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="235" gid="5294" x="2048" y="128" width="64" height="128"/>
+   <object id="235" name="exitdoor" gid="5294" x="2048" y="128" width="64" height="128"/>
    <object id="236" gid="5293" x="2048" y="128" width="64" height="128">
     <properties>
      <property name="shadowcolor" type="color" value="#00000000"/>
@@ -617,7 +617,7 @@ Cost 1</text>
   </objectgroup>
   <objectgroup id="29" name="learngrabandthrowenemies" class="Room">
    <properties>
-    <property name="donewhenenemiesleft" type="int" value="-1"/>
+    <property name="donewhenenemiesleft" type="int" value="1"/>
     <property name="titlebarcuecard" value="CATCH AND THROW ARROW, LV1 FIREBALL"/>
    </properties>
    <object id="254" gid="5274" x="2080" y="0" width="64" height="64">
@@ -703,14 +703,11 @@ and tap    to throw</text>
    <object id="460" gid="7062" x="1904" y="56" width="16" height="16" visible="0"/>
    <object id="461" gid="7063" x="1920" y="56" width="16" height="16" visible="0"/>
    <object id="462" gid="7064" x="1936" y="56" width="16" height="16" visible="0"/>
-   <object id="465" template="mapobjects/trigger/startStageEvent.tx" type="Trigger" x="2080" y="128">
+   <object id="465" template="mapobjects/trigger/startStageEvent.tx" type="Trigger" x="2200" y="128">
     <properties>
      <property name="event" value="playerExitToNextArea"/>
     </properties>
     <polygon points="-24,0 0,0 32,32 32,56"/>
-   </object>
-   <object id="260" name="camerawarpwhendone" x="2512" y="144">
-    <point/>
    </object>
    <object id="466" gid="6885" x="1904" y="240" width="16" height="16" visible="0">
     <properties>
@@ -722,6 +719,21 @@ and tap    to throw</text>
      <property name="z" type="float" value="64"/>
     </properties>
     <polygon points="768,0 768,96 960,96 960,0"/>
+   </object>
+  </objectgroup>
+  <objectgroup id="54" name="entercave" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="-1"/>
+    <property name="eventfunction" value="playerBreakIntoNextArea"/>
+   </properties>
+   <object id="508" name="exit" x="2048" y="160">
+    <properties>
+     <property name="door" type="object" value="235"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="260" name="camerawarpwhendone" x="2512" y="144">
+    <point/>
    </object>
   </objectgroup>
   <objectgroup draworder="index" id="22" name="entryhall" class="Room">

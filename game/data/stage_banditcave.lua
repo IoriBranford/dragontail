@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 54,
-  nextobjectid = 508,
+  nextlayerid = 55,
+  nextobjectid = 509,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -17433,7 +17433,7 @@ return {
             },
             {
               id = 235,
-              name = "",
+              name = "exitdoor",
               type = "",
               shape = "rectangle",
               x = 2048,
@@ -17540,7 +17540,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = -1,
+            ["donewhenenemiesleft"] = 1,
             ["titlebarcuecard"] = "CATCH AND THROW ARROW, LV1 FIREBALL"
           },
           objects = {
@@ -17851,7 +17851,7 @@ return {
               name = "startStageEvent",
               type = "Trigger",
               shape = "polygon",
-              x = 2080,
+              x = 2200,
               y = 128,
               width = 0,
               height = 0,
@@ -17872,19 +17872,6 @@ return {
                 ["script"] = "Dragontail.Character.Trigger",
                 ["usesleft"] = 1
               }
-            },
-            {
-              id = 260,
-              name = "camerawarpwhendone",
-              type = "",
-              shape = "point",
-              x = 2512,
-              y = 144,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {}
             },
             {
               id = 466,
@@ -17927,6 +17914,53 @@ return {
                 ["linecolor"] = "#80ffffff",
                 ["z"] = 64
               }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 54,
+          name = "entercave",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = -1,
+            ["eventfunction"] = "playerBreakIntoNextArea"
+          },
+          objects = {
+            {
+              id = 508,
+              name = "exit",
+              type = "",
+              shape = "point",
+              x = 2048,
+              y = 160,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["door"] = { id = 235 }
+              }
+            },
+            {
+              id = 260,
+              name = "camerawarpwhendone",
+              type = "",
+              shape = "point",
+              x = 2512,
+              y = 144,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
             }
           }
         },
