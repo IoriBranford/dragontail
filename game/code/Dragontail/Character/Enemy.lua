@@ -314,7 +314,7 @@ function Enemy:attackIfAmmoElseLeave()
         return "leave", self.exitpoint
     end
 
-    self:disappear()
+    return "stand"
 end
 
 function Enemy:duringPrepareAttack(target)
