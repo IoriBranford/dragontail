@@ -1,80 +1,161 @@
 {
-    "bodyTypeName": "male",
-    "url": "https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator/#?body=Body_color_light&head=Human_male_light&weapon=Spear_light&hair=Buzzcut_dark_gray&headcover=Tied_headband_red&armour=Leather_walnut&legs=Pants_walnut&shoes=Shoes_walnut&eyes=Eyes_gray",
-    "spritesheets": "https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator/spritesheets/",
-    "version": 1,
-    "datetime": "9/19/2024, 7:55:34 PM",
-    "credits": "Authors: bluecarrot16, Benjamin K. Smith (BenCreating), Evert, Eliza Wyatt (ElizaWy), TheraHedwig, MuffinElZangano, Durrani, Johannes Sj?lund (wulax), Stephen Challener (Redshrike), Mark Weyer, Johannes Sjölund (wulax), Matthew Krohn (makrohn), ElizaWy, Nila122, JaidynReiman, Joe White, Pierre Vigier (pvigier), Inboxninja\n\n- body/bodies/male/light.png: by bluecarrot16, Benjamin K. Smith (BenCreating), Evert, Eliza Wyatt (ElizaWy), TheraHedwig, MuffinElZangano, Durrani, Johannes Sj?lund (wulax), Stephen Challener (Redshrike). License(s): CC-BY-SA 3.0, GPL 3.0. see details at https://opengameart.org/content/lpc-character-bases; 'Thick' Male Revised Run/Climb by JaidynReiman (based on ElizaWy's LPC Revised)\n    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles\n    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites\n    - https://opengameart.org/content/lpc-male-jumping-animation-by-durrani\n    - https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle\n    - https://opengameart.org/content/lpc-revised-character-basics\n\n- head/heads/human/male/light.png: by bluecarrot16, Benjamin K. Smith (BenCreating), Stephen Challener (Redshrike). License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. original head by Redshrike; tweaks by BenCreating; modular version by bluecarrot16\n    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles\n    - https://opengameart.org/content/lpc-character-bases\n\n- eyes/human/adult/gray.png: by Mark Weyer, Johannes Sjölund (wulax), Matthew Krohn (makrohn), Stephen Challener (Redshrike). License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. original by Redshrike, color by Mark Weyer & Wulax, mapped to all frames by Matthew Krohn & JaidynReiman\n    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles\n    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites\n\n- hair/buzzcut/adult/dark_gray.png: by ElizaWy. License(s): OGA-BY 3.0. \n    - https://opengameart.org/content/lpc-hair\n\n- hat/head_band_tied/male/red.png: by Nila122. License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/lpc-lizard-headgear\n\n- torso/armour/leather/male/walnut.png: by Johannes Sjölund (wulax). License(s): CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites\n    - http://opengameart.org/content/lpc-clothing-updates\n\n- legs/pants/male/walnut.png: by bluecarrot16, JaidynReiman, Joe White, Matthew Krohn (makrohn), Johannes Sjölund (wulax). License(s): CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles\n    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites\n\n- feet/shoes/male/walnut.png: by bluecarrot16, Johannes Sjölund (wulax). License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites\n    - http://opengameart.org/content/lpc-clothing-updates\n\n- weapon/polearm/spear/foreground/light.png: by Pierre Vigier (pvigier), Johannes Sjölund (wulax), Inboxninja. License(s): CC-BY-SA 3.0. \n    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites\n    - https://opengameart.org/content/lpc-spear-and-shovel-reworked\n\n- weapon/polearm/spear/background/light.png: by Pierre Vigier (pvigier), Johannes Sjölund (wulax), Inboxninja. License(s): CC-BY-SA 3.0. \n    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites\n    - https://opengameart.org/content/lpc-spear-and-shovel-reworked",
-    "layers": [
-      {
-        "fileName": "weapon/polearm/spear/background/light.png",
-        "zPos": 9,
-        "parentName": "weapon",
-        "name": "Spear",
-        "variant": "light"
-      },
-      {
-        "fileName": "body/bodies/male/light.png",
-        "zPos": 10,
-        "parentName": "body",
-        "name": "Body color",
-        "variant": "light"
-      },
-      {
-        "fileName": "feet/shoes/male/walnut.png",
-        "zPos": 15,
-        "parentName": "shoes",
-        "name": "Shoes",
-        "variant": "walnut"
-      },
-      {
-        "fileName": "legs/pants/male/walnut.png",
-        "zPos": 20,
-        "parentName": "legs",
-        "name": "Pants",
-        "variant": "walnut"
-      },
-      {
-        "fileName": "torso/armour/leather/male/walnut.png",
-        "zPos": 60,
-        "parentName": "armour",
-        "name": "Leather",
-        "variant": "walnut"
-      },
-      {
-        "fileName": "head/heads/human/male/light.png",
-        "zPos": 100,
-        "parentName": "head",
-        "name": "Human male",
-        "variant": "light"
-      },
-      {
-        "fileName": "eyes/human/adult/gray.png",
-        "zPos": 105,
-        "parentName": "eyes",
-        "name": "Eyes",
-        "variant": "gray"
-      },
-      {
-        "fileName": "hair/buzzcut/adult/dark_gray.png",
-        "zPos": 120,
-        "parentName": "hair",
-        "name": "Buzzcut",
-        "variant": "dark gray"
-      },
-      {
-        "fileName": "hat/head_band_tied/male/red.png",
-        "zPos": 125,
-        "parentName": "headcover",
-        "name": "Tied headband",
-        "variant": "red"
-      },
-      {
-        "fileName": "weapon/polearm/spear/foreground/light.png",
-        "zPos": 140,
-        "parentName": "weapon",
-        "name": "Spear",
-        "variant": "light"
-      }
-    ]
-  }
+  "bodyTypeName": "male",
+  "url": "https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/#?body=Body_color_light&head=Human_male_light&weapon=Spear_light&hair=Buzzcut_dark_gray&headcover=Tied_Headband_red&armour=Leather_walnut&legs=Pants_walnut&shoes=Revised_Shoes_walnut&eyes=Eyes_gray&eye_color=Eye_Color_gray",
+  "spritesheets": "https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/spritesheets/",
+  "version": 1,
+  "datetime": "6/4/2025, 3:58:18 PM",
+  "credits": [
+    {
+      "fileName": "body/bodies/male/light.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "bluecarrot16,JaidynReiman,Benjamin K. Smith (BenCreating),Evert,Eliza Wyatt (ElizaWy),TheraHedwig,MuffinElZangano,Durrani,Johannes Sjölund (wulax),Stephen Challener (Redshrike)",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-male-jumping-animation-by-durrani,https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle,https://opengameart.org/content/lpc-revised-character-basics,https://opengameart.org/content/lpc-be-seated,https://opengameart.org/content/lpc-runcycle-for-male-muscular-and-pregnant-character-bases-with-modular-heads,https://opengameart.org/content/lpc-jump-expanded,https://opengameart.org/content/lpc-character-bases",
+      "notes": "see details at https://opengameart.org/content/lpc-character-bases; 'Thick' Male Revised Run/Climb by JaidynReiman (based on ElizaWy's LPC Revised)"
+    },
+    {
+      "fileName": "head/heads/human/male/light.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "bluecarrot16,Benjamin K. Smith (BenCreating),Stephen Challener (Redshrike)",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-character-bases",
+      "notes": "original head by Redshrike, tweaks by BenCreating, modular version by bluecarrot16"
+    },
+    {
+      "fileName": "eyes/human/adult/default/gray.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "JaidynReiman,Matthew Krohn (makrohn),Stephen Challener (Redshrike)",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "notes": "original by Redshrike, mapped to all frames by Matthew Krohn & JaidynReiman"
+    },
+    {
+      "fileName": "hair/buzzcut/adult/dark_gray.png",
+      "licenses": "OGA-BY 3.0",
+      "authors": "ElizaWy",
+      "urls": "https://opengameart.org/content/lpc-hair",
+      "notes": ""
+    },
+    {
+      "fileName": "hat/headband/tied/adult/red.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "Nila122",
+      "urls": "https://opengameart.org/content/lpc-lizard-headgear,https://opengameart.org/content/lpc-expanded-hats-facial-helmets",
+      "notes": ""
+    },
+    {
+      "fileName": "torso/armour/leather/male/walnut.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "Johannes Sjölund (wulax)",
+      "urls": "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,http://opengameart.org/content/lpc-clothing-updates",
+      "notes": "adapted to v3 bases by bluecarrot16"
+    },
+    {
+      "fileName": "legs/pants/male/walnut.png",
+      "licenses": "OGA-BY 3.0,GPL 3.0,CC-BY-SA 3.0",
+      "authors": "bluecarrot16,JaidynReiman,ElizaWy,Matthew Krohn (makrohn),Johannes Sjölund (wulax),Stephen Challener (Redshrike)",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-expanded-pants",
+      "notes": "original male pants by wulax, recolors and edits to v3 base by bluecarrot16, climb/jump/run/sit/emotes/revised combat by JaidynReiman based on ElizaWy's LPC Revised"
+    },
+    {
+      "fileName": "feet/shoes/revised/male/walnut.png",
+      "licenses": "OGA-BY 3.0,GPL 3.0",
+      "authors": "JaidynReiman,ElizaWy,Bluecarrot16,Stephen Challener (Redshrike),Johannes Sjölund (wulax)",
+      "urls": "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing,https://opengameart.org/content/lpc-expanded-socks-shoes",
+      "notes": "original overalls and shoes by ElizaWy, base animations adapted from v3 overalls by bluecarrot16, shoes by JaidynReiman"
+    },
+    {
+      "fileName": "weapon/polearm/spear/foreground/light.png",
+      "licenses": "CC-BY-SA 3.0",
+      "authors": "Pierre Vigier (pvigier),Johannes Sjölund (wulax),Inboxninja",
+      "urls": "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-spear-and-shovel-reworked",
+      "notes": "original by wulax, walk animations redone by pvigier, split into layers and tweaked for v3 character bases by bluecarrot16"
+    },
+    {
+      "fileName": "weapon/polearm/spear/background/light.png",
+      "licenses": "CC-BY-SA 3.0",
+      "authors": "Pierre Vigier (pvigier),Johannes Sjölund (wulax),Inboxninja",
+      "urls": "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-spear-and-shovel-reworked",
+      "notes": "original by wulax, walk animations redone by pvigier, split into layers and tweaked for v3 character bases by bluecarrot16"
+    }
+  ],
+  "layers": [
+    {
+      "fileName": "weapon/polearm/spear/background/light.png",
+      "zPos": 9,
+      "parentName": "weapon",
+      "name": "Spear",
+      "variant": "light",
+      "supportedAnimations": "walk,thrust,hurt"
+    },
+    {
+      "fileName": "body/bodies/male/light.png",
+      "zPos": 10,
+      "parentName": "body",
+      "name": "Body_color",
+      "variant": "light",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "feet/shoes/revised/male/walnut.png",
+      "zPos": 15,
+      "parentName": "shoes",
+      "name": "Revised_Shoes",
+      "variant": "walnut",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "legs/pants/male/walnut.png",
+      "zPos": 20,
+      "parentName": "legs",
+      "name": "Pants",
+      "variant": "walnut",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "torso/armour/leather/male/walnut.png",
+      "zPos": 60,
+      "parentName": "armour",
+      "name": "Leather",
+      "variant": "walnut",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "head/heads/human/male/light.png",
+      "zPos": 100,
+      "parentName": "head",
+      "name": "Human_male",
+      "variant": "light",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "eyes/human/adult/default/gray.png",
+      "zPos": 105,
+      "parentName": "eye_color",
+      "name": "Eye_Color",
+      "variant": "gray",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "hair/buzzcut/adult/dark_gray.png",
+      "zPos": 120,
+      "parentName": "hair",
+      "name": "Buzzcut",
+      "variant": "dark gray",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "hat/headband/tied/adult/red.png",
+      "zPos": 125,
+      "parentName": "headcover",
+      "name": "Tied_Headband",
+      "variant": "red",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "weapon/polearm/spear/foreground/light.png",
+      "zPos": 140,
+      "parentName": "weapon",
+      "name": "Spear",
+      "variant": "light",
+      "supportedAnimations": "walk,thrust,hurt"
+    }
+  ]
+}
