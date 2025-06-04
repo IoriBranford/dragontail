@@ -340,6 +340,7 @@ function Fighter:thrown(thrower, attackangle)
     end
     if thrownsound then thrownsound:stop() end
     self.thrower = nil
+    self:stopAttack()
     if oobdotvel > .5 then
         return "wallSlammed", thrower, oobx, ooby
     end
@@ -420,6 +421,7 @@ end
 function Fighter:duringFall() end
 
 function Fighter:fall(attacker)
+    self:stopAttack()
     local t = 0
     local fallanimationtime = self.fallanimationtime or 1
     repeat
@@ -440,7 +442,6 @@ function Fighter:fall(attacker)
         y = self.y + 1,
         z = self.z,
     })
-    self:stopAttack()
 
     local color = self.color
     if color ~= Color.White then
