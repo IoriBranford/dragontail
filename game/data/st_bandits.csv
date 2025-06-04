@@ -27,8 +27,10 @@ bandit-boss-spin-cw,15,bandit-boss-spin-cw2,bandit-boss-spin-cw,prepareAttack,Lo
 bandit-boss-spin-cw2,20,stand,bandit-boss-spin-cw,executeAttack,SpinCW,1,TRUE,TRUE,FALSE,,sounds/combat/swing3.mp3,0
 bandit-boss-spin-ccw,15,bandit-boss-spin-ccw2,bandit-boss-spin-ccw,prepareAttack,LookLeft,0,TRUE,TRUE,FALSE,,sounds/man_heavy/lightattack3.mp3,0
 bandit-boss-spin-ccw2,20,stand,bandit-boss-spin-ccw,executeAttack,SpinCCW,1,TRUE,TRUE,FALSE,,sounds/combat/swing3.mp3,0
-bandit-boss-getup-spin-cw,18,bandit-boss-spin-cw2,bandit-boss-spin-cw,prepareAttack,,,FALSE,FALSE,FALSE,,sounds/man_heavy/lightattack3.mp3,0
-bandit-boss-getup-spin-ccw,18,bandit-boss-spin-ccw2,bandit-boss-spin-ccw,prepareAttack,,,FALSE,FALSE,FALSE,,sounds/man_heavy/lightattack3.mp3,0
+bandit-boss-getup-spin-cw,18,bandit-boss-getup-spin-cw2,bandit-boss-spin-cw,prepareAttack,FallRiseToFeet,0,FALSE,FALSE,FALSE,,sounds/man_heavy/lightattack3.mp3,0
+bandit-boss-getup-spin-cw2,20,stand,bandit-boss-spin-ccw,executeAttack,SpinCCW,1,FALSE,FALSE,FALSE,,sounds/combat/swing3.mp3,0
+bandit-boss-getup-spin-ccw,18,bandit-boss-getup-spin-ccw2,bandit-boss-spin-ccw,prepareAttack,FallRiseToFeet,0,FALSE,FALSE,FALSE,,sounds/man_heavy/lightattack3.mp3,0
+bandit-boss-getup-spin-ccw2,20,stand,bandit-boss-spin-ccw,executeAttack,SpinCCW,1,FALSE,FALSE,FALSE,,sounds/combat/swing3.mp3,0
 human-in-spinning-throw,FALSE,fall,human-in-spinning-throw,held,Hurt,,FALSE,FALSE,FALSE,,,0
 human-in-flaming-spinning-throw,FALSE,fall,human-in-flaming-spinning-throw,held,Hurt,,FALSE,FALSE,FALSE,,,0
 forge-fire,FALSE,FALSE,forge-fire,,,1,FALSE,FALSE,FALSE,,,0
