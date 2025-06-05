@@ -272,8 +272,8 @@ function Player:drawAseprite(fixedfrac)
 end
 
 function Player.getJoystick()
-    local analogx = Inputs.getAction("amovex").position
-    local analogy = Inputs.getAction("amovey").position
+    local analogx = Inputs.getAction("analogx").position
+    local analogy = Inputs.getAction("analogy").position
     local lsq = lensq(analogx, analogy)
 
     local deadzone = math.max(1/64, Config.joy_deadzone or .25)
@@ -286,8 +286,8 @@ function Player.getJoystick()
         analogx, analogy = len*analogx, len*analogy
     end
 
-    local digitalx = Inputs.getAction("dmovex").position
-    local digitaly = Inputs.getAction("dmovey").position
+    local digitalx = Inputs.getAction("digitalx").position
+    local digitaly = Inputs.getAction("digitaly").position
 
     local inx, iny = digitalx + analogx, digitaly + analogy
     if lensq(inx, iny) > 1 then
