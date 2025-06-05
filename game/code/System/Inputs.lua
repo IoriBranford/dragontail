@@ -14,6 +14,13 @@ local gamepadsbyid = {} ---@type {[integer]: love.Joystick} gamepads by id
 local gamepadconfigs = {}
 local gamepaddefaultconfig = {}
 local keyboardconfig = {}
+local enabledinputtypes = { ---@type {[InputType]: boolean}
+    key = true,
+    keyaxis = true,
+    gamepadbutton = true,
+    gamepadaxis = true,
+    gamepadbuttonaxis = true
+}
 
 ---@class InputAction
 ---@field name string
@@ -135,6 +142,24 @@ function Inputs.joystickadded(joystick)
     for gamepadinput, actionname in pairs(gamepaddefaultconfig) do
         if not gamepadconfig[gamepadinput] then
             Inputs.configureGamepadInput(id, gamepadinput, actionname)
+        end
+    end
+end
+
+function Inputs.enableTypes(...)
+    for i = 1, select("#", ...) do
+        local inputtype = select(i, ...) ---@type InputType
+        if enabledinputtypes[inputtype] ~= nil then
+            enabledinputtypes[inputtype] = true
+        end
+    end
+end
+
+function Inputs.disableTypes(...)
+    for i = 1, select("#", ...) do
+        local inputtype = select(i, ...) ---@type InputType
+        if enabledinputtypes[inputtype] ~= nil then
+            enabledinputtypes[inputtype] = false
         end
     end
 end
@@ -325,9 +350,11 @@ function Inputs.update()
     end
 
     for _, input in pairs(inputs) do
-        local position = InputPosition.get(input)
-        local action = input.action
-        action.position = action.position + position
+        if enabledinputtypes[input.type] then
+            local position = InputPosition.get(input)
+            local action = input.action
+            action.position = action.position + position
+        end
     end
 
     for _, action in pairs(actions) do
