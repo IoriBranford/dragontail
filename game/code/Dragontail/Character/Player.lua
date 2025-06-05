@@ -277,16 +277,15 @@ function Player:getJoystick()
     local inx, iny = self.joystickx.position, self.joysticky.position
     local lsq = lensq(inx, iny)
 
-    local deadzone = Config.joy_deadzone or .25
+    local deadzone = math.max(1/64, Config.joy_deadzone or .25)
     if lsq < deadzone*deadzone then
         return 0, 0
     end
 
-    if lsq > 1 then
-        return norm(inx, iny)
-    end
-
-    return inx, iny
+    local len = math.sqrt(lsq)
+    len = math.min(1, (len - deadzone) / (1 - deadzone))
+    inx, iny = norm(inx, iny)
+    return len*inx, len*iny
 end
 
 function Player:findRandomAttackerSlot(attackrange, slottype, fromx, fromy)
