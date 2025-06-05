@@ -4,6 +4,8 @@ local InputString= require "System.InputString"
 
 local Inputs = {}
 
+local DefaultPressThreshold = .25
+
 local inputs = {} ---@type {[string]: Input}
 local actions = {} ---@type {[string]: InputAction}
 local gamepadsbyid = {} ---@type {[integer]: love.Joystick} gamepads by id
@@ -15,7 +17,7 @@ local keyboardconfig = {}
 ---@field name string
 ---@field position number
 ---@field lastposition number
----@field numinputsdown integer
+---@field pressthreshold number
 ---@field pressed boolean
 ---@field down boolean
 ---@field released boolean
@@ -89,10 +91,6 @@ function InputPosition.get(input)
     return InputPosition[input.type](input)
 end
 
-local function isPositionDown(position)
-    return math.abs(position) >= .25
-end
-
 function Inputs.initGamepads(defaultconfig)
     if defaultconfig then
         gamepaddefaultconfig = defaultconfig
@@ -153,7 +151,8 @@ function Inputs.getOrMakeAction(name)
             numinputsdown = 0,
             pressed = false,
             down = false,
-            released = false
+            released = false,
+            pressthreshold = DefaultPressThreshold
         }
         actions[name] = action
     end
@@ -320,25 +319,17 @@ function Inputs.update()
     for _, action in pairs(actions) do
         action.lastposition = action.position
         action.position = 0
-        action.numinputsdown = 0
     end
 
     for _, input in pairs(inputs) do
         local position = InputPosition.get(input)
-        if isPositionDown(position) then
-            local action = input.action
-            action.position = action.position + position
-            action.numinputsdown = action.numinputsdown + 1
-        end
+        local action = input.action
+        action.position = action.position + position
     end
 
     for _, action in pairs(actions) do
-        if action.numinputsdown > 1 then
-            action.position = action.position / action.numinputsdown
-        end
-
-        local wasdown = isPositionDown(action.lastposition)
-        if isPositionDown(action.position) then
+        local wasdown = math.abs(action.lastposition) > action.pressthreshold
+        if math.abs(action.position) > action.pressthreshold then
             action.down = true
             action.pressed = not wasdown
             action.released = false
