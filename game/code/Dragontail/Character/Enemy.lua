@@ -43,9 +43,12 @@ function Enemy:fixedupdate()
     end
 end
 
-function Enemy:getAttackFlashColor(t)
-    local greenblue = (1+cos(t))/2
-    return Color.asARGBInt(1, greenblue, greenblue, 1)
+function Enemy:getAttackFlashColor(t, canbeattacked)
+    local flash = (1+cos(t))/2
+    if canbeattacked then
+        return Color.asARGBInt(1, flash, flash, 1)
+    end
+    return Color.asARGBInt(1, .5, .5, flash)
 end
 
 function Enemy:getTargetingScore(oppox, oppoy, oppofacex, oppofacey)
@@ -343,7 +346,7 @@ function Enemy:prepareAttack()
     local target = self.opponents[1]
 
     for t = 1, 300 do
-        self.color = self:getAttackFlashColor(t)
+        self.color = self:getAttackFlashColor(t, self.canbeattacked)
 
         local state, a, b, c, d, e, f = self:duringPrepareAttack(target)
         if state then
@@ -385,7 +388,7 @@ function Enemy:executeAttack()
         end
         if t >= hittime then
         else
-            self.color = self:getAttackFlashColor(t)
+            self.color = self:getAttackFlashColor(t, self.canbeattacked)
             self:makePeriodicAfterImage(t, self.afterimageinterval)
         end
         yield()
@@ -440,7 +443,7 @@ function Enemy:watchForOpponent()
     local sighted
     local cossightarc = cos(self.ambushsightarc or (pi/6))
     for t = 1, huge do
-        self.color = self:getAttackFlashColor(t)
+        self.color = self:getAttackFlashColor(t, self.canbeattacked)
         yield()
         for _, opponent in ipairs(opponents) do
             local tooppox, tooppoy = opponent.x - self.x, opponent.y - self.y
