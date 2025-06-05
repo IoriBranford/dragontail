@@ -21,8 +21,8 @@ sling-shot-until-empty,30,sling-shot-until-empty2,sling-shot,prepareAttack,Shoot
 sling-shot-until-empty2,40,attackIfAmmoElseLeave,sling-shot,executeAttack,ShootAttack,0,TRUE,TRUE,FALSE,,sounds/combat/arrowfly.mp3,0
 bandit-boss-charge,30,bandit-boss-charge2,bandit-boss-charge,prepareAttack,Charge,1,TRUE,TRUE,FALSE,,sounds/man_heavy/heavyattack3.mp3,0
 bandit-boss-charge2,40,stand,bandit-boss-charge,executeAttack,Charge,1,TRUE,TRUE,FALSE,,sounds/combat/swingblade.mp3,3
-bandit-boss-thrust,12,bandit-boss-thrust2,bandit-boss-thrust,prepareAttack,ThrustWindup,1,TRUE,TRUE,FALSE,,sounds/man_heavy/lightattack3.mp3,0
-bandit-boss-thrust2,40,stand,bandit-boss-thrust,executeAttack,ThrustAttack,1,TRUE,TRUE,FALSE,,sounds/combat/swingblade.mp3,0
+bandit-boss-poke,6,bandit-boss-poke2,bandit-boss-poke,prepareAttack,ThrustWindup,0,TRUE,TRUE,FALSE,,sounds/man_heavy/lightattack3.mp3,0
+bandit-boss-poke2,24,stand,bandit-boss-poke,executeAttack,ThrustAttack,0,TRUE,TRUE,FALSE,,sounds/combat/swing1.mp3,0
 bandit-boss-spin-cw,15,bandit-boss-spin-cw2,bandit-boss-spin-cw,prepareAttack,LookRight,0,TRUE,TRUE,FALSE,,sounds/man_heavy/lightattack3.mp3,0
 bandit-boss-spin-cw2,20,stand,bandit-boss-spin-cw,executeAttack,SpinCW,1,TRUE,TRUE,FALSE,,sounds/combat/swing3.mp3,0
 bandit-boss-spin-ccw,15,bandit-boss-spin-ccw2,bandit-boss-spin-ccw,prepareAttack,LookLeft,0,TRUE,TRUE,FALSE,,sounds/man_heavy/lightattack3.mp3,0
