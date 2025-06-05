@@ -6,7 +6,9 @@ local Inputs = {}
 
 local DefaultPressThreshold = .25
 
-local inputs = {} ---@type {[string]: Input}
+---@alias InputString string
+
+local inputs = {} ---@type {[InputString]: Input}
 local actions = {} ---@type {[string]: InputAction}
 local gamepadsbyid = {} ---@type {[integer]: love.Joystick} gamepads by id
 local gamepadconfigs = {}
@@ -298,21 +300,22 @@ for _, inputtype in pairs({"key", "keyaxis", "gamepadbutton", "gamepadaxis", "ga
 end
 
 function Inputs.getActionsInputs(inputtypes)
-    local actionsinputs = {} ---@type {[InputAction]:Input[]}
-    for _, input in pairs(inputs) do
+    local actionsinputs = {} ---@type {[InputAction]:{[InputString]:Input}}
+    for inputstring, input in pairs(inputs) do
         if not inputtypes or inputtypes:find(InputTypePatterns[input.type]) then
             local action = input.action
             local actioninputs = actionsinputs[action] or {}
             actionsinputs[action] = actioninputs
-            actioninputs[#actioninputs+1] = input
+            actioninputs[inputstring] = input
         end
     end
 
     return actionsinputs
 end
 
-function Inputs.removeInput(input)
-    inputs[input] = nil
+function Inputs.removeInput(inputstring)
+    local input = inputs[inputstring]
+    inputs[inputstring] = nil
 end
 
 function Inputs.update()
