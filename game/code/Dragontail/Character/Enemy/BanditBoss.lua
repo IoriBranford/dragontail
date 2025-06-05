@@ -119,6 +119,7 @@ function BanditBoss:duringGetUp(attacker)
         local attack = self:getBestAttack(attacker) or ""
         if attack:find("^bandit%-boss%-getup%-spin") then
             Face.faceObject(self, attacker)
+            self.attackswitchesleft = 0
             return attack
         end
     end
