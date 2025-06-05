@@ -661,7 +661,13 @@ end
 
 function Player:hurt(attacker)
     self.crosshair.visible = false
-    return Fighter.hurt(self, attacker)
+    local nextstate, a, b, c, d, e = Fighter.hurt(self, attacker)
+    if nextstate == "control" then
+        if self.sprintbutton.down then
+            self.sprintbutton.pressed = true
+        end
+    end
+    return nextstate, a, b, c, d, e
 end
 
 function Player:fall(attacker)
