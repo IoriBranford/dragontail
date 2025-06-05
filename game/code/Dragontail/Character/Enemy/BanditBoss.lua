@@ -24,7 +24,7 @@ local BanditBoss = class(Enemy)
 
 local yield = coroutine.yield
 
-local GetUpAttackHealthPercent = .75
+local GetUpAttackHealthPercent = 15/16
 local OneSwitchAttackHealthPercent = .5
 local TwoSwitchAttackHealthPercent = .25
 local FirstSummonHealthPercent = .6
@@ -61,6 +61,16 @@ function BanditBoss:afterStand()
         self.attackswitchesleft = 0
     end
     return Enemy.afterStand(self)
+end
+
+function BanditBoss:duringApproach(opponent)
+    local bestattack = self:getBestAttack(opponent)
+    if bestattack == "bandit-boss-spin-cw"
+    or bestattack == "bandit-boss-spin-ccw" then
+        if self:couldAttackOpponent(opponent, bestattack) then
+            return bestattack
+        end
+    end
 end
 
 function BanditBoss:getAttackSwitch(target)
