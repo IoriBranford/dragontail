@@ -26,7 +26,7 @@ local yield = coroutine.yield
 
 local GetUpAttackHealthPercent = 15/16
 local OneSwitchAttackHealthPercent = .5
-local TwoSwitchAttackHealthPercent = .25
+local TwoSwitchAttackHealthPercent = .0
 local FirstSummonHealthPercent = .6
 local SecondSummonHealthPercent = .3
 
