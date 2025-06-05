@@ -7,6 +7,7 @@ local Audio = require "System.Audio"
 local Gui = require "Dragontail.Gui"
 local Config = require "System.Config"
 local Inputs = require "System.Inputs"
+local Player = require "Dragontail.Character.Player"
 local isAsset = Assets.isAsset
 local getAsset = Assets.get
 local GamePhase = {}
@@ -124,13 +125,10 @@ end
 local function fixedupdateInputDisplay()
     local input = Gui.gameplay.input
     if input then
-        local joystickx = Inputs.getAction("movex")
-        local joysticky = Inputs.getAction("movey")
+        local x, y = Player.getJoystick()
         local attackbutton = Inputs.getAction("attack")
         local sprintbutton = Inputs.getAction("sprint")
         ---@cast input ObjectGroup
-        local x = joystickx.position
-        local y = joysticky.position
         if x ~= 0 or y ~= 0 then
             input.joystickdirection.visible = true
             input.joystickdirection.rotation = math.atan2(y, x)

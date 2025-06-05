@@ -183,8 +183,6 @@ end
 
 function Player:init()
     self.joysticklog = JoystickLog(10)
-    self.joystickx = Inputs.getAction("movex")
-    self.joysticky = Inputs.getAction("movey")
     self.attackbutton = Inputs.getAction("attack")
     self.sprintbutton = Inputs.getAction("sprint")
     Fighter.init(self)
@@ -273,19 +271,30 @@ function Player:drawAseprite(fixedfrac)
     -- end
 end
 
-function Player:getJoystick()
-    local inx, iny = self.joystickx.position, self.joysticky.position
-    local lsq = lensq(inx, iny)
+function Player.getJoystick()
+    local analogx = Inputs.getAction("amovex").position
+    local analogy = Inputs.getAction("amovey").position
+    local lsq = lensq(analogx, analogy)
 
     local deadzone = math.max(1/64, Config.joy_deadzone or .25)
     if lsq < deadzone*deadzone then
-        return 0, 0
+        analogx, analogy = 0, 0
+    else
+        local len = math.sqrt(lsq)
+        len = (len - deadzone) / (1 - deadzone)
+        analogx, analogy = norm(analogx, analogy)
+        analogx, analogy = len*analogx, len*analogy
     end
 
-    local len = math.sqrt(lsq)
-    len = math.min(1, (len - deadzone) / (1 - deadzone))
-    inx, iny = norm(inx, iny)
-    return len*inx, len*iny
+    local digitalx = Inputs.getAction("dmovex").position
+    local digitaly = Inputs.getAction("dmovey").position
+
+    local inx, iny = digitalx + analogx, digitaly + analogy
+    if lensq(inx, iny) > 1 then
+        inx, iny = norm(inx, iny)
+    end
+
+    return inx, iny
 end
 
 function Player:findRandomAttackerSlot(attackrange, slottype, fromx, fromy)

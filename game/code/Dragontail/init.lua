@@ -12,10 +12,10 @@ local firstphase = "Dragontail.GamePhase"
 local firstmap = "data/stage_demonrealm.lua"
 
 local defaultgamepadconfig =  {
-    ["dpleft dpright"] = "movex",
-    ["dpup dpdown"] = "movey",
-    leftx = "movex",
-    lefty = "movey",
+    ["dpleft dpright"] = "dmovex",
+    ["dpup dpdown"] = "dmovey",
+    leftx = "amovex",
+    lefty = "amovey",
     x = "attack",
     triggerright = "sprint",
 }
@@ -91,8 +91,8 @@ return {
         maximize = Platform.supports("maximize"),
 
         keys = {
-            ["left right"] = "movex",
-            ["up down"] = "movey",
+            ["left right"] = "dmovex",
+            ["up down"] = "dmovey",
             z = "attack",
             lshift = "sprint"
         },
