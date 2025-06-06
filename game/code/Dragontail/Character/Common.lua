@@ -447,11 +447,11 @@ function Common:guardHit(attacker)
     return self.recoverai or self.initialai
 end
 
-function Common:pulseColor()
+function Common:pulseRed()
     local t = 0
     local r, g, b, a = 1, 1, 1, 1
     while true do
-        r = (1 + math.cos(t)) / 2
+        g = (1 + math.cos(t)) / 2
         b = r
         self.color = Color.asARGBInt(r, g, b, a)
         yield()
