@@ -19,6 +19,7 @@ sling-shot,30,sling-shot2,sling-shot,prepareAttack,ShootWindup,0,TRUE,TRUE,FALSE
 sling-shot2,40,stand,sling-shot,executeAttack,ShootAttack,0,TRUE,TRUE,FALSE,,sounds/combat/arrowfly.mp3,0
 sling-shot-until-empty,30,sling-shot-until-empty2,sling-shot,prepareAttack,ShootWindup,0,TRUE,TRUE,FALSE,,sounds/combat/bowdraw.mp3,0
 sling-shot-until-empty2,40,attackIfAmmoElseLeave,sling-shot,executeAttack,ShootAttack,0,TRUE,TRUE,FALSE,,sounds/combat/arrowfly.mp3,0
+bandit-boss-first-charge,60,bandit-boss-charge2,bandit-boss-charge,prepareAttack,Charge,1,TRUE,TRUE,FALSE,,sounds/man_heavy/heavyattack3.mp3,0
 bandit-boss-charge,30,bandit-boss-charge2,bandit-boss-charge,prepareAttack,Charge,1,TRUE,TRUE,FALSE,,sounds/man_heavy/heavyattack3.mp3,0
 bandit-boss-charge2,40,stand,bandit-boss-charge,executeAttack,Charge,1,TRUE,TRUE,FALSE,,sounds/combat/swingblade.mp3,3
 bandit-boss-poke,6,bandit-boss-poke2,bandit-boss-poke,prepareAttack,ThrustWindup,0,TRUE,TRUE,FALSE,,sounds/man_heavy/lightattack3.mp3,0
