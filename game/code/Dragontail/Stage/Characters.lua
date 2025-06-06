@@ -16,9 +16,12 @@ local groups
 local scene
 local nextid
 local camera
+local clearlostenemiestimer
+local ClearLostEnemiesAfterTime = 180
 
 function Characters.init(scene_, nextid_, camera_)
     nextid = nextid_ or 1
+    clearlostenemiestimer = 0
     allcharacters = {}
     players = {}
     enemies = {}
@@ -200,6 +203,33 @@ function Characters.fixedupdate()
         Body.keepInBounds(player)
         player:updateAttackerSlots()
         Characters.hitTriggers(player)
+    end
+
+    Characters.fixedupdateLostEnemies()
+end
+
+function Characters.fixedupdateLostEnemies()
+    if #enemies == 0 then
+        clearlostenemiestimer = 0
+        return
+    end
+
+    local numenemiesonscreen = 0
+    for i = 1, #enemies do
+        local enemy = enemies[i]
+        if enemy:isCylinderFullyOnCamera(camera) then
+            numenemiesonscreen = numenemiesonscreen + 1
+        end
+    end
+
+    if numenemiesonscreen == 0 then
+        clearlostenemiestimer = clearlostenemiestimer + 1
+        if clearlostenemiestimer > ClearLostEnemiesAfterTime then
+            Characters.clearEnemies()
+            clearlostenemiestimer = 0
+        end
+    else
+        clearlostenemiestimer = 0
     end
 end
 
