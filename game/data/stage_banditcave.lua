@@ -20444,7 +20444,7 @@ return {
               gid = 5283,
               visible = true,
               properties = {
-                ["initialai"] = "bandit-boss-charge"
+                ["initialai"] = "bandit-boss-first-charge"
               }
             }
           }
