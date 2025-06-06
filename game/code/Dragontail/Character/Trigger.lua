@@ -9,6 +9,7 @@ local Assets     = require "Tiled.Assets"
 local Config     = require "System.Config"
 local Stage      = require "Dragontail.Stage"
 local Character  = require "Dragontail.Character"
+local Color      = require "Tiled.Color"
 
 ---@class Trigger:Character
 ---@field action string Name of the function to call on activation
@@ -18,6 +19,7 @@ local Character  = require "Dragontail.Character"
 ---@field user Character? The sole character who can activate this trigger
 ---@field difficulties string? On what difficulty levels can this trigger activate
 local Trigger = class(Character)
+Trigger.statetable = "data/st_objects.csv"
 Trigger.module = "Dragontail.Character.Trigger"
 Trigger.team = "trigger"
 
@@ -251,6 +253,17 @@ end
 
 function Trigger:startStageEvent()
     Stage.startEvent(self.event)
+end
+
+function Trigger:pulseAlpha()
+    local t = 0
+    while true do
+        local r, g, b, a = Color.unpack(self.color or Color.White)
+        a = .5 + .25*math.cos(t)
+        self.color = Color.asARGBInt(r, g, b, a)
+        coroutine.yield()
+        t = t + math.pi/30
+    end
 end
 
 return Trigger
