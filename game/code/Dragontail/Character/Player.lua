@@ -1057,10 +1057,12 @@ function Player:straightAttack(angle, heldenemy)
         else
             local arc = self.attackarc or 0
             local arcbetweenprojectiles = arc * 2 / (numprojectiles - 1)
-            targetx, targety = math.rot(targetx, targety, -arc)
+            local totargetx, totargety = targetx - self.x, targety - self.y
+            totargetx, totargety = math.rot(totargetx, totargety, -arc)
             for i = 1, numprojectiles do
+                targetx, targety = self.x + totargetx, self.y + totargety
                 Shoot.launchProjectileAtPosition(self, self.attackprojectile, targetx, targety, targetz)
-                targetx, targety = math.rot(targetx, targety, arcbetweenprojectiles)
+                totargetx, totargety = math.rot(totargetx, totargety, arcbetweenprojectiles)
             end
         end
     else
