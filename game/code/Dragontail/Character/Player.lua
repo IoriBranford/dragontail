@@ -582,7 +582,6 @@ end
 
 function Player:spinAttack(attackangle)
     self.numopponentshit = 0
-    local tailangle = attackangle
     local lungeangle = attackangle
     local originalfaceangle = self.faceangle
     local spinvel = self.attackspinspeed or 0
@@ -594,9 +593,9 @@ function Player:spinAttack(attackangle)
     Mana.store(self, -(self.attackmanacost or 0))
     -- local buttonholdtimeforfireball = spintime/2
     repeat
-        local faceangle = tailangle + pi
         if projectile then
-            Shoot.launchProjectile(self, projectile, cos(faceangle), sin(faceangle), 0)
+            local projectileangle = attackangle + pi
+            Shoot.launchProjectile(self, projectile, cos(projectileangle), sin(projectileangle), 0)
         end
 
         local inx, iny = self:getJoystick()
@@ -614,8 +613,8 @@ function Player:spinAttack(attackangle)
             self:accelerateTowardsVel(targetvelx, targetvely, 8)
         end
 
-        self:startAttack(tailangle)
-        Face.faceAngle(self, faceangle, self.state and self.state.animation)
+        self:startAttack(attackangle)
+        Face.faceAngle(self, attackangle, self.state and self.state.animation)
 
         yield()
         if pressedattackbutton ~= self.attackbutton then
@@ -626,7 +625,7 @@ function Player:spinAttack(attackangle)
                 pressedattackbutton = self.attackbutton
             end
         end
-        tailangle = tailangle + spinvel
+        attackangle = attackangle + spinvel
         t = t - 1
     until t <= 0
     self:stopAttack()
