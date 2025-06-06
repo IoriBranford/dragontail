@@ -525,8 +525,7 @@ function Player:control()
 
             if normalattackpressed then
                 if self.weaponinhand then
-                    local targetx, targety, targetz = findInstantThrowTarget(self, cos(self.facedestangle), sin(self.facedestangle))
-                    return "throwWeapon", targetx, targety, targetz, 2, #self.inventory
+                    return "throwWeapon", self.facedestangle, 2, #self.inventory
                 end
 
                 -- if fireattackpressed then
@@ -582,8 +581,7 @@ function Player:control()
             if normalattackpressed then
                 Face.updateTurnToDestAngle(self, pi)
                 if self.weaponinhand then
-                    local targetx, targety, targetz = findInstantThrowTarget(self, cos(self.facedestangle), sin(self.facedestangle))
-                    return "throwWeapon", targetx, targety, targetz, 1, 1
+                    return "throwWeapon", self.facedestangle, 1, 1
                 end
                 return self:doComboAttack(self.facedestangle)
             end
@@ -778,7 +776,7 @@ function Player:aimThrow()
             else
                 throwx, throwy, throwz = self.x + math.cos(self.faceangle)*512, self.y + math.sin(self.faceangle)*512, self.z
             end
-            return "throwWeapon", throwx, throwy, throwz
+            return "throwWeapon", self.faceangle, 1, 1
         end
 
         local animation
@@ -799,17 +797,12 @@ function Player:aimThrow()
     end
 end
 
-function Player:throwWeapon(targetx, targety, targetz, attackchoice, numtothrow)
+function Player:throwWeapon(angle, attackchoice, numprojectiles)
     attackchoice = attackchoice or 1
-    numtothrow = math.min(numtothrow or 1, #self.inventory)
-    local distx, disty = targetx - self.x, targety - self.y
-    if distx == 0 and disty == 0 then
-        distx = 1
-    end
-    Face.faceVector(self, distx, disty)
-    local throwdeltaangle = pi/16
-    distx, disty = math.rot(distx, disty, -throwdeltaangle * math.floor((numtothrow - 1) / 2))
-    for i = 1, numtothrow do
+    numprojectiles = math.min(numprojectiles or 1, #self.inventory)
+    Face.faceAngle(self, angle)
+
+    local function throw(targetx, targety, targetz)
         local projectiledata = Database.get(self.weaponinhand)
         local attackchoices = projectiledata and projectiledata.attackchoices
         local attackid = attackchoices and attackchoices[math.min(#attackchoices, attackchoice)]
@@ -817,17 +810,47 @@ function Player:throwWeapon(targetx, targety, targetz, attackchoice, numtothrow)
             type = self.weaponinhand,
             gravity = 1/8,
             speed = 16
-        }, self.x + distx, self.y + disty, targetz, attackid)
+        }, targetx, targety, targetz, attackid)
         self.inventory:pop()
         self.weaponinhand = self.inventory:last()
-        distx, disty = math.rot(distx, disty, throwdeltaangle)
     end
-    local t = self.throwtime or 6
-    repeat
+
+    local cosangle, sinangle = cos(angle), sin(angle)
+    local targets = updateEnemyTargetingScores(self, cosangle, sinangle)
+    local arc = self.throwmultiarc or (pi/4)
+    local cosarc = cos(arc)
+    local numfired = 0
+    local targetsz = 0
+    for i = 1, math.min(numprojectiles, #targets) do
+        local target = targets[i]
+        local totargetx, totargety = target.x - self.x, target.y - self.y
+        if dot(cosangle, sinangle, totargetx, totargety) >= cosarc*math.len(totargetx, totargety) then
+            numfired = numfired + 1
+            targetsz = targetsz + target.z
+            throw(target.x, target.y, target.z)
+        end
+    end
+
+    numprojectiles = numprojectiles - numfired
+    if numprojectiles > 0 then
+        arc = arc/2
+        targetsz = numfired > 0 and (targetsz/numfired) or self.z
+        local projectileangle = angle
+        local numgaps = numprojectiles - 1
+        local gaparc = numgaps <= 0 and 0 or (arc / numgaps)
+        projectileangle = projectileangle - gaparc*numgaps/2
+        for i = 1, numprojectiles do
+            local x = self.x + 512*cos(projectileangle)
+            local y = self.y + 512*sin(projectileangle)
+            throw(x, y, targetsz)
+            projectileangle = projectileangle + gaparc
+        end
+    end
+
+    for i = 1, self.throwtime or 6 do
         self:accelerateTowardsVel(0, 0, 4)
         yield()
-        t = t - 1
-    until t <= 0
+    end
     return "control"
 end
 
