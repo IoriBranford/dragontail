@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 55,
-  nextobjectid = 509,
+  nextobjectid = 510,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -17417,7 +17417,7 @@ return {
             },
             {
               id = 234,
-              name = "",
+              name = "darknessinside",
               type = "",
               shape = "rectangle",
               x = 2048,
@@ -17428,6 +17428,7 @@ return {
               gid = 5296,
               visible = true,
               properties = {
+                ["drawz"] = -0.25,
                 ["shadowcolor"] = "#00000000"
               }
             },
@@ -17847,33 +17848,6 @@ return {
               properties = {}
             },
             {
-              id = 465,
-              name = "startStageEvent",
-              type = "Trigger",
-              shape = "polygon",
-              x = 2200,
-              y = 128,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polygon = {
-                { x = -24, y = 0 },
-                { x = 0, y = 0 },
-                { x = 32, y = 32 },
-                { x = 32, y = 56 }
-              },
-              properties = {
-                ["action"] = "startStageEvent",
-                ["bodyheight"] = 64,
-                ["color"] = "#80008000",
-                ["event"] = "playerExitToNextArea",
-                ["linecolor"] = "#8000ff00",
-                ["script"] = "Dragontail.Character.Trigger",
-                ["usesleft"] = 1
-              }
-            },
-            {
               id = 466,
               name = "",
               type = "",
@@ -17921,7 +17895,7 @@ return {
           type = "objectgroup",
           draworder = "topdown",
           id = 54,
-          name = "entercave",
+          name = "unlockdoor",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -17931,24 +17905,10 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = -1,
-            ["eventfunction"] = "playerBreakIntoNextArea"
+            ["eventfunction"] = "unlockDoorToNextArea",
+            ["exitdoor"] = { id = 235 }
           },
           objects = {
-            {
-              id = 508,
-              name = "exit",
-              type = "",
-              shape = "point",
-              x = 2048,
-              y = 160,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["door"] = { id = 235 }
-              }
-            },
             {
               id = 260,
               name = "camerawarpwhendone",
@@ -17961,6 +17921,34 @@ return {
               rotation = 0,
               visible = true,
               properties = {}
+            },
+            {
+              id = 465,
+              name = "exittrigger",
+              type = "Trigger",
+              shape = "polygon",
+              x = 2048,
+              y = 128,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = -8 },
+                { x = 32, y = -8 },
+                { x = 64, y = 24 },
+                { x = 64, y = 56 }
+              },
+              properties = {
+                ["action"] = "startStageEvent",
+                ["bodyheight"] = 64,
+                ["color"] = "#80008000",
+                ["drawz"] = -0.125,
+                ["event"] = "playerExitToNextArea",
+                ["initialai"] = "triggerToUse",
+                ["script"] = "Dragontail.Character.Trigger",
+                ["usesleft"] = 1
+              }
             }
           }
         },
