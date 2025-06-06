@@ -6,7 +6,6 @@
    <property name="bodyheight" type="float" value="64"/>
    <property name="color" type="color" value="#80008000"/>
    <property name="event" value=""/>
-   <property name="linecolor" type="color" value="#8000ff00"/>
    <property name="script" value="Dragontail.Character.Trigger"/>
    <property name="usesleft" type="int" value="1"/>
   </properties>
