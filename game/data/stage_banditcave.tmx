@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="55" nextobjectid="528">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="55" nextobjectid="530">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -462,10 +462,10 @@ COSTS 1 OR MORE</text>
     </properties>
     <point/>
    </object>
-   <object id="431" name="Instruction" x="1560" y="72" width="160" height="16">
+   <object id="431" name="Instruction" x="1528" y="72" width="160" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">INTO ROCK to PICK UP</text>
    </object>
-   <object id="432" gid="6889" x="1536" y="88" width="16" height="16"/>
+   <object id="432" gid="6884" x="1504" y="88" width="16" height="16"/>
    <object id="433" gid="6900" x="1504" y="112" width="16" height="16"/>
    <object id="434" name="Instruction" x="1528" y="96" width="144" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">THROW 1</text>
@@ -635,6 +635,10 @@ COSTS 1 OR MORE</text>
      <property name="itemtype" value="mana-peppers"/>
     </properties>
    </object>
+   <object id="528" name="Instruction" x="1888" y="48" width="112" height="40">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">TOWARDS ARROW IN FLIGHT to CATCH</text>
+   </object>
+   <object id="529" gid="6884" x="1864" y="64" width="16" height="16"/>
   </objectgroup>
   <objectgroup id="29" name="learngrabandthrowenemies" class="Room">
    <properties>

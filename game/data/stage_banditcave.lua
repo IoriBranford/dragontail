@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 55,
-  nextobjectid = 528,
+  nextobjectid = 530,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -16757,7 +16757,7 @@ return {
               name = "Instruction",
               type = "",
               shape = "text",
-              x = 1560,
+              x = 1528,
               y = 72,
               width = 160,
               height = 16,
@@ -16774,12 +16774,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1536,
+              x = 1504,
               y = 88,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6889,
+              gid = 6884,
               visible = true,
               properties = {}
             },
@@ -17487,6 +17487,37 @@ return {
               properties = {
                 ["itemtype"] = "mana-peppers"
               }
+            },
+            {
+              id = 528,
+              name = "Instruction",
+              type = "",
+              shape = "text",
+              x = 1888,
+              y = 48,
+              width = 112,
+              height = 40,
+              rotation = 0,
+              visible = true,
+              text = "TOWARDS ARROW IN FLIGHT to CATCH",
+              fontfamily = "TinyUnicode",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 529,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1864,
+              y = 64,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 6884,
+              visible = true,
+              properties = {}
             }
           }
         },
