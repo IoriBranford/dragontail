@@ -49,14 +49,14 @@ local function findSomethingToRunningAttack(self, velx, vely)
     local x, y, opponents, solids = self.x, self.y, self.opponents, self.solids
     for i, opponent in ipairs(opponents) do
         if dot(opponent.x - x, opponent.y - y, velx, vely) > 0 then
-            if opponent.canbeattacked and Body.testBodyCollision(self, opponent) then
+            if opponent.canbeattacked and Body.predictBodyCollision(self, opponent) then
                 return opponent
             end
         end
     end
     for i, solid in ipairs(solids) do
         if dot(solid.x - x, solid.y - y, velx, vely) > 0 then
-            if solid.canbeattacked and Body.testBodyCollision(self, solid) then
+            if solid.canbeattacked and Body.predictBodyCollision(self, solid) then
                 return solid
             end
         end
