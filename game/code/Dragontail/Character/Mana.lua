@@ -10,7 +10,7 @@ local Mana = {}
 function Mana:init()
     self.manaunitsize = self.manaunitsize or 60
     self.manastoremax = self.manastoremax or (self.manaunitsize * 3)
-    self.manastore = self.manastore or self.manaunitsize
+    self.manastore = self.manastore or 0
     self.manacharge = self.manacharge or 0
 end
 
