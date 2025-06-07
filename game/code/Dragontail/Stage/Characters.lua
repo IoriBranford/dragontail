@@ -217,7 +217,7 @@ function Characters.fixedupdateLostEnemies()
     local numenemiesonscreen = 0
     for i = 1, #enemies do
         local enemy = enemies[i]
-        if enemy:isCylinderFullyOnCamera(camera) then
+        if enemy:isCylinderOnCamera(camera) then
             numenemiesonscreen = numenemiesonscreen + 1
         end
     end
