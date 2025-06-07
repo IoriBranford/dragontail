@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 55,
-  nextobjectid = 510,
+  nextobjectid = 513,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -18797,7 +18797,21 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 510,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3408,
+              y = 256,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
               visible = true,
               properties = {}
             }
@@ -20019,7 +20033,7 @@ return {
           type = "objectgroup",
           draworder = "topdown",
           id = 33,
-          name = "+spears",
+          name = "+knives",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -20041,7 +20055,21 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 511,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3752,
+              y = 216,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
               visible = true,
               properties = {}
             },
@@ -20055,7 +20083,21 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 5266,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 512,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 4416,
+              y = 136,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 5266,
               visible = true,
               properties = {}
             }
