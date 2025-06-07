@@ -19203,7 +19203,7 @@ return {
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
-                { x = 160, y = 0 }
+                { x = 128, y = 0 }
               },
               properties = {}
             },
@@ -19352,7 +19352,7 @@ return {
               rotation = 0,
               visible = true,
               polyline = {
-                { x = 320, y = 0 },
+                { x = 288, y = 0 },
                 { x = 640, y = 0 }
               },
               properties = {}

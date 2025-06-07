@@ -1055,7 +1055,7 @@ to sprint past archers</text>
   </objectgroup>
   <objectgroup draworder="index" id="43" name="tomesshall" class="Room">
    <object id="484" template="mapobjects/CameraPath.tx" x="3600" y="144">
-    <polyline points="0,0 160,0"/>
+    <polyline points="0,0 128,0"/>
    </object>
    <object id="320" gid="6626" x="3928" y="240" width="96" height="48">
     <properties>
@@ -1101,7 +1101,7 @@ to sprint past archers</text>
     <property name="donewhenenemiesleft" type="int" value="3"/>
    </properties>
    <object id="81" template="mapobjects/CameraPath.tx" x="3440" y="144">
-    <polyline points="320,0 640,0"/>
+    <polyline points="288,0 640,0"/>
    </object>
    <object id="74" template="mapobjects/OutwardBoundary.tx" x="3840" y="320">
     <polygon points="0,-320 0,-240 96,-240 128,-272 480,-272 480,-320"/>
