@@ -295,6 +295,17 @@ function Character:isFullyOnCamera(camera)
     return iw and iw == w and ih == h
 end
 
+function Character:isCylinderOnCamera(camera)
+    local cx, cy, cw, ch = camera.x, camera.y, camera.width, camera.height
+    local radius = self.bodyradius
+    local height = self.bodyheight
+    local w = 2 * radius
+    local h = w + height
+    local x, y = self.x - radius, self.y - radius - height
+    local _, _, iw, ih = math.rectintersection(x, y - self.z, w, h, cx, cy, cw, ch)
+    return iw and iw > 0 and ih > 0
+end
+
 function Character:isCylinderFullyOnCamera(camera)
     local cx, cy, cw, ch = camera.x, camera.y, camera.width, camera.height
     local radius = self.bodyradius
