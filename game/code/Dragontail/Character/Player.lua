@@ -863,6 +863,8 @@ function Player:hold(enemy)
     local holddirx, holddiry = enemy.x - self.x, enemy.y - self.y
     if holddirx == 0 and holddiry == 0 then
         holddirx = 1
+    else
+        holddirx, holddiry = norm(holddirx, holddiry)
     end
     local holdangle = atan2(holddiry, holddirx)
     local holddestangle = holdangle
@@ -887,14 +889,7 @@ function Player:hold(enemy)
         local speed = 2
         if inx ~= 0 or iny ~= 0 then
             inx, iny = norm(inx, iny)
-            local turnamt = 0
-            local turndir = det(holddirx, holddiry, inx, iny)
-            if turndir < 0 then
-                turnamt = -acos(dot(holddirx, holddiry, inx, iny))
-            else
-                turnamt = acos(dot(holddirx, holddiry, inx, iny))
-            end
-            holddestangle = holdangle + turnamt
+            holddestangle = atan2(iny, inx)
             targetvelx = inx * speed
             targetvely = iny * speed
         end
@@ -902,13 +897,7 @@ function Player:hold(enemy)
         self:accelerateTowardsVel(targetvelx, targetvely, 4)
         local velx, vely = self.velx, self.vely
 
-        local avel = 0
-        if holddestangle < holdangle then
-            avel = -pi/64
-        elseif holddestangle > holdangle then
-            avel = pi/64
-        end
-        holdangle = Movement.moveTowards(holdangle, holddestangle, avel)
+        holdangle = math.rotangletowards(holdangle, holddestangle, pi/64)
         self.holdangle = holdangle
         holddirx, holddiry = cos(holdangle), sin(holdangle)
         HoldOpponent.updateOpponentPosition(self)
