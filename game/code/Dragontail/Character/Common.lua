@@ -56,6 +56,10 @@ function Common:idle()
 end
 
 function Common:spark(time)
+    local baseanim = self.asetag or self.tileid
+    if baseanim and self.faceangle and (self.animationdirections or 1) > 1 then
+        Face.faceAngle(self, self.faceangle, baseanim, self.frame1, self.loopframe)
+    end
     time = time or self.lifetime or 30
     wait(time)
     self:disappear()
