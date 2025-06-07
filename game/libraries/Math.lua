@@ -8,6 +8,15 @@ local modf = math.modf
 
 local Debug_atan0 = true
 local Debug_norm0 = true
+local Debug_acosOutOfRange = true
+
+if Debug_acosOutOfRange then
+    local acos = math.acos
+    function math.acos(x)
+        assert(-1 <= x and x <= 1, "acos(|x| > 1)")
+        return acos(x)
+    end
+end
 
 if Debug_atan0 then
     local atan2 = math.atan2
