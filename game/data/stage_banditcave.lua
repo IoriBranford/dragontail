@@ -16660,10 +16660,10 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 224, y = 0 },
-                { x = 224, y = 96 },
-                { x = 544, y = 96 },
-                { x = 544, y = 0 }
+                { x = 144, y = 0 },
+                { x = 144, y = 96 },
+                { x = 624, y = 96 },
+                { x = 624, y = 0 }
               },
               properties = {
                 ["bodyheight"] = 512,
@@ -17218,6 +17218,9 @@ return {
                 ["entrypoint"] = { id = 495 },
                 ["exitpoint"] = { id = 496 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
+                ["itemtype"] = "food-fish",
+                ["itemvelx"] = 0,
+                ["itemvely"] = 12,
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -17240,6 +17243,9 @@ return {
                 ["entrypoint"] = { id = 497 },
                 ["exitpoint"] = { id = 499 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
+                ["itemtype"] = "food-fish",
+                ["itemvelx"] = 0,
+                ["itemvely"] = 12,
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -17668,7 +17674,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1808,
+              x = 1880,
               y = -8,
               width = 64,
               height = 64,

@@ -394,7 +394,7 @@ Cost 1</text>
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
-    <polygon points="224,0 224,96 544,96 544,0"/>
+    <polygon points="144,0 144,96 624,96 624,0"/>
    </object>
   </objectgroup>
   <objectgroup id="48" name="learnthrowingweapons" class="Room">
@@ -526,6 +526,9 @@ Cost 1</text>
      <property name="entrypoint" type="object" value="495"/>
      <property name="exitpoint" type="object" value="496"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
+     <property name="itemtype" value="food-fish"/>
+     <property name="itemvelx" type="float" value="0"/>
+     <property name="itemvely" type="float" value="12"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
@@ -537,6 +540,9 @@ Cost 1</text>
      <property name="entrypoint" type="object" value="497"/>
      <property name="exitpoint" type="object" value="499"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
+     <property name="itemtype" value="food-fish"/>
+     <property name="itemvelx" type="float" value="0"/>
+     <property name="itemvely" type="float" value="12"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
@@ -668,7 +674,7 @@ Cost 1</text>
     <point/>
    </object>
    <object id="307" gid="5270" x="1568" y="256" width="64" height="64"/>
-   <object id="503" gid="5270" x="1808" y="-8" width="64" height="64">
+   <object id="503" gid="5270" x="1880" y="-8" width="64" height="64">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
