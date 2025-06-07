@@ -929,7 +929,8 @@ function Player:hold(enemy)
         local chargedattack = not self.attackbutton.down and self:getChargedAttack(ChargeAttacks)
         if chargedattack then
             Mana.releaseCharge(self)
-            return chargedattack, holddestangle
+            HoldOpponent.stopHolding(self, enemy)
+            return chargedattack, holdangle
         end
         -- if fireattackpressed then
         --     if Mana.canAffordAttack(self, "flaming-spinning-throw") then
