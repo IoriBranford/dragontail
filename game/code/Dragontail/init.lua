@@ -34,6 +34,7 @@ function love.load(args)
 
     Config.parseArgs(args)
     Config.exhibit = args.exhibit
+    Config.drawinput = args.drawinput
     Config.drawbodies = args.drawbodies
     Config.drawstats = args.drawstats
     Config.drawai = args.drawai
@@ -71,6 +72,7 @@ return {
         --rotation                              (number default -1)	Screen orientation in degrees clockwise
         --drawbodies                            Draw physical bodies
         --drawai                                Draw AI information
+        --drawinput                             Draw controller input
         --exhibit                               Exhibit mode - disable options menu and quit
         --buildmegatilesets	(optional string)   Build megatilesets for all maps in the given text file
         --stage (optional string)               Name of stage to start
@@ -84,6 +86,7 @@ return {
         canvasscaleint = false,
         canvasscalesoft = true,
 
+        drawinput = false,
         drawbodies = false,
         drawai = false,
         exhibit = false,

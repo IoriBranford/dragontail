@@ -125,10 +125,15 @@ end
 local function fixedupdateInputDisplay()
     local input = Gui.gameplay.input
     if input then
+        ---@cast input ObjectGroup
+        input.visible = Config.drawinput
+        if not input.visible then
+            return
+        end
+
         local x, y = Player.getJoystick()
         local attackbutton = Inputs.getAction("attack")
         local sprintbutton = Inputs.getAction("sprint")
-        ---@cast input ObjectGroup
         if x ~= 0 or y ~= 0 then
             input.joystickdirection.visible = true
             input.joystickdirection.rotation = math.atan2(y, x)
