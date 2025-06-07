@@ -43,10 +43,9 @@ function SpearBandit:duringDodge()
     if (self.numdodges or 0) >= DodgesBeforeCounterAttack then
         if math.lensq(self.velx, self.vely) < 16 then
             local opponent = self.opponents[1]
-            local maxcounterdist = 128
-            local dsq = math.distsq(self.x, self.y, opponent.x, opponent.y)
-            if dsq <= maxcounterdist*maxcounterdist then
+            if self:couldAttackOpponent(opponent, CounterAttackType) then
                 Face.faceObject(self, opponent)
+                opponent.attacker = self
                 return CounterAttackType
             end
         end
