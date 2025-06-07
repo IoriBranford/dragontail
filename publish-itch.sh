@@ -1,4 +1,7 @@
 #!/bin/sh
+set -e
+
+. ./make-vars.sh
 
 # Set to your itch username
 ORG=ioribranford
