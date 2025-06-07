@@ -10,4 +10,4 @@ particle-hit-sweat,sprites/vfx.jase,Dragontail.Character.Common,shrinkOut,data/s
 particle,sprites/vfx.jase,Dragontail.Character.Common,shrinkOut,data/st_objects.csv,liquid,,3,3,30,,,,0.125,,,,
 spark-land-on-feet-dust,sprites/vfx/dust-land-on-feet.jase,Dragontail.Character.Common,spark,data/st_objects.csv,*,0,12,6,21,,,,,,,,
 spark-fireball-shatter,sprites/rose-fireball.jase,Dragontail.Character.Common,spark,data/st_objects.csv,Shatter,0,32,40,15,,,,,,,,
-spark-spit-fireball,sprites/rose-fireball.jase,Dragontail.Character.Common,spark,data/st_objects.csv,Spit,0,32,32,9,,0,,,,,,12
+spark-spit-fireball,sprites/rose-fireball.jase,Dragontail.Character.Common,spark,data/st_objects.csv,Spit,0,32,32,9,,1,,,,,,12
