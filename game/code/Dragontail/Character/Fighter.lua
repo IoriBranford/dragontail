@@ -363,7 +363,6 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
     )
     self.health = self.health - (self.wallslamdamage or 25)
     self.velx, self.vely, self.velz = 0, 0, 0
-    yield()
     self:stopAttack()
     self.hurtstun = self.wallslamstun or 20
     yield()
