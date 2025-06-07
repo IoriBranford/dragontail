@@ -620,7 +620,9 @@ function Player:spinAttack(attackangle)
     repeat
         if projectile then
             local projectileangle = attackangle + pi
-            Shoot.launchProjectile(self, projectile, cos(projectileangle), sin(projectileangle), 0)
+            local cosangle, sinangle = cos(projectileangle), sin(projectileangle)
+            Shoot.launchProjectile(self, "spark-spit-fireball", cosangle, sinangle, 0)
+            Shoot.launchProjectile(self, projectile, cosangle, sinangle, 0)
         end
 
         local inx, iny = self:getJoystick()
@@ -1090,6 +1092,7 @@ function Player:straightAttack(angle, heldenemy)
         local numprojectiles = self.attackprojectilecount or 1
         local targetx, targety, targetz = findInstantThrowTarget(self, cos(angle), sin(angle))
         if numprojectiles <= 1 then
+            Shoot.launchProjectile(self, "spark-spit-fireball", cos(angle), sin(angle), 0)
             Shoot.launchProjectileAtPosition(self, self.attackprojectile, targetx, targety, targetz)
         else
             local arc = self.attackarc or 0
@@ -1098,6 +1101,10 @@ function Player:straightAttack(angle, heldenemy)
             totargetx, totargety = math.rot(totargetx, totargety, -arc)
             for i = 1, numprojectiles do
                 targetx, targety = self.x + totargetx, self.y + totargety
+                if totargetx ~= 0 or totargety ~= 0 then
+                    local dirx, diry = norm(totargetx, totargety)
+                    Shoot.launchProjectile(self, "spark-spit-fireball", dirx, diry, 0)
+                end
                 Shoot.launchProjectileAtPosition(self, self.attackprojectile, targetx, targety, targetz)
                 totargetx, totargety = math.rot(totargetx, totargety, arcbetweenprojectiles)
             end
