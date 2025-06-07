@@ -306,17 +306,19 @@ function Common:projectileHoming()
         if oobz then
             self.velz = -self.velz
         end
+        local vx, vy, vz = self.velx, self.vely, self.velz
         local nearest = findHomingTarget(self, opponents)
         if nearest then
-            local vx = nearest.x - self.x
-            local vy = nearest.y - self.y
-            local vz = nearest.z + nearest.bodyheight/2 - self.z - self.bodyheight/2
-            if vx ~= 0 or vy ~= 0 or vz ~= 0
-            then
-                vx, vy, vz = math.norm(vx, vy, vz)
-                self:accelerateTowardsVel3(vx * self.speed, vy * self.speed, vz * self.speed, 8)
-            end
+            vx = nearest.x - self.x
+            vy = nearest.y - self.y
+            vz = nearest.z + nearest.bodyheight/2 - self.z - self.bodyheight/2
         end
+        if vx == 0 and vy == 0 and vz == 0 then
+            vx, vy = cos(self.faceangle), sin(self.faceangle)
+        else
+            vx, vy, vz = math.norm(vx, vy, vz)
+        end
+        self:accelerateTowardsVel3(vx * self.speed, vy * self.speed, vz * self.speed, 8)
         if self.velx ~= 0 or self.vely ~= 0 then
             Face.faceVector(self, self.velx, self.vely, self.state.animation)
             self:startAttack(self.faceangle)
