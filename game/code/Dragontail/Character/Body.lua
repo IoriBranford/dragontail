@@ -179,6 +179,24 @@ local function testBodyCollision_polygonAndCircle(polygon, circle)
         and math.distsq(otherx, othery, nearestx, nearesty) <= circle.bodyradius
 end
 
+function Body:predictBodyCollision(other)
+    if self == other then
+        return
+    end
+    if self.z + self.velz <= other.z + other.velz + other.bodyheight
+        and other.z + other.velz <= self.z + self.velz + self.bodyheight
+        and math.testcircles(self.x + self.velx, self.y + self.vely, self.bodyradius,
+            other.x + other.velx, other.y + other.vely, other.bodyradius)
+    then
+        if self.points and not other.points then
+            return testBodyCollision_polygonAndCircle(self, other)
+        elseif other.points then
+            return testBodyCollision_polygonAndCircle(other, self)
+        end
+        return true
+    end
+end
+
 function Body:testBodyCollision(other)
     if self ~= other
         and self.z <= other.z + other.bodyheight
