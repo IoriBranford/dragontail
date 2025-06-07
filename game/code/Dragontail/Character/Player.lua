@@ -1022,10 +1022,7 @@ function Player:spinAndKickEnemy(angle, enemy)
     local spinvel = self.attackspinspeed or 0
     local maxspunmag = self.attackspinmax or (4*pi)
     local minspunmag = self.attackspinmin or 0
-    local x, y = self.x, self.y
-    local grabradius = self.grabradius or 8
-    local radii = grabradius + enemy.bodyradius
-    local holddirx, holddiry = enemy.x - x, enemy.y - y
+    local holddirx, holddiry = enemy.x - self.x, enemy.y - self.y
     if holddirx ~= 0 or holddiry ~= 0 then
         holddirx, holddiry = norm(holddirx, holddiry)
     else
@@ -1046,7 +1043,6 @@ function Player:spinAndKickEnemy(angle, enemy)
         end
 
         self:accelerateTowardsVel(targetvelx, targetvely, 4)
-        local velx, vely = self.velx, self.vely
 
         if math.ceil(spunmag / 2 / pi) < math.ceil((spunmag+spinmag) / 2 / pi) then
             Audio.play(self.windupsound)
@@ -1065,16 +1061,17 @@ function Player:spinAndKickEnemy(angle, enemy)
         Face.faceAngle(self, angle, self.state and self.state.animation)
 
         holddirx, holddiry = cos(angle), sin(angle)
-        x, y = self.x, self.y
-        enemy.x = x + velx + holddirx*radii
-        enemy.y = y + vely + holddiry*radii
+        self.holdangle = angle
+        HoldOpponent.updateOpponentPosition(self)
+        HoldOpponent.handleOpponentCollision(self)
 
         yield()
     until spunmag >= minspunmag
     and dot(throwx, throwy, holddirx, holddiry) >= cos(spinmag)
 
-    enemy.x = x + self.velx + throwx*radii
-    enemy.y = y + self.vely + throwy*radii
+    self.holdangle = atan2(throwy, throwx)
+    HoldOpponent.updateOpponentPosition(self)
+    HoldOpponent.handleOpponentCollision(self)
     Audio.play(self.throwsound)
     enemy:stopAttack()
     HoldOpponent.stopHolding(self, enemy)
