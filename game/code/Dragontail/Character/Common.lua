@@ -222,11 +222,11 @@ end
 
 function Common:projectileHit(opponent)
     if opponent then
-        -- Audio.play(self.hitsound)
+        -- Audio.play(self.attack.hitsound)
     else
         Audio.play(self.bodyslamsound)
     end
-    DirectionalAnimation.set(self, self.attackhitanimation, self.attackangle)
+    DirectionalAnimation.set(self, self.attack.selfanimationonhit, self.attackangle)
     self:stopAttack()
     local hitbounce = self.attackhitbounce or 2
     local normx, normy = math.norm(-self.velx, -self.vely)
@@ -330,9 +330,9 @@ function Common:projectileHoming()
         yield()
         lifetime = lifetime - 1
     until lifetime <= 0
-    local attackhitai = self.attackhitboundaryai or self.attackhitai
-    if attackhitai then
-        return attackhitai, oobx, ooby, oobz
+    local selfstateonhit = self.attack.selfstateonhitboundary or self.attack.selfstateonhit
+    if selfstateonhit then
+        return selfstateonhit, oobx, ooby, oobz
     end
     self:disappear()
 end
@@ -397,20 +397,23 @@ function Common:projectileFly(shooter)
             lifetime = lifetime - 1
         end
     until oobx or ooby or oobz or lifetime and lifetime <= 0
-    local attackhitai = self.attackhitboundaryai or self.attackhitai
-    if attackhitai then
-        return attackhitai, oobx, ooby, oobz
+    local selfstateonhit = self.attack.selfstateonhitboundary or self.attack.selfstateonhit
+    if selfstateonhit then
+        return selfstateonhit, oobx, ooby, oobz
     end
     self:disappear()
 end
 
+---@param deflector Character
+---@return string
+---@return any
 function Common:projectileDeflected(deflector)
-    if not deflector.attackdeflectsprojectile then
+    if not deflector.attack.deflectsprojectile then
         return "projectileBounce", deflector
     end
-    self.hurtstun = deflector.attackstun or 3
+    self.hurtstun = deflector.attack.opponentstun or 3
 
-    Audio.play(deflector.hitsound)
+    Audio.play(deflector.attack.hitsound)
     local attackangle = deflector.attackangle
     local dirx, diry, dirz = cos(attackangle), sin(attackangle), 0
 
@@ -449,7 +452,7 @@ end
 
 function Common:guardHit(attacker)
     Audio.play(self.guardhitsound)
-    self:makeImpactSpark(attacker, attacker.guardhitspark)
+    self:makeImpactSpark(attacker, attacker.attack.guardhitspark)
     self.hurtstun = attacker.attackguardstun or 6
     yield()
     return self.recoverai or self.initialai

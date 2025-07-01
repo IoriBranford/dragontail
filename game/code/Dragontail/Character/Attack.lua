@@ -7,10 +7,6 @@ local Body = require "Dragontail.Character.Body"
 ---@field hitstun number
 ---@field thrower Character
 ---@field numopponentshit integer?
----@field attackhitai string?
----@field attackhitopponentai string?
----@field attackhitboundaryai string?
----@field attackguardedai string?
 ---@field onAttackHit fun(self:Attack, target:Hurt)?
 local Attack = {}
 
@@ -79,10 +75,10 @@ function Attack:checkAttackCollision_pieslice(target)
     if distsq <= bodyradius * bodyradius then
         return true
     end
-    local radii = bodyradius + self.attackradius
+    local radii = bodyradius + (self.attack.radius or 0)
     local radiisq = radii * radii
     if distsq <= radiisq then
-        local attackarc = self.attackarc
+        local attackarc = self.attack.arc or 0
         if attackarc >= math.pi then
             return true
         end
@@ -111,8 +107,8 @@ function Attack:checkAttackCollision_circle(target)
     end
     local attackz = self.z
     local attackheight = self.bodyheight
-    local attacklen = self.attackradius
-    local attackr = attacklen * math.sin(self.attackarc or 0)
+    local attacklen = self.attack.radius or 0
+    local attackr = attacklen * math.sin(self.attack.arc or 0)
     local attackx = self.x + math.cos(attackangle)*(attacklen - attackr)
     local attacky = self.y + math.sin(attackangle)*(attacklen - attackr)
     local penex, peney, penez = Body.getCylinderPenetration(target, attackx, attacky, attackz, attackr, attackheight)
@@ -126,7 +122,7 @@ function Attack:collideWithCharacterAttack(target)
         return
     end
     if not target.canbeattacked then
-        if not self.attackcanjuggle or not target.canbejuggled then
+        if not self.attack.canjuggle or not target.canbejuggled then
             return
         end
     end
@@ -138,7 +134,7 @@ end
 
 function Attack:drawPieslice(fixedfrac)
     local attackangle = self.attackangle
-    local attackradius = self.attackradius
+    local attackradius = self.attack.radius or 0
     if attackradius <= 0 or not attackangle then
         return
     end
@@ -147,7 +143,7 @@ function Attack:drawPieslice(fixedfrac)
     local x, y = self.x + self.velx * fixedfrac, self.y + self.vely * fixedfrac
     local bodyheight = self.bodyheight
     local screeny = y - self.z
-    local attackarc = self.attackarc
+    local attackarc = self.attack.arc or 0
     love.graphics.setColor(1, .5, .5)
     if attackarc > 0 then
         love.graphics.arc("line", x, screeny, attackradius, attackangle - attackarc, attackangle + attackarc)
@@ -174,13 +170,13 @@ end
 
 function Attack:drawCircle(fixedfrac)
     local attackangle = self.attackangle
-    local attackradius = self.attackradius
+    local attackradius = self.attack.radius or 0
     if attackradius <= 0 or not attackangle then
         return
     end
 
     fixedfrac = fixedfrac or 0
-    local attackarc = self.attackarc
+    local attackarc = self.attack.arc or 0
     local attackr = math.max(1, attackradius * math.sin(attackarc))
     local x = self.x + self.velx*fixedfrac + math.cos(attackangle)*(attackradius - attackr)
     local y = self.y + self.vely*fixedfrac + math.sin(attackangle)*(attackradius - attackr)

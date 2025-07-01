@@ -32,6 +32,7 @@ local testcircles = math.testcircles
 ---@field animationdirections integer?
 ---@field emote Character?
 local Character = class(Object)
+Character.attack = {} ---@type AttackData
 
 function Character:init()
     Characters = Characters or require "Dragontail.Stage.Characters"
@@ -45,11 +46,7 @@ function Character:init()
     StateMachine.init(self)
 
     self.drawz = self.drawz or 0
-    self.attackradius = self.attackradius or 0
     -- ch.attackangle = ch.attackangle or 0
-    self.attackarc = self.attackarc or 0
-    self.attackdamage = self.attackdamage or 1
-    self.attackstun = self.attackstun or 1
     self.hitstun = self.hitstun or 0
     self.hurtstun = self.hurtstun or 0
 end
@@ -211,7 +208,7 @@ end
 function Character:onHitByAttack(attacker)
     local guardhitai = self.guardai or "guardHit"
     local hurtai = self.hurtai or "hurt"
-    local hitai = attacker.attackhitai
+    local hitai = attacker.attack.selfstateonhit
     local attacktype = attacker.attacktype
     local canbedamagedbyattack = self.canbedamagedbyattack
     if type(attacktype) == "string"
@@ -223,13 +220,13 @@ function Character:onHitByAttack(attacker)
 
     if self.guardangle or not canbedamagedbyattack then
         StateMachine.start(self, guardhitai, attacker)
-        hitai = attacker.attackguardedai or hitai
+        hitai = attacker.selfstateonguard or hitai
     else
         StateMachine.start(self, hurtai, attacker)
         if attacker.hitstun <= 0 then
-            attacker.hitstun = attacker.attackstunself or 3
+            attacker.hitstun = attacker.attack.selfstun or 3
         end
-        hitai = attacker.attackhitopponentai or hitai
+        hitai = attacker.attack.selfstateonhitopponent or hitai
         attacker.numopponentshit = (attacker.numopponentshit or 0) + 1
     end
     if hitai then
@@ -240,7 +237,7 @@ end
 function Character:debugPrint_collideWithCharacterAttack(attacker)
     print("hurtstun", self.hurtstun)
     print("canbeattacked", self.canbeattacked)
-    print("attacker.attackcanjuggle", attacker.attackcanjuggle)
+    print("attacker.attack.canjuggle", attacker.attack.canjuggle)
     print("canbejuggled", self.canbejuggled)
     if not Attack.checkAttackCollision(attacker, self) then
         Attack.debugPrint_checkAttackCollision_circle(attacker, self)
@@ -253,7 +250,7 @@ function Character:collideWithCharacterAttack(attacker)
         return
     end
     if not self.canbeattacked then
-        if not attacker.attackcanjuggle or not self.canbejuggled then
+        if not attacker.attack.canjuggle or not self.canbejuggled then
             return
         end
     end

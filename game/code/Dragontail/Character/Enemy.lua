@@ -84,7 +84,7 @@ function Enemy:decideNextAttack()
         for i, attackchoice in ipairs(attackchoices) do
             local attackdata = self.attacktable[attackchoice]
             if attackdata then
-                local attackrange = (attackdata.attackbestdist or 1) + opponent.bodyradius
+                local attackrange = (attackdata.bestdist or 1) + opponent.bodyradius
                 if attackrange*attackrange >= toopposq then
                     attacktype = attackchoice
                     break
@@ -110,9 +110,9 @@ function Enemy:debugPrint_couldAttackOpponent(opponent, attacktype)
     print("attackdata", attackdata)
     if attackdata then
         local toopposq = distsq(self.x, self.y, opponent.x, opponent.y)
-        local attackrange = (attackdata.attackbestdist or 1) + opponent.bodyradius
+        local attackrange = (attackdata.bestdist or 1) + opponent.bodyradius
         print("dist", math.sqrt(toopposq))
-        print("attackrange", attackrange, '=', (attackdata.attackbestdist or 1), '+', opponent.bodyradius)
+        print("attackrange", attackrange, '=', (attackdata.bestdist or 1), '+', opponent.bodyradius)
         print("closeEnough", toopposq <= attackrange*attackrange)
     end
 end
@@ -132,7 +132,7 @@ function Enemy:couldAttackOpponent(opponent, attacktype)
     end
 
     local toopposq = distsq(self.x, self.y, opponent.x, opponent.y)
-    local attackrange = (attackdata.attackbestdist or 1) + opponent.bodyradius
+    local attackrange = (attackdata.bestdist or 1) + opponent.bodyradius
     return toopposq <= attackrange*attackrange
 end
 
@@ -180,9 +180,9 @@ end
 function Enemy:findAttackerSlot(opponent, attacktype)
     local bodyradius = self.bodyradius
     local attackdata = self.attacktable[attacktype]
-    local attackrange = (attackdata and attackdata.attackbestdist or 1) + opponent.bodyradius
+    local attackrange = (attackdata and attackdata.bestdist or 1) + opponent.bodyradius
     local attackerslot
-    if self.attackprojectile then
+    if self.attack.projectiletype then
         attackerslot = opponent:findRandomAttackerSlot(bodyradius, "missile", self.x, self.y)
     else
         attackerslot = opponent:findRandomAttackerSlot(attackrange + bodyradius, "melee", self.x, self.y)
@@ -194,10 +194,10 @@ end
 function Enemy:getAttackerSlotPosition(opponent, attackerslot, attacktype)
     local bodyradius = self.bodyradius
     local attackdata = self.attacktable[attacktype]
-    local attackrange = (attackdata and attackdata.attackbestdist or 1)
+    local attackrange = (attackdata and attackdata.bestdist or 1)
     local oppox, oppoy = opponent.x, opponent.y
     local destx, desty
-    if self.attackprojectile then
+    if self.attack.projectiletype then
         destx, desty = attackerslot:getFarPosition(oppox, oppoy, bodyradius)
     else
         destx, desty = attackerslot:getPosition(oppox, oppoy, attackrange)
@@ -366,22 +366,22 @@ function Enemy:executeAttack()
 
     local target = self.opponents[1]
 
-    local attackprojectile = self.attackprojectile
-    if attackprojectile then
+    local projectiletype = self.attack.projectiletype
+    if projectiletype then
         -- TODO if target in view then
-        Shoot.launchProjectileAtObject(self, attackprojectile, target)
+        Shoot.launchProjectileAtObject(self, projectiletype, target)
         -- TODO else shoot at current faceangle
     else
         local attackangle = floor((self.faceangle + (pi/4)) / (pi/2)) * pi/2
         self:startAttack(attackangle)
     end
 
-    local lungespeed = self.attacklungespeed or 0
-    local hittime = self.attackhittime or 10
+    local lungespeed = self.attack.lungespeed or 0
+    local hittime = self.attack.hittingduration or 10
     hittime = math.min(hittime, self.state.statetime)
     local slideangle = self.faceangle
     for t = 1, math.min(300, self.state.statetime) do
-        lungespeed = Slide.updateSlideSpeed(self, slideangle, lungespeed, self.attacklungedecel or 1)
+        lungespeed = Slide.updateSlideSpeed(self, slideangle, lungespeed, self.attack.lungedecel or 1)
         local state, a, b, c, d, e, f = self:duringAttackSwing(target)
         if state then
             return state, a, b, c, d, e, f
@@ -400,20 +400,6 @@ function Enemy:executeAttack()
             self:stopAttack()
         end
     end
-end
-
-function Enemy:attack()
-    local opponent = self.opponents[1]
-    local targetx, targety, targetz = opponent.x, opponent.y, opponent.z
-    local state, a, b, c, d, e, f = self:prepareAttack(opponent)
-    if state then
-        return state, a, b, c, d, e, f
-    end
-    state, a, b, c, d, e, f = self:executeAttack(targetx, targety, targetz)
-    if state then
-        return state, a, b, c, d, e, f
-    end
-    return "stand", 20
 end
 
 function Enemy:enterAndDropDown()
@@ -490,7 +476,7 @@ function Enemy:guardHit(attacker)
     -- local dotGA = dot(toattackerx, toattackery, facex, facey)
     -- if dotGA >= cos(guardarc) * toattackerdist then
     Audio.play(self.guardhitsound)
-    self:makeImpactSpark(attacker, attacker.guardhitspark)
+    self:makeImpactSpark(attacker, attacker.attack.guardhitspark)
     self.hurtstun = attacker.attackguardstun or 6
     yield()
 

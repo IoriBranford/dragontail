@@ -55,45 +55,40 @@ function StateMachine.start(self, statename, ...)
     local state = self.statetable and self.statetable[statename]
     if state then
         self.state = state
-    for i = 1, #StateVarsToCopy do
-        local var = StateVarsToCopy[i]
-        if state[var] ~= nil then
-            self[var] = state[var]
+        for i = 1, #StateVarsToCopy do
+            local var = StateVarsToCopy[i]
+            if state[var] ~= nil then
+                self[var] = state[var]
+            end
         end
-    end
 
-    local attackdata = self.attacktable and self.attacktable[state.attack]
-    if attackdata then
         self.attacktype = state.attack
-        Database.fill(self, attackdata)
-    else
-        self.attacktype = nil
-    end
+        self.attack = self.attacktable and self.attacktable[state.attack]
 
-    local animationname = state.animation
-    local frame = state.frame1
-    if animationname or frame then
-        local aseprite = self.aseprite
-        local tile = self.tile
-        if aseprite or tile then
-            local dirs = self.animationdirections or 1
-            if animationname and dirs > 1 then
-                local angle = self.faceangle
-                if angle then
-                    local diranimationname = DirectionalAnimation.FromAngle(animationname, angle, dirs)
-                    local animations = aseprite and aseprite.animations or tile and tile.tileset
-                    if animations[diranimationname] then
-                        animationname = diranimationname
+        local animationname = state.animation
+        local frame = state.frame1
+        if animationname or frame then
+            local aseprite = self.aseprite
+            local tile = self.tile
+            if aseprite or tile then
+                local dirs = self.animationdirections or 1
+                if animationname and dirs > 1 then
+                    local angle = self.faceangle
+                    if angle then
+                        local diranimationname = DirectionalAnimation.FromAngle(animationname, angle, dirs)
+                        local animations = aseprite and aseprite.animations or tile and tile.tileset
+                        if animations[diranimationname] then
+                            animationname = diranimationname
+                        end
                     end
                 end
+
+                self:setAnimation(animationname, frame, state.loopframe)
             end
-
-            self:setAnimation(animationname, frame, state.loopframe)
         end
-    end
-    -- DirectionalAnimation.set(self, animationname, angle, frame, state.loop)
+        -- DirectionalAnimation.set(self, animationname, angle, frame, state.loop)
 
-    Audio.play(state.sound)
+        Audio.play(state.sound)
 
         local action = self[state.action]
         if type(action) == "function" then

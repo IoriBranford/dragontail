@@ -76,6 +76,10 @@ Fighter.storeMana = Mana.store
 
 function Fighter:duringHurt() end
 
+---hurt state code
+---@param attacker Character
+---@return string nextstate
+---@return ... next state args
 function Fighter:hurt(attacker)
     local hurtangle
     if attacker.y == self.y and attacker.x == self.x then
@@ -84,30 +88,30 @@ function Fighter:hurt(attacker)
         hurtangle = atan2(attacker.y - self.y, attacker.x - self.x)
     end
     self.hurtangle = hurtangle
-    self.hurtparticle = attacker.attackhurtparticle
-    self.hurtcolorcycle = attacker.attackhurtcolorcycle
-    self:makeImpactSpark(attacker, attacker.hitspark)
-    self.health = self.health - attacker.attackdamage
+    self.hurtparticle = attacker.attack.hurtparticle
+    self.hurtcolorcycle = attacker.attack.hurtcolorcycle
+    self:makeImpactSpark(attacker, attacker.attack.hitspark)
+    self.health = self.health - (attacker.attack.damage or 0)
     self.velx, self.vely = 0, 0
     self:stopAttack()
     HoldOpponent.stopHolding(self, self.heldopponent)
-    self.hurtstun = attacker.attackstun or 3
+    self.hurtstun = attacker.attack.opponentstun or 3
 
     if attacker.storeMana then
-        local mana = attacker.attackgivesmanaonhit
-            or math.max(1, math.floor(attacker.attackdamage/4))
+        local mana = attacker.attack.gainmanaonhit
+            or math.max(1, math.floor((attacker.attack.damage or 0)/4))
         attacker:storeMana(mana)
     end
 
-    local hitsound = attacker.hitsound
+    local hitsound = attacker.attack.hitsound
     if self.health <= 0 then
-        hitsound = attacker.attackdefeatsound or hitsound
+        hitsound = attacker.attack.finalhitsound or hitsound
     end
     Audio.play(hitsound)
     local attackangle = attacker.attackangle
-    local defeateffect = attacker.attackdefeateffect
-    local hiteffect = attacker.attackhiteffect
-    local pushbackspeed = attacker.attackpushbackspeed or 0
+    local defeateffect = attacker.attack.opponentstateonfinalhit
+    local hiteffect = attacker.attack.opponentstateonhit
+    local pushbackspeed = attacker.attack.pushbackspeed or 0
     yield()
 
     if self.health <= 0 then
@@ -197,7 +201,7 @@ function Fighter:knockedBack(thrower, attackangle)
     self.hurtstun = 0
     self:stopAttack()
     self.thrower = thrower
-    local thrownspeed = thrower.attacklaunchspeed or 10
+    local thrownspeed = thrower.attack.launchspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
     self.velz = thrower.attackpopupspeed or 4
     local oobx, ooby, oobz
@@ -242,10 +246,10 @@ function Fighter:knockedBackOrThrown(thrower, attackangle)
         self:stopAttack()
     end
     self.thrower = thrower
-    local thrownspeed = thrower.attacklaunchspeed or 10
+    local thrownspeed = thrower.attack.launchspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
     self.velz = thrower.attackpopupspeed or 4
-    local thrownsound = self.swingsound and Audio.newSource(self.swingsound)
+    local thrownsound = self.attack.swingsound and Audio.newSource(self.attack.swingsound)
     if thrownsound then thrownsound:play() end
     local thrownslidetime = self.thrownslidetime or 1
     local oobx, ooby, oobz
@@ -317,10 +321,10 @@ function Fighter:thrown(thrower, attackangle)
         end
     end
     self.hurtstun = 0
-    local thrownspeed = thrower.attacklaunchspeed or 10
+    local thrownspeed = thrower.attack.launchspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
     self.velz = thrower.attackpopupspeed or 4
-    local thrownsound = self.swingsound and Audio.newSource(self.swingsound)
+    local thrownsound = self.attack.swingsound and Audio.newSource(self.attack.swingsound)
     if thrownsound then thrownsound:play() end
     local thrownslidetime = self.thrownslidetime or 10
     local oobx, ooby, oobz

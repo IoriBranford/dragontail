@@ -97,26 +97,12 @@ function BanditBoss:duringPrepareAttack(target)
 end
 
 function BanditBoss:duringAttackSwing(target)
-    local turnspeed = self.attackspinspeed or 0
+    local turnspeed = self.attack.spinspeed or 0
     if turnspeed ~= 0 then
         self.attackangle = self.attackangle + turnspeed
         Face.faceAngle(self, self.attackangle, self.state.animation, self.state.frame1, self.state.loopframe)
     end
     return self:getAttackSwitch(target)
-end
-
-function BanditBoss:attack()
-    local opponents = Characters.getGroup("players")
-    local opponent = opponents[1]
-    local nextstate, a, b, c = self:prepareAttack(opponent)
-    if nextstate then
-        return nextstate, a, b, c
-    end
-    nextstate, a, b, c = self:executeAttack(opponent)
-    if nextstate then
-        return nextstate, a, b, c
-    end
-    return "stand", 20
 end
 
 function BanditBoss:beforeGetUp(attacker)

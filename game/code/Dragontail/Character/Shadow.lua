@@ -11,9 +11,9 @@ function Shadow:drawShape(fixedfrac)
     love.graphics.circle("fill", x, y, self.bodyradius)
 
     local attackangle = self.attackangle
-    local attackradius = self.attackradius
+    local attackradius = self.attack.radius
     if attackradius > 0 and attackangle then
-        local attackarc = self.attackarc
+        local attackarc = self.attack.arc
         if attackarc > 0 then
             love.graphics.arc("fill", x, y, attackradius, attackangle - attackarc, attackangle + attackarc)
         else

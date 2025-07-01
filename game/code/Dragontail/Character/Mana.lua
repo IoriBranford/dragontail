@@ -51,7 +51,7 @@ function Mana:hasChargeForAttack(attack)
     if type(attack) == "string" then
         attack = self.attacktable[attack]
     end
-    return attack and not attack.attackmanacost or self.manacharge >= attack.attackmanacost
+    return attack and not attack.manacost or self.manacharge >= attack.manacost
 end
 
 function Mana:decayCharge(decay)
@@ -64,15 +64,15 @@ function Mana:canAffordAttack(attack)
     if type(attack) == "string" then
         attack = self.attacktable[attack]
     end
-    return attack and not attack.attackmanacost or self.manastore >= attack.attackmanacost
+    return attack and not attack.manacost or self.manastore >= attack.manacost
 end
 
 function Mana:consumeForAttack(attack)
     if type(attack) == "string" then
         attack = self.attacktable[attack]
     end
-    if attack and attack.attackmanacost then
-        Mana.store(self, -attack.attackmanacost)
+    if attack and attack.manacost then
+        Mana.store(self, -attack.manacost)
     end
 end
 

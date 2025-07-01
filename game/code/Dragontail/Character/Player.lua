@@ -117,13 +117,13 @@ knee -> knee -> spinthrow
 function Player:doComboAttack(faceangle, heldenemy, special)
     local attacktype = self:getNextAttackType(heldenemy, special)
     local attackdata = self.attacktable[attacktype]
-    if attackdata and attackdata.attackendscombo or self.comboindex >= 3 then
+    if attackdata and attackdata.endscombo or self.comboindex >= 3 then
         self.comboindex = 1
     else
         self.comboindex = self.comboindex + 1
     end
 
-    return attacktype, faceangle, attackdata and attackdata.attackholds and heldenemy
+    return attacktype, faceangle, attackdata and attackdata.isholding and heldenemy
 end
 
 local function findInstantThrowDir(self, targetfacex, targetfacey)
@@ -382,7 +382,7 @@ function Player:findProjectileToCatch(parryx, parryy)
         and projectile.z >= z
         and projectile.z <= ztop
         then
-            local catchprojradius = catchradius + math.max(projectile.attackradius, projectile.bodyradius)
+            local catchprojradius = catchradius + math.max(projectile.attack.radius, projectile.bodyradius)
             local toprojx = projectile.x - x
             local toprojy = projectile.y - y
             local d = dot(parryx, parryy, toprojx, toprojy)
@@ -609,13 +609,13 @@ function Player:spinAttack(attackangle)
     self.numopponentshit = 0
     local lungeangle = attackangle
     local originalfaceangle = self.faceangle
-    local spinvel = self.attackspinspeed or 0
-    local spintime = self.attackhittime or 0
+    local spinvel = self.attack.spinspeed or 0
+    local spintime = self.attack.hittingduration or 0
     local pressedattackbutton
     local t = spintime
-    local lungespeed = self.attacklungespeed
-    local projectile = self.attackprojectile
-    Mana.store(self, -(self.attackmanacost or 0))
+    local lungespeed = self.attack.lungespeed
+    local projectile = self.attack.projectiletype
+    Mana.store(self, -(self.attack.manacost or 0))
     -- local buttonholdtimeforfireball = spintime/2
     repeat
         if projectile then
@@ -943,7 +943,7 @@ end
 
 function Player:runWithEnemy(enemy)
     self.facedestangle = self.faceangle
-    StateMachine.start(enemy, self.attackofheldopponent or "human-in-spinning-throw", self)
+    StateMachine.start(enemy, self.attack.heldopponentstate or "human-in-spinning-throw", self)
     enemy:startAttack(self.faceangle)
     local runningtime = 0
     while true do
@@ -1019,11 +1019,11 @@ function Player:runWithEnemy(enemy)
 end
 
 function Player:spinAndKickEnemy(angle, enemy)
-    Mana.store(self, -(self.attackmanacost or 0))
-    StateMachine.start(enemy, self.attackofheldopponent or "human-in-spinning-throw", self)
-    local spinvel = self.attackspinspeed or 0
-    local maxspunmag = self.attackspinmax or (4*pi)
-    local minspunmag = self.attackspinmin or 0
+    Mana.store(self, -(self.attack.manacost or 0))
+    StateMachine.start(enemy, self.attack.heldopponentstate or "human-in-spinning-throw", self)
+    local spinvel = self.attack.spinspeed or 0
+    local maxspunmag = self.attack.maxspin or (4*pi)
+    local minspunmag = self.attack.minspin or 0
     local holddirx, holddiry = enemy.x - self.x, enemy.y - self.y
     if holddirx ~= 0 or holddiry ~= 0 then
         holddirx, holddiry = norm(holddirx, holddiry)
@@ -1047,7 +1047,7 @@ function Player:spinAndKickEnemy(angle, enemy)
         self:accelerateTowardsVel(targetvelx, targetvely, 4)
 
         if math.ceil(spunmag / 2 / pi) < math.ceil((spunmag+spinmag) / 2 / pi) then
-            Audio.play(self.windupsound)
+            Audio.play(self.state.sound)
         end
         local remainder = maxspunmag - spunmag
         if remainder <= spinmag then
@@ -1078,8 +1078,8 @@ function Player:spinAndKickEnemy(angle, enemy)
     enemy:stopAttack()
     HoldOpponent.stopHolding(self, enemy)
     enemy.canbeattacked = true
-    -- if self.attackdamage then
-    --     enemy.health = enemy.health - self.attackdamage
+    -- if self.attack.damage then
+    --     enemy.health = enemy.health - self.attack.damage
     -- end
     -- StateMachine.start(enemy, enemy.thrownai or "thrown", self, atan2(throwy, throwx))
     return "holding-kick", atan2(throwy, throwx)
@@ -1088,14 +1088,14 @@ end
 function Player:straightAttack(angle, heldenemy)
     self.numopponentshit = 0
     local pressedattackbutton
-    if self.attackprojectile then
-        local numprojectiles = self.attackprojectilecount or 1
+    if self.attack.projectiletype then
+        local numprojectiles = self.attack.numprojectiles or 1
         local targetx, targety, targetz = findInstantThrowTarget(self, cos(angle), sin(angle))
         if numprojectiles <= 1 then
             Shoot.launchProjectile(self, "spark-spit-fireball", cos(angle), sin(angle), 0)
-            Shoot.launchProjectileAtPosition(self, self.attackprojectile, targetx, targety, targetz)
+            Shoot.launchProjectileAtPosition(self, self.attack.projectiletype, targetx, targety, targetz)
         else
-            local arc = self.attackarc or 0
+            local arc = self.attack.arc or 0
             local arcbetweenprojectiles = arc * 2 / (numprojectiles - 1)
             local totargetx, totargety = targetx - self.x, targety - self.y
             totargetx, totargety = math.rot(totargetx, totargety, -arc)
@@ -1105,17 +1105,17 @@ function Player:straightAttack(angle, heldenemy)
                     local dirx, diry = norm(totargetx, totargety)
                     Shoot.launchProjectile(self, "spark-spit-fireball", dirx, diry, 0)
                 end
-                Shoot.launchProjectileAtPosition(self, self.attackprojectile, targetx, targety, targetz)
+                Shoot.launchProjectileAtPosition(self, self.attack.projectiletype, targetx, targety, targetz)
                 totargetx, totargety = math.rot(totargetx, totargety, arcbetweenprojectiles)
             end
         end
     else
         self:startAttack(angle)
     end
-    Mana.store(self, -(self.attackmanacost or 0))
+    Mana.store(self, -(self.attack.manacost or 0))
     Face.faceAngle(self, angle)
-    local t = self.attackhittime or 1
-    local lungespeed = self.attacklungespeed
+    local t = self.attack.hittingduration or 1
+    local lungespeed = self.attack.lungespeed
     repeat
         yield()
         if pressedattackbutton ~= self.attackbutton then
@@ -1129,7 +1129,7 @@ function Player:straightAttack(angle, heldenemy)
         if lungespeed then
             lungespeed = Slide.updateSlideSpeed(self, angle, lungespeed)
         else
-            self:accelerateTowardsVel(0, 0, self.attackdecel or 8)
+            self:accelerateTowardsVel(0, 0, self.attack.decel or 8)
         end
         local afterimageinterval = self.afterimageinterval or 0
         if afterimageinterval ~= 0 and t % afterimageinterval == 0 then
