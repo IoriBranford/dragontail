@@ -411,7 +411,7 @@ function Enemy:enterAndDropDown()
     self.gravity = max(self.gravity or 0.25, 0.25)
     repeat
         yield()
-    until self.z == Characters.getCylinderFloorZ(self.x, self.y, self.z, self.bodyradius, self.bodyheight)
+    until self.z == Characters.getCylinderFloorZ(self.x, self.y, self.z, self.bodyradius, self.bodyheight, self.bodyhitslayers)
     Audio.play(self.jumplandsound)
     self:changeAnimation("FallRiseFromKnees", 1, 0)
     Characters.spawn({

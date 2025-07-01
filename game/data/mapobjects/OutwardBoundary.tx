@@ -3,7 +3,7 @@
  <object type="Boundary">
   <properties>
    <property name="bodyheight" type="float" value="512"/>
-   <property name="bodysolid" type="bool" value="true"/>
+   <property name="bodyinlayers" type="string" value="Solid"/>
    <property name="color" type="color" value="#80808080"/>
    <property name="drawz" type="float" value="0"/>
    <property name="linecolor" type="color" value="#80ffffff"/>

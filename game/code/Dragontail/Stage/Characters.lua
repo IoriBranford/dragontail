@@ -4,6 +4,7 @@ local StateMachine    = require "Dragontail.Character.StateMachine"
 local Assets = require "Tiled.Assets"
 local TiledObject  = require "Tiled.Object"
 local Body         = require "Dragontail.Character.Body"
+local CollisionMask= require "Dragontail.Character.Body.CollisionMask"
 
 ---@module 'Dragontail.Stage.Characters'
 local Characters = {}
@@ -94,7 +95,7 @@ function Characters.spawn(object)
             character.opponents = players
         end
     end
-    if character.bodysolid then
+    if CollisionMask.test(character.bodyinlayers, "Solid") ~= 0 then
         solids[#solids+1] = character
     end
     if character.team == "player" then
@@ -288,10 +289,10 @@ function Characters.search(group, eval)
     end
 end
 
-function Characters.keepCircleIn(x, y, r)
+function Characters.keepCircleIn(x, y, r, solidlayersmask)
     local totalpenex, totalpeney, penex, peney
     for _, solid in ipairs(solids) do
-        if solid.bodysolid then
+        if bit.band(solid.bodyinlayers, solidlayersmask) ~= 0 then
             penex, peney = Body.getCirclePenetration(solid, x, y, r)
             if penex then
                 x = x - penex
@@ -308,11 +309,14 @@ end
 
 function Characters.keepCylinderIn(x, y, z, r, h, self, iterations)
     iterations = iterations or 3
+    local solidlayersmask = self.bodyhitslayers
     local totalpenex, totalpeney, totalpenez, penex, peney, penez
     for i = 1, iterations do
         local anycollision = false
         for _, solid in ipairs(solids) do
-            if solid ~= self and solid.bodysolid then
+            if solid ~= self
+            and bit.band(solid.bodyinlayers, solidlayersmask) ~= 0
+            then
                 penex, peney, penez = Body.getCylinderPenetration(solid, x, y, z, r, h)
                 if penex then
                     anycollision = true
@@ -338,10 +342,10 @@ function Characters.keepCylinderIn(x, y, z, r, h, self, iterations)
     return x, y, z, totalpenex, totalpeney, totalpenez
 end
 
-function Characters.getCylinderFloorZ(x, y, z, r, h)
+function Characters.getCylinderFloorZ(x, y, z, r, h, solidlayersmask)
     local floorz
     for _, solid in ipairs(solids) do
-        if solid.bodysolid then
+        if bit.band(solid.bodyinlayers, solidlayersmask) ~= 0 then
             local fz = Body.getCylinderFloorZ(solid, x, y, z, r, h)
             if fz then
                 floorz = math.max(floorz or fz, fz)

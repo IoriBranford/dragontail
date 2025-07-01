@@ -1,6 +1,7 @@
 local Database = require "Data.Database"
 local Audio    = require "System.Audio"
 local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
+local Body                 = require "Dragontail.Character.Body"
 
 local co_create = coroutine.create
 local co_resume = coroutine.resume
@@ -17,7 +18,8 @@ local co_status = coroutine.status
 ---@field statetime integer?
 ---@field canbeattacked boolean
 ---@field canbegrabbed boolean
----@field bodysolid boolean
+---@field bodyinlayers CollisionLayerMask|string
+---@field bodyhitslayers CollisionLayerMask|string
 ---@field color integer?
 
 ---@class StateMachine:Character,Face
@@ -44,7 +46,8 @@ local StateVarsToCopy = {
     "canbeattacked",
     "canbegrabbed",
     "canbejuggled",
-    "bodysolid",
+    "bodyinlayers",
+    "bodyhitslayers",
     "color",
     "afterimageinterval",
     "manachargerate",
@@ -61,6 +64,8 @@ function StateMachine.start(self, statename, ...)
                 self[var] = state[var]
             end
         end
+
+        Body.initLayerMasks(self)
 
         self.attacktype = state.attack
         self.attack = self.attacktable and self.attacktable[state.attack]

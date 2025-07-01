@@ -9,6 +9,7 @@ local Config      = require "System.Config"
 local Events      = require "Dragontail.Stage.Events"
 local Database    = require "Data.Database"
 local Assets      = require "Tiled.Assets"
+local CollisionMask = require "Dragontail.Character.Body.CollisionMask"
 local Stage = {
     CameraWidth = 480,
     CameraHeight = 270
@@ -66,7 +67,7 @@ function Stage.init(stagefile)
     camera = {
         visible = false,
         shape = "polygon",
-        bodysolid = true,
+        bodyinlayers = CollisionMask.get("Solid"),
         bodyheight = 512,
         x = 0, y = 0, velx = 0, vely = 0,
         width = Stage.CameraWidth, height = Stage.CameraHeight,

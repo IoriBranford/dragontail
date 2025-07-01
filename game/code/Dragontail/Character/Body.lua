@@ -1,4 +1,5 @@
 local Movement   = require "Component.Movement"
+local CollisionMask = require "Dragontail.Character.Body.CollisionMask"
 
 ---@class Body:TiledObject
 ---@field z number
@@ -6,11 +7,24 @@ local Movement   = require "Component.Movement"
 ---@field vely number
 ---@field velz number
 ---@field speed number
----@field bodysolid boolean
+---@field bodyinlayers CollisionLayerMask
+---@field bodyhitslayers CollisionLayerMask
 ---@field bodyheight number
 ---@field bodyradius number
 ---@field gravity number
 local Body = {}
+
+function Body:initLayerMasks()
+    if type(self.bodyinlayers) == "string" then
+        self.bodyinlayers = CollisionMask.parse(self.bodyinlayers)
+    end
+    if type(self.bodyhitslayers) == "string" then
+        self.bodyhitslayers = CollisionMask.parse(self.bodyhitslayers)
+    end
+
+    self.bodyinlayers = self.bodyinlayers or 0
+    self.bodyhitslayers = self.bodyhitslayers or 0
+end
 
 function Body:init()
     self.x = self.x or 0
@@ -23,6 +37,7 @@ function Body:init()
     self.bodyheight = self.bodyheight or 1
     self.bodyradius = self.bodyradius or 1
     self.gravity = self.gravity or 0
+    Body.initLayerMasks(self)
 
     if self.points then
         local _, rsq = math.farthestpoint(self.points, 0, 0)
@@ -114,7 +129,7 @@ function Body:updateGravity()
     end
     self.velz = self.velz - gravity
     local Characters = require "Dragontail.Stage.Characters"
-    local floorz = Characters.getCylinderFloorZ(self.x, self.y, self.z, self.bodyradius, self.bodyheight) or 0
+    local floorz = Characters.getCylinderFloorZ(self.x, self.y, self.z, self.bodyradius, self.bodyheight, self.bodyhitslayers) or 0
     if floorz >= self.z + self.velz then
         self.z = floorz
         self.velz = 0
@@ -307,7 +322,7 @@ end
 
 ---@param other Body
 function Body:collideWith(other)
-    if not other.bodysolid then
+    if 0 == bit.band(self.bodyhitslayers, other.bodyinlayers) then
         return
     end
     local penex, peney, penez = Body.getCylinderPenetration(other, self.x, self.y, self.z, self.bodyradius, self.bodyheight)

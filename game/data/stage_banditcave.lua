@@ -15662,7 +15662,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 64,
-                ["bodysolid"] = true,
+                ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = -1,
                 ["linecolor"] = "#80ffffff"
@@ -15704,7 +15704,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 512,
-                ["bodysolid"] = true,
+                ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -16141,7 +16141,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 64,
-                ["bodysolid"] = true,
+                ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -16168,7 +16168,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 64,
-                ["bodysolid"] = true,
+                ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -16597,7 +16597,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 64,
-                ["bodysolid"] = true,
+                ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = -1,
                 ["linecolor"] = "#80ffffff"
@@ -16622,7 +16622,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 512,
-                ["bodysolid"] = true,
+                ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff",
@@ -17352,7 +17352,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 64,
-                ["bodysolid"] = true,
+                ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -17872,7 +17872,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 512,
-                ["bodysolid"] = true,
+                ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff",
@@ -18003,7 +18003,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 512,
-                ["bodysolid"] = true,
+                ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -18034,7 +18034,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 512,
-                ["bodysolid"] = true,
+                ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -18069,7 +18069,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 64,
-                ["bodysolid"] = true,
+                ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -18095,7 +18095,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 64,
-                ["bodysolid"] = true,
+                ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -18120,7 +18120,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 64,
-                ["bodysolid"] = true,
+                ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -18910,7 +18910,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 512,
-                ["bodysolid"] = true,
+                ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -18941,7 +18941,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 10,
-                ["bodysolid"] = true,
+                ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -18978,7 +18978,7 @@ return {
               visible = true,
               properties = {
                 ["bodyheight"] = 28,
-                ["bodysolid"] = true
+                ["bodyinlayers"] = "Solid"
               }
             },
             {
@@ -18995,7 +18995,7 @@ return {
               visible = true,
               properties = {
                 ["bodyheight"] = 48,
-                ["bodysolid"] = true
+                ["bodyinlayers"] = "Solid"
               }
             },
             {
@@ -19225,7 +19225,7 @@ return {
               visible = true,
               properties = {
                 ["bodyheight"] = 16,
-                ["bodysolid"] = true
+                ["bodyinlayers"] = "Solid"
               }
             },
             {
@@ -19242,7 +19242,7 @@ return {
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
-                ["bodysolid"] = true
+                ["bodyinlayers"] = "Solid"
               }
             },
             {
@@ -19259,7 +19259,7 @@ return {
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
-                ["bodysolid"] = true
+                ["bodyinlayers"] = "Solid"
               }
             },
             {
@@ -19382,7 +19382,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 512,
-                ["bodysolid"] = true,
+                ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -19402,7 +19402,7 @@ return {
               visible = true,
               properties = {
                 ["bodyheight"] = 16,
-                ["bodysolid"] = true
+                ["bodyinlayers"] = "Solid"
               }
             },
             {
@@ -19419,7 +19419,7 @@ return {
               visible = true,
               properties = {
                 ["bodyheight"] = 16,
-                ["bodysolid"] = true
+                ["bodyinlayers"] = "Solid"
               }
             },
             {
@@ -19436,7 +19436,7 @@ return {
               visible = true,
               properties = {
                 ["bodyheight"] = 16,
-                ["bodysolid"] = true
+                ["bodyinlayers"] = "Solid"
               }
             },
             {
@@ -19453,7 +19453,7 @@ return {
               visible = true,
               properties = {
                 ["bodyheight"] = 16,
-                ["bodysolid"] = true
+                ["bodyinlayers"] = "Solid"
               }
             },
             {
@@ -19470,7 +19470,7 @@ return {
               visible = true,
               properties = {
                 ["bodyheight"] = 16,
-                ["bodysolid"] = true
+                ["bodyinlayers"] = "Solid"
               }
             },
             {
@@ -19487,7 +19487,7 @@ return {
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
-                ["bodysolid"] = true
+                ["bodyinlayers"] = "Solid"
               }
             },
             {
@@ -19504,7 +19504,7 @@ return {
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
-                ["bodysolid"] = true
+                ["bodyinlayers"] = "Solid"
               }
             },
             {
@@ -19521,7 +19521,7 @@ return {
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
-                ["bodysolid"] = true
+                ["bodyinlayers"] = "Solid"
               }
             },
             {
@@ -19538,7 +19538,7 @@ return {
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
-                ["bodysolid"] = true
+                ["bodyinlayers"] = "Solid"
               }
             },
             {
@@ -19555,7 +19555,7 @@ return {
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
-                ["bodysolid"] = true
+                ["bodyinlayers"] = "Solid"
               }
             },
             {
@@ -19572,7 +19572,7 @@ return {
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
-                ["bodysolid"] = true
+                ["bodyinlayers"] = "Solid"
               }
             },
             {
@@ -19589,7 +19589,7 @@ return {
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
-                ["bodysolid"] = true
+                ["bodyinlayers"] = "Solid"
               }
             },
             {
@@ -19606,7 +19606,7 @@ return {
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
-                ["bodysolid"] = true
+                ["bodyinlayers"] = "Solid"
               }
             },
             {
@@ -19637,7 +19637,7 @@ return {
               visible = true,
               properties = {
                 ["bodyheight"] = 12,
-                ["bodysolid"] = true
+                ["bodyinlayers"] = "Solid"
               }
             },
             {
@@ -20335,7 +20335,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 64,
-                ["bodysolid"] = true,
+                ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -20364,7 +20364,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 32,
-                ["bodysolid"] = true,
+                ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -20410,7 +20410,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 512,
-                ["bodysolid"] = true,
+                ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff",
@@ -20439,7 +20439,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 512,
-                ["bodysolid"] = true,
+                ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
@@ -20828,7 +20828,7 @@ return {
               },
               properties = {
                 ["bodyheight"] = 512,
-                ["bodysolid"] = true,
+                ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["linecolor"] = "#80ffffff"
