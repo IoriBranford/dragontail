@@ -4,7 +4,7 @@ local Config      = require "System.Config"
 local StateMachine       = require "Dragontail.Character.StateMachine"
 local Object      = require "Tiled.Object"
 local Movement    = require "Component.Movement"
-local Attack      = require "Dragontail.Character.Attack"
+local Attacker      = require "Dragontail.Character.Attacker"
 local Body        = require "Dragontail.Character.Body"
 local Shadow      = require "Dragontail.Character.Shadow"
 local Characters
@@ -24,7 +24,7 @@ local testcircles = math.testcircles
 ---@class DropAfterimage
 ---@field afterimageinterval integer?
 
----@class Character:AsepriteObject,DropAfterimage,Body,Attack,Hurt,Shadow
+---@class Character:AsepriteObject,DropAfterimage,Body,Attacker,Victim,Shadow
 ---@field initialai string
 ---@field camera Camera
 ---@field opponents Character[]
@@ -32,7 +32,7 @@ local testcircles = math.testcircles
 ---@field animationdirections integer?
 ---@field emote Character?
 local Character = class(Object)
-Character.attack = {} ---@type AttackData
+Character.attack = {}
 
 function Character:init()
     Characters = Characters or require "Dragontail.Stage.Characters"
@@ -63,7 +63,7 @@ function Character:addToScene(scene)
         baseDraw(self, fixedfrac)
         if Config.drawbodies then
             Body.draw(self, fixedfrac)
-            Attack.drawCircle(self, fixedfrac)
+            Attacker.drawCircle(self, fixedfrac)
         end
     end
 end
@@ -193,9 +193,9 @@ end
 
 Character.moveTo = Body.executeMove
 
-Character.isAttacking = Attack.isAttacking
-Character.startAttack = Attack.startAttack
-Character.stopAttack = Attack.stopAttack
+Character.isAttacking = Attacker.isAttacking
+Character.startAttack = Attacker.startAttack
+Character.stopAttack = Attacker.stopAttack
 
 function Character:startGuarding(guardangle)
     self.guardangle = guardangle
@@ -239,8 +239,8 @@ function Character:debugPrint_collideWithCharacterAttack(attacker)
     print("canbeattacked", self.canbeattacked)
     print("attacker.attack.canjuggle", attacker.attack.canjuggle)
     print("canbejuggled", self.canbejuggled)
-    if not Attack.checkAttackCollision(attacker, self) then
-        Attack.debugPrint_checkAttackCollision_circle(attacker, self)
+    if not Attacker.checkAttackCollision(attacker, self) then
+        Attacker.debugPrint_checkAttackCollision_circle(attacker, self)
     end
 end
 
@@ -254,7 +254,7 @@ function Character:collideWithCharacterAttack(attacker)
             return
         end
     end
-    if Attack.checkAttackCollision(attacker, self) then
+    if Attacker.checkAttackCollision(attacker, self) then
         self:onHitByAttack(attacker)
         return true
     end

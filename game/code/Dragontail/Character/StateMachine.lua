@@ -25,7 +25,7 @@ local co_status = coroutine.status
 ---@field nextstate string?
 ---@field statetime integer?
 ---@field statetable {[string]:State}
----@field attacktable {[string]:AttackData}?
+---@field attacktable {[string]:Attack}?
 ---@field thread thread?
 local StateMachine = {}
 
