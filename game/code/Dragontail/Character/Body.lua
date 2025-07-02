@@ -273,51 +273,64 @@ function Body:getCirclePenetration(x, y, r)
     -- TODO if needed, collision vs concave corners
 end
 
+local function getCylinderPenetration_circle(self, cylx, cyly, cylz, cylr, cylh)
+    local selftop = self.z + self.bodyheight
+    if cylz + cylh >= self.z and selftop >= cylz then
+        local iz, iz2 = math.max(cylz, self.z), math.min(cylz+cylh, selftop)
+        local penez = iz == cylz and iz - iz2 or iz2 - iz
+        local penex, peney = Body.getCirclePenetration(self, cylx, cyly, cylr)
+        if penex and peney and math.lensq(penex, peney) > penez*penez then
+            return nil, nil, penez
+        end
+        return penex, peney
+    end
+end
+
+local function getCylinderPenetration_outward(self, cylx, cyly, cylz, cylr, cylh)
+    local selftop = self.z + self.bodyheight
+    if cylz + cylh >= self.z and selftop >= cylz then
+        local points = self.points
+        local nearestx, nearesty = math.nearestpolygonpoint(points, cylx - self.x, cyly - self.y)
+        if math.pointinpolygon(points, cylx - self.x, cyly - self.y)
+        or nearestx and nearesty and math.distsq(nearestx, nearesty, cylx - self.x, cyly - self.y) <= cylr*cylr then
+            local iz, iz2 = math.max(cylz, self.z), math.min(cylz+cylh, selftop)
+            local penez = iz == cylz and iz - iz2 or iz2 - iz
+            local penex, peney = Body.getCirclePenetration(self, cylx, cyly, cylr)
+            if penex and peney and math.lensq(penex, peney) > penez*penez then
+                return nil, nil, penez
+            end
+            return penex, peney
+        end
+    end
+end
+
+local function getCylinderPenetration_inward(self, cylx, cyly, cylz, cylr, cylh)
+    local penex, peney, penez
+    if cylz <= self.z then
+        penez = cylz - self.z
+    elseif cylz + cylh >= self.z + self.bodyheight then
+        penez = (cylz + cylh) - (self.z + self.bodyheight)
+    end
+    penex, peney = Body.getCirclePenetration(self, cylx, cyly, cylr)
+    return penex, peney, penez
+end
+
+---@param cylx number
+---@param cyly number
+---@param cylz number
+---@param cylr number
+---@param cylh number
 ---@return number? penex x penetration. Non-0 = penetrating; 0 = touching; nil = no contact
 ---@return number? peney y penetration. Non-0 = penetrating; 0 = touching; nil = no contact
 ---@return number? penez z penetration. Non-0 = penetrating; 0 = touching; nil = no contact
-function Body:getCylinderPenetration(x, y, z, r, h)
-    local selfz, selfh = self.z, self.bodyheight
-    local penex, peney, penez
-    local points = self.points
-    if not points then
-        -- I am a cylinder
-        if z + h >= selfz and selfz + selfh >= z then
-            local iz, iz2 = math.max(z, selfz), math.min(z+h, selfz+selfh)
-            penez = iz == z and iz - iz2 or iz2 - iz
-            penex, peney = Body.getCirclePenetration(self, x, y, r)
-            if penex and peney and math.lensq(penex, peney) > penez*penez then
-                penex, peney = nil, nil
-            else
-                penez = nil
-            end
+function Body:getCylinderPenetration(cylx, cyly, cylz, cylr, cylh)
+    if self.points then
+        if self.points.outward then
+            return getCylinderPenetration_outward(self, cylx, cyly, cylz, cylr, cylh)
         end
-    elseif points.outward then
-        -- I am an outward polygon
-        if z + h >= selfz and selfz + selfh >= z then
-            local nearestx, nearesty = math.nearestpolygonpoint(points, x - self.x, y - self.y)
-            if math.pointinpolygon(points, x - self.x, y - self.y)
-            or nearestx and nearesty and math.distsq(nearestx, nearesty, x - self.x, y - self.y) <= r*r then
-                local iz, iz2 = math.max(z, selfz), math.min(z+h, selfz+selfh)
-                penez = iz == z and iz - iz2 or iz2 - iz
-                penex, peney = Body.getCirclePenetration(self, x, y, r)
-                if penex and peney and math.lensq(penex, peney) > penez*penez then
-                    penex, peney = nil, nil
-                else
-                    penez = nil
-                end
-            end
-        end
-    else
-        -- I am an inward polygon
-        if z <= selfz then
-            penez = z - selfz
-        elseif z + h >= selfz + selfh then
-            penez = (z + h) - (selfz + selfh)
-        end
-        penex, peney = Body.getCirclePenetration(self, x, y, r)
+        return getCylinderPenetration_inward(self, cylx, cyly, cylz, cylr, cylh)
     end
-    return penex, peney, penez
+    return getCylinderPenetration_circle(self, cylx, cyly, cylz, cylr, cylh)
 end
 
 ---@param other Body
