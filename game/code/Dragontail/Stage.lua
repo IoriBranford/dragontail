@@ -62,7 +62,11 @@ function Stage.init(stagefile)
         end
     end
 
+    local MinStageHeight = 512
     local CameraTopMargin = 32
+    local floorz = map.floorz or 0
+    local ceilingz = map.ceilingz or (floorz + MinStageHeight)
+    ceilingz = max(ceilingz, floorz + MinStageHeight)
 
     camera = {
         visible = false,
@@ -79,6 +83,21 @@ function Stage.init(stagefile)
         }
     }
     Characters.init(scene, map.nextobjectid, camera)
+
+    Characters.spawn({
+        visible = false,
+        shape = "polygon",
+        bodyinlayers = CollisionMask.get("Solid"),
+        bodyheight = ceilingz - floorz,
+        x = 0, y = 0, z = floorz,
+        width = 0x20000000, height = 0x20000000,
+        points = {
+            -0x10000000,-0x10000000,
+            0x10000000,-0x10000000,
+            0x10000000,0x10000000,
+            -0x10000000,0x10000000,
+        }
+    })
 
     scene:addMap(map, "group,tilelayer")
 
