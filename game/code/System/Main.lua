@@ -93,6 +93,13 @@ function love.handlers.joystickadded(...)
     joystickaddedhandler(...)
 end
 
+-- love.resize not triggered when quickly resizing a window
+-- https://github.com/love2d/love/issues/2188
+local resizehandler = love.handlers.resize
+function love.handlers.resize(_, _)
+    resizehandler(love.graphics.getDimensions())
+end
+
 local function OnQuit()
     if love.quitphase then
         love.quitphase()
