@@ -264,8 +264,7 @@ function Characters.castRay(raycast, rx, ry, caster)
     raycast.hitdist = nil
     local hitsomething
     local rdx, rdy = raycast.dx, raycast.dy
-    local group = groups[raycast.canhitgroup] or allcharacters
-    for _, character in ipairs(group) do
+    for _, character in ipairs(allcharacters) do
         if character ~= caster and Body.collideWithRaycast(character, raycast, rx, ry) then
             raycast.dx, raycast.dy = raycast.hitx - rx, raycast.hity - ry
             hitsomething = character

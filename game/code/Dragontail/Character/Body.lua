@@ -334,6 +334,9 @@ end
 
 ---@param raycast Raycast
 function Body:collideWithRaycast(raycast, rx, ry)
+    if bit.band(self.bodyinlayers, raycast.hitslayers) == 0 then
+        return
+    end
     local canhitside = raycast.canhitside
     local selfx, selfy, selfr = self.x, self.y, self.bodyradius
     local rdx, rdy = raycast.dx, raycast.dy

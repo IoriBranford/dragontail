@@ -4,6 +4,7 @@ local Slide      = require "Dragontail.Character.Action.Slide"
 local Audio      = require "System.Audio"
 local Face       = require "Dragontail.Character.Action.Face"
 local Body       = require "Dragontail.Character.Body"
+local CollisionMask = require "Dragontail.Character.Body.CollisionMask"
 
 ---@class Dodge:Character
 ---@field dodgespeed number?
@@ -36,7 +37,7 @@ function Dodge:getDodgeVector(incoming)
     end
     local dodgespacex, dodgespacey = dodgedirx * dodgedist, dodgediry * dodgedist
     local raycast = Raycast(dodgespacex, dodgespacey, 0, 1, self.bodyradius/2)
-    raycast.canhitgroup = "solids"
+    raycast.hitslayers = CollisionMask.merge("Solid", "Camera")
 
     if Characters.castRay(raycast, self.x, self.y) then
         -- Dodge along wall

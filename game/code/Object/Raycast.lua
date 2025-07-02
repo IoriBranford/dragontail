@@ -6,7 +6,7 @@ function Raycast:_init(dx, dy, dz, canhitside, radius, height)
     self.dy = dy or 0
     self.dz = dz or 0
     self.canhitside = canhitside or 0 --- negative = only outsides, positive = only insides, 0 = both sides
-    self.canhitgroup = nil ---@type string?
+    self.hitslayers = 0 ---@type CollisionLayerMask
     self.radius = radius or 0
     self.height = height or 0
     self.hitx = nil ---@type number?
