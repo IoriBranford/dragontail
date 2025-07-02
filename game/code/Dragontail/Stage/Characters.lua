@@ -95,7 +95,7 @@ function Characters.spawn(object)
             character.opponents = players
         end
     end
-    if CollisionMask.test(character.bodyinlayers, "Solid") ~= 0 then
+    if character.bodyinlayers ~= 0 then
         solids[#solids+1] = character
     end
     if character.team == "player" then
