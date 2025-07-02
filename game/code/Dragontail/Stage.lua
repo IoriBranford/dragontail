@@ -71,9 +71,9 @@ function Stage.init(stagefile)
     camera = {
         visible = false,
         shape = "polygon",
-        bodyinlayers = CollisionMask.get("Solid"),
-        bodyheight = 512,
-        x = 0, y = 0, velx = 0, vely = 0,
+        bodyinlayers = CollisionMask.get("Camera"),
+        bodyheight = 0x20000000,
+        x = 0, y = 0, z = -0x10000000,
         width = Stage.CameraWidth, height = Stage.CameraHeight,
         points = {
             0, CameraTopMargin,
