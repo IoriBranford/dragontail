@@ -470,6 +470,31 @@ function math.projpointplane(x, y, z, nx, ny, nz, d)
     return x - sdist*nx, y - sdist*ny, z - sdist*nz
 end
 
+function math.intersectlineplane(ax, ay, az, bx, by, bz, nx, ny, nz, d)
+    local llensq = math.distsq3(ax, ay, az, bx, by, bz)
+    if llensq <= 0 then
+        if math.pointsigneddistfromplane(ax, ay, az, nx, ny, nz, d) == 0 then
+            return ax, ay, az
+        end
+        return
+    end
+    local lx, ly, lz = math.norm(bx-ax, by-ay, bz-az)
+    local ldotn = math.dot3(lx, ly, lz, nx, ny, nz)
+    if ldotn == 0 then
+        if math.pointsigneddistfromplane(ax, ay, az, nx, ny, nz, d) == 0 then
+            return ax, ay, az, bx, by, bz
+        end
+        return
+    end
+    -- dot3(ax+lx*t, ay+ly*t, az+lz*t, nx, ny, nz) + d == 0
+    -- nx*ax + nx*lx*t + ny*ay + ny*ly*t + nz*az + nz*lz*t + d = 0
+    -- nx*lx*t + ny*ly*t + nz*lz*t = -nx*ax - ny*ay - nz*az - d
+    -- t * (nx*lx + ny*ly + nz*lz) = -nx*ax - ny*ay - nz*az - d
+    -- t = (-nx*ax - ny*ay - nz*az - d) / (nx*lx + ny*ly + nz*lz)
+    local t = -(math.dot3(ax, ay, az, nx, ny, nz) + d) / ldotn
+    return ax + lx*t, ay + ly*t, az + lz*t
+end
+
 function math.table_rad(t, k)
     local x = t[k]
     if type(x) == "number" then
