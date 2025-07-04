@@ -44,6 +44,10 @@ function math.dot(x, y, x2, y2)
 end
 local dot = math.dot
 
+function math.dot3(x, y, z, x2, y2, z2)
+    return x2*x + y2*y + z2*z
+end
+
 function math.det(x, y, x2, y2)
     return x*y2 - y*x2
 end
@@ -441,6 +445,29 @@ function math.intersectlines(ax, ay, bx, by, cx, cy, dx, dy)
     local x = ax - t*bax
     local y = ay - t*bay
     return x, y
+end
+
+---@param x number point
+---@param y number point
+---@param z number point
+---@param nx number plane normal
+---@param ny number plane normal
+---@param nz number plane normal
+---@param d number plane distance from origin along plane normal
+function math.pointsigneddistfromplane(x, y, z, nx, ny, nz, d)
+    return math.dot3(x, y, z, nx, ny, nz) + d
+end
+
+---@param x number point
+---@param y number point
+---@param z number point
+---@param nx number plane normal
+---@param ny number plane normal
+---@param nz number plane normal
+---@param d number plane distance from origin along plane normal
+function math.projpointplane(x, y, z, nx, ny, nz, d)
+    local sdist = math.pointsigneddistfromplane(x, y, z, nx, ny, nz, d)
+    return x - sdist*nx, y - sdist*ny, z - sdist*nz
 end
 
 function math.table_rad(t, k)
