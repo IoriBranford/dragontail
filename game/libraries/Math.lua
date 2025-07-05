@@ -458,6 +458,17 @@ function math.pointsigneddistfromplane(x, y, z, nx, ny, nz, d)
     return math.dot3(x, y, z, nx, ny, nz) + d
 end
 
+--- @param px number point on the plane
+--- @param py number point on the plane
+--- @param pz number point on the plane
+--- @param nx number plane normal
+--- @param ny number plane normal
+--- @param nz number plane normal
+--- @return number d the d component of the plane equation nx\*x + ny\*y + nz\*z + d == 0
+function math.planedistfrom0(px, py, pz, nx, ny, nz)
+    return -math.dot3(px, py, pz, nx, ny, nz)
+end
+
 ---@param x number point
 ---@param y number point
 ---@param z number point
