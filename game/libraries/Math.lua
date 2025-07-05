@@ -481,29 +481,61 @@ function math.projpointplane(x, y, z, nx, ny, nz, d)
     return x - sdist*nx, y - sdist*ny, z - sdist*nz
 end
 
-function math.intersectlineplane(ax, ay, az, bx, by, bz, nx, ny, nz, d)
-    local llensq = math.distsq3(ax, ay, az, bx, by, bz)
-    if llensq <= 0 then
-        if math.pointsigneddistfromplane(ax, ay, az, nx, ny, nz, d) == 0 then
-            return ax, ay, az
-        end
-        return
+---@param ax number point a on the line
+---@param ay number point a on the line
+---@param az number point a on the line
+---@param bx number point b on the line
+---@param by number point b on the line
+---@param bz number point b on the line
+---@param nx number plane normal
+---@param ny number plane normal
+---@param nz number plane normal
+---@param d number plane signed dist from origin
+---@return number? t line segment length from point a to the plane intersection. nil if no intersection. math.huge if the whole line is on the plane
+function math.lineplaneintersectdist(ax, ay, az, bx, by, bz, nx, ny, nz, d)
+    local ad = math.pointsigneddistfromplane(ax, ay, az, nx, ny, nz, d)
+    if ax == bx and ay == by and az == bz then
+        return ad == 0 and 0 or nil
     end
-    local lx, ly, lz = math.norm(bx-ax, by-ay, bz-az)
+    local lx, ly, lz = ax-bx, ay-by, az-bz
     local ldotn = math.dot3(lx, ly, lz, nx, ny, nz)
     if ldotn == 0 then
-        if math.pointsigneddistfromplane(ax, ay, az, nx, ny, nz, d) == 0 then
-            return ax, ay, az, bx, by, bz
-        end
-        return
+        return ad == 0 and math.huge or nil
     end
     -- dot3(ax+lx*t, ay+ly*t, az+lz*t, nx, ny, nz) + d == 0
     -- nx*ax + nx*lx*t + ny*ay + ny*ly*t + nz*az + nz*lz*t + d = 0
     -- nx*lx*t + ny*ly*t + nz*lz*t = -nx*ax - ny*ay - nz*az - d
     -- t * (nx*lx + ny*ly + nz*lz) = -nx*ax - ny*ay - nz*az - d
     -- t = (-nx*ax - ny*ay - nz*az - d) / (nx*lx + ny*ly + nz*lz)
-    local t = -(math.dot3(ax, ay, az, nx, ny, nz) + d) / ldotn
+    return ad / ldotn
+end
+
+function math.intersectlineplane(ax, ay, az, bx, by, bz, nx, ny, nz, d)
+    local t = math.lineplaneintersectdist(ax, ay, az, bx, by, bz, nx, ny, nz, d)
+    if not t then return end
+    if t == 0 then
+        return ax, ay, az
+    end
+    if t == math.huge then
+        return ax, ay, az, bx, by, bz
+    end
+    local lx, ly, lz = math.norm(bx-ax, by-ay, bz-az)
     return ax + lx*t, ay + ly*t, az + lz*t
+end
+
+function math.intersectsegmentplane(ax, ay, az, bx, by, bz, nx, ny, nz, d)
+    local t = math.lineplaneintersectdist(ax, ay, az, bx, by, bz, nx, ny, nz, d)
+    if not t then return end
+    if t == 0 then
+        return ax, ay, az
+    end
+    if t == math.huge then
+        return ax, ay, az, bx, by, bz
+    end
+    if 0 < t and t*t <= math.distsq3(ax, ay, az, bx, by, bz) then
+        local lx, ly, lz = math.norm(bx-ax, by-ay, bz-az)
+        return ax + lx*t, ay + ly*t, az + lz*t
+    end
 end
 
 function math.table_rad(t, k)
