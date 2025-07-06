@@ -345,6 +345,123 @@ function Body:collideWith(other)
     return penex, peney, penez
 end
 
+local function finishCollideCylinderSideWithRaycast(self, raycast, rx, ry, rz, hitx, hity, hitside)
+    local x, y, z, r, h = self.x, self.y, self.z, self.bodyradius, self.bodyheight
+    local rdx, rdy, rdz = raycast.dx, raycast.dy, raycast.dz
+    local rx2, ry2, rz2 = rx + rdx, ry + rdy, rz + rdz
+
+    local hitnx, hitny = math.norm(hitx - x, hity - y)
+    hitnx, hitny = hitnx*hitside, hitny*hitside
+    local _, _, hitz = math.intersectsegmentplane(
+        rx, ry, rz, rx2, ry2, rz2,
+        hitnx, hitny, 0, -math.dot(hitx, hity, hitnx, hitny)
+    )
+
+    if hitz and z <= hitz and hitz <= z+h then
+        raycast.hitx = hitx
+        raycast.hity = hity
+        raycast.hitz = hitz
+        raycast.hitnx = hitnx
+        raycast.hitny = hitny
+        raycast.hitnz = 0
+        raycast.hitdist = math.dist3(rx, ry, rz, hitx, hity, hitz)
+        local d = math.det(x - rx, x - ry, rdx, rdy)
+        raycast.hitwallx, raycast.hitwally = math.rot90(hitx - x, hity - y, d)
+        raycast.hitwallx2, raycast.hitwally2 = math.rot90(hitx - x, hity - y, -d)
+        raycast.hitwallx = raycast.hitwallx + raycast.hitx
+        raycast.hitwally = raycast.hitwally + raycast.hity
+        raycast.hitwallx2 = raycast.hitwallx2 + raycast.hitx
+        raycast.hitwally2 = raycast.hitwally2 + raycast.hity
+        return true
+    end
+end
+
+local function finishCollideCylinderEndWithRaycast(self, raycast, rx, ry, rz, hitnz, hitd)
+    local x, y, z, r, h = self.x, self.y, self.z, self.bodyradius, self.bodyheight
+    local rdx, rdy, rdz = raycast.dx, raycast.dy, raycast.dz
+    local rx2, ry2, rz2 = rx + rdx, ry + rdy, rz + rdz
+
+    local hitx, hity, hitz = math.intersectsegmentplane(
+        rx, ry, rz, rx2, ry2, rz2,
+        0, 0, hitnz, hitd)
+
+    if hitx and math.distsq(hitx, hity, x, y) <= r*r then
+        raycast.hitx = hitx
+        raycast.hity = hity
+        raycast.hitz = hitz
+        raycast.hitnx = 0
+        raycast.hitny = 0
+        raycast.hitnz = hitnz
+        raycast.hitdist = math.dist3(rx, ry, rz, hitx, hity, hitz)
+        return true
+    end
+end
+
+function Body:collideCylinderWithRaycast(raycast, rx, ry, rz)
+    if bit.band(self.bodyinlayers, raycast.hitslayers) == 0 then
+        return
+    end
+    local x, y, z, r, h = self.x, self.y, self.z, self.bodyradius, self.bodyheight
+    local rdx, rdy, rdz = raycast.dx, raycast.dy, raycast.dz
+    local rx2, ry2, rz2 = rx + rdx, ry + rdy, rz + rdz
+
+    -- test XY
+    local projx, projy = math.projpointsegment(x, y, rx, ry, rx2, ry2)
+    local projdsq = math.distsq(projx, projy, x, y)
+    if projdsq > r*r then
+        return
+    end
+
+    local rlenxy = math.len(rdx, rdy)
+    local rnx, rny = rdx/rlenxy, rdy/rlenxy
+    local projtohitdist = math.sqrt(r*r - projdsq)
+    local canhitside = raycast.canhitside
+    if canhitside < 0 then
+        -- hitx,hity is the far intersection
+        -- hitwall is a tangent line
+        local hitx = projx + rnx * projtohitdist
+        local hity = projy + rny * projtohitdist
+
+        if finishCollideCylinderSideWithRaycast(self, raycast, rx, ry, rz, hitx, hity, -1) then
+            return true
+        end
+        if rdz < 0
+        and finishCollideCylinderEndWithRaycast(self, raycast, rx, ry, rz, 1, -z) then
+            return true
+        end
+        if rdz > 0
+        and finishCollideCylinderEndWithRaycast(self, raycast, rx, ry, rz, -1, z+h) then
+            return true
+        end
+    else
+        -- hitx,hity is the near intersection
+        local hitx = projx - rnx * projtohitdist
+        local hity = projy - rny * projtohitdist
+
+        if rdz < 0
+        and finishCollideCylinderEndWithRaycast(self, raycast, rx, ry, rz, 1, -z-h) then
+            return true
+        end
+        if rdz > 0
+        and finishCollideCylinderEndWithRaycast(self, raycast, rx, ry, rz, -1, z) then
+            return true
+        end
+        if finishCollideCylinderSideWithRaycast(self, raycast, rx, ry, rz, hitx, hity, 1) then
+            return true
+        end
+    end
+end
+
+---@param raycast Raycast
+function Body:collideWithRaycast3(raycast, rx, ry, rz)
+    -- TODO
+    -- local points = self.points
+    -- if points then
+    --     return self:collidePolyWithRaycast(raycast, rx, ry, rz)
+    -- end
+    return self:collideCylinderWithRaycast(raycast, rx, ry, rz)
+end
+
 ---@param raycast Raycast
 function Body:collideWithRaycast(raycast, rx, ry)
     if bit.band(self.bodyinlayers, raycast.hitslayers) == 0 then
