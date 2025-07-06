@@ -275,6 +275,26 @@ function Characters.castRay(raycast, rx, ry, caster)
     return hitsomething
 end
 
+---@param raycast Raycast
+function Characters.castRay3(raycast, caster, rx, ry, rz)
+    raycast.hitdist = nil
+    local hitsomething
+    local rdx, rdy, rdz = raycast.dx, raycast.dy, raycast.dz
+    for _, character in ipairs(allcharacters) do
+        if character ~= caster and Body.collideWithRaycast3(character, raycast, rx, ry, rz) then
+            raycast.dx = raycast.hitx - rx
+            raycast.dy = raycast.hity - ry
+            raycast.dz = raycast.hitz - rz
+            hitsomething = character
+        end
+    end
+    raycast.dx = rdx
+    raycast.dy = rdy
+    raycast.dz = rdz
+    raycast.hitcharacter = hitsomething
+    return hitsomething
+end
+
 local function nop() end
 
 ---@param eval fun(character: Character, i: integer?, characters: Character[]?):"break"|"return"?
