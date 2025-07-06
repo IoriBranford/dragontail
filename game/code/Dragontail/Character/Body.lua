@@ -492,11 +492,13 @@ function Body:collideWithRaycast(raycast)
             -- hitwall is a tangent line
             raycast.hitx = projx + rnx * projtohitdist
             raycast.hity = projy + rny * projtohitdist
+            raycast.hitz = raycast.z
             raycast.hitside = -1
         else
             -- hitx,hity is the near intersection
             raycast.hitx = projx - rnx * projtohitdist
             raycast.hity = projy - rny * projtohitdist
+            raycast.hitz = raycast.z
             raycast.hitside = 1
         end
         raycast.hitdist = math.dist(rx, ry, raycast.hitx, raycast.hity)
@@ -542,6 +544,7 @@ function Body:collideWithRaycast(raycast)
         raycast.hitdist = math.sqrt(hitdsq)
         raycast.hitx = hitx + selfx
         raycast.hity = hity + selfy
+        raycast.hitz = raycast.z
         raycast.hitwallx = hitwallx + selfx
         raycast.hitwally = hitwally + selfy
         raycast.hitwallx2 = hitwallx2 + selfx
