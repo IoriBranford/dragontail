@@ -30,4 +30,20 @@ function Raycast:_init(x, y, z, dx, dy, dz, canhitside, radius, height)
     self.hitwallz2 = nil ---@type number?
 end
 
+function Raycast:draw()
+    local x, y = self.x, self.y - self.z
+    local x2, y2 = x + self.dx, y + self.dy - (self.z + self.dz)
+    if self.hitx then
+        love.graphics.setColor(1,1,1,.5)
+        love.graphics.line(x, y, x2, y2)
+        x2, y2 = self.hitx, self.hity - self.hitz
+        love.graphics.setColor(1,.5,.5,1)
+        love.graphics.line(x, y, x2, y2)
+        love.graphics.circle("line", x2, y2, 4)
+    else
+        love.graphics.setColor(1,1,1,1)
+        love.graphics.line(x, y, x2, y2)
+    end
+end
+
 return Raycast
