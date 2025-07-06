@@ -253,6 +253,16 @@ function Player:init()
     })
 end
 
+-- function Player:addToScene(scene)
+--     Character.addToScene(self, scene)
+--     for _, slot in ipairs(self.attackerslots) do
+--         slot.id = 0
+--         slot.drawz = 0x1000
+--         slot.visible = true
+--         scene:add(slot)
+--     end
+-- end
+
 function Player:initAseprite()
     Character.initAseprite(self)
     WeaponInHand.loadHandPositions(self)
