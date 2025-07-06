@@ -209,9 +209,9 @@ end
 function Enemy:navigateAroundSolid(destx, desty)
     local x, y = self.x, self.y
     local bodyradius = self.bodyradius
-    local raycast = Raycast(destx - x, desty - y, 0, 1, bodyradius/2)
+    local raycast = Raycast(x, y, 0, destx - x, desty - y, 0, 1, bodyradius/2)
     raycast.hitslayers = CollisionMask.merge("Solid", "Camera")
-    if Characters.castRay(raycast, x, y) then
+    if Characters.castRay(raycast, self) then
         local todestx, todesty = destx - x, desty - y
         local frontendx, frontendy = raycast.hitwallx, raycast.hitwally
         local backendx, backendy = raycast.hitwallx2, raycast.hitwally2
@@ -301,14 +301,15 @@ function Enemy:attackIfAmmoElseLeave()
     local ammo = self.ammo or 0
     local opponent = self.opponents[1]
     if attackstate and ammo > 0 and opponent.health > 0 then
-        local raycast = Raycast(1, 0, 0, 1)
+        local raycast = Raycast(self.x, self.y, 0, 1, 0, 0, 1)
         raycast.hitslayers = CollisionMask.merge("Solid", "Camera", "Player", "Enemy")
         local hitcharacter
         repeat
             yield()
+            raycast.x, raycast.y = self.x, self.y
             raycast.dx, raycast.dy = opponent.x - self.x, opponent.y - self.y
             Face.faceVector(self, raycast.dx, raycast.dy, "Stand")
-            hitcharacter = Characters.castRay(raycast, self.x, self.y, self)
+            hitcharacter = Characters.castRay(raycast, self)
         until self:isOnCamera(self.camera) and hitcharacter
             and CollisionMask.test(hitcharacter.bodyinlayers, "Player") ~= 0
         self.ammo = self.ammo - 1

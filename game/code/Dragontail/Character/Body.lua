@@ -397,11 +397,12 @@ local function finishCollideCylinderEndWithRaycast(self, raycast, rx, ry, rz, hi
     end
 end
 
-function Body:collideCylinderWithRaycast(raycast, rx, ry, rz)
+function Body:collideCylinderWithRaycast(raycast)
     if bit.band(self.bodyinlayers, raycast.hitslayers) == 0 then
         return
     end
     local x, y, z, r, h = self.x, self.y, self.z, self.bodyradius, self.bodyheight
+    local rx, ry, rz = raycast.x, raycast.y, raycast.z
     local rdx, rdy, rdz = raycast.dx, raycast.dy, raycast.dz
     local rx2, ry2, rz2 = rx + rdx, ry + rdy, rz + rdz
 
@@ -453,22 +454,23 @@ function Body:collideCylinderWithRaycast(raycast, rx, ry, rz)
 end
 
 ---@param raycast Raycast
-function Body:collideWithRaycast3(raycast, rx, ry, rz)
+function Body:collideWithRaycast3(raycast)
     -- TODO
     -- local points = self.points
     -- if points then
-    --     return self:collidePolyWithRaycast(raycast, rx, ry, rz)
+    --     return self:collidePolyWithRaycast(raycast)
     -- end
-    return self:collideCylinderWithRaycast(raycast, rx, ry, rz)
+    return self:collideCylinderWithRaycast(raycast)
 end
 
 ---@param raycast Raycast
-function Body:collideWithRaycast(raycast, rx, ry)
+function Body:collideWithRaycast(raycast)
     if bit.band(self.bodyinlayers, raycast.hitslayers) == 0 then
         return
     end
     local canhitside = raycast.canhitside
     local selfx, selfy, selfr = self.x, self.y, self.bodyradius
+    local rx, ry = raycast.x, raycast.y
     local rdx, rdy = raycast.dx, raycast.dy
     local rx2, ry2 = rx + rdx, ry + rdy
 

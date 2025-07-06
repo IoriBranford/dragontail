@@ -260,13 +260,13 @@ function Characters.update(dsecs, fixedfrac)
 end
 
 ---@param raycast Raycast
-function Characters.castRay(raycast, rx, ry, caster)
+function Characters.castRay(raycast, caster)
     raycast.hitdist = nil
     local hitsomething
     local rdx, rdy = raycast.dx, raycast.dy
     for _, character in ipairs(allcharacters) do
-        if character ~= caster and Body.collideWithRaycast(character, raycast, rx, ry) then
-            raycast.dx, raycast.dy = raycast.hitx - rx, raycast.hity - ry
+        if character ~= caster and Body.collideWithRaycast(character, raycast) then
+            raycast.dx, raycast.dy = raycast.hitx - raycast.x, raycast.hity - raycast.y
             hitsomething = character
         end
     end
@@ -281,7 +281,7 @@ function Characters.castRay3(raycast, caster, rx, ry, rz)
     local hitsomething
     local rdx, rdy, rdz = raycast.dx, raycast.dy, raycast.dz
     for _, character in ipairs(allcharacters) do
-        if character ~= caster and Body.collideWithRaycast3(character, raycast, rx, ry, rz) then
+        if character ~= caster and Body.collideWithRaycast3(character, raycast) then
             raycast.dx = raycast.hitx - rx
             raycast.dy = raycast.hity - ry
             raycast.dz = raycast.hitz - rz

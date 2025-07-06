@@ -224,18 +224,18 @@ function Player:init()
     ---@field [integer] AttackerSlot
     ---@field [string] AttackerSlot[]
     self.attackerslots = {
-        AttackerSlot("melee", 1024, 0), -- 3 o clock
-        AttackerSlot("melee", 0, 1024), -- 6 o clock
-        AttackerSlot("melee", -1024, 0),-- 9 o clock
-        AttackerSlot("melee", 0, -1024), -- 12 o clock
-        AttackerSlot("missile", 1024*cos(1*pi/6), 1024*sin(1*pi/6)), -- 4 o clock
-        AttackerSlot("missile", 1024*cos(2*pi/6), 1024*sin(2*pi/6)), -- 5 o clock
-        AttackerSlot("missile", 1024*cos(4*pi/6), 1024*sin(4*pi/6)), -- 7 o clock
-        AttackerSlot("missile", 1024*cos(5*pi/6), 1024*sin(5*pi/6)), -- 8 o clock
-        AttackerSlot("missile", 1024*cos(7*pi/6), 1024*sin(7*pi/6)), -- 10 o clock
-        AttackerSlot("missile", 1024*cos(8*pi/6), 1024*sin(8*pi/6)), -- 11 o clock
-        AttackerSlot("missile", 1024*cos(10*pi/6), 1024*sin(10*pi/6)), -- 1 o clock
-        AttackerSlot("missile", 1024*cos(11*pi/6), 1024*sin(11*pi/6)), -- 2 o clock
+        AttackerSlot("melee", self.x, self.y, 0, 1024, 0), -- 3 o clock
+        AttackerSlot("melee", self.x, self.y, 0, 0, 1024), -- 6 o clock
+        AttackerSlot("melee", self.x, self.y, 0, -1024, 0),-- 9 o clock
+        AttackerSlot("melee", self.x, self.y, 0, 0, -1024), -- 12 o clock
+        AttackerSlot("missile", self.x, self.y, 0, 1024*cos(1*pi/6), 1024*sin(1*pi/6)), -- 4 o clock
+        AttackerSlot("missile", self.x, self.y, 0, 1024*cos(2*pi/6), 1024*sin(2*pi/6)), -- 5 o clock
+        AttackerSlot("missile", self.x, self.y, 0, 1024*cos(4*pi/6), 1024*sin(4*pi/6)), -- 7 o clock
+        AttackerSlot("missile", self.x, self.y, 0, 1024*cos(5*pi/6), 1024*sin(5*pi/6)), -- 8 o clock
+        AttackerSlot("missile", self.x, self.y, 0, 1024*cos(7*pi/6), 1024*sin(7*pi/6)), -- 10 o clock
+        AttackerSlot("missile", self.x, self.y, 0, 1024*cos(8*pi/6), 1024*sin(8*pi/6)), -- 11 o clock
+        AttackerSlot("missile", self.x, self.y, 0, 1024*cos(10*pi/6), 1024*sin(10*pi/6)), -- 1 o clock
+        AttackerSlot("missile", self.x, self.y, 0, 1024*cos(11*pi/6), 1024*sin(11*pi/6)), -- 2 o clock
         melee = {},
         missile = {}
     }
@@ -409,9 +409,9 @@ end
 
 function Player:updateAttackerSlots()
     local attackerslots = self.attackerslots
-    local x, y = self.x, self.y
     for _, slot in ipairs(attackerslots) do
-        Characters.castRay(slot, x, y)
+        slot.x, slot.y = self.x, self.y
+        Characters.castRay(slot, self)
     end
 end
 

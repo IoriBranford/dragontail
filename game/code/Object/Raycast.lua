@@ -1,7 +1,10 @@
 ---@class Raycast
 local Raycast = class()
 
-function Raycast:_init(dx, dy, dz, canhitside, radius, height)
+function Raycast:_init(x, y, z, dx, dy, dz, canhitside, radius, height)
+    self.x = x or 0
+    self.y = y or 0
+    self.z = z or 0
     self.dx = dx or 1
     self.dy = dy or 0
     self.dz = dz or 0
