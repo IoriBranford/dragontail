@@ -12,6 +12,9 @@ function Raycast:_init(dx, dy, dz, canhitside, radius, height)
     self.hitx = nil ---@type number?
     self.hity = nil ---@type number?
     self.hitz = nil ---@type number?
+    self.hitnx = nil ---@type number?
+    self.hitny = nil ---@type number?
+    self.hitnz = nil ---@type number?
     self.hitdist = nil ---@type number?
     self.hitside = nil ---@type number? negative = from outside, other = from inside
     self.hitboundary = nil ---@type Boundary?
