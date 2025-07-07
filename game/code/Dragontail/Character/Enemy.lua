@@ -301,15 +301,19 @@ function Enemy:attackIfAmmoElseLeave()
     local ammo = self.ammo or 0
     local opponent = self.opponents[1]
     if attackstate and ammo > 0 and opponent.health > 0 then
-        local raycast = Raycast(self.x, self.y, 0, 1, 0, 0, 1)
-        raycast.hitslayers = CollisionMask.merge("Solid", "Camera", "Player", "Enemy")
+        local projectileheight = self.projectilelaunchheight or (self.bodyheight/2)
+        local raycast = Raycast(self.x, self.y, self.z + projectileheight, 1, 0, 0, 1)
+        raycast.hitslayers = CollisionMask.merge("Player", "Enemy")--"Solid", "Camera", "Player", "Enemy")
         local hitcharacter
         repeat
             yield()
             raycast.x, raycast.y = self.x, self.y
-            raycast.dx, raycast.dy = opponent.x - self.x, opponent.y - self.y
+            raycast.z = self.z + projectileheight
+            raycast.dx = opponent.x - self.x
+            raycast.dy = opponent.y - self.y
+            raycast.dz = opponent.z - self.z
             Face.faceVector(self, raycast.dx, raycast.dy, "Stand")
-            hitcharacter = Characters.castRay(raycast, self)
+            hitcharacter = Characters.castRay3(raycast, self)
         until self:isOnCamera(self.camera) and hitcharacter
             and CollisionMask.test(hitcharacter.bodyinlayers, "Player") ~= 0
         self.ammo = self.ammo - 1
