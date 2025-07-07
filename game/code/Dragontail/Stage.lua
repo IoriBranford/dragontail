@@ -155,6 +155,10 @@ function Stage.init(stagefile)
     end
 end
 
+function Stage.addToScene(object)
+    scene:add(object)
+end
+
 local function genDefaultCameraPath(roombounds)
     local rightmost
     for _, bound in ipairs(roombounds) do
