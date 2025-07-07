@@ -28,6 +28,10 @@ function Raycast:_init(x, y, z, dx, dy, dz, canhitside, radius, height)
     self.hitwallx2 = nil ---@type number?
     self.hitwally2 = nil ---@type number?
     self.hitwallz2 = nil ---@type number?
+
+    self.id = 0
+    self.drawz = 0x1000
+    self.visible = true
 end
 
 function Raycast:draw()
