@@ -494,15 +494,20 @@ function Body:collideWithRaycast(raycast)
             -- hitwall is a tangent line
             raycast.hitx = projx + rnx * projtohitdist
             raycast.hity = projy + rny * projtohitdist
-            raycast.hitz = raycast.z
             raycast.hitside = -1
         else
             -- hitx,hity is the near intersection
             raycast.hitx = projx - rnx * projtohitdist
             raycast.hity = projy - rny * projtohitdist
-            raycast.hitz = raycast.z
             raycast.hitside = 1
         end
+        if raycast.hitx == selfx and raycast.hity == selfy then
+            raycast.hitnx, raycast.hitny = -rnx, -rny
+        else
+            raycast.hitnx, raycast.hitny = math.norm(raycast.hitx - selfx, raycast.hity - selfy)
+        end
+        raycast.hitz = raycast.z
+        raycast.hitnz = 0
         raycast.hitdist = math.dist(rx, ry, raycast.hitx, raycast.hity)
         local d = math.det(selfx - rx, selfy - ry, rdx, rdy)
         raycast.hitwallx, raycast.hitwally = math.rot90(raycast.hitx - selfx, raycast.hity - selfy, d)
@@ -518,7 +523,7 @@ function Body:collideWithRaycast(raycast)
     rx2, ry2 = rx2 - selfx, ry2 - selfy
     local hitdsq = raycast.hitdist
     hitdsq = hitdsq and hitdsq*hitdsq or 0x10000000
-    local hitx, hity, hitwallx, hitwally, hitwallx2, hitwally2, hitside
+    local hitx, hity, hitnx, hitny, hitwallx, hitwally, hitwallx2, hitwally2, hitside
     local ax, ay = points[#points-1], points[#points]
     for i = 2, #points, 2 do
         local bx, by = points[i-1], points[i]
@@ -533,6 +538,7 @@ function Body:collideWithRaycast(raycast)
                 if dsq < hitdsq then
                     hitdsq = dsq
                     hitx, hity = hx, hy
+                    hitnx, hitny = math.norm(math.rot90(bx-ax, by-ay, walldir))
                     hitwallx, hitwally = ax, ay
                     hitwallx2, hitwally2 = bx, by
                     hitside = walldir
@@ -547,6 +553,9 @@ function Body:collideWithRaycast(raycast)
         raycast.hitx = hitx + selfx
         raycast.hity = hity + selfy
         raycast.hitz = raycast.z
+        raycast.hitnx = hitnx
+        raycast.hitny = hitny
+        raycast.hitnz = 0
         raycast.hitwallx = hitwallx + selfx
         raycast.hitwally = hitwally + selfy
         raycast.hitwallx2 = hitwallx2 + selfx
