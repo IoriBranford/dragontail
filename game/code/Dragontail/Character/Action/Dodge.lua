@@ -41,10 +41,7 @@ function Dodge:getDodgeVector(incoming)
 
     if Characters.castRay(raycast, self) then
         -- Dodge along wall
-        local ax, ay = raycast.hitwallx, raycast.hitwally
-        local bx, by = raycast.hitwallx2, raycast.hitwally2
-
-        raycast.dx, raycast.dy = math.norm(bx - ax, by - ay)
+        raycast.dx, raycast.dy = math.rot90(raycast.hitnx, raycast.hitny, 1)
         raycast.dx = raycast.dx * dodgedist
         raycast.dy = raycast.dy * dodgedist
         if math.dot(dodgedirx, dodgediry, raycast.dx, raycast.dy) < 0 then
