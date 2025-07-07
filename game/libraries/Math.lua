@@ -497,7 +497,7 @@ function math.lineplaneintersectdist(ax, ay, az, bx, by, bz, nx, ny, nz, d)
     if ax == bx and ay == by and az == bz then
         return ad == 0 and 0 or nil
     end
-    local lx, ly, lz = ax-bx, ay-by, az-bz
+    local lx, ly, lz = math.norm(bx - ax, by - ay, bz - az)
     local ldotn = math.dot3(lx, ly, lz, nx, ny, nz)
     if ldotn == 0 then
         return ad == 0 and math.huge or nil
@@ -507,11 +507,11 @@ function math.lineplaneintersectdist(ax, ay, az, bx, by, bz, nx, ny, nz, d)
     -- nx*lx*t + ny*ly*t + nz*lz*t = -nx*ax - ny*ay - nz*az - d
     -- t * (nx*lx + ny*ly + nz*lz) = -nx*ax - ny*ay - nz*az - d
     -- t = (-nx*ax - ny*ay - nz*az - d) / (nx*lx + ny*ly + nz*lz)
-    return ad / ldotn
+    return -ad / ldotn, lx, ly, lz
 end
 
 function math.intersectlineplane(ax, ay, az, bx, by, bz, nx, ny, nz, d)
-    local t = math.lineplaneintersectdist(ax, ay, az, bx, by, bz, nx, ny, nz, d)
+    local t, lx, ly, lz = math.lineplaneintersectdist(ax, ay, az, bx, by, bz, nx, ny, nz, d)
     if not t then return end
     if t == 0 then
         return ax, ay, az
@@ -519,12 +519,11 @@ function math.intersectlineplane(ax, ay, az, bx, by, bz, nx, ny, nz, d)
     if t == math.huge then
         return ax, ay, az, bx, by, bz
     end
-    local lx, ly, lz = math.norm(bx-ax, by-ay, bz-az)
     return ax + lx*t, ay + ly*t, az + lz*t
 end
 
 function math.intersectsegmentplane(ax, ay, az, bx, by, bz, nx, ny, nz, d)
-    local t = math.lineplaneintersectdist(ax, ay, az, bx, by, bz, nx, ny, nz, d)
+    local t, lx, ly, lz = math.lineplaneintersectdist(ax, ay, az, bx, by, bz, nx, ny, nz, d)
     if not t then return end
     if t == 0 then
         return ax, ay, az
@@ -533,7 +532,6 @@ function math.intersectsegmentplane(ax, ay, az, bx, by, bz, nx, ny, nz, d)
         return ax, ay, az, bx, by, bz
     end
     if 0 < t and t*t <= math.distsq3(ax, ay, az, bx, by, bz) then
-        local lx, ly, lz = math.norm(bx-ax, by-ay, bz-az)
         return ax + lx*t, ay + ly*t, az + lz*t
     end
 end
