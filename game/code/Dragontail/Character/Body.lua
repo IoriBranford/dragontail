@@ -345,6 +345,23 @@ function Body:collideWith(other)
     return penex, peney, penez
 end
 
+---@param raycast Raycast
+---@return number? projx raycast point closest to the circle center 
+---@return number? projy raycast point closest to the circle center
+---@return number? projdsq square dist from proj point to circle center
+function Body:testCircleWithRaycast(raycast)
+    local x, y, r = self.x, self.y, self.bodyradius
+    local rx, ry = raycast.x, raycast.y
+    local rdx, rdy = raycast.dx, raycast.dy
+    local rx2, ry2 = rx + rdx, ry + rdy
+
+    local projx, projy = math.projpointsegment(x, y, rx, ry, rx2, ry2)
+    local projdsq = math.distsq(projx, projy, x, y)
+    if projdsq <= r*r then
+        return projx, projy, projdsq
+    end
+end
+
 local function finishCollideCylinderSideWithRaycast(self, raycast, hitx, hity, hitside)
     local x, y, z, r, h = self.x, self.y, self.z, self.bodyradius, self.bodyheight
     local rx, ry, rz = raycast.x, raycast.y, raycast.z
@@ -403,18 +420,14 @@ function Body:collideCylinderWithRaycast(raycast)
     if bit.band(self.bodyinlayers, raycast.hitslayers) == 0 then
         return
     end
-    local x, y, z, r, h = self.x, self.y, self.z, self.bodyradius, self.bodyheight
-    local rx, ry, rz = raycast.x, raycast.y, raycast.z
-    local rdx, rdy, rdz = raycast.dx, raycast.dy, raycast.dz
-    local rx2, ry2, rz2 = rx + rdx, ry + rdy, rz + rdz
 
-    -- test XY
-    local projx, projy = math.projpointsegment(x, y, rx, ry, rx2, ry2)
-    local projdsq = math.distsq(projx, projy, x, y)
-    if projdsq > r*r then
+    local projx, projy, projdsq = Body.testCircleWithRaycast(self, raycast)
+    if not projx then
         return
     end
 
+    local z, r, h = self.z, self.bodyradius, self.bodyheight
+    local rdx, rdy, rdz = raycast.dx, raycast.dy, raycast.dz
     local rlenxy = math.len(rdx, rdy)
     local rnx, rny = rdx/rlenxy, rdy/rlenxy
     local projtohitdist = math.sqrt(r*r - projdsq)
@@ -470,17 +483,17 @@ function Body:collideWithRaycast(raycast)
     if bit.band(self.bodyinlayers, raycast.hitslayers) == 0 then
         return
     end
+
+    local projx, projy, projdsq = Body.testCircleWithRaycast(self, raycast)
+    if not projx then
+        return
+    end
+
     local canhitside = raycast.canhitside
     local selfx, selfy, selfr = self.x, self.y, self.bodyradius
     local rx, ry = raycast.x, raycast.y
     local rdx, rdy = raycast.dx, raycast.dy
     local rx2, ry2 = rx + rdx, ry + rdy
-
-    local projx, projy = math.projpointsegment(selfx, selfy, rx, ry, rx2, ry2)
-    local projdsq = math.distsq(projx, projy, selfx, selfy)
-    if projdsq > selfr*selfr then
-        return
-    end
 
     local points = self.points
     if not points then
