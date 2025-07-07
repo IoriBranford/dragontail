@@ -276,15 +276,15 @@ function Characters.castRay(raycast, caster)
 end
 
 ---@param raycast Raycast
-function Characters.castRay3(raycast, caster, rx, ry, rz)
+function Characters.castRay3(raycast, caster)
     raycast.hitdist = nil
     local hitsomething
     local rdx, rdy, rdz = raycast.dx, raycast.dy, raycast.dz
     for _, character in ipairs(allcharacters) do
         if character ~= caster and Body.collideWithRaycast3(character, raycast) then
-            raycast.dx = raycast.hitx - rx
-            raycast.dy = raycast.hity - ry
-            raycast.dz = raycast.hitz - rz
+            raycast.dx = raycast.hitx - raycast.x
+            raycast.dy = raycast.hity - raycast.y
+            raycast.dz = raycast.hitz - raycast.z
             hitsomething = character
         end
     end

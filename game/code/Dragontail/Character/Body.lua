@@ -345,8 +345,9 @@ function Body:collideWith(other)
     return penex, peney, penez
 end
 
-local function finishCollideCylinderSideWithRaycast(self, raycast, rx, ry, rz, hitx, hity, hitside)
+local function finishCollideCylinderSideWithRaycast(self, raycast, hitx, hity, hitside)
     local x, y, z, r, h = self.x, self.y, self.z, self.bodyradius, self.bodyheight
+    local rx, ry, rz = raycast.x, raycast.y, raycast.z
     local rdx, rdy, rdz = raycast.dx, raycast.dy, raycast.dz
     local rx2, ry2, rz2 = rx + rdx, ry + rdy, rz + rdz
 
@@ -376,8 +377,9 @@ local function finishCollideCylinderSideWithRaycast(self, raycast, rx, ry, rz, h
     end
 end
 
-local function finishCollideCylinderEndWithRaycast(self, raycast, rx, ry, rz, hitnz, hitd)
+local function finishCollideCylinderEndWithRaycast(self, raycast, hitnz, hitd)
     local x, y, z, r, h = self.x, self.y, self.z, self.bodyradius, self.bodyheight
+    local rx, ry, rz = raycast.x, raycast.y, raycast.z
     local rdx, rdy, rdz = raycast.dx, raycast.dy, raycast.dz
     local rx2, ry2, rz2 = rx + rdx, ry + rdy, rz + rdz
 
@@ -423,15 +425,15 @@ function Body:collideCylinderWithRaycast(raycast)
         local hitx = projx + rnx * projtohitdist
         local hity = projy + rny * projtohitdist
 
-        if finishCollideCylinderSideWithRaycast(self, raycast, rx, ry, rz, hitx, hity, -1) then
+        if finishCollideCylinderSideWithRaycast(self, raycast, hitx, hity, -1) then
             return true
         end
         if rdz < 0
-        and finishCollideCylinderEndWithRaycast(self, raycast, rx, ry, rz, 1, -z) then
+        and finishCollideCylinderEndWithRaycast(self, raycast, 1, -z) then
             return true
         end
         if rdz > 0
-        and finishCollideCylinderEndWithRaycast(self, raycast, rx, ry, rz, -1, z+h) then
+        and finishCollideCylinderEndWithRaycast(self, raycast, -1, z+h) then
             return true
         end
     else
@@ -440,14 +442,14 @@ function Body:collideCylinderWithRaycast(raycast)
         local hity = projy - rny * projtohitdist
 
         if rdz < 0
-        and finishCollideCylinderEndWithRaycast(self, raycast, rx, ry, rz, 1, -z-h) then
+        and finishCollideCylinderEndWithRaycast(self, raycast, 1, -z-h) then
             return true
         end
         if rdz > 0
-        and finishCollideCylinderEndWithRaycast(self, raycast, rx, ry, rz, -1, z) then
+        and finishCollideCylinderEndWithRaycast(self, raycast, -1, z) then
             return true
         end
-        if finishCollideCylinderSideWithRaycast(self, raycast, rx, ry, rz, hitx, hity, 1) then
+        if finishCollideCylinderSideWithRaycast(self, raycast, hitx, hity, 1) then
             return true
         end
     end
@@ -460,7 +462,7 @@ function Body:collideWithRaycast3(raycast)
     -- if points then
     --     return self:collidePolyWithRaycast(raycast)
     -- end
-    return self:collideCylinderWithRaycast(raycast)
+    return Body.collideCylinderWithRaycast(self, raycast)
 end
 
 ---@param raycast Raycast
