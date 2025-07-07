@@ -32,7 +32,7 @@ end
 
 function Raycast:draw()
     local x, y = self.x, self.y - self.z
-    local x2, y2 = x + self.dx, y + self.dy - (self.z + self.dz)
+    local x2, y2 = x + self.dx, y + self.dy - self.dz
     if self.hitx then
         love.graphics.setColor(1,1,1,.5)
         love.graphics.line(x, y, x2, y2)
