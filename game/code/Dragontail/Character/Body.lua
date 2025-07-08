@@ -416,16 +416,7 @@ local function finishCollideCylinderEndWithRaycast(self, raycast, hitnz, hitd)
     end
 end
 
-function Body:collideCylinderWithRaycast(raycast)
-    if bit.band(self.bodyinlayers, raycast.hitslayers) == 0 then
-        return
-    end
-
-    local projx, projy, projdsq = Body.testCircleWithRaycast(self, raycast)
-    if not projx then
-        return
-    end
-
+local function collideCylinderWithRaycast(self, raycast, projx, projy, projdsq)
     local z, r, h = self.z, self.bodyradius, self.bodyheight
     local rdx, rdy, rdz = raycast.dx, raycast.dy, raycast.dz
     local rlenxy = math.len(rdx, rdy)
@@ -468,14 +459,148 @@ function Body:collideCylinderWithRaycast(raycast)
     end
 end
 
+local function collidePolyWallsWithRaycast(self, raycast)
+    local points = self.points
+    local x, y, z, r, h = self.x, self.y, self.z, self.bodyradius, self.bodyheight
+    local rx, ry, rz = raycast.x, raycast.y, raycast.z
+    local rdx, rdy, rdz = raycast.dx, raycast.dy, raycast.dz
+    local rx2, ry2, rz2 = rx + rdx, ry + rdy, rz + rdz
+
+    local rlenxy = math.len(rdx, rdy)
+    local rnx, rny = rdx/rlenxy, rdy/rlenxy
+    local canhitside = raycast.canhitside
+
+    rx, ry = rx - x, ry - y
+    rx2, ry2 = rx2 - x, ry2 - y
+    local hitdsq = raycast.hitdist
+    hitdsq = hitdsq and hitdsq*hitdsq or 0x10000000
+    local hitx, hity, hitz
+    local hitnx, hitny, hitnz
+    local hitwallx, hitwally, hitwallx2, hitwally2, hitside
+    local ax, ay = points[#points-1], points[#points]
+    for i = 2, #points, 2 do
+        local bx, by = points[i-1], points[i]
+        local walldx, walldy = bx-ax, by-ay
+        local walldir = math.det(rdx, rdy, walldx, walldy)
+        if walldir * canhitside >= 0 then
+            local wallnx, wallny = math.norm(math.rot90(walldx, walldy, walldir))
+            local hx, hy, hz, hx2, hy2 = math.intersectsegmentplane(
+                rx, ry, rz,
+                rx2, ry2, rz2,
+                wallnx, wallny, 0,
+                -math.dot(ax, ay, wallnx, wallny))
+
+            if hz and z <= hz and hz <= z+h then
+                local hitdotwall = math.dot(hx - ax, hy - ay, walldx, walldy)
+                if 0 <= hitdotwall and hitdotwall <= math.lensq(walldx, walldy) then
+                    if hx2 and hy2 then
+                        if math.dot(rnx, rny, wallnx, wallny) < 0 then
+                            hx, hy = bx, by
+                        else
+                            hx, hy = ax, ay
+                        end
+                    end
+                    local dsq = math.distsq3(rx, ry, rz, hx, hy, hz)
+                    if dsq < hitdsq then
+                        hitdsq = dsq
+                        hitx, hity, hitz = hx, hy, hz
+                        hitnx, hitny, hitnz = wallnx, wallny, 0
+                        hitwallx, hitwally = ax, ay
+                        hitwallx2, hitwally2 = bx, by
+                        hitside = walldir
+                    end
+                end
+            end
+        end
+        ax, ay = bx, by
+    end
+
+    if hitx then
+        raycast.hitdist = math.sqrt(hitdsq)
+        raycast.hitx = hitx + x
+        raycast.hity = hity + y
+        raycast.hitz = hitz
+        raycast.hitnx = hitnx
+        raycast.hitny = hitny
+        raycast.hitnz = hitnz
+        raycast.hitwallx = hitwallx + x
+        raycast.hitwally = hitwally + y
+        raycast.hitwallx2 = hitwallx2 + x
+        raycast.hitwally2 = hitwally2 + y
+        raycast.hitside = hitside
+        return true
+    end
+end
+
+local function collidePolyFloorWithRaycast(self, raycast, hitnz, hitd)
+    local rx, ry, rz = raycast.x, raycast.y, raycast.z
+    local rdx, rdy, rdz = raycast.dx, raycast.dy, raycast.dz
+    local rx2, ry2, rz2 = rx + rdx, ry + rdy, rz + rdz
+    local hitx, hity, hitz = math.intersectsegmentplane(rx, ry, rz, rx2, ry2, rz2, 0, 0, hitnz, hitd)
+    if not hitx then
+        return
+    end
+    local hitdist = raycast.hitdist
+    local lasthitdsq = hitdist and (hitdist*hitdist) or 0x10000000
+    local hitdsq = math.distsq3(rx, ry, rz, hitx, hity, hitz)
+    if hitdsq >= lasthitdsq then
+        return
+    end
+    if math.pointinpolygon(self.points, hitx - self.x, hity - self.y) then
+        raycast.hitdist = math.sqrt(hitdsq)
+        raycast.hitx = hitx
+        raycast.hity = hity
+        raycast.hitz = hitz
+        raycast.hitnx = 0
+        raycast.hitny = 0
+        raycast.hitnz = hitnz
+        return true
+    end
+end
+
+local function collidePolyWithRaycast(self, raycast)
+    if bit.band(self.bodyinlayers, raycast.hitslayers) == 0 then
+        return
+    end
+    if not Body.testCircleWithRaycast(self, raycast) then
+        return
+    end
+
+    local z, h = self.z, self.bodyheight
+    local rdz = raycast.dz
+    local canhitside = raycast.canhitside
+    local floorz, floornz
+    if rdz < 0 then
+        floornz = 1
+        floorz = canhitside < 0 and -z or (-z-h)
+    elseif rdz > 0 then
+        floornz = -1
+        floorz = canhitside < 0 and (z+h) or z
+    end
+
+    local collided = collidePolyWallsWithRaycast(self, raycast)
+    collided = floornz
+        and collidePolyFloorWithRaycast(self, raycast, floornz, floorz)
+        or collided
+    return collided
+end
+
 ---@param raycast Raycast
 function Body:collideWithRaycast3(raycast)
-    -- TODO
-    -- local points = self.points
-    -- if points then
-    --     return self:collidePolyWithRaycast(raycast)
-    -- end
-    return Body.collideCylinderWithRaycast(self, raycast)
+    if bit.band(self.bodyinlayers, raycast.hitslayers) == 0 then
+        return
+    end
+
+    local projx, projy, projdsq = Body.testCircleWithRaycast(self, raycast)
+    if not projx then
+        return
+    end
+
+    local points = self.points
+    if points then
+        return collidePolyWithRaycast(self, raycast)
+    end
+    return collideCylinderWithRaycast(self, raycast, projx, projy, projdsq)
 end
 
 ---@param raycast Raycast
