@@ -192,16 +192,15 @@ function Enemy:findAttackerSlot(opponent, attacktype)
     return attackerslot
 end
 
-function Enemy:getAttackerSlotPosition(opponent, attackerslot, attacktype)
+function Enemy:getAttackerSlotPosition(attackerslot, attacktype)
     local bodyradius = self.bodyradius
     local attackdata = self.attacktable[attacktype]
     local attackrange = (attackdata and attackdata.bestdist or 1)
-    local oppox, oppoy = opponent.x, opponent.y
     local destx, desty
     if self.attack.projectiletype then
-        destx, desty = attackerslot:getFarPosition(oppox, oppoy, bodyradius)
+        destx, desty = attackerslot:getFarPosition(bodyradius)
     else
-        destx, desty = attackerslot:getPosition(oppox, oppoy, attackrange)
+        destx, desty = attackerslot:getPosition(attackrange)
     end
     return destx, desty
 end
@@ -236,7 +235,7 @@ function Enemy:approach(nextattacktype)
     local attackerslot = self:findAttackerSlot(opponent, nextattacktype)
     local destx, desty = self.x, self.y
     if attackerslot then
-        destx, desty = self:getAttackerSlotPosition(opponent, attackerslot, nextattacktype)
+        destx, desty = self:getAttackerSlotPosition(attackerslot, nextattacktype)
     end
 
     local reached = destx == self.x and desty == self.y

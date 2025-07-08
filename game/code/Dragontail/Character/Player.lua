@@ -220,22 +220,24 @@ function Player:init()
     -- self.runenergycost = self.runenergycost or 25
     Mana.init(self)
 
+    local x, y = self.x, self.y
+    local slotz = self.z + self.bodyheight/2
     ---@class PlayerAttackerSlots
     ---@field [integer] AttackerSlot
     ---@field [string] AttackerSlot[]
     self.attackerslots = {
-        AttackerSlot("melee", self.x, self.y, 0, 1024, 0), -- 3 o clock
-        AttackerSlot("melee", self.x, self.y, 0, 0, 1024), -- 6 o clock
-        AttackerSlot("melee", self.x, self.y, 0, -1024, 0),-- 9 o clock
-        AttackerSlot("melee", self.x, self.y, 0, 0, -1024), -- 12 o clock
-        AttackerSlot("missile", self.x, self.y, 0, 1024*cos(1*pi/6), 1024*sin(1*pi/6)), -- 4 o clock
-        AttackerSlot("missile", self.x, self.y, 0, 1024*cos(2*pi/6), 1024*sin(2*pi/6)), -- 5 o clock
-        AttackerSlot("missile", self.x, self.y, 0, 1024*cos(4*pi/6), 1024*sin(4*pi/6)), -- 7 o clock
-        AttackerSlot("missile", self.x, self.y, 0, 1024*cos(5*pi/6), 1024*sin(5*pi/6)), -- 8 o clock
-        AttackerSlot("missile", self.x, self.y, 0, 1024*cos(7*pi/6), 1024*sin(7*pi/6)), -- 10 o clock
-        AttackerSlot("missile", self.x, self.y, 0, 1024*cos(8*pi/6), 1024*sin(8*pi/6)), -- 11 o clock
-        AttackerSlot("missile", self.x, self.y, 0, 1024*cos(10*pi/6), 1024*sin(10*pi/6)), -- 1 o clock
-        AttackerSlot("missile", self.x, self.y, 0, 1024*cos(11*pi/6), 1024*sin(11*pi/6)), -- 2 o clock
+        AttackerSlot("melee",   x, y, slotz, 1024, 0, 0), -- 3 o clock
+        AttackerSlot("melee",   x, y, slotz, 0, 1024, 0), -- 6 o clock
+        AttackerSlot("melee",   x, y, slotz, -1024, 0, 0),-- 9 o clock
+        AttackerSlot("melee",   x, y, slotz, 0, -1024, 0), -- 12 o clock
+        AttackerSlot("missile", x, y, slotz, 1024*cos(1*pi/6), 1024*sin(1*pi/6), 0), -- 4 o clock
+        AttackerSlot("missile", x, y, slotz, 1024*cos(2*pi/6), 1024*sin(2*pi/6), 0), -- 5 o clock
+        AttackerSlot("missile", x, y, slotz, 1024*cos(4*pi/6), 1024*sin(4*pi/6), 0), -- 7 o clock
+        AttackerSlot("missile", x, y, slotz, 1024*cos(5*pi/6), 1024*sin(5*pi/6), 0), -- 8 o clock
+        AttackerSlot("missile", x, y, slotz, 1024*cos(7*pi/6), 1024*sin(7*pi/6), 0), -- 10 o clock
+        AttackerSlot("missile", x, y, slotz, 1024*cos(8*pi/6), 1024*sin(8*pi/6), 0), -- 11 o clock
+        AttackerSlot("missile", x, y, slotz, 1024*cos(10*pi/6), 1024*sin(10*pi/6), 0), -- 1 o clock
+        AttackerSlot("missile", x, y, slotz, 1024*cos(11*pi/6), 1024*sin(11*pi/6), 0), -- 2 o clock
         melee = {},
         missile = {}
     }
@@ -357,11 +359,10 @@ end
 function Player:findClosestAttackerSlot(attackerx, attackery, attackrange, slottype)
     local attackerslots = self.attackerslots
     attackerslots = slottype and attackerslots[slottype] or attackerslots
-    local x, y = self.x, self.y
     local bestslot, bestslotdsq
     for _, slot in ipairs(attackerslots) do
         if slot:hasSpace(attackrange) then
-            local slotx, sloty = slot:getPosition(x, y, attackrange)
+            local slotx, sloty = slot:getPosition(attackrange)
             local slotdsq = math.distsq(attackerx, attackery, slotx, sloty)
             if slotdsq < bestslotdsq then
                 bestslot, bestslotdsq = slot, slotdsq
@@ -420,8 +421,8 @@ end
 function Player:updateAttackerSlots()
     local attackerslots = self.attackerslots
     for _, slot in ipairs(attackerslots) do
-        slot.x, slot.y = self.x, self.y
-        Characters.castRay2(slot, self)
+        slot.x, slot.y, slot.z = self.x, self.y, self.z + self.bodyheight/2
+        Characters.castRay3(slot, self)
     end
 end
 
