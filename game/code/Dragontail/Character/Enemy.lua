@@ -207,10 +207,11 @@ end
 
 function Enemy:navigateAroundSolid(destx, desty)
     local x, y = self.x, self.y
+    local z = self.z + self.bodyheight/2
     local bodyradius = self.bodyradius
-    local raycast = Raycast(x, y, 0, destx - x, desty - y, 0, 1, bodyradius/2)
+    local raycast = Raycast(x, y, z, destx - x, desty - y, 0, 1, bodyradius/2)
     raycast.hitslayers = CollisionMask.merge("Solid", "Camera")
-    if Characters.castRay2(raycast, self) then
+    if Characters.castRay3(raycast, self) then
         local todestx, todesty = destx - x, desty - y
         local frontendx, frontendy = raycast.hitwallx, raycast.hitwally
         local backendx, backendy = raycast.hitwallx2, raycast.hitwally2
