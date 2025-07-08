@@ -59,8 +59,9 @@ function math.cross(x, y, z, x2, y2, z2)
         det(x, y, x2, y2)
 end
 
-function math.lensq(x, y)
-    return x*x+y*y
+function math.lensq(x, y, z)
+    z = z or 0
+    return x*x+y*y+z*z
 end
 local lensq = math.lensq
 
