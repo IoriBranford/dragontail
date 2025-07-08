@@ -39,7 +39,7 @@ function Dodge:getDodgeVector(incoming)
     local raycast = Raycast(self.x, self.y, 0, dodgespacex, dodgespacey, 0, 1, self.bodyradius/2)
     raycast.hitslayers = CollisionMask.merge("Solid", "Camera")
 
-    if Characters.castRay(raycast, self) then
+    if Characters.castRay2(raycast, self) then
         -- Dodge along wall
         raycast.dx, raycast.dy = math.rot90(raycast.hitnx, raycast.hitny, 1)
         raycast.dx = raycast.dx * dodgedist
@@ -47,13 +47,13 @@ function Dodge:getDodgeVector(incoming)
         if math.dot(dodgedirx, dodgediry, raycast.dx, raycast.dy) < 0 then
             raycast.dx, raycast.dy = -raycast.dx, -raycast.dy
         end
-        if Characters.castRay(raycast, self) then
+        if Characters.castRay2(raycast, self) then
             raycast.dx, raycast.dy = -raycast.dx, -raycast.dy
         end
     elseif oppospeedsq >= dodgespeed*dodgespeed then
         local rot90dir = math.det(oppovelx, oppovely, fromoppox, fromoppoy)
         raycast.dx, raycast.dy = math.rot90(raycast.dx, raycast.dy, rot90dir)
-        if Characters.castRay(raycast, self) then
+        if Characters.castRay2(raycast, self) then
             raycast.dx, raycast.dy = -raycast.dx, -raycast.dy
         end
     end

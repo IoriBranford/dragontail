@@ -421,7 +421,7 @@ function Player:updateAttackerSlots()
     local attackerslots = self.attackerslots
     for _, slot in ipairs(attackerslots) do
         slot.x, slot.y = self.x, self.y
-        Characters.castRay(slot, self)
+        Characters.castRay2(slot, self)
     end
 end
 

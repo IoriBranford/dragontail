@@ -604,7 +604,7 @@ function Body:collideWithRaycast3(raycast)
 end
 
 ---@param raycast Raycast
-function Body:collideWithRaycast(raycast)
+function Body:collideWithRaycast2(raycast)
     if bit.band(self.bodyinlayers, raycast.hitslayers) == 0 then
         return
     end
