@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="55" nextobjectid="530">
+<map version="1.11" tiledversion="2025.07.09" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="55" nextobjectid="530">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -231,8 +231,8 @@
    </properties>
    <object id="21" template="mapobjects/OutwardBoundary.tx" x="0" y="0" visible="1">
     <properties>
-     <property name="bodyheight" type="float" value="64"/>
      <property name="drawz" type="float" value="-1"/>
+     <property name="extrudeY" type="float" value="-64"/>
     </properties>
     <polygon points="0,0 0,288 32,288 32,160 64,128 224,128 256,96 448,96 448,0"/>
    </object>
@@ -297,13 +297,13 @@
    <object id="492" gid="5266" x="1040" y="248" width="64" height="64"/>
    <object id="238" template="mapobjects/OutwardBoundary.tx" x="1024" y="64" visible="1">
     <properties>
-     <property name="bodyheight" type="float" value="64"/>
+     <property name="extrudeY" type="float" value="-64"/>
     </properties>
     <polygon points="-64,-96 -64,32 32,32 96,96 96,96 96,-96"/>
    </object>
    <object id="239" template="mapobjects/OutwardBoundary.tx" x="1120" y="0" visible="1">
     <properties>
-     <property name="bodyheight" type="float" value="64"/>
+     <property name="extrudeY" type="float" value="-64"/>
     </properties>
     <polygon points="0,-32 0,160 320,160 352,128 480,128 480,-32"/>
    </object>
@@ -399,8 +399,8 @@ COSTS 1 OR MORE</text>
    </object>
    <object id="38" template="mapobjects/OutwardBoundary.tx" x="1600" y="-64" visible="1">
     <properties>
-     <property name="bodyheight" type="float" value="64"/>
      <property name="drawz" type="float" value="-1"/>
+     <property name="extrudeY" type="float" value="-64"/>
     </properties>
     <polygon points="0,32 0,192 128,192 160,160 256,160 256,32"/>
    </object>
@@ -593,7 +593,7 @@ COSTS 1 OR MORE</text>
   <objectgroup draworder="index" id="15" name="tolearngrabandthrowenemies" class="Room">
    <object id="65" template="mapobjects/OutwardBoundary.tx" x="2016" y="288" visible="1">
     <properties>
-     <property name="bodyheight" type="float" value="64"/>
+     <property name="extrudeY" type="float" value="-64"/>
     </properties>
     <polygon points="-160,-320 -160,-192 0,-192 32,-160 64,-160 96,-128 96,-96 128,-64 128,0 160,0 160,-320"/>
    </object>
@@ -774,19 +774,19 @@ and tap    to throw</text>
    </object>
    <object id="68" template="mapobjects/OutwardBoundary.tx" x="2592" y="224">
     <properties>
-     <property name="bodyheight" type="float" value="64"/>
+     <property name="extrudeY" type="float" value="-64"/>
     </properties>
     <polygon points="-320,-224 -320,96 224,96 128,0 64,64 0,0 -128,0 -160,32 -224,32 -256,0 -288,0 -288,-112 -256,-144 -256,-224"/>
    </object>
    <object id="311" template="mapobjects/OutwardBoundary.tx" x="2592" y="224">
     <properties>
-     <property name="bodyheight" type="float" value="64"/>
+     <property name="extrudeY" type="float" value="-64"/>
     </properties>
     <polygon points="288,160 384,64 320,64 256,0 192,64"/>
    </object>
    <object id="298" template="mapobjects/OutwardBoundary.tx" x="3168" y="0">
     <properties>
-     <property name="bodyheight" type="float" value="64"/>
+     <property name="extrudeY" type="float" value="-64"/>
     </properties>
     <polygon points="0,0 0,112 192,112 192,0"/>
    </object>
@@ -1026,7 +1026,7 @@ to sprint past archers</text>
    </object>
    <object id="385" template="mapobjects/OutwardBoundary.tx" x="3520" y="48">
     <properties>
-     <property name="bodyheight" type="float" value="10"/>
+     <property name="extrudeY" type="float" value="-10"/>
     </properties>
     <polygon points="0,16 8,32 24,40 48,48 80,48 104,40 120,32 128,16 128,0 0,0"/>
    </object>
@@ -1040,14 +1040,14 @@ to sprint past archers</text>
    </object>
    <object id="394" gid="6875" x="3720" y="88" width="64" height="64">
     <properties>
-     <property name="bodyheight" type="float" value="28"/>
-     <property name="bodyinlayers" type="string" value="Solid"/>
+     <property name="bodyinlayers" value="Solid"/>
+     <property name="extrudeY" type="float" value="-28"/>
     </properties>
    </object>
    <object id="395" gid="6879" x="3448" y="96" width="64" height="64">
     <properties>
-     <property name="bodyheight" type="float" value="48"/>
-     <property name="bodyinlayers" type="string" value="Solid"/>
+     <property name="bodyinlayers" value="Solid"/>
+     <property name="extrudeY" type="float" value="-48"/>
     </properties>
    </object>
    <object id="418" gid="5291" x="3540" y="66" width="64" height="32" rotation="330"/>
@@ -1080,20 +1080,20 @@ to sprint past archers</text>
    </object>
    <object id="320" gid="6626" x="3928" y="240" width="96" height="48">
     <properties>
-     <property name="bodyheight" type="float" value="16"/>
-     <property name="bodyinlayers" type="string" value="Solid"/>
+     <property name="bodyinlayers" value="Solid"/>
+     <property name="extrudeY" type="float" value="-16"/>
     </properties>
    </object>
    <object id="327" gid="7255" x="3872" y="264" width="32" height="32">
     <properties>
-     <property name="bodyheight" type="float" value="12"/>
-     <property name="bodyinlayers" type="string" value="Solid"/>
+     <property name="bodyinlayers" value="Solid"/>
+     <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
    <object id="328" gid="7263" x="3976" y="272" width="32" height="32">
     <properties>
-     <property name="bodyheight" type="float" value="12"/>
-     <property name="bodyinlayers" type="string" value="Solid"/>
+     <property name="bodyinlayers" value="Solid"/>
+     <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
    <object id="370" gid="6641" x="3912" y="224" width="32" height="32">
@@ -1129,87 +1129,87 @@ to sprint past archers</text>
    </object>
    <object id="318" gid="6624" x="4008" y="104" width="96" height="48">
     <properties>
-     <property name="bodyheight" type="float" value="16"/>
-     <property name="bodyinlayers" type="string" value="Solid"/>
+     <property name="bodyinlayers" value="Solid"/>
+     <property name="extrudeY" type="float" value="-16"/>
     </properties>
    </object>
    <object id="319" gid="6626" x="4128" y="112" width="96" height="48">
     <properties>
-     <property name="bodyheight" type="float" value="16"/>
-     <property name="bodyinlayers" type="string" value="Solid"/>
+     <property name="bodyinlayers" value="Solid"/>
+     <property name="extrudeY" type="float" value="-16"/>
     </properties>
    </object>
    <object id="321" gid="6625" x="4064" y="232" width="96" height="48">
     <properties>
-     <property name="bodyheight" type="float" value="16"/>
-     <property name="bodyinlayers" type="string" value="Solid"/>
+     <property name="bodyinlayers" value="Solid"/>
+     <property name="extrudeY" type="float" value="-16"/>
     </properties>
    </object>
    <object id="322" gid="6624" x="4208" y="224" width="96" height="48">
     <properties>
-     <property name="bodyheight" type="float" value="16"/>
-     <property name="bodyinlayers" type="string" value="Solid"/>
+     <property name="bodyinlayers" value="Solid"/>
+     <property name="extrudeY" type="float" value="-16"/>
     </properties>
    </object>
    <object id="323" gid="6625" x="4256" y="96" width="96" height="48">
     <properties>
-     <property name="bodyheight" type="float" value="16"/>
-     <property name="bodyinlayers" type="string" value="Solid"/>
+     <property name="bodyinlayers" value="Solid"/>
+     <property name="extrudeY" type="float" value="-16"/>
     </properties>
    </object>
    <object id="324" gid="7252" x="4096" y="80" width="32" height="32">
     <properties>
-     <property name="bodyheight" type="float" value="12"/>
-     <property name="bodyinlayers" type="string" value="Solid"/>
+     <property name="bodyinlayers" value="Solid"/>
+     <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
    <object id="325" gid="7256" x="4216" y="64" width="32" height="32">
     <properties>
-     <property name="bodyheight" type="float" value="12"/>
-     <property name="bodyinlayers" type="string" value="Solid"/>
+     <property name="bodyinlayers" value="Solid"/>
+     <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
    <object id="326" gid="7263" x="4168" y="264" width="32" height="32">
     <properties>
-     <property name="bodyheight" type="float" value="12"/>
-     <property name="bodyinlayers" type="string" value="Solid"/>
+     <property name="bodyinlayers" value="Solid"/>
+     <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
    <object id="329" gid="7259" x="4096" y="272" width="32" height="32">
     <properties>
-     <property name="bodyheight" type="float" value="12"/>
-     <property name="bodyinlayers" type="string" value="Solid"/>
+     <property name="bodyinlayers" value="Solid"/>
+     <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
    <object id="330" gid="7255" x="4024" y="264" width="32" height="32">
     <properties>
-     <property name="bodyheight" type="float" value="12"/>
-     <property name="bodyinlayers" type="string" value="Solid"/>
+     <property name="bodyinlayers" value="Solid"/>
+     <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
    <object id="331" gid="7259" x="4248" y="272" width="32" height="32">
     <properties>
-     <property name="bodyheight" type="float" value="12"/>
-     <property name="bodyinlayers" type="string" value="Solid"/>
+     <property name="bodyinlayers" value="Solid"/>
+     <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
    <object id="332" gid="7260" x="4168" y="72" width="32" height="32">
     <properties>
-     <property name="bodyheight" type="float" value="12"/>
-     <property name="bodyinlayers" type="string" value="Solid"/>
+     <property name="bodyinlayers" value="Solid"/>
+     <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
    <object id="333" gid="7252" x="4296" y="72" width="32" height="32">
     <properties>
-     <property name="bodyheight" type="float" value="12"/>
-     <property name="bodyinlayers" type="string" value="Solid"/>
+     <property name="bodyinlayers" value="Solid"/>
+     <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
    <object id="334" gid="7256" x="3976" y="64" width="32" height="32"/>
    <object id="335" gid="7260" x="4048" y="72" width="32" height="32">
     <properties>
-     <property name="bodyheight" type="float" value="12"/>
-     <property name="bodyinlayers" type="string" value="Solid"/>
+     <property name="bodyinlayers" value="Solid"/>
+     <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
    <object id="336" gid="5278" x="4016" y="72" width="64" height="64">
@@ -1404,13 +1404,13 @@ to sprint past archers</text>
   <objectgroup id="20" name="arena" class="Room">
    <object id="76" template="mapobjects/OutwardBoundary.tx" x="4800" y="32">
     <properties>
-     <property name="bodyheight" type="float" value="64"/>
+     <property name="extrudeY" type="float" value="-64"/>
     </properties>
     <polygon points="0,-32 0,80 480,80 480,-32"/>
    </object>
    <object id="77" template="mapobjects/OutwardBoundary.tx" x="4352" y="288">
     <properties>
-     <property name="bodyheight" type="float" value="32"/>
+     <property name="extrudeY" type="float" value="-32"/>
     </properties>
     <polygon points="-64,64 -64,224 448,224 448,0 384,-64 160,-64 128,-32 32,-32"/>
    </object>

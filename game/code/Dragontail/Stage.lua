@@ -59,6 +59,9 @@ function Stage.init(stagefile)
             or object.type == "Trigger" then
                 object.visible = Config.drawbodies
             end
+            if object.extrudeY then
+                object.bodyheight = -object.extrudeY
+            end
         end
     end
 

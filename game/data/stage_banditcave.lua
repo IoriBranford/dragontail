@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "2025.07.09",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -15661,10 +15661,10 @@ return {
                 { x = 448, y = 0 }
               },
               properties = {
-                ["bodyheight"] = 64,
                 ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = -1,
+                ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -15703,10 +15703,10 @@ return {
                 { x = 512, y = -32 }
               },
               properties = {
-                ["bodyheight"] = 512,
                 ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
+                ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -16140,10 +16140,10 @@ return {
                 { x = 96, y = -96 }
               },
               properties = {
-                ["bodyheight"] = 64,
                 ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
+                ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -16167,10 +16167,10 @@ return {
                 { x = 480, y = -32 }
               },
               properties = {
-                ["bodyheight"] = 64,
                 ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
+                ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -16596,10 +16596,10 @@ return {
                 { x = 256, y = 32 }
               },
               properties = {
-                ["bodyheight"] = 64,
                 ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = -1,
+                ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -16621,10 +16621,10 @@ return {
                 { x = 624, y = 0 }
               },
               properties = {
-                ["bodyheight"] = 512,
                 ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
+                ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff",
                 ["z"] = 64
               }
@@ -17351,10 +17351,10 @@ return {
                 { x = 160, y = -320 }
               },
               properties = {
-                ["bodyheight"] = 64,
                 ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
+                ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -17871,10 +17871,10 @@ return {
                 { x = 960, y = 0 }
               },
               properties = {
-                ["bodyheight"] = 512,
                 ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
+                ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff",
                 ["z"] = 64
               }
@@ -17931,10 +17931,10 @@ return {
               },
               properties = {
                 ["action"] = "startStageEvent",
-                ["bodyheight"] = 64,
                 ["color"] = "#80008000",
                 ["drawz"] = -0.125,
                 ["event"] = "playerExitToNextArea",
+                ["extrudeY"] = -64,
                 ["initialai"] = "triggerToUse",
                 ["script"] = "Dragontail.Character.Trigger",
                 ["usesleft"] = 1
@@ -18002,10 +18002,10 @@ return {
                 { x = 576, y = 0 }
               },
               properties = {
-                ["bodyheight"] = 512,
                 ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
+                ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -18033,10 +18033,10 @@ return {
                 { x = 1088, y = 0 }
               },
               properties = {
-                ["bodyheight"] = 512,
                 ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
+                ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -18068,10 +18068,10 @@ return {
                 { x = -256, y = -224 }
               },
               properties = {
-                ["bodyheight"] = 64,
                 ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
+                ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -18094,10 +18094,10 @@ return {
                 { x = 192, y = 64 }
               },
               properties = {
-                ["bodyheight"] = 64,
                 ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
+                ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -18119,10 +18119,10 @@ return {
                 { x = 192, y = 0 }
               },
               properties = {
-                ["bodyheight"] = 64,
                 ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
+                ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -18909,10 +18909,10 @@ return {
                 { x = 480, y = 0 }
               },
               properties = {
-                ["bodyheight"] = 512,
                 ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
+                ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -18940,10 +18940,10 @@ return {
                 { x = 0, y = 0 }
               },
               properties = {
-                ["bodyheight"] = 10,
                 ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
+                ["extrudeY"] = -10,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -18977,8 +18977,8 @@ return {
               gid = 6875,
               visible = true,
               properties = {
-                ["bodyheight"] = 28,
-                ["bodyinlayers"] = "Solid"
+                ["bodyinlayers"] = "Solid",
+                ["extrudeY"] = -28
               }
             },
             {
@@ -18994,8 +18994,8 @@ return {
               gid = 6879,
               visible = true,
               properties = {
-                ["bodyheight"] = 48,
-                ["bodyinlayers"] = "Solid"
+                ["bodyinlayers"] = "Solid",
+                ["extrudeY"] = -48
               }
             },
             {
@@ -19224,8 +19224,8 @@ return {
               gid = 6626,
               visible = true,
               properties = {
-                ["bodyheight"] = 16,
-                ["bodyinlayers"] = "Solid"
+                ["bodyinlayers"] = "Solid",
+                ["extrudeY"] = -16
               }
             },
             {
@@ -19241,8 +19241,8 @@ return {
               gid = 7255,
               visible = true,
               properties = {
-                ["bodyheight"] = 12,
-                ["bodyinlayers"] = "Solid"
+                ["bodyinlayers"] = "Solid",
+                ["extrudeY"] = -12
               }
             },
             {
@@ -19258,8 +19258,8 @@ return {
               gid = 7263,
               visible = true,
               properties = {
-                ["bodyheight"] = 12,
-                ["bodyinlayers"] = "Solid"
+                ["bodyinlayers"] = "Solid",
+                ["extrudeY"] = -12
               }
             },
             {
@@ -19381,10 +19381,10 @@ return {
                 { x = 480, y = -320 }
               },
               properties = {
-                ["bodyheight"] = 512,
                 ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
+                ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -19401,8 +19401,8 @@ return {
               gid = 6624,
               visible = true,
               properties = {
-                ["bodyheight"] = 16,
-                ["bodyinlayers"] = "Solid"
+                ["bodyinlayers"] = "Solid",
+                ["extrudeY"] = -16
               }
             },
             {
@@ -19418,8 +19418,8 @@ return {
               gid = 6626,
               visible = true,
               properties = {
-                ["bodyheight"] = 16,
-                ["bodyinlayers"] = "Solid"
+                ["bodyinlayers"] = "Solid",
+                ["extrudeY"] = -16
               }
             },
             {
@@ -19435,8 +19435,8 @@ return {
               gid = 6625,
               visible = true,
               properties = {
-                ["bodyheight"] = 16,
-                ["bodyinlayers"] = "Solid"
+                ["bodyinlayers"] = "Solid",
+                ["extrudeY"] = -16
               }
             },
             {
@@ -19452,8 +19452,8 @@ return {
               gid = 6624,
               visible = true,
               properties = {
-                ["bodyheight"] = 16,
-                ["bodyinlayers"] = "Solid"
+                ["bodyinlayers"] = "Solid",
+                ["extrudeY"] = -16
               }
             },
             {
@@ -19469,8 +19469,8 @@ return {
               gid = 6625,
               visible = true,
               properties = {
-                ["bodyheight"] = 16,
-                ["bodyinlayers"] = "Solid"
+                ["bodyinlayers"] = "Solid",
+                ["extrudeY"] = -16
               }
             },
             {
@@ -19486,8 +19486,8 @@ return {
               gid = 7252,
               visible = true,
               properties = {
-                ["bodyheight"] = 12,
-                ["bodyinlayers"] = "Solid"
+                ["bodyinlayers"] = "Solid",
+                ["extrudeY"] = -12
               }
             },
             {
@@ -19503,8 +19503,8 @@ return {
               gid = 7256,
               visible = true,
               properties = {
-                ["bodyheight"] = 12,
-                ["bodyinlayers"] = "Solid"
+                ["bodyinlayers"] = "Solid",
+                ["extrudeY"] = -12
               }
             },
             {
@@ -19520,8 +19520,8 @@ return {
               gid = 7263,
               visible = true,
               properties = {
-                ["bodyheight"] = 12,
-                ["bodyinlayers"] = "Solid"
+                ["bodyinlayers"] = "Solid",
+                ["extrudeY"] = -12
               }
             },
             {
@@ -19537,8 +19537,8 @@ return {
               gid = 7259,
               visible = true,
               properties = {
-                ["bodyheight"] = 12,
-                ["bodyinlayers"] = "Solid"
+                ["bodyinlayers"] = "Solid",
+                ["extrudeY"] = -12
               }
             },
             {
@@ -19554,8 +19554,8 @@ return {
               gid = 7255,
               visible = true,
               properties = {
-                ["bodyheight"] = 12,
-                ["bodyinlayers"] = "Solid"
+                ["bodyinlayers"] = "Solid",
+                ["extrudeY"] = -12
               }
             },
             {
@@ -19571,8 +19571,8 @@ return {
               gid = 7259,
               visible = true,
               properties = {
-                ["bodyheight"] = 12,
-                ["bodyinlayers"] = "Solid"
+                ["bodyinlayers"] = "Solid",
+                ["extrudeY"] = -12
               }
             },
             {
@@ -19588,8 +19588,8 @@ return {
               gid = 7260,
               visible = true,
               properties = {
-                ["bodyheight"] = 12,
-                ["bodyinlayers"] = "Solid"
+                ["bodyinlayers"] = "Solid",
+                ["extrudeY"] = -12
               }
             },
             {
@@ -19605,8 +19605,8 @@ return {
               gid = 7252,
               visible = true,
               properties = {
-                ["bodyheight"] = 12,
-                ["bodyinlayers"] = "Solid"
+                ["bodyinlayers"] = "Solid",
+                ["extrudeY"] = -12
               }
             },
             {
@@ -19636,8 +19636,8 @@ return {
               gid = 7260,
               visible = true,
               properties = {
-                ["bodyheight"] = 12,
-                ["bodyinlayers"] = "Solid"
+                ["bodyinlayers"] = "Solid",
+                ["extrudeY"] = -12
               }
             },
             {
@@ -20334,10 +20334,10 @@ return {
                 { x = 480, y = -32 }
               },
               properties = {
-                ["bodyheight"] = 64,
                 ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
+                ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -20363,10 +20363,10 @@ return {
                 { x = 32, y = -32 }
               },
               properties = {
-                ["bodyheight"] = 32,
                 ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
+                ["extrudeY"] = -32,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -20409,10 +20409,10 @@ return {
                 { x = 480, y = 0 }
               },
               properties = {
-                ["bodyheight"] = 512,
                 ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
+                ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff",
                 ["z"] = 64
               }
@@ -20438,10 +20438,10 @@ return {
                 { x = 448, y = 0 }
               },
               properties = {
-                ["bodyheight"] = 512,
                 ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
+                ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff"
               }
             }
@@ -20827,10 +20827,10 @@ return {
                 { x = 1248, y = 0 }
               },
               properties = {
-                ["bodyheight"] = 512,
                 ["bodyinlayers"] = "Solid",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
+                ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff"
               }
             },

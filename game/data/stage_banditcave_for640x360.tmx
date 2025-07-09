@@ -21,14 +21,14 @@
   <objectgroup id="7" name="learnmovement" class="Room">
    <object id="21" template="mapobjects/OutwardBoundary.tx" x="0" y="0">
     <properties>
-     <property name="bodyheight" type="float" value="64"/>
+     <property name="extrudeY" type="float" value="-64"/>
      <property name="drawz" type="float" value="-1"/>
     </properties>
     <polygon points="0,-160 0,256 128,128 192,128 256,64 960,64 960,-160"/>
    </object>
    <object id="44" template="mapobjects/OutwardBoundary.tx" x="0" y="352" visible="1">
     <properties>
-     <property name="bodyheight" type="float" value="32"/>
+     <property name="extrudeY" type="float" value="-32"/>
      <property name="drawz" type="float" value="1"/>
     </properties>
     <polygon points="0,-160 0,128 960,128 960,0 320,0 256,-64 160,-64 64,-160"/>
@@ -59,14 +59,14 @@
    </properties>
    <object id="22" template="mapobjects/OutwardBoundary.tx" x="960" y="0">
     <properties>
-     <property name="bodyheight" type="float" value="64"/>
+     <property name="extrudeY" type="float" value="-64"/>
      <property name="drawz" type="float" value="-1"/>
     </properties>
     <polygon points="0,64 32,64 96,0 640,0 640,-160 0,-160"/>
    </object>
    <object id="28" template="mapobjects/OutwardBoundary.tx" x="1600" y="256" rotation="0">
     <properties>
-     <property name="bodyheight" type="float" value="32"/>
+     <property name="extrudeY" type="float" value="-32"/>
      <property name="drawz" type="float" value="1"/>
     </properties>
     <polygon points="0,32 -352,32 -416,96 -640,96 -640,224 0,224"/>
@@ -98,14 +98,14 @@
    </properties>
    <object id="38" template="mapobjects/OutwardBoundary.tx" x="1600" y="-160">
     <properties>
-     <property name="bodyheight" type="float" value="64"/>
+     <property name="extrudeY" type="float" value="-64"/>
      <property name="drawz" type="float" value="-1"/>
     </properties>
     <polygon points="0,0 0,160 160,160 320,320 320,480 448,608 640,608 640,0"/>
    </object>
    <object id="39" template="mapobjects/OutwardBoundary.tx" x="1600" y="288">
     <properties>
-     <property name="bodyheight" type="float" value="32"/>
+     <property name="extrudeY" type="float" value="-32"/>
      <property name="drawz" type="float" value="1"/>
     </properties>
     <polygon points="0,0 0,384 640,384 640,352 256,352 32,128 32,32"/>
@@ -137,19 +137,19 @@
   <objectgroup id="15" name="tolearngrab" class="Room">
    <object id="63" template="mapobjects/OutwardBoundary.tx" x="2240" y="640">
     <properties>
-     <property name="bodyheight" type="float" value="32"/>
+     <property name="extrudeY" type="float" value="-32"/>
     </properties>
     <polygon points="0,0 0,32 640,32 640,-160 480,-320 480,-160 320,0"/>
    </object>
    <object id="64" template="mapobjects/OutwardBoundary.tx" x="2240" y="416">
     <properties>
-     <property name="bodyheight" type="float" value="64"/>
+     <property name="extrudeY" type="float" value="-64"/>
     </properties>
     <polygon points="0,-224 0,32 32,32 192,-128 256,-128 256,-224"/>
    </object>
    <object id="65" template="mapobjects/OutwardBoundary.tx" x="2656" y="512">
     <properties>
-     <property name="bodyheight" type="float" value="64"/>
+     <property name="extrudeY" type="float" value="-64"/>
     </properties>
     <polygon points="-32,-320 -32,-224 32,-224 224,-32 224,-320"/>
    </object>
@@ -166,7 +166,7 @@
    </object>
    <object id="68" template="mapobjects/OutwardBoundary.tx" x="2624" y="160">
     <properties>
-     <property name="bodyheight" type="float" value="32"/>
+     <property name="extrudeY" type="float" value="-32"/>
     </properties>
     <polygon points="0,0 0,32 672,32 640,0"/>
    </object>
@@ -195,7 +195,7 @@
    </object>
    <object id="71" template="mapobjects/OutwardBoundary.tx" x="3200" y="416">
     <properties>
-     <property name="bodyheight" type="float" value="32"/>
+     <property name="extrudeY" type="float" value="-32"/>
     </properties>
     <polygon points="0,-224 0,64 512,64 480,32 96,32 32,-32 32,-160 96,-224"/>
    </object>
@@ -206,7 +206,7 @@
   <objectgroup id="18" name="armory" class="Room">
    <object id="72" template="mapobjects/OutwardBoundary.tx" x="3680" y="448">
     <properties>
-     <property name="bodyheight" type="float" value="32"/>
+     <property name="extrudeY" type="float" value="-32"/>
     </properties>
     <polygon points="32,32 0,32 0,320 800,320 800,192 672,192 608,256 256,256"/>
    </object>
@@ -223,7 +223,7 @@
    </object>
    <object id="75" template="mapobjects/OutwardBoundary.tx" x="4480" y="640">
     <properties>
-     <property name="bodyheight" type="float" value="32"/>
+     <property name="extrudeY" type="float" value="-32"/>
     </properties>
     <polygon points="0,0 0,128 640,128 640,-384 608,-352 608,64 576,96 64,96 32,64 32,0"/>
    </object>
@@ -242,7 +242,7 @@
    </object>
    <object id="77" template="mapobjects/OutwardBoundary.tx" x="5120" y="352">
     <properties>
-     <property name="bodyheight" type="float" value="32"/>
+     <property name="extrudeY" type="float" value="-32"/>
     </properties>
     <polygon points="32,-64 0,-96 0,32 640,32 640,-224 608,-224 608,-32 576,0 64,0 32,-32"/>
    </object>
