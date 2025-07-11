@@ -36,6 +36,7 @@ local Animation= require "Aseprite.Animation"
 local Aseprite = class(Animation)
 Aseprite.Frame = AseFrame
 Aseprite.Animation = require "Aseprite.Animation"
+Aseprite.loadImage = love.graphics.newImage
 
 local AnimationTimeUnits = {
     milliseconds = 1,
@@ -78,8 +79,8 @@ function Aseprite.load(jsonfile, withimagedata)
 	local meta = doc.meta
     local directory = string.match(jsonfile, "^(.+/)") or ""
 	local imagefile = directory..meta.image
-	local imagedata = love.image.newImageData(imagefile)
-	local image = love.graphics.newImage(imagedata)
+	local imagedata = withimagedata and love.image.newImageData(imagefile)
+	local image = Aseprite.loadImage(imagefile)
 
 	local layers = meta.layers
 	if not cels[1] and not layers then
@@ -100,7 +101,7 @@ function Aseprite.load(jsonfile, withimagedata)
 	local ase = Aseprite.cast({
         image = image,
         imagefile = imagefile,
-		imagedata = withimagedata and imagedata,
+		imagedata = imagedata,
         width = size.w,
         height = size.h,
         layers = layers,
