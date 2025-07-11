@@ -355,6 +355,9 @@ function path.package_path(mod)
     return raise ('cannot find module on path\n' .. err1 .. "\n" .. err2)
 end
 
+function path.normjoin(...)
+    return path.normpath(path.join(...))
+end
 
 ---- finis -----
 return path
