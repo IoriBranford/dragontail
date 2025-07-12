@@ -51,21 +51,32 @@ function Character:init()
     self.hurtstun = self.hurtstun or 0
 end
 
+local function nop() end
+
 ---@param scene Scene
 function Character:addToScene(scene)
     scene:add(self)
     self.originx = self.spriteoriginx
     self.originy = self.spriteoriginy
 
-    local baseDraw = self.draw
-    self.draw = function(self, fixedfrac)
-        Shadow.drawSprite(self, fixedfrac)
-        baseDraw(self, fixedfrac)
-        if Config.drawbodies then
-            Body.draw(self, fixedfrac)
-            Attacker.drawCircle(self, fixedfrac)
-        end
+    if self.draw == Character.draw then
+        self.baseDraw = nop
+    else
+        self.baseDraw = self.draw
     end
+    self.draw = nil
+end
+
+function Character:draw(fixedfrac)
+    Shadow.drawSprite(self, fixedfrac)
+    love.graphics.push()
+    love.graphics.translate(0, -self.z - self.velz*fixedfrac)
+    self:baseDraw(fixedfrac)
+    if Config.drawbodies then
+        Body.draw(self, fixedfrac)
+        Attacker.drawCircle(self, fixedfrac)
+    end
+    love.graphics.pop()
 end
 
 function Character:makeAfterImage()
@@ -155,14 +166,15 @@ function Character:fixedupdateHitStop()
             self.color = color
         end
         self.hurtstun = self.hurtstun - 1
+        local s = min(4, self.hurtstun) * sin(self.hurtstun)
+        self.scalex = 1 + s/8
+        self.scaley = 1 - s/32
         if self.hurtstun > 0 then
             return false
         end
         self.color = 0xffffffff
         self.hurtparticle = nil
         self.hurtcolorcycle = nil
-        self.scalex = 1
-        self.scaley = 1
     end
     return true
 end
@@ -183,12 +195,6 @@ function Character:fixedupdateShake(time)
 end
 
 function Character:update(dsecs, fixedfrac)
-    if self.hurtstun > 0 then
-        local s = min(4, self.hurtstun) * sin(self.hurtstun)
-        self.scalex = 1 + s/8
-        self.scaley = 1 - s/32
-    end
-    self.originy = (self.spriteoriginy or 0) + self.z
 end
 
 Character.moveTo = Body.executeMove
