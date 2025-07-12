@@ -1,10 +1,10 @@
 state,attack,action,animation,loopframe,statetime,nextstate,canbeattacked,canbegrabbed,sound
-Rose-fireball,Rose-fireball-attack,projectileFly,Fly,1,FALSE,FALSE,FALSE,FALSE,sounds/combat/firebreath.mp3
-Rose-homing-fireball,Rose-fireball-attack,projectileHoming,Fly,1,FALSE,FALSE,FALSE,FALSE,sounds/combat/firebreath.mp3
-Rose-fat-fireball,Rose-fat-fireball-attack,projectileFly,Fly,1,FALSE,FALSE,FALSE,FALSE,sounds/combat/firebreath.mp3
-thrown-axe-attack,thrown-axe-attack,projectileFly,thrownaxe,1,FALSE,FALSE,TRUE,FALSE,sounds/combat/spin.mp3
-thrown-axe-strong-attack,thrown-axe-strong-attack,projectileFly,thrownaxe,1,FALSE,FALSE,TRUE,FALSE,sounds/combat/spin.mp3
-bandit-arrow-attack,bandit-arrow-attack,projectileFly,Fly,1,FALSE,FALSE,TRUE,FALSE,sounds/combat/arrowfly.mp3
+Rose-fireball,Rose-fireball-attack,projectileFly,Fly,1,FALSE,FALSE,FALSE,FALSE,data/sounds/combat/firebreath.mp3
+Rose-homing-fireball,Rose-fireball-attack,projectileHoming,Fly,1,FALSE,FALSE,FALSE,FALSE,data/sounds/combat/firebreath.mp3
+Rose-fat-fireball,Rose-fat-fireball-attack,projectileFly,Fly,1,FALSE,FALSE,FALSE,FALSE,data/sounds/combat/firebreath.mp3
+thrown-axe-attack,thrown-axe-attack,projectileFly,thrownaxe,1,FALSE,FALSE,TRUE,FALSE,data/sounds/combat/spin.mp3
+thrown-axe-strong-attack,thrown-axe-strong-attack,projectileFly,thrownaxe,1,FALSE,FALSE,TRUE,FALSE,data/sounds/combat/spin.mp3
+bandit-arrow-attack,bandit-arrow-attack,projectileFly,Fly,1,FALSE,FALSE,TRUE,FALSE,data/sounds/combat/arrowfly.mp3
 thrown-stone-attack,thrown-stone-attack,projectileFly,Fly,1,FALSE,FALSE,TRUE,FALSE,
 thrown-stone-strong-attack,thrown-stone-strong-attack,projectileFly,Fly,1,FALSE,FALSE,TRUE,FALSE,
 projectile-dish-attack,projectile-dish-attack,projectileFly,Fly,1,FALSE,FALSE,TRUE,FALSE,
@@ -15,4 +15,4 @@ projectileDeflected,,projectileDeflected,,1,FALSE,FALSE,FALSE,FALSE,
 projectileEmbed,,projectileEmbed,embedded,1,FALSE,FALSE,FALSE,FALSE,
 projectileBounce,,projectileBounce,,1,FALSE,FALSE,FALSE,FALSE,
 projectileShatter,,projectileShatter,Shatter,0,12,disappear,FALSE,FALSE,
-dishShatter,,projectileShatter,Shatter,0,12,disappear,FALSE,FALSE,sounds/combat/breakglass.mp3
+dishShatter,,projectileShatter,Shatter,0,12,disappear,FALSE,FALSE,data/sounds/combat/breakglass.mp3

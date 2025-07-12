@@ -7,6 +7,7 @@ local LayerGroup  = require "Tiled.LayerGroup"
 local ImageLayer  = require "Tiled.ImageLayer"
 local class = require "Tiled.class"
 local Assets= require "Tiled.Assets"
+local pathlite = require "Tiled.pathlite"
 
 ---@class TiledMap:Class
 ---@field version string The TMX format version. Was “1.0” so far, and will be incremented to match minor Tiled releases.
@@ -30,7 +31,7 @@ local Assets= require "Tiled.Assets"
 ---@field infinite boolean Whether this map is infinite. An infinite map has no fixed size and can grow in all directions. Its layer data is stored in chunks. (0 for false, 1 for true, defaults to 0)
 ---@field tilesets Tileset[] Access by index (or by tileset name after calling indexTilesetsByName)
 ---@field layers LayerGroup Access by index (or by layer name after calling indexLayersByName)
----@field directory string Directory path containing the map file
+---@field directory string Directory path containing the map file. Prepended to all asset paths in the map file: image files, file properties
 ---@field file string Path of the map file
 ---@field objects {[integer]: TiledObject} All map objects by their id
 ---@field tiles Tile[] All tileset tiles by their gid
@@ -152,7 +153,7 @@ function TiledMap.load(mapfile)
     Assets.maps[mapfile] = map
     Assets.all[mapfile] = map
 
-    local directory = string.match(mapfile, "^(.+/)") or ""
+    local directory = pathlite.splitpath(mapfile)
     map.directory = directory
     map.file = mapfile
 
@@ -218,6 +219,7 @@ function TiledMap.load(mapfile)
             ImageLayer.from(layer, directory)
         end
         Properties.resolveObjectRefs(layer.properties, mapobjects)
+        Properties.resolveAssetPaths(layer.properties, directory)
         Properties.moveUp(layer)
     end
 
@@ -231,6 +233,7 @@ function TiledMap.load(mapfile)
         doLayer(layer)
     end
     Properties.resolveObjectRefs(map.properties, mapobjects)
+    Properties.resolveAssetPaths(map.properties, directory)
     Properties.moveUp(map)
 
     return map

@@ -17,9 +17,9 @@ local stagecanvas
 
 function GamePhase.loadphase()
     paused = false
-    local unifont = Assets.get("fonts/Unifont 16.fnt")
+    local unifont = Assets.getFont("Unifont", 16)
     love.graphics.setFont(unifont)
-    Assets.get("music/retro-chiptune-guitar.ogg", "stream")
+    Assets.get("data/music/retro-chiptune-guitar.ogg", "stream")
 
     Database.load("data/db_characters.csv")
     Database.load("data/db_charactersprites.csv")
@@ -49,7 +49,7 @@ function GamePhase.loadphase()
 
     GamePhase.resize(love.graphics.getWidth(), love.graphics.getHeight())
 
-    local music = Audio.playMusic("music/retro-chiptune-guitar.ogg")
+    local music = Audio.playMusic("data/music/retro-chiptune-guitar.ogg")
     if music then
         music:setLooping(true)
     end

@@ -1,5 +1,6 @@
 local TileAtlas             = require("Tiled.TileAtlas")
 local hasAseprite, Aseprite = pcall(require, "Aseprite")
+local pathlite = require "Tiled.pathlite"
 
 ---@alias Music love.Source|VGMPlayer|GameMusicEmu
 ---@alias Asset Tileset|love.Texture|love.ImageData|love.Font|Aseprite|love.Source|Music
@@ -7,7 +8,6 @@ local hasAseprite, Aseprite = pcall(require, "Aseprite")
 
 local Assets = {
     loaders = {},---@type {[string]:function}
-    rootpath = "",
     fontpath = "",
     all = {},
     bytype = {}, ---@type {[string]:AssetGroup}
@@ -91,12 +91,10 @@ function Assets.markMapAssetsPermanent(map, ispermanent)
                     if fontfamily then
                         local pixelsize, bold, italic
                             = object.pixelsize, object.bold, object.italic
-                        local fnt = Assets.fontpath
-                            .. Assets.buildFontNameWithSize(fontfamily, pixelsize, bold, italic)
-                            .. ".fnt"
-                        local ttf = Assets.fontpath
-                            .. Assets.buildFontName(fontfamily, bold, italic)
-                            .. ".ttf"
+                        local fnt = pathlite.normjoin(Assets.fontpath,
+                            Assets.buildFontNameWithSize(fontfamily, pixelsize, bold, italic) .. ".fnt")
+                        local ttf = pathlite.normjoin(Assets.fontpath,
+                            Assets.buildFontName(fontfamily, bold, italic) .. ".ttf")
                         markPermanent(fnt)
                         markPermanent(ttf)
                     end
@@ -117,23 +115,12 @@ function Assets.uncacheMarked()
     end
 end
 
-function Assets.setFontPath(fontpath)
-    Assets.fontpath = fontpath
-    if fontpath[-1] ~= "/" then
-        fontpath = fontpath.."/"
-    end
-end
-
 function Assets.isAsset(path)
     if type(path) ~= "string" then
         return
     end
     local ext = path:match("%.(%w-)$")
     return ext and Assets.loaders[ext] ~= nil
-end
-
-function Assets.fileInfo(path)
-    return love.filesystem.getInfo(Assets.rootpath..path)
 end
 
 ---@return Asset? asset
@@ -143,7 +130,7 @@ function Assets.load(path, ...)
     end
     local ext = path:match("%.(%w-)$")
     local loader = Assets.loaders[ext] or love.filesystem.read
-    local asset = loader(Assets.rootpath..path, ...)
+    local asset = loader(path, ...)
     return asset
 end
 
@@ -188,12 +175,14 @@ function Assets.getFont(fontfamily, pixelsize, bold, italic, fontformat)
     pixelsize = pixelsize or 16
     local font
     if fontformat ~= "ttf" then
-        local fnt = Assets.fontpath .. Assets.buildFontNameWithSize(fontfamily, pixelsize, bold, italic) .. ".fnt"
-        font = Assets.fileInfo(fnt) and Assets.get(fnt)
+        local fnt = pathlite.normjoin(Assets.fontpath,
+            Assets.buildFontNameWithSize(fontfamily, pixelsize, bold, italic)..".fnt")
+        font = love.filesystem.getInfo(fnt) and Assets.get(fnt)
     end
     if not font then
-        local ttf = Assets.fontpath .. Assets.buildFontName(fontfamily, bold, italic) .. ".ttf"
-        font = Assets.fileInfo(ttf) and Assets.get(ttf, pixelsize)
+        local ttf = pathlite.normjoin(Assets.fontpath,
+            Assets.buildFontName(fontfamily, bold, italic) .. ".ttf")
+        font = love.filesystem.getInfo(ttf) and Assets.get(ttf, pixelsize)
     end
     if not font then
         font = Assets.get(pixelsize..".defaultfont")
@@ -290,10 +279,7 @@ Assets.addLoaders {
 }
 
 if hasAseprite then
-    Aseprite.loadImage = function(path, ...)
-        path = path:match("^"..Assets.rootpath.."(.+)") or path
-        return Assets.get(path, ...)
-    end
+    Aseprite.loadImage = Assets.get
 end
 
 return Assets

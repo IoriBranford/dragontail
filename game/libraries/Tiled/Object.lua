@@ -4,6 +4,7 @@ local Assets = require "Tiled.Assets"
 local Properties = require "Tiled.Properties"
 local Color      = require "Tiled.Color"
 local Graphics   = require "Tiled.Graphics"
+local pathlite   = require "Tiled.pathlite"
 
 ---@class TiledObject:Class
 ---@field id integer Unique ID of the object (defaults to 0, with valid IDs being at least 1). Each object that is placed on a map gets a unique id. Even if an object was deleted, no object gets the same ID. Can not be changed in Tiled. (since Tiled 0.11)
@@ -172,12 +173,14 @@ function TiledObject:_init(map)
     self:initText()
 
     if map then
-        local mapobjects = map.objects
-        Properties.resolveObjectRefs(self.properties, mapobjects)
+        Properties.resolveObjectRefs(self.properties, map.objects)
+        Properties.resolveAssetPaths(self.properties, map.directory)
     end
     Properties.moveUp(self)
 
-    self:initAseprite()
+    if map then
+        self:initAseprite(map.directory)
+    end
 
     return self
 end
@@ -211,10 +214,15 @@ function TiledObject:initTile(tile, flipx, flipy)
 end
 
 ---@param self AsepriteObject|TiledObject
-function TiledObject:initAseprite()
+---@param directory string
+function TiledObject:initAseprite(directory)
     local asefile = self.asefile
     if not asefile then
         return
+    end
+    if (directory or "") ~= "" then
+        asefile = pathlite.normjoin(directory, asefile)
+        self.asefile = asefile
     end
     local ase = Assets.get(asefile)
     local tag = self.asetag

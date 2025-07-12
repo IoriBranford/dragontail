@@ -2,6 +2,7 @@ local class = require "Tiled.class"
 local Assets = require "Tiled.Assets"
 local Properties = require "Tiled.Properties"
 local Tile       = require "Tiled.Tile"
+local pathlite   = require "Tiled.pathlite"
 
 ---@class Tileset:Class
 ---@field firstgid integer The first global tile ID of this tileset (this global ID maps to the first tile in this tileset).
@@ -26,7 +27,7 @@ local Tile       = require "Tiled.Tile"
 ----@field properties table Moved into tileset itself
 local Tileset = class()
 
-function Tileset:_init()
+function Tileset:_init(directory)
     -- assert(tileset.objectalignment == "topleft", "Unsupported objectalignment "..tileset.objectalignment)
     assert(not self.source,
         "External tilesets unsupported. Please export with 'Embed Tilesets' enabled in export options.")
@@ -40,6 +41,9 @@ function Tileset:_init()
         imagetype = "aseprite"
     else
         imagetype = "image"
+    end
+    if directory ~= "" then
+        imagefile = pathlite.normjoin(directory, imagefile)
     end
     self.imagetype = imagetype
     self.imagefile = imagefile
@@ -108,6 +112,7 @@ function Tileset:_init()
         end
     end
 
+    Properties.resolveAssetPaths(self.properties, directory)
     Properties.moveUp(self)
     self.numempty = self.numempty or 0
 end

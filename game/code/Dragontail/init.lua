@@ -21,7 +21,6 @@ local defaultgamepadconfig =  {
 }
 
 function love.load(args)
-    Assets.rootpath = "data/"
     local mapname = args.stage or args.test
     if mapname then
         local map = args.stage and string.format("data/stage_%s.lua", mapname)
@@ -52,7 +51,7 @@ function love.load(args)
     end
     Tiled.animationtimeunit = "fixedupdates"
     Aseprite.animationtimeunit = "fixedupdates"
-    Assets.setFontPath("fonts/")
+    Assets.fontpath = "data/fonts"
     love.graphics.setLineStyle("rough")
 
     -- Wallpaper.reload()
