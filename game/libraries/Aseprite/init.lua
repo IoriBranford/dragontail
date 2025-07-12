@@ -18,6 +18,7 @@ local class = require "Aseprite.class"
 local json   = require "Aseprite.json"
 local AseFrame = require "Aseprite.Frame"
 local Animation= require "Aseprite.Animation"
+local pathlite = require "Aseprite.pathlite"
 
 ---@class AseLayer
 ---@field name string
@@ -77,8 +78,11 @@ function Aseprite.load(jsonfile, withimagedata)
 	local doc = json.decode(jsondata)
 	local cels = doc.frames
 	local meta = doc.meta
-    local directory = string.match(jsonfile, "^(.+/)") or ""
-	local imagefile = directory..meta.image
+    local directory = pathlite.splitpath(jsonfile)
+	local imagefile = meta.image
+	if directory ~= "" then
+		imagefile = pathlite.normjoin(directory, meta.image)
+	end
 	local imagedata = withimagedata and love.image.newImageData(imagefile)
 	local image = Aseprite.loadImage(imagefile)
 
