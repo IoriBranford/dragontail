@@ -1,6 +1,17 @@
 local Properties = {}
 
 local addIfNew = require "Tiled.addIfNew"
+local Assets   = require "Tiled.Assets"
+local pathlite = require "Tiled.pathlite"
+
+function Properties.resolveAssetPaths(properties, directory)
+    if (directory or "") == "" then return end
+    for k,v in pairs(properties) do
+        if Assets.isAsset(v) then
+            properties[k] = pathlite.normjoin(directory, v)
+        end
+    end
+end
 
 function Properties.resolveObjectRefs(properties, mapobjects)
     for k,v in pairs(properties) do
