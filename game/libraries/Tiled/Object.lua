@@ -155,19 +155,19 @@ function TiledObject:_init(map)
         gid, flipx, flipy = Gid.parse(gid)
         tile = maptiles[gid]
     end
+    local shape = self.shape
     if tile then
         self:initTile(tile, flipx, flipy)
-    else
-        local shape = self.shape
-        if shape == "rectangle" then
-            self.draw = self.drawRectangle
-        elseif shape == "ellipse" then
-            self.draw = self.drawEllipse
-        elseif shape == "polyline" then
-            self.draw = self.drawLine
-        elseif shape == "polygon" then
-            self.draw = self.drawPolygon
-        end
+    elseif shape == "rectangle" then
+        self.draw = self.drawRectangle
+    elseif shape == "ellipse" then
+        self.draw = self.drawEllipse
+    elseif shape == "polyline" then
+        self.draw = self.drawLine
+    elseif shape == "polygon" then
+        self.draw = self.drawPolygon
+    -- elseif shape == "point" then
+    --     self.draw = self.drawPoint
     end
     processPoly(self)
     self:initText()
@@ -593,6 +593,17 @@ function TiledObject:drawEllipse()
         love.graphics.setColor(r,g,b,a)
         love.graphics.ellipse("line", hw, hh, hw, hh)
     end
+
+    love.graphics.pop()
+end
+
+function TiledObject:drawPoint()
+    pushTransform(self)
+
+    local r,g,b,a = Color.unpack(self.color)
+    love.graphics.setColor(r,g,b,a)
+    love.graphics.line(-1.5, 0.5, 2.5, 0.5)
+    love.graphics.line(0.5, -1.5, 0.5, 2.5)
 
     love.graphics.pop()
 end
