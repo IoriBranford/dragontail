@@ -459,7 +459,9 @@ function Stage.draw(fixedfrac)
             map.backgroundcolor[3])
     end
     love.graphics.push()
-    love.graphics.translate(-camera.x - camera.velx*fixedfrac, -camera.y - camera.vely*fixedfrac)
+    love.graphics.translate(-camera.x - camera.velx*fixedfrac,
+        -camera.y - camera.vely*fixedfrac
+        + camera.z + camera.bodyheight/2 + camera.velz*fixedfrac)
     scene:draw(fixedfrac, Characters.isDrawnBefore)
     love.graphics.pop()
 end
