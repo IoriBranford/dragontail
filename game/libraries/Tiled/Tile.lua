@@ -147,7 +147,7 @@ function Tile:newModel()
 end
 
 ---@param model g3d.model
-function Tile:update3DModel(model)
+function Tile:updateModel(model)
     local verts = model.verts
     self:updateVertices(verts[1], verts[5], verts[2], verts[6])
 end

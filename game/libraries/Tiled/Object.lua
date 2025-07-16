@@ -354,7 +354,7 @@ function TiledObject:animate3DTile(dt)
     self:animateTile(dt)
     if oldframei ~= self.animationframe then
         local newtile = self.tile.animation[self.animationframe].tile
-        newtile:update3DModel(self.model)
+        newtile:updateModel(self.model)
     end
 end
 
