@@ -45,6 +45,11 @@ function Animation:isFinished(i, t)
     end
 end
 
+---@param i integer current frame index
+---@param t number current frame timer
+---@param loopi integer? what frame to loop back to at the end
+---@return integer i new frame index
+---@return integer t new frame timer
 function Animation:getUpdate(i, t, loopi)
     loopi = loopi or self.loopframe
     local duration = self[i].duration
