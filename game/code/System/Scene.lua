@@ -117,7 +117,7 @@ function Scene:animate(dt)
     end
 end
 
-local function zsort(a, b)
+function Scene.ZSort(a, b)
     local az = a.z or 0
     local bz = b.z or 0
     if az < bz then
@@ -138,7 +138,9 @@ local function zsort(a, b)
 end
 
 function Scene:draw(fixedfrac, sortfunc)
-    sort(self, sortfunc or zsort)
+    if sortfunc then
+        sort(self, sortfunc)
+    end
     for i = 1, #self do
         local sceneobject = self[i]
         if sceneobject.visible then
