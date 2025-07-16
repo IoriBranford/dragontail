@@ -6,6 +6,8 @@ local Layer    = require "Tiled.Layer"
 local forCells = require "Tiled.forCells"
 local Chunk    = require "Tiled.Chunk"
 local drawTile = require "Tiled.drawTile"
+local hasg3d, g3d = pcall(require, "g3d") ---@type boolean,g3d
+local drawModel   = require("Tiled.drawModel")
 
 local TileBatching = require "Tiled.TileBatching"
 local newTileBatch = TileBatching.batchTiles
@@ -22,7 +24,7 @@ local love_graphics_draw = love.graphics.draw
 ---@field tileheight integer Copy of map.tileheight
 ---@field tilebatch love.SpriteBatch? In finite maps
 ---@field batchanimations Animation[]? Indices in the data which have animated tiles
----@field shader love.Shader?
+---@field model g3d.model?
 local TileLayer = class(Layer)
 
 ---@param map TiledMap
@@ -53,6 +55,7 @@ function TileLayer:_init(map)
         end
     end
     self.animationtime = 0
+    self.draw = self.drawTiles
     return self
 end
 
@@ -123,6 +126,9 @@ end
 local pushTransform = Graphics.pushTransform
 
 function TileLayer:draw()
+end
+
+function TileLayer:drawTiles()
     local r, g, b, a = 1, 1, 1, self.opacity or 1
     local tintcolor = self.tintcolor
     if tintcolor then
@@ -160,6 +166,30 @@ function TileLayer:draw()
     if tintcolor then
         love.graphics.setColor(1,1,1)
     end
+end
+
+function TileLayer:make3D()
+    local verts = {}
+    local image
+
+    self:forCells(function(left, bottom, tile, flipx, flipy)
+        image = tile.image
+        local tl, bl, tr, br = tile:newVertices(
+            left, bottom - tile.height,
+            flipx, flipy)
+
+        verts[#verts+1] = tl
+        verts[#verts+1] = tr
+        verts[#verts+1] = bl
+        verts[#verts+1] = tr
+        verts[#verts+1] = bl
+        verts[#verts+1] = br
+    end)
+
+    if not image then return end
+
+    self.model = g3d.newModel(verts, image)
+    self.draw = drawModel
 end
 
 return TileLayer
