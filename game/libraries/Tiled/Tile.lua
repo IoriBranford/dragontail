@@ -81,17 +81,27 @@ end
 ---@return g3d.vertex tr
 ---@return g3d.vertex br
 function Tile:newVertices(x, y, flipx, flipy)
-    x = x or 0
-    y = y and -y or 0
-    local x2 = x + self.width
-    local y2 = y - self.height
-    local u0, v0, u1, v1 = self:getTextureCoords()
-    local tl = {  x, y,0, u0,v0, 0,0,1, 1,1,1,1 }
-    local bl = {  x,y2,0, u0,v1, 0,0,1, 1,1,1,1 }
-    local tr = { x2, y,0, u1,v0, 0,0,1, 1,1,1,1 }
-    local br = { x2,y2,0, u1,v1, 0,0,1, 1,1,1,1 }
-    self:updateTexCoords(tl, bl, tr, br, flipx, flipy)
+    local tl = { 0,0,0, 0,0, 0,0,1, 1,1,1,1 }
+    local bl = { 0,0,0, 0,0, 0,0,1, 1,1,1,1 }
+    local tr = { 0,0,0, 0,0, 0,0,1, 1,1,1,1 }
+    local br = { 0,0,0, 0,0, 0,0,1, 1,1,1,1 }
+    self:updateVertexPositions(tl, bl, tr, br, x or 0, y or 0)
+    self:updateTexCoords(tl, bl, tr, br, flipx or 1, flipy or 1)
     return tl, bl, tr, br
+end
+
+function Tile:updateVertexPositions(tl, bl, tr, br, x, y)
+    if x then
+        local x2 = x + self.width
+        tl[1], tr[1] = x, x2
+        bl[1], br[1] = x, x2
+    end
+    if y then
+        y = -y
+        local y2 = y - self.height
+        tl[2], tr[2] = y, y2
+        bl[2], br[2] = y, y2
+    end
 end
 
 ---@param tl g3d.vertex
