@@ -5,6 +5,9 @@ local function drawModel(self, fixedfrac)
     if not model then return end
 
     local x, y, z = self.x, self.y, (self.z or self.drawz or 0)
+
+    x = x - (self.originx or self.tile and self.tile.objectoriginx or 0)
+    y = y - (self.originy or self.tile and self.tile.objectoriginy or 0)
     x = x + (self.velx or 0)*fixedfrac
     y = y + (self.vely or 0)*fixedfrac
     z = z + (self.velz or 0)*fixedfrac
