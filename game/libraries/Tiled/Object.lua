@@ -5,6 +5,7 @@ local Properties = require "Tiled.Properties"
 local Color      = require "Tiled.Color"
 local Graphics   = require "Tiled.Graphics"
 local pathlite   = require "Tiled.pathlite"
+local drawModel  = require "Tiled.drawModel"
 
 ---@class TiledObject:Class
 ---@field id integer Unique ID of the object (defaults to 0, with valid IDs being at least 1). Each object that is placed on a map gets a unique id. Even if an object was deleted, no object gets the same ID. Can not be changed in Tiled. (since Tiled 0.11)
@@ -220,7 +221,7 @@ end
 function TiledObject:init3DTile(tile)
     self.model = tile:newModel()
     self.animate = self.animate3DTile
-    self.draw = self.drawModel
+    self.draw = drawModel
 end
 
 ---@param self AsepriteObject|TiledObject
@@ -626,28 +627,6 @@ function TiledObject:drawPoint()
     love.graphics.line(0.5, -1.5, 0.5, 2.5)
 
     love.graphics.pop()
-end
-
----@param self Object3D
----@param fixedfrac number
-function TiledObject:drawModel(fixedfrac)
-    local model = self.model
-    if not model then return end
-
-    local x, y, z = self.x, self.y, self.z
-    x = x + (self.velx or 0)*fixedfrac
-    y = y + (self.vely or 0)*fixedfrac
-    z = z + (self.velz or 0)*fixedfrac
-    model:setTranslation(x, -y, z)
-    local rotaxisx = self.rotaxisx
-    local rotaxisy = self.rotaxisy
-    local rotaxisz = self.rotaxisz
-    if not (rotaxisx and rotaxisy and rotaxisz) then
-        rotaxisx, rotaxisy, rotaxisz = 0, 0, -1
-    end
-    model:setAxisAngleRotation(rotaxisx, rotaxisy, rotaxisz, self.rotation)
-    model:setScale(self.scalex or 1, self.scaley or 1, self.scalez or 1)
-    model:draw()
 end
 
 ---@param self TextObject
