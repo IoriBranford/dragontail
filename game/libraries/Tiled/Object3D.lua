@@ -6,6 +6,12 @@ local Object3D = {}
 
 ---@param tile Tile
 function Object3D:initTile(tile)
+    if tile then
+        self:initTile(tile)
+    end
+    tile = self.tile
+    if not tile then return end
+
     self.model = tile:newModel()
     self.animate = Object3D.animate3DTile
     self.draw = drawModel
