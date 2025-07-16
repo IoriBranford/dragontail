@@ -2,6 +2,7 @@ local class = require "Tiled.class"
 local ObjectGroup = require "Tiled.ObjectGroup"
 local Properties  = require "Tiled.Properties"
 local Animation   = require "Tiled.Animation"
+local hasg3d, g3d = pcall(require, "g3d") ---@type boolean,g3d
 
 ---@class Tile:Class
 ---@field id integer The local tile ID within its tileset.
@@ -62,6 +63,93 @@ end
 function Tile:getShape(key)
     local shapes = self.shapes
     return shapes and shapes[key]
+end
+
+function Tile:getTextureCoords()
+    local iw, ih = self.quad:getTextureDimensions()
+    local tx, ty, tw, th = self.quad:getViewport()
+    local u0, v0 = tx/iw, ty/ih
+    local u1, v1 = (tx+tw)/iw, (ty+th)/ih
+    return u0, v0, u1, v1
+end
+
+---@param x number?
+---@param y number?
+---@param flipx number?
+---@param flipy number?
+---@return g3d.vertex tl
+---@return g3d.vertex bl
+---@return g3d.vertex tr
+---@return g3d.vertex br
+function Tile:newVertices(x, y, flipx, flipy)
+    x = x or 0
+    y = y or 0
+    local x2, y2 = x + self.width, y + self.height
+
+    local tl = {
+        x, -y, 0,
+        0, 0,
+        0, 0, 1,
+        1, 1, 1, 1
+    }
+
+    local bl = {
+        x, -y2, 0,
+        0, 0,
+        0, 0, 1,
+        1, 1, 1, 1
+    }
+
+    local tr = {
+        x2, -y, 0,
+        0, 0,
+        0, 0, 1,
+        1, 1, 1, 1
+    }
+
+    local br = {
+        x2, -y2, 0,
+        0, 0,
+        0, 0, 1,
+        1, 1, 1, 1
+    }
+
+    self:updateVertices(tl, bl, tr, br, flipx, flipy)
+
+    return tl, bl, tr, br
+end
+
+---@param tl g3d.vertex
+---@param bl g3d.vertex
+---@param tr g3d.vertex
+---@param br g3d.vertex
+---@param flipx number?
+---@param flipy number?
+function Tile:updateVertices(tl, bl, tr, br, flipx, flipy)
+    local u0, v0, u1, v1 = self:getTextureCoords()
+    if (flipx or 1) < 0 then
+        u0, u1 = u1, u0
+    end
+    if (flipy or 1) < 0 then
+        v0, v1 = v1, v0
+    end
+    tl[4], tl[5] = u0, v0
+    bl[4], bl[5] = u0, v1
+    tr[4], tr[5] = u1, v0
+    br[4], br[5] = u1, v1
+end
+
+---@return g3d.model
+function Tile:newModel()
+    local tl, bl, tr, br = self:newVertices()
+    local verts = {tl, tr, bl, tr, bl, br}
+    return g3d.newModel(verts, self.image)
+end
+
+---@param model g3d.model
+function Tile:update3DModel(model)
+    local verts = model.verts
+    self:updateVertices(verts[1], verts[5], verts[2], verts[6])
 end
 
 return Tile
