@@ -4,7 +4,7 @@ local function drawModel(self, fixedfrac)
     local model = self.model
     if not model then return end
 
-    local x, y, z = self.x, self.y, self.z
+    local x, y, z = self.x, self.y, (self.z or self.drawz or 0)
     x = x + (self.velx or 0)*fixedfrac
     y = y + (self.vely or 0)*fixedfrac
     z = z + (self.velz or 0)*fixedfrac
