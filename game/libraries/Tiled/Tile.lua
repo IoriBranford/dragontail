@@ -82,39 +82,15 @@ end
 ---@return g3d.vertex br
 function Tile:newVertices(x, y, flipx, flipy)
     x = x or 0
-    y = y or 0
-    local x2, y2 = x + self.width, y + self.height
-
-    local tl = {
-        x, -y, 0,
-        0, 0,
-        0, 0, 1,
-        1, 1, 1, 1
-    }
-
-    local bl = {
-        x, -y2, 0,
-        0, 0,
-        0, 0, 1,
-        1, 1, 1, 1
-    }
-
-    local tr = {
-        x2, -y, 0,
-        0, 0,
-        0, 0, 1,
-        1, 1, 1, 1
-    }
-
-    local br = {
-        x2, -y2, 0,
-        0, 0,
-        0, 0, 1,
-        1, 1, 1, 1
-    }
-
-    self:updateVertices(tl, bl, tr, br, flipx, flipy)
-
+    y = y and -y or 0
+    local x2 = x + self.width
+    local y2 = y - self.height
+    local u0, v0, u1, v1 = self:getTextureCoords()
+    local tl = {  x, y,0, u0,v0, 0,0,1, 1,1,1,1 }
+    local bl = {  x,y2,0, u0,v1, 0,0,1, 1,1,1,1 }
+    local tr = { x2, y,0, u1,v0, 0,0,1, 1,1,1,1 }
+    local br = { x2,y2,0, u1,v1, 0,0,1, 1,1,1,1 }
+    self:updateTexCoords(tl, bl, tr, br, flipx, flipy)
     return tl, bl, tr, br
 end
 
@@ -124,32 +100,52 @@ end
 ---@param br g3d.vertex
 ---@param flipx number?
 ---@param flipy number?
-function Tile:updateVertices(tl, bl, tr, br, flipx, flipy)
-    local u0, v0, u1, v1 = self:getTextureCoords()
-    if (flipx or 1) < 0 then
-        u0, u1 = u1, u0
+function Tile:updateTexCoords(tl, bl, tr, br, flipx, flipy)
+    local u0, v0, u1, v1
+
+    if flipx then
+        if not u0 then
+            u0, v0, u1, v1 = self:getTextureCoords()
+        end
+        if flipx < 0 then
+            tl[4], tr[4] = u1, u0
+            bl[4], br[4] = u1, u0
+        else
+            tl[4], tr[4] = u0, u1
+            bl[4], br[4] = u0, u1
+        end
     end
-    if (flipy or 1) < 0 then
-        v0, v1 = v1, v0
+
+    if flipy then
+        if not v0 then
+            u0, v0, u1, v1 = self:getTextureCoords()
+        end
+        if flipy < 0 then
+            tl[5], tr[5] = v1, v0
+            bl[5], br[5] = v1, v0
+        else
+            tl[5], tr[5] = v0, v1
+            bl[5], br[5] = v0, v1
+        end
     end
-    tl[4], tl[5] = u0, v0
-    bl[4], bl[5] = u0, v1
-    tr[4], tr[5] = u1, v0
-    br[4], br[5] = u1, v1
 end
 
+---@param flipx number?
+---@param flipy number?
 ---@return g3d.model
-function Tile:newModel()
+function Tile:newModel(flipx, flipy)
     local g3d = require "g3d" ---@type g3d
-    local tl, bl, tr, br = self:newVertices()
+    local tl, bl, tr, br = self:newVertices(flipx, flipy)
     local verts = {tl, tr, bl, tr, bl, br}
     return g3d.newModel(verts, self.image)
 end
 
 ---@param model g3d.model
-function Tile:updateModel(model)
+---@param flipx number?
+---@param flipy number?
+function Tile:updateModel(model, flipx, flipy)
     local verts = model.verts
-    self:updateVertices(verts[1], verts[5], verts[2], verts[6])
+    self:updateTexCoords(verts[1], verts[5], verts[2], verts[6], flipx, flipy)
 end
 
 return Tile
