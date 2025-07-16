@@ -1,8 +1,12 @@
+local Color = require "Tiled.Color"
 ---@param self Layer|Object3D
 ---@param fixedfrac number
 local function drawModel(self, fixedfrac)
     local model = self.model
     if not model then return end
+
+    local r, g, b, a = Color.unpack(self.color or Color.White)
+    love.graphics.setColor(r, g, b, a)
 
     local x, y, z = self.x, self.y, (self.z or self.drawz or 0)
 
