@@ -19,12 +19,9 @@ end
 
 ---@param self Object3D
 function Object3D:animateTile(dt)
-    local oldframei = self.animationframe
     self:animateTile(dt)
-    if oldframei ~= self.animationframe then
-        local newtile = self.tile.animation[self.animationframe].tile
-        newtile:updateModel(self.model)
-    end
+    local newtile = self.tile.animation[self.animationframe].tile
+    newtile:updateModel(self.model)
 end
 
 function Object3D:initAseprite()
@@ -37,12 +34,9 @@ end
 
 ---@param self Object3D
 function Object3D:animateAseprite(dt)
-    local oldframei = self.animationframe
     self:animateAseprite(dt)
-    if oldframei ~= self.animationframe then
-        self.aseprite:updateModel(self.model,
-            self.aseanimation[self.animationframe])
-    end
+    self.aseprite:updateModel(self.model,
+        self.aseanimation[self.animationframe])
 end
 
 return Object3D
