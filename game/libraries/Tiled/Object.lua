@@ -5,7 +5,6 @@ local Properties = require "Tiled.Properties"
 local Color      = require "Tiled.Color"
 local Graphics   = require "Tiled.Graphics"
 local pathlite   = require "Tiled.pathlite"
-local drawModel  = require "Tiled.drawModel"
 
 ---@class TiledObject:Class
 ---@field id integer Unique ID of the object (defaults to 0, with valid IDs being at least 1). Each object that is placed on a map gets a unique id. Even if an object was deleted, no object gets the same ID. Can not be changed in Tiled. (since Tiled 0.11)
@@ -101,9 +100,6 @@ local TiledObject = class()
 ---@field aseanimation AseTag?
 ---@field asefile string
 ---@field asetag string?
-
----@class Object3D:TiledObject
----@field model g3d.model
 
 local function triangulate(points)
     local cantriangulate, triangles = pcall(love.math.triangulate, points)
@@ -215,13 +211,6 @@ function TiledObject:initTile(tile, flipx, flipy)
     self.animate = self.animateTile
     self.draw = self.drawTile
     self:setTile(tile)
-end
-
----@param tile Tile
-function TiledObject:init3DTile(tile)
-    self.model = tile:newModel()
-    self.animate = self.animate3DTile
-    self.draw = drawModel
 end
 
 ---@param self AsepriteObject|TiledObject
@@ -345,16 +334,6 @@ function TiledObject:animateTile(dt)
         self.animationframe = aframe
         self.animationtime = atime
         self.animationquad = animation[aframe].tile.quad
-    end
-end
-
----@param self Object3D
-function TiledObject:animate3DTile(dt)
-    local oldframei = self.animationframe
-    self:animateTile(dt)
-    if oldframei ~= self.animationframe then
-        local newtile = self.tile.animation[self.animationframe].tile
-        newtile:updateModel(self.model)
     end
 end
 
