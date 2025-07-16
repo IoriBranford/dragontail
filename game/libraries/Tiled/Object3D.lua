@@ -39,4 +39,20 @@ function Object3D:animateAseprite(dt)
         self.aseanimation[self.animationframe])
 end
 
+function Object3D:updateOffset(offsetx, offsety)
+    local verts = self.model.verts
+    local tl, bl, tr, br = verts[1], verts[5], verts[2], verts[6]
+    if offsetx then
+        local offsetx2 = offsetx + self.width
+        tl[1], tr[1] = offsetx, offsetx2
+        bl[1], br[1] = offsetx, offsetx2
+    end
+    if offsety then
+        offsety = -offsety
+        local offsety2 = offsety - self.height
+        tl[2], tr[2] = offsety, offsety2
+        bl[2], br[2] = offsety, offsety2
+    end
+end
+
 return Object3D
