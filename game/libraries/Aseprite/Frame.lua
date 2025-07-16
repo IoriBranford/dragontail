@@ -33,11 +33,13 @@ function AseFrame:putCel(i, cel)
 end
 
 function AseFrame:drawCels(i, j, x, y)
+    x = x or 0
+    y = y or 0
     for l = i, j do
         local cel = self[l]
         if cel then
             love_graphics_draw(cel.image, cel.quad,
-                (x or 0) + cel.x, (y or 0) + cel.y)
+                x + cel.x, y + cel.y)
         end
     end
 end
