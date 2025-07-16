@@ -169,69 +169,51 @@ function Aseprite:mapCelsBySourcePositions()
 	return celsbysrcpos
 end
 
-function Aseprite:newModel()
+---@param frame AseFrame|integer?
+---@param offsetx number?
+---@param offsety number?
+---@return g3d.model
+function Aseprite:newModel(frame, offsetx, offsety)
 	local g3d = require "g3d" ---@type g3d
 
-	local w, h = self.width, self.height
-	local tl = {
-		0, 0, 0,
-		0, 0,
-		0, 0, 1,
-		1, 1, 1, 1
-	}
-	local bl = {
-		0, -h, 0,
-		0, 1,
-		0, 0, 1,
-		1, 1, 1, 1
-	}
-	local tr = {
-		w, 0, 0,
-		1, 0,
-		0, 0, 1,
-		1, 1, 1, 1
-	}
-	local br = {
-		w, -h, 0,
-		1, 1,
-		0, 0, 1,
-		1, 1, 1, 1
-	}
-	local verts = {tl, tr, bl, tr, bl, br}
-	local texture = #self.layers <= 1 and self.image
-		or love.graphics.newCanvas(w, h)
-	return g3d.newModel(verts, texture)
-end
+	local verts = {}
+	for i = 1, #self.layers do
+		local tl = { 0,0,0, 0,0, 0,0,1, 1,1,1,1 }
+		local bl = { 0,0,0, 0,0, 0,0,1, 1,1,1,1 }
+		local tr = { 0,0,0, 0,0, 0,0,1, 1,1,1,1 }
+		local br = { 0,0,0, 0,0, 0,0,1, 1,1,1,1 }
+		verts[#verts+1] = tl
+		verts[#verts+1] = tr
+		verts[#verts+1] = bl
+		verts[#verts+1] = tr
+		verts[#verts+1] = bl
+		verts[#verts+1] = br
+	end
 
-function Aseprite:updateModel(model, frame)
 	if type(frame) == "number" then
 		frame = self[frame]
 	end
-	if not frame then return end
+	if frame then
+		---@cast frame AseFrame
+		frame:updateModel(offsetx, offsety)
+	end
 
-	if #self.layers > 1 then
-		local texture = model.texture
-		---@cast texture love.Canvas
-		assert(texture:typeOf("Canvas"),
-			"Multi-layer aseprite billboard requires canvas texture")
+	return g3d.newModel(verts, self.image)
+end
 
-		texture:renderTo(function()
-			love.graphics.clear()
-			frame:draw()
-		end)
+function Aseprite:updateModel(model, frame, offsetx, offsety)
+	if type(frame) == "number" then
+		frame = self[frame]
+	end
+	if frame then
+		frame:updateModel(model, offsetx, offsety)
 	else
 		local verts = model.verts
-		local tl, tr = verts[1], verts[2]
-		local bl, br = verts[5], verts[6]
-
-		local cel = frame[1]
-		if cel then
-			cel:updateVertices(tl, bl, tr, br)
-		else
-			tl[1], tl[2] = 0, 0
-			bl[1], bl[2] = 0, 0
-			tr[1], tr[2] = 0, 0
-			br[1], br[2] = 0, 0
+		for i = 6, #verts, 6 do
+			local tl, tr = verts[i-5], verts[i-4]
+			local bl, br = verts[i-1], verts[i]
+				tl[1], tl[2] = 0, 0; tr[1], tr[2] = 0, 0
+				bl[1], bl[2] = 0, 0; br[1], br[2] = 0, 0
 		end
 	end
 end
