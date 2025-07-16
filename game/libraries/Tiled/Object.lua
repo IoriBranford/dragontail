@@ -101,6 +101,9 @@ local TiledObject = class()
 ---@field asefile string
 ---@field asetag string?
 
+---@class Object3D:TiledObject
+---@field model g3d.model
+
 local function triangulate(points)
     local cantriangulate, triangles = pcall(love.math.triangulate, points)
     if cantriangulate then
@@ -211,6 +214,13 @@ function TiledObject:initTile(tile, flipx, flipy)
     self.animate = self.animateTile
     self.draw = self.drawTile
     self:setTile(tile)
+end
+
+---@param tile Tile
+function TiledObject:init3DTile(tile)
+    self.model = tile:newModel()
+    self.animate = self.animate3DTile
+    self.draw = self.drawModel
 end
 
 ---@param self AsepriteObject|TiledObject
@@ -334,6 +344,16 @@ function TiledObject:animateTile(dt)
         self.animationframe = aframe
         self.animationtime = atime
         self.animationquad = animation[aframe].tile.quad
+    end
+end
+
+---@param self Object3D
+function TiledObject:animate3DTile(dt)
+    local oldframei = self.animationframe
+    self:animateTile(dt)
+    if oldframei ~= self.animationframe then
+        local newtile = self.tile.animation[self.animationframe].tile
+        newtile:update3DModel(self.model)
     end
 end
 
@@ -606,6 +626,28 @@ function TiledObject:drawPoint()
     love.graphics.line(0.5, -1.5, 0.5, 2.5)
 
     love.graphics.pop()
+end
+
+---@param self Object3D
+---@param fixedfrac number
+function TiledObject:drawModel(fixedfrac)
+    local model = self.model
+    if not model then return end
+
+    local x, y, z = self.x, self.y, self.z
+    x = x + (self.velx or 0)*fixedfrac
+    y = y + (self.vely or 0)*fixedfrac
+    z = z + (self.velz or 0)*fixedfrac
+    model:setTranslation(x, -y, z)
+    local rotaxisx = self.rotaxisx
+    local rotaxisy = self.rotaxisy
+    local rotaxisz = self.rotaxisz
+    if not (rotaxisx and rotaxisy and rotaxisz) then
+        rotaxisx, rotaxisy, rotaxisz = 0, 0, -1
+    end
+    model:setAxisAngleRotation(rotaxisx, rotaxisy, rotaxisz, self.rotation)
+    model:setScale(self.scalex or 1, self.scaley or 1, self.scalez or 1)
+    model:draw()
 end
 
 ---@param self TextObject
