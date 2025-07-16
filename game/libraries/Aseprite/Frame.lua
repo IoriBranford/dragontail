@@ -35,7 +35,8 @@ end
 function AseFrame:drawCels(i, j, x, y)
     x = x or 0
     y = y or 0
-    for l = i, j do
+    local dl = i > j and -1 or 1
+    for l = i, j, dl do
         local cel = self[l]
         if cel then
             love_graphics_draw(cel.image, cel.quad,
@@ -47,6 +48,10 @@ local drawCels = AseFrame.drawCels
 
 function AseFrame:draw(x, y)
     drawCels(self, 1, #self, x, y)
+end
+
+function AseFrame:drawFrontToBack(x, y)
+    drawCels(self, #self, 1, x, y)
 end
 
 return AseFrame
