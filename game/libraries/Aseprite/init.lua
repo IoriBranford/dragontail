@@ -19,6 +19,7 @@ local json   = require "Aseprite.json"
 local AseFrame = require "Aseprite.Frame"
 local Animation= require "Aseprite.Animation"
 local pathlite = require "Aseprite.pathlite"
+local hasg3d, g3d = pcall(require, "g3d") ---@type boolean,g3d
 
 ---@class AseLayer
 ---@field name string
@@ -167,6 +168,73 @@ function Aseprite:mapCelsBySourcePositions()
         end
     end
 	return celsbysrcpos
+end
+
+function Aseprite:newModel()
+	assert(hasg3d, [[
+		3D models require g3d.
+		https://github.com/groverburger/g3d
+	]])
+
+	local w, h = self.width, self.height
+	local tl = {
+		0, 0, 0,
+		0, 0,
+		0, 0, 1,
+		1, 1, 1, 1
+	}
+	local bl = {
+		0, -h, 0,
+		0, 1,
+		0, 0, 1,
+		1, 1, 1, 1
+	}
+	local tr = {
+		w, 0, 0,
+		1, 0,
+		0, 0, 1,
+		1, 1, 1, 1
+	}
+	local br = {
+		w, -h, 0,
+		1, 1,
+		0, 0, 1,
+		1, 1, 1, 1
+	}
+	local verts = {tl, tr, bl, tr, bl, br}
+	local texture = #self.layers <= 1 and self.image
+		or love.graphics.newCanvas(w, h)
+	return g3d.newModel(verts, texture)
+end
+
+function Aseprite:updateModel(model, framei)
+	local frame = self[framei]
+	if not frame then return end
+
+	if #self.layers > 1 then
+		local texture = model.texture
+		---@cast texture love.Canvas
+		assert(texture:typeOf("Canvas"),
+			"Multi-layer aseprite billboard requires canvas texture")
+
+		texture:renderTo(function()
+			frame:draw()
+		end)
+	else
+		local verts = model.verts
+		local tl, tr = verts[1], verts[2]
+		local bl, br = verts[5], verts[6]
+
+		local cel = frame[1]
+		if cel then
+			cel:updateVertices(tl, bl, tr, br)
+		else
+			tl[1], tl[2] = 0, 0
+			bl[1], bl[2] = 0, 0
+			tr[1], tr[2] = 0, 0
+			br[1], br[2] = 0, 0
+		end
+	end
 end
 
 return Aseprite
