@@ -4,7 +4,7 @@ local drawModel = require "Tiled.drawModel"
 ---@field model g3d.model
 local Object3D = {}
 
----@param tile Tile
+---@param tile Tile?
 function Object3D:initTile(tile)
     if tile then
         self:initTile(tile)
@@ -40,7 +40,8 @@ function Object3D:animateAseprite(dt)
     local oldframei = self.animationframe
     self:animateAseprite(dt)
     if oldframei ~= self.animationframe then
-        self.aseprite:updateModel(self.model, self.animationframe)
+        self.aseprite:updateModel(self.model,
+            self.aseanimation[self.animationframe])
     end
 end
 
