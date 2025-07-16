@@ -36,22 +36,19 @@ end
 ---@param bl g3d.vertex
 ---@param tr g3d.vertex
 ---@param br g3d.vertex
-function Cel:updateVertices(tl, bl, tr, br)
+---@param offsetx number?
+---@param offsety number?
+function Cel:updateVertices(tl, bl, tr, br, offsetx, offsety)
     local u0, v0, u1, v1 = self:getTextureCoords()
-    local x0, y0 = self.x, -self.y
+    local x0 = (offsetx or 0) + self.x
+    local y0 = (offsety and -offsety or 0) - self.y
     local x1, y1 = x0 + self.width, y0 - self.height
 
-    tl[4], tl[5] = u0, v0
-    tl[1], tl[2] = x0, y0
+    tl[1], tl[2] = x0, y0 ; tr[1], tr[2] = x1, y0
+    tl[4], tl[5] = u0, v0 ; tr[4], tr[5] = u1, v0
 
-    bl[4], bl[5] = u0, v1
-    bl[1], bl[2] = x0, y1
-
-    tr[4], tr[5] = u1, v0
-    tr[1], tr[2] = x1, y0
-
-    br[4], br[5] = u1, v1
-    br[1], br[2] = x1, y1
+    bl[1], bl[2] = x0, y1 ; br[1], br[2] = x1, y1
+    bl[4], bl[5] = u0, v1 ; br[4], br[5] = u1, v1
 end
 
 return Cel
