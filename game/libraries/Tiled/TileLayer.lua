@@ -172,17 +172,19 @@ function TileLayer:make3D()
     local image
 
     self:forCells(function(left, bottom, tile, flipx, flipy)
-        image = tile.image
-        local tl, bl, tr, br = tile:newVertices(
-            left, bottom - tile.height,
-            flipx, flipy)
+        if tile then
+            image = tile.image
+            local tl, bl, tr, br = tile:newVertices(
+                left, bottom - tile.height,
+                flipx, flipy)
 
-        verts[#verts+1] = tl
-        verts[#verts+1] = tr
-        verts[#verts+1] = bl
-        verts[#verts+1] = tr
-        verts[#verts+1] = bl
-        verts[#verts+1] = br
+            verts[#verts+1] = tl
+            verts[#verts+1] = tr
+            verts[#verts+1] = bl
+            verts[#verts+1] = tr
+            verts[#verts+1] = bl
+            verts[#verts+1] = br
+        end
     end)
 
     if not image then return end
