@@ -203,8 +203,10 @@ function Aseprite:newModel()
 	return g3d.newModel(verts, texture)
 end
 
-function Aseprite:updateModel(model, framei)
-	local frame = self[framei]
+function Aseprite:updateModel(model, frame)
+	if type(frame) == "number" then
+		frame = self[frame]
+	end
 	if not frame then return end
 
 	if #self.layers > 1 then
@@ -214,6 +216,7 @@ function Aseprite:updateModel(model, framei)
 			"Multi-layer aseprite billboard requires canvas texture")
 
 		texture:renderTo(function()
+			love.graphics.clear()
 			frame:draw()
 		end)
 	else
