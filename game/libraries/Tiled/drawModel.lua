@@ -15,7 +15,7 @@ local function drawModel(self, fixedfrac)
     if not (rotaxisx and rotaxisy and rotaxisz) then
         rotaxisx, rotaxisy, rotaxisz = 0, 0, -1
     end
-    model:setAxisAngleRotation(rotaxisx, rotaxisy, rotaxisz, self.rotation)
+    model:setAxisAngleRotation(rotaxisx, rotaxisy, rotaxisz, self.rotation or 0)
     model:setScale(self.scalex or 1, self.scaley or 1, self.scalez or 1)
     model:draw()
 end
