@@ -2,7 +2,6 @@ local class = require "Tiled.class"
 local ObjectGroup = require "Tiled.ObjectGroup"
 local Properties  = require "Tiled.Properties"
 local Animation   = require "Tiled.Animation"
-local hasg3d, g3d = pcall(require, "g3d") ---@type boolean,g3d
 
 ---@class Tile:Class
 ---@field id integer The local tile ID within its tileset.
@@ -141,6 +140,7 @@ end
 
 ---@return g3d.model
 function Tile:newModel()
+    local g3d = require "g3d" ---@type g3d
     local tl, bl, tr, br = self:newVertices()
     local verts = {tl, tr, bl, tr, bl, br}
     return g3d.newModel(verts, self.image)

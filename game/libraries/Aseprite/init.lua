@@ -19,7 +19,6 @@ local json   = require "Aseprite.json"
 local AseFrame = require "Aseprite.Frame"
 local Animation= require "Aseprite.Animation"
 local pathlite = require "Aseprite.pathlite"
-local hasg3d, g3d = pcall(require, "g3d") ---@type boolean,g3d
 
 ---@class AseLayer
 ---@field name string
@@ -171,10 +170,7 @@ function Aseprite:mapCelsBySourcePositions()
 end
 
 function Aseprite:newModel()
-	assert(hasg3d, [[
-		3D models require g3d.
-		https://github.com/groverburger/g3d
-	]])
+	local g3d = require "g3d" ---@type g3d
 
 	local w, h = self.width, self.height
 	local tl = {

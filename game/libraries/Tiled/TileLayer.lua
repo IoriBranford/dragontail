@@ -6,7 +6,6 @@ local Layer    = require "Tiled.Layer"
 local forCells = require "Tiled.forCells"
 local Chunk    = require "Tiled.Chunk"
 local drawTile = require "Tiled.drawTile"
-local hasg3d, g3d = pcall(require, "g3d") ---@type boolean,g3d
 local drawModel   = require("Tiled.drawModel")
 
 local TileBatching = require "Tiled.TileBatching"
@@ -188,6 +187,7 @@ function TileLayer:make3D()
 
     if not image then return end
 
+    local g3d = require "g3d" ---@type g3d
     self.model = g3d.newModel(verts, image)
     self.draw = drawModel
 end
