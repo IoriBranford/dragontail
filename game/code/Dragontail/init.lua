@@ -58,6 +58,9 @@ function love.load(args)
 
     require "Dragontail.Gui"
 
+    local g3d = require "g3d"
+    g3d.shader = love.graphics.newShader("g3d/g3d.frag", g3d.shaderpath)
+
     local startpoint = args.startpoint
     love.event.loadphase(firstphase, firstmap, startpoint)
 end
