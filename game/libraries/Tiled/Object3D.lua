@@ -31,7 +31,10 @@ end
 function Object3D:initAseprite()
     local aseprite = self.aseprite
     if not aseprite then return end
-    self.model = self.aseprite:newModel()
+
+    local frame = self:getAnimationFrame()
+    ---@cast frame AseFrame
+    self.model = self.aseprite:newModel(frame, self.originx and -self.originx, self.originy and -self.originy)
     self.animate = Object3D.animateAseprite
     self.draw = drawModel
 end
@@ -39,8 +42,9 @@ end
 ---@param self Object3D
 function Object3D:animateAseprite(dt)
     self:animateAseprite(dt)
-    self.aseprite:updateModel(self.model,
-        self.aseanimation[self.animationframe])
+    local frame = self:getAnimationFrame()
+    ---@cast frame AseFrame
+    self.aseprite:updateModel(self.model, frame, self.originx and -self.originx, self.originy and -self.originy)
 end
 
 function Object3D:setOrigin(originx, originy)
