@@ -164,6 +164,7 @@ function Config.applyDisplayMode(basew, baseh, winmaxscale)
 	flags.usedpiscale = Config.usedpiscale
 	flags.vsync = Config.vsync
 	flags.resizable = Config.resizable
+	flags.depth = 16
 	flags.x = nil
 	flags.y = nil
 	flags.minwidth = basew
