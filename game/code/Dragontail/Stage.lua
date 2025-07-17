@@ -460,12 +460,28 @@ function Stage.draw(fixedfrac)
             map.backgroundcolor[2],
             map.backgroundcolor[3])
     end
-    love.graphics.push()
-    love.graphics.translate(-camera.x - camera.velx*fixedfrac,
-        -camera.y - camera.vely*fixedfrac
-        + camera.z + camera.bodyheight/2 + camera.velz*fixedfrac)
-    scene:draw(fixedfrac, Characters.isDrawnBefore)
-    love.graphics.pop()
+
+    local camerax, cameray, cameraz =
+        camera.x + camera.velx*fixedfrac,
+        camera.y + camera.vely*fixedfrac,
+        camera.z + camera.bodyheight/2 + camera.velz*fixedfrac
+
+    if camera.is3d then
+        local cameracenterx = camerax + camera.width/2
+        local cameracentery = cameray + camera.height/2
+        g3d.camera.up[1] = 0
+        g3d.camera.up[2] = 1
+        g3d.camera.up[3] = 0
+        g3d.camera.lookAt(cameracenterx, -cameracentery, cameraz + 135, cameracenterx, -cameracentery, cameraz)
+        love.graphics.setDepthMode("lequal", true)
+        scene:draw(fixedfrac)
+        love.graphics.setDepthMode("always", false)
+    else
+        love.graphics.push()
+        love.graphics.translate(-camerax, -(cameray - cameraz))
+        scene:draw(fixedfrac, Characters.isDrawnBefore)
+        love.graphics.pop()
+    end
 end
 
 return Stage
