@@ -54,8 +54,7 @@ function AseFrame:drawFrontToBack(x, y)
     drawCels(self, #self, 1, x, y)
 end
 
-function AseFrame:updateModel(model, offsetx, offsety)
-    local verts = model.verts
+function AseFrame:updateVertices(verts, offsetx, offsety)
     local celi = 1
     for i = 6, #verts, 6 do
         local tl, tr = verts[i-5], verts[i-4]

@@ -195,20 +195,24 @@ function Aseprite:newModel(frame, offsetx, offsety)
 	end
 	if frame then
 		---@cast frame AseFrame
-		frame:updateModel(offsetx, offsety)
+		frame:updateVertices(verts, offsetx, offsety)
 	end
 
 	return g3d.newModel(verts, self.image)
 end
 
+---@param model g3d.model
+---@param frame AseFrame
+---@param offsetx number?
+---@param offsety number?
 function Aseprite:updateModel(model, frame, offsetx, offsety)
 	if type(frame) == "number" then
 		frame = self[frame]
 	end
+	local verts = model.verts
 	if frame then
-		frame:updateModel(model, offsetx, offsety)
+		frame:updateVertices(verts, offsetx, offsety)
 	else
-		local verts = model.verts
 		for i = 6, #verts, 6 do
 			local tl, tr = verts[i-5], verts[i-4]
 			local bl, br = verts[i-1], verts[i]
