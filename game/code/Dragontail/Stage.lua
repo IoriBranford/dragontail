@@ -37,14 +37,12 @@ function Stage.quit()
     Characters.quit()
 end
 
-function Stage.init(stagefile)
+function Stage.load(stagefile)
     map = Tiled.Map.load(stagefile)
     map:indexLayersByName()
     map:indexLayerObjectsByName()
     map:indexTilesetTilesByName()
     map:markAndCountEmptyTiles()
-
-    scene = Scene()
 
     for _, object in pairs(map.objects) do
         if object.type == "CameraPath" then
@@ -64,6 +62,10 @@ function Stage.init(stagefile)
             end
         end
     end
+end
+
+function Stage.init()
+    scene = Scene()
 
     local MinStageHeight = 512
     local CameraTopMargin = 32

@@ -40,13 +40,13 @@ function GamePhase.loadphase()
         end
     end)
 
-    Stage.init("data/stage_banditcave.lua")
-
+    Stage.load("data/stage_banditcave.lua")
     Tiled.Assets.uncacheMarked()
     Tiled.Assets.packTiles()
     Tiled.Assets.setFilter("nearest", "nearest")
     Tiled.Assets.batchAllMapsLayers()
 
+    Stage.init()
     GamePhase.resize(love.graphics.getWidth(), love.graphics.getHeight())
 
     local music = Audio.playMusic("data/music/retro-chiptune-guitar.ogg")
