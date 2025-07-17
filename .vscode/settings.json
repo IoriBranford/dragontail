@@ -3,10 +3,16 @@
     "Lua.workspace.checkThirdParty": false,
     "Lua.workspace.useGitIgnore": false,
     "Lua.workspace.library": [
-        "${3rd}/love2d/library"
+        "${3rd}/love2d/library",
+        "${3rd}/lfs/library",
+        "game/libraries/g3d"
     ],
     "Lua.runtime.version": "LuaJIT",
     "Lua.runtime.path": [
+        "${userHome}/.luarocks/lib/lua/5.4",
+        "${userHome}/.luarocks/share/lua/5.4",
+        "${userHome}/.luarocks/lib/lua/5.1",
+        "${userHome}/.luarocks/share/lua/5.1",
         "game/libraries/?.lua",
         "game/libraries/?/init.lua",
         "game/code/?.lua",
