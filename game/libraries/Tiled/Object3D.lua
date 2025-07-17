@@ -12,7 +12,7 @@ function Object3D:initTile(tile)
     tile = self.tile
     if not tile then return end
 
-    self.model = tile:newModel()
+    self.model = tile:newModel(self.originx and -self.originx, self.originy and -self.originy)
     self.animate = Object3D.animate3DTile
     self.draw = drawModel
 end
@@ -20,8 +20,12 @@ end
 ---@param self Object3D
 function Object3D:animateTile(dt)
     self:animateTile(dt)
-    local newtile = self.tile.animation[self.animationframe].tile
-    newtile:updateModel(self.model)
+    local frame = self:getAnimationFrame()
+    ---@cast frame AnimationFrame
+    local tile = frame and frame.tile or self.tile
+    if tile then
+        tile:updateModel(self.model, self.originx and -self.originx, self.originy and -self.originy)
+    end
 end
 
 function Object3D:initAseprite()

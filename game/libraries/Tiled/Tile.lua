@@ -140,22 +140,29 @@ function Tile:updateTexCoords(tl, bl, tr, br, flipx, flipy)
     end
 end
 
+---@param x number?
+---@param y number?
 ---@param flipx number?
 ---@param flipy number?
 ---@return g3d.model
-function Tile:newModel(flipx, flipy)
+function Tile:newModel(x, y, flipx, flipy)
     local g3d = require "g3d" ---@type g3d
-    local tl, bl, tr, br = self:newVertices(flipx, flipy)
+    local tl, bl, tr, br = self:newVertices(x, y, flipx, flipy)
     local verts = {tl, tr, bl, tr, bl, br}
     return g3d.newModel(verts, self.image)
 end
 
 ---@param model g3d.model
+---@param x number?
+---@param y number?
 ---@param flipx number?
 ---@param flipy number?
-function Tile:updateModel(model, flipx, flipy)
+function Tile:updateModel(model, x, y, flipx, flipy)
     local verts = model.verts
-    self:updateTexCoords(verts[1], verts[5], verts[2], verts[6], flipx, flipy)
+    local tl, bl, tr, br = verts[1], verts[5], verts[2], verts[6]
+    self:updateVertexPositions(tl, bl, tr, br, x, y)
+    self:updateTexCoords(tl, bl, tr, br, flipx, flipy)
+    model.mesh:setVertices(verts)
 end
 
 return Tile
