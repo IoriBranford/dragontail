@@ -2,13 +2,19 @@
 ---@field shader love.Shader?
 local Canvas = class()
 
-function Canvas:_init(width, height, inputscale)
+function Canvas:_init(width, height, inputscale, depth)
     inputscale = inputscale or 1
     width, height = math.floor(width*inputscale), math.floor(height*inputscale)
     self.canvas = love.graphics.newCanvas(width, height)
     self.rotscale = love.math.newTransform()
     self.transform = love.math.newTransform()
     self.inputscale = inputscale
+    if depth then
+        self.canvases = {
+            self.canvas,
+            depthstencil = love.graphics.newCanvas(width, height, { format = "depth16" })
+        }
+    end
 end
 
 function Canvas.GetOutputScaleFactor(canvaswidth, canvasheight, screenwidth, screenheight, rotation, integerscale)
@@ -58,7 +64,7 @@ end
 
 function Canvas:drawOn(draw)
     local oldcanvas = love.graphics.getCanvas()
-    love.graphics.setCanvas(self.canvas)
+    love.graphics.setCanvas(self.canvases or self.canvas)
     love.graphics.push()
     love.graphics.scale(self.inputscale)
     draw()
