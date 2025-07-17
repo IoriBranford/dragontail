@@ -220,6 +220,7 @@ function Aseprite:updateModel(model, frame, offsetx, offsety)
 				bl[1], bl[2] = 0, 0; br[1], br[2] = 0, 0
 		end
 	end
+	model.mesh:setVertices(verts)
 end
 
 return Aseprite
