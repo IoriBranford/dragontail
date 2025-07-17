@@ -468,11 +468,9 @@ function Stage.draw(fixedfrac)
 
     if camera.is3d then
         local cameracenterx = camerax + camera.width/2
-        local cameracentery = cameray + camera.height/2
-        g3d.camera.up[1] = 0
-        g3d.camera.up[2] = 1
-        g3d.camera.up[3] = 0
-        g3d.camera.lookAt(cameracenterx, -cameracentery, cameraz + 135, cameracenterx, -cameracentery, cameraz)
+        local cameracentery = cameray + camera.width/2
+        local cameracenterz = cameraz + 48
+        g3d.camera.lookInDirection(cameracenterx, -cameracentery, cameracenterz, math.pi/2, 0)
         love.graphics.setDepthMode("lequal", true)
         scene:draw(fixedfrac)
         love.graphics.setDepthMode("always", false)
