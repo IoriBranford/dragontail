@@ -99,8 +99,8 @@ function Tile:updateVertexPositions(tl, bl, tr, br, x, y)
     if y then
         y = -y
         local y2 = y - self.height
-        tl[2], tr[2] = y, y2
-        bl[2], br[2] = y, y2
+        tl[2], tr[2] = y, y
+        bl[2], br[2] = y2, y2
     end
 end
 
@@ -131,11 +131,11 @@ function Tile:updateTexCoords(tl, bl, tr, br, flipx, flipy)
             u0, v0, u1, v1 = self:getTextureCoords()
         end
         if flipy < 0 then
-            tl[5], tr[5] = v1, v0
-            bl[5], br[5] = v1, v0
+            tl[5], tr[5] = v1, v1
+            bl[5], br[5] = v0, v0
         else
-            tl[5], tr[5] = v0, v1
-            bl[5], br[5] = v0, v1
+            tl[5], tr[5] = v0, v0
+            bl[5], br[5] = v1, v1
         end
     end
 end
