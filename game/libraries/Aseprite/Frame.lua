@@ -54,6 +54,9 @@ function AseFrame:drawFrontToBack(x, y)
     drawCels(self, #self, 1, x, y)
 end
 
+---@param verts g3d.vertex[]
+---@param offsetx number?
+---@param offsety number?
 function AseFrame:updateVertices(verts, offsetx, offsety)
     local celi = 1
     for i = 6, #verts, 6 do
