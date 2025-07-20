@@ -16,7 +16,9 @@ function Object3D:initTile(tile)
     tile = frame and frame.tile or self.tile
     if not tile then return end
 
+    local g3d = require "g3d"
     self.model = tile:newModel(self.originx and -self.originx, self.originy and -self.originy)
+    self.model.shader = g3d.shader -- in case the default shader was changed
     self.animate = Object3D.animate3DTile
     self.setTile = Object3D.setTile
     self.draw = drawModel
@@ -48,7 +50,9 @@ function Object3D:initAseprite()
 
     local frame = self:getAnimationFrame()
     ---@cast frame AseFrame
+    local g3d = require "g3d"
     self.model = self.aseprite:newModel(frame, self.originx and -self.originx, self.originy and -self.originy)
+    self.model.shader = g3d.shader
     self.animate = Object3D.animateAseprite
     self.setAseAnimation = Object3D.setAseAnimation
     self.draw = drawModel
