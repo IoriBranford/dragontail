@@ -102,7 +102,7 @@ function Dodge:dodge(opponent, dodgeangle)
         tooppox = 1
     end
     tooppox, tooppoy = math.norm(tooppox, tooppoy)
-    Face.faceVector(self, tooppox, tooppoy, "Walk")
+    Face.faceVector(self, tooppox, tooppoy)
     Audio.play(self.stopdashsound)
     local speed, decel = self.dodgespeed, self.dodgedecel
     repeat
