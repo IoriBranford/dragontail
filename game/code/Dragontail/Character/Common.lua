@@ -148,6 +148,17 @@ function Common:itemDrop(y0)
     return "itemWaitForPickup"
 end
 
+local function testItemPickupCollision(item, picker)
+    if item ~= picker
+        and item.z <= picker.z + picker.bodyheight
+        and picker.z <= item.z + item.bodyheight
+        and math.testcircles(item.x, item.y, item.bodyradius, picker.x, picker.y,
+            picker.pickupradius or picker.bodyradius)
+    then
+        return true
+    end
+end
+
 function Common:itemWaitForPickup()
     local opponent = self.opponents[1]
     local t = -1
@@ -166,7 +177,7 @@ function Common:itemWaitForPickup()
             if opponent.health < opponent.maxhealth then
                 local redblue = (t%30)/15
                 self.color = Color.asARGBInt(redblue, 1, redblue, 1)
-                if Body.testBodyCollision(self, opponent) then
+                if testItemPickupCollision(self, opponent) then
                     Audio.play(self.itemgetsound)
                     opponent:heal(self.healhealth)
                     finished = true
@@ -179,7 +190,7 @@ function Common:itemWaitForPickup()
                 local greenblue = (t%30)/15
                 local red = .5 + greenblue
                 self.color = Color.asARGBInt(red, greenblue, greenblue, 1)
-                if Body.testBodyCollision(self, opponent) then
+                if testItemPickupCollision(self, opponent) then
                     Audio.play(self.itemgetsound)
                     Mana.store(opponent, self.givemana)
                     finished = true
@@ -191,7 +202,7 @@ function Common:itemWaitForPickup()
             local weapontype = self.giveweapon
             local tryToGiveWeapon = opponent.tryToGiveWeapon
             if tryToGiveWeapon and weapontype then
-                if Body.testBodyCollision(self, opponent) then
+                if testItemPickupCollision(self, opponent) then
                     if tryToGiveWeapon(opponent, weapontype) then
                         finished = true
                     end
