@@ -3,7 +3,7 @@ dagger-swing,20,dagger-swing2,dagger-swing,prepareAttack,SwingWindup,0,TRUE,TRUE
 dagger-swing2,40,stand,dagger-swing,executeAttack,SwingAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing1.mp3,0
 spear-thrust,30,spear-thrust2,spear-thrust,prepareAttack,ThrustWindup,0,TRUE,TRUE,FALSE,,data/sounds/man_medium/attack1.mp3,0
 spear-thrust2,40,stand,spear-thrust,executeAttack,ThrustAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/swingblade.mp3,3
-spear-poke,12,spear-poke2,spear-poke,prepareAttack,ThrustWindup,0,TRUE,TRUE,FALSE,,data/sounds/man_medium/attack1.mp3,0
+spear-poke,20,spear-poke2,spear-poke,prepareAttack,ThrustWindup,0,TRUE,TRUE,FALSE,,data/sounds/man_medium/attack1.mp3,0
 spear-poke2,40,stand,spear-poke,executeAttack,ThrustAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing1.mp3,0
 axe-swing,10,axe-swing2,axe-swing,prepareAttack,SwingWindup,0,TRUE,TRUE,FALSE,,data/sounds/man_heavy/lightattack3.mp3,0
 axe-swing2,40,stand,axe-swing,executeAttack,SwingAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing3.mp3,0
