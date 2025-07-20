@@ -12,7 +12,7 @@ function Canvas:_init(width, height, inputscale, depth)
     if depth then
         self.canvases = {
             self.canvas,
-            depthstencil = love.graphics.newCanvas(width, height, { format = "depth16" })
+            depthstencil = love.graphics.newCanvas(width, height, { format = "depth32f" })
         }
     end
 end
