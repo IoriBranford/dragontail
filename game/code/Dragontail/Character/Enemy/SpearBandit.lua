@@ -41,13 +41,11 @@ local CounterAttackType = "spear-poke"
 
 function SpearBandit:duringDodge()
     if (self.numdodges or 0) >= DodgesBeforeCounterAttack then
-        if math.lensq(self.velx, self.vely) < 16 then
-            local opponent = self.opponents[1]
-            if self:couldAttackOpponent(opponent, CounterAttackType) then
-                Face.faceObject(self, opponent)
-                opponent.attacker = self
-                return CounterAttackType
-            end
+        local opponent = self.opponents[1]
+        if self:couldAttackOpponent(opponent, CounterAttackType) then
+            Face.faceObject(self, opponent)
+            opponent.attacker = self
+            return CounterAttackType
         end
     end
 end
@@ -68,7 +66,8 @@ function SpearBandit:duringPrepareAttack(target)
             return "dodgeIncoming", dodgeangle
         end
     end
-    self:accelerateTowardsVel(0, 0, 4)
+    local deceltime = self.attacktype == CounterAttackType and 8 or 4
+    self:accelerateTowardsVel(0, 0, deceltime)
     if self.velx ~= 0 or self.vely ~= 0 then
         Body.keepInBounds(self)
     end
