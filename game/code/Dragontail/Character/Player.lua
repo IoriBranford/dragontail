@@ -155,19 +155,20 @@ end
 
 local updateEnemyTargetingScores_enemies = {}
 
-local function updateEnemyTargetingScores(self, targetfacex, targetfacey)
+local function updateEnemyTargetingScores(self, lookangle)
     local enemies = updateEnemyTargetingScores_enemies
     for i = #enemies, 1, -1 do enemies[i] = nil end
 
     -- local projectileheight = self.projectilelaunchheight or (self.bodyheight / 2)
     -- local projectilez = self.z + projectileheight
+    local lookx, looky = cos(lookangle), sin(lookangle)
     Characters.search("enemies",
     ---@param e Enemy
     function(e)
         if not e.getTargetingScore then
             return
         end
-        local score = e:getTargetingScore(self.x, self.y, targetfacex, targetfacey)
+        local score = e:getTargetingScore(self.x, self.y, lookx, looky)
 
         -- local etop, ebottom = e.z + self.bodyheight, e.z
         -- if ebottom > projectilez or projectilez > etop then
@@ -829,7 +830,7 @@ function Player:throwWeapon(angle, attackchoice, numprojectiles)
     end
 
     local cosangle, sinangle = cos(angle), sin(angle)
-    local targets = updateEnemyTargetingScores(self, cosangle, sinangle)
+    local targets = updateEnemyTargetingScores(self, angle)
     local arc = self.throwmultiarc or (pi/4)
     local cosarc = cos(arc)
     local numfired = 0
