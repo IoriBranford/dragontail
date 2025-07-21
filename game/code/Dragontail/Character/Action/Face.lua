@@ -4,6 +4,7 @@ local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 ---@field faceangle number
 ---@field facedestangle number?
 ---@field facedegrees number?
+---@field faceturnspeed number? defaults to pi for instant turn in turnTowards* functions
 local Face = {}
 
 function Face:init()
@@ -37,7 +38,8 @@ function Face:faceAngle(angle, animation, frame1, loopframe)
 end
 
 function Face:turnTowardsAngle(destangle, turnspeed, animation, frame1, loopframe)
-    local faceangle = math.rotangletowards(self.faceangle, destangle, turnspeed)
+    local faceangle = math.rotangletowards(self.faceangle, destangle,
+        turnspeed or self.faceturnspeed or math.pi)
     Face.faceAngle(self, faceangle, animation, frame1, loopframe)
 end
 
