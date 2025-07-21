@@ -159,8 +159,8 @@ local function updateEnemyTargetingScores(self, targetfacex, targetfacey)
     local enemies = updateEnemyTargetingScores_enemies
     for i = #enemies, 1, -1 do enemies[i] = nil end
 
-    local projectileheight = self.projectilelaunchheight or (self.bodyheight / 2)
-    local projectilez = self.z + projectileheight
+    -- local projectileheight = self.projectilelaunchheight or (self.bodyheight / 2)
+    -- local projectilez = self.z + projectileheight
     Characters.search("enemies",
     ---@param e Enemy
     function(e)
@@ -169,10 +169,10 @@ local function updateEnemyTargetingScores(self, targetfacex, targetfacey)
         end
         local score = e:getTargetingScore(self.x, self.y, targetfacex, targetfacey)
 
-        local etop, ebottom = e.z + self.bodyheight, e.z
-        if ebottom > projectilez or projectilez > etop then
-            score = score / 2
-        end
+        -- local etop, ebottom = e.z + self.bodyheight, e.z
+        -- if ebottom > projectilez or projectilez > etop then
+        --     score = score / 2
+        -- end
         e.targetingscore = score
         enemies[#enemies+1] = e
     end)
