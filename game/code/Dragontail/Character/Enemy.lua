@@ -328,6 +328,8 @@ function Enemy:attackIfAmmoElseLeave()
 end
 
 function Enemy:duringPrepareAttack(target)
+    Face.turnTowardsObject(self, target, self.faceturnspeed or 0,
+        self.state.animation, self.state.frame1, self.state.loopframe)
     self:accelerateTowardsVel(0, 0, 4)
     if self.enteredcamera and (self.velx ~= 0 or self.vely ~= 0) then
         Body.keepInBounds(self)

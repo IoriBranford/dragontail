@@ -92,7 +92,8 @@ end
 
 function BanditBoss:duringPrepareAttack(target)
     self:accelerateTowardsVel(0, 0, 4)
-    Face.faceObject(self, target, self.state.animation, self.state.frame1, self.state.loopframe)
+    Face.turnTowardsObject(self, target, self.faceturnspeed or 0,
+        self.state.animation, self.state.frame1, self.state.loopframe)
     return self:getAttackSwitch(target)
 end
 

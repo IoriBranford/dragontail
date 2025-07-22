@@ -66,6 +66,8 @@ function SpearBandit:duringPrepareAttack(target)
             return "dodgeIncoming", dodgeangle
         end
     end
+    Face.turnTowardsObject(self, target, self.faceturnspeed or 0,
+        self.state.animation, self.state.frame1, self.state.loopframe)
     local deceltime = self.attacktype == CounterAttackType and 8 or 4
     self:accelerateTowardsVel(0, 0, deceltime)
     if self.velx ~= 0 or self.vely ~= 0 then
