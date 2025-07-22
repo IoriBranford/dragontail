@@ -181,6 +181,19 @@ local function updateEnemyTargetingScores(self, lookangle)
     return enemies
 end
 
+local function getAngleToBestTarget(self, lookangle, targets)
+    lookangle = lookangle or self.faceangle
+    targets = targets or updateEnemyTargetingScores(self, lookangle)
+    if targets[1] then
+        local dy, dx = targets[1].y - self.y, targets[1].x - self.x
+        if dy ~= 0 or dx ~= 0 then
+            if math.dot(cos(lookangle), sin(lookangle), dx, dy) >= 0 then
+                return atan2(dy, dx)
+            end
+        end
+    end
+end
+
 local function findInstantThrowTarget(self, targetfacex, targetfacey)
     local projectileheight = self.projectilelaunchheight or (self.bodyheight / 2)
     local projectilez = self.z + projectileheight
@@ -591,6 +604,12 @@ function Player:control()
             end
 
             if normalattackpressed then
+                if inx == 0 and iny == 0 then
+                    local angletoenemy = getAngleToBestTarget(self)
+                    if angletoenemy then
+                        self.facedestangle = angletoenemy
+                    end
+                end
                 Face.updateTurnToDestAngle(self, pi)
                 if self.weaponinhand then
                     return "throwWeapon", self.facedestangle, 1, 1
@@ -673,6 +692,11 @@ function Player:spinAttack(attackangle)
         local inx, iny = self:getJoystick()
         if inx ~= 0 or iny ~= 0 then
             originalfaceangle = atan2(iny, inx)
+        else
+            local angletoenemy = getAngleToBestTarget(self)
+            if angletoenemy then
+                originalfaceangle = angletoenemy
+            end
         end
         return self:doComboAttack(originalfaceangle)
     end
@@ -1159,6 +1183,11 @@ function Player:straightAttack(angle, heldenemy)
         if not heldenemy then
             if inx ~= 0 or iny ~= 0 then
                 faceangle = atan2(iny, inx)
+            else
+                local angletoenemy = getAngleToBestTarget(self)
+                if angletoenemy then
+                    faceangle = angletoenemy
+                end
             end
         end
         return self:doComboAttack(faceangle, heldenemy)
