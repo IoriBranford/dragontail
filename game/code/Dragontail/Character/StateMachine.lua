@@ -46,6 +46,7 @@ local StateVarsToCopy = {
     "canbeattacked",
     "canbegrabbed",
     "canbejuggled",
+    "faceturnspeed",
     "bodyinlayers",
     "bodyhitslayers",
     "color",
