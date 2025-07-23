@@ -262,10 +262,16 @@ function Stage.getCurrentRoom()
     return map.layers.rooms[roomindex]
 end
 
-function Stage.updateGoingToNextRoom()
+---@return CameraPath
+function Stage.getCurrentCameraPath()
+    local room = map.layers.rooms[roomindex]
+    return room and room.camerapath
+end
+
+function Stage.isInNextRoom()
     local room = map.layers.rooms[roomindex]
     if not room then
-        return
+        return false
     end
 
     local camerapath = room.camerapath ---@type CameraPath
@@ -273,7 +279,16 @@ function Stage.updateGoingToNextRoom()
     local camhalfw, camhalfh = camera.width/2, camera.height/2
     local centerx, centery = camera.x + camhalfw, camera.y + camhalfh
 
-    if not camerapath or camerapath:isEnd(centerx, centery) then
+    return not camerapath or camerapath:isEnd(centerx, centery)
+end
+
+function Stage.updateGoingToNextRoom()
+    local room = map.layers.rooms[roomindex]
+    if not room then
+        return
+    end
+
+    if Stage.isInNextRoom() then
         camera.velx = 0
         camera.vely = 0
         local enemies = Characters.getGroup("enemies")
@@ -283,6 +298,11 @@ function Stage.updateGoingToNextRoom()
         end
         return
     end
+
+    local camerapath = room.camerapath ---@type CameraPath
+
+    local camhalfw, camhalfh = camera.width/2, camera.height/2
+    local centerx, centery = camera.x + camhalfw, camera.y + camhalfh
 
     local playerscenterx, playerscentery = 0, 0
     local players = Characters.getGroup("players")
