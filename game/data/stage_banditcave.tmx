@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="2025.07.09" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="55" nextobjectid="530">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="55" nextobjectid="530">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -290,7 +290,7 @@
     <property name="titlebarcuecard" value="RUNNING TACKLE"/>
    </properties>
    <object id="482" template="mapobjects/CameraPath.tx" x="720" y="144">
-    <polyline points="0,0 224,0"/>
+    <polyline points="0,0 96,0"/>
    </object>
    <object id="490" gid="5266" x="1048" y="160" width="64" height="64"/>
    <object id="491" gid="5266" x="1128" y="224" width="64" height="64"/>
@@ -300,12 +300,6 @@
      <property name="extrudeY" type="float" value="-64"/>
     </properties>
     <polygon points="-64,-96 -64,32 32,32 96,96 96,96 96,-96"/>
-   </object>
-   <object id="239" template="mapobjects/OutwardBoundary.tx" x="1120" y="0" visible="1">
-    <properties>
-     <property name="extrudeY" type="float" value="-64"/>
-    </properties>
-    <polygon points="0,-32 0,160 320,160 352,128 480,128 480,-32"/>
    </object>
    <object id="521" name="attackbutton" gid="6900" x="1192" y="128" width="16" height="16"/>
    <object id="522" name="Fireball" x="1216" y="112" width="192" height="40">
@@ -336,7 +330,7 @@ COSTS 1 OR MORE</text>
     <property name="titlebarcuecard" value="RUNNING KICK"/>
    </properties>
    <object id="29" template="mapobjects/CameraPath.tx" x="720" y="144">
-    <polyline points="224,0 416,64 640,64"/>
+    <polyline points="96,0 224,0 416,64 640,64"/>
    </object>
    <object id="52" gid="5266" x="1264" y="192" width="64" height="64"/>
    <object id="51" gid="5266" x="1296" y="288" width="64" height="64"/>
@@ -345,6 +339,12 @@ COSTS 1 OR MORE</text>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Steer while sprinting</text>
    </object>
    <object id="429" gid="6889" x="1192" y="176" width="16" height="16" visible="0"/>
+   <object id="239" template="mapobjects/OutwardBoundary.tx" x="1120" y="0" visible="1">
+    <properties>
+     <property name="extrudeY" type="float" value="-64"/>
+    </properties>
+    <polygon points="0,-32 0,160 320,160 352,128 480,128 480,-32"/>
+   </object>
   </objectgroup>
   <objectgroup id="47" name="tolearnrunning3" class="Room">
    <properties>

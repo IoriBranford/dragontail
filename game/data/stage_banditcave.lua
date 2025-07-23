@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "2025.07.09",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -16074,7 +16074,7 @@ return {
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
-                { x = 224, y = 0 }
+                { x = 96, y = 0 }
               },
               properties = {}
             },
@@ -16138,33 +16138,6 @@ return {
                 { x = 96, y = 96 },
                 { x = 96, y = 96 },
                 { x = 96, y = -96 }
-              },
-              properties = {
-                ["bodyinlayers"] = "Solid",
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["extrudeY"] = -64,
-                ["linecolor"] = "#80ffffff"
-              }
-            },
-            {
-              id = 239,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 1120,
-              y = 0,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polygon = {
-                { x = 0, y = -32 },
-                { x = 0, y = 160 },
-                { x = 320, y = 160 },
-                { x = 352, y = 128 },
-                { x = 480, y = 128 },
-                { x = 480, y = -32 }
               },
               properties = {
                 ["bodyinlayers"] = "Solid",
@@ -16283,6 +16256,7 @@ return {
               rotation = 0,
               visible = true,
               polyline = {
+                { x = 96, y = 0 },
                 { x = 224, y = 0 },
                 { x = 416, y = 64 },
                 { x = 640, y = 64 }
@@ -16361,6 +16335,33 @@ return {
               gid = 6889,
               visible = false,
               properties = {}
+            },
+            {
+              id = 239,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 1120,
+              y = 0,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = -32 },
+                { x = 0, y = 160 },
+                { x = 320, y = 160 },
+                { x = 352, y = 128 },
+                { x = 480, y = 128 },
+                { x = 480, y = -32 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Solid",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff"
+              }
             }
           }
         },
