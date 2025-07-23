@@ -326,14 +326,14 @@ return {
       name = "go-arrow-small",
       firstgid = 391,
       class = "",
-      tilewidth = 80,
-      tileheight = 10,
+      tilewidth = 100,
+      tileheight = 20,
       spacing = 0,
       margin = 0,
       columns = 1,
       image = "sprites/ui/go-arrow-small.png",
-      imagewidth = 80,
-      imageheight = 80,
+      imagewidth = 100,
+      imageheight = 180,
       objectalignment = "center",
       tilerendersize = "tile",
       fillmode = "stretch",
@@ -343,12 +343,12 @@ return {
       },
       grid = {
         orientation = "orthogonal",
-        width = 80,
-        height = 10
+        width = 100,
+        height = 20
       },
       properties = {},
       wangsets = {},
-      tilecount = 8,
+      tilecount = 9,
       tiles = {
         {
           id = 0,
@@ -384,6 +384,10 @@ return {
             {
               tileid = 7,
               duration = 50
+            },
+            {
+              tileid = 8,
+              duration = 100
             }
           }
         }
@@ -391,16 +395,16 @@ return {
     },
     {
       name = "go-word",
-      firstgid = 399,
+      firstgid = 400,
       class = "",
-      tilewidth = 40,
-      tileheight = 20,
+      tilewidth = 48,
+      tileheight = 32,
       spacing = 0,
       margin = 0,
-      columns = 6,
+      columns = 9,
       image = "sprites/ui/go-word.png",
-      imagewidth = 240,
-      imageheight = 20,
+      imagewidth = 432,
+      imageheight = 32,
       objectalignment = "center",
       tilerendersize = "tile",
       fillmode = "stretch",
@@ -410,12 +414,12 @@ return {
       },
       grid = {
         orientation = "orthogonal",
-        width = 40,
-        height = 20
+        width = 48,
+        height = 32
       },
       properties = {},
       wangsets = {},
-      tilecount = 6,
+      tilecount = 9,
       tiles = {
         {
           id = 0,
@@ -443,6 +447,18 @@ return {
             {
               tileid = 5,
               duration = 50
+            },
+            {
+              tileid = 6,
+              duration = 50
+            },
+            {
+              tileid = 7,
+              duration = 50
+            },
+            {
+              tileid = 8,
+              duration = 100
             }
           }
         }
@@ -943,8 +959,8 @@ return {
               shape = "rectangle",
               x = 0,
               y = 0,
-              width = 80,
-              height = 10,
+              width = 100,
+              height = 20,
               rotation = 0,
               gid = 391,
               visible = true,
@@ -957,10 +973,10 @@ return {
               shape = "rectangle",
               x = 0,
               y = 0,
-              width = 40,
-              height = 20,
+              width = 48,
+              height = 32,
               rotation = 0,
-              gid = 399,
+              gid = 400,
               visible = true,
               properties = {}
             }
