@@ -9,8 +9,8 @@ return {
   height = 15,
   tilewidth = 16,
   tileheight = 18,
-  nextlayerid = 14,
-  nextobjectid = 70,
+  nextlayerid = 15,
+  nextobjectid = 72,
   properties = {},
   tilesets = {
     {
@@ -321,6 +321,132 @@ return {
       wangsets = {},
       tilecount = 6,
       tiles = {}
+    },
+    {
+      name = "go-arrow-small",
+      firstgid = 391,
+      class = "",
+      tilewidth = 80,
+      tileheight = 10,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/ui/go-arrow-small.png",
+      imagewidth = 80,
+      imageheight = 80,
+      objectalignment = "center",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 80,
+        height = 10
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 8,
+      tiles = {
+        {
+          id = 0,
+          animation = {
+            {
+              tileid = 0,
+              duration = 50
+            },
+            {
+              tileid = 1,
+              duration = 50
+            },
+            {
+              tileid = 2,
+              duration = 50
+            },
+            {
+              tileid = 3,
+              duration = 50
+            },
+            {
+              tileid = 4,
+              duration = 50
+            },
+            {
+              tileid = 5,
+              duration = 50
+            },
+            {
+              tileid = 6,
+              duration = 50
+            },
+            {
+              tileid = 7,
+              duration = 50
+            }
+          }
+        }
+      }
+    },
+    {
+      name = "go-word",
+      firstgid = 399,
+      class = "",
+      tilewidth = 40,
+      tileheight = 20,
+      spacing = 0,
+      margin = 0,
+      columns = 6,
+      image = "sprites/ui/go-word.png",
+      imagewidth = 240,
+      imageheight = 20,
+      objectalignment = "center",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 40,
+        height = 20
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 6,
+      tiles = {
+        {
+          id = 0,
+          animation = {
+            {
+              tileid = 0,
+              duration = 50
+            },
+            {
+              tileid = 1,
+              duration = 50
+            },
+            {
+              tileid = 2,
+              duration = 50
+            },
+            {
+              tileid = 3,
+              duration = 50
+            },
+            {
+              tileid = 4,
+              duration = 50
+            },
+            {
+              tileid = 5,
+              duration = 50
+            }
+          }
+        }
+      }
     }
   },
   layers = {
@@ -793,6 +919,50 @@ return {
               properties = {
                 ["z"] = 0
               }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "index",
+          id = 14,
+          name = "hud_go",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 360,
+          offsety = 135,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 70,
+              name = "arrow",
+              type = "",
+              shape = "rectangle",
+              x = 0,
+              y = 0,
+              width = 80,
+              height = 10,
+              rotation = 0,
+              gid = 391,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 71,
+              name = "word",
+              type = "",
+              shape = "rectangle",
+              x = 0,
+              y = 0,
+              width = 40,
+              height = 20,
+              rotation = 0,
+              gid = 399,
+              visible = true,
+              properties = {}
             }
           }
         },
