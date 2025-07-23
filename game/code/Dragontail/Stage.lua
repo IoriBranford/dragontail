@@ -465,6 +465,32 @@ function Stage.fixedupdateGui(gui)
             weaponhud.visible = false
         end
     end
+
+    local go = gui.gameplay.hud_go
+    local camerapath = Stage.getCurrentCameraPath()
+    if Stage.isInNextRoom() or not camerapath then
+        go.visible = false
+    else
+        local cameracenterx, cameracentery =
+            camera.x+camera.width/2,
+            camera.y+camera.height/2
+        local totargetx, totargety =
+            camerapath:getGoIndicatorOffset(
+                cameracenterx, cameracentery,
+                camera.width/4)
+
+        if totargetx ~= 0 or totargety ~= 0 then
+            totargetx, totargety = math.norm(totargetx, totargety)
+            totargetx = totargetx * camera.width/4
+            totargety = totargety * camera.height/4
+            go.visible = true
+            go.x = totargetx + camera.width/2
+            go.y = totargety + camera.height/2
+            go.arrow.rotation = math.atan2(totargety, totargetx)
+        else
+            go.visible = false
+        end
+    end
 end
 
 function Stage.update(dsecs, fixedfrac)
