@@ -90,6 +90,10 @@ function math.len(x, y, z)
     return sqrt(x*x + y*y + z*z)
 end
 
+function math.lerp(t, a, b)
+    return a + t*(b-a)
+end
+
 function math.norm(x, y, z)
     z = z or 0
     local len = sqrt(x*x + y*y + z*z)
