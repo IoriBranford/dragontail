@@ -5584,7 +5584,13 @@ return {
       parallaxy = 1,
       repeatx = true,
       repeaty = false,
-      properties = {}
+      properties = {
+        ["originy"] = 384,
+        ["rotation"] = 90,
+        ["rotaxisx"] = 1,
+        ["rotaxisy"] = 0,
+        ["rotaxisz"] = 0
+      }
     },
     {
       type = "imagelayer",
@@ -5600,7 +5606,13 @@ return {
       parallaxy = 1,
       repeatx = true,
       repeaty = false,
-      properties = {}
+      properties = {
+        ["originy"] = 224,
+        ["rotation"] = 90,
+        ["rotaxisx"] = 1,
+        ["rotaxisy"] = 0,
+        ["rotaxisz"] = 0
+      }
     },
     {
       type = "imagelayer",
@@ -5616,7 +5628,13 @@ return {
       parallaxy = 1,
       repeatx = true,
       repeaty = false,
-      properties = {}
+      properties = {
+        ["originy"] = 0,
+        ["rotation"] = 90,
+        ["rotaxisx"] = 1,
+        ["rotaxisy"] = 0,
+        ["rotaxisz"] = 0
+      }
     },
     {
       type = "imagelayer",
@@ -5632,7 +5650,13 @@ return {
       parallaxy = 1,
       repeatx = true,
       repeaty = false,
-      properties = {}
+      properties = {
+        ["originy"] = 288,
+        ["rotation"] = 90,
+        ["rotaxisx"] = 1,
+        ["rotaxisy"] = 0,
+        ["rotaxisz"] = 0
+      }
     },
     {
       type = "tilelayer",
@@ -5675,6 +5699,30 @@ return {
         },
         {
           x = 15, y = 9, width = 15, height = 9,
+          data = "eJyFkUsOwjAQQ72auQ9QDkZFD0YpB+tvjV7jSmwSLEWZKOOxnXQpvb3uKT1S6lyPKfWpKnbfv1J6pjRH4a4hrSktDe7wozlYa4brmdQ1oPVx72a/o3Une6mhNwfvWxTvO36jZGdmDUsUDgsd+tkPfkq3BpecaB3ZQrqkdLV35v3zjDbvRG760SYD55YuufiH843h4PmcwR/U8AUBITeq"
+        },
+        {
+          x = -15, y = 18, width = 15, height = 9,
+          data = "eJyNkEkSwjAMBPtk/YftYUB4GAQeRuKcqcbKEQdVqaSDWzNj+F23gFpgiNZzgVPAMWCKDgjUfCPjnXvANWAfsJQ+uwS8C7yisUNy6l42dB8Bh+wxml9v7dLLlm7NfmZ2GbWnP1j19DvnrqY+nF22tL/xv+Td5VYfvfL2yro7vXfO7L36/k3m9IbTHGbV8wf3wS7Z"
+        },
+        {
+          x = 0, y = 18, width = 15, height = 9,
+          data = "eJxNkDlOBFEMBStqS74EwWTTRGzXISBjiABxHQKynonYDjZbjEptiw6+7C/5uZ7fOWAf8BbwnrBLuEx4THiq3rpNeEg4BpwHeIn5XVe9TxgT1vXsp8Wuj5xnfwNuqj4HXC24Y83viretfpXwHfAa//xb+wEuSrept64d/VfrbfsBvsqrulN5nhassXhT7Vkl3NWN6j/L909pOxdnZXVe6s3K2cMwVzP2XrV6bqbz1mb6l6vPQ8BpmO9Wt8zK2d4hV769OctUb2ZmLVu92s6082nfnbM889XrH+/4Sf4="
+        },
+        {
+          x = 15, y = 18, width = 15, height = 9,
+          data = "eJx9kFEOwjAMQ99Xch8QHGwwDobWHmzAvpGXVNpPZqlqk8axk9lhddgcPgaLboeLw8/ir8Lk8HR4q9YjvjnMh1yF1YIrTek1h54+NoOv1dwlta7JkZ76bfl++Dm3ZV0/6PfkKT6bt+V+NNsrOeqpufVXQXXD497DYsfawchXuA9Ni5mHjz1voV1Bu9SRV3kesfjSVs8KfzoDOmQ="
+        },
+        {
+          x = -15, y = 27, width = 15, height = 9,
+          data = "eJyFkUkOAkEIRd8K7tO2HszpYE4Hs4e1eRYu7SIhpBIe/0PB/1gTnpVTwhqwJAwJr9wAgcnegFtxMkvlvcOOMgnnhH2296PqrsPKvKN5HmrOqeb0PI/FzAlXvUbj5mhze+yxePXUvdTtep7t0Zt6zji4Q/lw762QU+t722ha1t+9tkKv/qs+TTmrutYPjRAuYA=="
+        },
+        {
+          x = 0, y = 27, width = 15, height = 9,
+          data = "eJxNkcttAkEQBes0LXUSXiAD/9IBTAY2kA7edQbYJjAwnK3HvhYcRvNR11a/3n3Ae8CxwUNCn9AlDAlL77pPEmYJ54AXM9pPDZ4D5q598xKzSPj0+SvhO8baR7M6bwN2dnVm1cPUa2nvpcEl4Ndu3Yud2DPYWbzeVgl/Ma6ngHO7ZZjf9Ts1P/jc2yvfh3t+1XfayGpWcomtjMXqXXnlkvNg/sd55VV9Zaw5VY6a1dUXsA9Yu2d5VaO5qEftWtWD8m5i5OXWzOTXm9jKqPr7WVVe/U95xP4DH8dBkA=="
+        },
+        {
+          x = 15, y = 27, width = 15, height = 9,
           data = "eJyFkUsOwjAQQ72auQ9QDkZFD0YpB+tvjV7jSmwSLEWZKOOxnXQpvb3uKT1S6lyPKfWpKnbfv1J6pjRH4a4hrSktDe7wozlYa4brmdQ1oPVx72a/o3Une6mhNwfvWxTvO36jZGdmDUsUDgsd+tkPfkq3BpecaB3ZQrqkdLV35v3zjDbvRG760SYD55YuufiH843h4PmcwR/U8AUBITeq"
         }
       }
