@@ -142,6 +142,12 @@ local function processPoly(object)
 end
 
 function TiledObject:_init(map)
+    if map then
+        Properties.resolveObjectRefs(self.properties, map.objects)
+        Properties.resolveAssetPaths(self.properties, map.directory)
+    end
+    Properties.moveUp(self)
+
     if self.visible == nil then
         self.visible = true
     end
@@ -156,7 +162,12 @@ function TiledObject:_init(map)
         tile = maptiles[gid]
     end
     if tile then
-        self:initTile(tile, flipx, flipy)
+        if tile.imagetype == "aseprite" then
+            self.asefile = tile.tileset.imagefile
+            self:initAseprite()
+        else
+            self:initTile(tile, flipx, flipy)
+        end
     else
         local shape = self.shape
         if shape == "rectangle" then
@@ -172,14 +183,8 @@ function TiledObject:_init(map)
     processPoly(self)
     self:initText()
 
-    if map then
-        Properties.resolveObjectRefs(self.properties, map.objects)
-        Properties.resolveAssetPaths(self.properties, map.directory)
-    end
-    Properties.moveUp(self)
-
-    if map then
-        self:initAseprite(map.directory)
+    if self.asefile and not self.aseprite then
+        self:initAseprite(map and map.directory)
     end
 
     return self
@@ -214,7 +219,7 @@ function TiledObject:initTile(tile, flipx, flipy)
 end
 
 ---@param self AsepriteObject|TiledObject
----@param directory string
+---@param directory string?
 function TiledObject:initAseprite(directory)
     local asefile = self.asefile
     if not asefile then
