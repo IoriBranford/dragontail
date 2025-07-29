@@ -69,7 +69,7 @@ local dist = math.dist
 
 function Fighter:init()
     Common.init(self)
-    self.faceangle = self.faceangle or 0
+    Face.init(self)
 end
 
 Fighter.storeMana = Mana.store
