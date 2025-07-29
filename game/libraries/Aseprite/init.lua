@@ -16,21 +16,10 @@ EXPORT SETTINGS
 
 local class = require "Aseprite.class"
 local json   = require "Aseprite.json"
+local AseSlice = require "Aseprite.Slice"
 local AseFrame = require "Aseprite.Frame"
 local Animation= require "Aseprite.Animation"
 local pathlite = require "Aseprite.pathlite"
-
----@class AseSliceKey
----@field frame integer
----@field bounds AseRect
----@field center AseRect?
----@field pivot AsePoint?
-
----@class AseSlice
----@field name string
----@field color Color
----@field data string?
----@field keys {[integer]:AseSliceKey}
 
 ---@class AseLayer
 ---@field name string
@@ -117,6 +106,7 @@ function Aseprite.load(jsonfile, withimagedata)
 	local slices = meta.slices
 	if slices then
 		for _, slice in ipairs(slices) do
+			AseSlice.cast(slice)
 			slices[slice.name] = slice
 			local keys = {}
 			for _, key in ipairs(slice.keys) do
