@@ -22,7 +22,7 @@ function TileBatching.batchTiles(maptiles, data, cellwidth, cellheight, cols, ro
     local batchanimations = {}
     local i = 1
     forCells(function(x, y, tile, sx, sy)
-        if tile then
+        if tile and tile.quad then
             local hw, hh = tile.width / 2, tile.height / 2
             x, y = x + hw + tile.offsetx, y - hh + tile.offsety
             tilebatch:add(tile.quad, x, y, 0, sx, sy, hw, hh)
