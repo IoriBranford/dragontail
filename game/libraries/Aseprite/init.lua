@@ -20,6 +20,18 @@ local AseFrame = require "Aseprite.Frame"
 local Animation= require "Aseprite.Animation"
 local pathlite = require "Aseprite.pathlite"
 
+---@class AseSliceKey
+---@field frame integer
+---@field bounds AseRect
+---@field center AseRect?
+---@field pivot AsePoint?
+
+---@class AseSlice
+---@field name string
+---@field color Color
+---@field data string?
+---@field keys {[integer]:AseSliceKey}
+
 ---@class AseLayer
 ---@field name string
 ---@field opacity number
@@ -33,6 +45,7 @@ local pathlite = require "Aseprite.pathlite"
 ---@field imagefile string
 ---@field layers {[string|integer]: integer|AseLayer}
 ---@field animations {[string]: AseTag} '*' means the aseprite itself, i.e. all frames
+---@field slices {[string]:AseSlice}?
 ---@field [integer] AseFrame|false
 local Aseprite = class(Animation)
 Aseprite.Frame = AseFrame
@@ -101,6 +114,19 @@ function Aseprite.load(jsonfile, withimagedata)
 	local _, cel1 = next(cels)
 	local size = cel1.sourceSize
 
+	local slices = meta.slices
+	if slices then
+		for _, slice in ipairs(slices) do
+			slices[slice.name] = slice
+			local keys = {}
+			for _, key in ipairs(slice.keys) do
+				key.frame = key.frame + 1
+				keys[key.frame] = key
+			end
+			slice.keys = keys
+		end
+	end
+
 	---@type Aseprite
 	local ase = Aseprite.cast({
         image = image,
@@ -109,7 +135,8 @@ function Aseprite.load(jsonfile, withimagedata)
         width = size.w,
         height = size.h,
         layers = layers,
-        animations = animations
+        animations = animations,
+		slices = slices
     })
 
 	if cels[1] then
