@@ -9679,134 +9679,8 @@ return {
       }
     },
     {
-      name = "bandits",
-      firstgid = 5265,
-      class = "",
-      tilewidth = 64,
-      tileheight = 64,
-      spacing = 0,
-      margin = 0,
-      columns = 4,
-      image = "mapobjects/bandit/bandits.png",
-      imagewidth = 256,
-      imageheight = 384,
-      objectalignment = "bottom",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 8
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 64,
-        height = 64
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 24,
-      tiles = {
-        {
-          id = 0,
-          type = "bandit-dagger"
-        },
-        {
-          id = 1,
-          type = "bandit-dagger"
-        },
-        {
-          id = 2,
-          type = "bandit-dagger"
-        },
-        {
-          id = 3,
-          type = "bandit-dagger"
-        },
-        {
-          id = 4,
-          type = "bandit-spear"
-        },
-        {
-          id = 5,
-          type = "bandit-spear"
-        },
-        {
-          id = 6,
-          type = "bandit-spear"
-        },
-        {
-          id = 7,
-          type = "bandit-spear"
-        },
-        {
-          id = 8,
-          type = "bandit-bow"
-        },
-        {
-          id = 9,
-          type = "bandit-bow"
-        },
-        {
-          id = 10,
-          type = "bandit-bow"
-        },
-        {
-          id = 11,
-          type = "bandit-bow"
-        },
-        {
-          id = 12,
-          type = "bandit-sling"
-        },
-        {
-          id = 13,
-          type = "bandit-sling"
-        },
-        {
-          id = 14,
-          type = "bandit-sling"
-        },
-        {
-          id = 15,
-          type = "bandit-sling"
-        },
-        {
-          id = 16,
-          type = "bandit-boss"
-        },
-        {
-          id = 17,
-          type = "bandit-boss"
-        },
-        {
-          id = 18,
-          type = "bandit-boss"
-        },
-        {
-          id = 19,
-          type = "bandit-boss"
-        },
-        {
-          id = 20,
-          type = "bandit-axe"
-        },
-        {
-          id = 21,
-          type = "bandit-axe"
-        },
-        {
-          id = 22,
-          type = "bandit-axe"
-        },
-        {
-          id = 23,
-          type = "bandit-axe"
-        }
-      }
-    },
-    {
       name = "items",
-      firstgid = 5289,
+      firstgid = 5265,
       class = "",
       tilewidth = 64,
       tileheight = 32,
@@ -9852,7 +9726,7 @@ return {
     },
     {
       name = "cavedoor2-diagonal",
-      firstgid = 5293,
+      firstgid = 5269,
       class = "",
       tilewidth = 64,
       tileheight = 128,
@@ -9929,7 +9803,7 @@ return {
     },
     {
       name = "bushes",
-      firstgid = 5297,
+      firstgid = 5273,
       class = "",
       tilewidth = 48,
       tileheight = 32,
@@ -9958,7 +9832,7 @@ return {
     },
     {
       name = "vegA1",
-      firstgid = 5313,
+      firstgid = 5289,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -10123,7 +9997,7 @@ return {
     },
     {
       name = "tree2B_ss",
-      firstgid = 5361,
+      firstgid = 5337,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -10783,7 +10657,7 @@ return {
     },
     {
       name = "tree3D_ss",
-      firstgid = 5617,
+      firstgid = 5593,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -11488,7 +11362,7 @@ return {
     },
     {
       name = "tree2A_ss",
-      firstgid = 5873,
+      firstgid = 5849,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -12148,7 +12022,7 @@ return {
     },
     {
       name = "vegA2",
-      firstgid = 6129,
+      firstgid = 6105,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -12313,7 +12187,7 @@ return {
     },
     {
       name = "vegA3",
-      firstgid = 6177,
+      firstgid = 6153,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -12478,7 +12352,7 @@ return {
     },
     {
       name = "vegA4",
-      firstgid = 6225,
+      firstgid = 6201,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -12643,7 +12517,7 @@ return {
     },
     {
       name = "vegB1",
-      firstgid = 6273,
+      firstgid = 6249,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -12796,7 +12670,7 @@ return {
     },
     {
       name = "vegB2",
-      firstgid = 6321,
+      firstgid = 6297,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -12937,7 +12811,7 @@ return {
     },
     {
       name = "vegB3",
-      firstgid = 6369,
+      firstgid = 6345,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -13126,7 +13000,7 @@ return {
     },
     {
       name = "vegC1",
-      firstgid = 6417,
+      firstgid = 6393,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -13291,7 +13165,7 @@ return {
     },
     {
       name = "vegC2",
-      firstgid = 6465,
+      firstgid = 6441,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -13456,7 +13330,7 @@ return {
     },
     {
       name = "vegC3",
-      firstgid = 6513,
+      firstgid = 6489,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -13621,7 +13495,7 @@ return {
     },
     {
       name = "vegC4",
-      firstgid = 6561,
+      firstgid = 6537,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -13786,7 +13660,7 @@ return {
     },
     {
       name = "barrelA",
-      firstgid = 6609,
+      firstgid = 6585,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -13834,7 +13708,7 @@ return {
     },
     {
       name = "barrelB",
-      firstgid = 6612,
+      firstgid = 6588,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -13879,7 +13753,7 @@ return {
     },
     {
       name = "crates",
-      firstgid = 6615,
+      firstgid = 6591,
       class = "",
       tilewidth = 32,
       tileheight = 48,
@@ -14035,7 +13909,7 @@ return {
     },
     {
       name = "wall-torch",
-      firstgid = 6621,
+      firstgid = 6597,
       class = "",
       tilewidth = 32,
       tileheight = 48,
@@ -14116,7 +13990,7 @@ return {
     },
     {
       name = "tables-hori",
-      firstgid = 6624,
+      firstgid = 6600,
       class = "",
       tilewidth = 96,
       tileheight = 48,
@@ -14267,7 +14141,7 @@ return {
     },
     {
       name = "graffiti-skull-bones",
-      firstgid = 6627,
+      firstgid = 6603,
       class = "",
       tilewidth = 16,
       tileheight = 16,
@@ -14296,7 +14170,7 @@ return {
     },
     {
       name = "Dishes A",
-      firstgid = 6641,
+      firstgid = 6617,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14357,7 +14231,7 @@ return {
     },
     {
       name = "Meats A",
-      firstgid = 6665,
+      firstgid = 6641,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14423,7 +14297,7 @@ return {
     },
     {
       name = "Bread A",
-      firstgid = 6720,
+      firstgid = 6696,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14461,7 +14335,7 @@ return {
     },
     {
       name = "Cheese A",
-      firstgid = 6728,
+      firstgid = 6704,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14539,7 +14413,7 @@ return {
     },
     {
       name = "Forge A",
-      firstgid = 6746,
+      firstgid = 6722,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14673,7 +14547,7 @@ return {
     },
     {
       name = "Workbench, Smith",
-      firstgid = 6874,
+      firstgid = 6850,
       class = "",
       tilewidth = 64,
       tileheight = 64,
@@ -14863,7 +14737,7 @@ return {
     },
     {
       name = "gamepad-buttons",
-      firstgid = 6880,
+      firstgid = 6856,
       class = "",
       tilewidth = 16,
       tileheight = 16,
@@ -14966,7 +14840,7 @@ return {
     },
     {
       name = "keyboard-keys",
-      firstgid = 6980,
+      firstgid = 6956,
       class = "",
       tilewidth = 16,
       tileheight = 16,
@@ -15022,7 +14896,7 @@ return {
     },
     {
       name = "Chair, Dining F",
-      firstgid = 7252,
+      firstgid = 7228,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -15116,7 +14990,7 @@ return {
     },
     {
       name = "flamegaugefull",
-      firstgid = 7268,
+      firstgid = 7244,
       class = "",
       tilewidth = 40,
       tileheight = 20,
@@ -15183,7 +15057,7 @@ return {
     },
     {
       name = "vegetables",
-      firstgid = 7276,
+      firstgid = 7252,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -15235,6 +15109,210 @@ return {
         {
           id = 5,
           type = "food-small"
+        }
+      }
+    },
+    {
+      name = "axe",
+      firstgid = 7259,
+      class = "",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/bandit/axe.ase",
+      imagewidth = 64,
+      imageheight = 64,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 64,
+        height = 64
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {
+        {
+          id = 0,
+          type = "bandit-axe"
+        }
+      }
+    },
+    {
+      name = "boss",
+      firstgid = 7260,
+      class = "",
+      tilewidth = 192,
+      tileheight = 192,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/bandit/boss.ase",
+      imagewidth = 192,
+      imageheight = 192,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 72
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 192,
+        height = 192
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {
+        {
+          id = 0,
+          type = "bandit-boss"
+        }
+      }
+    },
+    {
+      name = "bow",
+      firstgid = 7261,
+      class = "",
+      tilewidth = 128,
+      tileheight = 128,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/bandit/bow.ase",
+      imagewidth = 128,
+      imageheight = 128,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 40
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 128,
+        height = 128
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {
+        {
+          id = 0,
+          type = "bandit-bow"
+        }
+      }
+    },
+    {
+      name = "spear",
+      firstgid = 7262,
+      class = "",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/bandit/spear.ase",
+      imagewidth = 64,
+      imageheight = 64,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 64,
+        height = 64
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {
+        {
+          id = 0,
+          type = "bandit-spear"
+        }
+      }
+    },
+    {
+      name = "sling",
+      firstgid = 7263,
+      class = "",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/bandit/sling.ase",
+      imagewidth = 64,
+      imageheight = 64,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 64,
+        height = 64
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {
+        {
+          id = 0,
+          type = "bandit-sling"
+        }
+      }
+    },
+    {
+      name = "knife",
+      firstgid = 7264,
+      class = "",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/bandit/knife.ase",
+      imagewidth = 64,
+      imageheight = 64,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 64,
+        height = 64
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {
+        {
+          id = 0,
+          type = "bandit-dagger"
         }
       }
     }
@@ -15416,35 +15494,35 @@ return {
       chunks = {
         {
           x = 0, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMNAR7BehnmEAQlAA1A=="
+          data = "eJxjYBgFo2AUMNARLBehnmEAOzAAvA=="
         },
         {
           x = 20, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMAwysE2EOIUAIzwAyw=="
+          data = "eJxjYBgFo2AUMAwyME+EOIUAH3wAsw=="
         },
         {
           x = 100, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMAwysEgKwV6KxEYHADXQAXw="
+          data = "eJxjYBgFo2AUMAwy0CWFYPcisdEBAC9wAUw="
         },
         {
           x = -20, y = 0, width = 20, height = 12,
-          data = "eJxjYBi8YKfIQLtgFIwChkENAIeeAM4="
+          data = "eJxjYBi8YKHIQLtgFIwChkENADw+ALY="
         },
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJw7KMIABoESDAyboexCCQaGA1D2KBgFo4Bh0AIAiFgDYw=="
+          data = "eJxbKcIABpYSDAyzoexICQaGFVD2KBgFo4Bh0AIAzDoC6w=="
         },
         {
           x = 20, y = 0, width = 20, height = 12,
-          data = "eJxjYCAPGIkzMBiLMzCYiDNQDWwUYWBwlGBg+ChBPTNHwShgGMYAAOtuAwY="
+          data = "eJxjYCAPSIkzMEiLMzDIiDNQDcwUYWDQlGBguClBPTNHwShgGMYAAAi/AnY="
         },
         {
           x = 40, y = 0, width = 20, height = 12,
-          data = "eJxjYMAEDyVQ+YVofEE0Pi7wEarOkUj1o2AUjAIGkgAAw5IDDg=="
+          data = "eJxjYMAEJyVQ+ZFo/J/iDESBm1B9mmj6R8EoGAUMVAEApkUDlQ=="
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJxjYEAFH8UZGJTEGBiUxRgYVMQYqAKMxBgYjMUYGEyoZB6tgKHEQLtgFIwCBpIAAOPYAtg="
+          data = "eJxjYEAFN8UZGLjEGBi4xRgYeMQYqAKkxBgYpMUYGGSoZB6tgKTEQLtgFIwCBpIAAFJaAhg="
         },
         {
           x = 80, y = 0, width = 20, height = 12,
@@ -15452,7 +15530,7 @@ return {
         },
         {
           x = 100, y = 0, width = 20, height = 12,
-          data = "eJztzMsJgDAAwNDQMTJKnUmH87OAnwWq7uNVwYoHL0If5JoYIJ6qArdaoRN6YZCsOlxrMr9RmIRZWB5+byVhFTZh/+BXFPzAAXVHDbw="
+          data = "eJztzMsJgDAAwNDQMTJKnUkH8rOAnwWq7uZVwYoHL0If5JoYIJ6qArdaoRN6YZCsOlxrMr9RmIRZWB5+byVhFTZh/+BXFPzAAcrLDJw="
         },
         {
           x = 140, y = 0, width = 20, height = 12,
@@ -15485,7 +15563,7 @@ return {
       chunks = {
         {
           x = 100, y = 0, width = 20, height = 12,
-          data = "eJxjYCAOdEkxMHRLMTD0SDEw9EoRqWkUjIJRwEBLAAA/VwKX"
+          data = "eJxjYCAOFEkxMBRLMTCUSDEwlEoRqWkUjIJRwEBLAADoeQI3"
         }
       }
     },
@@ -15551,7 +15629,7 @@ return {
       chunks = {
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJxjYBhZ4LMIA8MXEeqZxyzKwMAiSj3zhEUZGESoaJ4yFc0CAWNRBgYTKps5ChjIBgA+oQNb"
+          data = "eJxjYBhZ4LYIA8MdEeqZ91qEgeENFc37LcLA8IeK5nGLMlAVSIsyMMhQ2cxRwEA2AACvNgZ/"
         }
       }
     },
@@ -15578,7 +15656,7 @@ return {
       chunks = {
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJxjYBgFgwl8FmVg+CJKPfOYxRgYWMSoZ56wGAODCBXNUxZjYFChonkMIwwAAPOBAws="
+          data = "eJxjYBgFgwncFmVguCNKPfNeizIwvKGieb9FGRj+UNE8bjEGBh4x6pnHMMIAAHyHBkc="
         }
       }
     },
@@ -15605,7 +15683,7 @@ return {
       chunks = {
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJztzkkNwDAMAMHpQcE2f4g5AJRCpfYVZQCslm17ryU9GcnM772jOIuruIsW9GAEM/44trQHp30Ipw=="
+          data = "eJztzlsNgDAUBcExcY9/W30YKCACCyTwRToCNsu2PddCDyPMvO+tcIQzXKEVvRjFrC+O/doNEZULgw=="
         }
       }
     },
@@ -15720,7 +15798,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6884,
+              gid = 6860,
               visible = true,
               properties = {}
             },
@@ -15734,7 +15812,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6914,
+              gid = 6890,
               visible = true,
               properties = {}
             },
@@ -15801,7 +15879,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -15815,7 +15893,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -15829,7 +15907,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -15843,7 +15921,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -15857,7 +15935,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6900,
+              gid = 6876,
               visible = true,
               properties = {}
             },
@@ -15906,7 +15984,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -15920,7 +15998,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -15934,7 +16012,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -15948,7 +16026,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -15962,7 +16040,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -15976,7 +16054,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -15990,7 +16068,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6884,
+              gid = 6860,
               visible = true,
               properties = {}
             },
@@ -16038,7 +16116,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6900,
+              gid = 6876,
               visible = true,
               properties = {}
             }
@@ -16088,7 +16166,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -16102,7 +16180,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -16116,7 +16194,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -16157,7 +16235,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6900,
+              gid = 6876,
               visible = true,
               properties = {}
             },
@@ -16273,7 +16351,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -16287,7 +16365,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -16301,7 +16379,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -16332,7 +16410,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6889,
+              gid = 6865,
               visible = false,
               properties = {}
             },
@@ -16392,7 +16470,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -16408,7 +16486,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -16459,7 +16537,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7262,
               visible = true,
               properties = {}
             },
@@ -16473,7 +16551,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7262,
               visible = true,
               properties = {}
             },
@@ -16506,7 +16584,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6951,
+              gid = 6927,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -16522,7 +16600,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6971,
+              gid = 6947,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -16538,7 +16616,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7187,
+              gid = 7163,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -16659,7 +16737,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7263,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -16681,7 +16759,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7263,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -16780,7 +16858,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6884,
+              gid = 6860,
               visible = true,
               properties = {}
             },
@@ -16794,7 +16872,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6900,
+              gid = 6876,
               visible = true,
               properties = {}
             },
@@ -16825,7 +16903,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6960,
+              gid = 6936,
               visible = false,
               properties = {}
             },
@@ -16839,7 +16917,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7061,
+              gid = 7037,
               visible = false,
               properties = {}
             },
@@ -16853,7 +16931,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7062,
+              gid = 7038,
               visible = false,
               properties = {}
             },
@@ -16867,7 +16945,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7063,
+              gid = 7039,
               visible = false,
               properties = {}
             },
@@ -16881,7 +16959,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7064,
+              gid = 7040,
               visible = false,
               properties = {}
             },
@@ -16895,7 +16973,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7186,
+              gid = 7162,
               visible = false,
               properties = {}
             },
@@ -16909,7 +16987,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6914,
+              gid = 6890,
               visible = true,
               properties = {}
             },
@@ -16958,7 +17036,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6900,
+              gid = 6876,
               visible = true,
               properties = {}
             }
@@ -16990,7 +17068,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -17004,7 +17082,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -17018,7 +17096,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -17032,7 +17110,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             }
@@ -17064,7 +17142,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7263,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -17134,7 +17212,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7262,
               visible = true,
               properties = {}
             }
@@ -17167,7 +17245,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7263,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -17192,7 +17270,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7263,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -17293,7 +17371,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7262,
               visible = true,
               properties = {}
             },
@@ -17307,7 +17385,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7262,
               visible = true,
               properties = {}
             }
@@ -17386,7 +17464,7 @@ return {
               width = 64,
               height = 128,
               rotation = 0,
-              gid = 5296,
+              gid = 5272,
               visible = true,
               properties = {
                 ["drawz"] = -0.25,
@@ -17403,7 +17481,7 @@ return {
               width = 64,
               height = 128,
               rotation = 0,
-              gid = 5294,
+              gid = 5270,
               visible = true,
               properties = {}
             },
@@ -17417,7 +17495,7 @@ return {
               width = 64,
               height = 128,
               rotation = 0,
-              gid = 5293,
+              gid = 5269,
               visible = true,
               properties = {
                 ["shadowcolor"] = "#00000000"
@@ -17433,7 +17511,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6611,
+              gid = 6587,
               visible = true,
               properties = {
                 ["itemtype"] = "food-fish"
@@ -17449,7 +17527,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6611,
+              gid = 6587,
               visible = true,
               properties = {
                 ["itemtype"] = "food-fish"
@@ -17465,7 +17543,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6614,
+              gid = 6590,
               visible = true,
               properties = {
                 ["itemtype"] = "mana-peppers"
@@ -17481,7 +17559,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6614,
+              gid = 6590,
               visible = true,
               properties = {
                 ["itemtype"] = "mana-peppers"
@@ -17514,7 +17592,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6884,
+              gid = 6860,
               visible = true,
               properties = {}
             }
@@ -17543,10 +17621,10 @@ return {
               shape = "rectangle",
               x = 2080,
               y = 0,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7261,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -17595,10 +17673,10 @@ return {
               shape = "rectangle",
               x = 2192,
               y = 72,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7261,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -17650,7 +17728,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7262,
               visible = true,
               properties = {}
             },
@@ -17664,7 +17742,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7262,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -17680,7 +17758,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7262,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -17713,7 +17791,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6889,
+              gid = 6865,
               visible = false,
               properties = {}
             },
@@ -17727,7 +17805,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6940,
+              gid = 6916,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -17762,7 +17840,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6960,
+              gid = 6936,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -17778,7 +17856,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7186,
+              gid = 7162,
               visible = false,
               properties = {}
             },
@@ -17792,7 +17870,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7061,
+              gid = 7037,
               visible = false,
               properties = {}
             },
@@ -17806,7 +17884,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7062,
+              gid = 7038,
               visible = false,
               properties = {}
             },
@@ -17820,7 +17898,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7063,
+              gid = 7039,
               visible = false,
               properties = {}
             },
@@ -17834,7 +17912,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7064,
+              gid = 7040,
               visible = false,
               properties = {}
             },
@@ -17848,7 +17926,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6885,
+              gid = 6861,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -18134,10 +18212,10 @@ return {
               shape = "rectangle",
               x = 2592,
               y = 32,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7261,
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 273 },
@@ -18155,7 +18233,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6621,
+              gid = 6597,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -18171,7 +18249,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6621,
+              gid = 6597,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -18197,10 +18275,10 @@ return {
               shape = "rectangle",
               x = 2720,
               y = 32,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7261,
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 275 },
@@ -18228,10 +18306,10 @@ return {
               shape = "rectangle",
               x = 2656,
               y = 256,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7261,
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 281 },
@@ -18246,10 +18324,10 @@ return {
               shape = "rectangle",
               x = 2784,
               y = 264,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7261,
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 283 },
@@ -18290,10 +18368,10 @@ return {
               shape = "rectangle",
               x = 2848,
               y = 32,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7261,
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 287 },
@@ -18324,7 +18402,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6617,
+              gid = 6593,
               visible = true,
               properties = {
                 ["itemtype"] = "food-fish"
@@ -18340,7 +18418,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6617,
+              gid = 6593,
               visible = true,
               properties = {
                 ["itemtype"] = "item-throwing-axe"
@@ -18356,7 +18434,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6617,
+              gid = 6593,
               visible = true,
               properties = {
                 ["itemtype"] = "mana-peppers"
@@ -18372,7 +18450,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6617,
+              gid = 6593,
               visible = true,
               properties = {
                 ["itemtype"] = "food-fish"
@@ -18388,7 +18466,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6617,
+              gid = 6593,
               visible = true,
               properties = {
                 ["itemtype"] = "mana-peppers"
@@ -18404,7 +18482,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6617,
+              gid = 6593,
               visible = true,
               properties = {
                 ["itemtype"] = "food-fish"
@@ -18420,7 +18498,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6617,
+              gid = 6593,
               visible = true,
               properties = {
                 ["itemtype"] = "food-fish"
@@ -18436,7 +18514,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6617,
+              gid = 6593,
               visible = true,
               properties = {
                 ["itemtype"] = "item-throwing-axe"
@@ -18452,7 +18530,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6621,
+              gid = 6597,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -18468,7 +18546,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6640,
+              gid = 6616,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -18486,7 +18564,7 @@ return {
               width = 16,
               height = 16,
               rotation = 345,
-              gid = 6633,
+              gid = 6609,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -18504,7 +18582,7 @@ return {
               width = 16,
               height = 16,
               rotation = 15,
-              gid = 6638,
+              gid = 6614,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -18522,7 +18600,7 @@ return {
               width = 16,
               height = 16,
               rotation = 15,
-              gid = 6632,
+              gid = 6608,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -18540,7 +18618,7 @@ return {
               width = 16,
               height = 16,
               rotation = 45,
-              gid = 6637,
+              gid = 6613,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -18558,7 +18636,7 @@ return {
               width = 16,
               height = 16,
               rotation = 45,
-              gid = 6631,
+              gid = 6607,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -18595,7 +18673,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6910,
+              gid = 6886,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -18611,7 +18689,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6930,
+              gid = 6906,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -18627,7 +18705,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7187,
+              gid = 7163,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -18643,7 +18721,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6885,
+              gid = 6861,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -18675,10 +18753,10 @@ return {
               shape = "rectangle",
               x = 3264,
               y = -48,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7261,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -18700,10 +18778,10 @@ return {
               shape = "rectangle",
               x = 3264,
               y = -16,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7261,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -18788,7 +18866,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -18802,7 +18880,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             }
@@ -18832,7 +18910,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7262,
               visible = true,
               properties = {}
             },
@@ -18846,7 +18924,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7262,
               visible = true,
               properties = {}
             }
@@ -18975,7 +19053,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 6875,
+              gid = 6851,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Solid",
@@ -18992,7 +19070,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 6879,
+              gid = 6855,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Solid",
@@ -19009,7 +19087,7 @@ return {
               width = 64,
               height = 32,
               rotation = 330,
-              gid = 5291,
+              gid = 5267,
               visible = true,
               properties = {}
             },
@@ -19023,7 +19101,7 @@ return {
               width = 64,
               height = 32,
               rotation = 270,
-              gid = 5291,
+              gid = 5267,
               visible = true,
               properties = {}
             },
@@ -19037,7 +19115,7 @@ return {
               width = 64,
               height = 32,
               rotation = 225,
-              gid = 5291,
+              gid = 5267,
               visible = true,
               properties = {}
             }
@@ -19087,7 +19165,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7262,
               visible = true,
               properties = {}
             },
@@ -19101,7 +19179,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7262,
               visible = true,
               properties = {}
             },
@@ -19115,7 +19193,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7262,
               visible = true,
               properties = {}
             },
@@ -19129,7 +19207,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7262,
               visible = true,
               properties = {}
             }
@@ -19161,7 +19239,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5286,
+              gid = 7259,
               visible = true,
               properties = {}
             },
@@ -19175,7 +19253,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5286,
+              gid = 7259,
               visible = true,
               properties = {}
             }
@@ -19222,7 +19300,7 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
-              gid = 6626,
+              gid = 6602,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Solid",
@@ -19239,7 +19317,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7255,
+              gid = 7231,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Solid",
@@ -19256,7 +19334,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7263,
+              gid = 7239,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Solid",
@@ -19273,7 +19351,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6617,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19289,7 +19367,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6617,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19305,7 +19383,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6725,
+              gid = 6701,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19321,7 +19399,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7276,
+              gid = 7252,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19399,7 +19477,7 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
-              gid = 6624,
+              gid = 6600,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Solid",
@@ -19416,7 +19494,7 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
-              gid = 6626,
+              gid = 6602,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Solid",
@@ -19433,7 +19511,7 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
-              gid = 6625,
+              gid = 6601,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Solid",
@@ -19450,7 +19528,7 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
-              gid = 6624,
+              gid = 6600,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Solid",
@@ -19467,7 +19545,7 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
-              gid = 6625,
+              gid = 6601,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Solid",
@@ -19484,7 +19562,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7252,
+              gid = 7228,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Solid",
@@ -19501,7 +19579,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7256,
+              gid = 7232,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Solid",
@@ -19518,7 +19596,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7263,
+              gid = 7239,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Solid",
@@ -19535,7 +19613,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7259,
+              gid = 7235,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Solid",
@@ -19552,7 +19630,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7255,
+              gid = 7231,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Solid",
@@ -19569,7 +19647,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7259,
+              gid = 7235,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Solid",
@@ -19586,7 +19664,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7260,
+              gid = 7236,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Solid",
@@ -19603,7 +19681,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7252,
+              gid = 7228,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Solid",
@@ -19620,7 +19698,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7256,
+              gid = 7232,
               visible = true,
               properties = {}
             },
@@ -19634,7 +19712,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7260,
+              gid = 7236,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Solid",
@@ -19651,7 +19729,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7263,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -19670,7 +19748,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7263,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -19686,10 +19764,10 @@ return {
               shape = "rectangle",
               x = 4256,
               y = 72,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7261,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -19708,7 +19786,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6617,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19724,7 +19802,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6617,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19740,7 +19818,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6617,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19756,7 +19834,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6617,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19772,7 +19850,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6732,
+              gid = 6708,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19788,7 +19866,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6725,
+              gid = 6701,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19804,7 +19882,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6674,
+              gid = 6650,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19820,7 +19898,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6617,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19836,7 +19914,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6617,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19852,7 +19930,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6617,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19868,7 +19946,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6617,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19884,7 +19962,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6617,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19900,7 +19978,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6617,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19916,7 +19994,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6673,
+              gid = 6649,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19932,7 +20010,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7276,
+              gid = 7252,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19948,7 +20026,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6674,
+              gid = 6650,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19964,7 +20042,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6725,
+              gid = 6701,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19980,7 +20058,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7276,
+              gid = 7252,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19996,7 +20074,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6729,
+              gid = 6705,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -20012,7 +20090,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6733,
+              gid = 6709,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -20046,7 +20124,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -20060,7 +20138,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -20074,7 +20152,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             },
@@ -20088,7 +20166,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7264,
               visible = true,
               properties = {}
             }
@@ -20120,7 +20198,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7263,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -20153,7 +20231,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7262,
               visible = true,
               properties = {}
             }
@@ -20185,7 +20263,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7263,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -20218,7 +20296,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7262,
               visible = true,
               properties = {}
             }
@@ -20247,10 +20325,10 @@ return {
               shape = "rectangle",
               x = 3928,
               y = 328,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7261,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -20283,7 +20361,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7262,
               visible = true,
               properties = {}
             },
@@ -20297,7 +20375,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7262,
               visible = true,
               properties = {}
             }
@@ -20471,10 +20549,10 @@ return {
               shape = "rectangle",
               x = 5296,
               y = 168,
-              width = 64,
-              height = 64,
+              width = 192,
+              height = 192,
               rotation = 0,
-              gid = 5283,
+              gid = 7260,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -20507,7 +20585,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7263,
               visible = true,
               properties = {
                 ["ammo"] = 20,
@@ -20532,7 +20610,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7263,
               visible = true,
               properties = {
                 ["ammo"] = 20,
@@ -20626,10 +20704,10 @@ return {
               shape = "rectangle",
               x = 4992,
               y = -40,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7261,
               visible = true,
               properties = {
                 ["ammo"] = 20,
@@ -20654,7 +20732,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7263,
               visible = true,
               properties = {
                 ["ammo"] = 20,
@@ -20676,10 +20754,10 @@ return {
               shape = "rectangle",
               x = 5184,
               y = -8,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7261,
               visible = true,
               properties = {
                 ["ammo"] = 20,
