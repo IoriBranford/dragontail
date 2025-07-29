@@ -1,8 +1,2 @@
 character,asefile,spriteoriginx,spriteoriginy,emoteasepritefile,emoteoriginx,emoteoriginy,faceasepritefile,shadowcolor,weaponposasefile
 Rose,data/sprites/rose-new.jase,40,56,data/sprites/emotes.jase,12,64,data/sprites/rose-face.jase,4278190080,data/sprites/rose-new-weaponpos.jase
-Rose-fireball,data/sprites/rose-fireball.jase,32,40,,,,,4278190080,
-Rose-fat-fireball,,40,52,,,,,4278190080,
-thrown-axe,data/sprites/weapons/throwing-axe.jase,24,24,,,,,4278190080,
-bandit-arrow,data/sprites/bandit/arrow.jase,16,16,,,,,4278190080,
-thrown-stone,data/sprites/weapons/stone.jase,8,8,,,,,4278190080,
-projectile-dish,data/sprites/weapons/Dishes A.jase,16,16,,,,,4278190080,
