@@ -20477,6 +20477,7 @@ return {
               gid = 5283,
               visible = true,
               properties = {
+                ["facedegrees"] = 180,
                 ["initialai"] = "bandit-boss-first-charge"
               }
             }

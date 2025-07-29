@@ -1433,6 +1433,7 @@ to sprint past archers</text>
    </properties>
    <object id="231" gid="5283" x="5296" y="168" width="64" height="64">
     <properties>
+     <property name="facedegrees" type="float" value="180"/>
      <property name="initialai" value="bandit-boss-first-charge"/>
     </properties>
    </object>
