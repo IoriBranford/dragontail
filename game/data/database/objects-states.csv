@@ -13,7 +13,7 @@ getup,,getup,FallRiseToFeet,0,FALSE,FALSE,FALSE,,,
 spark,,spark,,,,,,,,
 afterimage,,afterimage,,,,,,,,
 blinkOut,,blinkOut,,,,,,,,
-containerBreak,,containerBreak,,,FALSE,FALSE,,0,,data/sounds/combat/containerbreak.mp3
+containerBreak,,containerBreak,,,FALSE,FALSE,,0,,
 itemDrop,,itemDrop,,,,,,,,
 itemWaitForPickup,,itemWaitForPickup,,,,,,,,
 disappear,,disappear,,,,,,,,
