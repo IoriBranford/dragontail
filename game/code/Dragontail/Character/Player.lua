@@ -262,11 +262,6 @@ function Player:init()
             slotgroup[#slotgroup+1] = slot
         end
     end
-
-    self.crosshair = Characters.spawn({
-        type = "rose-crosshair",
-        visible = false
-    })
 end
 
 -- function Player:addToScene(scene)
@@ -730,7 +725,9 @@ function Player:duringGetUp()
 end
 
 function Player:hurt(attacker)
-    self.crosshair.visible = false
+    if self.crosshair then
+        self.crosshair.visible = false
+    end
     local nextstate, a, b, c, d, e = Fighter.hurt(self, attacker)
     if nextstate == "control" then
         if self.sprintbutton.down then
@@ -754,6 +751,10 @@ function Player:fall(attacker)
 end
 
 function Player:aimThrow()
+    self.crosshair = self.crosshair or Characters.spawn({
+        type = "rose-crosshair",
+        visible = false
+    })
     self.facedestangle = self.faceangle
     local lockonenemy
     while true do
