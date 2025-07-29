@@ -162,12 +162,7 @@ function TiledObject:_init(map)
         tile = maptiles[gid]
     end
     if tile then
-        if tile.imagetype == "aseprite" then
-            self.asefile = tile.tileset.imagefile
-            self:initAseprite()
-        else
-            self:initTile(tile, flipx, flipy)
-        end
+        self:initTile(tile, flipx, flipy)
     else
         local shape = self.shape
         if shape == "rectangle" then
@@ -208,6 +203,7 @@ function TiledObject:initTile(tile, flipx, flipy)
         end
         if tile.imagetype == "aseprite" then
             self.asefile = tile.tileset.imagefile
+            self:initAseprite()
             self.originx = self.originx or tile.objectoriginx
             self.originy = self.originy or tile.objectoriginy
             return
