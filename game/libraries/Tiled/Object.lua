@@ -204,8 +204,6 @@ function TiledObject:initTile(tile, flipx, flipy)
         if tile.imagetype == "aseprite" then
             self.asefile = tile.tileset.imagefile
             self:initAseprite()
-            self.originx = self.originx or tile.objectoriginx
-            self.originy = self.originy or tile.objectoriginy
             return
         end
     end
@@ -658,11 +656,42 @@ function TiledObject:drawParticleSystem()
     love.graphics.draw(self.particlesystem)
 end
 
+function TiledObject:getOrigin()
+    local originx, originy = self.originx, self.originy
+    if originx and originy then return originx, originy end
+
+    if self.aseprite then
+        ---@cast self AsepriteObject
+        local animation = self.aseanimation
+
+        if animation then
+            local aframe = self.animationframe or 1
+            local frame = animation[aframe]
+            if frame then
+                originx, originy = frame:getSliceOrigin("origin")
+                if originx and originy then return originx, originy end
+            end
+
+            originx, originy = animation[1]:getSliceOrigin("origin")
+            if originx and originy then return originx, originy end
+        end
+
+        originx, originy = self.aseprite[1]:getSliceOrigin("origin")
+        if originx and originy then return originx, originy end
+    end
+
+    if self.tile then
+        return self.tile.objectoriginx, self.tile.objectoriginy
+    end
+
+    return 0, 0
+end
+
 ---@param self AsepriteObject
 function TiledObject:drawAseprite(fixedfrac)
     local animation = self.aseanimation or self.aseprite
     local aframe = self.animationframe or 1
-    local frame = animation[aframe]
+    local frame = animation and animation[aframe]
     if not frame then
         return
     end
@@ -678,7 +707,10 @@ function TiledObject:drawAseprite(fixedfrac)
     love.graphics.rotate(self.rotation or 0)
     love.graphics.shear(self.skewx or 0, self.skewy or 0)
     love.graphics.scale(self.scalex or 1, self.scaley or 1)
-    love.graphics.translate(-(self.originx or 0), -(self.originy or 0))
+
+    local originx, originy = self:getOrigin()
+    love.graphics.translate(-originx, -originy)
+
     frame:draw()
     love.graphics.pop()
 end
