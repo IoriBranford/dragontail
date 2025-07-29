@@ -21,13 +21,23 @@ local love_graphics_draw = love.graphics.draw
 ---@field spriteSourceSize AseRect
 ---@field sourceSize AseSize
 ---@field duration number
+---@field slices {[string]:AseSlice}?
 ---@field [integer] AseCel|false
 local AseFrame = class()
 
-function AseFrame:_init(i, image, duration)
+function AseFrame:_init(i, image, duration, aseslices)
     self.index = i
     self.image = image
     self.duration = duration or 0
+    if aseslices then
+        local slices = {}
+        self.slices = slices
+        for _, slice in ipairs(aseslices) do
+            if slice.keys[i] then
+                slices[slice.name] = slice
+            end
+        end
+    end
 end
 
 function AseFrame:putCel(i, cel)
@@ -52,6 +62,13 @@ local drawCels = AseFrame.drawCels
 
 function AseFrame:draw(x, y)
     drawCels(self, 1, #self, x, y)
+end
+
+function AseFrame:getSliceOrigin(name)
+    local slice = self.slices and self.slices[name]
+    if slice then
+        return slice:getFrameOrigin(self.index)
+    end
 end
 
 return AseFrame
