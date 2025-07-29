@@ -574,7 +574,8 @@ function Player:control()
                         {
                             type = "spark-bighit",
                             x = self.x + oobx*self.bodyradius,
-                            y = self.y + ooby*self.bodyradius
+                            y = self.y + ooby*self.bodyradius,
+                            z = self.z + self.bodyheight/2
                         }
                     )
                     self.hurtstun = 10

@@ -362,7 +362,8 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
         {
             type = "spark-bighit",
             x = self.x + oobx*bodyradius,
-            y = self.y + ooby*bodyradius
+            y = self.y + ooby*bodyradius,
+            z = self.z + self.bodyheight/2
         }
     )
     self.health = self.health - (self.wallslamdamage or 25)
