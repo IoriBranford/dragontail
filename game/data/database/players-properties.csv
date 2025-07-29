@@ -1,0 +1,2 @@
+character,name,team,health,bodyradius,bodyheight,bodyinlayers,bodyhitslayers,speed,gravity,projectilelaunchheight,aiafterthrown,asetag,animationdirections,script,statetable,attacktable,aiafterhurt,wallslamdamage,thrownrecoveranimation,fallanimationtime,getuptime,defeatai,recoverai,pickupradius
+Rose,Rose,player,100,12,32,Player,Solid Camera,4,0.5,16,fall,Stand0,8,Dragontail.Character.Player,data/database/players-states.csv,data/database/players-attacks.csv,control,10,FallRiseToFeet,20,18,defeat,control,20
