@@ -35,7 +35,7 @@
  "meta": {
   "app": "https://www.aseprite.org/",
   "version": "1.2.33-x64",
-  "image": "rose-face.png",
+  "image": "face.png",
   "format": "RGBA8888",
   "size": { "w": 68, "h": 68 },
   "scale": "1",

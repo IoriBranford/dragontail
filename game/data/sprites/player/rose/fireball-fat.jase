@@ -1163,7 +1163,7 @@
  "meta": {
   "app": "http://www.aseprite.org/",
   "version": "1.3.14.4-x64",
-  "image": "rose-fireball-fat.png",
+  "image": "fireball-fat.png",
   "format": "RGBA8888",
   "size": { "w": 863, "h": 780 },
   "scale": "1",

@@ -9,5 +9,5 @@ particle-blood,data/sprites/vfx.jase,Dragontail.Character.Common,shrinkOut,data/
 particle-hit-sweat,data/sprites/vfx.jase,Dragontail.Character.Common,shrinkOut,data/database/objects-states.csv,liquid,,6,,4,1.0471975511966,,,,,
 particle,data/sprites/vfx.jase,Dragontail.Character.Common,shrinkOut,data/database/objects-states.csv,liquid,,30,,,,0.125,,,,
 spark-land-on-feet-dust,data/sprites/vfx/dust-land-on-feet.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,*,0,21,,,,,,,,
-spark-fireball-shatter,data/sprites/rose-fireball.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,Shatter,0,15,,,,,,,,
-spark-spit-fireball,data/sprites/rose-firespit.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,Spit,0,18,,1,,,,,,12
+spark-fireball-shatter,data/sprites/player/rose/fireball.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,Shatter,0,15,,,,,,,,
+spark-spit-fireball,data/sprites/player/rose/firespit.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,Spit,0,18,,1,,,,,,12
