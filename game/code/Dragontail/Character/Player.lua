@@ -282,7 +282,7 @@ end
 function Player:drawAseprite(fixedfrac)
     local animation = self.aseanimation or self.aseprite
     local aframe = self.animationframe or 1
-    local frame = animation[aframe]
+    local frame = animation and animation[aframe]
     if not frame then
         return
     end
@@ -299,7 +299,10 @@ function Player:drawAseprite(fixedfrac)
     love.graphics.rotate(self.rotation or 0)
     love.graphics.shear(self.skewx or 0, self.skewy or 0)
     love.graphics.scale(self.scalex or 1, self.scaley or 1)
-    love.graphics.translate(-self.originx or 0, -self.originy or 0)
+
+    local originx, originy = self:getOrigin()
+    love.graphics.translate(-originx, -originy)
+
     frame:draw()
     WeaponInHand.draw(self, frame, 0, 0)
     love.graphics.pop()
