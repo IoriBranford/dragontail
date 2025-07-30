@@ -42,11 +42,11 @@ function Shadow:drawSprite(fixedfrac)
         self.aseprite and self.aseprite[self.animationframe or 1]
     local tile = self.tile
 
+    local originx, originy = self:getOrigin()
+    love.graphics.translate(-originx, -originy)
     if aseframe then
-        love.graphics.translate(-(self.spriteoriginx or 0), -(self.spriteoriginy or 0))
         aseframe:draw()
     elseif tile then
-        love.graphics.translate(-(tile.objectoriginx or 0), -(tile.objectoriginy or 0))
         love.graphics.draw(tile.image, self.animationquad or tile.quad)
     end
     love.graphics.pop()
