@@ -1120,7 +1120,9 @@ return {
               rotation = 0,
               gid = 389,
               visible = true,
-              properties = {}
+              properties = {
+                ["animationspeed"] = 0
+              }
             },
             {
               id = 56,
@@ -1134,7 +1136,9 @@ return {
               rotation = 0,
               gid = 389,
               visible = true,
-              properties = {}
+              properties = {
+                ["animationspeed"] = 0
+              }
             },
             {
               id = 55,
@@ -1148,7 +1152,9 @@ return {
               rotation = 0,
               gid = 389,
               visible = true,
-              properties = {}
+              properties = {
+                ["animationspeed"] = 0
+              }
             },
             {
               id = 51,
@@ -1162,7 +1168,9 @@ return {
               rotation = 0,
               gid = 389,
               visible = true,
-              properties = {}
+              properties = {
+                ["animationspeed"] = 0
+              }
             },
             {
               id = 52,
@@ -1176,7 +1184,9 @@ return {
               rotation = 0,
               gid = 389,
               visible = true,
-              properties = {}
+              properties = {
+                ["animationspeed"] = 0
+              }
             },
             {
               id = 53,
@@ -1190,7 +1200,9 @@ return {
               rotation = 0,
               gid = 389,
               visible = true,
-              properties = {}
+              properties = {
+                ["animationspeed"] = 0
+              }
             },
             {
               id = 47,
@@ -1204,7 +1216,9 @@ return {
               rotation = 0,
               gid = 389,
               visible = true,
-              properties = {}
+              properties = {
+                ["animationspeed"] = 0
+              }
             },
             {
               id = 48,
@@ -1218,7 +1232,9 @@ return {
               rotation = 0,
               gid = 389,
               visible = true,
-              properties = {}
+              properties = {
+                ["animationspeed"] = 0
+              }
             },
             {
               id = 49,
@@ -1232,7 +1248,9 @@ return {
               rotation = 0,
               gid = 389,
               visible = true,
-              properties = {}
+              properties = {
+                ["animationspeed"] = 0
+              }
             },
             {
               id = 50,
@@ -1246,7 +1264,9 @@ return {
               rotation = 0,
               gid = 389,
               visible = true,
-              properties = {}
+              properties = {
+                ["animationspeed"] = 0
+              }
             }
           }
         },
