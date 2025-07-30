@@ -57,7 +57,14 @@ function AseTag:getUpdate(i, t, loopi)
     local duration = self[i].duration
     while t >= duration do
         t = t - duration
-        i = (i >= #self) and loopi or (i + 1)
+        if (i >= #self) then
+            if i == loopi then
+                break
+            end
+            i = loopi
+        else
+            i = i + 1
+        end
         duration = self[i].duration
     end
     return i, t
