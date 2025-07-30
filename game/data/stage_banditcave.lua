@@ -14131,7 +14131,7 @@ return {
       spacing = 0,
       margin = 0,
       columns = 8,
-      image = "sprites/banditcave/Dishes A.png",
+      image = "sprites/weapons/Dishes A.png",
       imagewidth = 256,
       imageheight = 96,
       objectalignment = "center",
