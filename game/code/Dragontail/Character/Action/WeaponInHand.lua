@@ -118,7 +118,11 @@ function WeaponInHand:draw(frame, x, y)
         love.graphics.translate(x + weaponx, y + weapony)
         love.graphics.rotate(weaponr)
         love.graphics.scale(1, weaponsy)
-        love.graphics.translate(-weapontype.spriteoriginx, -weapontype.spriteoriginy)
+        local originx, originy = weaponframe:getSliceOrigin("origin")
+        if not originx or not originy then
+            originx, originy = weaponase[1]:getSliceOrigin("origin")
+        end
+        love.graphics.translate(-(originx or 0), -(originy or 0))
         weaponframe:draw()
         love.graphics.pop()
     else
