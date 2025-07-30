@@ -2,6 +2,7 @@ local Database = require "Data.Database"
 local Audio    = require "System.Audio"
 local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 local Body                 = require "Dragontail.Character.Body"
+local Assets               = require "Tiled.Assets"
 
 local co_create = coroutine.create
 local co_resume = coroutine.resume
@@ -11,6 +12,7 @@ local co_status = coroutine.status
 ---@field action string?
 ---@field attack string?
 ---@field nextstate string?
+---@field asefile string?
 ---@field animation string?
 ---@field frame1 integer?
 ---@field loopframe integer?
@@ -73,6 +75,15 @@ function StateMachine.start(self, statename, ...)
 
         local animationname = state.animation
         local frame = state.frame1
+
+        local newaseprite = state.asefile and Assets.get(state.asefile)
+        if newaseprite then
+            ---@cast newaseprite Aseprite
+            if newaseprite ~= self.aseprite then
+                self.aseprite = newaseprite
+            end
+        end
+
         if animationname or frame then
             local aseprite = self.aseprite
             local tile = self.tile
@@ -91,6 +102,8 @@ function StateMachine.start(self, statename, ...)
 
                 self:setAnimation(animationname, frame, state.loopframe)
             end
+        elseif newaseprite then
+            self:setAnimation(newaseprite, frame, state.loopframe)
         end
         -- DirectionalAnimation.set(self, animationname, angle, frame, state.loop)
 
