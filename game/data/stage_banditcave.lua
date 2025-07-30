@@ -13694,7 +13694,7 @@ return {
           id = 1,
           type = "container-barrel",
           properties = {
-            ["name"] = "collapse"
+            ["name"] = "Fall"
           }
         },
         {
@@ -13742,7 +13742,7 @@ return {
           id = 1,
           type = "container-barrel",
           properties = {
-            ["name"] = "collapse"
+            ["name"] = "Fall"
           }
         },
         {
@@ -13902,7 +13902,7 @@ return {
         {
           id = 5,
           properties = {
-            ["name"] = "defeated"
+            ["name"] = "Fall"
           }
         }
       }
