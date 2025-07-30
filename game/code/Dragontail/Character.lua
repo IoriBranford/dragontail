@@ -56,8 +56,6 @@ local function nop() end
 ---@param scene Scene
 function Character:addToScene(scene)
     scene:add(self)
-    self.originx = self.spriteoriginx
-    self.originy = self.spriteoriginy
 
     if self.draw == Character.draw then
         self.baseDraw = nop
@@ -185,12 +183,6 @@ function Character:fixedupdate()
         StateMachine.run(self)
         Body.updateGravity(self)
     end
-end
-
-function Character:fixedupdateShake(time)
-    time = max(0, time - 1)
-    self.originx = self.spriteoriginx + 2*math.sin(time)
-    return time
 end
 
 function Character:update(dsecs, fixedfrac)

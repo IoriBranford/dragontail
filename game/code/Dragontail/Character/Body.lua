@@ -46,8 +46,6 @@ function Body:init()
         self.bodyradius = math.sqrt(rsq)
         self.points.outward = math.polysignedarea(self.points) < 0
     elseif self.tile then
-        self.spriteoriginx = self.spriteoriginx or self.tile.objectoriginx
-        self.spriteoriginy = self.spriteoriginy or self.tile.objectoriginy
         local shapes = self.tile.shapes
         if shapes then
             for _, shape in ipairs(shapes) do
@@ -395,13 +393,13 @@ function Body:draw(fixedfrac)
     love.graphics.line(x + bodyradius, screeny, x + bodyradius, screeny - bodyheight)
     local points = self.points
     if points then
-        local spriteoriginx, spriteoriginy = self.spriteoriginx or 0, self.spriteoriginy or 0
+        local originx, originy = self:getOrigin()
         love.graphics.push()
-        love.graphics.translate(spriteoriginx, spriteoriginy)
+        love.graphics.translate(originx, originy)
         self:drawPolygon()
         love.graphics.translate(0, -bodyheight)
         self:drawPolygon()
-        love.graphics.translate(self.x - spriteoriginx, self.y - spriteoriginy)
+        love.graphics.translate(self.x - originx, self.y - originy)
         for i = 2, #points, 2 do
             local px, py = points[i-1], points[i]
             love.graphics.line(px, py, px, py + bodyheight)
