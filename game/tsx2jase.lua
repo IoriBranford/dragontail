@@ -9,10 +9,11 @@ local lfs = require "lfs" ---@type LuaFileSystem
 
 local args = lapp [[
 Generates Aseprite json files from Tiled tsx tilesets
-    -e,--extension (default jase) Extension for generated files
-    -r,--recursive Recurse through any directory paths
+    -e,--extension  (default jase)  Extension for generated files
+    -f,--force                      Overwrite existing files
+    -r,--recursive                  Recurse through any directory paths
     -v,--verbose
-    <paths...> (string) File(s) to convert or directory(ies) containing them
+    <paths...>      (string)        File(s) to convert or directory(ies) containing them
 ]]
 
 local TileTemplate = [[
@@ -214,13 +215,20 @@ local function tilesetToAseprite(tileset)
 end
 
 local function tsx2jase(path)
+    local jasepath = path:gsub("tsx$", args.extension or "jase")
+    if not args.force and lfs.attributes(jasepath) then
+        if args.verbose then
+            print("Kept", jasepath)
+        end
+        return
+    end
+
     local tileset = loadTileset(path)
     if not tileset then return end
     local aseprite = tilesetToAseprite(tileset)
     if not aseprite then return end
-    path = path:gsub("tsx$", args.extension or "jase")
     local jase = json.encode(aseprite)
-    local jasefile, err = io.open(path, "w")
+    local jasefile, err = io.open(jasepath, "w")
     if not jasefile then
         io.stderr:write(err.."\n")
         return
@@ -228,7 +236,7 @@ local function tsx2jase(path)
     jasefile:write(jase)
     jasefile:close()
     if args.verbose then
-        print("-->", path)
+        print("Wrote", jasepath)
     end
 end
 
