@@ -85,10 +85,9 @@ function Character:makeAfterImage()
         y = self.y,
         z = self.z,
         asefile = self.asefile,
-        spriteoriginx = self.spriteoriginx,
-        spriteoriginy = self.spriteoriginy,
         type = "afterimage"
     })
+    afterimage.originx, afterimage.originy = self:getOrigin()
     afterimage:setAseAnimation(self.aseanimation, self.animationframe)
 end
 
