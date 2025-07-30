@@ -447,8 +447,17 @@ function Stage.fixedupdateGui(gui)
                 if asefile then
                     weaponicon.asefile = asefile
                     weaponicon.asetag = asetag
-                    weaponicon.originx = weapondata.spriteoriginx or 0
-                    weaponicon.originy = weapondata.spriteoriginy or 0
+                    local ase = Assets.get(asefile)
+                    local originx, originy
+                    if ase then
+                         ---@cast ase Aseprite
+                        originx, originy = ase:getSliceFrameOrigin("origin", asetag)
+                        if not originx or not originy then
+                            originx, originy = ase[1]:getSliceOrigin("origin")
+                        end
+                    end
+                    weaponicon.originx = originx or 0
+                    weaponicon.originy = originy or 0
                     weaponicon.visible = true
                     weaponicon:initAseprite()
                 else
