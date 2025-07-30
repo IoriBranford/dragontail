@@ -200,6 +200,13 @@ local function tilesetToAseprite(tileset)
                     duration = duration
                 }
             end
+        elseif name ~= "" then
+            tags[#tags+1] = {
+                name = name,
+                from = id,
+                to = id,
+                direction = "forward"
+            }
         end
     end
 
