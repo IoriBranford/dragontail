@@ -995,7 +995,7 @@
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sprites/food-container.jase</text:p>
+      <text:p>data/sprites/containers/food-container.jase</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=ORG.LIBREOFFICE.COLOR(0;0;0;255)" office:value-type="float" office:value="4278190080" calcext:value-type="float">
       <text:p>4278190080</text:p>

@@ -704,7 +704,7 @@
       <text:p>data/sprites/player/rose/main.jase</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sprites/emotes.jase</text:p>
+      <text:p>data/sprites/vfx/emotes.jase</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="12" calcext:value-type="float">
       <text:p>12</text:p>
