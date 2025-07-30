@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <tileset firstgid="1" source="../../sprites/weapons/throwing-axe.tsx"/>
+ <object type="item-throwing-axe" gid="1" width="48" height="48"/>
+</template>
