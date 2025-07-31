@@ -5,7 +5,7 @@ tail-swing-ccw,tail-swing-ccw,spinAttack,control,FALSE,data/sprites/player/rose/
 spinning-throw,spinning-throw,spinAndKickEnemy,holding-kick,FALSE,data/sprites/player/rose/hold.jase,spinthrow,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing3.mp3,0,0,0
 flaming-spinning-throw,flaming-spinning-throw,spinAndKickEnemy,holding-kick,FALSE,data/sprites/player/rose/hold.jase,spinthrow,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing3.mp3,3,0,0
 holding-knee,holding-knee,straightAttack,hold,FALSE,data/sprites/player/rose/hold.jase,holdknee,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing1.mp3,0,0,0
-holding-kick,holding-kick,straightAttack,control,FALSE,data/sprites/player/rose/hold.jase,hardkick,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing1.mp3,0,0,0
+holding-kick,holding-kick,straightAttack,control,FALSE,data/sprites/player/rose/attack.jase,hardkick,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing1.mp3,0,0,0
 running-kick,running-kick,straightAttack,control,FALSE,data/sprites/player/rose/attack.jase,hardkick,1,TRUE,TRUE,FALSE,,data/sounds/player/attack2.mp3,3,0,0
 running-elbow,running-elbow,straightAttack,control,FALSE,data/sprites/player/rose/main.jase,elbow,0,TRUE,TRUE,FALSE,,,0,2,2
 running-with-enemy,running-with-enemy,runWithEnemy,control,FALSE,data/sprites/player/rose/hold.jase,holdwalk,1,FALSE,FALSE,FALSE,,data/sounds/combat/dash.mp3,3,2,2
