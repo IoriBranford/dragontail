@@ -18,6 +18,7 @@ local defaultgamepadconfig =  {
     lefty = "analogy",
     x = "attack",
     triggerright = "sprint",
+    triggerleft = "fly",
 }
 
 function love.load(args)
@@ -97,7 +98,8 @@ return {
             ["left right"] = "digitalx",
             ["up down"] = "digitaly",
             z = "attack",
-            lshift = "sprint"
+            lshift = "sprint",
+            space = "fly"
         },
 
         gamepads = {
