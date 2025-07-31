@@ -303,14 +303,18 @@ function Stage.updateGoingToNextRoom()
 
     local camhalfw, camhalfh = camera.width/2, camera.height/2
     local centerx, centery = camera.x + camhalfw, camera.y + camhalfh
+    local centerz = camera.z + camera.bodyheight/2
 
-    local playerscenterx, playerscentery = 0, 0
+    local playerscenterx, playerscentery, playerscenterz = 0, 0, 0
     local players = Characters.getGroup("players")
     for _, player in ipairs(players) do
         playerscenterx = playerscenterx + player.x
         playerscentery = playerscentery + player.y
+        playerscenterz = playerscenterz + player.z
     end
-    playerscenterx, playerscentery = playerscenterx/#players, playerscentery/#players
+    playerscenterx = playerscenterx/#players
+    playerscentery = playerscentery/#players
+    playerscenterz = playerscenterz/#players
 
     local newcenterx, newcentery, pathx1, pathy1, pathx2, pathy2 = camerapath:getCameraCenter(playerscenterx, playerscentery)
 
@@ -318,6 +322,12 @@ function Stage.updateGoingToNextRoom()
         camera.velx, camera.vely = 0, 0
     else
         camera.velx, camera.vely = Movement.getVelocity_speed(centerx, centery, newcenterx, newcentery, 8)
+    end
+
+    if camera.lockz then
+        camera.velz = 0
+    else
+        camera.velz = math.max(-32, math.min(playerscenterz - centerz, 32))
     end
 
     -- local bestdot = math.dot(camera.velx, camera.vely, pathx2-pathx1, pathy2-pathy1)
@@ -516,7 +526,10 @@ function Stage.draw(fixedfrac)
             map.backgroundcolor[3])
     end
     love.graphics.push()
-    love.graphics.translate(-camera.x - camera.velx*fixedfrac, -camera.y - camera.vely*fixedfrac)
+    local x = camera.x + camera.velx*fixedfrac
+    local y = camera.y + camera.vely*fixedfrac
+    local z = camera.z + camera.bodyheight/2 + camera.velz*fixedfrac
+    love.graphics.translate(-x, z - y)
     scene:draw(fixedfrac, Characters.isDrawnBefore)
     love.graphics.pop()
 end
