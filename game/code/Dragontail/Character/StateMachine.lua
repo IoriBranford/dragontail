@@ -55,6 +55,7 @@ local StateVarsToCopy = {
     "afterimageinterval",
     "manachargerate",
     "manadecayrate",
+    "gravity"
 }
 
 function StateMachine.start(self, statename, ...)
