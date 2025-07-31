@@ -226,6 +226,7 @@ function Player:init()
     self.joysticklog = JoystickLog(10)
     self.attackbutton = Inputs.getAction("attack")
     self.sprintbutton = Inputs.getAction("sprint")
+    self.flybutton = Inputs.getAction("fly")
     Fighter.init(self)
     self.inventory = Inventory()
     Combo.reset(self)
@@ -510,6 +511,10 @@ function Player:control()
             movespeed, turnspeed, acceltime = 8, pi/60, 1
         else
             movespeed, turnspeed, acceltime = 4, pi/8, 4
+        end
+
+        if self.flybutton.pressed then
+            return "flyStart"
         end
 
         if runpressed and not runningtime --and self.runenergy >= self.runenergycost
@@ -1226,6 +1231,36 @@ function Player:eventWalkTo(destx, desty, timelimit)
     self:walkTo(destx, desty, timelimit)
     self.velx, self.vely, self.velz = 0, 0, 0
     Face.faceVector(self, 1, 0, "Stand")
+end
+
+local FlyPeakHeight = 540
+local FlyPeakTime = 60
+
+function Player:flyStart()
+    self.camera.lockz = false
+    self.velx = 0
+    self.vely = 0
+    local t = FlyPeakTime
+    local h = FlyPeakHeight
+    local g = self.gravity
+    -- h = .5*g*t^2 + v*t
+    self.velz = h/t + g*t/2
+    while self.velz >= 0 do
+        yield()
+    end
+    return "flyEnd"
+end
+
+function Player:hover()
+end
+
+function Player:flyEnd()
+    while self.velz < 0 do
+        yield()
+    end
+    self.camera.z = self.z - self.camera.bodyheight/2
+    self.camera.lockz = true
+    return "control"
 end
 
 return Player
