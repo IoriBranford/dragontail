@@ -288,19 +288,6 @@ function Stage.updateGoingToNextRoom()
         return
     end
 
-    if Stage.isInNextRoom() then
-        camera.velx = 0
-        camera.vely = 0
-        local enemies = Characters.getGroup("enemies")
-        local donewhenenemiesleft = room.donewhenenemiesleft or 0
-        if #enemies <= donewhenenemiesleft and not eventthread then
-            Stage.openRoom(roomindex + 1)
-        end
-        return
-    end
-
-    local camerapath = room.camerapath ---@type CameraPath
-
     local camhalfw, camhalfh = camera.width/2, camera.height/2
     local centerx, centery = camera.x + camhalfw, camera.y + camhalfh
     local centerz = camera.z + camera.bodyheight/2
@@ -316,18 +303,30 @@ function Stage.updateGoingToNextRoom()
     playerscentery = playerscentery/#players
     playerscenterz = playerscenterz/#players
 
+    if camera.lockz then
+        camera.velz = 0
+    else
+        camera.velz = playerscenterz - centerz
+    end
+
+    if Stage.isInNextRoom() then
+        camera.velx = 0
+        camera.vely = 0
+        local enemies = Characters.getGroup("enemies")
+        local donewhenenemiesleft = room.donewhenenemiesleft or 0
+        if #enemies <= donewhenenemiesleft and not eventthread then
+            Stage.openRoom(roomindex + 1)
+        end
+        return
+    end
+
+    local camerapath = room.camerapath ---@type CameraPath
     local newcenterx, newcentery, pathx1, pathy1, pathx2, pathy2 = camerapath:getCameraCenter(playerscenterx, playerscentery)
 
     if math.dot(newcenterx - centerx, newcentery - centery, pathx2-pathx1, pathy2-pathy1) < 0 then
         camera.velx, camera.vely = 0, 0
     else
         camera.velx, camera.vely = Movement.getVelocity_speed(centerx, centery, newcenterx, newcentery, 8)
-    end
-
-    if camera.lockz then
-        camera.velz = 0
-    else
-        camera.velz = math.max(-32, math.min(playerscenterz - centerz, 32))
     end
 
     -- local bestdot = math.dot(camera.velx, camera.vely, pathx2-pathx1, pathy2-pathy1)
