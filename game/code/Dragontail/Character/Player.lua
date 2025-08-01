@@ -1267,6 +1267,7 @@ local FlyPeakHeight = 540
 local FlyPeakTime = 60
 
 function Player:flyStart()
+    Combo.reset(self)
     self.camera.lockz = false
     self.velx = 0
     self.vely = 0
@@ -1275,20 +1276,78 @@ function Player:flyStart()
     local g = self.gravity
     -- h = .5*g*t^2 + v*t
     self.velz = h/t + g*t/2
-    while self.velz >= 0 do
+    while self.velz > 0 do
         yield()
     end
-    return "flyEnd"
+    self.velz = 0
+    self.camera.z = self.z - self.camera.bodyheight/2
+    self.camera.velz = 0
+    self.camera.lockz = true
+    return "hover"
 end
 
 function Player:hover()
+    self.facedestangle = self.faceangle
+    self.joysticklog:clear()
+    -- local attackdowntime
+    while true do
+        local inx, iny = self:getJoystick()
+        self.joysticklog:put(inx, iny)
+        self:turnTowardsJoystick("hover", "hover")
+        self:accelerateTowardsJoystick()
+
+        local caughtprojectile = self:catchProjectileAtJoystick()
+        if caughtprojectile then
+            return "catchProjectile", caughtprojectile
+        end
+
+        if self.flybutton.pressed then
+            return "flyEnd"
+        end
+
+        if self.sprintbutton.pressed then
+            Face.faceVector(self, inx, iny)
+            return "run"
+        end
+
+        -- self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
+        local chargedattack = not self.attackbutton.down and self:getChargedAttack(ChargeAttacks)
+        if chargedattack then
+            Mana.releaseCharge(self)
+            return chargedattack, self.facedestangle
+        end
+
+        if self.attackbutton.pressed then
+            if inx == 0 and iny == 0 then
+                local angletoenemy = getAngleToBestTarget(self)
+                if angletoenemy then
+                    self.facedestangle = angletoenemy
+                end
+            end
+            Face.updateTurnToDestAngle(self, pi)
+            if self.weaponinhand then
+                return "throwWeapon", self.facedestangle, 1, 1
+            end
+            return self:doComboAttack(self.facedestangle)
+        end
+
+        local opponenttohold = HoldOpponent.findOpponentToHold(self, inx, iny)
+        if opponenttohold then
+            Audio.play(self.holdsound)
+            return "hold", opponenttohold
+        end
+
+        yield()
+    end
 end
 
 function Player:flyEnd()
-    while self.velz < 0 do
+    self.camera.lockz = false
+    repeat
         yield()
-    end
+    until self.velz >= 0
     self.camera.z = self.z - self.camera.bodyheight/2
+    self.camera.velz = 0
     self.camera.lockz = true
     return "walk"
 end
