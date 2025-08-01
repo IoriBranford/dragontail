@@ -1274,9 +1274,9 @@ function Player:flyStart()
     local t = FlyPeakTime
     local h = FlyPeakHeight
     local g = self.gravity
-    -- h = .5*g*t^2 + v*t
-    self.velz = h/t + g*t/2
-    while self.velz > 0 do
+    -- h+g = -g*t*t/2 + v*t
+    self.velz = h/t + g*t/2 - g
+    while self.velz >= 0 do
         yield()
     end
     self.velz = 0
