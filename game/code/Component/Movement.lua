@@ -41,6 +41,15 @@ function Movement.getVelocity_speed(x0, y0, x1, y1, speed)
 	return distx * speed / dist, disty * speed / dist
 end
 
+function Movement.getVelocity3_speed(x0, y0, z0, x1, y1, z1, speed)
+	local distx, disty, distz = x1-x0, y1-y0, z1-z0
+	local dist = math.len(distx, disty, distz)
+	if dist <= speed then
+		return distx, disty, distz
+	end
+	return distx * speed / dist, disty * speed / dist, distz * speed / dist
+end
+
 function Movement.getVelocity_time(x0, y0, x1, y1, time)
 	local distx, disty = x1-x0, y1-y0
 	if time < 1 then
