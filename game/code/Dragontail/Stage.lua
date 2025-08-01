@@ -67,7 +67,7 @@ end
 function Stage.init()
     scene = Scene()
 
-    local MinStageHeight = 512
+    local MinStageHeight = 1024
     local CameraTopMargin = 32
     local floorz = map.floorz or 0
     local ceilingz = map.ceilingz or (floorz + MinStageHeight)
