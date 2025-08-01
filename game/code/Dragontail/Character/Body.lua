@@ -81,11 +81,11 @@ function Body:accelerate(ax, ay)
     self.vely = self.vely + ay
 end
 
-function Body:accelerateTowardsVel(targetvelx, targetvely, t, e)
-    assert(t > 0, "t <= 0")
+function Body:accelerateTowardsVel(targetvelx, targetvely, mass, e)
+    mass = math.max(mass, 1)
     e = e or (1/256)
-    local accelx = (targetvelx - self.velx) / t
-    local accely = (targetvely - self.vely) / t
+    local accelx = (targetvelx - self.velx) / mass
+    local accely = (targetvely - self.vely) / mass
     if math.abs(accelx) < e then
         self.velx = targetvelx
     else
@@ -98,12 +98,12 @@ function Body:accelerateTowardsVel(targetvelx, targetvely, t, e)
     end
 end
 
-function Body:accelerateTowardsVel3(targetvelx, targetvely, targetvelz, t, e)
-    t = math.max(t, 1)
+function Body:accelerateTowardsVel3(targetvelx, targetvely, targetvelz, mass, e)
+    mass = math.max(mass, 1)
     e = e or (1/256)
-    local accelx = (targetvelx - self.velx) / t
-    local accely = (targetvely - self.vely) / t
-    local accelz = (targetvelz - self.velz) / t
+    local accelx = (targetvelx - self.velx) / mass
+    local accely = (targetvely - self.vely) / mass
+    local accelz = (targetvelz - self.velz) / mass
     if math.abs(accelx) < e then
         self.velx = targetvelx
     else
