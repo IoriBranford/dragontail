@@ -97,22 +97,31 @@ function Attacker:debugPrint_checkAttackCollision_circle(target)
     print("attackangle", self.attackangle)
 end
 
+function Attacker:getAttackCylinder()
+    local attack = self.attack
+    if not attack then return end
+    local attackangle = self.attackangle
+    if not attackangle then return end
+
+    local z = self.z
+    local h = self.bodyheight
+    local l = attack.radius or 0
+    local r = l * math.sin(attack.arc or 0)
+    local d = l - r
+    local x = self.x + math.cos(attackangle)*d
+    local y = self.y + math.sin(attackangle)*d
+    return x, y, z, r, h
+end
+
 function Attacker:checkAttackCollision_circle(target)
     if target == self or target == self.thrower or target.thrower == self then
         return
     end
-    local attackangle = self.attackangle
-    if not attackangle then
-        return
+    local ax, ay, az, ar, ah = Attacker.getAttackCylinder(self)
+    if ax then
+        local penex, peney, penez = Body.getCylinderPenetration(target, ax, ay, az, ar, ah)
+        return penex or peney or penez
     end
-    local attackz = self.z
-    local attackheight = self.bodyheight
-    local attacklen = self.attack.radius or 0
-    local attackr = attacklen * math.sin(self.attack.arc or 0)
-    local attackx = self.x + math.cos(attackangle)*(attacklen - attackr)
-    local attacky = self.y + math.sin(attackangle)*(attacklen - attackr)
-    local penex, peney, penez = Body.getCylinderPenetration(target, attackx, attacky, attackz, attackr, attackheight)
-    return penex or peney or penez
 end
 
 Attacker.checkAttackCollision = Attacker.checkAttackCollision_circle
