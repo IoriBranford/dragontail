@@ -535,7 +535,8 @@ function Player:walk()
         end
 
         if self.flybutton.pressed then
-            return "flyStart"
+            -- disable until ready
+            -- return "flyStart"
         end
 
         if self.sprintbutton.pressed then
