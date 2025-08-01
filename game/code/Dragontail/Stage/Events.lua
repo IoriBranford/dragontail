@@ -38,7 +38,7 @@ function Events.playerEnterArea()
     coroutine.waitfor(function() return wipe:isDone() end)
 
     for _, player in ipairs(players) do
-        StateMachine.start(player, "control")
+        StateMachine.start(player, "walk")
     end
 end
 

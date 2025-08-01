@@ -155,7 +155,7 @@ function Stage.init()
     if not eventthread then
         local players = Characters.getGroup("players")
         for _, player in ipairs(players) do
-            StateMachine.start(player, "control")
+            StateMachine.start(player, "walk")
         end
     end
 end
