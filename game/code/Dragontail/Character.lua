@@ -7,6 +7,7 @@ local Movement    = require "Component.Movement"
 local Attacker      = require "Dragontail.Character.Attacker"
 local Body        = require "Dragontail.Character.Body"
 local Shadow      = require "Dragontail.Character.Shadow"
+local Guard       = require "Dragontail.Character.Guard"
 local Characters
 
 local pi = math.pi
@@ -194,40 +195,26 @@ Character.isAttacking = Attacker.isAttacking
 Character.startAttack = Attacker.startAttack
 Character.stopAttack = Attacker.stopAttack
 
-function Character:startGuarding(guardangle)
-    self.guardangle = guardangle
-end
-
-function Character:stopGuarding()
-    self.guardangle = nil
-end
-
 function Character:onHitByAttack(attacker)
-    local guardhitai = self.guardai or "guardHit"
-    local hurtai = self.hurtai or "hurt"
-    local hitai = attacker.attack.selfstateonhit
-    local attacktype = attacker.attacktype
-    local canbedamagedbyattack = self.canbedamagedbyattack
-    if type(attacktype) == "string"
-    and type(canbedamagedbyattack) == "string" then
-        canbedamagedbyattack = attacktype:find(canbedamagedbyattack) ~= nil
-    else
-        canbedamagedbyattack = true
-    end
+    local guardhitstate = self.guardai or "guardHit"
+    local hurtstate = self.hurtai or "hurt"
+    local attackernewstate = attacker.attack.selfstateonhit
 
-    if self.guardangle or not canbedamagedbyattack then
-        StateMachine.start(self, guardhitai, attacker)
-        hitai = attacker.selfstateonguard or hitai
+    if Guard.isAttackInGuardArc(self, attacker) then
+        StateMachine.start(self, guardhitstate, attacker)
+        attackernewstate = attacker.attack.selfstateonguarded
+            or attackernewstate
     else
-        StateMachine.start(self, hurtai, attacker)
+        StateMachine.start(self, hurtstate, attacker)
         if attacker.hitstun <= 0 then
             attacker.hitstun = attacker.attack.selfstun or 3
         end
-        hitai = attacker.attack.selfstateonhitopponent or hitai
+        attackernewstate = attacker.attack.selfstateonhitopponent
+            or attackernewstate
         attacker.numopponentshit = (attacker.numopponentshit or 0) + 1
     end
-    if hitai then
-        StateMachine.start(attacker, hitai, self)
+    if attackernewstate then
+        StateMachine.start(attacker, attackernewstate, self)
     end
 end
 
