@@ -11,6 +11,7 @@ local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 local Mana                 = require "Dragontail.Character.Mana"
 local Body                 = require "Dragontail.Character.Body"
 local Color                = require "Tiled.Color"
+local Guard                = require "Dragontail.Character.Guard"
 
 ---@class Dash
 ---@field dashsound string?
@@ -23,12 +24,6 @@ local Color                = require "Tiled.Color"
 
 ---@class Jump
 ---@field jumplandsound string?
-
----@class Guard
----@field guardtime integer?
----@field guardhitsound string?
----@field guardcounterattack string?
----@field guardhitstocounterattack integer?
 
 ---@class ThrowWeapon
 ---@field throwtime integer?
@@ -53,7 +48,7 @@ local Color                = require "Tiled.Color"
 ---@class Win
 ---@field victorysound string?
 
----@class Fighter:Common,Face,Mana,Combo,Dash,Run,Jump,Dodge,Guard,WeaponInHand,ThrowWeapon,Shoot,HoldOpponent,HeldByOpponent,Thrown,Fall,GetUp,Win
+---@class Fighter:Common,Face,Mana,Combo,Dash,Run,Jump,Dodge,WeaponInHand,ThrowWeapon,Shoot,HoldOpponent,HeldByOpponent,Thrown,Fall,GetUp,Win
 ---@field heldopponent Fighter?
 ---@field heldby Fighter?
 local Fighter = class(Common)
@@ -94,6 +89,7 @@ function Fighter:hurt(attacker)
     self.health = self.health - (attacker.attack.damage or 0)
     self.velx, self.vely = 0, 0
     self:stopAttack()
+    Guard.stopGuarding(self)
     HoldOpponent.stopHolding(self, self.heldopponent)
     self.hurtstun = attacker.attack.opponentstun or 3
 
