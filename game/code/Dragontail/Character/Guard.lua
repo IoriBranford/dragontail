@@ -1,4 +1,5 @@
 local Attacker = require "Dragontail.Character.Attacker"
+local drawCake = require "drawCake"
 
 ---@class Guard:Body
 ---@field guardai string|"guardHit"
@@ -25,6 +26,22 @@ function Guard:isAttackInGuardArc(attacker)
         local adotg = math.dot(adx, ady, gdx, gdy)
         return adotg >= ad*math.cos(self.guardarc or (math.pi/2))
     end
+end
+
+function Guard:draw(fixedfrac)
+    local angle = self.guardangle
+    if not angle then return end
+
+    local arc = self.guardarc or (math.pi/2)
+
+    fixedfrac = fixedfrac or 0
+    local x = self.x + self.velx * fixedfrac
+    local y = self.y + self.vely * fixedfrac
+        - (self.z + self.velz*fixedfrac)
+    local r = self.bodyradius
+    local h = self.bodyheight
+    love.graphics.setColor(.5, 1, 1)
+    drawCake(x, y, r, h, angle, arc)
 end
 
 return Guard
