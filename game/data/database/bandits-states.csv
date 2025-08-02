@@ -51,8 +51,10 @@ getup,18,stand,,getup,FallRiseToFeet,0,FALSE,FALSE,FALSE,4294967295,,0,0
 stand,FALSE,FALSE,,stand,Stand,,TRUE,TRUE,FALSE,,,0,0
 dodgeIncoming,FALSE,stand,,dodgeIncoming,Walk,,TRUE,TRUE,FALSE,,,0,0
 approach,FALSE,stand,,approach,Walk,,TRUE,TRUE,FALSE,,,0,0
-guard,FALSE,stand,,guard,guard,,TRUE,TRUE,FALSE,,,0,0
-guardHit,FALSE,guard,,guardHit,guard,,FALSE,FALSE,FALSE,,,0,0
+raiseGuard,18,guard,,,RaiseGuard,0,TRUE,TRUE,FALSE,,,0,0
+guard,180,lowerGuard,,guard,Guard,0,TRUE,TRUE,FALSE,,,0,0.10471975511966
+guardHit,9,guard,,guardHit,GuardHit,0,FALSE,TRUE,FALSE,,data/sounds/combat/block.mp3,0,0
+lowerGuard,18,raiseGuard,,,LowerGuard,0,TRUE,TRUE,FALSE,,,0,0
 leave,FALSE,FALSE,,leave,Walk,,TRUE,TRUE,FALSE,,,0,0
 enterAndAttackUntilEmpty,FALSE,attackIfAmmoElseLeave,,walkToEntryPoint,Walk,,TRUE,TRUE,FALSE,,,0,0
 attackIfAmmoElseLeave,FALSE,leave,,attackIfAmmoElseLeave,Stand,,TRUE,TRUE,FALSE,,,0,0

@@ -1,8 +1,9 @@
-character,asefile,emoteasepritefile,emoteoriginx,emoteoriginy,faceasepritefile,shadowcolor,weaponposasefile
-bandit-dagger,data/sprites/bandit/knife.jase,data/sprites/vfx/emotes.jase,12,56,,4278190080,
-bandit-spear,data/sprites/bandit/spear.jase,data/sprites/vfx/emotes.jase,12,56,,4278190080,
-bandit-axe,data/sprites/bandit/axe.jase,data/sprites/vfx/emotes.jase,12,64,,4278190080,
-bandit-bow,data/sprites/bandit/bow.jase,,,,,4278190080,
-bandit-sling,data/sprites/bandit/sling.jase,,,,,4278190080,
-bandit-boss,data/sprites/bandit/boss.jase,,,,,4278190080,
-bandit-cave-door,,,,,,0,
+character,asefile,emoteasepritefile,emoteoriginx,emoteoriginy,shadowcolor
+bandit-dagger,data/sprites/bandit/knife.jase,data/sprites/vfx/emotes.jase,12,56,4278190080
+bandit-spear,data/sprites/bandit/spear.jase,data/sprites/vfx/emotes.jase,12,56,4278190080
+bandit-axe,data/sprites/bandit/axe.jase,data/sprites/vfx/emotes.jase,12,64,4278190080
+bandit-bow,data/sprites/bandit/bow.jase,,,,4278190080
+bandit-sling,data/sprites/bandit/sling.jase,,,,4278190080
+bandit-boss,data/sprites/bandit/boss.jase,,,,4278190080
+bandit-cave-door,,,,,0
+bandit-spear,data/sprites/bandit/shield.jase,,,,4278190080
