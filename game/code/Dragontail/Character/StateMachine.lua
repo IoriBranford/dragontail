@@ -127,43 +127,37 @@ end
 
 function StateMachine.run(self, ...)
     local thread = self.thread
+    local nextstate, a,b,c,d,e,f,g
     if thread then
-        local ok, nextstate, a,b,c,d,e,f,g = co_resume(thread, self, ...)
+        local ok
+        ok, nextstate, a,b,c,d,e,f,g = co_resume(thread, self, ...)
         if not ok then
             error(debug.traceback(thread, nextstate))
         end
+    end
 
-        if not nextstate then
-            if co_status(thread) == "dead" then
-                nextstate = self.nextstate
-            else
-                local statetime = self.statetime
-                if statetime then
-                    if statetime <= 0 then
-                        nextstate = self.nextstate
-                        self.statetime = nil
-                    else
-                        statetime = statetime - 1
-                        self.statetime = statetime
-                    end
+    if not nextstate then
+        if thread and co_status(thread) == "dead" then
+            nextstate = self.nextstate
+        else
+            local statetime = self.statetime
+            if statetime then
+                if statetime <= 0 then
+                    nextstate = self.nextstate
+                    self.statetime = nil
+                else
+                    statetime = statetime - 1
+                    self.statetime = statetime
                 end
             end
         end
-
-        if nextstate then
-            StateMachine.start(self, nextstate, a,b,c,d,e,f,g)
-        elseif co_status(thread) == "dead" then
-            StateMachine.stop(self)
-        end
     end
-end
 
-function StateMachine.stop(self)
-    self.thread = nil
-end
-
-function StateMachine.isRunning(self)
-    return self.thread ~= nil
+    if nextstate then
+        StateMachine.start(self, nextstate, a,b,c,d,e,f,g)
+    elseif thread and co_status(thread) == "dead" then
+        self.thread = nil
+    end
 end
 
 return StateMachine
