@@ -1,4 +1,5 @@
 local Body = require "Dragontail.Character.Body"
+local drawCake = require "drawCake"
 ---@class Attacker:Body
 ---@field defaultattack string?
 ---@field attacktype string?
@@ -155,19 +156,7 @@ function Attacker:drawPieslice(fixedfrac)
     local attackarc = self.attack.arc or 0
     love.graphics.setColor(1, .5, .5)
     if attackarc > 0 then
-        love.graphics.arc("line", x, screeny, attackradius, attackangle - attackarc, attackangle + attackarc)
-        love.graphics.arc("line", x, screeny - bodyheight, attackradius, attackangle - attackarc, attackangle + attackarc)
-        local c1, s1 = attackradius*math.cos(attackangle-attackarc), attackradius*math.sin(attackangle-attackarc)
-        local c2, s2 = attackradius*math.cos(attackangle+attackarc), attackradius*math.sin(attackangle+attackarc)
-        love.graphics.line(x + c1, screeny + s1, x + c1, screeny + s1 - bodyheight)
-        love.graphics.line(x + c2, screeny + s2, x + c2, screeny + s2 - bodyheight)
-        local c = math.cos(attackangle)
-        local d = math.cos(attackarc)
-        if c > d then
-            love.graphics.line(x + attackradius, screeny, x + attackradius, screeny - bodyheight)
-        elseif c < -d then
-            love.graphics.line(x - attackradius, screeny, x - attackradius, screeny - bodyheight)
-        end
+        drawCake(x, y, attackradius, bodyheight, attackangle, attackarc)
     else
         local c, s = attackradius*math.cos(attackangle), attackradius*math.sin(attackangle)
         love.graphics.line(x, screeny,
