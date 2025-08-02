@@ -12,6 +12,7 @@ local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
 local Body                 = require "Dragontail.Character.Body"
 local Character            = require "Dragontail.Character"
 local CollisionMask        = require "Dragontail.Character.Body.CollisionMask"
+local Guard                = require "Dragontail.Character.Guard"
 
 ---@class Ambush
 ---@field ambushsightarc number?
@@ -350,7 +351,7 @@ end
 
 function Enemy:prepareAttack()
     self.numopponentshit = 0
-    self:stopGuarding()
+    Guard.stopGuarding(self)
 
     local target = self.opponents[1]
 
@@ -371,7 +372,7 @@ end
 
 function Enemy:executeAttack()
     self.numopponentshit = 0
-    self:stopGuarding()
+    Guard.stopGuarding(self)
 
     local target = self.opponents[1]
 
@@ -459,21 +460,14 @@ end
 
 function Enemy:guard()
     self.velx, self.vely = 0, 0
-    local t = self.guardtime or 60
     local opponent = self.opponents[1]
     repeat
-        local guardangle = 0
-        if opponent.y ~= self.y or opponent.x ~= self.x then
-            guardangle = atan2(opponent.y - self.y, opponent.x - self.x)
-        end
-        self:startGuarding(guardangle)
-        DirectionalAnimation.set(self, "guard", guardangle, 1, 0)
+        Face.turnTowardsObject(self, opponent, nil, self.state.animation)
+        Guard.startGuarding(self, self.faceangle)
         yield()
-        t = t - 1
-    until t <= 0
-    self:stopGuarding()
+    until self.statetime <= 0
+    Guard.stopGuarding(self)
     self.numguardedhits = 0
-    return "stand"
 end
 
 function Enemy:guardHit(attacker)
@@ -484,23 +478,25 @@ function Enemy:guardHit(attacker)
     -- local toattackerdist = len(toattackerx, toattackery)
     -- local dotGA = dot(toattackerx, toattackery, facex, facey)
     -- if dotGA >= cos(guardarc) * toattackerdist then
-    Audio.play(self.guardhitsound)
+    -- Audio.play(self.guardhitsound)
     self:makeImpactSpark(attacker, attacker.attack.guardhitspark)
     self.hurtstun = attacker.attackguardstun or 6
-    yield()
-
-    self.numguardedhits = (self.numguardedhits or 0) + 1
-    local guardcounterattack = self.guardcounterattack
-    local guardhitstocounterattack = self.guardhitstocounterattack or 3
-    if guardcounterattack then
-        -- print(guardcounterattack, guardhitstocounterattack, self.numguardedhits, self.attackwindupinvuln)
-        if self.numguardedhits >= guardhitstocounterattack then
-            self.numguardedhits = 0
-            self:stopGuarding()
-            return guardcounterattack
-        end
+    while true do
+        yield()
     end
-    return "guard"
+
+    -- self.numguardedhits = (self.numguardedhits or 0) + 1
+    -- local guardcounterattack = self.guardcounterattack
+    -- local guardhitstocounterattack = self.guardhitstocounterattack or 3
+    -- if guardcounterattack then
+    --     -- print(guardcounterattack, guardhitstocounterattack, self.numguardedhits, self.attackwindupinvuln)
+    --     if self.numguardedhits >= guardhitstocounterattack then
+    --         self.numguardedhits = 0
+    --         Guard.stopGuarding(self)
+    --         return guardcounterattack
+    --     end
+    -- end
+    -- return "guard"
         -- local afterguardattacktype = self.afterguardattacktype
         -- if afterguardattacktype then
         --     return afterguardattacktype
