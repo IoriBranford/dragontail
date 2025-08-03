@@ -201,6 +201,8 @@ function Character:onHitByAttack(attacker)
     local hurtstate = self.hurtai or "hurt"
     local attackernewstate = attacker.attack.selfstateonhit
 
+
+    attacker.numopponentshit = (attacker.numopponentshit or 0) + 1
     if Guard.isAttackInGuardArc(self, attacker) then
         StateMachine.start(self, guardhitstate, attacker)
         attackernewstate = attacker.attack.selfstateonguarded
@@ -212,7 +214,6 @@ function Character:onHitByAttack(attacker)
         end
         attackernewstate = attacker.attack.selfstateonhitopponent
             or attackernewstate
-        attacker.numopponentshit = (attacker.numopponentshit or 0) + 1
     end
     if attackernewstate then
         StateMachine.start(attacker, attackernewstate, self)
