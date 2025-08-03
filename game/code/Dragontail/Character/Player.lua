@@ -680,6 +680,9 @@ function Player:spinAttack(attackangle)
     local pressedattackbutton
     local t = spintime
     local lungespeed = self.attack.lungespeed
+    if lungespeed then
+        Slide.updateSlideSpeed(self, lungeangle, lungespeed)
+    end
     local projectile = self.attack.projectiletype
     Mana.store(self, -(self.attack.manacost or 0))
     -- local buttonholdtimeforfireball = spintime/2
@@ -1198,6 +1201,9 @@ function Player:straightAttack(angle, heldenemy)
     Face.faceAngle(self, angle)
     local t = self.attack.hittingduration or 1
     local lungespeed = self.attack.lungespeed
+    if lungespeed then
+        Slide.updateSlideSpeed(self, angle, lungespeed)
+    end
     repeat
         yield()
         if pressedattackbutton ~= self.attackbutton then
