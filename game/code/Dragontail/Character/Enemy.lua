@@ -484,7 +484,7 @@ function Enemy:guardHit(attacker)
         toattackerx = toattackerx / toattackerdist
         toattackery = toattackery / toattackerdist
     end
-    local pushbackspeed = self.guardpushbackforce or 10
+    local pushbackspeed = self.guardpushbackforce or 16
     attacker.velx = attacker.velx + pushbackspeed * toattackerx
     attacker.vely = attacker.vely + pushbackspeed * toattackery
     -- local dotGA = dot(toattackerx, toattackery, facex, facey)
