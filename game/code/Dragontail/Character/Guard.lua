@@ -16,16 +16,20 @@ function Guard:stopGuarding()
 end
 
 function Guard:isAttackInGuardArc(attacker)
-    local guardangle = self.guardangle
-    if not guardangle then return end
     local ax, ay = Attacker.getAttackCylinder(attacker)
     if ax and ay then
-        local adx, ady = ax - self.x, ay - self.y
-        local gdx, gdy = math.cos(guardangle), math.sin(guardangle)
-        local ad = math.len(adx, ady)
-        local adotg = math.dot(adx, ady, gdx, gdy)
-        return adotg >= ad*math.cos(self.guardarc or (math.pi/2))
+        return Guard.isPointInGuardArc(self, ax, ay)
     end
+end
+
+function Guard:isPointInGuardArc(x, y)
+    local guardangle = self.guardangle
+    if not guardangle then return end
+    local dx, dy = x - self.x, y - self.y
+    local gx, gy = math.cos(guardangle), math.sin(guardangle)
+    local d = math.len(dx, dy)
+    local DdotG = math.dot(dx, dy, gx, gy)
+    return DdotG >= d*math.cos(self.guardarc or (math.pi/2))
 end
 
 function Guard:draw(fixedfrac)
