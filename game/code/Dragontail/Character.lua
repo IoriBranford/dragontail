@@ -74,6 +74,7 @@ function Character:draw(fixedfrac)
     if Config.drawbodies then
         Body.draw(self, fixedfrac)
         Attacker.drawCircle(self, fixedfrac)
+        Guard.draw(self, fixedfrac)
     end
     love.graphics.pop()
 end
