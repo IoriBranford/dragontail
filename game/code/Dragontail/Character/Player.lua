@@ -701,6 +701,11 @@ function Player:spinAttack(attackangle)
         end
 
         if lungespeed then
+            if math.abs(lungespeed - math.len(self.velx, self.vely)) >= 1 then
+                lungespeed = nil
+            end
+        end
+        if lungespeed then
             lungespeed = Slide.updateSlideSpeed(self, lungeangle, lungespeed)
         else
             self:accelerateTowardsVel(targetvelx, targetvely, 8)
@@ -1201,6 +1206,11 @@ function Player:straightAttack(angle, heldenemy)
             -- else
             if self.attackbutton.pressed then
                 pressedattackbutton = self.attackbutton
+            end
+        end
+        if lungespeed then
+            if math.abs(lungespeed - math.len(self.velx, self.vely)) >= 1 then
+                lungespeed = nil
             end
         end
         if lungespeed then
