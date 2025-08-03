@@ -474,9 +474,19 @@ end
 function Enemy:guardHit(attacker)
     -- local facex, facey = math.cos(self.faceangle), math.sin(self.faceangle)
     -- local guardarc = self.guardarc or (pi/2)
-    -- local toattackerx = -self.x + attacker.x
-    -- local toattackery = -self.y + attacker.y
-    -- local toattackerdist = len(toattackerx, toattackery)
+    local toattackerx = -self.x + attacker.x
+    local toattackery = -self.y + attacker.y
+    local toattackerdist = math.len(toattackerx, toattackery)
+    if toattackerdist == 0 then
+        toattackerx = cos(self.guardangle)
+        toattackery = sin(self.guardangle)
+    else
+        toattackerx = toattackerx / toattackerdist
+        toattackery = toattackery / toattackerdist
+    end
+    local pushbackspeed = self.guardpushbackforce or 10
+    attacker.velx = attacker.velx + pushbackspeed * toattackerx
+    attacker.vely = attacker.vely + pushbackspeed * toattackery
     -- local dotGA = dot(toattackerx, toattackery, facex, facey)
     -- if dotGA >= cos(guardarc) * toattackerdist then
     -- Audio.play(self.guardhitsound)
