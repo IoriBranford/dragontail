@@ -463,7 +463,8 @@ function Enemy:guard()
     local opponent = self.opponents[1]
     repeat
         Face.turnTowardsObject(self, opponent, nil, self.state.animation)
-        Guard.startGuarding(self, self.faceangle)
+        local guardangle = floor((self.faceangle + (pi/4)) / (pi/2)) * pi/2
+        Guard.startGuarding(self, guardangle)
         yield()
     until self.statetime <= 0
     Guard.stopGuarding(self)
