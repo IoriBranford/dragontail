@@ -55,6 +55,13 @@ function Common:idle()
     while true do yield() end
 end
 
+function Common:turnTowardsOpponent()
+    while true do
+        Face.turnTowardsObject(self, self.opponents[1], self.faceturnspeed, self.state.animation)
+        yield()
+    end
+end
+
 function Common:spark(time)
     local baseanim = self.asetag or self.tileid
     if baseanim and self.faceangle and (self.animationdirections or 1) > 1 then
