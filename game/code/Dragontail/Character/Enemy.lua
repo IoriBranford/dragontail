@@ -458,41 +458,65 @@ function Enemy:watchForOpponent()
     end
 end
 
-function Enemy:guard()
+function Enemy:beforeGuard()
     self.velx, self.vely = 0, 0
+end
+
+function Enemy:duringGuard(t)
     local opponent = self.opponents[1]
-    repeat
-        Face.turnTowardsObject(self, opponent, nil, self.state.animation)
-        local guardangle = floor((self.faceangle + (pi/4)) / (pi/2)) * pi/2
-        Guard.startGuarding(self, guardangle)
-        yield()
-    until self.statetime <= 0
+    Face.turnTowardsObject(self, opponent, self.faceturnspeed, self.state.animation)
+    local guardangle = floor((self.faceangle + (pi/4)) / (pi/2)) * pi/2
+    Guard.startGuarding(self, guardangle)
+end
+
+function Enemy:afterGuard()
     Guard.stopGuarding(self)
-    self.numguardedhits = 0
+end
+
+function Enemy:guard()
+    local nextstate, a, b, c, d, e, f
+
+    nextstate, a, b, c, d, e, f = self:beforeGuard()
+    if nextstate then
+        return nextstate, a, b, c, d, e, f
+    end
+
+    for t = 1, self.state.statetime or 60 do
+        nextstate, a, b, c, d, e, f = self:duringGuard(t)
+        if nextstate then
+            return nextstate, a, b, c, d, e, f
+        end
+        yield()
+    end
+
+    nextstate, a, b, c, d, e, f = self:afterGuard()
+    if nextstate then
+        return nextstate, a, b, c, d, e, f
+    end
+end
+
+function Enemy:beforeGuardHit(attacker)
+    Guard.pushBackAttacker(self, attacker)
+end
+
+function Enemy:duringGuardHit(attacker, t)
 end
 
 function Enemy:guardHit(attacker)
-    -- local facex, facey = math.cos(self.faceangle), math.sin(self.faceangle)
-    -- local guardarc = self.guardarc or (pi/2)
-    local toattackerx = -self.x + attacker.x
-    local toattackery = -self.y + attacker.y
-    local toattackerdist = math.len(toattackerx, toattackery)
-    if toattackerdist == 0 then
-        toattackerx = cos(self.guardangle)
-        toattackery = sin(self.guardangle)
-    else
-        toattackerx = toattackerx / toattackerdist
-        toattackery = toattackery / toattackerdist
-    end
-    local pushbackspeed = self.guardpushbackforce or 16
-    attacker.velx = attacker.velx + pushbackspeed * toattackerx
-    attacker.vely = attacker.vely + pushbackspeed * toattackery
-    -- local dotGA = dot(toattackerx, toattackery, facex, facey)
-    -- if dotGA >= cos(guardarc) * toattackerdist then
-    -- Audio.play(self.guardhitsound)
     self:makeImpactSpark(attacker, attacker.attack.guardhitspark)
     self.hurtstun = attacker.attackguardstun or 6
-    while true do
+
+    local nextstate, a, b, c, d, e, f
+    nextstate, a, b, c, d, e, f = self:beforeGuardHit(attacker)
+    if nextstate then
+        return nextstate, a, b, c, d, e, f
+    end
+    local time = max(self.state.statetime or 60, 60)
+    for t = 1, time do
+        nextstate, a, b, c, d, e, f = self:duringGuardHit(attacker, t)
+        if nextstate then
+            return nextstate, a, b, c, d, e, f
+        end
         yield()
     end
 
@@ -515,6 +539,7 @@ function Enemy:guardHit(attacker)
         -- return afterguardhitai or "stand"
     -- end
     -- return self:hurt(attacker)
+    return "stand"
 end
 
 return Enemy
