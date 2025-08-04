@@ -20,6 +20,7 @@ local JoystickLog          = require "Dragontail.Character.Component.JoystickLog
 local Combo                = require "Dragontail.Character.Component.Combo"
 local Mana                 = require "Dragontail.Character.Component.Mana"
 local Config               = require "System.Config"
+local Guard                = require "Dragontail.Character.Action.Guard"
 
 ---@class Player:Fighter
 ---@field inventory Inventory
@@ -942,6 +943,12 @@ function Player:throwWeapon(angle, attackchoice, numprojectiles)
 end
 
 function Player:hold(enemy)
+    local time = enemy.timetobreakhold
+    local holdfrombehind = dot(math.cos(enemy.faceangle), math.sin(enemy.faceangle), math.cos(self.faceangle), math.sin(self.faceangle)) >= 0
+    if holdfrombehind then
+    elseif Guard.isPointInGuardArc(enemy, self.x, self.y) then
+        time = 10
+    end
     if self.heldopponent ~= enemy then
         Combo.reset(self)
         HoldOpponent.startHolding(self, enemy)
@@ -955,11 +962,6 @@ function Player:hold(enemy)
     end
     local holdangle = atan2(holddiry, holddirx)
     local holddestangle = holdangle
-    local time = enemy.timetobreakhold
-    local holdfrombehind = dot(math.cos(enemy.faceangle), math.sin(enemy.faceangle), math.cos(self.faceangle), math.sin(self.faceangle)) >= 0
-    if holdfrombehind then
-        -- DESIGNME
-    end
     while not time or time > 0 do
         yield()
         enemy = self.heldopponent
