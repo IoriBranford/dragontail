@@ -79,6 +79,7 @@ function Stage.init()
         bodyinlayers = CollisionMask.get("Camera"),
         bodyheight = 0x20000000,
         x = 0, y = 0, z = -0x10000000,
+        lockz = true,
         width = Stage.CameraWidth, height = Stage.CameraHeight,
         points = {
             0, CameraTopMargin,
