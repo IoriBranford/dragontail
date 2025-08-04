@@ -32,6 +32,22 @@ function Guard:isPointInGuardArc(x, y)
     return DdotG >= d*math.cos(self.guardarc or (math.pi/2))
 end
 
+function Guard:pushBackAttacker(attacker)
+    local toattackerx = -self.x + attacker.x
+    local toattackery = -self.y + attacker.y
+    local toattackerdist = math.len(toattackerx, toattackery)
+    if toattackerdist == 0 then
+        toattackerx = math.cos(self.guardangle)
+        toattackery = math.sin(self.guardangle)
+    else
+        toattackerx = toattackerx / toattackerdist
+        toattackery = toattackery / toattackerdist
+    end
+    local pushbackspeed = math.len(attacker.velx, attacker.vely)*1.5
+    attacker.velx = attacker.velx + pushbackspeed * toattackerx
+    attacker.vely = attacker.vely + pushbackspeed * toattackery
+end
+
 function Guard:draw(fixedfrac)
     local angle = self.guardangle
     if not angle then return end
