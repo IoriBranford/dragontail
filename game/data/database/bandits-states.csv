@@ -19,6 +19,8 @@ sling-shot,30,sling-shot2,sling-shot,prepareAttack,ShootWindup,0,TRUE,TRUE,FALSE
 sling-shot2,40,stand,sling-shot,executeAttack,ShootAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/arrowfly.mp3,0,0
 sling-shot-until-empty,30,sling-shot-until-empty2,sling-shot,prepareAttack,ShootWindup,0,TRUE,TRUE,FALSE,,data/sounds/combat/bowdraw.mp3,0,0
 sling-shot-until-empty2,40,attackIfAmmoElseLeave,sling-shot,executeAttack,ShootAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/arrowfly.mp3,0,0
+shield-bash,10,shield-bash2,shield-bash,prepareAttack,SwingWindup,0,FALSE,FALSE,FALSE,,data/sounds/man_medium/attack1.mp3,0,0
+shield-bash2,20,lowerGuard,shield-bash,executeAttack,SwingAttack,0,FALSE,FALSE,FALSE,,data/sounds/combat/swing1.mp3,0,0
 bandit-boss-first-charge,60,bandit-boss-charge2,bandit-boss-charge,prepareAttack,Charge,1,TRUE,TRUE,FALSE,,data/sounds/man_heavy/heavyattack3.mp3,0,0
 bandit-boss-charge,30,bandit-boss-charge2,bandit-boss-charge,prepareAttack,Charge,1,TRUE,TRUE,FALSE,,data/sounds/man_heavy/heavyattack3.mp3,0,0
 bandit-boss-charge2,40,stand,bandit-boss-charge,executeAttack,Charge,1,TRUE,TRUE,FALSE,,data/sounds/combat/swingblade.mp3,3,0
@@ -44,15 +46,15 @@ wallBump,FALSE,fall,,wallBump,Hurt,,FALSE,FALSE,TRUE,,data/sounds/combat/bodybum
 thrown,FALSE,fall,human-thrown,thrown,spin,1,FALSE,FALSE,TRUE,,,0,0
 wallSlammed,FALSE,fall,,wallSlammed,Hurt,,FALSE,FALSE,TRUE,,data/sounds/combat/bodyslam.mp3,0,0
 thrownRecover,FALSE,stand,,thrownRecover,FallKnees,0,FALSE,FALSE,FALSE,,data/sounds/combat/slide.mp3,0,0
-breakaway,FALSE,stand,,breakaway,,,FALSE,FALSE,FALSE,,data/sounds/combat/slap.mp3,0,0
+breakaway,FALSE,stand,,breakaway,BreakHold,0,FALSE,FALSE,FALSE,,data/sounds/combat/slap.mp3,0,0
 fall,FALSE,getup,,fall,,0,FALSE,FALSE,TRUE,,,0,0
 defeat,FALSE,FALSE,,defeat,,0,FALSE,FALSE,FALSE,,,0,0
 getup,18,stand,,getup,FallRiseToFeet,0,FALSE,FALSE,FALSE,4294967295,,0,0
 stand,FALSE,FALSE,,stand,Stand,,TRUE,TRUE,FALSE,,,0,0
 dodgeIncoming,FALSE,stand,,dodgeIncoming,Walk,,TRUE,TRUE,FALSE,,,0,0
 approach,FALSE,stand,,approach,Walk,,TRUE,TRUE,FALSE,,,0,0
-raiseGuard,18,guard,,,RaiseGuard,0,TRUE,TRUE,FALSE,,,0,0
-guard,180,lowerGuard,,guard,Guard,0,TRUE,TRUE,FALSE,,,0,0.10471975511966
+raiseGuard,18,guard,,turnTowardsOpponent,RaiseGuard,0,TRUE,TRUE,FALSE,,,0,3.14159265358979
+guard,42,lowerGuard,,guard,Guard,0,TRUE,TRUE,FALSE,,,0,0.0349065850398866
 guardHit,9,guard,,guardHit,GuardHit,0,FALSE,TRUE,FALSE,,data/sounds/combat/block.mp3,0,0
 lowerGuard,18,raiseGuard,,,LowerGuard,0,TRUE,TRUE,FALSE,,,0,0
 leave,FALSE,FALSE,,leave,Walk,,TRUE,TRUE,FALSE,,,0,0
