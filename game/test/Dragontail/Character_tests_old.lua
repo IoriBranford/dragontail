@@ -1,6 +1,6 @@
 local cute = require("cute")
-local Body = require("Dragontail.Character.Body")
-local Attack = require("Dragontail.Character.Attack")
+local Body = require("Dragontail.Character.Component.Body")
+local Attack = require("Dragontail.Character.Component.Attack")
 
 local Character = require "Dragontail.Character"
 

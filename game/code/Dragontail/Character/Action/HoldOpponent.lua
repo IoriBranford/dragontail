@@ -1,8 +1,8 @@
 local Characters = require "Dragontail.Stage.Characters"
-local Body       = require "Dragontail.Character.Body"
+local Body       = require "Dragontail.Character.Component.Body"
 local Audio    = require "System.Audio"
-local StateMachine   = require "Dragontail.Character.StateMachine"
-local Guard          = require "Dragontail.Character.Guard"
+local StateMachine   = require "Dragontail.Character.Component.StateMachine"
+local Guard          = require "Dragontail.Character.Action.Guard"
 
 ---@class HeldByOpponent:Character
 ---@field heldby HoldOpponent?

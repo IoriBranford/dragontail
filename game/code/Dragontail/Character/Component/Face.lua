@@ -1,4 +1,4 @@
-local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
+local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
 
 ---@class Face:TiledObject
 ---@field faceangle number

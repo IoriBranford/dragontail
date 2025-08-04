@@ -222,7 +222,7 @@ function RaycastCollision3D:collide(raycast)
         return
     end
 
-    local Body = require "Dragontail.Character.Body"
+    local Body = require "Dragontail.Character.Component.Body"
     local projx, projy, projdsq = Body.testCircleWithRaycast(self, raycast)
     if not projx then
         return

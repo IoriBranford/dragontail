@@ -3,8 +3,8 @@ local Database = require "Data.Database"
 local Audio    = require "System.Audio"
 local Characters = require "Dragontail.Stage.Characters"
 local Stage      = require "Dragontail.Stage"
-local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
-local Face                 = require "Dragontail.Character.Action.Face"
+local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
+local Face                 = require "Dragontail.Character.Component.Face"
 
 --- Attacks:
 --- - Lance charge

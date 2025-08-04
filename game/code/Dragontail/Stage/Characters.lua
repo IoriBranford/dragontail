@@ -1,10 +1,10 @@
 local Database = require "Data.Database"
 local Character= require "Dragontail.Character"
-local StateMachine    = require "Dragontail.Character.StateMachine"
+local StateMachine    = require "Dragontail.Character.Component.StateMachine"
 local Assets = require "Tiled.Assets"
 local TiledObject  = require "Tiled.Object"
-local Body         = require "Dragontail.Character.Body"
-local CollisionMask= require "Dragontail.Character.Body.CollisionMask"
+local Body         = require "Dragontail.Character.Component.Body"
+local CollisionMask= require "Dragontail.Character.Component.Body.CollisionMask"
 
 ---@module 'Dragontail.Stage.Characters'
 local Characters = {}

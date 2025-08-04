@@ -1,5 +1,5 @@
 local Raycast = require "Object.Raycast"
-local CollisionMask = require "Dragontail.Character.Body.CollisionMask"
+local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask"
 
 ---@class AttackerSlot:Raycast
 ---@field enemy Enemy?

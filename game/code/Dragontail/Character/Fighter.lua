@@ -5,13 +5,13 @@ local Characters = require "Dragontail.Stage.Characters"
 local TiledObject = require "Tiled.Object"
 local Movement    = require "Component.Movement"
 local Slide      = require "Dragontail.Character.Action.Slide"
-local Face       = require "Dragontail.Character.Action.Face"
+local Face       = require "Dragontail.Character.Component.Face"
 local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
-local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
-local Mana                 = require "Dragontail.Character.Mana"
-local Body                 = require "Dragontail.Character.Body"
+local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
+local Mana                 = require "Dragontail.Character.Component.Mana"
+local Body                 = require "Dragontail.Character.Component.Body"
 local Color                = require "Tiled.Color"
-local Guard                = require "Dragontail.Character.Guard"
+local Guard                = require "Dragontail.Character.Action.Guard"
 
 ---@class Dash
 ---@field dashsound string?

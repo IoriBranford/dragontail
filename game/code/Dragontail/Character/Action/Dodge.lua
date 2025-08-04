@@ -2,9 +2,9 @@ local Characters = require "Dragontail.Stage.Characters"
 local Raycast    = require "Object.Raycast"
 local Slide      = require "Dragontail.Character.Action.Slide"
 local Audio      = require "System.Audio"
-local Face       = require "Dragontail.Character.Action.Face"
-local Body       = require "Dragontail.Character.Body"
-local CollisionMask = require "Dragontail.Character.Body.CollisionMask"
+local Face       = require "Dragontail.Character.Component.Face"
+local Body       = require "Dragontail.Character.Component.Body"
+local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask"
 
 ---@class Dodge:Character
 ---@field dodgespeed number?

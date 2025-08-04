@@ -6,13 +6,13 @@ local Raycast    = require "Object.Raycast"
 local Color      = require "Tiled.Color"
 local Dodge      = require "Dragontail.Character.Action.Dodge"
 local Slide      = require "Dragontail.Character.Action.Slide"
-local Face       = require "Dragontail.Character.Action.Face"
+local Face       = require "Dragontail.Character.Component.Face"
 local Shoot      = require "Dragontail.Character.Action.Shoot"
-local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
-local Body                 = require "Dragontail.Character.Body"
+local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
+local Body                 = require "Dragontail.Character.Component.Body"
 local Character            = require "Dragontail.Character"
-local CollisionMask        = require "Dragontail.Character.Body.CollisionMask"
-local Guard                = require "Dragontail.Character.Guard"
+local CollisionMask        = require "Dragontail.Character.Component.Body.CollisionMask"
+local Guard                = require "Dragontail.Character.Action.Guard"
 
 ---@class Ambush
 ---@field ambushsightarc number?

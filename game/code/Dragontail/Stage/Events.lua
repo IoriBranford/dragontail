@@ -1,6 +1,6 @@
 local Characters = require "Dragontail.Stage.Characters"
-local StateMachine      = require "Dragontail.Character.StateMachine"
-local Body              = require "Dragontail.Character.Body"
+local StateMachine      = require "Dragontail.Character.Component.StateMachine"
+local Body              = require "Dragontail.Character.Component.Body"
 
 ---@module 'Dragontail.Stage.Events'
 local Events = {}

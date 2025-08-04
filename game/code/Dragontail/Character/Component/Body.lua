@@ -1,6 +1,6 @@
 local Movement   = require "Component.Movement"
-local CollisionMask = require "Dragontail.Character.Body.CollisionMask"
-local RaycastCollision3D = require "Dragontail.Character.Body.RaycastCollision3D"
+local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask"
+local RaycastCollision3D = require "Dragontail.Character.Component.Body.RaycastCollision3D"
 
 ---@class Body:TiledObject
 ---@field z number

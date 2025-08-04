@@ -1,7 +1,7 @@
 local Database = require "Data.Database"
 local Audio    = require "System.Audio"
-local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
-local Body                 = require "Dragontail.Character.Body"
+local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
+local Body                 = require "Dragontail.Character.Component.Body"
 local Assets               = require "Tiled.Assets"
 
 local co_create = coroutine.create

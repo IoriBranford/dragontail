@@ -1,13 +1,13 @@
 local Database      = require "Data.Database"
 local Color      = require "Tiled.Color"
 local Config      = require "System.Config"
-local StateMachine       = require "Dragontail.Character.StateMachine"
+local StateMachine       = require "Dragontail.Character.Component.StateMachine"
 local Object      = require "Tiled.Object"
 local Movement    = require "Component.Movement"
-local Attacker      = require "Dragontail.Character.Attacker"
-local Body        = require "Dragontail.Character.Body"
-local Shadow      = require "Dragontail.Character.Shadow"
-local Guard       = require "Dragontail.Character.Guard"
+local Attacker      = require "Dragontail.Character.Component.Attacker"
+local Body        = require "Dragontail.Character.Component.Body"
+local Shadow      = require "Dragontail.Character.Component.Shadow"
+local Guard       = require "Dragontail.Character.Action.Guard"
 local Characters
 
 local pi = math.pi

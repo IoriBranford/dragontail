@@ -1,4 +1,4 @@
-local Attacker = require "Dragontail.Character.Attacker"
+local Attacker = require "Dragontail.Character.Component.Attacker"
 local drawCake = require "drawCake"
 
 ---@class Guard:Body

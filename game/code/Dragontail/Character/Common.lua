@@ -1,13 +1,13 @@
 local Audio     = require "System.Audio"
 local Database    = require "Data.Database"
-local StateMachine       = require "Dragontail.Character.StateMachine"
+local StateMachine       = require "Dragontail.Character.Component.StateMachine"
 local Color       = require "Tiled.Color"
 local Character   = require "Dragontail.Character"
 local Characters  = require "Dragontail.Stage.Characters"
-local Body        = require "Dragontail.Character.Body"
-local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
-local Face                 = require "Dragontail.Character.Action.Face"
-local Mana = require "Dragontail.Character.Mana"
+local Body        = require "Dragontail.Character.Component.Body"
+local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
+local Face                 = require "Dragontail.Character.Component.Face"
+local Mana = require "Dragontail.Character.Component.Mana"
 
 local yield = coroutine.yield
 local wait = coroutine.wait
