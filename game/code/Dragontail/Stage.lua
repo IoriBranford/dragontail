@@ -10,6 +10,7 @@ local Events      = require "Dragontail.Stage.Events"
 local Database    = require "Data.Database"
 local Assets      = require "Tiled.Assets"
 local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask"
+local pathlite = require "pl.pathlite"
 local Stage = {
     CameraWidth = 480,
     CameraHeight = 270
@@ -39,6 +40,7 @@ end
 
 function Stage.load(stagefile)
     map = Tiled.Map.load(stagefile)
+    local directory = map.directory
     map:indexLayersByName()
     map:indexLayerObjectsByName()
     map:indexTilesetTilesByName()
@@ -59,6 +61,10 @@ function Stage.load(stagefile)
             end
             if object.extrudeY then
                 object.bodyheight = -object.extrudeY
+            end
+            if object.propertiestable then
+                object.propertiestable = pathlite.normjoin(directory, object.propertiestable)
+                Database.getTable(object.propertiestable)
             end
         end
     end
