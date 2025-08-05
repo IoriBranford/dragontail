@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <tileset firstgid="1" source="../../sprites/bandit/boss.tsx"/>
+ <object type="bandit-boss" gid="1" width="192" height="192">
+  <properties>
+   <property name="propertiestable" type="file" value="../../database/bandits-properties.csv"/>
+  </properties>
+ </object>
+</template>
