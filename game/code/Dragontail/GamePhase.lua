@@ -28,9 +28,6 @@ function GamePhase.loadphase()
     Database.load("data/database/items-properties.csv")
     Database.load("data/database/projectiles-properties.csv")
     Database.load("data/database/objects-properties.csv")
-    Database.load("data/database/bandits-properties.csv")
-    Database.load("data/database/bandits-graphics.csv")
-    Database.load("data/database/bandits-sounds.csv")
     Database.forEach(function(_, properties)
         for k,v in pairs(properties) do
             if isAsset(v) then
