@@ -1060,8 +1060,8 @@ to sprint past archers</text>
    <properties>
     <property name="titlebarcuecard" value="LV2 REVENGE"/>
    </properties>
-   <object id="383" gid="7255" x="3864" y="120" width="64" height="64"/>
-   <object id="384" gid="7255" x="3864" y="216" width="64" height="64"/>
+   <object id="383" template="mapobjects/bandit/axe.tx" x="3864" y="120"/>
+   <object id="384" template="mapobjects/bandit/axe.tx" x="3864" y="216"/>
   </objectgroup>
   <objectgroup draworder="index" id="43" name="tomesshall" class="Room">
    <object id="484" template="mapobjects/CameraPath.tx" x="3600" y="144">

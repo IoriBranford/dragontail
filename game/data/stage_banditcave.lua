@@ -19263,7 +19263,7 @@ return {
             {
               id = 383,
               name = "",
-              type = "",
+              type = "bandit-axe",
               shape = "rectangle",
               x = 3864,
               y = 120,
@@ -19272,12 +19272,14 @@ return {
               rotation = 0,
               gid = 7255,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 384,
               name = "",
-              type = "",
+              type = "bandit-axe",
               shape = "rectangle",
               x = 3864,
               y = 216,
@@ -19286,7 +19288,9 @@ return {
               rotation = 0,
               gid = 7255,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             }
           }
         },
