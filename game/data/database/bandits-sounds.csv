@@ -1,9 +1,0 @@
-character,holdsound,thrownrecoversound,jumplandsound
-bandit-dagger,,data/sounds/combat/slide.mp3,data/sounds/combat/landonfeet.mp3
-bandit-spear,,data/sounds/combat/slide.mp3,data/sounds/combat/landonfeet.mp3
-bandit-axe,data/sounds/combat/grab.mp3,data/sounds/combat/slide.mp3,data/sounds/combat/landonfeet.mp3
-bandit-bow,,data/sounds/combat/slide.mp3,data/sounds/combat/landonfeet.mp3
-bandit-sling,,data/sounds/combat/slide.mp3,data/sounds/combat/landonfeet.mp3
-bandit-cave-door,,,
-bandit-boss,,,data/sounds/combat/landonfeet.mp3
-bandit-shield,,data/sounds/combat/slide.mp3,data/sounds/combat/landonfeet.mp3
