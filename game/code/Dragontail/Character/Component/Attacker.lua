@@ -91,7 +91,18 @@ function Attacker:checkAttackCollision_pieslice(target)
     end
 end
 
-function Attacker:debugPrint_checkAttackCollision_circle(target)
+function Attacker:debugPrint_checkAttackCollision(target)
+    print("hurtstun", target.hurtstun)
+    print("canbeattacked", target.canbeattacked)
+    print("attacker.attack.canjuggle", self.attack.canjuggle)
+    print("canbejuggled", target.canbejuggled)
+    local penex, peney, penez = Attacker.checkAttackCollision(self, target)
+    if not (penex or peney or penez) then
+        Attacker.debugPrint_checkAttackCollision_cylinder(self, target)
+    end
+end
+
+function Attacker:debugPrint_checkAttackCollision_cylinder(target)
     print("self == target", self == target)
     print("self.thrower == target", self.thrower == target)
     print("target.thrower == self", target.thrower == self)
@@ -114,20 +125,14 @@ function Attacker:getAttackCylinder()
     return x, y, z, r, h
 end
 
-function Attacker:checkAttackCollision_circle(target)
-    if target == self or target == self.thrower or target.thrower == self then
-        return
-    end
+function Attacker:checkAttackCollision_cylinder(target)
     local ax, ay, az, ar, ah = Attacker.getAttackCylinder(self)
     if ax then
-        local penex, peney, penez = Body.getCylinderPenetration(target, ax, ay, az, ar, ah)
-        return penex or peney or penez
+        return Body.getCylinderPenetration(target, ax, ay, az, ar, ah)
     end
 end
 
-Attacker.checkAttackCollision = Attacker.checkAttackCollision_circle
-
-function Attacker:collideWithCharacterAttack(target)
+function Attacker:checkAttackCollision(target)
     if target.hurtstun > 0 then
         return
     end
@@ -136,9 +141,33 @@ function Attacker:collideWithCharacterAttack(target)
             return
         end
     end
-    if Attacker.checkAttackCollision(self, target) then
-        -- TODO record collision
-        return true
+    if target == self or target == self.thrower or target.thrower == self then
+        return
+    end
+    return Attacker.checkAttackCollision_cylinder(self, target)
+end
+
+---@param target Victim
+---@return Hit?
+function Attacker:getAttackHit(target)
+    local penex, peney, penez = Attacker.checkAttackCollision(self, target)
+    if penex or peney or penez then
+        -- print(self.type..self.id, self.attacktype, target.type..target.id)
+        local x, y, z, r, h = Attacker.getAttackCylinder(self)
+        return {
+            angle = self.attackangle,
+            attack = self.attack,
+            target = target,
+            attacker = self,
+            penex = penex,
+            peney = peney,
+            penez = penez,
+            attackx = x,
+            attacky = y,
+            attackz = z,
+            attackr = r,
+            attackh = h
+        }
     end
 end
 

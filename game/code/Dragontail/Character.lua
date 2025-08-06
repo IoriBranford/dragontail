@@ -196,53 +196,27 @@ Character.isAttacking = Attacker.isAttacking
 Character.startAttack = Attacker.startAttack
 Character.stopAttack = Attacker.stopAttack
 
-function Character:onHitByAttack(attacker)
+function Character:onHitByAttack(hit)
+    local attacker, attack = hit.attacker, hit.attack
     local guardhitstate = self.guardai or "guardHit"
     local hurtstate = self.hurtai or "hurt"
-    local attackernewstate = attacker.attack.selfstateonhit
-
+    local attackernewstate = attack.selfstateonhit
 
     attacker.numopponentshit = (attacker.numopponentshit or 0) + 1
     if Guard.isAttackInGuardArc(self, attacker) then
-        StateMachine.start(self, guardhitstate, attacker)
-        attackernewstate = attacker.attack.selfstateonguarded
+        StateMachine.start(self, guardhitstate, hit)
+        attackernewstate = attack.selfstateonguarded
             or attackernewstate
     else
-        StateMachine.start(self, hurtstate, attacker)
+        StateMachine.start(self, hurtstate, hit)
         if attacker.hitstun <= 0 then
-            attacker.hitstun = attacker.attack.selfstun or 3
+            attacker.hitstun = attack.selfstun or 3
         end
-        attackernewstate = attacker.attack.selfstateonhitopponent
+        attackernewstate = attack.selfstateonhitopponent
             or attackernewstate
     end
     if attackernewstate then
         StateMachine.start(attacker, attackernewstate, self)
-    end
-end
-
-function Character:debugPrint_collideWithCharacterAttack(attacker)
-    print("hurtstun", self.hurtstun)
-    print("canbeattacked", self.canbeattacked)
-    print("attacker.attack.canjuggle", attacker.attack.canjuggle)
-    print("canbejuggled", self.canbejuggled)
-    if not Attacker.checkAttackCollision(attacker, self) then
-        Attacker.debugPrint_checkAttackCollision_circle(attacker, self)
-    end
-end
-
----@param attacker Character
-function Character:collideWithCharacterAttack(attacker)
-    if self.hurtstun > 0 then
-        return
-    end
-    if not self.canbeattacked then
-        if not attacker.attack.canjuggle or not self.canbejuggled then
-            return
-        end
-    end
-    if Attacker.checkAttackCollision(attacker, self) then
-        self:onHitByAttack(attacker)
-        return true
     end
 end
 

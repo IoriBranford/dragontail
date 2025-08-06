@@ -5,13 +5,14 @@ local Assets = require "Tiled.Assets"
 local TiledObject  = require "Tiled.Object"
 local Body         = require "Dragontail.Character.Component.Body"
 local CollisionMask= require "Dragontail.Character.Component.Body.CollisionMask"
+local Attacker     = require "Dragontail.Character.Component.Attacker"
 
 ---@module 'Dragontail.Stage.Characters'
 local Characters = {}
 
-local players
-local enemies -- characters player must beat to advance
-local solids -- characters who should block others' movement
+local players ---@type Character[]
+local enemies ---@type Character[] characters player must beat to advance
+local solids ---@type Character[] characters who should block others' movement
 local allcharacters ---@type Character[]
 local groups
 local scene
@@ -131,73 +132,27 @@ function Characters.spawnArray(characters)
     end
 end
 
+local Hits = {}
+
 function Characters.fixedupdate()
     for i = 1, #allcharacters do local character = allcharacters[i]
         character:fixedupdate()
     end
 
-    local projectiles = groups.projectiles
-    for i = 1, #players do local player = players[i]
-        if player:isAttacking() then
-            for j = 1, #enemies do local enemy = enemies[j]
-                enemy:collideWithCharacterAttack(player)
-            end
-            for j = 1, #solids do local solid = solids[j]
-                solid:collideWithCharacterAttack(player)
-            end
-        end
+    for i = #Hits, 1, -1 do
+        Hits[i] = nil
     end
-    for i = 1, #projectiles do local projectile = projectiles[i]
-        if projectile:isAttacking() then
-            for j = 1, #enemies do local enemy = enemies[j]
-                enemy:collideWithCharacterAttack(projectile)
-            end
-            for j = 1, #solids do local solid = solids[j]
-                solid:collideWithCharacterAttack(projectile)
-            end
-        end
-    end
-    for i = 1, #enemies do local enemy = enemies[i]
-        if enemy:isAttacking() then
-            for j = 1, #enemies do local enemy2 = enemies[j]
-                enemy2:collideWithCharacterAttack(enemy)
-            end
-            for j = 1, #solids do local solid = solids[j]
-                solid:collideWithCharacterAttack(enemy)
-            end
-        end
-    end
-    for i = 1, #solids do local solid = solids[i]
-        if solid:isAttacking() then
-            for j = 1, #enemies do local enemy = enemies[j]
-                enemy:collideWithCharacterAttack(solid)
-            end
-            for j = 1, #solids do local solid2 = solids[j]
-                solid2:collideWithCharacterAttack(solid)
+
+    for i = 1, #allcharacters do local character = allcharacters[i]
+        if character:isAttacking() then
+            for i = 1, #allcharacters do local character2 = allcharacters[i]
+                Hits[#Hits+1] = Attacker.getAttackHit(character, character2)
             end
         end
     end
 
-    for i = 1, #projectiles do local projectile = projectiles[i]
-        if projectile:isAttacking() then
-            for j = 1, #players do local player = players[j]
-                player:collideWithCharacterAttack(projectile)
-            end
-        end
-    end
-    for i = 1, #solids do local solid = solids[i]
-        if solid:isAttacking() then
-            for j = 1, #players do local player = players[j]
-                player:collideWithCharacterAttack(solid)
-            end
-        end
-    end
-    for i = 1, #enemies do local enemy = enemies[i]
-        if enemy:isAttacking() then
-            for j = 1, #players do local player = players[j]
-                player:collideWithCharacterAttack(enemy)
-            end
-        end
+    for _, hit in ipairs(Hits) do
+        hit.target:onHitByAttack(hit)
     end
 
     for i = 1, #players do local player = players[i]

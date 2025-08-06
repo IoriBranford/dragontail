@@ -773,11 +773,11 @@ function Player:duringGetUp()
     end
 end
 
-function Player:hurt(attacker)
+function Player:hurt(hit)
     if self.crosshair then
         self.crosshair.visible = false
     end
-    local nextstate, a, b, c, d, e = Fighter.hurt(self, attacker)
+    local nextstate, a, b, c, d, e = Fighter.hurt(self, hit)
     if nextstate == "walk" then
         if self.sprintbutton.down then
             self.sprintbutton.pressed = true

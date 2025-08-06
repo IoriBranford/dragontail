@@ -502,8 +502,12 @@ end
 function Enemy:duringGuardHit(attacker, t)
 end
 
-function Enemy:guardHit(attacker)
-    self:makeImpactSpark(attacker, attacker.attack.guardhitspark)
+---@param hit Hit
+---@return string? nextstate
+---@return any ...
+function Enemy:guardHit(hit)
+    local attacker, attack = hit.attacker, hit.attack
+    self:makeImpactSpark(attacker, attack.guardhitspark)
     self.hurtstun = attacker.attackguardstun or 6
 
     local nextstate, a, b, c, d, e, f

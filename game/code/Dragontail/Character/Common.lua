@@ -468,10 +468,11 @@ function Common:makeImpactSpark(attacker, sparktype)
     end
 end
 
-function Common:guardHit(attacker)
+function Common:guardHit(hit)
+    local attacker, attack = hit.attacker, hit.attack
     Audio.play(self.guardhitsound)
-    self:makeImpactSpark(attacker, attacker.attack.guardhitspark)
-    self.hurtstun = attacker.attackguardstun or 6
+    self:makeImpactSpark(attacker, attack.guardhitspark)
+    self.hurtstun = attack.selfstunonguard or 6
     yield()
     return self.recoverai or self.initialai
 end

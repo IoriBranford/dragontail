@@ -71,10 +71,11 @@ Fighter.storeMana = Mana.store
 function Fighter:duringHurt() end
 
 ---hurt state code
----@param attacker Character
+---@param hit Hit
 ---@return string nextstate
----@return ... next state args
-function Fighter:hurt(attacker)
+---@return any ... next state args
+function Fighter:hurt(hit)
+    local attacker, attack, attackangle = hit.attacker, hit.attack, hit.angle
     local hurtangle
     if attacker.y == self.y and attacker.x == self.x then
         hurtangle = 0
@@ -82,31 +83,31 @@ function Fighter:hurt(attacker)
         hurtangle = atan2(attacker.y - self.y, attacker.x - self.x)
     end
     self.hurtangle = hurtangle
-    self.hurtparticle = attacker.attack.hurtparticle
-    self.hurtcolorcycle = attacker.attack.hurtcolorcycle
-    self:makeImpactSpark(attacker, attacker.attack.hitspark)
-    self.health = self.health - (attacker.attack.damage or 0)
+    self.hurtparticle = attack.hurtparticle
+    self.hurtcolorcycle = attack.hurtcolorcycle
+    self:makeImpactSpark(attacker, attack.hitspark)
+    self.health = self.health - (attack.damage or 0)
     self.velx, self.vely = 0, 0
     self:stopAttack()
     Guard.stopGuarding(self)
     HoldOpponent.stopHolding(self, self.heldopponent)
-    self.hurtstun = attacker.attack.opponentstun or 3
+    self.hurtstun = attack.opponentstun or 3
 
     if attacker.storeMana then
-        local mana = attacker.attack.gainmanaonhit
-            or math.max(1, math.floor((attacker.attack.damage or 0)/4))
+        local mana = attack.gainmanaonhit
+            or math.max(1, math.floor((attack.damage or 0)/4))
         attacker:storeMana(mana)
     end
 
-    local hitsound = attacker.attack.hitsound
+    local hitsound = attack.hitsound
     if self.health <= 0 then
-        hitsound = attacker.attack.finalhitsound or hitsound
+        hitsound = attack.finalhitsound or hitsound
     end
     Audio.play(hitsound)
-    local attackangle = attacker.attackangle
-    local defeateffect = attacker.attack.opponentstateonfinalhit
-    local hiteffect = attacker.attack.opponentstateonhit
-    local pushbackspeed = attacker.attack.pushbackspeed or 0
+
+    local defeateffect = attack.opponentstateonfinalhit
+    local hiteffect = attack.opponentstateonhit
+    local pushbackspeed = attack.pushbackspeed or 0
     yield()
 
     if self.health <= 0 then
