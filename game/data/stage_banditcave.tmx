@@ -261,10 +261,10 @@
     <property name="donewhenenemiesleft" type="int" value="2"/>
     <property name="titlebarcuecard" value="ATTACK"/>
    </properties>
-   <object id="15" gid="7260" x="1072" y="160" width="64" height="64"/>
-   <object id="485" gid="7260" x="1176" y="240" width="64" height="64"/>
-   <object id="49" gid="7260" x="408" y="160" width="64" height="64"/>
-   <object id="48" gid="7260" x="464" y="208" width="64" height="64"/>
+   <object id="15" template="mapobjects/bandit/knife.tx" x="1072" y="160"/>
+   <object id="485" template="mapobjects/bandit/knife.tx" x="1176" y="240"/>
+   <object id="49" template="mapobjects/bandit/knife.tx" x="408" y="160"/>
+   <object id="48" template="mapobjects/bandit/knife.tx" x="464" y="208"/>
    <object id="514" name="attackbutton" gid="6872" x="688" y="56" width="16" height="16"/>
    <object id="517" name="Attack" x="712" y="40" width="64" height="18">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">ATTACK</text>
@@ -274,12 +274,12 @@
    <properties>
     <property name="titlebarcuecard" value="GRAB ATTACK &amp; THROW"/>
    </properties>
-   <object id="16" gid="7260" x="248" y="240" width="64" height="64"/>
-   <object id="487" gid="7260" x="408" y="200" width="64" height="64"/>
-   <object id="11" gid="7260" x="984" y="152" width="64" height="64"/>
-   <object id="488" gid="7260" x="1016" y="240" width="64" height="64"/>
-   <object id="486" gid="7260" x="272" y="128" width="64" height="64"/>
-   <object id="45" gid="7260" x="1192" y="256" width="64" height="64"/>
+   <object id="16" template="mapobjects/bandit/knife.tx" x="248" y="240"/>
+   <object id="487" template="mapobjects/bandit/knife.tx" x="408" y="200"/>
+   <object id="11" template="mapobjects/bandit/knife.tx" x="984" y="152"/>
+   <object id="488" template="mapobjects/bandit/knife.tx" x="1016" y="240"/>
+   <object id="486" template="mapobjects/bandit/knife.tx" x="272" y="128"/>
+   <object id="45" template="mapobjects/bandit/knife.tx" x="1192" y="256"/>
    <object id="519" name="joystick" gid="6856" x="760" y="56" width="16" height="16"/>
    <object id="520" name="Grab" x="784" y="40" width="128" height="32">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">INTO ENEMY to GRAB then</text>
@@ -297,9 +297,9 @@
    <object id="482" template="mapobjects/CameraPath.tx" x="720" y="144">
     <polyline points="0,0 96,0"/>
    </object>
-   <object id="490" gid="7260" x="1048" y="160" width="64" height="64"/>
-   <object id="491" gid="7260" x="1128" y="224" width="64" height="64"/>
-   <object id="492" gid="7260" x="1040" y="248" width="64" height="64"/>
+   <object id="490" template="mapobjects/bandit/knife.tx" x="1048" y="160"/>
+   <object id="491" template="mapobjects/bandit/knife.tx" x="1128" y="224"/>
+   <object id="492" template="mapobjects/bandit/knife.tx" x="1040" y="248"/>
    <object id="238" template="mapobjects/OutwardBoundary.tx" x="1024" y="64" visible="1">
     <properties>
      <property name="extrudeY" type="float" value="-64"/>
@@ -337,9 +337,9 @@ COSTS 1 OR MORE</text>
    <object id="29" template="mapobjects/CameraPath.tx" x="720" y="144">
     <polyline points="96,0 224,0 416,64 640,64"/>
    </object>
-   <object id="52" gid="7260" x="1264" y="192" width="64" height="64"/>
-   <object id="51" gid="7260" x="1296" y="288" width="64" height="64"/>
-   <object id="53" gid="7260" x="1232" y="272" width="64" height="64"/>
+   <object id="52" template="mapobjects/bandit/knife.tx" x="1264" y="192"/>
+   <object id="51" template="mapobjects/bandit/knife.tx" x="1296" y="288"/>
+   <object id="53" template="mapobjects/bandit/knife.tx" x="1232" y="272"/>
    <object id="430" name="Instruction" x="1216" y="160" width="192" height="32" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Steer while sprinting</text>
    </object>
@@ -356,16 +356,8 @@ COSTS 1 OR MORE</text>
     <property name="donewhenenemiesleft" type="int" value="4"/>
     <property name="titlebarcuecard" value="RUN WITH ENEMY"/>
    </properties>
-   <object id="19" gid="7260" x="1184" y="32" width="64" height="64">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-   </object>
-   <object id="20" gid="7260" x="1320" y="56" width="64" height="64">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-   </object>
+   <object id="19" template="mapobjects/bandit/knife.tx" x="1184" y="32"/>
+   <object id="20" template="mapobjects/bandit/knife.tx" x="1320" y="56"/>
    <object id="493" template="mapobjects/CameraPath.tx" name="camerapathDisabled" x="1136" y="208">
     <polyline points="0,0 224,0"/>
    </object>
@@ -374,8 +366,8 @@ COSTS 1 OR MORE</text>
    <properties>
     <property name="titlebarcuecard" value="WALK INTO SPEAR THEN RUN"/>
    </properties>
-   <object id="32" gid="7258" x="1616" y="216" width="64" height="64"/>
-   <object id="261" gid="7258" x="1064" y="232" width="64" height="64"/>
+   <object id="32" template="mapobjects/bandit/spear.tx" x="1616" y="216"/>
+   <object id="261" template="mapobjects/bandit/spear.tx" x="1064" y="232"/>
    <object id="425" name="Instruction" x="1240" y="304" width="264" height="16" visible="0">
     <properties>
      <property name="drawz" type="float" value="2"/>
@@ -494,10 +486,10 @@ COSTS 1 OR MORE</text>
    <properties>
     <property name="donewhenenemiesleft" type="int" value="4"/>
    </properties>
-   <object id="246" gid="7260" x="1872" y="168" width="64" height="64"/>
-   <object id="248" gid="7260" x="1360" y="200" width="64" height="64"/>
-   <object id="250" gid="7260" x="1872" y="200" width="64" height="64"/>
-   <object id="253" gid="7260" x="1360" y="232" width="64" height="64"/>
+   <object id="246" template="mapobjects/bandit/knife.tx" x="1872" y="168"/>
+   <object id="248" template="mapobjects/bandit/knife.tx" x="1360" y="200"/>
+   <object id="250" template="mapobjects/bandit/knife.tx" x="1872" y="200"/>
+   <object id="253" template="mapobjects/bandit/knife.tx" x="1360" y="232"/>
   </objectgroup>
   <objectgroup id="11" name="+shooter" class="Room">
    <properties>
@@ -531,7 +523,7 @@ COSTS 1 OR MORE</text>
    <properties>
     <property name="donewhenenemiesleft" type="int" value="4"/>
    </properties>
-   <object id="501" gid="7258" x="1872" y="232" width="64" height="64"/>
+   <object id="501" template="mapobjects/bandit/spear.tx" x="1872" y="232"/>
   </objectgroup>
   <objectgroup id="49" name="+shooters" class="Room">
    <properties>
@@ -592,8 +584,8 @@ COSTS 1 OR MORE</text>
    </object>
   </objectgroup>
   <objectgroup id="13" name="+spears" class="Room">
-   <object id="41" gid="7258" x="1360" y="264" width="64" height="64"/>
-   <object id="62" gid="7258" x="1872" y="232" width="64" height="64"/>
+   <object id="41" template="mapobjects/bandit/spear.tx" x="1360" y="264"/>
+   <object id="62" template="mapobjects/bandit/spear.tx" x="1872" y="232"/>
   </objectgroup>
   <objectgroup draworder="index" id="15" name="tolearngrabandthrowenemies" class="Room">
    <object id="65" template="mapobjects/OutwardBoundary.tx" x="2016" y="288" visible="1">
@@ -692,17 +684,9 @@ COSTS 1 OR MORE</text>
     </properties>
     <point/>
    </object>
-   <object id="307" gid="7258" x="1568" y="256" width="64" height="64"/>
-   <object id="503" gid="7258" x="1880" y="-8" width="64" height="64">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-   </object>
-   <object id="308" gid="7258" x="1936" y="-8" width="64" height="64">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-   </object>
+   <object id="307" template="mapobjects/bandit/spear.tx" x="1568" y="256"/>
+   <object id="503" template="mapobjects/bandit/spear.tx" x="1880" y="-8"/>
+   <object id="308" template="mapobjects/bandit/spear.tx" x="1936" y="-8"/>
    <object id="436" name="Instruction" x="1864" y="48" width="144" height="32" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Move into an enemy or barrel to grab</text>
    </object>
@@ -1015,12 +999,12 @@ to sprint past archers</text>
     </properties>
     <point/>
    </object>
-   <object id="101" gid="7260" x="3376" y="192" width="64" height="64"/>
-   <object id="510" gid="7260" x="3408" y="256" width="64" height="64"/>
+   <object id="101" template="mapobjects/bandit/knife.tx" x="3376" y="192"/>
+   <object id="510" template="mapobjects/bandit/knife.tx" x="3408" y="256"/>
   </objectgroup>
   <objectgroup id="51" name="+spears" class="Room">
-   <object id="96" gid="7258" x="3344" y="328" width="64" height="64"/>
-   <object id="103" gid="7258" x="3056" y="328" width="64" height="64"/>
+   <object id="96" template="mapobjects/bandit/spear.tx" x="3344" y="328"/>
+   <object id="103" template="mapobjects/bandit/spear.tx" x="3056" y="328"/>
   </objectgroup>
   <objectgroup id="18" name="toarmory" class="Room">
    <object id="79" template="mapobjects/CameraPath.tx" x="3120" y="144">
@@ -1067,10 +1051,10 @@ to sprint past archers</text>
    <object id="505" template="mapobjects/CameraPath.tx" x="3408" y="144">
     <polyline points="0,0 192,0"/>
    </object>
-   <object id="397" gid="7258" x="3808" y="120" width="64" height="64"/>
-   <object id="398" gid="7258" x="3768" y="208" width="64" height="64"/>
-   <object id="506" gid="7258" x="3712" y="272" width="64" height="64"/>
-   <object id="507" gid="7258" x="3640" y="328" width="64" height="64"/>
+   <object id="397" template="mapobjects/bandit/spear.tx" x="3808" y="120"/>
+   <object id="398" template="mapobjects/bandit/spear.tx" x="3768" y="208"/>
+   <object id="506" template="mapobjects/bandit/spear.tx" x="3712" y="272"/>
+   <object id="507" template="mapobjects/bandit/spear.tx" x="3640" y="328"/>
   </objectgroup>
   <objectgroup id="35" name="+axes" class="Room">
    <properties>
@@ -1346,10 +1330,10 @@ to sprint past archers</text>
    <properties>
     <property name="donewhenenemiesleft" type="int" value="4"/>
    </properties>
-   <object id="339" gid="7260" x="3824" y="176" width="64" height="64"/>
-   <object id="511" gid="7260" x="3752" y="216" width="64" height="64"/>
-   <object id="340" gid="7260" x="4336" y="176" width="64" height="64"/>
-   <object id="512" gid="7260" x="4416" y="136" width="64" height="64"/>
+   <object id="339" template="mapobjects/bandit/knife.tx" x="3824" y="176"/>
+   <object id="511" template="mapobjects/bandit/knife.tx" x="3752" y="216"/>
+   <object id="340" template="mapobjects/bandit/knife.tx" x="4336" y="176"/>
+   <object id="512" template="mapobjects/bandit/knife.tx" x="4416" y="136"/>
   </objectgroup>
   <objectgroup id="44" name="+shooter&amp;spear" class="Room">
    <properties>
@@ -1367,7 +1351,7 @@ to sprint past archers</text>
    <object id="346" name="entrypoint" x="4208" y="272">
     <point/>
    </object>
-   <object id="347" gid="7258" x="3824" y="144" width="64" height="64"/>
+   <object id="347" template="mapobjects/bandit/spear.tx" x="3824" y="144"/>
   </objectgroup>
   <objectgroup id="45" name="+shooter&amp;spear" class="Room">
    <properties>
@@ -1385,7 +1369,7 @@ to sprint past archers</text>
    <object id="345" name="entrypoint" x="4064" y="272">
     <point/>
    </object>
-   <object id="348" gid="7258" x="4336" y="144" width="64" height="64"/>
+   <object id="348" template="mapobjects/bandit/spear.tx" x="4336" y="144"/>
   </objectgroup>
   <objectgroup id="21" name="+shooter&amp;spears" class="Room">
    <properties>
@@ -1403,8 +1387,8 @@ to sprint past archers</text>
    <object id="344" name="entrypoint" x="3928" y="272">
     <point/>
    </object>
-   <object id="349" gid="7258" x="3824" y="216" width="64" height="64"/>
-   <object id="350" gid="7258" x="4336" y="216" width="64" height="64"/>
+   <object id="349" template="mapobjects/bandit/spear.tx" x="3824" y="216"/>
+   <object id="350" template="mapobjects/bandit/spear.tx" x="4336" y="216"/>
   </objectgroup>
   <objectgroup id="20" name="arena" class="Room">
    <object id="76" template="mapobjects/OutwardBoundary.tx" x="4800" y="32">
@@ -1436,7 +1420,7 @@ to sprint past archers</text>
    <properties>
     <property name="titlebarcuecard" value="AVOID BOSS ENTRY ATTACK"/>
    </properties>
-   <object id="231" gid="7256" x="5296" y="168" width="192" height="192">
+   <object id="231" template="mapobjects/bandit/boss.tx" x="5296" y="168">
     <properties>
      <property name="facedegrees" type="float" value="180"/>
      <property name="initialai" value="bandit-boss-first-charge"/>
