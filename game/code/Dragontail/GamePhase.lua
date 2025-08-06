@@ -28,6 +28,8 @@ function GamePhase.loadphase()
     Database.load("data/database/items-properties.csv")
     Database.load("data/database/projectiles-properties.csv")
     Database.load("data/database/objects-properties.csv")
+    Stage.load("data/stage_banditcave.lua")
+
     Database.forEach(function(_, properties)
         for k,v in pairs(properties) do
             if isAsset(v) then
@@ -42,7 +44,6 @@ function GamePhase.loadphase()
         end
     end)
 
-    Stage.load("data/stage_banditcave.lua")
     Tiled.Assets.uncacheMarked()
     Tiled.Assets.packTiles()
     Tiled.Assets.setFilter("nearest", "nearest")
