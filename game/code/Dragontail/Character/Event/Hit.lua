@@ -1,0 +1,13 @@
+---@class Hit
+---@field attacker Attacker
+---@field attack Attack
+---@field target Victim
+---@field angle number
+---@field attackx number
+---@field attacky number
+---@field attackz number
+---@field attackr number
+---@field attackh number
+---@field penex number?
+---@field peney number?
+---@field penez number?
