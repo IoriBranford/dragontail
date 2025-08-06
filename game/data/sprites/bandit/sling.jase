@@ -842,6 +842,7 @@
    { "name": "FallKnees", "from": 44, "to": 46, "direction": "forward", "color": "#000000ff" },
    { "name": "FallFlat", "from": 47, "to": 49, "direction": "forward", "color": "#000000ff" },
    { "name": "FallRiseToKnees", "from": 47, "to": 49, "direction": "reverse", "color": "#000000ff" },
+   { "name": "Down", "from": 49, "to": 49, "direction": "forward", "color": "#000000ff" },
    { "name": "Shoot0", "from": 50, "to": 62, "direction": "forward", "color": "#000000ff" },
    { "name": "ShootWindup0", "from": 50, "to": 57, "direction": "forward", "color": "#000000ff" },
    { "name": "ShootAttack0", "from": 58, "to": 61, "direction": "forward", "color": "#000000ff" },
@@ -853,11 +854,7 @@
    { "name": "ShootAttack2", "from": 84, "to": 87, "direction": "forward", "color": "#000000ff" },
    { "name": "Shoot3", "from": 89, "to": 101, "direction": "forward", "color": "#000000ff" },
    { "name": "ShootWindup3", "from": 89, "to": 96, "direction": "forward", "color": "#000000ff" },
-   { "name": "ShootAttack3", "from": 97, "to": 100, "direction": "forward", "color": "#000000ff" },
-   { "name": "Cast0", "from": 102, "to": 108, "direction": "forward", "color": "#000000ff" },
-   { "name": "Cast1", "from": 109, "to": 115, "direction": "forward", "color": "#000000ff" },
-   { "name": "Cast2", "from": 116, "to": 122, "direction": "forward", "color": "#000000ff" },
-   { "name": "Cast3", "from": 123, "to": 129, "direction": "forward", "color": "#000000ff" }
+   { "name": "ShootAttack3", "from": 97, "to": 100, "direction": "forward", "color": "#000000ff" }
   ],
   "layers": [
    { "name": "Layer 1", "opacity": 255, "blendMode": "normal" },

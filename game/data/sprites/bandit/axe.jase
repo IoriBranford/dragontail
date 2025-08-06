@@ -1274,6 +1274,7 @@
    { "name": "FallKnees", "from": 124, "to": 126, "direction": "forward", "color": "#000000ff" },
    { "name": "getupfromkneel", "from": 124, "to": 126, "direction": "reverse", "color": "#000000ff" },
    { "name": "FallFlat", "from": 127, "to": 129, "direction": "forward", "color": "#000000ff" },
+   { "name": "Down", "from": 129, "to": 129, "direction": "forward", "color": "#000000ff" },
    { "name": "throw3", "from": 130, "to": 135, "direction": "forward", "color": "#000000ff" },
    { "name": "throwA3", "from": 130, "to": 132, "direction": "forward", "color": "#000000ff" },
    { "name": "throwB3", "from": 133, "to": 135, "direction": "forward", "color": "#000000ff" },

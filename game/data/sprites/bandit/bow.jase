@@ -1317,6 +1317,7 @@
    { "name": "FallKnees", "from": 36, "to": 38, "direction": "forward", "color": "#000000ff" },
    { "name": "FallFlat", "from": 39, "to": 41, "direction": "forward", "color": "#000000ff" },
    { "name": "FallRiseToKnees", "from": 39, "to": 41, "direction": "reverse", "color": "#000000ff" },
+   { "name": "Down", "from": 41, "to": 41, "direction": "forward", "color": "#000000ff" },
    { "name": "Swing0", "from": 42, "to": 47, "direction": "forward", "color": "#000000ff" },
    { "name": "SwingWindup0", "from": 42, "to": 44, "direction": "forward", "color": "#000000ff" },
    { "name": "SwingAttack0", "from": 45, "to": 47, "direction": "forward", "color": "#000000ff" },

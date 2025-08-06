@@ -762,6 +762,7 @@
    { "name": "FallKnees", "from": 44, "to": 46, "direction": "forward", "color": "#000000ff" },
    { "name": "FallRiseFromKnees", "from": 44, "to": 46, "direction": "reverse", "color": "#000000ff" },
    { "name": "FallFlat", "from": 47, "to": 49, "direction": "forward", "color": "#000000ff" },
+   { "name": "Down", "from": 49, "to": 49, "direction": "forward", "color": "#000000ff" },
    { "name": "Thrust0", "from": 50, "to": 57, "direction": "forward", "color": "#000000ff" },
    { "name": "ThrustWindup0", "from": 50, "to": 53, "direction": "forward", "color": "#000000ff" },
    { "name": "ThrustAttack0", "from": 54, "to": 57, "direction": "forward", "color": "#000000ff" },

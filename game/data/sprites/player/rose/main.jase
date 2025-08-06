@@ -2619,6 +2619,7 @@
    { "name": "Hurt4", "from": 138, "to": 139, "direction": "forward", "color": "#000000ff" },
    { "name": "Hurt6", "from": 138, "to": 139, "direction": "forward", "color": "#000000ff" },
    { "name": "Fall", "from": 140, "to": 142, "direction": "forward", "color": "#000000ff" },
+   { "name": "Down", "from": 142, "to": 142, "direction": "forward", "color": "#000000ff" },
    { "name": "FallRiseToFeet", "from": 143, "to": 148, "direction": "forward", "color": "#000000ff" },
    { "name": "win", "from": 149, "to": 150, "direction": "forward", "color": "#000000ff" },
    { "name": "Stun", "from": 151, "to": 152, "direction": "forward", "color": "#000000ff" }
