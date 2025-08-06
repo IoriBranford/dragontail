@@ -786,8 +786,8 @@ function Player:hurt(attacker)
     return nextstate, a, b, c, d, e
 end
 
-function Player:fall(attacker)
-    local nextstate, a, b, c, d, e = Fighter.fall(self, attacker)
+function Player:down(attacker)
+    local nextstate, a, b, c, d, e = Fighter.down(self, attacker)
     if self.health <= 0 then
         local chargedattack, angle = self:getReversalChargedAttack()
         if chargedattack then

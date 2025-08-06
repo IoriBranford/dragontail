@@ -37,7 +37,6 @@ local Guard                = require "Dragontail.Character.Action.Guard"
 
 ---@class Fall
 ---@field fallanimationtime number?
----@field bodydropsound string?
 
 ---@class GetUp
 ---@field getupai string?
@@ -436,7 +435,10 @@ function Fighter:fall(attacker)
             self:changeAseAnimation("Fall", 1, 0)
         end
     until t >= fallanimationtime
-    Audio.play(self.bodydropsound)
+    return "down", attacker
+end
+
+function Fighter:down(attacker)
     Characters.spawn({
         type = "spark-fall-down-dust",
         x = self.x,
@@ -471,7 +473,7 @@ function Fighter:fall(attacker)
     end
 
     if self.health > 0 then
-        t = 1
+        local t = 1
         repeat
             yield()
             Body.keepInBounds(self)

@@ -47,9 +47,9 @@ thrown,FALSE,fall,human-thrown,thrown,spin,1,FALSE,FALSE,TRUE,,,0,0
 wallSlammed,FALSE,fall,,wallSlammed,Hurt,,FALSE,FALSE,TRUE,,data/sounds/combat/bodyslam.mp3,0,0
 thrownRecover,FALSE,stand,,thrownRecover,FallKnees,0,FALSE,FALSE,FALSE,,data/sounds/combat/slide.mp3,0,0
 breakaway,FALSE,stand,,breakaway,BreakHold,0,FALSE,FALSE,FALSE,,data/sounds/combat/slap.mp3,0,0
-fall,FALSE,getup,,fall,,0,FALSE,FALSE,TRUE,,,0,0
+fall,FALSE,down,,fall,,0,FALSE,FALSE,TRUE,,,0,0
 collapse,FALSE,down,,collapse,Fall,0,FALSE,FALSE,TRUE,,,0,0
-down,FALSE,getup,,down,Lie,0,FALSE,FALSE,FALSE,,data/sounds/combat/bodydrop.mp3,0,0
+down,FALSE,getup,,down,Down,0,FALSE,FALSE,FALSE,,data/sounds/combat/bodydrop.mp3,0,0
 defeat,FALSE,FALSE,,defeat,,0,FALSE,FALSE,FALSE,,,0,0
 getup,18,stand,,getup,FallRiseToFeet,0,FALSE,FALSE,FALSE,4294967295,,0,0
 stand,FALSE,FALSE,,stand,Stand,,TRUE,TRUE,FALSE,,,0,0

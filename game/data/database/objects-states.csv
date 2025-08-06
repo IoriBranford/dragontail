@@ -8,6 +8,7 @@ wallBump,,wallBump,Hurt,,FALSE,FALSE,TRUE,,,data/sounds/combat/bodybump.mp3
 thrown,human-thrown,thrown,spin,,FALSE,FALSE,TRUE,,,
 wallSlammed,,wallSlammed,Hurt,,FALSE,FALSE,TRUE,,,data/sounds/combat/bodyslam.mp3
 fall,,fall,,0,FALSE,FALSE,TRUE,0,,
+down,,down,,0,FALSE,FALSE,FALSE,0,,data/sounds/combat/bodydrop.mp3
 defeat,,defeat,Fall,0,FALSE,FALSE,FALSE,,,
 getup,,getup,FallRiseToFeet,0,FALSE,FALSE,FALSE,,,
 spark,,spark,,,,,,,,

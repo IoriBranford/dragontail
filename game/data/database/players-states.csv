@@ -35,8 +35,9 @@ thrown,human-thrown,thrown,fall,FALSE,data/sprites/player/rose/main.jase,spin,1,
 wallSlammed,,wallSlammed,fall,FALSE,data/sprites/player/rose/main.jase,Hurt,1,FALSE,FALSE,TRUE,,data/sounds/combat/bodyslam.mp3,0,4,1,0.5,1,4,3.14159265358979
 thrownRecover,,thrownRecover,walk,FALSE,data/sprites/player/rose/main.jase,FallKnees,0,FALSE,FALSE,FALSE,,data/sounds/combat/slide.mp3,0,4,1,0.5,1,4,3.14159265358979
 breakaway,,breakaway,walk,FALSE,data/sprites/player/rose/main.jase,elbow,0,FALSE,FALSE,FALSE,,data/sounds/combat/slap.mp3,0,4,1,0.5,1,4,3.14159265358979
-fall,,fall,getup,FALSE,data/sprites/player/rose/main.jase,Fall,0,FALSE,FALSE,TRUE,,,0,4,1,0.5,1,4,3.14159265358979
-defeat,,defeat,FALSE,FALSE,data/sprites/player/rose/main.jase,,0,FALSE,FALSE,FALSE,,data/sounds/player/defeat.mp3,0,4,1,0.5,1,4,3.14159265358979
+fall,,fall,down,FALSE,data/sprites/player/rose/main.jase,,0,FALSE,FALSE,TRUE,,,0,4,1,0.5,1,4,3.14159265358979
+down,,down,getup,FALSE,data/sprites/player/rose/main.jase,Down,0,FALSE,FALSE,FALSE,,data/sounds/combat/bodydrop.mp3,0,4,1,0.5,1,4,3.14159265358979
+defeat,,defeat,FALSE,FALSE,data/sprites/player/rose/main.jase,Down,0,FALSE,FALSE,FALSE,,data/sounds/player/defeat.mp3,0,4,1,0.5,1,4,3.14159265358979
 getup,,getup,walk,FALSE,data/sprites/player/rose/main.jase,FallRiseToFeet,0,FALSE,FALSE,FALSE,4294967295,data/sounds/player/getup.mp3,0,4,1,0.5,1,4,3.14159265358979
 eventWalkTo,,eventWalkTo,FALSE,FALSE,data/sprites/player/rose/main.jase,Walk,1,FALSE,FALSE,FALSE,,,0,0,0,0.5,1,4,3.14159265358979
 catchProjectile,,catchProjectile,walk,FALSE,data/sprites/player/rose/main.jase,catch,0,FALSE,FALSE,FALSE,,data/sounds/combat/shakiin.mp3,0,2,1,0.5,4,4,3.14159265358979
