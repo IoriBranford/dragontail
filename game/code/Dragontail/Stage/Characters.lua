@@ -157,6 +157,14 @@ function Characters.fixedupdate()
         end
     end
 
+    for i = 1, #enemies do local character = enemies[i]
+        if character:isAttacking() then
+            for i = 1, #enemies do local opponent = enemies[i]
+                Hits[#Hits+1] = Attacker.getAttackHit(character, opponent)
+            end
+        end
+    end
+
     for _, hit in ipairs(Hits) do
         hit.target:onHitByAttack(hit)
     end
