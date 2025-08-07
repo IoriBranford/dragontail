@@ -145,8 +145,14 @@ function Characters.fixedupdate()
 
     for i = 1, #allcharacters do local character = allcharacters[i]
         if character:isAttacking() then
-            for i = 1, #allcharacters do local character2 = allcharacters[i]
-                Hits[#Hits+1] = Attacker.getAttackHit(character, character2)
+            local opponents = character.opponents
+            for i = 1, #opponents do local opponent = opponents[i]
+                Hits[#Hits+1] = Attacker.getAttackHit(character, opponent)
+            end
+            if opponents ~= solids then
+                for i = 1, #solids do local solid = solids[i]
+                    Hits[#Hits+1] = Attacker.getAttackHit(character, solid)
+                end
             end
         end
     end
