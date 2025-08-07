@@ -422,17 +422,19 @@ function Common:projectileFly(shooter)
     self:disappear()
 end
 
----@param deflector Character
+---@param hit Hit
 ---@return string
 ---@return any
-function Common:projectileDeflected(deflector)
-    if not deflector.attack.deflectsprojectile then
+function Common:projectileDeflected(hit)
+    local deflector = hit.attacker
+    local attack = hit.attack
+    if not attack.deflectsprojectile then
         return "projectileBounce", deflector
     end
-    self.hurtstun = deflector.attack.opponentstun or 3
+    self.hurtstun = attack.opponentstun or 3
 
-    Audio.play(deflector.attack.hitsound)
-    local attackangle = deflector.attackangle
+    Audio.play(attack.hitsound)
+    local attackangle = hit.angle
     local dirx, diry, dirz = cos(attackangle), sin(attackangle), 0
 
     local speed = self.speed or 1
