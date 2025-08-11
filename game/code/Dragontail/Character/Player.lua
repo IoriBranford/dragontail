@@ -892,8 +892,7 @@ function Player:throwWeapon(angle, attackchoice, numprojectiles)
 
     local function throw(targetx, targety, targetz)
         local projectiledata = Database.get(self.weaponinhand)
-        local attackchoices = projectiledata and projectiledata.attackchoices
-        local attackid = attackchoices and attackchoices[math.min(#attackchoices, attackchoice)]
+        local attackid = projectiledata and projectiledata.playerattack
         Shoot.launchProjectileAtPosition(self, {
             type = self.weaponinhand,
             gravity = 1/8,
