@@ -277,5 +277,5 @@ function TileAtlas:addAseFrame(frame)
     end
 end
 
-setmetatable(TileAtlas, {__call = TileAtlas.New})
+setmetatable(TileAtlas, {__call = function(_, ...) return TileAtlas.New(...) end})
 return TileAtlas
