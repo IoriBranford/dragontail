@@ -556,13 +556,12 @@ function Player:walk()
         end
 
         if self.attackbutton.pressed then
-            if inx == 0 and iny == 0 then
-                local angletoenemy = getAngleToBestTarget(self)
-                if angletoenemy then
-                    self.facedestangle = angletoenemy
-                end
+            local attackangle = self.facedestangle
+            if self.weaponinhand then
+                attackangle = getAngleToBestTarget(self, attackangle)
             end
-            Face.updateTurnToDestAngle(self, pi)
+            self.faceangle = attackangle
+            self.facedestangle = attackangle
             if self.weaponinhand then
                 return "throwWeapon", self.facedestangle, 1, 1
             end
@@ -738,11 +737,6 @@ function Player:spinAttack(attackangle)
         local inx, iny = self:getJoystick()
         if inx ~= 0 or iny ~= 0 then
             originalfaceangle = atan2(iny, inx)
-        else
-            local angletoenemy = getAngleToBestTarget(self)
-            if angletoenemy then
-                originalfaceangle = angletoenemy
-            end
         end
         return self:doComboAttack(originalfaceangle, nil, inx ~= 0 or iny ~= 0)
     end
@@ -1255,11 +1249,6 @@ function Player:straightAttack(angle, heldenemy)
         if not heldenemy then
             if inx ~= 0 or iny ~= 0 then
                 faceangle = atan2(iny, inx)
-            else
-                local angletoenemy = getAngleToBestTarget(self)
-                if angletoenemy then
-                    faceangle = angletoenemy
-                end
             end
         end
         return self:doComboAttack(faceangle, heldenemy, inx ~= 0 or iny ~= 0)
@@ -1351,13 +1340,12 @@ function Player:hover()
         end
 
         if self.attackbutton.pressed then
-            if inx == 0 and iny == 0 then
-                local angletoenemy = getAngleToBestTarget(self)
-                if angletoenemy then
-                    self.facedestangle = angletoenemy
-                end
+            local attackangle = self.facedestangle
+            if self.weaponinhand then
+                attackangle = getAngleToBestTarget(self, attackangle)
             end
-            Face.updateTurnToDestAngle(self, pi)
+            self.faceangle = attackangle
+            self.facedestangle = attackangle
             if self.weaponinhand then
                 return "throwWeapon", self.facedestangle, 1, 1
             end
