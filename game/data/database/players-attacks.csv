@@ -1,5 +1,5 @@
 attacktype,endscombo,isholding,radius,arc,damage,opponentstun,selfstun,spinspeed,minspin,maxspin,decel,hittingduration,lungespeed,pushbackspeed,launchspeed,deflectsprojectile,opponentstateonhit,opponentstateonfinalhit,windupsound,hitsound,finalhitsound,hitspark,guardhitspark,hurtparticle,projectiletype,manacost,heldopponentstate,numprojectiles,hitslayers
-kick,FALSE,FALSE,32,0.392699081698724,10,12,3,,FALSE,FALSE,4,12,,,6,TRUE,,knockedBack,,data/sounds/combat/hit1.mp3,,spark-hit,spark-guard,FALSE,FALSE,0,FALSE,FALSE,Object Enemy
+kick,FALSE,FALSE,32,0.392699081698724,10,15,5,,FALSE,FALSE,4,9,,,6,TRUE,,knockedBack,,data/sounds/combat/hit1.mp3,,spark-hit,spark-guard,FALSE,FALSE,0,FALSE,FALSE,Object Enemy
 tail-swing-cw,TRUE,FALSE,40,0.523598775598299,30,10,5,0.628318530717959,FALSE,FALSE,,20,,,6,TRUE,knockedBack,knockedBack,,data/sounds/combat/hit3.mp3,data/sounds/combat/hit3.mp3,spark-hit,spark-guard,FALSE,FALSE,0,FALSE,FALSE,Object Enemy
 tail-swing-ccw,TRUE,FALSE,40,0.523598775598299,30,10,5,-0.628318530717959,FALSE,FALSE,,20,,,6,TRUE,knockedBack,knockedBack,,data/sounds/combat/hit3.mp3,data/sounds/combat/hit3.mp3,spark-hit,spark-guard,FALSE,FALSE,0,FALSE,FALSE,Object Enemy
 lunging-kick,FALSE,FALSE,32,0.392699081698724,10,10,5,,FALSE,FALSE,4,9,4,5,6,TRUE,,knockedBack,,data/sounds/combat/hit1.mp3,,spark-hit,spark-guard,FALSE,FALSE,0,FALSE,FALSE,Object Enemy
