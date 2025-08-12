@@ -7,6 +7,9 @@
 ---@field arc number
 ---@field projectile string
 ---
+---Who gets hit by this attack?
+---@field hitslayers integer
+---
 ---What happens to them on impact?
 ---
 ---@field damage number

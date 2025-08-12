@@ -1,10 +1,11 @@
-attacktype,speed,radius,arc,damage,opponentstun,selfstun,launchspeed,selfanimationonhit,selfstateonhit,selfstateonhitopponent,selfstateonhitboundary,opponentstateonhit,opponentstateonfinalhit,hitsound,hitspark,guardhitspark,afterimageinterval,hurtparticle,canjuggle,hurtcolorcycle,gainmanaonhit
-Rose-fireball-attack,16,16,1.5707963267949,20,10,5,3,,,,projectileShatter,knockedBackBurnt,knockedBackBurnt,data/sounds/combat/firehit.mp3,spark-hit,spark-guard,,,TRUE,4294904836 4294946828,0
-Rose-fat-fireball-attack,16,32,1.5707963267949,20,10,5,3,,,,projectileShatter,knockedBackBurnt,knockedBackBurnt,data/sounds/combat/firehit.mp3,spark-hit,spark-guard,,,TRUE,4294904836 4294946828,0
-thrown-axe-attack,5,16,1.5707963267949,25,20,10,,thrownaxehit,projectileEmbed,,,knockedBack,knockedBack,data/sounds/combat/cut2.mp3,,,,particle-blood,,,
-thrown-axe-strong-attack,12,16,1.5707963267949,25,20,10,,thrownaxehit,,,projectileEmbed,knockedBack,knockedBack,data/sounds/combat/cut2.mp3,,,,particle-blood,,,
-bandit-arrow-attack,,20,0,25,12,,5,,projectileEmbed,,,,knockedBack,data/sounds/combat/cut.mp3,,,,particle-blood,,,
-thrown-stone-attack,12,8,1.5707963267949,10,10,,5,,projectileBounce,,,,knockedBack,data/sounds/combat/hit2.mp3,spark-hit,spark-guard,,,,,
-thrown-stone-strong-attack,16,12,1.5707963267949,15,10,,12,,projectileShatter,,,knockedBack,knockedBack,data/sounds/combat/hit3.mp3,spark-hit,spark-guard,,,,,
-projectile-dish-attack,12,8,1.5707963267949,10,10,,3,,dishShatter,,,,knockedBack,data/sounds/combat/hit2.mp3,spark-hit,spark-guard,,,,,
-projectile-dish-strong-attack,12,8,1.5707963267949,15,10,,3,,dishShatter,,,knockedBack,knockedBack,data/sounds/combat/hit2.mp3,spark-hit,spark-guard,,,,,
+attacktype,speed,radius,arc,damage,opponentstun,selfstun,launchspeed,selfanimationonhit,selfstateonhit,selfstateonhitopponent,selfstateonhitboundary,opponentstateonhit,opponentstateonfinalhit,hitsound,hitspark,guardhitspark,afterimageinterval,hurtparticle,canjuggle,hurtcolorcycle,gainmanaonhit,hitslayers
+Rose-fireball-attack,16,16,1.5707963267949,20,10,5,3,,,,projectileShatter,knockedBackBurnt,knockedBackBurnt,data/sounds/combat/firehit.mp3,spark-hit,spark-guard,,,TRUE,4294904836 4294946828,0,Solid Enemy
+Rose-fat-fireball-attack,16,32,1.5707963267949,20,10,5,3,,,,projectileShatter,knockedBackBurnt,knockedBackBurnt,data/sounds/combat/firehit.mp3,spark-hit,spark-guard,,,TRUE,4294904836 4294946828,0,Solid Enemy
+thrown-axe-attack,5,16,1.5707963267949,25,20,10,,thrownaxehit,projectileEmbed,,,knockedBack,knockedBack,data/sounds/combat/cut2.mp3,,,,particle-blood,,,,Solid Player
+thrown-axe-strong-attack,12,16,1.5707963267949,25,20,10,,thrownaxehit,,,projectileEmbed,knockedBack,knockedBack,data/sounds/combat/cut2.mp3,,,,particle-blood,,,,Solid Enemy
+bandit-arrow-attack,,20,0,25,12,,5,,projectileEmbed,,,,knockedBack,data/sounds/combat/cut.mp3,,,,particle-blood,,,,Solid Player
+bandit-arrow-player-attack,,20,0,25,12,,5,,projectileEmbed,,,,knockedBack,data/sounds/combat/cut.mp3,,,,particle-blood,,,,Solid Enemy
+thrown-stone-attack,12,8,1.5707963267949,10,10,,5,,projectileBounce,,,,knockedBack,data/sounds/combat/hit2.mp3,spark-hit,spark-guard,,,,,,Solid Player
+thrown-stone-strong-attack,16,12,1.5707963267949,15,10,,12,,projectileShatter,,,knockedBack,knockedBack,data/sounds/combat/hit3.mp3,spark-hit,spark-guard,,,,,,Solid Enemy
+projectile-dish-attack,12,8,1.5707963267949,10,10,,3,,dishShatter,,,,knockedBack,data/sounds/combat/hit2.mp3,spark-hit,spark-guard,,,,,,Solid Player
+projectile-dish-strong-attack,12,8,1.5707963267949,15,10,,3,,dishShatter,,,knockedBack,knockedBack,data/sounds/combat/hit2.mp3,spark-hit,spark-guard,,,,,,Solid Enemy
