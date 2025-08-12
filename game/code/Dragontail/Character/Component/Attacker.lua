@@ -144,6 +144,9 @@ function Attacker:checkAttackCollision(target)
     if target == self or target == self.thrower or target.thrower == self then
         return
     end
+    if 0 == bit.band(self.attack.hitslayers or 0xFFFFFFFF, target.bodyinlayers) then
+        return
+    end
     return Attacker.checkAttackCollision_cylinder(self, target)
 end
 
