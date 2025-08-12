@@ -645,7 +645,6 @@ function Player:run()
             local speed = math.len(velx, vely)
             local ooblen = math.len(oobx, ooby)
             if oobdotvel > speed*ooblen/2 then
-                Audio.play(self.bodyslamsound)
                 Characters.spawn(
                     {
                         type = "spark-bighit",
@@ -655,7 +654,7 @@ function Player:run()
                     }
                 )
                 self.hurtstun = 10
-                return "running-elbow", velangle
+                return "runIntoWall", velangle
             end
         end
 

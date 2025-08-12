@@ -8,6 +8,7 @@ holding-knee,holding-knee,straightAttack,hold,FALSE,data/sprites/player/rose/hol
 holding-kick,holding-kick,straightAttack,walk,FALSE,data/sprites/player/rose/attack.jase,hardkick,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing1.mp3,0,0,0,0.5,4,4,3.14159265358979
 running-kick,running-kick,straightAttack,walk,FALSE,data/sprites/player/rose/attack.jase,hardkick,1,TRUE,TRUE,FALSE,,data/sounds/player/attack2.mp3,3,0,0,0.5,64,4,3.14159265358979
 running-elbow,running-elbow,straightAttack,walk,FALSE,data/sprites/player/rose/main.jase,elbow,0,TRUE,TRUE,FALSE,,,0,2,2,0.5,2,4,3.14159265358979
+runIntoWall,running-elbow,straightAttack,walk,FALSE,data/sprites/player/rose/main.jase,elbow,0,TRUE,TRUE,FALSE,,data/sounds/combat/bodyslam.mp3,0,2,2,0.5,2,4,3.14159265358979
 running-with-enemy,running-with-enemy,runWithEnemy,walk,FALSE,data/sprites/player/rose/hold.jase,holdwalk,1,FALSE,FALSE,FALSE,,data/sounds/combat/dash.mp3,3,2,2,0.5,1,8,3.14159265358979
 spit-fireball,spit-fireball,straightAttack,walk,FALSE,data/sprites/player/rose/attack.jase,spit,0,FALSE,FALSE,FALSE,,,0,0,0,0.5,4,4,3.14159265358979
 spit-fat-fireball,spit-fat-fireball,straightAttack,walk,FALSE,data/sprites/player/rose/attack.jase,spit,0,FALSE,FALSE,FALSE,,,0,0,0,0.5,4,4,3.14159265358979
