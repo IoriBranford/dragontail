@@ -211,7 +211,7 @@ function Enemy:navigateAroundSolid(destx, desty)
     local z = self.z + self.bodyheight/2
     local bodyradius = self.bodyradius
     local raycast = Raycast(x, y, z, destx - x, desty - y, 0, 1, bodyradius/2)
-    raycast.hitslayers = CollisionMask.merge("Solid", "Camera")
+    raycast.hitslayers = CollisionMask.merge("Object", "Wall", "Camera")
     if Characters.castRay3(raycast, self) then
         local todestx, todesty = destx - x, desty - y
         local frontendx, frontendy = raycast.hitwallx, raycast.hitwally
@@ -304,7 +304,7 @@ function Enemy:attackIfAmmoElseLeave()
     if attackstate and ammo > 0 and opponent.health > 0 then
         local projectileheight = self.projectilelaunchheight or (self.bodyheight/2)
         local raycast = Raycast(self.x, self.y, self.z + projectileheight, 1, 0, 0, 1)
-        raycast.hitslayers = CollisionMask.merge("Solid", "Camera", "Player", "Enemy")
+        raycast.hitslayers = CollisionMask.merge("Wall", "Camera", "Player", "Enemy")
         local hitcharacter
         repeat
             yield()

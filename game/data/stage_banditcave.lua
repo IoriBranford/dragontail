@@ -15702,7 +15702,7 @@ return {
                 { x = 448, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = -1,
                 ["extrudeY"] = -64,
@@ -15744,7 +15744,7 @@ return {
                 { x = 512, y = -32 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -16207,7 +16207,7 @@ return {
                 { x = 96, y = -96 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -16429,7 +16429,7 @@ return {
                 { x = 480, y = -32 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -16674,7 +16674,7 @@ return {
                 { x = 256, y = 32 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = -1,
                 ["extrudeY"] = -64,
@@ -16699,7 +16699,7 @@ return {
                 { x = 624, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -17443,7 +17443,7 @@ return {
                 { x = 160, y = -320 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -17965,7 +17965,7 @@ return {
                 { x = 960, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -18096,7 +18096,7 @@ return {
                 { x = 576, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -18127,7 +18127,7 @@ return {
                 { x = 1088, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -18162,7 +18162,7 @@ return {
                 { x = -256, y = -224 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -18188,7 +18188,7 @@ return {
                 { x = 192, y = 64 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -18213,7 +18213,7 @@ return {
                 { x = 192, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -19011,7 +19011,7 @@ return {
                 { x = 480, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -19042,7 +19042,7 @@ return {
                 { x = 0, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -10,
@@ -19079,7 +19079,7 @@ return {
               gid = 6847,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["extrudeY"] = -28
               }
             },
@@ -19096,7 +19096,7 @@ return {
               gid = 6851,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["extrudeY"] = -48
               }
             },
@@ -19338,7 +19338,6 @@ return {
               gid = 6598,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -16
               }
             },
@@ -19355,7 +19354,6 @@ return {
               gid = 7227,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -19372,7 +19370,6 @@ return {
               gid = 7235,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -19495,7 +19492,7 @@ return {
                 { x = 480, y = -320 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -19515,7 +19512,6 @@ return {
               gid = 6596,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -16
               }
             },
@@ -19532,7 +19528,6 @@ return {
               gid = 6598,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -16
               }
             },
@@ -19549,7 +19544,6 @@ return {
               gid = 6597,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -16
               }
             },
@@ -19566,7 +19560,6 @@ return {
               gid = 6596,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -16
               }
             },
@@ -19583,7 +19576,6 @@ return {
               gid = 6597,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -16
               }
             },
@@ -19600,7 +19592,6 @@ return {
               gid = 7224,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -19617,7 +19608,6 @@ return {
               gid = 7228,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -19634,7 +19624,6 @@ return {
               gid = 7235,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -19651,7 +19640,6 @@ return {
               gid = 7231,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -19668,7 +19656,6 @@ return {
               gid = 7227,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -19685,7 +19672,6 @@ return {
               gid = 7231,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -19702,7 +19688,6 @@ return {
               gid = 7232,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -19719,7 +19704,6 @@ return {
               gid = 7224,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -19750,7 +19734,6 @@ return {
               gid = 7232,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -20464,7 +20447,7 @@ return {
                 { x = 480, y = -32 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -20493,7 +20476,7 @@ return {
                 { x = 32, y = -32 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -32,
@@ -20539,7 +20522,7 @@ return {
                 { x = 480, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -20568,7 +20551,7 @@ return {
                 { x = 448, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -20959,7 +20942,7 @@ return {
                 { x = 1248, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,

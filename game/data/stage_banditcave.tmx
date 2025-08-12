@@ -1029,13 +1029,13 @@ to sprint past archers</text>
    </object>
    <object id="394" gid="6847" x="3720" y="88" width="64" height="64">
     <properties>
-     <property name="bodyinlayers" value="Solid"/>
+     <property name="bodyinlayers" value="Wall"/>
      <property name="extrudeY" type="float" value="-28"/>
     </properties>
    </object>
    <object id="395" gid="6851" x="3448" y="96" width="64" height="64">
     <properties>
-     <property name="bodyinlayers" value="Solid"/>
+     <property name="bodyinlayers" value="Wall"/>
      <property name="extrudeY" type="float" value="-48"/>
     </properties>
    </object>
@@ -1069,19 +1069,16 @@ to sprint past archers</text>
    </object>
    <object id="320" gid="6598" x="3928" y="240" width="96" height="48">
     <properties>
-     <property name="bodyinlayers" value="Solid"/>
      <property name="extrudeY" type="float" value="-16"/>
     </properties>
    </object>
    <object id="327" gid="7227" x="3872" y="264" width="32" height="32">
     <properties>
-     <property name="bodyinlayers" value="Solid"/>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
    <object id="328" gid="7235" x="3976" y="272" width="32" height="32">
     <properties>
-     <property name="bodyinlayers" value="Solid"/>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
@@ -1118,86 +1115,72 @@ to sprint past archers</text>
    </object>
    <object id="318" gid="6596" x="4008" y="104" width="96" height="48">
     <properties>
-     <property name="bodyinlayers" value="Solid"/>
      <property name="extrudeY" type="float" value="-16"/>
     </properties>
    </object>
    <object id="319" gid="6598" x="4128" y="112" width="96" height="48">
     <properties>
-     <property name="bodyinlayers" value="Solid"/>
      <property name="extrudeY" type="float" value="-16"/>
     </properties>
    </object>
    <object id="321" gid="6597" x="4064" y="232" width="96" height="48">
     <properties>
-     <property name="bodyinlayers" value="Solid"/>
      <property name="extrudeY" type="float" value="-16"/>
     </properties>
    </object>
    <object id="322" gid="6596" x="4208" y="224" width="96" height="48">
     <properties>
-     <property name="bodyinlayers" value="Solid"/>
      <property name="extrudeY" type="float" value="-16"/>
     </properties>
    </object>
    <object id="323" gid="6597" x="4256" y="96" width="96" height="48">
     <properties>
-     <property name="bodyinlayers" value="Solid"/>
      <property name="extrudeY" type="float" value="-16"/>
     </properties>
    </object>
    <object id="324" gid="7224" x="4096" y="80" width="32" height="32">
     <properties>
-     <property name="bodyinlayers" value="Solid"/>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
    <object id="325" gid="7228" x="4216" y="64" width="32" height="32">
     <properties>
-     <property name="bodyinlayers" value="Solid"/>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
    <object id="326" gid="7235" x="4168" y="264" width="32" height="32">
     <properties>
-     <property name="bodyinlayers" value="Solid"/>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
    <object id="329" gid="7231" x="4096" y="272" width="32" height="32">
     <properties>
-     <property name="bodyinlayers" value="Solid"/>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
    <object id="330" gid="7227" x="4024" y="264" width="32" height="32">
     <properties>
-     <property name="bodyinlayers" value="Solid"/>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
    <object id="331" gid="7231" x="4248" y="272" width="32" height="32">
     <properties>
-     <property name="bodyinlayers" value="Solid"/>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
    <object id="332" gid="7232" x="4168" y="72" width="32" height="32">
     <properties>
-     <property name="bodyinlayers" value="Solid"/>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
    <object id="333" gid="7224" x="4296" y="72" width="32" height="32">
     <properties>
-     <property name="bodyinlayers" value="Solid"/>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
    <object id="334" gid="7228" x="3976" y="64" width="32" height="32"/>
    <object id="335" gid="7232" x="4048" y="72" width="32" height="32">
     <properties>
-     <property name="bodyinlayers" value="Solid"/>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>

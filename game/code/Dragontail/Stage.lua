@@ -99,7 +99,7 @@ function Stage.init()
     Characters.spawn({
         visible = false,
         shape = "polygon",
-        bodyinlayers = CollisionMask.get("Solid"),
+        bodyinlayers = CollisionMask.get("Wall"),
         bodyheight = ceilingz - floorz,
         x = 0, y = 0, z = floorz,
         width = 0x20000000, height = 0x20000000,
@@ -361,7 +361,7 @@ function Stage.fixedupdate()
     local solids = Characters.getGroup("solids")
     for _, solid in ipairs(solids) do
         if solid.layer ~= room
-        and CollisionMask.test(solid.bodyinlayers, "Solid") ~= 0 then
+        and CollisionMask.test(solid.bodyinlayers, "Object", "Wall") ~= 0 then
             if not solid:isOnCamera(camera) then
                 solid:disappear()
             end

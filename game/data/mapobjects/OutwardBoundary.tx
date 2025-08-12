@@ -2,7 +2,7 @@
 <template>
  <object type="Boundary">
   <properties>
-   <property name="bodyinlayers" value="Solid"/>
+   <property name="bodyinlayers" value="Wall"/>
    <property name="color" type="color" value="#80808080"/>
    <property name="drawz" type="float" value="0"/>
    <property name="extrudeY" type="float" value="-64"/>

@@ -7,7 +7,7 @@ local AttackerSlot = class(Raycast)
 
 function AttackerSlot:_init(slottype, x, y, z, dx, dy, dz)
     Raycast._init(self, x, y, z, dx, dy, dz, 1)
-    self.hitslayers = CollisionMask.merge("Solid", "Camera")
+    self.hitslayers = CollisionMask.merge("Object", "Wall", "Camera")
     self.type = slottype ---@type "melee"|"missile"
     if self.dx == 0 and self.dy == 0 and self.dz == 0 then
         self.dx = 1

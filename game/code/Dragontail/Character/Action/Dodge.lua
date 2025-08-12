@@ -41,7 +41,7 @@ function Dodge:getDodgeVector(incoming)
     local raycast = Raycast(self.x, self.y, self.z + self.bodyheight/2,
         dodgespacex, dodgespacey, 0,
         1, self.bodyradius/2)
-    raycast.hitslayers = CollisionMask.merge("Solid", "Camera")
+    raycast.hitslayers = CollisionMask.merge("Object", "Wall", "Camera")
 
     if Characters.castRay3(raycast, self) then
         -- Dodge along wall

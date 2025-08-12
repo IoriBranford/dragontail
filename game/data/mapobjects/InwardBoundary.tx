@@ -2,9 +2,9 @@
 <template>
  <object type="Boundary">
   <properties>
-   <property name="extrudeY" type="float" value="-64"/>
-   <property name="bodyinlayers" type="string" value="Solid"/>
+   <property name="bodyinlayers" value="Wall"/>
    <property name="drawz" type="float" value="0"/>
+   <property name="extrudeY" type="float" value="-64"/>
    <property name="linecolor" type="color" value="#80ffffff"/>
   </properties>
   <polygon points="0,0 640,0 640,360 0,360"/>
