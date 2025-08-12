@@ -73,26 +73,29 @@ local function findWallCollision(self)
 end
 
 local NormalCombo = {"kick", "kick", "tail-swing-cw"}
+local LungingCombo = {"lunging-kick", "lunging-kick", "lunging-tail-swing-cw"}
 local SpecialCombo = {"spit-fireball", "spit-fireball", "fireball-spin-cw"}
 local HoldCombo = {"holding-knee", "holding-knee", "spinning-throw"}
 local RunningSpecialAttacks = { "running-spit-fat-fireball", "running-spit-fireball" }
 
-function Player:getNextAttackType(heldenemy, special)
+function Player:getNextAttackType(heldenemy, lunging)
     local comboindex = self.comboindex
-    if special then
-        local i = comboindex
-        local specialattacktype, specialattackdata
-        repeat
-            specialattacktype = SpecialCombo[i]
-            if Mana.canAffordAttack(self, specialattacktype) then
-                return specialattacktype
-            end
-            i = i - 1
-        until i <= 0
-        comboindex = 3
-    end
+    -- if special then
+    --     local i = comboindex
+    --     local specialattacktype, specialattackdata
+    --     repeat
+    --         specialattacktype = SpecialCombo[i]
+    --         if Mana.canAffordAttack(self, specialattacktype) then
+    --             return specialattacktype
+    --         end
+    --         i = i - 1
+    --     until i <= 0
+    --     comboindex = 3
+    -- end
 
-    local combo = heldenemy and HoldCombo or NormalCombo
+    local combo = heldenemy and HoldCombo
+        or lunging and LungingCombo
+        or NormalCombo
     return combo[comboindex]
 end
 
@@ -115,8 +118,8 @@ knee -> knee -> spinthrow
     fire    firespin
 
 ]]
-function Player:doComboAttack(faceangle, heldenemy, special)
-    local attacktype = self:getNextAttackType(heldenemy, special)
+function Player:doComboAttack(faceangle, heldenemy, lunging)
+    local attacktype = self:getNextAttackType(heldenemy, lunging)
     local attackdata = self.attacktable[attacktype]
     if attackdata and attackdata.endscombo or self.comboindex >= 3 then
         self.comboindex = 1
@@ -563,7 +566,7 @@ function Player:walk()
             if self.weaponinhand then
                 return "throwWeapon", self.facedestangle, 1, 1
             end
-            return self:doComboAttack(self.facedestangle)
+            return self:doComboAttack(self.facedestangle, nil, inx ~= 0 or iny ~= 0)
         end
 
         local opponenttohold = HoldOpponent.findOpponentToHold(self, inx, iny)
@@ -741,7 +744,7 @@ function Player:spinAttack(attackangle)
                 originalfaceangle = angletoenemy
             end
         end
-        return self:doComboAttack(originalfaceangle)
+        return self:doComboAttack(originalfaceangle, nil, inx ~= 0 or iny ~= 0)
     end
     return "walk"
 end
@@ -1019,7 +1022,7 @@ function Player:hold(enemy)
             return "spinning-throw", holdangle, enemy
         end
         if normalattackpressed then
-            return self:doComboAttack(holdangle, enemy)
+            return self:doComboAttack(holdangle, enemy, inx ~= 0 or iny ~= 0)
         end
     end
     StateMachine.start(enemy, "breakaway", self)
@@ -1199,12 +1202,27 @@ function Player:straightAttack(angle, heldenemy)
     end
     Mana.store(self, -(self.attack.manacost or 0))
     Face.faceAngle(self, angle)
-    local t = self.attack.hittingduration or 1
     local lungespeed = self.attack.lungespeed
     if lungespeed then
         Slide.updateSlideSpeed(self, angle, lungespeed)
     end
-    repeat
+    local t = 0
+    while t < (self.attack.hittingduration or 1) do
+        if lungespeed then
+            if math.abs(lungespeed - math.len(self.velx, self.vely)) >= 1 then
+                lungespeed = nil
+            end
+        end
+        if lungespeed then
+            lungespeed = Slide.updateSlideSpeed(self, angle, lungespeed)
+        else
+            self:accelerateTowardsVel(0, 0, self.mass or 4)
+        end
+        local afterimageinterval = self.afterimageinterval or 0
+        if afterimageinterval ~= 0 and t % afterimageinterval == 0 then
+            self:makeAfterImage()
+        end
+        t = t + 1
         yield()
         if pressedattackbutton ~= self.attackbutton then
             -- if self.fireattackbutton.pressed then
@@ -1214,26 +1232,23 @@ function Player:straightAttack(angle, heldenemy)
                 pressedattackbutton = self.attackbutton
             end
         end
-        if lungespeed then
-            if math.abs(lungespeed - math.len(self.velx, self.vely)) >= 1 then
-                lungespeed = nil
-            end
-        end
-        if lungespeed then
-            lungespeed = Slide.updateSlideSpeed(self, angle, lungespeed)
-        else
-            self:accelerateTowardsVel(0, 0, self.attack.decel or 8)
-        end
-        local afterimageinterval = self.afterimageinterval or 0
-        if afterimageinterval ~= 0 and t % afterimageinterval == 0 then
-            self:makeAfterImage()
-        end
-        t = t - 1
-    until t <= 0
+    end
     if self.numopponentshit <= 0 then
         Combo.reset(self)
     end
     self:stopAttack()
+
+    while self.statetime and self.statetime > 0 do
+        yield()
+        if pressedattackbutton ~= self.attackbutton then
+            -- if self.fireattackbutton.pressed then
+            --     pressedattackbutton = self.fireattackbutton
+            -- else
+            if self.attackbutton.pressed then
+                pressedattackbutton = self.attackbutton
+            end
+        end
+    end
     if pressedattackbutton then
         local faceangle = self.faceangle
         local inx, iny = self:getJoystick()
@@ -1247,8 +1262,9 @@ function Player:straightAttack(angle, heldenemy)
                 end
             end
         end
-        return self:doComboAttack(faceangle, heldenemy)
+        return self:doComboAttack(faceangle, heldenemy, inx ~= 0 or iny ~= 0)
     end
+
     if heldenemy and heldenemy.health > 0 then
         return "hold", heldenemy
     end
@@ -1345,7 +1361,7 @@ function Player:hover()
             if self.weaponinhand then
                 return "throwWeapon", self.facedestangle, 1, 1
             end
-            return self:doComboAttack(self.facedestangle)
+            return self:doComboAttack(self.facedestangle, nil, inx ~= 0 or iny ~= 0)
         end
 
         local opponenttohold = HoldOpponent.findOpponentToHold(self, inx, iny)
