@@ -3,6 +3,7 @@ local Audio    = require "System.Audio"
 local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
 local Body                 = require "Dragontail.Character.Component.Body"
 local Assets               = require "Tiled.Assets"
+local CollisionMask        = require "Dragontail.Character.Component.Body.CollisionMask"
 
 local co_create = coroutine.create
 local co_resume = coroutine.resume
@@ -76,6 +77,11 @@ function StateMachine.start(self, statename, ...)
 
         self.attacktype = state.attack
         self.attack = self.attacktable and self.attacktable[state.attack]
+        local hitslayers = self.attack.hitslayers
+        if type(hitslayers) == "string" then
+            hitslayers = CollisionMask.parse(hitslayers)
+            self.attack.hitslayers = hitslayers
+        end
 
         local animationname = state.animation
         local frame = state.frame1
