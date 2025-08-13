@@ -558,7 +558,7 @@ function Player:walk()
         if self.attackbutton.pressed then
             local attackangle = self.facedestangle
             if self.weaponinhand then
-                attackangle = getAngleToBestTarget(self, attackangle)
+                attackangle = getAngleToBestTarget(self, attackangle) or attackangle
             end
             self.faceangle = attackangle
             self.facedestangle = attackangle
@@ -1342,7 +1342,7 @@ function Player:hover()
         if self.attackbutton.pressed then
             local attackangle = self.facedestangle
             if self.weaponinhand then
-                attackangle = getAngleToBestTarget(self, attackangle)
+                attackangle = getAngleToBestTarget(self, attackangle) or attackangle
             end
             self.faceangle = attackangle
             self.facedestangle = attackangle
