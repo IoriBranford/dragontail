@@ -96,17 +96,20 @@ function Attacker:debugPrint_checkAttackCollision(target)
     print("canbeattacked", target.canbeattacked)
     print("attacker.attack.canjuggle", self.attack.canjuggle)
     print("canbejuggled", target.canbejuggled)
-    local penex, peney, penez = Attacker.checkAttackCollision(self, target)
-    if not (penex or peney or penez) then
-        Attacker.debugPrint_checkAttackCollision_cylinder(self, target)
-    end
-end
-
-function Attacker:debugPrint_checkAttackCollision_cylinder(target)
     print("self == target", self == target)
     print("self.thrower == target", self.thrower == target)
     print("target.thrower == self", target.thrower == self)
     print("attackangle", self.attackangle)
+    print("hitslayers", string.format("%08x", self.attack.hitslayers or 0xFFFFFFFF))
+    print("bodyinlayers", string.format("%08x", target.bodyinlayers or 0))
+    print("bodyinhitlayers", string.format("%08x", bit.band(self.attack.hitslayers or 0xFFFFFFFF, target.bodyinlayers)))
+
+    ---TODO Body.debugPrint_getCylinderPenetration
+    -- local penex, peney, penez = Attacker.checkAttackCollision(self, target)
+    -- if not (penex or peney or penez) then
+    --     local x, y, z, r, h = Attacker.getAttackCylinder(self)
+    --     Body.debugPrint_getCylinderPenetration(target, x, y, z, r, h)
+    -- end
 end
 
 function Attacker:getAttackCylinder()
