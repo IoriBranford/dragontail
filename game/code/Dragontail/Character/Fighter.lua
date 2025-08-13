@@ -108,6 +108,9 @@ function Fighter:hurt(hit)
     local defeateffect = attack.opponentstateonfinalhit
     local hiteffect = attack.opponentstateonhit
     local pushbackspeed = attack.pushbackspeed or 0
+    if pushbackspeed == "attackerspeed" then
+        pushbackspeed = math.floor(math.len(attacker.velx, attacker.vely))
+    end
     yield()
 
     if self.health <= 0 then
