@@ -9,7 +9,7 @@ local Window = require "System.Window"
 local Stage  = require "Dragontail.Stage"
 local Inputs = require "System.Inputs"
 local firstphase = "Dragontail.GamePhase"
-local firstmap = "data/stage_demonrealm.lua"
+local firstmap = "data/stage_banditcave.lua"
 
 local defaultgamepadconfig =  {
     ["dpleft dpright"] = "digitalx",

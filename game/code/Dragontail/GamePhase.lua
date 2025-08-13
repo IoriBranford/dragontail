@@ -15,7 +15,8 @@ local GamePhase = {}
 local paused
 local stagecanvas
 
-function GamePhase.loadphase()
+function GamePhase.loadphase(stagepath)
+    stagepath = stagepath or "data/stage_banditcave.lua"
     paused = false
     local unifont = Assets.getFont("Unifont", 16)
     love.graphics.setFont(unifont)
@@ -28,7 +29,7 @@ function GamePhase.loadphase()
     Database.load("data/database/items-properties.csv")
     Database.load("data/database/projectiles-properties.csv")
     Database.load("data/database/objects-properties.csv")
-    Stage.load("data/stage_banditcave.lua")
+    Stage.load(stagepath)
 
     Database.forEach(function(_, properties)
         for k,v in pairs(properties) do
