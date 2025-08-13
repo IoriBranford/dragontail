@@ -884,7 +884,7 @@ end
 function Player:throwWeapon(angle, attackchoice, numprojectiles)
     attackchoice = attackchoice or 1
     numprojectiles = math.min(numprojectiles or 1, #self.inventory)
-    Face.faceAngle(self, angle)
+    Face.faceAngle(self, angle, self.state.animation)
 
     local function throw(targetx, targety, targetz)
         local projectiledata = Database.get(self.weaponinhand)
@@ -1195,7 +1195,7 @@ function Player:straightAttack(angle, heldenemy)
         self:startAttack(angle)
     end
     Mana.store(self, -(self.attack.manacost or 0))
-    Face.faceAngle(self, angle)
+    Face.faceAngle(self, angle, self.state.animation)
     local lungespeed = self.attack.lungespeed
     if lungespeed then
         Slide.updateSlideSpeed(self, angle, lungespeed)
