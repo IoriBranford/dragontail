@@ -386,7 +386,7 @@ function Body:draw(fixedfrac)
     local x, y = self.x + self.velx * fixedfrac, self.y + self.vely * fixedfrac
     love.graphics.setColor(.5, .5, 1)
     local bodyradius, bodyheight = self.bodyradius, self.bodyheight
-    local screeny = y - self.z
+    local screeny = y - (self.z + self.velz * fixedfrac)
     love.graphics.circle("line", x, screeny, bodyradius)
     love.graphics.circle("line", x, screeny - bodyheight, bodyradius)
     love.graphics.line(x - bodyradius, screeny, x - bodyradius, screeny - bodyheight)
