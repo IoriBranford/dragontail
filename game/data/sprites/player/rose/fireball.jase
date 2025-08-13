@@ -805,7 +805,7 @@
    { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
   ],
   "slices": [
-   { "name": "origin", "color": "#0000ffff", "keys": [{ "frame": 0, "bounds": {"x": 0, "y": 0, "w": 64, "h": 64 }, "pivot": {"x": 32, "y": 32 } }] }
+   { "name": "origin", "color": "#0000ffff", "keys": [{ "frame": 0, "bounds": {"x": 0, "y": 0, "w": 64, "h": 64 }, "pivot": {"x": 32, "y": 40 } }] }
   ]
  }
 }
