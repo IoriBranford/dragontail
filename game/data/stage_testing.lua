@@ -5615,6 +5615,162 @@ return {
           }
         }
       }
+    },
+    {
+      name = "crates",
+      firstgid = 2820,
+      class = "",
+      tilewidth = 32,
+      tileheight = 48,
+      spacing = 0,
+      margin = 0,
+      columns = 3,
+      image = "sprites/containers/crates.png",
+      imagewidth = 96,
+      imageheight = 96,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 48
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 6,
+      tiles = {
+        {
+          id = 0,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            class = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "polygon",
+                x = 16,
+                y = 48,
+                width = 0,
+                height = 0,
+                rotation = 0,
+                visible = true,
+                polygon = {
+                  { x = 0, y = 0 },
+                  { x = 10, y = -6 },
+                  { x = 0, y = -12 },
+                  { x = -10, y = -6 }
+                },
+                properties = {
+                  ["collidable"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 1,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            class = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "polygon",
+                x = 16,
+                y = 48,
+                width = 0,
+                height = 0,
+                rotation = 0,
+                visible = true,
+                polygon = {
+                  { x = 0, y = 0 },
+                  { x = 16, y = -8 },
+                  { x = 0, y = -16 },
+                  { x = -16, y = -8 }
+                },
+                properties = {
+                  ["collidable"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 2,
+          type = "container-crate-tall",
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            class = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "polygon",
+                x = 16,
+                y = 48,
+                width = 0,
+                height = 0,
+                rotation = 0,
+                visible = true,
+                polygon = {
+                  { x = 0, y = 0 },
+                  { x = 16, y = -8 },
+                  { x = 0, y = -16 },
+                  { x = -16, y = -8 }
+                },
+                properties = {
+                  ["collidable"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 5,
+          properties = {
+            ["name"] = "Fall"
+          }
+        }
+      }
     }
   },
   layers = {
@@ -5677,8 +5833,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 64,
-              y = 128,
+              x = 40,
+              y = 176,
               width = 32,
               height = 32,
               rotation = 0,
@@ -5696,9 +5852,9 @@ return {
               x = 256,
               y = 160,
               width = 32,
-              height = 32,
+              height = 48,
               rotation = 0,
-              gid = 2819,
+              gid = 2822,
               visible = true,
               properties = {
                 ["health"] = 999999999
@@ -5712,9 +5868,9 @@ return {
               x = 256,
               y = 224,
               width = 32,
-              height = 32,
+              height = 48,
               rotation = 0,
-              gid = 2819,
+              gid = 2822,
               visible = true,
               properties = {
                 ["health"] = 999999999
@@ -5725,8 +5881,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 64,
-              y = 256,
+              x = 40,
+              y = 208,
               width = 32,
               height = 32,
               rotation = 0,
@@ -5744,9 +5900,9 @@ return {
               x = 320,
               y = 256,
               width = 32,
-              height = 32,
+              height = 48,
               rotation = 0,
-              gid = 2819,
+              gid = 2822,
               visible = true,
               properties = {
                 ["health"] = 999999999
@@ -5760,9 +5916,9 @@ return {
               x = 384,
               y = 224,
               width = 32,
-              height = 32,
+              height = 48,
               rotation = 0,
-              gid = 2819,
+              gid = 2822,
               visible = true,
               properties = {
                 ["health"] = 999999999
@@ -5776,9 +5932,9 @@ return {
               x = 384,
               y = 160,
               width = 32,
-              height = 32,
+              height = 48,
               rotation = 0,
-              gid = 2819,
+              gid = 2822,
               visible = true,
               properties = {
                 ["health"] = 999999999
@@ -5792,9 +5948,9 @@ return {
               x = 320,
               y = 192,
               width = 32,
-              height = 32,
+              height = 48,
               rotation = 0,
-              gid = 2819,
+              gid = 2822,
               visible = true,
               properties = {
                 ["health"] = 999999999
@@ -5808,9 +5964,9 @@ return {
               x = 320,
               y = 128,
               width = 32,
-              height = 32,
+              height = 48,
               rotation = 0,
-              gid = 2819,
+              gid = 2822,
               visible = true,
               properties = {
                 ["health"] = 999999999
