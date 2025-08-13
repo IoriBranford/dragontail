@@ -209,7 +209,7 @@ function Character:onHitByAttack(hit)
             or attackernewstate
     else
         StateMachine.start(self, hurtstate, hit)
-        if attacker.hitstun <= 0 then
+        if attacker.hitstun <= 0 and attacker.numopponentshit <= 1 then
             attacker.hitstun = attack.selfstun or 3
         end
         attackernewstate = attack.selfstateonhitopponent
