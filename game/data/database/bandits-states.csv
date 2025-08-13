@@ -1,4 +1,4 @@
-state,statetime,nextstate,attack,action,animation,loopframe,canbeattacked,canbegrabbed,canbejuggled,color,sound,afterimageinterval,faceturnspeed
+state,statetime,nextstate,attack,statecoroutine,animation,loopframe,canbeattacked,canbegrabbed,canbejuggled,color,sound,afterimageinterval,faceturnspeed
 dagger-swing,20,dagger-swing2,dagger-swing,prepareAttack,SwingWindup,0,TRUE,TRUE,FALSE,,data/sounds/man_light/attack1.mp3,0,0
 dagger-swing2,40,stand,dagger-swing,executeAttack,SwingAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing1.mp3,0,0
 spear-thrust,30,spear-thrust2,spear-thrust,prepareAttack,ThrustWindup,0,TRUE,TRUE,FALSE,,data/sounds/man_medium/attack1.mp3,0,0

@@ -1,4 +1,4 @@
-state,attack,action,nextstate,statetime,asefile,animation,loopframe,canbeattacked,canbegrabbed,canbejuggled,color,sound,afterimageinterval,manachargerate,manadecayrate,gravity,mass,speed,faceturnspeed
+state,attack,statecoroutine,nextstate,statetime,asefile,animation,loopframe,canbeattacked,canbegrabbed,canbejuggled,color,sound,afterimageinterval,manachargerate,manadecayrate,gravity,mass,speed,faceturnspeed
 kick,kick,straightAttack,walk,12,data/sprites/player/rose/attack.jase,fastkick,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing1.mp3,0,0,0,0.5,4,4,3.14159265358979
 tail-swing-cw,tail-swing-cw,spinAttack,walk,FALSE,data/sprites/player/rose/attack.jase,attackA,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,0,0,0,0.5,4,8,0.628318530717959
 tail-swing-ccw,tail-swing-ccw,spinAttack,walk,FALSE,data/sprites/player/rose/attack.jase,attackB,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,0,0,0,0.5,4,8,0.628318530717959

@@ -1,4 +1,4 @@
-state,attack,action,animation,loopframe,statetime,nextstate,canbeattacked,canbegrabbed,sound
+state,attack,statecoroutine,animation,loopframe,statetime,nextstate,canbeattacked,canbegrabbed,sound
 Rose-fireball,Rose-fireball-attack,projectileFly,Fly,1,FALSE,FALSE,FALSE,FALSE,data/sounds/combat/firebreath.mp3
 Rose-homing-fireball,Rose-fireball-attack,projectileHoming,Fly,1,FALSE,FALSE,FALSE,FALSE,data/sounds/combat/firebreath.mp3
 Rose-fat-fireball,Rose-fat-fireball-attack,projectileFly,Fly,1,FALSE,FALSE,FALSE,FALSE,data/sounds/combat/firebreath.mp3

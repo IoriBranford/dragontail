@@ -558,7 +558,7 @@
       <text:p>attack</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>action</text:p>
+      <text:p>statecoroutine</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>animation</text:p>

@@ -10,7 +10,7 @@ local co_resume = coroutine.resume
 local co_status = coroutine.status
 
 ---@class State
----@field action string?
+---@field statecoroutine string?
 ---@field attack string?
 ---@field nextstate string?
 ---@field asefile string?
@@ -31,7 +31,7 @@ local co_status = coroutine.status
 ---@field statetime integer?
 ---@field statetable {[string]:State}
 ---@field attacktable {[string]:Attack}?
----@field thread thread?
+---@field statethread thread?
 local StateMachine = {}
 
 function StateMachine:init()
@@ -119,12 +119,12 @@ function StateMachine.start(self, statename, ...)
 
         Audio.play(state.sound)
 
-        local action = self[state.action]
-        if type(action) == "function" then
-            self.thread = co_create(action)
+        local statecoroutine = self[state.statecoroutine]
+        if type(statecoroutine) == "function" then
+            self.statethread = co_create(statecoroutine)
             StateMachine.run(self, ...)
         else
-            self.thread = nil
+            self.statethread = nil
         end
     else
         print("W: no state "..statename)
@@ -132,7 +132,7 @@ function StateMachine.start(self, statename, ...)
 end
 
 function StateMachine.run(self, ...)
-    local thread = self.thread
+    local thread = self.statethread
     local nextstate, a,b,c,d,e,f,g
     if thread then
         local ok
@@ -162,7 +162,7 @@ function StateMachine.run(self, ...)
     if nextstate then
         StateMachine.start(self, nextstate, a,b,c,d,e,f,g)
     elseif thread and co_status(thread) == "dead" then
-        self.thread = nil
+        self.statethread = nil
     end
 end
 
