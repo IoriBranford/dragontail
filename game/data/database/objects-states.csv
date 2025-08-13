@@ -1,6 +1,6 @@
 state,attack,action,animation,loopframe,canbeattacked,canbegrabbed,canbejuggled,bodyinlayers,color,sound
 hurt,,hurt,Hurt,0,FALSE,FALSE,FALSE,,4294967295,
-held,,held,Hurt,,TRUE,FALSE,FALSE,0,4294967295,
+held,,held,Hurt,,TRUE,FALSE,FALSE,,4294967295,
 knockedBack,,knockedBack,Hurt,,FALSE,FALSE,TRUE,,,
 knockedBackBurnt,,knockedBack,Hurt,,FALSE,FALSE,TRUE,,4280295456,
 knockedBackBurntJuggled,,knockedBack,Hurt,,FALSE,FALSE,FALSE,,4280295456,
