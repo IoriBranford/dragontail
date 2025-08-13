@@ -1200,8 +1200,10 @@ function Player:straightAttack(angle, heldenemy)
     if lungespeed then
         Slide.updateSlideSpeed(self, angle, lungespeed)
     end
-    local t = 0
-    while t < (self.attack.hittingduration or 1) do
+    local statetime = self.statetime or 1
+    local hittime = self.attack.hittingduration or statetime
+    local t = math.max(hittime, statetime)
+    while t > 0 do
         if lungespeed then
             if math.abs(lungespeed - math.len(self.velx, self.vely)) >= 1 then
                 lungespeed = nil
@@ -1216,8 +1218,12 @@ function Player:straightAttack(angle, heldenemy)
         if afterimageinterval ~= 0 and t % afterimageinterval == 0 then
             self:makeAfterImage()
         end
-        t = t + 1
+        t = t - 1
+        hittime = hittime - 1
         yield()
+        if hittime <= 0 then
+            self:stopAttack()
+        end
         if pressedattackbutton ~= self.attackbutton then
             -- if self.fireattackbutton.pressed then
             --     pressedattackbutton = self.fireattackbutton
@@ -1230,19 +1236,7 @@ function Player:straightAttack(angle, heldenemy)
     if self.numopponentshit <= 0 then
         Combo.reset(self)
     end
-    self:stopAttack()
 
-    while self.statetime and self.statetime > 0 do
-        yield()
-        if pressedattackbutton ~= self.attackbutton then
-            -- if self.fireattackbutton.pressed then
-            --     pressedattackbutton = self.fireattackbutton
-            -- else
-            if self.attackbutton.pressed then
-                pressedattackbutton = self.attackbutton
-            end
-        end
-    end
     if pressedattackbutton then
         local faceangle = self.faceangle
         local inx, iny = self:getJoystick()
