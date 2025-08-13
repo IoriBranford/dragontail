@@ -185,7 +185,7 @@ local function updateEnemyTargetingScores(self, lookangle)
     return enemies
 end
 
-local function getAngleToBestTarget(self, lookangle, targets)
+function Player:getAngleToBestTarget(lookangle, targets)
     lookangle = lookangle or self.faceangle
     targets = targets or updateEnemyTargetingScores(self, lookangle)
     if targets[1] then
@@ -558,7 +558,7 @@ function Player:walk()
         if self.attackbutton.pressed then
             local attackangle = self.facedestangle
             if self.weaponinhand then
-                attackangle = getAngleToBestTarget(self, attackangle) or attackangle
+                attackangle = self:getAngleToBestTarget(attackangle) or attackangle
             end
             self.faceangle = attackangle
             self.facedestangle = attackangle
@@ -1336,7 +1336,7 @@ function Player:hover()
         if self.attackbutton.pressed then
             local attackangle = self.facedestangle
             if self.weaponinhand then
-                attackangle = getAngleToBestTarget(self, attackangle) or attackangle
+                attackangle = self:getAngleToBestTarget(attackangle) or attackangle
             end
             self.faceangle = attackangle
             self.facedestangle = attackangle
