@@ -71,12 +71,12 @@ function Character:draw(fixedfrac)
     love.graphics.push()
     love.graphics.translate(0, -self.z - self.velz*fixedfrac)
     self:baseDraw(fixedfrac)
+    love.graphics.pop()
     if Config.drawbodies then
         Body.draw(self, fixedfrac)
         Attacker.drawCircle(self, fixedfrac)
         Guard.draw(self, fixedfrac)
     end
-    love.graphics.pop()
 end
 
 function Character:makeAfterImage()
