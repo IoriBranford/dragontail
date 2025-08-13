@@ -523,69 +523,6 @@ function Player:catchProjectileAtJoystick()
     return parryx and parryy and self:findProjectileToCatch(parryx, parryy)
 end
 
-function Player:walk()
-    self.facedestangle = self.faceangle
-    self.joysticklog:clear()
-    -- local attackdowntime
-    while true do
-        local inx, iny = self:getJoystick()
-        self.joysticklog:put(inx, iny)
-        self:turnTowardsJoystick("Walk", "Stand")
-        self:accelerateTowardsJoystick()
-
-        local caughtprojectile = self:catchProjectileAtJoystick()
-        if caughtprojectile then
-            return "catchProjectile", caughtprojectile
-        end
-
-        if self.flybutton.pressed then
-            -- disable until ready
-            -- return "flyStart"
-        end
-
-        if self.sprintbutton.pressed then
-            Face.faceVector(self, inx, iny)
-            return "run"
-        end
-
-        -- self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
-        local chargedattack = not self.attackbutton.down and self:getChargedAttack(ChargeAttacks)
-        if chargedattack then
-            Mana.releaseCharge(self)
-            return chargedattack, self.facedestangle
-        end
-
-        if self.attackbutton.pressed then
-            local attackangle = self.facedestangle
-            if self.weaponinhand then
-                attackangle = self:getAngleToBestTarget(attackangle) or attackangle
-            end
-            self.faceangle = attackangle
-            self.facedestangle = attackangle
-            if self.weaponinhand then
-                return "throwWeapon", self.facedestangle, 1, 1
-            end
-            return self:doComboAttack(self.facedestangle, nil, inx ~= 0 or iny ~= 0)
-        end
-
-        local opponenttohold = HoldOpponent.findOpponentToHold(self, inx, iny)
-        if opponenttohold then
-            Audio.play(self.holdsound)
-            return "hold", opponenttohold
-        end
-
-        -- if runningtime then
-        --     targetvelx = cos(self.faceangle) * movespeed
-        --     targetvely = sin(self.faceangle) * movespeed
-        -- else
-        --     targetvelx = inx * movespeed
-        --     targetvely = iny * movespeed
-        -- end
-
-        yield()
-    end
-end
-
 function Player:run()
     self.facedestangle = self.faceangle
     self.joysticklog:clear()
