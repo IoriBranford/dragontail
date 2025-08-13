@@ -11,6 +11,7 @@ local co_status = coroutine.status
 
 ---@class State
 ---@field statecoroutine string?
+---@field statebehavior string?
 ---@field attack string?
 ---@field nextstate string?
 ---@field asefile string?
@@ -32,6 +33,7 @@ local co_status = coroutine.status
 ---@field statetable {[string]:State}
 ---@field attacktable {[string]:Attack}?
 ---@field statethread thread?
+---@field statebehavior Behavior?
 local StateMachine = {}
 
 function StateMachine:init()
@@ -63,6 +65,11 @@ local StateVarsToCopy = {
 }
 
 function StateMachine.start(self, statename, ...)
+    if self.statebehavior then
+        self.statebehavior:stop()
+    end
+    self.statebehavior = nil
+    self.statethread = nil
     local state = self.statetable and self.statetable[statename]
     if state then
         self.state = state
@@ -119,12 +126,25 @@ function StateMachine.start(self, statename, ...)
 
         Audio.play(state.sound)
 
-        local statecoroutine = self[state.statecoroutine]
-        if type(statecoroutine) == "function" then
-            self.statethread = co_create(statecoroutine)
-            StateMachine.run(self, ...)
-        else
-            self.statethread = nil
+        local behavior = state.statebehavior
+        if behavior then
+            local ok
+            ok, behavior = pcall(require, behavior)
+            if ok then
+                self.statebehavior = behavior(self)
+                self.statebehavior:start(...)
+                behavior = self.statebehavior
+            else
+                print(behavior)
+                behavior = nil
+            end
+        end
+        if not behavior then
+            local statecoroutine = self[state.statecoroutine]
+            if type(statecoroutine) == "function" then
+                self.statethread = co_create(statecoroutine)
+                StateMachine.run(self, ...)
+            end
         end
     else
         print("W: no state "..statename)
@@ -132,18 +152,19 @@ function StateMachine.start(self, statename, ...)
 end
 
 function StateMachine.run(self, ...)
-    local thread = self.statethread
     local nextstate, a,b,c,d,e,f,g
-    if thread then
+    if self.statebehavior then
+        nextstate, a,b,c,d,e,f,g = self.statebehavior:fixedupdate()
+    elseif self.statethread then
         local ok
-        ok, nextstate, a,b,c,d,e,f,g = co_resume(thread, self, ...)
+        ok, nextstate, a,b,c,d,e,f,g = co_resume(self.statethread, self, ...)
         if not ok then
-            error(debug.traceback(thread, nextstate))
+            error(debug.traceback(self.statethread, nextstate))
         end
     end
 
     if not nextstate then
-        if thread and co_status(thread) == "dead" then
+        if self.statethread and co_status(self.statethread) == "dead" then
             nextstate = self.nextstate
         else
             local statetime = self.statetime
@@ -161,7 +182,10 @@ function StateMachine.run(self, ...)
 
     if nextstate then
         StateMachine.start(self, nextstate, a,b,c,d,e,f,g)
-    elseif thread and co_status(thread) == "dead" then
+    elseif self.statebehavior and self.statetime and self.statetime <= 0 then
+        self.statebehavior:stop()
+        self.statebehavior = nil
+    elseif self.thread and co_status(self.thread) == "dead" then
         self.statethread = nil
     end
 end
