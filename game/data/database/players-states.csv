@@ -1,8 +1,8 @@
 state,attack,action,nextstate,statetime,asefile,animation,loopframe,canbeattacked,canbegrabbed,canbejuggled,color,sound,afterimageinterval,manachargerate,manadecayrate,gravity,mass,speed,faceturnspeed
-kick,kick,straightAttack,walk,FALSE,data/sprites/player/rose/attack.jase,fastkick,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing1.mp3,0,0,0,0.5,4,4,3.14159265358979
+kick,kick,straightAttack,walk,12,data/sprites/player/rose/attack.jase,fastkick,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing1.mp3,0,0,0,0.5,4,4,3.14159265358979
 tail-swing-cw,tail-swing-cw,spinAttack,walk,FALSE,data/sprites/player/rose/attack.jase,attackA,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,0,0,0,0.5,4,8,0.628318530717959
 tail-swing-ccw,tail-swing-ccw,spinAttack,walk,FALSE,data/sprites/player/rose/attack.jase,attackB,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,0,0,0,0.5,4,8,0.628318530717959
-lunging-kick,lunging-kick,straightAttack,walk,FALSE,data/sprites/player/rose/attack.jase,fastkick,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing1.mp3,0,0,0,0.5,4,4,3.14159265358979
+lunging-kick,lunging-kick,straightAttack,walk,12,data/sprites/player/rose/attack.jase,fastkick,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing1.mp3,0,0,0,0.5,4,4,3.14159265358979
 lunging-tail-swing-cw,lunging-tail-swing-cw,spinAttack,walk,FALSE,data/sprites/player/rose/attack.jase,attackA,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,0,0,0,0.5,4,8,0.628318530717959
 lunging-tail-swing-ccw,lunging-tail-swing-ccw,spinAttack,walk,FALSE,data/sprites/player/rose/attack.jase,attackB,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,0,0,0,0.5,4,8,0.628318530717959
 spinning-throw,spinning-throw,spinAndKickEnemy,holding-kick,FALSE,data/sprites/player/rose/hold.jase,spinthrow,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing3.mp3,0,0,0,0.5,4,4,0.392699081698724
