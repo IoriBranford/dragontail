@@ -86,8 +86,7 @@ function HoldOpponent:updateOpponentPosition()
     local enemy = self.heldopponent
     if not enemy then return end
 
-    local grabradius = self.grabradius or 8
-    local radii = grabradius + enemy.bodyradius
+    local radii = self.bodyradius + enemy.bodyradius + 1
     local ox = radii*math.cos(self.holdangle or 0)
     local oy = radii*math.sin(self.holdangle or 0)
     local oz = math.max(0, (self.bodyheight - enemy.bodyheight)/2)
@@ -101,8 +100,7 @@ function HoldOpponent:handleOpponentCollision()
     if not enemy then return end
     local epenex, epeney = Body.keepInBounds(enemy)
     if epenex and epeney then
-        local grabradius = self.grabradius or 8
-        local radii = grabradius + enemy.bodyradius
+        local radii = self.bodyradius + enemy.bodyradius + 1
         local ox = radii*math.cos(self.holdangle or 0)
         local oy = radii*math.sin(self.holdangle or 0)
         self.x = enemy.x - ox
