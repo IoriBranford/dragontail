@@ -125,7 +125,7 @@ function Stage.init()
     firstroomindex = min(firstroomindex, #rooms)
     local firstroom = rooms[firstroomindex]
     local camerapath = firstroom.camerapath
-    while not camerapath do
+    while not camerapath and firstroomindex > 1 do
         firstroomindex = firstroomindex - 1
         firstroom = map.layers.rooms[firstroomindex]
         camerapath = firstroom.camerapath
