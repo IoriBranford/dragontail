@@ -393,13 +393,11 @@ function Body:draw(fixedfrac)
     love.graphics.line(x + bodyradius, screeny, x + bodyradius, screeny - bodyheight)
     local points = self.points
     if points then
-        local originx, originy = self:getOrigin()
         love.graphics.push()
-        love.graphics.translate(originx, originy)
         self:drawPolygon()
         love.graphics.translate(0, -bodyheight)
         self:drawPolygon()
-        love.graphics.translate(self.x - originx, self.y - originy)
+        love.graphics.translate(self.x, self.y)
         for i = 2, #points, 2 do
             local px, py = points[i-1], points[i]
             love.graphics.line(px, py, px, py + bodyheight)
