@@ -41,8 +41,9 @@ function Shoot:launchProjectileAtPosition(projectile, targetx, targety, targetz,
     -- v0 = dz/t - gravity*t/2
     local velz = distz/time + gravity * time * .5
     local projectileheight = self.projectilelaunchheight or (self.bodyheight / 2)
-    projectile.x = x
-    projectile.y = y
+    local bodyradius = self.bodyradius
+    projectile.x = x + (bodyradius+projectiledata.bodyradius) * dirx
+    projectile.y = y + (bodyradius+projectiledata.bodyradius) * diry
     projectile.z = z + projectileheight
     projectile.velx = velx
     projectile.vely = vely
