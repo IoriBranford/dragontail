@@ -67,6 +67,7 @@ local StateVarsToCopy = {
 function StateMachine.start(self, statename, ...)
     if self.statebehavior then
         self.statebehavior:stop()
+        self.statebehavior:_release()
     end
     self.statebehavior = nil
     self.statethread = nil
@@ -184,6 +185,7 @@ function StateMachine.run(self, ...)
         StateMachine.start(self, nextstate, a,b,c,d,e,f,g)
     elseif self.statebehavior and self.statetime and self.statetime <= 0 then
         self.statebehavior:stop()
+        self.statebehavior:_release()
         self.statebehavior = nil
     elseif self.statethread and co_status(self.statethread) == "dead" then
         self.statethread = nil

@@ -1,6 +1,7 @@
 ---@class Behavior
 ---@field character Character
-local Behavior = class()
+local Behavior = pooledclass()
+Behavior._nrec = 1
 
 function Behavior:_init(character)
     self.character = character

@@ -6,7 +6,8 @@ local Audio    = require "System.Audio"
 
 ---@class PlayerRunning:Behavior
 ---@field character Player
-local PlayerRunning = class(Behavior)
+local PlayerRunning = pooledclass(Behavior)
+PlayerRunning._nrec = Behavior._nrec + 1
 
 function PlayerRunning:start()
     local player = self.character

@@ -6,7 +6,7 @@ local Behavior = require "Dragontail.Character.Behavior"
 
 ---@class PlayerFighting:Behavior
 ---@field character Player
-local PlayerFighting = class(Behavior)
+local PlayerFighting = pooledclass(Behavior)
 
 function PlayerFighting:start()
     local player = self.character
