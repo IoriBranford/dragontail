@@ -502,7 +502,7 @@ end
 function Enemy:duringGuardHit(attacker, t)
 end
 
----@param hit Hit
+---@param hit AttackHit
 ---@return string? nextstate
 ---@return any ...
 function Enemy:guardHit(hit)

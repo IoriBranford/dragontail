@@ -1,4 +1,4 @@
----@class Hit
+---@class AttackHit
 ---@field attacker Attacker
 ---@field attack Attack
 ---@field target Victim

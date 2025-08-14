@@ -420,7 +420,7 @@ function Common:projectileFly(shooter)
     self:disappear()
 end
 
----@param hit Hit
+---@param hit AttackHit
 ---@return string
 ---@return any
 function Common:projectileDeflected(hit)

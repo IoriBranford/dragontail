@@ -156,7 +156,7 @@ function Attacker:checkAttackCollision(target)
 end
 
 ---@param target Victim
----@return Hit?
+---@return AttackHit?
 function Attacker:getAttackHit(target)
     local penex, peney, penez = Attacker.checkAttackCollision(self, target)
     if penex or peney or penez then
@@ -180,7 +180,7 @@ function Attacker:getAttackHit(target)
     end
 end
 
----@param hit Hit
+---@param hit AttackHit
 function Attacker:onAttackHit(hit)
     self.numopponentshit = (self.numopponentshit or 0) + 1
     if self.hitstun <= 0 and self.numopponentshit <= 1 then

@@ -71,7 +71,7 @@ Fighter.storeMana = Mana.store
 function Fighter:duringHurt() end
 
 ---hurt state code
----@param hit Hit
+---@param hit AttackHit
 ---@return string nextstate
 ---@return any ... next state args
 function Fighter:hurt(hit)
