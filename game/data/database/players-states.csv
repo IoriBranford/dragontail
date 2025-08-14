@@ -22,8 +22,8 @@ running-spit-multi-fireball,running-spit-multi-fireball,,straightAttack,walk,FAL
 fireball-spin-cw,fireball-spin-cw,,spinAttack,walk,FALSE,data/sprites/player/rose/attack.jase,attackA,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,0,0,0,0.5,1,4,0.628318530717959
 fireball-spin-ccw,fireball-spin-ccw,,spinAttack,walk,FALSE,data/sprites/player/rose/attack.jase,attackB,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,0,0,0,0.5,1,4,0.628318530717959
 fireball-storm,fireball-storm,,spinAttack,walk,FALSE,data/sprites/player/rose/attack.jase,attackA,1,FALSE,FALSE,FALSE,,data/sounds/player/attacksuper.mp3,3,0,0,0.5,8,4,0.589048622548086
-walk,,Dragontail.Character.Behavior.PlayerFighting,,walk,FALSE,data/sprites/player/rose/main.jase,Stand,1,TRUE,TRUE,FALSE,,,0,2,2,0.5,4,4,0.392699081698724
-run,,Dragontail.Character.Behavior.PlayerRunning,,walk,FALSE,data/sprites/player/rose/main.jase,Walk,1,TRUE,TRUE,FALSE,,data/sounds/combat/dash.mp3,3,2,2,0.5,1,8,0.0523598775598299
+walk,,Dragontail.Character.Behavior.Player.Fighting,,walk,FALSE,data/sprites/player/rose/main.jase,Stand,1,TRUE,TRUE,FALSE,,,0,2,2,0.5,4,4,0.392699081698724
+run,,Dragontail.Character.Behavior.Player.Running,,walk,FALSE,data/sprites/player/rose/main.jase,Walk,1,TRUE,TRUE,FALSE,,data/sounds/combat/dash.mp3,3,2,2,0.5,1,8,0.0523598775598299
 hold,,,hold,walk,FALSE,data/sprites/player/rose/hold.jase,hold,1,TRUE,TRUE,FALSE,,,0,2,2,0.5,4,4,0.0490873852123405
 aimThrow,,,aimThrow,walk,FALSE,data/sprites/player/rose/main.jase,Stand,0,TRUE,TRUE,FALSE,,,0,2,2,0.5,4,4,0.392699081698724
 throwWeapon,,,throwWeapon,walk,FALSE,data/sprites/player/rose/attack.jase,throw,0,FALSE,FALSE,FALSE,,data/sounds/player/attack2.mp3,0,0,0,0.5,4,4,3.14159265358979
