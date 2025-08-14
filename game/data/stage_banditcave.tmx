@@ -232,7 +232,7 @@
  <group id="14" name="rooms">
   <objectgroup draworder="index" id="7" name="learnmovement" class="Room">
    <properties>
-    <property name="eventfunction" value="introBanditStage"/>
+    <property name="sequence" value="introBanditStage"/>
    </properties>
    <object id="21" template="mapobjects/OutwardBoundary.tx" x="0" y="0" visible="1">
     <properties>
@@ -728,16 +728,16 @@ and tap    to throw</text>
   <objectgroup id="54" name="unlockdoor" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="-1"/>
-    <property name="eventfunction" value="unlockDoorToNextArea"/>
+    <property name="sequence" value="unlockDoorToNextArea"/>
     <property name="exitdoor" type="object" value="235"/>
    </properties>
    <object id="260" name="camerawarpwhendone" x="2512" y="144">
     <point/>
    </object>
-   <object id="465" template="mapobjects/trigger/startStageEvent.tx" name="exittrigger" type="Trigger" x="2048" y="128">
+   <object id="465" template="mapobjects/trigger/startSequence.tx" name="exittrigger" type="Trigger" x="2048" y="128">
     <properties>
      <property name="drawz" type="float" value="-0.125"/>
-     <property name="event" value="playerExitToNextArea"/>
+     <property name="sequence" value="playerExitToNextArea"/>
      <property name="initialai" value="triggerToUse"/>
     </properties>
     <polygon points="0,-8 32,-8 64,24 64,56"/>
@@ -746,7 +746,7 @@ and tap    to throw</text>
   <objectgroup draworder="index" id="22" name="entryhall" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="999"/>
-    <property name="eventfunction" value="playerEnterArea"/>
+    <property name="sequence" value="playerEnterArea"/>
     <property name="titlebarcuecard" value="RUN"/>
    </properties>
    <object id="104" template="mapobjects/CameraPath.tx" x="2448" y="144">

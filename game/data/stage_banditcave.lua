@@ -15676,7 +15676,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["eventfunction"] = "introBanditStage"
+            ["sequence"] = "introBanditStage"
           },
           objects = {
             {
@@ -17989,7 +17989,7 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = -1,
-            ["eventfunction"] = "unlockDoorToNextArea",
+            ["sequence"] = "unlockDoorToNextArea",
             ["exitdoor"] = { id = 235 }
           },
           objects = {
@@ -18024,10 +18024,10 @@ return {
                 { x = 64, y = 56 }
               },
               properties = {
-                ["action"] = "startStageEvent",
+                ["action"] = "startSequence",
                 ["color"] = "#80008000",
                 ["drawz"] = -0.125,
-                ["event"] = "playerExitToNextArea",
+                ["sequence"] = "playerExitToNextArea",
                 ["extrudeY"] = -64,
                 ["initialai"] = "triggerToUse",
                 ["script"] = "Dragontail.Character.Trigger",
@@ -18050,7 +18050,7 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = 999,
-            ["eventfunction"] = "playerEnterArea",
+            ["sequence"] = "playerEnterArea",
             ["titlebarcuecard"] = "RUN"
           },
           objects = {

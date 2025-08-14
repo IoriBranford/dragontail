@@ -1096,7 +1096,7 @@ function Player:defeat(attacker)
     Audio.play(self.defeatsound)
 end
 
-function Player:eventWalkTo(destx, desty, timelimit)
+function Player:sequenceWalkTo(destx, desty, timelimit)
     HoldOpponent.stopHolding(self, self.heldopponent)
     self:walkTo(destx, desty, timelimit)
     self.velx, self.vely, self.velz = 0, 0, 0

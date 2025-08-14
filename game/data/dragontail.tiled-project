@@ -108,7 +108,7 @@
                     "value": 0
                 },
                 {
-                    "name": "eventfunction",
+                    "name": "sequence",
                     "type": "string",
                     "value": ""
                 },

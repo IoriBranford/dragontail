@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template>
- <object name="startStageEvent" type="Trigger">
+ <object name="startSequence" type="Trigger">
   <properties>
-   <property name="action" value="startStageEvent"/>
+   <property name="action" value="startSequence"/>
    <property name="extrudeY" type="float" value="-64"/>
    <property name="color" type="color" value="#80008000"/>
-   <property name="event" value=""/>
+   <property name="sequence" value=""/>
    <property name="script" value="Dragontail.Character.Trigger"/>
    <property name="usesleft" type="int" value="1"/>
   </properties>

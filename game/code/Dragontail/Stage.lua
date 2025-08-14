@@ -6,7 +6,7 @@ local StateMachine       = require "Dragontail.Character.Component.StateMachine"
 local Characters  = require "Dragontail.Stage.Characters"
 local CameraPath  = require "Object.CameraPath"
 local Config      = require "System.Config"
-local Events      = require "Dragontail.Stage.Events"
+local Sequences      = require "Dragontail.Stage.Sequences"
 local Database    = require "Data.Database"
 local Assets      = require "Tiled.Assets"
 local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask"
@@ -24,7 +24,7 @@ local map ---@type TiledMap
 local roomindex
 local winningteam
 local camera ---@type Camera
-local eventthread ---@type thread?
+local sequencethread ---@type thread?
 
 ---@class Boundary:TiledObject
 ---@class Camera:Boundary
@@ -159,7 +159,7 @@ function Stage.init()
     end
     Stage.openRoom(firstroomindex)
 
-    if not eventthread then
+    if not sequencethread then
         local players = Characters.getGroup("players")
         for _, player in ipairs(players) do
             StateMachine.start(player, "walk")
@@ -224,19 +224,19 @@ function Stage.setToLastRoom()
     roomindex = #map.layers.rooms
 end
 
-function Stage.startEvent(event)
-    local eventfunction = Events[event]
-    if type(eventfunction) == "function" then
-        eventthread = coroutine.create(eventfunction)
-        Stage.updateEvent()
+function Stage.startSequence(name)
+    local f = Sequences[name]
+    if type(f) == "function" then
+        sequencethread = coroutine.create(f)
+        Stage.updateSequence()
     end
 end
 
-function Stage.updateEvent()
-    if eventthread then
-        local ok, err = coroutine.resume(eventthread)
-        if coroutine.status(eventthread) == "dead" then
-            eventthread = nil
+function Stage.updateSequence()
+    if sequencethread then
+        local ok, err = coroutine.resume(sequencethread)
+        if coroutine.status(sequencethread) == "dead" then
+            sequencethread = nil
             if not ok then
                 print(err)
             end
@@ -249,7 +249,7 @@ function Stage.openRoom(i)
     if room then
         roomindex = i
         Characters.spawnArray(room.characters)
-        Stage.startEvent(room.eventfunction)
+        Stage.startSequence(room.sequence)
         if Config.cuecards then
             local cuecard = room.titlebarcuecard or ""
             if cuecard ~= "" then
@@ -321,7 +321,7 @@ function Stage.updateGoingToNextRoom()
         camera.vely = 0
         local enemies = Characters.getGroup("enemies")
         local donewhenenemiesleft = room.donewhenenemiesleft or 0
-        if #enemies <= donewhenenemiesleft and not eventthread then
+        if #enemies <= donewhenenemiesleft and not sequencethread then
             Stage.openRoom(roomindex + 1)
         end
         return
@@ -348,7 +348,7 @@ function Stage.updateGoingToNextRoom()
 end
 
 function Stage.fixedupdate()
-    Stage.updateEvent()
+    Stage.updateSequence()
 
     Characters.fixedupdate()
     Characters.pruneDisappeared()

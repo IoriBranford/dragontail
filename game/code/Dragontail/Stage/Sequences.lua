@@ -2,20 +2,20 @@ local Characters = require "Dragontail.Stage.Characters"
 local StateMachine      = require "Dragontail.Character.Component.StateMachine"
 local Body              = require "Dragontail.Character.Component.Body"
 
----@module 'Dragontail.Stage.Events'
-local Events = {}
+---@module 'Dragontail.Stage.Sequences'
+local Sequences = {}
 
-function Events.introBanditStage()
-    Events.playerEnterArea()
+function Sequences.introBanditStage()
+    Sequences.playerEnterArea()
 end
 
-function Events.playerExitToNextArea()
+function Sequences.playerExitToNextArea()
     local Stage = require "Dragontail.Stage"
     local room = Stage.getCurrentRoom()
-    assert(room.donewhenenemiesleft < 0, "This event depends on the room not ending when cleared of enemies. Set room's donewhenenemiesleft to a negative value to use this event.")
+    assert(room.donewhenenemiesleft < 0, "This sequence depends on the room not ending when cleared of enemies. Set room's donewhenenemiesleft to a negative value to use this sequence.")
     local players = Characters.getGroup("players")
     for _, player in ipairs(players) do
-        StateMachine.start(player, "eventWalkTo", player.x, player.y)--, TimeLimit)
+        StateMachine.start(player, "sequenceWalkTo", player.x, player.y)--, TimeLimit)
     end
 
     local Gui        = require "Dragontail.Gui"
@@ -29,7 +29,7 @@ function Events.playerExitToNextArea()
     Stage.openNextRoom()
 end
 
-function Events.playerEnterArea()
+function Sequences.playerEnterArea()
     local players = Characters.getGroup("players")
 
     local Gui        = require "Dragontail.Gui"
@@ -42,7 +42,7 @@ function Events.playerEnterArea()
     end
 end
 
-function Events.playerBreakIntoNextArea()
+function Sequences.playerBreakIntoNextArea()
     local Stage = require "Dragontail.Stage"
     local room = Stage.getCurrentRoom()
     if room.donewhenenemiesleft >= 0 then
@@ -51,7 +51,7 @@ function Events.playerBreakIntoNextArea()
     local exit = room.exit
     local players = Characters.getGroup("players")
     for _, player in ipairs(players) do
-        StateMachine.start(player, "eventWalkTo", room.exit)--, TimeLimit)
+        StateMachine.start(player, "sequenceWalkTo", room.exit)--, TimeLimit)
     end
 
     local exitdoor = exit and exit.door
@@ -70,9 +70,9 @@ function Events.playerBreakIntoNextArea()
     end
 
     if playeratdest then
-        StateMachine.start(playeratdest, "eventTailSwing")
+        StateMachine.start(playeratdest, "sequenceTailSwing")
         coroutine.waitfor(function()
-            return not playeratdest.state or playeratdest.state.state ~= "eventTailSwing"
+            return not playeratdest.state or playeratdest.state.state ~= "sequenceTailSwing"
         end)
     end
 
@@ -87,7 +87,7 @@ function Events.playerBreakIntoNextArea()
     Stage.openNextRoom()
 end
 
-function Events.unlockDoorToNextArea()
+function Sequences.unlockDoorToNextArea()
     local Stage = require "Dragontail.Stage"
     local room = Stage.getCurrentRoom()
     if room.donewhenenemiesleft >= 0 then
@@ -99,4 +99,4 @@ function Events.unlockDoorToNextArea()
     trigger.visible = true
 end
 
-return Events
+return Sequences

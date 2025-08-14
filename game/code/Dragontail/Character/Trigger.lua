@@ -251,8 +251,8 @@ end
 --     Background.setLayersInGame(trigger.layerpaths, trigger.ingame)
 -- end
 
-function Trigger:startStageEvent()
-    Stage.startEvent(self.event)
+function Trigger:startSequence()
+    Stage.startSequence(self.sequence)
 end
 
 function Trigger:pulseAlpha()
