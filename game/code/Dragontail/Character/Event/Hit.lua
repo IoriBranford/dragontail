@@ -11,3 +11,4 @@
 ---@field penex number?
 ---@field peney number?
 ---@field penez number?
+---@field guarded boolean
