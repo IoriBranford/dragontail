@@ -1,4 +1,5 @@
 class = require "class"
+pooledclass = require "pooledclass"
 require "Math"
 require "Coroutine"
 local Audio = require "System.Audio"
