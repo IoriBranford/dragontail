@@ -581,8 +581,11 @@ end
 
 function Player:duringGetUp()
     if self.sprintbutton.down then
-        self.sprintbutton.pressed = true
-        return "walk"
+        local inx, iny = self:getJoystick()
+        if inx ~= 0 or iny ~= 0 then
+            Face.faceAngle(self, atan2(iny, inx))
+        end
+        return "run"
     end
     if not self.attackbutton.down then
         local chargedattack, angle = self:getReversalChargedAttack()
@@ -600,7 +603,11 @@ function Player:hurt(hit)
     local nextstate, a, b, c, d, e = Fighter.hurt(self, hit)
     if nextstate == "walk" then
         if self.sprintbutton.down then
-            self.sprintbutton.pressed = true
+            local inx, iny = self:getJoystick()
+            if inx ~= 0 or iny ~= 0 then
+                Face.faceAngle(self, atan2(iny, inx))
+            end
+            nextstate = "run"
         end
     end
     return nextstate, a, b, c, d, e
