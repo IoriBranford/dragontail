@@ -1,4 +1,3 @@
-local Attacker = require "Dragontail.Character.Component.Attacker"
 local drawCake = require "drawCake"
 
 ---@class Guard:Body
@@ -16,6 +15,7 @@ function Guard:stopGuarding()
 end
 
 function Guard:isAttackInGuardArc(attacker)
+    local Attacker = require "Dragontail.Character.Component.Attacker"
     local ax, ay = Attacker.getAttackCylinder(attacker)
     if ax and ay then
         return Guard.isPointInGuardArc(self, ax, ay)
