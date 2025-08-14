@@ -32,7 +32,8 @@ local testcircles = math.testcircles
 ---@field shadowcolor Color?
 ---@field animationdirections integer?
 ---@field emote Character?
-local Character = class(Object)
+---@overload fun():Character
+local Character = pooledclass(Object)
 Character.attack = {}
 
 function Character:init()
@@ -80,13 +81,13 @@ function Character:draw(fixedfrac)
 end
 
 function Character:makeAfterImage()
-    local afterimage = Characters.spawn({
-        x = self.x,
-        y = self.y,
-        z = self.z,
-        asefile = self.asefile,
-        type = "afterimage"
-    })
+    local afterimage = Character()
+    afterimage.x = self.x
+    afterimage.y = self.y
+    afterimage.z = self.z
+    afterimage.asefile = self.asefile
+    afterimage.type = "afterimage"
+    Characters.spawn(afterimage)
     afterimage.originx, afterimage.originy = self:getOrigin()
     afterimage:setAseAnimation(self.aseanimation, self.animationframe)
 end
@@ -115,14 +116,14 @@ function Character:makeHurtParticle()
     local sinangle = sin(hurtangle)
     local velx = cosangle*speed
     local vely = sinangle*speed
-    return Characters.spawn {
-        type = self.hurtparticle,
-        x = self.x + velx,
-        y = self.y + vely,
-        z = self.z + self.bodyheight/2,
-        velx = velx,
-        vely = vely
-    }
+    local particle = Character()
+    particle.type = self.hurtparticle
+    particle.x = self.x + velx
+    particle.y = self.y + vely
+    particle.z = self.z + self.bodyheight/2
+    particle.velx = velx
+    particle.vely = vely
+    return Characters.spawn(particle)
 end
 
 function Character:updateHurtColorCycle(t)

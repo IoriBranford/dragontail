@@ -206,7 +206,15 @@ function Characters.pruneDisappeared()
     for _, characters in pairs(groups) do
         pruneCharacters(characters)
     end
-    pruneCharacters(allcharacters)
+    local n = #allcharacters
+    for i = n, 1, -1 do
+        if allcharacters[i].disappeared then
+            allcharacters[i]:_release()
+            allcharacters[i] = allcharacters[n]
+            allcharacters[n] = nil
+            n = n - 1
+        end
+    end
     scene:prune(Character.hasDisappeared)
 end
 

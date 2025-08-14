@@ -3,6 +3,7 @@ local Mana          = require "Dragontail.Character.Component.Mana"
 local Body          = require "Dragontail.Character.Component.Body"
 local Characters   = require "Dragontail.Stage.Characters"
 local Audio    = require "System.Audio"
+local Character= require "Dragontail.Character"
 
 ---@class PlayerRunning:Behavior
 ---@field character Player
@@ -102,14 +103,12 @@ function PlayerRunning:fixedupdate()
         local speed = math.len(velx, vely)
         local ooblen = math.len(oobx, ooby)
         if oobdotvel > speed*ooblen/2 then
-            Characters.spawn(
-                {
-                    type = "spark-bighit",
-                    x = player.x + oobx*player.bodyradius,
-                    y = player.y + ooby*player.bodyradius,
-                    z = player.z + player.bodyheight/2
-                }
-            )
+            local spark = Character()
+            spark.type = "spark-bighit"
+            spark.x = player.x + oobx*player.bodyradius
+            spark.y = player.y + ooby*player.bodyradius
+            spark.z = player.z + player.bodyheight/2
+            Characters.spawn(spark)
             player.hurtstun = 10
             return "runIntoWall", velangle
         end

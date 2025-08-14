@@ -627,10 +627,12 @@ function Player:down(attacker)
 end
 
 function Player:aimThrow()
-    self.crosshair = self.crosshair or Characters.spawn({
-        type = "rose-crosshair",
-        visible = false
-    })
+    if not self.crosshair then
+        self.crosshair = Character()
+        self.crosshair.type = "rose-crosshair"
+        self.crosshair.visible = false
+        Characters.spawn(self.crosshair)
+    end
     self.facedestangle = self.faceangle
     local lockonenemy
     while true do
@@ -720,11 +722,11 @@ function Player:throwWeapon(angle, attackchoice, numprojectiles)
     local function throw(targetx, targety, targetz)
         local projectiledata = Database.get(self.weaponinhand)
         local attackid = projectiledata and projectiledata.playerattack
-        Shoot.launchProjectileAtPosition(self, {
-            type = self.weaponinhand,
-            gravity = 1/8,
-            speed = 16
-        }, targetx, targety, targetz, attackid)
+        local projectile = Character()
+        projectile.type = self.weaponinhand
+        projectile.gravity = 1/8
+        projectile.speed = 16
+        Shoot.launchProjectileAtPosition(self, projectile, targetx, targety, targetz, attackid)
         self.inventory:pop()
         self.weaponinhand = self.inventory:last()
     end

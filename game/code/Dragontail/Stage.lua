@@ -11,6 +11,7 @@ local Database    = require "Data.Database"
 local Assets      = require "Tiled.Assets"
 local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask"
 local pathlite = require "pl.pathlite"
+local Character= require "Dragontail.Character"
 local Stage = {
     CameraWidth = 480,
     CameraHeight = 270
@@ -79,37 +80,42 @@ function Stage.init()
     local ceilingz = map.ceilingz or (floorz + MinStageHeight)
     ceilingz = max(ceilingz, floorz + MinStageHeight)
 
-    camera = {
-        visible = false,
-        shape = "polygon",
-        bodyinlayers = CollisionMask.get("Camera"),
-        bodyheight = 0x20000000,
-        x = 0, y = 0, z = -0x10000000,
-        lockz = true,
-        width = Stage.CameraWidth, height = Stage.CameraHeight,
-        points = {
-            0, CameraTopMargin,
-            Stage.CameraWidth, CameraTopMargin,
-            Stage.CameraWidth, Stage.CameraHeight,
-            0, Stage.CameraHeight
-        }
+    camera = Character()
+    camera.visible = false
+    camera.shape = "polygon"
+    camera.bodyinlayers = CollisionMask.get("Camera")
+    camera.bodyheight = 0x20000000
+    camera.x = 0
+    camera.y = 0
+    camera.z = -0x10000000
+    camera.lockz = true
+    camera.width = Stage.CameraWidth
+    camera.height = Stage.CameraHeight
+    camera.points = {
+        0, CameraTopMargin,
+        Stage.CameraWidth, CameraTopMargin,
+        Stage.CameraWidth, Stage.CameraHeight,
+        0, Stage.CameraHeight
     }
     Characters.init(scene, map.nextobjectid, camera)
 
-    Characters.spawn({
-        visible = false,
-        shape = "polygon",
-        bodyinlayers = CollisionMask.get("Wall"),
-        bodyheight = ceilingz - floorz,
-        x = 0, y = 0, z = floorz,
-        width = 0x20000000, height = 0x20000000,
-        points = {
-            -0x10000000,-0x10000000,
-            0x10000000,-0x10000000,
-            0x10000000,0x10000000,
-            -0x10000000,0x10000000,
-        }
-    })
+    local floorandceiling = Character()
+    floorandceiling.visible = false
+    floorandceiling.shape = "polygon"
+    floorandceiling.bodyinlayers = CollisionMask.get("Wall")
+    floorandceiling.bodyheight = ceilingz - floorz
+    floorandceiling.x = 0
+    floorandceiling.y = 0
+    floorandceiling.z = floorz
+    floorandceiling.width = 0x20000000
+    floorandceiling.height = 0x20000000
+    floorandceiling.points = {
+        -0x10000000,-0x10000000,
+        0x10000000,-0x10000000,
+        0x10000000,0x10000000,
+        -0x10000000,0x10000000,
+    }
+    Characters.spawn(floorandceiling)
 
     scene:addMap(map, "group,tilelayer")
 
@@ -135,9 +141,11 @@ function Stage.init()
         camera.y = camerapath.y + camerapath.points[2] - camera.height/2
     end
 
-    Characters.spawn({
-        x = camera.x + camera.width/4, y = camera.y + camera.height/2, type = "Rose"
-    })
+    local player = Character()
+    player.x = camera.x + camera.width/4
+    player.y = camera.y + camera.height/2
+    player.type = "Rose"
+    Characters.spawn(player)
     for i = firstroomindex - 1, 1, -1 do
         local prevroom = map.layers.rooms[i]
         local characters = prevroom.characters

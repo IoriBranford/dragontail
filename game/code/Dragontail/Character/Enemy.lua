@@ -424,12 +424,12 @@ function Enemy:enterAndDropDown()
     until self.z == Characters.getCylinderFloorZ(self.x, self.y, self.z, self.bodyradius, self.bodyheight, self.bodyhitslayers)
     Audio.play(self.jumplandsound)
     self:changeAnimation("FallRiseFromKnees", 1, 0)
-    Characters.spawn({
-        type = "spark-land-on-feet-dust",
-        x = self.x,
-        y = self.y + 1,
-        z = self.z,
-    })
+    local spark = Character()
+    spark.type = "spark-land-on-feet-dust"
+    spark.x = self.x
+    spark.y = self.y + 1
+    spark.z = self.z
+    Characters.spawn(spark)
     coroutine.wait(9)
     return "stand", 3
 end

@@ -1,5 +1,6 @@
 local Database = require "Data.Database"
 local Characters = require "Dragontail.Stage.Characters"
+local Character  = require "Dragontail.Character"
 
 ---@class Shoot:Character
 ---@field projectilelaunchheight number?
@@ -11,9 +12,12 @@ end
 
 function Shoot:launchProjectileAtPosition(projectile, targetx, targety, targetz, attackid)
     if type(projectile) == "string" then
-        projectile = { type = projectile }
+        local newprojectile = Character()
+        newprojectile.type = projectile
+        projectile = newprojectile
     end
     local projectiledata = Database.get(projectile.type)
+    assert(projectiledata, projectile.type)
     Database.fillBlanks(projectile, projectiledata)
 
     local x, y, z = self.x, self.y, self.z
@@ -68,20 +72,19 @@ function Shoot:launchProjectile(type, dirx, diry, dirz, attackid)
     local speed = projectiledata.speed or 1
     local projectileheight = self.projectilelaunchheight or (bodyheight / 2)
     local angle = dirx == 0 and diry == 0 and 0 or math.atan2(diry, dirx)
-    local projectile = {
-        x = x + bodyradius*dirx,
-        y = y + bodyradius*diry,
-        z = z + projectileheight,
-        velx = speed*dirx,
-        vely = speed*diry,
-        velz = speed*dirz,
-        type = type,
-        faceangle = angle,
-        attackangle = angle,
-        thrower = self,
-        opponents = self.opponents,
-        initialai = attackid
-    }
+    local projectile = Character()
+    projectile.x = x + bodyradius*dirx
+    projectile.y = y + bodyradius*diry
+    projectile.z = z + projectileheight
+    projectile.velx = speed*dirx
+    projectile.vely = speed*diry
+    projectile.velz = speed*dirz
+    projectile.type = type
+    projectile.faceangle = angle
+    projectile.attackangle = angle
+    projectile.thrower = self
+    projectile.opponents = self.opponents
+    projectile.initialai = attackid
     return Characters.spawn(projectile)
 end
 

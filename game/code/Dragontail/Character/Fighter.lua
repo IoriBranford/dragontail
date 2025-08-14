@@ -12,6 +12,7 @@ local Mana                 = require "Dragontail.Character.Component.Mana"
 local Body                 = require "Dragontail.Character.Component.Body"
 local Color                = require "Tiled.Color"
 local Guard                = require "Dragontail.Character.Action.Guard"
+local Character            = require "Dragontail.Character"
 
 ---@class Dash
 ---@field dashsound string?
@@ -286,14 +287,12 @@ function Fighter:wallBump(thrower, oobx, ooby)
     oobx, ooby = norm(oobx or 0, ooby or 0)
     self:stopAttack()
     local bodyradius = self.bodyradius or 1
-    Characters.spawn(
-        {
-            type = "spark-hit",
-            x = self.x + oobx*bodyradius,
-            y = self.y + ooby*bodyradius,
-            z = self.z + self.bodyheight/2
-        }
-    )
+    local spark = Character()
+    spark.type = "spark-hit"
+    spark.x = self.x + oobx*bodyradius
+    spark.y = self.y + ooby*bodyradius
+    spark.z = self.z + self.bodyheight/2
+    Characters.spawn(spark)
     self.health = self.health - (self.wallbumpdamage or 10)
     self.hurtstun = self.wallbumpstun or 3
     self.velx, self.vely, self.velz = 0, 0, 0
@@ -357,14 +356,12 @@ end
 function Fighter:wallSlammed(thrower, oobx, ooby)
     oobx, ooby = norm(oobx or 0, ooby or 0)
     local bodyradius = self.bodyradius or 1
-    Characters.spawn(
-        {
-            type = "spark-bighit",
-            x = self.x + oobx*bodyradius,
-            y = self.y + ooby*bodyradius,
-            z = self.z + self.bodyheight/2
-        }
-    )
+    local spark = Character()
+    spark.type = "spark-bighit"
+    spark.x = self.x + oobx*bodyradius
+    spark.y = self.y + ooby*bodyradius
+    spark.z = self.z + self.bodyheight/2
+    Characters.spawn(spark)
     self.health = self.health - (self.wallslamdamage or 25)
     self.velx, self.vely, self.velz = 0, 0, 0
     self:stopAttack()
@@ -443,12 +440,12 @@ function Fighter:fall(attacker)
 end
 
 function Fighter:down(attacker)
-    Characters.spawn({
-        type = "spark-fall-down-dust",
-        x = self.x,
-        y = self.y + 1,
-        z = self.z,
-    })
+    local spark = Character()
+    spark.type = "spark-fall-down-dust"
+    spark.x = self.x
+    spark.y = self.y + 1
+    spark.z = self.z
+    Characters.spawn(spark)
 
     local color = self.color
     if color ~= Color.White then
@@ -460,19 +457,18 @@ function Fighter:down(attacker)
             local offsety = offsetdist*sin(offsetangle)
             local velx = offsetx/8
             local vely = offsety/8
-
-            Characters.spawn({
-                type = "particle",
-                x = self.x + offsetx,
-                y = self.y + offsety,
-                z = self.z,
-                velx = velx,
-                vely = vely,
-                velz = 30/16,
-                color = color,
-                gravity = 1/16,
-                lifetime = 30
-            })
+            local particle = Character()
+            particle.type = "particle"
+            particle.x = self.x + offsetx
+            particle.y = self.y + offsety
+            particle.z = self.z
+            particle.velx = velx
+            particle.vely = vely
+            particle.velz = 30/16
+            particle.color = color
+            particle.gravity = 1/16
+            particle.lifetime = 30
+            Characters.spawn(particle)
         end
     end
 
