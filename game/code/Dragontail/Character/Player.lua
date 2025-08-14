@@ -46,32 +46,6 @@ local lensq = math.lensq
 local testcircles = math.testcircles
 local yield = coroutine.yield
 
-local function findSomethingToRunningAttack(self, velx, vely)
-    local x, y, opponents, solids = self.x, self.y, self.opponents, self.solids
-    for i, opponent in ipairs(opponents) do
-        if dot(opponent.x - x, opponent.y - y, velx, vely) > 0 then
-            if opponent.canbeattacked and Body.predictBodyCollision(self, opponent) then
-                return opponent
-            end
-        end
-    end
-    for i, solid in ipairs(solids) do
-        if dot(solid.x - x, solid.y - y, velx, vely) > 0 then
-            if solid.canbeattacked and Body.predictBodyCollision(self, solid) then
-                return solid
-            end
-        end
-    end
-end
-
-local function findWallCollision(self)
-    local oobx, ooby = Body.keepInBounds(self)
-    oobx, ooby = oobx or 0, ooby or 0
-    if oobx ~= 0 or ooby ~= 0 then
-        return norm(oobx, ooby)
-    end
-end
-
 local NormalCombo = {"kick", "kick", "tail-swing-cw"}
 local LungingCombo = {"lunging-kick", "lunging-kick", "lunging-tail-swing-cw"}
 local SpecialCombo = {"spit-fireball", "spit-fireball", "fireball-spin-cw"}
@@ -521,93 +495,6 @@ end
 function Player:catchProjectileAtJoystick()
     local parryx, parryy = self:getParryVector()
     return parryx and parryy and self:findProjectileToCatch(parryx, parryy)
-end
-
-function Player:run()
-    self.facedestangle = self.faceangle
-    self.joysticklog:clear()
-    Combo.reset(self)
-    self.velx = self.speed*cos(self.faceangle)
-    self.vely = self.speed*sin(self.faceangle)
-
-    local runningtime = 0
-    while true do
-        local inx, iny = self:getJoystick()
-        self.joysticklog:put(inx, iny)
-
-        self:turnTowardsJoystick("Walk", "Stand")
-        self:accelerateTowardsFace()
-
-        self:makePeriodicAfterImage(runningtime, self.afterimageinterval or 6)
-
-        local caughtprojectile = self:catchProjectileAtJoystick()
-        if caughtprojectile then
-            return "catchProjectile", caughtprojectile
-        end
-
-        if self.flybutton.pressed then
-            return "flyStart"
-        end
-
-        local velx, vely = self.velx, self.vely
-        local velangle = velx == 0 and vely == 0 and self.faceangle or atan2(vely, velx)
-
-        local chargedattack = not self.attackbutton.down and self:getChargedAttack(RunningChargeAttacks)
-        if chargedattack then
-            Mana.releaseCharge(self)
-            return chargedattack, self.facedestangle
-        end
-
-        if self.attackbutton.pressed then
-            if self.weaponinhand then
-                return "throwWeapon", self.facedestangle, 2, #self.inventory
-            end
-
-            -- if fireattackpressed then
-            --     for _, attacktype in ipairs(RunningSpecialAttacks) do
-            --         if Mana.canAffordAttack(self, attacktype) then
-            --             return attacktype, atan2(vely, velx)
-            --         end
-            --     end
-            -- end
-            return "running-kick", velangle
-        end
-
-        local attacktarget = findSomethingToRunningAttack(self, velx, vely)
-        if attacktarget then
-            return "running-elbow", velangle
-        end
-
-        local oobx, ooby = findWallCollision(self)
-        if oobx or ooby then
-            local oobdotvel = dot(oobx, ooby, velx, vely)
-            local speed = math.len(velx, vely)
-            local ooblen = math.len(oobx, ooby)
-            if oobdotvel > speed*ooblen/2 then
-                Characters.spawn(
-                    {
-                        type = "spark-bighit",
-                        x = self.x + oobx*self.bodyradius,
-                        y = self.y + ooby*self.bodyradius,
-                        z = self.z + self.bodyheight/2
-                    }
-                )
-                self.hurtstun = 10
-                return "runIntoWall", velangle
-            end
-        end
-
-        if runningtime < 15 then
-        elseif self.sprintbutton.down then --self.runenergy > 0 and rundown then
-        --     self.runenergy = self.runenergy - 1
-        else
-            Audio.play(self.stopdashsound)
-            return "walk"
-        end
-        runningtime = runningtime + 1
-
-        yield()
-    end
 end
 
 function Player:spinAttack(attackangle)
