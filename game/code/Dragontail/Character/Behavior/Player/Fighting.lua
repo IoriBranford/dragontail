@@ -67,7 +67,4 @@ function PlayerFighting:fixedupdate()
     end
 end
 
-function PlayerFighting:stop()
-end
-
 return PlayerFighting

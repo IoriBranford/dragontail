@@ -14,6 +14,16 @@ function Behavior:start(...) end
 ---@return any ...
 function Behavior:fixedupdate() end
 
-function Behavior:stop() end
+---@return string? nextstate
+---@return any ...
+function Behavior:interrupt(nextstate, ...)
+    return nextstate, ...
+end
+
+---@return string? nextstate
+---@return any ...
+function Behavior:timeout(nextstate, ...)
+    return nextstate, ...
+end
 
 return Behavior

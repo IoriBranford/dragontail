@@ -64,9 +64,9 @@ local StateVarsToCopy = {
     "faceturnspeed"
 }
 
-function StateMachine.start(self, statename, ...)
+function StateMachine.start(self, statename, a,b,c,d,e,f,g)
     if self.statebehavior then
-        self.statebehavior:stop()
+        statename, a,b,c,d,e,f,g = self.statebehavior:interrupt(statename, a,b,c,d,e,f,g)
         self.statebehavior:_release()
     end
     self.statebehavior = nil
@@ -133,7 +133,7 @@ function StateMachine.start(self, statename, ...)
             ok, behavior = pcall(require, behavior)
             if ok then
                 self.statebehavior = behavior(self)
-                self.statebehavior:start(...)
+                self.statebehavior:start(a,b,c,d,e,f,g)
                 behavior = self.statebehavior
             else
                 print(behavior)
@@ -144,7 +144,7 @@ function StateMachine.start(self, statename, ...)
             local statecoroutine = self[state.statecoroutine]
             if type(statecoroutine) == "function" then
                 self.statethread = co_create(statecoroutine)
-                StateMachine.run(self, ...)
+                StateMachine.run(self, a,b,c,d,e,f,g)
             end
         end
     else
@@ -167,12 +167,19 @@ function StateMachine.run(self, ...)
     if not nextstate then
         if self.statethread and co_status(self.statethread) == "dead" then
             nextstate = self.nextstate
+            self.statethread = nil
         else
             local statetime = self.statetime
             if statetime then
                 if statetime <= 0 then
                     nextstate = self.nextstate
                     self.statetime = nil
+                    if self.statebehavior then
+                        nextstate, a,b,c,d,e,f,g =
+                            self.statebehavior:timeout(nextstate, a,b,c,d,e,f,g)
+                        self.statebehavior:_release()
+                        self.statebehavior = nil
+                    end
                 else
                     statetime = statetime - 1
                     self.statetime = statetime
@@ -183,12 +190,6 @@ function StateMachine.run(self, ...)
 
     if nextstate then
         StateMachine.start(self, nextstate, a,b,c,d,e,f,g)
-    elseif self.statebehavior and self.statetime and self.statetime <= 0 then
-        self.statebehavior:stop()
-        self.statebehavior:_release()
-        self.statebehavior = nil
-    elseif self.statethread and co_status(self.statethread) == "dead" then
-        self.statethread = nil
     end
 end
 

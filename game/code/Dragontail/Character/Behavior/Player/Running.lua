@@ -125,7 +125,4 @@ function PlayerRunning:fixedupdate()
     self.runningtime = self.runningtime + 1
 end
 
-function PlayerRunning:stop()
-end
-
 return PlayerRunning
