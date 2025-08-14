@@ -1,5 +1,7 @@
 local Body = require "Dragontail.Character.Component.Body"
 local drawCake = require "drawCake"
+local Guard    = require "Dragontail.Character.Action.Guard"
+local StateMachine = require "Dragontail.Character.Component.StateMachine"
 ---@class Attacker:Body
 ---@field defaultattack string?
 ---@field attacktype string?
@@ -172,8 +174,26 @@ function Attacker:getAttackHit(target)
             attacky = y,
             attackz = z,
             attackr = r,
-            attackh = h
+            attackh = h,
+            guarded = Guard.isAttackInGuardArc(target, self)
         }
+    end
+end
+
+---@param hit Hit
+function Attacker:onAttackHit(hit)
+    self.numopponentshit = (self.numopponentshit or 0) + 1
+    if self.hitstun <= 0 and self.numopponentshit <= 1 then
+        self.hitstun = hit.attack.selfstun or 3
+    end
+
+    local nextstate =
+        hit.guarded and hit.attack.selfstateonguard
+        or hit.attack.selfstateonhitopponent
+        or hit.attack.selfstateonhit
+
+    if nextstate then
+        StateMachine.start(self, nextstate, hit.target)
     end
 end
 

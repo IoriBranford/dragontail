@@ -197,27 +197,16 @@ Character.startAttack = Attacker.startAttack
 Character.stopAttack = Attacker.stopAttack
 
 function Character:onHitByAttack(hit)
-    local attacker, attack = hit.attacker, hit.attack
+    local attacker = hit.attacker
     local guardhitstate = self.guardai or "guardHit"
     local hurtstate = self.hurtai or "hurt"
-    local attackernewstate = attack.selfstateonhit
 
-    attacker.numopponentshit = (attacker.numopponentshit or 0) + 1
-    if Guard.isAttackInGuardArc(self, attacker) then
+    if hit.guarded then
         StateMachine.start(self, guardhitstate, hit)
-        attackernewstate = attack.selfstateonguarded
-            or attackernewstate
     else
         StateMachine.start(self, hurtstate, hit)
-        if attacker.hitstun <= 0 and attacker.numopponentshit <= 1 then
-            attacker.hitstun = attack.selfstun or 3
-        end
-        attackernewstate = attack.selfstateonhitopponent
-            or attackernewstate
     end
-    if attackernewstate then
-        StateMachine.start(attacker, attackernewstate, self)
-    end
+    Attacker.onAttackHit(attacker, hit)
 end
 
 function Character:heal(amount)
