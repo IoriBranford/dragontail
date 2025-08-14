@@ -185,7 +185,7 @@ function StateMachine.run(self, ...)
     elseif self.statebehavior and self.statetime and self.statetime <= 0 then
         self.statebehavior:stop()
         self.statebehavior = nil
-    elseif self.thread and co_status(self.thread) == "dead" then
+    elseif self.statethread and co_status(self.statethread) == "dead" then
         self.statethread = nil
     end
 end
