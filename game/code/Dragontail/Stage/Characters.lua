@@ -6,6 +6,7 @@ local TiledObject  = require "Tiled.Object"
 local Body         = require "Dragontail.Character.Component.Body"
 local CollisionMask= require "Dragontail.Character.Component.Body.CollisionMask"
 local Attacker     = require "Dragontail.Character.Component.Attacker"
+local tablepool    = require "tablepool"
 
 ---@module 'Dragontail.Stage.Characters'
 local Characters = {}
@@ -132,26 +133,27 @@ function Characters.spawnArray(characters)
     end
 end
 
-local Hits = {}
+local AttackHits = {}
 
 function Characters.fixedupdate()
     for i = 1, #allcharacters do local character = allcharacters[i]
         character:fixedupdate()
     end
 
-    for i = #Hits, 1, -1 do
-        Hits[i] = nil
+    for i = #AttackHits, 1, -1 do
+        tablepool.release("AttackHit", AttackHits[i])
+        AttackHits[i] = nil
     end
 
     for i = 1, #solids do local character = solids[i]
         if character:isAttacking() then
             for j = 1, #solids do local opponent = solids[j]
-                Hits[#Hits+1] = Attacker.getAttackHit(character, opponent)
+                AttackHits[#AttackHits+1] = Attacker.getAttackHit(character, opponent)
             end
         end
     end
 
-    for _, hit in ipairs(Hits) do
+    for _, hit in ipairs(AttackHits) do
         hit.target:onHitByAttack(hit)
     end
 

@@ -2,6 +2,7 @@ local Body = require "Dragontail.Character.Component.Body"
 local drawCake = require "drawCake"
 local Guard    = require "Dragontail.Character.Action.Guard"
 local StateMachine = require "Dragontail.Character.Component.StateMachine"
+local tablepool    = require "tablepool"
 ---@class Attacker:Body
 ---@field defaultattack string?
 ---@field attacktype string?
@@ -162,21 +163,21 @@ function Attacker:getAttackHit(target)
     if penex or peney or penez then
         -- print(self.type..self.id, self.attacktype, target.type..target.id)
         local x, y, z, r, h = Attacker.getAttackCylinder(self)
-        return {
-            angle = self.attackangle,
-            attack = self.attack,
-            target = target,
-            attacker = self,
-            penex = penex,
-            peney = peney,
-            penez = penez,
-            attackx = x,
-            attacky = y,
-            attackz = z,
-            attackr = r,
-            attackh = h,
-            guarded = Guard.isAttackInGuardArc(target, self)
-        }
+        local hit = tablepool.fetch("AttackHit", 0, 16)
+        hit.angle = self.attackangle
+        hit.attack = self.attack
+        hit.target = target
+        hit.attacker = self
+        hit.penex = penex
+        hit.peney = peney
+        hit.penez = penez
+        hit.attackx = x
+        hit.attacky = y
+        hit.attackz = z
+        hit.attackr = r
+        hit.attackh = h
+        hit.guarded = Guard.isAttackInGuardArc(target, self)
+        return hit
     end
 end
 
