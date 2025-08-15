@@ -319,10 +319,10 @@ function Player:findRandomAttackerSlot(attackrange, slottype, fromx, fromy)
     end
 end
 
-function Player:findClosestAttackerSlot(attackerx, attackery, attackrange, slottype)
+function Player:findClosestAttackerSlot(attackrange, slottype, attackerx, attackery)
     local attackerslots = self.attackerslots
     attackerslots = slottype and attackerslots[slottype] or attackerslots
-    local bestslot, bestslotdsq
+    local bestslot, bestslotdsq = nil, math.huge
     for _, slot in ipairs(attackerslots) do
         if slot:hasSpace(attackrange) then
             local slotx, sloty = slot:getPosition(attackrange)
