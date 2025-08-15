@@ -9,8 +9,8 @@ return {
   height = 20,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 4,
-  nextobjectid = 13,
+  nextlayerid = 7,
+  nextobjectid = 15,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -5771,9 +5771,250 @@ return {
           }
         }
       }
+    },
+    {
+      name = "shield",
+      firstgid = 2826,
+      class = "",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/bandit/shield.ase",
+      imagewidth = 64,
+      imageheight = 64,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 64,
+        height = 64
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "sling",
+      firstgid = 2827,
+      class = "",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/bandit/sling.ase",
+      imagewidth = 64,
+      imageheight = 64,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 64,
+        height = 64
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {
+        {
+          id = 0,
+          type = "bandit-sling"
+        }
+      }
     }
   },
   layers = {
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 3,
+      name = "containers",
+      class = "Room",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {
+        ["donewhenenemiesleft"] = -1
+      },
+      objects = {
+        {
+          id = 1,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 40,
+          y = 176,
+          width = 32,
+          height = 32,
+          rotation = 0,
+          gid = 2819,
+          visible = true,
+          properties = {
+            ["health"] = 999999999
+          }
+        },
+        {
+          id = 2,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 256,
+          y = 160,
+          width = 32,
+          height = 48,
+          rotation = 0,
+          gid = 2822,
+          visible = true,
+          properties = {
+            ["health"] = 999999999
+          }
+        },
+        {
+          id = 3,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 256,
+          y = 224,
+          width = 32,
+          height = 48,
+          rotation = 0,
+          gid = 2822,
+          visible = true,
+          properties = {
+            ["health"] = 999999999
+          }
+        },
+        {
+          id = 4,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 40,
+          y = 208,
+          width = 32,
+          height = 32,
+          rotation = 0,
+          gid = 2819,
+          visible = true,
+          properties = {
+            ["health"] = 999999999
+          }
+        },
+        {
+          id = 5,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 256,
+          width = 32,
+          height = 48,
+          rotation = 0,
+          gid = 2822,
+          visible = true,
+          properties = {
+            ["health"] = 999999999
+          }
+        },
+        {
+          id = 6,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 384,
+          y = 224,
+          width = 32,
+          height = 48,
+          rotation = 0,
+          gid = 2822,
+          visible = true,
+          properties = {
+            ["health"] = 999999999
+          }
+        },
+        {
+          id = 7,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 384,
+          y = 160,
+          width = 32,
+          height = 48,
+          rotation = 0,
+          gid = 2822,
+          visible = true,
+          properties = {
+            ["health"] = 999999999
+          }
+        },
+        {
+          id = 8,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 192,
+          width = 32,
+          height = 48,
+          rotation = 0,
+          gid = 2822,
+          visible = true,
+          properties = {
+            ["health"] = 999999999
+          }
+        },
+        {
+          id = 9,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 128,
+          width = 32,
+          height = 48,
+          rotation = 0,
+          gid = 2822,
+          visible = true,
+          properties = {
+            ["health"] = 999999999
+          }
+        },
+        {
+          id = 10,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 32,
+          y = 192,
+          width = 32,
+          height = 32,
+          rotation = 0,
+          gid = 2819,
+          visible = true,
+          properties = {
+            ["health"] = 999999999
+          }
+        }
+      }
+    },
     {
       type = "tilelayer",
       x = 0,
@@ -5815,8 +6056,8 @@ return {
         {
           type = "objectgroup",
           draworder = "topdown",
-          id = 3,
-          name = "Object Layer 1",
+          id = 6,
+          name = "wall",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -5824,170 +6065,8 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {
-            ["donewhenenemiesleft"] = -1
-          },
+          properties = {},
           objects = {
-            {
-              id = 1,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 40,
-              y = 176,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              gid = 2819,
-              visible = true,
-              properties = {
-                ["health"] = 999999999
-              }
-            },
-            {
-              id = 2,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 256,
-              y = 160,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              gid = 2822,
-              visible = true,
-              properties = {
-                ["health"] = 999999999
-              }
-            },
-            {
-              id = 3,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 256,
-              y = 224,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              gid = 2822,
-              visible = true,
-              properties = {
-                ["health"] = 999999999
-              }
-            },
-            {
-              id = 4,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 40,
-              y = 208,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              gid = 2819,
-              visible = true,
-              properties = {
-                ["health"] = 999999999
-              }
-            },
-            {
-              id = 5,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 320,
-              y = 256,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              gid = 2822,
-              visible = true,
-              properties = {
-                ["health"] = 999999999
-              }
-            },
-            {
-              id = 6,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 384,
-              y = 224,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              gid = 2822,
-              visible = true,
-              properties = {
-                ["health"] = 999999999
-              }
-            },
-            {
-              id = 7,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 384,
-              y = 160,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              gid = 2822,
-              visible = true,
-              properties = {
-                ["health"] = 999999999
-              }
-            },
-            {
-              id = 8,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 320,
-              y = 192,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              gid = 2822,
-              visible = true,
-              properties = {
-                ["health"] = 999999999
-              }
-            },
-            {
-              id = 9,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 320,
-              y = 128,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              gid = 2822,
-              visible = true,
-              properties = {
-                ["health"] = 999999999
-              }
-            },
-            {
-              id = 10,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 32,
-              y = 192,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              gid = 2819,
-              visible = true,
-              properties = {
-                ["health"] = 999999999
-              }
-            },
             {
               id = 12,
               name = "",
@@ -6011,6 +6090,57 @@ return {
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 5,
+          name = "shield+sling",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = -1
+          },
+          objects = {
+            {
+              id = 13,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 368,
+              y = 184,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 2826,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 14,
+              name = "",
+              type = "bandit-sling",
+              shape = "rectangle",
+              x = 464,
+              y = 184,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 2827,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["propertiestable"] = "database/bandits-properties.csv"
               }
             }
           }
