@@ -7,6 +7,23 @@ local ShieldBandit = class(Enemy)
 
 local GuardHitsUntilCounter = 3
 
+function ShieldBandit:findAttackerSlot(opponent, attacktype)
+    local bodyradius = self.bodyradius
+    local attackdata = self.attacktable[attacktype]
+    local attackrange = (attackdata and attackdata.bestdist or 1) + opponent.bodyradius
+    return opponent:findClosestAttackerSlot(attackrange + bodyradius, "melee", self.x, self.y)
+        or opponent:findClosestAttackerSlot(attackrange + bodyradius, "missile", self.x, self.y)
+end
+
+function ShieldBandit:duringApproach(opponent)
+    local fromoppox, fromoppoy = self.x - opponent.x, self.y - opponent.y
+    local oppovelx, oppovely = opponent.velx, opponent.vely
+    local dot = math.dot(fromoppox, fromoppoy, oppovelx, oppovely)
+    if 0 < dot and dot <= 60*60 then
+        return "raiseGuard"
+    end
+end
+
 function ShieldBandit:duringHurt()
     self.numguardedhits = nil
 end
