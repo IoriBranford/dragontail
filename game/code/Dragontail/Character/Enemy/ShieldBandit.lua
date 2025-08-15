@@ -15,6 +15,16 @@ function ShieldBandit:findAttackerSlot(opponent, attacktype)
         or opponent:findClosestAttackerSlot(attackrange + bodyradius, "missile", self.x, self.y)
 end
 
+function ShieldBandit:duringStand()
+    local opponent = self.opponents[1]
+    local fromoppox, fromoppoy = self.x - opponent.x, self.y - opponent.y
+    local oppovelx, oppovely = opponent.velx, opponent.vely
+    local dot = math.dot(fromoppox, fromoppoy, oppovelx, oppovely)
+    if 0 < dot and dot <= 60*60 then
+        return "raiseGuard"
+    end
+end
+
 function ShieldBandit:duringApproach(opponent)
     local fromoppox, fromoppoy = self.x - opponent.x, self.y - opponent.y
     local oppovelx, oppovely = opponent.velx, opponent.vely
