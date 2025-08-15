@@ -14,9 +14,10 @@ local GamePhase = {}
 
 local paused
 local stagecanvas
+local stagepath = "data/stage_banditcave.lua"
 
-function GamePhase.loadphase(stagepath)
-    stagepath = stagepath or "data/stage_banditcave.lua"
+function GamePhase.loadphase(stagepath_)
+    stagepath = stagepath_ or stagepath
     paused = false
     local unifont = Assets.getFont("Unifont", 16)
     love.graphics.setFont(unifont)
