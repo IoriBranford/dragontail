@@ -155,6 +155,7 @@ function Characters.fixedupdate()
 
     for _, hit in ipairs(AttackHits) do
         hit.target:onHitByAttack(hit)
+        Attacker.onAttackHit(hit.attacker, hit)
     end
 
     for i = 1, #players do local player = players[i]

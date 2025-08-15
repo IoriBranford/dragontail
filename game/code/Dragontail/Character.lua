@@ -197,7 +197,6 @@ Character.startAttack = Attacker.startAttack
 Character.stopAttack = Attacker.stopAttack
 
 function Character:onHitByAttack(hit)
-    local attacker = hit.attacker
     local guardhitstate = self.guardai or "guardHit"
     local hurtstate = self.hurtai or "hurt"
 
@@ -206,7 +205,6 @@ function Character:onHitByAttack(hit)
     else
         StateMachine.start(self, hurtstate, hit)
     end
-    Attacker.onAttackHit(attacker, hit)
 end
 
 function Character:heal(amount)
