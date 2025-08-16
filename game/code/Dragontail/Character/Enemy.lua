@@ -508,7 +508,8 @@ end
 function Enemy:guardHit(hit)
     local attacker, attack = hit.attacker, hit.attack
     self:makeImpactSpark(attacker, attack.guardhitspark)
-    self.hurtstun = attacker.attackguardstun or 6
+    self.hurtstun = attack.opponentguardstun
+        or attack.opponentstun or 6
 
     local nextstate, a, b, c, d, e, f
     nextstate, a, b, c, d, e, f = self:beforeGuardHit(attacker)
