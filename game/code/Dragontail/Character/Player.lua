@@ -568,23 +568,6 @@ function Player:duringGetUp()
     end
 end
 
-function Player:hurt(hit)
-    if self.crosshair then
-        self.crosshair.visible = false
-    end
-    local nextstate, a, b, c, d, e = Fighter.hurt(self, hit)
-    if nextstate == "walk" then
-        if self.sprintbutton.down then
-            local inx, iny = self:getJoystick()
-            if inx ~= 0 or iny ~= 0 then
-                Face.faceAngle(self, atan2(iny, inx))
-            end
-            nextstate = "run"
-        end
-    end
-    return nextstate, a, b, c, d, e
-end
-
 function Player:down(attacker)
     local nextstate, a, b, c, d, e = Fighter.down(self, attacker)
     if self.health <= 0 then

@@ -29,7 +29,7 @@ aimThrow,,,aimThrow,walk,FALSE,data/sprites/player/rose/main.jase,Stand,0,TRUE,T
 throwWeapon,,,throwWeapon,walk,FALSE,data/sprites/player/rose/attack.jase,throw,0,FALSE,FALSE,FALSE,,data/sounds/player/attack2.mp3,0,0,0,0.5,4,4,3.14159265358979
 spitWeapon,,,throwWeapon,walk,FALSE,data/sprites/player/rose/attack.jase,spit,0,FALSE,FALSE,FALSE,,data/sounds/player/attack2.mp3,0,0,0,0.5,4,4,3.14159265358979
 victory,,,victory,win,FALSE,data/sprites/player/rose/main.jase,win,1,FALSE,FALSE,FALSE,,data/sounds/player/victory.mp3,0,0,0,0.5,4,4,3.14159265358979
-hurt,,,hurt,walk,FALSE,data/sprites/player/rose/main.jase,Hurt,0,FALSE,FALSE,FALSE,,data/sounds/player/damage2.mp3,0,4,1,0.5,1,4,3.14159265358979
+hurt,,Dragontail.Character.Behavior.Player.TakingHit,,walk,FALSE,data/sprites/player/rose/main.jase,Hurt,0,FALSE,FALSE,FALSE,,data/sounds/player/damage2.mp3,0,4,1,0.5,1,4,3.14159265358979
 held,,,held,breakaway,FALSE,data/sprites/player/rose/main.jase,Hurt,1,TRUE,FALSE,FALSE,,,0,4,1,0.5,1,4,3.14159265358979
 knockedBack,,,knockedBack,fall,FALSE,data/sprites/player/rose/main.jase,Hurt,1,FALSE,FALSE,TRUE,,data/sounds/player/damage3.mp3,0,4,1,0.5,1,4,3.14159265358979
 knockedBackBurnt,,,knockedBack,fall,FALSE,data/sprites/player/rose/main.jase,Hurt,1,FALSE,FALSE,TRUE,4280295456,data/sounds/player/damage3.mp3,0,4,1,0.5,1,4,3.14159265358979
