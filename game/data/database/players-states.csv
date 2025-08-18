@@ -12,7 +12,7 @@ holding-kick,holding-kick,Dragontail.Character.Behavior.Player.AttackingStraight
 running-kick,running-kick,Dragontail.Character.Behavior.Player.AttackingStraight,,walk,20,data/sprites/player/rose/attack.jase,hardkick,1,TRUE,TRUE,FALSE,,data/sounds/player/attack2.mp3,3,0,0,0.5,64,4,3.14159265358979
 running-elbow,running-elbow,Dragontail.Character.Behavior.Player.AttackingStraight,,walk,10,data/sprites/player/rose/main.jase,elbow,0,TRUE,TRUE,FALSE,,,0,2,2,0.5,2,4,3.14159265358979
 runIntoWall,running-elbow,Dragontail.Character.Behavior.Player.AttackingStraight,,walk,10,data/sprites/player/rose/main.jase,elbow,0,TRUE,TRUE,FALSE,,data/sounds/combat/bodyslam.mp3,0,2,2,0.5,2,4,3.14159265358979
-running-with-enemy,running-with-enemy,,runWithEnemy,walk,FALSE,data/sprites/player/rose/hold.jase,holdwalk,1,FALSE,FALSE,FALSE,,data/sounds/combat/dash.mp3,3,2,2,0.5,1,8,3.14159265358979
+running-with-enemy,running-with-enemy,Dragontail.Character.Behavior.Player.Running,,walk,FALSE,data/sprites/player/rose/hold.jase,holdwalk,1,FALSE,FALSE,FALSE,,data/sounds/combat/dash.mp3,3,2,2,0.5,1,8,0.0523598775598299
 spit-fireball,spit-fireball,Dragontail.Character.Behavior.Player.AttackingStraight,,walk,20,data/sprites/player/rose/attack.jase,spit,0,FALSE,FALSE,FALSE,,,0,0,0,0.5,4,4,3.14159265358979
 spit-fat-fireball,spit-fat-fireball,Dragontail.Character.Behavior.Player.AttackingStraight,,walk,9,data/sprites/player/rose/attack.jase,spit,0,FALSE,FALSE,FALSE,,,0,0,0,0.5,4,4,3.14159265358979
 running-spit-fireball,running-spit-fireball,Dragontail.Character.Behavior.Player.AttackingStraight,,walk,20,data/sprites/player/rose/attack.jase,spit,0,FALSE,FALSE,FALSE,,,0,0,0,0.5,8,4,3.14159265358979

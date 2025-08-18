@@ -3,19 +3,27 @@ local Mana          = require "Dragontail.Character.Component.Mana"
 local Body          = require "Dragontail.Character.Component.Body"
 local Characters   = require "Dragontail.Stage.Characters"
 local Audio    = require "System.Audio"
+local StateMachine = require "Dragontail.Character.Component.StateMachine"
+local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
 
 ---@class PlayerRunning:Behavior
 ---@field character Player
 local PlayerRunning = pooledclass(Behavior)
-PlayerRunning._nrec = Behavior._nrec + 1
+PlayerRunning._nrec = Behavior._nrec + 2
 
-function PlayerRunning:start()
+---@param heldenemy Enemy?
+function PlayerRunning:start(heldenemy)
     local player = self.character
     player.facedestangle = player.faceangle
     player.joysticklog:clear()
     player.velx = player.speed*math.cos(player.faceangle)
     player.vely = player.speed*math.sin(player.faceangle)
     self.runningtime = 0
+    if heldenemy then
+        self.heldenemy = heldenemy
+        StateMachine.start(heldenemy, player.attack.heldopponentstate or "human-in-spinning-throw", player)
+        heldenemy:startAttack(player.faceangle)
+    end
 end
 
 local function findSomethingToRunningAttack(self, velx, vely)
@@ -50,17 +58,23 @@ local RunningChargeAttacks = {
 
 function PlayerRunning:fixedupdate()
     local player = self.character
+    local heldenemy = self.heldenemy
     local inx, iny = player:getJoystick()
     player.joysticklog:put(inx, iny)
 
-    player:turnTowardsJoystick("Walk", "Stand")
+    player:turnTowardsJoystick(heldenemy and "holdwalk" or "Walk", "Stand")
     player:accelerateTowardsFace()
 
     player:makePeriodicAfterImage(self.runningtime, player.afterimageinterval or 6)
 
-    local caughtprojectile = player:catchProjectileAtJoystick()
-    if caughtprojectile then
-        return "catchProjectile", caughtprojectile
+    if heldenemy then
+        player.holdangle = player.faceangle
+        HoldOpponent.updateOpponentPosition(player)
+    else
+        local caughtprojectile = player:catchProjectileAtJoystick()
+        if caughtprojectile then
+            return "catchProjectile", caughtprojectile
+        end
     end
 
     -- if player.flybutton.pressed then
@@ -77,6 +91,21 @@ function PlayerRunning:fixedupdate()
     end
 
     if player.attackbutton.pressed then
+        if heldenemy then
+            heldenemy:stopAttack()
+            HoldOpponent.stopHolding(player, heldenemy)
+            heldenemy.canbeattacked = true
+
+            -- if fireattackpressed then
+            --     for _, attacktype in ipairs(RunningSpecialAttacks) do
+            --         if Mana.canAffordAttack(self, attacktype) then
+            --             return attacktype, self.faceangle
+            --         end
+            --     end
+            -- end
+
+            return "running-kick", player.faceangle
+        end
         if player.weaponinhand then
             return "throwWeapon", player.facedestangle, 2, #player.inventory
         end
@@ -91,27 +120,36 @@ function PlayerRunning:fixedupdate()
         return "running-kick", velangle
     end
 
-    local attacktarget = findSomethingToRunningAttack(player, velx, vely)
-    if attacktarget then
-        return "running-elbow", velangle
-    end
+    if heldenemy then
+        local oobx, ooby = HoldOpponent.handleOpponentCollision(player)
+        if oobx or ooby then
+            HoldOpponent.stopHolding(player, heldenemy)
+            StateMachine.start(heldenemy, "wallSlammed", player, oobx, ooby)
+            return "running-elbow", player.faceangle
+        end
+    else
+        local attacktarget = findSomethingToRunningAttack(player, velx, vely)
+        if attacktarget then
+            return "running-elbow", velangle
+        end
 
-    local oobx, ooby = findWallCollision(player)
-    if oobx or ooby then
-        local oobdotvel = math.dot(oobx, ooby, velx, vely)
-        local speed = math.len(velx, vely)
-        local ooblen = math.len(oobx, ooby)
-        if oobdotvel > speed*ooblen/2 then
-            Characters.spawn(
-                {
-                    type = "spark-bighit",
-                    x = player.x + oobx*player.bodyradius,
-                    y = player.y + ooby*player.bodyradius,
-                    z = player.z + player.bodyheight/2
-                }
-            )
-            player.hurtstun = 10
-            return "runIntoWall", velangle
+        local oobx, ooby = findWallCollision(player)
+        if oobx or ooby then
+            local oobdotvel = math.dot(oobx, ooby, velx, vely)
+            local speed = math.len(velx, vely)
+            local ooblen = math.len(oobx, ooby)
+            if oobdotvel > speed*ooblen/2 then
+                Characters.spawn(
+                    {
+                        type = "spark-bighit",
+                        x = player.x + oobx*player.bodyradius,
+                        y = player.y + ooby*player.bodyradius,
+                        z = player.z + player.bodyheight/2
+                    }
+                )
+                player.hurtstun = 10
+                return "runIntoWall", velangle
+            end
         end
     end
 
@@ -120,6 +158,12 @@ function PlayerRunning:fixedupdate()
     --     player.runenergy = player.runenergy - 1
     else
         Audio.play(player.stopdashsound)
+        if heldenemy then
+            Audio.play(player.throwsound)
+            heldenemy:stopAttack()
+            HoldOpponent.stopHolding(player, heldenemy)
+            StateMachine.start(heldenemy, "knockedBack", player, player.faceangle)
+        end
         return "walk"
     end
     self.runningtime = self.runningtime + 1
