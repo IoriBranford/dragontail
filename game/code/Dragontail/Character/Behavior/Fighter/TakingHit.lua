@@ -29,7 +29,12 @@ function TakingHit:start(hit)
     fighter:stopAttack()
     Guard.stopGuarding(fighter)
     HoldOpponent.stopHolding(fighter, fighter.heldopponent)
-    fighter.hurtstun = attack.opponentstun or 3
+
+    local pushbackspeed = attack.pushbackspeed or 0
+    if pushbackspeed == "attackerspeed" then
+        pushbackspeed = math.floor(math.len(attacker.velx, attacker.vely))
+    end
+    fighter.hurtstun = (attack.opponentstun or 3) - math.abs(pushbackspeed)
 
     if attacker.storeMana then
         local mana = attack.gainmanaonhit
@@ -46,10 +51,6 @@ function TakingHit:start(hit)
     self.attacker = attacker
     self.attack = attack
     self.attackangle = attackangle
-    local pushbackspeed = attack.pushbackspeed or 0
-    if pushbackspeed == "attackerspeed" then
-        pushbackspeed = math.floor(math.len(attacker.velx, attacker.vely))
-    end
     self.pushbackspeed = pushbackspeed
 end
 
