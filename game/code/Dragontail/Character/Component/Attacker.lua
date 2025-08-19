@@ -171,7 +171,8 @@ end
 ---@param hit AttackHit
 function Attacker:onAttackHit(hit)
     self.numopponentshit = (self.numopponentshit or 0) + 1
-    if self.hitstun <= 0 and self.numopponentshit <= 1 then
+    local maxselfstuns = hit.attack.maxselfstuns or math.huge
+    if self.hitstun <= 0 and self.numopponentshit <= maxselfstuns then
         self.hitstun = hit.attack.selfstun or 3
     end
 
