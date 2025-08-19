@@ -43,6 +43,9 @@ function Characters.init(scene_, nextid_, camera_)
 end
 
 function Characters.quit()
+    for _, character in ipairs(allcharacters) do
+        Character.release(character)
+    end
     allcharacters = nil
     players = nil
     enemies = nil
@@ -192,10 +195,14 @@ function Characters.fixedupdateLostEnemies()
     end
 end
 
-local function pruneCharacters(characters)
+local function nop() end
+
+local function pruneCharacters(characters, f)
     local n = #characters
+    f = f or nop
     for i = n, 1, -1 do
         if characters[i].disappeared then
+            f(characters[i])
             characters[i] = characters[n]
             characters[n] = nil
             n = n - 1
@@ -207,7 +214,7 @@ function Characters.pruneDisappeared()
     for _, characters in pairs(groups) do
         pruneCharacters(characters)
     end
-    pruneCharacters(allcharacters)
+    pruneCharacters(allcharacters, Character.release)
     scene:prune(Character.hasDisappeared)
 end
 
