@@ -193,4 +193,11 @@ function StateMachine.run(self, ...)
     end
 end
 
+function StateMachine:release()
+    if self.statebehavior then
+        self.statebehavior:_release()
+        self.statebehavior = nil
+    end
+end
+
 return StateMachine
