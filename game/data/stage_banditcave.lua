@@ -16468,7 +16468,8 @@ return {
               gid = 7260,
               visible = true,
               properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
+                ["propertiestable"] = "database/bandits-properties.csv",
+                ["z"] = 64
               }
             },
             {
@@ -16484,7 +16485,8 @@ return {
               gid = 7260,
               visible = true,
               properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
+                ["propertiestable"] = "database/bandits-properties.csv",
+                ["z"] = 64
               }
             },
             {
@@ -17760,7 +17762,8 @@ return {
               gid = 7258,
               visible = true,
               properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
+                ["propertiestable"] = "database/bandits-properties.csv",
+                ["z"] = 64
               }
             },
             {
@@ -17776,7 +17779,8 @@ return {
               gid = 7258,
               visible = true,
               properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
+                ["propertiestable"] = "database/bandits-properties.csv",
+                ["z"] = 64
               }
             },
             {
@@ -17989,8 +17993,8 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = -1,
-            ["sequence"] = "unlockDoorToNextArea",
-            ["exitdoor"] = { id = 235 }
+            ["exitdoor"] = { id = 235 },
+            ["sequence"] = "unlockDoorToNextArea"
           },
           objects = {
             {
@@ -18027,10 +18031,10 @@ return {
                 ["action"] = "startSequence",
                 ["color"] = "#80008000",
                 ["drawz"] = -0.125,
-                ["sequence"] = "playerExitToNextArea",
                 ["extrudeY"] = -64,
                 ["initialai"] = "triggerToUse",
                 ["script"] = "Dragontail.Character.Trigger",
+                ["sequence"] = "playerExitToNextArea",
                 ["usesleft"] = 1
               }
             }
