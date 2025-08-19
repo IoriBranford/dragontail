@@ -269,4 +269,8 @@ function Character:hasDisappeared()
     return self.disappeared
 end
 
+function Character:release()
+    StateMachine.release(self)
+end
+
 return Character
