@@ -53,6 +53,42 @@ function Shoot:getProjectileLaunchVelocityTowardsTarget(projectiletype, targetx,
     return velx, vely, velz
 end
 
+function Shoot:calculateTrajectoryTowardsTarget(projectile, targetx, targety, targetz, trajectory)
+    if type(projectile) == "string" then
+        projectile = Database.get(projectile)
+    end
+    if not projectile then return end
+
+    local distx, disty, distz = targetx - self.x, targety - self.y, targetz - self.z
+    if distx == 0 and disty == 0 and distz == 0 then
+        distz = 1
+    end
+
+    local dst = math.len(distx, disty, distz)
+    local dirx, diry = distx/dst, disty/dst
+    local x, y, z = Shoot.getProjectileLaunchPosition(self, projectile, dirx, diry)
+    local velx, vely, velz = Shoot.getProjectileLaunchVelocityTowardsTarget(self, projectile, targetx, targety, targetz)
+    local gravity = projectile.gravity or 0
+    trajectory = trajectory or {}
+    trajectory[#trajectory+1] = x
+    trajectory[#trajectory+1] = y
+    trajectory[#trajectory+1] = z
+    local radius = projectile.bodyradius
+    local height = projectile.bodyheight
+    local boundspenex, boundspeney, boundspenez
+    repeat
+        velz = velz - gravity
+        x = x + velx
+        y = y + vely
+        z = z + velz
+        x, y, z, boundspenex, boundspeney, boundspenez = Characters.keepCylinderIn(x, y, z, radius, height, projectile)
+        trajectory[#trajectory+1] = x
+        trajectory[#trajectory+1] = y
+        trajectory[#trajectory+1] = z
+    until boundspenex or boundspeney or boundspenez
+    return trajectory
+end
+
 function Shoot:launchProjectileAtObject(type, object, attackid)
     return Shoot.launchProjectileAtPosition(self, type, object.x, object.y, object.z, attackid)
 end
