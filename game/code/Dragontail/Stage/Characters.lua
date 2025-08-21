@@ -294,6 +294,9 @@ end
 function Characters.keepCylinderIn(x, y, z, r, h, self, iterations)
     iterations = iterations or 3
     local solidlayersmask = self.bodyhitslayers
+    if type(solidlayersmask) == "string" then
+        solidlayersmask = CollisionMask.parse(self.bodyhitslayers)
+    end
     local totalpenex, totalpeney, totalpenez, penex, peney, penez
     for i = 1, iterations do
         local anycollision = false
