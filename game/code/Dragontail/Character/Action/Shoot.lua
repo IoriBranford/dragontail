@@ -76,16 +76,18 @@ function Shoot:calculateTrajectoryTowardsTarget(projectile, targetx, targety, ta
     local radius = projectile.bodyradius
     local height = projectile.bodyheight
     local boundspenex, boundspeney, boundspenez
+    local lifetime = projectile.lifetime or 300
     repeat
+        trajectory[#trajectory+1] = x
+        trajectory[#trajectory+1] = y
+        trajectory[#trajectory+1] = z
         velz = velz - gravity
         x = x + velx
         y = y + vely
         z = z + velz
         x, y, z, boundspenex, boundspeney, boundspenez = Characters.keepCylinderIn(x, y, z, radius, height, projectile)
-        trajectory[#trajectory+1] = x
-        trajectory[#trajectory+1] = y
-        trajectory[#trajectory+1] = z
-    until boundspenex or boundspeney or boundspenez
+        lifetime = lifetime - 1
+    until lifetime <= 0 or boundspenex or boundspeney or boundspenez
     return trajectory
 end
 
