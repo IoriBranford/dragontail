@@ -349,67 +349,7 @@ function Enemy:interruptWithDodge(target)
     end
 end
 
-function Enemy:prepareAttack()
-    self.numopponentshit = 0
-    Guard.stopGuarding(self)
-
-    local target = self.opponents[1]
-
-    for t = 1, 300 do
-        self.color = self:getAttackFlashColor(t, self.canbeattacked)
-
-        local state, a, b, c, d, e, f = self:duringPrepareAttack(target)
-        if state then
-            return state, a, b, c, d, e, f
-        end
-
-        yield()
-    end
-end
-
 function Enemy:duringAttackSwing(target)
-end
-
-function Enemy:executeAttack()
-    self.numopponentshit = 0
-    Guard.stopGuarding(self)
-
-    local target = self.opponents[1]
-
-    local projectiletype = self.attack.projectiletype
-    if projectiletype then
-        -- TODO if target in view then
-        Shoot.launchProjectileAtObject(self, projectiletype, target)
-        -- TODO else shoot at current faceangle
-    else
-        local attackangle = floor((self.faceangle + (pi/4)) / (pi/2)) * pi/2
-        self:startAttack(attackangle)
-    end
-
-    local lungespeed = self.attack.lungespeed or 0
-    local hittime = self.attack.hittingduration or 10
-    hittime = math.min(hittime, self.state.statetime)
-    local slideangle = self.faceangle
-    for t = 1, math.min(300, self.state.statetime) do
-        lungespeed = Slide.updateSlideSpeed(self, slideangle, lungespeed, self.attack.lungedecel or 1)
-        local state, a, b, c, d, e, f = self:duringAttackSwing(target)
-        if state then
-            return state, a, b, c, d, e, f
-        end
-        if t >= hittime then
-        else
-            self.color = self:getAttackFlashColor(t, self.canbeattacked)
-            self:makePeriodicAfterImage(t, self.afterimageinterval)
-        end
-        yield()
-        if self.enteredcamera and (self.velx ~= 0 or self.vely ~= 0) then
-            Body.keepInBounds(self)
-        end
-        if t >= hittime then
-            self.color = Color.White
-            self:stopAttack()
-        end
-    end
 end
 
 function Enemy:enterAndDropDown()
