@@ -11,3 +11,4 @@ particle,data/sprites/vfx/vfx.jase,Dragontail.Character.Common,shrinkOut,data/da
 spark-land-on-feet-dust,data/sprites/vfx/dust-land-on-feet.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,*,0,21,,,,,,,,
 spark-fireball-shatter,data/sprites/player/rose/fireball.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,Shatter,0,15,,,,,,,,
 spark-spit-fireball,data/sprites/player/rose/firespit.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,Spit,0,18,,1,,,,,,12
+projectile-path-point,data/sprites/vfx/vfx.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,liquid,,1,,,,,4294934656,,,
