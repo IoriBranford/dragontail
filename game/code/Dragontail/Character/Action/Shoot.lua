@@ -132,9 +132,15 @@ function Shoot:launchProjectile(type, dirx, diry, dirz, attackid)
         return
     end
 
+    local x, y, z = self.x, self.y, self.z
+    local bodyradius, bodyheight = self.bodyradius or 0, self.bodyheight or 0
     local speed = projectiledata.speed or 1
+    local projectileheight = self.projectilelaunchheight or (bodyheight / 2)
     local angle = dirx == 0 and diry == 0 and 0 or math.atan2(diry, dirx)
     local projectile = {
+        x = x + bodyradius*dirx,
+        y = y + bodyradius*diry,
+        z = z + projectileheight,
         velx = speed*dirx,
         vely = speed*diry,
         velz = speed*dirz,
@@ -145,9 +151,6 @@ function Shoot:launchProjectile(type, dirx, diry, dirz, attackid)
         opponents = self.opponents,
         initialai = attackid
     }
-    projectile.x,
-    projectile.y,
-    projectile.z = Shoot.getProjectileLaunchPosition(self, projectile, dirx, diry)
     return Characters.spawn(projectile)
 end
 
