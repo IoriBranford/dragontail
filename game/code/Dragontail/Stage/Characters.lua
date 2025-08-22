@@ -61,12 +61,12 @@ function Characters.getGroup(group)
 end
 
 function Characters.spawn(object)
-    if not getmetatable(object) then
-        TiledObject.from(object)
-    end
     local typ = object.type
     if typ then
         Database.fillBlanks(object, typ)
+    end
+    if not getmetatable(object) then
+        TiledObject.from(object)
     end
     local ok, script = false, object.script
     if script then
