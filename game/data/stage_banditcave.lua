@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 55,
-  nextobjectid = 530,
+  nextobjectid = 536,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -15278,6 +15278,35 @@ return {
       wangsets = {},
       tilecount = 1,
       tiles = {}
+    },
+    {
+      name = "stone",
+      firstgid = 7262,
+      class = "",
+      tilewidth = 16,
+      tileheight = 16,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/weapons/stone.ase",
+      imagewidth = 16,
+      imageheight = 16,
+      objectalignment = "center",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
     }
   },
   layers = {
@@ -16708,6 +16737,90 @@ return {
                 ["linecolor"] = "#80ffffff",
                 ["z"] = 64
               }
+            },
+            {
+              id = 530,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 1504,
+              y = 208,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7262,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 531,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 1552,
+              y = 184,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7262,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 532,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 1648,
+              y = 208,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7262,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 533,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 1704,
+              y = 160,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7262,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 534,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 1480,
+              y = 152,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7262,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 535,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 1768,
+              y = 200,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7262,
+              visible = true,
+              properties = {}
             }
           }
         },
