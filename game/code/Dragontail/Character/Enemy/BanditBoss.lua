@@ -99,7 +99,7 @@ end
 
 function BanditBoss:duringAttackSwing(target)
     local turnspeed = self.attack.spinspeed or 0
-    if turnspeed ~= 0 then
+    if turnspeed ~= 0 and self.attackangle then
         self.attackangle = self.attackangle + turnspeed
         Face.faceAngle(self, self.attackangle, self.state.animation, self.state.frame1, self.state.loopframe)
     end
