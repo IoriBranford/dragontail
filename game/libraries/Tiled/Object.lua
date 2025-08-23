@@ -395,12 +395,14 @@ function TiledObject:setTile(tile, frame1, loopframe)
     end
     if not tile then return end
     self.tile = tile
-    self.animationframe = frame1 or 1
     self.animationtime = 0
     self.animationquad = nil
-    if tile.animation and loopframe and loopframe <= 0 then
-        loopframe = #tile.animation + loopframe
+    local animation = tile.animation
+    if animation then
+        frame1 = frame1 and animation:clampIndex(frame1)
+        loopframe = loopframe and animation:clampIndex(loopframe)
     end
+    self.animationframe = frame1 or 1
     self.loopframe = loopframe
 end
 local setTile = TiledObject.setTile
@@ -431,11 +433,13 @@ function TiledObject:setAseAnimation(animation, frame1, loopframe)
         return
     end
     self.aseanimation = animation
-    self.animationframe = frame1 or 1
     self.animationtime = 0
-    if animation and loopframe and loopframe <= 0 then
-        loopframe = #animation + loopframe
+
+    if animation then
+        frame1 = frame1 and animation:clampIndex(frame1)
+        loopframe = loopframe and animation:clampIndex(loopframe)
     end
+    self.animationframe = frame1 or 1
     self.loopframe = loopframe
 end
 
