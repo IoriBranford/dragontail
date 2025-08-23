@@ -16,6 +16,7 @@ function ShieldBandit:findAttackerSlot(opponent, attacktype)
 end
 
 function ShieldBandit:duringStand()
+    if not self:isCylinderFullyOnCamera(self.camera) then return end
     local opponent = self.opponents[1]
     local fromoppox, fromoppoy = self.x - opponent.x, self.y - opponent.y
     local oppovelx, oppovely = opponent.velx, opponent.vely
@@ -26,6 +27,7 @@ function ShieldBandit:duringStand()
 end
 
 function ShieldBandit:duringApproach(opponent)
+    if not self:isCylinderFullyOnCamera(self.camera) then return end
     local fromoppox, fromoppoy = self.x - opponent.x, self.y - opponent.y
     local oppovelx, oppovely = opponent.velx, opponent.vely
     local dot = math.dot(fromoppox, fromoppoy, oppovelx, oppovely)
