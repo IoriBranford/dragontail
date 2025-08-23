@@ -33,6 +33,13 @@ function AseTag:load(ase)
     end
 end
 
+function AseTag:clampIndex(i)
+    if i <= 0 then
+        i = #self + i
+    end
+    return math.max(1, math.min(i, #self))
+end
+
 function AseTag:setLoopFrame(loopframe)
     if loopframe <= 0 then
         loopframe = #self + loopframe
