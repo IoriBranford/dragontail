@@ -86,6 +86,7 @@ end
 
 function PlayerSpinAttack:timeout(nextstate, a, b, c, d, e, f, g)
     local player = self.character
+    local inair = player.gravity == 0
     if player.numopponentshit <= 0 then
         Combo.reset(player)
     end
@@ -97,14 +98,14 @@ function PlayerSpinAttack:timeout(nextstate, a, b, c, d, e, f, g)
         if inx ~= 0 or iny ~= 0 then
             self.originalattackangle = math.atan2(iny, inx)
         end
-        return player:doComboAttack(self.originalattackangle, nil, inx ~= 0 or iny ~= 0)
+        return player:doComboAttack(self.originalattackangle, nil, inx ~= 0 or iny ~= 0, inair)
     end
 
     if nextstate then
         return nextstate, a, b, c, d, e, f, g
     end
 
-    return "walk"
+    return player.gravity == 0 and "hover" or "walk"
 end
 
 return PlayerSpinAttack

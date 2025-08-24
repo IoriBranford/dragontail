@@ -52,7 +52,11 @@ local SpecialCombo = {"spit-fireball", "spit-fireball", "fireball-spin-cw"}
 local HoldCombo = {"holding-knee", "holding-knee", "spinning-throw"}
 local RunningSpecialAttacks = { "running-spit-fat-fireball", "running-spit-fireball" }
 
-function Player:getNextAttackType(heldenemy, lunging)
+local AirCombo = {"air-kick", "air-kick", "air-tail-swing-cw"}
+local AirLungingCombo = {"air-lunging-kick", "air-lunging-kick", "air-lunging-tail-swing-cw"}
+local AirHoldCombo = {"air-holding-knee", "air-holding-knee", "air-spinning-throw"}
+
+function Player:getNextAttackType(heldenemy, lunging, inair)
     local comboindex = self.comboindex
     -- if special then
     --     local i = comboindex
@@ -67,9 +71,16 @@ function Player:getNextAttackType(heldenemy, lunging)
     --     comboindex = 3
     -- end
 
-    local combo = heldenemy and HoldCombo
-        or lunging and LungingCombo
-        or NormalCombo
+    local combo
+    if inair then
+        combo = heldenemy and AirHoldCombo
+            or lunging and AirLungingCombo
+            or AirCombo
+    else
+        combo = heldenemy and HoldCombo
+            or lunging and LungingCombo
+            or NormalCombo
+    end
     return combo[comboindex]
 end
 
@@ -92,8 +103,8 @@ knee -> knee -> spinthrow
     fire    firespin
 
 ]]
-function Player:doComboAttack(faceangle, heldenemy, lunging)
-    local attacktype = self:getNextAttackType(heldenemy, lunging)
+function Player:doComboAttack(faceangle, heldenemy, lunging, inair)
+    local attacktype = self:getNextAttackType(heldenemy, lunging, inair)
     local attackdata = self.attacktable[attacktype]
     if attackdata and attackdata.endscombo or self.comboindex >= 3 then
         self.comboindex = 1

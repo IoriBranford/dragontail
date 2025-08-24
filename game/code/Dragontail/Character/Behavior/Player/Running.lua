@@ -56,8 +56,42 @@ local RunningChargeAttacks = {
     "fireball-storm", "running-spit-multi-fireball", "running-spit-fireball"
 }
 
+local GroundNextStates = {
+    walk = "walk",
+    catchProjectile = "catchProjectile",
+    toggleFlying = "flyStart",
+    run = "run",
+    hold = "hold",
+    runIntoEnemy = "running-elbow",
+    runIntoWall = "runIntoWall",
+    runningAttack = "running-kick",
+    throwWeapon = "throwWeapon",
+    ["fireball-storm"] = "fireball-storm",
+    ["running-spit-multi-fireball"] = "running-spit-multi-fireball",
+    ["running-spit-fireball"] = "running-spit-fireball",
+}
+
+local AirNextStates = {
+    walk = "hover",
+    catchProjectile = "air-catchProjectile",
+    toggleFlying = "flyEnd",
+    run = "air-run",
+    hold = "air-hold",
+    runIntoWall = "air-runIntoWall",
+    runIntoEnemy = "air-running-elbow",
+    runningAttack = "air-running-kick",
+    throwWeapon = "air-throwWeapon",
+    ["fireball-storm"] = "air-fireball-storm",
+    ["running-spit-multi-fireball"] = "air-running-spit-multi-fireball",
+    ["running-spit-fireball"] = "air-running-spit-fireball",
+}
+
 function PlayerRunning:fixedupdate()
     local player = self.character
+
+    local inair = player.gravity == 0
+    local nextstates = inair and AirNextStates or GroundNextStates
+
     local heldenemy = self.heldenemy
     local inx, iny = player:getJoystick()
     player.joysticklog:put(inx, iny)
@@ -73,13 +107,13 @@ function PlayerRunning:fixedupdate()
     else
         local caughtprojectile = player:catchProjectileAtJoystick()
         if caughtprojectile then
-            return "catchProjectile", caughtprojectile
+            return nextstates.catchProjectile, caughtprojectile
         end
     end
 
-    -- if player.flybutton.pressed then
-    --     return "flyStart"
-    -- end
+    if player.flybutton.pressed then
+        return nextstates.toggleFlying
+    end
 
     local velx, vely = player.velx, player.vely
     local velangle = velx == 0 and vely == 0 and player.faceangle or math.atan2(vely, velx)
@@ -87,7 +121,7 @@ function PlayerRunning:fixedupdate()
     local chargedattack = not player.attackbutton.down and player:getChargedAttack(RunningChargeAttacks)
     if chargedattack then
         Mana.releaseCharge(player)
-        return chargedattack, player.facedestangle
+        return nextstates[chargedattack], player.facedestangle
     end
 
     if player.attackbutton.pressed then
@@ -104,10 +138,10 @@ function PlayerRunning:fixedupdate()
             --     end
             -- end
 
-            return "running-kick", player.faceangle
+            return nextstates.runningAttack, player.faceangle
         end
         if player.weaponinhand then
-            return "throwWeapon", player.facedestangle, 2, #player.inventory
+            return nextstates.throwWeapon, player.facedestangle, 2, #player.inventory
         end
 
         -- if fireattackpressed then
@@ -117,7 +151,7 @@ function PlayerRunning:fixedupdate()
         --         end
         --     end
         -- end
-        return "running-kick", velangle
+        return nextstates.runningAttack, velangle
     end
 
     if heldenemy then
@@ -125,12 +159,12 @@ function PlayerRunning:fixedupdate()
         if oobx or ooby then
             HoldOpponent.stopHolding(player, heldenemy)
             StateMachine.start(heldenemy, "wallSlammed", player, oobx, ooby)
-            return "running-elbow", player.faceangle
+            return nextstates.runIntoEnemy, player.faceangle
         end
     else
         local attacktarget = findSomethingToRunningAttack(player, velx, vely)
         if attacktarget then
-            return "running-elbow", velangle
+            return nextstates.runIntoEnemy, velangle
         end
 
         local oobx, ooby = findWallCollision(player)
@@ -148,7 +182,7 @@ function PlayerRunning:fixedupdate()
                     }
                 )
                 player.hurtstun = 10
-                return "runIntoWall", velangle
+                return nextstates.runIntoWall, velangle
             end
         end
     end
@@ -164,7 +198,7 @@ function PlayerRunning:fixedupdate()
             HoldOpponent.stopHolding(player, heldenemy)
             StateMachine.start(heldenemy, "knockedBack", player, player.faceangle)
         end
-        return "walk"
+        return nextstates.walk
     end
     self.runningtime = self.runningtime + 1
 end

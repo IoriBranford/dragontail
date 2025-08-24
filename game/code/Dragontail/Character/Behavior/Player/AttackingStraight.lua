@@ -121,6 +121,7 @@ end
 
 function AttackingStraight:timeout(nextstate, a, b, c, d, e, f, g)
     local player = self.character
+    local inair = player.gravity == 0
     if player.numopponentshit <= 0 then
         Combo.reset(player)
     end
@@ -134,18 +135,18 @@ function AttackingStraight:timeout(nextstate, a, b, c, d, e, f, g)
             end
         end
         return player:doComboAttack(faceangle, self.heldenemy,
-                inx ~= 0 or iny ~= 0)
+                inx ~= 0 or iny ~= 0, inair)
     end
 
     if self.heldenemy and self.heldenemy.health > 0 then
-        return "hold", self.heldenemy
+        return inair and "air-hold" or "hold", self.heldenemy
     end
 
     if nextstate then
         return nextstate, a, b, c, d, e, f, g
     end
 
-    return "walk"
+    return inair and "hover" or "walk"
 end
 
 return AttackingStraight

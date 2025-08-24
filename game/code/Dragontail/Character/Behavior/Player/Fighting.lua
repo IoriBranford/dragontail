@@ -18,8 +18,33 @@ local ChargeAttacks = {
     "fireball-storm", "spit-multi-fireball", "spit-fireball"
 }
 
+local GroundNextStates = {
+    catchProjectile = "catchProjectile",
+    toggleFlying = "flyStart",
+    run = "run",
+    hold = "hold",
+    throwWeapon = "throwWeapon",
+    ["fireball-storm"] = "fireball-storm",
+    ["spit-multi-fireball"] = "spit-multi-fireball",
+    ["spit-fireball"] = "spit-fireball",
+}
+
+local AirNextStates = {
+    catchProjectile = "air-catchProjectile",
+    toggleFlying = "flyEnd",
+    run = "air-run",
+    hold = "air-hold",
+    throwWeapon = "air-throwWeapon",
+    ["fireball-storm"] = "air-fireball-storm",
+    ["spit-multi-fireball"] = "air-spit-multi-fireball",
+    ["spit-fireball"] = "air-spit-fireball",
+}
+
 function PlayerFighting:fixedupdate()
     local player = self.character
+    local inair = player.gravity == 0
+    local nextstates = inair and AirNextStates or GroundNextStates
+
     local inx, iny = player:getJoystick()
     player.joysticklog:put(inx, iny)
     player:turnTowardsJoystick("Walk", "Stand")
@@ -27,24 +52,23 @@ function PlayerFighting:fixedupdate()
 
     local caughtprojectile = player:catchProjectileAtJoystick()
     if caughtprojectile then
-        return "catchProjectile", caughtprojectile
+        return nextstates.catchProjectile, caughtprojectile
     end
 
     if player.flybutton.pressed then
         -- disable until ready
-        -- return "flyStart"
+        return nextstates.toggleFlying
     end
 
     if player.sprintbutton.pressed then
         Face.faceVector(player, inx, iny)
-        return "run"
+        return nextstates.run
     end
 
-    -- player.runenergy = math.min(player.runenergymax, player.runenergy + 1)
     local chargedattack = not player.attackbutton.down and player:getChargedAttack(ChargeAttacks)
     if chargedattack then
         Mana.releaseCharge(player)
-        return chargedattack, player.facedestangle
+        return nextstates[chargedattack], player.facedestangle
     end
 
     if player.attackbutton.pressed then
@@ -55,15 +79,15 @@ function PlayerFighting:fixedupdate()
         player.faceangle = attackangle
         player.facedestangle = attackangle
         if player.weaponinhand then
-            return "throwWeapon", player.facedestangle, 1, 1
+            return nextstates.throwWeapon, player.facedestangle, 1, 1
         end
-        return player:doComboAttack(player.facedestangle, nil, inx ~= 0 or iny ~= 0)
+        return player:doComboAttack(player.facedestangle, nil, inx ~= 0 or iny ~= 0, inair)
     end
 
     local opponenttohold = HoldOpponent.findOpponentToHold(player, inx, iny)
     if opponenttohold then
         Audio.play(player.holdsound)
-        return "hold", opponenttohold
+        return nextstates.hold, opponenttohold
     end
 end
 
