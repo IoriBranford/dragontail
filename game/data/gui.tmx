@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="15" nextobjectid="72">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="15" nextobjectid="77">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -10,6 +10,7 @@
  <tileset firstgid="385" source="tilesets/ui/weapon-frame.tsx"/>
  <tileset firstgid="391" source="sprites/ui/go-arrow-small.tsx"/>
  <tileset firstgid="400" source="sprites/ui/go-word.tsx"/>
+ <tileset firstgid="409" source="sprites/player/rose/firespit.tsx"/>
  <group id="4" name="gameplay">
   <objectgroup draworder="index" id="2" name="hud">
    <object id="4" name="run" type="Gui.Gauge" x="52" y="33" width="100" height="8" visible="0">
@@ -219,10 +220,37 @@ ALL CONTENT SUBJECT TO CHANGE</text>
     </properties>
    </object>
   </objectgroup>
-  <objectgroup id="6" name="pausemenu">
-   <object id="8" name="name" x="200" y="18" width="80" height="18">
+  <objectgroup draworder="index" id="6" name="pausemenu" class="Gui.Menu">
+   <properties>
+    <property name="backaction" value="unpauseGame"/>
+   </properties>
+   <object id="76" template="gui/menu/Panel.tx" x="184" y="90" width="112" height="90">
+    <properties>
+     <property name="color" type="color" value="#80c52021"/>
+    </properties>
+   </object>
+   <object id="8" name="name" x="192" y="54" width="96" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">PAUSE</text>
    </object>
+   <object id="72" template="gui/menu/pause/Button.tx" name="Resume" type="Gui.Button" x="232" y="99">
+    <properties>
+     <property name="action" value="unpauseGame"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Resume</text>
+   </object>
+   <object id="73" template="gui/menu/pause/Button.tx" name="Restart" type="Gui.Button" x="232" y="126">
+    <properties>
+     <property name="action" value="restartStage"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Restart</text>
+   </object>
+   <object id="75" template="gui/menu/pause/Button.tx" name="Quit" type="Gui.Button" x="232" y="153">
+    <properties>
+     <property name="action" value="quit"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Quit</text>
+   </object>
+   <object id="74" type="Gui.Cursor" gid="409" x="200" y="108" width="64" height="64"/>
   </objectgroup>
   <objectgroup draworder="index" id="13" name="input">
    <object id="67" name="joystickdirection" x="55" y="243">
