@@ -262,6 +262,8 @@ function Stage.openRoom(i)
             StateMachine.start(player, "victory")
         end
         Audio.fadeMusic()
+        local GamePhase = require "Dragontail.GamePhase"
+        GamePhase.gameOver()
     end
 end
 
@@ -385,9 +387,6 @@ function Stage.fixedupdateGui(gui)
 
     local healthpercent = player.health / player.maxhealth
     local hud = gui.gameplay.hud
-
-    gui.gameplay.gameover.visible = player.state and
-        (player.state.state == "victory" or player.state.state == "defeat")
 
     hud.health:setPercent(healthpercent)
 

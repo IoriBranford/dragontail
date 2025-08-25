@@ -833,6 +833,8 @@ function Player:defeat(attacker)
     self:stopAttack()
     self.velx, self.vely = 0, 0
     Audio.play(self.defeatsound)
+    local GamePhase            = require "Dragontail.GamePhase"
+    GamePhase.gameOver()
 end
 
 function Player:sequenceWalkTo(destx, desty, timelimit)
