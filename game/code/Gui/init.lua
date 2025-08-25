@@ -106,6 +106,7 @@ function Gui:pushMenu(menu)
     end
     self.menustack[#self.menustack+1] = menu
     self:setActiveMenu(menu)
+    menu:loadConfigValues()
     menu:initCursor()
 end
 
