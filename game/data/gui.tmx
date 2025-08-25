@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="15" nextobjectid="77">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="15" nextobjectid="82">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -275,21 +275,25 @@ ALL CONTENT SUBJECT TO CHANGE</text>
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">SPRINT</text>
    </object>
   </objectgroup>
-  <objectgroup id="11" name="gameover">
-   <object id="21" name="playagain" x="224" y="126" width="128" height="18">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Play again</text>
+  <objectgroup id="11" name="gameover" class="Gui.Menu">
+   <object id="77" template="gui/menu/Panel.tx" x="184" y="99" width="112" height="72">
+    <properties>
+     <property name="color" type="color" value="#80c52021"/>
+    </properties>
    </object>
-   <object id="22" gid="7" x="284" y="144" width="16" height="16" visible="0"/>
-   <object id="23" gid="293" x="180" y="144" width="16" height="16"/>
-   <object id="24" gid="295" x="204" y="144" width="16" height="16"/>
-   <object id="25" name="+" x="196" y="126" width="8" height="18">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">+</text>
+   <object id="79" template="gui/menu/pause/Button.tx" name="Restart" type="Gui.Button" x="232" y="112.5">
+    <properties>
+     <property name="action" value="restartStage"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Restart</text>
    </object>
-   <object id="26" gid="333" x="232" y="144" width="16" height="16" visible="0"/>
-   <object id="27" gid="335" x="256" y="144" width="16" height="16" visible="0"/>
-   <object id="28" name="+" x="248" y="126" width="8" height="18" visible="0">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">+</text>
+   <object id="80" template="gui/menu/pause/Button.tx" name="Quit" type="Gui.Button" x="232" y="139.5">
+    <properties>
+     <property name="action" value="quit"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Quit</text>
    </object>
+   <object id="81" type="Gui.Cursor" gid="409" x="200" y="121.5" width="64" height="64"/>
   </objectgroup>
  </group>
  <objectgroup id="7" name="title" visible="0">
