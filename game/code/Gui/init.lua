@@ -8,6 +8,7 @@ local Config      = require "System.Config"
 ---@class Gui:LayerGroup
 ---@field activemenu Menu
 ---@field menustack Menu[]
+---@field canvas Canvas
 ---@field [integer] Layer
 local Gui = class(LayerGroup)
 
@@ -143,18 +144,25 @@ function Gui:gamepadpressed(gamepad, button)
 end
 
 function Gui:touchpressed(id, x, y)
+    x, y = self.canvas:inverseTransformPoint(x, y)
+    x, y = x - self.x, y - self.y
     if self.activemenu and self.activemenu.visible then
         self.activemenu:touchpressed(id, x, y)
     end
 end
 
 function Gui:touchmoved(id, x, y, dx, dy)
+    x, y = self.canvas:inverseTransformPoint(x, y)
+    x, y = x - self.x, y - self.y
+    dx, dy = self.canvas:inverseTransformVector(dx, dy)
     if self.activemenu and self.activemenu.visible then
         self.activemenu:touchmoved(id, x, y, dx, dy)
     end
 end
 
 function Gui:touchreleased(id, x, y)
+    x, y = self.canvas:inverseTransformPoint(x, y)
+    x, y = x - self.x, y - self.y
     if self.activemenu and self.activemenu.visible then
         self.activemenu:touchreleased(id, x, y)
     end

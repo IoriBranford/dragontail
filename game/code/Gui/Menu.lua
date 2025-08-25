@@ -155,7 +155,6 @@ function Menu:touchpressed(id, x, y)
     if self.menutouchid then
         return
     end
-    x, y = self.gui.canvas:inverseTransformPoint(x, y)
     local i = self:itemAtPoint(x, y)
     if not i then
         return
@@ -168,7 +167,6 @@ function Menu:touchmoved(id, x, y, dx, dy)
     if self.menutouchid ~= id then
         return
     end
-    x, y = self.gui.canvas:inverseTransformPoint(x, y)
     local i = self:itemAtPoint(x, y)
     if i ~= self.cursorposition then
         self:selectButton(i)
