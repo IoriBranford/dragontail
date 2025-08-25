@@ -170,6 +170,11 @@ function GamePhase.setPauseLocked(locked)
     pauselocked = locked
 end
 
+function GamePhase.gameOver()
+    GamePhase.setPauseLocked(true)
+    Gui:pushMenu(Gui.gameplay.gameover)
+end
+
 function GamePhase.update(dsecs, fixedfrac)
     Stage.update(dsecs, paused and 0 or fixedfrac)
     Audio.update(dsecs)
