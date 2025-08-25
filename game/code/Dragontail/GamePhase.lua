@@ -61,6 +61,7 @@ function GamePhase.loadphase(stagepath_)
 
     Gui:showOnlyNamed("gameplay", "wipe")
     Gui.gameplay:showOnlyNamed("hud", "input")
+    Gui:clearMenuStack()
 end
 
 function GamePhase.resize(screenwidth, screenheight)
@@ -80,7 +81,11 @@ end
 
 function GamePhase.setPaused(newpaused)
     paused = newpaused
-    Gui.gameplay.pausemenu.visible = paused
+    if paused then
+        Gui:pushMenu(Gui.gameplay.pausemenu)
+    else
+        Gui:clearMenuStack()
+    end
 end
 
 local keypressed = {}
@@ -91,6 +96,7 @@ end
 function keypressed.p()
     GamePhase.setPaused(not paused)
 end
+keypressed.escape = keypressed.p
 
 function keypressed.s()
     if love.keyboard.isDown("lctrl") then
@@ -105,26 +111,21 @@ end
 
 ---@param gamepad love.Joystick
 function GamePhase.gamepadpressed(gamepad, button)
-    if button == "back" then
-        if gamepad:isGamepadDown("start") then
-            love.event.loadphase("Dragontail.GamePhase")
-        end
-    elseif button == "start" then
-        if gamepad:isGamepadDown("back") then
-            love.event.loadphase("Dragontail.GamePhase")
-            return
-        end
+    if button == "start" then
         GamePhase.setPaused(not paused)
+    else
+        Gui:gamepadpressed(gamepad, button)
     end
 end
 
 function GamePhase.keypressed(key)
-    if paused then
-        GamePhase.setPaused(false)
+    local kp = keypressed[key]
+    if kp then
+        kp()
         return
     end
-    local kp = keypressed[key]
-    if kp then kp() end
+
+    Gui:keypressed(key)
 end
 
 local function fixedupdateInputDisplay()
