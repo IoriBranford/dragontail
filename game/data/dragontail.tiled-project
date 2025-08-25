@@ -61,6 +61,62 @@
         {
             "color": "#ffa0a0a4",
             "drawFill": true,
+            "id": 12,
+            "members": [
+                {
+                    "name": "action",
+                    "type": "string",
+                    "value": ""
+                },
+                {
+                    "name": "actionsmodule",
+                    "type": "string",
+                    "value": "Dragontail.GuiActions"
+                },
+                {
+                    "name": "disabled",
+                    "type": "bool",
+                    "value": false
+                },
+                {
+                    "name": "label",
+                    "type": "object",
+                    "value": 0
+                }
+            ],
+            "name": "Gui.Button",
+            "type": "class",
+            "useAs": [
+                "object",
+                "project"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 14,
+            "members": [
+                {
+                    "name": "alignx",
+                    "type": "float",
+                    "value": -1
+                },
+                {
+                    "name": "aligny",
+                    "type": "float",
+                    "value": 0
+                }
+            ],
+            "name": "Gui.Cursor",
+            "type": "class",
+            "useAs": [
+                "object",
+                "project"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
             "id": 7,
             "members": [
                 {
@@ -93,8 +149,30 @@
             "name": "Gui.Gauge",
             "type": "class",
             "useAs": [
-                "property",
                 "object"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 13,
+            "members": [
+                {
+                    "name": "actionsmodule",
+                    "type": "string",
+                    "value": "Dragontail.GuiActions"
+                },
+                {
+                    "name": "backaction",
+                    "type": "string",
+                    "value": ""
+                }
+            ],
+            "name": "Gui.Menu",
+            "type": "class",
+            "useAs": [
+                "layer",
+                "project"
             ]
         },
         {
