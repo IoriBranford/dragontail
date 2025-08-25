@@ -106,7 +106,7 @@ function Gui:pushMenu(menu)
     end
     self.menustack[#self.menustack+1] = menu
     self:setActiveMenu(menu)
-    menu:selectButton(menu.initialbutton or 1)
+    menu:initCursor()
 end
 
 function Gui:popMenu()

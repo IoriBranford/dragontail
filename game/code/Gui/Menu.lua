@@ -37,15 +37,44 @@ function Menu:spawn()
         return a.y < b.y
     end)
 
-    if Platform.IsMobile then
-        self:selectButton()
-    elseif self.initialcursorposition then
-        self:selectButton(self.initialcursorposition)
-    elseif not self.cursorposition then
-        self:selectButton(1)
+    self:initCursor()
+    return self
+end
+
+function Menu:initCursor()
+    local i
+    if not Platform.IsMobile then
+        i = self.initialcursorposition or 1
+        i = self:findNextUsableButton(i-1, 1)
+    end
+    self:selectButton(i)
+end
+
+function Menu:setButtonDisabled(button, disabled)
+    local menuitems = self.menuitems
+    local buttoni
+    if type(button) == "number" then
+        buttoni = button
+        button = menuitems[buttoni]
+    elseif type(button) == "string" then
+        button = self[button]
+    end
+    if not buttoni and type(button) == "table" then
+        for i, b in ipairs(menuitems) do
+            if b == button then
+                buttoni = i
+                break
+            end
+        end
+    end
+    if not buttoni then
+        return
     end
 
-    return self
+    button:setDisabled(disabled)
+    if disabled and buttoni == self.cursorposition then
+        self:moveCursor(1)
+    end
 end
 
 function Menu:setActiveInputSetter(inputsetter)
@@ -176,17 +205,31 @@ function Menu:selectButton(i)
     self.cursorposition = i
 end
 
-function Menu:moveCursor(dir)
+---@return integer i
+---@return Button? button
+function Menu:findNextUsableButton(i, dir)
     dir = dir / math.abs(dir)
-    local i = self.cursorposition or 0
     local menuitems = self.menuitems
-    i = i + dir
-    if i < 1 then
-        i = #menuitems
-    elseif i > #menuitems then
-        i = 1
+    for _ = 1, #menuitems do
+        i = i + dir
+        if i < 1 then
+            i = #menuitems
+        elseif i > #menuitems then
+            i = 1
+        end
+        if not menuitems[i].disabled then
+            break
+        end
     end
+    return i
+end
+
+function Menu:moveCursor(dir)
+    local i = self.cursorposition or 0
+    i = self:findNextUsableButton(i, dir)
     self:selectButton(i)
+
+    local menuitems = self.menuitems
     for _, cursor in ipairs(self.cursors) do
         cursor:onMoveTo(i, menuitems[i])
     end
