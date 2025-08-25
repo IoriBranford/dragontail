@@ -25,6 +25,7 @@ function Menu:spawn()
             elseif object.ismenuitem then
                 menuitems[#menuitems + 1] = object
                 object.menu = self
+                object:setDisabled(object.disabled)
             end
         else
             object:setVisible(false)
@@ -37,7 +38,6 @@ function Menu:spawn()
         return a.y < b.y
     end)
 
-    self:initCursor()
     return self
 end
 
