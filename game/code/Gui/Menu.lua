@@ -1,10 +1,11 @@
-local Config    = require "System.Config"
 local Platform  = require "System.Platform"
 local GuiObject = require "Gui.GuiObject"
 local ObjectGroup = require "Tiled.ObjectGroup"
 local InputSetter = require "Gui.InputSetter"
 
 ---@class Menu:ObjectGroup
+---@field backaction string?
+---@field initialcursorposition integer?
 local Menu = class(ObjectGroup)
 Menu.doAction = GuiObject.doAction
 
@@ -94,15 +95,15 @@ function Menu:keypressed(key)
         end
         return
     end
-    if key == "return" or key == Config.key_fire then
+    if key == "return" or key == "enter" then
         self:pressSelectedButton()
-    elseif key == Config.key_up then
+    elseif key == "up" then
         self:moveCursor(-1)
-    elseif key == Config.key_down then
+    elseif key == "down" then
         self:moveCursor(1)
-    elseif key == Config.key_left then
+    elseif key == "left" then
         self:changeSelectedSlider(-1)
-    elseif key == Config.key_right then
+    elseif key == "right" then
         self:changeSelectedSlider(1)
     elseif key == "escape" then
         self:doAction(self.backaction)
@@ -130,7 +131,7 @@ function Menu:gamepadpressed(gamepad, button)
         self:changeSelectedSlider(-1)
     elseif button == "dpright" then
         self:changeSelectedSlider(1)
-    elseif button == "start" or button == Config.joy_fire then
+    elseif button == "start" or button == "a" then
         self:pressSelectedButton()
     elseif button == "back" then
         self:doAction(self.backaction)
