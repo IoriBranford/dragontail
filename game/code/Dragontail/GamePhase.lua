@@ -13,12 +13,14 @@ local getAsset = Assets.get
 local GamePhase = {}
 
 local paused
+local pauselocked
 local stagecanvas
 local stagepath = "data/stage_banditcave.lua"
 
 function GamePhase.loadphase(stagepath_)
     stagepath = stagepath_ or stagepath
     paused = false
+    pauselocked = false
     local unifont = Assets.getFont("Unifont", 16)
     love.graphics.setFont(unifont)
     Assets.get("data/music/retro-chiptune-guitar.ogg", "stream")
@@ -80,6 +82,9 @@ function GamePhase.quitphase()
 end
 
 function GamePhase.setPaused(newpaused)
+    if pauselocked then
+        return
+    end
     paused = newpaused
     if paused then
         Gui:pushMenu(Gui.gameplay.pausemenu)
@@ -159,6 +164,10 @@ function GamePhase.fixedupdate()
         fixedupdateInputDisplay()
     end
     Gui:fixedupdate()
+end
+
+function GamePhase.setPauseLocked(locked)
+    pauselocked = locked
 end
 
 function GamePhase.update(dsecs, fixedfrac)
