@@ -94,6 +94,25 @@ function Fighter:walkTo(destx, desty, timelimit)
     end
 end
 
+function Fighter:updateWalkTo(destx, desty)
+    if type(destx) == "table" then
+        destx, desty = destx.x, destx.y
+    end
+
+    if not destx or not desty then return end
+
+    self.velx, self.vely = Movement.getVelocity_speed(
+        self.x, self.y, destx, desty, self.speed or 1)
+
+    if self.velx == 0 and self.vely == 0 then
+        DirectionalAnimation.set(self, "Stand", self.faceangle)
+        return true
+    end
+
+    local todestangle = atan2(desty - self.y, destx - self.x)
+    Face.faceAngle(self, todestangle, "Walk")
+end
+
 -- function Fighter:stun(duration)
 --     self:stopAttack()
 --     self.velx, self.vely = 0, 0
