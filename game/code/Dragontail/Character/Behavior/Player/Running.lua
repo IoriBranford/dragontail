@@ -21,7 +21,7 @@ function PlayerRunning:start(heldenemy)
     self.runningtime = 0
     if heldenemy then
         self.heldenemy = heldenemy
-        StateMachine.start(heldenemy, player.attack.heldopponentstate or "human-in-spinning-throw", player)
+        StateMachine.start(heldenemy, player.attack.heldopponentstate or "HumanInSpinningThrow", player)
         heldenemy:startAttack(player.faceangle)
     end
 end
@@ -53,7 +53,7 @@ local function findWallCollision(self)
 end
 
 local RunningChargeAttacks = {
-    "fireball-storm", "running-spit-multi-fireball", "running-spit-fireball"
+    "FireballStorm", "RunningSpitMultiFireball", "RunningSpitFireball"
 }
 
 local GroundNextStates = {
@@ -62,28 +62,28 @@ local GroundNextStates = {
     toggleFlying = "flyStart",
     run = "run",
     hold = "hold",
-    runIntoEnemy = "running-elbow",
-    runIntoWall = "runIntoWall",
-    runningAttack = "running-kick",
+    runIntoEnemy = "RunningElbow",
+    RunningIntoWall = "RunningIntoWall",
+    runningAttack = "RunningKick",
     throwWeapon = "throwWeapon",
-    ["fireball-storm"] = "fireball-storm",
-    ["running-spit-multi-fireball"] = "running-spit-multi-fireball",
-    ["running-spit-fireball"] = "running-spit-fireball",
+    ["FireballStorm"] = "FireballStorm",
+    ["RunningSpitMultiFireball"] = "RunningSpitMultiFireball",
+    ["RunningSpitFireball"] = "RunningSpitFireball",
 }
 
 local AirNextStates = {
     walk = "hover",
-    catchProjectile = "air-catchProjectile",
+    catchProjectile = "AirCatchProjectile",
     toggleFlying = "flyEnd",
-    run = "air-run",
-    hold = "air-hold",
-    runIntoWall = "air-runIntoWall",
-    runIntoEnemy = "air-running-elbow",
-    runningAttack = "air-running-kick",
-    throwWeapon = "air-throwWeapon",
-    ["fireball-storm"] = "air-fireball-storm",
-    ["running-spit-multi-fireball"] = "air-running-spit-multi-fireball",
-    ["running-spit-fireball"] = "air-running-spit-fireball",
+    run = "AirRun",
+    hold = "AirHold",
+    RunningIntoWall = "AirRunningIntoWall",
+    runIntoEnemy = "AirRunningElbow",
+    runningAttack = "AirRunningKick",
+    throwWeapon = "AirThrowWeapon",
+    ["FireballStorm"] = "AirFireballStorm",
+    ["RunningSpitMultiFireball"] = "AirRunningSpitMultiFireball",
+    ["RunningSpitFireball"] = "AirRunningSpitFireball",
 }
 
 function PlayerRunning:fixedupdate()
@@ -158,7 +158,7 @@ function PlayerRunning:fixedupdate()
         local oobx, ooby = HoldOpponent.handleOpponentCollision(player)
         if oobx or ooby then
             HoldOpponent.stopHolding(player, heldenemy)
-            StateMachine.start(heldenemy, "wallSlammed", player, oobx, ooby)
+            StateMachine.start(heldenemy, "WallSlammed", player, oobx, ooby)
             return nextstates.runIntoEnemy, player.faceangle
         end
     else
@@ -175,14 +175,14 @@ function PlayerRunning:fixedupdate()
             if oobdotvel > speed*ooblen/2 then
                 Characters.spawn(
                     {
-                        type = "spark-bighit",
+                        type = "SparkBigHit",
                         x = player.x + oobx*player.bodyradius,
                         y = player.y + ooby*player.bodyradius,
                         z = player.z + player.bodyheight/2
                     }
                 )
                 player.hurtstun = 10
-                return nextstates.runIntoWall, velangle
+                return nextstates.RunningIntoWall, velangle
             end
         end
     end
@@ -196,7 +196,7 @@ function PlayerRunning:fixedupdate()
             Audio.play(player.throwsound)
             heldenemy:stopAttack()
             HoldOpponent.stopHolding(player, heldenemy)
-            StateMachine.start(heldenemy, "knockedBack", player, player.faceangle)
+            StateMachine.start(heldenemy, "KnockedBack", player, player.faceangle)
         end
         return nextstates.walk
     end

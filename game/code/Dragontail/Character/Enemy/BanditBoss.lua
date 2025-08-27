@@ -39,16 +39,16 @@ function BanditBoss:getBestAttack(opponent)
     local dsq = math.lensq(distx, disty)
     if dsq <= 128*128 then
         local turndir = math.det(facex, facey, distx, disty)
-        if self.state.state == "fall" or self.state.state == "getup" then
-            return turndir < 0 and "bandit-boss-getup-spin-ccw" or "bandit-boss-getup-spin-cw"
+        if self.state.state == "Fall" or self.state.state == "GetUp" then
+            return turndir < 0 and "GettingUpTridentSpinCCW" or "GettingUpTridentSpinCW"
         end
         if isoppobehind or not isoppocoming then
-            return turndir < 0 and "bandit-boss-spin-ccw" or "bandit-boss-spin-cw"
+            return turndir < 0 and "TridentSpinCCW" or "TridentSpinCW"
         else
-            return "bandit-boss-poke"
+            return "TridentPoke"
         end
     end
-    return "bandit-boss-charge"
+    return "TridentCharge"
 end
 
 function BanditBoss:decideNextAttack()
@@ -71,7 +71,7 @@ end
 
 function BanditBoss:duringApproach(opponent)
     local bestattack = self:getBestAttack(opponent)
-    if bestattack ~= "bandit-boss-charge" then
+    if bestattack ~= "TridentCharge" then
         if self:couldAttackOpponent(opponent, bestattack) then
             return bestattack
         end
@@ -119,7 +119,7 @@ end
 function BanditBoss:duringGetUp(attacker)
     if self.health/self.maxhealth <= GetUpAttackHealthPercent then
         local attack = self:getBestAttack(attacker) or ""
-        if attack:find("^bandit%-boss%-getup%-spin") then
+        if attack:find("^bandit%-boss%-GetUp%-spin") then
             Face.faceObject(self, attacker)
             self.attackswitchesleft = 0
             return attack
@@ -127,11 +127,11 @@ function BanditBoss:duringGetUp(attacker)
     end
 end
 
-function BanditBoss:defeat(attacker)
+function BanditBoss:Defeated(attacker)
     Audio.fadeMusic()
     Characters.clearEnemies(self)
     Stage.setToLastRoom()
-    return Enemy.defeat(self, attacker)
+    return Enemy.Defeated(self, attacker)
 end
 
 return BanditBoss

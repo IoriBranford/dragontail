@@ -46,15 +46,15 @@ local lensq = math.lensq
 local testcircles = math.testcircles
 local yield = coroutine.yield
 
-local NormalCombo = {"kick", "kick", "tail-swing-cw"}
-local LungingCombo = {"lunging-kick", "lunging-kick", "lunging-tail-swing-cw"}
-local SpecialCombo = {"spit-fireball", "spit-fireball", "fireball-spin-cw"}
-local HoldCombo = {"holding-knee", "holding-knee", "spinning-throw"}
-local RunningSpecialAttacks = { "running-spit-fat-fireball", "running-spit-fireball" }
+local NormalCombo = {"Kick", "Kick", "TailSwingCW"}
+local LungingCombo = {"LungingKick", "LungingKick", "LungingTailSwingCW"}
+local SpecialCombo = {"SpitFireball", "SpitFireball", "FireballSpinCW"}
+local HoldCombo = {"HoldingKnee", "HoldingKnee", "SpinningThrow"}
+local RunningSpecialAttacks = { "RunningSpitFatFireball", "RunningSpitFireball" }
 
-local AirCombo = {"air-kick", "air-kick", "air-tail-swing-cw"}
-local AirLungingCombo = {"air-lunging-kick", "air-lunging-kick", "air-lunging-tail-swing-cw"}
-local AirHoldCombo = {"air-holding-knee", "air-holding-knee", "air-spinning-throw"}
+local AirCombo = {"AirKick", "AirKick", "AirTailSwingCW"}
+local AirLungingCombo = {"AirLungingKick", "AirLungingKick", "AirLungingTailSwingCW"}
+local AirHoldCombo = {"AirHoldingKnee", "AirHoldingKnee", "AirSpinningThrow"}
 
 function Player:getNextAttackType(heldenemy, lunging, inair)
     local comboindex = self.comboindex
@@ -406,7 +406,7 @@ function Player:catchProjectile(projectile)
     if self:tryToGiveWeapon(projectile.type) then
         projectile:disappear()
     else
-        StateMachine.start(projectile, "projectileBounce", self)
+        StateMachine.start(projectile, "ProjectileBounce", self)
     end
     for i = 1, 15 do
         self:accelerateTowardsVel(0, 0, 8)
@@ -416,10 +416,10 @@ function Player:catchProjectile(projectile)
 end
 
 local ChargeAttacks = {
-    "fireball-storm", "spit-multi-fireball", "spit-fireball"
+    "FireballStorm", "SpitMultiFireball", "SpitFireball"
 }
 local RunningChargeAttacks = {
-    "fireball-storm", "running-spit-multi-fireball", "running-spit-fireball"
+    "FireballStorm", "RunningSpitMultiFireball", "RunningSpitFireball"
 }
 
 function Player:updateBreathCharge(chargerate, decayrate)
@@ -724,7 +724,7 @@ function Player:hold(enemy)
         -- self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
         if runpressed then --and self.runenergy >= self.runenergycost then
             Combo.reset(self)
-            return "running-with-enemy", enemy
+            return "RunningWithEnemy", enemy
         end
         local chargedattack = not self.attackbutton.down and self:getChargedAttack(ChargeAttacks)
         if chargedattack then
@@ -733,14 +733,14 @@ function Player:hold(enemy)
             return chargedattack, holdangle
         end
         -- if fireattackpressed then
-        --     if Mana.canAffordAttack(self, "flaming-spinning-throw") then
+        --     if Mana.canAffordAttack(self, "FlamingSpinningThrow") then
         --         Combo.reset(self)
-        --         return "flaming-spinning-throw", holdangle, enemy
+        --         return "FlamingSpinningThrow", holdangle, enemy
         --     end
         -- end
         if normalattackpressed and (inx ~= 0 or iny ~= 0) then
             Combo.reset(self)
-            return "spinning-throw", holdangle, enemy
+            return "SpinningThrow", holdangle, enemy
         end
         if normalattackpressed then
             return self:doComboAttack(holdangle, enemy, inx ~= 0 or iny ~= 0)
@@ -752,7 +752,7 @@ end
 
 function Player:spinAndKickEnemy(angle, enemy)
     Mana.store(self, -(self.attack.manacost or 0))
-    StateMachine.start(enemy, self.attack.heldopponentstate or "human-in-spinning-throw", self)
+    StateMachine.start(enemy, self.attack.heldopponentstate or "HumanInSpinningThrow", self)
     local spinvel = self.attack.spinspeed or 0
     local maxspunmag = self.attack.maxspin or (4*pi)
     local minspunmag = self.attack.minspin or 0
@@ -813,8 +813,8 @@ function Player:spinAndKickEnemy(angle, enemy)
     -- if self.attack.damage then
     --     enemy.health = enemy.health - self.attack.damage
     -- end
-    -- StateMachine.start(enemy, enemy.thrownai or "thrown", self, atan2(throwy, throwx))
-    return "holding-kick", atan2(throwy, throwx)
+    -- StateMachine.start(enemy, enemy.thrownai or "Thrown", self, atan2(throwy, throwx))
+    return "HoldingKick", atan2(throwy, throwx)
 end
 
 function Player:victory()
@@ -828,7 +828,7 @@ function Player:victory()
     end
 end
 
-function Player:defeat(attacker)
+function Player:Defeated(attacker)
     Audio.fadeMusic()
     self:stopAttack()
     self.velx, self.vely = 0, 0

@@ -22,7 +22,7 @@
    </object>
   </objectgroup>
  </tile>
- <tile id="2" type="container-crate-tall">
+ <tile id="2" type="ContainerCrateTall">
   <objectgroup draworder="index" id="2">
    <object id="1" x="16" y="48">
     <properties>

@@ -2,7 +2,7 @@
 <tileset version="1.11" tiledversion="1.11.0" name="tables-hori" tilewidth="96" tileheight="48" tilecount="3" columns="3" objectalignment="top">
  <tileoffset x="0" y="-24"/>
  <image source="tables-hori.png" width="288" height="48"/>
- <tile id="0" type="furniture-table">
+ <tile id="0" type="WoodDiningTable">
   <objectgroup draworder="index" id="2">
    <object id="2" x="8" y="24" width="80" height="24">
     <properties>
@@ -12,7 +12,7 @@
    </object>
   </objectgroup>
  </tile>
- <tile id="1" type="furniture-table">
+ <tile id="1" type="WoodDiningTable">
   <objectgroup>
    <object id="1" x="8" y="24" width="80" height="24">
     <properties>
@@ -22,7 +22,7 @@
    </object>
   </objectgroup>
  </tile>
- <tile id="2" type="furniture-table">
+ <tile id="2" type="WoodDiningTable">
   <objectgroup>
    <object id="1" x="8" y="24" width="80" height="24">
     <properties>

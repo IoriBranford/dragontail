@@ -63,7 +63,7 @@ function TakingHit:fixedupdate()
     local hiteffect = attack.opponentstateonhit
     if fighter.health <= 0 then
         HoldOpponent.stopHolding(fighter.heldby, fighter)
-        defeateffect = defeateffect or fighter.defeatai or "defeat"
+        defeateffect = defeateffect or fighter.defeatai or "Defeated"
         return defeateffect, attacker, attackangle
     elseif hiteffect then
         HoldOpponent.stopHolding(fighter.heldby, fighter)
@@ -71,7 +71,7 @@ function TakingHit:fixedupdate()
     end
     if fighter.heldby then
         if HoldOpponent.isHolding(fighter.heldby, fighter) then
-            return "held", fighter.heldby
+            return "Held", fighter.heldby
         end
         fighter.heldby = nil
     end
@@ -94,7 +94,7 @@ function TakingHit:timeout()
     if not recoverai then
         print("No aiafterhurt or recoverai for "..fighter.type)
         HoldOpponent.stopHolding(fighter.heldby, fighter)
-        return "defeat", attacker
+        return "Defeated", attacker
     end
     return recoverai
 end

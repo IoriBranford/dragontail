@@ -15,7 +15,7 @@ function PlayerFighting:start()
 end
 
 local ChargeAttacks = {
-    "fireball-storm", "spit-multi-fireball", "spit-fireball"
+    "FireballStorm", "SpitMultiFireball", "SpitFireball"
 }
 
 local GroundNextStates = {
@@ -24,20 +24,20 @@ local GroundNextStates = {
     run = "run",
     hold = "hold",
     throwWeapon = "throwWeapon",
-    ["fireball-storm"] = "fireball-storm",
-    ["spit-multi-fireball"] = "spit-multi-fireball",
-    ["spit-fireball"] = "spit-fireball",
+    ["FireballStorm"] = "FireballStorm",
+    ["SpitMultiFireball"] = "SpitMultiFireball",
+    ["SpitFireball"] = "SpitFireball",
 }
 
 local AirNextStates = {
-    catchProjectile = "air-catchProjectile",
+    catchProjectile = "AirCatchProjectile",
     toggleFlying = "flyEnd",
-    run = "air-run",
-    hold = "air-hold",
-    throwWeapon = "air-throwWeapon",
-    ["fireball-storm"] = "air-fireball-storm",
-    ["spit-multi-fireball"] = "air-spit-multi-fireball",
-    ["spit-fireball"] = "air-spit-fireball",
+    run = "AirRun",
+    hold = "AirHold",
+    throwWeapon = "AirThrowWeapon",
+    ["FireballStorm"] = "AirFireballStorm",
+    ["SpitMultiFireball"] = "AirSpitMultiFireball",
+    ["SpitFireball"] = "AirSpitFireball",
 }
 
 function PlayerFighting:fixedupdate()

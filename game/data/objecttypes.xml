@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objecttypes>
- <objecttype name="bandit-axe" color="#ff0004"/>
- <objecttype name="bandit-dagger" color="#ffaaff"/>
- <objecttype name="bandit-spear" color="#ff5500"/>
- <objecttype name="food-bigfish" color="#aaff00"/>
- <objecttype name="food-container" color="#c0c0c0"/>
- <objecttype name="food-fish" color="#aaff00"/>
+ <objecttype name="AxeBandit" color="#ff0004"/>
+ <objecttype name="KnifeBandit" color="#ffaaff"/>
+ <objecttype name="SpearBandit" color="#ff5500"/>
+ <objecttype name="FoodBigFish" color="#aaff00"/>
+ <objecttype name="FoodContainer" color="#c0c0c0"/>
+ <objecttype name="FoodFish" color="#aaff00"/>
 </objecttypes>

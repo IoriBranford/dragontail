@@ -5598,18 +5598,18 @@ return {
       tiles = {
         {
           id = 0,
-          type = "container-barrel"
+          type = "ContainerBarrel"
         },
         {
           id = 1,
-          type = "container-barrel",
+          type = "ContainerBarrel",
           properties = {
             ["name"] = "Fall"
           }
         },
         {
           id = 2,
-          type = "container-barrel",
+          type = "ContainerBarrel",
           properties = {
             ["name"] = "closed"
           }
@@ -5725,7 +5725,7 @@ return {
         },
         {
           id = 2,
-          type = "container-crate-tall",
+          type = "ContainerCrateTall",
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -5828,12 +5828,7 @@ return {
       properties = {},
       wangsets = {},
       tilecount = 1,
-      tiles = {
-        {
-          id = 0,
-          type = "bandit-sling"
-        }
-      }
+      tiles = {}
     }
   },
   layers = {
@@ -5850,13 +5845,15 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {
-        ["donewhenenemiesleft"] = -1
+        ["donewhenenemiesleft"] = -1,
+        ["sequence"] = "",
+        ["titlebarcuecard"] = ""
       },
       objects = {
         {
           id = 1,
           name = "",
-          type = "",
+          type = "ContainerBarrel",
           shape = "rectangle",
           x = 40,
           y = 176,
@@ -5866,13 +5863,14 @@ return {
           gid = 2819,
           visible = true,
           properties = {
-            ["health"] = 999999999
+            ["health"] = 999999999,
+            ["name"] = "closed"
           }
         },
         {
           id = 2,
           name = "",
-          type = "",
+          type = "ContainerCrateTall",
           shape = "rectangle",
           x = 256,
           y = 160,
@@ -5888,7 +5886,7 @@ return {
         {
           id = 3,
           name = "",
-          type = "",
+          type = "ContainerCrateTall",
           shape = "rectangle",
           x = 256,
           y = 224,
@@ -5904,7 +5902,7 @@ return {
         {
           id = 4,
           name = "",
-          type = "",
+          type = "ContainerBarrel",
           shape = "rectangle",
           x = 40,
           y = 208,
@@ -5914,13 +5912,14 @@ return {
           gid = 2819,
           visible = true,
           properties = {
-            ["health"] = 999999999
+            ["health"] = 999999999,
+            ["name"] = "closed"
           }
         },
         {
           id = 5,
           name = "",
-          type = "",
+          type = "ContainerCrateTall",
           shape = "rectangle",
           x = 320,
           y = 256,
@@ -5936,7 +5935,7 @@ return {
         {
           id = 6,
           name = "",
-          type = "",
+          type = "ContainerCrateTall",
           shape = "rectangle",
           x = 384,
           y = 224,
@@ -5952,7 +5951,7 @@ return {
         {
           id = 7,
           name = "",
-          type = "",
+          type = "ContainerCrateTall",
           shape = "rectangle",
           x = 384,
           y = 160,
@@ -5968,7 +5967,7 @@ return {
         {
           id = 8,
           name = "",
-          type = "",
+          type = "ContainerCrateTall",
           shape = "rectangle",
           x = 320,
           y = 192,
@@ -5984,7 +5983,7 @@ return {
         {
           id = 9,
           name = "",
-          type = "",
+          type = "ContainerCrateTall",
           shape = "rectangle",
           x = 320,
           y = 128,
@@ -6000,7 +5999,7 @@ return {
         {
           id = 10,
           name = "",
-          type = "",
+          type = "ContainerBarrel",
           shape = "rectangle",
           x = 32,
           y = 192,
@@ -6010,7 +6009,8 @@ return {
           gid = 2819,
           visible = true,
           properties = {
-            ["health"] = 999999999
+            ["health"] = 999999999,
+            ["name"] = "closed"
           }
         }
       }
@@ -6065,7 +6065,11 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = 0,
+            ["sequence"] = "",
+            ["titlebarcuecard"] = ""
+          },
           objects = {
             {
               id = 12,
@@ -6107,13 +6111,15 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = -1
+            ["donewhenenemiesleft"] = -1,
+            ["sequence"] = "",
+            ["titlebarcuecard"] = ""
           },
           objects = {
             {
               id = 13,
               name = "",
-              type = "bandit-shield",
+              type = "ShieldBandit",
               shape = "rectangle",
               x = 368,
               y = 184,
@@ -6129,7 +6135,7 @@ return {
             {
               id = 14,
               name = "",
-              type = "bandit-sling",
+              type = "SlingBandit",
               shape = "rectangle",
               x = 464,
               y = 184,

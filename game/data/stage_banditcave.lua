@@ -9708,7 +9708,7 @@ return {
       tiles = {
         {
           id = 1,
-          type = "bandit-cave-door",
+          type = "BanditCaveDoor",
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -13642,18 +13642,18 @@ return {
       tiles = {
         {
           id = 0,
-          type = "container-barrel"
+          type = "ContainerBarrel"
         },
         {
           id = 1,
-          type = "container-barrel",
+          type = "ContainerBarrel",
           properties = {
             ["name"] = "Fall"
           }
         },
         {
           id = 2,
-          type = "container-barrel",
+          type = "ContainerBarrel",
           properties = {
             ["name"] = "closed"
           }
@@ -13690,18 +13690,18 @@ return {
       tiles = {
         {
           id = 0,
-          type = "container-barrel"
+          type = "ContainerBarrel"
         },
         {
           id = 1,
-          type = "container-barrel",
+          type = "ContainerBarrel",
           properties = {
             ["name"] = "Fall"
           }
         },
         {
           id = 2,
-          type = "container-barrel"
+          type = "ContainerBarrel"
         }
       }
     },
@@ -13814,7 +13814,7 @@ return {
         },
         {
           id = 2,
-          type = "container-crate-tall",
+          type = "ContainerCrateTall",
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -13972,7 +13972,7 @@ return {
       tiles = {
         {
           id = 0,
-          type = "furniture-table",
+          type = "WoodDiningTable",
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -14013,7 +14013,7 @@ return {
         },
         {
           id = 1,
-          type = "furniture-table",
+          type = "WoodDiningTable",
           objectGroup = {
             type = "objectgroup",
             draworder = "topdown",
@@ -14053,7 +14053,7 @@ return {
         },
         {
           id = 2,
-          type = "furniture-table",
+          type = "WoodDiningTable",
           objectGroup = {
             type = "objectgroup",
             draworder = "topdown",
@@ -14152,7 +14152,7 @@ return {
       tiles = {
         {
           id = 0,
-          type = "item-dish",
+          type = "DishItem",
           properties = {
             ["name"] = "dish-small"
           }
@@ -14213,39 +14213,39 @@ return {
       tiles = {
         {
           id = 5,
-          type = "food-medium"
+          type = "FoodMedium"
         },
         {
           id = 6,
-          type = "food-medium"
+          type = "FoodMedium"
         },
         {
           id = 8,
-          type = "food-medium"
+          type = "FoodMedium"
         },
         {
           id = 9,
-          type = "food-medium"
+          type = "FoodMedium"
         },
         {
           id = 10,
-          type = "food-medium"
+          type = "FoodMedium"
         },
         {
           id = 11,
-          type = "food-medium"
+          type = "FoodMedium"
         },
         {
           id = 13,
-          type = "food-medium"
+          type = "FoodMedium"
         },
         {
           id = 14,
-          type = "food-medium"
+          type = "FoodMedium"
         },
         {
           id = 18,
-          type = "food-medium"
+          type = "FoodMedium"
         }
       }
     },
@@ -14279,11 +14279,11 @@ return {
       tiles = {
         {
           id = 0,
-          type = "food-medium"
+          type = "FoodMedium"
         },
         {
           id = 5,
-          type = "food-small"
+          type = "FoodSmall"
         }
       }
     },
@@ -14317,51 +14317,51 @@ return {
       tiles = {
         {
           id = 0,
-          type = "food-medium"
+          type = "FoodMedium"
         },
         {
           id = 1,
-          type = "food-medium"
+          type = "FoodMedium"
         },
         {
           id = 2,
-          type = "food-medium"
+          type = "FoodMedium"
         },
         {
           id = 3,
-          type = "food-medium"
+          type = "FoodMedium"
         },
         {
           id = 4,
-          type = "food-medium"
+          type = "FoodMedium"
         },
         {
           id = 5,
-          type = "food-medium"
+          type = "FoodMedium"
         },
         {
           id = 6,
-          type = "food-large"
+          type = "FoodLarge"
         },
         {
           id = 7,
-          type = "food-large"
+          type = "FoodLarge"
         },
         {
           id = 8,
-          type = "food-large"
+          type = "FoodLarge"
         },
         {
           id = 9,
-          type = "food-large"
+          type = "FoodLarge"
         },
         {
           id = 10,
-          type = "food-large"
+          type = "FoodLarge"
         },
         {
           id = 11,
-          type = "food-large"
+          type = "FoodLarge"
         }
       }
     },
@@ -14878,67 +14878,67 @@ return {
       tiles = {
         {
           id = 0,
-          type = "container-chair"
+          type = "WoodDiningChair"
         },
         {
           id = 1,
-          type = "container-chair"
+          type = "WoodDiningChair"
         },
         {
           id = 2,
-          type = "container-chair"
+          type = "WoodDiningChair"
         },
         {
           id = 3,
-          type = "container-chair"
+          type = "WoodDiningChair"
         },
         {
           id = 4,
-          type = "container-chair"
+          type = "WoodDiningChair"
         },
         {
           id = 5,
-          type = "container-chair"
+          type = "WoodDiningChair"
         },
         {
           id = 6,
-          type = "container-chair"
+          type = "WoodDiningChair"
         },
         {
           id = 7,
-          type = "container-chair"
+          type = "WoodDiningChair"
         },
         {
           id = 8,
-          type = "container-chair"
+          type = "WoodDiningChair"
         },
         {
           id = 9,
-          type = "container-chair"
+          type = "WoodDiningChair"
         },
         {
           id = 10,
-          type = "container-chair"
+          type = "WoodDiningChair"
         },
         {
           id = 11,
-          type = "container-chair"
+          type = "WoodDiningChair"
         },
         {
           id = 12,
-          type = "container-chair"
+          type = "WoodDiningChair"
         },
         {
           id = 13,
-          type = "container-chair"
+          type = "WoodDiningChair"
         },
         {
           id = 14,
-          type = "container-chair"
+          type = "WoodDiningChair"
         },
         {
           id = 15,
-          type = "container-chair"
+          type = "WoodDiningChair"
         }
       }
     },
@@ -15039,30 +15039,30 @@ return {
       tiles = {
         {
           id = 0,
-          type = "mana-small",
+          type = "ManaSmall",
           properties = {
             ["name"] = "peppers"
           }
         },
         {
           id = 1,
-          type = "food-small"
+          type = "FoodSmall"
         },
         {
           id = 2,
-          type = "food-small"
+          type = "FoodSmall"
         },
         {
           id = 3,
-          type = "food-small"
+          type = "FoodSmall"
         },
         {
           id = 4,
-          type = "food-small"
+          type = "FoodSmall"
         },
         {
           id = 5,
-          type = "food-small"
+          type = "FoodSmall"
         }
       }
     },
@@ -15151,12 +15151,7 @@ return {
       properties = {},
       wangsets = {},
       tilecount = 1,
-      tiles = {
-        {
-          id = 0,
-          type = "bandit-bow"
-        }
-      }
+      tiles = {}
     },
     {
       name = "spear",
@@ -15214,12 +15209,7 @@ return {
       properties = {},
       wangsets = {},
       tilecount = 1,
-      tiles = {
-        {
-          id = 0,
-          type = "bandit-sling"
-        }
-      }
+      tiles = {}
     },
     {
       name = "knife",
@@ -15705,7 +15695,9 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["sequence"] = "introBanditStage"
+            ["donewhenenemiesleft"] = 0,
+            ["sequence"] = "introBanditStage",
+            ["titlebarcuecard"] = ""
           },
           objects = {
             {
@@ -15858,13 +15850,14 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = 2,
+            ["sequence"] = "",
             ["titlebarcuecard"] = "ATTACK"
           },
           objects = {
             {
               id = 15,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 1072,
               y = 160,
@@ -15880,7 +15873,7 @@ return {
             {
               id = 485,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 1176,
               y = 240,
@@ -15896,7 +15889,7 @@ return {
             {
               id = 49,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 408,
               y = 160,
@@ -15912,7 +15905,7 @@ return {
             {
               id = 48,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 464,
               y = 208,
@@ -15971,13 +15964,15 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["donewhenenemiesleft"] = 0,
+            ["sequence"] = "",
             ["titlebarcuecard"] = "GRAB ATTACK & THROW"
           },
           objects = {
             {
               id = 16,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 248,
               y = 240,
@@ -15993,7 +15988,7 @@ return {
             {
               id = 487,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 408,
               y = 200,
@@ -16009,7 +16004,7 @@ return {
             {
               id = 11,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 984,
               y = 152,
@@ -16025,7 +16020,7 @@ return {
             {
               id = 488,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 1016,
               y = 240,
@@ -16041,7 +16036,7 @@ return {
             {
               id = 486,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 272,
               y = 128,
@@ -16057,7 +16052,7 @@ return {
             {
               id = 45,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 1192,
               y = 256,
@@ -16148,6 +16143,7 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = 3,
+            ["sequence"] = "",
             ["titlebarcuecard"] = "RUNNING TACKLE"
           },
           objects = {
@@ -16171,7 +16167,7 @@ return {
             {
               id = 490,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 1048,
               y = 160,
@@ -16187,7 +16183,7 @@ return {
             {
               id = 491,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 1128,
               y = 224,
@@ -16203,7 +16199,7 @@ return {
             {
               id = 492,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 1040,
               y = 248,
@@ -16337,6 +16333,7 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = 5,
+            ["sequence"] = "",
             ["titlebarcuecard"] = "RUNNING KICK"
           },
           objects = {
@@ -16362,7 +16359,7 @@ return {
             {
               id = 52,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 1264,
               y = 192,
@@ -16378,7 +16375,7 @@ return {
             {
               id = 51,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 1296,
               y = 288,
@@ -16394,7 +16391,7 @@ return {
             {
               id = 53,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 1232,
               y = 272,
@@ -16481,13 +16478,14 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = 4,
+            ["sequence"] = "",
             ["titlebarcuecard"] = "RUN WITH ENEMY"
           },
           objects = {
             {
               id = 19,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 1184,
               y = 32,
@@ -16504,7 +16502,7 @@ return {
             {
               id = 20,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 1320,
               y = 56,
@@ -16550,13 +16548,15 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["donewhenenemiesleft"] = 0,
+            ["sequence"] = "",
             ["titlebarcuecard"] = "WALK INTO SPEAR THEN RUN"
           },
           objects = {
             {
               id = 32,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "rectangle",
               x = 1616,
               y = 216,
@@ -16572,7 +16572,7 @@ return {
             {
               id = 261,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "rectangle",
               x = 1064,
               y = 232,
@@ -16666,7 +16666,11 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = 0,
+            ["sequence"] = "",
+            ["titlebarcuecard"] = ""
+          },
           objects = {
             {
               id = 483,
@@ -16741,7 +16745,7 @@ return {
             {
               id = 530,
               name = "",
-              type = "item-stone",
+              type = "StoneItem",
               shape = "rectangle",
               x = 1504,
               y = 208,
@@ -16755,7 +16759,7 @@ return {
             {
               id = 531,
               name = "",
-              type = "item-stone",
+              type = "StoneItem",
               shape = "rectangle",
               x = 1552,
               y = 184,
@@ -16769,7 +16773,7 @@ return {
             {
               id = 532,
               name = "",
-              type = "item-stone",
+              type = "StoneItem",
               shape = "rectangle",
               x = 1648,
               y = 208,
@@ -16783,7 +16787,7 @@ return {
             {
               id = 533,
               name = "",
-              type = "item-stone",
+              type = "StoneItem",
               shape = "rectangle",
               x = 1704,
               y = 160,
@@ -16797,7 +16801,7 @@ return {
             {
               id = 534,
               name = "",
-              type = "item-stone",
+              type = "StoneItem",
               shape = "rectangle",
               x = 1480,
               y = 152,
@@ -16811,7 +16815,7 @@ return {
             {
               id = 535,
               name = "",
-              type = "item-stone",
+              type = "StoneItem",
               shape = "rectangle",
               x = 1768,
               y = 200,
@@ -16838,13 +16842,14 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = 1,
+            ["sequence"] = "",
             ["titlebarcuecard"] = "THROW SINGLE ROCKS"
           },
           objects = {
             {
               id = 58,
               name = "",
-              type = "",
+              type = "SlingBandit",
               shape = "rectangle",
               x = 1664,
               y = -40,
@@ -16855,10 +16860,11 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 10,
-                ["defaultattack"] = "sling-shot-until-empty",
+                ["defaultattack"] = "SlingShotUntilEmpty",
                 ["entrypoint"] = { id = 241 },
                 ["exitpoint"] = { id = 244 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -16866,7 +16872,7 @@ return {
             {
               id = 59,
               name = "",
-              type = "",
+              type = "SlingBandit",
               shape = "rectangle",
               x = 1728,
               y = -8,
@@ -16877,10 +16883,11 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 10,
-                ["defaultattack"] = "sling-shot-until-empty",
+                ["defaultattack"] = "SlingShotUntilEmpty",
                 ["entrypoint"] = { id = 240 },
                 ["exitpoint"] = { id = 243 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -17169,13 +17176,15 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 4
+            ["donewhenenemiesleft"] = 4,
+            ["sequence"] = "",
+            ["titlebarcuecard"] = ""
           },
           objects = {
             {
               id = 246,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 1872,
               y = 168,
@@ -17191,7 +17200,7 @@ return {
             {
               id = 248,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 1360,
               y = 200,
@@ -17207,7 +17216,7 @@ return {
             {
               id = 250,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 1872,
               y = 200,
@@ -17223,7 +17232,7 @@ return {
             {
               id = 253,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 1360,
               y = 232,
@@ -17251,13 +17260,15 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 4
+            ["donewhenenemiesleft"] = 4,
+            ["sequence"] = "",
+            ["titlebarcuecard"] = ""
           },
           objects = {
             {
               id = 87,
               name = "",
-              type = "",
+              type = "SlingBandit",
               shape = "rectangle",
               x = 1680,
               y = -8,
@@ -17268,10 +17279,11 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 10,
-                ["defaultattack"] = "sling-shot-until-empty",
+                ["defaultattack"] = "SlingShotUntilEmpty",
                 ["entrypoint"] = { id = 242 },
                 ["exitpoint"] = { id = 245 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -17321,13 +17333,15 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 4
+            ["donewhenenemiesleft"] = 4,
+            ["sequence"] = "",
+            ["titlebarcuecard"] = ""
           },
           objects = {
             {
               id = 501,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "rectangle",
               x = 1872,
               y = 232,
@@ -17356,13 +17370,14 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = 5,
+            ["sequence"] = "",
             ["titlebarcuecard"] = "THROW MULTIPLE ROCKS"
           },
           objects = {
             {
               id = 494,
               name = "",
-              type = "",
+              type = "SlingBandit",
               shape = "rectangle",
               x = 1584,
               y = -8,
@@ -17373,13 +17388,14 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 10,
-                ["defaultattack"] = "sling-shot-until-empty",
+                ["defaultattack"] = "SlingShotUntilEmpty",
                 ["entrypoint"] = { id = 495 },
                 ["exitpoint"] = { id = 496 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "food-fish",
+                ["itemtype"] = "FoodFish",
                 ["itemvelx"] = 0,
                 ["itemvely"] = 12,
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -17387,7 +17403,7 @@ return {
             {
               id = 498,
               name = "",
-              type = "",
+              type = "SlingBandit",
               shape = "rectangle",
               x = 1776,
               y = -8,
@@ -17398,13 +17414,14 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 10,
-                ["defaultattack"] = "sling-shot-until-empty",
+                ["defaultattack"] = "SlingShotUntilEmpty",
                 ["entrypoint"] = { id = 497 },
                 ["exitpoint"] = { id = 499 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "food-fish",
+                ["itemtype"] = "FoodFish",
                 ["itemvelx"] = 0,
                 ["itemvely"] = 12,
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -17483,12 +17500,16 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = 0,
+            ["sequence"] = "",
+            ["titlebarcuecard"] = ""
+          },
           objects = {
             {
               id = 41,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "rectangle",
               x = 1360,
               y = 264,
@@ -17504,7 +17525,7 @@ return {
             {
               id = 62,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "rectangle",
               x = 1872,
               y = 232,
@@ -17531,7 +17552,11 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = 0,
+            ["sequence"] = "",
+            ["titlebarcuecard"] = ""
+          },
           objects = {
             {
               id = 65,
@@ -17602,7 +17627,7 @@ return {
             {
               id = 235,
               name = "exitdoor",
-              type = "",
+              type = "BanditCaveDoor",
               shape = "rectangle",
               x = 2048,
               y = 128,
@@ -17632,7 +17657,7 @@ return {
             {
               id = 267,
               name = "",
-              type = "",
+              type = "ContainerBarrel",
               shape = "rectangle",
               x = 2120,
               y = 264,
@@ -17642,13 +17667,14 @@ return {
               gid = 6583,
               visible = true,
               properties = {
-                ["itemtype"] = "food-fish"
+                ["itemtype"] = "FoodFish",
+                ["name"] = "closed"
               }
             },
             {
               id = 270,
               name = "",
-              type = "",
+              type = "ContainerBarrel",
               shape = "rectangle",
               x = 1976,
               y = 104,
@@ -17658,13 +17684,14 @@ return {
               gid = 6583,
               visible = true,
               properties = {
-                ["itemtype"] = "food-fish"
+                ["itemtype"] = "FoodFish",
+                ["name"] = "closed"
               }
             },
             {
               id = 268,
               name = "",
-              type = "",
+              type = "ContainerBarrel",
               shape = "rectangle",
               x = 2128,
               y = 232,
@@ -17674,13 +17701,13 @@ return {
               gid = 6586,
               visible = true,
               properties = {
-                ["itemtype"] = "mana-peppers"
+                ["itemtype"] = "ManaPeppers"
               }
             },
             {
               id = 269,
               name = "",
-              type = "",
+              type = "ContainerBarrel",
               shape = "rectangle",
               x = 2008,
               y = 112,
@@ -17690,7 +17717,7 @@ return {
               gid = 6586,
               visible = true,
               properties = {
-                ["itemtype"] = "mana-peppers"
+                ["itemtype"] = "ManaPeppers"
               }
             },
             {
@@ -17739,13 +17766,15 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["donewhenenemiesleft"] = 0,
+            ["sequence"] = "",
             ["titlebarcuecard"] = "CATCH AND THROW ARROW, LV1 FIREBALL"
           },
           objects = {
             {
               id = 254,
               name = "",
-              type = "",
+              type = "BowBandit",
               shape = "rectangle",
               x = 2080,
               y = 0,
@@ -17756,10 +17785,11 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 10,
-                ["defaultattack"] = "bow-shot-until-empty",
+                ["defaultattack"] = "BowShotUntilEmpty",
                 ["entrypoint"] = { id = 255 },
                 ["exitpoint"] = { id = 256 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -17797,7 +17827,7 @@ return {
             {
               id = 257,
               name = "",
-              type = "",
+              type = "BowBandit",
               shape = "rectangle",
               x = 2192,
               y = 72,
@@ -17808,10 +17838,11 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 10,
-                ["defaultattack"] = "bow-shot-until-empty",
+                ["defaultattack"] = "BowShotUntilEmpty",
                 ["entrypoint"] = { id = 258 },
                 ["exitpoint"] = { id = 259 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -17849,7 +17880,7 @@ return {
             {
               id = 307,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "rectangle",
               x = 1568,
               y = 256,
@@ -17865,7 +17896,7 @@ return {
             {
               id = 503,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "rectangle",
               x = 1880,
               y = -8,
@@ -17882,7 +17913,7 @@ return {
             {
               id = 308,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "rectangle",
               x = 1936,
               y = -8,
@@ -18107,7 +18138,8 @@ return {
           properties = {
             ["donewhenenemiesleft"] = -1,
             ["exitdoor"] = { id = 235 },
-            ["sequence"] = "unlockDoorToNextArea"
+            ["sequence"] = "unlockDoorToNextArea",
+            ["titlebarcuecard"] = ""
           },
           objects = {
             {
@@ -18340,7 +18372,7 @@ return {
             {
               id = 105,
               name = "",
-              type = "",
+              type = "BowBandit",
               shape = "rectangle",
               x = 2592,
               y = 32,
@@ -18350,9 +18382,11 @@ return {
               gid = 7257,
               visible = true,
               properties = {
+                ["ammo"] = 10,
                 ["entrypoint"] = { id = 273 },
                 ["facedegrees"] = 90,
-                ["initialai"] = "enterAndPrepareBowAmbush"
+                ["initialai"] = "enterAndPrepareBowAmbush",
+                ["propertiestable"] = "database/bandits-properties.csv"
               }
             },
             {
@@ -18403,7 +18437,7 @@ return {
             {
               id = 274,
               name = "",
-              type = "",
+              type = "BowBandit",
               shape = "rectangle",
               x = 2720,
               y = 32,
@@ -18413,9 +18447,11 @@ return {
               gid = 7257,
               visible = true,
               properties = {
+                ["ammo"] = 10,
                 ["entrypoint"] = { id = 275 },
                 ["facedegrees"] = 90,
-                ["initialai"] = "enterAndPrepareBowAmbush"
+                ["initialai"] = "enterAndPrepareBowAmbush",
+                ["propertiestable"] = "database/bandits-properties.csv"
               }
             },
             {
@@ -18434,7 +18470,7 @@ return {
             {
               id = 280,
               name = "",
-              type = "",
+              type = "BowBandit",
               shape = "rectangle",
               x = 2656,
               y = 256,
@@ -18444,15 +18480,17 @@ return {
               gid = 7257,
               visible = true,
               properties = {
+                ["ammo"] = 10,
                 ["entrypoint"] = { id = 281 },
                 ["facedegrees"] = 270,
-                ["initialai"] = "enterAndPrepareBowAmbush"
+                ["initialai"] = "enterAndPrepareBowAmbush",
+                ["propertiestable"] = "database/bandits-properties.csv"
               }
             },
             {
               id = 282,
               name = "",
-              type = "",
+              type = "BowBandit",
               shape = "rectangle",
               x = 2784,
               y = 264,
@@ -18462,9 +18500,11 @@ return {
               gid = 7257,
               visible = true,
               properties = {
+                ["ammo"] = 10,
                 ["entrypoint"] = { id = 283 },
                 ["facedegrees"] = 270,
-                ["initialai"] = "enterAndPrepareBowAmbush"
+                ["initialai"] = "enterAndPrepareBowAmbush",
+                ["propertiestable"] = "database/bandits-properties.csv"
               }
             },
             {
@@ -18496,7 +18536,7 @@ return {
             {
               id = 286,
               name = "",
-              type = "",
+              type = "BowBandit",
               shape = "rectangle",
               x = 2848,
               y = 32,
@@ -18506,9 +18546,11 @@ return {
               gid = 7257,
               visible = true,
               properties = {
+                ["ammo"] = 10,
                 ["entrypoint"] = { id = 287 },
                 ["facedegrees"] = 90,
-                ["initialai"] = "enterAndPrepareBowAmbush"
+                ["initialai"] = "enterAndPrepareBowAmbush",
+                ["propertiestable"] = "database/bandits-properties.csv"
               }
             },
             {
@@ -18527,7 +18569,7 @@ return {
             {
               id = 299,
               name = "",
-              type = "",
+              type = "ContainerCrateTall",
               shape = "rectangle",
               x = 3192,
               y = 144,
@@ -18537,13 +18579,13 @@ return {
               gid = 6589,
               visible = true,
               properties = {
-                ["itemtype"] = "food-fish"
+                ["itemtype"] = "FoodFish"
               }
             },
             {
               id = 306,
               name = "",
-              type = "",
+              type = "ContainerCrateTall",
               shape = "rectangle",
               x = 3280,
               y = 128,
@@ -18553,13 +18595,13 @@ return {
               gid = 6589,
               visible = true,
               properties = {
-                ["itemtype"] = "item-throwing-axe"
+                ["itemtype"] = "AxeItem"
               }
             },
             {
               id = 300,
               name = "",
-              type = "",
+              type = "ContainerCrateTall",
               shape = "rectangle",
               x = 3184,
               y = 168,
@@ -18569,13 +18611,13 @@ return {
               gid = 6589,
               visible = true,
               properties = {
-                ["itemtype"] = "mana-peppers"
+                ["itemtype"] = "ManaPeppers"
               }
             },
             {
               id = 305,
               name = "",
-              type = "",
+              type = "ContainerCrateTall",
               shape = "rectangle",
               x = 3296,
               y = 160,
@@ -18585,13 +18627,13 @@ return {
               gid = 6589,
               visible = true,
               properties = {
-                ["itemtype"] = "food-fish"
+                ["itemtype"] = "FoodFish"
               }
             },
             {
               id = 301,
               name = "",
-              type = "",
+              type = "ContainerCrateTall",
               shape = "rectangle",
               x = 3248,
               y = 160,
@@ -18601,13 +18643,13 @@ return {
               gid = 6589,
               visible = true,
               properties = {
-                ["itemtype"] = "mana-peppers"
+                ["itemtype"] = "ManaPeppers"
               }
             },
             {
               id = 304,
               name = "",
-              type = "",
+              type = "ContainerCrateTall",
               shape = "rectangle",
               x = 3328,
               y = 176,
@@ -18617,13 +18659,13 @@ return {
               gid = 6589,
               visible = true,
               properties = {
-                ["itemtype"] = "food-fish"
+                ["itemtype"] = "FoodFish"
               }
             },
             {
               id = 302,
               name = "",
-              type = "",
+              type = "ContainerCrateTall",
               shape = "rectangle",
               x = 3232,
               y = 128,
@@ -18633,13 +18675,13 @@ return {
               gid = 6589,
               visible = true,
               properties = {
-                ["itemtype"] = "food-fish"
+                ["itemtype"] = "FoodFish"
               }
             },
             {
               id = 303,
               name = "",
-              type = "",
+              type = "ContainerCrateTall",
               shape = "rectangle",
               x = 3336,
               y = 144,
@@ -18649,7 +18691,7 @@ return {
               gid = 6589,
               visible = true,
               properties = {
-                ["itemtype"] = "item-throwing-axe"
+                ["itemtype"] = "AxeItem"
               }
             },
             {
@@ -18875,13 +18917,14 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = 2,
+            ["sequence"] = "",
             ["titlebarcuecard"] = "LV2 FIREBALL"
           },
           objects = {
             {
               id = 291,
               name = "",
-              type = "",
+              type = "BowBandit",
               shape = "rectangle",
               x = 3264,
               y = -48,
@@ -18892,13 +18935,14 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 10,
-                ["defaultattack"] = "bow-shot-until-empty",
+                ["defaultattack"] = "BowShotUntilEmpty",
                 ["entrypoint"] = { id = 294 },
                 ["exitpoint"] = { id = 296 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "food-fish",
+                ["itemtype"] = "FoodFish",
                 ["itemvelx"] = 0,
                 ["itemvely"] = 4,
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -18906,7 +18950,7 @@ return {
             {
               id = 292,
               name = "",
-              type = "",
+              type = "BowBandit",
               shape = "rectangle",
               x = 3264,
               y = -16,
@@ -18917,13 +18961,14 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 10,
-                ["defaultattack"] = "bow-shot-until-empty",
+                ["defaultattack"] = "BowShotUntilEmpty",
                 ["entrypoint"] = { id = 293 },
                 ["exitpoint"] = { id = 295 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "food-fish",
+                ["itemtype"] = "FoodFish",
                 ["itemvelx"] = 0,
                 ["itemvely"] = 4,
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -18991,7 +19036,7 @@ return {
             {
               id = 101,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 3376,
               y = 192,
@@ -19007,7 +19052,7 @@ return {
             {
               id = 510,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 3408,
               y = 256,
@@ -19034,12 +19079,16 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = 0,
+            ["sequence"] = "",
+            ["titlebarcuecard"] = ""
+          },
           objects = {
             {
               id = 96,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "rectangle",
               x = 3344,
               y = 328,
@@ -19055,7 +19104,7 @@ return {
             {
               id = 103,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "rectangle",
               x = 3056,
               y = 328,
@@ -19082,7 +19131,11 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = 0,
+            ["sequence"] = "",
+            ["titlebarcuecard"] = ""
+          },
           objects = {
             {
               id = 79,
@@ -19169,7 +19222,7 @@ return {
             {
               id = 393,
               name = "",
-              type = "forge-fire",
+              type = "ForgeFire",
               shape = "ellipse",
               x = 3584,
               y = 16,
@@ -19220,7 +19273,7 @@ return {
             {
               id = 418,
               name = "",
-              type = "item-throwing-axe",
+              type = "AxeItem",
               shape = "rectangle",
               x = 3540,
               y = 66,
@@ -19234,7 +19287,7 @@ return {
             {
               id = 419,
               name = "",
-              type = "item-throwing-axe",
+              type = "AxeItem",
               shape = "rectangle",
               x = 3584,
               y = 78,
@@ -19248,7 +19301,7 @@ return {
             {
               id = 420,
               name = "",
-              type = "item-throwing-axe",
+              type = "AxeItem",
               shape = "rectangle",
               x = 3624,
               y = 68,
@@ -19275,6 +19328,7 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = 2,
+            ["sequence"] = "",
             ["titlebarcuecard"] = "THROW ENEMY INTO FIRE"
           },
           objects = {
@@ -19298,7 +19352,7 @@ return {
             {
               id = 397,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "rectangle",
               x = 3808,
               y = 120,
@@ -19314,7 +19368,7 @@ return {
             {
               id = 398,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "rectangle",
               x = 3768,
               y = 208,
@@ -19330,7 +19384,7 @@ return {
             {
               id = 506,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "rectangle",
               x = 3712,
               y = 272,
@@ -19346,7 +19400,7 @@ return {
             {
               id = 507,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "rectangle",
               x = 3640,
               y = 328,
@@ -19374,13 +19428,15 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["donewhenenemiesleft"] = 0,
+            ["sequence"] = "",
             ["titlebarcuecard"] = "LV2 REVENGE"
           },
           objects = {
             {
               id = 383,
               name = "",
-              type = "bandit-axe",
+              type = "AxeBandit",
               shape = "rectangle",
               x = 3864,
               y = 120,
@@ -19396,7 +19452,7 @@ return {
             {
               id = 384,
               name = "",
-              type = "bandit-axe",
+              type = "AxeBandit",
               shape = "rectangle",
               x = 3864,
               y = 216,
@@ -19423,7 +19479,11 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = 0,
+            ["sequence"] = "",
+            ["titlebarcuecard"] = ""
+          },
           objects = {
             {
               id = 484,
@@ -19445,7 +19505,7 @@ return {
             {
               id = 320,
               name = "",
-              type = "",
+              type = "WoodDiningTable",
               shape = "rectangle",
               x = 3928,
               y = 240,
@@ -19461,7 +19521,7 @@ return {
             {
               id = 327,
               name = "",
-              type = "",
+              type = "WoodDiningChair",
               shape = "rectangle",
               x = 3872,
               y = 264,
@@ -19477,7 +19537,7 @@ return {
             {
               id = 328,
               name = "",
-              type = "",
+              type = "WoodDiningChair",
               shape = "rectangle",
               x = 3976,
               y = 272,
@@ -19493,7 +19553,7 @@ return {
             {
               id = 370,
               name = "",
-              type = "",
+              type = "DishItem",
               shape = "rectangle",
               x = 3912,
               y = 224,
@@ -19503,13 +19563,14 @@ return {
               gid = 6613,
               visible = true,
               properties = {
+                ["name"] = "dish-small",
                 ["z"] = 16
               }
             },
             {
               id = 371,
               name = "",
-              type = "",
+              type = "DishItem",
               shape = "rectangle",
               x = 3952,
               y = 232,
@@ -19519,13 +19580,14 @@ return {
               gid = 6613,
               visible = true,
               properties = {
+                ["name"] = "dish-small",
                 ["z"] = 16
               }
             },
             {
               id = 378,
               name = "",
-              type = "",
+              type = "FoodSmall",
               shape = "rectangle",
               x = 3910,
               y = 232,
@@ -19541,7 +19603,7 @@ return {
             {
               id = 380,
               name = "",
-              type = "",
+              type = "ManaSmall",
               shape = "rectangle",
               x = 3954,
               y = 234,
@@ -19551,6 +19613,7 @@ return {
               gid = 7248,
               visible = true,
               properties = {
+                ["name"] = "peppers",
                 ["z"] = 18
               }
             }
@@ -19569,7 +19632,9 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 3
+            ["donewhenenemiesleft"] = 3,
+            ["sequence"] = "",
+            ["titlebarcuecard"] = ""
           },
           objects = {
             {
@@ -19619,7 +19684,7 @@ return {
             {
               id = 318,
               name = "",
-              type = "",
+              type = "WoodDiningTable",
               shape = "rectangle",
               x = 4008,
               y = 104,
@@ -19635,7 +19700,7 @@ return {
             {
               id = 319,
               name = "",
-              type = "",
+              type = "WoodDiningTable",
               shape = "rectangle",
               x = 4128,
               y = 112,
@@ -19651,7 +19716,7 @@ return {
             {
               id = 321,
               name = "",
-              type = "",
+              type = "WoodDiningTable",
               shape = "rectangle",
               x = 4064,
               y = 232,
@@ -19667,7 +19732,7 @@ return {
             {
               id = 322,
               name = "",
-              type = "",
+              type = "WoodDiningTable",
               shape = "rectangle",
               x = 4208,
               y = 224,
@@ -19683,7 +19748,7 @@ return {
             {
               id = 323,
               name = "",
-              type = "",
+              type = "WoodDiningTable",
               shape = "rectangle",
               x = 4256,
               y = 96,
@@ -19699,7 +19764,7 @@ return {
             {
               id = 324,
               name = "",
-              type = "",
+              type = "WoodDiningChair",
               shape = "rectangle",
               x = 4096,
               y = 80,
@@ -19715,7 +19780,7 @@ return {
             {
               id = 325,
               name = "",
-              type = "",
+              type = "WoodDiningChair",
               shape = "rectangle",
               x = 4216,
               y = 64,
@@ -19731,7 +19796,7 @@ return {
             {
               id = 326,
               name = "",
-              type = "",
+              type = "WoodDiningChair",
               shape = "rectangle",
               x = 4168,
               y = 264,
@@ -19747,7 +19812,7 @@ return {
             {
               id = 329,
               name = "",
-              type = "",
+              type = "WoodDiningChair",
               shape = "rectangle",
               x = 4096,
               y = 272,
@@ -19763,7 +19828,7 @@ return {
             {
               id = 330,
               name = "",
-              type = "",
+              type = "WoodDiningChair",
               shape = "rectangle",
               x = 4024,
               y = 264,
@@ -19779,7 +19844,7 @@ return {
             {
               id = 331,
               name = "",
-              type = "",
+              type = "WoodDiningChair",
               shape = "rectangle",
               x = 4248,
               y = 272,
@@ -19795,7 +19860,7 @@ return {
             {
               id = 332,
               name = "",
-              type = "",
+              type = "WoodDiningChair",
               shape = "rectangle",
               x = 4168,
               y = 72,
@@ -19811,7 +19876,7 @@ return {
             {
               id = 333,
               name = "",
-              type = "",
+              type = "WoodDiningChair",
               shape = "rectangle",
               x = 4296,
               y = 72,
@@ -19827,7 +19892,7 @@ return {
             {
               id = 334,
               name = "",
-              type = "",
+              type = "WoodDiningChair",
               shape = "rectangle",
               x = 3976,
               y = 64,
@@ -19841,7 +19906,7 @@ return {
             {
               id = 335,
               name = "",
-              type = "",
+              type = "WoodDiningChair",
               shape = "rectangle",
               x = 4048,
               y = 72,
@@ -19857,7 +19922,7 @@ return {
             {
               id = 336,
               name = "",
-              type = "",
+              type = "SlingBandit",
               shape = "rectangle",
               x = 4016,
               y = 72,
@@ -19868,15 +19933,16 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
-                ["defaultattack"] = "sling-shot-until-empty",
+                ["defaultattack"] = "SlingShotUntilEmpty",
                 ["initialai"] = "enterAndAttackUntilEmpty",
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty"
               }
             },
             {
               id = 337,
               name = "",
-              type = "",
+              type = "SlingBandit",
               shape = "rectangle",
               x = 4136,
               y = 80,
@@ -19887,15 +19953,16 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
-                ["defaultattack"] = "sling-shot-until-empty",
+                ["defaultattack"] = "SlingShotUntilEmpty",
                 ["initialai"] = "enterAndAttackUntilEmpty",
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty"
               }
             },
             {
               id = 338,
               name = "",
-              type = "",
+              type = "BowBandit",
               shape = "rectangle",
               x = 4256,
               y = 72,
@@ -19906,15 +19973,16 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
-                ["defaultattack"] = "bow-shot-until-empty",
+                ["defaultattack"] = "BowShotUntilEmpty",
                 ["initialai"] = "enterAndAttackUntilEmpty",
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty"
               }
             },
             {
               id = 359,
               name = "",
-              type = "",
+              type = "DishItem",
               shape = "rectangle",
               x = 3984,
               y = 88,
@@ -19924,13 +19992,14 @@ return {
               gid = 6613,
               visible = true,
               properties = {
+                ["name"] = "dish-small",
                 ["z"] = 16
               }
             },
             {
               id = 362,
               name = "",
-              type = "",
+              type = "DishItem",
               shape = "rectangle",
               x = 4048,
               y = 224,
@@ -19940,13 +20009,14 @@ return {
               gid = 6613,
               visible = true,
               properties = {
+                ["name"] = "dish-small",
                 ["z"] = 16
               }
             },
             {
               id = 360,
               name = "",
-              type = "",
+              type = "DishItem",
               shape = "rectangle",
               x = 4024,
               y = 96,
@@ -19956,13 +20026,14 @@ return {
               gid = 6613,
               visible = true,
               properties = {
+                ["name"] = "dish-small",
                 ["z"] = 16
               }
             },
             {
               id = 361,
               name = "",
-              type = "",
+              type = "DishItem",
               shape = "rectangle",
               x = 4088,
               y = 216,
@@ -19972,13 +20043,14 @@ return {
               gid = 6613,
               visible = true,
               properties = {
+                ["name"] = "dish-small",
                 ["z"] = 16
               }
             },
             {
               id = 363,
               name = "",
-              type = "",
+              type = "FoodMedium",
               shape = "rectangle",
               x = 3984,
               y = 96,
@@ -19994,7 +20066,7 @@ return {
             {
               id = 364,
               name = "",
-              type = "",
+              type = "FoodSmall",
               shape = "rectangle",
               x = 4024,
               y = 104,
@@ -20010,7 +20082,7 @@ return {
             {
               id = 365,
               name = "",
-              type = "",
+              type = "FoodMedium",
               shape = "rectangle",
               x = 4056,
               y = 224,
@@ -20026,7 +20098,7 @@ return {
             {
               id = 366,
               name = "",
-              type = "",
+              type = "DishItem",
               shape = "rectangle",
               x = 4104,
               y = 96,
@@ -20036,13 +20108,14 @@ return {
               gid = 6613,
               visible = true,
               properties = {
+                ["name"] = "dish-small",
                 ["z"] = 16
               }
             },
             {
               id = 367,
               name = "",
-              type = "",
+              type = "DishItem",
               shape = "rectangle",
               x = 4144,
               y = 104,
@@ -20052,13 +20125,14 @@ return {
               gid = 6613,
               visible = true,
               properties = {
+                ["name"] = "dish-small",
                 ["z"] = 16
               }
             },
             {
               id = 368,
               name = "",
-              type = "",
+              type = "DishItem",
               shape = "rectangle",
               x = 4240,
               y = 88,
@@ -20068,13 +20142,14 @@ return {
               gid = 6613,
               visible = true,
               properties = {
+                ["name"] = "dish-small",
                 ["z"] = 16
               }
             },
             {
               id = 369,
               name = "",
-              type = "",
+              type = "DishItem",
               shape = "rectangle",
               x = 4280,
               y = 80,
@@ -20084,13 +20159,14 @@ return {
               gid = 6613,
               visible = true,
               properties = {
+                ["name"] = "dish-small",
                 ["z"] = 16
               }
             },
             {
               id = 372,
               name = "",
-              type = "",
+              type = "DishItem",
               shape = "rectangle",
               x = 4184,
               y = 216,
@@ -20100,13 +20176,14 @@ return {
               gid = 6613,
               visible = true,
               properties = {
+                ["name"] = "dish-small",
                 ["z"] = 16
               }
             },
             {
               id = 373,
               name = "",
-              type = "",
+              type = "DishItem",
               shape = "rectangle",
               x = 4224,
               y = 216,
@@ -20116,13 +20193,14 @@ return {
               gid = 6613,
               visible = true,
               properties = {
+                ["name"] = "dish-small",
                 ["z"] = 16
               }
             },
             {
               id = 374,
               name = "",
-              type = "",
+              type = "FoodMedium",
               shape = "rectangle",
               x = 4108,
               y = 98,
@@ -20138,7 +20216,7 @@ return {
             {
               id = 375,
               name = "",
-              type = "",
+              type = "ManaSmall",
               shape = "rectangle",
               x = 4144,
               y = 104,
@@ -20148,13 +20226,14 @@ return {
               gid = 7248,
               visible = true,
               properties = {
+                ["name"] = "peppers",
                 ["z"] = 18
               }
             },
             {
               id = 376,
               name = "",
-              type = "",
+              type = "FoodMedium",
               shape = "rectangle",
               x = 4288,
               y = 80,
@@ -20170,7 +20249,7 @@ return {
             {
               id = 377,
               name = "",
-              type = "",
+              type = "FoodSmall",
               shape = "rectangle",
               x = 4240,
               y = 96,
@@ -20186,7 +20265,7 @@ return {
             {
               id = 381,
               name = "",
-              type = "",
+              type = "ManaSmall",
               shape = "rectangle",
               x = 4184,
               y = 216,
@@ -20196,13 +20275,14 @@ return {
               gid = 7248,
               visible = true,
               properties = {
+                ["name"] = "peppers",
                 ["z"] = 18
               }
             },
             {
               id = 379,
               name = "",
-              type = "",
+              type = "FoodMedium",
               shape = "rectangle",
               x = 4220,
               y = 224,
@@ -20218,7 +20298,7 @@ return {
             {
               id = 382,
               name = "",
-              type = "",
+              type = "FoodMedium",
               shape = "rectangle",
               x = 4085,
               y = 224,
@@ -20246,13 +20326,15 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 4
+            ["donewhenenemiesleft"] = 4,
+            ["sequence"] = "",
+            ["titlebarcuecard"] = ""
           },
           objects = {
             {
               id = 339,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 3824,
               y = 176,
@@ -20268,7 +20350,7 @@ return {
             {
               id = 511,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 3752,
               y = 216,
@@ -20284,7 +20366,7 @@ return {
             {
               id = 340,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 4336,
               y = 176,
@@ -20300,7 +20382,7 @@ return {
             {
               id = 512,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "rectangle",
               x = 4416,
               y = 136,
@@ -20328,13 +20410,15 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 5
+            ["donewhenenemiesleft"] = 5,
+            ["sequence"] = "",
+            ["titlebarcuecard"] = ""
           },
           objects = {
             {
               id = 343,
               name = "",
-              type = "",
+              type = "SlingBandit",
               shape = "rectangle",
               x = 4208,
               y = 328,
@@ -20345,9 +20429,10 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
-                ["defaultattack"] = "sling-shot-until-empty",
+                ["defaultattack"] = "SlingShotUntilEmpty",
                 ["entrypoint"] = { id = 346 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty"
               }
             },
@@ -20367,7 +20452,7 @@ return {
             {
               id = 347,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "rectangle",
               x = 3824,
               y = 144,
@@ -20395,13 +20480,15 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 5
+            ["donewhenenemiesleft"] = 5,
+            ["sequence"] = "",
+            ["titlebarcuecard"] = ""
           },
           objects = {
             {
               id = 342,
               name = "",
-              type = "",
+              type = "SlingBandit",
               shape = "rectangle",
               x = 4064,
               y = 328,
@@ -20412,9 +20499,10 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
-                ["defaultattack"] = "sling-shot-until-empty",
+                ["defaultattack"] = "SlingShotUntilEmpty",
                 ["entrypoint"] = { id = 345 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty"
               }
             },
@@ -20434,7 +20522,7 @@ return {
             {
               id = 348,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "rectangle",
               x = 4336,
               y = 144,
@@ -20462,13 +20550,15 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["donewhenenemiesleft"] = 0,
+            ["sequence"] = "",
             ["titlebarcuecard"] = "LV3 REVENGE"
           },
           objects = {
             {
               id = 341,
               name = "",
-              type = "",
+              type = "BowBandit",
               shape = "rectangle",
               x = 3928,
               y = 328,
@@ -20479,9 +20569,10 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
-                ["defaultattack"] = "bow-shot-until-empty",
+                ["defaultattack"] = "BowShotUntilEmpty",
                 ["entrypoint"] = { id = 344 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty"
               }
             },
@@ -20501,7 +20592,7 @@ return {
             {
               id = 349,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "rectangle",
               x = 3824,
               y = 216,
@@ -20517,7 +20608,7 @@ return {
             {
               id = 350,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "rectangle",
               x = 4336,
               y = 216,
@@ -20544,7 +20635,11 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = 0,
+            ["sequence"] = "",
+            ["titlebarcuecard"] = ""
+          },
           objects = {
             {
               id = 76,
@@ -20690,13 +20785,15 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["donewhenenemiesleft"] = 0,
+            ["sequence"] = "",
             ["titlebarcuecard"] = "AVOID BOSS ENTRY ATTACK"
           },
           objects = {
             {
               id = 231,
               name = "",
-              type = "bandit-boss",
+              type = "BossBandit",
               shape = "rectangle",
               x = 5296,
               y = 168,
@@ -20707,7 +20804,7 @@ return {
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
-                ["initialai"] = "bandit-boss-first-charge",
+                ["initialai"] = "BossIntroCharge",
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
             }
@@ -20725,12 +20822,16 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = 0,
+            ["sequence"] = "",
+            ["titlebarcuecard"] = ""
+          },
           objects = {
             {
               id = 409,
               name = "",
-              type = "",
+              type = "SlingBandit",
               shape = "rectangle",
               x = 5040,
               y = -40,
@@ -20741,13 +20842,14 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 20,
-                ["defaultattack"] = "sling-shot-until-empty",
+                ["defaultattack"] = "SlingShotUntilEmpty",
                 ["entrypoint"] = { id = 412 },
                 ["exitpoint"] = { id = 415 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "mana-peppers",
+                ["itemtype"] = "ManaPeppers",
                 ["itemvelx"] = 0,
                 ["itemvely"] = 5,
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -20755,7 +20857,7 @@ return {
             {
               id = 411,
               name = "",
-              type = "",
+              type = "SlingBandit",
               shape = "rectangle",
               x = 5136,
               y = -8,
@@ -20766,13 +20868,14 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 20,
-                ["defaultattack"] = "sling-shot-until-empty",
+                ["defaultattack"] = "SlingShotUntilEmpty",
                 ["entrypoint"] = { id = 414 },
                 ["exitpoint"] = { id = 417 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "food-fish",
+                ["itemtype"] = "FoodFish",
                 ["itemvelx"] = 0,
                 ["itemvely"] = 5,
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -20847,12 +20950,16 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = 0,
+            ["sequence"] = "",
+            ["titlebarcuecard"] = ""
+          },
           objects = {
             {
               id = 400,
               name = "",
-              type = "",
+              type = "BowBandit",
               shape = "rectangle",
               x = 4992,
               y = -40,
@@ -20863,13 +20970,14 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 20,
-                ["defaultattack"] = "bow-shot-until-empty",
+                ["defaultattack"] = "BowShotUntilEmpty",
                 ["entrypoint"] = { id = 401 },
                 ["exitpoint"] = { id = 402 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "mana-peppers",
+                ["itemtype"] = "ManaPeppers",
                 ["itemvelx"] = 0,
                 ["itemvely"] = 5,
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -20877,7 +20985,7 @@ return {
             {
               id = 403,
               name = "",
-              type = "",
+              type = "SlingBandit",
               shape = "rectangle",
               x = 5088,
               y = -72,
@@ -20888,13 +20996,14 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 20,
-                ["defaultattack"] = "sling-shot-until-empty",
+                ["defaultattack"] = "SlingShotUntilEmpty",
                 ["entrypoint"] = { id = 404 },
                 ["exitpoint"] = { id = 405 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "food-fish",
+                ["itemtype"] = "FoodFish",
                 ["itemvelx"] = 0,
                 ["itemvely"] = 5,
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -20902,7 +21011,7 @@ return {
             {
               id = 406,
               name = "",
-              type = "",
+              type = "BowBandit",
               shape = "rectangle",
               x = 5184,
               y = -8,
@@ -20913,13 +21022,14 @@ return {
               visible = true,
               properties = {
                 ["ammo"] = 20,
-                ["defaultattack"] = "bow-shot-until-empty",
+                ["defaultattack"] = "BowShotUntilEmpty",
                 ["entrypoint"] = { id = 407 },
                 ["exitpoint"] = { id = 408 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "mana-peppers",
+                ["itemtype"] = "ManaPeppers",
                 ["itemvelx"] = 0,
                 ["itemvely"] = 5,
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -21037,7 +21147,11 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = 0,
+            ["sequence"] = "",
+            ["titlebarcuecard"] = ""
+          },
           objects = {
             {
               id = 70,

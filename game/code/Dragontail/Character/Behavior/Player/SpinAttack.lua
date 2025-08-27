@@ -38,7 +38,7 @@ function PlayerSpinAttack:fixedupdate()
     if projectile then
         local projectileangle = attackangle + math.pi
         local cosangle, sinangle = math.cos(projectileangle), math.sin(projectileangle)
-        Shoot.launchProjectile(player, "spark-spit-fireball", cosangle, sinangle, 0)
+        Shoot.launchProjectile(player, "SparkSpitFireball", cosangle, sinangle, 0)
         Shoot.launchProjectile(player, projectile, cosangle, sinangle, 0)
     end
 

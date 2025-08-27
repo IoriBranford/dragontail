@@ -72,7 +72,7 @@ function ShieldBandit:duringGuardHit(attacker, t)
     if self.numguardedhits >= GuardHitsUntilCounter then
         self.numguardedhits = nil
         Face.faceObject(self, attacker)
-        return "shield-bash", attacker
+        return "ShieldBash", attacker
     elseif self.numguardedhits + 1 >= GuardHitsUntilCounter then
         self.color = self:getAttackFlashColor(t, true)
     end

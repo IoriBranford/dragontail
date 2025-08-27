@@ -2903,7 +2903,7 @@ return {
             {
               id = 12,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 832,
               y = 144,
@@ -2918,7 +2918,7 @@ return {
             {
               id = 31,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 64,
               y = 144,
@@ -2933,7 +2933,7 @@ return {
             {
               id = 13,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 800,
               y = 208,
@@ -2948,7 +2948,7 @@ return {
             {
               id = 30,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 96,
               y = 208,
@@ -2963,7 +2963,7 @@ return {
             {
               id = 32,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 32,
               y = 208,
@@ -2978,7 +2978,7 @@ return {
             {
               id = 14,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 832,
               y = 272,
@@ -2993,7 +2993,7 @@ return {
             {
               id = 29,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 64,
               y = 272,
@@ -3026,7 +3026,7 @@ return {
             {
               id = 8,
               name = "",
-              type = "food-fish",
+              type = "FoodFish",
               shape = "point",
               x = 800,
               y = 96,
@@ -3041,7 +3041,7 @@ return {
             {
               id = 9,
               name = "",
-              type = "food-container",
+              type = "FoodContainer",
               shape = "point",
               x = 800,
               y = 112,
@@ -3091,7 +3091,7 @@ return {
             {
               id = 19,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "point",
               x = 1184,
               y = 208,
@@ -3106,7 +3106,7 @@ return {
             {
               id = 36,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "point",
               x = 480,
               y = 208,
@@ -3121,7 +3121,7 @@ return {
             {
               id = 20,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1216,
               y = 272,
@@ -3136,7 +3136,7 @@ return {
             {
               id = 35,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 448,
               y = 272,
@@ -3151,7 +3151,7 @@ return {
             {
               id = 22,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1216,
               y = 144,
@@ -3166,7 +3166,7 @@ return {
             {
               id = 34,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 448,
               y = 144,
@@ -3181,7 +3181,7 @@ return {
             {
               id = 21,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1248,
               y = 240,
@@ -3196,7 +3196,7 @@ return {
             {
               id = 33,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1248,
               y = 176,
@@ -3211,7 +3211,7 @@ return {
             {
               id = 57,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 416,
               y = 208,
@@ -3244,7 +3244,7 @@ return {
             {
               id = 50,
               name = "",
-              type = "food-fish",
+              type = "FoodFish",
               shape = "point",
               x = 1280,
               y = 96,
@@ -3259,7 +3259,7 @@ return {
             {
               id = 51,
               name = "",
-              type = "food-container",
+              type = "FoodContainer",
               shape = "point",
               x = 1280,
               y = 112,
@@ -3274,7 +3274,7 @@ return {
             {
               id = 16,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1056,
               y = 80,
@@ -3287,7 +3287,7 @@ return {
             {
               id = 18,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "point",
               x = 1200,
               y = 96,
@@ -3335,7 +3335,7 @@ return {
             {
               id = 41,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "point",
               x = 688,
               y = 240,
@@ -3350,7 +3350,7 @@ return {
             {
               id = 43,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "point",
               x = 688,
               y = 176,
@@ -3365,7 +3365,7 @@ return {
             {
               id = 40,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 656,
               y = 144,
@@ -3380,7 +3380,7 @@ return {
             {
               id = 45,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 656,
               y = 272,
@@ -3395,7 +3395,7 @@ return {
             {
               id = 42,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 608,
               y = 144,
@@ -3410,7 +3410,7 @@ return {
             {
               id = 44,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 608,
               y = 272,
@@ -3425,7 +3425,7 @@ return {
             {
               id = 17,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 896,
               y = 80,
@@ -3456,7 +3456,7 @@ return {
             {
               id = 10,
               name = "",
-              type = "food-fish",
+              type = "FoodFish",
               shape = "point",
               x = 1584,
               y = 96,
@@ -3471,7 +3471,7 @@ return {
             {
               id = 24,
               name = "",
-              type = "food-fish",
+              type = "FoodFish",
               shape = "point",
               x = 1616,
               y = 96,
@@ -3486,7 +3486,7 @@ return {
             {
               id = 11,
               name = "",
-              type = "food-container",
+              type = "FoodContainer",
               shape = "point",
               x = 1584,
               y = 112,
@@ -3501,7 +3501,7 @@ return {
             {
               id = 23,
               name = "",
-              type = "food-container",
+              type = "FoodContainer",
               shape = "point",
               x = 1616,
               y = 112,
@@ -3516,7 +3516,7 @@ return {
             {
               id = 28,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1536,
               y = 80,
@@ -3529,7 +3529,7 @@ return {
             {
               id = 56,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "point",
               x = 1696,
               y = 80,
@@ -3542,7 +3542,7 @@ return {
             {
               id = 52,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1376,
               y = 80,
@@ -3590,7 +3590,7 @@ return {
             {
               id = 25,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "point",
               x = 960,
               y = 240,
@@ -3605,7 +3605,7 @@ return {
             {
               id = 58,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "point",
               x = 992,
               y = 208,
@@ -3620,7 +3620,7 @@ return {
             {
               id = 26,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "point",
               x = 960,
               y = 176,
@@ -3635,7 +3635,7 @@ return {
             {
               id = 27,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "point",
               x = 1200,
               y = 96,
@@ -3648,7 +3648,7 @@ return {
             {
               id = 53,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1056,
               y = 144,
@@ -3663,7 +3663,7 @@ return {
             {
               id = 61,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1008,
               y = 144,
@@ -3678,7 +3678,7 @@ return {
             {
               id = 54,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1088,
               y = 208,
@@ -3693,7 +3693,7 @@ return {
             {
               id = 60,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1040,
               y = 208,
@@ -3708,7 +3708,7 @@ return {
             {
               id = 55,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1056,
               y = 272,
@@ -3723,7 +3723,7 @@ return {
             {
               id = 59,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1008,
               y = 272,
@@ -3791,7 +3791,7 @@ return {
             {
               id = 63,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "point",
               x = 1856,
               y = 80,
@@ -3806,7 +3806,7 @@ return {
             {
               id = 74,
               name = "",
-              type = "bandit-spear",
+              type = "SpearBandit",
               shape = "point",
               x = 2016,
               y = 80,
@@ -3819,7 +3819,7 @@ return {
             {
               id = 64,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1376,
               y = 224,
@@ -3834,7 +3834,7 @@ return {
             {
               id = 69,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1312,
               y = 192,
@@ -3849,7 +3849,7 @@ return {
             {
               id = 72,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1312,
               y = 256,
@@ -3864,7 +3864,7 @@ return {
             {
               id = 65,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1408,
               y = 208,
@@ -3879,7 +3879,7 @@ return {
             {
               id = 68,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1344,
               y = 176,
@@ -3894,7 +3894,7 @@ return {
             {
               id = 71,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1344,
               y = 240,
@@ -3909,7 +3909,7 @@ return {
             {
               id = 73,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1344,
               y = 208,
@@ -3924,7 +3924,7 @@ return {
             {
               id = 66,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1376,
               y = 192,
@@ -3939,7 +3939,7 @@ return {
             {
               id = 67,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1312,
               y = 160,
@@ -3954,7 +3954,7 @@ return {
             {
               id = 70,
               name = "",
-              type = "bandit-dagger",
+              type = "KnifeBandit",
               shape = "point",
               x = 1312,
               y = 224,
@@ -3985,7 +3985,7 @@ return {
             {
               id = 77,
               name = "",
-              type = "food-bigfish",
+              type = "FoodBigFish",
               shape = "point",
               x = 2240,
               y = 80,
@@ -4000,7 +4000,7 @@ return {
             {
               id = 78,
               name = "",
-              type = "food-container",
+              type = "FoodContainer",
               shape = "point",
               x = 2240,
               y = 96,
@@ -4048,7 +4048,7 @@ return {
             {
               id = 76,
               name = "",
-              type = "bandit-axe",
+              type = "AxeBandit",
               shape = "point",
               x = 2592,
               y = 144,
@@ -4063,7 +4063,7 @@ return {
             {
               id = 79,
               name = "",
-              type = "bandit-axe",
+              type = "AxeBandit",
               shape = "point",
               x = 2592,
               y = 272,

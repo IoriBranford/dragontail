@@ -37,43 +37,43 @@
    <properties>
     <property name="z" type="int" value="0"/>
    </properties>
-   <object id="12" type="bandit-dagger" x="832" y="144">
+   <object id="12" type="KnifeBandit" x="832" y="144">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="31" type="bandit-dagger" x="64" y="144">
+   <object id="31" type="KnifeBandit" x="64" y="144">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="13" type="bandit-dagger" x="800" y="208">
+   <object id="13" type="KnifeBandit" x="800" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="30" type="bandit-dagger" x="96" y="208">
+   <object id="30" type="KnifeBandit" x="96" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="32" type="bandit-dagger" x="32" y="208">
+   <object id="32" type="KnifeBandit" x="32" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="14" type="bandit-dagger" x="832" y="272">
+   <object id="14" type="KnifeBandit" x="832" y="272">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="29" type="bandit-dagger" x="64" y="272">
+   <object id="29" type="KnifeBandit" x="64" y="272">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
@@ -84,13 +84,13 @@
    <properties>
     <property name="z" type="int" value="0"/>
    </properties>
-   <object id="8" type="food-fish" x="800" y="96">
+   <object id="8" type="FoodFish" x="800" y="96">
     <properties>
      <property name="z" type="int" value="16"/>
     </properties>
     <point/>
    </object>
-   <object id="9" type="food-container" x="800" y="112">
+   <object id="9" type="FoodContainer" x="800" y="112">
     <properties>
      <property name="item" type="object" value="8"/>
     </properties>
@@ -104,55 +104,55 @@
    <properties>
     <property name="z" type="int" value="0"/>
    </properties>
-   <object id="19" type="bandit-spear" x="1184" y="208">
+   <object id="19" type="SpearBandit" x="1184" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="36" type="bandit-spear" x="480" y="208">
+   <object id="36" type="SpearBandit" x="480" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="20" type="bandit-dagger" x="1216" y="272">
+   <object id="20" type="KnifeBandit" x="1216" y="272">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="35" type="bandit-dagger" x="448" y="272">
+   <object id="35" type="KnifeBandit" x="448" y="272">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="22" type="bandit-dagger" x="1216" y="144">
+   <object id="22" type="KnifeBandit" x="1216" y="144">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="34" type="bandit-dagger" x="448" y="144">
+   <object id="34" type="KnifeBandit" x="448" y="144">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="21" type="bandit-dagger" x="1248" y="240">
+   <object id="21" type="KnifeBandit" x="1248" y="240">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="33" type="bandit-dagger" x="1248" y="176">
+   <object id="33" type="KnifeBandit" x="1248" y="176">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="57" type="bandit-dagger" x="416" y="208">
+   <object id="57" type="KnifeBandit" x="416" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
@@ -163,22 +163,22 @@
    <properties>
     <property name="z" type="int" value="0"/>
    </properties>
-   <object id="50" type="food-fish" x="1280" y="96">
+   <object id="50" type="FoodFish" x="1280" y="96">
     <properties>
      <property name="z" type="int" value="16"/>
     </properties>
     <point/>
    </object>
-   <object id="51" type="food-container" x="1280" y="112">
+   <object id="51" type="FoodContainer" x="1280" y="112">
     <properties>
      <property name="item" type="object" value="50"/>
     </properties>
     <point/>
    </object>
-   <object id="16" type="bandit-dagger" x="1056" y="80">
+   <object id="16" type="KnifeBandit" x="1056" y="80">
     <point/>
    </object>
-   <object id="18" type="bandit-spear" x="1200" y="96">
+   <object id="18" type="SpearBandit" x="1200" y="96">
     <point/>
    </object>
    <object id="89" template="mapobjects/CameraPath.tx" x="400" y="144">
@@ -189,43 +189,43 @@
    <properties>
     <property name="z" type="int" value="0"/>
    </properties>
-   <object id="41" type="bandit-spear" x="688" y="240">
+   <object id="41" type="SpearBandit" x="688" y="240">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="43" type="bandit-spear" x="688" y="176">
+   <object id="43" type="SpearBandit" x="688" y="176">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="40" type="bandit-dagger" x="656" y="144">
+   <object id="40" type="KnifeBandit" x="656" y="144">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="45" type="bandit-dagger" x="656" y="272">
+   <object id="45" type="KnifeBandit" x="656" y="272">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="42" type="bandit-dagger" x="608" y="144">
+   <object id="42" type="KnifeBandit" x="608" y="144">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="44" type="bandit-dagger" x="608" y="272">
+   <object id="44" type="KnifeBandit" x="608" y="272">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="17" type="bandit-dagger" x="896" y="80">
+   <object id="17" type="KnifeBandit" x="896" y="80">
     <point/>
    </object>
   </objectgroup>
@@ -233,37 +233,37 @@
    <properties>
     <property name="z" type="int" value="0"/>
    </properties>
-   <object id="10" type="food-fish" x="1584" y="96">
+   <object id="10" type="FoodFish" x="1584" y="96">
     <properties>
      <property name="z" type="int" value="16"/>
     </properties>
     <point/>
    </object>
-   <object id="24" type="food-fish" x="1616" y="96">
+   <object id="24" type="FoodFish" x="1616" y="96">
     <properties>
      <property name="z" type="int" value="16"/>
     </properties>
     <point/>
    </object>
-   <object id="11" type="food-container" x="1584" y="112">
+   <object id="11" type="FoodContainer" x="1584" y="112">
     <properties>
      <property name="item" type="object" value="10"/>
     </properties>
     <point/>
    </object>
-   <object id="23" type="food-container" x="1616" y="112">
+   <object id="23" type="FoodContainer" x="1616" y="112">
     <properties>
      <property name="item" type="object" value="24"/>
     </properties>
     <point/>
    </object>
-   <object id="28" type="bandit-dagger" x="1536" y="80">
+   <object id="28" type="KnifeBandit" x="1536" y="80">
     <point/>
    </object>
-   <object id="56" type="bandit-spear" x="1696" y="80">
+   <object id="56" type="SpearBandit" x="1696" y="80">
     <point/>
    </object>
-   <object id="52" type="bandit-dagger" x="1376" y="80">
+   <object id="52" type="KnifeBandit" x="1376" y="80">
     <point/>
    </object>
    <object id="90" template="mapobjects/CameraPath.tx" x="800" y="144">
@@ -274,58 +274,58 @@
    <properties>
     <property name="z" type="int" value="0"/>
    </properties>
-   <object id="25" type="bandit-spear" x="960" y="240">
+   <object id="25" type="SpearBandit" x="960" y="240">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="58" type="bandit-spear" x="992" y="208">
+   <object id="58" type="SpearBandit" x="992" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="26" type="bandit-spear" x="960" y="176">
+   <object id="26" type="SpearBandit" x="960" y="176">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="27" type="bandit-spear" x="1200" y="96">
+   <object id="27" type="SpearBandit" x="1200" y="96">
     <point/>
    </object>
-   <object id="53" type="bandit-dagger" x="1056" y="144">
+   <object id="53" type="KnifeBandit" x="1056" y="144">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="61" type="bandit-dagger" x="1008" y="144">
+   <object id="61" type="KnifeBandit" x="1008" y="144">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="54" type="bandit-dagger" x="1088" y="208">
+   <object id="54" type="KnifeBandit" x="1088" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="60" type="bandit-dagger" x="1040" y="208">
+   <object id="60" type="KnifeBandit" x="1040" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="55" type="bandit-dagger" x="1056" y="272">
+   <object id="55" type="KnifeBandit" x="1056" y="272">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="59" type="bandit-dagger" x="1008" y="272">
+   <object id="59" type="KnifeBandit" x="1008" y="272">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
@@ -344,70 +344,70 @@
    <properties>
     <property name="z" type="int" value="0"/>
    </properties>
-   <object id="63" type="bandit-spear" x="1856" y="80">
+   <object id="63" type="SpearBandit" x="1856" y="80">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="74" type="bandit-spear" x="2016" y="80">
+   <object id="74" type="SpearBandit" x="2016" y="80">
     <point/>
    </object>
-   <object id="64" type="bandit-dagger" x="1376" y="224">
+   <object id="64" type="KnifeBandit" x="1376" y="224">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="69" type="bandit-dagger" x="1312" y="192">
+   <object id="69" type="KnifeBandit" x="1312" y="192">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="72" type="bandit-dagger" x="1312" y="256">
+   <object id="72" type="KnifeBandit" x="1312" y="256">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="65" type="bandit-dagger" x="1408" y="208">
+   <object id="65" type="KnifeBandit" x="1408" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="68" type="bandit-dagger" x="1344" y="176">
+   <object id="68" type="KnifeBandit" x="1344" y="176">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="71" type="bandit-dagger" x="1344" y="240">
+   <object id="71" type="KnifeBandit" x="1344" y="240">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="73" type="bandit-dagger" x="1344" y="208">
+   <object id="73" type="KnifeBandit" x="1344" y="208">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="66" type="bandit-dagger" x="1376" y="192">
+   <object id="66" type="KnifeBandit" x="1376" y="192">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="67" type="bandit-dagger" x="1312" y="160">
+   <object id="67" type="KnifeBandit" x="1312" y="160">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="70" type="bandit-dagger" x="1312" y="224">
+   <object id="70" type="KnifeBandit" x="1312" y="224">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
@@ -415,13 +415,13 @@
    </object>
   </objectgroup>
   <objectgroup id="22" name="room6">
-   <object id="77" type="food-bigfish" x="2240" y="80">
+   <object id="77" type="FoodBigFish" x="2240" y="80">
     <properties>
      <property name="z" type="int" value="16"/>
     </properties>
     <point/>
    </object>
-   <object id="78" type="food-container" x="2240" y="96">
+   <object id="78" type="FoodContainer" x="2240" y="96">
     <properties>
      <property name="item" type="object" value="77"/>
     </properties>
@@ -432,13 +432,13 @@
    </object>
   </objectgroup>
   <objectgroup id="23" name="fight6">
-   <object id="76" type="bandit-axe" x="2592" y="144">
+   <object id="76" type="AxeBandit" x="2592" y="144">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>
     <point/>
    </object>
-   <object id="79" type="bandit-axe" x="2592" y="272">
+   <object id="79" type="AxeBandit" x="2592" y="272">
     <properties>
      <property name="initialai" value="approach"/>
     </properties>

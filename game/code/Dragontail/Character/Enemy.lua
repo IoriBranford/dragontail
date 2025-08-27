@@ -365,7 +365,7 @@ function Enemy:enterAndDropDown()
     Audio.play(self.jumplandsound)
     self:changeAnimation("FallRiseFromKnees", 1, 0)
     Characters.spawn({
-        type = "spark-land-on-feet-dust",
+        type = "SparkLandOnFeetDust",
         x = self.x,
         y = self.y + 1,
         z = self.z,

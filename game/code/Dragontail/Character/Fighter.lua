@@ -121,17 +121,17 @@ end
 --     duration = duration or 120
 --     wait(duration)
 --     self.canbegrabbed = nil
---     return Fighter.defeat, "FallFlat"
+--     return Fighter.Defeated, "FallFlat"
 -- end
 
-function Fighter:held(holder)
+function Fighter:Held(holder)
     return HoldOpponent.heldBy(self, holder)
 end
 
 function Fighter:duringKnockedBack()
 end
 
-function Fighter:knockedBack(thrower, attackangle)
+function Fighter:KnockedBack(thrower, attackangle)
     local dirx, diry
     if attackangle then
         dirx, diry = cos(attackangle), sin(attackangle)
@@ -163,16 +163,16 @@ function Fighter:knockedBack(thrower, attackangle)
     end
     self.thrower = nil
     if oobdotvel > .5 then
-        return "wallBump", thrower, oobx, ooby
+        return "WallBump", thrower, oobx, ooby
     end
     if oobz then
         self.velz = 0
     end
 
-    return self.aiafterthrown or "fall", thrower
+    return self.aiafterthrown or "Fall", thrower
 end
 
-function Fighter:knockedBackOrThrown(thrower, attackangle)
+function Fighter:KnockedBackOrThrown(thrower, attackangle)
     local dirx, diry
     if attackangle then
         dirx, diry = cos(attackangle), sin(attackangle)
@@ -216,25 +216,25 @@ function Fighter:knockedBackOrThrown(thrower, attackangle)
     if thrownsound then thrownsound:stop() end
     self.thrower = nil
     if oobdotvel > .5 then
-        return self.knockedintowallstate or "wallBump", thrower, oobx, ooby
+        return self.knockedintowallstate or "WallBump", thrower, oobx, ooby
     end
     if oobz then
         self.velz = 0
     end
 
-    return self.aiafterthrown or "fall", thrower
+    return self.aiafterthrown or "Fall", thrower
 end
 
 function Fighter:afterWallBump(thrower)
 end
 
-function Fighter:wallBump(thrower, oobx, ooby)
+function Fighter:WallBump(thrower, oobx, ooby)
     oobx, ooby = norm(oobx or 0, ooby or 0)
     self:stopAttack()
     local bodyradius = self.bodyradius or 1
     Characters.spawn(
         {
-            type = "spark-hit",
+            type = "SparkHit",
             x = self.x + oobx*bodyradius,
             y = self.y + ooby*bodyradius,
             z = self.z + self.bodyheight/2
@@ -248,10 +248,10 @@ function Fighter:wallBump(thrower, oobx, ooby)
     if nextstate then
         return nextstate, a, b, c, d, e, f
     end
-    return "fall", thrower
+    return "Fall", thrower
 end
 
-function Fighter:thrown(thrower, attackangle)
+function Fighter:Thrown(thrower, attackangle)
     self.thrower = thrower
     local dirx, diry
     if attackangle then
@@ -291,21 +291,21 @@ function Fighter:thrown(thrower, attackangle)
     self.thrower = nil
     self:stopAttack()
     if oobdotvel > .5 then
-        return "wallSlammed", thrower, oobx, ooby
+        return "WallSlammed", thrower, oobx, ooby
     end
 
-    return self.aiafterthrown or "fall", thrower
+    return self.aiafterthrown or "Fall", thrower
 end
 
 function Fighter:afterWallSlammed(thrower)
 end
 
-function Fighter:wallSlammed(thrower, oobx, ooby)
+function Fighter:WallSlammed(thrower, oobx, ooby)
     oobx, ooby = norm(oobx or 0, ooby or 0)
     local bodyradius = self.bodyradius or 1
     Characters.spawn(
         {
-            type = "spark-bighit",
+            type = "SparkBigHit",
             x = self.x + oobx*bodyradius,
             y = self.y + ooby*bodyradius,
             z = self.z + self.bodyheight/2
@@ -314,17 +314,17 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
     self.health = self.health - (self.wallslamdamage or 25)
     self.velx, self.vely, self.velz = 0, 0, 0
     self:stopAttack()
-    yield() -- a window to be juggled by damaging wall e.g. forge-fire
+    yield() -- a window to be juggled by damaging wall e.g. ForgeFire
     self.hurtstun = self.wallslamstun or 20
     yield()
     local nextstate, a, b, c, d, e, f = self:afterWallSlammed(thrower)
     if nextstate then
         return nextstate, a, b, c, d, e, f
     end
-    return "fall", thrower
+    return "Fall", thrower
 end
 
-function Fighter:thrownRecover(thrower)
+function Fighter:ThrownRecover(thrower)
     local recovertime = self.thrownrecovertime or 10
     local oobx, ooby, oobz
     repeat
@@ -336,13 +336,13 @@ function Fighter:thrownRecover(thrower)
 
     self:stopAttack()
     if oobx or ooby then
-        return "wallSlammed", thrower, oobx, ooby
+        return "WallSlammed", thrower, oobx, ooby
     end
 
     local recoverai = self.recoverai
     if not recoverai then
         print("No recoverai for "..self.type)
-        return "defeat", thrower
+        return "Defeated", thrower
     end
     return recoverai
 end
@@ -352,7 +352,7 @@ function Fighter:breakaway(other)
     HoldOpponent.stopHolding(self, other)
     local breakspeed = 10
     local dirx, diry = norm(other.x - self.x, other.y - self.y)
-    self:makeImpactSpark(other, "spark-hit")
+    self:makeImpactSpark(other, "SparkHit")
     self.velx, self.vely = -dirx * breakspeed, -diry * breakspeed
 
     local t = 1
@@ -370,7 +370,7 @@ end
 
 function Fighter:duringFall() end
 
-function Fighter:fall(attacker)
+function Fighter:Fall(attacker)
     self:stopAttack()
     local t = 0
     local fallanimationtime = self.fallanimationtime or 1
@@ -390,7 +390,7 @@ end
 
 function Fighter:down(attacker)
     Characters.spawn({
-        type = "spark-fall-down-dust",
+        type = "SparkFallDownDust",
         x = self.x,
         y = self.y + 1,
         z = self.z,
@@ -408,7 +408,7 @@ function Fighter:down(attacker)
             local vely = offsety/8
 
             Characters.spawn({
-                type = "particle",
+                type = "Particle",
                 x = self.x + offsetx,
                 y = self.y + offsety,
                 z = self.z,
@@ -432,13 +432,13 @@ function Fighter:down(attacker)
             t = t + 1
         until t > 20
         self.velx, self.vely, self.velz = 0, 0, 0
-        return self.getupai or "getup", attacker
+        return self.getupai or "GetUp", attacker
     end
     self.velx, self.vely, self.velz = 0, 0, 0
-    return "defeat", attacker
+    return "Defeated", attacker
 end
 
-function Fighter:defeat(attacker)
+function Fighter:Defeated(attacker)
     self:stopAttack()
     self.velx, self.vely = 0, 0
     self:dropDefeatItem()
@@ -456,7 +456,7 @@ end
 function Fighter:duringDodge()
 end
 
-function Fighter:getup(attacker)
+function Fighter:GetUp(attacker)
     self:beforeGetUp()
     local time = self.getuptime or 27
     for _ = 1, time do
@@ -469,7 +469,7 @@ function Fighter:getup(attacker)
     local recoverai = self.aiaftergetup or self.recoverai
     if not recoverai then
         print("No aiaftergetup or recoverai for "..self.type)
-        return "defeat", attacker
+        return "Defeated", attacker
     end
     return recoverai
 end

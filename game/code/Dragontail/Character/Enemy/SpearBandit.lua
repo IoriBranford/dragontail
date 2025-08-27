@@ -37,7 +37,7 @@ function SpearBandit:duringApproach(target)
 end
 
 local DodgesBeforeCounterAttack = 1
-local CounterAttackType = "spear-poke"
+local CounterAttackType = "SpearPoke"
 
 function SpearBandit:duringDodge()
     if (self.numdodges or 0) >= DodgesBeforeCounterAttack then

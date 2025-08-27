@@ -230,7 +230,7 @@ function Common:storeMana(mana)
     end
 end
 
-function Common:projectileShatter(opponent)
+function Common:ProjectileShatter(opponent)
     self:stopAttack()
     self.velx = 0
     self.vely = 0
@@ -253,7 +253,7 @@ function Common:projectileHit(opponent)
     return "blinkOut", 30
 end
 
-function Common:projectileEmbed(opponent, ooby, oobz)
+function Common:ProjectileEmbed(opponent, ooby, oobz)
     self:stopAttack()
     local oobx = type(opponent) == "number" and opponent
     opponent = type(opponent) == "table" and opponent or nil
@@ -353,7 +353,7 @@ function Common:projectileHoming()
     self:disappear()
 end
 
-function Common:projectileBounce(opponent, ooby, oobz)
+function Common:ProjectileBounce(opponent, ooby, oobz)
     self:stopAttack()
     local oobx = type(opponent) == "number" and opponent
     opponent = type(opponent) == "table" and opponent or nil
@@ -423,11 +423,11 @@ end
 ---@param hit AttackHit
 ---@return string
 ---@return any
-function Common:projectileDeflected(hit)
+function Common:ProjectileDeflected(hit)
     local deflector = hit.attacker
     local attack = hit.attack
     if not attack.deflectsprojectile then
-        return "projectileBounce", deflector
+        return "ProjectileBounce", deflector
     end
     self.hurtstun = attack.opponentstun or 3
 

@@ -1,11 +1,11 @@
 attacktype,speed,radius,arc,damage,opponentstun,selfstun,launchspeed,selfanimationonhit,selfstateonhit,selfstateonhitopponent,selfstateonhitboundary,opponentstateonhit,opponentstateonfinalhit,hitsound,hitspark,guardhitspark,afterimageinterval,hurtparticle,canjuggle,hurtcolorcycle,gainmanaonhit,hitslayers
-Rose-fireball-attack,16,16,1.5707963267949,20,10,5,3,,,,projectileShatter,knockedBackBurnt,knockedBackBurnt,data/sounds/combat/firehit.mp3,spark-hit,spark-guard,,,TRUE,4294904836 4294946828,0,Object Enemy
-Rose-fat-fireball-attack,16,32,1.5707963267949,20,10,5,3,,,,projectileShatter,knockedBackBurnt,knockedBackBurnt,data/sounds/combat/firehit.mp3,spark-hit,spark-guard,,,TRUE,4294904836 4294946828,0,Object Enemy
-thrown-axe-attack,5,16,1.5707963267949,25,20,10,,thrownaxehit,projectileEmbed,,,knockedBack,knockedBack,data/sounds/combat/cut2.mp3,,,,particle-blood,,,,Object Player
-thrown-axe-strong-attack,12,16,1.5707963267949,25,20,10,,thrownaxehit,,,projectileEmbed,knockedBack,knockedBack,data/sounds/combat/cut2.mp3,,,,particle-blood,,,,Object Enemy
-bandit-arrow-attack,,20,0,25,12,,5,,projectileEmbed,,,,knockedBack,data/sounds/combat/cut.mp3,,,,particle-blood,,,,Object Player
-bandit-arrow-player-attack,,20,0,25,12,,5,,projectileEmbed,,,,knockedBack,data/sounds/combat/cut.mp3,,,,particle-blood,,,,Object Enemy
-thrown-stone-attack,12,8,1.5707963267949,10,10,,5,,projectileBounce,,,,knockedBack,data/sounds/combat/hit2.mp3,spark-hit,spark-guard,,,,,,Object Player
-thrown-stone-strong-attack,16,12,1.5707963267949,15,10,,12,,projectileShatter,,,knockedBack,knockedBack,data/sounds/combat/hit3.mp3,spark-hit,spark-guard,,,,,,Object Enemy
-projectile-dish-attack,12,8,1.5707963267949,10,10,,3,,dishShatter,,,,knockedBack,data/sounds/combat/hit2.mp3,spark-hit,spark-guard,,,,,,Object Player
-projectile-dish-strong-attack,12,8,1.5707963267949,15,10,,3,,dishShatter,,,knockedBack,knockedBack,data/sounds/combat/hit2.mp3,spark-hit,spark-guard,,,,,,Object Enemy
+RoseFireball,16,16,1.5707963267949,20,10,5,3,,,,ProjectileShatter,KnockedBackBurnt,KnockedBackBurnt,data/sounds/combat/firehit.mp3,SparkHit,SparkGuard,,,TRUE,4294904836 4294946828,0,Object Enemy
+RoseFatFireball,16,32,1.5707963267949,20,10,5,3,,,,ProjectileShatter,KnockedBackBurnt,KnockedBackBurnt,data/sounds/combat/firehit.mp3,SparkHit,SparkGuard,,,TRUE,4294904836 4294946828,0,Object Enemy
+AxeInFlight,5,16,1.5707963267949,25,20,10,,thrownaxehit,ProjectileEmbed,,,KnockedBack,KnockedBack,data/sounds/combat/cut2.mp3,,,,ParticleBlood,,,,Object Player
+AxeThrownByPlayer,12,16,1.5707963267949,25,20,10,,thrownaxehit,,,ProjectileEmbed,KnockedBack,KnockedBack,data/sounds/combat/cut2.mp3,,,,ParticleBlood,,,,Object Enemy
+ArrowInFlight,,20,0,25,12,,5,,ProjectileEmbed,,,,KnockedBack,data/sounds/combat/cut.mp3,,,,ParticleBlood,,,,Object Player
+ArrowThrownByPlayer,,20,0,25,12,,5,,ProjectileEmbed,,,,KnockedBack,data/sounds/combat/cut.mp3,,,,ParticleBlood,,,,Object Enemy
+StoneInFlight,12,8,1.5707963267949,10,10,,5,,ProjectileBounce,,,,KnockedBack,data/sounds/combat/hit2.mp3,SparkHit,SparkGuard,,,,,,Object Player
+StoneThrownByPlayer,16,12,1.5707963267949,15,10,,12,,ProjectileShatter,,,KnockedBack,KnockedBack,data/sounds/combat/hit3.mp3,SparkHit,SparkGuard,,,,,,Object Enemy
+DishInFlight,12,8,1.5707963267949,10,10,,3,,DishShatter,,,,KnockedBack,data/sounds/combat/hit2.mp3,SparkHit,SparkGuard,,,,,,Object Player
+DishThrownByPlayer,12,8,1.5707963267949,15,10,,3,,DishShatter,,,KnockedBack,KnockedBack,data/sounds/combat/hit2.mp3,SparkHit,SparkGuard,,,,,,Object Enemy

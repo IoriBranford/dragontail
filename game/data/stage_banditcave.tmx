@@ -428,10 +428,10 @@ COSTS 1 OR MORE</text>
     <property name="donewhenenemiesleft" type="int" value="1"/>
     <property name="titlebarcuecard" value="THROW SINGLE ROCKS"/>
    </properties>
-   <object id="58" gid="7259" x="1664" y="-40" width="64" height="64">
+   <object id="58" template="mapobjects/bandit/sling.tx" x="1664" y="-40">
     <properties>
      <property name="ammo" type="int" value="10"/>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="defaultattack" value="SlingShotUntilEmpty"/>
      <property name="entrypoint" type="object" value="241"/>
      <property name="exitpoint" type="object" value="244"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
@@ -439,10 +439,10 @@ COSTS 1 OR MORE</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="59" gid="7259" x="1728" y="-8" width="64" height="64">
+   <object id="59" template="mapobjects/bandit/sling.tx" x="1728" y="-8">
     <properties>
      <property name="ammo" type="int" value="10"/>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="defaultattack" value="SlingShotUntilEmpty"/>
      <property name="entrypoint" type="object" value="240"/>
      <property name="exitpoint" type="object" value="243"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
@@ -510,10 +510,10 @@ COSTS 1 OR MORE</text>
    <properties>
     <property name="donewhenenemiesleft" type="int" value="4"/>
    </properties>
-   <object id="87" gid="7259" x="1680" y="-8" width="64" height="64">
+   <object id="87" template="mapobjects/bandit/sling.tx" x="1680" y="-8">
     <properties>
      <property name="ammo" type="int" value="10"/>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="defaultattack" value="SlingShotUntilEmpty"/>
      <property name="entrypoint" type="object" value="242"/>
      <property name="exitpoint" type="object" value="245"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
@@ -545,28 +545,28 @@ COSTS 1 OR MORE</text>
     <property name="donewhenenemiesleft" type="int" value="5"/>
     <property name="titlebarcuecard" value="THROW MULTIPLE ROCKS"/>
    </properties>
-   <object id="494" gid="7259" x="1584" y="-8" width="64" height="64">
+   <object id="494" template="mapobjects/bandit/sling.tx" x="1584" y="-8">
     <properties>
      <property name="ammo" type="int" value="10"/>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="defaultattack" value="SlingShotUntilEmpty"/>
      <property name="entrypoint" type="object" value="495"/>
      <property name="exitpoint" type="object" value="496"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
-     <property name="itemtype" value="food-fish"/>
+     <property name="itemtype" value="FoodFish"/>
      <property name="itemvelx" type="float" value="0"/>
      <property name="itemvely" type="float" value="12"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="498" gid="7259" x="1776" y="-8" width="64" height="64">
+   <object id="498" template="mapobjects/bandit/sling.tx" x="1776" y="-8">
     <properties>
      <property name="ammo" type="int" value="10"/>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="defaultattack" value="SlingShotUntilEmpty"/>
      <property name="entrypoint" type="object" value="497"/>
      <property name="exitpoint" type="object" value="499"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
-     <property name="itemtype" value="food-fish"/>
+     <property name="itemtype" value="FoodFish"/>
      <property name="itemvelx" type="float" value="0"/>
      <property name="itemvely" type="float" value="12"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
@@ -626,22 +626,22 @@ COSTS 1 OR MORE</text>
    </object>
    <object id="267" gid="6583" x="2120" y="264" width="32" height="32">
     <properties>
-     <property name="itemtype" value="food-fish"/>
+     <property name="itemtype" value="FoodFish"/>
     </properties>
    </object>
    <object id="270" gid="6583" x="1976" y="104" width="32" height="32">
     <properties>
-     <property name="itemtype" value="food-fish"/>
+     <property name="itemtype" value="FoodFish"/>
     </properties>
    </object>
    <object id="268" gid="6586" x="2128" y="232" width="32" height="32">
     <properties>
-     <property name="itemtype" value="mana-peppers"/>
+     <property name="itemtype" value="ManaPeppers"/>
     </properties>
    </object>
    <object id="269" gid="6586" x="2008" y="112" width="32" height="32">
     <properties>
-     <property name="itemtype" value="mana-peppers"/>
+     <property name="itemtype" value="ManaPeppers"/>
     </properties>
    </object>
    <object id="528" name="Instruction" x="1888" y="48" width="112" height="40">
@@ -653,10 +653,10 @@ COSTS 1 OR MORE</text>
    <properties>
     <property name="titlebarcuecard" value="CATCH AND THROW ARROW, LV1 FIREBALL"/>
    </properties>
-   <object id="254" gid="7257" x="2080" y="0" width="128" height="128">
+   <object id="254" template="mapobjects/bandit/bow.tx" x="2080" y="0">
     <properties>
      <property name="ammo" type="int" value="10"/>
-     <property name="defaultattack" value="bow-shot-until-empty"/>
+     <property name="defaultattack" value="BowShotUntilEmpty"/>
      <property name="entrypoint" type="object" value="255"/>
      <property name="exitpoint" type="object" value="256"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
@@ -676,10 +676,10 @@ COSTS 1 OR MORE</text>
     </properties>
     <point/>
    </object>
-   <object id="257" gid="7257" x="2192" y="72" width="128" height="128">
+   <object id="257" template="mapobjects/bandit/bow.tx" x="2192" y="72">
     <properties>
      <property name="ammo" type="int" value="10"/>
-     <property name="defaultattack" value="bow-shot-until-empty"/>
+     <property name="defaultattack" value="BowShotUntilEmpty"/>
      <property name="entrypoint" type="object" value="258"/>
      <property name="exitpoint" type="object" value="259"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
@@ -802,7 +802,7 @@ and tap    to throw</text>
     </properties>
     <polygon points="0,0 0,112 192,112 192,0"/>
    </object>
-   <object id="105" gid="7257" x="2592" y="32" width="128" height="128">
+   <object id="105" template="mapobjects/bandit/bow.tx" x="2592" y="32">
     <properties>
      <property name="entrypoint" type="object" value="273"/>
      <property name="facedegrees" type="float" value="90"/>
@@ -814,7 +814,7 @@ and tap    to throw</text>
    <object id="273" name="entrypoint" x="2592" y="48">
     <point/>
    </object>
-   <object id="274" gid="7257" x="2720" y="32" width="128" height="128">
+   <object id="274" template="mapobjects/bandit/bow.tx" x="2720" y="32">
     <properties>
      <property name="entrypoint" type="object" value="275"/>
      <property name="facedegrees" type="float" value="90"/>
@@ -824,14 +824,14 @@ and tap    to throw</text>
    <object id="275" name="entrypoint" x="2720" y="48">
     <point/>
    </object>
-   <object id="280" gid="7257" x="2656" y="256" width="128" height="128">
+   <object id="280" template="mapobjects/bandit/bow.tx" x="2656" y="256">
     <properties>
      <property name="entrypoint" type="object" value="281"/>
      <property name="facedegrees" type="float" value="270"/>
      <property name="initialai" value="enterAndPrepareBowAmbush"/>
     </properties>
    </object>
-   <object id="282" gid="7257" x="2784" y="264" width="128" height="128">
+   <object id="282" template="mapobjects/bandit/bow.tx" x="2784" y="264">
     <properties>
      <property name="entrypoint" type="object" value="283"/>
      <property name="facedegrees" type="float" value="270"/>
@@ -844,7 +844,7 @@ and tap    to throw</text>
    <object id="283" name="entrypoint" x="2784" y="248">
     <point/>
    </object>
-   <object id="286" gid="7257" x="2848" y="32" width="128" height="128">
+   <object id="286" template="mapobjects/bandit/bow.tx" x="2848" y="32">
     <properties>
      <property name="entrypoint" type="object" value="287"/>
      <property name="facedegrees" type="float" value="90"/>
@@ -856,42 +856,42 @@ and tap    to throw</text>
    </object>
    <object id="299" gid="6589" x="3192" y="144" width="32" height="48">
     <properties>
-     <property name="itemtype" value="food-fish"/>
+     <property name="itemtype" value="FoodFish"/>
     </properties>
    </object>
    <object id="306" gid="6589" x="3280" y="128" width="32" height="48">
     <properties>
-     <property name="itemtype" value="item-throwing-axe"/>
+     <property name="itemtype" value="AxeItem"/>
     </properties>
    </object>
    <object id="300" gid="6589" x="3184" y="168" width="32" height="48">
     <properties>
-     <property name="itemtype" value="mana-peppers"/>
+     <property name="itemtype" value="ManaPeppers"/>
     </properties>
    </object>
    <object id="305" gid="6589" x="3296" y="160" width="32" height="48">
     <properties>
-     <property name="itemtype" value="food-fish"/>
+     <property name="itemtype" value="FoodFish"/>
     </properties>
    </object>
    <object id="301" gid="6589" x="3248" y="160" width="32" height="48">
     <properties>
-     <property name="itemtype" value="mana-peppers"/>
+     <property name="itemtype" value="ManaPeppers"/>
     </properties>
    </object>
    <object id="304" gid="6589" x="3328" y="176" width="32" height="48">
     <properties>
-     <property name="itemtype" value="food-fish"/>
+     <property name="itemtype" value="FoodFish"/>
     </properties>
    </object>
    <object id="302" gid="6589" x="3232" y="128" width="32" height="48">
     <properties>
-     <property name="itemtype" value="food-fish"/>
+     <property name="itemtype" value="FoodFish"/>
     </properties>
    </object>
    <object id="303" gid="6589" x="3336" y="144" width="32" height="48">
     <properties>
-     <property name="itemtype" value="item-throwing-axe"/>
+     <property name="itemtype" value="AxeItem"/>
     </properties>
    </object>
    <object id="310" template="mapobjects/banditcave/wall-torch.tx" x="3008" y="48"/>
@@ -970,28 +970,28 @@ to sprint past archers</text>
     <property name="donewhenenemiesleft" type="int" value="2"/>
     <property name="titlebarcuecard" value="LV2 FIREBALL"/>
    </properties>
-   <object id="291" gid="7257" x="3264" y="-48" width="128" height="128">
+   <object id="291" template="mapobjects/bandit/bow.tx" x="3264" y="-48">
     <properties>
      <property name="ammo" type="int" value="10"/>
-     <property name="defaultattack" value="bow-shot-until-empty"/>
+     <property name="defaultattack" value="BowShotUntilEmpty"/>
      <property name="entrypoint" type="object" value="294"/>
      <property name="exitpoint" type="object" value="296"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
-     <property name="itemtype" value="food-fish"/>
+     <property name="itemtype" value="FoodFish"/>
      <property name="itemvelx" type="float" value="0"/>
      <property name="itemvely" type="float" value="4"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="292" gid="7257" x="3264" y="-16" width="128" height="128">
+   <object id="292" template="mapobjects/bandit/bow.tx" x="3264" y="-16">
     <properties>
      <property name="ammo" type="int" value="10"/>
-     <property name="defaultattack" value="bow-shot-until-empty"/>
+     <property name="defaultattack" value="BowShotUntilEmpty"/>
      <property name="entrypoint" type="object" value="293"/>
      <property name="exitpoint" type="object" value="295"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
-     <property name="itemtype" value="food-fish"/>
+     <property name="itemtype" value="FoodFish"/>
      <property name="itemvelx" type="float" value="0"/>
      <property name="itemvely" type="float" value="4"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
@@ -1042,7 +1042,7 @@ to sprint past archers</text>
     </properties>
     <polygon points="0,16 8,32 24,40 48,48 80,48 104,40 120,32 128,16 128,0 0,0"/>
    </object>
-   <object id="393" type="forge-fire" x="3584" y="16" width="16" height="16" visible="0">
+   <object id="393" type="ForgeFire" x="3584" y="16" width="16" height="16" visible="0">
     <properties>
      <property name="originx" type="float" value="8"/>
      <property name="originy" type="float" value="8"/>
@@ -1207,26 +1207,26 @@ to sprint past archers</text>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
-   <object id="336" gid="7259" x="4016" y="72" width="64" height="64">
+   <object id="336" template="mapobjects/bandit/sling.tx" x="4016" y="72">
     <properties>
      <property name="ammo" type="int" value="999999999"/>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="defaultattack" value="SlingShotUntilEmpty"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
     </properties>
    </object>
-   <object id="337" gid="7259" x="4136" y="80" width="64" height="64">
+   <object id="337" template="mapobjects/bandit/sling.tx" x="4136" y="80">
     <properties>
      <property name="ammo" type="int" value="999999999"/>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="defaultattack" value="SlingShotUntilEmpty"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
     </properties>
    </object>
-   <object id="338" gid="7257" x="4256" y="72" width="128" height="128">
+   <object id="338" template="mapobjects/bandit/bow.tx" x="4256" y="72">
     <properties>
      <property name="ammo" type="int" value="999999999"/>
-     <property name="defaultattack" value="bow-shot-until-empty"/>
+     <property name="defaultattack" value="BowShotUntilEmpty"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
     </properties>
@@ -1345,10 +1345,10 @@ to sprint past archers</text>
    <properties>
     <property name="donewhenenemiesleft" type="int" value="5"/>
    </properties>
-   <object id="343" gid="7259" x="4208" y="328" width="64" height="64">
+   <object id="343" template="mapobjects/bandit/sling.tx" x="4208" y="328">
     <properties>
      <property name="ammo" type="int" value="999999999"/>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="defaultattack" value="SlingShotUntilEmpty"/>
      <property name="entrypoint" type="object" value="346"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
@@ -1363,10 +1363,10 @@ to sprint past archers</text>
    <properties>
     <property name="donewhenenemiesleft" type="int" value="5"/>
    </properties>
-   <object id="342" gid="7259" x="4064" y="328" width="64" height="64">
+   <object id="342" template="mapobjects/bandit/sling.tx" x="4064" y="328">
     <properties>
      <property name="ammo" type="int" value="999999999"/>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="defaultattack" value="SlingShotUntilEmpty"/>
      <property name="entrypoint" type="object" value="345"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
@@ -1381,10 +1381,10 @@ to sprint past archers</text>
    <properties>
     <property name="titlebarcuecard" value="LV3 REVENGE"/>
    </properties>
-   <object id="341" gid="7257" x="3928" y="328" width="128" height="128">
+   <object id="341" template="mapobjects/bandit/bow.tx" x="3928" y="328">
     <properties>
      <property name="ammo" type="int" value="999999999"/>
-     <property name="defaultattack" value="bow-shot-until-empty"/>
+     <property name="defaultattack" value="BowShotUntilEmpty"/>
      <property name="entrypoint" type="object" value="344"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
@@ -1429,33 +1429,33 @@ to sprint past archers</text>
    <object id="231" template="mapobjects/bandit/boss.tx" x="5296" y="168">
     <properties>
      <property name="facedegrees" type="float" value="180"/>
-     <property name="initialai" value="bandit-boss-first-charge"/>
+     <property name="initialai" value="BossIntroCharge"/>
     </properties>
    </object>
   </objectgroup>
   <objectgroup id="38" name="+slingers" class="Room">
-   <object id="409" gid="7259" x="5040" y="-40" width="64" height="64">
+   <object id="409" template="mapobjects/bandit/sling.tx" x="5040" y="-40">
     <properties>
      <property name="ammo" type="int" value="20"/>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="defaultattack" value="SlingShotUntilEmpty"/>
      <property name="entrypoint" type="object" value="412"/>
      <property name="exitpoint" type="object" value="415"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
-     <property name="itemtype" value="mana-peppers"/>
+     <property name="itemtype" value="ManaPeppers"/>
      <property name="itemvelx" type="float" value="0"/>
      <property name="itemvely" type="float" value="5"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="411" gid="7259" x="5136" y="-8" width="64" height="64">
+   <object id="411" template="mapobjects/bandit/sling.tx" x="5136" y="-8">
     <properties>
      <property name="ammo" type="int" value="20"/>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="defaultattack" value="SlingShotUntilEmpty"/>
      <property name="entrypoint" type="object" value="414"/>
      <property name="exitpoint" type="object" value="417"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
-     <property name="itemtype" value="food-fish"/>
+     <property name="itemtype" value="FoodFish"/>
      <property name="itemvelx" type="float" value="0"/>
      <property name="itemvely" type="float" value="5"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
@@ -1482,42 +1482,42 @@ to sprint past archers</text>
    </object>
   </objectgroup>
   <objectgroup id="37" name="+archers" class="Room">
-   <object id="400" gid="7257" x="4992" y="-40" width="128" height="128">
+   <object id="400" template="mapobjects/bandit/bow.tx" x="4992" y="-40">
     <properties>
      <property name="ammo" type="int" value="20"/>
-     <property name="defaultattack" value="bow-shot-until-empty"/>
+     <property name="defaultattack" value="BowShotUntilEmpty"/>
      <property name="entrypoint" type="object" value="401"/>
      <property name="exitpoint" type="object" value="402"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
-     <property name="itemtype" value="mana-peppers"/>
+     <property name="itemtype" value="ManaPeppers"/>
      <property name="itemvelx" type="float" value="0"/>
      <property name="itemvely" type="float" value="5"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="403" gid="7259" x="5088" y="-72" width="64" height="64">
+   <object id="403" template="mapobjects/bandit/sling.tx" x="5088" y="-72">
     <properties>
      <property name="ammo" type="int" value="20"/>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="defaultattack" value="SlingShotUntilEmpty"/>
      <property name="entrypoint" type="object" value="404"/>
      <property name="exitpoint" type="object" value="405"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
-     <property name="itemtype" value="food-fish"/>
+     <property name="itemtype" value="FoodFish"/>
      <property name="itemvelx" type="float" value="0"/>
      <property name="itemvely" type="float" value="5"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="406" gid="7257" x="5184" y="-8" width="128" height="128">
+   <object id="406" template="mapobjects/bandit/bow.tx" x="5184" y="-8">
     <properties>
      <property name="ammo" type="int" value="20"/>
-     <property name="defaultattack" value="bow-shot-until-empty"/>
+     <property name="defaultattack" value="BowShotUntilEmpty"/>
      <property name="entrypoint" type="object" value="407"/>
      <property name="exitpoint" type="object" value="408"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
-     <property name="itemtype" value="mana-peppers"/>
+     <property name="itemtype" value="ManaPeppers"/>
      <property name="itemvelx" type="float" value="0"/>
      <property name="itemvely" type="float" value="5"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>

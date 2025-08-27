@@ -85,7 +85,7 @@ function Character:makeAfterImage()
         y = self.y,
         z = self.z,
         asefile = self.asefile,
-        type = "afterimage"
+        type = "Afterimage"
     })
     afterimage.originx, afterimage.originy = self:getOrigin()
     afterimage:setAseAnimation(self.aseanimation, self.animationframe)
@@ -198,7 +198,7 @@ Character.stopAttack = Attacker.stopAttack
 
 function Character:onHitByAttack(hit)
     local guardhitstate = self.guardai or "guardHit"
-    local hurtstate = self.hurtai or "hurt"
+    local hurtstate = self.hurtai or "Hurt"
 
     if hit.guarded then
         StateMachine.start(self, guardhitstate, hit)

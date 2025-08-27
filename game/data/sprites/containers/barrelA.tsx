@@ -2,13 +2,13 @@
 <tileset version="1.11" tiledversion="1.11.2" name="barrelA" tilewidth="32" tileheight="32" tilecount="3" columns="3" objectalignment="bottom">
  <tileoffset x="0" y="8"/>
  <image source="barrelA.png" width="96" height="32"/>
- <tile id="0" type="container-barrel"/>
- <tile id="1" type="container-barrel">
+ <tile id="0" type="ContainerBarrel"/>
+ <tile id="1" type="ContainerBarrel">
   <properties>
    <property name="name" value="Fall"/>
   </properties>
  </tile>
- <tile id="2" type="container-barrel">
+ <tile id="2" type="ContainerBarrel">
   <properties>
    <property name="name" value="closed"/>
   </properties>

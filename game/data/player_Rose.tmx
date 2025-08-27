@@ -11,12 +11,12 @@
     <property name="propertiestable" type="file" value="database/players-properties.csv"/>
    </properties>
   </object>
-  <object id="2" name="Rose-fireball" type="Rose-fireball" gid="4" x="0" y="0" width="64" height="64">
+  <object id="2" name="RoseFireball" type="RoseFireball" gid="4" x="0" y="0" width="64" height="64">
    <properties>
     <property name="propertiestable" type="file" value="database/projectiles-properties.csv"/>
    </properties>
   </object>
-  <object id="3" name="spark-spit-fireball" type="spark-spit-fireball" gid="5" x="0" y="0" width="64" height="64">
+  <object id="3" name="SparkSpitFireball" type="SparkSpitFireball" gid="5" x="0" y="0" width="64" height="64">
    <properties>
     <property name="propertiestable" type="file" value="database/vfx-properties.csv"/>
    </properties>

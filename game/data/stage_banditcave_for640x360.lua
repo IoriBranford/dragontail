@@ -2826,83 +2826,83 @@ return {
       tiles = {
         {
           id = 0,
-          type = "bandit-dagger"
+          type = "KnifeBandit"
         },
         {
           id = 1,
-          type = "bandit-dagger"
+          type = "KnifeBandit"
         },
         {
           id = 2,
-          type = "bandit-dagger"
+          type = "KnifeBandit"
         },
         {
           id = 3,
-          type = "bandit-dagger"
+          type = "KnifeBandit"
         },
         {
           id = 4,
-          type = "bandit-spear"
+          type = "SpearBandit"
         },
         {
           id = 5,
-          type = "bandit-spear"
+          type = "SpearBandit"
         },
         {
           id = 6,
-          type = "bandit-spear"
+          type = "SpearBandit"
         },
         {
           id = 7,
-          type = "bandit-spear"
+          type = "SpearBandit"
         },
         {
           id = 8,
-          type = "bandit-bow"
+          type = "BowBandit"
         },
         {
           id = 9,
-          type = "bandit-bow"
+          type = "BowBandit"
         },
         {
           id = 10,
-          type = "bandit-bow"
+          type = "BowBandit"
         },
         {
           id = 11,
-          type = "bandit-bow"
+          type = "BowBandit"
         },
         {
           id = 12,
-          type = "bandit-sling"
+          type = "SlingBandit"
         },
         {
           id = 13,
-          type = "bandit-sling"
+          type = "SlingBandit"
         },
         {
           id = 14,
-          type = "bandit-sling"
+          type = "SlingBandit"
         },
         {
           id = 15,
-          type = "bandit-sling"
+          type = "SlingBandit"
         },
         {
           id = 16,
-          type = "bandit-arrow"
+          type = "ArrowInFlight"
         },
         {
           id = 17,
-          type = "bandit-arrow"
+          type = "ArrowInFlight"
         },
         {
           id = 18,
-          type = "bandit-arrow"
+          type = "ArrowInFlight"
         },
         {
           id = 19,
-          type = "bandit-arrow"
+          type = "ArrowInFlight"
         }
       }
     },
@@ -2936,19 +2936,19 @@ return {
       tiles = {
         {
           id = 0,
-          type = "food-fish"
+          type = "FoodFish"
         },
         {
           id = 1,
-          type = "food-bigfish"
+          type = "FoodBigFish"
         },
         {
           id = 2,
-          type = "item-throwing-axe"
+          type = "AxeItem"
         },
         {
           id = 3,
-          type = "item-stone"
+          type = "StoneItem"
         }
       }
     }

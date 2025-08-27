@@ -38,7 +38,7 @@ function AttackPrepare:fixedupdate()
                 x = x,
                 y = y,
                 z = z,
-                type = "projectile-path-point",
+                type = "ProjectilePathPoint",
                 scalex = scale,
                 scaley = scale,
             }

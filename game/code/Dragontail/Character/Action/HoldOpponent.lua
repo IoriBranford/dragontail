@@ -24,7 +24,7 @@ function HoldOpponent:startHolding(opponent)
     Guard.stopGuarding(opponent)
     opponent.heldby = self
     Audio.play(self.holdsound)
-    StateMachine.start(opponent, opponent.heldai or "held", self)
+    StateMachine.start(opponent, opponent.heldai or "Held", self)
 end
 
 ---@param opponent HeldByOpponent
@@ -59,7 +59,7 @@ function HoldOpponent:heldBy(holder)
     local recoverai = self.aiafterheld or self.recoverai
     if not recoverai then
         print("No aiafterheld or recoverai for "..self.type)
-        return "defeat", holder
+        return "Defeated", holder
     end
     return recoverai
 end

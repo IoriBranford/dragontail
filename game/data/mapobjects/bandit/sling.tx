@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template>
  <tileset firstgid="1" source="../../sprites/bandit/sling.tsx"/>
- <object type="bandit-sling" gid="1" width="64" height="64">
+ <object type="SlingBandit" gid="1" width="64" height="64">
   <properties>
    <property name="ammo" type="int" value="10"/>
    <property name="propertiestable" type="file" value="../../database/bandits-properties.csv"/>

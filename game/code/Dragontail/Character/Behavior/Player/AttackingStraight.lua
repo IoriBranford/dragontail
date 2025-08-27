@@ -47,7 +47,7 @@ function AttackingStraight:start(angle, heldenemy)
         local numprojectiles = player.attack.numprojectiles or 1
         local targetx, targety, targetz = findInstantThrowTarget(player, math.cos(angle), math.sin(angle))
         if numprojectiles <= 1 then
-            Shoot.launchProjectile(player, "spark-spit-fireball", math.cos(angle), math.sin(angle), 0)
+            Shoot.launchProjectile(player, "SparkSpitFireball", math.cos(angle), math.sin(angle), 0)
             Shoot.launchProjectileAtPosition(player, player.attack.projectiletype, targetx, targety, targetz)
         else
             local arc = player.attack.arc or 0
@@ -58,7 +58,7 @@ function AttackingStraight:start(angle, heldenemy)
                 targetx, targety = player.x + totargetx, player.y + totargety
                 if totargetx ~= 0 or totargety ~= 0 then
                     local dirx, diry = math.norm(totargetx, totargety)
-                    Shoot.launchProjectile(player, "spark-spit-fireball", dirx, diry, 0)
+                    Shoot.launchProjectile(player, "SparkSpitFireball", dirx, diry, 0)
                 end
                 Shoot.launchProjectileAtPosition(player, player.attack.projectiletype, targetx, targety, targetz)
                 totargetx, totargety = math.rot(totargetx, totargety, arcbetweenprojectiles)
@@ -139,7 +139,7 @@ function AttackingStraight:timeout(nextstate, a, b, c, d, e, f, g)
     end
 
     if self.heldenemy and self.heldenemy.health > 0 then
-        return inair and "air-hold" or "hold", self.heldenemy
+        return inair and "AirHold" or "hold", self.heldenemy
     end
 
     if nextstate then
