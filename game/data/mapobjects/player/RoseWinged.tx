@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <tileset firstgid="1" source="../../sprites/player/rose/rose-winged-main.tsx"/>
+ <object name="RoseWinged" type="RoseWinged" gid="1" width="80" height="80">
+  <properties>
+   <property name="propertiestable" type="file" value="../../database/players-properties.csv"/>
+  </properties>
+ </object>
+</template>
