@@ -141,6 +141,7 @@ function Stage.init()
             Characters.spawn(player)
         end
     else
+        Database.load("data/database/players-properties.csv")
         Characters.spawn({type = "Rose"})
     end
     Stage.warpCamera(camera.x+camera.width/2, camera.y+camera.height/2)
