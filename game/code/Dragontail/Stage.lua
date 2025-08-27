@@ -135,9 +135,15 @@ function Stage.init()
         camera.y = camerapath.y + camerapath.points[2] - camera.height/2
     end
 
-    Characters.spawn({
-        x = camera.x + camera.width/4, y = camera.y + camera.height/2, type = "Rose"
-    })
+    local players = map.layers.players
+    if players and #players > 0 then
+        for _, player in ipairs(players) do
+            Characters.spawn(player)
+        end
+    else
+        Characters.spawn({type = "Rose"})
+    end
+    Stage.warpCamera(camera.x+camera.width/2, camera.y+camera.height/2)
     for i = firstroomindex - 1, 1, -1 do
         local prevroom = map.layers.rooms[i]
         local characters = prevroom.characters
