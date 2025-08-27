@@ -9,8 +9,8 @@ return {
   height = 20,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 6,
-  nextobjectid = 3,
+  nextlayerid = 7,
+  nextobjectid = 4,
   backgroundcolor = { 170, 150, 132 },
   properties = {},
   tilesets = {
@@ -41,6 +41,35 @@ return {
       properties = {},
       wangsets = {},
       tilecount = 2772,
+      tiles = {}
+    },
+    {
+      name = "rose-winged-main",
+      firstgid = 2773,
+      class = "",
+      tilewidth = 80,
+      tileheight = 80,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/player/rose/winged-main.ase",
+      imagewidth = 80,
+      imageheight = 80,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 24
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 80,
+        height = 80
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
       tiles = {}
     }
   },
@@ -125,6 +154,38 @@ return {
         {
           x = 0, y = -9, width = 15, height = 9,
           data = "eJzlydkJQlEUA8CBE7Uat2pcnliOluNWjVsv8uA2cL8NBIbkUlyLW3EvDq2jz20f/2Nxah2/R/EsXsW7+HT4W1RImIRph2dhHhZhGVYdXodN2IZd2Hd4iL/LD4/XHwY="
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 6,
+      name = "players",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 3,
+          name = "RoseWinged",
+          type = "RoseWinged",
+          shape = "rectangle",
+          x = 128,
+          y = 144,
+          width = 80,
+          height = 80,
+          rotation = 0,
+          gid = 2773,
+          visible = true,
+          properties = {
+            ["propertiestable"] = "database/players-properties.csv"
+          }
         }
       }
     },

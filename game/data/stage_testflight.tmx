@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#aa9684" nextlayerid="6" nextobjectid="3">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#aa9684" nextlayerid="7" nextobjectid="4">
  <editorsettings>
   <chunksize width="15" height="9"/>
   <export target="stage_testflight.lua" format="lua"/>
  </editorsettings>
  <tileset firstgid="1" source="tilesets/mountains/mountains.tsx"/>
+ <tileset firstgid="2773" source="sprites/player/rose/rose-winged-main.tsx"/>
  <layer id="1" name="level1" width="30" height="20">
   <data encoding="base64" compression="zlib">
    <chunk x="0" y="0" width="15" height="9">
@@ -32,6 +33,9 @@
   </chunk>
   </data>
  </layer>
+ <objectgroup id="6" name="players">
+  <object id="3" template="mapobjects/player/RoseWinged.tx" type="RoseWinged" x="128" y="144"/>
+ </objectgroup>
  <group id="3" name="rooms">
   <objectgroup id="4" name="start" class="Room">
    <properties>
