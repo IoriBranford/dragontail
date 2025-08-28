@@ -55,8 +55,7 @@ function PlayerFighting:fixedupdate()
         return nextstates.catchProjectile, caughtprojectile
     end
 
-    if player.flybutton.pressed then
-        -- disable until ready
+    if player.canfly and player.flybutton.pressed then
         return nextstates.toggleFlying
     end
 
