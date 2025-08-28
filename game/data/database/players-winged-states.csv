@@ -47,7 +47,7 @@ sequenceWalkTo,,,sequenceWalkTo,FALSE,FALSE,data/sprites/player/rose/winged-main
 catchProjectile,,,catchProjectile,walk,FALSE,data/sprites/player/rose/winged-main.jase,catch,0,FALSE,FALSE,FALSE,,data/sounds/combat/shakiin.mp3,0,2,1,0.5,4,4,3.14159265358979
 sequenceTailSwing,,,idle,sequenceWalkTo,24,data/sprites/player/rose/winged-attack.jase,tailspinCW,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,0,0,0,0.5,1,4,3.14159265358979
 flyStart,,,flyStart,hover,FALSE,data/sprites/player/rose/fly.jase,ascend,1,FALSE,FALSE,FALSE,4294967295,data/sounds/player/flyup.mp3,3,0,0,0.5,1,4,3.14159265358979
-hover,,Dragontail.Character.Behavior.Player.Fighting,,,FALSE,data/sprites/player/rose/fly.jase,hover,1,TRUE,TRUE,FALSE,,,0,2,2,0,1,4,0.392699081698724
+hover,,Dragontail.Character.Behavior.Player.Fighting,,,FALSE,data/sprites/player/rose/winged-main.jase,Stand,1,TRUE,TRUE,FALSE,,,0,2,2,0,1,4,0.392699081698724
 flyEnd,,,flyEnd,,FALSE,data/sprites/player/rose/fly.jase,descend,1,FALSE,FALSE,FALSE,,,0,0,0,0.5,1,4,3.14159265358979
 air-run,,Dragontail.Character.Behavior.Player.Running,,walk,FALSE,data/sprites/player/rose/winged-main.jase,Walk,1,TRUE,TRUE,FALSE,,data/sounds/combat/dash.mp3,3,2,2,0,1,8,0.0523598775598299
 air-hold,,,hold,walk,FALSE,data/sprites/player/rose/winged-hold.jase,hold,1,TRUE,TRUE,FALSE,,,0,2,2,0,4,4,0.0490873852123405
