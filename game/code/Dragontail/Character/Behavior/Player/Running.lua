@@ -5,11 +5,12 @@ local Characters   = require "Dragontail.Stage.Characters"
 local Audio    = require "System.Audio"
 local StateMachine = require "Dragontail.Character.Component.StateMachine"
 local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
+local Face       = require "Dragontail.Character.Component.Face"
 
 ---@class PlayerRunning:Behavior
 ---@field character Player
 local PlayerRunning = pooledclass(Behavior)
-PlayerRunning._nrec = Behavior._nrec + 2
+PlayerRunning._nrec = Behavior._nrec + 4
 
 ---@param heldenemy Enemy?
 function PlayerRunning:start(heldenemy)
@@ -18,6 +19,8 @@ function PlayerRunning:start(heldenemy)
     player.joysticklog:clear()
     player.velx = player.speed*math.cos(player.faceangle)
     player.vely = player.speed*math.sin(player.faceangle)
+    self.targetvelx = player.velx
+    self.targetvely = player.vely
     self.runningtime = 0
     if heldenemy then
         self.heldenemy = heldenemy
@@ -102,8 +105,24 @@ function PlayerRunning:fixedupdate()
     local inx, iny = player:getJoystick()
     player.joysticklog:put(inx, iny)
 
-    player:turnTowardsJoystick(heldenemy and "holdwalk" or "Walk", "Stand")
-    player:accelerateTowardsFace()
+    local targetvelx = self.targetvelx
+    local targetvely = self.targetvely
+    if inx ~= 0 or iny ~= 0 then
+        inx, iny = math.norm(inx, iny)
+        targetvelx = inx*player.speed
+        targetvely = iny*player.speed
+        if math.dot(targetvelx, targetvely, self.targetvelx, self.targetvely) < 0 then
+            Audio.play(player.stopdashsound)
+        end
+        self.targetvelx = targetvelx
+        self.targetvely = targetvely
+    end
+    local targetvelangle = math.atan2(targetvely, targetvelx)
+    player.facedestangle = targetvelangle
+
+    local animation = heldenemy and "holdwalk" or "Walk"
+    Face.turnTowardsAngle(player, targetvelangle, nil, animation, player.animationframe or 1)
+    Body.accelerateTowardsVel(player, targetvelx, targetvely, player.mass or 1)
 
     player:makePeriodicAfterImage(self.runningtime, player.afterimageinterval or 6)
 
