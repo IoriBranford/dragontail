@@ -176,7 +176,11 @@ function PlayerRunning:fixedupdate()
         --         end
         --     end
         -- end
-        return nextstates.runningAttack, velangle
+
+        local fullspeed =
+            math.dot(player.velx, player.vely, targetvelx, targetvely)
+            >= player.speed*player.speed/2
+        return fullspeed and nextstates.runningAttack or nextstates["tail-swing-cw"], velangle
     end
 
     if heldenemy then
