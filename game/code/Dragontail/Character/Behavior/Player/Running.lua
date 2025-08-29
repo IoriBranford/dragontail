@@ -66,6 +66,9 @@ local GroundNextStates = {
     runIntoWall = "runIntoWall",
     runningAttack = "running-kick",
     throwWeapon = "throwWeapon",
+    ["tail-swing-cw"] = "tail-swing-cw",
+    ["tail-swing-ccw"] = "tail-swing-ccw",
+    ["spinning-throw"] = "spinning-throw",
     ["fireball-storm"] = "fireball-storm",
     ["running-spit-multi-fireball"] = "running-spit-multi-fireball",
     ["running-spit-fireball"] = "running-spit-fireball",
@@ -81,6 +84,9 @@ local AirNextStates = {
     runIntoEnemy = "air-running-elbow",
     runningAttack = "air-running-kick",
     throwWeapon = "air-throwWeapon",
+    ["tail-swing-cw"] = "air-tail-swing-cw",
+    ["tail-swing-ccw"] = "air-tail-swing-ccw",
+    ["spinning-throw"] = "air-spinning-throw",
     ["fireball-storm"] = "air-fireball-storm",
     ["running-spit-multi-fireball"] = "air-running-spit-multi-fireball",
     ["running-spit-fireball"] = "air-running-spit-fireball",
@@ -127,8 +133,8 @@ function PlayerRunning:fixedupdate()
     if player.attackbutton.pressed then
         if heldenemy then
             heldenemy:stopAttack()
-            HoldOpponent.stopHolding(player, heldenemy)
-            heldenemy.canbeattacked = true
+            -- HoldOpponent.stopHolding(player, heldenemy)
+            -- heldenemy.canbeattacked = true
 
             -- if fireattackpressed then
             --     for _, attacktype in ipairs(RunningSpecialAttacks) do
@@ -138,7 +144,7 @@ function PlayerRunning:fixedupdate()
             --     end
             -- end
 
-            return nextstates.runningAttack, player.faceangle
+            return nextstates["spinning-throw"], player.faceangle, heldenemy
         end
         if player.weaponinhand then
             return nextstates.throwWeapon, player.facedestangle, 2, #player.inventory
