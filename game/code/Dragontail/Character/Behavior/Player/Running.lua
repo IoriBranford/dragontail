@@ -10,7 +10,7 @@ local Face       = require "Dragontail.Character.Component.Face"
 ---@class PlayerRunning:Behavior
 ---@field character Player
 local PlayerRunning = pooledclass(Behavior)
-PlayerRunning._nrec = Behavior._nrec + 4
+PlayerRunning._nrec = Behavior._nrec + 5
 
 ---@param heldenemy Enemy?
 function PlayerRunning:start(heldenemy)
@@ -27,6 +27,7 @@ function PlayerRunning:start(heldenemy)
         StateMachine.start(heldenemy, player.attack.heldopponentstate or "human-in-spinning-throw", player)
         heldenemy:startAttack(player.faceangle)
     end
+    self.attackpressed = false
 end
 
 local function findSomethingToRunningAttack(self, velx, vely)
@@ -149,7 +150,8 @@ function PlayerRunning:fixedupdate()
         return nextstates[chargedattack], player.facedestangle
     end
 
-    if player.attackbutton.pressed then
+    self.attackpressed = self.attackpressed or player.attackbutton.pressed
+    if self.attackpressed and player.attackbutton.down then
         if heldenemy then
             heldenemy:stopAttack()
             -- HoldOpponent.stopHolding(player, heldenemy)
@@ -165,22 +167,25 @@ function PlayerRunning:fixedupdate()
 
             return nextstates["spinning-throw"], player.faceangle, heldenemy
         end
-        if player.weaponinhand then
-            return nextstates.throwWeapon, player.facedestangle, 2, #player.inventory
-        end
-
-        -- if fireattackpressed then
-        --     for _, attacktype in ipairs(RunningSpecialAttacks) do
-        --         if Mana.canAffordAttack(player, attacktype) then
-        --             return attacktype, atan2(vely, velx)
-        --         end
-        --     end
-        -- end
 
         local fullspeed =
             math.dot(player.velx, player.vely, targetvelx, targetvely)
             >= player.speed*player.speed/2
-        return fullspeed and nextstates.runningAttack or nextstates["tail-swing-cw"], velangle
+        if fullspeed then
+            if player.weaponinhand then
+                return nextstates.throwWeapon, player.facedestangle, 2, #player.inventory
+            end
+
+            -- if fireattackpressed then
+            --     for _, attacktype in ipairs(RunningSpecialAttacks) do
+            --         if Mana.canAffordAttack(player, attacktype) then
+            --             return attacktype, atan2(vely, velx)
+            --         end
+            --     end
+            -- end
+
+            return nextstates.runningAttack, velangle
+        end
     end
 
     if heldenemy then
