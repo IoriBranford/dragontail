@@ -125,7 +125,12 @@ function PlayerRunning:fixedupdate()
     Face.turnTowardsAngle(player, targetvelangle, nil, animation, player.animationframe or 1)
     Body.accelerateTowardsVel(player, targetvelx, targetvely, player.mass or 1)
 
-    player:makePeriodicAfterImage(self.runningtime, player.afterimageinterval or 6)
+    local fullspeed = player.speed*player.speed/2 <=
+        math.dot(player.velx, player.vely, targetvelx, targetvely)
+
+    if fullspeed then
+        player:makePeriodicAfterImage(self.runningtime, player.afterimageinterval or 6)
+    end
 
     if heldenemy then
         player.holdangle = player.faceangle
@@ -168,9 +173,6 @@ function PlayerRunning:fixedupdate()
             return nextstates["spinning-throw"], player.faceangle, heldenemy
         end
 
-        local fullspeed =
-            math.dot(player.velx, player.vely, targetvelx, targetvely)
-            >= player.speed*player.speed/2
         if fullspeed then
             if player.weaponinhand then
                 return nextstates.throwWeapon, player.facedestangle, 2, #player.inventory
