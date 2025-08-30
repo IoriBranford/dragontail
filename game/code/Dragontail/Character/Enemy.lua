@@ -19,7 +19,6 @@ local Guard                = require "Dragontail.Character.Action.Guard"
 
 ---@class Enemy:Fighter,Ambush
 ---@field opponents Player[]
----@field approachtime integer?
 ---@field defaultattack string?
 local Enemy = class(Fighter)
 
@@ -229,53 +228,6 @@ function Enemy:navigateAroundSolid(destx, desty)
 end
 
 function Enemy:duringApproach(target)
-end
-
-function Enemy:approach(nextattacktype)
-    local opponent = self.opponents[1] ---@type Player
-
-    local attackerslot = self:findAttackerSlot(opponent, nextattacktype)
-    local destx, desty = self.x, self.y
-    if attackerslot then
-        destx, desty = self:getAttackerSlotPosition(attackerslot, nextattacktype)
-    end
-
-    local reached = destx == self.x and desty == self.y
-    if not reached then
-        destx, desty = self:navigateAroundSolid(destx, desty)
-
-        Face.faceVector(self, destx - self.x, desty - self.y, "Walk")
-
-        local speed = self.speed or 2
-        if distsq(self.x, self.y, opponent.x, opponent.y) > 320*320 then
-            speed = speed * 1.5
-        end
-
-        for i = 1, (self.approachtime or 60) do
-            local state, a, b, c, d, e, f = self:duringApproach(opponent)
-            if state then
-                return state, a, b, c, d, e, f
-            end
-            self.velx, self.vely = Movement.getVelocity_speed(self.x, self.y, destx, desty, speed)
-            yield()
-            if self.x == destx and self.y == desty then
-                reached = true
-                break
-            end
-        end
-    end
-
-    if self:couldAttackOpponent(opponent, nextattacktype) then
-        opponent.attacker = self
-        Face.facePosition(self, opponent.x, opponent.y)
-        return nextattacktype
-    end
-    -- self:debugPrint_couldAttackOpponent(opponent, nextattacktype)
-
-    if reached then
-        return "stand", 10
-    end
-    return "stand", 5
 end
 
 function Enemy:leave(exitx, exity)
