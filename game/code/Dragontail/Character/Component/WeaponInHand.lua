@@ -99,6 +99,9 @@ function WeaponInHand:getHandPosition(frame)
 end
 
 function WeaponInHand:draw(frame, x, y)
+    local weaponhandlayer = self.aseprite.layers["weaponhand"]
+    if not weaponhandlayer then return end
+
     local weapontype = Database.get(self.weaponinhand)
     if not weapontype then return end
 
@@ -139,7 +142,6 @@ function WeaponInHand:draw(frame, x, y)
             weapontile.objectoriginx, weapontile.objectoriginy)
     end
 
-    local weaponhandlayer = self.aseprite.layers["weaponhand"]
     if weaponhandlayer then
         frame:drawCels(weaponhandlayer, weaponhandlayer, x, y)
     end
