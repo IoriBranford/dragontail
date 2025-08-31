@@ -16,6 +16,7 @@ EXPORT SETTINGS
 
 local class = require "Aseprite.class"
 local json   = require "Aseprite.json"
+local AseSlice = require "Aseprite.Slice"
 local AseFrame = require "Aseprite.Frame"
 local Animation= require "Aseprite.Animation"
 local pathlite = require "Aseprite.pathlite"
@@ -33,6 +34,7 @@ local pathlite = require "Aseprite.pathlite"
 ---@field imagefile string
 ---@field layers {[string|integer]: integer|AseLayer}
 ---@field animations {[string]: AseTag} '*' means the aseprite itself, i.e. all frames
+---@field slices {[string]:AseSlice}?
 ---@field [integer] AseFrame|false
 local Aseprite = class(Animation)
 Aseprite.Frame = AseFrame
@@ -47,7 +49,7 @@ local AnimationTimeUnits = {
 
 ---@param self Aseprite
 ---@param cel AseCel
-local function loadCel(self, cel, filename, layers, image)
+local function loadCel(self, cel, filename, layers, image, slices)
     local layername, framei = filename:match("(.*)#(%d+)")
 	local layeri = 1
 	if #layers > 1 then
@@ -65,7 +67,7 @@ local function loadCel(self, cel, filename, layers, image)
 		for i = #self+1, framei-1 do
 			self[i] = false
 		end
-		frame = AseFrame(framei, image, cel.duration)
+		frame = AseFrame(framei, image, cel.duration, slices)
 		self[framei] = frame
 	end
     frame:putCel(layeri, cel)
@@ -101,6 +103,20 @@ function Aseprite.load(jsonfile, withimagedata)
 	local _, cel1 = next(cels)
 	local size = cel1.sourceSize
 
+	local slices = meta.slices
+	if slices then
+		for _, slice in ipairs(slices) do
+			AseSlice.cast(slice)
+			slices[slice.name] = slice
+			local keys = {}
+			for _, key in ipairs(slice.keys) do
+				key.frame = key.frame + 1
+				keys[key.frame] = key
+			end
+			slice.keys = keys
+		end
+	end
+
 	---@type Aseprite
 	local ase = Aseprite.cast({
         image = image,
@@ -109,17 +125,18 @@ function Aseprite.load(jsonfile, withimagedata)
         width = size.w,
         height = size.h,
         layers = layers,
-        animations = animations
+        animations = animations,
+		slices = slices
     })
 
 	if cels[1] then
 		for i = 1, #cels do
 			local cel = cels[i]
-			loadCel(ase, cel, cel.filename, layers, image)
+			loadCel(ase, cel, cel.filename, layers, image, slices)
 		end
 	else
 		for k,v in pairs(cels) do
-			loadCel(ase, v, k, layers, image)
+			loadCel(ase, v, k, layers, image, slices)
 		end
 	end
 
@@ -167,6 +184,31 @@ function Aseprite:mapCelsBySourcePositions()
         end
     end
 	return celsbysrcpos
+end
+
+---@param name string
+---@param i integer|string frame index or tag name
+---@return AseSlice?
+function Aseprite:getFrameSlice(name, i)
+	local slice = self.slices and self.slices[name]
+	if not slice then return end
+
+	if type(i) == "string" then
+		local animation = self.animations[i]
+		if not animation then return end
+		i = animation.from
+	end
+
+	if not slice.keys[i] then return end
+	local frameslices = self[i].slices
+	return frameslices and frameslices[name]
+end
+
+function Aseprite:getSliceFrameOrigin(name, i)
+	local slice = self:getFrameSlice(name, i)
+	if slice then
+		return slice:getFrameOrigin(name)
+	end
 end
 
 ---@param frame AseFrame|integer?

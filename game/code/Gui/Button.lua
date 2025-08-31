@@ -4,6 +4,7 @@ local Graphics     = require "Tiled.Graphics"
 local Color        = require "Tiled.Color"
 
 ---@class Button:GuiObject
+---@field action string
 ---@field label GuiObject?
 ---@field disabled boolean
 ---@field disabledcolor Color?

@@ -1,4 +1,4 @@
-local Body = require "Dragontail.Character.Body"
+local Body = require "Dragontail.Character.Component.Body"
 ---@class Slide:Character
 local Slide = {}
 

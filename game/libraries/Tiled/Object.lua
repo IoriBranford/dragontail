@@ -142,6 +142,12 @@ local function processPoly(object)
 end
 
 function TiledObject:_init(map)
+    if map then
+        Properties.resolveObjectRefs(self.properties, map.objects)
+        Properties.resolveAssetPaths(self.properties, map.directory)
+    end
+    Properties.moveUp(self)
+
     if self.visible == nil then
         self.visible = true
     end
@@ -172,14 +178,8 @@ function TiledObject:_init(map)
     processPoly(self)
     self:initText()
 
-    if map then
-        Properties.resolveObjectRefs(self.properties, map.objects)
-        Properties.resolveAssetPaths(self.properties, map.directory)
-    end
-    Properties.moveUp(self)
-
-    if map then
-        self:initAseprite(map.directory)
+    if self.asefile and not self.aseprite then
+        self:initAseprite(map and map.directory)
     end
 
     return self
@@ -203,8 +203,7 @@ function TiledObject:initTile(tile, flipx, flipy)
         end
         if tile.imagetype == "aseprite" then
             self.asefile = tile.tileset.imagefile
-            self.originx = self.originx or tile.objectoriginx
-            self.originy = self.originy or tile.objectoriginy
+            self:initAseprite()
             return
         end
     end
@@ -214,7 +213,7 @@ function TiledObject:initTile(tile, flipx, flipy)
 end
 
 ---@param self AsepriteObject|TiledObject
----@param directory string
+---@param directory string?
 function TiledObject:initAseprite(directory)
     local asefile = self.asefile
     if not asefile then
@@ -396,12 +395,14 @@ function TiledObject:setTile(tile, frame1, loopframe)
     end
     if not tile then return end
     self.tile = tile
-    self.animationframe = frame1 or 1
     self.animationtime = 0
     self.animationquad = nil
-    if tile.animation and loopframe and loopframe <= 0 then
-        loopframe = #tile.animation + loopframe
+    local animation = tile.animation
+    if animation then
+        frame1 = frame1 and animation:clampIndex(frame1)
+        loopframe = loopframe and animation:clampIndex(loopframe)
     end
+    self.animationframe = frame1 or 1
     self.loopframe = loopframe
 end
 local setTile = TiledObject.setTile
@@ -432,11 +433,13 @@ function TiledObject:setAseAnimation(animation, frame1, loopframe)
         return
     end
     self.aseanimation = animation
-    self.animationframe = frame1 or 1
     self.animationtime = 0
-    if animation and loopframe and loopframe <= 0 then
-        loopframe = #animation + loopframe
+
+    if animation then
+        frame1 = frame1 and animation:clampIndex(frame1)
+        loopframe = loopframe and animation:clampIndex(loopframe)
     end
+    self.animationframe = frame1 or 1
     self.loopframe = loopframe
 end
 
@@ -668,11 +671,42 @@ function TiledObject:drawParticleSystem()
     love.graphics.draw(self.particlesystem)
 end
 
+function TiledObject:getOrigin()
+    local originx, originy = self.originx, self.originy
+    if originx and originy then return originx, originy end
+
+    if self.aseprite then
+        ---@cast self AsepriteObject
+        local animation = self.aseanimation
+
+        if animation then
+            local aframe = self.animationframe or 1
+            local frame = animation[aframe]
+            if frame then
+                originx, originy = frame:getSliceOrigin("origin")
+                if originx and originy then return originx, originy end
+            end
+
+            originx, originy = animation[1]:getSliceOrigin("origin")
+            if originx and originy then return originx, originy end
+        end
+
+        originx, originy = self.aseprite[1]:getSliceOrigin("origin")
+        if originx and originy then return originx, originy end
+    end
+
+    if self.tile then
+        return self.tile.objectoriginx, self.tile.objectoriginy
+    end
+
+    return 0, 0
+end
+
 ---@param self AsepriteObject
 function TiledObject:drawAseprite(fixedfrac)
     local animation = self.aseanimation or self.aseprite
     local aframe = self.animationframe or 1
-    local frame = animation[aframe]
+    local frame = animation and animation[aframe]
     if not frame then
         return
     end
@@ -683,12 +717,16 @@ function TiledObject:drawAseprite(fixedfrac)
     local velx, vely = self.velx or 0, self.vely or 0
     fixedfrac = fixedfrac or 0
 
+    local x, y = self.x + velx*fixedfrac, self.y + vely*fixedfrac
     love.graphics.push()
-    love.graphics.translate(self.x + velx*fixedfrac, self.y + vely*fixedfrac)
+    love.graphics.translate(x, y)
     love.graphics.rotate(self.rotation or 0)
     love.graphics.shear(self.skewx or 0, self.skewy or 0)
     love.graphics.scale(self.scalex or 1, self.scaley or 1)
-    love.graphics.translate(-(self.originx or 0), -(self.originy or 0))
+
+    local originx, originy = self:getOrigin()
+    love.graphics.translate(-originx, -originy)
+
     frame:draw()
     love.graphics.pop()
 end

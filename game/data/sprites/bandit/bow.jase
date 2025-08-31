@@ -1298,7 +1298,7 @@
  },
  "meta": {
   "app": "http://www.aseprite.org/",
-  "version": "1.3.8.1-x64",
+  "version": "1.3.14.4-x64",
   "image": "bow.png",
   "format": "RGBA8888",
   "size": { "w": 614, "h": 569 },
@@ -1317,6 +1317,7 @@
    { "name": "FallKnees", "from": 36, "to": 38, "direction": "forward", "color": "#000000ff" },
    { "name": "FallFlat", "from": 39, "to": 41, "direction": "forward", "color": "#000000ff" },
    { "name": "FallRiseToKnees", "from": 39, "to": 41, "direction": "reverse", "color": "#000000ff" },
+   { "name": "Down", "from": 41, "to": 41, "direction": "forward", "color": "#000000ff" },
    { "name": "Swing0", "from": 42, "to": 47, "direction": "forward", "color": "#000000ff" },
    { "name": "SwingWindup0", "from": 42, "to": 44, "direction": "forward", "color": "#000000ff" },
    { "name": "SwingAttack0", "from": 45, "to": 47, "direction": "forward", "color": "#000000ff" },
@@ -1368,6 +1369,7 @@
    { "name": "bow", "opacity": 255, "blendMode": "normal" }
   ],
   "slices": [
+   { "name": "origin", "color": "#0000ffff", "keys": [{ "frame": 0, "bounds": {"x": 63, "y": 87, "w": 2, "h": 2 }, "pivot": {"x": 1, "y": 1 } }] }
   ]
  }
 }

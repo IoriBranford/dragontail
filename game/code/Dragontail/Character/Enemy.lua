@@ -6,19 +6,19 @@ local Raycast    = require "Object.Raycast"
 local Color      = require "Tiled.Color"
 local Dodge      = require "Dragontail.Character.Action.Dodge"
 local Slide      = require "Dragontail.Character.Action.Slide"
-local Face       = require "Dragontail.Character.Action.Face"
+local Face       = require "Dragontail.Character.Component.Face"
 local Shoot      = require "Dragontail.Character.Action.Shoot"
-local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
-local Body                 = require "Dragontail.Character.Body"
+local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
+local Body                 = require "Dragontail.Character.Component.Body"
 local Character            = require "Dragontail.Character"
-local CollisionMask        = require "Dragontail.Character.Body.CollisionMask"
+local CollisionMask        = require "Dragontail.Character.Component.Body.CollisionMask"
+local Guard                = require "Dragontail.Character.Action.Guard"
 
 ---@class Ambush
 ---@field ambushsightarc number?
 
 ---@class Enemy:Fighter,Ambush
 ---@field opponents Player[]
----@field approachtime integer?
 ---@field defaultattack string?
 local Enemy = class(Fighter)
 
@@ -210,7 +210,7 @@ function Enemy:navigateAroundSolid(destx, desty)
     local z = self.z + self.bodyheight/2
     local bodyradius = self.bodyradius
     local raycast = Raycast(x, y, z, destx - x, desty - y, 0, 1, bodyradius/2)
-    raycast.hitslayers = CollisionMask.merge("Solid", "Camera")
+    raycast.hitslayers = CollisionMask.merge("Object", "Wall", "Camera")
     if Characters.castRay3(raycast, self) then
         local todestx, todesty = destx - x, desty - y
         local frontendx, frontendy = raycast.hitwallx, raycast.hitwally
@@ -228,53 +228,6 @@ function Enemy:navigateAroundSolid(destx, desty)
 end
 
 function Enemy:duringApproach(target)
-end
-
-function Enemy:approach(nextattacktype)
-    local opponent = self.opponents[1] ---@type Player
-
-    local attackerslot = self:findAttackerSlot(opponent, nextattacktype)
-    local destx, desty = self.x, self.y
-    if attackerslot then
-        destx, desty = self:getAttackerSlotPosition(attackerslot, nextattacktype)
-    end
-
-    local reached = destx == self.x and desty == self.y
-    if not reached then
-        destx, desty = self:navigateAroundSolid(destx, desty)
-
-        Face.faceVector(self, destx - self.x, desty - self.y, "Walk")
-
-        local speed = self.speed or 2
-        if distsq(self.x, self.y, opponent.x, opponent.y) > 320*320 then
-            speed = speed * 1.5
-        end
-
-        for i = 1, (self.approachtime or 60) do
-            local state, a, b, c, d, e, f = self:duringApproach(opponent)
-            if state then
-                return state, a, b, c, d, e, f
-            end
-            self.velx, self.vely = Movement.getVelocity_speed(self.x, self.y, destx, desty, speed)
-            yield()
-            if self.x == destx and self.y == desty then
-                reached = true
-                break
-            end
-        end
-    end
-
-    if self:couldAttackOpponent(opponent, nextattacktype) then
-        opponent.attacker = self
-        Face.facePosition(self, opponent.x, opponent.y)
-        return nextattacktype
-    end
-    -- self:debugPrint_couldAttackOpponent(opponent, nextattacktype)
-
-    if reached then
-        return "stand", 10
-    end
-    return "stand", 5
 end
 
 function Enemy:leave(exitx, exity)
@@ -303,7 +256,7 @@ function Enemy:attackIfAmmoElseLeave()
     if attackstate and ammo > 0 and opponent.health > 0 then
         local projectileheight = self.projectilelaunchheight or (self.bodyheight/2)
         local raycast = Raycast(self.x, self.y, self.z + projectileheight, 1, 0, 0, 1)
-        raycast.hitslayers = CollisionMask.merge("Solid", "Camera", "Player", "Enemy")
+        raycast.hitslayers = CollisionMask.merge("Wall", "Camera", "Player", "Enemy")
         local hitcharacter
         repeat
             yield()
@@ -329,7 +282,7 @@ end
 
 function Enemy:duringPrepareAttack(target)
     Face.turnTowardsObject(self, target, self.faceturnspeed or 0,
-        self.state.animation, self.state.frame1, self.state.loopframe)
+        self.state.animation, self.animationframe, self.state.loopframe)
     self:accelerateTowardsVel(0, 0, 4)
     if self.enteredcamera and (self.velx ~= 0 or self.vely ~= 0) then
         Body.keepInBounds(self)
@@ -348,67 +301,7 @@ function Enemy:interruptWithDodge(target)
     end
 end
 
-function Enemy:prepareAttack()
-    self.numopponentshit = 0
-    self:stopGuarding()
-
-    local target = self.opponents[1]
-
-    for t = 1, 300 do
-        self.color = self:getAttackFlashColor(t, self.canbeattacked)
-
-        local state, a, b, c, d, e, f = self:duringPrepareAttack(target)
-        if state then
-            return state, a, b, c, d, e, f
-        end
-
-        yield()
-    end
-end
-
 function Enemy:duringAttackSwing(target)
-end
-
-function Enemy:executeAttack()
-    self.numopponentshit = 0
-    self:stopGuarding()
-
-    local target = self.opponents[1]
-
-    local projectiletype = self.attack.projectiletype
-    if projectiletype then
-        -- TODO if target in view then
-        Shoot.launchProjectileAtObject(self, projectiletype, target)
-        -- TODO else shoot at current faceangle
-    else
-        local attackangle = floor((self.faceangle + (pi/4)) / (pi/2)) * pi/2
-        self:startAttack(attackangle)
-    end
-
-    local lungespeed = self.attack.lungespeed or 0
-    local hittime = self.attack.hittingduration or 10
-    hittime = math.min(hittime, self.state.statetime)
-    local slideangle = self.faceangle
-    for t = 1, math.min(300, self.state.statetime) do
-        lungespeed = Slide.updateSlideSpeed(self, slideangle, lungespeed, self.attack.lungedecel or 1)
-        local state, a, b, c, d, e, f = self:duringAttackSwing(target)
-        if state then
-            return state, a, b, c, d, e, f
-        end
-        if t >= hittime then
-        else
-            self.color = self:getAttackFlashColor(t, self.canbeattacked)
-            self:makePeriodicAfterImage(t, self.afterimageinterval)
-        end
-        yield()
-        if self.enteredcamera and (self.velx ~= 0 or self.vely ~= 0) then
-            Body.keepInBounds(self)
-        end
-        if t >= hittime then
-            self.color = Color.White
-            self:stopAttack()
-        end
-    end
 end
 
 function Enemy:enterAndDropDown()
@@ -457,50 +350,85 @@ function Enemy:watchForOpponent()
     end
 end
 
-function Enemy:guard()
+function Enemy:beforeGuard()
     self.velx, self.vely = 0, 0
-    local t = self.guardtime or 60
-    local opponent = self.opponents[1]
-    repeat
-        local guardangle = 0
-        if opponent.y ~= self.y or opponent.x ~= self.x then
-            guardangle = atan2(opponent.y - self.y, opponent.x - self.x)
-        end
-        self:startGuarding(guardangle)
-        DirectionalAnimation.set(self, "guard", guardangle, 1, 0)
-        yield()
-        t = t - 1
-    until t <= 0
-    self:stopGuarding()
-    self.numguardedhits = 0
-    return "stand"
 end
 
-function Enemy:guardHit(attacker)
-    -- local facex, facey = math.cos(self.faceangle), math.sin(self.faceangle)
-    -- local guardarc = self.guardarc or (pi/2)
-    -- local toattackerx = -self.x + attacker.x
-    -- local toattackery = -self.y + attacker.y
-    -- local toattackerdist = len(toattackerx, toattackery)
-    -- local dotGA = dot(toattackerx, toattackery, facex, facey)
-    -- if dotGA >= cos(guardarc) * toattackerdist then
-    Audio.play(self.guardhitsound)
-    self:makeImpactSpark(attacker, attacker.attack.guardhitspark)
-    self.hurtstun = attacker.attackguardstun or 6
-    yield()
+function Enemy:duringGuard(t)
+    local opponent = self.opponents[1]
+    Face.turnTowardsObject(self, opponent, self.faceturnspeed, self.state.animation)
+    local guardangle = floor((self.faceangle + (pi/4)) / (pi/2)) * pi/2
+    Guard.startGuarding(self, guardangle)
+end
 
-    self.numguardedhits = (self.numguardedhits or 0) + 1
-    local guardcounterattack = self.guardcounterattack
-    local guardhitstocounterattack = self.guardhitstocounterattack or 3
-    if guardcounterattack then
-        -- print(guardcounterattack, guardhitstocounterattack, self.numguardedhits, self.attackwindupinvuln)
-        if self.numguardedhits >= guardhitstocounterattack then
-            self.numguardedhits = 0
-            self:stopGuarding()
-            return guardcounterattack
-        end
+function Enemy:afterGuard()
+    Guard.stopGuarding(self)
+end
+
+function Enemy:guard()
+    local nextstate, a, b, c, d, e, f
+
+    nextstate, a, b, c, d, e, f = self:beforeGuard()
+    if nextstate then
+        return nextstate, a, b, c, d, e, f
     end
-    return "guard"
+
+    for t = 1, self.state.statetime or 60 do
+        nextstate, a, b, c, d, e, f = self:duringGuard(t)
+        if nextstate then
+            return nextstate, a, b, c, d, e, f
+        end
+        yield()
+    end
+
+    nextstate, a, b, c, d, e, f = self:afterGuard()
+    if nextstate then
+        return nextstate, a, b, c, d, e, f
+    end
+end
+
+function Enemy:beforeGuardHit(attacker)
+    Guard.pushBackAttacker(self, attacker)
+end
+
+function Enemy:duringGuardHit(attacker, t)
+end
+
+---@param hit AttackHit
+---@return string? nextstate
+---@return any ...
+function Enemy:guardHit(hit)
+    local attacker, attack = hit.attacker, hit.attack
+    self:makeImpactSpark(attacker, attack.guardhitspark)
+    self.hurtstun = attack.opponentguardstun
+        or attack.opponentstun or 6
+
+    local nextstate, a, b, c, d, e, f
+    nextstate, a, b, c, d, e, f = self:beforeGuardHit(attacker)
+    if nextstate then
+        return nextstate, a, b, c, d, e, f
+    end
+    local time = max(self.state.statetime or 60, 60)
+    for t = 1, time do
+        nextstate, a, b, c, d, e, f = self:duringGuardHit(attacker, t)
+        if nextstate then
+            return nextstate, a, b, c, d, e, f
+        end
+        yield()
+    end
+
+    -- self.numguardedhits = (self.numguardedhits or 0) + 1
+    -- local guardcounterattack = self.guardcounterattack
+    -- local guardhitstocounterattack = self.guardhitstocounterattack or 3
+    -- if guardcounterattack then
+    --     -- print(guardcounterattack, guardhitstocounterattack, self.numguardedhits, self.attackwindupinvuln)
+    --     if self.numguardedhits >= guardhitstocounterattack then
+    --         self.numguardedhits = 0
+    --         Guard.stopGuarding(self)
+    --         return guardcounterattack
+    --     end
+    -- end
+    -- return "guard"
         -- local afterguardattacktype = self.afterguardattacktype
         -- if afterguardattacktype then
         --     return afterguardattacktype
@@ -508,6 +436,7 @@ function Enemy:guardHit(attacker)
         -- return afterguardhitai or "stand"
     -- end
     -- return self:hurt(attacker)
+    return "stand"
 end
 
 return Enemy

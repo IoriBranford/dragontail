@@ -1,7 +1,8 @@
 local Characters = require "Dragontail.Stage.Characters"
-local Body       = require "Dragontail.Character.Body"
+local Body       = require "Dragontail.Character.Component.Body"
 local Audio    = require "System.Audio"
-local StateMachine   = require "Dragontail.Character.StateMachine"
+local StateMachine   = require "Dragontail.Character.Component.StateMachine"
+local Guard          = require "Dragontail.Character.Action.Guard"
 
 ---@class HeldByOpponent:Character
 ---@field heldby HoldOpponent?
@@ -20,7 +21,7 @@ local HoldOpponent = {}
 function HoldOpponent:startHolding(opponent)
     self.heldopponent = opponent
     opponent:stopAttack()
-    opponent:stopGuarding()
+    Guard.stopGuarding(opponent)
     opponent.heldby = self
     Audio.play(self.holdsound)
     StateMachine.start(opponent, opponent.heldai or "held", self)
@@ -46,7 +47,7 @@ end
 ---@param holder HoldOpponent
 function HoldOpponent:heldBy(holder)
     self:stopAttack()
-    self:stopGuarding()
+    Guard.stopGuarding(self)
     self.velx, self.vely = 0, 0
     while HoldOpponent.isHolding(holder, self) do
         local dx, dy = holder.x - self.x, holder.y - self.y
@@ -85,8 +86,7 @@ function HoldOpponent:updateOpponentPosition()
     local enemy = self.heldopponent
     if not enemy then return end
 
-    local grabradius = self.grabradius or 8
-    local radii = grabradius + enemy.bodyradius
+    local radii = self.bodyradius + enemy.bodyradius + 1
     local ox = radii*math.cos(self.holdangle or 0)
     local oy = radii*math.sin(self.holdangle or 0)
     local oz = math.max(0, (self.bodyheight - enemy.bodyheight)/2)
@@ -100,8 +100,7 @@ function HoldOpponent:handleOpponentCollision()
     if not enemy then return end
     local epenex, epeney = Body.keepInBounds(enemy)
     if epenex and epeney then
-        local grabradius = self.grabradius or 8
-        local radii = grabradius + enemy.bodyradius
+        local radii = self.bodyradius + enemy.bodyradius + 1
         local ox = radii*math.cos(self.holdangle or 0)
         local oy = radii*math.sin(self.holdangle or 0)
         self.x = enemy.x - ox

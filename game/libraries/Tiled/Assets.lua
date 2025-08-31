@@ -200,7 +200,9 @@ function Assets.packTiles()
 
     local atlas = TileAtlas.New()
     for _, tileset in pairs(tilesets) do
-        atlas:addTileset(tileset)
+        if tileset.imagetype == "image" then
+            atlas:addTileset(tileset)
+        end
     end
     for _, ase in pairs(aseprites) do
         for _, frame in ipairs(ase) do
@@ -217,9 +219,11 @@ function Assets.packTiles()
     -- atlas:save("atlas")
 
     for _, tileset in pairs(tilesets) do
-        tileset.image = packimage
-        Assets.permanent[tileset.imagefile] = nil
-        Assets.put(tileset.imagefile, packimage)
+        if tileset.imagetype == "image" then
+            tileset.image = packimage
+            Assets.permanent[tileset.imagefile] = nil
+            Assets.put(tileset.imagefile, packimage)
+        end
     end
     if aseprites then
         for _, ase in pairs(aseprites) do

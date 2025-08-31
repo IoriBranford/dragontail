@@ -19,7 +19,7 @@ local Color      = require "Tiled.Color"
 ---@field user Character? The sole character who can activate this trigger
 ---@field difficulties string? On what difficulty levels can this trigger activate
 local Trigger = class(Character)
-Trigger.statetable = "data/st_objects.csv"
+Trigger.statetable = "data/database/objects-states.csv"
 Trigger.module = "Dragontail.Character.Trigger"
 Trigger.team = "trigger"
 
@@ -251,8 +251,8 @@ end
 --     Background.setLayersInGame(trigger.layerpaths, trigger.ingame)
 -- end
 
-function Trigger:startStageEvent()
-    Stage.startEvent(self.event)
+function Trigger:startSequence()
+    Stage.startSequence(self.sequence)
 end
 
 function Trigger:pulseAlpha()

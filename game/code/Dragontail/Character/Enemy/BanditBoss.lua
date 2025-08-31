@@ -3,8 +3,8 @@ local Database = require "Data.Database"
 local Audio    = require "System.Audio"
 local Characters = require "Dragontail.Stage.Characters"
 local Stage      = require "Dragontail.Stage"
-local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
-local Face                 = require "Dragontail.Character.Action.Face"
+local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
+local Face                 = require "Dragontail.Character.Component.Face"
 
 --- Attacks:
 --- - Lance charge
@@ -99,7 +99,7 @@ end
 
 function BanditBoss:duringAttackSwing(target)
     local turnspeed = self.attack.spinspeed or 0
-    if turnspeed ~= 0 then
+    if turnspeed ~= 0 and self.attackangle then
         self.attackangle = self.attackangle + turnspeed
         Face.faceAngle(self, self.attackangle, self.state.animation, self.state.frame1, self.state.loopframe)
     end

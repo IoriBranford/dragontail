@@ -1,12 +1,13 @@
 local Database      = require "Data.Database"
 local Color      = require "Tiled.Color"
 local Config      = require "System.Config"
-local StateMachine       = require "Dragontail.Character.StateMachine"
+local StateMachine       = require "Dragontail.Character.Component.StateMachine"
 local Object      = require "Tiled.Object"
 local Movement    = require "Component.Movement"
-local Attacker      = require "Dragontail.Character.Attacker"
-local Body        = require "Dragontail.Character.Body"
-local Shadow      = require "Dragontail.Character.Shadow"
+local Attacker      = require "Dragontail.Character.Component.Attacker"
+local Body        = require "Dragontail.Character.Component.Body"
+local Shadow      = require "Dragontail.Character.Component.Shadow"
+local Guard       = require "Dragontail.Character.Action.Guard"
 local Characters
 
 local pi = math.pi
@@ -24,7 +25,7 @@ local testcircles = math.testcircles
 ---@class DropAfterimage
 ---@field afterimageinterval integer?
 
----@class Character:AsepriteObject,DropAfterimage,Body,Attacker,Victim,Shadow
+---@class Character:AsepriteObject,DropAfterimage,Body,Attacker,Victim,Guard,Shadow
 ---@field initialai string
 ---@field camera Camera
 ---@field opponents Character[]
@@ -56,13 +57,25 @@ local function nop() end
 ---@param scene Scene
 function Character:addToScene(scene)
     scene:add(self)
-    self.originx = self.spriteoriginx
-    self.originy = self.spriteoriginy
 
     if self.draw == Character.draw then
         self.baseDraw = nop
     else
         self.baseDraw = self.draw
+    end
+    self.draw = nil
+end
+
+function Character:draw(fixedfrac)
+    Shadow.drawSprite(self, fixedfrac)
+    love.graphics.push()
+    love.graphics.translate(0, -self.z - self.velz*fixedfrac)
+    self:baseDraw(fixedfrac)
+    love.graphics.pop()
+    if Config.drawbodies then
+        Body.draw(self, fixedfrac)
+        Attacker.drawCircle(self, fixedfrac)
+        Guard.draw(self, fixedfrac)
     end
     self.draw = nil
 end
@@ -85,10 +98,9 @@ function Character:makeAfterImage()
         y = self.y,
         z = self.z,
         asefile = self.asefile,
-        spriteoriginx = self.spriteoriginx,
-        spriteoriginy = self.spriteoriginy,
         type = "afterimage"
     })
+    afterimage.originx, afterimage.originy = self:getOrigin()
     afterimage:setAseAnimation(self.aseanimation, self.animationframe)
 end
 
@@ -188,12 +200,6 @@ function Character:fixedupdate()
     end
 end
 
-function Character:fixedupdateShake(time)
-    time = max(0, time - 1)
-    self.originx = self.spriteoriginx + 2*math.sin(time)
-    return time
-end
-
 function Character:update(dsecs, fixedfrac)
 end
 
@@ -203,66 +209,14 @@ Character.isAttacking = Attacker.isAttacking
 Character.startAttack = Attacker.startAttack
 Character.stopAttack = Attacker.stopAttack
 
-function Character:startGuarding(guardangle)
-    self.guardangle = guardangle
-end
+function Character:onHitByAttack(hit)
+    local guardhitstate = self.guardai or "guardHit"
+    local hurtstate = self.hurtai or "hurt"
 
-function Character:stopGuarding()
-    self.guardangle = nil
-end
-
-function Character:onHitByAttack(attacker)
-    local guardhitai = self.guardai or "guardHit"
-    local hurtai = self.hurtai or "hurt"
-    local hitai = attacker.attack.selfstateonhit
-    local attacktype = attacker.attacktype
-    local canbedamagedbyattack = self.canbedamagedbyattack
-    if type(attacktype) == "string"
-    and type(canbedamagedbyattack) == "string" then
-        canbedamagedbyattack = attacktype:find(canbedamagedbyattack) ~= nil
+    if hit.guarded then
+        StateMachine.start(self, guardhitstate, hit)
     else
-        canbedamagedbyattack = true
-    end
-
-    if self.guardangle or not canbedamagedbyattack then
-        StateMachine.start(self, guardhitai, attacker)
-        hitai = attacker.selfstateonguard or hitai
-    else
-        StateMachine.start(self, hurtai, attacker)
-        if attacker.hitstun <= 0 then
-            attacker.hitstun = attacker.attack.selfstun or 3
-        end
-        hitai = attacker.attack.selfstateonhitopponent or hitai
-        attacker.numopponentshit = (attacker.numopponentshit or 0) + 1
-    end
-    if hitai then
-        StateMachine.start(attacker, hitai, self)
-    end
-end
-
-function Character:debugPrint_collideWithCharacterAttack(attacker)
-    print("hurtstun", self.hurtstun)
-    print("canbeattacked", self.canbeattacked)
-    print("attacker.attack.canjuggle", attacker.attack.canjuggle)
-    print("canbejuggled", self.canbejuggled)
-    if not Attacker.checkAttackCollision(attacker, self) then
-        Attacker.debugPrint_checkAttackCollision_circle(attacker, self)
-    end
-end
-
----@param attacker Character
-function Character:collideWithCharacterAttack(attacker)
-    if self.hurtstun > 0 then
-        return
-    end
-    if not self.canbeattacked then
-        if not attacker.attack.canjuggle or not self.canbejuggled then
-            return
-        end
-    end
-    if Attacker.checkAttackCollision(attacker, self) then
-        self:onHitByAttack(attacker)
-        return true
+        StateMachine.start(self, hurtstate, hit)
     end
 end
 
@@ -326,6 +280,10 @@ end
 
 function Character:hasDisappeared()
     return self.disappeared
+end
+
+function Character:release()
+    StateMachine.release(self)
 end
 
 return Character

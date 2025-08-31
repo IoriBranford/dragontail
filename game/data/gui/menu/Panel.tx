@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <object width="224" height="162">
+  <properties>
+   <property name="color" type="color" value="#ffc52021"/>
+   <property name="linecolor" type="color" value="#ffff6161"/>
+   <property name="roundcorners" type="float" value="8"/>
+  </properties>
+ </object>
+</template>

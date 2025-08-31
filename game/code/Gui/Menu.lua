@@ -1,10 +1,11 @@
-local Config    = require "System.Config"
 local Platform  = require "System.Platform"
 local GuiObject = require "Gui.GuiObject"
 local ObjectGroup = require "Tiled.ObjectGroup"
 local InputSetter = require "Gui.InputSetter"
 
 ---@class Menu:ObjectGroup
+---@field backaction string?
+---@field initialcursorposition integer?
 local Menu = class(ObjectGroup)
 Menu.doAction = GuiObject.doAction
 
@@ -25,6 +26,7 @@ function Menu:spawn()
             elseif object.ismenuitem then
                 menuitems[#menuitems + 1] = object
                 object.menu = self
+                object:setDisabled(object.disabled)
             end
         else
             object:setVisible(false)
@@ -37,15 +39,43 @@ function Menu:spawn()
         return a.y < b.y
     end)
 
-    if Platform.IsMobile then
-        self:selectButton()
-    elseif self.initialcursorposition then
-        self:selectButton(self.initialcursorposition)
-    elseif not self.cursorposition then
-        self:selectButton(1)
+    return self
+end
+
+function Menu:initCursor()
+    local i
+    if not Platform.IsMobile then
+        i = self.initialcursorposition or 1
+        i = self:findNextUsableButton(i-1, 1)
+    end
+    self:selectButton(i)
+end
+
+function Menu:setButtonDisabled(button, disabled)
+    local menuitems = self.menuitems
+    local buttoni
+    if type(button) == "number" then
+        buttoni = button
+        button = menuitems[buttoni]
+    elseif type(button) == "string" then
+        button = self[button]
+    end
+    if not buttoni and type(button) == "table" then
+        for i, b in ipairs(menuitems) do
+            if b == button then
+                buttoni = i
+                break
+            end
+        end
+    end
+    if not buttoni then
+        return
     end
 
-    return self
+    button:setDisabled(disabled)
+    if disabled and buttoni == self.cursorposition then
+        self:moveCursor(1)
+    end
 end
 
 function Menu:setActiveInputSetter(inputsetter)
@@ -65,15 +95,15 @@ function Menu:keypressed(key)
         end
         return
     end
-    if key == "return" or key == Config.key_fire then
+    if key == "return" or key == "enter" then
         self:pressSelectedButton()
-    elseif key == Config.key_up then
+    elseif key == "up" then
         self:moveCursor(-1)
-    elseif key == Config.key_down then
+    elseif key == "down" then
         self:moveCursor(1)
-    elseif key == Config.key_left then
+    elseif key == "left" then
         self:changeSelectedSlider(-1)
-    elseif key == Config.key_right then
+    elseif key == "right" then
         self:changeSelectedSlider(1)
     elseif key == "escape" then
         self:doAction(self.backaction)
@@ -101,7 +131,7 @@ function Menu:gamepadpressed(gamepad, button)
         self:changeSelectedSlider(-1)
     elseif button == "dpright" then
         self:changeSelectedSlider(1)
-    elseif button == "start" or button == Config.joy_fire then
+    elseif button == "start" or button == "a" then
         self:pressSelectedButton()
     elseif button == "back" then
         self:doAction(self.backaction)
@@ -126,7 +156,6 @@ function Menu:touchpressed(id, x, y)
     if self.menutouchid then
         return
     end
-    x, y = self.gui.canvas:inverseTransformPoint(x, y)
     local i = self:itemAtPoint(x, y)
     if not i then
         return
@@ -139,7 +168,6 @@ function Menu:touchmoved(id, x, y, dx, dy)
     if self.menutouchid ~= id then
         return
     end
-    x, y = self.gui.canvas:inverseTransformPoint(x, y)
     local i = self:itemAtPoint(x, y)
     if i ~= self.cursorposition then
         self:selectButton(i)
@@ -176,17 +204,31 @@ function Menu:selectButton(i)
     self.cursorposition = i
 end
 
-function Menu:moveCursor(dir)
+---@return integer i
+---@return Button? button
+function Menu:findNextUsableButton(i, dir)
     dir = dir / math.abs(dir)
-    local i = self.cursorposition or 0
     local menuitems = self.menuitems
-    i = i + dir
-    if i < 1 then
-        i = #menuitems
-    elseif i > #menuitems then
-        i = 1
+    for _ = 1, #menuitems do
+        i = i + dir
+        if i < 1 then
+            i = #menuitems
+        elseif i > #menuitems then
+            i = 1
+        end
+        if not menuitems[i].disabled then
+            break
+        end
     end
+    return i
+end
+
+function Menu:moveCursor(dir)
+    local i = self.cursorposition or 0
+    i = self:findNextUsableButton(i, dir)
     self:selectButton(i)
+
+    local menuitems = self.menuitems
     for _, cursor in ipairs(self.cursors) do
         cursor:onMoveTo(i, menuitems[i])
     end

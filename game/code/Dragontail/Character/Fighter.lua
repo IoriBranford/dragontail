@@ -5,12 +5,13 @@ local Characters = require "Dragontail.Stage.Characters"
 local TiledObject = require "Tiled.Object"
 local Movement    = require "Component.Movement"
 local Slide      = require "Dragontail.Character.Action.Slide"
-local Face       = require "Dragontail.Character.Action.Face"
+local Face       = require "Dragontail.Character.Component.Face"
 local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
-local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
-local Mana                 = require "Dragontail.Character.Mana"
-local Body                 = require "Dragontail.Character.Body"
+local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
+local Mana                 = require "Dragontail.Character.Component.Mana"
+local Body                 = require "Dragontail.Character.Component.Body"
 local Color                = require "Tiled.Color"
+local Guard                = require "Dragontail.Character.Action.Guard"
 
 ---@class Dash
 ---@field dashsound string?
@@ -24,12 +25,6 @@ local Color                = require "Tiled.Color"
 ---@class Jump
 ---@field jumplandsound string?
 
----@class Guard
----@field guardtime integer?
----@field guardhitsound string?
----@field guardcounterattack string?
----@field guardhitstocounterattack integer?
-
 ---@class ThrowWeapon
 ---@field throwtime integer?
 ---@field throwsound string?
@@ -42,7 +37,6 @@ local Color                = require "Tiled.Color"
 
 ---@class Fall
 ---@field fallanimationtime number?
----@field bodydropsound string?
 
 ---@class GetUp
 ---@field getupai string?
@@ -53,7 +47,7 @@ local Color                = require "Tiled.Color"
 ---@class Win
 ---@field victorysound string?
 
----@class Fighter:Common,Face,Mana,Combo,Dash,Run,Jump,Dodge,Guard,WeaponInHand,ThrowWeapon,Shoot,HoldOpponent,HeldByOpponent,Thrown,Fall,GetUp,Win
+---@class Fighter:Common,Face,Mana,Combo,Dash,Run,Jump,Dodge,WeaponInHand,ThrowWeapon,Shoot,HoldOpponent,HeldByOpponent,Thrown,Fall,GetUp,Win
 ---@field heldopponent Fighter?
 ---@field heldby Fighter?
 local Fighter = class(Common)
@@ -69,80 +63,12 @@ local dist = math.dist
 
 function Fighter:init()
     Common.init(self)
-    self.faceangle = self.faceangle or 0
+    Face.init(self)
 end
 
 Fighter.storeMana = Mana.store
 
 function Fighter:duringHurt() end
-
----hurt state code
----@param attacker Character
----@return string nextstate
----@return ... next state args
-function Fighter:hurt(attacker)
-    local hurtangle
-    if attacker.y == self.y and attacker.x == self.x then
-        hurtangle = 0
-    else
-        hurtangle = atan2(attacker.y - self.y, attacker.x - self.x)
-    end
-    self.hurtangle = hurtangle
-    self.hurtparticle = attacker.attack.hurtparticle
-    self.hurtcolorcycle = attacker.attack.hurtcolorcycle
-    self:makeImpactSpark(attacker, attacker.attack.hitspark)
-    self.health = self.health - (attacker.attack.damage or 0)
-    self.velx, self.vely = 0, 0
-    self:stopAttack()
-    HoldOpponent.stopHolding(self, self.heldopponent)
-    self.hurtstun = attacker.attack.opponentstun or 3
-
-    if attacker.storeMana then
-        local mana = attacker.attack.gainmanaonhit
-            or math.max(1, math.floor((attacker.attack.damage or 0)/4))
-        attacker:storeMana(mana)
-    end
-
-    local hitsound = attacker.attack.hitsound
-    if self.health <= 0 then
-        hitsound = attacker.attack.finalhitsound or hitsound
-    end
-    Audio.play(hitsound)
-    local attackangle = attacker.attackangle
-    local defeateffect = attacker.attack.opponentstateonfinalhit
-    local hiteffect = attacker.attack.opponentstateonhit
-    local pushbackspeed = attacker.attack.pushbackspeed or 0
-    yield()
-
-    if self.health <= 0 then
-        HoldOpponent.stopHolding(self.heldby, self)
-        defeateffect = defeateffect or self.defeatai or "defeat"
-        return defeateffect, attacker, attackangle
-    elseif hiteffect then
-        HoldOpponent.stopHolding(self.heldby, self)
-        return hiteffect, attacker, attackangle
-    end
-    if self.heldby then
-        if HoldOpponent.isHolding(self.heldby, self) then
-            return "held", self.heldby
-        end
-        self.heldby = nil
-    end
-    while pushbackspeed > 0 do
-        pushbackspeed = Slide.updateSlideSpeed(self, attackangle, pushbackspeed)
-        yield()
-        Body.keepInBounds(self)
-        self:duringHurt()
-    end
-    self.velx, self.vely, self.velz = 0, 0, 0
-    local recoverai = self.aiafterhurt or self.recoverai
-    if not recoverai then
-        print("No aiafterhurt or recoverai for "..self.type)
-        HoldOpponent.stopHolding(self.heldby, self)
-        return "defeat", attacker
-    end
-    return recoverai
-end
 
 function Fighter:walkTo(destx, desty, timelimit)
     if type(destx) == "table" then
@@ -166,6 +92,25 @@ function Fighter:walkTo(destx, desty, timelimit)
         self.velx, self.vely = Movement.getVelocity_speed(self.x, self.y, destx, desty, self.speed or 1)
         yield()
     end
+end
+
+function Fighter:updateWalkTo(destx, desty)
+    if type(destx) == "table" then
+        destx, desty = destx.x, destx.y
+    end
+
+    if not destx or not desty then return end
+
+    self.velx, self.vely = Movement.getVelocity_speed(
+        self.x, self.y, destx, desty, self.speed or 1)
+
+    if self.velx == 0 and self.vely == 0 then
+        DirectionalAnimation.set(self, "Stand", self.faceangle)
+        return true
+    end
+
+    local todestangle = atan2(desty - self.y, destx - self.x)
+    Face.faceAngle(self, todestangle, "Walk")
 end
 
 -- function Fighter:stun(duration)
@@ -362,7 +307,8 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
         {
             type = "spark-bighit",
             x = self.x + oobx*bodyradius,
-            y = self.y + ooby*bodyradius
+            y = self.y + ooby*bodyradius,
+            z = self.z + self.bodyheight/2
         }
     )
     self.health = self.health - (self.wallslamdamage or 25)
@@ -439,7 +385,10 @@ function Fighter:fall(attacker)
             self:changeAseAnimation("Fall", 1, 0)
         end
     until t >= fallanimationtime
-    Audio.play(self.bodydropsound)
+    return "down", attacker
+end
+
+function Fighter:down(attacker)
     Characters.spawn({
         type = "spark-fall-down-dust",
         x = self.x,
@@ -474,7 +423,7 @@ function Fighter:fall(attacker)
     end
 
     if self.health > 0 then
-        t = 1
+        local t = 1
         repeat
             yield()
             Body.keepInBounds(self)

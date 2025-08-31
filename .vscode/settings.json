@@ -24,6 +24,7 @@
     ],
     "Lua.diagnostics.globals": [
         "class",
+        "pooledclass",
         "lfs"
     ]
 }

@@ -13,19 +13,24 @@ local getAsset = Assets.get
 local GamePhase = {}
 
 local paused
+local pauselocked
 local stagecanvas
+local stagepath = "data/stage_banditcave.lua"
 
-function GamePhase.loadphase()
+function GamePhase.loadphase(stagepath_)
+    stagepath = stagepath_ or stagepath
     paused = false
+    pauselocked = false
     local unifont = Assets.getFont("Unifont", 16)
     love.graphics.setFont(unifont)
     Assets.get("data/music/retro-chiptune-guitar.ogg", "stream")
 
-    Database.load("data/db_characters.csv")
-    Database.load("data/db_charactersprites.csv")
-    Database.load("data/db_charactersounds.csv")
-    Database.load("data/db_vfx.csv")
-    Database.load("data/db_ui.csv")
+    Database.load("data/database/vfx-properties.csv")
+    Database.load("data/database/items-properties.csv")
+    Database.load("data/database/projectiles-properties.csv")
+    Database.load("data/database/objects-properties.csv")
+    Stage.load(stagepath)
+
     Database.forEach(function(_, properties)
         for k,v in pairs(properties) do
             if isAsset(v) then
@@ -40,7 +45,6 @@ function GamePhase.loadphase()
         end
     end)
 
-    Stage.load("data/stage_banditcave.lua")
     Tiled.Assets.uncacheMarked()
     Tiled.Assets.packTiles()
     Tiled.Assets.setFilter("nearest", "nearest")
@@ -56,6 +60,7 @@ function GamePhase.loadphase()
 
     Gui:showOnlyNamed("gameplay", "wipe")
     Gui.gameplay:showOnlyNamed("hud", "input")
+    Gui:clearMenuStack()
 end
 
 function GamePhase.resize(screenwidth, screenheight)
@@ -74,8 +79,15 @@ function GamePhase.quitphase()
 end
 
 function GamePhase.setPaused(newpaused)
+    if pauselocked then
+        return
+    end
     paused = newpaused
-    Gui.gameplay.pausemenu.visible = paused
+    if paused then
+        Gui:pushMenu(Gui.gameplay.pausemenu)
+    else
+        Gui:clearMenuStack()
+    end
 end
 
 local keypressed = {}
@@ -86,6 +98,7 @@ end
 function keypressed.p()
     GamePhase.setPaused(not paused)
 end
+keypressed.escape = keypressed.p
 
 function keypressed.s()
     if love.keyboard.isDown("lctrl") then
@@ -100,26 +113,21 @@ end
 
 ---@param gamepad love.Joystick
 function GamePhase.gamepadpressed(gamepad, button)
-    if button == "back" then
-        if gamepad:isGamepadDown("start") then
-            love.event.loadphase("Dragontail.GamePhase")
-        end
-    elseif button == "start" then
-        if gamepad:isGamepadDown("back") then
-            love.event.loadphase("Dragontail.GamePhase")
-            return
-        end
+    if button == "start" then
         GamePhase.setPaused(not paused)
+    else
+        Gui:gamepadpressed(gamepad, button)
     end
 end
 
 function GamePhase.keypressed(key)
-    if paused then
-        GamePhase.setPaused(false)
+    local kp = keypressed[key]
+    if kp then
+        kp()
         return
     end
-    local kp = keypressed[key]
-    if kp then kp() end
+
+    Gui:keypressed(key)
 end
 
 local function fixedupdateInputDisplay()
@@ -153,6 +161,15 @@ function GamePhase.fixedupdate()
         fixedupdateInputDisplay()
     end
     Gui:fixedupdate()
+end
+
+function GamePhase.setPauseLocked(locked)
+    pauselocked = locked
+end
+
+function GamePhase.gameOver()
+    GamePhase.setPauseLocked(true)
+    Gui:pushMenu(Gui.gameplay.gameover)
 end
 
 function GamePhase.update(dsecs, fixedfrac)

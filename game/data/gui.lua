@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 18,
   nextlayerid = 15,
-  nextobjectid = 72,
+  nextobjectid = 82,
   properties = {},
   tilesets = {
     {
@@ -463,6 +463,35 @@ return {
           }
         }
       }
+    },
+    {
+      name = "firespit",
+      firstgid = 409,
+      class = "",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/player/rose/firespit.ase",
+      imagewidth = 64,
+      imageheight = 64,
+      objectalignment = "center",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 64,
+        height = 64
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
     }
   },
   layers = {
@@ -506,6 +535,10 @@ return {
               visible = false,
               properties = {
                 ["color"] = "#ff8080ff",
+                ["gaugedirection"] = "right",
+                ["gaugepercent"] = 1,
+                ["linecolor"] = "",
+                ["roundcorners"] = 0,
                 ["z"] = 0
               }
             },
@@ -540,6 +573,9 @@ return {
               visible = true,
               properties = {
                 ["color"] = "#ffff1f1f",
+                ["gaugedirection"] = "right",
+                ["gaugepercent"] = 1,
+                ["linecolor"] = "",
                 ["roundcorners"] = 1,
                 ["z"] = 0
               }
@@ -593,6 +629,7 @@ return {
               gid = 1,
               visible = true,
               properties = {
+                ["name"] = "normal",
                 ["z"] = 0
               }
             },
@@ -610,7 +647,11 @@ return {
               properties = {
                 ["color"] = "#ffffaa00",
                 ["fullcolor"] = "#ffffd000",
+                ["gaugedirection"] = "right",
+                ["gaugepercent"] = 1,
+                ["linecolor"] = "",
                 ["normalcolor"] = "#ffffaa00",
+                ["roundcorners"] = 0,
                 ["z"] = 0
               }
             },
@@ -627,6 +668,10 @@ return {
               visible = true,
               properties = {
                 ["color"] = "#ffffffff",
+                ["gaugedirection"] = "right",
+                ["gaugepercent"] = 1,
+                ["linecolor"] = "",
+                ["roundcorners"] = 0,
                 ["z"] = 0
               }
             },
@@ -644,7 +689,11 @@ return {
               properties = {
                 ["color"] = "#ffffaa00",
                 ["fullcolor"] = "#ffffd000",
+                ["gaugedirection"] = "right",
+                ["gaugepercent"] = 1,
+                ["linecolor"] = "",
                 ["normalcolor"] = "#ffffaa00",
+                ["roundcorners"] = 0,
                 ["z"] = 0
               }
             },
@@ -661,6 +710,10 @@ return {
               visible = true,
               properties = {
                 ["color"] = "#ffffffff",
+                ["gaugedirection"] = "right",
+                ["gaugepercent"] = 1,
+                ["linecolor"] = "",
+                ["roundcorners"] = 0,
                 ["z"] = 0
               }
             },
@@ -678,7 +731,11 @@ return {
               properties = {
                 ["color"] = "#ffffaa00",
                 ["fullcolor"] = "#ffffd000",
+                ["gaugedirection"] = "right",
+                ["gaugepercent"] = 1,
+                ["linecolor"] = "",
                 ["normalcolor"] = "#ffffaa00",
+                ["roundcorners"] = 0,
                 ["z"] = 0
               }
             },
@@ -695,6 +752,10 @@ return {
               visible = true,
               properties = {
                 ["color"] = "#ffffffff",
+                ["gaugedirection"] = "right",
+                ["gaugepercent"] = 1,
+                ["linecolor"] = "",
+                ["roundcorners"] = 0,
                 ["z"] = 0
               }
             },
@@ -933,6 +994,7 @@ return {
               gid = 1,
               visible = true,
               properties = {
+                ["name"] = "normal",
                 ["z"] = 0
               }
             }
@@ -1120,7 +1182,9 @@ return {
               rotation = 0,
               gid = 389,
               visible = true,
-              properties = {}
+              properties = {
+                ["animationspeed"] = 0
+              }
             },
             {
               id = 56,
@@ -1134,7 +1198,9 @@ return {
               rotation = 0,
               gid = 389,
               visible = true,
-              properties = {}
+              properties = {
+                ["animationspeed"] = 0
+              }
             },
             {
               id = 55,
@@ -1148,7 +1214,9 @@ return {
               rotation = 0,
               gid = 389,
               visible = true,
-              properties = {}
+              properties = {
+                ["animationspeed"] = 0
+              }
             },
             {
               id = 51,
@@ -1162,7 +1230,9 @@ return {
               rotation = 0,
               gid = 389,
               visible = true,
-              properties = {}
+              properties = {
+                ["animationspeed"] = 0
+              }
             },
             {
               id = 52,
@@ -1176,7 +1246,9 @@ return {
               rotation = 0,
               gid = 389,
               visible = true,
-              properties = {}
+              properties = {
+                ["animationspeed"] = 0
+              }
             },
             {
               id = 53,
@@ -1190,7 +1262,9 @@ return {
               rotation = 0,
               gid = 389,
               visible = true,
-              properties = {}
+              properties = {
+                ["animationspeed"] = 0
+              }
             },
             {
               id = 47,
@@ -1204,7 +1278,9 @@ return {
               rotation = 0,
               gid = 389,
               visible = true,
-              properties = {}
+              properties = {
+                ["animationspeed"] = 0
+              }
             },
             {
               id = 48,
@@ -1218,7 +1294,9 @@ return {
               rotation = 0,
               gid = 389,
               visible = true,
-              properties = {}
+              properties = {
+                ["animationspeed"] = 0
+              }
             },
             {
               id = 49,
@@ -1232,7 +1310,9 @@ return {
               rotation = 0,
               gid = 389,
               visible = true,
-              properties = {}
+              properties = {
+                ["animationspeed"] = 0
+              }
             },
             {
               id = 50,
@@ -1246,32 +1326,54 @@ return {
               rotation = 0,
               gid = 389,
               visible = true,
-              properties = {}
+              properties = {
+                ["animationspeed"] = 0
+              }
             }
           }
         },
         {
           type = "objectgroup",
-          draworder = "topdown",
+          draworder = "index",
           id = 6,
           name = "pausemenu",
-          class = "",
+          class = "Gui.Menu",
           visible = true,
           opacity = 1,
           offsetx = 0,
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["actionsmodule"] = "Dragontail.GuiActions",
+            ["backaction"] = "unpauseGame"
+          },
           objects = {
+            {
+              id = 76,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 184,
+              y = 90,
+              width = 112,
+              height = 90,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#80c52021",
+                ["linecolor"] = "#ffff6161",
+                ["roundcorners"] = 8
+              }
+            },
             {
               id = 8,
               name = "name",
               type = "",
               shape = "text",
-              x = 200,
-              y = 18,
-              width = 80,
+              x = 192,
+              y = 54,
+              width = 96,
               height = 18,
               rotation = 0,
               visible = true,
@@ -1281,6 +1383,89 @@ return {
               color = { 255, 255, 255 },
               halign = "center",
               properties = {}
+            },
+            {
+              id = 72,
+              name = "Resume",
+              type = "Gui.Button",
+              shape = "text",
+              x = 232,
+              y = 99,
+              width = 64,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Resume",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["action"] = "unpauseGame",
+                ["actionsmodule"] = "Dragontail.GuiActions",
+                ["disabled"] = false,
+                ["label"] = { id = 0 }
+              }
+            },
+            {
+              id = 73,
+              name = "Restart",
+              type = "Gui.Button",
+              shape = "text",
+              x = 232,
+              y = 126,
+              width = 64,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Restart",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["action"] = "restartStage",
+                ["actionsmodule"] = "Dragontail.GuiActions",
+                ["disabled"] = false,
+                ["label"] = { id = 0 }
+              }
+            },
+            {
+              id = 75,
+              name = "Quit",
+              type = "Gui.Button",
+              shape = "text",
+              x = 232,
+              y = 153,
+              width = 64,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Quit",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["action"] = "quit",
+                ["actionsmodule"] = "Dragontail.GuiActions",
+                ["disabled"] = false,
+                ["label"] = { id = 0 }
+              }
+            },
+            {
+              id = 74,
+              name = "",
+              type = "Gui.Cursor",
+              shape = "rectangle",
+              x = 200,
+              y = 108,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 409,
+              visible = true,
+              properties = {
+                ["alignx"] = -1,
+                ["aligny"] = 0
+              }
             }
           }
         },
@@ -1448,137 +1633,95 @@ return {
           draworder = "topdown",
           id = 11,
           name = "gameover",
-          class = "",
+          class = "Gui.Menu",
           visible = true,
           opacity = 1,
           offsetx = 0,
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["actionsmodule"] = "Dragontail.GuiActions",
+            ["backaction"] = ""
+          },
           objects = {
             {
-              id = 21,
-              name = "playagain",
+              id = 77,
+              name = "",
               type = "",
+              shape = "rectangle",
+              x = 184,
+              y = 99,
+              width = 112,
+              height = 72,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#80c52021",
+                ["linecolor"] = "#ffff6161",
+                ["roundcorners"] = 8
+              }
+            },
+            {
+              id = 79,
+              name = "Restart",
+              type = "Gui.Button",
               shape = "text",
-              x = 224,
-              y = 126,
-              width = 128,
-              height = 18,
-              rotation = 0,
-              visible = true,
-              text = "Play again",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
-              properties = {}
-            },
-            {
-              id = 22,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 284,
-              y = 144,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              gid = 7,
-              visible = false,
-              properties = {}
-            },
-            {
-              id = 23,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 180,
-              y = 144,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              gid = 293,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 24,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 204,
-              y = 144,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              gid = 295,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 25,
-              name = "+",
-              type = "",
-              shape = "text",
-              x = 196,
-              y = 126,
-              width = 8,
-              height = 18,
-              rotation = 0,
-              visible = true,
-              text = "+",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
-              halign = "center",
-              properties = {}
-            },
-            {
-              id = 26,
-              name = "",
-              type = "",
-              shape = "rectangle",
               x = 232,
-              y = 144,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              gid = 333,
-              visible = false,
-              properties = {}
-            },
-            {
-              id = 27,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 256,
-              y = 144,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              gid = 335,
-              visible = false,
-              properties = {}
-            },
-            {
-              id = 28,
-              name = "+",
-              type = "",
-              shape = "text",
-              x = 248,
-              y = 126,
-              width = 8,
+              y = 112.5,
+              width = 64,
               height = 18,
               rotation = 0,
-              visible = false,
-              text = "+",
+              visible = true,
+              text = "Restart",
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
-              halign = "center",
-              properties = {}
+              properties = {
+                ["action"] = "restartStage",
+                ["actionsmodule"] = "Dragontail.GuiActions",
+                ["disabled"] = false,
+                ["label"] = { id = 0 }
+              }
+            },
+            {
+              id = 80,
+              name = "Quit",
+              type = "Gui.Button",
+              shape = "text",
+              x = 232,
+              y = 139.5,
+              width = 64,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Quit",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["action"] = "quit",
+                ["actionsmodule"] = "Dragontail.GuiActions",
+                ["disabled"] = false,
+                ["label"] = { id = 0 }
+              }
+            },
+            {
+              id = 81,
+              name = "",
+              type = "Gui.Cursor",
+              shape = "rectangle",
+              x = 200,
+              y = 121.5,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 409,
+              visible = true,
+              properties = {
+                ["alignx"] = -1,
+                ["aligny"] = 0
+              }
             }
           }
         }

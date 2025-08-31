@@ -9,10 +9,11 @@ local lfs = require "lfs" ---@type LuaFileSystem
 
 local args = lapp [[
 Generates Aseprite json files from Tiled tsx tilesets
-    -e,--extension (default jase) Extension for generated files
-    -r,--recursive Recurse through any directory paths
+    -e,--extension  (default jase)  Extension for generated files
+    -f,--force                      Overwrite existing files
+    -r,--recursive                  Recurse through any directory paths
     -v,--verbose
-    <paths...> (string) File(s) to convert or directory(ies) containing them
+    <paths...>      (string)        File(s) to convert or directory(ies) containing them
 ]]
 
 local TileTemplate = [[
@@ -26,14 +27,30 @@ local TileTemplate = [[
  </tile>
 ]]
 
+local TileOffsetTemplate = '<tileoffset x="$x" y="$y"/>'
+
 local TilesetTemplate = [[
 <tileset name="$name"
  tilewidth="$tilewidth" tileheight="$tileheight"
  tilecount="$tilecount" columns="$columns"
+ objectalignment="$objectalignment"
  margin="$margin" spacing="$spacing">
   <image source="$image" width="$imagewidth" height="$imageheight"/>
 </tileset>
 ]]
+
+local ObjectAlignments = {
+    topleft     = {0.0, 0.0},
+    top         = {0.5, 0.0},
+    topright    = {1.0, 0.0},
+    left        = {0.0, 0.5},
+    center      = {0.5, 0.5},
+    right       = {1.0, 0.5},
+    bottomleft  = {0.0, 1.0},
+    bottom      = {0.5, 1.0},
+    bottomright = {1.0, 1.0},
+    unspecified  = {0.0, 1.0},
+}
 
 local function loadTileset(path)
     if args.verbose then
@@ -48,6 +65,15 @@ local function loadTileset(path)
     end
 
     local tileset = tsx:match(TilesetTemplate)
+    local tileoffsetnode = tsx:child_with_name("tileoffset")
+    if tileoffsetnode then
+        tileset.tileoffset = tileoffsetnode:match(TileOffsetTemplate)
+        tileset.tileoffset.x = tonumber(tileset.tileoffset.x)
+        tileset.tileoffset.y = tonumber(tileset.tileoffset.y)
+    else
+        tileset.tileoffset = {x = 0, y = 0}
+    end
+
     local tilenodes = tsx:get_elements_with_name("tile", true)
     for _, tilenode in ipairs(tilenodes) do
         local tile = tilenode:match(TileTemplate)
@@ -63,33 +89,14 @@ local function loadTileset(path)
     tileset.columns = tonumber(tileset.columns)
     tileset.tilewidth = tonumber(tileset.tilewidth)
     tileset.tileheight = tonumber(tileset.tileheight)
+    tileset.imagewidth = tonumber(tileset.imagewidth)
+    tileset.imageheight = tonumber(tileset.imageheight)
     tileset.margin = tonumber(tileset.margin) or 0
     tileset.spacing = tonumber(tileset.spacing) or 0
     return tileset
 end
 
 local function tilesetToAseprite(tileset)
-    local aseprite = {
-        frames = {},
-        meta = {
-            app = "tsx2jase",
-            version = "0.0.1",
-            image = tileset.image,
-            size = {
-                w = tonumber(tileset.imagewidth),
-                h = tonumber(tileset.imageheight)
-            },
-            frameTags = {},
-            layers = {
-                {
-                    name = tileset.name,
-                    opacity = 255,
-                    blendMode = "normal"
-                }
-            }
-        }
-    }
-
     local namebase = tileset.name.."#%d"
     local n = (tileset.tilecount)
     local columns = (tileset.columns)
@@ -100,6 +107,49 @@ local function tilesetToAseprite(tileset)
     local sourceSize = { w = tw, h = th }
     local margin = (tileset.margin)
     local spacing = tileset.spacing
+
+    local alignment = ObjectAlignments[tileset.objectalignment or "unspecified"]
+    local originx = alignment[1]*tw - tileset.tileoffset.x
+    local originy = alignment[2]*th - tileset.tileoffset.y
+
+    local aseprite = {
+        frames = {},
+        meta = {
+            app = "tsx2jase",
+            version = "0.0.1",
+            image = tileset.image,
+            size = {
+                w = tileset.imagewidth,
+                h = tileset.imageheight
+            },
+            frameTags = {},
+            layers = {
+                {
+                    name = tileset.name,
+                    opacity = 255,
+                    blendMode = "normal"
+                }
+            },
+            slices = {
+                {
+                    name = "origin",
+                    color = "#0000ffff",
+                    keys = {
+                        {
+                            frame = 0,
+                            bounds = {
+                                x = 0, y = 0,
+                                w = tw, h = th
+                            },
+                            pivot = {
+                                x = originx, y = originy
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     local frames = aseprite.frames
     local y = margin
@@ -151,6 +201,13 @@ local function tilesetToAseprite(tileset)
                     duration = duration
                 }
             end
+        elseif name ~= "" then
+            tags[#tags+1] = {
+                name = name,
+                from = id,
+                to = id,
+                direction = "forward"
+            }
         end
     end
 
@@ -158,13 +215,20 @@ local function tilesetToAseprite(tileset)
 end
 
 local function tsx2jase(path)
+    local jasepath = path:gsub("tsx$", args.extension or "jase")
+    if not args.force and lfs.attributes(jasepath) then
+        if args.verbose then
+            print("Kept", jasepath)
+        end
+        return
+    end
+
     local tileset = loadTileset(path)
     if not tileset then return end
     local aseprite = tilesetToAseprite(tileset)
     if not aseprite then return end
-    path = path:gsub("tsx$", args.extension or "jase")
     local jase = json.encode(aseprite)
-    local jasefile, err = io.open(path, "w")
+    local jasefile, err = io.open(jasepath, "w")
     if not jasefile then
         io.stderr:write(err.."\n")
         return
@@ -172,7 +236,7 @@ local function tsx2jase(path)
     jasefile:write(jase)
     jasefile:close()
     if args.verbose then
-        print("-->", path)
+        print("Wrote", jasepath)
     end
 end
 

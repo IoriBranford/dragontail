@@ -21,7 +21,6 @@ end
 function GuiActions.openMenu(gui, element)
     local menu = gui:get(element.guipath) ---@type Menu?
     if menu then
-        menu:loadConfigValues()
         gui:pushMenu(menu)
     end
 end

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" infinite="1" nextlayerid="3" nextobjectid="4">
+ <tileset firstgid="1" source="sprites/player/rose/rose-main.tsx"/>
+ <tileset firstgid="2" source="sprites/player/rose/rose-attack.tsx"/>
+ <tileset firstgid="3" source="sprites/player/rose/rose-hold.tsx"/>
+ <tileset firstgid="4" source="sprites/player/rose/fireball.tsx"/>
+ <tileset firstgid="5" source="sprites/player/rose/firespit.tsx"/>
+ <objectgroup id="2" name="Rose">
+  <object id="1" name="Rose" type="Rose" gid="1" x="0" y="0" width="80" height="80">
+   <properties>
+    <property name="propertiestable" type="file" value="database/players-properties.csv"/>
+   </properties>
+  </object>
+  <object id="2" name="Rose-fireball" type="Rose-fireball" gid="4" x="0" y="0" width="64" height="64">
+   <properties>
+    <property name="propertiestable" type="file" value="database/projectiles-properties.csv"/>
+   </properties>
+  </object>
+  <object id="3" name="spark-spit-fireball" type="spark-spit-fireball" gid="5" x="0" y="0" width="64" height="64">
+   <properties>
+    <property name="propertiestable" type="file" value="database/vfx-properties.csv"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

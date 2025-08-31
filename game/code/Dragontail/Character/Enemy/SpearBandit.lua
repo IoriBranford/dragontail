@@ -1,8 +1,8 @@
 local Enemy = require "Dragontail.Character.Enemy"
-local Face       = require "Dragontail.Character.Action.Face"
+local Face       = require "Dragontail.Character.Component.Face"
 local Dodge = require "Dragontail.Character.Action.Dodge"
 local Database = require "Data.Database"
-local Body     = require "Dragontail.Character.Body"
+local Body     = require "Dragontail.Character.Component.Body"
 
 ---@class SpearBandit:Enemy
 ---@field numdodges integer

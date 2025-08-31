@@ -2,24 +2,25 @@ local Inputs = require "System.Inputs"
 local Database = require "Data.Database"
 local Audio    = require "System.Audio"
 local Movement = require "Component.Movement"
-local StateMachine   = require "Dragontail.Character.StateMachine"
+local StateMachine   = require "Dragontail.Character.Component.StateMachine"
 local Fighter  = require "Dragontail.Character.Fighter"
 local Character= require "Dragontail.Character"
-local AttackerSlot = require "Dragontail.Character.AttackerSlot"
+local AttackerSlot = require "Dragontail.Character.Component.AttackerSlot"
 local Characters   = require "Dragontail.Stage.Characters"
 local Color        = require "Tiled.Color"
 local Slide      = require "Dragontail.Character.Action.Slide"
-local Face       = require "Dragontail.Character.Action.Face"
+local Face       = require "Dragontail.Character.Component.Face"
 local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
 local Shoot        = require "Dragontail.Character.Action.Shoot"
-local Body         = require "Dragontail.Character.Body"
-local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
-local WeaponInHand         = require "Dragontail.Character.Action.WeaponInHand"
-local Inventory            = require "Dragontail.Character.Inventory"
-local JoystickLog          = require "Dragontail.Character.Player.JoystickLog"
-local Combo                = require "Dragontail.Character.Action.Combo"
-local Mana                 = require "Dragontail.Character.Mana"
+local Body         = require "Dragontail.Character.Component.Body"
+local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
+local WeaponInHand         = require "Dragontail.Character.Component.WeaponInHand"
+local Inventory            = require "Dragontail.Character.Component.Inventory"
+local JoystickLog          = require "Dragontail.Character.Component.JoystickLog"
+local Combo                = require "Dragontail.Character.Component.Combo"
+local Mana                 = require "Dragontail.Character.Component.Mana"
 local Config               = require "System.Config"
+local Guard                = require "Dragontail.Character.Action.Guard"
 
 ---@class Player:Fighter
 ---@field inventory Inventory
@@ -45,53 +46,41 @@ local lensq = math.lensq
 local testcircles = math.testcircles
 local yield = coroutine.yield
 
-local function findSomethingToRunningAttack(self, velx, vely)
-    local x, y, opponents, solids = self.x, self.y, self.opponents, self.solids
-    for i, opponent in ipairs(opponents) do
-        if dot(opponent.x - x, opponent.y - y, velx, vely) > 0 then
-            if opponent.canbeattacked and Body.predictBodyCollision(self, opponent) then
-                return opponent
-            end
-        end
-    end
-    for i, solid in ipairs(solids) do
-        if dot(solid.x - x, solid.y - y, velx, vely) > 0 then
-            if solid.canbeattacked and Body.predictBodyCollision(self, solid) then
-                return solid
-            end
-        end
-    end
-end
-
-local function findWallCollision(self)
-    local oobx, ooby = Body.keepInBounds(self)
-    oobx, ooby = oobx or 0, ooby or 0
-    if oobx ~= 0 or ooby ~= 0 then
-        return norm(oobx, ooby)
-    end
-end
-
 local NormalCombo = {"kick", "kick", "tail-swing-cw"}
+local LungingCombo = {"lunging-kick", "lunging-kick", "lunging-tail-swing-cw"}
 local SpecialCombo = {"spit-fireball", "spit-fireball", "fireball-spin-cw"}
 local HoldCombo = {"holding-knee", "holding-knee", "spinning-throw"}
 local RunningSpecialAttacks = { "running-spit-fat-fireball", "running-spit-fireball" }
 
-function Player:getNextAttackType(heldenemy, special)
-    local comboindex = self.comboindex
-    if special then
-        local i = comboindex
-        local specialattacktype, specialattackdata
-        repeat
-            specialattacktype = SpecialCombo[i]
-            if Mana.canAffordAttack(self, specialattacktype) then
-                return specialattacktype
-            end
-            i = i - 1
-        until i <= 0
-        comboindex = 3
-    end
+local AirCombo = {"air-kick", "air-kick", "air-tail-swing-cw"}
+local AirLungingCombo = {"air-lunging-kick", "air-lunging-kick", "air-lunging-tail-swing-cw"}
+local AirHoldCombo = {"air-holding-knee", "air-holding-knee", "air-spinning-throw"}
 
-    local combo = heldenemy and HoldCombo or NormalCombo
+function Player:getNextAttackType(heldenemy, lunging, inair)
+    local comboindex = self.comboindex
+    -- if special then
+    --     local i = comboindex
+    --     local specialattacktype, specialattackdata
+    --     repeat
+    --         specialattacktype = SpecialCombo[i]
+    --         if Mana.canAffordAttack(self, specialattacktype) then
+    --             return specialattacktype
+    --         end
+    --         i = i - 1
+    --     until i <= 0
+    --     comboindex = 3
+    -- end
+
+    local combo
+    if inair then
+        combo = heldenemy and AirHoldCombo
+            or lunging and AirLungingCombo
+            or AirCombo
+    else
+        combo = heldenemy and HoldCombo
+            or lunging and LungingCombo
+            or NormalCombo
+    end
     return combo[comboindex]
 end
 
@@ -114,8 +103,8 @@ knee -> knee -> spinthrow
     fire    firespin
 
 ]]
-function Player:doComboAttack(faceangle, heldenemy, special)
-    local attacktype = self:getNextAttackType(heldenemy, special)
+function Player:doComboAttack(faceangle, heldenemy, lunging, inair)
+    local attacktype = self:getNextAttackType(heldenemy, lunging, inair)
     local attackdata = self.attacktable[attacktype]
     if attackdata and attackdata.endscombo or self.comboindex >= 3 then
         self.comboindex = 1
@@ -181,7 +170,7 @@ local function updateEnemyTargetingScores(self, lookangle)
     return enemies
 end
 
-local function getAngleToBestTarget(self, lookangle, targets)
+function Player:getAngleToBestTarget(lookangle, targets)
     lookangle = lookangle or self.faceangle
     targets = targets or updateEnemyTargetingScores(self, lookangle)
     if targets[1] then
@@ -194,38 +183,11 @@ local function getAngleToBestTarget(self, lookangle, targets)
     end
 end
 
-local function findInstantThrowTarget(self, targetfacex, targetfacey)
-    local projectileheight = self.projectilelaunchheight or (self.bodyheight / 2)
-    local projectilez = self.z + projectileheight
-    local enemy, enemytargetingscore = nil, 128
-    Characters.search("enemies",
-    ---@param e Enemy
-    function(e)
-        if not e.getTargetingScore then
-            return
-        end
-        local score = e:getTargetingScore(self.x, self.y, targetfacex, targetfacey)
-
-        local etop, ebottom = e.z + self.bodyheight, e.z
-        if ebottom > projectilez or projectilez > etop then
-            score = score / 2
-        end
-        if score < enemytargetingscore then
-            enemy, enemytargetingscore = e, score
-        end
-    end)
-    if enemy then
-        return enemy.x, enemy.y, enemy.z
-    end
-    return self.x + targetfacex*512,
-        self.y + targetfacey*512,
-        self.z
-end
-
 function Player:init()
     self.joysticklog = JoystickLog(10)
     self.attackbutton = Inputs.getAction("attack")
     self.sprintbutton = Inputs.getAction("sprint")
+    self.flybutton = Inputs.getAction("fly")
     Fighter.init(self)
     self.inventory = Inventory()
     Combo.reset(self)
@@ -262,11 +224,6 @@ function Player:init()
             slotgroup[#slotgroup+1] = slot
         end
     end
-
-    self.crosshair = Characters.spawn({
-        type = "rose-crosshair",
-        visible = false
-    })
 end
 
 -- function Player:addToScene(scene)
@@ -287,7 +244,7 @@ end
 function Player:drawAseprite(fixedfrac)
     local animation = self.aseanimation or self.aseprite
     local aframe = self.animationframe or 1
-    local frame = animation[aframe]
+    local frame = animation and animation[aframe]
     if not frame then
         return
     end
@@ -304,7 +261,10 @@ function Player:drawAseprite(fixedfrac)
     love.graphics.rotate(self.rotation or 0)
     love.graphics.shear(self.skewx or 0, self.skewy or 0)
     love.graphics.scale(self.scalex or 1, self.scaley or 1)
-    love.graphics.translate(-self.originx or 0, -self.originy or 0)
+
+    local originx, originy = self:getOrigin()
+    love.graphics.translate(-originx, -originy)
+
     frame:draw()
     WeaponInHand.draw(self, frame, 0, 0)
     love.graphics.pop()
@@ -370,10 +330,10 @@ function Player:findRandomAttackerSlot(attackrange, slottype, fromx, fromy)
     end
 end
 
-function Player:findClosestAttackerSlot(attackerx, attackery, attackrange, slottype)
+function Player:findClosestAttackerSlot(attackrange, slottype, attackerx, attackery)
     local attackerslots = self.attackerslots
     attackerslots = slottype and attackerslots[slottype] or attackerslots
-    local bestslot, bestslotdsq
+    local bestslot, bestslotdsq = nil, math.huge
     for _, slot in ipairs(attackerslots) do
         if slot:hasSpace(attackrange) then
             local slotx, sloty = slot:getPosition(attackrange)
@@ -441,6 +401,7 @@ function Player:updateAttackerSlots()
 end
 
 function Player:catchProjectile(projectile)
+    Face.faceObject(self, projectile, self.state.animation or "catch")
     projectile:stopAttack()
     if self:tryToGiveWeapon(projectile.type) then
         projectile:disappear()
@@ -451,7 +412,7 @@ function Player:catchProjectile(projectile)
         self:accelerateTowardsVel(0, 0, 8)
         yield()
     end
-    return "control"
+    return "walk"
 end
 
 local ChargeAttacks = {
@@ -482,225 +443,41 @@ function Player:fixedupdate()
     Character.fixedupdate(self)
 end
 
-function Player:control()
-    self.facedestangle = self.faceangle
-    self.joysticklog:clear()
-    local runningtime
-    -- local attackdowntime
-    while true do
-        local inx, iny = self:getJoystick()
-        local normalattackpressed, runpressed = self.attackbutton.pressed, self.sprintbutton.pressed
-        local rundown = self.sprintbutton.down
-
-        local targetvelx, targetvely = 0, 0
-        if inx ~= 0 or iny ~= 0 then
-            self.facedestangle = atan2(iny, inx)
-        end
-
-        self.joysticklog:put(inx, iny)
-        local parryx, parryy = self:getParryVector()
-        if parryx and parryy then
-            local caughtprojectile = self:findProjectileToCatch(parryx, parryy)
-            if caughtprojectile then
-                Face.faceVector(self, parryx, parryy)
-                return "catchProjectile", caughtprojectile
-            end
-        end
-
-        local movespeed, turnspeed, acceltime
-        if runningtime then
-            movespeed, turnspeed, acceltime = 8, pi/60, 1
-        else
-            movespeed, turnspeed, acceltime = 4, pi/8, 4
-        end
-
-        if runpressed and not runningtime --and self.runenergy >= self.runenergycost
-        then
-            Combo.reset(self)
-            Audio.play(self.dashsound)
-            runningtime = 0
-            turnspeed = 2*pi
-            -- self.runenergy = self.runenergy - self.runenergycost
-        end
-
-        Face.updateTurnToDestAngle(self, turnspeed)
-
-        if runningtime then
-            targetvelx = cos(self.faceangle) * movespeed
-            targetvely = sin(self.faceangle) * movespeed
-        else
-            targetvelx = inx * movespeed
-            targetvely = iny * movespeed
-        end
-
-        self:accelerateTowardsVel(targetvelx, targetvely, acceltime)
-
-        local velx, vely = self.velx, self.vely
-
-        if runningtime then
-            if self.animationtime % 3 == 0 then
-                self:makeAfterImage()
-            end
-
-            local chargedattack = not self.attackbutton.down and self:getChargedAttack(RunningChargeAttacks)
-            if chargedattack then
-                Mana.releaseCharge(self)
-                return chargedattack, self.facedestangle
-            end
-
-            if normalattackpressed then
-                if self.weaponinhand then
-                    return "throwWeapon", self.facedestangle, 2, #self.inventory
-                end
-
-                -- if fireattackpressed then
-                --     for _, attacktype in ipairs(RunningSpecialAttacks) do
-                --         if Mana.canAffordAttack(self, attacktype) then
-                --             return attacktype, atan2(vely, velx)
-                --         end
-                --     end
-                -- end
-                return "running-kick", atan2(vely, velx)
-            end
-
-            local attacktarget = findSomethingToRunningAttack(self, velx, vely)
-            if attacktarget then
-                return "running-elbow", atan2(vely, velx)
-            end
-
-            local oobx, ooby = findWallCollision(self)
-            if oobx or ooby then
-                local oobdotvel = dot(oobx, ooby, velx, vely)
-                local speed = math.len(velx, vely)
-                local ooblen = math.len(oobx, ooby)
-                if oobdotvel > speed*ooblen/2 then
-                    Audio.play(self.bodyslamsound)
-                    Characters.spawn(
-                        {
-                            type = "spark-bighit",
-                            x = self.x + oobx*self.bodyradius,
-                            y = self.y + ooby*self.bodyradius
-                        }
-                    )
-                    self.hurtstun = 10
-                    return "running-elbow", atan2(vely, velx)
-                end
-            end
-
-            if runningtime < 15 then
-                runningtime = runningtime + 1
-            elseif rundown then --self.runenergy > 0 and rundown then
-            --     self.runenergy = self.runenergy - 1
-            else
-                runningtime = nil
-                Audio.play(self.stopdashsound)
-            end
-        else
-            -- self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
-            local chargedattack = not self.attackbutton.down and self:getChargedAttack(ChargeAttacks)
-            if chargedattack then
-                Mana.releaseCharge(self)
-                return chargedattack, self.facedestangle
-            end
-
-            if normalattackpressed then
-                if inx == 0 and iny == 0 then
-                    local angletoenemy = getAngleToBestTarget(self)
-                    if angletoenemy then
-                        self.facedestangle = angletoenemy
-                    end
-                end
-                Face.updateTurnToDestAngle(self, pi)
-                if self.weaponinhand then
-                    return "throwWeapon", self.facedestangle, 1, 1
-                end
-                return self:doComboAttack(self.facedestangle)
-            end
-
-            local opponenttohold = HoldOpponent.findOpponentToHold(self, inx, iny)
-            if opponenttohold then
-                Audio.play(self.holdsound)
-                return "hold", opponenttohold
-            end
-        end
-
-        local animation
-        if velx ~= 0 or vely ~= 0 then
-            animation = "Walk"
-        else
-            animation = "Stand"
-        end
-        DirectionalAnimation.set(self, animation, self.faceangle)
-
-        yield()
-    end
+function Player:accelerateTowardsJoystick()
+    local inx, iny = self:getJoystick()
+    local mass = self.mass or 1
+    local movespeed = self.speed or 1
+    local targetvelx = inx * movespeed
+    local targetvely = iny * movespeed
+    self:accelerateTowardsVel(targetvelx, targetvely, mass)
 end
 
-function Player:spinAttack(attackangle)
-    self.numopponentshit = 0
-    local lungeangle = attackangle
-    local originalfaceangle = self.faceangle
-    local spinvel = self.attack.spinspeed or 0
-    local spintime = self.attack.hittingduration or 0
-    local pressedattackbutton
-    local t = spintime
-    local lungespeed = self.attack.lungespeed
-    local projectile = self.attack.projectiletype
-    Mana.store(self, -(self.attack.manacost or 0))
-    -- local buttonholdtimeforfireball = spintime/2
-    repeat
-        if projectile then
-            local projectileangle = attackangle + pi
-            local cosangle, sinangle = cos(projectileangle), sin(projectileangle)
-            Shoot.launchProjectile(self, "spark-spit-fireball", cosangle, sinangle, 0)
-            Shoot.launchProjectile(self, projectile, cosangle, sinangle, 0)
-        end
+function Player:accelerateTowardsFace()
+    local inx, iny = cos(self.faceangle), sin(self.faceangle)
+    local mass = self.mass or 1
+    local movespeed = self.speed or 1
+    local targetvelx = inx * movespeed
+    local targetvely = iny * movespeed
+    self:accelerateTowardsVel(targetvelx, targetvely, mass)
+end
 
-        local inx, iny = self:getJoystick()
-        local targetvelx, targetvely = 0, 0
-        local speed = 2
-        if inx ~= 0 or iny ~= 0 then
-            inx, iny = norm(inx, iny)
-            targetvelx = inx * speed
-            targetvely = iny * speed
-        end
-
-        if lungespeed then
-            lungespeed = Slide.updateSlideSpeed(self, lungeangle, lungespeed)
-        else
-            self:accelerateTowardsVel(targetvelx, targetvely, 8)
-        end
-
-        self:startAttack(attackangle)
-        Face.faceAngle(self, attackangle, self.state and self.state.animation)
-
-        yield()
-        if pressedattackbutton ~= self.attackbutton then
-            -- if self.fireattackbutton.pressed then
-            --     pressedattackbutton = self.fireattackbutton
-            --else
-            if self.attackbutton.pressed then
-                pressedattackbutton = self.attackbutton
-            end
-        end
-        attackangle = attackangle + spinvel
-        t = t - 1
-    until t <= 0
-    self:stopAttack()
-    self.faceangle = originalfaceangle
-    if pressedattackbutton then
-        local inx, iny = self:getJoystick()
-        if inx ~= 0 or iny ~= 0 then
-            originalfaceangle = atan2(iny, inx)
-        else
-            local angletoenemy = getAngleToBestTarget(self)
-            if angletoenemy then
-                originalfaceangle = angletoenemy
-            end
-        end
-        return self:doComboAttack(originalfaceangle)
+function Player:turnTowardsJoystick(movinganimation, notmovinganimation)
+    local inx, iny = self:getJoystick()
+    if inx ~= 0 or iny ~= 0 then
+        self.facedestangle = atan2(iny, inx)
     end
-    return "control"
+    local animation
+    if self.velx ~= 0 or self.vely ~= 0 then
+        animation = movinganimation
+    else
+        animation = notmovinganimation
+    end
+    Face.updateTurnToDestAngle(self, nil, animation)
+end
+
+function Player:catchProjectileAtJoystick()
+    local parryx, parryy = self:getParryVector()
+    return parryx and parryy and self:findProjectileToCatch(parryx, parryy)
 end
 
 function Player:getReversalChargedAttack()
@@ -717,8 +494,11 @@ end
 
 function Player:duringGetUp()
     if self.sprintbutton.down then
-        self.sprintbutton.pressed = true
-        return "control"
+        local inx, iny = self:getJoystick()
+        if inx ~= 0 or iny ~= 0 then
+            Face.faceAngle(self, atan2(iny, inx))
+        end
+        return "run"
     end
     if not self.attackbutton.down then
         local chargedattack, angle = self:getReversalChargedAttack()
@@ -729,19 +509,8 @@ function Player:duringGetUp()
     end
 end
 
-function Player:hurt(attacker)
-    self.crosshair.visible = false
-    local nextstate, a, b, c, d, e = Fighter.hurt(self, attacker)
-    if nextstate == "control" then
-        if self.sprintbutton.down then
-            self.sprintbutton.pressed = true
-        end
-    end
-    return nextstate, a, b, c, d, e
-end
-
-function Player:fall(attacker)
-    local nextstate, a, b, c, d, e = Fighter.fall(self, attacker)
+function Player:down(attacker)
+    local nextstate, a, b, c, d, e = Fighter.down(self, attacker)
     if self.health <= 0 then
         local chargedattack, angle = self:getReversalChargedAttack()
         if chargedattack then
@@ -754,6 +523,10 @@ function Player:fall(attacker)
 end
 
 function Player:aimThrow()
+    self.crosshair = self.crosshair or Characters.spawn({
+        type = "rose-crosshair",
+        visible = false
+    })
     self.facedestangle = self.faceangle
     local lockonenemy
     while true do
@@ -803,7 +576,7 @@ function Player:aimThrow()
 
         if runbutton then
             self.crosshair.visible = false
-            return "control"
+            return "walk"
         end
 
         if not attackbutton then
@@ -838,12 +611,11 @@ end
 function Player:throwWeapon(angle, attackchoice, numprojectiles)
     attackchoice = attackchoice or 1
     numprojectiles = math.min(numprojectiles or 1, #self.inventory)
-    Face.faceAngle(self, angle)
+    Face.faceAngle(self, angle, self.state.animation)
 
     local function throw(targetx, targety, targetz)
         local projectiledata = Database.get(self.weaponinhand)
-        local attackchoices = projectiledata and projectiledata.attackchoices
-        local attackid = attackchoices and attackchoices[math.min(#attackchoices, attackchoice)]
+        local attackid = projectiledata and projectiledata.playerattack
         Shoot.launchProjectileAtPosition(self, {
             type = self.weaponinhand,
             gravity = 1/8,
@@ -889,10 +661,16 @@ function Player:throwWeapon(angle, attackchoice, numprojectiles)
         self:accelerateTowardsVel(0, 0, 4)
         yield()
     end
-    return "control"
+    return "walk"
 end
 
 function Player:hold(enemy)
+    local time = enemy.timetobreakhold
+    local holdfrombehind = dot(math.cos(enemy.faceangle), math.sin(enemy.faceangle), math.cos(self.faceangle), math.sin(self.faceangle)) >= 0
+    if holdfrombehind then
+    elseif Guard.isPointInGuardArc(enemy, self.x, self.y) then
+        time = 10
+    end
     if self.heldopponent ~= enemy then
         Combo.reset(self)
         HoldOpponent.startHolding(self, enemy)
@@ -906,16 +684,11 @@ function Player:hold(enemy)
     end
     local holdangle = atan2(holddiry, holddirx)
     local holddestangle = holdangle
-    local time = enemy.timetobreakhold
-    local holdfrombehind = dot(math.cos(enemy.faceangle), math.sin(enemy.faceangle), math.cos(self.faceangle), math.sin(self.faceangle)) >= 0
-    if holdfrombehind then
-        -- DESIGNME
-    end
     while not time or time > 0 do
         yield()
         enemy = self.heldopponent
         if not enemy then
-            return "control"
+            return "walk"
         end
         if time then
             time = time - 1
@@ -970,88 +743,11 @@ function Player:hold(enemy)
             return "spinning-throw", holdangle, enemy
         end
         if normalattackpressed then
-            return self:doComboAttack(holdangle, enemy)
+            return self:doComboAttack(holdangle, enemy, inx ~= 0 or iny ~= 0)
         end
     end
     StateMachine.start(enemy, "breakaway", self)
     return "breakaway", enemy
-end
-
-function Player:runWithEnemy(enemy)
-    self.facedestangle = self.faceangle
-    StateMachine.start(enemy, self.attack.heldopponentstate or "human-in-spinning-throw", self)
-    enemy:startAttack(self.faceangle)
-    local runningtime = 0
-    while true do
-        yield()
-        local inx, iny = self:getJoystick()
-        local normalattackpressed = self.attackbutton.pressed
-        local _, rundown = self.attackbutton.down, self.sprintbutton.down
-
-        local targetvelx, targetvely = 0, 0
-        if inx ~= 0 or iny ~= 0 then
-            self.facedestangle = atan2(iny, inx)
-        end
-
-        local movespeed, turnspeed, acceltime = 8, pi/120, 1
-
-        Face.updateTurnToDestAngle(self, turnspeed, "holdwalk")
-        targetvelx = cos(self.faceangle) * movespeed
-        targetvely = sin(self.faceangle) * movespeed
-
-        self:accelerateTowardsVel(targetvelx, targetvely, acceltime)
-
-        self.holdangle = self.faceangle
-        HoldOpponent.updateOpponentPosition(self)
-
-        if self.animationtime % 3 == 0 then
-            self:makeAfterImage()
-            enemy:makeAfterImage()
-        end
-
-        local chargedattack = not self.attackbutton.down and self:getChargedAttack(RunningChargeAttacks)
-        if chargedattack then
-            Mana.releaseCharge(self)
-            return chargedattack, self.facedestangle
-        end
-
-        if normalattackpressed then
-            enemy:stopAttack()
-            HoldOpponent.stopHolding(self, enemy)
-            enemy.canbeattacked = true
-
-            -- if fireattackpressed then
-            --     for _, attacktype in ipairs(RunningSpecialAttacks) do
-            --         if Mana.canAffordAttack(self, attacktype) then
-            --             return attacktype, self.faceangle
-            --         end
-            --     end
-            -- end
-
-            return "running-kick", self.faceangle
-        end
-
-        local oobx, ooby = HoldOpponent.handleOpponentCollision(self)
-        if oobx or ooby then
-            HoldOpponent.stopHolding(self, enemy)
-            StateMachine.start(enemy, "wallSlammed", self, oobx, ooby)
-            return "running-elbow", self.faceangle
-        end
-
-        if runningtime < 15 then
-            runningtime = runningtime + 1
-        elseif rundown then --self.runenergy > 0 and rundown then
-        --     self.runenergy = self.runenergy - 2
-        else
-            Audio.play(self.stopdashsound)
-            Audio.play(self.throwsound)
-            enemy:stopAttack()
-            HoldOpponent.stopHolding(self, enemy)
-            enemy.canbeattacked = true
-            StateMachine.start(enemy, "knockedBack", self, self.faceangle)
-            return "control"
-        end
-    end
 end
 
 function Player:spinAndKickEnemy(angle, enemy)
@@ -1121,83 +817,6 @@ function Player:spinAndKickEnemy(angle, enemy)
     return "holding-kick", atan2(throwy, throwx)
 end
 
-function Player:straightAttack(angle, heldenemy)
-    self.numopponentshit = 0
-    local pressedattackbutton
-    if self.attack.projectiletype then
-        local numprojectiles = self.attack.numprojectiles or 1
-        local targetx, targety, targetz = findInstantThrowTarget(self, cos(angle), sin(angle))
-        if numprojectiles <= 1 then
-            Shoot.launchProjectile(self, "spark-spit-fireball", cos(angle), sin(angle), 0)
-            Shoot.launchProjectileAtPosition(self, self.attack.projectiletype, targetx, targety, targetz)
-        else
-            local arc = self.attack.arc or 0
-            local arcbetweenprojectiles = arc * 2 / (numprojectiles - 1)
-            local totargetx, totargety = targetx - self.x, targety - self.y
-            totargetx, totargety = math.rot(totargetx, totargety, -arc)
-            for i = 1, numprojectiles do
-                targetx, targety = self.x + totargetx, self.y + totargety
-                if totargetx ~= 0 or totargety ~= 0 then
-                    local dirx, diry = norm(totargetx, totargety)
-                    Shoot.launchProjectile(self, "spark-spit-fireball", dirx, diry, 0)
-                end
-                Shoot.launchProjectileAtPosition(self, self.attack.projectiletype, targetx, targety, targetz)
-                totargetx, totargety = math.rot(totargetx, totargety, arcbetweenprojectiles)
-            end
-        end
-    else
-        self:startAttack(angle)
-    end
-    Mana.store(self, -(self.attack.manacost or 0))
-    Face.faceAngle(self, angle)
-    local t = self.attack.hittingduration or 1
-    local lungespeed = self.attack.lungespeed
-    repeat
-        yield()
-        if pressedattackbutton ~= self.attackbutton then
-            -- if self.fireattackbutton.pressed then
-            --     pressedattackbutton = self.fireattackbutton
-            -- else
-            if self.attackbutton.pressed then
-                pressedattackbutton = self.attackbutton
-            end
-        end
-        if lungespeed then
-            lungespeed = Slide.updateSlideSpeed(self, angle, lungespeed)
-        else
-            self:accelerateTowardsVel(0, 0, self.attack.decel or 8)
-        end
-        local afterimageinterval = self.afterimageinterval or 0
-        if afterimageinterval ~= 0 and t % afterimageinterval == 0 then
-            self:makeAfterImage()
-        end
-        t = t - 1
-    until t <= 0
-    if self.numopponentshit <= 0 then
-        Combo.reset(self)
-    end
-    self:stopAttack()
-    if pressedattackbutton then
-        local faceangle = self.faceangle
-        local inx, iny = self:getJoystick()
-        if not heldenemy then
-            if inx ~= 0 or iny ~= 0 then
-                faceangle = atan2(iny, inx)
-            else
-                local angletoenemy = getAngleToBestTarget(self)
-                if angletoenemy then
-                    faceangle = angletoenemy
-                end
-            end
-        end
-        return self:doComboAttack(faceangle, heldenemy)
-    end
-    if heldenemy and heldenemy.health > 0 then
-        return "hold", heldenemy
-    end
-    return "control"
-end
-
 function Player:victory()
     self:stopAttack()
     local i = 0
@@ -1214,13 +833,103 @@ function Player:defeat(attacker)
     self:stopAttack()
     self.velx, self.vely = 0, 0
     Audio.play(self.defeatsound)
+    local GamePhase            = require "Dragontail.GamePhase"
+    GamePhase.gameOver()
 end
 
-function Player:eventWalkTo(destx, desty, timelimit)
+function Player:sequenceWalkTo(destx, desty, timelimit)
     HoldOpponent.stopHolding(self, self.heldopponent)
     self:walkTo(destx, desty, timelimit)
     self.velx, self.vely, self.velz = 0, 0, 0
     Face.faceVector(self, 1, 0, "Stand")
+end
+
+local FlyPeakHeight = 540
+local FlyPeakTime = 60
+
+function Player:flyStart()
+    Combo.reset(self)
+    self.camera.lockz = false
+    self.velx = 0
+    self.vely = 0
+    local t = FlyPeakTime
+    local h = FlyPeakHeight
+    local g = self.gravity
+    -- h+g = -g*t*t/2 + v*t
+    self.velz = h/t + g*t/2 - g
+    while self.velz >= 0 do
+        yield()
+    end
+    self.velz = 0
+    self.camera.z = self.z - self.camera.bodyheight/2
+    self.camera.velz = 0
+    self.camera.lockz = true
+    return "hover"
+end
+
+function Player:hover()
+    self.facedestangle = self.faceangle
+    self.joysticklog:clear()
+    -- local attackdowntime
+    while true do
+        local inx, iny = self:getJoystick()
+        self.joysticklog:put(inx, iny)
+        self:turnTowardsJoystick("hover", "hover")
+        self:accelerateTowardsJoystick()
+
+        local caughtprojectile = self:catchProjectileAtJoystick()
+        if caughtprojectile then
+            return "catchProjectile", caughtprojectile
+        end
+
+        if self.flybutton.pressed then
+            return "flyEnd"
+        end
+
+        if self.sprintbutton.pressed then
+            Face.faceVector(self, inx, iny)
+            return "run"
+        end
+
+        -- self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
+        local chargedattack = not self.attackbutton.down and self:getChargedAttack(ChargeAttacks)
+        if chargedattack then
+            Mana.releaseCharge(self)
+            return chargedattack, self.facedestangle
+        end
+
+        if self.attackbutton.pressed then
+            local attackangle = self.facedestangle
+            if self.weaponinhand then
+                attackangle = self:getAngleToBestTarget(attackangle) or attackangle
+            end
+            self.faceangle = attackangle
+            self.facedestangle = attackangle
+            if self.weaponinhand then
+                return "throwWeapon", self.facedestangle, 1, 1
+            end
+            return self:doComboAttack(self.facedestangle, nil, inx ~= 0 or iny ~= 0)
+        end
+
+        local opponenttohold = HoldOpponent.findOpponentToHold(self, inx, iny)
+        if opponenttohold then
+            Audio.play(self.holdsound)
+            return "hold", opponenttohold
+        end
+
+        yield()
+    end
+end
+
+function Player:flyEnd()
+    self.camera.lockz = false
+    repeat
+        yield()
+    until self.velz >= 0
+    self.camera.z = self.z - self.camera.bodyheight/2
+    self.camera.velz = 0
+    self.camera.lockz = true
+    return "walk"
 end
 
 return Player

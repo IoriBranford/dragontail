@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <tileset firstgid="1" source="../../sprites/bandit/bow.tsx"/>
+ <object type="bandit-bow" gid="1" width="128" height="128">
+  <properties>
+   <property name="ammo" type="int" value="10"/>
+   <property name="propertiestable" type="file" value="../../database/bandits-properties.csv"/>
+  </properties>
+ </object>
+</template>

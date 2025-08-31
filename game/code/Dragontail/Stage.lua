@@ -2,14 +2,15 @@ local Scene = require "System.Scene"
 local Tiled     = require "Tiled"
 local Audio     = require "System.Audio"
 local Movement  = require "Component.Movement"
-local StateMachine       = require "Dragontail.Character.StateMachine"
+local StateMachine       = require "Dragontail.Character.Component.StateMachine"
 local Characters  = require "Dragontail.Stage.Characters"
 local CameraPath  = require "Object.CameraPath"
 local Config      = require "System.Config"
-local Events      = require "Dragontail.Stage.Events"
+local Sequences      = require "Dragontail.Stage.Sequences"
 local Database    = require "Data.Database"
 local Assets      = require "Tiled.Assets"
-local CollisionMask = require "Dragontail.Character.Body.CollisionMask"
+local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask"
+local pathlite = require "pl.pathlite"
 local Stage = {
     CameraWidth = 480,
     CameraHeight = 270
@@ -23,7 +24,7 @@ local map ---@type TiledMap
 local roomindex
 local winningteam
 local camera ---@type Camera
-local eventthread ---@type thread?
+local sequencethread ---@type thread?
 
 ---@class Boundary:TiledObject
 ---@class Camera:Boundary
@@ -39,6 +40,7 @@ end
 
 function Stage.load(stagefile)
     map = Tiled.Map.load(stagefile)
+    local directory = map.directory
     map:indexLayersByName()
     map:indexLayerObjectsByName()
     map:indexTilesetTilesByName()
@@ -60,6 +62,10 @@ function Stage.load(stagefile)
             if object.extrudeY then
                 object.bodyheight = -object.extrudeY
             end
+            if object.propertiestable then
+                object.propertiestable = pathlite.normjoin(directory, object.propertiestable)
+                Database.getTable(object.propertiestable)
+            end
         end
     end
 end
@@ -67,7 +73,7 @@ end
 function Stage.init()
     scene = Scene()
 
-    local MinStageHeight = 512
+    local MinStageHeight = 1024
     local CameraTopMargin = 32
     local floorz = map.floorz or 0
     local ceilingz = map.ceilingz or (floorz + MinStageHeight)
@@ -79,6 +85,7 @@ function Stage.init()
         bodyinlayers = CollisionMask.get("Camera"),
         bodyheight = 0x20000000,
         x = 0, y = 0, z = -0x10000000,
+        lockz = true,
         width = Stage.CameraWidth, height = Stage.CameraHeight,
         points = {
             0, CameraTopMargin,
@@ -92,7 +99,7 @@ function Stage.init()
     Characters.spawn({
         visible = false,
         shape = "polygon",
-        bodyinlayers = CollisionMask.get("Solid"),
+        bodyinlayers = CollisionMask.get("Wall"),
         bodyheight = ceilingz - floorz,
         x = 0, y = 0, z = floorz,
         width = 0x20000000, height = 0x20000000,
@@ -118,7 +125,7 @@ function Stage.init()
     firstroomindex = min(firstroomindex, #rooms)
     local firstroom = rooms[firstroomindex]
     local camerapath = firstroom.camerapath
-    while not camerapath do
+    while not camerapath and firstroomindex > 1 do
         firstroomindex = firstroomindex - 1
         firstroom = map.layers.rooms[firstroomindex]
         camerapath = firstroom.camerapath
@@ -128,9 +135,16 @@ function Stage.init()
         camera.y = camerapath.y + camerapath.points[2] - camera.height/2
     end
 
-    Characters.spawn({
-        x = camera.x + camera.width/4, y = camera.y + camera.height/2, type = "Rose"
-    })
+    local players = map.layers.players
+    if players and #players > 0 then
+        for _, player in ipairs(players) do
+            Characters.spawn(player)
+        end
+    else
+        Database.load("data/database/players-properties.csv")
+        Characters.spawn({type = "Rose"})
+    end
+    Stage.warpCamera(camera.x+camera.width/2, camera.y+camera.height/2)
     for i = firstroomindex - 1, 1, -1 do
         local prevroom = map.layers.rooms[i]
         local characters = prevroom.characters
@@ -152,10 +166,10 @@ function Stage.init()
     end
     Stage.openRoom(firstroomindex)
 
-    if not eventthread then
+    if not sequencethread then
         local players = Characters.getGroup("players")
         for _, player in ipairs(players) do
-            StateMachine.start(player, "control")
+            StateMachine.start(player, "walk")
         end
     end
 end
@@ -217,19 +231,19 @@ function Stage.setToLastRoom()
     roomindex = #map.layers.rooms
 end
 
-function Stage.startEvent(event)
-    local eventfunction = Events[event]
-    if type(eventfunction) == "function" then
-        eventthread = coroutine.create(eventfunction)
-        Stage.updateEvent()
+function Stage.startSequence(name)
+    local f = Sequences[name]
+    if type(f) == "function" then
+        sequencethread = coroutine.create(f)
+        Stage.updateSequence()
     end
 end
 
-function Stage.updateEvent()
-    if eventthread then
-        local ok, err = coroutine.resume(eventthread)
-        if coroutine.status(eventthread) == "dead" then
-            eventthread = nil
+function Stage.updateSequence()
+    if sequencethread then
+        local ok, err = coroutine.resume(sequencethread)
+        if coroutine.status(sequencethread) == "dead" then
+            sequencethread = nil
             if not ok then
                 print(err)
             end
@@ -242,7 +256,7 @@ function Stage.openRoom(i)
     if room then
         roomindex = i
         Characters.spawnArray(room.characters)
-        Stage.startEvent(room.eventfunction)
+        Stage.startSequence(room.sequence)
         if Config.cuecards then
             local cuecard = room.titlebarcuecard or ""
             if cuecard ~= "" then
@@ -255,6 +269,8 @@ function Stage.openRoom(i)
             StateMachine.start(player, "victory")
         end
         Audio.fadeMusic()
+        local GamePhase = require "Dragontail.GamePhase"
+        GamePhase.gameOver()
     end
 end
 
@@ -288,30 +304,39 @@ function Stage.updateGoingToNextRoom()
         return
     end
 
+    local camhalfw, camhalfh = camera.width/2, camera.height/2
+    local centerx, centery = camera.x + camhalfw, camera.y + camhalfh
+    local centerz = camera.z + camera.bodyheight/2
+
+    local playerscenterx, playerscentery, playerscenterz = 0, 0, 0
+    local players = Characters.getGroup("players")
+    for _, player in ipairs(players) do
+        playerscenterx = playerscenterx + player.x
+        playerscentery = playerscentery + player.y
+        playerscenterz = playerscenterz + player.z
+    end
+    playerscenterx = playerscenterx/#players
+    playerscentery = playerscentery/#players
+    playerscenterz = playerscenterz/#players
+
+    if camera.lockz then
+        camera.velz = 0
+    else
+        camera.velz = playerscenterz - centerz
+    end
+
     if Stage.isInNextRoom() then
         camera.velx = 0
         camera.vely = 0
         local enemies = Characters.getGroup("enemies")
         local donewhenenemiesleft = room.donewhenenemiesleft or 0
-        if #enemies <= donewhenenemiesleft and not eventthread then
+        if #enemies <= donewhenenemiesleft and not sequencethread then
             Stage.openRoom(roomindex + 1)
         end
         return
     end
 
     local camerapath = room.camerapath ---@type CameraPath
-
-    local camhalfw, camhalfh = camera.width/2, camera.height/2
-    local centerx, centery = camera.x + camhalfw, camera.y + camhalfh
-
-    local playerscenterx, playerscentery = 0, 0
-    local players = Characters.getGroup("players")
-    for _, player in ipairs(players) do
-        playerscenterx = playerscenterx + player.x
-        playerscentery = playerscentery + player.y
-    end
-    playerscenterx, playerscentery = playerscenterx/#players, playerscentery/#players
-
     local newcenterx, newcentery, pathx1, pathy1, pathx2, pathy2 = camerapath:getCameraCenter(playerscenterx, playerscentery)
 
     if math.dot(newcenterx - centerx, newcentery - centery, pathx2-pathx1, pathy2-pathy1) < 0 then
@@ -332,7 +357,7 @@ function Stage.updateGoingToNextRoom()
 end
 
 function Stage.fixedupdate()
-    Stage.updateEvent()
+    Stage.updateSequence()
 
     Characters.fixedupdate()
     Characters.pruneDisappeared()
@@ -345,7 +370,7 @@ function Stage.fixedupdate()
     local solids = Characters.getGroup("solids")
     for _, solid in ipairs(solids) do
         if solid.layer ~= room
-        and CollisionMask.test(solid.bodyinlayers, "Solid") ~= 0 then
+        and CollisionMask.test(solid.bodyinlayers, "Object", "Wall") ~= 0 then
             if not solid:isOnCamera(camera) then
                 solid:disappear()
             end
@@ -369,9 +394,6 @@ function Stage.fixedupdateGui(gui)
 
     local healthpercent = player.health / player.maxhealth
     local hud = gui.gameplay.hud
-
-    gui.gameplay.gameover.visible = player.state and
-        (player.state.state == "victory" or player.state.state == "defeat")
 
     hud.health:setPercent(healthpercent)
 
@@ -447,8 +469,17 @@ function Stage.fixedupdateGui(gui)
                 if asefile then
                     weaponicon.asefile = asefile
                     weaponicon.asetag = asetag
-                    weaponicon.originx = weapondata.spriteoriginx or 0
-                    weaponicon.originy = weapondata.spriteoriginy or 0
+                    local ase = Assets.get(asefile)
+                    local originx, originy
+                    if ase then
+                         ---@cast ase Aseprite
+                        originx, originy = ase:getSliceFrameOrigin("origin", asetag)
+                        if not originx or not originy then
+                            originx, originy = ase[1]:getSliceOrigin("origin")
+                        end
+                    end
+                    weaponicon.originx = originx or 0
+                    weaponicon.originy = originy or 0
                     weaponicon.visible = true
                     weaponicon:initAseprite()
                 else

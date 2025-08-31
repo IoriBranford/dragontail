@@ -9,7 +9,7 @@ local Window = require "System.Window"
 local Stage  = require "Dragontail.Stage"
 local Inputs = require "System.Inputs"
 local firstphase = "Dragontail.GamePhase"
-local firstmap = "data/stage_demonrealm.lua"
+local firstmap = "data/stage_banditcave.lua"
 
 local defaultgamepadconfig =  {
     ["dpleft dpright"] = "digitalx",
@@ -18,9 +18,11 @@ local defaultgamepadconfig =  {
     lefty = "analogy",
     x = "attack",
     triggerright = "sprint",
+    triggerleft = "fly",
 }
 
 function love.load(args)
+    love.graphics.setDefaultFilter("nearest", "nearest")
     local mapname = args.stage or args.test
     if mapname then
         local map = args.stage and string.format("data/stage_%s.lua", mapname)
@@ -99,7 +101,8 @@ return {
             ["left right"] = "digitalx",
             ["up down"] = "digitaly",
             z = "attack",
-            lshift = "sprint"
+            lshift = "sprint",
+            space = "fly"
         },
 
         gamepads = {

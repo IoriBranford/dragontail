@@ -26,11 +26,15 @@ function Animation:_init(tileset)
     return self
 end
 
-function Animation:setLoopFrame(loopframe)
-    if loopframe <= 0 then
-        loopframe = #self + loopframe
+function Animation:clampIndex(i)
+    if i <= 0 then
+        i = #self + i
     end
-    self.loopframe = loopframe
+    return math.max(1, math.min(i, #self))
+end
+
+function Animation:setLoopFrame(loopframe)
+    self.loopframe = self:clampIndex(loopframe)
 end
 
 function Animation:isFinished(i, t)
@@ -55,7 +59,14 @@ function Animation:getUpdate(i, t, loopi)
     local duration = self[i].duration
     while t >= duration do
         t = t - duration
-        i = (i >= #self) and loopi or (i + 1)
+        if (i >= #self) then
+            if i == loopi then
+                break
+            end
+            i = loopi
+        else
+            i = i + 1
+        end
         duration = self[i].duration
     end
     return i, t

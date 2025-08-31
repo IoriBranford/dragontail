@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 55,
-  nextobjectid = 530,
+  nextobjectid = 536,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -9679,180 +9679,8 @@ return {
       }
     },
     {
-      name = "bandits",
-      firstgid = 5265,
-      class = "",
-      tilewidth = 64,
-      tileheight = 64,
-      spacing = 0,
-      margin = 0,
-      columns = 4,
-      image = "mapobjects/bandit/bandits.png",
-      imagewidth = 256,
-      imageheight = 384,
-      objectalignment = "bottom",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 8
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 64,
-        height = 64
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 24,
-      tiles = {
-        {
-          id = 0,
-          type = "bandit-dagger"
-        },
-        {
-          id = 1,
-          type = "bandit-dagger"
-        },
-        {
-          id = 2,
-          type = "bandit-dagger"
-        },
-        {
-          id = 3,
-          type = "bandit-dagger"
-        },
-        {
-          id = 4,
-          type = "bandit-spear"
-        },
-        {
-          id = 5,
-          type = "bandit-spear"
-        },
-        {
-          id = 6,
-          type = "bandit-spear"
-        },
-        {
-          id = 7,
-          type = "bandit-spear"
-        },
-        {
-          id = 8,
-          type = "bandit-bow"
-        },
-        {
-          id = 9,
-          type = "bandit-bow"
-        },
-        {
-          id = 10,
-          type = "bandit-bow"
-        },
-        {
-          id = 11,
-          type = "bandit-bow"
-        },
-        {
-          id = 12,
-          type = "bandit-sling"
-        },
-        {
-          id = 13,
-          type = "bandit-sling"
-        },
-        {
-          id = 14,
-          type = "bandit-sling"
-        },
-        {
-          id = 15,
-          type = "bandit-sling"
-        },
-        {
-          id = 16,
-          type = "bandit-boss"
-        },
-        {
-          id = 17,
-          type = "bandit-boss"
-        },
-        {
-          id = 18,
-          type = "bandit-boss"
-        },
-        {
-          id = 19,
-          type = "bandit-boss"
-        },
-        {
-          id = 20,
-          type = "bandit-axe"
-        },
-        {
-          id = 21,
-          type = "bandit-axe"
-        },
-        {
-          id = 22,
-          type = "bandit-axe"
-        },
-        {
-          id = 23,
-          type = "bandit-axe"
-        }
-      }
-    },
-    {
-      name = "items",
-      firstgid = 5289,
-      class = "",
-      tilewidth = 64,
-      tileheight = 32,
-      spacing = 0,
-      margin = 0,
-      columns = 4,
-      image = "mapobjects/items.png",
-      imagewidth = 256,
-      imageheight = 32,
-      objectalignment = "center",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 64,
-        height = 32
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 4,
-      tiles = {
-        {
-          id = 0,
-          type = "food-fish"
-        },
-        {
-          id = 1,
-          type = "food-bigfish"
-        },
-        {
-          id = 2,
-          type = "item-throwing-axe"
-        },
-        {
-          id = 3,
-          type = "item-stone"
-        }
-      }
-    },
-    {
       name = "cavedoor2-diagonal",
-      firstgid = 5293,
+      firstgid = 5265,
       class = "",
       tilewidth = 64,
       tileheight = 128,
@@ -9929,7 +9757,7 @@ return {
     },
     {
       name = "bushes",
-      firstgid = 5297,
+      firstgid = 5269,
       class = "",
       tilewidth = 48,
       tileheight = 32,
@@ -9958,7 +9786,7 @@ return {
     },
     {
       name = "vegA1",
-      firstgid = 5313,
+      firstgid = 5285,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -10123,7 +9951,7 @@ return {
     },
     {
       name = "tree2B_ss",
-      firstgid = 5361,
+      firstgid = 5333,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -10783,7 +10611,7 @@ return {
     },
     {
       name = "tree3D_ss",
-      firstgid = 5617,
+      firstgid = 5589,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -11488,7 +11316,7 @@ return {
     },
     {
       name = "tree2A_ss",
-      firstgid = 5873,
+      firstgid = 5845,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -12148,7 +11976,7 @@ return {
     },
     {
       name = "vegA2",
-      firstgid = 6129,
+      firstgid = 6101,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -12313,7 +12141,7 @@ return {
     },
     {
       name = "vegA3",
-      firstgid = 6177,
+      firstgid = 6149,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -12478,7 +12306,7 @@ return {
     },
     {
       name = "vegA4",
-      firstgid = 6225,
+      firstgid = 6197,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -12643,7 +12471,7 @@ return {
     },
     {
       name = "vegB1",
-      firstgid = 6273,
+      firstgid = 6245,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -12796,7 +12624,7 @@ return {
     },
     {
       name = "vegB2",
-      firstgid = 6321,
+      firstgid = 6293,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -12937,7 +12765,7 @@ return {
     },
     {
       name = "vegB3",
-      firstgid = 6369,
+      firstgid = 6341,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -13126,7 +12954,7 @@ return {
     },
     {
       name = "vegC1",
-      firstgid = 6417,
+      firstgid = 6389,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -13291,7 +13119,7 @@ return {
     },
     {
       name = "vegC2",
-      firstgid = 6465,
+      firstgid = 6437,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -13456,7 +13284,7 @@ return {
     },
     {
       name = "vegC3",
-      firstgid = 6513,
+      firstgid = 6485,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -13621,7 +13449,7 @@ return {
     },
     {
       name = "vegC4",
-      firstgid = 6561,
+      firstgid = 6533,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -13786,7 +13614,7 @@ return {
     },
     {
       name = "barrelA",
-      firstgid = 6609,
+      firstgid = 6581,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -13820,7 +13648,7 @@ return {
           id = 1,
           type = "container-barrel",
           properties = {
-            ["name"] = "collapse"
+            ["name"] = "Fall"
           }
         },
         {
@@ -13834,7 +13662,7 @@ return {
     },
     {
       name = "barrelB",
-      firstgid = 6612,
+      firstgid = 6584,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -13868,7 +13696,7 @@ return {
           id = 1,
           type = "container-barrel",
           properties = {
-            ["name"] = "collapse"
+            ["name"] = "Fall"
           }
         },
         {
@@ -13879,7 +13707,7 @@ return {
     },
     {
       name = "crates",
-      firstgid = 6615,
+      firstgid = 6587,
       class = "",
       tilewidth = 32,
       tileheight = 48,
@@ -14028,14 +13856,14 @@ return {
         {
           id = 5,
           properties = {
-            ["name"] = "defeated"
+            ["name"] = "Fall"
           }
         }
       }
     },
     {
       name = "wall-torch",
-      firstgid = 6621,
+      firstgid = 6593,
       class = "",
       tilewidth = 32,
       tileheight = 48,
@@ -14116,7 +13944,7 @@ return {
     },
     {
       name = "tables-hori",
-      firstgid = 6624,
+      firstgid = 6596,
       class = "",
       tilewidth = 96,
       tileheight = 48,
@@ -14267,7 +14095,7 @@ return {
     },
     {
       name = "graffiti-skull-bones",
-      firstgid = 6627,
+      firstgid = 6599,
       class = "",
       tilewidth = 16,
       tileheight = 16,
@@ -14296,14 +14124,14 @@ return {
     },
     {
       name = "Dishes A",
-      firstgid = 6641,
+      firstgid = 6613,
       class = "",
       tilewidth = 32,
       tileheight = 32,
       spacing = 0,
       margin = 0,
       columns = 8,
-      image = "sprites/banditcave/Dishes A.png",
+      image = "sprites/weapons/Dishes A.png",
       imagewidth = 256,
       imageheight = 96,
       objectalignment = "center",
@@ -14357,7 +14185,7 @@ return {
     },
     {
       name = "Meats A",
-      firstgid = 6665,
+      firstgid = 6637,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14423,7 +14251,7 @@ return {
     },
     {
       name = "Bread A",
-      firstgid = 6720,
+      firstgid = 6692,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14461,7 +14289,7 @@ return {
     },
     {
       name = "Cheese A",
-      firstgid = 6728,
+      firstgid = 6700,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14539,7 +14367,7 @@ return {
     },
     {
       name = "Forge A",
-      firstgid = 6746,
+      firstgid = 6718,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14673,7 +14501,7 @@ return {
     },
     {
       name = "Workbench, Smith",
-      firstgid = 6874,
+      firstgid = 6846,
       class = "",
       tilewidth = 64,
       tileheight = 64,
@@ -14863,7 +14691,7 @@ return {
     },
     {
       name = "gamepad-buttons",
-      firstgid = 6880,
+      firstgid = 6852,
       class = "",
       tilewidth = 16,
       tileheight = 16,
@@ -14966,7 +14794,7 @@ return {
     },
     {
       name = "keyboard-keys",
-      firstgid = 6980,
+      firstgid = 6952,
       class = "",
       tilewidth = 16,
       tileheight = 16,
@@ -15022,7 +14850,7 @@ return {
     },
     {
       name = "Chair, Dining F",
-      firstgid = 7252,
+      firstgid = 7224,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -15116,7 +14944,7 @@ return {
     },
     {
       name = "flamegaugefull",
-      firstgid = 7268,
+      firstgid = 7240,
       class = "",
       tilewidth = 40,
       tileheight = 20,
@@ -15183,7 +15011,7 @@ return {
     },
     {
       name = "vegetables",
-      firstgid = 7276,
+      firstgid = 7248,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -15237,6 +15065,248 @@ return {
           type = "food-small"
         }
       }
+    },
+    {
+      name = "axe",
+      firstgid = 7255,
+      class = "",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/bandit/axe.ase",
+      imagewidth = 64,
+      imageheight = 64,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 64,
+        height = 64
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "boss",
+      firstgid = 7256,
+      class = "",
+      tilewidth = 192,
+      tileheight = 192,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/bandit/boss.ase",
+      imagewidth = 192,
+      imageheight = 192,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 72
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 192,
+        height = 192
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "bow",
+      firstgid = 7257,
+      class = "",
+      tilewidth = 128,
+      tileheight = 128,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/bandit/bow.ase",
+      imagewidth = 128,
+      imageheight = 128,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 40
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 128,
+        height = 128
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {
+        {
+          id = 0,
+          type = "bandit-bow"
+        }
+      }
+    },
+    {
+      name = "spear",
+      firstgid = 7258,
+      class = "",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/bandit/spear.ase",
+      imagewidth = 64,
+      imageheight = 64,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 64,
+        height = 64
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "sling",
+      firstgid = 7259,
+      class = "",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/bandit/sling.ase",
+      imagewidth = 64,
+      imageheight = 64,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 64,
+        height = 64
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {
+        {
+          id = 0,
+          type = "bandit-sling"
+        }
+      }
+    },
+    {
+      name = "knife",
+      firstgid = 7260,
+      class = "",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/bandit/knife.ase",
+      imagewidth = 64,
+      imageheight = 64,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 64,
+        height = 64
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "throwing-axe",
+      firstgid = 7261,
+      class = "",
+      tilewidth = 48,
+      tileheight = 48,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/weapons/throwing-axe.ase",
+      imagewidth = 48,
+      imageheight = 48,
+      objectalignment = "center",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 48,
+        height = 48
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "stone",
+      firstgid = 7262,
+      class = "",
+      tilewidth = 16,
+      tileheight = 16,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/weapons/stone.ase",
+      imagewidth = 16,
+      imageheight = 16,
+      objectalignment = "center",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
     }
   },
   layers = {
@@ -15416,35 +15486,35 @@ return {
       chunks = {
         {
           x = 0, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMNAR7BehnmEAQlAA1A=="
+          data = "eJxjYBgFo2AUMNARLBahnmEAOgAAuA=="
         },
         {
           x = 20, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMAwysE2EOIUAIzwAyw=="
+          data = "eJxjYBgFo2AUMAwyMEuEOIUAHtwArw=="
         },
         {
           x = 100, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMAwysEgKwV6KxEYHADXQAXw="
+          data = "eJxjYBgFo2AUMAwy0CaFYHcisdEBAC5gAUQ="
         },
         {
           x = -20, y = 0, width = 20, height = 12,
-          data = "eJxjYBi8YKfIQLtgFIwChkENAIeeAM4="
+          data = "eJxjYBi8YK7IQLtgFIwChkENAC+uALI="
         },
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJw7KMIABoESDAyboexCCQaGA1D2KBgFo4Bh0AIAiFgDYw=="
+          data = "eJxbKsIABqYSDAzToexQCQaGJVD2KBgFo4Bh0AIAgjoC1w=="
         },
         {
           x = 20, y = 0, width = 20, height = 12,
-          data = "eJxjYCAPGIkzMBiLMzCYiDNQDWwUYWBwlGBg+ChBPTNHwShgGMYAAOtuAwY="
+          data = "eJxjYCAPiIkzMIiLMzBIiDNQDUwVYWBQlWBguCpBPTNHwShgGMYAALhAAl4="
         },
         {
           x = 40, y = 0, width = 20, height = 12,
-          data = "eJxjYMAEDyVQ+YVofEE0Pi7wEarOkUj1o2AUjAIGkgAAw5IDDg=="
+          data = "eJxjYMAERyVQ+aFo/K/iDESBq1B9qmj6R8EoGAUMVAEAX/UDgQ=="
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJxjYEAFH8UZGJTEGBiUxRgYVMQYqAKMxBgYjMUYGEyoZB6tgKHEQLtgFIwCBpIAAOPYAtg="
+          data = "eJxjYEAFV8UZGNjEGBjYxRgYOMQYqALExBgYxMUYGCSoZB6tgKjEQLtgFIwCBpIAAOS7Afg="
         },
         {
           x = 80, y = 0, width = 20, height = 12,
@@ -15452,7 +15522,7 @@ return {
         },
         {
           x = 100, y = 0, width = 20, height = 12,
-          data = "eJztzMsJgDAAwNDQMTJKnUmH87OAnwWq7uNVwYoHL0If5JoYIJ6qArdaoRN6YZCsOlxrMr9RmIRZWB5+byVhFTZh/+BXFPzAAXVHDbw="
+          data = "eJztzMsJgDAAwNDQMTJKnUnH8bOAnwWqbudVwYoHL0If5JoYIJ6qArdaoRN6YZCsOlxrMr9RmIRZWB5+byVhFTZh/+BXFPzAAS5rDGw="
         },
         {
           x = 140, y = 0, width = 20, height = 12,
@@ -15485,7 +15555,7 @@ return {
       chunks = {
         {
           x = 100, y = 0, width = 20, height = 12,
-          data = "eJxjYCAOdEkxMHRLMTD0SDEw9EoRqWkUjIJRwEBLAAA/VwKX"
+          data = "eJxjYCAO5EkxMORLMTAUSDEwFEoRqWkUjIJRwEBLAACvWQIn"
         }
       }
     },
@@ -15551,7 +15621,7 @@ return {
       chunks = {
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJxjYBhZ4LMIA8MXEeqZxyzKwMAiSj3zhEUZGESoaJ4yFc0CAWNRBgYTKps5ChjIBgA+oQNb"
+          data = "eJxjYBhZ4LoIA8MNEeqZ91yEgeEFFc37LsLA8IOK5rGLMlAViIsyMEhQ2cxRwEA2AABfdgZb"
         }
       }
     },
@@ -15578,7 +15648,7 @@ return {
       chunks = {
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJxjYBgFgwl8FmVg+CJKPfOYxRgYWMSoZ56wGAODCBXNUxZjYFChonkMIwwAAPOBAws="
+          data = "eJxjYBgFgwlcF2VguCFKPfOeizIwvKCied9FGRh+UNE8djEGBg4x6pnHMMIAAEXHBic="
         }
       }
     },
@@ -15605,7 +15675,7 @@ return {
       chunks = {
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJztzkkNwDAMAMHpQcE2f4g5AJRCpfYVZQCslm17ryU9GcnM772jOIuruIsW9GAEM/44trQHp30Ipw=="
+          data = "eJztzlsNgDAUBcExcY9/U30YKCADCyTwRToCNsu2PddCDyPMvO+tcIQzXKEVvRjFrC+O/doN0qYLUw=="
         }
       }
     },
@@ -15635,7 +15705,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["eventfunction"] = "introBanditStage"
+            ["sequence"] = "introBanditStage"
           },
           objects = {
             {
@@ -15661,7 +15731,7 @@ return {
                 { x = 448, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = -1,
                 ["extrudeY"] = -64,
@@ -15703,7 +15773,7 @@ return {
                 { x = 512, y = -32 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -15720,7 +15790,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6884,
+              gid = 6856,
               visible = true,
               properties = {}
             },
@@ -15734,7 +15804,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6914,
+              gid = 6886,
               visible = true,
               properties = {}
             },
@@ -15794,58 +15864,66 @@ return {
             {
               id = 15,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 1072,
               y = 160,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 485,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 1176,
               y = 240,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 49,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 408,
               y = 160,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 48,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 464,
               y = 208,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 514,
@@ -15857,7 +15935,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6900,
+              gid = 6872,
               visible = true,
               properties = {}
             },
@@ -15899,86 +15977,98 @@ return {
             {
               id = 16,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 248,
               y = 240,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 487,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 408,
               y = 200,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 11,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 984,
               y = 152,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 488,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 1016,
               y = 240,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 486,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 272,
               y = 128,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 45,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 1192,
               y = 256,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 519,
@@ -15990,7 +16080,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6884,
+              gid = 6856,
               visible = true,
               properties = {}
             },
@@ -16038,7 +16128,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6900,
+              gid = 6872,
               visible = true,
               properties = {}
             }
@@ -16081,44 +16171,50 @@ return {
             {
               id = 490,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 1048,
               y = 160,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 491,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 1128,
               y = 224,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 492,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 1040,
               y = 248,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 238,
@@ -16140,7 +16236,7 @@ return {
                 { x = 96, y = -96 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -16157,7 +16253,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6900,
+              gid = 6872,
               visible = true,
               properties = {}
             },
@@ -16266,44 +16362,50 @@ return {
             {
               id = 52,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 1264,
               y = 192,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 51,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 1296,
               y = 288,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 53,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 1232,
               y = 272,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 430,
@@ -16332,7 +16434,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6889,
+              gid = 6861,
               visible = false,
               properties = {}
             },
@@ -16356,7 +16458,7 @@ return {
                 { x = 480, y = -32 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -16385,32 +16487,34 @@ return {
             {
               id = 19,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 1184,
               y = 32,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
               properties = {
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["z"] = 64
               }
             },
             {
               id = 20,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 1320,
               y = 56,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
               properties = {
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["z"] = 64
               }
             },
@@ -16452,30 +16556,34 @@ return {
             {
               id = 32,
               name = "",
-              type = "",
+              type = "bandit-spear",
               shape = "rectangle",
               x = 1616,
               y = 216,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7258,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 261,
               name = "",
-              type = "",
+              type = "bandit-spear",
               shape = "rectangle",
               x = 1064,
               y = 232,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7258,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 425,
@@ -16506,7 +16614,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6951,
+              gid = 6923,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -16522,7 +16630,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6971,
+              gid = 6943,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -16538,7 +16646,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7187,
+              gid = 7159,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -16597,7 +16705,7 @@ return {
                 { x = 256, y = 32 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = -1,
                 ["extrudeY"] = -64,
@@ -16622,13 +16730,97 @@ return {
                 { x = 624, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff",
                 ["z"] = 64
               }
+            },
+            {
+              id = 530,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 1504,
+              y = 208,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7262,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 531,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 1552,
+              y = 184,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7262,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 532,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 1648,
+              y = 208,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7262,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 533,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 1704,
+              y = 160,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7262,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 534,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 1480,
+              y = 152,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7262,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 535,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 1768,
+              y = 200,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7262,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -16659,7 +16851,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7259,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -16681,7 +16873,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7259,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -16780,7 +16972,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6884,
+              gid = 6856,
               visible = true,
               properties = {}
             },
@@ -16794,7 +16986,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6900,
+              gid = 6872,
               visible = true,
               properties = {}
             },
@@ -16825,7 +17017,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6960,
+              gid = 6932,
               visible = false,
               properties = {}
             },
@@ -16839,7 +17031,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7061,
+              gid = 7033,
               visible = false,
               properties = {}
             },
@@ -16853,7 +17045,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7062,
+              gid = 7034,
               visible = false,
               properties = {}
             },
@@ -16867,7 +17059,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7063,
+              gid = 7035,
               visible = false,
               properties = {}
             },
@@ -16881,7 +17073,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7064,
+              gid = 7036,
               visible = false,
               properties = {}
             },
@@ -16895,7 +17087,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7186,
+              gid = 7158,
               visible = false,
               properties = {}
             },
@@ -16909,7 +17101,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6914,
+              gid = 6886,
               visible = true,
               properties = {}
             },
@@ -16958,7 +17150,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6900,
+              gid = 6872,
               visible = true,
               properties = {}
             }
@@ -16983,58 +17175,66 @@ return {
             {
               id = 246,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 1872,
               y = 168,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 248,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 1360,
               y = 200,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 250,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 1872,
               y = 200,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 253,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 1360,
               y = 232,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             }
           }
         },
@@ -17064,7 +17264,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7259,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -17127,16 +17327,18 @@ return {
             {
               id = 501,
               name = "",
-              type = "",
+              type = "bandit-spear",
               shape = "rectangle",
               x = 1872,
               y = 232,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7258,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             }
           }
         },
@@ -17167,7 +17369,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7259,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -17192,7 +17394,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7259,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -17286,30 +17488,34 @@ return {
             {
               id = 41,
               name = "",
-              type = "",
+              type = "bandit-spear",
               shape = "rectangle",
               x = 1360,
               y = 264,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7258,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 62,
               name = "",
-              type = "",
+              type = "bandit-spear",
               shape = "rectangle",
               x = 1872,
               y = 232,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7258,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             }
           }
         },
@@ -17352,7 +17558,7 @@ return {
                 { x = 160, y = -320 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -17386,7 +17592,7 @@ return {
               width = 64,
               height = 128,
               rotation = 0,
-              gid = 5296,
+              gid = 5268,
               visible = true,
               properties = {
                 ["drawz"] = -0.25,
@@ -17403,7 +17609,7 @@ return {
               width = 64,
               height = 128,
               rotation = 0,
-              gid = 5294,
+              gid = 5266,
               visible = true,
               properties = {}
             },
@@ -17417,7 +17623,7 @@ return {
               width = 64,
               height = 128,
               rotation = 0,
-              gid = 5293,
+              gid = 5265,
               visible = true,
               properties = {
                 ["shadowcolor"] = "#00000000"
@@ -17433,7 +17639,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6611,
+              gid = 6583,
               visible = true,
               properties = {
                 ["itemtype"] = "food-fish"
@@ -17449,7 +17655,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6611,
+              gid = 6583,
               visible = true,
               properties = {
                 ["itemtype"] = "food-fish"
@@ -17465,7 +17671,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6614,
+              gid = 6586,
               visible = true,
               properties = {
                 ["itemtype"] = "mana-peppers"
@@ -17481,7 +17687,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6614,
+              gid = 6586,
               visible = true,
               properties = {
                 ["itemtype"] = "mana-peppers"
@@ -17514,7 +17720,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6884,
+              gid = 6856,
               visible = true,
               properties = {}
             }
@@ -17543,10 +17749,10 @@ return {
               shape = "rectangle",
               x = 2080,
               y = 0,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7257,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -17595,10 +17801,10 @@ return {
               shape = "rectangle",
               x = 2192,
               y = 72,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7257,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -17643,46 +17849,50 @@ return {
             {
               id = 307,
               name = "",
-              type = "",
+              type = "bandit-spear",
               shape = "rectangle",
               x = 1568,
               y = 256,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7258,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 503,
               name = "",
-              type = "",
+              type = "bandit-spear",
               shape = "rectangle",
               x = 1880,
               y = -8,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7258,
               visible = true,
               properties = {
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["z"] = 64
               }
             },
             {
               id = 308,
               name = "",
-              type = "",
+              type = "bandit-spear",
               shape = "rectangle",
               x = 1936,
               y = -8,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7258,
               visible = true,
               properties = {
+                ["propertiestable"] = "database/bandits-properties.csv",
                 ["z"] = 64
               }
             },
@@ -17713,7 +17923,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6889,
+              gid = 6861,
               visible = false,
               properties = {}
             },
@@ -17727,7 +17937,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6940,
+              gid = 6912,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -17762,7 +17972,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6960,
+              gid = 6932,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -17778,7 +17988,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7186,
+              gid = 7158,
               visible = false,
               properties = {}
             },
@@ -17792,7 +18002,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7061,
+              gid = 7033,
               visible = false,
               properties = {}
             },
@@ -17806,7 +18016,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7062,
+              gid = 7034,
               visible = false,
               properties = {}
             },
@@ -17820,7 +18030,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7063,
+              gid = 7035,
               visible = false,
               properties = {}
             },
@@ -17834,7 +18044,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7064,
+              gid = 7036,
               visible = false,
               properties = {}
             },
@@ -17848,7 +18058,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6885,
+              gid = 6857,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -17872,7 +18082,7 @@ return {
                 { x = 960, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -17896,8 +18106,8 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = -1,
-            ["eventfunction"] = "unlockDoorToNextArea",
-            ["exitdoor"] = { id = 235 }
+            ["exitdoor"] = { id = 235 },
+            ["sequence"] = "unlockDoorToNextArea"
           },
           objects = {
             {
@@ -17931,13 +18141,13 @@ return {
                 { x = 64, y = 56 }
               },
               properties = {
-                ["action"] = "startStageEvent",
+                ["action"] = "startSequence",
                 ["color"] = "#80008000",
                 ["drawz"] = -0.125,
-                ["event"] = "playerExitToNextArea",
                 ["extrudeY"] = -64,
                 ["initialai"] = "triggerToUse",
                 ["script"] = "Dragontail.Character.Trigger",
+                ["sequence"] = "playerExitToNextArea",
                 ["usesleft"] = 1
               }
             }
@@ -17957,7 +18167,7 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = 999,
-            ["eventfunction"] = "playerEnterArea",
+            ["sequence"] = "playerEnterArea",
             ["titlebarcuecard"] = "RUN"
           },
           objects = {
@@ -18003,7 +18213,7 @@ return {
                 { x = 576, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -18034,7 +18244,7 @@ return {
                 { x = 1088, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -18069,7 +18279,7 @@ return {
                 { x = -256, y = -224 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -18095,7 +18305,7 @@ return {
                 { x = 192, y = 64 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -18120,7 +18330,7 @@ return {
                 { x = 192, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -18134,10 +18344,10 @@ return {
               shape = "rectangle",
               x = 2592,
               y = 32,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7257,
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 273 },
@@ -18155,7 +18365,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6621,
+              gid = 6593,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -18171,7 +18381,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6621,
+              gid = 6593,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -18197,10 +18407,10 @@ return {
               shape = "rectangle",
               x = 2720,
               y = 32,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7257,
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 275 },
@@ -18228,10 +18438,10 @@ return {
               shape = "rectangle",
               x = 2656,
               y = 256,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7257,
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 281 },
@@ -18246,10 +18456,10 @@ return {
               shape = "rectangle",
               x = 2784,
               y = 264,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7257,
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 283 },
@@ -18290,10 +18500,10 @@ return {
               shape = "rectangle",
               x = 2848,
               y = 32,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7257,
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 287 },
@@ -18324,7 +18534,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6617,
+              gid = 6589,
               visible = true,
               properties = {
                 ["itemtype"] = "food-fish"
@@ -18340,7 +18550,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6617,
+              gid = 6589,
               visible = true,
               properties = {
                 ["itemtype"] = "item-throwing-axe"
@@ -18356,7 +18566,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6617,
+              gid = 6589,
               visible = true,
               properties = {
                 ["itemtype"] = "mana-peppers"
@@ -18372,7 +18582,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6617,
+              gid = 6589,
               visible = true,
               properties = {
                 ["itemtype"] = "food-fish"
@@ -18388,7 +18598,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6617,
+              gid = 6589,
               visible = true,
               properties = {
                 ["itemtype"] = "mana-peppers"
@@ -18404,7 +18614,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6617,
+              gid = 6589,
               visible = true,
               properties = {
                 ["itemtype"] = "food-fish"
@@ -18420,7 +18630,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6617,
+              gid = 6589,
               visible = true,
               properties = {
                 ["itemtype"] = "food-fish"
@@ -18436,7 +18646,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6617,
+              gid = 6589,
               visible = true,
               properties = {
                 ["itemtype"] = "item-throwing-axe"
@@ -18452,7 +18662,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              gid = 6621,
+              gid = 6593,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -18468,7 +18678,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6640,
+              gid = 6612,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -18486,7 +18696,7 @@ return {
               width = 16,
               height = 16,
               rotation = 345,
-              gid = 6633,
+              gid = 6605,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -18504,7 +18714,7 @@ return {
               width = 16,
               height = 16,
               rotation = 15,
-              gid = 6638,
+              gid = 6610,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -18522,7 +18732,7 @@ return {
               width = 16,
               height = 16,
               rotation = 15,
-              gid = 6632,
+              gid = 6604,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -18540,7 +18750,7 @@ return {
               width = 16,
               height = 16,
               rotation = 45,
-              gid = 6637,
+              gid = 6609,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -18558,7 +18768,7 @@ return {
               width = 16,
               height = 16,
               rotation = 45,
-              gid = 6631,
+              gid = 6603,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -18595,7 +18805,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6910,
+              gid = 6882,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -18611,7 +18821,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6930,
+              gid = 6902,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -18627,7 +18837,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7187,
+              gid = 7159,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -18643,7 +18853,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6885,
+              gid = 6857,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -18675,10 +18885,10 @@ return {
               shape = "rectangle",
               x = 3264,
               y = -48,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7257,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -18700,10 +18910,10 @@ return {
               shape = "rectangle",
               x = 3264,
               y = -16,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7257,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -18781,30 +18991,34 @@ return {
             {
               id = 101,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 3376,
               y = 192,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 510,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 3408,
               y = 256,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             }
           }
         },
@@ -18825,30 +19039,34 @@ return {
             {
               id = 96,
               name = "",
-              type = "",
+              type = "bandit-spear",
               shape = "rectangle",
               x = 3344,
               y = 328,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7258,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 103,
               name = "",
-              type = "",
+              type = "bandit-spear",
               shape = "rectangle",
               x = 3056,
               y = 328,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7258,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             }
           }
         },
@@ -18910,7 +19128,7 @@ return {
                 { x = 480, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -18941,7 +19159,7 @@ return {
                 { x = 0, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -10,
@@ -18975,10 +19193,10 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 6875,
+              gid = 6847,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["extrudeY"] = -28
               }
             },
@@ -18992,52 +19210,52 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 6879,
+              gid = 6851,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["extrudeY"] = -48
               }
             },
             {
               id = 418,
               name = "",
-              type = "",
+              type = "item-throwing-axe",
               shape = "rectangle",
               x = 3540,
               y = 66,
-              width = 64,
-              height = 32,
+              width = 48,
+              height = 48,
               rotation = 330,
-              gid = 5291,
+              gid = 7261,
               visible = true,
               properties = {}
             },
             {
               id = 419,
               name = "",
-              type = "",
+              type = "item-throwing-axe",
               shape = "rectangle",
               x = 3584,
               y = 78,
-              width = 64,
-              height = 32,
+              width = 48,
+              height = 48,
               rotation = 270,
-              gid = 5291,
+              gid = 7261,
               visible = true,
               properties = {}
             },
             {
               id = 420,
               name = "",
-              type = "",
+              type = "item-throwing-axe",
               shape = "rectangle",
               x = 3624,
               y = 68,
-              width = 64,
-              height = 32,
+              width = 48,
+              height = 48,
               rotation = 225,
-              gid = 5291,
+              gid = 7261,
               visible = true,
               properties = {}
             }
@@ -19080,58 +19298,66 @@ return {
             {
               id = 397,
               name = "",
-              type = "",
+              type = "bandit-spear",
               shape = "rectangle",
               x = 3808,
               y = 120,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7258,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 398,
               name = "",
-              type = "",
+              type = "bandit-spear",
               shape = "rectangle",
               x = 3768,
               y = 208,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7258,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 506,
               name = "",
-              type = "",
+              type = "bandit-spear",
               shape = "rectangle",
               x = 3712,
               y = 272,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7258,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 507,
               name = "",
-              type = "",
+              type = "bandit-spear",
               shape = "rectangle",
               x = 3640,
               y = 328,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7258,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             }
           }
         },
@@ -19154,30 +19380,34 @@ return {
             {
               id = 383,
               name = "",
-              type = "",
+              type = "bandit-axe",
               shape = "rectangle",
               x = 3864,
               y = 120,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5286,
+              gid = 7255,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 384,
               name = "",
-              type = "",
+              type = "bandit-axe",
               shape = "rectangle",
               x = 3864,
               y = 216,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5286,
+              gid = 7255,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             }
           }
         },
@@ -19222,10 +19452,9 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
-              gid = 6626,
+              gid = 6598,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -16
               }
             },
@@ -19239,10 +19468,9 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7255,
+              gid = 7227,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -19256,10 +19484,9 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7263,
+              gid = 7235,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -19273,7 +19500,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6613,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19289,7 +19516,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6613,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19305,7 +19532,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6725,
+              gid = 6697,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19321,7 +19548,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7276,
+              gid = 7248,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19382,7 +19609,7 @@ return {
                 { x = 480, y = -320 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -19399,10 +19626,9 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
-              gid = 6624,
+              gid = 6596,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -16
               }
             },
@@ -19416,10 +19642,9 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
-              gid = 6626,
+              gid = 6598,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -16
               }
             },
@@ -19433,10 +19658,9 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
-              gid = 6625,
+              gid = 6597,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -16
               }
             },
@@ -19450,10 +19674,9 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
-              gid = 6624,
+              gid = 6596,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -16
               }
             },
@@ -19467,10 +19690,9 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
-              gid = 6625,
+              gid = 6597,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -16
               }
             },
@@ -19484,10 +19706,9 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7252,
+              gid = 7224,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -19501,10 +19722,9 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7256,
+              gid = 7228,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -19518,10 +19738,9 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7263,
+              gid = 7235,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -19535,10 +19754,9 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7259,
+              gid = 7231,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -19552,10 +19770,9 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7255,
+              gid = 7227,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -19569,10 +19786,9 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7259,
+              gid = 7231,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -19586,10 +19802,9 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7260,
+              gid = 7232,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -19603,10 +19818,9 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7252,
+              gid = 7224,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -19620,7 +19834,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7256,
+              gid = 7228,
               visible = true,
               properties = {}
             },
@@ -19634,10 +19848,9 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7260,
+              gid = 7232,
               visible = true,
               properties = {
-                ["bodyinlayers"] = "Solid",
                 ["extrudeY"] = -12
               }
             },
@@ -19651,7 +19864,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7259,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -19670,7 +19883,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7259,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -19686,10 +19899,10 @@ return {
               shape = "rectangle",
               x = 4256,
               y = 72,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7257,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -19708,7 +19921,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6613,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19724,7 +19937,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6613,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19740,7 +19953,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6613,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19756,7 +19969,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6613,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19772,7 +19985,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6732,
+              gid = 6704,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19788,7 +20001,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6725,
+              gid = 6697,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19804,7 +20017,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6674,
+              gid = 6646,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19820,7 +20033,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6613,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19836,7 +20049,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6613,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19852,7 +20065,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6613,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19868,7 +20081,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6613,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19884,7 +20097,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6613,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19900,7 +20113,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6641,
+              gid = 6613,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -19916,7 +20129,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6673,
+              gid = 6645,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19932,7 +20145,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7276,
+              gid = 7248,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19948,7 +20161,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6674,
+              gid = 6646,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19964,7 +20177,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6725,
+              gid = 6697,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19980,7 +20193,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7276,
+              gid = 7248,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19996,7 +20209,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6729,
+              gid = 6701,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -20012,7 +20225,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6733,
+              gid = 6705,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -20039,58 +20252,66 @@ return {
             {
               id = 339,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 3824,
               y = 176,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 511,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 3752,
               y = 216,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 340,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 4336,
               y = 176,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 512,
               name = "",
-              type = "",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 4416,
               y = 136,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5266,
+              gid = 7260,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             }
           }
         },
@@ -20120,7 +20341,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7259,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -20146,16 +20367,18 @@ return {
             {
               id = 347,
               name = "",
-              type = "",
+              type = "bandit-spear",
               shape = "rectangle",
               x = 3824,
               y = 144,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7258,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             }
           }
         },
@@ -20185,7 +20408,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7259,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -20211,16 +20434,18 @@ return {
             {
               id = 348,
               name = "",
-              type = "",
+              type = "bandit-spear",
               shape = "rectangle",
               x = 4336,
               y = 144,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7258,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             }
           }
         },
@@ -20247,10 +20472,10 @@ return {
               shape = "rectangle",
               x = 3928,
               y = 328,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7257,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -20276,30 +20501,34 @@ return {
             {
               id = 349,
               name = "",
-              type = "",
+              type = "bandit-spear",
               shape = "rectangle",
               x = 3824,
               y = 216,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7258,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             },
             {
               id = 350,
               name = "",
-              type = "",
+              type = "bandit-spear",
               shape = "rectangle",
               x = 4336,
               y = 216,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5270,
+              gid = 7258,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             }
           }
         },
@@ -20335,7 +20564,7 @@ return {
                 { x = 480, y = -32 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -20364,7 +20593,7 @@ return {
                 { x = 32, y = -32 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -32,
@@ -20410,7 +20639,7 @@ return {
                 { x = 480, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -20439,7 +20668,7 @@ return {
                 { x = 448, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
@@ -20467,17 +20696,19 @@ return {
             {
               id = 231,
               name = "",
-              type = "",
+              type = "bandit-boss",
               shape = "rectangle",
               x = 5296,
               y = 168,
-              width = 64,
-              height = 64,
+              width = 192,
+              height = 192,
               rotation = 0,
-              gid = 5283,
+              gid = 7256,
               visible = true,
               properties = {
-                ["initialai"] = "bandit-boss-first-charge"
+                ["facedegrees"] = 180,
+                ["initialai"] = "bandit-boss-first-charge",
+                ["propertiestable"] = "database/bandits-properties.csv"
               }
             }
           }
@@ -20506,7 +20737,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7259,
               visible = true,
               properties = {
                 ["ammo"] = 20,
@@ -20531,7 +20762,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7259,
               visible = true,
               properties = {
                 ["ammo"] = 20,
@@ -20625,10 +20856,10 @@ return {
               shape = "rectangle",
               x = 4992,
               y = -40,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7257,
               visible = true,
               properties = {
                 ["ammo"] = 20,
@@ -20653,7 +20884,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 5278,
+              gid = 7259,
               visible = true,
               properties = {
                 ["ammo"] = 20,
@@ -20675,10 +20906,10 @@ return {
               shape = "rectangle",
               x = 5184,
               y = -8,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 5274,
+              gid = 7257,
               visible = true,
               properties = {
                 ["ammo"] = 20,
@@ -20828,7 +21059,7 @@ return {
                 { x = 1248, y = 0 }
               },
               properties = {
-                ["bodyinlayers"] = "Solid",
+                ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,

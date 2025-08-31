@@ -1,13 +1,13 @@
 local Audio     = require "System.Audio"
 local Database    = require "Data.Database"
-local StateMachine       = require "Dragontail.Character.StateMachine"
+local StateMachine       = require "Dragontail.Character.Component.StateMachine"
 local Color       = require "Tiled.Color"
 local Character   = require "Dragontail.Character"
 local Characters  = require "Dragontail.Stage.Characters"
-local Body        = require "Dragontail.Character.Body"
-local DirectionalAnimation = require "Dragontail.Character.DirectionalAnimation"
-local Face                 = require "Dragontail.Character.Action.Face"
-local Mana = require "Dragontail.Character.Mana"
+local Body        = require "Dragontail.Character.Component.Body"
+local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
+local Face                 = require "Dragontail.Character.Component.Face"
+local Mana = require "Dragontail.Character.Component.Mana"
 
 local yield = coroutine.yield
 local wait = coroutine.wait
@@ -53,6 +53,13 @@ local Common = class(Character)
 
 function Common:idle()
     while true do yield() end
+end
+
+function Common:turnTowardsOpponent()
+    while true do
+        Face.turnTowardsObject(self, self.opponents[1], self.faceturnspeed, self.state.animation)
+        yield()
+    end
 end
 
 function Common:spark(time)
@@ -293,12 +300,10 @@ local function findHomingTarget(self, objects)
     local best
     local bestdsq = math.huge
     local x, y = self.x, self.y
-    -- local z = self.z + self.bodyheight/2
-    local velx, vely = self.velx, self.vely
+    local z = self.z + self.bodyheight/2
     for _, object in ipairs(objects) do
         if object.health > 0 and object.canbeattacked then
-            local dsq = math.abs(math.det(velx, vely, object.x - x, object.y - y))
-                --math.distsq3(x, y, z, object.x, object.y, object.z + object.bodyheight/2)
+            local dsq = math.distsq3(x, y, z, object.x, object.y, object.z + object.bodyheight/2)
             if dsq < bestdsq then
                 best = object
                 bestdsq = dsq
@@ -415,17 +420,19 @@ function Common:projectileFly(shooter)
     self:disappear()
 end
 
----@param deflector Character
+---@param hit AttackHit
 ---@return string
 ---@return any
-function Common:projectileDeflected(deflector)
-    if not deflector.attack.deflectsprojectile then
+function Common:projectileDeflected(hit)
+    local deflector = hit.attacker
+    local attack = hit.attack
+    if not attack.deflectsprojectile then
         return "projectileBounce", deflector
     end
-    self.hurtstun = deflector.attack.opponentstun or 3
+    self.hurtstun = attack.opponentstun or 3
 
-    Audio.play(deflector.attack.hitsound)
-    local attackangle = deflector.attackangle
+    Audio.play(attack.hitsound)
+    local attackangle = hit.angle
     local dirx, diry, dirz = cos(attackangle), sin(attackangle), 0
 
     local speed = self.speed or 1
@@ -461,10 +468,11 @@ function Common:makeImpactSpark(attacker, sparktype)
     end
 end
 
-function Common:guardHit(attacker)
+function Common:guardHit(hit)
+    local attacker, attack = hit.attacker, hit.attack
     Audio.play(self.guardhitsound)
-    self:makeImpactSpark(attacker, attacker.attack.guardhitspark)
-    self.hurtstun = attacker.attackguardstun or 6
+    self:makeImpactSpark(attacker, attack.guardhitspark)
+    self.hurtstun = attack.selfstunonguard or 6
     yield()
     return self.recoverai or self.initialai
 end

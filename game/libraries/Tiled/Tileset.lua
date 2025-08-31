@@ -118,6 +118,9 @@ function Tileset:_init(directory)
 end
 
 function Tileset:markAndCountEmpty()
+    if self.imagetype == "aseprite" then
+        return -- TODO
+    end
     local imagedata = Assets.load(self.imagefile, { asimagedata = true })
     ---@cast imagedata love.ImageData
 

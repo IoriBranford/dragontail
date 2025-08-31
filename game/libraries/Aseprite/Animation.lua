@@ -33,6 +33,13 @@ function AseTag:load(ase)
     end
 end
 
+function AseTag:clampIndex(i)
+    if i <= 0 then
+        i = #self + i
+    end
+    return math.max(1, math.min(i, #self))
+end
+
 function AseTag:setLoopFrame(loopframe)
     if loopframe <= 0 then
         loopframe = #self + loopframe
@@ -57,7 +64,14 @@ function AseTag:getUpdate(i, t, loopi)
     local duration = self[i].duration
     while t >= duration do
         t = t - duration
-        i = (i >= #self) and loopi or (i + 1)
+        if (i >= #self) then
+            if i == loopi then
+                break
+            end
+            i = loopi
+        else
+            i = i + 1
+        end
         duration = self[i].duration
     end
     return i, t

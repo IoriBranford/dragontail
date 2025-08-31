@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.11.0" name="crates" tilewidth="32" tileheight="48" tilecount="6" columns="3" objectalignment="bottom">
+<tileset version="1.11" tiledversion="1.11.2" name="crates" tilewidth="32" tileheight="48" tilecount="6" columns="3" objectalignment="bottom">
  <tileoffset x="0" y="8"/>
  <image source="crates.png" width="96" height="96"/>
  <tile id="0">
@@ -34,7 +34,7 @@
  </tile>
  <tile id="5">
   <properties>
-   <property name="name" value="defeated"/>
+   <property name="name" value="Fall"/>
   </properties>
  </tile>
 </tileset>
