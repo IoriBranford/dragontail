@@ -1,0 +1,300 @@
+{
+  "bodyTypeName": "muscular",
+  "url": "https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/#?body=Body_color_amber&head=Human_male_plump_amber&sex=muscular&legs=Legion_skirt_yellow&nose=Large_nose_amber&eyebrows=none&wrinkes=Wrinkles_amber&headcover=none&hat=none&beard=none&hair=Shorthawk_black&eyes=Eyes_brown&cape=none&weapon=Trident_iron&bauldron=Bauldron_tan&bracers=Bracers_copper&neck=none&shoes=Folded_Rim_Boots_brown&shoes_plate=Boots_Metal_Plating_steel&shoulders=none&facial_eyes=Eyepatch_Left_black&earring_left=Simple_Earring_Left_gold&earring_right=Simple_Earring_Right_gold&shield=none&mustache=Mustache_black&eye_color=Eye_Color_brown&shoes_toe=Plated_Toe_steel",
+  "spritesheets": "https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/spritesheets/",
+  "version": 1,
+  "datetime": "9/3/2025, 4:27:36 AM",
+  "credits": [
+    {
+      "fileName": "body/bodies/muscular/amber.png",
+      "licenses": "CC-BY-SA 3.0,GPL 3.0",
+      "authors": "bluecarrot16,JaidynReiman,Evert,TheraHedwig,MuffinElZangano,Durrani,Sander Frenken (castelonia),Benjamin K. Smith (BenCreating),Eliza Wyatt (ElizaWy),dalonedrau,Stephen Challener (Redshrike)",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-barbarian-sprite-base,https://opengameart.org/content/lpc-muscular-swing-animation,https://opengameart.org/content/lpc-muscular-hurt-animation,https://opengameart.org/content/lpc-jump-expanded,https://opengameart.org/content/lpc-revised-character-basics,https://opengameart.org/content/lpc-be-seated,https://opengameart.org/content/lpc-jump-expanded,https://opengameart.org/content/lpc-character-bases,https://opengameart.org/content/lpc-male-jumping-animation-by-durrani",
+      "notes": "see details at https://opengameart.org/content/lpc-character-bases"
+    },
+    {
+      "fileName": "head/heads/human/male_plump/amber.png",
+      "licenses": "CC-BY-SA 3.0,GPL 3.0",
+      "authors": "Stephen Challener (Redshrike),??",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-folk",
+      "notes": "original head by Redshrike, plump version by ??"
+    },
+    {
+      "fileName": "eyes/human/adult/default/brown.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "JaidynReiman,Matthew Krohn (makrohn),Stephen Challener (Redshrike)",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "notes": "original by Redshrike, mapped to all frames by Matthew Krohn & JaidynReiman"
+    },
+    {
+      "fileName": "head/nose/large/adult/amber.png",
+      "licenses": "OGA-BY 3.0",
+      "authors": "ElizaWy",
+      "urls": "https://github.com/ElizaWy/LPC/tree/main/Characters/Head/Head%20Overlay%2001%20-%20Large%20Nose,https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+      "notes": ""
+    },
+    {
+      "fileName": "head/wrinkles/amber.png",
+      "licenses": "CC0",
+      "authors": "bluecarrot16",
+      "urls": "",
+      "notes": ""
+    },
+    {
+      "fileName": "beards/mustache/basic/black.png",
+      "licenses": "CC-BY-SA 3.0,GPL 3.0",
+      "authors": "JaidynReiman,Carlo Enrico Victoria (Nemisys)",
+      "urls": "https://opengameart.org/content/lpc-brunet-mustache",
+      "notes": "Original by Nemisys, repositioning by JaidynReiman."
+    },
+    {
+      "fileName": "hair/shorthawk/adult/black.png",
+      "licenses": "CC-BY-SA 3.0,GPL 3.0",
+      "authors": "JaidynReiman,Manuel Riecke (MrBeast)",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-expanded-hair",
+      "notes": ""
+    },
+    {
+      "fileName": "facial/patches/eyepatch/left/adult/black.png",
+      "licenses": "OGA-BY 3.0,GPL 3.0",
+      "authors": "bluecarrot16",
+      "urls": "https://opengameart.org/content/lpc-pirates,https://opengameart.org/content/lpc-expanded-hats-facial-helmets",
+      "notes": ""
+    },
+    {
+      "fileName": "facial/earrings/simple/left/adult/gold.png",
+      "licenses": "CC0",
+      "authors": "bluecarrot16",
+      "urls": "https://opengameart.org/content/lpc-pirates",
+      "notes": ""
+    },
+    {
+      "fileName": "facial/earrings/simple/right/adult/gold.png",
+      "licenses": "CC0",
+      "authors": "bluecarrot16",
+      "urls": "https://opengameart.org/content/lpc-pirates",
+      "notes": ""
+    },
+    {
+      "fileName": "bauldron/male/tan.png",
+      "licenses": "GPL 2.0,GPL 3.0,OGA-BY 3.0,CC-BY-SA 3.0",
+      "authors": "Nila122",
+      "urls": "https://opengameart.org/content/more-lpc-clothes-and-hair",
+      "notes": ""
+    },
+    {
+      "fileName": "arms/bracers/male/copper.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "Matthew Krohn (makrohn),Johannes Sjölund (wulax)",
+      "urls": "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+      "notes": ""
+    },
+    {
+      "fileName": "legs/skirts/legion/male/yellow.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 2.0,GPL 3.0",
+      "authors": "bluecarrot16,Nila122",
+      "urls": "https://opengameart.org/content/lpc-roman-armor,http://opengameart.org/content/lpc-clothing-updates",
+      "notes": "original by Nila122 to legion, adapted to v3 bases by bluecarrot16"
+    },
+    {
+      "fileName": "feet/boots/fold/male/brown.png",
+      "licenses": "OGA-BY 3.0+,CC-BY 3.0+,GPL 3.0",
+      "authors": "JaidynReiman",
+      "urls": "https://opengameart.org/content/lpc-kimono-relm,https://opengameart.org/content/lpc-expanded-socks-shoes",
+      "notes": ""
+    },
+    {
+      "fileName": "feet/accessory/plate_toe/male/steel.png",
+      "licenses": "OGA-BY 3.0+,CC-BY 3.0+,GPL 3.0",
+      "authors": "JaidynReiman",
+      "urls": "https://opengameart.org/content/lpc-kimono-relm,https://opengameart.org/content/lpc-expanded-socks-shoes",
+      "notes": ""
+    },
+    {
+      "fileName": "weapon/polearm/trident/foreground/walk/iron.png",
+      "licenses": "CC-BY-SA 3.0",
+      "authors": "Daniel Eddeland (daneeklu),gr3yh47,Johannes Sjölund (wulax)",
+      "urls": "https://opengameart.org/content/lpc-weapons-two-bows-a-spear-and-a-trident,https://opengameart.org/content/lpc-extended-weapon-animations",
+      "notes": "original **trident** by daneeklu and gr3yh47; adapted to opposite hand and split into layers by bluecarrot16"
+    },
+    {
+      "fileName": "weapon/polearm/trident/background/walk/iron.png",
+      "licenses": "CC-BY-SA 3.0",
+      "authors": "Daniel Eddeland (daneeklu),gr3yh47,Johannes Sjölund (wulax)",
+      "urls": "https://opengameart.org/content/lpc-weapons-two-bows-a-spear-and-a-trident,https://opengameart.org/content/lpc-extended-weapon-animations",
+      "notes": "original **trident** by daneeklu and gr3yh47; adapted to opposite hand and split into layers by bluecarrot16"
+    },
+    {
+      "fileName": "weapon/polearm/trident/foreground/thrust/iron.png",
+      "licenses": "CC-BY-SA 3.0",
+      "authors": "Daniel Eddeland (daneeklu),gr3yh47,Johannes Sjölund (wulax)",
+      "urls": "https://opengameart.org/content/lpc-weapons-two-bows-a-spear-and-a-trident,https://opengameart.org/content/lpc-extended-weapon-animations",
+      "notes": "original **trident** by daneeklu and gr3yh47; adapted to opposite hand and split into layers by bluecarrot16"
+    },
+    {
+      "fileName": "weapon/polearm/trident/background/thrust/iron.png",
+      "licenses": "CC-BY-SA 3.0",
+      "authors": "Daniel Eddeland (daneeklu),gr3yh47,Johannes Sjölund (wulax)",
+      "urls": "https://opengameart.org/content/lpc-weapons-two-bows-a-spear-and-a-trident,https://opengameart.org/content/lpc-extended-weapon-animations",
+      "notes": "original **trident** by daneeklu and gr3yh47; adapted to opposite hand and split into layers by bluecarrot16"
+    }
+  ],
+  "layers": [
+    {
+      "fileName": "weapon/polearm/trident/background/thrust/iron.png",
+      "zPos": -1,
+      "custom_animation": "thrust_oversize",
+      "parentName": "weapon",
+      "name": "Trident",
+      "variant": "iron",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "weapon/polearm/trident/background/walk/iron.png",
+      "zPos": 9,
+      "custom_animation": "walk_128",
+      "parentName": "weapon",
+      "name": "Trident",
+      "variant": "iron",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "body/bodies/muscular/amber.png",
+      "zPos": 10,
+      "parentName": "body",
+      "name": "Body_color",
+      "variant": "amber",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "legs/skirts/legion/male/yellow.png",
+      "zPos": 20,
+      "parentName": "legs",
+      "name": "Legion_skirt",
+      "variant": "yellow",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "feet/boots/fold/male/brown.png",
+      "zPos": 25,
+      "parentName": "shoes",
+      "name": "Folded_Rim_Boots",
+      "variant": "brown",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "feet/accessory/plate_toe/male/steel.png",
+      "zPos": 27,
+      "parentName": "shoes_toe",
+      "name": "Plated_Toe",
+      "variant": "steel",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "bauldron/male/tan.png",
+      "zPos": 65,
+      "parentName": "bauldron",
+      "name": "Bauldron",
+      "variant": "tan",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "arms/bracers/male/copper.png",
+      "zPos": 70,
+      "parentName": "bracers",
+      "name": "Bracers",
+      "variant": "copper",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "head/heads/human/male_plump/amber.png",
+      "zPos": 100,
+      "parentName": "head",
+      "name": "Human_male_plump",
+      "variant": "amber",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "head/wrinkles/amber.png",
+      "zPos": 102,
+      "parentName": "wrinkes",
+      "name": "Wrinkles",
+      "variant": "amber",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "eyes/human/adult/default/brown.png",
+      "zPos": 105,
+      "parentName": "eye_color",
+      "name": "Eye_Color",
+      "variant": "brown",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "head/nose/large/adult/amber.png",
+      "zPos": 105,
+      "parentName": "nose",
+      "name": "Large_nose",
+      "variant": "amber",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "beards/mustache/basic/black.png",
+      "zPos": 111,
+      "parentName": "mustache",
+      "name": "Mustache",
+      "variant": "black",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "facial/patches/eyepatch/left/adult/black.png",
+      "zPos": 115,
+      "parentName": "facial_eyes",
+      "name": "Eyepatch_Left",
+      "variant": "black",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "facial/earrings/simple/left/adult/gold.png",
+      "zPos": 115,
+      "parentName": "earring_left",
+      "name": "Simple_Earring_Left",
+      "variant": "gold",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "facial/earrings/simple/right/adult/gold.png",
+      "zPos": 115,
+      "parentName": "earring_right",
+      "name": "Simple_Earring_Right",
+      "variant": "gold",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "hair/shorthawk/adult/black.png",
+      "zPos": 120,
+      "parentName": "hair",
+      "name": "Shorthawk",
+      "variant": "black",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "weapon/polearm/trident/foreground/walk/iron.png",
+      "zPos": 140,
+      "custom_animation": "walk_128",
+      "parentName": "weapon",
+      "name": "Trident",
+      "variant": "iron",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "weapon/polearm/trident/foreground/thrust/iron.png",
+      "zPos": 150,
+      "custom_animation": "thrust_oversize",
+      "parentName": "weapon",
+      "name": "Trident",
+      "variant": "iron",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    }
+  ]
+}

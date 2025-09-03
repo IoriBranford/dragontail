@@ -1,0 +1,181 @@
+{
+  "exportTimestamp": "2025-09-03T03-50-43",
+  "bodyType": "male",
+  "standardAnimations": {
+    "exported": {
+      "spellcast": [
+        "008 quiver quiver.png",
+        "010 body bodies male light.png",
+        "015 feet shoes basic male leather.png",
+        "020 legs pants male forest.png",
+        "045 torso clothes vest male green.png",
+        "070 arms gloves male walnut.png",
+        "100 head heads human male light.png",
+        "130 hat cloth hood adult hood_brown.png"
+      ],
+      "thrust": [
+        "008 quiver quiver.png",
+        "010 body bodies male light.png",
+        "015 feet shoes basic male leather.png",
+        "020 legs pants male forest.png",
+        "045 torso clothes vest male green.png",
+        "070 arms gloves male walnut.png",
+        "100 head heads human male light.png",
+        "130 hat cloth hood adult hood_brown.png"
+      ],
+      "walk": [
+        "008 quiver quiver.png",
+        "010 body bodies male light.png",
+        "015 feet shoes basic male leather.png",
+        "020 legs pants male forest.png",
+        "045 torso clothes vest male green.png",
+        "070 arms gloves male walnut.png",
+        "100 head heads human male light.png",
+        "130 hat cloth hood adult hood_brown.png"
+      ],
+      "slash": [
+        "008 quiver quiver.png",
+        "010 body bodies male light.png",
+        "015 feet shoes basic male leather.png",
+        "020 legs pants male forest.png",
+        "045 torso clothes vest male green.png",
+        "070 arms gloves male walnut.png",
+        "100 head heads human male light.png",
+        "130 hat cloth hood adult hood_brown.png"
+      ],
+      "shoot": [
+        "0-1 weapon ranged bow normal universal background light.png",
+        "008 quiver quiver.png",
+        "010 body bodies male light.png",
+        "015 feet shoes basic male leather.png",
+        "020 legs pants male forest.png",
+        "045 torso clothes vest male green.png",
+        "070 arms gloves male walnut.png",
+        "100 head heads human male light.png",
+        "130 hat cloth hood adult hood_brown.png",
+        "140 weapon ranged bow normal universal foreground light.png",
+        "150 weapon ranged bow arrow arrow.png"
+      ],
+      "hurt": [
+        "0-1 weapon ranged bow normal universal background light.png",
+        "008 quiver quiver.png",
+        "010 body bodies male light.png",
+        "015 feet shoes basic male leather.png",
+        "020 legs pants male forest.png",
+        "045 torso clothes vest male green.png",
+        "070 arms gloves male walnut.png",
+        "100 head heads human male light.png",
+        "130 hat cloth hood adult hood_brown.png",
+        "140 weapon ranged bow normal universal foreground light.png"
+      ],
+      "climb": [
+        "010 body bodies male light.png",
+        "015 feet shoes basic male leather.png",
+        "020 legs pants male forest.png",
+        "070 arms gloves male walnut.png",
+        "100 head heads human male light.png",
+        "130 hat cloth hood adult hood_brown.png"
+      ],
+      "idle": [
+        "010 body bodies male light.png",
+        "015 feet shoes basic male leather.png",
+        "020 legs pants male forest.png",
+        "070 arms gloves male walnut.png",
+        "100 head heads human male light.png",
+        "130 hat cloth hood adult hood_brown.png"
+      ],
+      "jump": [
+        "010 body bodies male light.png",
+        "015 feet shoes basic male leather.png",
+        "020 legs pants male forest.png",
+        "070 arms gloves male walnut.png",
+        "100 head heads human male light.png",
+        "130 hat cloth hood adult hood_brown.png"
+      ],
+      "sit": [
+        "010 body bodies male light.png",
+        "015 feet shoes basic male leather.png",
+        "020 legs pants male forest.png",
+        "070 arms gloves male walnut.png",
+        "100 head heads human male light.png",
+        "130 hat cloth hood adult hood_brown.png"
+      ],
+      "emote": [
+        "010 body bodies male light.png",
+        "015 feet shoes basic male leather.png",
+        "020 legs pants male forest.png",
+        "070 arms gloves male walnut.png",
+        "100 head heads human male light.png",
+        "130 hat cloth hood adult hood_brown.png"
+      ],
+      "run": [
+        "010 body bodies male light.png",
+        "015 feet shoes basic male leather.png",
+        "020 legs pants male forest.png",
+        "070 arms gloves male walnut.png",
+        "100 head heads human male light.png",
+        "130 hat cloth hood adult hood_brown.png"
+      ],
+      "combat_idle": [
+        "010 body bodies male light.png",
+        "015 feet shoes basic male leather.png",
+        "020 legs pants male forest.png",
+        "070 arms gloves male walnut.png",
+        "100 head heads human male light.png",
+        "130 hat cloth hood adult hood_brown.png"
+      ],
+      "backslash": [
+        "010 body bodies male light.png",
+        "015 feet shoes basic male leather.png",
+        "020 legs pants male forest.png",
+        "070 arms gloves male walnut.png",
+        "100 head heads human male light.png",
+        "130 hat cloth hood adult hood_brown.png"
+      ],
+      "halfslash": [
+        "010 body bodies male light.png",
+        "015 feet shoes basic male leather.png",
+        "020 legs pants male forest.png",
+        "070 arms gloves male walnut.png",
+        "100 head heads human male light.png",
+        "130 hat cloth hood adult hood_brown.png"
+      ]
+    },
+    "failed": {}
+  },
+  "customAnimations": {
+    "exported": {
+      "walk_128": [
+        "008 quiver quiver.png",
+        "010 body bodies male light.png",
+        "015 feet shoes basic male leather.png",
+        "020 legs pants male forest.png",
+        "045 torso clothes vest male green.png",
+        "070 arms gloves male walnut.png",
+        "100 head heads human male light.png",
+        "130 hat cloth hood adult hood_brown.png",
+        "0-1 weapon ranged bow normal walk background light.png",
+        "141 weapon ranged bow normal walk foreground light.png"
+      ]
+    },
+    "failed": {}
+  },
+  "frameSize": 64,
+  "frameCounts": {
+    "spellcast": 7,
+    "thrust": 8,
+    "walk": 9,
+    "slash": 6,
+    "shoot": 13,
+    "hurt": 6,
+    "climb": 6,
+    "idle": 2,
+    "jump": 5,
+    "sit": 3,
+    "emote": 3,
+    "run": 8,
+    "combat_idle": 2,
+    "backslash": 13,
+    "halfslash": 7
+  }
+}

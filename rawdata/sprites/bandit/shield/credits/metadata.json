@@ -1,0 +1,173 @@
+{
+  "exportTimestamp": "2025-09-03T04-20-23",
+  "bodyType": "male",
+  "standardAnimations": {
+    "exported": {
+      "spellcast": [
+        "010 body bodies male amber.png",
+        "015 feet sandals male leather.png",
+        "020 legs pants male blue.png",
+        "060 torso armour leather male bluegray.png",
+        "100 head heads human male amber.png",
+        "105 eyes human adult default brown.png",
+        "111 beards beard 5oclock_shadow black.png",
+        "120 hair high_and_tight adult blonde.png"
+      ],
+      "thrust": [
+        "010 body bodies male amber.png",
+        "015 feet sandals male leather.png",
+        "020 legs pants male blue.png",
+        "060 torso armour leather male bluegray.png",
+        "100 head heads human male amber.png",
+        "105 eyes human adult default brown.png",
+        "110 shield male round_brown.png",
+        "111 beards beard 5oclock_shadow black.png",
+        "120 hair high_and_tight adult blonde.png"
+      ],
+      "walk": [
+        "010 body bodies male amber.png",
+        "015 feet sandals male leather.png",
+        "020 legs pants male blue.png",
+        "060 torso armour leather male bluegray.png",
+        "100 head heads human male amber.png",
+        "105 eyes human adult default brown.png",
+        "110 shield male round_brown.png",
+        "111 beards beard 5oclock_shadow black.png",
+        "120 hair high_and_tight adult blonde.png"
+      ],
+      "slash": [
+        "010 body bodies male amber.png",
+        "015 feet sandals male leather.png",
+        "020 legs pants male blue.png",
+        "060 torso armour leather male bluegray.png",
+        "100 head heads human male amber.png",
+        "105 eyes human adult default brown.png",
+        "110 shield male round_brown.png",
+        "111 beards beard 5oclock_shadow black.png",
+        "120 hair high_and_tight adult blonde.png"
+      ],
+      "shoot": [
+        "010 body bodies male amber.png",
+        "015 feet sandals male leather.png",
+        "020 legs pants male blue.png",
+        "060 torso armour leather male bluegray.png",
+        "100 head heads human male amber.png",
+        "105 eyes human adult default brown.png",
+        "111 beards beard 5oclock_shadow black.png",
+        "120 hair high_and_tight adult blonde.png"
+      ],
+      "hurt": [
+        "010 body bodies male amber.png",
+        "015 feet sandals male leather.png",
+        "020 legs pants male blue.png",
+        "060 torso armour leather male bluegray.png",
+        "100 head heads human male amber.png",
+        "105 eyes human adult default brown.png",
+        "111 beards beard 5oclock_shadow black.png",
+        "120 hair high_and_tight adult blonde.png"
+      ],
+      "climb": [
+        "010 body bodies male amber.png",
+        "015 feet sandals male leather.png",
+        "020 legs pants male blue.png",
+        "100 head heads human male amber.png",
+        "120 hair high_and_tight adult blonde.png"
+      ],
+      "idle": [
+        "010 body bodies male amber.png",
+        "015 feet sandals male leather.png",
+        "020 legs pants male blue.png",
+        "100 head heads human male amber.png",
+        "105 eyes human adult default brown.png",
+        "111 beards beard 5oclock_shadow black.png",
+        "120 hair high_and_tight adult blonde.png"
+      ],
+      "jump": [
+        "010 body bodies male amber.png",
+        "015 feet sandals male leather.png",
+        "020 legs pants male blue.png",
+        "100 head heads human male amber.png",
+        "105 eyes human adult default brown.png",
+        "111 beards beard 5oclock_shadow black.png",
+        "120 hair high_and_tight adult blonde.png"
+      ],
+      "sit": [
+        "010 body bodies male amber.png",
+        "015 feet sandals male leather.png",
+        "020 legs pants male blue.png",
+        "100 head heads human male amber.png",
+        "105 eyes human adult default brown.png",
+        "111 beards beard 5oclock_shadow black.png",
+        "120 hair high_and_tight adult blonde.png"
+      ],
+      "emote": [
+        "010 body bodies male amber.png",
+        "015 feet sandals male leather.png",
+        "020 legs pants male blue.png",
+        "100 head heads human male amber.png",
+        "105 eyes human adult default brown.png",
+        "111 beards beard 5oclock_shadow black.png",
+        "120 hair high_and_tight adult blonde.png"
+      ],
+      "run": [
+        "010 body bodies male amber.png",
+        "015 feet sandals male leather.png",
+        "020 legs pants male blue.png",
+        "100 head heads human male amber.png",
+        "105 eyes human adult default brown.png",
+        "111 beards beard 5oclock_shadow black.png",
+        "120 hair high_and_tight adult blonde.png"
+      ],
+      "combat_idle": [
+        "010 body bodies male amber.png",
+        "015 feet sandals male leather.png",
+        "020 legs pants male blue.png",
+        "100 head heads human male amber.png",
+        "105 eyes human adult default brown.png",
+        "111 beards beard 5oclock_shadow black.png",
+        "120 hair high_and_tight adult blonde.png"
+      ],
+      "backslash": [
+        "010 body bodies male amber.png",
+        "015 feet sandals male leather.png",
+        "020 legs pants male blue.png",
+        "100 head heads human male amber.png",
+        "105 eyes human adult default brown.png",
+        "111 beards beard 5oclock_shadow black.png",
+        "120 hair high_and_tight adult blonde.png"
+      ],
+      "halfslash": [
+        "010 body bodies male amber.png",
+        "015 feet sandals male leather.png",
+        "020 legs pants male blue.png",
+        "100 head heads human male amber.png",
+        "105 eyes human adult default brown.png",
+        "111 beards beard 5oclock_shadow black.png",
+        "120 hair high_and_tight adult blonde.png"
+      ]
+    },
+    "failed": {}
+  },
+  "customAnimations": {
+    "exported": {},
+    "failed": {}
+  },
+  "frameSize": 64,
+  "frameCounts": {
+    "spellcast": 7,
+    "thrust": 8,
+    "walk": 9,
+    "slash": 6,
+    "shoot": 13,
+    "hurt": 6,
+    "climb": 6,
+    "idle": 2,
+    "jump": 5,
+    "sit": 3,
+    "emote": 3,
+    "run": 8,
+    "combat_idle": 2,
+    "backslash": 13,
+    "halfslash": 7
+  }
+}
