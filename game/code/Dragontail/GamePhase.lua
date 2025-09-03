@@ -31,24 +31,24 @@ function GamePhase.loadphase(stagepath_)
     Database.load("data/database/objects-properties.csv")
     Stage.load(stagepath)
 
-    Database.forEach(function(_, properties)
-        for k,v in pairs(properties) do
-            if isAsset(v) then
-                getAsset(v)
-            elseif k == "attackchoices" then
-                local choices = {}
-                for attackid in v:gmatch("%S+") do
-                    choices[#choices+1] = attackid
-                end
-                properties[k] = choices
-            end
-        end
-    end)
+    -- Database.forEach(function(_, properties)
+    --     for k,v in pairs(properties) do
+    --         if isAsset(v) then
+    --             getAsset(v)
+    --         elseif k == "attackchoices" then
+    --             local choices = {}
+    --             for attackid in v:gmatch("%S+") do
+    --                 choices[#choices+1] = attackid
+    --             end
+    --             properties[k] = choices
+    --         end
+    --     end
+    -- end)
 
     Tiled.Assets.uncacheMarked()
-    Tiled.Assets.packTiles()
-    Tiled.Assets.setFilter("nearest", "nearest")
-    Tiled.Assets.batchAllMapsLayers()
+    -- Tiled.Assets.packTiles()
+    -- Tiled.Assets.setFilter("nearest", "nearest")
+    -- Tiled.Assets.batchAllMapsLayers()
 
     Stage.init()
     GamePhase.resize(love.graphics.getWidth(), love.graphics.getHeight())
