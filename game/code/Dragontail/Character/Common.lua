@@ -55,6 +55,15 @@ function Common:idle()
     while true do yield() end
 end
 
+function Common:decelerateTo0()
+    while self.velx ~= 0 or self.vely ~= 0 do
+        Body.keepInBounds(self)
+        Body.accelerateTowardsVel(self, 0, 0, self.mass or 1)
+        yield()
+    end
+    self:idle()
+end
+
 function Common:turnTowardsOpponent()
     while true do
         Face.turnTowardsObject(self, self.opponents[1], self.faceturnspeed, self.state.animation)
