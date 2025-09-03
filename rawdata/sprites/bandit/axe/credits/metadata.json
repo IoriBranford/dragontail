@@ -1,0 +1,157 @@
+{
+  "exportTimestamp": "2025-09-03T04-53-44",
+  "bodyType": "muscular",
+  "standardAnimations": {
+    "exported": {
+      "spellcast": [
+        "010 body bodies muscular light.png",
+        "015 feet sandals male brown.png",
+        "020 legs pantaloons muscular brown.png",
+        "065 bauldron male leather.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair bedhead adult dark_gray.png"
+      ],
+      "thrust": [
+        "010 body bodies muscular light.png",
+        "015 feet sandals male brown.png",
+        "020 legs pantaloons muscular brown.png",
+        "065 bauldron male leather.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair bedhead adult dark_gray.png"
+      ],
+      "walk": [
+        "010 body bodies muscular light.png",
+        "015 feet sandals male brown.png",
+        "020 legs pantaloons muscular brown.png",
+        "065 bauldron male leather.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair bedhead adult dark_gray.png",
+        "140 tools smash universal male axe.png"
+      ],
+      "slash": [
+        "010 body bodies muscular light.png",
+        "015 feet sandals male brown.png",
+        "020 legs pantaloons muscular brown.png",
+        "065 bauldron male leather.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair bedhead adult dark_gray.png"
+      ],
+      "shoot": [
+        "015 feet sandals male brown.png",
+        "020 legs pantaloons muscular brown.png",
+        "065 bauldron male leather.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair bedhead adult dark_gray.png"
+      ],
+      "hurt": [
+        "010 body bodies muscular light.png",
+        "015 feet sandals male brown.png",
+        "020 legs pantaloons muscular brown.png",
+        "065 bauldron male leather.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair bedhead adult dark_gray.png"
+      ],
+      "climb": [
+        "015 feet sandals male brown.png",
+        "100 head heads human male light.png",
+        "120 hair bedhead adult dark_gray.png"
+      ],
+      "idle": [
+        "010 body bodies muscular light.png",
+        "015 feet sandals male brown.png",
+        "020 legs pantaloons muscular brown.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair bedhead adult dark_gray.png"
+      ],
+      "jump": [
+        "010 body bodies muscular light.png",
+        "015 feet sandals male brown.png",
+        "020 legs pantaloons muscular brown.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair bedhead adult dark_gray.png"
+      ],
+      "sit": [
+        "010 body bodies muscular light.png",
+        "015 feet sandals male brown.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair bedhead adult dark_gray.png"
+      ],
+      "emote": [
+        "015 feet sandals male brown.png",
+        "020 legs pantaloons muscular brown.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair bedhead adult dark_gray.png"
+      ],
+      "run": [
+        "010 body bodies muscular light.png",
+        "015 feet sandals male brown.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair bedhead adult dark_gray.png"
+      ],
+      "combat_idle": [
+        "015 feet sandals male brown.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair bedhead adult dark_gray.png"
+      ],
+      "backslash": [
+        "015 feet sandals male brown.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair bedhead adult dark_gray.png"
+      ],
+      "halfslash": [
+        "015 feet sandals male brown.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair bedhead adult dark_gray.png"
+      ]
+    },
+    "failed": {}
+  },
+  "customAnimations": {
+    "exported": {
+      "slash_128": [
+        "010 body bodies muscular light.png",
+        "015 feet sandals male brown.png",
+        "020 legs pantaloons muscular brown.png",
+        "065 bauldron male leather.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair bedhead adult dark_gray.png",
+        "009 tools smash background axe.png",
+        "150 tools smash foreground axe.png"
+      ]
+    },
+    "failed": {}
+  },
+  "frameSize": 64,
+  "frameCounts": {
+    "spellcast": 7,
+    "thrust": 8,
+    "walk": 9,
+    "slash": 6,
+    "shoot": 13,
+    "hurt": 6,
+    "climb": 6,
+    "idle": 2,
+    "jump": 5,
+    "sit": 3,
+    "emote": 3,
+    "run": 8,
+    "combat_idle": 2,
+    "backslash": 13,
+    "halfslash": 7
+  }
+}
