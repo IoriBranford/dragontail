@@ -70,6 +70,7 @@ local GroundNextStates = {
     runIntoWall = "runIntoWall",
     runningAttack = "running-kick",
     throwWeapon = "throwWeapon",
+    stopRunning = "stopRunning",
     ["tail-swing-cw"] = "tail-swing-cw",
     ["tail-swing-ccw"] = "tail-swing-ccw",
     ["spinning-throw"] = "spinning-throw",
@@ -88,6 +89,7 @@ local AirNextStates = {
     runIntoEnemy = "air-running-elbow",
     runningAttack = "air-running-kick",
     throwWeapon = "air-throwWeapon",
+    stopRunning = "air-stopRunning",
     ["tail-swing-cw"] = "air-tail-swing-cw",
     ["tail-swing-ccw"] = "air-tail-swing-ccw",
     ["spinning-throw"] = "air-spinning-throw",
@@ -229,12 +231,11 @@ function PlayerRunning:fixedupdate()
     else
         Audio.play(player.stopdashsound)
         if heldenemy then
-            Audio.play(player.throwsound)
             heldenemy:stopAttack()
             HoldOpponent.stopHolding(player, heldenemy)
             StateMachine.start(heldenemy, "knockedBack", player, player.faceangle)
         end
-        return nextstates.walk
+        return nextstates.stopRunning
     end
     self.runningtime = self.runningtime + 1
 end
