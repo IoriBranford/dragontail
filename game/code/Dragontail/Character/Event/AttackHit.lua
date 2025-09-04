@@ -19,7 +19,7 @@ AttackHit._nrec = 13
 
 function AttackHit:_init(attacker, target, penex, peney, penez)
     local Attacker  = require "Dragontail.Character.Component.Attacker"
-    local x, y, z, r, h = Attacker.getActiveAttackCylinder(attacker)
+    local x, y, z, r, h = Attacker.getAttackCylinder(attacker)
     self.angle = attacker.attackangle
     self.attack = attacker.attack
     self.target = target

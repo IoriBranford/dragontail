@@ -16,7 +16,7 @@ end
 
 function Guard:isAttackInGuardArc(attacker)
     local Attacker = require "Dragontail.Character.Component.Attacker"
-    local ax, ay = Attacker.getActiveAttackCylinder(attacker)
+    local ax, ay = Attacker.getAttackCylinder(attacker)
     return ax and ay and Guard.isPointInGuardArc(self, ax, ay) or false
 end
 
