@@ -7,6 +7,7 @@ local StateMachine = require "Dragontail.Character.Component.StateMachine"
 local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
 local Face       = require "Dragontail.Character.Component.Face"
 local Player     = require "Dragontail.Character.Player"
+local Attacker   = require "Dragontail.Character.Component.Attacker"
 
 ---@class PlayerRunning:Behavior
 ---@field character Player
@@ -31,20 +32,19 @@ function PlayerRunning:start(heldenemy)
     self.attackpressed = false
 end
 
+---@param self Player
 local function findSomethingToRunningAttack(self, velx, vely)
-    local x, y, opponents, solids = self.x, self.y, self.opponents, self.solids
-    for i, opponent in ipairs(opponents) do
-        if math.dot(opponent.x - x, opponent.y - y, velx, vely) > 0 then
-            if opponent.canbeattacked and Body.predictBodyCollision(self, opponent) then
-                return opponent
-            end
-        end
-    end
+    local attack = self.attack
+    if not attack then return end
+
+    local attackangle = velx == 0 and vely == 0
+        and self.faceangle or math.atan2(vely, velx)
+    local solids = self.solids
     for i, solid in ipairs(solids) do
-        if math.dot(solid.x - x, solid.y - y, velx, vely) > 0 then
-            if solid.canbeattacked and Body.predictBodyCollision(self, solid) then
-                return solid
-            end
+        local hit = Attacker.getAttackHit(self, solid, self.attack, attackangle)
+        if hit then
+            hit:_release()
+            return solid
         end
     end
 end
