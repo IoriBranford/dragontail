@@ -51,6 +51,8 @@ Player.GroundStates = {
     ["tail-swing-ccw"] = "tail-swing-ccw",
     ["spinning-throw"] = "spinning-throw",
     ["fireball-storm"] = "fireball-storm",
+    ["spit-multi-fireball"] = "spit-multi-fireball",
+    ["spit-fireball"] = "spit-fireball",
     ["running-spit-multi-fireball"] = "running-spit-multi-fireball",
     ["running-spit-fireball"] = "running-spit-fireball",
 }
@@ -70,6 +72,8 @@ Player.GroundToAirStates = {
     ["tail-swing-ccw"] = "air-tail-swing-ccw",
     ["spinning-throw"] = "air-spinning-throw",
     ["fireball-storm"] = "air-fireball-storm",
+    ["spit-multi-fireball"] = "air-spit-multi-fireball",
+    ["spit-fireball"]       = "air-spit-fireball",
     ["running-spit-multi-fireball"] = "air-running-spit-multi-fireball",
     ["running-spit-fireball"] = "air-running-spit-fireball",
 }
