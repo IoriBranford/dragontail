@@ -185,7 +185,7 @@ function PlayerRunning:fixedupdate()
                         z = player.z + player.bodyheight/2
                     }
                 )
-                player.hurtstun = 15
+                player.hurtstun = 9
                 return nextstates.runIntoWall, velangle
             end
         end
