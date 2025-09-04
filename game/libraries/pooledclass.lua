@@ -22,7 +22,7 @@ end
 ---@param base Class?
 ---@param init function?
 local function createClass(base, init)
-    ---@class Class
+    ---@class PooledClass
     local class = {
         _init = init,
         _narr = 0,
