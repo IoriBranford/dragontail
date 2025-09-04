@@ -144,7 +144,7 @@ function Characters.fixedupdate()
     end
 
     for i = #AttackHits, 1, -1 do
-        tablepool.release("AttackHit", AttackHits[i])
+        AttackHits[i]:_release()
         AttackHits[i] = nil
     end
 

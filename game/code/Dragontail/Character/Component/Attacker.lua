@@ -112,17 +112,17 @@ function Attacker:debugPrint_checkAttackCollision(target)
     ---TODO Body.debugPrint_getCylinderPenetration
     -- local penex, peney, penez = Attacker.checkAttackCollision(self, target)
     -- if not (penex or peney or penez) then
-    --     local x, y, z, r, h = Attacker.getAttackCylinder(self)
+    --     local x, y, z, r, h = Attacker.getActiveAttackCylinder(self)
     --     Body.debugPrint_getCylinderPenetration(target, x, y, z, r, h)
     -- end
 end
 
-function Attacker:getAttackCylinder()
-    local attack = self.attack
-    if not attack then return end
-    local attackangle = self.attackangle
-    if not attackangle then return end
+function Attacker:getActiveAttackCylinder()
+    return self.attack and self.attackangle and
+        Attacker.getAttackCylinder(self, self.attack, self.attackangle)
+end
 
+function Attacker:getAttackCylinder(attack, attackangle)
     local z = self.z
     local h = self.bodyheight
     local l = attack.radius or 0
@@ -134,7 +134,7 @@ function Attacker:getAttackCylinder()
 end
 
 function Attacker:checkAttackCollision_cylinder(target)
-    local ax, ay, az, ar, ah = Attacker.getAttackCylinder(self)
+    local ax, ay, az, ar, ah = Attacker.getActiveAttackCylinder(self)
     if ax then
         return Body.getCylinderPenetration(target, ax, ay, az, ar, ah)
     end
