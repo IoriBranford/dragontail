@@ -3,6 +3,7 @@ local Mana                 = require "Dragontail.Character.Component.Mana"
 local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
 local Audio    = require "System.Audio"
 local Behavior = require "Dragontail.Character.Behavior"
+local Player   = require "Dragontail.Character.Player"
 
 ---@class PlayerFighting:Behavior
 ---@field character Player
@@ -14,36 +15,14 @@ function PlayerFighting:start()
     player.joysticklog:clear()
 end
 
-local ChargeAttacks = {
-    "fireball-storm", "spit-multi-fireball", "spit-fireball"
-}
-
-local GroundNextStates = {
-    catchProjectile = "catchProjectile",
-    toggleFlying = "flyStart",
-    run = "run",
-    hold = "hold",
-    throwWeapon = "throwWeapon",
-    ["fireball-storm"] = "fireball-storm",
-    ["spit-multi-fireball"] = "spit-multi-fireball",
-    ["spit-fireball"] = "spit-fireball",
-}
-
-local AirNextStates = {
-    catchProjectile = "air-catchProjectile",
-    toggleFlying = "flyEnd",
-    run = "air-run",
-    hold = "air-hold",
-    throwWeapon = "air-throwWeapon",
-    ["fireball-storm"] = "air-fireball-storm",
-    ["spit-multi-fireball"] = "air-spit-multi-fireball",
-    ["spit-fireball"] = "air-spit-fireball",
-}
+local ChargeAttacks = Player.ChargeAttacks
+local GroundStates = Player.GroundStates
+local GroundToAirStates = Player.GroundToAirStates
 
 function PlayerFighting:fixedupdate()
     local player = self.character
     local inair = player.gravity == 0
-    local nextstates = inair and AirNextStates or GroundNextStates
+    local nextstates = inair and GroundToAirStates or GroundStates
 
     local inx, iny = player:getJoystick()
     player.joysticklog:put(inx, iny)

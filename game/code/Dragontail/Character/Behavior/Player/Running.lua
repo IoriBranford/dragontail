@@ -6,6 +6,7 @@ local Audio    = require "System.Audio"
 local StateMachine = require "Dragontail.Character.Component.StateMachine"
 local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
 local Face       = require "Dragontail.Character.Component.Face"
+local Player     = require "Dragontail.Character.Player"
 
 ---@class PlayerRunning:Behavior
 ---@field character Player
@@ -60,49 +61,14 @@ local RunningChargeAttacks = {
     "fireball-storm", "running-spit-multi-fireball", "running-spit-fireball"
 }
 
-local GroundNextStates = {
-    walk = "walk",
-    catchProjectile = "catchProjectile",
-    toggleFlying = "flyStart",
-    run = "run",
-    hold = "hold",
-    runIntoEnemy = "running-elbow",
-    runIntoWall = "runIntoWall",
-    runningAttack = "running-kick",
-    throwWeapon = "throwWeapon",
-    stopRunning = "stopRunning",
-    ["tail-swing-cw"] = "tail-swing-cw",
-    ["tail-swing-ccw"] = "tail-swing-ccw",
-    ["spinning-throw"] = "spinning-throw",
-    ["fireball-storm"] = "fireball-storm",
-    ["running-spit-multi-fireball"] = "running-spit-multi-fireball",
-    ["running-spit-fireball"] = "running-spit-fireball",
-}
-
-local AirNextStates = {
-    walk = "hover",
-    catchProjectile = "air-catchProjectile",
-    toggleFlying = "flyEnd",
-    run = "air-run",
-    hold = "air-hold",
-    runIntoWall = "air-runIntoWall",
-    runIntoEnemy = "air-running-elbow",
-    runningAttack = "air-running-kick",
-    throwWeapon = "air-throwWeapon",
-    stopRunning = "air-stopRunning",
-    ["tail-swing-cw"] = "air-tail-swing-cw",
-    ["tail-swing-ccw"] = "air-tail-swing-ccw",
-    ["spinning-throw"] = "air-spinning-throw",
-    ["fireball-storm"] = "air-fireball-storm",
-    ["running-spit-multi-fireball"] = "air-running-spit-multi-fireball",
-    ["running-spit-fireball"] = "air-running-spit-fireball",
-}
+local GroundStates = Player.GroundStates
+local GroundToAirStates = Player.GroundToAirStates
 
 function PlayerRunning:fixedupdate()
     local player = self.character
 
     local inair = player.gravity == 0
-    local nextstates = inair and AirNextStates or GroundNextStates
+    local nextstates = inair and GroundToAirStates or GroundStates
 
     local heldenemy = self.heldenemy
     local inx, iny = player:getJoystick()
