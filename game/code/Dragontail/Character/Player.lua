@@ -442,21 +442,6 @@ function Player:updateAttackerSlots()
     end
 end
 
-function Player:catchProjectile(projectile)
-    Face.faceObject(self, projectile, self.state.animation or "catch")
-    projectile:stopAttack()
-    if self:tryToGiveWeapon(projectile.type) then
-        projectile:disappear()
-    else
-        StateMachine.start(projectile, "projectileBounce", self)
-    end
-    for i = 1, 15 do
-        self:accelerateTowardsVel(0, 0, 8)
-        yield()
-    end
-    return "walk"
-end
-
 local ChargeAttacks = {
     "fireball-storm", "spit-multi-fireball", "spit-fireball"
 }
