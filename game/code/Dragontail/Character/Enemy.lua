@@ -169,15 +169,6 @@ function Enemy:stand(duration)
     return "stand"
 end
 
-function Enemy:dodgeIncoming(dodgeangle)
-    local opponent = self.opponents[1]
-    local newstate, a, b, c, d, e, f = Dodge.dodge(self, opponent, dodgeangle)
-    if newstate then
-        return newstate, a, b, c, d, e, f
-    end
-    return "stand"
-end
-
 function Enemy:findAttackerSlot(opponent, attacktype)
     local bodyradius = self.bodyradius
     local attackdata = self.attacktable[attacktype]
