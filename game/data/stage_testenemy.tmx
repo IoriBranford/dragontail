@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="6" nextobjectid="4">
+ <editorsettings>
+  <chunksize width="15" height="9"/>
+  <export target="stage_testenemy.lua" format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" source="tilesets/grassland.tsx"/>
+ <tileset firstgid="2817" source="sprites/player/rose/rose-winged-main.tsx"/>
+ <tileset firstgid="2818" source="sprites/player/rose/rose-main.tsx"/>
+ <tileset firstgid="2819" source="sprites/test/enemy.tsx"/>
+ <layer id="1" name="Tile Layer 1" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   <chunk x="0" y="0" width="15" height="9">
+   eJztyLcBgDAQBDAV98DgJgxGGosVTEOFSrUwhyWsYQut8/ZwhDNc4X5xKaoYirGYqv9+PvEAEKsUkg==
+  </chunk>
+  </data>
+ </layer>
+ <objectgroup id="4" name="players">
+  <object id="1" template="mapobjects/player/Rose.tx" type="Rose" x="96" y="192"/>
+ </objectgroup>
+ <group id="2" name="rooms">
+  <objectgroup id="5" name="wall">
+   <object id="3" template="mapobjects/OutwardBoundary.tx" x="0" y="64">
+    <polygon points="0,0 0,32 480,32 480,0"/>
+   </object>
+  </objectgroup>
+  <objectgroup id="3" name="enemy" class="Room">
+   <object id="2" template="mapobjects/test/TestEnemy.tx" type="TestEnemy" x="512" y="192"/>
+  </objectgroup>
+ </group>
+</map>
