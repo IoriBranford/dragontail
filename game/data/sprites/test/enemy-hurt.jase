@@ -1,0 +1,105 @@
+{ "frames": {
+   "#1": {
+    "frame": { "x": 1, "y": 48, "w": 36, "h": 44 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 46, "y": 45, "w": 36, "h": 44 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "#2": {
+    "frame": { "x": 1, "y": 1, "w": 39, "h": 45 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 41, "y": 45, "w": 39, "h": 45 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "#3": {
+    "frame": { "x": 39, "y": 48, "w": 34, "h": 44 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 47, "y": 45, "w": 34, "h": 44 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "#4": {
+    "frame": { "x": 42, "y": 1, "w": 39, "h": 45 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 48, "y": 45, "w": 39, "h": 45 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "#5": {
+    "frame": { "x": 1, "y": 48, "w": 36, "h": 44 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 46, "y": 45, "w": 36, "h": 44 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "#6": {
+    "frame": { "x": 1, "y": 1, "w": 39, "h": 45 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 41, "y": 45, "w": 39, "h": 45 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "#7": {
+    "frame": { "x": 39, "y": 48, "w": 34, "h": 44 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 47, "y": 45, "w": 34, "h": 44 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "#8": {
+    "frame": { "x": 42, "y": 1, "w": 39, "h": 45 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 48, "y": 45, "w": 39, "h": 45 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "#9": {
+    "frame": { "x": 75, "y": 48, "w": 1, "h": 1 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1, "h": 1 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.3.15.2-x64",
+  "image": "enemy-hurt.png",
+  "format": "RGBA8888",
+  "size": { "w": 82, "h": 93 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "Hurt3", "from": 0, "to": 0, "direction": "forward", "color": "#000000ff" },
+   { "name": "Hurt2", "from": 1, "to": 1, "direction": "forward", "color": "#000000ff" },
+   { "name": "Hurt1", "from": 2, "to": 2, "direction": "forward", "color": "#000000ff" },
+   { "name": "Hurt0", "from": 3, "to": 3, "direction": "forward", "color": "#000000ff" },
+   { "name": "spin", "from": 4, "to": 7, "direction": "forward", "color": "#000000ff" }
+  ],
+  "layers": [
+   { "name": "008 weapon sword arming attack_backslash bg steel", "opacity": 255, "blendMode": "normal" },
+   { "name": "008 weapon sword arming attack_halfslash bg steel", "opacity": 255, "blendMode": "normal" },
+   { "name": "008 weapon sword arming attack_slash bg steel", "opacity": 255, "blendMode": "normal" },
+   { "name": "009 weapon sword arming universal bg steel", "opacity": 255, "blendMode": "normal" },
+   { "name": "010 body bodies male light", "opacity": 255, "blendMode": "normal" },
+   { "name": "100 head heads human male light", "opacity": 255, "blendMode": "normal" },
+   { "name": "140 weapon sword arming universal fg steel", "opacity": 255, "blendMode": "normal" },
+   { "name": "150 weapon sword arming attack_backslash fg steel", "opacity": 255, "blendMode": "normal" },
+   { "name": "150 weapon sword arming attack_halfslash fg steel", "opacity": 255, "blendMode": "normal" },
+   { "name": "150 weapon sword arming attack_slash fg steel", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+   { "name": "origin", "keys": [{ "frame": 0, "bounds": {"x": 0, "y": 0, "w": 128, "h": 128 }, "pivot": {"x": 64, "y": 88 } }] }
+  ]
+ }
+}
