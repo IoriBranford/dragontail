@@ -80,12 +80,4 @@ function SpearBandit:duringAttackSwing(target)
     return Enemy.duringAttackSwing(self, target)
 end
 
-function SpearBandit:beforeGetUp(attacker)
-    return Enemy.beforeGetUp(self, attacker)
-end
-
-function SpearBandit:duringGetUp(attacker)
-    return Enemy.duringGetUp(self, attacker)
-end
-
 return SpearBandit

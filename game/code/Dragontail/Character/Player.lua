@@ -859,7 +859,7 @@ function Player:victory()
     end
 end
 
-function Player:defeat(attacker)
+function Player:defeat()
     Audio.fadeMusic()
     self:stopAttack()
     self.velx, self.vely = 0, 0

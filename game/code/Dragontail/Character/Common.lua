@@ -143,7 +143,7 @@ function Common:dropDefeatItem()
     end
 end
 
-function Common:containerBreak(attacker)
+function Common:containerBreak()
     Audio.play(self.defeatsound)
     self:changeAnimation("collapse", 1, 0)
     self:dropDefeatItem()

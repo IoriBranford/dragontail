@@ -106,7 +106,7 @@ function BanditBoss:duringAttackSwing(target)
     return self:getAttackSwitch(target)
 end
 
-function BanditBoss:beforeGetUp(attacker)
+function BanditBoss:beforeGetUp()
     local healthpct = self.health/self.maxhealth
     local numsummons = self.numsummons or 0
     if healthpct <= FirstSummonHealthPercent and numsummons < 1
@@ -116,11 +116,11 @@ function BanditBoss:beforeGetUp(attacker)
     end
 end
 
-function BanditBoss:duringGetUp(attacker)
+function BanditBoss:duringGetUp()
     if self.health/self.maxhealth <= GetUpAttackHealthPercent then
-        local attack = self:getBestAttack(attacker) or ""
+        local attack = self:getBestAttack(self.opponents[1]) or ""
         if attack:find("^bandit%-boss%-getup%-spin") then
-            Face.faceObject(self, attacker)
+            Face.faceObject(self, self.opponents[1])
             self.attackswitchesleft = 0
             return attack
         end
