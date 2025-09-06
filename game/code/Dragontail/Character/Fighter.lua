@@ -368,75 +368,32 @@ function Fighter:breakaway(other)
     return self.aiafterbreakaway or self.recoverai
 end
 
-function Fighter:duringFall() end
+function Fighter:duringFall()
+end
 
 function Fighter:fall(attacker)
     self:stopAttack()
-    local t = 0
-    local fallanimationtime = self.fallanimationtime or 1
-    repeat
-        self:accelerateTowardsVel(0, 0, 8)
-        yield()
-        local _, _, penez = Body.keepInBounds(self)
+    local _, penez
+    while not penez or penez > 0 do
         self:duringFall()
-        if penez then
-            t = t + 1
-            self.velz = 0
-            self:changeAseAnimation("Fall", 1, 0)
-        end
-    until t >= fallanimationtime
+        self:accelerateTowardsVel(0, 0, self.mass or 8)
+        yield()
+        _, _, penez = Body.keepInBounds(self)
+    end
+    self.velz = 0
+    return "collapse", attacker
+end
+
+function Fighter:collapse(attacker)
+    for t = 1, self.fallanimationtime or 15 do
+        self:duringFall()
+        self:accelerateTowardsVel(0, 0, self.mass or 8)
+        yield()
+        Body.keepInBounds(self)
+    end
     return "down", attacker
 end
 
-function Fighter:down(attacker)
-    Characters.spawn({
-        type = "spark-fall-down-dust",
-        x = self.x,
-        y = self.y + 1,
-        z = self.z,
-    })
-
-    local color = self.color
-    if color ~= Color.White then
-        self.color = Color.White
-        for i = 1, 8 do
-            local offsetangle = love.math.random()*2*math.pi
-            local offsetdist = love.math.random()*self.bodyradius
-            local offsetx = offsetdist*cos(offsetangle)
-            local offsety = offsetdist*sin(offsetangle)
-            local velx = offsetx/8
-            local vely = offsety/8
-
-            Characters.spawn({
-                type = "particle",
-                x = self.x + offsetx,
-                y = self.y + offsety,
-                z = self.z,
-                velx = velx,
-                vely = vely,
-                velz = 30/16,
-                color = color,
-                gravity = 1/16,
-                lifetime = 30
-            })
-        end
-    end
-
-    if self.health > 0 then
-        local t = 1
-        repeat
-            yield()
-            Body.keepInBounds(self)
-            self:duringFall()
-            self:accelerateTowardsVel(0, 0, 8)
-            t = t + 1
-        until t > 20
-        self.velx, self.vely, self.velz = 0, 0, 0
-        return self.getupai or "getup", attacker
-    end
-    self.velx, self.vely, self.velz = 0, 0, 0
-    return "defeat", attacker
-end
 
 function Fighter:defeat(attacker)
     self:stopAttack()
@@ -447,10 +404,10 @@ function Fighter:defeat(attacker)
     return "blinkOut", 60
 end
 
-function Fighter:beforeGetUp(attacker)
+function Fighter:beforeGetUp()
 end
 
-function Fighter:duringGetUp(attacker)
+function Fighter:duringGetUp()
 end
 
 function Fighter:duringDodge()
@@ -461,7 +418,7 @@ function Fighter:getup(attacker)
     local time = self.getuptime or 27
     for _ = 1, time do
         yield()
-        local state, a, b, c, d, e, f = self:duringGetUp(attacker)
+        local state, a, b, c, d, e, f = self:duringGetUp()
         if state then
             return state, a, b, c, d, e, f
         end

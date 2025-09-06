@@ -540,19 +540,6 @@ function Player:duringGetUp()
     end
 end
 
-function Player:down(attacker)
-    local nextstate, a, b, c, d, e = Fighter.down(self, attacker)
-    if self.health <= 0 then
-        local chargedattack, angle = self:getReversalChargedAttack()
-        if chargedattack then
-            self.health = 10
-            Mana.releaseCharge(self)
-            return chargedattack, angle
-        end
-    end
-    return nextstate, a, b, c, d, e
-end
-
 function Player:aimThrow()
     self.crosshair = self.crosshair or Characters.spawn({
         type = "rose-crosshair",

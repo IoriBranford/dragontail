@@ -36,7 +36,6 @@ bandit-boss-getup-spin-ccw,18,bandit-boss-getup-spin-ccw2,bandit-boss-spin-ccw,D
 bandit-boss-getup-spin-ccw2,20,stand,bandit-boss-spin-ccw,Dragontail.Character.Behavior.Enemy.AttackExecute,,SpinCCW,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing3.mp3,0,0,2
 human-in-spinning-throw,FALSE,fall,human-in-spinning-throw,,held,Hurt,,FALSE,FALSE,FALSE,,,0,0,1
 human-in-flaming-spinning-throw,FALSE,fall,human-in-flaming-spinning-throw,,held,Hurt,,FALSE,FALSE,FALSE,,,0,0,1
-forge-fire,FALSE,FALSE,forge-fire,,,,1,FALSE,FALSE,FALSE,,,0,0,1
 hurt,FALSE,stand,,Dragontail.Character.Behavior.Fighter.TakingHit,,Hurt,0,FALSE,FALSE,FALSE,4294967295,,0,0,1
 held,FALSE,stand,,,held,Hurt,,TRUE,FALSE,FALSE,4294967295,,0,0,1
 knockedBack,FALSE,fall,,,knockedBack,Hurt,,FALSE,FALSE,TRUE,,,0,0,1
@@ -47,9 +46,9 @@ thrown,FALSE,fall,human-thrown,,thrown,spin,1,FALSE,FALSE,TRUE,,,0,0,1
 wallSlammed,FALSE,fall,,,wallSlammed,Hurt,,FALSE,FALSE,TRUE,,data/sounds/combat/bodyslam.mp3,0,0,1
 thrownRecover,FALSE,stand,,,thrownRecover,FallKnees,0,FALSE,FALSE,FALSE,,data/sounds/combat/slide.mp3,0,0,1
 breakaway,FALSE,stand,,,breakaway,BreakHold,0,FALSE,FALSE,FALSE,,data/sounds/combat/slap.mp3,0,0,1
-fall,FALSE,down,,,fall,Hurt,0,FALSE,FALSE,TRUE,,,0,0,8
-collapse,20,down,,,collapse,Fall,0,FALSE,FALSE,TRUE,,,0,0,1
-down,20,getup,,,down,FallFlat,0,FALSE,FALSE,FALSE,,data/sounds/combat/bodydrop.mp3,0,0,1
+fall,FALSE,collapse,,,fall,Hurt,0,FALSE,FALSE,TRUE,,,0,0,8
+collapse,15,down,,,collapse,Fall,0,FALSE,FALSE,TRUE,,,0,0,8
+down,20,getup,,Dragontail.Character.Behavior.Fighter.Downed,,,0,FALSE,FALSE,FALSE,,data/sounds/combat/bodydrop.mp3,0,0,8
 defeat,FALSE,FALSE,,,defeat,,0,FALSE,FALSE,FALSE,,,0,0,1
 getup,18,stand,,,getup,FallRiseToFeet,0,FALSE,FALSE,FALSE,4294967295,,0,0,1
 stand,FALSE,FALSE,,,stand,Stand,,TRUE,TRUE,FALSE,,,0,0,1
