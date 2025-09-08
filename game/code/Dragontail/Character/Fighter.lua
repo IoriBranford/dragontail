@@ -35,19 +35,10 @@ local Guard                = require "Dragontail.Character.Action.Guard"
 ---@field aiafterthrown string?
 ---@field thrownsound string?
 
----@class Fall
----@field fallanimationtime number?
-
----@class GetUp
----@field getupai string?
----@field getuptime integer?
----@field aiaftergetup string?
----@field getupsound string?
-
 ---@class Win
 ---@field victorysound string?
 
----@class Fighter:Common,Face,Mana,Combo,Dash,Run,Jump,Dodge,WeaponInHand,ThrowWeapon,Shoot,HoldOpponent,HeldByOpponent,Thrown,Fall,GetUp,Win
+---@class Fighter:Common,Face,Mana,Combo,Dash,Run,Jump,Dodge,WeaponInHand,ThrowWeapon,Shoot,HoldOpponent,HeldByOpponent,Thrown,Win
 ---@field heldopponent Fighter?
 ---@field heldby Fighter?
 local Fighter = class(Common)
