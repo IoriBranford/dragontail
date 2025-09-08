@@ -10,6 +10,7 @@ local co_resume = coroutine.resume
 local co_status = coroutine.status
 
 ---@class State
+---@field statefunction string?
 ---@field statecoroutine string?
 ---@field statebehavior string?
 ---@field attack string?
@@ -26,12 +27,15 @@ local co_status = coroutine.status
 ---@field bodyhitslayers CollisionLayerMask|string
 ---@field color integer?
 
+---@alias StateFunction fun(self:StateMachine):string?,any,any,any,any,any,any,any
+
 ---@class StateMachine:Character,Face
 ---@field state State
 ---@field nextstate string?
 ---@field statetime integer?
 ---@field statetable {[string]:State}
 ---@field attacktable {[string]:Attack}?
+---@field statefunction StateFunction?
 ---@field statethread thread?
 ---@field statebehavior Behavior?
 local StateMachine = {}
@@ -71,6 +75,7 @@ function StateMachine.start(self, statename, a,b,c,d,e,f,g)
     end
     self.statebehavior = nil
     self.statethread = nil
+    self.statefunction = nil
     local state = self.statetable and self.statetable[statename]
     if state then
         self.state = state
@@ -128,6 +133,8 @@ function StateMachine.start(self, statename, a,b,c,d,e,f,g)
         Audio.play(state.sound)
 
         local behavior = state.statebehavior
+        local statecoroutine = self[state.statecoroutine]
+        local statefunction = self[state.statefunction]
         if behavior then
             local ok
             ok, behavior = pcall(require, behavior)
@@ -139,13 +146,11 @@ function StateMachine.start(self, statename, a,b,c,d,e,f,g)
                 print(behavior)
                 behavior = nil
             end
-        end
-        if not behavior then
-            local statecoroutine = self[state.statecoroutine]
-            if type(statecoroutine) == "function" then
-                self.statethread = co_create(statecoroutine)
-                StateMachine.run(self, a,b,c,d,e,f,g)
-            end
+        elseif type(statecoroutine) == "function" then
+            self.statethread = co_create(statecoroutine)
+            StateMachine.run(self, a,b,c,d,e,f,g)
+        elseif type(statefunction) == "function" then
+            self.statefunction = statefunction
         end
     else
         print("W: no state "..statename)
@@ -162,6 +167,8 @@ function StateMachine.run(self, ...)
         if not ok then
             error(debug.traceback(self.statethread, nextstate))
         end
+    elseif self.statefunction then
+        nextstate, a,b,c,d,e,f,g = self:statefunction()
     end
 
     if not nextstate then
