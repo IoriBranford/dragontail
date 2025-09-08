@@ -45,7 +45,7 @@ fall,,,,fall,collapse,FALSE,data/sprites/player/rose/main.jase,Hurt,0,FALSE,FALS
 collapse,,,,decelerateXYto0,down,15,data/sprites/player/rose/main.jase,Fall,0,FALSE,FALSE,FALSE,,,0,4,1,0.5,8,4,3.14159265358979
 down,,Dragontail.Character.Behavior.Player.Downed,,,getup,20,data/sprites/player/rose/main.jase,Down,0,FALSE,FALSE,FALSE,,data/sounds/combat/bodydrop.mp3,0,4,1,0.5,8,4,3.14159265358979
 defeat,,,defeat,,FALSE,FALSE,data/sprites/player/rose/main.jase,Down,0,FALSE,FALSE,FALSE,,data/sounds/player/defeat.mp3,0,4,1,0.5,1,4,3.14159265358979
-getup,,,getup,,walk,FALSE,data/sprites/player/rose/main.jase,FallRiseToFeet,0,FALSE,FALSE,FALSE,4294967295,data/sounds/player/getup.mp3,0,4,1,0.5,1,4,3.14159265358979
+getup,,,,getup,walk,18,data/sprites/player/rose/main.jase,FallRiseToFeet,0,FALSE,FALSE,FALSE,4294967295,data/sounds/player/getup.mp3,0,4,1,0.5,1,4,3.14159265358979
 sequenceWalkTo,,,sequenceWalkTo,,FALSE,FALSE,data/sprites/player/rose/main.jase,Walk,1,FALSE,FALSE,FALSE,,,0,0,0,0.5,1,4,3.14159265358979
 catchProjectile,,Dragontail.Character.Behavior.Player.CatchingProjectile,,,walk,15,data/sprites/player/rose/main.jase,catch,0,FALSE,FALSE,FALSE,,data/sounds/combat/shakiin.mp3,0,2,1,0.5,4,4,3.14159265358979
 sequenceTailSwing,,,idle,,sequenceWalkTo,24,data/sprites/player/rose/attack.jase,tailspinCW,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,0,0,0,0.5,1,4,3.14159265358979
