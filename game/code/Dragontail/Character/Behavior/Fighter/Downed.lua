@@ -42,8 +42,7 @@ end
 
 function Downed:fixedupdate()
     local fighter = self.character
-    Body.accelerateTowardsVel(fighter, 0, 0, fighter.mass or 8)
-    Body.keepInBounds(fighter)
+    fighter:decelerateTo0()
 end
 
 function Downed:timeout(...)

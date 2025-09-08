@@ -56,12 +56,8 @@ function Common:idle()
 end
 
 function Common:decelerateTo0()
-    while self.velx ~= 0 or self.vely ~= 0 do
-        Body.keepInBounds(self)
-        Body.accelerateTowardsVel(self, 0, 0, self.mass or 1)
-        yield()
-    end
-    self:idle()
+    Body.keepInBounds(self)
+    Body.accelerateTowardsVel(self, 0, 0, self.mass or 1)
 end
 
 function Common:turnTowardsOpponent()
