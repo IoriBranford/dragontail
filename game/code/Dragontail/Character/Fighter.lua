@@ -371,29 +371,15 @@ end
 function Fighter:duringFall()
 end
 
-function Fighter:fall(attacker)
+function Fighter:fall()
     self:stopAttack()
-    local _, penez
-    while not penez or penez > 0 do
-        self:duringFall()
-        self:accelerateTowardsVel(0, 0, self.mass or 8)
-        yield()
-        _, _, penez = Body.keepInBounds(self)
+    local _, _, penez = Body.keepInBounds(self)
+    if penez then
+        self.velz = 0
+        return self.state.nextstate or "collapse"
     end
-    self.velz = 0
-    return "collapse", attacker
+    Body.accelerateTowardsVel(self, 0, 0, self.mass or 8)
 end
-
-function Fighter:collapse(attacker)
-    for t = 1, self.fallanimationtime or 15 do
-        self:duringFall()
-        self:accelerateTowardsVel(0, 0, self.mass or 8)
-        yield()
-        Body.keepInBounds(self)
-    end
-    return "down", attacker
-end
-
 
 function Fighter:defeat(attacker)
     self:stopAttack()
