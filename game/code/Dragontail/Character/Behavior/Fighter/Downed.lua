@@ -42,7 +42,7 @@ end
 
 function Downed:fixedupdate()
     local fighter = self.character
-    fighter:decelerateTo0()
+    fighter:decelerateXYto0()
 end
 
 function Downed:timeout(...)

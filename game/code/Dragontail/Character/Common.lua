@@ -55,7 +55,7 @@ function Common:idle()
     while true do yield() end
 end
 
-function Common:decelerateTo0()
+function Common:decelerateXYto0()
     Body.keepInBounds(self)
     Body.accelerateTowardsVel(self, 0, 0, self.mass or 1)
 end
