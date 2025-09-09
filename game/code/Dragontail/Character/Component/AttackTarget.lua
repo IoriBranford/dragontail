@@ -1,7 +1,7 @@
 local AttackerSlot = require "Dragontail.Character.Component.AttackerSlot"
 local Attacker     = require "Dragontail.Character.Component.Attacker"
 
----@class Victim:Body,Attacker
+---@class AttackTarget:Body,Attacker
 ---@field health number
 ---@field maxhealth number
 ---@field canbeattacked boolean
@@ -15,7 +15,7 @@ local Attacker     = require "Dragontail.Character.Component.Attacker"
 ---@field aiafterhurt string?
 ---@field hurtsound string?
 ---@field attackerslots {[integer]:AttackerSlot, [string]:AttackerSlot[]}
----@field onHitByAttack fun(self:Victim, target:Attacker)?
+---@field onHitByAttack fun(self:AttackTarget, target:Attacker)?
 local AttackTarget = {}
 
 function AttackTarget:initSlots()
@@ -72,6 +72,22 @@ function AttackTarget:findRandomSlot(attackrange, slottype, opponentx, opponenty
             i = i + 1
         end
     end
+end
+
+function AttackTarget:findClosestSlot(attackrange, slottype, attackerx, attackery)
+    local attackerslots = self.attackerslots
+    attackerslots = slottype and attackerslots[slottype] or attackerslots
+    local bestslot, bestslotdsq = nil, math.huge
+    for _, slot in ipairs(attackerslots) do
+        if slot:hasSpace(attackrange) then
+            local slotx, sloty = slot:getPosition(attackrange)
+            local slotdsq = math.distsq(attackerx, attackery, slotx, sloty)
+            if slotdsq < bestslotdsq then
+                bestslot, bestslotdsq = slot, slotdsq
+            end
+        end
+    end
+    return bestslot
 end
 
 function AttackTarget:estimateSafeDistanceOnSlot(slot)

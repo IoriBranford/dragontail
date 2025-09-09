@@ -3,7 +3,7 @@ local Guard     = require "Dragontail.Character.Action.Guard"
 ---@class AttackHit:PooledClass
 ---@field attacker Attacker
 ---@field attack Attack
----@field target Victim
+---@field target AttackTarget
 ---@field angle number
 ---@field attackx number
 ---@field attacky number

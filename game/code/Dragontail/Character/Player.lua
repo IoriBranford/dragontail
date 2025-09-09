@@ -21,6 +21,7 @@ local Combo                = require "Dragontail.Character.Component.Combo"
 local Mana                 = require "Dragontail.Character.Component.Mana"
 local Config               = require "System.Config"
 local Guard                = require "Dragontail.Character.Action.Guard"
+local AttackTarget         = require "Dragontail.Character.Component.AttackTarget"
 
 ---@class Player:Fighter
 ---@field inventory Inventory
@@ -242,34 +243,7 @@ function Player:init()
     -- self.runenergycost = self.runenergycost or 25
     Mana.init(self)
 
-    local x, y = self.x, self.y
-    local slotz = self.z + self.bodyheight/2
-    ---@class PlayerAttackerSlots
-    ---@field [integer] AttackerSlot
-    ---@field [string] AttackerSlot[]
-    self.attackerslots = {
-        AttackerSlot("melee",   x, y, slotz, 1024, 0, 0), -- 3 o clock
-        AttackerSlot("melee",   x, y, slotz, 0, 1024, 0), -- 6 o clock
-        AttackerSlot("melee",   x, y, slotz, -1024, 0, 0),-- 9 o clock
-        AttackerSlot("melee",   x, y, slotz, 0, -1024, 0), -- 12 o clock
-        AttackerSlot("missile", x, y, slotz, 1024*cos(1*pi/6), 1024*sin(1*pi/6), 0), -- 4 o clock
-        AttackerSlot("missile", x, y, slotz, 1024*cos(2*pi/6), 1024*sin(2*pi/6), 0), -- 5 o clock
-        AttackerSlot("missile", x, y, slotz, 1024*cos(4*pi/6), 1024*sin(4*pi/6), 0), -- 7 o clock
-        AttackerSlot("missile", x, y, slotz, 1024*cos(5*pi/6), 1024*sin(5*pi/6), 0), -- 8 o clock
-        AttackerSlot("missile", x, y, slotz, 1024*cos(7*pi/6), 1024*sin(7*pi/6), 0), -- 10 o clock
-        AttackerSlot("missile", x, y, slotz, 1024*cos(8*pi/6), 1024*sin(8*pi/6), 0), -- 11 o clock
-        AttackerSlot("missile", x, y, slotz, 1024*cos(10*pi/6), 1024*sin(10*pi/6), 0), -- 1 o clock
-        AttackerSlot("missile", x, y, slotz, 1024*cos(11*pi/6), 1024*sin(11*pi/6), 0), -- 2 o clock
-        melee = {},
-        missile = {}
-    }
-
-    for _, slot in ipairs(self.attackerslots) do
-        local slotgroup = self.attackerslots[slot.type]
-        if slotgroup then
-            slotgroup[#slotgroup+1] = slot
-        end
-    end
+    AttackTarget.initSlots(self)
 end
 
 -- function Player:addToScene(scene)
@@ -354,42 +328,6 @@ function Player.getJoystick()
     end
 
     return inx, iny
-end
-
-function Player:findRandomAttackerSlot(attackrange, slottype, fromx, fromy)
-    local attackerslots = self.attackerslots
-    attackerslots = slottype and attackerslots[slottype] or attackerslots
-    local i = love.math.random(#attackerslots)
-    local vx, vy = fromx - self.x, fromy - self.y
-    local mindot = math.len(vx, vy)*cos(pi*.75)
-    for _ = 1, #attackerslots do
-        local slot = attackerslots[i]
-        if slot:hasSpace(attackrange)
-        and dot(slot.dirx, slot.diry, vx, vy) > mindot then
-            return slot
-        end
-        if i >= #attackerslots then
-            i = 1
-        else
-            i = i + 1
-        end
-    end
-end
-
-function Player:findClosestAttackerSlot(attackrange, slottype, attackerx, attackery)
-    local attackerslots = self.attackerslots
-    attackerslots = slottype and attackerslots[slottype] or attackerslots
-    local bestslot, bestslotdsq = nil, math.huge
-    for _, slot in ipairs(attackerslots) do
-        if slot:hasSpace(attackrange) then
-            local slotx, sloty = slot:getPosition(attackrange)
-            local slotdsq = math.distsq(attackerx, attackery, slotx, sloty)
-            if slotdsq < bestslotdsq then
-                bestslot, bestslotdsq = slot, slotdsq
-            end
-        end
-    end
-    return bestslot
 end
 
 function Player:getParryVector()

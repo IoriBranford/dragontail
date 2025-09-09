@@ -13,6 +13,7 @@ local Body                 = require "Dragontail.Character.Component.Body"
 local Character            = require "Dragontail.Character"
 local CollisionMask        = require "Dragontail.Character.Component.Body.CollisionMask"
 local Guard                = require "Dragontail.Character.Action.Guard"
+local AttackTarget         = require "Dragontail.Character.Component.AttackTarget"
 
 ---@class Ambush
 ---@field ambushsightarc number?
@@ -173,20 +174,29 @@ function Enemy:findAttackerSlot(opponent, attacktype)
     local bodyradius = self.bodyradius
     local attackdata = self.attacktable[attacktype]
     local attackrange = (attackdata and attackdata.bestdist or 1) + opponent.bodyradius
-    local attackerslot
-    if self.attack.projectiletype then
-        attackerslot = opponent:findRandomAttackerSlot(bodyradius, "missile", self.x, self.y)
-    else
-        attackerslot = opponent:findRandomAttackerSlot(attackrange + bodyradius, "melee", self.x, self.y)
-            or opponent:findRandomAttackerSlot(attackrange + bodyradius, "missile", self.x, self.y)
+    local attackerslot, destx, desty
+    if not self.attack.projectiletype then
+        attackerslot, destx, desty = AttackTarget.findRandomSlot(opponent, attackrange + bodyradius, "melee", self.x, self.y)
     end
-    return attackerslot
+    if not attackerslot then
+        attackerslot, destx, desty = AttackTarget.findRandomSlot(opponent, attackrange + bodyradius, "missile", self.x, self.y)
+    end
+    return attackerslot, destx, desty
 end
 
+---@param attackerslot AttackerSlot
+---@param attacktype string
+---@return number? destx
+---@return number? desty
 function Enemy:getAttackerSlotPosition(attackerslot, attacktype)
     local bodyradius = self.bodyradius
     local attackdata = self.attacktable[attacktype]
     local attackrange = (attackdata and attackdata.bestdist or 1)
+        + AttackTarget.estimateSafeDistanceOnSlot(attackerslot.target, attackerslot)
+    if not attackerslot:hasSpace(attackrange) then
+        return
+    end
+
     local destx, desty
     if self.attack.projectiletype then
         destx, desty = attackerslot:getFarPosition(bodyradius)

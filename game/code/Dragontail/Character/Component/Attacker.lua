@@ -13,7 +13,7 @@ local AttackHit    = require "Dragontail.Character.Event.AttackHit"
 ---@field hitstun number
 ---@field thrower Character
 ---@field numopponentshit integer?
----@field onAttackHit fun(self:Attacker, target:Victim)?
+---@field onAttackHit fun(self:Attacker, target:AttackTarget)?
 local Attacker = {}
 
 function Attacker:isAttacking()
@@ -145,7 +145,7 @@ function Attacker:checkAttackCollision(target, attack, attackangle)
     return Attacker.checkAttackCollision_cylinder(self, target, attack, attackangle)
 end
 
----@param target Victim
+---@param target AttackTarget
 ---@return AttackHit?
 function Attacker:getAttackHit(target, attack, attackangle)
     local penex, peney, penez = Attacker.checkAttackCollision(self, target, attack, attackangle)

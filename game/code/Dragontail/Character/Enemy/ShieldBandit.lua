@@ -1,6 +1,7 @@
 local Enemy = require "Dragontail.Character.Enemy"
 local Guard = require "Dragontail.Character.Action.Guard"
 local Face  = require "Dragontail.Character.Component.Face"
+local AttackTarget = require "Dragontail.Character.Component.AttackTarget"
 
 ---@class ShieldBandit:Enemy
 local ShieldBandit = class(Enemy)
@@ -11,8 +12,8 @@ function ShieldBandit:findAttackerSlot(opponent, attacktype)
     local bodyradius = self.bodyradius
     local attackdata = self.attacktable[attacktype]
     local attackrange = (attackdata and attackdata.bestdist or 1) + opponent.bodyradius
-    return opponent:findClosestAttackerSlot(attackrange + bodyradius, "melee", self.x, self.y)
-        or opponent:findClosestAttackerSlot(attackrange + bodyradius, "missile", self.x, self.y)
+    return AttackTarget.findClosestSlot(opponent, attackrange + bodyradius, "melee", self.x, self.y)
+        or AttackTarget.findClosestSlot(opponent, attackrange + bodyradius, "missile", self.x, self.y)
 end
 
 function ShieldBandit:duringStand()

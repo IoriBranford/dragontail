@@ -7,6 +7,7 @@ local Body         = require "Dragontail.Character.Component.Body"
 local CollisionMask= require "Dragontail.Character.Component.Body.CollisionMask"
 local Attacker     = require "Dragontail.Character.Component.Attacker"
 local tablepool    = require "tablepool"
+local AttackTarget = require "Dragontail.Character.Component.AttackTarget"
 
 ---@module 'Dragontail.Stage.Characters'
 local Characters = {}
@@ -163,7 +164,7 @@ function Characters.fixedupdate()
 
     for i = 1, #players do local player = players[i]
         Body.keepInBounds(player)
-        player:updateAttackerSlots()
+        AttackTarget.updateSlots(player)
         Characters.hitTriggers(player)
     end
 
