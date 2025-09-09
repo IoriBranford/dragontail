@@ -34,7 +34,7 @@ function Approach:fixedupdate()
     end
 
     destx, desty = enemy:navigateAroundSolid(destx, desty)
-    Face.faceVector(enemy, destx - enemy.x, desty - enemy.y, "Walk")
+    Face.faceObject(enemy, opponent, enemy.state.animation, enemy.animationframe)
     local state, a, b, c, d, e, f = enemy:duringApproach(opponent)
     if state then
         return state, a, b, c, d, e, f
