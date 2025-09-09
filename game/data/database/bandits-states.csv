@@ -51,7 +51,7 @@ fall,FALSE,collapse,,,,fall,,0,FALSE,FALSE,TRUE,,,0,0,8
 collapse,15,down,,,,decelerateXYto0,Fall,0,FALSE,FALSE,TRUE,,,0,0,8
 down,20,getup,,Dragontail.Character.Behavior.Fighter.Downed,,,FallFlat,0,FALSE,FALSE,FALSE,,data/sounds/combat/bodydrop.mp3,0,0,8
 defeat,FALSE,FALSE,,,defeat,,,0,FALSE,FALSE,FALSE,,,0,0,1
-getup,18,stand,,,,getup,FallRiseToFeet,0,FALSE,FALSE,FALSE,4294967295,,0,0,1
+getup,18,.recoverai,,,,,FallRiseToFeet,0,FALSE,FALSE,FALSE,4294967295,,0,0,1
 stand,FALSE,FALSE,,,stand,,Stand,,TRUE,TRUE,FALSE,,,0,0,1
 dodgeIncoming,FALSE,stand,,Dragontail.Character.Behavior.Fighter.DodgeLinear,,,Walk,,TRUE,TRUE,FALSE,,,0,0,4
 approach,30,stand,,Dragontail.Character.Behavior.Enemy.Approach,,,Walk,,TRUE,TRUE,FALSE,,,0,0,1
