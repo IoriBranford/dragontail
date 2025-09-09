@@ -11,7 +11,7 @@ fall,FALSE,collapse,,,,fall,,0,FALSE,FALSE,TRUE,0,,
 collapse,1,down,,,,decelerateXYto0,,0,FALSE,FALSE,TRUE,0,,
 down,1,getup,,Dragontail.Character.Behavior.Fighter.Downed,,,,0,FALSE,FALSE,FALSE,0,,data/sounds/combat/bodydrop.mp3
 defeat,FALSE,FALSE,,,defeat,,Fall,0,FALSE,FALSE,FALSE,,,
-getup,FALSE,FALSE,,,getup,,FallRiseToFeet,0,FALSE,FALSE,FALSE,,,
+getup,1,.initialai,,,,,FallRiseToFeet,0,FALSE,FALSE,FALSE,,,
 spark,FALSE,FALSE,,,spark,,,,,,,,,
 afterimage,FALSE,FALSE,,,afterimage,,,,,,,,,
 blinkOut,FALSE,FALSE,,,blinkOut,,,,,,,,,
