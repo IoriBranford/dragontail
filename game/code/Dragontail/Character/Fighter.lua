@@ -384,15 +384,4 @@ end
 function Fighter:duringDodge()
 end
 
-function Fighter:getup(attacker)
-    if not self.statetime or self.statetime <= 0 then
-        local recoverai = self.aiaftergetup or self.recoverai
-        if not recoverai then
-            print("No aiaftergetup or recoverai for "..self.type)
-            return "defeat", attacker
-        end
-        return recoverai
-    end
-end
-
 return Fighter
