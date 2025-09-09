@@ -50,23 +50,24 @@ function StateMachine:setTable(statetable, attacktable)
 end
 
 local StateVarsToCopy = {
-    "nextstate",
-    "statetime",
-    "canbeattacked",
-    "canbegrabbed",
-    "canbejuggled",
-    "faceturnspeed",
-    "bodyinlayers",
-    "bodyhitslayers",
-    "color",
-    "afterimageinterval",
-    "manachargerate",
-    "manadecayrate",
-    "gravity",
-    "mass",
-    "speed",
-    "faceturnspeed"
+    nextstate = true,
+    statetime = true,
+    canbeattacked = true,
+    canbegrabbed = true,
+    canbejuggled = true,
+    faceturnspeed = true,
+    bodyinlayers = true,
+    bodyhitslayers = true,
+    color = true,
+    afterimageinterval = true,
+    manachargerate = true,
+    manadecayrate = true,
+    gravity = true,
+    mass = true,
+    speed = true,
 }
+
+local Period = string.byte('.')
 
 function StateMachine.start(self, statename, a,b,c,d,e,f,g)
     if self.statebehavior then
@@ -79,13 +80,13 @@ function StateMachine.start(self, statename, a,b,c,d,e,f,g)
     local state = self.statetable and self.statetable[statename]
     if state then
         self.state = state
-        for i = 1, #StateVarsToCopy do
-            local k = StateVarsToCopy[i]
-            local v = state[k]
-            if type(v) == "string" and string.sub(v,1,1) == '.' then
-                self[k] = self[v:sub(2)]
-            elseif v ~= nil then
-                self[k] = v
+        for k, v in pairs(state) do
+            if StateVarsToCopy[k] then
+                if type(v) == "string" and v:byte(1,1) == Period then
+                    self[k] = self[v:sub(2)]
+                elseif v ~= nil then
+                    self[k] = v
+                end
             end
         end
 
