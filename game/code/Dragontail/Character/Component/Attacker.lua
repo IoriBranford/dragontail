@@ -16,21 +16,6 @@ local AttackHit    = require "Dragontail.Character.Event.AttackHit"
 ---@field onAttackHit fun(self:Attacker, target:Victim)?
 local Attacker = {}
 
----@class Victim
----@field health number
----@field maxhealth number
----@field canbeattacked boolean
----@field canbejuggled boolean
----@field canbedamagedbyattack string?
----@field hurtstun number
----@field hurtangle number?
----@field attacker Character
----@field hurtai string?
----@field recoverai string?
----@field aiafterhurt string?
----@field hurtsound string?
----@field onHitByAttack fun(self:Victim, target:Attacker)?
-
 function Attacker:isAttacking()
     return self.attackangle
 end
