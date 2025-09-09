@@ -2,6 +2,8 @@ local Behavior = require "Dragontail.Character.Behavior"
 local Face     = require "Dragontail.Character.Component.Face"
 local Movement = require "Component.Movement"
 
+---@class Approach:Behavior
+---@field character Enemy
 local Approach = pooledclass(Behavior)
 Approach._nrec = Behavior._nrec + 3
 
@@ -15,16 +17,16 @@ end
 
 function Approach:fixedupdate()
     local enemy = self.character
-    local opponent = enemy.opponents[1] ---@type Player
-
     local attackerslot = self.attackerslot
-    local destx, desty = enemy.x, enemy.y
+    local opponent = attackerslot and attackerslot.target
+    local destx, desty
     if attackerslot then
         destx, desty = enemy:getAttackerSlotPosition(attackerslot, self.nextattacktype)
     end
 
     local speed = enemy.speed or 2
-    self.reached = math.distsq(enemy.x, enemy.y, destx, desty) < speed
+    self.reached = not (destx and desty)
+        or math.distsq(enemy.x, enemy.y, destx, desty) < speed
     if self.reached then
         return self:timeout()
     end
