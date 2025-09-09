@@ -523,7 +523,7 @@ function Player:getReversalChargedAttack()
     end
 end
 
-function Player:duringGetUp()
+function Player:getup()
     if self.sprintbutton.down then
         local inx, iny = self:getJoystick()
         if inx ~= 0 or iny ~= 0 then
