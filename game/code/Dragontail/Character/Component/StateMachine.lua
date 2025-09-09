@@ -80,9 +80,12 @@ function StateMachine.start(self, statename, a,b,c,d,e,f,g)
     if state then
         self.state = state
         for i = 1, #StateVarsToCopy do
-            local var = StateVarsToCopy[i]
-            if state[var] ~= nil then
-                self[var] = state[var]
+            local k = StateVarsToCopy[i]
+            local v = state[k]
+            if type(v) == "string" and string.sub(v,1,1) == '.' then
+                self[k] = self[v:sub(2)]
+            elseif v ~= nil then
+                self[k] = v
             end
         end
 
