@@ -56,7 +56,6 @@ function Common:idle()
 end
 
 function Common:decelerateXYto0()
-    Body.keepInBounds(self)
     Body.accelerateTowardsVel(self, 0, 0, self.mass or 1)
 end
 
@@ -150,7 +149,7 @@ end
 function Common:itemDrop(y0)
     -- self.velz = self.popoutspeed or 8
     -- local gravity = self.fallgravity or .5
-    -- local floorz = Characters.getCylinderFloorZ(self.x, self.y, self.z, self.bodyradius, self.bodyheight) or 0
+    -- local floorz = self.floorz or 0
     -- repeat
     --     self.velz = self.velz - gravity
     --     yield()
@@ -385,7 +384,7 @@ function Common:projectileBounce(opponent, ooby, oobz)
     oobz = nil
     repeat
         yield()
-        oobx, ooby, oobz = Body.keepInBounds(self)
+        oobx, ooby, oobz = self.penex, self.peney, self.penez
     until oobz and oobz <= 0
     self.velx, self.vely, self.velz = 0, 0, 0
     local items = Characters.getGroup("items")
@@ -413,7 +412,7 @@ function Common:projectileFly(shooter)
     local lifetime = self.lifetime
     repeat
         yield()
-        oobx, ooby, oobz = Body.keepInBounds(self)
+        oobx, ooby, oobz = self.penex, self.peney, self.penez
         if lifetime then
             lifetime = lifetime - 1
         end

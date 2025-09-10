@@ -28,7 +28,6 @@ function DodgeLinear:fixedupdate()
     if newstate then
         return newstate, a, b, c, d, e, f
     end
-    Body.keepInBounds(fighter)
     self.speed = Slide.updateSlideSpeed(fighter, self.dodgeangle, self.speed, 1/(fighter.mass or 1))
     if not fighter.statetime then
         if self.speed == 0 then

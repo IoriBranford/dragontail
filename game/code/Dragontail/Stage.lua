@@ -114,7 +114,7 @@ function Stage.init()
     scene:addMap(map, "group,tilelayer")
 
     local rooms = map.layers.rooms
-    local firstroomindex = 1
+    local firstroomindex = 20
     local firstroomid = nil
     for i, room in ipairs(rooms) do
         if room.id == firstroomid then

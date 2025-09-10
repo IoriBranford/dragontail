@@ -141,7 +141,7 @@ local AttackHits = {}
 
 function Characters.fixedupdate()
     for i = 1, #allcharacters do local character = allcharacters[i]
-        character:fixedupdate()
+        character:updateBody()
     end
 
     for i = #AttackHits, 1, -1 do
@@ -157,13 +157,26 @@ function Characters.fixedupdate()
         end
     end
 
+    for i = 1, #solids do local solid = solids[i]
+        solid.penex, solid.peney, solid.penez = Body.keepInBounds(solid)
+    end
+
+    for i = 1, #allcharacters do local character = allcharacters[i]
+        character.floorz = Characters.getCylinderFloorZ(
+            character.x, character.y, character.z,
+            character.bodyradius, character.bodyheight, character.bodyhitslayers)
+    end
+
+    for i = 1, #allcharacters do local character = allcharacters[i]
+        character:fixedupdate()
+    end
+
     for _, hit in ipairs(AttackHits) do
         hit.target:onHitByAttack(hit)
         Attacker.onAttackHit(hit.attacker, hit)
     end
 
     for i = 1, #players do local player = players[i]
-        Body.keepInBounds(player)
         AttackTarget.updateSlots(player)
         Characters.hitTriggers(player)
     end

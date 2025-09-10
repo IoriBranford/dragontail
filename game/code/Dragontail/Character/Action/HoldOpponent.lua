@@ -90,21 +90,21 @@ function HoldOpponent:updateOpponentPosition()
     local ox = radii*math.cos(self.holdangle or 0)
     local oy = radii*math.sin(self.holdangle or 0)
     local oz = math.max(0, (self.bodyheight - enemy.bodyheight)/2)
-    enemy.x = self.x + ox
-    enemy.y = self.y + oy
-    enemy.z = self.z + oz
+    enemy.velx = self.x + ox - enemy.x
+    enemy.vely = self.y + oy - enemy.y
+    enemy.velz = self.z + oz - enemy.z
 end
 
 function HoldOpponent:handleOpponentCollision()
     local enemy = self.heldopponent
     if not enemy then return end
-    local epenex, epeney = Body.keepInBounds(enemy)
-    if epenex and epeney then
+    local epenex, epeney = enemy.penex, enemy.peney
+    if epenex or epeney then
         local radii = self.bodyradius + enemy.bodyradius + 1
         local ox = radii*math.cos(self.holdangle or 0)
         local oy = radii*math.sin(self.holdangle or 0)
-        self.x = enemy.x - ox
-        self.y = enemy.y - oy
+        self.velx = self.velx + enemy.x - ox - self.x
+        self.vely = self.vely + enemy.y - oy - self.y
         return epenex, epeney
     end
 end

@@ -23,7 +23,6 @@ function Slide:slide(angle, speed, decel)
     repeat
         speed = Slide.updateSlideSpeed(self, angle, speed, decel)
         coroutine.yield()
-        Body.keepInBounds(self)
     until speed == 0
 end
 

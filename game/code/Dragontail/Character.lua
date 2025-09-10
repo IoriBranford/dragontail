@@ -178,12 +178,17 @@ function Character:fixedupdateHitStop()
     return true
 end
 
+function Character:updateBody()
+    if self:isHitStopOver() then
+        Body.updatePosition(self)
+        Body.updateGravity(self)
+    end
+end
+
 function Character:fixedupdate()
     if self:fixedupdateHitStop() then
         self:animate(1)
-        Body.updatePosition(self)
         StateMachine.run(self)
-        Body.updateGravity(self)
     end
 end
 

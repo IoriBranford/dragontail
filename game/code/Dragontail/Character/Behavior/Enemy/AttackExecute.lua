@@ -35,9 +35,6 @@ end
 
 function AttackExecute:fixedupdate()
     local enemy = self.character
-    if enemy.enteredcamera and (enemy.velx ~= 0 or enemy.vely ~= 0) then
-        Body.keepInBounds(enemy)
-    end
 
     self.lungespeed = Slide.updateSlideSpeed(enemy,
         self.slideangle, self.lungespeed,

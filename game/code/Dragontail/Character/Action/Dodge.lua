@@ -108,7 +108,6 @@ function Dodge:dodge(opponent, dodgeangle)
     repeat
         speed = Slide.updateSlideSpeed(self, dodgeangle, speed, decel)
         coroutine.yield()
-        Body.keepInBounds(self)
         local newstate, a, b, c, d, e, f = self:duringDodge(opponent)
         if newstate then
             return newstate, a, b, c, d, e, f

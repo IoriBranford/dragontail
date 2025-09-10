@@ -50,7 +50,7 @@ local function findSomethingToRunningAttack(self, velx, vely)
 end
 
 local function findWallCollision(self)
-    local oobx, ooby = Body.keepInBounds(self)
+    local oobx, ooby = self.penex, self.peney
     oobx, ooby = oobx or 0, ooby or 0
     if oobx ~= 0 or ooby ~= 0 then
         return math.norm(oobx, ooby)

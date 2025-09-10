@@ -4,6 +4,10 @@ local RaycastCollision3D = require "Dragontail.Character.Component.Body.RaycastC
 
 ---@class Body:TiledObject
 ---@field z number
+---@field floorz number
+---@field penex number?
+---@field peney number?
+---@field penez number?
 ---@field velx number
 ---@field vely number
 ---@field velz number
@@ -127,8 +131,7 @@ function Body:updateGravity()
         return
     end
     self.velz = self.velz - gravity
-    local Characters = require "Dragontail.Stage.Characters"
-    local floorz = Characters.getCylinderFloorZ(self.x, self.y, self.z, self.bodyradius, self.bodyheight, self.bodyhitslayers) or 0
+    local floorz = self.floorz or 0
     if floorz >= self.z + self.velz then
         self.z = floorz
         self.velz = 0

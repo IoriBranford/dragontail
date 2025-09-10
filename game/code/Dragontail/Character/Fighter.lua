@@ -143,7 +143,7 @@ function Fighter:knockedBack(thrower, attackangle)
     local oobx, ooby, oobz
     repeat
         yield()
-        oobx, ooby, oobz = Body.keepInBounds(self)
+        oobx, ooby, oobz = self.penex, self.peney, self.penez
         self:duringKnockedBack()
     until oobx or ooby or oobz
     local oobdotvel = math.dot(oobx or 0, ooby or 0, self.velx, self.vely)
@@ -192,7 +192,7 @@ function Fighter:knockedBackOrThrown(thrower, attackangle)
     local oobdotvel = 0
     while thrownslidetime > 0 and oobdotvel <= .5 do
         yield()
-        oobx, ooby, oobz = Body.keepInBounds(self)
+        oobx, ooby, oobz = self.penex, self.peney, self.penez
         self:duringKnockedBack()
         if oobz then
             thrownslidetime = thrownslidetime - 1
@@ -267,7 +267,7 @@ function Fighter:thrown(thrower, attackangle)
     local oobdotvel = 0
     while thrownslidetime > 0 and oobdotvel <= .5 do
         yield()
-        oobx, ooby, oobz = Body.keepInBounds(self)
+        oobx, ooby, oobz = self.penex, self.peney, self.penez
         if oobz then
             thrownslidetime = thrownslidetime - 1
         end
@@ -320,7 +320,7 @@ function Fighter:thrownRecover(thrower)
     local oobx, ooby, oobz
     repeat
         yield()
-        oobx, ooby, oobz = Body.keepInBounds(self)
+        oobx, ooby, oobz = self.penex, self.peney, self.penez
         self:accelerateTowardsVel(0, 0, recovertime)
         recovertime = recovertime - 1
     until recovertime <= 0 and oobz or oobx or ooby
@@ -350,7 +350,6 @@ function Fighter:breakaway(other)
     -- self.hurtstun = self.breakawaystun or 15
     repeat
         yield()
-        Body.keepInBounds(self)
         self:accelerateTowardsVel(0, 0, 8)
         t = t + 1
     until t > 15
@@ -364,12 +363,12 @@ end
 
 function Fighter:fall()
     self:stopAttack()
-    local _, _, penez = Body.keepInBounds(self)
+    Body.accelerateTowardsVel(self, 0, 0, self.mass or 8)
+    local penez = self.penez
     if penez then
         self.velz = 0
         return self.state.nextstate or "collapse"
     end
-    Body.accelerateTowardsVel(self, 0, 0, self.mass or 8)
 end
 
 function Fighter:defeat(attacker)

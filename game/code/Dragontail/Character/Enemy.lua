@@ -285,9 +285,6 @@ function Enemy:duringPrepareAttack(target)
     Face.turnTowardsObject(self, target, self.faceturnspeed or 0,
         self.state.animation, self.animationframe, self.state.loopframe)
     self:accelerateTowardsVel(0, 0, self.mass or 1)
-    if self.enteredcamera and (self.velx ~= 0 or self.vely ~= 0) then
-        Body.keepInBounds(self)
-    end
 end
 
 function Enemy:interruptWithDodge(target)
@@ -314,7 +311,7 @@ function Enemy:enterAndDropDown()
     self.gravity = max(self.gravity or 0.25, 0.25)
     repeat
         yield()
-    until self.z == Characters.getCylinderFloorZ(self.x, self.y, self.z, self.bodyradius, self.bodyheight, self.bodyhitslayers)
+    until self.z == self.floorz
     Audio.play(self.jumplandsound)
     self:changeAnimation("FallRiseFromKnees", 1, 0)
     Characters.spawn({

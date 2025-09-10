@@ -76,7 +76,6 @@ function TakingHit:fixedupdate()
         fighter.heldby = nil
     end
 
-    Body.keepInBounds(fighter)
     fighter:duringHurt()
 
     local pushbackspeed = self.pushbackspeed
