@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 55,
-  nextobjectid = 536,
+  nextobjectid = 537,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -16718,7 +16718,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 1216,
-              y = -80,
+              y = -184,
               width = 0,
               height = 0,
               rotation = 0,
@@ -18070,7 +18070,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 1216,
-              y = -80,
+              y = -184,
               width = 0,
               height = 0,
               rotation = 0,
@@ -18239,9 +18239,8 @@ return {
                 { x = 832, y = 176 },
                 { x = 864, y = 176 },
                 { x = 896, y = 144 },
-                { x = 896, y = 128 },
-                { x = 1088, y = 128 },
-                { x = 1088, y = 0 }
+                { x = 912, y = 144 },
+                { x = 912, y = 0 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -18324,8 +18323,8 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 0, y = 0 },
-                { x = 0, y = 112 },
+                { x = 16, y = 0 },
+                { x = 16, y = 112 },
                 { x = 192, y = 112 },
                 { x = 192, y = 0 }
               },
@@ -20632,11 +20631,33 @@ return {
                 { x = 0, y = 0 },
                 { x = 0, y = 80 },
                 { x = 144, y = 80 },
-                { x = 144, y = 48 },
-                { x = 424, y = 48 },
-                { x = 424, y = 80 },
-                { x = 480, y = 80 },
-                { x = 480, y = 0 }
+                { x = 144, y = 0 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 536,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 5232,
+              y = -32,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = 0 },
+                { x = 0, y = 80 },
+                { x = 144, y = 80 },
+                { x = 144, y = 0 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
