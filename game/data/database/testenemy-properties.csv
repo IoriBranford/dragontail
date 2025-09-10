@@ -1,2 +1,2 @@
 character,team,health,bodyradius,bodyheight,bodyinlayers,bodyhitslayers,canbeattacked,canbegrabbed,speed,gravity,defaultattack,animationdirections,script,statetable,attacktable,initialai,timetobreakhold,recoverai,shadowcolor,defeatsound
-TestEnemy,enemy,25,16,32,Enemy,Object Wall Camera,true,TRUE,3,0.5,dagger-swing,4,Dragontail.Character.Enemy,data/database/testenemy-states.csv,data/database/testenemy-attacks.csv,stand,120,stand,4278190080,data/sounds/man_light/damage2.mp3
+TestEnemy,enemy,25,16,32,Enemy,Object Wall,true,TRUE,3,0.5,dagger-swing,4,Dragontail.Character.Enemy,data/database/testenemy-states.csv,data/database/testenemy-attacks.csv,stand,120,stand,4278190080,data/sounds/man_light/damage2.mp3
