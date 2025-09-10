@@ -11,7 +11,9 @@ function Shoot:getProjectileLaunchPosition(projectiletype, dirx, diry)
     end
     if not projectiletype then return end
 
-    local projectileheight = self.projectilelaunchheight or (self.bodyheight / 2)
+    local projectileheight = self.projectilelaunchheight
+        or dirx == 0 and diry == 0 and self.bodyheight
+        or (self.bodyheight / 2)
     local x, y, z = self.x, self.y, self.z
     local bodyradius = self.bodyradius
     return x + (bodyradius+projectiletype.bodyradius) * dirx,
@@ -68,6 +70,15 @@ function Shoot:calculateTrajectoryTowardsTarget(projectile, targetx, targety, ta
     local dirx, diry = distx/dst, disty/dst
     local x, y, z = Shoot.getProjectileLaunchPosition(self, projectile, dirx, diry)
     local velx, vely, velz = Shoot.getProjectileLaunchVelocityTowardsTarget(self, projectile, targetx, targety, targetz)
+    return Shoot.calculateTrajectory(self, projectile, x, y, z, velx, vely, velz, trajectory)
+end
+
+function Shoot:calculateTrajectory(projectile, x, y, z, velx, vely, velz, trajectory)
+    if type(projectile) == "string" then
+        projectile = Database.get(projectile)
+    end
+    if not projectile then return end
+
     local gravity = projectile.gravity or 0
     trajectory = trajectory or {}
     trajectory[#trajectory+1] = x
