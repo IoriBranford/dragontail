@@ -12,7 +12,7 @@ function Approach:start(nextattacktype)
     local opponent = enemy.opponents[1] ---@type Player
     self.nextattacktype = nextattacktype
     self.attackerslot = enemy:findAttackerSlot(opponent, nextattacktype)
-    self.reached = false
+    self.result = nil
 end
 
 function Approach:fixedupdate()
@@ -25,9 +25,9 @@ function Approach:fixedupdate()
     end
 
     local speed = enemy.speed or 2
-    self.reached = not (destx and desty)
-        or math.distsq(enemy.x, enemy.y, destx, desty) < speed
-    if self.reached then
+    self.result = not (destx and desty) and "canceled"
+        or math.distsq(enemy.x, enemy.y, destx, desty) < speed and "reached"
+    if self.result then
         return self:timeout()
     end
 
@@ -54,10 +54,10 @@ function Approach:timeout()
     end
     -- enemy:debugPrint_couldAttackOpponent(opponent, nextattacktype)
 
-    if self.reached then
+    if self.result == "reached" then
         return "stand", 10
     end
-    return "stand", 0
+    return "approach", self.nextattacktype
 end
 
 return Approach
