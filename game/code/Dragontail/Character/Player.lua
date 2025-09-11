@@ -22,6 +22,7 @@ local Mana                 = require "Dragontail.Character.Component.Mana"
 local Config               = require "System.Config"
 local Guard                = require "Dragontail.Character.Action.Guard"
 local AttackTarget         = require "Dragontail.Character.Component.AttackTarget"
+local Catcher    = require "Dragontail.Character.Component.Catcher"
 
 ---@class Player:Fighter
 ---@field inventory Inventory
@@ -339,35 +340,6 @@ function Player:getParryVector()
     end
 end
 
-function Player:findProjectileToCatch(parryx, parryy)
-    local catchradius = (self.catchradius or 20)
-    local mindot = cos(pi/4) * catchradius
-    local projectiles = Characters.getGroup("projectiles")
-    local x, y, z = self.x, self.y, self.z
-    local ztop = z + self.bodyheight + catchradius/2
-    for _, projectile in ipairs(projectiles) do
-        if self ~= projectile.thrower
-        and projectile:isAttacking()
-        and projectile.z >= z
-        and projectile.z <= ztop
-        then
-            local catchprojradius = catchradius + math.max(projectile.attack.radius, projectile.bodyradius)
-            local toprojx = projectile.x - x
-            local toprojy = projectile.y - y
-            local d = dot(parryx, parryy, toprojx, toprojy)
-            if mindot <= d and d <= catchprojradius then
-                return projectile
-            end
-            local toprojx2 = toprojx + projectile.velx
-            local toprojy2 = toprojy + projectile.vely
-            d = dot(parryx, parryy, toprojx2, toprojy2)
-            if mindot <= d and d <= catchprojradius then
-                return projectile
-            end
-        end
-    end
-end
-
 function Player:tryToGiveWeapon(weapontype)
     if self.inventory:add(weapontype) then
         Audio.play(self.holdsound)
@@ -446,7 +418,10 @@ end
 
 function Player:catchProjectileAtJoystick()
     local parryx, parryy = self:getParryVector()
-    return parryx and parryy and self:findProjectileToCatch(parryx, parryy)
+    if not (parryx and parryy) then return end
+
+    local projectiles = Characters.getGroup("projectiles")
+    return Catcher.findCharacterToCatch(self, projectiles, parryx, parryy)
 end
 
 function Player:getReversalChargedAttack()
