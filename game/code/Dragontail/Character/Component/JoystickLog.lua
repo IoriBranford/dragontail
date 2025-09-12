@@ -3,7 +3,8 @@
 ---@field position integer
 ---@field sumx number
 ---@field sumy number
----@field [integer] number
+---@field [integer] number every 2 is a joystick position
+---@overload fun(length:integer|10):JoystickLog
 local JoystickLog = class()
 
 function JoystickLog:_init(length)
@@ -44,9 +45,9 @@ end
 
 function JoystickLog:newest()
     if self.position <= 2 then
-        return self[#self-1], self[#self]
+        return self[#self-1] or 0, self[#self] or 0
     end
-    return self[self.position - 2], self[self.position - 1]
+    return self[self.position - 2] or 0, self[self.position - 1] or 0
 end
 
 function JoystickLog:average()
