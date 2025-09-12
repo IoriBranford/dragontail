@@ -14,6 +14,7 @@ local Character            = require "Dragontail.Character"
 local CollisionMask        = require "Dragontail.Character.Component.Body.CollisionMask"
 local Guard                = require "Dragontail.Character.Action.Guard"
 local AttackTarget         = require "Dragontail.Character.Component.AttackTarget"
+local Catcher              = require "Dragontail.Character.Component.Catcher"
 
 ---@class Ambush
 ---@field ambushsightarc number?
@@ -441,6 +442,18 @@ function Enemy:tryToGiveWeapon(weapontype)
     if not self.weaponinhand then
         self.weaponinhand = weapontype
         return true
+    end
+end
+
+function Enemy:readyToCatchProjectile()
+    Face.turnTowardsObject(self, self.opponents[1], self.faceturnspeed,
+        self.state.animation, self.animationframe, self.state.loopframe)
+    local dirx, diry = cos(self.faceangle), sin(self.faceangle)
+    local projectiles = Characters.getGroup("projectiles")
+    local caught = Catcher.findCharacterToCatch(self, projectiles, dirx, diry)
+    if caught then
+        caught:stopAttack()
+        return "catchProjectile", caught
     end
 end
 
