@@ -9,15 +9,15 @@ function Shoot:getProjectileLaunchPosition(projectiletype, dirx, diry)
     if type(projectiletype) == "string" then
         projectiletype = Database.get(projectiletype)
     end
-    if not projectiletype then return end
+    local projectileradius = projectiletype and projectiletype.bodyradius or 0
 
     local projectileheight = self.projectilelaunchheight
         or dirx == 0 and diry == 0 and self.bodyheight
         or (self.bodyheight / 2)
     local x, y, z = self.x, self.y, self.z
-    local bodyradius = self.bodyradius
-    return x + (bodyradius+projectiletype.bodyradius) * dirx,
-        y + (bodyradius+projectiletype.bodyradius) * diry,
+    local radius = self.bodyradius + projectileradius
+    return x + radius * dirx,
+        y + radius * diry,
         z + projectileheight
 end
 
