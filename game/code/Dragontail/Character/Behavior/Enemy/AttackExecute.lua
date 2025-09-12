@@ -15,11 +15,14 @@ function AttackExecute:start()
 
     local target = enemy.opponents[1]
 
-    local projectiletype = enemy.attack.projectiletype
+    local projectiletype = enemy.weaponinhand or enemy.attack.projectiletype
     if projectiletype then
         -- TODO if target in view then
         Shoot.launchProjectileAtObject(enemy, projectiletype, target)
         -- TODO else shoot at current faceangle
+        if projectiletype == enemy.weaponinhand then
+            enemy.weaponinhand = nil
+        end
     else
         local attackangle = math.floor((enemy.faceangle + (math.pi/4)) / (math.pi/2)) * math.pi/2
         enemy:startAttack(attackangle)
