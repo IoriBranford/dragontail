@@ -12,7 +12,6 @@ local PlayerFighting = pooledclass(Behavior)
 function PlayerFighting:start()
     local player = self.character
     player.facedestangle = player.faceangle
-    player.joysticklog:clear()
 end
 
 local ChargeAttacks = Player.ChargeAttacks
@@ -25,7 +24,6 @@ function PlayerFighting:fixedupdate()
     local nextstates = inair and GroundToAirStates or GroundStates
 
     local inx, iny = player:getJoystick()
-    player.joysticklog:put(inx, iny)
     player:turnTowardsJoystick("Walk", "Stand")
     player:accelerateTowardsJoystick()
 

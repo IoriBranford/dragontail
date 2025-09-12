@@ -18,7 +18,6 @@ PlayerRunning._nrec = Behavior._nrec + 5
 function PlayerRunning:start(heldenemy)
     local player = self.character
     player.facedestangle = player.faceangle
-    player.joysticklog:clear()
     player.velx = player.speed*math.cos(player.faceangle)
     player.vely = player.speed*math.sin(player.faceangle)
     self.targetvelx = player.velx
@@ -72,7 +71,6 @@ function PlayerRunning:fixedupdate()
 
     local heldenemy = self.heldenemy
     local inx, iny = player:getJoystick()
-    player.joysticklog:put(inx, iny)
 
     local targetvelx = self.targetvelx
     local targetvely = self.targetvely

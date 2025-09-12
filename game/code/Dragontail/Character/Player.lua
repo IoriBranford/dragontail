@@ -332,6 +332,7 @@ function Player:getChargedAttack(chargeattacks)
 end
 
 function Player:fixedupdate()
+    self.joysticklog:put(self:getJoystick())
     self:updateBreathCharge(self.manachargerate, self.manadecayrate)
     Character.fixedupdate(self)
 end

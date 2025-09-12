@@ -4,6 +4,8 @@ local Player   = require "Dragontail.Character.Player"
 local Mana     = require "Dragontail.Character.Component.Mana"
 local Face     = require "Dragontail.Character.Component.Face"
 
+---@class Recovering:Behavior
+---@field character Player
 local Recovering = pooledclass(Behavior)
 Recovering._nrec = Behavior._nrec + 3
 
@@ -12,8 +14,6 @@ local GroundStates = Player.GroundStates
 local GroundToAirStates = Player.GroundToAirStates
 
 function Recovering:start()
-    local player = self.character
-    player.joysticklog:clear()
     self.flypressed = false
     self.sprintpressed = false
 end
@@ -23,8 +23,6 @@ function Recovering:fixedupdate()
     local inair = player.gravity == 0
     local nextstates = inair and GroundToAirStates or GroundStates
 
-    local inx, iny = player:getJoystick()
-    player.joysticklog:put(inx, iny)
     player:turnTowardsJoystick()
     Body.accelerateTowardsVel(player, 0, 0, player.mass or 1)
 
