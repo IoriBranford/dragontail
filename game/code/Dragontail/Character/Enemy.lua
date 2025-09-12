@@ -437,4 +437,11 @@ function Enemy:guardHit(hit)
     return "stand"
 end
 
+function Enemy:tryToGiveWeapon(weapontype)
+    if not self.weaponinhand then
+        self.weaponinhand = weapontype
+        return true
+    end
+end
+
 return Enemy
