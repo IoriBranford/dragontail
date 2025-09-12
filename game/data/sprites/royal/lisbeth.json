@@ -1,0 +1,345 @@
+{
+  "bodyTypeName": "female",
+  "url": "https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/#?body=Body_color_light&head=Human_male_light&sex=female&hair=High_ponytail_strawberry&dress=none_Sash_dress&clothes=Longsleeve_blouse_yellow&legs=Belle_skirt_white&shoes=none_Revised_Boots&vest=Corset_white&weapon=Diamond_staff_gold&weapon_magic_crystal=Crystal_red&hairtie=Hair_Tie_white&earrings=Princess_earrings_yellow&jacket=none_Tabard&sash=Waistband_white&headcover=none_Thick_Headband&headcover_rune=none_Thick_Headband_Rune&earring_left=none_Simple_Earring_Left&earring_right=none_Simple_Earring_Right&eyebrows=none_Thin_Eyebrows&hat=none_Tiara&belt=Other_belts_white&apron=Overskirt_yellow&necklace=none_Small_Beaded_Necklace&charm=none_Oval_Charm&sleeves=none_Longsleeves_2_Overlay&buckles=none_Buckles&hairextl=Left_Long_Straight_strawberry&hairextr=Right_Long_Straight_strawberry&ponytail=none_Long_Topknot&ring=none_Stud_Ring&gloves=none_Gloves&hairtie_rune=Hair_Tie_Rune_red&updo=none_High_Bun",
+  "spritesheets": "https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/spritesheets/",
+  "version": 1,
+  "datetime": "9/12/2025, 5:00:42 AM",
+  "credits": [
+    {
+      "fileName": "body/bodies/female/light.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "Benjamin K. Smith (BenCreating),bluecarrot16,TheraHedwig,Evert,MuffinElZangano,Durrani,Pierre Vigier (pvigier),ElizaWy,Matthew Krohn (makrohn),Johannes Sjölund (wulax),Stephen Challener (Redshrike)",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-ladies,https://opengameart.org/content/lpc-7-womens-shirts,https://opengameart.org/content/lpc-jump-expanded,https://opengameart.org/content/lpc-be-seated,https://opengameart.org/content/lpc-revised-character-basics,https://gitlab.com/vagabondgame/lpc-characters,https://opengameart.org/content/lpc-male-jumping-animation-by-durrani,https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle",
+      "notes": "see details at https://opengameart.org/content/lpc-character-bases"
+    },
+    {
+      "fileName": "head/heads/human/male/light.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "bluecarrot16,Benjamin K. Smith (BenCreating),Stephen Challener (Redshrike)",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-character-bases",
+      "notes": "original head by Redshrike, tweaks by BenCreating, modular version by bluecarrot16"
+    },
+    {
+      "fileName": "hair/extensions/bangs/long_straightl/adult/strawberry.png",
+      "licenses": "OGA-BY 3.0+,CC-BY 3.0+,GPL 3.0",
+      "authors": "JaidynReiman",
+      "urls": "https://opengameart.org/content/lpc-expanded-long-hair",
+      "notes": ""
+    },
+    {
+      "fileName": "hair/extensions/bangs/long_straightr/adult/strawberry.png",
+      "licenses": "OGA-BY 3.0+,CC-BY 3.0+,GPL 3.0",
+      "authors": "JaidynReiman",
+      "urls": "https://opengameart.org/content/lpc-expanded-long-hair",
+      "notes": ""
+    },
+    {
+      "fileName": "hair/high_ponytail/adult/fg/strawberry.png",
+      "licenses": "OGA-BY 3.0",
+      "authors": "JaidynReiman,ElizaWy,bluecarrot16",
+      "urls": "https://opengameart.org/content/lpc-hair,https://opengameart.org/content/lpc-expanded-hair",
+      "notes": ""
+    },
+    {
+      "fileName": "hair/high_ponytail/adult/bg/strawberry.png",
+      "licenses": "OGA-BY 3.0",
+      "authors": "JaidynReiman,ElizaWy,bluecarrot16",
+      "urls": "https://opengameart.org/content/lpc-hair,https://opengameart.org/content/lpc-expanded-hair",
+      "notes": ""
+    },
+    {
+      "fileName": "hat/headband/hairtie/adult/white.png",
+      "licenses": "OGA-BY 3.0+,CC-BY 3.0+,GPL 3.0",
+      "authors": "JaidynReiman",
+      "urls": "https://opengameart.org/content/lpc-relm-hair-xlong-ponytail,https://opengameart.org/content/lpc-expanded-hats-facial-helmets",
+      "notes": ""
+    },
+    {
+      "fileName": "hat/headband/hairtie/rune/adult/red.png",
+      "licenses": "OGA-BY 3.0+,CC-BY 3.0+,GPL 3.0",
+      "authors": "JaidynReiman",
+      "urls": "https://opengameart.org/content/lpc-relm-hair-xlong-ponytail,https://opengameart.org/content/lpc-expanded-hats-facial-helmets",
+      "notes": ""
+    },
+    {
+      "fileName": "facial/earrings/princess/female/yellow.png",
+      "licenses": "CC0",
+      "authors": "bluecarrot16",
+      "urls": "https://opengameart.org/content/lpc-jewelry",
+      "notes": ""
+    },
+    {
+      "fileName": "torso/clothes/corset/female/white.png",
+      "licenses": "OGA-SA 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "ElizaWy,Nila122",
+      "urls": "https://opengameart.org/content/lpc-clothes-and-hair,https://opengameart.org/content/lpc-7-womens-shirts",
+      "notes": "original by Nila122, recolored by ElizaWy"
+    },
+    {
+      "fileName": "torso/clothes/blouse_longsleeve/female/yellow.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "bluecarrot16,ElizaWy,Lanea Zimmerman (Sharm)",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-7-womens-shirts",
+      "notes": "original princess.xcf by Sharm, edited to blouse by ElizaWy; blouse + longsleeve adapted to v3 bases by bluecarrot16"
+    },
+    {
+      "fileName": "torso/waist/waistband/female/white.png",
+      "licenses": "OGA-BY 3.0",
+      "authors": "Bluecarrot16,Mandi Paugh,Stephen Challener (Redshrike),William.Thompsonj",
+      "urls": "http://opengameart.org/content/sara-wizard,https://opengameart.org/content/lpc-sara",
+      "notes": "LPC Sara by Redshrike, contributed by William Thompsonj, Waistband Separated by Bluecarrot16"
+    },
+    {
+      "fileName": "legs/skirts/belle/female/white.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "bluecarrot16,Matthew Krohn (makrohn),Lanea Zimmerman (Sharm)",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-dress-in-combat-poses,http://opengameart.org/content/lpc-clothing-updates",
+      "notes": "extended to all poses by makrohn, edited to v3 bases and animation cleanup by bluecarrot16"
+    },
+    {
+      "fileName": "legs/skirts/overskirt/female/yellow.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "bluecarrot16,Matthew Krohn (makrohn),Lanea Zimmerman (Sharm)",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-dress-in-combat-poses,http://opengameart.org/content/lpc-clothing-updates",
+      "notes": "original princess.xcf by Sharm, extended to all poses by makrohn, edited to v3 bases and animation cleanup by bluecarrot16"
+    },
+    {
+      "fileName": "weapon/magic/diamond/universal/foreground/gold.png",
+      "licenses": "OGA-BY 3.0+,GPL 3.0,CC-BY 4.0",
+      "authors": "bluecarrot16",
+      "urls": "https://opengameart.org/content/lpc-more-weapons",
+      "notes": ""
+    },
+    {
+      "fileName": "weapon/magic/diamond/universal/background/gold.png",
+      "licenses": "OGA-BY 3.0+,GPL 3.0,CC-BY 4.0",
+      "authors": "bluecarrot16",
+      "urls": "https://opengameart.org/content/lpc-more-weapons",
+      "notes": ""
+    },
+    {
+      "fileName": "weapon/magic/diamond/thrust/foreground/gold.png",
+      "licenses": "OGA-BY 3.0+,GPL 3.0,CC-BY 4.0",
+      "authors": "bluecarrot16",
+      "urls": "https://opengameart.org/content/lpc-more-weapons",
+      "notes": ""
+    },
+    {
+      "fileName": "weapon/magic/diamond/thrust/background/gold.png",
+      "licenses": "OGA-BY 3.0+,GPL 3.0,CC-BY 4.0",
+      "authors": "bluecarrot16",
+      "urls": "https://opengameart.org/content/lpc-more-weapons",
+      "notes": ""
+    },
+    {
+      "fileName": "weapon/magic/crystal/universal/foreground/red.png",
+      "licenses": "OGA-BY 3.0+,GPL 3.0,CC-BY 4.0",
+      "authors": "bluecarrot16",
+      "urls": "https://opengameart.org/content/lpc-more-weapons",
+      "notes": ""
+    },
+    {
+      "fileName": "weapon/magic/crystal/universal/background/red.png",
+      "licenses": "OGA-BY 3.0+,GPL 3.0,CC-BY 4.0",
+      "authors": "bluecarrot16",
+      "urls": "https://opengameart.org/content/lpc-more-weapons",
+      "notes": ""
+    },
+    {
+      "fileName": "weapon/magic/crystal/thrust/foreground/red.png",
+      "licenses": "OGA-BY 3.0+,GPL 3.0,CC-BY 4.0",
+      "authors": "bluecarrot16",
+      "urls": "https://opengameart.org/content/lpc-more-weapons",
+      "notes": ""
+    },
+    {
+      "fileName": "weapon/magic/crystal/thrust/background/red.png",
+      "licenses": "OGA-BY 3.0+,GPL 3.0,CC-BY 4.0",
+      "authors": "bluecarrot16",
+      "urls": "https://opengameart.org/content/lpc-more-weapons",
+      "notes": ""
+    }
+  ],
+  "layers": [
+    {
+      "fileName": "weapon/magic/diamond/thrust/background/gold.png",
+      "zPos": -1,
+      "custom_animation": "thrust_oversize",
+      "parentName": "weapon",
+      "name": "Diamond_staff",
+      "variant": "gold",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "weapon/magic/crystal/thrust/background/red.png",
+      "zPos": -1,
+      "custom_animation": "thrust_oversize",
+      "parentName": "weapon_magic_crystal",
+      "name": "Crystal",
+      "variant": "red",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "hair/high_ponytail/adult/bg/strawberry.png",
+      "zPos": 9,
+      "parentName": "hair",
+      "name": "High_ponytail",
+      "variant": "strawberry",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "weapon/magic/diamond/universal/background/gold.png",
+      "zPos": 9,
+      "parentName": "weapon",
+      "name": "Diamond_staff",
+      "variant": "gold",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "weapon/magic/crystal/universal/background/red.png",
+      "zPos": 9,
+      "parentName": "weapon_magic_crystal",
+      "name": "Crystal",
+      "variant": "red",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "body/bodies/female/light.png",
+      "zPos": 10,
+      "parentName": "body",
+      "name": "Body_color",
+      "variant": "light",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "legs/skirts/belle/female/white.png",
+      "zPos": 20,
+      "parentName": "legs",
+      "name": "Belle_skirt",
+      "variant": "white",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "torso/clothes/blouse_longsleeve/female/yellow.png",
+      "zPos": 35,
+      "parentName": "clothes",
+      "name": "Longsleeve_blouse",
+      "variant": "yellow",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "legs/skirts/overskirt/female/yellow.png",
+      "zPos": 35,
+      "parentName": "apron",
+      "name": "Overskirt",
+      "variant": "yellow",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "torso/clothes/corset/female/white.png",
+      "zPos": 45,
+      "parentName": "vest",
+      "name": "Corset",
+      "variant": "white",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "torso/waist/waistband/female/white.png",
+      "zPos": 65,
+      "parentName": "sash",
+      "name": "Waistband",
+      "variant": "white",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "head/heads/human/male/light.png",
+      "zPos": 100,
+      "parentName": "head",
+      "name": "Human_male",
+      "variant": "light",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "facial/earrings/princess/female/yellow.png",
+      "zPos": 115,
+      "parentName": "earrings",
+      "name": "Princess_earrings",
+      "variant": "yellow",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "hair/high_ponytail/adult/fg/strawberry.png",
+      "zPos": 120,
+      "parentName": "hair",
+      "name": "High_ponytail",
+      "variant": "strawberry",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "hat/headband/hairtie/adult/white.png",
+      "zPos": 125,
+      "parentName": "hairtie",
+      "name": "Hair_Tie",
+      "variant": "white",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "hat/headband/hairtie/rune/adult/red.png",
+      "zPos": 126,
+      "parentName": "hairtie_rune",
+      "name": "Hair_Tie_Rune",
+      "variant": "red",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "hair/extensions/bangs/long_straightl/adult/strawberry.png",
+      "zPos": 128,
+      "parentName": "hairextl",
+      "name": "Left_Long_Straight",
+      "variant": "strawberry",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "hair/extensions/bangs/long_straightr/adult/strawberry.png",
+      "zPos": 128,
+      "parentName": "hairextr",
+      "name": "Right_Long_Straight",
+      "variant": "strawberry",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "weapon/magic/diamond/universal/foreground/gold.png",
+      "zPos": 140,
+      "parentName": "weapon",
+      "name": "Diamond_staff",
+      "variant": "gold",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "weapon/magic/crystal/universal/foreground/red.png",
+      "zPos": 140,
+      "parentName": "weapon_magic_crystal",
+      "name": "Crystal",
+      "variant": "red",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "weapon/magic/diamond/thrust/foreground/gold.png",
+      "zPos": 150,
+      "custom_animation": "thrust_oversize",
+      "parentName": "weapon",
+      "name": "Diamond_staff",
+      "variant": "gold",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "weapon/magic/crystal/thrust/foreground/red.png",
+      "zPos": 150,
+      "custom_animation": "thrust_oversize",
+      "parentName": "weapon_magic_crystal",
+      "name": "Crystal",
+      "variant": "red",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    }
+  ]
+}
