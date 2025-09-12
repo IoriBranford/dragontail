@@ -67,4 +67,8 @@ prepareBowAmbush,12,waitForBowAmbush,bow-shot,Dragontail.Character.Behavior.Enem
 waitForBowAmbush,FALSE,bow-shot2,,,watchForOpponent,,,,TRUE,TRUE,FALSE,,,0,0,1
 blinkOut,FALSE,FALSE,,,blinkOut,,,,FALSE,FALSE,FALSE,,,0,0,1
 disappear,FALSE,FALSE,,,disappear,,,,FALSE,FALSE,FALSE,,,0,0,1
-catchProjectile,15,.recoverai,,Dragontail.Character.Behavior.Fighter.CatchingProjectile,,,catch,0,FALSE,FALSE,FALSE,,data/sounds/combat/shakiin.mp3,0,0,1
+catchProjectile,15,throwBackProjectile,,Dragontail.Character.Behavior.Fighter.CatchingProjectile,,,catch,0,FALSE,FALSE,FALSE,,data/sounds/combat/shakiin.mp3,0,0,1
+catchReady,60,catchUnready,,,,readyToCatchProjectile,catchReady,0,TRUE,TRUE,FALSE,,data/sounds/man_heavy/hut1.mp3,0,0.196349540849362,1
+catchUnready,9,.recoverai,,,,,catchUnready,0,TRUE,TRUE,FALSE,,,0,0,1
+throwBackProjectile,15,throwBackProjectile2,,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,SwingWindup,0,TRUE,TRUE,FALSE,,data/sounds/man_heavy/lightattack3.mp3,0,3.14159265358979,1
+throwBackProjectile2,40,.recoverai,,Dragontail.Character.Behavior.Enemy.AttackExecute,,,SwingAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing3.mp3,0,0,1
