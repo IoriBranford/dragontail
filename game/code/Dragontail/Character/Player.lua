@@ -519,8 +519,10 @@ function Player:throwWeapon(angle, attackchoice, numprojectiles)
         local totargetx, totargety = target.x - self.x, target.y - self.y
         if dot(cosangle, sinangle, totargetx, totargety) >= cosarc*math.len(totargetx, totargety) then
             numfired = numfired + 1
-            targetsz = targetsz + target.z
-            throw(target.x, target.y, target.z)
+            local targetx, targety, targetz =
+                Shoot.getTargetObjectPosition(self, target)
+            targetsz = targetsz + targetz
+            throw(targetx, targety, targetz)
         end
     end
 
