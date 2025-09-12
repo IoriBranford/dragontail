@@ -68,6 +68,25 @@ function Shoot:getProjectilePossibleVerticalAnglesTowardsTarget(projectiletype, 
         math.atan((speedsq - math.sqrt(discrim)) / gXdxy)
 end
 
+function Shoot:getProjectileLaunchVelocityTowardsVerticalAngle(projectiletype, dirx, diry, vangle)
+    if type(projectiletype) == "string" then
+        projectiletype = Database.get(projectiletype)
+    end
+    if not projectiletype then return end
+
+    local speed = projectiletype.speed or 1
+    if speed == 0 then
+        speed = 1
+    end
+
+    local speedxy = speed * math.cos(vangle)
+    local velx = dirx * speedxy
+    local vely = diry * speedxy
+    local velz = speed * math.sin(vangle)
+
+    return velx, vely, velz
+end
+
 function Shoot:getProjectileLaunchVelocityTowardsTarget(projectiletype, targetx, targety, targetz)
     if type(projectiletype) == "string" then
         projectiletype = Database.get(projectiletype)
