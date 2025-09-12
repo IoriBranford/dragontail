@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="6" nextobjectid="4">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="7" nextobjectid="13">
  <editorsettings>
   <chunksize width="15" height="9"/>
   <export target="stage_testenemy.lua" format="lua"/>
@@ -8,6 +8,7 @@
  <tileset firstgid="2817" source="sprites/player/rose/rose-winged-main.tsx"/>
  <tileset firstgid="2818" source="sprites/player/rose/rose-main.tsx"/>
  <tileset firstgid="2819" source="sprites/test/enemy.tsx"/>
+ <tileset firstgid="2820" source="sprites/bandit/muscle.tsx"/>
  <layer id="1" name="Tile Layer 1" width="30" height="20">
   <data encoding="base64" compression="zlib">
    <chunk x="0" y="0" width="15" height="9">
@@ -15,6 +16,9 @@
   </chunk>
   </data>
  </layer>
+ <objectgroup id="3" name="enemy" class="Room">
+  <object id="2" template="mapobjects/test/TestEnemy.tx" type="TestEnemy" x="512" y="192"/>
+ </objectgroup>
  <objectgroup id="4" name="players">
   <object id="1" template="mapobjects/player/Rose.tx" type="Rose" x="96" y="192"/>
  </objectgroup>
@@ -24,8 +28,21 @@
     <polygon points="0,0 0,32 480,32 480,0"/>
    </object>
   </objectgroup>
-  <objectgroup id="3" name="enemy" class="Room">
-   <object id="2" template="mapobjects/test/TestEnemy.tx" type="TestEnemy" x="512" y="192"/>
+  <objectgroup id="6" name="catcher" class="Room">
+   <object id="4" template="mapobjects/bandit/muscle.tx" type="bandit-muscle" x="368" y="184">
+    <properties>
+     <property name="initialai" value="catchReady"/>
+     <property name="recoverai" value="catchReady"/>
+    </properties>
+   </object>
+   <object id="5" template="mapobjects/items/throwing-axe.tx" x="208" y="192"/>
+   <object id="8" template="mapobjects/items/throwing-axe.tx" x="112" y="120"/>
+   <object id="10" template="mapobjects/items/throwing-axe.tx" x="208" y="128"/>
+   <object id="12" template="mapobjects/items/throwing-axe.tx" x="160" y="160"/>
+   <object id="6" template="mapobjects/items/stone.tx" x="128" y="248"/>
+   <object id="7" template="mapobjects/items/stone.tx" x="32" y="176"/>
+   <object id="9" template="mapobjects/items/stone.tx" x="128" y="184"/>
+   <object id="11" template="mapobjects/items/stone.tx" x="80" y="216"/>
   </objectgroup>
  </group>
 </map>

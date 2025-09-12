@@ -9,8 +9,8 @@ return {
   height = 20,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 6,
-  nextobjectid = 4,
+  nextlayerid = 7,
+  nextobjectid = 13,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -5654,6 +5654,93 @@ return {
       wangsets = {},
       tilecount = 1,
       tiles = {}
+    },
+    {
+      name = "muscle",
+      firstgid = 2820,
+      class = "",
+      tilewidth = 128,
+      tileheight = 128,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/bandit/muscle.ase",
+      imagewidth = 128,
+      imageheight = 128,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 40
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 128,
+        height = 128
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "throwing-axe",
+      firstgid = 2821,
+      class = "",
+      tilewidth = 48,
+      tileheight = 48,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/weapons/throwing-axe.ase",
+      imagewidth = 48,
+      imageheight = 48,
+      objectalignment = "center",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 48,
+        height = 48
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "stone",
+      firstgid = 2822,
+      class = "",
+      tilewidth = 16,
+      tileheight = 16,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/weapons/stone.ase",
+      imagewidth = 16,
+      imageheight = 16,
+      objectalignment = "center",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
     }
   },
   layers = {
@@ -5679,6 +5766,38 @@ return {
         {
           x = 0, y = 0, width = 15, height = 9,
           data = "eJztyLcBgDAQBDAV98DgJgxGGosVTEOFSrUwhyWsYQut8/ZwhDNc4X5xKaoYirGYqv9+PvEAEKsUkg=="
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 3,
+      name = "enemy",
+      class = "Room",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 2,
+          name = "TestEnemy",
+          type = "TestEnemy",
+          shape = "rectangle",
+          x = 512,
+          y = 192,
+          width = 128,
+          height = 128,
+          rotation = 0,
+          gid = 2819,
+          visible = true,
+          properties = {
+            ["propertiestable"] = "database/testenemy-properties.csv"
+          }
         }
       }
     },
@@ -5771,8 +5890,8 @@ return {
         {
           type = "objectgroup",
           draworder = "topdown",
-          id = 3,
-          name = "enemy",
+          id = 6,
+          name = "catcher",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -5780,27 +5899,137 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {
-            ["donewhenenemiesleft"] = 0,
-            ["sequence"] = "",
-            ["titlebarcuecard"] = ""
-          },
+          properties = {},
           objects = {
             {
-              id = 2,
-              name = "TestEnemy",
-              type = "TestEnemy",
+              id = 4,
+              name = "bandit-muscle",
+              type = "bandit-muscle",
               shape = "rectangle",
-              x = 512,
-              y = 192,
+              x = 368,
+              y = 184,
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 2819,
+              gid = 2820,
               visible = true,
               properties = {
-                ["propertiestable"] = "database/testenemy-properties.csv"
+                ["initialai"] = "catchReady",
+                ["propertiestable"] = "database/bandits-properties.csv",
+                ["recoverai"] = "catchReady"
               }
+            },
+            {
+              id = 5,
+              name = "",
+              type = "item-throwing-axe",
+              shape = "rectangle",
+              x = 208,
+              y = 192,
+              width = 48,
+              height = 48,
+              rotation = 0,
+              gid = 2821,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 8,
+              name = "",
+              type = "item-throwing-axe",
+              shape = "rectangle",
+              x = 112,
+              y = 120,
+              width = 48,
+              height = 48,
+              rotation = 0,
+              gid = 2821,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 10,
+              name = "",
+              type = "item-throwing-axe",
+              shape = "rectangle",
+              x = 208,
+              y = 128,
+              width = 48,
+              height = 48,
+              rotation = 0,
+              gid = 2821,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 12,
+              name = "",
+              type = "item-throwing-axe",
+              shape = "rectangle",
+              x = 160,
+              y = 160,
+              width = 48,
+              height = 48,
+              rotation = 0,
+              gid = 2821,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 6,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 128,
+              y = 248,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 2822,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 7,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 32,
+              y = 176,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 2822,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 9,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 128,
+              y = 184,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 2822,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 11,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 80,
+              y = 216,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 2822,
+              visible = true,
+              properties = {}
             }
           }
         }
