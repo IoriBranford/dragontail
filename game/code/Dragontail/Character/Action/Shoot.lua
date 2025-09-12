@@ -3,6 +3,7 @@ local Characters = require "Dragontail.Stage.Characters"
 
 ---@class Shoot:Body
 ---@field projectilelaunchheight number?
+---@field projectiletargetheightpct number? 0 = bottom; 1 = top
 local Shoot = {}
 
 function Shoot:getProjectileLaunchPosition(projectiletype, dirx, diry)
@@ -117,8 +118,15 @@ function Shoot:calculateTrajectory(projectile, x, y, z, velx, vely, velz, trajec
     return trajectory
 end
 
+function Shoot:getTargetObjectPosition(object)
+    local x, y, z = object.x, object.y, object.z
+    local targetheightpct = self.projectiletargetheightpct or .5
+    return x, y, z + object.bodyheight*targetheightpct
+end
+
 function Shoot:launchProjectileAtObject(type, object, attackid)
-    return Shoot.launchProjectileAtPosition(self, type, object.x, object.y, object.z, attackid)
+    local targetx, targety, targetz = Shoot.getTargetObjectPosition(self, object)
+    return Shoot.launchProjectileAtPosition(self, type, targetx, targety, targetz, attackid)
 end
 
 function Shoot:launchProjectileAtPosition(projectile, targetx, targety, targetz, attackid)
