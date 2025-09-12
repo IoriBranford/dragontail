@@ -5,7 +5,7 @@ local Catcher = {}
 
 function Catcher:findCharacterToCatch(characters, catchdirx, catchdiry)
     local catchradius = (self.catchradius or 20)
-    local coscatcharc = math.cos(self.catcharc or (math.pi/4))
+    local coscatcharc = math.cos(self.catcharc or (math.pi/2))
     local x, y, z = self.x, self.y, self.z
     local ztop = z + self.bodyheight + catchradius/2
     for _, character in ipairs(characters) do
