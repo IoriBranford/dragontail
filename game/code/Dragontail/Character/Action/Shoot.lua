@@ -21,6 +21,21 @@ function Shoot:getProjectileLaunchPosition(projectiletype, dirx, diry)
         z + projectileheight
 end
 
+function Shoot:getProjectileLaunchPositionTowardsTarget(projectiletype, targetx, targety)
+    if type(projectiletype) == "string" then
+        projectiletype = Database.get(projectiletype)
+    end
+    if not projectiletype then return end
+
+    local x, y = self.x, self.y
+    local dirx, diry = targetx - x, targety - y
+    if dirx ~= 0 or diry ~= 0 then
+        dirx, diry = math.norm(dirx, diry)
+    end
+
+    return Shoot.getProjectileLaunchPosition(self, projectiletype, dirx, diry)
+end
+
 function Shoot:getProjectileLaunchVelocityTowardsTarget(projectiletype, targetx, targety, targetz)
     if type(projectiletype) == "string" then
         projectiletype = Database.get(projectiletype)
