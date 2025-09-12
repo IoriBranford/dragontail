@@ -43,29 +43,32 @@ function Shoot:getProjectileLaunchVelocityTowardsTarget(projectiletype, targetx,
     end
     if not projectiletype then return end
 
-    local x, y, z = self.x, self.y, self.z
-    local distx, disty, distz = targetx - x, targety - y, targetz - z
-    if distx == 0 and disty == 0 and distz == 0 then
-        distz = 1
-    end
-
-    local dst = math.len(distx, disty, distz)
-    local dirx, diry = distx/dst, disty/dst
-
     local gravity = projectiletype.gravity or 0
     local speed = projectiletype.speed or 1
     if speed == 0 then
         speed = 1
     end
-    local time = dst / speed
+
+    local x, y, z = Shoot.getProjectileLaunchPositionTowardsTarget(self, projectiletype, targetx, targety)
+    local distx, disty, distz = targetx - x, targety - y, targetz - z
+    if distx == 0 and disty == 0 then
+        local velz = distz <= 0 and -speed
+            or math.sqrt(2*gravity*distz)
+        return 0, 0, velz
+    end
+
+    local dstxy = math.len(distx, disty)
+    local dirx, diry = distx/dstxy, disty/dstxy
+
+    local time = dstxy / speed
 
     local velx = dirx * speed
     local vely = diry * speed
 
-    -- z = gravity*t^2/2 + v0*t + z0
-    -- dz = gravity*t^2/2 + v0*t
-    -- dz/t = gravity*t/2 + v0
-    -- v0 = dz/t - gravity*t/2
+    -- z = v0*t + z0 - gravity*t^2/2
+    -- dz = v0*t - gravity*t^2/2
+    -- dz/t = v0 - gravity*t/2
+    -- v0 = dz/t + gravity*t/2
     local velz = distz/time + gravity * time * .5
 
     return velx, vely, velz
