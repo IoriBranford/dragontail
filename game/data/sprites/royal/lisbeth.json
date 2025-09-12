@@ -1,9 +1,9 @@
 {
   "bodyTypeName": "female",
-  "url": "https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/#?body=Body_color_light&head=Human_male_light&sex=female&hair=High_ponytail_strawberry&dress=none_Sash_dress&clothes=Longsleeve_blouse_yellow&legs=Belle_skirt_white&shoes=none_Revised_Boots&vest=Corset_white&weapon=Diamond_staff_gold&weapon_magic_crystal=Crystal_red&hairtie=Hair_Tie_white&earrings=Princess_earrings_yellow&jacket=none_Tabard&sash=Waistband_white&headcover=none_Thick_Headband&headcover_rune=none_Thick_Headband_Rune&earring_left=none_Simple_Earring_Left&earring_right=none_Simple_Earring_Right&eyebrows=none_Thin_Eyebrows&hat=none_Tiara&belt=Other_belts_white&apron=Overskirt_yellow&necklace=none_Small_Beaded_Necklace&charm=none_Oval_Charm&sleeves=none_Longsleeves_2_Overlay&buckles=none_Buckles&hairextl=Left_Long_Straight_strawberry&hairextr=Right_Long_Straight_strawberry&ponytail=none_Long_Topknot&ring=none_Stud_Ring&gloves=none_Gloves&hairtie_rune=Hair_Tie_Rune_red&updo=none_High_Bun",
+  "url": "https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/#?body=Body_color_light&head=Human_male_light&sex=female&hair=High_ponytail_strawberry&dress=none_Sash_dress&clothes=Longsleeve_blouse_yellow&legs=Belle_skirt_white&shoes=none_Revised_Boots&vest=Corset_white&weapon=Diamond_staff_gold&weapon_magic_crystal=Crystal_blue&hairtie=Hair_Tie_sky&earrings=Princess_earrings_yellow&jacket=none_Tabard&sash=Waistband_white&headcover=none_Thick_Headband&headcover_rune=none_Thick_Headband_Rune&earring_left=none_Simple_Earring_Left&earring_right=none_Simple_Earring_Right&eyebrows=none_Thin_Eyebrows&hat=none_Tiara&belt=Other_belts_white&apron=Overskirt_yellow&necklace=none_Small_Beaded_Necklace&charm=none_Oval_Charm&sleeves=none_Longsleeves_2_Overlay&buckles=none_Buckles&hairextl=Left_Long_Straight_strawberry&hairextr=Right_Long_Straight_strawberry&ponytail=none_Long_Topknot&ring=none_Stud_Ring&gloves=none_Gloves&hairtie_rune=Hair_Tie_Rune_red&updo=none_High_Bun",
   "spritesheets": "https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/spritesheets/",
   "version": 1,
-  "datetime": "9/12/2025, 5:00:42 AM",
+  "datetime": "9/12/2025, 5:05:19 AM",
   "credits": [
     {
       "fileName": "body/bodies/female/light.png",
@@ -48,7 +48,7 @@
       "notes": ""
     },
     {
-      "fileName": "hat/headband/hairtie/adult/white.png",
+      "fileName": "hat/headband/hairtie/adult/sky.png",
       "licenses": "OGA-BY 3.0+,CC-BY 3.0+,GPL 3.0",
       "authors": "JaidynReiman",
       "urls": "https://opengameart.org/content/lpc-relm-hair-xlong-ponytail,https://opengameart.org/content/lpc-expanded-hats-facial-helmets",
@@ -132,28 +132,28 @@
       "notes": ""
     },
     {
-      "fileName": "weapon/magic/crystal/universal/foreground/red.png",
+      "fileName": "weapon/magic/crystal/universal/foreground/blue.png",
       "licenses": "OGA-BY 3.0+,GPL 3.0,CC-BY 4.0",
       "authors": "bluecarrot16",
       "urls": "https://opengameart.org/content/lpc-more-weapons",
       "notes": ""
     },
     {
-      "fileName": "weapon/magic/crystal/universal/background/red.png",
+      "fileName": "weapon/magic/crystal/universal/background/blue.png",
       "licenses": "OGA-BY 3.0+,GPL 3.0,CC-BY 4.0",
       "authors": "bluecarrot16",
       "urls": "https://opengameart.org/content/lpc-more-weapons",
       "notes": ""
     },
     {
-      "fileName": "weapon/magic/crystal/thrust/foreground/red.png",
+      "fileName": "weapon/magic/crystal/thrust/foreground/blue.png",
       "licenses": "OGA-BY 3.0+,GPL 3.0,CC-BY 4.0",
       "authors": "bluecarrot16",
       "urls": "https://opengameart.org/content/lpc-more-weapons",
       "notes": ""
     },
     {
-      "fileName": "weapon/magic/crystal/thrust/background/red.png",
+      "fileName": "weapon/magic/crystal/thrust/background/blue.png",
       "licenses": "OGA-BY 3.0+,GPL 3.0,CC-BY 4.0",
       "authors": "bluecarrot16",
       "urls": "https://opengameart.org/content/lpc-more-weapons",
@@ -171,12 +171,12 @@
       "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
     },
     {
-      "fileName": "weapon/magic/crystal/thrust/background/red.png",
+      "fileName": "weapon/magic/crystal/thrust/background/blue.png",
       "zPos": -1,
       "custom_animation": "thrust_oversize",
       "parentName": "weapon_magic_crystal",
       "name": "Crystal",
-      "variant": "red",
+      "variant": "blue",
       "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
     },
     {
@@ -196,11 +196,11 @@
       "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
     },
     {
-      "fileName": "weapon/magic/crystal/universal/background/red.png",
+      "fileName": "weapon/magic/crystal/universal/background/blue.png",
       "zPos": 9,
       "parentName": "weapon_magic_crystal",
       "name": "Crystal",
-      "variant": "red",
+      "variant": "blue",
       "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
     },
     {
@@ -276,11 +276,11 @@
       "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
     },
     {
-      "fileName": "hat/headband/hairtie/adult/white.png",
+      "fileName": "hat/headband/hairtie/adult/sky.png",
       "zPos": 125,
       "parentName": "hairtie",
       "name": "Hair_Tie",
-      "variant": "white",
+      "variant": "sky",
       "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
     },
     {
@@ -316,11 +316,11 @@
       "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
     },
     {
-      "fileName": "weapon/magic/crystal/universal/foreground/red.png",
+      "fileName": "weapon/magic/crystal/universal/foreground/blue.png",
       "zPos": 140,
       "parentName": "weapon_magic_crystal",
       "name": "Crystal",
-      "variant": "red",
+      "variant": "blue",
       "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
     },
     {
@@ -333,12 +333,12 @@
       "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
     },
     {
-      "fileName": "weapon/magic/crystal/thrust/foreground/red.png",
+      "fileName": "weapon/magic/crystal/thrust/foreground/blue.png",
       "zPos": 150,
       "custom_animation": "thrust_oversize",
       "parentName": "weapon_magic_crystal",
       "name": "Crystal",
-      "variant": "red",
+      "variant": "blue",
       "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
     }
   ]
