@@ -37,6 +37,37 @@ function Shoot:getProjectileLaunchPositionTowardsTarget(projectiletype, targetx,
     return Shoot.getProjectileLaunchPosition(self, projectiletype, dirx, diry)
 end
 
+function Shoot:getProjectilePossibleVerticalAnglesTowardsTarget(projectiletype, targetx, targety, targetz)
+    if type(projectiletype) == "string" then
+        projectiletype = Database.get(projectiletype)
+    end
+    if not projectiletype then return end
+
+    local gravity = projectiletype.gravity or 0
+    local speed = projectiletype.speed or 1
+    if speed == 0 then
+        speed = 1
+    end
+
+    local x, y, z = Shoot.getProjectileLaunchPositionTowardsTarget(self, projectiletype, targetx, targety)
+    local distx, disty, distz = targetx - x, targety - y, targetz - z
+    if distx == 0 and disty == 0 then
+        return distz < 0 and -math.pi or distz > 0 and math.pi
+    end
+
+    -- https://en.wikipedia.org/wiki/Projectile_motion#Angle_%CE%B8_required_to_hit_coordinate_(x,_y)
+    local dstxy = math.len(distx, disty)
+    local speedsq = speed*speed
+    local speedsqsq = speedsq*speedsq
+    local dstxysq = dstxy*dstxy
+    local gXdxy = gravity * dstxy
+    local discrim = speedsqsq - gravity*(gravity*dstxysq + 2*distz*speedsq)
+    if discrim < 0 then return end
+
+    return math.atan((speedsq + math.sqrt(discrim)) / gXdxy),
+        math.atan((speedsq - math.sqrt(discrim)) / gXdxy)
+end
+
 function Shoot:getProjectileLaunchVelocityTowardsTarget(projectiletype, targetx, targety, targetz)
     if type(projectiletype) == "string" then
         projectiletype = Database.get(projectiletype)
