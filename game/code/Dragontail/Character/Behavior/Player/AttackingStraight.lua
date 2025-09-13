@@ -74,7 +74,6 @@ function AttackingStraight:start(angle, heldenemy)
         Slide.updateSlideSpeed(player, angle, lungespeed)
         self.lungespeed = lungespeed
     end
-    self.pressedattackbutton = nil
     self.angle = angle
     self.heldenemy = heldenemy
 
@@ -86,14 +85,6 @@ end
 function AttackingStraight:fixedupdate()
     local player = self.character
 
-    if self.pressedattackbutton ~= player.attackbutton then
-        -- if player.fireattackbutton.pressed then
-        --     pressedattackbutton = player.fireattackbutton
-        -- else
-        if player.attackbutton.pressed then
-            self.pressedattackbutton = player.attackbutton
-        end
-    end
     if self.lungespeed then
         if math.abs(self.lungespeed - math.len(player.velx, player.vely)) >= 1 then
             self.lungespeed = nil
@@ -124,18 +115,6 @@ function AttackingStraight:timeout(nextstate, a, b, c, d, e, f, g)
     local inair = player.gravity == 0
     if player.numopponentshit <= 0 then
         Combo.reset(player)
-    end
-
-    if self.pressedattackbutton then
-        local faceangle = player.faceangle
-        local inx, iny = player:getJoystick()
-        if not self.heldenemy then
-            if inx ~= 0 or iny ~= 0 then
-                faceangle = math.atan2(iny, inx)
-            end
-        end
-        return player:doComboAttack(faceangle, self.heldenemy,
-                inx ~= 0 or iny ~= 0, inair)
     end
 
     if self.heldenemy and self.heldenemy.health > 0 then

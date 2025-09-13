@@ -24,7 +24,6 @@ function PlayerSpinAttack:start(attackangle)
     local spintime = player.attack.hittingduration or 1
     player.statetime = player.statetime or spintime
     self.originalattackangle = attackangle
-    self.pressedattackbutton = nil
 
     Attacker.startAttack(player, attackangle)
     Face.faceAngle(player, attackangle, player.state and player.state.animation)
@@ -66,15 +65,6 @@ function PlayerSpinAttack:fixedupdate()
     attackangle = attackangle + spinvel
     Attacker.startAttack(player, attackangle)
     Face.faceAngle(player, attackangle, player.state and player.state.animation)
-
-    if self.pressedattackbutton ~= player.attackbutton then
-        -- if player.fireattackbutton.pressed then
-        --     pressedattackbutton = player.fireattackbutton
-        --else
-        if player.attackbutton.pressed then
-            self.pressedattackbutton = player.attackbutton
-        end
-    end
 end
 
 function PlayerSpinAttack:interrupt(...)
@@ -86,20 +76,12 @@ end
 
 function PlayerSpinAttack:timeout(nextstate, a, b, c, d, e, f, g)
     local player = self.character
-    local inair = player.gravity == 0
     if player.numopponentshit <= 0 then
         Combo.reset(player)
     end
 
     Attacker.stopAttack(player)
     player.faceangle = self.originalattackangle
-    if self.pressedattackbutton then
-        local inx, iny = player:getJoystick()
-        if inx ~= 0 or iny ~= 0 then
-            self.originalattackangle = math.atan2(iny, inx)
-        end
-        return player:doComboAttack(self.originalattackangle, nil, inx ~= 0 or iny ~= 0, inair)
-    end
 
     if nextstate then
         return nextstate, a, b, c, d, e, f, g

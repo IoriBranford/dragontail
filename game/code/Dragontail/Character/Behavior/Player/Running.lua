@@ -108,7 +108,7 @@ function PlayerRunning:fixedupdate()
         end
     end
 
-    if player.flybutton.pressed then
+    if player.canfly and player:isActionDownAndRecentlyPressed("fly") then
         return nextstates.toggleFlying
     end
 
@@ -121,8 +121,7 @@ function PlayerRunning:fixedupdate()
         return nextstates[chargedattack], player.facedestangle
     end
 
-    self.attackpressed = self.attackpressed or player.attackbutton.pressed
-    if self.attackpressed and player.attackbutton.down then
+    if player:isActionRecentlyPressed("attack") then
         if heldenemy then
             heldenemy:stopAttack()
             -- HoldOpponent.stopHolding(player, heldenemy)

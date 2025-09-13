@@ -596,7 +596,8 @@ function Player:hold(enemy)
         end
 
         local inx, iny = self:getJoystick()
-        local normalattackpressed, runpressed = self.attackbutton.pressed, self.sprintbutton.pressed
+        local normalattackpressed = self:isActionRecentlyPressed("attack")
+        local runpressed = self:isActionDownAndRecentlyPressed("sprint")
         local targetvelx, targetvely = 0, 0
         local speed = 2
         if inx ~= 0 or iny ~= 0 then

@@ -32,11 +32,13 @@ function PlayerFighting:fixedupdate()
         return nextstates.catchProjectile, caughtprojectile
     end
 
-    if player.canfly and player.flybutton.pressed then
-        return nextstates.toggleFlying
+    if player.canfly then
+        if player:isActionDownAndRecentlyPressed("fly") then
+            return nextstates.toggleFlying
+        end
     end
 
-    if player.sprintbutton.pressed then
+    if player:isActionDownAndRecentlyPressed("sprint") then
         Face.faceVector(player, inx, iny)
         return nextstates.run
     end
@@ -47,7 +49,7 @@ function PlayerFighting:fixedupdate()
         return nextstates[chargedattack], player.facedestangle
     end
 
-    if player.attackbutton.pressed then
+    if player:isActionRecentlyPressed("attack") then
         local attackangle = player.facedestangle
         if player.weaponinhand then
             attackangle = player:getAngleToBestTarget(attackangle) or attackangle
