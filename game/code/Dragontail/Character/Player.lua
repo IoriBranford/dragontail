@@ -16,7 +16,7 @@ local Body         = require "Dragontail.Character.Component.Body"
 local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
 local WeaponInHand         = require "Dragontail.Character.Component.WeaponInHand"
 local Inventory            = require "Dragontail.Character.Component.Inventory"
-local JoystickLog          = require "Dragontail.Character.Component.JoystickLog"
+local InputLog          = require "Dragontail.Character.Component.InputLog"
 local Combo                = require "Dragontail.Character.Component.Combo"
 local Mana                 = require "Dragontail.Character.Component.Mana"
 local Config               = require "System.Config"
@@ -26,7 +26,7 @@ local Catcher    = require "Dragontail.Character.Component.Catcher"
 
 ---@class Player:Fighter
 ---@field inventory Inventory
----@field joysticklog JoystickLog
+---@field inputlog InputLog
 local Player = class(Fighter)
 
 local NormalChargeRate = 2
@@ -232,7 +232,7 @@ function Player:getAngleToBestTarget(lookangle, targets)
 end
 
 function Player:init()
-    self.joysticklog = JoystickLog(10)
+    self.inputlog = InputLog(6)
     self.attackbutton = Inputs.getAction("attack")
     self.sprintbutton = Inputs.getAction("sprint")
     self.flybutton = Inputs.getAction("fly")
@@ -284,9 +284,9 @@ function Player.getJoystick()
 end
 
 function Player:getParryVector()
-    local x1, y1 = self.joysticklog:newest()
+    local x1, y1 = self.inputlog:newestJoystick()
     if not x1 or not y1 or x1 == 0 and y1 == 0 then return end
-    local x0, y0 = self.joysticklog:oldest()
+    local x0, y0 = self.inputlog:oldestJoystick()
     if dot(x0, y0, x1, y1) <= 0 then
         return math.norm(x1, y1)
     end
@@ -332,7 +332,11 @@ function Player:getChargedAttack(chargeattacks)
 end
 
 function Player:fixedupdate()
-    self.joysticklog:put(self:getJoystick())
+    self.inputlog:logJoystick(self:getJoystick())
+    self.inputlog:logActionState(self.attackbutton)
+    self.inputlog:logActionState(self.sprintbutton)
+    self.inputlog:logActionState(self.flybutton)
+    self.inputlog:advance()
     self:updateBreathCharge(self.manachargerate, self.manadecayrate)
     Character.fixedupdate(self)
 end

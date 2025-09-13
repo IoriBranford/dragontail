@@ -95,8 +95,8 @@ function Fighter:drawAseprite(fixedfrac)
     --     love.graphics.line(self.x, self.y, self.attacker.x, self.attacker.y)
     -- end
 
-    -- local px1, py1 = self.joysticklog:newest()
-    -- local px0, py0 = self.joysticklog:oldest()
+    -- local px1, py1 = self.inputlog:newestJoystick()
+    -- local px0, py0 = self.inputlog:oldestJoystick()
     -- if px0 and py0 and px1 and py1 then
     --     love.graphics.line(self.x + px0*16, self.y + py0*16, self.x + px1*16, self.y + py1*16)
     -- end
