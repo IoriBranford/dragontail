@@ -292,6 +292,17 @@ function Player:getParryVector()
     end
 end
 
+function Player:isActionRecentlyPressed(actionname)
+    return self.inputlog:findActionState(actionname, "pressed")
+end
+
+function Player:isActionDownAndRecentlyPressed(actionname)
+    local action = Inputs.getAction(actionname)
+    if not action then return false end
+    return action.pressed or
+        action.down and self:isActionRecentlyPressed(actionname)
+end
+
 function Player:tryToGiveWeapon(weapontype)
     if self.inventory:add(weapontype) then
         Audio.play(self.holdsound)
