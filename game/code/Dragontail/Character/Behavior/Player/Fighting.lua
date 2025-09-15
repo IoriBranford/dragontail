@@ -32,9 +32,11 @@ function PlayerFighting:fixedupdate()
         return nextstates.catchProjectile, caughtprojectile
     end
 
-    if player.canfly then
-        if player:isActionDownAndRecentlyPressed("fly") then
+    if player:isActionDownAndRecentlyPressed("fly") then
+        if player.canfly then
             return nextstates.toggleFlying
+        else
+            return "jump"
         end
     end
 
