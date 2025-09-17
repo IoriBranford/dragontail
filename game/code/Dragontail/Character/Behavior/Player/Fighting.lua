@@ -36,7 +36,7 @@ function PlayerFighting:fixedupdate()
         if player.canfly then
             return nextstates.toggleFlying
         else
-            return "jump"
+            return "jump", true
         end
     end
 

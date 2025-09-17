@@ -3,17 +3,20 @@ local Face     = require "Dragontail.Character.Component.Face"
 local Audio    = require "System.Audio"
 local PlayerJumping = pooledclass(Behavior)
 
-function PlayerJumping:start()
+function PlayerJumping:start(isjumpstart)
     local player = self.character
-    local inx, iny = player:getJoystick()
-    if inx ~= 0 or iny ~= 0 then
-        inx, iny = math.norm(inx, iny)
+    if isjumpstart then
+        local inx, iny = player:getJoystick()
+        if inx ~= 0 or iny ~= 0 then
+            inx, iny = math.norm(inx, iny)
+        end
+        local speed = player.speed
+        player.velx = inx * speed
+        player.vely = iny * speed
+        player.velz = player.gravity*15
+        player.numjumpattacks = 0
+        Face.faceVector(player, player.velx, player.vely)
     end
-    local speed = player.speed
-    player.velx = inx * speed
-    player.vely = iny * speed
-    player.velz = player.gravity*15
-    Face.faceVector(player, player.velx, player.vely)
 end
 
 function PlayerJumping:fixedupdate()
