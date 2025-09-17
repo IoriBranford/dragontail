@@ -381,7 +381,7 @@ function Player:turnTowardsJoystick(movinganimation, notmovinganimation)
     else
         animation = notmovinganimation
     end
-    Face.updateTurnToDestAngle(self, nil, animation)
+    return Face.updateTurnToDestAngle(self, nil, animation), self.facedestangle
 end
 
 function Player:catchProjectileAtJoystick()
