@@ -45,14 +45,6 @@ function PlayerSpinAttack:fixedupdate()
         Shoot.launchProjectile(player, projectile, cosangle, sinangle, 0)
     end
 
-    local inx, iny = player:getJoystick()
-    local targetvelx, targetvely = 0, 0
-    local speed = 2
-    if inx ~= 0 or iny ~= 0 then
-        inx, iny = math.norm(inx, iny)
-        targetvelx = inx * speed
-        targetvely = iny * speed
-    end
 
     if self.lungespeed then
         if math.abs(self.lungespeed - math.len(player.velx, player.vely)) >= 1 then
@@ -61,8 +53,6 @@ function PlayerSpinAttack:fixedupdate()
     end
     if self.lungespeed then
         self.lungespeed = Slide.updateSlideSpeed(player, self.originalfaceangle, self.lungespeed)
-    else
-        Body.accelerateTowardsVel(player, targetvelx, targetvely, player.mass or 8)
     end
 
     local spinvel = player.attack.spinspeed or 0
