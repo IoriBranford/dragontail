@@ -69,6 +69,13 @@ local StateVarsToCopy = {
 
 local Period = string.byte('.')
 
+local Operations = {
+    ['+='] = function(t, k, v) return t[k] + v end,
+    ['-='] = function(t, k, v) return t[k] - v end,
+    ['*='] = function(t, k, v) return t[k] * v end,
+    ['/='] = function(t, k, v) return t[k] / v end,
+}
+
 function StateMachine.start(self, statename, a,b,c,d,e,f,g)
     if self.statebehavior then
         statename, a,b,c,d,e,f,g = self.statebehavior:interrupt(statename, a,b,c,d,e,f,g)
@@ -82,9 +89,28 @@ function StateMachine.start(self, statename, a,b,c,d,e,f,g)
         self.state = state
         for k, v in pairs(state) do
             if StateVarsToCopy[k] then
+                local op, val = nil, v
+                if type(v) == "string" then
+                    op, val = v:match("^([+%-*/]=)(%-?[%w.]+)$")
+                    if op then
+                        if type(self[k]) ~= "number" then
+                            error(string.format("attempted to %s into non-numeric %s",
+                                op, k))
+                        end
+                        v = tonumber(val) or v
+                    end
+                end
                 if type(v) == "string" and v:byte(1,1) == Period then
-                    self[k] = self[v:sub(2)]
-                elseif v ~= nil then
+                    v = self[v:sub(2)]
+                end
+                if op then
+                    if type(v) ~= "number" then
+                        error(string.format("attempted to %s non-numeric %s into %s",
+                            op, v, k))
+                    end
+                    v = Operations[op](self, k, v)
+                end
+                if v ~= nil then
                     self[k] = v
                 end
             end
