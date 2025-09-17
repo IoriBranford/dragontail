@@ -17,6 +17,10 @@ local defaultgamepadconfig =  {
     leftx = "analogx",
     lefty = "analogy",
     x = "attack",
+    y = "attack",
+    a = "fly",
+    b = "fly",
+    rightshoulder = "sprint",
     triggerright = "sprint",
     triggerleft = "fly",
 }
