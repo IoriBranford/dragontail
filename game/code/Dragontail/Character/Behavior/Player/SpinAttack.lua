@@ -10,33 +10,37 @@ local Attacker = require "Dragontail.Character.Component.Attacker"
 local PlayerSpinAttack = pooledclass(Behavior)
 PlayerSpinAttack._nrec = Behavior._nrec + 3
 
-function PlayerSpinAttack:start(attackangle)
+function PlayerSpinAttack:start(faceangle)
     local player = self.character
     player.numopponentshit = 0
 
     local lungespeed = player.attack.lungespeed
     if lungespeed then
-        Slide.updateSlideSpeed(player, attackangle, lungespeed)
+        Slide.updateSlideSpeed(player, faceangle, lungespeed)
     end
     self.lungespeed = lungespeed
     Mana.store(player, -(player.attack.manacost or 0))
 
     local spintime = player.attack.hittingduration or 1
     player.statetime = player.statetime or spintime
-    self.originalattackangle = attackangle
+    self.originalfaceangle = faceangle
 
+    local offsetfromfaceangle = player.attack.offsetfromfaceangle or 0
+    local attackangle = faceangle + offsetfromfaceangle
     Attacker.startAttack(player, attackangle)
-    Face.faceAngle(player, attackangle, player.state and player.state.animation)
+    Face.faceAngle(player, faceangle, player.state and player.state.animation)
 end
 
 function PlayerSpinAttack:fixedupdate()
     local player = self.character
 
-    local attackangle = player.attackangle
+    local faceangle = player.faceangle
+    local offsetfromfaceangle = player.attack.offsetfromfaceangle or 0
+    local attackangle = faceangle + offsetfromfaceangle
+
     local projectile = player.attack.projectiletype
     if projectile then
-        local projectileangle = attackangle + math.pi
-        local cosangle, sinangle = math.cos(projectileangle), math.sin(projectileangle)
+        local cosangle, sinangle = math.cos(attackangle), math.sin(attackangle)
         Shoot.launchProjectile(player, "spark-spit-fireball", cosangle, sinangle, 0)
         Shoot.launchProjectile(player, projectile, cosangle, sinangle, 0)
     end
@@ -56,15 +60,16 @@ function PlayerSpinAttack:fixedupdate()
         end
     end
     if self.lungespeed then
-        self.lungespeed = Slide.updateSlideSpeed(player, self.originalattackangle, self.lungespeed)
+        self.lungespeed = Slide.updateSlideSpeed(player, self.originalfaceangle, self.lungespeed)
     else
         Body.accelerateTowardsVel(player, targetvelx, targetvely, player.mass or 8)
     end
 
     local spinvel = player.attack.spinspeed or 0
-    attackangle = attackangle + spinvel
+    faceangle = faceangle + spinvel
+    attackangle = faceangle + offsetfromfaceangle
     Attacker.startAttack(player, attackangle)
-    Face.faceAngle(player, attackangle, player.state and player.state.animation)
+    Face.faceAngle(player, faceangle, player.state and player.state.animation)
 end
 
 function PlayerSpinAttack:interrupt(...)
@@ -81,7 +86,7 @@ function PlayerSpinAttack:timeout(nextstate, a, b, c, d, e, f, g)
     end
 
     Attacker.stopAttack(player)
-    player.faceangle = self.originalattackangle
+    player.faceangle = self.originalfaceangle
 
     if nextstate then
         return nextstate, a, b, c, d, e, f, g
