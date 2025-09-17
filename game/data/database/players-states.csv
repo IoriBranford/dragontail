@@ -51,3 +51,4 @@ catchProjectile,,Dragontail.Character.Behavior.Fighter.CatchingProjectile,,,walk
 sequenceTailSwing,,,idle,,sequenceWalkTo,24,data/sprites/player/rose/attack.jase,tailspinCW,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,0,0,0,0.25,1,4,3.14159265358979
 jump,,Dragontail.Character.Behavior.Player.Jumping,,,walk,FALSE,data/sprites/player/rose/main.jase,JumpUp,1,TRUE,TRUE,FALSE,,,0,2,2,0.25,1,4,0.392699081698724
 jump-tail-swing-cw,jump-tail-swing-cw,Dragontail.Character.Behavior.Player.SpinAttack,,,jump,FALSE,data/sprites/player/rose/attack.jase,attackA,1,TRUE,TRUE,FALSE,,data/sounds/combat/swing2.mp3,0,0,0,0.25,1,4,0
+jump-tail-swing-ccw,jump-tail-swing-ccw,Dragontail.Character.Behavior.Player.SpinAttack,,,jump,FALSE,data/sprites/player/rose/attack.jase,attackA,1,TRUE,TRUE,FALSE,,data/sounds/combat/swing2.mp3,0,0,0,0.25,1,4,0
