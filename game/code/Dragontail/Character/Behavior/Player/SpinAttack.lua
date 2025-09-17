@@ -25,6 +25,8 @@ function PlayerSpinAttack:start(faceangle)
     player.statetime = player.statetime or spintime
     self.originalfaceangle = faceangle
 
+    local faceangleoffset = player.attack.faceangleoffset or 0
+    faceangle = faceangle + faceangleoffset
     local offsetfromfaceangle = player.attack.offsetfromfaceangle or 0
     local attackangle = faceangle + offsetfromfaceangle
     Attacker.startAttack(player, attackangle)
