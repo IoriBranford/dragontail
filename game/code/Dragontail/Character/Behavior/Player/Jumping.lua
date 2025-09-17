@@ -20,6 +20,7 @@ function PlayerJumping:start(isjumpstart)
         player.numjumpattacks = 0
         Face.faceVector(player, player.velx, player.vely)
     end
+    player.facedestangle = player.faceangle
 end
 
 function PlayerJumping:fixedupdate()
@@ -29,22 +30,22 @@ function PlayerJumping:fixedupdate()
         return "walk"
     end
 
-    if player:isActionRecentlyPressed("attack") then
-        if player.numjumpattacks < 1 then
-            player.numjumpattacks = player.numjumpattacks + 1
-            local attackangle = player.faceangle
-            local inx, iny = player:getJoystick()
-            if inx ~= 0 or iny ~= 0 then
-                attackangle = math.atan2(iny, inx)
-            end
-            return "jump-tail-swing-cw", attackangle
-        end
-    end
-
     local animation = player.velz >= 1 and "JumpUp"
         or player.velz >= -1 and "JumpPeak"
         or "JumpDown"
-    player:turnTowardsJoystick(animation, animation)
+    local faceangle, facedestangle =
+        player:turnTowardsJoystick(animation, animation)
+
+    if player:isActionRecentlyPressed("attack") then
+        if player.numjumpattacks < 1 then
+            player.numjumpattacks = player.numjumpattacks + 1
+            local spindir = math.det(math.cos(faceangle), math.sin(faceangle),
+                math.cos(facedestangle), math.sin(facedestangle))
+            local attackstate = spindir < 0
+                and "jump-tail-swing-ccw" or "jump-tail-swing-cw"
+            return attackstate, facedestangle
+        end
+    end
 end
 
 return PlayerJumping
