@@ -25,6 +25,14 @@ function PlayerJumping:fixedupdate()
         Audio.play(player.jumplandsound)
         return "walk"
     end
+
+    if player:isActionRecentlyPressed("attack") then
+        if player.numjumpattacks < 1 then
+            player.numjumpattacks = player.numjumpattacks + 1
+            return "jump-tail-swing-cw", player.faceangle
+        end
+    end
+
     local animation = player.velz >= 1 and "JumpUp"
         or player.velz >= -1 and "JumpPeak"
         or "JumpDown"
