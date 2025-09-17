@@ -29,7 +29,12 @@ function PlayerJumping:fixedupdate()
     if player:isActionRecentlyPressed("attack") then
         if player.numjumpattacks < 1 then
             player.numjumpattacks = player.numjumpattacks + 1
-            return "jump-tail-swing-cw", player.faceangle
+            local attackangle = player.faceangle
+            local inx, iny = player:getJoystick()
+            if inx ~= 0 or iny ~= 0 then
+                attackangle = math.atan2(iny, inx)
+            end
+            return "jump-tail-swing-cw", attackangle
         end
     end
 
