@@ -205,6 +205,8 @@ function Attacker:drawCircle(fixedfrac)
         x = x + self.velx*fixedfrac
         y = y + self.vely*fixedfrac
         z = z + self.velz*fixedfrac
+        love.graphics.setColor(0, 0, 0)
+        love.graphics.circle("line", x, y, r)
         love.graphics.setColor(1, .5, .5)
         drawCake(x, y - z, r, h, 0, math.pi)
     end
