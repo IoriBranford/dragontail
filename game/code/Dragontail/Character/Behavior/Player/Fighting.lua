@@ -30,8 +30,8 @@ function PlayerFighting:fixedupdate()
     end
 
     if player:isActionDownAndRecentlyPressed("fly") then
-        if player.canfly then
-            return inair and "flyEnd" or "flyStart"
+        if inair then
+            return "flyEnd"
         else
             return "jump", true
         end

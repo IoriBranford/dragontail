@@ -30,9 +30,16 @@ function PlayerJumping:fixedupdate()
         return "walk"
     end
 
+    if player.canfly
+    and player.velz < 1
+    and player.flybutton.down then
+        return "flyStart"
+    end
+
     local animation = player.velz >= 1 and "JumpUp"
         or player.velz >= -1 and "JumpPeak"
         or "JumpDown"
+
     local faceangle, facedestangle =
         player:turnTowardsJoystick(animation, animation)
 
