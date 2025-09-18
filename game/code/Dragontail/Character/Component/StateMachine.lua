@@ -76,6 +76,26 @@ local Operations = {
     ['/='] = function(t, k, v) return t[k] / v end,
 }
 
+local function evalStateVar(self, state, k)
+    local v = state[k]
+    local op, val = nil, v
+    if type(v) == "string" and type(self[k]) == "number" then
+        op, val = v:match("^([+%-*/]=)(%-?[%w.]+)$")
+        v = op and tonumber(val) or v
+    end
+    if type(v) == "string" and v:byte(1,1) == Period then
+        v = self[v:sub(2)]
+    end
+    if op then
+        if type(v) ~= "number" then
+            error(string.format("attempted to %s non-numeric %s into %s",
+                op, v, k))
+        end
+        v = Operations[op](self, k, v)
+    end
+    return v
+end
+
 function StateMachine.start(self, statename, a,b,c,d,e,f,g)
     if self.statebehavior then
         statename, a,b,c,d,e,f,g = self.statebehavior:interrupt(statename, a,b,c,d,e,f,g)
@@ -87,29 +107,9 @@ function StateMachine.start(self, statename, a,b,c,d,e,f,g)
     local state = self.statetable and self.statetable[statename]
     if state then
         self.state = state
-        for k, v in pairs(state) do
+        for k in pairs(state) do
             if StateVarsToCopy[k] then
-                local op, val = nil, v
-                if type(v) == "string" then
-                    op, val = v:match("^([+%-*/]=)(%-?[%w.]+)$")
-                    if op then
-                        if type(self[k]) ~= "number" then
-                            error(string.format("attempted to %s into non-numeric %s",
-                                op, k))
-                        end
-                        v = tonumber(val) or v
-                    end
-                end
-                if type(v) == "string" and v:byte(1,1) == Period then
-                    v = self[v:sub(2)]
-                end
-                if op then
-                    if type(v) ~= "number" then
-                        error(string.format("attempted to %s non-numeric %s into %s",
-                            op, v, k))
-                    end
-                    v = Operations[op](self, k, v)
-                end
+                local v = evalStateVar(self, state, k)
                 if v ~= nil then
                     self[k] = v
                 end
@@ -118,18 +118,19 @@ function StateMachine.start(self, statename, a,b,c,d,e,f,g)
 
         Body.initLayerMasks(self)
 
-        self.attacktype = state.attack
-        self.attack = self.attacktable and self.attacktable[state.attack]
+        self.attacktype = evalStateVar(self, state, "attack")
+        self.attack = self.attacktable and self.attacktable[self.attacktype]
         local hitslayers = self.attack.hitslayers
         if type(hitslayers) == "string" then
             hitslayers = CollisionMask.parse(hitslayers)
             self.attack.hitslayers = hitslayers
         end
 
-        local animationname = state.animation
-        local frame = state.frame1
+        local animationname = evalStateVar(self, state, "animation")
+        local frame = evalStateVar(self, state, "frame1")
 
-        local newaseprite = state.asefile and Assets.get(state.asefile)
+        local newaseprite = evalStateVar(self, state, "asefile")
+        newaseprite = Assets.get(newaseprite)
         if newaseprite then
             ---@cast newaseprite Aseprite
             if newaseprite ~= self.aseprite then
@@ -153,18 +154,18 @@ function StateMachine.start(self, statename, a,b,c,d,e,f,g)
                     end
                 end
 
-                self:setAnimation(animationname, frame, state.loopframe)
+                self:setAnimation(animationname, frame, evalStateVar(self, state, "loopframe"))
             end
         elseif newaseprite then
-            self:setAnimation(newaseprite, frame, state.loopframe)
+            self:setAnimation(newaseprite, frame, evalStateVar(self, state, "loopframe"))
         end
         -- DirectionalAnimation.set(self, animationname, angle, frame, state.loop)
 
-        Audio.play(state.sound)
+        Audio.play(evalStateVar(self, state, "sound"))
 
-        local behavior = state.statebehavior
-        local statecoroutine = self[state.statecoroutine]
-        local statefunction = self[state.statefunction]
+        local behavior = evalStateVar(self, state, "statebehavior")
+        local statecoroutine = self[evalStateVar(self, state, "statecoroutine")]
+        local statefunction = self[evalStateVar(self, state, "statefunction")]
         if behavior then
             local ok
             ok, behavior = pcall(require, behavior)
