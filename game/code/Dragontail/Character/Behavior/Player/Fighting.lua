@@ -15,13 +15,10 @@ function PlayerFighting:start()
 end
 
 local ChargeAttacks = Player.ChargeAttacks
-local GroundStates = Player.GroundStates
-local GroundToAirStates = Player.GroundToAirStates
 
 function PlayerFighting:fixedupdate()
     local player = self.character
     local inair = player.gravity == 0
-    local nextstates = inair and GroundToAirStates or GroundStates
 
     local inx, iny = player:getJoystick()
     player:turnTowardsJoystick("Walk", "Stand")
@@ -29,12 +26,12 @@ function PlayerFighting:fixedupdate()
 
     local caughtprojectile = player:catchProjectileAtJoystick()
     if caughtprojectile then
-        return nextstates.catchProjectile, caughtprojectile
+        return "catchProjectile", caughtprojectile
     end
 
     if player:isActionDownAndRecentlyPressed("fly") then
         if player.canfly then
-            return nextstates.toggleFlying
+            return inair and "flyEnd" or "flyStart"
         else
             return "jump", true
         end
@@ -42,13 +39,13 @@ function PlayerFighting:fixedupdate()
 
     if player:isActionDownAndRecentlyPressed("sprint") then
         Face.faceVector(player, inx, iny)
-        return nextstates.run
+        return "run"
     end
 
     local chargedattack = not player.attackbutton.down and player:getChargedAttack(ChargeAttacks)
     if chargedattack then
         Mana.releaseCharge(player)
-        return nextstates[chargedattack], player.facedestangle
+        return chargedattack, player.facedestangle
     end
 
     if player:isActionRecentlyPressed("attack") then
@@ -59,7 +56,7 @@ function PlayerFighting:fixedupdate()
         player.faceangle = attackangle
         player.facedestangle = attackangle
         if player.weaponinhand then
-            return nextstates.throwWeapon, player.facedestangle, 1, 1
+            return "throwWeapon", player.facedestangle, 1, 1
         end
         return player:doComboAttack(player.facedestangle, nil, inx ~= 0 or iny ~= 0, inair)
     end
@@ -67,7 +64,7 @@ function PlayerFighting:fixedupdate()
     local opponenttohold = HoldOpponent.findOpponentToHold(player, inx, iny)
     if opponenttohold then
         Audio.play(player.holdsound)
-        return nextstates.hold, opponenttohold
+        return "hold", opponenttohold
     end
 end
 

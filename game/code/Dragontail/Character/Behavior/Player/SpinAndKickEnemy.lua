@@ -31,8 +31,6 @@ end
 
 function SpinAndKickEnemy:fixedupdate()
     local player = self.character
-    local inair = player.gravity == 0
-    local nextstates = inair and player.GroundToAirStates or player.GroundStates
     local enemy = player.heldopponent
     local holdangle = player.holdangle
     local spinvel = player.attack.spinspeed or 0
@@ -48,7 +46,7 @@ function SpinAndKickEnemy:fixedupdate()
         --     enemy.health = enemy.health - player.attack.damage
         -- end
         -- StateMachine.start(enemy, enemy.thrownai or "thrown", player, atan2(throwy, throwx))
-        return nextstates["holding-kick"], holdangle
+        return "holding-kick", holdangle
     end
 
     if enemy.penex or enemy.peney then

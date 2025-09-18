@@ -10,8 +10,6 @@ local Recovering = pooledclass(Behavior)
 Recovering._nrec = Behavior._nrec + 3
 
 local ChargeAttacks = Player.ChargeAttacks
-local GroundStates = Player.GroundStates
-local GroundToAirStates = Player.GroundToAirStates
 
 function Recovering:start()
     self.flypressed = false
@@ -20,21 +18,19 @@ end
 
 function Recovering:fixedupdate()
     local player = self.character
-    local inair = player.gravity == 0
-    local nextstates = inair and GroundToAirStates or GroundStates
 
     player:turnTowardsJoystick()
     Body.accelerateTowardsVel(player, 0, 0, player.mass or 1)
 
     local caughtprojectile = player:catchProjectileAtJoystick()
     if caughtprojectile then
-        return nextstates.catchProjectile, caughtprojectile
+        return "catchProjectile", caughtprojectile
     end
 
     local chargedattack = not player.attackbutton.down and player:getChargedAttack(ChargeAttacks)
     if chargedattack then
         Mana.releaseCharge(player)
-        return nextstates[chargedattack], player.facedestangle
+        return chargedattack, player.facedestangle
     end
 
     if player.flybutton.pressed then
@@ -49,14 +45,13 @@ end
 function Recovering:timeout(nextstate, a, b, c, d, e, f, g)
     local player = self.character
     local inair = player.gravity == 0
-    local nextstates = inair and GroundToAirStates or GroundStates
 
     local inx, iny = player:getJoystick()
 
     if player.flybutton.down then
         if self.flypressed then
             if self.canfly then
-                return nextstates.toggleFlying
+                return inair and "flyEnd" or "flyStart"
             end
         end
     end
@@ -64,7 +59,7 @@ function Recovering:timeout(nextstate, a, b, c, d, e, f, g)
     if player.sprintbutton.down then
         if self.sprintpressed then
             Face.faceVector(player, inx, iny)
-            return nextstates.run
+            return "run"
         end
     end
 
@@ -72,7 +67,7 @@ function Recovering:timeout(nextstate, a, b, c, d, e, f, g)
         return nextstate, a, b, c, d, e, f, g
     end
 
-    return nextstates.walk
+    return "walk"
 end
 
 return Recovering

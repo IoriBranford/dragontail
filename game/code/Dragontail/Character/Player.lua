@@ -38,50 +38,6 @@ Player.ChargeAttacks = {
     "fireball-storm", "spit-multi-fireball", "spit-fireball"
 }
 
-Player.GroundStates = {
-    walk = "walk",
-    catchProjectile = "catchProjectile",
-    toggleFlying = "flyStart",
-    run = "run",
-    hold = "hold",
-    runIntoEnemy = "running-elbow",
-    runIntoWall = "runIntoWall",
-    runningAttack = "running-kick",
-    throwWeapon = "throwWeapon",
-    stopRunning = "stopRunning",
-    ["tail-swing-cw"] = "tail-swing-cw",
-    ["tail-swing-ccw"] = "tail-swing-ccw",
-    ["holding-kick"] = "holding-kick",
-    ["spinning-throw"] = "spinning-throw",
-    ["fireball-storm"] = "fireball-storm",
-    ["spit-multi-fireball"] = "spit-multi-fireball",
-    ["spit-fireball"] = "spit-fireball",
-    ["running-spit-multi-fireball"] = "running-spit-multi-fireball",
-    ["running-spit-fireball"] = "running-spit-fireball",
-}
-
-Player.GroundToAirStates = {
-    walk = "hover",
-    catchProjectile = "air-catchProjectile",
-    toggleFlying = "flyEnd",
-    run = "air-run",
-    hold = "air-hold",
-    runIntoWall = "air-runIntoWall",
-    runIntoEnemy = "air-running-elbow",
-    runningAttack = "air-running-kick",
-    throwWeapon = "air-throwWeapon",
-    stopRunning = "air-stopRunning",
-    ["tail-swing-cw"] = "air-tail-swing-cw",
-    ["tail-swing-ccw"] = "air-tail-swing-ccw",
-    ["holding-kick"] = "air-holding-kick",
-    ["spinning-throw"] = "air-spinning-throw",
-    ["fireball-storm"] = "air-fireball-storm",
-    ["spit-multi-fireball"] = "air-spit-multi-fireball",
-    ["spit-fireball"]       = "air-spit-fireball",
-    ["running-spit-multi-fireball"] = "air-running-spit-multi-fireball",
-    ["running-spit-fireball"] = "air-running-spit-fireball",
-}
-
 local pi = math.pi
 local cos = math.cos
 local sin = math.sin
@@ -121,16 +77,9 @@ function Player:getNextAttackType(heldenemy, lunging, inair)
     --     comboindex = 3
     -- end
 
-    local combo
-    if inair then
-        combo = heldenemy and AirHoldCombo
-            or lunging and AirLungingCombo
-            or AirCombo
-    else
-        combo = heldenemy and HoldCombo
-            or lunging and LungingCombo
-            or NormalCombo
-    end
+    local combo = heldenemy and HoldCombo
+        or lunging and LungingCombo
+        or NormalCombo
     return combo[comboindex]
 end
 
@@ -770,7 +719,8 @@ function Player:flyStart()
     self.camera.z = self.z - self.camera.bodyheight/2
     self.camera.velz = 0
     self.camera.lockz = true
-    return "hover"
+    self.gravity = 0
+    return "walk"
 end
 
 function Player:flyEnd()
