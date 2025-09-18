@@ -8,7 +8,7 @@ local Body         = require "Dragontail.Character.Component.Body"
 local Attacker     = require "Dragontail.Character.Component.Attacker"
 
 local SpinAndKickEnemy = pooledclass(Behavior)
-SpinAndKickEnemy._nrec = Behavior._nrec + 2
+SpinAndKickEnemy._nrec = Behavior._nrec + 1
 
 function SpinAndKickEnemy:start()
     local player = self.character
@@ -16,29 +16,24 @@ function SpinAndKickEnemy:start()
     Mana.store(player, -(player.attack.manacost or 0))
     StateMachine.start(enemy, player.attack.heldopponentstate or "human-in-spinning-throw", player)
     local holdangle = player.holdangle
-    self.inx = math.cos(holdangle)
-    self.iny = math.sin(holdangle)
-    self:updateTargetDirection()
+    self.throwangle = self:updateThrowAngle() or holdangle
 end
 
-function SpinAndKickEnemy:updateTargetDirection()
+function SpinAndKickEnemy:updateThrowAngle()
     local player = self.character
     local inx, iny = player:getJoystick()
     if inx ~= 0 or iny ~= 0 then
-        self.inx, self.iny = math.norm(inx, iny)
+        self.throwangle = math.atan2(iny, inx)
     end
+    return self.throwangle
 end
 
 function SpinAndKickEnemy:fixedupdate()
     local player = self.character
     local enemy = player.heldopponent
     local holdangle = player.holdangle
-    local spinvel = player.attack.spinspeed or 0
-    local spinmag = math.abs(spinvel)
-    local inx, iny = self.inx, self.iny
-    local holddirx, holddiry = math.cos(holdangle), math.sin(holdangle)
 
-    if math.dot(inx, iny, holddirx, holddiry) >= 1 then
+    if holdangle == self.throwangle then
         Attacker.stopAttack(enemy)
         HoldOpponent.stopHolding(player, enemy)
         enemy.canbeattacked = true
@@ -65,10 +60,14 @@ function SpinAndKickEnemy:fixedupdate()
     -- Body.accelerateTowardsVel(player, targetvelx, targetvely, self.mass or 4)
     player:decelerateXYto0()
 
-    self:updateTargetDirection()
+    local throwangle = self:updateThrowAngle()
 
-    if math.dot(inx, iny, holddirx, holddiry) >= math.cos(spinmag) then
-        holdangle = math.atan2(iny, inx)
+    local spinvel = player.attack.spinspeed or 0
+    local spinmag = math.abs(spinvel)
+    local throwx, throwy = math.cos(throwangle), math.sin(throwangle)
+    local holddirx, holddiry = math.cos(holdangle), math.sin(holdangle)
+    if math.dot(throwx, throwy, holddirx, holddiry) >= math.cos(spinmag) then
+        holdangle = throwangle
     else
         holdangle = holdangle + spinvel
     end
