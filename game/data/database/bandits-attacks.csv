@@ -1,18 +1,18 @@
-attacktype,speed,radius,arc,damage,opponentstun,selfstun,spinspeed,attackwindupinvuln,hittingduration,bestdist,lungespeed,lungedecel,launchspeed,pushbackspeed,opponentstateonhit,opponentstateonfinalhit,swingsound,hitsound,projectiletype,hitspark,guardhitspark,hurtparticle,canjuggle,hurtcolorcycle,deflectsprojectile,hitslayers
-dagger-swing,,32,0.196349540849362,10,12,3,,,9,47,5,1,5,5,,knockedBack,,data/sounds/combat/cut.mp3,,,,particle-blood,,FALSE,FALSE,Object Player Enemy
-spear-thrust,,40,0.196349540849362,10,15,3,,,30,156.25,15,0.5,10,10,knockedBack,knockedBack,,data/sounds/combat/cut.mp3,,,,particle-blood,,FALSE,FALSE,Object Player Enemy
-spear-poke,,40,0.196349540849362,10,15,3,,,20,92.5,10,0.5,5,5,,knockedBack,,data/sounds/combat/cut.mp3,,,,particle-blood,,FALSE,FALSE,Object Player Enemy
-human-thrown,,24,0.785398163397448,10,12,3,,,,,,,5,5,knockedBack,knockedBack,data/sounds/combat/spin.mp3,data/sounds/combat/hit2.mp3,,spark-hit,spark-guard,,,FALSE,FALSE,Object Player Enemy
-axe-swing,4,40,0.785398163397448,25,20,10,,FALSE,8,76,8,1,10,10,thrown,thrown,,data/sounds/combat/cut2.mp3,,,,particle-blood,,FALSE,FALSE,Object Player Enemy
-axe-swing-counter,4,40,0.785398163397448,25,20,10,,TRUE,8,76,8,1,10,10,thrown,thrown,,data/sounds/combat/cut2.mp3,,,,particle-blood,,FALSE,FALSE,Object Player Enemy
-axe-throw,3,200,0,0,0,0,,FALSE,,200,0,1,5,0,,knockedBack,,,thrown-axe,,,,,FALSE,FALSE,Object Player Enemy
-bow-shot,3,300,0,0,0,0,,FALSE,,300,0,1,5,0,,knockedBack,,,bandit-arrow,,,,,FALSE,FALSE,Object Player Enemy
-sling-shot,3,300,0,0,0,0,,FALSE,,300,0,1,5,0,,knockedBack,,,thrown-stone,,,,,FALSE,FALSE,Object Player Enemy
-bandit-boss-charge,,64,0.261799387799149,15,20,5,0,,30,194,16,0.25,10,10,knockedBack,knockedBack,,data/sounds/combat/cut2.mp3,,spark-bighit,spark-guard,particle-blood,,FALSE,TRUE,Object Player Enemy
-bandit-boss-poke,,64,0.261799387799149,15,20,5,0,,9,98,8,0.5,5,10,,knockedBack,,data/sounds/combat/cut.mp3,,spark-hit,spark-guard,particle-blood,,FALSE,TRUE,Object Player Enemy
-bandit-boss-spin-cw,,64,0.785398163397448,20,20,5,0.628318530717959,,20,116.5,10,0.5,5,5,knockedBack,knockedBack,,data/sounds/combat/cut2.mp3,,spark-hit,spark-guard,particle-blood,,FALSE,TRUE,Object Player Enemy
-bandit-boss-spin-ccw,,64,0.785398163397448,20,20,5,-0.628318530717959,,20,116.5,10,0.5,5,5,knockedBack,knockedBack,,data/sounds/combat/cut2.mp3,,spark-hit,spark-guard,particle-blood,,FALSE,TRUE,Object Player Enemy
-forge-fire,,36,1.5707963267949,25,20,3,,,,,,,5,5,knockedBackBurntJuggled,knockedBackBurntJuggled,,data/sounds/combat/firehit.mp3,,spark-hit,,,TRUE,4294904836 4294946828,FALSE,Object Player Enemy
-human-in-spinning-throw,,24,1.5707963267949,10,12,3,,,20,,,,5,5,knockedBack,knockedBack,,data/sounds/combat/hit2.mp3,,spark-hit,spark-guard,,,FALSE,TRUE,Object Player Enemy
-human-in-flaming-spinning-throw,,32,1.5707963267949,10,6,3,,,20,,,,5,10,knockedBack,knockedBack,,data/sounds/combat/firehit.mp3,,spark-hit,spark-guard,,,4294904836 4294946828,TRUE,Object Player Enemy
-shield-bash,,24,0.785398163397448,5,12,3,,,9,79,10,1,10,10,thrown,thrown,,data/sounds/combat/hit3.mp3,,spark-hit,spark-guard,,,FALSE,TRUE,Object Player Enemy
+attacktype,speed,radius,arc,z,height,damage,opponentstun,selfstun,spinspeed,attackwindupinvuln,hittingduration,bestdist,lungespeed,lungedecel,launchspeed,pushbackspeed,opponentstateonhit,opponentstateonfinalhit,swingsound,hitsound,projectiletype,hitspark,guardhitspark,hurtparticle,canjuggle,hurtcolorcycle,deflectsprojectile,hitslayers
+dagger-swing,,32,0.196349540849362,8,8,10,12,3,,,9,47,5,1,5,5,,knockedBack,,data/sounds/combat/cut.mp3,,,,particle-blood,,FALSE,FALSE,Object Player Enemy
+spear-thrust,,40,0.196349540849362,8,8,10,15,3,,,30,156.25,15,0.5,10,10,knockedBack,knockedBack,,data/sounds/combat/cut.mp3,,,,particle-blood,,FALSE,FALSE,Object Player Enemy
+spear-poke,,40,0.196349540849362,8,8,10,15,3,,,20,92.5,10,0.5,5,5,,knockedBack,,data/sounds/combat/cut.mp3,,,,particle-blood,,FALSE,FALSE,Object Player Enemy
+human-thrown,,24,0.785398163397448,8,8,10,12,3,,,,,,,5,5,knockedBack,knockedBack,data/sounds/combat/spin.mp3,data/sounds/combat/hit2.mp3,,spark-hit,spark-guard,,,FALSE,FALSE,Object Player Enemy
+axe-swing,4,40,0.785398163397448,8,8,25,20,10,,FALSE,8,76,8,1,10,10,thrown,thrown,,data/sounds/combat/cut2.mp3,,,,particle-blood,,FALSE,FALSE,Object Player Enemy
+axe-swing-counter,4,40,0.785398163397448,8,8,25,20,10,,TRUE,8,76,8,1,10,10,thrown,thrown,,data/sounds/combat/cut2.mp3,,,,particle-blood,,FALSE,FALSE,Object Player Enemy
+axe-throw,3,200,0,8,8,0,0,0,,FALSE,,200,0,1,5,0,,knockedBack,,,thrown-axe,,,,,FALSE,FALSE,Object Player Enemy
+bow-shot,3,300,0,8,8,0,0,0,,FALSE,,300,0,1,5,0,,knockedBack,,,bandit-arrow,,,,,FALSE,FALSE,Object Player Enemy
+sling-shot,3,300,0,8,8,0,0,0,,FALSE,,300,0,1,5,0,,knockedBack,,,thrown-stone,,,,,FALSE,FALSE,Object Player Enemy
+bandit-boss-charge,,64,0.261799387799149,8,8,15,20,5,0,,30,194,16,0.25,10,10,knockedBack,knockedBack,,data/sounds/combat/cut2.mp3,,spark-bighit,spark-guard,particle-blood,,FALSE,TRUE,Object Player Enemy
+bandit-boss-poke,,64,0.261799387799149,8,8,15,20,5,0,,9,98,8,0.5,5,10,,knockedBack,,data/sounds/combat/cut.mp3,,spark-hit,spark-guard,particle-blood,,FALSE,TRUE,Object Player Enemy
+bandit-boss-spin-cw,,64,0.785398163397448,8,8,20,20,5,0.628318530717959,,20,116.5,10,0.5,5,5,knockedBack,knockedBack,,data/sounds/combat/cut2.mp3,,spark-hit,spark-guard,particle-blood,,FALSE,TRUE,Object Player Enemy
+bandit-boss-spin-ccw,,64,0.785398163397448,8,8,20,20,5,-0.628318530717959,,20,116.5,10,0.5,5,5,knockedBack,knockedBack,,data/sounds/combat/cut2.mp3,,spark-hit,spark-guard,particle-blood,,FALSE,TRUE,Object Player Enemy
+forge-fire,,36,1.5707963267949,8,8,25,20,3,,,,,,,5,5,knockedBackBurntJuggled,knockedBackBurntJuggled,,data/sounds/combat/firehit.mp3,,spark-hit,,,TRUE,4294904836 4294946828,FALSE,Object Player Enemy
+human-in-spinning-throw,,24,1.5707963267949,8,8,10,12,3,,,20,,,,5,5,knockedBack,knockedBack,,data/sounds/combat/hit2.mp3,,spark-hit,spark-guard,,,FALSE,TRUE,Object Player Enemy
+human-in-flaming-spinning-throw,,32,1.5707963267949,8,8,10,6,3,,,20,,,,5,10,knockedBack,knockedBack,,data/sounds/combat/firehit.mp3,,spark-hit,spark-guard,,,4294904836 4294946828,TRUE,Object Player Enemy
+shield-bash,,24,0.785398163397448,8,8,5,12,3,,,9,79,10,1,10,10,thrown,thrown,,data/sounds/combat/hit3.mp3,,spark-hit,spark-guard,,,FALSE,TRUE,Object Player Enemy
