@@ -31,7 +31,7 @@ function PlayerJumping:fixedupdate()
     end
 
     if player.canfly
-    and player.velz < 1
+    and math.abs(player.velz) < 1
     and player.flybutton.down then
         return "flyStart"
     end
