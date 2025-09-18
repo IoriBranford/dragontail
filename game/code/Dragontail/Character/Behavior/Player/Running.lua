@@ -104,8 +104,11 @@ function PlayerRunning:fixedupdate()
         end
     end
 
-    if player.canfly and player:isActionDownAndRecentlyPressed("fly") then
-        return inair and "flyEnd" or "flyStart"
+    if player:isActionDownAndRecentlyPressed("fly") then
+        if inair then
+            return "flyEnd"
+        end
+        return "jump", true
     end
 
     local velx, vely = player.velx, player.vely
