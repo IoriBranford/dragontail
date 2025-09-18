@@ -728,6 +728,30 @@
     "duration": 50
    },
    "#92": {
+    "frame": { "x": 385, "y": 99, "w": 51, "h": 48 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 7, "y": 15, "w": 51, "h": 48 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 50
+   },
+   "#93": {
+    "frame": { "x": 321, "y": 344, "w": 54, "h": 39 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 2, "y": 23, "w": 54, "h": 39 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 50
+   },
+   "#94": {
+    "frame": { "x": 377, "y": 344, "w": 54, "h": 36 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 2, "y": 26, "w": 54, "h": 36 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 50
+   },
+   "#95": {
     "frame": { "x": 438, "y": 99, "w": 1, "h": 1 },
     "rotated": false,
     "trimmed": true,
@@ -738,7 +762,7 @@
  },
  "meta": {
   "app": "http://www.aseprite.org/",
-  "version": "1.3.14.4-x64",
+  "version": "1.3.15.2-x64",
   "image": "spear.png",
   "format": "RGBA8888",
   "size": { "w": 448, "h": 495 },
@@ -775,7 +799,9 @@
    { "name": "Thrust3", "from": 74, "to": 81, "direction": "forward", "color": "#000000ff" },
    { "name": "ThrustWindup3", "from": 74, "to": 77, "direction": "forward", "color": "#000000ff" },
    { "name": "ThrustAttack3", "from": 78, "to": 81, "direction": "forward", "color": "#000000ff" },
-   { "name": "WalkCarrying", "from": 83, "to": 90, "direction": "forward", "color": "#000000ff" }
+   { "name": "WalkCarrying", "from": 83, "to": 90, "direction": "forward", "color": "#000000ff" },
+   { "name": "Crouch", "from": 91, "to": 93, "direction": "forward", "repeat": "1", "color": "#000000ff" },
+   { "name": "CrouchEnd", "from": 91, "to": 93, "direction": "reverse", "color": "#000000ff" }
   ],
   "layers": [
    { "name": "spear", "opacity": 255, "blendMode": "normal" },
