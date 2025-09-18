@@ -156,12 +156,12 @@ function PlayerRunning:fixedupdate()
         if oobx or ooby then
             HoldOpponent.stopHolding(player, heldenemy)
             StateMachine.start(heldenemy, "wallSlammed", player, oobx, ooby)
-            return "runIntoEnemy", player.faceangle
+            return "running-elbow", player.faceangle
         end
     else
         local attacktarget = findSomethingToRunningAttack(player, velx, vely)
         if attacktarget then
-            return "runIntoEnemy", velangle
+            return "running-elbow", velangle
         end
 
         local oobx, ooby = findWallCollision(player)
