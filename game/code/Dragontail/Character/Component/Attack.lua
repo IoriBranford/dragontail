@@ -6,6 +6,8 @@
 ---@field radius number
 ---@field arc number
 ---@field projectile string
+---@field z number
+---@field height number
 ---
 ---Who gets hit by this attack?
 ---@field hitslayers integer

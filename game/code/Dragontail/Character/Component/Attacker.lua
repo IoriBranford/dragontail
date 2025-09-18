@@ -107,8 +107,9 @@ function Attacker:getAttackCylinder(attack, attackangle)
     attackangle = attackangle or self.attackangle
     if not attack or not attackangle then return end
 
-    local z = self.z
-    local h = self.bodyheight
+    local zoffset = attack.z or 0
+    local z = self.z + zoffset
+    local h = attack.height or (self.bodyheight - zoffset)
     local l = attack.radius or 0
     local r = l * math.sin(attack.arc or 0)
     local d = l - r
@@ -198,26 +199,15 @@ function Attacker:drawPieslice(fixedfrac)
 end
 
 function Attacker:drawCircle(fixedfrac)
-    local attackangle = self.attackangle
-    local attackradius = self.attack.radius or 0
-    if attackradius <= 0 or not attackangle then
-        return
+    local x, y, z, r, h = Attacker.getAttackCylinder(self)
+    if x and y and z and r and h then
+        fixedfrac = fixedfrac or 0
+        x = x + self.velx*fixedfrac
+        y = y + self.vely*fixedfrac
+        z = z + self.velz*fixedfrac
+        love.graphics.setColor(1, .5, .5)
+        drawCake(x, y - z, r, h, 0, math.pi)
     end
-
-    fixedfrac = fixedfrac or 0
-    local attackarc = self.attack.arc or 0
-    local attackr = math.max(1, attackradius * math.sin(attackarc))
-    local x = self.x + self.velx*fixedfrac + math.cos(attackangle)*(attackradius - attackr)
-    local y = self.y + self.vely*fixedfrac + math.sin(attackangle)*(attackradius - attackr)
-    local z = self.z + self.velz*fixedfrac
-    local bodyheight = self.bodyheight
-    local screeny = y - z
-    local attackheight = bodyheight
-    love.graphics.setColor(1, .5, .5)
-    love.graphics.circle("line", x, screeny, attackr)
-    love.graphics.circle("line", x, screeny - attackheight, attackr)
-    love.graphics.line(x - attackr, screeny, x - attackr, screeny - attackheight)
-    love.graphics.line(x + attackr, screeny, x + attackr, screeny - attackheight)
 end
 
 return Attacker
