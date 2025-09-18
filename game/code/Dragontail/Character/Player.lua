@@ -326,7 +326,7 @@ function Player:turnTowardsJoystick(movinganimation, notmovinganimation)
     if inx ~= 0 or iny ~= 0 then
         self.facedestangle = atan2(iny, inx)
     else
-        self.facedestangle = self.faceangle
+        self.facedestangle = self.facedestangle or self.faceangle
     end
     local animation
     if self.velx ~= 0 or self.vely ~= 0 then
