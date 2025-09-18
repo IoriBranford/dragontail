@@ -157,6 +157,11 @@ function Characters.fixedupdate()
         end
     end
 
+    for _, hit in ipairs(AttackHits) do
+        hit.target:onHitByAttack(hit)
+        Attacker.onAttackHit(hit.attacker, hit)
+    end
+
     for i = 1, #solids do local solid = solids[i]
         solid.penex, solid.peney, solid.penez = Body.keepInBounds(solid)
     end
@@ -169,11 +174,6 @@ function Characters.fixedupdate()
 
     for i = 1, #allcharacters do local character = allcharacters[i]
         character:fixedupdate()
-    end
-
-    for _, hit in ipairs(AttackHits) do
-        hit.target:onHitByAttack(hit)
-        Attacker.onAttackHit(hit.attacker, hit)
     end
 
     for i = 1, #players do local player = players[i]
