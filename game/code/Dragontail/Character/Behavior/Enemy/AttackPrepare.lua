@@ -23,8 +23,9 @@ function AttackPrepare:fixedupdate()
     local target = enemy.opponents[1]
     local trajectory = self.trajectory
     if trajectory then
+        local targetx, targety, targetz = Shoot.getTargetObjectPosition(enemy, target)
         Shoot.calculateTrajectoryTowardsTarget(enemy, enemy.attack.projectiletype,
-            target.x, target.y, target.z, trajectory)
+            targetx, targety, targetz, trajectory)
 
         local statetime = enemy.state.statetime or 1
         local timeleft = enemy.statetime or 0
