@@ -181,9 +181,37 @@ end
 function Fighter:duringKnockedBack()
 end
 
+function Fighter:getLedgeDirection()
+    local floor = self.floorcharacter
+    local floorpoints = floor.points
+    if not floorpoints then
+        local dsq = math.distsq(self.x, self.y, floor.x, floor.y)
+        local mindist = floor.bodyradius - self.bodyradius
+        if dsq < mindist*mindist then return 0, 0 end
+
+        return self.x - floor.x, self.y - floor.y
+    end
+
+    if not floorpoints.outward then return 0, 0 end
+    local x = self.x - floor.x
+    local y = self.y - floor.y
+    local edgex, edgey, pointa, pointb =
+        math.nearestpolygonpoint(floorpoints, x, y)
+    local edgedsq = math.distsq(edgex, edgey, x, y)
+    if edgedsq > self.bodyradius*self.bodyradius then return 0, 0 end
+
+    local ax = floorpoints[pointa-1]
+    local ay = floorpoints[pointa]
+    local bx = floorpoints[pointb-1]
+    local by = floorpoints[pointb]
+    return math.rot90(bx-ax, by-ay, 1)
+end
+
 function Fighter:knockedBack(thrower, attackangle)
-    local dirx, diry
-    if attackangle then
+    local dirx, diry = self:getLedgeDirection()
+    if dirx ~= 0 or diry ~= 0 then
+        dirx, diry = norm(dirx, diry)
+    elseif attackangle then
         dirx, diry = cos(attackangle), sin(attackangle)
     else
         local velx, vely = thrower.velx, thrower.vely
