@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <tileset firstgid="1" source="../../sprites/player/rose/firespit.tsx"/>
+ <object type="Gui.Cursor" gid="1" width="64" height="64">
+  <properties>
+   <property name="alignx" type="float" value="-1"/>
+   <property name="aligny" type="float" value="0"/>
+  </properties>
+ </object>
+</template>
