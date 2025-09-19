@@ -226,7 +226,7 @@
   </properties>
   <data encoding="base64" compression="zlib">
    <chunk x="0" y="0" width="20" height="12">
-   eJztzlsNgDAUBcExcY9/U30YKCADCyTwRToCNsu2PddCDyPMvO+tcIQzXKEVvRjFrC+O/doN0qYLUw==
+   eJzt0UkRgEAQBME0Me3f1B4GOGQgASL4TkqoorXvRphhhZ3/5Y5whivcYRSzWMWuPuPFA9KmC1M=
   </chunk>
   </data>
  </layer>
@@ -553,8 +553,6 @@ COSTS 1 OR MORE</text>
      <property name="exitpoint" type="object" value="496"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
-     <property name="itemvelx" type="float" value="0"/>
-     <property name="itemvely" type="float" value="12"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
@@ -567,8 +565,6 @@ COSTS 1 OR MORE</text>
      <property name="exitpoint" type="object" value="499"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
-     <property name="itemvelx" type="float" value="0"/>
-     <property name="itemvely" type="float" value="12"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>

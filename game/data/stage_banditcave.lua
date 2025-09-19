@@ -15675,7 +15675,7 @@ return {
       chunks = {
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJztzlsNgDAUBcExcY9/U30YKCADCyTwRToCNsu2PddCDyPMvO+tcIQzXKEVvRjFrC+O/doN0qYLUw=="
+          data = "eJzt0UkRgEAQBME0Me3f1B4GOGQgASL4TkqoorXvRphhhZ3/5Y5whivcYRSzWMWuPuPFA9KmC1M="
         }
       }
     },
@@ -17378,8 +17378,6 @@ return {
                 ["exitpoint"] = { id = 496 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "food-fish",
-                ["itemvelx"] = 0,
-                ["itemvely"] = 12,
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -17403,8 +17401,6 @@ return {
                 ["exitpoint"] = { id = 499 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "food-fish",
-                ["itemvelx"] = 0,
-                ["itemvely"] = 12,
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
