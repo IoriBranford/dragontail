@@ -167,7 +167,7 @@ function Characters.fixedupdate()
     end
 
     for i = 1, #allcharacters do local character = allcharacters[i]
-        character.floorz = Characters.getCylinderFloorZ(
+        character.floorcharacter, character.floorz = Characters.getCylinderFloor(
             character.x, character.y, character.z,
             character.bodyradius, character.bodyheight, character.bodyhitslayers)
     end
@@ -343,17 +343,19 @@ function Characters.keepCylinderIn(x, y, z, r, h, self, iterations)
     return x, y, z, totalpenex, totalpeney, totalpenez
 end
 
-function Characters.getCylinderFloorZ(x, y, z, r, h, solidlayersmask)
-    local floorz
+function Characters.getCylinderFloor(x, y, z, r, h, solidlayersmask)
+    local floorchar
+    local floorz = -math.huge
     for _, solid in ipairs(solids) do
         if bit.band(solid.bodyinlayers, solidlayersmask) ~= 0 then
             local fz = Body.getCylinderFloorZ(solid, x, y, z, r, h)
-            if fz then
-                floorz = math.max(floorz or fz, fz)
+            if fz and fz > floorz then
+                floorchar = solid
+                floorz = fz
             end
         end
     end
-    return floorz
+    return floorchar, floorz
 end
 
 function Characters.hitTriggers(hitter)
