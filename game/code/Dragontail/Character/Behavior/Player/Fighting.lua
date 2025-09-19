@@ -33,6 +33,12 @@ function PlayerFighting:fixedupdate()
         if inair then
             return "flyEnd"
         else
+            if inx ~= 0 or iny ~= 0 then
+                inx, iny = math.norm(inx, iny)
+            end
+            local speed = player.speed
+            player.velx = inx * speed
+            player.vely = iny * speed
             return "jump", true
         end
     end
