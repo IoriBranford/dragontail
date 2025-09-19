@@ -4,7 +4,7 @@ local Config       = require "System.Config"
 local Window       = require "System.Window"
 
 ---@module 'GuiActions'
-local GuiActions = {}
+local GuiActions = class()
 
 function GuiActions.playInvalidSound(gui, element)
     Audio.play(element.invalidsound)

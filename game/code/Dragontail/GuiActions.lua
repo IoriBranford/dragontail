@@ -1,5 +1,6 @@
 local GamePhase = require "Dragontail.GamePhase"
-local GameGuiActions = {}
+local GuiActions= require "Gui.GuiActions"
+local GameGuiActions = class(GuiActions)
 
 function GameGuiActions.unpauseGame()
     GamePhase.setPaused(false)
