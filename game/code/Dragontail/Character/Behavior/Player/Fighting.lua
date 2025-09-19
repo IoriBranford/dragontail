@@ -45,7 +45,7 @@ function PlayerFighting:fixedupdate()
 
     if player:isActionDownAndRecentlyPressed("sprint") then
         Face.faceVector(player, inx, iny)
-        return "run"
+        return "run", nil, true
     end
 
     local chargedattack = not player.attackbutton.down and player:getChargedAttack(ChargeAttacks)

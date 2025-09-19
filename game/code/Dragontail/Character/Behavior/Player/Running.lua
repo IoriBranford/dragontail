@@ -15,11 +15,13 @@ local PlayerRunning = pooledclass(Behavior)
 PlayerRunning._nrec = Behavior._nrec + 5
 
 ---@param heldenemy Enemy?
-function PlayerRunning:start(heldenemy)
+function PlayerRunning:start(heldenemy, isrunstart)
     local player = self.character
-    player.facedestangle = player.faceangle
-    player.velx = player.speed*math.cos(player.faceangle)
-    player.vely = player.speed*math.sin(player.faceangle)
+    if isrunstart then
+        player.facedestangle = player.faceangle
+        player.velx = player.speed*math.cos(player.faceangle)
+        player.vely = player.speed*math.sin(player.faceangle)
+    end
     self.targetvelx = player.velx
     self.targetvely = player.vely
     self.runningtime = 0

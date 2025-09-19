@@ -363,7 +363,7 @@ function Player:getup()
         if inx ~= 0 or iny ~= 0 then
             Face.faceAngle(self, atan2(iny, inx))
         end
-        return "run"
+        return "run", nil, true
     end
     if not self.attackbutton.down then
         local chargedattack, angle = self:getReversalChargedAttack()
