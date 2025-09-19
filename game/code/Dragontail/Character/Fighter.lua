@@ -61,7 +61,8 @@ function Fighter:init()
 end
 
 function Fighter:fixedupdate()
-    if self:isCylinderFullyOnCamera(self.camera) then
+    if not self.enteredcamera and self:isCylinderFullyOnCamera(self.camera) then
+        self.enteredcamera = true
         self.bodyhitslayers = bit.bor(self.bodyhitslayers, CollisionMask.get("Camera"))
     end
     Character.fixedupdate(self)

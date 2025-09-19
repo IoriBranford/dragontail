@@ -226,6 +226,11 @@ function Enemy:duringApproach(target)
 end
 
 function Enemy:leave(exitx, exity)
+    if self.enteredcamera then
+        self.bodyhitslayers = bit.band(self.bodyhitslayers,
+            bit.bnot(CollisionMask.get("Camera")))
+    end
+
     self.recoverai = "leave"
     exitx = exitx or self.exitpoint
     if exitx then
