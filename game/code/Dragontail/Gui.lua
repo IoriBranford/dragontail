@@ -1,5 +1,8 @@
 local Tiled = require "Tiled"
 local Gui   = require "Gui"
+local GuiObject = require "Gui.GuiObject"
+
+GuiObject.actionsmodule = "Dragontail.GuiActions"
 
 local map = Tiled.Map.load("data/gui.lua")
 Tiled.Assets.markMapAssetsPermanent(map, true)

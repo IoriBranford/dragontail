@@ -69,11 +69,6 @@
                     "value": ""
                 },
                 {
-                    "name": "actionsmodule",
-                    "type": "string",
-                    "value": "Dragontail.GuiActions"
-                },
-                {
                     "name": "disabled",
                     "type": "bool",
                     "value": false
@@ -99,7 +94,7 @@
                 {
                     "name": "alignx",
                     "type": "float",
-                    "value": -1
+                    "value": 0
                 },
                 {
                     "name": "aligny",
@@ -157,11 +152,6 @@
             "drawFill": true,
             "id": 13,
             "members": [
-                {
-                    "name": "actionsmodule",
-                    "type": "string",
-                    "value": "Dragontail.GuiActions"
-                },
                 {
                     "name": "backaction",
                     "type": "string",
