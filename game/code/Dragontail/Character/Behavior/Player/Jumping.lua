@@ -19,6 +19,9 @@ end
 function PlayerJumping:fixedupdate()
     local player = self.character
     if player.z <= player.floorz then
+        if player.sprintbutton.down then
+            return "run"
+        end
         Audio.play(player.jumplandsound)
         return "walk"
     end
