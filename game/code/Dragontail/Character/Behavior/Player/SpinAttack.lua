@@ -84,7 +84,7 @@ function PlayerSpinAttack:timeout(nextstate, a, b, c, d, e, f, g)
         return nextstate, a, b, c, d, e, f, g
     end
 
-    return player.gravity == 0 and "hover" or "walk"
+    return "walk"
 end
 
 return PlayerSpinAttack
