@@ -21,8 +21,6 @@ function PlayerFighting:fixedupdate()
     local inair = player.gravity == 0
 
     local inx, iny = player:getJoystick()
-    player:turnTowardsJoystick("Walk", "Stand")
-    player:accelerateTowardsJoystick()
 
     local caughtprojectile = player:catchProjectileAtJoystick()
     if caughtprojectile then
@@ -72,6 +70,9 @@ function PlayerFighting:fixedupdate()
         Audio.play(player.holdsound)
         return "hold", opponenttohold
     end
+
+    player:turnTowardsJoystick("Walk", "Stand")
+    player:accelerateTowardsJoystick()
 end
 
 return PlayerFighting
