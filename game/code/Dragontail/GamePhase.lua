@@ -95,11 +95,6 @@ function keypressed.f2()
     love.event.loadphase("Dragontail.GamePhase")
 end
 
-function keypressed.p()
-    GamePhase.setPaused(not paused)
-end
-keypressed.escape = keypressed.p
-
 function keypressed.s()
     if love.keyboard.isDown("lctrl") then
         local filename = os.date("screenshot-%Y%m%d-%H%M%S.png")
@@ -125,6 +120,13 @@ function GamePhase.keypressed(key)
     if kp then
         kp()
         return
+    end
+
+    if key == "escape" then
+        if not paused then
+            GamePhase.setPaused(true)
+            return
+        end
     end
 
     Gui:keypressed(key)
