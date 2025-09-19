@@ -579,7 +579,7 @@ function Player:hold(enemy)
         -- self.runenergy = math.min(self.runenergymax, self.runenergy + 1)
         if runpressed then --and self.runenergy >= self.runenergycost then
             Combo.reset(self)
-            return "running-with-enemy", enemy
+            return "running-with-enemy", enemy, true
         end
         local chargedattack = not self.attackbutton.down and self:getChargedAttack(ChargeAttacks)
         if chargedattack then
