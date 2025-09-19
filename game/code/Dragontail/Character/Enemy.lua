@@ -39,13 +39,6 @@ local yield = coroutine.yield
 
 local lm_random = love.math.random
 
-function Enemy:fixedupdate()
-    Character.fixedupdate(self)
-    if self:isCylinderFullyOnCamera(self.camera) then
-        self.enteredcamera = true
-    end
-end
-
 function Enemy:getAttackFlashColor(t, canbeattacked)
     local flash = (1+cos(t))/2
     if canbeattacked then
