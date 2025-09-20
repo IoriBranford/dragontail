@@ -379,16 +379,19 @@ function Fighter:afterWallSlammed(thrower)
 end
 
 function Fighter:wallSlammed(thrower, oobx, ooby)
-    oobx, ooby = norm(oobx or 0, ooby or 0)
-    local bodyradius = self.bodyradius or 1
-    Characters.spawn(
-        {
-            type = "spark-bighit",
-            x = self.x + oobx*bodyradius,
-            y = self.y + ooby*bodyradius,
-            z = self.z + self.bodyheight/2
-        }
-    )
+    oobx, ooby = oobx or 0, ooby or 0
+    if oobx ~= 0 or ooby ~= 0 then
+        oobx, ooby = norm(oobx, ooby)
+        local bodyradius = self.bodyradius or 1
+        Characters.spawn(
+            {
+                type = "spark-bighit",
+                x = self.x + oobx*bodyradius,
+                y = self.y + ooby*bodyradius,
+                z = self.z + self.bodyheight/2
+            }
+        )
+    end
     self.health = self.health - (self.wallslamdamage or 25)
     self.velx, self.vely, self.velz = 0, 0, 0
     self:stopAttack()
