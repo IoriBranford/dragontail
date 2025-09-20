@@ -44,10 +44,10 @@ function SpinAndKickEnemy:fixedupdate()
         return "holding-kick", holdangle
     end
 
-    if enemy.penex or enemy.peney then
+    if ((enemy.penex or 0) ~= 0) or ((enemy.peney or 0) ~= 0) then
         Attacker.stopAttack(enemy)
         HoldOpponent.stopHolding(player, enemy)
-        StateMachine.start(enemy, "wallBump", player, enemy.penex, enemy.peney)
+        StateMachine.start(enemy, "wallSlammed", player, enemy.penex, enemy.peney)
         return "swingEnemyIntoWall"
     end
 
