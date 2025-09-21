@@ -71,8 +71,8 @@ function PlayerFighting:fixedupdate()
         return "hold", opponenttohold
     end
 
-    player:turnTowardsJoystick("Walk", "Stand")
     player:accelerateTowardsJoystick()
+    player:turnTowardsJoystick("Walk", "Stand")
 end
 
 return PlayerFighting
