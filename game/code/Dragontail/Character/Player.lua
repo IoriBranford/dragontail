@@ -53,7 +53,7 @@ local testcircles = math.testcircles
 local yield = coroutine.yield
 
 local NormalCombo = {"kick", "kick", "tail-swing-cw"}
-local LungingCombo = {"kick", "kick", "lunging-tail-swing-cw"}
+local LungingCombo = {"lunging-kick", "lunging-kick", "lunging-tail-swing-cw"}
 local SpecialCombo = {"spit-fireball", "spit-fireball", "fireball-spin-cw"}
 local HoldCombo = {"holding-knee", "holding-knee", "spinning-throw"}
 local RunningSpecialAttacks = { "running-spit-fat-fireball", "running-spit-fireball" }
@@ -183,7 +183,7 @@ function Player:getAngleToBestTarget(lookangle, targets)
 end
 
 function Player:init()
-    self.inputlog = InputLog(6)
+    self.inputlog = InputLog(10)
     self.attackbutton = Inputs.getAction("attack")
     self.sprintbutton = Inputs.getAction("sprint")
     self.flybutton = Inputs.getAction("fly")
