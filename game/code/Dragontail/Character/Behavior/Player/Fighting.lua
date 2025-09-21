@@ -27,7 +27,7 @@ function PlayerFighting:fixedupdate()
         return "catchProjectile", caughtprojectile
     end
 
-    if player:isActionDownAndRecentlyPressed("fly") then
+    if player:consumeActionDownAndRecentlyPressed("fly") then
         if inair then
             return "flyEnd"
         else
@@ -41,7 +41,7 @@ function PlayerFighting:fixedupdate()
         end
     end
 
-    if player:isActionDownAndRecentlyPressed("sprint") then
+    if player:consumeActionDownAndRecentlyPressed("sprint") then
         Face.faceVector(player, inx, iny)
         return "run", nil, true
     end
@@ -54,7 +54,7 @@ function PlayerFighting:fixedupdate()
         return chargedattack, attackangle
     end
 
-    if player:isActionRecentlyPressed("attack") then
+    if player:consumeActionRecentlyPressed("attack") then
         local attackangle = inx == 0 and iny == 0
             and player.faceangle or math.atan2(iny, inx)
         if player.weaponinhand then

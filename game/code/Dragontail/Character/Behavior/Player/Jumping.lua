@@ -39,7 +39,7 @@ function PlayerJumping:fixedupdate()
     local faceangle, facedestangle =
         player:turnTowardsJoystick(animation, animation)
 
-    if player:isActionRecentlyPressed("attack") then
+    if player:consumeActionRecentlyPressed("attack") then
         if player.numjumpattacks < 1 then
             player.numjumpattacks = player.numjumpattacks + 1
             local spindir = math.det(math.cos(faceangle), math.sin(faceangle),

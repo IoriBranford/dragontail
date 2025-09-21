@@ -106,7 +106,7 @@ function PlayerRunning:fixedupdate()
         end
     end
 
-    if player:isActionDownAndRecentlyPressed("fly") then
+    if player:consumeActionDownAndRecentlyPressed("fly") then
         if inair then
             return "flyEnd"
         end
@@ -122,7 +122,7 @@ function PlayerRunning:fixedupdate()
         return chargedattack, player.facedestangle
     end
 
-    if player:isActionRecentlyPressed("attack") then
+    if player:consumeActionRecentlyPressed("attack") then
         if heldenemy then
             heldenemy:stopAttack()
             -- HoldOpponent.stopHolding(player, heldenemy)
