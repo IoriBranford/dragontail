@@ -162,10 +162,6 @@ function Characters.fixedupdate()
         Attacker.onAttackHit(hit.attacker, hit)
     end
 
-    for i = 1, #solids do local solid = solids[i]
-        solid.penex, solid.peney, solid.penez = Body.keepInBounds(solid)
-    end
-
     for i = 1, #allcharacters do local character = allcharacters[i]
         character.floorcharacter, character.floorz = Characters.getCylinderFloor(
             character.x, character.y, character.z,
@@ -179,6 +175,15 @@ function Characters.fixedupdate()
     for i = 1, #players do local player = players[i]
         AttackTarget.updateSlots(player)
         Characters.hitTriggers(player)
+    end
+
+    for i = 1, #solids do local solid = solids[i]
+        local hitvelx, hitvely, hitvelz,
+            penex, peney, penez = Body.predictCollisionVelocity(solid)
+        solid.velx = solid.velx + hitvelx
+        solid.vely = solid.vely + hitvely
+        solid.velz = solid.velz + hitvelz
+        solid.penex, solid.peney, solid.penez = penex, peney, penez
     end
 
     Characters.fixedupdateLostEnemies()
