@@ -14,7 +14,6 @@ local Color                = require "Tiled.Color"
 local Guard                = require "Dragontail.Character.Action.Guard"
 local Character            = require "Dragontail.Character"
 local WeaponInHand         = require "Dragontail.Character.Component.WeaponInHand"
-local CollisionMask        = require "Dragontail.Character.Component.Body.CollisionMask"
 
 ---@class Dash
 ---@field dashsound string?
@@ -58,14 +57,6 @@ local dist = math.dist
 function Fighter:init()
     Common.init(self)
     Face.init(self)
-end
-
-function Fighter:fixedupdate()
-    if not self.enteredcamera and self:isCylinderFullyOnCamera(self.camera) then
-        self.enteredcamera = true
-        self.bodyhitslayers = bit.bor(self.bodyhitslayers, CollisionMask.get("Camera"))
-    end
-    Character.fixedupdate(self)
 end
 
 function Fighter:initAseprite()
