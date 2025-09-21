@@ -8,6 +8,7 @@ local Body        = require "Dragontail.Character.Component.Body"
 local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
 local Face                 = require "Dragontail.Character.Component.Face"
 local Mana = require "Dragontail.Character.Component.Mana"
+local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask"
 
 local yield = coroutine.yield
 local wait = coroutine.wait
@@ -53,6 +54,13 @@ local Common = class(Character)
 
 function Common:idle()
     while true do yield() end
+end
+
+function Common:stayOnCameraOnceEntered()
+    if not self.enteredcamera and self:isCylinderFullyOnCamera(self.camera) then
+        self.enteredcamera = true
+        self.bodyhitslayers = bit.bor(self.bodyhitslayers, CollisionMask.get("Camera"))
+    end
 end
 
 function Common:decelerateXYto0()
