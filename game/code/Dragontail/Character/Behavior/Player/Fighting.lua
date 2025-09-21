@@ -49,20 +49,23 @@ function PlayerFighting:fixedupdate()
     local chargedattack = not player.attackbutton.down and player:getChargedAttack(ChargeAttacks)
     if chargedattack then
         Mana.releaseCharge(player)
-        return chargedattack, player.facedestangle
+        local attackangle = inx == 0 and iny == 0
+            and player.faceangle or math.atan2(iny, inx)
+        return chargedattack, attackangle
     end
 
     if player:isActionRecentlyPressed("attack") then
-        local attackangle = player.facedestangle
+        local attackangle = inx == 0 and iny == 0
+            and player.faceangle or math.atan2(iny, inx)
         if player.weaponinhand then
             attackangle = player:getAngleToBestTarget(attackangle) or attackangle
         end
         player.faceangle = attackangle
         player.facedestangle = attackangle
         if player.weaponinhand then
-            return "throwWeapon", player.facedestangle, 1, 1
+            return "throwWeapon", attackangle, 1, 1
         end
-        return player:doComboAttack(player.facedestangle, nil, inx ~= 0 or iny ~= 0, inair)
+        return player:doComboAttack(attackangle, nil, inx ~= 0 or iny ~= 0, inair)
     end
 
     local opponenttohold = HoldOpponent.findOpponentToHold(player, inx, iny)
