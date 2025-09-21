@@ -18892,8 +18892,6 @@ return {
                 ["exitpoint"] = { id = 296 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "food-fish",
-                ["itemvelx"] = 0,
-                ["itemvely"] = 4,
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -18917,8 +18915,6 @@ return {
                 ["exitpoint"] = { id = 295 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "food-fish",
-                ["itemvelx"] = 0,
-                ["itemvely"] = 4,
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -20763,8 +20759,6 @@ return {
                 ["exitpoint"] = { id = 415 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "mana-peppers",
-                ["itemvelx"] = 0,
-                ["itemvely"] = 5,
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -20788,8 +20782,6 @@ return {
                 ["exitpoint"] = { id = 417 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "food-fish",
-                ["itemvelx"] = 0,
-                ["itemvely"] = 5,
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -20885,8 +20877,6 @@ return {
                 ["exitpoint"] = { id = 402 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "mana-peppers",
-                ["itemvelx"] = 0,
-                ["itemvely"] = 5,
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -20910,8 +20900,6 @@ return {
                 ["exitpoint"] = { id = 405 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "food-fish",
-                ["itemvelx"] = 0,
-                ["itemvely"] = 5,
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -20935,8 +20923,6 @@ return {
                 ["exitpoint"] = { id = 408 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "mana-peppers",
-                ["itemvelx"] = 0,
-                ["itemvely"] = 5,
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }

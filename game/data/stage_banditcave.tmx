@@ -974,8 +974,6 @@ to sprint past archers</text>
      <property name="exitpoint" type="object" value="296"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
-     <property name="itemvelx" type="float" value="0"/>
-     <property name="itemvely" type="float" value="4"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
@@ -988,8 +986,6 @@ to sprint past archers</text>
      <property name="exitpoint" type="object" value="295"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
-     <property name="itemvelx" type="float" value="0"/>
-     <property name="itemvely" type="float" value="4"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
@@ -1444,8 +1440,6 @@ to sprint past archers</text>
      <property name="exitpoint" type="object" value="415"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="mana-peppers"/>
-     <property name="itemvelx" type="float" value="0"/>
-     <property name="itemvely" type="float" value="5"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
@@ -1458,8 +1452,6 @@ to sprint past archers</text>
      <property name="exitpoint" type="object" value="417"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
-     <property name="itemvelx" type="float" value="0"/>
-     <property name="itemvely" type="float" value="5"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
@@ -1492,8 +1484,6 @@ to sprint past archers</text>
      <property name="exitpoint" type="object" value="402"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="mana-peppers"/>
-     <property name="itemvelx" type="float" value="0"/>
-     <property name="itemvely" type="float" value="5"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
@@ -1506,8 +1496,6 @@ to sprint past archers</text>
      <property name="exitpoint" type="object" value="405"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
-     <property name="itemvelx" type="float" value="0"/>
-     <property name="itemvely" type="float" value="5"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
@@ -1520,8 +1508,6 @@ to sprint past archers</text>
      <property name="exitpoint" type="object" value="408"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="mana-peppers"/>
-     <property name="itemvelx" type="float" value="0"/>
-     <property name="itemvely" type="float" value="5"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
