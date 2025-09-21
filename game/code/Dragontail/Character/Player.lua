@@ -254,6 +254,25 @@ function Player:isActionDownAndRecentlyPressed(actionname)
         action.down and self:isActionRecentlyPressed(actionname)
 end
 
+function Player:consumeActionRecentlyPressed(actionname)
+    local i = self.inputlog:findActionState(actionname, "pressed")
+    if i then
+        self.inputlog:clearActionLog(actionname)
+    end
+    return i
+end
+
+function Player:consumeActionDownAndRecentlyPressed(actionname)
+    local action = Inputs.getAction(actionname)
+    if not action then return false end
+    local recentlypressed = action.pressed or
+        action.down and self:isActionRecentlyPressed(actionname)
+    if recentlypressed then
+        self.inputlog:clearActionLog(actionname)
+    end
+    return recentlypressed
+end
+
 function Player:tryToGiveWeapon(weapontype)
     if self.inventory:add(weapontype) then
         Audio.play(self.holdsound)
