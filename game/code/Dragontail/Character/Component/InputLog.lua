@@ -1,5 +1,4 @@
----@class ActionLog
----@field [integer] "pressed"|"released"|"down"|"up"
+---@alias ActionState "pressed"|"released"|"down"|"up"
 
 ---@class InputLog
 ---@field length integer
@@ -7,7 +6,7 @@
 ---@field sumx number
 ---@field sumy number
 ---@field [integer] number joystick log; x at 2*position-1, y at 2*position
----@field actionlogs {[string]:ActionLog}
+---@field actionlogs {[string]:ActionState[]}
 ---@overload fun(length:integer|10):InputLog
 local InputLog = class()
 
@@ -118,6 +117,15 @@ function InputLog:clear()
         self[i] = nil
     end
     self:_init(self.length)
+end
+
+function InputLog:clearActionLog(actionname)
+    local log = self.actionlogs[actionname]
+    if log then
+        for i = 1, #log do
+            log[i] = "up"
+        end
+    end
 end
 
 return InputLog
