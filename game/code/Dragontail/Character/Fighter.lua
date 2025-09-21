@@ -224,7 +224,7 @@ function Fighter:knockedBack(thrower, attackangle)
     self.hurtstun = 0
     self:stopAttack()
     self.thrower = thrower
-    local thrownspeed = thrower.attack.launchspeed or 10
+    local thrownspeed = thrower.attack.launchspeed or 5
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
     self.velz = thrower.attackpopupspeed or 4
     local oobx, ooby, oobz
