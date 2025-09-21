@@ -32,7 +32,7 @@ function TakingHit:start(hit)
 
     local pushbackspeed = attack.pushbackspeed or 0
     if pushbackspeed == "attackerspeed" then
-        pushbackspeed = math.floor(math.len(attacker.velx, attacker.vely))
+        pushbackspeed = math.ceil(math.len(attacker.velx, attacker.vely))
     end
     fighter.hurtstun = (attack.opponentstun or 3) - math.abs(pushbackspeed)
 
