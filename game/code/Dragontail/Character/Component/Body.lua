@@ -86,7 +86,7 @@ function Body:accelerate(ax, ay)
 end
 
 function Body:accelerateTowardsVel(targetvelx, targetvely, mass, e)
-    mass = math.max(mass, 1)
+    mass = math.max(mass or self.mass or 1, 1)
     e = e or (1/256)
     local accelx = (targetvelx - self.velx) / mass
     local accely = (targetvely - self.vely) / mass
@@ -103,7 +103,7 @@ function Body:accelerateTowardsVel(targetvelx, targetvely, mass, e)
 end
 
 function Body:accelerateTowardsVel3(targetvelx, targetvely, targetvelz, mass, e)
-    mass = math.max(mass, 1)
+    mass = math.max(mass or self.mass or 1, 1)
     e = e or (1/256)
     local accelx = (targetvelx - self.velx) / mass
     local accely = (targetvely - self.vely) / mass
