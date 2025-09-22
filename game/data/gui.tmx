@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="16" nextobjectid="89">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="16" nextobjectid="90">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -266,18 +266,25 @@ ALL CONTENT SUBJECT TO CHANGE</text>
    <object id="83" name="name" x="192" y="18" width="96" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">DEBUG</text>
    </object>
-   <object id="85" template="gui/menu/settings/Label.tx" name="Show hitboxes" x="128" y="72">
+   <object id="85" template="gui/menu/settings/Label.tx" name="Show hitboxes" x="160" y="72">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Show hitboxes</text>
    </object>
-   <object id="84" template="gui/menu/settings/Slider.tx" name="drawbodies" type="Gui.Slider" x="304" y="72" width="48" height="18">
+   <object id="89" template="gui/menu/settings/Label.tx" name="Heal player" type="Gui.Button" x="128" y="99">
+    <properties>
+     <property name="action" value="healPlayers"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Heal player</text>
+   </object>
+   <object id="84" template="gui/menu/settings/Slider.tx" name="drawbodies" type="Gui.Slider" x="128" y="72" width="32" height="18">
     <properties>
      <property name="configkey" value="drawbodies"/>
     </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">OFF</text>
    </object>
    <object id="87" template="gui/menu/Button_closeMenu.tx" type="Gui.Button" x="132" y="202.5"/>
    <object id="88" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="100" y="81"/>
   </objectgroup>
-  <objectgroup draworder="index" id="13" name="input">
+  <objectgroup draworder="index" id="13" name="input" visible="0">
    <object id="67" name="joystickdirection" x="55" y="243">
     <properties>
      <property name="color" type="color" value="#ffffffff"/>
@@ -300,7 +307,7 @@ ALL CONTENT SUBJECT TO CHANGE</text>
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">SPRINT</text>
    </object>
   </objectgroup>
-  <objectgroup id="11" name="gameover" class="Gui.Menu">
+  <objectgroup id="11" name="gameover" class="Gui.Menu" visible="0">
    <object id="77" template="gui/menu/Panel.tx" x="184" y="99" width="112" height="72">
     <properties>
      <property name="color" type="color" value="#80c52021"/>
