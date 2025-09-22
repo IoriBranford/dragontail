@@ -76,7 +76,7 @@ function SpinAndKickEnemy:fixedupdate()
     Face.faceAngle(player, holdangle, player.state.animation)
 
     player.holdangle = holdangle
-    HoldOpponent.updateOpponentPosition(player)
+    HoldOpponent.updateVelocities(player)
 end
 
 return SpinAndKickEnemy

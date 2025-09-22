@@ -98,7 +98,7 @@ function PlayerRunning:fixedupdate()
 
     if heldenemy then
         player.holdangle = player.faceangle
-        HoldOpponent.updateOpponentPosition(player)
+        HoldOpponent.updateVelocities(player)
     else
         local caughtprojectile = player:catchProjectileAtJoystick()
         if caughtprojectile then
@@ -157,7 +157,7 @@ function PlayerRunning:fixedupdate()
     end
 
     if heldenemy then
-        local oobx, ooby = HoldOpponent.handleOpponentCollision(player)
+        local oobx, ooby = heldenemy.penex, heldenemy.peney
         if oobx or ooby then
             HoldOpponent.stopHolding(player, heldenemy)
             StateMachine.start(heldenemy, "wallSlammed", player, oobx, ooby)

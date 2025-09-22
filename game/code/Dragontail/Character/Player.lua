@@ -585,8 +585,7 @@ function Player:hold(enemy)
         holdangle = math.rotangletowards(holdangle, holddestangle, pi/64)
         self.holdangle = holdangle
         holddirx, holddiry = cos(holdangle), sin(holdangle)
-        HoldOpponent.updateOpponentPosition(self)
-        HoldOpponent.handleOpponentCollision(self)
+        HoldOpponent.updateVelocities(self)
         enemy.velz = 0
 
         local holdanimation = (velx ~= 0 or vely ~= 0) and "holdwalk" or "hold"
