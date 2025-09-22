@@ -1,0 +1,185 @@
+{
+  "exportTimestamp": "2025-09-22T23-33-59",
+  "bodyType": "male",
+  "standardAnimations": {
+    "exported": {
+      "spellcast": [
+        "010 body bodies male light.png",
+        "020 legs pants2 male bluegray.png",
+        "025 feet boots revised male black.png",
+        "035 torso clothes longsleeve longsleeve2 male bluegray.png",
+        "070 arms gloves male black.png",
+        "100 head heads human male light.png",
+        "101 head faces male closing light.png",
+        "130 hat cloth hood adult hood_black.png"
+      ],
+      "thrust": [
+        "010 body bodies male light.png",
+        "020 legs pants2 male bluegray.png",
+        "025 feet boots revised male black.png",
+        "035 torso clothes longsleeve longsleeve2 male bluegray.png",
+        "070 arms gloves male black.png",
+        "100 head heads human male light.png",
+        "101 head faces male closing light.png",
+        "130 hat cloth hood adult hood_black.png",
+        "140 weapon sword dagger dagger.png"
+      ],
+      "walk": [
+        "009 weapon sword dagger behind dagger.png",
+        "010 body bodies male light.png",
+        "020 legs pants2 male bluegray.png",
+        "025 feet boots revised male black.png",
+        "035 torso clothes longsleeve longsleeve2 male bluegray.png",
+        "070 arms gloves male black.png",
+        "100 head heads human male light.png",
+        "101 head faces male closing light.png",
+        "130 hat cloth hood adult hood_black.png",
+        "140 weapon sword dagger dagger.png"
+      ],
+      "slash": [
+        "009 weapon sword dagger behind dagger.png",
+        "010 body bodies male light.png",
+        "020 legs pants2 male bluegray.png",
+        "025 feet boots revised male black.png",
+        "035 torso clothes longsleeve longsleeve2 male bluegray.png",
+        "070 arms gloves male black.png",
+        "100 head heads human male light.png",
+        "101 head faces male closing light.png",
+        "130 hat cloth hood adult hood_black.png",
+        "140 weapon sword dagger dagger.png"
+      ],
+      "shoot": [
+        "010 body bodies male light.png",
+        "020 legs pants2 male bluegray.png",
+        "025 feet boots revised male black.png",
+        "035 torso clothes longsleeve longsleeve2 male bluegray.png",
+        "070 arms gloves male black.png",
+        "100 head heads human male light.png",
+        "101 head faces male closing light.png",
+        "130 hat cloth hood adult hood_black.png"
+      ],
+      "hurt": [
+        "010 body bodies male light.png",
+        "020 legs pants2 male bluegray.png",
+        "025 feet boots revised male black.png",
+        "035 torso clothes longsleeve longsleeve2 male bluegray.png",
+        "070 arms gloves male black.png",
+        "100 head heads human male light.png",
+        "130 hat cloth hood adult hood_black.png",
+        "140 weapon sword dagger dagger.png"
+      ],
+      "climb": [
+        "010 body bodies male light.png",
+        "020 legs pants2 male bluegray.png",
+        "025 feet boots revised male black.png",
+        "035 torso clothes longsleeve longsleeve2 male bluegray.png",
+        "070 arms gloves male black.png",
+        "100 head heads human male light.png",
+        "130 hat cloth hood adult hood_black.png"
+      ],
+      "idle": [
+        "010 body bodies male light.png",
+        "020 legs pants2 male bluegray.png",
+        "025 feet boots revised male black.png",
+        "035 torso clothes longsleeve longsleeve2 male bluegray.png",
+        "070 arms gloves male black.png",
+        "100 head heads human male light.png",
+        "101 head faces male closing light.png",
+        "130 hat cloth hood adult hood_black.png"
+      ],
+      "jump": [
+        "010 body bodies male light.png",
+        "020 legs pants2 male bluegray.png",
+        "025 feet boots revised male black.png",
+        "035 torso clothes longsleeve longsleeve2 male bluegray.png",
+        "070 arms gloves male black.png",
+        "100 head heads human male light.png",
+        "101 head faces male closing light.png",
+        "130 hat cloth hood adult hood_black.png"
+      ],
+      "sit": [
+        "010 body bodies male light.png",
+        "020 legs pants2 male bluegray.png",
+        "025 feet boots revised male black.png",
+        "035 torso clothes longsleeve longsleeve2 male bluegray.png",
+        "070 arms gloves male black.png",
+        "100 head heads human male light.png",
+        "101 head faces male closing light.png",
+        "130 hat cloth hood adult hood_black.png"
+      ],
+      "emote": [
+        "010 body bodies male light.png",
+        "020 legs pants2 male bluegray.png",
+        "025 feet boots revised male black.png",
+        "035 torso clothes longsleeve longsleeve2 male bluegray.png",
+        "070 arms gloves male black.png",
+        "100 head heads human male light.png",
+        "101 head faces male closing light.png",
+        "130 hat cloth hood adult hood_black.png"
+      ],
+      "run": [
+        "010 body bodies male light.png",
+        "020 legs pants2 male bluegray.png",
+        "025 feet boots revised male black.png",
+        "035 torso clothes longsleeve longsleeve2 male bluegray.png",
+        "070 arms gloves male black.png",
+        "100 head heads human male light.png",
+        "101 head faces male closing light.png",
+        "130 hat cloth hood adult hood_black.png"
+      ],
+      "combat_idle": [
+        "010 body bodies male light.png",
+        "020 legs pants2 male bluegray.png",
+        "025 feet boots revised male black.png",
+        "035 torso clothes longsleeve longsleeve2 male bluegray.png",
+        "070 arms gloves male black.png",
+        "100 head heads human male light.png",
+        "101 head faces male closing light.png",
+        "130 hat cloth hood adult hood_black.png"
+      ],
+      "backslash": [
+        "010 body bodies male light.png",
+        "020 legs pants2 male bluegray.png",
+        "025 feet boots revised male black.png",
+        "035 torso clothes longsleeve longsleeve2 male bluegray.png",
+        "070 arms gloves male black.png",
+        "100 head heads human male light.png",
+        "101 head faces male closing light.png",
+        "130 hat cloth hood adult hood_black.png"
+      ],
+      "halfslash": [
+        "010 body bodies male light.png",
+        "020 legs pants2 male bluegray.png",
+        "025 feet boots revised male black.png",
+        "035 torso clothes longsleeve longsleeve2 male bluegray.png",
+        "070 arms gloves male black.png",
+        "100 head heads human male light.png",
+        "101 head faces male closing light.png",
+        "130 hat cloth hood adult hood_black.png"
+      ]
+    },
+    "failed": {}
+  },
+  "customAnimations": {
+    "exported": {},
+    "failed": {}
+  },
+  "frameSize": 64,
+  "frameCounts": {
+    "spellcast": 7,
+    "thrust": 8,
+    "walk": 9,
+    "slash": 6,
+    "shoot": 13,
+    "hurt": 6,
+    "climb": 6,
+    "idle": 2,
+    "jump": 5,
+    "sit": 3,
+    "emote": 3,
+    "run": 8,
+    "combat_idle": 2,
+    "backslash": 13,
+    "halfslash": 7
+  }
+}
