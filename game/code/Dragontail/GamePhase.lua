@@ -159,9 +159,9 @@ end
 function GamePhase.fixedupdate()
     if not paused then
         Stage.fixedupdate()
-        Stage.fixedupdateGui(Gui)
         fixedupdateInputDisplay()
     end
+    Stage.fixedupdateGui(Gui)
     Gui:fixedupdate()
 end
 
