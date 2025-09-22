@@ -82,6 +82,28 @@ function HoldOpponent:findOpponentToHold(inx, iny)
     end
 end
 
+function HoldOpponent:updateVelocities()
+    local enemy = self.heldopponent
+    if not enemy then return end
+
+    local radii = self.bodyradius + enemy.bodyradius + 1
+    local ox = radii*math.cos(self.holdangle or 0)
+    local oy = radii*math.sin(self.holdangle or 0)
+    local oz = math.max(0, (self.bodyheight - enemy.bodyheight)/2)
+    local pvelx, pvely, pvelz = self.velx, self.vely, self.velz
+    enemy.velx = self.x + pvelx + ox - enemy.x
+    enemy.vely = self.y + pvely + oy - enemy.y
+    enemy.velz = self.z + pvelz + oz - enemy.z
+    local pushvelx, pushvely = Body.predictCollisionVelocity(enemy)
+    if pushvelx or pushvely then
+        enemy.velx = enemy.velx + pushvelx
+        enemy.vely = enemy.vely + pushvely
+        self.velx = self.velx + pushvelx
+        self.vely = self.vely + pushvely
+    end
+end
+
+---@deprecated
 function HoldOpponent:updateOpponentPosition()
     local enemy = self.heldopponent
     if not enemy then return end
@@ -95,6 +117,7 @@ function HoldOpponent:updateOpponentPosition()
     enemy.velz = self.z + oz - enemy.z
 end
 
+---@deprecated
 function HoldOpponent:handleOpponentCollision()
     local enemy = self.heldopponent
     if not enemy then return end
