@@ -418,4 +418,13 @@ function Characters.clearEnemies(boss)
     end
 end
 
+function Characters.healPlayers()
+    if players then
+        for _, player in ipairs(players) do
+            player.health = player.maxhealth
+            player.manastore = player.manastoremax
+        end
+    end
+end
+
 return Characters
