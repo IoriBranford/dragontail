@@ -8,17 +8,17 @@ local Combo    = require "Dragontail.Character.Component.Combo"
 local Attacker = require "Dragontail.Character.Component.Attacker"
 
 local PlayerSpinAttack = pooledclass(Behavior)
-PlayerSpinAttack._nrec = Behavior._nrec + 3
+PlayerSpinAttack._nrec = Behavior._nrec + 1
 
 function PlayerSpinAttack:start(faceangle)
     local player = self.character
     player.numopponentshit = 0
 
-    local lungespeed = player.attack.lungespeed
+    local lungespeed = player.speed
     if lungespeed then
         Slide.updateSlideSpeed(player, faceangle, lungespeed)
     end
-    self.lungespeed = lungespeed
+
     Mana.store(player, -(player.attack.manacost or 0))
 
     local spintime = player.attack.hittingduration or 1
@@ -47,15 +47,7 @@ function PlayerSpinAttack:fixedupdate()
         Shoot.launchProjectile(player, projectile, cosangle, sinangle, 0)
     end
 
-
-    if self.lungespeed then
-        if math.abs(self.lungespeed - math.len(player.velx, player.vely)) >= 1 then
-            self.lungespeed = nil
-        end
-    end
-    if self.lungespeed then
-        self.lungespeed = Slide.updateSlideSpeed(player, self.originalfaceangle, self.lungespeed)
-    end
+    player:decelerateXYto0()
 
     local spinvel = player.attack.spinspeed or 0
     faceangle = faceangle + spinvel

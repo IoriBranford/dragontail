@@ -11,6 +11,7 @@ local Body       = require "Dragontail.Character.Component.Body"
 ---@class AttackingStraight:Behavior
 ---@field character Player
 local AttackingStraight = pooledclass(Behavior)
+AttackingStraight._nrec = Behavior._nrec + 3
 
 local function findInstantThrowTarget(self, targetfacex, targetfacey)
     local projectileheight = self.projectilelaunchheight or (self.bodyheight / 2)
@@ -69,10 +70,9 @@ function AttackingStraight:start(angle, heldenemy)
     end
     Mana.store(player, -(player.attack.manacost or 0))
     Face.faceAngle(player, angle, player.state.animation)
-    local lungespeed = player.attack.lungespeed
+    local lungespeed = player.speed
     if lungespeed then
         Slide.updateSlideSpeed(player, angle, lungespeed)
-        self.lungespeed = lungespeed
     end
     self.angle = angle
     self.heldenemy = heldenemy
@@ -85,16 +85,8 @@ end
 function AttackingStraight:fixedupdate()
     local player = self.character
 
-    if self.lungespeed then
-        if math.abs(self.lungespeed - math.len(player.velx, player.vely)) >= 1 then
-            self.lungespeed = nil
-        end
-    end
-    if self.lungespeed then
-        self.lungespeed = Slide.updateSlideSpeed(player, self.angle, self.lungespeed)
-    else
-        Body.accelerateTowardsVel(player, 0, 0, player.mass or 4)
-    end
+    Body.accelerateTowardsVel(player, 0, 0, player.mass or 4)
+
     local afterimageinterval = player.afterimageinterval or 0
     player:makePeriodicAfterImage(player.statetime, afterimageinterval)
 
