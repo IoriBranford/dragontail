@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="16" nextobjectid="90">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="16" nextobjectid="92">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -266,10 +266,13 @@ ALL CONTENT SUBJECT TO CHANGE</text>
    <object id="83" name="name" x="192" y="18" width="96" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">DEBUG</text>
    </object>
-   <object id="85" template="gui/menu/settings/Label.tx" name="Show hitboxes" x="160" y="72">
+   <object id="85" template="gui/menu/settings/Label.tx" name="Show hitboxes" x="160" y="72" width="192" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Show hitboxes</text>
    </object>
-   <object id="89" template="gui/menu/settings/Label.tx" name="Heal player" type="Gui.Button" x="128" y="99">
+   <object id="91" template="gui/menu/settings/Label.tx" name="game ticks per second" x="160" y="126" width="192" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">game ticks per second</text>
+   </object>
+   <object id="89" template="gui/menu/settings/Label.tx" name="Heal player" type="Gui.Button" x="128" y="99" width="224" height="18">
     <properties>
      <property name="action" value="healPlayers"/>
     </properties>
@@ -280,6 +283,15 @@ ALL CONTENT SUBJECT TO CHANGE</text>
      <property name="configkey" value="drawbodies"/>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">OFF</text>
+   </object>
+   <object id="90" template="gui/menu/settings/Slider.tx" name="drawbodies" type="Gui.Slider" x="128" y="126" width="32" height="18">
+    <properties>
+     <property name="configkey" value="fixedupdaterate"/>
+     <property name="increment" type="float" value="10"/>
+     <property name="max" type="float" value="100"/>
+     <property name="min" type="float" value="10"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">60</text>
    </object>
    <object id="87" template="gui/menu/Button_closeMenu.tx" type="Gui.Button" x="132" y="202.5"/>
    <object id="88" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="100" y="81"/>

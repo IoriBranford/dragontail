@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 18,
   nextlayerid = 16,
-  nextobjectid = 90,
+  nextobjectid = 92,
   properties = {},
   tilesets = {
     {
@@ -1504,11 +1504,28 @@ return {
               shape = "text",
               x = 160,
               y = 72,
-              width = 160,
+              width = 192,
               height = 18,
               rotation = 0,
               visible = true,
               text = "Show hitboxes",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 91,
+              name = "game ticks per second",
+              type = "",
+              shape = "text",
+              x = 160,
+              y = 126,
+              width = 192,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "game ticks per second",
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
@@ -1521,7 +1538,7 @@ return {
               shape = "text",
               x = 128,
               y = 99,
-              width = 160,
+              width = 224,
               height = 18,
               rotation = 0,
               visible = true,
@@ -1549,7 +1566,32 @@ return {
               wrap = true,
               color = { 255, 255, 255 },
               properties = {
-                ["configkey"] = "drawbodies"
+                ["configkey"] = "drawbodies",
+                ["increment"] = 1,
+                ["max"] = 10,
+                ["min"] = 0
+              }
+            },
+            {
+              id = 90,
+              name = "drawbodies",
+              type = "Gui.Slider",
+              shape = "text",
+              x = 128,
+              y = 126,
+              width = 32,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "60",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["configkey"] = "fixedupdaterate",
+                ["increment"] = 10,
+                ["max"] = 100,
+                ["min"] = 10
               }
             },
             {
