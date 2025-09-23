@@ -64,7 +64,10 @@ function Common:stayOnCameraOnceEntered()
 end
 
 function Common:decelerateXYto0()
-    Body.accelerateTowardsVel(self, 0, 0, self.mass or 1)
+    local mass = self.mass or 1
+    if mass >= 1 then
+        Body.accelerateTowardsVel(self, 0, 0, mass)
+    end
 end
 
 function Common:turnTowardsOpponent()
