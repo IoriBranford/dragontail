@@ -27,7 +27,8 @@ function Config.reset()
         resizable = true,
         drawstats = false,
         rotation = 0,
-		variableupdate = false
+		variableupdate = false,
+		fixedupdaterate = 60
 	}
 	if defaultconfig then
 		for k,v in pairs(defaultconfig) do
