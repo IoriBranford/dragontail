@@ -27,13 +27,6 @@ function PlayerFighting:fixedupdate()
         return "catchProjectile", caughtprojectile
     end
 
-    if player:consumeActionDownAndRecentlyPressed("fly") then
-        if inair then
-            return "flyEnd"
-        end
-        return "jump", true
-    end
-
     if player:consumeActionDownAndRecentlyPressed("sprint") then
         Face.faceVector(player, inx, iny)
         return "run", nil, true
@@ -69,6 +62,13 @@ function PlayerFighting:fixedupdate()
 
     player:accelerateTowardsJoystick()
     player:turnTowardsJoystick("Walk", "Stand")
+
+    if player:consumeActionDownAndRecentlyPressed("fly") then
+        if inair then
+            return "flyEnd"
+        end
+        return "jump", true
+    end
 end
 
 return PlayerFighting
