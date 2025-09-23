@@ -347,6 +347,7 @@ function Fighter:thrown(thrower, attackangle)
         yield()
         oobx, ooby, oobz = self.penex, self.peney, self.penez
         if oobz then
+            self.velz = 0
             thrownslidetime = thrownslidetime - 1
         end
         oobdotvel = math.dot(oobx or 0, ooby or 0, self.velx, self.vely)
