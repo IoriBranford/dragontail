@@ -8,6 +8,7 @@ local CollisionMask= require "Dragontail.Character.Component.Body.CollisionMask"
 local Attacker     = require "Dragontail.Character.Component.Attacker"
 local tablepool    = require "tablepool"
 local AttackTarget = require "Dragontail.Character.Component.AttackTarget"
+local Audio        = require "System.Audio"
 
 ---@module 'Dragontail.Stage.Characters'
 local Characters = {}
@@ -424,6 +425,10 @@ function Characters.healPlayers()
             player.health = player.maxhealth
             player.manastore = player.manastoremax
         end
+        local foodsmall = Database.get("food-small")
+        local manasmall = Database.get("mana-small")
+        if foodsmall then Audio.play(foodsmall.itemgetsound) end
+        if manasmall then Audio.play(manasmall.itemgetsound) end
     end
 end
 
