@@ -8,7 +8,7 @@ lunging-tail-swing-ccw,lunging-tail-swing-ccw,Dragontail.Character.Behavior.Play
 spinning-throw,spinning-throw,Dragontail.Character.Behavior.Player.SpinAndKickEnemy,,,holding-kick,FALSE,.holdasefile,spinthrow,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing3.mp3,0,0,0,,2,4,0.392699081698724
 flaming-spinning-throw,flaming-spinning-throw,Dragontail.Character.Behavior.Player.SpinAndKickEnemy,,,holding-kick,FALSE,.holdasefile,spinthrow,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing3.mp3,3,0,0,,2,4,0.523598775598299
 swingEnemyIntoWall,,,,decelerateXYto0,walk,6,.holdasefile,holdknee,1,FALSE,FALSE,FALSE,,,0,0,0,,4,4,0
-holding-knee,holding-knee,Dragontail.Character.Behavior.Player.AttackingStraight,,,walk,5,.holdasefile,holdknee,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing1.mp3,0,0,0,,4,4,3.14159265358979
+holding-knee,holding-knee,Dragontail.Character.Behavior.Player.AttackingStraight,,,walk,5,.holdasefile,holdknee,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing1.mp3,0,0,0,,4,0,3.14159265358979
 holding-kick,holding-kick,Dragontail.Character.Behavior.Player.AttackingStraight,,,walk,9,.attackasefile,hardkick,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing1.mp3,0,0,0,,2,0,3.14159265358979
 running-kick,running-kick,Dragontail.Character.Behavior.Player.AttackingStraight,,,running-kick-recover,20,.attackasefile,hardkick,1,TRUE,TRUE,FALSE,,data/sounds/player/attack2.mp3,3,0,0,,64,8,3.14159265358979
 running-kick-recover,,,,decelerateXYto0,walk,12,.attackasefile,kickrecover,0,TRUE,TRUE,FALSE,,,0,2,2,,8,4,0
@@ -51,7 +51,7 @@ sequenceWalkTo,,,sequenceWalkTo,,FALSE,FALSE,.mainasefile,Walk,1,FALSE,FALSE,FAL
 catchProjectile,,Dragontail.Character.Behavior.Fighter.CatchingProjectile,,,walk,15,.mainasefile,catch,0,FALSE,FALSE,FALSE,,data/sounds/combat/shakiin.mp3,0,2,1,,4,4,3.14159265358979
 sequenceTailSwing,,,idle,,sequenceWalkTo,24,.attackasefile,tailspinCW,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,0,0,0,,1,4,3.14159265358979
 jump,,Dragontail.Character.Behavior.Player.Jumping,,,walk,FALSE,.mainasefile,JumpUp,1,TRUE,TRUE,FALSE,,,0,2,2,,1,4,0.392699081698724
-jump-tail-swing-cw,jump-tail-swing-cw,Dragontail.Character.Behavior.Player.SpinAttack,,,jump,FALSE,.attackasefile,attackA,1,TRUE,TRUE,FALSE,,data/sounds/combat/swing1a.mp3,0,0,0,,1,4,0
-jump-tail-swing-ccw,jump-tail-swing-ccw,Dragontail.Character.Behavior.Player.SpinAttack,,,jump,FALSE,.attackasefile,attackA,1,TRUE,TRUE,FALSE,,data/sounds/combat/swing1a.mp3,0,0,0,,1,4,0
+jump-tail-swing-cw,jump-tail-swing-cw,Dragontail.Character.Behavior.Player.SpinAttack,,,jump,FALSE,.attackasefile,attackA,1,TRUE,TRUE,FALSE,,data/sounds/combat/swing1a.mp3,0,0,0,,0,FALSE,0
+jump-tail-swing-ccw,jump-tail-swing-ccw,Dragontail.Character.Behavior.Player.SpinAttack,,,jump,FALSE,.attackasefile,attackA,1,TRUE,TRUE,FALSE,,data/sounds/combat/swing1a.mp3,0,0,0,,0,FALSE,0
 flyStart,,,flyStart,,walk,FALSE,data/sprites/player/rose/fly.jase,ascend,1,FALSE,FALSE,FALSE,4294967295,data/sounds/player/flyup.mp3,3,0,0,,1,4,3.14159265358979
 flyEnd,,,flyEnd,,,FALSE,data/sprites/player/rose/fly.jase,descend,1,FALSE,FALSE,FALSE,,,0,0,0,0.25,1,4,3.14159265358979
