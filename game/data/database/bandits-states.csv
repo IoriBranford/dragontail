@@ -39,11 +39,11 @@ human-in-flaming-spinning-throw,FALSE,fall,human-in-flaming-spinning-throw,,held
 forge-fire,FALSE,FALSE,forge-fire,,,,,1,FALSE,FALSE,FALSE,,,0,0,1,,
 hurt,FALSE,stand,,Dragontail.Character.Behavior.Fighter.TakingHit,,,Hurt,0,FALSE,FALSE,FALSE,4294967295,,0,0,1,,Object Wall Camera
 held,FALSE,stand,,,held,,Hurt,,TRUE,FALSE,FALSE,4294967295,,0,0,1,,Object Wall Camera
-knockedBack,FALSE,fall,,,knockedBack,,Hurt,,FALSE,FALSE,TRUE,,,0,0,1,,
-knockedBackBurnt,FALSE,fall,,,knockedBack,,Hurt,,FALSE,FALSE,TRUE,4280295456,,0,0,1,,
-knockedBackBurntJuggled,FALSE,fall,,,knockedBack,,Hurt,,FALSE,FALSE,FALSE,4280295456,,0,0,1,,
+knockedBack,FALSE,fall,,,knockedBack,,Hurt,,FALSE,FALSE,TRUE,,,0,0,1,,Wall Camera
+knockedBackBurnt,FALSE,fall,,,knockedBack,,Hurt,,FALSE,FALSE,TRUE,4280295456,,0,0,1,,Wall Camera
+knockedBackBurntJuggled,FALSE,fall,,,knockedBack,,Hurt,,FALSE,FALSE,FALSE,4280295456,,0,0,1,,Wall Camera
 wallBump,FALSE,fall,,,wallBump,,Hurt,,FALSE,FALSE,TRUE,,data/sounds/combat/bodybump.mp3,0,0,1,,
-thrown,FALSE,fall,human-thrown,,thrown,,spin,1,FALSE,FALSE,TRUE,,,0,0,1,,
+thrown,FALSE,fall,human-thrown,,thrown,,spin,1,FALSE,FALSE,TRUE,,,0,0,1,,Wall Camera
 wallSlammed,FALSE,fall,,,wallSlammed,,Hurt,,FALSE,FALSE,TRUE,,data/sounds/combat/bodyslam.mp3,0,0,1,,
 thrownRecover,FALSE,stand,,,thrownRecover,,FallKnees,0,FALSE,FALSE,FALSE,,data/sounds/combat/slide.mp3,0,0,1,,
 breakaway,FALSE,stand,,,breakaway,,BreakHold,0,FALSE,FALSE,FALSE,,data/sounds/combat/slap.mp3,0,0,1,,
