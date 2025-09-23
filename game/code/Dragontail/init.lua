@@ -8,6 +8,7 @@ local Assets = require "Tiled.Assets"
 local Window = require "System.Window"
 local Stage  = require "Dragontail.Stage"
 local Inputs = require "System.Inputs"
+local Time   = require "System.Time"
 local firstphase = "Dragontail.GamePhase"
 local firstmap = "data/stage_banditcave.lua"
 
@@ -44,6 +45,7 @@ function love.load(args)
     Config.drawstats = args.drawstats
     Config.drawai = args.drawai
     Config.cuecards = args.cuecards
+    Config.fixedupdaterate = Time.FixedUpdateRate
 
     Config.gamepads = Inputs.configureGamepads(Config.gamepads)
     Config.keys = Inputs.configureKeyboard(Config.keys)
