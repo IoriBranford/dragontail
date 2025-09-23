@@ -5,9 +5,12 @@ local Audio    = require "System.Audio"
 ---@class PlayerJumping:Behavior
 ---@field character Player
 local PlayerJumping = pooledclass(Behavior)
+PlayerJumping._nrec = Behavior._nrec + 2
 
 function PlayerJumping:start(isjumpstart)
     local player = self.character
+    self.velx, self.vely = player.velx, player.vely
+
     if isjumpstart then
         player.velz = player.gravity*15
         player.numjumpattacks = 0
@@ -49,6 +52,8 @@ function PlayerJumping:fixedupdate()
             return attackstate, facedestangle
         end
     end
+
+    player.velx, player.vely = self.velx, self.vely
 end
 
 return PlayerJumping
