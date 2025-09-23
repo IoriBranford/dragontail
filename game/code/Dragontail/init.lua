@@ -103,7 +103,7 @@ return {
             ["up down"] = "digitaly",
             z = "attack",
             lshift = "sprint",
-            space = "fly"
+            x = "fly"
         },
 
         gamepads = {
