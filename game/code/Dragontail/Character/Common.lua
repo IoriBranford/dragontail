@@ -187,7 +187,7 @@ function Common:itemWaitForPickup()
     while true do
         local finished
         t = t + 1
-        self:accelerateTowardsVel(0, 0, 10)
+        self:accelerateTowardsVel(0, 0)
         if self.gravity == 0 then
             local _, _, _, penex
                 = Characters.keepCylinderIn(self.x, self.y, self.z, self.bodyradius, self.bodyheight, self)

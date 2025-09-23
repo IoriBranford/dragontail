@@ -324,20 +324,18 @@ end
 
 function Player:accelerateTowardsJoystick()
     local inx, iny = self:getJoystick()
-    local mass = self.mass or 1
     local movespeed = self.speed or 1
     local targetvelx = inx * movespeed
     local targetvely = iny * movespeed
-    self:accelerateTowardsVel(targetvelx, targetvely, mass)
+    self:accelerateTowardsVel(targetvelx, targetvely)
 end
 
 function Player:accelerateTowardsFace()
     local inx, iny = cos(self.faceangle), sin(self.faceangle)
-    local mass = self.mass or 1
     local movespeed = self.speed or 1
     local targetvelx = inx * movespeed
     local targetvely = iny * movespeed
-    self:accelerateTowardsVel(targetvelx, targetvely, mass)
+    self:accelerateTowardsVel(targetvelx, targetvely)
 end
 
 function Player:turnTowardsJoystick(movinganimation, notmovinganimation)
@@ -408,13 +406,12 @@ function Player:aimThrow()
         end
 
         local targetvelx, targetvely
-        local movespeed, turnspeed, acceltime
-        movespeed, turnspeed, acceltime = 2, pi/8, 4
+        local movespeed, turnspeed = self.speed or 2, self.faceturnspeed or (pi/8)
 
         targetvelx = inx * movespeed
         targetvely = iny * movespeed
 
-        self:accelerateTowardsVel(targetvelx, targetvely, acceltime)
+        self:accelerateTowardsVel(targetvelx, targetvely)
 
         local lockonenemyscore = 128
         if lockonenemy then
@@ -531,7 +528,7 @@ function Player:throwWeapon(angle, attackchoice, numprojectiles)
     end
 
     for i = 1, self.throwtime or 6 do
-        self:accelerateTowardsVel(0, 0, 4)
+        self:accelerateTowardsVel(0, 0)
         yield()
     end
     return "walk"
@@ -579,7 +576,7 @@ function Player:hold(enemy)
             targetvely = iny * speed
         end
 
-        self:accelerateTowardsVel(targetvelx, targetvely, 4)
+        self:accelerateTowardsVel(targetvelx, targetvely)
         local velx, vely = self.velx, self.vely
 
         holdangle = math.rotangletowards(holdangle, holddestangle, pi/64)
@@ -649,7 +646,7 @@ function Player:spinAndKickEnemy(angle, enemy)
             targetvely = iny * speed
         end
 
-        self:accelerateTowardsVel(targetvelx, targetvely, 4)
+        self:accelerateTowardsVel(targetvelx, targetvely)
 
         if math.ceil(spunmag / 2 / pi) < math.ceil((spunmag+spinmag) / 2 / pi) then
             Audio.play(self.state.sound)
@@ -694,7 +691,7 @@ function Player:victory()
     self:stopAttack()
     local i = 0
     while true do
-        self:accelerateTowardsVel(0, 0, 4)
+        self:accelerateTowardsVel(0, 0)
         -- self.z = abs(sin(i*pi/30) * 8)
         yield()
         i = i + 1
