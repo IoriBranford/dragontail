@@ -384,6 +384,16 @@ function Characters.isDrawnBefore(a, b)
         return false
     end
 
+    az = a.z or 0
+    bz = b.z or 0
+    local ah = a.bodyheight or 0
+    local bh = b.bodyheight or 0
+    if az + ah < bz then
+        return true
+    elseif az > bz + bh then
+        return false
+    end
+
     local ay = a.y or 0
     local by = b.y or 0
     if ay < by then
@@ -392,8 +402,6 @@ function Characters.isDrawnBefore(a, b)
         return false
     end
 
-    az = a.z or 0
-    bz = b.z or 0
     if az < bz then
         return true
     elseif az > bz then
