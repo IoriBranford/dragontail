@@ -144,6 +144,13 @@ function Body:updatePosition()
     self.z = self.z + self.velz
 end
 
+function Body:updateVelocityAfterCollision()
+    -- TODO support restitution (bounce) as needed
+    if self.penex then self.velx = 0 end
+    if self.peney then self.vely = 0 end
+    if self.penez then self.velz = 0 end
+end
+
 function Body:executeMove(destx, desty, speed, timelimit)
     timelimit = timelimit or math.huge
     coroutine.waitfor(function()

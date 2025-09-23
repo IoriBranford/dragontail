@@ -181,6 +181,7 @@ end
 function Character:updateBody()
     if self:isHitStopOver() then
         Body.updatePosition(self)
+        Body.updateVelocityAfterCollision(self)
         Body.updateGravity(self)
     end
 end
