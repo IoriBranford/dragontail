@@ -22,6 +22,7 @@ end
 function PlayerJumping:fixedupdate()
     local player = self.character
     if player.z <= player.floorz then
+        player.velz = 0
         if player.sprintbutton.down then
             return "run"
         end
