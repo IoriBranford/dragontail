@@ -61,6 +61,7 @@ end
 function Enemy:duringStand()
     local opponent = self.opponents[1]
     Face.facePosition(self, opponent.x, opponent.y, "Stand")
+    self:decelerateXYto0()
 end
 
 function Enemy:decideNextAttack()
@@ -283,7 +284,7 @@ end
 function Enemy:duringPrepareAttack(target)
     Face.turnTowardsObject(self, target, self.faceturnspeed or 0,
         self.state.animation, self.animationframe, self.state.loopframe)
-    self:accelerateTowardsVel(0, 0, self.mass or 1)
+    self:accelerateTowardsVel(0, 0)
 end
 
 function Enemy:interruptWithDodge(target)
