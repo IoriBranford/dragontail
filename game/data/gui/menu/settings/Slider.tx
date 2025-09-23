@@ -3,6 +3,9 @@
  <object name="Slider" type="Gui.Slider" width="84" height="18">
   <properties>
    <property name="configkey" value=""/>
+   <property name="increment" type="float" value="1"/>
+   <property name="max" type="float" value="10"/>
+   <property name="min" type="float" value="0"/>
   </properties>
   <text fontfamily="Unifont" wrap="1" color="#ffffff">Slider</text>
  </object>
