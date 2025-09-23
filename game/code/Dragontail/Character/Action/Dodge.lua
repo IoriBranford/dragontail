@@ -14,6 +14,10 @@ local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask
 local Dodge = {}
 
 function Dodge:getDodgeVector(incoming)
+    if self.z + self.bodyheight < incoming.z
+    or incoming.z + self.bodyheight < self.z then
+        return
+    end
     local oppox, oppoy, oppovelx, oppovely
     oppox, oppoy = incoming.x, incoming.y
     oppovelx, oppovely = incoming.velx, incoming.vely
