@@ -17,6 +17,7 @@ end
 
 function Approach:fixedupdate()
     local enemy = self.character
+    enemy:stayOnCameraOnceEntered()
     local attackerslot = self.attackerslot
     local opponent = attackerslot and attackerslot.target
     local destx, desty
