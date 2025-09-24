@@ -764,6 +764,7 @@ and tap    to throw</text>
   </objectgroup>
   <objectgroup draworder="index" id="22" name="entryhall" class="Room">
    <properties>
+    <property name="checkpoint" type="bool" value="true"/>
     <property name="donewhenenemiesleft" type="int" value="999"/>
     <property name="sequence" value="playerEnterArea"/>
     <property name="titlebarcuecard" value="RUN"/>

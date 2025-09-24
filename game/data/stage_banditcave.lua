@@ -18162,6 +18162,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["checkpoint"] = true,
             ["donewhenenemiesleft"] = 999,
             ["sequence"] = "playerEnterArea",
             ["titlebarcuecard"] = "RUN"
