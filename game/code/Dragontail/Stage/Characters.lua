@@ -386,25 +386,13 @@ function Characters.isDrawnBefore(a, b)
 
     az = a.z or 0
     bz = b.z or 0
-    local ah = a.bodyheight or 0
-    local bh = b.bodyheight or 0
-    if az + ah < bz then
-        return true
-    elseif az > bz + bh then
-        return false
-    end
-
     local ay = a.y or 0
     local by = b.y or 0
-    if ay < by then
+    local ayz = ay+az
+    local byz = by+bz
+    if ayz < byz then
         return true
-    elseif ay > by then
-        return false
-    end
-
-    if az < bz then
-        return true
-    elseif az > bz then
+    elseif ayz > byz then
         return false
     end
 
