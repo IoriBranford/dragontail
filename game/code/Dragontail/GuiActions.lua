@@ -12,8 +12,12 @@ function GameGuiActions.healPlayers()
     Characters.healPlayers()
 end
 
-function GameGuiActions.restartStage()
+function GameGuiActions.restartStageCheckpoint()
     love.event.loadphase("Dragontail.GamePhase")
+end
+
+function GameGuiActions.restartStage()
+    love.event.loadphase("Dragontail.GamePhase", false, false)
 end
 
 function GameGuiActions.quit()

@@ -21,6 +21,7 @@ local min = math.min
 
 local scene ---@type Scene
 local map ---@type TiledMap
+local firstroomname
 local roomindex
 local winningteam
 local camera ---@type Camera
@@ -70,7 +71,7 @@ function Stage.load(stagefile)
     end
 end
 
-function Stage.init()
+function Stage.init(startroom)
     scene = Scene()
 
     local MinStageHeight = 1024
@@ -115,9 +116,11 @@ function Stage.init()
 
     local rooms = map.layers.rooms
     local firstroomindex = 1
-    local firstroomid = nil
+    if startroom ~= nil then
+        firstroomname = startroom
+    end
     for i, room in ipairs(rooms) do
-        if room.id == firstroomid then
+        if room.name == firstroomname then
             firstroomindex = i
             break
         end
@@ -262,6 +265,9 @@ function Stage.openRoom(i)
             if cuecard ~= "" then
                 love.window.setTitle(cuecard)
             end
+        end
+        if room.checkpoint then
+            firstroomname = room.name
         end
     else
         winningteam = "players"

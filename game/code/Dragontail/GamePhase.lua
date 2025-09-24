@@ -17,7 +17,7 @@ local pauselocked
 local stagecanvas
 local stagepath = "data/stage_banditcave.lua"
 
-function GamePhase.loadphase(stagepath_)
+function GamePhase.loadphase(stagepath_, startroom)
     stagepath = stagepath_ or stagepath
     paused = false
     pauselocked = false
@@ -50,7 +50,7 @@ function GamePhase.loadphase(stagepath_)
     -- Tiled.Assets.setFilter("nearest", "nearest")
     -- Tiled.Assets.batchAllMapsLayers()
 
-    Stage.init()
+    Stage.init(startroom)
     GamePhase.resize(love.graphics.getWidth(), love.graphics.getHeight())
 
     local music = Audio.playMusic("data/music/retro-chiptune-guitar.ogg")

@@ -171,6 +171,11 @@
             "id": 9,
             "members": [
                 {
+                    "name": "checkpoint",
+                    "type": "bool",
+                    "value": false
+                },
+                {
                     "name": "donewhenenemiesleft",
                     "type": "int",
                     "value": 0

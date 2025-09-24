@@ -66,8 +66,8 @@ function love.load(args)
 
     require "Dragontail.Gui"
 
-    local startpoint = args.startpoint
-    love.event.loadphase(firstphase, firstmap, startpoint)
+    local firstroom = args.room
+    love.event.loadphase(firstphase, firstmap, firstroom)
 end
 
 function love.quit()
@@ -84,7 +84,7 @@ return {
         --buildmegatilesets	(optional string)   Build megatilesets for all maps in the given text file
         --stage (optional string)               Name of stage to start
         --test (optional string)                Name of test to start
-        --stagestart (optional string)          Name of stage start point
+        --room (optional string)                Name of room to start the stage at
         --cuecards                              Use title bar as a cue card for video recording
     ]],
     defaultconfig = Platform.overrideConfig {
