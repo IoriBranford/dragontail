@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="55" nextobjectid="537">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="55" nextobjectid="545">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -47,6 +47,7 @@
  <tileset firstgid="7260" source="sprites/bandit/knife.tsx"/>
  <tileset firstgid="7261" source="sprites/weapons/throwing-axe.tsx"/>
  <tileset firstgid="7262" source="sprites/weapons/stone.tsx"/>
+ <tileset firstgid="7263" source="tilesets/ui/Gamepad Spritesheets/Switch.tsx"/>
  <layer id="2" name="floor" width="200" height="12">
   <properties>
    <property name="drawz" type="float" value="-2"/>
@@ -249,13 +250,17 @@
     <polygon points="0,-32 0,64 512,64 512,-32"/>
    </object>
    <object id="513" name="joystick" gid="6856" x="280" y="72" width="16" height="16"/>
-   <object id="515" name="sprintbutton" gid="6886" x="344" y="72" width="16" height="16"/>
+   <object id="515" name="sprintbutton" gid="7277" x="400" y="56" width="14" height="14"/>
    <object id="516" name="Move" x="304" y="56" width="20" height="18">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">MOVE</text>
    </object>
-   <object id="518" name="Sprint" x="368" y="56" width="64" height="18">
-    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">SPRINT</text>
+   <object id="518" name="Sprint" x="360" y="64" width="48" height="18">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">SPRINT</text>
    </object>
+   <object id="538" name="or" x="376" y="48" width="16" height="16">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
+   </object>
+   <object id="537" gid="7273" x="368" y="56" width="14" height="14"/>
   </objectgroup>
   <objectgroup id="8" name="learnattack" class="Room">
    <properties>
@@ -266,9 +271,21 @@
    <object id="485" template="mapobjects/bandit/knife.tx" x="1176" y="240"/>
    <object id="49" template="mapobjects/bandit/knife.tx" x="408" y="160"/>
    <object id="48" template="mapobjects/bandit/knife.tx" x="464" y="208"/>
-   <object id="514" name="attackbutton" gid="6872" x="688" y="56" width="16" height="16"/>
-   <object id="517" name="Attack" x="712" y="40" width="64" height="18">
-    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">ATTACK</text>
+   <object id="514" name="attackbutton" gid="7267" x="672" y="56" width="14" height="14"/>
+   <object id="541" name="attackbutton" gid="7263" x="736" y="56" width="14" height="14"/>
+   <object id="517" name="Attack" x="664" y="64" width="48" height="18">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">ATTACK</text>
+   </object>
+   <object id="544" name="Jump" x="728" y="64" width="48" height="18">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">JUMP</text>
+   </object>
+   <object id="539" gid="7269" x="704" y="56" width="14" height="14"/>
+   <object id="543" gid="7265" x="768" y="56" width="14" height="14"/>
+   <object id="540" name="or" x="680" y="48" width="16" height="16">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
+   </object>
+   <object id="542" name="or" x="744" y="48" width="16" height="16">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
   </objectgroup>
   <objectgroup id="46" name="+knives" class="Room">
@@ -281,14 +298,6 @@
    <object id="488" template="mapobjects/bandit/knife.tx" x="1016" y="240"/>
    <object id="486" template="mapobjects/bandit/knife.tx" x="272" y="128"/>
    <object id="45" template="mapobjects/bandit/knife.tx" x="1192" y="256"/>
-   <object id="519" name="joystick" gid="6856" x="760" y="56" width="16" height="16"/>
-   <object id="520" name="Grab" x="784" y="40" width="128" height="32">
-    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">INTO ENEMY to GRAB then</text>
-   </object>
-   <object id="527" name="Grab" x="776" y="64" width="128" height="32">
-    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">+ A DIRECTION to THROW</text>
-   </object>
-   <object id="526" name="attackbutton" gid="6872" x="760" y="80" width="16" height="16"/>
   </objectgroup>
   <objectgroup id="41" name="tolearnrunning" class="Room">
    <properties>
@@ -307,28 +316,19 @@
     </properties>
     <polygon points="-64,-96 -64,32 32,32 96,96 96,96 96,-96"/>
    </object>
-   <object id="521" name="attackbutton" gid="6872" x="1192" y="128" width="16" height="16"/>
-   <object id="522" name="Fireball" x="1216" y="112" width="192" height="40">
-    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">HOLD THEN RELEASE for FIREBALL
-COSTS 1 OR MORE</text>
-   </object>
-   <object id="523" name="flame1" x="1294" y="130" width="30" height="6">
-    <properties>
-     <property name="color" type="color" value="#ffffd000"/>
-    </properties>
-   </object>
    <object id="524" name="flamecharge1" x="1374" y="130" width="30" height="6" visible="0">
     <properties>
      <property name="color" type="color" value="#ffffffff"/>
     </properties>
    </object>
-   <object id="525" name="flamebox" x="1294" y="130" width="30" height="6">
-    <properties>
-     <property name="color" type="color" value="#00000000"/>
-     <property name="linecolor" type="color" value="#ffffffff"/>
-     <property name="roundcorners" type="float" value="1"/>
-    </properties>
+   <object id="519" name="joystick" gid="6856" x="1224" y="128" width="16" height="16"/>
+   <object id="520" name="Grab" x="1248" y="112" width="128" height="32">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">INTO ENEMY to GRAB then</text>
    </object>
+   <object id="527" name="Grab" x="1240" y="136" width="128" height="32">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">+ A DIRECTION to THROW</text>
+   </object>
+   <object id="526" name="attackbutton" gid="7267" x="1232" y="144" width="14" height="14"/>
   </objectgroup>
   <objectgroup id="9" name="tolearnrunning2" class="Room">
    <properties>
@@ -478,7 +478,7 @@ COSTS 1 OR MORE</text>
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">INTO ROCK to PICK UP</text>
    </object>
    <object id="432" gid="6856" x="1504" y="88" width="16" height="16"/>
-   <object id="433" gid="6872" x="1504" y="112" width="16" height="16"/>
+   <object id="433" gid="7267" x="1512" y="104" width="14" height="14"/>
    <object id="434" name="Instruction" x="1528" y="96" width="144" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">THROW 1</text>
    </object>
@@ -488,14 +488,14 @@ COSTS 1 OR MORE</text>
    <object id="455" gid="7035" x="1600" y="80" width="16" height="16" visible="0"/>
    <object id="456" gid="7036" x="1616" y="80" width="16" height="16" visible="0"/>
    <object id="457" gid="7158" x="1608" y="116" width="16" height="16" visible="0"/>
-   <object id="468" gid="6886" x="1600" y="112" width="16" height="16"/>
+   <object id="468" gid="7277" x="1608" y="104" width="14" height="14"/>
    <object id="469" name="Instruction" x="1648" y="96" width="96" height="32">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">THROW ALL</text>
    </object>
    <object id="470" name="Instruction" x="1600" y="96" width="40" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">+</text>
    </object>
-   <object id="471" gid="6872" x="1624" y="112" width="16" height="16"/>
+   <object id="471" gid="7267" x="1632" y="104" width="14" height="14"/>
   </objectgroup>
   <objectgroup id="28" name="+knives" class="Room">
    <properties>
@@ -640,10 +640,27 @@ COSTS 1 OR MORE</text>
      <property name="itemtype" value="mana-peppers"/>
     </properties>
    </object>
-   <object id="528" name="Instruction" x="1888" y="48" width="112" height="40">
+   <object id="528" name="Instruction" x="1888" y="8" width="112" height="40" visible="0">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">TOWARDS ARROW IN FLIGHT to CATCH</text>
    </object>
-   <object id="529" gid="6856" x="1864" y="64" width="16" height="16"/>
+   <object id="529" gid="6856" x="1864" y="24" width="16" height="16" visible="0"/>
+   <object id="521" name="attackbutton" gid="7267" x="1856" y="64" width="14" height="14"/>
+   <object id="522" name="Fireball" x="1872" y="48" width="192" height="40">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">HOLD THEN RELEASE for FIREBALL
+COSTS 1 OR MORE</text>
+   </object>
+   <object id="523" name="flame1" x="1950" y="66" width="30" height="6">
+    <properties>
+     <property name="color" type="color" value="#ffffd000"/>
+    </properties>
+   </object>
+   <object id="525" name="flamebox" x="1950" y="66" width="30" height="6">
+    <properties>
+     <property name="color" type="color" value="#00000000"/>
+     <property name="linecolor" type="color" value="#ffffffff"/>
+     <property name="roundcorners" type="float" value="1"/>
+    </properties>
+   </object>
   </objectgroup>
   <objectgroup id="29" name="learngrabandthrowenemies" class="Room">
    <properties>
