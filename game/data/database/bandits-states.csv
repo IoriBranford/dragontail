@@ -39,17 +39,17 @@ human-in-flaming-spinning-throw,FALSE,fall,human-in-flaming-spinning-throw,,held
 forge-fire,FALSE,FALSE,forge-fire,,,,,1,FALSE,FALSE,FALSE,,,0,0,1,,
 hurt,FALSE,stand,,Dragontail.Character.Behavior.Fighter.TakingHit,,,Hurt,0,FALSE,FALSE,FALSE,4294967295,,0,0,1,,Object Wall Camera
 held,FALSE,stand,,,held,,Hurt,,TRUE,FALSE,FALSE,4294967295,,0,0,1,,Object Wall Camera
-knockedBack,FALSE,fall,,,knockedBack,,Hurt,,FALSE,FALSE,TRUE,,,0,0,1,,Wall Camera
-knockedBackBurnt,FALSE,fall,,,knockedBack,,Hurt,,FALSE,FALSE,TRUE,4280295456,,0,0,1,,Wall Camera
-knockedBackBurntJuggled,FALSE,fall,,,knockedBack,,Hurt,,FALSE,FALSE,FALSE,4280295456,,0,0,1,,Wall Camera
-wallBump,FALSE,fall,,,wallBump,,Hurt,,FALSE,FALSE,TRUE,,data/sounds/combat/bodybump.mp3,0,0,1,,
-thrown,FALSE,fall,human-thrown,,thrown,,spin,1,FALSE,FALSE,TRUE,,,0,0,1,,Wall Camera
-wallSlammed,FALSE,fall,,,wallSlammed,,Hurt,,FALSE,FALSE,TRUE,,data/sounds/combat/bodyslam.mp3,0,0,1,,
+knockedBack,300,fall,,,knockedBack,,Hurt,,FALSE,FALSE,TRUE,,,0,0,1,,Wall Camera
+knockedBackBurnt,300,fall,,,knockedBack,,Hurt,,FALSE,FALSE,TRUE,4280295456,,0,0,1,,Wall Camera
+knockedBackBurntJuggled,300,fall,,,knockedBack,,Hurt,,FALSE,FALSE,FALSE,4280295456,,0,0,1,,Wall Camera
+wallBump,300,fall,,,wallBump,,Hurt,,FALSE,FALSE,TRUE,,data/sounds/combat/bodybump.mp3,0,0,1,,
+thrown,300,fall,human-thrown,,thrown,,spin,1,FALSE,FALSE,TRUE,,,0,0,1,,Wall Camera
+wallSlammed,300,fall,,,wallSlammed,,Hurt,,FALSE,FALSE,TRUE,,data/sounds/combat/bodyslam.mp3,0,0,1,,
 thrownRecover,FALSE,stand,,,thrownRecover,,FallKnees,0,FALSE,FALSE,FALSE,,data/sounds/combat/slide.mp3,0,0,1,,
 breakaway,FALSE,stand,,,breakaway,,BreakHold,0,FALSE,FALSE,FALSE,,data/sounds/combat/slap.mp3,0,0,1,,
-fall,FALSE,collapse,,,,fall,,0,FALSE,FALSE,TRUE,,,0,0,8,,
+fall,300,collapse,,,,fall,,0,FALSE,FALSE,TRUE,,,0,0,8,,
 collapse,15,down,,,,decelerateXYto0,Fall,0,FALSE,FALSE,TRUE,,,0,0,8,,
-down,20,getup,,Dragontail.Character.Behavior.Fighter.Downed,,,FallFlat,0,FALSE,FALSE,FALSE,,data/sounds/combat/bodydrop.mp3,0,0,8,,
+down,20,getup,,Dragontail.Character.Behavior.Fighter.Downed,,,Down,0,FALSE,FALSE,FALSE,,data/sounds/combat/bodydrop.mp3,0,0,8,,
 defeat,FALSE,FALSE,,,defeat,,,0,FALSE,FALSE,FALSE,,,0,0,1,,
 getup,18,.recoverai,,,,,FallRiseToFeet,0,FALSE,FALSE,FALSE,4294967295,,0,0,1,,
 stand,FALSE,FALSE,,,stand,,Stand,,TRUE,TRUE,FALSE,,,0,0,1,,
