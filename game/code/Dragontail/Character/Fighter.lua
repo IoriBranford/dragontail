@@ -298,17 +298,20 @@ function Fighter:afterWallBump(thrower)
 end
 
 function Fighter:wallBump(thrower, oobx, ooby)
-    oobx, ooby = norm(oobx or 0, ooby or 0)
+    oobx, ooby = oobx or 0, ooby or 0
+    if oobx ~= 0 or ooby ~= 0 then
+        oobx, ooby = norm(oobx, ooby)
+        local bodyradius = self.bodyradius or 1
+        Characters.spawn(
+            {
+                type = "spark-hit",
+                x = self.x + oobx*bodyradius,
+                y = self.y + ooby*bodyradius,
+                z = self.z + self.bodyheight/2
+            }
+        )
+    end
     self:stopAttack()
-    local bodyradius = self.bodyradius or 1
-    Characters.spawn(
-        {
-            type = "spark-hit",
-            x = self.x + oobx*bodyradius,
-            y = self.y + ooby*bodyradius,
-            z = self.z + self.bodyheight/2
-        }
-    )
     self.health = self.health - (self.wallbumpdamage or 10)
     self.hurtstun = self.wallbumpstun or 3
     self.velx, self.vely, self.velz = 0, 0, 0
