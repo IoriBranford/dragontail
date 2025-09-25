@@ -224,18 +224,15 @@ function Fighter:knockedBack(thrower, attackangle)
         oobx, ooby, oobz = self.penex, self.peney, self.penez
         self:duringKnockedBack()
     until oobx or ooby or oobz
-    local oobdotvel = math.dot(oobx or 0, ooby or 0, self.velx, self.vely)
-    if oobdotvel > 0 then
-        oobdotvel = oobdotvel
-            / math.len(self.velx, self.vely)
-            / math.len(oobx, ooby)
-    end
+    -- local oobdotvel = math.dot(oobx or 0, ooby or 0, self.velx, self.vely)
+    -- if oobdotvel > 0 then
+    --     oobdotvel = oobdotvel
+    --         / math.len(self.velx, self.vely)
+    --         / math.len(oobx, ooby)
+    -- end
     self.thrower = nil
-    if oobdotvel > .5 then
+    if oobx and ooby then
         return "wallBump", thrower, oobx, ooby
-    end
-    if oobz then
-        self.velz = 0
     end
 
     return self.aiafterthrown or "fall", thrower
@@ -345,25 +342,24 @@ function Fighter:thrown(thrower, attackangle)
     if thrownsound then thrownsound:play() end
     local thrownslidetime = self.thrownslidetime or 10
     local oobx, ooby, oobz
-    local oobdotvel = 0
-    while thrownslidetime > 0 and oobdotvel <= .5 do
+    -- local oobdotvel = 0
+    while thrownslidetime > 0 and not oobx and not ooby do
         yield()
         oobx, ooby, oobz = self.penex, self.peney, self.penez
         if oobz then
-            self.velz = 0
             thrownslidetime = thrownslidetime - 1
         end
-        oobdotvel = math.dot(oobx or 0, ooby or 0, self.velx, self.vely)
-        if oobdotvel > 0 then
-            oobdotvel = oobdotvel
-                / math.len(self.velx, self.vely)
-                / math.len(oobx, ooby)
-        end
+        -- oobdotvel = math.dot(oobx or 0, ooby or 0, self.velx, self.vely)
+        -- if oobdotvel > 0 then
+        --     oobdotvel = oobdotvel
+        --         / math.len(self.velx, self.vely)
+        --         / math.len(oobx, ooby)
+        -- end
     end
     if thrownsound then thrownsound:stop() end
     self.thrower = nil
     self:stopAttack()
-    if oobdotvel > .5 then
+    if oobx and ooby then
         return "wallSlammed", thrower, oobx, ooby
     end
 
