@@ -416,12 +416,12 @@
     </properties>
     <polygon points="144,0 144,96 624,96 624,0"/>
    </object>
-   <object id="530" template="mapobjects/items/stone.tx" x="1504" y="208"/>
-   <object id="531" template="mapobjects/items/stone.tx" x="1552" y="184"/>
+   <object id="530" template="mapobjects/items/stone.tx" x="1624" y="168"/>
+   <object id="531" template="mapobjects/items/stone.tx" x="1712" y="200"/>
    <object id="532" template="mapobjects/items/stone.tx" x="1648" y="208"/>
-   <object id="533" template="mapobjects/items/stone.tx" x="1704" y="160"/>
-   <object id="534" template="mapobjects/items/stone.tx" x="1480" y="152"/>
-   <object id="535" template="mapobjects/items/stone.tx" x="1768" y="200"/>
+   <object id="533" template="mapobjects/items/stone.tx" x="1672" y="176"/>
+   <object id="534" template="mapobjects/items/stone.tx" x="1664" y="144"/>
+   <object id="535" template="mapobjects/items/stone.tx" x="1736" y="168"/>
   </objectgroup>
   <objectgroup id="48" name="learnthrowingweapons" class="Room">
    <properties>
