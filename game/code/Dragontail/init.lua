@@ -64,7 +64,9 @@ function love.load(args)
 
     -- Wallpaper.reload()
 
-    require "Dragontail.Gui"
+    local gui = require "Dragontail.Gui"
+    gui.gameplay.pausemenu.Quit:setDisabled(Config.exhibit)
+    gui.gameplay.gameover.Quit:setDisabled(Config.exhibit)
 
     local firstroom = args.room
     love.event.loadphase(firstphase, firstmap, firstroom)
