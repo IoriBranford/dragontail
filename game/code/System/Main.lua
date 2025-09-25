@@ -194,10 +194,10 @@ function love.run()
         end
 
         variableupdate = Config.variableupdate
+        local fixedrate = Config.fixedupdaterate
 
         -- Call update and draw
         if love.fixedupdate then
-            local fixedrate = Config.fixedupdaterate
             dfixed = dsecs * fixedrate
             fixedfrac = fixedfrac + dfixed
             numfixed, fixedfrac = math.modf(fixedfrac)
