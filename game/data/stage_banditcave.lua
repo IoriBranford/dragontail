@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 55,
-  nextobjectid = 545,
+  nextlayerid = 56,
+  nextobjectid = 561,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -15441,6 +15441,14 @@ return {
       compression = "zlib",
       chunks = {
         {
+          x = 60, y = -12, width = 20, height = 12,
+          data = "eJxjYBgFo2BkgoWsEHyZA8HO42RgyOBE8EkB85HMQcbsZJqHbEYOBwNDHtT8S0j2AACBzBCR"
+        },
+        {
+          x = 80, y = -12, width = 20, height = 12,
+          data = "eJxjYBgFo2D4gIWs5GF85llyQujLHBCahZOBYRGUjSxPjHnmWNSCcB4nAwMbkpkgzApVa8qJ28MAOuQX6A=="
+        },
+        {
           x = 100, y = -12, width = 20, height = 12,
           data = "eJzNzMlRAgEUBcB2GXjfeGTHeGTHfNwAMxIwHi+e9DRVHOwAmr/WDZuGbeMidg37hsOFvmPDqeH883VCNyRUuEu7rxf6YRCGYRTGYRKm4aHlNwvzsAjLsArrsAnb8NTyew4v4TW8hfewC/twCB8tv98+wzGcwjl8tfyuiuviprgtmqJTdIsUVe2++6JX9ItBMSxGxbiYFNOW32MxK+bFolgWq2JdbIpty+8/+QabZx2K"
         },
@@ -15458,11 +15466,11 @@ return {
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJzVkjsKAjEQhj8QH9voJhMv4xksRBd8nMBCPYiFYKuFeBotfSOeRkIiG5Z119aBn8wU+fLPTOD32Fedro00X0QwjdL6riEx0DfunMh33i7ghKoHPC3w9OopWBfwQsasAQvPvwTvXLRjtRSsFGx+5OXJ9n7TMDYwsj0LTEwxrxOl/dVy+s8LI26eD13ub55h5kXbQFPBS8p52R0NBUbez8Dv+LMjJSBSzNtmePbeKYalgkPL1cfYnV0F5xJeJfgrVnYPA+tPILFefW3zoYFrZob/Hm+zgE2/"
+          data = "eJzVkTsOwjAMhr+FRxfaxOEynIEB0UotvQMchAGJFQbEaWDkLcRpUJSwBFroiCXL9pAvv/3D77Ft1ecsgquGzMDYuFpKPW8QQSdyfbv7ztQCd58jBcsvvDCnAfOkHStWsFCwasjbBLyLhomBwu4sUJpmvHXA+xRG3D1vupkfVby+gZ6CR83uVf/kAoXXk3qPXx4pAZFmPPvukMBcwS528z5xdajg+KNGfFgfUqtPILNa/Wz73MA5uOG/xxPRdEGt"
         },
         {
           x = 80, y = 0, width = 20, height = 12,
-          data = "eJzlUVsOgkAMnA+RlvuAonIgY4QDASZ4JfU+pqHEpuz64NdNJt3utJNpd0iAYSEKCr+XPMab8isGrjTnLRoG8oDeJlArqBlYu/pEa/NIT0+vXuvPzzT1P5QvjF6q95SAvcBwW6d3juxHcIlwsqdDxP8nnL7sk11L3PHov3VeKpNnAZ/3N3P5P5n29QuODJDqlE6vdnnn8n87T3xAaA4="
+          data = "eJzlUFsKg0AQy486432Uttb7WEQ9UB+oV2q9jyyOdAkqrf3sQBiySXZntguAWoEuAJ4ydR+pAInpg+mpvjX2Z6Y5HEivFvwzGgWSBb0X4Ozd+Qvusv626yed5r+SL/d4ZN5IgMzOXxt7haTN+cdGhnFRQMx/pFzt8XLHPzXEW+LxF3PugatPfMXKbjea799qBOTralU="
         },
         {
           x = 100, y = 0, width = 20, height = 12,
@@ -15502,16 +15510,7 @@ return {
       },
       encoding = "base64",
       compression = "zlib",
-      chunks = {
-        {
-          x = 60, y = 0, width = 20, height = 12,
-          data = "eJxjYKAeMGGiomGjYBSMAgZCAAC+NgA3"
-        },
-        {
-          x = 80, y = 0, width = 20, height = 12,
-          data = "eJwzYWJgMGZiYDCFYhDbhImBwYyJYRSMglHAMLgBAIMVAX0="
-        }
-      }
+      chunks = {}
     },
     {
       type = "tilelayer",
@@ -15535,6 +15534,18 @@ return {
       compression = "zlib",
       chunks = {
         {
+          x = 60, y = -12, width = 20, height = 12,
+          data = "eJztzsENggAUBcH574AGCjJoaIigoSFvYEtqNx7ogKtMAZvlcPhfLZpwCudwKRaseO3oDejDNdzCWLzxwXdHb8YU7uERnkVbdLW9/gAteQjb"
+        },
+        {
+          x = 80, y = -12, width = 20, height = 12,
+          data = "eJztkjkKgEAQBKtRQ7/jkfkdj3Cf4xUI/snXyLJGojDBJoKVNtM0Q8FPISgFlaCW7R8OWF+yVtAJesFg7NsJG54YBZNgFizGvoOwIRb5tSEWTcQuPsTdtc14531LBKkgU/DFu3oCig8MGg=="
+        },
+        {
+          x = 100, y = -12, width = 20, height = 12,
+          data = "eJzt0rsRg0AAQ8HV4HFJgEvCUBKflggph+So4AIC2ORlisSzfEOPT9jRpG6vD7/Qhq60xhimMIR/aY01bGEOS+nLba6fXL85KgdPcHoJGw=="
+        },
+        {
           x = 0, y = 0, width = 20, height = 12,
           data = "eJztjkkKAjEURN9eU/0jTuiFXImKE3omlRYn9GZ6GQk2JJss7K3WpqAeBe9gUHhoGEw8jArYGewNXk1oCzqK3RX0BP3MNjYYuA/zglbChg7mgoViLwUrwTqzBYdN9ZsKZgnbOjgJzop9EVwFt8wWHO7VrxQcE/ZwfJ3g8Kzxy6WOwz/8bN49iR1R"
         },
@@ -15548,15 +15559,15 @@ return {
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJzt0j8uRFEYxuHnO4XBOMe9CuyEGbEEBYWxhjEjFkKCwmj8WZCE0diO3NwoGFHILf2arzl58hZns7BV2C7M1zio6VVcVjyvW2gVS4leYjmxE+wGg2AYHBdGhZNCndnIXNW8VrxUi94+BolhYi8xDk6DSTANbguzwl3hMHOU2539qnW/d45JYpo4S9wHD8Fj8BRf317n9n7uvPjB+2vNzlG/O+8mM+vQe8u8d+g1zVe69erms/3ntz4A6bEZZA=="
+          data = "eJzdzjEOAVEUheH/VsK4130KbGbsQEFhrEFnHyQoZjSzIwmjsR2ZvEiUk8yr/M3pvpyZwdxgYdCMYRVg4HByuE/oVC6wFNgLbA0Kg51BUJgqnAM8HR5O5w4CtUBpUBncDNYKG40/M49uny4a9/vz2NP7rf1ZZOm8q0KV0HspvBN6bc0wrRdGaT3+sA8vtxNz"
         },
         {
           x = 80, y = 0, width = 20, height = 12,
-          data = "eJztzjmKgmEUBdFzAxPF5bRDg9LLcQwEd+MY2LgfE8XViHx/Y6ImmrWVFTzeLQpf4TuV3PFGaIV26IRu2OEXB8yxvZ0bhGkeez8MwyiMwyQccUIt7JWtPxZh+8RnYRlWYR02oZ7Sfe09K1uv0EvpvvY2q61XmVW9P2/49cG/4wJnMhUR"
+          data = "eJztjTsOQEAABee1ZK/jUxDXWTTu41M6EnEaEQrZXYVGZeo3b6ygFjSCVrAAiSAVZIJcsOIzO7uN0+8Fg2AUTIJIYJ1GLL9x+PeduXyXItAoAw3j7KrA1xNdoPHG//nhI3ZEjRi7"
         },
         {
           x = 100, y = 0, width = 20, height = 12,
-          data = "eJztzTEOglAUBdFzo6HB9aA0sh7URteDsiVad2PslJAfSwumm7w3uVU4YBsmbMITTdi/b2EX+nAK53CZeZ3v//bDm4W+C0O4h0cYZ34s7PUL/S2KXAt7ww/9yoo/5QXl4Bf8"
+          data = "eJzty7ENgDAMRNF/dZgHqMI8ARqYJ8CqCMmFFXkClC+5OOm5CFbBJtgFSTDaTYJZMAhK4/xOzlfBJbgFjyCb9X4JnN/Z+bbDrPdn4KKfz/d6/KgX4iIVJg=="
         },
         {
           x = 120, y = 0, width = 20, height = 12,
@@ -15602,8 +15613,16 @@ return {
           data = "eJxjYBgFo2AUMAwyMEuEOIUAHtwArw=="
         },
         {
+          x = 60, y = -12, width = 20, height = 12,
+          data = "eJxjYBgFo2AUMECBLSMDgx0jA0MmIwPDdSoFSyEjA8McRgYGLkbqhjPIrQCLjAMX"
+        },
+        {
+          x = 80, y = -12, width = 20, height = 12,
+          data = "eJxjYKA9YGNiYGCHYg4mys2zZGJgsIJiayqYl8PEwJALxXlEmncL6g5qAV5GiDuoBRwYGUYkYENLazcoNA89rXEzUmYHelqzYyTODlB6A6URdAAAHmcLmg=="
+        },
+        {
           x = 100, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMAwy0CaFYHcisdEBAC5gAUQ="
+          data = "eJxjYBhZwIoJFVszUWZeLhMqzqPQvFEwChgYGBjapBDh0InERgcA0HwEnQ=="
         },
         {
           x = -20, y = 0, width = 20, height = 12,
@@ -15627,11 +15646,11 @@ return {
         },
         {
           x = 80, y = 0, width = 20, height = 12,
-          data = "eJztziEOgDAQRNH/kRAOVAHhQBjOA5R7cRrSsBJXg+gzkx0xWfi2C6dwCdn3PqLL0ffCICThBlJHlUmYhVUYS1buFVv8uli/1TT8zAMS4Amv"
+          data = "eJxjYEAFhYwMDDlMDAy5UJzHxMBgx8jAYMnEwGAFxdZMDAy8jAwMDowMZAFsdpBr1igYBQwjGAAAPsEGHA=="
         },
         {
           x = 100, y = 0, width = 20, height = 12,
-          data = "eJztzMsJgDAAwNDQMTJKnUnH8bOAnwWqbudVwYoHL0If5JoYIJ6qArdaoRN6YZCsOlxrMr9RmIRZWB5+byVhFTZh/+BXFPzAAS5rDGw="
+          data = "eJztzFENgCAABcDL8YKLFlApINrOCmzy48YFOPosoYQ1bPHZHo5whjrgu0ILd3gGfNPkB15oowkT"
         },
         {
           x = 140, y = 0, width = 20, height = 12,
@@ -15658,10 +15677,16 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["drawz"] = 0.5
+      },
       encoding = "base64",
       compression = "zlib",
       chunks = {
+        {
+          x = 80, y = -12, width = 20, height = 12,
+          data = "eJxjYMAElxkZGK5A8VVGBoqBIxMDgxMUOzNRbt4oGD6AHmnt8jCxAxsAALhHEZE="
+        },
         {
           x = 100, y = 0, width = 20, height = 12,
           data = "eJxjYCAO5EkxMORLMTAUSDEwFEoRqWkUjIJRwEBLAACvWQIn"
@@ -15690,12 +15715,16 @@ return {
       compression = "zlib",
       chunks = {
         {
+          x = 60, y = -12, width = 20, height = 12,
+          data = "eJxjYBgFo2Bkglwqm2dDZfPyiVAEAIIAARk="
+        },
+        {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJzdzkEKwkAMBdA3xepGz6PWQr2MLkrFIwl6I6E9jxRn0aUDWfkhBH7gEX7PTWzaYO8e7D3xCvRGTIHeKdGmOO9Sca3YLbotaqyxKfTqxBtnrLLT+XZN3iV5zH8kBuxxwDHPfOsLvX/IB628C7Y="
+          data = "eJzl0MEJwkAQhtG3JsFT6gneYjFePNuOBpKGYoLWI8tuASJz84O5Pn6G75uxiOuFd6B3OdAHegNGnIO8DU0qO7sA9169qW69KW7rtz90qVzeecKKR/YSVxzF9FS8Pchb68b8j3/rA5ltDhw="
         },
         {
           x = 80, y = 0, width = 20, height = 12,
-          data = "eJxjYBgFwxmwMzAwcCDxmbHweUkwL4uBgcGICcE3Z8LkO5Bg5iUGBoZUJgaGDCYGhkwmBoYsJkx+MQPETFYS3cowAgAAbxwGow=="
+          data = "eJztzsENABAQAMERwUs94qkd/RegifMRU8Bm+V62gnsDBT2oN7GRExXtwrOHHRn9AYA="
         },
         {
           x = 120, y = 0, width = 20, height = 12,
@@ -18351,7 +18380,7 @@ return {
               type = "",
               shape = "point",
               x = 2512,
-              y = 144,
+              y = 48,
               width = 0,
               height = 0,
               rotation = 0,
@@ -18413,14 +18442,15 @@ return {
               type = "CameraPath",
               shape = "polyline",
               x = 2448,
-              y = 144,
+              y = 48,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polyline = {
                 { x = 64, y = 0 },
-                { x = 672, y = 0 }
+                { x = 544, y = 96 },
+                { x = 688, y = 96 }
               },
               properties = {
                 ["shadowcolor"] = "#00000000"
@@ -18432,7 +18462,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 2272,
-              y = -32,
+              y = -128,
               width = 0,
               height = 0,
               rotation = 0,
@@ -18440,13 +18470,13 @@ return {
               polygon = {
                 { x = 64, y = 0 },
                 { x = 64, y = 112 },
-                { x = 256, y = 112 },
-                { x = 320, y = 48 },
-                { x = 384, y = 112 },
-                { x = 448, y = 48 },
-                { x = 512, y = 112 },
-                { x = 576, y = 48 },
-                { x = 576, y = 0 }
+                { x = 192, y = 112 },
+                { x = 256, y = 176 },
+                { x = 416, y = 176 },
+                { x = 448, y = 208 },
+                { x = 576, y = 208 },
+                { x = 608, y = 240 },
+                { x = 608, y = 0 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -18468,15 +18498,10 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 576, y = 0 },
-                { x = 576, y = 48 },
-                { x = 640, y = 112 },
-                { x = 768, y = 112 },
-                { x = 832, y = 176 },
-                { x = 864, y = 176 },
-                { x = 896, y = 144 },
-                { x = 912, y = 144 },
-                { x = 912, y = 0 }
+                { x = 608, y = -96 },
+                { x = 608, y = 144 },
+                { x = 736, y = 144 },
+                { x = 736, y = -96 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -18492,7 +18517,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 2592,
-              y = 224,
+              y = 128,
               width = 0,
               height = 0,
               rotation = 0,
@@ -18500,44 +18525,13 @@ return {
               polygon = {
                 { x = -320, y = -224 },
                 { x = -320, y = 96 },
-                { x = 224, y = 96 },
-                { x = 128, y = 0 },
-                { x = 64, y = 64 },
-                { x = 0, y = 0 },
-                { x = -128, y = 0 },
-                { x = -160, y = 32 },
+                { x = -128, y = 96 },
+                { x = -192, y = 32 },
                 { x = -224, y = 32 },
-                { x = -256, y = 0 },
-                { x = -288, y = 0 },
+                { x = -288, y = -32 },
                 { x = -288, y = -112 },
                 { x = -256, y = -144 },
                 { x = -256, y = -224 }
-              },
-              properties = {
-                ["bodyinlayers"] = "Wall",
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["extrudeY"] = -64,
-                ["linecolor"] = "#80ffffff"
-              }
-            },
-            {
-              id = 311,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 2592,
-              y = 224,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polygon = {
-                { x = 288, y = 160 },
-                { x = 384, y = 64 },
-                { x = 320, y = 64 },
-                { x = 256, y = 0 },
-                { x = 192, y = 64 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -18552,17 +18546,22 @@ return {
               name = "",
               type = "Boundary",
               shape = "polygon",
-              x = 3168,
-              y = 0,
+              x = 3088,
+              y = -96,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 16, y = 0 },
-                { x = 16, y = 112 },
-                { x = 192, y = 112 },
-                { x = 192, y = 0 }
+                { x = -80, y = 0 },
+                { x = -80, y = 208 },
+                { x = -48, y = 176 },
+                { x = 48, y = 176 },
+                { x = 80, y = 144 },
+                { x = 240, y = 144 },
+                { x = 272, y = 176 },
+                { x = 304, y = 176 },
+                { x = 304, y = 0 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -18577,17 +18576,21 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2592,
-              y = 32,
+              x = 2608,
+              y = -40,
               width = 128,
               height = 128,
               rotation = 0,
               gid = 7257,
               visible = true,
               properties = {
+                ["ammo"] = 0,
+                ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 273 },
+                ["exitpoint"] = { id = 555 },
                 ["facedegrees"] = 90,
-                ["initialai"] = "enterAndPrepareBowAmbush"
+                ["initialai"] = "enterAndPrepareBowAmbush",
+                ["z"] = 64
               }
             },
             {
@@ -18595,8 +18598,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2480,
-              y = 56,
+              x = 2528,
+              y = 16,
               width = 32,
               height = 48,
               rotation = 0,
@@ -18611,8 +18614,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2944,
-              y = 48,
+              x = 2688,
+              y = 16,
               width = 32,
               height = 48,
               rotation = 0,
@@ -18627,30 +18630,66 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 2592,
-              y = 48,
+              x = 2608,
+              y = -24,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
-              properties = {}
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 555,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2608,
+              y = -128,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 556,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2640,
+              y = -128,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
             },
             {
               id = 274,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2720,
-              y = 32,
+              x = 2640,
+              y = -48,
               width = 128,
               height = 128,
               rotation = 0,
               gid = 7257,
               visible = true,
               properties = {
+                ["ammo"] = 0,
+                ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 275 },
+                ["exitpoint"] = { id = 556 },
                 ["facedegrees"] = 90,
-                ["initialai"] = "enterAndPrepareBowAmbush"
+                ["initialai"] = "enterAndPrepareBowAmbush",
+                ["z"] = 64
               }
             },
             {
@@ -18658,30 +18697,36 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 2720,
-              y = 48,
+              x = 2640,
+              y = -24,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
-              properties = {}
+              properties = {
+                ["z"] = 64
+              }
             },
             {
               id = 280,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2656,
-              y = 256,
+              x = 2768,
+              y = -24,
               width = 128,
               height = 128,
               rotation = 0,
               gid = 7257,
               visible = true,
               properties = {
+                ["ammo"] = 0,
+                ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 281 },
+                ["exitpoint"] = { id = 557 },
                 ["facedegrees"] = 270,
-                ["initialai"] = "enterAndPrepareBowAmbush"
+                ["initialai"] = "enterAndPrepareBowAmbush",
+                ["z"] = 64
               }
             },
             {
@@ -18689,17 +18734,21 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2784,
-              y = 264,
+              x = 2800,
+              y = -32,
               width = 128,
               height = 128,
               rotation = 0,
               gid = 7257,
               visible = true,
               properties = {
+                ["ammo"] = 0,
+                ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 283 },
+                ["exitpoint"] = { id = 558 },
                 ["facedegrees"] = 270,
-                ["initialai"] = "enterAndPrepareBowAmbush"
+                ["initialai"] = "enterAndPrepareBowAmbush",
+                ["z"] = 64
               }
             },
             {
@@ -18707,43 +18756,73 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 2656,
-              y = 248,
+              x = 2768,
+              y = 8,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
-              properties = {}
+              properties = {
+                ["z"] = 64
+              }
             },
             {
               id = 283,
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 2784,
-              y = 248,
+              x = 2800,
+              y = 8,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
-              properties = {}
+              properties = {
+                ["z"] = 64
+              }
             },
             {
               id = 286,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2848,
-              y = 32,
+              x = 2928,
+              y = -8,
               width = 128,
               height = 128,
               rotation = 0,
               gid = 7257,
               visible = true,
               properties = {
+                ["ammo"] = 0,
+                ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 287 },
+                ["exitpoint"] = { id = 559 },
                 ["facedegrees"] = 90,
-                ["initialai"] = "enterAndPrepareBowAmbush"
+                ["initialai"] = "enterAndPrepareBowAmbush",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 545,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2960,
+              y = -16,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7257,
+              visible = true,
+              properties = {
+                ["ammo"] = 0,
+                ["defaultattack"] = "bow-shot-until-empty",
+                ["entrypoint"] = { id = 546 },
+                ["exitpoint"] = { id = 560 },
+                ["facedegrees"] = 90,
+                ["initialai"] = "enterAndPrepareBowAmbush",
+                ["z"] = 64
               }
             },
             {
@@ -18751,21 +18830,38 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 2848,
-              y = 48,
+              x = 2928,
+              y = 40,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
-              properties = {}
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 546,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 2960,
+              y = 40,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
             },
             {
               id = 299,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3192,
-              y = 144,
+              x = 3112,
+              y = 112,
               width = 32,
               height = 48,
               rotation = 0,
@@ -18780,7 +18876,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3280,
+              x = 3168,
               y = 128,
               width = 32,
               height = 48,
@@ -18796,8 +18892,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3184,
-              y = 168,
+              x = 3136,
+              y = 144,
               width = 32,
               height = 48,
               rotation = 0,
@@ -18812,7 +18908,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3296,
+              x = 3240,
               y = 160,
               width = 32,
               height = 48,
@@ -18828,8 +18924,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3248,
-              y = 160,
+              x = 3304,
+              y = 152,
               width = 32,
               height = 48,
               rotation = 0,
@@ -18844,8 +18940,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3328,
-              y = 176,
+              x = 3192,
+              y = 160,
               width = 32,
               height = 48,
               rotation = 0,
@@ -18860,8 +18956,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3232,
-              y = 128,
+              x = 3336,
+              y = 112,
               width = 32,
               height = 48,
               rotation = 0,
@@ -18876,8 +18972,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3336,
-              y = 144,
+              x = 3280,
+              y = 128,
               width = 32,
               height = 48,
               rotation = 0,
@@ -18892,7 +18988,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3008,
+              x = 2848,
               y = 48,
               width = 32,
               height = 48,
@@ -18908,8 +19004,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2496,
-              y = 136,
+              x = 2504,
+              y = 104,
               width = 16,
               height = 16,
               rotation = 0,
@@ -18926,8 +19022,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2498,
-              y = 145,
+              x = 2506,
+              y = 113,
               width = 16,
               height = 16,
               rotation = 345,
@@ -18944,8 +19040,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2474,
-              y = 168,
+              x = 2482,
+              y = 136,
               width = 16,
               height = 16,
               rotation = 15,
@@ -18962,8 +19058,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2472,
-              y = 176,
+              x = 2480,
+              y = 144,
               width = 16,
               height = 16,
               rotation = 15,
@@ -18980,8 +19076,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2517.66,
-              y = 96,
+              x = 2525.66,
+              y = 64,
               width = 16,
               height = 16,
               rotation = 45,
@@ -18998,8 +19094,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2512,
-              y = 101.657,
+              x = 2520,
+              y = 69.657,
               width = 16,
               height = 16,
               rotation = 45,
@@ -19093,6 +19189,136 @@ return {
               properties = {
                 ["drawz"] = 2
               }
+            },
+            {
+              id = 548,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 3048,
+              y = 104,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7262,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 549,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 3064,
+              y = 184,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7262,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 550,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 3352,
+              y = 136,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7262,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 552,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 3264,
+              y = 264,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7262,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 553,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 3224,
+              y = 216,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7262,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 557,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2768,
+              y = -96,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 558,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2800,
+              y = -96,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 559,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2928,
+              y = -64,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 560,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2960,
+              y = -64,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
             }
           }
         },
@@ -19113,112 +19339,6 @@ return {
             ["titlebarcuecard"] = "LV2 FIREBALL"
           },
           objects = {
-            {
-              id = 291,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3264,
-              y = -48,
-              width = 128,
-              height = 128,
-              rotation = 0,
-              gid = 7257,
-              visible = true,
-              properties = {
-                ["ammo"] = 10,
-                ["defaultattack"] = "bow-shot-until-empty",
-                ["entrypoint"] = { id = 294 },
-                ["exitpoint"] = { id = 296 },
-                ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "food-fish",
-                ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
-              }
-            },
-            {
-              id = 292,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3264,
-              y = -16,
-              width = 128,
-              height = 128,
-              rotation = 0,
-              gid = 7257,
-              visible = true,
-              properties = {
-                ["ammo"] = 10,
-                ["defaultattack"] = "bow-shot-until-empty",
-                ["entrypoint"] = { id = 293 },
-                ["exitpoint"] = { id = 295 },
-                ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "food-fish",
-                ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
-              }
-            },
-            {
-              id = 293,
-              name = "entrypoint",
-              type = "",
-              shape = "point",
-              x = 3216,
-              y = 48,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
-              id = 294,
-              name = "entrypoint",
-              type = "",
-              shape = "point",
-              x = 3312,
-              y = 48,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
-              id = 295,
-              name = "exitpoint",
-              type = "",
-              shape = "point",
-              x = 3248,
-              y = -16,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
-              id = 296,
-              name = "exitpoint",
-              type = "",
-              shape = "point",
-              x = 3280,
-              y = -16,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
             {
               id = 101,
               name = "",
@@ -19250,6 +19370,40 @@ return {
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
+            },
+            {
+              id = 547,
+              name = "",
+              type = "bandit-axe",
+              shape = "rectangle",
+              x = 3312,
+              y = -16,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7255,
+              visible = true,
+              properties = {
+                ["ammo"] = 999999,
+                ["defaultattack"] = "axe-throw-until-empty",
+                ["entrypoint"] = { id = 554 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["propertiestable"] = "database/bandits-properties.csv",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 554,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 3216,
+              y = 80,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -19344,8 +19498,7 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 0, y = 0 },
-                { x = 0, y = 112 },
+                { x = 32, y = 0 },
                 { x = 32, y = 80 },
                 { x = 128, y = 80 },
                 { x = 160, y = 48 },
@@ -21268,6 +21421,128 @@ return {
       parallaxy = 1,
       properties = {},
       layers = {
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 55,
+          name = "oldentryhallarchers",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 291,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3264,
+              y = -48,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7257,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["defaultattack"] = "bow-shot-until-empty",
+                ["entrypoint"] = { id = 294 },
+                ["exitpoint"] = { id = 296 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["itemtype"] = "food-fish",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 292,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3264,
+              y = -16,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7257,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["defaultattack"] = "bow-shot-until-empty",
+                ["entrypoint"] = { id = 293 },
+                ["exitpoint"] = { id = 295 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["itemtype"] = "food-fish",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 293,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 3216,
+              y = 48,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 294,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 3312,
+              y = 48,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 295,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 3248,
+              y = -16,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 296,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 3280,
+              y = -16,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            }
+          }
+        },
         {
           type = "objectgroup",
           draworder = "topdown",
