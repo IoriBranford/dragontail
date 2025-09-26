@@ -40,6 +40,7 @@ human-in-spinning-throw,FALSE,fall,human-in-spinning-throw,,held,,Hurt,,FALSE,FA
 human-in-flaming-spinning-throw,FALSE,fall,human-in-flaming-spinning-throw,,held,,Hurt,,FALSE,FALSE,FALSE,,,0,0,1,,
 forge-fire,FALSE,FALSE,forge-fire,,,,,1,FALSE,FALSE,FALSE,,,0,0,1,,
 hurt,FALSE,stand,,Dragontail.Character.Behavior.Fighter.TakingHit,,,Hurt,0,FALSE,FALSE,FALSE,4294967295,,0,0,1,,Object Wall Camera
+hold,FALSE,stand,,Dragontail.Character.Behavior.Enemy.Hold,,,Hold,0,TRUE,TRUE,FALSE,,,0,0.0490873852123405,1,,Object Wall Camera
 held,FALSE,stand,,,held,,Hurt,,TRUE,FALSE,FALSE,4294967295,,0,0,1,,Object Wall Camera
 knockedBack,300,fall,,,knockedBack,,Hurt,,FALSE,FALSE,TRUE,,,0,0,1,,Wall Camera
 knockedBackBurnt,300,fall,,,knockedBack,,Hurt,,FALSE,FALSE,TRUE,4280295456,,0,0,1,,Wall Camera
