@@ -1060,13 +1060,13 @@ to sprint past archers</text>
     </properties>
     <ellipse/>
    </object>
-   <object id="394" gid="6847" x="3720" y="88" width="64" height="64">
+   <object id="394" gid="6849" x="3696" y="64" width="64" height="64">
     <properties>
      <property name="bodyinlayers" value="Wall"/>
-     <property name="extrudeY" type="float" value="-28"/>
+     <property name="extrudeY" type="float" value="-48"/>
     </properties>
    </object>
-   <object id="395" gid="6851" x="3448" y="96" width="64" height="64">
+   <object id="395" gid="6851" x="3456" y="96" width="64" height="64">
     <properties>
      <property name="bodyinlayers" value="Wall"/>
      <property name="extrudeY" type="float" value="-48"/>

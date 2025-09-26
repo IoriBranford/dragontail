@@ -14608,6 +14608,86 @@ return {
           }
         },
         {
+          id = 2,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            class = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "polygon",
+                x = 64,
+                y = 48,
+                width = 64,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                polygon = {
+                  { x = 0, y = 16 },
+                  { x = -16, y = 16 },
+                  { x = -64, y = 0 },
+                  { x = -48, y = 0 }
+                },
+                properties = {
+                  ["collidable"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 3,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            class = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "polygon",
+                x = 0,
+                y = 32,
+                width = 64,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                polygon = {
+                  { x = 0, y = 16 },
+                  { x = 0, y = 32 },
+                  { x = 64, y = 32 },
+                  { x = 64, y = 16 }
+                },
+                properties = {
+                  ["collidable"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 4,
           objectGroup = {
             type = "objectgroup",
@@ -19339,16 +19419,16 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3720,
-              y = 88,
+              x = 3696,
+              y = 64,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 6847,
+              gid = 6849,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Wall",
-                ["extrudeY"] = -28
+                ["extrudeY"] = -48
               }
             },
             {
@@ -19356,7 +19436,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3448,
+              x = 3456,
               y = 96,
               width = 64,
               height = 64,
