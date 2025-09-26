@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <tileset firstgid="1" source="../../../sprites/banditcave/crystal-spikes.tsx"/>
+ <object gid="24" width="32" height="32">
+  <properties>
+   <property name="bloodyanimation" type="int" value="55"/>
+   <property name="propertiestable" type="file" value="../../../database/objects-properties.csv"/>
+  </properties>
+ </object>
+</template>
