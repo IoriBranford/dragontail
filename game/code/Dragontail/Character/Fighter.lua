@@ -217,7 +217,7 @@ function Fighter:knockedBack(thrower, attackangle)
     self.thrower = thrower
     local thrownspeed = thrower.attack.launchspeed or 5
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
-    self.velz = thrower.attackpopupspeed or 4
+    self.velz = thrower.attack.launchspeedz or 4
     local oobx, ooby, oobz
     repeat
         yield()
@@ -259,7 +259,7 @@ function Fighter:knockedBackOrThrown(thrower, attackangle)
     self.thrower = thrower
     local thrownspeed = thrower.attack.launchspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
-    self.velz = thrower.attackpopupspeed or 4
+    self.velz = thrower.attack.launchspeedz or 4
     local thrownsound = self.attack.swingsound and Audio.newSource(self.attack.swingsound)
     if thrownsound then thrownsound:play() end
     local thrownslidetime = self.thrownslidetime or 1
@@ -337,7 +337,7 @@ function Fighter:thrown(thrower, attackangle)
     self.hurtstun = 0
     local thrownspeed = thrower.attack.launchspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
-    self.velz = thrower.attackpopupspeed or 4
+    self.velz = thrower.attack.launchspeedz or 4
     local thrownsound = self.attack.swingsound and Audio.newSource(self.attack.swingsound)
     if thrownsound then thrownsound:play() end
     local thrownslidetime = self.thrownslidetime or 10
