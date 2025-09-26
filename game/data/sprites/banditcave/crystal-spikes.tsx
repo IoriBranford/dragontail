@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.11.2" name="crystal-spikes" tilewidth="32" tileheight="32" tilecount="32" columns="8" objectalignment="bottom">
+<tileset version="1.11" tiledversion="1.11.2" name="crystal-spikes" tilewidth="32" tileheight="32" tilecount="64" columns="8" objectalignment="bottom">
  <tileoffset x="0" y="4"/>
- <image source="crystal-spikes.png" width="256" height="128"/>
+ <image source="crystal-spikes.png" width="256" height="256"/>
  <tile id="0" type="spike-small"/>
  <tile id="1" type="spike-medium"/>
  <tile id="2" type="spike-large"/>
@@ -34,4 +34,36 @@
  <tile id="29" type="spike-medium"/>
  <tile id="30" type="spike-large"/>
  <tile id="31" type="spike-medium"/>
+ <tile id="32" type="spike-small"/>
+ <tile id="33" type="spike-medium"/>
+ <tile id="34" type="spike-large"/>
+ <tile id="35" type="spike-small"/>
+ <tile id="36" type="spike-small"/>
+ <tile id="37" type="spike-large"/>
+ <tile id="38" type="spike-medium"/>
+ <tile id="39" type="spike-small"/>
+ <tile id="40" type="spike-small"/>
+ <tile id="41" type="spike-medium"/>
+ <tile id="42" type="spike-large"/>
+ <tile id="43" type="spike-medium"/>
+ <tile id="44" type="spike-medium"/>
+ <tile id="45" type="spike-large"/>
+ <tile id="46" type="spike-medium"/>
+ <tile id="47" type="spike-small"/>
+ <tile id="48" type="spike-small"/>
+ <tile id="49" type="spike-large"/>
+ <tile id="50" type="spike-medium"/>
+ <tile id="51" type="spike-small"/>
+ <tile id="52" type="spike-small"/>
+ <tile id="53" type="spike-medium"/>
+ <tile id="54" type="spike-large"/>
+ <tile id="55" type="spike-small"/>
+ <tile id="56" type="spike-medium"/>
+ <tile id="57" type="spike-large"/>
+ <tile id="58" type="spike-medium"/>
+ <tile id="59" type="spike-small"/>
+ <tile id="60" type="spike-small"/>
+ <tile id="61" type="spike-medium"/>
+ <tile id="62" type="spike-large"/>
+ <tile id="63" type="spike-medium"/>
 </tileset>
