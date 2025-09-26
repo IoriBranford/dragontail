@@ -45,6 +45,7 @@ function Character:init()
 
     Body.init(self)
     StateMachine.init(self)
+    Attacker.init(self)
 
     self.drawz = self.drawz or 0
     -- ch.attackangle = ch.attackangle or 0

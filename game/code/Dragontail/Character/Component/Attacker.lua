@@ -16,6 +16,13 @@ local AttackHit    = require "Dragontail.Character.Event.AttackHit"
 ---@field onAttackHit fun(self:Attacker, target:AttackTarget)?
 local Attacker = {}
 
+function Attacker:init()
+    local attackdegrees = self.attackdegrees
+    if attackdegrees then
+        self.attackangle = math.rad(attackdegrees)
+    end
+end
+
 function Attacker:isAttacking()
     return self.attackangle
 end
