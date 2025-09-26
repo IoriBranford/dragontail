@@ -352,12 +352,19 @@ end
 function Characters.getCylinderFloor(x, y, z, r, h, solidlayersmask)
     local floorchar
     local floorz = -math.huge
+    local floorpenelensq = -math.huge
     for _, solid in ipairs(solids) do
         if bit.band(solid.bodyinlayers, solidlayersmask) ~= 0 then
-            local fz = Body.getCylinderFloorZ(solid, x, y, z, r, h)
-            if fz and fz > floorz then
-                floorchar = solid
-                floorz = fz
+            local fz, penex, peney = Body.getCylinderFloorZ(solid, x, y, z, r, h)
+            if fz then
+                local penelensq = penex and peney
+                    and math.lensq(penex, peney) or -math.huge
+                if fz > floorz
+                or fz == floorz and floorpenelensq < penelensq then
+                    floorchar = solid
+                    floorz = fz
+                    floorpenelensq = penelensq
+                end
             end
         end
     end

@@ -385,10 +385,11 @@ function Body:getCylinderFloorZ(x, y, z, r, h)
         return
     end
 
-    if outward and not Body.getCirclePenetration(self, x, y, r) then
+    local penex, peney = Body.getCirclePenetration(self, x, y, r)
+    if outward and not penex and not peney then
         return
     end
-    return floorz
+    return floorz, penex, peney
 end
 
 function Body:draw(fixedfrac)
