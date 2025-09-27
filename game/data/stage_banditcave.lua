@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 56,
-  nextobjectid = 561,
+  nextlayerid = 57,
+  nextobjectid = 564,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -18070,7 +18070,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["titlebarcuecard"] = "CATCH AND THROW ARROW, LV1 FIREBALL"
+            ["donewhenenemiesleft"] = 4
           },
           objects = {
             {
@@ -18175,22 +18175,6 @@ return {
               visible = true,
               properties = {
                 ["z"] = 64
-              }
-            },
-            {
-              id = 307,
-              name = "",
-              type = "bandit-spear",
-              shape = "rectangle",
-              x = 1568,
-              y = 256,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7258,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
               }
             },
             {
@@ -18385,6 +18369,86 @@ return {
                 ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff",
                 ["z"] = 64
+              }
+            },
+            {
+              id = 562,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1680,
+              y = 160,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7260,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 563,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1680,
+              y = 240,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7260,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 56,
+          name = "+spears",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 307,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 1672,
+              y = 280,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7258,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 561,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 1672,
+              y = 184,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7258,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
               }
             }
           }
