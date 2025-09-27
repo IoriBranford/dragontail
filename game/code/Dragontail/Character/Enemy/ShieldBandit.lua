@@ -21,8 +21,9 @@ function ShieldBandit:duringStand()
     local opponent = self.opponents[1]
     local fromoppox, fromoppoy = self.x - opponent.x, self.y - opponent.y
     local oppovelx, oppovely = opponent.velx, opponent.vely
+    local oppospeed = math.len(oppovelx, oppovely)
     local dot = math.dot(fromoppox, fromoppoy, oppovelx, oppovely)
-    if 0 < dot and dot <= 60*60 then
+    if 0 < dot and dot <= oppospeed*60 then
         return "raiseGuard"
     end
 end
@@ -31,8 +32,9 @@ function ShieldBandit:duringApproach(opponent)
     if not self:isCylinderFullyOnCamera(self.camera) then return end
     local fromoppox, fromoppoy = self.x - opponent.x, self.y - opponent.y
     local oppovelx, oppovely = opponent.velx, opponent.vely
+    local oppospeed = math.len(oppovelx, oppovely)
     local dot = math.dot(fromoppox, fromoppoy, oppovelx, oppovely)
-    if 0 < dot and dot <= 60*60 then
+    if 0 < dot and dot <= oppospeed*60 then
         return "raiseGuard"
     end
 end
