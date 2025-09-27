@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 57,
-  nextobjectid = 564,
+  nextobjectid = 580,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -15445,6 +15445,292 @@ return {
       wangsets = {},
       tilecount = 1,
       tiles = {}
+    },
+    {
+      name = "crystal-spikes",
+      firstgid = 7284,
+      class = "",
+      tilewidth = 32,
+      tileheight = 32,
+      spacing = 0,
+      margin = 0,
+      columns = 8,
+      image = "sprites/banditcave/crystal-spikes.png",
+      imagewidth = 256,
+      imageheight = 256,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 4
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 32
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 64,
+      tiles = {
+        {
+          id = 0,
+          type = "spike-small"
+        },
+        {
+          id = 1,
+          type = "spike-medium"
+        },
+        {
+          id = 2,
+          type = "spike-large"
+        },
+        {
+          id = 3,
+          type = "spike-small"
+        },
+        {
+          id = 4,
+          type = "spike-small"
+        },
+        {
+          id = 5,
+          type = "spike-large"
+        },
+        {
+          id = 6,
+          type = "spike-medium"
+        },
+        {
+          id = 7,
+          type = "spike-small"
+        },
+        {
+          id = 8,
+          type = "spike-small"
+        },
+        {
+          id = 9,
+          type = "spike-medium"
+        },
+        {
+          id = 10,
+          type = "spike-large"
+        },
+        {
+          id = 11,
+          type = "spike-medium"
+        },
+        {
+          id = 12,
+          type = "spike-medium"
+        },
+        {
+          id = 13,
+          type = "spike-large"
+        },
+        {
+          id = 14,
+          type = "spike-medium"
+        },
+        {
+          id = 15,
+          type = "spike-small"
+        },
+        {
+          id = 16,
+          type = "spike-small"
+        },
+        {
+          id = 17,
+          type = "spike-large"
+        },
+        {
+          id = 18,
+          type = "spike-medium"
+        },
+        {
+          id = 19,
+          type = "spike-small"
+        },
+        {
+          id = 20,
+          type = "spike-small"
+        },
+        {
+          id = 21,
+          type = "spike-medium"
+        },
+        {
+          id = 22,
+          type = "spike-large"
+        },
+        {
+          id = 23,
+          type = "spike-small"
+        },
+        {
+          id = 24,
+          type = "spike-medium"
+        },
+        {
+          id = 25,
+          type = "spike-large"
+        },
+        {
+          id = 26,
+          type = "spike-medium"
+        },
+        {
+          id = 27,
+          type = "spike-small"
+        },
+        {
+          id = 28,
+          type = "spike-small"
+        },
+        {
+          id = 29,
+          type = "spike-medium"
+        },
+        {
+          id = 30,
+          type = "spike-large"
+        },
+        {
+          id = 31,
+          type = "spike-medium"
+        },
+        {
+          id = 32,
+          type = "spike-small"
+        },
+        {
+          id = 33,
+          type = "spike-medium"
+        },
+        {
+          id = 34,
+          type = "spike-large"
+        },
+        {
+          id = 35,
+          type = "spike-small"
+        },
+        {
+          id = 36,
+          type = "spike-small"
+        },
+        {
+          id = 37,
+          type = "spike-large"
+        },
+        {
+          id = 38,
+          type = "spike-medium"
+        },
+        {
+          id = 39,
+          type = "spike-small"
+        },
+        {
+          id = 40,
+          type = "spike-small"
+        },
+        {
+          id = 41,
+          type = "spike-medium"
+        },
+        {
+          id = 42,
+          type = "spike-large"
+        },
+        {
+          id = 43,
+          type = "spike-medium"
+        },
+        {
+          id = 44,
+          type = "spike-medium"
+        },
+        {
+          id = 45,
+          type = "spike-large"
+        },
+        {
+          id = 46,
+          type = "spike-medium"
+        },
+        {
+          id = 47,
+          type = "spike-small"
+        },
+        {
+          id = 48,
+          type = "spike-small"
+        },
+        {
+          id = 49,
+          type = "spike-large"
+        },
+        {
+          id = 50,
+          type = "spike-medium"
+        },
+        {
+          id = 51,
+          type = "spike-small"
+        },
+        {
+          id = 52,
+          type = "spike-small"
+        },
+        {
+          id = 53,
+          type = "spike-medium"
+        },
+        {
+          id = 54,
+          type = "spike-large"
+        },
+        {
+          id = 55,
+          type = "spike-small"
+        },
+        {
+          id = 56,
+          type = "spike-medium"
+        },
+        {
+          id = 57,
+          type = "spike-large"
+        },
+        {
+          id = 58,
+          type = "spike-medium"
+        },
+        {
+          id = 59,
+          type = "spike-small"
+        },
+        {
+          id = 60,
+          type = "spike-small"
+        },
+        {
+          id = 61,
+          type = "spike-medium"
+        },
+        {
+          id = 62,
+          type = "spike-large"
+        },
+        {
+          id = 63,
+          type = "spike-medium"
+        }
+      }
     }
   },
   layers = {
@@ -19420,6 +19706,287 @@ return {
               visible = true,
               properties = {
                 ["z"] = 64
+              }
+            },
+            {
+              id = 564,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2560,
+              y = 56,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7284,
+              visible = true,
+              properties = {
+                ["bloodyanimation"] = 32,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 579,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2864,
+              y = 168,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7284,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 32,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 565,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2864,
+              y = 120,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7287,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 35,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 578,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2696,
+              y = 216,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7287,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 270,
+                ["bloodyanimation"] = 35,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 566,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2696,
+              y = 80,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7288,
+              visible = true,
+              properties = {
+                ["bloodyanimation"] = 36,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 577,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2864,
+              y = 184,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7288,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 36,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 567,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2616,
+              y = 64,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7291,
+              visible = true,
+              properties = {
+                ["bloodyanimation"] = 39,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 576,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2736,
+              y = 208,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7291,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 270,
+                ["bloodyanimation"] = 39,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 568,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2656,
+              y = 64,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7292,
+              visible = true,
+              properties = {
+                ["bloodyanimation"] = 40,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 575,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2840,
+              y = 192,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7292,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 40,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 569,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2832,
+              y = 96,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7312,
+              visible = true,
+              properties = {
+                ["bloodyanimation"] = 60,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 574,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2888,
+              y = 144,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7312,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 60,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 570,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2752,
+              y = 88,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7300,
+              visible = true,
+              properties = {
+                ["bloodyanimation"] = 48,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 573,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2776,
+              y = 224,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7300,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 270,
+                ["bloodyanimation"] = 48,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 571,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2792,
+              y = 96,
+              width = 40,
+              height = 32,
+              rotation = 0,
+              gid = 7307,
+              visible = true,
+              properties = {
+                ["bloodyanimation"] = 55,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 572,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2808,
+              y = 208,
+              width = 40,
+              height = 32,
+              rotation = 0,
+              gid = 7307,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 270,
+                ["bloodyanimation"] = 55,
+                ["propertiestable"] = "database/objects-properties.csv"
               }
             }
           }
