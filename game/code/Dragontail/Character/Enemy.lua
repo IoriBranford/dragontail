@@ -371,8 +371,9 @@ function Enemy:guard()
         return nextstate, a, b, c, d, e, f
     end
 
-    for t = 1, self.state.statetime or 60 do
-        nextstate, a, b, c, d, e, f = self:duringGuard(t)
+    while not self.statetime or self.statetime > 0 do
+        nextstate, a, b, c, d, e, f = self:duringGuard(
+            self.statetime or math.floor(love.timer.getTime()*60))
         if nextstate then
             return nextstate, a, b, c, d, e, f
         end
