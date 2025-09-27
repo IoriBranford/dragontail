@@ -9,7 +9,7 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 57,
+  nextlayerid = 58,
   nextobjectid = 580,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
@@ -15731,6 +15731,35 @@ return {
           type = "spike-medium"
         }
       }
+    },
+    {
+      name = "muscle",
+      firstgid = 7348,
+      class = "",
+      tilewidth = 128,
+      tileheight = 128,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/bandit/muscle.ase",
+      imagewidth = 128,
+      imageheight = 128,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 40
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 128,
+        height = 128
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
     }
   },
   layers = {
@@ -20327,8 +20356,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 2,
-            ["titlebarcuecard"] = "THROW ENEMY INTO FIRE"
+            ["donewhenenemiesleft"] = 4
           },
           objects = {
             {
@@ -20418,7 +20446,7 @@ return {
           type = "objectgroup",
           draworder = "topdown",
           id = 35,
-          name = "+axes",
+          name = "+muscle",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -20431,32 +20459,16 @@ return {
           },
           objects = {
             {
-              id = 383,
-              name = "",
-              type = "bandit-axe",
-              shape = "rectangle",
-              x = 3864,
-              y = 120,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7255,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
               id = 384,
-              name = "",
-              type = "bandit-axe",
+              name = "bandit-muscle",
+              type = "bandit-muscle",
               shape = "rectangle",
-              x = 3864,
-              y = 216,
-              width = 64,
-              height = 64,
+              x = 3344,
+              y = 136,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 7255,
+              gid = 7348,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
