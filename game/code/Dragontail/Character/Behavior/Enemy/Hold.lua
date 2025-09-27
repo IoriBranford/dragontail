@@ -19,7 +19,9 @@ function EnemyHold:start(player)
     end
 
     enemy.holdangle = math.atan2(holddiry, holddirx)
-    self.holddestangle = enemy.holdangle
+    local animationdirections = enemy.animationdirections or 4
+    local holdangleinterval = 2*math.pi/animationdirections
+    self.holddestangle = math.floor(enemy.holdangle/holdangleinterval) * holdangleinterval
     self.isfrombehind = math.dot(holddirx, holddiry,
         math.cos(player.faceangle), math.sin(player.faceangle)) >= 0
 
