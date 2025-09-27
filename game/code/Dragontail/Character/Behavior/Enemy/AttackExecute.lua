@@ -4,9 +4,10 @@ local Shoot    = require "Dragontail.Character.Action.Shoot"
 local Body     = require "Dragontail.Character.Component.Body"
 local Slide    = require "Dragontail.Character.Action.Slide"
 local Color    = require "Tiled.Color"
+local Face     = require "Dragontail.Character.Component.Face"
 
 local AttackExecute = pooledclass(Behavior)
-AttackExecute._nrec = Behavior._nrec + 3
+AttackExecute._nrec = Behavior._nrec + 2
 
 function AttackExecute:start()
     local enemy = self.character
@@ -33,14 +34,23 @@ function AttackExecute:start()
     self.hitendtime = enemy.statetime - hittime
 
     self.lungespeed = enemy.attack.lungespeed or 0
-    self.slideangle = enemy.faceangle
 end
 
 function AttackExecute:fixedupdate()
     local enemy = self.character
+    local target = enemy.opponents[1]
+
+    local faceangle = enemy.faceangle
+    if (enemy.faceturnspeed or 0) ~= 0 then
+        faceangle = Face.turnTowardsObject(enemy, target, nil,
+            enemy.state.animation, enemy.animationframe)
+
+        local attackangle = math.floor((faceangle + (math.pi/4)) / (math.pi/2)) * math.pi/2
+        enemy:startAttack(attackangle)
+    end
 
     self.lungespeed = Slide.updateSlideSpeed(enemy,
-        self.slideangle, self.lungespeed,
+        faceangle, self.lungespeed,
         enemy.attack.lungedecel or 1)
 
     if enemy.statetime <= self.hitendtime then
@@ -51,7 +61,6 @@ function AttackExecute:fixedupdate()
         enemy:makePeriodicAfterImage(enemy.statetime, enemy.afterimageinterval)
     end
 
-    local target = enemy.opponents[1]
     local state, a, b, c, d, e, f = enemy:duringAttackSwing(target)
     if state then
         return state, a, b, c, d, e, f
