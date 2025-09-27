@@ -17071,8 +17071,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 1,
-            ["titlebarcuecard"] = "THROW SINGLE ROCKS"
+            ["donewhenenemiesleft"] = 1
           },
           objects = {
             {
@@ -17485,7 +17484,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 4
+            ["donewhenenemiesleft"] = 3
           },
           objects = {
             {
@@ -17555,7 +17554,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 4
+            ["donewhenenemiesleft"] = 3
           },
           objects = {
             {
@@ -17589,7 +17588,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 5,
+            ["donewhenenemiesleft"] = 3,
             ["titlebarcuecard"] = "THROW MULTIPLE ROCKS"
           },
           objects = {

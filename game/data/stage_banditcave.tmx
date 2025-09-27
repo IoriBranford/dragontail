@@ -449,7 +449,6 @@
   <objectgroup id="48" name="learnthrowingweapons" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="1"/>
-    <property name="titlebarcuecard" value="THROW SINGLE ROCKS"/>
    </properties>
    <object id="58" gid="7259" x="1664" y="-40" width="64" height="64">
     <properties>
@@ -531,7 +530,7 @@
   </objectgroup>
   <objectgroup id="11" name="+shooter" class="Room">
    <properties>
-    <property name="donewhenenemiesleft" type="int" value="4"/>
+    <property name="donewhenenemiesleft" type="int" value="3"/>
    </properties>
    <object id="87" gid="7259" x="1680" y="-8" width="64" height="64">
     <properties>
@@ -559,13 +558,13 @@
   </objectgroup>
   <objectgroup id="50" name="+spears" class="Room">
    <properties>
-    <property name="donewhenenemiesleft" type="int" value="4"/>
+    <property name="donewhenenemiesleft" type="int" value="3"/>
    </properties>
    <object id="501" template="mapobjects/bandit/spear.tx" x="1872" y="232"/>
   </objectgroup>
   <objectgroup id="49" name="+shooters" class="Room">
    <properties>
-    <property name="donewhenenemiesleft" type="int" value="5"/>
+    <property name="donewhenenemiesleft" type="int" value="3"/>
     <property name="titlebarcuecard" value="THROW MULTIPLE ROCKS"/>
    </properties>
    <object id="494" gid="7259" x="1584" y="-8" width="64" height="64">
