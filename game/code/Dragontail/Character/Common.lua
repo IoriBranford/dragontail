@@ -222,11 +222,17 @@ function Common:itemWaitForPickup()
             end
         elseif self.giveweapon then
             local weapontype = self.giveweapon
-            local tryToGiveWeapon = opponent.tryToGiveWeapon
-            if tryToGiveWeapon and weapontype then
-                if testItemPickupCollision(self, opponent) then
-                    if tryToGiveWeapon(opponent, weapontype) then
-                        finished = true
+            if testItemPickupCollision(self, opponent) and opponent:tryToGiveWeapon(weapontype) then
+                finished = true
+            else
+                for _, enemy in ipairs(Characters.getGroup("enemies")) do
+                    if enemy.canpickupweapons then
+                        if testItemPickupCollision(self, enemy) then
+                            if enemy:tryToGiveWeapon(weapontype) then
+                                finished = true
+                                break
+                            end
+                        end
                     end
                 end
             end
