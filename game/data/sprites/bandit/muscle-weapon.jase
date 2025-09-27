@@ -642,7 +642,7 @@
  },
  "meta": {
   "app": "http://www.aseprite.org/",
-  "version": "1.3.15.2-x64",
+  "version": "1.3.15.2-dev",
   "image": "muscle-weapon.png",
   "format": "RGBA8888",
   "size": { "w": 16, "h": 16 },
@@ -688,7 +688,27 @@
    { "name": "catchReady1", "from": 92, "to": 94, "direction": "forward", "repeat": "1", "color": "#000000ff" },
    { "name": "catchUnready1", "from": 92, "to": 94, "direction": "reverse", "color": "#000000ff" },
    { "name": "catchReady0", "from": 95, "to": 97, "direction": "forward", "repeat": "1", "color": "#000000ff" },
-   { "name": "catchUnready0", "from": 95, "to": 97, "direction": "reverse", "color": "#000000ff" }
+   { "name": "catchUnready0", "from": 95, "to": 97, "direction": "reverse", "color": "#000000ff" },
+   { "name": "Reach3", "from": 98, "to": 98, "direction": "forward", "color": "#000000ff" },
+   { "name": "ReachWalk3", "from": 99, "to": 106, "direction": "forward", "color": "#000000ff" },
+   { "name": "Reach2", "from": 107, "to": 107, "direction": "forward", "color": "#000000ff" },
+   { "name": "ReachWalk2", "from": 108, "to": 115, "direction": "forward", "color": "#000000ff" },
+   { "name": "Reach1", "from": 116, "to": 116, "direction": "forward", "color": "#000000ff" },
+   { "name": "ReachWalk1", "from": 117, "to": 124, "direction": "forward", "color": "#000000ff" },
+   { "name": "Reach0", "from": 125, "to": 125, "direction": "forward", "color": "#000000ff" },
+   { "name": "ReachWalk0", "from": 126, "to": 133, "direction": "forward", "color": "#000000ff" },
+   { "name": "Hold3", "from": 134, "to": 134, "direction": "forward", "color": "#000000ff" },
+   { "name": "Hold2", "from": 135, "to": 135, "direction": "forward", "color": "#000000ff" },
+   { "name": "Hold1", "from": 136, "to": 136, "direction": "forward", "color": "#000000ff" },
+   { "name": "Hold0", "from": 137, "to": 137, "direction": "forward", "color": "#000000ff" },
+   { "name": "ReachWindup3", "from": 138, "to": 141, "direction": "forward", "color": "#000000ff" },
+   { "name": "BreakHold3", "from": 138, "to": 141, "direction": "forward", "color": "#000000ff" },
+   { "name": "ReachWindup2", "from": 142, "to": 145, "direction": "forward", "color": "#000000ff" },
+   { "name": "BreakHold2", "from": 142, "to": 145, "direction": "forward", "color": "#000000ff" },
+   { "name": "ReachWindup1", "from": 146, "to": 149, "direction": "forward", "color": "#000000ff" },
+   { "name": "BreakHold1", "from": 146, "to": 149, "direction": "forward", "color": "#000000ff" },
+   { "name": "ReachWindup0", "from": 150, "to": 153, "direction": "forward", "color": "#000000ff" },
+   { "name": "BreakHold0", "from": 150, "to": 153, "direction": "forward", "color": "#000000ff" }
   ],
   "layers": [
    { "name": "weapon", "opacity": 255, "blendMode": "normal" }
