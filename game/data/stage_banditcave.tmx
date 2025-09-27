@@ -622,6 +622,9 @@
    <object id="62" template="mapobjects/bandit/spear.tx" x="1872" y="232"/>
   </objectgroup>
   <objectgroup draworder="index" id="15" name="tolearngrabandthrowenemies" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="2"/>
+   </properties>
    <object id="65" template="mapobjects/OutwardBoundary.tx" x="2016" y="288" visible="1">
     <properties>
      <property name="extrudeY" type="float" value="-64"/>
@@ -684,6 +687,18 @@ COSTS 1 OR MORE</text>
      <property name="roundcorners" type="float" value="1"/>
     </properties>
    </object>
+   <object id="503" template="mapobjects/bandit/shield.tx" x="2048" y="152">
+    <properties>
+     <property name="facedegrees" type="float" value="180"/>
+     <property name="initialai" value="guardForever"/>
+    </properties>
+   </object>
+   <object id="308" template="mapobjects/bandit/shield.tx" x="2080" y="184">
+    <properties>
+     <property name="facedegrees" type="float" value="180"/>
+     <property name="initialai" value="guardForever"/>
+    </properties>
+   </object>
   </objectgroup>
   <objectgroup id="29" name="learngrabandthrowenemies" class="Room">
    <properties>
@@ -736,16 +751,6 @@ COSTS 1 OR MORE</text>
     <point/>
    </object>
    <object id="307" template="mapobjects/bandit/spear.tx" x="1568" y="256"/>
-   <object id="503" template="mapobjects/bandit/spear.tx" x="1880" y="-8">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-   </object>
-   <object id="308" template="mapobjects/bandit/spear.tx" x="1936" y="-8">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-   </object>
    <object id="436" name="Instruction" x="1864" y="48" width="144" height="32" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Move into an enemy or barrel to grab</text>
    </object>

@@ -15416,6 +15416,35 @@ return {
       wangsets = {},
       tilecount = 20,
       tiles = {}
+    },
+    {
+      name = "shield",
+      firstgid = 7283,
+      class = "",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/bandit/shield.ase",
+      imagewidth = 64,
+      imageheight = 64,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 64,
+        height = 64
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
     }
   },
   layers = {
@@ -17732,7 +17761,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = 2
+          },
           objects = {
             {
               id = 65,
@@ -17987,6 +18018,42 @@ return {
                 ["linecolor"] = "#ffffffff",
                 ["roundcorners"] = 1
               }
+            },
+            {
+              id = 503,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 2048,
+              y = 152,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7283,
+              visible = true,
+              properties = {
+                ["facedegrees"] = 180,
+                ["initialai"] = "guardForever",
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 308,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 2080,
+              y = 184,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7283,
+              visible = true,
+              properties = {
+                ["facedegrees"] = 180,
+                ["initialai"] = "guardForever",
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             }
           }
         },
@@ -18124,40 +18191,6 @@ return {
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 503,
-              name = "",
-              type = "bandit-spear",
-              shape = "rectangle",
-              x = 1880,
-              y = -8,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7258,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv",
-                ["z"] = 64
-              }
-            },
-            {
-              id = 308,
-              name = "",
-              type = "bandit-spear",
-              shape = "rectangle",
-              x = 1936,
-              y = -8,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7258,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv",
-                ["z"] = 64
               }
             },
             {
