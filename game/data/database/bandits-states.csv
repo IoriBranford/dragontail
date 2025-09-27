@@ -23,6 +23,8 @@ sling-shot-until-empty,120,sling-shot-until-empty2,sling-shot,Dragontail.Charact
 sling-shot-until-empty2,40,attackIfAmmoElseLeave,sling-shot,Dragontail.Character.Behavior.Enemy.AttackExecute,,,ShootAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/arrowfly.mp3,0,0,1,,
 shield-bash,10,shield-bash2,shield-bash,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,SwingWindup,0,FALSE,FALSE,FALSE,,data/sounds/man_medium/attack1.mp3,0,0,1,,
 shield-bash2,20,lowerGuard,shield-bash,Dragontail.Character.Behavior.Enemy.AttackExecute,,,SwingAttack,0,FALSE,FALSE,FALSE,,data/sounds/combat/swing1.mp3,0,0,1,,
+muscle-grab,15,muscle-grab2,muscle-grab,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,ReachWindup,0,TRUE,TRUE,TRUE,,data/sounds/man_heavy/angry2.mp3,0,0,1,,
+muscle-grab2,120,stand,muscle-grab,Dragontail.Character.Behavior.Enemy.AttackExecute,,,ReachWalk,1,TRUE,FALSE,TRUE,,data/sounds/combat/runfast.mp3,3,3.14159265358979,1,,
 bandit-boss-first-charge,60,bandit-boss-charge2,bandit-boss-charge,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,Charge,1,TRUE,TRUE,FALSE,,data/sounds/man_heavy/heavyattack3.mp3,0,0,1,,
 bandit-boss-charge,30,bandit-boss-charge2,bandit-boss-charge,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,Charge,1,TRUE,TRUE,FALSE,,data/sounds/man_heavy/heavyattack3.mp3,0,0,1,,
 bandit-boss-charge2,40,stand,bandit-boss-charge,Dragontail.Character.Behavior.Enemy.AttackExecute,,,Charge,1,TRUE,TRUE,FALSE,,data/sounds/combat/swingblade.mp3,3,0,4,,
@@ -40,7 +42,7 @@ human-in-spinning-throw,FALSE,fall,human-in-spinning-throw,,held,,Hurt,,FALSE,FA
 human-in-flaming-spinning-throw,FALSE,fall,human-in-flaming-spinning-throw,,held,,Hurt,,FALSE,FALSE,FALSE,,,0,0,1,,
 forge-fire,FALSE,FALSE,forge-fire,,,,,1,FALSE,FALSE,FALSE,,,0,0,1,,
 hurt,FALSE,stand,,Dragontail.Character.Behavior.Fighter.TakingHit,,,Hurt,0,FALSE,FALSE,FALSE,4294967295,,0,0,1,,Object Wall Camera
-hold,FALSE,stand,,Dragontail.Character.Behavior.Enemy.Hold,,,Hold,0,TRUE,TRUE,FALSE,,,0,0.0490873852123405,1,,Object Wall Camera
+hold,FALSE,stand,,Dragontail.Character.Behavior.Enemy.Hold,,,Hold,0,TRUE,TRUE,FALSE,,,0,0.785398163397448,1,,Object Wall Camera
 held,FALSE,stand,,,held,,Hurt,,TRUE,FALSE,FALSE,4294967295,,0,0,1,,Object Wall Camera
 knockedBack,300,fall,,,knockedBack,,Hurt,,FALSE,FALSE,TRUE,,,0,0,1,,Wall Camera
 knockedBackBurnt,300,fall,,,knockedBack,,Hurt,,FALSE,FALSE,TRUE,4280295456,,0,0,1,,Wall Camera
