@@ -172,9 +172,7 @@ function PlayerRunning:fixedupdate()
         local oobx, ooby = findWallCollision(player)
         if oobx or ooby then
             local oobdotvel = math.dot(oobx, ooby, velx, vely)
-            local speed = math.len(velx, vely)
-            local ooblen = math.len(oobx, ooby)
-            if oobdotvel > speed*ooblen/2 then
+            if oobdotvel > 0 then
                 Characters.spawn(
                     {
                         type = "spark-bighit",
