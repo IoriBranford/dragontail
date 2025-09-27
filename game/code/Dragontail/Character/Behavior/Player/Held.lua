@@ -42,6 +42,7 @@ function PlayerHeld:fixedupdate()
         player.velz = player.velz + 2
     end
 
+    self.holdtime = self.holdtime - 1
     if self.holdtime <= 0 then
         return "breakaway", holder
     end
