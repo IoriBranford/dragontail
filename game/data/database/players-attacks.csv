@@ -14,7 +14,7 @@ holding-kick,TRUE,TRUE,32,0.392699081698724,8,16,30,10,5,,,,,FALSE,FALSE,9,,12,T
 running-kick,TRUE,FALSE,32,0.523598775598299,8,16,25,10,10,,,,,FALSE,FALSE,20,,12,TRUE,knockedBack,knockedBack,,data/sounds/combat/hit3.mp3,,spark-hit,spark-guard,FALSE,FALSE,0,FALSE,FALSE,Object Enemy
 running-elbow,TRUE,FALSE,20,0.392699081698724,8,16,10,12,5,1,,,,FALSE,FALSE,5,,5,TRUE,,knockedBack,,data/sounds/combat/hit1.mp3,,spark-hit,spark-guard,FALSE,FALSE,0,FALSE,FALSE,Object Enemy
 running-with-enemy,TRUE,FALSE,24,0.785398163397448,,,10,12,3,,,,,FALSE,FALSE,,,10,TRUE,knockedBack,knockedBack,,data/sounds/combat/hit2.mp3,,spark-hit,spark-guard,FALSE,FALSE,0,FALSE,FALSE,Object Enemy
-human-thrown,TRUE,FALSE,24,0.785398163397448,,,10,12,3,,,,,FALSE,FALSE,,,,,knockedBack,knockedBack,data/sounds/combat/spin.mp3,data/sounds/combat/hit2.mp3,,spark-hit,spark-guard,FALSE,FALSE,0,FALSE,FALSE,Object Enemy Player
+human-thrown,TRUE,FALSE,24,0.785398163397448,,,10,12,3,,,,,FALSE,FALSE,,,,,knockedBack,knockedBack,,data/sounds/combat/hit2.mp3,,spark-hit,spark-guard,FALSE,FALSE,0,FALSE,FALSE,Object Enemy Player
 spit-fireball,TRUE,FALSE,0,0,8,16,0,0,0,,,,0,FALSE,FALSE,20,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-fireball,60,FALSE,1,Object Enemy
 spit-fat-fireball,TRUE,FALSE,0,0,8,16,0,0,0,,,,0,FALSE,FALSE,9,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-fat-fireball,120,FALSE,1,Object Enemy
 running-spit-fireball,TRUE,FALSE,0,0,8,16,0,0,0,,,,0,FALSE,FALSE,20,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-fireball,60,FALSE,1,Object Enemy
