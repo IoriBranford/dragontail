@@ -30,12 +30,14 @@ function EnemyHold:start(player)
         Combo.reset(enemy)
         HoldOpponent.startHolding(enemy, player)
     end
+
+    self.holdtime = 0
 end
 
 function EnemyHold:fixedupdate()
     local enemy = self.character
     local player = enemy.heldopponent
-    if not player then
+    if not player or not HoldOpponent.isHolding(enemy, player) then
         return enemy.recoverai or enemy.initialai
     end
 
@@ -43,7 +45,7 @@ function EnemyHold:fixedupdate()
 
     --- TODO each enemy's movement and turning while holding
     local targetvelx, targetvely = 0, 0
-    local inx, iny = 0, 0
+    -- local inx, iny = 0, 0
     -- local speed = 2
     -- if inx ~= 0 or iny ~= 0 then
     --     inx, iny = math.norm(inx, iny)
@@ -53,13 +55,11 @@ function EnemyHold:fixedupdate()
     -- end
 
     --- TODO enemy's decision to attack
-    local normalattackpressed = false
-    if normalattackpressed and (inx ~= 0 or iny ~= 0) then
-        Combo.reset(enemy)
-        return "spinning-throw", holdangle, player
-    end
+    self.holdtime = self.holdtime + 1
+    local normalattackpressed = self.holdtime >= 100
     if normalattackpressed then
-        return enemy:doComboAttack(holdangle, player, inx ~= 0 or iny ~= 0)
+        HoldOpponent.stopHolding(enemy, player)
+        return "shield-bash2"
     end
 
     --- TODO enemy's decision to run with player
