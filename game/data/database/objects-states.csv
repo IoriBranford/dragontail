@@ -12,7 +12,7 @@ down,1,getup,,Dragontail.Character.Behavior.Fighter.Downed,,,,0,FALSE,FALSE,FALS
 defeat,FALSE,FALSE,,,defeat,,Fall,0,FALSE,FALSE,FALSE,,,,
 getup,1,.initialai,,,,,FallRiseToFeet,0,FALSE,FALSE,FALSE,,,,
 spark,FALSE,FALSE,,,spark,,,,,,,,,,
-afterimage,FALSE,FALSE,,,afterimage,,,,,,,,,,
+afterimage,FALSE,FALSE,,,,updateFadeOut,,,,,,,,,
 blinkOut,FALSE,FALSE,,,blinkOut,,,,,,,,,,
 containerBreak,FALSE,FALSE,,,containerBreak,,,,FALSE,FALSE,,0,,,
 itemDrop,FALSE,FALSE,,,itemDrop,,,,,,,,,,

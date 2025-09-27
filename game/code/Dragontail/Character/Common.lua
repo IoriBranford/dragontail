@@ -48,7 +48,6 @@ local MaxProjectileItems = 16
 
 ---@class Common:Character,DropItem,Item,Projectile,WallHit,Defeat
 ---@field lifetime integer?
----@field afterimagetime integer?
 ---@field opponents Fighter[]
 local Common = class(Character)
 
@@ -87,16 +86,17 @@ function Common:spark(time)
     self:disappear()
 end
 
-function Common:afterimage()
-    local afterimagetime = max(1, self.afterimagetime or 10)
-    local deltaalpha = 1/afterimagetime
-    for i = 1, afterimagetime do
-        local r, g, b, a = Color.unpack(self.color)
-        a = a - deltaalpha
+function Common:updateFadeOut()
+    local r, g, b, a = Color.unpack(self.color)
+    local lifetime = max(1, self.lifetime or 16)
+    local deltaalpha = self.deltaalpha or (1/lifetime)
+    self.deltaalpha = deltaalpha
+    a = a - deltaalpha
+    if a <= 0 then
+        self:disappear()
+    else
         self.color = Color.asARGBInt(r, g, b, a)
-        yield()
     end
-    self:disappear()
 end
 
 local function updateBlinkOut(t, color)
