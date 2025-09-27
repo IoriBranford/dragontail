@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 58,
-  nextobjectid = 580,
+  nextlayerid = 59,
+  nextobjectid = 581,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -21803,124 +21803,6 @@ return {
         {
           type = "objectgroup",
           draworder = "topdown",
-          id = 38,
-          name = "+slingers",
-          class = "Room",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {},
-          objects = {
-            {
-              id = 409,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 5040,
-              y = -40,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7259,
-              visible = true,
-              properties = {
-                ["ammo"] = 20,
-                ["defaultattack"] = "sling-shot-until-empty",
-                ["entrypoint"] = { id = 412 },
-                ["exitpoint"] = { id = 415 },
-                ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "mana-peppers",
-                ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
-              }
-            },
-            {
-              id = 411,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 5136,
-              y = -8,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7259,
-              visible = true,
-              properties = {
-                ["ammo"] = 20,
-                ["defaultattack"] = "sling-shot-until-empty",
-                ["entrypoint"] = { id = 414 },
-                ["exitpoint"] = { id = 417 },
-                ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "food-fish",
-                ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
-              }
-            },
-            {
-              id = 412,
-              name = "",
-              type = "",
-              shape = "point",
-              x = 5040,
-              y = 40,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
-              id = 414,
-              name = "",
-              type = "",
-              shape = "point",
-              x = 5136,
-              y = 40,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
-              id = 415,
-              name = "exitpoint",
-              type = "",
-              shape = "point",
-              x = 5040,
-              y = -64,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 417,
-              name = "exitpoint",
-              type = "",
-              shape = "point",
-              x = 5136,
-              y = -64,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {}
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
           id = 37,
           name = "+archers",
           class = "Room",
@@ -22086,6 +21968,39 @@ return {
               properties = {}
             }
           }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 58,
+          name = "+muscle",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 580,
+              name = "bandit-muscle",
+              type = "bandit-muscle",
+              shape = "rectangle",
+              x = 5040,
+              y = -8,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7348,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv",
+                ["z"] = 64
+              }
+            }
+          }
         }
       }
     },
@@ -22102,6 +22017,124 @@ return {
       parallaxy = 1,
       properties = {},
       layers = {
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 38,
+          name = "+slingers",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 409,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 5040,
+              y = -40,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7259,
+              visible = true,
+              properties = {
+                ["ammo"] = 20,
+                ["defaultattack"] = "sling-shot-until-empty",
+                ["entrypoint"] = { id = 412 },
+                ["exitpoint"] = { id = 415 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["itemtype"] = "mana-peppers",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 411,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 5136,
+              y = -8,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7259,
+              visible = true,
+              properties = {
+                ["ammo"] = 20,
+                ["defaultattack"] = "sling-shot-until-empty",
+                ["entrypoint"] = { id = 414 },
+                ["exitpoint"] = { id = 417 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["itemtype"] = "food-fish",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 412,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 5040,
+              y = 40,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 414,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 5136,
+              y = 40,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 415,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 5040,
+              y = -64,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 417,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 5136,
+              y = -64,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            }
+          }
+        },
         {
           type = "objectgroup",
           draworder = "topdown",
