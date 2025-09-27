@@ -838,6 +838,7 @@ and tap    to throw</text>
      <property name="exitpoint" type="object" value="555"/>
      <property name="facedegrees" type="float" value="90"/>
      <property name="initialai" value="enterAndPrepareBowAmbush"/>
+     <property name="itemtype" value="food-fish"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
@@ -869,6 +870,7 @@ and tap    to throw</text>
      <property name="exitpoint" type="object" value="556"/>
      <property name="facedegrees" type="float" value="90"/>
      <property name="initialai" value="enterAndPrepareBowAmbush"/>
+     <property name="itemtype" value="mana-peppers"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
@@ -886,6 +888,7 @@ and tap    to throw</text>
      <property name="exitpoint" type="object" value="557"/>
      <property name="facedegrees" type="float" value="270"/>
      <property name="initialai" value="enterAndPrepareBowAmbush"/>
+     <property name="itemtype" value="food-fish"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
@@ -897,6 +900,7 @@ and tap    to throw</text>
      <property name="exitpoint" type="object" value="558"/>
      <property name="facedegrees" type="float" value="270"/>
      <property name="initialai" value="enterAndPrepareBowAmbush"/>
+     <property name="itemtype" value="mana-peppers"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
@@ -920,6 +924,7 @@ and tap    to throw</text>
      <property name="exitpoint" type="object" value="559"/>
      <property name="facedegrees" type="float" value="90"/>
      <property name="initialai" value="enterAndPrepareBowAmbush"/>
+     <property name="itemtype" value="food-fish"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
@@ -931,6 +936,7 @@ and tap    to throw</text>
      <property name="exitpoint" type="object" value="560"/>
      <property name="facedegrees" type="float" value="90"/>
      <property name="initialai" value="enterAndPrepareBowAmbush"/>
+     <property name="itemtype" value="mana-peppers"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>

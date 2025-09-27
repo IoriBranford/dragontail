@@ -18590,6 +18590,7 @@ return {
                 ["exitpoint"] = { id = 555 },
                 ["facedegrees"] = 90,
                 ["initialai"] = "enterAndPrepareBowAmbush",
+                ["itemtype"] = "food-fish",
                 ["z"] = 64
               }
             },
@@ -18689,6 +18690,7 @@ return {
                 ["exitpoint"] = { id = 556 },
                 ["facedegrees"] = 90,
                 ["initialai"] = "enterAndPrepareBowAmbush",
+                ["itemtype"] = "mana-peppers",
                 ["z"] = 64
               }
             },
@@ -18726,6 +18728,7 @@ return {
                 ["exitpoint"] = { id = 557 },
                 ["facedegrees"] = 270,
                 ["initialai"] = "enterAndPrepareBowAmbush",
+                ["itemtype"] = "food-fish",
                 ["z"] = 64
               }
             },
@@ -18748,6 +18751,7 @@ return {
                 ["exitpoint"] = { id = 558 },
                 ["facedegrees"] = 270,
                 ["initialai"] = "enterAndPrepareBowAmbush",
+                ["itemtype"] = "mana-peppers",
                 ["z"] = 64
               }
             },
@@ -18800,6 +18804,7 @@ return {
                 ["exitpoint"] = { id = 559 },
                 ["facedegrees"] = 90,
                 ["initialai"] = "enterAndPrepareBowAmbush",
+                ["itemtype"] = "food-fish",
                 ["z"] = 64
               }
             },
@@ -18822,6 +18827,7 @@ return {
                 ["exitpoint"] = { id = 560 },
                 ["facedegrees"] = 90,
                 ["initialai"] = "enterAndPrepareBowAmbush",
+                ["itemtype"] = "mana-peppers",
                 ["z"] = 64
               }
             },
