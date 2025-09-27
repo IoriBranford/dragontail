@@ -5914,9 +5914,7 @@ return {
               gid = 2820,
               visible = true,
               properties = {
-                ["initialai"] = "catchReady",
-                ["propertiestable"] = "database/bandits-properties.csv",
-                ["recoverai"] = "catchReady"
+                ["propertiestable"] = "database/bandits-properties.csv"
               }
             },
             {

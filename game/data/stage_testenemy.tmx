@@ -29,12 +29,7 @@
    </object>
   </objectgroup>
   <objectgroup id="6" name="catcher" class="Room">
-   <object id="4" template="mapobjects/bandit/muscle.tx" type="bandit-muscle" x="368" y="184">
-    <properties>
-     <property name="initialai" value="catchReady"/>
-     <property name="recoverai" value="catchReady"/>
-    </properties>
-   </object>
+   <object id="4" template="mapobjects/bandit/muscle.tx" type="bandit-muscle" x="368" y="184"/>
    <object id="5" template="mapobjects/items/throwing-axe.tx" x="208" y="192"/>
    <object id="8" template="mapobjects/items/throwing-axe.tx" x="112" y="120"/>
    <object id="10" template="mapobjects/items/throwing-axe.tx" x="208" y="128"/>
