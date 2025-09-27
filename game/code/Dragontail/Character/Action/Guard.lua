@@ -14,6 +14,10 @@ function Guard:stopGuarding()
     self.guardangle = nil
 end
 
+function Guard:isGuarding()
+    return self.guardangle ~= nil
+end
+
 function Guard:isAttackInGuardArc(attacker)
     local Attacker = require "Dragontail.Character.Component.Attacker"
     local ax, ay = Attacker.getAttackCylinder(attacker)
