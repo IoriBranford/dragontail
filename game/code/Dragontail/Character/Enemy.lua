@@ -460,4 +460,24 @@ function Enemy:readyToCatchProjectile()
     end
 end
 
+function Enemy:beforeGetUp()
+end
+
+function Enemy:duringGetUp()
+end
+
+function Enemy:getup()
+    local nextstate, a, b, c, d, e, f = self:beforeGetUp()
+    if nextstate then
+        return nextstate, a, b, c, d, e, f
+    end
+    while true do
+        yield()
+        nextstate, a, b, c, d, e, f = self:duringGetUp()
+        if nextstate then
+            return nextstate, a, b, c, d, e, f
+        end
+    end
+end
+
 return Enemy
