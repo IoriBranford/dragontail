@@ -38,6 +38,7 @@ local co_status = coroutine.status
 ---@field statefunction StateFunction?
 ---@field statethread thread?
 ---@field statebehavior Behavior?
+---@field statevoice love.Source?
 local StateMachine = {}
 
 function StateMachine:init()
@@ -163,6 +164,16 @@ function StateMachine.start(self, statename, a,b,c,d,e,f,g)
         -- DirectionalAnimation.set(self, animationname, angle, frame, state.loop)
 
         Audio.play(evalStateVar(self, state, "sound"))
+
+        local voice = self.statevoice
+        if voice then
+            voice:stop()
+        end
+        voice = Audio.newSource(evalStateVar(self, state, "voice"))
+        if voice then
+            self.statevoice = voice
+            voice:play()
+        end
 
         local behavior = evalStateVar(self, state, "statebehavior")
         local statecoroutine = self[evalStateVar(self, state, "statecoroutine")]
