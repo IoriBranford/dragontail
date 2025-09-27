@@ -43,7 +43,7 @@ function PlayerHeld:fixedupdate()
     end
 
     if self.holdtime <= 0 then
-        return "breakaway"
+        return "breakaway", holder
     end
 end
 
