@@ -834,7 +834,7 @@ and tap    to throw</text>
     <properties>
      <property name="extrudeY" type="float" value="-64"/>
     </properties>
-    <polygon points="-320,-224 -320,96 -128,96 -192,32 -224,32 -288,-32 -288,-112 -256,-144 -256,-224"/>
+    <polygon points="-320,-224 -320,128 0,128 -32,96 -64,96 -96,64 -160,64 -192,32 -224,32 -288,-32 -288,-112 -256,-144 -256,-224"/>
    </object>
    <object id="298" template="mapobjects/OutwardBoundary.tx" x="3088" y="-96">
     <polygon points="-80,0 -80,208 -48,176 48,176 80,144 240,144 272,176 304,176 304,0"/>
@@ -1551,7 +1551,7 @@ to sprint past archers</text>
    </object>
    <object id="77" template="mapobjects/OutwardBoundary.tx" x="4352" y="288">
     <properties>
-     <property name="extrudeY" type="float" value="-32"/>
+     <property name="extrudeY" type="float" value="-64"/>
     </properties>
     <polygon points="-64,64 -64,224 448,224 448,0 384,-64 160,-64 128,-32 32,-32"/>
    </object>
