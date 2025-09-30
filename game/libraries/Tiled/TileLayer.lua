@@ -9,7 +9,7 @@ local drawTile = require "Tiled.drawTile"
 
 local TileBatching = require "Tiled.TileBatching"
 local newTileBatch = TileBatching.batchTiles
-local animate = TileBatching.animateBatch
+local animateBatch = TileBatching.animateBatch
 local love_graphics_draw = love.graphics.draw
 
 ---@class TileLayer:Layer
@@ -113,10 +113,10 @@ function TileLayer:animate(dt)
     local tilewidth, tileheight = self.tilewidth, self.tileheight
     if chunks then
         for _, chunk in ipairs(chunks) do
-            animate(chunk, time, tilewidth, tileheight)
+            animateBatch(chunk, time, tilewidth, tileheight)
         end
     else
-        animate(self, time, tilewidth, tileheight)
+        animateBatch(self, time, tilewidth, tileheight)
     end
 end
 
@@ -139,7 +139,7 @@ function TileLayer:draw()
                 love_graphics_draw(chunk.tilebatch, chunk.x, chunk.y)
             else
                 forCells(drawTile, chunk.data, chunk.columns, chunk.rows, maptiles,
-                    chunk.x, chunk.y + cellheight, cellwidth, cellheight)
+                    chunk.x, chunk.y + cellheight, cellwidth, cellheight, self.animationtime)
             end
         end
         love.graphics.pop()
@@ -154,7 +154,7 @@ function TileLayer:draw()
                 self.skewx or 0, self.skewy or 0)
         else
             forCells(drawTile, self.data, self.mapcols, self.maprows, self.maptiles,
-                0, self.tileheight, self.tilewidth, self.tileheight)
+                0, self.tileheight, self.tilewidth, self.tileheight, self.animationtime)
         end
     end
     if tintcolor then
