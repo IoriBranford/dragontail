@@ -8,7 +8,7 @@ local Slide        = require "Dragontail.Character.Action.Slide"
 ---@class TakingHit:Behavior
 ---@field character Fighter
 local TakingHit = pooledclass(Behavior)
-TakingHit._nrec = Behavior._nrec + 4
+TakingHit._nrec = Behavior._nrec + 5
 
 ---@param hit AttackHit
 function TakingHit:start(hit)
@@ -51,7 +51,11 @@ function TakingHit:start(hit)
     self.attacker = attacker
     self.attack = attack
     self.attackangle = attackangle
-    self.pushbackspeed = pushbackspeed
+    self.pushbackspeed = Slide.updateSlideSpeed(fighter, attackangle, pushbackspeed)
+    if fighter.z > fighter.floorz then
+        fighter.velz = attack.launchspeedz or 4
+        self.inair = true
+    end
 end
 
 function TakingHit:fixedupdate()
@@ -78,12 +82,15 @@ function TakingHit:fixedupdate()
 
     fighter:duringHurt()
 
+    local pushbackspeed = self.pushbackspeed
     if fighter.z <= fighter.floorz then
-        local pushbackspeed = self.pushbackspeed
         if pushbackspeed <= 0 then
             return self:timeout()
         end
         self.pushbackspeed = Slide.updateSlideSpeed(fighter, attackangle, pushbackspeed)
+        if self.inair then
+            fighter:changeAnimation("FallRiseFromKnees", 1, 0)
+        end
     end
 end
 
