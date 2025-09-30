@@ -3413,6 +3413,7 @@
    { "name": "Fall", "from": 188, "to": 190, "direction": "forward", "color": "#000000ff" },
    { "name": "Down", "from": 190, "to": 190, "direction": "forward", "color": "#000000ff" },
    { "name": "FallRiseToFeet", "from": 191, "to": 196, "direction": "forward", "color": "#000000ff" },
+   { "name": "FallRiseFromKnees", "from": 195, "to": 196, "direction": "forward", "color": "#000000ff" },
    { "name": "win", "from": 197, "to": 198, "direction": "forward", "color": "#000000ff" },
    { "name": "Stun", "from": 199, "to": 200, "direction": "forward", "color": "#000000ff" }
   ],
