@@ -9,6 +9,7 @@ local DirectionalAnimation = require "Dragontail.Character.Component.Directional
 local Face                 = require "Dragontail.Character.Component.Face"
 local Mana = require "Dragontail.Character.Component.Mana"
 local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask"
+local Shoot         = require "Dragontail.Character.Action.Shoot"
 
 local yield = coroutine.yield
 local wait = coroutine.wait
@@ -454,23 +455,21 @@ function Common:projectileDeflected(hit)
 
     Audio.play(attack.hitsound)
     local attackangle = hit.angle
-    local dirx, diry, dirz = cos(attackangle), sin(attackangle), 0
-
     local speed = self.speed or 1
     local thrower = self.thrower
-    if thrower and thrower.team ~= "player" and deflector.team == "player" then
-        dirx, diry, dirz = 1, 0, 0
-        if thrower.y ~= self.y or thrower.x ~= self.x then
-            dirx, diry, dirz = math.norm(thrower.x - self.x, thrower.y - self.y, thrower.z + thrower.bodyheight/2 - self.z)
-        end
+    if thrower then
+        local targetx, targety, targetz = Shoot.getTargetObjectPosition(self, thrower)
+        self.velx, self.vely, self.velz =
+            Shoot.GetProjectileDeflectVelocityTowardsTarget(self, targetx, targety, targetz)
+    else
+        self.velx = speed*cos(attackangle)
+        self.vely = speed*sin(attackangle)
+        self.velz = math.abs(self.velz)
     end
     self.thrower = deflector
-    self.velx = speed*dirx
-    self.vely = speed*diry
-    self.velz = speed*dirz
     local angle = atan2(self.vely, self.velx)
     self.attackangle = angle
-    DirectionalAnimation.set(self, self.swinganimation, angle, 1, self.swinganimationloopframe or 1)
+    -- DirectionalAnimation.set(self, self.swinganimation, angle, 1, self.swinganimationloopframe or 1)
     yield()
     return "projectileFly", deflector
 end
