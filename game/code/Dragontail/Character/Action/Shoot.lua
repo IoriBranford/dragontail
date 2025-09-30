@@ -87,7 +87,7 @@ function Shoot:getProjectileLaunchVelocityTowardsVerticalAngle(projectiletype, d
     return velx, vely, velz
 end
 
-function Shoot:getProjectileLaunchVelocityTowardsTarget(projectiletype, targetx, targety, targetz)
+function Shoot.GetProjectileVelocityFromSourceToTarget(projectiletype, x, y, z, targetx, targety, targetz)
     if type(projectiletype) == "string" then
         projectiletype = Database.get(projectiletype)
     end
@@ -99,7 +99,6 @@ function Shoot:getProjectileLaunchVelocityTowardsTarget(projectiletype, targetx,
         speed = 1
     end
 
-    local x, y, z = Shoot.getProjectileLaunchPositionTowardsTarget(self, projectiletype, targetx, targety)
     local distx, disty, distz = targetx - x, targety - y, targetz - z
     if distx == 0 and disty == 0 then
         local velz = distz <= 0 and -speed
@@ -122,6 +121,21 @@ function Shoot:getProjectileLaunchVelocityTowardsTarget(projectiletype, targetx,
     local velz = distz/time + gravity * time * .5
 
     return velx, vely, velz
+end
+
+function Shoot:getProjectileLaunchVelocityTowardsTarget(projectiletype, targetx, targety, targetz)
+    if type(projectiletype) == "string" then
+        projectiletype = Database.get(projectiletype)
+    end
+    if not projectiletype then return end
+
+    local x, y, z = Shoot.getProjectileLaunchPositionTowardsTarget(self, projectiletype, targetx, targety)
+    return Shoot.GetProjectileVelocityFromSourceToTarget(projectiletype, x, y, z, targetx, targety, targetz)
+end
+
+function Shoot.GetProjectileDeflectVelocityTowardsTarget(projectile, targetx, targety, targetz)
+    local x, y, z = projectile.x, projectile.y, projectile.z
+    return Shoot.GetProjectileVelocityFromSourceToTarget(projectile, x, y, z, targetx, targety, targetz)
 end
 
 function Shoot:calculateTrajectoryTowardsTarget(projectile, targetx, targety, targetz, trajectory)
