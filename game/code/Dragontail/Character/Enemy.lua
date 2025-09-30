@@ -287,7 +287,7 @@ end
 function Enemy:duringPrepareAttack(target)
     Face.turnTowardsObject(self, target, self.faceturnspeed or 0,
         self.state.animation, self.animationframe, self.state.loopframe)
-    self:accelerateTowardsVel(0, 0)
+    self:accelerateTowardsVelXY(0, 0)
 end
 
 function Enemy:interruptWithDodge(target)

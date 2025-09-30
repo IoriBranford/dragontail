@@ -73,7 +73,7 @@ function EnemyHold:fixedupdate()
         enemy.faceturnspeed or (math.pi/64))
     enemy.holdangle = holdangle
 
-    enemy:accelerateTowardsVel(targetvelx, targetvely)
+    enemy:accelerateTowardsVelXY(targetvelx, targetvely)
     HoldOpponent.updateVelocities(enemy)
     player.velz = 0
 

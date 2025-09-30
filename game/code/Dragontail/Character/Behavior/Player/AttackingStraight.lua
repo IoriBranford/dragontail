@@ -85,7 +85,7 @@ end
 function AttackingStraight:fixedupdate()
     local player = self.character
 
-    Body.accelerateTowardsVel(player, 0, 0, player.mass or 4)
+    Body.accelerateTowardsVelXY(player, 0, 0, player.mass or 4)
 
     local afterimageinterval = player.afterimageinterval or 0
     player:makePeriodicAfterImage(player.statetime, afterimageinterval)

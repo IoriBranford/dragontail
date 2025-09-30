@@ -99,7 +99,7 @@ function Character:makePeriodicAfterImage(t, interval)
 end
 
 Character.accelerate = Body.accelerate
-Character.accelerateTowardsVel = Body.accelerateTowardsVel
+Character.accelerateTowardsVelXY = Body.accelerateTowardsVelXY
 Character.accelerateTowardsVel3 = Body.accelerateTowardsVel3
 
 function Character:makeHurtParticle()

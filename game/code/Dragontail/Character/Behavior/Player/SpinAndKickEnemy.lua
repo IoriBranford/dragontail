@@ -57,7 +57,7 @@ function SpinAndKickEnemy:fixedupdate()
 
     -- local speed = self.speed or 2
     -- local targetvelx, targetvely = inx*speed, iny*speed
-    -- Body.accelerateTowardsVel(player, targetvelx, targetvely, self.mass or 4)
+    -- Body.accelerateTowardsVelXY(player, targetvelx, targetvely, self.mass or 4)
     player:decelerateXYto0()
 
     local throwangle = self:updateThrowAngle()

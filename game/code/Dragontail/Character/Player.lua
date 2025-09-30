@@ -327,7 +327,7 @@ function Player:accelerateTowardsJoystick()
     local movespeed = self.speed or 1
     local targetvelx = inx * movespeed
     local targetvely = iny * movespeed
-    self:accelerateTowardsVel(targetvelx, targetvely)
+    self:accelerateTowardsVelXY(targetvelx, targetvely)
 end
 
 function Player:accelerateTowardsFace()
@@ -335,7 +335,7 @@ function Player:accelerateTowardsFace()
     local movespeed = self.speed or 1
     local targetvelx = inx * movespeed
     local targetvely = iny * movespeed
-    self:accelerateTowardsVel(targetvelx, targetvely)
+    self:accelerateTowardsVelXY(targetvelx, targetvely)
 end
 
 function Player:turnTowardsJoystick(movinganimation, notmovinganimation)
@@ -411,7 +411,7 @@ function Player:aimThrow()
         targetvelx = inx * movespeed
         targetvely = iny * movespeed
 
-        self:accelerateTowardsVel(targetvelx, targetvely)
+        self:accelerateTowardsVelXY(targetvelx, targetvely)
 
         local lockonenemyscore = 128
         if lockonenemy then
@@ -528,7 +528,7 @@ function Player:throwWeapon(angle, attackchoice, numprojectiles)
     end
 
     for i = 1, self.throwtime or 6 do
-        self:accelerateTowardsVel(0, 0)
+        self:accelerateTowardsVelXY(0, 0)
         yield()
     end
     return "walk"
@@ -576,7 +576,7 @@ function Player:hold(enemy)
             targetvely = iny * speed
         end
 
-        self:accelerateTowardsVel(targetvelx, targetvely)
+        self:accelerateTowardsVelXY(targetvelx, targetvely)
         local velx, vely = self.velx, self.vely
 
         holdangle = math.rotangletowards(holdangle, holddestangle, pi/64)
@@ -646,7 +646,7 @@ function Player:spinAndKickEnemy(angle, enemy)
             targetvely = iny * speed
         end
 
-        self:accelerateTowardsVel(targetvelx, targetvely)
+        self:accelerateTowardsVelXY(targetvelx, targetvely)
 
         if math.ceil(spunmag / 2 / pi) < math.ceil((spunmag+spinmag) / 2 / pi) then
             Audio.play(self.state.sound)
@@ -691,7 +691,7 @@ function Player:victory()
     self:stopAttack()
     local i = 0
     while true do
-        self:accelerateTowardsVel(0, 0)
+        self:accelerateTowardsVelXY(0, 0)
         -- self.z = abs(sin(i*pi/30) * 8)
         yield()
         i = i + 1

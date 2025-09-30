@@ -87,7 +87,7 @@ function PlayerRunning:fixedupdate()
 
     local animation = heldenemy and "holdwalk" or "Walk"
     Face.turnTowardsAngle(player, targetvelangle, nil, animation, player.animationframe or 1)
-    Body.accelerateTowardsVel(player, targetvelx, targetvely, player.mass or 1)
+    Body.accelerateTowardsVelXY(player, targetvelx, targetvely, player.mass or 1)
 
     local fullspeed = player.speed*player.speed/2 <=
         math.dot(player.velx, player.vely, targetvelx, targetvely)

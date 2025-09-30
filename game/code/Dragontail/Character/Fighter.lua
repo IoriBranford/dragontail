@@ -400,7 +400,7 @@ function Fighter:thrownRecover(thrower)
     repeat
         yield()
         oobx, ooby, oobz = self.penex, self.peney, self.penez
-        self:accelerateTowardsVel(0, 0)
+        self:accelerateTowardsVelXY(0, 0)
         recovertime = recovertime - 1
     until recovertime <= 0 and oobz or oobx or ooby
 
@@ -429,7 +429,7 @@ function Fighter:breakaway(other)
     -- self.hurtstun = self.breakawaystun or 15
     repeat
         yield()
-        self:accelerateTowardsVel(0, 0)
+        self:accelerateTowardsVelXY(0, 0)
         t = t + 1
     until t > 15
 
@@ -442,7 +442,7 @@ end
 
 function Fighter:fall()
     self:stopAttack()
-    Body.accelerateTowardsVel(self, 0, 0, self.mass or 8)
+    Body.accelerateTowardsVelXY(self, 0, 0, self.mass or 8)
     local penez = self.penez
     if penez then
         self.velz = 0

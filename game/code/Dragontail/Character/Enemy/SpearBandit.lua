@@ -69,7 +69,7 @@ function SpearBandit:duringPrepareAttack(target)
     Face.turnTowardsObject(self, target, self.faceturnspeed or 0,
         self.state.animation, self.state.frame1, self.state.loopframe)
     local deceltime = self.attacktype == CounterAttackType and 8 or 4
-    self:accelerateTowardsVel(0, 0, deceltime)
+    self:accelerateTowardsVelXY(0, 0, deceltime)
 end
 
 function SpearBandit:duringAttackSwing(target)
