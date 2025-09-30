@@ -78,11 +78,13 @@ function TakingHit:fixedupdate()
 
     fighter:duringHurt()
 
-    local pushbackspeed = self.pushbackspeed
-    if pushbackspeed <= 0 then
-        return self:timeout()
+    if fighter.z <= fighter.floorz then
+        local pushbackspeed = self.pushbackspeed
+        if pushbackspeed <= 0 then
+            return self:timeout()
+        end
+        self.pushbackspeed = Slide.updateSlideSpeed(fighter, attackangle, pushbackspeed)
     end
-    self.pushbackspeed = Slide.updateSlideSpeed(fighter, attackangle, pushbackspeed)
 end
 
 function TakingHit:timeout()
