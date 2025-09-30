@@ -1,6 +1,7 @@
 local Behavior = require "Dragontail.Character.Behavior"
 local Guard    = require "Dragontail.Character.Action.Guard"
 local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
+local Gui          = require "Dragontail.Gui"
 
 ---@class PlayerHeld:Behavior
 ---@field character Player
@@ -13,6 +14,10 @@ function PlayerHeld:start(holder)
     Guard.stopGuarding(player)
     player.velx, player.vely = 0, 0
     self.holdtime = holder.holdstrength or player.timetobreakhold or 120
+    local tutor = Gui:get("gameplay.tutor_escapegrab")
+    if tutor then
+        tutor.visible = true
+    end
 end
 
 function PlayerHeld:fixedupdate()
@@ -46,6 +51,22 @@ function PlayerHeld:fixedupdate()
     if self.holdtime <= 0 then
         return "breakaway", holder
     end
+end
+
+function PlayerHeld:timeout(...)
+    local tutor = Gui:get("gameplay.tutor_escapegrab")
+    if tutor then
+        tutor.visible = false
+    end
+    return ...
+end
+
+function PlayerHeld:interrupt(...)
+    local tutor = Gui:get("gameplay.tutor_escapegrab")
+    if tutor then
+        tutor.visible = false
+    end
+    return ...
 end
 
 return PlayerHeld
