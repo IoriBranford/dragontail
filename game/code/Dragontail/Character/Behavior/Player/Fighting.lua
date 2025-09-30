@@ -36,13 +36,13 @@ function PlayerFighting:fixedupdate()
     if chargedattack then
         Mana.releaseCharge(player)
         local attackangle = inx == 0 and iny == 0
-            and player.faceangle or math.atan2(iny, inx)
+            and player.facedestangle or math.atan2(iny, inx)
         return chargedattack, attackangle
     end
 
     if player:consumeActionRecentlyPressed("attack") then
         local attackangle = inx == 0 and iny == 0
-            and player.faceangle or math.atan2(iny, inx)
+            and player.facedestangle or math.atan2(iny, inx)
         if player.weaponinhand then
             attackangle = player:getAngleToBestTarget(attackangle) or attackangle
         end
