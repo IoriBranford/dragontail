@@ -8,6 +8,8 @@ local Gui          = require "Dragontail.Gui"
 local PlayerHeld = pooledclass(Behavior)
 PlayerHeld._nrec = Behavior._nrec + 1
 
+local BreakawayStrength = 5
+
 function PlayerHeld:start(holder)
     local player = self.character
     player:stopAttack()
@@ -31,20 +33,20 @@ function PlayerHeld:fixedupdate()
     local holdtime = self.holdtime
     local strugglex, struggley = player:getParryVector()
     if strugglex and struggley then
-        holdtime = holdtime - 1
+        holdtime = holdtime - BreakawayStrength
         player.velx = player.velx + strugglex*4
         player.vely = player.vely + struggley*4
     end
     if player:consumeActionRecentlyPressed("attack") then
-        holdtime = holdtime - 1
+        holdtime = holdtime - BreakawayStrength
         player.velz = player.velz + 2
     end
     if player:consumeActionRecentlyPressed("sprint") then
-        holdtime = holdtime - 1
+        holdtime = holdtime - BreakawayStrength
         player.velz = player.velz + 2
     end
     if player:consumeActionRecentlyPressed("fly") then
-        holdtime = holdtime - 1
+        holdtime = holdtime - BreakawayStrength
         player.velz = player.velz + 2
     end
 
