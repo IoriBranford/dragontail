@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 18,
   nextlayerid = 16,
-  nextobjectid = 94,
+  nextobjectid = 95,
   properties = {},
   tilesets = {
     {
@@ -492,6 +492,68 @@ return {
       wangsets = {},
       tilecount = 1,
       tiles = {}
+    },
+    {
+      name = "break-grab",
+      firstgid = 410,
+      class = "",
+      tilewidth = 32,
+      tileheight = 32,
+      spacing = 0,
+      margin = 0,
+      columns = 4,
+      image = "sprites/ui/break-grab.png",
+      imagewidth = 128,
+      imageheight = 32,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 32
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 4,
+      tiles = {
+        {
+          id = 0,
+          properties = {
+            ["name"] = "x"
+          },
+          animation = {
+            {
+              tileid = 0,
+              duration = 100
+            },
+            {
+              tileid = 1,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 2,
+          properties = {
+            ["name"] = "y"
+          },
+          animation = {
+            {
+              tileid = 2,
+              duration = 100
+            },
+            {
+              tileid = 3,
+              duration = 100
+            }
+          }
+        }
+      }
     }
   },
   layers = {
@@ -840,6 +902,20 @@ return {
               color = { 255, 255, 255 },
               halign = "right",
               valign = "bottom",
+              properties = {}
+            },
+            {
+              id = 94,
+              name = "breakgrabprompt",
+              type = "",
+              shape = "rectangle",
+              x = 0,
+              y = 0,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 410,
+              visible = true,
               properties = {}
             }
           }
