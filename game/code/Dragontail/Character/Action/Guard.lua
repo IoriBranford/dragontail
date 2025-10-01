@@ -18,20 +18,28 @@ function Guard:isGuarding()
     return self.guardangle ~= nil
 end
 
-function Guard:isAttackInGuardArc(attacker)
-    local Attacker = require "Dragontail.Character.Component.Attacker"
-    local ax, ay = Attacker.getAttackCylinder(attacker)
-    return ax and ay and Guard.isPointInGuardArc(self, ax, ay) or false
+function Guard:isAttackAgainstGuardArc(attacker)
+    local attackangle = attacker.attackangle
+    return attackangle and Guard.isAngleAgainstGuardArc(self, attackangle)
+end
+
+function Guard:isUnitVectorAgainstGuardArc(ux, uy)
+    local guardangle = self.guardangle
+    if not guardangle then return false end
+    local guardarc = self.guardarc or (math.pi/2)
+    local gx, gy = math.cos(guardangle), math.sin(guardangle)
+    return math.dot(ux, uy, gx, gy) <= -math.cos(guardarc)
+end
+
+function Guard:isAngleAgainstGuardArc(angle)
+    return Guard.isUnitVectorAgainstGuardArc(self, math.cos(angle), math.sin(angle))
 end
 
 function Guard:isPointInGuardArc(x, y)
-    local guardangle = self.guardangle
-    if not guardangle then return false end
-    local dx, dy = x - self.x, y - self.y
-    local gx, gy = math.cos(guardangle), math.sin(guardangle)
-    local d = math.len(dx, dy)
-    local DdotG = math.dot(dx, dy, gx, gy)
-    return DdotG >= d*math.cos(self.guardarc or (math.pi/2))
+    local dx, dy = self.x - x, self.y - y
+    if dx == 0 and dy == 0 then return true end
+    dx, dy = math.norm(dx, dy)
+    return Guard.isUnitVectorAgainstGuardArc(self, dx, dy)
 end
 
 function Guard:pushBackAttacker(attacker)
