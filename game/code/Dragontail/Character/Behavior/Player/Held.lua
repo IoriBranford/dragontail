@@ -28,29 +28,36 @@ function PlayerHeld:fixedupdate()
         return "walk"
     end
 
+    local holdtime = self.holdtime
     local strugglex, struggley = player:getParryVector()
     if strugglex and struggley then
-        self.holdtime = self.holdtime - 1
+        holdtime = holdtime - 1
         player.velx = player.velx + strugglex*4
         player.vely = player.vely + struggley*4
     end
     if player:consumeActionRecentlyPressed("attack") then
-        self.holdtime = self.holdtime - 1
+        holdtime = holdtime - 1
         player.velz = player.velz + 2
     end
     if player:consumeActionRecentlyPressed("sprint") then
-        self.holdtime = self.holdtime - 1
+        holdtime = holdtime - 1
         player.velz = player.velz + 2
     end
     if player:consumeActionRecentlyPressed("fly") then
-        self.holdtime = self.holdtime - 1
+        holdtime = holdtime - 1
         player.velz = player.velz + 2
     end
 
-    self.holdtime = self.holdtime - 1
-    if self.holdtime <= 0 then
+    if self.holdtime ~= holdtime then
+        player.animationframe = 1
+        player.animationtime = 0
+    end
+
+    holdtime = holdtime - 1
+    if holdtime <= 0 then
         return "breakaway", holder
     end
+    self.holdtime = holdtime
 end
 
 function PlayerHeld:timeout(...)
