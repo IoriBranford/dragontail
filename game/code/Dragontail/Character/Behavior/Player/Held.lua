@@ -16,9 +16,9 @@ function PlayerHeld:start(holder)
     Guard.stopGuarding(player)
     player.velx, player.vely = 0, 0
     self.holdtime = holder.holdstrength or player.timetobreakhold or 120
-    local tutor = Gui:get("gameplay.tutor_escapegrab")
-    if tutor then
-        tutor.visible = true
+    local prompt = Gui:get("gameplay.hud.breakgrabprompt")
+    if prompt then
+        prompt.visible = true
     end
 end
 
@@ -32,8 +32,8 @@ function PlayerHeld:fixedupdate()
 
     local holdtime = self.holdtime
     local strugglex, struggley = player:getParryVector()
+    local holddirx, holddiry = player.x - holder.x, player.y - holder.y
     if strugglex and struggley then
-        local holddirx, holddiry = holder.x - player.x, holder.y - player.y
         if holddirx == 0 and holddiry == 0 then
             holddiry = 1
         else
@@ -56,20 +56,44 @@ function PlayerHeld:fixedupdate()
         return "breakaway", holder
     end
     self.holdtime = holdtime
+
+    local prompt = Gui:get("gameplay.hud.breakgrabprompt")
+    if prompt then
+        local animation = math.abs(holddirx) < math.abs(holddiry) and "y" or "x"
+        prompt:changeAnimation(animation)
+
+        local camera = player.camera
+        local promptover = animation == "y" and holddiry > 0 and holder or player
+        prompt.x = promptover.x - camera.x
+        prompt.y = promptover.y - promptover.z - promptover.bodyheight - camera.y
+        local x1, y1, x2, y2 = prompt:getExtents()
+        if x1 < 0 then
+            prompt.x = prompt.x - x1
+        end
+        if y1 < 0 then
+            prompt.y = prompt.y - y1
+        end
+        if x2 > camera.width then
+            prompt.x = prompt.x + camera.width - x2
+        end
+        if y2 > camera.height then
+            prompt.y = prompt.y + camera.height - y2
+        end
+    end
 end
 
 function PlayerHeld:timeout(...)
-    local tutor = Gui:get("gameplay.tutor_escapegrab")
-    if tutor then
-        tutor.visible = false
+    local prompt = Gui:get("gameplay.hud.breakgrabprompt")
+    if prompt then
+        prompt.visible = false
     end
     return ...
 end
 
 function PlayerHeld:interrupt(...)
-    local tutor = Gui:get("gameplay.tutor_escapegrab")
-    if tutor then
-        tutor.visible = false
+    local prompt = Gui:get("gameplay.hud.breakgrabprompt")
+    if prompt then
+        prompt.visible = false
     end
     return ...
 end
