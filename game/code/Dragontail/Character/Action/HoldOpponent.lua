@@ -9,6 +9,7 @@ local Guard          = require "Dragontail.Character.Action.Guard"
 ---@field heldai string?
 ---@field aiafterbreakaway string?
 ---@field aiafterheld string?
+---@field struggleoffset number?
 
 ---@class HoldOpponent:Character
 ---@field heldopponent HeldByOpponent?
@@ -87,6 +88,7 @@ function HoldOpponent:updateVelocities()
     if not enemy then return end
 
     local radii = self.bodyradius + enemy.bodyradius + 1
+        + (enemy.struggleoffset or 0)
     local ox = radii*math.cos(self.holdangle or 0)
     local oy = radii*math.sin(self.holdangle or 0)
     local oz = math.max(0, (self.bodyheight - enemy.bodyheight)/2)
