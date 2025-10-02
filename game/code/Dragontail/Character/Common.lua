@@ -454,7 +454,7 @@ function Common:projectileDeflected(hit)
     Attacker.stopAttack(self)
     self:makeImpactSpark(deflector, attack.hitspark)
 
-    if not thrower or not attack.deflectsprojectile then
+    if not thrower or not attack.deflectsprojectileatopponent then
         return "projectileBounce", deflector
     end
     self.hurtstun = attack.selfstun or 3

@@ -39,5 +39,5 @@
 ---@field guardhitsound string
 ---
 ---Other properties
----@field deflectsprojectile boolean
+---@field deflectsprojectileatopponent boolean
 ---@field canjuggle boolean

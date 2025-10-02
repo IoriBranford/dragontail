@@ -663,7 +663,7 @@
       <text:p>hurtcolorcycle</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Default" office:value-type="string" calcext:value-type="string">
-      <text:p>deflectsprojectile</text:p>
+      <text:p>deflectsprojectileatopponent</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>hitslayers</text:p>
