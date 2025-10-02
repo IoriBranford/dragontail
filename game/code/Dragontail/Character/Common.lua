@@ -10,6 +10,7 @@ local Face                 = require "Dragontail.Character.Component.Face"
 local Mana = require "Dragontail.Character.Component.Mana"
 local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask"
 local Shoot         = require "Dragontail.Character.Action.Shoot"
+local Attacker      = require "Dragontail.Character.Component.Attacker"
 
 local yield = coroutine.yield
 local wait = coroutine.wait
@@ -448,30 +449,24 @@ end
 function Common:projectileDeflected(hit)
     local deflector = hit.attacker
     local attack = hit.attack
-    if not attack.deflectsprojectile then
+    local thrower = self.thrower
+
+    Attacker.stopAttack(self)
+    self:makeImpactSpark(deflector, attack.hitspark)
+
+    if not thrower or not attack.deflectsprojectile then
         return "projectileBounce", deflector
     end
-    self.hurtstun = attack.opponentstun or 3
+    self.hurtstun = attack.selfstun or 3
 
-    Audio.play(attack.hitsound)
-    local attackangle = hit.angle
-    local speed = self.speed or 1
-    local thrower = self.thrower
-    if thrower then
-        local targetx, targety, targetz = Shoot.getTargetObjectPosition(self, thrower)
-        self.velx, self.vely, self.velz =
-            Shoot.GetProjectileDeflectVelocityTowardsTarget(self, targetx, targety, targetz)
-    else
-        self.velx = speed*cos(attackangle)
-        self.vely = speed*sin(attackangle)
-        self.velz = math.abs(self.velz)
-    end
+    local targetx, targety, targetz = Shoot.getTargetObjectPosition(self, thrower)
+    self.velx, self.vely, self.velz =
+        Shoot.GetProjectileDeflectVelocityTowardsTarget(self, targetx, targety, targetz)
+
     self.thrower = deflector
-    local angle = atan2(self.vely, self.velx)
-    self.attackangle = angle
     -- DirectionalAnimation.set(self, self.swinganimation, angle, 1, self.swinganimationloopframe or 1)
     yield()
-    return "projectileFly", deflector
+    return self.initialai, deflector
 end
 
 function Common:makeImpactSpark(attacker, sparktype)
