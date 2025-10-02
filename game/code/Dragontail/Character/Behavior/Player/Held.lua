@@ -2,6 +2,7 @@ local Behavior = require "Dragontail.Character.Behavior"
 local Guard    = require "Dragontail.Character.Action.Guard"
 local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
 local Gui          = require "Dragontail.Gui"
+local StateMachine = require "Dragontail.Character.Component.StateMachine"
 
 ---@class PlayerHeld:Behavior
 ---@field character Player
@@ -53,6 +54,7 @@ function PlayerHeld:fixedupdate()
 
     holdtime = holdtime - 1
     if holdtime <= 0 then
+        StateMachine.start(holder, "breakaway", player)
         return "breakaway", holder
     end
     self.holdtime = holdtime
