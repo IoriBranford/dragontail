@@ -179,9 +179,9 @@ function StateMachine.start(self, statename, a,b,c,d,e,f,g)
         end
         voice = Audio.newSource(evalStateVar(self, state, "voice"))
         if voice then
-            self.statevoice = voice
             voice:play()
         end
+        self.statevoice = voice
 
         local behavior = evalStateVar(self, state, "statebehavior")
         local statecoroutine = self[evalStateVar(self, state, "statecoroutine")]
