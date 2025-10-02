@@ -15,7 +15,7 @@ function Catcher:findCharacterToCatch(characters, catchdirx, catchdiry)
         and character.z <= ztop
         then
             local catchprojradius = catchradius
-                + math.max(character.attack.radius,
+                + math.max(character.attack.radius or 0,
                             character.bodyradius)
             local mindot = coscatcharc * catchprojradius
             local toprojx = character.x - x
