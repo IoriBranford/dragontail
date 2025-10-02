@@ -12,7 +12,7 @@ projectile-dish-attack,projectile-dish-attack,projectileFly,Fly,1,FALSE,FALSE,TR
 projectile-dish-strong-attack,projectile-dish-strong-attack,projectileFly,Fly,1,FALSE,FALSE,TRUE,FALSE,,
 blinkOut,,blinkOut,,1,FALSE,FALSE,FALSE,FALSE,,
 disappear,,disappear,,1,FALSE,FALSE,FALSE,FALSE,,
-projectileDeflected,,projectileDeflected,,1,FALSE,FALSE,FALSE,FALSE,,
+projectileDeflected,,projectileDeflected,,1,FALSE,FALSE,FALSE,FALSE,data/sounds/combat/deflect.mp3,
 projectileEmbed,,projectileEmbed,embedded,1,FALSE,FALSE,FALSE,FALSE,,
 projectileBounce,,projectileBounce,,1,FALSE,FALSE,FALSE,FALSE,,
 projectileShatter,,projectileShatter,Shatter,0,12,disappear,FALSE,FALSE,,
