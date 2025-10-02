@@ -39,6 +39,7 @@ local co_status = coroutine.status
 ---@field statethread thread?
 ---@field statebehavior Behavior?
 ---@field statevoice love.Source?
+---@field statecounters table<string, integer>?
 local StateMachine = {}
 
 function StateMachine:init()
@@ -116,6 +117,13 @@ function StateMachine.start(self, statename, a,b,c,d,e,f,g)
                     self[k] = v
                 end
             end
+        end
+
+        local statecounters = self.statecounters
+        if statecounters then
+            local statecounter = (statecounters[statename] or 0)
+            statecounter = statecounter + 1
+            statecounters[statename] = statecounter
         end
 
         Body.initLayerMasks(self)
