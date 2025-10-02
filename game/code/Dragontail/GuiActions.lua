@@ -9,7 +9,7 @@ function GameGuiActions.unpauseGame()
 end
 
 function GameGuiActions.healPlayers()
-    Characters.healPlayers()
+    Characters.refillPlayers()
 end
 
 function GameGuiActions.restartStageCheckpoint()

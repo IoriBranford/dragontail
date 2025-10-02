@@ -62,6 +62,13 @@ local AirCombo = {"air-kick", "air-kick", "air-tail-swing-cw"}
 local AirLungingCombo = {"air-lunging-kick", "air-lunging-kick", "air-lunging-tail-swing-cw"}
 local AirHoldCombo = {"air-holding-knee", "air-holding-knee", "air-spinning-throw"}
 
+function Player:cheatRefillAll()
+    self.health = self.maxhealth
+    self.manastore = self.manastoremax
+    self.inventory = Inventory()
+    while self:tryToGiveWeapon("thrown-stone") do end
+end
+
 function Player:getNextAttackType(heldenemy, lunging, inair)
     local comboindex = self.comboindex
     -- if special then

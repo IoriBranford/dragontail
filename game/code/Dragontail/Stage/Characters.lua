@@ -422,11 +422,10 @@ function Characters.clearEnemies(boss)
     end
 end
 
-function Characters.healPlayers()
+function Characters.refillPlayers()
     if players then
         for _, player in ipairs(players) do
-            player.health = player.maxhealth
-            player.manastore = player.manastoremax
+            player:cheatRefillAll()
         end
         local foodsmall = Database.get("food-small")
         local manasmall = Database.get("mana-small")
