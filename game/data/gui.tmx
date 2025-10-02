@@ -280,11 +280,11 @@ ALL CONTENT SUBJECT TO CHANGE</text>
    <object id="91" template="gui/menu/settings/Label.tx" name="game ticks per second" x="160" y="126" width="192" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">game ticks per second</text>
    </object>
-   <object id="89" template="gui/menu/settings/Label.tx" name="Heal player" type="Gui.Button" x="128" y="99" width="224" height="18">
+   <object id="89" template="gui/menu/settings/Label.tx" name="Refill player" type="Gui.Button" x="128" y="99" width="224" height="18">
     <properties>
-     <property name="action" value="healPlayers"/>
+     <property name="action" value="refillPlayers"/>
     </properties>
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Heal player</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Refill player</text>
    </object>
    <object id="84" template="gui/menu/settings/Slider.tx" name="drawbodies" type="Gui.Slider" x="128" y="72" width="32" height="18">
     <properties>

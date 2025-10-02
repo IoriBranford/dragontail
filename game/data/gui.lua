@@ -1628,7 +1628,7 @@ return {
             },
             {
               id = 89,
-              name = "Heal player",
+              name = "Refill player",
               type = "Gui.Button",
               shape = "text",
               x = 128,
@@ -1637,12 +1637,12 @@ return {
               height = 18,
               rotation = 0,
               visible = true,
-              text = "Heal player",
+              text = "Refill player",
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {
-                ["action"] = "healPlayers"
+                ["action"] = "refillPlayers"
               }
             },
             {

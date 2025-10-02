@@ -8,7 +8,7 @@ function GameGuiActions.unpauseGame()
     GamePhase.setPaused(false)
 end
 
-function GameGuiActions.healPlayers()
+function GameGuiActions.refillPlayers()
     Characters.refillPlayers()
 end
 
