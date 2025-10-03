@@ -9,6 +9,7 @@ local Attacker     = require "Dragontail.Character.Component.Attacker"
 local tablepool    = require "tablepool"
 local AttackTarget = require "Dragontail.Character.Component.AttackTarget"
 local Audio        = require "System.Audio"
+local findClosest  = require "findClosest"
 
 ---@module 'Dragontail.Stage.Characters'
 local Characters = {}
@@ -280,8 +281,6 @@ function Characters.castRay3(raycast, caster)
     return hitsomething
 end
 
-local function nop() end
-
 ---@param eval fun(character: Character, i: integer?, characters: Character[]?):"break"|"return"?
 function Characters.search(group, eval)
     local characters = groups[group] or allcharacters
@@ -291,6 +290,11 @@ function Characters.search(group, eval)
             break
         end
     end
+end
+
+function Characters.findClosest(group, x, y, z)
+    local characters = groups[group] or allcharacters
+    return findClosest(characters, x, y, z)
 end
 
 function Characters.keepCircleIn(x, y, r, solidlayersmask)
