@@ -97,7 +97,7 @@ function Characters.spawn(object)
     character.camera = camera
     character.solids = solids
     if not character.opponents then
-        if character.team == "player" then
+        if character.team == "players" then
             character.opponents = enemies
         else
             character.opponents = players
@@ -110,7 +110,7 @@ function Characters.spawn(object)
     if team then
         team[#team+1] = character
     end
-    if character.team == "trigger" then
+    if character.team == "triggers" then
         local ok, err = character:validateAction()
         if not ok then print(err) end
     end

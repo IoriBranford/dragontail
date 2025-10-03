@@ -21,7 +21,7 @@ local Color      = require "Tiled.Color"
 local Trigger = class(Character)
 Trigger.statetable = "data/database/objects-states.csv"
 Trigger.module = "Dragontail.Character.Trigger"
-Trigger.team = "trigger"
+Trigger.team = "triggers"
 
 function Trigger:hasUsesLeft()
     return not self.usesleft or self.usesleft > 0
