@@ -5,6 +5,7 @@ local Characters = require "Dragontail.Stage.Characters"
 local Stage      = require "Dragontail.Stage"
 local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
 local Face                 = require "Dragontail.Character.Component.Face"
+local Attacker             = require "Dragontail.Character.Component.Attacker"
 
 --- Attacks:
 --- - Lance charge
@@ -30,7 +31,43 @@ local TwoSwitchAttackHealthPercent = .0
 local FirstSummonHealthPercent = .6
 local SecondSummonHealthPercent = .3
 
+function BanditBoss:considerDeflectingProjectile()
+    local x, y = self.x, self.y
+    local radius = self.bodyradius
+    local incomingprojectile
+    Characters.search("projectiles", function(projectile)
+        if not Attacker.isAttacking(projectile) then
+            return
+        end
+        local pvelx, pvely = projectile.velx, projectile.vely
+        local pspeed = math.len(pvelx, pvely)
+        local frompx, frompy = x - projectile.x, y - projectile.y
+        local pdist = math.len(frompx, frompy)
+        local radii = radius + projectile.bodyradius
+        local dotDV = math.dot(frompx, frompy, pvelx, pvely)
+        local detDV = math.det(frompx, frompy, pvelx, pvely)
+        if math.abs(detDV) <= radii*pspeed
+        and dotDV <= pdist*pspeed then
+            incomingprojectile = projectile
+            return "break"
+        end
+    end)
+
+    if incomingprojectile then
+        local pdistx, pdisty = incomingprojectile.x - self.x, incomingprojectile.y - self.y
+        local facex, facey = math.cos(self.faceangle), math.sin(self.faceangle)
+        local turndir = math.det(facex, facey, pdistx, pdisty)
+        local attack = turndir < 0 and "bandit-boss-swat-projectile-ccw"
+            or "bandit-boss-swat-projectile-cw"
+        return attack, incomingprojectile
+    end
+end
+
 function BanditBoss:getBestAttack(opponent)
+    local deflectattack, projectile = self:considerDeflectingProjectile()
+    if deflectattack then
+        return deflectattack, projectile
+    end
     local targetx, targety = opponent.x, opponent.y
     local distx, disty = targetx - self.x, targety - self.y
     local facex, facey = math.cos(self.faceangle), math.sin(self.faceangle)
@@ -57,6 +94,10 @@ function BanditBoss:decideNextAttack()
     return attacktype
 end
 
+function BanditBoss:duringStand()
+    return self:considerDeflectingProjectile()
+end
+
 function BanditBoss:afterStand()
     local healthpct = self.health/self.maxhealth
     if healthpct <= TwoSwitchAttackHealthPercent then
@@ -70,6 +111,10 @@ function BanditBoss:afterStand()
 end
 
 function BanditBoss:duringApproach(opponent)
+    local deflectattack, projectile = self:considerDeflectingProjectile()
+    if deflectattack then
+        return deflectattack, projectile
+    end
     local bestattack = self:getBestAttack(opponent)
     if bestattack ~= "bandit-boss-charge" then
         if self:couldAttackOpponent(opponent, bestattack) then
