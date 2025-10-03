@@ -82,8 +82,11 @@ function PlayerRunning:fixedupdate()
         self.targetvelx = targetvelx
         self.targetvely = targetvely
     end
-    local targetvelangle = math.atan2(targetvely, targetvelx)
-    player.facedestangle = targetvelangle
+    local targetvelangle = player.facedestangle or player.faceangle
+    if targetvely ~= 0 or targetvelx ~= 0 then
+        targetvelangle = math.atan2(targetvely, targetvelx)
+        player.facedestangle = targetvelangle
+    end
 
     local animation = heldenemy and "holdwalk" or "Walk"
     Face.turnTowardsAngle(player, targetvelangle, nil, animation, player.animationframe or 1)
