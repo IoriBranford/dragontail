@@ -42,15 +42,16 @@ function BanditBoss:considerDeflectingProjectile()
         local pvelx, pvely = projectile.velx, projectile.vely
         local pspeed = math.len(pvelx, pvely)
         local frompx, frompy = x - projectile.x, y - projectile.y
-        local pdist = math.len(frompx, frompy)
         local radii = radius + projectile.bodyradius
-        local dotDV = math.dot(frompx, frompy, pvelx, pvely)
+
         local detDV = math.det(frompx, frompy, pvelx, pvely)
-        if math.abs(detDV) <= radii*pspeed
-        and dotDV <= pdist*pspeed then
-            incomingprojectile = projectile
-            return "break"
-        end
+        if math.abs(detDV) > radii*pspeed then return end
+
+        local dotDV = math.dot(frompx, frompy, pvelx, pvely)
+        if dotDV > 200*pspeed then return end
+
+        incomingprojectile = projectile
+        return "break"
     end)
 
     if incomingprojectile then
