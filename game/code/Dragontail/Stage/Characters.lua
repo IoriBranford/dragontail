@@ -106,20 +106,11 @@ function Characters.spawn(object)
     if character.bodyinlayers ~= 0 then
         solids[#solids+1] = character
     end
-    if character.team == "player" then
-        players[#players+1] = character
-    end
-    if character.team == "enemy" then
-        enemies[#enemies+1] = character
-    end
-    if character.team == "item" then
-        groups.items[#groups.items+1] = character
-    end
-    if character.team == "projectile" then
-        groups.projectiles[#groups.projectiles+1] = character
+    local team = groups[character.team]
+    if team then
+        team[#team+1] = character
     end
     if character.team == "trigger" then
-        groups.triggers[#groups.triggers+1] = character
         local ok, err = character:validateAction()
         if not ok then print(err) end
     end
