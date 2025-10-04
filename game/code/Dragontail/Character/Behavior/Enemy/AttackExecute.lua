@@ -7,7 +7,7 @@ local Color    = require "Tiled.Color"
 local Face     = require "Dragontail.Character.Component.Face"
 
 local AttackExecute = pooledclass(Behavior)
-AttackExecute._nrec = Behavior._nrec + 2
+AttackExecute._nrec = Behavior._nrec + 3
 
 function AttackExecute:start()
     local enemy = self.character
@@ -36,6 +36,7 @@ function AttackExecute:start()
     self.lungespeed = Slide.updateSlideSpeed(enemy,
         enemy.faceangle, enemy.attack.lungespeed or 0,
         enemy.attack.lungedecel or 1)
+    self.lungeangle = enemy.faceangle
 end
 
 function AttackExecute:fixedupdate()
@@ -51,18 +52,15 @@ function AttackExecute:fixedupdate()
         enemy:startAttack(attackangle)
     end
 
-    local velx, vely = enemy.velx, enemy.vely
-    if velx ~= 0 or vely ~= 0 then
-        local lungeangle = math.atan2(vely, velx)
-        local moveturnspeed = enemy.moveturnspeed or 0
-        if moveturnspeed ~= 0 then
-            lungeangle = math.rotangletowards(lungeangle, enemy.faceangle,
-                moveturnspeed or math.pi)
-        end
-        self.lungespeed = Slide.updateSlideSpeed(enemy,
-            lungeangle, self.lungespeed,
-            enemy.attack.lungedecel or 1)
+    local lungeangle = self.lungeangle
+    local moveturnspeed = enemy.moveturnspeed or 0
+    if moveturnspeed ~= 0 then
+        lungeangle = math.rotangletowards(lungeangle, enemy.faceangle, moveturnspeed)
+        self.lungeangle = lungeangle
     end
+    self.lungespeed = Slide.updateSlideSpeed(enemy,
+        lungeangle, self.lungespeed,
+        enemy.attack.lungedecel or 1)
 
     if enemy.statetime <= self.hitendtime then
         enemy.color = Color.White
