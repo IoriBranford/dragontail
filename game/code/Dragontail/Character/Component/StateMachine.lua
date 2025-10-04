@@ -58,6 +58,7 @@ local StateVarsToCopy = {
     canbegrabbed = true,
     canbejuggled = true,
     faceturnspeed = true,
+    moveturnspeed = true,
     bodyinlayers = true,
     bodyhitslayers = true,
     color = true,

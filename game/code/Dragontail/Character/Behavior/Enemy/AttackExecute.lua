@@ -33,7 +33,9 @@ function AttackExecute:start()
     enemy.statetime = enemy.statetime or hittime
     self.hitendtime = enemy.statetime - hittime
 
-    self.lungespeed = enemy.attack.lungespeed or 0
+    self.lungespeed = Slide.updateSlideSpeed(enemy,
+        enemy.faceangle, enemy.attack.lungespeed or 0,
+        enemy.attack.lungedecel or 1)
 end
 
 function AttackExecute:fixedupdate()
@@ -49,9 +51,18 @@ function AttackExecute:fixedupdate()
         enemy:startAttack(attackangle)
     end
 
-    self.lungespeed = Slide.updateSlideSpeed(enemy,
-        faceangle, self.lungespeed,
-        enemy.attack.lungedecel or 1)
+    local velx, vely = enemy.velx, enemy.vely
+    if velx ~= 0 or vely ~= 0 then
+        local lungeangle = math.atan2(vely, velx)
+        local moveturnspeed = enemy.moveturnspeed or 0
+        if moveturnspeed ~= 0 then
+            lungeangle = math.rotangletowards(lungeangle, enemy.faceangle,
+                moveturnspeed or math.pi)
+        end
+        self.lungespeed = Slide.updateSlideSpeed(enemy,
+            lungeangle, self.lungespeed,
+            enemy.attack.lungedecel or 1)
+    end
 
     if enemy.statetime <= self.hitendtime then
         enemy.color = Color.White
