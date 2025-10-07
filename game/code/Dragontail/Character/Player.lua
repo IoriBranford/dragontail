@@ -345,6 +345,14 @@ function Player:accelerateTowardsFace()
     self:accelerateTowardsVelXY(targetvelx, targetvely)
 end
 
+function Player:stopRunning()
+    local speed = self.speed or 4
+    if math.lensq(self.velx, self.vely) <= speed*speed then
+        return self.nextstate
+    end
+    self:decelerateXYto0()
+end
+
 function Player:turnTowardsJoystick(movinganimation, notmovinganimation)
     local inx, iny = self:getJoystick()
     if inx ~= 0 or iny ~= 0 then
