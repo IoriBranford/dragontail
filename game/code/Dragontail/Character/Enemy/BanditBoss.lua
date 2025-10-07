@@ -87,7 +87,7 @@ function BanditBoss:getBestAttack(opponent)
     local targetx, targety = opponent.x, opponent.y
     local distx, disty = targetx - self.x, targety - self.y
     local facex, facey = math.cos(self.faceangle), math.sin(self.faceangle)
-    local isoppobehind = math.dot(facex, facey, distx, disty) <= 0
+    local isoppoahead = math.dot(facex, facey, distx, disty) > 0
     local isoppocoming = math.dot(opponent.velx, opponent.vely, distx, disty) < 0
     local dsq = math.lensq(distx, disty)
     if dsq <= 128*128 then
@@ -95,11 +95,12 @@ function BanditBoss:getBestAttack(opponent)
         if self.state.state == "fall" or self.state.state == "getup" then
             return turndir < 0 and "bandit-boss-getup-spin-ccw" or "bandit-boss-getup-spin-cw"
         end
-        if isoppobehind or not isoppocoming then
-            return turndir < 0 and "bandit-boss-spin-ccw" or "bandit-boss-spin-cw"
-        else
-            return "bandit-boss-poke"
+        if isoppocoming and isoppoahead then
+            if opponent.z <= opponent.floorz then
+                return "bandit-boss-poke"
+            end
         end
+        return turndir < 0 and "bandit-boss-spin-ccw" or "bandit-boss-spin-cw"
     end
     return "bandit-boss-charge"
 end
