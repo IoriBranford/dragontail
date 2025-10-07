@@ -34,7 +34,7 @@ local NormalDecayRate = 2
 local ReversalChargeRate = 4
 local ReversalDecayRate = 1
 
-Player.ChargeAttacks = {
+Player.ChargeAttackStates = {
     "fireball-storm", "spit-multi-fireball", "spit-fireball"
 }
 
@@ -296,13 +296,6 @@ function Player:updateAttackerSlots()
     end
 end
 
-local ChargeAttacks = {
-    "fireball-storm", "spit-multi-fireball", "spit-fireball"
-}
-local RunningChargeAttacks = {
-    "fireball-storm", "running-spit-multi-fireball", "running-spit-fireball"
-}
-
 function Player:updateBreathCharge(chargerate, decayrate)
     if Config.player_autorevive and self.health <= 0 or self.attackbutton.down then
         Mana.charge(self, chargerate or NormalChargeRate)
@@ -311,10 +304,12 @@ function Player:updateBreathCharge(chargerate, decayrate)
     end
 end
 
-function Player:getChargedAttack(chargeattacks)
-    for _, chargeattack in ipairs(chargeattacks) do
-        if Mana.hasChargeForAttack(self, chargeattack) then
-            return chargeattack
+function Player:getChargedAttack(chargeattackstates)
+    for _, chargeattackstate in ipairs(chargeattackstates) do
+        local state = self.statetable[chargeattackstate]
+        local attack = state and state.attack
+        if Mana.hasChargeForAttack(self, attack) then
+            return chargeattackstate
         end
     end
 end
@@ -377,15 +372,15 @@ function Player:catchProjectileAtJoystick()
     return Catcher.findCharacterToCatch(self, projectiles, parryx, parryy)
 end
 
-function Player:getReversalChargedAttack()
-    local chargedattack = self:getChargedAttack(ChargeAttacks)
-    if chargedattack then
+function Player:getReversalChargedAttackState()
+    local chargedattackstate = self:getChargedAttack(Player.ChargeAttackStates)
+    if chargedattackstate then
         local inx, iny = self:getJoystick()
         local angle = self.faceangle
         if inx ~= 0 or iny ~= 0 then
             angle = atan2(iny, inx)
         end
-        return chargedattack, angle
+        return chargedattackstate, angle
     end
 end
 
@@ -398,7 +393,7 @@ function Player:getup()
         return "run", nil, true
     end
     if not self.attackbutton.down then
-        local chargedattack, angle = self:getReversalChargedAttack()
+        local chargedattack, angle = self:getReversalChargedAttackState()
         if chargedattack then
             Mana.releaseCharge(self)
             return chargedattack, angle
@@ -611,11 +606,11 @@ function Player:hold(enemy)
             Combo.reset(self)
             return "running-with-enemy", enemy, true
         end
-        local chargedattack = not self.attackbutton.down and self:getChargedAttack(ChargeAttacks)
-        if chargedattack then
+        local chargedattackstate = not self.attackbutton.down and self:getChargedAttack(Player.ChargeAttackStates)
+        if chargedattackstate then
             Mana.releaseCharge(self)
             HoldOpponent.stopHolding(self, enemy)
-            return chargedattack, holdangle
+            return chargedattackstate, holdangle
         end
         -- if fireattackpressed then
         --     if Mana.canAffordAttack(self, "flaming-spinning-throw") then

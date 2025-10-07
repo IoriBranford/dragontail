@@ -58,7 +58,7 @@ local function findWallCollision(self)
     end
 end
 
-local RunningChargeAttacks = {
+local RunningChargeAttackStates = {
     "fireball-storm", "running-spit-multi-fireball", "running-spit-fireball"
 }
 
@@ -119,10 +119,10 @@ function PlayerRunning:fixedupdate()
     local velx, vely = player.velx, player.vely
     local velangle = velx == 0 and vely == 0 and player.faceangle or math.atan2(vely, velx)
 
-    local chargedattack = not player.attackbutton.down and player:getChargedAttack(RunningChargeAttacks)
-    if chargedattack then
+    local chargedattackstate = not player.attackbutton.down and player:getChargedAttack(RunningChargeAttackStates)
+    if chargedattackstate then
         Mana.releaseCharge(player)
-        return chargedattack, player.facedestangle
+        return chargedattackstate, player.facedestangle
     end
 
     if player:consumeActionRecentlyPressed("attack") then

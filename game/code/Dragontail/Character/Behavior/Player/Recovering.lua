@@ -9,7 +9,7 @@ local Face     = require "Dragontail.Character.Component.Face"
 local Recovering = pooledclass(Behavior)
 Recovering._nrec = Behavior._nrec + 3
 
-local ChargeAttacks = Player.ChargeAttacks
+local ChargeAttackStates = Player.ChargeAttackStates
 
 function Recovering:start()
     self.flypressed = false
@@ -27,7 +27,7 @@ function Recovering:fixedupdate()
         return "catchProjectile", caughtprojectile
     end
 
-    local chargedattack = not player.attackbutton.down and player:getChargedAttack(ChargeAttacks)
+    local chargedattack = not player.attackbutton.down and player:getChargedAttack(ChargeAttackStates)
     if chargedattack then
         Mana.releaseCharge(player)
         return chargedattack, player.facedestangle

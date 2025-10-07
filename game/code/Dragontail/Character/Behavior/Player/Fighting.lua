@@ -14,7 +14,7 @@ function PlayerFighting:start()
     player.facedestangle = player.faceangle
 end
 
-local ChargeAttacks = Player.ChargeAttacks
+local ChargeAttackStates = Player.ChargeAttackStates
 
 function PlayerFighting:fixedupdate()
     local player = self.character
@@ -32,7 +32,7 @@ function PlayerFighting:fixedupdate()
         return "run", nil, true
     end
 
-    local chargedattack = not player.attackbutton.down and player:getChargedAttack(ChargeAttacks)
+    local chargedattack = not player.attackbutton.down and player:getChargedAttack(ChargeAttackStates)
     if chargedattack then
         Mana.releaseCharge(player)
         local attackangle = inx == 0 and iny == 0
