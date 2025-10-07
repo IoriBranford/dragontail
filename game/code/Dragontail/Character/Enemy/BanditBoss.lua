@@ -30,6 +30,21 @@ local OneSwitchAttackHealthPercent = .5
 local TwoSwitchAttackHealthPercent = .0
 local FirstSummonHealthPercent = .6
 local SecondSummonHealthPercent = .3
+local AllowedAttackSwitches = {
+    ["bandit-boss-charge"] = {
+        ["bandit-boss-swat-projectile-cw"] = true,
+        ["bandit-boss-swat-projectile-ccw"] = true,
+        ["bandit-boss-spin-cw"] = true,
+        ["bandit-boss-spin-ccw"] = true,
+        ["bandit-boss-poke"] = true,
+    },
+    ["bandit-boss-charge2"] = {
+        ["bandit-boss-swat-projectile-cw"] = true,
+        ["bandit-boss-swat-projectile-ccw"] = true,
+        ["bandit-boss-spin-cw"] = true,
+        ["bandit-boss-spin-ccw"] = true,
+    }
+}
 
 function BanditBoss:considerDeflectingProjectile()
     local x, y = self.x, self.y
@@ -125,14 +140,20 @@ function BanditBoss:duringApproach(opponent)
 end
 
 function BanditBoss:getAttackSwitch(target)
-    if target and target.canbeattacked then
-        local switchesleft = self.attackswitchesleft or 0
-        local newattack = switchesleft > 0 and self:getBestAttack(target) or self.attacktype
-        if newattack ~= self.attacktype then
-            self.attackswitchesleft = switchesleft - 1
-            self:stopAttack()
-            return newattack
-        end
+    if not target or not target.canbeattacked then return end
+
+    local switchesleft = self.attackswitchesleft or 0
+    if switchesleft <= 0 then return end
+
+    local allowedswitchattacks = AllowedAttackSwitches[self.state.state]
+    if not allowedswitchattacks then return end
+
+    local newattack = self:getBestAttack(target)
+    if allowedswitchattacks[newattack] then
+        self.attackswitchesleft = switchesleft - 1
+        self:stopAttack()
+        Face.faceObject(self, target)
+        return newattack
     end
 end
 
