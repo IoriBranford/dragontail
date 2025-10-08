@@ -13,7 +13,7 @@ holding-kick,holding-kick,Dragontail.Character.Behavior.Player.AttackingStraight
 running-kick,running-kick,Dragontail.Character.Behavior.Player.AttackingStraight,,,running-kick-recover,20,.attackasefile,hardkick,1,TRUE,TRUE,FALSE,,data/sounds/player/attack2.mp3,,3,0,0,,64,8,3.14159265358979
 running-kick-recover,,,,decelerateXYto0,walk,12,.attackasefile,kickrecover,0,TRUE,TRUE,FALSE,,,,0,2,2,,8,4,0
 running-elbow,running-elbow,Dragontail.Character.Behavior.Player.AttackingStraight,,,walk,10,.mainasefile,elbow,0,TRUE,TRUE,FALSE,,,,0,2,2,,2,4,3.14159265358979
-runIntoWall,,,,decelerateXYto0,walk,15,.mainasefile,elbow,0,TRUE,TRUE,FALSE,,data/sounds/combat/bodyslam.mp3,,0,2,2,,1,4,0
+runIntoWall,,,,updateRunIntoWall,walk,15,.mainasefile,elbow,0,TRUE,TRUE,FALSE,,data/sounds/combat/bodyslam.mp3,,0,2,2,,1,4,0
 running-with-enemy,running-with-enemy,Dragontail.Character.Behavior.Player.Running,,,walk,FALSE,.holdasefile,holdwalk,1,FALSE,FALSE,FALSE,,data/sounds/combat/dash.mp3,,3,2,2,,16,8,0.098174770424681
 spit-fireball,spit-fireball,Dragontail.Character.Behavior.Player.AttackingStraight,,,walk,20,.attackasefile,spit,0,FALSE,FALSE,FALSE,,,,0,0,0,,4,-6,3.14159265358979
 spit-fat-fireball,spit-fat-fireball,Dragontail.Character.Behavior.Player.AttackingStraight,,,walk,9,.attackasefile,spit,0,FALSE,FALSE,FALSE,,,,0,0,0,,4,-6,3.14159265358979

@@ -648,6 +648,34 @@ function Player:hold(enemy)
     return "breakaway", enemy
 end
 
+function Player:runIntoWall()
+    local velx, vely = self.velx, self.vely
+    local oobx, ooby = math.norm(self.penex, self.peney)
+    local velangle = velx == 0 and vely == 0
+        and self.faceangle or math.atan2(vely, velx)
+    Characters.spawn(
+        {
+            type = "spark-bighit",
+            x = self.x + oobx*self.bodyradius,
+            y = self.y + ooby*self.bodyradius,
+            z = self.z + self.bodyheight/2
+        }
+    )
+    self.hurtstun = 9
+    self.velz = 0
+    return "runIntoWall", velangle
+end
+
+function Player:updateRunIntoWall()
+    if self.z > self.floorz then
+        if (self.statetime or 1) <= 1 then
+            self.statetime = 1
+        end
+    end
+    self:decelerateXYto0()
+end
+
+---@deprecated
 function Player:spinAndKickEnemy(angle, enemy)
     Mana.store(self, -(self.attack.manacost or 0))
     StateMachine.start(enemy, self.attack.heldopponentstate or "human-in-spinning-throw", self)

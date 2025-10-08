@@ -176,16 +176,7 @@ function PlayerRunning:fixedupdate()
         if oobx or ooby then
             local oobdotvel = math.dot(oobx, ooby, velx, vely)
             if oobdotvel > 0 then
-                Characters.spawn(
-                    {
-                        type = "spark-bighit",
-                        x = player.x + oobx*player.bodyradius,
-                        y = player.y + ooby*player.bodyradius,
-                        z = player.z + player.bodyheight/2
-                    }
-                )
-                player.hurtstun = 9
-                return "runIntoWall", velangle
+                return player:runIntoWall()
             end
         end
     end
