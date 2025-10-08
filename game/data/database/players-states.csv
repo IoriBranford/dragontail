@@ -21,8 +21,12 @@ running-spit-fireball,spit-fireball,Dragontail.Character.Behavior.Player.Attacki
 running-spit-fat-fireball,spit-fat-fireball,Dragontail.Character.Behavior.Player.AttackingStraight,,,walk,20,.attackasefile,spit,0,FALSE,FALSE,FALSE,,,,0,0,0,,8,4,3.14159265358979
 spit-multi-fireball,spit-multi-fireball,Dragontail.Character.Behavior.Player.AttackingStraight,,,walk,20,.attackasefile,spit,0,FALSE,FALSE,FALSE,,,,0,0,0,,4,-6,3.14159265358979
 running-spit-multi-fireball,spit-multi-fireball,Dragontail.Character.Behavior.Player.AttackingStraight,,,walk,20,.attackasefile,spit,0,FALSE,FALSE,FALSE,,,,0,0,0,,8,4,3.14159265358979
-fireball-spin-cw,fireball-spin-cw,Dragontail.Character.Behavior.Player.SpinAttack,,,walk,FALSE,.attackasefile,attackA,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,,0,0,0,,1,0,0.628318530717959
-fireball-spin-ccw,fireball-spin-ccw,Dragontail.Character.Behavior.Player.SpinAttack,,,walk,FALSE,.attackasefile,attackB,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,,0,0,0,,1,0,0.628318530717959
+spit-3-fireballs,spit-3-fireballs,Dragontail.Character.Behavior.Player.AttackingStraight,,,walk,20,.attackasefile,spit,0,FALSE,FALSE,FALSE,,,,0,0,0,,4,-6,3.14159265358979
+running-spit-3-fireballs,spit-3-fireballs,Dragontail.Character.Behavior.Player.AttackingStraight,,,walk,20,.attackasefile,spit,0,FALSE,FALSE,FALSE,,,,0,0,0,,8,4,3.14159265358979
+fireball-spin-cw,fireball-spin-cw,Dragontail.Character.Behavior.Player.SpinAttack,,,walk,6,.attackasefile,attackA,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,,0,0,0,,4,0,1.0471975511966
+fireball-spin-ccw,fireball-spin-ccw,Dragontail.Character.Behavior.Player.SpinAttack,,,walk,6,.attackasefile,attackB,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,,0,0,0,,4,0,1.0471975511966
+running-fireball-spin-cw,fireball-spin-cw,Dragontail.Character.Behavior.Player.SpinAttack,,,walk,6,.attackasefile,attackA,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,,0,0,0,,8,0,1.0471975511966
+running-fireball-spin-ccw,fireball-spin-ccw,Dragontail.Character.Behavior.Player.SpinAttack,,,walk,6,.attackasefile,attackB,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,,0,0,0,,8,0,1.0471975511966
 fireball-storm,fireball-storm,Dragontail.Character.Behavior.Player.SpinAttack,,,walk,FALSE,.attackasefile,attackA,1,FALSE,FALSE,FALSE,,data/sounds/player/attacksuper.mp3,,3,0,0,,8,0,0.589048622548086
 walk,,Dragontail.Character.Behavior.Player.Fighting,,,walk,FALSE,.mainasefile,Stand,1,TRUE,TRUE,FALSE,,,,0,2,2,,2,4,0.392699081698724
 run,running-elbow,Dragontail.Character.Behavior.Player.Running,,,stopRunning,FALSE,.mainasefile,Walk,1,TRUE,TRUE,FALSE,,data/sounds/combat/dash.mp3,,3,2,2,,16,8,0.098174770424681
