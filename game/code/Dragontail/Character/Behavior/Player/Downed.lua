@@ -8,7 +8,7 @@ function PlayerDowned:timeout(nextstate, a, b, c, d, e, f, g)
         Downed.timeout(self, nextstate, a, b, c, d, e, f, g)
     local player = self.character
     if player.health <= 0 then
-        local chargedattack, angle = player:getReversalChargedAttack()
+        local chargedattack, angle = player:getReversalChargedAttackState()
         if chargedattack then
             player.health = 10
             Mana.releaseCharge(player)
