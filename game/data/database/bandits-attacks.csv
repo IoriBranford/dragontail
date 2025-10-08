@@ -1,5 +1,5 @@
 attacktype,radius,arc,z,height,damage,opponentstun,selfstun,spinspeed,attackwindupinvuln,hittingduration,bestdist,lungespeed,lungedecel,launchspeed,pushbackspeed,opponentstateonhit,opponentstateonfinalhit,selfstateonhit,hitsound,projectiletype,hitspark,guardhitspark,hurtparticle,canjuggle,hurtcolorcycle,deflectsprojectileatopponent,hitslayers
-dagger-swing,32,0.196349540849362,8,8,10,12,3,,,9,47,5,1,5,5,,knockedBack,,data/sounds/combat/cut.mp3,,,,particle-blood,,FALSE,FALSE,Object Player Enemy
+dagger-swing,32,0.196349540849362,8,8,10,12,3,,,6,47,5,1,5,5,,knockedBack,,data/sounds/combat/cut.mp3,,,,particle-blood,,FALSE,FALSE,Object Player Enemy
 spear-thrust,40,0.196349540849362,8,8,10,15,3,,,30,156.25,15,0.5,10,10,knockedBack,knockedBack,,data/sounds/combat/cut.mp3,,,,particle-blood,,FALSE,FALSE,Object Player Enemy
 spear-poke,40,0.196349540849362,8,8,10,15,3,,,20,92.5,10,0.5,5,5,,knockedBack,,data/sounds/combat/cut.mp3,,,,particle-blood,,FALSE,FALSE,Object Player Enemy
 human-thrown,24,0.785398163397448,,,10,12,3,,,,,,,5,5,knockedBack,knockedBack,,data/sounds/combat/hit2.mp3,,spark-hit,spark-guard,,,FALSE,FALSE,Object Player Enemy
