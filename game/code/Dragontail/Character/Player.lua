@@ -314,6 +314,18 @@ function Player:getChargedAttack(chargeattackstates)
     end
 end
 
+function Player:getChargedAttackTowardsJoystick()
+    local chargedattack = not self.attackbutton.down
+        and self:getChargedAttack(Player.ChargeAttackStates)
+    if chargedattack then
+        Mana.releaseCharge(self)
+        local inx, iny = self:getJoystick()
+        local attackangle = inx == 0 and iny == 0
+            and self.facedestangle or math.atan2(iny, inx)
+        return chargedattack, attackangle
+    end
+end
+
 function Player:fixedupdate()
     self.inputlog:logJoystick(self:getJoystick())
     self.inputlog:logActionState(self.attackbutton)
@@ -341,10 +353,16 @@ function Player:accelerateTowardsFace()
 end
 
 function Player:stopRunning()
+    local chargedattack, attackangle = self:getChargedAttackTowardsJoystick()
+    if chargedattack then
+        return chargedattack, attackangle
+    end
+
     local speed = self.speed or 4
     if math.lensq(self.velx, self.vely) <= speed*speed then
         return self.nextstate
     end
+
     self:decelerateXYto0()
 end
 
