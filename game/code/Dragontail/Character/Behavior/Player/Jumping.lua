@@ -59,6 +59,15 @@ function PlayerJumping:fixedupdate()
     self.time = self.time + 1
 
     player.velx, player.vely = self.velx, self.vely
+
+    if (player.penex or 0) ~= 0 or (player.peney or 0) ~= 0 then
+        local velx, vely = player.velx, player.vely
+        local speedsq = math.lensq(velx, vely)
+        local targetspeed = player.speed or 4
+        if speedsq > targetspeed*targetspeed then
+            return player:runIntoWall()
+        end
+    end
 end
 
 return PlayerJumping
