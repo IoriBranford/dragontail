@@ -1,5 +1,5 @@
 attacktype,radius,arc,z,height,damage,opponentstun,selfstun,hittingduration,deflectsprojectileatopponent,opponentstateonhit,opponentstateonfinalhit,hitsound,hitspark,guardhitspark,hitslayers,launchspeed,launchspeedz,pushbackspeed,hurtparticle,canjuggle,selfstateonhit
-human-in-spinning-throw,24,1.5707963267949,,,10,12,3,20,TRUE,knockedBack,knockedBack,data/sounds/combat/hit2.mp3,spark-hit,spark-guard,Object Player Enemy,,,,,,
+human-in-spinning-throw,24,1.5707963267949,,,10,12,0,20,TRUE,knockedBack,knockedBack,data/sounds/combat/hit2.mp3,spark-hit,spark-guard,Object Player Enemy,,,,,,
 human-thrown,24,0.785398163397448,,,10,12,3,,,knockedBack,knockedBack,data/sounds/combat/hit2.mp3,spark-hit,spark-guard,Object Player Enemy,,,,,,
 spike-small,4,1.5707963267949,4,4,5,12,3,,,,knockedBackJuggled,data/sounds/combat/cut.mp3,,,Object Player Enemy,5,4,5,particle-blood,TRUE,bloodyHazard
 spike-medium,4,1.5707963267949,12,4,10,12,3,,,,knockedBackJuggled,data/sounds/combat/cut.mp3,,,Object Player Enemy,5,4,5,particle-blood,TRUE,bloodyHazard
