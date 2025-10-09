@@ -13,7 +13,7 @@ function PlayerJumping:start(isjumpstart)
     self.time = 0
 
     if isjumpstart then
-        player.velz = player.gravity*15
+        player.velz = player.gravity*16
         player.numjumpattacks = 0
         Face.faceVector(player, player.velx, player.vely)
     end
