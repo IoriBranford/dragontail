@@ -300,20 +300,20 @@
    <object id="485" template="mapobjects/bandit/knife.tx" x="1176" y="240"/>
    <object id="49" template="mapobjects/bandit/knife.tx" x="408" y="160"/>
    <object id="48" template="mapobjects/bandit/knife.tx" x="464" y="208"/>
-   <object id="514" name="attackbutton" gid="7267" x="672" y="56" width="14" height="14"/>
-   <object id="541" name="attackbutton" gid="7263" x="736" y="56" width="14" height="14"/>
-   <object id="517" name="Attack" x="664" y="64" width="48" height="18">
+   <object id="514" name="attackbutton" gid="7267" x="592" y="56" width="14" height="14"/>
+   <object id="541" name="attackbutton" gid="7263" x="656" y="56" width="14" height="14"/>
+   <object id="517" name="Attack" x="584" y="64" width="48" height="18">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">ATTACK</text>
    </object>
-   <object id="544" name="Jump" x="728" y="64" width="48" height="18">
+   <object id="544" name="Jump" x="648" y="64" width="48" height="18">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">JUMP</text>
    </object>
-   <object id="539" gid="7269" x="704" y="56" width="14" height="14"/>
-   <object id="543" gid="7265" x="768" y="56" width="14" height="14"/>
-   <object id="540" name="or" x="680" y="48" width="16" height="16">
+   <object id="539" gid="7269" x="624" y="56" width="14" height="14"/>
+   <object id="543" gid="7265" x="688" y="56" width="14" height="14"/>
+   <object id="540" name="or" x="600" y="48" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
-   <object id="542" name="or" x="744" y="48" width="16" height="16">
+   <object id="542" name="or" x="664" y="48" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
   </objectgroup>
@@ -327,6 +327,14 @@
    <object id="488" template="mapobjects/bandit/knife.tx" x="1016" y="240"/>
    <object id="486" template="mapobjects/bandit/knife.tx" x="272" y="128"/>
    <object id="45" template="mapobjects/bandit/knife.tx" x="1192" y="256"/>
+   <object id="519" name="joystick" gid="6856" x="728" y="56" width="16" height="16"/>
+   <object id="520" name="Grab" x="752" y="40" width="128" height="32">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">INTO ENEMY to GRAB then</text>
+   </object>
+   <object id="527" name="Grab" x="744" y="64" width="128" height="32">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">+ A DIRECTION to THROW</text>
+   </object>
+   <object id="526" name="attackbutton" gid="7267" x="736" y="72" width="14" height="14"/>
   </objectgroup>
   <objectgroup id="41" name="tolearnrunning" class="Room">
    <properties>
@@ -350,14 +358,6 @@
      <property name="color" type="color" value="#ffffffff"/>
     </properties>
    </object>
-   <object id="519" name="joystick" gid="6856" x="1232" y="360" width="16" height="16"/>
-   <object id="520" name="Grab" x="1256" y="344" width="128" height="32">
-    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">INTO ENEMY to GRAB then</text>
-   </object>
-   <object id="527" name="Grab" x="1248" y="368" width="128" height="32">
-    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">+ A DIRECTION to THROW</text>
-   </object>
-   <object id="526" name="attackbutton" gid="7267" x="1240" y="376" width="14" height="14"/>
   </objectgroup>
   <objectgroup id="9" name="tolearnrunning2" class="Room">
    <properties>
