@@ -504,4 +504,37 @@ function Common:pulseRed()
     end
 end
 
+---@param hit AttackHit
+function Common:fruitTreeHurt(hit)
+    if hit then
+        local attack = hit.attack
+        local hitsound = attack.hitsound
+        Audio.play(hitsound)
+    end
+
+    local numfruitsdropped = self.numfruitsdropped or 0
+    local numfruitstodrop = self.numfruitstodroponhit or 1
+    for i = numfruitsdropped + 1, numfruitsdropped + numfruitstodrop do
+        local fruit = self["fruit"..i]
+        if fruit == nil then
+            break
+        end
+        if fruit ~= false then
+            StateMachine.start(fruit, "itemWaitForPickup")
+            self["fruit"..i] = false
+            numfruitsdropped = numfruitsdropped + 1
+        end
+    end
+    self.numfruitsdropped = numfruitsdropped
+
+    self.hurtstun = 10
+    local leaves = self.leaves
+    if leaves then
+        leaves.hurtstun = 10
+    end
+    if not hit then
+        return self.recoverai
+    end
+end
+
 return Common
