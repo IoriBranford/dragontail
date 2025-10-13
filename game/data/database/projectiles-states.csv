@@ -10,6 +10,7 @@ thrown-stone-attack,thrown-stone-attack,projectileFly,Fly,1,FALSE,FALSE,TRUE,FAL
 thrown-stone-strong-attack,thrown-stone-strong-attack,projectileFly,Fly,1,FALSE,FALSE,TRUE,FALSE,,
 projectile-dish-attack,projectile-dish-attack,projectileFly,Fly,1,FALSE,FALSE,TRUE,FALSE,,
 projectile-dish-strong-attack,projectile-dish-strong-attack,projectileFly,Fly,1,FALSE,FALSE,TRUE,FALSE,,
+spikefruit-attack,spikefruit-attack,projectileFly,Fly,1,FALSE,FALSE,TRUE,FALSE,,
 blinkOut,,blinkOut,,1,FALSE,FALSE,FALSE,FALSE,,
 disappear,,disappear,,1,FALSE,FALSE,FALSE,FALSE,,
 projectileDeflected,,projectileDeflected,,1,FALSE,FALSE,FALSE,FALSE,data/sounds/combat/deflect.mp3,

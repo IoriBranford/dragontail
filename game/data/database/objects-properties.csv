@@ -9,3 +9,4 @@ forge-fire,,,32,48,Object,,,,,,1.5707963267949,,,data/database/objects-states.cs
 spike-small,,,4,1,Object,,,,,,1.5707963267949,,,data/database/objects-states.csv,data/database/objects-attacks.csv,staticHazard,,,,,,,,spike-small
 spike-medium,,,6,12,Object,,,,,,1.5707963267949,,,data/database/objects-states.csv,data/database/objects-attacks.csv,staticHazard,,,,,,,,spike-medium
 spike-large,,,12,16,Object,,,,,,1.5707963267949,,,data/database/objects-states.csv,data/database/objects-attacks.csv,staticHazard,,,,,,,,spike-large
+fruit-tree,container,,16,64,Object,,,TRUE,,0,,,Dragontail.Character.Common,data/database/objects-states.csv,data/database/objects-attacks.csv,treeIdle,fruitTreeHurt,,treeIdle,,,0,,

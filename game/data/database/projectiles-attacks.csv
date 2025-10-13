@@ -9,3 +9,4 @@ thrown-stone-attack,12,8,1.5707963267949,10,10,,5,,projectileBounce,,,,knockedBa
 thrown-stone-strong-attack,16,12,1.5707963267949,15,10,,12,,projectileShatter,,,knockedBack,knockedBack,data/sounds/combat/hit3.mp3,spark-hit,spark-guard,,,,,,Object Enemy
 projectile-dish-attack,12,8,1.5707963267949,10,10,,3,,dishShatter,,,,knockedBack,data/sounds/combat/hit2.mp3,spark-hit,spark-guard,,,,,,Object Player
 projectile-dish-strong-attack,12,8,1.5707963267949,15,10,,3,,dishShatter,,,knockedBack,knockedBack,data/sounds/combat/hit2.mp3,spark-hit,spark-guard,,,,,,Object Enemy
+spikefruit-attack,,16,1.5707963267949,15,12,5,3,,projectileEmbed,,,knockedBack,knockedBack,data/sounds/combat/splunch.mp3,,,,particle-blood,,,,Object Player
