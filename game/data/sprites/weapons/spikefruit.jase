@@ -1,0 +1,64 @@
+{
+    "meta": {
+        "version": "0.0.1",
+        "frameTags": {},
+        "app": "tsx2jase",
+        "slices": [
+            {
+                "color": "#0000ffff",
+                "keys": [
+                    {
+                        "pivot": {
+                            "x": 8,
+                            "y": 14
+                        },
+                        "frame": 0,
+                        "bounds": {
+                            "x": 0,
+                            "y": 0,
+                            "h": 16,
+                            "w": 16
+                        }
+                    }
+                ],
+                "name": "origin"
+            }
+        ],
+        "layers": [
+            {
+                "opacity": 255,
+                "blendMode": "normal",
+                "name": "spikefruit"
+            }
+        ],
+        "size": {
+            "h": 16,
+            "w": 16
+        },
+        "image": "spikefruit.png"
+    },
+    "frames": [
+        {
+            "duration": 0,
+            "frame": {
+                "x": 0,
+                "y": 0,
+                "h": 16,
+                "w": 16
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 16,
+                "w": 16
+            },
+            "trimmed": false,
+            "filename": "spikefruit#1",
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "h": 16,
+                "w": 16
+            }
+        }
+    ]
+}
