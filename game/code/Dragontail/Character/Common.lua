@@ -506,11 +506,9 @@ end
 
 ---@param hit AttackHit
 function Common:fruitTreeHurt(hit)
-    if hit then
-        local attack = hit.attack
-        local hitsound = attack.hitsound
-        Audio.play(hitsound)
-    end
+    local attack = hit.attack
+    local hitsound = attack.hitsound
+    Audio.play(hitsound)
 
     local numfruitsdropped = self.numfruitsdropped or 0
     local numfruitstodrop = self.numfruitstodroponhit or 1
@@ -527,14 +525,14 @@ function Common:fruitTreeHurt(hit)
     end
     self.numfruitsdropped = numfruitsdropped
 
-    self.hurtstun = 10
+    self.hurtstun = attack.opponentstun
     local leaves = self.leaves
     if leaves then
-        leaves.hurtstun = 10
+        leaves.hurtstun = self.hurtstun
     end
-    if not hit then
-        return self.recoverai
-    end
+
+    yield()
+    return self.recoverai
 end
 
 return Common
