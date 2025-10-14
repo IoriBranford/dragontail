@@ -189,6 +189,7 @@ end
 ---@param name string
 ---@param i integer|string frame index or tag name
 ---@return AseSlice?
+---@return integer? i
 function Aseprite:getFrameSlice(name, i)
 	local slice = self.slices and self.slices[name]
 	if not slice then return end
@@ -201,13 +202,14 @@ function Aseprite:getFrameSlice(name, i)
 
 	if not slice.keys[i] then return end
 	local frameslices = self[i].slices
-	return frameslices and frameslices[name]
+	return frameslices and frameslices[name], i
 end
 
 function Aseprite:getSliceFrameOrigin(name, i)
-	local slice = self:getFrameSlice(name, i)
+	local slice
+	slice, i = self:getFrameSlice(name, i)
 	if slice then
-		return slice:getFrameOrigin(name)
+		return slice:getFrameOrigin(i)
 	end
 end
 
