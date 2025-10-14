@@ -53,6 +53,7 @@
  <tileset firstgid="7285" source="sprites/grassland/tree2C_ss_leaves.tsx"/>
  <tileset firstgid="7286" source="sprites/grassland/tree2C_ss.tsx"/>
  <tileset firstgid="7287" source="sprites/weapons/spikefruit-hanging.tsx"/>
+ <tileset firstgid="7288" source="sprites/weapons/spikefruit-onground.tsx"/>
  <layer id="2" name="floor" width="200" height="12">
   <properties>
    <property name="drawz" type="float" value="-2"/>
@@ -475,49 +476,26 @@
     </properties>
     <polygon points="144,0 144,96 624,96 624,0"/>
    </object>
-   <object id="530" template="mapobjects/items/stone.tx" x="1480" y="64"/>
-   <object id="531" template="mapobjects/items/stone.tx" x="1568" y="96"/>
-   <object id="532" template="mapobjects/items/stone.tx" x="1504" y="104"/>
-   <object id="533" template="mapobjects/items/stone.tx" x="1528" y="72"/>
-   <object id="534" template="mapobjects/items/stone.tx" x="1520" y="40"/>
-   <object id="535" template="mapobjects/items/stone.tx" x="1552" y="112"/>
-   <object id="590" type="fruit-tree" gid="7286" x="1488" y="24" width="128" height="160">
+   <object id="530" template="mapobjects/items/spikefruit-ground.tx" x="1472" y="56"/>
+   <object id="532" template="mapobjects/items/spikefruit-ground.tx" x="1496" y="40"/>
+   <object id="533" template="mapobjects/items/spikefruit-ground.tx" x="1520" y="72"/>
+   <object id="534" template="mapobjects/items/spikefruit-ground.tx" x="1440" y="40"/>
+   <object id="590" template="mapobjects/items/spikefruit-tree.tx" x="1488" y="24">
     <properties>
-     <property name="fruit1" type="object" value="594"/>
-     <property name="fruit2" type="object" value="595"/>
-     <property name="fruit3" type="object" value="592"/>
-     <property name="fruit4" type="object" value="593"/>
+     <property name="fruit1" type="object" value="592"/>
+     <property name="fruit2" type="object" value="593"/>
      <property name="leaves" type="object" value="591"/>
-     <property name="propertiestable" type="file" value="database/objects-properties.csv"/>
     </properties>
    </object>
-   <object id="591" gid="7285" x="1488" y="-40" width="128" height="96">
+   <object id="591" template="mapobjects/items/spikefruit-tree-leaves.tx" x="1488" y="-40"/>
+   <object id="592" template="mapobjects/items/spikefruit-hanging.tx" x="1456" y="-24">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="592" type="item-spikefruit-hanging" gid="7287" x="1472" y="-30" width="16" height="16">
+   <object id="593" template="mapobjects/items/spikefruit-hanging.tx" x="1520" y="-40">
     <properties>
-     <property name="propertiestable" type="file" value="database/items-properties.csv"/>
-     <property name="z" type="float" value="60"/>
-    </properties>
-   </object>
-   <object id="593" type="item-spikefruit-hanging" gid="7287" x="1504" y="-42" width="16" height="16">
-    <properties>
-     <property name="propertiestable" type="file" value="database/items-properties.csv"/>
-     <property name="z" type="float" value="60"/>
-    </properties>
-   </object>
-   <object id="594" type="item-spikefruit-hanging" gid="7287" x="1452" y="-26" width="16" height="16">
-    <properties>
-     <property name="propertiestable" type="file" value="database/items-properties.csv"/>
-     <property name="z" type="float" value="60"/>
-    </properties>
-   </object>
-   <object id="595" type="item-spikefruit-hanging" gid="7287" x="1520" y="-38" width="16" height="16">
-    <properties>
-     <property name="propertiestable" type="file" value="database/items-properties.csv"/>
-     <property name="z" type="float" value="60"/>
+     <property name="z" type="float" value="72"/>
     </properties>
    </object>
   </objectgroup>

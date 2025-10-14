@@ -15563,8 +15563,37 @@ return {
       tiles = {}
     },
     {
-      name = "shield",
+      name = "spikefruit-onground",
       firstgid = 7288,
+      class = "",
+      tilewidth = 16,
+      tileheight = 16,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/weapons/spikefruit.ase",
+      imagewidth = 16,
+      imageheight = 16,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 2
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "shield",
+      firstgid = 7289,
       class = "",
       tilewidth = 64,
       tileheight = 64,
@@ -15593,7 +15622,7 @@ return {
     },
     {
       name = "crystal-spikes",
-      firstgid = 7289,
+      firstgid = 7290,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -15879,7 +15908,7 @@ return {
     },
     {
       name = "muscle",
-      firstgid = 7353,
+      firstgid = 7354,
       class = "",
       tilewidth = 128,
       tileheight = 128,
@@ -17516,86 +17545,66 @@ return {
             {
               id = 530,
               name = "",
-              type = "item-stone",
+              type = "item-spikefruit",
               shape = "rectangle",
-              x = 1480,
-              y = 64,
+              x = 1472,
+              y = 56,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7262,
+              gid = 7288,
               visible = true,
-              properties = {}
-            },
-            {
-              id = 531,
-              name = "",
-              type = "item-stone",
-              shape = "rectangle",
-              x = 1568,
-              y = 96,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              gid = 7262,
-              visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/projectiles-properties.csv"
+              }
             },
             {
               id = 532,
               name = "",
-              type = "item-stone",
+              type = "item-spikefruit",
               shape = "rectangle",
-              x = 1504,
-              y = 104,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              gid = 7262,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 533,
-              name = "",
-              type = "item-stone",
-              shape = "rectangle",
-              x = 1528,
-              y = 72,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              gid = 7262,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 534,
-              name = "",
-              type = "item-stone",
-              shape = "rectangle",
-              x = 1520,
+              x = 1496,
               y = 40,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7262,
+              gid = 7288,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/projectiles-properties.csv"
+              }
             },
             {
-              id = 535,
+              id = 533,
               name = "",
-              type = "item-stone",
+              type = "item-spikefruit",
               shape = "rectangle",
-              x = 1552,
-              y = 112,
+              x = 1520,
+              y = 72,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7262,
+              gid = 7288,
               visible = true,
-              properties = {}
+              properties = {
+                ["propertiestable"] = "database/projectiles-properties.csv"
+              }
+            },
+            {
+              id = 534,
+              name = "",
+              type = "item-spikefruit",
+              shape = "rectangle",
+              x = 1440,
+              y = 40,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7288,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/projectiles-properties.csv"
+              }
             },
             {
               id = 590,
@@ -17610,10 +17619,10 @@ return {
               gid = 7286,
               visible = true,
               properties = {
-                ["fruit1"] = { id = 594 },
-                ["fruit2"] = { id = 595 },
-                ["fruit3"] = { id = 592 },
-                ["fruit4"] = { id = 593 },
+                ["fruit1"] = { id = 592 },
+                ["fruit2"] = { id = 593 },
+                ["fruit3"] = { id = 0 },
+                ["fruit4"] = { id = 0 },
                 ["leaves"] = { id = 591 },
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -17639,8 +17648,8 @@ return {
               name = "",
               type = "item-spikefruit-hanging",
               shape = "rectangle",
-              x = 1472,
-              y = -30,
+              x = 1456,
+              y = -24,
               width = 16,
               height = 16,
               rotation = 0,
@@ -17648,7 +17657,7 @@ return {
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv",
-                ["z"] = 60
+                ["z"] = 64
               }
             },
             {
@@ -17656,42 +17665,8 @@ return {
               name = "",
               type = "item-spikefruit-hanging",
               shape = "rectangle",
-              x = 1504,
-              y = -42,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              gid = 7287,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/items-properties.csv",
-                ["z"] = 60
-              }
-            },
-            {
-              id = 594,
-              name = "",
-              type = "item-spikefruit-hanging",
-              shape = "rectangle",
-              x = 1452,
-              y = -26,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              gid = 7287,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/items-properties.csv",
-                ["z"] = 60
-              }
-            },
-            {
-              id = 595,
-              name = "",
-              type = "item-spikefruit-hanging",
-              shape = "rectangle",
               x = 1520,
-              y = -38,
+              y = -40,
               width = 16,
               height = 16,
               rotation = 0,
@@ -17699,7 +17674,7 @@ return {
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv",
-                ["z"] = 60
+                ["z"] = 72
               }
             }
           }
@@ -18675,7 +18650,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7288,
+              gid = 7289,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -18693,7 +18668,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7288,
+              gid = 7289,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -20083,7 +20058,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7289,
+              gid = 7290,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 32,
@@ -20100,7 +20075,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7289,
+              gid = 7290,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -20118,7 +20093,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7292,
+              gid = 7293,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -20136,7 +20111,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7292,
+              gid = 7293,
               visible = true,
               properties = {
                 ["attackdegrees"] = 270,
@@ -20154,7 +20129,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7293,
+              gid = 7294,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 36,
@@ -20171,7 +20146,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7293,
+              gid = 7294,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -20189,7 +20164,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7296,
+              gid = 7297,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 39,
@@ -20206,7 +20181,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7296,
+              gid = 7297,
               visible = true,
               properties = {
                 ["attackdegrees"] = 270,
@@ -20224,7 +20199,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7297,
+              gid = 7298,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 40,
@@ -20241,7 +20216,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7297,
+              gid = 7298,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -20259,7 +20234,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7317,
+              gid = 7318,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 60,
@@ -20276,7 +20251,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7317,
+              gid = 7318,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -20294,7 +20269,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7305,
+              gid = 7306,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 48,
@@ -20311,7 +20286,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7305,
+              gid = 7306,
               visible = true,
               properties = {
                 ["attackdegrees"] = 270,
@@ -20329,7 +20304,7 @@ return {
               width = 40,
               height = 32,
               rotation = 0,
-              gid = 7312,
+              gid = 7313,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 55,
@@ -20346,7 +20321,7 @@ return {
               width = 40,
               height = 32,
               rotation = 0,
-              gid = 7312,
+              gid = 7313,
               visible = true,
               properties = {
                 ["attackdegrees"] = 270,
@@ -20804,7 +20779,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7353,
+              gid = 7354,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -22329,7 +22304,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7353,
+              gid = 7354,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
