@@ -54,6 +54,7 @@
  <tileset firstgid="7286" source="sprites/grassland/tree2C_ss.tsx"/>
  <tileset firstgid="7287" source="sprites/weapons/spikefruit-hanging.tsx"/>
  <tileset firstgid="7288" source="sprites/weapons/spikefruit-onground.tsx"/>
+ <tileset firstgid="7289" source="sprites/items/lifefruit.tsx"/>
  <layer id="2" name="floor" width="200" height="12">
   <properties>
    <property name="drawz" type="float" value="-2"/>
@@ -399,18 +400,8 @@
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="600" type="item-spikefruit-hanging" gid="7287" x="1192" y="-32" width="16" height="16">
-    <properties>
-     <property name="propertiestable" type="file" value="database/items-properties.csv"/>
-     <property name="z" type="float" value="60"/>
-    </properties>
-   </object>
-   <object id="601" type="item-spikefruit-hanging" gid="7287" x="1268" y="-36" width="16" height="16">
-    <properties>
-     <property name="propertiestable" type="file" value="database/items-properties.csv"/>
-     <property name="z" type="float" value="60"/>
-    </properties>
-   </object>
+   <object id="600" template="mapobjects/items/lifefruit-hanging.tx" type="food-lifefruit-hanging" x="1192" y="-20"/>
+   <object id="601" template="mapobjects/items/lifefruit-hanging.tx" type="food-lifefruit-hanging" x="1268" y="-24"/>
   </objectgroup>
   <objectgroup id="47" name="tolearnrunning3" class="Room">
    <properties>
