@@ -8,6 +8,7 @@ local Attacker      = require "Dragontail.Character.Component.Attacker"
 local Body        = require "Dragontail.Character.Component.Body"
 local Shadow      = require "Dragontail.Character.Component.Shadow"
 local Guard       = require "Dragontail.Character.Action.Guard"
+local Jiggler     = require "Dragontail.Character.Component.Jiggler"
 local Characters
 
 local pi = math.pi
@@ -166,9 +167,7 @@ function Character:fixedupdateHitStop()
             self.color = color
         end
         self.hurtstun = self.hurtstun - 1
-        local s = min(4, self.hurtstun) * sin(self.hurtstun)
-        self.scalex = 1 + s/8
-        self.scaley = 1 - s/32
+        Jiggler.update(self, self.hurtstun)
         if self.hurtstun > 0 then
             return false
         end
