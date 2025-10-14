@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <tileset firstgid="1" source="../../sprites/grassland/tree2C_ss_leaves.tsx"/>
+ <object gid="1" width="128" height="96">
+  <properties>
+   <property name="z" type="float" value="64"/>
+  </properties>
+ </object>
+</template>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <tileset firstgid="1" source="../../sprites/weapons/spikefruit-hanging.tsx"/>
+ <object type="item-spikefruit-hanging" gid="1" width="16" height="16">
+  <properties>
+   <property name="propertiestable" type="file" value="../../database/items-properties.csv"/>
+   <property name="z" type="float" value="64"/>
+  </properties>
+ </object>
+</template>
