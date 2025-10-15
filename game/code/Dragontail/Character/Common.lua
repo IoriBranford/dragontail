@@ -510,6 +510,17 @@ function Common:fruitTreeHurt(hit)
     local hitsound = attack.hitsound
     Audio.play(hitsound)
 
+    local attacker = hit.attacker
+    local attackangle = hit.angle
+    local launchspeed = attack.pushbackspeed
+    if launchspeed then
+        if launchspeed == "attackerspeed" then
+            launchspeed = math.len(attacker.velx, attacker.vely)
+        end
+        attacker.velx = launchspeed * -math.cos(attackangle)
+        attacker.vely = launchspeed * -math.sin(attackangle)
+    end
+
     local numfruitsdropped = self.numfruitsdropped or 0
     local numfruitstodrop = self.numfruitstodroponhit or 1
     for i = numfruitsdropped + 1, numfruitsdropped + numfruitstodrop do
