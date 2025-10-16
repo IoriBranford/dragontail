@@ -23,7 +23,7 @@ local scene
 local nextid
 local camera
 local clearlostenemiestimer
-local ClearLostEnemiesAfterTime = 180
+local ClearLostEnemiesAfterTime = 60*60*3
 
 function Characters.init(scene_, nextid_, camera_)
     nextid = nextid_ or 1
