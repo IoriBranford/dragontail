@@ -77,13 +77,15 @@ function GamePhase.quitphase()
     Database.clear()
 end
 
-function GamePhase.setPaused(newpaused)
+function GamePhase.setPaused(newpaused, withmenu)
     if pauselocked then
         return
     end
     paused = newpaused
     if paused then
-        Gui:pushMenu(Gui.gameplay.pausemenu)
+        if withmenu then
+            Gui:pushMenu(Gui.gameplay.pausemenu)
+        end
     else
         Gui:clearMenuStack()
     end
@@ -108,7 +110,9 @@ end
 ---@param gamepad love.Joystick
 function GamePhase.gamepadpressed(gamepad, button)
     if button == "start" then
-        GamePhase.setPaused(not paused)
+        GamePhase.setPaused(not paused, true)
+    elseif button == "back" then
+        GamePhase.setPaused(not paused, false)
     else
         Gui:gamepadpressed(gamepad, button)
     end
@@ -123,7 +127,7 @@ function GamePhase.keypressed(key)
 
     if key == "escape" then
         if not paused then
-            GamePhase.setPaused(true)
+            GamePhase.setPaused(true, true)
             return
         end
     end
