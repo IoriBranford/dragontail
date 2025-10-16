@@ -540,12 +540,12 @@
     </properties>
     <point/>
    </object>
-   <object id="431" name="Instruction" x="1368" y="-24" width="160" height="16">
+   <object id="431" name="Instruction" x="1320" y="-16" width="160" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">INTO ROCK to PICK UP</text>
    </object>
-   <object id="432" gid="6856" x="1344" y="-8" width="16" height="16"/>
-   <object id="433" gid="7267" x="1352" y="8" width="14" height="14"/>
-   <object id="434" name="Instruction" x="1368" y="0" width="144" height="16">
+   <object id="432" gid="6856" x="1296" y="0" width="16" height="16"/>
+   <object id="433" gid="7267" x="1288" y="16" width="14" height="14"/>
+   <object id="434" name="Instruction" x="1304" y="8" width="144" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">THROW 1</text>
    </object>
    <object id="435" gid="6932" x="1576" y="116" width="16" height="16" visible="0"/>
@@ -554,14 +554,14 @@
    <object id="455" gid="7035" x="1600" y="80" width="16" height="16" visible="0"/>
    <object id="456" gid="7036" x="1616" y="80" width="16" height="16" visible="0"/>
    <object id="457" gid="7158" x="1608" y="116" width="16" height="16" visible="0"/>
-   <object id="468" gid="7277" x="1448" y="8" width="14" height="14"/>
-   <object id="469" name="Instruction" x="1488" y="0" width="96" height="32">
+   <object id="468" gid="7277" x="1360" y="16" width="14" height="14"/>
+   <object id="469" name="Instruction" x="1400" y="8" width="96" height="32">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">THROW ALL</text>
    </object>
-   <object id="470" name="Instruction" x="1440" y="0" width="40" height="16">
+   <object id="470" name="Instruction" x="1352" y="8" width="40" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">+</text>
    </object>
-   <object id="471" gid="7267" x="1472" y="8" width="14" height="14"/>
+   <object id="471" gid="7267" x="1384" y="16" width="14" height="14"/>
   </objectgroup>
   <objectgroup id="28" name="+knives" class="Room">
    <properties>
