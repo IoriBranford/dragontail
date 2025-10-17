@@ -322,6 +322,7 @@ function Fighter:wallBump(thrower, oobx, ooby)
     self.hurtstun = self.wallbumpstun or 3
     self.velx, self.vely, self.velz = 0, 0, 0
     yield()
+    self:indicateDefeated()
     local nextstate, a, b, c, d, e, f = self:afterWallBump(thrower)
     if nextstate then
         return nextstate, a, b, c, d, e, f
@@ -399,6 +400,7 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
     yield() -- a window to be juggled by damaging wall e.g. forge-fire
     self.hurtstun = self.wallslamstun or 20
     yield()
+    self:indicateDefeated()
     local nextstate, a, b, c, d, e, f = self:afterWallSlammed(thrower)
     if nextstate then
         return nextstate, a, b, c, d, e, f
