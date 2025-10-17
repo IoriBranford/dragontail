@@ -196,7 +196,18 @@ function Fighter:getLedgeDirection()
     return math.rot90(bx-ax, by-ay, 1)
 end
 
+function Fighter:indicateDefeated()
+    if self.health <= 0 then
+        Audio.play(self.finalfallsound)
+        local color = Color.asARGBInt(Color.unpack(self.color))
+        if color == Color.White then
+            self.color = Color.Grey
+        end
+    end
+end
+
 function Fighter:knockedBack(thrower, attackangle)
+    self:indicateDefeated()
     local dirx, diry = self:getLedgeDirection()
     if dirx ~= 0 or diry ~= 0 then
         dirx, diry = norm(dirx, diry)
@@ -320,6 +331,7 @@ end
 
 function Fighter:thrown(thrower, attackangle)
     self.thrower = thrower
+    self:indicateDefeated()
     local dirx, diry
     if attackangle then
         dirx, diry = cos(attackangle), sin(attackangle)
@@ -460,6 +472,34 @@ function Fighter:defeat(attacker)
 end
 
 function Fighter:duringDodge()
+end
+
+function Fighter:shakeOffColor()
+    local color = self.color
+    if color ~= Color.White then
+        self.color = Color.White
+        for i = 1, 8 do
+            local offsetangle = love.math.random()*2*math.pi
+            local offsetdist = love.math.random()*self.bodyradius
+            local offsetx = offsetdist*math.cos(offsetangle)
+            local offsety = offsetdist*math.sin(offsetangle)
+            local velx = offsetx/8
+            local vely = offsety/8
+
+            Characters.spawn({
+                type = "particle",
+                x = self.x + offsetx,
+                y = self.y + offsety,
+                z = self.z,
+                velx = velx,
+                vely = vely,
+                velz = 30/16,
+                color = color,
+                gravity = 1/16,
+                lifetime = 30
+            })
+        end
+    end
 end
 
 return Fighter
