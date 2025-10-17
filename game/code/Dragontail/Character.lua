@@ -171,7 +171,9 @@ function Character:fixedupdateHitStop()
         if self.hurtstun > 0 then
             return false
         end
-        self.color = 0xffffffff
+        if color and color ~= Color.White then
+            self.color = Color.White
+        end
         self.hurtparticle = nil
         self.hurtcolorcycle = nil
     end
