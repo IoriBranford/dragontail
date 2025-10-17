@@ -481,4 +481,14 @@ function Enemy:getup()
     end
 end
 
+function Enemy:indicateDefeated()
+    if self.health <= 0 then
+        Audio.play(self.finalfallsound)
+        local color = Color.asARGBInt(Color.unpack(self.color))
+        if color == Color.White then
+            self.color = Color.Grey
+        end
+    end
+end
+
 return Enemy

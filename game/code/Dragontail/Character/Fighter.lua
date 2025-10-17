@@ -197,13 +197,6 @@ function Fighter:getLedgeDirection()
 end
 
 function Fighter:indicateDefeated()
-    if self.health <= 0 then
-        Audio.play(self.finalfallsound)
-        local color = Color.asARGBInt(Color.unpack(self.color))
-        if color == Color.White then
-            self.color = Color.Grey
-        end
-    end
 end
 
 function Fighter:knockedBack(thrower, attackangle)
