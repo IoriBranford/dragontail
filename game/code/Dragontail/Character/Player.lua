@@ -403,6 +403,7 @@ function Player:getReversalChargedAttackState()
 end
 
 function Player:getup()
+    self:shakeOffColor()
     if self.sprintbutton.down then
         local inx, iny = self:getJoystick()
         if inx ~= 0 or iny ~= 0 then

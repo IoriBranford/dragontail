@@ -467,6 +467,7 @@ function Enemy:duringGetUp()
 end
 
 function Enemy:getup()
+    self:shakeOffColor()
     local nextstate, a, b, c, d, e, f = self:beforeGetUp()
     if nextstate then
         return nextstate, a, b, c, d, e, f
