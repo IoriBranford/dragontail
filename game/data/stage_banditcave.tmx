@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="59" nextobjectid="602">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="59" nextobjectid="608">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -334,11 +334,11 @@
    <object id="488" template="mapobjects/bandit/knife.tx" x="1016" y="240"/>
    <object id="486" template="mapobjects/bandit/knife.tx" x="272" y="128"/>
    <object id="45" template="mapobjects/bandit/knife.tx" x="1192" y="256"/>
-   <object id="519" name="joystick" gid="6856" x="728" y="56" width="16" height="16"/>
-   <object id="520" name="Grab" x="752" y="40" width="128" height="32">
-    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">INTO ENEMY to GRAB then</text>
+   <object id="519" name="joystick" gid="6856" x="728" y="64" width="16" height="16" visible="0"/>
+   <object id="520" name="Grab" x="744" y="48" width="144" height="32">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">MOVE INTO ENEMY to GRAB then</text>
    </object>
-   <object id="527" name="Grab" x="752" y="56" width="128" height="32">
+   <object id="527" name="Grab" x="744" y="64" width="128" height="32">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">DIRECTION + ATTACK to THROW</text>
    </object>
    <object id="526" name="attackbutton" gid="7267" x="736" y="72" width="14" height="14" visible="0"/>
@@ -402,6 +402,15 @@
    </object>
    <object id="600" template="mapobjects/items/lifefruit-hanging.tx" type="food-lifefruit-hanging" x="1192" y="-20"/>
    <object id="601" template="mapobjects/items/lifefruit-hanging.tx" type="food-lifefruit-hanging" x="1268" y="-24"/>
+   <object id="602" name="Instruction" x="1040" y="-16" width="160" height="16">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">MOVE INTO ITEM to PICK UP</text>
+   </object>
+   <object id="603" gid="6856" x="1032" y="0" width="16" height="16" visible="0"/>
+   <object id="604" name="Instruction" x="1040" y="0" width="144" height="16">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">FOOD RESTORES LOST HEALTH</text>
+   </object>
+   <object id="606" template="mapobjects/items/lifefruit.tx" type="food-lifefruit" x="1208" y="48"/>
+   <object id="607" template="mapobjects/items/lifefruit.tx" type="food-lifefruit" x="1240" y="56"/>
   </objectgroup>
   <objectgroup id="47" name="tolearnrunning3" class="Room">
    <properties>
@@ -489,6 +498,16 @@
      <property name="z" type="float" value="72"/>
     </properties>
    </object>
+   <object id="431" name="Instruction" x="1304" y="-16" width="160" height="16">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">MOVE INTO WEAPON to PICK UP</text>
+   </object>
+   <object id="432" gid="6856" x="1296" y="0" width="16" height="16" visible="0"/>
+   <object id="434" name="Instruction" x="1304" y="0" width="144" height="16">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">ATTACK: THROW 1</text>
+   </object>
+   <object id="469" name="Instruction" x="1304" y="8" width="112" height="32">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">SPRINT+ATTACK: THROW ALL</text>
+   </object>
   </objectgroup>
   <objectgroup id="48" name="learnthrowingweapons" class="Room">
    <properties>
@@ -540,14 +559,7 @@
     </properties>
     <point/>
    </object>
-   <object id="431" name="Instruction" x="1320" y="-16" width="160" height="16">
-    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">INTO WEAPON to PICK UP</text>
-   </object>
-   <object id="432" gid="6856" x="1296" y="0" width="16" height="16"/>
    <object id="433" gid="7267" x="1288" y="16" width="14" height="14" visible="0"/>
-   <object id="434" name="Instruction" x="1320" y="0" width="144" height="16">
-    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">ATTACK: THROW 1</text>
-   </object>
    <object id="435" gid="6932" x="1576" y="116" width="16" height="16" visible="0"/>
    <object id="453" gid="7033" x="1568" y="80" width="16" height="16" visible="0"/>
    <object id="454" gid="7034" x="1584" y="80" width="16" height="16" visible="0"/>
@@ -555,9 +567,6 @@
    <object id="456" gid="7036" x="1616" y="80" width="16" height="16" visible="0"/>
    <object id="457" gid="7158" x="1608" y="116" width="16" height="16" visible="0"/>
    <object id="468" gid="7277" x="1360" y="16" width="14" height="14" visible="0"/>
-   <object id="469" name="Instruction" x="1320" y="8" width="112" height="32">
-    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">SPRINT+ATTACK: THROW ALL</text>
-   </object>
    <object id="470" name="Instruction" x="1352" y="8" width="40" height="16" visible="0">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">+</text>
    </object>
