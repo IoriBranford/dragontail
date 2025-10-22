@@ -522,7 +522,7 @@ function Common:fruitTreeHurt(hit)
     end
 
     local numfruitsdropped = self.numfruitsdropped or 0
-    local numfruitstodrop = self.numfruitstodroponhit or 1
+    local numfruitstodrop = self.numfruitstodroponhit or 16
     for i = numfruitsdropped + 1, numfruitsdropped + numfruitstodrop do
         local fruit = self["fruit"..i]
         if fruit == nil then
