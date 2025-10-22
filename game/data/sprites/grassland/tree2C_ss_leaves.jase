@@ -93,7 +93,7 @@
    { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
   ],
   "slices": [
-   { "name": "origin", "color": "#0000ffff", "keys": [{ "frame": 0, "bounds": {"x": 0, "y": -8, "w": 128, "h": 160 }, "pivot": {"x": 76, "y": 76 } }, { "frame": 5, "bounds": {"x": 0, "y": -8, "w": 128, "h": 160 }, "pivot": {"x": 76, "y": 140 } }] }
+   { "name": "origin", "color": "#0000ffff", "keys": [{ "frame": 0, "bounds": {"x": 0, "y": -8, "w": 128, "h": 160 }, "pivot": {"x": 76, "y": 92 } }] }
   ]
  }
 }
