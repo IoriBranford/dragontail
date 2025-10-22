@@ -3,6 +3,7 @@
  <tileset firstgid="1" source="../../sprites/grassland/tree2C_ss.tsx"/>
  <object type="fruit-tree" gid="1" width="128" height="160">
   <properties>
+   <property name="asetag" value="*"/>
    <property name="fruit1" type="object" value="0"/>
    <property name="fruit2" type="object" value="0"/>
    <property name="fruit3" type="object" value="0"/>

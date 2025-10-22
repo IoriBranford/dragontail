@@ -15492,7 +15492,7 @@ return {
       fillmode = "stretch",
       tileoffset = {
         x = -12,
-        y = 28
+        y = 12
       },
       grid = {
         orientation = "orthogonal",
@@ -15537,25 +15537,25 @@ return {
       name = "spikefruit-hanging",
       firstgid = 7287,
       class = "",
-      tilewidth = 16,
-      tileheight = 16,
+      tilewidth = 20,
+      tileheight = 20,
       spacing = 0,
       margin = 0,
       columns = 1,
       image = "sprites/weapons/spikefruit.ase",
-      imagewidth = 16,
-      imageheight = 16,
+      imagewidth = 20,
+      imageheight = 20,
       objectalignment = "top",
       tilerendersize = "tile",
       fillmode = "stretch",
       tileoffset = {
         x = 0,
-        y = -2
+        y = -5
       },
       grid = {
         orientation = "orthogonal",
-        width = 16,
-        height = 16
+        width = 20,
+        height = 20
       },
       properties = {},
       wangsets = {},
@@ -15566,25 +15566,25 @@ return {
       name = "spikefruit-onground",
       firstgid = 7288,
       class = "",
-      tilewidth = 16,
-      tileheight = 16,
+      tilewidth = 20,
+      tileheight = 20,
       spacing = 0,
       margin = 0,
       columns = 1,
       image = "sprites/weapons/spikefruit.ase",
-      imagewidth = 16,
-      imageheight = 16,
+      imagewidth = 20,
+      imageheight = 20,
       objectalignment = "bottom",
       tilerendersize = "tile",
       fillmode = "stretch",
       tileoffset = {
         x = 0,
-        y = 2
+        y = 4
       },
       grid = {
         orientation = "orthogonal",
-        width = 16,
-        height = 16
+        width = 20,
+        height = 20
       },
       properties = {},
       wangsets = {},
@@ -17800,7 +17800,7 @@ return {
               type = "",
               shape = "rectangle",
               x = 1624,
-              y = -72,
+              y = -56,
               width = 128,
               height = 96,
               rotation = 0,
@@ -17817,7 +17817,7 @@ return {
               type = "item-spikefruit-hanging",
               shape = "rectangle",
               x = 1600,
-              y = -64,
+              y = -56,
               width = 16,
               height = 16,
               rotation = 0,
@@ -17834,7 +17834,7 @@ return {
               type = "item-spikefruit-hanging",
               shape = "rectangle",
               x = 1656,
-              y = -72,
+              y = -68,
               width = 16,
               height = 16,
               rotation = 0,
@@ -17842,7 +17842,7 @@ return {
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv",
-                ["z"] = 72
+                ["z"] = 68
               }
             },
             {

@@ -510,19 +510,15 @@
      <property name="leaves" type="object" value="591"/>
     </properties>
    </object>
-   <object id="591" template="mapobjects/items/spikefruit-tree-leaves.tx" x="1624" y="-72">
-    <properties>
-     <property name="asetag" value="*"/>
-    </properties>
-   </object>
-   <object id="592" template="mapobjects/items/spikefruit-hanging.tx" x="1600" y="-64">
+   <object id="591" template="mapobjects/items/spikefruit-tree-leaves.tx" x="1624" y="-56"/>
+   <object id="592" template="mapobjects/items/spikefruit-hanging.tx" x="1600" y="-56">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="593" template="mapobjects/items/spikefruit-hanging.tx" x="1656" y="-72">
+   <object id="593" template="mapobjects/items/spikefruit-hanging.tx" x="1656" y="-68">
     <properties>
-     <property name="z" type="float" value="72"/>
+     <property name="z" type="float" value="68"/>
     </properties>
    </object>
    <object id="431" name="Instruction" x="1456" y="-48" width="160" height="16">
