@@ -200,7 +200,6 @@ function Fighter:indicateDefeated()
 end
 
 function Fighter:knockedBack(thrower, attackangle)
-    self:indicateDefeated()
     local dirx, diry = self:getLedgeDirection()
     if dirx ~= 0 or diry ~= 0 then
         dirx, diry = norm(dirx, diry)
@@ -315,7 +314,6 @@ function Fighter:wallBump(thrower, oobx, ooby)
     self.hurtstun = self.wallbumpstun or 3
     self.velx, self.vely, self.velz = 0, 0, 0
     yield()
-    self:indicateDefeated()
     local nextstate, a, b, c, d, e, f = self:afterWallBump(thrower)
     if nextstate then
         return nextstate, a, b, c, d, e, f
@@ -325,7 +323,6 @@ end
 
 function Fighter:thrown(thrower, attackangle)
     self.thrower = thrower
-    self:indicateDefeated()
     local dirx, diry
     if attackangle then
         dirx, diry = cos(attackangle), sin(attackangle)
@@ -393,7 +390,6 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
     yield() -- a window to be juggled by damaging wall e.g. forge-fire
     self.hurtstun = self.wallslamstun or 20
     yield()
-    self:indicateDefeated()
     local nextstate, a, b, c, d, e, f = self:afterWallSlammed(thrower)
     if nextstate then
         return nextstate, a, b, c, d, e, f
@@ -448,6 +444,7 @@ function Fighter:duringFall()
 end
 
 function Fighter:fall()
+    self:indicateDefeated()
     self:stopAttack()
     Body.accelerateTowardsVelXY(self, 0, 0, self.mass or 8)
     local penez = self.penez
