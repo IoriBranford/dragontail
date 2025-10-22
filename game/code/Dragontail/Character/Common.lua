@@ -524,12 +524,13 @@ function Common:fruitTreeHurt(hit)
     local numfruitsdropped = self.numfruitsdropped or 0
     local numfruitstodrop = self.numfruitstodroponhit or 16
     for i = numfruitsdropped + 1, numfruitsdropped + numfruitstodrop do
-        local fruit = self["fruit"..i]
+        local fruit = self["fruit"..i] ---@type Character|false|nil
         if fruit == nil then
             break
         end
         if fruit ~= false then
             StateMachine.start(fruit, "itemWaitForPickup")
+            fruit.animationspeed = 0
             self["fruit"..i] = false
             numfruitsdropped = numfruitsdropped + 1
         end
