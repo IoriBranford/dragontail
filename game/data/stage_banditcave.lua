@@ -15434,7 +15434,7 @@ return {
       fillmode = "stretch",
       tileoffset = {
         x = -12,
-        y = 28
+        y = 12
       },
       grid = {
         orientation = "orthogonal",
@@ -15592,23 +15592,52 @@ return {
       tiles = {}
     },
     {
-      name = "lifefruit",
+      name = "lifefruit-hanging",
       firstgid = 7289,
       class = "",
-      tilewidth = 16,
-      tileheight = 16,
+      tilewidth = 20,
+      tileheight = 20,
       spacing = 0,
       margin = 0,
       columns = 1,
-      image = "sprites/items/lifefruit.png",
-      imagewidth = 16,
-      imageheight = 16,
+      image = "sprites/items/lifefruit.ase",
+      imagewidth = 20,
+      imageheight = 20,
+      objectalignment = "top",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = -4
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 20,
+        height = 20
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "lifefruit",
+      firstgid = 7290,
+      class = "",
+      tilewidth = 20,
+      tileheight = 20,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/items/lifefruit.ase",
+      imagewidth = 20,
+      imageheight = 20,
       objectalignment = "bottom",
       tilerendersize = "tile",
       fillmode = "stretch",
       tileoffset = {
         x = 0,
-        y = 2
+        y = 5
       },
       grid = {
         orientation = "orthogonal",
@@ -15622,7 +15651,7 @@ return {
     },
     {
       name = "shield",
-      firstgid = 7290,
+      firstgid = 7291,
       class = "",
       tilewidth = 64,
       tileheight = 64,
@@ -15651,7 +15680,7 @@ return {
     },
     {
       name = "crystal-spikes",
-      firstgid = 7291,
+      firstgid = 7292,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -15937,7 +15966,7 @@ return {
     },
     {
       name = "muscle",
-      firstgid = 7355,
+      firstgid = 7356,
       class = "",
       tilewidth = 128,
       tileheight = 128,
@@ -17233,10 +17262,10 @@ return {
               polygon = {
                 { x = -96, y = -32 },
                 { x = -96, y = 32 },
-                { x = 40, y = 32 },
-                { x = 72, y = 0 },
-                { x = 88, y = 0 },
-                { x = 120, y = 32 },
+                { x = 32, y = 32 },
+                { x = 64, y = 0 },
+                { x = 96, y = 0 },
+                { x = 128, y = 32 },
                 { x = 320, y = 32 },
                 { x = 320, y = -32 }
               },
@@ -17261,6 +17290,7 @@ return {
               gid = 7284,
               visible = true,
               properties = {
+                ["asetag"] = "*",
                 ["fruit1"] = { id = 600 },
                 ["fruit2"] = { id = 601 },
                 ["leaves"] = { id = 597 },
@@ -17273,13 +17303,14 @@ return {
               type = "",
               shape = "rectangle",
               x = 1200,
-              y = -40,
+              y = -24,
               width = 128,
               height = 96,
               rotation = 0,
               gid = 7283,
               visible = true,
               properties = {
+                ["asetag"] = "*",
                 ["z"] = 64
               }
             },
@@ -17288,16 +17319,16 @@ return {
               name = "",
               type = "food-lifefruit-hanging",
               shape = "rectangle",
-              x = 1160,
-              y = -20,
-              width = 16,
-              height = 16,
+              x = 1168,
+              y = -24,
+              width = 20,
+              height = 20,
               rotation = 0,
               gid = 7289,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv",
-                ["z"] = 64
+                ["z"] = 60
               }
             },
             {
@@ -17305,16 +17336,16 @@ return {
               name = "",
               type = "food-lifefruit-hanging",
               shape = "rectangle",
-              x = 1236,
-              y = -24,
-              width = 16,
-              height = 16,
+              x = 1232,
+              y = -36,
+              width = 20,
+              height = 20,
               rotation = 0,
               gid = 7289,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv",
-                ["z"] = 64
+                ["z"] = 68
               }
             },
             {
@@ -17370,12 +17401,12 @@ return {
               name = "",
               type = "food-lifefruit",
               shape = "rectangle",
-              x = 1176,
+              x = 1184,
               y = 48,
-              width = 16,
-              height = 16,
+              width = 20,
+              height = 20,
               rotation = 0,
-              gid = 7289,
+              gid = 7290,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv"
@@ -17388,10 +17419,10 @@ return {
               shape = "rectangle",
               x = 1208,
               y = 56,
-              width = 16,
-              height = 16,
+              width = 20,
+              height = 20,
               rotation = 0,
-              gid = 7289,
+              gid = 7290,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv"
@@ -17754,6 +17785,7 @@ return {
               gid = 7286,
               visible = true,
               properties = {
+                ["asetag"] = "*",
                 ["fruit1"] = { id = 592 },
                 ["fruit2"] = { id = 593 },
                 ["fruit3"] = { id = 0 },
@@ -17775,6 +17807,7 @@ return {
               gid = 7285,
               visible = true,
               properties = {
+                ["asetag"] = "*",
                 ["z"] = 64
               }
             },
@@ -18785,7 +18818,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7290,
+              gid = 7291,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -18803,7 +18836,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7290,
+              gid = 7291,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -20227,7 +20260,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7291,
+              gid = 7292,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 32,
@@ -20244,7 +20277,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7291,
+              gid = 7292,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -20262,7 +20295,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7294,
+              gid = 7295,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -20280,7 +20313,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7294,
+              gid = 7295,
               visible = true,
               properties = {
                 ["attackdegrees"] = 270,
@@ -20298,7 +20331,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7295,
+              gid = 7296,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 36,
@@ -20315,7 +20348,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7295,
+              gid = 7296,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -20333,7 +20366,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7298,
+              gid = 7299,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 39,
@@ -20350,7 +20383,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7298,
+              gid = 7299,
               visible = true,
               properties = {
                 ["attackdegrees"] = 270,
@@ -20368,7 +20401,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7299,
+              gid = 7300,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 40,
@@ -20385,7 +20418,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7299,
+              gid = 7300,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -20403,7 +20436,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7319,
+              gid = 7320,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 60,
@@ -20420,7 +20453,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7319,
+              gid = 7320,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -20438,7 +20471,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7307,
+              gid = 7308,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 48,
@@ -20455,7 +20488,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7307,
+              gid = 7308,
               visible = true,
               properties = {
                 ["attackdegrees"] = 270,
@@ -20473,7 +20506,7 @@ return {
               width = 40,
               height = 32,
               rotation = 0,
-              gid = 7314,
+              gid = 7315,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 55,
@@ -20490,7 +20523,7 @@ return {
               width = 40,
               height = 32,
               rotation = 0,
-              gid = 7314,
+              gid = 7315,
               visible = true,
               properties = {
                 ["attackdegrees"] = 270,
@@ -20948,7 +20981,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7355,
+              gid = 7356,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -22473,7 +22506,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7355,
+              gid = 7356,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template>
  <tileset firstgid="1" source="../../sprites/items/lifefruit.tsx"/>
- <object type="food-lifefruit" gid="1" width="16" height="16">
+ <object type="food-lifefruit" gid="1" width="20" height="20">
   <properties>
    <property name="propertiestable" type="file" value="../../database/items-properties.csv"/>
   </properties>

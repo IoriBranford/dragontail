@@ -54,7 +54,8 @@
  <tileset firstgid="7286" source="sprites/grassland/tree2C_ss.tsx"/>
  <tileset firstgid="7287" source="sprites/weapons/spikefruit-hanging.tsx"/>
  <tileset firstgid="7288" source="sprites/weapons/spikefruit-onground.tsx"/>
- <tileset firstgid="7289" source="sprites/items/lifefruit.tsx"/>
+ <tileset firstgid="7289" source="sprites/items/lifefruit-hanging.tsx"/>
+ <tileset firstgid="7290" source="sprites/items/lifefruit.tsx"/>
  <layer id="2" name="floor" width="200" height="12">
   <properties>
    <property name="drawz" type="float" value="-2"/>
@@ -403,23 +404,27 @@
     <properties>
      <property name="extrudeY" type="float" value="-64"/>
     </properties>
-    <polygon points="-96,-32 -96,32 40,32 72,0 88,0 120,32 320,32 320,-32"/>
+    <polygon points="-96,-32 -96,32 32,32 64,0 96,0 128,32 320,32 320,-32"/>
    </object>
-   <object id="596" type="fruit-tree" gid="7284" x="1200" y="24" width="128" height="160">
+   <object id="596" template="mapobjects/items/lifefruit-tree.tx" type="fruit-tree" x="1200" y="24">
     <properties>
      <property name="fruit1" type="object" value="600"/>
      <property name="fruit2" type="object" value="601"/>
      <property name="leaves" type="object" value="597"/>
-     <property name="propertiestable" type="file" value="database/objects-properties.csv"/>
     </properties>
    </object>
-   <object id="597" gid="7283" x="1200" y="-40" width="128" height="96">
+   <object id="597" gid="7283" x="1200" y="-24" width="128" height="96">
     <properties>
+     <property name="asetag" value="*"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="600" template="mapobjects/items/lifefruit-hanging.tx" type="food-lifefruit-hanging" x="1160" y="-20"/>
-   <object id="601" template="mapobjects/items/lifefruit-hanging.tx" type="food-lifefruit-hanging" x="1236" y="-24"/>
+   <object id="600" template="mapobjects/items/lifefruit-hanging.tx" type="food-lifefruit-hanging" x="1168" y="-24" width="20" height="20"/>
+   <object id="601" template="mapobjects/items/lifefruit-hanging.tx" type="food-lifefruit-hanging" x="1232" y="-36" width="20" height="20">
+    <properties>
+     <property name="z" type="float" value="68"/>
+    </properties>
+   </object>
    <object id="602" name="Instruction" x="1040" y="-16" width="160" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">MOVE INTO ITEM to PICK UP</text>
    </object>
@@ -427,8 +432,8 @@
    <object id="604" name="Instruction" x="1040" y="0" width="144" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">FOOD RESTORES LOST HEALTH</text>
    </object>
-   <object id="606" template="mapobjects/items/lifefruit.tx" type="food-lifefruit" x="1176" y="48"/>
-   <object id="607" template="mapobjects/items/lifefruit.tx" type="food-lifefruit" x="1208" y="56"/>
+   <object id="606" template="mapobjects/items/lifefruit.tx" type="food-lifefruit" x="1184" y="48" width="20" height="20"/>
+   <object id="607" template="mapobjects/items/lifefruit.tx" type="food-lifefruit" x="1208" y="56" width="20" height="20"/>
   </objectgroup>
   <objectgroup id="47" name="tolearnrunning3" class="Room">
    <properties>
@@ -505,7 +510,11 @@
      <property name="leaves" type="object" value="591"/>
     </properties>
    </object>
-   <object id="591" template="mapobjects/items/spikefruit-tree-leaves.tx" x="1624" y="-72"/>
+   <object id="591" template="mapobjects/items/spikefruit-tree-leaves.tx" x="1624" y="-72">
+    <properties>
+     <property name="asetag" value="*"/>
+    </properties>
+   </object>
    <object id="592" template="mapobjects/items/spikefruit-hanging.tx" x="1600" y="-64">
     <properties>
      <property name="z" type="float" value="64"/>
