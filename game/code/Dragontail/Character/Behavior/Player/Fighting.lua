@@ -32,11 +32,8 @@ function PlayerFighting:fixedupdate()
         return "run", nil, true
     end
 
-    local chargedattack = not player.attackbutton.down and player:getChargedAttack(ChargeAttackStates)
+    local chargedattack, attackangle = player:getChargedAttackTowardsJoystick()
     if chargedattack then
-        Mana.releaseCharge(player)
-        local attackangle = inx == 0 and iny == 0
-            and player.facedestangle or math.atan2(iny, inx)
         return chargedattack, attackangle
     end
 
