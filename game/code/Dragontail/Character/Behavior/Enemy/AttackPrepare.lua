@@ -31,7 +31,8 @@ function AttackPrepare:fixedupdate()
         local timeleft = enemy.statetime or 0
         local scale = 1 + timeleft/statetime
         local alpha = math.max(0, math.min(1, 1 - timeleft/statetime))
-        Shoot.MakeTrajectoryDots(trajectory, scale, alpha)
+        local color = Color.asARGBInt(1, .5, .5, alpha)
+        Shoot.MakeTrajectoryDots(trajectory, scale, color)
         for i = #trajectory, 1, -1 do
             trajectory[i] = nil
         end
