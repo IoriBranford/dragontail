@@ -73,4 +73,22 @@ function Face:updateTurnToDestAngle(turnspeed, animation, frame1, loopframe)
     return self.faceangle
 end
 
+--[[ for later use
+function Face:getFaceDotPosition(x, y)
+    local faceangle = self.faceangle
+    return math.dot(math.cos(faceangle), math.sin(faceangle),
+        x - self.x, y - self.y)
+end
+
+function Face:getFaceDotObjectPosition(object)
+    return Face.getFaceDotPosition(self, object.x, object.y)
+end
+
+function Face:getFaceDotAngle(angle)
+    local faceangle = self.faceangle
+    return math.dot(math.cos(faceangle), math.sin(faceangle),
+        math.cos(angle), math.sin(angle))
+end
+]]
+
 return Face
