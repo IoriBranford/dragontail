@@ -175,6 +175,7 @@ local function updateEnemyTargetingScores(self, lookangle)
     table.sort(enemies, function(a, b) return a.targetingscore < b.targetingscore end)
     return enemies
 end
+Player.updateEnemyTargetingScores = updateEnemyTargetingScores
 
 function Player:getAngleToBestTarget(lookangle, targets)
     lookangle = lookangle or self.faceangle
