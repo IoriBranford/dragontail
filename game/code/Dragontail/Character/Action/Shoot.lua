@@ -1,5 +1,6 @@
 local Database = require "Data.Database"
 local Characters = require "Dragontail.Stage.Characters"
+local Color      = require "Tiled.Color"
 
 ---@class Shoot:Body
 ---@field projectilelaunchheight number?
@@ -253,6 +254,27 @@ function Shoot:launchProjectile(type, dirx, diry, dirz, attackid)
         initialai = attackid
     }
     return Characters.spawn(projectile)
+end
+
+function Shoot.MakeTrajectoryDots(trajectory, dotscale, dotalpha)
+    dotscale = dotscale or 1
+    dotalpha = dotalpha or 1
+    for i = 3, #trajectory, 3 do
+        local x = trajectory[i-2]
+        local y = trajectory[i-1]
+        local z = trajectory[i]
+        local point = Characters.spawn {
+            x = x,
+            y = y,
+            z = z,
+            type = "projectile-path-point",
+            scalex = dotscale,
+            scaley = dotscale,
+        }
+        local color = point.color or Color.Red
+        local r,g,b = Color.unpack(color)
+        point.color = Color.asARGBInt(r, g, b, dotalpha)
+    end
 end
 
 return Shoot

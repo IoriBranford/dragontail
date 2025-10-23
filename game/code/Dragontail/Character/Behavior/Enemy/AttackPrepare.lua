@@ -31,22 +31,7 @@ function AttackPrepare:fixedupdate()
         local timeleft = enemy.statetime or 0
         local scale = 1 + timeleft/statetime
         local alpha = math.max(0, math.min(1, 1 - timeleft/statetime))
-        for i = 3, #trajectory, 3 do
-            local x = trajectory[i-2]
-            local y = trajectory[i-1]
-            local z = trajectory[i]
-            local point = Characters.spawn {
-                x = x,
-                y = y,
-                z = z,
-                type = "projectile-path-point",
-                scalex = scale,
-                scaley = scale,
-            }
-            local color = point.color or Color.Red
-            local r,g,b = Color.unpack(color)
-            point.color = Color.asARGBInt(r, g, b, alpha)
-        end
+        Shoot.MakeTrajectoryDots(trajectory, scale, alpha)
         for i = #trajectory, 1, -1 do
             trajectory[i] = nil
         end
