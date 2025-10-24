@@ -13,6 +13,8 @@ local AttackHit    = require "Dragontail.Character.Event.AttackHit"
 ---@field hitstun number
 ---@field thrower Character
 ---@field numopponentshit integer?
+---@field opponents Character[]
+---@field opponentsbypriority Character[]?
 ---@field onAttackHit fun(self:Attacker, target:AttackTarget)?
 local Attacker = {}
 
@@ -179,6 +181,35 @@ function Attacker:onAttackHit(hit)
     if nextstate then
         StateMachine.start(self, nextstate, hit.target)
     end
+end
+
+local function comparePriorities(a, b)
+    return a.targetingscore < b.targetingscore
+end
+
+function Attacker:updateOpponentsByPriority(getPriority)
+    local opponentsbypriority = self.opponentsbypriority
+    if opponentsbypriority then
+        for i = #opponentsbypriority, 1, -1 do
+            opponentsbypriority[i] = nil
+        end
+    else
+        opponentsbypriority = {}
+        self.opponentsbypriority = opponentsbypriority
+    end
+
+    local opponents = self.opponents
+    for i = 1, #opponents do
+        local opponent = opponents[i]
+        local priority = getPriority(opponent)
+        opponent.targetingscore = priority
+        if priority then
+            opponentsbypriority[#opponentsbypriority+1] = opponent
+        end
+    end
+
+    table.sort(opponentsbypriority, comparePriorities)
+    return opponentsbypriority
 end
 
 function Attacker:drawPieslice(fixedfrac)
