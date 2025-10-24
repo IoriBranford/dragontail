@@ -42,7 +42,15 @@ function PlayerFighting:fixedupdate()
         local attackangle = inx == 0 and iny == 0
             and player.facedestangle or math.atan2(iny, inx)
         if player.weaponinhand then
-            attackangle = player:getAngleToBestTarget(attackangle) or attackangle
+            local targets = player:updateEnemyTargetingScores(attackangle)
+            local target = targets and targets[1]
+            if target then
+                local totargetx = target.x - player.x
+                local totargety = target.y - player.y
+                if totargetx ~= 0 or totargety ~= 0 then
+                    attackangle = math.atan2(totargety, totargetx)
+                end
+            end
         end
         player.faceangle = attackangle
         player.facedestangle = attackangle

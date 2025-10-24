@@ -49,14 +49,14 @@ end
 
 function Enemy:getTargetingScore(oppox, oppoy, oppofacex, oppofacey)
     if not self.canbeattacked then
-        return huge
+        return
     end
     if Guard.isGuarding(self) then
-        return huge
+        return
     end
     local tooppox, tooppoy = self.x - oppox, self.y - self.z - oppoy
     if math.dot(oppofacex, oppofacey, tooppox, tooppoy) < 0 then
-        return huge
+        return
     end
     return math.abs(math.det(oppofacex, oppofacey, tooppox, tooppoy))
 end

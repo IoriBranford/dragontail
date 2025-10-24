@@ -13,40 +13,25 @@ local Body       = require "Dragontail.Character.Component.Body"
 local AttackingStraight = pooledclass(Behavior)
 AttackingStraight._nrec = Behavior._nrec + 3
 
-local function findInstantThrowTarget(self, targetfacex, targetfacey)
-    local projectileheight = self.projectilelaunchheight or (self.bodyheight / 2)
-    local projectilez = self.z + projectileheight
-    local enemy, enemytargetingscore = nil, 128
-    Characters.search("enemies",
-    ---@param e Enemy
-    function(e)
-        if not e.getTargetingScore then
-            return
-        end
-        local score = e:getTargetingScore(self.x, self.y, targetfacex, targetfacey)
-
-        local etop, ebottom = e.z + self.bodyheight, e.z
-        if ebottom > projectilez or projectilez > etop then
-            score = score / 2
-        end
-        if score < enemytargetingscore then
-            enemy, enemytargetingscore = e, score
-        end
-    end)
-    if enemy then
-        return enemy.x, enemy.y, enemy.z
-    end
-    return self.x + targetfacex*512,
-        self.y + targetfacey*512,
-        self.z
-end
-
 function AttackingStraight:start(angle, heldenemy)
     local player = self.character
     player.numopponentshit = 0
     if player.attack.projectiletype then
         local numprojectiles = player.attack.numprojectiles or 1
-        local targetx, targety, targetz = findInstantThrowTarget(player, math.cos(angle), math.sin(angle))
+        local targets --= player.opponentsbypriority
+        local target = targets and targets[1]
+
+        local targetx, targety, targetz
+        if target then
+            targetx, targety, targetz = Shoot.getTargetObjectPosition(player, target)
+        else
+            local cosangle, sinangle = math.cos(angle), math.sin(angle)
+            targetx, targety, targetz = Shoot.getProjectileLaunchPosition(player,
+                player.attack.projectiletype, cosangle, sinangle)
+            targetx = targetx + cosangle*512
+            targety = targety + sinangle*512
+        end
+
         if numprojectiles <= 1 then
             Shoot.launchProjectile(player, "spark-spit-fireball", math.cos(angle), math.sin(angle), 0)
             Shoot.launchProjectileAtPosition(player, player.attack.projectiletype, targetx, targety, targetz)

@@ -148,7 +148,9 @@ function PlayerRunning:fixedupdate()
 
         if fullspeed then
             if player.weaponinhand then
-                return "throwWeapon", player.facedestangle, #player.inventory
+                local angle = player.facedestangle
+                player:updateEnemyTargetingScores(angle)
+                return "throwWeapon", angle, #player.inventory
             end
 
             -- if fireattackpressed then

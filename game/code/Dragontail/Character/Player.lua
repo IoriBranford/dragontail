@@ -23,6 +23,7 @@ local Config               = require "System.Config"
 local Guard                = require "Dragontail.Character.Action.Guard"
 local AttackTarget         = require "Dragontail.Character.Component.AttackTarget"
 local Catcher    = require "Dragontail.Character.Component.Catcher"
+local Attacker   = require "Dragontail.Character.Component.Attacker"
 
 ---@class Player:Fighter
 ---@field inventory Inventory
@@ -121,46 +122,14 @@ function Player:doComboAttack(faceangle, heldenemy, lunging, inair)
     return attacktype, faceangle, attackdata and attackdata.isholding and heldenemy
 end
 
-local updateEnemyTargetingScores_enemies = {}
-
-local function updateEnemyTargetingScores(self, lookangle)
-    local enemies = updateEnemyTargetingScores_enemies
-    for i = #enemies, 1, -1 do enemies[i] = nil end
-
-    -- local projectileheight = self.projectilelaunchheight or (self.bodyheight / 2)
-    -- local projectilez = self.z + projectileheight
-    local lookx, looky = cos(lookangle), sin(lookangle)
-    Characters.search("enemies",
-    ---@param e Enemy
-    function(e)
-        if not e.getTargetingScore then
-            return
-        end
-        local score = e:getTargetingScore(self.x, self.y, lookx, looky)
-
-        -- local etop, ebottom = e.z + self.bodyheight, e.z
-        -- if ebottom > projectilez or projectilez > etop then
-        --     score = score / 2
-        -- end
-        e.targetingscore = score
-        enemies[#enemies+1] = e
-    end)
-    table.sort(enemies, function(a, b) return a.targetingscore < b.targetingscore end)
-    return enemies
-end
-Player.updateEnemyTargetingScores = updateEnemyTargetingScores
-
-function Player:getAngleToBestTarget(lookangle, targets)
+function Player:updateEnemyTargetingScores(lookangle)
     lookangle = lookangle or self.faceangle
-    targets = targets or updateEnemyTargetingScores(self, lookangle)
-    if targets[1] then
-        local dy, dx = targets[1].y - self.y, targets[1].x - self.x
-        if dy ~= 0 or dx ~= 0 then
-            if math.dot(cos(lookangle), sin(lookangle), dx, dy) >= 0 then
-                return atan2(dy, dx)
-            end
-        end
-    end
+    local lookx, looky = math.cos(lookangle), math.sin(lookangle)
+    local x, y = self.x, self.y
+    return Attacker.updateOpponentsByPriority(self, function(e)
+        return e.getTargetingScore and
+            e:getTargetingScore(x, y, lookx, looky)
+    end)
 end
 
 function Player:init()
@@ -497,20 +466,22 @@ function Player:throwWeapon(angle, numprojectiles)
     end
 
     local cosangle, sinangle = cos(angle), sin(angle)
-    local targets = updateEnemyTargetingScores(self, angle)
+    local targets = self.opponentsbypriority
     local arc = self.throwmultiarc or (pi/4)
     local cosarc = cos(arc)
     local numfired = 0
     local targetsz = 0
-    for i = 1, math.min(numprojectiles, #targets) do
-        local target = targets[i]
-        local totargetx, totargety = target.x - self.x, target.y - self.y
-        if dot(cosangle, sinangle, totargetx, totargety) >= cosarc*math.len(totargetx, totargety) then
-            numfired = numfired + 1
-            local targetx, targety, targetz =
-                Shoot.getTargetObjectPosition(self, target)
-            targetsz = targetsz + targetz
-            throw(targetx, targety, targetz)
+    if targets then
+        for i = 1, math.min(numprojectiles, #targets) do
+            local target = targets[i]
+            local totargetx, totargety = target.x - self.x, target.y - self.y
+            if dot(cosangle, sinangle, totargetx, totargety) >= cosarc*math.len(totargetx, totargety) then
+                numfired = numfired + 1
+                local targetx, targety, targetz =
+                    Shoot.getTargetObjectPosition(self, target)
+                targetsz = targetsz + targetz
+                throw(targetx, targety, targetz)
+            end
         end
     end
 
