@@ -129,6 +129,11 @@ function PlayerRunning:fixedupdate()
         return chargedattackstate, player.facedestangle
     end
 
+    local targets
+    if player.weaponinhand then
+        targets = player:updateEnemyTargetingScores(player.facedestangle)
+    end
+
     if player:consumeActionRecentlyPressed("attack") then
         if heldenemy then
             heldenemy:stopAttack()
@@ -149,7 +154,6 @@ function PlayerRunning:fixedupdate()
         if fullspeed then
             if player.weaponinhand then
                 local angle = player.facedestangle
-                player:updateEnemyTargetingScores(angle)
                 return "throwWeapon", angle, #player.inventory
             end
 
@@ -199,6 +203,19 @@ function PlayerRunning:fixedupdate()
         end
         return "stopRunning"
     end
+
+    if targets then
+        for i = 1, math.min(#targets, #player.inventory) do
+            local target = targets[i]
+            Characters.spawn({
+                x = target.x,
+                y = target.y,
+                z = target.z + target.bodyheight/2,
+                type = "Rose-crosshair"
+            })
+        end
+    end
+
     self.runningtime = self.runningtime + 1
 end
 

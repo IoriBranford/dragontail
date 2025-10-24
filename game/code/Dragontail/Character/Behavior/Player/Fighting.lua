@@ -4,6 +4,7 @@ local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
 local Audio    = require "System.Audio"
 local Behavior = require "Dragontail.Character.Behavior"
 local Player   = require "Dragontail.Character.Player"
+local Characters = require "Dragontail.Stage.Characters"
 
 ---@class PlayerFighting:Behavior
 ---@field character Player
@@ -32,17 +33,23 @@ function PlayerFighting:fixedupdate()
         return "run", nil, true
     end
 
-    local chargedattack, attackangle = player:getActivatedChargeAttackTowardsJoystick()
+    local chargedattack, attackangle
+    chargedattack, attackangle = player:getActivatedChargeAttackTowardsJoystick()
     if chargedattack then
         Mana.releaseCharge(self)
         return chargedattack, attackangle
     end
 
+    attackangle = inx == 0 and iny == 0
+        and player.facedestangle or math.atan2(iny, inx)
+
+    local targets
+    if player.weaponinhand then
+        targets = player:updateEnemyTargetingScores(attackangle)
+    end
+
     if player:consumeActionRecentlyPressed("attack") then
-        local attackangle = inx == 0 and iny == 0
-            and player.facedestangle or math.atan2(iny, inx)
         if player.weaponinhand then
-            local targets = player:updateEnemyTargetingScores(attackangle)
             local target = targets and targets[1]
             if target then
                 local totargetx = target.x - player.x
@@ -74,6 +81,18 @@ function PlayerFighting:fixedupdate()
             return "flyEnd"
         end
         return "jump", true
+    end
+
+    if targets then
+        local target = targets[1]
+        if target then
+            Characters.spawn({
+                x = target.x,
+                y = target.y,
+                z = target.z + target.bodyheight/2,
+                type = "Rose-crosshair"
+            })
+        end
     end
 end
 
