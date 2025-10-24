@@ -14,6 +14,7 @@ local Attacker     = require "Dragontail.Character.Component.Attacker"
 ---@field recoverai string?
 ---@field aiafterhurt string?
 ---@field hurtsound string?
+---@field targetingscore number? lower = more preferred
 ---@field attackerslots {[integer]:AttackerSlot, [string]:AttackerSlot[]}
 ---@field onHitByAttack fun(self:AttackTarget, target:Attacker)?
 local AttackTarget = {}
