@@ -32,8 +32,9 @@ function PlayerFighting:fixedupdate()
         return "run", nil, true
     end
 
-    local chargedattack, attackangle = player:getChargedAttackTowardsJoystick()
+    local chargedattack, attackangle = player:getActivatedChargeAttackTowardsJoystick()
     if chargedattack then
+        Mana.releaseCharge(self)
         return chargedattack, attackangle
     end
 
