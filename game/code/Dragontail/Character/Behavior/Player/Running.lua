@@ -148,7 +148,7 @@ function PlayerRunning:fixedupdate()
 
         if fullspeed then
             if player.weaponinhand then
-                return "throwWeapon", player.facedestangle, 2, #player.inventory
+                return "throwWeapon", player.facedestangle, #player.inventory
             end
 
             -- if fireattackpressed then

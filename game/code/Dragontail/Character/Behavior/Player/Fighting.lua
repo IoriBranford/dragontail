@@ -46,7 +46,7 @@ function PlayerFighting:fixedupdate()
         player.faceangle = attackangle
         player.facedestangle = attackangle
         if player.weaponinhand then
-            return "throwWeapon", attackangle, 1, 1
+            return "throwWeapon", attackangle, 1
         end
         return player:doComboAttack(attackangle, nil, inx ~= 0 or iny ~= 0, inair)
     end

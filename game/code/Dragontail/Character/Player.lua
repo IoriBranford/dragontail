@@ -121,33 +121,6 @@ function Player:doComboAttack(faceangle, heldenemy, lunging, inair)
     return attacktype, faceangle, attackdata and attackdata.isholding and heldenemy
 end
 
-local function findInstantThrowDir(self, targetfacex, targetfacey)
-    local throwdirx, throwdiry, throwdirz = targetfacex, targetfacey, 0
-    local enemy, enemytargetingscore = nil, 128
-    local throwz = self.z + self.bodyheight/2
-    Characters.search("enemies",
-    ---@param e Enemy
-    function(e)
-        if not e.getTargetingScore then
-            return
-        end
-        local score = e:getTargetingScore(self.x, self.y, targetfacex, targetfacey)
-
-        local etop, ebottom = e.z + self.bodyheight, e.z
-        if ebottom > throwz or throwz > etop then
-            score = score / 2
-        end
-        if score < enemytargetingscore then
-            enemy, enemytargetingscore = e, score
-        end
-    end)
-    if enemy then
-        throwdirx, throwdiry, throwdirz = norm(enemy.x - self.x, enemy.y - self.y,
-            (enemy.z + enemy.bodyheight/2) - (self.z + self.bodyheight/2))
-    end
-    return throwdirx, throwdiry, throwdirz
-end
-
 local updateEnemyTargetingScores_enemies = {}
 
 local function updateEnemyTargetingScores(self, lookangle)
@@ -485,7 +458,7 @@ function Player:aimThrow()
             else
                 throwx, throwy, throwz = self.x + math.cos(self.faceangle)*512, self.y + math.sin(self.faceangle)*512, self.z
             end
-            return "throwWeapon", self.faceangle, 1, 1
+            return "throwWeapon", self.faceangle, 1
         end
 
         local animation
@@ -506,8 +479,7 @@ function Player:aimThrow()
     end
 end
 
-function Player:throwWeapon(angle, attackchoice, numprojectiles)
-    attackchoice = attackchoice or 1
+function Player:throwWeapon(angle, numprojectiles)
     numprojectiles = math.min(numprojectiles or 1, #self.inventory)
     Face.faceAngle(self, angle, self.state.animation)
 
