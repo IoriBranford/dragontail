@@ -4,6 +4,8 @@ local Guard    = require "Dragontail.Character.Action.Guard"
 local StateMachine = require "Dragontail.Character.Component.StateMachine"
 local tablepool    = require "tablepool"
 local AttackHit    = require "Dragontail.Character.Event.AttackHit"
+local Color        = require "Tiled.Color"
+local Movement     = require "Component.Movement"
 
 ---@class Attacker:Body
 ---@field defaultattack string?
@@ -15,6 +17,7 @@ local AttackHit    = require "Dragontail.Character.Event.AttackHit"
 ---@field numopponentshit integer?
 ---@field opponents Character[]
 ---@field opponentsbypriority Character[]?
+---@field crosshairs Character[]?
 ---@field onAttackHit fun(self:Attacker, target:AttackTarget)?
 local Attacker = {}
 
@@ -23,6 +26,80 @@ function Attacker:init()
     if attackdegrees then
         self.attackangle = math.rad(attackdegrees)
     end
+end
+
+function Attacker:initCrosshairs(crosshairtype, numcrosshairs)
+    local Characters   = require "Dragontail.Stage.Characters"
+    if not self.crosshairs then
+        local crosshairs = {}
+        self.crosshairs = crosshairs
+        for i = 1, numcrosshairs do
+            crosshairs[i] = Characters.spawn({
+                type = crosshairtype,
+                visible = false
+            })
+        end
+    end
+end
+
+function Attacker:updateCrosshairTargetObject(i, target)
+    if target then
+        Attacker.updateCrosshairTargetPosition(self, i,
+            target.x, target.y, target.z + target.bodyheight/2)
+    else
+        Attacker.updateCrosshairTargetPosition(self, i)
+    end
+end
+
+function Attacker:updateCrosshairTargetPosition(i, x, y, z)
+    local crosshair = self.crosshairs and self.crosshairs[i]
+    if not crosshair then return end
+
+    if crosshair.visible then
+        if x and y and z then
+            local delta = 1/8
+            local dist = math.dist3(x, y, z, crosshair.x, crosshair.y, crosshair.z)
+            local speed = math.max(1, (1 - delta) * dist)
+            local velx, vely, velz = Movement.getVelocity3_speed(
+                crosshair.x, crosshair.y, crosshair.z,
+                x, y, z, speed
+            )
+            crosshair.velx = velx
+            crosshair.vely = vely
+            crosshair.velz = velz
+            crosshair.scalex = math.max(1, crosshair.scalex - delta)
+            crosshair.scaley = math.max(1, crosshair.scaley - delta)
+            local _,_,_, a = Color.parseARGBInt(crosshair.color)
+            a = math.min(1, a + delta)
+            crosshair.color = Color.asARGBInt(1,1,1,a)
+        else
+            crosshair.visible = false
+        end
+    elseif x and y and z then
+        crosshair.x = x
+        crosshair.y = y
+        crosshair.z = z
+        crosshair.visible = true
+        crosshair.scalex = 2
+        crosshair.scaley = 2
+        crosshair.color = Color.asARGBInt(1,1,1,0)
+    end
+end
+
+function Attacker:debugPrintCrosshair(i)
+    local crosshairs = self.crosshairs
+    print("crosshairs", crosshairs)
+    if not crosshairs then return end
+
+    local crosshair = crosshairs[i]
+    print("crosshair", i, crosshair)
+    if not crosshair then return end
+
+    print("aseprite", crosshair.aseprite)
+    print("visible", crosshair.visible)
+    print("pos", crosshair.x, crosshair.y, crosshair.z)
+    print("vel", crosshair.velx, crosshair.vely, crosshair.velz)
+    print("color", Color.unpack(crosshair.color))
 end
 
 function Attacker:isAttacking()
