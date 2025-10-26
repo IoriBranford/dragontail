@@ -17,10 +17,6 @@ function PlayerHeld:start(holder)
     Guard.stopGuarding(player)
     player.velx, player.vely = 0, 0
     self.holdtime = holder.holdstrength or player.timetobreakhold or 120
-    local prompt = Gui:get("gameplay.hud.breakgrabprompt")
-    if prompt then
-        prompt.visible = true
-    end
 end
 
 function PlayerHeld:fixedupdate()
@@ -61,6 +57,7 @@ function PlayerHeld:fixedupdate()
 
     local prompt = Gui:get("gameplay.hud.breakgrabprompt")
     if prompt then
+        prompt.visible = true
         local animation = math.abs(holddirx) < math.abs(holddiry) and "y" or "x"
         prompt:changeAnimation(animation)
 
