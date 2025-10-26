@@ -83,3 +83,4 @@ throwBackProjectile2,40,.recoverai,,Dragontail.Character.Behavior.Enemy.AttackEx
 crouch,30,crouchEnd,,,,decelerateXYto0,Crouch,0,TRUE,TRUE,FALSE,,,,0,0,,1,/=4,
 crouchEnd,30,stand,,,,decelerateXYto0,CrouchEnd,0,TRUE,TRUE,FALSE,,,,0,0,,1,*=4,
 guardForever,FALSE,lowerGuard,,,guard,,Guard,0,TRUE,TRUE,FALSE,,,,0,0.0349065850398866,,1,,
+catchAttack,20,,,Dragontail.Character.Behavior.Enemy.CatchAttack,,,catch,0,FALSE,FALSE,FALSE,,data/sounds/combat/shakiin.mp3,,0,0,,1,,

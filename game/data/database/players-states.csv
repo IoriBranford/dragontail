@@ -37,7 +37,7 @@ throwWeapon,,,throwWeapon,,walk,FALSE,.attackasefile,throw,0,FALSE,FALSE,FALSE,,
 spitWeapon,,,throwWeapon,,walk,FALSE,.attackasefile,spit,0,FALSE,FALSE,FALSE,,data/sounds/player/attack2.mp3,,0,0,0,,1,4,3.14159265358979
 victory,,,victory,,win,FALSE,.mainasefile,win,1,FALSE,FALSE,FALSE,,data/sounds/player/victory.mp3,,0,0,0,,1,4,3.14159265358979
 hurt,,Dragontail.Character.Behavior.Player.TakingHit,,,walk,FALSE,.mainasefile,Hurt,0,FALSE,FALSE,FALSE,,data/sounds/player/damage2.mp3,,0,4,1,,1,4,3.14159265358979
-held,,Dragontail.Character.Behavior.Player.Held,,,breakaway,FALSE,.mainasefile,Hurt,0,TRUE,FALSE,FALSE,,,,0,4,1,,1,4,3.14159265358979
+held,,Dragontail.Character.Behavior.Player.Held,,,breakaway,FALSE,.mainasefile,Hurt,0,TRUE,FALSE,FALSE,,data/sounds/player/damage2.mp3,,0,4,1,,1,4,3.14159265358979
 knockedBack,,,knockedBack,,fall,300,.mainasefile,Hurt,1,FALSE,FALSE,TRUE,,data/sounds/player/damage3.mp3,,0,4,1,0.25,1,4,3.14159265358979
 knockedBackJuggled,,,knockedBack,,fall,300,.mainasefile,Hurt,1,FALSE,FALSE,FALSE,,data/sounds/player/damage3.mp3,,0,4,1,0.25,1,4,3.14159265358979
 knockedBackBurnt,,,knockedBack,,fall,300,.mainasefile,Hurt,1,FALSE,FALSE,TRUE,4280295456,data/sounds/player/damage3.mp3,,0,4,1,0.25,1,4,3.14159265358979

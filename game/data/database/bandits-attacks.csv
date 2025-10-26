@@ -18,4 +18,4 @@ forge-fire,36,1.5707963267949,,,25,20,3,,,,,,,5,5,knockedBackBurntJuggled,knocke
 human-in-spinning-throw,24,1.5707963267949,,,10,12,0,,,20,,,,5,5,knockedBack,knockedBack,,data/sounds/combat/hit2.mp3,,spark-hit,spark-guard,,,FALSE,FALSE,Object Player Enemy
 human-in-flaming-spinning-throw,32,1.5707963267949,,,10,6,0,,,20,,,,5,10,knockedBack,knockedBack,,data/sounds/combat/firehit.mp3,,spark-hit,spark-guard,,,4294904836 4294946828,FALSE,Object Player Enemy
 shield-bash,24,0.785398163397448,8,8,5,12,3,,,9,79,10,1,10,10,thrown,thrown,,data/sounds/combat/hit3.mp3,,spark-hit,spark-guard,,,FALSE,FALSE,Object Player Enemy
-muscle-grab,24,0.785398163397448,8,8,0,0,0,,,60,156,8,0.25,,,held,held,hold,data/sounds/combat/grab.mp3,,,,,,,FALSE,Player
+muscle-grab,24,0.785398163397448,8,8,0,0,0,,,30,156,8,0.25,,,held,held,hold,data/sounds/combat/grab.mp3,,,,,,,FALSE,Player
