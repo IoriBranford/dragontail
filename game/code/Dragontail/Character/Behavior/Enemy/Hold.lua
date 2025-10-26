@@ -75,7 +75,6 @@ function EnemyHold:fixedupdate()
 
     enemy:accelerateTowardsVelXY(targetvelx, targetvely)
     HoldOpponent.updateVelocities(enemy)
-    player.velz = 0
 
     local velx, vely = enemy.velx, enemy.vely
     local holdanimation = enemy.state.animation or
