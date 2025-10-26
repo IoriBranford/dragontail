@@ -3,6 +3,7 @@ local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
 local Face         = require "Dragontail.Character.Component.Face"
 local StateMachine = require "Dragontail.Character.Component.StateMachine"
 local Behavior     = require "Dragontail.Character.Behavior"
+local Guard        = require "Dragontail.Character.Action.Guard"
 
 ---@class EnemyHold:Behavior
 ---@field character Enemy
@@ -26,6 +27,7 @@ function EnemyHold:start(player)
         math.cos(player.faceangle), math.sin(player.faceangle)) >= 0
 
     enemy:stopAttack()
+    Guard.stopGuarding(enemy)
     if enemy.heldopponent ~= player then
         Combo.reset(enemy)
         HoldOpponent.startHolding(enemy, player)
