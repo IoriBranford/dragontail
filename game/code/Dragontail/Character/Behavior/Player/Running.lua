@@ -205,18 +205,20 @@ function PlayerRunning:fixedupdate()
     end
 
     if targets then
-        for i = 1, math.min(#targets, #player.inventory) do
-            local target = targets[i]
-            Characters.spawn({
-                x = target.x,
-                y = target.y,
-                z = target.z + target.bodyheight/2,
-                type = "Rose-crosshair"
-            })
+        for i = 1, #player.inventory do
+            Attacker.updateCrosshairTargetObject(player, i, targets[i])
         end
     end
 
     self.runningtime = self.runningtime + 1
+end
+
+function PlayerRunning:interrupt(...)
+    local player = self.character
+    for i = 1, #player.crosshairs do
+        Attacker.updateCrosshairTargetObject(player, i)
+    end
+    return ...
 end
 
 return PlayerRunning

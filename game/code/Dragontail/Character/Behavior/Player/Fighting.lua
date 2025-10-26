@@ -4,7 +4,7 @@ local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
 local Audio    = require "System.Audio"
 local Behavior = require "Dragontail.Character.Behavior"
 local Player   = require "Dragontail.Character.Player"
-local Characters = require "Dragontail.Stage.Characters"
+local Attacker   = require "Dragontail.Character.Component.Attacker"
 
 ---@class PlayerFighting:Behavior
 ---@field character Player
@@ -83,17 +83,15 @@ function PlayerFighting:fixedupdate()
         return "jump", true
     end
 
-    if targets then
-        local target = targets[1]
-        if target then
-            Characters.spawn({
-                x = target.x,
-                y = target.y,
-                z = target.z + target.bodyheight/2,
-                type = "Rose-crosshair"
-            })
-        end
+    Attacker.updateCrosshairTargetObject(player, 1, targets and targets[1])
+end
+
+function PlayerFighting:interrupt(...)
+    local player = self.character
+    for i = 1, #player.crosshairs do
+        Attacker.updateCrosshairTargetObject(player, i)
     end
+    return ...
 end
 
 return PlayerFighting

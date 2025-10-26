@@ -145,6 +145,7 @@ function Player:init()
     -- self.runenergycost = self.runenergycost or 25
     Mana.init(self)
 
+    Attacker.initCrosshairs(self, "Rose-crosshair", self.inventory.capacity)
     AttackTarget.initSlots(self)
 end
 
