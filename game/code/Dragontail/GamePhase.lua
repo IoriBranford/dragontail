@@ -29,6 +29,7 @@ function GamePhase.loadphase(stagepath_, startroom)
     Database.load("data/database/items-properties.csv")
     Database.load("data/database/projectiles-properties.csv")
     Database.load("data/database/objects-properties.csv")
+    Database.load("data/database/ui-properties.csv")
     Stage.load(stagepath)
 
     Database.forEach(function(_, properties)
