@@ -33,6 +33,15 @@ function SpinAndKickEnemy:fixedupdate()
     local enemy = player.heldopponent
     local holdangle = player.holdangle
 
+    if not enemy or ((enemy.penex or 0) ~= 0) or ((enemy.peney or 0) ~= 0) then
+        HoldOpponent.stopHolding(player, enemy)
+        if enemy then
+            Attacker.stopAttack(enemy)
+            StateMachine.start(enemy, "wallSlammed", player, enemy.penex, enemy.peney)
+        end
+        return "swingEnemyIntoWall"
+    end
+
     if holdangle == self.throwangle then
         Attacker.stopAttack(enemy)
         HoldOpponent.stopHolding(player, enemy)
@@ -42,13 +51,6 @@ function SpinAndKickEnemy:fixedupdate()
         -- end
         -- StateMachine.start(enemy, enemy.thrownai or "thrown", player, atan2(throwy, throwx))
         return "holding-kick", holdangle
-    end
-
-    if ((enemy.penex or 0) ~= 0) or ((enemy.peney or 0) ~= 0) then
-        Attacker.stopAttack(enemy)
-        HoldOpponent.stopHolding(player, enemy)
-        StateMachine.start(enemy, "wallSlammed", player, enemy.penex, enemy.peney)
-        return "swingEnemyIntoWall"
     end
 
     -- if math.ceil(spunmag / 2 / math.pi) < math.ceil((spunmag+spinmag) / 2 / math.pi) then
