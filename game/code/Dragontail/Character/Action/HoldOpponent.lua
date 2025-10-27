@@ -3,6 +3,7 @@ local Body       = require "Dragontail.Character.Component.Body"
 local Audio    = require "System.Audio"
 local StateMachine   = require "Dragontail.Character.Component.StateMachine"
 local Guard          = require "Dragontail.Character.Action.Guard"
+local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
 
 ---@class HeldByOpponent:Character
 ---@field heldby HoldOpponent?
@@ -19,13 +20,24 @@ local Guard          = require "Dragontail.Character.Action.Guard"
 local HoldOpponent = {}
 
 ---@param opponent HeldByOpponent
-function HoldOpponent:startHolding(opponent)
+function HoldOpponent:startHolding(opponent, holdangle)
     self.heldopponent = opponent
     opponent:stopAttack()
     Guard.stopGuarding(opponent)
     opponent.heldby = self
-    Audio.play(self.holdsound)
     StateMachine.start(opponent, opponent.heldai or "held", self)
+    holdangle = holdangle or HoldOpponent.getInitialHoldAngle(self, opponent)
+    self.holdangle = holdangle
+    return holdangle
+end
+
+function HoldOpponent:getInitialHoldAngle(opponenttohold)
+    local holddirx, holddiry = opponenttohold.x - self.x,
+        opponenttohold.y - self.y
+    local holdangle = holddirx == 0 and holddiry == 0
+        and self.faceangle or math.atan2(holddiry, holddirx)
+    local animationdirections = math.max(1, self.animationdirections or 1)
+    return DirectionalAnimation.SnapAngle(holdangle, animationdirections)
 end
 
 ---@param opponent HeldByOpponent
@@ -38,6 +50,7 @@ end
 function HoldOpponent:stopHolding(opponent)
     if self then
         self.heldopponent = nil
+        self.holdangle = nil
     end
     if opponent then
         opponent.heldby = nil
