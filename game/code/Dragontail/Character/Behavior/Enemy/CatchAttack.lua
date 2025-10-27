@@ -11,15 +11,12 @@ function CatchAttack:start(hit)
     local attacker = hit.attacker
     self.attacker = attacker
 
-    if attacker.team == "players" then
-        HoldOpponent.startHolding(enemy, attacker)
-        enemy.holdangle = enemy.guardangle
-    elseif attacker.team == "enemies" then
+    if attacker.team == "players"
+    or attacker.team == "enemies" then
         if attacker.heldby then
             HoldOpponent.stopHolding(attacker.heldby, attacker)
         end
         HoldOpponent.startHolding(enemy, attacker)
-        enemy.holdangle = enemy.guardangle
     elseif attacker.team == "projectiles" then
         attacker:stopAttack()
         if enemy:tryToGiveWeapon(attacker.type) then
