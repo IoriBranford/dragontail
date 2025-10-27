@@ -26,7 +26,7 @@ local testcircles = math.testcircles
 ---@class DropAfterimage
 ---@field afterimageinterval integer?
 
----@class Character:AsepriteObject,DropAfterimage,Body,Attacker,AttackTarget,Guard,Shadow
+---@class Character:DirectionalAnimation,DropAfterimage,Body,Attacker,AttackTarget,Guard,Shadow
 ---@field initialai string
 ---@field camera Camera
 ---@field opponents Character[]
