@@ -4,6 +4,7 @@ local Face         = require "Dragontail.Character.Component.Face"
 local StateMachine = require "Dragontail.Character.Component.StateMachine"
 local Behavior     = require "Dragontail.Character.Behavior"
 local Guard        = require "Dragontail.Character.Action.Guard"
+local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
 
 ---@class EnemyHold:Behavior
 ---@field character Enemy
@@ -19,21 +20,17 @@ function EnemyHold:start(player)
         holddirx, holddiry = math.norm(holddirx, holddiry)
     end
 
-    enemy.holdangle = math.atan2(holddiry, holddirx)
-    local animationdirections = enemy.animationdirections or 4
-    local holdangleinterval = 2*math.pi/animationdirections
-    self.holddestangle = math.floor(enemy.holdangle/holdangleinterval) * holdangleinterval
-    self.isfrombehind = math.dot(holddirx, holddiry,
-        math.cos(player.faceangle), math.sin(player.faceangle)) >= 0
-
     enemy:stopAttack()
     Guard.stopGuarding(enemy)
     if enemy.heldopponent ~= player then
         Combo.reset(enemy)
-        HoldOpponent.startHolding(enemy, player)
+        HoldOpponent.startHolding(enemy, player, math.atan2(holddiry, holddirx))
     end
 
     self.holdtime = 0
+    self.holddestangle = DirectionalAnimation.SnapAngle(enemy.holdangle, enemy.animationdirections)
+    self.isfrombehind = math.dot(holddirx, holddiry,
+        math.cos(player.faceangle), math.sin(player.faceangle)) >= 0
 end
 
 function EnemyHold:fixedupdate()
