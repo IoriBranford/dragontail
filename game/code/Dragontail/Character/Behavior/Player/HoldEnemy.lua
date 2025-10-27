@@ -14,29 +14,26 @@ PlayerHoldEnemy._nrec = Behavior._nrec + 3
 
 function PlayerHoldEnemy:start(enemy)
     local player = self.character
-    local time = enemy.timetobreakhold
-    local isfrombehind = math.dot(math.cos(enemy.faceangle), math.sin(enemy.faceangle),
-        math.cos(player.faceangle), math.sin(player.faceangle)) >= 0
-    if isfrombehind then
-    elseif Guard.isPointInGuardArc(enemy, player.x, player.y) then
-        time = 10
+    enemy = enemy or player.heldopponent
+    local isfrombehind = false
+    local time = 0
+
+    if enemy then
+        time = enemy.timetobreakhold
+        isfrombehind = math.dot(math.cos(enemy.faceangle), math.sin(enemy.faceangle),
+            math.cos(player.faceangle), math.sin(player.faceangle)) >= 0
+        if isfrombehind then
+        elseif Guard.isPointInGuardArc(enemy, player.x, player.y) then
+            time = 10
+        end
+        if player.heldopponent ~= enemy then
+            HoldOpponent.startHolding(player, enemy, player.holdangle)
+        end
     end
-    if player.heldopponent ~= enemy then
-        Combo.reset(player)
-        HoldOpponent.startHolding(player, enemy)
-    end
+
     player:stopAttack()
-    local holddirx, holddiry = enemy.x - player.x, enemy.y - player.y
-    if holddirx == 0 and holddiry == 0 then
-        holddirx = 1
-    else
-        holddirx, holddiry = math.norm(holddirx, holddiry)
-    end
-    local holdangle = math.atan2(holddiry, holddirx)
-    local holddestangle = holdangle
-    player.holdangle = holdangle
     self.time = time
-    self.holddestangle = holddestangle
+    self.holddestangle = player.holdangle
     self.isfrombehind = isfrombehind
 end
 

@@ -5,6 +5,7 @@ local Audio    = require "System.Audio"
 local Behavior = require "Dragontail.Character.Behavior"
 local Player   = require "Dragontail.Character.Player"
 local Attacker   = require "Dragontail.Character.Component.Attacker"
+local Combo      = require "Dragontail.Character.Component.Combo"
 
 ---@class PlayerFighting:Behavior
 ---@field character Player
@@ -69,8 +70,10 @@ function PlayerFighting:fixedupdate()
 
     local opponenttohold = HoldOpponent.findOpponentToHold(player, inx, iny)
     if opponenttohold then
-        Audio.play(player.holdsound)
-        return "hold", opponenttohold
+        local holdangle = HoldOpponent.startHolding(player, opponenttohold)
+        Face.faceAngle(player, holdangle)
+        Combo.reset(player)
+        return "grab"
     end
 
     player:accelerateTowardsJoystick()
