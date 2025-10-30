@@ -23,7 +23,7 @@ function ShieldBandit:duringStand()
     local oppovelx, oppovely = opponent.velx, opponent.vely
     local oppospeed = math.len(oppovelx, oppovely)
     local dot = math.dot(fromoppox, fromoppoy, oppovelx, oppovely)
-    if 0 < dot and dot <= oppospeed*60 then
+    if 0 < dot and dot <= oppospeed*200 then
         return "raiseGuard"
     end
 end
@@ -34,7 +34,7 @@ function ShieldBandit:duringApproach(opponent)
     local oppovelx, oppovely = opponent.velx, opponent.vely
     local oppospeed = math.len(oppovelx, oppovely)
     local dot = math.dot(fromoppox, fromoppoy, oppovelx, oppovely)
-    if 0 < dot and dot <= oppospeed*60 then
+    if 0 < dot and dot <= oppospeed*200 then
         return "raiseGuard"
     end
 end
@@ -75,7 +75,7 @@ function ShieldBandit:duringGuardHit(attacker, t)
     if self.numguardedhits >= GuardHitsUntilCounter then
         self.numguardedhits = nil
         Face.faceObject(self, attacker)
-        return "shield-bash", attacker
+        return "shield-counter-bash", attacker
     elseif self.numguardedhits + 1 >= GuardHitsUntilCounter then
         self.color = self:getAttackFlashColor(t, true)
     end
