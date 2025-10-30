@@ -32,7 +32,7 @@ function AttackHit:_init(attacker, target, attack, attackangle, penex, peney, pe
     self.attackz = z or attacker.z
     self.attackr = r or attack.radius
     self.attackh = h or attacker.bodyheight
-    self.guarded = Guard.isAttackAgainstGuardArc(target, attacker)
+    self.guarded = Guard.isHitGuarded(target, self)
     return self
 end
 

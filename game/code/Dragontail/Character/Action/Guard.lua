@@ -18,6 +18,13 @@ function Guard:isGuarding()
     return self.guardangle ~= nil
 end
 
+---@param hit AttackHit
+---@return boolean
+function Guard:isHitGuarded(hit)
+    return Guard.isAngleAgainstGuardArc(self, hit.angle)
+        or Guard.isPointInGuardArc(self, hit.attackx, hit.attacky)
+end
+
 function Guard:isAttackAgainstGuardArc(attacker)
     local attackangle = attacker.attackangle
     return attackangle and Guard.isAngleAgainstGuardArc(self, attackangle)
