@@ -17,11 +17,11 @@ local Guard     = require "Dragontail.Character.Action.Guard"
 local AttackHit = pooledclass()
 AttackHit._nrec = 13
 
-function AttackHit:_init(attacker, target, penex, peney, penez)
+function AttackHit:_init(attacker, target, attack, attackangle, penex, peney, penez)
     local Attacker  = require "Dragontail.Character.Component.Attacker"
     local x, y, z, r, h = Attacker.getAttackCylinder(attacker)
-    self.angle = attacker.attackangle
-    self.attack = attacker.attack
+    self.angle = attackangle
+    self.attack = attack
     self.target = target
     self.attacker = attacker
     self.penex = penex
@@ -30,7 +30,7 @@ function AttackHit:_init(attacker, target, penex, peney, penez)
     self.attackx = x or attacker.x
     self.attacky = y or attacker.y
     self.attackz = z or attacker.z
-    self.attackr = r or attacker.attack.radius
+    self.attackr = r or attack.radius
     self.attackh = h or attacker.bodyheight
     self.guarded = Guard.isAttackAgainstGuardArc(target, attacker)
     return self

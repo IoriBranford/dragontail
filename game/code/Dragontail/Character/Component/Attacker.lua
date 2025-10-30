@@ -235,10 +235,14 @@ end
 ---@param target AttackTarget
 ---@return AttackHit?
 function Attacker:getAttackHit(target, attack, attackangle)
+    attack = attack or self.attack
+    attackangle = attackangle or self.attackangle
+    if not attack or not attackangle then return end
+
     local penex, peney, penez = Attacker.checkAttackCollision(self, target, attack, attackangle)
     if penex or peney or penez then
         -- print(self.type..self.id, self.attacktype, target.type..target.id)
-        return AttackHit(self, target, penex, peney, penez)
+        return AttackHit(self, target, attack, attackangle, penex, peney, penez)
     end
 end
 
