@@ -204,13 +204,17 @@ Character.isAttacking = Attacker.isAttacking
 Character.startAttack = Attacker.startAttack
 Character.stopAttack = Attacker.stopAttack
 
+---@param hit AttackHit
 function Character:onHitByAttack(hit)
-    local guardhitstate = self.guardai or "guardHit"
-    local hurtstate = self.hurtai or "hurt"
-
     if hit.guarded then
-        StateMachine.start(self, guardhitstate, hit)
+        local guardhitstate = self.guardai
+        if guardhitstate then
+            StateMachine.start(self, guardhitstate, hit)
+        else
+            Guard.standardImpact(self, hit)
+        end
     else
+        local hurtstate = self.hurtai or "hurt"
         StateMachine.start(self, hurtstate, hit)
     end
 end
