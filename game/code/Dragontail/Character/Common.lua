@@ -469,20 +469,6 @@ function Common:projectileDeflected(hit)
     return self.initialai, deflector
 end
 
-function Common:makeImpactSpark(attacker, sparktype)
-    if sparktype then
-        local hitsparkcharacter = {
-            type = sparktype,
-        }
-        hitsparkcharacter.x, hitsparkcharacter.y = math.mid(attacker.x, attacker.y, self.x, self.y)
-        local z1, z2 =
-            math.max(self.z, attacker.z),
-            math.min(self.z + self.bodyheight, attacker.z + attacker.bodyheight)
-        hitsparkcharacter.z = z1 + (z2-z1)/2
-        return Characters.spawn(hitsparkcharacter)
-    end
-end
-
 function Common:guardHit(hit)
     local attacker, attack = hit.attacker, hit.attack
     Audio.play(self.guardhitsound)
