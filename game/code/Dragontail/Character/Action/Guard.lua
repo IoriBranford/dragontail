@@ -65,6 +65,14 @@ function Guard:pushBackAttacker(attacker)
     attacker.vely = attacker.vely + pushbackspeed * toattackery
 end
 
+function Guard:standardImpact(hit)
+    local attacker, attack = hit.attacker, hit.attack
+    self:makeImpactSpark(attacker, attack.guardhitspark)
+    self.hurtstun = attack.opponentguardstun
+        or attack.opponentstun or 6
+    Guard.pushBackAttacker(self, attacker)
+end
+
 function Guard:draw(fixedfrac)
     local angle = self.guardangle
     if not angle then return end
