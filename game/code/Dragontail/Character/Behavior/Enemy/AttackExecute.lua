@@ -12,7 +12,6 @@ AttackExecute._nrec = Behavior._nrec + 3
 function AttackExecute:start()
     local enemy = self.character
     enemy.numopponentshit = 0
-    Guard.stopGuarding(enemy)
 
     local target = enemy.opponents[1]
 

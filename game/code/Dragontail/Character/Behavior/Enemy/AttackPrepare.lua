@@ -12,7 +12,6 @@ AttackPrepare._nrec = Behavior._nrec + 1
 function AttackPrepare:start()
     local enemy = self.character
     enemy.numopponentshit = 0
-    Guard.stopGuarding(enemy)
     self.trajectory = enemy.attack.projectiletype and {}
 end
 
