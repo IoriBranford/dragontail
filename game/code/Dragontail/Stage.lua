@@ -42,7 +42,7 @@ function Stage.quit()
 end
 
 function Stage.load(stagefile)
-    shader = love.graphics.newShader("shaders/world.lovesl")
+    shader = love.graphics.newShader("shaders/Stage.lslp", "shaders/Stage.lslv")
     map = Tiled.Map.load(stagefile)
     local directory = map.directory
     map:indexLayersByName()
