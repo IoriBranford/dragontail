@@ -62,10 +62,10 @@ function AttackExecute:fixedupdate()
         enemy.attack.lungedecel or 1)
 
     if enemy.statetime <= self.hitendtime then
-        enemy.color = Color.White
+        enemy.texturealpha = 1
         enemy:stopAttack()
     else
-        enemy.color = enemy:getAttackFlashColor(enemy.statetime, enemy.canbeattacked)
+        enemy.texturealpha = enemy:getAttackFlash(enemy.statetime)
         enemy:makePeriodicAfterImage(enemy.statetime, enemy.afterimageinterval)
     end
 
@@ -78,6 +78,7 @@ end
 function AttackExecute:interrupt(...)
     local enemy = self.character
     enemy.color = Color.White
+    enemy.texturealpha = 1
     enemy:stopAttack()
     return ...
 end
@@ -85,6 +86,7 @@ end
 function AttackExecute:timeout(...)
     local enemy = self.character
     enemy.color = Color.White
+    enemy.texturealpha = 1
     enemy:stopAttack()
     return ...
 end

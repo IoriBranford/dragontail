@@ -17,8 +17,7 @@ end
 
 function AttackPrepare:fixedupdate()
     local enemy = self.character
-    enemy.color = enemy:getAttackFlashColor(enemy.statetime or 0, enemy.canbeattacked)
-
+    enemy.texturealpha = enemy:getAttackFlash(enemy.statetime)
     local target = enemy.opponents[1]
     local trajectory = self.trajectory
     if trajectory then
@@ -46,12 +45,14 @@ end
 function AttackPrepare:interrupt(...)
     local enemy = self.character
     enemy.color = Color.White
+    enemy.texturealpha = 1
     return ...
 end
 
 function AttackPrepare:timeout(...)
     local enemy = self.character
     enemy.color = Color.White
+    enemy.texturealpha = 1
     return ...
 end
 

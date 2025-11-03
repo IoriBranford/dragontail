@@ -59,7 +59,7 @@ function SpearBandit:duringPrepareAttack(target)
         local dodgeangle = self:isCylinderFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self)
         if dodgeangle then
             self.numdodges = (self.numdodges or 0) + 1
-            self.color = self:getAttackFlashColor(0, self.canbeattacked)
+            self.texturealpha = self:getAttackFlash(self.statetime)
             if target.attacker == self then
                 target.attacker = nil
             end
