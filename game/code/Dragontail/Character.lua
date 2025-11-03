@@ -72,6 +72,8 @@ function Character:draw(fixedfrac)
     Shadow.drawSprite(self, fixedfrac)
     love.graphics.push()
     love.graphics.translate(0, -self.z - self.velz*fixedfrac)
+    local Stage = require "Dragontail.Stage"
+    Stage.setUniform("texRgbFactor", self.texturealpha or 1)
     self:baseDraw(fixedfrac)
     love.graphics.pop()
     if Config.drawbodies then
