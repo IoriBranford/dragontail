@@ -39,6 +39,10 @@ local yield = coroutine.yield
 
 local lm_random = love.math.random
 
+function Enemy:getAttackFlash(t)
+    return (1 + math.cos(t or 0)) / 2
+end
+
 function Enemy:getAttackFlashColor(t, canbeattacked)
     local flash = (1+cos(t))/2
     if canbeattacked then
