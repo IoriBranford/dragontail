@@ -26,6 +26,7 @@ local roomindex
 local winningteam
 local camera ---@type Camera
 local sequencethread ---@type thread?
+local shader ---@type love.Shader
 
 ---@class Boundary:TiledObject
 ---@class Camera:Boundary
@@ -36,10 +37,12 @@ function Stage.quit()
     roomindex = nil
     winningteam = nil
     camera = nil
+    shader = nil
     Characters.quit()
 end
 
 function Stage.load(stagefile)
+    shader = love.graphics.newShader("shaders/world.lovesl")
     map = Tiled.Map.load(stagefile)
     local directory = map.directory
     map:indexLayersByName()
@@ -113,6 +116,23 @@ function Stage.init(startroom)
     })
 
     scene:addMap(map, "group,tilelayer")
+
+    local function initLayer(layer)
+        if layer.layers then
+            for _, sublayer in ipairs(layer.layers) do
+                initLayer(sublayer)
+            end
+        end
+        local draw = layer.draw
+        layer.draw = function(self)
+            Stage.setUniform("texRgbFactor", 1)
+            draw(self)
+        end
+    end
+
+    for _, layer in ipairs(map.layers) do
+        initLayer(layer)
+    end
 
     local rooms = map.layers.rooms
     local firstroomindex = 1
@@ -536,7 +556,14 @@ function Stage.update(dsecs, fixedfrac)
     Characters.update(dsecs, fixedfrac)
 end
 
+function Stage.setUniform(var, ...)
+    if shader:hasUniform(var) then
+        shader:send(var, ...)
+    end
+end
+
 function Stage.draw(fixedfrac)
+    love.graphics.setShader(shader)
     if map.backgroundcolor then
         love.graphics.clear(
             map.backgroundcolor[1],
@@ -550,6 +577,7 @@ function Stage.draw(fixedfrac)
     love.graphics.translate(-x, z - y)
     scene:draw(fixedfrac, Characters.isDrawnBefore)
     love.graphics.pop()
+    love.graphics.setShader()
 end
 
 return Stage
