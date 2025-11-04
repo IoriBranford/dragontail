@@ -433,6 +433,7 @@ end
 function Enemy:duringGuardHit(attacker, t)
 end
 
+---@deprecated
 ---@param hit AttackHit
 ---@return string? nextstate
 ---@return any ...

@@ -4,6 +4,10 @@ local drawCake = require "drawCake"
 ---@field guardai string|"guardHit"
 ---@field guardangle number?
 ---@field guardarc number
+---@field guardcounterstate string?
+---@field numguardedhitsuntilcounter integer?
+---@field numguardedhitsuntilwarning integer?
+---@field numguardedhits integer?
 local Guard = {}
 
 function Guard:startGuarding(guardangle)

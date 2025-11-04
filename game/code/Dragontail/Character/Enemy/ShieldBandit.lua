@@ -66,11 +66,13 @@ function ShieldBandit:afterGuard()
     self.numguardedhits = nil
 end
 
+---@deprecated
 function ShieldBandit:beforeGuardHit(attacker)
     Guard.pushBackAttacker(self, attacker)
     self.numguardedhits = (self.numguardedhits or 0) + 1
 end
 
+---@deprecated
 function ShieldBandit:duringGuardHit(attacker, t)
     if self.numguardedhits >= GuardHitsUntilCounter then
         self.numguardedhits = nil

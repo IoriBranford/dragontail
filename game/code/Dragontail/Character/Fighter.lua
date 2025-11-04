@@ -40,7 +40,7 @@ local WeaponInHand         = require "Dragontail.Character.Component.WeaponInHan
 ---@class Win
 ---@field victorysound string?
 
----@class Fighter:Common,Face,Mana,Combo,Dash,Run,Jump,Dodge,WeaponInHand,ThrowWeapon,Shoot,HoldOpponent,HeldByOpponent,Thrown,Win
+---@class Fighter:Common,Face,Mana,Combo,Dash,Run,Jump,Dodge,Guard,WeaponInHand,ThrowWeapon,Shoot,HoldOpponent,HeldByOpponent,Thrown,Win
 local Fighter = class(Common)
 
 local huge = math.huge
