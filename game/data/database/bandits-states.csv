@@ -56,7 +56,7 @@ wallBump,300,fall,,,wallBump,,Hurt,,FALSE,FALSE,FALSE,,data/sounds/combat/bodybu
 thrown,300,fall,human-thrown,,thrown,,spin,1,FALSE,FALSE,TRUE,,,data/sounds/combat/spin.mp3,0,0,,1,,Wall Camera,
 wallSlammed,300,fall,,,wallSlammed,,Hurt,,FALSE,FALSE,FALSE,,data/sounds/combat/bodyslam.mp3,,0,0,,1,,,
 thrownRecover,FALSE,stand,,,thrownRecover,,FallKnees,0,FALSE,FALSE,FALSE,,data/sounds/combat/slide.mp3,,0,0,,1,,,
-breakaway,15,.recoverai,,,breakaway,,BreakHold,0,FALSE,FALSE,FALSE,,data/sounds/combat/slap.mp3,,0,0,,8,,,
+breakaway,15,.recoverai,,,breakaway,,BreakHold,0,TRUE,TRUE,TRUE,,data/sounds/combat/slap.mp3,,0,0,,8,,,
 fall,300,collapse,,,,fall,,0,FALSE,FALSE,FALSE,,,,0,0,,8,,,
 collapse,15,down,,,,decelerateXYto0,Fall,0,FALSE,FALSE,FALSE,,,,0,0,,8,,,
 down,20,getup,,Dragontail.Character.Behavior.Fighter.Downed,,,Down,0,FALSE,FALSE,FALSE,,data/sounds/combat/bodydrop.mp3,,0,0,,8,,,

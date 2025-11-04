@@ -3,6 +3,7 @@ local Guard    = require "Dragontail.Character.Action.Guard"
 local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
 local Gui          = require "Dragontail.Gui"
 local StateMachine = require "Dragontail.Character.Component.StateMachine"
+local Mana         = require "Dragontail.Character.Component.Mana"
 
 ---@class PlayerHeld:Behavior
 ---@field character Player
@@ -22,6 +23,14 @@ end
 function PlayerHeld:fixedupdate()
     local player = self.character
     local holder = player.heldby
+
+    local chargedattack, attackangle
+    chargedattack, attackangle = player:getActivatedChargeAttackTowardsJoystick()
+    if chargedattack then
+        StateMachine.start(holder, "breakaway", player)
+        Mana.releaseCharge(player)
+        return chargedattack, attackangle
+    end
 
     if not holder or not HoldOpponent.isHolding(holder, player) then
         return "walk"
