@@ -42,12 +42,15 @@ function CatchAttack:fixedupdate()
 
     enemy:decelerateXYto0()
     HoldOpponent.updateVelocities(enemy)
-    enemy.texturealpha = enemy:getAttackFlash(enemy.statetime)
+    if attacker.team == "enemies"
+    or attacker.team == "projectiles" then
+        enemy:updateFlash(enemy.statetime)
+    end
 end
 
 function CatchAttack:interrupt(...)
     local enemy = self.character
-    enemy.texturealpha = 1
+    enemy:resetFlash()
     return ...
 end
 
@@ -55,7 +58,7 @@ function CatchAttack:timeout()
     local enemy = self.character
     local attacker = self.attacker
 
-    enemy.texturealpha = 1
+    enemy:resetFlash()
 
     if enemy.weaponinhand then
         return "throwBackProjectile"

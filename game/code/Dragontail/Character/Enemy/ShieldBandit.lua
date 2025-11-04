@@ -54,15 +54,15 @@ function ShieldBandit:duringGuard(t)
     local guardangle = math.floor((self.faceangle + (math.pi/4)) / (math.pi/2)) * math.pi/2
     Guard.startGuarding(self, guardangle)
     if self.numguardedhits + 1 >= GuardHitsUntilCounter then
-        self.texturealpha = self:getAttackFlash(self.statetime)
+        self:updateFlash(self.statetime)
     else
-        self.texturealpha = 1
+        self:resetFlash()
     end
 end
 
 function ShieldBandit:afterGuard()
     Enemy.afterGuard(self)
-    self.texturealpha = 1
+    self:resetFlash()
     self.numguardedhits = nil
 end
 
@@ -77,7 +77,7 @@ function ShieldBandit:duringGuardHit(attacker, t)
         Face.faceObject(self, attacker)
         return "shield-counter-bash", attacker
     elseif self.numguardedhits + 1 >= GuardHitsUntilCounter then
-        self.texturealpha = self:getAttackFlash(self.statetime)
+        self:updateFlash(self.statetime)
     end
 end
 
