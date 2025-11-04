@@ -10,6 +10,7 @@ function Catcher:findCharacterToCatch(characters, catchdirx, catchdiry)
     local ztop = z + self.bodyheight + catchradius/2
     for _, character in ipairs(characters) do
         if self ~= character.thrower
+        and not character.uncatchable
         and character:isAttacking()
         and character.z >= z
         and character.z <= ztop

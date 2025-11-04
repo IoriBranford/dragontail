@@ -18,6 +18,8 @@ local Movement     = require "Component.Movement"
 ---@field opponents Character[]
 ---@field opponentsbypriority Character[]?
 ---@field crosshairs Character[]?
+---@field unguardable boolean
+---@field uncatchable boolean
 ---@field onAttackHit fun(self:Attacker, target:AttackTarget)?
 local Attacker = {}
 
