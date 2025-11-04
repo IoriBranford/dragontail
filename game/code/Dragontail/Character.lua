@@ -103,6 +103,8 @@ function Character:makeAfterImage()
         y = self.y,
         z = self.z,
         asefile = self.asefile,
+        color = self.color,
+        texturealpha = self.texturealpha,
         type = "afterimage"
     })
     afterimage.originx, afterimage.originy = self:getOrigin()
