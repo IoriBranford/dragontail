@@ -51,6 +51,38 @@ function Enemy:getAttackFlashColor(t, canbeattacked)
     return Color.asARGBInt(1, .5, .5, flash)
 end
 
+function Enemy:resetFlash()
+    self.color = Color.White
+    self.texturealpha = 1
+end
+
+local FlashColors = {
+    SuggestGrab = Color.Green,
+    SuggestAttack = Color.Red,
+    SuggestAvoid = Color.Blue,
+}
+
+function Enemy:updateFlash(t)
+    local flash = self:getAttackFlash(t)
+    local color = Color.White
+
+    if self.canbeattacked and not Guard.isGuarding(self) then
+        if self.canbegrabbed then
+            color = Color.White
+        else
+            color = FlashColors.SuggestAttack
+        end
+    else
+        if self.canbegrabbed then
+            color = FlashColors.SuggestGrab
+        else
+            color = FlashColors.SuggestAvoid
+        end
+    end
+    self.color = color
+    self.texturealpha = flash
+end
+
 function Enemy:getTargetingScore(oppox, oppoy, oppofacex, oppofacey)
     if not self.canbeattacked then
         return
@@ -336,7 +368,7 @@ function Enemy:watchForOpponent()
     local sighted
     local cossightarc = cos(self.ambushsightarc or (pi/6))
     for t = 1, huge do
-        self.color = self:getAttackFlashColor(t, self.canbeattacked)
+        self:updateFlash(t)
         yield()
         for _, opponent in ipairs(opponents) do
             local tooppox, tooppoy = opponent.x - self.x, opponent.y - self.y
@@ -353,6 +385,7 @@ function Enemy:watchForOpponent()
             break
         end
     end
+    self:resetFlash()
 end
 
 function Enemy:beforeGuard()
