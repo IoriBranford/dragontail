@@ -67,7 +67,7 @@ dodgeIncoming,FALSE,stand,,Dragontail.Character.Behavior.Fighter.DodgeLinear,,,W
 approach,30,stand,,Dragontail.Character.Behavior.Enemy.Approach,,,Walk,,TRUE,TRUE,FALSE,,,,0,0,,1,,,
 raiseGuard,6,guard,,,turnTowardsOpponent,,RaiseGuard,0,TRUE,TRUE,FALSE,,,,0,3.14159265358979,,1,,,
 guard,54,lowerGuard,,,guard,,Guard,0,TRUE,TRUE,FALSE,,,,0,0.0349065850398866,,1,,,
-guardHit,3,guard,,,guardHit,,GuardHit,0,FALSE,TRUE,FALSE,,data/sounds/combat/block.mp3,,0,0,,1,,,
+guardHit,3,guard,,Dragontail.Character.Behavior.Enemy.GuardHit,,,GuardHit,0,FALSE,TRUE,FALSE,,data/sounds/combat/block.mp3,,0,0,,1,,,
 lowerGuard,9,stand,,,,,LowerGuard,0,TRUE,TRUE,FALSE,,,,0,0,,1,,,
 leave,FALSE,FALSE,,,leave,,Walk,,TRUE,TRUE,FALSE,,,,0,0,,1,,Object Wall,
 enterAndAttackUntilEmpty,FALSE,attackIfAmmoElseLeave,,,walkToEntryPoint,,Walk,,TRUE,TRUE,FALSE,,,,0,0,,1,,Object Wall,
