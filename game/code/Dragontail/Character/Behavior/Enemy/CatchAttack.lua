@@ -2,6 +2,7 @@ local Behavior = require "Dragontail.Character.Behavior"
 local StateMachine       = require "Dragontail.Character.Component.StateMachine"
 local HoldOpponent       = require "Dragontail.Character.Action.HoldOpponent"
 local Guard              = require "Dragontail.Character.Action.Guard"
+local Face               = require "Dragontail.Character.Component.Face"
 
 local CatchAttack = pooledclass(Behavior)
 CatchAttack._nrec = Behavior._nrec + 1
@@ -10,6 +11,9 @@ function CatchAttack:start(hit)
     local enemy = self.character
     local attacker = hit.attacker
     self.attacker = attacker
+
+    Face.faceObject(enemy, attacker,
+        enemy.state.animation, enemy.animationframe, enemy.state.loopframe)
 
     if attacker.team == "players"
     or attacker.team == "enemies" then
@@ -31,6 +35,11 @@ end
 
 function CatchAttack:fixedupdate()
     local enemy = self.character
+    local attacker = self.attacker
+
+    Face.faceObject(enemy, attacker,
+        enemy.state.animation, enemy.animationframe, enemy.state.loopframe)
+
     enemy:decelerateXYto0()
     HoldOpponent.updateVelocities(enemy)
     enemy.texturealpha = enemy:getAttackFlash(enemy.statetime)
