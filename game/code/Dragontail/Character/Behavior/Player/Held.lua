@@ -14,6 +14,10 @@ local BreakawayStrength = 4
 
 function PlayerHeld:start(holder)
     local player = self.character
+    if not HoldOpponent.isHolding(holder, player) then
+        HoldOpponent.startHolding(holder, player)
+    end
+
     player:stopAttack()
     Guard.stopGuarding(player)
     player.velx, player.vely = 0, 0

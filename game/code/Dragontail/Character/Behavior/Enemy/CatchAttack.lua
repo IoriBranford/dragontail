@@ -17,10 +17,9 @@ function CatchAttack:start(hit)
 
     if attacker.team == "players"
     or attacker.team == "enemies" then
-        if attacker.heldby then
-            HoldOpponent.stopHolding(attacker.heldby, attacker)
+        if not HoldOpponent.isHolding(enemy, attacker) then
+            HoldOpponent.startHolding(enemy, attacker)
         end
-        HoldOpponent.startHolding(enemy, attacker)
     elseif attacker.team == "projectiles" then
         attacker:stopAttack()
         if enemy:tryToGiveWeapon(attacker.type) then
