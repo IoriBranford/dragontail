@@ -1292,7 +1292,7 @@ to sprint past archers</text>
     <properties>
      <property name="extrudeY" type="float" value="-10"/>
     </properties>
-    <polygon points="0,16 8,32 24,40 48,48 80,48 104,40 120,32 128,16 128,0 0,0"/>
+    <polygon points="0,16 8,32 24,40 48,48 80,48 104,40 120,32 128,16 128,-32 0,-32"/>
    </object>
    <object id="393" type="forge-fire" x="3712" y="-80" width="16" height="16" visible="0">
     <properties>
