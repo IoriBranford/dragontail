@@ -184,7 +184,7 @@ function Enemy:afterStand()
         Face.facePosition(self, opponent.x, opponent.y)
         return nextattacktype
     end
-    return "approach", nextattacktype
+    return "approach", opponent, nil, nextattacktype
 end
 
 function Enemy:stand(duration)
@@ -204,16 +204,23 @@ function Enemy:stand(duration)
     return "stand"
 end
 
-function Enemy:findAttackerSlot(opponent, attacktype)
+---@param target Character
+---@param nextstate string
+---@return AttackerSlot? slot
+---@return number? destx
+---@return number? desty
+function Enemy:findApproachSlot(target, nextstate)
+    if not target.attackerslots then return end
     local bodyradius = self.bodyradius
-    local attackdata = self.attacktable[attacktype]
-    local attackrange = (attackdata and attackdata.bestdist or 1) + opponent.bodyradius
+    local state = self.statetable[nextstate]
+    local attackrange = (state and state.maxtargetdist or 1) + target.bodyradius
     local attackerslot, destx, desty
-    if not self.attack.projectiletype then
-        attackerslot, destx, desty = AttackTarget.findRandomSlot(opponent, attackrange + bodyradius, "melee", self.x, self.y)
+    local attack = self.attacktable and self.attacktable[state.attack]
+    if not attack or not attack.projectiletype then
+        attackerslot, destx, desty = AttackTarget.findRandomSlot(target, attackrange + bodyradius, "melee", self.x, self.y)
     end
     if not attackerslot then
-        attackerslot, destx, desty = AttackTarget.findRandomSlot(opponent, attackrange + bodyradius, "missile", self.x, self.y)
+        attackerslot, destx, desty = AttackTarget.findRandomSlot(target, attackrange + bodyradius, "missile", self.x, self.y)
     end
     return attackerslot, destx, desty
 end

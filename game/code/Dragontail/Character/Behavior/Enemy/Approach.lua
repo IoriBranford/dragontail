@@ -7,22 +7,42 @@ local Movement = require "Component.Movement"
 local Approach = pooledclass(Behavior)
 Approach._nrec = Behavior._nrec + 3
 
-function Approach:start(nextattacktype)
+---@param targetx number|Character
+---@param targety number?
+function Approach:start(targetx, targety, nextstate)
     local enemy = self.character
-    local opponent = enemy.opponents[1] ---@type Player
-    self.nextattacktype = nextattacktype
-    self.attackerslot = enemy:findAttackerSlot(opponent, nextattacktype)
+    if nextstate then
+        enemy.nextstate = nextstate
+    else
+        nextstate = enemy.nextstate
+    end
+    if type(targetx) == "table" then
+        local target = targetx
+        self.target = target
+        self.attackerslot = enemy:findApproachSlot(target, nextstate)
+    else
+        self.targetx = targetx
+        self.targety = targety
+    end
     self.result = nil
 end
 
 function Approach:fixedupdate()
     local enemy = self.character
     enemy:stayOnCameraOnceEntered()
-    local attackerslot = self.attackerslot
-    local opponent = attackerslot and attackerslot.target
+
     local destx, desty
-    if attackerslot then
-        destx, desty = enemy:getAttackerSlotPosition(attackerslot, self.nextattacktype)
+    local targetx, targety
+    local target = self.target
+    if target then
+        targetx, targety = target.x, target.y
+        local attackerslot = self.attackerslot
+        if attackerslot then
+            destx, desty = enemy:getAttackerSlotPosition(attackerslot, enemy.nextstate)
+        end
+    else
+        targetx, targety = self.targetx, self.targety
+        destx, desty = targetx, targety
     end
 
     local speed = enemy.speed or 2
@@ -32,33 +52,46 @@ function Approach:fixedupdate()
         return self:timeout()
     end
 
-    if math.distsq(enemy.x, enemy.y, opponent.x, opponent.y) > 320*320 then
+    if math.distsq(enemy.x, enemy.y, targetx, targety) > 320*320 then
         speed = speed * 1.5
     end
 
     destx, desty = enemy:navigateAroundSolid(destx, desty)
-    Face.faceObject(enemy, opponent, enemy.state.animation, enemy.animationframe)
-    local state, a, b, c, d, e, f = enemy:duringApproach(opponent)
+    Face.faceObject(enemy, target, enemy.state.animation, enemy.animationframe)
+    local state, a, b, c, d, e, f = enemy:duringApproach(target)
     if state then
         return state, a, b, c, d, e, f
     end
     enemy.velx, enemy.vely = Movement.getVelocity_speed(enemy.x, enemy.y, destx, desty, speed)
 end
 
-function Approach:timeout()
+function Approach:timeout(nextstate, ...)
     local enemy = self.character
-    local opponent = enemy.opponents[1] ---@type Player
-    if enemy:couldAttackOpponent(opponent, self.nextattacktype) then
-        opponent.attacker = enemy
-        Face.facePosition(enemy, opponent.x, opponent.y)
-        return self.nextattacktype
-    end
+    -- local opponent = enemy.opponents[1] ---@type Player
+    -- if enemy:couldAttackOpponent(opponent, self.nextaction) then
+    --     opponent.attacker = enemy
+    --     Face.facePosition(enemy, opponent.x, opponent.y)
+    --     return enemy.nextstate
+    -- end
     -- enemy:debugPrint_couldAttackOpponent(opponent, nextattacktype)
 
-    if self.result == "reached" then
-        return "stand", 10
+    local targetx, targety
+    local target = self.target
+    if target then
+        targetx = target
+        Face.faceObject(enemy, target)
+    else
+        targetx, targety = self.targetx, self.targety
+        Face.facePosition(enemy, targetx, targety)
     end
-    return "approach", self.nextattacktype
+
+    if self.result ~= "reached" then
+        return "approach", targetx, targety, enemy.nextstate
+    end
+    if nextstate then
+        return nextstate, ...
+    end
+    return "stand", 10
 end
 
 return Approach

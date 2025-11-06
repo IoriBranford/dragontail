@@ -8,12 +8,12 @@ local ShieldBandit = class(Enemy)
 
 local GuardHitsUntilCounter = 3
 
-function ShieldBandit:findAttackerSlot(opponent, attacktype)
+function ShieldBandit:findApproachSlot(target, nextstate)
     local bodyradius = self.bodyradius
-    local attackdata = self.attacktable[attacktype]
-    local attackrange = (attackdata and attackdata.bestdist or 1) + opponent.bodyradius
-    return AttackTarget.findClosestSlot(opponent, attackrange + bodyradius, "melee", self.x, self.y)
-        or AttackTarget.findClosestSlot(opponent, attackrange + bodyradius, "missile", self.x, self.y)
+    local state = self.statetable[nextstate]
+    local attackrange = (state and state.maxtargetdist or 1) + target.bodyradius
+    return AttackTarget.findClosestSlot(target, attackrange + bodyradius, "melee", self.x, self.y)
+        or AttackTarget.findClosestSlot(target, attackrange + bodyradius, "missile", self.x, self.y)
 end
 
 function ShieldBandit:duringStand()
