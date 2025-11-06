@@ -2,6 +2,7 @@ local Enemy = require "Dragontail.Character.Enemy"
 local Guard = require "Dragontail.Character.Action.Guard"
 local Characters   = require "Dragontail.Stage.Characters"
 local Catcher      = require "Dragontail.Character.Component.Catcher"
+local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
 
 ---@class MuscleBandit:Enemy
 local MuscleBandit = class(Enemy)
@@ -63,7 +64,8 @@ function MuscleBandit:duringPrepareAttack(target)
     end
 
     if self.attack.opponentstateonhit == "held" then
-        Guard.startGuarding(self, self.faceangle)
+        local guardangle = DirectionalAnimation.SnapAngle(self.faceangle, self.animationdirections)
+        Guard.startGuarding(self, guardangle)
     end
     Enemy.duringPrepareAttack(self, target)
 end
