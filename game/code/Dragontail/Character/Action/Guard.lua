@@ -59,8 +59,10 @@ function Guard:pushBackAttacker(attacker)
     local toattackery = -self.y + attacker.y
     local toattackerdist = math.len(toattackerx, toattackery)
     if toattackerdist == 0 then
-        toattackerx = math.cos(self.guardangle)
-        toattackery = math.sin(self.guardangle)
+        local guardangle = self.guardangle
+            or self.faceangle or 0
+        toattackerx = math.cos(guardangle)
+        toattackery = math.sin(guardangle)
     else
         toattackerx = toattackerx / toattackerdist
         toattackery = toattackery / toattackerdist
