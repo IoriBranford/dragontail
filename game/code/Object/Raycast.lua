@@ -2,16 +2,16 @@
 local Raycast = class()
 
 function Raycast:_init(x, y, z, dx, dy, dz, canhitside, radius, height)
-    self.x = x or 0
-    self.y = y or 0
-    self.z = z or 0
-    self.dx = dx or 1
-    self.dy = dy or 0
-    self.dz = dz or 0
-    self.canhitside = canhitside or 0 --- negative = only outsides, positive = only insides, 0 = both sides
+    self.x = x or 0 ---@type number
+    self.y = y or 0 ---@type number
+    self.z = z or 0 ---@type number
+    self.dx = dx or 1 ---@type number
+    self.dy = dy or 0 ---@type number
+    self.dz = dz or 0 ---@type number
+    self.canhitside = canhitside or 0 ---@type number negative = only outsides, positive = only insides, 0 = both sides
     self.hitslayers = 0 ---@type CollisionLayerMask
-    self.radius = radius or 0
-    self.height = height or 0
+    self.radius = radius or 0 ---@type number
+    self.height = height or 0 ---@type number
     self.hitx = nil ---@type number?
     self.hity = nil ---@type number?
     self.hitz = nil ---@type number?

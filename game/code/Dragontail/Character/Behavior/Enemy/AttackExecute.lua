@@ -6,6 +6,8 @@ local Slide    = require "Dragontail.Character.Action.Slide"
 local Color    = require "Tiled.Color"
 local Face     = require "Dragontail.Character.Component.Face"
 
+---@class AttackExecute:Behavior
+---@field character Enemy
 local AttackExecute = pooledclass(Behavior)
 AttackExecute._nrec = Behavior._nrec + 3
 
@@ -32,10 +34,7 @@ function AttackExecute:start()
     enemy.statetime = enemy.statetime or hittime
     self.hitendtime = enemy.statetime - hittime
 
-    self.lungespeed = Slide.updateSlideSpeed(enemy,
-        enemy.faceangle, enemy.attack.lungespeed or 0,
-        enemy.attack.lungedecel or 1)
-    self.lungeangle = enemy.faceangle
+    Slide.updateSlideSpeed(enemy, enemy.faceangle, enemy.speed or 0)
 end
 
 function AttackExecute:fixedupdate()
@@ -51,15 +50,18 @@ function AttackExecute:fixedupdate()
         enemy:startAttack(attackangle)
     end
 
-    local lungeangle = self.lungeangle
     local moveturnspeed = enemy.moveturnspeed or 0
     if moveturnspeed ~= 0 then
-        lungeangle = math.rotangletowards(lungeangle, enemy.faceangle, moveturnspeed)
-        self.lungeangle = lungeangle
+        local velx, vely = enemy.velx, enemy.vely
+        local detFV = math.det(velx, vely, math.cos(faceangle), math.sin(faceangle))
+        if detFV ~= 0 then
+            local sindangle = detFV / math.len(velx, vely)
+            local rotation = math.asin(sindangle)
+            rotation = math.max(-moveturnspeed, math.min(rotation, moveturnspeed))
+            enemy.velx, enemy.vely = math.rot(velx, vely, rotation)
+        end
     end
-    self.lungespeed = Slide.updateSlideSpeed(enemy,
-        lungeangle, self.lungespeed,
-        enemy.attack.lungedecel or 1)
+    enemy:decelerateXYto0()
 
     if enemy.statetime <= self.hitendtime then
         enemy:resetFlash()

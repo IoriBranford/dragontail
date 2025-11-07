@@ -118,9 +118,9 @@ function Enemy:decideNextAttack()
     local attacktype = self.defaultattack
     if attackchoices and #attackchoices > 0 then
         for i, attackchoice in ipairs(attackchoices) do
-            local attackdata = self.attacktable[attackchoice]
-            if attackdata then
-                local attackrange = (attackdata.bestdist or 1) + opponent.bodyradius
+            local attackstate = self.statetable[attackchoice]
+            if attackstate then
+                local attackrange = (attackstate.maxtargetdist or 1) + opponent.bodyradius
                 if attackrange*attackrange >= toopposq then
                     attacktype = attackchoice
                     break
@@ -134,41 +134,41 @@ function Enemy:decideNextAttack()
     return attacktype
 end
 
-function Enemy:debugPrint_couldAttackOpponent(opponent, attacktype)
-    print("opponent", opponent)
-    if opponent then
-        print(".attacker", opponent.attacker)
-        print(".canbeattacked", opponent.canbeattacked)
+function Enemy:debugPrint_couldAttackOpponent(target, actionstate)
+    print("opponent", target)
+    if target then
+        print(".attacker", target.attacker)
+        print(".canbeattacked", target.canbeattacked)
     end
     print("isCylinderFullyOnCamera", self:isCylinderFullyOnCamera(self.camera))
 
-    local attackdata = self.attacktable[attacktype]
-    print("attackdata", attackdata)
-    if attackdata then
-        local toopposq = distsq(self.x, self.y, opponent.x, opponent.y)
-        local attackrange = (attackdata.bestdist or 1) + opponent.bodyradius
+    local state = self.statetable[actionstate]
+    print("statedata", state)
+    if state then
+        local toopposq = distsq(self.x, self.y, target.x, target.y)
+        local attackrange = (state.maxtargetdist or 1) + target.bodyradius
         print("dist", math.sqrt(toopposq))
-        print("attackrange", attackrange, '=', (attackdata.bestdist or 1), '+', opponent.bodyradius)
+        print("attackrange", attackrange, '=', (state.maxtargetdist or 1), '+', target.bodyradius)
         print("closeEnough", toopposq <= attackrange*attackrange)
     end
 end
 
-function Enemy:couldAttackOpponent(opponent, attacktype)
-    if not opponent
-    or opponent.attacker
-    or not opponent.canbeattacked
+function Enemy:couldAttackOpponent(target, actionstate)
+    if not target
+    or target.attacker
+    or not target.canbeattacked
     or not self:isCylinderFullyOnCamera(self.camera)
     then
         return false
     end
 
-    local attackdata = self.attacktable[attacktype]
-    if not attackdata then
+    local state = self.statetable[actionstate]
+    if not state then
         return false
     end
 
-    local toopposq = distsq(self.x, self.y, opponent.x, opponent.y)
-    local attackrange = (attackdata.bestdist or 1) + opponent.bodyradius
+    local toopposq = distsq(self.x, self.y, target.x, target.y)
+    local attackrange = (state.maxtargetdist or 1) + target.bodyradius
     return toopposq <= attackrange*attackrange
 end
 
@@ -226,20 +226,21 @@ function Enemy:findApproachSlot(target, nextstate)
 end
 
 ---@param attackerslot AttackerSlot
----@param attacktype string
+---@param actionstate string
 ---@return number? destx
 ---@return number? desty
-function Enemy:getAttackerSlotPosition(attackerslot, attacktype)
+function Enemy:getAttackerSlotPosition(attackerslot, actionstate)
     local bodyradius = self.bodyradius
-    local attackdata = self.attacktable[attacktype]
-    local attackrange = (attackdata and attackdata.bestdist or 1)
+    local state = self.statetable[actionstate]
+    local attackrange = (state and state.maxtargetdist or 1)
         + AttackTarget.estimateSafeDistanceOnSlot(attackerslot.target, attackerslot)
     if not attackerslot:hasSpace(attackrange) then
         return
     end
 
+    local attack = self.attacktable and self.attacktable[state.attack]
     local destx, desty
-    if self.attack.projectiletype then
+    if attack and attack.projectiletype then
         destx, desty = attackerslot:getFarPosition(bodyradius)
     else
         destx, desty = attackerslot:getPosition(attackrange)
