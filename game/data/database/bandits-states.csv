@@ -69,7 +69,7 @@ raiseGuard,6,guard,,,turnTowardsOpponent,,RaiseGuard,0,TRUE,TRUE,FALSE,,,,0,3.14
 guard,54,lowerGuard,,,guard,,Guard,0,TRUE,TRUE,FALSE,,,,0,0.0349065850398866,,,1,,,,
 guardHit,3,guard,,Dragontail.Character.Behavior.Enemy.GuardHit,,,GuardHit,0,FALSE,TRUE,FALSE,,data/sounds/combat/block.mp3,,0,0,,,1,,,,
 lowerGuard,9,stand,,,,,LowerGuard,0,TRUE,TRUE,FALSE,,,,0,0,,,1,,,,
-leave,FALSE,FALSE,,,leave,,Walk,,TRUE,TRUE,FALSE,,,,0,0,,,1,,Object Wall,,
+leave,FALSE,FALSE,,,leave,,Walk,,TRUE,TRUE,FALSE,,,,0,0,,.approachspeed,1,,Object Wall,,
 enterAndAttackUntilEmpty,FALSE,attackIfAmmoElseLeave,,,walkToEntryPoint,,Walk,,TRUE,TRUE,FALSE,,,,0,0,,,1,,Object Wall,,
 attackIfAmmoElseLeave,FALSE,leave,,,attackIfAmmoElseLeave,,Stand,,TRUE,TRUE,FALSE,,,,0,0,,,1,,,,
 enterAndPrepareBowAmbush,FALSE,prepareBowAmbush,,,walkToEntryPoint,,Walk,,TRUE,TRUE,FALSE,,,,0,0,,,1,,,,
