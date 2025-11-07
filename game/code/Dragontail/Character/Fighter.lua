@@ -128,7 +128,7 @@ function Fighter:walkTo(destx, desty, timelimit)
             end
             return true
         end
-        self.velx, self.vely = Movement.getVelocity_speed(self.x, self.y, destx, desty, self.speed or 1)
+        self.velx, self.vely = Movement.getVelocity_speed(self.x, self.y, destx, desty, math.max(1, self.speed or 1))
         yield()
     end
 end
