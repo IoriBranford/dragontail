@@ -18,7 +18,6 @@ local cos = math.cos
 local sin = math.sin
 local asin = math.asin
 local lensq = math.lensq
-local dot = math.dot
 local min = math.min
 local max = math.max
 local testcircles = math.testcircles
@@ -289,6 +288,30 @@ function Character:isCylinderFullyOnCamera(camera)
     local x, y = self.x - radius, self.y - radius - height
     local _, _, iw, ih = math.rectintersection(x, y - self.z, w, h, cx, cy, cw, ch)
     return iw and iw == w and ih == h
+end
+
+---@param them Character
+function Character:areTheyComing(them, time)
+    if self.z + self.bodyheight < them.z
+    or them.z + self.bodyheight < self.z then
+        return
+    end
+    time = time or 1
+    local x, y = self.x, self.y
+    local theirx, theiry = them.x, them.y
+    local towardmex, towardmey = x - theirx, y - theiry
+    local ourradii = self.bodyradius + them.bodyradius
+    local theirvelx, theirvely = them.velx*time, them.vely*time
+    local distxy = math.len(towardmex, towardmey)
+
+    -- cos * speed * time * dist
+    -- = speed toward me * time * dist
+    -- = dist they will move toward me in time * dist from me
+    local dot = math.dot(theirvelx, theirvely, towardmex, towardmey)
+    if dot < distxy * (distxy - ourradii) then
+        return false
+    end
+    return true
 end
 
 function Character:disappear()
