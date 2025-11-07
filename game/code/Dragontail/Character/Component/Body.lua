@@ -87,41 +87,28 @@ end
 
 function Body:accelerateTowardsVelXY(targetvelx, targetvely, mass, e)
     mass = math.max(mass or self.mass or 1, 1)
-    e = e or (1/256)
-    local accelx = (targetvelx - self.velx) / mass
-    local accely = (targetvely - self.vely) / mass
-    if math.abs(accelx) < e then
-        self.velx = targetvelx
+    e = e or (1/65536)
+    local velx, vely = self.velx, self.vely
+    velx = velx + (targetvelx - velx) / mass
+    vely = vely + (targetvely - vely) / mass
+    if math.distsq(velx, vely, targetvelx, targetvely) < e then
+        self.velx, self.vely = targetvelx, targetvely
     else
-        self.velx = self.velx + accelx
-    end
-    if math.abs(accely) < e then
-        self.vely = targetvely
-    else
-        self.vely = self.vely + accely
+        self.velx, self.vely = velx, vely
     end
 end
 
 function Body:accelerateTowardsVel3(targetvelx, targetvely, targetvelz, mass, e)
     mass = math.max(mass or self.mass or 1, 1)
-    e = e or (1/256)
-    local accelx = (targetvelx - self.velx) / mass
-    local accely = (targetvely - self.vely) / mass
-    local accelz = (targetvelz - self.velz) / mass
-    if math.abs(accelx) < e then
-        self.velx = targetvelx
+    e = e or (1/65536)
+    local velx, vely, velz = self.velx, self.vely, self.velz
+    velx = velx + (targetvelx - velx) / mass
+    vely = vely + (targetvely - vely) / mass
+    velz = velz + (targetvelz - velz) / mass
+    if math.distsq3(velx, vely, velz, targetvelx, targetvely, targetvelz) < e then
+        self.velx, self.vely, self.velz = targetvelx, targetvely, targetvelz
     else
-        self.velx = self.velx + accelx
-    end
-    if math.abs(accely) < e then
-        self.vely = targetvely
-    else
-        self.vely = self.vely + accely
-    end
-    if math.abs(accelz) < e then
-        self.velz = targetvelz
-    else
-        self.velz = self.velz + accelz
+        self.velx, self.vely, self.velz = velx, vely, velz
     end
 end
 
