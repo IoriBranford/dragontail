@@ -3,7 +3,7 @@ local Body = require "Dragontail.Character.Component.Body"
 local Slide = {}
 
 function Slide.GetSlideDistance(speed, decel)
-    return speed * (speed+decel) / 2
+    return speed * (speed+decel) / (2*decel)
 end
 
 function Slide:updateSlideSpeed(angle, speed, decel)
