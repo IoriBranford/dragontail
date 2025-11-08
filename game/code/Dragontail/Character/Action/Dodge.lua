@@ -14,8 +14,8 @@ local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask
 local Dodge = {}
 
 function Dodge:getDodgeVector(incoming)
-    if self.z + self.bodyheight < incoming.z
-    or incoming.z + self.bodyheight < self.z then
+    local dodgewithintime = self.dodgewithintime or 30
+    if not self:areTheyComing(incoming, dodgewithintime) then
         return
     end
     local oppox, oppoy, oppovelx, oppovely
@@ -26,14 +26,6 @@ function Dodge:getDodgeVector(incoming)
     local fromoppoz = incoming.z - self.z
     local oppospeedsq = math.lensq(oppovelx, oppovely, oppovelz)
     local dsq = math.lensq(fromoppox, fromoppoy, fromoppoz)
-    local dodgewithintime = self.dodgewithintime or 60
-    if dsq > oppospeedsq * dodgewithintime * dodgewithintime then
-        return
-    end
-    local vdotd = math.dot3(oppovelx, oppovely, oppovelz, fromoppox, fromoppoy, fromoppoz)
-    if vdotd <= math.sqrt(dsq)*math.sqrt(oppospeedsq)/2 then
-        return
-    end
 
     local dodgespeed = self.dodgespeed
     local dodgedist = Slide.GetSlideDistance(dodgespeed, self.dodgedecel or 1)
