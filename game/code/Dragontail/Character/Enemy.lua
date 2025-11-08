@@ -402,8 +402,9 @@ end
 
 function Enemy:duringGuard(t)
     local opponent = self.opponents[1]
-    Face.turnTowardsObject(self, opponent, self.faceturnspeed, self.state.animation)
-    local guardangle = floor((self.faceangle + (pi/4)) / (pi/2)) * pi/2
+    local faceangle = Face.turnTowardsObject(self, opponent, self.faceturnspeed,
+        self.state.animation, self.animationframe, self.state.loopframe)
+    local guardangle = DirectionalAnimation.SnapAngle(faceangle, self.animationdirections or 4)
     Guard.startGuarding(self, guardangle)
 end
 
