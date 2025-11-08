@@ -16,41 +16,23 @@ local MuscleBandit = class(Enemy)
 -- end
 
 function MuscleBandit:duringStand()
-    if not self:isCylinderFullyOnCamera(self.camera) then return end
     local opponent = self.opponents[1]
-    local fromoppox, fromoppoy = self.x - opponent.x, self.y - opponent.y
-    local oppovelx, oppovely = opponent.velx, opponent.vely
-    local oppospeed = math.len(oppovelx, oppovely)
-    local dot = math.dot(fromoppox, fromoppoy, oppovelx, oppovely)
-    if 0 < dot and dot <= oppospeed*60 then
-        return "muscle-grab"
-    end
-
-    local dirx, diry = math.cos(self.faceangle), math.sin(self.faceangle)
-    local projectiles = Characters.getGroup("projectiles")
-    local caught = Catcher.findCharacterToCatch(self, projectiles, dirx, diry)
-    if caught then
-        caught:stopAttack()
-        return "catchProjectile", caught
-    end
+    return self:duringApproach(opponent)
 end
 
 function MuscleBandit:duringApproach(opponent)
     if not self:isCylinderFullyOnCamera(self.camera) then return end
-    local fromoppox, fromoppoy = self.x - opponent.x, self.y - opponent.y
-    local oppovelx, oppovely = opponent.velx, opponent.vely
-    local oppospeed = math.len(oppovelx, oppovely)
-    local dot = math.dot(fromoppox, fromoppoy, oppovelx, oppovely)
-    if 0 < dot and dot <= oppospeed*60 then
-        return "muscle-grab"
-    end
-
-    local dirx, diry = math.cos(self.faceangle), math.sin(self.faceangle)
-    local projectiles = Characters.getGroup("projectiles")
-    local caught = Catcher.findCharacterToCatch(self, projectiles, dirx, diry)
-    if caught then
-        caught:stopAttack()
-        return "catchProjectile", caught
+    local time = self.catchintime or 20
+    if self:isAnyIncoming(Characters.getGroup("projectiles"), time,
+        function(projectile)
+            return projectile.thrower == opponent
+        end)
+    or self:isAnyIncoming(Characters.getGroup("enemies"), time,
+        function(enemy)
+            return enemy.thrower == opponent
+        end)
+    then
+        return "catchReady"
     end
 end
 
