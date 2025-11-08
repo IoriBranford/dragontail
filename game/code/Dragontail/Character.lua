@@ -290,25 +290,36 @@ function Character:isCylinderFullyOnCamera(camera)
     return iw and iw == w and ih == h
 end
 
+function True() return true end
+
 ---@param characters Character[]
-function Character:isAnyIncoming(characters, time)
+---@param time integer?
+---@param filter (fun(Character):boolean)?
+function Character:isAnyIncoming(characters, time, filter)
+    filter = filter or True
     for _, character in ipairs(characters) do
-        if self:areTheyComing(character, time) then
+        if filter(character)
+        and self:areTheyComing(character, time) then
             return true
         end
     end
 end
 
 ---@param characters Character[]
-function Character:getClosestIncoming(characters, time)
+---@param time integer?
+---@param filter (fun(Character):boolean)?
+function Character:getClosestIncoming(characters, time, filter)
+    filter = filter or True
     local closest, closestdsq = nil, math.huge
     local x, y = self.x, self.y
     for _, character in ipairs(characters) do
-        local dsq = math.distsq(x, y, character.x, character.y)
-        if dsq < closestdsq then
-            if self:areTheyComing(character, time) then
-                closest = character
-                closestdsq = dsq
+        if filter(character) then
+            local dsq = math.distsq(x, y, character.x, character.y)
+            if dsq < closestdsq then
+                if self:areTheyComing(character, time) then
+                    closest = character
+                    closestdsq = dsq
+                end
             end
         end
     end
