@@ -186,9 +186,11 @@ end
 function Common:itemWaitForPickup()
     local opponent = self.opponents[1]
     local t = -1
+    local FlashPeriod = 5
+    local Period = 30
     while true do
         local finished
-        t = t + 1
+        t = (t + 1) % Period
         self:accelerateTowardsVelXY(0, 0)
         if self.gravity == 0 then
             local _, _, _, penex
@@ -199,8 +201,13 @@ function Common:itemWaitForPickup()
         end
         if self.healhealth then
             if opponent.health < opponent.maxhealth then
-                local redblue = (t%30)/15
-                self.color = Color.asARGBInt(redblue, 1, redblue, 1)
+                if t == 0 then
+                    self.color = Color.asARGBInt(.5, 1, .5, 1)
+                    self.texturealpha = 0
+                elseif t == FlashPeriod then
+                    self.color = Color.White
+                    self.texturealpha = 1
+                end
                 if testItemPickupCollision(self, opponent) then
                     Audio.play(self.itemgetsound)
                     opponent:heal(self.healhealth)
@@ -211,9 +218,13 @@ function Common:itemWaitForPickup()
             end
         elseif self.givemana then
             if opponent.manastore < opponent.manastoremax then
-                local greenblue = (t%30)/15
-                local red = .5 + greenblue
-                self.color = Color.asARGBInt(red, greenblue, greenblue, 1)
+                if t == 0 then
+                    self.color = Color.asARGBInt(1, .5, .5, 1)
+                    self.texturealpha = 0
+                elseif t == FlashPeriod then
+                    self.color = Color.White
+                    self.texturealpha = 1
+                end
                 if testItemPickupCollision(self, opponent) then
                     Audio.play(self.itemgetsound)
                     Mana.store(opponent, self.givemana)
@@ -223,6 +234,11 @@ function Common:itemWaitForPickup()
                 self.color = Color.White
             end
         elseif self.giveweapon then
+            if t == 0 then
+                self.texturealpha = 0
+            elseif t == FlashPeriod then
+                self.texturealpha = 1
+            end
             local weapontype = self.giveweapon
             if testItemPickupCollision(self, opponent) and opponent:tryToGiveWeapon(weapontype) then
                 finished = true
