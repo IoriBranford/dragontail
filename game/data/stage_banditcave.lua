@@ -17668,7 +17668,8 @@ return {
                 { x = 0, y = 128 },
                 { x = 64, y = 128 },
                 { x = 96, y = 160 },
-                { x = 96, y = -96 }
+                { x = 160, y = 160 },
+                { x = 160, y = -96 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -17920,9 +17921,7 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {
-            ["donewhenenemiesleft"] = 1
-          },
+          properties = {},
           objects = {
             {
               id = 58,
@@ -18269,7 +18268,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 3
+            ["donewhenenemiesleft"] = 5
           },
           objects = {
             {
@@ -18323,60 +18322,7 @@ return {
               properties = {
                 ["z"] = 64
               }
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
-          id = 50,
-          name = "+spears",
-          class = "Room",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {
-            ["donewhenenemiesleft"] = 3
-          },
-          objects = {
-            {
-              id = 501,
-              name = "",
-              type = "bandit-spear",
-              shape = "rectangle",
-              x = 1936,
-              y = 88,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7258,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
-          id = 49,
-          name = "+shooters",
-          class = "Room",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {
-            ["donewhenenemiesleft"] = 3,
-            ["titlebarcuecard"] = "THROW MULTIPLE ROCKS"
-          },
-          objects = {
+            },
             {
               id = 494,
               name = "",
@@ -18405,8 +18351,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1920,
-              y = -104,
+              x = 1952,
+              y = -136,
               width = 64,
               height = 64,
               rotation = 0,
@@ -18488,6 +18434,40 @@ return {
         {
           type = "objectgroup",
           draworder = "topdown",
+          id = 50,
+          name = "+spears",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = 3
+          },
+          objects = {
+            {
+              id = 501,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 1936,
+              y = 88,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7258,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
           id = 13,
           name = "+spears",
           class = "Room",
@@ -18561,8 +18541,8 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = -320, y = -320 },
-                { x = -320, y = -192 },
+                { x = -256, y = -320 },
+                { x = -256, y = -192 },
                 { x = 0, y = -192 },
                 { x = 32, y = -160 },
                 { x = 64, y = -160 },

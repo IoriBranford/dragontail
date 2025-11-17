@@ -488,7 +488,7 @@
      <property name="drawz" type="float" value="-1"/>
      <property name="extrudeY" type="float" value="-64"/>
     </properties>
-    <polygon points="-384,-96 -384,128 -352,96 -256,96 -224,64 -128,64 -96,96 -32,96 0,128 64,128 96,160 96,-96"/>
+    <polygon points="-384,-96 -384,128 -352,96 -256,96 -224,64 -128,64 -96,96 -32,96 0,128 64,128 96,160 160,160 160,-96"/>
    </object>
    <object id="265" template="mapobjects/OutwardBoundary.tx" x="1392" y="-600">
     <properties>
@@ -530,9 +530,6 @@
    </object>
   </objectgroup>
   <objectgroup id="48" name="learnthrowingweapons" class="Room">
-   <properties>
-    <property name="donewhenenemiesleft" type="int" value="1"/>
-   </properties>
    <object id="58" gid="7259" x="1856" y="-168" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
@@ -603,7 +600,7 @@
   </objectgroup>
   <objectgroup id="11" name="+shooter" class="Room">
    <properties>
-    <property name="donewhenenemiesleft" type="int" value="3"/>
+    <property name="donewhenenemiesleft" type="int" value="5"/>
    </properties>
    <object id="87" gid="7259" x="1888" y="-136" width="64" height="64">
     <properties>
@@ -628,18 +625,6 @@
     </properties>
     <point/>
    </object>
-  </objectgroup>
-  <objectgroup id="50" name="+spears" class="Room">
-   <properties>
-    <property name="donewhenenemiesleft" type="int" value="3"/>
-   </properties>
-   <object id="501" template="mapobjects/bandit/spear.tx" x="1936" y="88"/>
-  </objectgroup>
-  <objectgroup id="49" name="+shooters" class="Room">
-   <properties>
-    <property name="donewhenenemiesleft" type="int" value="3"/>
-    <property name="titlebarcuecard" value="THROW MULTIPLE ROCKS"/>
-   </properties>
    <object id="494" gid="7259" x="1824" y="-136" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
@@ -652,7 +637,7 @@
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="498" gid="7259" x="1920" y="-104" width="64" height="64">
+   <object id="498" gid="7259" x="1952" y="-136" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
      <property name="defaultattack" value="sling-shot-until-empty"/>
@@ -689,6 +674,12 @@
     <point/>
    </object>
   </objectgroup>
+  <objectgroup id="50" name="+spears" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="3"/>
+   </properties>
+   <object id="501" template="mapobjects/bandit/spear.tx" x="1936" y="88"/>
+  </objectgroup>
   <objectgroup id="13" name="+spears" class="Room">
    <object id="41" template="mapobjects/bandit/spear.tx" x="1416" y="80"/>
    <object id="62" template="mapobjects/bandit/spear.tx" x="1936" y="104"/>
@@ -701,7 +692,7 @@
     <properties>
      <property name="extrudeY" type="float" value="-64"/>
     </properties>
-    <polygon points="-320,-320 -320,-192 0,-192 32,-160 64,-160 96,-128 96,-96 128,-64 128,0 160,0 160,-320"/>
+    <polygon points="-256,-320 -256,-192 0,-192 32,-160 64,-160 96,-128 96,-96 128,-64 128,0 160,0 160,-320"/>
    </object>
    <object id="66" template="mapobjects/CameraPath.tx" x="1840" y="112">
     <polyline points="-160,-96 80,0 320,0"/>
