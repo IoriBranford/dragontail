@@ -19,7 +19,7 @@ function DodgeLinear:start(dodgeangle)
     self.opponent = opponent
     self.dodgeangle = dodgeangle
     self.speed = fighter.dodgespeed or 1
-    self.speed = Slide.updateSlideSpeed(fighter, self.dodgeangle, self.speed, 1/(fighter.mass or 1))
+    self.speed = Slide.updateSlideSpeed(fighter, self.dodgeangle, self.speed, (fighter.accel or 1))
 end
 
 function DodgeLinear:fixedupdate()
@@ -28,7 +28,7 @@ function DodgeLinear:fixedupdate()
     if newstate then
         return newstate, a, b, c, d, e, f
     end
-    self.speed = Slide.updateSlideSpeed(fighter, self.dodgeangle, self.speed, 1/(fighter.mass or 1))
+    self.speed = Slide.updateSlideSpeed(fighter, self.dodgeangle, self.speed, (fighter.accel or 1))
     if not fighter.statetime then
         if self.speed == 0 then
             return "stand"
