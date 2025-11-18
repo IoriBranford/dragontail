@@ -379,6 +379,31 @@ function Body:getCylinderFloorZ(x, y, z, r, h)
     return floorz, penex, peney
 end
 
+---@param them Body
+---@param time number
+function Body:isInTheirWay(them, time)
+    if self.z + self.bodyheight < them.z
+    or them.z + self.bodyheight < self.z then
+        return false
+    end
+    time = time or 1
+    local x, y = self.x, self.y
+    local theirx, theiry = them.x, them.y
+    local towardmex, towardmey = x - theirx, y - theiry
+    local ourradii = self.bodyradius + them.bodyradius
+    local theirvelx, theirvely = them.velx*time, them.vely*time
+    local distxy = math.len(towardmex, towardmey)
+
+    -- cos * speed * time * dist
+    -- = speed toward me * time * dist
+    -- = dist they will move toward me in time * dist from me
+    local dot = math.dot(theirvelx, theirvely, towardmex, towardmey)
+    if dot < distxy * (distxy - ourradii) then
+        return false
+    end
+    return true
+end
+
 function Body:draw(fixedfrac)
     fixedfrac = fixedfrac or 0
     local x, y = self.x + self.velx * fixedfrac, self.y + self.vely * fixedfrac
