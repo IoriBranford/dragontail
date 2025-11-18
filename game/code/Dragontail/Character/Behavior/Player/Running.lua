@@ -151,22 +151,19 @@ function PlayerRunning:fixedupdate()
             return "spinning-throw", player.faceangle, heldenemy
         end
 
-        if fullspeed then
-            if player.weaponinhand then
-                local angle = player.facedestangle
-                return "throwWeapon", angle, #player.inventory
-            end
-
-            -- if fireattackpressed then
-            --     for _, attacktype in ipairs(RunningSpecialAttacks) do
-            --         if Mana.canAffordAttack(player, attacktype) then
-            --             return attacktype, atan2(vely, velx)
-            --         end
-            --     end
-            -- end
-
-            return "running-kick", velangle
+        if player.weaponinhand then
+            return "throwWeapon", player.facedestangle, #player.inventory
         end
+
+        -- if fireattackpressed then
+        --     for _, attacktype in ipairs(RunningSpecialAttacks) do
+        --         if Mana.canAffordAttack(player, attacktype) then
+        --             return attacktype, atan2(vely, velx)
+        --         end
+        --     end
+        -- end
+
+        return "running-kick", player.facedestangle
     end
 
     if heldenemy then
