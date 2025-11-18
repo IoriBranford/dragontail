@@ -365,11 +365,13 @@ function Player:getup()
     end
 end
 
+---@deprecated
 function Player:aimThrow()
-    self.crosshair = self.crosshair or Characters.spawn({
-        type = "rose-crosshair",
-        visible = false
-    })
+    if not self.crosshair then
+        local crosshair = Character("rose-crosshair")
+        crosshair.visible = false
+        self.crosshair = Characters.spawn(crosshair)
+    end
     self.facedestangle = self.faceangle
     local lockonenemy
     while true do
@@ -514,14 +516,13 @@ function Player:runIntoWall()
     local oobx, ooby = math.norm(self.penex, self.peney)
     local velangle = velx == 0 and vely == 0
         and self.faceangle or math.atan2(vely, velx)
-    Characters.spawn(
-        {
-            type = "spark-bighit",
-            x = self.x + oobx*self.bodyradius,
-            y = self.y + ooby*self.bodyradius,
-            z = self.z + self.bodyheight/2
-        }
-    )
+    local bodyradius = self.bodyradius
+    local spark = Character(
+        "spark-bighit",
+        self.x + oobx*bodyradius,
+        self.y + ooby*bodyradius,
+        self.z + self.bodyheight/2)
+    Characters.spawn(spark)
     self.hurtstun = 9
     self.velz = 0
     return "runIntoWall", velangle

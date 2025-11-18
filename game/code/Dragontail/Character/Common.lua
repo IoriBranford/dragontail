@@ -129,10 +129,9 @@ end
 function Common:dropDefeatItem()
     local item = self.item
     if not item and self.itemtype then
-        item = Characters.spawn({
-            type = self.itemtype,
-            x = self.x, y = self.y, z = self.z,
-        })
+        item = Character(self.itemtype,
+            self.x, self.y, self.z)
+        Characters.spawn(item)
     end
     if item then
         local popouttime = self.itempopouttime or 15
@@ -309,11 +308,11 @@ function Common:projectileEmbed(opponent, ooby, oobz)
         local items = Characters.getGroup("items")
         local numopponentshit = self.numopponentshit or 0
         if self.itemtype and #items < MaxProjectileItems and numopponentshit <= 0 then
-            local item = Characters.spawn({
-                type = self.itemtype,
-                x = self.x, y = self.y, z = self.z,
-                gravity = 0
-            })
+
+            local item = Character(self.itemtype,
+                self.x, self.y, self.z)
+            item.gravity = 0
+            Characters.spawn(item)
             item:setAseAnimation(self.aseanimation, self.animationframe)
             self:disappear()
         else
@@ -324,10 +323,9 @@ end
 
 function Common:becomeItem()
     if Database.get(self.itemtype) then
-        Characters.spawn({
-            type = self.itemtype,
-            x = self.x, y = self.y, z = self.z
-        })
+        local item = Character(self.itemtype,
+            self.x, self.y, self.z)
+        Characters.spawn(item)
     end
     self:disappear()
 end

@@ -35,11 +35,11 @@ function Attacker:initCrosshairs(crosshairtype, numcrosshairs)
     if not self.crosshairs then
         local crosshairs = {}
         self.crosshairs = crosshairs
+        local Character    = require "Dragontail.Character"
         for i = 1, numcrosshairs do
-            crosshairs[i] = Characters.spawn({
-                type = crosshairtype,
-                visible = false
-            })
+            local crosshair = Character(crosshairtype)
+            crosshair.visible = false
+            crosshairs[i] = Characters.spawn(crosshair)
         end
     end
 end

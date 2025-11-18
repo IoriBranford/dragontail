@@ -1,15 +1,13 @@
 local Behavior = require "Dragontail.Character.Behavior"
 local Characters = require "Dragontail.Stage.Characters"
+local Character  = require "Dragontail.Character"
 local Downed = pooledclass(Behavior)
 
 function Downed:start()
     local fighter = self.character
-    Characters.spawn({
-        type = "spark-fall-down-dust",
-        x = fighter.x,
-        y = fighter.y + 1,
-        z = fighter.z,
-    })
+    local spark = Character("spark-fall-down-dust",
+        fighter.x, fighter.y + 1, fighter.z)
+    Characters.spawn(spark)
 end
 
 function Downed:fixedupdate()

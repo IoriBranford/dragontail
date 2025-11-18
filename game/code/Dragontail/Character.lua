@@ -32,8 +32,22 @@ local testcircles = math.testcircles
 ---@field shadowcolor Color?
 ---@field animationdirections integer?
 ---@field emote Character?
+---@overload fun(type:string?, x:number?, y:number?, z:number?):Character
 local Character = class(Object)
 Character.attack = {}
+
+---@param typ string?
+---@param x number?
+---@param y number?
+---@param z number?
+function Character:_init(typ, x, y, z)
+    if typ then self.type = typ
+    else typ = self.type end
+    if x then self.x = x end
+    if y then self.y = y end
+    if z then self.z = z end
+    Object._init(self)
+end
 
 function Character:init()
     Characters = Characters or require "Dragontail.Stage.Characters"
@@ -84,9 +98,7 @@ end
 
 function Character:makeImpactSpark(attacker, sparktype)
     if sparktype then
-        local hitsparkcharacter = {
-            type = sparktype,
-        }
+        local hitsparkcharacter = Character(sparktype)
         hitsparkcharacter.x, hitsparkcharacter.y = math.mid(attacker.x, attacker.y, self.x, self.y)
         local z1, z2 =
             math.max(self.z, attacker.z),
@@ -97,17 +109,14 @@ function Character:makeImpactSpark(attacker, sparktype)
 end
 
 function Character:makeAfterImage()
-    local afterimage = Characters.spawn({
-        x = self.x,
-        y = self.y,
-        z = self.z,
-        asefile = self.asefile,
-        color = self.color,
-        texturealpha = self.texturealpha,
-        type = "afterimage"
-    })
+    local afterimage = Character("afterimage", self.x, self.y, self.z)
+    afterimage.asefile = self.asefile
+    afterimage.color = self.color
+    afterimage.texturealpha = self.texturealpha
+    afterimage.type = "afterimage"
     afterimage.originx, afterimage.originy = self:getOrigin()
     afterimage:setAseAnimation(self.aseanimation, self.animationframe)
+    return Characters.spawn(afterimage)
 end
 
 function Character:makePeriodicAfterImage(t, interval)
@@ -133,14 +142,13 @@ function Character:makeHurtParticle()
     local sinangle = sin(hurtangle)
     local velx = cosangle*speed
     local vely = sinangle*speed
-    return Characters.spawn {
-        type = self.hurtparticle,
-        x = self.x + velx,
-        y = self.y + vely,
-        z = self.z + self.bodyheight/2,
-        velx = velx,
-        vely = vely
-    }
+    local particle = Character(self.hurtparticle,
+        self.x + velx,
+        self.y + vely,
+        self.z + self.bodyheight/2)
+    particle.velx = velx
+    particle.vely = vely
+    return Characters.spawn(particle)
 end
 
 function Character:updateHurtColorCycle(t)

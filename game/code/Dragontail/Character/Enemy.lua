@@ -362,12 +362,9 @@ function Enemy:enterAndDropDown()
     until self.z == self.floorz
     Audio.play(self.jumplandsound)
     self:changeAnimation("FallRiseFromKnees", 1, 0)
-    Characters.spawn({
-        type = "spark-land-on-feet-dust",
-        x = self.x,
-        y = self.y + 1,
-        z = self.z,
-    })
+    local dust = Character("spark-land-on-feet-dust",
+        self.x, self.y + 1, self.z)
+    Characters.spawn(dust)
     coroutine.wait(9)
     return "stand", 3
 end

@@ -300,14 +300,12 @@ function Fighter:wallBump(thrower, oobx, ooby)
     if oobx ~= 0 or ooby ~= 0 then
         oobx, ooby = norm(oobx, ooby)
         local bodyradius = self.bodyradius or 1
-        Characters.spawn(
-            {
-                type = "spark-hit",
-                x = self.x + oobx*bodyradius,
-                y = self.y + ooby*bodyradius,
-                z = self.z + self.bodyheight/2
-            }
-        )
+        local spark = Character(
+            "spark-hit",
+            self.x + oobx*bodyradius,
+            self.y + ooby*bodyradius,
+            self.z + self.bodyheight/2)
+        Characters.spawn(spark)
     end
     self:stopAttack()
     self.health = self.health - (self.wallbumpdamage or 10)
@@ -375,14 +373,12 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
     if oobx ~= 0 or ooby ~= 0 then
         oobx, ooby = norm(oobx, ooby)
         local bodyradius = self.bodyradius or 1
-        Characters.spawn(
-            {
-                type = "spark-bighit",
-                x = self.x + oobx*bodyradius,
-                y = self.y + ooby*bodyradius,
-                z = self.z + self.bodyheight/2
-            }
-        )
+        local spark = Character(
+            "spark-bighit",
+            self.x + oobx*bodyradius,
+            self.y + ooby*bodyradius,
+            self.z + self.bodyheight/2)
+        Characters.spawn(spark)
     end
     self.health = self.health - (self.wallslamdamage or 25)
     self.velx, self.vely, self.velz = 0, 0, 0
@@ -477,19 +473,18 @@ function Fighter:shakeOffColor()
             local offsety = offsetdist*math.sin(offsetangle)
             local velx = offsetx/8
             local vely = offsety/8
-
-            Characters.spawn({
-                type = "particle",
-                x = self.x + offsetx,
-                y = self.y + offsety,
-                z = self.z,
-                velx = velx,
-                vely = vely,
-                velz = 30/16,
-                color = color,
-                gravity = 1/16,
-                lifetime = 30
-            })
+            local particle = Character(
+                "particle",
+                self.x + offsetx,
+                self.y + offsety,
+                self.z)
+            particle.velx = velx
+            particle.vely = vely
+            particle.velz = 30/16
+            particle.color = color
+            particle.gravity = 1/16
+            particle.lifetime = 30
+            Characters.spawn(particle)
         end
     end
 end
