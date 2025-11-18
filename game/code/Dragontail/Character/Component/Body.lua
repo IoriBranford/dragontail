@@ -85,6 +85,19 @@ function Body:accelerate(ax, ay)
     self.vely = self.vely + ay
 end
 
+function Body:forceTowardsVelXY(targetvelx, targetvely, force)
+    local velx, vely = self.velx, self.vely
+    local forcex = (targetvelx - velx)
+    local forcey = (targetvely - vely)
+    if math.lensq(forcex, forcey) <= force*force then
+        self.velx, self.vely = targetvelx, targetvely
+    else
+        forcex, forcey = math.norm(forcex, forcey)
+        self.velx = velx + forcex * force
+        self.vely = vely + forcey * force
+    end
+end
+
 function Body:accelerateTowardsVelXY(targetvelx, targetvely, mass, e)
     mass = math.max(mass or self.mass or 1, 1)
     e = e or (1/65536)
@@ -100,7 +113,7 @@ end
 
 function Body:accelerateTowardsVel3(targetvelx, targetvely, targetvelz, mass, e)
     mass = math.max(mass or self.mass or 1, 1)
-    e = e or (1/65536)
+    e = e or (1/256)
     local velx, vely, velz = self.velx, self.vely, self.velz
     velx = velx + (targetvelx - velx) / mass
     vely = vely + (targetvely - vely) / mass
