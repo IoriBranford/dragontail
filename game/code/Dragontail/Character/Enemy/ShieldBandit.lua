@@ -22,8 +22,11 @@ function ShieldBandit:duringStand()
     if not self:isCylinderFullyOnCamera(self.camera) then return end
     local nextstate
     local time = 10
+    local sightarc = self.sightarc or (math.pi/4)
     local function isComing(them)
-        if Body.isInTheirWay(self, them, time) then
+        if Face.isObjectInSight(self, them, sightarc)
+        and Body.isInTheirWay(self, them, time) then
+            Face.faceObject(self, them)
             nextstate = "raiseGuard"
             return "break"
         end
@@ -31,7 +34,9 @@ function ShieldBandit:duringStand()
     local function isThrownEnemyComing(them)
         if them.thrower
         and them.thrower.team == "players"
+        and Face.isObjectInSight(self, them, sightarc)
         and Body.isInTheirWay(self, them, time) then
+            Face.faceObject(self, them)
             nextstate = "raiseGuard"
             return "break"
         end
