@@ -290,66 +290,6 @@ function Character:isCylinderFullyOnCamera(camera)
     return iw and iw == w and ih == h
 end
 
-function True() return true end
-
----@param characters Character[]
----@param time integer?
----@param filter (fun(Character):boolean)?
-function Character:isAnyIncoming(characters, time, filter)
-    filter = filter or True
-    for _, character in ipairs(characters) do
-        if filter(character)
-        and self:areTheyComing(character, time) then
-            return true
-        end
-    end
-end
-
----@param characters Character[]
----@param time integer?
----@param filter (fun(Character):boolean)?
-function Character:getClosestIncoming(characters, time, filter)
-    filter = filter or True
-    local closest, closestdsq = nil, math.huge
-    local x, y = self.x, self.y
-    for _, character in ipairs(characters) do
-        if filter(character) then
-            local dsq = math.distsq(x, y, character.x, character.y)
-            if dsq < closestdsq then
-                if self:areTheyComing(character, time) then
-                    closest = character
-                    closestdsq = dsq
-                end
-            end
-        end
-    end
-    return closest
-end
-
----@param them Character
-function Character:areTheyComing(them, time)
-    if self.z + self.bodyheight < them.z
-    or them.z + self.bodyheight < self.z then
-        return
-    end
-    time = time or 1
-    local x, y = self.x, self.y
-    local theirx, theiry = them.x, them.y
-    local towardmex, towardmey = x - theirx, y - theiry
-    local ourradii = self.bodyradius + them.bodyradius
-    local theirvelx, theirvely = them.velx*time, them.vely*time
-    local distxy = math.len(towardmex, towardmey)
-
-    -- cos * speed * time * dist
-    -- = speed toward me * time * dist
-    -- = dist they will move toward me in time * dist from me
-    local dot = math.dot(theirvelx, theirvely, towardmex, towardmey)
-    if dot < distxy * (distxy - ourradii) then
-        return false
-    end
-    return true
-end
-
 function Character:disappear()
     self.disappeared = true
 end

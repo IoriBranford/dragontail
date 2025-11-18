@@ -3,6 +3,8 @@ local Guard = require "Dragontail.Character.Action.Guard"
 local Characters   = require "Dragontail.Stage.Characters"
 local Catcher      = require "Dragontail.Character.Component.Catcher"
 local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
+local Body                 = require "Dragontail.Character.Component.Body"
+local CollisionMask        = require "Dragontail.Character.Component.Body.CollisionMask"
 
 ---@class MuscleBandit:Enemy
 local MuscleBandit = class(Enemy)
@@ -22,18 +24,25 @@ end
 
 function MuscleBandit:duringApproach(opponent)
     if not self:isCylinderFullyOnCamera(self.camera) then return end
-    local time = self.catchintime or 20
-    if self:isAnyIncoming(Characters.getGroup("projectiles"), time,
-        function(projectile)
-            return projectile.thrower == opponent
-        end)
-    or self:isAnyIncoming(Characters.getGroup("enemies"), time,
-        function(enemy)
-            return enemy.thrower == opponent
-        end)
-    then
-        return "catchReady"
+    local nextstate
+    local time = 10
+    local function isComing(them)
+        if Body.isInTheirWay(self, them, time) then
+            nextstate = "catchReady"
+            return "break"
+        end
     end
+    local function isThrownEnemyComing(them)
+        if them.thrower
+        and them.thrower.team == "players"
+        and Body.isInTheirWay(self, them, time) then
+            nextstate = "catchReady"
+            return "break"
+        end
+    end
+    Characters.search("projectiles", isComing)
+    Characters.search("enemies", isThrownEnemyComing)
+    return nextstate
 end
 
 function MuscleBandit:duringPrepareAttack(target)

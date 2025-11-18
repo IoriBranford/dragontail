@@ -2,6 +2,8 @@ local Enemy = require "Dragontail.Character.Enemy"
 local Guard = require "Dragontail.Character.Action.Guard"
 local Face  = require "Dragontail.Character.Component.Face"
 local AttackTarget = require "Dragontail.Character.Component.AttackTarget"
+local Characters   = require "Dragontail.Stage.Characters"
+local Body         = require "Dragontail.Character.Component.Body"
 
 ---@class ShieldBandit:Enemy
 local ShieldBandit = class(Enemy)
@@ -18,25 +20,30 @@ end
 
 function ShieldBandit:duringStand()
     if not self:isCylinderFullyOnCamera(self.camera) then return end
-    local opponent = self.opponents[1]
-    local fromoppox, fromoppoy = self.x - opponent.x, self.y - opponent.y
-    local oppovelx, oppovely = opponent.velx, opponent.vely
-    local oppospeed = math.len(oppovelx, oppovely)
-    local dot = math.dot(fromoppox, fromoppoy, oppovelx, oppovely)
-    if 0 < dot and dot <= oppospeed*200 then
-        return "raiseGuard"
+    local nextstate
+    local time = 10
+    local function isComing(them)
+        if Body.isInTheirWay(self, them, time) then
+            nextstate = "raiseGuard"
+            return "break"
+        end
     end
+    local function isThrownEnemyComing(them)
+        if them.thrower
+        and them.thrower.team == "players"
+        and Body.isInTheirWay(self, them, time) then
+            nextstate = "raiseGuard"
+            return "break"
+        end
+    end
+    Characters.search("players", isComing)
+    Characters.search("projectiles", isComing)
+    Characters.search("enemies", isThrownEnemyComing)
+    return nextstate
 end
 
 function ShieldBandit:duringApproach(opponent)
-    if not self:isCylinderFullyOnCamera(self.camera) then return end
-    local fromoppox, fromoppoy = self.x - opponent.x, self.y - opponent.y
-    local oppovelx, oppovely = opponent.velx, opponent.vely
-    local oppospeed = math.len(oppovelx, oppovely)
-    local dot = math.dot(fromoppox, fromoppoy, oppovelx, oppovely)
-    if 0 < dot and dot <= oppospeed*200 then
-        return "raiseGuard"
-    end
+    return self:duringStand()
 end
 
 function ShieldBandit:duringHurt()

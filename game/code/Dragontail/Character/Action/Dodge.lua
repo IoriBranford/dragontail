@@ -15,7 +15,7 @@ local Dodge = {}
 
 function Dodge:getDodgeVector(incoming)
     local dodgewithintime = self.dodgewithintime or 30
-    if not self:areTheyComing(incoming, dodgewithintime) then
+    if not Body.isInTheirWay(self, incoming, dodgewithintime) then
         return
     end
     local oppox, oppoy, oppovelx, oppovely
