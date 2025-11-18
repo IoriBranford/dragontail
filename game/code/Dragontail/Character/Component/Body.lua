@@ -89,6 +89,7 @@ function Body:forceTowardsVelXY(targetvelx, targetvely, force)
     local velx, vely = self.velx, self.vely
     local forcex = (targetvelx - velx)
     local forcey = (targetvely - vely)
+    force = force or math.huge
     if math.lensq(forcex, forcey) <= force*force then
         self.velx, self.vely = targetvelx, targetvely
     else

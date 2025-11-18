@@ -20,7 +20,7 @@ function Recovering:fixedupdate()
     local player = self.character
 
     player:turnTowardsJoystick()
-    Body.accelerateTowardsVelXY(player, 0, 0, player.mass or 1)
+    player:decelerateXYto0()
 
     local caughtprojectile = player:catchProjectileAtJoystick()
     if caughtprojectile then

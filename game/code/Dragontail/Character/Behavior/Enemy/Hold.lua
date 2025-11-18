@@ -5,6 +5,7 @@ local StateMachine = require "Dragontail.Character.Component.StateMachine"
 local Behavior     = require "Dragontail.Character.Behavior"
 local Guard        = require "Dragontail.Character.Action.Guard"
 local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
+local Body                 = require "Dragontail.Character.Component.Body"
 
 ---@class EnemyHold:Behavior
 ---@field character Enemy
@@ -72,7 +73,7 @@ function EnemyHold:fixedupdate()
         enemy.faceturnspeed or (math.pi/64))
     enemy.holdangle = holdangle
 
-    enemy:accelerateTowardsVelXY(targetvelx, targetvely)
+    Body.forceTowardsVelXY(enemy, targetvelx, targetvely, enemy.accel)
     HoldOpponent.updateVelocities(enemy)
 
     local velx, vely = enemy.velx, enemy.vely

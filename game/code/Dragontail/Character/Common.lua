@@ -65,10 +65,7 @@ function Common:stayOnCameraOnceEntered()
 end
 
 function Common:decelerateXYto0()
-    local mass = self.mass or 1
-    if mass >= 1 then
-        Body.accelerateTowardsVelXY(self, 0, 0, mass)
-    end
+    Body.forceTowardsVelXY(self, 0, 0, self.accel)
 end
 
 function Common:turnTowardsOpponent()
@@ -191,7 +188,7 @@ function Common:itemWaitForPickup()
     while true do
         local finished
         t = (t + 1) % Period
-        self:accelerateTowardsVelXY(0, 0)
+        self:decelerateXYto0()
         if self.gravity == 0 then
             local _, _, _, penex
                 = Characters.keepCylinderIn(self.x, self.y, self.z, self.bodyradius, self.bodyheight, self)

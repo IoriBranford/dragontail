@@ -6,6 +6,7 @@ local Face         = require "Dragontail.Character.Component.Face"
 local Player       = require "Dragontail.Character.Player"
 local Mana         = require "Dragontail.Character.Component.Mana"
 local StateMachine = require "Dragontail.Character.Component.StateMachine"
+local Body         = require "Dragontail.Character.Component.Body"
 
 ---@class PlayerHoldEnemy:Behavior
 ---@field character Player
@@ -64,7 +65,7 @@ function PlayerHoldEnemy:fixedupdate()
         targetvely = iny * speed
     end
 
-    player:accelerateTowardsVelXY(targetvelx, targetvely)
+    Body.forceTowardsVelXY(player, targetvelx, targetvely, player.accel)
     local velx, vely = player.velx, player.vely
 
     local holdturnspeed = player.faceturnspeed or (math.pi/64)

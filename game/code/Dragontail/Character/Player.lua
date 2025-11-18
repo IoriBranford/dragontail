@@ -285,7 +285,7 @@ function Player:accelerateTowardsJoystick()
     local movespeed = self.speed or 1
     local targetvelx = inx * movespeed
     local targetvely = iny * movespeed
-    self:accelerateTowardsVelXY(targetvelx, targetvely)
+    Body.forceTowardsVelXY(self, targetvelx, targetvely, self.accel)
 end
 
 function Player:accelerateTowardsFace()
@@ -293,7 +293,7 @@ function Player:accelerateTowardsFace()
     local movespeed = self.speed or 1
     local targetvelx = inx * movespeed
     local targetvely = iny * movespeed
-    self:accelerateTowardsVelXY(targetvelx, targetvely)
+    Body.forceTowardsVelXY(self, targetvelx, targetvely, self.accel)
 end
 
 function Player:stopRunning()
@@ -385,7 +385,7 @@ function Player:aimThrow()
         targetvelx = inx * movespeed
         targetvely = iny * movespeed
 
-        self:accelerateTowardsVelXY(targetvelx, targetvely)
+        Body.forceTowardsVelXY(self, targetvelx, targetvely, self.accel)
 
         local lockonenemyscore = 128
         if lockonenemy then
@@ -503,7 +503,7 @@ function Player:throwWeapon(angle, numprojectiles)
     end
 
     for i = 1, self.throwtime or 6 do
-        self:accelerateTowardsVelXY(0, 0)
+        self:decelerateXYto0()
         yield()
     end
     return "walk"
@@ -563,7 +563,7 @@ function Player:spinAndKickEnemy(angle, enemy)
             targetvely = iny * speed
         end
 
-        self:accelerateTowardsVelXY(targetvelx, targetvely)
+        Body.forceTowardsVelXY(self, targetvelx, targetvely, self.accel)
 
         if math.ceil(spunmag / 2 / pi) < math.ceil((spunmag+spinmag) / 2 / pi) then
             Audio.play(self.state.sound)
@@ -608,7 +608,7 @@ function Player:victory()
     self:stopAttack()
     local i = 0
     while true do
-        self:accelerateTowardsVelXY(0, 0)
+        self:decelerateXYto0()
         -- self.z = abs(sin(i*pi/30) * 8)
         yield()
         i = i + 1

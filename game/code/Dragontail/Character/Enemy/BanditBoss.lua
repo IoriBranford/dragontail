@@ -6,6 +6,7 @@ local Stage      = require "Dragontail.Stage"
 local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
 local Face                 = require "Dragontail.Character.Component.Face"
 local Attacker             = require "Dragontail.Character.Component.Attacker"
+local Body                 = require "Dragontail.Character.Component.Body"
 
 --- Attacks:
 --- - Lance charge
@@ -159,7 +160,7 @@ function BanditBoss:getAttackSwitch(target)
 end
 
 function BanditBoss:duringPrepareAttack(target)
-    self:accelerateTowardsVelXY(0, 0, 4)
+    self:decelerateXYto0()
     Face.turnTowardsObject(self, target, self.faceturnspeed or 0,
         self.state.animation, self.state.frame1, self.state.loopframe)
     return self:getAttackSwitch(target)
