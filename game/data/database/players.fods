@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <office:document xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" office:version="1.4" office:mimetype="application/vnd.oasis.opendocument.spreadsheet">
- <office:meta><meta:creation-date>2025-07-28T18:51:31.014782996</meta:creation-date><meta:generator>LibreOffice/25.8.2.2$Linux_X86_64 LibreOffice_project/f7b0e4385108b95c134599502a7bccf0a41925c8</meta:generator><dc:date>2025-10-26T19:38:57.971881157</dc:date><meta:editing-duration>P1DT3H10M6S</meta:editing-duration><meta:editing-cycles>249</meta:editing-cycles><meta:document-statistic meta:table-count="3" meta:cell-count="1861" meta:object-count="0"/></office:meta>
+ <office:meta><meta:creation-date>2025-07-28T18:51:31.014782996</meta:creation-date><meta:generator>LibreOffice/25.8.3.2$Linux_X86_64 LibreOffice_project/36fba6fe035976f8f639ceb7793b8c12ae9d5be3</meta:generator><dc:date>2025-11-18T01:24:38.942374293</dc:date><meta:editing-duration>P1DT4H5M2S</meta:editing-duration><meta:editing-cycles>264</meta:editing-cycles><meta:document-statistic meta:table-count="3" meta:cell-count="1924" meta:object-count="0"/></office:meta>
  <office:settings>
   <config:config-item-set config:name="ooo:view-settings">
    <config:config-item config:name="VisibleAreaTop" config:type="int">0</config:config-item>
    <config:config-item config:name="VisibleAreaLeft" config:type="int">0</config:config-item>
-   <config:config-item config:name="VisibleAreaWidth" config:type="int">78578</config:config-item>
+   <config:config-item config:name="VisibleAreaWidth" config:type="int">79640</config:config-item>
    <config:config-item config:name="VisibleAreaHeight" config:type="int">28448</config:config-item>
    <config:config-item-map-indexed config:name="Views">
     <config:config-item-map-entry>
@@ -53,17 +53,17 @@
        <config:config-item config:name="UseTrailingEmptyLinesInLayout" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
       <config:config-item-map-entry config:name="states">
-       <config:config-item config:name="CursorPositionX" config:type="int">6</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">34</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">22</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">13</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">1</config:config-item>
        <config:config-item config:name="VerticalSplitPosition" config:type="int">1</config:config-item>
        <config:config-item config:name="ActiveSplitRange" config:type="short">3</config:config-item>
        <config:config-item config:name="PositionLeft" config:type="int">0</config:config-item>
-       <config:config-item config:name="PositionRight" config:type="int">1</config:config-item>
+       <config:config-item config:name="PositionRight" config:type="int">12</config:config-item>
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
-       <config:config-item config:name="PositionBottom" config:type="int">25</config:config-item>
+       <config:config-item config:name="PositionBottom" config:type="int">1</config:config-item>
        <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
        <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
        <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
@@ -76,7 +76,7 @@
       </config:config-item-map-entry>
      </config:config-item-map-named>
      <config:config-item config:name="ActiveTable" config:type="string">states</config:config-item>
-     <config:config-item config:name="HorizontalScrollbarWidth" config:type="int">2467</config:config-item>
+     <config:config-item config:name="HorizontalScrollbarWidth" config:type="int">1851</config:config-item>
      <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
      <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
      <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
@@ -140,7 +140,7 @@
    <config:config-item config:name="LoadReadonly" config:type="boolean">false</config:config-item>
    <config:config-item config:name="PrinterName" config:type="string">Generic Printer</config:config-item>
    <config:config-item config:name="PrinterPaperFromSetup" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="PrinterSetup" config:type="base64Binary">xAH+/0dlbmVyaWMgUHJpbnRlcgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAU0dFTlBSVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWAAMAsAAAAAAAAAAIAFZUAAAkbQAASm9iRGF0YSAxCnByaW50ZXI9R2VuZXJpYyBQcmludGVyCm9yaWVudGF0aW9uPVBvcnRyYWl0CmNvcGllcz0xCmNvbGxhdGU9ZmFsc2UKbWFyZ2luYWRqdXN0bWVudD0wLDAsJzAsMApjb2xvcmRlcHRoPTI0CmNvbG9yZGV2aWNlPTAKUFBEQ29udGV4dERhdGEKUGFnZVNpemU6TGV0dGVyAER1cGxleDpOb25lAAASAENPTVBBVF9EVVBMRVhfTU9ERQ8ARHVwbGV4TW9kZTo6T2ZmDABQUklOVEVSX05BTUUPAEdlbmVyaWMgUHJpbnRlcgsARFJJVkVSX05BTUUHAFNHRU5QUlQ=</config:config-item>
+   <config:config-item config:name="PrinterSetup" config:type="base64Binary">xAH+/0dlbmVyaWMgUHJpbnRlcgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAU0dFTlBSVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWAAMAsAAAAAAAAAAIAFZUAAAkbQAASm9iRGF0YSAxCnByaW50ZXI9R2VuZXJpYyBQcmludGVyCm9yaWVudGF0aW9uPVBvcnRyYWl0CmNvcGllcz0xCmNvbGxhdGU9ZmFsc2UKbWFyZ2luYWRqdXN0bWVudD0wLDAsJzAsMApjb2xvcmRlcHRoPTI0CmNvbG9yZGV2aWNlPTAKUFBEQ29udGV4dERhdGEKRHVwbGV4Ok5vbmUAUGFnZVNpemU6TGV0dGVyAAASAENPTVBBVF9EVVBMRVhfTU9ERQ8ARHVwbGV4TW9kZTo6T2ZmDABQUklOVEVSX05BTUUPAEdlbmVyaWMgUHJpbnRlcgsARFJJVkVSX05BTUUHAFNHRU5QUlQ=</config:config-item>
    <config:config-item config:name="RasterIsVisible" config:type="boolean">false</config:config-item>
    <config:config-item config:name="RasterResolutionX" config:type="int">1270</config:config-item>
    <config:config-item config:name="RasterResolutionY" config:type="int">1270</config:config-item>
@@ -438,99 +438,102 @@
    <style:table-column-properties fo:break-before="auto" style:column-width="0.3965in"/>
   </style:style>
   <style:style style:name="co50" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="0.6327in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="0.5575in"/>
   </style:style>
   <style:style style:name="co51" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="1.5016in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="0.4929in"/>
   </style:style>
   <style:style style:name="co52" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="1.6618in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.5016in"/>
   </style:style>
   <style:style style:name="co53" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="0.6898in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.6618in"/>
   </style:style>
   <style:style style:name="co54" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="0.4965in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="0.6898in"/>
   </style:style>
   <style:style style:name="co55" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="1.0398in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="0.4965in"/>
   </style:style>
   <style:style style:name="co56" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="0.7965in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.0398in"/>
   </style:style>
   <style:style style:name="co57" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="0.4909in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="0.7965in"/>
   </style:style>
   <style:style style:name="co58" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="1.4366in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="0.4909in"/>
   </style:style>
   <style:style style:name="co59" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="1.0965in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.4366in"/>
   </style:style>
   <style:style style:name="co60" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="0.8575in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.0965in"/>
   </style:style>
   <style:style style:name="co61" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="1.2862in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="0.8575in"/>
   </style:style>
   <style:style style:name="co62" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="2.6374in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.2862in"/>
   </style:style>
   <style:style style:name="co63" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="2.6484in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.6374in"/>
   </style:style>
   <style:style style:name="co64" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="2.1661in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.6484in"/>
   </style:style>
   <style:style style:name="co65" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="0.9252in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.1661in"/>
   </style:style>
   <style:style style:name="co66" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="1.0937in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="0.9252in"/>
   </style:style>
   <style:style style:name="co67" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="1.5898in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.0937in"/>
   </style:style>
   <style:style style:name="co68" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="1.0535in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.5898in"/>
   </style:style>
   <style:style style:name="co69" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="0.911in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.0535in"/>
   </style:style>
   <style:style style:name="co70" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="0.5681in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="0.911in"/>
   </style:style>
   <style:style style:name="co71" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="2.6965in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="0.5681in"/>
   </style:style>
   <style:style style:name="co72" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="2.6272in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.6965in"/>
   </style:style>
   <style:style style:name="co73" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="2.7984in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.6272in"/>
   </style:style>
   <style:style style:name="co74" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="3.0992in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.7984in"/>
   </style:style>
   <style:style style:name="co75" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="2.1925in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="3.0992in"/>
   </style:style>
   <style:style style:name="co76" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="0.8945in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.1925in"/>
   </style:style>
   <style:style style:name="co77" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="2.739in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="0.8945in"/>
   </style:style>
   <style:style style:name="co78" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="2.0098in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.739in"/>
   </style:style>
   <style:style style:name="co79" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="2.1173in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.0098in"/>
   </style:style>
   <style:style style:name="co80" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="2.0311in"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.1173in"/>
   </style:style>
   <style:style style:name="co81" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.0311in"/>
+  </style:style>
+  <style:style style:name="co82" style:family="table-column">
    <style:table-column-properties fo:break-before="auto" style:column-width="2.3319in"/>
   </style:style>
   <style:style style:name="ro1" style:family="table-row">
@@ -596,7 +599,7 @@
      <text:p><text:sheet-name>???</text:sheet-name><text:s/>(<text:title>???</text:title>)</text:p>
     </style:region-left>
     <style:region-right>
-     <text:p><text:date style:data-style-name="N2" text:date-value="2025-10-26">00/00/0000</text:date>, <text:time style:data-style-name="N2" text:time-value="17:47:40.612721338">00:00:00</text:time></text:p>
+     <text:p><text:date style:data-style-name="N2" text:date-value="2025-11-18">00/00/0000</text:date>, <text:time style:data-style-name="N2" text:time-value="00:29:34.267462043">00:00:00</text:time></text:p>
     </style:region-right>
    </style:header>
    <style:header-left style:display="false"/>
@@ -2423,7 +2426,8 @@
     <table:table-column table:style-name="co48" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co49" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co50" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co51" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co51" table:default-cell-style-name="ce1"/>
+    <table:table-column table:style-name="co52" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co29" table:number-columns-repeated="3" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co29" table:default-cell-style-name="ce1"/>
     <table:table-column table:style-name="co29" table:number-columns-repeated="16347" table:default-cell-style-name="Default"/>
@@ -2494,6 +2498,9 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>speed</text:p>
      </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="string" calcext:value-type="string">
+      <text:p>accel</text:p>
+     </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>faceturnspeed</text:p>
      </table:table-cell>
@@ -2545,6 +2552,9 @@
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -2591,6 +2601,9 @@
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()/5" office:value-type="float" office:value="0.628318530717959" calcext:value-type="float">
       <text:p>0.628318530717959</text:p>
      </table:table-cell>
@@ -2636,6 +2649,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()/5" office:value-type="float" office:value="0.628318530717959" calcext:value-type="float">
       <text:p>0.628318530717959</text:p>
@@ -2686,6 +2702,9 @@
      <table:table-cell office:value-type="float" office:value="5" calcext:value-type="float">
       <text:p>5</text:p>
      </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -2731,6 +2750,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="15" calcext:value-type="float">
       <text:p>15</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="3" calcext:value-type="float">
+      <text:p>3</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()/5" office:value-type="float" office:value="0.628318530717959" calcext:value-type="float">
       <text:p>0.628318530717959</text:p>
@@ -2778,6 +2800,9 @@
      <table:table-cell office:value-type="float" office:value="15" calcext:value-type="float">
       <text:p>15</text:p>
      </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="3" calcext:value-type="float">
+      <text:p>3</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()/5" office:value-type="float" office:value="0.628318530717959" calcext:value-type="float">
       <text:p>0.628318530717959</text:p>
      </table:table-cell>
@@ -2823,6 +2848,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()/8" office:value-type="float" office:value="0.392699081698724" calcext:value-type="float">
       <text:p>0.392699081698724</text:p>
@@ -2873,6 +2901,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()/6" office:value-type="float" office:value="0.523598775598299" calcext:value-type="float">
       <text:p>0.523598775598299</text:p>
      </table:table-cell>
@@ -2911,6 +2942,9 @@
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="2" office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
@@ -2961,6 +2995,9 @@
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -3006,6 +3043,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
@@ -3059,6 +3099,9 @@
      <table:table-cell office:value-type="float" office:value="8" calcext:value-type="float">
       <text:p>8</text:p>
      </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="0.125" calcext:value-type="float">
+      <text:p>0.125</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -3107,6 +3150,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="0.25" calcext:value-type="float">
+      <text:p>0.25</text:p>
+     </table:table-cell>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
@@ -3154,6 +3200,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
@@ -3206,6 +3255,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
@@ -6373,6 +6425,9 @@
      <table:table-cell office:value-type="float" office:value="8" calcext:value-type="float">
       <text:p>8</text:p>
      </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="0.5" calcext:value-type="float">
+      <text:p>0.5</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()/32" office:value-type="float" office:value="0.098174770424681" calcext:value-type="float">
       <text:p>0.098174770424681</text:p>
      </table:table-cell>
@@ -6415,6 +6470,9 @@
      <table:table-cell office:value-type="float" office:value="-6" calcext:value-type="float">
       <text:p>-6</text:p>
      </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -6456,6 +6514,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="-6" calcext:value-type="float">
       <text:p>-6</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
@@ -6502,6 +6563,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -6547,6 +6611,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -6588,6 +6655,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="-6" calcext:value-type="float">
       <text:p>-6</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
@@ -6634,6 +6704,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -6675,6 +6748,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="-6" calcext:value-type="float">
       <text:p>-6</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
@@ -6720,6 +6796,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
@@ -6767,6 +6846,9 @@
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()/3" office:value-type="float" office:value="1.0471975511966" calcext:value-type="float">
       <text:p>1.0471975511966</text:p>
      </table:table-cell>
@@ -6812,6 +6894,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()/3" office:value-type="float" office:value="1.0471975511966" calcext:value-type="float">
       <text:p>1.0471975511966</text:p>
@@ -6862,6 +6947,9 @@
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()/3" office:value-type="float" office:value="1.0471975511966" calcext:value-type="float">
       <text:p>1.0471975511966</text:p>
      </table:table-cell>
@@ -6910,6 +6998,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()/3" office:value-type="float" office:value="1.0471975511966" calcext:value-type="float">
       <text:p>1.0471975511966</text:p>
@@ -6960,6 +7051,9 @@
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()*3/16" office:value-type="float" office:value="0.589048622548086" calcext:value-type="float">
       <text:p>0.589048622548086</text:p>
      </table:table-cell>
@@ -7008,6 +7102,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()/8" office:value-type="float" office:value="0.392699081698724" calcext:value-type="float">
       <text:p>0.392699081698724</text:p>
@@ -7066,8 +7163,11 @@
      <table:table-cell office:value-type="float" office:value="8" calcext:value-type="float">
       <text:p>8</text:p>
      </table:table-cell>
-     <table:table-cell table:formula="of:=PI()/32" office:value-type="float" office:value="0.098174770424681" calcext:value-type="float">
-      <text:p>0.098174770424681</text:p>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="0.5" calcext:value-type="float">
+      <text:p>0.5</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=PI()/16" office:value-type="float" office:value="0.196349540849362" calcext:value-type="float">
+      <text:p>0.196349540849362</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="3"/>
      <table:table-cell table:style-name="Default"/>
@@ -7120,6 +7220,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="0.5" calcext:value-type="float">
+      <text:p>0.5</text:p>
+     </table:table-cell>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
@@ -7168,6 +7271,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
@@ -7221,6 +7327,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()/64" office:value-type="float" office:value="0.0490873852123405" calcext:value-type="float">
       <text:p>0.0490873852123405</text:p>
      </table:table-cell>
@@ -7272,6 +7381,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()/8" office:value-type="float" office:value="0.392699081698724" calcext:value-type="float">
       <text:p>0.392699081698724</text:p>
      </table:table-cell>
@@ -7320,6 +7432,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
@@ -7370,6 +7485,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -7418,6 +7536,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
@@ -7473,6 +7594,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
@@ -7532,6 +7656,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -7592,6 +7719,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -7648,6 +7778,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
@@ -7711,6 +7844,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -7770,6 +7906,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -7824,6 +7963,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
@@ -7890,6 +8032,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -7944,6 +8089,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
@@ -8000,6 +8148,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -8055,6 +8206,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="2" calcext:value-type="float">
+      <text:p>2</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -8108,6 +8262,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="2" calcext:value-type="float">
+      <text:p>2</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -8158,6 +8315,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="2" calcext:value-type="float">
+      <text:p>2</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
@@ -8214,6 +8374,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="float" office:value="2" calcext:value-type="float">
+      <text:p>2</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -8268,6 +8431,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
@@ -8325,6 +8491,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -8369,6 +8538,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
@@ -8425,6 +8597,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -8474,6 +8649,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -8520,6 +8698,9 @@
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
      </table:table-cell>
      <table:table-cell table:formula="of:=PI()/8" office:value-type="float" office:value="0.392699081698724" calcext:value-type="float">
       <text:p>0.392699081698724</text:p>
@@ -8572,6 +8753,9 @@
      <table:table-cell table:style-name="ce1" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
      </table:table-cell>
+     <table:table-cell table:style-name="ce8" office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0</text:p>
+     </table:table-cell>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
@@ -8620,6 +8804,9 @@
      </table:table-cell>
      <table:table-cell table:style-name="ce1" office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
       <text:p>FALSE</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce8" office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
@@ -8673,6 +8860,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -8718,6 +8908,9 @@
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
       <text:p>4</text:p>
      </table:table-cell>
+     <table:table-cell office:value-type="boolean" office:boolean-value="false" calcext:value-type="boolean">
+      <text:p>FALSE</text:p>
+     </table:table-cell>
      <table:table-cell table:formula="of:=PI()" office:value-type="float" office:value="3.14159265358979" calcext:value-type="float">
       <text:p>3.14159265358979</text:p>
      </table:table-cell>
@@ -8727,16 +8920,14 @@
     </table:table-row>
    </table:table>
    <table:table table:name="properties" table:style-name="ta1">
-    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
-    <table:table-column table:style-name="co52" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co53" table:number-columns-repeated="2" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co54" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co53" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co54" table:number-columns-repeated="2" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co55" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co56" table:number-columns-repeated="2" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co56" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co57" table:number-columns-repeated="2" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co7" table:default-cell-style-name="ce9"/>
     <table:table-column table:style-name="co34" table:default-cell-style-name="ce9"/>
-    <table:table-column table:style-name="co54" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co57" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co55" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co58" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co59" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co60" table:default-cell-style-name="Default"/>
@@ -8748,21 +8939,22 @@
     <table:table-column table:style-name="co66" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co67" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co68" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co29" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co69" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co70" table:default-cell-style-name="ce1"/>
-    <table:table-column table:style-name="co71" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co29" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co70" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co71" table:default-cell-style-name="ce1"/>
     <table:table-column table:style-name="co72" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co73" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co74" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co75" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co76" table:default-cell-style-name="ce8"/>
-    <table:table-column table:style-name="co77" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co76" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co77" table:default-cell-style-name="ce8"/>
     <table:table-column table:style-name="co78" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co79" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co80" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co81" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co43" table:default-cell-style-name="Default"/>
-    <table:table-column table:style-name="co81" table:number-columns-repeated="3" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co82" table:number-columns-repeated="3" table:default-cell-style-name="Default"/>
     <table:table-row table:style-name="ro1">
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>character</text:p>
