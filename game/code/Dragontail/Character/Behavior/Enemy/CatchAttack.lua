@@ -5,12 +5,12 @@ local Guard              = require "Dragontail.Character.Action.Guard"
 local Face               = require "Dragontail.Character.Component.Face"
 
 local CatchAttack = pooledclass(Behavior)
-CatchAttack._nrec = Behavior._nrec + 1
+CatchAttack._nrec = Behavior._nrec + 2
 
+---@param hit AttackHit
 function CatchAttack:start(hit)
     local enemy = self.character
     local attacker = hit.attacker
-    self.attacker = attacker
 
     Face.faceObject(enemy, attacker,
         enemy.state.animation, enemy.animationframe, enemy.state.loopframe)
@@ -29,6 +29,9 @@ function CatchAttack:start(hit)
         end
     end
     Guard.stopGuarding(enemy)
+
+    self.attacker = not attacker.disappeared and attacker
+    self.attackerteam = attacker.team
 end
 
 
@@ -36,13 +39,17 @@ function CatchAttack:fixedupdate()
     local enemy = self.character
     local attacker = self.attacker
 
-    Face.faceObject(enemy, attacker,
-        enemy.state.animation, enemy.animationframe, enemy.state.loopframe)
+    if attacker then
+        Face.faceObject(enemy, attacker,
+            enemy.state.animation, enemy.animationframe, enemy.state.loopframe)
+    end
 
     enemy:decelerateXYto0()
     HoldOpponent.updateVelocities(enemy)
-    if attacker.team == "enemies"
-    or attacker.team == "projectiles" then
+
+    local attackerteam = self.attackerteam
+    if attackerteam == "enemies"
+    or attackerteam == "projectiles" then
         enemy:updateFlash(enemy.statetime)
     end
 end
@@ -63,9 +70,9 @@ function CatchAttack:timeout()
         return "throwBackProjectile"
     end
 
-    if attacker.team == "players" then
+    if attacker and attacker.team == "players" then
         return "hold", attacker
-    elseif attacker.team == "enemies"
+    elseif attacker and attacker.team == "enemies"
     and HoldOpponent.isHolding(enemy, attacker) then
         local angle = enemy.holdangle
         HoldOpponent.stopHolding(enemy, attacker)
