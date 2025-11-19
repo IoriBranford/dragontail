@@ -262,17 +262,28 @@ function Shoot:launchProjectile(type, dirx, diry, dirz, attackid)
     return Characters.spawn(projectile)
 end
 
-function Shoot.MakeTrajectoryDots(trajectory, dotscale, dotcolor)
+function Shoot.UpdateTrajectoryDots(dots, trajectory, dotscale, dotcolor)
     dotscale = dotscale or 1
     for i = 3, #trajectory, 3 do
         local x = trajectory[i-2]
         local y = trajectory[i-1]
         local z = trajectory[i]
-        local point = Character("projectile-path-point", x, y, z)
-        point.scalex = dotscale
-        point.scaley = dotscale
-        point.color = dotcolor
-        Characters.spawn (point)
+        local dot = dots[i]
+        if not dot then
+            dot = Character("projectile-path-point")
+            Characters.spawn(dot)
+            dots[i-2] = dot
+            dots[i-1] = dot
+            dots[i] = dot
+        end
+        dot.x, dot.y, dot.z = x, y, z
+        dot.scalex = dotscale
+        dot.scaley = dotscale
+        dot.color = dotcolor
+    end
+    for i = #dots, #trajectory+1, -1 do
+        dots[i]:disappear()
+        dots[i] = nil
     end
 end
 

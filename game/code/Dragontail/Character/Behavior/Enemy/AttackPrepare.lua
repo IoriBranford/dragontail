@@ -12,7 +12,9 @@ AttackPrepare._nrec = Behavior._nrec + 1
 function AttackPrepare:start()
     local enemy = self.character
     enemy.numopponentshit = 0
-    self.trajectory = enemy.attack.projectiletype and {}
+    self.trajectory = enemy.attack.projectiletype and {
+        dots = {}
+    }
 end
 
 function AttackPrepare:fixedupdate()
@@ -30,7 +32,7 @@ function AttackPrepare:fixedupdate()
         local scale = 1 + timeleft/statetime
         local alpha = math.max(0, math.min(1, 1 - timeleft/statetime))
         local color = Color.asARGBInt(1, .5, .5, alpha)
-        Shoot.MakeTrajectoryDots(trajectory, scale, color)
+        Shoot.UpdateTrajectoryDots(trajectory.dots, trajectory, scale, color)
         for i = #trajectory, 1, -1 do
             trajectory[i] = nil
         end
@@ -45,13 +47,16 @@ end
 function AttackPrepare:interrupt(...)
     local enemy = self.character
     enemy:resetFlash()
+    if self.trajectory then
+        for _, dot in ipairs(self.trajectory.dots) do
+            dot:disappear()
+        end
+    end
     return ...
 end
 
 function AttackPrepare:timeout(...)
-    local enemy = self.character
-    enemy:resetFlash()
-    return ...
+    return self:interrupt(...)
 end
 
 return AttackPrepare
