@@ -39,7 +39,6 @@ function Characters.init(scene_, nextid_, camera_)
         projectiles = {},
         solids = solids,
         triggers = {},
-        all = allcharacters
     }
     scene = scene_
     camera = Characters.spawn(camera_)
@@ -60,7 +59,7 @@ function Characters.quit()
 end
 
 function Characters.getGroup(group)
-    return groups[group]
+    return group == "all" and allcharacters or groups[group]
 end
 
 function Characters.spawn(object)
