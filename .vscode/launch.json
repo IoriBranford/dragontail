@@ -20,7 +20,7 @@
             "program": {
                 "command": "love"
             },
-            "args": ["${workspaceFolder}/game", "--profile"]
+            "args": ["${workspaceFolder}/game", "--profile", "--drawstats"]
         },
         {
             "name": "Release",
