@@ -206,14 +206,15 @@ function Characters.fixedupdateLostEnemies()
     end
 end
 
-local function nop() end
-
-local function pruneCharacters(characters, f)
+---@param characters Character[]
+---@param release boolean
+local function pruneCharacters(characters, release)
     local n = #characters
-    f = f or nop
     for i = n, 1, -1 do
         if characters[i].disappeared then
-            f(characters[i])
+            if release then
+                characters[i]:release()
+            end
             characters[i] = characters[n]
             characters[n] = nil
             n = n - 1
@@ -222,11 +223,11 @@ local function pruneCharacters(characters, f)
 end
 
 function Characters.pruneDisappeared()
-    for _, characters in pairs(groups) do
-        pruneCharacters(characters)
-    end
-    pruneCharacters(allcharacters, Character.release)
     scene:prune(Character.hasDisappeared)
+    for _, characters in pairs(groups) do
+        pruneCharacters(characters, false)
+    end
+    pruneCharacters(allcharacters, true)
 end
 
 function Characters.update(dsecs, fixedfrac)
