@@ -211,6 +211,7 @@ function Common:itemWaitForPickup()
                 end
             else
                 self.color = Color.White
+                self.texturealpha = 1
             end
         elseif self.givemana then
             if opponent.manastore < opponent.manastoremax then
@@ -228,6 +229,7 @@ function Common:itemWaitForPickup()
                 end
             else
                 self.color = Color.White
+                self.texturealpha = 1
             end
         elseif self.giveweapon then
             if t == 0 then
