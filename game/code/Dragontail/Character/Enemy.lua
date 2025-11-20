@@ -66,19 +66,19 @@ function Enemy:updateFlash(t)
     local flash = self:getAttackFlash(t)
     local color = Color.White
 
-    if self.canbeattacked and not Guard.isGuarding(self) then
-        if self.canbegrabbed then
-            color = Color.White
-        else
-            color = FlashColors.SuggestAttack
-        end
-    else
-        if self.canbegrabbed then
-            color = FlashColors.SuggestGrab
-        else
-            color = FlashColors.SuggestAvoid
-        end
-    end
+    -- if self.canbeattacked and not Guard.isGuarding(self) then
+    --     if self.canbegrabbed then
+    --         color = Color.White
+    --     else
+    --         color = FlashColors.SuggestAttack
+    --     end
+    -- else
+    --     if self.canbegrabbed then
+    --         color = FlashColors.SuggestGrab
+    --     else
+    --         color = FlashColors.SuggestAvoid
+    --     end
+    -- end
     self.color = color
     self.texturealpha = flash
 end
