@@ -31,7 +31,7 @@ LOVE_APPIMAGE_URL=https://github.com/love2d/love/releases/download/${LOVE_VERSIO
 LOVE_APPIMAGE=love-${LOVE_VERSION}-${ARCH}.AppImage
 
 APPIMAGETOOL=appimagetool-${ARCH}.AppImage
-APPIMAGETOOL_RELEASE=13
+APPIMAGETOOL_RELEASE=continuous
 APPIMAGETOOL_URL=https://github.com/AppImage/AppImageKit/releases/download/${APPIMAGETOOL_RELEASE}
 
 GAME_APPDIR=${GAME_TITLE_NOSPACE}.AppDir
