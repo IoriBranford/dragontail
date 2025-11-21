@@ -29,7 +29,7 @@ local co_status = coroutine.status
 
 ---@alias StateFunction fun(self:StateMachine):string?,any,any,any,any,any,any,any
 
----@class StateMachine:Character,Face
+---@class StateMachine:Face
 ---@field state State
 ---@field nextstate string?
 ---@field statetime integer?
@@ -257,6 +257,19 @@ function StateMachine:release()
     if self.statebehavior then
         self.statebehavior:_release()
         self.statebehavior = nil
+    end
+end
+
+function StateMachine:draw()
+    if self.state then
+        local font = Assets.getFont("TinyUnicode", 16)
+        if font then
+            love.graphics.setColor(1, 1, 1, 1)
+            local w = love.graphics.getWidth()
+            love.graphics.printf(self.state.state, font,
+                self.x - w/2, self.y - self.z - self.bodyheight - font:getHeight(),
+                w, "center")
+        end
     end
 end
 
