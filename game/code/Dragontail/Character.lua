@@ -33,7 +33,7 @@ local testcircles = math.testcircles
 ---@field animationdirections integer?
 ---@field emote Character?
 ---@overload fun(type:string?, x:number?, y:number?, z:number?):Character
-local Character = pooledclass(Object)
+local Character = class(Object)
 Character.attack = {}
 
 ---@param typ string?
@@ -307,7 +307,6 @@ end
 
 function Character:release()
     StateMachine.release(self)
-    self:_release()
 end
 
 return Character
