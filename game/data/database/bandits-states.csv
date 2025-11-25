@@ -13,13 +13,13 @@ axe-throw,30,axe-throw2,axe-throw,Dragontail.Character.Behavior.Enemy.AttackPrep
 axe-throw2,40,stand,axe-throw,Dragontail.Character.Behavior.Enemy.AttackExecute,,,throwB,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing3.mp3,,0,0,0,0,1,,,,
 axe-throw-until-empty,30,axe-throw-until-empty2,axe-throw,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,SwingWindup,0,TRUE,TRUE,FALSE,,data/sounds/man_heavy/attack4.mp3,,0,3.14159265358979,0,0,1,,,,
 axe-throw-until-empty2,40,attackIfAmmoElseLeave,axe-throw,Dragontail.Character.Behavior.Enemy.AttackExecute,,,throwB,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing3.mp3,,0,0,0,0,1,,,,
-bow-shot,60,bow-shot2,bow-shot,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,ShootWindup,0,TRUE,TRUE,FALSE,,data/sounds/combat/bowdraw.mp3,,0,3.14159265358979,0,0,1,,,,300
+bow-shot,90,bow-shot2,bow-shot,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,ShootWindup,0,TRUE,TRUE,FALSE,,data/sounds/combat/bowdraw.mp3,,0,3.14159265358979,0,0,1,,,,300
 bow-shot2,40,stand,bow-shot,Dragontail.Character.Behavior.Enemy.AttackExecute,,,ShootAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/arrowfly.mp3,,0,0,0,0,1,,,,
 bow-shot-until-empty,90,bow-shot-until-empty2,bow-shot,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,ShootWindup,0,TRUE,TRUE,FALSE,,data/sounds/combat/bowdraw.mp3,,0,3.14159265358979,0,0,1,,,,
 bow-shot-until-empty2,40,attackIfAmmoElseLeave,bow-shot,Dragontail.Character.Behavior.Enemy.AttackExecute,,,ShootAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/arrowfly.mp3,,0,0,0,0,1,,,,
-sling-shot,60,sling-shot2,sling-shot,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,ShootWindup,0,TRUE,TRUE,FALSE,,data/sounds/combat/bowdraw.mp3,,0,3.14159265358979,0,0,1,,,,300
+sling-shot,90,sling-shot2,sling-shot,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,ShootWindup,0,TRUE,TRUE,FALSE,,data/sounds/combat/bowdraw.mp3,,0,3.14159265358979,0,0,1,,,,300
 sling-shot2,40,stand,sling-shot,Dragontail.Character.Behavior.Enemy.AttackExecute,,,ShootAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/arrowfly.mp3,,0,0,0,0,1,,,,
-sling-shot-until-empty,120,sling-shot-until-empty2,sling-shot,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,ShootWindup,0,TRUE,TRUE,FALSE,,data/sounds/combat/bowdraw.mp3,,0,3.14159265358979,0,0,1,,,,
+sling-shot-until-empty,90,sling-shot-until-empty2,sling-shot,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,ShootWindup,0,TRUE,TRUE,FALSE,,data/sounds/combat/bowdraw.mp3,,0,3.14159265358979,0,0,1,,,,
 sling-shot-until-empty2,40,attackIfAmmoElseLeave,sling-shot,Dragontail.Character.Behavior.Enemy.AttackExecute,,,ShootAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/arrowfly.mp3,,0,0,0,0,1,,,,
 shield-counter-bash,10,shield-counter-bash2,shield-bash,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,SwingWindup,0,FALSE,FALSE,FALSE,,data/sounds/man_medium/attack1.mp3,,0,0,0,10,1,,,,
 shield-counter-bash2,20,lowerGuard,shield-bash,Dragontail.Character.Behavior.Enemy.AttackExecute,,,SwingAttack,0,FALSE,FALSE,FALSE,,data/sounds/combat/swing1.mp3,,0,0,0,10,1,,,,
