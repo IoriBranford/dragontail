@@ -1719,7 +1719,7 @@ to sprint past archers</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="403" gid="7259" x="2944" y="792" width="64" height="64">
+   <object id="403" gid="7259" x="2944" y="840" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="20"/>
      <property name="defaultattack" value="sling-shot-until-empty"/>

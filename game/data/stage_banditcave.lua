@@ -22683,7 +22683,7 @@ return {
               type = "",
               shape = "rectangle",
               x = 2944,
-              y = 792,
+              y = 840,
               width = 64,
               height = 64,
               rotation = 0,
