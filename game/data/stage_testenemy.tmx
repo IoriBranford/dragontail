@@ -8,7 +8,7 @@
  <tileset firstgid="2817" source="sprites/player/rose/rose-winged-main.tsx"/>
  <tileset firstgid="2818" source="sprites/player/rose/rose-main.tsx"/>
  <tileset firstgid="2819" source="sprites/test/enemy.tsx"/>
- <tileset firstgid="2820" source="sprites/bandit/muscle.tsx"/>
+ <tileset firstgid="2820" source="sprites/bandit/muscle-orange.tsx"/>
  <layer id="1" name="Tile Layer 1" width="30" height="20">
   <data encoding="base64" compression="zlib">
    <chunk x="0" y="0" width="15" height="9">

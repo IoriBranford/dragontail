@@ -15973,7 +15973,7 @@ return {
       spacing = 0,
       margin = 0,
       columns = 1,
-      image = "sprites/bandit/muscle.ase",
+      image = "sprites/bandit/muscle-orange.ase",
       imagewidth = 128,
       imageheight = 128,
       objectalignment = "bottom",
