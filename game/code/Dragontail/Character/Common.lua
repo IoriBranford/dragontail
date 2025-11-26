@@ -155,6 +155,21 @@ function Common:containerBreak()
     return "blinkOut", 30
 end
 
+function Common:respawn()
+    local x, y, z = self.x, self.y, self.z
+    local respawnpoint = self.respawnpoint
+    if respawnpoint then
+        x = respawnpoint.x or x
+        y = respawnpoint.y or y
+        z = respawnpoint.z or z
+    end
+    local typ = self.respawntype or self.type
+    local new = Character(typ, x, y, z)
+    new.respawnpoint = new.respawnpoint or respawnpoint
+    Characters.spawn(new)
+    return new
+end
+
 function Common:itemDrop(y0)
     -- self.velz = self.popoutspeed or 8
     -- local gravity = self.fallgravity or .5
