@@ -19774,7 +19774,7 @@ return {
               name = "camerawarpwhendone",
               type = "",
               shape = "point",
-              x = 720,
+              x = 240,
               y = 1008,
               width = 0,
               height = 0,

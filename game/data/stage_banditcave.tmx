@@ -939,7 +939,7 @@ and tap    to throw</text>
     <property name="exitdoor" type="object" value="235"/>
     <property name="sequence" value="unlockDoorToNextArea"/>
    </properties>
-   <object id="260" name="camerawarpwhendone" x="720" y="1008">
+   <object id="260" name="camerawarpwhendone" x="240" y="1008">
     <point/>
    </object>
    <object id="465" template="mapobjects/trigger/startSequence.tx" name="exittrigger" type="Trigger" x="2752" y="96">
