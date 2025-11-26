@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="62" nextobjectid="644">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="62" nextobjectid="647">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -56,6 +56,7 @@
  <tileset firstgid="7288" source="sprites/weapons/spikefruit-onground.tsx"/>
  <tileset firstgid="7289" source="sprites/items/lifefruit-hanging.tsx"/>
  <tileset firstgid="7290" source="sprites/items/lifefruit.tsx"/>
+ <tileset firstgid="7291" source="sprites/weapons/bigstone.tsx"/>
  <layer id="2" name="floor" width="200" height="12">
   <properties>
    <property name="drawz" type="float" value="-2"/>
@@ -382,19 +383,20 @@
    <object id="636" template="mapobjects/OutwardBoundary.tx" x="960" y="24">
     <polygon points="0,-24 0,72 32,40 448,40 480,72 480,-24"/>
    </object>
-   <object id="637" name="Direct" x="1160" y="24" width="248" height="16">
+   <object id="637" name="Direct" x="1128" y="16" width="248" height="16">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Move into large body to grab it</text>
    </object>
-   <object id="639" name="Direct" x="1152" y="40" width="288" height="16">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff"> to launch it in    direction</text>
+   <object id="639" name="Direct" x="1104" y="40" width="288" height="16">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Then launch with    direction +</text>
    </object>
-   <object id="638" name="joystick" gid="6856" x="1136" y="40" width="16" height="16"/>
-   <object id="643" name="joystick" gid="6856" x="1288" y="56" width="16" height="16"/>
-   <object id="640" name="attackbutton" gid="7267" x="1112" y="48" width="14" height="14"/>
-   <object id="641" gid="7269" x="1144" y="48" width="14" height="14"/>
-   <object id="642" name="or" x="1120" y="40" width="16" height="16">
+   <object id="638" name="joystick" gid="6856" x="1104" y="32" width="16" height="16"/>
+   <object id="643" name="joystick" gid="6856" x="1240" y="56" width="16" height="16"/>
+   <object id="640" name="attackbutton" gid="7267" x="1368" y="48" width="14" height="14"/>
+   <object id="641" gid="7269" x="1400" y="48" width="14" height="14"/>
+   <object id="642" name="or" x="1376" y="40" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
+   <object id="644" template="mapobjects/items/bigstone.tx" type="big-stone" x="1200" y="120"/>
   </objectgroup>
   <objectgroup id="61" name="learngrabandthrow" class="Room"/>
   <objectgroup id="41" name="tolearnitems" class="Room">
