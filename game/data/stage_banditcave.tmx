@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="62" nextobjectid="647">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="62" nextobjectid="648">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -57,6 +57,7 @@
  <tileset firstgid="7289" source="sprites/items/lifefruit-hanging.tsx"/>
  <tileset firstgid="7290" source="sprites/items/lifefruit.tsx"/>
  <tileset firstgid="7291" source="sprites/weapons/bigstone.tsx"/>
+ <tileset firstgid="7292" source="sprites/weapons/tallstone.tsx"/>
  <layer id="2" name="floor" width="200" height="12">
   <properties>
    <property name="drawz" type="float" value="-2"/>
@@ -396,7 +397,7 @@
    <object id="642" name="or" x="1376" y="40" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
-   <object id="644" template="mapobjects/items/bigstone.tx" type="big-stone" x="1200" y="120"/>
+   <object id="647" template="mapobjects/items/tallstone.tx" name="tall-stone" type="tall-stone" x="1200" y="120"/>
   </objectgroup>
   <objectgroup id="61" name="learngrabandthrow" class="Room"/>
   <objectgroup id="41" name="tolearnitems" class="Room">
