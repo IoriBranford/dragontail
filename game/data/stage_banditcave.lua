@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 62,
-  nextobjectid = 654,
+  nextobjectid = 655,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -17270,7 +17270,23 @@ return {
               gid = 7292,
               visible = true,
               properties = {
-                ["propertiestable"] = "database/objects-properties.csv"
+                ["propertiestable"] = "database/objects-properties.csv",
+                ["respawnpoint"] = { id = 654 }
+              }
+            },
+            {
+              id = 654,
+              name = "rockrespawnpoint",
+              type = "",
+              shape = "point",
+              x = 1200,
+              y = -32,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 160
               }
             }
           }
