@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="62" nextobjectid="648">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="62" nextobjectid="654">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -64,10 +64,10 @@
   </properties>
   <data encoding="base64" compression="zlib">
    <chunk x="20" y="-12" width="20" height="12">
-   eJxjYBgFo2BwAxFhys0IE2ZgiBRmYAgXZmAIFSHfHRHCDAwhIgwMQsIMDOcFGBhuCDMw+AiSZxbIDA4BBoYLUHNAtAc/hE0sAAAnXAln
+   eJztjisOgDAUBEfiKN13KASKlN+pwZBwHNK0BgUBg+iYXbOThULh35i+O0bBIpgEg73/MQuCgResDg5B1zzb7/7qio7KwZY9Mds69TtPnz+cgXULwA==
   </chunk>
    <chunk x="40" y="-12" width="20" height="12">
-   eJztkF0KwjAQhL8D+JNNcixB1Na/M9leTUQEjyNDVtqH1BdfOzAQNsM3y8KsWb91TNBkuKT/LvWKhRET9AbvCd4+l76Dd57dmn3fyrQZtgH6UFhTPP0vPLP03pvB2qBza9aNOPI91Hkrg12Ck/bULtrN3brF3Fjpe8QhU5NYz1i/l24lj/uueQh9APDXH6Q=
+   eJztkMEKwkAMRN/Nk7rbzWcJorZa/SZbP008COLXlGGz2IJ48drAQLIZZmYDc831u44JaoNz+u9SzyprVAn6CK803e0NDu7TpmnfeobSi9sYbAP0IWsVPXMPzdqFCAvnLN33GmEdoXPorRvpCPeQMxQt4eacXYKTQa0syuZoHNLcxOz30N98P9Zfua947y+31U3kLYz9LvYhDYIrKk0=
   </chunk>
    <chunk x="60" y="-12" width="20" height="12">
    eJztkV0KwjAQhL9HQbBJtnopUbS1VO+k1Vv54oMKSo8jSzakFE8gLgybv52Z3cA/fjmqMmJnaAVqO9tLRm33mg8C7/Cdr5eIzsPKgfNxX1gerxUnD950xrzrIr+bODg7eAR4hnh2LaKGck49bHzm7AW25lck+9P6WvW0J4GFwFzgYHuF3jUDj8mzeriYX+WtrD7FK+Q5pbmlnpJG4j066BzcXdbReq1L/9KUcCtg5mBps9Cehv+gvK15Vz+pB80fqqY45A==
@@ -79,10 +79,10 @@
    eJzNkU1KA0EQhT9wF5Ce6WqPoyC4CwGTSWYcT+QJvI1kmYUIQZKQ48izq0mcGFdZWFDUb1e96geXkW2EWbrQMKBN0Nj5ejJoEnQGvR2sMDx5PHe/5Aq+5DUzaD2/SLA3GAeY1DBV3rVLMHfba5Zjk+ruaLn/OWXcvevMe/ROtaHc1Qf/yv2dZRxTvfnj/nOyDD/jV4N1gJFuEibd4v+xi3Af4LY+xfNWnc5+CHBjsDC4rjPOVcj2scrzm6Md3S98NEdcFD5a/6vPmGcN9b3K9sN3vfjuvcHIa98YBrdvYuZNXBQeSixVLC7lK6+eki/+f5cvswE9LA==
   </chunk>
    <chunk x="20" y="0" width="20" height="12">
-   eJzNkslNBDEQRV8E0GVbZACBcEYsPT1DDwFwIIiJADRRoEmGRQgGkQASWYA+dslmkzhwoKSvruW7urbHwLs8BJhGeCo4MOgMzg3uCuc3cpKqPkswL5hEGGLW7wPMIvQp4zjCqFjMusPjgmKTBEP6GJct/zTlOvWfUXbpY9tgZbBjsG+1ll45mvqGYvflvWzVuQ4QI6xLvmeDF4OzAFdd7XV38+ssFk28nclWrPO+DLAKcGpwFOH1U57FN3l/EuVUL2Ppo93FX8m8mb3mrr055HNdexkbnt75DlueZnrb1bsTdHd7lvULgw2Dm8LRDq8b/rLwhEPLu9Ue/db09XnIVsw5fpOKuU8Q3/X/Lm+DEEqd
+   eJzNkk1OAzEMhb8lKzpOcgU4CFsQPzMtzHAAjtETUKaXQD0NIH6EuA3oEUcTlbJjgaWn2M6zkzznPfBtbwEWET4cZwaNwa3Bs3O27TLCPEGIsNfkuutU7ScYHJ24MfuvIde2KeMqQh9hkWBtsDK4a+CpmThDhC7l88QXWo87v4POV43WhwbWMxg9PjYYbbpLqx7V/eYeK997rne8hFyr3gcGG4NDg32b3no0+6nPstmtm7RWf+l9H2AT4MbgIsLnVp/ljr6/Wenb+zvqWfyVDZX20l1zK1Cu+JpLX/FUV2ZY8+qZFejfnVj2V67zo3NOLc+2cEfnCeeWZ6s5lr+mteihWHuFU/6k9kpOEL/4/92+AHlCTOU=
   </chunk>
    <chunk x="40" y="0" width="20" height="12">
-   eJzFkt1KA0EMhb9rkTIzCT6VoLbbdusz1bYvpmD1wseRwyR0qV6UIhgImcnPye6cAz/t2cENBoeFw9xhNFg67Er3GvUh6hvrcR159cvNYBWzhwJPBhuHY4N9gYfa/bXAe4NReJoVpsNtPeWX1vcKSzhrhzvr37yK/kH7Y4f+49w0l/nP1nuF/dG4yn7bcY3pjfSGl9qUn3HCRfLVDGblMozk9stgV+Gx9nO67m8FtrVj587kPHMt+svZvPSiuI24Dzzxnz33MXMzmX3RzgKH0Ie0IP5SH/PQQGpFd8VFaECuc9YzN+37K/7+y74Bk01B7Q==
+   eJzVkktOA0EMRN8WhJB7usWpkCAzIcxwIhaQ5GKETzYRp0GFbWkELCJYYclyf+xyt6teDJ4NNgb3Bq8d3DbYd7CqMDToG4wVbhqszb1UWDZ33U/V46HCg0Us8F4dR7Vbg0WFqcFb5z2vivtT9B6FVz0qb1vgpDie8hfNsYSjd15UPm0V+Uu9K3rcNb6ZcPKPfeSO8d/f2PSH2rlpRprhsdZi/kNwk1wkX12FczsOI7nVbNYFrmPe6drvzPnsZz2T8zzrIt++1Esvc11sAk98Zs5l1JzOah/V01wD0sdZcd5TH31oILWiveIQvMq1zvs8m+f9pJH/ZB/he0ss
   </chunk>
    <chunk x="60" y="0" width="20" height="12">
    eJzlkt1KA0EMhb9bvenMZPSdvBDd7tRW36hgWx/Mn7aC+DhySGBXZQteGwgbMtlzkpwUg0OBVYWFwT7BWYJPg9vsb3ODY/FcV2Fp0Cp8FH7ZfYVL8/iuQlOteV7+UP3tIjBfElxl2CTIBr3qAl88fzHxqVfxaJ4+YvErXtYf9cEnXwVnPzHXlLVRv4vqO9rP/Ct/i7mEPw8eOzHXa4LHPPwvf07Qmeuzzd85rrPjtwnscR/C7WIP0kgatNBBOOd50H2XBr3VdwtXbj2DddzGe5nWQbibwLzJzr/L8BS5bXJ+9TO+m1P6jm+p105DW+Wl+X+zLxy5RSY=
@@ -130,11 +130,8 @@
    <property name="drawz" type="float" value="-1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   <chunk x="20" y="-12" width="20" height="12">
-   eJxjYBgFo2AUMAwycJuHgUGEj4FBlI+BQYyPgUGcj4FBgg9TDABATgIq
-  </chunk>
    <chunk x="40" y="-12" width="20" height="12">
-   eJztjkkKgEAMBOsBkwbBDX2V4IYvE3/l2c9ImBHEm2etU2gqncDPzzdpDGrBHt7vHgFyQSEoFXsWg1mQGVQpc+fpXbM7ftv/aA16wSAYFXs2g1XQGUwpc+funWiIC7A=
+   eJztjjsKgDAUBOcAeQuCP/RUgkbxZOKtrL2MhKRIY2Ftplxml4VC4Z8MBr3gct+7t4Na0AhaxZ3dYBNUBl3KgpN7bz9Gg1mwCLzizmlwCCaDNWXByb0HB1QKQQ==
   </chunk>
    <chunk x="60" y="-12" width="20" height="12">
    eJztz0kOQWEUBeFvAe8/CdGFVRFdWBXRhVUZ24wYSJ6XiJgZqHnVPZc/f36HW0Uv9MMgXKvv/GF59UeFeViEZWgVOqEb2uVzb9Xw14VDOIZTGBemYRYmtfa73eeGf2ls2BR2YR+2tfZjd/2v5507eVQSiw==
@@ -146,10 +143,10 @@
    eJztjkkKAjEURN9eU/0jTuiFXImKE3omlRYn9GZ6GQk2JJss7K3WpqAeBe9gUHhoGEw8jArYGewNXk1oCzqK3RX0BP3MNjYYuA/zglbChg7mgoViLwUrwTqzBYdN9ZsKZgnbOjgJzop9EVwFt8wWHO7VrxQcE/ZwfJ3g8Kzxy6WOwz/8bN49iR1R
   </chunk>
    <chunk x="20" y="0" width="20" height="12">
-   eJztyjsKg1AARcHZwLuVmkC25Q+yLU0ENyvWWtjrKYdThTo04RXeoTqxT6ENXejDEMYc7cqz27cwhTn8wj8sOdqVZ7e1eHpytzaHsRY1
+   eJztyLcRgEAQBDBVsNFjCsMVhiuXIi5jXqFaGMIYpjCHVrglrGELeziKd4Yr3OEJb/G6zo98+T8XcQ==
   </chunk>
    <chunk x="40" y="0" width="20" height="12">
-   eJztjjkKgEAQBOsD3eDTDDzQVwle6M98jYzsJqaGbkXNUE1Pb2gMraEzVIJBMApmw2JYDbvhEg+TYEu3cN5ezuHUgkNwpu5XYjv/USjwc25gchAu
+   eJztzsENggAQBMBp4PYlaGGoRKsyUTDaGdUYDQ/iz7fMc7N32U1oQhu2YRdOxbm4hlsYwj1M5eNSjHP27ix7XdiHQziGPjyK53z7q+Xv8WvHauXPvQBc3hDM
   </chunk>
    <chunk x="60" y="0" width="20" height="12">
    eJztzbsJhFAUBcBp4J7eBH9tCbpal6HVGBoJi/GbBuYqfzuLNWyhK8YwhTn0YYjPluIX9nDkeZqm8eoGR+0JMA==
@@ -355,7 +352,7 @@
    </object>
    <object id="519" name="joystick" gid="6856" x="744" y="80" width="16" height="16"/>
    <object id="622" name="Direct" x="744" y="48" width="144" height="32">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Aim attack with
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Aim attacks with
    direction</text>
    </object>
   </objectgroup>
@@ -377,29 +374,48 @@
    </object>
    <object id="526" name="attackbutton" gid="7267" x="736" y="72" width="14" height="14" visible="0"/>
   </objectgroup>
-  <objectgroup draworder="index" id="60" name="tolearngrabandthrow" class="Room">
+  <objectgroup draworder="index" id="60" name="learngrabandthrow" class="Room">
    <object id="635" template="mapobjects/CameraPath.tx" x="720" y="144">
     <polyline points="0,0 480,0"/>
    </object>
    <object id="636" template="mapobjects/OutwardBoundary.tx" x="960" y="24">
-    <polygon points="0,-24 0,72 32,40 448,40 480,72 480,-24"/>
+    <polygon points="0,-24 0,72 480,72 480,-24"/>
    </object>
-   <object id="637" name="Direct" x="1128" y="16" width="248" height="16">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Move into large body to grab it</text>
+   <object id="637" name="Direct" x="1008" y="48" width="144" height="32">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">   Move into large
+body to grab it</text>
    </object>
-   <object id="639" name="Direct" x="1104" y="40" width="288" height="16">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Then launch with    direction +</text>
+   <object id="639" name="Direct" x="1248" y="48" width="168" height="32">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Then launch it with
+   direction +</text>
    </object>
-   <object id="638" name="joystick" gid="6856" x="1104" y="32" width="16" height="16"/>
-   <object id="643" name="joystick" gid="6856" x="1240" y="56" width="16" height="16"/>
-   <object id="640" name="attackbutton" gid="7267" x="1368" y="48" width="14" height="14"/>
-   <object id="641" gid="7269" x="1400" y="48" width="14" height="14"/>
-   <object id="642" name="or" x="1376" y="40" width="16" height="16">
+   <object id="638" name="joystick" gid="6856" x="1008" y="64" width="16" height="16"/>
+   <object id="643" name="joystick" gid="6856" x="1248" y="80" width="16" height="16"/>
+   <object id="640" name="attackbutton" gid="7267" x="1376" y="72" width="14" height="14"/>
+   <object id="641" gid="7269" x="1408" y="72" width="14" height="14"/>
+   <object id="642" name="or" x="1384" y="64" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
-   <object id="647" template="mapobjects/items/tallstone.tx" name="tall-stone" type="tall-stone" x="1200" y="120"/>
+   <object id="647" template="mapobjects/items/tallstone.tx" name="tall-stone" type="tall-stone" x="1200" y="128"/>
   </objectgroup>
-  <objectgroup id="61" name="learngrabandthrow" class="Room"/>
+  <objectgroup id="61" name="+knives" class="Room">
+   <object id="648" template="mapobjects/bandit/knife.tx" x="944" y="280"/>
+   <object id="649" template="mapobjects/bandit/knife.tx" x="832" y="200"/>
+   <object id="650" template="mapobjects/bandit/knife.tx" x="1488" y="136"/>
+   <object id="651" template="mapobjects/bandit/knife.tx" x="1456" y="280"/>
+   <object id="652" template="mapobjects/bandit/knife.tx" x="904" y="144"/>
+   <object id="653" template="mapobjects/bandit/knife.tx" x="1544" y="216"/>
+   <object id="19" template="mapobjects/bandit/knife.tx" x="1040" y="-8">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+   </object>
+   <object id="20" template="mapobjects/bandit/knife.tx" x="1360" y="-8">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+   </object>
+  </objectgroup>
   <objectgroup id="41" name="tolearnitems" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="3"/>
@@ -472,25 +488,6 @@
    </object>
    <object id="606" template="mapobjects/items/lifefruit.tx" type="food-lifefruit" x="1664" y="48" width="20" height="20"/>
    <object id="607" template="mapobjects/items/lifefruit.tx" type="food-lifefruit" x="1688" y="56" width="20" height="20"/>
-  </objectgroup>
-  <objectgroup id="47" name="+knives" class="Room">
-   <properties>
-    <property name="donewhenenemiesleft" type="int" value="4"/>
-    <property name="titlebarcuecard" value="RUN WITH ENEMY"/>
-   </properties>
-   <object id="19" template="mapobjects/bandit/knife.tx" x="1552" y="-72">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-   </object>
-   <object id="20" template="mapobjects/bandit/knife.tx" x="1872" y="-72">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-   </object>
-   <object id="493" template="mapobjects/CameraPath.tx" name="camerapathDisabled" x="1616" y="104">
-    <polyline points="0,0 224,0"/>
-   </object>
   </objectgroup>
   <objectgroup id="10" name="+spears" class="Room">
    <properties>

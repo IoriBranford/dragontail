@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 62,
-  nextobjectid = 648,
+  nextobjectid = 654,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -16076,11 +16076,11 @@ return {
       chunks = {
         {
           x = 20, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2BwAxFhys0IE2ZgiBRmYAgXZmAIFSHfHRHCDAwhIgwMQsIMDOcFGBhuCDMw+AiSZxbIDA4BBoYLUHNAtAc/hE0sAAAnXAln"
+          data = "eJztjisOgDAUBEfiKN13KASKlN+pwZBwHNK0BgUBg+iYXbOThULh35i+O0bBIpgEg73/MQuCgResDg5B1zzb7/7qio7KwZY9Mds69TtPnz+cgXULwA=="
         },
         {
           x = 40, y = -12, width = 20, height = 12,
-          data = "eJztkF0KwjAQhL8D+JNNcixB1Na/M9leTUQEjyNDVtqH1BdfOzAQNsM3y8KsWb91TNBkuKT/LvWKhRET9AbvCd4+l76Dd57dmn3fyrQZtgH6UFhTPP0vPLP03pvB2qBza9aNOPI91Hkrg12Ck/bULtrN3brF3Fjpe8QhU5NYz1i/l24lj/uueQh9APDXH6Q="
+          data = "eJztkMEKwkAMRN/Nk7rbzWcJorZa/SZbP008COLXlGGz2IJ48drAQLIZZmYDc831u44JaoNz+u9SzyprVAn6CK803e0NDu7TpmnfeobSi9sYbAP0IWsVPXMPzdqFCAvnLN33GmEdoXPorRvpCPeQMxQt4eacXYKTQa0syuZoHNLcxOz30N98P9Zfua947y+31U3kLYz9LvYhDYIrKk0="
         },
         {
           x = 60, y = -12, width = 20, height = 12,
@@ -16096,11 +16096,11 @@ return {
         },
         {
           x = 20, y = 0, width = 20, height = 12,
-          data = "eJzNkslNBDEQRV8E0GVbZACBcEYsPT1DDwFwIIiJADRRoEmGRQgGkQASWYA+dslmkzhwoKSvruW7urbHwLs8BJhGeCo4MOgMzg3uCuc3cpKqPkswL5hEGGLW7wPMIvQp4zjCqFjMusPjgmKTBEP6GJct/zTlOvWfUXbpY9tgZbBjsG+1ll45mvqGYvflvWzVuQ4QI6xLvmeDF4OzAFdd7XV38+ssFk28nclWrPO+DLAKcGpwFOH1U57FN3l/EuVUL2Ppo93FX8m8mb3mrr055HNdexkbnt75DlueZnrb1bsTdHd7lvULgw2Dm8LRDq8b/rLwhEPLu9Ue/db09XnIVsw5fpOKuU8Q3/X/Lm+DEEqd"
+          data = "eJzNkk1OAzEMhb8lKzpOcgU4CFsQPzMtzHAAjtETUKaXQD0NIH6EuA3oEUcTlbJjgaWn2M6zkzznPfBtbwEWET4cZwaNwa3Bs3O27TLCPEGIsNfkuutU7ScYHJ24MfuvIde2KeMqQh9hkWBtsDK4a+CpmThDhC7l88QXWo87v4POV43WhwbWMxg9PjYYbbpLqx7V/eYeK997rne8hFyr3gcGG4NDg32b3no0+6nPstmtm7RWf+l9H2AT4MbgIsLnVp/ljr6/Wenb+zvqWfyVDZX20l1zK1Cu+JpLX/FUV2ZY8+qZFejfnVj2V67zo3NOLc+2cEfnCeeWZ6s5lr+mteihWHuFU/6k9kpOEL/4/92+AHlCTOU="
         },
         {
           x = 40, y = 0, width = 20, height = 12,
-          data = "eJzFkt1KA0EMhb9rkTIzCT6VoLbbdusz1bYvpmD1wseRwyR0qV6UIhgImcnPye6cAz/t2cENBoeFw9xhNFg67Er3GvUh6hvrcR159cvNYBWzhwJPBhuHY4N9gYfa/bXAe4NReJoVpsNtPeWX1vcKSzhrhzvr37yK/kH7Y4f+49w0l/nP1nuF/dG4yn7bcY3pjfSGl9qUn3HCRfLVDGblMozk9stgV+Gx9nO67m8FtrVj587kPHMt+svZvPSiuI24Dzzxnz33MXMzmX3RzgKH0Ie0IP5SH/PQQGpFd8VFaECuc9YzN+37K/7+y74Bk01B7Q=="
+          data = "eJzVkktOA0EMRN8WhJB7usWpkCAzIcxwIhaQ5GKETzYRp0GFbWkELCJYYclyf+xyt6teDJ4NNgb3Bq8d3DbYd7CqMDToG4wVbhqszb1UWDZ33U/V46HCg0Us8F4dR7Vbg0WFqcFb5z2vivtT9B6FVz0qb1vgpDie8hfNsYSjd15UPm0V+Uu9K3rcNb6ZcPKPfeSO8d/f2PSH2rlpRprhsdZi/kNwk1wkX12FczsOI7nVbNYFrmPe6drvzPnsZz2T8zzrIt++1Esvc11sAk98Zs5l1JzOah/V01wD0sdZcd5TH31oILWiveIQvMq1zvs8m+f9pJH/ZB/he0ss"
         },
         {
           x = 60, y = 0, width = 20, height = 12,
@@ -16192,12 +16192,8 @@ return {
       compression = "zlib",
       chunks = {
         {
-          x = 20, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMAwycJuHgUGEj4FBlI+BQYyPgUGcj4FBgg9TDABATgIq"
-        },
-        {
           x = 40, y = -12, width = 20, height = 12,
-          data = "eJztjkkKgEAMBOsBkwbBDX2V4IYvE3/l2c9ImBHEm2etU2gqncDPzzdpDGrBHt7vHgFyQSEoFXsWg1mQGVQpc+fpXbM7ftv/aA16wSAYFXs2g1XQGUwpc+funWiIC7A="
+          data = "eJztjjsKgDAUBOcAeQuCP/RUgkbxZOKtrL2MhKRIY2Ftplxml4VC4Z8MBr3gct+7t4Na0AhaxZ3dYBNUBl3KgpN7bz9Gg1mwCLzizmlwCCaDNWXByb0HB1QKQQ=="
         },
         {
           x = 60, y = -12, width = 20, height = 12,
@@ -16213,11 +16209,11 @@ return {
         },
         {
           x = 20, y = 0, width = 20, height = 12,
-          data = "eJztyjsKg1AARcHZwLuVmkC25Q+yLU0ENyvWWtjrKYdThTo04RXeoTqxT6ENXejDEMYc7cqz27cwhTn8wj8sOdqVZ7e1eHpytzaHsRY1"
+          data = "eJztyLcRgEAQBDBVsNFjCsMVhiuXIi5jXqFaGMIYpjCHVrglrGELeziKd4Yr3OEJb/G6zo98+T8XcQ=="
         },
         {
           x = 40, y = 0, width = 20, height = 12,
-          data = "eJztjjkKgEAQBOsD3eDTDDzQVwle6M98jYzsJqaGbkXNUE1Pb2gMraEzVIJBMApmw2JYDbvhEg+TYEu3cN5ezuHUgkNwpu5XYjv/USjwc25gchAu"
+          data = "eJztzsENggAQBMBp4PYlaGGoRKsyUTDaGdUYDQ/iz7fMc7N32U1oQhu2YRdOxbm4hlsYwj1M5eNSjHP27ix7XdiHQziGPjyK53z7q+Xv8WvHauXPvQBc3hDM"
         },
         {
           x = 60, y = 0, width = 20, height = 12,
@@ -16927,7 +16923,7 @@ return {
               height = 32,
               rotation = 0,
               visible = true,
-              text = "Aim attack with\n   direction",
+              text = "Aim attacks with\n   direction",
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
@@ -17101,7 +17097,7 @@ return {
           type = "objectgroup",
           draworder = "index",
           id = 60,
-          name = "tolearngrabandthrow",
+          name = "learngrabandthrow",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -17142,8 +17138,6 @@ return {
               polygon = {
                 { x = 0, y = -24 },
                 { x = 0, y = 72 },
-                { x = 32, y = 40 },
-                { x = 448, y = 40 },
                 { x = 480, y = 72 },
                 { x = 480, y = -24 }
               },
@@ -17160,13 +17154,13 @@ return {
               name = "Direct",
               type = "",
               shape = "text",
-              x = 1128,
-              y = 16,
-              width = 248,
-              height = 16,
+              x = 1008,
+              y = 48,
+              width = 144,
+              height = 32,
               rotation = 0,
               visible = true,
-              text = "Move into large body to grab it",
+              text = "   Move into large\nbody to grab it",
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
@@ -17177,13 +17171,13 @@ return {
               name = "Direct",
               type = "",
               shape = "text",
-              x = 1104,
-              y = 40,
-              width = 288,
-              height = 16,
+              x = 1248,
+              y = 48,
+              width = 168,
+              height = 32,
               rotation = 0,
               visible = true,
-              text = "Then launch with    direction +",
+              text = "Then launch it with\n   direction +",
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
@@ -17194,8 +17188,8 @@ return {
               name = "joystick",
               type = "",
               shape = "rectangle",
-              x = 1104,
-              y = 32,
+              x = 1008,
+              y = 64,
               width = 16,
               height = 16,
               rotation = 0,
@@ -17208,8 +17202,8 @@ return {
               name = "joystick",
               type = "",
               shape = "rectangle",
-              x = 1240,
-              y = 56,
+              x = 1248,
+              y = 80,
               width = 16,
               height = 16,
               rotation = 0,
@@ -17222,8 +17216,8 @@ return {
               name = "attackbutton",
               type = "",
               shape = "rectangle",
-              x = 1368,
-              y = 48,
+              x = 1376,
+              y = 72,
               width = 14,
               height = 14,
               rotation = 0,
@@ -17236,8 +17230,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1400,
-              y = 48,
+              x = 1408,
+              y = 72,
               width = 14,
               height = 14,
               rotation = 0,
@@ -17250,8 +17244,8 @@ return {
               name = "or",
               type = "",
               shape = "text",
-              x = 1376,
-              y = 40,
+              x = 1384,
+              y = 64,
               width = 16,
               height = 16,
               rotation = 0,
@@ -17269,7 +17263,7 @@ return {
               type = "tall-stone",
               shape = "rectangle",
               x = 1200,
-              y = 120,
+              y = 128,
               width = 48,
               height = 48,
               rotation = 0,
@@ -17285,7 +17279,7 @@ return {
           type = "objectgroup",
           draworder = "topdown",
           id = 61,
-          name = "learngrabandthrow",
+          name = "+knives",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -17294,7 +17288,138 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {},
-          objects = {}
+          objects = {
+            {
+              id = 648,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 944,
+              y = 280,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7260,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 649,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 832,
+              y = 200,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7260,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 650,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1488,
+              y = 136,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7260,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 651,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1456,
+              y = 280,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7260,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 652,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 904,
+              y = 144,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7260,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 653,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1544,
+              y = 216,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7260,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 19,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1040,
+              y = -8,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7260,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 20,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1360,
+              y = -8,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7260,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv",
+                ["z"] = 64
+              }
+            }
+          }
         },
         {
           type = "objectgroup",
@@ -17713,76 +17838,6 @@ return {
               properties = {
                 ["propertiestable"] = "database/items-properties.csv"
               }
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
-          id = 47,
-          name = "+knives",
-          class = "Room",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {
-            ["donewhenenemiesleft"] = 4,
-            ["titlebarcuecard"] = "RUN WITH ENEMY"
-          },
-          objects = {
-            {
-              id = 19,
-              name = "",
-              type = "bandit-dagger",
-              shape = "rectangle",
-              x = 1552,
-              y = -72,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7260,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv",
-                ["z"] = 64
-              }
-            },
-            {
-              id = 20,
-              name = "",
-              type = "bandit-dagger",
-              shape = "rectangle",
-              x = 1872,
-              y = -72,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7260,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv",
-                ["z"] = 64
-              }
-            },
-            {
-              id = 493,
-              name = "camerapathDisabled",
-              type = "CameraPath",
-              shape = "polyline",
-              x = 1616,
-              y = 104,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polyline = {
-                { x = 0, y = 0 },
-                { x = 224, y = 0 }
-              },
-              properties = {}
             }
           }
         },
