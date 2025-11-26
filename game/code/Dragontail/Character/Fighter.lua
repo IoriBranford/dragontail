@@ -450,13 +450,18 @@ function Fighter:fall()
     end
 end
 
-function Fighter:defeat(attacker)
+function Fighter:defeat()
     self:stopAttack()
     self.velx, self.vely = 0, 0
     self:dropDefeatItem()
     Audio.play(self.defeatsound)
     yield()
     return "blinkOut", 60
+end
+
+function Fighter:defeatAndRespawn()
+    self:respawn()
+    return self:defeat()
 end
 
 function Fighter:duringDodge()
