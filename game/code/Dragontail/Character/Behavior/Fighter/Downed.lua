@@ -19,7 +19,7 @@ function Downed:timeout(...)
     local fighter = self.character
     fighter.velx, fighter.vely, fighter.velz = 0, 0, 0
     if fighter.health <= 0 then
-        return "defeat"
+        return fighter.defeatai or "defeat"
     end
     return ...
 end
