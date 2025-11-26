@@ -11,6 +11,7 @@ wallSlammed,FALSE,FALSE,,,wallSlammed,,Hurt,,FALSE,FALSE,FALSE,,,,data/sounds/co
 fall,FALSE,down,,,,fall,,0,FALSE,FALSE,FALSE,0,,,,
 down,1,getup,,Dragontail.Character.Behavior.Fighter.Downed,,,,0,FALSE,FALSE,FALSE,0,,,data/sounds/combat/bodydrop.mp3,
 defeat,FALSE,FALSE,,,defeat,,Fall,0,FALSE,FALSE,FALSE,,,,,
+defeatAndRespawn,FALSE,FALSE,,,defeatAndRespawn,,Fall,0,FALSE,FALSE,FALSE,,,,,
 getup,1,.initialai,,,,,FallRiseToFeet,0,FALSE,FALSE,FALSE,,,,,
 spark,FALSE,FALSE,,,spark,,,,,,,,,,.sound,
 afterimage,FALSE,FALSE,,,,updateFadeOut,,,,,,,,,,
