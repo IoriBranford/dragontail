@@ -222,49 +222,49 @@ ALL CONTENT SUBJECT TO CHANGE</text>
     </properties>
    </object>
   </objectgroup>
-  <objectgroup draworder="index" id="6" name="pausemenu" class="Gui.Menu" visible="0">
+  <objectgroup draworder="index" id="6" name="pausemenu" class="Gui.Menu">
    <properties>
     <property name="backaction" value="unpauseGame"/>
    </properties>
-   <object id="76" template="gui/menu/Panel.tx" x="136" y="90" width="208" height="117">
+   <object id="76" template="gui/menu/Panel.tx" x="136" y="112.5" width="208" height="117">
     <properties>
      <property name="color" type="color" value="#80c52021"/>
     </properties>
    </object>
-   <object id="8" name="name" x="192" y="54" width="96" height="18">
+   <object id="8" name="name" x="192" y="54" width="96" height="18" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">PAUSE</text>
    </object>
-   <object id="72" template="gui/menu/pause/Button.tx" name="Resume" type="Gui.Button" x="184" y="99">
+   <object id="72" template="gui/menu/pause/Button.tx" name="Resume" type="Gui.Button" x="184" y="121.5">
     <properties>
      <property name="action" value="unpauseGame"/>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Resume</text>
    </object>
-   <object id="73" template="gui/menu/pause/Button.tx" name="Restart checkpoint" type="Gui.Button" x="184" y="126" width="144" height="18">
+   <object id="73" template="gui/menu/pause/Button.tx" name="Restart checkpoint" type="Gui.Button" x="184" y="148.5" width="144" height="18">
     <properties>
      <property name="action" value="restartStageCheckpoint"/>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Restart checkpoint</text>
    </object>
-   <object id="93" template="gui/menu/pause/Button.tx" name="Restart stage" type="Gui.Button" x="184" y="153" width="144" height="18">
+   <object id="93" template="gui/menu/pause/Button.tx" name="Restart stage" type="Gui.Button" x="184" y="175.5" width="144" height="18">
     <properties>
      <property name="action" value="restartStage"/>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Restart stage</text>
    </object>
-   <object id="75" template="gui/menu/pause/Button.tx" name="Quit" type="Gui.Button" x="184" y="180" width="144" height="18">
+   <object id="75" template="gui/menu/pause/Button.tx" name="Quit" type="Gui.Button" x="184" y="202.5" width="144" height="18">
     <properties>
      <property name="action" value="quit"/>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Quit</text>
    </object>
-   <object id="86" template="gui/menu/Button_openMenu.tx" name="Debug" type="Gui.Button" x="184" y="207">
+   <object id="86" template="gui/menu/Button_openMenu.tx" name="Debug" type="Gui.Button" x="184" y="229.5">
     <properties>
      <property name="guipath" value="gameplay.debugmenu"/>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Debug</text>
    </object>
-   <object id="74" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="152" y="108"/>
+   <object id="74" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="152" y="130.5"/>
   </objectgroup>
   <objectgroup id="15" name="debugmenu" class="Gui.Menu" visible="0">
    <properties>
@@ -327,7 +327,7 @@ ALL CONTENT SUBJECT TO CHANGE</text>
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">SPRINT</text>
    </object>
   </objectgroup>
-  <objectgroup id="11" name="gameover" class="Gui.Menu">
+  <objectgroup id="11" name="gameover" class="Gui.Menu" visible="0">
    <object id="77" template="gui/menu/Panel.tx" x="136" y="90" width="208" height="90">
     <properties>
      <property name="color" type="color" value="#80c52021"/>
