@@ -14123,17 +14123,17 @@ return {
       tiles = {}
     },
     {
-      name = "Dishes A",
+      name = "dish-small",
       firstgid = 6613,
       class = "",
       tilewidth = 32,
       tileheight = 32,
       spacing = 0,
       margin = 0,
-      columns = 8,
-      image = "sprites/weapons/Dishes A.png",
-      imagewidth = 256,
-      imageheight = 96,
+      columns = 1,
+      image = "sprites/weapons/dish-small.ase",
+      imagewidth = 32,
+      imageheight = 32,
       objectalignment = "center",
       tilerendersize = "tile",
       fillmode = "stretch",
@@ -14148,44 +14148,12 @@ return {
       },
       properties = {},
       wangsets = {},
-      tilecount = 24,
-      tiles = {
-        {
-          id = 0,
-          type = "item-dish",
-          properties = {
-            ["name"] = "dish-small"
-          }
-        },
-        {
-          id = 16,
-          properties = {
-            ["name"] = "Shatter"
-          },
-          animation = {
-            {
-              tileid = 16,
-              duration = 50
-            },
-            {
-              tileid = 17,
-              duration = 50
-            },
-            {
-              tileid = 18,
-              duration = 50
-            },
-            {
-              tileid = 19,
-              duration = 50
-            }
-          }
-        }
-      }
+      tilecount = 1,
+      tiles = {}
     },
     {
       name = "Meats A",
-      firstgid = 6637,
+      firstgid = 6614,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14251,7 +14219,7 @@ return {
     },
     {
       name = "Bread A",
-      firstgid = 6692,
+      firstgid = 6669,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14289,7 +14257,7 @@ return {
     },
     {
       name = "Cheese A",
-      firstgid = 6700,
+      firstgid = 6677,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14367,7 +14335,7 @@ return {
     },
     {
       name = "Forge A",
-      firstgid = 6718,
+      firstgid = 6695,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14501,7 +14469,7 @@ return {
     },
     {
       name = "Workbench, Smith",
-      firstgid = 6846,
+      firstgid = 6823,
       class = "",
       tilewidth = 64,
       tileheight = 64,
@@ -14771,7 +14739,7 @@ return {
     },
     {
       name = "gamepad-buttons",
-      firstgid = 6852,
+      firstgid = 6829,
       class = "",
       tilewidth = 16,
       tileheight = 16,
@@ -14874,7 +14842,7 @@ return {
     },
     {
       name = "keyboard-keys",
-      firstgid = 6952,
+      firstgid = 6929,
       class = "",
       tilewidth = 16,
       tileheight = 16,
@@ -14930,7 +14898,7 @@ return {
     },
     {
       name = "Chair, Dining F",
-      firstgid = 7224,
+      firstgid = 7201,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -15024,7 +14992,7 @@ return {
     },
     {
       name = "flamegaugefull",
-      firstgid = 7240,
+      firstgid = 7217,
       class = "",
       tilewidth = 40,
       tileheight = 20,
@@ -15091,7 +15059,7 @@ return {
     },
     {
       name = "vegetables",
-      firstgid = 7248,
+      firstgid = 7225,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -15148,7 +15116,7 @@ return {
     },
     {
       name = "axe",
-      firstgid = 7255,
+      firstgid = 7232,
       class = "",
       tilewidth = 64,
       tileheight = 64,
@@ -15177,7 +15145,7 @@ return {
     },
     {
       name = "boss",
-      firstgid = 7256,
+      firstgid = 7233,
       class = "",
       tilewidth = 192,
       tileheight = 192,
@@ -15206,7 +15174,7 @@ return {
     },
     {
       name = "bow",
-      firstgid = 7257,
+      firstgid = 7234,
       class = "",
       tilewidth = 128,
       tileheight = 128,
@@ -15240,7 +15208,7 @@ return {
     },
     {
       name = "spear",
-      firstgid = 7258,
+      firstgid = 7235,
       class = "",
       tilewidth = 64,
       tileheight = 64,
@@ -15269,7 +15237,7 @@ return {
     },
     {
       name = "sling",
-      firstgid = 7259,
+      firstgid = 7236,
       class = "",
       tilewidth = 64,
       tileheight = 64,
@@ -15303,7 +15271,7 @@ return {
     },
     {
       name = "knife",
-      firstgid = 7260,
+      firstgid = 7237,
       class = "",
       tilewidth = 64,
       tileheight = 64,
@@ -15332,7 +15300,7 @@ return {
     },
     {
       name = "throwing-axe",
-      firstgid = 7261,
+      firstgid = 7238,
       class = "",
       tilewidth = 48,
       tileheight = 48,
@@ -15361,7 +15329,7 @@ return {
     },
     {
       name = "stone",
-      firstgid = 7262,
+      firstgid = 7239,
       class = "",
       tilewidth = 16,
       tileheight = 16,
@@ -15390,7 +15358,7 @@ return {
     },
     {
       name = "Switch",
-      firstgid = 7263,
+      firstgid = 7240,
       class = "",
       tilewidth = 14,
       tileheight = 14,
@@ -15419,7 +15387,7 @@ return {
     },
     {
       name = "tree2B_ss_leaves",
-      firstgid = 7283,
+      firstgid = 7260,
       class = "",
       tilewidth = 128,
       tileheight = 96,
@@ -15448,7 +15416,7 @@ return {
     },
     {
       name = "tree2B_ss_obj",
-      firstgid = 7284,
+      firstgid = 7261,
       class = "",
       tilewidth = 128,
       tileheight = 160,
@@ -15477,7 +15445,7 @@ return {
     },
     {
       name = "tree2C_ss_leaves",
-      firstgid = 7285,
+      firstgid = 7262,
       class = "",
       tilewidth = 128,
       tileheight = 96,
@@ -15506,7 +15474,7 @@ return {
     },
     {
       name = "tree2C_ss_obj",
-      firstgid = 7286,
+      firstgid = 7263,
       class = "",
       tilewidth = 128,
       tileheight = 160,
@@ -15535,7 +15503,7 @@ return {
     },
     {
       name = "spikefruit-hanging",
-      firstgid = 7287,
+      firstgid = 7264,
       class = "",
       tilewidth = 20,
       tileheight = 20,
@@ -15564,7 +15532,7 @@ return {
     },
     {
       name = "spikefruit-onground",
-      firstgid = 7288,
+      firstgid = 7265,
       class = "",
       tilewidth = 20,
       tileheight = 20,
@@ -15593,7 +15561,7 @@ return {
     },
     {
       name = "lifefruit-hanging",
-      firstgid = 7289,
+      firstgid = 7266,
       class = "",
       tilewidth = 20,
       tileheight = 20,
@@ -15622,7 +15590,7 @@ return {
     },
     {
       name = "lifefruit",
-      firstgid = 7290,
+      firstgid = 7267,
       class = "",
       tilewidth = 20,
       tileheight = 20,
@@ -15651,7 +15619,7 @@ return {
     },
     {
       name = "bigstone",
-      firstgid = 7291,
+      firstgid = 7268,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -15680,7 +15648,7 @@ return {
     },
     {
       name = "tallstone",
-      firstgid = 7292,
+      firstgid = 7269,
       class = "",
       tilewidth = 48,
       tileheight = 48,
@@ -15709,7 +15677,7 @@ return {
     },
     {
       name = "shield",
-      firstgid = 7293,
+      firstgid = 7270,
       class = "",
       tilewidth = 64,
       tileheight = 64,
@@ -15738,7 +15706,7 @@ return {
     },
     {
       name = "crystal-spikes",
-      firstgid = 7294,
+      firstgid = 7271,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -16024,7 +15992,7 @@ return {
     },
     {
       name = "muscle",
-      firstgid = 7358,
+      firstgid = 7335,
       class = "",
       tilewidth = 128,
       tileheight = 128,
@@ -16328,7 +16296,7 @@ return {
         },
         {
           x = 40, y = 24, width = 20, height = 12,
-          data = "eJztzDkNgEAARcHR8QWTYABYAxwGONxRQk22gTDVqx7v0eTq9tZPdaEPQygVfmOYwhyWCr81bGEPR4Xfz+ecv+MKVg=="
+          data = "eJztzDkNgEAARcHR8U2SYABYAxwGOJRSQk22gTDVqx7v0eTq9tZPdaEPQygVfmOYwhyWCr81bGEPR4Xfz+eclJoJFA=="
         },
         {
           x = 80, y = 24, width = 20, height = 12,
@@ -16371,7 +16339,7 @@ return {
         },
         {
           x = 40, y = 24, width = 20, height = 12,
-          data = "eJxjYBi5IE+KgSFfioGhQIqBoVBqoF0zCkYBA8kAAOfDAic="
+          data = "eJxjYBi5IFyKgSFCioEhUoqBIUpqoF0zCkYBA8kAAOtsAcs="
         }
       }
     },
@@ -16614,7 +16582,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6856,
+              gid = 6833,
               visible = true,
               properties = {}
             },
@@ -16628,7 +16596,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              gid = 7277,
+              gid = 7254,
               visible = true,
               properties = {}
             },
@@ -16695,7 +16663,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              gid = 7273,
+              gid = 7250,
               visible = true,
               properties = {}
             }
@@ -16728,7 +16696,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -16744,7 +16712,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -16760,7 +16728,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -16776,7 +16744,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -16792,7 +16760,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              gid = 7267,
+              gid = 7244,
               visible = true,
               properties = {}
             },
@@ -16806,7 +16774,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              gid = 7263,
+              gid = 7240,
               visible = true,
               properties = {}
             },
@@ -16856,7 +16824,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              gid = 7269,
+              gid = 7246,
               visible = true,
               properties = {}
             },
@@ -16870,7 +16838,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              gid = 7265,
+              gid = 7242,
               visible = true,
               properties = {}
             },
@@ -16920,7 +16888,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6856,
+              gid = 6833,
               visible = true,
               properties = {}
             },
@@ -16969,7 +16937,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -16985,7 +16953,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17001,7 +16969,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17017,7 +16985,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17033,7 +17001,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17049,7 +17017,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17099,7 +17067,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              gid = 7267,
+              gid = 7244,
               visible = false,
               properties = {}
             }
@@ -17205,7 +17173,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6856,
+              gid = 6833,
               visible = true,
               properties = {}
             },
@@ -17219,7 +17187,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6856,
+              gid = 6833,
               visible = true,
               properties = {}
             },
@@ -17233,7 +17201,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              gid = 7267,
+              gid = 7244,
               visible = true,
               properties = {}
             },
@@ -17247,7 +17215,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              gid = 7269,
+              gid = 7246,
               visible = true,
               properties = {}
             },
@@ -17279,7 +17247,7 @@ return {
               width = 48,
               height = 48,
               rotation = 0,
-              gid = 7292,
+              gid = 7269,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/objects-properties.csv",
@@ -17327,7 +17295,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17343,7 +17311,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17359,7 +17327,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17375,7 +17343,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17391,7 +17359,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17407,7 +17375,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17423,7 +17391,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -17440,7 +17408,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -17493,7 +17461,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17509,7 +17477,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17525,7 +17493,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17618,7 +17586,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17634,7 +17602,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17650,7 +17618,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17683,7 +17651,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6861,
+              gid = 6838,
               visible = false,
               properties = {}
             },
@@ -17726,7 +17694,7 @@ return {
               width = 128,
               height = 160,
               rotation = 0,
-              gid = 7284,
+              gid = 7261,
               visible = true,
               properties = {
                 ["asetag"] = "*",
@@ -17746,7 +17714,7 @@ return {
               width = 128,
               height = 96,
               rotation = 0,
-              gid = 7283,
+              gid = 7260,
               visible = true,
               properties = {
                 ["asetag"] = "*",
@@ -17763,7 +17731,7 @@ return {
               width = 20,
               height = 20,
               rotation = 0,
-              gid = 7289,
+              gid = 7266,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv",
@@ -17780,7 +17748,7 @@ return {
               width = 20,
               height = 20,
               rotation = 0,
-              gid = 7289,
+              gid = 7266,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv",
@@ -17814,7 +17782,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6856,
+              gid = 6833,
               visible = false,
               properties = {}
             },
@@ -17845,7 +17813,7 @@ return {
               width = 20,
               height = 20,
               rotation = 0,
-              gid = 7290,
+              gid = 7267,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv"
@@ -17861,7 +17829,7 @@ return {
               width = 20,
               height = 20,
               rotation = 0,
-              gid = 7290,
+              gid = 7267,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv"
@@ -17895,7 +17863,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17911,7 +17879,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17946,7 +17914,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6923,
+              gid = 6900,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -17962,7 +17930,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6943,
+              gid = 6920,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -17978,7 +17946,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7159,
+              gid = 7136,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -18087,7 +18055,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7288,
+              gid = 7265,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/projectiles-properties.csv"
@@ -18103,7 +18071,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7288,
+              gid = 7265,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/projectiles-properties.csv"
@@ -18119,7 +18087,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7288,
+              gid = 7265,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/projectiles-properties.csv"
@@ -18135,7 +18103,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7288,
+              gid = 7265,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/projectiles-properties.csv"
@@ -18151,7 +18119,7 @@ return {
               width = 128,
               height = 160,
               rotation = 0,
-              gid = 7286,
+              gid = 7263,
               visible = true,
               properties = {
                 ["asetag"] = "*",
@@ -18173,7 +18141,7 @@ return {
               width = 128,
               height = 96,
               rotation = 0,
-              gid = 7285,
+              gid = 7262,
               visible = true,
               properties = {
                 ["asetag"] = "*",
@@ -18190,7 +18158,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7287,
+              gid = 7264,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv",
@@ -18207,7 +18175,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7287,
+              gid = 7264,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv",
@@ -18241,7 +18209,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6856,
+              gid = 6833,
               visible = false,
               properties = {}
             },
@@ -18289,7 +18257,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              gid = 7267,
+              gid = 7244,
               visible = true,
               properties = {}
             },
@@ -18303,7 +18271,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              gid = 7269,
+              gid = 7246,
               visible = true,
               properties = {}
             },
@@ -18335,7 +18303,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              gid = 7267,
+              gid = 7244,
               visible = true,
               properties = {}
             },
@@ -18349,7 +18317,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              gid = 7269,
+              gid = 7246,
               visible = true,
               properties = {}
             },
@@ -18397,7 +18365,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7259,
+              gid = 7236,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -18419,7 +18387,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7259,
+              gid = 7236,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -18501,7 +18469,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              gid = 7267,
+              gid = 7244,
               visible = false,
               properties = {}
             },
@@ -18515,7 +18483,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6932,
+              gid = 6909,
               visible = false,
               properties = {}
             },
@@ -18529,7 +18497,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7033,
+              gid = 7010,
               visible = false,
               properties = {}
             },
@@ -18543,7 +18511,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7034,
+              gid = 7011,
               visible = false,
               properties = {}
             },
@@ -18557,7 +18525,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7035,
+              gid = 7012,
               visible = false,
               properties = {}
             },
@@ -18571,7 +18539,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7036,
+              gid = 7013,
               visible = false,
               properties = {}
             },
@@ -18585,7 +18553,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7158,
+              gid = 7135,
               visible = false,
               properties = {}
             },
@@ -18599,7 +18567,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              gid = 7277,
+              gid = 7254,
               visible = false,
               properties = {}
             },
@@ -18631,7 +18599,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              gid = 7267,
+              gid = 7244,
               visible = false,
               properties = {}
             }
@@ -18663,7 +18631,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -18679,7 +18647,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -18695,7 +18663,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -18711,7 +18679,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -18745,7 +18713,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7259,
+              gid = 7236,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -18797,7 +18765,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7259,
+              gid = 7236,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -18820,7 +18788,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7259,
+              gid = 7236,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -18921,7 +18889,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -18953,7 +18921,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -18969,7 +18937,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -19093,7 +19061,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              gid = 7267,
+              gid = 7244,
               visible = true,
               properties = {}
             },
@@ -19107,7 +19075,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              gid = 7269,
+              gid = 7246,
               visible = true,
               properties = {}
             },
@@ -19173,7 +19141,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -19195,7 +19163,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -19217,7 +19185,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -19239,7 +19207,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -19261,7 +19229,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -19283,7 +19251,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -19682,7 +19650,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6856,
+              gid = 6833,
               visible = false,
               properties = {}
             },
@@ -19696,7 +19664,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              gid = 7267,
+              gid = 7244,
               visible = false,
               properties = {}
             },
@@ -19710,7 +19678,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7293,
+              gid = 7270,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -19728,7 +19696,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7293,
+              gid = 7270,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -19746,7 +19714,7 @@ return {
               width = 128,
               height = 160,
               rotation = 0,
-              gid = 7284,
+              gid = 7261,
               visible = true,
               properties = {
                 ["leaves"] = { id = 609 },
@@ -19764,7 +19732,7 @@ return {
               width = 128,
               height = 96,
               rotation = 0,
-              gid = 7283,
+              gid = 7260,
               visible = true,
               properties = {
                 ["z"] = 128
@@ -19798,7 +19766,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -19850,7 +19818,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -19919,7 +19887,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6861,
+              gid = 6838,
               visible = false,
               properties = {}
             },
@@ -19933,7 +19901,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6912,
+              gid = 6889,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -19968,7 +19936,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6932,
+              gid = 6909,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -19984,7 +19952,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7158,
+              gid = 7135,
               visible = false,
               properties = {}
             },
@@ -19998,7 +19966,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7033,
+              gid = 7010,
               visible = false,
               properties = {}
             },
@@ -20012,7 +19980,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7034,
+              gid = 7011,
               visible = false,
               properties = {}
             },
@@ -20026,7 +19994,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7035,
+              gid = 7012,
               visible = false,
               properties = {}
             },
@@ -20040,7 +20008,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7036,
+              gid = 7013,
               visible = false,
               properties = {}
             },
@@ -20054,7 +20022,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6857,
+              gid = 6834,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -20096,7 +20064,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -20112,7 +20080,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -20144,7 +20112,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -20160,7 +20128,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -20395,7 +20363,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 0,
@@ -20495,7 +20463,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 0,
@@ -20533,7 +20501,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 0,
@@ -20556,7 +20524,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 0,
@@ -20609,7 +20577,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 0,
@@ -20632,7 +20600,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 0,
@@ -20956,7 +20924,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6882,
+              gid = 6859,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -20972,7 +20940,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6902,
+              gid = 6879,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -20988,7 +20956,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7159,
+              gid = 7136,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -21004,7 +20972,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6857,
+              gid = 6834,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -21020,7 +20988,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7262,
+              gid = 7239,
               visible = true,
               properties = {}
             },
@@ -21034,7 +21002,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7262,
+              gid = 7239,
               visible = true,
               properties = {}
             },
@@ -21048,7 +21016,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7262,
+              gid = 7239,
               visible = true,
               properties = {}
             },
@@ -21062,7 +21030,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7262,
+              gid = 7239,
               visible = true,
               properties = {}
             },
@@ -21076,7 +21044,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7262,
+              gid = 7239,
               visible = true,
               properties = {}
             },
@@ -21150,7 +21118,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7294,
+              gid = 7271,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 32,
@@ -21167,7 +21135,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7294,
+              gid = 7271,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 32,
@@ -21184,7 +21152,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7294,
+              gid = 7271,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 180,
@@ -21201,7 +21169,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7294,
+              gid = 7271,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21219,7 +21187,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7297,
+              gid = 7274,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21237,7 +21205,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7297,
+              gid = 7274,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21255,7 +21223,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7298,
+              gid = 7275,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 36,
@@ -21272,7 +21240,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7298,
+              gid = 7275,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 36,
@@ -21289,7 +21257,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7298,
+              gid = 7275,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21307,7 +21275,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7301,
+              gid = 7278,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 39,
@@ -21324,7 +21292,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7301,
+              gid = 7278,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 39,
@@ -21341,7 +21309,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7301,
+              gid = 7278,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21359,7 +21327,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7302,
+              gid = 7279,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 40,
@@ -21376,7 +21344,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7302,
+              gid = 7279,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 40,
@@ -21393,7 +21361,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7302,
+              gid = 7279,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21411,7 +21379,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7322,
+              gid = 7299,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 60,
@@ -21428,7 +21396,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7322,
+              gid = 7299,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21446,7 +21414,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7322,
+              gid = 7299,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21464,7 +21432,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7310,
+              gid = 7287,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 48,
@@ -21481,7 +21449,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7310,
+              gid = 7287,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21499,7 +21467,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7310,
+              gid = 7287,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21517,7 +21485,7 @@ return {
               width = 40,
               height = 32,
               rotation = 0,
-              gid = 7317,
+              gid = 7294,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 55,
@@ -21534,7 +21502,7 @@ return {
               width = 40,
               height = 32,
               rotation = 0,
-              gid = 7317,
+              gid = 7294,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21571,7 +21539,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -21587,7 +21555,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -21603,7 +21571,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7255,
+              gid = 7232,
               visible = true,
               properties = {
                 ["ammo"] = 999999,
@@ -21653,7 +21621,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -21669,7 +21637,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -21799,7 +21767,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 6849,
+              gid = 6826,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -21816,7 +21784,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 6851,
+              gid = 6828,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -21833,7 +21801,7 @@ return {
               width = 48,
               height = 48,
               rotation = 330,
-              gid = 7261,
+              gid = 7238,
               visible = true,
               properties = {}
             },
@@ -21847,7 +21815,7 @@ return {
               width = 48,
               height = 48,
               rotation = 270,
-              gid = 7261,
+              gid = 7238,
               visible = true,
               properties = {}
             },
@@ -21861,7 +21829,7 @@ return {
               width = 48,
               height = 48,
               rotation = 225,
-              gid = 7261,
+              gid = 7238,
               visible = true,
               properties = {}
             },
@@ -21923,7 +21891,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -21939,7 +21907,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -21955,7 +21923,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -21971,7 +21939,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -22005,7 +21973,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7358,
+              gid = 7335,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -22021,7 +21989,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -22037,7 +22005,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -22053,7 +22021,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -22069,7 +22037,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -22134,7 +22102,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7227,
+              gid = 7204,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -22150,7 +22118,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7235,
+              gid = 7212,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -22159,7 +22127,7 @@ return {
             {
               id = 370,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
               x = 1762,
               y = 1080,
@@ -22175,7 +22143,7 @@ return {
             {
               id = 371,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
               x = 1800,
               y = 1080,
@@ -22198,7 +22166,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6697,
+              gid = 6674,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -22214,7 +22182,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7248,
+              gid = 7225,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -22372,7 +22340,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7224,
+              gid = 7201,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -22388,7 +22356,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7228,
+              gid = 7205,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -22404,7 +22372,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7235,
+              gid = 7212,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -22420,7 +22388,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7231,
+              gid = 7208,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -22436,7 +22404,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7227,
+              gid = 7204,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -22452,7 +22420,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7231,
+              gid = 7208,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -22468,7 +22436,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7232,
+              gid = 7209,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -22484,7 +22452,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7224,
+              gid = 7201,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -22500,7 +22468,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7228,
+              gid = 7205,
               visible = true,
               properties = {}
             },
@@ -22514,7 +22482,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7232,
+              gid = 7209,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -22530,7 +22498,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7259,
+              gid = 7236,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -22549,7 +22517,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7259,
+              gid = 7236,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -22568,7 +22536,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -22580,7 +22548,7 @@ return {
             {
               id = 359,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
               x = 1840,
               y = 960,
@@ -22596,7 +22564,7 @@ return {
             {
               id = 362,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
               x = 1904,
               y = 1080,
@@ -22612,7 +22580,7 @@ return {
             {
               id = 360,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
               x = 1880,
               y = 960,
@@ -22628,7 +22596,7 @@ return {
             {
               id = 361,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
               x = 1944,
               y = 1080,
@@ -22651,7 +22619,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6704,
+              gid = 6681,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -22667,7 +22635,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6697,
+              gid = 6674,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -22683,7 +22651,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6646,
+              gid = 6623,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -22692,7 +22660,7 @@ return {
             {
               id = 366,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
               x = 1960,
               y = 960,
@@ -22708,7 +22676,7 @@ return {
             {
               id = 367,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
               x = 2000,
               y = 960,
@@ -22724,7 +22692,7 @@ return {
             {
               id = 368,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
               x = 2096,
               y = 960,
@@ -22740,7 +22708,7 @@ return {
             {
               id = 369,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
               x = 2136,
               y = 960,
@@ -22756,7 +22724,7 @@ return {
             {
               id = 372,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
               x = 2040,
               y = 1080,
@@ -22772,7 +22740,7 @@ return {
             {
               id = 373,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
               x = 2080,
               y = 1080,
@@ -22795,7 +22763,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6645,
+              gid = 6622,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -22811,7 +22779,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7248,
+              gid = 7225,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -22827,7 +22795,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6646,
+              gid = 6623,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -22843,7 +22811,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6697,
+              gid = 6674,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -22859,7 +22827,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7248,
+              gid = 7225,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -22875,7 +22843,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6701,
+              gid = 6678,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -22891,7 +22859,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6705,
+              gid = 6682,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -22925,7 +22893,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -22941,7 +22909,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -22957,7 +22925,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -22973,7 +22941,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -23007,7 +22975,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7259,
+              gid = 7236,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -23040,7 +23008,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -23074,7 +23042,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7259,
+              gid = 7236,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -23107,7 +23075,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -23141,7 +23109,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -23174,7 +23142,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -23190,7 +23158,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -23391,7 +23359,7 @@ return {
               width = 192,
               height = 192,
               rotation = 0,
-              gid = 7256,
+              gid = 7233,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -23425,7 +23393,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 20,
@@ -23448,7 +23416,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7259,
+              gid = 7236,
               visible = true,
               properties = {
                 ["ammo"] = 20,
@@ -23471,7 +23439,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 20,
@@ -23594,7 +23562,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7358,
+              gid = 7335,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -23642,7 +23610,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7259,
+              gid = 7236,
               visible = true,
               properties = {
                 ["ammo"] = 20,
@@ -23665,7 +23633,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7259,
+              gid = 7236,
               visible = true,
               properties = {
                 ["ammo"] = 20,
@@ -23760,7 +23728,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -23783,7 +23751,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 10,
