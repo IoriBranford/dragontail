@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 62,
-  nextobjectid = 655,
+  nextlayerid = 64,
+  nextobjectid = 676,
   backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
@@ -16084,11 +16084,15 @@ return {
         },
         {
           x = 60, y = -12, width = 20, height = 12,
-          data = "eJztkV0KwjAQhL9HQbBJtnopUbS1VO+k1Vv54oMKSo8jSzakFE8gLgybv52Z3cA/fjmqMmJnaAVqO9tLRm33mg8C7/Cdr5eIzsPKgfNxX1gerxUnD950xrzrIr+bODg7eAR4hnh2LaKGck49bHzm7AW25lck+9P6WvW0J4GFwFzgYHuF3jUDj8mzeriYX+WtrD7FK+Q5pbmlnpJG4j066BzcXdbReq1L/9KUcCtg5mBps9Cehv+gvK15Vz+pB80fqqY45A=="
+          data = "eJztkd0KwjAMhb9LQXRtU30pf9BN0flMuj2WN94oKD6OhKZsyJ5ADBzSpM1pcgJ/+2UrY8LOcBCoLHeUDpXdq68FXmGY7y0JjYeVA+dTXJj/PiumHnwc5lsX3buRg9bBPcAjpNy1SH8o59jDxsPZgbeeT9JxRePR+krn0pkE5gIzgdpihd7tez2uPFx6vKpPECitPtszdDpl3bJW+Q/tvTU+7bVxsDRNtF7r8l72EW4FTB0sTIvt1x5mMeXXNrueJ+Y/Pt817g=="
         },
         {
           x = 80, y = -12, width = 20, height = 12,
-          data = "eJztjTEKgDAQBOcJJnvvEo1C1D/bWIjPkXDptbCSDAzbzUKj8R/O+G1vNJirq2CpZsFkvsne/+bSkptKx+CIsHcwBLgEffDfTc/BG/U6DDA="
+          data = "eJztj0EKAkEMBOvmzUkm+ywRF13UJwkqfksQ8aL4HGlmFj2Ie/SyDQ2BdCoJjBr1P20CIn5n7rnkHnmY9wxoG1hWa24dsPqouwZyzW0H9ou3S7D3UssTg5vBweBoME/v3snBo3C/3dvn5IvBonKnDleDc4K29mde9vR53as/ZPH1zwu93SAh"
+        },
+        {
+          x = 100, y = -12, width = 20, height = 12,
+          data = "eJxjYBgFo2AUMNAJRAgzMIQLMzAEi0DoIBEGhmtC5BsIAM01AvU="
         },
         {
           x = 0, y = 0, width = 20, height = 12,
@@ -16104,11 +16108,15 @@ return {
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJzlkt1KA0EMhb9bvenMZPSdvBDd7tRW36hgWx/Mn7aC+DhySGBXZQteGwgbMtlzkpwUg0OBVYWFwT7BWYJPg9vsb3ODY/FcV2Fp0Cp8FH7ZfYVL8/iuQlOteV7+UP3tIjBfElxl2CTIBr3qAl88fzHxqVfxaJ4+YvErXtYf9cEnXwVnPzHXlLVRv4vqO9rP/Ct/i7mEPw8eOzHXa4LHPPwvf07Qmeuzzd85rrPjtwnscR/C7WIP0kgatNBBOOd50H2XBr3VdwtXbj2DddzGe5nWQbibwLzJzr/L8BS5bXJ+9TO+m1P6jm+p105DW+Wl+X+zLxy5RSY="
+          data = "eJytkk1Ow0AMhb8tEjAzmYFbUWgKpOFCqIIWjgWLQkEI9TjoYY8SNohIWLLGiX+e/ewmw1sDywJXGXYRDiLsM1wk87UZ3hv7N1dcgQePWfsrPU/QFzjNfMt1gctsqv/Sm2K+E6+59fz7aCr7LA01p4jwWsfTPHq7YvbC7R/xGRbyKUZ5bn82f8dUTu+54kU978LQ/2uEpH4ytI6Tf5nrRTyM5r9Lxmv9rloxxJV20mk+x+ndzqN4cbse1T72V/zHZLuejXBqXN3vY7I5ZK8CxAhz51qq27mNsA0wC/Ac4TBZ/aM07FYqvKdg/rqj8d3U++h8b0v3C2OVLL/2vvebFQ/SKfLRDHdR73sjvoPdd5hYbyzqX7XVt+rXm/xv+QKnm1nQ"
         },
         {
           x = 80, y = 0, width = 20, height = 12,
-          data = "eJztkUsKwjAURc8CRJK84MBdqdWme9KCEweuSSd+oMuRR1L6UTSdeyHcpA2He/PgXQ8HNweNQG2jrwQWwk9VAqVA6Ll+cxI5uq4GrCdLa+X4mGduOobm2UiX85yRbdxRucpQv7th92Vmvm/aaUYfux8n5vukk8DeTutbpgwyuv90sPVwMXCw+X3b97dproWP3rJmFmqTzwu9GVQ+nnVfKD/9C735/MVALy4YKRM="
+          data = "eJytk9FKAzEQRc+rSLvJJvpLola0XWXbfpPa/pUgpUXxYfFr5JIMnfZBETpwmZnd5M5kcjMkuIlwHWEdYUjQRLhq4K2BjxYuE3y2ME3w6NDnfTyr+TYUDsH4hEnljwm6DG2C78Sf1jn+p8p162o8RHiOcFa5F1qfoa+x/Nx5bxfqpfa9yKWG/Dzvz9a73M6oWYxrD6ewr7bwqpdT20x9i7vORLHm0FUvLP9Rd9uUc68inIcye8Ujp52pZldr2ux1F8oFi/Vde8Tx3hxq5TXAyN2zYefWDQnGEXYBNqFwKF4HeHHaM5g2V9WHCPdHNbRPmvdaMG2YDu0t2D/p8s7Vs3diHHo/v5l0uMyHubSg/YL/d2w/hyhaqg=="
+        },
+        {
+          x = 100, y = 0, width = 20, height = 12,
+          data = "eJzdkTEKAkEMRd8BRCaTYOGhxFXUXe/koq1n0ma12ONImBnEdqbzQyBpHu+TKcIzwFZgVtgIdAZnpSrvCFNMrDEzO4VVJW9QiJo4Pu4qRnWKz16/nvdKN8/J4BV/u68b/EqO7mip+03bWQeDpbT37TPrGhLrIm19FwKPzPJ9DG283mCnMFj6sd/lP/+YDy36IPw="
         },
         {
           x = 20, y = 12, width = 20, height = 12,
@@ -16197,11 +16205,11 @@ return {
         },
         {
           x = 60, y = -12, width = 20, height = 12,
-          data = "eJztz0kOQWEUBeFvAe8/CdGFVRFdWBXRhVUZ24wYSJ6XiJgZqHnVPZc/f36HW0Uv9MMgXKvv/GF59UeFeViEZWgVOqEb2uVzb9Xw14VDOIZTGBemYRYmtfa73eeGf2ls2BR2YR+2tfZjd/2v5507eVQSiw=="
+          data = "eJztz0kOQVEARNGzgP8qIbqwKqILqyK6sCpjmzF9fiJiZuDOb+UWf/78Do+GQRiGUbg33/nj8upPCsuwCuvQKfRCP3TL571Ny98WTuEcLmFamIdFmFXb77qvLf/WatgVDuEY9tV23V3/ewJ5GBKL"
         },
         {
           x = 80, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMNAJiPExMIjzMTBIINEXecg3EABregGY"
+          data = "eJxjYBgFo2AUMNAJiPAxMIjyMTCI8TEwiPMxMEjwYYpd5CHeQAB5igIg"
         },
         {
           x = 0, y = 0, width = 20, height = 12,
@@ -16217,11 +16225,15 @@ return {
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJztzbsJhFAUBcBp4J7eBH9tCbpal6HVGBoJi/GbBuYqfzuLNWyhK8YwhTn0YYjPluIX9nDkeZqm8eoGR+0JMA=="
+          data = "eJztzDkNgEAABMAxcOuNhM8WCZ8uStTQUhIouREwZ/HYUZjDEppCG7rQhyGM8dp0u9ewhf3DV1V+4AJHdQkw"
         },
         {
           x = 80, y = 0, width = 20, height = 12,
-          data = "eJztzisOgDAQRdFr+cwkZWcgWrYFgrKtYtgOaVJRUwMjOea5m+cVgsJarROYhFcOhahwVjsLLAJpxMRWvn352ZJ/hsGutwtEw94lcBv2stTZ9lxv2/vR9ABlFQyf"
+          data = "eJztjbkJgEAAwLLABQS/tQS/tQS/ca2EU+SwFtME0qQVOqEXBmEU2lvLApRCJdRCLhRe2+lZWIRV2IT9oTUh/Rsjv2EK6d8e+eeHD3EAJq0WKQ=="
+        },
+        {
+          x = 100, y = 0, width = 20, height = 12,
+          data = "eJzdzrEVgCAQBNFJUTbAziSxLkis60xox3c9rIlTwH8TFWtNcMjnnYIuCNPn0DefWX5eu8+bgtvoPYJl9LIoXq9tXo+f9wKNXghI"
         },
         {
           x = 0, y = 12, width = 20, height = 12,
@@ -16280,11 +16292,11 @@ return {
         },
         {
           x = 60, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2BgwVEJBgZVCdzyV/HIMQxiAHP3V3HaWQIAImoEAQ=="
+          data = "eJxjYBgFo2BgwVEJBgZVCdzyV/HIMYxwAABlpgII"
         },
         {
           x = 80, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMAwCcFWcdE0AM5kA7Q=="
+          data = "eJxjYBgFo2AUMAwycFUCQn8Vx68QAEoZAfo="
         },
         {
           x = -20, y = 0, width = 20, height = 12,
@@ -16295,8 +16307,8 @@ return {
           data = "eJxbKsIABqYSDAzToexQCQaGJVD2KBgFo4Bh0AIAgjoC1w=="
         },
         {
-          x = 80, y = 0, width = 20, height = 12,
-          data = "eJxjYKAvEJWgs4WjYBQwDF8AAJi4AC4="
+          x = 100, y = 0, width = 20, height = 12,
+          data = "eJxjYICAq+IMgx6ISgy0C0bBKGAYVAAA++IBGg=="
         },
         {
           x = 0, y = 12, width = 20, height = 12,
@@ -18029,8 +18041,7 @@ return {
                 { x = 0, y = 128 },
                 { x = 64, y = 128 },
                 { x = 96, y = 160 },
-                { x = 160, y = 160 },
-                { x = 160, y = -96 }
+                { x = 96, y = -96 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -18969,6 +18980,506 @@ return {
         {
           type = "objectgroup",
           draworder = "index",
+          id = 62,
+          name = "tolearnfireball",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 655,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 2400,
+              y = -32,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = -96 },
+                { x = 0, y = 96 },
+                { x = 448, y = 96 },
+                { x = 480, y = 128 },
+                { x = 480, y = -96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 522,
+              name = "Fireball",
+              type = "",
+              shape = "text",
+              x = 2680,
+              y = 16,
+              width = 120,
+              height = 32,
+              rotation = 0,
+              visible = true,
+              text = "Costs 1 or more fire meter",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 656,
+              name = "Fireball",
+              type = "",
+              shape = "text",
+              x = 2480,
+              y = 16,
+              width = 168,
+              height = 32,
+              rotation = 0,
+              visible = true,
+              text = "Hold        then release to spit fire!",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 523,
+              name = "flame1",
+              type = "",
+              shape = "rectangle",
+              x = 2768,
+              y = 40,
+              width = 30,
+              height = 6,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#ffffd000"
+              }
+            },
+            {
+              id = 525,
+              name = "flamebox",
+              type = "",
+              shape = "rectangle",
+              x = 2768,
+              y = 40,
+              width = 30,
+              height = 6,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#00000000",
+                ["linecolor"] = "#ffffffff",
+                ["roundcorners"] = 1
+              }
+            },
+            {
+              id = 632,
+              name = "attackbutton",
+              type = "",
+              shape = "rectangle",
+              x = 2528,
+              y = 24,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7267,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 633,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2560,
+              y = 24,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7269,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 634,
+              name = "or",
+              type = "",
+              shape = "text",
+              x = 2536,
+              y = 16,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "OR",
+              fontfamily = "TinyUnicode",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {}
+            },
+            {
+              id = 675,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 2160,
+              y = -48,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = 0, y = 64 },
+                { x = 240, y = 128 },
+                { x = 480, y = 128 }
+              },
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 63,
+          name = "learnfireball",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 657,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2800,
+              y = -72,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7257,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["defaultattack"] = "bow-shot-until-empty",
+                ["entrypoint"] = { id = 658 },
+                ["exitpoint"] = { id = 659 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 673,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2848,
+              y = -72,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7257,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["defaultattack"] = "bow-shot-until-empty",
+                ["entrypoint"] = { id = 674 },
+                ["exitpoint"] = { id = 672 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 662,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2752,
+              y = -72,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7257,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["defaultattack"] = "bow-shot-until-empty",
+                ["entrypoint"] = { id = 661 },
+                ["exitpoint"] = { id = 660 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 665,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2704,
+              y = -72,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7257,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["defaultattack"] = "bow-shot-until-empty",
+                ["entrypoint"] = { id = 664 },
+                ["exitpoint"] = { id = 663 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 668,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2656,
+              y = -72,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7257,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["defaultattack"] = "bow-shot-until-empty",
+                ["entrypoint"] = { id = 667 },
+                ["exitpoint"] = { id = 666 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 671,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2608,
+              y = -72,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7257,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["defaultattack"] = "bow-shot-until-empty",
+                ["entrypoint"] = { id = 670 },
+                ["exitpoint"] = { id = 669 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 658,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 2736,
+              y = -8,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 674,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 2784,
+              y = -8,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 661,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 2688,
+              y = -8,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 664,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 2640,
+              y = -8,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 667,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 2592,
+              y = -8,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 670,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 2544,
+              y = -8,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 659,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2832,
+              y = -104,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 672,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2880,
+              y = -104,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 660,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2784,
+              y = -104,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 663,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2736,
+              y = -104,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 666,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2688,
+              y = -104,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 669,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2640,
+              y = -104,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "index",
           id = 15,
           name = "meetshields",
           class = "Room",
@@ -18979,7 +19490,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 2
+            ["donewhenenemiesleft"] = 1
           },
           objects = {
             {
@@ -18987,15 +19498,15 @@ return {
               name = "",
               type = "Boundary",
               shape = "polygon",
-              x = 2720,
-              y = 256,
+              x = 3200,
+              y = 288,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polygon = {
-                { x = -256, y = -320 },
-                { x = -256, y = -192 },
+                { x = -320, y = -320 },
+                { x = -320, y = -192 },
                 { x = 0, y = -192 },
                 { x = 32, y = -160 },
                 { x = 64, y = -160 },
@@ -19019,15 +19530,16 @@ return {
               name = "camerapath",
               type = "CameraPath",
               shape = "polyline",
-              x = 2320,
-              y = 112,
+              x = 2800,
+              y = 144,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polyline = {
-                { x = -160, y = -96 },
-                { x = 80, y = 0 },
+                { x = -160, y = -64 },
+                { x = -48, y = -64 },
+                { x = 208, y = 0 },
                 { x = 320, y = 0 }
               },
               properties = {}
@@ -19037,8 +19549,8 @@ return {
               name = "darknessinside",
               type = "",
               shape = "rectangle",
-              x = 2752,
-              y = 96,
+              x = 3232,
+              y = 128,
               width = 64,
               height = 128,
               rotation = 0,
@@ -19054,8 +19566,8 @@ return {
               name = "exitdoor",
               type = "",
               shape = "rectangle",
-              x = 2752,
-              y = 96,
+              x = 3232,
+              y = 128,
               width = 64,
               height = 128,
               rotation = 0,
@@ -19068,8 +19580,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2752,
-              y = 96,
+              x = 3232,
+              y = 128,
               width = 64,
               height = 128,
               rotation = 0,
@@ -19084,8 +19596,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2824,
-              y = 232,
+              x = 3312,
+              y = 264,
               width = 32,
               height = 32,
               rotation = 0,
@@ -19100,8 +19612,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2696,
-              y = 72,
+              x = 3152,
+              y = 112,
               width = 32,
               height = 32,
               rotation = 0,
@@ -19116,8 +19628,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2832,
-              y = 200,
+              x = 3304,
+              y = 232,
               width = 32,
               height = 32,
               rotation = 0,
@@ -19132,8 +19644,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2720,
-              y = 88,
+              x = 3184,
+              y = 120,
               width = 32,
               height = 32,
               rotation = 0,
@@ -19148,14 +19660,14 @@ return {
               name = "Instruction",
               type = "",
               shape = "text",
-              x = 2368,
-              y = 8,
-              width = 112,
-              height = 40,
+              x = 2992,
+              y = 48,
+              width = 200,
+              height = 32,
               rotation = 0,
-              visible = false,
-              text = "TOWARDS ARROW IN FLIGHT to CATCH",
-              fontfamily = "TinyUnicode",
+              visible = true,
+              text = "Attack the unprotected side of a blocking enemy!",
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
@@ -19165,7 +19677,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2344,
+              x = 2824,
               y = 24,
               width = 16,
               height = 16,
@@ -19179,7 +19691,7 @@ return {
               name = "attackbutton",
               type = "",
               shape = "rectangle",
-              x = 2336,
+              x = 2816,
               y = 64,
               width = 14,
               height = 14,
@@ -19189,61 +19701,12 @@ return {
               properties = {}
             },
             {
-              id = 522,
-              name = "Fireball",
-              type = "",
-              shape = "text",
-              x = 2520,
-              y = 8,
-              width = 192,
-              height = 56,
-              rotation = 0,
-              visible = true,
-              text = "Fireballs:\nHold        then release\nCosts 1 or more",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
-              properties = {}
-            },
-            {
-              id = 523,
-              name = "flame1",
-              type = "",
-              shape = "rectangle",
-              x = 2648,
-              y = 48,
-              width = 30,
-              height = 6,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["color"] = "#ffffd000"
-              }
-            },
-            {
-              id = 525,
-              name = "flamebox",
-              type = "",
-              shape = "rectangle",
-              x = 2648,
-              y = 48,
-              width = 30,
-              height = 6,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["color"] = "#00000000",
-                ["linecolor"] = "#ffffffff",
-                ["roundcorners"] = 1
-              }
-            },
-            {
               id = 503,
               name = "",
               type = "bandit-shield",
               shape = "rectangle",
-              x = 2752,
-              y = 120,
+              x = 3216,
+              y = 152,
               width = 64,
               height = 64,
               rotation = 0,
@@ -19260,8 +19723,8 @@ return {
               name = "",
               type = "bandit-shield",
               shape = "rectangle",
-              x = 2784,
-              y = 152,
+              x = 3248,
+              y = 184,
               width = 64,
               height = 64,
               rotation = 0,
@@ -19278,8 +19741,8 @@ return {
               name = "",
               type = "fruit-tree",
               shape = "rectangle",
-              x = 2832,
-              y = 24,
+              x = 3312,
+              y = 56,
               width = 128,
               height = 160,
               rotation = 0,
@@ -19296,8 +19759,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2832,
-              y = -24,
+              x = 3312,
+              y = 8,
               width = 128,
               height = 96,
               rotation = 0,
@@ -19306,52 +19769,6 @@ return {
               properties = {
                 ["z"] = 128
               }
-            },
-            {
-              id = 632,
-              name = "attackbutton",
-              type = "",
-              shape = "rectangle",
-              x = 2568,
-              y = 32,
-              width = 14,
-              height = 14,
-              rotation = 0,
-              gid = 7267,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 633,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2600,
-              y = 32,
-              width = 14,
-              height = 14,
-              rotation = 0,
-              gid = 7269,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 634,
-              name = "or",
-              type = "",
-              shape = "text",
-              x = 2576,
-              y = 24,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              visible = true,
-              text = "OR",
-              fontfamily = "TinyUnicode",
-              wrap = true,
-              color = { 255, 255, 255 },
-              halign = "center",
-              properties = {}
             }
           }
         },
@@ -19376,8 +19793,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2784,
-              y = -32,
+              x = 3264,
+              y = 0,
               width = 128,
               height = 128,
               rotation = 0,
@@ -19398,8 +19815,8 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 2744,
-              y = 16,
+              x = 3224,
+              y = 48,
               width = 0,
               height = 0,
               rotation = 0,
@@ -19413,8 +19830,8 @@ return {
               name = "exitpoint",
               type = "",
               shape = "point",
-              x = 2784,
-              y = -64,
+              x = 3264,
+              y = -32,
               width = 0,
               height = 0,
               rotation = 0,
@@ -19428,8 +19845,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2896,
-              y = 40,
+              x = 3376,
+              y = 72,
               width = 128,
               height = 128,
               rotation = 0,
@@ -19450,8 +19867,8 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 2832,
-              y = 104,
+              x = 3312,
+              y = 136,
               width = 0,
               height = 0,
               rotation = 0,
@@ -19465,8 +19882,8 @@ return {
               name = "exitpoint",
               type = "",
               shape = "point",
-              x = 2928,
-              y = 8,
+              x = 3408,
+              y = 40,
               width = 0,
               height = 0,
               rotation = 0,
@@ -19480,7 +19897,7 @@ return {
               name = "Instruction",
               type = "",
               shape = "text",
-              x = 2344,
+              x = 2824,
               y = 48,
               width = 144,
               height = 32,
@@ -19497,7 +19914,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2320,
+              x = 2800,
               y = 72,
               width = 16,
               height = 16,
@@ -19511,7 +19928,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2368,
+              x = 2848,
               y = 256,
               width = 16,
               height = 16,
@@ -19527,7 +19944,7 @@ return {
               name = "Instruction",
               type = "",
               shape = "text",
-              x = 2304,
+              x = 2784,
               y = 224,
               width = 224,
               height = 32,
@@ -19546,7 +19963,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2296,
+              x = 2776,
               y = 256,
               width = 16,
               height = 16,
@@ -19562,7 +19979,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2320,
+              x = 2800,
               y = 256,
               width = 16,
               height = 16,
@@ -19576,7 +19993,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2368,
+              x = 2848,
               y = 56,
               width = 16,
               height = 16,
@@ -19590,7 +20007,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2384,
+              x = 2864,
               y = 56,
               width = 16,
               height = 16,
@@ -19604,7 +20021,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2400,
+              x = 2880,
               y = 56,
               width = 16,
               height = 16,
@@ -19618,7 +20035,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2416,
+              x = 2896,
               y = 56,
               width = 16,
               height = 16,
@@ -19632,7 +20049,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2384,
+              x = 2864,
               y = 240,
               width = 16,
               height = 16,
@@ -19648,8 +20065,8 @@ return {
               name = "",
               type = "Boundary",
               shape = "polygon",
-              x = 1920,
-              y = -216,
+              x = 2400,
+              y = -184,
               width = 0,
               height = 0,
               rotation = 0,
@@ -19674,8 +20091,8 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 2384,
-              y = 128,
+              x = 2864,
+              y = 160,
               width = 64,
               height = 64,
               rotation = 0,
@@ -19690,8 +20107,8 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 2384,
-              y = 208,
+              x = 2864,
+              y = 240,
               width = 64,
               height = 64,
               rotation = 0,
@@ -19722,8 +20139,8 @@ return {
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 2376,
-              y = 248,
+              x = 2856,
+              y = 280,
               width = 64,
               height = 64,
               rotation = 0,
@@ -19738,8 +20155,8 @@ return {
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 2376,
-              y = 152,
+              x = 2856,
+              y = 184,
               width = 64,
               height = 64,
               rotation = 0,
@@ -19787,8 +20204,8 @@ return {
               name = "exittrigger",
               type = "Trigger",
               shape = "polygon",
-              x = 2752,
-              y = 96,
+              x = 3232,
+              y = 128,
               width = 0,
               height = 0,
               rotation = 0,
