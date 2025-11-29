@@ -26,7 +26,7 @@
  },
  "meta": {
   "app": "http://www.aseprite.org/",
-  "version": "1.3.15.4-x64",
+  "version": "1.3.15.5-x64",
   "image": "pepper-plant.png",
   "format": "RGBA8888",
   "size": { "w": 66, "h": 68 },
@@ -40,6 +40,7 @@
    { "name": "Sprite Sheet", "opacity": 255, "blendMode": "normal" }
   ],
   "slices": [
+   { "name": "origin", "color": "#0000ffff", "keys": [{ "frame": 0, "bounds": {"x": 0, "y": 0, "w": 32, "h": 32 }, "pivot": {"x": 16, "y": 30 } }] }
   ]
  }
 }
