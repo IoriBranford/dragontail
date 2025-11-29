@@ -561,4 +561,36 @@ function Common:fruitTreeHurt(hit)
     return self.recoverai
 end
 
+function Common:checkFruitPicked()
+    local fruit = self.item
+    if fruit then
+        if fruit:hasDisappeared() then
+            self.itemx = fruit.x
+            self.itemy = fruit.y
+            self.itemz = fruit.z
+            self.item = nil
+            return self.nextstate or "plantEmpty"
+        end
+    elseif Database.get(self.itemtype) then
+        local x = self.itemx or self.x
+        local y = self.itemy or (self.y + 1)
+        local z = self.itemz or (self.z + 1)
+        self.item = Characters.spawn(
+            Character(self.itemtype, x, y, z))
+    end
+end
+
+function Common:checkFruitNeedsRegrow()
+    local fruittype = Database.get(self.itemtype)
+    if fruittype then
+        if fruittype.givemana then
+            for _, opponent in ipairs(self.opponents) do
+                if Mana.getStoredUnits(opponent) <= 0 then
+                    return self.nextstate or "plantRegrowFruit"
+                end
+            end
+        end
+    end
+end
+
 return Common
