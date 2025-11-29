@@ -14,6 +14,20 @@ function Mana:init()
     self.manacharge = self.manacharge or 0
 end
 
+function Mana:getStoredUnits()
+    if not self.manastore or (self.manaunitsize or 0) <= 0 then
+        return 0
+    end
+    return self.manastore / self.manaunitsize
+end
+
+function Mana:getMaxStoredUnits()
+    if not self.manastoremax or (self.manaunitsize or 0) <= 0 then
+        return 0
+    end
+    return self.manastoremax / self.manaunitsize
+end
+
 function Mana:store(mana)
     if not self.manastore or not self.manastoremax then
         return
