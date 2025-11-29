@@ -547,7 +547,7 @@ body to grab it</text>
      <property name="drawz" type="float" value="-1"/>
      <property name="extrudeY" type="float" value="-64"/>
     </properties>
-    <polygon points="-384,-96 -384,128 -352,96 -256,96 -224,64 -128,64 -96,96 -32,96 0,128 64,128 96,160 96,-96"/>
+    <polygon points="-384,-96 -384,128 -352,96 -256,96 -224,64 -128,64 -96,96 -32,96 0,128 64,128 96,160 160,160 160,-96"/>
    </object>
    <object id="265" template="mapobjects/OutwardBoundary.tx" x="1872" y="-600">
     <properties>
@@ -755,7 +755,7 @@ body to grab it</text>
   </objectgroup>
   <objectgroup draworder="index" id="62" name="tolearnfireball" class="Room">
    <object id="655" template="mapobjects/OutwardBoundary.tx" x="2400" y="-32">
-    <polygon points="0,-96 0,96 448,96 480,128 480,-96"/>
+    <polygon points="64,-96 64,96 448,96 480,128 480,-96"/>
    </object>
    <object id="522" name="Fireball" x="2680" y="16" width="120" height="32">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Costs 1 or more fire meter</text>

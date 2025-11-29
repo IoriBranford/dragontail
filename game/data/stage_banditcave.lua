@@ -18077,7 +18077,8 @@ return {
                 { x = 0, y = 128 },
                 { x = 64, y = 128 },
                 { x = 96, y = 160 },
-                { x = 96, y = -96 }
+                { x = 160, y = 160 },
+                { x = 160, y = -96 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -19039,8 +19040,8 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 0, y = -96 },
-                { x = 0, y = 96 },
+                { x = 64, y = -96 },
+                { x = 64, y = 96 },
                 { x = 448, y = 96 },
                 { x = 480, y = 128 },
                 { x = 480, y = -96 }
