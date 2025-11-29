@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="64" nextobjectid="676">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="64" nextobjectid="678">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -58,6 +58,8 @@
  <tileset firstgid="7267" source="sprites/items/lifefruit.tsx"/>
  <tileset firstgid="7268" source="sprites/weapons/bigstone.tsx"/>
  <tileset firstgid="7269" source="sprites/weapons/tallstone.tsx"/>
+ <tileset firstgid="7270" source="sprites/items/pepper-plant.tsx"/>
+ <tileset firstgid="7271" source="sprites/items/peppers-on-plant.tsx"/>
  <layer id="2" name="floor" width="200" height="12">
   <properties>
    <property name="drawz" type="float" value="-2"/>
@@ -88,10 +90,10 @@
    eJzVkktOA0EMRN8WhJB7usWpkCAzIcxwIhaQ5GKETzYRp0GFbWkELCJYYclyf+xyt6teDJ4NNgb3Bq8d3DbYd7CqMDToG4wVbhqszb1UWDZ33U/V46HCg0Us8F4dR7Vbg0WFqcFb5z2vivtT9B6FVz0qb1vgpDie8hfNsYSjd15UPm0V+Uu9K3rcNb6ZcPKPfeSO8d/f2PSH2rlpRprhsdZi/kNwk1wkX12FczsOI7nVbNYFrmPe6drvzPnsZz2T8zzrIt++1Esvc11sAk98Zs5l1JzOah/V01wD0sdZcd5TH31oILWiveIQvMq1zvs8m+f9pJH/ZB/he0ss
   </chunk>
    <chunk x="60" y="0" width="20" height="12">
-   eJytkk1Ow0AMhb8tEjAzmYFbUWgKpOFCqIIWjgWLQkEI9TjoYY8SNohIWLLGiX+e/ewmw1sDywJXGXYRDiLsM1wk87UZ3hv7N1dcgQePWfsrPU/QFzjNfMt1gctsqv/Sm2K+E6+59fz7aCr7LA01p4jwWsfTPHq7YvbC7R/xGRbyKUZ5bn82f8dUTu+54kU978LQ/2uEpH4ytI6Tf5nrRTyM5r9Lxmv9rloxxJV20mk+x+ndzqN4cbse1T72V/zHZLuejXBqXN3vY7I5ZK8CxAhz51qq27mNsA0wC/Ac4TBZ/aM07FYqvKdg/rqj8d3U++h8b0v3C2OVLL/2vvebFQ/SKfLRDHdR73sjvoPdd5hYbyzqX7XVt+rXm/xv+QKnm1nQ
+   eJytkk1Ow0AMhb8tEjAzmYFbUWgKpOFCqIIWjgWLQkEI9TjoYY8SNohIWLLGiX+e/ewmw1sDywJXGXYRDiLsM1wk87UZ3hv7N1dcgQePWfsrPU/QFzjNfMt1gctsqv/Sm2K+E6+59fz7aCr7LA01p4jwWsfTPHq7YvbC8X7EZ1jIpxjluf3Z/B1POb3nihf1vAtD/68RkvrJ0DpO/mWuF/Ewmv8uGa/1u2rFEFfaSadZHad3O4/ixe16VPvYX/Efk+16NsKpcXW/j8nmkL0KECPMnWupbuc2wjbALMBzhMNk9Y/SsFup8J6C+euOxndT76PzvS3dL4xVsvza+95vVjxIp8hHY/WFU+97I76D3XeYWG8s6l+11bfq15v8b/kCCJJasw==
   </chunk>
    <chunk x="80" y="0" width="20" height="12">
-   eJytk9FKAzEQRc+rSLvJJvpLola0XWXbfpPa/pUgpUXxYfFr5JIMnfZBETpwmZnd5M5kcjMkuIlwHWEdYUjQRLhq4K2BjxYuE3y2ME3w6NDnfTyr+TYUDsH4hEnljwm6DG2C78Sf1jn+p8p162o8RHiOcFa5F1qfoa+x/Nx5bxfqpfa9yKWG/Dzvz9a73M6oWYxrD6ewr7bwqpdT20x9i7vORLHm0FUvLP9Rd9uUc68inIcye8Ujp52pZldr2ux1F8oFi/Vde8Tx3hxq5TXAyN2zYefWDQnGEXYBNqFwKF4HeHHaM5g2V9WHCPdHNbRPmvdaMG2YDu0t2D/p8s7Vs3diHHo/v5l0uMyHubSg/YL/d2w/hyhaqg==
+   eJyVk1tOAkEQRc+vMdBd06M7cC2KjxhAw2MBrEaFTfhhWIjRGIjGD+JqzM10ZVo+ECqpVNX01O163N4kuDToGSwMNgmCwXmA1wCfFZwm+Kqgn+Cu0FHd+oMcr2KL4XjS6xxbgmENVYKfxL/yFqAX4MxgWcGLwVWEjwhdgxuDB4OjjD1RPTWMsi87Lux9amp8rmBpMMs1XsS2v3Hd9ibrsfeoWXRzn99Vcy6dFDmy05q9RBjKGe4xj0NloLqFnWciX3MYZiudHnDvKjR9zw2OYzN7+Z2CO331n+/02WsXiqXu67tyhPEe/nLlKUInz7jUdfHfJjUcWGc+CEP+IsJjwT1X5+Y822hwu3WH8sR57Vr79L0qdp77W/AzcUo8dAznkWPo/eySky2uKBYXlC/dxaNfEMtgMQ==
   </chunk>
    <chunk x="100" y="0" width="20" height="12">
    eJzdkTEKAkEMRd8BRCaTYOGhxFXUXe/koq1n0ma12ONImBnEdqbzQyBpHu+TKcIzwFZgVtgIdAZnpSrvCFNMrDEzO4VVJW9QiJo4Pu4qRnWKz16/nvdKN8/J4BV/u68b/EqO7mip+03bWQeDpbT37TPrGhLrIm19FwKPzPJ9DG283mCnMFj6sd/lP/+YDy36IPw=
@@ -780,6 +782,18 @@ body to grab it</text>
    </object>
    <object id="675" template="mapobjects/CameraPath.tx" x="2160" y="-48">
     <polyline points="0,64 240,128 480,128"/>
+   </object>
+   <object id="676" gid="7270" x="2672" y="96" width="32" height="32">
+    <properties>
+     <property name="item" type="object" value="677"/>
+     <property name="propertiestable" type="file" value="database/objects-properties.csv"/>
+    </properties>
+   </object>
+   <object id="677" gid="7271" x="2672" y="96" width="32" height="32">
+    <properties>
+     <property name="propertiestable" type="file" value="database/items-properties.csv"/>
+     <property name="z" type="float" value="1"/>
+    </properties>
    </object>
   </objectgroup>
   <objectgroup id="63" name="learnfireball" class="Room">
