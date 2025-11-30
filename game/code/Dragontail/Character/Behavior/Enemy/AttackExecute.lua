@@ -1,8 +1,8 @@
 local Behavior = require "Dragontail.Character.Behavior"
-local Guard    = require "Dragontail.Character.Action.Guard"
-local Shoot    = require "Dragontail.Character.Action.Shoot"
+local Guard    = require "Dragontail.Character.Component.Guard"
+local Shoot    = require "Dragontail.Character.Component.Shoot"
 local Body     = require "Dragontail.Character.Component.Body"
-local Slide    = require "Dragontail.Character.Action.Slide"
+local Slide    = require "Dragontail.Character.Component.Slide"
 local Color    = require "Tiled.Color"
 local Face     = require "Dragontail.Character.Component.Face"
 

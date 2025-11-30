@@ -1,7 +1,7 @@
 local Behavior = require "Dragontail.Character.Behavior"
-local Guard    = require "Dragontail.Character.Action.Guard"
+local Guard    = require "Dragontail.Character.Component.Guard"
 local Color    = require "Tiled.Color"
-local Shoot    = require "Dragontail.Character.Action.Shoot"
+local Shoot    = require "Dragontail.Character.Component.Shoot"
 local Characters = require "Dragontail.Stage.Characters"
 
 ---@class AttackPrepare:Behavior

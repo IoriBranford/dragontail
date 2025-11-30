@@ -9,7 +9,7 @@ local DirectionalAnimation = require "Dragontail.Character.Component.Directional
 local Face                 = require "Dragontail.Character.Component.Face"
 local Mana = require "Dragontail.Character.Component.Mana"
 local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask"
-local Shoot         = require "Dragontail.Character.Action.Shoot"
+local Shoot         = require "Dragontail.Character.Component.Shoot"
 local Attacker      = require "Dragontail.Character.Component.Attacker"
 
 local yield = coroutine.yield

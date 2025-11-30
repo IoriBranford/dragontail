@@ -1,5 +1,5 @@
 local Enemy = require "Dragontail.Character.Enemy"
-local Guard = require "Dragontail.Character.Action.Guard"
+local Guard = require "Dragontail.Character.Component.Guard"
 local Face  = require "Dragontail.Character.Component.Face"
 local AttackTarget = require "Dragontail.Character.Component.AttackTarget"
 local Characters   = require "Dragontail.Stage.Characters"

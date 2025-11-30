@@ -1,6 +1,6 @@
 local Behavior = require "Dragontail.Character.Behavior"
-local Guard    = require "Dragontail.Character.Action.Guard"
-local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
+local Guard    = require "Dragontail.Character.Component.Guard"
+local HoldOpponent = require "Dragontail.Character.Component.HoldOpponent"
 local Gui          = require "Dragontail.Gui"
 local StateMachine = require "Dragontail.Character.Component.StateMachine"
 local Mana         = require "Dragontail.Character.Component.Mana"

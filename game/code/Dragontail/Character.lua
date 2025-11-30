@@ -7,7 +7,7 @@ local Movement    = require "Component.Movement"
 local Attacker      = require "Dragontail.Character.Component.Attacker"
 local Body        = require "Dragontail.Character.Component.Body"
 local Shadow      = require "Dragontail.Character.Component.Shadow"
-local Guard       = require "Dragontail.Character.Action.Guard"
+local Guard       = require "Dragontail.Character.Component.Guard"
 local Jiggler     = require "Dragontail.Character.Component.Jiggler"
 local Characters
 

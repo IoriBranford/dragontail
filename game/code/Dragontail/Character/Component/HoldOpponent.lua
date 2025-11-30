@@ -2,7 +2,7 @@ local Characters = require "Dragontail.Stage.Characters"
 local Body       = require "Dragontail.Character.Component.Body"
 local Audio    = require "System.Audio"
 local StateMachine   = require "Dragontail.Character.Component.StateMachine"
-local Guard          = require "Dragontail.Character.Action.Guard"
+local Guard          = require "Dragontail.Character.Component.Guard"
 local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
 
 ---@class HeldByOpponent:Character

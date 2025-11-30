@@ -1,6 +1,6 @@
 local Face       = require "Dragontail.Character.Component.Face"
 local Mana                 = require "Dragontail.Character.Component.Mana"
-local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
+local HoldOpponent = require "Dragontail.Character.Component.HoldOpponent"
 local Audio    = require "System.Audio"
 local Behavior = require "Dragontail.Character.Behavior"
 local Player   = require "Dragontail.Character.Player"

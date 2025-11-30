@@ -1,5 +1,5 @@
 local Face = require "Dragontail.Character.Component.Face"
-local Slide= require "Dragontail.Character.Action.Slide"
+local Slide= require "Dragontail.Character.Component.Slide"
 local Body = require "Dragontail.Character.Component.Body"
 local Behavior = require "Dragontail.Character.Behavior"
 

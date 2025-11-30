@@ -1,9 +1,9 @@
 local Combo = require "Dragontail.Character.Component.Combo"
-local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
+local HoldOpponent = require "Dragontail.Character.Component.HoldOpponent"
 local Face         = require "Dragontail.Character.Component.Face"
 local StateMachine = require "Dragontail.Character.Component.StateMachine"
 local Behavior     = require "Dragontail.Character.Behavior"
-local Guard        = require "Dragontail.Character.Action.Guard"
+local Guard        = require "Dragontail.Character.Component.Guard"
 local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
 local Body                 = require "Dragontail.Character.Component.Body"
 

@@ -1,9 +1,9 @@
 local Behavior = require "Dragontail.Character.Behavior"
-local Guard    = require "Dragontail.Character.Action.Guard"
-local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
+local Guard    = require "Dragontail.Character.Component.Guard"
+local HoldOpponent = require "Dragontail.Character.Component.HoldOpponent"
 local Audio        = require "System.Audio"
 local Body         = require "Dragontail.Character.Component.Body"
-local Slide        = require "Dragontail.Character.Action.Slide"
+local Slide        = require "Dragontail.Character.Component.Slide"
 
 ---@class TakingHit:Behavior
 ---@field character Fighter

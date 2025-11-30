@@ -1,6 +1,6 @@
 local Characters = require "Dragontail.Stage.Characters"
 local Raycast    = require "Object.Raycast"
-local Slide      = require "Dragontail.Character.Action.Slide"
+local Slide      = require "Dragontail.Character.Component.Slide"
 local Audio      = require "System.Audio"
 local Face       = require "Dragontail.Character.Component.Face"
 local Body       = require "Dragontail.Character.Component.Body"

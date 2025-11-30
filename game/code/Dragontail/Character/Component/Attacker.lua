@@ -1,6 +1,6 @@
 local Body = require "Dragontail.Character.Component.Body"
 local drawCake = require "drawCake"
-local Guard    = require "Dragontail.Character.Action.Guard"
+local Guard    = require "Dragontail.Character.Component.Guard"
 local StateMachine = require "Dragontail.Character.Component.StateMachine"
 local tablepool    = require "tablepool"
 local AttackHit    = require "Dragontail.Character.Event.AttackHit"
