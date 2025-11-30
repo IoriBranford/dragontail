@@ -403,7 +403,7 @@ function Stage.fixedupdate()
     local solids = Characters.getGroup("solids")
     for _, solid in ipairs(solids) do
         if solid.layer ~= room
-        and CollisionMask.test(solid.bodyinlayers, "Object", "Wall") ~= 0 then
+        and CollisionMask.testAny(solid.bodyinlayers, "Object", "Wall") ~= 0 then
             if not solid:isOnCamera(camera) then
                 solid:disappear()
             end

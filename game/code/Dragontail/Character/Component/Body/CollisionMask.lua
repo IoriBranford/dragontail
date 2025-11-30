@@ -40,13 +40,39 @@ end
 
 ---@param mask CollisionLayerMask
 ---@param ... CollisionLayerName|CollisionLayerIndex
-function CollisionMask.test(mask, ...)
+function CollisionMask.testAll(mask, ...)
     for i = 1, select("#", ...) do
         local layer = select(i, ...)
         local layermask = CollisionMask.get(layer)
         mask = bit.band(mask, layermask)
     end
     return mask
+end
+
+---@param mask CollisionLayerMask
+---@param ... CollisionLayerName|CollisionLayerIndex
+function CollisionMask.testAny(mask, ...)
+    local layersmask = 0
+    for i = 1, select("#", ...) do
+        local layer = select(i, ...)
+        local layermask = CollisionMask.get(layer)
+        layersmask = bit.bor(layersmask, layermask)
+    end
+    return bit.band(mask, layersmask)
+end
+
+local names = {}
+function CollisionMask.debugPrint(mask)
+    for _, name in ipairs(layermasks) do
+        local b = layermasks[name]
+        if bit.band(mask, b) ~= 0 then
+            names[#names+1] = name
+        end
+    end
+    print(table.unpack(names))
+    for i = #names, 1, -1 do
+        names[i] = nil
+    end
 end
 
 return CollisionMask
