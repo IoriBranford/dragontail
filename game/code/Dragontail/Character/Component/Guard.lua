@@ -10,6 +10,8 @@ local drawCake = require "drawCake"
 ---@field numguardedhits integer?
 local Guard = {}
 
+local DefaultGuardArc = math.pi/2
+
 function Guard:startGuarding(guardangle)
     self.guardangle = guardangle
 end
@@ -38,7 +40,7 @@ end
 function Guard:isUnitVectorAgainstGuardArc(ux, uy)
     local guardangle = self.guardangle
     if not guardangle then return false end
-    local guardarc = self.guardarc or (math.pi/2)
+    local guardarc = self.guardarc or DefaultGuardArc
     local gx, gy = math.cos(guardangle), math.sin(guardangle)
     return math.dot(ux, uy, gx, gy) <= -math.cos(guardarc)
 end
@@ -84,7 +86,7 @@ function Guard:draw(fixedfrac)
     local angle = self.guardangle
     if not angle then return end
 
-    local arc = self.guardarc or (math.pi/2)
+    local arc = self.guardarc or DefaultGuardArc
 
     fixedfrac = fixedfrac or 0
     local x = self.x + self.velx * fixedfrac
