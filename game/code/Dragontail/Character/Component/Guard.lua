@@ -82,9 +82,13 @@ function Guard:standardImpact(hit)
     Guard.pushBackAttacker(self, attacker)
 end
 
-function Guard:draw(fixedfrac)
+function Guard:draw(sidey, fixedfrac)
     local angle = self.guardangle
     if not angle then return end
+
+    local sina = math.sin(angle)
+    if sidey < 0 and sina >= -.5
+    or sidey >= 0 and sina < -.5 then return end
 
     local arc = self.guardarc or DefaultGuardArc
 
@@ -94,8 +98,16 @@ function Guard:draw(fixedfrac)
         - (self.z + self.velz*fixedfrac)
     local r = self.bodyradius
     local h = self.bodyheight
-    love.graphics.setColor(.5, 1, 1)
-    drawCake(x, y, r, h, angle, arc)
+    local t = love.timer.getTime()*60
+    local dt = math.pi/30
+    local a1, a2 = angle - arc, angle + arc
+    for i = 1, h do
+        local alpha = (1 + math.cos(t))/2
+        love.graphics.setColor(.5, 1, 1, alpha)
+        love.graphics.arc("line", "open", x, y, r, a1, a2)
+        t = t - dt
+        y = y - 1
+    end
 end
 
 return Guard

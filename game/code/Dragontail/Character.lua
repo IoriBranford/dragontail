@@ -85,14 +85,16 @@ function Character:draw(fixedfrac)
     Shadow.drawSprite(self, fixedfrac)
     love.graphics.push()
     love.graphics.translate(0, -self.z - self.velz*fixedfrac)
+
+    Guard.draw(self, -1, fixedfrac)
     local Stage = require "Dragontail.Stage"
     Stage.setUniform("texRgbFactor", self.texturealpha or 1)
     self:baseDraw(fixedfrac)
+    Guard.draw(self, 1, fixedfrac)
     love.graphics.pop()
     if Config.drawbodies then
         Body.draw(self, fixedfrac)
         Attacker.drawCircle(self, fixedfrac)
-        Guard.draw(self, fixedfrac)
     end
 end
 
