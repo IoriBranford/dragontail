@@ -346,6 +346,9 @@ function Stage.updateGoingToNextRoom()
         local donewhenenemiesleft = room.donewhenenemiesleft or 0
         if #enemies <= donewhenenemiesleft and not sequencethread then
             room = Stage.openRoom(roomindex + 1)
+            if not room then
+                return
+            end
         end
     end
 
