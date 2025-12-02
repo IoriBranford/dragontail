@@ -52,7 +52,7 @@ function TakingHit:start(hit)
     self.attack = attack
     self.attackangle = attackangle
     self.pushbackspeed = Slide.updateSlideSpeed(fighter, attackangle, pushbackspeed)
-    if fighter.z > fighter.floorz then
+    if fighter.floorz and fighter.z > fighter.floorz then
         fighter.velz = attack.launchspeedz or 4
         self.inair = true
     end
