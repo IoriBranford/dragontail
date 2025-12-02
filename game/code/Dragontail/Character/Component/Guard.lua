@@ -86,11 +86,19 @@ function Guard:draw(sidey, fixedfrac)
     local angle = self.guardangle
     if not angle then return end
 
-    local sina = math.sin(angle)
-    if sidey < 0 and sina >= -.5
-    or sidey >= 0 and sina < -.5 then return end
-
     local arc = self.guardarc or DefaultGuardArc
+    local a1, a2 = angle - arc, angle + arc
+    local y1 = math.sin(a1)
+    local y2 = math.sin(a2)
+    if sidey < 0 then
+        if y1 >= 0 and y2 >= 0 then return end
+        if y1 >= 0 then a1 = a1 + math.asin(y1) end
+        if y2 >= 0 then a2 = a2 - math.asin(y2) end
+    else
+        if y1 < 0 and y2 < 0 then return end
+        if y1 < 0 then a1 = a1 - math.asin(y1) end
+        if y2 < 0 then a2 = a2 + math.asin(y2) end
+    end
 
     fixedfrac = fixedfrac or 0
     local x = self.x + self.velx * fixedfrac
@@ -100,8 +108,7 @@ function Guard:draw(sidey, fixedfrac)
     local h = self.bodyheight
     local t = love.timer.getTime()*60
     local dt = math.pi/30
-    local a1, a2 = angle - arc, angle + arc
-    for i = 1, h do
+    for _ = 1, h do
         local alpha = (1 + math.cos(t))/2
         love.graphics.setColor(.5, 1, 1, alpha)
         love.graphics.arc("line", "open", x, y, r, a1, a2)
