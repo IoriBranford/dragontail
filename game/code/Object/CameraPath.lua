@@ -11,7 +11,7 @@ end
 function CameraPath:init()
 end
 
-function CameraPath:getCameraCenter(focusx, focusy)
+function CameraPath:projectPoint(focusx, focusy)
     local selfx, selfy = self.x, self.y
     local points = assert(self.points)
     local x, y, i1, i2 = math.nearestpolylinepoint(points, focusx - selfx, focusy - selfy)

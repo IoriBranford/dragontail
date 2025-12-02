@@ -11,6 +11,7 @@ local Database    = require "Data.Database"
 local Assets      = require "Tiled.Assets"
 local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask"
 local pathlite = require "pl.pathlite"
+local CameraBoundary = require "Object.CameraBoundary"
 local Stage = {
     CameraWidth = 480,
     CameraHeight = 270
@@ -53,6 +54,9 @@ function Stage.load(stagefile)
     for _, object in pairs(map.objects) do
         if object.type == "CameraPath" then
             CameraPath.cast(object)
+            object:init()
+        elseif object.type == "CameraBoundary" then
+            CameraBoundary.cast(object)
             object:init()
         else
             local characters = object.layer.characters or {}
@@ -296,6 +300,7 @@ function Stage.openRoom(i)
         if room.checkpoint then
             firstroomname = room.name
         end
+        return room
     else
         winningteam = "players"
         for _, player in ipairs(Characters.getGroup("players")) do
@@ -332,61 +337,69 @@ function Stage.isInNextRoom()
 end
 
 function Stage.updateGoingToNextRoom()
-    local room = map.layers.rooms[roomindex]
+    local room = Stage.getCurrentRoom()
     if not room then
         return
+    end
+    if Stage.isInNextRoom() then
+        local enemies = Characters.getGroup("enemies")
+        local donewhenenemiesleft = room.donewhenenemiesleft or 0
+        if #enemies <= donewhenenemiesleft and not sequencethread then
+            room = Stage.openRoom(roomindex + 1)
+        end
     end
 
     local camhalfw, camhalfh = camera.width/2, camera.height/2
     local centerx, centery = camera.x + camhalfw, camera.y + camhalfh
     local centerz = camera.z + camera.bodyheight/2
 
-    local playerscenterx, playerscentery, playerscenterz = 0, 0, 0
+    local destx, desty, destz = 0, 0, 0
     local players = Characters.getGroup("players")
     for _, player in ipairs(players) do
-        playerscenterx = playerscenterx + player.x
-        playerscentery = playerscentery + player.y
-        playerscenterz = playerscenterz + player.z
+        destx = destx + player.x
+        desty = desty + player.y
+        destz = destz + player.z
     end
-    playerscenterx = playerscenterx/#players
-    playerscentery = playerscentery/#players
-    playerscenterz = playerscenterz/#players
+    destx = destx/#players
+    desty = desty/#players
+    destz = destz/#players
 
     if camera.lockz then
         camera.velz = 0
     else
-        camera.velz = playerscenterz - centerz
-    end
-
-    if Stage.isInNextRoom() then
-        camera.velx = 0
-        camera.vely = 0
-        local enemies = Characters.getGroup("enemies")
-        local donewhenenemiesleft = room.donewhenenemiesleft or 0
-        if #enemies <= donewhenenemiesleft and not sequencethread then
-            Stage.openRoom(roomindex + 1)
-        end
-        return
+        camera.velz = destz - centerz
     end
 
     local camerapath = room.camerapath ---@type CameraPath
-    local newcenterx, newcentery, pathx1, pathy1, pathx2, pathy2 = camerapath:getCameraCenter(playerscenterx, playerscentery)
+    local cameraboundary = room.cameraboundary ---@type CameraBoundary
 
-    if math.dot(newcenterx - centerx, newcentery - centery, pathx2-pathx1, pathy2-pathy1) < 0 then
-        camera.velx, camera.vely = 0, 0
-    else
-        camera.velx, camera.vely = Movement.getVelocity_speed(centerx, centery, newcenterx, newcentery, 8)
+    if camerapath then
+        if cameraboundary then
+            destx, desty = cameraboundary:keepPointInside(destx, desty)
+            local velx, vely = destx - centerx, desty - centery
+            local _, _, ax, ay, bx, by = camerapath:projectPoint(destx, desty)
+            local dx, dy = bx-ax, by-ay
+            if math.dot(velx, vely, dx, dy) < 0 then
+                dx, dy = math.rot90(dx, dy, 1)
+                velx, vely = math.projpointline(velx, vely, 0, 0, dx, dy)
+                destx, desty = centerx + velx, centery + vely
+            end
+        else
+            local ax, ay, bx, by
+            destx, desty, ax, ay, bx, by = camerapath:projectPoint(destx, desty)
+            if math.dot(destx-centerx, desty-centery, bx-ax, by-ay) < 0 then
+                destx, desty = camerapath:projectPoint(centerx, centery)
+            end
+        end
+    elseif cameraboundary then
+        destx, desty = cameraboundary:keepPointInside(destx, desty)
     end
 
-    -- local bestdot = math.dot(camera.velx, camera.vely, pathx2-pathx1, pathy2-pathy1)
-    -- for _, player in ipairs(players) do
-    --     newcenterx, newcentery, pathx1, pathy1, pathx2, pathy2 =
-    --         camerapath:getCameraCenter(centerx + player.velx, centery + player.vely)
-    --     if math.dot(newcenterx - centerx, newcentery - centery, pathx2-pathx1, pathy2-pathy1) >= bestdot then
-    --         camera.velx = newcenterx - centerx
-    --         camera.vely = newcentery - centery
-    --     end
-    -- end
+    if camerapath or cameraboundary then
+        camera.velx, camera.vely = Movement.getVelocity_speed(centerx, centery, destx, desty, 8)
+    else
+        camera.velx, camera.vely = 0, 0
+    end
 end
 
 function Stage.fixedupdate()
