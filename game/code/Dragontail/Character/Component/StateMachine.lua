@@ -206,7 +206,7 @@ function StateMachine.start(self, statename, a,b,c,d,e,f,g)
             self.statefunction = statefunction
         end
     else
-        print("W: no state "..statename)
+        print("W: no state ", statename)
     end
 end
 
