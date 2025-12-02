@@ -64,10 +64,8 @@ function AttackExecute:fixedupdate()
     enemy:decelerateXYto0()
 
     if enemy.statetime <= self.hitendtime then
-        enemy:resetFlash()
         enemy:stopAttack()
     else
-        enemy:updateFlash(enemy.statetime)
         enemy:makePeriodicAfterImage(enemy.statetime, enemy.afterimageinterval)
     end
 
@@ -79,14 +77,12 @@ end
 
 function AttackExecute:interrupt(...)
     local enemy = self.character
-    enemy:resetFlash()
     enemy:stopAttack()
     return ...
 end
 
 function AttackExecute:timeout(...)
     local enemy = self.character
-    enemy:resetFlash()
     enemy:stopAttack()
     return ...
 end
