@@ -11,7 +11,6 @@ return {
   tileheight = 32,
   nextlayerid = 66,
   nextobjectid = 699,
-  backgroundcolor = { 41, 58, 24 },
   properties = {},
   tilesets = {
     {
@@ -7672,23 +7671,23 @@ return {
               tileid = 2525
             },
             {
-              wangid = { 0, 2, 0, 0, 0, 2, 0, 2 },
+              wangid = { 0, 2, 0, 5, 0, 2, 0, 2 },
               tileid = 2526
             },
             {
-              wangid = { 0, 2, 0, 0, 0, 0, 0, 2 },
+              wangid = { 0, 2, 0, 5, 0, 5, 0, 2 },
               tileid = 2527
             },
             {
-              wangid = { 0, 2, 0, 0, 0, 0, 0, 2 },
+              wangid = { 0, 2, 0, 5, 0, 5, 0, 2 },
               tileid = 2528
             },
             {
-              wangid = { 0, 2, 0, 0, 0, 0, 0, 2 },
+              wangid = { 0, 2, 0, 5, 0, 5, 0, 2 },
               tileid = 2529
             },
             {
-              wangid = { 0, 2, 0, 2, 0, 0, 0, 2 },
+              wangid = { 0, 2, 0, 2, 0, 5, 0, 2 },
               tileid = 2530
             },
             {
@@ -7824,11 +7823,11 @@ return {
               tileid = 2589
             },
             {
-              wangid = { 0, 0, 0, 0, 0, 2, 0, 2 },
+              wangid = { 0, 5, 0, 5, 0, 2, 0, 2 },
               tileid = 2590
             },
             {
-              wangid = { 0, 2, 0, 2, 0, 0, 0, 0 },
+              wangid = { 0, 2, 0, 2, 0, 5, 0, 5 },
               tileid = 2594
             },
             {
@@ -7932,11 +7931,11 @@ return {
               tileid = 2653
             },
             {
-              wangid = { 0, 0, 0, 0, 0, 2, 0, 2 },
+              wangid = { 0, 5, 0, 5, 0, 2, 0, 2 },
               tileid = 2654
             },
             {
-              wangid = { 0, 2, 0, 2, 0, 0, 0, 0 },
+              wangid = { 0, 2, 0, 2, 0, 5, 0, 5 },
               tileid = 2658
             },
             {
@@ -8040,11 +8039,11 @@ return {
               tileid = 2717
             },
             {
-              wangid = { 0, 0, 0, 0, 0, 2, 0, 2 },
+              wangid = { 0, 5, 0, 5, 0, 2, 0, 2 },
               tileid = 2718
             },
             {
-              wangid = { 0, 2, 0, 2, 0, 0, 0, 0 },
+              wangid = { 0, 2, 0, 2, 0, 5, 0, 5 },
               tileid = 2722
             },
             {
@@ -8192,23 +8191,23 @@ return {
               tileid = 2781
             },
             {
-              wangid = { 0, 0, 0, 2, 0, 2, 0, 2 },
+              wangid = { 0, 5, 0, 2, 0, 2, 0, 2 },
               tileid = 2782
             },
             {
-              wangid = { 0, 0, 0, 2, 0, 2, 0, 0 },
+              wangid = { 0, 5, 0, 2, 0, 2, 0, 5 },
               tileid = 2783
             },
             {
-              wangid = { 0, 0, 0, 2, 0, 2, 0, 0 },
+              wangid = { 0, 5, 0, 2, 0, 2, 0, 5 },
               tileid = 2784
             },
             {
-              wangid = { 0, 0, 0, 2, 0, 2, 0, 0 },
+              wangid = { 0, 5, 0, 2, 0, 2, 0, 5 },
               tileid = 2785
             },
             {
-              wangid = { 0, 2, 0, 2, 0, 2, 0, 0 },
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 5 },
               tileid = 2786
             },
             {
@@ -16124,11 +16123,11 @@ return {
         },
         {
           x = 80, y = -12, width = 20, height = 12,
-          data = "eJztj80KAjEMhL+7YJum+lQK/sKubySsvpZnPYiPIyGRLZ68edmBYdJAZjowYcL/sK+wq9DpSNsdqmuv8Cy/+70Ukrh+z8a5gIT3Sce7Gtna7Az3Ao/it7cEWdxzJrARGDKIwiX006dE3jayjOa/VFgo9NZRnV2FY/PHtbifeV8zrJoO5wRD834D+PAhFg=="
+          data = "eJztj0EKwjAQRd9WkCbTRG9VLdWCPVNReitx4UJXHkeGmdDiBdz0w/Dzf2Z+MrBixf9wytBluKS51DvnmdVTHpzLTOd3RSt/EgQx/j2X2gqM7jfB+BHMX/ZFgVcN79r0PZinmUeBZ4QxwiRwFWgFJs+7CRwENt5XefY+wS7BoLvpPrpzht7f1Jnl3zW76NazG/H8CF/qciwb"
         },
         {
           x = 100, y = -12, width = 20, height = 12,
-          data = "eJztjjsKgEAMRF9n6e4mxxLBH+qhFI9mo3gcCcFewcLCgSEhkDcDv359S4PAnt5hbQmSQKUwCog8++8FWvVOtncKh7iXCFGce7dvFmANMAWYA5S5s4ro94ttfS3XbHzLvzo06rNWOAFd6BP7"
+          data = "eJztkDsKgEAMRN8BBDdmr2XhB9RT6cEUrMTjSFhFxUZtbBwYJk0ew8CvX9+p9FBryEYh98FT8o7XOZj16mzlqz7jbf+p7Gy7WwedgGjg3u07OIjl3K13EAmMh+7W1zbZdrGNzJVC4UPaTgtnGBvk"
         },
         {
           x = 120, y = -12, width = 20, height = 12,
@@ -16136,31 +16135,31 @@ return {
         },
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJzNkV1qAlEMhb/nARm9ua5KhM6MzjhdkStwS30ohVJacTnlNLnUii0W5sFAyO9NTu6BaeQjQZsnGgb0GTr7vZ4NugyDwWjfVhh2EW/CL7mCL0fNDPrIbzOcDFY1rBfQKB86ZNiEHTUrsEl1dzLvf8yOewxto0fvVLtFjuY4Gr354/5b5WDwWkOlm4RJt8R/HNP/5y0NtgazheN8qt0+zH1+d7ZjuMJHd8ZF4aOPv3pLPutSn+duX2LXPnafDKqofWGof2J9T86buCg8lFiqWFzKV149JV/8e5dP1FQ57g=="
+          data = "eJzNks1KQ0EMhT9E3ImTyfhCgjtXvbc/+i5uahE3Vlutto+jiEsVUbn4NBImoX2ALhwIOcmck0xmBrazvjP0ypaKAYMCja7jotAUaAuc6ToeabWh1v6BzVqPIx/nM22/wEwgC4jH0wSdwolUf+PeeHOBezfDy1y9zW1aEVCBIrBw3Ueq2lWGO6lm+oFxM7wmGCfYFXhKcJ7gR6v2V+r+sdeMvtbjwvVRI/CRwHOCHYGxcx4UbgVmGRrP2V7o9qTyo8YkwaXvRY2XBBPHh3ZXCu82W4ZHm8t94KXdj53Z8/MNnuGVc40Tb91T+Mx19s7rm135mySp73ItsC/w5vlO4cDv22xzfWVoFU79Lw3t/3hsZvHIseWNE/nA/339AdFoULk="
         },
         {
           x = 20, y = 0, width = 20, height = 12,
-          data = "eJzNkk1OAzEMhb8lKxgnuQJcBsTPTAszHIDTUKaXqHoaQPwIcRz0iK1GXVYssPQU23l2Er98JX7tM8Eyw7fjyqAzeDR4c86+3WZYFEgZjrpad1+a/QKTYxA3V/8j1dq+VNxlGDMsC6wNVgZPHbx2O86UYSj1PPGF3uPB76DzVaP1uYP1CcwenxvMtrtLrx7N/RYeKz96bnS8p1qr3qcGW4Mzg2PjINOs1V/z3iTYJngwuMmH9dvvO/o7Wi3+yqZm9pq7dAsoF750GRue6kLDltdqFtC/u7Dqr3zOL865tKptcGfnCddWtZWO8de0xjwUay848Se1FzlB/PD/u/0A43VKaw=="
+          data = "eJzNkk1KA0EQhT9ExYU4XT2zc+FdRNwoKMYYIy49iCbGlT8QAyYI8SQBCf5sJCCKuPIoIi9dgzEnsOFRr+rVz0x3fUTG5z1CNYdPx5ZBMDg3ePWc6bOXw24BMYeFkOoOigm9gLqjotw88beYaneKv1CfUQYXATYMLsOvVs+hUqR5tTxBccXEqwW8+DcIqpVVr8n4TYS2JXRj8jvOe65du991bVrveI6QR1h1u25wGqBhcJzBY4DvLGktgxnPewjJNjNYNugb3FnKf3Kt5XYtpJ7S5g1mvYcgX3YYoGlwEuAowlcOKxEGPruEaue8ZuA9z+x3XsNn3Pts+bcR+hEODYYZtHVnBj39v3PZru7IuSC9PcE7zhUraxVbNNj0ty7fKHhs/H4GSwajkHjw+LP2xODKfWHb0p7VtCe+a7L72iH3pZU55U5KK2OC8kv+388PQ6NlBQ=="
         },
         {
           x = 40, y = 0, width = 20, height = 12,
-          data = "eJzVkk0KAjEMhb8b2E6KV3IjCM44Ojdy4d+x3DmCC/E08miDxd2AGwOPND9N2ryMAW4BzgH2Ae4NkyQZDAZdgjbB0+AQio7wsmn1+gSdwcbgFOESYRFzvesMosE6wdYyvLf79Aa3a39jcCnv0h+3pc+geIJdZbeqoz6W/XWubI+1xTef+Md/Fs1TM96V2UtrvvIL8gnKEYaKJ8/z+zqLD2EZPztzKudjgFG7Wewaq5gRvmLOn/hyzqRrLp27mlfn1u+7/Uvpf7wnjwbeykU+Og=="
+          data = "eJytk0FKgzEQhT8VujQzf/7rFEHQrVJrtZdRsSguqpa20HoawbbizgouxLsIMmRCQzdSMPCYvDeTSUhelgLvAo8CdwIfFRuNOkI3QruGkxp2FfoCXxH6Ct9xs36dGtoRTiM8KLx5r4HCsYJGaNVwFhPy3lmzM2Re6pX1EBgpTKoUnyoY6grTKmmlbtrEMXatXB8dC4GfAJcBnkPS5rLKHyo0FOYhzS806Q2P1wKLUHCPvaKHoSnwIrCvcOC5V4GZwJbAjWszj9u2V4Bb75frr/yMhr0AzZDOUO5l2FnrN1UY2/3YPemKj5ybPiz4xDWrK2vGPre3zQgKg5De3fi9wNK8uVZnONIEWct1zYfmCYdxi60I5+YF84T5xPzjOasxWD6vz/w/R2fDv/DX+KzgF1gNW3g="
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJy9k1tOxDAMRc8CeCRNxAc7QgIBM9NOy44Q82BjPCUkloOubNOA+EB8YOnKjZ+Nr9NXuC6wrrAqsCimhd6xzXCe4TDDSzfHSJ8UPuWtg/cCp3W2tb6uGNp+N/VrzKi61dBXq5cLLKtBdsXIt0sG+Veq5/7Ja6iX/ndUrQLPyXqqd2BZ4LWDfYLLbFCO7MpbuJ4ccd/B//8nGTw25tjO6L9k8Jn9NVcz1DxDBxdrn+3k3+Efvd/YcBF8iYejBI8JNtnqCHcZNsn26izN9qcEFxl2Ga6aeEHn73U2CbZuE1/iVZy2eQHtS+RI772e+Nf59hhSsh0Vd7qf7qE7KOc+w0OCg2wxsR/RN3Yl3ohs7d6EP3ZDcTpr39q38Fv5AFWOVj4="
+          data = "eJyVk81qVEEQhT8ky+jt6m6zyLu4CCaLgKBOZjTjuxghIRFhhvFnxoyvk0R3xhgQfBw5VDX3SlZpOHRXnapTfWdOTyq8LPC6wrjAqPguTAJzg2cGDw1+575G+1aBqnN1/C2wXbmz/mTIxTGc96Y6d1BhGjqqed+5lmDFeUH8oe5V4bn1/Fh6wYtTXnd+ZGAGXwyywTLO59n3bxnWGVYGncGn4JQb1n42h86vDM4MqkHJju8JLjrYM3jbwdfQLwYbUXdqcJX6npPQafGT4C6T67W+XdUN+nY6359G/iT9r/NY36W7Z3gwyLeZbYb2HwneDbSPDY5CVzrnBqP4nYWlviu7vqB4OYiFdeTXg1g9q9zrpNCcJffVfoJfCfYNZtb//+Jbz02CFwbXyWuuB9w8cvKkvHWbvb7xH8MLLW69i9BZRPyhg5Tco/KnPCnfyZO6i3R+Jtg0r9G8Q/ku5uo8jVj9yinWO9FqfHtjqlN8EG/hvusfyBdvOQ=="
         },
         {
           x = 80, y = 0, width = 20, height = 12,
-          data = "eJydkl1OQkEMhb9XonCn9w6bcCdqBOVHwHfciiEBYRM+uBQV/IsxLsccOiPXRBPjJE1nmk5P23MGEfoRxpX795LtaVcwifBawtKgYzAP8FFBM/m6rQOcGqwLaAU4Ljx+lupPKq/djrs/i1qdrrk/Mjg0WKV3I+Wo9ksJvcp7yrWHcdeX7CT9kz2m+I3BbYoP0lyyi+izvpUel42iY/TTfaz+a5gPBUxLOCihYfz7tBOe6k4NLg0WtuNiEL/z8ddzHr3vPOdz4kH2FMAqr9+r4ciLH/msg1GKKS/3onvmqW7CKAxmad+tWo60I5/5/Ol/zt8ECOZcX5u/pRFpS1xKg1/asV0tYewFmJvPPazgKsCmgE4BdwH2U71m0rHu296DaybrRjXuazvLXGmn0oH0oL0KY2beb85Vz90ClsH3oX2vNEMt57cjDWbNSRO6CydzKdyMLX0qJv8JEzp5rA=="
+          data = "eJxtk9lKA0EQRQ9qnly6a2b8IUFE0ahRSfwYfXBF0LhFkvgxvrrghvjg58i1q8koDhS3uqbrVtXUnXYJmxV0StiooFXBdglbFXyVcGoJmwanMfnTjrKXCGsG3VrsJ8/Pq553lnOdT5Zj+Z5wyWDR4MLPZ46XBsMCBgUU9n8t2Urt3WuE85i41Kdi15asNDiIsBdhy+Cqxt8v0p2h+xl7BjfOP2Vg4ilgzFFcjQhzBncBDj0+7qhzw/18v6rVVk/XqmcwMOgb3NooXzZhMO88u3EUl+0bHNViO5Z2k7+Hel537p5m+lNvWIsLZTmec5bt97e+D7Dg+8q7kkVLO512m4wwY2knedczjs/Sh8FDhKWQYicGb66tpvtB2ghpjh/NhBGHNCPclHZLOI7wEqAZ4DGmHGlAvUgvWQ/vMc2RdSO9P3kPMj2zJbQr2Ciho/+jSjXUo+bMd7uaOSTNqVf1fOGz1fn+ez6LxK86H+6rjs6aSXVz7ZbPKfwG4rCBzA=="
         },
         {
           x = 100, y = 0, width = 20, height = 12,
-          data = "eJylk8lOw1AMRc8WiTZvEr/EBihQShP+qcNfVSCgYlhEfA26iq2+rErFkyzbin09XKfPMI3wHuC5gbsMn2nQD5Usy8G+N19xbwFuI/QZbiI0ES4b2DXwkeAiQ8rwkzn6vtOAKay1YaqvqwjbCDHDvMCZ2Z36KbA0W7qtdGe1exP1Ku2zzW2WesZWeGU849TyPFd53qfP+NenGYUrDOmvNJ79qfDv92h7SrYL7Uh+a3bOp2EtynAjvgOXfYBZxYvvvjNf4rZzIqyt7XMVYRNhYti6nfMI1+bvm3E99aCarwFemiFWtr7JXtutSE8CrKy/YDKrePT64k9cd8a92+JHvsfqDqU34dBffUued+wW/N8StuIX1R1KTuX/F0X5X0o="
+          data = "eJx9k91qU0EUhT8QCgXTmT1z6utUbMGbaDRptOnjlNq7apsE/HkZL0TForZ6IaVPIyuzhzPpRQYWa8+c2Wv/zD4XBsHgNsOPAC8z/E2FDxu87np77Hvd+xXhhfs/d62nAb4H+JPgUYaU4S6zWq8yzDIcZZh0xT6UdgfTrugIb13zd4ShwYWBuc+22zPX1j19V/yVbyz8znmVW4Bzg6XBwuBD6lmYW0H9PndOBjeuozqjx6h4YpATPDY4icVuobPT5nxq8D7Bx1R46THUK/Xz1PW2Ijxw+1uEfYMD3392vT2DL26fxT7ebir9UW+Wqk/1NPzJdYT9UPhrgDfNuVC1/xnseN0Df49av3p6qTrUz7QeZ37vfOH7sfW+VWcYYOD7h87XYb3XyuE6ws8IV6Hck1199O7KTaw8zyOM/M2EUTMPNb76rnmedXDU9fZEM9rMo+awztSzJu/6n1Q/zfumVf8taev+VDPt/sJxt9n//voP8x91UA=="
         },
         {
           x = 120, y = 0, width = 20, height = 12,
-          data = "eJwLFGFgiBJmoBoIFGZgEKOieYIiDFQFs6joNhCQorL7JgqPLP9S27zLQtQ1b7ADAMm1BPI="
+          data = "eJwLFGFgiBJmoBoIFGZgEKOieROpaBYI3KKyeVIi1DWP2v6dNcj9S23zLgtR17zBDgAKwwWx"
         },
         {
           x = 20, y = 12, width = 20, height = 12,
@@ -17296,7 +17295,7 @@ return {
               type = "tall-stone",
               shape = "rectangle",
               x = 1200,
-              y = 128,
+              y = 176,
               width = 48,
               height = 48,
               rotation = 0,
@@ -17313,13 +17312,13 @@ return {
               type = "",
               shape = "point",
               x = 1200,
-              y = -32,
+              y = -16,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               properties = {
-                ["z"] = 160
+                ["z"] = 192
               }
             },
             {
