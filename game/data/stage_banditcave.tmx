@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="64" nextobjectid="678">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#293a18" nextlayerid="66" nextobjectid="699">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -69,40 +69,52 @@
    eJztjisOgDAUBEfiKN13KASKlN+pwZBwHNK0BgUBg+iYXbOThULh35i+O0bBIpgEg73/MQuCgResDg5B1zzb7/7qio7KwZY9Mds69TtPnz+cgXULwA==
   </chunk>
    <chunk x="40" y="-12" width="20" height="12">
-   eJztkMEKwkAMRN/Nk7rbzWcJorZa/SZbP008COLXlGGz2IJ48drAQLIZZmYDc831u44JaoNz+u9SzyprVAn6CK803e0NDu7TpmnfeobSi9sYbAP0IWsVPXMPzdqFCAvnLN33GmEdoXPorRvpCPeQMxQt4eacXYKTQa0syuZoHNLcxOz30N98P9Zfua947y+31U3kLYz9LvYhDYIrKk0=
+   eJxjYBgFo2DgwVUhBoYgEQaGYBHKzRIRZmAQEmZguCHMwNAnQJlZIPfAzALhfgrNg5kDwnyCEJoSAACKfQpW
   </chunk>
    <chunk x="60" y="-12" width="20" height="12">
-   eJztkd0KwjAMhb9LQXRtU30pf9BN0flMuj2WN94oKD6OhKZsyJ5ADBzSpM1pcgJ/+2UrY8LOcBCoLHeUDpXdq68FXmGY7y0JjYeVA+dTXJj/PiumHnwc5lsX3buRg9bBPcAjpNy1SH8o59jDxsPZgbeeT9JxRePR+krn0pkE5gIzgdpihd7tez2uPFx6vKpPECitPtszdDpl3bJW+Q/tvTU+7bVxsDRNtF7r8l72EW4FTB0sTIvt1x5mMeXXNrueJ+Y/Pt817g==
+   eJztj8EKwjAQRN9NL9JNNr+lglWr/2Trp4kHwc+RISvx6LXQgQc7YZnZwKJF89HZ4Vjg6nAoFXkx+P85r1wzssOU4O0N+a2BpbpzceijU7NQ33fWDacCe4PJWs6ua/Pa4B6Zq9jZRO8tQZdgDPQ2/uSIR/hnhl69+rPDByO+H9c=
   </chunk>
    <chunk x="80" y="-12" width="20" height="12">
-   eJztj0EKAkEMBOvmzUkm+ywRF13UJwkqfksQ8aL4HGlmFj2Ie/SyDQ2BdCoJjBr1P20CIn5n7rnkHnmY9wxoG1hWa24dsPqouwZyzW0H9ou3S7D3UssTg5vBweBoME/v3snBo3C/3dvn5IvBonKnDleDc4K29mde9vR53as/ZPH1zwu93SAh
+   eJztj80KAjEMhL+7YJum+lQK/sKubySsvpZnPYiPIyGRLZ68edmBYdJAZjowYcL/sK+wq9DpSNsdqmuv8Cy/+70Ukrh+z8a5gIT3Sce7Gtna7Az3Ao/it7cEWdxzJrARGDKIwiX006dE3jayjOa/VFgo9NZRnV2FY/PHtbifeV8zrJoO5wRD834D+PAhFg==
   </chunk>
    <chunk x="100" y="-12" width="20" height="12">
-   eJxjYBgFo2AUMNAJRAgzMIQLMzAEi0DoIBEGhmtC5BsIAM01AvU=
+   eJztjjsKgEAMRF9n6e4mxxLBH+qhFI9mo3gcCcFewcLCgSEhkDcDv359S4PAnt5hbQmSQKUwCog8++8FWvVOtncKh7iXCFGce7dvFmANMAWYA5S5s4ro94ttfS3XbHzLvzo06rNWOAFd6BP7
+  </chunk>
+   <chunk x="120" y="-12" width="20" height="12">
+   eJxjYBgFo2AUMNAJXBOiroEATC4A6Q==
   </chunk>
    <chunk x="0" y="0" width="20" height="12">
-   eJzNkU1KA0EQhT9wF5Ce6WqPoyC4CwGTSWYcT+QJvI1kmYUIQZKQ48izq0mcGFdZWFDUb1e96geXkW2EWbrQMKBN0Nj5ejJoEnQGvR2sMDx5PHe/5Aq+5DUzaD2/SLA3GAeY1DBV3rVLMHfba5Zjk+ruaLn/OWXcvevMe/ROtaHc1Qf/yv2dZRxTvfnj/nOyDD/jV4N1gJFuEibd4v+xi3Af4LY+xfNWnc5+CHBjsDC4rjPOVcj2scrzm6Md3S98NEdcFD5a/6vPmGcN9b3K9sN3vfjuvcHIa98YBrdvYuZNXBQeSixVLC7lK6+eki/+f5cvswE9LA==
+   eJzNkV1qAlEMhb/nARm9ua5KhM6MzjhdkStwS30ohVJacTnlNLnUii0W5sFAyO9NTu6BaeQjQZsnGgb0GTr7vZ4NugyDwWjfVhh2EW/CL7mCL0fNDPrIbzOcDFY1rBfQKB86ZNiEHTUrsEl1dzLvf8yOewxto0fvVLtFjuY4Gr354/5b5WDwWkOlm4RJt8R/HNP/5y0NtgazheN8qt0+zH1+d7ZjuMJHd8ZF4aOPv3pLPutSn+duX2LXPnafDKqofWGof2J9T86buCg8lFiqWFzKV149JV/8e5dP1FQ57g==
   </chunk>
    <chunk x="20" y="0" width="20" height="12">
-   eJzNkk1OAzEMhb8lKzpOcgU4CFsQPzMtzHAAjtETUKaXQD0NIH6EuA3oEUcTlbJjgaWn2M6zkzznPfBtbwEWET4cZwaNwa3Bs3O27TLCPEGIsNfkuutU7ScYHJ24MfuvIde2KeMqQh9hkWBtsDK4a+CpmThDhC7l88QXWo87v4POV43WhwbWMxg9PjYYbbpLqx7V/eYeK997rne8hFyr3gcGG4NDg32b3no0+6nPstmtm7RWf+l9H2AT4MbgIsLnVp/ljr6/Wenb+zvqWfyVDZX20l1zK1Cu+JpLX/FUV2ZY8+qZFejfnVj2V67zo3NOLc+2cEfnCeeWZ6s5lr+mteihWHuFU/6k9kpOEL/4/92+AHlCTOU=
+   eJzNkk1OAzEMhb8lKxgnuQJcBsTPTAszHIDTUKaXqHoaQPwIcRz0iK1GXVYssPQU23l2Er98JX7tM8Eyw7fjyqAzeDR4c86+3WZYFEgZjrpad1+a/QKTYxA3V/8j1dq+VNxlGDMsC6wNVgZPHbx2O86UYSj1PPGF3uPB76DzVaP1uYP1CcwenxvMtrtLrx7N/RYeKz96bnS8p1qr3qcGW4Mzg2PjINOs1V/z3iTYJngwuMmH9dvvO/o7Wi3+yqZm9pq7dAsoF750GRue6kLDltdqFtC/u7Dqr3zOL865tKptcGfnCddWtZWO8de0xjwUay848Se1FzlB/PD/u/0A43VKaw==
   </chunk>
    <chunk x="40" y="0" width="20" height="12">
-   eJzVkktOA0EMRN8WhJB7usWpkCAzIcxwIhaQ5GKETzYRp0GFbWkELCJYYclyf+xyt6teDJ4NNgb3Bq8d3DbYd7CqMDToG4wVbhqszb1UWDZ33U/V46HCg0Us8F4dR7Vbg0WFqcFb5z2vivtT9B6FVz0qb1vgpDie8hfNsYSjd15UPm0V+Uu9K3rcNb6ZcPKPfeSO8d/f2PSH2rlpRprhsdZi/kNwk1wkX12FczsOI7nVbNYFrmPe6drvzPnsZz2T8zzrIt++1Esvc11sAk98Zs5l1JzOah/V01wD0sdZcd5TH31oILWiveIQvMq1zvs8m+f9pJH/ZB/he0ss
+   eJzVkk0KAjEMhb8b2E6KV3IjCM44Ojdy4d+x3DmCC/E08miDxd2AGwOPND9N2ryMAW4BzgH2Ae4NkyQZDAZdgjbB0+AQio7wsmn1+gSdwcbgFOESYRFzvesMosE6wdYyvLf79Aa3a39jcCnv0h+3pc+geIJdZbeqoz6W/XWubI+1xTef+Md/Fs1TM96V2UtrvvIL8gnKEYaKJ8/z+zqLD2EZPztzKudjgFG7Wewaq5gRvmLOn/hyzqRrLp27mlfn1u+7/Uvpf7wnjwbeykU+Og==
   </chunk>
    <chunk x="60" y="0" width="20" height="12">
-   eJytkk1Ow0AMhb8tEjAzmYFbUWgKpOFCqIIWjgWLQkEI9TjoYY8SNohIWLLGiX+e/ewmw1sDywJXGXYRDiLsM1wk87UZ3hv7N1dcgQePWfsrPU/QFzjNfMt1gctsqv/Sm2K+E6+59fz7aCr7LA01p4jwWsfTPHq7YvbC8X7EZ1jIpxjluf3Z/B1POb3nihf1vAtD/68RkvrJ0DpO/mWuF/Ewmv8uGa/1u2rFEFfaSadZHad3O4/ixe16VPvYX/Efk+16NsKpcXW/j8nmkL0KECPMnWupbuc2wjbALMBzhMNk9Y/SsFup8J6C+euOxndT76PzvS3dL4xVsvza+95vVjxIp8hHY/WFU+97I76D3XeYWG8s6l+11bfq15v8b/kCCJJasw==
+   eJy9k1tOxDAMRc8CeCRNxAc7QgIBM9NOy44Q82BjPCUkloOubNOA+EB8YOnKjZ+Nr9NXuC6wrrAqsCimhd6xzXCe4TDDSzfHSJ8UPuWtg/cCp3W2tb6uGNp+N/VrzKi61dBXq5cLLKtBdsXIt0sG+Veq5/7Ja6iX/ndUrQLPyXqqd2BZ4LWDfYLLbFCO7MpbuJ4ccd/B//8nGTw25tjO6L9k8Jn9NVcz1DxDBxdrn+3k3+Efvd/YcBF8iYejBI8JNtnqCHcZNsn26izN9qcEFxl2Ga6aeEHn73U2CbZuE1/iVZy2eQHtS+RI772e+Nf59hhSsh0Vd7qf7qE7KOc+w0OCg2wxsR/RN3Yl3ohs7d6EP3ZDcTpr39q38Fv5AFWOVj4=
   </chunk>
    <chunk x="80" y="0" width="20" height="12">
-   eJyVk1tOAkEQRc+vMdBd06M7cC2KjxhAw2MBrEaFTfhhWIjRGIjGD+JqzM10ZVo+ECqpVNX01O163N4kuDToGSwMNgmCwXmA1wCfFZwm+Kqgn+Cu0FHd+oMcr2KL4XjS6xxbgmENVYKfxL/yFqAX4MxgWcGLwVWEjwhdgxuDB4OjjD1RPTWMsi87Lux9amp8rmBpMMs1XsS2v3Hd9ibrsfeoWXRzn99Vcy6dFDmy05q9RBjKGe4xj0NloLqFnWciX3MYZiudHnDvKjR9zw2OYzN7+Z2CO331n+/02WsXiqXu67tyhPEe/nLlKUInz7jUdfHfJjUcWGc+CEP+IsJjwT1X5+Y822hwu3WH8sR57Vr79L0qdp77W/AzcUo8dAznkWPo/eySky2uKBYXlC/dxaNfEMtgMQ==
+   eJydkl1OQkEMhb9XonCn9w6bcCdqBOVHwHfciiEBYRM+uBQV/IsxLsccOiPXRBPjJE1nmk5P23MGEfoRxpX795LtaVcwifBawtKgYzAP8FFBM/m6rQOcGqwLaAU4Ljx+lupPKq/djrs/i1qdrrk/Mjg0WKV3I+Wo9ksJvcp7yrWHcdeX7CT9kz2m+I3BbYoP0lyyi+izvpUel42iY/TTfaz+a5gPBUxLOCihYfz7tBOe6k4NLg0WtuNiEL/z8ddzHr3vPOdz4kH2FMAqr9+r4ciLH/msg1GKKS/3onvmqW7CKAxmad+tWo60I5/5/Ol/zt8ECOZcX5u/pRFpS1xKg1/asV0tYewFmJvPPazgKsCmgE4BdwH2U71m0rHu296DaybrRjXuazvLXGmn0oH0oL0KY2beb85Vz90ClsH3oX2vNEMt57cjDWbNSRO6CydzKdyMLX0qJv8JEzp5rA==
   </chunk>
    <chunk x="100" y="0" width="20" height="12">
-   eJzdkTEKAkEMRd8BRCaTYOGhxFXUXe/koq1n0ma12ONImBnEdqbzQyBpHu+TKcIzwFZgVtgIdAZnpSrvCFNMrDEzO4VVJW9QiJo4Pu4qRnWKz16/nvdKN8/J4BV/u68b/EqO7mip+03bWQeDpbT37TPrGhLrIm19FwKPzPJ9DG283mCnMFj6sd/lP/+YDy36IPw=
+   eJylk8lOw1AMRc8WiTZvEr/EBihQShP+qcNfVSCgYlhEfA26iq2+rErFkyzbin09XKfPMI3wHuC5gbsMn2nQD5Usy8G+N19xbwFuI/QZbiI0ES4b2DXwkeAiQ8rwkzn6vtOAKay1YaqvqwjbCDHDvMCZ2Z36KbA0W7qtdGe1exP1Ku2zzW2WesZWeGU849TyPFd53qfP+NenGYUrDOmvNJ79qfDv92h7SrYL7Uh+a3bOp2EtynAjvgOXfYBZxYvvvjNf4rZzIqyt7XMVYRNhYti6nfMI1+bvm3E99aCarwFemiFWtr7JXtutSE8CrKy/YDKrePT64k9cd8a92+JHvsfqDqU34dBffUued+wW/N8StuIX1R1KTuX/F0X5X0o=
+  </chunk>
+   <chunk x="120" y="0" width="20" height="12">
+   eJwLFGFgiBJmoBoIFGZgEKOieYIiDFQFs6joNhCQorL7JgqPLP9S27zLQtQ1b7ADAMm1BPI=
   </chunk>
    <chunk x="20" y="12" width="20" height="12">
    eJzt0MENgCAQBdGRZJPdfoCa8CAN6QFrwoLsgfwjU8A7DOxWugy66d4Ng1foTYNP6BWH6jqvOZxC73Z4hJ66IyCFzssBJeAHfVsHFQ==
   </chunk>
    <chunk x="40" y="12" width="20" height="12">
    eJzlzNtRwmAUBsCdgYTvWJAJFxtSMDbkBegIDfX4QgX/8MYWsDyWqbvvd7rzN9++PqxCQoWntH1DGMM6bMI27MJL4/ca3sI+HMJ7mMJH4/cZvsJ3+AnHcArnxs/NJfyGvzCHa+O3KJZFV/TFqkhR1fY9F0MxFutiU2yLXeP3D5ZkEmI=
+  </chunk>
+   <chunk x="80" y="12" width="20" height="12">
+   eJxjYCAMRIWJUDQKRsEoYKA3AACUDQAp
+  </chunk>
+   <chunk x="100" y="12" width="20" height="12">
+   eJwTFWZgiBJhgANRYQR7FIyCUcAwqAEAx+wAvw==
   </chunk>
    <chunk x="0" y="24" width="20" height="12">
    eJxjYBi8YCEr+foI4cscCHYeJwNDBid+9SycDAyLkPRYQtXPRxJDxuxo5sHUo9vLhkM/COdwMDDkQeUvIakzJ+BWMw4GBlMCapDdgEwjuw+Ec7G4z4oT4T9s7rdGstsCj/9wYXQ7QeFug+affE6EW0D2zcZjD644woXxxQkIY7PrCppYJicDAwdUzJKMMMCH85HYAGhGb9Y=
@@ -138,14 +150,11 @@
    <property name="drawz" type="float" value="-1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   <chunk x="40" y="-12" width="20" height="12">
-   eJztjjsKgDAUBOcAeQuCP/RUgkbxZOKtrL2MhKRIY2Ftplxml4VC4Z8MBr3gct+7t4Na0AhaxZ3dYBNUBl3KgpN7bz9Gg1mwCLzizmlwCCaDNWXByb0HB1QKQQ==
-  </chunk>
    <chunk x="60" y="-12" width="20" height="12">
-   eJztz0kOQVEARNGzgP8qIbqwKqILqyK6sCpjmzF9fiJiZuDOb+UWf/78Do+GQRiGUbg33/nj8upPCsuwCuvQKfRCP3TL571Ny98WTuEcLmFamIdFmFXb77qvLf/WatgVDuEY9tV23V3/ewJ5GBKL
+   eJxjYBgFo2AUMNAB3ObBLSfFy8AgwcfAcJGAGjE+BgZxPohaaV4GBgCRnQLQ
   </chunk>
    <chunk x="80" y="-12" width="20" height="12">
-   eJxjYBgFo2AUMNAJiPAxMIjyMTCI8TEwiPMxMEjwYYpd5CHeQAB5igIg
+   eJzt0LkNgDAUBcEpAD/JiMOVAW3TERWQQPqngA2WUooXW9jDCPf0/9MRznCF3ljCGub2LfgAP/kC/g==
   </chunk>
    <chunk x="0" y="0" width="20" height="12">
    eJztjkkKAjEURN9eU/0jTuiFXImKE3omlRYn9GZ6GQk2JJss7K3WpqAeBe9gUHhoGEw8jArYGewNXk1oCzqK3RX0BP3MNjYYuA/zglbChg7mgoViLwUrwTqzBYdN9ZsKZgnbOjgJzop9EVwFt8wWHO7VrxQcE/ZwfJ3g8Kzxy6WOwz/8bN49iR1R
@@ -154,16 +163,16 @@
    eJztyLcRgEAQBDBVsNFjCsMVhiuXIi5jXqFaGMIYpjCHVrglrGELeziKd4Yr3OEJb/G6zo98+T8XcQ==
   </chunk>
    <chunk x="40" y="0" width="20" height="12">
-   eJztzsENggAQBMBp4PYlaGGoRKsyUTDaGdUYDQ/iz7fMc7N32U1oQhu2YRdOxbm4hlsYwj1M5eNSjHP27ix7XdiHQziGPjyK53z7q+Xv8WvHauXPvQBc3hDM
+   eJztyLcRgEAQBDBVsNFjCsMVhiuXIi5jXqFaGMIYpjCHVrglrGELeziKd4Yr3OEJb/G6zo98+T8XcQ==
   </chunk>
    <chunk x="60" y="0" width="20" height="12">
-   eJztzDkNgEAABMAxcOuNhM8WCZ8uStTQUhIouREwZ/HYUZjDEppCG7rQhyGM8dp0u9ewhf3DV1V+4AJHdQkw
+   eJztygEKwjAQRNF/gR0QEvVaQhqlnkqoVezNehqJ2RLIEaQDw8Dui4IoCL5HwVkwGtwEB4OT30LnismCq6q9GwyqTb7Zfx+Dt+BizafOFTMLXqp2MXiqdvKd/bcavzys+alzm9mzhz/NFxLPGEA=
   </chunk>
    <chunk x="80" y="0" width="20" height="12">
-   eJztjbkJgEAAwLLABQS/tQS/tQS/ca2EU+SwFtME0qQVOqEXBmEU2lvLApRCJdRCLhRe2+lZWIRV2IT9oTUh/Rsjv2EK6d8e+eeHD3EAJq0WKQ==
+   eJztj9sJgDAUQ88CzZevtRRfaym1OpcTSUHp/dAFpAdCIIFAgmAXHILWQS8YBJ2DQlDeqozXgkapt5llceAFm2A121Gj8UkwK/U2++I021HB+PPHv2SZDD/iAgikFgk=
   </chunk>
    <chunk x="100" y="0" width="20" height="12">
-   eJzdzrEVgCAQBNFJUTbAziSxLkis60xox3c9rIlTwH8TFWtNcMjnnYIuCNPn0DefWX5eu8+bgtvoPYJl9LIoXq9tXo+f9wKNXghI
+   eJzVjksKwlAQBGvrZxoi0eRaivlcS9Ek10o2XkcCCvG9t9LZWJtuZqDoXLAXHARF0EtBnri9c9wScRZUglrQBL1V/G8XmRns7NN3E9wFnaAP+qD4PyzyaHCy9M5vuLy2pXb+yryz2fj5rga9o28yeDj6ZsaVry9b+/r+gSfhshnl
   </chunk>
    <chunk x="0" y="12" width="20" height="12">
    eJzt0MEBQDAUBcF5TQklISVJtOrqzvFPAXtYSilLaGENW77/2MMRztB/6F1hhBnuV+8BcdsFCw==
@@ -197,10 +206,13 @@
    eJxjYBgFo2AUMNARLBahnmEAOgAAuA==
   </chunk>
    <chunk x="60" y="-12" width="20" height="12">
-   eJxjYBgFo2BgwVEJBgZVCdzyV/HIMYxwAABlpgII
+   eJxjYBgFo2AUMNAIHJVgYFCVoF34AgBsXAEb
   </chunk>
    <chunk x="80" y="-12" width="20" height="12">
-   eJxjYBgFo2AUMAwycFUCQn8Vx68QAEoZAfo=
+   eJxjYBgFo2AUMBAJrkoMrrACAIj4AO4=
+  </chunk>
+   <chunk x="100" y="-12" width="20" height="12">
+   eJxjYBgFo2AUMAwguCoBob+Kk64ZAHGNAfo=
   </chunk>
    <chunk x="-20" y="0" width="20" height="12">
    eJxjYBi8YK7IQLtgFIwChkENAC+uALI=
@@ -209,7 +221,7 @@
    eJxbKsIABqYSDAzToexQCQaGJVD2KBgFo4Bh0AIAgjoC1w==
   </chunk>
    <chunk x="100" y="0" width="20" height="12">
-   eJxjYICAq+IMgx6ISgy0C0bBKGAYVAAA++IBGg==
+   eJxjYKAcXBVnGPRAVGKgXTAKRgED1QEAugYBGg==
   </chunk>
    <chunk x="0" y="12" width="20" height="12">
    eJxjYBgFo4D2gI2JgYEdijmYKDfPkomBwQqKralgXg4TA0MuFOdRwTx6AQBZwgLR
@@ -323,18 +335,31 @@
    <object id="237" template="mapobjects/OutwardBoundary.tx" x="448" y="32" visible="1">
     <polygon points="0,-32 0,64 512,64 512,-32"/>
    </object>
-   <object id="513" name="joystick" gid="6833" x="280" y="72" width="16" height="16"/>
-   <object id="515" name="sprintbutton" gid="7254" x="400" y="56" width="14" height="14"/>
-   <object id="516" name="Move" x="304" y="56" width="32" height="18">
+   <object id="513" name="joystick" gid="6833" x="360" y="72" width="16" height="16"/>
+   <object id="516" name="Move" x="320" y="56" width="32" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Move</text>
    </object>
-   <object id="518" name="Sprint" x="360" y="64" width="48" height="18">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">Sprint</text>
+   <object id="514" name="attackbutton" gid="7244" x="632" y="56" width="14" height="14"/>
+   <object id="541" name="attackbutton" gid="7240" x="632" y="72" width="14" height="14"/>
+   <object id="517" name="Attack" x="568" y="48" width="48" height="16">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">Attack</text>
    </object>
-   <object id="538" name="or" x="376" y="48" width="16" height="16">
+   <object id="544" name="Jump" x="568" y="64" width="48" height="16">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Jump</text>
+   </object>
+   <object id="539" gid="7246" x="664" y="56" width="14" height="14"/>
+   <object id="543" gid="7242" x="664" y="72" width="14" height="14"/>
+   <object id="540" name="or" x="640" y="48" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
-   <object id="537" gid="7250" x="368" y="56" width="14" height="14"/>
+   <object id="542" name="or" x="640" y="64" width="16" height="16">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
+   </object>
+   <object id="622" name="Direct" x="752" y="48" width="192" height="32">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Aim all attacks
+with    direction</text>
+   </object>
+   <object id="519" name="joystick" gid="6833" x="792" y="80" width="16" height="16"/>
   </objectgroup>
   <objectgroup id="8" name="learnattack" class="Room">
    <properties>
@@ -345,27 +370,6 @@
    <object id="485" template="mapobjects/bandit/knife.tx" x="1176" y="240"/>
    <object id="49" template="mapobjects/bandit/knife.tx" x="408" y="160"/>
    <object id="48" template="mapobjects/bandit/knife.tx" x="464" y="208"/>
-   <object id="514" name="attackbutton" gid="7244" x="584" y="56" width="14" height="14"/>
-   <object id="541" name="attackbutton" gid="7240" x="648" y="56" width="14" height="14"/>
-   <object id="517" name="Attack" x="576" y="64" width="48" height="18">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">Attack</text>
-   </object>
-   <object id="544" name="Jump" x="640" y="64" width="48" height="18">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">Jump</text>
-   </object>
-   <object id="539" gid="7246" x="616" y="56" width="14" height="14"/>
-   <object id="543" gid="7242" x="680" y="56" width="14" height="14"/>
-   <object id="540" name="or" x="592" y="48" width="16" height="16">
-    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
-   </object>
-   <object id="542" name="or" x="656" y="48" width="16" height="16">
-    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
-   </object>
-   <object id="519" name="joystick" gid="6833" x="744" y="80" width="16" height="16"/>
-   <object id="622" name="Direct" x="744" y="48" width="144" height="32">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Aim attacks with
-   direction</text>
-   </object>
   </objectgroup>
   <objectgroup id="46" name="+knives" class="Room">
    <properties>
@@ -392,19 +396,24 @@
    <object id="636" template="mapobjects/OutwardBoundary.tx" x="960" y="24">
     <polygon points="0,-24 0,72 480,72 480,-24"/>
    </object>
-   <object id="637" name="Direct" x="1008" y="48" width="144" height="32">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">   Move into large
-body to grab it</text>
+   <object id="637" name="Direct" x="1016" y="48" width="128" height="32">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Walk into large
+body to grapple</text>
    </object>
-   <object id="639" name="Direct" x="1248" y="48" width="168" height="32">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Then launch it with
-   direction +</text>
+   <object id="639" name="Direct" x="1184" y="56" width="64" height="16">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Pummel</text>
    </object>
-   <object id="638" name="joystick" gid="6833" x="1008" y="64" width="16" height="16"/>
-   <object id="643" name="joystick" gid="6833" x="1248" y="80" width="16" height="16"/>
-   <object id="640" name="attackbutton" gid="7244" x="1376" y="72" width="14" height="14"/>
-   <object id="641" gid="7246" x="1408" y="72" width="14" height="14"/>
-   <object id="642" name="or" x="1384" y="64" width="16" height="16">
+   <object id="689" name="During grapple" x="1168" y="40" width="168" height="16">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">During grapple</text>
+   </object>
+   <object id="685" name="Direct" x="1184" y="72" width="240" height="32">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Throw         +    direction</text>
+   </object>
+   <object id="638" name="joystick" gid="6833" x="992" y="64" width="16" height="16"/>
+   <object id="643" name="joystick" gid="6833" x="1312" y="88" width="16" height="16"/>
+   <object id="640" name="attackbutton" gid="7244" x="1248" y="80" width="14" height="14"/>
+   <object id="641" gid="7246" x="1280" y="80" width="14" height="14"/>
+   <object id="642" name="or" x="1256" y="72" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
    <object id="647" template="mapobjects/items/tallstone.tx" name="tall-stone" type="tall-stone" x="1200" y="128">
@@ -417,6 +426,11 @@ body to grab it</text>
      <property name="z" type="float" value="160"/>
     </properties>
     <point/>
+   </object>
+   <object id="686" name="attackbutton" gid="7244" x="1248" y="64" width="14" height="14"/>
+   <object id="687" gid="7246" x="1280" y="64" width="14" height="14"/>
+   <object id="688" name="or" x="1256" y="56" width="16" height="16">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
   </objectgroup>
   <objectgroup id="61" name="+knives" class="Room">
@@ -437,26 +451,65 @@ body to grab it</text>
     </properties>
    </object>
   </objectgroup>
-  <objectgroup id="41" name="tolearnitems" class="Room">
-   <properties>
-    <property name="donewhenenemiesleft" type="int" value="3"/>
-    <property name="titlebarcuecard" value="RUNNING TACKLE"/>
-   </properties>
-   <object id="482" template="mapobjects/CameraPath.tx" x="1200" y="144">
-    <polyline points="0,0 96,0"/>
+  <objectgroup id="64" name="tolearnsprint" class="Room">
+   <object id="265" template="mapobjects/OutwardBoundary.tx" x="1296" y="0">
+    <polygon points="144,0 144,96 624,96 624,0"/>
    </object>
-   <object id="490" template="mapobjects/bandit/knife.tx" x="1528" y="128"/>
-   <object id="491" template="mapobjects/bandit/knife.tx" x="1608" y="192"/>
-   <object id="492" template="mapobjects/bandit/knife.tx" x="1520" y="216"/>
-   <object id="238" template="mapobjects/OutwardBoundary.tx" x="1504" y="64" visible="1">
+   <object id="515" name="sprintbutton" gid="7254" x="1616" y="64" width="14" height="14"/>
+   <object id="518" name="Run" x="1520" y="56" width="48" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">Sprint</text>
+   </object>
+   <object id="538" name="or" x="1592" y="56" width="16" height="16">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
+   </object>
+   <object id="537" gid="7250" x="1584" y="64" width="14" height="14"/>
+   <object id="678" name="attackbutton" gid="7244" x="1808" y="72" width="14" height="14"/>
+   <object id="679" name="Attack" x="1744" y="64" width="128" height="16">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Tackle</text>
+   </object>
+   <object id="682" name="Attack" x="1728" y="48" width="128" height="16">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">During sprint</text>
+   </object>
+   <object id="680" gid="7246" x="1840" y="72" width="14" height="14"/>
+   <object id="681" name="or" x="1816" y="64" width="16" height="16">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
+   </object>
+   <object id="690" template="mapobjects/CameraPath.tx" x="1200" y="144">
+    <polyline points="0,0 480,0"/>
+   </object>
+  </objectgroup>
+  <objectgroup id="10" name="learnsprint" class="Room">
+   <object id="32" template="mapobjects/bandit/spear.tx" x="1632" y="-32">
     <properties>
-     <property name="extrudeY" type="float" value="-64"/>
+     <property name="z" type="float" value="64"/>
     </properties>
-    <polygon points="-64,-96 -64,32 0,-32 0,-96"/>
    </object>
-   <object id="524" name="flamecharge1" x="1854" y="130" width="30" height="6" visible="0">
+   <object id="697" template="mapobjects/bandit/spear.tx" x="1368" y="144"/>
+   <object id="261" template="mapobjects/bandit/spear.tx" x="1520" y="-8">
     <properties>
-     <property name="color" type="color" value="#ffffffff"/>
+     <property name="z" type="float" value="64"/>
+    </properties>
+   </object>
+   <object id="696" template="mapobjects/bandit/spear.tx" x="1416" y="216"/>
+   <object id="425" name="Instruction" x="1680" y="336" width="264" height="16" visible="0">
+    <properties>
+     <property name="drawz" type="float" value="2"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Hold to sprint after fast enemies</text>
+   </object>
+   <object id="426" gid="6900" x="1656" y="352" width="16" height="16" visible="0">
+    <properties>
+     <property name="drawz" type="float" value="2"/>
+    </properties>
+   </object>
+   <object id="428" gid="6920" x="1792" y="336" width="16" height="16" visible="0">
+    <properties>
+     <property name="drawz" type="float" value="2"/>
+    </properties>
+   </object>
+   <object id="452" gid="7136" x="1824" y="336" width="16" height="16" visible="0">
+    <properties>
+     <property name="drawz" type="float" value="2"/>
     </properties>
    </object>
   </objectgroup>
@@ -465,141 +518,93 @@ body to grab it</text>
     <property name="donewhenenemiesleft" type="int" value="5"/>
     <property name="titlebarcuecard" value="RUNNING KICK"/>
    </properties>
-   <object id="29" template="mapobjects/CameraPath.tx" x="1200" y="144">
-    <polyline points="96,0 272,0 480,-64"/>
+   <object id="29" template="mapobjects/CameraPath.tx" x="1680" y="208">
+    <polyline points="0,-64 480,-64"/>
    </object>
-   <object id="52" template="mapobjects/bandit/knife.tx" x="1712" y="64"/>
-   <object id="51" template="mapobjects/bandit/knife.tx" x="1776" y="160"/>
-   <object id="53" template="mapobjects/bandit/knife.tx" x="1712" y="144"/>
-   <object id="430" name="Instruction" x="1696" y="160" width="192" height="32" visible="0">
+   <object id="430" name="Instruction" x="2176" y="224" width="192" height="32" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Steer while sprinting</text>
    </object>
-   <object id="429" gid="6838" x="1672" y="176" width="16" height="16" visible="0"/>
-   <object id="239" template="mapobjects/OutwardBoundary.tx" x="1600" y="0" visible="1">
-    <properties>
-     <property name="extrudeY" type="float" value="-64"/>
-    </properties>
-    <polygon points="-96,-32 -96,32 32,32 64,0 96,0 128,32 320,32 320,-32"/>
+   <object id="429" gid="6838" x="2152" y="240" width="16" height="16" visible="0"/>
+   <object id="239" template="mapobjects/OutwardBoundary.tx" x="2080" y="64" visible="1">
+    <polygon points="-160,-32 -160,32 32,32 64,0 96,0 128,32 320,32 320,-32"/>
    </object>
-   <object id="596" template="mapobjects/items/lifefruit-tree.tx" type="fruit-tree" x="1680" y="24">
+   <object id="596" template="mapobjects/items/lifefruit-tree.tx" type="fruit-tree" x="2160" y="88">
     <properties>
      <property name="fruit1" type="object" value="600"/>
      <property name="fruit2" type="object" value="601"/>
      <property name="leaves" type="object" value="597"/>
     </properties>
    </object>
-   <object id="597" gid="7260" x="1680" y="-24" width="128" height="96">
+   <object id="597" gid="7260" x="2160" y="40" width="128" height="96">
     <properties>
      <property name="asetag" value="*"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="600" template="mapobjects/items/lifefruit-hanging.tx" type="food-lifefruit-hanging" x="1648" y="-24" width="20" height="20"/>
-   <object id="601" template="mapobjects/items/lifefruit-hanging.tx" type="food-lifefruit-hanging" x="1712" y="-36" width="20" height="20">
+   <object id="600" template="mapobjects/items/lifefruit-hanging.tx" type="food-lifefruit-hanging" x="2128" y="40" width="20" height="20"/>
+   <object id="601" template="mapobjects/items/lifefruit-hanging.tx" type="food-lifefruit-hanging" x="2192" y="28" width="20" height="20">
     <properties>
      <property name="z" type="float" value="68"/>
     </properties>
    </object>
-   <object id="602" name="Instruction" x="1520" y="-16" width="112" height="32">
+   <object id="602" name="Instruction" x="2000" y="48" width="112" height="32">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Move into item to pick up</text>
    </object>
-   <object id="603" gid="6833" x="1512" y="0" width="16" height="16" visible="0"/>
-   <object id="604" name="Instruction" x="1728" y="-16" width="104" height="32">
+   <object id="603" gid="6833" x="1992" y="64" width="16" height="16" visible="0"/>
+   <object id="604" name="Instruction" x="2208" y="48" width="104" height="32">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Food restores lost health</text>
    </object>
-   <object id="606" template="mapobjects/items/lifefruit.tx" type="food-lifefruit" x="1664" y="48" width="20" height="20"/>
-   <object id="607" template="mapobjects/items/lifefruit.tx" type="food-lifefruit" x="1688" y="56" width="20" height="20"/>
-  </objectgroup>
-  <objectgroup id="10" name="+spears" class="Room">
-   <properties>
-    <property name="titlebarcuecard" value="WALK INTO SPEAR THEN RUN"/>
-   </properties>
-   <object id="32" template="mapobjects/bandit/spear.tx" x="1976" y="112"/>
-   <object id="261" template="mapobjects/bandit/spear.tx" x="1424" y="128"/>
-   <object id="425" name="Instruction" x="1720" y="304" width="264" height="16" visible="0">
-    <properties>
-     <property name="drawz" type="float" value="2"/>
-    </properties>
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Hold to sprint after fast enemies</text>
-   </object>
-   <object id="426" gid="6900" x="1696" y="320" width="16" height="16" visible="0">
-    <properties>
-     <property name="drawz" type="float" value="2"/>
-    </properties>
-   </object>
-   <object id="428" gid="6920" x="1832" y="304" width="16" height="16" visible="0">
-    <properties>
-     <property name="drawz" type="float" value="2"/>
-    </properties>
-   </object>
-   <object id="452" gid="7136" x="1864" y="304" width="16" height="16" visible="0">
-    <properties>
-     <property name="drawz" type="float" value="2"/>
-    </properties>
-   </object>
+   <object id="606" template="mapobjects/items/lifefruit.tx" type="food-lifefruit" x="2144" y="112" width="20" height="20"/>
+   <object id="607" template="mapobjects/items/lifefruit.tx" type="food-lifefruit" x="2168" y="120" width="20" height="20"/>
   </objectgroup>
   <objectgroup draworder="index" id="42" name="tolearnthrowingweapons" class="Room">
-   <object id="483" template="mapobjects/CameraPath.tx" x="1744" y="208">
+   <object id="483" template="mapobjects/CameraPath.tx" x="2224" y="272">
     <polyline points="-64,-128 176,-128 416,-192"/>
    </object>
-   <object id="38" template="mapobjects/OutwardBoundary.tx" x="2304" y="-96" visible="1">
+   <object id="38" template="mapobjects/OutwardBoundary.tx" x="2784" y="-32" visible="1">
     <properties>
      <property name="drawz" type="float" value="-1"/>
      <property name="extrudeY" type="float" value="-64"/>
     </properties>
-    <polygon points="-384,-96 -384,128 -352,96 -256,96 -224,64 -128,64 -96,96 -32,96 0,128 64,128 96,160 160,160 160,-96"/>
+    <polygon points="-384,-96 -384,128 -352,96 -256,96 -224,64 -128,64 -96,96 -32,96 0,128 160,128 160,-96"/>
    </object>
-   <object id="265" template="mapobjects/OutwardBoundary.tx" x="1872" y="-600">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-    <polygon points="144,0 144,96 624,96 624,0"/>
-   </object>
-   <object id="530" template="mapobjects/items/spikefruit-ground.tx" x="2096" y="32"/>
-   <object id="532" template="mapobjects/items/spikefruit-ground.tx" x="2128" y="24"/>
-   <object id="533" template="mapobjects/items/spikefruit-ground.tx" x="2152" y="-8"/>
-   <object id="534" template="mapobjects/items/spikefruit-ground.tx" x="2064" y="16"/>
-   <object id="590" template="mapobjects/items/spikefruit-tree.tx" x="2104" y="-8">
+   <object id="530" template="mapobjects/items/spikefruit-ground.tx" x="2576" y="96"/>
+   <object id="532" template="mapobjects/items/spikefruit-ground.tx" x="2608" y="88"/>
+   <object id="533" template="mapobjects/items/spikefruit-ground.tx" x="2632" y="56"/>
+   <object id="534" template="mapobjects/items/spikefruit-ground.tx" x="2544" y="80"/>
+   <object id="590" template="mapobjects/items/spikefruit-tree.tx" x="2584" y="56">
     <properties>
      <property name="fruit1" type="object" value="592"/>
      <property name="fruit2" type="object" value="593"/>
      <property name="leaves" type="object" value="591"/>
     </properties>
    </object>
-   <object id="591" template="mapobjects/items/spikefruit-tree-leaves.tx" x="2104" y="-56"/>
-   <object id="592" template="mapobjects/items/spikefruit-hanging.tx" x="2080" y="-56">
+   <object id="591" template="mapobjects/items/spikefruit-tree-leaves.tx" x="2584" y="8"/>
+   <object id="592" template="mapobjects/items/spikefruit-hanging.tx" x="2560" y="8">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="593" template="mapobjects/items/spikefruit-hanging.tx" x="2136" y="-68">
+   <object id="593" template="mapobjects/items/spikefruit-hanging.tx" x="2616" y="-4">
     <properties>
      <property name="z" type="float" value="68"/>
     </properties>
    </object>
-   <object id="431" name="During sprint" x="2216" y="-64" width="64" height="32">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">During sprint:</text>
+   <object id="431" name="During sprint" x="2608" y="8" width="152" height="32">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">During sprint throws ALL missiles</text>
    </object>
-   <object id="432" gid="6833" x="1776" y="0" width="16" height="16" visible="0"/>
-   <object id="434" name="Instruction" x="1976" y="-40" width="96" height="32">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Throw 1 missile</text>
+   <object id="432" gid="6833" x="2256" y="64" width="16" height="16" visible="0"/>
+   <object id="434" name="Instruction" x="2448" y="16" width="104" height="32">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Throw missile</text>
    </object>
-   <object id="469" name="Instruction" x="2280" y="-24" width="72" height="32">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Throw ALL missiles</text>
-   </object>
-   <object id="626" name="attackbutton" gid="7244" x="1984" y="-48" width="14" height="14"/>
-   <object id="627" gid="7246" x="2016" y="-48" width="14" height="14"/>
-   <object id="628" name="or" x="1992" y="-56" width="16" height="16">
-    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
-   </object>
-   <object id="629" name="attackbutton" gid="7244" x="2224" y="-16" width="14" height="14"/>
-   <object id="630" gid="7246" x="2256" y="-16" width="14" height="14"/>
-   <object id="631" name="or" x="2232" y="-24" width="16" height="16">
+   <object id="626" name="attackbutton" gid="7244" x="2480" y="40" width="14" height="14"/>
+   <object id="627" gid="7246" x="2512" y="40" width="14" height="14"/>
+   <object id="628" name="or" x="2488" y="32" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
   </objectgroup>
   <objectgroup id="48" name="learnthrowingweapons" class="Room">
-   <object id="58" gid="7236" x="2336" y="-168" width="64" height="64">
+   <object id="58" gid="7236" x="2816" y="-104" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
      <property name="defaultattack" value="sling-shot-until-empty"/>
@@ -610,7 +615,7 @@ body to grab it</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="59" gid="7236" x="2400" y="-104" width="64" height="64">
+   <object id="59" gid="7236" x="2880" y="-40" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
      <property name="defaultattack" value="sling-shot-until-empty"/>
@@ -621,57 +626,57 @@ body to grab it</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="240" name="entrypoint" x="2336" y="-40">
+   <object id="240" name="entrypoint" x="2816" y="24">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="241" name="entrypoint" x="2240" y="-72">
+   <object id="241" name="entrypoint" x="2720" y="-8">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="243" name="exitpoint" x="2432" y="-136">
+   <object id="243" name="exitpoint" x="2912" y="-72">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="244" name="exitpoint" x="2336" y="-168">
+   <object id="244" name="exitpoint" x="2816" y="-104">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="433" gid="7244" x="1768" y="16" width="14" height="14" visible="0"/>
-   <object id="435" gid="6909" x="2056" y="116" width="16" height="16" visible="0"/>
-   <object id="453" gid="7010" x="2048" y="80" width="16" height="16" visible="0"/>
-   <object id="454" gid="7011" x="2064" y="80" width="16" height="16" visible="0"/>
-   <object id="455" gid="7012" x="2080" y="80" width="16" height="16" visible="0"/>
-   <object id="456" gid="7013" x="2096" y="80" width="16" height="16" visible="0"/>
-   <object id="457" gid="7135" x="2088" y="116" width="16" height="16" visible="0"/>
-   <object id="468" gid="7254" x="1840" y="16" width="14" height="14" visible="0"/>
-   <object id="470" name="Instruction" x="1832" y="8" width="40" height="16" visible="0">
+   <object id="433" gid="7244" x="2248" y="80" width="14" height="14" visible="0"/>
+   <object id="435" gid="6909" x="2536" y="180" width="16" height="16" visible="0"/>
+   <object id="453" gid="7010" x="2528" y="144" width="16" height="16" visible="0"/>
+   <object id="454" gid="7011" x="2544" y="144" width="16" height="16" visible="0"/>
+   <object id="455" gid="7012" x="2560" y="144" width="16" height="16" visible="0"/>
+   <object id="456" gid="7013" x="2576" y="144" width="16" height="16" visible="0"/>
+   <object id="457" gid="7135" x="2568" y="180" width="16" height="16" visible="0"/>
+   <object id="468" gid="7254" x="2320" y="80" width="14" height="14" visible="0"/>
+   <object id="470" name="Instruction" x="2312" y="72" width="40" height="16" visible="0">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">+</text>
    </object>
-   <object id="471" gid="7244" x="1864" y="16" width="14" height="14" visible="0"/>
+   <object id="471" gid="7244" x="2344" y="80" width="14" height="14" visible="0"/>
   </objectgroup>
   <objectgroup id="28" name="+knives" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="4"/>
    </properties>
-   <object id="246" template="mapobjects/bandit/knife.tx" x="2416" y="104"/>
-   <object id="248" template="mapobjects/bandit/knife.tx" x="1896" y="64"/>
-   <object id="250" template="mapobjects/bandit/knife.tx" x="2416" y="136"/>
-   <object id="253" template="mapobjects/bandit/knife.tx" x="1896" y="96"/>
+   <object id="246" template="mapobjects/bandit/knife.tx" x="2896" y="168"/>
+   <object id="248" template="mapobjects/bandit/knife.tx" x="2376" y="128"/>
+   <object id="250" template="mapobjects/bandit/knife.tx" x="2896" y="200"/>
+   <object id="253" template="mapobjects/bandit/knife.tx" x="2376" y="160"/>
   </objectgroup>
   <objectgroup id="11" name="+shooter" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="5"/>
    </properties>
-   <object id="87" gid="7236" x="2368" y="-136" width="64" height="64">
+   <object id="87" gid="7236" x="2848" y="-72" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
      <property name="defaultattack" value="sling-shot-until-empty"/>
@@ -682,19 +687,19 @@ body to grab it</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="242" name="entrypoint" x="2288" y="-56">
+   <object id="242" name="entrypoint" x="2768" y="8">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="245" name="exitpoint" x="2384" y="-152">
+   <object id="245" name="exitpoint" x="2864" y="-88">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="494" gid="7236" x="2304" y="-136" width="64" height="64">
+   <object id="494" gid="7236" x="2784" y="-72" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
      <property name="defaultattack" value="sling-shot-until-empty"/>
@@ -706,7 +711,7 @@ body to grab it</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="498" gid="7236" x="2432" y="-136" width="64" height="64">
+   <object id="498" gid="7236" x="2912" y="-72" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="10"/>
      <property name="defaultattack" value="sling-shot-until-empty"/>
@@ -718,25 +723,25 @@ body to grab it</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="495" name="entrypoint" x="2240" y="-72">
+   <object id="495" name="entrypoint" x="2720" y="-8">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="497" name="entrypoint" x="2336" y="-40">
+   <object id="497" name="entrypoint" x="2816" y="24">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="496" name="exitpoint" x="2336" y="-168">
+   <object id="496" name="exitpoint" x="2816" y="-104">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="499" name="exitpoint" x="2432" y="-136">
+   <object id="499" name="exitpoint" x="2912" y="-72">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
@@ -747,49 +752,52 @@ body to grab it</text>
    <properties>
     <property name="donewhenenemiesleft" type="int" value="3"/>
    </properties>
-   <object id="501" template="mapobjects/bandit/spear.tx" x="2416" y="88"/>
+   <object id="501" template="mapobjects/bandit/spear.tx" x="2896" y="152"/>
   </objectgroup>
   <objectgroup id="13" name="+spears" class="Room">
-   <object id="41" template="mapobjects/bandit/spear.tx" x="1896" y="80"/>
-   <object id="62" template="mapobjects/bandit/spear.tx" x="2416" y="104"/>
+   <object id="41" template="mapobjects/bandit/spear.tx" x="2376" y="144"/>
+   <object id="62" template="mapobjects/bandit/spear.tx" x="2896" y="168"/>
   </objectgroup>
   <objectgroup draworder="index" id="62" name="tolearnfireball" class="Room">
-   <object id="655" template="mapobjects/OutwardBoundary.tx" x="2400" y="-32">
-    <polygon points="64,-96 64,96 448,96 480,128 480,-96"/>
+   <object id="655" template="mapobjects/OutwardBoundary.tx" x="2880" y="0">
+    <polygon points="64,-96 64,96 480,96 480,-96"/>
    </object>
-   <object id="522" name="Fireball" x="2680" y="16" width="120" height="32">
+   <object id="522" name="Fireball" x="3160" y="48" width="120" height="32">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Costs 1 or more fire meter</text>
    </object>
-   <object id="656" name="Fireball" x="2480" y="16" width="168" height="32">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Hold        then release to spit fire!</text>
+   <object id="656" name="Fireball" x="2968" y="64" width="136" height="16">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Hold then release</text>
    </object>
-   <object id="523" name="flame1" x="2768" y="40" width="30" height="6">
+   <object id="698" name="Fireball" x="2968" y="48" width="136" height="16">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Fireballs</text>
+   </object>
+   <object id="523" name="flame1" x="3248" y="72" width="30" height="6">
     <properties>
      <property name="color" type="color" value="#ffffd000"/>
     </properties>
    </object>
-   <object id="525" name="flamebox" x="2768" y="40" width="30" height="6">
+   <object id="525" name="flamebox" x="3248" y="72" width="30" height="6">
     <properties>
      <property name="color" type="color" value="#00000000"/>
      <property name="linecolor" type="color" value="#ffffffff"/>
      <property name="roundcorners" type="float" value="1"/>
     </properties>
    </object>
-   <object id="632" name="attackbutton" gid="7244" x="2528" y="24" width="14" height="14"/>
-   <object id="633" gid="7246" x="2560" y="24" width="14" height="14"/>
-   <object id="634" name="or" x="2536" y="16" width="16" height="16">
+   <object id="632" name="attackbutton" gid="7244" x="3056" y="56" width="14" height="14"/>
+   <object id="633" gid="7246" x="3088" y="56" width="14" height="14"/>
+   <object id="634" name="or" x="3064" y="48" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
-   <object id="675" template="mapobjects/CameraPath.tx" x="2160" y="-48">
-    <polyline points="0,64 240,128 480,128"/>
+   <object id="675" template="mapobjects/CameraPath.tx" x="2640" y="16">
+    <polyline points="0,64 240,96 480,96"/>
    </object>
-   <object id="676" gid="7270" x="2672" y="96" width="32" height="32">
+   <object id="676" gid="7270" x="3136" y="120" width="32" height="32">
     <properties>
      <property name="item" type="object" value="677"/>
      <property name="propertiestable" type="file" value="database/objects-properties.csv"/>
     </properties>
    </object>
-   <object id="677" gid="7271" x="2672" y="96" width="32" height="32">
+   <object id="677" gid="7271" x="3136" y="120" width="32" height="32">
     <properties>
      <property name="propertiestable" type="file" value="database/items-properties.csv"/>
      <property name="z" type="float" value="1"/>
@@ -797,7 +805,7 @@ body to grab it</text>
    </object>
   </objectgroup>
   <objectgroup id="63" name="learnfireball" class="Room">
-   <object id="657" gid="7234" x="2800" y="-72" width="128" height="128">
+   <object id="657" gid="7234" x="3304" y="-40" width="128" height="128">
     <properties>
      <property name="ammo" type="int" value="10"/>
      <property name="defaultattack" value="bow-shot-until-empty"/>
@@ -808,7 +816,7 @@ body to grab it</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="673" gid="7234" x="2848" y="-72" width="128" height="128">
+   <object id="673" gid="7234" x="3352" y="-40" width="128" height="128">
     <properties>
      <property name="ammo" type="int" value="10"/>
      <property name="defaultattack" value="bow-shot-until-empty"/>
@@ -819,7 +827,7 @@ body to grab it</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="662" gid="7234" x="2752" y="-72" width="128" height="128">
+   <object id="662" gid="7234" x="3256" y="-40" width="128" height="128">
     <properties>
      <property name="ammo" type="int" value="10"/>
      <property name="defaultattack" value="bow-shot-until-empty"/>
@@ -830,7 +838,7 @@ body to grab it</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="665" gid="7234" x="2704" y="-72" width="128" height="128">
+   <object id="665" gid="7234" x="3208" y="-40" width="128" height="128">
     <properties>
      <property name="ammo" type="int" value="10"/>
      <property name="defaultattack" value="bow-shot-until-empty"/>
@@ -841,7 +849,7 @@ body to grab it</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="668" gid="7234" x="2656" y="-72" width="128" height="128">
+   <object id="668" gid="7234" x="3160" y="-40" width="128" height="128">
     <properties>
      <property name="ammo" type="int" value="10"/>
      <property name="defaultattack" value="bow-shot-until-empty"/>
@@ -852,7 +860,7 @@ body to grab it</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="671" gid="7234" x="2608" y="-72" width="128" height="128">
+   <object id="671" gid="7234" x="3112" y="-40" width="128" height="128">
     <properties>
      <property name="ammo" type="int" value="10"/>
      <property name="defaultattack" value="bow-shot-until-empty"/>
@@ -863,73 +871,73 @@ body to grab it</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="658" name="entrypoint" x="2736" y="-8">
+   <object id="658" name="entrypoint" x="3240" y="24">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="674" name="entrypoint" x="2784" y="-8">
+   <object id="674" name="entrypoint" x="3288" y="24">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="661" name="entrypoint" x="2688" y="-8">
+   <object id="661" name="entrypoint" x="3192" y="24">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="664" name="entrypoint" x="2640" y="-8">
+   <object id="664" name="entrypoint" x="3144" y="24">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="667" name="entrypoint" x="2592" y="-8">
+   <object id="667" name="entrypoint" x="3096" y="24">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="670" name="entrypoint" x="2544" y="-8">
+   <object id="670" name="entrypoint" x="3048" y="24">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="659" name="exitpoint" x="2832" y="-104">
+   <object id="659" name="exitpoint" x="3336" y="-72">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="672" name="exitpoint" x="2880" y="-104">
+   <object id="672" name="exitpoint" x="3384" y="-72">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="660" name="exitpoint" x="2784" y="-104">
+   <object id="660" name="exitpoint" x="3288" y="-72">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="663" name="exitpoint" x="2736" y="-104">
+   <object id="663" name="exitpoint" x="3240" y="-72">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="666" name="exitpoint" x="2688" y="-104">
+   <object id="666" name="exitpoint" x="3192" y="-72">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="669" name="exitpoint" x="2640" y="-104">
+   <object id="669" name="exitpoint" x="3144" y="-72">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
@@ -940,72 +948,72 @@ body to grab it</text>
    <properties>
     <property name="donewhenenemiesleft" type="int" value="1"/>
    </properties>
-   <object id="65" template="mapobjects/OutwardBoundary.tx" x="3200" y="288" visible="1">
+   <object id="65" template="mapobjects/OutwardBoundary.tx" x="3680" y="288" visible="1">
     <properties>
      <property name="extrudeY" type="float" value="-64"/>
     </properties>
     <polygon points="-320,-320 -320,-192 0,-192 32,-160 64,-160 96,-128 96,-96 128,-64 128,0 160,0 160,-320"/>
    </object>
-   <object id="66" template="mapobjects/CameraPath.tx" x="2800" y="144">
-    <polyline points="-160,-64 -48,-64 208,0 320,0"/>
+   <object id="66" template="mapobjects/CameraPath.tx" x="3280" y="144">
+    <polyline points="-160,-32 80,0 320,0"/>
    </object>
-   <object id="234" name="darknessinside" gid="5268" x="3232" y="128" width="64" height="128">
+   <object id="234" name="darknessinside" gid="5268" x="3712" y="128" width="64" height="128">
     <properties>
      <property name="drawz" type="float" value="-0.25"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="235" name="exitdoor" gid="5266" x="3232" y="128" width="64" height="128"/>
-   <object id="236" gid="5265" x="3232" y="128" width="64" height="128">
+   <object id="235" name="exitdoor" gid="5266" x="3712" y="128" width="64" height="128"/>
+   <object id="236" gid="5265" x="3712" y="128" width="64" height="128">
     <properties>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="267" gid="6583" x="3312" y="264" width="32" height="32">
+   <object id="267" gid="6583" x="3792" y="264" width="32" height="32">
     <properties>
      <property name="itemtype" value="food-fish"/>
     </properties>
    </object>
-   <object id="270" gid="6583" x="3152" y="112" width="32" height="32">
+   <object id="270" gid="6583" x="3632" y="112" width="32" height="32">
     <properties>
      <property name="itemtype" value="food-fish"/>
     </properties>
    </object>
-   <object id="268" gid="6586" x="3304" y="232" width="32" height="32">
+   <object id="268" gid="6586" x="3784" y="232" width="32" height="32">
     <properties>
      <property name="itemtype" value="mana-peppers"/>
     </properties>
    </object>
-   <object id="269" gid="6586" x="3184" y="120" width="32" height="32">
+   <object id="269" gid="6586" x="3664" y="120" width="32" height="32">
     <properties>
      <property name="itemtype" value="mana-peppers"/>
     </properties>
    </object>
-   <object id="528" name="Instruction" x="2992" y="48" width="200" height="32">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Attack the unprotected side of a blocking enemy!</text>
+   <object id="528" name="Instruction" x="3528" y="48" width="136" height="32">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Attack their unprotected side!</text>
    </object>
-   <object id="529" gid="6833" x="2824" y="24" width="16" height="16" visible="0"/>
-   <object id="521" name="attackbutton" gid="7244" x="2816" y="64" width="14" height="14" visible="0"/>
-   <object id="503" template="mapobjects/bandit/shield.tx" x="3216" y="152">
+   <object id="529" gid="6833" x="3304" y="24" width="16" height="16" visible="0"/>
+   <object id="521" name="attackbutton" gid="7244" x="3296" y="64" width="14" height="14" visible="0"/>
+   <object id="503" template="mapobjects/bandit/shield.tx" x="3696" y="152">
     <properties>
      <property name="facedegrees" type="float" value="180"/>
      <property name="initialai" value="guardForever"/>
     </properties>
    </object>
-   <object id="308" template="mapobjects/bandit/shield.tx" x="3248" y="184">
+   <object id="308" template="mapobjects/bandit/shield.tx" x="3728" y="184">
     <properties>
      <property name="facedegrees" type="float" value="180"/>
      <property name="initialai" value="guardForever"/>
     </properties>
    </object>
-   <object id="608" type="fruit-tree" gid="7261" x="3312" y="56" width="128" height="160">
+   <object id="608" type="fruit-tree" gid="7261" x="3792" y="56" width="128" height="160">
     <properties>
      <property name="leaves" type="object" value="609"/>
      <property name="propertiestable" type="file" value="database/objects-properties.csv"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="609" gid="7260" x="3312" y="8" width="128" height="96">
+   <object id="609" gid="7260" x="3792" y="8" width="128" height="96">
     <properties>
      <property name="z" type="float" value="128"/>
     </properties>
@@ -1015,7 +1023,7 @@ body to grab it</text>
    <properties>
     <property name="donewhenenemiesleft" type="int" value="4"/>
    </properties>
-   <object id="254" gid="7234" x="3264" y="0" width="128" height="128">
+   <object id="254" gid="7234" x="3744" y="0" width="128" height="128">
     <properties>
      <property name="ammo" type="int" value="10"/>
      <property name="defaultattack" value="bow-shot-until-empty"/>
@@ -1026,19 +1034,19 @@ body to grab it</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="255" name="entrypoint" x="3224" y="48">
+   <object id="255" name="entrypoint" x="3704" y="48">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="256" name="exitpoint" x="3264" y="-32">
+   <object id="256" name="exitpoint" x="3744" y="-32">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="257" gid="7234" x="3376" y="72" width="128" height="128">
+   <object id="257" gid="7234" x="3856" y="72" width="128" height="128">
     <properties>
      <property name="ammo" type="int" value="10"/>
      <property name="defaultattack" value="bow-shot-until-empty"/>
@@ -1049,61 +1057,61 @@ body to grab it</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="258" name="entrypoint" x="3312" y="136">
+   <object id="258" name="entrypoint" x="3792" y="136">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="259" name="exitpoint" x="3408" y="40">
+   <object id="259" name="exitpoint" x="3888" y="40">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <point/>
    </object>
-   <object id="436" name="Instruction" x="2824" y="48" width="144" height="32" visible="0">
+   <object id="436" name="Instruction" x="3304" y="48" width="144" height="32" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Move into an enemy or barrel to grab</text>
    </object>
-   <object id="437" gid="6838" x="2800" y="72" width="16" height="16" visible="0"/>
-   <object id="438" gid="6889" x="2848" y="256" width="16" height="16" visible="0">
+   <object id="437" gid="6838" x="3280" y="72" width="16" height="16" visible="0"/>
+   <object id="438" gid="6889" x="3328" y="256" width="16" height="16" visible="0">
     <properties>
      <property name="drawz" type="float" value="2"/>
     </properties>
    </object>
-   <object id="439" name="Instruction" x="2784" y="224" width="224" height="32" visible="0">
+   <object id="439" name="Instruction" x="3264" y="224" width="224" height="32" visible="0">
     <properties>
      <property name="drawz" type="float" value="2"/>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Then hold    toward the door
 and tap    to throw</text>
    </object>
-   <object id="440" gid="6909" x="2776" y="256" width="16" height="16" visible="0">
+   <object id="440" gid="6909" x="3256" y="256" width="16" height="16" visible="0">
     <properties>
      <property name="drawz" type="float" value="2"/>
     </properties>
    </object>
-   <object id="458" gid="7135" x="2800" y="256" width="16" height="16" visible="0"/>
-   <object id="459" gid="7010" x="2848" y="56" width="16" height="16" visible="0"/>
-   <object id="460" gid="7011" x="2864" y="56" width="16" height="16" visible="0"/>
-   <object id="461" gid="7012" x="2880" y="56" width="16" height="16" visible="0"/>
-   <object id="462" gid="7013" x="2896" y="56" width="16" height="16" visible="0"/>
-   <object id="466" gid="6834" x="2864" y="240" width="16" height="16" visible="0">
+   <object id="458" gid="7135" x="3280" y="256" width="16" height="16" visible="0"/>
+   <object id="459" gid="7010" x="3328" y="56" width="16" height="16" visible="0"/>
+   <object id="460" gid="7011" x="3344" y="56" width="16" height="16" visible="0"/>
+   <object id="461" gid="7012" x="3360" y="56" width="16" height="16" visible="0"/>
+   <object id="462" gid="7013" x="3376" y="56" width="16" height="16" visible="0"/>
+   <object id="466" gid="6834" x="3344" y="240" width="16" height="16" visible="0">
     <properties>
      <property name="drawz" type="float" value="2"/>
     </properties>
    </object>
-   <object id="504" template="mapobjects/OutwardBoundary.tx" x="2400" y="-184">
+   <object id="504" template="mapobjects/OutwardBoundary.tx" x="2880" y="-184">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
     <polygon points="768,0 768,96 960,96 960,0"/>
    </object>
-   <object id="562" template="mapobjects/bandit/knife.tx" x="2864" y="160"/>
-   <object id="563" template="mapobjects/bandit/knife.tx" x="2864" y="240"/>
+   <object id="562" template="mapobjects/bandit/knife.tx" x="3344" y="160"/>
+   <object id="563" template="mapobjects/bandit/knife.tx" x="3344" y="240"/>
   </objectgroup>
   <objectgroup id="56" name="+spears" class="Room">
-   <object id="307" template="mapobjects/bandit/spear.tx" x="2856" y="280"/>
-   <object id="561" template="mapobjects/bandit/spear.tx" x="2856" y="184"/>
+   <object id="307" template="mapobjects/bandit/spear.tx" x="3336" y="280"/>
+   <object id="561" template="mapobjects/bandit/spear.tx" x="3336" y="184"/>
   </objectgroup>
   <objectgroup id="54" name="unlockdoor" class="Room">
    <properties>
@@ -1114,7 +1122,7 @@ and tap    to throw</text>
    <object id="260" name="camerawarpwhendone" x="240" y="1008">
     <point/>
    </object>
-   <object id="465" template="mapobjects/trigger/startSequence.tx" name="exittrigger" type="Trigger" x="3232" y="128">
+   <object id="465" template="mapobjects/trigger/startSequence.tx" name="exittrigger" type="Trigger" x="3712" y="128">
     <properties>
      <property name="drawz" type="float" value="-0.125"/>
      <property name="initialai" value="triggerToUse"/>
@@ -1419,44 +1427,44 @@ to sprint past archers</text>
      <property name="bloodyanimation" type="int" value="180"/>
     </properties>
    </object>
-   <object id="579" template="mapobjects/banditcave/crystal-spikes/00.tx" x="744" y="1080">
+   <object id="579" template="mapobjects/banditcave/crystal-spikes/00.tx" x="728" y="1080">
     <properties>
      <property name="attackdegrees" type="float" value="180"/>
     </properties>
    </object>
-   <object id="565" template="mapobjects/banditcave/crystal-spikes/03.tx" x="720" y="1040">
+   <object id="565" template="mapobjects/banditcave/crystal-spikes/03.tx" x="704" y="1040">
     <properties>
      <property name="attackdegrees" type="float" value="180"/>
     </properties>
    </object>
-   <object id="578" template="mapobjects/banditcave/crystal-spikes/03.tx" x="688" y="1192">
+   <object id="578" template="mapobjects/banditcave/crystal-spikes/03.tx" x="672" y="1192">
     <properties>
      <property name="attackdegrees" type="float" value="180"/>
     </properties>
    </object>
    <object id="566" template="mapobjects/banditcave/crystal-spikes/04.tx" x="432" y="1016"/>
    <object id="620" template="mapobjects/banditcave/crystal-spikes/04.tx" x="696" y="1024"/>
-   <object id="577" template="mapobjects/banditcave/crystal-spikes/04.tx" x="736" y="1096">
+   <object id="577" template="mapobjects/banditcave/crystal-spikes/04.tx" x="720" y="1096">
     <properties>
      <property name="attackdegrees" type="float" value="180"/>
     </properties>
    </object>
    <object id="567" template="mapobjects/banditcave/crystal-spikes/07.tx" x="344" y="1024"/>
    <object id="619" template="mapobjects/banditcave/crystal-spikes/07.tx" x="616" y="1024"/>
-   <object id="576" template="mapobjects/banditcave/crystal-spikes/07.tx" x="720" y="1128">
+   <object id="576" template="mapobjects/banditcave/crystal-spikes/07.tx" x="704" y="1128">
     <properties>
      <property name="attackdegrees" type="float" value="180"/>
     </properties>
    </object>
    <object id="568" template="mapobjects/banditcave/crystal-spikes/08.tx" x="384" y="1024"/>
    <object id="618" template="mapobjects/banditcave/crystal-spikes/08.tx" x="656" y="1024"/>
-   <object id="575" template="mapobjects/banditcave/crystal-spikes/08.tx" x="736" y="1120">
+   <object id="575" template="mapobjects/banditcave/crystal-spikes/08.tx" x="720" y="1120">
     <properties>
      <property name="attackdegrees" type="float" value="180"/>
     </properties>
    </object>
    <object id="569" template="mapobjects/banditcave/crystal-spikes/28.tx" x="552" y="1024"/>
-   <object id="574" template="mapobjects/banditcave/crystal-spikes/28.tx" x="736" y="1064">
+   <object id="574" template="mapobjects/banditcave/crystal-spikes/28.tx" x="720" y="1064">
     <properties>
      <property name="attackdegrees" type="float" value="180"/>
     </properties>
@@ -1467,7 +1475,7 @@ to sprint past archers</text>
     </properties>
    </object>
    <object id="570" template="mapobjects/banditcave/crystal-spikes/16.tx" x="472" y="1024"/>
-   <object id="573" template="mapobjects/banditcave/crystal-spikes/16.tx" x="728" y="1152">
+   <object id="573" template="mapobjects/banditcave/crystal-spikes/16.tx" x="712" y="1152">
     <properties>
      <property name="attackdegrees" type="float" value="180"/>
     </properties>
@@ -1478,7 +1486,7 @@ to sprint past archers</text>
     </properties>
    </object>
    <object id="571" template="mapobjects/banditcave/crystal-spikes/23.tx" x="512" y="1016" width="40" height="32"/>
-   <object id="572" template="mapobjects/banditcave/crystal-spikes/23.tx" x="712" y="1168" width="40" height="32">
+   <object id="572" template="mapobjects/banditcave/crystal-spikes/23.tx" x="696" y="1168" width="40" height="32">
     <properties>
      <property name="attackdegrees" type="float" value="180"/>
     </properties>
@@ -1997,6 +2005,23 @@ to sprint past archers</text>
   </objectgroup>
  </group>
  <group id="32" name="unused" visible="0">
+  <objectgroup id="41" name="tolearnitems" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="3"/>
+    <property name="titlebarcuecard" value="RUNNING TACKLE"/>
+   </properties>
+   <object id="482" template="mapobjects/CameraPath.tx" x="1680" y="144">
+    <polyline points="0,0 96,0"/>
+   </object>
+   <object id="490" template="mapobjects/bandit/knife.tx" x="2008" y="192"/>
+   <object id="491" template="mapobjects/bandit/knife.tx" x="2088" y="256"/>
+   <object id="492" template="mapobjects/bandit/knife.tx" x="2000" y="280"/>
+   <object id="524" name="flamecharge1" x="2334" y="194" width="30" height="6" visible="0">
+    <properties>
+     <property name="color" type="color" value="#ffffffff"/>
+    </properties>
+   </object>
+  </objectgroup>
   <objectgroup id="38" name="+slingers" class="Room">
    <object id="409" gid="7236" x="5040" y="-40" width="64" height="64">
     <properties>
