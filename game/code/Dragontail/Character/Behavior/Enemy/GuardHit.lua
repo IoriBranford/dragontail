@@ -36,4 +36,14 @@ function EnemyGuardHit:fixedupdate()
     end
 end
 
+function EnemyGuardHit:interrupt(nextstate, ...)
+    local enemy = self.character
+    enemy:resetFlash()
+    return nextstate, ...
+end
+
+function EnemyGuardHit:timeout(nextstate, ...)
+    return self:interrupt(nextstate, ...)
+end
+
 return EnemyGuardHit
