@@ -26,4 +26,8 @@ function Behavior:timeout(nextstate, ...)
     return nextstate, ...
 end
 
+---@param fixedfrac number
+function Behavior:draw(fixedfrac)
+end
+
 return Behavior

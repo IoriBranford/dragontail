@@ -260,7 +260,7 @@ function StateMachine:release()
     end
 end
 
-function StateMachine:draw()
+function StateMachine:draw(fixedfrac)
     if self.state then
         local font = Assets.getFont("TinyUnicode", 16)
         if font then
@@ -270,6 +270,9 @@ function StateMachine:draw()
                 self.x - w/2, self.y - self.z - self.bodyheight - font:getHeight(),
                 w, "center")
         end
+    end
+    if self.statebehavior then
+        self.statebehavior:draw(fixedfrac)
     end
 end
 
