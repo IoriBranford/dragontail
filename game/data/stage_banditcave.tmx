@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="67" nextobjectid="701">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="68" nextobjectid="704">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -74,8 +74,11 @@
    <chunk x="80" y="-12" width="20" height="12">
    eJxjYBgFo2AUMNAJBIswMIRAMYgdLszAcE2IfAMBy9cC8Q==
   </chunk>
+   <chunk x="-20" y="0" width="20" height="12">
+   eJxjYBgFgwWECVPXPFER6ponJjKy3HdFiLrm0QIAAGnNAfY=
+  </chunk>
    <chunk x="0" y="0" width="20" height="12">
-   eJzNksFKgzEQhD+kelLIJvGFRDx5amtt+zhixUvFVrHtC3lUEC3Fp5EhGxqLJ70YGHZn8s/+m2Th92sdt3lO0M9/KAaMG/8gwyh/r9/L5R/jtOXDVHCZoJu3eeXCqPHWWhcZZgbRwJzfBTCDVYS5R2HpWLguVP4Ri1e+ZJANHtyrOJAe4TnAJMCJwYFrgrjimcF1gHWCTYJPK559378KBaohvfp/yiceTwM8Jbg3mEXoea1O41Eve00/6uGm2a/oWOnlWHeV4DWUmgud12PNl7ofg0fX5ztx1XjqW3cTvMVy9o3XF25D4cHg3GBqcGTwEuDQNb1b9bXrPUI/lTnqaSY0A84F8aHn0ne/Ufzv6wuB2koL
+   eJzNks1KQzEUhD+kiosKOUmeSMSVInjt7+OIFTcKrULbF3KpuBHxaWTICTcWV7oxMMw5k8zcJDfw+/Ee+zonuMp/CAPmjX+cYZa/53e5fGOe+n6aCiYJLnNf116YNd6aNcqwNIgG5v1DADPYRlg5CxvH2nWh9sqUV75kkA0e3SseS4/wHGAR4NjgwDVBvfjU4CbA0OAjwacVz77PX4cCZUiv/p/qhfNJgEODc4NlhM6zBo1He9lr9qM93DbzFQMre3mLMErwGkrmWud1rvVG92Pw5Ppqh7eNR3cfE1z4uV9CYeULd94HgzODe4MjK+uGrum/aY2gN9PpLXpdIW2iN9Do6qdeS99dI/7v4wulBUlD
   </chunk>
    <chunk x="20" y="0" width="20" height="12">
    eJzNkk1KA0EQhT9EXNpd3bNz4YF0ERI1UVx6Dv91FX9IAhoEPYkgouhCsnETXHgTRZ5dg4N4ABse9V7Vq+6enmpXsFJBN0Ongpz5c61lWHdPu4JeLn3KSYtvyFNBRzXnr6n0ytNEyjAJcBJhyeA0wrxBP8I0Q9/gLZd7CerR2eKrFby4T1CvovZq5p+dnxu0DCzDyOAywTjBwGDoWlDtd33knhoXqcS6vm+wG+AxwmeAnODIYMYKf4glHgRYMLg2uLHiV14Q/wiwE+AwFj1nMOt7CNKK9xEODPYibCV4z7CY4Db8eHSn7zP9jFvf89jzRxH2/Yw790hfJbhOsGlwH8o3bIefPmGot9Ib6T1cjw0GDT5yPnAtrpx6Ro28dDRYNv9/VmZgEguPnn/SnBicuRZaDT7NEAzOA/Q0Xz57XZ/FOmomVatzgvw1b85uPb//fX0B3lRn1w==
@@ -1872,12 +1875,6 @@ to sprint past archers</text>
    <object id="350" template="mapobjects/bandit/spear.tx" x="2192" y="1080"/>
   </objectgroup>
   <objectgroup id="20" name="arena" class="Room">
-   <object id="76" template="mapobjects/OutwardBoundary.tx" x="2656" y="896">
-    <properties>
-     <property name="extrudeY" type="float" value="-64"/>
-    </properties>
-    <polygon points="0,-32 0,80 480,80 480,-32"/>
-   </object>
    <object id="77" template="mapobjects/OutwardBoundary.tx" x="2208" y="1152">
     <properties>
      <property name="extrudeY" type="float" value="-64"/>
@@ -1886,6 +1883,29 @@ to sprint past archers</text>
    </object>
    <object id="80" template="mapobjects/CameraPath.tx" x="2256" y="1008">
     <polyline points="-320,0 640,0"/>
+   </object>
+   <object id="316" template="mapobjects/OutwardBoundary.tx" x="2208" y="864">
+    <polygon points="-32,0 -32,48 64,48 96,80 416,80 448,112 448,0"/>
+   </object>
+  </objectgroup>
+  <objectgroup id="67" name="toboss" class="Room">
+   <properties>
+    <property name="checkpoint" type="bool" value="true"/>
+   </properties>
+   <object id="701" template="mapobjects/OutwardBoundary.tx" x="2208" y="1152">
+    <properties>
+     <property name="extrudeY" type="float" value="-64"/>
+    </properties>
+    <polygon points="-64,64 -64,224 448,224 448,0 384,-64 160,-64 128,-32 32,-32"/>
+   </object>
+   <object id="702" template="mapobjects/OutwardBoundary.tx" x="2208" y="864">
+    <polygon points="-32,0 -32,48 64,48 96,80 416,80 448,112 448,0"/>
+   </object>
+   <object id="76" template="mapobjects/OutwardBoundary.tx" x="2656" y="896">
+    <properties>
+     <property name="extrudeY" type="float" value="-64"/>
+    </properties>
+    <polygon points="0,-32 0,80 480,80 480,-32"/>
    </object>
    <object id="313" template="mapobjects/OutwardBoundary.tx" x="2656" y="832">
     <properties>
@@ -1899,8 +1919,8 @@ to sprint past archers</text>
     </properties>
     <polygon points="0,0 0,80 144,80 144,0"/>
    </object>
-   <object id="316" template="mapobjects/OutwardBoundary.tx" x="2208" y="864">
-    <polygon points="-32,0 -32,48 64,48 96,80 416,80 448,112 448,0"/>
+   <object id="703" template="mapobjects/CameraPath.tx" x="2256" y="1008">
+    <polyline points="160,0 640,0"/>
    </object>
   </objectgroup>
   <objectgroup id="23" name="boss" class="Room">

@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 67,
-  nextobjectid = 701,
+  nextlayerid = 68,
+  nextobjectid = 704,
   backgroundcolor = { 64, 64, 64 },
   properties = {},
   tilesets = {
@@ -16123,8 +16123,12 @@ return {
           data = "eJxjYBgFo2AUMNAJBIswMIRAMYgdLszAcE2IfAMBy9cC8Q=="
         },
         {
+          x = -20, y = 0, width = 20, height = 12,
+          data = "eJxjYBgFgwWECVPXPFER6ponJjKy3HdFiLrm0QIAAGnNAfY="
+        },
+        {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJzNksFKgzEQhD+kelLIJvGFRDx5amtt+zhixUvFVrHtC3lUEC3Fp5EhGxqLJ70YGHZn8s/+m2Th92sdt3lO0M9/KAaMG/8gwyh/r9/L5R/jtOXDVHCZoJu3eeXCqPHWWhcZZgbRwJzfBTCDVYS5R2HpWLguVP4Ri1e+ZJANHtyrOJAe4TnAJMCJwYFrgrjimcF1gHWCTYJPK559378KBaohvfp/yiceTwM8Jbg3mEXoea1O41Eve00/6uGm2a/oWOnlWHeV4DWUmgud12PNl7ofg0fX5ztx1XjqW3cTvMVy9o3XF25D4cHg3GBqcGTwEuDQNb1b9bXrPUI/lTnqaSY0A84F8aHn0ne/Ufzv6wuB2koL"
+          data = "eJzNks1KQzEUhD+kiosKOUmeSMSVInjt7+OIFTcKrULbF3KpuBHxaWTICTcWV7oxMMw5k8zcJDfw+/Ee+zonuMp/CAPmjX+cYZa/53e5fGOe+n6aCiYJLnNf116YNd6aNcqwNIgG5v1DADPYRlg5CxvH2nWh9sqUV75kkA0e3SseS4/wHGAR4NjgwDVBvfjU4CbA0OAjwacVz77PX4cCZUiv/p/qhfNJgEODc4NlhM6zBo1He9lr9qM93DbzFQMre3mLMErwGkrmWud1rvVG92Pw5Ppqh7eNR3cfE1z4uV9CYeULd94HgzODe4MjK+uGrum/aY2gN9PpLXpdIW2iN9Do6qdeS99dI/7v4wulBUlD"
         },
         {
           x = 20, y = 0, width = 20, height = 12,
@@ -23316,31 +23320,6 @@ return {
           properties = {},
           objects = {
             {
-              id = 76,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 2656,
-              y = 896,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polygon = {
-                { x = 0, y = -32 },
-                { x = 0, y = 80 },
-                { x = 480, y = 80 },
-                { x = 480, y = -32 }
-              },
-              properties = {
-                ["bodyinlayers"] = "Wall",
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["extrudeY"] = -64,
-                ["linecolor"] = "#80ffffff"
-              }
-            },
-            {
               id = 77,
               name = "",
               type = "Boundary",
@@ -23385,6 +23364,134 @@ return {
                 { x = 640, y = 0 }
               },
               properties = {}
+            },
+            {
+              id = 316,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 2208,
+              y = 864,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = -32, y = 0 },
+                { x = -32, y = 48 },
+                { x = 64, y = 48 },
+                { x = 96, y = 80 },
+                { x = 416, y = 80 },
+                { x = 448, y = 112 },
+                { x = 448, y = 0 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 67,
+          name = "toboss",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["checkpoint"] = true
+          },
+          objects = {
+            {
+              id = 701,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 2208,
+              y = 1152,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = -64, y = 64 },
+                { x = -64, y = 224 },
+                { x = 448, y = 224 },
+                { x = 448, y = 0 },
+                { x = 384, y = -64 },
+                { x = 160, y = -64 },
+                { x = 128, y = -32 },
+                { x = 32, y = -32 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 702,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 2208,
+              y = 864,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = -32, y = 0 },
+                { x = -32, y = 48 },
+                { x = 64, y = 48 },
+                { x = 96, y = 80 },
+                { x = 416, y = 80 },
+                { x = 448, y = 112 },
+                { x = 448, y = 0 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 76,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 2656,
+              y = 896,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = -32 },
+                { x = 0, y = 80 },
+                { x = 480, y = 80 },
+                { x = 480, y = -32 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff"
+              }
             },
             {
               id = 313,
@@ -23439,32 +23546,21 @@ return {
               }
             },
             {
-              id = 316,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 2208,
-              y = 864,
+              id = 703,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 2256,
+              y = 1008,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
-              polygon = {
-                { x = -32, y = 0 },
-                { x = -32, y = 48 },
-                { x = 64, y = 48 },
-                { x = 96, y = 80 },
-                { x = 416, y = 80 },
-                { x = 448, y = 112 },
-                { x = 448, y = 0 }
+              polyline = {
+                { x = 160, y = 0 },
+                { x = 640, y = 0 }
               },
-              properties = {
-                ["bodyinlayers"] = "Wall",
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["extrudeY"] = -64,
-                ["linecolor"] = "#80ffffff"
-              }
+              properties = {}
             }
           }
         },
