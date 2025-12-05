@@ -57,6 +57,7 @@ function Approach:fixedupdate()
     end
 
     destx, desty = enemy:navigateAroundSolid(destx, desty)
+    self.destx, self.desty = destx, desty
     Face.faceObject(enemy, target, enemy.state.animation, enemy.animationframe)
     local state, a, b, c, d, e, f = enemy:duringApproach(target)
     if state then
@@ -92,6 +93,26 @@ function Approach:timeout(nextstate, ...)
         return nextstate, ...
     end
     return "stand", 10
+end
+
+function Approach:debugdraw()
+    local enemy = self.character
+    local destx, desty = self.destx, self.desty
+    local z = enemy.z
+    local x1, y1 = enemy.x, enemy.y - z
+    local attackerslot = self.attackerslot
+    if attackerslot then
+        love.graphics.setColor(1,0,0,1)
+        local x2, y2, z2 = attackerslot:getPosition(attackerslot.hitdist or attackerslot.length)
+        love.graphics.line(attackerslot.x, attackerslot.y - z, x2, y2-z)
+    end
+    love.graphics.setColor(1,1,1,1)
+    if destx and desty then
+        local x2, y2 = destx, desty - z
+        love.graphics.line(x1, y1, x2, y2)
+        love.graphics.circle("fill", x2, y2, 2)
+        love.graphics.printf(tostring(math.dist(x1, y1, x2, y2)), x1, y1, love.graphics.getWidth(), "center")
+    end
 end
 
 return Approach
