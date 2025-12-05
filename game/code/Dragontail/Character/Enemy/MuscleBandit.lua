@@ -25,6 +25,8 @@ end
 
 function MuscleBandit:duringApproach(opponent)
     if not self:isCylinderFullyOnCamera(self.camera) then return end
+    if self.weaponinhand then return end
+
     local nextstate
     local time = 10
     local sightarc = self.sightarc or (math.pi/4)
@@ -49,6 +51,13 @@ function MuscleBandit:duringApproach(opponent)
     Characters.search("projectiles", isComing)
     Characters.search("enemies", isThrownEnemyComing)
     return nextstate
+end
+
+function MuscleBandit:decideNextAttack()
+    if self.weaponinhand then
+        return "throwBackProjectile"
+    end
+    return Enemy.decideNextAttack(self)
 end
 
 function MuscleBandit:duringPrepareAttack(target)
