@@ -235,16 +235,13 @@ function Enemy:getAttackerSlotPosition(attackerslot, actionstate)
     local state = self.statetable[actionstate]
     local attackrange = (state and state.maxtargetdist or 1)
         + AttackTarget.estimateSafeDistanceOnSlot(attackerslot.target, attackerslot)
-    if not attackerslot:hasSpace(attackrange) then
-        return
-    end
-
     local attack = self.attacktable and self.attacktable[state.attack]
     local destx, desty
-    if attack and attack.projectiletype then
-        destx, desty = attackerslot:getFarPosition(bodyradius)
-    else
+    if attackerslot:hasSpace(attackrange)
+    and (not attack or not attack.projectiletype) then
         destx, desty = attackerslot:getPosition(attackrange)
+    elseif attackerslot:hasSpace(bodyradius*3) then
+        destx, desty = attackerslot:getFarPosition(bodyradius*1.5)
     end
     return destx, desty
 end
