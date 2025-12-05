@@ -15,6 +15,7 @@ local CollisionMask        = require "Dragontail.Character.Component.Body.Collis
 local Guard                = require "Dragontail.Character.Component.Guard"
 local AttackTarget         = require "Dragontail.Character.Component.AttackTarget"
 local Catcher              = require "Dragontail.Character.Component.Catcher"
+local StateMachine         = require "Dragontail.Character.Component.StateMachine"
 
 ---@class Ambush
 ---@field ambushsightarc number?
@@ -218,12 +219,24 @@ function Enemy:findApproachSlot(target, nextstate)
     local attackerslot, destx, desty
     local attack = self.attacktable and self.attacktable[state.attack]
     if not attack or not attack.projectiletype then
-        attackerslot, destx, desty = AttackTarget.findRandomSlot(target, attackrange + bodyradius, "melee", self.x, self.y)
+        attackerslot = AttackTarget.findRandomSlot(target, attackrange + bodyradius, "melee", self.x, self.y)
     end
-    if not attackerslot then
-        attackerslot, destx, desty = AttackTarget.findRandomSlot(target, attackrange + bodyradius, "missile", self.x, self.y)
+    if attackerslot then
+        destx, desty = attackerslot:getPosition(attackrange + bodyradius)
+        return attackerslot, destx, desty
     end
-    return attackerslot, destx, desty
+
+    attackerslot = AttackTarget.findRandomSlot(target, attackrange + bodyradius, "missile", self.x, self.y)
+    if attackerslot then
+        destx, desty = attackerslot:getPosition(attackrange + bodyradius)
+        return attackerslot, destx, desty
+    end
+
+    attackerslot = AttackTarget.findRandomSlot(target, bodyradius*3, nil, self.x, self.y)
+    if attackerslot then
+        destx, desty = attackerslot:getFarPosition(bodyradius*1.5)
+        return attackerslot, destx, desty
+    end
 end
 
 ---@param attackerslot AttackerSlot
@@ -533,5 +546,10 @@ function Enemy:indicateDefeated()
         end
     end
 end
+
+-- function Enemy:draw(fixedfrac)
+--     Character.draw(self, fixedfrac)
+--     StateMachine.draw(self)
+-- end
 
 return Enemy

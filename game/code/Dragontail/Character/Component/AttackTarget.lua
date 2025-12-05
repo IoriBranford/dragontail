@@ -63,8 +63,7 @@ function AttackTarget:findRandomSlot(attackrange, slottype, opponentx, opponenty
                 + AttackTarget.estimateSafeDistanceOnSlot(self, slot)
 
             if slot:hasSpace(space) then
-                local destx, desty = slot:getPosition(space)
-                return slot, destx, desty
+                return slot
             end
         end
         if i >= #attackerslots then
