@@ -41,6 +41,7 @@ local WeaponInHand         = require "Dragontail.Character.Component.WeaponInHan
 ---@field victorysound string?
 
 ---@class Fighter:Common,Face,Mana,Combo,Dash,Run,Jump,Dodge,Guard,WeaponInHand,ThrowWeapon,Shoot,HoldOpponent,HeldByOpponent,Thrown,Win
+---@field inventory Inventory?
 local Fighter = class(Common)
 
 local huge = math.huge
@@ -437,6 +438,34 @@ function Fighter:breakaway(other)
 end
 
 function Fighter:duringFall()
+end
+
+function Fighter:dropWeaponInHand()
+    if self.weaponinhand then
+        local weapondata = Database.get(self.weaponinhand)
+        local itemtype = weapondata and weapondata.itemtype
+        if itemtype then
+            local dropangle = self.faceangle
+            local bodyradius = self.bodyradius
+            local bodyheight = self.bodyehight
+            local projectileheight = self.projectilelaunchheight or (bodyheight / 2)
+            local item = Character(itemtype,
+                self.x + bodyradius*math.cos(dropangle),
+                self.y + bodyradius*math.sin(dropangle),
+                self.z + projectileheight)
+            item.velx = math.cos(dropangle)
+            item.vely = math.sin(dropangle)
+            item.velz = 4
+            item.initialai = "itemDrop"
+            Characters.spawn(item)
+        end
+        self.weaponinhand = nil
+
+        if self.inventory then
+            self.inventory:pop()
+            self.weaponinhand = self.inventory:last()
+        end
+    end
 end
 
 function Fighter:fall()
