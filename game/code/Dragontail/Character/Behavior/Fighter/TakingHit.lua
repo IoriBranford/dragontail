@@ -62,6 +62,7 @@ function TakingHit:fixedupdate()
     local fighter = self.character
     local attacker, attack = self.attacker, self.attack
     local attackangle = self.attackangle
+    fighter:dropWeaponInHand()
 
     local defeateffect = attack.opponentstateonfinalhit
     local hiteffect = attack.opponentstateonhit
