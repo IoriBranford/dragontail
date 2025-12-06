@@ -16,7 +16,8 @@ function CatchAttack:start(hit)
         enemy.state.animation, enemy.animationframe, enemy.state.loopframe)
 
     if attacker.team == "players"
-    or attacker.team == "enemies" then
+    or attacker.team == "enemies"
+    or attacker.team == "container" then
         if not HoldOpponent.isHolding(enemy, attacker) then
             HoldOpponent.startHolding(enemy, attacker)
         end
@@ -72,7 +73,8 @@ function CatchAttack:timeout()
 
     if attacker and attacker.team == "players" then
         return "hold", attacker
-    elseif attacker and attacker.team == "enemies"
+    elseif attacker
+    and (attacker.team == "enemies" or attacker.team == "container")
     and HoldOpponent.isHolding(enemy, attacker) then
         local angle = enemy.holdangle
         HoldOpponent.stopHolding(enemy, attacker)
