@@ -171,15 +171,12 @@ function Common:respawn()
 end
 
 function Common:itemDrop(y0)
-    -- self.velz = self.popoutspeed or 8
-    -- local gravity = self.fallgravity or .5
-    -- local floorz = self.floorz or 0
-    -- repeat
-    --     self.velz = self.velz - gravity
-    --     yield()
-    -- until self.z <= floorz
-    -- self.z = floorz
-    -- self.velz = 0
+    self.gravity = math.max(self.gravity or .25, .125)
+    local floorz
+    repeat
+        floorz = self.floorz
+        yield()
+    until floorz and self.z <= floorz
     return "itemWaitForPickup"
 end
 
