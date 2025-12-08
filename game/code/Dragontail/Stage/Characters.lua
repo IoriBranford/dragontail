@@ -351,7 +351,7 @@ function Characters.getCylinderFloor(x, y, z, r, h, solidlayersmask)
     for _, solid in ipairs(solids) do
         if bit.band(solid.bodyinlayers, solidlayersmask) ~= 0 then
             local fz, penex, peney = Body.getCylinderFloorZ(solid, x, y, z, r, h)
-            if fz then
+            if fz and (penex ~= 0 or peney ~= 0) then
                 local penelensq = penex and peney
                     and math.lensq(penex, peney) or -math.huge
                 if fz > floorz
