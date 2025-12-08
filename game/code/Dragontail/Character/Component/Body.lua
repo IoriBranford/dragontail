@@ -299,7 +299,7 @@ function Body:getCirclePenetration(x, y, r)
     -- TODO if needed, collision vs concave corners
 end
 
-local function getCylinderPenetration_circle(self, cylx, cyly, cylz, cylr, cylh)
+local function getCylinderPenetration_outward(self, cylx, cyly, cylz, cylr, cylh)
     local selftop = self.z + self.bodyheight
     if cylz + cylh >= self.z and selftop >= cylz then
         local iz, iz2 = math.max(cylz, self.z), math.min(cylz+cylh, selftop)
@@ -309,24 +309,6 @@ local function getCylinderPenetration_circle(self, cylx, cyly, cylz, cylr, cylh)
             return nil, nil, penez
         end
         return penex, peney
-    end
-end
-
-local function getCylinderPenetration_outward(self, cylx, cyly, cylz, cylr, cylh)
-    local selftop = self.z + self.bodyheight
-    if cylz + cylh >= self.z and selftop >= cylz then
-        local points = self.points
-        local nearestx, nearesty = math.nearestpolygonpoint(points, cylx - self.x, cyly - self.y)
-        if math.pointinpolygon(points, cylx - self.x, cyly - self.y)
-        or nearestx and nearesty and math.distsq(nearestx, nearesty, cylx - self.x, cyly - self.y) <= cylr*cylr then
-            local iz, iz2 = math.max(cylz, self.z), math.min(cylz+cylh, selftop)
-            local penez = iz == cylz and iz - iz2 or iz2 - iz
-            local penex, peney = Body.getCirclePenetration(self, cylx, cyly, cylr)
-            if penex and peney and math.lensq(penex, peney) > penez*penez then
-                return nil, nil, penez
-            end
-            return penex, peney
-        end
     end
 end
 
@@ -350,13 +332,10 @@ end
 ---@return number? peney y penetration. Non-0 = penetrating; 0 = touching; nil = no contact
 ---@return number? penez z penetration. Non-0 = penetrating; 0 = touching; nil = no contact
 function Body:getCylinderPenetration(cylx, cyly, cylz, cylr, cylh)
-    if self.points then
-        if self.points.outward then
-            return getCylinderPenetration_outward(self, cylx, cyly, cylz, cylr, cylh)
-        end
+    if self.points and not self.points.outward then
         return getCylinderPenetration_inward(self, cylx, cyly, cylz, cylr, cylh)
     end
-    return getCylinderPenetration_circle(self, cylx, cyly, cylz, cylr, cylh)
+    return getCylinderPenetration_outward(self, cylx, cyly, cylz, cylr, cylh)
 end
 
 ---@param other Body
