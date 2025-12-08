@@ -590,4 +590,48 @@ function Common:checkFruitNeedsRegrow()
     end
 end
 
+function Common:getAttackFlash(t)
+    return (1 + math.cos(t or 0)) / 2
+end
+
+function Common:getAttackFlashColor(t, canbeattacked)
+    local flash = (1+cos(t))/2
+    if canbeattacked then
+        return Color.asARGBInt(1, flash, flash, 1)
+    end
+    return Color.asARGBInt(1, .5, .5, flash)
+end
+
+function Common:resetFlash()
+    self.color = Color.White
+    self.texturealpha = 1
+end
+
+local FlashColors = {
+    SuggestGrab = Color.Green,
+    SuggestAttack = Color.Red,
+    SuggestAvoid = Color.Blue,
+}
+
+function Common:updateFlash(t)
+    local flash = self:getAttackFlash(t)
+    local color = Color.White
+
+    -- if self.canbeattacked and not Guard.isGuarding(self) then
+    --     if self.canbegrabbed then
+    --         color = Color.White
+    --     else
+    --         color = FlashColors.SuggestAttack
+    --     end
+    -- else
+    --     if self.canbegrabbed then
+    --         color = FlashColors.SuggestGrab
+    --     else
+    --         color = FlashColors.SuggestAvoid
+    --     end
+    -- end
+    self.color = color
+    self.texturealpha = flash
+end
+
 return Common
