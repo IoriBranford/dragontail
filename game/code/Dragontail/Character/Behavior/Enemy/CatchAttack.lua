@@ -3,6 +3,7 @@ local StateMachine       = require "Dragontail.Character.Component.StateMachine"
 local HoldOpponent       = require "Dragontail.Character.Component.HoldOpponent"
 local Guard              = require "Dragontail.Character.Component.Guard"
 local Face               = require "Dragontail.Character.Component.Face"
+local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
 
 local CatchAttack = pooledclass(Behavior)
 CatchAttack._nrec = Behavior._nrec + 2
@@ -40,9 +41,11 @@ function CatchAttack:fixedupdate()
     local enemy = self.character
     local attacker = self.attacker
 
-    if attacker then
-        Face.faceObject(enemy, attacker,
-            enemy.state.animation, enemy.animationframe, enemy.state.loopframe)
+    local opponent = enemy.opponents[1]
+    local faceangle = Face.turnTowardsObject(enemy, opponent, nil,
+        enemy.state.animation, enemy.animationframe, enemy.state.loopframe)
+    if enemy.holdangle then
+        enemy.holdangle = DirectionalAnimation.SnapAngle(faceangle, self.numdirections or 4)
     end
 
     enemy:decelerateXYto0()
