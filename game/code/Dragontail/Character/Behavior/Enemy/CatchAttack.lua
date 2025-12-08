@@ -50,7 +50,12 @@ function CatchAttack:fixedupdate()
 
     local attackerteam = self.attackerteam
     if attackerteam == "enemies"
-    or attackerteam == "projectiles" then
+    or attackerteam == "container" then
+        enemy:updateFlash(enemy.statetime)
+        if attacker then
+            attacker:updateFlash(enemy.statetime)
+        end
+    elseif attackerteam == "projectiles" then
         enemy:updateFlash(enemy.statetime)
     end
 end
@@ -76,6 +81,7 @@ function CatchAttack:timeout()
     elseif attacker
     and (attacker.team == "enemies" or attacker.team == "container")
     and HoldOpponent.isHolding(enemy, attacker) then
+        attacker:resetFlash()
         local angle = enemy.holdangle
         local opponent = enemy.opponents[1]
         local tooppox, tooppoy = opponent.x - enemy.x, opponent.y - enemy.y
