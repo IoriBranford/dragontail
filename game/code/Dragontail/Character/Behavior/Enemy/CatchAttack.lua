@@ -77,6 +77,13 @@ function CatchAttack:timeout()
     and (attacker.team == "enemies" or attacker.team == "container")
     and HoldOpponent.isHolding(enemy, attacker) then
         local angle = enemy.holdangle
+        local opponent = enemy.opponents[1]
+        local tooppox, tooppoy = opponent.x - enemy.x, opponent.y - enemy.y
+        local holdx, holdy = math.cos(angle), math.sin(angle)
+        if math.dot(holdx, holdy, tooppox, tooppoy)
+        >= math.len(tooppox, tooppoy) * math.cos(math.pi/3) then
+            angle = math.atan2(tooppoy, tooppox)
+        end
         HoldOpponent.stopHolding(enemy, attacker)
         StateMachine.start(attacker, "thrown", enemy, angle)
         return "shield-bash2"
