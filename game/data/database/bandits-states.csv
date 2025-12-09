@@ -85,4 +85,4 @@ throwBackProjectile2,40,.recoverai,,Dragontail.Character.Behavior.Enemy.AttackEx
 crouch,30,crouchEnd,,,,decelerateXYto0,Crouch,0,TRUE,TRUE,FALSE,,,,0,0,,,1,/=4,,,
 crouchEnd,30,stand,,,,decelerateXYto0,CrouchEnd,0,TRUE,TRUE,FALSE,,,,0,0,,,1,*=4,,,
 guardForever,9999999,lowerGuard,,Dragontail.Character.Behavior.Enemy.Guard,,,Guard,0,TRUE,TRUE,FALSE,,,,0,0,,,1,,,,
-catchAttack,20,,,Dragontail.Character.Behavior.Enemy.CatchAttack,,,catch,0,FALSE,FALSE,FALSE,,data/sounds/man_heavy/amused2.mp3,data/sounds/combat/grab.mp3,0,0,,,1,,,,
+catchAttack,20,,,Dragontail.Character.Behavior.Enemy.CatchAttack,,,catch,0,FALSE,FALSE,FALSE,,data/sounds/man_heavy/amused2.mp3,data/sounds/combat/grab.mp3,0,0.392699081698724,,,1,,,,
