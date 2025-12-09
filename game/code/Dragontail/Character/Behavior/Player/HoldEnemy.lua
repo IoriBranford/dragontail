@@ -11,21 +11,18 @@ local Body         = require "Dragontail.Character.Component.Body"
 ---@class PlayerHoldEnemy:Behavior
 ---@field character Player
 local PlayerHoldEnemy = pooledclass(Behavior)
-PlayerHoldEnemy._nrec = Behavior._nrec + 3
+PlayerHoldEnemy._nrec = Behavior._nrec + 2
 
 function PlayerHoldEnemy:start(enemy)
     local player = self.character
     enemy = enemy or player.heldopponent
     local isfrombehind = false
-    local time = 0
 
     if enemy then
-        time = enemy.timetobreakhold
         isfrombehind = math.dot(math.cos(enemy.faceangle), math.sin(enemy.faceangle),
             math.cos(player.faceangle), math.sin(player.faceangle)) >= 0
         if isfrombehind then
         elseif Guard.isPointInGuardArc(enemy, player.x, player.y) then
-            time = 10
         end
         if player.heldopponent ~= enemy then
             HoldOpponent.startHolding(player, enemy, player.holdangle)
@@ -33,7 +30,6 @@ function PlayerHoldEnemy:start(enemy)
     end
 
     player:stopAttack()
-    self.time = time
     self.holddestangle = player.holdangle
     self.isfrombehind = isfrombehind
 end
@@ -45,9 +41,10 @@ function PlayerHoldEnemy:fixedupdate()
         return "walk"
     end
 
-    if self.time then
-        self.time = self.time - 1
-        if self.time <= 0 then
+    local struggle = enemy.strugglestrength
+    if struggle then
+        local holdstrength = HoldOpponent.weakenHold(player, struggle)
+        if holdstrength <= 0 then
             StateMachine.start(enemy, "breakaway", player)
             return "breakaway", enemy
         end

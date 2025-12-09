@@ -21,7 +21,6 @@ function PlayerHeld:start(holder)
     player:stopAttack()
     Guard.stopGuarding(player)
     player.velx, player.vely = 0, 0
-    self.holdtime = holder.holdstrength or player.timetobreakhold or 120
 end
 
 function PlayerHeld:fixedupdate()
@@ -40,7 +39,7 @@ function PlayerHeld:fixedupdate()
         return "walk"
     end
 
-    local holdtime = self.holdtime
+    local struggle = 0
     local strugglex, struggley = player:getParryVector()
     local holddirx, holddiry = player.x - holder.x, player.y - holder.y
     if strugglex and struggley then
@@ -49,24 +48,22 @@ function PlayerHeld:fixedupdate()
         else
             holddirx, holddiry = math.norm(holddirx, holddiry)
         end
-        local struggle = BreakawayStrength * math.abs(math.dot(strugglex, struggley, holddirx, holddiry)) + 1
-        holdtime = holdtime - struggle
+        struggle = BreakawayStrength * math.abs(math.dot(strugglex, struggley, holddirx, holddiry))
         player.struggleoffset = struggle
     else
         player.struggleoffset = 0
     end
 
-    if self.holdtime ~= holdtime then
+    if struggle ~= 0 then
         player.animationframe = 1
         player.animationtime = 0
     end
 
-    holdtime = holdtime - 1
-    if holdtime <= 0 then
+    local holdstrength = HoldOpponent.weakenHold(holder, struggle)
+    if holdstrength <= 0 then
         StateMachine.start(holder, "breakaway", player)
         return "breakaway", holder
     end
-    self.holdtime = holdtime
 
     local prompt = Gui:get("gameplay.hud.breakgrabprompt")
     if prompt then

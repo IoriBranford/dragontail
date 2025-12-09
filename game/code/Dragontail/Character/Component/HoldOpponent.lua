@@ -11,12 +11,15 @@ local DirectionalAnimation = require "Dragontail.Character.Component.Directional
 ---@field aiafterbreakaway string?
 ---@field aiafterheld string?
 ---@field struggleoffset number?
+---@field strugglestrength number?
 
 ---@class HoldOpponent:Character
 ---@field heldopponent HeldByOpponent?
 ---@field holdangle number?
 ---@field grabradius number?
 ---@field holdsound string?
+---@field holdstrength number?
+---@field initialholdstrength number?
 local HoldOpponent = {}
 
 ---@param opponent HeldByOpponent
@@ -28,6 +31,7 @@ function HoldOpponent:startHolding(opponent, holdangle)
     StateMachine.start(opponent, opponent.heldai or "held", self)
     holdangle = holdangle or HoldOpponent.getInitialHoldAngle(self, opponent)
     self.holdangle = holdangle
+    self.holdstrength = self.initialholdstrength or 120
     return holdangle
 end
 
@@ -46,11 +50,18 @@ function HoldOpponent:isHolding(opponent)
         and opponent.heldby == self
 end
 
+function HoldOpponent:weakenHold(strugglestrength)
+    local holdstrength = self.holdstrength - strugglestrength
+    self.holdstrength = holdstrength
+    return holdstrength
+end
+
 ---@param opponent HeldByOpponent
 function HoldOpponent:stopHolding(opponent)
     if self then
         self.heldopponent = nil
         self.holdangle = nil
+        self.holdstrength = nil
     end
     if opponent then
         opponent.heldby = nil
