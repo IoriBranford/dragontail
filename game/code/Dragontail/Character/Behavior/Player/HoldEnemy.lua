@@ -57,7 +57,7 @@ function PlayerHoldEnemy:fixedupdate()
     local normalattackpressed = player:isActionRecentlyPressed("attack")
     local runpressed = player:isActionDownAndRecentlyPressed("sprint")
     local targetvelx, targetvely = 0, 0
-    local speed = 2
+    local speed = player.speed or 2
     if inx ~= 0 or iny ~= 0 then
         inx, iny = math.norm(inx, iny)
         self.holddestangle = math.atan2(iny, inx)
