@@ -42,10 +42,16 @@ function CatchAttack:fixedupdate()
     local attacker = self.attacker
 
     local opponent = enemy.opponents[1]
-    local faceangle = Face.turnTowardsObject(enemy, opponent, nil,
-        enemy.state.animation, enemy.animationframe, enemy.state.loopframe)
-    if enemy.holdangle then
-        enemy.holdangle = DirectionalAnimation.SnapAngle(faceangle, self.numdirections or 4)
+    local tooppox, tooppoy = opponent.x - enemy.x, opponent.y - enemy.y
+    if tooppox ~= 0 or tooppoy ~= 0 then
+        local targetangle = math.atan2(tooppoy, tooppox)
+        targetangle = DirectionalAnimation.SnapAngle(targetangle, enemy.numdirections or 4)
+
+        local faceangle = Face.turnTowardsAngle(enemy, targetangle, nil,
+            enemy.state.animation, enemy.animationframe, enemy.state.loopframe)
+        if enemy.holdangle then
+            enemy.holdangle = faceangle
+        end
     end
 
     enemy:decelerateXYto0()
