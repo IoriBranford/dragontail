@@ -37,6 +37,7 @@ function Characters.init(scene_, nextid_, camera_)
         enemies = enemies,
         items = {},
         projectiles = {},
+        container = {},
         solids = solids,
         triggers = {},
     }
