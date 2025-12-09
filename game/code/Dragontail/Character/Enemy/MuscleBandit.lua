@@ -27,7 +27,7 @@ function MuscleBandit:duringApproach(opponent)
     if not self:isCylinderFullyOnCamera(self.camera) then return end
     if self.weaponinhand then return end
 
-    local nextstate
+    local nextstate, nextstatearg
     local time = 10
     local sightarc = self.sightarc or (math.pi/4)
     local function isComing(them)
@@ -48,10 +48,31 @@ function MuscleBandit:duringApproach(opponent)
             return "break"
         end
     end
+    local function isCloseEnoughToGrab(them)
+        if them.health < 1 then return end
+
+        local cx, cy, cz, cr, ch =
+            them.x,them.y,them.z,
+            them.bodyradius,them.bodyheight
+
+        local radii = self.bodyradius + cr
+        if math.distsq(self.x, self.y, cx, cy) <= radii*radii then
+            if cz <= self.z + self.bodyheight and cz + ch >= self.z then
+                nextstate = "hold"
+                nextstatearg = them
+                return "break"
+            end
+        end
+    end
+
     Characters.search("projectiles", isComing)
+    if nextstate then return nextstate, nextstatearg end
     Characters.search("enemies", isThrownEnemyComing)
+    if nextstate then return nextstate, nextstatearg end
     Characters.search("container", isThrownEnemyComing)
-    return nextstate
+    if nextstate then return nextstate, nextstatearg end
+    Characters.search("container", isCloseEnoughToGrab)
+    if nextstate then return nextstate, nextstatearg end
 end
 
 function MuscleBandit:decideNextAttack()
