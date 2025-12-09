@@ -58,7 +58,7 @@ function MuscleBandit:duringApproach(opponent)
         local radii = self.bodyradius + cr
         if math.distsq(self.x, self.y, cx, cy) <= radii*radii then
             if cz <= self.z + self.bodyheight and cz + ch >= self.z then
-                nextstate = "hold"
+                nextstate = "grab"
                 nextstatearg = them
                 return "break"
             end

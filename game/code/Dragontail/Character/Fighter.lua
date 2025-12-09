@@ -523,11 +523,4 @@ function Fighter:shakeOffColor()
     end
 end
 
-function Fighter:updateGrab()
-    self:decelerateXYto0()
-    Face.faceObject(self, self.heldopponent,
-        self.state.animation, self.animationframe, self.state.loopframe)
-    HoldOpponent.updateVelocities(self)
-end
-
 return Fighter

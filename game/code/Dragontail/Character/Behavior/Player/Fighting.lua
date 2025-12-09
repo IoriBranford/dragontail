@@ -70,10 +70,8 @@ function PlayerFighting:fixedupdate()
 
     local opponenttohold = HoldOpponent.findOpponentToHold(player, inx, iny)
     if opponenttohold then
-        local holdangle = HoldOpponent.startHolding(player, opponenttohold)
-        Face.faceAngle(player, holdangle)
         Combo.reset(player)
-        return "grab"
+        return "grab", opponenttohold
     end
 
     player:accelerateTowardsJoystick()
