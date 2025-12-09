@@ -1485,12 +1485,8 @@ to sprint past archers</text>
    </properties>
    <object id="101" template="mapobjects/bandit/knife.tx" x="1232" y="1056"/>
    <object id="510" template="mapobjects/bandit/knife.tx" x="1264" y="1120"/>
-   <object id="547" template="mapobjects/bandit/axe.tx" x="1168" y="848">
+   <object id="547" template="mapobjects/bandit/muscle.tx" x="1168" y="848">
     <properties>
-     <property name="ammo" type="int" value="999999"/>
-     <property name="defaultattack" value="axe-throw-until-empty"/>
-     <property name="entrypoint" type="object" value="554"/>
-     <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>

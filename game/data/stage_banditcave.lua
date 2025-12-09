@@ -21702,21 +21702,17 @@ return {
             },
             {
               id = 547,
-              name = "",
-              type = "bandit-axe",
+              name = "bandit-muscle",
+              type = "bandit-muscle",
               shape = "rectangle",
               x = 1168,
               y = 848,
-              width = 64,
-              height = 64,
+              width = 128,
+              height = 128,
               rotation = 0,
-              gid = 7232,
+              gid = 7337,
               visible = true,
               properties = {
-                ["ammo"] = 999999,
-                ["defaultattack"] = "axe-throw-until-empty",
-                ["entrypoint"] = { id = 554 },
-                ["initialai"] = "enterAndAttackUntilEmpty",
                 ["propertiestable"] = "database/bandits-properties.csv",
                 ["z"] = 64
               }
