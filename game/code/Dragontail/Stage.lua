@@ -420,7 +420,7 @@ function Stage.fixedupdate()
     for _, solid in ipairs(solids) do
         if solid.layer ~= room
         and CollisionMask.testAny(solid.bodyinlayers, "Object", "Wall") ~= 0 then
-            if not solid:isOnCamera(camera) then
+            if not solid:isCylinderOnCamera(camera) then
                 solid:disappear()
             end
         end
@@ -429,7 +429,7 @@ function Stage.fixedupdate()
     local items = Characters.getGroup("items")
     for _, item in ipairs(items) do
         if item.layer ~= room then
-            if not item:isOnCamera(camera) then
+            if not item:isCylinderOnCamera(camera) then
                 item:disappear()
             end
         end
