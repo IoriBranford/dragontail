@@ -14,6 +14,7 @@ EnemyHold._nrec = Behavior._nrec + 2
 
 function EnemyHold:start(held)
     local enemy = self.character
+    held = assert(held or enemy.heldopponent)
     local holddirx, holddiry = held.x - enemy.x, held.y - enemy.y
     if holddirx == 0 and holddiry == 0 then
         holddirx, holddiry = math.cos(enemy.faceangle), math.sin(enemy.faceangle)
