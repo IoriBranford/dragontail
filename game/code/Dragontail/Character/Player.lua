@@ -667,9 +667,4 @@ function Player:flyEnd()
     return "walk"
 end
 
-function Player:updateGrab()
-    self:decelerateXYto0()
-    HoldOpponent.updateVelocities(self)
-end
-
 return Player
