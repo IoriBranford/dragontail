@@ -12,9 +12,9 @@ local Body                 = require "Dragontail.Character.Component.Body"
 local EnemyHold = pooledclass(Behavior)
 EnemyHold._nrec = Behavior._nrec + 2
 
-function EnemyHold:start(player)
+function EnemyHold:start(held)
     local enemy = self.character
-    local holddirx, holddiry = player.x - enemy.x, player.y - enemy.y
+    local holddirx, holddiry = held.x - enemy.x, held.y - enemy.y
     if holddirx == 0 and holddiry == 0 then
         holddirx, holddiry = math.cos(enemy.faceangle), math.sin(enemy.faceangle)
     else
@@ -23,21 +23,23 @@ function EnemyHold:start(player)
 
     enemy:stopAttack()
     Guard.stopGuarding(enemy)
-    if enemy.heldopponent ~= player then
+    if enemy.heldopponent ~= held then
         Combo.reset(enemy)
-        HoldOpponent.startHolding(enemy, player, math.atan2(holddiry, holddirx))
+        HoldOpponent.startHolding(enemy, held, math.atan2(holddiry, holddirx))
     end
 
     self.holdtime = 0
     self.holddestangle = DirectionalAnimation.SnapAngle(enemy.holdangle, enemy.animationdirections)
-    self.isfrombehind = math.dot(holddirx, holddiry,
-        math.cos(player.faceangle), math.sin(player.faceangle)) >= 0
+    if held.faceangle then
+        self.isfrombehind = math.dot(holddirx, holddiry,
+            math.cos(held.faceangle), math.sin(held.faceangle)) >= 0
+    end
 end
 
 function EnemyHold:fixedupdate()
     local enemy = self.character
-    local player = enemy.heldopponent
-    if not player or not HoldOpponent.isHolding(enemy, player) then
+    local held = enemy.heldopponent
+    if not held or not HoldOpponent.isHolding(enemy, held) then
         return enemy.recoverai or enemy.initialai
     end
 
@@ -58,7 +60,7 @@ function EnemyHold:fixedupdate()
     self.holdtime = self.holdtime + 1
     local normalattackpressed = self.holdtime >= 100
     if normalattackpressed then
-        HoldOpponent.stopHolding(enemy, player)
+        HoldOpponent.stopHolding(enemy, held)
         return "shield-bash2"
     end
 
@@ -66,12 +68,21 @@ function EnemyHold:fixedupdate()
     local runpressed = false
     if runpressed then
         Combo.reset(enemy)
-        return "running-with-enemy", player, true
+        return "running-with-enemy", held, true
     end
 
-    holdangle = math.rotangletowards(holdangle, self.holddestangle,
-        enemy.faceturnspeed or (math.pi/64))
-    enemy.holdangle = holdangle
+    local opponent = enemy.opponents[1]
+    if opponent ~= held then
+        local dx, dy = opponent.x - enemy.x, opponent.y - enemy.y
+        if dx ~= 0 or dy ~= 0 then
+            self.holddestangle = DirectionalAnimation.SnapAngle(
+                math.atan2(dy, dx), enemy.numdirections or 4)
+        end
+    end
+
+    local faceangle = Face.turnTowardsAngle(enemy, self.holddestangle, nil,
+        enemy.state.animation, enemy.animationframe, enemy.state.loopframe)
+    enemy.holdangle = faceangle
 
     Body.forceTowardsVelXY(enemy, targetvelx, targetvely, enemy.accel)
     HoldOpponent.updateVelocities(enemy)
@@ -81,11 +92,13 @@ function EnemyHold:fixedupdate()
         (velx ~= 0 or vely ~= 0) and "holdwalk" or "hold"
     Face.faceAngle(enemy, holdangle, holdanimation)
 
-    local opponentfaceangle = holdangle
-    if not self.isfrombehind then
-        opponentfaceangle =  (opponentfaceangle + math.pi)
+    if held.faceangle then
+        local heldfacedestangle = holdangle
+        if not self.isfrombehind then
+            heldfacedestangle =  (heldfacedestangle + math.pi)
+        end
+        Face.faceAngle(held, heldfacedestangle, held.state.animation or "Hurt")
     end
-    Face.faceAngle(player, opponentfaceangle, player.state.animation or "Hurt")
 end
 
 function EnemyHold:timeout()
