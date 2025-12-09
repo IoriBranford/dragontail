@@ -85,23 +85,14 @@ function CatchAttack:timeout()
         return "throwBackProjectile"
     end
 
-    if attacker and attacker.team == "players" then
-        return "hold", attacker
-    elseif attacker
-    and (attacker.team == "enemies" or attacker.team == "container")
-    and HoldOpponent.isHolding(enemy, attacker) then
+    if attacker
+    and (attacker.team == "players"
+        or attacker.team == "enemies"
+        or attacker.team == "container")
+    and HoldOpponent.isHolding(enemy, attacker)
+    then
         attacker:resetFlash()
-        local angle = enemy.holdangle
-        local opponent = enemy.opponents[1]
-        local tooppox, tooppoy = opponent.x - enemy.x, opponent.y - enemy.y
-        local holdx, holdy = math.cos(angle), math.sin(angle)
-        if math.dot(holdx, holdy, tooppox, tooppoy)
-        >= math.len(tooppox, tooppoy) * math.cos(math.pi/3) then
-            angle = math.atan2(tooppoy, tooppox)
-        end
-        HoldOpponent.stopHolding(enemy, attacker)
-        StateMachine.start(attacker, "thrown", enemy, angle)
-        return "shield-bash2"
+        return "hold", attacker
     else
         return enemy.recoverai or "stand"
     end

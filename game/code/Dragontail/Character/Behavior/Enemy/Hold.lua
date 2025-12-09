@@ -28,7 +28,9 @@ function EnemyHold:start(held)
         HoldOpponent.startHolding(enemy, held, math.atan2(holddiry, holddirx))
     end
 
-    self.holdtime = 0
+    if held.team == "players" then
+        enemy.statetime = enemy.statetime * 3
+    end
     self.holddestangle = DirectionalAnimation.SnapAngle(enemy.holdangle, enemy.animationdirections)
     if held.faceangle then
         self.isfrombehind = math.dot(holddirx, holddiry,
@@ -55,21 +57,6 @@ function EnemyHold:fixedupdate()
     --     targetvelx = inx * speed
     --     targetvely = iny * speed
     -- end
-
-    --- TODO enemy's decision to attack
-    self.holdtime = self.holdtime + 1
-    local normalattackpressed = self.holdtime >= 100
-    if normalattackpressed then
-        HoldOpponent.stopHolding(enemy, held)
-        return "shield-bash2"
-    end
-
-    --- TODO enemy's decision to run with player
-    local runpressed = false
-    if runpressed then
-        Combo.reset(enemy)
-        return "running-with-enemy", held, true
-    end
 
     local opponent = enemy.opponents[1]
     if opponent ~= held then
@@ -99,15 +86,20 @@ function EnemyHold:fixedupdate()
         end
         Face.faceAngle(held, heldfacedestangle, held.state.animation or "Hurt")
     end
+
+    enemy:updateFlash(enemy.statetime)
 end
 
-function EnemyHold:timeout()
+function EnemyHold:interrupt(...)
     local enemy = self.character
-    local player = enemy.heldopponent
-    if player then
-        StateMachine.start(player, "breakaway", enemy)
-    end
-    return "breakaway", player
+    enemy:resetFlash()
+    return ...
+end
+
+function EnemyHold:timeout(...)
+    local enemy = self.character
+    enemy:resetFlash()
+    return ...
 end
 
 return EnemyHold
