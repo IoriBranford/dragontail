@@ -96,10 +96,14 @@ function BanditBoss:getBestAttack(opponent)
         if self.state.state == "fall" or self.state.state == "getup" then
             return turndir < 0 and "bandit-boss-getup-spin-ccw" or "bandit-boss-getup-spin-cw"
         end
+        local oppoinair = opponent.z > opponent.floorz
         if isoppocoming and isoppoahead then
-            if opponent.z <= opponent.floorz then
+            if not oppoinair then
                 return "bandit-boss-poke"
             end
+        end
+        if oppoinair then
+            return turndir < 0 and "bandit-boss-jump-for-spin-ccw" or "bandit-boss-jump-for-spin-cw"
         end
         return turndir < 0 and "bandit-boss-spin-ccw" or "bandit-boss-spin-cw"
     end
