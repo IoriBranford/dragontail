@@ -1,6 +1,9 @@
 local Behavior = require "Dragontail.Character.Behavior"
 local Face     = require "Dragontail.Character.Component.Face"
 local Audio    = require "System.Audio"
+local Database = require "Data.Database"
+local Characters = require "Dragontail.Stage.Characters"
+local Character  = require "Dragontail.Character"
 
 ---@class PlayerJumping:Behavior
 ---@field character Player
@@ -16,6 +19,11 @@ function PlayerJumping:start(isjumpstart)
         player.velz = player.gravity*16
         player.numjumpattacks = 0
         Face.faceVector(player, player.velx, player.vely)
+
+        local dusttype = "spark-land-on-feet-dust"
+        if Database.get(dusttype) then
+            Characters.spawn(Character(dusttype, player.x, player.y, player.z))
+        end
     end
     player.facedestangle = player.faceangle
 end
