@@ -126,7 +126,9 @@ local spawn = Characters.spawn
 function Characters.spawnArray(characters)
     if not characters then return end
     for i = 1, #characters do local object = characters[i]
-        spawn(object)
+        if not object.spawnsmanually then
+            spawn(object)
+        end
     end
 end
 

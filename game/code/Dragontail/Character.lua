@@ -32,6 +32,7 @@ local testcircles = math.testcircles
 ---@field shadowcolor Color?
 ---@field animationdirections integer?
 ---@field emote Character?
+---@field spawnsmanually boolean
 ---@overload fun(type:string?, x:number?, y:number?, z:number?):Character
 local Character = class(Object)
 Character.attack = {}
