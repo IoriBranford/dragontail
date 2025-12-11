@@ -128,12 +128,20 @@ end
 
 function Common:dropDefeatItem()
     local item = self.item
-    if not item and self.itemtype then
+    local popsout
+    if item then
+        if item.spawnsmanually then
+            Characters.spawn(item)
+        else
+            popsout = true
+        end
+    elseif self.itemtype then
         item = Character(self.itemtype,
             self.x, self.y, self.z)
         Characters.spawn(item)
+        popsout = true
     end
-    if item then
+    if item and popsout then
         local popouttime = self.itempopouttime or 15
         local velx, vely = self.itemvelx or 0, self.itemvely or 0
         if popouttime > 0 then
