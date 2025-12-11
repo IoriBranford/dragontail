@@ -256,6 +256,7 @@ function Trigger:startSequence()
 end
 
 function Trigger:pulseAlpha()
+    self.visible = true
     local t = 0
     while true do
         local r, g, b, a = Color.unpack(self.color or Color.White)
