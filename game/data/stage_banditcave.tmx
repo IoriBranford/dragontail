@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="68" nextobjectid="704">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="69" nextobjectid="705">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -60,6 +60,7 @@
  <tileset firstgid="7269" source="sprites/weapons/tallstone.tsx"/>
  <tileset firstgid="7270" source="sprites/items/pepper-plant.tsx"/>
  <tileset firstgid="7271" source="sprites/items/peppers-on-plant.tsx"/>
+ <tileset firstgid="7272" source="sprites/bandit/muscle-orange.tsx"/>
  <layer id="2" name="floor" width="200" height="12">
   <properties>
    <property name="drawz" type="float" value="-2"/>
@@ -932,7 +933,7 @@ body to grapple</text>
   </objectgroup>
   <objectgroup draworder="index" id="15" name="meetshields" class="Room">
    <properties>
-    <property name="donewhenenemiesleft" type="int" value="1"/>
+    <property name="donewhenenemiesleft" type="int" value="2"/>
    </properties>
    <object id="65" template="mapobjects/OutwardBoundary.tx" x="3360" y="384" visible="1">
     <properties>
@@ -949,7 +950,11 @@ body to grapple</text>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="235" name="exitdoor" gid="5266" x="3392" y="224" width="64" height="128"/>
+   <object id="235" name="exitdoor" gid="5266" x="3392" y="224" width="64" height="128">
+    <properties>
+     <property name="item" type="object" value="704"/>
+    </properties>
+   </object>
    <object id="236" gid="5265" x="3392" y="224" width="64" height="128">
     <properties>
      <property name="shadowcolor" type="color" value="#00000000"/>
@@ -1007,7 +1012,7 @@ body to grapple</text>
   </objectgroup>
   <objectgroup id="29" name="+archers" class="Room">
    <properties>
-    <property name="donewhenenemiesleft" type="int" value="4"/>
+    <property name="donewhenenemiesleft" type="int" value="5"/>
    </properties>
    <object id="254" gid="7234" x="3424" y="96" width="128" height="128">
     <properties>
@@ -1096,18 +1101,30 @@ and tap    to throw</text>
    <object id="563" template="mapobjects/bandit/knife.tx" x="3024" y="336"/>
   </objectgroup>
   <objectgroup id="56" name="+spears" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="1"/>
+   </properties>
    <object id="307" template="mapobjects/bandit/spear.tx" x="3016" y="376"/>
    <object id="561" template="mapobjects/bandit/spear.tx" x="3016" y="280"/>
   </objectgroup>
   <objectgroup id="54" name="unlockdoor" class="Room">
    <properties>
-    <property name="donewhenenemiesleft" type="int" value="-1"/>
     <property name="exitdoor" type="object" value="235"/>
     <property name="sequence" value="unlockDoorToNextArea"/>
    </properties>
-   <object id="260" name="camerawarpwhendone" x="240" y="1008">
-    <point/>
+   <object id="704" template="mapobjects/bandit/muscle.tx" x="3424" y="248">
+    <properties>
+     <property name="facedegrees" type="float" value="180"/>
+     <property name="holdstrength" type="int" value="180"/>
+     <property name="initialai" value="muscle-grab2"/>
+     <property name="spawnsmanually" type="bool" value="true"/>
+    </properties>
    </object>
+  </objectgroup>
+  <objectgroup id="68" name="entercave" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="-1"/>
+   </properties>
    <object id="465" template="mapobjects/trigger/startSequence.tx" name="exittrigger" type="Trigger" x="3392" y="224">
     <properties>
      <property name="drawz" type="float" value="-0.125"/>
@@ -1115,6 +1132,9 @@ and tap    to throw</text>
      <property name="sequence" value="playerExitToNextArea"/>
     </properties>
     <polygon points="0,-8 32,-8 64,24 64,56"/>
+   </object>
+   <object id="260" name="camerawarpwhendone" x="240" y="1008">
+    <point/>
    </object>
   </objectgroup>
   <objectgroup draworder="index" id="22" name="entryhall" class="Room">

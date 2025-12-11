@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 68,
-  nextobjectid = 704,
+  nextlayerid = 69,
+  nextobjectid = 705,
   backgroundcolor = { 64, 64, 64 },
   properties = {},
   tilesets = {
@@ -15744,8 +15744,37 @@ return {
       }
     },
     {
-      name = "shield",
+      name = "muscle",
       firstgid = 7272,
+      class = "",
+      tilewidth = 128,
+      tileheight = 128,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/bandit/muscle-orange.ase",
+      imagewidth = 128,
+      imageheight = 128,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 40
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 128,
+        height = 128
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "shield",
+      firstgid = 7273,
       class = "",
       tilewidth = 64,
       tileheight = 64,
@@ -15774,7 +15803,7 @@ return {
     },
     {
       name = "crystal-spikes",
-      firstgid = 7273,
+      firstgid = 7274,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -16057,35 +16086,6 @@ return {
           type = "spike-medium"
         }
       }
-    },
-    {
-      name = "muscle",
-      firstgid = 7337,
-      class = "",
-      tilewidth = 128,
-      tileheight = 128,
-      spacing = 0,
-      margin = 0,
-      columns = 1,
-      image = "sprites/bandit/muscle-orange.ase",
-      imagewidth = 128,
-      imageheight = 128,
-      objectalignment = "bottom",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 40
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 128,
-        height = 128
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 1,
-      tiles = {}
     }
   },
   layers = {
@@ -19598,7 +19598,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 1
+            ["donewhenenemiesleft"] = 2
           },
           objects = {
             {
@@ -19680,7 +19680,9 @@ return {
               rotation = 0,
               gid = 5266,
               visible = true,
-              properties = {}
+              properties = {
+                ["item"] = { id = 704 }
+              }
             },
             {
               id = 236,
@@ -19817,7 +19819,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7272,
+              gid = 7273,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -19835,7 +19837,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7272,
+              gid = 7273,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -19892,7 +19894,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 4
+            ["donewhenenemiesleft"] = 5
           },
           objects = {
             {
@@ -20239,7 +20241,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["donewhenenemiesleft"] = 1
+          },
           objects = {
             {
               id = 307,
@@ -20288,24 +20292,48 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = -1,
             ["exitdoor"] = { id = 235 },
             ["sequence"] = "unlockDoorToNextArea"
           },
           objects = {
             {
-              id = 260,
-              name = "camerawarpwhendone",
-              type = "",
-              shape = "point",
-              x = 240,
-              y = 1008,
-              width = 0,
-              height = 0,
+              id = 704,
+              name = "bandit-muscle",
+              type = "bandit-muscle",
+              shape = "rectangle",
+              x = 3424,
+              y = 248,
+              width = 128,
+              height = 128,
               rotation = 0,
+              gid = 7272,
               visible = true,
-              properties = {}
-            },
+              properties = {
+                ["facedegrees"] = 180,
+                ["holdstrength"] = 180,
+                ["initialai"] = "muscle-grab2",
+                ["propertiestable"] = "database/bandits-properties.csv",
+                ["spawnsmanually"] = true
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 68,
+          name = "entercave",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = -1
+          },
+          objects = {
             {
               id = 465,
               name = "exittrigger",
@@ -20333,6 +20361,19 @@ return {
                 ["sequence"] = "playerExitToNextArea",
                 ["usesleft"] = 1
               }
+            },
+            {
+              id = 260,
+              name = "camerawarpwhendone",
+              type = "",
+              shape = "point",
+              x = 240,
+              y = 1008,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -21257,7 +21298,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7273,
+              gid = 7274,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 32,
@@ -21274,7 +21315,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7273,
+              gid = 7274,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 32,
@@ -21291,7 +21332,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7273,
+              gid = 7274,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 180,
@@ -21308,7 +21349,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7273,
+              gid = 7274,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21326,7 +21367,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7276,
+              gid = 7277,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21344,7 +21385,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7276,
+              gid = 7277,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21362,7 +21403,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7277,
+              gid = 7278,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 36,
@@ -21379,7 +21420,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7277,
+              gid = 7278,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 36,
@@ -21396,7 +21437,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7277,
+              gid = 7278,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21414,7 +21455,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7280,
+              gid = 7281,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 39,
@@ -21431,7 +21472,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7280,
+              gid = 7281,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 39,
@@ -21448,7 +21489,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7280,
+              gid = 7281,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21466,7 +21507,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7281,
+              gid = 7282,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 40,
@@ -21483,7 +21524,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7281,
+              gid = 7282,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 40,
@@ -21500,7 +21541,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7281,
+              gid = 7282,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21518,7 +21559,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7301,
+              gid = 7302,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 60,
@@ -21535,7 +21576,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7301,
+              gid = 7302,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21553,7 +21594,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7301,
+              gid = 7302,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21571,7 +21612,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7289,
+              gid = 7290,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 48,
@@ -21588,7 +21629,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7289,
+              gid = 7290,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21606,7 +21647,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7289,
+              gid = 7290,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21624,7 +21665,7 @@ return {
               width = 40,
               height = 32,
               rotation = 0,
-              gid = 7296,
+              gid = 7297,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 55,
@@ -21641,7 +21682,7 @@ return {
               width = 40,
               height = 32,
               rotation = 0,
-              gid = 7296,
+              gid = 7297,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21710,7 +21751,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7337,
+              gid = 7272,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -22108,7 +22149,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7337,
+              gid = 7272,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -23789,7 +23830,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7337,
+              gid = 7272,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
