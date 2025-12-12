@@ -38,12 +38,16 @@ local AllowedAttackSwitches = {
         ["bandit-boss-spin-cw"] = true,
         ["bandit-boss-spin-ccw"] = true,
         ["bandit-boss-poke"] = true,
+        ["bandit-boss-jump-for-spin-cw"] = true,
+        ["bandit-boss-jump-for-spin-ccw"] = true,
     },
     ["bandit-boss-charge2"] = {
         ["bandit-boss-swat-projectile-cw"] = true,
         ["bandit-boss-swat-projectile-ccw"] = true,
         ["bandit-boss-spin-cw"] = true,
         ["bandit-boss-spin-ccw"] = true,
+        ["bandit-boss-jump-for-spin-cw"] = true,
+        ["bandit-boss-jump-for-spin-ccw"] = true,
     }
 }
 
