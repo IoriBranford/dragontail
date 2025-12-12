@@ -102,7 +102,8 @@ function BanditBoss:getBestAttack(opponent)
                 return "bandit-boss-poke"
             end
         end
-        if oppoinair then
+        local opporising = opponent.velz > 0
+        if opporising then
             return turndir < 0 and "bandit-boss-jump-for-spin-ccw" or "bandit-boss-jump-for-spin-cw"
         end
         return turndir < 0 and "bandit-boss-spin-ccw" or "bandit-boss-spin-cw"
