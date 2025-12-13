@@ -65,44 +65,72 @@ function PlayerHeld:fixedupdate()
         return "breakaway", holder
     end
 
-    local prompt = Gui:get("gameplay.hud.breakgrabprompt")
-    if prompt then
-        prompt.visible = true
-        local animation = math.abs(holddirx) < math.abs(holddiry) and "y" or "x"
-        prompt:changeAnimation(animation)
+    local ui = Gui:get("gameplay.hud_breakgrab")
+    if ui then
+        ui.visible = true
+        local axis = math.abs(holddirx) < math.abs(holddiry) and "y" or "x"
 
         local camera = player.camera
-        local promptover = animation == "y" and holddiry > 0 and holder or player
-        prompt.x = promptover.x - camera.x
-        prompt.y = promptover.y - promptover.z - promptover.bodyheight - camera.y
-        local x1, y1, x2, y2 = prompt:getExtents()
-        if x1 < 0 then
-            prompt.x = prompt.x - x1
+        local promptover = holder--axis == "y" and holddiry > 0 and holder or player
+        ui.x = promptover.x - camera.x
+        ui.y = promptover.y - promptover.z - promptover.bodyheight - camera.y
+
+        local prompt = ui.prompt
+        if prompt then
+            prompt:changeAnimation(axis)
+
+            local x1, y1, x2, y2 = prompt:getExtents()
+            if ui.x + x1 < 0 then
+                ui.x = - x1
+            end
+            if ui.y + y1 < 0 then
+                ui.y = - y1
+            end
+            if ui.x + x2 > camera.width then
+                ui.x = camera.width - x2
+            end
+            if ui.y + y2 > camera.height then
+                ui.y = camera.height - y2
+            end
         end
-        if y1 < 0 then
-            prompt.y = prompt.y - y1
+
+        local initholdstrength = assert(holder.initialholdstrength)
+        local progress = 1 - holdstrength/initholdstrength
+        local gaugel, gauger, gaugeu, gauged, gaugex, gaugey =
+            ui.gaugel, ui.gauger, ui.gaugeu, ui.gauged, ui.gaugex, ui.gaugey
+        if gaugel then
+            gaugel:setPercent(progress)
+            gaugel.visible = axis == "x"
         end
-        if x2 > camera.width then
-            prompt.x = prompt.x + camera.width - x2
+        if gauger then
+            gauger:setPercent(progress)
+            gauger.visible = axis == "x"
         end
-        if y2 > camera.height then
-            prompt.y = prompt.y + camera.height - y2
+        if gaugeu then
+            gaugeu:setPercent(progress)
+            gaugeu.visible = axis == "y"
         end
+        if gauged then
+            gauged:setPercent(progress)
+            gauged.visible = axis == "y"
+        end
+        if gaugex then gaugex.visible = axis == "x" end
+        if gaugey then gaugey.visible = axis == "y" end
     end
 end
 
 function PlayerHeld:timeout(...)
-    local prompt = Gui:get("gameplay.hud.breakgrabprompt")
-    if prompt then
-        prompt.visible = false
+    local ui = Gui:get("gameplay.hud_breakgrab")
+    if ui then
+        ui.visible = false
     end
     return ...
 end
 
 function PlayerHeld:interrupt(...)
-    local prompt = Gui:get("gameplay.hud.breakgrabprompt")
-    if prompt then
-        prompt.visible = false
+    local ui = Gui:get("gameplay.hud_breakgrab")
+    if ui then
+        ui.visible = false
     end
     return ...
 end

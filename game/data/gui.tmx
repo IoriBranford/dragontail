@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="16" nextobjectid="95">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="17" nextobjectid="101">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -129,7 +129,44 @@
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="right" valign="bottom">DEVELOPMENT VER. 2025
 ALL CONTENT SUBJECT TO CHANGE</text>
    </object>
-   <object id="94" name="breakgrabprompt" gid="410" x="0" y="0" width="48" height="48"/>
+  </objectgroup>
+  <objectgroup id="16" name="hud_breakgrab">
+   <object id="99" name="gaugex" x="-24" y="-40" width="48" height="4">
+    <properties>
+     <property name="color" type="color" value="#00000000"/>
+     <property name="linecolor" type="color" value="#ffffffff"/>
+    </properties>
+   </object>
+   <object id="100" name="gaugey" x="12" y="-48" width="4" height="48">
+    <properties>
+     <property name="color" type="color" value="#00000000"/>
+     <property name="linecolor" type="color" value="#ffffffff"/>
+    </properties>
+   </object>
+   <object id="95" name="gauger" type="Gui.Gauge" x="0" y="-40" width="24" height="4">
+    <properties>
+     <property name="color" type="color" value="#ffffffff"/>
+    </properties>
+   </object>
+   <object id="97" name="gauged" type="Gui.Gauge" x="12" y="-24" width="4" height="24">
+    <properties>
+     <property name="color" type="color" value="#ffffffff"/>
+     <property name="gaugedirection" propertytype="GaugeDirection" value="down"/>
+    </properties>
+   </object>
+   <object id="96" name="gaugel" type="Gui.Gauge" x="-24" y="-40" width="24" height="4">
+    <properties>
+     <property name="color" type="color" value="#ffffffff"/>
+     <property name="gaugedirection" propertytype="GaugeDirection" value="left"/>
+    </properties>
+   </object>
+   <object id="98" name="gaugeu" type="Gui.Gauge" x="12" y="-48" width="4" height="24">
+    <properties>
+     <property name="color" type="color" value="#ffffffff"/>
+     <property name="gaugedirection" propertytype="GaugeDirection" value="up"/>
+    </properties>
+   </object>
+   <object id="94" name="prompt" gid="410" x="0" y="0" width="48" height="48"/>
   </objectgroup>
   <objectgroup id="10" name="hud_weapon" visible="0">
    <object id="15" name="weaponname" x="48" y="45" width="90" height="18">

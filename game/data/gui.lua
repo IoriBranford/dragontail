@@ -9,8 +9,8 @@ return {
   height = 15,
   tilewidth = 16,
   tileheight = 18,
-  nextlayerid = 16,
-  nextobjectid = 95,
+  nextlayerid = 17,
+  nextobjectid = 101,
   properties = {},
   tilesets = {
     {
@@ -903,10 +903,121 @@ return {
               halign = "right",
               valign = "bottom",
               properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 16,
+          name = "hud_breakgrab",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 99,
+              name = "gaugex",
+              type = "",
+              shape = "rectangle",
+              x = -24,
+              y = -40,
+              width = 48,
+              height = 4,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#00000000",
+                ["linecolor"] = "#ffffffff"
+              }
+            },
+            {
+              id = 100,
+              name = "gaugey",
+              type = "",
+              shape = "rectangle",
+              x = 12,
+              y = -48,
+              width = 4,
+              height = 48,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#00000000",
+                ["linecolor"] = "#ffffffff"
+              }
+            },
+            {
+              id = 95,
+              name = "gauger",
+              type = "Gui.Gauge",
+              shape = "rectangle",
+              x = 0,
+              y = -40,
+              width = 24,
+              height = 4,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#ffffffff"
+              }
+            },
+            {
+              id = 97,
+              name = "gauged",
+              type = "Gui.Gauge",
+              shape = "rectangle",
+              x = 12,
+              y = -24,
+              width = 4,
+              height = 24,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#ffffffff",
+                ["gaugedirection"] = "down"
+              }
+            },
+            {
+              id = 96,
+              name = "gaugel",
+              type = "Gui.Gauge",
+              shape = "rectangle",
+              x = -24,
+              y = -40,
+              width = 24,
+              height = 4,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#ffffffff",
+                ["gaugedirection"] = "left"
+              }
+            },
+            {
+              id = 98,
+              name = "gaugeu",
+              type = "Gui.Gauge",
+              shape = "rectangle",
+              x = 12,
+              y = -48,
+              width = 4,
+              height = 24,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#ffffffff",
+                ["gaugedirection"] = "up"
+              }
             },
             {
               id = 94,
-              name = "breakgrabprompt",
+              name = "prompt",
               type = "",
               shape = "rectangle",
               x = 0,
