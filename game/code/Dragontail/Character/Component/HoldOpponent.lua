@@ -21,6 +21,7 @@ local DirectionalAnimation = require "Dragontail.Character.Component.Directional
 ---@field holdstrength number?
 ---@field initialholdstrength number?
 local HoldOpponent = {}
+HoldOpponent.DefaultInitialHoldStrength = 120
 
 ---@param opponent HeldByOpponent
 function HoldOpponent:startHolding(opponent, holdangle)
@@ -31,7 +32,8 @@ function HoldOpponent:startHolding(opponent, holdangle)
     StateMachine.start(opponent, opponent.heldai or "held", self)
     holdangle = holdangle or HoldOpponent.getInitialHoldAngle(self, opponent)
     self.holdangle = holdangle
-    self.holdstrength = self.initialholdstrength or 120
+    self.initialholdstrength = self.initialholdstrength or HoldOpponent.DefaultInitialHoldStrength
+    self.holdstrength = self.initialholdstrength
     return holdangle
 end
 
