@@ -414,8 +414,9 @@ end
 
 function Characters.clearEnemies(boss)
     for _, enemy in ipairs(enemies) do
-        if enemy ~= boss then
-            enemy:disappear()
+        if enemy ~= boss and enemy.health > 0 then
+            enemy.health = 0
+            StateMachine.start(enemy, "fall")
         end
     end
 end
