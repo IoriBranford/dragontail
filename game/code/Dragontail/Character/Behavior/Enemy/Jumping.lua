@@ -20,7 +20,10 @@ function EnemyJumping:start()
             Characters.spawn(Character(dusttype, enemy.x, enemy.y, enemy.z))
         end
 
-        enemy.velz = enemy.jumpvelz or (enemy.gravity*15)
+        if enemy.velz <= 0 then
+            local time = (enemy.statetime or 15)+1 --include gravity applied at end of current frame
+            enemy.velz = enemy.gravity*time
+        end
         Face.faceVector(enemy, enemy.velx, enemy.vely)
     end
     enemy.facedestangle = enemy.faceangle
