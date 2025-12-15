@@ -70,6 +70,8 @@ local StateVarsToCopy = {
     speed = true,
     bodyheight = true,
     guardai = true,
+    z = true,
+    velz = true,
 }
 
 local Period = string.byte('.')
