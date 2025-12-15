@@ -4,6 +4,7 @@ local Audio    = require "System.Audio"
 local Database = require "Data.Database"
 local Character= require "Dragontail.Character"
 local Characters = require "Dragontail.Stage.Characters"
+local Body       = require "Dragontail.Character.Component.Body"
 
 ---@class EnemyJumping:Behavior
 ---@field character Enemy
@@ -38,6 +39,16 @@ function EnemyJumping:fixedupdate()
     end
 
     enemy.velx, enemy.vely = self.velx, self.vely
+
+    local speed = enemy.speed
+    local accel = enemy.accel
+    if speed and accel then
+        local faceangle = enemy.faceangle
+        local velx = math.cos(faceangle) * speed
+        local vely = math.sin(faceangle) * speed
+        Body.forceTowardsVelXY(enemy, velx, vely, accel)
+        self.velx, self.vely = enemy.velx, enemy.vely
+    end
 end
 
 return EnemyJumping
