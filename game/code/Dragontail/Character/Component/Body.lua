@@ -5,6 +5,7 @@ local RaycastCollision3D = require "Dragontail.Character.Component.Body.RaycastC
 ---@class Body:TiledObject
 ---@field z number
 ---@field floorz number
+---@field floorbody Body
 ---@field penex number?
 ---@field peney number?
 ---@field penez number?

@@ -158,7 +158,7 @@ function Characters.fixedupdate()
     end
 
     for i = 1, #allcharacters do local character = allcharacters[i]
-        character.floorcharacter, character.floorz = Characters.getCylinderFloor(
+        character.floorbody, character.floorz = Characters.getCylinderFloor(
             character.x, character.y, character.z,
             character.bodyradius, character.bodyheight, character.bodyhitslayers)
     end

@@ -172,7 +172,7 @@ function Fighter:duringKnockedBack()
 end
 
 function Fighter:getLedgeDirection()
-    local floor = self.floorcharacter
+    local floor = self.floorbody
     local floorpoints = floor.points
     if not floorpoints then
         local dsq = math.distsq(self.x, self.y, floor.x, floor.y)
