@@ -10,8 +10,6 @@ local Mana         = require "Dragontail.Character.Component.Mana"
 local PlayerHeld = pooledclass(Behavior)
 PlayerHeld._nrec = Behavior._nrec + 1
 
-local BreakawayStrength = 4
-
 function PlayerHeld:start(holder)
     local player = self.character
     if not HoldOpponent.isHolding(holder, player) then
@@ -41,20 +39,17 @@ function PlayerHeld:fixedupdate()
 
     local struggle = 0
     local strugglex, struggley = player:getParryVector()
-    local holddirx, holddiry = player.x - holder.x, player.y - holder.y
+    local holddirx, holddiry = math.cos(holder.holdangle), math.sin(holder.holdangle)
     if strugglex and struggley then
-        if holddirx == 0 and holddiry == 0 then
-            holddiry = 1
-        else
-            holddirx, holddiry = math.norm(holddirx, holddiry)
-        end
-        struggle = BreakawayStrength * math.abs(math.dot(strugglex, struggley, holddirx, holddiry))
+        local strugglestrength = player.strugglestrength or 2
+        struggle = strugglestrength * math.abs(math.dot(strugglex, struggley, holddirx, holddiry))
         player.struggleoffset = struggle
     else
+        struggle = -1
         player.struggleoffset = 0
     end
 
-    if struggle ~= 0 then
+    if struggle > 0 then
         player.animationframe = 1
         player.animationtime = 0
     end
