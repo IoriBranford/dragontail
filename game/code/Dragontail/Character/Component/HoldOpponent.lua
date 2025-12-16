@@ -53,7 +53,9 @@ function HoldOpponent:isHolding(opponent)
 end
 
 function HoldOpponent:weakenHold(strugglestrength)
-    local holdstrength = self.holdstrength - strugglestrength
+    local holdstrength = math.min(
+        self.holdstrength - strugglestrength,
+        self.initialholdstrength)
     self.holdstrength = holdstrength
     return holdstrength
 end
