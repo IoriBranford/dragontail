@@ -106,6 +106,17 @@ function InputLog:newestJoystick()
     return self[i-1] or 0, self[i] or 0
 end
 
+function InputLog:joystickAt(t)
+    local l = self.length
+    t = math.max(-l, math.min(t, -1))
+    local i = self.position + t
+    if i < 1 then
+        i = i + l
+    end
+    i = i*2
+    return self[i-1] or 0, self[i] or 0
+end
+
 function InputLog:averageJoystick()
     if #self < 2 then return 0, 0 end
     local n = #self/2
