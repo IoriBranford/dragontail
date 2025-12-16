@@ -188,9 +188,11 @@ end
 function Player:getParryVector()
     local x1, y1 = self.inputlog:newestJoystick()
     if not x1 or not y1 or x1 == 0 and y1 == 0 then return end
-    local x0, y0 = self.inputlog:oldestJoystick()
-    if dot(x0, y0, x1, y1) <= 0 then
-        return math.norm(x1, y1)
+    for t = -2, -self.inputlog.length, -1 do
+        local x0, y0 = self.inputlog:joystickAt(t)
+        if dot(x0, y0, x1, y1) <= 0 then
+            return math.norm(x1, y1)
+        end
     end
 end
 
