@@ -17285,13 +17285,13 @@ return {
               type = "",
               shape = "point",
               x = 1040,
-              y = -16,
+              y = 0,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               properties = {
-                ["z"] = 192
+                ["z"] = 176
               }
             },
             {

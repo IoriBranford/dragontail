@@ -401,9 +401,9 @@ body to grapple</text>
      <property name="respawnpoint" type="object" value="654"/>
     </properties>
    </object>
-   <object id="654" name="rockrespawnpoint" x="1040" y="-16">
+   <object id="654" name="rockrespawnpoint" x="1040" y="0">
     <properties>
-     <property name="z" type="float" value="192"/>
+     <property name="z" type="float" value="176"/>
     </properties>
     <point/>
    </object>
