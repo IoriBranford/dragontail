@@ -413,9 +413,13 @@ function Characters.isDrawnBefore(a, b)
 end
 
 function Characters.clearEnemies(boss)
+    local HoldOpponent = require "Dragontail.Character.Component.HoldOpponent"
     for _, enemy in ipairs(enemies) do
+        ---@cast enemy Enemy
         if enemy ~= boss and enemy.health > 0 then
             enemy.health = 0
+            HoldOpponent.stopHolding(enemy, enemy.heldopponent)
+            HoldOpponent.stopHolding(enemy.heldby, enemy)
             StateMachine.start(enemy, "fall")
         end
     end
