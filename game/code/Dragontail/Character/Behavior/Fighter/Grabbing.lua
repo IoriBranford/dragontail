@@ -30,4 +30,17 @@ function Grabbing:fixedupdate()
     HoldOpponent.updateVelocities(fighter)
 end
 
+function Grabbing:timeout(...)
+    local grabber = self.character
+    local grabbed = grabber.heldopponent
+
+    if grabber.team == "enemies"
+    and grabbed.team == "enemies"
+    and grabber.maxhealth < grabbed.maxhealth then
+        HoldOpponent.stopHolding(grabber, grabbed)
+        return grabber.recoverai
+    end
+    return ...
+end
+
 return Grabbing

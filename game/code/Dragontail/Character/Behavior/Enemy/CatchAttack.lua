@@ -71,7 +71,13 @@ end
 
 function CatchAttack:interrupt(...)
     local enemy = self.character
+    local attacker = self.attacker
     enemy:resetFlash()
+    if attacker
+    and HoldOpponent.isHolding(enemy, attacker) then
+        attacker:resetFlash()
+        HoldOpponent.stopHolding(enemy, attacker)
+    end
     return ...
 end
 
@@ -92,6 +98,11 @@ function CatchAttack:timeout()
     and HoldOpponent.isHolding(enemy, attacker)
     then
         attacker:resetFlash()
+        if attacker.team == "enemies"
+        and enemy.maxhealth < attacker.maxhealth then
+            HoldOpponent.stopHolding(enemy, attacker)
+            return enemy.recoverai or "stand"
+        end
         return "hold", attacker
     else
         return enemy.recoverai or "stand"
