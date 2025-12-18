@@ -66,7 +66,7 @@ local AirHoldCombo = {"air-holding-knee", "air-holding-knee", "air-spinning-thro
 function Player:cheatRefillAll()
     self.health = self.maxhealth
     self.manastore = self.manastoremax
-    self.inventory = Inventory()
+    self.inventory = Inventory(self.inventory.capacity)
     while self:tryToGiveWeapon("thrown-stone") do end
 end
 
