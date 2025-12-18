@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 69,
-  nextobjectid = 705,
+  nextobjectid = 773,
   backgroundcolor = { 64, 64, 64 },
   properties = {},
   tilesets = {
@@ -15773,8 +15773,37 @@ return {
       tiles = {}
     },
     {
-      name = "shield",
+      name = "cave-window",
       firstgid = 7273,
+      class = "",
+      tilewidth = 96,
+      tileheight = 112,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "tilesets/caves/semiblocked-tunnel.png",
+      imagewidth = 96,
+      imageheight = 112,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 16
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 96,
+        height = 112
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "shield",
+      firstgid = 7274,
       class = "",
       tilewidth = 64,
       tileheight = 64,
@@ -15803,7 +15832,7 @@ return {
     },
     {
       name = "crystal-spikes",
-      firstgid = 7274,
+      firstgid = 7275,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -16281,11 +16310,11 @@ return {
         },
         {
           x = 0, y = 24, width = 20, height = 12,
-          data = "eJztzj0OAQEUReHvvQIZ+8EQ9oMh7MdPgy1hN4qZlklGyWlObnNz+D0K9JJ+MkjGwQVX3Dr8zVEm02SWrII7Hnh2+NuhSjbJNjkGRTCMunXUeBKULfttc7CIunXZeB1ULfsT+6hbD41Pwbll//EVL/zlGKo="
+          data = "eJztzjEKAkEUg+HvvUJlD6Ss4oGUVTyQYqNeyevI4EyzsIWdoD+EhJAi/B4dZsk8WSQ33PGo+pQt+mSdbJInVsEy3l5U6Gs3zm3bOGFIDskx6YJ9sKteVBhqN85tO/k3uATn6kWFa+3GuW3/+Dpe7ScTEw=="
         },
         {
           x = 20, y = 24, width = 20, height = 12,
-          data = "eJztjksKwkAYg7+Arkqv42NTvE61LgSPU213Xkk8jQzzB4aCD8SNYGBgAvmSH35Hxwf/mWAuuABrwUKwFKyU/fVJ3wjsyazzZm9AJ2gFW8FO2VexkV6p1FGyzputBYOgF5wE5/BNbLSx7ztSR8k6b3Yz2bcOsdHHvu+o32BfaSju+LTjL76mO2qBHa4="
+          data = "eJztjUEKglAURc8FG4nbyZqE29FsELQcLWdtSVxNPP57EB+SpoIHHvwL9/wL2+Hx410IDoI3cBYcBbXgpJTnlf8m4EZyox/uAvSCVtAJrkq59A27cIw6c6MfbiV4CQbBKHh6vviGXThGl7nRD7fxXs7dN4Yvxxj/cHfYFB+hhhvY"
         },
         {
           x = 40, y = 24, width = 20, height = 12,
@@ -16344,11 +16373,11 @@ return {
         },
         {
           x = 0, y = 24, width = 20, height = 12,
-          data = "eJztzrsJgEAURNE7L1CxIX9oP64fsB+1LdsxeZkrGMtemOREA6leMAhGwQVkBrmvMKj0tNrtrU2wC0pBY9D6OoMQscnty9fZYPGtBkfETrcUv+4GoIcL7Q=="
+          data = "eJxjYBgF9AJWTAwM1kwQtiUThA8CILFsRuLMsGVkYMiB6stlYmDIg7JBYiA+CIDE5hFp3ihgGNIAAHvpBRE="
         },
         {
           x = 20, y = 24, width = 20, height = 12,
-          data = "eJxjYKAtWM7AwGDOyMBwiwpm3WSAmJPFyMDAy0ieGexMEMzBxMDAAzVnLiMDgwOZ5lkxQbA1EwODPQXmwEAuEwTnMTEwFFFo1ihgGPYAADfOB/M="
+          data = "eJxjYBgFlAArJggGAXtGysMylwmCQaCICuaNAoZhDQCmEgIK"
         },
         {
           x = 40, y = 24, width = 20, height = 12,
@@ -16384,14 +16413,6 @@ return {
         {
           x = 0, y = 12, width = 20, height = 12,
           data = "eJxjYBgFowATXGZkYLgCxVcZKQ+hJYwMDEuheBkVzBsFDGAAAN/wBe0="
-        },
-        {
-          x = 0, y = 24, width = 20, height = 12,
-          data = "eJxjYBj64DIjA8MVKL7KiF+MGLCEkYFhKRQvY8QvNgpGAcMAAgD4Xg1S"
-        },
-        {
-          x = 20, y = 24, width = 20, height = 12,
-          data = "eJxjYBjc4AojBF9lpI55SxkheBmVzBsFo4BhAAEAPhkEdA=="
         },
         {
           x = 40, y = 24, width = 20, height = 12,
@@ -19819,7 +19840,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7273,
+              gid = 7274,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -19837,7 +19858,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7273,
+              gid = 7274,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -20397,6 +20418,76 @@ return {
           },
           objects = {
             {
+              id = 705,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 336,
+              y = 960,
+              width = 96,
+              height = 112,
+              rotation = 0,
+              gid = 7273,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 706,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 432,
+              y = 960,
+              width = 96,
+              height = 112,
+              rotation = 0,
+              gid = 7273,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 707,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 528,
+              y = 960,
+              width = 96,
+              height = 112,
+              rotation = 0,
+              gid = 7273,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 708,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 624,
+              y = 960,
+              width = 96,
+              height = 112,
+              rotation = 0,
+              gid = 7273,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 709,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 720,
+              y = 960,
+              width = 96,
+              height = 112,
+              rotation = 0,
+              gid = 7273,
+              visible = true,
+              properties = {}
+            },
+            {
               id = 104,
               name = "camerapath",
               type = "CameraPath",
@@ -20429,10 +20520,10 @@ return {
               polygon = {
                 { x = 64, y = 0 },
                 { x = 64, y = 112 },
-                { x = 192, y = 112 },
-                { x = 256, y = 176 },
-                { x = 608, y = 176 },
-                { x = 608, y = 0 }
+                { x = 160, y = 112 },
+                { x = 192, y = 144 },
+                { x = 312, y = 144 },
+                { x = 312, y = 0 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -20443,21 +20534,351 @@ return {
               }
             },
             {
-              id = 312,
+              id = 713,
               name = "",
               type = "Boundary",
               shape = "polygon",
-              x = 0,
+              x = -104,
               y = 864,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 608, y = -96 },
-                { x = 608, y = 144 },
-                { x = 736, y = 144 },
-                { x = 736, y = -96 }
+                { x = 608, y = 96 },
+                { x = 608, y = 112 },
+                { x = 656, y = 112 },
+                { x = 656, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -16,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 728,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = -8,
+              y = 864,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 608, y = 96 },
+                { x = 608, y = 112 },
+                { x = 656, y = 112 },
+                { x = 656, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -16,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 730,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 88,
+              y = 864,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 608, y = 96 },
+                { x = 608, y = 112 },
+                { x = 656, y = 112 },
+                { x = 656, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -16,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 726,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = -200,
+              y = 864,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 608, y = 96 },
+                { x = 608, y = 112 },
+                { x = 656, y = 112 },
+                { x = 656, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -16,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 723,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = -296,
+              y = 864,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 608, y = 96 },
+                { x = 608, y = 112 },
+                { x = 656, y = 112 },
+                { x = 656, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -16,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 715,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = -296,
+              y = 824,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 608, y = 96 },
+                { x = 608, y = 112 },
+                { x = 656, y = 112 },
+                { x = 656, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff",
+                ["z"] = 40
+              }
+            },
+            {
+              id = 724,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = -200,
+              y = 824,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 608, y = 96 },
+                { x = 608, y = 112 },
+                { x = 656, y = 112 },
+                { x = 656, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff",
+                ["z"] = 40
+              }
+            },
+            {
+              id = 725,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = -104,
+              y = 824,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 608, y = 96 },
+                { x = 608, y = 112 },
+                { x = 656, y = 112 },
+                { x = 656, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff",
+                ["z"] = 40
+              }
+            },
+            {
+              id = 727,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = -8,
+              y = 824,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 608, y = 96 },
+                { x = 608, y = 112 },
+                { x = 656, y = 112 },
+                { x = 656, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff",
+                ["z"] = 40
+              }
+            },
+            {
+              id = 729,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 88,
+              y = 824,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 608, y = 96 },
+                { x = 608, y = 112 },
+                { x = 656, y = 112 },
+                { x = 656, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff",
+                ["z"] = 40
+              }
+            },
+            {
+              id = 714,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = -256,
+              y = 864,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 616, y = 96 },
+                { x = 616, y = 112 },
+                { x = 664, y = 112 },
+                { x = 664, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 720,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = -160,
+              y = 864,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 616, y = 96 },
+                { x = 616, y = 112 },
+                { x = 664, y = 112 },
+                { x = 664, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 721,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = -64,
+              y = 864,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 616, y = 96 },
+                { x = 616, y = 112 },
+                { x = 664, y = 112 },
+                { x = 664, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 722,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 32,
+              y = 864,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 616, y = 96 },
+                { x = 616, y = 112 },
+                { x = 664, y = 112 },
+                { x = 664, y = 96 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -20513,9 +20934,8 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = -208, y = 0 },
-                { x = -208, y = 240 },
-                { x = -176, y = 208 },
+                { x = -200, y = 0 },
+                { x = -200, y = 208 },
                 { x = -112, y = 208 },
                 { x = -80, y = 176 },
                 { x = 48, y = 176 },
@@ -20539,7 +20959,7 @@ return {
               type = "",
               shape = "rectangle",
               x = 336,
-              y = 920,
+              y = 928,
               width = 128,
               height = 128,
               rotation = 0,
@@ -20551,9 +20971,7 @@ return {
                 ["entrypoint"] = { id = 273 },
                 ["exitpoint"] = { id = 555 },
                 ["facedegrees"] = 90,
-                ["initialai"] = "enterAndPrepareBowAmbush",
-                ["itemtype"] = "food-fish",
-                ["z"] = 64
+                ["initialai"] = "enterAndPrepareBowAmbush"
               }
             },
             {
@@ -20561,8 +20979,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 272,
-              y = 992,
+              x = 288,
+              y = 960,
               width = 32,
               height = 48,
               rotation = 0,
@@ -20577,8 +20995,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 432,
-              y = 984,
+              x = 384,
+              y = 960,
               width = 32,
               height = 48,
               rotation = 0,
@@ -20594,14 +21012,12 @@ return {
               type = "",
               shape = "point",
               x = 336,
-              y = 936,
+              y = 944,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
-              properties = {
-                ["z"] = 64
-              }
+              properties = {}
             },
             {
               id = 555,
@@ -20609,37 +21025,33 @@ return {
               type = "",
               shape = "point",
               x = 336,
-              y = 832,
+              y = 840,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
-              properties = {
-                ["z"] = 64
-              }
+              properties = {}
             },
             {
               id = 556,
               name = "exitpoint",
               type = "",
               shape = "point",
-              x = 368,
+              x = 432,
               y = 832,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
-              properties = {
-                ["z"] = 64
-              }
+              properties = {}
             },
             {
               id = 274,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 368,
-              y = 912,
+              x = 432,
+              y = 920,
               width = 128,
               height = 128,
               rotation = 0,
@@ -20651,9 +21063,7 @@ return {
                 ["entrypoint"] = { id = 275 },
                 ["exitpoint"] = { id = 556 },
                 ["facedegrees"] = 90,
-                ["initialai"] = "enterAndPrepareBowAmbush",
-                ["itemtype"] = "mana-peppers",
-                ["z"] = 64
+                ["initialai"] = "enterAndPrepareBowAmbush"
               }
             },
             {
@@ -20661,23 +21071,21 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 368,
+              x = 432,
               y = 936,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
-              properties = {
-                ["z"] = 64
-              }
+              properties = {}
             },
             {
               id = 280,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 496,
-              y = 904,
+              x = 528,
+              y = 912,
               width = 128,
               height = 128,
               rotation = 0,
@@ -20689,9 +21097,7 @@ return {
                 ["entrypoint"] = { id = 281 },
                 ["exitpoint"] = { id = 557 },
                 ["facedegrees"] = 270,
-                ["initialai"] = "enterAndPrepareBowAmbush",
-                ["itemtype"] = "food-fish",
-                ["z"] = 64
+                ["initialai"] = "enterAndPrepareBowAmbush"
               }
             },
             {
@@ -20699,8 +21105,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 528,
-              y = 896,
+              x = 624,
+              y = 904,
               width = 128,
               height = 128,
               rotation = 0,
@@ -20712,28 +21118,11 @@ return {
                 ["entrypoint"] = { id = 283 },
                 ["exitpoint"] = { id = 558 },
                 ["facedegrees"] = 270,
-                ["initialai"] = "enterAndPrepareBowAmbush",
-                ["itemtype"] = "mana-peppers",
-                ["z"] = 64
+                ["initialai"] = "enterAndPrepareBowAmbush"
               }
             },
             {
               id = 281,
-              name = "entrypoint",
-              type = "",
-              shape = "point",
-              x = 496,
-              y = 936,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
-              id = 283,
               name = "entrypoint",
               type = "",
               shape = "point",
@@ -20743,17 +21132,28 @@ return {
               height = 0,
               rotation = 0,
               visible = true,
-              properties = {
-                ["z"] = 64
-              }
+              properties = {}
+            },
+            {
+              id = 283,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 624,
+              y = 936,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
             },
             {
               id = 286,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 656,
-              y = 888,
+              x = 720,
+              y = 896,
               width = 128,
               height = 128,
               rotation = 0,
@@ -20765,32 +21165,7 @@ return {
                 ["entrypoint"] = { id = 287 },
                 ["exitpoint"] = { id = 559 },
                 ["facedegrees"] = 90,
-                ["initialai"] = "enterAndPrepareBowAmbush",
-                ["itemtype"] = "food-fish",
-                ["z"] = 64
-              }
-            },
-            {
-              id = 545,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 688,
-              y = 880,
-              width = 128,
-              height = 128,
-              rotation = 0,
-              gid = 7234,
-              visible = true,
-              properties = {
-                ["ammo"] = 0,
-                ["defaultattack"] = "bow-shot-until-empty",
-                ["entrypoint"] = { id = 546 },
-                ["exitpoint"] = { id = 560 },
-                ["facedegrees"] = 90,
-                ["initialai"] = "enterAndPrepareBowAmbush",
-                ["itemtype"] = "mana-peppers",
-                ["z"] = 64
+                ["initialai"] = "enterAndPrepareBowAmbush"
               }
             },
             {
@@ -20798,30 +21173,13 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 656,
+              x = 720,
               y = 936,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
-              id = 546,
-              name = "entrypoint",
-              type = "",
-              shape = "point",
-              x = 688,
-              y = 936,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
+              properties = {}
             },
             {
               id = 299,
@@ -20956,8 +21314,40 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 592,
-              y = 984,
+              x = 480,
+              y = 960,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              gid = 6593,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            },
+            {
+              id = 731,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 576,
+              y = 960,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              gid = 6593,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            },
+            {
+              id = 732,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 672,
+              y = 960,
               width = 32,
               height = 48,
               rotation = 0,
@@ -20973,7 +21363,7 @@ return {
               type = "",
               shape = "rectangle",
               x = 232,
-              y = 1064,
+              y = 1036,
               width = 16,
               height = 16,
               rotation = 0,
@@ -20991,7 +21381,7 @@ return {
               type = "",
               shape = "rectangle",
               x = 234,
-              y = 1073,
+              y = 1045,
               width = 16,
               height = 16,
               rotation = 345,
@@ -21009,7 +21399,7 @@ return {
               type = "",
               shape = "rectangle",
               x = 210,
-              y = 1096,
+              y = 1068,
               width = 16,
               height = 16,
               rotation = 15,
@@ -21027,7 +21417,7 @@ return {
               type = "",
               shape = "rectangle",
               x = 208,
-              y = 1104,
+              y = 1076,
               width = 16,
               height = 16,
               rotation = 15,
@@ -21045,7 +21435,7 @@ return {
               type = "",
               shape = "rectangle",
               x = 253.66,
-              y = 1024,
+              y = 996,
               width = 16,
               height = 16,
               rotation = 45,
@@ -21063,7 +21453,7 @@ return {
               type = "",
               shape = "rectangle",
               x = 248,
-              y = 1029.66,
+              y = 1001.66,
               width = 16,
               height = 16,
               rotation = 45,
@@ -21233,60 +21623,39 @@ return {
               name = "exitpoint",
               type = "",
               shape = "point",
-              x = 496,
-              y = 832,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
-              id = 558,
-              name = "exitpoint",
-              type = "",
-              shape = "point",
               x = 528,
               y = 832,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
-              properties = {
-                ["z"] = 64
-              }
+              properties = {}
+            },
+            {
+              id = 558,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 624,
+              y = 832,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
             },
             {
               id = 559,
               name = "exitpoint",
               type = "",
               shape = "point",
-              x = 656,
+              x = 720,
               y = 832,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
-              id = 560,
-              name = "exitpoint",
-              type = "",
-              shape = "point",
-              x = 688,
-              y = 832,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
+              properties = {}
             },
             {
               id = 564,
@@ -21294,11 +21663,11 @@ return {
               type = "",
               shape = "rectangle",
               x = 320,
-              y = 1016,
+              y = 988,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7274,
+              gid = 7275,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 32,
@@ -21311,11 +21680,11 @@ return {
               type = "",
               shape = "rectangle",
               x = 584,
-              y = 1016,
+              y = 988,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7274,
+              gid = 7275,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 32,
@@ -21327,12 +21696,29 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 432,
-              y = 1064,
+              x = 320,
+              y = 1024,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7274,
+              gid = 7275,
+              visible = true,
+              properties = {
+                ["bloodyanimation"] = 180,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 771,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 616,
+              y = 1032,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7275,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 180,
@@ -21344,12 +21730,66 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 728,
-              y = 1080,
+              x = 384,
+              y = 1048,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7274,
+              gid = 7275,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 32,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 770,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 680,
+              y = 1056,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7275,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 32,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 745,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 352,
+              y = 1088,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7275,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 32,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 769,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 648,
+              y = 1096,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7275,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21363,11 +21803,11 @@ return {
               type = "",
               shape = "rectangle",
               x = 704,
-              y = 1040,
+              y = 1012,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7277,
+              gid = 7278,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21380,12 +21820,66 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 672,
-              y = 1192,
+              x = 304,
+              y = 1112,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7277,
+              gid = 7278,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 35,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 768,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 600,
+              y = 1120,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7278,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 35,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 750,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 384,
+              y = 1104,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7278,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 35,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 767,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 680,
+              y = 1112,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7278,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21399,11 +21893,11 @@ return {
               type = "",
               shape = "rectangle",
               x = 432,
-              y = 1016,
+              y = 988,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7278,
+              gid = 7279,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 36,
@@ -21416,11 +21910,11 @@ return {
               type = "",
               shape = "rectangle",
               x = 696,
-              y = 1024,
+              y = 996,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7278,
+              gid = 7279,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 36,
@@ -21432,12 +21926,66 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 720,
-              y = 1096,
+              x = 376,
+              y = 1064,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7278,
+              gid = 7279,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 36,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 766,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 672,
+              y = 1072,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7279,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 36,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 744,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 344,
+              y = 1104,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7279,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 36,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 765,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 640,
+              y = 1112,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7279,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21451,11 +21999,11 @@ return {
               type = "",
               shape = "rectangle",
               x = 344,
-              y = 1024,
+              y = 996,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7281,
+              gid = 7282,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 39,
@@ -21468,11 +22016,11 @@ return {
               type = "",
               shape = "rectangle",
               x = 616,
-              y = 1024,
+              y = 996,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7281,
+              gid = 7282,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 39,
@@ -21484,12 +22032,66 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 704,
-              y = 1128,
+              x = 408,
+              y = 1096,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7281,
+              gid = 7282,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 39,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 764,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 704,
+              y = 1104,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7282,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 39,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 749,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 416,
+              y = 1040,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7282,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 39,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 763,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 712,
+              y = 1048,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7282,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21503,11 +22105,11 @@ return {
               type = "",
               shape = "rectangle",
               x = 384,
-              y = 1024,
+              y = 996,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7282,
+              gid = 7283,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 40,
@@ -21520,11 +22122,11 @@ return {
               type = "",
               shape = "rectangle",
               x = 656,
-              y = 1024,
+              y = 996,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7282,
+              gid = 7283,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 40,
@@ -21536,12 +22138,66 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 720,
-              y = 1120,
+              x = 424,
+              y = 1088,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7282,
+              gid = 7283,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 40,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 761,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 720,
+              y = 1096,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7283,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 40,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 748,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 432,
+              y = 1032,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7283,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 40,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 760,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 728,
+              y = 1040,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7283,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21555,11 +22211,11 @@ return {
               type = "",
               shape = "rectangle",
               x = 552,
-              y = 1024,
+              y = 996,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7302,
+              gid = 7303,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 60,
@@ -21571,12 +22227,84 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 720,
-              y = 1064,
+              x = 376,
+              y = 1032,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7302,
+              gid = 7303,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 60,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 758,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 672,
+              y = 1040,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7303,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 60,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 772,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 728,
+              y = 1000,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7303,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 60,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 741,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 344,
+              y = 1072,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7303,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 60,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 757,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 640,
+              y = 1080,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7303,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21589,12 +22317,30 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 584,
-              y = 1120,
+              x = 304,
+              y = 1048,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7302,
+              gid = 7303,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 60,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 756,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 600,
+              y = 1056,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7303,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21608,11 +22354,11 @@ return {
               type = "",
               shape = "rectangle",
               x = 472,
-              y = 1024,
+              y = 996,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7290,
+              gid = 7291,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 48,
@@ -21624,12 +22370,48 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 712,
-              y = 1152,
+              x = 416,
+              y = 1120,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7290,
+              gid = 7291,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 48,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 747,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 424,
+              y = 1064,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7291,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 48,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 754,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 720,
+              y = 1072,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7291,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21642,12 +22424,30 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 592,
-              y = 1136,
+              x = 312,
+              y = 1064,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7290,
+              gid = 7291,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 48,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 753,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 608,
+              y = 1072,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7291,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21661,11 +22461,11 @@ return {
               type = "",
               shape = "rectangle",
               x = 512,
-              y = 1016,
+              y = 988,
               width = 40,
               height = 32,
               rotation = 0,
-              gid = 7297,
+              gid = 7298,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 55,
@@ -21673,21 +22473,181 @@ return {
               }
             },
             {
-              id = 572,
+              id = 746,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 696,
-              y = 1168,
+              x = 408,
+              y = 1080,
               width = 40,
               height = 32,
               rotation = 0,
-              gid = 7297,
+              gid = 7298,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
                 ["bloodyanimation"] = 55,
                 ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 751,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 704,
+              y = 1088,
+              width = 40,
+              height = 32,
+              rotation = 0,
+              gid = 7298,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 55,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 733,
+              name = "Attack",
+              type = "",
+              shape = "text",
+              x = 16,
+              y = 1064,
+              width = 128,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "During sprint",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["drawz"] = 100
+              }
+            },
+            {
+              id = 734,
+              name = "attackbutton",
+              type = "",
+              shape = "rectangle",
+              x = 120,
+              y = 1096,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7240,
+              visible = true,
+              properties = {
+                ["drawz"] = 100
+              }
+            },
+            {
+              id = 735,
+              name = "Jump",
+              type = "",
+              shape = "text",
+              x = 32,
+              y = 1088,
+              width = 72,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "Long jump",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["drawz"] = 100
+              }
+            },
+            {
+              id = 736,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 152,
+              y = 1096,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7242,
+              visible = true,
+              properties = {
+                ["drawz"] = 100
+              }
+            },
+            {
+              id = 737,
+              name = "or",
+              type = "",
+              shape = "text",
+              x = 128,
+              y = 1088,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "OR",
+              fontfamily = "TinyUnicode",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {
+                ["drawz"] = 100
+              }
+            },
+            {
+              id = 738,
+              name = "sprintbutton",
+              type = "",
+              shape = "rectangle",
+              x = 168,
+              y = 1072,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7254,
+              visible = true,
+              properties = {
+                ["drawz"] = 100
+              }
+            },
+            {
+              id = 739,
+              name = "or",
+              type = "",
+              shape = "text",
+              x = 144,
+              y = 1064,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "OR",
+              fontfamily = "TinyUnicode",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {
+                ["drawz"] = 100
+              }
+            },
+            {
+              id = 740,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 136,
+              y = 1072,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7250,
+              visible = true,
+              properties = {
+                ["drawz"] = 100
               }
             }
           }

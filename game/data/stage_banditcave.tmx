@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="69" nextobjectid="705">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="69" nextobjectid="773">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -61,6 +61,7 @@
  <tileset firstgid="7270" source="sprites/items/pepper-plant.tsx"/>
  <tileset firstgid="7271" source="sprites/items/peppers-on-plant.tsx"/>
  <tileset firstgid="7272" source="sprites/bandit/muscle-orange.tsx"/>
+ <tileset firstgid="7273" source="tilesets/caves/semiblocked-tunnel.tsx"/>
  <layer id="2" name="floor" width="200" height="12">
   <properties>
    <property name="drawz" type="float" value="-2"/>
@@ -173,10 +174,10 @@
    eJzt0LkNwlAQBNA3AjmjHY7M7XCELocrox3HrgZ9fSpYUr9kNMFssKxW3YQ3hnDENszYpPahDw7tVjiFfXpvWbHgEq7hFs7pvWXFLjzCM7zC/ddbVozF3T++k60Lhg==
   </chunk>
    <chunk x="0" y="24" width="20" height="12">
-   eJztzj0OAQEUReHvvQIZ+8EQ9oMh7MdPgy1hN4qZlklGyWlObnNz+D0K9JJ+MkjGwQVX3Dr8zVEm02SWrII7Hnh2+NuhSjbJNjkGRTCMunXUeBKULfttc7CIunXZeB1ULfsT+6hbD41Pwbll//EVL/zlGKo=
+   eJztzjEKAkEUg+HvvUJlD6Ss4oGUVTyQYqNeyevI4EyzsIWdoD+EhJAi/B4dZsk8WSQ33PGo+pQt+mSdbJInVsEy3l5U6Gs3zm3bOGFIDskx6YJ9sKteVBhqN85tO/k3uATn6kWFa+3GuW3/+Dpe7ScTEw==
   </chunk>
    <chunk x="20" y="24" width="20" height="12">
-   eJztjksKwkAYg7+Arkqv42NTvE61LgSPU213Xkk8jQzzB4aCD8SNYGBgAvmSH35Hxwf/mWAuuABrwUKwFKyU/fVJ3wjsyazzZm9AJ2gFW8FO2VexkV6p1FGyzputBYOgF5wE5/BNbLSx7ztSR8k6b3Yz2bcOsdHHvu+o32BfaSju+LTjL76mO2qBHa4=
+   eJztjUEKglAURc8FG4nbyZqE29FsELQcLWdtSVxNPP57EB+SpoIHHvwL9/wL2+Hx410IDoI3cBYcBbXgpJTnlf8m4EZyox/uAvSCVtAJrkq59A27cIw6c6MfbiV4CQbBKHh6vviGXThGl7nRD7fxXs7dN4Yvxxj/cHfYFB+hhhvY
   </chunk>
    <chunk x="40" y="24" width="20" height="12">
    eJztjzsKgDAQRN/U5jx+Gj2P0cacx+hVbRKUJYi1OtUb2Mew8K00glbgBKPACybBbHolqHXed4mdcTIPglUQBZtgN70v7PnkXZ3MQfd/LIW9+MD7w6tyAIJoFXI=
@@ -210,10 +211,10 @@
    eJxjYBgFowACbjEwMFgyMTBYoWFrJvJCiJeRgSGHiYEhFw3nkWmeA+NoTDGgAQCb5wUs
   </chunk>
    <chunk x="0" y="24" width="20" height="12">
-   eJztzrsJgEAURNE7L1CxIX9oP64fsB+1LdsxeZkrGMtemOREA6leMAhGwQVkBrmvMKj0tNrtrU2wC0pBY9D6OoMQscnty9fZYPGtBkfETrcUv+4GoIcL7Q==
+   eJxjYBgF9AJWTAwM1kwQtiUThA8CILFsRuLMsGVkYMiB6stlYmDIg7JBYiA+CIDE5hFp3ihgGNIAAHvpBRE=
   </chunk>
    <chunk x="20" y="24" width="20" height="12">
-   eJxjYKAtWM7AwGDOyMBwiwpm3WSAmJPFyMDAy0ieGexMEMzBxMDAAzVnLiMDgwOZ5lkxQbA1EwODPQXmwEAuEwTnMTEwFFFo1ihgGPYAADfOB/M=
+   eJxjYBgFlAArJggGAXtGysMylwmCQaCICuaNAoZhDQCmEgIK
   </chunk>
    <chunk x="40" y="24" width="20" height="12">
    eJztzDkNgEAARcHR8U2SYABYAxwGOJRSQk22gTDVqx7v0eTq9tZPdaEPQygVfmOYwhyWCr81bGEPR4Xfz+eclJoJFA==
@@ -230,12 +231,6 @@
   <data encoding="base64" compression="zlib">
    <chunk x="0" y="12" width="20" height="12">
    eJxjYBgFowATXGZkYLgCxVcZKQ+hJYwMDEuheBkVzBsFDGAAAN/wBe0=
-  </chunk>
-   <chunk x="0" y="24" width="20" height="12">
-   eJxjYBj64DIjA8MVKL7KiF+MGLCEkYFhKRQvY8QvNgpGAcMAAgD4Xg1S
-  </chunk>
-   <chunk x="20" y="24" width="20" height="12">
-   eJxjYBjc4AojBF9lpI55SxkheBmVzBsFo4BhAAEAPhkEdA==
   </chunk>
    <chunk x="40" y="24" width="20" height="12">
    eJxjYBi5IFyKgSFCioEhUoqBIUpqoF0zCkYBA8kAAOtsAcs=
@@ -1144,6 +1139,11 @@ and tap    to throw</text>
     <property name="sequence" value="playerEnterArea"/>
     <property name="titlebarcuecard" value="RUN"/>
    </properties>
+   <object id="705" gid="7273" x="336" y="960" width="96" height="112"/>
+   <object id="706" gid="7273" x="432" y="960" width="96" height="112"/>
+   <object id="707" gid="7273" x="528" y="960" width="96" height="112"/>
+   <object id="708" gid="7273" x="624" y="960" width="96" height="112"/>
+   <object id="709" gid="7273" x="720" y="960" width="96" height="112"/>
    <object id="104" template="mapobjects/CameraPath.tx" x="176" y="1008">
     <properties>
      <property name="shadowcolor" type="color" value="#00000000"/>
@@ -1151,10 +1151,96 @@ and tap    to throw</text>
     <polyline points="64,0 816,0"/>
    </object>
    <object id="67" template="mapobjects/OutwardBoundary.tx" x="0" y="832" visible="1">
-    <polygon points="64,0 64,112 192,112 256,176 608,176 608,0"/>
+    <polygon points="64,0 64,112 160,112 192,144 312,144 312,0"/>
    </object>
-   <object id="312" template="mapobjects/OutwardBoundary.tx" x="0" y="864" visible="1">
-    <polygon points="608,-96 608,144 736,144 736,-96"/>
+   <object id="713" template="mapobjects/OutwardBoundary.tx" x="-104" y="864" visible="1">
+    <properties>
+     <property name="extrudeY" type="float" value="-16"/>
+    </properties>
+    <polygon points="608,96 608,112 656,112 656,96"/>
+   </object>
+   <object id="728" template="mapobjects/OutwardBoundary.tx" x="-8" y="864" visible="1">
+    <properties>
+     <property name="extrudeY" type="float" value="-16"/>
+    </properties>
+    <polygon points="608,96 608,112 656,112 656,96"/>
+   </object>
+   <object id="730" template="mapobjects/OutwardBoundary.tx" x="88" y="864" visible="1">
+    <properties>
+     <property name="extrudeY" type="float" value="-16"/>
+    </properties>
+    <polygon points="608,96 608,112 656,112 656,96"/>
+   </object>
+   <object id="726" template="mapobjects/OutwardBoundary.tx" x="-200" y="864" visible="1">
+    <properties>
+     <property name="extrudeY" type="float" value="-16"/>
+    </properties>
+    <polygon points="608,96 608,112 656,112 656,96"/>
+   </object>
+   <object id="723" template="mapobjects/OutwardBoundary.tx" x="-296" y="864" visible="1">
+    <properties>
+     <property name="extrudeY" type="float" value="-16"/>
+    </properties>
+    <polygon points="608,96 608,112 656,112 656,96"/>
+   </object>
+   <object id="715" template="mapobjects/OutwardBoundary.tx" x="-296" y="824" visible="1">
+    <properties>
+     <property name="extrudeY" type="float" value="-64"/>
+     <property name="z" type="float" value="40"/>
+    </properties>
+    <polygon points="608,96 608,112 656,112 656,96"/>
+   </object>
+   <object id="724" template="mapobjects/OutwardBoundary.tx" x="-200" y="824" visible="1">
+    <properties>
+     <property name="extrudeY" type="float" value="-64"/>
+     <property name="z" type="float" value="40"/>
+    </properties>
+    <polygon points="608,96 608,112 656,112 656,96"/>
+   </object>
+   <object id="725" template="mapobjects/OutwardBoundary.tx" x="-104" y="824" visible="1">
+    <properties>
+     <property name="extrudeY" type="float" value="-64"/>
+     <property name="z" type="float" value="40"/>
+    </properties>
+    <polygon points="608,96 608,112 656,112 656,96"/>
+   </object>
+   <object id="727" template="mapobjects/OutwardBoundary.tx" x="-8" y="824" visible="1">
+    <properties>
+     <property name="extrudeY" type="float" value="-64"/>
+     <property name="z" type="float" value="40"/>
+    </properties>
+    <polygon points="608,96 608,112 656,112 656,96"/>
+   </object>
+   <object id="729" template="mapobjects/OutwardBoundary.tx" x="88" y="824" visible="1">
+    <properties>
+     <property name="extrudeY" type="float" value="-64"/>
+     <property name="z" type="float" value="40"/>
+    </properties>
+    <polygon points="608,96 608,112 656,112 656,96"/>
+   </object>
+   <object id="714" template="mapobjects/OutwardBoundary.tx" x="-256" y="864" visible="1">
+    <properties>
+     <property name="extrudeY" type="float" value="-64"/>
+    </properties>
+    <polygon points="616,96 616,112 664,112 664,96"/>
+   </object>
+   <object id="720" template="mapobjects/OutwardBoundary.tx" x="-160" y="864" visible="1">
+    <properties>
+     <property name="extrudeY" type="float" value="-64"/>
+    </properties>
+    <polygon points="616,96 616,112 664,112 664,96"/>
+   </object>
+   <object id="721" template="mapobjects/OutwardBoundary.tx" x="-64" y="864" visible="1">
+    <properties>
+     <property name="extrudeY" type="float" value="-64"/>
+    </properties>
+    <polygon points="616,96 616,112 664,112 664,96"/>
+   </object>
+   <object id="722" template="mapobjects/OutwardBoundary.tx" x="32" y="864" visible="1">
+    <properties>
+     <property name="extrudeY" type="float" value="-64"/>
+    </properties>
+    <polygon points="616,96 616,112 664,112 664,96"/>
    </object>
    <object id="68" template="mapobjects/OutwardBoundary.tx" x="320" y="1088">
     <properties>
@@ -1163,9 +1249,9 @@ and tap    to throw</text>
     <polygon points="-320,-224 -320,128 0,128 -32,96 -64,96 -96,64 -160,64 -192,32 -224,32 -288,-32 -288,-112 -256,-144 -256,-224"/>
    </object>
    <object id="298" template="mapobjects/OutwardBoundary.tx" x="944" y="768">
-    <polygon points="-208,0 -208,240 -176,208 -112,208 -80,176 48,176 80,144 240,144 272,176 304,176 304,0"/>
+    <polygon points="-200,0 -200,208 -112,208 -80,176 48,176 80,144 240,144 272,176 304,176 304,0"/>
    </object>
-   <object id="105" gid="7234" x="336" y="920" width="128" height="128">
+   <object id="105" gid="7234" x="336" y="928" width="128" height="128">
     <properties>
      <property name="ammo" type="int" value="0"/>
      <property name="defaultattack" value="bow-shot-until-empty"/>
@@ -1173,31 +1259,20 @@ and tap    to throw</text>
      <property name="exitpoint" type="object" value="555"/>
      <property name="facedegrees" type="float" value="90"/>
      <property name="initialai" value="enterAndPrepareBowAmbush"/>
-     <property name="itemtype" value="food-fish"/>
-     <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="271" template="mapobjects/banditcave/wall-torch.tx" x="272" y="992"/>
-   <object id="309" template="mapobjects/banditcave/wall-torch.tx" x="432" y="984"/>
-   <object id="273" name="entrypoint" x="336" y="936">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
+   <object id="271" template="mapobjects/banditcave/wall-torch.tx" x="288" y="960"/>
+   <object id="309" template="mapobjects/banditcave/wall-torch.tx" x="384" y="960"/>
+   <object id="273" name="entrypoint" x="336" y="944">
     <point/>
    </object>
-   <object id="555" name="exitpoint" x="336" y="832">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
+   <object id="555" name="exitpoint" x="336" y="840">
     <point/>
    </object>
-   <object id="556" name="exitpoint" x="368" y="832">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
+   <object id="556" name="exitpoint" x="432" y="832">
     <point/>
    </object>
-   <object id="274" gid="7234" x="368" y="912" width="128" height="128">
+   <object id="274" gid="7234" x="432" y="920" width="128" height="128">
     <properties>
      <property name="ammo" type="int" value="0"/>
      <property name="defaultattack" value="bow-shot-until-empty"/>
@@ -1205,17 +1280,12 @@ and tap    to throw</text>
      <property name="exitpoint" type="object" value="556"/>
      <property name="facedegrees" type="float" value="90"/>
      <property name="initialai" value="enterAndPrepareBowAmbush"/>
-     <property name="itemtype" value="mana-peppers"/>
-     <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="275" name="entrypoint" x="368" y="936">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
+   <object id="275" name="entrypoint" x="432" y="936">
     <point/>
    </object>
-   <object id="280" gid="7234" x="496" y="904" width="128" height="128">
+   <object id="280" gid="7234" x="528" y="912" width="128" height="128">
     <properties>
      <property name="ammo" type="int" value="0"/>
      <property name="defaultattack" value="bow-shot-until-empty"/>
@@ -1223,11 +1293,9 @@ and tap    to throw</text>
      <property name="exitpoint" type="object" value="557"/>
      <property name="facedegrees" type="float" value="270"/>
      <property name="initialai" value="enterAndPrepareBowAmbush"/>
-     <property name="itemtype" value="food-fish"/>
-     <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="282" gid="7234" x="528" y="896" width="128" height="128">
+   <object id="282" gid="7234" x="624" y="904" width="128" height="128">
     <properties>
      <property name="ammo" type="int" value="0"/>
      <property name="defaultattack" value="bow-shot-until-empty"/>
@@ -1235,23 +1303,15 @@ and tap    to throw</text>
      <property name="exitpoint" type="object" value="558"/>
      <property name="facedegrees" type="float" value="270"/>
      <property name="initialai" value="enterAndPrepareBowAmbush"/>
-     <property name="itemtype" value="mana-peppers"/>
-     <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="281" name="entrypoint" x="496" y="936">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
+   <object id="281" name="entrypoint" x="528" y="936">
     <point/>
    </object>
-   <object id="283" name="entrypoint" x="528" y="936">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
+   <object id="283" name="entrypoint" x="624" y="936">
     <point/>
    </object>
-   <object id="286" gid="7234" x="656" y="888" width="128" height="128">
+   <object id="286" gid="7234" x="720" y="896" width="128" height="128">
     <properties>
      <property name="ammo" type="int" value="0"/>
      <property name="defaultattack" value="bow-shot-until-empty"/>
@@ -1259,32 +1319,9 @@ and tap    to throw</text>
      <property name="exitpoint" type="object" value="559"/>
      <property name="facedegrees" type="float" value="90"/>
      <property name="initialai" value="enterAndPrepareBowAmbush"/>
-     <property name="itemtype" value="food-fish"/>
-     <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="545" gid="7234" x="688" y="880" width="128" height="128">
-    <properties>
-     <property name="ammo" type="int" value="0"/>
-     <property name="defaultattack" value="bow-shot-until-empty"/>
-     <property name="entrypoint" type="object" value="546"/>
-     <property name="exitpoint" type="object" value="560"/>
-     <property name="facedegrees" type="float" value="90"/>
-     <property name="initialai" value="enterAndPrepareBowAmbush"/>
-     <property name="itemtype" value="mana-peppers"/>
-     <property name="z" type="float" value="64"/>
-    </properties>
-   </object>
-   <object id="287" name="entrypoint" x="656" y="936">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-    <point/>
-   </object>
-   <object id="546" name="entrypoint" x="688" y="936">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
+   <object id="287" name="entrypoint" x="720" y="936">
     <point/>
    </object>
    <object id="299" gid="6589" x="984" y="976" width="32" height="48">
@@ -1327,43 +1364,45 @@ and tap    to throw</text>
      <property name="itemtype" value="item-throwing-axe"/>
     </properties>
    </object>
-   <object id="310" template="mapobjects/banditcave/wall-torch.tx" x="592" y="984"/>
-   <object id="351" gid="6612" x="232" y="1064" width="16" height="16">
+   <object id="310" template="mapobjects/banditcave/wall-torch.tx" x="480" y="960"/>
+   <object id="731" template="mapobjects/banditcave/wall-torch.tx" x="576" y="960"/>
+   <object id="732" template="mapobjects/banditcave/wall-torch.tx" x="672" y="960"/>
+   <object id="351" gid="6612" x="232" y="1036" width="16" height="16">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="354" gid="6605" x="234" y="1073" width="16" height="16" rotation="345">
+   <object id="354" gid="6605" x="234" y="1045" width="16" height="16" rotation="345">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="355" gid="6610" x="210" y="1096" width="16" height="16" rotation="15">
+   <object id="355" gid="6610" x="210" y="1068" width="16" height="16" rotation="15">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="356" gid="6604" x="208" y="1104" width="16" height="16" rotation="15">
+   <object id="356" gid="6604" x="208" y="1076" width="16" height="16" rotation="15">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="357" gid="6609" x="253.66" y="1024" width="16" height="16" rotation="45">
+   <object id="357" gid="6609" x="253.66" y="996" width="16" height="16" rotation="45">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="358" gid="6603" x="248" y="1029.66" width="16" height="16" rotation="45">
+   <object id="358" gid="6603" x="248" y="1001.66" width="16" height="16" rotation="45">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
@@ -1402,99 +1441,253 @@ to sprint past archers</text>
    <object id="550" template="mapobjects/items/stone.tx" x="1224" y="1000"/>
    <object id="552" template="mapobjects/items/stone.tx" x="1136" y="1128"/>
    <object id="553" template="mapobjects/items/stone.tx" x="1096" y="1080"/>
-   <object id="557" name="exitpoint" x="496" y="832">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
+   <object id="557" name="exitpoint" x="528" y="832">
     <point/>
    </object>
-   <object id="558" name="exitpoint" x="528" y="832">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
+   <object id="558" name="exitpoint" x="624" y="832">
     <point/>
    </object>
-   <object id="559" name="exitpoint" x="656" y="832">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
+   <object id="559" name="exitpoint" x="720" y="832">
     <point/>
    </object>
-   <object id="560" name="exitpoint" x="688" y="832">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-    <point/>
-   </object>
-   <object id="564" template="mapobjects/banditcave/crystal-spikes/00.tx" x="320" y="1016"/>
-   <object id="621" template="mapobjects/banditcave/crystal-spikes/00.tx" x="584" y="1016"/>
-   <object id="615" template="mapobjects/banditcave/crystal-spikes/00.tx" x="432" y="1064">
+   <object id="564" template="mapobjects/banditcave/crystal-spikes/00.tx" x="320" y="988"/>
+   <object id="621" template="mapobjects/banditcave/crystal-spikes/00.tx" x="584" y="988"/>
+   <object id="615" template="mapobjects/banditcave/crystal-spikes/00.tx" x="320" y="1024">
     <properties>
      <property name="bloodyanimation" type="int" value="180"/>
     </properties>
    </object>
-   <object id="579" template="mapobjects/banditcave/crystal-spikes/00.tx" x="728" y="1080">
+   <object id="771" template="mapobjects/banditcave/crystal-spikes/00.tx" x="616" y="1032">
+    <properties>
+     <property name="bloodyanimation" type="int" value="180"/>
+    </properties>
+   </object>
+   <object id="579" template="mapobjects/banditcave/crystal-spikes/00.tx" x="384" y="1048">
     <properties>
      <property name="attackdegrees" type="float" value="180"/>
     </properties>
    </object>
-   <object id="565" template="mapobjects/banditcave/crystal-spikes/03.tx" x="704" y="1040">
+   <object id="770" template="mapobjects/banditcave/crystal-spikes/00.tx" x="680" y="1056">
     <properties>
      <property name="attackdegrees" type="float" value="180"/>
     </properties>
    </object>
-   <object id="578" template="mapobjects/banditcave/crystal-spikes/03.tx" x="672" y="1192">
+   <object id="745" template="mapobjects/banditcave/crystal-spikes/00.tx" x="352" y="1088">
     <properties>
      <property name="attackdegrees" type="float" value="180"/>
     </properties>
    </object>
-   <object id="566" template="mapobjects/banditcave/crystal-spikes/04.tx" x="432" y="1016"/>
-   <object id="620" template="mapobjects/banditcave/crystal-spikes/04.tx" x="696" y="1024"/>
-   <object id="577" template="mapobjects/banditcave/crystal-spikes/04.tx" x="720" y="1096">
+   <object id="769" template="mapobjects/banditcave/crystal-spikes/00.tx" x="648" y="1096">
     <properties>
      <property name="attackdegrees" type="float" value="180"/>
     </properties>
    </object>
-   <object id="567" template="mapobjects/banditcave/crystal-spikes/07.tx" x="344" y="1024"/>
-   <object id="619" template="mapobjects/banditcave/crystal-spikes/07.tx" x="616" y="1024"/>
-   <object id="576" template="mapobjects/banditcave/crystal-spikes/07.tx" x="704" y="1128">
+   <object id="565" template="mapobjects/banditcave/crystal-spikes/03.tx" x="704" y="1012">
     <properties>
      <property name="attackdegrees" type="float" value="180"/>
     </properties>
    </object>
-   <object id="568" template="mapobjects/banditcave/crystal-spikes/08.tx" x="384" y="1024"/>
-   <object id="618" template="mapobjects/banditcave/crystal-spikes/08.tx" x="656" y="1024"/>
-   <object id="575" template="mapobjects/banditcave/crystal-spikes/08.tx" x="720" y="1120">
+   <object id="578" template="mapobjects/banditcave/crystal-spikes/03.tx" x="304" y="1112">
     <properties>
      <property name="attackdegrees" type="float" value="180"/>
     </properties>
    </object>
-   <object id="569" template="mapobjects/banditcave/crystal-spikes/28.tx" x="552" y="1024"/>
-   <object id="574" template="mapobjects/banditcave/crystal-spikes/28.tx" x="720" y="1064">
+   <object id="768" template="mapobjects/banditcave/crystal-spikes/03.tx" x="600" y="1120">
     <properties>
      <property name="attackdegrees" type="float" value="180"/>
     </properties>
    </object>
-   <object id="616" template="mapobjects/banditcave/crystal-spikes/28.tx" x="584" y="1120">
+   <object id="750" template="mapobjects/banditcave/crystal-spikes/03.tx" x="384" y="1104">
     <properties>
      <property name="attackdegrees" type="float" value="180"/>
     </properties>
    </object>
-   <object id="570" template="mapobjects/banditcave/crystal-spikes/16.tx" x="472" y="1024"/>
-   <object id="573" template="mapobjects/banditcave/crystal-spikes/16.tx" x="712" y="1152">
+   <object id="767" template="mapobjects/banditcave/crystal-spikes/03.tx" x="680" y="1112">
     <properties>
      <property name="attackdegrees" type="float" value="180"/>
     </properties>
    </object>
-   <object id="617" template="mapobjects/banditcave/crystal-spikes/16.tx" x="592" y="1136">
+   <object id="566" template="mapobjects/banditcave/crystal-spikes/04.tx" x="432" y="988"/>
+   <object id="620" template="mapobjects/banditcave/crystal-spikes/04.tx" x="696" y="996"/>
+   <object id="577" template="mapobjects/banditcave/crystal-spikes/04.tx" x="376" y="1064">
     <properties>
      <property name="attackdegrees" type="float" value="180"/>
     </properties>
    </object>
-   <object id="571" template="mapobjects/banditcave/crystal-spikes/23.tx" x="512" y="1016" width="40" height="32"/>
-   <object id="572" template="mapobjects/banditcave/crystal-spikes/23.tx" x="696" y="1168" width="40" height="32">
+   <object id="766" template="mapobjects/banditcave/crystal-spikes/04.tx" x="672" y="1072">
     <properties>
      <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="744" template="mapobjects/banditcave/crystal-spikes/04.tx" x="344" y="1104">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="765" template="mapobjects/banditcave/crystal-spikes/04.tx" x="640" y="1112">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="567" template="mapobjects/banditcave/crystal-spikes/07.tx" x="344" y="996"/>
+   <object id="619" template="mapobjects/banditcave/crystal-spikes/07.tx" x="616" y="996"/>
+   <object id="576" template="mapobjects/banditcave/crystal-spikes/07.tx" x="408" y="1096">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="764" template="mapobjects/banditcave/crystal-spikes/07.tx" x="704" y="1104">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="749" template="mapobjects/banditcave/crystal-spikes/07.tx" x="416" y="1040">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="763" template="mapobjects/banditcave/crystal-spikes/07.tx" x="712" y="1048">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="568" template="mapobjects/banditcave/crystal-spikes/08.tx" x="384" y="996"/>
+   <object id="618" template="mapobjects/banditcave/crystal-spikes/08.tx" x="656" y="996"/>
+   <object id="575" template="mapobjects/banditcave/crystal-spikes/08.tx" x="424" y="1088">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="761" template="mapobjects/banditcave/crystal-spikes/08.tx" x="720" y="1096">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="748" template="mapobjects/banditcave/crystal-spikes/08.tx" x="432" y="1032">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="760" template="mapobjects/banditcave/crystal-spikes/08.tx" x="728" y="1040">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="569" template="mapobjects/banditcave/crystal-spikes/28.tx" x="552" y="996"/>
+   <object id="574" template="mapobjects/banditcave/crystal-spikes/28.tx" x="376" y="1032">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="758" template="mapobjects/banditcave/crystal-spikes/28.tx" x="672" y="1040">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="772" template="mapobjects/banditcave/crystal-spikes/28.tx" x="728" y="1000">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="741" template="mapobjects/banditcave/crystal-spikes/28.tx" x="344" y="1072">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="757" template="mapobjects/banditcave/crystal-spikes/28.tx" x="640" y="1080">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="616" template="mapobjects/banditcave/crystal-spikes/28.tx" x="304" y="1048">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="756" template="mapobjects/banditcave/crystal-spikes/28.tx" x="600" y="1056">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="570" template="mapobjects/banditcave/crystal-spikes/16.tx" x="472" y="996"/>
+   <object id="573" template="mapobjects/banditcave/crystal-spikes/16.tx" x="416" y="1120">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="747" template="mapobjects/banditcave/crystal-spikes/16.tx" x="424" y="1064">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="754" template="mapobjects/banditcave/crystal-spikes/16.tx" x="720" y="1072">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="617" template="mapobjects/banditcave/crystal-spikes/16.tx" x="312" y="1064">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="753" template="mapobjects/banditcave/crystal-spikes/16.tx" x="608" y="1072">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="571" template="mapobjects/banditcave/crystal-spikes/23.tx" x="512" y="988" width="40" height="32"/>
+   <object id="746" template="mapobjects/banditcave/crystal-spikes/23.tx" x="408" y="1080" width="40" height="32">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="751" template="mapobjects/banditcave/crystal-spikes/23.tx" x="704" y="1088" width="40" height="32">
+    <properties>
+     <property name="attackdegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="733" name="Attack" x="16" y="1064" width="128" height="16">
+    <properties>
+     <property name="drawz" type="float" value="100"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">During sprint</text>
+   </object>
+   <object id="734" name="attackbutton" gid="7240" x="120" y="1096" width="14" height="14">
+    <properties>
+     <property name="drawz" type="float" value="100"/>
+    </properties>
+   </object>
+   <object id="735" name="Jump" x="32" y="1088" width="72" height="16">
+    <properties>
+     <property name="drawz" type="float" value="100"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Long jump</text>
+   </object>
+   <object id="736" gid="7242" x="152" y="1096" width="14" height="14">
+    <properties>
+     <property name="drawz" type="float" value="100"/>
+    </properties>
+   </object>
+   <object id="737" name="or" x="128" y="1088" width="16" height="16">
+    <properties>
+     <property name="drawz" type="float" value="100"/>
+    </properties>
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
+   </object>
+   <object id="738" name="sprintbutton" gid="7254" x="168" y="1072" width="14" height="14">
+    <properties>
+     <property name="drawz" type="float" value="100"/>
+    </properties>
+   </object>
+   <object id="739" name="or" x="144" y="1064" width="16" height="16">
+    <properties>
+     <property name="drawz" type="float" value="100"/>
+    </properties>
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
+   </object>
+   <object id="740" gid="7250" x="136" y="1072" width="14" height="14">
+    <properties>
+     <property name="drawz" type="float" value="100"/>
     </properties>
    </object>
   </objectgroup>
