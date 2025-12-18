@@ -65,6 +65,8 @@ function MuscleBandit:duringApproach(opponent)
         end
     end
 
+    Characters.search("players", isComing)
+    if nextstate then return nextstate, nextstatearg end
     Characters.search("projectiles", isComing)
     if nextstate then return nextstate, nextstatearg end
     Characters.search("enemies", isThrownEnemyComing)
