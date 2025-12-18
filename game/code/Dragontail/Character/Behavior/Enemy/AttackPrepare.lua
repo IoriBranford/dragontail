@@ -12,7 +12,7 @@ AttackPrepare._nrec = Behavior._nrec + 1
 function AttackPrepare:start()
     local enemy = self.character
     enemy.numopponentshit = 0
-    self.trajectory = enemy.attack.projectiletype and {
+    self.trajectory = (enemy.weaponinhand or enemy.attack.projectiletype) and {
         dots = {}
     }
 end
@@ -24,7 +24,8 @@ function AttackPrepare:fixedupdate()
     local trajectory = self.trajectory
     if trajectory then
         local targetx, targety, targetz = Shoot.getTargetObjectPosition(enemy, target)
-        Shoot.calculateTrajectoryTowardsTarget(enemy, enemy.attack.projectiletype,
+        local projectiletype = enemy.weaponinhand or enemy.attack.projectiletype
+        Shoot.calculateTrajectoryTowardsTarget(enemy, projectiletype,
             targetx, targety, targetz, trajectory)
 
         local statetime = enemy.state.statetime or 1
@@ -47,10 +48,12 @@ end
 function AttackPrepare:interrupt(...)
     local enemy = self.character
     enemy:resetFlash()
-    if self.trajectory then
-        for _, dot in ipairs(self.trajectory.dots) do
-            dot:disappear()
+    local trajectory = self.trajectory
+    if trajectory then
+        for i = #trajectory, 1, -1 do
+            trajectory[i] = nil
         end
+        Shoot.UpdateTrajectoryDots(trajectory.dots, trajectory)
     end
     return ...
 end
