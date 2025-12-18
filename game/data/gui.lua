@@ -1250,7 +1250,7 @@ return {
               width = 24,
               height = 24,
               rotation = 0,
-              gid = 389,
+              gid = 390,
               visible = true,
               properties = {}
             },
@@ -1264,7 +1264,7 @@ return {
               width = 24,
               height = 24,
               rotation = 0,
-              gid = 386,
+              gid = 387,
               visible = true,
               properties = {}
             },
@@ -1279,7 +1279,7 @@ return {
               height = 24,
               rotation = 0,
               gid = 389,
-              visible = true,
+              visible = false,
               properties = {}
             },
             {
@@ -1293,7 +1293,7 @@ return {
               height = 24,
               rotation = 0,
               gid = 386,
-              visible = true,
+              visible = false,
               properties = {}
             },
             {
@@ -1307,7 +1307,7 @@ return {
               height = 24,
               rotation = 0,
               gid = 390,
-              visible = true,
+              visible = false,
               properties = {}
             },
             {
@@ -1321,7 +1321,7 @@ return {
               height = 24,
               rotation = 0,
               gid = 387,
-              visible = true,
+              visible = false,
               properties = {}
             },
             {
@@ -1335,7 +1335,7 @@ return {
               height = 24,
               rotation = 0,
               gid = 389,
-              visible = true,
+              visible = false,
               properties = {
                 ["animationspeed"] = 0
               }
@@ -1351,7 +1351,7 @@ return {
               height = 24,
               rotation = 0,
               gid = 389,
-              visible = true,
+              visible = false,
               properties = {
                 ["animationspeed"] = 0
               }
@@ -1367,7 +1367,7 @@ return {
               height = 24,
               rotation = 0,
               gid = 389,
-              visible = true,
+              visible = false,
               properties = {
                 ["animationspeed"] = 0
               }
@@ -1399,7 +1399,7 @@ return {
               height = 24,
               rotation = 0,
               gid = 389,
-              visible = true,
+              visible = false,
               properties = {
                 ["animationspeed"] = 0
               }
@@ -1415,7 +1415,7 @@ return {
               height = 24,
               rotation = 0,
               gid = 389,
-              visible = true,
+              visible = false,
               properties = {
                 ["animationspeed"] = 0
               }
@@ -1463,7 +1463,7 @@ return {
               height = 24,
               rotation = 0,
               gid = 389,
-              visible = true,
+              visible = false,
               properties = {
                 ["animationspeed"] = 0
               }
@@ -1479,7 +1479,7 @@ return {
               height = 24,
               rotation = 0,
               gid = 389,
-              visible = true,
+              visible = false,
               properties = {
                 ["animationspeed"] = 0
               }

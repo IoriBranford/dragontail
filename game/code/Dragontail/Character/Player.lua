@@ -138,7 +138,7 @@ function Player:init()
     self.sprintbutton = Inputs.getAction("sprint")
     self.flybutton = Inputs.getAction("fly")
     Fighter.init(self)
-    self.inventory = Inventory()
+    self.inventory = Inventory(2)
     Combo.reset(self)
     -- self.runenergy = self.runenergy or 100
     -- self.runenergymax = self.runenergymax or self.runenergy

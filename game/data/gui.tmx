@@ -202,23 +202,23 @@ ALL CONTENT SUBJECT TO CHANGE</text>
   <objectgroup id="12" name="hud_weaponslots">
    <object id="39" name="emptyslot1" gid="388" x="20" y="54" width="24" height="24"/>
    <object id="43" name="fullslot1" gid="385" x="20" y="54" width="24" height="24"/>
-   <object id="40" name="emptyslot2" gid="389" x="44" y="54" width="24" height="24"/>
-   <object id="44" name="fullslot2" gid="386" x="44" y="54" width="24" height="24"/>
-   <object id="41" name="emptyslot3" gid="389" x="68" y="54" width="24" height="24"/>
-   <object id="45" name="fullslot3" gid="386" x="68" y="54" width="24" height="24"/>
-   <object id="42" name="emptyslot4" gid="390" x="92" y="54" width="24" height="24"/>
-   <object id="46" name="fullslot4" gid="387" x="92" y="54" width="24" height="24"/>
-   <object id="54" name="4slotweapon1" gid="389" x="56" y="54" width="24" height="24">
+   <object id="40" name="emptyslot2" gid="390" x="44" y="54" width="24" height="24"/>
+   <object id="44" name="fullslot2" gid="387" x="44" y="54" width="24" height="24"/>
+   <object id="41" name="emptyslot3" gid="389" x="68" y="54" width="24" height="24" visible="0"/>
+   <object id="45" name="fullslot3" gid="386" x="68" y="54" width="24" height="24" visible="0"/>
+   <object id="42" name="emptyslot4" gid="390" x="92" y="54" width="24" height="24" visible="0"/>
+   <object id="46" name="fullslot4" gid="387" x="92" y="54" width="24" height="24" visible="0"/>
+   <object id="54" name="4slotweapon1" gid="389" x="56" y="54" width="24" height="24" visible="0">
     <properties>
      <property name="animationspeed" type="float" value="0"/>
     </properties>
    </object>
-   <object id="56" name="3slotweapon1" gid="389" x="44" y="54" width="24" height="24">
+   <object id="56" name="3slotweapon1" gid="389" x="44" y="54" width="24" height="24" visible="0">
     <properties>
      <property name="animationspeed" type="float" value="0"/>
     </properties>
    </object>
-   <object id="55" name="3slotweapon2" gid="389" x="68" y="54" width="24" height="24">
+   <object id="55" name="3slotweapon2" gid="389" x="68" y="54" width="24" height="24" visible="0">
     <properties>
      <property name="animationspeed" type="float" value="0"/>
     </properties>
@@ -228,12 +228,12 @@ ALL CONTENT SUBJECT TO CHANGE</text>
      <property name="animationspeed" type="float" value="0"/>
     </properties>
    </object>
-   <object id="52" name="2slotweapon2" gid="389" x="56" y="54" width="24" height="24">
+   <object id="52" name="2slotweapon2" gid="389" x="56" y="54" width="24" height="24" visible="0">
     <properties>
      <property name="animationspeed" type="float" value="0"/>
     </properties>
    </object>
-   <object id="53" name="2slotweapon3" gid="389" x="80" y="54" width="24" height="24">
+   <object id="53" name="2slotweapon3" gid="389" x="80" y="54" width="24" height="24" visible="0">
     <properties>
      <property name="animationspeed" type="float" value="0"/>
     </properties>
@@ -248,12 +248,12 @@ ALL CONTENT SUBJECT TO CHANGE</text>
      <property name="animationspeed" type="float" value="0"/>
     </properties>
    </object>
-   <object id="49" name="1slotweapon3" gid="389" x="68" y="54" width="24" height="24">
+   <object id="49" name="1slotweapon3" gid="389" x="68" y="54" width="24" height="24" visible="0">
     <properties>
      <property name="animationspeed" type="float" value="0"/>
     </properties>
    </object>
-   <object id="50" name="1slotweapon4" gid="389" x="92" y="54" width="24" height="24">
+   <object id="50" name="1slotweapon4" gid="389" x="92" y="54" width="24" height="24" visible="0">
     <properties>
      <property name="animationspeed" type="float" value="0"/>
     </properties>
