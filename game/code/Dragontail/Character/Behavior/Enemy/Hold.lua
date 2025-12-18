@@ -6,11 +6,13 @@ local Behavior     = require "Dragontail.Character.Behavior"
 local Guard        = require "Dragontail.Character.Component.Guard"
 local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
 local Body                 = require "Dragontail.Character.Component.Body"
+local Shoot                = require "Dragontail.Character.Component.Shoot"
+local Color                = require "Tiled.Color"
 
 ---@class EnemyHold:Behavior
 ---@field character Enemy
 local EnemyHold = pooledclass(Behavior)
-EnemyHold._nrec = Behavior._nrec + 2
+EnemyHold._nrec = Behavior._nrec + 3
 
 function EnemyHold:start(held)
     local enemy = self.character
@@ -31,6 +33,8 @@ function EnemyHold:start(held)
 
     if held.team == "players" then
         enemy.statetime = enemy.statetime * 3
+    else
+        self.trajectory = { dots = {} }
     end
     self.holddestangle = DirectionalAnimation.SnapAngle(enemy.holdangle, enemy.animationdirections)
     if held.faceangle then
@@ -89,17 +93,53 @@ function EnemyHold:fixedupdate()
     end
 
     enemy:updateFlash(enemy.statetime)
+
+    local trajectory = self.trajectory
+    if trajectory then
+        local throwtarget = enemy.opponents[1]
+        local dx, dy = throwtarget.x - enemy.x, throwtarget.y - enemy.y
+        if dx ~= 0 or dy ~= 0 then
+            dx, dy = math.norm(dx, dy)
+            local r = held.bodyradius
+            dx = dx * r
+            dy = dy * r
+            Shoot.calculateTrajectory(self, held,
+                held.x, held.y, held.z + held.bodyheight/2,
+                dx, dy, 4, trajectory)
+
+            local statetime = enemy.state.statetime or 1
+            local timeleft = enemy.statetime or 0
+            local scale = 1 + timeleft/statetime
+            local alpha = math.max(0, math.min(1, 1 - timeleft/statetime))
+            local color = Color.asARGBInt(1, .5, .5, alpha)
+            Shoot.UpdateTrajectoryDots(trajectory.dots, trajectory, scale, color)
+
+            for i = #trajectory, 1, -1 do
+                trajectory[i] = nil
+            end
+        end
+    end
+end
+
+function EnemyHold:cleanup()
+    local enemy = self.character
+    enemy:resetFlash()
+    local trajectory = self.trajectory
+    if trajectory then
+        for i = #trajectory, 1, -1 do
+            trajectory[i] = nil
+        end
+        Shoot.UpdateTrajectoryDots(trajectory.dots, trajectory)
+    end
 end
 
 function EnemyHold:interrupt(...)
-    local enemy = self.character
-    enemy:resetFlash()
+    self:cleanup()
     return ...
 end
 
 function EnemyHold:timeout(...)
-    local enemy = self.character
-    enemy:resetFlash()
+    self:cleanup()
     return ...
 end
 
