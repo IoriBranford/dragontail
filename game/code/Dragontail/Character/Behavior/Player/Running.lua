@@ -188,7 +188,7 @@ function PlayerRunning:fixedupdate()
         end
     end
 
-    if self.runningtime < 15 then
+    if self.runningtime < 6 then
     elseif player.sprintbutton.down then --player.runenergy > 0 and rundown then
     --     player.runenergy = player.runenergy - 1
     else
