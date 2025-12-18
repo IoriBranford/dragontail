@@ -313,7 +313,7 @@
     <polyline points="0,0 320,0"/>
    </object>
    <object id="237" template="mapobjects/OutwardBoundary.tx" x="448" y="32" visible="1">
-    <polygon points="0,-32 0,64 512,64 512,-32"/>
+    <polygon points="0,-32 0,64 352,64 352,-32"/>
    </object>
    <object id="513" name="joystick" gid="6833" x="416" y="80" width="16" height="16"/>
    <object id="516" name="Move" x="376" y="64" width="32" height="18">
@@ -981,7 +981,7 @@ body to grapple</text>
     </properties>
    </object>
    <object id="528" name="Instruction" x="3208" y="144" width="136" height="32">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Attack their unprotected side!</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Attack the unprotected side!</text>
    </object>
    <object id="529" gid="6833" x="2984" y="120" width="16" height="16" visible="0"/>
    <object id="521" name="attackbutton" gid="7244" x="2976" y="160" width="14" height="14" visible="0"/>
@@ -1302,7 +1302,7 @@ and tap    to throw</text>
      <property name="itemtype" value="mana-peppers"/>
     </properties>
    </object>
-   <object id="305" gid="6589" x="1112" y="1024" width="32" height="48">
+   <object id="305" gid="6589" x="1104" y="1016" width="32" height="48">
     <properties>
      <property name="itemtype" value="food-fish"/>
     </properties>
@@ -1322,7 +1322,7 @@ and tap    to throw</text>
      <property name="itemtype" value="food-fish"/>
     </properties>
    </object>
-   <object id="303" gid="6589" x="1152" y="992" width="32" height="48">
+   <object id="303" gid="6589" x="1144" y="1032" width="32" height="48">
     <properties>
      <property name="itemtype" value="item-throwing-axe"/>
     </properties>

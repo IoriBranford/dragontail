@@ -16617,8 +16617,8 @@ return {
               polygon = {
                 { x = 0, y = -32 },
                 { x = 0, y = 64 },
-                { x = 512, y = 64 },
-                { x = 512, y = -32 }
+                { x = 352, y = 64 },
+                { x = 352, y = -32 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -19775,7 +19775,7 @@ return {
               height = 32,
               rotation = 0,
               visible = true,
-              text = "Attack their unprotected side!",
+              text = "Attack the unprotected side!",
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
@@ -20876,8 +20876,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1112,
-              y = 1024,
+              x = 1104,
+              y = 1016,
               width = 32,
               height = 48,
               rotation = 0,
@@ -20940,8 +20940,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1152,
-              y = 992,
+              x = 1144,
+              y = 1032,
               width = 32,
               height = 48,
               rotation = 0,
