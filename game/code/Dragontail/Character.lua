@@ -300,6 +300,14 @@ function Character:isCylinderFullyOnCamera(camera)
     return iw and iw == w and ih == h
 end
 
+---@param other Character
+---@return boolean
+function Character:isHigherRankedTeammateOf(other)
+    return (self.team or other.team)
+        and self.team == other.team
+        and self.maxhealth > other.maxhealth
+end
+
 function Character:disappear()
     self.disappeared = true
 end
