@@ -10,15 +10,12 @@ local Grabbing = pooledclass(Behavior)
 function Grabbing:start(grabbed)
     local fighter = self.character
     local dx, dy = grabbed.x - fighter.x, grabbed.y - fighter.y
-    local guarded
-    if dx == 0 and dy == 0 then
-        guarded = false
-    else
-        guarded = Guard.isUnitVectorAgainstGuardArc(grabbed, math.norm(dx, dy))
-    end
+    local guarded = grabbed:isHigherRankedTeammateOf(fighter)
+        or dx ~= 0 and dy ~= 0 and
+            Guard.isUnitVectorAgainstGuardArc(grabbed, math.norm(dx, dy))
     HoldOpponent.startHolding(fighter, grabbed)
     if guarded then
-        fighter.holdstrength = 0
+        fighter.holdstrength = fighter.statetime or 0
     end
 end
 
@@ -28,19 +25,6 @@ function Grabbing:fixedupdate()
     Face.faceObject(fighter, fighter.heldopponent,
         fighter.state.animation, fighter.animationframe, fighter.state.loopframe)
     HoldOpponent.updateVelocities(fighter)
-end
-
-function Grabbing:timeout(...)
-    local grabber = self.character
-    local grabbed = grabber.heldopponent
-
-    if grabber.team == "enemies"
-    and grabbed.team == "enemies"
-    and grabber.maxhealth < grabbed.maxhealth then
-        HoldOpponent.stopHolding(grabber, grabbed)
-        return grabber.recoverai
-    end
-    return ...
 end
 
 return Grabbing

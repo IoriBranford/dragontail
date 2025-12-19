@@ -98,10 +98,8 @@ function CatchAttack:timeout()
     and HoldOpponent.isHolding(enemy, attacker)
     then
         attacker:resetFlash()
-        if attacker.team == "enemies"
-        and enemy.maxhealth < attacker.maxhealth then
-            HoldOpponent.stopHolding(enemy, attacker)
-            return enemy.recoverai or "stand"
+        if attacker:isHigherRankedTeammateOf(enemy) then
+            attacker.holdstrength = 0
         end
         return "hold", attacker
     else
