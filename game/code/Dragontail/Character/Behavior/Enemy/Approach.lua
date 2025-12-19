@@ -52,10 +52,6 @@ function Approach:fixedupdate()
         return self:timeout()
     end
 
-    if math.distsq(enemy.x, enemy.y, targetx, targety) > 320*320 then
-        speed = speed * 1.5
-    end
-
     destx, desty = enemy:navigateAroundSolid(destx, desty)
     self.destx, self.desty = destx, desty
     Face.faceObject(enemy, target, enemy.state.animation, enemy.animationframe)
