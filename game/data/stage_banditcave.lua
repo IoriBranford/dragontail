@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 69,
-  nextobjectid = 773,
+  nextobjectid = 774,
   backgroundcolor = { 64, 64, 64 },
   properties = {},
   tilesets = {
@@ -19905,6 +19905,104 @@ return {
         {
           type = "objectgroup",
           draworder = "topdown",
+          id = 56,
+          name = "+spearsshields",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = 5
+          },
+          objects = {
+            {
+              id = 307,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 2888,
+              y = 336,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 561,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 2888,
+              y = 264,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 562,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 3008,
+              y = 240,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 773,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 3024,
+              y = 304,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 563,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 3000,
+              y = 360,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
           id = 29,
           name = "+archers",
           class = "Room",
@@ -19915,7 +20013,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 5
+            ["donewhenenemiesleft"] = 1
           },
           objects = {
             {
@@ -20214,88 +20312,6 @@ return {
                 ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff",
                 ["z"] = 64
-              }
-            },
-            {
-              id = 562,
-              name = "",
-              type = "bandit-dagger",
-              shape = "rectangle",
-              x = 3024,
-              y = 256,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7237,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 563,
-              name = "",
-              type = "bandit-dagger",
-              shape = "rectangle",
-              x = 3024,
-              y = 336,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7237,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
-          id = 56,
-          name = "+spears",
-          class = "Room",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {
-            ["donewhenenemiesleft"] = 1
-          },
-          objects = {
-            {
-              id = 307,
-              name = "",
-              type = "bandit-spear",
-              shape = "rectangle",
-              x = 3016,
-              y = 376,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7235,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 561,
-              name = "",
-              type = "bandit-spear",
-              shape = "rectangle",
-              x = 3016,
-              y = 280,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7235,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
               }
             }
           }
