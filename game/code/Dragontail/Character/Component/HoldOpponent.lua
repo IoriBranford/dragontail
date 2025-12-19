@@ -29,11 +29,11 @@ function HoldOpponent:startHolding(opponent, holdangle)
     opponent:stopAttack()
     Guard.stopGuarding(opponent)
     opponent.heldby = self
-    StateMachine.start(opponent, opponent.heldai or "held", self)
     holdangle = holdangle or HoldOpponent.getInitialHoldAngle(self, opponent)
     self.holdangle = holdangle
     self.initialholdstrength = self.initialholdstrength or HoldOpponent.DefaultInitialHoldStrength
     self.holdstrength = self.initialholdstrength
+    StateMachine.start(opponent, opponent.heldai or "held", self)
     return holdangle
 end
 
@@ -82,6 +82,15 @@ function HoldOpponent:heldBy(holder)
         local dx, dy = holder.x - self.x, holder.y - self.y
         if dx == 0 and dy == 0 then
             dx = 1
+        end
+
+        local struggle = self.strugglestrength
+        if struggle then
+            local holdstrength = HoldOpponent.weakenHold(holder, struggle)
+            if holdstrength <= 0 then
+                StateMachine.start(holder, "breakaway", self)
+                return "breakaway", holder
+            end
         end
         coroutine.yield()
     end

@@ -41,15 +41,6 @@ function PlayerHoldEnemy:fixedupdate()
         return "walk"
     end
 
-    local struggle = enemy.strugglestrength
-    if struggle then
-        local holdstrength = HoldOpponent.weakenHold(player, struggle)
-        if holdstrength <= 0 then
-            StateMachine.start(enemy, "breakaway", player)
-            return "breakaway", enemy
-        end
-    end
-
     local inx, iny = player:getJoystick()
     local normalattackpressed = player:isActionRecentlyPressed("attack")
     local runpressed = player:isActionDownAndRecentlyPressed("sprint")
