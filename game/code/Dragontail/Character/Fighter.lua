@@ -14,6 +14,7 @@ local Color                = require "Tiled.Color"
 local Guard                = require "Dragontail.Character.Component.Guard"
 local Character            = require "Dragontail.Character"
 local WeaponInHand         = require "Dragontail.Character.Component.WeaponInHand"
+local Invulnerability      = require "Dragontail.Character.Component.Invulnerability"
 
 ---@class Dash
 ---@field dashsound string?
@@ -63,6 +64,13 @@ function Fighter:initAseprite()
     WeaponInHand.loadHandPositions(self)
 end
 
+function Fighter:fixedupdate()
+    Common.fixedupdate(self)
+    if self:isHitStopOver() then
+        Invulnerability.updateInvuln(self)
+    end
+end
+
 function Fighter:drawAseprite(fixedfrac)
     local animation = self.aseanimation or self.aseprite
     local aframe = self.animationframe or 1
@@ -72,6 +80,7 @@ function Fighter:drawAseprite(fixedfrac)
     end
 
     local r,g,b,a = Color.unpack(self.color)
+    a = a * Invulnerability.getInvulnAlpha(self)
     love.graphics.setColor(r,g,b,a)
 
     local velx, vely = self.velx or 0, self.vely or 0

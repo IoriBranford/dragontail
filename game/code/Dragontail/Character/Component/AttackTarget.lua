@@ -1,7 +1,7 @@
 local AttackerSlot = require "Dragontail.Character.Component.AttackerSlot"
 local Attacker     = require "Dragontail.Character.Component.Attacker"
 
----@class AttackTarget:Body,Attacker
+---@class AttackTarget:Body,Attacker,Invulnerability
 ---@field health number
 ---@field maxhealth number
 ---@field canbeattacked boolean

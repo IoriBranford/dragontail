@@ -19,6 +19,7 @@
 ---@field opponentstateonfinalhit string
 ---TODO the below could be part of fighter data or damage states
 ---@field opponentstun integer
+---@field mercyinvuln integer
 ---@field hurtparticle string
 ---@field hurtcolorcycle string
 ---@field pushbackspeed number

@@ -217,9 +217,8 @@ function Attacker:checkAttackCollision(target, attack, attackangle)
     attack = attack or self.attack
     if not attack then return end
 
-    if target.hurtstun > 0 then
-        return
-    end
+    if (target.invulntime or 0) > 0 then return end
+    if target.hurtstun > 0 then return end
     if not target.canbeattacked then
         if not self.attack.canjuggle or not target.canbejuggled then
             return
