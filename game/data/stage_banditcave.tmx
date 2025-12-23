@@ -1007,12 +1007,11 @@ body to grapple</text>
   </objectgroup>
   <objectgroup id="56" name="+spearsshields" class="Room">
    <properties>
-    <property name="donewhenenemiesleft" type="int" value="5"/>
+    <property name="donewhenenemiesleft" type="int" value="3"/>
    </properties>
    <object id="307" template="mapobjects/bandit/spear.tx" x="2888" y="336"/>
    <object id="561" template="mapobjects/bandit/spear.tx" x="2888" y="264"/>
    <object id="562" template="mapobjects/bandit/shield.tx" x="3008" y="240"/>
-   <object id="773" template="mapobjects/bandit/shield.tx" x="3024" y="304"/>
    <object id="563" template="mapobjects/bandit/shield.tx" x="3000" y="360"/>
   </objectgroup>
   <objectgroup id="29" name="+archers" class="Room">

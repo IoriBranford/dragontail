@@ -19915,7 +19915,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 5
+            ["donewhenenemiesleft"] = 3
           },
           objects = {
             {
@@ -19957,22 +19957,6 @@ return {
               shape = "rectangle",
               x = 3008,
               y = 240,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7274,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 773,
-              name = "",
-              type = "bandit-shield",
-              shape = "rectangle",
-              x = 3024,
-              y = 304,
               width = 64,
               height = 64,
               rotation = 0,
