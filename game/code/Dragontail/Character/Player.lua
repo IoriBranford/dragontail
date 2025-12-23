@@ -279,7 +279,7 @@ function Player:fixedupdate()
     self.inputlog:logActionState(self.flybutton)
     self.inputlog:advance()
     self:updateBreathCharge(self.manachargerate, self.manadecayrate)
-    Character.fixedupdate(self)
+    Fighter.fixedupdate(self)
 end
 
 function Player:accelerateTowardsJoystick()
