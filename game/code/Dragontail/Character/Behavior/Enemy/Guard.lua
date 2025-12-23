@@ -8,8 +8,6 @@ local Guard                = require "Dragontail.Character.Component.Guard"
 local EnemyGuard = pooledclass(Behavior)
 
 function EnemyGuard:start(...)
-    local enemy = self.character
-    enemy.velx, enemy.vely = 0, 0
 end
 
 function EnemyGuard:fixedupdate()
@@ -19,6 +17,7 @@ function EnemyGuard:fixedupdate()
         enemy.state.animation, enemy.animationframe, enemy.state.loopframe)
     local guardangle = DirectionalAnimation.SnapAngle(faceangle, enemy.animationdirections or 4)
     Guard.startGuarding(enemy, guardangle)
+    enemy:decelerateXYto0()
 
     local numguardedhitsuntilcounter = enemy.numguardedhitsuntilcounter
     if numguardedhitsuntilcounter then
