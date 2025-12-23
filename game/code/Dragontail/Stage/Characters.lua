@@ -275,13 +275,13 @@ function Characters.castRay3(raycast, caster)
     return hitsomething
 end
 
----@param eval fun(character: Character, i: integer?, characters: Character[]?):"break"|"return"?
+---@param eval fun(character: Character, i: integer?, characters: Character[]?):any
 function Characters.search(group, eval)
     local characters = groups[group] or allcharacters
     for i = 1, #characters do local character = characters[i]
         local result = eval(character, i, characters)
-        if result == "break" or result == "return" then
-            break
+        if result then
+            return result
         end
     end
 end
