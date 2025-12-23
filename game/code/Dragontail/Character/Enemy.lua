@@ -360,10 +360,12 @@ function Enemy:watchForOpponent()
     self:resetFlash()
 end
 
+---@deprecated
 function Enemy:beforeGuard()
     self.velx, self.vely = 0, 0
 end
 
+---@deprecated
 function Enemy:duringGuard(t)
     local opponent = self.opponents[1]
     local faceangle = Face.turnTowardsObject(self, opponent, self.faceturnspeed,
@@ -372,10 +374,12 @@ function Enemy:duringGuard(t)
     Guard.startGuarding(self, guardangle)
 end
 
+---@deprecated
 function Enemy:afterGuard()
     Guard.stopGuarding(self)
 end
 
+---@deprecated
 function Enemy:guard()
     local nextstate, a, b, c, d, e, f
 
@@ -399,10 +403,12 @@ function Enemy:guard()
     end
 end
 
+---@deprecated
 function Enemy:beforeGuardHit(attacker)
     Guard.pushBackAttacker(self, attacker)
 end
 
+---@deprecated
 function Enemy:duringGuardHit(attacker, t)
 end
 

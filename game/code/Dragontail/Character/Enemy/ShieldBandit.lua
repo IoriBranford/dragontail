@@ -55,11 +55,13 @@ function ShieldBandit:duringHurt()
     self.numguardedhits = nil
 end
 
+---@deprecated
 function ShieldBandit:beforeGuard()
     self.velx, self.vely = 0, 0
     self.numguardedhits = self.numguardedhits or 0
 end
 
+---@deprecated
 function ShieldBandit:duringGuard(t)
     local opponent = self.opponents[1]
     Face.turnTowardsObject(self, opponent, self.faceturnspeed, self.state.animation)
@@ -72,6 +74,7 @@ function ShieldBandit:duringGuard(t)
     end
 end
 
+---@deprecated
 function ShieldBandit:afterGuard()
     Enemy.afterGuard(self)
     self:resetFlash()
