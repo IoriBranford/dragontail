@@ -6,9 +6,12 @@ local Behavior = require "Dragontail.Character.Behavior"
 ---@field character Enemy
 local EnemyGuardHit = pooledclass(Behavior)
 
+---@param hit AttackHit
 function EnemyGuardHit:start(hit)
     local enemy = self.character
     Guard.standardImpact(enemy, hit)
+    local guardangle = assert(hit.guardangle)
+    Guard.startGuarding(enemy, guardangle)
 
     local guardcounterstate = enemy.guardcounterstate
     local numguardedhitsuntilcounter = enemy.numguardedhitsuntilcounter
