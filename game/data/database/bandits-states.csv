@@ -26,7 +26,7 @@ shield-counter-bash2,20,lowerGuard,shield-bash,Dragontail.Character.Behavior.Ene
 shield-bash,10,shield-bash2,shield-bash,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,SwingWindup,0,TRUE,TRUE,FALSE,,data/sounds/man_medium/attack1.mp3,,0,0,0,10,1,,,,79,,,
 shield-bash2,20,lowerGuard,shield-bash,Dragontail.Character.Behavior.Enemy.AttackExecute,,,SwingAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing1.mp3,,0,0,0,10,1,,,,,,,
 muscle-grab,30,muscle-grab2,muscle-grab,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,ReachWindup,0,TRUE,TRUE,TRUE,,data/sounds/man_heavy/attack4.mp3,,0,0,0,8,1,,,FALSE,156,,,
-muscle-grab2,60,stand,muscle-grab,Dragontail.Character.Behavior.Enemy.AttackExecute,,,ReachWalk,1,TRUE,FALSE,TRUE,,,data/sounds/combat/runfast.mp3,3,0.196349540849362,0.196349540849362,8,0.25,,,catchAttack,,,,
+muscle-grab2,30,catchUnready,muscle-grab,Dragontail.Character.Behavior.Enemy.AttackExecute,,,ReachWalk,1,TRUE,FALSE,TRUE,,,data/sounds/combat/runfast.mp3,3,0.196349540849362,0.196349540849362,8,0.25,,,catchAttack,,,,
 bandit-boss-first-charge,60,bandit-boss-charge2,bandit-boss-charge,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,Charge,1,FALSE,FALSE,FALSE,,data/sounds/man_heavy/heavyattack3.mp3,,0,0,0,16,1,,,,,,,
 bandit-boss-charge,30,bandit-boss-charge2,bandit-boss-charge,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,Charge,1,TRUE,TRUE,FALSE,,data/sounds/man_heavy/heavyattack3.mp3,,0,0,0,16,1,,,,194,,,
 bandit-boss-charge2,40,stand,bandit-boss-charge,Dragontail.Character.Behavior.Enemy.AttackExecute,,,Charge,1,TRUE,TRUE,FALSE,,data/sounds/combat/swingblade.mp3,,3,0,0,16,0.25,,,,,,,
