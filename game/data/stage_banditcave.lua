@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 69,
-  nextobjectid = 774,
+  nextlayerid = 70,
+  nextobjectid = 777,
   backgroundcolor = { 64, 64, 64 },
   properties = {},
   tilesets = {
@@ -16201,11 +16201,11 @@ return {
         },
         {
           x = 0, y = 24, width = 20, height = 12,
-          data = "eJxjYBi8YCEr+foI4cscCHYeJwNDBid+9SycDAyLkPRYQtXPRxJDxuxo5sHUo9vLhkM/COdwMDDkQeUvIakzJ+BWMw4GBlMCapDdgEwjuw+Ec7G4z4oT4T9s7rdGstsCj/9wYXQ7QeFug+affE6EW0D2zcZjD644woXxxQkIY7PrCppYJicDAwdUzJKMMMCH85HYAGhGb9Y="
+          data = "eJzNkVsKwjAURM+HuU187Me24mM3CtouyA/RJakLkpBALiWN0i8LQ4Zpciczgf/97mb6uW942cQ7B0dX3j9z8FBn6rj/pjSNSs3bGtgZEIFDXCsBK0nfmwA942yhi/Ofymcu0BhYCqwEFhK41zxvTeDtDz347HrVvXhcMvkal/JJ5n+rsq9H+ilh6Ol73wzep3fpLt7vWvAZe6Mx5DJp5LzeA+3kwEatntBBCb3iHxdaZz4="
         },
         {
           x = 20, y = 24, width = 20, height = 12,
-          data = "eJytkmtuwkAMhD+12rLueUhUiXIeChH0QgVRjsTjPmjEOnEiIv5kJWvjzXo8M16YZq0Mfgz+UxdTrKnxUuFYGVwT7NJjv5Qede739DiG87nBwmBjcCvntcG2/J9l+M7wa1CN4HmoTvvHE/8uhd9ZWCP1+wG+dFl+cHFNHrsMpwTrDOvQa2Yd70XAi3xU9x7yZbl3LRrkyeGF1hjS0/pVcH0Ob9ZxbwaejMUx6JXOVnOCL+v79zng2YTcv7fBc2H7PMRZXrzio3cmn3220uY4kZvw1DO+u78nPopPL09wS3AH3OZppA=="
+          data = "eJytkv1Kw0AQxH8om96K+jS2CKlUfRmtJfWFqtQ+Uj/eR4bemU0w9J8cDJdLcrMzswvjrDeHd4cfazHGGpvPssapw9Fgbef9kGvMUrdmwTa8f3CoHT4cFgbPBi8Gr/n7JME8wafDdICvYJb1VDm/uwpuK6gN7quzvr24Bu5/9fjlyxM0wVPBOsHOYJlgGXo18VZ3HfhiP3XvOpyf8n/H7EGZfF/wGiE/Ta9+6cOVt9pXvZkawjb4lc8/zwaP3s3vpqdzFc7luQmZi1u7+KVZWVzSozlTzqW38lZ4ojbxqWacu80/OUpP52xwMvgFElFmNQ=="
         },
         {
           x = 40, y = 24, width = 20, height = 12,
@@ -20554,7 +20554,7 @@ return {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -16,
+                ["extrudeY"] = -8,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -20579,7 +20579,7 @@ return {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -16,
+                ["extrudeY"] = -8,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -20604,7 +20604,7 @@ return {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -16,
+                ["extrudeY"] = -8,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -20629,7 +20629,7 @@ return {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -16,
+                ["extrudeY"] = -8,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -20654,7 +20654,7 @@ return {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -16,
+                ["extrudeY"] = -8,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -20664,7 +20664,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = -296,
-              y = 824,
+              y = 832,
               width = 0,
               height = 0,
               rotation = 0,
@@ -20690,7 +20690,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = -200,
-              y = 824,
+              y = 832,
               width = 0,
               height = 0,
               rotation = 0,
@@ -20716,7 +20716,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = -104,
-              y = 824,
+              y = 832,
               width = 0,
               height = 0,
               rotation = 0,
@@ -20742,7 +20742,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = -8,
-              y = 824,
+              y = 832,
               width = 0,
               height = 0,
               rotation = 0,
@@ -20768,7 +20768,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 88,
-              y = 824,
+              y = 832,
               width = 0,
               height = 0,
               rotation = 0,
