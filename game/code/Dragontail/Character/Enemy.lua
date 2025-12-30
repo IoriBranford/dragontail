@@ -283,6 +283,7 @@ function Enemy:attackIfAmmoElseLeave()
             Face.faceVector(self, raycast.dx, raycast.dy, "Stand")
             hitcharacter = Characters.castRay3(raycast, self)
         until self:isOnCamera(self.camera) and hitcharacter
+            and hitcharacter.canbeattacked
             and CollisionMask.testAll(hitcharacter.bodyinlayers, "Player") ~= 0
         self.ammo = self.ammo - 1
         return attacktype
