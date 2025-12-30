@@ -29,8 +29,7 @@ local yield = coroutine.yield
 local GetUpAttackHealthPercent = 15/16
 local OneSwitchAttackHealthPercent = .5
 local TwoSwitchAttackHealthPercent = .0
-local FirstSummonHealthPercent = .6
-local SecondSummonHealthPercent = .3
+local SummonHealthPercents = {.9, .8, .7, .6, .5, .3}
 local AllowedAttackSwitches = {
     ["bandit-boss-charge"] = {
         ["bandit-boss-swat-projectile-cw"] = true,
@@ -188,14 +187,18 @@ function BanditBoss:duringAttackSwing(target)
     return self:getAttackSwitch(target)
 end
 
-function BanditBoss:beforeGetUp()
-    local healthpct = self.health/self.maxhealth
-    local numsummons = self.numsummons or 0
-    if healthpct <= FirstSummonHealthPercent and numsummons < 1
-    or healthpct <= SecondSummonHealthPercent and numsummons < 2 then
-        Stage.openNextRoomIfNotLast()
-        self.numsummons = numsummons + 1
+function BanditBoss:onHitByAttack(hit)
+    if not hit.guarded then
+        local newhealth = self.health - hit.attack.damage
+        local healthpct = newhealth/self.maxhealth
+        local nextsummon = self.nextsummon or 1
+        local summonhealthpct = SummonHealthPercents[nextsummon] or math.huge
+        if healthpct <= summonhealthpct then
+            Stage.openNextRoomIfNotLast()
+            self.nextsummon = nextsummon + 1
+        end
     end
+    Enemy.onHitByAttack(self, hit)
 end
 
 function BanditBoss:duringGetUp()
