@@ -1754,7 +1754,7 @@ to sprint past archers</text>
   </objectgroup>
   <objectgroup id="53" name="armory" class="Room">
    <properties>
-    <property name="donewhenenemiesleft" type="int" value="4"/>
+    <property name="donewhenenemiesleft" type="int" value="2"/>
    </properties>
    <object id="505" template="mapobjects/CameraPath.tx" x="1264" y="1008">
     <polyline points="0,0 192,0"/>

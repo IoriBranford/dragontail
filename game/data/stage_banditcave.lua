@@ -22997,7 +22997,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 4
+            ["donewhenenemiesleft"] = 2
           },
           objects = {
             {
