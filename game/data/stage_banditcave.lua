@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 70,
-  nextobjectid = 777,
+  nextlayerid = 73,
+  nextobjectid = 784,
   backgroundcolor = { 64, 64, 64 },
   properties = {},
   tilesets = {
@@ -23020,14 +23020,14 @@ return {
             {
               id = 397,
               name = "",
-              type = "bandit-dagger",
+              type = "bandit-shield",
               shape = "rectangle",
-              x = 1672,
+              x = 1528,
               y = 1048,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7237,
+              gid = 7274,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -23070,8 +23070,8 @@ return {
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 1544,
-              y = 1056,
+              x = 1664,
+              y = 1048,
               width = 64,
               height = 64,
               rotation = 0,
@@ -23104,8 +23104,8 @@ return {
               name = "bandit-muscle",
               type = "bandit-muscle",
               shape = "rectangle",
-              x = 1200,
-              y = 1024,
+              x = 1176,
+              y = 1048,
               width = 128,
               height = 128,
               rotation = 0,
@@ -23118,14 +23118,14 @@ return {
             {
               id = 610,
               name = "",
-              type = "bandit-dagger",
+              type = "bandit-shield",
               shape = "rectangle",
-              x = 1064,
-              y = 1032,
+              x = 1176,
+              y = 960,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7237,
+              gid = 7274,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -23136,8 +23136,8 @@ return {
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 1128,
-              y = 976,
+              x = 1112,
+              y = 1000,
               width = 64,
               height = 64,
               rotation = 0,
@@ -23152,8 +23152,8 @@ return {
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 1120,
-              y = 1072,
+              x = 1080,
+              y = 1088,
               width = 64,
               height = 64,
               rotation = 0,
@@ -23166,14 +23166,14 @@ return {
             {
               id = 613,
               name = "",
-              type = "bandit-dagger",
+              type = "bandit-shield",
               shape = "rectangle",
-              x = 1040,
-              y = 1112,
+              x = 1152,
+              y = 1128,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7237,
+              gid = 7274,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -24600,6 +24600,284 @@ return {
         {
           type = "objectgroup",
           draworder = "topdown",
+          id = 72,
+          name = "+knives",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 778,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2624,
+              y = 984,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 779,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2624,
+              y = 1080,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 783,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2592,
+              y = 1032,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 70,
+          name = "+spears",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 777,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 3168,
+              y = 992,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 780,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 3168,
+              y = 1120,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 69,
+          name = "+slingers",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 403,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2896,
+              y = 856,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7236,
+              visible = true,
+              properties = {
+                ["ammo"] = 20,
+                ["defaultattack"] = "sling-shot-until-empty",
+                ["entrypoint"] = { id = 404 },
+                ["exitpoint"] = { id = 405 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["itemtype"] = "food-fish",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 775,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2984,
+              y = 848,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7236,
+              visible = true,
+              properties = {
+                ["ammo"] = 20,
+                ["defaultattack"] = "sling-shot-until-empty",
+                ["entrypoint"] = { id = 774 },
+                ["exitpoint"] = { id = 776 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["itemtype"] = "food-fish",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 404,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 2896,
+              y = 904,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 774,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 2984,
+              y = 904,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 405,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2896,
+              y = 800,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 776,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2984,
+              y = 800,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 71,
+          name = "+shields",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 781,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 2624,
+              y = 1056,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 782,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 3168,
+              y = 1056,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
           id = 37,
           name = "+archers",
           class = "Room",
@@ -24630,29 +24908,6 @@ return {
                 ["exitpoint"] = { id = 402 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "mana-peppers",
-                ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
-              }
-            },
-            {
-              id = 403,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2944,
-              y = 840,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7236,
-              visible = true,
-              properties = {
-                ["ammo"] = 20,
-                ["defaultattack"] = "sling-shot-until-empty",
-                ["entrypoint"] = { id = 404 },
-                ["exitpoint"] = { id = 405 },
-                ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "food-fish",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -24696,21 +24951,6 @@ return {
               }
             },
             {
-              id = 404,
-              name = "",
-              type = "",
-              shape = "point",
-              x = 2944,
-              y = 904,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
               id = 407,
               name = "",
               type = "",
@@ -24731,19 +24971,6 @@ return {
               type = "",
               shape = "point",
               x = 2848,
-              y = 800,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 405,
-              name = "exitpoint",
-              type = "",
-              shape = "point",
-              x = 2944,
               y = 800,
               width = 0,
               height = 0,
@@ -24785,7 +25012,7 @@ return {
               name = "bandit-muscle",
               type = "bandit-muscle",
               shape = "rectangle",
-              x = 2896,
+              x = 2944,
               y = 856,
               width = 128,
               height = 128,
