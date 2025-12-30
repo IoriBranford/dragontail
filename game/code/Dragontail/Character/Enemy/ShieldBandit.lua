@@ -98,7 +98,12 @@ function ShieldBandit:duringStand()
         local theirvelx, theirvely = them.velx, them.vely
         if theirvelx == 0 and theirvely == 0 then return end
         local theirx, theiry = them.x, them.y
-        if math.dot(theirvelx, theirvely, selfx - theirx, selfy - theiry) < 0 then return end
+        local theirdist = math.dist(selfx, selfy, theirx, theiry)
+        local theirspeed = math.len(theirvelx, theirvely)
+        if math.dot(theirvelx, theirvely, selfx - theirx, selfy - theiry)
+        < theirdist*theirspeed*.5 then
+            return
+        end
         local theirx2 = theirx + theirvelx*time
         local theiry2 = theiry + theirvely*time
         local targetx, targety = math.projpointsegment(selfx, selfy, theirx, theiry, theirx2, theiry2)
