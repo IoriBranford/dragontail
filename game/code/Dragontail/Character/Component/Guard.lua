@@ -4,6 +4,7 @@ local drawCake = require "drawCake"
 ---@field guardai string|"guardHit"
 ---@field guardangle number?
 ---@field guardarc number
+---@field guardradius number?
 ---@field guardcounterstate string?
 ---@field numguardedhitsuntilcounter integer?
 ---@field numguardedhitsuntilwarning integer?
@@ -104,7 +105,7 @@ function Guard:draw(sidey, fixedfrac)
     local x = self.x + self.velx * fixedfrac
     local y = self.y + self.vely * fixedfrac
         - (self.z + self.velz*fixedfrac)
-    local r = self.bodyradius
+    local r = self.guardradius or self.bodyradius
     local h = self.bodyheight
     local t = love.timer.getTime()*60
     local dt = math.pi/30
