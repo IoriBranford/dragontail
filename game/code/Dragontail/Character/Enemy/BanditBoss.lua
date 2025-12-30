@@ -54,8 +54,7 @@ local AllowedAttackSwitches = {
 function BanditBoss:considerDeflectingProjectile()
     local x, y = self.x, self.y
     local radius = self.bodyradius
-    local incomingprojectile
-    Characters.search("projectiles", function(projectile)
+    local function isIncoming(projectile)
         if not Attacker.isAttacking(projectile) then
             return
         end
@@ -70,17 +69,22 @@ function BanditBoss:considerDeflectingProjectile()
         local dotDV = math.dot(frompx, frompy, pvelx, pvely)
         if dotDV > 200*pspeed then return end
 
-        incomingprojectile = projectile
-        return "break"
-    end)
+        return projectile
+    end
+    local function isThrownIncoming(thrown)
+        return thrown.thrower and thrown.thrower.team == "players" and isIncoming(thrown)
+    end
 
-    if incomingprojectile then
-        local pdistx, pdisty = incomingprojectile.x - self.x, incomingprojectile.y - self.y
+    local incoming = Characters.search("projectiles", isIncoming)
+        or Characters.search("enemies", isThrownIncoming)
+
+    if incoming then
+        local pdistx, pdisty = incoming.x - self.x, incoming.y - self.y
         local facex, facey = math.cos(self.faceangle), math.sin(self.faceangle)
         local turndir = math.det(facex, facey, pdistx, pdisty)
         local attack = turndir < 0 and "bandit-boss-swat-projectile-ccw"
             or "bandit-boss-swat-projectile-cw"
-        return attack, incomingprojectile
+        return attack, incoming
     end
 end
 
