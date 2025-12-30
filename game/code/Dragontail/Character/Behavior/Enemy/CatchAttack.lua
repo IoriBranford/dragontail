@@ -20,6 +20,7 @@ function CatchAttack:start(hit)
     or attacker.team == "enemies"
     or attacker.team == "container" then
         if not HoldOpponent.isHolding(enemy, attacker) then
+            attacker.thrower = nil
             HoldOpponent.startHolding(enemy, attacker)
         end
     elseif attacker.team == "projectiles" then
