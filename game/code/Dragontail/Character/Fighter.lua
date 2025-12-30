@@ -319,7 +319,6 @@ function Fighter:wallBump(thrower, oobx, ooby)
         Characters.spawn(spark)
     end
     self:stopAttack()
-    self.health = self.health - (self.wallbumpdamage or 10)
     self.hurtstun = self.wallbumpstun or 3
     self.velx, self.vely, self.velz = 0, 0, 0
     yield()
@@ -392,7 +391,7 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
             self.z + self.bodyheight/2)
         Characters.spawn(spark)
     end
-    self.health = self.health - (self.wallslamdamage or 25)
+    self.health = self.health - (self.wallslamdamage or 10)
     self.velx, self.vely, self.velz = 0, 0, 0
     self:stopAttack()
     yield() -- a window to be juggled by damaging wall e.g. forge-fire
