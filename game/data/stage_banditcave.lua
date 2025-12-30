@@ -23030,6 +23030,7 @@ return {
               gid = 7274,
               visible = true,
               properties = {
+                ["facedegrees"] = 180,
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
             },
@@ -23046,6 +23047,7 @@ return {
               gid = 7237,
               visible = true,
               properties = {
+                ["facedegrees"] = 180,
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
             },
@@ -23062,6 +23064,7 @@ return {
               gid = 7237,
               visible = true,
               properties = {
+                ["facedegrees"] = 180,
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
             },
@@ -23078,6 +23081,7 @@ return {
               gid = 7235,
               visible = true,
               properties = {
+                ["facedegrees"] = 180,
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
             }

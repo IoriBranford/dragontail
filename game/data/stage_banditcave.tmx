@@ -1759,10 +1759,26 @@ to sprint past archers</text>
    <object id="505" template="mapobjects/CameraPath.tx" x="1264" y="1008">
     <polyline points="0,0 192,0"/>
    </object>
-   <object id="397" template="mapobjects/bandit/shield.tx" x="1528" y="1048"/>
-   <object id="398" template="mapobjects/bandit/knife.tx" x="1616" y="1128"/>
-   <object id="506" template="mapobjects/bandit/knife.tx" x="1608" y="976"/>
-   <object id="507" template="mapobjects/bandit/spear.tx" x="1664" y="1048"/>
+   <object id="397" template="mapobjects/bandit/shield.tx" x="1528" y="1048">
+    <properties>
+     <property name="facedegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="398" template="mapobjects/bandit/knife.tx" x="1616" y="1128">
+    <properties>
+     <property name="facedegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="506" template="mapobjects/bandit/knife.tx" x="1608" y="976">
+    <properties>
+     <property name="facedegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="507" template="mapobjects/bandit/spear.tx" x="1664" y="1048">
+    <properties>
+     <property name="facedegrees" type="float" value="180"/>
+    </properties>
+   </object>
   </objectgroup>
   <objectgroup id="35" name="+muscle" class="Room">
    <properties>
