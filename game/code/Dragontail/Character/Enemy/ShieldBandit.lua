@@ -129,10 +129,10 @@ function ShieldBandit:duringStand()
             and isInterceptable(them)
     end
     local opponenttointercept =
-        Characters.search("projectiles", isInterceptable) or
-        Characters.search("enemies", isThrownInterceptable) or
-        Characters.search("container", isThrownInterceptable) or
-        Characters.search("players", isInterceptable)
+        Characters.search("projectiles", isApproachingAnEnemy) or
+        Characters.search("enemies", isThrownEnemyApproachingAnEnemy) or
+        Characters.search("container", isThrownEnemyApproachingAnEnemy) or
+        Characters.search("players", isApproachingAnEnemy)
     if opponenttointercept then
         if dodgevelx and dodgevely then
             self.velx, self.vely = dodgevelx, dodgevely
