@@ -24,7 +24,7 @@ function CatchAttack:start(hit)
             HoldOpponent.startHolding(enemy, attacker)
         end
     elseif attacker.team == "projectiles" then
-        attacker:stopAttack()
+        attacker:stopAttack() ; attacker:unassignSelfAsAttacker()
         if enemy:tryToGiveWeapon(attacker.type) then
             attacker:disappear()
         else

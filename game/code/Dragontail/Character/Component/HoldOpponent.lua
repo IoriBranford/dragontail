@@ -26,7 +26,7 @@ HoldOpponent.DefaultInitialHoldStrength = 120
 ---@param opponent HeldByOpponent
 function HoldOpponent:startHolding(opponent, holdangle)
     self.heldopponent = opponent
-    opponent:stopAttack()
+    opponent:stopAttack() ; opponent:unassignSelfAsAttacker()
     Guard.stopGuarding(opponent)
     opponent.heldby = self
     holdangle = holdangle or HoldOpponent.getInitialHoldAngle(self, opponent)
@@ -75,7 +75,7 @@ end
 ---@param self HeldByOpponent
 ---@param holder HoldOpponent
 function HoldOpponent:heldBy(holder)
-    self:stopAttack()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     Guard.stopGuarding(self)
     self.velx, self.vely = 0, 0
     while HoldOpponent.isHolding(holder, self) do

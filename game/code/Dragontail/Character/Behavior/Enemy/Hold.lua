@@ -24,7 +24,7 @@ function EnemyHold:start(held)
         holddirx, holddiry = math.norm(holddirx, holddiry)
     end
 
-    enemy:stopAttack()
+    enemy:stopAttack() ; enemy:unassignSelfAsAttacker()
     Guard.stopGuarding(enemy)
     if enemy.heldopponent ~= held then
         Combo.reset(enemy)

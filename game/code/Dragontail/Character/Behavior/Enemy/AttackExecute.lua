@@ -77,14 +77,14 @@ end
 
 function AttackExecute:interrupt(...)
     local enemy = self.character
-    enemy:stopAttack()
+    enemy:stopAttack() ; enemy:unassignSelfAsAttacker()
     return ...
 end
 
-function AttackExecute:timeout(...)
+function AttackExecute:timeout(nextstatename, ...)
     local enemy = self.character
-    enemy:stopAttack()
-    return ...
+    enemy:stopAttack() ; enemy:unassignSelfAsAttacker()
+    return nextstatename, ...
 end
 
 return AttackExecute

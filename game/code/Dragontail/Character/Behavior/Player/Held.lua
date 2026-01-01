@@ -16,7 +16,7 @@ function PlayerHeld:start(holder)
         HoldOpponent.startHolding(holder, player)
     end
 
-    player:stopAttack()
+    player:stopAttack() ; player:unassignSelfAsAttacker()
     Guard.stopGuarding(player)
     player.velx, player.vely = 0, 0
 end

@@ -29,7 +29,7 @@ function PlayerHoldEnemy:start(enemy)
         end
     end
 
-    player:stopAttack()
+    player:stopAttack() ; player:unassignSelfAsAttacker()
     self.holddestangle = player.holdangle
     self.isfrombehind = isfrombehind
 end

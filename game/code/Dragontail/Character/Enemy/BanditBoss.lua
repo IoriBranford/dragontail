@@ -165,7 +165,7 @@ function BanditBoss:getAttackSwitch(target)
     local newattack = self:getBestAttack(target)
     if allowedswitchattacks[newattack] then
         self.attackswitchesleft = switchesleft - 1
-        self:stopAttack()
+        self:stopAttack() ; self:unassignSelfAsAttacker()
         Face.faceObject(self, target)
         return newattack
     end

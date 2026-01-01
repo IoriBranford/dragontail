@@ -114,7 +114,6 @@ end
 
 function Attacker:stopAttack()
     self.attackangle = nil
-    Attacker.unassignSelfAsAttacker(self)
 end
 
 function Attacker:unassignSelfAsAttacker()

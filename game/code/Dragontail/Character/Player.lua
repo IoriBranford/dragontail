@@ -597,7 +597,7 @@ function Player:spinAndKickEnemy(angle, enemy)
     HoldOpponent.updateOpponentPosition(self)
     HoldOpponent.handleOpponentCollision(self)
     Audio.play(self.throwsound)
-    enemy:stopAttack()
+    enemy:stopAttack() ; enemy:unassignSelfAsAttacker()
     HoldOpponent.stopHolding(self, enemy)
     enemy.canbeattacked = true
     -- if self.attack.damage then
@@ -608,7 +608,7 @@ function Player:spinAndKickEnemy(angle, enemy)
 end
 
 function Player:victory()
-    self:stopAttack()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     local i = 0
     while true do
         self:decelerateXYto0()
@@ -620,7 +620,7 @@ end
 
 function Player:defeat()
     Audio.fadeMusic()
-    self:stopAttack()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     self.velx, self.vely = 0, 0
     Audio.play(self.defeatsound)
     local GamePhase            = require "Dragontail.GamePhase"

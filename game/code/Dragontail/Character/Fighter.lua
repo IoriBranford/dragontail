@@ -163,7 +163,7 @@ function Fighter:updateWalkTo(destx, desty)
 end
 
 -- function Fighter:stun(duration)
---     self:stopAttack()
+--     self:stopAttack() ; self:unassignSelfAsAttacker()
 --     self.velx, self.vely = 0, 0
 --     Audio.play(self.stunsound)
 --     self.canbegrabbed = true
@@ -224,7 +224,7 @@ function Fighter:knockedBack(thrower, attackangle)
         end
     end
     self.hurtstun = 0
-    self:stopAttack()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     self.thrower = thrower
     local thrownspeed = thrower.attack.launchspeed or 5
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
@@ -266,7 +266,7 @@ function Fighter:knockedBackOrThrown(thrower, attackangle)
     if attackangle and self.attacktype then
         self:startAttack(attackangle)
     else
-        self:stopAttack()
+        self:stopAttack() ; self:unassignSelfAsAttacker()
     end
     self.thrower = thrower
     local thrownspeed = thrower.attack.launchspeed or 10
@@ -318,7 +318,7 @@ function Fighter:wallBump(thrower, oobx, ooby)
             self.z + self.bodyheight/2)
         Characters.spawn(spark)
     end
-    self:stopAttack()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     self.hurtstun = self.wallbumpstun or 3
     self.velx, self.vely, self.velz = 0, 0, 0
     yield()
@@ -368,7 +368,7 @@ function Fighter:thrown(thrower, attackangle)
     end
     if thrownsound then thrownsound:stop() end
     self.thrower = nil
-    self:stopAttack()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     if oobx and ooby then
         return "wallSlammed", thrower, oobx, ooby
     end
@@ -393,7 +393,7 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
     end
     self.health = self.health - (self.wallslamdamage or 10)
     self.velx, self.vely, self.velz = 0, 0, 0
-    self:stopAttack()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     yield() -- a window to be juggled by damaging wall e.g. forge-fire
     self.hurtstun = self.wallslamstun or 20
     yield()
@@ -414,7 +414,7 @@ function Fighter:thrownRecover(thrower)
         recovertime = recovertime - 1
     until recovertime <= 0 and oobz or oobx or ooby
 
-    self:stopAttack()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     if oobx or ooby then
         return "wallSlammed", thrower, oobx, ooby
     end
@@ -480,7 +480,7 @@ end
 
 function Fighter:fall()
     self:indicateDefeated()
-    self:stopAttack()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     self:decelerateXYto0()
     local penez = self.penez
     if penez then
@@ -490,7 +490,7 @@ function Fighter:fall()
 end
 
 function Fighter:defeat()
-    self:stopAttack()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     self.velx, self.vely = 0, 0
     self:dropDefeatItem()
     Audio.play(self.defeatsound)

@@ -288,7 +288,7 @@ function Common:storeMana(mana)
 end
 
 function Common:projectileShatter(opponent)
-    self:stopAttack()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     self.velx = 0
     self.vely = 0
     self.velz = 0
@@ -302,7 +302,7 @@ function Common:projectileHit(opponent)
         Audio.play(self.bodyslamsound)
     end
     DirectionalAnimation.set(self, self.attack.selfanimationonhit, self.attackangle)
-    self:stopAttack()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     local hitbounce = self.attackhitbounce or 2
     local normx, normy = math.norm(-self.velx, -self.vely)
     self.velx, self.vely = normx*hitbounce, normy*hitbounce
@@ -311,7 +311,7 @@ function Common:projectileHit(opponent)
 end
 
 function Common:projectileEmbed(opponent, ooby, oobz)
-    self:stopAttack()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     local oobx = type(opponent) == "number" and opponent
     opponent = type(opponent) == "table" and opponent or nil
     self.velx, self.vely, self.velz = 0, 0, 0
@@ -410,7 +410,7 @@ function Common:projectileHoming()
 end
 
 function Common:projectileBounce(opponent, ooby, oobz)
-    self:stopAttack()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     local oobx = type(opponent) == "number" and opponent
     opponent = type(opponent) == "table" and opponent or nil
     if opponent then

@@ -136,7 +136,7 @@ function PlayerRunning:fixedupdate()
 
     if player:consumeActionRecentlyPressed("attack") then
         if heldenemy then
-            heldenemy:stopAttack()
+            heldenemy:stopAttack() ; heldenemy:unassignSelfAsAttacker()
             -- HoldOpponent.stopHolding(player, heldenemy)
             -- heldenemy.canbeattacked = true
 
@@ -194,7 +194,7 @@ function PlayerRunning:fixedupdate()
     else
         Audio.play(player.stopdashsound)
         if heldenemy then
-            heldenemy:stopAttack()
+            heldenemy:stopAttack() ; heldenemy:unassignSelfAsAttacker()
             HoldOpponent.stopHolding(player, heldenemy)
             StateMachine.start(heldenemy, "knockedBack", player, player.faceangle)
         end

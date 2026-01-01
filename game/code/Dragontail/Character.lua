@@ -230,6 +230,7 @@ Character.moveTo = Body.executeMove
 Character.isAttacking = Attacker.isAttacking
 Character.startAttack = Attacker.startAttack
 Character.stopAttack = Attacker.stopAttack
+Character.unassignSelfAsAttacker = Attacker.unassignSelfAsAttacker
 
 ---@param hit AttackHit
 function Character:onHitByAttack(hit)

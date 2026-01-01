@@ -9,7 +9,7 @@ local CatchingProjectile = pooledclass(Behavior)
 function CatchingProjectile:start(projectile)
     local fighter = self.character
     Face.faceObject(fighter, projectile, fighter.state.animation or "catch")
-    projectile:stopAttack()
+    projectile:stopAttack() ; projectile:unassignSelfAsAttacker()
     if fighter:tryToGiveWeapon(projectile.type) then
         projectile:disappear()
     else

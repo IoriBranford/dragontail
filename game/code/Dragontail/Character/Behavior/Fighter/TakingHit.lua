@@ -27,7 +27,7 @@ function TakingHit:start(hit)
     fighter.health = fighter.health - (attack.damage or 0)
     fighter.invulntime = attack.mercyinvuln
     fighter.velx, fighter.vely = 0, 0
-    fighter:stopAttack()
+    fighter:stopAttack() ; fighter:unassignSelfAsAttacker()
     Guard.stopGuarding(fighter)
     HoldOpponent.stopHolding(fighter, fighter.heldopponent)
 

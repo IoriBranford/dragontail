@@ -473,7 +473,7 @@ function Enemy:readyToCatchProjectile()
     local projectiles = Characters.getGroup("projectiles")
     local caught = Catcher.findCharacterToCatch(self, projectiles, dirx, diry)
     if caught then
-        caught:stopAttack()
+        caught:stopAttack() ; caught:unassignSelfAsAttacker()
         return "catchProjectile", caught
     end
 end
