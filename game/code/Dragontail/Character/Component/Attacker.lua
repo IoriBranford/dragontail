@@ -114,6 +114,10 @@ end
 
 function Attacker:stopAttack()
     self.attackangle = nil
+    Attacker.unassignSelfAsAttacker(self)
+end
+
+function Attacker:unassignSelfAsAttacker()
     local opponents = self.opponents
     if opponents then
         for i = 1, #opponents do
