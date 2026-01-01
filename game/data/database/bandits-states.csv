@@ -1,6 +1,12 @@
 state,statetime,nextstate,attack,statebehavior,statecoroutine,statefunction,animation,loopframe,canbeattacked,canbegrabbed,canbejuggled,color,sound,voice,afterimageinterval,faceturnspeed,moveturnspeed,speed,accel,bodyheight,bodyhitslayers,guardai,maxtargetdist,gravity,z,velz
 dagger-swing,20,dagger-swing2,dagger-swing,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,SwingWindup,0,TRUE,TRUE,FALSE,,data/sounds/man_light/attack1.mp3,,0,0,0,5,1,,,,47,,,
 dagger-swing2,40,stand,dagger-swing,Dragontail.Character.Behavior.Enemy.AttackExecute,,,SwingAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing1.mp3,,0,0,0,5,1,,,,,,,
+dagger-combo,20,dagger-combo2,dagger-swing,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,SwingWindup,0,TRUE,TRUE,FALSE,,data/sounds/man_light/attack1.mp3,,0,0,0,0,1,,,,32,,,
+dagger-combo2,15,dagger-combo3,dagger-swing,Dragontail.Character.Behavior.Enemy.AttackExecute,,,SwingAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing1.mp3,,0,0,0,0,1,,,,,,,
+dagger-combo3,15,dagger-combo4,dagger-swing,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,SwingWindup,0,TRUE,TRUE,FALSE,,,,0,0,0,0,1,,,,,,,
+dagger-combo4,15,dagger-combo5,dagger-swing,Dragontail.Character.Behavior.Enemy.AttackExecute,,,SwingAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing1.mp3,,0,0,0,0,1,,,,,,,
+dagger-combo5,20,dagger-combo6,dagger-swing-final,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,SwingWindup,0,TRUE,TRUE,FALSE,,data/sounds/man_light/attack1.mp3,,0,0,0,5,1,,,,,,,
+dagger-combo6,40,stand,dagger-swing-final,Dragontail.Character.Behavior.Enemy.AttackExecute,,,SwingAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing1.mp3,,0,0,0,5,1,,,,,,,
 spear-thrust,30,spear-thrust2,spear-thrust,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,ThrustWindup,0,TRUE,TRUE,FALSE,,data/sounds/man_medium/attack1.mp3,,0,0,0,15,1,,,,156.25,,,
 spear-thrust2,40,stand,spear-thrust,Dragontail.Character.Behavior.Enemy.AttackExecute,,,ThrustAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/swingblade.mp3,,3,0,0,15,0.5,,,,,,,
 spear-poke,20,spear-poke2,spear-poke,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,ThrustWindup,0,TRUE,TRUE,FALSE,,data/sounds/man_medium/attack1.mp3,,0,0.10471975511966,0,10,1,,,,92.5,,,
