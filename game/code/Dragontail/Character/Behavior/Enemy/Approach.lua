@@ -49,7 +49,7 @@ function Approach:fixedupdate()
     self.result = not (destx and desty) and "canceled"
         or math.distsq(enemy.x, enemy.y, destx, desty) < speed and "reached"
     if self.result then
-        return self:timeout()
+        return self:timeout(enemy.nextstate)
     end
 
     destx, desty = enemy:navigateAroundSolid(destx, desty)
