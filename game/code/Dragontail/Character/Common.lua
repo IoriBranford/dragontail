@@ -387,7 +387,11 @@ function Common:projectileHoming()
         if nearest then
             vx = nearest.x - self.x
             vy = nearest.y - self.y
-            vz = nearest.z + nearest.bodyheight/2 - self.z - self.bodyheight/2
+            vz = (nearest.z + nearest.bodyheight/2)
+                - (self.z + self.bodyheight/2)
+            if nearest.z >= self.z + self.bodyheight then
+                vz = vz + nearest.bodyheight/2
+            end
         end
         if vx == 0 and vy == 0 and vz == 0 then
             vx, vy = cos(self.faceangle), sin(self.faceangle)
