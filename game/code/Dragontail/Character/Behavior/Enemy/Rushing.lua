@@ -1,6 +1,7 @@
 local Behavior = require "Dragontail.Character.Behavior"
 local Face     = require "Dragontail.Character.Component.Face"
 local Body     = require "Dragontail.Character.Component.Body"
+local Attacker = require "Dragontail.Character.Component.Attacker"
 
 ---@class Rushing:Behavior
 ---@field character Enemy
@@ -36,6 +37,14 @@ function Rushing:fixedupdate()
 
     local faceangle = Face.turnTowardsObject(enemy, target, nil,
         enemy.state.animation, enemy.state.frame1, enemy.state.loopframe)
+
+    local attack = enemy.attack
+    if attack then
+        Attacker.startAttack(enemy, faceangle)
+    else
+        Attacker.stopAttack(enemy)
+    end
+
     local velx = math.cos(faceangle) * speed
     local vely = math.sin(faceangle) * speed
     Body.forceTowardsVelXY(enemy, velx, vely, enemy.accel)
@@ -48,12 +57,16 @@ end
 ---@return string? nextstate
 ---@return any ...
 function Rushing:interrupt(nextstate, ...)
+    local enemy = self.character
+    Attacker.stopAttack(enemy)
     return nextstate, ...
 end
 
 ---@return string? nextstate
 ---@return any ...
 function Rushing:timeout(nextstate, ...)
+    local enemy = self.character
+    Attacker.stopAttack(enemy)
     return nextstate, ...
 end
 
