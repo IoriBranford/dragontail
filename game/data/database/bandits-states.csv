@@ -89,7 +89,7 @@ waitForBowAmbush,FALSE,bow-shot-until-empty2,,,watchForOpponent,,,,TRUE,TRUE,FAL
 blinkOut,FALSE,FALSE,,,blinkOut,,,,FALSE,FALSE,FALSE,,,,0,0,,,1,,,,,,,
 disappear,FALSE,FALSE,,,disappear,,,,FALSE,FALSE,FALSE,,,,0,0,,,1,,,,,,,
 catchProjectile,20,throwBackProjectile,,Dragontail.Character.Behavior.Fighter.CatchingProjectile,,,catch,0,FALSE,FALSE,FALSE,,data/sounds/man_heavy/amused2.mp3,data/sounds/combat/grab.mp3,0,0,,,1,,,,,,,
-catchReady,60,catchUnready,,Dragontail.Character.Behavior.Enemy.Guard,,,catchReady,0,TRUE,TRUE,FALSE,,data/sounds/man_heavy/hut1.mp3,,0,0,,,0.25,,,catchAttack,,,,
+catchReady,30,catchUnready,,Dragontail.Character.Behavior.Enemy.Guard,,,catchReady,0,TRUE,TRUE,FALSE,,data/sounds/man_heavy/hut1.mp3,,0,0,,,0.25,,,catchAttack,,,,
 catchUnready,20,.recoverai,,,,,catchUnready,0,TRUE,TRUE,FALSE,,,,0,0,,,1,,,,,,,
 throwBackProjectile,15,throwBackProjectile2,,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,SwingWindup,0,TRUE,TRUE,FALSE,,,,0,3.14159265358979,,,1,,,,,,,
 throwBackProjectile2,40,.recoverai,,Dragontail.Character.Behavior.Enemy.AttackExecute,,,SwingAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing3.mp3,,0,0,,,1,,,,,,,
