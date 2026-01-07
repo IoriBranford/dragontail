@@ -64,26 +64,32 @@ end
 
 function Approach:timeout(nextstate, ...)
     local enemy = self.character
-    -- local opponent = enemy.opponents[1] ---@type Player
-    -- if enemy:couldAttackOpponent(opponent, self.nextaction) then
-    --     opponent.attacker = enemy
-    --     Face.facePosition(enemy, opponent.x, opponent.y)
-    --     return enemy.nextstate
-    -- end
-    -- enemy:debugPrint_couldAttackOpponent(opponent, nextattacktype)
 
     local targetx, targety
     local target = self.target
+    local result = self.result
     if target then
         targetx = target
         Face.faceObject(enemy, target)
+        if result == "reached" then
+            if enemy:canDoToTarget(target, nextstate) then
+                local nextstatedata = enemy.statetable[nextstate]
+                if nextstatedata and nextstatedata.attack then
+                    target.attacker = enemy
+                end
+            else
+                -- result = "canceled"
+                nextstate = enemy.recoverai or "stand"
+            end
+            -- enemy:debugPrint_canDoToTarget(target, nextstate)
+        end
     else
         targetx, targety = self.targetx, self.targety
         Face.facePosition(enemy, targetx, targety)
     end
 
-    if self.result ~= "reached" then
-        return "approach", targetx, targety, enemy.nextstate
+    if result ~= "reached" then
+        return "approach", targetx, targety, nextstate
     end
     if nextstate then
         return nextstate, ...
