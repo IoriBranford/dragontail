@@ -9,12 +9,12 @@ local Grabbing = pooledclass(Behavior)
 
 function Grabbing:start(grabbed)
     local fighter = self.character
-    local dx, dy = grabbed.x - fighter.x, grabbed.y - fighter.y
-    local guarded = grabbed:isHigherRankedTeammateOf(fighter)
-        or dx ~= 0 and dy ~= 0 and
-            Guard.isUnitVectorAgainstGuardArc(grabbed, math.norm(dx, dy))
+    -- local dx, dy = grabbed.x - fighter.x, grabbed.y - fighter.y
+    local immediatelyrelease = grabbed:isHigherRankedTeammateOf(fighter)
+        -- or dx ~= 0 and dy ~= 0 and
+        --     Guard.isUnitVectorAgainstGuardArc(grabbed, math.norm(dx, dy))
     HoldOpponent.startHolding(fighter, grabbed)
-    if guarded then
+    if immediatelyrelease then
         fighter.holdstrength = fighter.statetime or 0
     end
 end
