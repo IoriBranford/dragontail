@@ -3,7 +3,7 @@ dagger-swing,32,0.196349540849362,8,8,2,12,3,,6,5,5,,knockedBack,,data/sounds/co
 dagger-swing-final,32,0.196349540849362,8,8,6,12,3,,6,5,5,knockedBack,knockedBack,,data/sounds/combat/cut.mp3,,,,particle-blood,,FALSE,FALSE,Object Player
 spear-thrust,40,0.196349540849362,8,8,10,15,3,,30,10,10,knockedBack,knockedBack,,data/sounds/combat/cut.mp3,,,,particle-blood,,FALSE,FALSE,Object Player
 spear-poke,40,0.196349540849362,8,8,10,15,3,,12,5,5,,knockedBack,,data/sounds/combat/cut.mp3,,,,particle-blood,,FALSE,FALSE,Object Player
-human-thrown,24,0.785398163397448,,,10,12,3,,,5,5,knockedBack,knockedBack,,data/sounds/combat/hit2.mp3,,spark-hit,spark-guard,,,FALSE,FALSE,Object Player Enemy
+human-thrown,24,0.785398163397448,,,10,12,3,,,5,5,knockedBack,knockedBack,,data/sounds/combat/hit2.mp3,,spark-hit,spark-guard,,TRUE,FALSE,FALSE,Object Player Enemy
 axe-swing,40,0.785398163397448,8,8,25,20,10,,8,10,10,thrown,thrown,,data/sounds/combat/cut2.mp3,,,,particle-blood,,FALSE,FALSE,Object Player
 axe-swing-counter,40,0.785398163397448,8,8,25,20,10,,8,10,10,thrown,thrown,,data/sounds/combat/cut2.mp3,,,,particle-blood,,FALSE,FALSE,Object Player
 axe-throw,200,0,8,8,0,0,0,,,5,0,,knockedBack,,,thrown-axe,,,,,FALSE,FALSE,Object Player
