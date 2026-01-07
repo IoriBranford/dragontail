@@ -91,42 +91,54 @@ function Enemy:decideNextAttack()
     return attacktype
 end
 
-function Enemy:debugPrint_couldAttackOpponent(target, actionstate)
-    print("opponent", target)
-    if target then
-        print(".attacker", target.attacker)
-        print(".canbeattacked", target.canbeattacked)
-    end
-    print("isCylinderFullyOnCamera", self:isCylinderFullyOnCamera(self.camera))
-
+function Enemy:debugPrint_canDoToTarget(target, actionstate)
+    print("self", self)
     local state = self.statetable[actionstate]
     print("statedata", state)
-    if state then
-        local toopposq = distsq(self.x, self.y, target.x, target.y)
-        local attackrange = (state.maxtargetdist or 1) + target.bodyradius
-        print("dist", math.sqrt(toopposq))
-        print("attackrange", attackrange, '=', (state.maxtargetdist or 1), '+', target.bodyradius)
-        print("closeEnough", toopposq <= attackrange*attackrange)
+    local attack = state.attack
+    print("attack", attack)
+    print("target", target)
+    if target then
+        print("target.attacker", target.attacker)
+        print("target.canbeattacked", target.canbeattacked)
+
+        local maxtargetdist = state and state.maxtargetdist
+        print("state.maxtargetdist", maxtargetdist)
+        if maxtargetdist then
+            local toopposq = distsq(self.x, self.y, target.x, target.y)
+            local attackrange = maxtargetdist + target.bodyradius
+            print("dist", math.sqrt(toopposq))
+            print("attackrange", attackrange)
+            print("closeEnough", toopposq <= attackrange*attackrange)
+        end
     end
+    print("isCylinderFullyOnCamera", self:isCylinderFullyOnCamera(self.camera))
 end
 
-function Enemy:couldAttackOpponent(target, actionstate)
-    if not target
-    or target.attacker
-    or not target.canbeattacked
-    or not self:isCylinderFullyOnCamera(self.camera)
-    then
-        return false
-    end
-
+function Enemy:canDoToTarget(target, actionstate)
+    if not target then return false end
     local state = self.statetable[actionstate]
     if not state then
         return false
     end
 
+    local attack = state.attack
+    if attack then
+        if not target.canbeattacked
+        or target.attacker and target.attacker ~= self
+        or not self:isCylinderFullyOnCamera(self.camera)
+        then
+            return false
+        end
+    end
+
     local toopposq = distsq(self.x, self.y, target.x, target.y)
-    local attackrange = (state.maxtargetdist or 1) + target.bodyradius
-    return toopposq <= attackrange*attackrange
+    local maxtargetdist = state.maxtargetdist
+    if maxtargetdist then
+        local attackrange = maxtargetdist + target.bodyradius
+        return toopposq <= attackrange*attackrange
+    end
+    return true
 end
 
 function Enemy:afterStand()
@@ -136,7 +148,7 @@ function Enemy:afterStand()
     end
 
     local nextattacktype = self:decideNextAttack()
-    if self:couldAttackOpponent(opponent, nextattacktype) then
+    if self:canDoToTarget(opponent, nextattacktype) then
         opponent.attacker = self
         Face.facePosition(self, opponent.x, opponent.y)
         return nextattacktype

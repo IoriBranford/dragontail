@@ -42,7 +42,7 @@ local CounterAttackType = "spear-poke"
 function SpearBandit:duringDodge()
     if (self.numdodges or 0) >= DodgesBeforeCounterAttack then
         local opponent = self.opponents[1]
-        if self:couldAttackOpponent(opponent, CounterAttackType) then
+        if self:canDoToTarget(opponent, CounterAttackType) then
             Face.faceObject(self, opponent)
             opponent.attacker = self
             return CounterAttackType

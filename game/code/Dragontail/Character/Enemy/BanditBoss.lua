@@ -147,7 +147,7 @@ function BanditBoss:duringApproach(opponent)
     end
     local bestattack = self:getBestAttack(opponent)
     if bestattack ~= "bandit-boss-charge" then
-        if self:couldAttackOpponent(opponent, bestattack) then
+        if self:canDoToTarget(opponent, bestattack) then
             return bestattack
         end
     end
