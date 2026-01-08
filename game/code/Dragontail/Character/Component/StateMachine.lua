@@ -72,6 +72,7 @@ local StateVarsToCopy = {
     guardai = true,
     z = true,
     velz = true,
+    hurtstun = true,
 }
 
 local Period = string.byte('.')
