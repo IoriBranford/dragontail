@@ -41,7 +41,7 @@ function PlayerHeld:fixedupdate()
     local strugglex, struggley = player:getParryVector()
     local holddirx, holddiry = math.cos(holder.holdangle), math.sin(holder.holdangle)
     if strugglex and struggley then
-        local strugglestrength = player.strugglestrength or 2
+        local strugglestrength = player.strugglestrength or 3
         struggle = strugglestrength * math.abs(math.dot(strugglex, struggley, holddirx, holddiry))
         player.struggleoffset = struggle
     else
