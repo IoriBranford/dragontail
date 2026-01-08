@@ -9,7 +9,7 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 73,
+  nextlayerid = 74,
   nextobjectid = 785,
   backgroundcolor = { 64, 64, 64 },
   properties = {},
@@ -15770,53 +15770,7 @@ return {
       properties = {},
       wangsets = {},
       tilecount = 1,
-      tiles = {
-        {
-          id = 0,
-          objectGroup = {
-            type = "objectgroup",
-            draworder = "index",
-            id = 2,
-            name = "",
-            class = "",
-            visible = true,
-            opacity = 1,
-            offsetx = 0,
-            offsety = 0,
-            parallaxx = 1,
-            parallaxy = 1,
-            properties = {},
-            objects = {
-              {
-                id = 2,
-                name = "",
-                type = "",
-                shape = "ellipse",
-                x = 52,
-                y = 76,
-                width = 24,
-                height = 24,
-                rotation = 0,
-                visible = true,
-                properties = {}
-              },
-              {
-                id = 3,
-                name = "",
-                type = "",
-                shape = "ellipse",
-                x = 52,
-                y = 44,
-                width = 24,
-                height = 24,
-                rotation = 0,
-                visible = true,
-                properties = {}
-              }
-            }
-          }
-        }
-      }
+      tiles = {}
     },
     {
       name = "cave-window",
@@ -22940,23 +22894,6 @@ return {
               }
             },
             {
-              id = 394,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1552,
-              y = 928,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 6826,
-              visible = true,
-              properties = {
-                ["bodyinlayers"] = "Wall",
-                ["extrudeY"] = -48
-              }
-            },
-            {
               id = 395,
               name = "",
               type = "",
@@ -23043,7 +22980,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 2
+            ["donewhenenemiesleft"] = 1
           },
           objects = {
             {
@@ -23064,80 +23001,12 @@ return {
               properties = {}
             },
             {
-              id = 397,
-              name = "",
-              type = "bandit-shield",
-              shape = "rectangle",
-              x = 1528,
-              y = 1048,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7274,
-              visible = true,
-              properties = {
-                ["facedegrees"] = 180,
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 398,
-              name = "",
-              type = "bandit-dagger",
-              shape = "rectangle",
-              x = 1616,
-              y = 1128,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7237,
-              visible = true,
-              properties = {
-                ["facedegrees"] = 180,
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 506,
-              name = "",
-              type = "bandit-dagger",
-              shape = "rectangle",
-              x = 1608,
-              y = 976,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7237,
-              visible = true,
-              properties = {
-                ["facedegrees"] = 180,
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 507,
-              name = "",
-              type = "bandit-spear",
-              shape = "rectangle",
-              x = 1664,
-              y = 1048,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7235,
-              visible = true,
-              properties = {
-                ["facedegrees"] = 180,
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
               id = 384,
               name = "bandit-muscle",
               type = "bandit-muscle",
               shape = "rectangle",
-              x = 1520,
-              y = 976,
+              x = 1544,
+              y = 952,
               width = 128,
               height = 128,
               rotation = 0,
@@ -23154,13 +23023,116 @@ return {
               name = "",
               type = "",
               shape = "point",
-              x = 1488,
-              y = 968,
+              x = 1512,
+              y = 952,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               properties = {}
+            },
+            {
+              id = 394,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1552,
+              y = 928,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 6826,
+              visible = true,
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["extrudeY"] = -48
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 73,
+          name = "armory2",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = 2
+          },
+          objects = {
+            {
+              id = 397,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 1728,
+              y = 1048,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["facedegrees"] = 180,
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 398,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1816,
+              y = 1128,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["facedegrees"] = 180,
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 506,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1808,
+              y = 976,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["facedegrees"] = 180,
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 507,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 1864,
+              y = 1048,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["facedegrees"] = 180,
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             }
           }
         },
