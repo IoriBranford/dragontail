@@ -129,6 +129,11 @@ function MuscleBandit:duringApproach(opponent)
             end
         end
     end
+    ---@param item Item
+    local function isWeaponItemCloseEnoughToGrab(item)
+        return item.giveweapon
+            and isCloseEnoughToGrab(item)
+    end
 
     local function isInterceptable(them)
         if not Face.isObjectInSight(self, them, sightarc) then return end
@@ -181,8 +186,11 @@ function MuscleBandit:duringApproach(opponent)
         end
         return "catchReady"
     end
-    local whattograb = Characters.search("container", isCloseEnoughToGrab)
-    if whattograb then return "grab", whattograb end
+    local persontograb = Characters.search("container", isCloseEnoughToGrab)
+    if persontograb then return "grab", persontograb end
+    local weapon = not self.weaponinhand and
+        Characters.search("items", isWeaponItemCloseEnoughToGrab)
+    if weapon then return "getProjectile", weapon end
 end
 
 function MuscleBandit:decideNextAttack()
