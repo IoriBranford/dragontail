@@ -1,5 +1,6 @@
 local Behavior = require "Dragontail.Character.Behavior"
 local Body     = require "Dragontail.Character.Component.Body"
+local Characters = require "Dragontail.Stage.Characters"
 
 ---@class GetItem:Behavior
 ---@field character Enemy
@@ -13,6 +14,19 @@ end
 ---@param item Character
 function GetItem:start(item)
     local enemy = self.character
+    if not item then
+        local itemdsq = math.huge
+        local x, y = enemy.x, enemy.y
+        Characters.search("items", function(obj)
+            local dsq = math.distsq(obj.x, obj.y, x, y)
+            if dsq < itemdsq then
+                item = obj
+                itemdsq = dsq
+            end
+        end)
+    end
+    if not item then return end
+
     if item.giveweapon then
         if enemy:tryToGiveWeapon(item.giveweapon) then
             item:disappear()
