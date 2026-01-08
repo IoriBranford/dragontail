@@ -100,7 +100,7 @@ function CatchAttack:timeout()
     then
         attacker:resetFlash()
         if attacker:isHigherRankedTeammateOf(enemy) then
-            attacker.holdstrength = 0
+            enemy.holdstrength = 0
         end
         return "hold", attacker
     else
