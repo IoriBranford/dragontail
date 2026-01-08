@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="73" nextobjectid="784">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="73" nextobjectid="785">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -1779,12 +1779,20 @@ to sprint past archers</text>
      <property name="facedegrees" type="float" value="180"/>
     </properties>
    </object>
+   <object id="384" template="mapobjects/bandit/muscle.tx" x="1520" y="976">
+    <properties>
+     <property name="entrypoint" type="object" value="784"/>
+     <property name="initialai" value="enterAndGetProjectile"/>
+    </properties>
+   </object>
+   <object id="784" x="1488" y="968">
+    <point/>
+   </object>
   </objectgroup>
   <objectgroup id="35" name="+muscle" class="Room">
    <properties>
     <property name="titlebarcuecard" value="LV2 REVENGE"/>
    </properties>
-   <object id="384" template="mapobjects/bandit/muscle.tx" x="1176" y="1048"/>
    <object id="610" template="mapobjects/bandit/shield.tx" x="1176" y="960"/>
    <object id="611" template="mapobjects/bandit/spear.tx" x="1112" y="1000"/>
    <object id="612" template="mapobjects/bandit/spear.tx" x="1080" y="1088"/>

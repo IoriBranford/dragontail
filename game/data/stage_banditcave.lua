@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 73,
-  nextobjectid = 784,
+  nextobjectid = 785,
   backgroundcolor = { 64, 64, 64 },
   properties = {},
   tilesets = {
@@ -15770,7 +15770,53 @@ return {
       properties = {},
       wangsets = {},
       tilecount = 1,
-      tiles = {}
+      tiles = {
+        {
+          id = 0,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            class = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 2,
+                name = "",
+                type = "",
+                shape = "ellipse",
+                x = 52,
+                y = 76,
+                width = 24,
+                height = 24,
+                rotation = 0,
+                visible = true,
+                properties = {}
+              },
+              {
+                id = 3,
+                name = "",
+                type = "",
+                shape = "ellipse",
+                x = 52,
+                y = 44,
+                width = 24,
+                height = 24,
+                rotation = 0,
+                visible = true,
+                properties = {}
+              }
+            }
+          }
+        }
+      }
     },
     {
       name = "cave-window",
@@ -23084,6 +23130,37 @@ return {
                 ["facedegrees"] = 180,
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
+            },
+            {
+              id = 384,
+              name = "bandit-muscle",
+              type = "bandit-muscle",
+              shape = "rectangle",
+              x = 1520,
+              y = 976,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7272,
+              visible = true,
+              properties = {
+                ["entrypoint"] = { id = 784 },
+                ["initialai"] = "enterAndGetProjectile",
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 784,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 1488,
+              y = 968,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -23103,22 +23180,6 @@ return {
             ["titlebarcuecard"] = "LV2 REVENGE"
           },
           objects = {
-            {
-              id = 384,
-              name = "bandit-muscle",
-              type = "bandit-muscle",
-              shape = "rectangle",
-              x = 1176,
-              y = 1048,
-              width = 128,
-              height = 128,
-              rotation = 0,
-              gid = 7272,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
             {
               id = 610,
               name = "",
