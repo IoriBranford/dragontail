@@ -525,7 +525,6 @@ function Player:runIntoWall()
         self.y + ooby*bodyradius,
         self.z + self.bodyheight/2)
     Characters.spawn(spark)
-    self.hurtstun = 9
     self.velz = 0
     return "runIntoWall", velangle
 end
