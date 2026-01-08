@@ -16,6 +16,7 @@ local paused
 local pauselocked
 local stagecanvas
 local stagepath = "data/stage_banditcave.lua"
+local musicpath = "data/music/Surf Shimmy.ogg"
 
 function GamePhase.loadphase(stagepath_, startroom)
     stagepath = stagepath_ or stagepath
@@ -23,7 +24,7 @@ function GamePhase.loadphase(stagepath_, startroom)
     pauselocked = false
     local unifont = Assets.getFont("Unifont", 16)
     love.graphics.setFont(unifont)
-    Assets.get("data/music/retro-chiptune-guitar.ogg", "stream")
+    Assets.get(musicpath, "stream")
 
     Database.load("data/database/vfx-properties.csv")
     Database.load("data/database/items-properties.csv")
@@ -53,7 +54,7 @@ function GamePhase.loadphase(stagepath_, startroom)
     Stage.init(startroom)
     GamePhase.resize(love.graphics.getWidth(), love.graphics.getHeight())
 
-    local music = Audio.playMusic("data/music/retro-chiptune-guitar.ogg")
+    local music = Audio.playMusic(musicpath)
     if music then
         music:setLooping(true)
     end
