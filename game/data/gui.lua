@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 18,
   nextlayerid = 17,
-  nextobjectid = 101,
+  nextobjectid = 102,
   properties = {},
   tilesets = {
     {
@@ -554,6 +554,35 @@ return {
           }
         }
       }
+    },
+    {
+      name = "title",
+      firstgid = 414,
+      class = "",
+      tilewidth = 480,
+      tileheight = 270,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/ui/title.ase",
+      imagewidth = 480,
+      imageheight = 270,
+      objectalignment = "topleft",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 480,
+        height = 270
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
     }
   },
   layers = {
@@ -2112,7 +2141,7 @@ return {
       id = 7,
       name = "title",
       class = "",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -2120,26 +2149,6 @@ return {
       parallaxy = 1,
       properties = {},
       objects = {
-        {
-          id = 9,
-          name = "title",
-          type = "",
-          shape = "text",
-          x = 0,
-          y = 18,
-          width = 480,
-          height = 144,
-          rotation = 0,
-          visible = true,
-          text = "ROSE of\nDRAGONTAIL",
-          fontfamily = "Lady Radical",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 0, 0 },
-          halign = "center",
-          valign = "center",
-          properties = {}
-        },
         {
           id = 10,
           name = "pressstart",
@@ -2151,9 +2160,8 @@ return {
           height = 54,
           rotation = 0,
           visible = true,
-          text = "press any key or button",
-          fontfamily = "Lady Radical",
-          pixelsize = 32,
+          text = "PRESS ANY KEY OR BUTTON",
+          fontfamily = "Unifont",
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -2171,13 +2179,26 @@ return {
           height = 18,
           rotation = 0,
           visible = true,
-          text = "© 2024 Iori Branford",
-          fontfamily = "Press Start 2P",
-          pixelsize = 8,
+          text = "© 2026 Iori Branford",
+          fontfamily = "Unifont",
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
           valign = "center",
+          properties = {}
+        },
+        {
+          id = 101,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 0,
+          y = 0,
+          width = 480,
+          height = 270,
+          rotation = 0,
+          gid = 414,
+          visible = true,
           properties = {}
         }
       }

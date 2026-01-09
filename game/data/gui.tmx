@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="17" nextobjectid="101">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="17" nextobjectid="102">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -12,6 +12,7 @@
  <tileset firstgid="400" source="sprites/ui/go-word.tsx"/>
  <tileset firstgid="409" source="sprites/player/rose/firespit.tsx"/>
  <tileset firstgid="410" source="sprites/ui/break-grab.tsx"/>
+ <tileset firstgid="414" source="sprites/ui/title.tsx"/>
  <group id="4" name="gameplay">
   <objectgroup draworder="index" id="2" name="hud">
    <object id="4" name="run" type="Gui.Gauge" x="52" y="33" width="100" height="8" visible="0">
@@ -391,17 +392,14 @@ ALL CONTENT SUBJECT TO CHANGE</text>
    <object id="81" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="152" y="108"/>
   </objectgroup>
  </group>
- <objectgroup id="7" name="title" visible="0">
-  <object id="9" name="title" x="0" y="18" width="480" height="144">
-   <text fontfamily="Lady Radical" pixelsize="32" wrap="1" color="#ff0000" halign="center" valign="center">ROSE of
-DRAGONTAIL</text>
-  </object>
+ <objectgroup id="7" name="title">
   <object id="10" name="pressstart" x="0" y="162" width="480" height="54">
-   <text fontfamily="Lady Radical" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">press any key or button</text>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">PRESS ANY KEY OR BUTTON</text>
   </object>
   <object id="11" name="copyright" x="0" y="234" width="480" height="18">
-   <text fontfamily="Press Start 2P" pixelsize="8" wrap="1" color="#ffffff" halign="center" valign="center">© 2024 Iori Branford</text>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">© 2026 Iori Branford</text>
   </object>
+  <object id="101" gid="414" x="0" y="0" width="480" height="270"/>
  </objectgroup>
  <group id="8" name="wipe">
   <objectgroup id="9" name="diagonalCurtains" class="Gui.Wipe">
