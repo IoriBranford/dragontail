@@ -8,7 +8,7 @@ dagger-combo4,9,dagger-combo5,dagger-swing,Dragontail.Character.Behavior.Enemy.A
 dagger-combo5,20,dagger-combo6,dagger-swing-final,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,SwingWindup,0,TRUE,TRUE,FALSE,,data/sounds/man_light/attack1.mp3,,0,0,0,5,1,,,,,,,
 dagger-combo6,40,stand,dagger-swing-final,Dragontail.Character.Behavior.Enemy.AttackExecute,,,SwingAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing1.mp3,,0,0,0,5,1,,,,,,,
 spear-thrust,30,spear-thrust2,spear-thrust,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,ThrustWindup,0,TRUE,TRUE,FALSE,,data/sounds/man_medium/attack1.mp3,,0,0,0,15,1,,,,156.25,,,
-spear-thrust2,40,stand,spear-thrust,Dragontail.Character.Behavior.Enemy.AttackExecute,,,ThrustAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/swingblade.mp3,,3,0,0,15,0.5,,,,,,,
+spear-thrust2,40,stand,spear-thrust,Dragontail.Character.Behavior.Enemy.AttackExecute,,,LongThrustAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/swingblade.mp3,,3,0,0,15,0.5,,,,,,,
 spear-poke,20,spear-poke2,spear-poke,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,ThrustWindup,0,TRUE,TRUE,FALSE,,data/sounds/man_medium/attack1.mp3,,0,0.10471975511966,0,10,1,,,,92.5,,,
 spear-poke2,40,stand,spear-poke,Dragontail.Character.Behavior.Enemy.AttackExecute,,,ThrustAttack,0,TRUE,TRUE,FALSE,,data/sounds/combat/swing1.mp3,,0,0,0,10,1,,,,,,,
 axe-swing,10,axe-swing2,axe-swing,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,SwingWindup,0,TRUE,TRUE,FALSE,,data/sounds/man_heavy/lightattack3.mp3,,0,0,0,8,1,,,,76,,,
