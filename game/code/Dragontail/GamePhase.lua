@@ -59,8 +59,9 @@ function GamePhase.loadphase(stagepath_, startroom)
         music:setLooping(true)
     end
 
-    Gui:showOnlyNamed("gameplay", "wipe")
+    Gui:showOnlyNamed("gameplay", "wipe", "options")
     Gui.gameplay:showOnlyNamed("hud", "input")
+    Gui.options:showOnlyNamed()
     Gui:clearMenuStack()
 end
 

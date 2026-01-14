@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="17" nextobjectid="102">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="21" nextobjectid="117">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -13,7 +13,7 @@
  <tileset firstgid="409" source="sprites/player/rose/firespit.tsx"/>
  <tileset firstgid="410" source="sprites/ui/break-grab.tsx"/>
  <tileset firstgid="414" source="sprites/ui/title.tsx"/>
- <group id="4" name="gameplay">
+ <group id="4" name="gameplay" visible="0">
   <objectgroup draworder="index" id="2" name="hud">
    <object id="4" name="run" type="Gui.Gauge" x="52" y="33" width="100" height="8" visible="0">
     <properties>
@@ -264,7 +264,7 @@ ALL CONTENT SUBJECT TO CHANGE</text>
    <properties>
     <property name="backaction" value="unpauseGame"/>
    </properties>
-   <object id="76" template="gui/menu/Panel.tx" x="136" y="112.5" width="208" height="117">
+   <object id="76" template="gui/menu/Panel.tx" x="136" y="85.5" width="208" height="144">
     <properties>
      <property name="color" type="color" value="#80c52021"/>
     </properties>
@@ -272,7 +272,14 @@ ALL CONTENT SUBJECT TO CHANGE</text>
    <object id="8" name="name" x="192" y="54" width="96" height="18" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">PAUSE</text>
    </object>
-   <object id="72" template="gui/menu/pause/Button.tx" name="Resume" type="Gui.Button" x="184" y="121.5">
+   <object id="72" template="gui/menu/pause/Button.tx" name="Options" type="Gui.Button" x="184" y="121.5">
+    <properties>
+     <property name="action" value="openMenu"/>
+     <property name="guipath" value="options.simple"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Options</text>
+   </object>
+   <object id="116" template="gui/menu/pause/Button.tx" name="Resume" type="Gui.Button" x="184" y="94.5">
     <properties>
      <property name="action" value="unpauseGame"/>
     </properties>
@@ -302,7 +309,7 @@ ALL CONTENT SUBJECT TO CHANGE</text>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Debug</text>
    </object>
-   <object id="74" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="152" y="130.5"/>
+   <object id="74" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="152" y="103.5"/>
   </objectgroup>
   <objectgroup id="15" name="debugmenu" class="Gui.Menu" visible="0">
    <properties>
@@ -392,15 +399,101 @@ ALL CONTENT SUBJECT TO CHANGE</text>
    <object id="81" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="152" y="108"/>
   </objectgroup>
  </group>
- <objectgroup id="7" name="title">
-  <object id="10" name="pressstart" x="0" y="162" width="480" height="54">
-   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">PRESS ANY KEY OR BUTTON</text>
-  </object>
-  <object id="11" name="copyright" x="0" y="234" width="480" height="18">
-   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">© 2026 Iori Branford</text>
-  </object>
-  <object id="101" gid="414" x="0" y="0" width="480" height="270"/>
- </objectgroup>
+ <group id="17" name="titlescreen" visible="0">
+  <objectgroup id="7" name="title">
+   <object id="10" name="pressstart" x="0" y="175.5" width="480" height="54">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">PRESS ANY KEY OR BUTTON</text>
+   </object>
+   <object id="11" name="copyright" x="0" y="234" width="480" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">© 2026 Iori Branford</text>
+   </object>
+   <object id="101" gid="414" x="0" y="0" width="480" height="270">
+    <properties>
+     <property name="asetag" value="Flaming"/>
+    </properties>
+   </object>
+  </objectgroup>
+  <objectgroup id="18" name="menu" class="Gui.Menu">
+   <object id="102" name="START" type="Gui.Button" x="228" y="175.5" width="64" height="18">
+    <properties>
+     <property name="action" value="restartStage"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">START</text>
+   </object>
+   <object id="104" name="OPTIONS" type="Gui.Button" x="228" y="193.5" width="64" height="18">
+    <properties>
+     <property name="action" value="openMenu"/>
+     <property name="guipath" value="options.root"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">OPTIONS</text>
+   </object>
+   <object id="105" name="QUIT" type="Gui.Button" x="228" y="211.5" width="64" height="18">
+    <properties>
+     <property name="action" value="quit"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">QUIT</text>
+   </object>
+   <object id="103" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="196" y="184.5"/>
+   <object id="106" template="gui/menu/Panel.tx" x="176" y="171" width="128" height="63">
+    <properties>
+     <property name="color" type="color" value="#80c52021"/>
+    </properties>
+   </object>
+  </objectgroup>
+ </group>
+ <group id="20" name="options">
+  <objectgroup draworder="index" id="19" name="simple" class="Gui.Menu">
+   <properties>
+    <property name="backaction" value="closeMenu"/>
+   </properties>
+   <object id="107" template="gui/menu/Panel.tx" x="120" y="36" width="240" height="198"/>
+   <object id="109" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="132" y="63"/>
+   <object id="108" name="Close" type="Gui.Button" x="168" y="198" width="64" height="18">
+    <properties>
+     <property name="action" value="closeMenu"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Close</text>
+   </object>
+   <object id="110" template="gui/menu/settings/Slider.tx" name="fullscreen" type="Gui.Slider" x="168" y="54" width="176" height="18">
+    <properties>
+     <property name="configkey" value="fullscreen"/>
+     <property name="label" type="object" value="111"/>
+     <property name="refreshaction" value="refreshWindow"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
+   </object>
+   <object id="112" template="gui/menu/settings/Slider.tx" name="soundvolume" type="Gui.Slider" x="168" y="90" width="176" height="18">
+    <properties>
+     <property name="configkey" value="soundvolume"/>
+     <property name="increment" type="float" value="0.125"/>
+     <property name="label" type="object" value="113"/>
+     <property name="max" type="float" value="1"/>
+     <property name="units" propertytype="SliderUnit" value="percent"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">100</text>
+   </object>
+   <object id="114" template="gui/menu/settings/Slider.tx" name="musicvolume" type="Gui.Slider" x="168" y="126" width="176" height="18">
+    <properties>
+     <property name="configkey" value="musicvolume"/>
+     <property name="increment" type="float" value="0.125"/>
+     <property name="label" type="object" value="115"/>
+     <property name="max" type="float" value="1"/>
+     <property name="refreshaction" value="refreshMusicVolume"/>
+     <property name="units" propertytype="SliderUnit" value="percent"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">100</text>
+   </object>
+   <object id="111" name="Full screen" x="168" y="54" width="144" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Full screen</text>
+   </object>
+   <object id="113" name="Sound volume" x="168" y="90" width="144" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Sound volume</text>
+   </object>
+   <object id="115" name="Music volume" x="168" y="126" width="144" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Music volume</text>
+   </object>
+  </objectgroup>
+ </group>
  <group id="8" name="wipe">
   <objectgroup id="9" name="diagonalCurtains" class="Gui.Wipe">
    <properties>
