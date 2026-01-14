@@ -437,57 +437,61 @@ function Stage.fixedupdate()
     scene:animate(1)
 end
 
+---@param gui Gui
 function Stage.fixedupdateGui(gui)
     local players = Characters.getGroup("players") ---@type Player[]
     local player = players[1]
 
     local healthpercent = player.health / player.maxhealth
-    local hud = gui.gameplay.hud
+    local hud = gui:get("gameplay.hud")
+    if hud then
+        hud.health:setPercent(healthpercent)
 
-    hud.health:setPercent(healthpercent)
-
-    local manastore = player.manastore
-    local manacharge = player.manacharge
-    local manaunitsize = player.manaunitsize
-    for i = 1, 3 do
-        local flamestorepercent = manastore/manaunitsize
-        local flamestoregauge = hud["flame"..i] ---@type Gauge
-        if flamestoregauge then
-            flamestoregauge:setPercent(flamestorepercent)
-            flamestoregauge.color = flamestorepercent < 1 and flamestoregauge.normalcolor or flamestoregauge.fullcolor
+        local manastore = player.manastore
+        local manacharge = player.manacharge
+        local manaunitsize = player.manaunitsize
+        for i = 1, 3 do
+            local flamestorepercent = manastore/manaunitsize
+            local flamestoregauge = hud["flame"..i] ---@type Gauge
+            if flamestoregauge then
+                flamestoregauge:setPercent(flamestorepercent)
+                flamestoregauge.color = flamestorepercent < 1 and flamestoregauge.normalcolor or flamestoregauge.fullcolor
+            end
+            local flamechargegauge = hud["flamecharge"..i] ---@type Gauge
+            if flamechargegauge then
+                local percent = manacharge/manaunitsize
+                flamechargegauge:setPercent(flamestorepercent >= 1 and percent or 0)
+            end
+            local flamefull = hud["flamefullcharge"..i] ---@type GuiObject
+            if flamefull then
+                flamefull.visible = manacharge >= manaunitsize
+            end
+            manastore = manastore - manaunitsize
+            manacharge = manacharge - manaunitsize
         end
-        local flamechargegauge = hud["flamecharge"..i] ---@type Gauge
-        if flamechargegauge then
-            local percent = manacharge/manaunitsize
-            flamechargegauge:setPercent(flamestorepercent >= 1 and percent or 0)
-        end
-        local flamefull = hud["flamefullcharge"..i] ---@type GuiObject
-        if flamefull then
-            flamefull.visible = manacharge >= manaunitsize
-        end
-        manastore = manastore - manaunitsize
-        manacharge = manacharge - manaunitsize
     end
 
-    local portrait = hud.portrait
-    portrait.originx = portrait.width/2 + sin(player.hurtstun)
-    if winningteam == "players" then
-        portrait:changeTile("win")
-    elseif player.hurtstun > 0 or healthpercent <= 0.5 then
-        portrait:changeTile("hurt")
-    elseif player.attackangle then
-        portrait:changeTile("attack")
-    else
-        portrait:changeTile("normal")
+    local portrait = gui:get("gameplay.hud.portrait")
+    if portrait then
+        portrait.originx = portrait.width/2 + sin(player.hurtstun)
+        if winningteam == "players" then
+            portrait:changeTile("win")
+        elseif player.hurtstun > 0 or healthpercent <= 0.5 then
+            portrait:changeTile("hurt")
+        elseif player.attackangle then
+            portrait:changeTile("attack")
+        else
+            portrait:changeTile("normal")
+        end
     end
 
     -- local runpercent = player.runenergy / player.runenergymax
     -- hud.run:setPercent(runpercent)
 
-    local weaponhud = gui.gameplay.hud_weaponslots
+    local weaponhud = gui:get("gameplay.hud_weaponslots")
     if weaponhud then
         local inventory = player.inventory
-        if #inventory > 0 then
+        if inventory and #inventory > 0 then
             weaponhud.visible = true
 
             for i = 1, inventory.capacity do
@@ -548,29 +552,31 @@ function Stage.fixedupdateGui(gui)
         end
     end
 
-    local go = gui.gameplay.hud_go
-    local camerapath = Stage.getCurrentCameraPath()
-    if Stage.isInNextRoom() or not camerapath then
-        go.visible = false
-    else
-        local cameracenterx, cameracentery =
-            camera.x+camera.width/2,
-            camera.y+camera.height/2
-        local totargetx, totargety =
-            camerapath:getGoIndicatorOffset(
-                cameracenterx, cameracentery,
-                camera.width/4)
-
-        if totargetx ~= 0 or totargety ~= 0 then
-            totargetx, totargety = math.norm(totargetx, totargety)
-            totargetx = totargetx * camera.width/4
-            totargety = totargety * camera.height/4
-            go.visible = true
-            go.x = totargetx + camera.width/2
-            go.y = totargety + camera.height/2
-            go.arrow.rotation = math.atan2(totargety, totargetx)
-        else
+    local go = gui:get("gameplay.hud_go")
+    if go then
+        local camerapath = Stage.getCurrentCameraPath()
+        if Stage.isInNextRoom() or not camerapath then
             go.visible = false
+        else
+            local cameracenterx, cameracentery =
+                camera.x+camera.width/2,
+                camera.y+camera.height/2
+            local totargetx, totargety =
+                camerapath:getGoIndicatorOffset(
+                    cameracenterx, cameracentery,
+                    camera.width/4)
+
+            if totargetx ~= 0 or totargety ~= 0 then
+                totargetx, totargety = math.norm(totargetx, totargety)
+                totargetx = totargetx * camera.width/4
+                totargety = totargety * camera.height/4
+                go.visible = true
+                go.x = totargetx + camera.width/2
+                go.y = totargety + camera.height/2
+                go.arrow.rotation = math.atan2(totargety, totargetx)
+            else
+                go.visible = false
+            end
         end
     end
 end
