@@ -181,10 +181,10 @@
    eJztjUEKglAURc8FG4nbyZqE29FsELQcLWdtSVxNPP57EB+SpoIHHvwL9/wL2+Hx410IDoI3cBYcBbXgpJTnlf8m4EZyox/uAvSCVtAJrkq59A27cIw6c6MfbiV4CQbBKHh6vviGXThGl7nRD7fxXs7dN4Yvxxj/cHfYFB+hhhvY
   </chunk>
    <chunk x="40" y="24" width="20" height="12">
-   eJztjzsKgDAQRN/U5jx+Gj2P0cacx+hVbRKUJYi1OtUb2Mew8K00glbgBKPACybBbHolqHXed4mdcTIPglUQBZtgN70v7PnkXZ3MQfd/LIW9+MD7w6tyAIJoFXI=
+   eJztjrsNgDAMRN/VwDp8GmAdAg3MQ2AvpkFIQXGRgjriVbbvTmfInwuYBYugEbSCUjAJnKJm90JQG38X5idXCQ7BafyDYBd4o9m9T/S5kBsVf339m7mlWBN9/kPuh6y4AdynFZI=
   </chunk>
    <chunk x="60" y="24" width="20" height="12">
-   eJztzakRhAAABMFeTT5wGPLhMZcPT6oUnuKxwLhWw7tqQxf6MOTYRShDFX6h3vEYpjCH5cTNyW/znf4X/l8e3Qp4cxY9
+   eJztzqkNgEAABdEZC/1wCOiHw9APR1m0g1rHbhZHCOOe+fnw7gZhFCZhNu4zc28VNmEXDuMuhFKohFpohPbGuXVCn/gf/KQl8T/4j093AU/3FlI=
   </chunk>
    <chunk x="80" y="24" width="20" height="12">
    eJztzDsKwlAARNEz+GncT4yN+0m0cT/xsyTBxuWI8CTyML2gFwbmNpffognrcMcFi3BDX3wZWszD9YPPwvGt14U+rDK227CpfjPhTdmL4dkP24ztXdhXv5vwrqzmkLF9CufqDxM+lP3xlTwAWzgcPA==
@@ -1807,37 +1807,37 @@ to sprint past archers</text>
    <object id="484" template="mapobjects/CameraPath.tx" x="1456" y="1008">
     <polyline points="0,0 128,0"/>
    </object>
-   <object id="320" gid="6598" x="1784" y="1088" width="96" height="48">
+   <object id="320" gid="6598" x="1784" y="1072" width="96" height="48">
     <properties>
      <property name="extrudeY" type="float" value="-16"/>
     </properties>
    </object>
-   <object id="327" gid="7204" x="1728" y="1128" width="32" height="32">
+   <object id="327" gid="7204" x="1728" y="1112" width="32" height="32">
     <properties>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
-   <object id="328" gid="7212" x="1832" y="1136" width="32" height="32">
+   <object id="328" gid="7212" x="1832" y="1120" width="32" height="32">
     <properties>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
-   <object id="370" type="item-dish" gid="6613" x="1762" y="1080" width="32" height="32">
+   <object id="370" type="item-dish" gid="6613" x="1762" y="1064" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="371" type="item-dish" gid="6613" x="1800" y="1080" width="32" height="32">
+   <object id="371" type="item-dish" gid="6613" x="1800" y="1064" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="378" gid="6674" x="1760" y="1088" width="32" height="32">
+   <object id="378" gid="6674" x="1760" y="1072" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="380" gid="7225" x="1802" y="1082" width="32" height="32">
+   <object id="380" gid="7225" x="1802" y="1066" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
@@ -1851,80 +1851,80 @@ to sprint past archers</text>
     <polyline points="288,0 640,0"/>
    </object>
    <object id="74" template="mapobjects/OutwardBoundary.tx" x="1696" y="1184">
-    <polygon points="0,-320 0,-240 96,-240 128,-272 480,-272 480,-320"/>
+    <polygon points="0,-320 0,-240 96,-240 160,-304 480,-304 480,-320"/>
    </object>
-   <object id="318" gid="6596" x="1864" y="968" width="96" height="48">
+   <object id="318" gid="6596" x="1880" y="936" width="96" height="48">
     <properties>
      <property name="extrudeY" type="float" value="-16"/>
     </properties>
    </object>
-   <object id="319" gid="6598" x="1984" y="968" width="96" height="48">
+   <object id="319" gid="6598" x="2000" y="936" width="96" height="48">
     <properties>
      <property name="extrudeY" type="float" value="-16"/>
     </properties>
    </object>
-   <object id="321" gid="6597" x="1920" y="1088" width="96" height="48">
+   <object id="321" gid="6597" x="1920" y="1072" width="96" height="48">
     <properties>
      <property name="extrudeY" type="float" value="-16"/>
     </properties>
    </object>
-   <object id="322" gid="6596" x="2064" y="1088" width="96" height="48">
+   <object id="322" gid="6596" x="2064" y="1072" width="96" height="48">
     <properties>
      <property name="extrudeY" type="float" value="-16"/>
     </properties>
    </object>
-   <object id="323" gid="6597" x="2112" y="968" width="96" height="48">
+   <object id="323" gid="6597" x="2120" y="936" width="96" height="48">
     <properties>
      <property name="extrudeY" type="float" value="-16"/>
     </properties>
    </object>
-   <object id="324" gid="7201" x="1952" y="936" width="32" height="32">
+   <object id="324" gid="7201" x="1968" y="912" width="32" height="32">
     <properties>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
-   <object id="325" gid="7205" x="2072" y="928" width="32" height="32">
+   <object id="325" gid="7205" x="2080" y="912" width="32" height="32">
     <properties>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
-   <object id="326" gid="7212" x="2024" y="1128" width="32" height="32">
+   <object id="326" gid="7212" x="2024" y="1112" width="32" height="32">
     <properties>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
-   <object id="329" gid="7208" x="1960" y="1136" width="32" height="32">
+   <object id="329" gid="7208" x="1960" y="1120" width="32" height="32">
     <properties>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
-   <object id="330" gid="7204" x="1880" y="1128" width="32" height="32">
+   <object id="330" gid="7204" x="1880" y="1112" width="32" height="32">
     <properties>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
-   <object id="331" gid="7208" x="2104" y="1136" width="32" height="32">
+   <object id="331" gid="7208" x="2104" y="1120" width="32" height="32">
     <properties>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
-   <object id="332" gid="7209" x="2032" y="928" width="32" height="32">
+   <object id="332" gid="7209" x="2040" y="912" width="32" height="32">
     <properties>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
-   <object id="333" gid="7201" x="2152" y="936" width="32" height="32">
+   <object id="333" gid="7201" x="2160" y="912" width="32" height="32">
     <properties>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
-   <object id="334" gid="7205" x="1832" y="928" width="32" height="32"/>
-   <object id="335" gid="7209" x="1912" y="936" width="32" height="32">
+   <object id="334" gid="7205" x="1856" y="912" width="32" height="32"/>
+   <object id="335" gid="7209" x="1920" y="912" width="32" height="32">
     <properties>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
-   <object id="336" gid="7236" x="1872" y="936" width="64" height="64">
+   <object id="336" gid="7236" x="1888" y="920" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="999999999"/>
      <property name="defaultattack" value="sling-shot-until-empty"/>
@@ -1932,7 +1932,7 @@ to sprint past archers</text>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
     </properties>
    </object>
-   <object id="337" gid="7236" x="1992" y="936" width="64" height="64">
+   <object id="337" gid="7236" x="2008" y="920" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="999999999"/>
      <property name="defaultattack" value="sling-shot-until-empty"/>
@@ -1940,7 +1940,7 @@ to sprint past archers</text>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
     </properties>
    </object>
-   <object id="338" gid="7234" x="2112" y="936" width="128" height="128">
+   <object id="338" gid="7234" x="2120" y="920" width="128" height="128">
     <properties>
      <property name="ammo" type="int" value="999999999"/>
      <property name="defaultattack" value="bow-shot-until-empty"/>
@@ -1948,102 +1948,102 @@ to sprint past archers</text>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
     </properties>
    </object>
-   <object id="359" type="item-dish" gid="6613" x="1840" y="960" width="32" height="32">
+   <object id="359" type="item-dish" gid="6613" x="1856" y="928" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="362" type="item-dish" gid="6613" x="1904" y="1080" width="32" height="32">
+   <object id="362" type="item-dish" gid="6613" x="1904" y="1064" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="360" type="item-dish" gid="6613" x="1880" y="960" width="32" height="32">
+   <object id="360" type="item-dish" gid="6613" x="1896" y="928" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="361" type="item-dish" gid="6613" x="1944" y="1080" width="32" height="32">
+   <object id="361" type="item-dish" gid="6613" x="1944" y="1064" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="363" gid="6681" x="1840" y="968" width="32" height="32">
+   <object id="363" gid="6681" x="1856" y="936" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="364" gid="6674" x="1880" y="968" width="32" height="32">
+   <object id="364" gid="6674" x="1896" y="936" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="365" gid="6623" x="1912" y="1080" width="32" height="32">
+   <object id="365" gid="6623" x="1912" y="1064" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="366" type="item-dish" gid="6613" x="1960" y="960" width="32" height="32">
+   <object id="366" type="item-dish" gid="6613" x="1976" y="928" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="367" type="item-dish" gid="6613" x="2000" y="960" width="32" height="32">
+   <object id="367" type="item-dish" gid="6613" x="2016" y="928" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="368" type="item-dish" gid="6613" x="2096" y="960" width="32" height="32">
+   <object id="368" type="item-dish" gid="6613" x="2104" y="928" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="369" type="item-dish" gid="6613" x="2136" y="960" width="32" height="32">
+   <object id="369" type="item-dish" gid="6613" x="2144" y="928" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="372" type="item-dish" gid="6613" x="2040" y="1080" width="32" height="32">
+   <object id="372" type="item-dish" gid="6613" x="2040" y="1064" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="373" type="item-dish" gid="6613" x="2080" y="1080" width="32" height="32">
+   <object id="373" type="item-dish" gid="6613" x="2080" y="1064" width="32" height="32">
     <properties>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="374" gid="6622" x="1964" y="962" width="32" height="32">
+   <object id="374" gid="6622" x="1980" y="930" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="375" gid="7225" x="2000" y="960" width="32" height="32">
+   <object id="375" gid="7225" x="2016" y="928" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="376" gid="6623" x="2144" y="960" width="32" height="32">
+   <object id="376" gid="6623" x="2152" y="928" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="377" gid="6674" x="2096" y="968" width="32" height="32">
+   <object id="377" gid="6674" x="2104" y="936" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="381" gid="7225" x="2040" y="1080" width="32" height="32">
+   <object id="381" gid="7225" x="2040" y="1064" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="379" gid="6678" x="2076" y="1088" width="32" height="32">
+   <object id="379" gid="6678" x="2076" y="1072" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
    </object>
-   <object id="382" gid="6682" x="1941" y="1088" width="32" height="32">
+   <object id="382" gid="6682" x="1941" y="1072" width="32" height="32">
     <properties>
      <property name="z" type="float" value="18"/>
     </properties>
@@ -2062,7 +2062,7 @@ to sprint past archers</text>
    <properties>
     <property name="donewhenenemiesleft" type="int" value="5"/>
    </properties>
-   <object id="343" gid="7236" x="2064" y="1192" width="64" height="64">
+   <object id="343" gid="7236" x="2064" y="1176" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="999999999"/>
      <property name="defaultattack" value="sling-shot-until-empty"/>
@@ -2071,7 +2071,7 @@ to sprint past archers</text>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
     </properties>
    </object>
-   <object id="346" name="entrypoint" x="2064" y="1136">
+   <object id="346" name="entrypoint" x="2064" y="1120">
     <point/>
    </object>
    <object id="347" template="mapobjects/bandit/spear.tx" x="1680" y="1008"/>
@@ -2080,7 +2080,7 @@ to sprint past archers</text>
    <properties>
     <property name="donewhenenemiesleft" type="int" value="5"/>
    </properties>
-   <object id="342" gid="7236" x="1920" y="1192" width="64" height="64">
+   <object id="342" gid="7236" x="1920" y="1176" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="999999999"/>
      <property name="defaultattack" value="sling-shot-until-empty"/>
@@ -2089,7 +2089,7 @@ to sprint past archers</text>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
     </properties>
    </object>
-   <object id="345" name="entrypoint" x="1920" y="1136">
+   <object id="345" name="entrypoint" x="1920" y="1120">
     <point/>
    </object>
    <object id="348" template="mapobjects/bandit/spear.tx" x="2192" y="1008"/>
@@ -2098,7 +2098,7 @@ to sprint past archers</text>
    <properties>
     <property name="titlebarcuecard" value="LV3 REVENGE"/>
    </properties>
-   <object id="341" gid="7234" x="1784" y="1192" width="128" height="128">
+   <object id="341" gid="7234" x="1784" y="1176" width="128" height="128">
     <properties>
      <property name="ammo" type="int" value="999999999"/>
      <property name="defaultattack" value="bow-shot-until-empty"/>
@@ -2107,7 +2107,7 @@ to sprint past archers</text>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
     </properties>
    </object>
-   <object id="344" name="entrypoint" x="1784" y="1136">
+   <object id="344" name="entrypoint" x="1784" y="1120">
     <point/>
    </object>
    <object id="349" template="mapobjects/bandit/spear.tx" x="1680" y="1080"/>
@@ -2124,7 +2124,7 @@ to sprint past archers</text>
     <polyline points="-320,0 640,0"/>
    </object>
    <object id="316" template="mapobjects/OutwardBoundary.tx" x="2208" y="864">
-    <polygon points="-32,0 -32,48 64,48 96,80 416,80 448,112 448,0"/>
+    <polygon points="-32,0 -32,16 32,16 96,80 416,80 448,112 448,0"/>
    </object>
   </objectgroup>
   <objectgroup id="67" name="toboss" class="Room">
@@ -2138,7 +2138,7 @@ to sprint past archers</text>
     <polygon points="-64,64 -64,224 448,224 448,0 384,-64 160,-64 128,-32 32,-32"/>
    </object>
    <object id="702" template="mapobjects/OutwardBoundary.tx" x="2208" y="864">
-    <polygon points="-32,0 -32,48 64,48 96,80 416,80 448,112 448,0"/>
+    <polygon points="-32,0 -32,16 32,16 96,80 416,80 448,112 448,0"/>
    </object>
    <object id="76" template="mapobjects/OutwardBoundary.tx" x="2656" y="896">
     <properties>
