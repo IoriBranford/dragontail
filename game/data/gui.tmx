@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="21" nextobjectid="117">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="21" nextobjectid="119">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -483,6 +483,21 @@ ALL CONTENT SUBJECT TO CHANGE</text>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">100</text>
    </object>
+   <object id="118" template="gui/menu/settings/Slider.tx" name="musictrack" type="Gui.Slider" x="168" y="162" width="176" height="18">
+    <properties>
+     <property name="configkey" value="musictrack"/>
+     <property name="label" type="object" value="117"/>
+     <property name="max" type="float" value="2"/>
+     <property name="min" type="float" value="1"/>
+     <property name="refreshaction" value="playSelectedMusic"/>
+     <property name="units" propertytype="SliderUnit" value="percent"/>
+     <property name="valuestrings" type="list">
+      <item value="Surf Shimmy"/>
+      <item value="Retro Chiptune Guitar"/>
+     </property>
+    </properties>
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="right">Retro Chiptune Guitar</text>
+   </object>
    <object id="111" name="Full screen" x="168" y="54" width="144" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Full screen</text>
    </object>
@@ -491,6 +506,9 @@ ALL CONTENT SUBJECT TO CHANGE</text>
    </object>
    <object id="115" name="Music volume" x="168" y="126" width="144" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Music volume</text>
+   </object>
+   <object id="117" name="Music" x="168" y="162" width="144" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Music</text>
    </object>
   </objectgroup>
  </group>

@@ -8,6 +8,7 @@ local Gui = require "Dragontail.Gui"
 local Config = require "System.Config"
 local Inputs = require "System.Inputs"
 local Player = require "Dragontail.Character.Player"
+local GameGuiActions = require "Dragontail.GuiActions"
 local isAsset = Assets.isAsset
 local getAsset = Assets.get
 local GamePhase = {}
@@ -16,7 +17,6 @@ local paused
 local pauselocked
 local stagecanvas
 local stagepath = "data/stage_banditcave.lua"
-local musicpath = "data/music/Surf Shimmy.ogg"
 
 function GamePhase.loadphase(stagepath_, startroom)
     stagepath = stagepath_ or stagepath
@@ -24,7 +24,6 @@ function GamePhase.loadphase(stagepath_, startroom)
     pauselocked = false
     local unifont = Assets.getFont("Unifont", 16)
     love.graphics.setFont(unifont)
-    Assets.get(musicpath, "stream")
 
     Database.load("data/database/vfx-properties.csv")
     Database.load("data/database/items-properties.csv")
@@ -54,10 +53,7 @@ function GamePhase.loadphase(stagepath_, startroom)
     Stage.init(startroom)
     GamePhase.resize(love.graphics.getWidth(), love.graphics.getHeight())
 
-    local music = Audio.playMusic(musicpath)
-    if music then
-        music:setLooping(true)
-    end
+    GameGuiActions.playSelectedMusic()
 
     Gui:showOnlyNamed("gameplay", "wipe", "options")
     Gui.gameplay:showOnlyNamed("hud", "input")

@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 18,
   nextlayerid = 21,
-  nextobjectid = 117,
+  nextobjectid = 119,
   properties = {},
   tilesets = {
     {
@@ -2520,6 +2520,36 @@ return {
               }
             },
             {
+              id = 118,
+              name = "musictrack",
+              type = "Gui.Slider",
+              shape = "text",
+              x = 168,
+              y = 162,
+              width = 176,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Retro Chiptune Guitar",
+              fontfamily = "TinyUnicode",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "right",
+              properties = {
+                ["configkey"] = "musictrack",
+                ["increment"] = 1,
+                ["label"] = { id = 117 },
+                ["max"] = 2,
+                ["min"] = 1,
+                ["refreshaction"] = "playSelectedMusic",
+                ["units"] = "percent",
+                ["valuestrings"] = {
+                  "Surf Shimmy",
+                  "Retro Chiptune Guitar"
+                }
+              }
+            },
+            {
               id = 111,
               name = "Full screen",
               type = "",
@@ -2565,6 +2595,23 @@ return {
               rotation = 0,
               visible = true,
               text = "Music volume",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 117,
+              name = "Music",
+              type = "",
+              shape = "text",
+              x = 168,
+              y = 162,
+              width = 144,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Music",
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
