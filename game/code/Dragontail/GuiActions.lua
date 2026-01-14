@@ -1,10 +1,19 @@
-local GamePhase = require "Dragontail.GamePhase"
 local GuiActions= require "Gui.GuiActions"
 local Characters= require "Dragontail.Stage.Characters"
+local Audio     = require "System.Audio"
+local Config    = require "System.Config"
 
 local GameGuiActions = class(GuiActions)
 
+function GameGuiActions.playSelectedMusic()
+    local music = Audio.playMusic("data/music/"..Config.musictrack..".ogg")
+    if music then
+        music:setLooping(true)
+    end
+end
+
 function GameGuiActions.unpauseGame()
+    local GamePhase = require "Dragontail.GamePhase"
     GamePhase.setPaused(false)
 end
 
