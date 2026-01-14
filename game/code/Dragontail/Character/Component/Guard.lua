@@ -29,8 +29,7 @@ end
 ---@return boolean
 function Guard:isHitGuarded(hit)
     if hit.attacker.unguardable then return false end
-    return Guard.isAngleAgainstGuardArc(self, hit.angle)
-        or Guard.isPointInGuardArc(self, hit.attackx, hit.attacky)
+    return Guard.isPointInGuardArc(self, hit.attacker.x, hit.attacker.y)
 end
 
 function Guard:isAttackAgainstGuardArc(attacker)
