@@ -4,8 +4,11 @@
   <properties>
    <property name="configkey" value=""/>
    <property name="increment" type="float" value="1"/>
+   <property name="label" type="object" value="0"/>
    <property name="max" type="float" value="10"/>
    <property name="min" type="float" value="0"/>
+   <property name="refreshaction" value=""/>
+   <property name="units" propertytype="SliderUnit" value="none"/>
   </properties>
   <text fontfamily="Unifont" wrap="1" color="#ffffff">Slider</text>
  </object>
