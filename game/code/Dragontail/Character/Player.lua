@@ -122,13 +122,17 @@ function Player:doComboAttack(faceangle, heldenemy, lunging, inair)
     return attacktype, faceangle, attackdata and attackdata.isholding and heldenemy
 end
 
+local OtherLevelPrefStrength = 8
+
 function Player:updateEnemyTargetingScores(lookangle)
     lookangle = lookangle or self.faceangle
     local lookx, looky = math.cos(lookangle), math.sin(lookangle)
-    local x, y = self.x, self.y
+    local x, y, z = self.x, self.y, self.z
     return Attacker.updateOpponentsByPriority(self, function(e)
-        return e.getTargetingScore and
+        local score = e.getTargetingScore and
             e:getTargetingScore(x, y, lookx, looky)
+        local otherlevelbonus = OtherLevelPrefStrength*math.abs(e.z - z)
+        return score and (score - otherlevelbonus)
     end)
 end
 
