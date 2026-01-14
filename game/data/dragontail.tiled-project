@@ -197,6 +197,17 @@
                 "layer",
                 "project"
             ]
+        },
+        {
+            "id": 15,
+            "name": "SliderUnit",
+            "storageType": "string",
+            "type": "enum",
+            "values": [
+                "none",
+                "percent"
+            ],
+            "valuesAsFlags": false
         }
     ]
 }
