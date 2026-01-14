@@ -140,6 +140,7 @@ return {
         -- highscores_character = "Amy",
         -- highscores_onlineposition = "TOP",
         musicvolume = 0.25,
+        musictrack = "Surf Shimmy",
         soundvolume = 0.75,
     }
 }
