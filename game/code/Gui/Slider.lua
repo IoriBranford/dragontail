@@ -21,7 +21,9 @@ function Slider:spawn()
         for valuestring in self.valuestrings:gmatch("[^\n^$]+") do
             valuestrings[#valuestrings+1] = valuestring
         end
-    else
+        self.valuestrings = valuestrings
+    elseif not self.valuestrings then
+        valuestrings = {}
         for i = 1, 16 do
             local valuestr = self["valuestr"..i]
             if not valuestr then
@@ -30,8 +32,8 @@ function Slider:spawn()
             valuestrings = valuestrings or {}
             valuestrings[i] = valuestr
         end
+        self.valuestrings = valuestrings
     end
-    self.valuestrings = valuestrings
 end
 
 function Slider:getValueAsString(value)
