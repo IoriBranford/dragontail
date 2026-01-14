@@ -494,6 +494,9 @@ function Stage.fixedupdateGui(gui)
         if inventory and #inventory > 0 then
             weaponhud.visible = true
 
+            weaponhud.x, weaponhud.y = player.x - camera.x,
+                player.y - player.z - player.bodyheight - camera.y
+
             for i = 1, inventory.capacity do
                 local emptyslot = weaponhud["emptyslot"..i]
                 local filledslot = weaponhud["fullslot"..i]
