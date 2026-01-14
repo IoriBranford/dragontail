@@ -4,6 +4,9 @@
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
  </editorsettings>
+ <properties>
+  <property name="ceilingz" type="float" value="256"/>
+ </properties>
  <tileset firstgid="1" source="tilesets/caves/caves.tsx"/>
  <tileset firstgid="2449" source="tilesets/grassland.tsx"/>
  <tileset firstgid="5265" source="sprites/bandit/cavedoor2-diagonal.tsx"/>
@@ -1717,6 +1720,9 @@ to sprint past archers</text>
     <polyline points="16,0 288,0"/>
    </object>
    <object id="317" template="mapobjects/OutwardBoundary.tx" x="1216" y="864">
+    <properties>
+     <property name="extrudeY" type="float" value="-256"/>
+    </properties>
     <polygon points="32,0 32,80 128,80 160,48 176,48 208,16 240,16 272,48 384,48 416,80 480,80 480,0"/>
    </object>
    <object id="385" template="mapobjects/OutwardBoundary.tx" x="1376" y="912">
@@ -1851,7 +1857,10 @@ to sprint past archers</text>
     <polyline points="288,0 640,0"/>
    </object>
    <object id="74" template="mapobjects/OutwardBoundary.tx" x="1696" y="1184">
-    <polygon points="0,-320 0,-240 96,-240 160,-304 480,-304 480,-320"/>
+    <properties>
+     <property name="extrudeY" type="float" value="-256"/>
+    </properties>
+    <polygon points="0,-384 0,-240 96,-240 160,-304 480,-304 480,-384"/>
    </object>
    <object id="318" gid="6596" x="1880" y="936" width="96" height="48">
     <properties>
@@ -2124,7 +2133,10 @@ to sprint past archers</text>
     <polyline points="-320,0 640,0"/>
    </object>
    <object id="316" template="mapobjects/OutwardBoundary.tx" x="2208" y="864">
-    <polygon points="-32,0 -32,16 32,16 96,80 416,80 448,112 448,0"/>
+    <properties>
+     <property name="extrudeY" type="float" value="-256"/>
+    </properties>
+    <polygon points="-32,-64 -32,16 32,16 96,80 416,80 448,112 448,-64"/>
    </object>
   </objectgroup>
   <objectgroup id="67" name="toboss" class="Room">
@@ -2138,7 +2150,10 @@ to sprint past archers</text>
     <polygon points="-64,64 -64,224 448,224 448,0 384,-64 160,-64 128,-32 32,-32"/>
    </object>
    <object id="702" template="mapobjects/OutwardBoundary.tx" x="2208" y="864">
-    <polygon points="-32,0 -32,16 32,16 96,80 416,80 448,112 448,0"/>
+    <properties>
+     <property name="extrudeY" type="float" value="-256"/>
+    </properties>
+    <polygon points="-32,-64 -32,16 32,16 96,80 416,80 448,112 448,-64"/>
    </object>
    <object id="76" template="mapobjects/OutwardBoundary.tx" x="2656" y="896">
     <properties>

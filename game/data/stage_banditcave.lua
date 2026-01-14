@@ -12,7 +12,9 @@ return {
   nextlayerid = 74,
   nextobjectid = 785,
   backgroundcolor = { 64, 64, 64 },
-  properties = {},
+  properties = {
+    ["ceilingz"] = 256
+  },
   tilesets = {
     {
       name = "caves",
@@ -22841,7 +22843,7 @@ return {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -64,
+                ["extrudeY"] = -256,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -23408,18 +23410,18 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 0, y = -320 },
+                { x = 0, y = -384 },
                 { x = 0, y = -240 },
                 { x = 96, y = -240 },
                 { x = 160, y = -304 },
                 { x = 480, y = -304 },
-                { x = 480, y = -320 }
+                { x = 480, y = -384 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -64,
+                ["extrudeY"] = -256,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -24411,19 +24413,19 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = -32, y = 0 },
+                { x = -32, y = -64 },
                 { x = -32, y = 16 },
                 { x = 32, y = 16 },
                 { x = 96, y = 80 },
                 { x = 416, y = 80 },
                 { x = 448, y = 112 },
-                { x = 448, y = 0 }
+                { x = 448, y = -64 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -64,
+                ["extrudeY"] = -256,
                 ["linecolor"] = "#80ffffff"
               }
             }
@@ -24486,19 +24488,19 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = -32, y = 0 },
+                { x = -32, y = -64 },
                 { x = -32, y = 16 },
                 { x = 32, y = 16 },
                 { x = 96, y = 80 },
                 { x = 416, y = 80 },
                 { x = 448, y = 112 },
-                { x = 448, y = 0 }
+                { x = 448, y = -64 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -64,
+                ["extrudeY"] = -256,
                 ["linecolor"] = "#80ffffff"
               }
             },
