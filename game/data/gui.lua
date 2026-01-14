@@ -9,8 +9,8 @@ return {
   height = 15,
   tilewidth = 16,
   tileheight = 18,
-  nextlayerid = 21,
-  nextobjectid = 119,
+  nextlayerid = 22,
+  nextobjectid = 137,
   properties = {},
   tilesets = {
     {
@@ -591,7 +591,7 @@ return {
       id = 4,
       name = "gameplay",
       class = "",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -1235,19 +1235,47 @@ return {
           class = "",
           visible = true,
           opacity = 1,
-          offsetx = 0,
-          offsety = 0,
+          offsetx = 32,
+          offsety = 72,
           parallaxx = 1,
           parallaxy = 1,
           properties = {},
           objects = {
             {
+              id = 43,
+              name = "fullslot1",
+              type = "",
+              shape = "rectangle",
+              x = -12,
+              y = -18,
+              width = 24,
+              height = 24,
+              rotation = 0,
+              gid = 385,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 44,
+              name = "fullslot2",
+              type = "",
+              shape = "rectangle",
+              x = 12,
+              y = -18,
+              width = 24,
+              height = 24,
+              rotation = 0,
+              gid = 387,
+              visible = true,
+              properties = {}
+            },
+            {
               id = 39,
               name = "emptyslot1",
               type = "",
               shape = "rectangle",
-              x = 20,
-              y = 54,
+              x = -12,
+              y = -18,
               width = 24,
               height = 24,
               rotation = 0,
@@ -1256,7 +1284,85 @@ return {
               properties = {}
             },
             {
-              id = 43,
+              id = 40,
+              name = "emptyslot2",
+              type = "",
+              shape = "rectangle",
+              x = 12,
+              y = -18,
+              width = 24,
+              height = 24,
+              rotation = 0,
+              gid = 390,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 51,
+              name = "2slotweapon1",
+              type = "",
+              shape = "rectangle",
+              x = 0,
+              y = -18,
+              width = 24,
+              height = 24,
+              rotation = 0,
+              gid = 389,
+              visible = true,
+              properties = {
+                ["animationspeed"] = 0
+              }
+            },
+            {
+              id = 47,
+              name = "1slotweapon1",
+              type = "",
+              shape = "rectangle",
+              x = -12,
+              y = -18,
+              width = 24,
+              height = 24,
+              rotation = 0,
+              gid = 389,
+              visible = true,
+              properties = {
+                ["animationspeed"] = 0
+              }
+            },
+            {
+              id = 48,
+              name = "1slotweapon2",
+              type = "",
+              shape = "rectangle",
+              x = 12,
+              y = -18,
+              width = 24,
+              height = 24,
+              rotation = 0,
+              gid = 389,
+              visible = true,
+              properties = {
+                ["animationspeed"] = 0
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 21,
+          name = "hud_4weaponslots",
+          class = "",
+          visible = false,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 120,
               name = "fullslot1",
               type = "",
               shape = "rectangle",
@@ -1270,21 +1376,7 @@ return {
               properties = {}
             },
             {
-              id = 40,
-              name = "emptyslot2",
-              type = "",
-              shape = "rectangle",
-              x = 44,
-              y = 54,
-              width = 24,
-              height = 24,
-              rotation = 0,
-              gid = 390,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 44,
+              id = 122,
               name = "fullslot2",
               type = "",
               shape = "rectangle",
@@ -1293,26 +1385,12 @@ return {
               width = 24,
               height = 24,
               rotation = 0,
-              gid = 387,
+              gid = 386,
               visible = true,
               properties = {}
             },
             {
-              id = 41,
-              name = "emptyslot3",
-              type = "",
-              shape = "rectangle",
-              x = 68,
-              y = 54,
-              width = 24,
-              height = 24,
-              rotation = 0,
-              gid = 389,
-              visible = false,
-              properties = {}
-            },
-            {
-              id = 45,
+              id = 124,
               name = "fullslot3",
               type = "",
               shape = "rectangle",
@@ -1322,25 +1400,11 @@ return {
               height = 24,
               rotation = 0,
               gid = 386,
-              visible = false,
+              visible = true,
               properties = {}
             },
             {
-              id = 42,
-              name = "emptyslot4",
-              type = "",
-              shape = "rectangle",
-              x = 92,
-              y = 54,
-              width = 24,
-              height = 24,
-              rotation = 0,
-              gid = 390,
-              visible = false,
-              properties = {}
-            },
-            {
-              id = 46,
+              id = 126,
               name = "fullslot4",
               type = "",
               shape = "rectangle",
@@ -1350,11 +1414,67 @@ return {
               height = 24,
               rotation = 0,
               gid = 387,
-              visible = false,
+              visible = true,
               properties = {}
             },
             {
-              id = 54,
+              id = 119,
+              name = "emptyslot1",
+              type = "",
+              shape = "rectangle",
+              x = 20,
+              y = 54,
+              width = 24,
+              height = 24,
+              rotation = 0,
+              gid = 388,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 121,
+              name = "emptyslot2",
+              type = "",
+              shape = "rectangle",
+              x = 44,
+              y = 54,
+              width = 24,
+              height = 24,
+              rotation = 0,
+              gid = 389,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 123,
+              name = "emptyslot3",
+              type = "",
+              shape = "rectangle",
+              x = 68,
+              y = 54,
+              width = 24,
+              height = 24,
+              rotation = 0,
+              gid = 389,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 125,
+              name = "emptyslot4",
+              type = "",
+              shape = "rectangle",
+              x = 92,
+              y = 54,
+              width = 24,
+              height = 24,
+              rotation = 0,
+              gid = 390,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 127,
               name = "4slotweapon1",
               type = "",
               shape = "rectangle",
@@ -1364,13 +1484,13 @@ return {
               height = 24,
               rotation = 0,
               gid = 389,
-              visible = false,
+              visible = true,
               properties = {
                 ["animationspeed"] = 0
               }
             },
             {
-              id = 56,
+              id = 128,
               name = "3slotweapon1",
               type = "",
               shape = "rectangle",
@@ -1380,13 +1500,13 @@ return {
               height = 24,
               rotation = 0,
               gid = 389,
-              visible = false,
+              visible = true,
               properties = {
                 ["animationspeed"] = 0
               }
             },
             {
-              id = 55,
+              id = 129,
               name = "3slotweapon2",
               type = "",
               shape = "rectangle",
@@ -1396,13 +1516,13 @@ return {
               height = 24,
               rotation = 0,
               gid = 389,
-              visible = false,
+              visible = true,
               properties = {
                 ["animationspeed"] = 0
               }
             },
             {
-              id = 51,
+              id = 130,
               name = "2slotweapon1",
               type = "",
               shape = "rectangle",
@@ -1418,7 +1538,7 @@ return {
               }
             },
             {
-              id = 52,
+              id = 131,
               name = "2slotweapon2",
               type = "",
               shape = "rectangle",
@@ -1428,13 +1548,13 @@ return {
               height = 24,
               rotation = 0,
               gid = 389,
-              visible = false,
+              visible = true,
               properties = {
                 ["animationspeed"] = 0
               }
             },
             {
-              id = 53,
+              id = 132,
               name = "2slotweapon3",
               type = "",
               shape = "rectangle",
@@ -1444,13 +1564,13 @@ return {
               height = 24,
               rotation = 0,
               gid = 389,
-              visible = false,
+              visible = true,
               properties = {
                 ["animationspeed"] = 0
               }
             },
             {
-              id = 47,
+              id = 133,
               name = "1slotweapon1",
               type = "",
               shape = "rectangle",
@@ -1466,7 +1586,7 @@ return {
               }
             },
             {
-              id = 48,
+              id = 134,
               name = "1slotweapon2",
               type = "",
               shape = "rectangle",
@@ -1482,7 +1602,7 @@ return {
               }
             },
             {
-              id = 49,
+              id = 135,
               name = "1slotweapon3",
               type = "",
               shape = "rectangle",
@@ -1492,13 +1612,13 @@ return {
               height = 24,
               rotation = 0,
               gid = 389,
-              visible = false,
+              visible = true,
               properties = {
                 ["animationspeed"] = 0
               }
             },
             {
-              id = 50,
+              id = 136,
               name = "1slotweapon4",
               type = "",
               shape = "rectangle",
@@ -1508,7 +1628,7 @@ return {
               height = 24,
               rotation = 0,
               gid = 389,
-              visible = false,
+              visible = true,
               properties = {
                 ["animationspeed"] = 0
               }
