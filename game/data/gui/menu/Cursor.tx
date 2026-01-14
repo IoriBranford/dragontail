@@ -5,6 +5,7 @@
   <properties>
    <property name="alignx" type="float" value="-1"/>
    <property name="aligny" type="float" value="0"/>
+   <property name="asetag" value="Spit0"/>
   </properties>
  </object>
 </template>
