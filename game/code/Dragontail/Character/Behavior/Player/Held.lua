@@ -66,7 +66,7 @@ function PlayerHeld:fixedupdate()
         local axis = math.abs(holddirx) < math.abs(holddiry) and "y" or "x"
 
         local camera = player.camera
-        local promptover = holder--axis == "y" and holddiry > 0 and holder or player
+        local promptover = player--axis == "y" and holddiry > 0 and holder or player
         ui.x = promptover.x - camera.x
         ui.y = promptover.y - promptover.z - promptover.bodyheight - camera.y
 
