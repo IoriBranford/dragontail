@@ -227,7 +227,8 @@ function Attacker:checkAttackCollision(target, attack, attackangle)
             return
         end
     end
-    if target == self or target == self.thrower or target.thrower == self then
+    if target == self or target == self.thrower or target.thrower == self
+    or target.thrower and self.thrower and target.thrower == self.thrower then
         return
     end
     if 0 == bit.band(attack.hitslayers or 0xFFFFFFFF, target.bodyinlayers) then
