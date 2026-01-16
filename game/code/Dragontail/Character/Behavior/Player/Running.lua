@@ -109,15 +109,11 @@ function PlayerRunning:fixedupdate()
         end
     end
 
-    if heldenemy then
-        --- TODO
-    else
-        if player:consumeActionDownAndRecentlyPressed("fly") then
-            if inair then
-                return "flyEnd"
-            end
-            return "jump", true
+    if player:consumeActionDownAndRecentlyPressed("fly") then
+        if inair then
+            return "flyEnd"
         end
+        return heldenemy and "holdJump" or "jump", true
     end
 
     local velx, vely = player.velx, player.vely

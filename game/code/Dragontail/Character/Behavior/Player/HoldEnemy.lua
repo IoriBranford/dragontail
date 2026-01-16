@@ -92,6 +92,10 @@ function PlayerHoldEnemy:fixedupdate()
     if normalattackpressed then
         return player:doComboAttack(holdangle, enemy, inx ~= 0 or iny ~= 0)
     end
+
+    if player:consumeActionDownAndRecentlyPressed("fly") then
+        return "holdJump", true
+    end
 end
 
 return PlayerHoldEnemy
