@@ -4,6 +4,8 @@ local Audio    = require "System.Audio"
 local Database = require "Data.Database"
 local Characters = require "Dragontail.Stage.Characters"
 local Character  = require "Dragontail.Character"
+local HoldOpponent = require "Dragontail.Character.Component.HoldOpponent"
+local StateMachine = require "Dragontail.Character.Component.StateMachine"
 
 ---@class PlayerJumping:Behavior
 ---@field character Player
@@ -18,7 +20,9 @@ function PlayerJumping:start(isjumpstart)
     if isjumpstart then
         player.velz = player.gravity*16
         player.numjumpattacks = 0
-        Face.faceVector(player, player.velx, player.vely)
+        if not player.heldopponent then
+            Face.faceVector(player, player.velx, player.vely)
+        end
 
         local dusttype = "spark-land-on-feet-dust"
         if Database.get(dusttype) then
@@ -30,12 +34,22 @@ end
 
 function PlayerJumping:fixedupdate()
     local player = self.character
+    local heldenemy = player.heldopponent
+
     if player.z <= player.floorz then
         player.velz = 0
         if player.sprintbutton.down then
+            if heldenemy then
+                return "running-with-enemy", heldenemy, true
+            end
             return "run"
         end
         Audio.play(player.jumplandsound)
+
+        if heldenemy then
+            heldenemy:stopAttack() ; heldenemy:unassignSelfAsAttacker()
+            return "hold", heldenemy
+        end
         return "walk"
     end
 
@@ -45,15 +59,25 @@ function PlayerJumping:fixedupdate()
         return "flyStart"
     end
 
-    local animation = player.velz >= 1 and "JumpUp"
-        or player.velz >= -1 and "JumpPeak"
-        or "JumpDown"
+    local animation
+    if heldenemy then
+        animation = "spinthrow"
+    else
+        animation = player.velz >= 1 and "JumpUp"
+            or player.velz >= -1 and "JumpPeak"
+            or "JumpDown"
+    end
 
     local faceangle, facedestangle =
         player:turnTowardsJoystick(animation, animation)
+    if heldenemy then
+        player.holdangle = faceangle
+    end
 
     if player:consumeActionRecentlyPressed("attack") then
-        if player.numjumpattacks < 1 then
+        if heldenemy then
+            --TODO
+        elseif player.numjumpattacks < 1 then
             player.numjumpattacks = player.numjumpattacks + 1
             local spindir = math.det(math.cos(faceangle), math.sin(faceangle),
                 math.cos(facedestangle), math.sin(facedestangle))
@@ -66,16 +90,41 @@ function PlayerJumping:fixedupdate()
     player:makePeriodicAfterImage(self.time, player.afterimageinterval or 6)
     self.time = self.time + 1
 
-    player.velx, player.vely = self.velx, self.vely
+    local velx, vely = self.velx, self.vely
+    player.velx, player.vely = velx, vely
+    HoldOpponent.updateVelocities(player)
 
-    if (player.penex or 0) ~= 0 or (player.peney or 0) ~= 0 then
-        local velx, vely = player.velx, player.vely
-        local speedsq = math.lensq(velx, vely)
-        local targetspeed = player.speed or 4
-        if speedsq > targetspeed*targetspeed then
+    local targetspeed = player.speed or 4
+    if math.lensq(velx, vely) > targetspeed*targetspeed then
+        local whoslammedwall =
+            heldenemy and (heldenemy.penex or heldenemy.peney) and heldenemy
+            or ((player.penex or 0) ~= 0 or (player.peney or 0) ~= 0) and player
+
+        if heldenemy and whoslammedwall == heldenemy then
+            heldenemy:stopAttack() ; heldenemy:unassignSelfAsAttacker()
+            HoldOpponent.stopHolding(player, heldenemy)
+            StateMachine.start(heldenemy, "wallSlammed", player, heldenemy.penex, heldenemy.peney)
+            return "running-elbow", player.faceangle
+        end
+
+        if whoslammedwall == player then
+            if heldenemy then
+                heldenemy:stopAttack() ; heldenemy:unassignSelfAsAttacker()
+                HoldOpponent.stopHolding(player, heldenemy)
+                StateMachine.start(heldenemy, "knockedBack", player, player.faceangle)
+            end
             return player:runIntoWall()
         end
     end
+end
+
+function PlayerJumping:interrupt(...)
+    local player = self.character
+    local heldenemy = player.heldopponent
+    if heldenemy then
+        heldenemy:stopAttack() ; heldenemy:unassignSelfAsAttacker()
+    end
+    return ...
 end
 
 return PlayerJumping
