@@ -6,6 +6,7 @@ local tablepool    = require "tablepool"
 local AttackHit    = require "Dragontail.Character.Event.AttackHit"
 local Color        = require "Tiled.Color"
 local Movement     = require "Component.Movement"
+local HoldOpponent
 
 ---@class Attacker:Body
 ---@field defaultattack string?
@@ -217,6 +218,7 @@ function Attacker:checkAttackCollision_cylinder(target, attack, attackangle)
 end
 
 function Attacker:checkAttackCollision(target, attack, attackangle)
+    HoldOpponent = HoldOpponent or require "Dragontail.Character.Component.HoldOpponent"
     attack = attack or self.attack
     if not attack then return end
 
@@ -228,7 +230,8 @@ function Attacker:checkAttackCollision(target, attack, attackangle)
         end
     end
     if target == self or target == self.thrower or target.thrower == self
-    or target.thrower and self.thrower and target.thrower == self.thrower then
+    or target.thrower and self.thrower and target.thrower == self.thrower
+    or HoldOpponent.isHolding(target, self) then
         return
     end
     if 0 == bit.band(attack.hitslayers or 0xFFFFFFFF, target.bodyinlayers) then
