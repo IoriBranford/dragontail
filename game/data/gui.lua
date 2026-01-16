@@ -2641,7 +2641,7 @@ return {
             },
             {
               id = 118,
-              name = "musictrack",
+              name = "soundtrack",
               type = "Gui.Slider",
               shape = "text",
               x = 168,
@@ -2656,7 +2656,7 @@ return {
               color = { 255, 255, 255 },
               halign = "right",
               properties = {
-                ["configkey"] = "musictrack",
+                ["configkey"] = "soundtrack",
                 ["increment"] = 1,
                 ["label"] = { id = 117 },
                 ["max"] = 2,

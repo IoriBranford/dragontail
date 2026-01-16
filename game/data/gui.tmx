@@ -504,9 +504,9 @@ ALL CONTENT SUBJECT TO CHANGE</text>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">100</text>
    </object>
-   <object id="118" template="gui/menu/settings/Slider.tx" name="musictrack" type="Gui.Slider" x="168" y="162" width="176" height="18">
+   <object id="118" template="gui/menu/settings/Slider.tx" name="soundtrack" type="Gui.Slider" x="168" y="162" width="176" height="18">
     <properties>
-     <property name="configkey" value="musictrack"/>
+     <property name="configkey" value="soundtrack"/>
      <property name="label" type="object" value="117"/>
      <property name="max" type="float" value="2"/>
      <property name="min" type="float" value="1"/>

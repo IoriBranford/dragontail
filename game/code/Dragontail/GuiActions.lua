@@ -6,7 +6,7 @@ local Config    = require "System.Config"
 local GameGuiActions = class(GuiActions)
 
 function GameGuiActions.playSelectedMusic()
-    local music = Audio.playMusic("data/music/"..Config.musictrack..".ogg")
+    local music = Audio.playMusic("data/music/"..Config.soundtrack..".ogg")
     if music then
         music:setLooping(true)
     end
