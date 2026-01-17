@@ -88,7 +88,7 @@ function PlayerRunning:fixedupdate()
         player.facedestangle = targetvelangle
     end
 
-    local animation = heldenemy and "holdwalk" or "Walk"
+    local animation = heldenemy and "holdrun" or "Walk"
     Face.turnTowardsAngle(player, targetvelangle, nil, animation, player.animationframe or 1)
     Body.forceTowardsVelXY(player, targetvelx, targetvely, player.accel)
 

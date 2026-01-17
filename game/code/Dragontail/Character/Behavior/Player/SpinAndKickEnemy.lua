@@ -75,7 +75,8 @@ function SpinAndKickEnemy:fixedupdate()
     end
 
     Attacker.startAttack(enemy, holdangle)
-    Face.faceAngle(player, holdangle, player.state.animation)
+    local animation = spinvel < 0 and "spinCCW" or "spinCW"
+    Face.faceAngle(player, holdangle, animation)
 
     player.holdangle = holdangle
     HoldOpponent.updateVelocities(player)
