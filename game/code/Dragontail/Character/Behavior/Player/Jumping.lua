@@ -78,7 +78,7 @@ function PlayerJumping:fixedupdate()
 
     if player:consumeActionRecentlyPressed("attack") then
         if heldenemy then
-            --TODO
+            return "groundSlam"
         elseif player.numjumpattacks < 1 then
             player.numjumpattacks = player.numjumpattacks + 1
             local spindir = math.det(math.cos(faceangle), math.sin(faceangle),
