@@ -122,12 +122,16 @@ function HoldOpponent:findOpponentToHold(inx, iny)
     end
 end
 
+function HoldOpponent:getDefaultHoldDistance(held)
+    return (self.bodyradius + held.bodyradius + 1)
+end
+
 function HoldOpponent:updateVelocities()
     local enemy = self.heldopponent
     if not enemy then return end
 
     local holddist = self.holddist or
-        (self.bodyradius + enemy.bodyradius + 1)
+        HoldOpponent.getDefaultHoldDistance(self, enemy)
     holddist = holddist + (enemy.struggleoffset or 0)
     local ox = holddist*math.cos(self.holdangle or 0)
     local oy = holddist*math.sin(self.holdangle or 0)
