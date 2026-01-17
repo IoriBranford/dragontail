@@ -8,6 +8,7 @@ function Downed:start()
     local spark = Character("spark-fall-down-dust",
         fighter.x, fighter.y + 1, fighter.z)
     Characters.spawn(spark)
+    fighter:indicateDefeated()
 end
 
 function Downed:fixedupdate()
