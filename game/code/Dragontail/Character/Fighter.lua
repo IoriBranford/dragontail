@@ -401,7 +401,7 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
     if nextstate then
         return nextstate, a, b, c, d, e, f
     end
-    return "fall", thrower
+    return self.nextstate or "fall", thrower
 end
 
 function Fighter:thrownRecover(thrower)
