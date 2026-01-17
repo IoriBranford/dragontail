@@ -925,7 +925,7 @@ return {
               height = 36,
               rotation = 0,
               visible = true,
-              text = "DEVELOPMENT VER. 2025\nALL CONTENT SUBJECT TO CHANGE",
+              text = "DEVELOPMENT VER. 2026\nALL CONTENT SUBJECT TO CHANGE",
               fontfamily = "TinyUnicode",
               wrap = true,
               color = { 255, 255, 255 },
