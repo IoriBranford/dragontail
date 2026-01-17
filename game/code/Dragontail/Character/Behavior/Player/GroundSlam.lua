@@ -21,13 +21,14 @@ function GroundSlam:start(...)
         or math.atan2(vely, velx)
     Attacker.startAttack(player, attackangle)
     local heldenemy = player.heldopponent
-    player.holddist = heldenemy and HoldOpponent.getDefaultHoldDistance(player, heldenemy) or 0
+    player.holddist = 0
     player.holdheight = 0
     if heldenemy then
         player.holddist = HoldOpponent.getDefaultHoldDistance(player, heldenemy)
         heldenemy:changeAnimation("FallFlat", 1, 0)
         heldenemy.canbeattacked = false
         heldenemy.canbejuggled = false
+        player.holdstrength = math.huge
     end
 end
 
