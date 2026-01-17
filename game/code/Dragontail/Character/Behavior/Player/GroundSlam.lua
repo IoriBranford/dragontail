@@ -17,10 +17,16 @@ function GroundSlam:start(...)
     local player = self.character
     player.holddist = 0
     player.holdheight = -8
-    -- Attacker.startAttack(player, math.pi/2)
+    local velx, vely = player.velx, player.vely
+    local attackangle =
+        velx == 0 and vely == 0 and player.faceangle
+        or math.atan2(vely, velx)
+    Attacker.startAttack(player, attackangle)
     local heldenemy = player.heldopponent
     if heldenemy then
         heldenemy:changeAnimation("Down")
+        heldenemy.canbeattacked = false
+        heldenemy.canbejuggled = false
     end
 end
 
@@ -58,6 +64,7 @@ end
 ---@return any ...
 function GroundSlam:interrupt(nextstate, ...)
     local player = self.character
+    Attacker.stopAttack(player)
     player.holddist = nil
     player.holdheight = nil
     return nextstate, ...
@@ -67,6 +74,7 @@ end
 ---@return any ...
 function GroundSlam:timeout(nextstate, ...)
     local player = self.character
+    Attacker.stopAttack(player)
     player.holddist = nil
     player.holdheight = nil
     return nextstate, ...
