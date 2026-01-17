@@ -3001,6 +3001,7 @@
    { "name": "FallKnees", "from": 164, "to": 166, "direction": "forward", "color": "#000000ff" },
    { "name": "FallFlat", "from": 167, "to": 169, "direction": "forward", "color": "#000000ff" },
    { "name": "FallRiseToKnees", "from": 167, "to": 169, "direction": "reverse", "color": "#000000ff" },
+   { "name": "Down", "from": 169, "to": 169, "direction": "forward", "color": "#000000ff" },
    { "name": "ReachWalk3", "from": 171, "to": 178, "direction": "forward", "color": "#000000ff" },
    { "name": "catchReady3", "from": 173, "to": 176, "direction": "reverse", "color": "#000000ff" },
    { "name": "ReachWalk2", "from": 180, "to": 187, "direction": "forward", "color": "#000000ff" },
