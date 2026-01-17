@@ -39,6 +39,10 @@ function GroundSlam:fixedupdate()
         -- local jumpangle = player.faceangle
         -- player.velx = math.cos(jumpangle)*4
         -- player.vely = math.sin(jumpangle)*4
+        local jx, jy = player:getJoystick()
+        if jx ~= 0 or jy ~= 0 then
+            player.velx, player.vely = jx*4, jy*4
+        end
         player.velz = 4
         HoldOpponent.stopHolding(player, heldenemy)
         return "jump"
