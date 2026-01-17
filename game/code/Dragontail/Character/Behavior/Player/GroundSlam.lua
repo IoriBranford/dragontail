@@ -15,16 +15,17 @@ end
 ---@param ... any
 function GroundSlam:start(...)
     local player = self.character
-    player.holddist = 0
-    player.holdheight = -8
     local velx, vely = player.velx, player.vely
     local attackangle =
         velx == 0 and vely == 0 and player.faceangle
         or math.atan2(vely, velx)
     Attacker.startAttack(player, attackangle)
     local heldenemy = player.heldopponent
+    player.holddist = heldenemy and HoldOpponent.getDefaultHoldDistance(player, heldenemy) or 0
+    player.holdheight = 0
     if heldenemy then
-        heldenemy:changeAnimation("Down")
+        player.holddist = HoldOpponent.getDefaultHoldDistance(player, heldenemy)
+        heldenemy:changeAnimation("FallFlat", 1, 0)
         heldenemy.canbeattacked = false
         heldenemy.canbejuggled = false
     end
@@ -57,6 +58,8 @@ function GroundSlam:fixedupdate()
         -- player.nextstate = "jump"
     end
 
+    player.holddist = math.max(0, player.holddist - 4)
+    player.holdheight = math.max(-8, player.holdheight - 2)
     HoldOpponent.updateVelocities(player)
 end
 
