@@ -20,6 +20,8 @@ local DirectionalAnimation = require "Dragontail.Character.Component.Directional
 ---@field holdsound string?
 ---@field holdstrength number?
 ---@field initialholdstrength number?
+---@field holddist number?
+---@field holdheight number?
 local HoldOpponent = {}
 HoldOpponent.DefaultInitialHoldStrength = 120
 
@@ -124,11 +126,13 @@ function HoldOpponent:updateVelocities()
     local enemy = self.heldopponent
     if not enemy then return end
 
-    local radii = self.bodyradius + enemy.bodyradius + 1
-        + (enemy.struggleoffset or 0)
-    local ox = radii*math.cos(self.holdangle or 0)
-    local oy = radii*math.sin(self.holdangle or 0)
-    local oz = math.max(0, (self.bodyheight - enemy.bodyheight)/2)
+    local holddist = self.holddist or
+        (self.bodyradius + enemy.bodyradius + 1)
+    holddist = holddist + (enemy.struggleoffset or 0)
+    local ox = holddist*math.cos(self.holdangle or 0)
+    local oy = holddist*math.sin(self.holdangle or 0)
+    local oz = self.holdheight or
+        math.max(0, (self.bodyheight - enemy.bodyheight)/2)
     local pvelx, pvely, pvelz = self.velx, self.vely, self.velz
     enemy.velx = self.x + pvelx + ox - enemy.x
     enemy.vely = self.y + pvely + oy - enemy.y
