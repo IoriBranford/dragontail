@@ -160,36 +160,36 @@
     "duration": 50
    },
    "weapon#21": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 65, "y": 66, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 72, "y": 61, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#22": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 65, "y": 66, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 68, "y": 64, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#23": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 62, "y": 66, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 64, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#24": {
     "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 62, "y": 66, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 57, "y": 62, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#25": {
     "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
@@ -197,37 +197,37 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 59, "y": 63, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#26": {
     "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 59, "y": 63, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 62, "y": 66, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#27": {
-    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 61, "y": 63, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 65, "y": 66, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 200
+    "duration": 50
    },
    "weapon#28": {
     "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 62, "y": 65, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 71, "y": 62, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 200
+    "duration": 50
    },
    "weapon#29": {
     "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 60, "y": 67, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 65, "y": 66, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
@@ -235,71 +235,71 @@
     "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 60, "y": 67, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 65, "y": 66, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#31": {
-    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 68, "y": 63, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 62, "y": 66, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#32": {
-    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 64, "y": 65, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 62, "y": 66, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#33": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 62, "y": 66, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 59, "y": 63, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#34": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 58, "y": 63, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 59, "y": 63, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#35": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 59, "y": 65, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#36": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 62, "y": 66, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#37": {
     "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 64, "y": 65, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 61, "y": 63, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 200
+   },
+   "weapon#36": {
+    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 62, "y": 65, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 200
+   },
+   "weapon#37": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 60, "y": 67, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#38": {
-    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 68, "y": 61, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 60, "y": 67, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
@@ -309,7 +309,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 68, "y": 63, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#40": {
     "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
@@ -317,7 +317,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 64, "y": 65, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#41": {
     "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
@@ -325,7 +325,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 62, "y": 66, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#42": {
     "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
@@ -333,7 +333,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 58, "y": 63, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#43": {
     "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
@@ -341,7 +341,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 59, "y": 65, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#44": {
     "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
@@ -349,7 +349,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 62, "y": 66, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#45": {
     "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
@@ -357,7 +357,7 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 64, "y": 65, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#46": {
     "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
@@ -365,15 +365,15 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 68, "y": 61, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#47": {
     "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 64, "y": 65, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 68, "y": 63, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#48": {
     "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
@@ -381,33 +381,153 @@
     "trimmed": true,
     "spriteSourceSize": { "x": 64, "y": 65, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#49": {
     "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 62, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 62, "y": 66, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#50": {
     "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 62, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 58, "y": 63, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#51": {
     "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 59, "y": 66, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 59, "y": 65, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#52": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 62, "y": 66, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#53": {
+    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 64, "y": 65, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#54": {
+    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 68, "y": 61, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#55": {
+    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 68, "y": 63, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#56": {
+    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 64, "y": 65, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#57": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 62, "y": 66, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#58": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 58, "y": 63, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#59": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 59, "y": 65, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#60": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 62, "y": 66, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#61": {
+    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 64, "y": 65, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#62": {
+    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 68, "y": 61, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#63": {
+    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 64, "y": 65, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
-   "weapon#52": {
+   "weapon#64": {
+    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 64, "y": 65, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#65": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 62, "y": 67, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#66": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 62, "y": 67, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#67": {
     "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
@@ -415,7 +535,15 @@
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
-   "weapon#53": {
+   "weapon#68": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 59, "y": 66, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#69": {
     "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
@@ -423,7 +551,7 @@
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 200
    },
-   "weapon#54": {
+   "weapon#70": {
     "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
@@ -431,171 +559,43 @@
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 200
    },
-   "weapon#55": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 54, "y": 71, "w": 2, "h": 3 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#56": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 54, "y": 71, "w": 2, "h": 3 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#57": {
-    "frame": { "x": 7, "y": 2, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 56, "y": 64, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#58": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 55, "y": 66, "w": 2, "h": 3 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#59": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 56, "y": 66, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#60": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 59, "y": 63, "w": 2, "h": 3 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#61": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 61, "y": 65, "w": 2, "h": 3 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#62": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 59, "y": 68, "w": 2, "h": 3 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#63": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 57, "y": 66, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#64": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 56, "y": 63, "w": 2, "h": 3 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#65": {
-    "frame": { "x": 7, "y": 2, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 56, "y": 64, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
-   },
-   "weapon#66": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 55, "y": 66, "w": 2, "h": 3 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
-   },
-   "weapon#67": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 56, "y": 66, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
-   },
-   "weapon#68": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 59, "y": 63, "w": 2, "h": 3 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
-   },
-   "weapon#69": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 61, "y": 65, "w": 2, "h": 3 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
-   },
-   "weapon#70": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 59, "y": 68, "w": 2, "h": 3 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
-   },
    "weapon#71": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 57, "y": 66, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 54, "y": 71, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#72": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 56, "y": 63, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 54, "y": 71, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#73": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 7, "y": 2, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 57, "y": 66, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 56, "y": 64, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#74": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 57, "y": 66, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 55, "y": 66, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#75": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 59, "y": 68, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 56, "y": 66, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
@@ -603,7 +603,7 @@
     "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 59, "y": 68, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 59, "y": 63, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
@@ -619,11 +619,203 @@
     "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 61, "y": 65, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 59, "y": 68, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#79": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 57, "y": 66, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#80": {
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 56, "y": 63, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#81": {
+    "frame": { "x": 7, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 56, "y": 64, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#82": {
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 55, "y": 66, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#83": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 56, "y": 66, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#84": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 59, "y": 63, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#85": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 61, "y": 65, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#86": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 59, "y": 68, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#87": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 57, "y": 66, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#88": {
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 56, "y": 63, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#89": {
+    "frame": { "x": 7, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 56, "y": 64, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#90": {
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 55, "y": 66, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#91": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 56, "y": 66, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#92": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 59, "y": 63, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#93": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 61, "y": 65, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#94": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 59, "y": 68, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#95": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 57, "y": 66, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#96": {
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 56, "y": 63, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#97": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 57, "y": 66, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#98": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 57, "y": 66, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#99": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 59, "y": 68, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#100": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 59, "y": 68, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#101": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 61, "y": 65, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#102": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 61, "y": 65, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#103": {
     "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
@@ -631,7 +823,7 @@
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 200
    },
-   "weapon#80": {
+   "weapon#104": {
     "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
@@ -639,243 +831,51 @@
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 200
    },
-   "weapon#81": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 66, "y": 67, "w": 2, "h": 3 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#82": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 66, "y": 67, "w": 2, "h": 3 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#83": {
-    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 57, "y": 63, "w": 3, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#84": {
-    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 61, "y": 65, "w": 3, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#85": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 64, "y": 66, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#86": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 68, "y": 63, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#87": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 67, "y": 65, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#88": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 64, "y": 66, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#89": {
-    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 61, "y": 65, "w": 3, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#90": {
-    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 57, "y": 61, "w": 3, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#91": {
-    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 57, "y": 63, "w": 3, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
-   },
-   "weapon#92": {
-    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 61, "y": 65, "w": 3, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
-   },
-   "weapon#93": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 64, "y": 66, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
-   },
-   "weapon#94": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 68, "y": 63, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
-   },
-   "weapon#95": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 67, "y": 65, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
-   },
-   "weapon#96": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 64, "y": 66, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
-   },
-   "weapon#97": {
-    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 61, "y": 65, "w": 3, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
-   },
-   "weapon#98": {
-    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 57, "y": 61, "w": 3, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
-   },
-   "weapon#99": {
-    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 61, "y": 65, "w": 3, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#100": {
-    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 61, "y": 65, "w": 3, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#101": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 64, "y": 67, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#102": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 64, "y": 67, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#103": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 67, "y": 66, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#104": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 67, "y": 66, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
    "weapon#105": {
-    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 60, "y": 63, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 66, "y": 67, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 200
+    "duration": 100
    },
    "weapon#106": {
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 66, "y": 67, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#107": {
     "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 60, "y": 64, "w": 3, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 200
-   },
-   "weapon#107": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 60, "y": 65, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 57, "y": 63, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#108": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 60, "y": 65, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 61, "y": 65, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#109": {
-    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 53, "y": 61, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 64, "y": 66, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#110": {
-    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 57, "y": 64, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 68, "y": 63, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
@@ -883,63 +883,63 @@
     "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 62, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 67, "y": 65, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#112": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 69, "y": 62, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 64, "y": 66, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#113": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 67, "y": 63, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 61, "y": 65, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#114": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 64, "y": 66, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 57, "y": 61, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#115": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 61, "y": 66, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 57, "y": 63, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#116": {
     "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 54, "y": 62, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 61, "y": 65, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#117": {
-    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 53, "y": 61, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 64, "y": 66, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
    "weapon#118": {
-    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 57, "y": 64, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 68, "y": 63, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
@@ -947,39 +947,39 @@
     "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 62, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 67, "y": 65, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
    "weapon#120": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 69, "y": 62, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 64, "y": 66, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
    "weapon#121": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 67, "y": 63, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 61, "y": 65, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
    "weapon#122": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 64, "y": 66, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 57, "y": 61, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
    "weapon#123": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 61, "y": 66, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 57, "y": 63, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
@@ -987,95 +987,95 @@
     "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 54, "y": 62, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 61, "y": 65, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
    "weapon#125": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 65, "y": 66, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 64, "y": 66, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#126": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 65, "y": 66, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 68, "y": 63, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#127": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 62, "y": 66, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 67, "y": 65, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#128": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 62, "y": 66, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 64, "y": 66, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#129": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 59, "y": 63, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 61, "y": 65, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#130": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 59, "y": 63, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 57, "y": 61, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#131": {
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 61, "y": 65, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
-   "weapon#131": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 50, "y": 61, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 200
-   },
    "weapon#132": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 50, "y": 62, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 61, "y": 65, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 200
+    "duration": 100
    },
    "weapon#133": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 48, "y": 66, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 64, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#134": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 48, "y": 66, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 64, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#135": {
-    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 46, "y": 59, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 67, "y": 66, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
@@ -1083,31 +1083,31 @@
     "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 50, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 67, "y": 66, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#137": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 52, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 60, "y": 63, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 200
    },
    "weapon#138": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 54, "y": 65, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 60, "y": 64, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 200
    },
    "weapon#139": {
     "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 52, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 60, "y": 65, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
@@ -1115,15 +1115,15 @@
     "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 50, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 60, "y": 65, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#141": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 50, "y": 66, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 53, "y": 61, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
@@ -1131,63 +1131,63 @@
     "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 47, "y": 59, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 57, "y": 64, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#143": {
-    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 46, "y": 59, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 62, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#144": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 50, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 69, "y": 62, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#145": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 52, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 67, "y": 63, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#146": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 54, "y": 65, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 64, "y": 66, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#147": {
     "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 52, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 61, "y": 66, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#148": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 50, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 54, "y": 62, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#149": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 50, "y": 66, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 53, "y": 61, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
@@ -1195,231 +1195,231 @@
     "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 47, "y": 59, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 57, "y": 64, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
    "weapon#151": {
-    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 47, "y": 59, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 62, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#152": {
-    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 47, "y": 59, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 69, "y": 62, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#153": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 50, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 67, "y": 63, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#154": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 50, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 64, "y": 66, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#155": {
     "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 52, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 61, "y": 66, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#156": {
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 54, "y": 62, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#157": {
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 53, "y": 61, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#158": {
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 57, "y": 64, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#159": {
     "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 52, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 62, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
-   "weapon#157": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 74, "y": 62, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 200
-   },
-   "weapon#158": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 74, "y": 63, "w": 2, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 200
-   },
-   "weapon#159": {
+   "weapon#160": {
     "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 60, "y": 51, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 69, "y": 62, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
-   },
-   "weapon#160": {
-    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 76, "y": 54, "w": 3, "h": 2 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#161": {
     "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 62, "y": 59, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 67, "y": 63, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#162": {
     "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 64, "y": 61, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 64, "y": 66, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#163": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 66, "y": 62, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 61, "y": 66, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#164": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 68, "y": 61, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 54, "y": 62, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#165": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 70, "y": 62, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 65, "y": 66, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#166": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 68, "y": 64, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 65, "y": 66, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#167": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 66, "y": 62, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 62, "y": 66, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#168": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 64, "y": 61, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 62, "y": 66, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#169": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 62, "y": 59, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 59, "y": 63, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#170": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 64, "y": 61, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 59, "y": 63, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#171": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 66, "y": 62, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 50, "y": 61, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 200
    },
    "weapon#172": {
     "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 68, "y": 61, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 50, "y": 62, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 200
    },
    "weapon#173": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 70, "y": 62, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 48, "y": 66, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#174": {
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 48, "y": 66, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#175": {
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 46, "y": 59, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#176": {
     "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 68, "y": 64, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 50, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
-   },
-   "weapon#175": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 66, "y": 62, "w": 2, "h": 3 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
-   },
-   "weapon#176": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 64, "y": 61, "w": 2, "h": 3 },
-    "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#177": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 64, "y": 61, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 52, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#178": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 64, "y": 61, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 54, "y": 65, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
@@ -1427,7 +1427,7 @@
     "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 68, "y": 64, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 52, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
@@ -1435,7 +1435,7 @@
     "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 68, "y": 64, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 50, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
@@ -1443,191 +1443,191 @@
     "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 70, "y": 62, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 50, "y": 66, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#182": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 70, "y": 62, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 47, "y": 59, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#183": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 76, "y": 61, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 46, "y": 59, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 200
+    "duration": 50
    },
    "weapon#184": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 76, "y": 62, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 50, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 200
+    "duration": 50
    },
    "weapon#185": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 78, "y": 66, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 52, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#186": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 78, "y": 66, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 54, "y": 65, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#187": {
-    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 79, "y": 59, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 52, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#188": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 76, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 50, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#189": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 74, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 50, "y": 66, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#190": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 72, "y": 65, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 47, "y": 59, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#191": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 74, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 46, "y": 59, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#192": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 76, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 50, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#193": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 76, "y": 66, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 52, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#194": {
-    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 78, "y": 59, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 54, "y": 65, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 50
    },
    "weapon#195": {
-    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 79, "y": 59, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 52, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
    "weapon#196": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 76, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 50, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
    "weapon#197": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 74, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 50, "y": 66, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
    "weapon#198": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 72, "y": 65, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 47, "y": 59, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
    "weapon#199": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 74, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 47, "y": 59, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#200": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 76, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 47, "y": 59, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#201": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 76, "y": 66, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 50, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#202": {
-    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 78, "y": 59, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 50, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#203": {
-    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 78, "y": 59, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 52, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#204": {
-    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 78, "y": 59, "w": 3, "h": 2 },
+    "spriteSourceSize": { "x": 52, "y": 67, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
@@ -1635,151 +1635,151 @@
     "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 76, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 74, "y": 62, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 200
    },
    "weapon#206": {
     "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 76, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 74, "y": 63, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 100
+    "duration": 200
    },
    "weapon#207": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 74, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 60, "y": 51, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#208": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 74, "y": 67, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 76, "y": 54, "w": 3, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 100
    },
    "weapon#209": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 78, "y": 61, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 62, "y": 59, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#210": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 78, "y": 61, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 64, "y": 61, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#211": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 78, "y": 61, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 66, "y": 62, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#212": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 78, "y": 61, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 68, "y": 61, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#213": {
-    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 78, "y": 61, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 70, "y": 62, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#214": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 72, "y": 67, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 68, "y": 64, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#215": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 72, "y": 67, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 66, "y": 62, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#216": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 72, "y": 67, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 64, "y": 61, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
-    "duration": 50
+    "duration": 100
    },
    "weapon#217": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 72, "y": 67, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 62, "y": 59, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
    "weapon#218": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 72, "y": 67, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 64, "y": 61, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
    "weapon#219": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 56, "y": 77, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 66, "y": 62, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
    "weapon#220": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 56, "y": 77, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 68, "y": 61, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
    "weapon#221": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 56, "y": 77, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 70, "y": 62, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
    "weapon#222": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 56, "y": 77, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 68, "y": 64, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
    "weapon#223": {
-    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 56, "y": 77, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 66, "y": 62, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
@@ -1787,7 +1787,7 @@
     "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 54, "y": 67, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 64, "y": 61, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
@@ -1795,7 +1795,7 @@
     "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 54, "y": 67, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 62, "y": 59, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
@@ -1803,7 +1803,7 @@
     "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 54, "y": 67, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 64, "y": 61, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
@@ -1811,15 +1811,15 @@
     "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 54, "y": 67, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 66, "y": 62, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
    "weapon#228": {
-    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 54, "y": 67, "w": 2, "h": 3 },
+    "spriteSourceSize": { "x": 68, "y": 61, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
@@ -1827,7 +1827,7 @@
     "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 48, "y": 61, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 70, "y": 62, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
@@ -1835,27 +1835,507 @@
     "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 48, "y": 61, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 68, "y": 64, "w": 2, "h": 2 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
    "weapon#231": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 48, "y": 61, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 66, "y": 62, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
    "weapon#232": {
-    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 48, "y": 61, "w": 2, "h": 2 },
+    "spriteSourceSize": { "x": 64, "y": 61, "w": 2, "h": 3 },
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
    "weapon#233": {
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 64, "y": 61, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#234": {
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 64, "y": 61, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#235": {
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 68, "y": 64, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#236": {
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 68, "y": 64, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#237": {
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 70, "y": 62, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#238": {
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 70, "y": 62, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#239": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 76, "y": 61, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 200
+   },
+   "weapon#240": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 76, "y": 62, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 200
+   },
+   "weapon#241": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 66, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#242": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 66, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#243": {
+    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 79, "y": 59, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#244": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 76, "y": 67, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#245": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 74, "y": 67, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#246": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 72, "y": 65, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#247": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 74, "y": 67, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#248": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 76, "y": 67, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#249": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 76, "y": 66, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#250": {
+    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#251": {
+    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 79, "y": 59, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#252": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 76, "y": 67, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#253": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 74, "y": 67, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#254": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 72, "y": 65, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#255": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 74, "y": 67, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#256": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 76, "y": 67, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#257": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 76, "y": 66, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#258": {
+    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#259": {
+    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 79, "y": 59, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#260": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 76, "y": 67, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#261": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 74, "y": 67, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#262": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 72, "y": 65, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#263": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 74, "y": 67, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#264": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 76, "y": 67, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#265": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 76, "y": 66, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#266": {
+    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#267": {
+    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#268": {
+    "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 3, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#269": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 76, "y": 67, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#270": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 76, "y": 67, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#271": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 74, "y": 67, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#272": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 74, "y": 67, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "weapon#273": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 61, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#274": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 61, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#275": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 61, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#276": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 61, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#277": {
+    "frame": { "x": 5, "y": 2, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 61, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#278": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 72, "y": 67, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#279": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 72, "y": 67, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#280": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 72, "y": 67, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#281": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 72, "y": 67, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#282": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 72, "y": 67, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#283": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 56, "y": 77, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#284": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 56, "y": 77, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#285": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 56, "y": 77, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#286": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 56, "y": 77, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#287": {
+    "frame": { "x": 3, "y": 0, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 56, "y": 77, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#288": {
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 54, "y": 67, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#289": {
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 54, "y": 67, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#290": {
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 54, "y": 67, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#291": {
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 54, "y": 67, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#292": {
+    "frame": { "x": 0, "y": 2, "w": 2, "h": 3 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 54, "y": 67, "w": 2, "h": 3 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#293": {
     "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
@@ -1863,7 +2343,39 @@
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
-   "weapon#234": {
+   "weapon#294": {
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 48, "y": 61, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#295": {
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 48, "y": 61, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#296": {
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 48, "y": 61, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#297": {
+    "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 48, "y": 61, "w": 2, "h": 2 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "weapon#298": {
     "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
@@ -1871,7 +2383,7 @@
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
-   "weapon#235": {
+   "weapon#299": {
     "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
@@ -1879,7 +2391,7 @@
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
-   "weapon#236": {
+   "weapon#300": {
     "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
@@ -1887,7 +2399,7 @@
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
-   "weapon#237": {
+   "weapon#301": {
     "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
@@ -1895,7 +2407,7 @@
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
-   "weapon#238": {
+   "weapon#302": {
     "frame": { "x": 5, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
@@ -1903,7 +2415,7 @@
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
-   "weapon#239": {
+   "weapon#303": {
     "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
@@ -1911,7 +2423,7 @@
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
-   "weapon#240": {
+   "weapon#304": {
     "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
@@ -1919,7 +2431,7 @@
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
-   "weapon#241": {
+   "weapon#305": {
     "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
@@ -1927,7 +2439,7 @@
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
-   "weapon#242": {
+   "weapon#306": {
     "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
@@ -1935,7 +2447,7 @@
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
-   "weapon#243": {
+   "weapon#307": {
     "frame": { "x": 2, "y": 3, "w": 2, "h": 2 },
     "rotated": false,
     "trimmed": true,
@@ -1943,7 +2455,7 @@
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
-   "weapon#244": {
+   "weapon#308": {
     "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
@@ -1951,7 +2463,7 @@
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
-   "weapon#245": {
+   "weapon#309": {
     "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
@@ -1959,7 +2471,7 @@
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
-   "weapon#246": {
+   "weapon#310": {
     "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
@@ -1967,7 +2479,7 @@
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
-   "weapon#247": {
+   "weapon#311": {
     "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
@@ -1975,7 +2487,7 @@
     "sourceSize": { "w": 128, "h": 128 },
     "duration": 50
    },
-   "weapon#248": {
+   "weapon#312": {
     "frame": { "x": 0, "y": 0, "w": 3, "h": 2 },
     "rotated": false,
     "trimmed": true,
@@ -1995,83 +2507,91 @@
    { "name": "Stand0", "from": 0, "to": 1, "direction": "forward", "color": "#000000ff" },
    { "name": "elbow0", "from": 2, "to": 3, "direction": "forward", "color": "#000000ff" },
    { "name": "Walk0", "from": 4, "to": 11, "direction": "forward", "color": "#000000ff" },
-   { "name": "Run0", "from": 12, "to": 19, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpUp0", "from": 20, "to": 21, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpPeak0", "from": 22, "to": 23, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpDown0", "from": 24, "to": 25, "direction": "forward", "color": "#000000ff" },
-   { "name": "Stand1", "from": 26, "to": 27, "direction": "forward", "color": "#000000ff" },
-   { "name": "elbow1", "from": 28, "to": 29, "direction": "forward", "color": "#000000ff" },
-   { "name": "Walk1", "from": 30, "to": 37, "direction": "forward", "color": "#000000ff" },
-   { "name": "Run1", "from": 38, "to": 45, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpUp1", "from": 46, "to": 47, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpPeak1", "from": 48, "to": 49, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpDown1", "from": 50, "to": 51, "direction": "forward", "color": "#000000ff" },
-   { "name": "Stand2", "from": 52, "to": 53, "direction": "forward", "color": "#000000ff" },
-   { "name": "StunRecover", "from": 52, "to": 52, "direction": "forward", "color": "#000000ff" },
-   { "name": "elbow2", "from": 54, "to": 55, "direction": "forward", "color": "#000000ff" },
-   { "name": "Walk2", "from": 56, "to": 63, "direction": "forward", "color": "#000000ff" },
-   { "name": "Run2", "from": 64, "to": 71, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpUp2", "from": 72, "to": 73, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpPeak2", "from": 74, "to": 75, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpDown2", "from": 76, "to": 77, "direction": "forward", "color": "#000000ff" },
-   { "name": "Stand3", "from": 78, "to": 79, "direction": "forward", "color": "#000000ff" },
-   { "name": "elbow3", "from": 80, "to": 81, "direction": "forward", "color": "#000000ff" },
-   { "name": "Walk3", "from": 82, "to": 89, "direction": "forward", "color": "#000000ff" },
-   { "name": "Run3", "from": 90, "to": 97, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpUp3", "from": 98, "to": 99, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpPeak3", "from": 100, "to": 101, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpDown3", "from": 102, "to": 103, "direction": "forward", "color": "#000000ff" },
-   { "name": "Stand4", "from": 104, "to": 105, "direction": "forward", "color": "#000000ff" },
-   { "name": "elbow4", "from": 106, "to": 107, "direction": "forward", "color": "#000000ff" },
-   { "name": "Walk4", "from": 108, "to": 115, "direction": "forward", "color": "#000000ff" },
-   { "name": "Run4", "from": 116, "to": 123, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpUp4", "from": 124, "to": 125, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpPeak4", "from": 126, "to": 127, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpDown4", "from": 128, "to": 129, "direction": "forward", "color": "#000000ff" },
-   { "name": "Stand5", "from": 130, "to": 131, "direction": "forward", "color": "#000000ff" },
-   { "name": "elbow5", "from": 132, "to": 133, "direction": "forward", "color": "#000000ff" },
-   { "name": "Walk5", "from": 134, "to": 141, "direction": "forward", "color": "#000000ff" },
-   { "name": "Run5", "from": 142, "to": 149, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpUp5", "from": 150, "to": 151, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpPeak5", "from": 152, "to": 153, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpDown5", "from": 154, "to": 155, "direction": "forward", "color": "#000000ff" },
-   { "name": "Stand6", "from": 156, "to": 157, "direction": "forward", "color": "#000000ff" },
-   { "name": "elbow6", "from": 158, "to": 159, "direction": "forward", "color": "#000000ff" },
-   { "name": "Walk6", "from": 160, "to": 167, "direction": "forward", "color": "#000000ff" },
-   { "name": "Run6", "from": 168, "to": 175, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpUp6", "from": 176, "to": 177, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpPeak6", "from": 178, "to": 179, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpDown6", "from": 180, "to": 181, "direction": "forward", "color": "#000000ff" },
-   { "name": "Stand7", "from": 182, "to": 183, "direction": "forward", "color": "#000000ff" },
-   { "name": "elbow7", "from": 184, "to": 185, "direction": "forward", "color": "#000000ff" },
-   { "name": "Walk7", "from": 186, "to": 193, "direction": "forward", "color": "#000000ff" },
-   { "name": "Run7", "from": 194, "to": 201, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpUp7", "from": 202, "to": 203, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpPeak7", "from": 204, "to": 205, "direction": "forward", "color": "#000000ff" },
-   { "name": "JumpDown7", "from": 206, "to": 207, "direction": "forward", "color": "#000000ff" },
-   { "name": "catch0", "from": 208, "to": 212, "direction": "forward", "color": "#000000ff" },
-   { "name": "catch1", "from": 213, "to": 217, "direction": "forward", "color": "#000000ff" },
-   { "name": "catch2", "from": 218, "to": 222, "direction": "forward", "color": "#000000ff" },
-   { "name": "catch3", "from": 223, "to": 227, "direction": "forward", "color": "#000000ff" },
-   { "name": "catch4", "from": 228, "to": 232, "direction": "forward", "color": "#000000ff" },
-   { "name": "catch5", "from": 233, "to": 237, "direction": "forward", "color": "#000000ff" },
-   { "name": "catch6", "from": 238, "to": 242, "direction": "forward", "color": "#000000ff" },
-   { "name": "catch7", "from": 243, "to": 247, "direction": "forward", "color": "#000000ff" },
-   { "name": "Hurt2", "from": 248, "to": 249, "direction": "forward", "color": "#000000ff" },
-   { "name": "Hurt1", "from": 248, "to": 249, "direction": "forward", "color": "#000000ff" },
-   { "name": "Hurt7", "from": 248, "to": 249, "direction": "forward", "color": "#000000ff" },
-   { "name": "Hurt0", "from": 248, "to": 249, "direction": "forward", "color": "#000000ff" },
-   { "name": "Hurt4", "from": 250, "to": 251, "direction": "forward", "color": "#000000ff" },
-   { "name": "Hurt3", "from": 250, "to": 251, "direction": "forward", "color": "#000000ff" },
-   { "name": "Hurt5", "from": 250, "to": 251, "direction": "forward", "color": "#000000ff" },
-   { "name": "Hurt6", "from": 250, "to": 251, "direction": "forward", "color": "#000000ff" },
-   { "name": "spin", "from": 252, "to": 255, "direction": "forward", "color": "#000000ff" },
-   { "name": "Fall", "from": 256, "to": 258, "direction": "forward", "color": "#000000ff" },
-   { "name": "Down", "from": 258, "to": 258, "direction": "forward", "color": "#000000ff" },
-   { "name": "FallRiseToFeet", "from": 259, "to": 264, "direction": "forward", "color": "#000000ff" },
-   { "name": "FallRiseFromKnees", "from": 263, "to": 264, "direction": "forward", "color": "#000000ff" },
-   { "name": "win", "from": 265, "to": 266, "direction": "forward", "color": "#000000ff" },
-   { "name": "Stun", "from": 267, "to": 268, "direction": "forward", "color": "#000000ff" }
+   { "name": "Jog0", "from": 12, "to": 19, "direction": "forward", "color": "#000000ff" },
+   { "name": "Run0", "from": 20, "to": 27, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpUp0", "from": 28, "to": 29, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpPeak0", "from": 30, "to": 31, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpDown0", "from": 32, "to": 33, "direction": "forward", "color": "#000000ff" },
+   { "name": "Stand1", "from": 34, "to": 35, "direction": "forward", "color": "#000000ff" },
+   { "name": "elbow1", "from": 36, "to": 37, "direction": "forward", "color": "#000000ff" },
+   { "name": "Walk1", "from": 38, "to": 45, "direction": "forward", "color": "#000000ff" },
+   { "name": "Jog1", "from": 46, "to": 53, "direction": "forward", "color": "#000000ff" },
+   { "name": "Run1", "from": 54, "to": 61, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpUp1", "from": 62, "to": 63, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpPeak1", "from": 64, "to": 65, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpDown1", "from": 66, "to": 67, "direction": "forward", "color": "#000000ff" },
+   { "name": "Stand2", "from": 68, "to": 69, "direction": "forward", "color": "#000000ff" },
+   { "name": "StunRecover", "from": 68, "to": 68, "direction": "forward", "color": "#000000ff" },
+   { "name": "elbow2", "from": 70, "to": 71, "direction": "forward", "color": "#000000ff" },
+   { "name": "Walk2", "from": 72, "to": 79, "direction": "forward", "color": "#000000ff" },
+   { "name": "Jog2", "from": 80, "to": 87, "direction": "forward", "color": "#000000ff" },
+   { "name": "Run2", "from": 88, "to": 95, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpUp2", "from": 96, "to": 97, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpPeak2", "from": 98, "to": 99, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpDown2", "from": 100, "to": 101, "direction": "forward", "color": "#000000ff" },
+   { "name": "Stand3", "from": 102, "to": 103, "direction": "forward", "color": "#000000ff" },
+   { "name": "elbow3", "from": 104, "to": 105, "direction": "forward", "color": "#000000ff" },
+   { "name": "Walk3", "from": 106, "to": 113, "direction": "forward", "color": "#000000ff" },
+   { "name": "Jog3", "from": 114, "to": 121, "direction": "forward", "color": "#000000ff" },
+   { "name": "Run3", "from": 122, "to": 129, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpUp3", "from": 130, "to": 131, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpPeak3", "from": 132, "to": 133, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpDown3", "from": 134, "to": 135, "direction": "forward", "color": "#000000ff" },
+   { "name": "Stand4", "from": 136, "to": 137, "direction": "forward", "color": "#000000ff" },
+   { "name": "elbow4", "from": 138, "to": 139, "direction": "forward", "color": "#000000ff" },
+   { "name": "Walk4", "from": 140, "to": 147, "direction": "forward", "color": "#000000ff" },
+   { "name": "Jog4", "from": 148, "to": 155, "direction": "forward", "color": "#000000ff" },
+   { "name": "Run4", "from": 156, "to": 163, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpUp4", "from": 164, "to": 165, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpPeak4", "from": 166, "to": 167, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpDown4", "from": 168, "to": 169, "direction": "forward", "color": "#000000ff" },
+   { "name": "Stand5", "from": 170, "to": 171, "direction": "forward", "color": "#000000ff" },
+   { "name": "elbow5", "from": 172, "to": 173, "direction": "forward", "color": "#000000ff" },
+   { "name": "Walk5", "from": 174, "to": 181, "direction": "forward", "color": "#000000ff" },
+   { "name": "Jog5", "from": 182, "to": 189, "direction": "forward", "color": "#000000ff" },
+   { "name": "Run5", "from": 190, "to": 197, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpUp5", "from": 198, "to": 199, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpPeak5", "from": 200, "to": 201, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpDown5", "from": 202, "to": 203, "direction": "forward", "color": "#000000ff" },
+   { "name": "Stand6", "from": 204, "to": 205, "direction": "forward", "color": "#000000ff" },
+   { "name": "elbow6", "from": 206, "to": 207, "direction": "forward", "color": "#000000ff" },
+   { "name": "Walk6", "from": 208, "to": 215, "direction": "forward", "color": "#000000ff" },
+   { "name": "Jog6", "from": 216, "to": 223, "direction": "forward", "color": "#000000ff" },
+   { "name": "Run6", "from": 224, "to": 231, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpUp6", "from": 232, "to": 233, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpPeak6", "from": 234, "to": 235, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpDown6", "from": 236, "to": 237, "direction": "forward", "color": "#000000ff" },
+   { "name": "Stand7", "from": 238, "to": 239, "direction": "forward", "color": "#000000ff" },
+   { "name": "elbow7", "from": 240, "to": 241, "direction": "forward", "color": "#000000ff" },
+   { "name": "Walk7", "from": 242, "to": 249, "direction": "forward", "color": "#000000ff" },
+   { "name": "Jog7", "from": 250, "to": 257, "direction": "forward", "color": "#000000ff" },
+   { "name": "Run7", "from": 258, "to": 265, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpUp7", "from": 266, "to": 267, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpPeak7", "from": 268, "to": 269, "direction": "forward", "color": "#000000ff" },
+   { "name": "JumpDown7", "from": 270, "to": 271, "direction": "forward", "color": "#000000ff" },
+   { "name": "catch0", "from": 272, "to": 276, "direction": "forward", "color": "#000000ff" },
+   { "name": "catch1", "from": 277, "to": 281, "direction": "forward", "color": "#000000ff" },
+   { "name": "catch2", "from": 282, "to": 286, "direction": "forward", "color": "#000000ff" },
+   { "name": "catch3", "from": 287, "to": 291, "direction": "forward", "color": "#000000ff" },
+   { "name": "catch4", "from": 292, "to": 296, "direction": "forward", "color": "#000000ff" },
+   { "name": "catch5", "from": 297, "to": 301, "direction": "forward", "color": "#000000ff" },
+   { "name": "catch6", "from": 302, "to": 306, "direction": "forward", "color": "#000000ff" },
+   { "name": "catch7", "from": 307, "to": 311, "direction": "forward", "color": "#000000ff" },
+   { "name": "Hurt2", "from": 312, "to": 313, "direction": "forward", "color": "#000000ff" },
+   { "name": "Hurt1", "from": 312, "to": 313, "direction": "forward", "color": "#000000ff" },
+   { "name": "Hurt7", "from": 312, "to": 313, "direction": "forward", "color": "#000000ff" },
+   { "name": "Hurt0", "from": 312, "to": 313, "direction": "forward", "color": "#000000ff" },
+   { "name": "Hurt4", "from": 314, "to": 315, "direction": "forward", "color": "#000000ff" },
+   { "name": "Hurt3", "from": 314, "to": 315, "direction": "forward", "color": "#000000ff" },
+   { "name": "Hurt5", "from": 314, "to": 315, "direction": "forward", "color": "#000000ff" },
+   { "name": "Hurt6", "from": 314, "to": 315, "direction": "forward", "color": "#000000ff" },
+   { "name": "spin", "from": 316, "to": 319, "direction": "forward", "color": "#000000ff" },
+   { "name": "Fall", "from": 320, "to": 322, "direction": "forward", "color": "#000000ff" },
+   { "name": "Down", "from": 322, "to": 322, "direction": "forward", "color": "#000000ff" },
+   { "name": "FallRiseToFeet", "from": 323, "to": 328, "direction": "forward", "color": "#000000ff" },
+   { "name": "FallRiseFromKnees", "from": 327, "to": 328, "direction": "forward", "color": "#000000ff" },
+   { "name": "win", "from": 329, "to": 330, "direction": "forward", "color": "#000000ff" },
+   { "name": "Stun", "from": 331, "to": 332, "direction": "forward", "color": "#000000ff" }
   ],
   "layers": [
    { "name": "weapon", "opacity": 255, "blendMode": "normal" }
