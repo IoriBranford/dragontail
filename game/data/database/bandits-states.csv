@@ -81,7 +81,7 @@ guard,54,lowerGuard,,Dragontail.Character.Behavior.Enemy.Guard,,,Guard,0,TRUE,TR
 guardHit,3,guard,,Dragontail.Character.Behavior.Enemy.GuardHit,,,GuardHit,0,FALSE,TRUE,FALSE,,data/sounds/combat/block.mp3,,0,0,,,1,,,,,,,,
 lowerGuard,9,stand,,,,,LowerGuard,0,TRUE,TRUE,FALSE,,,,0,0,,,1,,,,,,,,
 leave,FALSE,FALSE,,,leave,,Walk,,TRUE,TRUE,FALSE,,,,0,0,,.approachspeed,1,,Object Wall,,,,,,
-enterAndAttackUntilEmpty,FALSE,attackIfAmmoElseLeave,,,walkToEntryPoint,,Walk,,TRUE,TRUE,FALSE,,,,0,0,,,1,,Object Wall,,,,,,
+enterAndAttackUntilEmpty,90,attackIfAmmoElseLeave,,,walkToEntryPoint,,Walk,,TRUE,TRUE,FALSE,,,,0,0,,,1,,Object Wall,,,,,,
 attackIfAmmoElseLeave,FALSE,leave,,,attackIfAmmoElseLeave,,Stand,,TRUE,TRUE,FALSE,,,,0,0,,,1,,,,,,,,
 enterAndPrepareBowAmbush,FALSE,prepareBowAmbush,,,walkToEntryPoint,,Walk,,TRUE,TRUE,FALSE,,,,0,0,,,1,,,,,,,,
 prepareBowAmbush,12,waitForBowAmbush,bow-shot,Dragontail.Character.Behavior.Enemy.AttackPrepare,,,ShootWindup,0,TRUE,TRUE,FALSE,,data/sounds/combat/bowdraw.mp3,,0,0,,,1,,,,,,,,
