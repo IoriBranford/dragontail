@@ -88,14 +88,15 @@ function PlayerRunning:fixedupdate()
         player.facedestangle = targetvelangle
     end
 
-    local animation = heldenemy and "holdrun" or "Run"
-    Face.turnTowardsAngle(player, targetvelangle, nil, animation, player.animationframe or 1)
     Body.forceTowardsVelXY(player, targetvelx, targetvely, player.accel)
-
-    local fullspeed = player.speed*player.speed/2 <=
+    local speed = player.speed
+    local isfullspeedahead = speed*speed <=
         math.dot(player.velx, player.vely, targetvelx, targetvely)
 
-    if fullspeed then
+    local animation = heldenemy and "holdrun" or isfullspeedahead and "Run" or "Jog"
+    Face.turnTowardsAngle(player, targetvelangle, nil, animation, player.animationframe or 1)
+
+    if isfullspeedahead then
         player:makePeriodicAfterImage(self.runningtime, player.afterimageinterval or 6)
     end
 
