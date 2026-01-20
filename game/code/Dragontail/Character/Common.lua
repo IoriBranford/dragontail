@@ -398,7 +398,7 @@ function Common:projectileHoming()
         else
             vx, vy, vz = math.norm(vx, vy, vz)
         end
-        Body.forceTowardsVel3(self, vx * self.speed, vy * self.speed, vz * self.speed, 1)
+        Body.forceTowardsVel3(self, vx * self.speed, vy * self.speed, vz * self.speed, self.accel or 2)
         if self.velx ~= 0 or self.vely ~= 0 then
             Face.faceVector(self, self.velx, self.vely, self.state.animation)
             self:startAttack(self.faceangle)
