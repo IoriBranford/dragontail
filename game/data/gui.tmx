@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="22" nextobjectid="138">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="22" nextobjectid="140">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -483,11 +483,19 @@ to clear lost enemies</text>
     <properties>
      <property name="configkey" value="fullscreen"/>
      <property name="label" type="object" value="111"/>
-     <property name="refreshaction" value="refreshWindow"/>
+     <property name="refreshaction" value="refreshFullscreen"/>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
    </object>
-   <object id="112" template="gui/menu/settings/Slider.tx" name="soundvolume" type="Gui.Slider" x="168" y="90" width="176" height="18">
+   <object id="139" template="gui/menu/settings/Slider.tx" name="vsync" type="Gui.Slider" x="168" y="81" width="176" height="18">
+    <properties>
+     <property name="configkey" value="vsync"/>
+     <property name="label" type="object" value="138"/>
+     <property name="refreshaction" value="refreshVsync"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
+   </object>
+   <object id="112" template="gui/menu/settings/Slider.tx" name="soundvolume" type="Gui.Slider" x="168" y="108" width="176" height="18">
     <properties>
      <property name="configkey" value="soundvolume"/>
      <property name="increment" type="float" value="0.125"/>
@@ -497,7 +505,7 @@ to clear lost enemies</text>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">100</text>
    </object>
-   <object id="114" template="gui/menu/settings/Slider.tx" name="musicvolume" type="Gui.Slider" x="168" y="126" width="176" height="18">
+   <object id="114" template="gui/menu/settings/Slider.tx" name="musicvolume" type="Gui.Slider" x="168" y="135" width="176" height="18">
     <properties>
      <property name="configkey" value="musicvolume"/>
      <property name="increment" type="float" value="0.125"/>
@@ -526,10 +534,13 @@ to clear lost enemies</text>
    <object id="111" name="Full screen" x="168" y="54" width="144" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Full screen</text>
    </object>
-   <object id="113" name="Sound volume" x="168" y="90" width="144" height="18">
+   <object id="138" name="Vsync" x="168" y="81" width="144" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Vsync</text>
+   </object>
+   <object id="113" name="Sound volume" x="168" y="108" width="144" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Sound volume</text>
    </object>
-   <object id="115" name="Music volume" x="168" y="126" width="144" height="18">
+   <object id="115" name="Music volume" x="168" y="135" width="144" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Music volume</text>
    </object>
    <object id="117" name="Music" x="168" y="162" width="144" height="18">
