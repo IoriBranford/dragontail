@@ -350,6 +350,7 @@ function Stage.updateGoingToNextRoom()
                 return
             end
         end
+        Characters.fixedupdateLostEnemiesTimer()
     end
 
     local camhalfw, camhalfh = camera.width/2, camera.height/2
@@ -582,6 +583,11 @@ function Stage.fixedupdateGui(gui)
             end
         end
     end
+
+    local clearenemiesprompt = gui:get("gameplay.hud.clearenemiesprompt")
+    if clearenemiesprompt then
+        clearenemiesprompt.visible = Characters.isTimeToClearLostEnemies()
+    end
 end
 
 function Stage.update(dsecs, fixedfrac)
@@ -608,6 +614,9 @@ function Stage.draw(fixedfrac)
     local z = camera.z + camera.bodyheight/2 + camera.velz*fixedfrac
     love.graphics.translate(-x, z - y)
     scene:draw(fixedfrac, Characters.isDrawnBefore)
+    if Characters.isTimeToClearLostEnemies() then
+        Characters.debugDrawOffScreenEnemyPositions()
+    end
     love.graphics.pop()
     love.graphics.setShader()
 end

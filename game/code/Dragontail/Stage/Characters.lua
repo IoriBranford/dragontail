@@ -23,7 +23,7 @@ local scene
 local nextid
 local camera
 local clearlostenemiestimer
-local ClearLostEnemiesAfterTime = 60*60*3
+local ClearLostEnemiesAfterTime = 60*5
 
 function Characters.init(scene_, nextid_, camera_)
     nextid = nextid_ or 1
@@ -190,32 +190,32 @@ function Characters.fixedupdate()
         solid.velz = solid.velz + hitvelz
         solid.penex, solid.peney, solid.penez = penex, peney, penez
     end
-
-    Characters.fixedupdateLostEnemies()
 end
 
-function Characters.fixedupdateLostEnemies()
-    if #enemies == 0 then
-        clearlostenemiestimer = 0
-        return
-    end
-
-    local numenemiesonscreen = 0
+function Characters.fixedupdateLostEnemiesTimer()
+    local numlostenemies = 0
     for i = 1, #enemies do
         local enemy = enemies[i]
-        if enemy:isCylinderOnCamera(camera) then
-            numenemiesonscreen = numenemiesonscreen + 1
+        if not enemy:isCylinderOnCamera(camera) then
+            numlostenemies = numlostenemies + 1
         end
     end
 
-    if numenemiesonscreen == 0 then
+    if numlostenemies > 0 then
         clearlostenemiestimer = clearlostenemiestimer + 1
-        if clearlostenemiestimer > ClearLostEnemiesAfterTime then
-            Characters.clearEnemies()
-            clearlostenemiestimer = 0
-        end
     else
         clearlostenemiestimer = 0
+    end
+end
+
+function Characters.isTimeToClearLostEnemies()
+    return clearlostenemiestimer >= ClearLostEnemiesAfterTime
+end
+
+function Characters.debugDrawOffScreenEnemyPositions()
+    for i = 1, #enemies do
+        local enemy = enemies[i]
+        enemy:debugDrawOffScreenPosition()
     end
 end
 
@@ -433,6 +433,7 @@ function Characters.clearEnemies(boss)
             StateMachine.start(enemy, "fall")
         end
     end
+    clearlostenemiestimer = 0
 end
 
 function Characters.refillPlayers()

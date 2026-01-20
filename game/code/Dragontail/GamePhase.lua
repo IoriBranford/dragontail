@@ -9,6 +9,7 @@ local Config = require "System.Config"
 local Inputs = require "System.Inputs"
 local Player = require "Dragontail.Character.Player"
 local GameGuiActions = require "Dragontail.GuiActions"
+local Characters     = require "Dragontail.Stage.Characters"
 local isAsset = Assets.isAsset
 local getAsset = Assets.get
 local GamePhase = {}
@@ -106,12 +107,21 @@ function keypressed.s()
     end
 end
 
+function keypressed.delete()
+    if Characters.isTimeToClearLostEnemies() then
+        Characters.clearEnemies()
+    end
+end
+
 ---@param gamepad love.Joystick
 function GamePhase.gamepadpressed(gamepad, button)
     if button == "start" then
         GamePhase.setPaused(not paused, true)
     elseif button == "back" then
-        GamePhase.setPaused(not paused, false)
+        if Characters.isTimeToClearLostEnemies() then
+            Characters.clearEnemies()
+        end
+        -- GamePhase.setPaused(not paused, false)
     else
         Gui:gamepadpressed(gamepad, button)
     end
