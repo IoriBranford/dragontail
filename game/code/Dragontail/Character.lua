@@ -99,6 +99,42 @@ function Character:draw(fixedfrac)
     end
 end
 
+function Character:debugDrawOffScreenPosition()
+    local camera = self.camera
+    local x, y, z = self.x, self.y, self.z
+    local screeny = y - z
+    local camerascreeny = camera.y - camera.z - camera.bodyheight/2
+
+    local x1, y1 = x, screeny
+    local dirx, diry = 0, 0
+    if x < camera.x then
+        x1 = camera.x
+        dirx = -1
+    elseif x > camera.x + camera.width then
+        x1 = camera.x + camera.width
+        dirx = 1
+    end
+    if screeny < camerascreeny then
+        diry = -1
+        y1 = camerascreeny
+    elseif screeny > camerascreeny + camera.height then
+        diry = 1
+        y1 = camerascreeny + camera.height
+    end
+    if dirx == 0 and diry == 0 then return end
+
+    love.graphics.push()
+    love.graphics.translate(x1, y1)
+    love.graphics.push()
+    love.graphics.rotate(math.atan2(diry, dirx))
+    love.graphics.line(-8, -8, 0, 0, -8, 8)
+    love.graphics.pop()
+    love.graphics.translate(-16*dirx, -16*diry)
+    love.graphics.printf(string.format("%d\n%d\n%d", x, y, z), -16, -16, 32,
+        dirx < 0 and "left" or dirx > 0 and "right" or "center")
+    love.graphics.pop()
+end
+
 function Character:makeImpactSpark(attacker, sparktype)
     if sparktype then
         local hitsparkcharacter = Character(sparktype)
