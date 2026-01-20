@@ -96,7 +96,7 @@ throwBackProjectile2,40,.recoverai,,Dragontail.Character.Behavior.Enemy.AttackEx
 crouch,30,crouchEnd,,,,decelerateXYto0,Crouch,0,TRUE,TRUE,FALSE,,,,0,0,,,1,/=4,,,,,,,
 crouchEnd,30,stand,,,,decelerateXYto0,CrouchEnd,0,TRUE,TRUE,FALSE,,,,0,0,,,1,*=4,,,,,,,
 guardForever,9999999,lowerGuard,,Dragontail.Character.Behavior.Enemy.Guard,,,Guard,0,TRUE,TRUE,FALSE,,,,0,0,,,1,,,,,,,,
-catchAttack,20,,,Dragontail.Character.Behavior.Enemy.CatchAttack,,,catch,0,FALSE,FALSE,FALSE,,data/sounds/man_heavy/amused2.mp3,data/sounds/combat/grab.mp3,0,0.392699081698724,,,0.25,,,,,,,,
+catchAttack,20,,,Dragontail.Character.Behavior.Enemy.CatchAttack,,,catch,0,TRUE,TRUE,FALSE,,data/sounds/man_heavy/amused2.mp3,data/sounds/combat/grab.mp3,0,0.392699081698724,,,0.25,,,,,,,,
 getProjectile,20,throwBackProjectile,,Dragontail.Character.Behavior.Enemy.GetItem,,,catch,0,TRUE,TRUE,TRUE,,data/sounds/combat/grab.mp3,,0,0,,,1,,,,,,,,
 bandit-boss-jump-for-spin-cw,15,bandit-boss-air-spin-cw,,Dragontail.Character.Behavior.Enemy.Jumping,,,Jump,0,TRUE,TRUE,FALSE,,data/sounds/man_heavy/hut1.mp3,,0,0,,0,1,,,,64,0.25,,4.5,
 bandit-boss-air-spin-cw,20,bandit-boss-drop,bandit-boss-spin-cw,Dragontail.Character.Behavior.Enemy.AttackExecute,,,AirSpinCW,1,TRUE,TRUE,FALSE,,data/sounds/combat/swing3.mp3,,0,0,0,0,1,,,,,0,40,0,
