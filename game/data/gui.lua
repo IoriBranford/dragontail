@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 18,
   nextlayerid = 22,
-  nextobjectid = 137,
+  nextobjectid = 138,
   properties = {},
   tilesets = {
     {
@@ -931,6 +931,25 @@ return {
               color = { 255, 255, 255 },
               halign = "right",
               valign = "bottom",
+              properties = {}
+            },
+            {
+              id = 137,
+              name = "clearenemiesprompt",
+              type = "",
+              shape = "text",
+              x = 80,
+              y = 54,
+              width = 320,
+              height = 54,
+              rotation = 0,
+              visible = false,
+              text = "Push SELECT button or DELETE key\nto clear lost enemies",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              valign = "center",
               properties = {}
             }
           }

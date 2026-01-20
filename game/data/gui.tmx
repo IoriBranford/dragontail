@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="22" nextobjectid="137">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="22" nextobjectid="138">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -129,6 +129,10 @@
    <object id="29" name="development ver." x="328" y="225" width="144" height="36">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="right" valign="bottom">DEVELOPMENT VER. 2026
 ALL CONTENT SUBJECT TO CHANGE</text>
+   </object>
+   <object id="137" name="clearenemiesprompt" x="80" y="54" width="320" height="54" visible="0">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">Push SELECT button or DELETE key
+to clear lost enemies</text>
    </object>
   </objectgroup>
   <objectgroup id="16" name="hud_breakgrab">
