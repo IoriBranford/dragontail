@@ -139,6 +139,13 @@ function Characters.fixedupdate()
         character:updateBody()
     end
 
+    for i = 1, #solids do local solid = solids[i]
+        local hitvelx, hitvely, hitvelz = solid.hitvelx, solid.hitvely, solid.hitvelz
+        if hitvelx then solid.velx = solid.velx - hitvelx end
+        if hitvely then solid.vely = solid.vely - hitvely end
+        if hitvelz then solid.velz = solid.velz - hitvelz end
+    end
+
     for i = #AttackHits, 1, -1 do
         AttackHits[i]:_release()
         AttackHits[i] = nil
@@ -175,6 +182,9 @@ function Characters.fixedupdate()
     for i = 1, #solids do local solid = solids[i]
         local hitvelx, hitvely, hitvelz,
             penex, peney, penez = Body.predictCollisionVelocity(solid)
+        solid.hitvelx = hitvelx
+        solid.hitvely = hitvely
+        solid.hitvelz = hitvelz
         solid.velx = solid.velx + hitvelx
         solid.vely = solid.vely + hitvely
         solid.velz = solid.velz + hitvelz
