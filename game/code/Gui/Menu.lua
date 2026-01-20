@@ -6,7 +6,6 @@ local InputSetter = require "Gui.InputSetter"
 ---@class Menu:ObjectGroup
 ---@field backaction string?
 ---@field initialcursorposition integer?
----@field columns integer?
 local Menu = class(ObjectGroup)
 Menu.doAction = GuiObject.doAction
 
@@ -17,7 +16,6 @@ function Menu:spawn()
     local menuitems = {} ---@type Button[]
     self.cursors = cursors
     self.menuitems = menuitems
-    self.columns = self.columns or 1
 
     for _, object in ipairs(self) do
         local platforms = object.platforms or "all"
@@ -99,24 +97,16 @@ function Menu:keypressed(key)
     end
     if key == "return" or key == "enter" then
         self:pressSelectedButton()
+    elseif key == "up" then
+        self:moveCursor(-1)
+    elseif key == "down" then
+        self:moveCursor(1)
+    elseif key == "left" then
+        self:changeSelectedSlider(-1)
+    elseif key == "right" then
+        self:changeSelectedSlider(1)
     elseif key == "escape" then
         self:doAction(self.backaction)
-    else
-        if key == "up" then
-            self:moveCursor(-self.columns)
-        elseif key == "down" then
-            self:moveCursor(self.columns)
-        elseif key == "left" then
-            if self:changeSelectedSlider(-1) then
-            else
-                self:moveCursor(-1)
-            end
-        elseif key == "right" then
-            if self:changeSelectedSlider(1) then
-            else
-                self:moveCursor(1)
-            end
-        end
     end
 end
 
@@ -248,7 +238,6 @@ function Menu:changeSelectedSlider(dir)
     local slider = self.menuitems[self.cursorposition]
     if slider and slider.changeValue then
         slider:changeValue(dir)
-        return true
     end
 end
 
