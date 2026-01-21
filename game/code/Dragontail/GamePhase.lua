@@ -48,7 +48,7 @@ function GamePhase.loadphase(stagepath_, startroom)
     end)
 
     Tiled.Assets.uncacheMarked()
-    Tiled.Assets.packTiles()
+    -- Tiled.Assets.packTiles()
     Tiled.Assets.batchAllMapsLayers()
 
     Stage.init(startroom)
