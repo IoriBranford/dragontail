@@ -446,11 +446,12 @@ function Fighter:breakaway(other)
 
     local t = 1
     -- self.hurtstun = self.breakawaystun or 15
+    local time = self.statetime or 15
     repeat
         yield()
         self:decelerateXYto0()
         t = t + 1
-    until t > 15
+    until t > time
 
     self.velx, self.vely = 0, 0
     return self.aiafterbreakaway or self.recoverai
