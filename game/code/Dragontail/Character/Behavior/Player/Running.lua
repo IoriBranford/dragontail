@@ -89,8 +89,8 @@ function PlayerRunning:fixedupdate()
     end
 
     Body.forceTowardsVelXY(player, targetvelx, targetvely, player.accel)
-    local speed = player.speed
-    local isfullspeedahead = speed*speed <=
+    local fullspeed = player.speed * 63/64
+    local isfullspeedahead = fullspeed*fullspeed <=
         math.dot(player.velx, player.vely, targetvelx, targetvely)
 
     local animation = heldenemy and "holdrun" or isfullspeedahead and "Run" or "Jog"
