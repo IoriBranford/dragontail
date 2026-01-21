@@ -428,11 +428,20 @@ function Fighter:thrownRecover(thrower)
 end
 
 function Fighter:breakaway(other)
+    local angle = self.holdangle or self.faceangle
     HoldOpponent.stopHolding(other, self)
     HoldOpponent.stopHolding(self, other)
     local breakspeed = 10
-    local dirx, diry = norm(other.x - self.x, other.y - self.y)
-    self:makeImpactSpark(other, "spark-hit")
+    local dirx, diry = 0, 0
+    if other then
+        self:makeImpactSpark(other, "spark-hit")
+        dirx, diry = other.x - self.x, other.y - self.y
+    end
+    if dirx == 0 and diry == 0 then
+        dirx, diry = cos(angle), sin(angle)
+    else
+        dirx, diry = norm(dirx, diry)
+    end
     self.velx, self.vely = -dirx * breakspeed, -diry * breakspeed
 
     local t = 1
