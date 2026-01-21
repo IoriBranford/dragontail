@@ -25,9 +25,7 @@ function GroundSlam:start(...)
     player.holdheight = 0
     if heldenemy then
         player.holddist = HoldOpponent.getDefaultHoldDistance(player, heldenemy)
-        heldenemy:changeAnimation("FallFlat", 1, 0)
-        heldenemy.canbeattacked = false
-        heldenemy.canbejuggled = false
+        StateMachine.start(heldenemy, "beforeGroundSlammed")
         player.holdstrength = math.huge
     end
 end

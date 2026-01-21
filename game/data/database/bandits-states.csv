@@ -104,4 +104,5 @@ bandit-boss-jump-for-spin-ccw,15,bandit-boss-air-spin-ccw,,Dragontail.Character.
 bandit-boss-air-spin-ccw,20,bandit-boss-drop,bandit-boss-spin-ccw,Dragontail.Character.Behavior.Enemy.AttackExecute,,,AirSpinCW,1,TRUE,TRUE,FALSE,,data/sounds/combat/swing3.mp3,,0,0,0,0,1,,,,,0,40,0,
 bandit-boss-drop,FALSE,stand,,Dragontail.Character.Behavior.Enemy.Jumping,,,Jump,0,TRUE,TRUE,FALSE,,,,0,0,,,FALSE,,,,,0.5,,,
 enterAndGetProjectile,FALSE,getProjectile,,,walkToEntryPoint,,Walk,1,TRUE,TRUE,TRUE,,,,0,0,,,1,,,,,,,,
-groundSlammed,1,down,,,wallSlammed,,Down,,FALSE,FALSE,FALSE,,data/sounds/combat/bodyslam.mp3,,0,0,,,1,,,,,,,,9
+beforeGroundSlammed,FALSE,groundSlammed,,,,,FallFlat,0,FALSE,FALSE,FALSE,,,,0,0,,,1,,,,,,,,
+groundSlammed,1,down,,,wallSlammed,,Down,0,FALSE,FALSE,FALSE,,data/sounds/combat/bodyslam.mp3,,0,0,,,1,,,,,,,,9
