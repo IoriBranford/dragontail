@@ -51,7 +51,7 @@ end
 
 function Guard:isPointInGuardArc(x, y)
     local dx, dy = self.x - x, self.y - y
-    if dx == 0 and dy == 0 then return true end
+    if dx == 0 and dy == 0 then return false end
     dx, dy = math.norm(dx, dy)
     return Guard.isUnitVectorAgainstGuardArc(self, dx, dy)
 end
