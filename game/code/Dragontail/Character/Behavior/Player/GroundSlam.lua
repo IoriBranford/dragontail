@@ -52,7 +52,7 @@ function GroundSlam:fixedupdate()
         -- player.nextstate = "jump"
     end
 
-    player.holddist = math.max(0, player.holddist - 4)
+    player.holddist = math.max(0, player.holddist - 8)
     player.holdheight = math.max(-8, player.holdheight - 2)
     HoldOpponent.updateVelocities(player)
 end
