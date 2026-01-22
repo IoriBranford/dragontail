@@ -90,7 +90,7 @@ return {
         --cuecards                              Use title bar as a cue card for video recording
     ]],
     defaultconfig = Platform.overrideConfig {
-        _version = 3,
+        _version = 4,
 
         canvasscaleint = false,
         canvasscalesoft = true,
