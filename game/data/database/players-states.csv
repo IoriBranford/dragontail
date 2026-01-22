@@ -53,7 +53,7 @@ fall,,,,fall,collapse,,300,.mainasefile,Hurt,0,FALSE,FALSE,FALSE,,,,0,4,1,0.25,4
 collapse,,,,decelerateXYto0,down,,15,.mainasefile,Fall,0,FALSE,FALSE,FALSE,,,,0,4,1,,4,2,3.14159265358979
 down,,Dragontail.Character.Behavior.Player.Downed,,,getup,,20,.mainasefile,Down,0,FALSE,FALSE,FALSE,,data/sounds/combat/bodydrop.mp3,,0,4,1,,4,2,3.14159265358979
 defeat,,,defeat,,FALSE,,FALSE,.mainasefile,Down,0,FALSE,FALSE,FALSE,,data/sounds/player/defeat.mp3,,0,4,1,,4,FALSE,3.14159265358979
-getup,,,,getup,walk,,18,.mainasefile,FallRiseToFeet,0,FALSE,FALSE,FALSE,4294967295,data/sounds/player/getup.mp3,,0,4,1,,4,FALSE,3.14159265358979
+getup,,,,getup,walk,,21,.mainasefile,FallRiseToFeet,0,FALSE,FALSE,FALSE,4294967295,data/sounds/player/getup.mp3,,0,4,1,,4,FALSE,3.14159265358979
 sequenceWalkTo,,,sequenceWalkTo,,FALSE,,FALSE,.mainasefile,Walk,1,FALSE,FALSE,FALSE,,,,0,0,0,,4,FALSE,3.14159265358979
 catchProjectile,,Dragontail.Character.Behavior.Fighter.CatchingProjectile,,,walk,,15,.mainasefile,catch,0,FALSE,FALSE,FALSE,,data/sounds/combat/shakiin.mp3,,0,2,1,,4,FALSE,3.14159265358979
 sequenceTailSwing,,,idle,,sequenceWalkTo,,24,.attackasefile,tailspinCW,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,,0,0,0,,4,FALSE,3.14159265358979
