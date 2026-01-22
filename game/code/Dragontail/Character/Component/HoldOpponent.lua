@@ -90,7 +90,7 @@ function HoldOpponent:heldBy(holder)
         if struggle then
             local holdstrength = HoldOpponent.weakenHold(holder, struggle)
             if holdstrength <= 0 then
-                StateMachine.start(holder, "breakaway", self)
+                StateMachine.start(holder, "brokenaway", self)
                 return "breakaway", holder
             end
         end

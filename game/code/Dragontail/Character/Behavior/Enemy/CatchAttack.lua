@@ -61,6 +61,9 @@ function CatchAttack:fixedupdate()
     local attackerteam = self.attackerteam
     if attackerteam == "enemies"
     or attackerteam == "container" then
+        if not HoldOpponent.isHolding(enemy, attacker) then
+            return "brokenaway", attacker
+        end
         enemy:updateFlash(enemy.statetime)
         if attacker then
             attacker:updateFlash(enemy.statetime)

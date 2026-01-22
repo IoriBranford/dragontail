@@ -37,8 +37,8 @@ end
 function PlayerHoldEnemy:fixedupdate()
     local player = self.character
     local enemy = player.heldopponent
-    if not enemy then
-        return "walk"
+    if not enemy or not HoldOpponent.isHolding(player, enemy) then
+        return "brokenaway", enemy
     end
 
     local inx, iny = player:getJoystick()

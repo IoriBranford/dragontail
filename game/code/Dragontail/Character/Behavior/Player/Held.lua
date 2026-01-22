@@ -56,7 +56,7 @@ function PlayerHeld:fixedupdate()
 
     local holdstrength = HoldOpponent.weakenHold(holder, struggle)
     if holdstrength <= 0 then
-        StateMachine.start(holder, "breakaway", player)
+        StateMachine.start(holder, "brokenaway", player)
         return "breakaway", holder
     end
 

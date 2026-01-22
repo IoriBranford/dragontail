@@ -47,7 +47,7 @@ function EnemyHold:fixedupdate()
     local enemy = self.character
     local held = enemy.heldopponent
     if not held or not HoldOpponent.isHolding(enemy, held) then
-        return enemy.recoverai or enemy.initialai
+        return "brokenaway", held
     end
 
     local holdangle = enemy.holdangle
