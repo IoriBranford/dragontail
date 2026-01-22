@@ -62,4 +62,12 @@ function AttackPrepare:timeout(...)
     return self:interrupt(...)
 end
 
+function AttackPrepare:drawTimerCircle(fixedfrac)
+    local enemy = self.character
+    local x = enemy.x + enemy.velx*fixedfrac
+    local y = enemy.y + enemy.vely*fixedfrac
+    local z = enemy.z + enemy.velz*fixedfrac
+    love.graphics.circle("line", x, y - z - enemy.bodyheight/2, enemy.statetime or 1)
+end
+
 return AttackPrepare
