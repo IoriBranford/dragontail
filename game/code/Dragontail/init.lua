@@ -111,8 +111,7 @@ return {
         },
 
         gamepads = {
-            [0] = defaultgamepadconfig,
-            [1] = defaultgamepadconfig
+            defaultgamepadconfig
         },
 
         -- game_rules = "ORIGINAL",
