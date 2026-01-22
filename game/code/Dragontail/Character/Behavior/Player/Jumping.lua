@@ -105,6 +105,7 @@ function PlayerJumping:fixedupdate()
         if heldenemy and whoslammedwall == heldenemy then
             heldenemy:stopAttack() ; heldenemy:unassignSelfAsAttacker()
             HoldOpponent.stopHolding(player, heldenemy)
+            heldenemy.health = heldenemy.health - (heldenemy.wallslamdamage or 10)
             StateMachine.start(heldenemy, "wallSlammed", player, heldenemy.penex, heldenemy.peney)
             return "running-elbow", player.faceangle
         end

@@ -167,6 +167,7 @@ function PlayerRunning:fixedupdate()
         local oobx, ooby = heldenemy.penex, heldenemy.peney
         if oobx or ooby then
             HoldOpponent.stopHolding(player, heldenemy)
+            heldenemy.health = heldenemy.health - (heldenemy.wallslamdamage or 10)
             StateMachine.start(heldenemy, "wallSlammed", player, oobx, ooby)
             return "running-elbow", player.faceangle
         end

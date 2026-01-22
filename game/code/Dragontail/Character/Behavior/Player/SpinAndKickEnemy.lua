@@ -37,6 +37,7 @@ function SpinAndKickEnemy:fixedupdate()
         HoldOpponent.stopHolding(player, enemy)
         if enemy then
             Attacker.stopAttack(enemy)
+            enemy.health = enemy.health - (enemy.wallslamdamage or 10)
             StateMachine.start(enemy, "wallSlammed", player, enemy.penex, enemy.peney)
         end
         return "swingEnemyIntoWall"

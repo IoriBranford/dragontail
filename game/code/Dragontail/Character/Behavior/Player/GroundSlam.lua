@@ -40,25 +40,13 @@ function GroundSlam:fixedupdate()
 
     if landed then
         if heldenemy then
+            heldenemy.health = heldenemy.health - (heldenemy.groundslamdamage or 15)
             StateMachine.start(heldenemy, "groundSlammed", player)
         end
         -- local jumpangle = player.faceangle
         -- player.velx = math.cos(jumpangle)*4
         -- player.vely = math.sin(jumpangle)*4
-        local jx, jy = player:getJoystick()
-        local speed = player.speed or 4
-        if jx ~= 0 or jy ~= 0 then
-            player.velx, player.vely = jx*speed, jy*speed
-        else
-            local speedsq = math.lensq(player.velx, player.vely)
-            if speedsq > speed*speed then
-                player.velx, player.vely = math.norm(player.velx, player.vely)
-                player.velx, player.vely = player.velx*speed, player.vely*speed
-            end
-        end
-        player.velz = 4
-        HoldOpponent.stopHolding(player, heldenemy)
-        return "jump"
+        return "groundSlamLand"
         -- player.hitstun = heldenemy.hurtstun
         -- player.statetime = 1
         -- player.nextstate = "jump"

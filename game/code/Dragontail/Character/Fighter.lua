@@ -370,6 +370,7 @@ function Fighter:thrown(thrower, attackangle)
     self.thrower = nil
     self:stopAttack() ; self:unassignSelfAsAttacker()
     if oobx and ooby then
+        self.health = self.health - (self.wallslamdamage or 10)
         return "wallSlammed", thrower, oobx, ooby
     end
 
@@ -391,7 +392,6 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
             self.z + self.bodyheight/2)
         Characters.spawn(spark)
     end
-    self.health = self.health - (self.wallslamdamage or 10)
     self.velx, self.vely, self.velz = 0, 0, 0
     self:stopAttack() ; self:unassignSelfAsAttacker()
     yield() -- a window to be juggled by damaging wall e.g. forge-fire
@@ -416,6 +416,7 @@ function Fighter:thrownRecover(thrower)
 
     self:stopAttack() ; self:unassignSelfAsAttacker()
     if oobx or ooby then
+        self.health = self.health - (self.wallslamdamage or 10)
         return "wallSlammed", thrower, oobx, ooby
     end
 
