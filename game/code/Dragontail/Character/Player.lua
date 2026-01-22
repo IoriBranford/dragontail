@@ -673,9 +673,9 @@ function Player:flyEnd()
 end
 
 function Player:updateGroundSlamLand()
+    local heldenemy = self.heldopponent
     if not self.statetime or self.statetime <= 1 then
         Attacker.stopAttack(self)
-        local heldenemy = self.heldopponent
         if heldenemy then
             local jx, jy = self:getJoystick()
             local speed = self.speed or 4
@@ -695,7 +695,13 @@ function Player:updateGroundSlamLand()
         return "walk"
     end
     Attacker.startAttack(self, self.faceangle)
-    self.velx, self.vely, self.velz = 0, 0, 0
+    if heldenemy then
+        self.velx = heldenemy.x - self.x
+        self.vely = heldenemy.y - self.y
+        self.velz = (heldenemy.z + 4) - self.z
+    else
+        self.velx, self.vely, self.velz = 0, 0, 0
+    end
 end
 
 return Player
