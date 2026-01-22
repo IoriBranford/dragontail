@@ -491,13 +491,14 @@ function Enemy:readyToCatchProjectile()
 end
 
 function Enemy:beforeGetUp()
+    self:shakeOffColor()
 end
 
 function Enemy:duringGetUp()
+    Face.faceObject(self, self.opponents[1])
 end
 
 function Enemy:getup()
-    self:shakeOffColor()
     local nextstate, a, b, c, d, e, f = self:beforeGetUp()
     if nextstate then
         return nextstate, a, b, c, d, e, f

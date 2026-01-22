@@ -210,6 +210,7 @@ function BanditBoss:duringGetUp()
             return attack
         end
     end
+    return Enemy.duringGetUp(self)
 end
 
 function BanditBoss:defeat(attacker)
