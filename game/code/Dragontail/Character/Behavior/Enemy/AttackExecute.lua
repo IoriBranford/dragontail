@@ -83,7 +83,12 @@ end
 
 function AttackExecute:timeout(nextstatename, ...)
     local enemy = self.character
-    enemy:stopAttack() ; enemy:unassignSelfAsAttacker()
+    enemy:stopAttack()
+    local nextstate = enemy.statetable[nextstatename]
+    local nextattack = nextstate and nextstate.attack
+    if not nextattack then
+        enemy:unassignSelfAsAttacker()
+    end
     return nextstatename, ...
 end
 
