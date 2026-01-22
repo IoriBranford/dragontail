@@ -48,7 +48,7 @@ thrown,human-thrown,,thrown,,fall,,300,.mainasefile,spin,1,FALSE,FALSE,TRUE,,dat
 wallSlammed,,,wallSlammed,,fall,,300,.mainasefile,Hurt,1,FALSE,FALSE,FALSE,,data/sounds/combat/bodyslam.mp3,,0,4,1,,4,FALSE,3.14159265358979
 thrownRecover,,,thrownRecover,,walk,,FALSE,.mainasefile,FallKnees,0,FALSE,FALSE,FALSE,,data/sounds/combat/slide.mp3,,0,4,1,,4,FALSE,3.14159265358979
 breakaway,,,breakaway,,walk,,15,.mainasefile,elbow,0,FALSE,FALSE,FALSE,,data/sounds/combat/slap.mp3,,0,4,1,,4,2,3.14159265358979
-brokenaway,,,breakaway,,walk,,20,.mainasefile,elbow,0,FALSE,FALSE,FALSE,,data/sounds/combat/slap.mp3,,0,4,1,,4,2,3.14159265358979
+brokenaway,,,breakaway,,walk,,20,.mainasefile,elbow,0,FALSE,FALSE,FALSE,,data/sounds/combat/slap.mp3,data/sounds/player/damage2.mp3,0,4,1,,4,2,3.14159265358979
 fall,,,,fall,collapse,,300,.mainasefile,Hurt,0,FALSE,FALSE,FALSE,,,,0,4,1,0.25,4,2,3.14159265358979
 collapse,,,,decelerateXYto0,down,,15,.mainasefile,Fall,0,FALSE,FALSE,FALSE,,,,0,4,1,,4,2,3.14159265358979
 down,,Dragontail.Character.Behavior.Player.Downed,,,getup,,20,.mainasefile,Down,0,FALSE,FALSE,FALSE,,data/sounds/combat/bodydrop.mp3,,0,4,1,,4,2,3.14159265358979
