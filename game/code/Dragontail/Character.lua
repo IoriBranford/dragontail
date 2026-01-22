@@ -35,7 +35,9 @@ local testcircles = math.testcircles
 ---@field spawnsmanually boolean
 ---@overload fun(type:string?, x:number?, y:number?, z:number?):Character
 local Character = class(Object)
-Character.attack = {}
+Character.attack = {
+    damage = 1
+}
 
 ---@param typ string?
 ---@param x number?
