@@ -90,6 +90,20 @@ function AttackTarget:findClosestSlot(attackrange, slottype, attackerx, attacker
     return bestslot
 end
 
+function AttackTarget:findSlotNearestVector(slottype, vecx, vecy)
+    local attackerslots = self.attackerslots
+    attackerslots = slottype and attackerslots[slottype] or attackerslots
+    local bestslot, bestscore = nil, -math.huge
+    for _, slot in ipairs(attackerslots) do
+        local score = math.dot(vecx, vecy, slot.dirx, slot.diry)
+        if score > bestscore then
+            bestslot = slot
+            bestscore = score
+        end
+    end
+    return bestslot
+end
+
 function AttackTarget:estimateSafeDistanceOnSlot(slot)
     local velx, vely = self.velx, self.vely
     local attackvecx, attackvecy = velx, vely
