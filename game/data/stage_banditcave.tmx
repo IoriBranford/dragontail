@@ -50,7 +50,7 @@
  <tileset firstgid="7237" source="sprites/bandit/knife.tsx"/>
  <tileset firstgid="7238" source="sprites/weapons/throwing-axe.tsx"/>
  <tileset firstgid="7239" source="sprites/weapons/stone.tsx"/>
- <tileset firstgid="7240" source="tilesets/ui/Gamepad Spritesheets/Switch.tsx"/>
+ <tileset firstgid="7240" source="tilesets/ui/Gamepad Spritesheets/Xbox.tsx"/>
  <tileset firstgid="7260" source="sprites/grassland/tree2B_ss_leaves.tsx"/>
  <tileset firstgid="7261" source="sprites/grassland/tree2B_ss.tsx"/>
  <tileset firstgid="7262" source="sprites/grassland/tree2C_ss_leaves.tsx"/>

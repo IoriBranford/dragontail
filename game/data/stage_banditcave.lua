@@ -15359,7 +15359,7 @@ return {
       tiles = {}
     },
     {
-      name = "Switch",
+      name = "Xbox",
       firstgid = 7240,
       class = "",
       tilewidth = 14,
@@ -15367,7 +15367,7 @@ return {
       spacing = 0,
       margin = 0,
       columns = 20,
-      image = "tilesets/ui/Gamepad Spritesheets/Switch.png",
+      image = "tilesets/ui/Gamepad Spritesheets/Xbox.png",
       imagewidth = 280,
       imageheight = 15,
       objectalignment = "center",
