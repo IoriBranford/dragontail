@@ -201,14 +201,6 @@ function MuscleBandit:decideNextAttack()
 end
 
 function MuscleBandit:duringPrepareAttack(target)
-    local dirx, diry = math.cos(self.faceangle), math.sin(self.faceangle)
-    local projectiles = Characters.getGroup("projectiles")
-    local caught = Catcher.findCharacterToCatch(self, projectiles, dirx, diry)
-    if caught then
-        caught:stopAttack() ; caught:unassignSelfAsAttacker()
-        return "catchProjectile", caught
-    end
-
     if self.attack.opponentstateonhit == "held" then
         local guardangle = DirectionalAnimation.SnapAngle(self.faceangle, self.animationdirections)
         Guard.startGuarding(self, guardangle)
