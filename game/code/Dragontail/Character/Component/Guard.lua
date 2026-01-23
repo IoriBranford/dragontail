@@ -104,14 +104,20 @@ function Guard:draw(sidey, fixedfrac)
     local x = self.x + self.velx * fixedfrac
     local y = self.y + self.vely * fixedfrac
         - (self.z + self.velz*fixedfrac)
-    local r = self.guardradius or self.bodyradius
+    local br = self.bodyradius
+    local gr = self.guardradius or br
+    if gr > br then
+        local offset = gr-br
+        x = x + math.cos(angle)*offset
+        y = y + math.sin(angle)*offset
+    end
     local h = self.bodyheight
     local t = love.timer.getTime()*60
     local dt = math.pi/30
     for _ = 1, h do
         local alpha = (1 + math.cos(t))/2
         love.graphics.setColor(.5, 1, 1, alpha)
-        love.graphics.arc("line", "open", x, y, r, a1, a2)
+        love.graphics.arc("line", "open", x, y, br, a1, a2)
         t = t - dt
         y = y - 1
     end
