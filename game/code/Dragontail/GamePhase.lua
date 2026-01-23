@@ -145,7 +145,7 @@ function GamePhase.keypressed(key)
 end
 
 local function fixedupdateInputDisplay()
-    local input = Gui.gameplay.input
+    local input = Gui:get("gameplay.input")
     if input then
         ---@cast input ObjectGroup
         input.visible = Config.drawinput
@@ -173,8 +173,8 @@ end
 function GamePhase.fixedupdate()
     if not paused then
         Stage.fixedupdate()
-        fixedupdateInputDisplay()
     end
+    fixedupdateInputDisplay()
     Stage.fixedupdateGui(Gui)
     Gui:fixedupdate()
 end
