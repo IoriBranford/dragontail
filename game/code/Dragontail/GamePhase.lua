@@ -155,6 +155,7 @@ local function fixedupdateInputDisplay()
 
         local x, y = Player.getJoystick()
         local attackbutton = Inputs.getAction("attack")
+        local jumpbutton = Inputs.getAction("fly")
         local sprintbutton = Inputs.getAction("sprint")
         if x ~= 0 or y ~= 0 then
             input.joystickdirection.visible = true
@@ -164,6 +165,7 @@ local function fixedupdateInputDisplay()
             input.joystickdirection.visible = false
         end
         input.attackbuttondown.visible = attackbutton.down
+        input.jumpbuttondown.visible = jumpbutton.down
         input.sprintbuttondown.visible = sprintbutton.down
     end
 end
