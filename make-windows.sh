@@ -36,7 +36,7 @@ RCEDIT_URL=https://github.com/electron/rcedit/releases/download/v1.1.1/${RCEDIT}
 getZip () {
 	ZIP=$1
 	URL=$2
-	wget -N ${URL}
+	curl -LkO ${URL}
 	unzip -o ${ZIP} -d .
 }
 
@@ -55,7 +55,7 @@ then
 fi
 if ! [ -f ${RCEDIT} ]
 then
-	wget -N ${RCEDIT_URL}
+	curl -LkO ${RCEDIT_URL}
 fi
 case $(uname | tr '[:upper:]' '[:lower:]') in
 	windows*|mingw*|msys*|cygwin*)
