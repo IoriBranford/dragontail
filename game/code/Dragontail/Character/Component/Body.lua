@@ -417,9 +417,10 @@ end
 function Body:draw(fixedfrac)
     fixedfrac = fixedfrac or 0
     local x, y = self.x + self.velx * fixedfrac, self.y + self.vely * fixedfrac
+    local z = self.z + self.velz * fixedfrac
     love.graphics.setColor(.5, .5, 1)
     local bodyradius, bodyheight = self.bodyradius, self.bodyheight
-    local screeny = y - (self.z + self.velz * fixedfrac)
+    local screeny = y - z
     love.graphics.circle("line", x, screeny, bodyradius)
     love.graphics.circle("line", x, screeny - bodyheight, bodyradius)
     love.graphics.line(x - bodyradius, screeny, x - bodyradius, screeny - bodyheight)
@@ -427,6 +428,7 @@ function Body:draw(fixedfrac)
     local points = self.points
     if points then
         love.graphics.push()
+        love.graphics.translate(0, -z)
         self:drawPolygon()
         love.graphics.translate(0, -bodyheight)
         self:drawPolygon()
