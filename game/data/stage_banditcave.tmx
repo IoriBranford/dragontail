@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="74" nextobjectid="785">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="74" nextobjectid="789">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -306,13 +306,13 @@
      <property name="drawz" type="float" value="-1"/>
      <property name="extrudeY" type="float" value="-64"/>
     </properties>
-    <polygon points="0,0 0,288 32,288 32,160 64,128 224,128 256,96 448,96 448,0"/>
+    <polygon points="0,-96 0,288 32,288 32,160 64,128 224,128 256,96 256,-96"/>
    </object>
    <object id="27" template="mapobjects/CameraPath.tx" x="240" y="144">
     <polyline points="0,0 320,0"/>
    </object>
    <object id="237" template="mapobjects/OutwardBoundary.tx" x="448" y="32" visible="1">
-    <polygon points="0,-32 0,64 352,64 352,-32"/>
+    <polygon points="-192,-128 -192,64 1504,64 1536,32 1536,-128"/>
    </object>
    <object id="513" name="joystick" gid="6833" x="416" y="80" width="16" height="16"/>
    <object id="516" name="Move" x="376" y="64" width="32" height="18">
@@ -372,9 +372,6 @@ with    direction</text>
    <object id="635" template="mapobjects/CameraPath.tx" x="560" y="144">
     <polyline points="0,0 480,0"/>
    </object>
-   <object id="636" template="mapobjects/OutwardBoundary.tx" x="800" y="24">
-    <polygon points="0,-24 0,72 480,72 480,-24"/>
-   </object>
    <object id="637" name="Direct" x="856" y="48" width="128" height="32">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Walk into large
 body to grapple</text>
@@ -431,9 +428,6 @@ body to grapple</text>
    </object>
   </objectgroup>
   <objectgroup id="64" name="tolearnsprint" class="Room">
-   <object id="265" template="mapobjects/OutwardBoundary.tx" x="1136" y="0">
-    <polygon points="144,0 144,96 624,96 624,0"/>
-   </object>
    <object id="515" name="sprintbutton" gid="7254" x="1456" y="64" width="14" height="14"/>
    <object id="518" name="Run" x="1360" y="56" width="48" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">Sprint</text>
@@ -512,7 +506,7 @@ body to grapple</text>
    </object>
    <object id="429" gid="6838" x="1992" y="240" width="16" height="16" visible="0"/>
    <object id="239" template="mapobjects/OutwardBoundary.tx" x="1920" y="64" visible="1">
-    <polygon points="-160,-32 -160,32 32,32 64,0 96,0 160,64 160,-32"/>
+    <polygon points="64,-160 64,0 96,0 96,-160"/>
    </object>
    <object id="596" template="mapobjects/items/lifefruit-tree.tx" type="fruit-tree" x="2000" y="88">
     <properties>
@@ -552,7 +546,7 @@ body to grapple</text>
      <property name="drawz" type="float" value="-1"/>
      <property name="extrudeY" type="float" value="-64"/>
     </properties>
-    <polygon points="-384,0 -384,96 -256,96 -224,64 -64,64 64,192 160,192 160,96 192,64 192,0"/>
+    <polygon points="-448,-128 -448,32 -384,96 -256,96 -224,64 -64,64 -64,-128"/>
    </object>
    <object id="530" template="mapobjects/items/spikefruit-ground.tx" x="2256" y="160"/>
    <object id="532" template="mapobjects/items/spikefruit-ground.tx" x="2288" y="152"/>
@@ -587,6 +581,9 @@ body to grapple</text>
    <object id="627" gid="7246" x="2160" y="104" width="14" height="14"/>
    <object id="628" name="or" x="2136" y="96" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
+   </object>
+   <object id="785" template="mapobjects/OutwardBoundary.tx" x="2528" y="192">
+    <polygon points="0,32 176,32 176,-288 -128,-288 -128,-96"/>
    </object>
   </objectgroup>
   <objectgroup id="48" name="learnthrowingweapons" class="Room">
@@ -746,7 +743,7 @@ body to grapple</text>
   </objectgroup>
   <objectgroup draworder="index" id="62" name="tolearnfireball" class="Room">
    <object id="655" template="mapobjects/OutwardBoundary.tx" x="2560" y="128">
-    <polygon points="192,-64 64,64 64,96 480,96 480,-64"/>
+    <polygon points="144,-224 144,96 480,96 512,64 512,-224"/>
    </object>
    <object id="522" name="Fireball" x="2840" y="176" width="120" height="32">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Costs 1 or more fire meter</text>
@@ -938,7 +935,7 @@ body to grapple</text>
     <properties>
      <property name="extrudeY" type="float" value="-64"/>
     </properties>
-    <polygon points="-320,-320 -320,-160 -288,-192 0,-192 32,-160 64,-160 96,-128 96,-96 128,-64 128,0 160,0 160,-320"/>
+    <polygon points="-288,-480 -288,-192 0,-192 32,-160 64,-160 96,-128 96,-96 128,-64 128,0 224,0 224,-480"/>
    </object>
    <object id="66" template="mapobjects/CameraPath.tx" x="2960" y="240">
     <polyline points="-160,0 320,0"/>
@@ -1099,12 +1096,6 @@ and tap    to throw</text>
      <property name="drawz" type="float" value="2"/>
     </properties>
    </object>
-   <object id="504" template="mapobjects/OutwardBoundary.tx" x="2560" y="-88">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-    <polygon points="768,0 768,96 960,96 960,0"/>
-   </object>
   </objectgroup>
   <objectgroup id="54" name="unlockdoor" class="Room">
    <properties>
@@ -1253,7 +1244,7 @@ and tap    to throw</text>
     <polygon points="-320,-224 -320,128 0,128 -32,96 -64,96 -96,64 -160,64 -192,32 -224,32 -288,-32 -288,-112 -256,-144 -256,-224"/>
    </object>
    <object id="298" template="mapobjects/OutwardBoundary.tx" x="944" y="768">
-    <polygon points="-200,0 -200,208 -112,208 -80,176 48,176 80,144 240,144 272,176 304,176 304,0"/>
+    <polygon points="-200,0 -200,208 -112,208 -80,176 48,176 80,144 240,144 240,0"/>
    </object>
    <object id="105" gid="7234" x="336" y="928" width="128" height="128">
     <properties>
@@ -1694,6 +1685,9 @@ to sprint past archers</text>
      <property name="drawz" type="float" value="100"/>
     </properties>
    </object>
+   <object id="787" template="mapobjects/OutwardBoundary.tx" x="1184" y="880">
+    <polygon points="0,-112 0,32 32,64 160,64 192,32 192,-112"/>
+   </object>
   </objectgroup>
   <objectgroup id="31" name="endofentryhall" class="Room">
    <properties>
@@ -1723,7 +1717,7 @@ to sprint past archers</text>
     <properties>
      <property name="extrudeY" type="float" value="-256"/>
     </properties>
-    <polygon points="32,0 32,80 128,80 160,48 176,48 208,16 240,16 272,48 384,48 416,80 480,80 480,0"/>
+    <polygon points="160,-96 160,48 176,48 208,16 240,16 272,48 384,48 384,-96"/>
    </object>
    <object id="385" template="mapobjects/OutwardBoundary.tx" x="1376" y="912">
     <properties>
@@ -1750,6 +1744,12 @@ to sprint past archers</text>
    <object id="420" template="mapobjects/items/throwing-axe.tx" x="1480" y="932" rotation="225"/>
    <object id="614" type="forge-fire" x="1440" y="888">
     <point/>
+   </object>
+   <object id="788" template="mapobjects/OutwardBoundary.tx" x="1600" y="880">
+    <properties>
+     <property name="extrudeY" type="float" value="-256"/>
+    </properties>
+    <polygon points="0,-112 0,32 32,64 192,64 256,0 256,-112"/>
    </object>
   </objectgroup>
   <objectgroup id="53" name="armory" class="Room">
@@ -1860,7 +1860,7 @@ to sprint past archers</text>
     <properties>
      <property name="extrudeY" type="float" value="-256"/>
     </properties>
-    <polygon points="0,-384 0,-240 96,-240 160,-304 480,-304 480,-384"/>
+    <polygon points="160,-416 160,-304 544,-304 544,-416"/>
    </object>
    <object id="318" gid="6596" x="1880" y="936" width="96" height="48">
     <properties>
@@ -2130,13 +2130,13 @@ to sprint past archers</text>
     <polygon points="-64,64 -64,224 448,224 448,0 384,-64 160,-64 128,-32 32,-32"/>
    </object>
    <object id="80" template="mapobjects/CameraPath.tx" x="2256" y="1008">
-    <polyline points="-320,0 640,0"/>
+    <polyline points="-320,0 160,0"/>
    </object>
    <object id="316" template="mapobjects/OutwardBoundary.tx" x="2208" y="864">
     <properties>
      <property name="extrudeY" type="float" value="-256"/>
     </properties>
-    <polygon points="-32,-64 -32,16 32,16 96,80 416,80 448,112 448,-64"/>
+    <polygon points="32,-128 32,16 96,80 416,80 416,-128"/>
    </object>
   </objectgroup>
   <objectgroup id="67" name="toboss" class="Room">
@@ -2153,25 +2153,27 @@ to sprint past archers</text>
     <properties>
      <property name="extrudeY" type="float" value="-256"/>
     </properties>
-    <polygon points="-32,-64 -32,16 32,16 96,80 416,80 448,112 448,-64"/>
+    <polygon points="32,-128 32,16 96,80 416,80 416,-128"/>
    </object>
    <object id="76" template="mapobjects/OutwardBoundary.tx" x="2656" y="896">
     <properties>
      <property name="extrudeY" type="float" value="-64"/>
     </properties>
-    <polygon points="0,-32 0,80 480,80 480,-32"/>
+    <polygon points="-32,-160 -32,48 0,80 648,80 648,-160"/>
    </object>
    <object id="313" template="mapobjects/OutwardBoundary.tx" x="2656" y="832">
     <properties>
+     <property name="extrudeY" type="float" value="-128"/>
      <property name="z" type="float" value="64"/>
     </properties>
-    <polygon points="0,0 0,80 144,80 144,0"/>
+    <polygon points="-32,-160 -32,48 0,80 144,80 144,-160"/>
    </object>
    <object id="536" template="mapobjects/OutwardBoundary.tx" x="3088" y="832">
     <properties>
+     <property name="extrudeY" type="float" value="-128"/>
      <property name="z" type="float" value="64"/>
     </properties>
-    <polygon points="0,0 0,80 144,80 144,0"/>
+    <polygon points="0,-160 0,80 216,80 216,-160"/>
    </object>
    <object id="703" template="mapobjects/CameraPath.tx" x="2256" y="1008">
     <polyline points="160,0 640,0"/>

@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 74,
-  nextobjectid = 785,
+  nextobjectid = 789,
   backgroundcolor = { 64, 64, 64 },
   properties = {
     ["ceilingz"] = 256
@@ -16591,15 +16591,14 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 0, y = 0 },
+                { x = 0, y = -96 },
                 { x = 0, y = 288 },
                 { x = 32, y = 288 },
                 { x = 32, y = 160 },
                 { x = 64, y = 128 },
                 { x = 224, y = 128 },
                 { x = 256, y = 96 },
-                { x = 448, y = 96 },
-                { x = 448, y = 0 }
+                { x = 256, y = -96 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -16638,10 +16637,11 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 0, y = -32 },
-                { x = 0, y = 64 },
-                { x = 352, y = 64 },
-                { x = 352, y = -32 }
+                { x = -192, y = -128 },
+                { x = -192, y = 64 },
+                { x = 1504, y = 64 },
+                { x = 1536, y = 32 },
+                { x = 1536, y = -128 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -17119,31 +17119,6 @@ return {
               properties = {}
             },
             {
-              id = 636,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 800,
-              y = 24,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polygon = {
-                { x = 0, y = -24 },
-                { x = 0, y = 72 },
-                { x = 480, y = 72 },
-                { x = 480, y = -24 }
-              },
-              properties = {
-                ["bodyinlayers"] = "Wall",
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["extrudeY"] = -64,
-                ["linecolor"] = "#80ffffff"
-              }
-            },
-            {
               id = 637,
               name = "Direct",
               type = "",
@@ -17525,31 +17500,6 @@ return {
           parallaxy = 1,
           properties = {},
           objects = {
-            {
-              id = 265,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 1136,
-              y = 0,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polygon = {
-                { x = 144, y = 0 },
-                { x = 144, y = 96 },
-                { x = 624, y = 96 },
-                { x = 624, y = 0 }
-              },
-              properties = {
-                ["bodyinlayers"] = "Wall",
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["extrudeY"] = -64,
-                ["linecolor"] = "#80ffffff"
-              }
-            },
             {
               id = 515,
               name = "sprintbutton",
@@ -17989,13 +17939,10 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = -160, y = -32 },
-                { x = -160, y = 32 },
-                { x = 32, y = 32 },
+                { x = 64, y = -160 },
                 { x = 64, y = 0 },
                 { x = 96, y = 0 },
-                { x = 160, y = 64 },
-                { x = 160, y = -32 }
+                { x = 96, y = -160 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -18201,16 +18148,13 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = -384, y = 0 },
+                { x = -448, y = -128 },
+                { x = -448, y = 32 },
                 { x = -384, y = 96 },
                 { x = -256, y = 96 },
                 { x = -224, y = 64 },
                 { x = -64, y = 64 },
-                { x = 64, y = 192 },
-                { x = 160, y = 192 },
-                { x = 160, y = 96 },
-                { x = 192, y = 64 },
-                { x = 192, y = 0 }
+                { x = -64, y = -128 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -18450,6 +18394,32 @@ return {
               color = { 255, 255, 255 },
               halign = "center",
               properties = {}
+            },
+            {
+              id = 785,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 2528,
+              y = 192,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = 32 },
+                { x = 176, y = 32 },
+                { x = 176, y = -288 },
+                { x = -128, y = -288 },
+                { x = -128, y = -96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff"
+              }
             }
           }
         },
@@ -19083,11 +19053,11 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 192, y = -64 },
-                { x = 64, y = 64 },
-                { x = 64, y = 96 },
+                { x = 144, y = -224 },
+                { x = 144, y = 96 },
                 { x = 480, y = 96 },
-                { x = 480, y = -64 }
+                { x = 512, y = 64 },
+                { x = 512, y = -224 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -19636,8 +19606,7 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = -320, y = -320 },
-                { x = -320, y = -160 },
+                { x = -288, y = -480 },
                 { x = -288, y = -192 },
                 { x = 0, y = -192 },
                 { x = 32, y = -160 },
@@ -19646,8 +19615,8 @@ return {
                 { x = 96, y = -96 },
                 { x = 128, y = -64 },
                 { x = 128, y = 0 },
-                { x = 160, y = 0 },
-                { x = 160, y = -320 }
+                { x = 224, y = 0 },
+                { x = 224, y = -480 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -20272,32 +20241,6 @@ return {
               visible = false,
               properties = {
                 ["drawz"] = 2
-              }
-            },
-            {
-              id = 504,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 2560,
-              y = -88,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polygon = {
-                { x = 768, y = 0 },
-                { x = 768, y = 96 },
-                { x = 960, y = 96 },
-                { x = 960, y = 0 }
-              },
-              properties = {
-                ["bodyinlayers"] = "Wall",
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["extrudeY"] = -64,
-                ["linecolor"] = "#80ffffff",
-                ["z"] = 64
               }
             }
           }
@@ -20943,9 +20886,7 @@ return {
                 { x = 48, y = 176 },
                 { x = 80, y = 144 },
                 { x = 240, y = 144 },
-                { x = 272, y = 176 },
-                { x = 304, y = 176 },
-                { x = 304, y = 0 }
+                { x = 240, y = 0 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -22651,6 +22592,33 @@ return {
               properties = {
                 ["drawz"] = 100
               }
+            },
+            {
+              id = 787,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 1184,
+              y = 880,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = -112 },
+                { x = 0, y = 32 },
+                { x = 32, y = 64 },
+                { x = 160, y = 64 },
+                { x = 192, y = 32 },
+                { x = 192, y = -112 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff"
+              }
             }
           }
         },
@@ -22826,18 +22794,14 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 32, y = 0 },
-                { x = 32, y = 80 },
-                { x = 128, y = 80 },
+                { x = 160, y = -96 },
                 { x = 160, y = 48 },
                 { x = 176, y = 48 },
                 { x = 208, y = 16 },
                 { x = 240, y = 16 },
                 { x = 272, y = 48 },
                 { x = 384, y = 48 },
-                { x = 416, y = 80 },
-                { x = 480, y = 80 },
-                { x = 480, y = 0 }
+                { x = 384, y = -96 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -22966,6 +22930,33 @@ return {
               rotation = 0,
               visible = true,
               properties = {}
+            },
+            {
+              id = 788,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 1600,
+              y = 880,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = -112 },
+                { x = 0, y = 32 },
+                { x = 32, y = 64 },
+                { x = 192, y = 64 },
+                { x = 256, y = 0 },
+                { x = 256, y = -112 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -256,
+                ["linecolor"] = "#80ffffff"
+              }
             }
           }
         },
@@ -23410,12 +23401,10 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 0, y = -384 },
-                { x = 0, y = -240 },
-                { x = 96, y = -240 },
+                { x = 160, y = -416 },
                 { x = 160, y = -304 },
-                { x = 480, y = -304 },
-                { x = 480, y = -384 }
+                { x = 544, y = -304 },
+                { x = 544, y = -416 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -24397,7 +24386,7 @@ return {
               visible = true,
               polyline = {
                 { x = -320, y = 0 },
-                { x = 640, y = 0 }
+                { x = 160, y = 0 }
               },
               properties = {}
             },
@@ -24413,13 +24402,11 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = -32, y = -64 },
-                { x = -32, y = 16 },
+                { x = 32, y = -128 },
                 { x = 32, y = 16 },
                 { x = 96, y = 80 },
                 { x = 416, y = 80 },
-                { x = 448, y = 112 },
-                { x = 448, y = -64 }
+                { x = 416, y = -128 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -24488,13 +24475,11 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = -32, y = -64 },
-                { x = -32, y = 16 },
+                { x = 32, y = -128 },
                 { x = 32, y = 16 },
                 { x = 96, y = 80 },
                 { x = 416, y = 80 },
-                { x = 448, y = 112 },
-                { x = 448, y = -64 }
+                { x = 416, y = -128 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -24516,10 +24501,11 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 0, y = -32 },
+                { x = -32, y = -160 },
+                { x = -32, y = 48 },
                 { x = 0, y = 80 },
-                { x = 480, y = 80 },
-                { x = 480, y = -32 }
+                { x = 648, y = 80 },
+                { x = 648, y = -160 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -24541,16 +24527,17 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 0, y = 0 },
+                { x = -32, y = -160 },
+                { x = -32, y = 48 },
                 { x = 0, y = 80 },
                 { x = 144, y = 80 },
-                { x = 144, y = 0 }
+                { x = 144, y = -160 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -64,
+                ["extrudeY"] = -128,
                 ["linecolor"] = "#80ffffff",
                 ["z"] = 64
               }
@@ -24567,16 +24554,16 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 0, y = 0 },
+                { x = 0, y = -160 },
                 { x = 0, y = 80 },
-                { x = 144, y = 80 },
-                { x = 144, y = 0 }
+                { x = 216, y = 80 },
+                { x = 216, y = -160 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -64,
+                ["extrudeY"] = -128,
                 ["linecolor"] = "#80ffffff",
                 ["z"] = 64
               }
