@@ -1,80 +1,59 @@
 local Behavior = require "Dragontail.Character.Behavior"
 local Mana     = require "Dragontail.Character.Component.Mana"
-local Slide    = require "Dragontail.Character.Action.Slide"
-local Shoot    = require "Dragontail.Character.Action.Shoot"
+local Slide    = require "Dragontail.Character.Component.Slide"
+local Shoot    = require "Dragontail.Character.Component.Shoot"
 local Face     = require "Dragontail.Character.Component.Face"
 local Body     = require "Dragontail.Character.Component.Body"
 local Combo    = require "Dragontail.Character.Component.Combo"
 local Attacker = require "Dragontail.Character.Component.Attacker"
 
 local PlayerSpinAttack = pooledclass(Behavior)
-PlayerSpinAttack._nrec = Behavior._nrec + 3
+PlayerSpinAttack._nrec = Behavior._nrec + 1
 
-function PlayerSpinAttack:start(attackangle)
+function PlayerSpinAttack:start(faceangle)
     local player = self.character
     player.numopponentshit = 0
 
-    local lungespeed = player.attack.lungespeed
+    local lungespeed = player.speed
     if lungespeed then
-        Slide.updateSlideSpeed(player, attackangle, lungespeed)
+        Slide.updateSlideSpeed(player, faceangle, lungespeed)
     end
-    self.lungespeed = lungespeed
+
     Mana.store(player, -(player.attack.manacost or 0))
 
     local spintime = player.attack.hittingduration or 1
     player.statetime = player.statetime or spintime
-    self.originalattackangle = attackangle
-    self.pressedattackbutton = nil
+    self.originalfaceangle = faceangle
 
+    local faceangleoffset = player.attack.faceangleoffset or 0
+    faceangle = faceangle + faceangleoffset
+    local offsetfromfaceangle = player.attack.offsetfromfaceangle or 0
+    local attackangle = faceangle + offsetfromfaceangle
     Attacker.startAttack(player, attackangle)
-    Face.faceAngle(player, attackangle, player.state and player.state.animation)
+    Face.faceAngle(player, faceangle, player.state and player.state.animation)
 end
 
 function PlayerSpinAttack:fixedupdate()
     local player = self.character
 
-    local attackangle = player.attackangle
+    local faceangle = player.faceangle
+    local offsetfromfaceangle = player.attack.offsetfromfaceangle or 0
+    local attackangle = faceangle + offsetfromfaceangle
+
     local projectile = player.attack.projectiletype
     if projectile then
-        local projectileangle = attackangle + math.pi
-        local cosangle, sinangle = math.cos(projectileangle), math.sin(projectileangle)
+        local cosangle, sinangle = math.cos(attackangle), math.sin(attackangle)
         Shoot.launchProjectile(player, "spark-spit-fireball", cosangle, sinangle, 0)
         Shoot.launchProjectile(player, projectile, cosangle, sinangle, 0)
     end
 
-    local inx, iny = player:getJoystick()
-    local targetvelx, targetvely = 0, 0
-    local speed = 2
-    if inx ~= 0 or iny ~= 0 then
-        inx, iny = math.norm(inx, iny)
-        targetvelx = inx * speed
-        targetvely = iny * speed
-    end
-
-    if self.lungespeed then
-        if math.abs(self.lungespeed - math.len(player.velx, player.vely)) >= 1 then
-            self.lungespeed = nil
-        end
-    end
-    if self.lungespeed then
-        self.lungespeed = Slide.updateSlideSpeed(player, self.originalattackangle, self.lungespeed)
-    else
-        Body.accelerateTowardsVel(player, targetvelx, targetvely, player.mass or 8)
-    end
+    player:decelerateXYto0()
 
     local spinvel = player.attack.spinspeed or 0
-    attackangle = attackangle + spinvel
+    faceangle = faceangle + spinvel
+    attackangle = faceangle + offsetfromfaceangle
     Attacker.startAttack(player, attackangle)
-    Face.faceAngle(player, attackangle, player.state and player.state.animation)
-
-    if self.pressedattackbutton ~= player.attackbutton then
-        -- if player.fireattackbutton.pressed then
-        --     pressedattackbutton = player.fireattackbutton
-        --else
-        if player.attackbutton.pressed then
-            self.pressedattackbutton = player.attackbutton
-        end
-    end
+    Face.faceAngle(player, faceangle, player.state and player.state.animation)
 end
 
 function PlayerSpinAttack:interrupt(...)
@@ -86,26 +65,18 @@ end
 
 function PlayerSpinAttack:timeout(nextstate, a, b, c, d, e, f, g)
     local player = self.character
-    local inair = player.gravity == 0
     if player.numopponentshit <= 0 then
         Combo.reset(player)
     end
 
     Attacker.stopAttack(player)
-    player.faceangle = self.originalattackangle
-    if self.pressedattackbutton then
-        local inx, iny = player:getJoystick()
-        if inx ~= 0 or iny ~= 0 then
-            self.originalattackangle = math.atan2(iny, inx)
-        end
-        return player:doComboAttack(self.originalattackangle, nil, inx ~= 0 or iny ~= 0, inair)
-    end
+    player.faceangle = self.originalfaceangle
 
     if nextstate then
         return nextstate, a, b, c, d, e, f, g
     end
 
-    return player.gravity == 0 and "hover" or "walk"
+    return "walk"
 end
 
 return PlayerSpinAttack

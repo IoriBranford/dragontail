@@ -4,15 +4,18 @@ local Fighter  = require "Dragontail.Character.Fighter"
 local Characters = require "Dragontail.Stage.Characters"
 local Raycast    = require "Object.Raycast"
 local Color      = require "Tiled.Color"
-local Dodge      = require "Dragontail.Character.Action.Dodge"
-local Slide      = require "Dragontail.Character.Action.Slide"
+local Dodge      = require "Dragontail.Character.Component.Dodge"
+local Slide      = require "Dragontail.Character.Component.Slide"
 local Face       = require "Dragontail.Character.Component.Face"
-local Shoot      = require "Dragontail.Character.Action.Shoot"
+local Shoot      = require "Dragontail.Character.Component.Shoot"
 local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
 local Body                 = require "Dragontail.Character.Component.Body"
 local Character            = require "Dragontail.Character"
 local CollisionMask        = require "Dragontail.Character.Component.Body.CollisionMask"
-local Guard                = require "Dragontail.Character.Action.Guard"
+local Guard                = require "Dragontail.Character.Component.Guard"
+local AttackTarget         = require "Dragontail.Character.Component.AttackTarget"
+local Catcher              = require "Dragontail.Character.Component.Catcher"
+local StateMachine         = require "Dragontail.Character.Component.StateMachine"
 
 ---@class Ambush
 ---@field ambushsightarc number?
@@ -37,28 +40,16 @@ local yield = coroutine.yield
 
 local lm_random = love.math.random
 
-function Enemy:fixedupdate()
-    Character.fixedupdate(self)
-    if self:isCylinderFullyOnCamera(self.camera) then
-        self.enteredcamera = true
-    end
-end
-
-function Enemy:getAttackFlashColor(t, canbeattacked)
-    local flash = (1+cos(t))/2
-    if canbeattacked then
-        return Color.asARGBInt(1, flash, flash, 1)
-    end
-    return Color.asARGBInt(1, .5, .5, flash)
-end
-
 function Enemy:getTargetingScore(oppox, oppoy, oppofacex, oppofacey)
     if not self.canbeattacked then
-        return huge
+        return
+    end
+    if Guard.isGuarding(self) then
+        return
     end
     local tooppox, tooppoy = self.x - oppox, self.y - self.z - oppoy
     if math.dot(oppofacex, oppofacey, tooppox, tooppoy) < 0 then
-        return huge
+        return
     end
     return math.abs(math.det(oppofacex, oppofacey, tooppox, tooppoy))
 end
@@ -66,6 +57,7 @@ end
 function Enemy:duringStand()
     local opponent = self.opponents[1]
     Face.facePosition(self, opponent.x, opponent.y, "Stand")
+    self:decelerateXYto0()
 end
 
 function Enemy:decideNextAttack()
@@ -83,9 +75,9 @@ function Enemy:decideNextAttack()
     local attacktype = self.defaultattack
     if attackchoices and #attackchoices > 0 then
         for i, attackchoice in ipairs(attackchoices) do
-            local attackdata = self.attacktable[attackchoice]
-            if attackdata then
-                local attackrange = (attackdata.bestdist or 1) + opponent.bodyradius
+            local attackstate = self.statetable[attackchoice]
+            if attackstate then
+                local attackrange = (attackstate.maxtargetdist or 1) + opponent.bodyradius
                 if attackrange*attackrange >= toopposq then
                     attacktype = attackchoice
                     break
@@ -99,42 +91,54 @@ function Enemy:decideNextAttack()
     return attacktype
 end
 
-function Enemy:debugPrint_couldAttackOpponent(opponent, attacktype)
-    print("opponent", opponent)
-    if opponent then
-        print(".attacker", opponent.attacker)
-        print(".canbeattacked", opponent.canbeattacked)
+function Enemy:debugPrint_canDoToTarget(target, actionstate)
+    print("self", self)
+    local state = self.statetable[actionstate]
+    print("statedata", state)
+    local attack = state.attack
+    print("attack", attack)
+    print("target", target)
+    if target then
+        print("target.attacker", target.attacker)
+        print("target.canbeattacked", target.canbeattacked)
+
+        local maxtargetdist = state and state.maxtargetdist
+        print("state.maxtargetdist", maxtargetdist)
+        if maxtargetdist then
+            local toopposq = distsq(self.x, self.y, target.x, target.y)
+            local attackrange = maxtargetdist + target.bodyradius
+            print("dist", math.sqrt(toopposq))
+            print("attackrange", attackrange)
+            print("closeEnough", toopposq <= attackrange*attackrange)
+        end
     end
     print("isCylinderFullyOnCamera", self:isCylinderFullyOnCamera(self.camera))
-
-    local attackdata = self.attacktable[attacktype]
-    print("attackdata", attackdata)
-    if attackdata then
-        local toopposq = distsq(self.x, self.y, opponent.x, opponent.y)
-        local attackrange = (attackdata.bestdist or 1) + opponent.bodyradius
-        print("dist", math.sqrt(toopposq))
-        print("attackrange", attackrange, '=', (attackdata.bestdist or 1), '+', opponent.bodyradius)
-        print("closeEnough", toopposq <= attackrange*attackrange)
-    end
 end
 
-function Enemy:couldAttackOpponent(opponent, attacktype)
-    if not opponent
-    or opponent.attacker
-    or not opponent.canbeattacked
-    or not self:isCylinderFullyOnCamera(self.camera)
-    then
+function Enemy:canDoToTarget(target, actionstate)
+    if not target then return false end
+    local state = self.statetable[actionstate]
+    if not state then
         return false
     end
 
-    local attackdata = self.attacktable[attacktype]
-    if not attackdata then
-        return false
+    local attack = state.attack
+    if attack then
+        if not target.canbeattacked
+        or target.attacker and target.attacker ~= self
+        or not self:isCylinderFullyOnCamera(self.camera)
+        then
+            return false
+        end
     end
 
-    local toopposq = distsq(self.x, self.y, opponent.x, opponent.y)
-    local attackrange = (attackdata.bestdist or 1) + opponent.bodyradius
-    return toopposq <= attackrange*attackrange
+    local toopposq = distsq(self.x, self.y, target.x, target.y)
+    local maxtargetdist = state.maxtargetdist
+    if maxtargetdist then
+        local attackrange = maxtargetdist + target.bodyradius
+        return toopposq <= attackrange*attackrange
+    end
+    return true
 end
 
 function Enemy:afterStand()
@@ -144,17 +148,18 @@ function Enemy:afterStand()
     end
 
     local nextattacktype = self:decideNextAttack()
-    if self:couldAttackOpponent(opponent, nextattacktype) then
+    if self:canDoToTarget(opponent, nextattacktype) then
         opponent.attacker = self
         Face.facePosition(self, opponent.x, opponent.y)
         return nextattacktype
     end
-    return "approach", nextattacktype
+    return "approach", opponent, nil, nextattacktype
 end
 
 function Enemy:stand(duration)
     duration = duration or 20
     self.velx, self.vely = 0, 0
+    Guard.stopGuarding(self)
     for _ = 1, duration do
         local state, a, b, c, d, e, f = self:duringStand()
         if state then
@@ -169,38 +174,55 @@ function Enemy:stand(duration)
     return "stand"
 end
 
-function Enemy:dodgeIncoming(dodgeangle)
-    local opponent = self.opponents[1]
-    local newstate, a, b, c, d, e, f = Dodge.dodge(self, opponent, dodgeangle)
-    if newstate then
-        return newstate, a, b, c, d, e, f
+---@param target Character
+---@param nextstate string
+---@return AttackerSlot? slot
+---@return number? destx
+---@return number? desty
+function Enemy:findApproachSlot(target, nextstate)
+    if not target.attackerslots then return end
+    local bodyradius = self.bodyradius
+    local state = self.statetable[nextstate]
+    local attackrange = (state and state.maxtargetdist or 1) + target.bodyradius
+    local attackerslot, destx, desty
+    local attack = self.attacktable and self.attacktable[state.attack]
+    if not attack or not attack.projectiletype then
+        attackerslot = AttackTarget.findRandomSlot(target, attackrange + bodyradius, "melee", self.x, self.y)
     end
-    return "stand"
+    if attackerslot then
+        destx, desty = attackerslot:getPosition(attackrange + bodyradius)
+        return attackerslot, destx, desty
+    end
+
+    attackerslot = AttackTarget.findRandomSlot(target, attackrange + bodyradius, "missile", self.x, self.y)
+    if attackerslot then
+        destx, desty = attackerslot:getPosition(attackrange + bodyradius)
+        return attackerslot, destx, desty
+    end
+
+    attackerslot = AttackTarget.findRandomSlot(target, bodyradius*3, nil, self.x, self.y)
+    if attackerslot then
+        destx, desty = attackerslot:getFarPosition(bodyradius*1.5)
+        return attackerslot, destx, desty
+    end
 end
 
-function Enemy:findAttackerSlot(opponent, attacktype)
+---@param attackerslot AttackerSlot
+---@param actionstate string
+---@return number? destx
+---@return number? desty
+function Enemy:getAttackerSlotPosition(attackerslot, actionstate)
     local bodyradius = self.bodyradius
-    local attackdata = self.attacktable[attacktype]
-    local attackrange = (attackdata and attackdata.bestdist or 1) + opponent.bodyradius
-    local attackerslot
-    if self.attack.projectiletype then
-        attackerslot = opponent:findRandomAttackerSlot(bodyradius, "missile", self.x, self.y)
-    else
-        attackerslot = opponent:findRandomAttackerSlot(attackrange + bodyradius, "melee", self.x, self.y)
-            or opponent:findRandomAttackerSlot(attackrange + bodyradius, "missile", self.x, self.y)
-    end
-    return attackerslot
-end
-
-function Enemy:getAttackerSlotPosition(attackerslot, attacktype)
-    local bodyradius = self.bodyradius
-    local attackdata = self.attacktable[attacktype]
-    local attackrange = (attackdata and attackdata.bestdist or 1)
+    local state = self.statetable[actionstate]
+    local attackrange = (state and state.maxtargetdist or 1)
+        + AttackTarget.estimateSafeDistanceOnSlot(attackerslot.target, attackerslot)
+    local attack = self.attacktable and self.attacktable[state.attack]
     local destx, desty
-    if self.attack.projectiletype then
-        destx, desty = attackerslot:getFarPosition(bodyradius)
-    else
+    if attackerslot:hasSpace(attackrange)
+    and (not attack or not attack.projectiletype) then
         destx, desty = attackerslot:getPosition(attackrange)
+    elseif attackerslot:hasSpace(bodyradius*3) then
+        destx, desty = attackerslot:getFarPosition(bodyradius*1.5)
     end
     return destx, desty
 end
@@ -231,6 +253,11 @@ function Enemy:duringApproach(target)
 end
 
 function Enemy:leave(exitx, exity)
+    if self.enteredcamera then
+        self.bodyhitslayers = bit.band(self.bodyhitslayers,
+            bit.bnot(CollisionMask.get("Camera")))
+    end
+
     self.recoverai = "leave"
     exitx = exitx or self.exitpoint
     if exitx then
@@ -268,7 +295,8 @@ function Enemy:attackIfAmmoElseLeave()
             Face.faceVector(self, raycast.dx, raycast.dy, "Stand")
             hitcharacter = Characters.castRay3(raycast, self)
         until self:isOnCamera(self.camera) and hitcharacter
-            and CollisionMask.test(hitcharacter.bodyinlayers, "Player") ~= 0
+            and hitcharacter.canbeattacked
+            and CollisionMask.testAll(hitcharacter.bodyinlayers, "Player") ~= 0
         self.ammo = self.ammo - 1
         return attacktype
     end
@@ -283,10 +311,7 @@ end
 function Enemy:duringPrepareAttack(target)
     Face.turnTowardsObject(self, target, self.faceturnspeed or 0,
         self.state.animation, self.animationframe, self.state.loopframe)
-    self:accelerateTowardsVel(0, 0, 4)
-    if self.enteredcamera and (self.velx ~= 0 or self.vely ~= 0) then
-        Body.keepInBounds(self)
-    end
+    self:decelerateXYto0()
 end
 
 function Enemy:interruptWithDodge(target)
@@ -313,15 +338,12 @@ function Enemy:enterAndDropDown()
     self.gravity = max(self.gravity or 0.25, 0.25)
     repeat
         yield()
-    until self.z == Characters.getCylinderFloorZ(self.x, self.y, self.z, self.bodyradius, self.bodyheight, self.bodyhitslayers)
+    until self.z == self.floorz
     Audio.play(self.jumplandsound)
     self:changeAnimation("FallRiseFromKnees", 1, 0)
-    Characters.spawn({
-        type = "spark-land-on-feet-dust",
-        x = self.x,
-        y = self.y + 1,
-        z = self.z,
-    })
+    local dust = Character("spark-land-on-feet-dust",
+        self.x, self.y + 1, self.z)
+    Characters.spawn(dust)
     coroutine.wait(9)
     return "stand", 3
 end
@@ -331,7 +353,7 @@ function Enemy:watchForOpponent()
     local sighted
     local cossightarc = cos(self.ambushsightarc or (pi/6))
     for t = 1, huge do
-        self.color = self:getAttackFlashColor(t, self.canbeattacked)
+        self:updateFlash(t)
         yield()
         for _, opponent in ipairs(opponents) do
             local tooppox, tooppoy = opponent.x - self.x, opponent.y - self.y
@@ -348,23 +370,29 @@ function Enemy:watchForOpponent()
             break
         end
     end
+    self:resetFlash()
 end
 
+---@deprecated
 function Enemy:beforeGuard()
     self.velx, self.vely = 0, 0
 end
 
+---@deprecated
 function Enemy:duringGuard(t)
     local opponent = self.opponents[1]
-    Face.turnTowardsObject(self, opponent, self.faceturnspeed, self.state.animation)
-    local guardangle = floor((self.faceangle + (pi/4)) / (pi/2)) * pi/2
+    local faceangle = Face.turnTowardsObject(self, opponent, self.faceturnspeed,
+        self.state.animation, self.animationframe, self.state.loopframe)
+    local guardangle = DirectionalAnimation.SnapAngle(faceangle, self.animationdirections or 4)
     Guard.startGuarding(self, guardangle)
 end
 
+---@deprecated
 function Enemy:afterGuard()
     Guard.stopGuarding(self)
 end
 
+---@deprecated
 function Enemy:guard()
     local nextstate, a, b, c, d, e, f
 
@@ -373,8 +401,9 @@ function Enemy:guard()
         return nextstate, a, b, c, d, e, f
     end
 
-    for t = 1, self.state.statetime or 60 do
-        nextstate, a, b, c, d, e, f = self:duringGuard(t)
+    while not self.statetime or self.statetime > 0 do
+        nextstate, a, b, c, d, e, f = self:duringGuard(
+            self.statetime or math.floor(love.timer.getTime()*60))
         if nextstate then
             return nextstate, a, b, c, d, e, f
         end
@@ -387,13 +416,16 @@ function Enemy:guard()
     end
 end
 
+---@deprecated
 function Enemy:beforeGuardHit(attacker)
     Guard.pushBackAttacker(self, attacker)
 end
 
+---@deprecated
 function Enemy:duringGuardHit(attacker, t)
 end
 
+---@deprecated
 ---@param hit AttackHit
 ---@return string? nextstate
 ---@return any ...
@@ -438,5 +470,62 @@ function Enemy:guardHit(hit)
     -- return self:hurt(attacker)
     return "stand"
 end
+
+function Enemy:tryToGiveWeapon(weapontype)
+    if not self.weaponinhand then
+        self.weaponinhand = weapontype
+        return true
+    end
+end
+
+function Enemy:readyToCatchProjectile()
+    Face.turnTowardsObject(self, self.opponents[1], self.faceturnspeed,
+        self.state.animation, self.animationframe, self.state.loopframe)
+    local dirx, diry = cos(self.faceangle), sin(self.faceangle)
+    local projectiles = Characters.getGroup("projectiles")
+    local caught = Catcher.findCharacterToCatch(self, projectiles, dirx, diry)
+    if caught then
+        caught:stopAttack() ; caught:unassignSelfAsAttacker()
+        return "catchProjectile", caught
+    end
+end
+
+function Enemy:beforeGetUp()
+    self:shakeOffColor()
+end
+
+function Enemy:duringGetUp()
+    Face.faceObject(self, self.opponents[1])
+end
+
+function Enemy:getup()
+    local nextstate, a, b, c, d, e, f = self:beforeGetUp()
+    if nextstate then
+        return nextstate, a, b, c, d, e, f
+    end
+    while true do
+        yield()
+        nextstate, a, b, c, d, e, f = self:duringGetUp()
+        if nextstate then
+            return nextstate, a, b, c, d, e, f
+        end
+    end
+end
+
+function Enemy:indicateDefeated()
+    if self.health <= 0 then
+        Audio.play(self.finalfallsound)
+        self.finalfallsound = false
+        local color = Color.asARGBInt(Color.unpack(self.color))
+        if color == Color.White then
+            self.color = Color.Grey
+        end
+    end
+end
+
+-- function Enemy:draw(fixedfrac)
+--     Character.draw(self, fixedfrac)
+--     StateMachine.draw(self)
+-- end
 
 return Enemy

@@ -4,14 +4,17 @@ local Common   = require "Dragontail.Character.Common"
 local Characters = require "Dragontail.Stage.Characters"
 local TiledObject = require "Tiled.Object"
 local Movement    = require "Component.Movement"
-local Slide      = require "Dragontail.Character.Action.Slide"
+local Slide      = require "Dragontail.Character.Component.Slide"
 local Face       = require "Dragontail.Character.Component.Face"
-local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
+local HoldOpponent = require "Dragontail.Character.Component.HoldOpponent"
 local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
 local Mana                 = require "Dragontail.Character.Component.Mana"
 local Body                 = require "Dragontail.Character.Component.Body"
 local Color                = require "Tiled.Color"
-local Guard                = require "Dragontail.Character.Action.Guard"
+local Guard                = require "Dragontail.Character.Component.Guard"
+local Character            = require "Dragontail.Character"
+local WeaponInHand         = require "Dragontail.Character.Component.WeaponInHand"
+local Invulnerability      = require "Dragontail.Character.Component.Invulnerability"
 
 ---@class Dash
 ---@field dashsound string?
@@ -35,21 +38,11 @@ local Guard                = require "Dragontail.Character.Action.Guard"
 ---@field aiafterthrown string?
 ---@field thrownsound string?
 
----@class Fall
----@field fallanimationtime number?
-
----@class GetUp
----@field getupai string?
----@field getuptime integer?
----@field aiaftergetup string?
----@field getupsound string?
-
 ---@class Win
 ---@field victorysound string?
 
----@class Fighter:Common,Face,Mana,Combo,Dash,Run,Jump,Dodge,WeaponInHand,ThrowWeapon,Shoot,HoldOpponent,HeldByOpponent,Thrown,Fall,GetUp,Win
----@field heldopponent Fighter?
----@field heldby Fighter?
+---@class Fighter:Common,Face,Mana,Combo,Dash,Run,Jump,Dodge,Guard,WeaponInHand,ThrowWeapon,Shoot,HoldOpponent,HeldByOpponent,Thrown,Win
+---@field inventory Inventory?
 local Fighter = class(Common)
 
 local huge = math.huge
@@ -64,6 +57,62 @@ local dist = math.dist
 function Fighter:init()
     Common.init(self)
     Face.init(self)
+end
+
+function Fighter:initAseprite()
+    Character.initAseprite(self)
+    WeaponInHand.loadHandPositions(self)
+end
+
+function Fighter:fixedupdate()
+    Common.fixedupdate(self)
+    if self:isHitStopOver() then
+        Invulnerability.updateInvuln(self)
+    end
+end
+
+function Fighter:drawAseprite(fixedfrac)
+    local animation = self.aseanimation or self.aseprite
+    local aframe = self.animationframe or 1
+    local frame = animation and animation[aframe]
+    if not frame then
+        return
+    end
+
+    local r,g,b,a = Color.unpack(self.color)
+    a = a * Invulnerability.getInvulnAlpha(self)
+    love.graphics.setColor(r,g,b,a)
+
+    local velx, vely = self.velx or 0, self.vely or 0
+    fixedfrac = fixedfrac or 0
+
+    local x, y = self.x + velx*fixedfrac, self.y + vely*fixedfrac
+    love.graphics.push()
+    love.graphics.translate(x, y)
+    love.graphics.rotate(self.rotation or 0)
+    love.graphics.shear(self.skewx or 0, self.skewy or 0)
+    love.graphics.scale(self.scalex or 1, self.scaley or 1)
+
+    local originx, originy = self:getOrigin()
+    love.graphics.translate(-originx, -originy)
+
+    frame:draw()
+    WeaponInHand.draw(self, frame, 0, 0)
+    love.graphics.pop()
+    -- if self.attacker then
+    --     love.graphics.line(self.x, self.y, self.attacker.x, self.attacker.y)
+    -- end
+
+    -- local px1, py1 = self.inputlog:newestJoystick()
+    -- local px0, py0 = self.inputlog:oldestJoystick()
+    -- if px0 and py0 and px1 and py1 then
+    --     love.graphics.line(self.x + px0*16, self.y + py0*16, self.x + px1*16, self.y + py1*16)
+    -- end
+
+    -- local px, py = self:getParryVector()
+    -- if px and py then
+    --     love.graphics.line(self.x, self.y, self.x + px*16, self.y + py*16)
+    -- end
 end
 
 Fighter.storeMana = Mana.store
@@ -89,7 +138,7 @@ function Fighter:walkTo(destx, desty, timelimit)
             end
             return true
         end
-        self.velx, self.vely = Movement.getVelocity_speed(self.x, self.y, destx, desty, self.speed or 1)
+        self.velx, self.vely = Movement.getVelocity_speed(self.x, self.y, destx, desty, math.max(1, self.speed or 1))
         yield()
     end
 end
@@ -114,7 +163,7 @@ function Fighter:updateWalkTo(destx, desty)
 end
 
 -- function Fighter:stun(duration)
---     self:stopAttack()
+--     self:stopAttack() ; self:unassignSelfAsAttacker()
 --     self.velx, self.vely = 0, 0
 --     Audio.play(self.stunsound)
 --     self.canbegrabbed = true
@@ -131,9 +180,40 @@ end
 function Fighter:duringKnockedBack()
 end
 
+function Fighter:getLedgeDirection()
+    local floor = self.floorbody
+    local floorpoints = floor.points
+    if not floorpoints then
+        local dsq = math.distsq(self.x, self.y, floor.x, floor.y)
+        local mindist = floor.bodyradius - self.bodyradius
+        if dsq < mindist*mindist then return 0, 0 end
+
+        return self.x - floor.x, self.y - floor.y
+    end
+
+    if not floorpoints.outward then return 0, 0 end
+    local x = self.x - floor.x
+    local y = self.y - floor.y
+    local edgex, edgey, pointa, pointb =
+        math.nearestpolygonpoint(floorpoints, x, y)
+    local edgedsq = math.distsq(edgex, edgey, x, y)
+    if edgedsq > self.bodyradius*self.bodyradius then return 0, 0 end
+
+    local ax = floorpoints[pointa-1]
+    local ay = floorpoints[pointa]
+    local bx = floorpoints[pointb-1]
+    local by = floorpoints[pointb]
+    return math.rot90(bx-ax, by-ay, 1)
+end
+
+function Fighter:indicateDefeated()
+end
+
 function Fighter:knockedBack(thrower, attackangle)
-    local dirx, diry
-    if attackangle then
+    local dirx, diry = self:getLedgeDirection()
+    if dirx ~= 0 or diry ~= 0 then
+        dirx, diry = norm(dirx, diry)
+    elseif attackangle then
         dirx, diry = cos(attackangle), sin(attackangle)
     else
         local velx, vely = thrower.velx, thrower.vely
@@ -144,29 +224,27 @@ function Fighter:knockedBack(thrower, attackangle)
         end
     end
     self.hurtstun = 0
-    self:stopAttack()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     self.thrower = thrower
-    local thrownspeed = thrower.attack.launchspeed or 10
+    local thrownspeed = thrower.attack.launchspeed or 5
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
-    self.velz = thrower.attackpopupspeed or 4
+    local altitude = self.z - (self.floorz or 0)
+    self.velz = math.max(0, (thrower.attack.launchspeedz or 4) - altitude)
     local oobx, ooby, oobz
     repeat
         yield()
-        oobx, ooby, oobz = Body.keepInBounds(self)
+        oobx, ooby, oobz = self.penex, self.peney, self.penez
         self:duringKnockedBack()
     until oobx or ooby or oobz
-    local oobdotvel = math.dot(oobx or 0, ooby or 0, self.velx, self.vely)
-    if oobdotvel > 0 then
-        oobdotvel = oobdotvel
-            / math.len(self.velx, self.vely)
-            / math.len(oobx, ooby)
-    end
+    -- local oobdotvel = math.dot(oobx or 0, ooby or 0, self.velx, self.vely)
+    -- if oobdotvel > 0 then
+    --     oobdotvel = oobdotvel
+    --         / math.len(self.velx, self.vely)
+    --         / math.len(oobx, ooby)
+    -- end
     self.thrower = nil
-    if oobdotvel > .5 then
+    if oobx and ooby then
         return "wallBump", thrower, oobx, ooby
-    end
-    if oobz then
-        self.velz = 0
     end
 
     return self.aiafterthrown or "fall", thrower
@@ -188,12 +266,12 @@ function Fighter:knockedBackOrThrown(thrower, attackangle)
     if attackangle and self.attacktype then
         self:startAttack(attackangle)
     else
-        self:stopAttack()
+        self:stopAttack() ; self:unassignSelfAsAttacker()
     end
     self.thrower = thrower
     local thrownspeed = thrower.attack.launchspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
-    self.velz = thrower.attackpopupspeed or 4
+    self.velz = thrower.attack.launchspeedz or 4
     local thrownsound = self.attack.swingsound and Audio.newSource(self.attack.swingsound)
     if thrownsound then thrownsound:play() end
     local thrownslidetime = self.thrownslidetime or 1
@@ -201,7 +279,7 @@ function Fighter:knockedBackOrThrown(thrower, attackangle)
     local oobdotvel = 0
     while thrownslidetime > 0 and oobdotvel <= .5 do
         yield()
-        oobx, ooby, oobz = Body.keepInBounds(self)
+        oobx, ooby, oobz = self.penex, self.peney, self.penez
         self:duringKnockedBack()
         if oobz then
             thrownslidetime = thrownslidetime - 1
@@ -229,18 +307,18 @@ function Fighter:afterWallBump(thrower)
 end
 
 function Fighter:wallBump(thrower, oobx, ooby)
-    oobx, ooby = norm(oobx or 0, ooby or 0)
-    self:stopAttack()
-    local bodyradius = self.bodyradius or 1
-    Characters.spawn(
-        {
-            type = "spark-hit",
-            x = self.x + oobx*bodyradius,
-            y = self.y + ooby*bodyradius,
-            z = self.z + self.bodyheight/2
-        }
-    )
-    self.health = self.health - (self.wallbumpdamage or 10)
+    oobx, ooby = oobx or 0, ooby or 0
+    if oobx ~= 0 or ooby ~= 0 then
+        oobx, ooby = norm(oobx, ooby)
+        local bodyradius = self.bodyradius or 1
+        local spark = Character(
+            "spark-hit",
+            self.x + oobx*bodyradius,
+            self.y + ooby*bodyradius,
+            self.z + self.bodyheight/2)
+        Characters.spawn(spark)
+    end
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     self.hurtstun = self.wallbumpstun or 3
     self.velx, self.vely, self.velz = 0, 0, 0
     yield()
@@ -268,29 +346,31 @@ function Fighter:thrown(thrower, attackangle)
     self.hurtstun = 0
     local thrownspeed = thrower.attack.launchspeed or 10
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
-    self.velz = thrower.attackpopupspeed or 4
+    local altitude = self.z - (self.floorz or 0)
+    self.velz = math.max(0, (thrower.attack.launchspeedz or 4) - altitude)
     local thrownsound = self.attack.swingsound and Audio.newSource(self.attack.swingsound)
     if thrownsound then thrownsound:play() end
     local thrownslidetime = self.thrownslidetime or 10
     local oobx, ooby, oobz
-    local oobdotvel = 0
-    while thrownslidetime > 0 and oobdotvel <= .5 do
+    -- local oobdotvel = 0
+    while thrownslidetime > 0 and not oobx and not ooby do
         yield()
-        oobx, ooby, oobz = Body.keepInBounds(self)
+        oobx, ooby, oobz = self.penex, self.peney, self.penez
         if oobz then
             thrownslidetime = thrownslidetime - 1
         end
-        oobdotvel = math.dot(oobx or 0, ooby or 0, self.velx, self.vely)
-        if oobdotvel > 0 then
-            oobdotvel = oobdotvel
-                / math.len(self.velx, self.vely)
-                / math.len(oobx, ooby)
-        end
+        -- oobdotvel = math.dot(oobx or 0, ooby or 0, self.velx, self.vely)
+        -- if oobdotvel > 0 then
+        --     oobdotvel = oobdotvel
+        --         / math.len(self.velx, self.vely)
+        --         / math.len(oobx, ooby)
+        -- end
     end
     if thrownsound then thrownsound:stop() end
     self.thrower = nil
-    self:stopAttack()
-    if oobdotvel > .5 then
+    self:stopAttack() ; self:unassignSelfAsAttacker()
+    if oobx and ooby then
+        self.health = self.health - (self.wallslamdamage or 10)
         return "wallSlammed", thrower, oobx, ooby
     end
 
@@ -301,19 +381,19 @@ function Fighter:afterWallSlammed(thrower)
 end
 
 function Fighter:wallSlammed(thrower, oobx, ooby)
-    oobx, ooby = norm(oobx or 0, ooby or 0)
-    local bodyradius = self.bodyradius or 1
-    Characters.spawn(
-        {
-            type = "spark-bighit",
-            x = self.x + oobx*bodyradius,
-            y = self.y + ooby*bodyradius,
-            z = self.z + self.bodyheight/2
-        }
-    )
-    self.health = self.health - (self.wallslamdamage or 25)
+    oobx, ooby = oobx or 0, ooby or 0
+    if oobx ~= 0 or ooby ~= 0 then
+        oobx, ooby = norm(oobx, ooby)
+        local bodyradius = self.bodyradius or 1
+        local spark = Character(
+            "spark-bighit",
+            self.x + oobx*bodyradius,
+            self.y + ooby*bodyradius,
+            self.z + self.bodyheight/2)
+        Characters.spawn(spark)
+    end
     self.velx, self.vely, self.velz = 0, 0, 0
-    self:stopAttack()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     yield() -- a window to be juggled by damaging wall e.g. forge-fire
     self.hurtstun = self.wallslamstun or 20
     yield()
@@ -321,7 +401,7 @@ function Fighter:wallSlammed(thrower, oobx, ooby)
     if nextstate then
         return nextstate, a, b, c, d, e, f
     end
-    return "fall", thrower
+    return self.nextstate or "fall", thrower
 end
 
 function Fighter:thrownRecover(thrower)
@@ -329,13 +409,14 @@ function Fighter:thrownRecover(thrower)
     local oobx, ooby, oobz
     repeat
         yield()
-        oobx, ooby, oobz = Body.keepInBounds(self)
-        self:accelerateTowardsVel(0, 0, recovertime)
+        oobx, ooby, oobz = self.penex, self.peney, self.penez
+        self:decelerateXYto0()
         recovertime = recovertime - 1
     until recovertime <= 0 and oobz or oobx or ooby
 
-    self:stopAttack()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     if oobx or ooby then
+        self.health = self.health - (self.wallslamdamage or 10)
         return "wallSlammed", thrower, oobx, ooby
     end
 
@@ -348,98 +429,79 @@ function Fighter:thrownRecover(thrower)
 end
 
 function Fighter:breakaway(other)
+    local angle = self.holdangle or self.faceangle
     HoldOpponent.stopHolding(other, self)
     HoldOpponent.stopHolding(self, other)
     local breakspeed = 10
-    local dirx, diry = norm(other.x - self.x, other.y - self.y)
-    self:makeImpactSpark(other, "spark-hit")
+    local dirx, diry = 0, 0
+    if other then
+        self:makeImpactSpark(other, "spark-hit")
+        dirx, diry = other.x - self.x, other.y - self.y
+    end
+    if dirx == 0 and diry == 0 then
+        dirx, diry = cos(angle), sin(angle)
+    else
+        dirx, diry = norm(dirx, diry)
+    end
     self.velx, self.vely = -dirx * breakspeed, -diry * breakspeed
 
     local t = 1
     -- self.hurtstun = self.breakawaystun or 15
+    local time = self.statetime or 15
     repeat
         yield()
-        Body.keepInBounds(self)
-        self:accelerateTowardsVel(0, 0, 8)
+        self:decelerateXYto0()
         t = t + 1
-    until t > 15
+    until t > time
 
     self.velx, self.vely = 0, 0
     return self.aiafterbreakaway or self.recoverai
 end
 
-function Fighter:duringFall() end
-
-function Fighter:fall(attacker)
-    self:stopAttack()
-    local t = 0
-    local fallanimationtime = self.fallanimationtime or 1
-    repeat
-        self:accelerateTowardsVel(0, 0, 8)
-        yield()
-        local _, _, penez = Body.keepInBounds(self)
-        self:duringFall()
-        if penez then
-            t = t + 1
-            self.velz = 0
-            self:changeAseAnimation("Fall", 1, 0)
-        end
-    until t >= fallanimationtime
-    return "down", attacker
+function Fighter:duringFall()
 end
 
-function Fighter:down(attacker)
-    Characters.spawn({
-        type = "spark-fall-down-dust",
-        x = self.x,
-        y = self.y + 1,
-        z = self.z,
-    })
+function Fighter:dropWeaponInHand()
+    if self.weaponinhand then
+        local weapondata = Database.get(self.weaponinhand)
+        local itemtype = weapondata and weapondata.itemtype
+        if itemtype then
+            local dropangle = self.faceangle
+            local bodyradius = self.bodyradius
+            local bodyheight = self.bodyehight
+            local projectileheight = self.projectilelaunchheight or (bodyheight / 2)
+            local item = Character(itemtype,
+                self.x + bodyradius*math.cos(dropangle),
+                self.y + bodyradius*math.sin(dropangle),
+                self.z + projectileheight)
+            item.velx = math.cos(dropangle)
+            item.vely = math.sin(dropangle)
+            item.velz = 4
+            item.initialai = "itemDrop"
+            Characters.spawn(item)
+        end
+        self.weaponinhand = nil
 
-    local color = self.color
-    if color ~= Color.White then
-        self.color = Color.White
-        for i = 1, 8 do
-            local offsetangle = love.math.random()*2*math.pi
-            local offsetdist = love.math.random()*self.bodyradius
-            local offsetx = offsetdist*cos(offsetangle)
-            local offsety = offsetdist*sin(offsetangle)
-            local velx = offsetx/8
-            local vely = offsety/8
-
-            Characters.spawn({
-                type = "particle",
-                x = self.x + offsetx,
-                y = self.y + offsety,
-                z = self.z,
-                velx = velx,
-                vely = vely,
-                velz = 30/16,
-                color = color,
-                gravity = 1/16,
-                lifetime = 30
-            })
+        if self.inventory then
+            self.inventory:pop()
+            self.weaponinhand = self.inventory:last()
         end
     end
-
-    if self.health > 0 then
-        local t = 1
-        repeat
-            yield()
-            Body.keepInBounds(self)
-            self:duringFall()
-            self:accelerateTowardsVel(0, 0, 8)
-            t = t + 1
-        until t > 20
-        self.velx, self.vely, self.velz = 0, 0, 0
-        return self.getupai or "getup", attacker
-    end
-    self.velx, self.vely, self.velz = 0, 0, 0
-    return "defeat", attacker
 end
 
-function Fighter:defeat(attacker)
-    self:stopAttack()
+function Fighter:fall()
+    self:indicateDefeated()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
+    self:decelerateXYto0()
+    local penez = self.penez
+    if penez then
+        self.velz = 0
+        return self.state.nextstate or "collapse"
+    end
+end
+
+function Fighter:defeat()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     self.velx, self.vely = 0, 0
     self:dropDefeatItem()
     Audio.play(self.defeatsound)
@@ -447,31 +509,39 @@ function Fighter:defeat(attacker)
     return "blinkOut", 60
 end
 
-function Fighter:beforeGetUp(attacker)
-end
-
-function Fighter:duringGetUp(attacker)
+function Fighter:defeatAndRespawn()
+    self:respawn()
+    return self:defeat()
 end
 
 function Fighter:duringDodge()
 end
 
-function Fighter:getup(attacker)
-    self:beforeGetUp()
-    local time = self.getuptime or 27
-    for _ = 1, time do
-        yield()
-        local state, a, b, c, d, e, f = self:duringGetUp(attacker)
-        if state then
-            return state, a, b, c, d, e, f
+function Fighter:shakeOffColor()
+    local color = self.color
+    if color ~= Color.White then
+        self.color = Color.White
+        for i = 1, 8 do
+            local offsetangle = love.math.random()*2*math.pi
+            local offsetdist = love.math.random()*self.bodyradius
+            local offsetx = offsetdist*math.cos(offsetangle)
+            local offsety = offsetdist*math.sin(offsetangle)
+            local velx = offsetx/8
+            local vely = offsety/8
+            local particle = Character(
+                "particle",
+                self.x + offsetx,
+                self.y + offsety,
+                self.z)
+            particle.velx = velx
+            particle.vely = vely
+            particle.velz = 30/16
+            particle.color = color
+            particle.gravity = 1/16
+            particle.lifetime = 30
+            Characters.spawn(particle)
         end
     end
-    local recoverai = self.aiaftergetup or self.recoverai
-    if not recoverai then
-        print("No aiaftergetup or recoverai for "..self.type)
-        return "defeat", attacker
-    end
-    return recoverai
 end
 
 return Fighter

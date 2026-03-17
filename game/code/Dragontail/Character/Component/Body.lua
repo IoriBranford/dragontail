@@ -4,6 +4,11 @@ local RaycastCollision3D = require "Dragontail.Character.Component.Body.RaycastC
 
 ---@class Body:TiledObject
 ---@field z number
+---@field floorz number
+---@field floorbody Body
+---@field penex number?
+---@field peney number?
+---@field penez number?
 ---@field velx number
 ---@field vely number
 ---@field velz number
@@ -81,43 +86,60 @@ function Body:accelerate(ax, ay)
     self.vely = self.vely + ay
 end
 
-function Body:accelerateTowardsVel(targetvelx, targetvely, mass, e)
-    mass = math.max(mass, 1)
-    e = e or (1/256)
-    local accelx = (targetvelx - self.velx) / mass
-    local accely = (targetvely - self.vely) / mass
-    if math.abs(accelx) < e then
-        self.velx = targetvelx
+function Body:forceTowardsVelXY(targetvelx, targetvely, force)
+    local velx, vely = self.velx, self.vely
+    local forcex = (targetvelx - velx)
+    local forcey = (targetvely - vely)
+    force = force or math.huge
+    if math.lensq(forcex, forcey) <= force*force then
+        self.velx, self.vely = targetvelx, targetvely
     else
-        self.velx = self.velx + accelx
+        forcex, forcey = math.norm(forcex, forcey)
+        self.velx = velx + forcex * force
+        self.vely = vely + forcey * force
     end
-    if math.abs(accely) < e then
-        self.vely = targetvely
+end
+
+function Body:forceTowardsVel3(targetvelx, targetvely, targetvelz, force)
+    local velx, vely, velz = self.velx, self.vely, self.velz
+    local forcex = (targetvelx - velx)
+    local forcey = (targetvely - vely)
+    local forcez = (targetvelz - velz)
+    force = force or math.huge
+    if math.lensq(forcex, forcey, forcez) <= force*force then
+        self.velx, self.vely, self.velz = targetvelx, targetvely, targetvelz
     else
-        self.vely = self.vely + accely
+        forcex, forcey, forcez = math.norm(forcex, forcey, forcez)
+        self.velx = velx + forcex * force
+        self.vely = vely + forcey * force
+        self.velz = velz + forcez * force
+    end
+end
+
+function Body:accelerateTowardsVelXY(targetvelx, targetvely, mass, e)
+    mass = math.max(mass or self.mass or 1, 1)
+    e = e or (1/65536)
+    local velx, vely = self.velx, self.vely
+    velx = velx + (targetvelx - velx) / mass
+    vely = vely + (targetvely - vely) / mass
+    if math.distsq(velx, vely, targetvelx, targetvely) < e then
+        self.velx, self.vely = targetvelx, targetvely
+    else
+        self.velx, self.vely = velx, vely
     end
 end
 
 function Body:accelerateTowardsVel3(targetvelx, targetvely, targetvelz, mass, e)
-    mass = math.max(mass, 1)
+    mass = math.max(mass or self.mass or 1, 1)
     e = e or (1/256)
-    local accelx = (targetvelx - self.velx) / mass
-    local accely = (targetvely - self.vely) / mass
-    local accelz = (targetvelz - self.velz) / mass
-    if math.abs(accelx) < e then
-        self.velx = targetvelx
+    local velx, vely, velz = self.velx, self.vely, self.velz
+    velx = velx + (targetvelx - velx) / mass
+    vely = vely + (targetvely - vely) / mass
+    velz = velz + (targetvelz - velz) / mass
+    if math.distsq3(velx, vely, velz, targetvelx, targetvely, targetvelz) < e then
+        self.velx, self.vely, self.velz = targetvelx, targetvely, targetvelz
     else
-        self.velx = self.velx + accelx
-    end
-    if math.abs(accely) < e then
-        self.vely = targetvely
-    else
-        self.vely = self.vely + accely
-    end
-    if math.abs(accelz) < e then
-        self.velz = targetvelz
-    else
-        self.velz = self.velz + accelz
+        self.velx, self.vely, self.velz = velx, vely, velz
     end
 end
 
@@ -127,8 +149,7 @@ function Body:updateGravity()
         return
     end
     self.velz = self.velz - gravity
-    local Characters = require "Dragontail.Stage.Characters"
-    local floorz = Characters.getCylinderFloorZ(self.x, self.y, self.z, self.bodyradius, self.bodyheight, self.bodyhitslayers) or 0
+    local floorz = self.floorz or 0
     if floorz >= self.z + self.velz then
         self.z = floorz
         self.velz = 0
@@ -139,6 +160,13 @@ function Body:updatePosition()
     self.x = self.x + self.velx
     self.y = self.y + self.vely
     self.z = self.z + self.velz
+end
+
+function Body:updateVelocityAfterCollision()
+    -- TODO support restitution (bounce) as needed
+    if (self.penex or 0) ~= 0 then self.velx = 0 end
+    if (self.peney or 0) ~= 0 then self.vely = 0 end
+    if (self.penez or 0) ~= 0 then self.velz = 0 end
 end
 
 function Body:executeMove(destx, desty, speed, timelimit)
@@ -272,7 +300,7 @@ function Body:getCirclePenetration(x, y, r)
     -- TODO if needed, collision vs concave corners
 end
 
-local function getCylinderPenetration_circle(self, cylx, cyly, cylz, cylr, cylh)
+local function getCylinderPenetration_outward(self, cylx, cyly, cylz, cylr, cylh)
     local selftop = self.z + self.bodyheight
     if cylz + cylh >= self.z and selftop >= cylz then
         local iz, iz2 = math.max(cylz, self.z), math.min(cylz+cylh, selftop)
@@ -282,24 +310,6 @@ local function getCylinderPenetration_circle(self, cylx, cyly, cylz, cylr, cylh)
             return nil, nil, penez
         end
         return penex, peney
-    end
-end
-
-local function getCylinderPenetration_outward(self, cylx, cyly, cylz, cylr, cylh)
-    local selftop = self.z + self.bodyheight
-    if cylz + cylh >= self.z and selftop >= cylz then
-        local points = self.points
-        local nearestx, nearesty = math.nearestpolygonpoint(points, cylx - self.x, cyly - self.y)
-        if math.pointinpolygon(points, cylx - self.x, cyly - self.y)
-        or nearestx and nearesty and math.distsq(nearestx, nearesty, cylx - self.x, cyly - self.y) <= cylr*cylr then
-            local iz, iz2 = math.max(cylz, self.z), math.min(cylz+cylh, selftop)
-            local penez = iz == cylz and iz - iz2 or iz2 - iz
-            local penex, peney = Body.getCirclePenetration(self, cylx, cyly, cylr)
-            if penex and peney and math.lensq(penex, peney) > penez*penez then
-                return nil, nil, penez
-            end
-            return penex, peney
-        end
     end
 end
 
@@ -323,13 +333,10 @@ end
 ---@return number? peney y penetration. Non-0 = penetrating; 0 = touching; nil = no contact
 ---@return number? penez z penetration. Non-0 = penetrating; 0 = touching; nil = no contact
 function Body:getCylinderPenetration(cylx, cyly, cylz, cylr, cylh)
-    if self.points then
-        if self.points.outward then
-            return getCylinderPenetration_outward(self, cylx, cyly, cylz, cylr, cylh)
-        end
+    if self.points and not self.points.outward then
         return getCylinderPenetration_inward(self, cylx, cyly, cylz, cylr, cylh)
     end
-    return getCylinderPenetration_circle(self, cylx, cyly, cylz, cylr, cylh)
+    return getCylinderPenetration_outward(self, cylx, cyly, cylz, cylr, cylh)
 end
 
 ---@param other Body
@@ -375,18 +382,45 @@ function Body:getCylinderFloorZ(x, y, z, r, h)
         return
     end
 
-    if outward and not Body.getCirclePenetration(self, x, y, r) then
+    local penex, peney = Body.getCirclePenetration(self, x, y, r)
+    if outward and not penex and not peney then
         return
     end
-    return floorz
+    return floorz, penex, peney
+end
+
+---@param them Body
+---@param time number
+function Body:isInTheirWay(them, time)
+    if self.z + self.bodyheight < them.z
+    or them.z + self.bodyheight < self.z then
+        return false
+    end
+    time = time or 1
+    local x, y = self.x, self.y
+    local theirx, theiry = them.x, them.y
+    local towardmex, towardmey = x - theirx, y - theiry
+    local ourradii = self.bodyradius + them.bodyradius
+    local theirvelx, theirvely = them.velx*time, them.vely*time
+    local distxy = math.len(towardmex, towardmey)
+
+    -- cos * speed * time * dist
+    -- = speed toward me * time * dist
+    -- = dist they will move toward me in time * dist from me
+    local dot = math.dot(theirvelx, theirvely, towardmex, towardmey)
+    if dot < distxy * (distxy - ourradii) then
+        return false
+    end
+    return true
 end
 
 function Body:draw(fixedfrac)
     fixedfrac = fixedfrac or 0
     local x, y = self.x + self.velx * fixedfrac, self.y + self.vely * fixedfrac
+    local z = self.z + self.velz * fixedfrac
     love.graphics.setColor(.5, .5, 1)
     local bodyradius, bodyheight = self.bodyradius, self.bodyheight
-    local screeny = y - (self.z + self.velz * fixedfrac)
+    local screeny = y - z
     love.graphics.circle("line", x, screeny, bodyradius)
     love.graphics.circle("line", x, screeny - bodyheight, bodyradius)
     love.graphics.line(x - bodyradius, screeny, x - bodyradius, screeny - bodyheight)
@@ -394,6 +428,7 @@ function Body:draw(fixedfrac)
     local points = self.points
     if points then
         love.graphics.push()
+        love.graphics.translate(0, -z)
         self:drawPolygon()
         love.graphics.translate(0, -bodyheight)
         self:drawPolygon()

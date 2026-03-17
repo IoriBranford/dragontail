@@ -1,10 +1,9 @@
-local tablepool = require "tablepool"
-local Guard     = require "Dragontail.Character.Action.Guard"
+local Guard     = require "Dragontail.Character.Component.Guard"
 
----@class AttackHit
+---@class AttackHit:PooledClass
 ---@field attacker Attacker
 ---@field attack Attack
----@field target Victim
+---@field target AttackTarget
 ---@field angle number
 ---@field attackx number
 ---@field attacky number
@@ -15,23 +14,28 @@ local Guard     = require "Dragontail.Character.Action.Guard"
 ---@field peney number?
 ---@field penez number?
 ---@field guarded boolean
+---@field guardangle number?
+local AttackHit = pooledclass()
+AttackHit._nrec = 14
 
-return function(attacker, target, penex, peney, penez)
+function AttackHit:_init(attacker, target, attack, attackangle, penex, peney, penez)
     local Attacker  = require "Dragontail.Character.Component.Attacker"
     local x, y, z, r, h = Attacker.getAttackCylinder(attacker)
-    local hit = tablepool.fetch("AttackHit", 0, 16)
-    hit.angle = attacker.attackangle
-    hit.attack = attacker.attack
-    hit.target = target
-    hit.attacker = attacker
-    hit.penex = penex
-    hit.peney = peney
-    hit.penez = penez
-    hit.attackx = x
-    hit.attacky = y
-    hit.attackz = z
-    hit.attackr = r
-    hit.attackh = h
-    hit.guarded = Guard.isAttackInGuardArc(target, attacker)
-    return hit
+    self.angle = attackangle
+    self.attack = attack
+    self.target = target
+    self.attacker = attacker
+    self.penex = penex
+    self.peney = peney
+    self.penez = penez
+    self.attackx = x or attacker.x
+    self.attacky = y or attacker.y
+    self.attackz = z or attacker.z
+    self.attackr = r or attack.radius
+    self.attackh = h or attacker.bodyheight
+    self.guarded = Guard.isHitGuarded(target, self)
+    self.guardangle = target.guardangle
+    return self
 end
+
+return AttackHit

@@ -8,6 +8,7 @@ local Assets = require "Tiled.Assets"
 local Window = require "System.Window"
 local Stage  = require "Dragontail.Stage"
 local Inputs = require "System.Inputs"
+local Time   = require "System.Time"
 local firstphase = "Dragontail.GamePhase"
 local firstmap = "data/stage_banditcave.lua"
 
@@ -17,6 +18,10 @@ local defaultgamepadconfig =  {
     leftx = "analogx",
     lefty = "analogy",
     x = "attack",
+    y = "attack",
+    a = "fly",
+    b = "fly",
+    rightshoulder = "sprint",
     triggerright = "sprint",
     triggerleft = "fly",
 }
@@ -40,6 +45,7 @@ function love.load(args)
     Config.drawstats = args.drawstats
     Config.drawai = args.drawai
     Config.cuecards = args.cuecards
+    Config.fixedupdaterate = Time.FixedUpdateRate
 
     Config.gamepads = Inputs.configureGamepads(Config.gamepads)
     Config.keys = Inputs.configureKeyboard(Config.keys)
@@ -58,13 +64,15 @@ function love.load(args)
 
     -- Wallpaper.reload()
 
-    require "Dragontail.Gui"
+    local gui = require "Dragontail.Gui"
+    gui.gameplay.pausemenu.Quit:setDisabled(Config.exhibit)
+    gui.gameplay.gameover.Quit:setDisabled(Config.exhibit)
 
     local g3d = require "g3d"
     g3d.shader = love.graphics.newShader("g3d/g3d.frag", g3d.shaderpath)
 
-    local startpoint = args.startpoint
-    love.event.loadphase(firstphase, firstmap, startpoint)
+    local firstroom = args.room
+    love.event.loadphase(firstphase, firstmap, firstroom)
 end
 
 function love.quit()
@@ -81,11 +89,11 @@ return {
         --buildmegatilesets	(optional string)   Build megatilesets for all maps in the given text file
         --stage (optional string)               Name of stage to start
         --test (optional string)                Name of test to start
-        --stagestart (optional string)          Name of stage start point
+        --room (optional string)                Name of room to start the stage at
         --cuecards                              Use title bar as a cue card for video recording
     ]],
     defaultconfig = Platform.overrideConfig {
-        _version = 3,
+        _version = 4,
 
         canvasscaleint = false,
         canvasscalesoft = true,
@@ -102,12 +110,11 @@ return {
             ["up down"] = "digitaly",
             z = "attack",
             lshift = "sprint",
-            space = "fly"
+            x = "fly"
         },
 
         gamepads = {
-            [0] = defaultgamepadconfig,
-            [1] = defaultgamepadconfig
+            defaultgamepadconfig
         },
 
         -- game_rules = "ORIGINAL",
@@ -135,6 +142,7 @@ return {
         -- highscores_character = "Amy",
         -- highscores_onlineposition = "TOP",
         musicvolume = 0.25,
+        soundtrack = "Surf Shimmy",
         soundvolume = 0.75,
     }
 }

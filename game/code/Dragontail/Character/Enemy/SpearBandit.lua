@@ -1,6 +1,6 @@
 local Enemy = require "Dragontail.Character.Enemy"
 local Face       = require "Dragontail.Character.Component.Face"
-local Dodge = require "Dragontail.Character.Action.Dodge"
+local Dodge = require "Dragontail.Character.Component.Dodge"
 local Database = require "Data.Database"
 local Body     = require "Dragontail.Character.Component.Body"
 
@@ -42,7 +42,7 @@ local CounterAttackType = "spear-poke"
 function SpearBandit:duringDodge()
     if (self.numdodges or 0) >= DodgesBeforeCounterAttack then
         local opponent = self.opponents[1]
-        if self:couldAttackOpponent(opponent, CounterAttackType) then
+        if self:canDoToTarget(opponent, CounterAttackType) then
             Face.faceObject(self, opponent)
             opponent.attacker = self
             return CounterAttackType
@@ -59,7 +59,7 @@ function SpearBandit:duringPrepareAttack(target)
         local dodgeangle = self:isCylinderFullyOnCamera(self.camera) and Dodge.findDodgeAngle(self)
         if dodgeangle then
             self.numdodges = (self.numdodges or 0) + 1
-            self.color = self:getAttackFlashColor(0, self.canbeattacked)
+            self:updateFlash(self.statetime)
             if target.attacker == self then
                 target.attacker = nil
             end
@@ -68,24 +68,12 @@ function SpearBandit:duringPrepareAttack(target)
     end
     Face.turnTowardsObject(self, target, self.faceturnspeed or 0,
         self.state.animation, self.state.frame1, self.state.loopframe)
-    local deceltime = self.attacktype == CounterAttackType and 8 or 4
-    self:accelerateTowardsVel(0, 0, deceltime)
-    if self.velx ~= 0 or self.vely ~= 0 then
-        Body.keepInBounds(self)
-    end
+    self:decelerateXYto0()
 end
 
 function SpearBandit:duringAttackSwing(target)
     self.numdodges = 0
     return Enemy.duringAttackSwing(self, target)
-end
-
-function SpearBandit:beforeGetUp(attacker)
-    return Enemy.beforeGetUp(self, attacker)
-end
-
-function SpearBandit:duringGetUp(attacker)
-    return Enemy.duringGetUp(self, attacker)
 end
 
 return SpearBandit

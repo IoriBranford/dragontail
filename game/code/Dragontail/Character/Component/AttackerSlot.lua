@@ -2,11 +2,12 @@ local Raycast = require "Object.Raycast"
 local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask"
 
 ---@class AttackerSlot:Raycast
----@field enemy Enemy?
+---@field target AttackTarget
 local AttackerSlot = class(Raycast)
 
-function AttackerSlot:_init(slottype, x, y, z, dx, dy, dz)
+function AttackerSlot:_init(target, slottype, x, y, z, dx, dy, dz)
     Raycast._init(self, x, y, z, dx, dy, dz, 1)
+    self.target = target
     self.hitslayers = CollisionMask.merge("Object", "Wall", "Camera")
     self.type = slottype ---@type "melee"|"missile"
     if self.dx == 0 and self.dy == 0 and self.dz == 0 then

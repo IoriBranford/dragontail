@@ -1,0 +1,118 @@
+{
+  "exportTimestamp": "2025-09-05T23-38-07",
+  "bodyType": "male",
+  "standardAnimations": {
+    "exported": {
+      "spellcast": [
+        "010 body bodies male light.png",
+        "100 head heads human male light.png"
+      ],
+      "thrust": [
+        "010 body bodies male light.png",
+        "100 head heads human male light.png"
+      ],
+      "walk": [
+        "009 weapon sword arming universal bg steel.png",
+        "010 body bodies male light.png",
+        "100 head heads human male light.png",
+        "140 weapon sword arming universal fg steel.png"
+      ],
+      "slash": [
+        "010 body bodies male light.png",
+        "100 head heads human male light.png"
+      ],
+      "shoot": [
+        "010 body bodies male light.png",
+        "100 head heads human male light.png"
+      ],
+      "hurt": [
+        "009 weapon sword arming universal bg steel.png",
+        "010 body bodies male light.png",
+        "100 head heads human male light.png",
+        "140 weapon sword arming universal fg steel.png"
+      ],
+      "climb": [
+        "010 body bodies male light.png",
+        "100 head heads human male light.png"
+      ],
+      "idle": [
+        "009 weapon sword arming universal bg steel.png",
+        "010 body bodies male light.png",
+        "100 head heads human male light.png",
+        "140 weapon sword arming universal fg steel.png"
+      ],
+      "jump": [
+        "010 body bodies male light.png",
+        "100 head heads human male light.png"
+      ],
+      "sit": [
+        "010 body bodies male light.png",
+        "100 head heads human male light.png"
+      ],
+      "emote": [
+        "010 body bodies male light.png",
+        "100 head heads human male light.png"
+      ],
+      "run": [
+        "010 body bodies male light.png",
+        "100 head heads human male light.png"
+      ],
+      "combat_idle": [
+        "009 weapon sword arming universal bg steel.png",
+        "010 body bodies male light.png",
+        "100 head heads human male light.png",
+        "140 weapon sword arming universal fg steel.png"
+      ],
+      "backslash": [
+        "010 body bodies male light.png",
+        "100 head heads human male light.png"
+      ],
+      "halfslash": [
+        "010 body bodies male light.png",
+        "100 head heads human male light.png"
+      ]
+    },
+    "failed": {}
+  },
+  "customAnimations": {
+    "exported": {
+      "slash_128": [
+        "010 body bodies male light.png",
+        "100 head heads human male light.png",
+        "008 weapon sword arming attack_slash bg steel.png",
+        "150 weapon sword arming attack_slash fg steel.png"
+      ],
+      "backslash_128": [
+        "010 body bodies male light.png",
+        "100 head heads human male light.png",
+        "008 weapon sword arming attack_backslash bg steel.png",
+        "150 weapon sword arming attack_backslash fg steel.png"
+      ],
+      "halfslash_128": [
+        "010 body bodies male light.png",
+        "100 head heads human male light.png",
+        "008 weapon sword arming attack_halfslash bg steel.png",
+        "150 weapon sword arming attack_halfslash fg steel.png"
+      ]
+    },
+    "failed": {}
+  },
+  "frameSize": 64,
+  "frameCounts": {
+    "spellcast": 7,
+    "thrust": 8,
+    "walk": 9,
+    "slash": 6,
+    "shoot": 13,
+    "hurt": 6,
+    "climb": 6,
+    "idle": 2,
+    "jump": 5,
+    "sit": 3,
+    "emote": 3,
+    "run": 8,
+    "combat_idle": 2,
+    "backslash": 13,
+    "halfslash": 7
+  }
+}

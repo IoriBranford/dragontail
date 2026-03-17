@@ -9,8 +9,8 @@ return {
   height = 15,
   tilewidth = 16,
   tileheight = 18,
-  nextlayerid = 15,
-  nextobjectid = 82,
+  nextlayerid = 22,
+  nextobjectid = 148,
   properties = {},
   tilesets = {
     {
@@ -492,6 +492,126 @@ return {
       wangsets = {},
       tilecount = 1,
       tiles = {}
+    },
+    {
+      name = "break-grab",
+      firstgid = 410,
+      class = "",
+      tilewidth = 48,
+      tileheight = 48,
+      spacing = 0,
+      margin = 0,
+      columns = 4,
+      image = "sprites/ui/break-grab.png",
+      imagewidth = 192,
+      imageheight = 48,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 32
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 4,
+      tiles = {
+        {
+          id = 0,
+          properties = {
+            ["name"] = "x"
+          },
+          animation = {
+            {
+              tileid = 0,
+              duration = 100
+            },
+            {
+              tileid = 1,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 2,
+          properties = {
+            ["name"] = "y"
+          },
+          animation = {
+            {
+              tileid = 2,
+              duration = 100
+            },
+            {
+              tileid = 3,
+              duration = 100
+            }
+          }
+        }
+      }
+    },
+    {
+      name = "title",
+      firstgid = 414,
+      class = "",
+      tilewidth = 480,
+      tileheight = 270,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/ui/title.ase",
+      imagewidth = 480,
+      imageheight = 270,
+      objectalignment = "topleft",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 480,
+        height = 270
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "Xbox",
+      firstgid = 415,
+      class = "",
+      tilewidth = 14,
+      tileheight = 14,
+      spacing = 0,
+      margin = 0,
+      columns = 20,
+      image = "tilesets/ui/Gamepad Spritesheets/Xbox.png",
+      imagewidth = 280,
+      imageheight = 15,
+      objectalignment = "center",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 14,
+        height = 14
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 20,
+      tiles = {}
     }
   },
   layers = {
@@ -535,10 +655,6 @@ return {
               visible = false,
               properties = {
                 ["color"] = "#ff8080ff",
-                ["gaugedirection"] = "right",
-                ["gaugepercent"] = 1,
-                ["linecolor"] = "",
-                ["roundcorners"] = 0,
                 ["z"] = 0
               }
             },
@@ -573,9 +689,6 @@ return {
               visible = true,
               properties = {
                 ["color"] = "#ffff1f1f",
-                ["gaugedirection"] = "right",
-                ["gaugepercent"] = 1,
-                ["linecolor"] = "",
                 ["roundcorners"] = 1,
                 ["z"] = 0
               }
@@ -629,7 +742,6 @@ return {
               gid = 1,
               visible = true,
               properties = {
-                ["name"] = "normal",
                 ["z"] = 0
               }
             },
@@ -647,11 +759,7 @@ return {
               properties = {
                 ["color"] = "#ffffaa00",
                 ["fullcolor"] = "#ffffd000",
-                ["gaugedirection"] = "right",
-                ["gaugepercent"] = 1,
-                ["linecolor"] = "",
                 ["normalcolor"] = "#ffffaa00",
-                ["roundcorners"] = 0,
                 ["z"] = 0
               }
             },
@@ -668,10 +776,6 @@ return {
               visible = true,
               properties = {
                 ["color"] = "#ffffffff",
-                ["gaugedirection"] = "right",
-                ["gaugepercent"] = 1,
-                ["linecolor"] = "",
-                ["roundcorners"] = 0,
                 ["z"] = 0
               }
             },
@@ -689,11 +793,7 @@ return {
               properties = {
                 ["color"] = "#ffffaa00",
                 ["fullcolor"] = "#ffffd000",
-                ["gaugedirection"] = "right",
-                ["gaugepercent"] = 1,
-                ["linecolor"] = "",
                 ["normalcolor"] = "#ffffaa00",
-                ["roundcorners"] = 0,
                 ["z"] = 0
               }
             },
@@ -710,10 +810,6 @@ return {
               visible = true,
               properties = {
                 ["color"] = "#ffffffff",
-                ["gaugedirection"] = "right",
-                ["gaugepercent"] = 1,
-                ["linecolor"] = "",
-                ["roundcorners"] = 0,
                 ["z"] = 0
               }
             },
@@ -731,11 +827,7 @@ return {
               properties = {
                 ["color"] = "#ffffaa00",
                 ["fullcolor"] = "#ffffd000",
-                ["gaugedirection"] = "right",
-                ["gaugepercent"] = 1,
-                ["linecolor"] = "",
                 ["normalcolor"] = "#ffffaa00",
-                ["roundcorners"] = 0,
                 ["z"] = 0
               }
             },
@@ -752,10 +844,6 @@ return {
               visible = true,
               properties = {
                 ["color"] = "#ffffffff",
-                ["gaugedirection"] = "right",
-                ["gaugepercent"] = 1,
-                ["linecolor"] = "",
-                ["roundcorners"] = 0,
                 ["z"] = 0
               }
             },
@@ -866,12 +954,156 @@ return {
               height = 36,
               rotation = 0,
               visible = true,
-              text = "DEVELOPMENT VER. 2025\nALL CONTENT SUBJECT TO CHANGE",
+              text = "DEVELOPMENT VER. 2026\nALL CONTENT SUBJECT TO CHANGE",
               fontfamily = "TinyUnicode",
               wrap = true,
               color = { 255, 255, 255 },
               halign = "right",
               valign = "bottom",
+              properties = {}
+            },
+            {
+              id = 137,
+              name = "clearenemiesprompt",
+              type = "",
+              shape = "text",
+              x = 80,
+              y = 54,
+              width = 320,
+              height = 54,
+              rotation = 0,
+              visible = false,
+              text = "Push SELECT button or DELETE key\nto clear lost enemies",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              valign = "center",
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 16,
+          name = "hud_breakgrab",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 99,
+              name = "gaugex",
+              type = "",
+              shape = "rectangle",
+              x = -24,
+              y = -40,
+              width = 48,
+              height = 4,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#00000000",
+                ["linecolor"] = "#ffffffff"
+              }
+            },
+            {
+              id = 100,
+              name = "gaugey",
+              type = "",
+              shape = "rectangle",
+              x = 12,
+              y = -48,
+              width = 4,
+              height = 48,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#00000000",
+                ["linecolor"] = "#ffffffff"
+              }
+            },
+            {
+              id = 95,
+              name = "gauger",
+              type = "Gui.Gauge",
+              shape = "rectangle",
+              x = 0,
+              y = -40,
+              width = 24,
+              height = 4,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#ffffffff"
+              }
+            },
+            {
+              id = 97,
+              name = "gauged",
+              type = "Gui.Gauge",
+              shape = "rectangle",
+              x = 12,
+              y = -24,
+              width = 4,
+              height = 24,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#ffffffff",
+                ["gaugedirection"] = "down"
+              }
+            },
+            {
+              id = 96,
+              name = "gaugel",
+              type = "Gui.Gauge",
+              shape = "rectangle",
+              x = -24,
+              y = -40,
+              width = 24,
+              height = 4,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#ffffffff",
+                ["gaugedirection"] = "left"
+              }
+            },
+            {
+              id = 98,
+              name = "gaugeu",
+              type = "Gui.Gauge",
+              shape = "rectangle",
+              x = 12,
+              y = -48,
+              width = 4,
+              height = 24,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#ffffffff",
+                ["gaugedirection"] = "up"
+              }
+            },
+            {
+              id = 94,
+              name = "prompt",
+              type = "",
+              shape = "rectangle",
+              x = 0,
+              y = 0,
+              width = 48,
+              height = 48,
+              rotation = 0,
+              gid = 410,
+              visible = true,
               properties = {}
             }
           }
@@ -994,7 +1226,6 @@ return {
               gid = 1,
               visible = true,
               properties = {
-                ["name"] = "normal",
                 ["z"] = 0
               }
             }
@@ -1006,7 +1237,7 @@ return {
           id = 14,
           name = "hud_go",
           class = "",
-          visible = true,
+          visible = false,
           opacity = 1,
           offsetx = 360,
           offsety = 135,
@@ -1052,19 +1283,47 @@ return {
           class = "",
           visible = true,
           opacity = 1,
-          offsetx = 0,
-          offsety = 0,
+          offsetx = 32,
+          offsety = 72,
           parallaxx = 1,
           parallaxy = 1,
           properties = {},
           objects = {
             {
+              id = 43,
+              name = "fullslot1",
+              type = "",
+              shape = "rectangle",
+              x = -12,
+              y = -18,
+              width = 24,
+              height = 24,
+              rotation = 0,
+              gid = 385,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 44,
+              name = "fullslot2",
+              type = "",
+              shape = "rectangle",
+              x = 12,
+              y = -18,
+              width = 24,
+              height = 24,
+              rotation = 0,
+              gid = 387,
+              visible = true,
+              properties = {}
+            },
+            {
               id = 39,
               name = "emptyslot1",
               type = "",
               shape = "rectangle",
-              x = 20,
-              y = 54,
+              x = -12,
+              y = -18,
               width = 24,
               height = 24,
               rotation = 0,
@@ -1073,7 +1332,85 @@ return {
               properties = {}
             },
             {
-              id = 43,
+              id = 40,
+              name = "emptyslot2",
+              type = "",
+              shape = "rectangle",
+              x = 12,
+              y = -18,
+              width = 24,
+              height = 24,
+              rotation = 0,
+              gid = 390,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 51,
+              name = "2slotweapon1",
+              type = "",
+              shape = "rectangle",
+              x = 0,
+              y = -18,
+              width = 24,
+              height = 24,
+              rotation = 0,
+              gid = 389,
+              visible = true,
+              properties = {
+                ["animationspeed"] = 0
+              }
+            },
+            {
+              id = 47,
+              name = "1slotweapon1",
+              type = "",
+              shape = "rectangle",
+              x = -12,
+              y = -18,
+              width = 24,
+              height = 24,
+              rotation = 0,
+              gid = 389,
+              visible = true,
+              properties = {
+                ["animationspeed"] = 0
+              }
+            },
+            {
+              id = 48,
+              name = "1slotweapon2",
+              type = "",
+              shape = "rectangle",
+              x = 12,
+              y = -18,
+              width = 24,
+              height = 24,
+              rotation = 0,
+              gid = 389,
+              visible = true,
+              properties = {
+                ["animationspeed"] = 0
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 21,
+          name = "hud_4weaponslots",
+          class = "",
+          visible = false,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 120,
               name = "fullslot1",
               type = "",
               shape = "rectangle",
@@ -1087,21 +1424,7 @@ return {
               properties = {}
             },
             {
-              id = 40,
-              name = "emptyslot2",
-              type = "",
-              shape = "rectangle",
-              x = 44,
-              y = 54,
-              width = 24,
-              height = 24,
-              rotation = 0,
-              gid = 389,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 44,
+              id = 122,
               name = "fullslot2",
               type = "",
               shape = "rectangle",
@@ -1115,21 +1438,7 @@ return {
               properties = {}
             },
             {
-              id = 41,
-              name = "emptyslot3",
-              type = "",
-              shape = "rectangle",
-              x = 68,
-              y = 54,
-              width = 24,
-              height = 24,
-              rotation = 0,
-              gid = 389,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 45,
+              id = 124,
               name = "fullslot3",
               type = "",
               shape = "rectangle",
@@ -1143,21 +1452,7 @@ return {
               properties = {}
             },
             {
-              id = 42,
-              name = "emptyslot4",
-              type = "",
-              shape = "rectangle",
-              x = 92,
-              y = 54,
-              width = 24,
-              height = 24,
-              rotation = 0,
-              gid = 390,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 46,
+              id = 126,
               name = "fullslot4",
               type = "",
               shape = "rectangle",
@@ -1171,7 +1466,63 @@ return {
               properties = {}
             },
             {
-              id = 54,
+              id = 119,
+              name = "emptyslot1",
+              type = "",
+              shape = "rectangle",
+              x = 20,
+              y = 54,
+              width = 24,
+              height = 24,
+              rotation = 0,
+              gid = 388,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 121,
+              name = "emptyslot2",
+              type = "",
+              shape = "rectangle",
+              x = 44,
+              y = 54,
+              width = 24,
+              height = 24,
+              rotation = 0,
+              gid = 389,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 123,
+              name = "emptyslot3",
+              type = "",
+              shape = "rectangle",
+              x = 68,
+              y = 54,
+              width = 24,
+              height = 24,
+              rotation = 0,
+              gid = 389,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 125,
+              name = "emptyslot4",
+              type = "",
+              shape = "rectangle",
+              x = 92,
+              y = 54,
+              width = 24,
+              height = 24,
+              rotation = 0,
+              gid = 390,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 127,
               name = "4slotweapon1",
               type = "",
               shape = "rectangle",
@@ -1187,7 +1538,7 @@ return {
               }
             },
             {
-              id = 56,
+              id = 128,
               name = "3slotweapon1",
               type = "",
               shape = "rectangle",
@@ -1203,7 +1554,7 @@ return {
               }
             },
             {
-              id = 55,
+              id = 129,
               name = "3slotweapon2",
               type = "",
               shape = "rectangle",
@@ -1219,7 +1570,7 @@ return {
               }
             },
             {
-              id = 51,
+              id = 130,
               name = "2slotweapon1",
               type = "",
               shape = "rectangle",
@@ -1235,7 +1586,7 @@ return {
               }
             },
             {
-              id = 52,
+              id = 131,
               name = "2slotweapon2",
               type = "",
               shape = "rectangle",
@@ -1251,7 +1602,7 @@ return {
               }
             },
             {
-              id = 53,
+              id = 132,
               name = "2slotweapon3",
               type = "",
               shape = "rectangle",
@@ -1267,7 +1618,7 @@ return {
               }
             },
             {
-              id = 47,
+              id = 133,
               name = "1slotweapon1",
               type = "",
               shape = "rectangle",
@@ -1283,7 +1634,7 @@ return {
               }
             },
             {
-              id = 48,
+              id = 134,
               name = "1slotweapon2",
               type = "",
               shape = "rectangle",
@@ -1299,7 +1650,7 @@ return {
               }
             },
             {
-              id = 49,
+              id = 135,
               name = "1slotweapon3",
               type = "",
               shape = "rectangle",
@@ -1315,7 +1666,7 @@ return {
               }
             },
             {
-              id = 50,
+              id = 136,
               name = "1slotweapon4",
               type = "",
               shape = "rectangle",
@@ -1328,143 +1679,6 @@ return {
               visible = true,
               properties = {
                 ["animationspeed"] = 0
-              }
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "index",
-          id = 6,
-          name = "pausemenu",
-          class = "Gui.Menu",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {
-            ["actionsmodule"] = "Dragontail.GuiActions",
-            ["backaction"] = "unpauseGame"
-          },
-          objects = {
-            {
-              id = 76,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 184,
-              y = 90,
-              width = 112,
-              height = 90,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["color"] = "#80c52021",
-                ["linecolor"] = "#ffff6161",
-                ["roundcorners"] = 8
-              }
-            },
-            {
-              id = 8,
-              name = "name",
-              type = "",
-              shape = "text",
-              x = 192,
-              y = 54,
-              width = 96,
-              height = 18,
-              rotation = 0,
-              visible = true,
-              text = "PAUSE",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
-              halign = "center",
-              properties = {}
-            },
-            {
-              id = 72,
-              name = "Resume",
-              type = "Gui.Button",
-              shape = "text",
-              x = 232,
-              y = 99,
-              width = 64,
-              height = 18,
-              rotation = 0,
-              visible = true,
-              text = "Resume",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
-              properties = {
-                ["action"] = "unpauseGame",
-                ["actionsmodule"] = "Dragontail.GuiActions",
-                ["disabled"] = false,
-                ["label"] = { id = 0 }
-              }
-            },
-            {
-              id = 73,
-              name = "Restart",
-              type = "Gui.Button",
-              shape = "text",
-              x = 232,
-              y = 126,
-              width = 64,
-              height = 18,
-              rotation = 0,
-              visible = true,
-              text = "Restart",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
-              properties = {
-                ["action"] = "restartStage",
-                ["actionsmodule"] = "Dragontail.GuiActions",
-                ["disabled"] = false,
-                ["label"] = { id = 0 }
-              }
-            },
-            {
-              id = 75,
-              name = "Quit",
-              type = "Gui.Button",
-              shape = "text",
-              x = 232,
-              y = 153,
-              width = 64,
-              height = 18,
-              rotation = 0,
-              visible = true,
-              text = "Quit",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
-              properties = {
-                ["action"] = "quit",
-                ["actionsmodule"] = "Dragontail.GuiActions",
-                ["disabled"] = false,
-                ["label"] = { id = 0 }
-              }
-            },
-            {
-              id = 74,
-              name = "",
-              type = "Gui.Cursor",
-              shape = "rectangle",
-              x = 200,
-              y = 108,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 409,
-              visible = true,
-              properties = {
-                ["alignx"] = -1,
-                ["aligny"] = 0
               }
             }
           }
@@ -1524,12 +1738,26 @@ return {
               name = "attackbutton",
               type = "",
               shape = "rectangle",
-              x = 120,
-              y = 260,
-              width = 16,
-              height = 16,
+              x = 128,
+              y = 234,
+              width = 14,
+              height = 14,
               rotation = 0,
-              gid = 297,
+              gid = 419,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 145,
+              name = "jumpbutton",
+              type = "",
+              shape = "rectangle",
+              x = 144,
+              y = 252,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 415,
               visible = true,
               properties = {}
             },
@@ -1538,12 +1766,26 @@ return {
               name = "attackbuttondown",
               type = "",
               shape = "rectangle",
-              x = 120,
-              y = 260,
-              width = 16,
-              height = 16,
+              x = 128,
+              y = 234,
+              width = 14,
+              height = 14,
               rotation = 0,
-              gid = 298,
+              gid = 420,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 144,
+              name = "jumpbuttondown",
+              type = "",
+              shape = "rectangle",
+              x = 144,
+              y = 252,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 416,
               visible = true,
               properties = {}
             },
@@ -1552,12 +1794,12 @@ return {
               name = "sprintbutton",
               type = "",
               shape = "rectangle",
-              x = 136,
-              y = 242,
-              width = 16,
-              height = 16,
+              x = 144,
+              y = 216,
+              width = 14,
+              height = 14,
               rotation = 0,
-              gid = 311,
+              gid = 429,
               visible = true,
               properties = {}
             },
@@ -1566,12 +1808,12 @@ return {
               name = "sprintbuttondown",
               type = "",
               shape = "rectangle",
-              x = 136,
-              y = 242,
-              width = 16,
-              height = 16,
+              x = 144,
+              y = 216,
+              width = 14,
+              height = 14,
               rotation = 0,
-              gid = 312,
+              gid = 430,
               visible = true,
               properties = {}
             },
@@ -1598,7 +1840,7 @@ return {
               type = "",
               shape = "text",
               x = 144,
-              y = 243,
+              y = 225,
               width = 64,
               height = 18,
               rotation = 0,
@@ -1610,12 +1852,29 @@ return {
               properties = {}
             },
             {
+              id = 143,
+              name = "Jump",
+              type = "",
+              shape = "text",
+              x = 160,
+              y = 243,
+              width = 64,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "JUMP",
+              fontfamily = "TinyUnicode",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
               id = 65,
               name = "Sprint",
               type = "",
               shape = "text",
               x = 160,
-              y = 225,
+              y = 207,
               width = 64,
               height = 18,
               rotation = 0,
@@ -1630,9 +1889,196 @@ return {
         },
         {
           type = "objectgroup",
+          draworder = "index",
+          id = 6,
+          name = "pausemenu",
+          class = "Gui.Menu",
+          visible = false,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["backaction"] = "unpauseGame"
+          },
+          objects = {
+            {
+              id = 76,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 136,
+              y = 85.5,
+              width = 208,
+              height = 144,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#80c52021",
+                ["linecolor"] = "#ffff6161",
+                ["roundcorners"] = 8
+              }
+            },
+            {
+              id = 8,
+              name = "name",
+              type = "",
+              shape = "text",
+              x = 192,
+              y = 54,
+              width = 96,
+              height = 18,
+              rotation = 0,
+              visible = false,
+              text = "PAUSE",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {}
+            },
+            {
+              id = 72,
+              name = "Options",
+              type = "Gui.Button",
+              shape = "text",
+              x = 184,
+              y = 121.5,
+              width = 64,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Options",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["action"] = "openMenu",
+                ["guipath"] = "options.simple"
+              }
+            },
+            {
+              id = 116,
+              name = "Resume",
+              type = "Gui.Button",
+              shape = "text",
+              x = 184,
+              y = 94.5,
+              width = 64,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Resume",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["action"] = "unpauseGame"
+              }
+            },
+            {
+              id = 73,
+              name = "Restart checkpoint",
+              type = "Gui.Button",
+              shape = "text",
+              x = 184,
+              y = 148.5,
+              width = 144,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Restart checkpoint",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["action"] = "restartStageCheckpoint"
+              }
+            },
+            {
+              id = 93,
+              name = "Restart stage",
+              type = "Gui.Button",
+              shape = "text",
+              x = 184,
+              y = 175.5,
+              width = 144,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Restart stage",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["action"] = "restartStage"
+              }
+            },
+            {
+              id = 75,
+              name = "Quit",
+              type = "Gui.Button",
+              shape = "text",
+              x = 184,
+              y = 202.5,
+              width = 144,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Quit",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["action"] = "quit"
+              }
+            },
+            {
+              id = 86,
+              name = "Debug",
+              type = "Gui.Button",
+              shape = "text",
+              x = 184,
+              y = 229.5,
+              width = 64,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Debug",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["action"] = "openMenu",
+                ["guipath"] = "gameplay.debugmenu"
+              }
+            },
+            {
+              id = 74,
+              name = "",
+              type = "Gui.Cursor",
+              shape = "rectangle",
+              x = 152,
+              y = 103.5,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 409,
+              visible = true,
+              properties = {
+                ["alignx"] = -1,
+                ["aligny"] = 0,
+                ["asetag"] = "Spit0"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
           draworder = "topdown",
-          id = 11,
-          name = "gameover",
+          id = 15,
+          name = "debugmenu",
           class = "Gui.Menu",
           visible = true,
           opacity = 1,
@@ -1641,19 +2087,314 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["actionsmodule"] = "Dragontail.GuiActions",
-            ["backaction"] = ""
+            ["backaction"] = "closeMenu"
           },
+          objects = {
+            {
+              id = 82,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 112,
+              y = 36,
+              width = 256,
+              height = 198,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#ffc52021",
+                ["linecolor"] = "#ffff6161",
+                ["roundcorners"] = 8
+              }
+            },
+            {
+              id = 83,
+              name = "name",
+              type = "",
+              shape = "text",
+              x = 192,
+              y = 9,
+              width = 96,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "DEBUG",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {}
+            },
+            {
+              id = 85,
+              name = "Show hitboxes",
+              type = "",
+              shape = "text",
+              x = 128,
+              y = 108,
+              width = 176,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Show hitboxes",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 147,
+              name = "Show input",
+              type = "",
+              shape = "text",
+              x = 128,
+              y = 90,
+              width = 176,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Show input",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 141,
+              name = "Smooth movement",
+              type = "",
+              shape = "text",
+              x = 128,
+              y = 72,
+              width = 176,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Smooth movement",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 91,
+              name = "Game speed",
+              type = "",
+              shape = "text",
+              x = 128,
+              y = 126,
+              width = 168,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Game speed",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 140,
+              name = "/60",
+              type = "",
+              shape = "text",
+              x = 328,
+              y = 126,
+              width = 24,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "/60",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 89,
+              name = "Refill player",
+              type = "Gui.Button",
+              shape = "text",
+              x = 128,
+              y = 54,
+              width = 224,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Refill player",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["action"] = "refillPlayers"
+              }
+            },
+            {
+              id = 84,
+              name = "drawbodies",
+              type = "Gui.Slider",
+              shape = "text",
+              x = 128,
+              y = 108,
+              width = 224,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "OFF",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "right",
+              properties = {
+                ["configkey"] = "drawbodies",
+                ["increment"] = 1,
+                ["label"] = { id = 85 },
+                ["max"] = 10,
+                ["min"] = 0,
+                ["refreshaction"] = "",
+                ["units"] = "none"
+              }
+            },
+            {
+              id = 146,
+              name = "drawinput",
+              type = "Gui.Slider",
+              shape = "text",
+              x = 128,
+              y = 90,
+              width = 224,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "OFF",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "right",
+              properties = {
+                ["configkey"] = "drawinput",
+                ["increment"] = 1,
+                ["label"] = { id = 147 },
+                ["max"] = 10,
+                ["min"] = 0,
+                ["refreshaction"] = "",
+                ["units"] = "none"
+              }
+            },
+            {
+              id = 142,
+              name = "variableupdate",
+              type = "Gui.Slider",
+              shape = "text",
+              x = 128,
+              y = 72,
+              width = 224,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "OFF",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "right",
+              properties = {
+                ["configkey"] = "variableupdate",
+                ["increment"] = 1,
+                ["label"] = { id = 141 },
+                ["max"] = 10,
+                ["min"] = 0,
+                ["refreshaction"] = "",
+                ["units"] = "none"
+              }
+            },
+            {
+              id = 90,
+              name = "fixedupdaterate",
+              type = "Gui.Slider",
+              shape = "text",
+              x = 128,
+              y = 126,
+              width = 200,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "60",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "right",
+              properties = {
+                ["configkey"] = "fixedupdaterate",
+                ["increment"] = 5,
+                ["label"] = { id = 91 },
+                ["max"] = 100,
+                ["min"] = 10,
+                ["refreshaction"] = "",
+                ["units"] = "none"
+              }
+            },
+            {
+              id = 87,
+              name = "Close menu",
+              type = "Gui.Button",
+              shape = "text",
+              x = 128,
+              y = 198,
+              width = 64,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Close",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["action"] = "closeMenu"
+              }
+            },
+            {
+              id = 88,
+              name = "",
+              type = "Gui.Cursor",
+              shape = "rectangle",
+              x = 100,
+              y = 63,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 409,
+              visible = true,
+              properties = {
+                ["alignx"] = -1,
+                ["aligny"] = 0,
+                ["asetag"] = "Spit0"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 11,
+          name = "gameover",
+          class = "Gui.Menu",
+          visible = false,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
           objects = {
             {
               id = 77,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 184,
-              y = 99,
-              width = 112,
-              height = 72,
+              x = 136,
+              y = 90,
+              width = 208,
+              height = 90,
               rotation = 0,
               visible = true,
               properties = {
@@ -1664,24 +2405,40 @@ return {
             },
             {
               id = 79,
-              name = "Restart",
+              name = "Restart checkpoint",
               type = "Gui.Button",
               shape = "text",
-              x = 232,
-              y = 112.5,
-              width = 64,
+              x = 184,
+              y = 99,
+              width = 144,
               height = 18,
               rotation = 0,
               visible = true,
-              text = "Restart",
+              text = "Restart checkpoint",
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {
-                ["action"] = "restartStage",
-                ["actionsmodule"] = "Dragontail.GuiActions",
-                ["disabled"] = false,
-                ["label"] = { id = 0 }
+                ["action"] = "restartStageCheckpoint"
+              }
+            },
+            {
+              id = 92,
+              name = "Restart stage",
+              type = "Gui.Button",
+              shape = "text",
+              x = 184,
+              y = 126,
+              width = 144,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Restart stage",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["action"] = "restartStage"
               }
             },
             {
@@ -1689,8 +2446,8 @@ return {
               name = "Quit",
               type = "Gui.Button",
               shape = "text",
-              x = 232,
-              y = 139.5,
+              x = 184,
+              y = 153,
               width = 64,
               height = 18,
               rotation = 0,
@@ -1700,10 +2457,7 @@ return {
               wrap = true,
               color = { 255, 255, 255 },
               properties = {
-                ["action"] = "quit",
-                ["actionsmodule"] = "Dragontail.GuiActions",
-                ["disabled"] = false,
-                ["label"] = { id = 0 }
+                ["action"] = "quit"
               }
             },
             {
@@ -1711,8 +2465,8 @@ return {
               name = "",
               type = "Gui.Cursor",
               shape = "rectangle",
-              x = 200,
-              y = 121.5,
+              x = 152,
+              y = 108,
               width = 64,
               height = 64,
               rotation = 0,
@@ -1720,7 +2474,8 @@ return {
               visible = true,
               properties = {
                 ["alignx"] = -1,
-                ["aligny"] = 0
+                ["aligny"] = 0,
+                ["asetag"] = "Spit0"
               }
             }
           }
@@ -1728,10 +2483,9 @@ return {
       }
     },
     {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 7,
-      name = "title",
+      type = "group",
+      id = 17,
+      name = "titlescreen",
       class = "",
       visible = false,
       opacity = 1,
@@ -1740,66 +2494,491 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {
+      layers = {
         {
-          id = 9,
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 7,
           name = "title",
-          type = "",
-          shape = "text",
-          x = 0,
-          y = 18,
-          width = 480,
-          height = 144,
-          rotation = 0,
+          class = "",
           visible = true,
-          text = "ROSE of\nDRAGONTAIL",
-          fontfamily = "Lady Radical",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 0, 0 },
-          halign = "center",
-          valign = "center",
-          properties = {}
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 10,
+              name = "pressstart",
+              type = "",
+              shape = "text",
+              x = 0,
+              y = 175.5,
+              width = 480,
+              height = 54,
+              rotation = 0,
+              visible = true,
+              text = "PRESS ANY KEY OR BUTTON",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              valign = "center",
+              properties = {}
+            },
+            {
+              id = 11,
+              name = "copyright",
+              type = "",
+              shape = "text",
+              x = 0,
+              y = 234,
+              width = 480,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "© 2026 Iori Branford",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              valign = "center",
+              properties = {}
+            },
+            {
+              id = 101,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 0,
+              y = 0,
+              width = 480,
+              height = 270,
+              rotation = 0,
+              gid = 414,
+              visible = true,
+              properties = {
+                ["asetag"] = "Flaming"
+              }
+            }
+          }
         },
         {
-          id = 10,
-          name = "pressstart",
-          type = "",
-          shape = "text",
-          x = 0,
-          y = 162,
-          width = 480,
-          height = 54,
-          rotation = 0,
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 18,
+          name = "menu",
+          class = "Gui.Menu",
           visible = true,
-          text = "press any key or button",
-          fontfamily = "Lady Radical",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {}
-        },
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 102,
+              name = "START",
+              type = "Gui.Button",
+              shape = "text",
+              x = 228,
+              y = 175.5,
+              width = 64,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "START",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["action"] = "restartStage"
+              }
+            },
+            {
+              id = 104,
+              name = "OPTIONS",
+              type = "Gui.Button",
+              shape = "text",
+              x = 228,
+              y = 193.5,
+              width = 64,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "OPTIONS",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["action"] = "openMenu",
+                ["guipath"] = "options.root"
+              }
+            },
+            {
+              id = 105,
+              name = "QUIT",
+              type = "Gui.Button",
+              shape = "text",
+              x = 228,
+              y = 211.5,
+              width = 64,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "QUIT",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["action"] = "quit"
+              }
+            },
+            {
+              id = 103,
+              name = "",
+              type = "Gui.Cursor",
+              shape = "rectangle",
+              x = 196,
+              y = 184.5,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 409,
+              visible = true,
+              properties = {
+                ["alignx"] = -1,
+                ["aligny"] = 0,
+                ["asetag"] = "Spit0"
+              }
+            },
+            {
+              id = 106,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 176,
+              y = 171,
+              width = 128,
+              height = 63,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#80c52021",
+                ["linecolor"] = "#ffff6161",
+                ["roundcorners"] = 8
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      type = "group",
+      id = 20,
+      name = "options",
+      class = "",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      layers = {
         {
-          id = 11,
-          name = "copyright",
-          type = "",
-          shape = "text",
-          x = 0,
-          y = 234,
-          width = 480,
-          height = 18,
-          rotation = 0,
+          type = "objectgroup",
+          draworder = "index",
+          id = 19,
+          name = "simple",
+          class = "Gui.Menu",
           visible = true,
-          text = "© 2024 Iori Branford",
-          fontfamily = "Press Start 2P",
-          pixelsize = 8,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {}
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["backaction"] = "closeMenu"
+          },
+          objects = {
+            {
+              id = 107,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 120,
+              y = 36,
+              width = 240,
+              height = 198,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#ffc52021",
+                ["linecolor"] = "#ffff6161",
+                ["roundcorners"] = 8
+              }
+            },
+            {
+              id = 109,
+              name = "",
+              type = "Gui.Cursor",
+              shape = "rectangle",
+              x = 132,
+              y = 63,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 409,
+              visible = true,
+              properties = {
+                ["alignx"] = -1,
+                ["aligny"] = 0,
+                ["asetag"] = "Spit0"
+              }
+            },
+            {
+              id = 108,
+              name = "Close",
+              type = "Gui.Button",
+              shape = "text",
+              x = 168,
+              y = 198,
+              width = 64,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Close",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["action"] = "closeMenu"
+              }
+            },
+            {
+              id = 110,
+              name = "fullscreen",
+              type = "Gui.Slider",
+              shape = "text",
+              x = 168,
+              y = 54,
+              width = 176,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "OFF",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "right",
+              properties = {
+                ["configkey"] = "fullscreen",
+                ["increment"] = 1,
+                ["label"] = { id = 111 },
+                ["max"] = 10,
+                ["min"] = 0,
+                ["refreshaction"] = "refreshFullscreen",
+                ["units"] = "none"
+              }
+            },
+            {
+              id = 139,
+              name = "vsync",
+              type = "Gui.Slider",
+              shape = "text",
+              x = 168,
+              y = 81,
+              width = 176,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "OFF",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "right",
+              properties = {
+                ["configkey"] = "vsync",
+                ["increment"] = 1,
+                ["label"] = { id = 138 },
+                ["max"] = 10,
+                ["min"] = 0,
+                ["refreshaction"] = "refreshVsync",
+                ["units"] = "none"
+              }
+            },
+            {
+              id = 112,
+              name = "soundvolume",
+              type = "Gui.Slider",
+              shape = "text",
+              x = 168,
+              y = 108,
+              width = 176,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "100",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "right",
+              properties = {
+                ["configkey"] = "soundvolume",
+                ["increment"] = 0.125,
+                ["label"] = { id = 113 },
+                ["max"] = 1,
+                ["min"] = 0,
+                ["refreshaction"] = "",
+                ["units"] = "percent"
+              }
+            },
+            {
+              id = 114,
+              name = "musicvolume",
+              type = "Gui.Slider",
+              shape = "text",
+              x = 168,
+              y = 135,
+              width = 176,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "100",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "right",
+              properties = {
+                ["configkey"] = "musicvolume",
+                ["increment"] = 0.125,
+                ["label"] = { id = 115 },
+                ["max"] = 1,
+                ["min"] = 0,
+                ["refreshaction"] = "refreshMusicVolume",
+                ["units"] = "percent"
+              }
+            },
+            {
+              id = 118,
+              name = "soundtrack",
+              type = "Gui.Slider",
+              shape = "text",
+              x = 168,
+              y = 162,
+              width = 176,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Retro Chiptune Guitar",
+              fontfamily = "TinyUnicode",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "right",
+              properties = {
+                ["configkey"] = "soundtrack",
+                ["increment"] = 1,
+                ["label"] = { id = 117 },
+                ["max"] = 2,
+                ["min"] = 1,
+                ["refreshaction"] = "playSelectedMusic",
+                ["units"] = "percent",
+                ["valuestrings"] = {
+                  "Surf Shimmy",
+                  "Retro Chiptune Guitar"
+                }
+              }
+            },
+            {
+              id = 111,
+              name = "Full screen",
+              type = "",
+              shape = "text",
+              x = 168,
+              y = 54,
+              width = 144,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Full screen",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 138,
+              name = "Vsync",
+              type = "",
+              shape = "text",
+              x = 168,
+              y = 81,
+              width = 144,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Vsync",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 113,
+              name = "Sound volume",
+              type = "",
+              shape = "text",
+              x = 168,
+              y = 108,
+              width = 144,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Sound volume",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 115,
+              name = "Music volume",
+              type = "",
+              shape = "text",
+              x = 168,
+              y = 135,
+              width = 144,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Music volume",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 117,
+              name = "Music",
+              type = "",
+              shape = "text",
+              x = 168,
+              y = 162,
+              width = 144,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Music",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            }
+          }
         }
       }
     },

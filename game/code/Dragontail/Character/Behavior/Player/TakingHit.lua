@@ -23,7 +23,7 @@ function PlayerTakingHit:timeout()
             if inx ~= 0 or iny ~= 0 then
                 Face.faceAngle(self, math.atan2(iny, inx))
             end
-            nextstate = "run"
+            nextstate, a, b = "run", nil, true
         end
     end
     return nextstate, a, b, c, d, e

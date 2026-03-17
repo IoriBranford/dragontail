@@ -1,14 +1,14 @@
 local Behavior = require "Dragontail.Character.Behavior"
-local Guard    = require "Dragontail.Character.Action.Guard"
-local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
+local Guard    = require "Dragontail.Character.Component.Guard"
+local HoldOpponent = require "Dragontail.Character.Component.HoldOpponent"
 local Audio        = require "System.Audio"
 local Body         = require "Dragontail.Character.Component.Body"
-local Slide        = require "Dragontail.Character.Action.Slide"
+local Slide        = require "Dragontail.Character.Component.Slide"
 
 ---@class TakingHit:Behavior
 ---@field character Fighter
 local TakingHit = pooledclass(Behavior)
-TakingHit._nrec = Behavior._nrec + 4
+TakingHit._nrec = Behavior._nrec + 5
 
 ---@param hit AttackHit
 function TakingHit:start(hit)
@@ -25,14 +25,15 @@ function TakingHit:start(hit)
     fighter.hurtcolorcycle = attack.hurtcolorcycle
     fighter:makeImpactSpark(attacker, attack.hitspark)
     fighter.health = fighter.health - (attack.damage or 0)
+    fighter.invulntime = attack.mercyinvuln
     fighter.velx, fighter.vely = 0, 0
-    fighter:stopAttack()
+    fighter:stopAttack() ; fighter:unassignSelfAsAttacker()
     Guard.stopGuarding(fighter)
     HoldOpponent.stopHolding(fighter, fighter.heldopponent)
 
     local pushbackspeed = attack.pushbackspeed or 0
     if pushbackspeed == "attackerspeed" then
-        pushbackspeed = math.floor(math.len(attacker.velx, attacker.vely))
+        pushbackspeed = math.ceil(math.len(attacker.velx, attacker.vely))
     end
     fighter.hurtstun = (attack.opponentstun or 3) - math.abs(pushbackspeed)
 
@@ -51,13 +52,18 @@ function TakingHit:start(hit)
     self.attacker = attacker
     self.attack = attack
     self.attackangle = attackangle
-    self.pushbackspeed = pushbackspeed
+    self.pushbackspeed = Slide.updateSlideSpeed(fighter, attackangle, pushbackspeed)
+    if fighter.floorz and fighter.z > fighter.floorz then
+        fighter.velz = 0
+        self.inair = true
+    end
 end
 
 function TakingHit:fixedupdate()
     local fighter = self.character
     local attacker, attack = self.attacker, self.attack
     local attackangle = self.attackangle
+    fighter:dropWeaponInHand()
 
     local defeateffect = attack.opponentstateonfinalhit
     local hiteffect = attack.opponentstateonhit
@@ -76,14 +82,18 @@ function TakingHit:fixedupdate()
         fighter.heldby = nil
     end
 
-    Body.keepInBounds(fighter)
     fighter:duringHurt()
 
     local pushbackspeed = self.pushbackspeed
-    if pushbackspeed <= 0 then
-        return self:timeout()
+    if fighter.z <= fighter.floorz then
+        if pushbackspeed <= 0 then
+            return self:timeout()
+        end
+        self.pushbackspeed = Slide.updateSlideSpeed(fighter, attackangle, pushbackspeed)
+        if self.inair then
+            fighter:changeAnimation("FallRiseFromKnees", 1, 0)
+        end
     end
-    self.pushbackspeed = Slide.updateSlideSpeed(fighter, attackangle, pushbackspeed)
 end
 
 function TakingHit:timeout()

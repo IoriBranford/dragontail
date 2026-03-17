@@ -1,8 +1,11 @@
 local Face       = require "Dragontail.Character.Component.Face"
 local Mana                 = require "Dragontail.Character.Component.Mana"
-local HoldOpponent = require "Dragontail.Character.Action.HoldOpponent"
+local HoldOpponent = require "Dragontail.Character.Component.HoldOpponent"
 local Audio    = require "System.Audio"
 local Behavior = require "Dragontail.Character.Behavior"
+local Player   = require "Dragontail.Character.Player"
+local Attacker   = require "Dragontail.Character.Component.Attacker"
+local Combo      = require "Dragontail.Character.Component.Combo"
 
 ---@class PlayerFighting:Behavior
 ---@field character Player
@@ -11,83 +14,85 @@ local PlayerFighting = pooledclass(Behavior)
 function PlayerFighting:start()
     local player = self.character
     player.facedestangle = player.faceangle
-    player.joysticklog:clear()
 end
 
-local ChargeAttacks = {
-    "fireball-storm", "spit-multi-fireball", "spit-fireball"
-}
-
-local GroundNextStates = {
-    catchProjectile = "catchProjectile",
-    toggleFlying = "flyStart",
-    run = "run",
-    hold = "hold",
-    throwWeapon = "throwWeapon",
-    ["fireball-storm"] = "fireball-storm",
-    ["spit-multi-fireball"] = "spit-multi-fireball",
-    ["spit-fireball"] = "spit-fireball",
-}
-
-local AirNextStates = {
-    catchProjectile = "air-catchProjectile",
-    toggleFlying = "flyEnd",
-    run = "air-run",
-    hold = "air-hold",
-    throwWeapon = "air-throwWeapon",
-    ["fireball-storm"] = "air-fireball-storm",
-    ["spit-multi-fireball"] = "air-spit-multi-fireball",
-    ["spit-fireball"] = "air-spit-fireball",
-}
+local ChargeAttackStates = Player.ChargeAttackStates
 
 function PlayerFighting:fixedupdate()
     local player = self.character
     local inair = player.gravity == 0
-    local nextstates = inair and AirNextStates or GroundNextStates
 
     local inx, iny = player:getJoystick()
-    player.joysticklog:put(inx, iny)
-    player:turnTowardsJoystick("Walk", "Stand")
-    player:accelerateTowardsJoystick()
 
     local caughtprojectile = player:catchProjectileAtJoystick()
     if caughtprojectile then
-        return nextstates.catchProjectile, caughtprojectile
+        return "catchProjectile", caughtprojectile
     end
 
-    if player.canfly and player.flybutton.pressed then
-        return nextstates.toggleFlying
-    end
-
-    if player.sprintbutton.pressed then
+    if player:consumeActionDownAndRecentlyPressed("sprint") then
         Face.faceVector(player, inx, iny)
-        return nextstates.run
+        return "run", nil, true
     end
 
-    local chargedattack = not player.attackbutton.down and player:getChargedAttack(ChargeAttacks)
+    local chargedattack, attackangle
+    chargedattack, attackangle = player:getActivatedChargeAttackTowardsJoystick()
     if chargedattack then
         Mana.releaseCharge(player)
-        return nextstates[chargedattack], player.facedestangle
+        return chargedattack, attackangle
     end
 
-    if player.attackbutton.pressed then
-        local attackangle = player.facedestangle
+    attackangle = inx == 0 and iny == 0
+        and player.facedestangle or math.atan2(iny, inx)
+
+    local targets
+    if player.weaponinhand then
+        targets = player:updateEnemyTargetingScores(attackangle)
+    end
+
+    if player:consumeActionRecentlyPressed("attack") then
         if player.weaponinhand then
-            attackangle = player:getAngleToBestTarget(attackangle) or attackangle
+            local target = targets and targets[1]
+            if target then
+                local totargetx = target.x - player.x
+                local totargety = target.y - player.y
+                if totargetx ~= 0 or totargety ~= 0 then
+                    attackangle = math.atan2(totargety, totargetx)
+                end
+            end
         end
         player.faceangle = attackangle
         player.facedestangle = attackangle
         if player.weaponinhand then
-            return nextstates.throwWeapon, player.facedestangle, 1, 1
+            return "throwWeapon", attackangle, 1
         end
-        return player:doComboAttack(player.facedestangle, nil, inx ~= 0 or iny ~= 0, inair)
+        return player:doComboAttack(attackangle, nil, inx ~= 0 or iny ~= 0, inair)
     end
 
     local opponenttohold = HoldOpponent.findOpponentToHold(player, inx, iny)
     if opponenttohold then
-        Audio.play(player.holdsound)
-        return nextstates.hold, opponenttohold
+        Combo.reset(player)
+        return "grab", opponenttohold
     end
+
+    player:accelerateTowardsJoystick()
+    player:turnTowardsJoystick("Walk", "Stand")
+
+    if player:consumeActionDownAndRecentlyPressed("fly") then
+        if inair then
+            return "flyEnd"
+        end
+        return "jump", true
+    end
+
+    Attacker.updateCrosshairTargetObject(player, 1, targets and targets[1])
+end
+
+function PlayerFighting:interrupt(...)
+    local player = self.character
+    for i = 1, #player.crosshairs do
+        Attacker.updateCrosshairTargetObject(player, i)
+    end
+    return ...
 end
 
 return PlayerFighting

@@ -5,6 +5,8 @@ local Characters = require "Dragontail.Stage.Characters"
 local Stage      = require "Dragontail.Stage"
 local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
 local Face                 = require "Dragontail.Character.Component.Face"
+local Attacker             = require "Dragontail.Character.Component.Attacker"
+local Body                 = require "Dragontail.Character.Component.Body"
 
 --- Attacks:
 --- - Lance charge
@@ -27,14 +29,73 @@ local yield = coroutine.yield
 local GetUpAttackHealthPercent = 15/16
 local OneSwitchAttackHealthPercent = .5
 local TwoSwitchAttackHealthPercent = .0
-local FirstSummonHealthPercent = .6
-local SecondSummonHealthPercent = .3
+local SummonHealthPercents = {.9, .8, .7, .6, .5, .3}
+local AllowedAttackSwitches = {
+    ["bandit-boss-charge"] = {
+        ["bandit-boss-swat-projectile-cw"] = true,
+        ["bandit-boss-swat-projectile-ccw"] = true,
+        ["bandit-boss-spin-cw"] = true,
+        ["bandit-boss-spin-ccw"] = true,
+        ["bandit-boss-poke"] = true,
+        ["bandit-boss-jump-for-spin-cw"] = true,
+        ["bandit-boss-jump-for-spin-ccw"] = true,
+    },
+    ["bandit-boss-charge2"] = {
+        ["bandit-boss-swat-projectile-cw"] = true,
+        ["bandit-boss-swat-projectile-ccw"] = true,
+        ["bandit-boss-spin-cw"] = true,
+        ["bandit-boss-spin-ccw"] = true,
+        ["bandit-boss-jump-for-spin-cw"] = true,
+        ["bandit-boss-jump-for-spin-ccw"] = true,
+    }
+}
+
+function BanditBoss:considerDeflectingProjectile()
+    local x, y = self.x, self.y
+    local radius = self.bodyradius
+    local function isIncoming(projectile)
+        if not Attacker.isAttacking(projectile) then
+            return
+        end
+        local pvelx, pvely = projectile.velx, projectile.vely
+        local pspeed = math.len(pvelx, pvely)
+        local frompx, frompy = x - projectile.x, y - projectile.y
+        local radii = radius + projectile.bodyradius
+
+        local detDV = math.det(frompx, frompy, pvelx, pvely)
+        if math.abs(detDV) > radii*pspeed then return end
+
+        local dotDV = math.dot(frompx, frompy, pvelx, pvely)
+        if dotDV > 200*pspeed then return end
+
+        return projectile
+    end
+    local function isThrownIncoming(thrown)
+        return thrown.thrower and thrown.thrower.team == "players" and isIncoming(thrown)
+    end
+
+    local incoming = Characters.search("projectiles", isIncoming)
+        or Characters.search("enemies", isThrownIncoming)
+
+    if incoming then
+        local pdistx, pdisty = incoming.x - self.x, incoming.y - self.y
+        local facex, facey = math.cos(self.faceangle), math.sin(self.faceangle)
+        local turndir = math.det(facex, facey, pdistx, pdisty)
+        local attack = turndir < 0 and "bandit-boss-swat-projectile-ccw"
+            or "bandit-boss-swat-projectile-cw"
+        return attack, incoming
+    end
+end
 
 function BanditBoss:getBestAttack(opponent)
+    local deflectattack, projectile = self:considerDeflectingProjectile()
+    if deflectattack then
+        return deflectattack, projectile
+    end
     local targetx, targety = opponent.x, opponent.y
     local distx, disty = targetx - self.x, targety - self.y
     local facex, facey = math.cos(self.faceangle), math.sin(self.faceangle)
-    local isoppobehind = math.dot(facex, facey, distx, disty) <= 0
+    local isoppoahead = math.dot(facex, facey, distx, disty) > 0
     local isoppocoming = math.dot(opponent.velx, opponent.vely, distx, disty) < 0
     local dsq = math.lensq(distx, disty)
     if dsq <= 128*128 then
@@ -42,11 +103,17 @@ function BanditBoss:getBestAttack(opponent)
         if self.state.state == "fall" or self.state.state == "getup" then
             return turndir < 0 and "bandit-boss-getup-spin-ccw" or "bandit-boss-getup-spin-cw"
         end
-        if isoppobehind or not isoppocoming then
-            return turndir < 0 and "bandit-boss-spin-ccw" or "bandit-boss-spin-cw"
-        else
-            return "bandit-boss-poke"
+        local oppoinair = opponent.z > opponent.floorz
+        if isoppocoming and isoppoahead then
+            if not oppoinair then
+                return "bandit-boss-poke"
+            end
         end
+        local opporising = opponent.velz > 0
+        if opporising then
+            return turndir < 0 and "bandit-boss-jump-for-spin-ccw" or "bandit-boss-jump-for-spin-cw"
+        end
+        return turndir < 0 and "bandit-boss-spin-ccw" or "bandit-boss-spin-cw"
     end
     return "bandit-boss-charge"
 end
@@ -55,6 +122,10 @@ function BanditBoss:decideNextAttack()
     local opponent = self.opponents[1]
     local attacktype = self:getBestAttack(opponent)
     return attacktype
+end
+
+function BanditBoss:duringStand()
+    return self:considerDeflectingProjectile()
 end
 
 function BanditBoss:afterStand()
@@ -70,28 +141,38 @@ function BanditBoss:afterStand()
 end
 
 function BanditBoss:duringApproach(opponent)
+    local deflectattack, projectile = self:considerDeflectingProjectile()
+    if deflectattack then
+        return deflectattack, projectile
+    end
     local bestattack = self:getBestAttack(opponent)
     if bestattack ~= "bandit-boss-charge" then
-        if self:couldAttackOpponent(opponent, bestattack) then
+        if self:canDoToTarget(opponent, bestattack) then
             return bestattack
         end
     end
 end
 
 function BanditBoss:getAttackSwitch(target)
-    if target and target.canbeattacked then
-        local switchesleft = self.attackswitchesleft or 0
-        local newattack = switchesleft > 0 and self:getBestAttack(target) or self.attacktype
-        if newattack ~= self.attacktype then
-            self.attackswitchesleft = switchesleft - 1
-            self:stopAttack()
-            return newattack
-        end
+    if not target or not target.canbeattacked then return end
+
+    local switchesleft = self.attackswitchesleft or 0
+    if switchesleft <= 0 then return end
+
+    local allowedswitchattacks = AllowedAttackSwitches[self.state.state]
+    if not allowedswitchattacks then return end
+
+    local newattack = self:getBestAttack(target)
+    if allowedswitchattacks[newattack] then
+        self.attackswitchesleft = switchesleft - 1
+        self:stopAttack() ; self:unassignSelfAsAttacker()
+        Face.faceObject(self, target)
+        return newattack
     end
 end
 
 function BanditBoss:duringPrepareAttack(target)
-    self:accelerateTowardsVel(0, 0, 4)
+    self:decelerateXYto0()
     Face.turnTowardsObject(self, target, self.faceturnspeed or 0,
         self.state.animation, self.state.frame1, self.state.loopframe)
     return self:getAttackSwitch(target)
@@ -106,25 +187,30 @@ function BanditBoss:duringAttackSwing(target)
     return self:getAttackSwitch(target)
 end
 
-function BanditBoss:beforeGetUp(attacker)
-    local healthpct = self.health/self.maxhealth
-    local numsummons = self.numsummons or 0
-    if healthpct <= FirstSummonHealthPercent and numsummons < 1
-    or healthpct <= SecondSummonHealthPercent and numsummons < 2 then
-        Stage.openNextRoomIfNotLast()
-        self.numsummons = numsummons + 1
+function BanditBoss:onHitByAttack(hit)
+    if not hit.guarded then
+        local newhealth = self.health - hit.attack.damage
+        local healthpct = newhealth/self.maxhealth
+        local nextsummon = self.nextsummon or 1
+        local summonhealthpct = SummonHealthPercents[nextsummon] or math.huge
+        if healthpct <= summonhealthpct then
+            Stage.openNextRoomIfNotLast()
+            self.nextsummon = nextsummon + 1
+        end
     end
+    Enemy.onHitByAttack(self, hit)
 end
 
-function BanditBoss:duringGetUp(attacker)
+function BanditBoss:duringGetUp()
     if self.health/self.maxhealth <= GetUpAttackHealthPercent then
-        local attack = self:getBestAttack(attacker) or ""
+        local attack = self:getBestAttack(self.opponents[1]) or ""
         if attack:find("^bandit%-boss%-getup%-spin") then
-            Face.faceObject(self, attacker)
+            Face.faceObject(self, self.opponents[1])
             self.attackswitchesleft = 0
             return attack
         end
     end
+    return Enemy.duringGetUp(self)
 end
 
 function BanditBoss:defeat(attacker)

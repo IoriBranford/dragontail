@@ -7,7 +7,8 @@ local Movement    = require "Component.Movement"
 local Attacker      = require "Dragontail.Character.Component.Attacker"
 local Body        = require "Dragontail.Character.Component.Body"
 local Shadow      = require "Dragontail.Character.Component.Shadow"
-local Guard       = require "Dragontail.Character.Action.Guard"
+local Guard       = require "Dragontail.Character.Component.Guard"
+local Jiggler     = require "Dragontail.Character.Component.Jiggler"
 local Characters
 
 local pi = math.pi
@@ -17,7 +18,6 @@ local cos = math.cos
 local sin = math.sin
 local asin = math.asin
 local lensq = math.lensq
-local dot = math.dot
 local min = math.min
 local max = math.max
 local testcircles = math.testcircles
@@ -25,15 +25,32 @@ local testcircles = math.testcircles
 ---@class DropAfterimage
 ---@field afterimageinterval integer?
 
----@class Character:AsepriteObject,DropAfterimage,Body,Attacker,Victim,Guard,Shadow
+---@class Character:DirectionalAnimation,DropAfterimage,Body,Attacker,AttackTarget,Guard,Shadow
 ---@field initialai string
 ---@field camera Camera
 ---@field opponents Character[]
 ---@field shadowcolor Color?
 ---@field animationdirections integer?
 ---@field emote Character?
+---@field spawnsmanually boolean
+---@overload fun(type:string?, x:number?, y:number?, z:number?):Character
 local Character = class(Object)
-Character.attack = {}
+Character.attack = {
+    damage = 1
+}
+
+---@param typ string?
+---@param x number?
+---@param y number?
+---@param z number?
+function Character:_init(typ, x, y, z)
+    if typ then self.type = typ
+    else typ = self.type end
+    if x then self.x = x end
+    if y then self.y = y end
+    if z then self.z = z end
+    Object._init(self)
+end
 
 function Character:init()
     Characters = Characters or require "Dragontail.Stage.Characters"
@@ -45,6 +62,7 @@ function Character:init()
 
     Body.init(self)
     StateMachine.init(self)
+    Attacker.init(self)
 
     self.drawz = self.drawz or 0
     -- ch.attackangle = ch.attackangle or 0
@@ -70,12 +88,64 @@ function Character:draw(fixedfrac)
     Shadow.drawSprite(self, fixedfrac)
     love.graphics.push()
     love.graphics.translate(0, -self.z - self.velz*fixedfrac)
+
+    Guard.draw(self, -1, fixedfrac)
+    local Stage = require "Dragontail.Stage"
+    Stage.setUniform("texRgbFactor", self.texturealpha or 1)
     self:baseDraw(fixedfrac)
+    Guard.draw(self, 1, fixedfrac)
     love.graphics.pop()
     if Config.drawbodies then
         Body.draw(self, fixedfrac)
         Attacker.drawCircle(self, fixedfrac)
-        Guard.draw(self, fixedfrac)
+    end
+end
+
+function Character:debugDrawOffScreenPosition()
+    local camera = self.camera
+    local x, y, z = self.x, self.y, self.z
+    local screeny = y - z
+    local camerascreeny = camera.y - camera.z - camera.bodyheight/2
+
+    local x1, y1 = x, screeny
+    local dirx, diry = 0, 0
+    if x < camera.x then
+        x1 = camera.x
+        dirx = -1
+    elseif x > camera.x + camera.width then
+        x1 = camera.x + camera.width
+        dirx = 1
+    end
+    if screeny < camerascreeny then
+        diry = -1
+        y1 = camerascreeny
+    elseif screeny > camerascreeny + camera.height then
+        diry = 1
+        y1 = camerascreeny + camera.height
+    end
+    if dirx == 0 and diry == 0 then return end
+
+    love.graphics.push()
+    love.graphics.translate(x1, y1)
+    love.graphics.push()
+    love.graphics.rotate(math.atan2(diry, dirx))
+    love.graphics.line(-8, -8, 0, 0, -8, 8)
+    love.graphics.pop()
+    love.graphics.translate(-16*dirx, -16*diry)
+    love.graphics.printf(string.format("%d\n%d\n%d", x, y, z), -16, -16, 32,
+        dirx < 0 and "left" or dirx > 0 and "right" or "center")
+    love.graphics.pop()
+end
+
+function Character:makeImpactSpark(attacker, sparktype)
+    if sparktype then
+        local hitsparkcharacter = Character(sparktype)
+        hitsparkcharacter.x, hitsparkcharacter.y = math.mid(attacker.x, attacker.y, self.x, self.y)
+        local z1, z2 =
+            math.max(self.z, attacker.z),
+            math.min(self.z + self.bodyheight, attacker.z + attacker.bodyheight)
+        hitsparkcharacter.z = z1 + (z2-z1)/2
+        return Characters.spawn(hitsparkcharacter)
     end
     self.draw = nil
 end
@@ -93,15 +163,14 @@ function Character:draw(fixedfrac)
 end
 
 function Character:makeAfterImage()
-    local afterimage = Characters.spawn({
-        x = self.x,
-        y = self.y,
-        z = self.z,
-        asefile = self.asefile,
-        type = "afterimage"
-    })
+    local afterimage = Character("afterimage", self.x, self.y, self.z)
+    afterimage.asefile = self.asefile
+    afterimage.color = self.color
+    afterimage.texturealpha = self.texturealpha
+    afterimage.type = "afterimage"
     afterimage.originx, afterimage.originy = self:getOrigin()
     afterimage:setAseAnimation(self.aseanimation, self.animationframe)
+    return Characters.spawn(afterimage)
 end
 
 function Character:makePeriodicAfterImage(t, interval)
@@ -111,7 +180,6 @@ function Character:makePeriodicAfterImage(t, interval)
 end
 
 Character.accelerate = Body.accelerate
-Character.accelerateTowardsVel = Body.accelerateTowardsVel
 Character.accelerateTowardsVel3 = Body.accelerateTowardsVel3
 
 function Character:makeHurtParticle()
@@ -128,14 +196,13 @@ function Character:makeHurtParticle()
     local sinangle = sin(hurtangle)
     local velx = cosangle*speed
     local vely = sinangle*speed
-    return Characters.spawn {
-        type = self.hurtparticle,
-        x = self.x + velx,
-        y = self.y + vely,
-        z = self.z + self.bodyheight/2,
-        velx = velx,
-        vely = vely
-    }
+    local particle = Character(self.hurtparticle,
+        self.x + velx,
+        self.y + vely,
+        self.z + self.bodyheight/2)
+    particle.velx = velx
+    particle.vely = vely
+    return Characters.spawn(particle)
 end
 
 function Character:updateHurtColorCycle(t)
@@ -178,25 +245,30 @@ function Character:fixedupdateHitStop()
             self.color = color
         end
         self.hurtstun = self.hurtstun - 1
-        local s = min(4, self.hurtstun) * sin(self.hurtstun)
-        self.scalex = 1 + s/8
-        self.scaley = 1 - s/32
+        Jiggler.update(self, self.hurtstun)
         if self.hurtstun > 0 then
             return false
         end
-        self.color = 0xffffffff
+        if color and color ~= Color.White then
+            self.color = Color.White
+        end
         self.hurtparticle = nil
         self.hurtcolorcycle = nil
     end
     return true
 end
 
+function Character:updateBody()
+    if self:isHitStopOver() then
+        Body.updatePosition(self)
+        Body.updateGravity(self)
+    end
+end
+
 function Character:fixedupdate()
     if self:fixedupdateHitStop() then
         self:animate(1)
-        Body.updatePosition(self)
         StateMachine.run(self)
-        Body.updateGravity(self)
     end
 end
 
@@ -208,14 +280,19 @@ Character.moveTo = Body.executeMove
 Character.isAttacking = Attacker.isAttacking
 Character.startAttack = Attacker.startAttack
 Character.stopAttack = Attacker.stopAttack
+Character.unassignSelfAsAttacker = Attacker.unassignSelfAsAttacker
 
+---@param hit AttackHit
 function Character:onHitByAttack(hit)
-    local guardhitstate = self.guardai or "guardHit"
-    local hurtstate = self.hurtai or "hurt"
-
     if hit.guarded then
-        StateMachine.start(self, guardhitstate, hit)
+        local guardhitstate = self.guardai
+        if guardhitstate then
+            StateMachine.start(self, guardhitstate, hit)
+        else
+            Guard.standardImpact(self, hit)
+        end
     else
+        local hurtstate = self.hurtai or "hurt"
         StateMachine.start(self, hurtstate, hit)
     end
 end
@@ -272,6 +349,14 @@ function Character:isCylinderFullyOnCamera(camera)
     local x, y = self.x - radius, self.y - radius - height
     local _, _, iw, ih = math.rectintersection(x, y - self.z, w, h, cx, cy, cw, ch)
     return iw and iw == w and ih == h
+end
+
+---@param other Character
+---@return boolean
+function Character:isHigherRankedTeammateOf(other)
+    return (self.team or other.team)
+        and self.team == other.team
+        and self.maxhealth > other.maxhealth
 end
 
 function Character:disappear()

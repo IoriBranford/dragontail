@@ -9,10 +9,12 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 55,
-  nextobjectid = 536,
-  backgroundcolor = { 41, 58, 24 },
-  properties = {},
+  nextlayerid = 74,
+  nextobjectid = 789,
+  backgroundcolor = { 64, 64, 64 },
+  properties = {
+    ["ceilingz"] = 256
+  },
   tilesets = {
     {
       name = "caves",
@@ -6412,11 +6414,11 @@ return {
               tileid = 1933
             },
             {
-              wangid = { 0, 2, 0, 2, 0, 2, 0, 4 },
+              wangid = { 0, 4, 0, 2, 0, 4, 0, 4 },
               tileid = 1934
             },
             {
-              wangid = { 0, 4, 0, 2, 0, 2, 0, 2 },
+              wangid = { 0, 4, 0, 4, 0, 2, 0, 4 },
               tileid = 1935
             },
             {
@@ -6588,11 +6590,11 @@ return {
               tileid = 1997
             },
             {
-              wangid = { 0, 2, 0, 2, 0, 4, 0, 2 },
+              wangid = { 0, 2, 0, 4, 0, 4, 0, 4 },
               tileid = 1998
             },
             {
-              wangid = { 0, 2, 0, 4, 0, 2, 0, 2 },
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 2 },
               tileid = 1999
             },
             {
@@ -7672,23 +7674,23 @@ return {
               tileid = 2525
             },
             {
-              wangid = { 0, 2, 0, 0, 0, 2, 0, 2 },
+              wangid = { 0, 2, 0, 5, 0, 2, 0, 2 },
               tileid = 2526
             },
             {
-              wangid = { 0, 2, 0, 0, 0, 0, 0, 2 },
+              wangid = { 0, 2, 0, 5, 0, 5, 0, 2 },
               tileid = 2527
             },
             {
-              wangid = { 0, 2, 0, 0, 0, 0, 0, 2 },
+              wangid = { 0, 2, 0, 5, 0, 5, 0, 2 },
               tileid = 2528
             },
             {
-              wangid = { 0, 2, 0, 0, 0, 0, 0, 2 },
+              wangid = { 0, 2, 0, 5, 0, 5, 0, 2 },
               tileid = 2529
             },
             {
-              wangid = { 0, 2, 0, 2, 0, 0, 0, 2 },
+              wangid = { 0, 2, 0, 2, 0, 5, 0, 2 },
               tileid = 2530
             },
             {
@@ -7824,11 +7826,11 @@ return {
               tileid = 2589
             },
             {
-              wangid = { 0, 0, 0, 0, 0, 2, 0, 2 },
+              wangid = { 0, 5, 0, 5, 0, 2, 0, 2 },
               tileid = 2590
             },
             {
-              wangid = { 0, 2, 0, 2, 0, 0, 0, 0 },
+              wangid = { 0, 2, 0, 2, 0, 5, 0, 5 },
               tileid = 2594
             },
             {
@@ -7932,11 +7934,11 @@ return {
               tileid = 2653
             },
             {
-              wangid = { 0, 0, 0, 0, 0, 2, 0, 2 },
+              wangid = { 0, 5, 0, 5, 0, 2, 0, 2 },
               tileid = 2654
             },
             {
-              wangid = { 0, 2, 0, 2, 0, 0, 0, 0 },
+              wangid = { 0, 2, 0, 2, 0, 5, 0, 5 },
               tileid = 2658
             },
             {
@@ -8040,11 +8042,11 @@ return {
               tileid = 2717
             },
             {
-              wangid = { 0, 0, 0, 0, 0, 2, 0, 2 },
+              wangid = { 0, 5, 0, 5, 0, 2, 0, 2 },
               tileid = 2718
             },
             {
-              wangid = { 0, 2, 0, 2, 0, 0, 0, 0 },
+              wangid = { 0, 2, 0, 2, 0, 5, 0, 5 },
               tileid = 2722
             },
             {
@@ -8192,23 +8194,23 @@ return {
               tileid = 2781
             },
             {
-              wangid = { 0, 0, 0, 2, 0, 2, 0, 2 },
+              wangid = { 0, 5, 0, 2, 0, 2, 0, 2 },
               tileid = 2782
             },
             {
-              wangid = { 0, 0, 0, 2, 0, 2, 0, 0 },
+              wangid = { 0, 5, 0, 2, 0, 2, 0, 5 },
               tileid = 2783
             },
             {
-              wangid = { 0, 0, 0, 2, 0, 2, 0, 0 },
+              wangid = { 0, 5, 0, 2, 0, 2, 0, 5 },
               tileid = 2784
             },
             {
-              wangid = { 0, 0, 0, 2, 0, 2, 0, 0 },
+              wangid = { 0, 5, 0, 2, 0, 2, 0, 5 },
               tileid = 2785
             },
             {
-              wangid = { 0, 2, 0, 2, 0, 2, 0, 0 },
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 5 },
               tileid = 2786
             },
             {
@@ -14123,17 +14125,17 @@ return {
       tiles = {}
     },
     {
-      name = "Dishes A",
+      name = "dish-small",
       firstgid = 6613,
       class = "",
       tilewidth = 32,
       tileheight = 32,
       spacing = 0,
       margin = 0,
-      columns = 8,
-      image = "sprites/weapons/Dishes A.png",
-      imagewidth = 256,
-      imageheight = 96,
+      columns = 1,
+      image = "sprites/weapons/dish-small.ase",
+      imagewidth = 32,
+      imageheight = 32,
       objectalignment = "center",
       tilerendersize = "tile",
       fillmode = "stretch",
@@ -14148,44 +14150,12 @@ return {
       },
       properties = {},
       wangsets = {},
-      tilecount = 24,
-      tiles = {
-        {
-          id = 0,
-          type = "item-dish",
-          properties = {
-            ["name"] = "dish-small"
-          }
-        },
-        {
-          id = 16,
-          properties = {
-            ["name"] = "Shatter"
-          },
-          animation = {
-            {
-              tileid = 16,
-              duration = 50
-            },
-            {
-              tileid = 17,
-              duration = 50
-            },
-            {
-              tileid = 18,
-              duration = 50
-            },
-            {
-              tileid = 19,
-              duration = 50
-            }
-          }
-        }
-      }
+      tilecount = 1,
+      tiles = {}
     },
     {
       name = "Meats A",
-      firstgid = 6637,
+      firstgid = 6614,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14251,7 +14221,7 @@ return {
     },
     {
       name = "Bread A",
-      firstgid = 6692,
+      firstgid = 6669,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14289,7 +14259,7 @@ return {
     },
     {
       name = "Cheese A",
-      firstgid = 6700,
+      firstgid = 6677,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14367,7 +14337,7 @@ return {
     },
     {
       name = "Forge A",
-      firstgid = 6718,
+      firstgid = 6695,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14501,7 +14471,7 @@ return {
     },
     {
       name = "Workbench, Smith",
-      firstgid = 6846,
+      firstgid = 6823,
       class = "",
       tilewidth = 64,
       tileheight = 64,
@@ -14608,6 +14578,86 @@ return {
           }
         },
         {
+          id = 2,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            class = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "polygon",
+                x = 64,
+                y = 48,
+                width = 64,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                polygon = {
+                  { x = 0, y = 16 },
+                  { x = -16, y = 16 },
+                  { x = -64, y = 0 },
+                  { x = -48, y = 0 }
+                },
+                properties = {
+                  ["collidable"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 3,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            class = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "polygon",
+                x = 0,
+                y = 32,
+                width = 64,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                polygon = {
+                  { x = 0, y = 16 },
+                  { x = 0, y = 32 },
+                  { x = 64, y = 32 },
+                  { x = 64, y = 16 }
+                },
+                properties = {
+                  ["collidable"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 4,
           objectGroup = {
             type = "objectgroup",
@@ -14691,7 +14741,7 @@ return {
     },
     {
       name = "gamepad-buttons",
-      firstgid = 6852,
+      firstgid = 6829,
       class = "",
       tilewidth = 16,
       tileheight = 16,
@@ -14794,7 +14844,7 @@ return {
     },
     {
       name = "keyboard-keys",
-      firstgid = 6952,
+      firstgid = 6929,
       class = "",
       tilewidth = 16,
       tileheight = 16,
@@ -14850,7 +14900,7 @@ return {
     },
     {
       name = "Chair, Dining F",
-      firstgid = 7224,
+      firstgid = 7201,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -14944,7 +14994,7 @@ return {
     },
     {
       name = "flamegaugefull",
-      firstgid = 7240,
+      firstgid = 7217,
       class = "",
       tilewidth = 40,
       tileheight = 20,
@@ -15011,7 +15061,7 @@ return {
     },
     {
       name = "vegetables",
-      firstgid = 7248,
+      firstgid = 7225,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -15068,7 +15118,7 @@ return {
     },
     {
       name = "axe",
-      firstgid = 7255,
+      firstgid = 7232,
       class = "",
       tilewidth = 64,
       tileheight = 64,
@@ -15097,7 +15147,7 @@ return {
     },
     {
       name = "boss",
-      firstgid = 7256,
+      firstgid = 7233,
       class = "",
       tilewidth = 192,
       tileheight = 192,
@@ -15126,7 +15176,7 @@ return {
     },
     {
       name = "bow",
-      firstgid = 7257,
+      firstgid = 7234,
       class = "",
       tilewidth = 128,
       tileheight = 128,
@@ -15160,7 +15210,7 @@ return {
     },
     {
       name = "spear",
-      firstgid = 7258,
+      firstgid = 7235,
       class = "",
       tilewidth = 64,
       tileheight = 64,
@@ -15189,7 +15239,7 @@ return {
     },
     {
       name = "sling",
-      firstgid = 7259,
+      firstgid = 7236,
       class = "",
       tilewidth = 64,
       tileheight = 64,
@@ -15223,7 +15273,7 @@ return {
     },
     {
       name = "knife",
-      firstgid = 7260,
+      firstgid = 7237,
       class = "",
       tilewidth = 64,
       tileheight = 64,
@@ -15252,7 +15302,7 @@ return {
     },
     {
       name = "throwing-axe",
-      firstgid = 7261,
+      firstgid = 7238,
       class = "",
       tilewidth = 48,
       tileheight = 48,
@@ -15281,7 +15331,7 @@ return {
     },
     {
       name = "stone",
-      firstgid = 7262,
+      firstgid = 7239,
       class = "",
       tilewidth = 16,
       tileheight = 16,
@@ -15307,6 +15357,766 @@ return {
       wangsets = {},
       tilecount = 1,
       tiles = {}
+    },
+    {
+      name = "Xbox",
+      firstgid = 7240,
+      class = "",
+      tilewidth = 14,
+      tileheight = 14,
+      spacing = 0,
+      margin = 0,
+      columns = 20,
+      image = "tilesets/ui/Gamepad Spritesheets/Xbox.png",
+      imagewidth = 280,
+      imageheight = 15,
+      objectalignment = "center",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 14,
+        height = 14
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 20,
+      tiles = {}
+    },
+    {
+      name = "tree2B_ss_leaves",
+      firstgid = 7260,
+      class = "",
+      tilewidth = 128,
+      tileheight = 96,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/grassland/tree2B_ss_leaves.ase",
+      imagewidth = 128,
+      imageheight = 96,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = -12,
+        y = 12
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 128,
+        height = 96
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "tree2B_ss_obj",
+      firstgid = 7261,
+      class = "",
+      tilewidth = 128,
+      tileheight = 160,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/grassland/tree2B_ss.ase",
+      imagewidth = 128,
+      imageheight = 160,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = -12,
+        y = 20
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 128,
+        height = 160
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "tree2C_ss_leaves",
+      firstgid = 7262,
+      class = "",
+      tilewidth = 128,
+      tileheight = 96,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/grassland/tree2C_ss_leaves.ase",
+      imagewidth = 128,
+      imageheight = 96,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = -12,
+        y = 12
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 128,
+        height = 96
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "tree2C_ss_obj",
+      firstgid = 7263,
+      class = "",
+      tilewidth = 128,
+      tileheight = 160,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/grassland/tree2C_ss.ase",
+      imagewidth = 128,
+      imageheight = 160,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = -12,
+        y = 20
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 128,
+        height = 160
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "spikefruit-hanging",
+      firstgid = 7264,
+      class = "",
+      tilewidth = 20,
+      tileheight = 20,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/weapons/spikefruit.ase",
+      imagewidth = 20,
+      imageheight = 20,
+      objectalignment = "top",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = -5
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 20,
+        height = 20
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "spikefruit-onground",
+      firstgid = 7265,
+      class = "",
+      tilewidth = 20,
+      tileheight = 20,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/weapons/spikefruit.ase",
+      imagewidth = 20,
+      imageheight = 20,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 4
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 20,
+        height = 20
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "lifefruit-hanging",
+      firstgid = 7266,
+      class = "",
+      tilewidth = 20,
+      tileheight = 20,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/items/lifefruit.ase",
+      imagewidth = 20,
+      imageheight = 20,
+      objectalignment = "top",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = -4
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 20,
+        height = 20
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "lifefruit",
+      firstgid = 7267,
+      class = "",
+      tilewidth = 20,
+      tileheight = 20,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/items/lifefruit.ase",
+      imagewidth = 20,
+      imageheight = 20,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 5
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "bigstone",
+      firstgid = 7268,
+      class = "",
+      tilewidth = 32,
+      tileheight = 32,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/weapons/bigstone.ase",
+      imagewidth = 32,
+      imageheight = 32,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 32
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "tallstone",
+      firstgid = 7269,
+      class = "",
+      tilewidth = 48,
+      tileheight = 48,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/weapons/tallstone.ase",
+      imagewidth = 48,
+      imageheight = 48,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 10
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 48,
+        height = 48
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "pepper-plant",
+      firstgid = 7270,
+      class = "",
+      tilewidth = 32,
+      tileheight = 32,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/items/pepper-plant.ase",
+      imagewidth = 32,
+      imageheight = 32,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 2
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 32
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {
+        {
+          id = 0,
+          type = "pepper-plant"
+        }
+      }
+    },
+    {
+      name = "peppers-on-plant",
+      firstgid = 7271,
+      class = "",
+      tilewidth = 32,
+      tileheight = 32,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/items/peppers-on-plant.ase",
+      imagewidth = 32,
+      imageheight = 32,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 2
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 32
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {
+        {
+          id = 0,
+          type = "mana-peppers-on-plant"
+        }
+      }
+    },
+    {
+      name = "muscle",
+      firstgid = 7272,
+      class = "",
+      tilewidth = 128,
+      tileheight = 128,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/bandit/muscle-orange.ase",
+      imagewidth = 128,
+      imageheight = 128,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 40
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 128,
+        height = 128
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "cave-window",
+      firstgid = 7273,
+      class = "",
+      tilewidth = 96,
+      tileheight = 112,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "tilesets/caves/semiblocked-tunnel.png",
+      imagewidth = 96,
+      imageheight = 112,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 16
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 96,
+        height = 112
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "shield",
+      firstgid = 7274,
+      class = "",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "sprites/bandit/shield.ase",
+      imagewidth = 64,
+      imageheight = 64,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 64,
+        height = 64
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
+    },
+    {
+      name = "crystal-spikes",
+      firstgid = 7275,
+      class = "",
+      tilewidth = 32,
+      tileheight = 32,
+      spacing = 0,
+      margin = 0,
+      columns = 8,
+      image = "sprites/banditcave/crystal-spikes.png",
+      imagewidth = 256,
+      imageheight = 256,
+      objectalignment = "bottom",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 4
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 32
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 64,
+      tiles = {
+        {
+          id = 0,
+          type = "spike-small"
+        },
+        {
+          id = 1,
+          type = "spike-medium"
+        },
+        {
+          id = 2,
+          type = "spike-large"
+        },
+        {
+          id = 3,
+          type = "spike-small"
+        },
+        {
+          id = 4,
+          type = "spike-small"
+        },
+        {
+          id = 5,
+          type = "spike-large"
+        },
+        {
+          id = 6,
+          type = "spike-medium"
+        },
+        {
+          id = 7,
+          type = "spike-small"
+        },
+        {
+          id = 8,
+          type = "spike-small"
+        },
+        {
+          id = 9,
+          type = "spike-medium"
+        },
+        {
+          id = 10,
+          type = "spike-large"
+        },
+        {
+          id = 11,
+          type = "spike-medium"
+        },
+        {
+          id = 12,
+          type = "spike-medium"
+        },
+        {
+          id = 13,
+          type = "spike-large"
+        },
+        {
+          id = 14,
+          type = "spike-medium"
+        },
+        {
+          id = 15,
+          type = "spike-small"
+        },
+        {
+          id = 16,
+          type = "spike-small"
+        },
+        {
+          id = 17,
+          type = "spike-large"
+        },
+        {
+          id = 18,
+          type = "spike-medium"
+        },
+        {
+          id = 19,
+          type = "spike-small"
+        },
+        {
+          id = 20,
+          type = "spike-small"
+        },
+        {
+          id = 21,
+          type = "spike-medium"
+        },
+        {
+          id = 22,
+          type = "spike-large"
+        },
+        {
+          id = 23,
+          type = "spike-small"
+        },
+        {
+          id = 24,
+          type = "spike-medium"
+        },
+        {
+          id = 25,
+          type = "spike-large"
+        },
+        {
+          id = 26,
+          type = "spike-medium"
+        },
+        {
+          id = 27,
+          type = "spike-small"
+        },
+        {
+          id = 28,
+          type = "spike-small"
+        },
+        {
+          id = 29,
+          type = "spike-medium"
+        },
+        {
+          id = 30,
+          type = "spike-large"
+        },
+        {
+          id = 31,
+          type = "spike-medium"
+        },
+        {
+          id = 32,
+          type = "spike-small"
+        },
+        {
+          id = 33,
+          type = "spike-medium"
+        },
+        {
+          id = 34,
+          type = "spike-large"
+        },
+        {
+          id = 35,
+          type = "spike-small"
+        },
+        {
+          id = 36,
+          type = "spike-small"
+        },
+        {
+          id = 37,
+          type = "spike-large"
+        },
+        {
+          id = 38,
+          type = "spike-medium"
+        },
+        {
+          id = 39,
+          type = "spike-small"
+        },
+        {
+          id = 40,
+          type = "spike-small"
+        },
+        {
+          id = 41,
+          type = "spike-medium"
+        },
+        {
+          id = 42,
+          type = "spike-large"
+        },
+        {
+          id = 43,
+          type = "spike-medium"
+        },
+        {
+          id = 44,
+          type = "spike-medium"
+        },
+        {
+          id = 45,
+          type = "spike-large"
+        },
+        {
+          id = 46,
+          type = "spike-medium"
+        },
+        {
+          id = 47,
+          type = "spike-small"
+        },
+        {
+          id = 48,
+          type = "spike-small"
+        },
+        {
+          id = 49,
+          type = "spike-large"
+        },
+        {
+          id = 50,
+          type = "spike-medium"
+        },
+        {
+          id = 51,
+          type = "spike-small"
+        },
+        {
+          id = 52,
+          type = "spike-small"
+        },
+        {
+          id = 53,
+          type = "spike-medium"
+        },
+        {
+          id = 54,
+          type = "spike-large"
+        },
+        {
+          id = 55,
+          type = "spike-small"
+        },
+        {
+          id = 56,
+          type = "spike-medium"
+        },
+        {
+          id = 57,
+          type = "spike-large"
+        },
+        {
+          id = 58,
+          type = "spike-medium"
+        },
+        {
+          id = 59,
+          type = "spike-small"
+        },
+        {
+          id = 60,
+          type = "spike-small"
+        },
+        {
+          id = 61,
+          type = "spike-medium"
+        },
+        {
+          id = 62,
+          type = "spike-large"
+        },
+        {
+          id = 63,
+          type = "spike-medium"
+        }
+      }
     }
   },
   layers = {
@@ -15332,44 +16142,92 @@ return {
       compression = "zlib",
       chunks = {
         {
-          x = 100, y = -12, width = 20, height = 12,
-          data = "eJzNzMlRAgEUBcB2GXjfeGTHeGTHfNwAMxIwHi+e9DRVHOwAmr/WDZuGbeMidg37hsOFvmPDqeH883VCNyRUuEu7rxf6YRCGYRTGYRKm4aHlNwvzsAjLsArrsAnb8NTyew4v4TW8hfewC/twCB8tv98+wzGcwjl8tfyuiuviprgtmqJTdIsUVe2++6JX9ItBMSxGxbiYFNOW32MxK+bFolgWq2JdbIpty+8/+QabZx2K"
+          x = 40, y = -12, width = 20, height = 12,
+          data = "eJxjYBgFo2AUMAwBcFWIgSFcmIEhQpiBIUiEgSFYhIEBACXcAoo="
+        },
+        {
+          x = 60, y = -12, width = 20, height = 12,
+          data = "eJxjYBgFo2AUMNAJhAsjcIgIA0OQCANDBJQdLIIQj4TSIDkQG0SD1ILEkOUBW2EIOQ=="
+        },
+        {
+          x = 80, y = -12, width = 20, height = 12,
+          data = "eJxjYBgFo2AUMNAJBIswMIRAMYgdLszAcE2IfAMBy9cC8Q=="
+        },
+        {
+          x = -20, y = 0, width = 20, height = 12,
+          data = "eJxjYBgFgwWECVPXPFER6ponJjKy3HdFiLrm0QIAAGnNAfY="
         },
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJzNkU1KA0EQhT9wF5Ce6WqPoyC4CwGTSWYcT+QJvI1kmYUIQZKQ48izq0mcGFdZWFDUb1e96geXkW2EWbrQMKBN0Nj5ejJoEnQGvR2sMDx5PHe/5Aq+5DUzaD2/SLA3GAeY1DBV3rVLMHfba5Zjk+ruaLn/OWXcvevMe/ROtaHc1Qf/yv2dZRxTvfnj/nOyDD/jV4N1gJFuEibd4v+xi3Af4LY+xfNWnc5+CHBjsDC4rjPOVcj2scrzm6Md3S98NEdcFD5a/6vPmGcN9b3K9sN3vfjuvcHIa98YBrdvYuZNXBQeSixVLC7lK6+eki/+f5cvswE9LA=="
+          data = "eJzNks1KQzEUhD+kiosKOUmeSMSVInjt7+OIFTcKrULbF3KpuBHxaWTICTcWV7oxMMw5k8zcJDfw+/Ee+zonuMp/CAPmjX+cYZa/53e5fGOe+n6aCiYJLnNf116YNd6aNcqwNIgG5v1DADPYRlg5CxvH2nWh9sqUV75kkA0e3SseS4/wHGAR4NjgwDVBvfjU4CbA0OAjwacVz77PX4cCZUiv/p/qhfNJgEODc4NlhM6zBo1He9lr9qM93DbzFQMre3mLMErwGkrmWud1rvVG92Pw5Ppqh7eNR3cfE1z4uV9CYeULd94HgzODe4MjK+uGrum/aY2gN9PpLXpdIW2iN9Do6qdeS99dI/7v4wulBUlD"
         },
         {
           x = 20, y = 0, width = 20, height = 12,
-          data = "eJytUsENwjAMvB8foDEJC/FGSNBCW4ZhAgRMBh9UsQ3oFFtNCyqfWjrFtpKznXOzwKh2DOPy7UJE7YE8AEUASh+x07hWn7nKA83ATHUAct4nB98qCo2Zp18FYO+BmQDyh5O2yr5zJ9eND+xRebfJLFUyz7vHc/rB27fnIvaca99lMs/YVie9Ug/2bmCOp2lC3/thvpcHHi6eBifAWqJ/c8BFgLPG1MJq5Lobth+sZdryj2/65mqn1rlnLd/Etb4hk9gTNTJb6t+Sn/tiOvL+XICNAFMBst4sd9edb8hYg/ymI+tYTdPTdpR55j49nEQX"
+          data = "eJzNkk1KA0EQhT9EXNpd3bNz4YF0ERI1UVx6Dv91FX9IAhoEPYkgouhCsnETXHgTRZ5dg4N4ABse9V7Vq+6enmpXsFJBN0Ongpz5c61lWHdPu4JeLn3KSYtvyFNBRzXnr6n0ytNEyjAJcBJhyeA0wrxBP8I0Q9/gLZd7CerR2eKrFby4T1CvovZq5p+dnxu0DCzDyOAywTjBwGDoWlDtd33knhoXqcS6vm+wG+AxwmeAnODIYMYKf4glHgRYMLg2uLHiV14Q/wiwE+AwFj1nMOt7CNKK9xEODPYibCV4z7CY4Db8eHSn7zP9jFvf89jzRxH2/Yw790hfJbhOsGlwH8o3bIefPmGot9Ib6T1cjw0GDT5yPnAtrpx6Ro28dDRYNv9/VmZgEguPnn/SnBicuRZaDT7NEAzOA/Q0Xz57XZ/FOmomVatzgvw1b85uPb//fX0B3lRn1w=="
         },
         {
           x = 40, y = 0, width = 20, height = 12,
-          data = "eJzdkksKAjEQRN8FZNKT4KFEFMfxeyZ/x3IjKG48jpRJQxBX7rShqJn0l66G/7JlhHWETYQ+QZdgFTP0/slSifV48bzwIsEjwthgbzCL0FVQH++hnK7kTA1GDdxa6FVf/sJ9yV0lGL7NpDeH4jaapeJ7y89aetNF+KaG9iwt2wiXkPVxeH35XRPXU//y+30I0mofoDE4BggG15B11v4nBifLeqrXzmAQ4NzkfvKJlXMIMLDMelOs7ka1XLday/pb/LonzV7B70z34DHbam9PtbE3Iw=="
+          data = "eJzNkstKQ0EMhj8vdCcnOTMr36UIQoWuxF6sfRkRxV2rYg+0Po2grVtd+jgSJkOnZ6U7B36S/LnOTOD3JwaYBhhFGEYYR7gIMIkwCjAIfygGXHreOMCDwneA47gbM4gwsR5F78zZDNku+TrAk6R66nFD9z9rwqqGF0fJLR2Nc6YvNMUZt2hxrxWEGtaSpOFMoaOwrpJ+rYnvuLwV2HieYSPwVkHP/Rld4wVOFXpe/0PgXWBP4N45s3OO6VbvULfxN0Wvkwq6VZqh7GU4aNXbb81zp9DY3e3d7H3s7Qp76dxKd2Ma18vcbOd/nwt8CTy6XeJcE6TlmwkcKfQFPgX6ut3DK9sF+3P7/2JHpzHB/CbNZ9L8Wc+8xfz38wPWllQJ"
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJzVkjsKAjEQhj8QH9voJhMv4xksRBd8nMBCPYiFYKuFeBotfSOeRkIiG5Z119aBn8wU+fLPTOD32Fedro00X0QwjdL6riEx0DfunMh33i7ghKoHPC3w9OopWBfwQsasAQvPvwTvXLRjtRSsFGx+5OXJ9n7TMDYwsj0LTEwxrxOl/dVy+s8LI26eD13ub55h5kXbQFPBS8p52R0NBUbez8Dv+LMjJSBSzNtmePbeKYalgkPL1cfYnV0F5xJeJfgrVnYPA+tPILFefW3zoYFrZob/Hm+zgE2/"
+          data = "eJxtk8lKRDEQRc/GCZSXSvSH1I04tvPPiOBCoe1uh2619WNcOC0cWhEEf0aQayr0Wxgokle5ublVuW8zwWaCLY+2wZLBd4KOz8sGx75WTNbWBfMWYCHwN74ixJSjkWBnOnOfBhh3/KJl3qrGJY52Nfx+DbDrPPoOBpZgfTrntF+wJdoBBv/kFa0AfWkzmDLoOO7d55bBSqndc2ZwHeHC80t+9tl17lVwGeHcMkY1qY6xACch48Wh/Z7BTYQRgy3LOj5CPiOuM4N5g8MAKWaMzknzVcyztIjjwTHi0nwbso6i848v5r17xz4F2Pe14sDgIMCowayvk3P/1DRIZ6vK3uhJgw2j73PX89pXXHluQ7wV3NXuFWfX+6qeH9XeXB7Ru+pNnv0t1c+y3/A7brzu5PEYYM6y1+Tnzzj0rnpc97Q8NxHyXS/OrV6VOqRdd6i2Mrbdw3W/lpCXVz2vu8Sr9YrX1XQvqJb6mPF/rum4QZVxqld9WXNO9V1+lPbyHxYdvyg8i38="
         },
         {
           x = 80, y = 0, width = 20, height = 12,
-          data = "eJzlUVsOgkAMnA+RlvuAonIgY4QDASZ4JfU+pqHEpuz64NdNJt3utJNpd0iAYSEKCr+XPMab8isGrjTnLRoG8oDeJlArqBlYu/pEa/NIT0+vXuvPzzT1P5QvjF6q95SAvcBwW6d3juxHcIlwsqdDxP8nnL7sk11L3PHov3VeKpNnAZ/3N3P5P5n29QuODJDqlE6vdnnn8n87T3xAaA4="
+          data = "eJydk8lKA0EQhr+THlymqyf4Nt7EBeMSF9TniZ6MZtGQxNcRQXA9iY8jv1XDDDmJAz9VXV3rXz1LBv0E3yWsJLg16LSgLPnXt2fwluClgOsCdhM8J7ASjlpwXsJJC77y3/INDAbRX4WtBJ9h+0iwHz2fRY2L0uucx/m4VeuKUX9vczkF5Tw0n+E1QTJom99tp9rHDO4M7gPZfN4bg2HDLkwyjK3uddHgPXmN98K57yhfhpnBmpC9vmJ0N8owMZia+4yz392Ez2rkXw55YM6J+u+Ef2HQi3uhN8er/PcaZ/UqqVmnqp99ZumaaxTzzXI940pjft3LPmroin3IUAbWC5ePyeWmubxKcBp5SnP7gkG3gKfw7Sa4TO67EXGCOBKXwn1wWnGrs3RxWflUdnEsXfHaQTdyVu/kNqQ4bvJY7UCy+o/mMYz8qqv/S7Z+yOoda98Hhe9kJ6Ryaid6V789mPurB72hdgE/0COB+w=="
         },
         {
           x = 100, y = 0, width = 20, height = 12,
-          data = "eJzlkoFNAzEMRT+CIHsfWiExEG1R7kYivZXSMA/6zbdqKjboSVYc59t5se9cgGbAuUx7c+DDgZMDlwIsBXjyv+eL1oP8F2mbNGF75b1KSw33Q3Wb/FqATf6QT23ow3YOuE19V4ycVbVozw6sBfAUJz/vW1Mt8oS/Ke9TsXebMWp+bN5xUI+6apKt3vGFrTqrYhjS93QWfTjZjH3b3P9Xrym3pzpD8VX95/vIvOjtV04DvtJsw6+6M+bFfDKxt1tibFo5x8xdHDjabbaXu1leee3GWdMs9+pzV8+DJ783ehZ9i3/lKA6uZB5i5Xnc8WjfLwmCY8M="
+          data = "eJzNkktKQ0EQRQ+KiKNXt/uRJTmTkPh3OWJEMGJiDFG3IyiI+BkI4mJEyi55087MgktRNTh03dvwv2vYwnYLBxn2Qz4fZthpi3x3lOt4M8G1IAk+c6d1K/3CwATvlbyeICfYSx3rPNgbBs/BnVbypgkWgnnw/C0vwXhq4Mzg1erf57cuEtyE5oItg8cGJir39g3uKnnHgu8GTgUrgl117D9PJ1Z/78jg3oqHrpHgJDz9EPQFb0vwHgzWBJsqrNVguXrh6cD/S1vH8yyuEsxCPnu/jYw8j9osvPyW31yjXwrG4ds4dl9L8H4AblM/DQ=="
         },
         {
-          x = 120, y = 0, width = 20, height = 12,
-          data = "eJzlkYtNA0EMRF8+K+x+IIFI1AMEuKMhUD4l3YV60NzOStsDkVa+2J7xjH0usE84F3hLuBXYJAwFTgVWrik/BXwFbBMm93+W+i4FdgEvCceEx4CncD0qh3oar+LYxdeEXcJcIMx7ck2zv83XMKrdZ43C6olfT7PE9Z61X37WCR/mmNwzuH901OzfqPuYPHeMGsWvXQydb+Ufut2JI6xx63n7gEvAT1S9i9+sOH2L5xBwjZrTvKHTJy0H65EGcZ+jah19E/lbsL6XerUX3WKO6n3xUqBYZ+9/6m9onmfpNs9sP7P5jx3HzRrDuZXx2kfDyr9mNNxsrG46+P/GuLVxbadT89lpVo9yd129af1vvz+sI1kd"
+          x = 20, y = 12, width = 20, height = 12,
+          data = "eJzt0MENgCAQBdGRZJPdfoCa8CAN6QFrwoLsgfwjU8A7DOxWugy66d4Ng1foTYNP6BWH6jqvOZxC73Z4hJ66IyCFzssBJeAHfVsHFQ=="
         },
         {
-          x = 140, y = 0, width = 20, height = 12,
-          data = "eJzlkgFOAjEQRT9ok5n7KCrgeVBwlwMZdcEjlXIe85k/2d5Bkqbd3T9v/vxSC9AKcC7AWICtx/lYgGcD3vQ8FODLgIOHzgxYOrBw4F3vagH21FvoT2K+2Pxtb8DagtmkOenMmp0D9w78qibfP7BWfZoWPU76vlVPrvRP71zUXuW9ny/ZOd/aZz/JunQes44+uD/K66fFPlj423R5nMXgahZ19MDezI3+J2nJ+FCudw68Kif2oZcnDw4ZJq+ZPc+clTmxnrxRs2ZW5DGnowXHlRnv8CIWdbWbu+reb5lbaL5tzmNU38wls/qRpom1EaNqnkn7Umd6IW8lFpm3e1Ad+wzaF91/Yerun8//7fcH56JcbA=="
+          x = 40, y = 12, width = 20, height = 12,
+          data = "eJzlzNtRwmAUBsCdgYTvWJAJFxtSMDbkBegIDfX4QgX/8MYWsDyWqbvvd7rzN9++PqxCQoWntH1DGMM6bMI27MJL4/ca3sI+HMJ7mMJH4/cZvsJ3+AnHcArnxs/NJfyGvzCHa+O3KJZFV/TFqkhR1fY9F0MxFutiU2yLXeP3D5ZkEmI="
         },
         {
-          x = 160, y = 0, width = 20, height = 12,
-          data = "eJztkcsJgEAQQ5/KwE5BnixIRdSKBLUlP/VIWAsQ5mogx3kkk9VgM9gNeofCCUms2aBxKB1Oi/HEku8ErUMdzFd57qqcYq3BfIdB5zmbWGJHpHtxlFN7DCnG0/+XlLtOFt+jT7mzPL2OSDuMBpc2eTf+xWc9ztQXvQ=="
+          x = 60, y = 12, width = 20, height = 12,
+          data = "eJztjksKgDAMBecCYtPWM7kQFfyg3smruREXHkdKC1YQXQsOhJeEMASuZAZ6A7uBRflMBebQu1Lis1KQCNQCpUAh3LJpGCys+nTE/jn48tQ745sn3K+NgdH67KJ5iHZuniy0L76fHz7GATE+GT8="
+        },
+        {
+          x = 80, y = 12, width = 20, height = 12,
+          data = "eJzti0EKg0AMRd9OuqgzceZWFVtqQXsnaXsrlypuehwJGVDPoB8eSf7/GTx0Ah8P/2DcHDwEcrH7mqbyc5Cl22/8r8BdoBLrXwRGZ5lLvVKg9+vfVMArQBOhjVAHQ71nME8z3d9x3202maLZXHDqFEfSAuY2G3s="
+        },
+        {
+          x = 100, y = 12, width = 20, height = 12,
+          data = "eJzzE2Rg4ANhAQYGf34GBh9BBoYbwgwM7lD6jAADw0VhBqJBiDADQ7gIA0OwMANDkDCEDoHSIHEQjhIh3rxRMApGAQNOAAAGHQla"
+        },
+        {
+          x = 0, y = 24, width = 20, height = 12,
+          data = "eJzNkVsKwjAURM+HuU187Me24mM3CtouyA/RJakLkpBALiWN0i8LQ4Zpciczgf/97mb6uW942cQ7B0dX3j9z8FBn6rj/pjSNSs3bGtgZEIFDXCsBK0nfmwA942yhi/Ofymcu0BhYCqwEFhK41zxvTeDtDz347HrVvXhcMvkal/JJ5n+rsq9H+ilh6Ol73wzep3fpLt7vWvAZe6Mx5DJp5LzeA+3kwEatntBBCb3iHxdaZz4="
+        },
+        {
+          x = 20, y = 24, width = 20, height = 12,
+          data = "eJytkv1Kw0AQxH8om96K+jS2CKlUfRmtJfWFqtQ+Uj/eR4bemU0w9J8cDJdLcrMzswvjrDeHd4cfazHGGpvPssapw9Fgbef9kGvMUrdmwTa8f3CoHT4cFgbPBi8Gr/n7JME8wafDdICvYJb1VDm/uwpuK6gN7quzvr24Bu5/9fjlyxM0wVPBOsHOYJlgGXo18VZ3HfhiP3XvOpyf8n/H7EGZfF/wGiE/Ta9+6cOVt9pXvZkawjb4lc8/zwaP3s3vpqdzFc7luQmZi1u7+KVZWVzSozlTzqW38lZ4ojbxqWacu80/OUpP52xwMvgFElFmNQ=="
+        },
+        {
+          x = 40, y = 24, width = 20, height = 12,
+          data = "eJzdkgtOxDAMRAeWSPF9lu+F2F1IeyLEliu15TzokbHIGagUxbWdmfHnHNIlpLeQ3kNqIU0hzaF/+W1Fmop0E9JS+jlSs++T7bvouVfnPDr/HNJepIPzyMGPb3I+divSl+3d9ubz6p4/Vem59txW//QQa8a6mmsuUgx+9MM3+8DxYbx50AIXmHChgfq+a+c4mXN1LtrABwPfYhzezb7Zj2Y+8lfH2tCHizV81v5/P/QOjOo4PV4HnN06Mpbck2v/1cnb2n2LY8zmJeP28x5N4bpTI3HuB/cUe6vSreeKr1hn1pPvVvclfTl7sOgzMWbFbOjviIHGao7cQTDpCZzcaE4NxJMj9yz3AK1Z5w/t0GII"
+        },
+        {
+          x = 60, y = 24, width = 20, height = 12,
+          data = "eJzlkg1OAlEMhAfxxfY+ClHwPP7ieh+jATwSrucx33ae2XgFSV66bafTTov0v377Ji1SOjRpbNIppNeQzlM6NekhpV2rd2zSKio+2n9p0jbre5jF9rbDzN6ntErpq0lhXnCP1Ef5B+Ov3ecyC0MtD/6jcXA9ZXEvUzpL6Tlqtp1r4YZv9KP3d0hr6yM2uAb+hfFd9/hHX+c+2tJvHTX/R1TPSW9KV/4GdxPSZ1SM3b55x7sozMZYZqDPIWrWwTdBH7X4C8/OXu6sGe3LlG6ZpRWWvnDig/+9oXk6Fh56MQ+W2LQXY7ZRO+o5+pNjR70W/fSYbukYN3qPwrEb/P7/6DrJUTfpnN0fPcQuZvk+Kzlsev6uB84f8NlZ/Q=="
+        },
+        {
+          x = 80, y = 24, width = 20, height = 12,
+          data = "eJzlkgFOA0EIRb/WSeA+NZq299Ft0+6JjN16JK3nMW/nk907SEKYgeHzgZH+l7yG9J7SrUnnJn2EdErp0qQI6TGlh5QG+76bdG3S1HrO4HjJMaVjSLvo8bvfTj5T4y2lp5S+ouMRG5u0z17vpy14o+uRd4huUbCJwR0F+9fc8Y++U+t5xW+XC5/Col75Cpc+sORuPJ/Jd/iUwP9mDPQePe9gToPfo7ylbyyc4XZ1fsmL+wcjzLVmPzlv6zmBczE3cDbe0ykWvPTM2BG4xMEmt/rmzN7hC3/83OmVuut9MJea1Wcse+XN3hjg1Zywg/c887WWzHtwHn64YuFLLc7r/dccuM9/yzsu+QPg1VW5"
+        },
+        {
+          x = 0, y = 36, width = 20, height = 12,
+          data = "eJxjYMAOFrKSjjM4cRhGpnmkAHL1jYJRwDCEAQC5IhNA"
+        },
+        {
+          x = 20, y = 36, width = 20, height = 12,
+          data = "eJxbyMrAsBCKR8EoGAUMQwoAAEfSAfM="
         }
       }
     },
@@ -15393,16 +16251,7 @@ return {
       },
       encoding = "base64",
       compression = "zlib",
-      chunks = {
-        {
-          x = 60, y = 0, width = 20, height = 12,
-          data = "eJxjYKAeMGGiomGjYBSMAgZCAAC+NgA3"
-        },
-        {
-          x = 80, y = 0, width = 20, height = 12,
-          data = "eJwzYWJgMGZiYDCFYhDbhImBwYyJYRSMglHAMLgBAIMVAX0="
-        }
-      }
+      chunks = {}
     },
     {
       type = "tilelayer",
@@ -15426,40 +16275,60 @@ return {
       compression = "zlib",
       chunks = {
         {
+          x = 60, y = -12, width = 20, height = 12,
+          data = "eJxjYBgFo2AUMNARSPEyMEjwMTBc5KHcMABUkQEr"
+        },
+        {
           x = 0, y = 0, width = 20, height = 12,
           data = "eJztjkkKAjEURN9eU/0jTuiFXImKE3omlRYn9GZ6GQk2JJss7K3WpqAeBe9gUHhoGEw8jArYGewNXk1oCzqK3RX0BP3MNjYYuA/zglbChg7mgoViLwUrwTqzBYdN9ZsKZgnbOjgJzop9EVwFt8wWHO7VrxQcE/ZwfJ3g8Kzxy6WOwz/8bN49iR1R"
         },
         {
           x = 20, y = 0, width = 20, height = 12,
-          data = "eJztzjsKwlAYROFvAd7fXImPJdlYKL42ZUDxtScrXZEESZEqmDoHhoFTDFMG02AWzINFUHa494iqoMisMstMlXmN2Qa7YB8cgmN0u5yYpN/GqU5BqpO5BrfgHjyCZ3S7dWKT2p+b7sM5cUntz0335ZPan5seGPAHX9+VHfs="
+          data = "eJztyLcRgEAQBDBVsNFjCsMVhiuXIi5jXqFaGMIYpjCHVrglrGELeziKd4Yr3OEJb/G6zo98+T8XcQ=="
         },
         {
           x = 40, y = 0, width = 20, height = 12,
-          data = "eJztzDFOAlEYReFvAbyf9xIFAivCagoFgxuyGAiFIMFFSa2bIVNMJpmMneXc8tx7bp05Zm5TqilPhX3mULhlvjN1IWXWpeO/E2bBPFgED8FjMClUjZOpCu+FZer6vtPyVWITbIPX4Dl4Gfhv/F3q+r7T8rfEOfgMLsFHcBr4b/xr6vq+0/KvZDD9/8b/+WM7Zox/zh3B1iO7"
+          data = "eJztibERgCAQwDJBKlAHE3UwUce1+YJSWo/cpUmSkIVJmIVFSB9bDtu3CkXYhF04OloJ23cKVbiEW3g6Wg3bNxjwI17KCxdi"
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJzt0j8uRFEYxuHnO4XBOMe9CuyEGbEEBYWxhjEjFkKCwmj8WZCE0diO3NwoGFHILf2arzl58hZns7BV2C7M1zio6VVcVjyvW2gVS4leYjmxE+wGg2AYHBdGhZNCndnIXNW8VrxUi94+BolhYi8xDk6DSTANbguzwl3hMHOU2539qnW/d45JYpo4S9wHD8Fj8BRf317n9n7uvPjB+2vNzlG/O+8mM+vQe8u8d+g1zVe69erms/3ntz4A6bEZZA=="
+          data = "eJztkEsOAVEQRc8C1E2IT8euiEbsivjFrhhajdy8rgHaRHpg4Izvr6oSbALWgn7AIHhjGjAUjARjwURQqV3rnEvAWTALmEfR2p8Z7lsIasFSsFLxWXvtPec55970bAN2zVb7M8N9e8FBcBScVHzWfropuTVb7c+M7GvT5k2vO78lb/JO/7YLcqd/2xXe6d/+4ad4AFSDHPs="
         },
         {
           x = 80, y = 0, width = 20, height = 12,
-          data = "eJztzjmKgmEUBdFzAxPF5bRDg9LLcQwEd+MY2LgfE8XViHx/Y6ImmrWVFTzeLQpf4TuV3PFGaIV26IRu2OEXB8yxvZ0bhGkeez8MwyiMwyQccUIt7JWtPxZh+8RnYRlWYR02oZ7Sfe09K1uv0EvpvvY2q61XmVW9P2/49cG/4wJnMhUR"
+          data = "eJzt0r0NAjEAQ+FvgbjiTzcX3CHmAg4xGtOgdCkSiZLiXmPLrzUbvzIVjuEUdmEfDk323Gir/VZYwjWcwyXMTfbcaKv9XVjDK9zDIzyb7LnRVvunbN/w53wBC/oYXg=="
         },
         {
           x = 100, y = 0, width = 20, height = 12,
-          data = "eJztzTEOglAUBdFzo6HB9aA0sh7URteDsiVad2PslJAfSwumm7w3uVU4YBsmbMITTdi/b2EX+nAK53CZeZ3v//bDm4W+C0O4h0cYZ34s7PUL/S2KXAt7ww/9yoo/5QXl4Bf8"
+          data = "eJzljisOgDAQBcfy2U1AANcCQbkWCMq1iuE6pAmihoS0dYx55mUy8C86hV5hCNbV8b5ZwSgswTYCrcT5dgWrcAQ7CkyS1hmyPm0pnW/4TlPl820CNqPvFLgy+jyuyOtryu/nGwAqDjY="
         },
         {
-          x = 120, y = 0, width = 20, height = 12,
-          data = "eJztjLkNgDAAxOwa5uFpYB6ehszDsyqKFCTaUKK4O5/kTuiFVqiFWViEVZgydiU0ry/6UTiEU7iEPWMPqf980Qf5zJb6hQI/4gaBdBUU"
+          x = 0, y = 12, width = 20, height = 12,
+          data = "eJzt0MEBQDAUBcF5TQklISVJtOrqzvFPAXtYSilLaGENW77/2MMRztB/6F1hhBnuV+8BcdsFCw=="
         },
         {
-          x = 140, y = 0, width = 20, height = 12,
-          data = "eJztzj0KwmAYBOFnQW28j9HG+xhtch//jiTY5DghkPL9wM4m0w0szHbhGE7hELrCR7yxDV/0i+/mLTbhs3gfruEWLg3fF62qO/sjPMMr3Bt+LlqtH78wFK3Wj5UVf2QCVhYdIg=="
+          x = 20, y = 12, width = 20, height = 12,
+          data = "eJzt0LkNwlAQBNA3AjmjHY7M7XCELocrox3HrgZ9fSpYUr9kNMFssKxW3YQ3hnDENszYpPahDw7tVjiFfXpvWbHgEq7hFs7pvWXFLjzCM7zC/ddbVozF3T++k60Lhg=="
         },
         {
-          x = 160, y = 0, width = 20, height = 12,
-          data = "eJztz8kJgEAURMFqNCaXkBRDUkzJkOTDZDAnwYJHn3vBGB4M4dJnDVOY21Y9jrCFvW3V4w5n/Wxb/X4+6gX+Gwfx"
+          x = 0, y = 24, width = 20, height = 12,
+          data = "eJztzjEKAkEUg+HvvUJlD6Ss4oGUVTyQYqNeyevI4EyzsIWdoD+EhJAi/B4dZsk8WSQ33PGo+pQt+mSdbJInVsEy3l5U6Gs3zm3bOGFIDskx6YJ9sKteVBhqN85tO/k3uATn6kWFa+3GuW3/+Dpe7ScTEw=="
+        },
+        {
+          x = 20, y = 24, width = 20, height = 12,
+          data = "eJztjUEKglAURc8FG4nbyZqE29FsELQcLWdtSVxNPP57EB+SpoIHHvwL9/wL2+Hx410IDoI3cBYcBbXgpJTnlf8m4EZyox/uAvSCVtAJrkq59A27cIw6c6MfbiV4CQbBKHh6vviGXThGl7nRD7fxXs7dN4Yvxxj/cHfYFB+hhhvY"
+        },
+        {
+          x = 40, y = 24, width = 20, height = 12,
+          data = "eJztjrsNgDAMRN/VwDp8GmAdAg3MQ2AvpkFIQXGRgjriVbbvTmfInwuYBYugEbSCUjAJnKJm90JQG38X5idXCQ7BafyDYBd4o9m9T/S5kBsVf339m7mlWBN9/kPuh6y4AdynFZI="
+        },
+        {
+          x = 60, y = 24, width = 20, height = 12,
+          data = "eJztzqkNgEAABdEZC/1wCOiHw9APR1m0g1rHbhZHCOOe+fnw7gZhFCZhNu4zc28VNmEXDuMuhFKohFpohPbGuXVCn/gf/KQl8T/4j093AU/3FlI="
+        },
+        {
+          x = 80, y = 24, width = 20, height = 12,
+          data = "eJztzDsKwlAARNEz+GncT4yN+0m0cT/xsyTBxuWI8CTyML2gFwbmNpffognrcMcFi3BDX3wZWszD9YPPwvGt14U+rDK227CpfjPhTdmL4dkP24ztXdhXv5vwrqzmkLF9CufqDxM+lP3xlTwAWzgcPA=="
         }
       }
     },
@@ -15489,14 +16358,6 @@ return {
           data = "eJxjYBgFo2AUMNARLBahnmEAOgAAuA=="
         },
         {
-          x = 20, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMAwyMEuEOIUAHtwArw=="
-        },
-        {
-          x = 100, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMAwy0CaFYHcisdEBAC5gAUQ="
-        },
-        {
           x = -20, y = 0, width = 20, height = 12,
           data = "eJxjYBi8YK7IQLtgFIwChkENAC+uALI="
         },
@@ -15505,32 +16366,28 @@ return {
           data = "eJxbKsIABqYSDAzToexQCQaGJVD2KBgFo4Bh0AIAgjoC1w=="
         },
         {
-          x = 20, y = 0, width = 20, height = 12,
-          data = "eJxjYCAPiIkzMIiLMzBIiDNQDUwVYWBQlWBguCpBPTNHwShgGMYAALhAAl4="
+          x = 0, y = 12, width = 20, height = 12,
+          data = "eJxjYBgFo4D2gI2JgYEdijmYKDfPkomBwQqKralgXg4TA0MuFOdRwTx6AQBZwgLR"
         },
         {
-          x = 40, y = 0, width = 20, height = 12,
-          data = "eJxjYMAERyVQ+aFo/K/iDESBq1B9qmj6R8EoGAUMVAEAX/UDgQ=="
+          x = 20, y = 12, width = 20, height = 12,
+          data = "eJxjYBgFowACbjEwMFgyMTBYoWFrJvJCiJeRgSGHiYEhFw3nkWmeA+NoTDGgAQCb5wUs"
         },
         {
-          x = 60, y = 0, width = 20, height = 12,
-          data = "eJxjYEAFV8UZGNjEGBjYxRgYOMQYqALExBgYxMUYGCSoZB6tgKjEQLtgFIwCBpIAAOS7Afg="
+          x = 0, y = 24, width = 20, height = 12,
+          data = "eJxjYBgF9AJWTAwM1kwQtiUThA8CILFsRuLMsGVkYMiB6stlYmDIg7JBYiA+CIDE5hFp3ihgGNIAAHvpBRE="
         },
         {
-          x = 80, y = 0, width = 20, height = 12,
-          data = "eJztziEOgDAQRNH/kRAOVAHhQBjOA5R7cRrSsBJXg+gzkx0xWfi2C6dwCdn3PqLL0ffCICThBlJHlUmYhVUYS1buFVv8uli/1TT8zAMS4Amv"
+          x = 20, y = 24, width = 20, height = 12,
+          data = "eJxjYBgFlAArJggGAXtGysMylwmCQaCICuaNAoZhDQCmEgIK"
         },
         {
-          x = 100, y = 0, width = 20, height = 12,
-          data = "eJztzMsJgDAAwNDQMTJKnUnH8bOAnwWqbudVwYoHL0If5JoYIJ6qArdaoRN6YZCsOlxrMr9RmIRZWB5+byVhFTZh/+BXFPzAAS5rDGw="
+          x = 40, y = 24, width = 20, height = 12,
+          data = "eJztzDkNgEAARcHR8U2SYABYAxwGOJRSQk22gTDVqx7v0eTq9tZPdaEPQygVfmOYwhyWCr81bGEPR4Xfz+eclJoJFA=="
         },
         {
-          x = 140, y = 0, width = 20, height = 12,
-          data = "eJztw8ENQEAUBcB52xUJ/axw0A+9amAl3P8kwzdLWMMWepga8+AfZ7jDFfbGMVhK8eoBVA4HAA=="
-        },
-        {
-          x = 160, y = 0, width = 20, height = 12,
-          data = "eJyzYmJgsIJiayYGBntGBopALhMC5zExMBRRaN4oGAWjgAEnAADlwwNi"
+          x = 80, y = 24, width = 20, height = 12,
+          data = "eJztzNENQEAQQMHZ7QpBPQQJ9dCrCtwV4CZ5v4//GoMpWIMl6JK+0pDM8f08gye4gy3ZKx3JVfg1jYIXj7oKYQ=="
         }
       }
     },
@@ -15549,13 +16406,19 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["drawz"] = 0.5
+      },
       encoding = "base64",
       compression = "zlib",
       chunks = {
         {
-          x = 100, y = 0, width = 20, height = 12,
-          data = "eJxjYCAO5EkxMORLMTAUSDEwFEoRqWkUjIJRwEBLAACvWQIn"
+          x = 0, y = 12, width = 20, height = 12,
+          data = "eJxjYBgFowATXGZkYLgCxVcZKQ+hJYwMDEuheBkVzBsFDGAAAN/wBe0="
+        },
+        {
+          x = 40, y = 24, width = 20, height = 12,
+          data = "eJxjYBi5IFyKgSFCioEhUoqBIUpqoF0zCkYBA8kAAOtsAcs="
         }
       }
     },
@@ -15581,20 +16444,28 @@ return {
       compression = "zlib",
       chunks = {
         {
-          x = 60, y = 0, width = 20, height = 12,
-          data = "eJzdzkEKwkAMBdA3xepGz6PWQr2MLkrFIwl6I6E9jxRn0aUDWfkhBH7gEX7PTWzaYO8e7D3xCvRGTIHeKdGmOO9Sca3YLbotaqyxKfTqxBtnrLLT+XZN3iV5zH8kBuxxwDHPfOsLvX/IB628C7Y="
+          x = 0, y = 24, width = 20, height = 12,
+          data = "eJxjYBhZIJfK5tlQ2bx8Kpu3iIGBYTEVzbvKwMBwjYrmpTIxMPBS0TxzBgYGBwYGBkcqmXeJgYGBmRHiTlYqmDsXat58qFtLGCDmsjCQFw4AajAIuQ=="
         },
         {
-          x = 80, y = 0, width = 20, height = 12,
-          data = "eJxjYBgFwxmwMzAwcCDxmbHweUkwL4uBgcGICcE3Z8LkO5Bg5iUGBoZUJgaGDCYGhkwmBoYsJkx+MQPETFYS3cowAgAAbxwGow=="
+          x = 60, y = 24, width = 20, height = 12,
+          data = "eJztzLENgDAQBMFBwpBQEBH0g6Al6AkaQi/ZCZFzvNHp/m9pNP7NhB4JwyfX7sv/iBU3ZuzRd6SOrcK15P2JAxee7AtXOONW/C+cZQiN"
         },
         {
-          x = 120, y = 0, width = 20, height = 12,
-          data = "eJztzrERgCAQAMFNxMSGTKAhCaAgbdWEDn7mI7aAm2Pb8lw4UHAGWxUNLzq+4NfAXJ0Hd/Avww/CBQR5"
+          x = 80, y = 24, width = 20, height = 12,
+          data = "eJxjYBgFo2D4AHYGBgZeKpo3n4GBwYGBgYGDSuaZMzAwFDMwMFhTyTwA6VgB4Q=="
         },
         {
-          x = 140, y = 0, width = 20, height = 12,
-          data = "eJztzzsOgkAARdEzCSiFrAeFAtYjn4b9oGvSDRniFIZuOmK41atO8jj65y7IkOO02WeUiV6LF64YVieQB+54oEOR4L2jN0Rz+fErzGgSvCd61Bhxi+ZqZeFrT4mf99wHVbcMLQ=="
+          x = 0, y = 36, width = 20, height = 12,
+          data = "eJztzsENQEAUQMH5YTmpRxy1oydqWjQkYjtYBwdTwMtLQQoOTMjY0AYLeszq7Z7eiREJQ0Uvl8e1fN/tJuhefP79fNwF5G0H+w=="
+        },
+        {
+          x = 60, y = 36, width = 20, height = 12,
+          data = "eJztzKERwCAQAMEtIP0wpCVAQEEkpcZgiUL+yhPH3oWOgQcVGS8KbrTVJtLPK4TguA+RxwT0"
+        },
+        {
+          x = 80, y = 36, width = 20, height = 12,
+          data = "eJxjYWRguMTAwJDHMApGwShgGGIAAMADAUY="
         }
       }
     },
@@ -15675,7 +16546,7 @@ return {
       chunks = {
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJztzlsNgDAUBcExcY9/U30YKCADCyTwRToCNsu2PddCDyPMvO+tcIQzXKEVvRjFrC+O/doN0qYLUw=="
+          data = "eJzt0UkRgEAQBME0Me3f1B4GOGQgASL4TkqoorXvRphhhZ3/5Y5whivcYRSzWMWuPuPFA9KmC1M="
         }
       }
     },
@@ -15720,15 +16591,14 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 0, y = 0 },
+                { x = 0, y = -96 },
                 { x = 0, y = 288 },
                 { x = 32, y = 288 },
                 { x = 32, y = 160 },
                 { x = 64, y = 128 },
                 { x = 224, y = 128 },
                 { x = 256, y = 96 },
-                { x = 448, y = 96 },
-                { x = 448, y = 0 }
+                { x = 256, y = -96 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -15751,7 +16621,7 @@ return {
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
-                { x = 480, y = 0 }
+                { x = 320, y = 0 }
               },
               properties = {}
             },
@@ -15767,10 +16637,11 @@ return {
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 0, y = -32 },
-                { x = 0, y = 64 },
-                { x = 512, y = 64 },
-                { x = 512, y = -32 }
+                { x = -192, y = -128 },
+                { x = -192, y = 64 },
+                { x = 1504, y = 64 },
+                { x = 1536, y = 32 },
+                { x = 1536, y = -128 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -15785,26 +16656,12 @@ return {
               name = "joystick",
               type = "",
               shape = "rectangle",
-              x = 280,
-              y = 72,
+              x = 416,
+              y = 80,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6856,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 515,
-              name = "sprintbutton",
-              type = "",
-              shape = "rectangle",
-              x = 344,
-              y = 72,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              gid = 6886,
+              gid = 6833,
               visible = true,
               properties = {}
             },
@@ -15813,33 +16670,174 @@ return {
               name = "Move",
               type = "",
               shape = "text",
-              x = 304,
-              y = 56,
-              width = 20,
+              x = 376,
+              y = 64,
+              width = 32,
               height = 18,
               rotation = 0,
               visible = true,
-              text = "MOVE",
-              fontfamily = "TinyUnicode",
+              text = "Move",
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
             },
             {
-              id = 518,
-              name = "Sprint",
+              id = 514,
+              name = "attackbutton",
+              type = "",
+              shape = "rectangle",
+              x = 576,
+              y = 56,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7244,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 541,
+              name = "attackbutton",
+              type = "",
+              shape = "rectangle",
+              x = 576,
+              y = 72,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7240,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 517,
+              name = "Attack",
               type = "",
               shape = "text",
-              x = 368,
-              y = 56,
-              width = 64,
-              height = 18,
+              x = 512,
+              y = 48,
+              width = 48,
+              height = 16,
               rotation = 0,
               visible = true,
-              text = "SPRINT",
+              text = "Attack",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {}
+            },
+            {
+              id = 544,
+              name = "Jump",
+              type = "",
+              shape = "text",
+              x = 512,
+              y = 64,
+              width = 48,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "Jump",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 539,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 608,
+              y = 56,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7246,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 543,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 608,
+              y = 72,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7242,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 540,
+              name = "or",
+              type = "",
+              shape = "text",
+              x = 584,
+              y = 48,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "OR",
               fontfamily = "TinyUnicode",
               wrap = true,
               color = { 255, 255, 255 },
+              halign = "center",
+              properties = {}
+            },
+            {
+              id = 542,
+              name = "or",
+              type = "",
+              shape = "text",
+              x = 584,
+              y = 64,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "OR",
+              fontfamily = "TinyUnicode",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {}
+            },
+            {
+              id = 622,
+              name = "Direct",
+              type = "",
+              shape = "text",
+              x = 648,
+              y = 48,
+              width = 192,
+              height = 32,
+              rotation = 0,
+              visible = true,
+              text = "Aim all attacks\nwith    direction",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 519,
+              name = "joystick",
+              type = "",
+              shape = "rectangle",
+              x = 688,
+              y = 80,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 6833,
+              visible = true,
               properties = {}
             }
           }
@@ -15866,12 +16864,12 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 1072,
+              x = 912,
               y = 160,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -15882,12 +16880,12 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 1176,
+              x = 1016,
               y = 240,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -15898,12 +16896,12 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 408,
+              x = 248,
               y = 160,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -15914,47 +16912,16 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 464,
+              x = 304,
               y = 208,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
-            },
-            {
-              id = 514,
-              name = "attackbutton",
-              type = "",
-              shape = "rectangle",
-              x = 688,
-              y = 56,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              gid = 6872,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 517,
-              name = "Attack",
-              type = "",
-              shape = "text",
-              x = 712,
-              y = 40,
-              width = 64,
-              height = 18,
-              rotation = 0,
-              visible = true,
-              text = "ATTACK",
-              fontfamily = "TinyUnicode",
-              wrap = true,
-              color = { 255, 255, 255 },
-              properties = {}
             }
           }
         },
@@ -15979,12 +16946,12 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 248,
+              x = 88,
               y = 240,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -15995,12 +16962,12 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 408,
+              x = 248,
               y = 200,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -16011,12 +16978,12 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 984,
+              x = 824,
               y = 152,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -16027,12 +16994,12 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 1016,
+              x = 856,
               y = 240,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -16043,12 +17010,12 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 272,
+              x = 112,
               y = 128,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -16059,43 +17026,29 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 1192,
+              x = 1032,
               y = 256,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
             },
             {
-              id = 519,
-              name = "joystick",
-              type = "",
-              shape = "rectangle",
-              x = 760,
-              y = 56,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              gid = 6856,
-              visible = true,
-              properties = {}
-            },
-            {
               id = 520,
               name = "Grab",
               type = "",
               shape = "text",
-              x = 784,
-              y = 40,
-              width = 128,
+              x = 584,
+              y = 48,
+              width = 144,
               height = 32,
               rotation = 0,
-              visible = true,
-              text = "INTO ENEMY to GRAB then",
+              visible = false,
+              text = "MOVE INTO ENEMY to GRAB then",
               fontfamily = "TinyUnicode",
               wrap = true,
               color = { 255, 255, 255 },
@@ -16106,13 +17059,13 @@ return {
               name = "Grab",
               type = "",
               shape = "text",
-              x = 776,
+              x = 584,
               y = 64,
               width = 128,
               height = 32,
               rotation = 0,
-              visible = true,
-              text = "+ A DIRECTION to THROW",
+              visible = false,
+              text = "DIRECTION + ATTACK to THROW",
               fontfamily = "TinyUnicode",
               wrap = true,
               color = { 255, 255, 255 },
@@ -16123,22 +17076,22 @@ return {
               name = "attackbutton",
               type = "",
               shape = "rectangle",
-              x = 760,
-              y = 80,
-              width = 16,
-              height = 16,
+              x = 576,
+              y = 72,
+              width = 14,
+              height = 14,
               rotation = 0,
-              gid = 6872,
-              visible = true,
+              gid = 7244,
+              visible = false,
               properties = {}
             }
           }
         },
         {
           type = "objectgroup",
-          draworder = "topdown",
-          id = 41,
-          name = "tolearnrunning",
+          draworder = "index",
+          id = 60,
+          name = "learngrabandthrow",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -16146,17 +17099,14 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {
-            ["donewhenenemiesleft"] = 3,
-            ["titlebarcuecard"] = "RUNNING TACKLE"
-          },
+          properties = {},
           objects = {
             {
-              id = 482,
+              id = 635,
               name = "camerapath",
               type = "CameraPath",
               shape = "polyline",
-              x = 720,
+              x = 560,
               y = 144,
               width = 0,
               height = 0,
@@ -16164,314 +17114,237 @@ return {
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
-                { x = 96, y = 0 }
+                { x = 480, y = 0 }
               },
               properties = {}
             },
             {
-              id = 490,
-              name = "",
-              type = "bandit-dagger",
-              shape = "rectangle",
-              x = 1048,
-              y = 160,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7260,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 491,
-              name = "",
-              type = "bandit-dagger",
-              shape = "rectangle",
-              x = 1128,
-              y = 224,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7260,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 492,
-              name = "",
-              type = "bandit-dagger",
-              shape = "rectangle",
-              x = 1040,
-              y = 248,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7260,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 238,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 1024,
-              y = 64,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polygon = {
-                { x = -64, y = -96 },
-                { x = -64, y = 32 },
-                { x = 32, y = 32 },
-                { x = 96, y = 96 },
-                { x = 96, y = 96 },
-                { x = 96, y = -96 }
-              },
-              properties = {
-                ["bodyinlayers"] = "Wall",
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["extrudeY"] = -64,
-                ["linecolor"] = "#80ffffff"
-              }
-            },
-            {
-              id = 521,
-              name = "attackbutton",
-              type = "",
-              shape = "rectangle",
-              x = 1192,
-              y = 128,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              gid = 6872,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 522,
-              name = "Fireball",
+              id = 637,
+              name = "Direct",
               type = "",
               shape = "text",
-              x = 1216,
-              y = 112,
-              width = 192,
-              height = 40,
-              rotation = 0,
-              visible = true,
-              text = "HOLD THEN RELEASE for FIREBALL\nCOSTS 1 OR MORE",
-              fontfamily = "TinyUnicode",
-              wrap = true,
-              color = { 255, 255, 255 },
-              properties = {}
-            },
-            {
-              id = 523,
-              name = "flame1",
-              type = "",
-              shape = "rectangle",
-              x = 1294,
-              y = 130,
-              width = 30,
-              height = 6,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["color"] = "#ffffd000"
-              }
-            },
-            {
-              id = 524,
-              name = "flamecharge1",
-              type = "",
-              shape = "rectangle",
-              x = 1374,
-              y = 130,
-              width = 30,
-              height = 6,
-              rotation = 0,
-              visible = false,
-              properties = {
-                ["color"] = "#ffffffff"
-              }
-            },
-            {
-              id = 525,
-              name = "flamebox",
-              type = "",
-              shape = "rectangle",
-              x = 1294,
-              y = 130,
-              width = 30,
-              height = 6,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["color"] = "#00000000",
-                ["linecolor"] = "#ffffffff",
-                ["roundcorners"] = 1
-              }
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
-          id = 9,
-          name = "tolearnrunning2",
-          class = "Room",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {
-            ["donewhenenemiesleft"] = 5,
-            ["titlebarcuecard"] = "RUNNING KICK"
-          },
-          objects = {
-            {
-              id = 29,
-              name = "camerapath",
-              type = "CameraPath",
-              shape = "polyline",
-              x = 720,
-              y = 144,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polyline = {
-                { x = 96, y = 0 },
-                { x = 224, y = 0 },
-                { x = 416, y = 64 },
-                { x = 640, y = 64 }
-              },
-              properties = {}
-            },
-            {
-              id = 52,
-              name = "",
-              type = "bandit-dagger",
-              shape = "rectangle",
-              x = 1264,
-              y = 192,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7260,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 51,
-              name = "",
-              type = "bandit-dagger",
-              shape = "rectangle",
-              x = 1296,
-              y = 288,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7260,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 53,
-              name = "",
-              type = "bandit-dagger",
-              shape = "rectangle",
-              x = 1232,
-              y = 272,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7260,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 430,
-              name = "Instruction",
-              type = "",
-              shape = "text",
-              x = 1216,
-              y = 160,
-              width = 192,
+              x = 856,
+              y = 48,
+              width = 128,
               height = 32,
               rotation = 0,
-              visible = false,
-              text = "Steer while sprinting",
+              visible = true,
+              text = "Walk into large\nbody to grapple",
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
             },
             {
-              id = 429,
-              name = "",
+              id = 639,
+              name = "Direct",
               type = "",
-              shape = "rectangle",
-              x = 1192,
-              y = 176,
-              width = 16,
+              shape = "text",
+              x = 1024,
+              y = 56,
+              width = 64,
               height = 16,
               rotation = 0,
-              gid = 6861,
-              visible = false,
+              visible = true,
+              text = "Pummel",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
               properties = {}
             },
             {
-              id = 239,
+              id = 689,
+              name = "During grapple",
+              type = "",
+              shape = "text",
+              x = 1008,
+              y = 40,
+              width = 168,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "During grapple",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 685,
+              name = "Direct",
+              type = "",
+              shape = "text",
+              x = 1024,
+              y = 72,
+              width = 240,
+              height = 32,
+              rotation = 0,
+              visible = true,
+              text = "Throw         +    direction",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 638,
+              name = "joystick",
+              type = "",
+              shape = "rectangle",
+              x = 832,
+              y = 64,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 6833,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 643,
+              name = "joystick",
+              type = "",
+              shape = "rectangle",
+              x = 1152,
+              y = 88,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 6833,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 640,
+              name = "attackbutton",
+              type = "",
+              shape = "rectangle",
+              x = 1088,
+              y = 80,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7244,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 641,
               name = "",
-              type = "Boundary",
-              shape = "polygon",
+              type = "",
+              shape = "rectangle",
               x = 1120,
+              y = 80,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7246,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 642,
+              name = "or",
+              type = "",
+              shape = "text",
+              x = 1096,
+              y = 72,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "OR",
+              fontfamily = "TinyUnicode",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {}
+            },
+            {
+              id = 647,
+              name = "tall-stone",
+              type = "tall-stone",
+              shape = "rectangle",
+              x = 1040,
+              y = 176,
+              width = 48,
+              height = 48,
+              rotation = 0,
+              gid = 7269,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/objects-properties.csv",
+                ["respawnpoint"] = { id = 654 }
+              }
+            },
+            {
+              id = 654,
+              name = "rockrespawnpoint",
+              type = "",
+              shape = "point",
+              x = 1040,
               y = 0,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
-              polygon = {
-                { x = 0, y = -32 },
-                { x = 0, y = 160 },
-                { x = 320, y = 160 },
-                { x = 352, y = 128 },
-                { x = 480, y = 128 },
-                { x = 480, y = -32 }
-              },
               properties = {
-                ["bodyinlayers"] = "Wall",
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["extrudeY"] = -64,
-                ["linecolor"] = "#80ffffff"
+                ["z"] = 176
               }
+            },
+            {
+              id = 686,
+              name = "attackbutton",
+              type = "",
+              shape = "rectangle",
+              x = 1088,
+              y = 64,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7244,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 687,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1120,
+              y = 64,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7246,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 688,
+              name = "or",
+              type = "",
+              shape = "text",
+              x = 1096,
+              y = 56,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "OR",
+              fontfamily = "TinyUnicode",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {}
             }
           }
         },
         {
           type = "objectgroup",
           draworder = "topdown",
-          id = 47,
-          name = "tolearnrunning3",
+          id = 61,
+          name = "+knives",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -16479,22 +17352,115 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {
-            ["donewhenenemiesleft"] = 4,
-            ["titlebarcuecard"] = "RUN WITH ENEMY"
-          },
+          properties = {},
           objects = {
+            {
+              id = 648,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 784,
+              y = 280,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 649,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 672,
+              y = 200,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 650,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1328,
+              y = 136,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 651,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1296,
+              y = 280,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 652,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 744,
+              y = 144,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 653,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1384,
+              y = 216,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
             {
               id = 19,
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 1184,
-              y = 32,
+              x = 880,
+              y = -8,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -16506,32 +17472,192 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 1320,
-              y = 56,
+              x = 1200,
+              y = -8,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
                 ["z"] = 64
               }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 64,
+          name = "tolearnsprint",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 515,
+              name = "sprintbutton",
+              type = "",
+              shape = "rectangle",
+              x = 1456,
+              y = 64,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7254,
+              visible = true,
+              properties = {}
             },
             {
-              id = 493,
-              name = "camerapathDisabled",
+              id = 518,
+              name = "Run",
+              type = "",
+              shape = "text",
+              x = 1360,
+              y = 56,
+              width = 48,
+              height = 18,
+              rotation = 0,
+              visible = true,
+              text = "Sprint",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {}
+            },
+            {
+              id = 538,
+              name = "or",
+              type = "",
+              shape = "text",
+              x = 1432,
+              y = 56,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "OR",
+              fontfamily = "TinyUnicode",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {}
+            },
+            {
+              id = 537,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1424,
+              y = 64,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7250,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 678,
+              name = "attackbutton",
+              type = "",
+              shape = "rectangle",
+              x = 1648,
+              y = 72,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7244,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 679,
+              name = "Attack",
+              type = "",
+              shape = "text",
+              x = 1584,
+              y = 64,
+              width = 128,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "Tackle",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 682,
+              name = "Attack",
+              type = "",
+              shape = "text",
+              x = 1568,
+              y = 48,
+              width = 128,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "During sprint",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 680,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1680,
+              y = 72,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7246,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 681,
+              name = "or",
+              type = "",
+              shape = "text",
+              x = 1656,
+              y = 64,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "OR",
+              fontfamily = "TinyUnicode",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {}
+            },
+            {
+              id = 690,
+              name = "camerapath",
               type = "CameraPath",
               shape = "polyline",
-              x = 1136,
-              y = 208,
+              x = 1040,
+              y = 144,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
-                { x = 224, y = 0 }
+                { x = 480, y = 0 }
               },
               properties = {}
             }
@@ -16541,7 +17667,7 @@ return {
           type = "objectgroup",
           draworder = "topdown",
           id = 10,
-          name = "learnrunning",
+          name = "learnsprint",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -16550,36 +17676,36 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["titlebarcuecard"] = "WALK INTO SPEAR THEN RUN"
+            ["donewhenenemiesleft"] = 1
           },
           objects = {
             {
-              id = 32,
+              id = 697,
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 1616,
-              y = 216,
+              x = 1208,
+              y = 144,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
             },
             {
-              id = 261,
+              id = 696,
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 1064,
-              y = 232,
+              x = 1256,
+              y = 216,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -16590,8 +17716,8 @@ return {
               name = "Instruction",
               type = "",
               shape = "text",
-              x = 1240,
-              y = 304,
+              x = 1520,
+              y = 336,
               width = 264,
               height = 16,
               rotation = 0,
@@ -16609,12 +17735,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1216,
-              y = 320,
+              x = 1496,
+              y = 352,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6923,
+              gid = 6900,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -16625,12 +17751,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1352,
-              y = 304,
+              x = 1632,
+              y = 336,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6943,
+              gid = 6920,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -16641,12 +17767,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1384,
-              y = 304,
+              x = 1664,
+              y = 336,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7159,
+              gid = 7136,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -16657,6 +17783,331 @@ return {
         {
           type = "objectgroup",
           draworder = "topdown",
+          id = 66,
+          name = "+spears",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 32,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 1680,
+              y = -8,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 261,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 1360,
+              y = -8,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 699,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 1776,
+              y = 136,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 700,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 1824,
+              y = 208,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "index",
+          id = 9,
+          name = "learnitems",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = 5,
+            ["titlebarcuecard"] = "RUNNING KICK"
+          },
+          objects = {
+            {
+              id = 29,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 1520,
+              y = 208,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = 0, y = -64 },
+                { x = 320, y = -64 }
+              },
+              properties = {}
+            },
+            {
+              id = 430,
+              name = "Instruction",
+              type = "",
+              shape = "text",
+              x = 2016,
+              y = 224,
+              width = 192,
+              height = 32,
+              rotation = 0,
+              visible = false,
+              text = "Steer while sprinting",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 429,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1992,
+              y = 240,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 6838,
+              visible = false,
+              properties = {}
+            },
+            {
+              id = 239,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 1920,
+              y = 64,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 64, y = -160 },
+                { x = 64, y = 0 },
+                { x = 96, y = 0 },
+                { x = 96, y = -160 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 596,
+              name = "",
+              type = "fruit-tree",
+              shape = "rectangle",
+              x = 2000,
+              y = 88,
+              width = 128,
+              height = 160,
+              rotation = 0,
+              gid = 7261,
+              visible = true,
+              properties = {
+                ["asetag"] = "*",
+                ["fruit1"] = { id = 600 },
+                ["fruit2"] = { id = 601 },
+                ["leaves"] = { id = 597 },
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 597,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2000,
+              y = 40,
+              width = 128,
+              height = 96,
+              rotation = 0,
+              gid = 7260,
+              visible = true,
+              properties = {
+                ["asetag"] = "*",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 600,
+              name = "",
+              type = "food-lifefruit-hanging",
+              shape = "rectangle",
+              x = 1968,
+              y = 40,
+              width = 20,
+              height = 20,
+              rotation = 0,
+              gid = 7266,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/items-properties.csv",
+                ["z"] = 60
+              }
+            },
+            {
+              id = 601,
+              name = "",
+              type = "food-lifefruit-hanging",
+              shape = "rectangle",
+              x = 2032,
+              y = 28,
+              width = 20,
+              height = 20,
+              rotation = 0,
+              gid = 7266,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/items-properties.csv",
+                ["z"] = 68
+              }
+            },
+            {
+              id = 602,
+              name = "Instruction",
+              type = "",
+              shape = "text",
+              x = 1824,
+              y = 48,
+              width = 112,
+              height = 32,
+              rotation = 0,
+              visible = true,
+              text = "Move into item to pick up",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 603,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1832,
+              y = 64,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 6833,
+              visible = false,
+              properties = {}
+            },
+            {
+              id = 604,
+              name = "Instruction",
+              type = "",
+              shape = "text",
+              x = 1944,
+              y = -80,
+              width = 104,
+              height = 32,
+              rotation = 0,
+              visible = true,
+              text = "Food restores lost health",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 606,
+              name = "",
+              type = "food-lifefruit",
+              shape = "rectangle",
+              x = 1984,
+              y = 112,
+              width = 20,
+              height = 20,
+              rotation = 0,
+              gid = 7267,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/items-properties.csv"
+              }
+            },
+            {
+              id = 607,
+              name = "",
+              type = "food-lifefruit",
+              shape = "rectangle",
+              x = 2008,
+              y = 120,
+              width = 20,
+              height = 20,
+              rotation = 0,
+              gid = 7267,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/items-properties.csv"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "index",
           id = 42,
           name = "tolearnthrowingweapons",
           class = "Room",
@@ -16673,15 +18124,15 @@ return {
               name = "camerapath",
               type = "CameraPath",
               shape = "polyline",
-              x = 1360,
-              y = 208,
+              x = 1904,
+              y = 336,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polyline = {
-                { x = 0, y = 0 },
-                { x = 240, y = -64 }
+                { x = -64, y = -192 },
+                { x = 416, y = -192 }
               },
               properties = {}
             },
@@ -16690,19 +18141,20 @@ return {
               name = "",
               type = "Boundary",
               shape = "polygon",
-              x = 1600,
-              y = -64,
+              x = 2464,
+              y = 32,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 0, y = 32 },
-                { x = 0, y = 192 },
-                { x = 128, y = 192 },
-                { x = 160, y = 160 },
-                { x = 256, y = 160 },
-                { x = 256, y = 32 }
+                { x = -448, y = -128 },
+                { x = -448, y = 32 },
+                { x = -384, y = 96 },
+                { x = -256, y = 96 },
+                { x = -224, y = 64 },
+                { x = -64, y = 64 },
+                { x = -64, y = -128 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -16713,114 +18165,261 @@ return {
               }
             },
             {
-              id = 265,
+              id = 530,
+              name = "",
+              type = "item-spikefruit",
+              shape = "rectangle",
+              x = 2256,
+              y = 160,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7265,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/projectiles-properties.csv"
+              }
+            },
+            {
+              id = 532,
+              name = "",
+              type = "item-spikefruit",
+              shape = "rectangle",
+              x = 2288,
+              y = 152,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7265,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/projectiles-properties.csv"
+              }
+            },
+            {
+              id = 533,
+              name = "",
+              type = "item-spikefruit",
+              shape = "rectangle",
+              x = 2312,
+              y = 136,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7265,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/projectiles-properties.csv"
+              }
+            },
+            {
+              id = 534,
+              name = "",
+              type = "item-spikefruit",
+              shape = "rectangle",
+              x = 2224,
+              y = 144,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7265,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/projectiles-properties.csv"
+              }
+            },
+            {
+              id = 590,
+              name = "",
+              type = "fruit-tree",
+              shape = "rectangle",
+              x = 2264,
+              y = 120,
+              width = 128,
+              height = 160,
+              rotation = 0,
+              gid = 7263,
+              visible = true,
+              properties = {
+                ["asetag"] = "*",
+                ["fruit1"] = { id = 592 },
+                ["fruit2"] = { id = 593 },
+                ["fruit3"] = { id = 0 },
+                ["fruit4"] = { id = 0 },
+                ["leaves"] = { id = 591 },
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 591,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2264,
+              y = 72,
+              width = 128,
+              height = 96,
+              rotation = 0,
+              gid = 7262,
+              visible = true,
+              properties = {
+                ["asetag"] = "*",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 592,
+              name = "",
+              type = "item-spikefruit-hanging",
+              shape = "rectangle",
+              x = 2240,
+              y = 72,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7264,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/items-properties.csv",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 593,
+              name = "",
+              type = "item-spikefruit-hanging",
+              shape = "rectangle",
+              x = 2296,
+              y = 60,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7264,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/items-properties.csv",
+                ["z"] = 68
+              }
+            },
+            {
+              id = 431,
+              name = "During sprint",
+              type = "",
+              shape = "text",
+              x = 2312,
+              y = 40,
+              width = 104,
+              height = 48,
+              rotation = 0,
+              visible = true,
+              text = "During sprint throws ALL missiles",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 432,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1936,
+              y = 128,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 6833,
+              visible = false,
+              properties = {}
+            },
+            {
+              id = 434,
+              name = "Instruction",
+              type = "",
+              shape = "text",
+              x = 2096,
+              y = 80,
+              width = 104,
+              height = 32,
+              rotation = 0,
+              visible = true,
+              text = "Throw missile",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 626,
+              name = "attackbutton",
+              type = "",
+              shape = "rectangle",
+              x = 2128,
+              y = 104,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7244,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 627,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2160,
+              y = 104,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7246,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 628,
+              name = "or",
+              type = "",
+              shape = "text",
+              x = 2136,
+              y = 96,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "OR",
+              fontfamily = "TinyUnicode",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {}
+            },
+            {
+              id = 785,
               name = "",
               type = "Boundary",
               shape = "polygon",
-              x = 1216,
-              y = -80,
+              x = 2528,
+              y = 192,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 144, y = 0 },
-                { x = 144, y = 96 },
-                { x = 624, y = 96 },
-                { x = 624, y = 0 }
+                { x = 0, y = 32 },
+                { x = 176, y = 32 },
+                { x = 176, y = -288 },
+                { x = -128, y = -288 },
+                { x = -128, y = -96 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
-                ["linecolor"] = "#80ffffff",
-                ["z"] = 64
+                ["linecolor"] = "#80ffffff"
               }
-            },
-            {
-              id = 530,
-              name = "",
-              type = "item-stone",
-              shape = "rectangle",
-              x = 1504,
-              y = 208,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              gid = 7262,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 531,
-              name = "",
-              type = "item-stone",
-              shape = "rectangle",
-              x = 1552,
-              y = 184,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              gid = 7262,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 532,
-              name = "",
-              type = "item-stone",
-              shape = "rectangle",
-              x = 1648,
-              y = 208,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              gid = 7262,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 533,
-              name = "",
-              type = "item-stone",
-              shape = "rectangle",
-              x = 1704,
-              y = 160,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              gid = 7262,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 534,
-              name = "",
-              type = "item-stone",
-              shape = "rectangle",
-              x = 1480,
-              y = 152,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              gid = 7262,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 535,
-              name = "",
-              type = "item-stone",
-              shape = "rectangle",
-              x = 1768,
-              y = 200,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              gid = 7262,
-              visible = true,
-              properties = {}
             }
           }
         },
@@ -16836,22 +18435,19 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {
-            ["donewhenenemiesleft"] = 1,
-            ["titlebarcuecard"] = "THROW SINGLE ROCKS"
-          },
+          properties = {},
           objects = {
             {
               id = 58,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1664,
-              y = -40,
+              x = 2544,
+              y = -24,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7259,
+              gid = 7236,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -16868,12 +18464,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1728,
-              y = -8,
+              x = 2592,
+              y = 24,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7259,
+              gid = 7236,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -16890,8 +18486,8 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 1664,
-              y = 56,
+              x = 2496,
+              y = 120,
               width = 0,
               height = 0,
               rotation = 0,
@@ -16905,8 +18501,8 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 1568,
-              y = 56,
+              x = 2448,
+              y = 72,
               width = 0,
               height = 0,
               rotation = 0,
@@ -16920,8 +18516,8 @@ return {
               name = "exitpoint",
               type = "",
               shape = "point",
-              x = 1760,
-              y = -40,
+              x = 2624,
+              y = -8,
               width = 0,
               height = 0,
               rotation = 0,
@@ -16935,8 +18531,8 @@ return {
               name = "exitpoint",
               type = "",
               shape = "point",
-              x = 1664,
-              y = -40,
+              x = 2544,
+              y = -24,
               width = 0,
               height = 0,
               rotation = 0,
@@ -16946,65 +18542,17 @@ return {
               }
             },
             {
-              id = 431,
-              name = "Instruction",
-              type = "",
-              shape = "text",
-              x = 1528,
-              y = 72,
-              width = 160,
-              height = 16,
-              rotation = 0,
-              visible = true,
-              text = "INTO ROCK to PICK UP",
-              fontfamily = "TinyUnicode",
-              wrap = true,
-              color = { 255, 255, 255 },
-              properties = {}
-            },
-            {
-              id = 432,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1504,
-              y = 88,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              gid = 6856,
-              visible = true,
-              properties = {}
-            },
-            {
               id = 433,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1504,
-              y = 112,
-              width = 16,
-              height = 16,
+              x = 1912,
+              y = 160,
+              width = 14,
+              height = 14,
               rotation = 0,
-              gid = 6872,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 434,
-              name = "Instruction",
-              type = "",
-              shape = "text",
-              x = 1528,
-              y = 96,
-              width = 144,
-              height = 16,
-              rotation = 0,
-              visible = true,
-              text = "THROW 1",
-              fontfamily = "TinyUnicode",
-              wrap = true,
-              color = { 255, 255, 255 },
+              gid = 7244,
+              visible = false,
               properties = {}
             },
             {
@@ -17012,12 +18560,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1576,
-              y = 116,
+              x = 2200,
+              y = 260,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6932,
+              gid = 6909,
               visible = false,
               properties = {}
             },
@@ -17026,12 +18574,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1568,
-              y = 80,
+              x = 2192,
+              y = 224,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7033,
+              gid = 7010,
               visible = false,
               properties = {}
             },
@@ -17040,12 +18588,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1584,
-              y = 80,
+              x = 2208,
+              y = 224,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7034,
+              gid = 7011,
               visible = false,
               properties = {}
             },
@@ -17054,12 +18602,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1600,
-              y = 80,
+              x = 2224,
+              y = 224,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7035,
+              gid = 7012,
               visible = false,
               properties = {}
             },
@@ -17068,12 +18616,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1616,
-              y = 80,
+              x = 2240,
+              y = 224,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7036,
+              gid = 7013,
               visible = false,
               properties = {}
             },
@@ -17082,12 +18630,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1608,
-              y = 116,
+              x = 2232,
+              y = 260,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7158,
+              gid = 7135,
               visible = false,
               properties = {}
             },
@@ -17096,30 +18644,13 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1600,
-              y = 112,
-              width = 16,
-              height = 16,
+              x = 1984,
+              y = 160,
+              width = 14,
+              height = 14,
               rotation = 0,
-              gid = 6886,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 469,
-              name = "Instruction",
-              type = "",
-              shape = "text",
-              x = 1648,
-              y = 96,
-              width = 96,
-              height = 32,
-              rotation = 0,
-              visible = true,
-              text = "THROW ALL",
-              fontfamily = "TinyUnicode",
-              wrap = true,
-              color = { 255, 255, 255 },
+              gid = 7254,
+              visible = false,
               properties = {}
             },
             {
@@ -17127,12 +18658,12 @@ return {
               name = "Instruction",
               type = "",
               shape = "text",
-              x = 1600,
-              y = 96,
+              x = 1976,
+              y = 152,
               width = 40,
               height = 16,
               rotation = 0,
-              visible = true,
+              visible = false,
               text = "+",
               fontfamily = "TinyUnicode",
               wrap = true,
@@ -17145,13 +18676,13 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1624,
-              y = 112,
-              width = 16,
-              height = 16,
+              x = 2008,
+              y = 160,
+              width = 14,
+              height = 14,
               rotation = 0,
-              gid = 6872,
-              visible = true,
+              gid = 7244,
+              visible = false,
               properties = {}
             }
           }
@@ -17177,12 +18708,12 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 1872,
-              y = 168,
+              x = 2576,
+              y = 280,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17193,12 +18724,12 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 1360,
-              y = 200,
+              x = 2056,
+              y = 192,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17209,12 +18740,12 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 1872,
-              y = 200,
+              x = 2576,
+              y = 312,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17225,12 +18756,12 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 1360,
-              y = 232,
+              x = 2056,
+              y = 224,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17251,7 +18782,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 4
+            ["donewhenenemiesleft"] = 5
           },
           objects = {
             {
@@ -17259,12 +18790,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1680,
-              y = -8,
+              x = 2584,
+              y = 16,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7259,
+              gid = 7236,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -17281,8 +18812,8 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 1616,
-              y = 56,
+              x = 2488,
+              y = 112,
               width = 0,
               height = 0,
               rotation = 0,
@@ -17296,8 +18827,114 @@ return {
               name = "exitpoint",
               type = "",
               shape = "point",
-              x = 1712,
-              y = -40,
+              x = 2600,
+              y = 0,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 494,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2536,
+              y = 0,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7236,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["defaultattack"] = "sling-shot-until-empty",
+                ["entrypoint"] = { id = 495 },
+                ["exitpoint"] = { id = 496 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["itemtype"] = "food-fish",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 498,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2632,
+              y = 32,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7236,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["defaultattack"] = "sling-shot-until-empty",
+                ["entrypoint"] = { id = 497 },
+                ["exitpoint"] = { id = 499 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["itemtype"] = "food-fish",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 495,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 2456,
+              y = 80,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 497,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 2520,
+              y = 144,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 496,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2568,
+              y = -32,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 499,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2632,
+              y = 32,
               width = 0,
               height = 0,
               rotation = 0,
@@ -17321,7 +18958,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 4
+            ["donewhenenemiesleft"] = 3
           },
           objects = {
             {
@@ -17329,144 +18966,15 @@ return {
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 1872,
-              y = 232,
+              x = 2576,
+              y = 264,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
-          id = 49,
-          name = "+shooters",
-          class = "Room",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {
-            ["donewhenenemiesleft"] = 5,
-            ["titlebarcuecard"] = "THROW MULTIPLE ROCKS"
-          },
-          objects = {
-            {
-              id = 494,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1584,
-              y = -8,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7259,
-              visible = true,
-              properties = {
-                ["ammo"] = 10,
-                ["defaultattack"] = "sling-shot-until-empty",
-                ["entrypoint"] = { id = 495 },
-                ["exitpoint"] = { id = 496 },
-                ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "food-fish",
-                ["itemvelx"] = 0,
-                ["itemvely"] = 12,
-                ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
-              }
-            },
-            {
-              id = 498,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1776,
-              y = -8,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7259,
-              visible = true,
-              properties = {
-                ["ammo"] = 10,
-                ["defaultattack"] = "sling-shot-until-empty",
-                ["entrypoint"] = { id = 497 },
-                ["exitpoint"] = { id = 499 },
-                ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "food-fish",
-                ["itemvelx"] = 0,
-                ["itemvely"] = 12,
-                ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
-              }
-            },
-            {
-              id = 495,
-              name = "entrypoint",
-              type = "",
-              shape = "point",
-              x = 1520,
-              y = 56,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
-              id = 497,
-              name = "entrypoint",
-              type = "",
-              shape = "point",
-              x = 1712,
-              y = 56,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
-              id = 496,
-              name = "exitpoint",
-              type = "",
-              shape = "point",
-              x = 1616,
-              y = -40,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
-              id = 499,
-              name = "exitpoint",
-              type = "",
-              shape = "point",
-              x = 1808,
-              y = -40,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
               }
             }
           }
@@ -17490,12 +18998,12 @@ return {
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 1360,
-              y = 264,
+              x = 2056,
+              y = 208,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17506,12 +19014,12 @@ return {
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 1872,
-              y = 232,
+              x = 2576,
+              y = 280,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -17522,8 +19030,8 @@ return {
         {
           type = "objectgroup",
           draworder = "index",
-          id = 15,
-          name = "tolearngrabandthrowenemies",
+          id = 62,
+          name = "tolearnfireball",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -17534,19 +19042,572 @@ return {
           properties = {},
           objects = {
             {
-              id = 65,
+              id = 655,
               name = "",
               type = "Boundary",
               shape = "polygon",
-              x = 2016,
-              y = 288,
+              x = 2560,
+              y = 128,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polygon = {
-                { x = -160, y = -320 },
-                { x = -160, y = -192 },
+                { x = 144, y = -224 },
+                { x = 144, y = 96 },
+                { x = 480, y = 96 },
+                { x = 512, y = 64 },
+                { x = 512, y = -224 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 522,
+              name = "Fireball",
+              type = "",
+              shape = "text",
+              x = 2840,
+              y = 176,
+              width = 120,
+              height = 32,
+              rotation = 0,
+              visible = true,
+              text = "Costs 1 or more fire meter",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 656,
+              name = "Fireball",
+              type = "",
+              shape = "text",
+              x = 2624,
+              y = 192,
+              width = 136,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "Hold then release",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 698,
+              name = "Fireball",
+              type = "",
+              shape = "text",
+              x = 2624,
+              y = 176,
+              width = 136,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "Fireballs",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 523,
+              name = "flame1",
+              type = "",
+              shape = "rectangle",
+              x = 2928,
+              y = 200,
+              width = 30,
+              height = 6,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#ffffd000"
+              }
+            },
+            {
+              id = 525,
+              name = "flamebox",
+              type = "",
+              shape = "rectangle",
+              x = 2928,
+              y = 200,
+              width = 30,
+              height = 6,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["color"] = "#00000000",
+                ["linecolor"] = "#ffffffff",
+                ["roundcorners"] = 1
+              }
+            },
+            {
+              id = 632,
+              name = "attackbutton",
+              type = "",
+              shape = "rectangle",
+              x = 2712,
+              y = 184,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7244,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 633,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2744,
+              y = 184,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7246,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 634,
+              name = "or",
+              type = "",
+              shape = "text",
+              x = 2720,
+              y = 176,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "OR",
+              fontfamily = "TinyUnicode",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {}
+            },
+            {
+              id = 675,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 2320,
+              y = 144,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = 0, y = 0 },
+                { x = 160, y = 96 },
+                { x = 480, y = 96 }
+              },
+              properties = {}
+            },
+            {
+              id = 676,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2800,
+              y = 248,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7270,
+              visible = true,
+              properties = {
+                ["item"] = { id = 677 },
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 677,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2800,
+              y = 248,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7271,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/items-properties.csv",
+                ["z"] = 1
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 63,
+          name = "learnfireball",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 657,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2984,
+              y = 88,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7234,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["defaultattack"] = "bow-shot-until-empty",
+                ["entrypoint"] = { id = 658 },
+                ["exitpoint"] = { id = 659 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 673,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3032,
+              y = 88,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7234,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["defaultattack"] = "bow-shot-until-empty",
+                ["entrypoint"] = { id = 674 },
+                ["exitpoint"] = { id = 672 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 662,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2936,
+              y = 88,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7234,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["defaultattack"] = "bow-shot-until-empty",
+                ["entrypoint"] = { id = 661 },
+                ["exitpoint"] = { id = 660 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 665,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2888,
+              y = 88,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7234,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["defaultattack"] = "bow-shot-until-empty",
+                ["entrypoint"] = { id = 664 },
+                ["exitpoint"] = { id = 663 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 668,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2840,
+              y = 88,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7234,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["defaultattack"] = "bow-shot-until-empty",
+                ["entrypoint"] = { id = 667 },
+                ["exitpoint"] = { id = 666 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 671,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2792,
+              y = 88,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7234,
+              visible = true,
+              properties = {
+                ["ammo"] = 10,
+                ["defaultattack"] = "bow-shot-until-empty",
+                ["entrypoint"] = { id = 670 },
+                ["exitpoint"] = { id = 669 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 658,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 2920,
+              y = 152,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 674,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 2968,
+              y = 152,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 661,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 2872,
+              y = 152,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 664,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 2824,
+              y = 152,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 667,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 2776,
+              y = 152,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 670,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 2728,
+              y = 152,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 659,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 3016,
+              y = 56,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 672,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 3064,
+              y = 56,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 660,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2968,
+              y = 56,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 663,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2920,
+              y = 56,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 666,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2872,
+              y = 56,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 669,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2824,
+              y = 56,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "index",
+          id = 15,
+          name = "meetshields",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = 2
+          },
+          objects = {
+            {
+              id = 65,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 3360,
+              y = 384,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = -288, y = -480 },
+                { x = -288, y = -192 },
                 { x = 0, y = -192 },
                 { x = 32, y = -160 },
                 { x = 64, y = -160 },
@@ -17554,8 +19615,8 @@ return {
                 { x = 96, y = -96 },
                 { x = 128, y = -64 },
                 { x = 128, y = 0 },
-                { x = 160, y = 0 },
-                { x = 160, y = -320 }
+                { x = 224, y = 0 },
+                { x = 224, y = -480 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -17570,14 +19631,14 @@ return {
               name = "camerapath",
               type = "CameraPath",
               shape = "polyline",
-              x = 1616,
-              y = 144,
+              x = 2960,
+              y = 240,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polyline = {
-                { x = -16, y = 0 },
+                { x = -160, y = 0 },
                 { x = 320, y = 0 }
               },
               properties = {}
@@ -17587,8 +19648,8 @@ return {
               name = "darknessinside",
               type = "",
               shape = "rectangle",
-              x = 2048,
-              y = 128,
+              x = 3392,
+              y = 224,
               width = 64,
               height = 128,
               rotation = 0,
@@ -17604,22 +19665,24 @@ return {
               name = "exitdoor",
               type = "",
               shape = "rectangle",
-              x = 2048,
-              y = 128,
+              x = 3392,
+              y = 224,
               width = 64,
               height = 128,
               rotation = 0,
               gid = 5266,
               visible = true,
-              properties = {}
+              properties = {
+                ["item"] = { id = 704 }
+              }
             },
             {
               id = 236,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2048,
-              y = 128,
+              x = 3392,
+              y = 224,
               width = 64,
               height = 128,
               rotation = 0,
@@ -17634,8 +19697,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2120,
-              y = 264,
+              x = 3472,
+              y = 360,
               width = 32,
               height = 32,
               rotation = 0,
@@ -17650,8 +19713,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1976,
-              y = 104,
+              x = 3312,
+              y = 208,
               width = 32,
               height = 32,
               rotation = 0,
@@ -17666,8 +19729,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2128,
-              y = 232,
+              x = 3464,
+              y = 328,
               width = 32,
               height = 32,
               rotation = 0,
@@ -17682,8 +19745,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2008,
-              y = 112,
+              x = 3344,
+              y = 216,
               width = 32,
               height = 32,
               rotation = 0,
@@ -17698,14 +19761,14 @@ return {
               name = "Instruction",
               type = "",
               shape = "text",
-              x = 1888,
-              y = 48,
-              width = 112,
-              height = 40,
+              x = 3208,
+              y = 144,
+              width = 136,
+              height = 32,
               rotation = 0,
               visible = true,
-              text = "TOWARDS ARROW IN FLIGHT to CATCH",
-              fontfamily = "TinyUnicode",
+              text = "Attack the unprotected side!",
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
@@ -17715,22 +19778,106 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1864,
-              y = 64,
+              x = 2984,
+              y = 120,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6856,
-              visible = true,
+              gid = 6833,
+              visible = false,
               properties = {}
+            },
+            {
+              id = 521,
+              name = "attackbutton",
+              type = "",
+              shape = "rectangle",
+              x = 2976,
+              y = 160,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7244,
+              visible = false,
+              properties = {}
+            },
+            {
+              id = 503,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 3376,
+              y = 248,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["facedegrees"] = 180,
+                ["initialai"] = "guardForever",
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 308,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 3408,
+              y = 280,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["facedegrees"] = 180,
+                ["initialai"] = "guardForever",
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 608,
+              name = "",
+              type = "fruit-tree",
+              shape = "rectangle",
+              x = 3488,
+              y = 128,
+              width = 128,
+              height = 160,
+              rotation = 0,
+              gid = 7261,
+              visible = true,
+              properties = {
+                ["leaves"] = { id = 609 },
+                ["propertiestable"] = "database/objects-properties.csv",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 609,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3488,
+              y = 80,
+              width = 128,
+              height = 96,
+              rotation = 0,
+              gid = 7260,
+              visible = true,
+              properties = {
+                ["z"] = 128
+              }
             }
           }
         },
         {
           type = "objectgroup",
           draworder = "topdown",
-          id = 29,
-          name = "learngrabandthrowenemies",
+          id = 56,
+          name = "+spearsshields",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -17739,7 +19886,89 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["titlebarcuecard"] = "CATCH AND THROW ARROW, LV1 FIREBALL"
+            ["donewhenenemiesleft"] = 3
+          },
+          objects = {
+            {
+              id = 307,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 2888,
+              y = 336,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 561,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 2888,
+              y = 264,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 562,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 3008,
+              y = 240,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 563,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 3000,
+              y = 360,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 29,
+          name = "+archers",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = 1
           },
           objects = {
             {
@@ -17747,12 +19976,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2080,
-              y = 0,
+              x = 3424,
+              y = 96,
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -17769,8 +19998,8 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 2040,
-              y = 48,
+              x = 3384,
+              y = 144,
               width = 0,
               height = 0,
               rotation = 0,
@@ -17784,8 +20013,8 @@ return {
               name = "exitpoint",
               type = "",
               shape = "point",
-              x = 2080,
-              y = -32,
+              x = 3424,
+              y = 64,
               width = 0,
               height = 0,
               rotation = 0,
@@ -17799,12 +20028,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2192,
-              y = 72,
+              x = 3536,
+              y = 168,
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 10,
@@ -17821,8 +20050,8 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 2128,
-              y = 136,
+              x = 3472,
+              y = 232,
               width = 0,
               height = 0,
               rotation = 0,
@@ -17836,8 +20065,8 @@ return {
               name = "exitpoint",
               type = "",
               shape = "point",
-              x = 2224,
-              y = 40,
+              x = 3568,
+              y = 136,
               width = 0,
               height = 0,
               rotation = 0,
@@ -17847,62 +20076,12 @@ return {
               }
             },
             {
-              id = 307,
-              name = "",
-              type = "bandit-spear",
-              shape = "rectangle",
-              x = 1568,
-              y = 256,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7258,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 503,
-              name = "",
-              type = "bandit-spear",
-              shape = "rectangle",
-              x = 1880,
-              y = -8,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7258,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv",
-                ["z"] = 64
-              }
-            },
-            {
-              id = 308,
-              name = "",
-              type = "bandit-spear",
-              shape = "rectangle",
-              x = 1936,
-              y = -8,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7258,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv",
-                ["z"] = 64
-              }
-            },
-            {
               id = 436,
               name = "Instruction",
               type = "",
               shape = "text",
-              x = 1864,
-              y = 48,
+              x = 2984,
+              y = 144,
               width = 144,
               height = 32,
               rotation = 0,
@@ -17918,12 +20097,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1840,
-              y = 72,
+              x = 2960,
+              y = 168,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6861,
+              gid = 6838,
               visible = false,
               properties = {}
             },
@@ -17932,12 +20111,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1888,
-              y = 256,
+              x = 3008,
+              y = 352,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6912,
+              gid = 6889,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -17948,8 +20127,8 @@ return {
               name = "Instruction",
               type = "",
               shape = "text",
-              x = 1824,
-              y = 224,
+              x = 2944,
+              y = 320,
               width = 224,
               height = 32,
               rotation = 0,
@@ -17967,12 +20146,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1816,
-              y = 256,
+              x = 2936,
+              y = 352,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6932,
+              gid = 6909,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -17983,12 +20162,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1840,
-              y = 256,
+              x = 2960,
+              y = 352,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7158,
+              gid = 7135,
               visible = false,
               properties = {}
             },
@@ -17997,12 +20176,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1888,
-              y = 56,
+              x = 3008,
+              y = 152,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7033,
+              gid = 7010,
               visible = false,
               properties = {}
             },
@@ -18011,12 +20190,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1904,
-              y = 56,
+              x = 3024,
+              y = 152,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7034,
+              gid = 7011,
               visible = false,
               properties = {}
             },
@@ -18025,12 +20204,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1920,
-              y = 56,
+              x = 3040,
+              y = 152,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7035,
+              gid = 7012,
               visible = false,
               properties = {}
             },
@@ -18039,12 +20218,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1936,
-              y = 56,
+              x = 3056,
+              y = 152,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7036,
+              gid = 7013,
               visible = false,
               properties = {}
             },
@@ -18053,41 +20232,15 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1904,
-              y = 240,
+              x = 3024,
+              y = 336,
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6857,
+              gid = 6834,
               visible = false,
               properties = {
                 ["drawz"] = 2
-              }
-            },
-            {
-              id = 504,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 1216,
-              y = -80,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polygon = {
-                { x = 768, y = 0 },
-                { x = 768, y = 96 },
-                { x = 960, y = 96 },
-                { x = 960, y = 0 }
-              },
-              properties = {
-                ["bodyinlayers"] = "Wall",
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["extrudeY"] = -64,
-                ["linecolor"] = "#80ffffff",
-                ["z"] = 64
               }
             }
           }
@@ -18105,31 +20258,55 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = -1,
             ["exitdoor"] = { id = 235 },
             ["sequence"] = "unlockDoorToNextArea"
           },
           objects = {
             {
-              id = 260,
-              name = "camerawarpwhendone",
-              type = "",
-              shape = "point",
-              x = 2512,
-              y = 144,
-              width = 0,
-              height = 0,
+              id = 704,
+              name = "bandit-muscle",
+              type = "bandit-muscle",
+              shape = "rectangle",
+              x = 3424,
+              y = 248,
+              width = 128,
+              height = 128,
               rotation = 0,
+              gid = 7272,
               visible = true,
-              properties = {}
-            },
+              properties = {
+                ["facedegrees"] = 180,
+                ["holdstrength"] = 180,
+                ["initialai"] = "muscle-grab2",
+                ["propertiestable"] = "database/bandits-properties.csv",
+                ["spawnsmanually"] = true
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 68,
+          name = "entercave",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = -1
+          },
+          objects = {
             {
               id = 465,
               name = "exittrigger",
               type = "Trigger",
               shape = "polygon",
-              x = 2048,
-              y = 128,
+              x = 3392,
+              y = 224,
               width = 0,
               height = 0,
               rotation = 0,
@@ -18150,6 +20327,19 @@ return {
                 ["sequence"] = "playerExitToNextArea",
                 ["usesleft"] = 1
               }
+            },
+            {
+              id = 260,
+              name = "camerawarpwhendone",
+              type = "",
+              shape = "point",
+              x = 240,
+              y = 1008,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -18166,25 +20356,96 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["checkpoint"] = true,
             ["donewhenenemiesleft"] = 999,
             ["sequence"] = "playerEnterArea",
             ["titlebarcuecard"] = "RUN"
           },
           objects = {
             {
+              id = 705,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 336,
+              y = 960,
+              width = 96,
+              height = 112,
+              rotation = 0,
+              gid = 7273,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 706,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 432,
+              y = 960,
+              width = 96,
+              height = 112,
+              rotation = 0,
+              gid = 7273,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 707,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 528,
+              y = 960,
+              width = 96,
+              height = 112,
+              rotation = 0,
+              gid = 7273,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 708,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 624,
+              y = 960,
+              width = 96,
+              height = 112,
+              rotation = 0,
+              gid = 7273,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 709,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 720,
+              y = 960,
+              width = 96,
+              height = 112,
+              rotation = 0,
+              gid = 7273,
+              visible = true,
+              properties = {}
+            },
+            {
               id = 104,
               name = "camerapath",
               type = "CameraPath",
               shape = "polyline",
-              x = 2448,
-              y = 144,
+              x = 176,
+              y = 1008,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polyline = {
                 { x = 64, y = 0 },
-                { x = 672, y = 0 }
+                { x = 816, y = 0 }
               },
               properties = {
                 ["shadowcolor"] = "#00000000"
@@ -18195,8 +20456,8 @@ return {
               name = "",
               type = "Boundary",
               shape = "polygon",
-              x = 2272,
-              y = -32,
+              x = 0,
+              y = 832,
               width = 0,
               height = 0,
               rotation = 0,
@@ -18204,13 +20465,10 @@ return {
               polygon = {
                 { x = 64, y = 0 },
                 { x = 64, y = 112 },
-                { x = 256, y = 112 },
-                { x = 320, y = 48 },
-                { x = 384, y = 112 },
-                { x = 448, y = 48 },
-                { x = 512, y = 112 },
-                { x = 576, y = 48 },
-                { x = 576, y = 0 }
+                { x = 160, y = 112 },
+                { x = 192, y = 144 },
+                { x = 312, y = 144 },
+                { x = 312, y = 0 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -18221,27 +20479,351 @@ return {
               }
             },
             {
-              id = 312,
+              id = 713,
               name = "",
               type = "Boundary",
               shape = "polygon",
-              x = 2272,
-              y = -32,
+              x = -104,
+              y = 864,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 576, y = 0 },
-                { x = 576, y = 48 },
-                { x = 640, y = 112 },
-                { x = 768, y = 112 },
-                { x = 832, y = 176 },
-                { x = 864, y = 176 },
-                { x = 896, y = 144 },
-                { x = 896, y = 128 },
-                { x = 1088, y = 128 },
-                { x = 1088, y = 0 }
+                { x = 608, y = 96 },
+                { x = 608, y = 112 },
+                { x = 656, y = 112 },
+                { x = 656, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -8,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 728,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = -8,
+              y = 864,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 608, y = 96 },
+                { x = 608, y = 112 },
+                { x = 656, y = 112 },
+                { x = 656, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -8,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 730,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 88,
+              y = 864,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 608, y = 96 },
+                { x = 608, y = 112 },
+                { x = 656, y = 112 },
+                { x = 656, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -8,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 726,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = -200,
+              y = 864,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 608, y = 96 },
+                { x = 608, y = 112 },
+                { x = 656, y = 112 },
+                { x = 656, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -8,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 723,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = -296,
+              y = 864,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 608, y = 96 },
+                { x = 608, y = 112 },
+                { x = 656, y = 112 },
+                { x = 656, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -8,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 715,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = -296,
+              y = 832,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 608, y = 96 },
+                { x = 608, y = 112 },
+                { x = 656, y = 112 },
+                { x = 656, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff",
+                ["z"] = 40
+              }
+            },
+            {
+              id = 724,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = -200,
+              y = 832,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 608, y = 96 },
+                { x = 608, y = 112 },
+                { x = 656, y = 112 },
+                { x = 656, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff",
+                ["z"] = 40
+              }
+            },
+            {
+              id = 725,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = -104,
+              y = 832,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 608, y = 96 },
+                { x = 608, y = 112 },
+                { x = 656, y = 112 },
+                { x = 656, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff",
+                ["z"] = 40
+              }
+            },
+            {
+              id = 727,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = -8,
+              y = 832,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 608, y = 96 },
+                { x = 608, y = 112 },
+                { x = 656, y = 112 },
+                { x = 656, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff",
+                ["z"] = 40
+              }
+            },
+            {
+              id = 729,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 88,
+              y = 832,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 608, y = 96 },
+                { x = 608, y = 112 },
+                { x = 656, y = 112 },
+                { x = 656, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff",
+                ["z"] = 40
+              }
+            },
+            {
+              id = 714,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = -256,
+              y = 864,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 616, y = 96 },
+                { x = 616, y = 112 },
+                { x = 664, y = 112 },
+                { x = 664, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 720,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = -160,
+              y = 864,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 616, y = 96 },
+                { x = 616, y = 112 },
+                { x = 664, y = 112 },
+                { x = 664, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 721,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = -64,
+              y = 864,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 616, y = 96 },
+                { x = 616, y = 112 },
+                { x = 664, y = 112 },
+                { x = 664, y = 96 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 722,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 32,
+              y = 864,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 616, y = 96 },
+                { x = 616, y = 112 },
+                { x = 664, y = 112 },
+                { x = 664, y = 96 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -18256,53 +20838,26 @@ return {
               name = "",
               type = "Boundary",
               shape = "polygon",
-              x = 2592,
-              y = 224,
+              x = 320,
+              y = 1088,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polygon = {
                 { x = -320, y = -224 },
-                { x = -320, y = 96 },
-                { x = 224, y = 96 },
-                { x = 128, y = 0 },
-                { x = 64, y = 64 },
-                { x = 0, y = 0 },
-                { x = -128, y = 0 },
-                { x = -160, y = 32 },
+                { x = -320, y = 128 },
+                { x = 0, y = 128 },
+                { x = -32, y = 96 },
+                { x = -64, y = 96 },
+                { x = -96, y = 64 },
+                { x = -160, y = 64 },
+                { x = -192, y = 32 },
                 { x = -224, y = 32 },
-                { x = -256, y = 0 },
-                { x = -288, y = 0 },
+                { x = -288, y = -32 },
                 { x = -288, y = -112 },
                 { x = -256, y = -144 },
                 { x = -256, y = -224 }
-              },
-              properties = {
-                ["bodyinlayers"] = "Wall",
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["extrudeY"] = -64,
-                ["linecolor"] = "#80ffffff"
-              }
-            },
-            {
-              id = 311,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 2592,
-              y = 224,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polygon = {
-                { x = 288, y = 160 },
-                { x = 384, y = 64 },
-                { x = 320, y = 64 },
-                { x = 256, y = 0 },
-                { x = 192, y = 64 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -18317,17 +20872,21 @@ return {
               name = "",
               type = "Boundary",
               shape = "polygon",
-              x = 3168,
-              y = 0,
+              x = 944,
+              y = 768,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 0, y = 0 },
-                { x = 0, y = 112 },
-                { x = 192, y = 112 },
-                { x = 192, y = 0 }
+                { x = -200, y = 0 },
+                { x = -200, y = 208 },
+                { x = -112, y = 208 },
+                { x = -80, y = 176 },
+                { x = 48, y = 176 },
+                { x = 80, y = 144 },
+                { x = 240, y = 144 },
+                { x = 240, y = 0 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -18342,15 +20901,18 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2592,
-              y = 32,
+              x = 336,
+              y = 928,
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
+                ["ammo"] = 0,
+                ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 273 },
+                ["exitpoint"] = { id = 555 },
                 ["facedegrees"] = 90,
                 ["initialai"] = "enterAndPrepareBowAmbush"
               }
@@ -18360,8 +20922,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2480,
-              y = 56,
+              x = 288,
+              y = 960,
               width = 32,
               height = 48,
               rotation = 0,
@@ -18376,8 +20938,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2944,
-              y = 48,
+              x = 384,
+              y = 960,
               width = 32,
               height = 48,
               rotation = 0,
@@ -18392,8 +20954,34 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 2592,
-              y = 48,
+              x = 336,
+              y = 944,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 555,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 336,
+              y = 840,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 556,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 432,
+              y = 832,
               width = 0,
               height = 0,
               rotation = 0,
@@ -18405,15 +20993,18 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2720,
-              y = 32,
+              x = 432,
+              y = 920,
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
+                ["ammo"] = 0,
+                ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 275 },
+                ["exitpoint"] = { id = 556 },
                 ["facedegrees"] = 90,
                 ["initialai"] = "enterAndPrepareBowAmbush"
               }
@@ -18423,8 +21014,8 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 2720,
-              y = 48,
+              x = 432,
+              y = 936,
               width = 0,
               height = 0,
               rotation = 0,
@@ -18436,15 +21027,18 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2656,
-              y = 256,
+              x = 528,
+              y = 912,
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
+                ["ammo"] = 0,
+                ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 281 },
+                ["exitpoint"] = { id = 557 },
                 ["facedegrees"] = 270,
                 ["initialai"] = "enterAndPrepareBowAmbush"
               }
@@ -18454,15 +21048,18 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2784,
-              y = 264,
+              x = 624,
+              y = 904,
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
+                ["ammo"] = 0,
+                ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 283 },
+                ["exitpoint"] = { id = 558 },
                 ["facedegrees"] = 270,
                 ["initialai"] = "enterAndPrepareBowAmbush"
               }
@@ -18472,8 +21069,8 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 2656,
-              y = 248,
+              x = 528,
+              y = 936,
               width = 0,
               height = 0,
               rotation = 0,
@@ -18485,8 +21082,8 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 2784,
-              y = 248,
+              x = 624,
+              y = 936,
               width = 0,
               height = 0,
               rotation = 0,
@@ -18498,15 +21095,18 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2848,
-              y = 32,
+              x = 720,
+              y = 896,
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
+                ["ammo"] = 0,
+                ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 287 },
+                ["exitpoint"] = { id = 559 },
                 ["facedegrees"] = 90,
                 ["initialai"] = "enterAndPrepareBowAmbush"
               }
@@ -18516,8 +21116,8 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 2848,
-              y = 48,
+              x = 720,
+              y = 936,
               width = 0,
               height = 0,
               rotation = 0,
@@ -18529,8 +21129,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3192,
-              y = 144,
+              x = 984,
+              y = 976,
               width = 32,
               height = 48,
               rotation = 0,
@@ -18545,8 +21145,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3280,
-              y = 128,
+              x = 1040,
+              y = 992,
               width = 32,
               height = 48,
               rotation = 0,
@@ -18561,8 +21161,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3184,
-              y = 168,
+              x = 1008,
+              y = 1008,
               width = 32,
               height = 48,
               rotation = 0,
@@ -18577,8 +21177,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3296,
-              y = 160,
+              x = 1104,
+              y = 1016,
               width = 32,
               height = 48,
               rotation = 0,
@@ -18593,8 +21193,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3248,
-              y = 160,
+              x = 1176,
+              y = 1016,
               width = 32,
               height = 48,
               rotation = 0,
@@ -18609,8 +21209,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3328,
-              y = 176,
+              x = 1064,
+              y = 1024,
               width = 32,
               height = 48,
               rotation = 0,
@@ -18625,8 +21225,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3232,
-              y = 128,
+              x = 1208,
+              y = 976,
               width = 32,
               height = 48,
               rotation = 0,
@@ -18641,8 +21241,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3336,
-              y = 144,
+              x = 1144,
+              y = 1032,
               width = 32,
               height = 48,
               rotation = 0,
@@ -18657,8 +21257,40 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3008,
-              y = 48,
+              x = 480,
+              y = 960,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              gid = 6593,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            },
+            {
+              id = 731,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 576,
+              y = 960,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              gid = 6593,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            },
+            {
+              id = 732,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 672,
+              y = 960,
               width = 32,
               height = 48,
               rotation = 0,
@@ -18673,8 +21305,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2496,
-              y = 136,
+              x = 232,
+              y = 1036,
               width = 16,
               height = 16,
               rotation = 0,
@@ -18691,8 +21323,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2498,
-              y = 145,
+              x = 234,
+              y = 1045,
               width = 16,
               height = 16,
               rotation = 345,
@@ -18709,8 +21341,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2474,
-              y = 168,
+              x = 210,
+              y = 1068,
               width = 16,
               height = 16,
               rotation = 15,
@@ -18727,8 +21359,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2472,
-              y = 176,
+              x = 208,
+              y = 1076,
               width = 16,
               height = 16,
               rotation = 15,
@@ -18745,8 +21377,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2517.66,
-              y = 96,
+              x = 253.66,
+              y = 996,
               width = 16,
               height = 16,
               rotation = 45,
@@ -18763,8 +21395,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2512,
-              y = 101.657,
+              x = 248,
+              y = 1001.66,
               width = 16,
               height = 16,
               rotation = 45,
@@ -18805,7 +21437,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6882,
+              gid = 6859,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -18821,7 +21453,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6902,
+              gid = 6879,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -18837,7 +21469,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 7159,
+              gid = 7136,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -18853,10 +21485,1139 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              gid = 6857,
+              gid = 6834,
               visible = false,
               properties = {
                 ["drawz"] = 2
+              }
+            },
+            {
+              id = 548,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 920,
+              y = 968,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7239,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 549,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 936,
+              y = 1048,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7239,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 550,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 1224,
+              y = 1000,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7239,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 552,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 1136,
+              y = 1128,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7239,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 553,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 1096,
+              y = 1080,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              gid = 7239,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 557,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 528,
+              y = 832,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 558,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 624,
+              y = 832,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 559,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 720,
+              y = 832,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 564,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 320,
+              y = 988,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7275,
+              visible = true,
+              properties = {
+                ["bloodyanimation"] = 32,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 621,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 584,
+              y = 988,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7275,
+              visible = true,
+              properties = {
+                ["bloodyanimation"] = 32,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 615,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 320,
+              y = 1024,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7275,
+              visible = true,
+              properties = {
+                ["bloodyanimation"] = 180,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 771,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 616,
+              y = 1032,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7275,
+              visible = true,
+              properties = {
+                ["bloodyanimation"] = 180,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 579,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 384,
+              y = 1048,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7275,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 32,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 770,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 680,
+              y = 1056,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7275,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 32,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 745,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 352,
+              y = 1088,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7275,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 32,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 769,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 648,
+              y = 1096,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7275,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 32,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 565,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 704,
+              y = 1012,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7278,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 35,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 578,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 304,
+              y = 1112,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7278,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 35,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 768,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 600,
+              y = 1120,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7278,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 35,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 750,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 384,
+              y = 1104,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7278,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 35,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 767,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 680,
+              y = 1112,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7278,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 35,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 566,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 432,
+              y = 988,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7279,
+              visible = true,
+              properties = {
+                ["bloodyanimation"] = 36,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 620,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 696,
+              y = 996,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7279,
+              visible = true,
+              properties = {
+                ["bloodyanimation"] = 36,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 577,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 376,
+              y = 1064,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7279,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 36,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 766,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 672,
+              y = 1072,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7279,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 36,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 744,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 344,
+              y = 1104,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7279,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 36,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 765,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 640,
+              y = 1112,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7279,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 36,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 567,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 344,
+              y = 996,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7282,
+              visible = true,
+              properties = {
+                ["bloodyanimation"] = 39,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 619,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 616,
+              y = 996,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7282,
+              visible = true,
+              properties = {
+                ["bloodyanimation"] = 39,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 576,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 408,
+              y = 1096,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7282,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 39,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 764,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 704,
+              y = 1104,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7282,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 39,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 749,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 416,
+              y = 1040,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7282,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 39,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 763,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 712,
+              y = 1048,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7282,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 39,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 568,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 384,
+              y = 996,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7283,
+              visible = true,
+              properties = {
+                ["bloodyanimation"] = 40,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 618,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 656,
+              y = 996,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7283,
+              visible = true,
+              properties = {
+                ["bloodyanimation"] = 40,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 575,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 424,
+              y = 1088,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7283,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 40,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 761,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 720,
+              y = 1096,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7283,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 40,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 748,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 432,
+              y = 1032,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7283,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 40,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 760,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 728,
+              y = 1040,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7283,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 40,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 569,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 552,
+              y = 996,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7303,
+              visible = true,
+              properties = {
+                ["bloodyanimation"] = 60,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 574,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 376,
+              y = 1032,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7303,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 60,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 758,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 672,
+              y = 1040,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7303,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 60,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 772,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 728,
+              y = 1000,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7303,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 60,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 741,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 344,
+              y = 1072,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7303,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 60,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 757,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 640,
+              y = 1080,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7303,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 60,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 616,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 304,
+              y = 1048,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7303,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 60,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 756,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 600,
+              y = 1056,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7303,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 60,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 570,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 472,
+              y = 996,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7291,
+              visible = true,
+              properties = {
+                ["bloodyanimation"] = 48,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 573,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 416,
+              y = 1120,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7291,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 48,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 747,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 424,
+              y = 1064,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7291,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 48,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 754,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 720,
+              y = 1072,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7291,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 48,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 617,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 312,
+              y = 1064,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7291,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 48,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 753,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 608,
+              y = 1072,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              gid = 7291,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 48,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 571,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 512,
+              y = 988,
+              width = 40,
+              height = 32,
+              rotation = 0,
+              gid = 7298,
+              visible = true,
+              properties = {
+                ["bloodyanimation"] = 55,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 746,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 408,
+              y = 1080,
+              width = 40,
+              height = 32,
+              rotation = 0,
+              gid = 7298,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 55,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 751,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 704,
+              y = 1088,
+              width = 40,
+              height = 32,
+              rotation = 0,
+              gid = 7298,
+              visible = true,
+              properties = {
+                ["attackdegrees"] = 180,
+                ["bloodyanimation"] = 55,
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 733,
+              name = "Attack",
+              type = "",
+              shape = "text",
+              x = 16,
+              y = 1064,
+              width = 128,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "During sprint",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["drawz"] = 100
+              }
+            },
+            {
+              id = 734,
+              name = "attackbutton",
+              type = "",
+              shape = "rectangle",
+              x = 120,
+              y = 1096,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7240,
+              visible = true,
+              properties = {
+                ["drawz"] = 100
+              }
+            },
+            {
+              id = 735,
+              name = "Jump",
+              type = "",
+              shape = "text",
+              x = 32,
+              y = 1088,
+              width = 72,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "Long jump",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["drawz"] = 100
+              }
+            },
+            {
+              id = 736,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 152,
+              y = 1096,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7242,
+              visible = true,
+              properties = {
+                ["drawz"] = 100
+              }
+            },
+            {
+              id = 737,
+              name = "or",
+              type = "",
+              shape = "text",
+              x = 128,
+              y = 1088,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "OR",
+              fontfamily = "TinyUnicode",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {
+                ["drawz"] = 100
+              }
+            },
+            {
+              id = 738,
+              name = "sprintbutton",
+              type = "",
+              shape = "rectangle",
+              x = 168,
+              y = 1072,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7254,
+              visible = true,
+              properties = {
+                ["drawz"] = 100
+              }
+            },
+            {
+              id = 739,
+              name = "or",
+              type = "",
+              shape = "text",
+              x = 144,
+              y = 1064,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              visible = true,
+              text = "OR",
+              fontfamily = "TinyUnicode",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {
+                ["drawz"] = 100
+              }
+            },
+            {
+              id = 740,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 136,
+              y = 1072,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              gid = 7250,
+              visible = true,
+              properties = {
+                ["drawz"] = 100
+              }
+            },
+            {
+              id = 787,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 1184,
+              y = 880,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = -112 },
+                { x = 0, y = 32 },
+                { x = 32, y = 64 },
+                { x = 160, y = 64 },
+                { x = 192, y = 32 },
+                { x = 192, y = -112 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff"
               }
             }
           }
@@ -18879,126 +22640,16 @@ return {
           },
           objects = {
             {
-              id = 291,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3264,
-              y = -48,
-              width = 128,
-              height = 128,
-              rotation = 0,
-              gid = 7257,
-              visible = true,
-              properties = {
-                ["ammo"] = 10,
-                ["defaultattack"] = "bow-shot-until-empty",
-                ["entrypoint"] = { id = 294 },
-                ["exitpoint"] = { id = 296 },
-                ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "food-fish",
-                ["itemvelx"] = 0,
-                ["itemvely"] = 4,
-                ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
-              }
-            },
-            {
-              id = 292,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3264,
-              y = -16,
-              width = 128,
-              height = 128,
-              rotation = 0,
-              gid = 7257,
-              visible = true,
-              properties = {
-                ["ammo"] = 10,
-                ["defaultattack"] = "bow-shot-until-empty",
-                ["entrypoint"] = { id = 293 },
-                ["exitpoint"] = { id = 295 },
-                ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "food-fish",
-                ["itemvelx"] = 0,
-                ["itemvely"] = 4,
-                ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
-              }
-            },
-            {
-              id = 293,
-              name = "entrypoint",
-              type = "",
-              shape = "point",
-              x = 3216,
-              y = 48,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
-              id = 294,
-              name = "entrypoint",
-              type = "",
-              shape = "point",
-              x = 3312,
-              y = 48,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
-              id = 295,
-              name = "exitpoint",
-              type = "",
-              shape = "point",
-              x = 3248,
-              y = -16,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
-              id = 296,
-              name = "exitpoint",
-              type = "",
-              shape = "point",
-              x = 3280,
-              y = -16,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["z"] = 64
-              }
-            },
-            {
               id = 101,
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 3376,
-              y = 192,
+              x = 1232,
+              y = 1056,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -19009,16 +22660,46 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 3408,
-              y = 256,
+              x = 1264,
+              y = 1120,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
+            },
+            {
+              id = 547,
+              name = "bandit-muscle",
+              type = "bandit-muscle",
+              shape = "rectangle",
+              x = 1168,
+              y = 848,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7272,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 554,
+              name = "entrypoint",
+              type = "",
+              shape = "point",
+              x = 1072,
+              y = 944,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -19041,12 +22722,12 @@ return {
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 3344,
-              y = 328,
+              x = 1200,
+              y = 1192,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -19057,12 +22738,12 @@ return {
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 3056,
-              y = 328,
+              x = 912,
+              y = 1192,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -19089,8 +22770,8 @@ return {
               name = "camerapath",
               type = "CameraPath",
               shape = "polyline",
-              x = 3120,
-              y = 144,
+              x = 976,
+              y = 1008,
               width = 0,
               height = 0,
               rotation = 0,
@@ -19106,32 +22787,27 @@ return {
               name = "",
               type = "Boundary",
               shape = "polygon",
-              x = 3360,
-              y = 0,
+              x = 1216,
+              y = 864,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 0, y = 0 },
-                { x = 0, y = 112 },
-                { x = 32, y = 80 },
-                { x = 128, y = 80 },
+                { x = 160, y = -96 },
                 { x = 160, y = 48 },
                 { x = 176, y = 48 },
                 { x = 208, y = 16 },
                 { x = 240, y = 16 },
                 { x = 272, y = 48 },
                 { x = 384, y = 48 },
-                { x = 416, y = 80 },
-                { x = 480, y = 80 },
-                { x = 480, y = 0 }
+                { x = 384, y = -96 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -64,
+                ["extrudeY"] = -256,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -19140,8 +22816,8 @@ return {
               name = "",
               type = "Boundary",
               shape = "polygon",
-              x = 3520,
-              y = 48,
+              x = 1376,
+              y = 912,
               width = 0,
               height = 0,
               rotation = 0,
@@ -19155,8 +22831,8 @@ return {
                 { x = 104, y = 40 },
                 { x = 120, y = 32 },
                 { x = 128, y = 16 },
-                { x = 128, y = 0 },
-                { x = 0, y = 0 }
+                { x = 128, y = -32 },
+                { x = 0, y = -32 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -19171,8 +22847,8 @@ return {
               name = "",
               type = "forge-fire",
               shape = "ellipse",
-              x = 3584,
-              y = 16,
+              x = 3712,
+              y = -80,
               width = 16,
               height = 16,
               rotation = 0,
@@ -19184,33 +22860,16 @@ return {
               }
             },
             {
-              id = 394,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 3720,
-              y = 88,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 6847,
-              visible = true,
-              properties = {
-                ["bodyinlayers"] = "Wall",
-                ["extrudeY"] = -28
-              }
-            },
-            {
               id = 395,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3448,
-              y = 96,
+              x = 1312,
+              y = 960,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 6851,
+              gid = 6828,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -19222,12 +22881,12 @@ return {
               name = "",
               type = "item-throwing-axe",
               shape = "rectangle",
-              x = 3540,
-              y = 66,
+              x = 1396,
+              y = 930,
               width = 48,
               height = 48,
               rotation = 330,
-              gid = 7261,
+              gid = 7238,
               visible = true,
               properties = {}
             },
@@ -19236,12 +22895,12 @@ return {
               name = "",
               type = "item-throwing-axe",
               shape = "rectangle",
-              x = 3584,
-              y = 78,
+              x = 1440,
+              y = 942,
               width = 48,
               height = 48,
               rotation = 270,
-              gid = 7261,
+              gid = 7238,
               visible = true,
               properties = {}
             },
@@ -19250,14 +22909,54 @@ return {
               name = "",
               type = "item-throwing-axe",
               shape = "rectangle",
-              x = 3624,
-              y = 68,
+              x = 1480,
+              y = 932,
               width = 48,
               height = 48,
               rotation = 225,
-              gid = 7261,
+              gid = 7238,
               visible = true,
               properties = {}
+            },
+            {
+              id = 614,
+              name = "",
+              type = "forge-fire",
+              shape = "point",
+              x = 1440,
+              y = 888,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 788,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 1600,
+              y = 880,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = -112 },
+                { x = 0, y = 32 },
+                { x = 32, y = 64 },
+                { x = 192, y = 64 },
+                { x = 256, y = 0 },
+                { x = 256, y = -112 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -256,
+                ["linecolor"] = "#80ffffff"
+              }
             }
           }
         },
@@ -19274,8 +22973,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 2,
-            ["titlebarcuecard"] = "THROW ENEMY INTO FIRE"
+            ["donewhenenemiesleft"] = 1
           },
           objects = {
             {
@@ -19283,8 +22981,8 @@ return {
               name = "camerapath",
               type = "CameraPath",
               shape = "polyline",
-              x = 3408,
-              y = 144,
+              x = 1264,
+              y = 1008,
               width = 0,
               height = 0,
               rotation = 0,
@@ -19296,50 +22994,119 @@ return {
               properties = {}
             },
             {
-              id = 397,
-              name = "",
-              type = "bandit-spear",
+              id = 384,
+              name = "bandit-muscle",
+              type = "bandit-muscle",
               shape = "rectangle",
-              x = 3808,
-              y = 120,
+              x = 1544,
+              y = 952,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7272,
+              visible = true,
+              properties = {
+                ["entrypoint"] = { id = 784 },
+                ["initialai"] = "enterAndGetProjectile",
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 784,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 1512,
+              y = 952,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 394,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1552,
+              y = 928,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 6826,
               visible = true,
               properties = {
+                ["bodyinlayers"] = "Wall",
+                ["extrudeY"] = -48
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 73,
+          name = "armory2",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = 2
+          },
+          objects = {
+            {
+              id = 397,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 1728,
+              y = 1048,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["facedegrees"] = 180,
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
             },
             {
               id = 398,
               name = "",
-              type = "bandit-spear",
+              type = "bandit-dagger",
               shape = "rectangle",
-              x = 3768,
-              y = 208,
+              x = 1816,
+              y = 1128,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7237,
               visible = true,
               properties = {
+                ["facedegrees"] = 180,
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
             },
             {
               id = 506,
               name = "",
-              type = "bandit-spear",
+              type = "bandit-dagger",
               shape = "rectangle",
-              x = 3712,
-              y = 272,
+              x = 1808,
+              y = 976,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7237,
               visible = true,
               properties = {
+                ["facedegrees"] = 180,
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
             },
@@ -19348,14 +23115,15 @@ return {
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 3640,
-              y = 328,
+              x = 1864,
+              y = 1048,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
+                ["facedegrees"] = 180,
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
             }
@@ -19365,7 +23133,7 @@ return {
           type = "objectgroup",
           draworder = "topdown",
           id = 35,
-          name = "+axes",
+          name = "+muscle",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -19378,32 +23146,64 @@ return {
           },
           objects = {
             {
-              id = 383,
+              id = 610,
               name = "",
-              type = "bandit-axe",
+              type = "bandit-shield",
               shape = "rectangle",
-              x = 3864,
-              y = 120,
+              x = 1176,
+              y = 960,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7255,
+              gid = 7274,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
             },
             {
-              id = 384,
+              id = 611,
               name = "",
-              type = "bandit-axe",
+              type = "bandit-spear",
               shape = "rectangle",
-              x = 3864,
-              y = 216,
+              x = 1112,
+              y = 1000,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7255,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 612,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 1080,
+              y = 1088,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 613,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 1152,
+              y = 1128,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7274,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -19430,8 +23230,8 @@ return {
               name = "camerapath",
               type = "CameraPath",
               shape = "polyline",
-              x = 3600,
-              y = 144,
+              x = 1456,
+              y = 1008,
               width = 0,
               height = 0,
               rotation = 0,
@@ -19447,8 +23247,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3928,
-              y = 240,
+              x = 1784,
+              y = 1072,
               width = 96,
               height = 48,
               rotation = 0,
@@ -19463,12 +23263,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3872,
-              y = 264,
+              x = 1728,
+              y = 1112,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7227,
+              gid = 7204,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -19479,12 +23279,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3976,
-              y = 272,
+              x = 1832,
+              y = 1120,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7235,
+              gid = 7212,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -19493,10 +23293,10 @@ return {
             {
               id = 370,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
-              x = 3912,
-              y = 224,
+              x = 1762,
+              y = 1064,
               width = 32,
               height = 32,
               rotation = 0,
@@ -19509,10 +23309,10 @@ return {
             {
               id = 371,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
-              x = 3952,
-              y = 232,
+              x = 1800,
+              y = 1064,
               width = 32,
               height = 32,
               rotation = 0,
@@ -19527,12 +23327,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3910,
-              y = 232,
+              x = 1760,
+              y = 1072,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6697,
+              gid = 6674,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19543,12 +23343,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3954,
-              y = 234,
+              x = 1802,
+              y = 1066,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7248,
+              gid = 7225,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19577,8 +23377,8 @@ return {
               name = "camerapath",
               type = "CameraPath",
               shape = "polyline",
-              x = 3440,
-              y = 144,
+              x = 1296,
+              y = 1008,
               width = 0,
               height = 0,
               rotation = 0,
@@ -19594,25 +23394,23 @@ return {
               name = "",
               type = "Boundary",
               shape = "polygon",
-              x = 3840,
-              y = 320,
+              x = 1696,
+              y = 1184,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polygon = {
-                { x = 0, y = -320 },
-                { x = 0, y = -240 },
-                { x = 96, y = -240 },
-                { x = 128, y = -272 },
-                { x = 480, y = -272 },
-                { x = 480, y = -320 }
+                { x = 160, y = -416 },
+                { x = 160, y = -304 },
+                { x = 544, y = -304 },
+                { x = 544, y = -416 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -64,
+                ["extrudeY"] = -256,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -19621,8 +23419,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4008,
-              y = 104,
+              x = 1880,
+              y = 936,
               width = 96,
               height = 48,
               rotation = 0,
@@ -19637,8 +23435,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4128,
-              y = 112,
+              x = 2000,
+              y = 936,
               width = 96,
               height = 48,
               rotation = 0,
@@ -19653,8 +23451,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4064,
-              y = 232,
+              x = 1920,
+              y = 1072,
               width = 96,
               height = 48,
               rotation = 0,
@@ -19669,8 +23467,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4208,
-              y = 224,
+              x = 2064,
+              y = 1072,
               width = 96,
               height = 48,
               rotation = 0,
@@ -19685,8 +23483,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4256,
-              y = 96,
+              x = 2120,
+              y = 936,
               width = 96,
               height = 48,
               rotation = 0,
@@ -19701,12 +23499,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4096,
-              y = 80,
+              x = 1968,
+              y = 912,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7224,
+              gid = 7201,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -19717,12 +23515,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4216,
-              y = 64,
+              x = 2080,
+              y = 912,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7228,
+              gid = 7205,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -19733,12 +23531,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4168,
-              y = 264,
+              x = 2024,
+              y = 1112,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7235,
+              gid = 7212,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -19749,12 +23547,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4096,
-              y = 272,
+              x = 1960,
+              y = 1120,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7231,
+              gid = 7208,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -19765,12 +23563,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4024,
-              y = 264,
+              x = 1880,
+              y = 1112,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7227,
+              gid = 7204,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -19781,12 +23579,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4248,
-              y = 272,
+              x = 2104,
+              y = 1120,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7231,
+              gid = 7208,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -19797,12 +23595,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4168,
-              y = 72,
+              x = 2040,
+              y = 912,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7232,
+              gid = 7209,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -19813,12 +23611,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4296,
-              y = 72,
+              x = 2160,
+              y = 912,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7224,
+              gid = 7201,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -19829,12 +23627,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3976,
-              y = 64,
+              x = 1856,
+              y = 912,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7228,
+              gid = 7205,
               visible = true,
               properties = {}
             },
@@ -19843,12 +23641,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4048,
-              y = 72,
+              x = 1920,
+              y = 912,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7232,
+              gid = 7209,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -19859,12 +23657,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4016,
-              y = 72,
+              x = 1888,
+              y = 920,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7259,
+              gid = 7236,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -19878,12 +23676,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4136,
-              y = 80,
+              x = 2008,
+              y = 920,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7259,
+              gid = 7236,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -19897,12 +23695,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4256,
-              y = 72,
+              x = 2120,
+              y = 920,
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -19914,10 +23712,10 @@ return {
             {
               id = 359,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
-              x = 3984,
-              y = 88,
+              x = 1856,
+              y = 928,
               width = 32,
               height = 32,
               rotation = 0,
@@ -19930,10 +23728,10 @@ return {
             {
               id = 362,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
-              x = 4048,
-              y = 224,
+              x = 1904,
+              y = 1064,
               width = 32,
               height = 32,
               rotation = 0,
@@ -19946,10 +23744,10 @@ return {
             {
               id = 360,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
-              x = 4024,
-              y = 96,
+              x = 1896,
+              y = 928,
               width = 32,
               height = 32,
               rotation = 0,
@@ -19962,10 +23760,10 @@ return {
             {
               id = 361,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
-              x = 4088,
-              y = 216,
+              x = 1944,
+              y = 1064,
               width = 32,
               height = 32,
               rotation = 0,
@@ -19980,12 +23778,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3984,
-              y = 96,
+              x = 1856,
+              y = 936,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6704,
+              gid = 6681,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -19996,12 +23794,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4024,
-              y = 104,
+              x = 1896,
+              y = 936,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6697,
+              gid = 6674,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -20012,12 +23810,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4056,
-              y = 224,
+              x = 1912,
+              y = 1064,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6646,
+              gid = 6623,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -20026,10 +23824,10 @@ return {
             {
               id = 366,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
-              x = 4104,
-              y = 96,
+              x = 1976,
+              y = 928,
               width = 32,
               height = 32,
               rotation = 0,
@@ -20042,10 +23840,10 @@ return {
             {
               id = 367,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
-              x = 4144,
-              y = 104,
+              x = 2016,
+              y = 928,
               width = 32,
               height = 32,
               rotation = 0,
@@ -20058,10 +23856,10 @@ return {
             {
               id = 368,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
-              x = 4240,
-              y = 88,
+              x = 2104,
+              y = 928,
               width = 32,
               height = 32,
               rotation = 0,
@@ -20074,10 +23872,10 @@ return {
             {
               id = 369,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
-              x = 4280,
-              y = 80,
+              x = 2144,
+              y = 928,
               width = 32,
               height = 32,
               rotation = 0,
@@ -20090,10 +23888,10 @@ return {
             {
               id = 372,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
-              x = 4184,
-              y = 216,
+              x = 2040,
+              y = 1064,
               width = 32,
               height = 32,
               rotation = 0,
@@ -20106,10 +23904,10 @@ return {
             {
               id = 373,
               name = "",
-              type = "",
+              type = "item-dish",
               shape = "rectangle",
-              x = 4224,
-              y = 216,
+              x = 2080,
+              y = 1064,
               width = 32,
               height = 32,
               rotation = 0,
@@ -20124,12 +23922,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4108,
-              y = 98,
+              x = 1980,
+              y = 930,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6645,
+              gid = 6622,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -20140,12 +23938,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4144,
-              y = 104,
+              x = 2016,
+              y = 928,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7248,
+              gid = 7225,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -20156,12 +23954,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4288,
-              y = 80,
+              x = 2152,
+              y = 928,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6646,
+              gid = 6623,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -20172,12 +23970,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4240,
-              y = 96,
+              x = 2104,
+              y = 936,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6697,
+              gid = 6674,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -20188,12 +23986,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4184,
-              y = 216,
+              x = 2040,
+              y = 1064,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7248,
+              gid = 7225,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -20204,12 +24002,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4220,
-              y = 224,
+              x = 2076,
+              y = 1072,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6701,
+              gid = 6678,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -20220,12 +24018,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4085,
-              y = 224,
+              x = 1941,
+              y = 1072,
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 6705,
+              gid = 6682,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -20254,12 +24052,12 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 3824,
-              y = 176,
+              x = 1680,
+              y = 1040,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -20270,12 +24068,12 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 3752,
-              y = 216,
+              x = 1608,
+              y = 1080,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -20286,12 +24084,12 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 4336,
-              y = 176,
+              x = 2192,
+              y = 1040,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -20302,12 +24100,12 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 4416,
-              y = 136,
+              x = 2272,
+              y = 1000,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7260,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -20336,12 +24134,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4208,
-              y = 328,
+              x = 2064,
+              y = 1176,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7259,
+              gid = 7236,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -20356,8 +24154,8 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 4208,
-              y = 272,
+              x = 2064,
+              y = 1120,
               width = 0,
               height = 0,
               rotation = 0,
@@ -20369,12 +24167,12 @@ return {
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 3824,
-              y = 144,
+              x = 1680,
+              y = 1008,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -20403,12 +24201,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4064,
-              y = 328,
+              x = 1920,
+              y = 1176,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7259,
+              gid = 7236,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -20423,8 +24221,8 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 4064,
-              y = 272,
+              x = 1920,
+              y = 1120,
               width = 0,
               height = 0,
               rotation = 0,
@@ -20436,12 +24234,12 @@ return {
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 4336,
-              y = 144,
+              x = 2192,
+              y = 1008,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -20470,12 +24268,12 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3928,
-              y = 328,
+              x = 1784,
+              y = 1176,
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
                 ["ammo"] = 999999999,
@@ -20490,8 +24288,8 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 3928,
-              y = 272,
+              x = 1784,
+              y = 1120,
               width = 0,
               height = 0,
               rotation = 0,
@@ -20503,12 +24301,12 @@ return {
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 3824,
-              y = 216,
+              x = 1680,
+              y = 1080,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -20519,12 +24317,12 @@ return {
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 4336,
-              y = 216,
+              x = 2192,
+              y = 1080,
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7258,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -20547,37 +24345,12 @@ return {
           properties = {},
           objects = {
             {
-              id = 76,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 4800,
-              y = 32,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polygon = {
-                { x = 0, y = -32 },
-                { x = 0, y = 80 },
-                { x = 480, y = 80 },
-                { x = 480, y = -32 }
-              },
-              properties = {
-                ["bodyinlayers"] = "Wall",
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["extrudeY"] = -64,
-                ["linecolor"] = "#80ffffff"
-              }
-            },
-            {
               id = 77,
               name = "",
               type = "Boundary",
               shape = "polygon",
-              x = 4352,
-              y = 288,
+              x = 2208,
+              y = 1152,
               width = 0,
               height = 0,
               rotation = 0,
@@ -20596,7 +24369,7 @@ return {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -32,
+                ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -20605,67 +24378,82 @@ return {
               name = "camerapath",
               type = "CameraPath",
               shape = "polyline",
-              x = 4400,
-              y = 144,
+              x = 2256,
+              y = 1008,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polyline = {
                 { x = -320, y = 0 },
-                { x = 640, y = 0 }
+                { x = 160, y = 0 }
               },
               properties = {}
-            },
-            {
-              id = 313,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 4800,
-              y = -32,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              polygon = {
-                { x = 0, y = 0 },
-                { x = 0, y = 80 },
-                { x = 144, y = 80 },
-                { x = 144, y = 48 },
-                { x = 424, y = 48 },
-                { x = 424, y = 80 },
-                { x = 480, y = 80 },
-                { x = 480, y = 0 }
-              },
-              properties = {
-                ["bodyinlayers"] = "Wall",
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["extrudeY"] = -64,
-                ["linecolor"] = "#80ffffff",
-                ["z"] = 64
-              }
             },
             {
               id = 316,
               name = "",
               type = "Boundary",
               shape = "polygon",
-              x = 4352,
-              y = 0,
+              x = 2208,
+              y = 864,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
               polygon = {
-                { x = -32, y = 0 },
-                { x = -32, y = 48 },
-                { x = 64, y = 48 },
+                { x = 32, y = -128 },
+                { x = 32, y = 16 },
                 { x = 96, y = 80 },
                 { x = 416, y = 80 },
-                { x = 448, y = 112 },
-                { x = 448, y = 0 }
+                { x = 416, y = -128 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -256,
+                ["linecolor"] = "#80ffffff"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 67,
+          name = "toboss",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["checkpoint"] = true
+          },
+          objects = {
+            {
+              id = 701,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 2208,
+              y = 1152,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = -64, y = 64 },
+                { x = -64, y = 224 },
+                { x = 448, y = 224 },
+                { x = 448, y = 0 },
+                { x = 384, y = -64 },
+                { x = 160, y = -64 },
+                { x = 128, y = -32 },
+                { x = 32, y = -32 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -20674,6 +24462,128 @@ return {
                 ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff"
               }
+            },
+            {
+              id = 702,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 2208,
+              y = 864,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 32, y = -128 },
+                { x = 32, y = 16 },
+                { x = 96, y = 80 },
+                { x = 416, y = 80 },
+                { x = 416, y = -128 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -256,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 76,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 2656,
+              y = 896,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = -32, y = -160 },
+                { x = -32, y = 48 },
+                { x = 0, y = 80 },
+                { x = 648, y = 80 },
+                { x = 648, y = -160 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -64,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 313,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 2656,
+              y = 832,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = -32, y = -160 },
+                { x = -32, y = 48 },
+                { x = 0, y = 80 },
+                { x = 144, y = 80 },
+                { x = 144, y = -160 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -128,
+                ["linecolor"] = "#80ffffff",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 536,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 3088,
+              y = 832,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polygon = {
+                { x = 0, y = -160 },
+                { x = 0, y = 80 },
+                { x = 216, y = 80 },
+                { x = 216, y = -160 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -128,
+                ["linecolor"] = "#80ffffff",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 703,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 2256,
+              y = 1008,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = 160, y = 0 },
+                { x = 640, y = 0 }
+              },
+              properties = {}
             }
           }
         },
@@ -20698,17 +24608,560 @@ return {
               name = "",
               type = "bandit-boss",
               shape = "rectangle",
-              x = 5296,
-              y = 168,
+              x = 3152,
+              y = 1032,
               width = 192,
               height = 192,
               rotation = 0,
-              gid = 7256,
+              gid = 7233,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
                 ["initialai"] = "bandit-boss-first-charge",
                 ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 72,
+          name = "+knives",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 778,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2624,
+              y = 984,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 779,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2624,
+              y = 1080,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 783,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2592,
+              y = 1032,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 70,
+          name = "+spears",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 777,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 3168,
+              y = 992,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 780,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 3168,
+              y = 1120,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 69,
+          name = "+slingers",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 403,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2896,
+              y = 856,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7236,
+              visible = true,
+              properties = {
+                ["ammo"] = 20,
+                ["defaultattack"] = "sling-shot-until-empty",
+                ["entrypoint"] = { id = 404 },
+                ["exitpoint"] = { id = 405 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["itemtype"] = "food-fish",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 775,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2984,
+              y = 848,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7236,
+              visible = true,
+              properties = {
+                ["ammo"] = 20,
+                ["defaultattack"] = "sling-shot-until-empty",
+                ["entrypoint"] = { id = 774 },
+                ["exitpoint"] = { id = 776 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["itemtype"] = "food-fish",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 404,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 2896,
+              y = 904,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 774,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 2984,
+              y = 904,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 405,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2896,
+              y = 800,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 776,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2984,
+              y = 800,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 71,
+          name = "+shields",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 781,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 2624,
+              y = 1056,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 782,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 3168,
+              y = 1056,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 37,
+          name = "+archers",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 400,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2848,
+              y = 824,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7234,
+              visible = true,
+              properties = {
+                ["ammo"] = 20,
+                ["defaultattack"] = "bow-shot-until-empty",
+                ["entrypoint"] = { id = 401 },
+                ["exitpoint"] = { id = 402 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["itemtype"] = "mana-peppers",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 406,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3040,
+              y = 856,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7234,
+              visible = true,
+              properties = {
+                ["ammo"] = 20,
+                ["defaultattack"] = "bow-shot-until-empty",
+                ["entrypoint"] = { id = 407 },
+                ["exitpoint"] = { id = 408 },
+                ["initialai"] = "enterAndAttackUntilEmpty",
+                ["itemtype"] = "mana-peppers",
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 401,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 2848,
+              y = 904,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 407,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 3040,
+              y = 904,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {
+                ["z"] = 64
+              }
+            },
+            {
+              id = 402,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 2848,
+              y = 800,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 408,
+              name = "exitpoint",
+              type = "",
+              shape = "point",
+              x = 3040,
+              y = 800,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 58,
+          name = "+muscle",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 580,
+              name = "bandit-muscle",
+              type = "bandit-muscle",
+              shape = "rectangle",
+              x = 2944,
+              y = 856,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              gid = 7272,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv",
+                ["z"] = 64
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      type = "group",
+      id = 32,
+      name = "unused",
+      class = "",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      layers = {
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 41,
+          name = "tolearnitems",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = 3,
+            ["titlebarcuecard"] = "RUNNING TACKLE"
+          },
+          objects = {
+            {
+              id = 482,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 1680,
+              y = 144,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = 0, y = 0 },
+                { x = 96, y = 0 }
+              },
+              properties = {}
+            },
+            {
+              id = 490,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2008,
+              y = 192,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 491,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2088,
+              y = 256,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 492,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2000,
+              y = 280,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 524,
+              name = "flamecharge1",
+              type = "",
+              shape = "rectangle",
+              x = 2334,
+              y = 194,
+              width = 30,
+              height = 6,
+              rotation = 0,
+              visible = false,
+              properties = {
+                ["color"] = "#ffffffff"
               }
             }
           }
@@ -20737,7 +25190,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7259,
+              gid = 7236,
               visible = true,
               properties = {
                 ["ammo"] = 20,
@@ -20746,8 +25199,6 @@ return {
                 ["exitpoint"] = { id = 415 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "mana-peppers",
-                ["itemvelx"] = 0,
-                ["itemvely"] = 5,
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -20762,7 +25213,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              gid = 7259,
+              gid = 7236,
               visible = true,
               properties = {
                 ["ammo"] = 20,
@@ -20771,8 +25222,6 @@ return {
                 ["exitpoint"] = { id = 417 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "food-fish",
-                ["itemvelx"] = 0,
-                ["itemvely"] = 5,
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -20838,9 +25287,9 @@ return {
         {
           type = "objectgroup",
           draworder = "topdown",
-          id = 37,
-          name = "+archers",
-          class = "Room",
+          id = 55,
+          name = "oldentryhallarchers",
+          class = "",
           visible = true,
           opacity = 1,
           offsetx = 0,
@@ -20850,87 +25299,58 @@ return {
           properties = {},
           objects = {
             {
-              id = 400,
+              id = 291,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 4992,
-              y = -40,
+              x = 3264,
+              y = -48,
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
-                ["ammo"] = 20,
+                ["ammo"] = 10,
                 ["defaultattack"] = "bow-shot-until-empty",
-                ["entrypoint"] = { id = 401 },
-                ["exitpoint"] = { id = 402 },
-                ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "mana-peppers",
-                ["itemvelx"] = 0,
-                ["itemvely"] = 5,
-                ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
-              }
-            },
-            {
-              id = 403,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 5088,
-              y = -72,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              gid = 7259,
-              visible = true,
-              properties = {
-                ["ammo"] = 20,
-                ["defaultattack"] = "sling-shot-until-empty",
-                ["entrypoint"] = { id = 404 },
-                ["exitpoint"] = { id = 405 },
+                ["entrypoint"] = { id = 294 },
+                ["exitpoint"] = { id = 296 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "food-fish",
-                ["itemvelx"] = 0,
-                ["itemvely"] = 5,
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
             },
             {
-              id = 406,
+              id = 292,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 5184,
-              y = -8,
+              x = 3264,
+              y = -16,
               width = 128,
               height = 128,
               rotation = 0,
-              gid = 7257,
+              gid = 7234,
               visible = true,
               properties = {
-                ["ammo"] = 20,
+                ["ammo"] = 10,
                 ["defaultattack"] = "bow-shot-until-empty",
-                ["entrypoint"] = { id = 407 },
-                ["exitpoint"] = { id = 408 },
+                ["entrypoint"] = { id = 293 },
+                ["exitpoint"] = { id = 295 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "mana-peppers",
-                ["itemvelx"] = 0,
-                ["itemvely"] = 5,
+                ["itemtype"] = "food-fish",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
             },
             {
-              id = 401,
-              name = "",
+              id = 293,
+              name = "entrypoint",
               type = "",
               shape = "point",
-              x = 4992,
-              y = 40,
+              x = 3216,
+              y = 48,
               width = 0,
               height = 0,
               rotation = 0,
@@ -20940,12 +25360,12 @@ return {
               }
             },
             {
-              id = 404,
-              name = "",
+              id = 294,
+              name = "entrypoint",
               type = "",
               shape = "point",
-              x = 5088,
-              y = 40,
+              x = 3312,
+              y = 48,
               width = 0,
               height = 0,
               rotation = 0,
@@ -20955,12 +25375,12 @@ return {
               }
             },
             {
-              id = 407,
-              name = "",
+              id = 295,
+              name = "exitpoint",
               type = "",
               shape = "point",
-              x = 5184,
-              y = 40,
+              x = 3248,
+              y = -16,
               width = 0,
               height = 0,
               rotation = 0,
@@ -20970,61 +25390,22 @@ return {
               }
             },
             {
-              id = 402,
+              id = 296,
               name = "exitpoint",
               type = "",
               shape = "point",
-              x = 4992,
-              y = -64,
+              x = 3280,
+              y = -16,
               width = 0,
               height = 0,
               rotation = 0,
               visible = true,
-              properties = {}
-            },
-            {
-              id = 405,
-              name = "exitpoint",
-              type = "",
-              shape = "point",
-              x = 5088,
-              y = -64,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 408,
-              name = "exitpoint",
-              type = "",
-              shape = "point",
-              x = 5184,
-              y = -64,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              visible = true,
-              properties = {}
+              properties = {
+                ["z"] = 64
+              }
             }
           }
-        }
-      }
-    },
-    {
-      type = "group",
-      id = 32,
-      name = "unused",
-      class = "",
-      visible = false,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      layers = {
+        },
         {
           type = "objectgroup",
           draworder = "topdown",

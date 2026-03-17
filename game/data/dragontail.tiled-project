@@ -69,11 +69,6 @@
                     "value": ""
                 },
                 {
-                    "name": "actionsmodule",
-                    "type": "string",
-                    "value": "Dragontail.GuiActions"
-                },
-                {
                     "name": "disabled",
                     "type": "bool",
                     "value": false
@@ -99,7 +94,7 @@
                 {
                     "name": "alignx",
                     "type": "float",
-                    "value": -1
+                    "value": 0
                 },
                 {
                     "name": "aligny",
@@ -158,11 +153,6 @@
             "id": 13,
             "members": [
                 {
-                    "name": "actionsmodule",
-                    "type": "string",
-                    "value": "Dragontail.GuiActions"
-                },
-                {
                     "name": "backaction",
                     "type": "string",
                     "value": ""
@@ -180,6 +170,11 @@
             "drawFill": true,
             "id": 9,
             "members": [
+                {
+                    "name": "checkpoint",
+                    "type": "bool",
+                    "value": false
+                },
                 {
                     "name": "donewhenenemiesleft",
                     "type": "int",
@@ -202,6 +197,17 @@
                 "layer",
                 "project"
             ]
+        },
+        {
+            "id": 15,
+            "name": "SliderUnit",
+            "storageType": "string",
+            "type": "enum",
+            "values": [
+                "none",
+                "percent"
+            ],
+            "valuesAsFlags": false
         }
     ]
 }

@@ -21,7 +21,7 @@ local Color      = require "Tiled.Color"
 local Trigger = class(Character)
 Trigger.statetable = "data/database/objects-states.csv"
 Trigger.module = "Dragontail.Character.Trigger"
-Trigger.team = "trigger"
+Trigger.team = "triggers"
 
 function Trigger:hasUsesLeft()
     return not self.usesleft or self.usesleft > 0
@@ -256,6 +256,7 @@ function Trigger:startSequence()
 end
 
 function Trigger:pulseAlpha()
+    self.visible = true
     local t = 0
     while true do
         local r, g, b, a = Color.unpack(self.color or Color.White)

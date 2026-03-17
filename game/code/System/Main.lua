@@ -20,7 +20,6 @@ local dsecs = 0
 local dfixed = 0
 local numfixed = 0
 local fixedfrac = 0
-local fixedrate = Time.FixedUpdateRate
 local fixedlimit = 1
 local variableupdate = true
 
@@ -195,6 +194,7 @@ function love.run()
         end
 
         variableupdate = Config.variableupdate
+        local fixedrate = Config.fixedupdaterate
 
         -- Call update and draw
         if love.fixedupdate then

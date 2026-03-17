@@ -2,10 +2,9 @@ local Database = require "Data.Database"
 local Assets       = require "Tiled.Assets"
 local Color        = require "Tiled.Color"
 
----@class WeaponInHand:Character
+---@class WeaponInHand:AsepriteObject
 ---@field weaponposasefile string?
 ---@field weaponinhand string?
----@field numweaponinhand integer?
 ---@field weapontransforms number[]?
 local WeaponInHand = {}
 

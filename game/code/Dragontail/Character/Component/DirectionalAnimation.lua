@@ -16,6 +16,11 @@ function DirectionalAnimation.FromAngle(basename, angle, numanimations)
     return basename..facedir
 end
 
+function DirectionalAnimation.SnapAngle(angle, numanimations)
+    local angleinterval = 2 * math.pi / numanimations
+    return math.floor(angle / angleinterval + .5) * angleinterval
+end
+
 function DirectionalAnimation:set(basename, angle, frame1, loopframe)
     local animation = DirectionalAnimation.FromAngle(basename, angle, self.animationdirections)
     self:changeAnimation(animation, frame1, loopframe)

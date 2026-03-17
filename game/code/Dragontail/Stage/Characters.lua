@@ -7,6 +7,9 @@ local Body         = require "Dragontail.Character.Component.Body"
 local CollisionMask= require "Dragontail.Character.Component.Body.CollisionMask"
 local Attacker     = require "Dragontail.Character.Component.Attacker"
 local tablepool    = require "tablepool"
+local AttackTarget = require "Dragontail.Character.Component.AttackTarget"
+local Audio        = require "System.Audio"
+local findClosest  = require "findClosest"
 
 ---@module 'Dragontail.Stage.Characters'
 local Characters = {}
@@ -20,7 +23,7 @@ local scene
 local nextid
 local camera
 local clearlostenemiestimer
-local ClearLostEnemiesAfterTime = 180
+local ClearLostEnemiesAfterTime = 60*5
 
 function Characters.init(scene_, nextid_, camera_)
     nextid = nextid_ or 1
@@ -34,9 +37,9 @@ function Characters.init(scene_, nextid_, camera_)
         enemies = enemies,
         items = {},
         projectiles = {},
+        container = {},
         solids = solids,
         triggers = {},
-        all = allcharacters
     }
     scene = scene_
     camera = Characters.spawn(camera_)
@@ -57,7 +60,7 @@ function Characters.quit()
 end
 
 function Characters.getGroup(group)
-    return groups[group]
+    return group == "all" and allcharacters or groups[group]
 end
 
 function Characters.spawn(object)
@@ -94,7 +97,7 @@ function Characters.spawn(object)
     character.camera = camera
     character.solids = solids
     if not character.opponents then
-        if character.team == "player" then
+        if character.team == "players" then
             character.opponents = enemies
         else
             character.opponents = players
@@ -103,20 +106,11 @@ function Characters.spawn(object)
     if character.bodyinlayers ~= 0 then
         solids[#solids+1] = character
     end
-    if character.team == "player" then
-        players[#players+1] = character
+    local team = groups[character.team]
+    if team then
+        team[#team+1] = character
     end
-    if character.team == "enemy" then
-        enemies[#enemies+1] = character
-    end
-    if character.team == "item" then
-        groups.items[#groups.items+1] = character
-    end
-    if character.team == "projectile" then
-        groups.projectiles[#groups.projectiles+1] = character
-    end
-    if character.team == "trigger" then
-        groups.triggers[#groups.triggers+1] = character
+    if character.team == "triggers" then
         local ok, err = character:validateAction()
         if not ok then print(err) end
     end
@@ -132,7 +126,9 @@ local spawn = Characters.spawn
 function Characters.spawnArray(characters)
     if not characters then return end
     for i = 1, #characters do local object = characters[i]
-        spawn(object)
+        if not object.spawnsmanually then
+            spawn(object)
+        end
     end
 end
 
@@ -140,11 +136,18 @@ local AttackHits = {}
 
 function Characters.fixedupdate()
     for i = 1, #allcharacters do local character = allcharacters[i]
-        character:fixedupdate()
+        character:updateBody()
+    end
+
+    for i = 1, #solids do local solid = solids[i]
+        local hitvelx, hitvely, hitvelz = solid.hitvelx, solid.hitvely, solid.hitvelz
+        if hitvelx then solid.velx = solid.velx - hitvelx end
+        if hitvely then solid.vely = solid.vely - hitvely end
+        if hitvelz then solid.velz = solid.velz - hitvelz end
     end
 
     for i = #AttackHits, 1, -1 do
-        tablepool.release("AttackHit", AttackHits[i])
+        AttackHits[i]:_release()
         AttackHits[i] = nil
     end
 
@@ -161,48 +164,70 @@ function Characters.fixedupdate()
         Attacker.onAttackHit(hit.attacker, hit)
     end
 
+    for i = 1, #allcharacters do local character = allcharacters[i]
+        character.floorbody, character.floorz = Characters.getCylinderFloor(
+            character.x, character.y, character.z,
+            character.bodyradius, character.bodyheight, character.bodyhitslayers)
+    end
+
+    for i = 1, #allcharacters do local character = allcharacters[i]
+        character:fixedupdate()
+    end
+
     for i = 1, #players do local player = players[i]
-        Body.keepInBounds(player)
-        player:updateAttackerSlots()
+        AttackTarget.updateSlots(player)
         Characters.hitTriggers(player)
     end
 
-    Characters.fixedupdateLostEnemies()
+    for i = 1, #solids do local solid = solids[i]
+        local hitvelx, hitvely, hitvelz,
+            penex, peney, penez = Body.predictCollisionVelocity(solid)
+        solid.hitvelx = hitvelx
+        solid.hitvely = hitvely
+        solid.hitvelz = hitvelz
+        solid.velx = solid.velx + hitvelx
+        solid.vely = solid.vely + hitvely
+        solid.velz = solid.velz + hitvelz
+        solid.penex, solid.peney, solid.penez = penex, peney, penez
+    end
 end
 
-function Characters.fixedupdateLostEnemies()
-    if #enemies == 0 then
-        clearlostenemiestimer = 0
-        return
-    end
-
-    local numenemiesonscreen = 0
+function Characters.fixedupdateLostEnemiesTimer()
+    local numlostenemies = 0
     for i = 1, #enemies do
         local enemy = enemies[i]
-        if enemy:isCylinderOnCamera(camera) then
-            numenemiesonscreen = numenemiesonscreen + 1
+        if not enemy:isCylinderOnCamera(camera) then
+            numlostenemies = numlostenemies + 1
         end
     end
 
-    if numenemiesonscreen == 0 then
+    if numlostenemies > 0 then
         clearlostenemiestimer = clearlostenemiestimer + 1
-        if clearlostenemiestimer > ClearLostEnemiesAfterTime then
-            Characters.clearEnemies()
-            clearlostenemiestimer = 0
-        end
     else
         clearlostenemiestimer = 0
     end
 end
 
-local function nop() end
+function Characters.isTimeToClearLostEnemies()
+    return clearlostenemiestimer >= ClearLostEnemiesAfterTime
+end
 
-local function pruneCharacters(characters, f)
+function Characters.debugDrawOffScreenEnemyPositions()
+    for i = 1, #enemies do
+        local enemy = enemies[i]
+        enemy:debugDrawOffScreenPosition()
+    end
+end
+
+---@param characters Character[]
+---@param release boolean
+local function pruneCharacters(characters, release)
     local n = #characters
-    f = f or nop
     for i = n, 1, -1 do
         if characters[i].disappeared then
-            f(characters[i])
+            if release then
+                characters[i]:release()
+            end
             characters[i] = characters[n]
             characters[n] = nil
             n = n - 1
@@ -211,11 +236,11 @@ local function pruneCharacters(characters, f)
 end
 
 function Characters.pruneDisappeared()
-    for _, characters in pairs(groups) do
-        pruneCharacters(characters)
-    end
-    pruneCharacters(allcharacters, Character.release)
     scene:prune(Character.hasDisappeared)
+    for _, characters in pairs(groups) do
+        pruneCharacters(characters, false)
+    end
+    pruneCharacters(allcharacters, true)
 end
 
 function Characters.update(dsecs, fixedfrac)
@@ -245,7 +270,7 @@ function Characters.castRay3(raycast, caster)
     raycast.hitdist = nil
     local hitsomething
     local rdx, rdy, rdz = raycast.dx, raycast.dy, raycast.dz
-    for _, character in ipairs(allcharacters) do
+    for _, character in ipairs(solids) do
         if character ~= caster and Body.collideWithRaycast3(character, raycast) then
             raycast.dx = raycast.hitx - raycast.x
             raycast.dy = raycast.hity - raycast.y
@@ -260,17 +285,20 @@ function Characters.castRay3(raycast, caster)
     return hitsomething
 end
 
-local function nop() end
-
----@param eval fun(character: Character, i: integer?, characters: Character[]?):"break"|"return"?
+---@param eval fun(character: Character, i: integer?, characters: Character[]?):any
 function Characters.search(group, eval)
     local characters = groups[group] or allcharacters
     for i = 1, #characters do local character = characters[i]
         local result = eval(character, i, characters)
-        if result == "break" or result == "return" then
-            break
+        if result then
+            return result
         end
     end
+end
+
+function Characters.findClosest(group, x, y, z)
+    local characters = groups[group] or allcharacters
+    return findClosest(characters, x, y, z)
 end
 
 function Characters.keepCircleIn(x, y, r, solidlayersmask)
@@ -329,17 +357,26 @@ function Characters.keepCylinderIn(x, y, z, r, h, self, iterations)
     return x, y, z, totalpenex, totalpeney, totalpenez
 end
 
-function Characters.getCylinderFloorZ(x, y, z, r, h, solidlayersmask)
-    local floorz
+function Characters.getCylinderFloor(x, y, z, r, h, solidlayersmask)
+    local floorchar
+    local floorz = -math.huge
+    local floorpenelensq = -math.huge
     for _, solid in ipairs(solids) do
         if bit.band(solid.bodyinlayers, solidlayersmask) ~= 0 then
-            local fz = Body.getCylinderFloorZ(solid, x, y, z, r, h)
-            if fz then
-                floorz = math.max(floorz or fz, fz)
+            local fz, penex, peney = Body.getCylinderFloorZ(solid, x, y, z, r, h)
+            if fz and (penex ~= 0 or peney ~= 0) then
+                local penelensq = penex and peney
+                    and math.lensq(penex, peney) or -math.huge
+                if fz > floorz
+                or fz == floorz and floorpenelensq < penelensq then
+                    floorchar = solid
+                    floorz = fz
+                    floorpenelensq = penelensq
+                end
             end
         end
     end
-    return floorz
+    return floorchar, floorz
 end
 
 function Characters.hitTriggers(hitter)
@@ -362,19 +399,15 @@ function Characters.isDrawnBefore(a, b)
         return false
     end
 
-    local ay = a.y or 0
-    local by = b.y or 0
-    if ay < by then
-        return true
-    elseif ay > by then
-        return false
-    end
-
     az = a.z or 0
     bz = b.z or 0
-    if az < bz then
+    local ay = a.y or 0
+    local by = b.y or 0
+    local ayz = ay+az
+    local byz = by+bz
+    if ayz < byz then
         return true
-    elseif az > bz then
+    elseif ayz > byz then
         return false
     end
 
@@ -390,10 +423,28 @@ function Characters.isDrawnBefore(a, b)
 end
 
 function Characters.clearEnemies(boss)
+    local HoldOpponent = require "Dragontail.Character.Component.HoldOpponent"
     for _, enemy in ipairs(enemies) do
-        if enemy ~= boss then
-            enemy:disappear()
+        ---@cast enemy Enemy
+        if enemy ~= boss and enemy.health > 0 then
+            enemy.health = 0
+            HoldOpponent.stopHolding(enemy, enemy.heldopponent)
+            HoldOpponent.stopHolding(enemy.heldby, enemy)
+            StateMachine.start(enemy, "fall")
         end
+    end
+    clearlostenemiestimer = 0
+end
+
+function Characters.refillPlayers()
+    if players then
+        for _, player in ipairs(players) do
+            player:cheatRefillAll()
+        end
+        local foodsmall = Database.get("food-small")
+        local manasmall = Database.get("mana-small")
+        if foodsmall then Audio.play(foodsmall.itemgetsound) end
+        if manasmall then Audio.play(manasmall.itemgetsound) end
     end
 end
 

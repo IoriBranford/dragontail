@@ -96,7 +96,7 @@ notion("Character accelerating to target velocity", function()
         velxs[#velxs+1] = velx
     end
     for i = 1, #velxs do
-        a:accelerateTowardsVel(targetvelx, 0, t, e)
+        a:accelerateTowardsVelXY(targetvelx, 0, t, e)
         Body.updatePosition(a)
         check(a.velx).is(velxs[i])
     end

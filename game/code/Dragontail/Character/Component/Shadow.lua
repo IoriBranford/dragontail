@@ -27,11 +27,13 @@ function Shadow:drawSprite(fixedfrac)
     if alpha <= 0 then
         return
     end
+    local floorz = self.floorz
+    if not floorz then return end
+
     fixedfrac = fixedfrac or 0
     local x, y = self.x + self.velx * fixedfrac, self.y + self.vely * fixedfrac
     love.graphics.setColor(red, green, blue, alpha)
     local Characters = require "Dragontail.Stage.Characters"
-    local floorz = Characters.getCylinderFloorZ(x, y, self.z, self.bodyradius, self.bodyheight, self.bodyhitslayers) or 0
     love.graphics.push()
     love.graphics.translate(x, y - floorz)
     love.graphics.rotate(self.rotation or 0)

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <tileset firstgid="1" source="../../sprites/weapons/tallstone.tsx"/>
+ <object name="big-stone" type="big-stone" gid="1" width="48" height="48">
+  <properties>
+   <property name="propertiestable" type="file" value="../../database/objects-properties.csv"/>
+  </properties>
+ </object>
+</template>

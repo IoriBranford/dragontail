@@ -214,7 +214,8 @@ function Assets.packTiles()
 
     atlas:updateCanvas()
 
-    local packimage = atlas.canvas
+    local packimage = love.graphics.newImage(
+        atlas.canvas:newImageData())
     Assets.put("__atlas.png", packimage)
     -- atlas:save("atlas")
 
@@ -223,6 +224,9 @@ function Assets.packTiles()
             tileset.image = packimage
             Assets.permanent[tileset.imagefile] = nil
             Assets.put(tileset.imagefile, packimage)
+            for i = 0, tileset.tilecount-1 do
+                tileset[i].image = packimage
+            end
         end
     end
     if aseprites then
@@ -231,6 +235,11 @@ function Assets.packTiles()
             for _, frame in ipairs(ase) do
                 if frame then
                     frame.image = packimage
+                    for _, cel in ipairs(frame) do
+                        if cel then
+                            cel.image = packimage
+                        end
+                    end
                 end
             end
             Assets.permanent[ase.imagefile] = nil

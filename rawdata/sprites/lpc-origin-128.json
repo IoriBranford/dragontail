@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "slices": [
+      {
+        "name": "origin",
+        "color": "#0000ffff",
+        "keys": [
+          {
+            "frame": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "w": 128,
+              "h": 128
+            },
+            "pivot": {
+              "x": 64,
+              "y": 88
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

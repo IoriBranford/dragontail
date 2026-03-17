@@ -26,7 +26,7 @@ local function at(s,i)
     return sub(s,i,i)
 end
 
-path.is_windows = utils.is_windows
+-- path.is_windows = utils.is_windows
 
 local sep, other_sep, seps
 -- constant sep is the directory separator for this platform.

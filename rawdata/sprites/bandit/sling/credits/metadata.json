@@ -1,0 +1,168 @@
+{
+  "exportTimestamp": "2025-09-03T03-46-56",
+  "bodyType": "male",
+  "standardAnimations": {
+    "exported": {
+      "spellcast": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male leather.png",
+        "020 legs pantaloons male sky.png",
+        "035 torso clothes sleeveless striped male tan.png",
+        "070 torso waist belt_belly male tan.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat cloth bandana adult bandana_red.png"
+      ],
+      "thrust": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male leather.png",
+        "020 legs pantaloons male sky.png",
+        "035 torso clothes sleeveless striped male tan.png",
+        "070 torso waist belt_belly male tan.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat cloth bandana adult bandana_red.png"
+      ],
+      "walk": [
+        "009 weapon ranged slingshot background slingshot.png",
+        "010 body bodies male light.png",
+        "015 feet shoes revised male leather.png",
+        "020 legs pantaloons male sky.png",
+        "035 torso clothes sleeveless striped male tan.png",
+        "070 torso waist belt_belly male tan.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat cloth bandana adult bandana_red.png",
+        "140 weapon ranged slingshot foreground slingshot.png"
+      ],
+      "slash": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male leather.png",
+        "020 legs pantaloons male sky.png",
+        "035 torso clothes sleeveless striped male tan.png",
+        "070 torso waist belt_belly male tan.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat cloth bandana adult bandana_red.png"
+      ],
+      "shoot": [
+        "009 weapon ranged slingshot background slingshot.png",
+        "010 body bodies male light.png",
+        "015 feet shoes revised male leather.png",
+        "020 legs pantaloons male sky.png",
+        "035 torso clothes sleeveless striped male tan.png",
+        "070 torso waist belt_belly male tan.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat cloth bandana adult bandana_red.png",
+        "140 weapon ranged slingshot foreground slingshot.png"
+      ],
+      "hurt": [
+        "009 weapon ranged slingshot background slingshot.png",
+        "010 body bodies male light.png",
+        "015 feet shoes revised male leather.png",
+        "020 legs pantaloons male sky.png",
+        "035 torso clothes sleeveless striped male tan.png",
+        "070 torso waist belt_belly male tan.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat cloth bandana adult bandana_red.png",
+        "140 weapon ranged slingshot foreground slingshot.png"
+      ],
+      "climb": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male leather.png",
+        "020 legs pantaloons male sky.png",
+        "100 head heads human male light.png",
+        "120 hat cloth bandana adult bandana_red.png"
+      ],
+      "idle": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male leather.png",
+        "020 legs pantaloons male sky.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat cloth bandana adult bandana_red.png"
+      ],
+      "jump": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male leather.png",
+        "020 legs pantaloons male sky.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat cloth bandana adult bandana_red.png"
+      ],
+      "sit": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male leather.png",
+        "020 legs pantaloons male sky.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat cloth bandana adult bandana_red.png"
+      ],
+      "emote": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male leather.png",
+        "020 legs pantaloons male sky.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat cloth bandana adult bandana_red.png"
+      ],
+      "run": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male leather.png",
+        "020 legs pantaloons male sky.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat cloth bandana adult bandana_red.png"
+      ],
+      "combat_idle": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male leather.png",
+        "020 legs pantaloons male sky.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat cloth bandana adult bandana_red.png"
+      ],
+      "backslash": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male leather.png",
+        "020 legs pantaloons male sky.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat cloth bandana adult bandana_red.png"
+      ],
+      "halfslash": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male leather.png",
+        "020 legs pantaloons male sky.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat cloth bandana adult bandana_red.png"
+      ]
+    },
+    "failed": {}
+  },
+  "customAnimations": {
+    "exported": {},
+    "failed": {}
+  },
+  "frameSize": 64,
+  "frameCounts": {
+    "spellcast": 7,
+    "thrust": 8,
+    "walk": 9,
+    "slash": 6,
+    "shoot": 13,
+    "hurt": 6,
+    "climb": 6,
+    "idle": 2,
+    "jump": 5,
+    "sit": 3,
+    "emote": 3,
+    "run": 8,
+    "combat_idle": 2,
+    "backslash": 13,
+    "halfslash": 7
+  }
+}

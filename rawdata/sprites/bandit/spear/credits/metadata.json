@@ -1,0 +1,177 @@
+{
+  "exportTimestamp": "2025-09-02T21-25-34",
+  "bodyType": "male",
+  "standardAnimations": {
+    "exported": {
+      "spellcast": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male walnut.png",
+        "020 legs pants male walnut.png",
+        "060 torso armour leather male walnut.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair buzzcut adult dark_gray.png",
+        "125 hat headband tied adult red.png"
+      ],
+      "thrust": [
+        "009 weapon polearm spear background light.png",
+        "010 body bodies male light.png",
+        "015 feet shoes revised male walnut.png",
+        "020 legs pants male walnut.png",
+        "060 torso armour leather male walnut.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair buzzcut adult dark_gray.png",
+        "125 hat headband tied adult red.png",
+        "140 weapon polearm spear foreground light.png"
+      ],
+      "walk": [
+        "009 weapon polearm spear background light.png",
+        "010 body bodies male light.png",
+        "015 feet shoes revised male walnut.png",
+        "020 legs pants male walnut.png",
+        "060 torso armour leather male walnut.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair buzzcut adult dark_gray.png",
+        "125 hat headband tied adult red.png",
+        "140 weapon polearm spear foreground light.png"
+      ],
+      "slash": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male walnut.png",
+        "020 legs pants male walnut.png",
+        "060 torso armour leather male walnut.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair buzzcut adult dark_gray.png",
+        "125 hat headband tied adult red.png"
+      ],
+      "shoot": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male walnut.png",
+        "020 legs pants male walnut.png",
+        "060 torso armour leather male walnut.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair buzzcut adult dark_gray.png",
+        "125 hat headband tied adult red.png"
+      ],
+      "hurt": [
+        "009 weapon polearm spear background light.png",
+        "010 body bodies male light.png",
+        "015 feet shoes revised male walnut.png",
+        "020 legs pants male walnut.png",
+        "060 torso armour leather male walnut.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair buzzcut adult dark_gray.png",
+        "125 hat headband tied adult red.png",
+        "140 weapon polearm spear foreground light.png"
+      ],
+      "climb": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male walnut.png",
+        "020 legs pants male walnut.png",
+        "100 head heads human male light.png",
+        "120 hair buzzcut adult dark_gray.png",
+        "125 hat headband tied adult red.png"
+      ],
+      "idle": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male walnut.png",
+        "020 legs pants male walnut.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair buzzcut adult dark_gray.png",
+        "125 hat headband tied adult red.png"
+      ],
+      "jump": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male walnut.png",
+        "020 legs pants male walnut.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair buzzcut adult dark_gray.png",
+        "125 hat headband tied adult red.png"
+      ],
+      "sit": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male walnut.png",
+        "020 legs pants male walnut.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair buzzcut adult dark_gray.png",
+        "125 hat headband tied adult red.png"
+      ],
+      "emote": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male walnut.png",
+        "020 legs pants male walnut.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair buzzcut adult dark_gray.png",
+        "125 hat headband tied adult red.png"
+      ],
+      "run": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male walnut.png",
+        "020 legs pants male walnut.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair buzzcut adult dark_gray.png",
+        "125 hat headband tied adult red.png"
+      ],
+      "combat_idle": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male walnut.png",
+        "020 legs pants male walnut.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair buzzcut adult dark_gray.png",
+        "125 hat headband tied adult red.png"
+      ],
+      "backslash": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male walnut.png",
+        "020 legs pants male walnut.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair buzzcut adult dark_gray.png",
+        "125 hat headband tied adult red.png"
+      ],
+      "halfslash": [
+        "010 body bodies male light.png",
+        "015 feet shoes revised male walnut.png",
+        "020 legs pants male walnut.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hair buzzcut adult dark_gray.png",
+        "125 hat headband tied adult red.png"
+      ]
+    },
+    "failed": {}
+  },
+  "customAnimations": {
+    "exported": {},
+    "failed": {}
+  },
+  "frameSize": 64,
+  "frameCounts": {
+    "spellcast": 7,
+    "thrust": 8,
+    "walk": 9,
+    "slash": 6,
+    "shoot": 13,
+    "hurt": 6,
+    "climb": 6,
+    "idle": 2,
+    "jump": 5,
+    "sit": 3,
+    "emote": 3,
+    "run": 8,
+    "combat_idle": 2,
+    "backslash": 13,
+    "halfslash": 7
+  }
+}

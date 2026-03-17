@@ -69,6 +69,7 @@ function math.distsq(x1, y1, x2, y2)
     local dx, dy = x2-x1, y2-y1
     return dx*dx + dy*dy
 end
+local distsq = math.distsq
 
 function math.distsq3(x1, y1, z1, x2, y2, z2)
     local dx, dy, dz = x2-x1, y2-y1, z2-z1
@@ -285,6 +286,42 @@ function math.projpointsegment(px, py, ax, ay, bx, by)
     end
     t = t / ablensq
     return ax + t*abx, ay + t*aby
+end
+local projpointsegment = math.projpointsegment
+
+---@param points number[] Every 2 elements is 1 point
+---@param x number
+---@param y number
+function math.keeppointinpolygon(points, x, y)
+    local inside = false
+    local i = #points
+    local x1, y1 = points[i-1], points[i]
+    local nearestx, nearesty, nearesti, nearestj
+    local nearestdsq = math.huge
+    for j = 2, #points, 2 do
+        local x2, y2 = points[j-1], points[j]
+        local projx, projy = projpointsegment(x, y, x1, y1, x2, y2)
+        local dsq = distsq(x, y, projx, projy)
+        if dsq < nearestdsq then
+            nearestx, nearesty, nearestdsq = projx, projy, dsq
+            nearesti, nearestj = i, j
+        end
+        if y > min(y1, y2) then
+            if y <= max(y1, y2) then
+                if x <= max(x1, x2) then
+                    local hitx = (y - y1) * (x2 - x1) / (y2 - y1) + x1
+                    if x1 == x2 or x <= hitx then
+                        inside = not inside
+                    end
+                end
+            end
+        end
+        x1, y1, i = x2, y2, j
+    end
+    if inside then
+        nearestx, nearesty = x, y
+    end
+    return nearestx, nearesty, nearesti, nearestj
 end
 
 function math.polysignedarea(points)

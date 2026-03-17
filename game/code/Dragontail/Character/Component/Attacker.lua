@@ -1,9 +1,12 @@
 local Body = require "Dragontail.Character.Component.Body"
 local drawCake = require "drawCake"
-local Guard    = require "Dragontail.Character.Action.Guard"
+local Guard    = require "Dragontail.Character.Component.Guard"
 local StateMachine = require "Dragontail.Character.Component.StateMachine"
 local tablepool    = require "tablepool"
 local AttackHit    = require "Dragontail.Character.Event.AttackHit"
+local Color        = require "Tiled.Color"
+local Movement     = require "Component.Movement"
+local HoldOpponent
 
 ---@class Attacker:Body
 ---@field defaultattack string?
@@ -13,23 +16,94 @@ local AttackHit    = require "Dragontail.Character.Event.AttackHit"
 ---@field hitstun number
 ---@field thrower Character
 ---@field numopponentshit integer?
----@field onAttackHit fun(self:Attacker, target:Victim)?
+---@field opponents Character[]
+---@field opponentsbypriority Character[]?
+---@field crosshairs Character[]?
+---@field unguardable boolean
+---@field uncatchable boolean
+---@field onAttackHit fun(self:Attacker, target:AttackTarget)?
 local Attacker = {}
 
----@class Victim
----@field health number
----@field maxhealth number
----@field canbeattacked boolean
----@field canbejuggled boolean
----@field canbedamagedbyattack string?
----@field hurtstun number
----@field hurtangle number?
----@field attacker Character
----@field hurtai string?
----@field recoverai string?
----@field aiafterhurt string?
----@field hurtsound string?
----@field onHitByAttack fun(self:Victim, target:Attacker)?
+function Attacker:init()
+    local attackdegrees = self.attackdegrees
+    if attackdegrees then
+        self.attackangle = math.rad(attackdegrees)
+    end
+end
+
+function Attacker:initCrosshairs(crosshairtype, numcrosshairs)
+    local Characters   = require "Dragontail.Stage.Characters"
+    if not self.crosshairs then
+        local crosshairs = {}
+        self.crosshairs = crosshairs
+        local Character    = require "Dragontail.Character"
+        for i = 1, numcrosshairs do
+            local crosshair = Character(crosshairtype)
+            crosshair.visible = false
+            crosshairs[i] = Characters.spawn(crosshair)
+        end
+    end
+end
+
+function Attacker:updateCrosshairTargetObject(i, target)
+    if target then
+        Attacker.updateCrosshairTargetPosition(self, i,
+            target.x, target.y, target.z + target.bodyheight/2)
+    else
+        Attacker.updateCrosshairTargetPosition(self, i)
+    end
+end
+
+function Attacker:updateCrosshairTargetPosition(i, x, y, z)
+    local crosshair = self.crosshairs and self.crosshairs[i]
+    if not crosshair then return end
+
+    if crosshair.visible then
+        if x and y and z then
+            local delta = 1/8
+            local dist = math.dist3(x, y, z, crosshair.x, crosshair.y, crosshair.z)
+            local speed = math.max(1, (1 - delta) * dist)
+            local velx, vely, velz = Movement.getVelocity3_speed(
+                crosshair.x, crosshair.y, crosshair.z,
+                x, y, z, speed
+            )
+            crosshair.velx = velx
+            crosshair.vely = vely
+            crosshair.velz = velz
+            crosshair.scalex = math.max(1, crosshair.scalex - delta)
+            crosshair.scaley = math.max(1, crosshair.scaley - delta)
+            local _,_,_, a = Color.parseARGBInt(crosshair.color)
+            a = math.min(1, a + delta)
+            crosshair.color = Color.asARGBInt(1,1,1,a)
+        else
+            crosshair.visible = false
+        end
+    elseif x and y and z then
+        crosshair.x = x
+        crosshair.y = y
+        crosshair.z = z
+        crosshair.visible = true
+        crosshair.scalex = 2
+        crosshair.scaley = 2
+        crosshair.color = Color.asARGBInt(1,1,1,0)
+    end
+end
+
+function Attacker:debugPrintCrosshair(i)
+    local crosshairs = self.crosshairs
+    print("crosshairs", crosshairs)
+    if not crosshairs then return end
+
+    local crosshair = crosshairs[i]
+    print("crosshair", i, crosshair)
+    if not crosshair then return end
+
+    print("aseprite", crosshair.aseprite)
+    print("visible", crosshair.visible)
+    print("pos", crosshair.x, crosshair.y, crosshair.z)
+    print("vel", crosshair.velx, crosshair.vely, crosshair.velz)
+    print("color", Color.unpack(crosshair.color))
+end
 
 function Attacker:isAttacking()
     return self.attackangle
@@ -41,6 +115,9 @@ end
 
 function Attacker:stopAttack()
     self.attackangle = nil
+end
+
+function Attacker:unassignSelfAsAttacker()
     local opponents = self.opponents
     if opponents then
         for i = 1, #opponents do
@@ -117,14 +194,14 @@ function Attacker:debugPrint_checkAttackCollision(target)
     -- end
 end
 
-function Attacker:getAttackCylinder()
-    local attack = self.attack
-    if not attack then return end
-    local attackangle = self.attackangle
-    if not attackangle then return end
+function Attacker:getAttackCylinder(attack, attackangle)
+    attack = attack or self.attack
+    attackangle = attackangle or self.attackangle
+    if not attack or not attackangle then return end
 
-    local z = self.z
-    local h = self.bodyheight
+    local zoffset = attack.z or 0
+    local z = self.z + zoffset
+    local h = attack.height or (self.bodyheight - zoffset)
     local l = attack.radius or 0
     local r = l * math.sin(attack.arc or 0)
     local d = l - r
@@ -133,38 +210,47 @@ function Attacker:getAttackCylinder()
     return x, y, z, r, h
 end
 
-function Attacker:checkAttackCollision_cylinder(target)
-    local ax, ay, az, ar, ah = Attacker.getAttackCylinder(self)
+function Attacker:checkAttackCollision_cylinder(target, attack, attackangle)
+    local ax, ay, az, ar, ah = Attacker.getAttackCylinder(self, attack, attackangle)
     if ax then
         return Body.getCylinderPenetration(target, ax, ay, az, ar, ah)
     end
 end
 
-function Attacker:checkAttackCollision(target)
-    if target.hurtstun > 0 then
-        return
-    end
+function Attacker:checkAttackCollision(target, attack, attackangle)
+    HoldOpponent = HoldOpponent or require "Dragontail.Character.Component.HoldOpponent"
+    attack = attack or self.attack
+    if not attack then return end
+
+    if (target.invulntime or 0) > 0 then return end
+    if target.hurtstun > 0 then return end
     if not target.canbeattacked then
         if not self.attack.canjuggle or not target.canbejuggled then
             return
         end
     end
-    if target == self or target == self.thrower or target.thrower == self then
+    if target == self or target == self.thrower or target.thrower == self
+    or target.thrower and self.thrower and target.thrower == self.thrower
+    or HoldOpponent.isHolding(target, self) then
         return
     end
-    if 0 == bit.band(self.attack.hitslayers or 0xFFFFFFFF, target.bodyinlayers) then
+    if 0 == bit.band(attack.hitslayers or 0xFFFFFFFF, target.bodyinlayers) then
         return
     end
-    return Attacker.checkAttackCollision_cylinder(self, target)
+    return Attacker.checkAttackCollision_cylinder(self, target, attack, attackangle)
 end
 
----@param target Victim
+---@param target AttackTarget
 ---@return AttackHit?
-function Attacker:getAttackHit(target)
-    local penex, peney, penez = Attacker.checkAttackCollision(self, target)
+function Attacker:getAttackHit(target, attack, attackangle)
+    attack = attack or self.attack
+    attackangle = attackangle or self.attackangle
+    if not attack or not attackangle then return end
+
+    local penex, peney, penez = Attacker.checkAttackCollision(self, target, attack, attackangle)
     if penex or peney or penez then
         -- print(self.type..self.id, self.attacktype, target.type..target.id)
-        return AttackHit(self, target, penex, peney, penez)
+        return AttackHit(self, target, attack, attackangle, penex, peney, penez)
     end
 end
 
@@ -184,6 +270,35 @@ function Attacker:onAttackHit(hit)
     if nextstate then
         StateMachine.start(self, nextstate, hit.target)
     end
+end
+
+local function comparePriorities(a, b)
+    return a.targetingscore < b.targetingscore
+end
+
+function Attacker:updateOpponentsByPriority(getPriority)
+    local opponentsbypriority = self.opponentsbypriority
+    if opponentsbypriority then
+        for i = #opponentsbypriority, 1, -1 do
+            opponentsbypriority[i] = nil
+        end
+    else
+        opponentsbypriority = {}
+        self.opponentsbypriority = opponentsbypriority
+    end
+
+    local opponents = self.opponents
+    for i = 1, #opponents do
+        local opponent = opponents[i]
+        local priority = getPriority(opponent)
+        opponent.targetingscore = priority
+        if priority then
+            opponentsbypriority[#opponentsbypriority+1] = opponent
+        end
+    end
+
+    table.sort(opponentsbypriority, comparePriorities)
+    return opponentsbypriority
 end
 
 function Attacker:drawPieslice(fixedfrac)
@@ -211,26 +326,17 @@ function Attacker:drawPieslice(fixedfrac)
 end
 
 function Attacker:drawCircle(fixedfrac)
-    local attackangle = self.attackangle
-    local attackradius = self.attack.radius or 0
-    if attackradius <= 0 or not attackangle then
-        return
+    local x, y, z, r, h = Attacker.getAttackCylinder(self)
+    if x and y and z and r and h then
+        fixedfrac = fixedfrac or 0
+        x = x + self.velx*fixedfrac
+        y = y + self.vely*fixedfrac
+        z = z + self.velz*fixedfrac
+        love.graphics.setColor(0, 0, 0)
+        love.graphics.circle("line", x, y, r)
+        love.graphics.setColor(1, .5, .5)
+        drawCake(x, y - z, r, h, 0, math.pi)
     end
-
-    fixedfrac = fixedfrac or 0
-    local attackarc = self.attack.arc or 0
-    local attackr = math.max(1, attackradius * math.sin(attackarc))
-    local x = self.x + self.velx*fixedfrac + math.cos(attackangle)*(attackradius - attackr)
-    local y = self.y + self.vely*fixedfrac + math.sin(attackangle)*(attackradius - attackr)
-    local z = self.z + self.velz*fixedfrac
-    local bodyheight = self.bodyheight
-    local screeny = y - z
-    local attackheight = bodyheight
-    love.graphics.setColor(1, .5, .5)
-    love.graphics.circle("line", x, screeny, attackr)
-    love.graphics.circle("line", x, screeny - attackheight, attackr)
-    love.graphics.line(x - attackr, screeny, x - attackr, screeny - attackheight)
-    love.graphics.line(x + attackr, screeny, x + attackr, screeny - attackheight)
 end
 
 return Attacker

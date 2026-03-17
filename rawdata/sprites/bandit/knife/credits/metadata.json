@@ -1,0 +1,162 @@
+{
+  "exportTimestamp": "2025-09-02T20-29-50",
+  "bodyType": "male",
+  "standardAnimations": {
+    "exported": {
+      "spellcast": [
+        "010 body bodies male light.png",
+        "015 feet sandals male tan.png",
+        "020 legs pants male slate.png",
+        "045 torso clothes vest_open male slate.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat pirate bandana adult slate.png"
+      ],
+      "thrust": [
+        "010 body bodies male light.png",
+        "015 feet sandals male tan.png",
+        "020 legs pants male slate.png",
+        "045 torso clothes vest_open male slate.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat pirate bandana adult slate.png",
+        "140 weapon sword dagger dagger.png"
+      ],
+      "walk": [
+        "009 weapon sword dagger behind dagger.png",
+        "010 body bodies male light.png",
+        "015 feet sandals male tan.png",
+        "020 legs pants male slate.png",
+        "045 torso clothes vest_open male slate.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat pirate bandana adult slate.png",
+        "140 weapon sword dagger dagger.png"
+      ],
+      "slash": [
+        "009 weapon sword dagger behind dagger.png",
+        "010 body bodies male light.png",
+        "015 feet sandals male tan.png",
+        "020 legs pants male slate.png",
+        "045 torso clothes vest_open male slate.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat pirate bandana adult slate.png",
+        "140 weapon sword dagger dagger.png"
+      ],
+      "shoot": [
+        "010 body bodies male light.png",
+        "015 feet sandals male tan.png",
+        "020 legs pants male slate.png",
+        "045 torso clothes vest_open male slate.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat pirate bandana adult slate.png"
+      ],
+      "hurt": [
+        "010 body bodies male light.png",
+        "015 feet sandals male tan.png",
+        "020 legs pants male slate.png",
+        "045 torso clothes vest_open male slate.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat pirate bandana adult slate.png",
+        "140 weapon sword dagger dagger.png"
+      ],
+      "climb": [
+        "010 body bodies male light.png",
+        "015 feet sandals male tan.png",
+        "020 legs pants male slate.png",
+        "100 head heads human male light.png",
+        "120 hat pirate bandana adult slate.png"
+      ],
+      "idle": [
+        "010 body bodies male light.png",
+        "015 feet sandals male tan.png",
+        "020 legs pants male slate.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat pirate bandana adult slate.png"
+      ],
+      "jump": [
+        "010 body bodies male light.png",
+        "015 feet sandals male tan.png",
+        "020 legs pants male slate.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat pirate bandana adult slate.png"
+      ],
+      "sit": [
+        "010 body bodies male light.png",
+        "015 feet sandals male tan.png",
+        "020 legs pants male slate.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat pirate bandana adult slate.png"
+      ],
+      "emote": [
+        "010 body bodies male light.png",
+        "015 feet sandals male tan.png",
+        "020 legs pants male slate.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat pirate bandana adult slate.png"
+      ],
+      "run": [
+        "010 body bodies male light.png",
+        "015 feet sandals male tan.png",
+        "020 legs pants male slate.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat pirate bandana adult slate.png"
+      ],
+      "combat_idle": [
+        "010 body bodies male light.png",
+        "015 feet sandals male tan.png",
+        "020 legs pants male slate.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat pirate bandana adult slate.png"
+      ],
+      "backslash": [
+        "010 body bodies male light.png",
+        "015 feet sandals male tan.png",
+        "020 legs pants male slate.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat pirate bandana adult slate.png"
+      ],
+      "halfslash": [
+        "010 body bodies male light.png",
+        "015 feet sandals male tan.png",
+        "020 legs pants male slate.png",
+        "100 head heads human male light.png",
+        "105 eyes human adult default gray.png",
+        "120 hat pirate bandana adult slate.png"
+      ]
+    },
+    "failed": {}
+  },
+  "customAnimations": {
+    "exported": {},
+    "failed": {}
+  },
+  "frameSize": 64,
+  "frameCounts": {
+    "spellcast": 7,
+    "thrust": 8,
+    "walk": 9,
+    "slash": 6,
+    "shoot": 13,
+    "hurt": 6,
+    "climb": 6,
+    "idle": 2,
+    "jump": 5,
+    "sit": 3,
+    "emote": 3,
+    "run": 8,
+    "combat_idle": 2,
+    "backslash": 13,
+    "halfslash": 7
+  }
+}

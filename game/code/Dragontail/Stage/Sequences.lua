@@ -90,13 +90,8 @@ end
 function Sequences.unlockDoorToNextArea()
     local Stage = require "Dragontail.Stage"
     local room = Stage.getCurrentRoom()
-    if room.donewhenenemiesleft >= 0 then
-        room.donewhenenemiesleft = -1
-    end
     local door = room.exitdoor
     StateMachine.start(door, "furnitureToBreak")
-    local trigger = room.exittrigger
-    trigger.visible = true
 end
 
 return Sequences

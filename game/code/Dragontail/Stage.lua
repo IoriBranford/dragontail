@@ -11,6 +11,7 @@ local Database    = require "Data.Database"
 local Assets      = require "Tiled.Assets"
 local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask"
 local pathlite = require "pl.pathlite"
+local CameraBoundary = require "Object.CameraBoundary"
 local Stage = {
     CameraWidth = 480,
     CameraHeight = 270
@@ -21,10 +22,12 @@ local min = math.min
 
 local scene ---@type Scene
 local map ---@type TiledMap
+local firstroomname
 local roomindex
 local winningteam
 local camera ---@type Camera
 local sequencethread ---@type thread?
+local shader ---@type love.Shader
 
 ---@class Boundary:TiledObject
 ---@class Camera:Boundary
@@ -35,10 +38,12 @@ function Stage.quit()
     roomindex = nil
     winningteam = nil
     camera = nil
+    shader = nil
     Characters.quit()
 end
 
 function Stage.load(stagefile)
+    shader = love.graphics.newShader("shaders/Stage.lslp", "shaders/Stage.lslv")
     map = Tiled.Map.load(stagefile)
     local directory = map.directory
     map:indexLayersByName()
@@ -49,6 +54,9 @@ function Stage.load(stagefile)
     for _, object in pairs(map.objects) do
         if object.type == "CameraPath" then
             CameraPath.cast(object)
+            object:init()
+        elseif object.type == "CameraBoundary" then
+            CameraBoundary.cast(object)
             object:init()
         else
             local characters = object.layer.characters or {}
@@ -70,7 +78,8 @@ function Stage.load(stagefile)
     end
 end
 
-function Stage.init()
+function Stage.init(startroom)
+    local Character = require "Dragontail.Character"
     scene = Scene()
 
     local MinStageHeight = 1024
@@ -79,45 +88,69 @@ function Stage.init()
     local ceilingz = map.ceilingz or (floorz + MinStageHeight)
     ceilingz = max(ceilingz, floorz + MinStageHeight)
 
-    camera = {
-        visible = false,
-        shape = "polygon",
-        bodyinlayers = CollisionMask.get("Camera"),
-        bodyheight = 0x20000000,
-        x = 0, y = 0, z = -0x10000000,
-        lockz = true,
-        width = Stage.CameraWidth, height = Stage.CameraHeight,
-        points = {
-            0, CameraTopMargin,
-            Stage.CameraWidth, CameraTopMargin,
-            Stage.CameraWidth, Stage.CameraHeight,
-            0, Stage.CameraHeight
-        }
+    camera = Character()
+    camera.visible = false
+    camera.shape = "polygon"
+    camera.bodyinlayers = CollisionMask.get("Camera")
+    camera.bodyheight = 0x20000000
+    camera.x = 0
+    camera.y = 0
+    camera.z = -0x10000000
+    camera.lockz = true
+    camera.width = Stage.CameraWidth
+    camera.height = Stage.CameraHeight
+    camera.points = {
+        0, CameraTopMargin,
+        Stage.CameraWidth, CameraTopMargin,
+        Stage.CameraWidth, Stage.CameraHeight,
+        0, Stage.CameraHeight
     }
     Characters.init(scene, map.nextobjectid, camera)
 
-    Characters.spawn({
-        visible = false,
-        shape = "polygon",
-        bodyinlayers = CollisionMask.get("Wall"),
-        bodyheight = ceilingz - floorz,
-        x = 0, y = 0, z = floorz,
-        width = 0x20000000, height = 0x20000000,
-        points = {
-            -0x10000000,-0x10000000,
-            0x10000000,-0x10000000,
-            0x10000000,0x10000000,
-            -0x10000000,0x10000000,
-        }
-    })
+    local floorandceiling = Character()
+    floorandceiling.visible = false
+    floorandceiling.shape = "polygon"
+    floorandceiling.bodyinlayers = CollisionMask.get("Wall")
+    floorandceiling.bodyheight = ceilingz - floorz
+    floorandceiling.x = 0
+    floorandceiling.y = 0
+    floorandceiling.z = floorz
+    floorandceiling.width = 0x20000000
+    floorandceiling.height = 0x20000000
+    floorandceiling.points = {
+        -0x10000000,-0x10000000,
+        0x10000000,-0x10000000,
+        0x10000000,0x10000000,
+        -0x10000000,0x10000000,
+    }
+    Characters.spawn(floorandceiling)
 
     scene:addMap(map, "group,tilelayer")
 
+    local function initLayer(layer)
+        if layer.layers then
+            for _, sublayer in ipairs(layer.layers) do
+                initLayer(sublayer)
+            end
+        end
+        local draw = layer.draw
+        layer.draw = function(self)
+            Stage.setUniform("texRgbFactor", 1)
+            draw(self)
+        end
+    end
+
+    for _, layer in ipairs(map.layers) do
+        initLayer(layer)
+    end
+
     local rooms = map.layers.rooms
     local firstroomindex = 1
-    local firstroomid = nil
+    if startroom ~= nil then
+        firstroomname = startroom
+    end
     for i, room in ipairs(rooms) do
-        if room.id == firstroomid then
+        if room.name == firstroomname then
             firstroomindex = i
             break
         end
@@ -142,7 +175,8 @@ function Stage.init()
         end
     else
         Database.load("data/database/players-properties.csv")
-        Characters.spawn({type = "Rose"})
+        local player = Character("Rose")
+        Characters.spawn(player)
     end
     Stage.warpCamera(camera.x+camera.width/2, camera.y+camera.height/2)
     for i = firstroomindex - 1, 1, -1 do
@@ -263,6 +297,10 @@ function Stage.openRoom(i)
                 love.window.setTitle(cuecard)
             end
         end
+        if room.checkpoint then
+            firstroomname = room.name
+        end
+        return room
     else
         winningteam = "players"
         for _, player in ipairs(Characters.getGroup("players")) do
@@ -299,61 +337,73 @@ function Stage.isInNextRoom()
 end
 
 function Stage.updateGoingToNextRoom()
-    local room = map.layers.rooms[roomindex]
+    local room = Stage.getCurrentRoom()
     if not room then
         return
+    end
+    if Stage.isInNextRoom() then
+        local enemies = Characters.getGroup("enemies")
+        local donewhenenemiesleft = room.donewhenenemiesleft or 0
+        if #enemies <= donewhenenemiesleft and not sequencethread then
+            room = Stage.openRoom(roomindex + 1)
+            if not room then
+                return
+            end
+        end
+        Characters.fixedupdateLostEnemiesTimer()
     end
 
     local camhalfw, camhalfh = camera.width/2, camera.height/2
     local centerx, centery = camera.x + camhalfw, camera.y + camhalfh
     local centerz = camera.z + camera.bodyheight/2
 
-    local playerscenterx, playerscentery, playerscenterz = 0, 0, 0
+    local destx, desty, destz = 0, 0, 0
     local players = Characters.getGroup("players")
     for _, player in ipairs(players) do
-        playerscenterx = playerscenterx + player.x
-        playerscentery = playerscentery + player.y
-        playerscenterz = playerscenterz + player.z
+        destx = destx + player.x
+        desty = desty + player.y
+        destz = destz + player.z
     end
-    playerscenterx = playerscenterx/#players
-    playerscentery = playerscentery/#players
-    playerscenterz = playerscenterz/#players
+    destx = destx/#players
+    desty = desty/#players
+    destz = destz/#players
 
     if camera.lockz then
         camera.velz = 0
     else
-        camera.velz = playerscenterz - centerz
-    end
-
-    if Stage.isInNextRoom() then
-        camera.velx = 0
-        camera.vely = 0
-        local enemies = Characters.getGroup("enemies")
-        local donewhenenemiesleft = room.donewhenenemiesleft or 0
-        if #enemies <= donewhenenemiesleft and not sequencethread then
-            Stage.openRoom(roomindex + 1)
-        end
-        return
+        camera.velz = destz - centerz
     end
 
     local camerapath = room.camerapath ---@type CameraPath
-    local newcenterx, newcentery, pathx1, pathy1, pathx2, pathy2 = camerapath:getCameraCenter(playerscenterx, playerscentery)
+    local cameraboundary = room.cameraboundary ---@type CameraBoundary
 
-    if math.dot(newcenterx - centerx, newcentery - centery, pathx2-pathx1, pathy2-pathy1) < 0 then
-        camera.velx, camera.vely = 0, 0
-    else
-        camera.velx, camera.vely = Movement.getVelocity_speed(centerx, centery, newcenterx, newcentery, 8)
+    if camerapath then
+        if cameraboundary then
+            destx, desty = cameraboundary:keepPointInside(destx, desty)
+            local velx, vely = destx - centerx, desty - centery
+            local _, _, ax, ay, bx, by = camerapath:projectPoint(destx, desty)
+            local dx, dy = bx-ax, by-ay
+            if math.dot(velx, vely, dx, dy) < 0 then
+                dx, dy = math.rot90(dx, dy, 1)
+                velx, vely = math.projpointline(velx, vely, 0, 0, dx, dy)
+                destx, desty = centerx + velx, centery + vely
+            end
+        else
+            local ax, ay, bx, by
+            destx, desty, ax, ay, bx, by = camerapath:projectPoint(destx, desty)
+            if math.dot(destx-centerx, desty-centery, bx-ax, by-ay) < 0 then
+                destx, desty = camerapath:projectPoint(centerx, centery)
+            end
+        end
+    elseif cameraboundary then
+        destx, desty = cameraboundary:keepPointInside(destx, desty)
     end
 
-    -- local bestdot = math.dot(camera.velx, camera.vely, pathx2-pathx1, pathy2-pathy1)
-    -- for _, player in ipairs(players) do
-    --     newcenterx, newcentery, pathx1, pathy1, pathx2, pathy2 =
-    --         camerapath:getCameraCenter(centerx + player.velx, centery + player.vely)
-    --     if math.dot(newcenterx - centerx, newcentery - centery, pathx2-pathx1, pathy2-pathy1) >= bestdot then
-    --         camera.velx = newcenterx - centerx
-    --         camera.vely = newcentery - centery
-    --     end
-    -- end
+    if camerapath or cameraboundary then
+        camera.velx, camera.vely = Movement.getVelocity_speed(centerx, centery, destx, desty, 8)
+    else
+        camera.velx, camera.vely = 0, 0
+    end
 end
 
 function Stage.fixedupdate()
@@ -370,8 +420,8 @@ function Stage.fixedupdate()
     local solids = Characters.getGroup("solids")
     for _, solid in ipairs(solids) do
         if solid.layer ~= room
-        and CollisionMask.test(solid.bodyinlayers, "Object", "Wall") ~= 0 then
-            if not solid:isOnCamera(camera) then
+        and CollisionMask.testAny(solid.bodyinlayers, "Object", "Wall") ~= 0 then
+            if not solid:isCylinderOnCamera(camera) then
                 solid:disappear()
             end
         end
@@ -380,7 +430,7 @@ function Stage.fixedupdate()
     local items = Characters.getGroup("items")
     for _, item in ipairs(items) do
         if item.layer ~= room then
-            if not item:isOnCamera(camera) then
+            if not item:isCylinderOnCamera(camera) then
                 item:disappear()
             end
         end
@@ -388,58 +438,65 @@ function Stage.fixedupdate()
     scene:animate(1)
 end
 
+---@param gui Gui
 function Stage.fixedupdateGui(gui)
     local players = Characters.getGroup("players") ---@type Player[]
     local player = players[1]
 
     local healthpercent = player.health / player.maxhealth
-    local hud = gui.gameplay.hud
+    local hud = gui:get("gameplay.hud")
+    if hud then
+        hud.health:setPercent(healthpercent)
 
-    hud.health:setPercent(healthpercent)
-
-    local manastore = player.manastore
-    local manacharge = player.manacharge
-    local manaunitsize = player.manaunitsize
-    for i = 1, 3 do
-        local flamestorepercent = manastore/manaunitsize
-        local flamestoregauge = hud["flame"..i] ---@type Gauge
-        if flamestoregauge then
-            flamestoregauge:setPercent(flamestorepercent)
-            flamestoregauge.color = flamestorepercent < 1 and flamestoregauge.normalcolor or flamestoregauge.fullcolor
+        local manastore = player.manastore
+        local manacharge = player.manacharge
+        local manaunitsize = player.manaunitsize
+        for i = 1, 3 do
+            local flamestorepercent = manastore/manaunitsize
+            local flamestoregauge = hud["flame"..i] ---@type Gauge
+            if flamestoregauge then
+                flamestoregauge:setPercent(flamestorepercent)
+                flamestoregauge.color = flamestorepercent < 1 and flamestoregauge.normalcolor or flamestoregauge.fullcolor
+            end
+            local flamechargegauge = hud["flamecharge"..i] ---@type Gauge
+            if flamechargegauge then
+                local percent = manacharge/manaunitsize
+                flamechargegauge:setPercent(flamestorepercent >= 1 and percent or 0)
+            end
+            local flamefull = hud["flamefullcharge"..i] ---@type GuiObject
+            if flamefull then
+                flamefull.visible = manacharge >= manaunitsize
+            end
+            manastore = manastore - manaunitsize
+            manacharge = manacharge - manaunitsize
         end
-        local flamechargegauge = hud["flamecharge"..i] ---@type Gauge
-        if flamechargegauge then
-            local percent = manacharge/manaunitsize
-            flamechargegauge:setPercent(flamestorepercent >= 1 and percent or 0)
-        end
-        local flamefull = hud["flamefullcharge"..i] ---@type GuiObject
-        if flamefull then
-            flamefull.visible = manacharge >= manaunitsize
-        end
-        manastore = manastore - manaunitsize
-        manacharge = manacharge - manaunitsize
     end
 
-    local portrait = hud.portrait
-    portrait.originx = portrait.width/2 + sin(player.hurtstun)
-    if winningteam == "players" then
-        portrait:changeTile("win")
-    elseif player.hurtstun > 0 or healthpercent <= 0.5 then
-        portrait:changeTile("hurt")
-    elseif player.attackangle then
-        portrait:changeTile("attack")
-    else
-        portrait:changeTile("normal")
+    local portrait = gui:get("gameplay.hud.portrait")
+    if portrait then
+        portrait.originx = portrait.width/2 + sin(player.hurtstun)
+        if winningteam == "players" then
+            portrait:changeTile("win")
+        elseif player.hurtstun > 0 or healthpercent <= 0.5 then
+            portrait:changeTile("hurt")
+        elseif player.attackangle then
+            portrait:changeTile("attack")
+        else
+            portrait:changeTile("normal")
+        end
     end
 
     -- local runpercent = player.runenergy / player.runenergymax
     -- hud.run:setPercent(runpercent)
 
-    local weaponhud = gui.gameplay.hud_weaponslots
+    local weaponhud = gui:get("gameplay.hud_weaponslots")
     if weaponhud then
         local inventory = player.inventory
-        if #inventory > 0 then
+        if inventory and #inventory > 0 then
             weaponhud.visible = true
+
+            weaponhud.x, weaponhud.y = player.x - camera.x,
+                player.y - player.z - player.bodyheight - camera.y
 
             for i = 1, inventory.capacity do
                 local emptyslot = weaponhud["emptyslot"..i]
@@ -499,35 +556,48 @@ function Stage.fixedupdateGui(gui)
         end
     end
 
-    local go = gui.gameplay.hud_go
-    local camerapath = Stage.getCurrentCameraPath()
-    if Stage.isInNextRoom() or not camerapath then
-        go.visible = false
-    else
-        local cameracenterx, cameracentery =
-            camera.x+camera.width/2,
-            camera.y+camera.height/2
-        local totargetx, totargety =
-            camerapath:getGoIndicatorOffset(
-                cameracenterx, cameracentery,
-                camera.width/4)
-
-        if totargetx ~= 0 or totargety ~= 0 then
-            totargetx, totargety = math.norm(totargetx, totargety)
-            totargetx = totargetx * camera.width/4
-            totargety = totargety * camera.height/4
-            go.visible = true
-            go.x = totargetx + camera.width/2
-            go.y = totargety + camera.height/2
-            go.arrow.rotation = math.atan2(totargety, totargetx)
-        else
+    local go = gui:get("gameplay.hud_go")
+    if go then
+        local camerapath = Stage.getCurrentCameraPath()
+        if Stage.isInNextRoom() or not camerapath then
             go.visible = false
+        else
+            local cameracenterx, cameracentery =
+                camera.x+camera.width/2,
+                camera.y+camera.height/2
+            local totargetx, totargety =
+                camerapath:getGoIndicatorOffset(
+                    cameracenterx, cameracentery,
+                    camera.width/4)
+
+            if totargetx ~= 0 or totargety ~= 0 then
+                totargetx, totargety = math.norm(totargetx, totargety)
+                totargetx = totargetx * camera.width/4
+                totargety = totargety * camera.height/4
+                go.visible = true
+                go.x = totargetx + camera.width/2
+                go.y = totargety + camera.height/2
+                go.arrow.rotation = math.atan2(totargety, totargetx)
+            else
+                go.visible = false
+            end
         end
+    end
+
+    local clearenemiesprompt = gui:get("gameplay.hud.clearenemiesprompt")
+    if clearenemiesprompt then
+        clearenemiesprompt.visible = Characters.isTimeToClearLostEnemies()
     end
 end
 
 function Stage.update(dsecs, fixedfrac)
     Characters.update(dsecs, fixedfrac)
+end
+
+function Stage.setUniform(var, ...)
+    if shader:hasUniform(var) then
+        shader:send(var, ...)
+    end
 end
 
 function Stage.draw(fixedfrac)
@@ -552,10 +622,15 @@ function Stage.draw(fixedfrac)
         scene:draw(fixedfrac)
         love.graphics.setDepthMode("always", false)
     else
+        love.graphics.setShader(shader)
         love.graphics.push()
         love.graphics.translate(-camerax, -(cameray - cameraz))
         scene:draw(fixedfrac, Characters.isDrawnBefore)
+        if Characters.isTimeToClearLostEnemies() then
+            Characters.debugDrawOffScreenEnemyPositions()
+        end
         love.graphics.pop()
+        love.graphics.setShader()
     end
 end
 

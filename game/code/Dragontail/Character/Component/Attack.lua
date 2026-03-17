@@ -6,6 +6,8 @@
 ---@field radius number
 ---@field arc number
 ---@field projectile string
+---@field z number
+---@field height number
 ---
 ---Who gets hit by this attack?
 ---@field hitslayers integer
@@ -17,6 +19,7 @@
 ---@field opponentstateonfinalhit string
 ---TODO the below could be part of fighter data or damage states
 ---@field opponentstun integer
+---@field mercyinvuln integer
 ---@field hurtparticle string
 ---@field hurtcolorcycle string
 ---@field pushbackspeed number
@@ -37,5 +40,5 @@
 ---@field guardhitsound string
 ---
 ---Other properties
----@field deflectsprojectile boolean
+---@field deflectsprojectileatopponent boolean
 ---@field canjuggle boolean

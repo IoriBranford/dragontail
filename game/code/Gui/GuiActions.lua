@@ -4,7 +4,7 @@ local Config       = require "System.Config"
 local Window       = require "System.Window"
 
 ---@module 'GuiActions'
-local GuiActions = {}
+local GuiActions = class()
 
 function GuiActions.playInvalidSound(gui, element)
     Audio.play(element.invalidsound)
@@ -52,6 +52,15 @@ end
 function GuiActions.refreshWindow(gui, element)
     Window.refresh()
     GuiActions.resize()
+end
+
+function GuiActions.refreshFullscreen(gui, element)
+    love.window.setFullscreen(Config.fullscreen)
+    GuiActions.resize()
+end
+
+function GuiActions.refreshVsync(gui, element)
+    love.window.setVSync(Config.vsync and -1 or 0)
 end
 
 ---@param element Slider

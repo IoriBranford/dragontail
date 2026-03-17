@@ -8,6 +8,8 @@ local Gui = require "Dragontail.Gui"
 local Config = require "System.Config"
 local Inputs = require "System.Inputs"
 local Player = require "Dragontail.Character.Player"
+local GameGuiActions = require "Dragontail.GuiActions"
+local Characters     = require "Dragontail.Stage.Characters"
 local isAsset = Assets.isAsset
 local getAsset = Assets.get
 local GamePhase = {}
@@ -17,18 +19,18 @@ local pauselocked
 local stagecanvas
 local stagepath = "data/stage_banditcave.lua"
 
-function GamePhase.loadphase(stagepath_)
+function GamePhase.loadphase(stagepath_, startroom)
     stagepath = stagepath_ or stagepath
     paused = false
     pauselocked = false
     local unifont = Assets.getFont("Unifont", 16)
     love.graphics.setFont(unifont)
-    Assets.get("data/music/retro-chiptune-guitar.ogg", "stream")
 
     Database.load("data/database/vfx-properties.csv")
     Database.load("data/database/items-properties.csv")
     Database.load("data/database/projectiles-properties.csv")
     Database.load("data/database/objects-properties.csv")
+    Database.load("data/database/ui-properties.csv")
     Stage.load(stagepath)
 
     Database.forEach(function(_, properties)
@@ -46,20 +48,17 @@ function GamePhase.loadphase(stagepath_)
     end)
 
     Tiled.Assets.uncacheMarked()
-    Tiled.Assets.packTiles()
-    Tiled.Assets.setFilter("nearest", "nearest")
+    -- Tiled.Assets.packTiles()
     Tiled.Assets.batchAllMapsLayers()
 
-    Stage.init()
+    Stage.init(startroom)
     GamePhase.resize(love.graphics.getWidth(), love.graphics.getHeight())
 
-    local music = Audio.playMusic("data/music/retro-chiptune-guitar.ogg")
-    if music then
-        music:setLooping(true)
-    end
+    GameGuiActions.playSelectedMusic()
 
-    Gui:showOnlyNamed("gameplay", "wipe")
+    Gui:showOnlyNamed("gameplay", "wipe", "options")
     Gui.gameplay:showOnlyNamed("hud", "input")
+    Gui.options:showOnlyNamed()
     Gui:clearMenuStack()
 end
 
@@ -78,13 +77,15 @@ function GamePhase.quitphase()
     Database.clear()
 end
 
-function GamePhase.setPaused(newpaused)
+function GamePhase.setPaused(newpaused, withmenu)
     if pauselocked then
         return
     end
     paused = newpaused
     if paused then
-        Gui:pushMenu(Gui.gameplay.pausemenu)
+        if withmenu then
+            Gui:pushMenu(Gui.gameplay.pausemenu)
+        end
     else
         Gui:clearMenuStack()
     end
@@ -94,11 +95,6 @@ local keypressed = {}
 function keypressed.f2()
     love.event.loadphase("Dragontail.GamePhase")
 end
-
-function keypressed.p()
-    GamePhase.setPaused(not paused)
-end
-keypressed.escape = keypressed.p
 
 function keypressed.s()
     if love.keyboard.isDown("lctrl") then
@@ -111,10 +107,21 @@ function keypressed.s()
     end
 end
 
+function keypressed.delete()
+    if Characters.isTimeToClearLostEnemies() then
+        Characters.clearEnemies()
+    end
+end
+
 ---@param gamepad love.Joystick
 function GamePhase.gamepadpressed(gamepad, button)
     if button == "start" then
-        GamePhase.setPaused(not paused)
+        GamePhase.setPaused(not paused, true)
+    elseif button == "back" then
+        if Characters.isTimeToClearLostEnemies() then
+            Characters.clearEnemies()
+        end
+        -- GamePhase.setPaused(not paused, false)
     else
         Gui:gamepadpressed(gamepad, button)
     end
@@ -127,11 +134,18 @@ function GamePhase.keypressed(key)
         return
     end
 
+    if key == "escape" then
+        if not paused then
+            GamePhase.setPaused(true, true)
+            return
+        end
+    end
+
     Gui:keypressed(key)
 end
 
 local function fixedupdateInputDisplay()
-    local input = Gui.gameplay.input
+    local input = Gui:get("gameplay.input")
     if input then
         ---@cast input ObjectGroup
         input.visible = Config.drawinput
@@ -141,6 +155,7 @@ local function fixedupdateInputDisplay()
 
         local x, y = Player.getJoystick()
         local attackbutton = Inputs.getAction("attack")
+        local jumpbutton = Inputs.getAction("fly")
         local sprintbutton = Inputs.getAction("sprint")
         if x ~= 0 or y ~= 0 then
             input.joystickdirection.visible = true
@@ -150,6 +165,7 @@ local function fixedupdateInputDisplay()
             input.joystickdirection.visible = false
         end
         input.attackbuttondown.visible = attackbutton.down
+        input.jumpbuttondown.visible = jumpbutton.down
         input.sprintbuttondown.visible = sprintbutton.down
     end
 end
@@ -157,9 +173,9 @@ end
 function GamePhase.fixedupdate()
     if not paused then
         Stage.fixedupdate()
-        Stage.fixedupdateGui(Gui)
-        fixedupdateInputDisplay()
     end
+    fixedupdateInputDisplay()
+    Stage.fixedupdateGui(Gui)
     Gui:fixedupdate()
 end
 

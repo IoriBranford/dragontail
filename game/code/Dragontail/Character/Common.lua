@@ -8,6 +8,9 @@ local Body        = require "Dragontail.Character.Component.Body"
 local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
 local Face                 = require "Dragontail.Character.Component.Face"
 local Mana = require "Dragontail.Character.Component.Mana"
+local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask"
+local Shoot         = require "Dragontail.Character.Component.Shoot"
+local Attacker      = require "Dragontail.Character.Component.Attacker"
 
 local yield = coroutine.yield
 local wait = coroutine.wait
@@ -47,12 +50,22 @@ local MaxProjectileItems = 16
 
 ---@class Common:Character,DropItem,Item,Projectile,WallHit,Defeat
 ---@field lifetime integer?
----@field afterimagetime integer?
 ---@field opponents Fighter[]
 local Common = class(Character)
 
 function Common:idle()
     while true do yield() end
+end
+
+function Common:stayOnCameraOnceEntered()
+    if not self.enteredcamera and self:isCylinderFullyOnCamera(self.camera) then
+        self.enteredcamera = true
+        self.bodyhitslayers = bit.bor(self.bodyhitslayers, CollisionMask.get("Camera"))
+    end
+end
+
+function Common:decelerateXYto0()
+    Body.forceTowardsVelXY(self, 0, 0, self.accel)
 end
 
 function Common:turnTowardsOpponent()
@@ -72,16 +85,17 @@ function Common:spark(time)
     self:disappear()
 end
 
-function Common:afterimage()
-    local afterimagetime = max(1, self.afterimagetime or 10)
-    local deltaalpha = 1/afterimagetime
-    for i = 1, afterimagetime do
-        local r, g, b, a = Color.unpack(self.color)
-        a = a - deltaalpha
+function Common:updateFadeOut()
+    local r, g, b, a = Color.unpack(self.color)
+    local lifetime = max(1, self.lifetime or 16)
+    local deltaalpha = self.deltaalpha or (1/lifetime)
+    self.deltaalpha = deltaalpha
+    a = a - deltaalpha
+    if a <= 0 then
+        self:disappear()
+    else
         self.color = Color.asARGBInt(r, g, b, a)
-        yield()
     end
-    self:disappear()
 end
 
 local function updateBlinkOut(t, color)
@@ -114,13 +128,20 @@ end
 
 function Common:dropDefeatItem()
     local item = self.item
-    if not item and self.itemtype then
-        item = Characters.spawn({
-            type = self.itemtype,
-            x = self.x, y = self.y, z = self.z,
-        })
-    end
+    local popsout
     if item then
+        if item.spawnsmanually then
+            Characters.spawn(item)
+        else
+            popsout = true
+        end
+    elseif self.itemtype then
+        item = Character(self.itemtype,
+            self.x, self.y, self.z)
+        Characters.spawn(item)
+        popsout = true
+    end
+    if item and popsout then
         local popouttime = self.itempopouttime or 15
         local velx, vely = self.itemvelx or 0, self.itemvely or 0
         if popouttime > 0 then
@@ -134,7 +155,7 @@ function Common:dropDefeatItem()
     end
 end
 
-function Common:containerBreak(attacker)
+function Common:containerBreak()
     Audio.play(self.defeatsound)
     self:changeAnimation("collapse", 1, 0)
     self:dropDefeatItem()
@@ -142,16 +163,28 @@ function Common:containerBreak(attacker)
     return "blinkOut", 30
 end
 
+function Common:respawn()
+    local x, y, z = self.x, self.y, self.z
+    local respawnpoint = self.respawnpoint
+    if respawnpoint then
+        x = respawnpoint.x or x
+        y = respawnpoint.y or y
+        z = respawnpoint.z or z
+    end
+    local typ = self.respawntype or self.type
+    local new = Character(typ, x, y, z)
+    new.respawnpoint = new.respawnpoint or respawnpoint
+    Characters.spawn(new)
+    return new
+end
+
 function Common:itemDrop(y0)
-    -- self.velz = self.popoutspeed or 8
-    -- local gravity = self.fallgravity or .5
-    -- local floorz = Characters.getCylinderFloorZ(self.x, self.y, self.z, self.bodyradius, self.bodyheight) or 0
-    -- repeat
-    --     self.velz = self.velz - gravity
-    --     yield()
-    -- until self.z <= floorz
-    -- self.z = floorz
-    -- self.velz = 0
+    self.gravity = math.max(self.gravity or .25, .125)
+    local floorz
+    repeat
+        floorz = self.floorz
+        yield()
+    until floorz and self.z <= floorz
     return "itemWaitForPickup"
 end
 
@@ -169,10 +202,12 @@ end
 function Common:itemWaitForPickup()
     local opponent = self.opponents[1]
     local t = -1
+    local FlashPeriod = 5
+    local Period = 30
     while true do
         local finished
-        t = t + 1
-        self:accelerateTowardsVel(0, 0, 10)
+        t = (t + 1) % Period
+        self:decelerateXYto0()
         if self.gravity == 0 then
             local _, _, _, penex
                 = Characters.keepCylinderIn(self.x, self.y, self.z, self.bodyradius, self.bodyheight, self)
@@ -182,8 +217,13 @@ function Common:itemWaitForPickup()
         end
         if self.healhealth then
             if opponent.health < opponent.maxhealth then
-                local redblue = (t%30)/15
-                self.color = Color.asARGBInt(redblue, 1, redblue, 1)
+                if t == 0 then
+                    self.color = Color.asARGBInt(.5, 1, .5, 1)
+                    self.texturealpha = 0
+                elseif t == FlashPeriod then
+                    self.color = Color.White
+                    self.texturealpha = 1
+                end
                 if testItemPickupCollision(self, opponent) then
                     Audio.play(self.itemgetsound)
                     opponent:heal(self.healhealth)
@@ -191,12 +231,17 @@ function Common:itemWaitForPickup()
                 end
             else
                 self.color = Color.White
+                self.texturealpha = 1
             end
         elseif self.givemana then
             if opponent.manastore < opponent.manastoremax then
-                local greenblue = (t%30)/15
-                local red = .5 + greenblue
-                self.color = Color.asARGBInt(red, greenblue, greenblue, 1)
+                if t == 0 then
+                    self.color = Color.asARGBInt(1, .5, .5, 1)
+                    self.texturealpha = 0
+                elseif t == FlashPeriod then
+                    self.color = Color.White
+                    self.texturealpha = 1
+                end
                 if testItemPickupCollision(self, opponent) then
                     Audio.play(self.itemgetsound)
                     Mana.store(opponent, self.givemana)
@@ -204,14 +249,26 @@ function Common:itemWaitForPickup()
                 end
             else
                 self.color = Color.White
+                self.texturealpha = 1
             end
         elseif self.giveweapon then
+            if t == 0 then
+                self.texturealpha = 0
+            elseif t == FlashPeriod then
+                self.texturealpha = 1
+            end
             local weapontype = self.giveweapon
-            local tryToGiveWeapon = opponent.tryToGiveWeapon
-            if tryToGiveWeapon and weapontype then
-                if testItemPickupCollision(self, opponent) then
-                    if tryToGiveWeapon(opponent, weapontype) then
-                        finished = true
+            if testItemPickupCollision(self, opponent) and opponent:tryToGiveWeapon(weapontype) then
+                finished = true
+            else
+                for _, enemy in ipairs(Characters.getGroup("enemies")) do
+                    if enemy.canpickupweapons then
+                        if testItemPickupCollision(self, enemy) then
+                            if enemy:tryToGiveWeapon(weapontype) then
+                                finished = true
+                                break
+                            end
+                        end
                     end
                 end
             end
@@ -231,7 +288,7 @@ function Common:storeMana(mana)
 end
 
 function Common:projectileShatter(opponent)
-    self:stopAttack()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     self.velx = 0
     self.vely = 0
     self.velz = 0
@@ -245,7 +302,7 @@ function Common:projectileHit(opponent)
         Audio.play(self.bodyslamsound)
     end
     DirectionalAnimation.set(self, self.attack.selfanimationonhit, self.attackangle)
-    self:stopAttack()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     local hitbounce = self.attackhitbounce or 2
     local normx, normy = math.norm(-self.velx, -self.vely)
     self.velx, self.vely = normx*hitbounce, normy*hitbounce
@@ -254,7 +311,7 @@ function Common:projectileHit(opponent)
 end
 
 function Common:projectileEmbed(opponent, ooby, oobz)
-    self:stopAttack()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     local oobx = type(opponent) == "number" and opponent
     opponent = type(opponent) == "table" and opponent or nil
     self.velx, self.vely, self.velz = 0, 0, 0
@@ -273,11 +330,11 @@ function Common:projectileEmbed(opponent, ooby, oobz)
         local items = Characters.getGroup("items")
         local numopponentshit = self.numopponentshit or 0
         if self.itemtype and #items < MaxProjectileItems and numopponentshit <= 0 then
-            local item = Characters.spawn({
-                type = self.itemtype,
-                x = self.x, y = self.y, z = self.z,
-                gravity = 0
-            })
+
+            local item = Character(self.itemtype,
+                self.x, self.y, self.z)
+            item.gravity = 0
+            Characters.spawn(item)
             item:setAseAnimation(self.aseanimation, self.animationframe)
             self:disappear()
         else
@@ -288,10 +345,9 @@ end
 
 function Common:becomeItem()
     if Database.get(self.itemtype) then
-        Characters.spawn({
-            type = self.itemtype,
-            x = self.x, y = self.y, z = self.z
-        })
+        local item = Character(self.itemtype,
+            self.x, self.y, self.z)
+        Characters.spawn(item)
     end
     self:disappear()
 end
@@ -331,14 +387,18 @@ function Common:projectileHoming()
         if nearest then
             vx = nearest.x - self.x
             vy = nearest.y - self.y
-            vz = nearest.z + nearest.bodyheight/2 - self.z - self.bodyheight/2
+            vz = (nearest.z + nearest.bodyheight/2)
+                - (self.z + self.bodyheight/2)
+            if nearest.z >= self.z + self.bodyheight then
+                vz = vz + nearest.bodyheight/2
+            end
         end
         if vx == 0 and vy == 0 and vz == 0 then
             vx, vy = cos(self.faceangle), sin(self.faceangle)
         else
             vx, vy, vz = math.norm(vx, vy, vz)
         end
-        self:accelerateTowardsVel3(vx * self.speed, vy * self.speed, vz * self.speed, 8)
+        Body.forceTowardsVel3(self, vx * self.speed, vy * self.speed, vz * self.speed, self.accel or 2)
         if self.velx ~= 0 or self.vely ~= 0 then
             Face.faceVector(self, self.velx, self.vely, self.state.animation)
             self:startAttack(self.faceangle)
@@ -354,7 +414,7 @@ function Common:projectileHoming()
 end
 
 function Common:projectileBounce(opponent, ooby, oobz)
-    self:stopAttack()
+    self:stopAttack() ; self:unassignSelfAsAttacker()
     local oobx = type(opponent) == "number" and opponent
     opponent = type(opponent) == "table" and opponent or nil
     if opponent then
@@ -380,7 +440,7 @@ function Common:projectileBounce(opponent, ooby, oobz)
     oobz = nil
     repeat
         yield()
-        oobx, ooby, oobz = Body.keepInBounds(self)
+        oobx, ooby, oobz = self.penex, self.peney, self.penez
     until oobz and oobz <= 0
     self.velx, self.vely, self.velz = 0, 0, 0
     local items = Characters.getGroup("items")
@@ -408,7 +468,7 @@ function Common:projectileFly(shooter)
     local lifetime = self.lifetime
     repeat
         yield()
-        oobx, ooby, oobz = Body.keepInBounds(self)
+        oobx, ooby, oobz = self.penex, self.peney, self.penez
         if lifetime then
             lifetime = lifetime - 1
         end
@@ -426,46 +486,24 @@ end
 function Common:projectileDeflected(hit)
     local deflector = hit.attacker
     local attack = hit.attack
-    if not attack.deflectsprojectile then
+    local thrower = self.thrower
+
+    Attacker.stopAttack(self)
+    self:makeImpactSpark(deflector, attack.hitspark)
+
+    if not thrower or not attack.deflectsprojectileatopponent then
         return "projectileBounce", deflector
     end
-    self.hurtstun = attack.opponentstun or 3
+    self.hurtstun = attack.selfstun or 3
 
-    Audio.play(attack.hitsound)
-    local attackangle = hit.angle
-    local dirx, diry, dirz = cos(attackangle), sin(attackangle), 0
+    local targetx, targety, targetz = Shoot.getTargetObjectPosition(self, thrower)
+    self.velx, self.vely, self.velz =
+        Shoot.GetProjectileDeflectVelocityTowardsTarget(self, targetx, targety, targetz)
 
-    local speed = self.speed or 1
-    local thrower = self.thrower
-    if thrower and thrower.team ~= "player" and deflector.team == "player" then
-        dirx, diry, dirz = 1, 0, 0
-        if thrower.y ~= self.y or thrower.x ~= self.x then
-            dirx, diry, dirz = math.norm(thrower.x - self.x, thrower.y - self.y, thrower.z + thrower.bodyheight/2 - self.z)
-        end
-    end
     self.thrower = deflector
-    self.velx = speed*dirx
-    self.vely = speed*diry
-    self.velz = speed*dirz
-    local angle = atan2(self.vely, self.velx)
-    self.attackangle = angle
-    DirectionalAnimation.set(self, self.swinganimation, angle, 1, self.swinganimationloopframe or 1)
+    -- DirectionalAnimation.set(self, self.swinganimation, angle, 1, self.swinganimationloopframe or 1)
     yield()
-    return "projectileFly", deflector
-end
-
-function Common:makeImpactSpark(attacker, sparktype)
-    if sparktype then
-        local hitsparkcharacter = {
-            type = sparktype,
-        }
-        hitsparkcharacter.x, hitsparkcharacter.y = math.mid(attacker.x, attacker.y, self.x, self.y)
-        local z1, z2 =
-            math.max(self.z, attacker.z),
-            math.min(self.z + self.bodyheight, attacker.z + attacker.bodyheight)
-        hitsparkcharacter.z = z1 + (z2-z1)/2
-        return Characters.spawn(hitsparkcharacter)
-    end
+    return self.initialai, deflector
 end
 
 function Common:guardHit(hit)
@@ -487,6 +525,125 @@ function Common:pulseRed()
         yield()
         t = t + math.pi/30
     end
+end
+
+---@param hit AttackHit
+function Common:fruitTreeHurt(hit)
+    local attack = hit.attack
+    local hitsound = attack.hitsound
+    Audio.play(hitsound)
+
+    local attacker = hit.attacker
+    local attackangle = hit.angle
+    local launchspeed = attack.pushbackspeed
+    if launchspeed then
+        if launchspeed == "attackerspeed" then
+            launchspeed = math.len(attacker.velx, attacker.vely)
+        end
+        attacker.velx = launchspeed * -math.cos(attackangle)
+        attacker.vely = launchspeed * -math.sin(attackangle)
+    end
+
+    local numfruitsdropped = self.numfruitsdropped or 0
+    local numfruitstodrop = self.numfruitstodroponhit or 16
+    for i = numfruitsdropped + 1, numfruitsdropped + numfruitstodrop do
+        local fruit = self["fruit"..i] ---@type Character|false|nil
+        if fruit == nil then
+            break
+        end
+        if fruit ~= false then
+            StateMachine.start(fruit, "itemWaitForPickup")
+            fruit.animationspeed = 0
+            self["fruit"..i] = false
+            numfruitsdropped = numfruitsdropped + 1
+        end
+    end
+    self.numfruitsdropped = numfruitsdropped
+
+    self.hurtstun = attack.opponentstun
+    local leaves = self.leaves
+    if leaves then
+        leaves.hurtstun = self.hurtstun
+    end
+
+    yield()
+    return self.recoverai
+end
+
+function Common:checkFruitPicked()
+    local fruit = self.item
+    if fruit then
+        if fruit:hasDisappeared() then
+            self.itemx = fruit.x
+            self.itemy = fruit.y
+            self.itemz = fruit.z
+            self.item = nil
+            return self.nextstate or "plantEmpty"
+        end
+    elseif Database.get(self.itemtype) then
+        local x = self.itemx or self.x
+        local y = self.itemy or (self.y + 1)
+        local z = self.itemz or (self.z + 1)
+        self.item = Characters.spawn(
+            Character(self.itemtype, x, y, z))
+    end
+end
+
+function Common:checkFruitNeedsRegrow()
+    local fruittype = Database.get(self.itemtype)
+    if fruittype then
+        if fruittype.givemana then
+            for _, opponent in ipairs(self.opponents) do
+                if Mana.getStoredUnits(opponent) <= 0 then
+                    return self.nextstate or "plantRegrowFruit"
+                end
+            end
+        end
+    end
+end
+
+function Common:getAttackFlash(t)
+    return (1 + math.cos(t or 0)) / 2
+end
+
+function Common:getAttackFlashColor(t, canbeattacked)
+    local flash = (1+cos(t))/2
+    if canbeattacked then
+        return Color.asARGBInt(1, flash, flash, 1)
+    end
+    return Color.asARGBInt(1, .5, .5, flash)
+end
+
+function Common:resetFlash()
+    self.color = Color.White
+    self.texturealpha = 1
+end
+
+local FlashColors = {
+    SuggestGrab = Color.Green,
+    SuggestAttack = Color.Red,
+    SuggestAvoid = Color.Blue,
+}
+
+function Common:updateFlash(t)
+    local flash = self:getAttackFlash(t)
+    local color = Color.White
+
+    -- if self.canbeattacked and not Guard.isGuarding(self) then
+    --     if self.canbegrabbed then
+    --         color = Color.White
+    --     else
+    --         color = FlashColors.SuggestAttack
+    --     end
+    -- else
+    --     if self.canbegrabbed then
+    --         color = FlashColors.SuggestGrab
+    --     else
+    --         color = FlashColors.SuggestAvoid
+    --     end
+    -- end
+    self.color = color
+    self.texturealpha = flash
 end
 
 return Common
