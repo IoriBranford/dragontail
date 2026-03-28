@@ -1,6 +1,26 @@
 {
     "automappingRulesFile": "",
     "commands": [
+        {
+            "arguments": "%projectpath/.. --stage %exportfile",
+            "command": "love",
+            "enabled": true,
+            "name": "Play level from start",
+            "saveBeforeExecute": true,
+            "shortcut": "Shift+F5",
+            "showOutput": true,
+            "workingDirectory": ""
+        },
+        {
+            "arguments": "%projectpath/.. --stage %exportfile --room %layername",
+            "command": "love",
+            "enabled": true,
+            "name": "Play level from selected room",
+            "saveBeforeExecute": true,
+            "shortcut": "F5",
+            "showOutput": true,
+            "workingDirectory": ""
+        }
     ],
     "extensionsPath": "extensions",
     "folders": [
