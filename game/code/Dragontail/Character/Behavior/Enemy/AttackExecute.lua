@@ -1,10 +1,8 @@
 local Behavior = require "Dragontail.Character.Behavior"
-local Guard    = require "Dragontail.Character.Component.Guard"
 local Shoot    = require "Dragontail.Character.Component.Shoot"
-local Body     = require "Dragontail.Character.Component.Body"
 local Slide    = require "Dragontail.Character.Component.Slide"
-local Color    = require "Tiled.Color"
 local Face     = require "Dragontail.Character.Component.Face"
+local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
 
 ---@class AttackExecute:Behavior
 ---@field character Enemy
@@ -46,7 +44,7 @@ function AttackExecute:fixedupdate()
         faceangle = Face.turnTowardsObject(enemy, target, nil,
             enemy.state.animation, enemy.animationframe)
 
-        local attackangle = math.floor((faceangle + (math.pi/4)) / (math.pi/2)) * math.pi/2
+        local attackangle = DirectionalAnimation.SnapAngle(faceangle, enemy.animationdirections or 4)
         enemy:startAttack(attackangle)
     end
 
