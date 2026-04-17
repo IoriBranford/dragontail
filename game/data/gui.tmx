@@ -394,19 +394,19 @@ to clear lost enemies</text>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Refill player</text>
    </object>
-   <object id="149" template="gui/menu/settings/Label.tx" name="Warp to midpoint" type="Gui.Button" x="128" y="144" width="224" height="18">
+   <object id="149" template="gui/menu/settings/Label.tx" name="Restart at midpoint" type="Gui.Button" x="128" y="144" width="224" height="18">
     <properties>
      <property name="action" value="restartStage"/>
      <property name="checkpoint" value="entryhall"/>
     </properties>
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Warp to midpoint</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Restart at midpoint</text>
    </object>
-   <object id="151" template="gui/menu/settings/Label.tx" name="Warp to boss" type="Gui.Button" x="128" y="162" width="224" height="18">
+   <object id="151" template="gui/menu/settings/Label.tx" name="Restart at boss" type="Gui.Button" x="128" y="162" width="224" height="18">
     <properties>
      <property name="action" value="restartStage"/>
      <property name="checkpoint" value="boss"/>
     </properties>
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Warp to boss</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Restart at boss</text>
    </object>
    <object id="84" template="gui/menu/settings/Slider.tx" name="drawbodies" type="Gui.Slider" x="128" y="108" width="224" height="18">
     <properties>
