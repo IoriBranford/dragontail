@@ -25,8 +25,8 @@ function GameGuiActions.restartStageCheckpoint()
     love.event.loadphase("Dragontail.GamePhase")
 end
 
-function GameGuiActions.restartStage()
-    love.event.loadphase("Dragontail.GamePhase", false, false)
+function GameGuiActions.restartStage(gui, element)
+    love.event.loadphase("Dragontail.GamePhase", false, element.checkpoint)
 end
 
 function GameGuiActions.quit()
