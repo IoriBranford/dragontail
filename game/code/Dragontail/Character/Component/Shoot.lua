@@ -262,8 +262,8 @@ function Shoot:launchProjectile(type, dirx, diry, dirz, attackid)
     return Characters.spawn(projectile)
 end
 
-function Shoot.UpdateTrajectoryDots(dots, trajectory, dotscale, dotcolor)
-    dotscale = dotscale or 1
+function Shoot.UpdateTrajectoryDots(dots, trajectory, percentfull)
+    percentfull = percentfull or 0
     for i = 3, #trajectory, 3 do
         local x = trajectory[i-2]
         local y = trajectory[i-1]
@@ -277,13 +277,20 @@ function Shoot.UpdateTrajectoryDots(dots, trajectory, dotscale, dotcolor)
             dots[i] = dot
         end
         dot.x, dot.y, dot.z = x, y, z
-        dot.scalex = dotscale
-        dot.scaley = dotscale
-        dot.color = dotcolor
     end
     for i = #dots, #trajectory+1, -1 do
         dots[i]:disappear()
         dots[i] = nil
+    end
+    local numdots = #trajectory/3
+    local numfull = math.floor(numdots*percentfull)
+    for i = 3, numfull*3, 3 do
+        local dot = dots[i]
+        dot:changeAnimation(dot.fulltag or "liquid")
+    end
+    for i = numfull*3 + 3, #trajectory, 3 do
+        local dot = dots[i]
+        dot:changeAnimation(dot.emptytag or "bubble")
     end
 end
 

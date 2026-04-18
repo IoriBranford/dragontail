@@ -109,10 +109,8 @@ function EnemyHold:fixedupdate()
 
             local statetime = enemy.state.statetime or 1
             local timeleft = enemy.statetime or 0
-            local scale = 1 + timeleft/statetime
-            local alpha = math.max(0, math.min(1, 1 - timeleft/statetime))
-            local color = Color.asARGBInt(1, .5, .5, alpha)
-            Shoot.UpdateTrajectoryDots(trajectory.dots, trajectory, scale, color)
+            local percentfull = (statetime - timeleft) / statetime
+            Shoot.UpdateTrajectoryDots(trajectory.dots, trajectory, percentfull)
 
             for i = #trajectory, 1, -1 do
                 trajectory[i] = nil
