@@ -1,4 +1,4 @@
-local drawCake = require "drawCake"
+local Color    = require "Tiled.Color"
 
 ---@class Guard:Body
 ---@field guardai string|"guardHit"
@@ -83,6 +83,10 @@ function Guard:standardImpact(hit)
 end
 
 function Guard:draw(sidey, fixedfrac)
+    local guardr, guardg, guardb, guardalpha = Color.unpack(self.guardcolor or 0xFF80FFFF)
+    if guardalpha <= 0 then
+        return
+    end
     local angle = self.guardangle
     if not angle then return end
 
@@ -115,8 +119,8 @@ function Guard:draw(sidey, fixedfrac)
     local t = love.timer.getTime()*60
     local dt = math.pi/30
     for _ = 1, h do
-        local alpha = (1 + math.cos(t))/2
-        love.graphics.setColor(.5, 1, 1, alpha)
+        local alpha = guardalpha * (1 + math.cos(t))/2
+        love.graphics.setColor(guardr, guardg, guardb, alpha)
         love.graphics.arc("line", "open", x, y, br, a1, a2)
         t = t - dt
         y = y - 1
