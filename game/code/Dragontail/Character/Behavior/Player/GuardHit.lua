@@ -16,6 +16,11 @@ function PlayerGuardHit:start(hit)
     Face.faceAngle(player, guardangle + math.pi, player.state.animation, player.state.frame1, player.state.loopframe)
 end
 
+function PlayerGuardHit:fixedupdate()
+    local player = self.character
+    player:decelerateXYto0()
+end
+
 function PlayerGuardHit:interrupt(...)
     local player = self.character
     Invulnerability.giveInvuln(player, player.guardinvulntime or 120)
