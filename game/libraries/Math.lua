@@ -39,6 +39,11 @@ function math.clamp(x, a, b)
     return max(a, min(x, b))
 end
 
+function math.anglevec(angle, len)
+    len = len or 1
+    return cos(angle)*len, sin(angle)*len
+end
+
 function math.dot(x, y, x2, y2)
     return x2*x + y2*y
 end
