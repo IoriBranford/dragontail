@@ -6,6 +6,7 @@ local Behavior = require "Dragontail.Character.Behavior"
 local Player   = require "Dragontail.Character.Player"
 local Attacker   = require "Dragontail.Character.Component.Attacker"
 local Combo      = require "Dragontail.Character.Component.Combo"
+local Guard      = require "Dragontail.Character.Component.Guard"
 
 ---@class PlayerFighting:Behavior
 ---@field character Player
@@ -76,6 +77,12 @@ function PlayerFighting:fixedupdate()
 
     player:accelerateTowardsJoystick()
     player:turnTowardsJoystick("Walk", "Stand")
+    local guardangle = player:getTailGuardAngle()
+    if guardangle then
+        Guard.startGuarding(player, guardangle)
+    else
+        Guard.stopGuarding(player)
+    end
 
     if player:consumeActionDownAndRecentlyPressed("fly") then
         if inair then
@@ -92,6 +99,7 @@ function PlayerFighting:interrupt(...)
     for i = 1, #player.crosshairs do
         Attacker.updateCrosshairTargetObject(player, i)
     end
+    Guard.stopGuarding(player)
     return ...
 end
 
