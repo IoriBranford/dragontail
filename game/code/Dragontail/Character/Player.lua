@@ -333,6 +333,12 @@ function Player:turnTowardsJoystick(movinganimation, notmovinganimation)
     return Face.updateTurnToDestAngle(self, nil, animation), self.facedestangle
 end
 
+function Player:getTailGuardAngle()
+    local parryx, parryy = self:getParryVector()
+    if not (parryx and parryy) then return end
+    return atan2(parryy, parryx) + math.pi
+end
+
 function Player:catchProjectileAtJoystick()
     local parryx, parryy = self:getParryVector()
     if not (parryx and parryy) then return end
