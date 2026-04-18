@@ -44,6 +44,12 @@ function math.anglevec(angle, len)
     return cos(angle)*len, sin(angle)*len
 end
 
+function math.anglesdiff(a, b)
+    local ax, ay = math.anglevec(a)
+    local bx, by = math.anglevec(b)
+    return math.asin(math.det(ax, ay, bx, by))
+end
+
 function math.dot(x, y, x2, y2)
     return x2*x + y2*y
 end
