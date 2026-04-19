@@ -1965,7 +1965,7 @@ return {
           id = 6,
           name = "pausemenu",
           class = "Gui.Menu",
-          visible = false,
+          visible = true,
           opacity = 1,
           offsetx = 0,
           offsety = 0,
@@ -1988,7 +1988,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["color"] = "#80c52021",
+                ["color"] = "#a0c52021",
                 ["linecolor"] = "#ffff6161",
                 ["roundcorners"] = 8
               }
@@ -2161,7 +2161,7 @@ return {
           id = 15,
           name = "debugmenu",
           class = "Gui.Menu",
-          visible = true,
+          visible = false,
           opacity = 1,
           offsetx = 0,
           offsety = 0,
@@ -2184,7 +2184,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["color"] = "#ffc52021",
+                ["color"] = "#a0c52021",
                 ["linecolor"] = "#ffff6161",
                 ["roundcorners"] = 8
               }
@@ -2581,7 +2581,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["color"] = "#80c52021",
+                ["color"] = "#a0c52021",
                 ["linecolor"] = "#ffff6161",
                 ["roundcorners"] = 8
               }
@@ -2862,7 +2862,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["color"] = "#80c52021",
+                ["color"] = "#a0c52021",
                 ["linecolor"] = "#ffff6161",
                 ["roundcorners"] = 8
               }
@@ -2913,7 +2913,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["color"] = "#ffc52021",
+                ["color"] = "#a0c52021",
                 ["linecolor"] = "#ffff6161",
                 ["roundcorners"] = 8
               }
