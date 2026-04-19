@@ -17,4 +17,5 @@ projectileDeflected,,projectileDeflected,,1,FALSE,FALSE,FALSE,FALSE,data/sounds/
 projectileEmbed,,projectileEmbed,embedded,1,FALSE,FALSE,FALSE,FALSE,,
 projectileBounce,,projectileBounce,,1,FALSE,FALSE,FALSE,FALSE,,
 projectileShatter,,projectileShatter,Shatter,0,12,disappear,FALSE,FALSE,,
+projectileGuarded,,projectileGuarded,,,12,projectileBounce,FALSE,FALSE,,
 dishShatter,,projectileShatter,Shatter,0,12,disappear,FALSE,FALSE,data/sounds/combat/breakglass.mp3,
