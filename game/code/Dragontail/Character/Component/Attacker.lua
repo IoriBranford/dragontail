@@ -222,7 +222,7 @@ function Attacker:checkAttackCollision(target, attack, attackangle)
     attack = attack or self.attack
     if not attack then return end
 
-    if (target.invulntime or 0) > 0 then return end
+    if (target.invulntime or 0) > 0 and not Guard.isGuarding(target) then return end
     if target.hurtstun > 0 then return end
     if not target.canbeattacked then
         if not self.attack.canjuggle or not target.canbejuggled then
@@ -249,8 +249,11 @@ function Attacker:getAttackHit(target, attack, attackangle)
 
     local penex, peney, penez = Attacker.checkAttackCollision(self, target, attack, attackangle)
     if penex or peney or penez then
+        local hit = AttackHit(self, target, attack, attackangle, penex, peney, penez)
         -- print(self.type..self.id, self.attacktype, target.type..target.id)
-        return AttackHit(self, target, attack, attackangle, penex, peney, penez)
+        if (target.invulntime or 0) <= 0 or hit.guarded then
+            return hit
+        end
     end
 end
 
