@@ -72,7 +72,8 @@ breakaway,15,.recoverai,,,breakaway,,BreakHold,0,TRUE,TRUE,TRUE,,data/sounds/com
 brokenaway,30,.recoverai,,,breakaway,,BreakHold,0,TRUE,TRUE,TRUE,,data/sounds/combat/slap.mp3,data/sounds/man_heavy/hit2.ogg,0,0,,,1,,,,,,,,
 fall,300,collapse,,,,fall,,0,FALSE,FALSE,FALSE,,,,0,0,,,1,,,,,,,,
 collapse,15,down,,,,decelerateXYto0,Fall,0,FALSE,FALSE,FALSE,,,,0,0,,,1,,,,,,,,
-parried,42,parriedRecover,,,,decelerateXYto0,FallKnees,0,TRUE,TRUE,FALSE,,.stunnedsound,,0,0,,0,10000,,Wall Camera,,,,,,
+parried,0,parriedStunned,,,,decelerateXYto0,,,FALSE,FALSE,FALSE,,,,0,0,,0,10000,,Wall Camera,,,,,,9
+parriedStunned,42,parriedRecover,,,,decelerateXYto0,FallKnees,0,TRUE,TRUE,FALSE,,.stunnedsound,,0,0,,0,10000,,,,,,,,
 parriedRecover,18,.recoverai,,,,decelerateXYto0,SlowRiseFromKnees,0,TRUE,TRUE,FALSE,,,,0,0,,0,10000,,,,,,,,
 down,20,getup,,Dragontail.Character.Behavior.Fighter.Downed,,,Down,0,FALSE,FALSE,FALSE,,data/sounds/combat/bodydrop.mp3,,0,0,,,1,,,,,,,,
 defeat,FALSE,FALSE,,,defeat,,,0,FALSE,FALSE,FALSE,,,,0,0,,,1,,,,,,,,
