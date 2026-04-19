@@ -14,6 +14,7 @@ function PlayerGuardHit:start(hit)
     local guardangle = assert(hit.guardangle)
     Guard.startGuarding(player, guardangle)
     Face.faceAngle(player, guardangle + math.pi, player.state.animation, player.state.frame1, player.state.loopframe)
+    player:makeImpactSpark(hit.attacker, "spark-parry")
 end
 
 function PlayerGuardHit:fixedupdate()
