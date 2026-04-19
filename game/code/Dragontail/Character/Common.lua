@@ -506,6 +506,31 @@ function Common:projectileDeflected(hit)
     return self.initialai, deflector
 end
 
+function Common:projectileGuarded(guarder)
+    -- local attack = hit.attack
+    local reflectat = guarder.guardreflectsprojectile and self.thrower
+    if reflectat and reflectat:hasDisappeared() then
+        reflectat = nil
+    end
+    Attacker.stopAttack(self)
+
+    if reflectat then
+        -- self.hurtstun = attack.selfstun or 3
+
+        local targetx, targety, targetz = Shoot.getTargetObjectPosition(self, reflectat)
+        self.velx, self.vely, self.velz =
+            Shoot.GetProjectileDeflectVelocityTowardsTarget(self, targetx, targety, targetz)
+
+        self.thrower = guarder
+        Face.facePosition(self, targetx, targety)
+        -- DirectionalAnimation.set(self, self.swinganimation, angle, 1, self.swinganimationloopframe or 1)
+        yield()
+
+        return guarder.team == "players" and self.playerattack or self.attack
+    end
+    -- return attack.selfstateonguard
+end
+
 function Common:guardHit(hit)
     local attacker, attack = hit.attacker, hit.attack
     Audio.play(self.guardhitsound)

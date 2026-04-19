@@ -6,6 +6,7 @@ local Color    = require "Tiled.Color"
 ---@field guardarc number
 ---@field guardradius number?
 ---@field guardcounterstate string?
+---@field guardreflectsprojectile boolean
 ---@field numguardedhitsuntilcounter integer?
 ---@field numguardedhitsuntilwarning integer?
 ---@field numguardedhits integer?
