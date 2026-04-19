@@ -24,13 +24,13 @@ end
 
 function PlayerGuardHit:interrupt(...)
     local player = self.character
-    Invulnerability.giveInvuln(player, player.guardinvulntime or 120)
+    Invulnerability.giveInvuln(player, player.guardinvulntime or 90)
     return ...
 end
 
 function PlayerGuardHit:timeout(...)
     local player = self.character
-    Invulnerability.giveInvuln(player, player.guardinvulntime or 120)
+    Invulnerability.giveInvuln(player, player.guardinvulntime or 90)
     return ...
 end
 
