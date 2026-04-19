@@ -12,3 +12,4 @@ spark-land-on-feet-dust,data/sprites/vfx/dust-land-on-feet.jase,Dragontail.Chara
 spark-fireball-shatter,data/sprites/player/rose/fireball.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,Shatter,0,15,,,,,,,,,,,
 spark-spit-fireball,data/sprites/player/rose/firespit.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,Spit,0,18,,1,,,,,,12,,,
 projectile-path-point,data/sprites/vfx/vfx.jase,Dragontail.Character.Common,,data/database/objects-states.csv,trajdot-empty,,,,,,,,,0,,,trajdot-empty,trajdot-full
+spark-parry,data/sprites/vfx/parry.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,*,0,12,,,,,,,,,data/sounds/combat/shakiin.mp3,,
