@@ -44,7 +44,6 @@ local function findSomethingToRunningAttack(self, velx, vely)
     for i, solid in ipairs(solids) do
         local hit = Attacker.getAttackHit(self, solid, self.attack, attackangle)
         if hit then
-            hit:_release()
             return solid
         end
     end
