@@ -1,5 +1,4 @@
 local AttackerSlot = require "Dragontail.Character.Component.AttackerSlot"
-local Attacker     = require "Dragontail.Character.Component.Attacker"
 
 ---@class AttackTarget:Body,Attacker,Invulnerability
 ---@field health number
@@ -105,6 +104,7 @@ function AttackTarget:findSlotNearestVector(slottype, vecx, vecy)
 end
 
 function AttackTarget:estimateSafeDistanceOnSlot(slot)
+    local Attacker     = require "Dragontail.Character.Component.Attacker"
     local velx, vely = self.velx, self.vely
     local attackvecx, attackvecy = velx, vely
     local attackarcrightx, attackarcrighty = velx, vely
@@ -134,6 +134,12 @@ function AttackTarget:updateSlots()
         slot.x, slot.y, slot.z = self.x, self.y, self.z + self.bodyheight/2
         Characters.castRay3(slot, self)
     end
+end
+
+---@param attack Attack
+---@return integer
+function AttackTarget:getAttackHitLayers(attack)
+    return bit.band(attack and attack.hitslayers or 0xFFFFFFFF, self.bodyinlayers)
 end
 
 return AttackTarget

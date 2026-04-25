@@ -6,6 +6,7 @@ local tablepool    = require "tablepool"
 local AttackHit    = require "Dragontail.Character.Event.AttackHit"
 local Color        = require "Tiled.Color"
 local Movement     = require "Component.Movement"
+local AttackTarget = require "Dragontail.Character.Component.AttackTarget"
 local HoldOpponent
 
 ---@class Attacker:Body
@@ -234,7 +235,8 @@ function Attacker:checkAttackCollision(target, attack, attackangle)
     or HoldOpponent.isHolding(target, self) then
         return
     end
-    if 0 == bit.band(attack.hitslayers or 0xFFFFFFFF, target.bodyinlayers) then
+    local hitlayers = AttackTarget.getAttackHitLayers(target, attack)
+    if 0 == hitlayers then
         return
     end
     return Attacker.checkAttackCollision_cylinder(self, target, attack, attackangle)
