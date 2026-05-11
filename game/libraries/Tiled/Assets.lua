@@ -196,18 +196,24 @@ function Assets.getTile(tileset, tileid)
 end
 
 function Assets.packTiles()
-    local tilesets, aseprites = Assets.tilesets, Assets.bytype.jase
-
     local atlas = TileAtlas.New()
+
+    local tilesets = Assets.tilesets
+
     for _, tileset in pairs(tilesets) do
         if tileset.imagetype == "image" then
             atlas:addTileset(tileset)
         end
     end
-    for _, ase in pairs(aseprites) do
-        for _, frame in ipairs(ase) do
-            if frame then
-                atlas:addAseFrame(frame)
+
+    local aseprites = Assets.bytype.jase
+
+    if aseprites then
+        for _, ase in pairs(aseprites) do
+            for _, frame in ipairs(ase) do
+                if frame then
+                    atlas:addAseFrame(frame)
+                end
             end
         end
     end
