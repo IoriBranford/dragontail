@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.11.2" name="go-arrow-small" tilewidth="100" tileheight="20" tilecount="9" columns="1" objectalignment="center">
+<tileset version="1.11" tiledversion="1.12.1" name="go-arrow-small" tilewidth="100" tileheight="20" tilecount="9" columns="1" objectalignment="center">
+ <editorsettings>
+  <export target="go-arrow-small.lua" format="lua"/>
+ </editorsettings>
  <image source="go-arrow-small.png" width="100" height="180"/>
  <tile id="0">
   <animation>

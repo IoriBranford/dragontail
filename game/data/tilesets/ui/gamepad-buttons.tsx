@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.11.0" name="gamepad-buttons" tilewidth="16" tileheight="16" tilecount="100" columns="20">
+<tileset version="1.11" tiledversion="1.12.1" name="gamepad-buttons" tilewidth="16" tileheight="16" tilecount="100" columns="20">
+ <editorsettings>
+  <export target="gamepad-buttons.lua" format="lua"/>
+ </editorsettings>
  <image source="gamepad-buttons.png" width="320" height="80"/>
  <tile id="9">
   <animation>

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.11.2" name="break-grab" tilewidth="48" tileheight="48" tilecount="6" columns="4" objectalignment="bottom">
+<tileset version="1.11" tiledversion="1.12.1" name="break-grab" tilewidth="48" tileheight="48" tilecount="4" columns="4" objectalignment="bottom">
+ <editorsettings>
+  <export target="break-grab.lua" format="lua"/>
+ </editorsettings>
  <grid orientation="orthogonal" width="32" height="32"/>
  <image source="break-grab.png" width="192" height="48"/>
  <tile id="0">

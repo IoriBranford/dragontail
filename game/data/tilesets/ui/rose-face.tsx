@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.11.0" name="rose-face" tilewidth="32" tileheight="32" tilecount="4" columns="4" objectalignment="bottom">
+<tileset version="1.11" tiledversion="1.12.1" name="rose-face" tilewidth="32" tileheight="32" tilecount="4" columns="4" objectalignment="bottom">
+ <editorsettings>
+  <export target="rose-face.lua" format="lua"/>
+ </editorsettings>
  <image source="rose-face.png" width="128" height="32"/>
  <tile id="0">
   <properties>

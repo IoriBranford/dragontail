@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.11.2" name="go-word" tilewidth="48" tileheight="32" tilecount="9" columns="9" objectalignment="center">
+<tileset version="1.11" tiledversion="1.12.1" name="go-word" tilewidth="48" tileheight="32" tilecount="9" columns="9" objectalignment="center">
+ <editorsettings>
+  <export target="go-word.lua" format="lua"/>
+ </editorsettings>
  <image source="go-word.png" width="432" height="32"/>
  <tile id="0">
   <animation>
