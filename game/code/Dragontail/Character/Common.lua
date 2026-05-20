@@ -258,7 +258,13 @@ function Common:itemWaitForPickup()
                 self.texturealpha = 1
             end
             local weapontype = self.giveweapon
-            if testItemPickupCollision(self, opponent) and opponent:tryToGiveWeapon(weapontype) then
+            local isopponentgrabbing =
+                opponent.isGrabEnabled and
+                opponent:isGrabEnabled()
+
+            if isopponentgrabbing
+            and testItemPickupCollision(self, opponent)
+            and opponent:tryToGiveWeapon(weapontype) then
                 finished = true
             else
                 for _, enemy in ipairs(Characters.getGroup("enemies")) do

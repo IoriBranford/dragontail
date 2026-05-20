@@ -23,7 +23,8 @@ local defaultgamepadconfig =  {
     b = "fly",
     rightshoulder = "sprint",
     triggerright = "sprint",
-    triggerleft = "fly",
+    leftshoulder = "grab",
+    triggerleft = "grab",
 }
 
 function love.load(args)
@@ -107,7 +108,8 @@ return {
             ["up down"] = "digitaly",
             z = "attack",
             lshift = "sprint",
-            x = "fly"
+            x = "fly",
+            lctrl = "grab",
         },
 
         gamepads = {
@@ -121,6 +123,7 @@ return {
         -- player_hitbox = "FOCUSFIRE",
         -- player_burst = 4,
         player_autorevive = true,
+        input_invertgrab = true,
         -- practice_lives = 2,
         -- practice_bombs = 1,
         -- practice_wingmen = 0,

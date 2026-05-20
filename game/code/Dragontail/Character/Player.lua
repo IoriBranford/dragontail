@@ -204,6 +204,14 @@ function Player:isActionRecentlyPressed(actionname)
     return self.inputlog:findActionState(actionname, "pressed")
 end
 
+function Player:isGrabEnabled()
+    local action = Inputs.getAction("grab")
+    local down = action and action.down
+    local invertgrab = Config.input_invertgrab
+    return invertgrab and not down
+        or not invertgrab and down
+end
+
 function Player:isActionDownAndRecentlyPressed(actionname)
     local action = Inputs.getAction(actionname)
     if not action then return false end

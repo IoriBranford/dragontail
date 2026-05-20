@@ -69,7 +69,8 @@ function PlayerFighting:fixedupdate()
         return player:doComboAttack(attackangle, nil, inx ~= 0 or iny ~= 0, inair)
     end
 
-    local opponenttohold = HoldOpponent.findOpponentToHold(player, inx, iny)
+    local opponenttohold = player:isGrabEnabled()
+        and HoldOpponent.findOpponentToHold(player, inx, iny)
     if opponenttohold then
         Combo.reset(player)
         return "grab", opponenttohold
