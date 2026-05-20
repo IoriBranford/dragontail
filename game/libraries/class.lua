@@ -30,6 +30,14 @@ local function createClass(base, init)
         return initObject(t, class, ...)
     end
 
+    function class.copy(object)
+        local copy = class.cast({})
+        for k, v in pairs(object) do
+            copy[k] = v
+        end
+        return copy
+    end
+
     function class.super(t)
         local baseinit = base and base._init
         if baseinit then
