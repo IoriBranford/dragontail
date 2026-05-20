@@ -122,7 +122,7 @@ end
 
 local pushTransform = Graphics.pushTransform
 
-function TileLayer:draw()
+function TileLayer:draw(fixedfrac)
     local r, g, b, a = 1, 1, 1, self.opacity or 1
     local tintcolor = self.tintcolor
     if tintcolor then
@@ -130,31 +130,36 @@ function TileLayer:draw()
     end
     love.graphics.setColor(r, g, b, a)
 
+    fixedfrac = fixedfrac or 0
+    local velx = (self.velx or 0) * fixedfrac
+    local vely = (self.vely or 0) * fixedfrac
     local chunks = self.chunks
     if chunks then
         pushTransform(self)
         local maptiles, cellwidth, cellheight = self.maptiles, self.tilewidth, self.tileheight
         for _, chunk in ipairs(chunks) do
+            local x, y = chunk.x + velx, chunk.y + vely
             if chunk.tilebatch then
-                love_graphics_draw(chunk.tilebatch, chunk.x, chunk.y)
+                love_graphics_draw(chunk.tilebatch, x, y)
             else
                 forCells(drawTile, chunk.data, chunk.columns, chunk.rows, maptiles,
-                    chunk.x, chunk.y + cellheight, cellwidth, cellheight, self.animationtime)
+                    x, y + cellheight, cellwidth, cellheight, self.animationtime)
             end
         end
         love.graphics.pop()
     else
+        local x, y = self.x + velx, self.y + vely
+
         local batch = self.tilebatch
         if batch then
-            love_graphics_draw(batch,
-                (self.x), (self.y),
+            love_graphics_draw(batch, x, y,
                 self.rotation or 0,
                 self.scalex or 1, self.scaley or 1,
                 self.originx or 0, self.originy or 0,
                 self.skewx or 0, self.skewy or 0)
         else
             forCells(drawTile, self.data, self.mapcols, self.maprows, self.maptiles,
-                0, self.tileheight, self.tilewidth, self.tileheight, self.animationtime)
+                x, y + self.tileheight, self.tilewidth, self.tileheight, self.animationtime)
         end
     end
     if tintcolor then
