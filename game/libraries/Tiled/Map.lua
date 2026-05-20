@@ -153,8 +153,8 @@ function TiledMap.load(mapfile)
     Assets.maps[mapfile] = map
     Assets.all[mapfile] = map
 
-    local directory = pathlite.splitpath(mapfile)
-    map.directory = directory
+    local mapdir = pathlite.splitpath(mapfile)
+    map.directory = mapdir
     map.file = mapfile
 
     if map.backgroundcolor then
@@ -194,7 +194,24 @@ function TiledMap.load(mapfile)
             tileset = alltilesets[tileset.name]
             maptilesets[i] = tileset
         else
-            Tileset.from(tileset, directory)
+            local extfilename = tileset.filename
+            if extfilename then
+                extfilename = tileset.exportfilename or ""
+                assert(pathlite.extension(extfilename) == ".lua",
+                    "Tileset " .. tileset.name ..
+                        " in map " .. mapfile ..
+                        " is external but not exported to lua")
+
+                local tilesetfile = pathlite.normjoin(mapdir, extfilename)
+                local exttileset = assert(love.filesystem.load(tilesetfile))()
+                exttileset.firstgid = tileset.firstgid
+                exttileset.exportfilename = tileset.exportfilename
+                local tilesetdir = pathlite.splitpath(tilesetfile)
+                tileset = Tileset.from(exttileset, tilesetdir)
+                maptilesets[i] = tileset
+            else
+                Tileset.from(tileset, mapdir)
+            end
             alltilesets[tileset.name] = tileset
         end
         for t = 0, tileset.tilecount - 1 do
@@ -216,10 +233,10 @@ function TiledMap.load(mapfile)
         elseif layertype == "objectgroup" then
             ObjectGroup.from(layer, map)
         elseif layertype == "imagelayer" then
-            ImageLayer.from(layer, directory)
+            ImageLayer.from(layer, mapdir)
         end
         Properties.resolveObjectRefs(layer.properties, mapobjects)
-        Properties.resolveAssetPaths(layer.properties, directory)
+        Properties.resolveAssetPaths(layer.properties, mapdir)
         Properties.moveUp(layer)
     end
 
@@ -233,7 +250,7 @@ function TiledMap.load(mapfile)
         doLayer(layer)
     end
     Properties.resolveObjectRefs(map.properties, mapobjects)
-    Properties.resolveAssetPaths(map.properties, directory)
+    Properties.resolveAssetPaths(map.properties, mapdir)
     Properties.moveUp(map)
 
     return map

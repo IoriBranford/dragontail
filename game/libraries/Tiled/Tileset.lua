@@ -6,7 +6,8 @@ local pathlite   = require "Tiled.pathlite"
 
 ---@class Tileset:Class
 ---@field firstgid integer The first global tile ID of this tileset (this global ID maps to the first tile in this tileset).
----@field source string? If this tileset is stored in an external TSX (Tile Set XML) file, this attribute refers to that file. That TSX file has the same structure as the <tileset> element described here. (There is the firstgid attribute missing and this source attribute is also not there. These two attributes are kept in the TMX map, since they are map specific.)
+---@field filename string? If this tileset is stored in an external Lua file, this attribute refers to the original Tiled TSX file.
+---@field exportfilename string? If this tileset is stored in an external Lua file, this attribute refers to that file. That Lua file has the same structure as the Tileset class described here. (There is the firstgid attribute missing and this source attribute is also not there. These two attributes are kept in the TMX map, since they are map specific.)
 ---@field name string The name of this tileset.
 ---@field class string The class of this tileset (since 1.9, defaults to “”).
 ---@field tilewidth integer The (maximum) width of the tiles in this tileset. Irrelevant for image collection tilesets, but stores the maximum tile width.
@@ -28,10 +29,6 @@ local pathlite   = require "Tiled.pathlite"
 local Tileset = class()
 
 function Tileset:_init(directory)
-    -- assert(tileset.objectalignment == "topleft", "Unsupported objectalignment "..tileset.objectalignment)
-    assert(not self.source,
-        "External tilesets unsupported. Please export with 'Embed Tilesets' enabled in export options.")
-
     local imagefile = self.image
     local imagetype
     ---@cast imagefile string
