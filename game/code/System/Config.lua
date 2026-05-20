@@ -61,9 +61,18 @@ function Config.load(defaultcfg)
 		local fileconfig = love.filesystem.load(filename)()
 		local fileversion = fileconfig._version or 0
 		if fileversion == defaultconfig._version then
-			for k,v in pairs(fileconfig) do
-				Config[k] = v
+			local function fill(t1, t2)
+				for k,v2 in pairs(t2) do
+					local v1 = t1[k]
+					if type(v1) == "table"
+					and type(v2) == "table" then
+						fill(v1, v2)
+					else
+						t1[k] = v2
+					end
+				end
 			end
+			fill(Config, fileconfig)
 		else
 			local oldfilename = filename.."."..fileversion
 			if Platform.supports("saveconfig") then
