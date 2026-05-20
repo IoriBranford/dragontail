@@ -16,602 +16,68 @@ return {
     {
       name = "rose-face",
       firstgid = 1,
-      class = "",
-      tilewidth = 32,
-      tileheight = 32,
-      spacing = 0,
-      margin = 0,
-      columns = 4,
-      image = "tilesets/ui/rose-face.png",
-      imagewidth = 128,
-      imageheight = 32,
-      objectalignment = "bottom",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 32,
-        height = 32
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 4,
-      tiles = {
-        {
-          id = 0,
-          properties = {
-            ["name"] = "normal"
-          }
-        },
-        {
-          id = 1,
-          properties = {
-            ["name"] = "hurt"
-          }
-        },
-        {
-          id = 2,
-          properties = {
-            ["name"] = "attack"
-          }
-        },
-        {
-          id = 3,
-          properties = {
-            ["name"] = "win"
-          }
-        }
-      }
+      filename = "tilesets/ui/rose-face.tsx",
+      exportfilename = "tilesets/ui/rose-face.lua"
     },
     {
       name = "keyboard-keys",
       firstgid = 5,
-      class = "",
-      tilewidth = 16,
-      tileheight = 16,
-      spacing = 0,
-      margin = 0,
-      columns = 17,
-      image = "tilesets/ui/keyboard-keys.png",
-      imagewidth = 272,
-      imageheight = 256,
-      objectalignment = "unspecified",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 16,
-        height = 16
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 272,
-      tiles = {
-        {
-          id = 206,
-          animation = {
-            {
-              tileid = 70,
-              duration = 100
-            },
-            {
-              tileid = 206,
-              duration = 100
-            }
-          }
-        },
-        {
-          id = 207,
-          animation = {
-            {
-              tileid = 71,
-              duration = 100
-            },
-            {
-              tileid = 207,
-              duration = 900
-            }
-          }
-        }
-      }
+      filename = "tilesets/ui/keyboard-keys.tsx",
+      exportfilename = "tilesets/ui/keyboard-keys.lua"
     },
     {
       name = "gamepad-buttons",
       firstgid = 277,
-      class = "",
-      tilewidth = 16,
-      tileheight = 16,
-      spacing = 0,
-      margin = 0,
-      columns = 20,
-      image = "tilesets/ui/gamepad-buttons.png",
-      imagewidth = 320,
-      imageheight = 80,
-      objectalignment = "unspecified",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 16,
-        height = 16
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 100,
-      tiles = {
-        {
-          id = 9,
-          animation = {
-            {
-              tileid = 5,
-              duration = 100
-            },
-            {
-              tileid = 7,
-              duration = 100
-            },
-            {
-              tileid = 3,
-              duration = 100
-            },
-            {
-              tileid = 1,
-              duration = 100
-            }
-          }
-        },
-        {
-          id = 60,
-          animation = {
-            {
-              tileid = 20,
-              duration = 100
-            },
-            {
-              tileid = 21,
-              duration = 100
-            }
-          }
-        },
-        {
-          id = 71,
-          animation = {
-            {
-              tileid = 30,
-              duration = 100
-            },
-            {
-              tileid = 31,
-              duration = 900
-            }
-          }
-        },
-        {
-          id = 80,
-          animation = {
-            {
-              tileid = 40,
-              duration = 100
-            },
-            {
-              tileid = 41,
-              duration = 100
-            }
-          }
-        },
-        {
-          id = 91,
-          animation = {
-            {
-              tileid = 50,
-              duration = 100
-            },
-            {
-              tileid = 51,
-              duration = 900
-            }
-          }
-        }
-      }
+      filename = "tilesets/ui/gamepad-buttons.tsx",
+      exportfilename = "tilesets/ui/gamepad-buttons.lua"
     },
     {
       name = "flamegaugefull",
       firstgid = 377,
-      class = "",
-      tilewidth = 40,
-      tileheight = 20,
-      spacing = 0,
-      margin = 0,
-      columns = 1,
-      image = "tilesets/ui/flamegaugefull.png",
-      imagewidth = 40,
-      imageheight = 160,
-      objectalignment = "unspecified",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 40,
-        height = 20
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 8,
-      tiles = {
-        {
-          id = 0,
-          animation = {
-            {
-              tileid = 0,
-              duration = 50
-            },
-            {
-              tileid = 1,
-              duration = 50
-            },
-            {
-              tileid = 2,
-              duration = 50
-            },
-            {
-              tileid = 3,
-              duration = 50
-            },
-            {
-              tileid = 4,
-              duration = 50
-            },
-            {
-              tileid = 5,
-              duration = 50
-            },
-            {
-              tileid = 6,
-              duration = 50
-            },
-            {
-              tileid = 7,
-              duration = 50
-            }
-          }
-        }
-      }
+      filename = "tilesets/ui/flamegaugefull.tsx",
+      exportfilename = "tilesets/ui/flamegaugefull.lua"
     },
     {
       name = "weapon-frame",
       firstgid = 385,
-      class = "",
-      tilewidth = 24,
-      tileheight = 24,
-      spacing = 0,
-      margin = 0,
-      columns = 3,
-      image = "tilesets/ui/weapon-frame.png",
-      imagewidth = 72,
-      imageheight = 48,
-      objectalignment = "center",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 32,
-        height = 32
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 6,
-      tiles = {}
+      filename = "tilesets/ui/weapon-frame.tsx",
+      exportfilename = "tilesets/ui/weapon-frame.lua"
     },
     {
       name = "go-arrow-small",
       firstgid = 391,
-      class = "",
-      tilewidth = 100,
-      tileheight = 20,
-      spacing = 0,
-      margin = 0,
-      columns = 1,
-      image = "sprites/ui/go-arrow-small.png",
-      imagewidth = 100,
-      imageheight = 180,
-      objectalignment = "center",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 100,
-        height = 20
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 9,
-      tiles = {
-        {
-          id = 0,
-          animation = {
-            {
-              tileid = 0,
-              duration = 50
-            },
-            {
-              tileid = 1,
-              duration = 50
-            },
-            {
-              tileid = 2,
-              duration = 50
-            },
-            {
-              tileid = 3,
-              duration = 50
-            },
-            {
-              tileid = 4,
-              duration = 50
-            },
-            {
-              tileid = 5,
-              duration = 50
-            },
-            {
-              tileid = 6,
-              duration = 50
-            },
-            {
-              tileid = 7,
-              duration = 50
-            },
-            {
-              tileid = 8,
-              duration = 100
-            }
-          }
-        }
-      }
+      filename = "sprites/ui/go-arrow-small.tsx",
+      exportfilename = "sprites/ui/go-arrow-small.lua"
     },
     {
       name = "go-word",
       firstgid = 400,
-      class = "",
-      tilewidth = 48,
-      tileheight = 32,
-      spacing = 0,
-      margin = 0,
-      columns = 9,
-      image = "sprites/ui/go-word.png",
-      imagewidth = 432,
-      imageheight = 32,
-      objectalignment = "center",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 48,
-        height = 32
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 9,
-      tiles = {
-        {
-          id = 0,
-          animation = {
-            {
-              tileid = 0,
-              duration = 50
-            },
-            {
-              tileid = 1,
-              duration = 50
-            },
-            {
-              tileid = 2,
-              duration = 50
-            },
-            {
-              tileid = 3,
-              duration = 50
-            },
-            {
-              tileid = 4,
-              duration = 50
-            },
-            {
-              tileid = 5,
-              duration = 50
-            },
-            {
-              tileid = 6,
-              duration = 50
-            },
-            {
-              tileid = 7,
-              duration = 50
-            },
-            {
-              tileid = 8,
-              duration = 100
-            }
-          }
-        }
-      }
+      filename = "sprites/ui/go-word.tsx",
+      exportfilename = "sprites/ui/go-word.lua"
     },
     {
       name = "firespit",
       firstgid = 409,
-      class = "",
-      tilewidth = 64,
-      tileheight = 64,
-      spacing = 0,
-      margin = 0,
-      columns = 1,
-      image = "sprites/player/rose/firespit.ase",
-      imagewidth = 64,
-      imageheight = 64,
-      objectalignment = "center",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 64,
-        height = 64
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 1,
-      tiles = {}
+      filename = "sprites/player/rose/firespit.tsx",
+      exportfilename = "sprites/player/rose/firespit.lua"
     },
     {
       name = "break-grab",
       firstgid = 410,
-      class = "",
-      tilewidth = 48,
-      tileheight = 48,
-      spacing = 0,
-      margin = 0,
-      columns = 4,
-      image = "sprites/ui/break-grab.png",
-      imagewidth = 192,
-      imageheight = 48,
-      objectalignment = "bottom",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 32,
-        height = 32
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 4,
-      tiles = {
-        {
-          id = 0,
-          properties = {
-            ["name"] = "x"
-          },
-          animation = {
-            {
-              tileid = 0,
-              duration = 100
-            },
-            {
-              tileid = 1,
-              duration = 100
-            }
-          }
-        },
-        {
-          id = 2,
-          properties = {
-            ["name"] = "y"
-          },
-          animation = {
-            {
-              tileid = 2,
-              duration = 100
-            },
-            {
-              tileid = 3,
-              duration = 100
-            }
-          }
-        }
-      }
+      filename = "sprites/ui/break-grab.tsx",
+      exportfilename = "sprites/ui/break-grab.lua"
     },
     {
       name = "title",
       firstgid = 414,
-      class = "",
-      tilewidth = 480,
-      tileheight = 270,
-      spacing = 0,
-      margin = 0,
-      columns = 1,
-      image = "sprites/ui/title.ase",
-      imagewidth = 480,
-      imageheight = 270,
-      objectalignment = "topleft",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 480,
-        height = 270
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 1,
-      tiles = {}
+      filename = "sprites/ui/title.tsx",
+      exportfilename = "sprites/ui/title.lua"
     },
     {
       name = "Xbox",
       firstgid = 415,
-      class = "",
-      tilewidth = 14,
-      tileheight = 14,
-      spacing = 0,
-      margin = 0,
-      columns = 20,
-      image = "tilesets/ui/Gamepad Spritesheets/Xbox.png",
-      imagewidth = 280,
-      imageheight = 15,
-      objectalignment = "center",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 14,
-        height = 14
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 20,
-      tiles = {}
+      filename = "tilesets/ui/Gamepad Spritesheets/Xbox.tsx",
+      exportfilename = "tilesets/ui/Gamepad Spritesheets/Xbox.lua"
     }
   },
   layers = {
