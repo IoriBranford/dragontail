@@ -9,6 +9,16 @@ function CameraPath:_init()
 end
 
 function CameraPath:init()
+    local points = assert(self.points)
+    local length = 0
+    local pointtotallengths = {0, 0}
+    for i = 4, #points, 2 do
+        length = length + math.dist(points[i-3], points[i-2], points[i-1], points[i])
+        pointtotallengths[#pointtotallengths+1] = length
+        pointtotallengths[#pointtotallengths+1] = length
+    end
+    self.pointtotallengths = pointtotallengths
+    self.totallength = length
 end
 
 function CameraPath:projectPoint(focusx, focusy)
@@ -16,6 +26,14 @@ function CameraPath:projectPoint(focusx, focusy)
     local points = assert(self.points)
     local x, y, i1, i2 = math.nearestpolylinepoint(points, focusx - selfx, focusy - selfy)
     return x + selfx, y + selfy, i1, i2
+end
+
+function CameraPath:getProgress(focusx, focusy)
+    local selfx, selfy = self.x, self.y
+    local points = assert(self.points)
+    local x, y, i1 = math.nearestpolylinepoint(points, focusx - selfx, focusy - selfy)
+    local x1, y1 = points[i1-1], points[i1]
+    return (self.pointtotallengths[i1] + math.dist(x1, y1, x, y)) / self.totallength
 end
 
 function CameraPath:getSegment(i1, i2)
