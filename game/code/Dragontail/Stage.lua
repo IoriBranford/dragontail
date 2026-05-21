@@ -559,12 +559,10 @@ function Stage.fixedupdateGui(gui)
     end
 
     local go = gui:get("gameplay.hud_go")
-    local goarrows = gui:get("gameplay.hud_goarrows")
-    if go and goarrows then
+    if go then
         local camerapath = Stage.getCurrentCameraPath()
         if Stage.isInNextRoom() or not camerapath then
             go.visible = false
-            goarrows.visible = false
         else
             local cameracenterx, cameracentery =
                 camera.x+camera.width/2,
@@ -579,23 +577,11 @@ function Stage.fixedupdateGui(gui)
                 totargetx = totargetx * camera.width/4
                 totargety = totargety * camera.height/4
                 go.visible = true
-                goarrows.visible = true
-                local x = totargetx + camera.width/2
-                local y = totargety + camera.height/2
-                go.x, go.y = x, y
-                goarrows.x, goarrows.y = x, y
-                goarrows.rotation = math.atan2(totargety, totargetx)
-                local progress = camerapath:getProgress(cameracenterx, cameracentery)
-                local lastempty = math.floor(progress*#goarrows)
-                for i = 1, lastempty do
-                    goarrows[i]:changeAnimation("empty")
-                end
-                for i = lastempty+1, #goarrows do
-                    goarrows[i]:changeAnimation("full")
-                end
+                go.x = totargetx + camera.width/2
+                go.y = totargety + camera.height/2
+                go.arrow.rotation = math.atan2(totargety, totargetx)
             else
                 go.visible = false
-                goarrows.visible = false
             end
         end
     end

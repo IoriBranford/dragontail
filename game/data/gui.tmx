@@ -202,7 +202,7 @@ to clear lost enemies</text>
     </properties>
    </object>
   </objectgroup>
-  <objectgroup id="22" name="hud_goarrows" offsetx="360" offsety="135">
+  <objectgroup id="22" name="hud_goarrows" visible="0" offsetx="360" offsety="135">
    <object id="155" gid="435" x="-52" y="0" width="16" height="16"/>
    <object id="156" gid="436" x="-40" y="0" width="16" height="16"/>
    <object id="157" gid="437" x="-28" y="0" width="16" height="16"/>
@@ -213,7 +213,7 @@ to clear lost enemies</text>
    <object id="162" gid="442" x="56" y="0" width="16" height="16"/>
   </objectgroup>
   <objectgroup draworder="index" id="14" name="hud_go" offsetx="360" offsety="135">
-   <object id="70" name="arrow" gid="391" x="0" y="0" width="100" height="20" visible="0"/>
+   <object id="70" name="arrow" gid="391" x="0" y="0" width="100" height="20"/>
    <object id="71" name="word" gid="400" x="0" y="0" width="48" height="32"/>
   </objectgroup>
   <objectgroup id="12" name="hud_weaponslots" offsetx="32" offsety="72">

@@ -742,7 +742,7 @@ return {
           id = 22,
           name = "hud_goarrows",
           class = "",
-          visible = true,
+          visible = false,
           opacity = 1,
           offsetx = 360,
           offsety = 135,
@@ -898,7 +898,7 @@ return {
               rotation = 0,
               opacity = 1,
               gid = 391,
-              visible = false,
+              visible = true,
               properties = {}
             },
             {
