@@ -381,7 +381,8 @@ function Stage.updateGoingToNextRoom()
         if cameraboundary then
             destx, desty = cameraboundary:keepPointInside(destx, desty)
             local velx, vely = destx - centerx, desty - centery
-            local _, _, ax, ay, bx, by = camerapath:projectPoint(destx, desty)
+            local _, _, a, b = camerapath:projectPoint(destx, desty)
+            local ax, ay, bx, by = camerapath:getSegment(a, b)
             local dx, dy = bx-ax, by-ay
             if math.dot(velx, vely, dx, dy) < 0 then
                 dx, dy = math.rot90(dx, dy, 1)
@@ -389,8 +390,9 @@ function Stage.updateGoingToNextRoom()
                 destx, desty = centerx + velx, centery + vely
             end
         else
-            local ax, ay, bx, by
-            destx, desty, ax, ay, bx, by = camerapath:projectPoint(destx, desty)
+            local a, b
+            destx, desty, a, b = camerapath:projectPoint(destx, desty)
+            local ax, ay, bx, by = camerapath:getSegment(a, b)
             if math.dot(destx-centerx, desty-centery, bx-ax, by-ay) < 0 then
                 destx, desty = camerapath:projectPoint(centerx, centery)
             end
