@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="22" nextobjectid="155">
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="23" nextobjectid="165">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -14,7 +14,8 @@
  <tileset firstgid="410" source="sprites/ui/break-grab.tsx"/>
  <tileset firstgid="414" source="sprites/ui/title.tsx"/>
  <tileset firstgid="415" source="tilesets/ui/Gamepad Spritesheets/Xbox.tsx"/>
- <group id="4" name="gameplay" visible="0">
+ <tileset firstgid="435" source="sprites/ui/go-arrowhead.tsx"/>
+ <group id="4" name="gameplay">
   <objectgroup draworder="index" id="2" name="hud">
    <object id="4" name="run" type="Gui.Gauge" x="52" y="33" width="100" height="8" visible="0">
     <properties>
@@ -201,8 +202,18 @@ to clear lost enemies</text>
     </properties>
    </object>
   </objectgroup>
-  <objectgroup draworder="index" id="14" name="hud_go" visible="0" offsetx="360" offsety="135">
-   <object id="70" name="arrow" gid="391" x="0" y="0" width="100" height="20"/>
+  <objectgroup id="22" name="hud_goarrows" offsetx="360" offsety="135">
+   <object id="155" gid="435" x="-52" y="0" width="16" height="16"/>
+   <object id="156" gid="436" x="-40" y="0" width="16" height="16"/>
+   <object id="157" gid="437" x="-28" y="0" width="16" height="16"/>
+   <object id="158" gid="438" x="-16" y="0" width="16" height="16"/>
+   <object id="159" gid="439" x="20" y="0" width="16" height="16"/>
+   <object id="160" gid="440" x="32" y="0" width="16" height="16"/>
+   <object id="161" gid="441" x="44" y="0" width="16" height="16"/>
+   <object id="162" gid="442" x="56" y="0" width="16" height="16"/>
+  </objectgroup>
+  <objectgroup draworder="index" id="14" name="hud_go" offsetx="360" offsety="135">
+   <object id="70" name="arrow" gid="391" x="0" y="0" width="100" height="20" visible="0"/>
    <object id="71" name="word" gid="400" x="0" y="0" width="48" height="32"/>
   </objectgroup>
   <objectgroup id="12" name="hud_weaponslots" offsetx="32" offsety="72">
@@ -502,7 +513,7 @@ to clear lost enemies</text>
    <object id="106" template="gui/menu/Panel.tx" x="176" y="171" width="128" height="63"/>
   </objectgroup>
  </group>
- <group id="20" name="options">
+ <group id="20" name="options" visible="0">
   <objectgroup draworder="index" id="19" name="simple" class="Gui.Menu">
    <properties>
     <property name="backaction" value="closeMenu"/>
