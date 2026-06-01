@@ -4,6 +4,6 @@
   <properties>
    <property name="action" value="closeMenu"/>
   </properties>
-  <text fontfamily="Unifont" wrap="1" color="#ffffff">Close</text>
+  <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Close</text>
  </object>
 </template>

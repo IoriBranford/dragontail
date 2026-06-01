@@ -5,6 +5,6 @@
    <property name="action" value="openMenu"/>
    <property name="guipath" value=""/>
   </properties>
-  <text fontfamily="Unifont" wrap="1" color="#ffffff">Open menu</text>
+  <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Open menu</text>
  </object>
 </template>
