@@ -284,6 +284,23 @@ function Player:getActivatedChargeAttackTowardsJoystick()
     end
 end
 
+function Player:getLockOnJoystick()
+    local x = Inputs.getAction("lockonx").position
+    local y = Inputs.getAction("lockony").position
+    local lsq = lensq(x, y)
+
+    local deadzone = math.max(1/64, Config.joy_deadzone or .25)
+    if lsq < deadzone*deadzone then
+        x, y = 0, 0
+    else
+        local len = math.sqrt(lsq)
+        len = (len - deadzone) / (1 - deadzone)
+        x, y = norm(x, y)
+        x, y = len*x, len*y
+    end
+    return x, y
+end
+
 function Player:fixedupdate()
     self.inputlog:logJoystick(self:getJoystick())
     self.inputlog:logActionState(self.attackbutton)
