@@ -327,6 +327,15 @@ end
 
 function Player:turnTowardsJoystick(movinganimation, notmovinganimation)
     local inx, iny = self:getJoystick()
+    return self:turnTowardsDirection(inx, iny, movinganimation, notmovinganimation)
+end
+
+function Player:turnTowardsCharacter(character, movinganimation, notmovinganimation)
+    local inx, iny = character.x - self.x, character.y - self.y
+    return self:turnTowardsDirection(inx, iny, movinganimation, notmovinganimation)
+end
+
+function Player:turnTowardsDirection(inx, iny, movinganimation, notmovinganimation)
     if inx ~= 0 or iny ~= 0 then
         self.facedestangle = atan2(iny, inx)
     else
