@@ -40,6 +40,16 @@ local yield = coroutine.yield
 
 local lm_random = love.math.random
 
+function Enemy:canBeLockedOn()
+    if self.disappeared then
+        return false
+    end
+    if self.health <= 0 then
+        return false
+    end
+    return true
+end
+
 function Enemy:getTargetingScore(oppox, oppoy, oppofacex, oppofacey)
     if not self.canbeattacked then
         return
