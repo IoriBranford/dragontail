@@ -128,7 +128,10 @@ function Player:updateEnemyTargetingScores(lookangle)
     lookangle = lookangle or self.faceangle
     local lookx, looky = math.cos(lookangle), math.sin(lookangle)
     local x, y, z = self.x, self.y, self.z
-    return Attacker.updateOpponentsByPriority(self, function(e)
+    return Attacker.updateOpponentsByPriority(self,
+    ---@param e Enemy
+    ---@return number?
+    function(e)
         local score = e.getTargetingScore and
             e:getTargetingScore(x, y, lookx, looky)
         local otherlevelbonus = OtherLevelPrefStrength*math.abs(e.z - z)
@@ -149,7 +152,7 @@ function Player:init()
     -- self.runenergycost = self.runenergycost or 25
     Mana.init(self)
 
-    Attacker.initCrosshairs(self, "Rose-crosshair", 0)--self.inventory.capacity)
+    Attacker.initCrosshairs(self, "Rose-crosshair", 1)
     AttackTarget.initSlots(self)
 end
 
