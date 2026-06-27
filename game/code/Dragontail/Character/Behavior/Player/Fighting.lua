@@ -7,6 +7,7 @@ local Player   = require "Dragontail.Character.Player"
 local Attacker   = require "Dragontail.Character.Component.Attacker"
 local Combo      = require "Dragontail.Character.Component.Combo"
 local Guard      = require "Dragontail.Character.Component.Guard"
+local Inputs     = require "System.Inputs"
 
 ---@class PlayerFighting:Behavior
 ---@field character Player
@@ -30,7 +31,22 @@ function PlayerFighting:fixedupdate()
         return "catchProjectile", caughtprojectile
     end
 
+    local targets
+    local lockonx, lockony = player:getLockOnJoystick()
+    if lockonx ~= 0 or lockony ~= 0 then
+        targets = player:updateEnemyTargetingScores(math.atan2(lockony, lockonx))
+        player.lockontarget = targets[1]
+    end
+    if Inputs.getAction("unlockon").pressed
+    or player.lockontarget and not player.lockontarget:canBeLockedOn() then
+        player.lockontarget = nil
+    end
+
     if player:consumeActionDownAndRecentlyPressed("sprint") then
+        if inx == 0 and iny == 0 and player.lockontarget then
+            inx = player.lockontarget.x - player.x
+            iny = player.lockontarget.y - player.y
+        end
         Face.faceVector(player, inx, iny)
         return "run", nil, true
     end
@@ -39,26 +55,34 @@ function PlayerFighting:fixedupdate()
     chargedattack, attackangle = player:getActivatedChargeAttackTowardsJoystick()
     if chargedattack then
         Mana.releaseCharge(player)
+        if inx == 0 and iny == 0 and player.lockontarget then
+            inx = player.lockontarget.x - player.x
+            iny = player.lockontarget.y - player.y
+            if inx ~= 0 or iny ~= 0 then
+                attackangle = math.atan2(iny, inx)
+            end
+        end
         return chargedattack, attackangle
     end
 
     attackangle = inx == 0 and iny == 0
         and player.facedestangle or math.atan2(iny, inx)
 
-    local targets
-    if player.weaponinhand then
-        targets = player:updateEnemyTargetingScores(attackangle)
+    if not player.lockontarget then
+        if player.weaponinhand then
+            targets = player:updateEnemyTargetingScores(attackangle)
+        end
     end
 
     if player:consumeActionRecentlyPressed("attack") then
-        if player.weaponinhand then
-            local target = targets and targets[1]
-            if target then
-                local totargetx = target.x - player.x
-                local totargety = target.y - player.y
-                if totargetx ~= 0 or totargety ~= 0 then
-                    attackangle = math.atan2(totargety, totargetx)
-                end
+        local target = inx == 0 and iny == 0 and player.lockontarget
+        or player.weaponinhand and targets and targets[1]
+
+        if target then
+            local totargetx = target.x - player.x
+            local totargety = target.y - player.y
+            if totargetx ~= 0 or totargety ~= 0 then
+                attackangle = math.atan2(totargety, totargetx)
             end
         end
         player.faceangle = attackangle
@@ -77,7 +101,11 @@ function PlayerFighting:fixedupdate()
     end
 
     player:accelerateTowardsJoystick()
-    player:turnTowardsJoystick("Walk", "Stand")
+    if player.lockontarget then
+        player:turnTowardsCharacter(player.lockontarget, "Walk", "Stand")
+    else
+        player:turnTowardsJoystick("Walk", "Stand")
+    end
     local guardangle = player:getTailGuardAngle()
     if guardangle then
         Guard.startGuarding(player, guardangle)
@@ -92,7 +120,7 @@ function PlayerFighting:fixedupdate()
         return "jump", true
     end
 
-    Attacker.updateCrosshairTargetObject(player, 1, targets and targets[1])
+    Attacker.updateCrosshairTargetObject(player, 1, player.lockontarget)
 end
 
 function PlayerFighting:interrupt(...)
