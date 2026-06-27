@@ -283,23 +283,25 @@ end
 
 function Attacker:updateOpponentsByPriority(getPriority)
     local opponentsbypriority = self.opponentsbypriority
-    if opponentsbypriority then
-        for i = #opponentsbypriority, 1, -1 do
-            opponentsbypriority[i] = nil
-        end
-    else
+    if not opponentsbypriority then
         opponentsbypriority = {}
         self.opponentsbypriority = opponentsbypriority
     end
 
+    local n = 0
     local opponents = self.opponents
     for i = 1, #opponents do
         local opponent = opponents[i]
         local priority = getPriority(opponent)
         opponent.targetingscore = priority
         if priority then
-            opponentsbypriority[#opponentsbypriority+1] = opponent
+            n = n + 1
+            opponentsbypriority[n] = opponent
         end
+    end
+
+    for i = #opponentsbypriority, n+1, -1 do
+        opponentsbypriority[i] = nil
     end
 
     table.sort(opponentsbypriority, comparePriorities)
