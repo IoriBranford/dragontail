@@ -1,3 +1,5 @@
+local Heap = require "Heap"
+
 ---@class AtlasTile
 ---@field image love.Texture
 ---@field quad love.Quad?
@@ -23,38 +25,47 @@ function AtlasSpace:fits(w, h)
     return self.width >= w and self.height >= h
 end
 
-function AtlasSpace:split(w, h)
-    local tilevertical = h >= w
-    local rightw = self.width - w
-    local downh = self.height - h
-    local bigsplit, smallsplit
-    if tilevertical then
+function AtlasSpace:usedUp()
+    return self.width == math.huge and self.height == math.huge
+end
+
+function AtlasSpace:take(tilew, tileh, tile)
+    local x, y = self.x, self.y
+    local w, h = self.width, self.height
+    local tilespace = newSpace(x, y, tilew, tileh)
+    tilespace.tile = tile
+    local tilevertical = tileh >= tilew
+    local rightw = w - tilew
+    local downh = h - tileh
+    local newfreespace
+    if rightw <= 0 and downh <= 0 then
+        self.width, self.height = math.huge, math.huge
+    elseif tilevertical then
         if rightw > 0 then
-            smallsplit = newSpace(self.x + w, self.y, rightw, h)
-        end
-        if downh > 0 then
-            bigsplit = newSpace(self.x, self.y + h, self.width, downh)
+            self.x, self.width, self.height = x + tilew, rightw, tileh
+            if downh > 0 then
+                newfreespace = newSpace(x, y + tileh, w, downh)
+            end
+        elseif downh > 0 then
+            self.y, self.height = y + tileh, downh
         end
     else
         if downh > 0 then
-            smallsplit = newSpace(self.x, self.y + h, w, downh)
-        end
-        if rightw > 0 then
-            bigsplit = newSpace(self.x + w, self.y, rightw, self.height)
-        end
-    end
-    if smallsplit then
-        if not bigsplit or bigsplit < smallsplit then
-            return smallsplit, bigsplit
+            self.y, self.width, self.height = y + tileh, tilew, downh
+            if rightw > 0 then
+                newfreespace = newSpace(x + tilew, y, rightw, h)
+            end
+        elseif rightw > 0 then
+            self.x, self.width = x + tilew, rightw
         end
     end
-    return bigsplit, smallsplit
+    return tilespace, newfreespace
 end
 
 ---@class TileAtlas
 ---@field width number
 ---@field height number
----@field freespaces AtlasSpace[]
+---@field freespaces Heap<AtlasSpace>
 ---@field newtilespaces AtlasSpace[]
 ---@field newtiles AtlasTile[]
 ---@field tiles AtlasTile[]
@@ -75,7 +86,8 @@ function TileAtlas.New(width, height)
         image = self.canvas,
         quad = love.graphics.newQuad(1, 1, 2, 2, width, height)
     }
-    self.freespaces = {newSpace(0, 0, width, height)}
+    self.freespaces = Heap.new()
+    self.freespaces:push(newSpace(0, 0, width, height))
     self:takeSpace(4, 4, emptytile)
     self.newtilespaces = {}
     self.newtiles = {}
@@ -109,13 +121,15 @@ function TileAtlas:takeSpace(w, h, tile)
         for i = #freespaces, 1, -1 do
             local space = freespaces[i]
             if space:fits(w, h) then
-                local bigsplit, smallsplit = space:split(w, h)
-                freespaces[i] = freespaces[#freespaces]
-                freespaces[#freespaces] = bigsplit
-                freespaces[#freespaces+1] = smallsplit
-                table.sort(freespaces)
-                space.tile = tile
-                return space
+                local tilespace, newspace = space:take(w, h, tile)
+                freespaces:update(space)
+                while #freespaces > 0 and freespaces[1]:usedUp() do
+                    freespaces:pop()
+                end
+                if newspace then
+                    freespaces:push(newspace)
+                end
+                return tilespace
             end
         end
     until not self:grow2x()
@@ -135,11 +149,7 @@ function TileAtlas:grow2x()
         self.height = self.height * 2
     end
 
-    local freespaces = self.freespaces
-    for i = #freespaces, 1, -1 do
-        freespaces[i+1] = freespaces[i]
-    end
-    freespaces[1] = newfreespace
+    self.freespaces:push(newfreespace)
     return true
 end
 
