@@ -229,6 +229,8 @@ function TileAtlas:drawNewTilesToCanvas()
     local height = self.height
     local tiles = self.tiles
 
+    local blendmode0, alphamode0 = love.graphics.getBlendMode()
+    love.graphics.setBlendMode("alpha", "premultiplied")
     local canvas0 = love.graphics.getCanvas()
     love.graphics.setCanvas(canvas)
 
@@ -287,6 +289,7 @@ function TileAtlas:drawNewTilesToCanvas()
     end
 
     love.graphics.setCanvas(canvas0)
+    love.graphics.setBlendMode(blendmode0, alphamode0)
     for i = #newtilespaces, 1, -1 do
         newtilespaces[i] = nil
     end
