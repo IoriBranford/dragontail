@@ -1,12 +1,17 @@
----@class Heap
+---@class Heap<T>
+---@field compare fun(a:T, b:T):boolean
+---@field positions table<T,integer>
+---@field [integer] T
 local Heap = {}
 Heap.__index = Heap
 
+---@param compare fun(a:T, b:T):boolean
+---@return Heap
 function Heap.new(compare)
     local heap = setmetatable({
         compare = compare or function(a,b) return a < b end,
         positions = {}
-    }, Heap)
+    }, Heap) ---@type Heap<T>
     return heap
 end
 
