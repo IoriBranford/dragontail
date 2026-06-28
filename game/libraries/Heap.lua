@@ -5,7 +5,7 @@
 local Heap = {}
 Heap.__index = Heap
 
----@param compare fun(a:T, b:T):boolean
+---@param compare (fun(a:T, b:T):boolean)?
 ---@return Heap
 function Heap.new(compare)
     local heap = setmetatable({
@@ -89,9 +89,11 @@ end
 
 function Heap:update(value)
     local i = self.positions[value]
-    if i and moveForward(self, i, value) == i then
-        moveBackward(self, i, value)
-    end
+    if not i then return end
+
+    local i2 = moveForward(self, i, value)
+    if i2 ~= i then return i2 end
+    return moveBackward(self, i, value)
 end
 
 return Heap
