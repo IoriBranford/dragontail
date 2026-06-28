@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9735,7 +9735,6 @@ return {
                 width = 0,
                 height = 0,
                 rotation = 0,
-                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 0 },
@@ -13762,7 +13761,6 @@ return {
                 width = 0,
                 height = 0,
                 rotation = 0,
-                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 0 },
@@ -13802,7 +13800,6 @@ return {
                 width = 0,
                 height = 0,
                 rotation = 0,
-                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 0 },
@@ -13844,7 +13841,6 @@ return {
                 width = 0,
                 height = 0,
                 rotation = 0,
-                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 0 },
@@ -14003,7 +13999,6 @@ return {
                 width = 80,
                 height = 24,
                 rotation = 0,
-                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 0 },
@@ -14044,7 +14039,6 @@ return {
                 width = 80,
                 height = 24,
                 rotation = 0,
-                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 0 },
@@ -14085,7 +14079,6 @@ return {
                 width = 80,
                 height = 24,
                 rotation = 0,
-                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 0 },
@@ -14530,7 +14523,6 @@ return {
                 width = 0,
                 height = 0,
                 rotation = 0,
-                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 0 },
@@ -14571,7 +14563,6 @@ return {
                 width = 0,
                 height = 0,
                 rotation = 0,
-                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 0 },
@@ -14612,7 +14603,6 @@ return {
                 width = 64,
                 height = 16,
                 rotation = 0,
-                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 16 },
@@ -14653,7 +14643,6 @@ return {
                 width = 64,
                 height = 16,
                 rotation = 0,
-                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 16 },
@@ -14694,7 +14683,6 @@ return {
                 width = 64,
                 height = 16,
                 rotation = 0,
-                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 0 },
@@ -14735,7 +14723,6 @@ return {
                 width = 64,
                 height = 16,
                 rotation = 0,
-                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 16 },
@@ -16164,7 +16151,7 @@ return {
         },
         {
           x = 80, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMNAJBIswMIRAMYgdLszAcE2IfPMAy9cC8Q=="
+          data = "eJxjYBgFo2AUMNAJBIswMIRAMYgdLszAcE2IfAMBy9cC8Q=="
         },
         {
           x = -20, y = 0, width = 20, height = 12,
@@ -16289,7 +16276,7 @@ return {
       chunks = {
         {
           x = 60, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMNARSPEyMEjwMTBc5KHcLABUkQEr"
+          data = "eJxjYBgFo2AUMNARSPEyMEjwMTBc5KHcMABUkQEr"
         },
         {
           x = 0, y = 0, width = 20, height = 12,
@@ -16313,7 +16300,7 @@ return {
         },
         {
           x = 100, y = 0, width = 20, height = 12,
-          data = "eJzljisOgDAQBcfy2U1AANcCQbkWCMq1iuE6pAmihoS0dYx55mUy8C86hV5hCNbV8b5ZwSgswTYCrcT5dgWrcAQ7CkyS1hmyPm0pnW/4TlPl820CNqPvFLgy+jyuyOtryu/fGwAqDjY="
+          data = "eJzljisOgDAQBcfy2U1AANcCQbkWCMq1iuE6pAmihoS0dYx55mUy8C86hV5hCNbV8b5ZwSgswTYCrcT5dgWrcAQ7CkyS1hmyPm0pnW/4TlPl820CNqPvFLgy+jyuyOtryu/nGwAqDjY="
         },
         {
           x = 0, y = 12, width = 20, height = 12,
@@ -16368,7 +16355,7 @@ return {
       chunks = {
         {
           x = 0, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMNARLBahnlkAOgAAuA=="
+          data = "eJxjYBgFo2AUMNARLBahnmEAOgAAuA=="
         },
         {
           x = -20, y = 0, width = 20, height = 12,
@@ -16602,7 +16589,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 0, y = -96 },
@@ -16632,7 +16618,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
@@ -16650,7 +16635,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = -192, y = -128 },
@@ -16677,7 +16661,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 6833,
               visible = true,
               properties = {}
@@ -16692,11 +16675,9 @@ return {
               width = 32,
               height = 18,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "Move",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
@@ -16711,7 +16692,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7244,
               visible = true,
               properties = {}
@@ -16726,7 +16706,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7240,
               visible = true,
               properties = {}
@@ -16741,11 +16720,9 @@ return {
               width = 48,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "Attack",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               halign = "center",
@@ -16761,11 +16738,9 @@ return {
               width = 48,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "Jump",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
@@ -16780,7 +16755,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7246,
               visible = true,
               properties = {}
@@ -16795,7 +16769,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7242,
               visible = true,
               properties = {}
@@ -16810,7 +16783,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "OR",
               fontfamily = "TinyUnicode",
@@ -16829,7 +16801,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "OR",
               fontfamily = "TinyUnicode",
@@ -16848,11 +16819,9 @@ return {
               width = 192,
               height = 32,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "Aim all attacks\nwith    direction",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
@@ -16867,7 +16836,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 6833,
               visible = true,
               properties = {}
@@ -16901,7 +16869,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -16918,7 +16885,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -16935,7 +16901,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -16952,7 +16917,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -16987,7 +16951,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17004,7 +16967,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17021,7 +16983,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17038,7 +16999,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17055,7 +17015,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17072,7 +17031,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17089,7 +17047,6 @@ return {
               width = 144,
               height = 32,
               rotation = 0,
-              opacity = 1,
               visible = false,
               text = "MOVE INTO ENEMY to GRAB then",
               fontfamily = "TinyUnicode",
@@ -17107,7 +17064,6 @@ return {
               width = 128,
               height = 32,
               rotation = 0,
-              opacity = 1,
               visible = false,
               text = "DIRECTION + ATTACK to THROW",
               fontfamily = "TinyUnicode",
@@ -17125,7 +17081,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7244,
               visible = false,
               properties = {}
@@ -17156,7 +17111,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
@@ -17174,11 +17128,9 @@ return {
               width = 128,
               height = 32,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "Walk into large\nbody to grapple",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
@@ -17193,11 +17145,9 @@ return {
               width = 64,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "Pummel",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
@@ -17212,11 +17162,9 @@ return {
               width = 168,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "During grapple",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
@@ -17231,11 +17179,9 @@ return {
               width = 240,
               height = 32,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "Throw         +    direction",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
@@ -17250,7 +17196,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 6833,
               visible = true,
               properties = {}
@@ -17265,7 +17210,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 6833,
               visible = true,
               properties = {}
@@ -17280,7 +17224,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7244,
               visible = true,
               properties = {}
@@ -17295,7 +17238,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7246,
               visible = true,
               properties = {}
@@ -17310,7 +17252,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "OR",
               fontfamily = "TinyUnicode",
@@ -17329,7 +17270,6 @@ return {
               width = 48,
               height = 48,
               rotation = 0,
-              opacity = 1,
               gid = 7269,
               visible = true,
               properties = {
@@ -17347,7 +17287,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 176
@@ -17363,7 +17302,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7244,
               visible = true,
               properties = {}
@@ -17378,7 +17316,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7246,
               visible = true,
               properties = {}
@@ -17393,7 +17330,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "OR",
               fontfamily = "TinyUnicode",
@@ -17428,7 +17364,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17445,7 +17380,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17462,7 +17396,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17479,7 +17412,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17496,7 +17428,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17513,7 +17444,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17530,7 +17460,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17548,7 +17477,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17582,7 +17510,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7254,
               visible = true,
               properties = {}
@@ -17597,11 +17524,9 @@ return {
               width = 48,
               height = 18,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "Sprint",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               halign = "center",
@@ -17617,7 +17542,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "OR",
               fontfamily = "TinyUnicode",
@@ -17636,7 +17560,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7250,
               visible = true,
               properties = {}
@@ -17651,7 +17574,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7244,
               visible = true,
               properties = {}
@@ -17666,11 +17588,9 @@ return {
               width = 128,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "Tackle",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
@@ -17685,11 +17605,9 @@ return {
               width = 128,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "During sprint",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
@@ -17704,7 +17622,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7246,
               visible = true,
               properties = {}
@@ -17719,7 +17636,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "OR",
               fontfamily = "TinyUnicode",
@@ -17738,7 +17654,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
@@ -17774,7 +17689,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -17791,7 +17705,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -17808,11 +17721,9 @@ return {
               width = 264,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = false,
               text = "Hold to sprint after fast enemies",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {
@@ -17829,7 +17740,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 6900,
               visible = false,
               properties = {
@@ -17846,7 +17756,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 6920,
               visible = false,
               properties = {
@@ -17863,7 +17772,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7136,
               visible = false,
               properties = {
@@ -17896,7 +17804,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -17914,7 +17821,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -17932,7 +17838,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -17949,7 +17854,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -17985,7 +17889,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polyline = {
                 { x = 0, y = -64 },
@@ -18003,11 +17906,9 @@ return {
               width = 192,
               height = 32,
               rotation = 0,
-              opacity = 1,
               visible = false,
               text = "Steer while sprinting",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
@@ -18022,7 +17923,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 6838,
               visible = false,
               properties = {}
@@ -18037,7 +17937,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 64, y = -160 },
@@ -18063,7 +17962,6 @@ return {
               width = 128,
               height = 160,
               rotation = 0,
-              opacity = 1,
               gid = 7261,
               visible = true,
               properties = {
@@ -18084,7 +17982,6 @@ return {
               width = 128,
               height = 96,
               rotation = 0,
-              opacity = 1,
               gid = 7260,
               visible = true,
               properties = {
@@ -18102,7 +17999,6 @@ return {
               width = 20,
               height = 20,
               rotation = 0,
-              opacity = 1,
               gid = 7266,
               visible = true,
               properties = {
@@ -18120,7 +18016,6 @@ return {
               width = 20,
               height = 20,
               rotation = 0,
-              opacity = 1,
               gid = 7266,
               visible = true,
               properties = {
@@ -18138,11 +18033,9 @@ return {
               width = 112,
               height = 32,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "Move into item to pick up",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
@@ -18157,7 +18050,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 6833,
               visible = false,
               properties = {}
@@ -18172,11 +18064,9 @@ return {
               width = 104,
               height = 32,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "Food restores lost health",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
@@ -18191,7 +18081,6 @@ return {
               width = 20,
               height = 20,
               rotation = 0,
-              opacity = 1,
               gid = 7267,
               visible = true,
               properties = {
@@ -18208,7 +18097,6 @@ return {
               width = 20,
               height = 20,
               rotation = 0,
-              opacity = 1,
               gid = 7267,
               visible = true,
               properties = {
@@ -18241,7 +18129,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polyline = {
                 { x = -64, y = -192 },
@@ -18259,7 +18146,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = -448, y = -128 },
@@ -18288,7 +18174,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7265,
               visible = true,
               properties = {
@@ -18305,7 +18190,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7265,
               visible = true,
               properties = {
@@ -18322,7 +18206,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7265,
               visible = true,
               properties = {
@@ -18339,7 +18222,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7265,
               visible = true,
               properties = {
@@ -18356,7 +18238,6 @@ return {
               width = 128,
               height = 160,
               rotation = 0,
-              opacity = 1,
               gid = 7263,
               visible = true,
               properties = {
@@ -18379,7 +18260,6 @@ return {
               width = 128,
               height = 96,
               rotation = 0,
-              opacity = 1,
               gid = 7262,
               visible = true,
               properties = {
@@ -18397,7 +18277,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7264,
               visible = true,
               properties = {
@@ -18415,7 +18294,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7264,
               visible = true,
               properties = {
@@ -18433,11 +18311,9 @@ return {
               width = 104,
               height = 48,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "During sprint throws ALL missiles",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
@@ -18452,7 +18328,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 6833,
               visible = false,
               properties = {}
@@ -18467,11 +18342,9 @@ return {
               width = 104,
               height = 32,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "Throw missile",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
@@ -18486,7 +18359,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7244,
               visible = true,
               properties = {}
@@ -18501,7 +18373,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7246,
               visible = true,
               properties = {}
@@ -18516,7 +18387,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "OR",
               fontfamily = "TinyUnicode",
@@ -18535,7 +18405,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 0, y = 32 },
@@ -18578,7 +18447,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -18601,7 +18469,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -18624,7 +18491,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -18640,7 +18506,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -18656,7 +18521,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -18672,7 +18536,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -18688,7 +18551,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7244,
               visible = false,
               properties = {}
@@ -18703,7 +18565,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 6909,
               visible = false,
               properties = {}
@@ -18718,7 +18579,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7010,
               visible = false,
               properties = {}
@@ -18733,7 +18593,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7011,
               visible = false,
               properties = {}
@@ -18748,7 +18607,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7012,
               visible = false,
               properties = {}
@@ -18763,7 +18621,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7013,
               visible = false,
               properties = {}
@@ -18778,7 +18635,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7135,
               visible = false,
               properties = {}
@@ -18793,7 +18649,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7254,
               visible = false,
               properties = {}
@@ -18808,7 +18663,6 @@ return {
               width = 40,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = false,
               text = "+",
               fontfamily = "TinyUnicode",
@@ -18827,7 +18681,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7244,
               visible = false,
               properties = {}
@@ -18860,7 +18713,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -18877,7 +18729,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -18894,7 +18745,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -18911,7 +18761,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -18946,7 +18795,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -18969,7 +18817,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -18985,7 +18832,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19001,7 +18847,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -19025,7 +18870,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -19049,7 +18893,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19065,7 +18908,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19081,7 +18923,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19097,7 +18938,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19131,7 +18971,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -19164,7 +19003,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -19181,7 +19019,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -19214,7 +19051,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 144, y = -224 },
@@ -19241,11 +19077,9 @@ return {
               width = 120,
               height = 32,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "Costs 1 or more fire meter",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
@@ -19260,11 +19094,9 @@ return {
               width = 136,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "Hold then release",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
@@ -19279,11 +19111,9 @@ return {
               width = 136,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "Fireballs",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
@@ -19298,7 +19128,6 @@ return {
               width = 30,
               height = 6,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["color"] = "#ffffd000"
@@ -19314,7 +19143,6 @@ return {
               width = 30,
               height = 6,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["color"] = "#00000000",
@@ -19332,7 +19160,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7244,
               visible = true,
               properties = {}
@@ -19347,7 +19174,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7246,
               visible = true,
               properties = {}
@@ -19362,7 +19188,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "OR",
               fontfamily = "TinyUnicode",
@@ -19381,7 +19206,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
@@ -19400,7 +19224,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7270,
               visible = true,
               properties = {
@@ -19418,7 +19241,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7271,
               visible = true,
               properties = {
@@ -19452,7 +19274,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -19475,7 +19296,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -19498,7 +19318,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -19521,7 +19340,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -19544,7 +19362,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -19567,7 +19384,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -19590,7 +19406,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19606,7 +19421,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19622,7 +19436,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19638,7 +19451,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19654,7 +19466,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19670,7 +19481,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19686,7 +19496,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19702,7 +19511,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19718,7 +19526,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19734,7 +19541,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19750,7 +19556,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19766,7 +19571,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19800,7 +19604,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = -288, y = -480 },
@@ -19833,7 +19636,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polyline = {
                 { x = -160, y = 0 },
@@ -19851,7 +19653,6 @@ return {
               width = 64,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 5268,
               visible = true,
               properties = {
@@ -19869,7 +19670,6 @@ return {
               width = 64,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 5266,
               visible = true,
               properties = {
@@ -19886,7 +19686,6 @@ return {
               width = 64,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 5265,
               visible = true,
               properties = {
@@ -19903,7 +19702,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6583,
               visible = true,
               properties = {
@@ -19920,7 +19718,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6583,
               visible = true,
               properties = {
@@ -19937,7 +19734,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6586,
               visible = true,
               properties = {
@@ -19954,7 +19750,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6586,
               visible = true,
               properties = {
@@ -19971,11 +19766,9 @@ return {
               width = 136,
               height = 32,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "Attack the unprotected side!",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
@@ -19990,7 +19783,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 6833,
               visible = false,
               properties = {}
@@ -20005,7 +19797,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7244,
               visible = false,
               properties = {}
@@ -20020,7 +19811,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7274,
               visible = true,
               properties = {
@@ -20039,7 +19829,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7274,
               visible = true,
               properties = {
@@ -20058,7 +19847,6 @@ return {
               width = 128,
               height = 160,
               rotation = 0,
-              opacity = 1,
               gid = 7261,
               visible = true,
               properties = {
@@ -20077,7 +19865,6 @@ return {
               width = 128,
               height = 96,
               rotation = 0,
-              opacity = 1,
               gid = 7260,
               visible = true,
               properties = {
@@ -20112,7 +19899,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -20129,7 +19915,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -20146,7 +19931,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7274,
               visible = true,
               properties = {
@@ -20163,7 +19947,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7274,
               visible = true,
               properties = {
@@ -20198,7 +19981,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -20221,7 +20003,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -20237,7 +20018,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -20253,7 +20033,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -20276,7 +20055,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -20292,7 +20070,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -20308,11 +20085,9 @@ return {
               width = 144,
               height = 32,
               rotation = 0,
-              opacity = 1,
               visible = false,
               text = "Move into an enemy or barrel to grab",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {}
@@ -20327,7 +20102,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 6838,
               visible = false,
               properties = {}
@@ -20342,7 +20116,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 6889,
               visible = false,
               properties = {
@@ -20359,11 +20132,9 @@ return {
               width = 224,
               height = 32,
               rotation = 0,
-              opacity = 1,
               visible = false,
               text = "Then hold    toward the door\nand tap    to throw",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {
@@ -20380,7 +20151,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 6909,
               visible = false,
               properties = {
@@ -20397,7 +20167,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7135,
               visible = false,
               properties = {}
@@ -20412,7 +20181,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7010,
               visible = false,
               properties = {}
@@ -20427,7 +20195,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7011,
               visible = false,
               properties = {}
@@ -20442,7 +20209,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7012,
               visible = false,
               properties = {}
@@ -20457,7 +20223,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7013,
               visible = false,
               properties = {}
@@ -20472,7 +20237,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 6834,
               visible = false,
               properties = {
@@ -20508,7 +20272,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7272,
               visible = true,
               properties = {
@@ -20547,7 +20310,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 0, y = -8 },
@@ -20576,7 +20338,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             }
@@ -20611,7 +20372,6 @@ return {
               width = 96,
               height = 112,
               rotation = 0,
-              opacity = 1,
               gid = 7273,
               visible = true,
               properties = {}
@@ -20626,7 +20386,6 @@ return {
               width = 96,
               height = 112,
               rotation = 0,
-              opacity = 1,
               gid = 7273,
               visible = true,
               properties = {}
@@ -20641,7 +20400,6 @@ return {
               width = 96,
               height = 112,
               rotation = 0,
-              opacity = 1,
               gid = 7273,
               visible = true,
               properties = {}
@@ -20656,7 +20414,6 @@ return {
               width = 96,
               height = 112,
               rotation = 0,
-              opacity = 1,
               gid = 7273,
               visible = true,
               properties = {}
@@ -20671,7 +20428,6 @@ return {
               width = 96,
               height = 112,
               rotation = 0,
-              opacity = 1,
               gid = 7273,
               visible = true,
               properties = {}
@@ -20686,7 +20442,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polyline = {
                 { x = 64, y = 0 },
@@ -20706,7 +20461,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 64, y = 0 },
@@ -20734,7 +20488,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 608, y = 96 },
@@ -20760,7 +20513,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 608, y = 96 },
@@ -20786,7 +20538,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 608, y = 96 },
@@ -20812,7 +20563,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 608, y = 96 },
@@ -20838,7 +20588,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 608, y = 96 },
@@ -20864,7 +20613,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 608, y = 96 },
@@ -20891,7 +20639,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 608, y = 96 },
@@ -20918,7 +20665,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 608, y = 96 },
@@ -20945,7 +20691,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 608, y = 96 },
@@ -20972,7 +20717,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 608, y = 96 },
@@ -20999,7 +20743,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 616, y = 96 },
@@ -21025,7 +20768,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 616, y = 96 },
@@ -21051,7 +20793,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 616, y = 96 },
@@ -21077,7 +20818,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 616, y = 96 },
@@ -21103,7 +20843,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = -320, y = -224 },
@@ -21138,7 +20877,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = -200, y = 0 },
@@ -21168,7 +20906,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -21190,7 +20927,6 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              opacity = 1,
               gid = 6593,
               visible = true,
               properties = {
@@ -21207,7 +20943,6 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              opacity = 1,
               gid = 6593,
               visible = true,
               properties = {
@@ -21224,7 +20959,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -21238,7 +20972,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -21252,7 +20985,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -21266,7 +20998,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -21288,7 +21019,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -21302,7 +21032,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -21324,7 +21053,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -21346,7 +21074,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -21360,7 +21087,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -21374,7 +21100,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -21396,7 +21121,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -21410,7 +21134,6 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              opacity = 1,
               gid = 6589,
               visible = true,
               properties = {
@@ -21427,7 +21150,6 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              opacity = 1,
               gid = 6589,
               visible = true,
               properties = {
@@ -21444,7 +21166,6 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              opacity = 1,
               gid = 6589,
               visible = true,
               properties = {
@@ -21461,7 +21182,6 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              opacity = 1,
               gid = 6589,
               visible = true,
               properties = {
@@ -21478,7 +21198,6 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              opacity = 1,
               gid = 6589,
               visible = true,
               properties = {
@@ -21495,7 +21214,6 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              opacity = 1,
               gid = 6589,
               visible = true,
               properties = {
@@ -21512,7 +21230,6 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              opacity = 1,
               gid = 6589,
               visible = true,
               properties = {
@@ -21529,7 +21246,6 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              opacity = 1,
               gid = 6589,
               visible = true,
               properties = {
@@ -21546,7 +21262,6 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              opacity = 1,
               gid = 6593,
               visible = true,
               properties = {
@@ -21563,7 +21278,6 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              opacity = 1,
               gid = 6593,
               visible = true,
               properties = {
@@ -21580,7 +21294,6 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
-              opacity = 1,
               gid = 6593,
               visible = true,
               properties = {
@@ -21597,7 +21310,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 6612,
               visible = true,
               properties = {
@@ -21616,7 +21328,6 @@ return {
               width = 16,
               height = 16,
               rotation = 345,
-              opacity = 1,
               gid = 6605,
               visible = true,
               properties = {
@@ -21635,7 +21346,6 @@ return {
               width = 16,
               height = 16,
               rotation = 15,
-              opacity = 1,
               gid = 6610,
               visible = true,
               properties = {
@@ -21654,7 +21364,6 @@ return {
               width = 16,
               height = 16,
               rotation = 15,
-              opacity = 1,
               gid = 6604,
               visible = true,
               properties = {
@@ -21673,7 +21382,6 @@ return {
               width = 16,
               height = 16,
               rotation = 45,
-              opacity = 1,
               gid = 6609,
               visible = true,
               properties = {
@@ -21692,7 +21400,6 @@ return {
               width = 16,
               height = 16,
               rotation = 45,
-              opacity = 1,
               gid = 6603,
               visible = true,
               properties = {
@@ -21711,11 +21418,9 @@ return {
               width = 304,
               height = 32,
               rotation = 0,
-              opacity = 1,
               visible = false,
               text = "Hold    and a direction\nto sprint past archers",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {
@@ -21732,7 +21437,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 6859,
               visible = false,
               properties = {
@@ -21749,7 +21453,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 6879,
               visible = false,
               properties = {
@@ -21766,7 +21469,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7136,
               visible = false,
               properties = {
@@ -21783,7 +21485,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 6834,
               visible = false,
               properties = {
@@ -21800,7 +21501,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7239,
               visible = true,
               properties = {}
@@ -21815,7 +21515,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7239,
               visible = true,
               properties = {}
@@ -21830,7 +21529,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7239,
               visible = true,
               properties = {}
@@ -21845,7 +21543,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7239,
               visible = true,
               properties = {}
@@ -21860,7 +21557,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               gid = 7239,
               visible = true,
               properties = {}
@@ -21875,7 +21571,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -21889,7 +21584,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -21903,7 +21597,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -21917,7 +21610,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7275,
               visible = true,
               properties = {
@@ -21935,7 +21627,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7275,
               visible = true,
               properties = {
@@ -21953,7 +21644,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7275,
               visible = true,
               properties = {
@@ -21971,7 +21661,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7275,
               visible = true,
               properties = {
@@ -21989,7 +21678,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7275,
               visible = true,
               properties = {
@@ -22008,7 +21696,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7275,
               visible = true,
               properties = {
@@ -22027,7 +21714,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7275,
               visible = true,
               properties = {
@@ -22046,7 +21732,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7275,
               visible = true,
               properties = {
@@ -22065,7 +21750,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7278,
               visible = true,
               properties = {
@@ -22084,7 +21768,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7278,
               visible = true,
               properties = {
@@ -22103,7 +21786,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7278,
               visible = true,
               properties = {
@@ -22122,7 +21804,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7278,
               visible = true,
               properties = {
@@ -22141,7 +21822,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7278,
               visible = true,
               properties = {
@@ -22160,7 +21840,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7279,
               visible = true,
               properties = {
@@ -22178,7 +21857,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7279,
               visible = true,
               properties = {
@@ -22196,7 +21874,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7279,
               visible = true,
               properties = {
@@ -22215,7 +21892,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7279,
               visible = true,
               properties = {
@@ -22234,7 +21910,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7279,
               visible = true,
               properties = {
@@ -22253,7 +21928,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7279,
               visible = true,
               properties = {
@@ -22272,7 +21946,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7282,
               visible = true,
               properties = {
@@ -22290,7 +21963,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7282,
               visible = true,
               properties = {
@@ -22308,7 +21980,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7282,
               visible = true,
               properties = {
@@ -22327,7 +21998,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7282,
               visible = true,
               properties = {
@@ -22346,7 +22016,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7282,
               visible = true,
               properties = {
@@ -22365,7 +22034,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7282,
               visible = true,
               properties = {
@@ -22384,7 +22052,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7283,
               visible = true,
               properties = {
@@ -22402,7 +22069,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7283,
               visible = true,
               properties = {
@@ -22420,7 +22086,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7283,
               visible = true,
               properties = {
@@ -22439,7 +22104,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7283,
               visible = true,
               properties = {
@@ -22458,7 +22122,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7283,
               visible = true,
               properties = {
@@ -22477,7 +22140,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7283,
               visible = true,
               properties = {
@@ -22496,7 +22158,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7303,
               visible = true,
               properties = {
@@ -22514,7 +22175,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7303,
               visible = true,
               properties = {
@@ -22533,7 +22193,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7303,
               visible = true,
               properties = {
@@ -22552,7 +22211,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7303,
               visible = true,
               properties = {
@@ -22571,7 +22229,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7303,
               visible = true,
               properties = {
@@ -22590,7 +22247,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7303,
               visible = true,
               properties = {
@@ -22609,7 +22265,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7303,
               visible = true,
               properties = {
@@ -22628,7 +22283,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7303,
               visible = true,
               properties = {
@@ -22647,7 +22301,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7291,
               visible = true,
               properties = {
@@ -22665,7 +22318,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7291,
               visible = true,
               properties = {
@@ -22684,7 +22336,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7291,
               visible = true,
               properties = {
@@ -22703,7 +22354,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7291,
               visible = true,
               properties = {
@@ -22722,7 +22372,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7291,
               visible = true,
               properties = {
@@ -22741,7 +22390,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7291,
               visible = true,
               properties = {
@@ -22760,7 +22408,6 @@ return {
               width = 40,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7298,
               visible = true,
               properties = {
@@ -22778,7 +22425,6 @@ return {
               width = 40,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7298,
               visible = true,
               properties = {
@@ -22797,7 +22443,6 @@ return {
               width = 40,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7298,
               visible = true,
               properties = {
@@ -22816,11 +22461,9 @@ return {
               width = 128,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "During sprint",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {
@@ -22837,7 +22480,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7240,
               visible = true,
               properties = {
@@ -22854,11 +22496,9 @@ return {
               width = 72,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "Long jump",
-              fontfamily = "Silver",
-              pixelsize = 19,
+              fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
               properties = {
@@ -22875,7 +22515,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7242,
               visible = true,
               properties = {
@@ -22892,7 +22531,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "OR",
               fontfamily = "TinyUnicode",
@@ -22913,7 +22551,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7254,
               visible = true,
               properties = {
@@ -22930,7 +22567,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = true,
               text = "OR",
               fontfamily = "TinyUnicode",
@@ -22951,7 +22587,6 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
-              opacity = 1,
               gid = 7250,
               visible = true,
               properties = {
@@ -22968,7 +22603,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 0, y = -112 },
@@ -23015,7 +22649,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -23032,7 +22665,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -23049,7 +22681,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7272,
               visible = true,
               properties = {
@@ -23067,7 +22698,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             }
@@ -23097,7 +22727,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -23114,7 +22743,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -23147,7 +22775,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polyline = {
                 { x = 16, y = 0 },
@@ -23165,7 +22792,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 160, y = -96 },
@@ -23195,7 +22821,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 0, y = 16 },
@@ -23227,7 +22852,6 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
-              opacity = 1,
               visible = false,
               properties = {
                 ["originx"] = 8,
@@ -23245,7 +22869,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 6828,
               visible = true,
               properties = {
@@ -23263,7 +22886,6 @@ return {
               width = 48,
               height = 48,
               rotation = 330,
-              opacity = 1,
               gid = 7238,
               visible = true,
               properties = {}
@@ -23278,7 +22900,6 @@ return {
               width = 48,
               height = 48,
               rotation = 270,
-              opacity = 1,
               gid = 7238,
               visible = true,
               properties = {}
@@ -23293,7 +22914,6 @@ return {
               width = 48,
               height = 48,
               rotation = 225,
-              opacity = 1,
               gid = 7238,
               visible = true,
               properties = {}
@@ -23308,7 +22928,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -23322,7 +22941,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 0, y = -112 },
@@ -23368,7 +22986,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
@@ -23386,7 +23003,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7272,
               visible = true,
               properties = {
@@ -23405,7 +23021,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -23419,7 +23034,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 6826,
               visible = true,
               properties = {
@@ -23455,7 +23069,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7274,
               visible = true,
               properties = {
@@ -23473,7 +23086,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -23491,7 +23103,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -23509,7 +23120,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -23545,7 +23155,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7274,
               visible = true,
               properties = {
@@ -23562,7 +23171,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -23579,7 +23187,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -23596,7 +23203,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7274,
               visible = true,
               properties = {
@@ -23629,7 +23235,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
@@ -23647,7 +23252,6 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
-              opacity = 1,
               gid = 6598,
               visible = true,
               properties = {
@@ -23664,7 +23268,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7204,
               visible = true,
               properties = {
@@ -23681,7 +23284,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7212,
               visible = true,
               properties = {
@@ -23698,7 +23300,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -23715,7 +23316,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -23732,7 +23332,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6674,
               visible = true,
               properties = {
@@ -23749,7 +23348,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7225,
               visible = true,
               properties = {
@@ -23784,7 +23382,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polyline = {
                 { x = 288, y = 0 },
@@ -23802,7 +23399,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 160, y = -416 },
@@ -23828,7 +23424,6 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
-              opacity = 1,
               gid = 6596,
               visible = true,
               properties = {
@@ -23845,7 +23440,6 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
-              opacity = 1,
               gid = 6598,
               visible = true,
               properties = {
@@ -23862,7 +23456,6 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
-              opacity = 1,
               gid = 6597,
               visible = true,
               properties = {
@@ -23879,7 +23472,6 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
-              opacity = 1,
               gid = 6596,
               visible = true,
               properties = {
@@ -23896,7 +23488,6 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
-              opacity = 1,
               gid = 6597,
               visible = true,
               properties = {
@@ -23913,7 +23504,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7201,
               visible = true,
               properties = {
@@ -23930,7 +23520,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7205,
               visible = true,
               properties = {
@@ -23947,7 +23536,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7212,
               visible = true,
               properties = {
@@ -23964,7 +23552,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7208,
               visible = true,
               properties = {
@@ -23981,7 +23568,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7204,
               visible = true,
               properties = {
@@ -23998,7 +23584,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7208,
               visible = true,
               properties = {
@@ -24015,7 +23600,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7209,
               visible = true,
               properties = {
@@ -24032,7 +23616,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7201,
               visible = true,
               properties = {
@@ -24049,7 +23632,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7205,
               visible = true,
               properties = {}
@@ -24064,7 +23646,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7209,
               visible = true,
               properties = {
@@ -24081,7 +23662,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -24101,7 +23681,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -24121,7 +23700,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -24141,7 +23719,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -24158,7 +23735,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -24175,7 +23751,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -24192,7 +23767,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -24209,7 +23783,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6681,
               visible = true,
               properties = {
@@ -24226,7 +23799,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6674,
               visible = true,
               properties = {
@@ -24243,7 +23815,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6623,
               visible = true,
               properties = {
@@ -24260,7 +23831,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -24277,7 +23847,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -24294,7 +23863,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -24311,7 +23879,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -24328,7 +23895,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -24345,7 +23911,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -24362,7 +23927,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6622,
               visible = true,
               properties = {
@@ -24379,7 +23943,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7225,
               visible = true,
               properties = {
@@ -24396,7 +23959,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6623,
               visible = true,
               properties = {
@@ -24413,7 +23975,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6674,
               visible = true,
               properties = {
@@ -24430,7 +23991,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 7225,
               visible = true,
               properties = {
@@ -24447,7 +24007,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6678,
               visible = true,
               properties = {
@@ -24464,7 +24023,6 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              opacity = 1,
               gid = 6682,
               visible = true,
               properties = {
@@ -24499,7 +24057,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -24516,7 +24073,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -24533,7 +24089,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -24550,7 +24105,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -24585,7 +24139,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -24606,7 +24159,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -24620,7 +24172,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -24655,7 +24206,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -24676,7 +24226,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -24690,7 +24239,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -24725,7 +24273,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -24746,7 +24293,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -24760,7 +24306,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -24777,7 +24322,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -24810,7 +24354,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = -64, y = 64 },
@@ -24840,7 +24383,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polyline = {
                 { x = -320, y = 0 },
@@ -24858,7 +24400,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 32, y = -128 },
@@ -24903,7 +24444,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = -64, y = 64 },
@@ -24933,7 +24473,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 32, y = -128 },
@@ -24960,7 +24499,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = -32, y = -160 },
@@ -24987,7 +24525,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = -32, y = -160 },
@@ -25015,7 +24552,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 0, y = -160 },
@@ -25042,7 +24578,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polyline = {
                 { x = 160, y = 0 },
@@ -25078,7 +24613,6 @@ return {
               width = 192,
               height = 192,
               rotation = 0,
-              opacity = 1,
               gid = 7233,
               visible = true,
               properties = {
@@ -25113,7 +24647,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -25130,7 +24663,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -25147,7 +24679,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -25180,7 +24711,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -25197,7 +24727,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -25230,7 +24759,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -25254,7 +24782,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -25278,7 +24805,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -25294,7 +24820,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -25310,7 +24835,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -25324,7 +24848,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             }
@@ -25354,7 +24877,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7274,
               visible = true,
               properties = {
@@ -25371,7 +24893,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7274,
               visible = true,
               properties = {
@@ -25404,7 +24925,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -25428,7 +24948,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -25452,7 +24971,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -25468,7 +24986,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -25484,7 +25001,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -25498,7 +25014,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             }
@@ -25528,7 +25043,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7272,
               visible = true,
               properties = {
@@ -25580,7 +25094,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
@@ -25598,7 +25111,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -25615,7 +25127,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -25632,7 +25143,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -25649,7 +25159,6 @@ return {
               width = 30,
               height = 6,
               rotation = 0,
-              opacity = 1,
               visible = false,
               properties = {
                 ["color"] = "#ffffffff"
@@ -25681,7 +25190,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -25705,7 +25213,6 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
-              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -25729,7 +25236,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -25745,7 +25251,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -25761,7 +25266,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -25775,7 +25279,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {}
             }
@@ -25805,7 +25308,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -25829,7 +25331,6 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
-              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -25853,7 +25354,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -25869,7 +25369,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -25885,7 +25384,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -25901,7 +25399,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -25933,7 +25430,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polygon = {
                 { x = 512, y = 0 },
@@ -25961,7 +25457,6 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
-              opacity = 1,
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
@@ -25999,11 +25494,10 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Teach basic combat with first low-level enemies",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           properties = {}
@@ -26018,11 +25512,10 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Introduce dodging enemy encouraging player to use run in combat",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           valign = "bottom",
@@ -26038,11 +25531,10 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Teach long-range combat with stones to throw at slingers\nAvoid their stones then pick up and throw them back",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           valign = "bottom",
@@ -26058,11 +25550,10 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Teach grabbing with guarding enemy and barrier broken only by thrown enemy",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           valign = "bottom",
@@ -26078,11 +25569,10 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Entry hall with archers shooting from arrow slits",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           valign = "bottom",
@@ -26098,11 +25588,10 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Guard room introducing mace enemies",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           valign = "bottom",
@@ -26118,11 +25607,10 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Armory with mixed enemies and introducing throwable weapons",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           valign = "bottom",
@@ -26138,11 +25626,10 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Mess hall with food, throwable and breakable furniture, stronger mix of enemies",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           valign = "bottom",
@@ -26158,11 +25645,10 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Boss arena",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           valign = "bottom",
@@ -26178,11 +25664,10 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "End room\n\nHolding cells with captured kids",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           valign = "bottom",
@@ -26198,11 +25683,10 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Teach movement - walking and running",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           valign = "bottom",
@@ -26218,11 +25702,10 @@ return {
           width = 160,
           height = 64,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Vines",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26241,11 +25724,10 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Vines",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26264,11 +25746,10 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Vines",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26287,11 +25768,10 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Vines",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26310,11 +25790,10 @@ return {
           width = 160,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Torches",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26333,7 +25812,6 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Stool",
           fontfamily = "TinyUnicode",
@@ -26355,7 +25833,6 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Stool",
           fontfamily = "TinyUnicode",
@@ -26377,11 +25854,10 @@ return {
           width = 160,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Torches",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26400,11 +25876,10 @@ return {
           width = 96,
           height = 64,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Table",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26423,11 +25898,10 @@ return {
           width = 512,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Torches between alcoves",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26446,11 +25920,10 @@ return {
           width = 512,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Torches between alcoves",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26469,7 +25942,6 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Stool",
           fontfamily = "TinyUnicode",
@@ -26491,7 +25963,6 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Stool",
           fontfamily = "TinyUnicode",
@@ -26513,7 +25984,6 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Stool",
           fontfamily = "TinyUnicode",
@@ -26535,7 +26005,6 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Stool",
           fontfamily = "TinyUnicode",
@@ -26557,11 +26026,10 @@ return {
           width = 96,
           height = 64,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Weapon table",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26580,11 +26048,10 @@ return {
           width = 96,
           height = 64,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Weapon table",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26603,11 +26070,10 @@ return {
           width = 96,
           height = 64,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Weapon table",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26626,7 +26092,6 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Anvil",
           fontfamily = "TinyUnicode",
@@ -26648,7 +26113,6 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Forge",
           fontfamily = "TinyUnicode",
@@ -26670,7 +26134,6 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Hammer",
           fontfamily = "TinyUnicode",
@@ -26692,7 +26155,6 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Table",
           fontfamily = "TinyUnicode",
@@ -26714,11 +26176,10 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Table",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26737,11 +26198,10 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Table",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26760,11 +26220,10 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Table",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26783,11 +26242,10 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Table",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26806,11 +26264,10 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Table",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26829,11 +26286,10 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Table",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26852,11 +26308,10 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Table",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26875,11 +26330,10 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Table",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26898,11 +26352,10 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Bench",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26921,11 +26374,10 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Bench",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26944,11 +26396,10 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Bench",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26967,11 +26418,10 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Bench",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -26990,11 +26440,10 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Bench",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -27013,11 +26462,10 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Bench",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -27036,11 +26484,10 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Bench",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -27059,11 +26506,10 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Bench",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -27082,11 +26528,10 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Bench",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -27105,11 +26550,10 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Bench",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -27128,11 +26572,10 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Bench",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -27151,11 +26594,10 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Bench",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -27174,11 +26616,10 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Bench",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -27197,11 +26638,10 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Bench",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -27220,11 +26660,10 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Bench",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",
@@ -27243,11 +26682,10 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           text = "Bench",
-          fontfamily = "Silver",
-          pixelsize = 19,
+          fontfamily = "Unifont",
+          pixelsize = 32,
           wrap = true,
           color = { 255, 255, 255 },
           halign = "center",

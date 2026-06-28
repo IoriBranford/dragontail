@@ -48,7 +48,7 @@
     </properties>
    </object>
    <object id="7" name="name" x="56" y="16" width="96" height="16">
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Rose</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Rose</text>
    </object>
   </objectgroup>
  </group>

@@ -253,40 +253,40 @@
  </group>
  <objectgroup id="3" name="notes">
   <object id="1" x="320" y="352" width="640" height="128">
-   <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Teach basic combat with first low-level enemies</text>
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff">Teach basic combat with first low-level enemies</text>
   </object>
   <object id="2" x="960" y="-160" width="640" height="128">
-   <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" valign="bottom">Introduce dodging enemy encouraging player to use run in combat</text>
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Introduce dodging enemy encouraging player to use run in combat</text>
   </object>
   <object id="37" x="1600" y="-160" width="640" height="128">
-   <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" valign="bottom">Teach long-range combat with stones to throw at slingers
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Teach long-range combat with stones to throw at slingers
 Avoid their stones then pick up and throw them back</text>
   </object>
   <object id="3" x="1920" y="-360" width="640" height="128">
-   <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" valign="bottom">Teach grabbing with guarding enemy and barrier broken only by thrown enemy</text>
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Teach grabbing with guarding enemy and barrier broken only by thrown enemy</text>
   </object>
   <object id="4" x="2560" y="-360" width="640" height="128">
-   <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" valign="bottom">Entry hall with archers shooting from arrow slits</text>
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Entry hall with archers shooting from arrow slits</text>
   </object>
   <object id="5" x="3200" y="-360" width="640" height="128">
-   <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" valign="bottom">Guard room introducing mace enemies</text>
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Guard room introducing mace enemies</text>
   </object>
   <object id="6" x="3840" y="-360" width="640" height="128">
-   <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" valign="bottom">Armory with mixed enemies and introducing throwable weapons</text>
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Armory with mixed enemies and introducing throwable weapons</text>
   </object>
   <object id="7" x="4480" y="-360" width="640" height="128">
-   <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" valign="bottom">Mess hall with food, throwable and breakable furniture, stronger mix of enemies</text>
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Mess hall with food, throwable and breakable furniture, stronger mix of enemies</text>
   </object>
   <object id="8" x="5120" y="-360" width="640" height="128">
-   <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" valign="bottom">Boss arena</text>
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Boss arena</text>
   </object>
   <object id="9" x="5760" y="-360" width="640" height="128">
-   <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" valign="bottom">End room
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">End room
 
 Holding cells with captured kids</text>
   </object>
   <object id="13" x="0" y="-128" width="640" height="128">
-   <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" valign="bottom">Teach movement - walking and running</text>
+   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Teach movement - walking and running</text>
   </object>
  </objectgroup>
 </map>

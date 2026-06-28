@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="23" nextobjectid="165">
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="23" nextobjectid="165">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -133,7 +133,7 @@
 ALL CONTENT SUBJECT TO CHANGE</text>
    </object>
    <object id="137" name="clearenemiesprompt" x="80" y="54" width="320" height="54" visible="0">
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="center" valign="center">Push SELECT button or DELETE key
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">Push SELECT button or DELETE key
 to clear lost enemies</text>
    </object>
   </objectgroup>
@@ -177,7 +177,7 @@ to clear lost enemies</text>
   </objectgroup>
   <objectgroup id="10" name="hud_weapon" visible="0">
    <object id="15" name="weaponname" x="48" y="45" width="90" height="18">
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Weapon</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Weapon</text>
    </object>
    <object id="16" name="count" x="48" y="63" width="16" height="9">
     <text fontfamily="Press Start 2P" pixelsize="8" wrap="1" color="#ffffff" halign="center">99</text>
@@ -331,44 +331,44 @@ to clear lost enemies</text>
    </properties>
    <object id="76" template="gui/menu/Panel.tx" x="136" y="85.5" width="208" height="144"/>
    <object id="8" name="name" x="192" y="54" width="96" height="18" visible="0">
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="center">PAUSE</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">PAUSE</text>
    </object>
    <object id="72" template="gui/menu/pause/Button.tx" name="Options" type="Gui.Button" x="184" y="121.5">
     <properties>
      <property name="action" value="openMenu"/>
      <property name="guipath" value="options.simple"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Options</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Options</text>
    </object>
    <object id="116" template="gui/menu/pause/Button.tx" name="Resume" type="Gui.Button" x="184" y="94.5">
     <properties>
      <property name="action" value="unpauseGame"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Resume</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Resume</text>
    </object>
    <object id="73" template="gui/menu/pause/Button.tx" name="Restart checkpoint" type="Gui.Button" x="184" y="148.5" width="144" height="18">
     <properties>
      <property name="action" value="restartStageCheckpoint"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Restart checkpoint</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Restart checkpoint</text>
    </object>
    <object id="93" template="gui/menu/pause/Button.tx" name="Restart stage" type="Gui.Button" x="184" y="175.5" width="144" height="18">
     <properties>
      <property name="action" value="restartStage"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Restart stage</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Restart stage</text>
    </object>
    <object id="75" template="gui/menu/pause/Button.tx" name="Quit" type="Gui.Button" x="184" y="202.5" width="144" height="18">
     <properties>
      <property name="action" value="quit"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Quit</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Quit</text>
    </object>
    <object id="86" template="gui/menu/Button_openMenu.tx" name="Debug" type="Gui.Button" x="184" y="229.5">
     <properties>
      <property name="guipath" value="gameplay.debugmenu"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Debug</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Debug</text>
    </object>
    <object id="74" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="152" y="103.5"/>
   </objectgroup>
@@ -378,63 +378,63 @@ to clear lost enemies</text>
    </properties>
    <object id="82" template="gui/menu/Panel.tx" x="112" y="36" width="256" height="198"/>
    <object id="83" name="name" x="192" y="9" width="96" height="18">
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="center">DEBUG</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">DEBUG</text>
    </object>
    <object id="85" template="gui/menu/settings/Label.tx" name="Show hitboxes" x="128" y="108" width="176" height="18">
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Show hitboxes</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Show hitboxes</text>
    </object>
    <object id="147" template="gui/menu/settings/Label.tx" name="Show input" x="128" y="90" width="176" height="18">
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Show input</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Show input</text>
    </object>
    <object id="141" template="gui/menu/settings/Label.tx" name="Smooth movement" x="128" y="72" width="176" height="18">
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Smooth movement</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Smooth movement</text>
    </object>
    <object id="91" template="gui/menu/settings/Label.tx" name="Game speed" x="128" y="126" width="168" height="18">
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Game speed</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Game speed</text>
    </object>
    <object id="140" template="gui/menu/settings/Label.tx" name="/60" x="328" y="126" width="24" height="18">
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">/60</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">/60</text>
    </object>
    <object id="89" template="gui/menu/settings/Label.tx" name="Refill player" type="Gui.Button" x="128" y="54" width="224" height="18">
     <properties>
      <property name="action" value="refillPlayers"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Refill player</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Refill player</text>
    </object>
    <object id="149" template="gui/menu/settings/Label.tx" name="Restart at midpoint" type="Gui.Button" x="128" y="144" width="224" height="18">
     <properties>
      <property name="action" value="restartStage"/>
      <property name="checkpoint" value="entryhall"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Restart at midpoint</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Restart at midpoint</text>
    </object>
    <object id="151" template="gui/menu/settings/Label.tx" name="Restart at boss" type="Gui.Button" x="128" y="162" width="224" height="18">
     <properties>
      <property name="action" value="restartStage"/>
      <property name="checkpoint" value="boss"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Restart at boss</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Restart at boss</text>
    </object>
    <object id="84" template="gui/menu/settings/Slider.tx" name="drawbodies" type="Gui.Slider" x="128" y="108" width="224" height="18">
     <properties>
      <property name="configkey" value="drawbodies"/>
      <property name="label" type="object" value="85"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="right">OFF</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
    </object>
    <object id="146" template="gui/menu/settings/Slider.tx" name="drawinput" type="Gui.Slider" x="128" y="90" width="224" height="18">
     <properties>
      <property name="configkey" value="drawinput"/>
      <property name="label" type="object" value="147"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="right">OFF</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
    </object>
    <object id="142" template="gui/menu/settings/Slider.tx" name="variableupdate" type="Gui.Slider" x="128" y="72" width="224" height="18">
     <properties>
      <property name="configkey" value="variableupdate"/>
      <property name="label" type="object" value="141"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="right">OFF</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
    </object>
    <object id="90" template="gui/menu/settings/Slider.tx" name="fixedupdaterate" type="Gui.Slider" x="128" y="126" width="200" height="18">
     <properties>
@@ -444,7 +444,7 @@ to clear lost enemies</text>
      <property name="max" type="float" value="100"/>
      <property name="min" type="float" value="10"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="right">60</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">60</text>
    </object>
    <object id="87" template="gui/menu/Button_closeMenu.tx" type="Gui.Button" x="128" y="198"/>
    <object id="88" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="100" y="63"/>
@@ -458,19 +458,19 @@ to clear lost enemies</text>
     <properties>
      <property name="action" value="restartStageCheckpoint"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Restart checkpoint</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Restart checkpoint</text>
    </object>
    <object id="92" template="gui/menu/pause/Button.tx" name="Restart stage" type="Gui.Button" x="184" y="126" width="144" height="18">
     <properties>
      <property name="action" value="restartStage"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Restart stage</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Restart stage</text>
    </object>
    <object id="80" template="gui/menu/pause/Button.tx" name="Quit" type="Gui.Button" x="184" y="153">
     <properties>
      <property name="action" value="quit"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Quit</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Quit</text>
    </object>
    <object id="81" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="152" y="108"/>
   </objectgroup>
@@ -478,10 +478,10 @@ to clear lost enemies</text>
  <group id="17" name="titlescreen" visible="0">
   <objectgroup id="7" name="title">
    <object id="10" name="pressstart" x="0" y="175.5" width="480" height="54">
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="center" valign="center">PRESS ANY KEY OR BUTTON</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">PRESS ANY KEY OR BUTTON</text>
    </object>
    <object id="11" name="copyright" x="0" y="234" width="480" height="18">
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="center" valign="center">© 2026 Iori Branford</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">© 2026 Iori Branford</text>
    </object>
    <object id="101" gid="414" x="0" y="0" width="480" height="270">
     <properties>
@@ -494,20 +494,20 @@ to clear lost enemies</text>
     <properties>
      <property name="action" value="restartStage"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">START</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">START</text>
    </object>
    <object id="104" name="OPTIONS" type="Gui.Button" x="228" y="193.5" width="64" height="18">
     <properties>
      <property name="action" value="openMenu"/>
      <property name="guipath" value="options.root"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">OPTIONS</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">OPTIONS</text>
    </object>
    <object id="105" name="QUIT" type="Gui.Button" x="228" y="211.5" width="64" height="18">
     <properties>
      <property name="action" value="quit"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">QUIT</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">QUIT</text>
    </object>
    <object id="103" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="196" y="184.5"/>
    <object id="106" template="gui/menu/Panel.tx" x="176" y="171" width="128" height="63"/>
@@ -526,10 +526,10 @@ to clear lost enemies</text>
      <property name="label" type="object" value="111"/>
      <property name="refreshaction" value="refreshFullscreen"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="right">OFF</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
    </object>
    <object id="111" name="Full screen" x="168" y="36" width="144" height="18">
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Full screen</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Full screen</text>
    </object>
    <object id="139" template="gui/menu/settings/Slider.tx" name="vsync" type="Gui.Slider" x="168" y="63" width="176" height="18">
     <properties>
@@ -537,10 +537,10 @@ to clear lost enemies</text>
      <property name="label" type="object" value="138"/>
      <property name="refreshaction" value="refreshVsync"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="right">OFF</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
    </object>
    <object id="138" name="Vsync" x="168" y="63" width="144" height="18">
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Vsync</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Vsync</text>
    </object>
    <object id="112" template="gui/menu/settings/Slider.tx" name="soundvolume" type="Gui.Slider" x="168" y="90" width="176" height="18">
     <properties>
@@ -550,10 +550,10 @@ to clear lost enemies</text>
      <property name="max" type="float" value="1"/>
      <property name="units" propertytype="SliderUnit" value="percent"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="right">100</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">100</text>
    </object>
    <object id="113" name="Sound volume" x="168" y="90" width="144" height="18">
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Sound volume</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Sound volume</text>
    </object>
    <object id="114" template="gui/menu/settings/Slider.tx" name="musicvolume" type="Gui.Slider" x="168" y="117" width="176" height="18">
     <properties>
@@ -564,10 +564,10 @@ to clear lost enemies</text>
      <property name="refreshaction" value="refreshMusicVolume"/>
      <property name="units" propertytype="SliderUnit" value="percent"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="right">100</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">100</text>
    </object>
    <object id="115" name="Music volume" x="168" y="117" width="144" height="18">
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Music volume</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Music volume</text>
    </object>
    <object id="118" template="gui/menu/settings/Slider.tx" name="soundtrack" type="Gui.Slider" x="168" y="144" width="176" height="18">
     <properties>
@@ -585,7 +585,7 @@ to clear lost enemies</text>
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="right">Retro Chiptune Guitar</text>
    </object>
    <object id="117" name="Music" x="168" y="144" width="144" height="18">
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Music</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Music</text>
    </object>
    <object id="153" template="gui/menu/settings/Slider.tx" name="input_invertgrab" type="Gui.Slider" x="168" y="171" width="176" height="18">
     <properties>
@@ -593,16 +593,16 @@ to clear lost enemies</text>
      <property name="label" type="object" value="154"/>
      <property name="refreshaction" value="refreshFullscreen"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="right">OFF</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
    </object>
    <object id="154" name="Invert grab btn" x="168" y="171" width="144" height="18">
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Invert grab button</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Invert grab button</text>
    </object>
    <object id="108" name="Close" type="Gui.Button" x="168" y="216" width="64" height="18">
     <properties>
      <property name="action" value="closeMenu"/>
     </properties>
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Close</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Close</text>
    </object>
   </objectgroup>
  </group>
