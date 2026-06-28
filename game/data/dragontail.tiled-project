@@ -193,6 +193,59 @@
         {
             "color": "#ffa0a0a4",
             "drawFill": true,
+            "id": 16,
+            "members": [
+                {
+                    "name": "changesound",
+                    "type": "file",
+                    "value": ""
+                },
+                {
+                    "name": "configkey",
+                    "type": "string",
+                    "value": ""
+                },
+                {
+                    "name": "disabled",
+                    "type": "bool",
+                    "value": false
+                },
+                {
+                    "name": "increment",
+                    "type": "float",
+                    "value": 1
+                },
+                {
+                    "name": "label",
+                    "type": "object",
+                    "value": 0
+                },
+                {
+                    "name": "max",
+                    "type": "float",
+                    "value": 1
+                },
+                {
+                    "name": "min",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "refreshaction",
+                    "type": "string",
+                    "value": ""
+                }
+            ],
+            "name": "Gui.Slider",
+            "type": "class",
+            "useAs": [
+                "object",
+                "project"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
             "id": 9,
             "members": [
                 {
