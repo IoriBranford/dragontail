@@ -4,6 +4,7 @@
   <properties>
    <property name="action" value="openMenu"/>
    <property name="guipath" value=""/>
+   <property name="presssound" type="file" value=""/>
   </properties>
   <text fontfamily="Unifont" wrap="1" color="#ffffff">Open menu</text>
  </object>

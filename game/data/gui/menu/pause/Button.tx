@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template>
  <object name="Button" type="Gui.Button" width="64" height="18">
+  <properties>
+   <property name="presssound" type="file" value=""/>
+  </properties>
   <text fontfamily="Unifont" wrap="1" color="#ffffff">Button</text>
  </object>
 </template>
