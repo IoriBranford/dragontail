@@ -1,4 +1,4 @@
-local TileAtlas             = require("Tiled.TileAtlas")
+local TileAtlas             = require("TileAtlas")
 local hasAseprite, Aseprite = pcall(require, "Aseprite")
 local pathlite = require "Tiled.pathlite"
 
