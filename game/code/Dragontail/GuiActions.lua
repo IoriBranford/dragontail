@@ -5,6 +5,11 @@ local Config    = require "System.Config"
 
 local GameGuiActions = class(GuiActions)
 
+function GameGuiActions.openTitleMainMenu()
+    local TitlePhase= require "Dragontail.TitlePhase"
+    TitlePhase.pushMainMenu()
+end
+
 function GameGuiActions.playSelectedMusic()
     local music = Audio.playMusic("data/music/"..Config.soundtrack..".ogg")
     if music then
