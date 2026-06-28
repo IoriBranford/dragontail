@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.1",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,8 +9,8 @@ return {
   height = 15,
   tilewidth = 16,
   tileheight = 18,
-  nextlayerid = 23,
-  nextobjectid = 165,
+  nextlayerid = 26,
+  nextobjectid = 169,
   properties = {},
   tilesets = {
     {
@@ -84,6 +84,12 @@ return {
       firstgid = 435,
       filename = "sprites/ui/go-arrowhead.tsx",
       exportfilename = "sprites/ui/go-arrowhead.lua"
+    },
+    {
+      name = "title-illust",
+      firstgid = 451,
+      filename = "sprites/ui/title-illust.tsx",
+      exportfilename = "sprites/ui/title-illust.lua"
     }
   },
   layers = {
@@ -92,7 +98,7 @@ return {
       id = 4,
       name = "gameplay",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -1638,7 +1644,8 @@ return {
               color = { 255, 255, 255 },
               properties = {
                 ["action"] = "openMenu",
-                ["guipath"] = "options.simple"
+                ["guipath"] = "options.simple",
+                ["presssound"] = ""
               }
             },
             {
@@ -1658,7 +1665,8 @@ return {
               wrap = true,
               color = { 255, 255, 255 },
               properties = {
-                ["action"] = "unpauseGame"
+                ["action"] = "unpauseGame",
+                ["presssound"] = ""
               }
             },
             {
@@ -1678,7 +1686,8 @@ return {
               wrap = true,
               color = { 255, 255, 255 },
               properties = {
-                ["action"] = "restartStageCheckpoint"
+                ["action"] = "restartStageCheckpoint",
+                ["presssound"] = ""
               }
             },
             {
@@ -1698,7 +1707,8 @@ return {
               wrap = true,
               color = { 255, 255, 255 },
               properties = {
-                ["action"] = "restartStage"
+                ["action"] = "restartStage",
+                ["presssound"] = ""
               }
             },
             {
@@ -1718,7 +1728,8 @@ return {
               wrap = true,
               color = { 255, 255, 255 },
               properties = {
-                ["action"] = "quit"
+                ["action"] = "quit",
+                ["presssound"] = ""
               }
             },
             {
@@ -1739,7 +1750,8 @@ return {
               color = { 255, 255, 255 },
               properties = {
                 ["action"] = "openMenu",
-                ["guipath"] = "gameplay.debugmenu"
+                ["guipath"] = "gameplay.debugmenu",
+                ["presssound"] = ""
               }
             },
             {
@@ -2093,7 +2105,8 @@ return {
               wrap = true,
               color = { 255, 255, 255 },
               properties = {
-                ["action"] = "closeMenu"
+                ["action"] = "closeMenu",
+                ["presssound"] = ""
               }
             },
             {
@@ -2211,7 +2224,8 @@ return {
               wrap = true,
               color = { 255, 255, 255 },
               properties = {
-                ["action"] = "restartStageCheckpoint"
+                ["action"] = "restartStageCheckpoint",
+                ["presssound"] = ""
               }
             },
             {
@@ -2231,7 +2245,8 @@ return {
               wrap = true,
               color = { 255, 255, 255 },
               properties = {
-                ["action"] = "restartStage"
+                ["action"] = "restartStage",
+                ["presssound"] = ""
               }
             },
             {
@@ -2251,7 +2266,8 @@ return {
               wrap = true,
               color = { 255, 255, 255 },
               properties = {
-                ["action"] = "quit"
+                ["action"] = "quit",
+                ["presssound"] = ""
               }
             },
             {
@@ -2280,9 +2296,9 @@ return {
     {
       type = "group",
       id = 17,
-      name = "titlescreen",
+      name = "title",
       class = "",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -2305,33 +2321,30 @@ return {
           properties = {},
           objects = {
             {
-              id = 10,
-              name = "pressstart",
+              id = 101,
+              name = "illust",
               type = "",
-              shape = "text",
+              shape = "rectangle",
               x = 0,
-              y = 175.5,
+              y = 0,
               width = 480,
-              height = 54,
+              height = 270,
               rotation = 0,
               opacity = 1,
+              gid = 451,
               visible = true,
-              text = "PRESS ANY KEY OR BUTTON",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
-              halign = "center",
-              valign = "center",
-              properties = {}
+              properties = {
+                ["asetag"] = "Flaming"
+              }
             },
             {
               id = 11,
               name = "copyright",
               type = "",
               shape = "text",
-              x = 0,
+              x = 36,
               y = 234,
-              width = 480,
+              width = 412,
               height = 18,
               rotation = 0,
               opacity = 1,
@@ -2343,10 +2356,48 @@ return {
               halign = "center",
               valign = "center",
               properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 25,
+          name = "pressstart",
+          class = "Gui.Menu",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 10,
+              name = "Button",
+              type = "Gui.Button",
+              shape = "text",
+              x = 208,
+              y = 180,
+              width = 64,
+              height = 18,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              text = "PRESS -",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {
+                ["action"] = "openTitleMainMenu",
+                ["presssound"] = "sounds/combat/heavyswingandhit.ogg"
+              }
             },
             {
-              id = 101,
-              name = "",
+              id = 165,
+              name = "logo",
               type = "",
               shape = "rectangle",
               x = 0,
@@ -2360,91 +2411,14 @@ return {
               properties = {
                 ["asetag"] = "Flaming"
               }
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
-          id = 18,
-          name = "menu",
-          class = "Gui.Menu",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {},
-          objects = {
-            {
-              id = 102,
-              name = "START",
-              type = "Gui.Button",
-              shape = "text",
-              x = 228,
-              y = 175.5,
-              width = 64,
-              height = 18,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              text = "START",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
-              properties = {
-                ["action"] = "restartStage"
-              }
             },
             {
-              id = 104,
-              name = "OPTIONS",
-              type = "Gui.Button",
-              shape = "text",
-              x = 228,
-              y = 193.5,
-              width = 64,
-              height = 18,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              text = "OPTIONS",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
-              properties = {
-                ["action"] = "openMenu",
-                ["guipath"] = "options.root"
-              }
-            },
-            {
-              id = 105,
-              name = "QUIT",
-              type = "Gui.Button",
-              shape = "text",
-              x = 228,
-              y = 211.5,
-              width = 64,
-              height = 18,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              text = "QUIT",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
-              properties = {
-                ["action"] = "quit"
-              }
-            },
-            {
-              id = 103,
+              id = 166,
               name = "",
               type = "Gui.Cursor",
               shape = "rectangle",
-              x = 196,
-              y = 184.5,
+              x = 304,
+              y = 189,
               width = 64,
               height = 64,
               rotation = 0,
@@ -2452,27 +2426,172 @@ return {
               gid = 409,
               visible = true,
               properties = {
-                ["alignx"] = -1,
+                ["alignx"] = 0.5,
                 ["aligny"] = 0,
                 ["asetag"] = "Spit0"
               }
             },
             {
-              id = 106,
+              id = 167,
+              name = "",
+              type = "Gui.Cursor",
+              shape = "rectangle",
+              x = 176,
+              y = 189,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 409,
+              visible = true,
+              properties = {
+                ["alignx"] = -0.5,
+                ["aligny"] = 0,
+                ["asetag"] = "Spit6"
+              }
+            },
+            {
+              id = 168,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 176,
-              y = 171,
-              width = 128,
-              height = 63,
+              x = 264,
+              y = 189,
+              width = 14,
+              height = 14,
               rotation = 0,
               opacity = 1,
+              gid = 415,
               visible = true,
-              properties = {
-                ["color"] = "#a0c52021",
-                ["linecolor"] = "#ffff6161",
-                ["roundcorners"] = 8
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "group",
+          id = 24,
+          name = "mainmenus",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          layers = {
+            {
+              type = "objectgroup",
+              draworder = "topdown",
+              id = 18,
+              name = "normal",
+              class = "Gui.Menu",
+              visible = true,
+              opacity = 1,
+              offsetx = 0,
+              offsety = 0,
+              parallaxx = 1,
+              parallaxy = 1,
+              properties = {},
+              objects = {
+                {
+                  id = 106,
+                  name = "",
+                  type = "",
+                  shape = "rectangle",
+                  x = 32,
+                  y = 108,
+                  width = 128,
+                  height = 108,
+                  rotation = 0,
+                  opacity = 1,
+                  visible = true,
+                  properties = {
+                    ["color"] = "#a0c52021",
+                    ["linecolor"] = "#ffff6161",
+                    ["roundcorners"] = 8
+                  }
+                },
+                {
+                  id = 102,
+                  name = "START",
+                  type = "Gui.Button",
+                  shape = "text",
+                  x = 84,
+                  y = 126,
+                  width = 64,
+                  height = 18,
+                  rotation = 0,
+                  opacity = 1,
+                  visible = true,
+                  text = "START",
+                  fontfamily = "Unifont",
+                  wrap = true,
+                  color = { 255, 255, 255 },
+                  properties = {
+                    ["action"] = "restartStage"
+                  }
+                },
+                {
+                  id = 104,
+                  name = "OPTIONS",
+                  type = "Gui.Button",
+                  shape = "text",
+                  x = 84,
+                  y = 153,
+                  width = 64,
+                  height = 18,
+                  rotation = 0,
+                  opacity = 1,
+                  visible = true,
+                  text = "OPTIONS",
+                  fontfamily = "Unifont",
+                  wrap = true,
+                  color = { 255, 255, 255 },
+                  properties = {
+                    ["action"] = "openMenu",
+                    ["guipath"] = "options.simple"
+                  }
+                },
+                {
+                  id = 105,
+                  name = "QUIT",
+                  type = "Gui.Button",
+                  shape = "text",
+                  x = 84,
+                  y = 180,
+                  width = 64,
+                  height = 18,
+                  rotation = 0,
+                  opacity = 1,
+                  visible = true,
+                  text = "QUIT",
+                  fontfamily = "Unifont",
+                  wrap = true,
+                  color = { 255, 255, 255 },
+                  properties = {
+                    ["action"] = "quitGame"
+                  }
+                },
+                {
+                  id = 103,
+                  name = "",
+                  type = "Gui.Cursor",
+                  shape = "rectangle",
+                  x = 52,
+                  y = 135,
+                  width = 64,
+                  height = 64,
+                  rotation = 0,
+                  opacity = 1,
+                  gid = 409,
+                  visible = true,
+                  properties = {
+                    ["alignx"] = -1,
+                    ["aligny"] = 0,
+                    ["asetag"] = "Spit0"
+                  }
+                }
               }
             }
           }

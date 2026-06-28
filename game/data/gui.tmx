@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="23" nextobjectid="165">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="26" nextobjectid="169">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -15,7 +15,8 @@
  <tileset firstgid="414" source="sprites/ui/title.tsx"/>
  <tileset firstgid="415" source="tilesets/ui/Gamepad Spritesheets/Xbox.tsx"/>
  <tileset firstgid="435" source="sprites/ui/go-arrowhead.tsx"/>
- <group id="4" name="gameplay">
+ <tileset firstgid="451" source="sprites/ui/title-illust.tsx"/>
+ <group id="4" name="gameplay" visible="0">
   <objectgroup draworder="index" id="2" name="hud">
    <object id="4" name="run" type="Gui.Gauge" x="52" y="33" width="100" height="8" visible="0">
     <properties>
@@ -475,43 +476,68 @@ to clear lost enemies</text>
    <object id="81" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="152" y="108"/>
   </objectgroup>
  </group>
- <group id="17" name="titlescreen" visible="0">
-  <objectgroup id="7" name="title">
-   <object id="10" name="pressstart" x="0" y="175.5" width="480" height="54">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">PRESS ANY KEY OR BUTTON</text>
-   </object>
-   <object id="11" name="copyright" x="0" y="234" width="480" height="18">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">© 2026 Iori Branford</text>
-   </object>
-   <object id="101" gid="414" x="0" y="0" width="480" height="270">
+ <group id="17" name="title">
+  <objectgroup id="7" name="title" locked="1">
+   <object id="101" name="illust" gid="451" x="0" y="0" width="480" height="270">
     <properties>
      <property name="asetag" value="Flaming"/>
     </properties>
    </object>
+   <object id="11" name="copyright" x="36" y="234" width="412" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">© 2026 Iori Branford</text>
+   </object>
   </objectgroup>
-  <objectgroup id="18" name="menu" class="Gui.Menu">
-   <object id="102" name="START" type="Gui.Button" x="228" y="175.5" width="64" height="18">
+  <objectgroup id="25" name="pressstart" class="Gui.Menu">
+   <object id="10" template="gui/menu/pause/Button.tx" type="Gui.Button" x="208" y="180" width="64" height="18">
     <properties>
-     <property name="action" value="restartStage"/>
+     <property name="action" value="openTitleMainMenu"/>
+     <property name="presssound" type="file" value="sounds/combat/heavyswingandhit.ogg"/>
     </properties>
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">START</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">PRESS -</text>
    </object>
-   <object id="104" name="OPTIONS" type="Gui.Button" x="228" y="193.5" width="64" height="18">
+   <object id="165" name="logo" gid="414" x="0" y="0" width="480" height="270">
     <properties>
-     <property name="action" value="openMenu"/>
-     <property name="guipath" value="options.root"/>
+     <property name="asetag" value="Flaming"/>
     </properties>
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">OPTIONS</text>
    </object>
-   <object id="105" name="QUIT" type="Gui.Button" x="228" y="211.5" width="64" height="18">
+   <object id="166" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="304" y="189">
     <properties>
-     <property name="action" value="quit"/>
+     <property name="alignx" type="float" value="0.5"/>
     </properties>
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">QUIT</text>
    </object>
-   <object id="103" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="196" y="184.5"/>
-   <object id="106" template="gui/menu/Panel.tx" x="176" y="171" width="128" height="63"/>
+   <object id="167" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="176" y="189">
+    <properties>
+     <property name="alignx" type="float" value="-0.5"/>
+     <property name="asetag" value="Spit6"/>
+    </properties>
+   </object>
+   <object id="168" gid="415" x="264" y="189" width="14" height="14"/>
   </objectgroup>
+  <group id="24" name="mainmenus">
+   <objectgroup id="18" name="normal" class="Gui.Menu">
+    <object id="106" template="gui/menu/Panel.tx" x="32" y="108" width="128" height="108"/>
+    <object id="102" name="START" type="Gui.Button" x="84" y="126" width="64" height="18">
+     <properties>
+      <property name="action" value="restartStage"/>
+     </properties>
+     <text fontfamily="Unifont" wrap="1" color="#ffffff">START</text>
+    </object>
+    <object id="104" name="OPTIONS" type="Gui.Button" x="84" y="153" width="64" height="18">
+     <properties>
+      <property name="action" value="openMenu"/>
+      <property name="guipath" value="options.simple"/>
+     </properties>
+     <text fontfamily="Unifont" wrap="1" color="#ffffff">OPTIONS</text>
+    </object>
+    <object id="105" name="QUIT" type="Gui.Button" x="84" y="180" width="64" height="18">
+     <properties>
+      <property name="action" value="quitGame"/>
+     </properties>
+     <text fontfamily="Unifont" wrap="1" color="#ffffff">QUIT</text>
+    </object>
+    <object id="103" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="52" y="135"/>
+   </objectgroup>
+  </group>
  </group>
  <group id="20" name="options" visible="0">
   <objectgroup draworder="index" id="19" name="simple" class="Gui.Menu">
