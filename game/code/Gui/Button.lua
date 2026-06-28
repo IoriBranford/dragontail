@@ -2,6 +2,7 @@ local GuiObject    = require "Gui.GuiObject"
 local GuiActions   = require "Gui.GuiActions"
 local Graphics     = require "Tiled.Graphics"
 local Color        = require "Tiled.Color"
+local Audio        = require "System.Audio"
 
 ---@class Button:GuiObject
 ---@field action string
@@ -38,6 +39,7 @@ function Button:press()
     if self.disabled then
         GuiActions.playInvalidSound(self.gui, self)
     else
+        Audio.play(self.presssound)
         self:onDeselect()
         self:doAction(self.action)
     end
