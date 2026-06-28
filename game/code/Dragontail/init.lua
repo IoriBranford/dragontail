@@ -9,7 +9,7 @@ local Window = require "System.Window"
 local Stage  = require "Dragontail.Stage"
 local Inputs = require "System.Inputs"
 local Time   = require "System.Time"
-local firstphase = "Dragontail.GamePhase"
+local firstphase = "Dragontail.TitlePhase"
 local firstmap = "data/stage_banditcave.lua"
 
 local defaultgamepadconfig =  {
