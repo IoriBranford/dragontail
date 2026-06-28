@@ -97,6 +97,11 @@
                     "name": "label",
                     "type": "object",
                     "value": 0
+                },
+                {
+                    "name": "presssound",
+                    "type": "file",
+                    "value": ""
                 }
             ],
             "name": "Gui.Button",
