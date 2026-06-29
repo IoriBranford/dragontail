@@ -47,8 +47,8 @@ function Assets.markAllToUncache()
     end
 end
 
-function Assets.uncache(path)
-    if Assets.permanent[path] then
+function Assets.uncache(path, force)
+    if not force or Assets.permanent[path] then
         return
     end
     local ext = path:match("%.(%w-)$")
@@ -57,6 +57,7 @@ function Assets.uncache(path)
         assetgroup[path] = nil
         Assets.touncache[path] = nil
         Assets.all[path] = nil
+        Assets.permanent[path] = nil
     end
 end
 
@@ -222,14 +223,13 @@ function Assets.packTiles()
 
     local packimage = love.graphics.newImage(
         atlas.canvas:newImageData())
-    Assets.put("__atlas.png", packimage)
+    -- Assets.put("__atlas.png", packimage)
     -- atlas:save("atlas")
 
     for _, tileset in pairs(tilesets) do
         if tileset.imagetype == "image" then
             tileset.image = packimage
-            Assets.permanent[tileset.imagefile] = nil
-            Assets.put(tileset.imagefile, packimage)
+            Assets.uncache(tileset.imagefile, true)
             for i = 0, tileset.tilecount-1 do
                 tileset[i].image = packimage
             end
@@ -248,8 +248,7 @@ function Assets.packTiles()
                     end
                 end
             end
-            Assets.permanent[ase.imagefile] = nil
-            Assets.put(ase.imagefile, packimage)
+            Assets.uncache(ase.imagefile, true)
         end
     end
 end

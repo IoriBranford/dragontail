@@ -18,7 +18,8 @@ end
 local function createClass(base, init)
     ---@class Class
     local class = {
-        _init = init
+        _init = init,
+        _base = base
     }
     class.__index = class
 
@@ -42,6 +43,16 @@ local function createClass(base, init)
         local baseinit = base and base._init
         if baseinit then
             baseinit(t)
+        end
+    end
+
+    function class.is(t)
+        local c = class
+        while c do
+            if getmetatable(t) == c then
+                return c
+            end
+            c = c._base
         end
     end
 

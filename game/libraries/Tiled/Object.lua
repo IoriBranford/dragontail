@@ -143,8 +143,8 @@ end
 
 function TiledObject:_init(map)
     if map then
-        Properties.resolveObjectRefs(self.properties, map.objects)
         Properties.resolveAssetPaths(self.properties, map.directory)
+        Properties.resolveObjectRefs(self.properties, map.objects)
     end
     Properties.moveUp(self)
 
@@ -657,6 +657,8 @@ function TiledObject:emitParticles(x, y, num, direction)
 end
 
 function TiledObject:drawParticleSystem()
+    local r,g,b,a = Color.unpack(self.color)
+    love.graphics.setColor(r,g,b,a)
     love.graphics.draw(self.particlesystem)
 end
 

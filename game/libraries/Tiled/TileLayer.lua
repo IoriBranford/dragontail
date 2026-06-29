@@ -70,7 +70,8 @@ function TileLayer:forCells(f)
     local maptiles = self.maptiles
     local chunks = self.chunks
     local cellwidth, cellheight = self.tilewidth, self.tileheight
-    local x, y = self.x, self.y + cellheight
+    local x, y = self:getWorldPosition()
+    y = y + cellheight
     if chunks then
         for _, chunk in ipairs(self.chunks) do
             forCells(f, chunk.data, chunk.columns, chunk.rows, maptiles,
