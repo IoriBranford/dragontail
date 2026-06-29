@@ -126,7 +126,7 @@ end
 
 ---@return Asset? asset
 function Assets.load(path, ...)
-    if type(path) ~= "string" then
+    if type(path) ~= "string" or #path <= 0 then
         return
     end
     local ext = path:match("%.(%w-)$")
@@ -147,7 +147,7 @@ end
 
 ---@return Asset?
 function Assets.get(path, ...)
-    if path then
+    if path and #path > 0 then
         Assets.touncache[path] = nil
         local asset = Assets.all[path]
         if not asset then
