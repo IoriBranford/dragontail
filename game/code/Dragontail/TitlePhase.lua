@@ -5,9 +5,39 @@ local Assets    = require "Tiled.Assets"
 local Config = require "System.Config"
 local Stage  = require "Dragontail.Stage"
 local Canvas = require "System.Canvas"
+local Tiled  = require "Tiled"
+local Path   = require "Object.Path"
 local TitlePhase = {}
 
+local scenemap ---@type TiledMap
+local sceneco ---@type function
+
+local function sceneAnimation()
+    local layers = scenemap.layers
+    local fg = layers.fg
+    local directions = layers.directions
+    layers.logo.visible = false
+    assert(directions and directions.type == "objectgroup")
+    ---@cast directions ObjectGroup
+    local path = directions.path
+    ---@cast path Path
+    Path.cast(path)
+    path:calcLengths()
+    local i, pos = 2, 0
+    repeat
+        i, pos = path:updatePosition1d(i, pos, 50)
+        local x, y = path:getPosition2d(i, pos)
+        fg.x = x + path.x
+        fg.y = y + path.y
+        coroutine.yield()
+    until i > #path.points
+    return true
+end
+
 function TitlePhase.loadphase()
+    scenemap = Tiled.Map.load("data/title_scene.lua")
+    scenemap:indexLayersByName()
+    scenemap:indexLayerObjectsByName()
     Assets.uncacheMarked()
     Assets.packTiles()
     Assets.batchAllMapsLayers()
@@ -20,11 +50,11 @@ function TitlePhase.loadphase()
 end
 
 function TitlePhase.pushMainMenu()
+    sceneco = coroutine.wrap(sceneAnimation)
     local menuname = "normal"
     if Config.exhibit then
         menuname = "exhibit"
     end
-    Gui.title.title.illust:changeAnimation("attack", 1, 0)
     Gui.title.mainmenus:setVisible(true)
     Gui.title.mainmenus:showOnlyNamed()
     Gui:pushMenu(Gui.title.mainmenus[menuname])
@@ -42,6 +72,8 @@ end
 function TitlePhase.quitphase()
     Assets.markAllToUncache()
     Gui:clearMenuStack()
+    scenemap = nil
+    sceneco = nil
 end
 
 function TitlePhase.keypressed(key)
@@ -57,6 +89,11 @@ function TitlePhase.gamepadpressed(gamepad, button)
 end
 
 function TitlePhase.fixedupdate()
+    if sceneco then
+        if sceneco() then
+            sceneco = nil
+        end
+    end
     Gui:fixedupdate()
 end
 
@@ -65,7 +102,10 @@ end
 
 function TitlePhase.draw(fixedfrac)
     -- Wallpaper.draw()
-    Gui:drawOnOwnCanvas()
+    Gui.canvas:drawOn(function()
+        scenemap:draw()
+        Gui:draw()
+    end)
     Gui.canvas:draw()
 end
 
