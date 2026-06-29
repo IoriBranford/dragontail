@@ -89,6 +89,7 @@ function TitlePhase.gamepadpressed(gamepad, button)
 end
 
 function TitlePhase.fixedupdate()
+    scenemap:animate(1)
     if sceneco then
         if sceneco() then
             sceneco = nil
