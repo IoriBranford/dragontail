@@ -1,6 +1,7 @@
+local Object = require "Tiled.Object"
 ---@class Path:TiledObject
 ---@field triggers CharacterTrigger[][]
-local Path = class()
+local Path = class(Object)
 
 function Path:_init()
     self.x = self.x or 0
