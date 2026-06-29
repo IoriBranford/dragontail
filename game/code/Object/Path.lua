@@ -58,7 +58,7 @@ function Path:calcLengths()
         startslengths[i] = seglength
         x, y = x2, y2
         totallength = totallength+seglength
-        print(i, totallength, seglength)
+        -- print(i, totallength, seglength)
     end
     startslengths[#points-1] = totallength
     startslengths[#points] = 0
