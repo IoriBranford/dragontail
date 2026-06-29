@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="10" nextobjectid="3">
+ <editorsettings>
+  <export target="title_scene.lua" format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" source="sprites/ui/title.tsx"/>
+ <imagelayer id="2" name="bg">
+  <image source="sprites/ui/title/illust/bg.png" width="480" height="270"/>
+ </imagelayer>
+ <group id="7" name="fg" offsetx="444" offsety="-90">
+  <imagelayer id="3" name="enemy">
+   <image source="sprites/ui/title/illust/07 Thug_L.png" width="960" height="600"/>
+  </imagelayer>
+  <imagelayer id="5" name="hit">
+   <image source="sprites/ui/title/illust/08 effects L.png" width="960" height="600"/>
+  </imagelayer>
+  <imagelayer id="4" name="Rose">
+   <image source="sprites/ui/title/illust/09 Rose.png" width="960" height="600"/>
+  </imagelayer>
+  <imagelayer id="6" name="swing" offsetx="-68" offsety="4.5">
+   <image source="sprites/ui/title/illust/10 swipe.png" width="960" height="600"/>
+  </imagelayer>
+ </group>
+ <objectgroup id="9" name="logo">
+  <object id="2" name="logo" gid="1" x="0" y="0" width="480" height="270">
+   <properties>
+    <property name="asetag" value="Flaming"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="8" name="directions" visible="0">
+  <object id="1" name="path" x="444" y="-90">
+   <polyline points="0,0 -520,-36"/>
+  </object>
+ </objectgroup>
+</map>
