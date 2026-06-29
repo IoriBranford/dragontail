@@ -1,0 +1,1388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<canvas version="1.1" width="960" height="540" xres="2834.645752" yres="2834.645752" gamma-r="1.000000" gamma-g="1.000000" gamma-b="1.000000" view-box="-4.000000 2.250000 4.000000 -2.250000" antialias="1" fps="60.000" begin-time="0f" end-time="1s 59f" bgcolor="0.500000 0.500000 0.500000 1.000000">
+  <name>Rose of Dragontail moving key art</name>
+  <meta name="background_first_color" content="0.880000 0.880000 0.880000"/>
+  <meta name="background_rendering" content="0"/>
+  <meta name="background_second_color" content="0.650000 0.650000 0.650000"/>
+  <meta name="background_size" content="15.000000 15.000000"/>
+  <meta name="grid_color" content="0.623529 0.623529 0.623529"/>
+  <meta name="grid_show" content="0"/>
+  <meta name="grid_size" content="0.250000 0.250000"/>
+  <meta name="grid_snap" content="0"/>
+  <meta name="guide_color" content="0.435294 0.435294 1.000000"/>
+  <meta name="guide_show" content="1"/>
+  <meta name="guide_snap" content="0"/>
+  <meta name="jack_offset" content="0.000000"/>
+  <meta name="onion_skin" content="0"/>
+  <meta name="onion_skin_future" content="0"/>
+  <meta name="onion_skin_past" content="1"/>
+  <keyframe time="0f" active="true"/>
+  <layer type="switch" active="true" exclude_from_rendering="false" version="0.0" desc="00 sky.png">
+    <param name="z_depth">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="amount">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="blend_method">
+      <integer value="0" static="true"/>
+    </param>
+    <param name="origin">
+      <vector>
+        <x>0.0000000000</x>
+        <y>0.0000000000</y>
+      </vector>
+    </param>
+    <param name="transformation">
+      <composite type="transformation">
+        <offset>
+          <vector>
+            <x>0.0000000000</x>
+            <y>0.0000000000</y>
+          </vector>
+        </offset>
+        <angle>
+          <angle value="0.000000"/>
+        </angle>
+        <skew_angle>
+          <angle value="0.000000"/>
+        </skew_angle>
+        <scale>
+          <vector>
+            <x>1.0000000000</x>
+            <y>1.0000000000</y>
+          </vector>
+        </scale>
+      </composite>
+    </param>
+    <param name="canvas">
+      <canvas end-time="5s">
+        <layer type="import" active="true" exclude_from_rendering="false" version="0.1" desc="00 sky.png">
+          <param name="z_depth">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="amount">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="blend_method">
+            <integer value="0" static="true"/>
+          </param>
+          <param name="tl">
+            <vector>
+              <x>-4.0000000000</x>
+              <y>2.5000000000</y>
+            </vector>
+          </param>
+          <param name="br">
+            <vector>
+              <x>4.0000000000</x>
+              <y>-2.5000000000</y>
+            </vector>
+          </param>
+          <param name="c">
+            <integer value="1" static="true"/>
+          </param>
+          <param name="gamma_adjust">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="filename">
+            <string>00 sky.png</string>
+          </param>
+          <param name="time_offset">
+            <time value="0s"/>
+          </param>
+        </layer>
+      </canvas>
+    </param>
+    <param name="time_dilation">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="time_offset">
+      <time value="0s"/>
+    </param>
+    <param name="children_lock">
+      <bool value="true" static="true"/>
+    </param>
+    <param name="outline_grow">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="layer_name">
+      <string>00 sky.png</string>
+    </param>
+    <param name="layer_depth">
+      <integer value="-1"/>
+    </param>
+  </layer>
+  <layer type="switch" active="true" exclude_from_rendering="false" version="0.0" desc="01 water.png">
+    <param name="z_depth">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="amount">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="blend_method">
+      <integer value="0" static="true"/>
+    </param>
+    <param name="origin">
+      <vector>
+        <x>0.0000000000</x>
+        <y>0.0000000000</y>
+      </vector>
+    </param>
+    <param name="transformation">
+      <composite type="transformation">
+        <offset>
+          <vector>
+            <x>0.0000000000</x>
+            <y>0.0000000000</y>
+          </vector>
+        </offset>
+        <angle>
+          <angle value="0.000000"/>
+        </angle>
+        <skew_angle>
+          <angle value="0.000000"/>
+        </skew_angle>
+        <scale>
+          <vector>
+            <x>1.0000000000</x>
+            <y>1.0000000000</y>
+          </vector>
+        </scale>
+      </composite>
+    </param>
+    <param name="canvas">
+      <canvas end-time="5s">
+        <layer type="import" active="true" exclude_from_rendering="false" version="0.1" desc="01 water.png">
+          <param name="z_depth">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="amount">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="blend_method">
+            <integer value="0" static="true"/>
+          </param>
+          <param name="tl">
+            <vector>
+              <x>-4.0000000000</x>
+              <y>2.5000000000</y>
+            </vector>
+          </param>
+          <param name="br">
+            <vector>
+              <x>4.0000000000</x>
+              <y>-2.5000000000</y>
+            </vector>
+          </param>
+          <param name="c">
+            <integer value="1" static="true"/>
+          </param>
+          <param name="gamma_adjust">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="filename">
+            <string>01 water.png</string>
+          </param>
+          <param name="time_offset">
+            <time value="0s"/>
+          </param>
+        </layer>
+      </canvas>
+    </param>
+    <param name="time_dilation">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="time_offset">
+      <time value="0s"/>
+    </param>
+    <param name="children_lock">
+      <bool value="true" static="true"/>
+    </param>
+    <param name="outline_grow">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="layer_name">
+      <string>01 water.png</string>
+    </param>
+    <param name="layer_depth">
+      <integer value="-1"/>
+    </param>
+  </layer>
+  <layer type="switch" active="true" exclude_from_rendering="false" version="0.0" desc="02 town L.png">
+    <param name="z_depth">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="amount">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="blend_method">
+      <integer value="0" static="true"/>
+    </param>
+    <param name="origin">
+      <vector>
+        <x>0.0000000000</x>
+        <y>0.0000000000</y>
+      </vector>
+    </param>
+    <param name="transformation">
+      <composite type="transformation">
+        <offset>
+          <animated type="vector">
+            <waypoint time="0s" before="clamped" after="clamped">
+              <vector guid="F05B8EA33F09FCEE681A93AA0ED9B7BB">
+                <x>-0.0416666679</x>
+                <y>0.0000000000</y>
+              </vector>
+            </waypoint>
+            <waypoint time="1.98333335s" before="clamped" after="clamped">
+              <vector guid="16C353BEE0A34E5050295F87C1FE8B93">
+                <x>0.0000000000</x>
+                <y>0.0000000000</y>
+              </vector>
+            </waypoint>
+          </animated>
+        </offset>
+        <angle>
+          <angle value="0.000000"/>
+        </angle>
+        <skew_angle>
+          <angle value="0.000000"/>
+        </skew_angle>
+        <scale>
+          <vector>
+            <x>1.0000000000</x>
+            <y>1.0000000000</y>
+          </vector>
+        </scale>
+      </composite>
+    </param>
+    <param name="canvas">
+      <canvas>
+        <layer type="import" active="true" exclude_from_rendering="false" version="0.1" desc="02 town L.png">
+          <param name="z_depth">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="amount">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="blend_method">
+            <integer value="0" static="true"/>
+          </param>
+          <param name="tl">
+            <vector>
+              <x>-4.0000000000</x>
+              <y>2.5000000000</y>
+            </vector>
+          </param>
+          <param name="br">
+            <vector>
+              <x>4.0000000000</x>
+              <y>-2.5000000000</y>
+            </vector>
+          </param>
+          <param name="c">
+            <integer value="1" static="true"/>
+          </param>
+          <param name="gamma_adjust">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="filename">
+            <string>02 town L.png</string>
+          </param>
+          <param name="time_offset">
+            <time value="0s"/>
+          </param>
+        </layer>
+      </canvas>
+    </param>
+    <param name="time_dilation">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="time_offset">
+      <time value="0s"/>
+    </param>
+    <param name="children_lock">
+      <bool value="true" static="true"/>
+    </param>
+    <param name="outline_grow">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="layer_name">
+      <string>02 town L.png</string>
+    </param>
+    <param name="layer_depth">
+      <integer value="-1"/>
+    </param>
+  </layer>
+  <layer type="switch" active="true" exclude_from_rendering="false" version="0.0" desc="02 town R.png">
+    <param name="z_depth">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="amount">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="blend_method">
+      <integer value="0" static="true"/>
+    </param>
+    <param name="origin">
+      <vector>
+        <x>0.0000000000</x>
+        <y>0.0000000000</y>
+      </vector>
+    </param>
+    <param name="transformation">
+      <composite type="transformation">
+        <offset>
+          <animated type="vector">
+            <waypoint time="0s" before="clamped" after="clamped">
+              <vector guid="8C11CBB7C71A675F72240AB2CACD8F04">
+                <x>0.0000000000</x>
+                <y>0.0000000000</y>
+              </vector>
+            </waypoint>
+            <waypoint time="1.98333335s" before="clamped" after="clamped">
+              <vector guid="65F590FEB183F2A5B3C64B873ED520EA">
+                <x>0.0833333358</x>
+                <y>0.0000000000</y>
+              </vector>
+            </waypoint>
+          </animated>
+        </offset>
+        <angle>
+          <angle value="0.000000"/>
+        </angle>
+        <skew_angle>
+          <angle value="0.000000"/>
+        </skew_angle>
+        <scale>
+          <vector>
+            <x>1.0000000000</x>
+            <y>1.0000000000</y>
+          </vector>
+        </scale>
+      </composite>
+    </param>
+    <param name="canvas">
+      <canvas>
+        <layer type="import" active="true" exclude_from_rendering="false" version="0.1" desc="02 town R.png">
+          <param name="z_depth">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="amount">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="blend_method">
+            <integer value="0" static="true"/>
+          </param>
+          <param name="tl">
+            <vector>
+              <x>-4.0000000000</x>
+              <y>2.5000000000</y>
+            </vector>
+          </param>
+          <param name="br">
+            <vector>
+              <x>4.0000000000</x>
+              <y>-2.5000000000</y>
+            </vector>
+          </param>
+          <param name="c">
+            <integer value="1" static="true"/>
+          </param>
+          <param name="gamma_adjust">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="filename">
+            <string>02 town R.png</string>
+          </param>
+          <param name="time_offset">
+            <time value="0s"/>
+          </param>
+        </layer>
+      </canvas>
+    </param>
+    <param name="time_dilation">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="time_offset">
+      <time value="0s"/>
+    </param>
+    <param name="children_lock">
+      <bool value="true" static="true"/>
+    </param>
+    <param name="outline_grow">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="layer_name">
+      <string>02 town R.png</string>
+    </param>
+    <param name="layer_depth">
+      <integer value="-1"/>
+    </param>
+  </layer>
+  <layer type="switch" active="true" exclude_from_rendering="false" version="0.0" desc="03 dock.png">
+    <param name="z_depth">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="amount">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="blend_method">
+      <integer value="0" static="true"/>
+    </param>
+    <param name="origin">
+      <vector>
+        <x>0.0000000000</x>
+        <y>0.0000000000</y>
+      </vector>
+    </param>
+    <param name="transformation">
+      <composite type="transformation">
+        <offset>
+          <animated type="vector">
+            <waypoint time="0s" before="clamped" after="clamped">
+              <vector guid="75B438B3F0D25598669217838F6D646F">
+                <x>0.0000000000</x>
+                <y>0.0000000000</y>
+              </vector>
+            </waypoint>
+            <waypoint time="1.98333335s" before="clamped" after="clamped">
+              <vector guid="39859005E7870DD9B1CD9827094470B6">
+                <x>-0.1666666716</x>
+                <y>0.0000000000</y>
+              </vector>
+            </waypoint>
+          </animated>
+        </offset>
+        <angle>
+          <angle value="0.000000"/>
+        </angle>
+        <skew_angle>
+          <angle value="0.000000"/>
+        </skew_angle>
+        <scale>
+          <vector>
+            <x>1.0000000000</x>
+            <y>1.0000000000</y>
+          </vector>
+        </scale>
+      </composite>
+    </param>
+    <param name="canvas">
+      <canvas end-time="5s">
+        <layer type="import" active="true" exclude_from_rendering="false" version="0.1" desc="03 dock.png">
+          <param name="z_depth">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="amount">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="blend_method">
+            <integer value="0" static="true"/>
+          </param>
+          <param name="tl">
+            <vector>
+              <x>-4.0000000000</x>
+              <y>2.5000000000</y>
+            </vector>
+          </param>
+          <param name="br">
+            <vector>
+              <x>4.0000000000</x>
+              <y>-2.5000000000</y>
+            </vector>
+          </param>
+          <param name="c">
+            <integer value="1" static="true"/>
+          </param>
+          <param name="gamma_adjust">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="filename">
+            <string>03 dock.png</string>
+          </param>
+          <param name="time_offset">
+            <time value="0s"/>
+          </param>
+        </layer>
+      </canvas>
+    </param>
+    <param name="time_dilation">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="time_offset">
+      <time value="0s"/>
+    </param>
+    <param name="children_lock">
+      <bool value="true" static="true"/>
+    </param>
+    <param name="outline_grow">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="layer_name">
+      <string>03 dock.png</string>
+    </param>
+    <param name="layer_depth">
+      <integer value="-1"/>
+    </param>
+  </layer>
+  <layer type="switch" active="true" exclude_from_rendering="false" version="0.0" desc="07 thug_M.png">
+    <param name="z_depth">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="amount">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="blend_method">
+      <integer value="0" static="true"/>
+    </param>
+    <param name="origin">
+      <vector>
+        <x>0.0000000000</x>
+        <y>0.0000000000</y>
+      </vector>
+    </param>
+    <param name="transformation">
+      <composite type="transformation">
+        <offset>
+          <animated type="vector">
+            <waypoint time="0s" before="clamped" after="clamped">
+              <vector guid="E08C78B61626249B78D225B89485A2C0">
+                <x>0.1354101300</x>
+                <y>-0.0606967956</y>
+              </vector>
+            </waypoint>
+            <waypoint time="1.98333335s" before="clamped" after="clamped">
+              <vector guid="58BD044843860115702544C9F9E379FD">
+                <x>0.4090257883</x>
+                <y>0.1479988545</y>
+              </vector>
+            </waypoint>
+          </animated>
+        </offset>
+        <angle>
+          <angle value="0.000000"/>
+        </angle>
+        <skew_angle>
+          <angle value="0.000000"/>
+        </skew_angle>
+        <scale>
+          <vector>
+            <x>1.0000000000</x>
+            <y>1.0000000000</y>
+          </vector>
+        </scale>
+      </composite>
+    </param>
+    <param name="canvas">
+      <canvas>
+        <layer type="import" active="true" exclude_from_rendering="false" version="0.1" desc="07 thug_M.png">
+          <param name="z_depth">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="amount">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="blend_method">
+            <integer value="0" static="true"/>
+          </param>
+          <param name="tl">
+            <vector>
+              <x>-4.0000000000</x>
+              <y>2.5000000000</y>
+            </vector>
+          </param>
+          <param name="br">
+            <vector>
+              <x>4.0000000000</x>
+              <y>-2.5000000000</y>
+            </vector>
+          </param>
+          <param name="c">
+            <integer value="1" static="true"/>
+          </param>
+          <param name="gamma_adjust">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="filename">
+            <string>07 thug_M.png</string>
+          </param>
+          <param name="time_offset">
+            <time value="0s"/>
+          </param>
+        </layer>
+      </canvas>
+    </param>
+    <param name="time_dilation">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="time_offset">
+      <time value="0s"/>
+    </param>
+    <param name="children_lock">
+      <bool value="true" static="true"/>
+    </param>
+    <param name="outline_grow">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="layer_name">
+      <string>07 thug_M.png</string>
+    </param>
+    <param name="layer_depth">
+      <integer value="-1"/>
+    </param>
+  </layer>
+  <layer type="switch" active="true" exclude_from_rendering="false" version="0.0" desc="07 Thug_L.png">
+    <param name="z_depth">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="amount">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="blend_method">
+      <integer value="0" static="true"/>
+    </param>
+    <param name="origin">
+      <vector>
+        <x>0.0000000000</x>
+        <y>0.0000000000</y>
+      </vector>
+    </param>
+    <param name="transformation">
+      <composite type="transformation">
+        <offset>
+          <animated type="vector">
+            <waypoint time="0s" before="clamped" after="clamped">
+              <vector guid="0C70292A6A6876886AF98B69C38AA67E">
+                <x>1.1256381273</x>
+                <y>0.5132162571</y>
+              </vector>
+            </waypoint>
+            <waypoint time="1.98333335s" before="clamped" after="clamped">
+              <vector guid="97D9CD17A50B7FFD14D8949DEA2F8B65">
+                <x>-0.2424400151</x>
+                <y>0.2001727670</y>
+              </vector>
+            </waypoint>
+          </animated>
+        </offset>
+        <angle>
+          <angle value="0.000000"/>
+        </angle>
+        <skew_angle>
+          <angle value="0.000000"/>
+        </skew_angle>
+        <scale>
+          <vector>
+            <x>1.0000000000</x>
+            <y>1.0000000000</y>
+          </vector>
+        </scale>
+      </composite>
+    </param>
+    <param name="canvas">
+      <canvas end-time="5s">
+        <layer type="import" active="true" exclude_from_rendering="false" version="0.1" desc="07 Thug_L.png">
+          <param name="z_depth">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="amount">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="blend_method">
+            <integer value="0" static="true"/>
+          </param>
+          <param name="tl">
+            <vector>
+              <x>-4.0000000000</x>
+              <y>2.5000000000</y>
+            </vector>
+          </param>
+          <param name="br">
+            <vector>
+              <x>4.0000000000</x>
+              <y>-2.5000000000</y>
+            </vector>
+          </param>
+          <param name="c">
+            <integer value="1" static="true"/>
+          </param>
+          <param name="gamma_adjust">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="filename">
+            <string>07 Thug_L.png</string>
+          </param>
+          <param name="time_offset">
+            <time value="0s"/>
+          </param>
+        </layer>
+      </canvas>
+    </param>
+    <param name="time_dilation">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="time_offset">
+      <time value="0s"/>
+    </param>
+    <param name="children_lock">
+      <bool value="true" static="true"/>
+    </param>
+    <param name="outline_grow">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="layer_name">
+      <string>07 Thug_L.png</string>
+    </param>
+    <param name="layer_depth">
+      <integer value="-1"/>
+    </param>
+  </layer>
+  <layer type="switch" active="true" exclude_from_rendering="false" version="0.0" desc="08 effects L.png">
+    <param name="z_depth">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="amount">
+      <animated type="real">
+        <waypoint time="0s" before="clamped" after="clamped">
+          <real guid="C536C6636F72EC0730A6C9FFE585D1F4" value="1.0000000000"/>
+        </waypoint>
+        <waypoint time="0.5s" before="clamped" after="clamped">
+          <real guid="5301FFE448BEF094AC5842480B97E72C" value="0.0000000000"/>
+        </waypoint>
+      </animated>
+    </param>
+    <param name="blend_method">
+      <integer value="0" static="true"/>
+    </param>
+    <param name="origin">
+      <vector>
+        <x>0.0000000000</x>
+        <y>0.0000000000</y>
+      </vector>
+    </param>
+    <param name="transformation">
+      <composite type="transformation">
+        <offset>
+          <animated type="vector">
+            <waypoint time="0s" before="clamped" after="clamped">
+              <vector guid="A0D83008757060F15C4AD2307F6F1374">
+                <x>0.7136056423</x>
+                <y>0.3175640702</y>
+              </vector>
+            </waypoint>
+          </animated>
+        </offset>
+        <angle>
+          <angle value="0.000000"/>
+        </angle>
+        <skew_angle>
+          <angle value="0.000000"/>
+        </skew_angle>
+        <scale>
+          <vector>
+            <x>1.0000000000</x>
+            <y>1.0000000000</y>
+          </vector>
+        </scale>
+      </composite>
+    </param>
+    <param name="canvas">
+      <canvas end-time="5s">
+        <layer type="import" active="true" exclude_from_rendering="false" version="0.1" desc="08 effects L.png">
+          <param name="z_depth">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="amount">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="blend_method">
+            <integer value="0" static="true"/>
+          </param>
+          <param name="tl">
+            <vector>
+              <x>-4.0000000000</x>
+              <y>2.5000000000</y>
+            </vector>
+          </param>
+          <param name="br">
+            <vector>
+              <x>4.0000000000</x>
+              <y>-2.5000000000</y>
+            </vector>
+          </param>
+          <param name="c">
+            <integer value="1" static="true"/>
+          </param>
+          <param name="gamma_adjust">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="filename">
+            <string>08 effects L.png</string>
+          </param>
+          <param name="time_offset">
+            <time value="0s"/>
+          </param>
+        </layer>
+      </canvas>
+    </param>
+    <param name="time_dilation">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="time_offset">
+      <time value="0s"/>
+    </param>
+    <param name="children_lock">
+      <bool value="true" static="true"/>
+    </param>
+    <param name="outline_grow">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="layer_name">
+      <string>08 effects L.png</string>
+    </param>
+    <param name="layer_depth">
+      <integer value="-1"/>
+    </param>
+  </layer>
+  <layer type="switch" active="true" exclude_from_rendering="false" version="0.0" desc="08 effects M.png">
+    <param name="z_depth">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="amount">
+      <animated type="real">
+        <waypoint time="0s" before="clamped" after="clamped">
+          <real guid="520E98712D8EA580A1A2B2B1573B68A1" value="1.0000000000"/>
+        </waypoint>
+        <waypoint time="0.5s" before="clamped" after="clamped">
+          <real guid="F30D6EA03607E8918113CD24E60C24D2" value="0.0000000000"/>
+        </waypoint>
+      </animated>
+    </param>
+    <param name="blend_method">
+      <integer value="0" static="true"/>
+    </param>
+    <param name="origin">
+      <vector>
+        <x>0.0000000000</x>
+        <y>0.0000000000</y>
+      </vector>
+    </param>
+    <param name="transformation">
+      <composite type="transformation">
+        <offset>
+          <animated type="vector">
+            <waypoint time="0s" before="clamped" after="clamped">
+              <vector guid="698DD859ACFA5EAC4C6E0A7EE71416A4">
+                <x>-0.0079123331</x>
+                <y>0.2393032014</y>
+              </vector>
+            </waypoint>
+          </animated>
+        </offset>
+        <angle>
+          <angle value="0.000000"/>
+        </angle>
+        <skew_angle>
+          <angle value="0.000000"/>
+        </skew_angle>
+        <scale>
+          <vector>
+            <x>1.0000000000</x>
+            <y>1.0000000000</y>
+          </vector>
+        </scale>
+      </composite>
+    </param>
+    <param name="canvas">
+      <canvas end-time="5s">
+        <layer type="import" active="true" exclude_from_rendering="false" version="0.1" desc="08 effects M.png">
+          <param name="z_depth">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="amount">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="blend_method">
+            <integer value="0" static="true"/>
+          </param>
+          <param name="tl">
+            <vector>
+              <x>-4.0000000000</x>
+              <y>2.5000000000</y>
+            </vector>
+          </param>
+          <param name="br">
+            <vector>
+              <x>4.0000000000</x>
+              <y>-2.5000000000</y>
+            </vector>
+          </param>
+          <param name="c">
+            <integer value="1" static="true"/>
+          </param>
+          <param name="gamma_adjust">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="filename">
+            <string>08 effects M.png</string>
+          </param>
+          <param name="time_offset">
+            <time value="0s"/>
+          </param>
+        </layer>
+      </canvas>
+    </param>
+    <param name="time_dilation">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="time_offset">
+      <time value="0s"/>
+    </param>
+    <param name="children_lock">
+      <bool value="true" static="true"/>
+    </param>
+    <param name="outline_grow">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="layer_name">
+      <string>08 effects M.png</string>
+    </param>
+    <param name="layer_depth">
+      <integer value="-1"/>
+    </param>
+  </layer>
+  <layer type="switch" active="true" exclude_from_rendering="false" version="0.0" desc="09 Rose.png">
+    <param name="z_depth">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="amount">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="blend_method">
+      <integer value="0" static="true"/>
+    </param>
+    <param name="origin">
+      <vector>
+        <x>0.0000000000</x>
+        <y>0.0000000000</y>
+      </vector>
+    </param>
+    <param name="transformation">
+      <composite type="transformation">
+        <offset>
+          <animated type="vector">
+            <waypoint time="0s" before="clamped" after="clamped">
+              <vector guid="C88D4449CE914EDD3F63975F6095ACDF">
+                <x>0.5181658864</x>
+                <y>0.4349553883</y>
+              </vector>
+            </waypoint>
+            <waypoint time="1.98333335s" before="clamped" after="clamped">
+              <vector guid="EF5ABA2231BCFDC41159CC7A81E447AC">
+                <x>0.3760099411</x>
+                <y>0.4139771760</y>
+              </vector>
+            </waypoint>
+          </animated>
+        </offset>
+        <angle>
+          <angle value="0.000000"/>
+        </angle>
+        <skew_angle>
+          <angle value="0.000000"/>
+        </skew_angle>
+        <scale>
+          <vector>
+            <x>1.0000000000</x>
+            <y>1.0000000000</y>
+          </vector>
+        </scale>
+      </composite>
+    </param>
+    <param name="canvas">
+      <canvas end-time="5s">
+        <layer type="import" active="true" exclude_from_rendering="false" version="0.1" desc="09 Rose.png">
+          <param name="z_depth">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="amount">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="blend_method">
+            <integer value="0" static="true"/>
+          </param>
+          <param name="tl">
+            <vector>
+              <x>-4.0000000000</x>
+              <y>2.5000000000</y>
+            </vector>
+          </param>
+          <param name="br">
+            <vector>
+              <x>4.0000000000</x>
+              <y>-2.5000000000</y>
+            </vector>
+          </param>
+          <param name="c">
+            <integer value="1" static="true"/>
+          </param>
+          <param name="gamma_adjust">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="filename">
+            <string>09 Rose.png</string>
+          </param>
+          <param name="time_offset">
+            <time value="0s"/>
+          </param>
+        </layer>
+      </canvas>
+    </param>
+    <param name="time_dilation">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="time_offset">
+      <time value="0s"/>
+    </param>
+    <param name="children_lock">
+      <bool value="true" static="true"/>
+    </param>
+    <param name="outline_grow">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="layer_name">
+      <string>09 Rose.png</string>
+    </param>
+    <param name="layer_depth">
+      <integer value="-1"/>
+    </param>
+  </layer>
+  <layer type="switch" active="true" exclude_from_rendering="false" version="0.0" desc="07 thug_R.png">
+    <param name="z_depth">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="amount">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="blend_method">
+      <integer value="0" static="true"/>
+    </param>
+    <param name="origin">
+      <vector>
+        <x>0.0000000000</x>
+        <y>0.0000000000</y>
+      </vector>
+    </param>
+    <param name="transformation">
+      <composite type="transformation">
+        <offset>
+          <animated type="vector">
+            <waypoint time="0s" before="clamped" after="clamped">
+              <vector guid="25A4330C088A8E4568182A3BD9DE3BAA">
+                <x>-0.7766420245</x>
+                <y>-0.6737402678</y>
+              </vector>
+            </waypoint>
+            <waypoint time="1.98333335s" before="clamped" after="clamped">
+              <vector guid="48B4A9CEE2F1330342F7FB59728F7185">
+                <x>-0.0209416673</x>
+                <y>-0.1780880988</y>
+              </vector>
+            </waypoint>
+          </animated>
+        </offset>
+        <angle>
+          <angle value="0.000000"/>
+        </angle>
+        <skew_angle>
+          <angle value="0.000000"/>
+        </skew_angle>
+        <scale>
+          <vector>
+            <x>1.0000000000</x>
+            <y>1.0000000000</y>
+          </vector>
+        </scale>
+      </composite>
+    </param>
+    <param name="canvas">
+      <canvas end-time="5s">
+        <layer type="import" active="true" exclude_from_rendering="false" version="0.1" desc="07 thug_R.png">
+          <param name="z_depth">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="amount">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="blend_method">
+            <integer value="0" static="true"/>
+          </param>
+          <param name="tl">
+            <vector>
+              <x>-4.0000000000</x>
+              <y>2.5000000000</y>
+            </vector>
+          </param>
+          <param name="br">
+            <vector>
+              <x>4.0000000000</x>
+              <y>-2.5000000000</y>
+            </vector>
+          </param>
+          <param name="c">
+            <integer value="1" static="true"/>
+          </param>
+          <param name="gamma_adjust">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="filename">
+            <string>07 thug_R.png</string>
+          </param>
+          <param name="time_offset">
+            <time value="0s"/>
+          </param>
+        </layer>
+      </canvas>
+    </param>
+    <param name="time_dilation">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="time_offset">
+      <time value="0s"/>
+    </param>
+    <param name="children_lock">
+      <bool value="true" static="true"/>
+    </param>
+    <param name="outline_grow">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="layer_name">
+      <string>07 thug_R.png</string>
+    </param>
+    <param name="layer_depth">
+      <integer value="-1"/>
+    </param>
+  </layer>
+  <layer type="switch" active="true" exclude_from_rendering="false" version="0.0" desc="08 effects R.png">
+    <param name="z_depth">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="amount">
+      <animated type="real">
+        <waypoint time="0s" before="clamped" after="clamped">
+          <real guid="A9437DA15618BD9DFAEAE6F6F99FC298" value="1.0000000000"/>
+        </waypoint>
+        <waypoint time="0.5s" before="clamped" after="clamped">
+          <real guid="66D85882882BF0F2EB9FCE73BFB8E73E" value="0.0000000000"/>
+        </waypoint>
+      </animated>
+    </param>
+    <param name="blend_method">
+      <integer value="0" static="true"/>
+    </param>
+    <param name="origin">
+      <vector>
+        <x>0.0000000000</x>
+        <y>0.0000000000</y>
+      </vector>
+    </param>
+    <param name="transformation">
+      <composite type="transformation">
+        <offset>
+          <animated type="vector">
+            <waypoint time="0s" before="clamped" after="clamped">
+              <vector guid="901B16B697CD746BF151C8B0345997FE">
+                <x>-0.1772934347</x>
+                <y>0.2523466945</y>
+              </vector>
+            </waypoint>
+          </animated>
+        </offset>
+        <angle>
+          <angle value="0.000000"/>
+        </angle>
+        <skew_angle>
+          <angle value="0.000000"/>
+        </skew_angle>
+        <scale>
+          <vector>
+            <x>1.0000000000</x>
+            <y>1.0000000000</y>
+          </vector>
+        </scale>
+      </composite>
+    </param>
+    <param name="canvas">
+      <canvas>
+        <layer type="import" active="true" exclude_from_rendering="false" version="0.1" desc="08 effects R.png">
+          <param name="z_depth">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="amount">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="blend_method">
+            <integer value="0" static="true"/>
+          </param>
+          <param name="tl">
+            <vector>
+              <x>-4.0000000000</x>
+              <y>2.5000000000</y>
+            </vector>
+          </param>
+          <param name="br">
+            <vector>
+              <x>4.0000000000</x>
+              <y>-2.5000000000</y>
+            </vector>
+          </param>
+          <param name="c">
+            <integer value="1" static="true"/>
+          </param>
+          <param name="gamma_adjust">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="filename">
+            <string>08 effects R.png</string>
+          </param>
+          <param name="time_offset">
+            <time value="0s"/>
+          </param>
+        </layer>
+      </canvas>
+    </param>
+    <param name="time_dilation">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="time_offset">
+      <time value="0s"/>
+    </param>
+    <param name="children_lock">
+      <bool value="true" static="true"/>
+    </param>
+    <param name="outline_grow">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="layer_name">
+      <string>08 effects R.png</string>
+    </param>
+    <param name="layer_depth">
+      <integer value="-1"/>
+    </param>
+  </layer>
+  <layer type="switch" active="true" exclude_from_rendering="false" version="0.0" desc="10 swipe.png">
+    <param name="z_depth">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="amount">
+      <animated type="real">
+        <waypoint time="0s" before="clamped" after="clamped">
+          <real guid="94DD8A8C0AA62CA295A044EC277BFDB7" value="1.0000000000"/>
+        </waypoint>
+        <waypoint time="1s" before="clamped" after="clamped">
+          <real guid="FF90B77F4D73417FD9BB29103AE2CBD4" value="0.0000000000"/>
+        </waypoint>
+      </animated>
+    </param>
+    <param name="blend_method">
+      <integer value="0" static="true"/>
+    </param>
+    <param name="origin">
+      <vector>
+        <x>0.0000000000</x>
+        <y>0.0000000000</y>
+      </vector>
+    </param>
+    <param name="transformation">
+      <composite type="transformation">
+        <offset>
+          <animated type="vector">
+            <waypoint time="0s" before="clamped" after="clamped">
+              <vector guid="560B2EDD148B2360677BE50841E09766">
+                <x>0.1051316932</x>
+                <y>0.3292987049</y>
+              </vector>
+            </waypoint>
+            <waypoint time="1.98333335s" before="clamped" after="clamped">
+              <vector guid="B91C086FF68C70FCD52D43CD941DA51C">
+                <x>0.0372477099</x>
+                <y>0.2835423946</y>
+              </vector>
+            </waypoint>
+          </animated>
+        </offset>
+        <angle>
+          <angle value="0.000000"/>
+        </angle>
+        <skew_angle>
+          <angle value="0.000000"/>
+        </skew_angle>
+        <scale>
+          <vector>
+            <x>1.0000000000</x>
+            <y>1.0000000000</y>
+          </vector>
+        </scale>
+      </composite>
+    </param>
+    <param name="canvas">
+      <canvas end-time="5s">
+        <layer type="import" active="true" exclude_from_rendering="false" version="0.1" desc="10 swipe.png">
+          <param name="z_depth">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="amount">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="blend_method">
+            <integer value="0" static="true"/>
+          </param>
+          <param name="tl">
+            <vector>
+              <x>-4.0000000000</x>
+              <y>2.5000000000</y>
+            </vector>
+          </param>
+          <param name="br">
+            <vector>
+              <x>4.0000000000</x>
+              <y>-2.5000000000</y>
+            </vector>
+          </param>
+          <param name="c">
+            <integer value="1" static="true"/>
+          </param>
+          <param name="gamma_adjust">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="filename">
+            <string>10 swipe.png</string>
+          </param>
+          <param name="time_offset">
+            <time value="0s"/>
+          </param>
+        </layer>
+      </canvas>
+    </param>
+    <param name="time_dilation">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="time_offset">
+      <time value="0s"/>
+    </param>
+    <param name="children_lock">
+      <bool value="true" static="true"/>
+    </param>
+    <param name="outline_grow">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="layer_name">
+      <string>10 swipe.png</string>
+    </param>
+    <param name="layer_depth">
+      <integer value="-1"/>
+    </param>
+  </layer>
+</canvas>
