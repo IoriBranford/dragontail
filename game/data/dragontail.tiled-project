@@ -7,7 +7,7 @@
             "enabled": true,
             "name": "Play level from start",
             "saveBeforeExecute": true,
-            "shortcut": "Shift+F5",
+            "shortcut": "F5",
             "showOutput": true,
             "workingDirectory": ""
         },
@@ -17,7 +17,7 @@
             "enabled": true,
             "name": "Play level from selected room",
             "saveBeforeExecute": true,
-            "shortcut": "F5",
+            "shortcut": "Shift+F5",
             "showOutput": true,
             "workingDirectory": ""
         }
