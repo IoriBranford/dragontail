@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="26" nextobjectid="169">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="26" nextobjectid="170">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -481,6 +481,11 @@ to clear lost enemies</text>
    </object>
   </objectgroup>
   <objectgroup id="25" name="pressstart" class="Gui.Menu">
+   <object id="169" template="gui/menu/Panel.tx" x="-4" y="180" width="488" height="18">
+    <properties>
+     <property name="roundcorners" type="float" value="0"/>
+    </properties>
+   </object>
    <object id="10" template="gui/menu/pause/Button.tx" type="Gui.Button" x="208" y="180" width="64" height="18">
     <properties>
      <property name="action" value="openTitleMainMenu"/>
@@ -503,7 +508,7 @@ to clear lost enemies</text>
   </objectgroup>
   <group id="24" name="mainmenus">
    <objectgroup id="18" name="normal" class="Gui.Menu">
-    <object id="106" template="gui/menu/Panel.tx" x="32" y="108" width="128" height="108"/>
+    <object id="106" template="gui/menu/Panel.tx" x="40" y="117" width="112" height="90"/>
     <object id="102" name="START" type="Gui.Button" x="84" y="126" width="64" height="18">
      <properties>
       <property name="action" value="restartStage"/>

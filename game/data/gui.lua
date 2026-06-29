@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 18,
   nextlayerid = 26,
-  nextobjectid = 169,
+  nextobjectid = 170,
   properties = {},
   tilesets = {
     {
@@ -3743,6 +3743,24 @@ return {
           properties = {},
           objects = {
             {
+              id = 169,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = -4,
+              y = 180,
+              width = 488,
+              height = 18,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {
+                ["color"] = "#e0641013",
+                ["linecolor"] = "#ffff6161",
+                ["roundcorners"] = 0
+              }
+            },
+            {
               id = 10,
               name = "Button",
               type = "Gui.Button",
@@ -3851,10 +3869,10 @@ return {
                   name = "",
                   type = "",
                   shape = "rectangle",
-                  x = 32,
-                  y = 108,
-                  width = 128,
-                  height = 108,
+                  x = 40,
+                  y = 117,
+                  width = 112,
+                  height = 90,
                   rotation = 0,
                   opacity = 1,
                   visible = true,
