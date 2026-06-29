@@ -2988,7 +2988,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["color"] = "#a0c52021",
+                ["color"] = "#e0641013",
                 ["linecolor"] = "#ffff6161",
                 ["roundcorners"] = 8
               }
@@ -3190,7 +3190,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["color"] = "#a0c52021",
+                ["color"] = "#e0641013",
                 ["linecolor"] = "#ffff6161",
                 ["roundcorners"] = 8
               }
@@ -3588,7 +3588,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["color"] = "#a0c52021",
+                ["color"] = "#e0641013",
                 ["linecolor"] = "#ffff6161",
                 ["roundcorners"] = 8
               }
@@ -3859,7 +3859,7 @@ return {
                   opacity = 1,
                   visible = true,
                   properties = {
-                    ["color"] = "#a0c52021",
+                    ["color"] = "#e0641013",
                     ["linecolor"] = "#ffff6161",
                     ["roundcorners"] = 8
                   }
@@ -3992,7 +3992,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["color"] = "#a0c52021",
+                ["color"] = "#e0641013",
                 ["linecolor"] = "#ffff6161",
                 ["roundcorners"] = 8
               }
