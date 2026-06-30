@@ -11,7 +11,6 @@ local Inputs = require "System.Inputs"
 local Time   = require "System.Time"
 local pathlite = require "pl.pathlite"
 local firstphase = "Dragontail.TitlePhase"
-local firstmap = "data/stage_banditcave.lua"
 
 local defaultgamepadconfig =  {
     ["dpleft dpright"] = "digitalx",
@@ -40,7 +39,8 @@ function love.load(args)
         end
         if love.filesystem.getInfo(map, "file") then
             firstphase = "Dragontail.GamePhase"
-            firstmap = map
+        else
+            map = nil
         end
     end
 
@@ -74,8 +74,8 @@ function love.load(args)
     gui.gameplay.pausemenu.Quit:setDisabled(Config.exhibit)
     gui.gameplay.gameover.Quit:setDisabled(Config.exhibit)
 
-    local firstroom = args.room
-    love.event.loadphase(firstphase, firstmap, firstroom)
+    local firstroom = map and args.room
+    love.event.loadphase(firstphase, map, firstroom)
 end
 
 function love.quit()
