@@ -1837,7 +1837,7 @@ return {
               rotation = 0,
               opacity = 1,
               visible = true,
-              text = "DEVELOPMENT VER 2026.1\nALL CONTENT SUBJECT TO CHANGE",
+              text = "DEVELOPMENT VER 2026.1.1\nALL CONTENT SUBJECT TO CHANGE",
               fontfamily = "TinyUnicode",
               wrap = true,
               color = { 255, 255, 255 },
