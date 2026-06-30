@@ -41,11 +41,14 @@ function TitlePhase.loadphase(startwithmainmenu)
     Assets.uncacheMarked()
     Assets.packTiles()
     Assets.batchAllMapsLayers()
-    Gui:showOnlyNamed("title", "options")
+    Gui:showOnlyNamed("title", "options", "wipe")
     Gui:clearMenuStack()
     Gui.title:showOnlyNamed("title")
     Gui.options:showOnlyNamed()
     -- Wallpaper.reload()
+
+    local wipe = Gui.wipe.diagonalCurtains ---@cast wipe Wipe
+    wipe:start("open")
     if startwithmainmenu then
         TitlePhase.pushMainMenu()
     else
