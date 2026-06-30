@@ -14,7 +14,7 @@ local AtlasSpace = {}
 AtlasSpace.__index = AtlasSpace
 
 function AtlasSpace.__lt(a, b)
-    return a.width * a.height > b.width * b.height
+    return a.width * a.height < b.width * b.height
 end
 
 local function newSpace(x, y, w, h)
@@ -26,7 +26,7 @@ function AtlasSpace:fits(w, h)
 end
 
 function AtlasSpace:usedUp()
-    return self.width == math.huge and self.height == math.huge
+    return self.width <= 0 or self.height <= 0
 end
 
 function AtlasSpace:take(tilew, tileh, tile)
@@ -39,7 +39,7 @@ function AtlasSpace:take(tilew, tileh, tile)
     local downh = h - tileh
     local newfreespace
     if rightw <= 0 and downh <= 0 then
-        self.width, self.height = math.huge, math.huge
+        self.width, self.height = 0, 0
     elseif tilevertical then
         if rightw > 0 then
             self.x, self.width, self.height = x + tilew, rightw, tileh
@@ -118,12 +118,12 @@ function TileAtlas:takeSpace(w, h, tile)
     local freespaces = self.freespaces
 
     repeat
-        for i = #freespaces, 1, -1 do
+        for i = 1, #freespaces do
             local space = freespaces[i]
             if space:fits(w, h) then
                 local tilespace, newspace = space:take(w, h, tile)
                 freespaces:update(space)
-                while #freespaces > 0 and freespaces[1]:usedUp() do
+                while freespaces[1] and freespaces[1]:usedUp() do
                     freespaces:pop()
                 end
                 if newspace then
