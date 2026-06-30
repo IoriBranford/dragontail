@@ -2,7 +2,7 @@
 <map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="74" nextobjectid="789">
  <editorsettings>
   <chunksize width="20" height="12"/>
-  <export target="stage_banditcave_sandy.lua" format="lua"/>
+  <export target="stage_banditcave.lua" format="lua"/>
  </editorsettings>
  <properties>
   <property name="ceilingz" type="float" value="256"/>
@@ -79,7 +79,7 @@
    eJzlkckuBEAQhr+RwYiDk2VkJunqsl/sPIazZQYTHsFbEOIZxDswIS62eQPL2K7ciOUiUumScHfTSaWq/vr/qupu+L9nXSGrv7FxhTGFI4UphRaFSYVhhU2FjEJF4VBh44e2SaFZk696fUJhX1PPVffTCnver+yajGMlhZzzbMaiwpbjowoHCisKI75X44+8wffL+t45r5diuk/V9xEBFYgC9wInAZYUthWOA9w6Vvbc4mXX9Qq0+96WG/c0QD1Cq0Kbwo3AnUCP1z4ivIWEvQc4C6nPjKS44nMeBHYKkC9CLcJjAdaK8FSA1wDXApcCQwK7BegT6BeohTTTZp0H+BR4DnDl/AFJWuOaN/wlwGxMb3PhHMPs/SwfdKsLdCh0uc3FZAsR5t0b3qnQbX/qudW+cYvzmrim/evzBUUUVnM=
   </chunk>
    <chunk x="20" y="0" width="20" height="12">
-   eJzlkMsuhGEMhp+ESbgBp1h8/fo7bpwyXMHY25IxBFfA1sLaEOIWXABLcRoLhDtwFrdgMSwc0nyd+GNtp0nTtH379m3hf9mIQllhTGFIoaZQVagorCsUFVoVmhU2FM4UCgoLCrMKiwpbCk0KSz677ZxFxxaco+rzxiMCTwKZQI8kHcYzpzDvuBPfYzqOXWPFtdScd8fnVgVKGUxm8ChwEeBQ4UhhwjmG/cbzkPpWH/f6qPum9y8DLGewksFzhD1Jmk2r3d2icKrphrfws7OBOcjteQ0wKLAWYUpgtzvhXwTqAaL/wrxPoF8Svu46LGoObz+zeq/jBwSuA7xH2I9wFeDeOT4EPiVpMF7DNtzyxvydwIPjyxFuBG69b3X7o9W+BNoU2hU6PXYoTMcUf+ddmvAznlvMz/61fQNBOl0d
+   eJzlkEkuhHEQxX8JnXAB0+qr733GjSnNCTgEMQUnYOsEmhAXYSmmtkAcwSyuINIsDKn8q9MdazuVVCpV9erVq4L/ZaOCOcG4YFhQFVQEC4JNQVnQLmgVbAnOBSXBsmBesCLYEbQIVmN2NzjLgS0FRyXmnccMngwKg15LOpxnUbAUuNPY4zpOQuNCaKkG717MbRhMFTBdwKPBZQZHgmPBZHCMxI0XWep7fSLqY+Hb0b/KYK2A9QKec9i3pNm1+t1tgjOlG96zxs465rBpz2sGQwYfefKDPOFfDGoZ5PEL936DAUv4WujwqCa8/8zrfYEfNHjLGtzXGdwHx6fBlyUNzuvYunten78zeAj8XA43BrfR97r/0WvfBh2CTkF3xC7BTJ7i77xHCT8bucfm2b+2Hxa9Xnw=
   </chunk>
    <chunk x="40" y="0" width="20" height="12">
    eJzlj1suhEEQhT/3eOGNkH+S7v8QnjAMtuI2rrEakchYA9ZgMHjBFtzDGtxeJFLp+uNfgDednJyuOqdOdcP/OtuCS8GaYFJwJqgKTgT7gk3BnuDYPTX3TAsaggvXOwQtwY6gU7DrbPltgl73nAtOBevutbwZwayzYc739Tgb6oJ5wYbvbpXqLX9D3ffW3FP1e9Mzmp4ZI1yF9G/bt+oZ3YKukt7wP0x5bzQmluv2N+stRPgMqWd6HuE5wojzdYCb8Dv/EuHVZ74CHGXpbrlPrk1U0t30fsFhBh8BHiKMRXgPSbfsPsFBBu2V5C184xHuI9zFVBvbrLHhMcJiDvUcbkt9g82a1/AW4Dsm35BgJU9Y8rroDQqGBeSw7HWhF7XNGMw3YN4/Pj+NQlwN
