@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9735,6 +9735,7 @@ return {
                 width = 0,
                 height = 0,
                 rotation = 0,
+                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 0 },
@@ -13761,6 +13762,7 @@ return {
                 width = 0,
                 height = 0,
                 rotation = 0,
+                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 0 },
@@ -13800,6 +13802,7 @@ return {
                 width = 0,
                 height = 0,
                 rotation = 0,
+                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 0 },
@@ -13841,6 +13844,7 @@ return {
                 width = 0,
                 height = 0,
                 rotation = 0,
+                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 0 },
@@ -13999,6 +14003,7 @@ return {
                 width = 80,
                 height = 24,
                 rotation = 0,
+                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 0 },
@@ -14039,6 +14044,7 @@ return {
                 width = 80,
                 height = 24,
                 rotation = 0,
+                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 0 },
@@ -14079,6 +14085,7 @@ return {
                 width = 80,
                 height = 24,
                 rotation = 0,
+                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 0 },
@@ -14523,6 +14530,7 @@ return {
                 width = 0,
                 height = 0,
                 rotation = 0,
+                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 0 },
@@ -14563,6 +14571,7 @@ return {
                 width = 0,
                 height = 0,
                 rotation = 0,
+                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 0 },
@@ -14603,6 +14612,7 @@ return {
                 width = 64,
                 height = 16,
                 rotation = 0,
+                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 16 },
@@ -14643,6 +14653,7 @@ return {
                 width = 64,
                 height = 16,
                 rotation = 0,
+                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 16 },
@@ -14683,6 +14694,7 @@ return {
                 width = 64,
                 height = 16,
                 rotation = 0,
+                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 0 },
@@ -14723,6 +14735,7 @@ return {
                 width = 64,
                 height = 16,
                 rotation = 0,
+                opacity = 1,
                 visible = true,
                 polygon = {
                   { x = 0, y = 16 },
@@ -15833,8 +15846,3145 @@ return {
       tiles = {}
     },
     {
-      name = "crystal-spikes",
+      name = "desert",
       firstgid = 7275,
+      class = "",
+      tilewidth = 32,
+      tileheight = 32,
+      spacing = 0,
+      margin = 0,
+      columns = 46,
+      image = "tilesets/sandy/desert.png",
+      imagewidth = 1472,
+      imageheight = 1440,
+      objectalignment = "unspecified",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 32
+      },
+      properties = {},
+      wangsets = {
+        {
+          name = "desert corner",
+          class = "",
+          tile = -1,
+          wangsettype = "corner",
+          properties = {},
+          colors = {
+            {
+              color = { 255, 0, 0 },
+              name = "sand bright",
+              class = "",
+              probability = 1,
+              tile = 1243,
+              properties = {}
+            },
+            {
+              color = { 0, 255, 0 },
+              name = "grass green",
+              class = "",
+              probability = 1,
+              tile = 1295,
+              properties = {}
+            },
+            {
+              color = { 0, 0, 255 },
+              name = "grass brown",
+              class = "",
+              probability = 1,
+              tile = 1939,
+              properties = {}
+            },
+            {
+              color = { 255, 119, 0 },
+              name = "sand dim",
+              class = "",
+              probability = 1,
+              tile = 1300,
+              properties = {}
+            },
+            {
+              color = { 0, 233, 255 },
+              name = "rock",
+              class = "",
+              probability = 1,
+              tile = 1315,
+              properties = {}
+            }
+          },
+          wangtiles = {
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 47
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 48
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 49
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 50
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 57
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 58
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 59
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 60
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 93
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 94
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 95
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 96
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 103
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 104
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 105
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 106
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 115
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 116
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 117
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 118
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 127
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 128
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 129
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 130
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 139
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 140
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 141
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 142
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 149
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 150
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 151
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 152
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 161
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 162
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 163
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 164
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 173
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 174
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 175
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 176
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 185
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 186
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 187
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 188
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 195
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 196
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 197
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 198
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 207
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 208
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 209
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 210
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 219
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 220
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 221
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 222
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 253
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 254
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 255
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 256
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 265
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 266
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 267
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 268
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 577
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 578
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 579
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 623
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 624
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 625
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 669
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 670
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 671
+            },
+            {
+              wangid = { 0, 2, 0, 1, 0, 2, 0, 2 },
+              tileid = 1104
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 1, 0, 2 },
+              tileid = 1105
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 2 },
+              tileid = 1106
+            },
+            {
+              wangid = { 0, 2, 0, 1, 0, 1, 0, 1 },
+              tileid = 1107
+            },
+            {
+              wangid = { 0, 1, 0, 2, 0, 1, 0, 1 },
+              tileid = 1108
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 2, 0, 1 },
+              tileid = 1109
+            },
+            {
+              wangid = { 0, 2, 0, 4, 0, 2, 0, 2 },
+              tileid = 1114
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 4, 0, 2 },
+              tileid = 1115
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 2 },
+              tileid = 1116
+            },
+            {
+              wangid = { 0, 2, 0, 4, 0, 4, 0, 4 },
+              tileid = 1117
+            },
+            {
+              wangid = { 0, 4, 0, 2, 0, 4, 0, 4 },
+              tileid = 1118
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 2, 0, 4 },
+              tileid = 1119
+            },
+            {
+              wangid = { 0, 5, 0, 1, 0, 5, 0, 5 },
+              tileid = 1124
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 1, 0, 5 },
+              tileid = 1125
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 5 },
+              tileid = 1126
+            },
+            {
+              wangid = { 0, 5, 0, 1, 0, 1, 0, 1 },
+              tileid = 1127
+            },
+            {
+              wangid = { 0, 1, 0, 5, 0, 1, 0, 1 },
+              tileid = 1128
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 5, 0, 1 },
+              tileid = 1129
+            },
+            {
+              wangid = { 0, 4, 0, 1, 0, 4, 0, 4 },
+              tileid = 1134
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 1, 0, 4 },
+              tileid = 1135
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 4 },
+              tileid = 1136
+            },
+            {
+              wangid = { 0, 4, 0, 1, 0, 1, 0, 1 },
+              tileid = 1137
+            },
+            {
+              wangid = { 0, 1, 0, 4, 0, 1, 0, 1 },
+              tileid = 1138
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 4, 0, 1 },
+              tileid = 1139
+            },
+            {
+              wangid = { 0, 1, 0, 2, 0, 2, 0, 2 },
+              tileid = 1150
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 1 },
+              tileid = 1151
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 2, 0, 1 },
+              tileid = 1152
+            },
+            {
+              wangid = { 0, 1, 0, 2, 0, 1, 0, 1 },
+              tileid = 1153
+            },
+            {
+              wangid = { 0, 2, 0, 1, 0, 1, 0, 1 },
+              tileid = 1154
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 2 },
+              tileid = 1155
+            },
+            {
+              wangid = { 0, 4, 0, 2, 0, 2, 0, 2 },
+              tileid = 1160
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 4 },
+              tileid = 1161
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 2, 0, 4 },
+              tileid = 1162
+            },
+            {
+              wangid = { 0, 4, 0, 2, 0, 4, 0, 4 },
+              tileid = 1163
+            },
+            {
+              wangid = { 0, 2, 0, 4, 0, 4, 0, 4 },
+              tileid = 1164
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 2 },
+              tileid = 1165
+            },
+            {
+              wangid = { 0, 1, 0, 5, 0, 5, 0, 5 },
+              tileid = 1170
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 1 },
+              tileid = 1171
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 5, 0, 1 },
+              tileid = 1172
+            },
+            {
+              wangid = { 0, 1, 0, 5, 0, 1, 0, 1 },
+              tileid = 1173
+            },
+            {
+              wangid = { 0, 5, 0, 1, 0, 1, 0, 1 },
+              tileid = 1174
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 5 },
+              tileid = 1175
+            },
+            {
+              wangid = { 0, 1, 0, 4, 0, 4, 0, 4 },
+              tileid = 1180
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 1 },
+              tileid = 1181
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 4, 0, 1 },
+              tileid = 1182
+            },
+            {
+              wangid = { 0, 1, 0, 4, 0, 1, 0, 1 },
+              tileid = 1183
+            },
+            {
+              wangid = { 0, 4, 0, 1, 0, 1, 0, 1 },
+              tileid = 1184
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 4 },
+              tileid = 1185
+            },
+            {
+              wangid = { 0, 2, 0, 1, 0, 2, 0, 2 },
+              tileid = 1196
+            },
+            {
+              wangid = { 0, 2, 0, 1, 0, 1, 0, 2 },
+              tileid = 1197
+            },
+            {
+              wangid = { 0, 2, 0, 1, 0, 1, 0, 2 },
+              tileid = 1198
+            },
+            {
+              wangid = { 0, 2, 0, 1, 0, 1, 0, 2 },
+              tileid = 1199
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 1, 0, 2 },
+              tileid = 1200
+            },
+            {
+              wangid = { 0, 1, 0, 2, 0, 1, 0, 1 },
+              tileid = 1201
+            },
+            {
+              wangid = { 0, 1, 0, 2, 0, 2, 0, 1 },
+              tileid = 1202
+            },
+            {
+              wangid = { 0, 1, 0, 2, 0, 2, 0, 1 },
+              tileid = 1203
+            },
+            {
+              wangid = { 0, 1, 0, 2, 0, 2, 0, 1 },
+              tileid = 1204
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 2, 0, 1 },
+              tileid = 1205
+            },
+            {
+              wangid = { 0, 2, 0, 4, 0, 2, 0, 2 },
+              tileid = 1206
+            },
+            {
+              wangid = { 0, 2, 0, 4, 0, 4, 0, 2 },
+              tileid = 1207
+            },
+            {
+              wangid = { 0, 2, 0, 4, 0, 4, 0, 2 },
+              tileid = 1208
+            },
+            {
+              wangid = { 0, 2, 0, 4, 0, 4, 0, 2 },
+              tileid = 1209
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 4, 0, 2 },
+              tileid = 1210
+            },
+            {
+              wangid = { 0, 4, 0, 2, 0, 4, 0, 4 },
+              tileid = 1211
+            },
+            {
+              wangid = { 0, 4, 0, 2, 0, 2, 0, 4 },
+              tileid = 1212
+            },
+            {
+              wangid = { 0, 4, 0, 2, 0, 2, 0, 4 },
+              tileid = 1213
+            },
+            {
+              wangid = { 0, 4, 0, 2, 0, 2, 0, 4 },
+              tileid = 1214
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 2, 0, 4 },
+              tileid = 1215
+            },
+            {
+              wangid = { 0, 5, 0, 1, 0, 5, 0, 5 },
+              tileid = 1216
+            },
+            {
+              wangid = { 0, 5, 0, 1, 0, 1, 0, 5 },
+              tileid = 1217
+            },
+            {
+              wangid = { 0, 5, 0, 1, 0, 1, 0, 5 },
+              tileid = 1218
+            },
+            {
+              wangid = { 0, 5, 0, 1, 0, 1, 0, 5 },
+              tileid = 1219
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 1, 0, 5 },
+              tileid = 1220
+            },
+            {
+              wangid = { 0, 1, 0, 5, 0, 1, 0, 1 },
+              tileid = 1221
+            },
+            {
+              wangid = { 0, 1, 0, 5, 0, 5, 0, 1 },
+              tileid = 1222
+            },
+            {
+              wangid = { 0, 1, 0, 5, 0, 5, 0, 1 },
+              tileid = 1223
+            },
+            {
+              wangid = { 0, 1, 0, 5, 0, 5, 0, 1 },
+              tileid = 1224
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 5, 0, 1 },
+              tileid = 1225
+            },
+            {
+              wangid = { 0, 4, 0, 1, 0, 4, 0, 4 },
+              tileid = 1226
+            },
+            {
+              wangid = { 0, 4, 0, 1, 0, 1, 0, 4 },
+              tileid = 1227
+            },
+            {
+              wangid = { 0, 4, 0, 1, 0, 1, 0, 4 },
+              tileid = 1228
+            },
+            {
+              wangid = { 0, 4, 0, 1, 0, 1, 0, 4 },
+              tileid = 1229
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 1, 0, 4 },
+              tileid = 1230
+            },
+            {
+              wangid = { 0, 1, 0, 4, 0, 1, 0, 1 },
+              tileid = 1231
+            },
+            {
+              wangid = { 0, 1, 0, 4, 0, 4, 0, 1 },
+              tileid = 1232
+            },
+            {
+              wangid = { 0, 1, 0, 4, 0, 4, 0, 1 },
+              tileid = 1233
+            },
+            {
+              wangid = { 0, 1, 0, 4, 0, 4, 0, 1 },
+              tileid = 1234
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 4, 0, 1 },
+              tileid = 1235
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 2, 0, 2 },
+              tileid = 1242
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1243
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1244
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1245
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 1, 0, 1 },
+              tileid = 1246
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 1, 0, 1 },
+              tileid = 1247
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 2, 0, 2 },
+              tileid = 1251
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 2, 0, 2 },
+              tileid = 1252
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1253
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1254
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1255
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 4, 0, 4 },
+              tileid = 1256
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 4, 0, 4 },
+              tileid = 1257
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 2, 0, 2 },
+              tileid = 1261
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 5, 0, 5 },
+              tileid = 1262
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1263
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1264
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1265
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 1, 0, 1 },
+              tileid = 1266
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 1, 0, 1 },
+              tileid = 1267
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1268
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1269
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1270
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 5, 0, 5 },
+              tileid = 1271
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 4, 0, 4 },
+              tileid = 1272
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1273
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1274
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1275
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 1, 0, 1 },
+              tileid = 1276
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 1, 0, 1 },
+              tileid = 1277
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1278
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1279
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1280
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 4, 0, 4 },
+              tileid = 1281
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1282
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1283
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1284
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1285
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1286
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1287
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 2, 0, 2 },
+              tileid = 1288
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1289
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1290
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1291
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 1, 0, 1 },
+              tileid = 1292
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 1, 0, 1 },
+              tileid = 1293
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 2, 0, 2 },
+              tileid = 1297
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 2, 0, 2 },
+              tileid = 1298
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1299
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1300
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1301
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 4, 0, 4 },
+              tileid = 1302
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 4, 0, 4 },
+              tileid = 1303
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 2, 0, 2 },
+              tileid = 1307
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 5, 0, 5 },
+              tileid = 1308
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1309
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1310
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1311
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 1, 0, 1 },
+              tileid = 1312
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 1, 0, 1 },
+              tileid = 1313
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1314
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1315
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1316
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 5, 0, 5 },
+              tileid = 1317
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 4, 0, 4 },
+              tileid = 1318
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1319
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1320
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1321
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 1, 0, 1 },
+              tileid = 1322
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 1, 0, 1 },
+              tileid = 1323
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1324
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1325
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1326
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 4, 0, 4 },
+              tileid = 1327
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1328
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1329
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1330
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1331
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1332
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1333
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 2, 0, 2 },
+              tileid = 1334
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1335
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1336
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1337
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 1, 0, 1 },
+              tileid = 1338
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 1, 0, 1 },
+              tileid = 1339
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 2, 0, 2 },
+              tileid = 1343
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 2, 0, 2 },
+              tileid = 1344
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1345
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1346
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1347
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 4, 0, 4 },
+              tileid = 1348
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 4, 0, 4 },
+              tileid = 1349
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 2, 0, 2 },
+              tileid = 1353
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 5, 0, 5 },
+              tileid = 1354
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1355
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1356
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1357
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 1, 0, 1 },
+              tileid = 1358
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 1, 0, 1 },
+              tileid = 1359
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1360
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1361
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1362
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 5, 0, 5 },
+              tileid = 1363
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 4, 0, 4 },
+              tileid = 1364
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1365
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1366
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1367
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 1, 0, 1 },
+              tileid = 1368
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 1, 0, 1 },
+              tileid = 1369
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1370
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1371
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1372
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 4, 0, 4 },
+              tileid = 1373
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1374
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1375
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1376
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1377
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1378
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1379
+            },
+            {
+              wangid = { 0, 1, 0, 2, 0, 2, 0, 2 },
+              tileid = 1380
+            },
+            {
+              wangid = { 0, 1, 0, 2, 0, 2, 0, 1 },
+              tileid = 1381
+            },
+            {
+              wangid = { 0, 1, 0, 2, 0, 2, 0, 1 },
+              tileid = 1382
+            },
+            {
+              wangid = { 0, 1, 0, 2, 0, 2, 0, 1 },
+              tileid = 1383
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 1 },
+              tileid = 1384
+            },
+            {
+              wangid = { 0, 2, 0, 1, 0, 1, 0, 1 },
+              tileid = 1385
+            },
+            {
+              wangid = { 0, 2, 0, 1, 0, 1, 0, 2 },
+              tileid = 1386
+            },
+            {
+              wangid = { 0, 2, 0, 1, 0, 1, 0, 2 },
+              tileid = 1387
+            },
+            {
+              wangid = { 0, 2, 0, 1, 0, 1, 0, 2 },
+              tileid = 1388
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 2 },
+              tileid = 1389
+            },
+            {
+              wangid = { 0, 4, 0, 2, 0, 2, 0, 2 },
+              tileid = 1390
+            },
+            {
+              wangid = { 0, 4, 0, 2, 0, 2, 0, 4 },
+              tileid = 1391
+            },
+            {
+              wangid = { 0, 4, 0, 2, 0, 2, 0, 4 },
+              tileid = 1392
+            },
+            {
+              wangid = { 0, 4, 0, 2, 0, 2, 0, 4 },
+              tileid = 1393
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 4 },
+              tileid = 1394
+            },
+            {
+              wangid = { 0, 2, 0, 4, 0, 4, 0, 4 },
+              tileid = 1395
+            },
+            {
+              wangid = { 0, 2, 0, 4, 0, 4, 0, 2 },
+              tileid = 1396
+            },
+            {
+              wangid = { 0, 2, 0, 4, 0, 4, 0, 2 },
+              tileid = 1397
+            },
+            {
+              wangid = { 0, 2, 0, 4, 0, 4, 0, 2 },
+              tileid = 1398
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 2 },
+              tileid = 1399
+            },
+            {
+              wangid = { 0, 1, 0, 5, 0, 5, 0, 5 },
+              tileid = 1400
+            },
+            {
+              wangid = { 0, 1, 0, 5, 0, 5, 0, 1 },
+              tileid = 1401
+            },
+            {
+              wangid = { 0, 1, 0, 5, 0, 5, 0, 1 },
+              tileid = 1402
+            },
+            {
+              wangid = { 0, 1, 0, 5, 0, 5, 0, 1 },
+              tileid = 1403
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 1 },
+              tileid = 1404
+            },
+            {
+              wangid = { 0, 5, 0, 1, 0, 1, 0, 1 },
+              tileid = 1405
+            },
+            {
+              wangid = { 0, 5, 0, 1, 0, 1, 0, 5 },
+              tileid = 1406
+            },
+            {
+              wangid = { 0, 5, 0, 1, 0, 1, 0, 5 },
+              tileid = 1407
+            },
+            {
+              wangid = { 0, 5, 0, 1, 0, 1, 0, 5 },
+              tileid = 1408
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 5 },
+              tileid = 1409
+            },
+            {
+              wangid = { 0, 1, 0, 4, 0, 4, 0, 4 },
+              tileid = 1410
+            },
+            {
+              wangid = { 0, 1, 0, 4, 0, 4, 0, 1 },
+              tileid = 1411
+            },
+            {
+              wangid = { 0, 1, 0, 4, 0, 4, 0, 1 },
+              tileid = 1412
+            },
+            {
+              wangid = { 0, 1, 0, 4, 0, 4, 0, 1 },
+              tileid = 1413
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 1 },
+              tileid = 1414
+            },
+            {
+              wangid = { 0, 4, 0, 1, 0, 1, 0, 1 },
+              tileid = 1415
+            },
+            {
+              wangid = { 0, 4, 0, 1, 0, 1, 0, 4 },
+              tileid = 1416
+            },
+            {
+              wangid = { 0, 4, 0, 1, 0, 1, 0, 4 },
+              tileid = 1417
+            },
+            {
+              wangid = { 0, 4, 0, 1, 0, 1, 0, 4 },
+              tileid = 1418
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 4 },
+              tileid = 1419
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1420
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1421
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1422
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1423
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1424
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1425
+            },
+            {
+              wangid = { 0, 2, 0, 0, 0, 2, 0, 2 },
+              tileid = 1426
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 0, 0, 2 },
+              tileid = 1427
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 0, 0, 2 },
+              tileid = 1428
+            },
+            {
+              wangid = { 0, 2, 0, 0, 0, 0, 0, 0 },
+              tileid = 1429
+            },
+            {
+              wangid = { 0, 0, 0, 2, 0, 0, 0, 0 },
+              tileid = 1430
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 2, 0, 0 },
+              tileid = 1431
+            },
+            {
+              wangid = { 0, 3, 0, 0, 0, 3, 0, 3 },
+              tileid = 1436
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 0, 0, 3 },
+              tileid = 1437
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 0, 0, 3 },
+              tileid = 1438
+            },
+            {
+              wangid = { 0, 3, 0, 0, 0, 0, 0, 0 },
+              tileid = 1439
+            },
+            {
+              wangid = { 0, 0, 0, 3, 0, 0, 0, 0 },
+              tileid = 1440
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 3, 0, 0 },
+              tileid = 1441
+            },
+            {
+              wangid = { 0, 5, 0, 4, 0, 5, 0, 5 },
+              tileid = 1446
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 4, 0, 5 },
+              tileid = 1447
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 5 },
+              tileid = 1448
+            },
+            {
+              wangid = { 0, 5, 0, 4, 0, 4, 0, 4 },
+              tileid = 1449
+            },
+            {
+              wangid = { 0, 4, 0, 5, 0, 4, 0, 4 },
+              tileid = 1450
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 5, 0, 4 },
+              tileid = 1451
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1456
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1457
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1458
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1459
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1460
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1461
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1462
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1463
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1464
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1466
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1467
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1468
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1469
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1470
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1471
+            },
+            {
+              wangid = { 0, 0, 0, 2, 0, 2, 0, 2 },
+              tileid = 1472
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 0 },
+              tileid = 1473
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 2, 0, 0 },
+              tileid = 1474
+            },
+            {
+              wangid = { 0, 0, 0, 2, 0, 0, 0, 0 },
+              tileid = 1475
+            },
+            {
+              wangid = { 0, 2, 0, 0, 0, 0, 0, 0 },
+              tileid = 1476
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 0, 0, 2 },
+              tileid = 1477
+            },
+            {
+              wangid = { 0, 0, 0, 3, 0, 3, 0, 3 },
+              tileid = 1482
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 0 },
+              tileid = 1483
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 3, 0, 0 },
+              tileid = 1484
+            },
+            {
+              wangid = { 0, 0, 0, 3, 0, 0, 0, 0 },
+              tileid = 1485
+            },
+            {
+              wangid = { 0, 3, 0, 0, 0, 0, 0, 0 },
+              tileid = 1486
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 0, 0, 3 },
+              tileid = 1487
+            },
+            {
+              wangid = { 0, 4, 0, 5, 0, 5, 0, 5 },
+              tileid = 1492
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 4 },
+              tileid = 1493
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 5, 0, 4 },
+              tileid = 1494
+            },
+            {
+              wangid = { 0, 4, 0, 5, 0, 4, 0, 4 },
+              tileid = 1495
+            },
+            {
+              wangid = { 0, 5, 0, 4, 0, 4, 0, 4 },
+              tileid = 1496
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 5 },
+              tileid = 1497
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1502
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1503
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1504
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1505
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1506
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1507
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1508
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1509
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1510
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1512
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1513
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1514
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1515
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1516
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1517
+            },
+            {
+              wangid = { 0, 2, 0, 0, 0, 2, 0, 2 },
+              tileid = 1518
+            },
+            {
+              wangid = { 0, 2, 0, 0, 0, 0, 0, 2 },
+              tileid = 1519
+            },
+            {
+              wangid = { 0, 2, 0, 0, 0, 0, 0, 2 },
+              tileid = 1520
+            },
+            {
+              wangid = { 0, 2, 0, 0, 0, 0, 0, 2 },
+              tileid = 1521
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 0, 0, 2 },
+              tileid = 1522
+            },
+            {
+              wangid = { 0, 0, 0, 2, 0, 0, 0, 0 },
+              tileid = 1523
+            },
+            {
+              wangid = { 0, 0, 0, 2, 0, 2, 0, 0 },
+              tileid = 1524
+            },
+            {
+              wangid = { 0, 0, 0, 2, 0, 2, 0, 0 },
+              tileid = 1525
+            },
+            {
+              wangid = { 0, 0, 0, 2, 0, 2, 0, 0 },
+              tileid = 1526
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 2, 0, 0 },
+              tileid = 1527
+            },
+            {
+              wangid = { 0, 3, 0, 0, 0, 3, 0, 3 },
+              tileid = 1528
+            },
+            {
+              wangid = { 0, 3, 0, 0, 0, 0, 0, 3 },
+              tileid = 1529
+            },
+            {
+              wangid = { 0, 3, 0, 0, 0, 0, 0, 3 },
+              tileid = 1530
+            },
+            {
+              wangid = { 0, 3, 0, 0, 0, 0, 0, 3 },
+              tileid = 1531
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 0, 0, 3 },
+              tileid = 1532
+            },
+            {
+              wangid = { 0, 0, 0, 3, 0, 0, 0, 0 },
+              tileid = 1533
+            },
+            {
+              wangid = { 0, 0, 0, 3, 0, 3, 0, 0 },
+              tileid = 1534
+            },
+            {
+              wangid = { 0, 0, 0, 3, 0, 3, 0, 0 },
+              tileid = 1535
+            },
+            {
+              wangid = { 0, 0, 0, 3, 0, 3, 0, 0 },
+              tileid = 1536
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 3, 0, 0 },
+              tileid = 1537
+            },
+            {
+              wangid = { 0, 5, 0, 4, 0, 5, 0, 5 },
+              tileid = 1538
+            },
+            {
+              wangid = { 0, 5, 0, 4, 0, 4, 0, 5 },
+              tileid = 1539
+            },
+            {
+              wangid = { 0, 5, 0, 4, 0, 4, 0, 5 },
+              tileid = 1540
+            },
+            {
+              wangid = { 0, 5, 0, 4, 0, 4, 0, 5 },
+              tileid = 1541
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 4, 0, 5 },
+              tileid = 1542
+            },
+            {
+              wangid = { 0, 4, 0, 5, 0, 4, 0, 4 },
+              tileid = 1543
+            },
+            {
+              wangid = { 0, 4, 0, 5, 0, 5, 0, 4 },
+              tileid = 1544
+            },
+            {
+              wangid = { 0, 4, 0, 5, 0, 5, 0, 4 },
+              tileid = 1545
+            },
+            {
+              wangid = { 0, 4, 0, 5, 0, 5, 0, 4 },
+              tileid = 1546
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 5, 0, 4 },
+              tileid = 1547
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1548
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1549
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1550
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1551
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1552
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1553
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1554
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1555
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1556
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1558
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1559
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1560
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1561
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1562
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1563
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 2, 0, 2 },
+              tileid = 1564
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 0, 0, 0 },
+              tileid = 1568
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 0, 0, 0 },
+              tileid = 1569
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 2, 0, 2 },
+              tileid = 1573
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 3, 0, 3 },
+              tileid = 1574
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 0, 0, 0 },
+              tileid = 1578
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 0, 0, 0 },
+              tileid = 1579
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 3, 0, 3 },
+              tileid = 1583
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 5, 0, 5 },
+              tileid = 1584
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1585
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1586
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1587
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 4, 0, 4 },
+              tileid = 1588
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 4, 0, 4 },
+              tileid = 1589
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1590
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1591
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1592
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 5, 0, 5 },
+              tileid = 1593
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1594
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1595
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1596
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1597
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1598
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1599
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1600
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1601
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1602
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1604
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1605
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1606
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1607
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1608
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1609
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 2, 0, 2 },
+              tileid = 1610
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 0, 0, 0 },
+              tileid = 1614
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 0, 0, 0 },
+              tileid = 1615
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1617
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 2, 0, 2 },
+              tileid = 1619
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 3, 0, 3 },
+              tileid = 1620
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 0, 0, 0 },
+              tileid = 1624
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 0, 0, 0 },
+              tileid = 1625
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1627
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 3, 0, 3 },
+              tileid = 1629
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 5, 0, 5 },
+              tileid = 1630
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1631
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1632
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1633
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 4, 0, 4 },
+              tileid = 1634
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 4, 0, 4 },
+              tileid = 1635
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1636
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1637
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1638
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 5, 0, 5 },
+              tileid = 1639
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1640
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1641
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1642
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1643
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1644
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1645
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1646
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1647
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 3 },
+              tileid = 1648
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1650
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1651
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1652
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1653
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1654
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1655
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 2, 0, 2 },
+              tileid = 1656
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 0, 0, 0 },
+              tileid = 1660
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 0, 0, 0 },
+              tileid = 1661
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 2, 0, 2 },
+              tileid = 1665
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 3, 0, 3 },
+              tileid = 1666
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 0, 0, 0 },
+              tileid = 1670
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 0, 0, 0 },
+              tileid = 1671
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 3, 0, 3 },
+              tileid = 1675
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 5, 0, 5 },
+              tileid = 1676
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1677
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1678
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1679
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 4, 0, 4 },
+              tileid = 1680
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 4, 0, 4 },
+              tileid = 1681
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1682
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1683
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1684
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 5, 0, 5 },
+              tileid = 1685
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1686
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1687
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1688
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1689
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1690
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1691
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1692
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1693
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1694
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1696
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1697
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1698
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1699
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1700
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1701
+            },
+            {
+              wangid = { 0, 0, 0, 2, 0, 2, 0, 2 },
+              tileid = 1702
+            },
+            {
+              wangid = { 0, 0, 0, 2, 0, 2, 0, 0 },
+              tileid = 1703
+            },
+            {
+              wangid = { 0, 0, 0, 2, 0, 2, 0, 0 },
+              tileid = 1704
+            },
+            {
+              wangid = { 0, 0, 0, 2, 0, 2, 0, 0 },
+              tileid = 1705
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 0 },
+              tileid = 1706
+            },
+            {
+              wangid = { 0, 2, 0, 0, 0, 0, 0, 0 },
+              tileid = 1707
+            },
+            {
+              wangid = { 0, 2, 0, 0, 0, 0, 0, 2 },
+              tileid = 1708
+            },
+            {
+              wangid = { 0, 2, 0, 0, 0, 0, 0, 2 },
+              tileid = 1709
+            },
+            {
+              wangid = { 0, 2, 0, 0, 0, 0, 0, 2 },
+              tileid = 1710
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 0, 0, 2 },
+              tileid = 1711
+            },
+            {
+              wangid = { 0, 0, 0, 3, 0, 3, 0, 3 },
+              tileid = 1712
+            },
+            {
+              wangid = { 0, 0, 0, 3, 0, 3, 0, 0 },
+              tileid = 1713
+            },
+            {
+              wangid = { 0, 0, 0, 3, 0, 3, 0, 0 },
+              tileid = 1714
+            },
+            {
+              wangid = { 0, 0, 0, 3, 0, 3, 0, 0 },
+              tileid = 1715
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 0 },
+              tileid = 1716
+            },
+            {
+              wangid = { 0, 3, 0, 0, 0, 0, 0, 0 },
+              tileid = 1717
+            },
+            {
+              wangid = { 0, 3, 0, 0, 0, 0, 0, 3 },
+              tileid = 1718
+            },
+            {
+              wangid = { 0, 3, 0, 0, 0, 0, 0, 3 },
+              tileid = 1719
+            },
+            {
+              wangid = { 0, 3, 0, 0, 0, 0, 0, 3 },
+              tileid = 1720
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 0, 0, 3 },
+              tileid = 1721
+            },
+            {
+              wangid = { 0, 4, 0, 5, 0, 5, 0, 5 },
+              tileid = 1722
+            },
+            {
+              wangid = { 0, 4, 0, 5, 0, 5, 0, 4 },
+              tileid = 1723
+            },
+            {
+              wangid = { 0, 4, 0, 5, 0, 5, 0, 4 },
+              tileid = 1724
+            },
+            {
+              wangid = { 0, 4, 0, 5, 0, 5, 0, 4 },
+              tileid = 1725
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 4 },
+              tileid = 1726
+            },
+            {
+              wangid = { 0, 5, 0, 4, 0, 4, 0, 4 },
+              tileid = 1727
+            },
+            {
+              wangid = { 0, 5, 0, 4, 0, 4, 0, 5 },
+              tileid = 1728
+            },
+            {
+              wangid = { 0, 5, 0, 4, 0, 4, 0, 5 },
+              tileid = 1729
+            },
+            {
+              wangid = { 0, 5, 0, 4, 0, 4, 0, 5 },
+              tileid = 1730
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 5 },
+              tileid = 1731
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1732
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1733
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1734
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1735
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1736
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1737
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1738
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1739
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1740
+            },
+            {
+              wangid = { 0, 3, 0, 1, 0, 3, 0, 3 },
+              tileid = 1748
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 1, 0, 3 },
+              tileid = 1749
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 3 },
+              tileid = 1750
+            },
+            {
+              wangid = { 0, 3, 0, 1, 0, 1, 0, 1 },
+              tileid = 1751
+            },
+            {
+              wangid = { 0, 1, 0, 3, 0, 1, 0, 1 },
+              tileid = 1752
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 3, 0, 1 },
+              tileid = 1753
+            },
+            {
+              wangid = { 0, 3, 0, 4, 0, 3, 0, 3 },
+              tileid = 1758
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 4, 0, 3 },
+              tileid = 1759
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 3 },
+              tileid = 1760
+            },
+            {
+              wangid = { 0, 3, 0, 4, 0, 4, 0, 4 },
+              tileid = 1761
+            },
+            {
+              wangid = { 0, 4, 0, 3, 0, 4, 0, 4 },
+              tileid = 1762
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 3, 0, 4 },
+              tileid = 1763
+            },
+            {
+              wangid = { 0, 5, 0, 0, 0, 5, 0, 5 },
+              tileid = 1768
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 0, 0, 5 },
+              tileid = 1769
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 0, 0, 5 },
+              tileid = 1770
+            },
+            {
+              wangid = { 0, 5, 0, 0, 0, 0, 0, 0 },
+              tileid = 1771
+            },
+            {
+              wangid = { 0, 0, 0, 5, 0, 0, 0, 0 },
+              tileid = 1772
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 5, 0, 0 },
+              tileid = 1773
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1778
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1779
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1780
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1781
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1782
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1783
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1784
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1785
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1786
+            },
+            {
+              wangid = { 0, 1, 0, 3, 0, 3, 0, 3 },
+              tileid = 1794
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 1 },
+              tileid = 1795
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 3, 0, 1 },
+              tileid = 1796
+            },
+            {
+              wangid = { 0, 1, 0, 3, 0, 1, 0, 1 },
+              tileid = 1797
+            },
+            {
+              wangid = { 0, 3, 0, 1, 0, 1, 0, 1 },
+              tileid = 1798
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 3 },
+              tileid = 1799
+            },
+            {
+              wangid = { 0, 4, 0, 3, 0, 3, 0, 3 },
+              tileid = 1804
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 4 },
+              tileid = 1805
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 3, 0, 4 },
+              tileid = 1806
+            },
+            {
+              wangid = { 0, 4, 0, 3, 0, 4, 0, 4 },
+              tileid = 1807
+            },
+            {
+              wangid = { 0, 3, 0, 4, 0, 4, 0, 4 },
+              tileid = 1808
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 3 },
+              tileid = 1809
+            },
+            {
+              wangid = { 0, 0, 0, 5, 0, 5, 0, 5 },
+              tileid = 1814
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 0 },
+              tileid = 1815
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 5, 0, 0 },
+              tileid = 1816
+            },
+            {
+              wangid = { 0, 0, 0, 5, 0, 0, 0, 0 },
+              tileid = 1817
+            },
+            {
+              wangid = { 0, 5, 0, 0, 0, 0, 0, 0 },
+              tileid = 1818
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 0, 0, 5 },
+              tileid = 1819
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1824
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1825
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1826
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1827
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1828
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1829
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1830
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1831
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1832
+            },
+            {
+              wangid = { 0, 3, 0, 1, 0, 3, 0, 3 },
+              tileid = 1840
+            },
+            {
+              wangid = { 0, 3, 0, 1, 0, 1, 0, 3 },
+              tileid = 1841
+            },
+            {
+              wangid = { 0, 3, 0, 1, 0, 1, 0, 3 },
+              tileid = 1842
+            },
+            {
+              wangid = { 0, 3, 0, 1, 0, 1, 0, 3 },
+              tileid = 1843
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 1, 0, 3 },
+              tileid = 1844
+            },
+            {
+              wangid = { 0, 1, 0, 3, 0, 1, 0, 1 },
+              tileid = 1845
+            },
+            {
+              wangid = { 0, 1, 0, 3, 0, 3, 0, 1 },
+              tileid = 1846
+            },
+            {
+              wangid = { 0, 1, 0, 3, 0, 3, 0, 1 },
+              tileid = 1847
+            },
+            {
+              wangid = { 0, 1, 0, 3, 0, 3, 0, 1 },
+              tileid = 1848
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 3, 0, 1 },
+              tileid = 1849
+            },
+            {
+              wangid = { 0, 3, 0, 4, 0, 3, 0, 3 },
+              tileid = 1850
+            },
+            {
+              wangid = { 0, 3, 0, 4, 0, 4, 0, 3 },
+              tileid = 1851
+            },
+            {
+              wangid = { 0, 3, 0, 4, 0, 4, 0, 3 },
+              tileid = 1852
+            },
+            {
+              wangid = { 0, 3, 0, 4, 0, 4, 0, 3 },
+              tileid = 1853
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 4, 0, 3 },
+              tileid = 1854
+            },
+            {
+              wangid = { 0, 4, 0, 3, 0, 4, 0, 4 },
+              tileid = 1855
+            },
+            {
+              wangid = { 0, 4, 0, 3, 0, 3, 0, 4 },
+              tileid = 1856
+            },
+            {
+              wangid = { 0, 4, 0, 3, 0, 3, 0, 4 },
+              tileid = 1857
+            },
+            {
+              wangid = { 0, 4, 0, 3, 0, 3, 0, 4 },
+              tileid = 1858
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 3, 0, 4 },
+              tileid = 1859
+            },
+            {
+              wangid = { 0, 5, 0, 0, 0, 5, 0, 5 },
+              tileid = 1860
+            },
+            {
+              wangid = { 0, 5, 0, 0, 0, 0, 0, 5 },
+              tileid = 1861
+            },
+            {
+              wangid = { 0, 5, 0, 0, 0, 0, 0, 5 },
+              tileid = 1862
+            },
+            {
+              wangid = { 0, 5, 0, 0, 0, 0, 0, 5 },
+              tileid = 1863
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 0, 0, 5 },
+              tileid = 1864
+            },
+            {
+              wangid = { 0, 0, 0, 5, 0, 0, 0, 0 },
+              tileid = 1865
+            },
+            {
+              wangid = { 0, 0, 0, 5, 0, 5, 0, 0 },
+              tileid = 1866
+            },
+            {
+              wangid = { 0, 0, 0, 5, 0, 5, 0, 0 },
+              tileid = 1867
+            },
+            {
+              wangid = { 0, 0, 0, 5, 0, 5, 0, 0 },
+              tileid = 1868
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 5, 0, 0 },
+              tileid = 1869
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1870
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1871
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1872
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1873
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1874
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1875
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1876
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1877
+            },
+            {
+              wangid = { 0, 2, 0, 2, 0, 2, 0, 2 },
+              tileid = 1878
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 3, 0, 3 },
+              tileid = 1886
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1887
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1888
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1889
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 1, 0, 1 },
+              tileid = 1890
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 1, 0, 1 },
+              tileid = 1891
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 3, 0, 3 },
+              tileid = 1895
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 3, 0, 3 },
+              tileid = 1896
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1897
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1898
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1899
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 4, 0, 4 },
+              tileid = 1900
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 4, 0, 4 },
+              tileid = 1901
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 3, 0, 3 },
+              tileid = 1905
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 5, 0, 5 },
+              tileid = 1906
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 0, 0, 0 },
+              tileid = 1910
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 0, 0, 0 },
+              tileid = 1911
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1912
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1913
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1914
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 5, 0, 5 },
+              tileid = 1915
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 3, 0, 3 },
+              tileid = 1932
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1933
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1934
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1935
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 1, 0, 1 },
+              tileid = 1936
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 1, 0, 1 },
+              tileid = 1937
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 3, 0, 3 },
+              tileid = 1941
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 3, 0, 3 },
+              tileid = 1942
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1943
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1944
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1945
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 4, 0, 4 },
+              tileid = 1946
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 4, 0, 4 },
+              tileid = 1947
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 3, 0, 3 },
+              tileid = 1951
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 5, 0, 5 },
+              tileid = 1952
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 0, 0, 0 },
+              tileid = 1956
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 0, 0, 0 },
+              tileid = 1957
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1958
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1959
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 1960
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 5, 0, 5 },
+              tileid = 1961
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 3, 0, 3 },
+              tileid = 1978
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1979
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1980
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 1 },
+              tileid = 1981
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 1, 0, 1 },
+              tileid = 1982
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 1, 0, 1 },
+              tileid = 1983
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 3, 0, 3 },
+              tileid = 1987
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 3, 0, 3 },
+              tileid = 1988
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1989
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1990
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 4 },
+              tileid = 1991
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 4, 0, 4 },
+              tileid = 1992
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 4, 0, 4 },
+              tileid = 1993
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 3, 0, 3 },
+              tileid = 1997
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 5, 0, 5 },
+              tileid = 1998
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 0, 0, 0 },
+              tileid = 2002
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 0, 0, 0 },
+              tileid = 2003
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 2004
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 2005
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 5 },
+              tileid = 2006
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 5, 0, 5 },
+              tileid = 2007
+            },
+            {
+              wangid = { 0, 1, 0, 3, 0, 3, 0, 3 },
+              tileid = 2024
+            },
+            {
+              wangid = { 0, 1, 0, 3, 0, 3, 0, 1 },
+              tileid = 2025
+            },
+            {
+              wangid = { 0, 1, 0, 3, 0, 3, 0, 1 },
+              tileid = 2026
+            },
+            {
+              wangid = { 0, 1, 0, 3, 0, 3, 0, 1 },
+              tileid = 2027
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 1 },
+              tileid = 2028
+            },
+            {
+              wangid = { 0, 3, 0, 1, 0, 1, 0, 1 },
+              tileid = 2029
+            },
+            {
+              wangid = { 0, 3, 0, 1, 0, 1, 0, 3 },
+              tileid = 2030
+            },
+            {
+              wangid = { 0, 3, 0, 1, 0, 1, 0, 3 },
+              tileid = 2031
+            },
+            {
+              wangid = { 0, 3, 0, 1, 0, 1, 0, 3 },
+              tileid = 2032
+            },
+            {
+              wangid = { 0, 1, 0, 1, 0, 1, 0, 3 },
+              tileid = 2033
+            },
+            {
+              wangid = { 0, 4, 0, 3, 0, 3, 0, 3 },
+              tileid = 2034
+            },
+            {
+              wangid = { 0, 4, 0, 3, 0, 3, 0, 4 },
+              tileid = 2035
+            },
+            {
+              wangid = { 0, 4, 0, 3, 0, 3, 0, 4 },
+              tileid = 2036
+            },
+            {
+              wangid = { 0, 4, 0, 3, 0, 3, 0, 4 },
+              tileid = 2037
+            },
+            {
+              wangid = { 0, 3, 0, 3, 0, 3, 0, 4 },
+              tileid = 2038
+            },
+            {
+              wangid = { 0, 3, 0, 4, 0, 4, 0, 4 },
+              tileid = 2039
+            },
+            {
+              wangid = { 0, 3, 0, 4, 0, 4, 0, 3 },
+              tileid = 2040
+            },
+            {
+              wangid = { 0, 3, 0, 4, 0, 4, 0, 3 },
+              tileid = 2041
+            },
+            {
+              wangid = { 0, 3, 0, 4, 0, 4, 0, 3 },
+              tileid = 2042
+            },
+            {
+              wangid = { 0, 4, 0, 4, 0, 4, 0, 3 },
+              tileid = 2043
+            },
+            {
+              wangid = { 0, 0, 0, 5, 0, 5, 0, 5 },
+              tileid = 2044
+            },
+            {
+              wangid = { 0, 0, 0, 5, 0, 5, 0, 0 },
+              tileid = 2045
+            },
+            {
+              wangid = { 0, 0, 0, 5, 0, 5, 0, 0 },
+              tileid = 2046
+            },
+            {
+              wangid = { 0, 0, 0, 5, 0, 5, 0, 0 },
+              tileid = 2047
+            },
+            {
+              wangid = { 0, 5, 0, 5, 0, 5, 0, 0 },
+              tileid = 2048
+            },
+            {
+              wangid = { 0, 5, 0, 0, 0, 0, 0, 0 },
+              tileid = 2049
+            },
+            {
+              wangid = { 0, 5, 0, 0, 0, 0, 0, 5 },
+              tileid = 2050
+            },
+            {
+              wangid = { 0, 5, 0, 0, 0, 0, 0, 5 },
+              tileid = 2051
+            },
+            {
+              wangid = { 0, 5, 0, 0, 0, 0, 0, 5 },
+              tileid = 2052
+            },
+            {
+              wangid = { 0, 0, 0, 0, 0, 0, 0, 5 },
+              tileid = 2053
+            }
+          }
+        }
+      },
+      tilecount = 2070,
+      tiles = {}
+    },
+    {
+      name = "crystal-spikes",
+      firstgid = 9345,
       class = "",
       tilewidth = 32,
       tileheight = 32,
@@ -16142,64 +19292,52 @@ return {
       compression = "zlib",
       chunks = {
         {
-          x = 40, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMAwBcFWIgSFcmIEhQpiBIUiEgSFYhIEBACXcAoo="
-        },
-        {
-          x = 60, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMNAJhAsjcIgIA0OQCANDBJQdLIIQj4TSIDkQG0SD1ILEkOUBW2EIOQ=="
-        },
-        {
-          x = 80, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMNAJBIswMIRAMYgdLszAcE2IfAMBy9cC8Q=="
-        },
-        {
           x = -20, y = 0, width = 20, height = 12,
-          data = "eJxjYBgFgwWECVPXPFER6ponJjKy3HdFiLrm0QIAAGnNAfY="
+          data = "eJxjYBgFo4A4oK9E3ZCKo7J53VQ2j9r+pQUAAP3jAdA="
         },
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJzNks1KQzEUhD+kiosKOUmeSMSVInjt7+OIFTcKrULbF3KpuBHxaWTICTcWV7oxMMw5k8zcJDfw+/Ee+zonuMp/CAPmjX+cYZa/53e5fGOe+n6aCiYJLnNf116YNd6aNcqwNIgG5v1DADPYRlg5CxvH2nWh9sqUV75kkA0e3SseS4/wHGAR4NjgwDVBvfjU4CbA0OAjwacVz77PX4cCZUiv/p/qhfNJgEODc4NlhM6zBo1He9lr9qM93DbzFQMre3mLMErwGkrmWud1rvVG92Pw5Ppqh7eNR3cfE1z4uV9CYeULd94HgzODe4MjK+uGrum/aY2gN9PpLXpdIW2iN9Do6qdeS99dI/7v4wulBUlD"
+          data = "eJzlkckuBEAQhr+RwYiDk2VkJunqsl/sPIazZQYTHsFbEOIZxDswIS62eQPL2K7ciOUiUumScHfTSaWq/vr/qupu+L9nXSGrv7FxhTGFI4UphRaFSYVhhU2FjEJF4VBh44e2SaFZk696fUJhX1PPVffTCnver+yajGMlhZzzbMaiwpbjowoHCisKI75X44+8wffL+t45r5diuk/V9xEBFYgC9wInAZYUthWOA9w6Vvbc4mXX9Qq0+96WG/c0QD1Cq0Kbwo3AnUCP1z4ivIWEvQc4C6nPjKS44nMeBHYKkC9CLcJjAdaK8FSA1wDXApcCQwK7BegT6BeohTTTZp0H+BR4DnDl/AFJWuOaN/wlwGxMb3PhHMPs/SwfdKsLdCh0uc3FZAsR5t0b3qnQbX/qudW+cYvzmrim/evzBUUUVnM="
         },
         {
           x = 20, y = 0, width = 20, height = 12,
-          data = "eJzNkk1KA0EQhT9EXNpd3bNz4YF0ERI1UVx6Dv91FX9IAhoEPYkgouhCsnETXHgTRZ5dg4N4ABse9V7Vq+6enmpXsFJBN0Ongpz5c61lWHdPu4JeLn3KSYtvyFNBRzXnr6n0ytNEyjAJcBJhyeA0wrxBP8I0Q9/gLZd7CerR2eKrFby4T1CvovZq5p+dnxu0DCzDyOAywTjBwGDoWlDtd33knhoXqcS6vm+wG+AxwmeAnODIYMYKf4glHgRYMLg2uLHiV14Q/wiwE+AwFj1nMOt7CNKK9xEODPYibCV4z7CY4Db8eHSn7zP9jFvf89jzRxH2/Yw790hfJbhOsGlwH8o3bIefPmGot9Ib6T1cjw0GDT5yPnAtrpx6Ro28dDRYNv9/VmZgEguPnn/SnBicuRZaDT7NEAzOA/Q0Xz57XZ/FOmomVatzgvw1b85uPb//fX0B3lRn1w=="
+          data = "eJzlkMsuhGEMhp+ESbgBp1h8/fo7bpwyXMHY25IxBFfA1sLaEOIWXABLcRoLhDtwFrdgMSwc0nyd+GNtp0nTtH379m3hf9mIQllhTGFIoaZQVagorCsUFVoVmhU2FM4UCgoLCrMKiwpbCk0KSz677ZxFxxaco+rzxiMCTwKZQI8kHcYzpzDvuBPfYzqOXWPFtdScd8fnVgVKGUxm8ChwEeBQ4UhhwjmG/cbzkPpWH/f6qPum9y8DLGewksFzhD1Jmk2r3d2icKrphrfws7OBOcjteQ0wKLAWYUpgtzvhXwTqAaL/wrxPoF8Svu46LGoObz+zeq/jBwSuA7xH2I9wFeDeOT4EPiVpMF7DNtzyxvydwIPjyxFuBG69b3X7o9W+BNoU2hU6PXYoTMcUf+ddmvAznlvMz/61fQNBOl0d"
         },
         {
           x = 40, y = 0, width = 20, height = 12,
-          data = "eJzNkstKQ0EMhj8vdCcnOTMr36UIQoWuxF6sfRkRxV2rYg+0Po2grVtd+jgSJkOnZ6U7B36S/LnOTOD3JwaYBhhFGEYYR7gIMIkwCjAIfygGXHreOMCDwneA47gbM4gwsR5F78zZDNku+TrAk6R66nFD9z9rwqqGF0fJLR2Nc6YvNMUZt2hxrxWEGtaSpOFMoaOwrpJ+rYnvuLwV2HieYSPwVkHP/Rld4wVOFXpe/0PgXWBP4N45s3OO6VbvULfxN0Wvkwq6VZqh7GU4aNXbb81zp9DY3e3d7H3s7Qp76dxKd2Ma18vcbOd/nwt8CTy6XeJcE6TlmwkcKfQFPgX6ut3DK9sF+3P7/2JHpzHB/CbNZ9L8Wc+8xfz38wPWllQJ"
+          data = "eJzlj1suhEEQhT/3eOGNkH+S7v8QnjAMtuI2rrEakchYA9ZgMHjBFtzDGtxeJFLp+uNfgDednJyuOqdOdcP/OtuCS8GaYFJwJqgKTgT7gk3BnuDYPTX3TAsaggvXOwQtwY6gU7DrbPltgl73nAtOBevutbwZwayzYc739Tgb6oJ5wYbvbpXqLX9D3ffW3FP1e9Mzmp4ZI1yF9G/bt+oZ3YKukt7wP0x5bzQmluv2N+stRPgMqWd6HuE5wojzdYCb8Dv/EuHVZ74CHGXpbrlPrk1U0t30fsFhBh8BHiKMRXgPSbfsPsFBBu2V5C184xHuI9zFVBvbrLHhMcJiDvUcbkt9g82a1/AW4Dsm35BgJU9Y8rroDQqGBeSw7HWhF7XNGMw3YN4/Pj+NQlwN"
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJxtk8lKRDEQRc/GCZSXSvSH1I04tvPPiOBCoe1uh2619WNcOC0cWhEEf0aQayr0Wxgokle5ublVuW8zwWaCLY+2wZLBd4KOz8sGx75WTNbWBfMWYCHwN74ixJSjkWBnOnOfBhh3/KJl3qrGJY52Nfx+DbDrPPoOBpZgfTrntF+wJdoBBv/kFa0AfWkzmDLoOO7d55bBSqndc2ZwHeHC80t+9tl17lVwGeHcMkY1qY6xACch48Wh/Z7BTYQRgy3LOj5CPiOuM4N5g8MAKWaMzknzVcyztIjjwTHi0nwbso6i848v5r17xz4F2Pe14sDgIMCowayvk3P/1DRIZ6vK3uhJgw2j73PX89pXXHluQ7wV3NXuFWfX+6qeH9XeXB7Ru+pNnv0t1c+y3/A7brzu5PEYYM6y1+Tnzzj0rnpc97Q8NxHyXS/OrV6VOqRdd6i2Mrbdw3W/lpCXVz2vu8Sr9YrX1XQvqJb6mPF/rum4QZVxqld9WXNO9V1+lPbyHxYdvyg8i38="
+          data = "eJzlkklKg0EQhT8Vo1sVFy4Cf/dz1qCJid5A7+BE9CLq2iEO53DhMoLTwgHXbhxQyBUUdCVSdAUk4AlsaHqsr96rbvhf7ULQpTRvj2lsi9AnqEYoxLQuNM8Es4Kcx7S2S8GMYFowEaFX0K8Ud+R7kxF6/N6u4FRwICi2MHO+X3eeMaqCc4+5EnQLDgXrv+4YpyyoCSq/mJZ/W3CdwVCANUGHoNPjjLcq2BOUBGeCHaUaFV3regszBrjN4M6ZJdcRAtxkaXzz+ZHXruK+ys41D01t9xk0IjwIPp1pjEaAVx9PYjpTSPmNXXNWXbDv+k33ewYjAZ4DvAT4yOAxwKh32x83jRE2AyzkkxfTbGzLb2865Z6WIixHGBAsxrReiek9rJ7mw3Iacz4P7YOwFeE4wIZ7MN3G/8r++JTO/Q7preec+eQemppNq9XK+nCAsQA/51BaUA=="
         },
         {
           x = 80, y = 0, width = 20, height = 12,
-          data = "eJydk8lKA0EQhr+THlymqyf4Nt7EBeMSF9TniZ6MZtGQxNcRQXA9iY8jv1XDDDmJAz9VXV3rXz1LBv0E3yWsJLg16LSgLPnXt2fwluClgOsCdhM8J7ASjlpwXsJJC77y3/INDAbRX4WtBJ9h+0iwHz2fRY2L0uucx/m4VeuKUX9vczkF5Tw0n+E1QTJom99tp9rHDO4M7gPZfN4bg2HDLkwyjK3uddHgPXmN98K57yhfhpnBmpC9vmJ0N8owMZia+4yz392Ez2rkXw55YM6J+u+Ef2HQi3uhN8er/PcaZ/UqqVmnqp99ZumaaxTzzXI940pjft3LPmroin3IUAbWC5ePyeWmubxKcBp5SnP7gkG3gKfw7Sa4TO67EXGCOBKXwn1wWnGrs3RxWflUdnEsXfHaQTdyVu/kNqQ4bvJY7UCy+o/mMYz8qqv/S7Z+yOoda98Hhe9kJ6Ryaid6V789mPurB72hdgE/0COB+w=="
+          data = "eJztkEkuxkEQxX9m4gokXf/HxsZnCKfxEcMlXMEQwz0klghWxq2lxHAIbOWlSz4LkWDrJZ1U9xuqquEfP0W/4EgwK+gSnKrDrcfX5ztsCk4yayPrv+R9xrFq/m/Rm7su53zbgkXBkGBF0C1YEvRlj5bgXLAjaAt6BAt5nLWVeu+4JtgVDOZfzgj2M2tSMJ99rJvL3HZqPNOUYFqdnvZdlsrZa97+vZzDd/+He7ufd/FMzoio3gHBWWq923WBJuApQFHr8YBVwUWp748BYwHPqbPmqsBD1uadbf19wIu5Bg4baI1WnTX2HAS8FpgIuClwW+BuBIZVuY+3t1L17426Sq4="
         },
         {
           x = 100, y = 0, width = 20, height = 12,
-          data = "eJzNkktKQ0EQRQ+KiKNXt/uRJTmTkPh3OWJEMGJiDFG3IyiI+BkI4mJEyi55087MgktRNTh03dvwv2vYwnYLBxn2Qz4fZthpi3x3lOt4M8G1IAk+c6d1K/3CwATvlbyeICfYSx3rPNgbBs/BnVbypgkWgnnw/C0vwXhq4Mzg1erf57cuEtyE5oItg8cGJir39g3uKnnHgu8GTgUrgl117D9PJ1Z/78jg3oqHrpHgJDz9EPQFb0vwHgzWBJsqrNVguXrh6cD/S1vH8yyuEsxCPnu/jYw8j9osvPyW31yjXwrG4ds4dl9L8H4AblM/DQ=="
+          data = "eJzl0j2KQjEYheGXK8pMObqBJKccREHBtdhdf3Yy5SDocgQdtRFxEyquwZ9GlI+bDWRuaSBFmicn5wu815oIxoIvwTCU92qChaAf4OnLez0V5neAuqARd/OfWSuCv2hmgo1gHf08QJbomvEraKnosiuYCz4FA8E50bPu2oJltDqCqnUaYBbnlJJxJMgF3sPWFecPm7VgKlhZHwne0cPBw93BzhWmZbNO7R57d4q3D/AT4Org4uDm4BSzWraHT/tHL9JXK9w="
         },
         {
           x = 20, y = 12, width = 20, height = 12,
-          data = "eJzt0MENgCAQBdGRZJPdfoCa8CAN6QFrwoLsgfwjU8A7DOxWugy66d4Ng1foTYNP6BWH6jqvOZxC73Z4hJ66IyCFzssBJeAHfVsHFQ=="
+          data = "eJxjYBgF5ABuZQaGECXqhd1SGQaGe1Q07zIrA8MVVuqZZ8rBwGDGQT3zMjgYGDKpaN5sDgaGOVQ0j9qAkZOBgYmTeuaZcDIwmHIyMAAA3MAHSg=="
         },
         {
           x = 40, y = 12, width = 20, height = 12,
-          data = "eJzlzNtRwmAUBsCdgYTvWJAJFxtSMDbkBegIDfX4QgX/8MYWsDyWqbvvd7rzN9++PqxCQoWntH1DGMM6bMI27MJL4/ca3sI+HMJ7mMJH4/cZvsJ3+AnHcArnxs/NJfyGvzCHa+O3KJZFV/TFqkhR1fY9F0MxFutiU2yLXeP3D5ZkEmI="
+          data = "eJzlzLlxAlEURcGuQsB9igGTGAQzgxLSAiSkDWWEgHgwRAS/xuM4x2vuq+NiXG+yHNc7T/8/C/OQUOExbd4qrEMX+jCETXhu9F7Ca3gL72EbdmHf6H2Ez/AVvsNPOITfRs+tY/gLp3AOl0ZvUjwU02JWzIsUVW3eU7Eq1kVX9MVQbBq9K61OElw="
         },
         {
           x = 60, y = 12, width = 20, height = 12,
-          data = "eJztjksKgDAMBecCYtPWM7kQFfyg3smruREXHkdKC1YQXQsOhJeEMASuZAZ6A7uBRflMBebQu1Lis1KQCNQCpUAh3LJpGCys+nTE/jn48tQ745sn3K+NgdH67KJ5iHZuniy0L76fHz7GATE+GT8="
+          data = "eJztzbENgmAUhdGzhdDx/ldRUTGNbOU0rAJjaKsQExIrEqjlVF91L/u6wi0ZCp/gkYxJnzwbpqAN5uDV8A7HFapt+751nb+/by9n9i4X/2cFT+UNfA=="
         },
         {
           x = 80, y = 12, width = 20, height = 12,
-          data = "eJzti0EKg0AMRd9OuqgzceZWFVtqQXsnaXsrlypuehwJGVDPoB8eSf7/GTx0Ah8P/2DcHDwEcrH7mqbyc5Cl22/8r8BdoBLrXwRGZ5lLvVKg9+vfVMArQBOhjVAHQ71nME8z3d9x3202maLZXHDqFEfSAuY2G3s="
+          data = "eJzti8kNgEAMA6cL4EeyD+BFPxyFc1VBAygiq+VDB7E0imU7q8Ldwikvg8Dhvncugc2vbTsp5Gz3v1FhUqgTNM7imWG+SqWfP1vLc2+5+VAoxK8eIloWUQ=="
         },
         {
           x = 100, y = 12, width = 20, height = 12,
-          data = "eJzzE2Rg4ANhAQYGf34GBh9BBoYbwgwM7lD6jAADw0VhBqJBiDADQ7gIA0OwMANDkDCEDoHSIHEQjhIh3rxRMApGAQNOAAAGHQla"
+          data = "eJztzLENwCAQQ9E/RkIVcwU7RSyOYIy0KCkgLRL9vcZ24yZIgueCImiCOncXBGNLjnAa3BEOG/3PV3tfzjmWPov8CwA="
         },
         {
           x = 0, y = 24, width = 20, height = 12,
@@ -16251,7 +19389,52 @@ return {
       },
       encoding = "base64",
       compression = "zlib",
-      chunks = {}
+      chunks = {
+        {
+          x = 40, y = -12, width = 20, height = 12,
+          data = "eJxjYBgFo2AUMAwBcFWIgSFcmIEhQpiBIUiEgSFYhIEBACXcAoo="
+        },
+        {
+          x = 60, y = -12, width = 20, height = 12,
+          data = "eJxjYBgFo2AUMNAJhAsjcIgIA0OQCANDBJQdLIIqDqJBcjA1MDFkeQBZlggn"
+        },
+        {
+          x = 80, y = -12, width = 20, height = 12,
+          data = "eJxjYBgFo2AUMNAJBIswMIRAMYgdLszAcE2IfPMAy9cC8Q=="
+        },
+        {
+          x = -20, y = 0, width = 20, height = 12,
+          data = "eJxjYBgFgwWECVPXPFER6ponJjKy3HdFiLrm0QIAAGnNAfY="
+        },
+        {
+          x = 0, y = 0, width = 20, height = 12,
+          data = "eJzlkEsOAiEQRN/ShQuhW+/lbxjnUBqPpiaex1SADG4ddlZCoD9VVDf8jnec325w8gViwNTwB4eLf+sfPf8x2RyPlk8yOJR6amLdylVu1To7PCI8I4QSXzc5l8TzXNtLq3gZpaFeg1vINWlWrZ3BVn5Kr3gtNFM7Y5tXv/jrovtqdrsEqwB3oxt6ehN6eoO8w3/CB3kvHIk="
+        },
+        {
+          x = 20, y = 0, width = 20, height = 12,
+          data = "eJztkFkOgkAMhr8TyHQ6hzLqg+ICcia3gxmNy5OnMbUQCMEb0KSZv/2mS5on2CQoFNYJVBm0nUKe/I+9pXpdE5uuFPaWM1brV2xrux4VbhkcA8wFTgEmAocAZ3sFPup7Nbs1epvgGiAILMT1RdxNzwLcs5Zbr6WA1DvlCs/os6bi8x7RWZGc2T4rm1fnyl6dMcs19o4eGzdW9Zj17ua6zPoOsd/d/9SNNppd4AvGjyvD"
+        },
+        {
+          x = 40, y = 0, width = 20, height = 12,
+          data = "eJztkE0OAUEQhb+tle6uZuFQgpkxzYlsiGPZYuY+UunqhAnBmpdU0lXv1c9r+BxRYBWhjlBFaCIsBVqtKSdfDAPW1tcIHDzMHczio0b3tQJJ8t7aco3K8nKTajSCwNHBwoM3XWW6jYXuHDnYeziN4RwgGad+9H0JsPPZY+HSgC/oQvavc3XWduBD0Rs3ffFPkyf17o3+enfDH/wcbsECHxU="
+        },
+        {
+          x = 60, y = 0, width = 20, height = 12,
+          data = "eJzVktFOAjEQRc+jD2g77eo/bQQMiIr+kDGw6GcZAwpGjZ9jrjNG4qPy4iRNtpPec+e2O6kwqXAWqzPoG6wyLAyeMgwMZgbJYJmhZ3CXYb11RufbzGe9FijV16jCReNsafYMDgyOzblizrWC0SV4zM6U1zQ4JwbZwCqMG+8tw78XnH2DLrteHsPkvUVo5SGv6xz92Mvr63sYc0lzE/NsCjwXeK9+N9I+JM+jbKeRUWekVeZx3Kt6rfLGrGIdVXiLTGK2YoXPz5o2cNV87w+r98SWr1iq8/C/j/y3mmNL95sSUzn0dvPk/8YuSlwxde+7qpcCl3/M+x/rAyUkPmc="
+        },
+        {
+          x = 80, y = 0, width = 20, height = 12,
+          data = "eJzdkt1Kw0AQhb87L2zd2ezSV1KwtcZUG30iwdT2sQqa+ofi48gwsxjxRnrpwpDN/J5zZg8jrAVGAmOB+wh1hpTY68wi9AIPAe4CnApsBWKCiwxtgkWGj+pv/TYRNmJfxXkb4FjgWez/SeDMMS99Rpmjpvcmf9+1pnebR6uVCKtoPc+jcXgU8099/onAkefUCZY6L8N1hstkfLXHS2X+1mNqrxV0jvUgwk5sxi4YHtVGMTauy3uy+SVWuBQOVbJeK8ekNorw6XVhwKv2fPV1qqHndwNdtU7zZ2I4Fdvc/X0wToVL4Vesdf5j37vWlvzWuU89VmrfBru/yb93fjXQbpFgkn7GGtd/sucb/U/nCwGnSWo="
+        },
+        {
+          x = 100, y = 0, width = 20, height = 12,
+          data = "eJzNkskKwjAURc9OXPW9JvhNQlFxouoXCbYOCzf+kCDO6MavkdAUl02hCy9cMhBO3n0J/LdGFsYWZgZSb7d2nni7vYUJ480dy8LUQK6QCOQCLYGLn4vCI5Bn/Lm3gSSCgcJKoavQFjgL9BV2gTw1RdbYwMbXcvWcUwRLgZuE1+fyphaeccHYKPQEjhFstcg7EDgE8kq94l8vy9HdkSlsJTxvlVw/7w3x9gbWAkP3X2wzvKzGW1SpYyGL4FOD9wVP4yju"
+        },
+        {
+          x = 100, y = 12, width = 20, height = 12,
+          data = "eJxjYMANrggxMISLMDBEieBRNApGwShgGCgAAFogAcA="
+        }
+      }
     },
     {
       type = "tilelayer",
@@ -16276,7 +19459,7 @@ return {
       chunks = {
         {
           x = 60, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMNARSPEyMEjwMTBc5KHcMABUkQEr"
+          data = "eJxjYBgFo2AUMNARSPEyMEjwMTBc5KHcLABUkQEr"
         },
         {
           x = 0, y = 0, width = 20, height = 12,
@@ -16300,7 +19483,7 @@ return {
         },
         {
           x = 100, y = 0, width = 20, height = 12,
-          data = "eJzljisOgDAQBcfy2U1AANcCQbkWCMq1iuE6pAmihoS0dYx55mUy8C86hV5hCNbV8b5ZwSgswTYCrcT5dgWrcAQ7CkyS1hmyPm0pnW/4TlPl820CNqPvFLgy+jyuyOtryu/nGwAqDjY="
+          data = "eJzljisOgDAQBcfy2U1AANcCQbkWCMq1iuE6pAmihoS0dYx55mUy8C86hV5hCNbV8b5ZwSgswTYCrcT5dgWrcAQ7CkyS1hmyPm0pnW/4TlPl820CNqPvFLgy+jyuyOtryu/fGwAqDjY="
         },
         {
           x = 0, y = 12, width = 20, height = 12,
@@ -16355,7 +19538,7 @@ return {
       chunks = {
         {
           x = 0, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMNARLBahnmEAOgAAuA=="
+          data = "eJxjYBgFo2AUMNARLBahnlkAOgAAuA=="
         },
         {
           x = -20, y = 0, width = 20, height = 12,
@@ -16589,6 +19772,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 0, y = -96 },
@@ -16618,6 +19802,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
@@ -16635,6 +19820,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = -192, y = -128 },
@@ -16661,6 +19847,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 6833,
               visible = true,
               properties = {}
@@ -16675,6 +19862,7 @@ return {
               width = 32,
               height = 18,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "Move",
               fontfamily = "Unifont",
@@ -16692,6 +19880,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7244,
               visible = true,
               properties = {}
@@ -16706,6 +19895,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7240,
               visible = true,
               properties = {}
@@ -16720,6 +19910,7 @@ return {
               width = 48,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "Attack",
               fontfamily = "Unifont",
@@ -16738,6 +19929,7 @@ return {
               width = 48,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "Jump",
               fontfamily = "Unifont",
@@ -16755,6 +19947,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7246,
               visible = true,
               properties = {}
@@ -16769,6 +19962,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7242,
               visible = true,
               properties = {}
@@ -16783,6 +19977,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "OR",
               fontfamily = "TinyUnicode",
@@ -16801,6 +19996,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "OR",
               fontfamily = "TinyUnicode",
@@ -16819,6 +20015,7 @@ return {
               width = 192,
               height = 32,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "Aim all attacks\nwith    direction",
               fontfamily = "Unifont",
@@ -16836,6 +20033,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 6833,
               visible = true,
               properties = {}
@@ -16869,6 +20067,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -16885,6 +20084,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -16901,6 +20101,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -16917,6 +20118,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -16951,6 +20153,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -16967,6 +20170,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -16983,6 +20187,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -16999,6 +20204,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17015,6 +20221,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17031,6 +20238,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17047,6 +20255,7 @@ return {
               width = 144,
               height = 32,
               rotation = 0,
+              opacity = 1,
               visible = false,
               text = "MOVE INTO ENEMY to GRAB then",
               fontfamily = "TinyUnicode",
@@ -17064,6 +20273,7 @@ return {
               width = 128,
               height = 32,
               rotation = 0,
+              opacity = 1,
               visible = false,
               text = "DIRECTION + ATTACK to THROW",
               fontfamily = "TinyUnicode",
@@ -17081,6 +20291,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7244,
               visible = false,
               properties = {}
@@ -17111,6 +20322,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
@@ -17128,6 +20340,7 @@ return {
               width = 128,
               height = 32,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "Walk into large\nbody to grapple",
               fontfamily = "Unifont",
@@ -17145,6 +20358,7 @@ return {
               width = 64,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "Pummel",
               fontfamily = "Unifont",
@@ -17162,6 +20376,7 @@ return {
               width = 168,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "During grapple",
               fontfamily = "Unifont",
@@ -17179,6 +20394,7 @@ return {
               width = 240,
               height = 32,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "Throw         +    direction",
               fontfamily = "Unifont",
@@ -17196,6 +20412,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 6833,
               visible = true,
               properties = {}
@@ -17210,6 +20427,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 6833,
               visible = true,
               properties = {}
@@ -17224,6 +20442,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7244,
               visible = true,
               properties = {}
@@ -17238,6 +20457,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7246,
               visible = true,
               properties = {}
@@ -17252,6 +20472,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "OR",
               fontfamily = "TinyUnicode",
@@ -17265,11 +20486,12 @@ return {
               name = "tall-stone",
               type = "tall-stone",
               shape = "rectangle",
-              x = 1040,
-              y = 176,
+              x = 1024,
+              y = 184,
               width = 48,
               height = 48,
               rotation = 0,
+              opacity = 1,
               gid = 7269,
               visible = true,
               properties = {
@@ -17282,11 +20504,12 @@ return {
               name = "rockrespawnpoint",
               type = "",
               shape = "point",
-              x = 1040,
-              y = 0,
+              x = 1024,
+              y = 8,
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 176
@@ -17302,6 +20525,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7244,
               visible = true,
               properties = {}
@@ -17316,6 +20540,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7246,
               visible = true,
               properties = {}
@@ -17330,6 +20555,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "OR",
               fontfamily = "TinyUnicode",
@@ -17364,6 +20590,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17380,6 +20607,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17396,6 +20624,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17412,6 +20641,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17428,6 +20658,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17444,6 +20675,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17460,6 +20692,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17477,6 +20710,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -17510,6 +20744,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7254,
               visible = true,
               properties = {}
@@ -17524,6 +20759,7 @@ return {
               width = 48,
               height = 18,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "Sprint",
               fontfamily = "Unifont",
@@ -17542,6 +20778,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "OR",
               fontfamily = "TinyUnicode",
@@ -17560,6 +20797,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7250,
               visible = true,
               properties = {}
@@ -17574,6 +20812,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7244,
               visible = true,
               properties = {}
@@ -17588,6 +20827,7 @@ return {
               width = 128,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "Tackle",
               fontfamily = "Unifont",
@@ -17605,6 +20845,7 @@ return {
               width = 128,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "During sprint",
               fontfamily = "Unifont",
@@ -17622,6 +20863,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7246,
               visible = true,
               properties = {}
@@ -17636,6 +20878,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "OR",
               fontfamily = "TinyUnicode",
@@ -17654,6 +20897,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
@@ -17689,6 +20933,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -17705,6 +20950,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -17721,6 +20967,7 @@ return {
               width = 264,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = false,
               text = "Hold to sprint after fast enemies",
               fontfamily = "Unifont",
@@ -17740,6 +20987,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 6900,
               visible = false,
               properties = {
@@ -17756,6 +21004,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 6920,
               visible = false,
               properties = {
@@ -17772,6 +21021,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7136,
               visible = false,
               properties = {
@@ -17804,6 +21054,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -17821,6 +21072,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -17838,6 +21090,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -17854,6 +21107,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -17889,6 +21143,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polyline = {
                 { x = 0, y = -64 },
@@ -17906,6 +21161,7 @@ return {
               width = 192,
               height = 32,
               rotation = 0,
+              opacity = 1,
               visible = false,
               text = "Steer while sprinting",
               fontfamily = "Unifont",
@@ -17923,6 +21179,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 6838,
               visible = false,
               properties = {}
@@ -17937,6 +21194,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 64, y = -160 },
@@ -17962,6 +21220,7 @@ return {
               width = 128,
               height = 160,
               rotation = 0,
+              opacity = 1,
               gid = 7261,
               visible = true,
               properties = {
@@ -17982,6 +21241,7 @@ return {
               width = 128,
               height = 96,
               rotation = 0,
+              opacity = 1,
               gid = 7260,
               visible = true,
               properties = {
@@ -17999,6 +21259,7 @@ return {
               width = 20,
               height = 20,
               rotation = 0,
+              opacity = 1,
               gid = 7266,
               visible = true,
               properties = {
@@ -18016,6 +21277,7 @@ return {
               width = 20,
               height = 20,
               rotation = 0,
+              opacity = 1,
               gid = 7266,
               visible = true,
               properties = {
@@ -18033,6 +21295,7 @@ return {
               width = 112,
               height = 32,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "Move into item to pick up",
               fontfamily = "Unifont",
@@ -18050,6 +21313,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 6833,
               visible = false,
               properties = {}
@@ -18064,6 +21328,7 @@ return {
               width = 104,
               height = 32,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "Food restores lost health",
               fontfamily = "Unifont",
@@ -18081,6 +21346,7 @@ return {
               width = 20,
               height = 20,
               rotation = 0,
+              opacity = 1,
               gid = 7267,
               visible = true,
               properties = {
@@ -18097,6 +21363,7 @@ return {
               width = 20,
               height = 20,
               rotation = 0,
+              opacity = 1,
               gid = 7267,
               visible = true,
               properties = {
@@ -18129,6 +21396,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polyline = {
                 { x = -64, y = -192 },
@@ -18146,6 +21414,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = -448, y = -128 },
@@ -18174,6 +21443,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7265,
               visible = true,
               properties = {
@@ -18190,6 +21460,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7265,
               visible = true,
               properties = {
@@ -18206,6 +21477,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7265,
               visible = true,
               properties = {
@@ -18222,6 +21494,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7265,
               visible = true,
               properties = {
@@ -18238,6 +21511,7 @@ return {
               width = 128,
               height = 160,
               rotation = 0,
+              opacity = 1,
               gid = 7263,
               visible = true,
               properties = {
@@ -18260,6 +21534,7 @@ return {
               width = 128,
               height = 96,
               rotation = 0,
+              opacity = 1,
               gid = 7262,
               visible = true,
               properties = {
@@ -18277,6 +21552,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7264,
               visible = true,
               properties = {
@@ -18294,6 +21570,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7264,
               visible = true,
               properties = {
@@ -18311,6 +21588,7 @@ return {
               width = 104,
               height = 48,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "During sprint throws ALL missiles",
               fontfamily = "Unifont",
@@ -18328,6 +21606,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 6833,
               visible = false,
               properties = {}
@@ -18342,6 +21621,7 @@ return {
               width = 104,
               height = 32,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "Throw missile",
               fontfamily = "Unifont",
@@ -18359,6 +21639,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7244,
               visible = true,
               properties = {}
@@ -18373,6 +21654,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7246,
               visible = true,
               properties = {}
@@ -18387,6 +21669,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "OR",
               fontfamily = "TinyUnicode",
@@ -18405,6 +21688,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 0, y = 32 },
@@ -18447,6 +21731,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -18469,6 +21754,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -18491,6 +21777,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -18506,6 +21793,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -18521,6 +21809,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -18536,6 +21825,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -18551,6 +21841,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7244,
               visible = false,
               properties = {}
@@ -18565,6 +21856,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 6909,
               visible = false,
               properties = {}
@@ -18579,6 +21871,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7010,
               visible = false,
               properties = {}
@@ -18593,6 +21886,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7011,
               visible = false,
               properties = {}
@@ -18607,6 +21901,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7012,
               visible = false,
               properties = {}
@@ -18621,6 +21916,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7013,
               visible = false,
               properties = {}
@@ -18635,6 +21931,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7135,
               visible = false,
               properties = {}
@@ -18649,6 +21946,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7254,
               visible = false,
               properties = {}
@@ -18663,6 +21961,7 @@ return {
               width = 40,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = false,
               text = "+",
               fontfamily = "TinyUnicode",
@@ -18681,6 +21980,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7244,
               visible = false,
               properties = {}
@@ -18713,6 +22013,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -18729,6 +22030,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -18745,6 +22047,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -18761,6 +22064,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -18795,6 +22099,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -18817,6 +22122,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -18832,6 +22138,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -18847,6 +22154,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -18870,6 +22178,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -18893,6 +22202,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -18908,6 +22218,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -18923,6 +22234,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -18938,6 +22250,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -18971,6 +22284,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -19003,6 +22317,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -19019,6 +22334,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -19051,6 +22367,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 144, y = -224 },
@@ -19077,6 +22394,7 @@ return {
               width = 120,
               height = 32,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "Costs 1 or more fire meter",
               fontfamily = "Unifont",
@@ -19094,6 +22412,7 @@ return {
               width = 136,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "Hold then release",
               fontfamily = "Unifont",
@@ -19111,6 +22430,7 @@ return {
               width = 136,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "Fireballs",
               fontfamily = "Unifont",
@@ -19128,6 +22448,7 @@ return {
               width = 30,
               height = 6,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["color"] = "#ffffd000"
@@ -19143,6 +22464,7 @@ return {
               width = 30,
               height = 6,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["color"] = "#00000000",
@@ -19160,6 +22482,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7244,
               visible = true,
               properties = {}
@@ -19174,6 +22497,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7246,
               visible = true,
               properties = {}
@@ -19188,6 +22512,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "OR",
               fontfamily = "TinyUnicode",
@@ -19206,6 +22531,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
@@ -19224,6 +22550,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 7270,
               visible = true,
               properties = {
@@ -19241,6 +22568,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 7271,
               visible = true,
               properties = {
@@ -19274,6 +22602,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -19296,6 +22625,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -19318,6 +22648,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -19340,6 +22671,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -19362,6 +22694,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -19384,6 +22717,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -19406,6 +22740,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19421,6 +22756,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19436,6 +22772,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19451,6 +22788,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19466,6 +22804,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19481,6 +22820,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19496,6 +22836,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19511,6 +22852,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19526,6 +22868,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19541,6 +22884,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19556,6 +22900,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19571,6 +22916,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -19604,6 +22950,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = -288, y = -480 },
@@ -19636,6 +22983,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polyline = {
                 { x = -160, y = 0 },
@@ -19653,6 +23001,7 @@ return {
               width = 64,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 5268,
               visible = true,
               properties = {
@@ -19670,6 +23019,7 @@ return {
               width = 64,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 5266,
               visible = true,
               properties = {
@@ -19686,6 +23036,7 @@ return {
               width = 64,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 5265,
               visible = true,
               properties = {
@@ -19702,6 +23053,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6583,
               visible = true,
               properties = {
@@ -19718,6 +23070,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6583,
               visible = true,
               properties = {
@@ -19734,6 +23087,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6586,
               visible = true,
               properties = {
@@ -19750,6 +23104,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6586,
               visible = true,
               properties = {
@@ -19766,6 +23121,7 @@ return {
               width = 136,
               height = 32,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "Attack the unprotected side!",
               fontfamily = "Unifont",
@@ -19783,6 +23139,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 6833,
               visible = false,
               properties = {}
@@ -19797,6 +23154,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7244,
               visible = false,
               properties = {}
@@ -19811,6 +23169,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7274,
               visible = true,
               properties = {
@@ -19829,6 +23188,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7274,
               visible = true,
               properties = {
@@ -19847,6 +23207,7 @@ return {
               width = 128,
               height = 160,
               rotation = 0,
+              opacity = 1,
               gid = 7261,
               visible = true,
               properties = {
@@ -19865,6 +23226,7 @@ return {
               width = 128,
               height = 96,
               rotation = 0,
+              opacity = 1,
               gid = 7260,
               visible = true,
               properties = {
@@ -19899,6 +23261,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -19915,6 +23278,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -19931,6 +23295,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7274,
               visible = true,
               properties = {
@@ -19947,6 +23312,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7274,
               visible = true,
               properties = {
@@ -19981,6 +23347,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -20003,6 +23370,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -20018,6 +23386,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -20033,6 +23402,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -20055,6 +23425,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -20070,6 +23441,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -20085,6 +23457,7 @@ return {
               width = 144,
               height = 32,
               rotation = 0,
+              opacity = 1,
               visible = false,
               text = "Move into an enemy or barrel to grab",
               fontfamily = "Unifont",
@@ -20102,6 +23475,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 6838,
               visible = false,
               properties = {}
@@ -20116,6 +23490,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 6889,
               visible = false,
               properties = {
@@ -20132,6 +23507,7 @@ return {
               width = 224,
               height = 32,
               rotation = 0,
+              opacity = 1,
               visible = false,
               text = "Then hold    toward the door\nand tap    to throw",
               fontfamily = "Unifont",
@@ -20151,6 +23527,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 6909,
               visible = false,
               properties = {
@@ -20167,6 +23544,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7135,
               visible = false,
               properties = {}
@@ -20181,6 +23559,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7010,
               visible = false,
               properties = {}
@@ -20195,6 +23574,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7011,
               visible = false,
               properties = {}
@@ -20209,6 +23589,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7012,
               visible = false,
               properties = {}
@@ -20223,6 +23604,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7013,
               visible = false,
               properties = {}
@@ -20237,6 +23619,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 6834,
               visible = false,
               properties = {
@@ -20272,6 +23655,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7272,
               visible = true,
               properties = {
@@ -20310,6 +23694,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 0, y = -8 },
@@ -20338,6 +23723,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             }
@@ -20372,6 +23758,7 @@ return {
               width = 96,
               height = 112,
               rotation = 0,
+              opacity = 1,
               gid = 7273,
               visible = true,
               properties = {}
@@ -20386,6 +23773,7 @@ return {
               width = 96,
               height = 112,
               rotation = 0,
+              opacity = 1,
               gid = 7273,
               visible = true,
               properties = {}
@@ -20400,6 +23788,7 @@ return {
               width = 96,
               height = 112,
               rotation = 0,
+              opacity = 1,
               gid = 7273,
               visible = true,
               properties = {}
@@ -20414,6 +23803,7 @@ return {
               width = 96,
               height = 112,
               rotation = 0,
+              opacity = 1,
               gid = 7273,
               visible = true,
               properties = {}
@@ -20428,6 +23818,7 @@ return {
               width = 96,
               height = 112,
               rotation = 0,
+              opacity = 1,
               gid = 7273,
               visible = true,
               properties = {}
@@ -20442,6 +23833,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polyline = {
                 { x = 64, y = 0 },
@@ -20461,6 +23853,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 64, y = 0 },
@@ -20488,6 +23881,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 608, y = 96 },
@@ -20513,6 +23907,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 608, y = 96 },
@@ -20538,6 +23933,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 608, y = 96 },
@@ -20563,6 +23959,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 608, y = 96 },
@@ -20588,6 +23985,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 608, y = 96 },
@@ -20613,6 +24011,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 608, y = 96 },
@@ -20639,6 +24038,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 608, y = 96 },
@@ -20665,6 +24065,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 608, y = 96 },
@@ -20691,6 +24092,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 608, y = 96 },
@@ -20717,6 +24119,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 608, y = 96 },
@@ -20743,6 +24146,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 616, y = 96 },
@@ -20768,6 +24172,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 616, y = 96 },
@@ -20793,6 +24198,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 616, y = 96 },
@@ -20818,6 +24224,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 616, y = 96 },
@@ -20843,6 +24250,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = -320, y = -224 },
@@ -20877,6 +24285,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = -200, y = 0 },
@@ -20906,6 +24315,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -20927,6 +24337,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
+              opacity = 1,
               gid = 6593,
               visible = true,
               properties = {
@@ -20943,6 +24354,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
+              opacity = 1,
               gid = 6593,
               visible = true,
               properties = {
@@ -20959,6 +24371,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -20972,6 +24385,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -20985,6 +24399,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -20998,6 +24413,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -21019,6 +24435,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -21032,6 +24449,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -21053,6 +24471,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -21074,6 +24493,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -21087,6 +24507,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -21100,6 +24521,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -21121,6 +24543,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -21134,6 +24557,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
+              opacity = 1,
               gid = 6589,
               visible = true,
               properties = {
@@ -21150,6 +24574,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
+              opacity = 1,
               gid = 6589,
               visible = true,
               properties = {
@@ -21166,6 +24591,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
+              opacity = 1,
               gid = 6589,
               visible = true,
               properties = {
@@ -21182,6 +24608,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
+              opacity = 1,
               gid = 6589,
               visible = true,
               properties = {
@@ -21198,6 +24625,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
+              opacity = 1,
               gid = 6589,
               visible = true,
               properties = {
@@ -21214,6 +24642,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
+              opacity = 1,
               gid = 6589,
               visible = true,
               properties = {
@@ -21230,6 +24659,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
+              opacity = 1,
               gid = 6589,
               visible = true,
               properties = {
@@ -21246,6 +24676,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
+              opacity = 1,
               gid = 6589,
               visible = true,
               properties = {
@@ -21262,6 +24693,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
+              opacity = 1,
               gid = 6593,
               visible = true,
               properties = {
@@ -21278,6 +24710,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
+              opacity = 1,
               gid = 6593,
               visible = true,
               properties = {
@@ -21294,6 +24727,7 @@ return {
               width = 32,
               height = 48,
               rotation = 0,
+              opacity = 1,
               gid = 6593,
               visible = true,
               properties = {
@@ -21310,6 +24744,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 6612,
               visible = true,
               properties = {
@@ -21328,6 +24763,7 @@ return {
               width = 16,
               height = 16,
               rotation = 345,
+              opacity = 1,
               gid = 6605,
               visible = true,
               properties = {
@@ -21346,6 +24782,7 @@ return {
               width = 16,
               height = 16,
               rotation = 15,
+              opacity = 1,
               gid = 6610,
               visible = true,
               properties = {
@@ -21364,6 +24801,7 @@ return {
               width = 16,
               height = 16,
               rotation = 15,
+              opacity = 1,
               gid = 6604,
               visible = true,
               properties = {
@@ -21382,6 +24820,7 @@ return {
               width = 16,
               height = 16,
               rotation = 45,
+              opacity = 1,
               gid = 6609,
               visible = true,
               properties = {
@@ -21400,6 +24839,7 @@ return {
               width = 16,
               height = 16,
               rotation = 45,
+              opacity = 1,
               gid = 6603,
               visible = true,
               properties = {
@@ -21418,6 +24858,7 @@ return {
               width = 304,
               height = 32,
               rotation = 0,
+              opacity = 1,
               visible = false,
               text = "Hold    and a direction\nto sprint past archers",
               fontfamily = "Unifont",
@@ -21437,6 +24878,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 6859,
               visible = false,
               properties = {
@@ -21453,6 +24895,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 6879,
               visible = false,
               properties = {
@@ -21469,6 +24912,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7136,
               visible = false,
               properties = {
@@ -21485,6 +24929,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 6834,
               visible = false,
               properties = {
@@ -21501,6 +24946,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7239,
               visible = true,
               properties = {}
@@ -21515,6 +24961,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7239,
               visible = true,
               properties = {}
@@ -21529,6 +24976,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7239,
               visible = true,
               properties = {}
@@ -21543,6 +24991,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7239,
               visible = true,
               properties = {}
@@ -21557,6 +25006,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               gid = 7239,
               visible = true,
               properties = {}
@@ -21571,6 +25021,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -21584,6 +25035,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -21597,6 +25049,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -21610,7 +25063,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7275,
+              opacity = 1,
+              gid = 9345,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 32,
@@ -21627,7 +25081,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7275,
+              opacity = 1,
+              gid = 9345,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 32,
@@ -21644,7 +25099,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7275,
+              opacity = 1,
+              gid = 9345,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 180,
@@ -21661,7 +25117,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7275,
+              opacity = 1,
+              gid = 9345,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 180,
@@ -21678,7 +25135,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7275,
+              opacity = 1,
+              gid = 9345,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21696,7 +25154,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7275,
+              opacity = 1,
+              gid = 9345,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21714,7 +25173,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7275,
+              opacity = 1,
+              gid = 9345,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21732,7 +25192,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7275,
+              opacity = 1,
+              gid = 9345,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21750,7 +25211,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7278,
+              opacity = 1,
+              gid = 9348,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21768,7 +25230,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7278,
+              opacity = 1,
+              gid = 9348,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21786,7 +25249,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7278,
+              opacity = 1,
+              gid = 9348,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21804,7 +25268,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7278,
+              opacity = 1,
+              gid = 9348,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21822,7 +25287,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7278,
+              opacity = 1,
+              gid = 9348,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21840,7 +25306,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7279,
+              opacity = 1,
+              gid = 9349,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 36,
@@ -21857,7 +25324,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7279,
+              opacity = 1,
+              gid = 9349,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 36,
@@ -21874,7 +25342,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7279,
+              opacity = 1,
+              gid = 9349,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21892,7 +25361,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7279,
+              opacity = 1,
+              gid = 9349,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21910,7 +25380,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7279,
+              opacity = 1,
+              gid = 9349,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21928,7 +25399,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7279,
+              opacity = 1,
+              gid = 9349,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21946,7 +25418,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7282,
+              opacity = 1,
+              gid = 9352,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 39,
@@ -21963,7 +25436,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7282,
+              opacity = 1,
+              gid = 9352,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 39,
@@ -21980,7 +25454,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7282,
+              opacity = 1,
+              gid = 9352,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -21998,7 +25473,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7282,
+              opacity = 1,
+              gid = 9352,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -22016,7 +25492,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7282,
+              opacity = 1,
+              gid = 9352,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -22034,7 +25511,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7282,
+              opacity = 1,
+              gid = 9352,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -22052,7 +25530,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7283,
+              opacity = 1,
+              gid = 9353,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 40,
@@ -22069,7 +25548,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7283,
+              opacity = 1,
+              gid = 9353,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 40,
@@ -22086,7 +25566,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7283,
+              opacity = 1,
+              gid = 9353,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -22104,7 +25585,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7283,
+              opacity = 1,
+              gid = 9353,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -22122,7 +25604,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7283,
+              opacity = 1,
+              gid = 9353,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -22140,7 +25623,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7283,
+              opacity = 1,
+              gid = 9353,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -22158,7 +25642,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7303,
+              opacity = 1,
+              gid = 9373,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 60,
@@ -22175,7 +25660,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7303,
+              opacity = 1,
+              gid = 9373,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -22193,7 +25679,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7303,
+              opacity = 1,
+              gid = 9373,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -22211,7 +25698,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7303,
+              opacity = 1,
+              gid = 9373,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -22229,7 +25717,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7303,
+              opacity = 1,
+              gid = 9373,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -22247,7 +25736,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7303,
+              opacity = 1,
+              gid = 9373,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -22265,7 +25755,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7303,
+              opacity = 1,
+              gid = 9373,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -22283,7 +25774,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7303,
+              opacity = 1,
+              gid = 9373,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -22301,7 +25793,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7291,
+              opacity = 1,
+              gid = 9361,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 48,
@@ -22318,7 +25811,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7291,
+              opacity = 1,
+              gid = 9361,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -22336,7 +25830,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7291,
+              opacity = 1,
+              gid = 9361,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -22354,7 +25849,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7291,
+              opacity = 1,
+              gid = 9361,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -22372,7 +25868,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7291,
+              opacity = 1,
+              gid = 9361,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -22390,7 +25887,8 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
-              gid = 7291,
+              opacity = 1,
+              gid = 9361,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -22408,7 +25906,8 @@ return {
               width = 40,
               height = 32,
               rotation = 0,
-              gid = 7298,
+              opacity = 1,
+              gid = 9368,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 55,
@@ -22425,7 +25924,8 @@ return {
               width = 40,
               height = 32,
               rotation = 0,
-              gid = 7298,
+              opacity = 1,
+              gid = 9368,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -22443,7 +25943,8 @@ return {
               width = 40,
               height = 32,
               rotation = 0,
-              gid = 7298,
+              opacity = 1,
+              gid = 9368,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -22461,6 +25962,7 @@ return {
               width = 128,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "During sprint",
               fontfamily = "Unifont",
@@ -22480,6 +25982,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7240,
               visible = true,
               properties = {
@@ -22496,6 +25999,7 @@ return {
               width = 72,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "Long jump",
               fontfamily = "Unifont",
@@ -22515,6 +26019,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7242,
               visible = true,
               properties = {
@@ -22531,6 +26036,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "OR",
               fontfamily = "TinyUnicode",
@@ -22551,6 +26057,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7254,
               visible = true,
               properties = {
@@ -22567,6 +26074,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = true,
               text = "OR",
               fontfamily = "TinyUnicode",
@@ -22587,6 +26095,7 @@ return {
               width = 14,
               height = 14,
               rotation = 0,
+              opacity = 1,
               gid = 7250,
               visible = true,
               properties = {
@@ -22603,6 +26112,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 0, y = -112 },
@@ -22649,6 +26159,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -22665,6 +26176,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -22681,6 +26193,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7272,
               visible = true,
               properties = {
@@ -22698,6 +26211,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             }
@@ -22727,6 +26241,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -22743,6 +26258,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -22775,6 +26291,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polyline = {
                 { x = 16, y = 0 },
@@ -22792,6 +26309,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 160, y = -96 },
@@ -22821,6 +26339,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 0, y = 16 },
@@ -22852,6 +26371,7 @@ return {
               width = 16,
               height = 16,
               rotation = 0,
+              opacity = 1,
               visible = false,
               properties = {
                 ["originx"] = 8,
@@ -22869,6 +26389,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 6828,
               visible = true,
               properties = {
@@ -22886,6 +26407,7 @@ return {
               width = 48,
               height = 48,
               rotation = 330,
+              opacity = 1,
               gid = 7238,
               visible = true,
               properties = {}
@@ -22900,6 +26422,7 @@ return {
               width = 48,
               height = 48,
               rotation = 270,
+              opacity = 1,
               gid = 7238,
               visible = true,
               properties = {}
@@ -22914,6 +26437,7 @@ return {
               width = 48,
               height = 48,
               rotation = 225,
+              opacity = 1,
               gid = 7238,
               visible = true,
               properties = {}
@@ -22928,6 +26452,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -22941,6 +26466,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 0, y = -112 },
@@ -22986,6 +26512,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
@@ -23003,6 +26530,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7272,
               visible = true,
               properties = {
@@ -23021,6 +26549,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -23034,6 +26563,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 6826,
               visible = true,
               properties = {
@@ -23069,6 +26599,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7274,
               visible = true,
               properties = {
@@ -23086,6 +26617,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -23103,6 +26635,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -23120,6 +26653,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -23155,6 +26689,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7274,
               visible = true,
               properties = {
@@ -23171,6 +26706,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -23187,6 +26723,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -23203,6 +26740,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7274,
               visible = true,
               properties = {
@@ -23235,6 +26773,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
@@ -23252,6 +26791,7 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
+              opacity = 1,
               gid = 6598,
               visible = true,
               properties = {
@@ -23268,6 +26808,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 7204,
               visible = true,
               properties = {
@@ -23284,6 +26825,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 7212,
               visible = true,
               properties = {
@@ -23300,6 +26842,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -23316,6 +26859,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -23332,6 +26876,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6674,
               visible = true,
               properties = {
@@ -23348,6 +26893,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 7225,
               visible = true,
               properties = {
@@ -23382,6 +26928,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polyline = {
                 { x = 288, y = 0 },
@@ -23399,6 +26946,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 160, y = -416 },
@@ -23424,6 +26972,7 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
+              opacity = 1,
               gid = 6596,
               visible = true,
               properties = {
@@ -23440,6 +26989,7 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
+              opacity = 1,
               gid = 6598,
               visible = true,
               properties = {
@@ -23456,6 +27006,7 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
+              opacity = 1,
               gid = 6597,
               visible = true,
               properties = {
@@ -23472,6 +27023,7 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
+              opacity = 1,
               gid = 6596,
               visible = true,
               properties = {
@@ -23488,6 +27040,7 @@ return {
               width = 96,
               height = 48,
               rotation = 0,
+              opacity = 1,
               gid = 6597,
               visible = true,
               properties = {
@@ -23504,6 +27057,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 7201,
               visible = true,
               properties = {
@@ -23520,6 +27074,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 7205,
               visible = true,
               properties = {
@@ -23536,6 +27091,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 7212,
               visible = true,
               properties = {
@@ -23552,6 +27108,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 7208,
               visible = true,
               properties = {
@@ -23568,6 +27125,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 7204,
               visible = true,
               properties = {
@@ -23584,6 +27142,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 7208,
               visible = true,
               properties = {
@@ -23600,6 +27159,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 7209,
               visible = true,
               properties = {
@@ -23616,6 +27176,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 7201,
               visible = true,
               properties = {
@@ -23632,6 +27193,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 7205,
               visible = true,
               properties = {}
@@ -23646,6 +27208,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 7209,
               visible = true,
               properties = {
@@ -23662,6 +27225,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -23681,6 +27245,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -23700,6 +27265,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -23719,6 +27285,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -23735,6 +27302,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -23751,6 +27319,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -23767,6 +27336,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -23783,6 +27353,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6681,
               visible = true,
               properties = {
@@ -23799,6 +27370,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6674,
               visible = true,
               properties = {
@@ -23815,6 +27387,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6623,
               visible = true,
               properties = {
@@ -23831,6 +27404,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -23847,6 +27421,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -23863,6 +27438,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -23879,6 +27455,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -23895,6 +27472,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -23911,6 +27489,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6613,
               visible = true,
               properties = {
@@ -23927,6 +27506,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6622,
               visible = true,
               properties = {
@@ -23943,6 +27523,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 7225,
               visible = true,
               properties = {
@@ -23959,6 +27540,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6623,
               visible = true,
               properties = {
@@ -23975,6 +27557,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6674,
               visible = true,
               properties = {
@@ -23991,6 +27574,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 7225,
               visible = true,
               properties = {
@@ -24007,6 +27591,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6678,
               visible = true,
               properties = {
@@ -24023,6 +27608,7 @@ return {
               width = 32,
               height = 32,
               rotation = 0,
+              opacity = 1,
               gid = 6682,
               visible = true,
               properties = {
@@ -24057,6 +27643,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -24073,6 +27660,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -24089,6 +27677,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -24105,6 +27694,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -24139,6 +27729,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -24159,6 +27750,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -24172,6 +27764,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -24206,6 +27799,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -24226,6 +27820,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -24239,6 +27834,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -24273,6 +27869,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -24293,6 +27890,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -24306,6 +27904,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -24322,6 +27921,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -24354,6 +27954,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = -64, y = 64 },
@@ -24383,6 +27984,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polyline = {
                 { x = -320, y = 0 },
@@ -24400,6 +28002,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 32, y = -128 },
@@ -24444,6 +28047,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = -64, y = 64 },
@@ -24473,6 +28077,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 32, y = -128 },
@@ -24499,6 +28104,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = -32, y = -160 },
@@ -24525,6 +28131,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = -32, y = -160 },
@@ -24552,6 +28159,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 0, y = -160 },
@@ -24578,6 +28186,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polyline = {
                 { x = 160, y = 0 },
@@ -24613,6 +28222,7 @@ return {
               width = 192,
               height = 192,
               rotation = 0,
+              opacity = 1,
               gid = 7233,
               visible = true,
               properties = {
@@ -24647,6 +28257,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -24663,6 +28274,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -24679,6 +28291,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -24711,6 +28324,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -24727,6 +28341,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7235,
               visible = true,
               properties = {
@@ -24759,6 +28374,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -24782,6 +28398,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -24805,6 +28422,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -24820,6 +28438,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -24835,6 +28454,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -24848,6 +28468,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             }
@@ -24877,6 +28498,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7274,
               visible = true,
               properties = {
@@ -24893,6 +28515,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7274,
               visible = true,
               properties = {
@@ -24925,6 +28548,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -24948,6 +28572,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -24971,6 +28596,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -24986,6 +28612,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -25001,6 +28628,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -25014,6 +28642,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             }
@@ -25043,6 +28672,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7272,
               visible = true,
               properties = {
@@ -25094,6 +28724,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
@@ -25111,6 +28742,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -25127,6 +28759,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -25143,6 +28776,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7237,
               visible = true,
               properties = {
@@ -25159,6 +28793,7 @@ return {
               width = 30,
               height = 6,
               rotation = 0,
+              opacity = 1,
               visible = false,
               properties = {
                 ["color"] = "#ffffffff"
@@ -25190,6 +28825,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -25213,6 +28849,7 @@ return {
               width = 64,
               height = 64,
               rotation = 0,
+              opacity = 1,
               gid = 7236,
               visible = true,
               properties = {
@@ -25236,6 +28873,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -25251,6 +28889,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -25266,6 +28905,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             },
@@ -25279,6 +28919,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {}
             }
@@ -25308,6 +28949,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -25331,6 +28973,7 @@ return {
               width = 128,
               height = 128,
               rotation = 0,
+              opacity = 1,
               gid = 7234,
               visible = true,
               properties = {
@@ -25354,6 +28997,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -25369,6 +29013,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -25384,6 +29029,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -25399,6 +29045,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               properties = {
                 ["z"] = 64
@@ -25430,6 +29077,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polygon = {
                 { x = 512, y = 0 },
@@ -25457,6 +29105,7 @@ return {
               width = 0,
               height = 0,
               rotation = 0,
+              opacity = 1,
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
@@ -25494,6 +29143,7 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Teach basic combat with first low-level enemies",
           fontfamily = "Unifont",
@@ -25512,6 +29162,7 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Introduce dodging enemy encouraging player to use run in combat",
           fontfamily = "Unifont",
@@ -25531,6 +29182,7 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Teach long-range combat with stones to throw at slingers\nAvoid their stones then pick up and throw them back",
           fontfamily = "Unifont",
@@ -25550,6 +29202,7 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Teach grabbing with guarding enemy and barrier broken only by thrown enemy",
           fontfamily = "Unifont",
@@ -25569,6 +29222,7 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Entry hall with archers shooting from arrow slits",
           fontfamily = "Unifont",
@@ -25588,6 +29242,7 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Guard room introducing mace enemies",
           fontfamily = "Unifont",
@@ -25607,6 +29262,7 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Armory with mixed enemies and introducing throwable weapons",
           fontfamily = "Unifont",
@@ -25626,6 +29282,7 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Mess hall with food, throwable and breakable furniture, stronger mix of enemies",
           fontfamily = "Unifont",
@@ -25645,6 +29302,7 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Boss arena",
           fontfamily = "Unifont",
@@ -25664,6 +29322,7 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "End room\n\nHolding cells with captured kids",
           fontfamily = "Unifont",
@@ -25683,6 +29342,7 @@ return {
           width = 480,
           height = 128,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Teach movement - walking and running",
           fontfamily = "Unifont",
@@ -25702,6 +29362,7 @@ return {
           width = 160,
           height = 64,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Vines",
           fontfamily = "Unifont",
@@ -25724,6 +29385,7 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Vines",
           fontfamily = "Unifont",
@@ -25746,6 +29408,7 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Vines",
           fontfamily = "Unifont",
@@ -25768,6 +29431,7 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Vines",
           fontfamily = "Unifont",
@@ -25790,6 +29454,7 @@ return {
           width = 160,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Torches",
           fontfamily = "Unifont",
@@ -25812,6 +29477,7 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Stool",
           fontfamily = "TinyUnicode",
@@ -25833,6 +29499,7 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Stool",
           fontfamily = "TinyUnicode",
@@ -25854,6 +29521,7 @@ return {
           width = 160,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Torches",
           fontfamily = "Unifont",
@@ -25876,6 +29544,7 @@ return {
           width = 96,
           height = 64,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Table",
           fontfamily = "Unifont",
@@ -25898,6 +29567,7 @@ return {
           width = 512,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Torches between alcoves",
           fontfamily = "Unifont",
@@ -25920,6 +29590,7 @@ return {
           width = 512,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Torches between alcoves",
           fontfamily = "Unifont",
@@ -25942,6 +29613,7 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Stool",
           fontfamily = "TinyUnicode",
@@ -25963,6 +29635,7 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Stool",
           fontfamily = "TinyUnicode",
@@ -25984,6 +29657,7 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Stool",
           fontfamily = "TinyUnicode",
@@ -26005,6 +29679,7 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Stool",
           fontfamily = "TinyUnicode",
@@ -26026,6 +29701,7 @@ return {
           width = 96,
           height = 64,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Weapon table",
           fontfamily = "Unifont",
@@ -26048,6 +29724,7 @@ return {
           width = 96,
           height = 64,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Weapon table",
           fontfamily = "Unifont",
@@ -26070,6 +29747,7 @@ return {
           width = 96,
           height = 64,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Weapon table",
           fontfamily = "Unifont",
@@ -26092,6 +29770,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Anvil",
           fontfamily = "TinyUnicode",
@@ -26113,6 +29792,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Forge",
           fontfamily = "TinyUnicode",
@@ -26134,6 +29814,7 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Hammer",
           fontfamily = "TinyUnicode",
@@ -26155,6 +29836,7 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Table",
           fontfamily = "TinyUnicode",
@@ -26176,6 +29858,7 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Table",
           fontfamily = "Unifont",
@@ -26198,6 +29881,7 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Table",
           fontfamily = "Unifont",
@@ -26220,6 +29904,7 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Table",
           fontfamily = "Unifont",
@@ -26242,6 +29927,7 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Table",
           fontfamily = "Unifont",
@@ -26264,6 +29950,7 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Table",
           fontfamily = "Unifont",
@@ -26286,6 +29973,7 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Table",
           fontfamily = "Unifont",
@@ -26308,6 +29996,7 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Table",
           fontfamily = "Unifont",
@@ -26330,6 +30019,7 @@ return {
           width = 128,
           height = 64,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Table",
           fontfamily = "Unifont",
@@ -26352,6 +30042,7 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Bench",
           fontfamily = "Unifont",
@@ -26374,6 +30065,7 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Bench",
           fontfamily = "Unifont",
@@ -26396,6 +30088,7 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Bench",
           fontfamily = "Unifont",
@@ -26418,6 +30111,7 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Bench",
           fontfamily = "Unifont",
@@ -26440,6 +30134,7 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Bench",
           fontfamily = "Unifont",
@@ -26462,6 +30157,7 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Bench",
           fontfamily = "Unifont",
@@ -26484,6 +30180,7 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Bench",
           fontfamily = "Unifont",
@@ -26506,6 +30203,7 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Bench",
           fontfamily = "Unifont",
@@ -26528,6 +30226,7 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Bench",
           fontfamily = "Unifont",
@@ -26550,6 +30249,7 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Bench",
           fontfamily = "Unifont",
@@ -26572,6 +30272,7 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Bench",
           fontfamily = "Unifont",
@@ -26594,6 +30295,7 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Bench",
           fontfamily = "Unifont",
@@ -26616,6 +30318,7 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Bench",
           fontfamily = "Unifont",
@@ -26638,6 +30341,7 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Bench",
           fontfamily = "Unifont",
@@ -26660,6 +30364,7 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Bench",
           fontfamily = "Unifont",
@@ -26682,6 +30387,7 @@ return {
           width = 128,
           height = 32,
           rotation = 0,
+          opacity = 1,
           visible = true,
           text = "Bench",
           fontfamily = "Unifont",
