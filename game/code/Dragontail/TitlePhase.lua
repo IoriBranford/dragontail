@@ -54,6 +54,7 @@ function TitlePhase.loadphase(startwithmainmenu)
     else
         Gui:pushMenu(Gui.title.pressstart)
     end
+    TitlePhase.resize(love.graphics.getWidth(), love.graphics.getHeight())
 end
 
 function TitlePhase.pushMainMenu()
