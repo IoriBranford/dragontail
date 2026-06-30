@@ -9,6 +9,29 @@ local InputSetter = require "Gui.InputSetter"
 local Menu = class(ObjectGroup)
 Menu.doAction = GuiObject.doAction
 
+Menu.keyconfig = {
+    left = "pressLeft",
+    right = "pressRight",
+    up = "pressUp",
+    down = "pressDown",
+    z = "pressSelectedButton",
+    enter = "pressSelectedButton",
+    ["return"] = "pressSelectedButton",
+    x = "pressBack",
+    escape = "pressBack"
+}
+
+Menu.gamepadconfig = {
+    dpleft = "pressLeft",
+    dpright = "pressRight",
+    dpup = "pressUp",
+    dpdown = "pressDown",
+    a = "pressSelectedButton",
+    b = "pressBack",
+    start = "pressSelectedButton",
+    back = "pressBack",
+}
+
 function Menu:spawn()
     local platform = Platform.OS
 
@@ -82,6 +105,26 @@ function Menu:setActiveInputSetter(inputsetter)
     self.activeinputsetter = inputsetter
 end
 
+function Menu:pressUp()
+    self:moveCursor(-1)
+end
+
+function Menu:pressDown()
+    self:moveCursor(1)
+end
+
+function Menu:pressLeft()
+    self:changeSelectedSlider(-1)
+end
+
+function Menu:pressRight()
+    self:changeSelectedSlider(1)
+end
+
+function Menu:pressBack()
+    self:doAction(self.backaction)
+end
+
 function Menu:keypressed(key)
     local inputsetter = self.activeinputsetter
     if inputsetter then
@@ -95,18 +138,9 @@ function Menu:keypressed(key)
         end
         return
     end
-    if key == "return" or key == "enter" then
-        self:pressSelectedButton()
-    elseif key == "up" then
-        self:moveCursor(-1)
-    elseif key == "down" then
-        self:moveCursor(1)
-    elseif key == "left" then
-        self:changeSelectedSlider(-1)
-    elseif key == "right" then
-        self:changeSelectedSlider(1)
-    elseif key == "escape" then
-        self:doAction(self.backaction)
+    local action = Menu[Menu.keyconfig[key]]
+    if type(action) == "function" then
+        action(self)
     end
 end
 
@@ -123,18 +157,9 @@ function Menu:gamepadpressed(gamepad, button)
         end
         return
     end
-    if button == "dpup" then
-        self:moveCursor(-1)
-    elseif button == "dpdown" then
-        self:moveCursor(1)
-    elseif button == "dpleft" then
-        self:changeSelectedSlider(-1)
-    elseif button == "dpright" then
-        self:changeSelectedSlider(1)
-    elseif button == "start" or button == "a" then
-        self:pressSelectedButton()
-    elseif button == "back" then
-        self:doAction(self.backaction)
+    local action = Menu[Menu.gamepadconfig[button]]
+    if type(action) == "function" then
+        action(self)
     end
 end
 
