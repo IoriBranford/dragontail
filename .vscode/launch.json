@@ -32,6 +32,15 @@
             "args": ["${workspaceFolder}/game"]
         },
         {
+            "name": "OBS Game Capture",
+            "type": "lua-local",
+            "request": "launch",
+            "program": {
+                "command": "obs-gamecapture"
+            },
+            "args": ["love", "${workspaceFolder}/game"]
+        },
+        {
             "name": "With unit tests",
             "type": "lua-local",
             "request": "launch",
