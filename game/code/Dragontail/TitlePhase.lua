@@ -34,7 +34,7 @@ local function sceneAnimation()
     return true
 end
 
-function TitlePhase.loadphase()
+function TitlePhase.loadphase(startwithmainmenu)
     scenemap = Tiled.Map.load("data/title_scene.lua")
     scenemap:indexLayersByName()
     scenemap:indexLayerObjectsByName()
@@ -45,8 +45,12 @@ function TitlePhase.loadphase()
     Gui:clearMenuStack()
     Gui.title:showOnlyNamed("title")
     Gui.options:showOnlyNamed()
-    Gui:pushMenu(Gui.title.pressstart)
     -- Wallpaper.reload()
+    if startwithmainmenu then
+        TitlePhase.pushMainMenu()
+    else
+        Gui:pushMenu(Gui.title.pressstart)
+    end
 end
 
 function TitlePhase.pushMainMenu()
