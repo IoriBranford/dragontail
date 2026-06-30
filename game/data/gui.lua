@@ -1484,7 +1484,7 @@ return {
       id = 4,
       name = "gameplay",
       class = "",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -3114,7 +3114,7 @@ return {
               wrap = true,
               color = { 255, 255, 255 },
               properties = {
-                ["action"] = "quit",
+                ["action"] = "returnToTitle",
                 ["presssound"] = ""
               }
             },
@@ -3567,7 +3567,7 @@ return {
           id = 11,
           name = "gameover",
           class = "Gui.Menu",
-          visible = false,
+          visible = true,
           opacity = 1,
           offsetx = 0,
           offsety = 0,
@@ -3652,7 +3652,7 @@ return {
               wrap = true,
               color = { 255, 255, 255 },
               properties = {
-                ["action"] = "quit",
+                ["action"] = "returnToTitle",
                 ["presssound"] = ""
               }
             },
@@ -3684,7 +3684,7 @@ return {
       id = 17,
       name = "title",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
