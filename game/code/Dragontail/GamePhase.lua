@@ -75,6 +75,7 @@ function GamePhase.quitphase()
     Stage.quit()
     Assets.markAllToUncache()
     Database.clear()
+    Audio.stop()
 end
 
 function GamePhase.setPaused(newpaused, withmenu)
