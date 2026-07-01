@@ -7,10 +7,12 @@ local Stage  = require "Dragontail.Stage"
 local Canvas = require "System.Canvas"
 local Tiled  = require "Tiled"
 local Path   = require "Object.Path"
+local Audio  = require "System.Audio"
 local TitlePhase = {}
 
 local scenemap ---@type TiledMap
 local sceneco ---@type function
+local ambientsound ---@type love.Source
 
 local function sceneAnimation()
     local layers = scenemap.layers
@@ -31,6 +33,10 @@ local function sceneAnimation()
         fg.y = y + path.y
         coroutine.yield()
     until i > #path.points
+    Audio.playMusic("data/music/Blue Wave Theory - Skyhawk Beach.mp3")
+    if ambientsound and Audio.getMusicVolume() > 0 then
+        ambientsound:stop()
+    end
     return true
 end
 
@@ -55,6 +61,8 @@ function TitlePhase.loadphase(startwithmainmenu)
         Gui:pushMenu(Gui.title.pressstart)
     end
     TitlePhase.resize(love.graphics.getWidth(), love.graphics.getHeight())
+    ambientsound = Audio.play("data/sounds/ambient/seaside.ogg")
+    if ambientsound then ambientsound:setLooping(true) end
 end
 
 function TitlePhase.pushMainMenu()
@@ -78,10 +86,12 @@ function TitlePhase.resize(screenwidth, screenheight)
 end
 
 function TitlePhase.quitphase()
+    Audio.stop()
     Assets.markAllToUncache()
     Gui:clearMenuStack()
     scenemap = nil
     sceneco = nil
+    ambientsound = nil
 end
 
 function TitlePhase.keypressed(key)
