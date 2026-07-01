@@ -38,6 +38,7 @@ case $(uname | tr '[:upper:]' '[:lower:]') in
 		;;
 esac
 
-cd "$GAME_DIR"
+pushd "$GAME_DIR"
 git describe --tags --always > version
 zip -r "$OUTDIR/${GAME_ASSET}" *
+popd
