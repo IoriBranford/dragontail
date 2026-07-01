@@ -74,6 +74,13 @@ function Audio.setMusicVolume(volume)
     end
 end
 
+function Audio.getMusicVolume()
+    if music then
+        return music:getVolume()
+    end
+    return 0
+end
+
 function Audio.update(dsecs)
     if music then
         if musicfadespeed > 0 then
@@ -95,7 +102,7 @@ function Audio.stopMusic()
     musicfadespeed = 0
 end
 
-function Audio.playMusic(file, track)
+function Audio.playMusic(file, track, looping)
     Audio.stopMusic()
     local newmusic = Assets.get(file)
     if newmusic then
@@ -103,6 +110,7 @@ function Audio.playMusic(file, track)
         music = newmusic
         music:setVolume(Config.musicvolume)
         music:play(track)
+        music:setLooping(looping or false)
     end
     return music
 end
