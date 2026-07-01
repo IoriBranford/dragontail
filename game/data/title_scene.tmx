@@ -8,10 +8,10 @@
   <image source="sprites/ui/title/illust/bg.png" width="480" height="270"/>
  </imagelayer>
  <group id="7" name="fg" offsetx="444" offsety="-90">
-  <imagelayer id="3" name="enemy">
+  <imagelayer id="3" name="enemy" offsetx="68" offsety="-27">
    <image source="sprites/ui/title/illust/07 Thug_L.png" width="960" height="600"/>
   </imagelayer>
-  <imagelayer id="5" name="hit">
+  <imagelayer id="5" name="hit" offsetx="20" offsety="9">
    <image source="sprites/ui/title/illust/08 effects L.png" width="960" height="600"/>
   </imagelayer>
   <imagelayer id="4" name="Rose">
@@ -28,7 +28,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="8" name="directions" visible="0">
+ <objectgroup id="8" name="directions">
   <object id="1" name="path" x="444" y="-90">
    <polyline points="0,0 -520,-36"/>
   </object>
