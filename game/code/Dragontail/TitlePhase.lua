@@ -47,6 +47,8 @@ function TitlePhase.loadphase(startwithmainmenu)
     Assets.uncacheMarked()
     Assets.packTiles()
     Assets.batchAllMapsLayers()
+
+    TitlePhase.resize(love.graphics.getWidth(), love.graphics.getHeight())
     Gui:showOnlyNamed("title", "options", "wipe")
     Gui:clearMenuStack()
     Gui.title:showOnlyNamed("title")
@@ -59,10 +61,9 @@ function TitlePhase.loadphase(startwithmainmenu)
         TitlePhase.pushMainMenu()
     else
         Gui:pushMenu(Gui.title.pressstart)
+        ambientsound = Audio.play("data/sounds/ambient/seaside.ogg")
+        if ambientsound then ambientsound:setLooping(true) end
     end
-    TitlePhase.resize(love.graphics.getWidth(), love.graphics.getHeight())
-    ambientsound = Audio.play("data/sounds/ambient/seaside.ogg")
-    if ambientsound then ambientsound:setLooping(true) end
 end
 
 function TitlePhase.pushMainMenu()
