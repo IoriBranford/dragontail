@@ -3,10 +3,10 @@
 ---@overload fun(width:integer, height:integer, inputscale:number?):Canvas
 local Canvas = class()
 
-function Canvas:_init(width, height, inputscale)
+function Canvas:_init(basewidth, baseheight, inputscale)
     inputscale = inputscale or 1
-    width, height = math.floor(width*inputscale), math.floor(height*inputscale)
-    self.canvas = love.graphics.newCanvas(width, height)
+    basewidth, baseheight = math.floor(basewidth*inputscale), math.floor(baseheight*inputscale)
+    self.canvas = love.graphics.newCanvas(basewidth, baseheight)
     self.rotscale = love.math.newTransform()
     self.transform = love.math.newTransform()
     self.inputscale = inputscale
@@ -21,9 +21,20 @@ function Canvas.GetScaleFactor(fromwidth, fromheight, towidth, toheight, rotatio
     end
 
     if round and scale >= 1 then
+        if round ~= math.ceil then
+            round = math.floor
+        end
         scale = round(scale)
     end
     return scale
+end
+
+function Canvas:getBaseWidth()
+    return self.canvas:getWidth()/self.inputscale
+end
+
+function Canvas:getBaseHeight()
+    return self.canvas:getHeight()/self.inputscale
 end
 
 function Canvas:transformToScreen(screenwidth, screenheight, rotation, round)
