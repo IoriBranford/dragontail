@@ -25,7 +25,7 @@ function ComicPhase.resize(screenwidth, screenheight)
     local camerawidth, cameraheight = Stage.CameraWidth, Stage.CameraHeight
     local inputscale = math.ceil(math.min(screenwidth/camerawidth, screenheight/cameraheight))
     stagecanvas = Canvas(camerawidth, cameraheight, inputscale)
-    stagecanvas:transformToScreen(screenwidth, screenheight, math.rad(Config.rotation), Config.canvasscaleint)
+    stagecanvas:transformToScreen(screenwidth, screenheight, math.rad(Config.rotation), Config.canvasscaleint and math.floor)
     stagecanvas:setFiltered(Config.canvasscalesoft)
 end
 

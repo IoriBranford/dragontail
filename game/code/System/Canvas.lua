@@ -12,7 +12,7 @@ function Canvas:_init(width, height, inputscale)
     self.inputscale = inputscale
 end
 
-function Canvas.GetScaleFactor(fromwidth, fromheight, towidth, toheight, rotation, integerscale)
+function Canvas.GetScaleFactor(fromwidth, fromheight, towidth, toheight, rotation, round)
     local scale
     if rotation and math.abs(math.sin(rotation)) > math.sqrt(2)/2 then
         scale = math.min(toheight / fromwidth, towidth / fromheight)
@@ -20,20 +20,20 @@ function Canvas.GetScaleFactor(fromwidth, fromheight, towidth, toheight, rotatio
         scale = math.min(towidth / fromwidth, toheight / fromheight)
     end
 
-    if integerscale and scale >= 1 then
-        scale = math.floor(scale)
+    if round and scale >= 1 then
+        scale = round(scale)
     end
     return scale
 end
 
-function Canvas:transformToScreen(screenwidth, screenheight, rotation, integerscale)
+function Canvas:transformToScreen(screenwidth, screenheight, rotation, round)
     local canvas = self.canvas
     local ghw = screenwidth / 2
     local ghh = screenheight / 2
     local chw = canvas:getWidth() / 2
     local chh = canvas:getHeight() / 2
 
-    local outputscale = Canvas.GetScaleFactor(canvas:getWidth(), canvas:getHeight(), screenwidth, screenheight, rotation, integerscale)
+    local outputscale = Canvas.GetScaleFactor(canvas:getWidth(), canvas:getHeight(), screenwidth, screenheight, rotation, round)
 
     local rotscale = love.math.newTransform()
     rotscale:rotate(rotation)

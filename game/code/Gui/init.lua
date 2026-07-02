@@ -83,7 +83,7 @@ function Gui:resize(screenwidth, screenheight)
         canvaswidth, canvasheight = canvasheight, canvaswidth
     end
     local canvas = Canvas(canvaswidth, canvasheight)
-    canvas:transformToScreen(screenwidth, screenheight, math.rad(Config.rotation), Config.canvasscaleint)
+    canvas:transformToScreen(screenwidth, screenheight, math.rad(Config.rotation), Config.canvasscaleint and math.floor)
     canvas:setFiltered(Config.canvasscalesoft)
     self.canvas = canvas
     self.x = (canvaswidth - self.width) / 2

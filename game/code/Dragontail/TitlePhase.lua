@@ -81,7 +81,7 @@ function TitlePhase.resize(screenwidth, screenheight)
     local camerawidth, cameraheight = Stage.CameraWidth, Stage.CameraHeight
     local inputscale = math.ceil(math.min(screenwidth/camerawidth, screenheight/cameraheight))
     Gui.canvas = Canvas(camerawidth, cameraheight, inputscale)
-    Gui.canvas:transformToScreen(screenwidth, screenheight, math.rad(Config.rotation), Config.canvasscaleint)
+    Gui.canvas:transformToScreen(screenwidth, screenheight, math.rad(Config.rotation), Config.canvasscaleint and math.floor)
     Gui.canvas:setFiltered(Config.canvasscalesoft)
     -- Wallpaper.reload()
 end
