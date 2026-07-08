@@ -46,16 +46,17 @@ function Canvas:transformToScreen(screenwidth, screenheight, rotation, round)
 
     local outputscale = Canvas.GetScaleFactor(canvas:getWidth(), canvas:getHeight(), screenwidth, screenheight, rotation, round)
 
-    local rotscale = love.math.newTransform()
+    local rotscale = self.rotscale
+    rotscale:reset()
     rotscale:rotate(rotation)
     rotscale:scale(outputscale)
     self.rotscale = rotscale
 
-    local transform = love.math.newTransform()
+    local transform = self.transform
+    transform:reset()
     transform:translate(math.floor(ghw), math.floor(ghh))
     transform:apply(rotscale)
     transform:translate(-chw, -chh)
-    self.transform = transform
 end
 
 function Canvas:transformToAnotherCanvas(screenwidth, screenheight, othercanvas)
@@ -64,14 +65,14 @@ function Canvas:transformToAnotherCanvas(screenwidth, screenheight, othercanvas)
     local chw = self.canvas:getWidth() / 2
     local chh = self.canvas:getHeight() / 2
 
-    local rotscale = othercanvas.rotscale:clone()
-    self.rotscale = rotscale
+    local rotscale = self.rotscale:setMatrix("row",
+        othercanvas.rotscale:getMatrix())
 
-    local transform = love.math.newTransform()
+    local transform = self.transform
+    transform:reset()
     transform:translate(math.floor(ghw), math.floor(ghh))
     transform:apply(rotscale)
     transform:translate(-chw, -chh)
-    self.transform = transform
 end
 
 function Canvas:setFiltered(filtered)
