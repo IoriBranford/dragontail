@@ -3,7 +3,6 @@ local GuiActions = require "Dragontail.GuiActions"
 -- local Wallpaper = require "System.Wallpaper"
 local Assets    = require "Tiled.Assets"
 local Config = require "System.Config"
-local Stage  = require "Dragontail.Stage"
 local Canvas = require "System.Canvas"
 local Tiled  = require "Tiled"
 local Path   = require "Object.Path"
@@ -78,11 +77,13 @@ function TitlePhase.pushMainMenu()
 end
 
 function TitlePhase.resize(screenwidth, screenheight)
-    local camerawidth, cameraheight = Stage.CameraWidth, Stage.CameraHeight
-    local inputscale = math.ceil(math.min(screenwidth/camerawidth, screenheight/cameraheight))
-    Gui.canvas = Canvas(camerawidth, cameraheight, inputscale)
-    Gui.canvas:transformToScreen(screenwidth, screenheight, math.rad(Config.rotation), Config.canvasscaleint and math.floor)
-    Gui.canvas:setFiltered(Config.canvasscalesoft)
+    local cw, ch, sw, sh, r =
+        Gui.width, Gui.height,
+        screenwidth, screenheight,
+        math.rad(Config.rotation)
+    local prescale = Config.canvasresolution == "HIGH" and
+        Canvas.GetScaleFactor(cw, ch, sw, sh, r, true) or 1
+    Gui:resize(screenwidth, screenheight, nil, false, prescale)
     -- Wallpaper.reload()
 end
 

@@ -63,12 +63,21 @@ function GamePhase.loadphase(stagepath_, startroom)
 end
 
 function GamePhase.resize(screenwidth, screenheight)
-    local camerawidth, cameraheight = Stage.CameraWidth, Stage.CameraHeight
-    local inputscale = math.ceil(math.min(screenwidth/camerawidth, screenheight/cameraheight))
-    stagecanvas = Canvas(camerawidth, cameraheight, inputscale)
-    stagecanvas:transformToScreen(screenwidth, screenheight, math.rad(Config.rotation), Config.canvasscaleint and math.floor)
+    local cw, ch, sw, sh, r, int =
+        Stage.CameraWidth, Stage.CameraHeight,
+        screenwidth, screenheight,
+        math.rad(Config.rotation), Config.canvasscaleint
+
+    local prescale = Config.canvasresolution == "HIGH" and
+        Canvas.GetScaleFactor(cw, ch, sw, sh, r, true) or 1
+    if stagecanvas then
+        stagecanvas:resize(cw, ch, prescale)
+    else
+        stagecanvas = Canvas(cw, ch, prescale)
+    end
+    stagecanvas:transformToScreen(screenwidth, screenheight, r, int)
     stagecanvas:setFiltered(Config.canvasscalesoft)
-    Gui.canvas = stagecanvas
+    Gui:resize(screenwidth, screenheight, stagecanvas, false, prescale)
 end
 
 function GamePhase.quitphase()
@@ -208,8 +217,9 @@ function GamePhase.draw(fixedfrac)
     stagecanvas:drawOn(function()
         Stage.draw(paused and 0 or fixedfrac)
     end)
-    Gui:drawOnCanvas(stagecanvas)
+    -- Gui:drawOnCanvas(stagecanvas)
     stagecanvas:draw()
+    Gui:drawViaOwnCanvas()
 end
 
 return GamePhase

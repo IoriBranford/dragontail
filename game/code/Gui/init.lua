@@ -6,6 +6,8 @@ local Canvas      = require "System.Canvas"
 local Config      = require "System.Config"
 
 ---@class Gui:LayerGroup
+---@field width integer
+---@field height integer
 ---@field activemenu Menu
 ---@field menustack Menu[]
 ---@field canvas Canvas
@@ -45,7 +47,7 @@ function Gui.new(map, rootpath)
     for _, layer in ipairs(self) do
         init(layer)
     end
-    self:resize(self.width, self.height)
+    self:resize(love.graphics.getWidth(), love.graphics.getHeight())
     return self
 end
 
@@ -65,29 +67,58 @@ function Gui:get(path)
     return guiobject
 end
 
-function Gui:resize(screenwidth, screenheight)
+function Gui:getExpandedCanvasSize(screenwidth, screenheight, maincanvas)
+    local canvaswidth, canvasheight = self.width, self.height
+    if maincanvas then
+        canvaswidth, canvasheight = maincanvas:inverseTransformVector(screenwidth, screenheight)
+    else
+        local s = Canvas.GetScaleFactor(canvaswidth, canvasheight,
+            screenwidth, screenheight,
+            math.rad(Config.rotation),
+            true)
+        canvaswidth = screenwidth/s
+        canvasheight = screenheight/s
+        if Config.isPortraitRotation() then
+            canvaswidth, canvasheight = canvasheight, canvaswidth
+        end
+    end
+    canvaswidth = math.floor(math.abs(canvaswidth)/2)*2
+    canvasheight = math.floor(math.abs(canvasheight)/2)*2
+    return canvaswidth, canvasheight
+end
+
+---@param screenwidth integer
+---@param screenheight integer
+---@param maincanvas Canvas?
+---@param expand boolean? to show ui outside the gui width/height
+function Gui:resize(screenwidth, screenheight, maincanvas, expand, prescale)
+    prescale = prescale or 1
     -- for i = 1, #self do
     --     self[i]:reanchor(self.width, self.height, screenwidth, screenheight)
     -- end
 
-    local scalefactor = Canvas.GetScaleFactor(self.width, self.height, screenwidth, screenheight, math.rad(Config.rotation))
-    local canvaswidth = math.ceil(screenwidth/scalefactor)
-    local canvasheight = math.ceil(screenheight/scalefactor)
-    if canvaswidth % 2 == 1 then
-        canvaswidth = canvaswidth - 1
+    local cw, ch = self.width, self.height
+
+    if expand then
+        cw, ch = self:getExpandedCanvasSize(screenwidth, screenheight, maincanvas)
     end
-    if canvasheight % 2 == 1 then
-        canvasheight = canvasheight - 1
+
+    local canvas = self.canvas
+    if canvas then
+        canvas:resize(cw, ch, prescale)
+    else
+        canvas = Canvas(cw, ch, prescale)
+        self.canvas = canvas
     end
-    if Config.isPortraitRotation() then
-        canvaswidth, canvasheight = canvasheight, canvaswidth
+    if maincanvas then
+        canvas:transformToAnotherCanvas(screenwidth, screenheight, maincanvas)
+    else
+        canvas:transformToScreen(screenwidth, screenheight,
+            math.rad(Config.rotation), Config.canvasscaleint)
     end
-    local canvas = Canvas(canvaswidth, canvasheight)
-    canvas:transformToScreen(screenwidth, screenheight, math.rad(Config.rotation), Config.canvasscaleint and math.floor)
     canvas:setFiltered(Config.canvasscalesoft)
-    self.canvas = canvas
-    self.x = (canvaswidth - self.width) / 2
-    self.y = (canvasheight - self.height) / 2
+    self.x = (self.canvas:getBaseWidth() - self.width) / 2
+    self.y = (self.canvas:getBaseHeight() - self.height) / 2
 end
 
 function Gui:setActiveMenu(menu)
