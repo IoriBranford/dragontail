@@ -101,6 +101,7 @@ function Slider:changeValue(dir)
     Audio.play(self.changesound)
     Config[self.configkey] = value
     self.menu:loadConfigValues()
+    Config.apply(self.configkey)
     self:doAction(self.refreshaction)
 end
 

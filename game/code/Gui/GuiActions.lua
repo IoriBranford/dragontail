@@ -55,12 +55,12 @@ function GuiActions.refreshWindow(gui, element)
 end
 
 function GuiActions.refreshFullscreen(gui, element)
-    love.window.setFullscreen(Config.fullscreen)
-    GuiActions.resize()
+    -- love.window.setFullscreen(Config.fullscreen)
+    -- GuiActions.resize()
 end
 
 function GuiActions.refreshVsync(gui, element)
-    love.window.setVSync(Config.vsync and -1 or 0)
+    -- love.window.setVSync(Config.vsync and -1 or 0)
 end
 
 ---@param element Slider

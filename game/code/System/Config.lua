@@ -50,9 +50,9 @@ Config.cli = [[
 ]]
 
 function Config.clamp(key, min, max)
-	local value = Config[key]
+	local value = config[key]
 	if type(value) == "number" then
-		Config[key] = math.max(min, math.min(value, max))
+		config[key] = math.max(min, math.min(value, max))
 	end
 end
 
@@ -135,56 +135,53 @@ function Config.isVertical()
     	or portraitdimensions and not portraitrotation
 end
 
-function Config.applyDisplayMode(basew, baseh, winmaxscale)
-	local w, h, flags = love.window.getMode()
-	local exclusive = Config.fullscreenexclusive
-	local fullscreen = Config.fullscreen
+function Config.calcDisplaySize(basew, baseh)
+	local deskwidth, deskheight = love.window.getDesktopDimensions(Config.fullscreendevice)
+	if Config.fullscreen then
+		return deskwidth, deskheight
+	end
+
 	if Config.isPortraitRotation() then
 		basew, baseh = baseh, basew
 	end
-	-- local bestmode
-	local maxscale = winmaxscale or 1
 
-	if fullscreen then --and exclusive then
-		w, h = 0, 0
-		-- local modes = love.window.getFullscreenModes()
-		-- for i = 1, #modes do
-		-- 	local mode = modes[i]
-		-- 	if not bestmode
-		-- 	or bestmode.width > mode.width
-		-- 	or bestmode.height > mode.height
-		-- 	then
-		-- 		if mode.height >= baseh and mode.width >= basew then
-		-- 			bestmode = mode
-		-- 		end
-		-- 	end
-		-- end
-		-- if bestmode then
-		-- 	maxscale = math.min(bestmode.width/basew, bestmode.height/baseh)
-		-- end
-	else
-		if config.maximize then
-			local deskwidth, deskheight = love.window.getDesktopDimensions()
-			maxscale = math.min(deskwidth/basew, deskheight/baseh)
-		end
-		maxscale = math.floor(maxscale)
-		w = basew*maxscale
-		h = baseh*maxscale
-	end
+	local maxscale = math.min(deskwidth/basew, deskheight/baseh)
+	maxscale = math.floor(maxscale)
+	return basew*maxscale, baseh*maxscale
+end
 
-	Config.clamp("fullscreendevice", 1, love.window.getDisplayCount())
-	flags.fullscreen = fullscreen
-	flags.fullscreentype = exclusive and "exclusive" or "desktop"
-	flags.display = Config.fullscreendevice
-	flags.usedpiscale = Config.usedpiscale
-	flags.vsync = Config.vsync
-	flags.resizable = Config.resizable
-	flags.x = nil
-	flags.y = nil
-	flags.minwidth = basew
-	flags.minheight = baseh
+function Config.initDisplayMode(basew, baseh)
+	local w, h = Config.calcDisplaySize(basew, baseh)
+
+	-- Config.clamp("fullscreendevice", 1, love.window.getDisplayCount())
+	local flags = {
+		fullscreen = Config.fullscreen,
+		usedpiscale = Config.usedpiscale,
+		vsync = Config.vsync,
+		resizable = Config.resizable,
+		minwidth = basew,
+		minheight = baseh,
+	}
+	Config.setDisplayModeFlag(flags, "fullscreenexclusive", Config.exclusive)
+	Config.setDisplayModeFlag(flags, "fullscreendevice", Config.fullscreendevice)
 	love.window.setMode(w, h, flags)
-	w, h, flags = love.window.getMode()
+end
+
+function Config.setDisplayModeFlag(flags, configkey, value)
+	if configkey == "fullscreenexclusive" then
+		flags.fullscreentype = value and "exclusive" or "desktop"
+	elseif configkey == "fullscreendevice" then
+		flags.display = value
+	else
+		flags[configkey] = value
+	end
+	return flags
+end
+
+function Config.updateDisplayMode(flags)
+	local w, h, currentflags = love.window.getMode()
+	w, h = Config.calcDisplaySize(currentflags.minwidth, currentflags.minheight)
+	love.window.updateMode(w, h, flags)
 end
 
 local function getConfigValueOrInputName(key)
@@ -196,6 +193,50 @@ end
 
 function Config.gsub(s)
 	return s:gsub("${([_%w]+)}", getConfigValueOrInputName)
+end
+
+local apply = {
+	fullscreen = function (fullscreen)
+		local w, h, flags = love.window.getMode()
+		local neww, newh = Config.calcDisplaySize(flags.minwidth, flags.minheight)
+		if w ~= neww or h ~= newh then
+			love.window.updateMode(neww, newh, {fullscreen = fullscreen})
+			love.event.push("resize", neww, newh)
+		end
+	end,
+	fullscreenexclusive = function (exclusive)
+		love.window.setFullscreen(Config.fullscreen, exclusive and "exclusive" or "desktop")
+	end,
+	fullscreendevice = function(device)
+		device = math.max(1, math.min(device, love.window.getDisplayCount()))
+		local w, h, flags = love.window.getMode()
+		local neww, newh = Config.calcDisplaySize(flags.minwidth, flags.minheight)
+		love.window.updateMode(neww, newh, { display = device })
+		love.event.push("resize", neww, newh)
+		return device
+	end,
+	vsync = function(v)
+		love.window.setVSync(v and 1 or 0)
+	end,
+	rotation = function()
+		local w, h, flags = love.window.getMode()
+		local neww, newh = Config.calcDisplaySize(flags.minwidth, flags.minheight)
+		if w ~= neww or h ~= newh then
+			love.window.updateMode(neww, newh)
+		end
+		love.event.push("resize", neww, newh)
+	end,
+	musicvolume = function(volume)
+		local Audio                = require "System.Audio"
+		Audio.setMusicVolume(volume)
+	end,
+}
+
+function Config.apply(key)
+	if apply[key] then
+		local value = config[key]
+		config[key] = apply[key](value) or value
+	end
 end
 
 setmetatable(Config, {

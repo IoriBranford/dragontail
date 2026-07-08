@@ -10,7 +10,7 @@ function Window.init(width, height)
 end
 
 function Window.refresh()
-    Config.applyDisplayMode(basewidth, baseheight, 2)
+    Config.initDisplayMode(basewidth, baseheight)
 end
 
 return Window
