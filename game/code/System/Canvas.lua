@@ -4,12 +4,37 @@
 local Canvas = class()
 
 function Canvas:_init(basewidth, baseheight, inputscale)
-    inputscale = inputscale or 1
-    basewidth, baseheight = math.floor(basewidth*inputscale), math.floor(baseheight*inputscale)
-    self.canvas = love.graphics.newCanvas(basewidth, baseheight)
     self.rotscale = love.math.newTransform()
     self.transform = love.math.newTransform()
+    self:resize(basewidth, baseheight, inputscale)
+end
+
+function Canvas:resize(basewidth, baseheight, inputscale)
+    inputscale = inputscale or 1
+    basewidth, baseheight = math.floor(basewidth*inputscale), math.floor(baseheight*inputscale)
+    local cw, ch
+    if self.canvas then
+        cw, ch = self.canvas:getDimensions()
+    end
+    if cw ~= basewidth or ch ~= baseheight then
+        self.canvas = love.graphics.newCanvas(basewidth, baseheight)
+    end
+    self.rotscale:reset()
+    self.transform:reset()
     self.inputscale = inputscale
+end
+
+function Canvas.Scaled(basew, baseh, screenw, screenh, screenrot, round, inputscale)
+    inputscale = inputscale or 1
+    local canvas = Canvas(basew, baseh, inputscale)
+    canvas:transformToScreen(screenw, screenh, screenrot, round)
+    return canvas
+end
+
+function Canvas.ForAnotherCanvas(basew, baseh, screenw, screenh, other)
+    local canvas = Canvas(basew, baseh, other.inputscale)
+    canvas:transformToAnotherCanvas(screenw, screenh, other)
+    return canvas
 end
 
 function Canvas.GetScaleFactor(fromwidth, fromheight, towidth, toheight, rotation, round)
