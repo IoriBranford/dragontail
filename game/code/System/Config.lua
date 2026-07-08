@@ -26,6 +26,7 @@ function Config.reset()
         soundvolume = 0.5,
         resizable = true,
         drawstats = false,
+		drawgraphicstats = false,
         rotation = 0,
 		variableupdate = false,
 		fixedupdaterate = 60
@@ -44,7 +45,8 @@ Config.cli = [[
     --exclusive             	Exclusive fullscreen
     --display (optional number)	Number of the display to use in fullscreen
     --windowed              	Start in windowed mode
-    --drawstats             	Draw performance stats
+    --drawstats             	Draw basic performance stats
+    --drawgraphicstats			Draw detailed graphics performance stats
 ]]
 
 function Config.clamp(key, min, max)
@@ -103,6 +105,9 @@ function Config.parseArgs(args)
     elseif args.windowed then
         Config.fullscreen = false
     end
+
+    Config.drawstats = args.drawstats
+    Config.drawgraphicstats = args.drawgraphicstats
 end
 
 function Config.save()

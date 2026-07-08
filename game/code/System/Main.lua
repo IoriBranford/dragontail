@@ -170,6 +170,7 @@ function love.run()
         love.timer.step()
     end
 
+    local statsreport = {}
     local mainloop = function()
         -- Process events.
         if love.event then
@@ -228,9 +229,30 @@ function love.run()
             cute.draw()
 
             if Config.drawstats then
+                statsreport[#statsreport+1] = tostring(love.timer.getFPS()).." fps"
+                statsreport[#statsreport+1] = tostring(math.floor(collectgarbage("count"))).." kb"
+            end
+
+            if Config.drawgraphicstats then
+                local gfxstats = love.graphics.getStats()
+                statsreport[#statsreport+1] = tostring(gfxstats.images).." images"
+                statsreport[#statsreport+1] = tostring(gfxstats.canvases).." canvases"
+                statsreport[#statsreport+1] = tostring(gfxstats.fonts).." fonts"
+                statsreport[#statsreport+1] = tostring(gfxstats.texturememory).." bytes vram"
+                statsreport[#statsreport+1] = tostring(gfxstats.drawcalls).." draw calls"
+                statsreport[#statsreport+1] = tostring(gfxstats.drawcallsbatched).." draw calls batched"
+                statsreport[#statsreport+1] = tostring(gfxstats.shaderswitches).." shader switches"
+                statsreport[#statsreport+1] = tostring(gfxstats.canvasswitches).." canvas switches"
+            end
+
+            local y = 0
+            for i = 1, #statsreport do
                 love.graphics.setColor(1,1,1)
-                love.graphics.printf(tostring(love.timer.getFPS()).." fps", 0, 0, love.graphics.getWidth(), "right")
-                love.graphics.printf(tostring(math.floor(collectgarbage("count"))).." kb", 0, 16, love.graphics.getWidth(), "right")
+                love.graphics.printf(statsreport[i], 0, y, love.graphics.getWidth(), "right")
+                y = y + SystemFont:getHeight()
+            end
+            for i = #statsreport, 1, -1 do
+                statsreport[i] = nil
             end
 
             love.graphics.present()

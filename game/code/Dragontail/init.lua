@@ -48,7 +48,6 @@ function love.load(args)
     Config.exhibit = args.exhibit
     Config.drawinput = args.drawinput
     Config.drawbodies = args.drawbodies
-    Config.drawstats = args.drawstats
     Config.drawai = args.drawai
     Config.cuecards = args.cuecards
     Config.fixedupdaterate = Time.FixedUpdateRate
