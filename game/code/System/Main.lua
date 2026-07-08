@@ -145,6 +145,7 @@ function love.run()
     Platform.setOS(args.os)
 
 	if args.profile then
+        jit.off()
         profile = require("jit.p")
         local filename = love.filesystem.getSaveDirectory().."/"..os.date("profile_%Y-%m-%d_%H-%M-%S")..".txt"
 		profile.start("Fli1", filename)
