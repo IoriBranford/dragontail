@@ -58,6 +58,22 @@ function Canvas:transformToScreen(screenwidth, screenheight, rotation, round)
     self.transform = transform
 end
 
+function Canvas:transformToAnotherCanvas(screenwidth, screenheight, othercanvas)
+    local ghw = screenwidth / 2
+    local ghh = screenheight / 2
+    local chw = self.canvas:getWidth() / 2
+    local chh = self.canvas:getHeight() / 2
+
+    local rotscale = othercanvas.rotscale:clone()
+    self.rotscale = rotscale
+
+    local transform = love.math.newTransform()
+    transform:translate(math.floor(ghw), math.floor(ghh))
+    transform:apply(rotscale)
+    transform:translate(-chw, -chh)
+    self.transform = transform
+end
+
 function Canvas:setFiltered(filtered)
     local filter = filtered and "linear" or "nearest"
     self.canvas:setFilter(filter, filter)
