@@ -50,6 +50,21 @@ function math.topolar(x, y)
     return a, d
 end
 
+function math.fromspherical(axy, az, d)
+    local x, y = math.frompolar(axy, d)
+    local sinz = sin(az)
+    return x*sinz, y*sinz, d*cos(az)
+end
+
+function math.tospherical(x, y, z)
+    local d = math.len(x, y, z)
+    local axy, dxy = math.topolar(x, y)
+    local xy = y < 0 and -dxy or dxy
+    local az = z == 0 and xy == 0 and 0
+        or math.atan2(xy, z)
+    return axy, az, d
+end
+
 function math.rescale(x, y, l)
     if x == 0 and y == 0 then
         return 0, 0
