@@ -185,6 +185,11 @@ function Gui:drawOnCanvas(canvas)
     end)
 end
 
+function Gui:drawViaOwnCanvas()
+    self:drawOnOwnCanvas()
+    self.canvas:draw()
+end
+
 Gui.draw = LayerGroup.draw
 
 return Gui
