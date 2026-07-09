@@ -152,8 +152,9 @@ function Stage.init(startroom)
     for i, room in ipairs(rooms) do
         if room.name == firstroomname then
             firstroomindex = i
-            break
         end
+
+        Stage.loadRoomMusic(room)
     end
     firstroomindex = min(firstroomindex, #rooms)
     local firstroom = rooms[firstroomindex]
@@ -179,22 +180,25 @@ function Stage.init(startroom)
         Characters.spawn(player)
     end
     Stage.warpCamera(camera.x+camera.width/2, camera.y+camera.height/2)
+    local foundbounds = 0
+    local foundmusic
     for i = firstroomindex - 1, 1, -1 do
         local prevroom = map.layers.rooms[i]
+        if not foundmusic then
+            foundmusic = prevroom.music
+            Stage.playRoomMusic(prevroom)
+        end
+
         local characters = prevroom.characters
-        if characters then
-            local n = 0
+        if characters and foundbounds == 0 then
             for c = #characters, 1, -1 do
                 local character = characters[c]
                 if character.type == "Boundary" then
                     Characters.spawn(character)
                     characters[c] = characters[#characters]
                     characters[#characters] = nil
-                    n = n + 1
+                    foundbounds = foundbounds + 1
                 end
-            end
-            if n > 0 then
-                break
             end
         end
     end
@@ -285,6 +289,24 @@ function Stage.updateSequence()
     end
 end
 
+function Stage.loadRoomMusic(room)
+    if type(room.music) == "table" then
+        return Audio.loadMusicQueue(unpack(room.music))
+    elseif type(room.music) == "string" then
+        return Assets.get(room.music)
+    end
+end
+
+function Stage.playRoomMusic(room)
+    if type(room.music) == "table" then
+        return Audio.playMusicQueue(unpack(room.music))
+    elseif type(room.music) == "string" then
+        return Audio.playMusic(room.music, nil, room.musicloops)
+    elseif room.musicfade then
+        return Audio.fadeMusic(room.musicfade)
+    end
+end
+
 function Stage.openRoom(i)
     local room = map.layers.rooms[i]
     if room then
@@ -300,6 +322,7 @@ function Stage.openRoom(i)
         if room.checkpoint then
             firstroomname = room.name
         end
+        Stage.playRoomMusic(room)
         return room
     else
         winningteam = "players"
