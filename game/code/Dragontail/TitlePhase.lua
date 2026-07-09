@@ -73,8 +73,7 @@ function TitlePhase.pushMainMenu()
     Gui.title.mainmenus:setVisible(true)
     Gui.title.mainmenus:showOnlyNamed()
     Gui:pushMenu(Gui.title.mainmenus[menuname])
-    Audio.playMusicQueue("data/music/Skyhawk Beach intro short.ogg",
-        "data/music/Skyhawk Beach loop.ogg")
+    Audio.playMusic("data/music/Block Island Sound loop.ogg", nil, true)
 end
 
 function TitlePhase.resize(screenwidth, screenheight)
