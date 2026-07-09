@@ -14,6 +14,8 @@ end
 local Audio = {}
 
 local music ---@type Music?
+local musicqueuepos = 0
+local musicqueue = {}---@type (Music|false)[]
 local musicfadespeed = 0
 
 local function load_audio(path, mode)
@@ -22,6 +24,7 @@ local function load_audio(path, mode)
         return source
     end
     print(source)
+    return false, source
 end
 
 local load_vgm = function(path, ...)
@@ -83,6 +86,11 @@ end
 
 function Audio.update(dsecs)
     if music then
+        if musicqueuepos > 0 then
+            if not music:isPlaying() then
+                Audio.playNextInMusicQueue()
+            end
+        end
         if musicfadespeed > 0 then
             local volume = music:getVolume() - musicfadespeed * dsecs
             if volume <= 0 then
@@ -100,6 +108,11 @@ function Audio.stopMusic()
     end
     music = nil
     musicfadespeed = 0
+    for i = #musicqueue, 1, -1 do
+        musicqueue[i]:stop()
+        musicqueue[i] = nil
+    end
+    musicqueuepos = 0
 end
 
 function Audio.playMusic(file, track, looping)
@@ -113,6 +126,43 @@ function Audio.playMusic(file, track, looping)
         music:setLooping(looping or false)
     end
     return music
+end
+
+function Audio.loadMusicQueue(...)
+    local n = select("#", ...)
+    for i = 1, n do
+        local newmusicfile = select(i, ...)
+        local newmusic = Assets.get(newmusicfile)
+        if newmusic then
+            ---@cast newmusic Music
+            musicqueue[#musicqueue+1] = newmusic
+        end
+    end
+    return musicqueue
+end
+
+function Audio.playMusicQueue(...)
+    Audio.stopMusic()
+    if select("#", ...) > 0 then
+        Audio.loadMusicQueue(...)
+    end
+    Audio.playNextInMusicQueue()
+    return musicqueue
+end
+
+function Audio.playNextInMusicQueue()
+    if musicqueuepos >= #musicqueue then return end
+    musicqueuepos = musicqueuepos + 1
+    local nextmusic = musicqueue[musicqueuepos]
+    if not nextmusic then return end
+
+    local volume = music and music:getVolume()
+        or Config.musicvolume
+    nextmusic:setVolume(volume)
+    nextmusic:setLooping(musicqueuepos >= #musicqueue)
+    nextmusic:play()
+    music = nextmusic
+    return musicqueuepos
 end
 
 function Audio.isPlayingMusic()
