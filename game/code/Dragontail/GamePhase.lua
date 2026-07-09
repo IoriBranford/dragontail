@@ -200,7 +200,6 @@ end
 
 function GamePhase.update(dsecs, fixedfrac)
     Stage.update(dsecs, paused and 0 or fixedfrac)
-    Audio.update(dsecs)
 end
 
 function GamePhase.debug_drawStageUnzoomed(fixedfrac)

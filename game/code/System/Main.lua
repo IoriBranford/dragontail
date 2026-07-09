@@ -195,6 +195,8 @@ function love.run()
             dsecs = love.timer.step()
         end
 
+        Audio.update(dsecs)
+
         variableupdate = Config.variableupdate
         local fixedrate = Config.fixedupdaterate
 
