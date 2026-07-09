@@ -133,25 +133,26 @@ end
 
 function Audio.loadMusicQueue(...)
     local n = select("#", ...)
+    local queue = {}
     for i = 1, n do
         local entry = select(i, ...)
         if type(entry) == "string" then
             local newmusic = Assets.get(entry)
             if newmusic then
                 ---@cast newmusic Music
-                musicqueue[#musicqueue+1] = newmusic
+                queue[#queue+1] = newmusic
             end
         elseif type(entry) == "number" then
-            musicqueue[#musicqueue+1] = entry
+            queue[#queue+1] = entry
         end
     end
-    return musicqueue
+    return queue
 end
 
 function Audio.playMusicQueue(...)
     Audio.stopMusic()
     if select("#", ...) > 0 then
-        Audio.loadMusicQueue(...)
+        musicqueue = Audio.loadMusicQueue(...)
     end
     Audio.playNextInMusicQueue()
     return musicqueue
