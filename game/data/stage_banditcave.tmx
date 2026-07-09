@@ -299,6 +299,10 @@
  <group id="14" name="rooms">
   <objectgroup draworder="index" id="7" name="learnmovement" class="Room">
    <properties>
+    <property name="music" type="list">
+     <item type="file" value="music/Skyhawk Beach intro.ogg"/>
+     <item type="file" value="music/Skyhawk Beach loop.ogg"/>
+    </property>
     <property name="sequence" value="introBanditStage"/>
    </properties>
    <object id="21" template="mapobjects/OutwardBoundary.tx" x="0" y="0" visible="1">
@@ -2123,6 +2127,9 @@ to sprint past archers</text>
    <object id="350" template="mapobjects/bandit/spear.tx" x="2192" y="1080"/>
   </objectgroup>
   <objectgroup id="20" name="arena" class="Room">
+   <properties>
+    <property name="musicfade" type="float" value="2"/>
+   </properties>
    <object id="77" template="mapobjects/OutwardBoundary.tx" x="2208" y="1152">
     <properties>
      <property name="extrudeY" type="float" value="-64"/>
@@ -2142,6 +2149,7 @@ to sprint past archers</text>
   <objectgroup id="67" name="toboss" class="Room">
    <properties>
     <property name="checkpoint" type="bool" value="true"/>
+    <property name="musicfade" type="float" value="2"/>
    </properties>
    <object id="701" template="mapobjects/OutwardBoundary.tx" x="2208" y="1152">
     <properties>
@@ -2181,6 +2189,10 @@ to sprint past archers</text>
   </objectgroup>
   <objectgroup id="23" name="boss" class="Room">
    <properties>
+    <property name="music" type="list">
+     <item type="float" value="1.2"/>
+     <item type="file" value="music/Jazz Hole loop.ogg"/>
+    </property>
     <property name="titlebarcuecard" value="AVOID BOSS ENTRY ATTACK"/>
    </properties>
    <object id="231" template="mapobjects/bandit/boss.tx" x="3152" y="1032">

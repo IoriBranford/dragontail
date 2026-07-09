@@ -54,8 +54,6 @@ function GamePhase.loadphase(stagepath_, startroom)
     Stage.init(startroom)
     GamePhase.resize(love.graphics.getWidth(), love.graphics.getHeight())
 
-    GameGuiActions.playSelectedMusic()
-
     Gui:showOnlyNamed("gameplay", "wipe", "options")
     Gui.gameplay:showOnlyNamed("hud", "input")
     Gui.options:showOnlyNamed()

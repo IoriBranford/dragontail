@@ -834,6 +834,10 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["music"] = {
+              "music/Skyhawk Beach intro.ogg",
+              "music/Skyhawk Beach loop.ogg"
+            },
             ["sequence"] = "introBanditStage"
           },
           objects = {
@@ -9017,7 +9021,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["musicfade"] = 2
+          },
           objects = {
             {
               id = 77,
@@ -9109,7 +9115,8 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["checkpoint"] = true
+            ["checkpoint"] = true,
+            ["musicfade"] = 2
           },
           objects = {
             {
@@ -9284,6 +9291,10 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["music"] = {
+              1.2,
+              "music/Jazz Hole loop.ogg"
+            },
             ["titlebarcuecard"] = "AVOID BOSS ENTRY ATTACK"
           },
           objects = {
