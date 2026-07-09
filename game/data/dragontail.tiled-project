@@ -259,6 +259,17 @@
                     "value": 0
                 },
                 {
+                    "name": "music",
+                    "type": "list",
+                    "value": [
+                    ]
+                },
+                {
+                    "name": "musicfade",
+                    "type": "float",
+                    "value": 0
+                },
+                {
                     "name": "sequence",
                     "type": "string",
                     "value": ""
