@@ -26,6 +26,10 @@ function GameGuiActions.refillPlayers()
     Characters.refillPlayers()
 end
 
+function GameGuiActions.clearEnemies()
+    Characters.clearEnemies()
+end
+
 function GameGuiActions.restartStageCheckpoint()
     love.event.loadphase("Dragontail.GamePhase")
 end
