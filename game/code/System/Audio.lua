@@ -14,6 +14,7 @@ end
 local Audio = {}
 
 local music ---@type Music?
+local musicqueuedelay = 0
 local musicqueuepos = 0
 local musicqueue = {}---@type (Music|false)[]
 local musicfadespeed = 0
@@ -85,19 +86,21 @@ function Audio.getMusicVolume()
 end
 
 function Audio.update(dsecs)
-    if music then
-        if musicqueuepos > 0 then
-            if not music:isPlaying() then
+    if musicqueuepos > 0 then
+        if not music or not music:isPlaying() then
+            musicqueuedelay = math.max(0, musicqueuedelay - dsecs)
+            if musicqueuedelay <= 0 then
                 Audio.playNextInMusicQueue()
             end
         end
-        if musicfadespeed > 0 then
-            local volume = music:getVolume() - musicfadespeed * dsecs
-            if volume <= 0 then
-                Audio.stopMusic()
-            else
-                music:setVolume(volume)
-            end
+    end
+
+    if music and musicfadespeed > 0 then
+        local volume = music:getVolume() - musicfadespeed * dsecs
+        if volume <= 0 then
+            Audio.stopMusic()
+        else
+            music:setVolume(volume)
         end
     end
 end
@@ -109,10 +112,10 @@ function Audio.stopMusic()
     music = nil
     musicfadespeed = 0
     for i = #musicqueue, 1, -1 do
-        musicqueue[i]:stop()
         musicqueue[i] = nil
     end
     musicqueuepos = 0
+    musicqueuedelay = 0
 end
 
 function Audio.playMusic(file, track, looping)
@@ -131,11 +134,15 @@ end
 function Audio.loadMusicQueue(...)
     local n = select("#", ...)
     for i = 1, n do
-        local newmusicfile = select(i, ...)
-        local newmusic = Assets.get(newmusicfile)
-        if newmusic then
-            ---@cast newmusic Music
-            musicqueue[#musicqueue+1] = newmusic
+        local entry = select(i, ...)
+        if type(entry) == "string" then
+            local newmusic = Assets.get(entry)
+            if newmusic then
+                ---@cast newmusic Music
+                musicqueue[#musicqueue+1] = newmusic
+            end
+        elseif type(entry) == "number" then
+            musicqueue[#musicqueue+1] = entry
         end
     end
     return musicqueue
@@ -156,12 +163,18 @@ function Audio.playNextInMusicQueue()
     local nextmusic = musicqueue[musicqueuepos]
     if not nextmusic then return end
 
+    if type(nextmusic) == "number" then
+        musicqueuedelay = nextmusic
+        return
+    end
+
     local volume = music and music:getVolume()
         or Config.musicvolume
     nextmusic:setVolume(volume)
     nextmusic:setLooping(musicqueuepos >= #musicqueue)
     nextmusic:play()
     music = nextmusic
+    musicqueuedelay = 0
     return musicqueuepos
 end
 
