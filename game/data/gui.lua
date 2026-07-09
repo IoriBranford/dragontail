@@ -16,1466 +16,68 @@ return {
     {
       name = "rose-face",
       firstgid = 1,
-      class = "",
-      tilewidth = 32,
-      tileheight = 32,
-      spacing = 0,
-      margin = 0,
-      columns = 4,
-      image = "tilesets/ui/rose-face.png",
-      imagewidth = 128,
-      imageheight = 32,
-      objectalignment = "bottom",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 32,
-        height = 32
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 4,
-      tiles = {
-        {
-          id = 0,
-          properties = {
-            ["name"] = "normal"
-          }
-        },
-        {
-          id = 1,
-          properties = {
-            ["name"] = "hurt"
-          }
-        },
-        {
-          id = 2,
-          properties = {
-            ["name"] = "attack"
-          }
-        },
-        {
-          id = 3,
-          properties = {
-            ["name"] = "win"
-          }
-        }
-      }
+      filename = "tilesets/ui/rose-face.tsx",
+      exportfilename = "tilesets/ui/rose-face.lua"
     },
     {
       name = "keyboard-keys",
       firstgid = 5,
-      class = "",
-      tilewidth = 16,
-      tileheight = 16,
-      spacing = 0,
-      margin = 0,
-      columns = 17,
-      image = "tilesets/ui/keyboard-keys.png",
-      imagewidth = 272,
-      imageheight = 256,
-      objectalignment = "unspecified",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 16,
-        height = 16
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 272,
-      tiles = {
-        {
-          id = 206,
-          animation = {
-            {
-              tileid = 70,
-              duration = 100
-            },
-            {
-              tileid = 206,
-              duration = 100
-            }
-          }
-        },
-        {
-          id = 207,
-          animation = {
-            {
-              tileid = 71,
-              duration = 100
-            },
-            {
-              tileid = 207,
-              duration = 900
-            }
-          }
-        }
-      }
+      filename = "tilesets/ui/keyboard-keys.tsx",
+      exportfilename = "tilesets/ui/keyboard-keys.lua"
     },
     {
       name = "gamepad-buttons",
       firstgid = 277,
-      class = "",
-      tilewidth = 16,
-      tileheight = 16,
-      spacing = 0,
-      margin = 0,
-      columns = 20,
-      image = "tilesets/ui/gamepad-buttons.png",
-      imagewidth = 320,
-      imageheight = 80,
-      objectalignment = "unspecified",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 16,
-        height = 16
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 100,
-      tiles = {
-        {
-          id = 9,
-          animation = {
-            {
-              tileid = 5,
-              duration = 100
-            },
-            {
-              tileid = 7,
-              duration = 100
-            },
-            {
-              tileid = 3,
-              duration = 100
-            },
-            {
-              tileid = 1,
-              duration = 100
-            }
-          }
-        },
-        {
-          id = 60,
-          animation = {
-            {
-              tileid = 20,
-              duration = 100
-            },
-            {
-              tileid = 21,
-              duration = 100
-            }
-          }
-        },
-        {
-          id = 71,
-          animation = {
-            {
-              tileid = 30,
-              duration = 100
-            },
-            {
-              tileid = 31,
-              duration = 900
-            }
-          }
-        },
-        {
-          id = 80,
-          animation = {
-            {
-              tileid = 40,
-              duration = 100
-            },
-            {
-              tileid = 41,
-              duration = 100
-            }
-          }
-        },
-        {
-          id = 91,
-          animation = {
-            {
-              tileid = 50,
-              duration = 100
-            },
-            {
-              tileid = 51,
-              duration = 900
-            }
-          }
-        }
-      }
+      filename = "tilesets/ui/gamepad-buttons.tsx",
+      exportfilename = "tilesets/ui/gamepad-buttons.lua"
     },
     {
       name = "flamegaugefull",
       firstgid = 377,
-      class = "",
-      tilewidth = 40,
-      tileheight = 20,
-      spacing = 0,
-      margin = 0,
-      columns = 1,
-      image = "tilesets/ui/flamegaugefull.png",
-      imagewidth = 40,
-      imageheight = 160,
-      objectalignment = "unspecified",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 40,
-        height = 20
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 8,
-      tiles = {
-        {
-          id = 0,
-          animation = {
-            {
-              tileid = 0,
-              duration = 50
-            },
-            {
-              tileid = 1,
-              duration = 50
-            },
-            {
-              tileid = 2,
-              duration = 50
-            },
-            {
-              tileid = 3,
-              duration = 50
-            },
-            {
-              tileid = 4,
-              duration = 50
-            },
-            {
-              tileid = 5,
-              duration = 50
-            },
-            {
-              tileid = 6,
-              duration = 50
-            },
-            {
-              tileid = 7,
-              duration = 50
-            }
-          }
-        }
-      }
+      filename = "tilesets/ui/flamegaugefull.tsx",
+      exportfilename = "tilesets/ui/flamegaugefull.lua"
     },
     {
       name = "weapon-frame",
       firstgid = 385,
-      class = "",
-      tilewidth = 24,
-      tileheight = 24,
-      spacing = 0,
-      margin = 0,
-      columns = 3,
-      image = "tilesets/ui/weapon-frame.png",
-      imagewidth = 72,
-      imageheight = 48,
-      objectalignment = "center",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 32,
-        height = 32
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 6,
-      tiles = {}
+      filename = "tilesets/ui/weapon-frame.tsx",
+      exportfilename = "tilesets/ui/weapon-frame.lua"
     },
     {
       name = "go-arrow-small",
       firstgid = 391,
-      class = "",
-      tilewidth = 100,
-      tileheight = 20,
-      spacing = 0,
-      margin = 0,
-      columns = 1,
-      image = "sprites/ui/go-arrow-small.png",
-      imagewidth = 100,
-      imageheight = 180,
-      objectalignment = "center",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 100,
-        height = 20
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 9,
-      tiles = {
-        {
-          id = 0,
-          animation = {
-            {
-              tileid = 0,
-              duration = 50
-            },
-            {
-              tileid = 1,
-              duration = 50
-            },
-            {
-              tileid = 2,
-              duration = 50
-            },
-            {
-              tileid = 3,
-              duration = 50
-            },
-            {
-              tileid = 4,
-              duration = 50
-            },
-            {
-              tileid = 5,
-              duration = 50
-            },
-            {
-              tileid = 6,
-              duration = 50
-            },
-            {
-              tileid = 7,
-              duration = 50
-            },
-            {
-              tileid = 8,
-              duration = 100
-            }
-          }
-        }
-      }
+      filename = "sprites/ui/go-arrow-small.tsx",
+      exportfilename = "sprites/ui/go-arrow-small.lua"
     },
     {
       name = "go-word",
       firstgid = 400,
-      class = "",
-      tilewidth = 48,
-      tileheight = 32,
-      spacing = 0,
-      margin = 0,
-      columns = 9,
-      image = "sprites/ui/go-word.png",
-      imagewidth = 432,
-      imageheight = 32,
-      objectalignment = "center",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 48,
-        height = 32
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 9,
-      tiles = {
-        {
-          id = 0,
-          animation = {
-            {
-              tileid = 0,
-              duration = 50
-            },
-            {
-              tileid = 1,
-              duration = 50
-            },
-            {
-              tileid = 2,
-              duration = 50
-            },
-            {
-              tileid = 3,
-              duration = 50
-            },
-            {
-              tileid = 4,
-              duration = 50
-            },
-            {
-              tileid = 5,
-              duration = 50
-            },
-            {
-              tileid = 6,
-              duration = 50
-            },
-            {
-              tileid = 7,
-              duration = 50
-            },
-            {
-              tileid = 8,
-              duration = 100
-            }
-          }
-        }
-      }
-    },
-    {
-      name = "firespit",
-      firstgid = 409,
-      class = "",
-      tilewidth = 64,
-      tileheight = 64,
-      spacing = 0,
-      margin = 0,
-      columns = 1,
-      image = "sprites/player/rose/firespit.ase",
-      imagewidth = 64,
-      imageheight = 64,
-      objectalignment = "center",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 64,
-        height = 64
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 1,
-      tiles = {}
+      filename = "sprites/ui/go-word.tsx",
+      exportfilename = "sprites/ui/go-word.lua"
     },
     {
       name = "break-grab",
-      firstgid = 410,
-      class = "",
-      tilewidth = 48,
-      tileheight = 48,
-      spacing = 0,
-      margin = 0,
-      columns = 4,
-      image = "sprites/ui/break-grab.png",
-      imagewidth = 192,
-      imageheight = 48,
-      objectalignment = "bottom",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 32,
-        height = 32
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 4,
-      tiles = {
-        {
-          id = 0,
-          properties = {
-            ["name"] = "x"
-          },
-          animation = {
-            {
-              tileid = 0,
-              duration = 100
-            },
-            {
-              tileid = 1,
-              duration = 100
-            }
-          }
-        },
-        {
-          id = 2,
-          properties = {
-            ["name"] = "y"
-          },
-          animation = {
-            {
-              tileid = 2,
-              duration = 100
-            },
-            {
-              tileid = 3,
-              duration = 100
-            }
-          }
-        }
-      }
+      firstgid = 409,
+      filename = "sprites/ui/break-grab.tsx",
+      exportfilename = "sprites/ui/break-grab.lua"
     },
     {
       name = "Xbox",
-      firstgid = 414,
-      class = "",
-      tilewidth = 14,
-      tileheight = 14,
-      spacing = 0,
-      margin = 0,
-      columns = 20,
-      image = "tilesets/ui/Gamepad Spritesheets/Xbox.png",
-      imagewidth = 280,
-      imageheight = 15,
-      objectalignment = "center",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 14,
-        height = 14
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 20,
-      tiles = {}
+      firstgid = 413,
+      filename = "tilesets/ui/Gamepad Spritesheets/Xbox.tsx",
+      exportfilename = "tilesets/ui/Gamepad Spritesheets/Xbox.lua"
     },
     {
       name = "go-arrowhead",
-      firstgid = 434,
-      class = "",
-      tilewidth = 16,
-      tileheight = 16,
-      spacing = 0,
-      margin = 0,
-      columns = 16,
-      image = "sprites/ui/go-arrowhead.png",
-      imagewidth = 256,
-      imageheight = 16,
-      objectalignment = "center",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 16,
-        height = 16
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 16,
-      tiles = {
-        {
-          id = 0,
-          properties = {
-            ["name"] = "full"
-          },
-          animation = {
-            {
-              tileid = 0,
-              duration = 50
-            },
-            {
-              tileid = 1,
-              duration = 50
-            },
-            {
-              tileid = 2,
-              duration = 50
-            },
-            {
-              tileid = 3,
-              duration = 50
-            },
-            {
-              tileid = 4,
-              duration = 50
-            },
-            {
-              tileid = 5,
-              duration = 50
-            },
-            {
-              tileid = 6,
-              duration = 50
-            },
-            {
-              tileid = 7,
-              duration = 50
-            },
-            {
-              tileid = 8,
-              duration = 50
-            },
-            {
-              tileid = 9,
-              duration = 50
-            },
-            {
-              tileid = 10,
-              duration = 50
-            },
-            {
-              tileid = 11,
-              duration = 50
-            },
-            {
-              tileid = 12,
-              duration = 50
-            },
-            {
-              tileid = 13,
-              duration = 50
-            }
-          }
-        },
-        {
-          id = 1,
-          animation = {
-            {
-              tileid = 1,
-              duration = 50
-            },
-            {
-              tileid = 2,
-              duration = 50
-            },
-            {
-              tileid = 3,
-              duration = 50
-            },
-            {
-              tileid = 4,
-              duration = 50
-            },
-            {
-              tileid = 5,
-              duration = 50
-            },
-            {
-              tileid = 6,
-              duration = 50
-            },
-            {
-              tileid = 7,
-              duration = 50
-            },
-            {
-              tileid = 8,
-              duration = 50
-            },
-            {
-              tileid = 9,
-              duration = 50
-            },
-            {
-              tileid = 10,
-              duration = 50
-            },
-            {
-              tileid = 11,
-              duration = 50
-            },
-            {
-              tileid = 12,
-              duration = 50
-            },
-            {
-              tileid = 13,
-              duration = 50
-            },
-            {
-              tileid = 0,
-              duration = 50
-            }
-          }
-        },
-        {
-          id = 2,
-          animation = {
-            {
-              tileid = 2,
-              duration = 50
-            },
-            {
-              tileid = 3,
-              duration = 50
-            },
-            {
-              tileid = 4,
-              duration = 50
-            },
-            {
-              tileid = 5,
-              duration = 50
-            },
-            {
-              tileid = 6,
-              duration = 50
-            },
-            {
-              tileid = 7,
-              duration = 50
-            },
-            {
-              tileid = 8,
-              duration = 50
-            },
-            {
-              tileid = 9,
-              duration = 50
-            },
-            {
-              tileid = 10,
-              duration = 50
-            },
-            {
-              tileid = 11,
-              duration = 50
-            },
-            {
-              tileid = 12,
-              duration = 50
-            },
-            {
-              tileid = 13,
-              duration = 50
-            },
-            {
-              tileid = 0,
-              duration = 50
-            },
-            {
-              tileid = 1,
-              duration = 50
-            }
-          }
-        },
-        {
-          id = 3,
-          animation = {
-            {
-              tileid = 3,
-              duration = 50
-            },
-            {
-              tileid = 4,
-              duration = 50
-            },
-            {
-              tileid = 5,
-              duration = 50
-            },
-            {
-              tileid = 6,
-              duration = 50
-            },
-            {
-              tileid = 7,
-              duration = 50
-            },
-            {
-              tileid = 8,
-              duration = 50
-            },
-            {
-              tileid = 9,
-              duration = 50
-            },
-            {
-              tileid = 10,
-              duration = 50
-            },
-            {
-              tileid = 11,
-              duration = 50
-            },
-            {
-              tileid = 12,
-              duration = 50
-            },
-            {
-              tileid = 13,
-              duration = 50
-            },
-            {
-              tileid = 0,
-              duration = 50
-            },
-            {
-              tileid = 1,
-              duration = 50
-            },
-            {
-              tileid = 2,
-              duration = 50
-            }
-          }
-        },
-        {
-          id = 4,
-          animation = {
-            {
-              tileid = 4,
-              duration = 50
-            },
-            {
-              tileid = 5,
-              duration = 50
-            },
-            {
-              tileid = 6,
-              duration = 50
-            },
-            {
-              tileid = 7,
-              duration = 50
-            },
-            {
-              tileid = 8,
-              duration = 50
-            },
-            {
-              tileid = 9,
-              duration = 50
-            },
-            {
-              tileid = 10,
-              duration = 50
-            },
-            {
-              tileid = 11,
-              duration = 50
-            },
-            {
-              tileid = 12,
-              duration = 50
-            },
-            {
-              tileid = 13,
-              duration = 50
-            },
-            {
-              tileid = 0,
-              duration = 50
-            },
-            {
-              tileid = 1,
-              duration = 50
-            },
-            {
-              tileid = 2,
-              duration = 50
-            },
-            {
-              tileid = 3,
-              duration = 50
-            }
-          }
-        },
-        {
-          id = 5,
-          animation = {
-            {
-              tileid = 5,
-              duration = 50
-            },
-            {
-              tileid = 6,
-              duration = 50
-            },
-            {
-              tileid = 7,
-              duration = 50
-            },
-            {
-              tileid = 8,
-              duration = 50
-            },
-            {
-              tileid = 9,
-              duration = 50
-            },
-            {
-              tileid = 10,
-              duration = 50
-            },
-            {
-              tileid = 11,
-              duration = 50
-            },
-            {
-              tileid = 12,
-              duration = 50
-            },
-            {
-              tileid = 13,
-              duration = 50
-            },
-            {
-              tileid = 0,
-              duration = 50
-            },
-            {
-              tileid = 1,
-              duration = 50
-            },
-            {
-              tileid = 2,
-              duration = 50
-            },
-            {
-              tileid = 3,
-              duration = 50
-            },
-            {
-              tileid = 4,
-              duration = 50
-            }
-          }
-        },
-        {
-          id = 6,
-          animation = {
-            {
-              tileid = 6,
-              duration = 50
-            },
-            {
-              tileid = 7,
-              duration = 50
-            },
-            {
-              tileid = 8,
-              duration = 50
-            },
-            {
-              tileid = 9,
-              duration = 50
-            },
-            {
-              tileid = 10,
-              duration = 50
-            },
-            {
-              tileid = 11,
-              duration = 50
-            },
-            {
-              tileid = 12,
-              duration = 50
-            },
-            {
-              tileid = 13,
-              duration = 50
-            },
-            {
-              tileid = 0,
-              duration = 50
-            },
-            {
-              tileid = 1,
-              duration = 50
-            },
-            {
-              tileid = 2,
-              duration = 50
-            },
-            {
-              tileid = 3,
-              duration = 50
-            },
-            {
-              tileid = 4,
-              duration = 50
-            },
-            {
-              tileid = 5,
-              duration = 50
-            }
-          }
-        },
-        {
-          id = 7,
-          animation = {
-            {
-              tileid = 7,
-              duration = 50
-            },
-            {
-              tileid = 8,
-              duration = 50
-            },
-            {
-              tileid = 9,
-              duration = 50
-            },
-            {
-              tileid = 10,
-              duration = 50
-            },
-            {
-              tileid = 11,
-              duration = 50
-            },
-            {
-              tileid = 12,
-              duration = 50
-            },
-            {
-              tileid = 13,
-              duration = 50
-            },
-            {
-              tileid = 0,
-              duration = 50
-            },
-            {
-              tileid = 1,
-              duration = 50
-            },
-            {
-              tileid = 2,
-              duration = 50
-            },
-            {
-              tileid = 3,
-              duration = 50
-            },
-            {
-              tileid = 4,
-              duration = 50
-            },
-            {
-              tileid = 5,
-              duration = 50
-            },
-            {
-              tileid = 6,
-              duration = 50
-            }
-          }
-        },
-        {
-          id = 8,
-          animation = {
-            {
-              tileid = 8,
-              duration = 50
-            },
-            {
-              tileid = 9,
-              duration = 50
-            },
-            {
-              tileid = 10,
-              duration = 50
-            },
-            {
-              tileid = 11,
-              duration = 50
-            },
-            {
-              tileid = 12,
-              duration = 50
-            },
-            {
-              tileid = 13,
-              duration = 50
-            },
-            {
-              tileid = 0,
-              duration = 50
-            },
-            {
-              tileid = 1,
-              duration = 50
-            },
-            {
-              tileid = 2,
-              duration = 50
-            },
-            {
-              tileid = 3,
-              duration = 50
-            },
-            {
-              tileid = 4,
-              duration = 50
-            },
-            {
-              tileid = 5,
-              duration = 50
-            },
-            {
-              tileid = 6,
-              duration = 50
-            },
-            {
-              tileid = 7,
-              duration = 50
-            }
-          }
-        },
-        {
-          id = 9,
-          animation = {
-            {
-              tileid = 9,
-              duration = 50
-            },
-            {
-              tileid = 10,
-              duration = 50
-            },
-            {
-              tileid = 11,
-              duration = 50
-            },
-            {
-              tileid = 12,
-              duration = 50
-            },
-            {
-              tileid = 13,
-              duration = 50
-            },
-            {
-              tileid = 0,
-              duration = 50
-            },
-            {
-              tileid = 1,
-              duration = 50
-            },
-            {
-              tileid = 2,
-              duration = 50
-            },
-            {
-              tileid = 3,
-              duration = 50
-            },
-            {
-              tileid = 4,
-              duration = 50
-            },
-            {
-              tileid = 5,
-              duration = 50
-            },
-            {
-              tileid = 6,
-              duration = 50
-            },
-            {
-              tileid = 7,
-              duration = 50
-            },
-            {
-              tileid = 8,
-              duration = 50
-            }
-          }
-        },
-        {
-          id = 10,
-          animation = {
-            {
-              tileid = 10,
-              duration = 50
-            },
-            {
-              tileid = 11,
-              duration = 50
-            },
-            {
-              tileid = 12,
-              duration = 50
-            },
-            {
-              tileid = 13,
-              duration = 50
-            },
-            {
-              tileid = 0,
-              duration = 50
-            },
-            {
-              tileid = 1,
-              duration = 50
-            },
-            {
-              tileid = 2,
-              duration = 50
-            },
-            {
-              tileid = 3,
-              duration = 50
-            },
-            {
-              tileid = 4,
-              duration = 50
-            },
-            {
-              tileid = 5,
-              duration = 50
-            },
-            {
-              tileid = 6,
-              duration = 50
-            },
-            {
-              tileid = 7,
-              duration = 50
-            },
-            {
-              tileid = 8,
-              duration = 50
-            },
-            {
-              tileid = 9,
-              duration = 50
-            }
-          }
-        },
-        {
-          id = 11,
-          animation = {
-            {
-              tileid = 11,
-              duration = 50
-            },
-            {
-              tileid = 12,
-              duration = 50
-            },
-            {
-              tileid = 13,
-              duration = 50
-            },
-            {
-              tileid = 0,
-              duration = 50
-            },
-            {
-              tileid = 1,
-              duration = 50
-            },
-            {
-              tileid = 2,
-              duration = 50
-            },
-            {
-              tileid = 3,
-              duration = 50
-            },
-            {
-              tileid = 4,
-              duration = 50
-            },
-            {
-              tileid = 5,
-              duration = 50
-            },
-            {
-              tileid = 6,
-              duration = 50
-            },
-            {
-              tileid = 7,
-              duration = 50
-            },
-            {
-              tileid = 8,
-              duration = 50
-            },
-            {
-              tileid = 9,
-              duration = 50
-            },
-            {
-              tileid = 10,
-              duration = 50
-            }
-          }
-        },
-        {
-          id = 12,
-          animation = {
-            {
-              tileid = 12,
-              duration = 50
-            },
-            {
-              tileid = 13,
-              duration = 50
-            },
-            {
-              tileid = 0,
-              duration = 50
-            },
-            {
-              tileid = 1,
-              duration = 50
-            },
-            {
-              tileid = 2,
-              duration = 50
-            },
-            {
-              tileid = 3,
-              duration = 50
-            },
-            {
-              tileid = 4,
-              duration = 50
-            },
-            {
-              tileid = 5,
-              duration = 50
-            },
-            {
-              tileid = 6,
-              duration = 50
-            },
-            {
-              tileid = 7,
-              duration = 50
-            },
-            {
-              tileid = 8,
-              duration = 50
-            },
-            {
-              tileid = 9,
-              duration = 50
-            },
-            {
-              tileid = 10,
-              duration = 50
-            },
-            {
-              tileid = 11,
-              duration = 50
-            }
-          }
-        },
-        {
-          id = 13,
-          animation = {
-            {
-              tileid = 13,
-              duration = 50
-            },
-            {
-              tileid = 0,
-              duration = 50
-            },
-            {
-              tileid = 1,
-              duration = 50
-            },
-            {
-              tileid = 2,
-              duration = 50
-            },
-            {
-              tileid = 3,
-              duration = 50
-            },
-            {
-              tileid = 4,
-              duration = 50
-            },
-            {
-              tileid = 5,
-              duration = 50
-            },
-            {
-              tileid = 6,
-              duration = 50
-            },
-            {
-              tileid = 7,
-              duration = 50
-            },
-            {
-              tileid = 8,
-              duration = 50
-            },
-            {
-              tileid = 9,
-              duration = 50
-            },
-            {
-              tileid = 10,
-              duration = 50
-            },
-            {
-              tileid = 11,
-              duration = 50
-            },
-            {
-              tileid = 12,
-              duration = 50
-            }
-          }
-        },
-        {
-          id = 14,
-          properties = {
-            ["name"] = "empty"
-          }
-        }
-      }
+      firstgid = 433,
+      filename = "sprites/ui/go-arrowhead.tsx",
+      exportfilename = "sprites/ui/go-arrowhead.lua"
+    },
+    {
+      name = "firespit",
+      firstgid = 449,
+      filename = "sprites/ui/firespit.tsx",
+      exportfilename = "sprites/ui/firespit.lua"
     }
   },
   layers = {
@@ -1993,7 +595,7 @@ return {
               height = 48,
               rotation = 0,
               opacity = 1,
-              gid = 410,
+              gid = 409,
               visible = true,
               properties = {}
             }
@@ -2153,7 +755,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 434,
+              gid = 433,
               visible = true,
               properties = {}
             },
@@ -2168,7 +770,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 435,
+              gid = 434,
               visible = true,
               properties = {}
             },
@@ -2183,7 +785,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 436,
+              gid = 435,
               visible = true,
               properties = {}
             },
@@ -2198,7 +800,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 437,
+              gid = 436,
               visible = true,
               properties = {}
             },
@@ -2213,7 +815,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 438,
+              gid = 437,
               visible = true,
               properties = {}
             },
@@ -2228,7 +830,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 439,
+              gid = 438,
               visible = true,
               properties = {}
             },
@@ -2243,7 +845,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 440,
+              gid = 439,
               visible = true,
               properties = {}
             },
@@ -2258,7 +860,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 441,
+              gid = 440,
               visible = true,
               properties = {}
             }
@@ -2806,7 +1408,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 418,
+              gid = 417,
               visible = true,
               properties = {}
             },
@@ -2821,7 +1423,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 414,
+              gid = 413,
               visible = true,
               properties = {}
             },
@@ -2836,7 +1438,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 419,
+              gid = 418,
               visible = true,
               properties = {}
             },
@@ -2851,7 +1453,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 415,
+              gid = 414,
               visible = true,
               properties = {}
             },
@@ -2866,7 +1468,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 428,
+              gid = 427,
               visible = true,
               properties = {}
             },
@@ -2881,7 +1483,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 429,
+              gid = 428,
               visible = true,
               properties = {}
             },
@@ -3151,7 +1753,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 409,
+              gid = 449,
               visible = true,
               properties = {
                 ["alignx"] = -1,
@@ -3506,7 +2108,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 409,
+              gid = 449,
               visible = true,
               properties = {
                 ["alignx"] = -1,
@@ -3525,7 +2127,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 414,
+              gid = 413,
               visible = true,
               properties = {}
             },
@@ -3540,7 +2142,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 414,
+              gid = 413,
               visible = true,
               properties = {}
             },
@@ -3555,7 +2157,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 414,
+              gid = 413,
               visible = true,
               properties = {}
             }
@@ -3667,7 +2269,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 409,
+              gid = 449,
               visible = true,
               properties = {
                 ["alignx"] = -1,
@@ -3793,7 +2395,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 409,
+              gid = 449,
               visible = true,
               properties = {
                 ["alignx"] = 0.5,
@@ -3812,7 +2414,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 409,
+              gid = 449,
               visible = true,
               properties = {
                 ["alignx"] = -0.5,
@@ -3831,7 +2433,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 414,
+              gid = 413,
               visible = true,
               properties = {}
             }
@@ -3954,7 +2556,7 @@ return {
                   height = 64,
                   rotation = 0,
                   opacity = 1,
-                  gid = 409,
+                  gid = 449,
                   visible = true,
                   properties = {
                     ["alignx"] = -1,
@@ -4026,7 +2628,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 409,
+              gid = 449,
               visible = true,
               properties = {
                 ["alignx"] = -1,
