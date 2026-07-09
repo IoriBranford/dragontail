@@ -32,7 +32,6 @@ local function sceneAnimation()
         fg.y = y + path.y
         coroutine.yield()
     until i > #path.points
-    Audio.playMusic("data/music/Blue Wave Theory - Skyhawk Beach.mp3")
     if ambientsound and Audio.getMusicVolume() > 0 then
         ambientsound:stop()
     end
@@ -74,6 +73,8 @@ function TitlePhase.pushMainMenu()
     Gui.title.mainmenus:setVisible(true)
     Gui.title.mainmenus:showOnlyNamed()
     Gui:pushMenu(Gui.title.mainmenus[menuname])
+    Audio.playMusicQueue("data/music/Skyhawk Beach intro short.ogg",
+        "data/music/Skyhawk Beach loop.ogg")
 end
 
 function TitlePhase.resize(screenwidth, screenheight)
