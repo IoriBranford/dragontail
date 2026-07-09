@@ -214,7 +214,7 @@ function BanditBoss:duringGetUp()
 end
 
 function BanditBoss:defeat(attacker)
-    Audio.fadeMusic()
+    Audio.fadeMusic(1)
     Characters.clearEnemies(self)
     Stage.setToLastRoom()
     return Enemy.defeat(self, attacker)
