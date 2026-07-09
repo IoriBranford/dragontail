@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.11.0" name="Cheese A" tilewidth="32" tileheight="32" tilecount="18" columns="6" objectalignment="bottom">
+<tileset version="1.11" tiledversion="1.12.2" name="Cheese A" tilewidth="32" tileheight="32" tilecount="18" columns="6" objectalignment="bottom">
+ <editorsettings>
+  <export target="Cheese A.lua" format="lua"/>
+ </editorsettings>
  <tileoffset x="0" y="8"/>
  <image source="Cheese A.png" width="192" height="96"/>
  <tile id="0" type="food-medium"/>

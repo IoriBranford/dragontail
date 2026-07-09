@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.11.0" name="Chair, Dining F" tilewidth="32" tileheight="32" tilecount="16" columns="4" objectalignment="bottom">
+<tileset version="1.11" tiledversion="1.12.2" name="Chair, Dining F" tilewidth="32" tileheight="32" tilecount="16" columns="4" objectalignment="bottom">
+ <editorsettings>
+  <export target="Chair, Dining F.lua" format="lua"/>
+ </editorsettings>
  <tileoffset x="0" y="12"/>
  <image source="Chair, Dining F.png" width="128" height="128"/>
  <tile id="0" type="container-chair"/>

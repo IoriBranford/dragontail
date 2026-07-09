@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.11.0" name="tables-hori" tilewidth="96" tileheight="48" tilecount="3" columns="3" objectalignment="top">
+<tileset version="1.11" tiledversion="1.12.2" name="tables-hori" tilewidth="96" tileheight="48" tilecount="3" columns="3" objectalignment="top">
+ <editorsettings>
+  <export target="tables-hori.lua" format="lua"/>
+ </editorsettings>
  <tileoffset x="0" y="-24"/>
  <image source="tables-hori.png" width="288" height="48"/>
  <tile id="0" type="furniture-table">

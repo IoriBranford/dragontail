@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset version="1.11" tiledversion="1.12.2" name="grassland" tilewidth="32" tileheight="32" tilecount="2816" columns="64">
+ <editorsettings>
+  <export target="grassland.lua" format="lua"/>
+ </editorsettings>
  <image source="grassland.png" width="2048" height="1408"/>
  <tile id="503" probability="0.005"/>
  <tile id="504" probability="0.005"/>

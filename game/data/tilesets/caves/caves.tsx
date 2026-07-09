@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.11.0" name="caves" tilewidth="32" tileheight="32" tilecount="2448" columns="51">
+<tileset version="1.11" tiledversion="1.12.2" name="caves" tilewidth="32" tileheight="32" tilecount="2448" columns="51">
+ <editorsettings>
+  <export target="caves.lua" format="lua"/>
+ </editorsettings>
  <image source="caves.png" width="1632" height="1536"/>
  <tile id="1408" probability="0.1"/>
  <tile id="1410" probability="0.1"/>

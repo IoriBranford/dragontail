@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.12.1" name="go-arrowhead" tilewidth="16" tileheight="16" tilecount="16" columns="16" objectalignment="center">
+<tileset version="1.11" tiledversion="1.12.2" name="go-arrowhead" tilewidth="16" tileheight="16" tilecount="16" columns="16" objectalignment="center">
+ <editorsettings>
+  <export target="go-arrowhead.lua" format="lua"/>
+ </editorsettings>
  <image source="go-arrowhead.png" width="256" height="16"/>
  <tile id="0">
   <properties>

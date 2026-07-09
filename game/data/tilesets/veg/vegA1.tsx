@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.11.0" name="vegA1" tilewidth="32" tileheight="32" tilecount="48" columns="4" objectalignment="center">
+<tileset version="1.11" tiledversion="1.12.2" name="vegA1" tilewidth="32" tileheight="32" tilecount="48" columns="4" objectalignment="center">
+ <editorsettings>
+  <export target="vegA1.lua" format="lua"/>
+ </editorsettings>
  <image source="vegA1.png" width="128" height="384"/>
  <tile id="0">
   <animation>

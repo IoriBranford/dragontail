@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.11.2" name="crystal-spikes" tilewidth="32" tileheight="32" tilecount="64" columns="8" objectalignment="bottom">
+<tileset version="1.11" tiledversion="1.12.2" name="crystal-spikes" tilewidth="32" tileheight="32" tilecount="64" columns="8" objectalignment="bottom">
+ <editorsettings>
+  <export target="crystal-spikes.lua" format="lua"/>
+ </editorsettings>
  <tileoffset x="0" y="4"/>
  <image source="crystal-spikes.png" width="256" height="256"/>
  <tile id="0" type="spike-small"/>

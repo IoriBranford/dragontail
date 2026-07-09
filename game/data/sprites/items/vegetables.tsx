@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.11.2" name="vegetables" tilewidth="32" tileheight="32" tilecount="7" columns="7" objectalignment="bottom">
+<tileset version="1.11" tiledversion="1.12.2" name="vegetables" tilewidth="32" tileheight="32" tilecount="7" columns="7" objectalignment="bottom">
+ <editorsettings>
+  <export target="vegetables.lua" format="lua"/>
+ </editorsettings>
  <tileoffset x="0" y="8"/>
  <image source="vegetables.png" width="224" height="32"/>
  <tile id="0" type="mana-small">

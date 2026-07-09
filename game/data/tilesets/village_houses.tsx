@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.8" tiledversion="1.8.2" name="village_houses" tilewidth="32" tileheight="32" tilecount="720" columns="30">
+<tileset version="1.11" tiledversion="1.12.2" name="village_houses" tilewidth="32" tileheight="32" tilecount="720" columns="30">
+ <editorsettings>
+  <export target="village_houses.lua" format="lua"/>
+ </editorsettings>
  <image source="village_houses.png" width="960" height="768"/>
  <tile id="19">
   <objectgroup>

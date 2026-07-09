@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.11.0" name="wall-torch" tilewidth="32" tileheight="48" tilecount="3" columns="3" objectalignment="bottom">
+<tileset version="1.11" tiledversion="1.12.2" name="wall-torch" tilewidth="32" tileheight="48" tilecount="3" columns="3" objectalignment="bottom">
+ <editorsettings>
+  <export target="wall-torch.lua" format="lua"/>
+ </editorsettings>
  <image source="wall-torch.png" width="96" height="48"/>
  <tile id="0">
   <animation>

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.11.0" name="tree3D_ss" tilewidth="32" tileheight="32" tilecount="256" columns="16">
+<tileset version="1.11" tiledversion="1.12.2" name="tree3D_ss" tilewidth="32" tileheight="32" tilecount="256" columns="16">
+ <editorsettings>
+  <export target="tree3D_ss.lua" format="lua"/>
+ </editorsettings>
  <image source="tree3D_ss.png" width="512" height="512"/>
  <tile id="0">
   <animation>
