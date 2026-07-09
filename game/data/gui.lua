@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 18,
   nextlayerid = 26,
-  nextobjectid = 170,
+  nextobjectid = 172,
   properties = {},
   tilesets = {
     {
@@ -74,8 +74,14 @@ return {
       exportfilename = "sprites/ui/go-arrowhead.lua"
     },
     {
-      name = "firespit",
+      name = "rose-face2",
       firstgid = 449,
+      filename = "tilesets/ui/rose-face2.tsx",
+      exportfilename = "tilesets/ui/rose-face2.lua"
+    },
+    {
+      name = "firespit",
+      firstgid = 450,
       filename = "sprites/ui/firespit.tsx",
       exportfilename = "sprites/ui/firespit.lua"
     }
@@ -182,13 +188,30 @@ return {
               }
             },
             {
+              id = 1,
+              name = "portrait",
+              type = "",
+              shape = "rectangle",
+              x = 14,
+              y = 36,
+              width = 60,
+              height = 27,
+              rotation = 0,
+              opacity = 1,
+              gid = 449,
+              visible = true,
+              properties = {
+                ["z"] = 0
+              }
+            },
+            {
               id = 2,
               name = "portraitbox",
               type = "",
               shape = "rectangle",
-              x = 8,
+              x = -16,
               y = 9,
-              width = 36,
+              width = 60,
               height = 27,
               rotation = 0,
               opacity = 1,
@@ -198,23 +221,6 @@ return {
                 ["linecolor"] = "#ffffffff",
                 ["roundcorners"] = 2,
                 ["z"] = 3
-              }
-            },
-            {
-              id = 1,
-              name = "portrait",
-              type = "",
-              shape = "rectangle",
-              x = 26,
-              y = 36,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              opacity = 1,
-              gid = 1,
-              visible = true,
-              properties = {
-                ["z"] = 0
               }
             },
             {
@@ -1753,7 +1759,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 449,
+              gid = 450,
               visible = true,
               properties = {
                 ["alignx"] = -1,
@@ -1769,7 +1775,7 @@ return {
           id = 15,
           name = "debugmenu",
           class = "Gui.Menu",
-          visible = false,
+          visible = true,
           opacity = 1,
           offsetx = 0,
           offsety = 0,
@@ -1785,16 +1791,16 @@ return {
               type = "",
               shape = "rectangle",
               x = 112,
-              y = 36,
+              y = -4.5,
               width = 256,
-              height = 198,
+              height = 279,
               rotation = 0,
               opacity = 1,
               visible = true,
               properties = {
                 ["color"] = "#e0641013",
                 ["linecolor"] = "#ffff6161",
-                ["roundcorners"] = 8
+                ["roundcorners"] = 0
               }
             },
             {
@@ -1912,7 +1918,7 @@ return {
               type = "Gui.Button",
               shape = "text",
               x = 128,
-              y = 54,
+              y = 36,
               width = 224,
               height = 18,
               rotation = 0,
@@ -1923,7 +1929,29 @@ return {
               wrap = true,
               color = { 255, 255, 255 },
               properties = {
-                ["action"] = "refillPlayers"
+                ["action"] = "refillPlayers",
+                ["presssound"] = "sounds/combat/heal.mp3"
+              }
+            },
+            {
+              id = 171,
+              name = "Clear enemies",
+              type = "Gui.Button",
+              shape = "text",
+              x = 128,
+              y = 54,
+              width = 224,
+              height = 18,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              text = "Clear enemies",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {
+                ["action"] = "clearEnemies",
+                ["presssound"] = "sounds/combat/cut2.mp3"
               }
             },
             {
@@ -2082,7 +2110,7 @@ return {
               type = "Gui.Button",
               shape = "text",
               x = 128,
-              y = 198,
+              y = 243,
               width = 64,
               height = 18,
               rotation = 0,
@@ -2108,7 +2136,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 449,
+              gid = 450,
               visible = true,
               properties = {
                 ["alignx"] = -1,
@@ -2118,6 +2146,21 @@ return {
             },
             {
               id = 148,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 344,
+              y = 45,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              opacity = 1,
+              gid = 413,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 170,
               name = "",
               type = "",
               shape = "rectangle",
@@ -2169,7 +2212,7 @@ return {
           id = 11,
           name = "gameover",
           class = "Gui.Menu",
-          visible = true,
+          visible = false,
           opacity = 1,
           offsetx = 0,
           offsety = 0,
@@ -2269,7 +2312,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 449,
+              gid = 450,
               visible = true,
               properties = {
                 ["alignx"] = -1,
@@ -2395,7 +2438,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 449,
+              gid = 450,
               visible = true,
               properties = {
                 ["alignx"] = 0.5,
@@ -2414,7 +2457,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 449,
+              gid = 450,
               visible = true,
               properties = {
                 ["alignx"] = -0.5,
@@ -2556,7 +2599,7 @@ return {
                   height = 64,
                   rotation = 0,
                   opacity = 1,
-                  gid = 449,
+                  gid = 450,
                   visible = true,
                   properties = {
                     ["alignx"] = -1,
@@ -2628,7 +2671,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 449,
+              gid = 450,
               visible = true,
               properties = {
                 ["alignx"] = -1,
@@ -2827,7 +2870,7 @@ return {
               height = 18,
               rotation = 0,
               opacity = 1,
-              visible = true,
+              visible = false,
               text = "Retro Chiptune Guitar",
               fontfamily = "TinyUnicode",
               wrap = true,
@@ -2858,7 +2901,7 @@ return {
               height = 18,
               rotation = 0,
               opacity = 1,
-              visible = true,
+              visible = false,
               text = "Music",
               fontfamily = "Unifont",
               wrap = true,
