@@ -2,6 +2,7 @@
 <template>
  <object name="Slider" type="Gui.Slider" width="84" height="18">
   <properties>
+   <property name="changesound" type="file" value="../../../sounds/combat/swing1.mp3"/>
    <property name="configkey" value=""/>
    <property name="increment" type="float" value="1"/>
    <property name="label" type="object" value="0"/>

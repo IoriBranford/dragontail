@@ -398,28 +398,28 @@ to clear lost enemies</text>
    <object id="140" template="gui/menu/settings/Label.tx" name="/60" x="328" y="126" width="24" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">/60</text>
    </object>
-   <object id="89" template="gui/menu/settings/Label.tx" name="Refill player" type="Gui.Button" x="128" y="36" width="224" height="18">
+   <object id="89" template="gui/menu/settings/Button.tx" name="Refill player" type="Gui.Button" x="128" y="36" width="224" height="18">
     <properties>
      <property name="action" value="refillPlayers"/>
      <property name="presssound" type="file" value="sounds/combat/heal.mp3"/>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Refill player</text>
    </object>
-   <object id="171" template="gui/menu/settings/Label.tx" name="Clear enemies" type="Gui.Button" x="128" y="54" width="224" height="18">
+   <object id="171" template="gui/menu/settings/Button.tx" name="Clear enemies" type="Gui.Button" x="128" y="54" width="224" height="18">
     <properties>
      <property name="action" value="clearEnemies"/>
      <property name="presssound" type="file" value="sounds/combat/cut2.mp3"/>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Clear enemies</text>
    </object>
-   <object id="149" template="gui/menu/settings/Label.tx" name="Restart at midpoint" type="Gui.Button" x="128" y="144" width="224" height="18">
+   <object id="149" template="gui/menu/settings/Button.tx" name="Restart at midpoint" type="Gui.Button" x="128" y="144" width="224" height="18">
     <properties>
      <property name="action" value="restartStage"/>
      <property name="checkpoint" value="entryhall"/>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Restart at midpoint</text>
    </object>
-   <object id="151" template="gui/menu/settings/Label.tx" name="Restart at boss" type="Gui.Button" x="128" y="162" width="224" height="18">
+   <object id="151" template="gui/menu/settings/Button.tx" name="Restart at boss" type="Gui.Button" x="128" y="162" width="224" height="18">
     <properties>
      <property name="action" value="restartStage"/>
      <property name="checkpoint" value="boss"/>
@@ -545,7 +545,7 @@ to clear lost enemies</text>
    </objectgroup>
   </group>
  </group>
- <group id="20" name="options" visible="0">
+ <group id="20" name="options">
   <objectgroup draworder="index" id="19" name="simple" class="Gui.Menu">
    <properties>
     <property name="backaction" value="closeMenu"/>
@@ -631,12 +631,7 @@ to clear lost enemies</text>
    <object id="154" name="Invert grab btn" x="168" y="171" width="144" height="18" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Invert grab button</text>
    </object>
-   <object id="108" name="Close" type="Gui.Button" x="168" y="216" width="64" height="18">
-    <properties>
-     <property name="action" value="closeMenu"/>
-    </properties>
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Close</text>
-   </object>
+   <object id="108" template="gui/menu/Button_closeMenu.tx" type="Gui.Button" x="168" y="216"/>
   </objectgroup>
  </group>
  <group id="8" name="wipe">

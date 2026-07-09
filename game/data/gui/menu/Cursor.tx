@@ -6,6 +6,7 @@
    <property name="alignx" type="float" value="-1"/>
    <property name="aligny" type="float" value="0"/>
    <property name="asetag" value="Spit0"/>
+   <property name="movesound" type="file" value="../../sounds/combat/arrowhit.mp3"/>
   </properties>
  </object>
 </template>
