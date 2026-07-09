@@ -241,7 +241,8 @@ function Menu:findNextUsableButton(i, dir)
         elseif i > #menuitems then
             i = 1
         end
-        if not menuitems[i].disabled then
+        if menuitems[i].visible
+        and not menuitems[i].disabled then
             break
         end
     end
