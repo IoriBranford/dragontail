@@ -9,7 +9,6 @@ const exportTilesetFile = (fileName) => {
 }
 
 const exportTilesetFiles = (tilesetFiles) => {
-    const openAssets = new Set(tiled.openAssets);
     tilesetFiles.forEach((fileName) => {
         const tileset = tiled.open(fileName);
         if (tileset) {
