@@ -441,10 +441,6 @@ function Characters.refillPlayers()
         for _, player in ipairs(players) do
             player:cheatRefillAll()
         end
-        local foodsmall = Database.get("food-small")
-        local manasmall = Database.get("mana-small")
-        if foodsmall then Audio.play(foodsmall.itemgetsound) end
-        if manasmall then Audio.play(manasmall.itemgetsound) end
     end
 end
 
