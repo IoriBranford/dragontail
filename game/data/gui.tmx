@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="26" nextobjectid="172">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="26" nextobjectid="178">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -493,7 +493,7 @@ to clear lost enemies</text>
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">© 2026 Iori Branford</text>
    </object>
   </objectgroup>
-  <objectgroup id="25" name="pressstart" class="Gui.Menu">
+  <objectgroup id="25" name="pressstart" class="Gui.Menu" visible="0">
    <object id="169" template="gui/menu/Panel.tx" x="-4" y="180" width="488" height="18">
     <properties>
      <property name="roundcorners" type="float" value="0"/>
@@ -522,20 +522,20 @@ to clear lost enemies</text>
   <group id="24" name="mainmenus">
    <objectgroup id="18" name="normal" class="Gui.Menu">
     <object id="106" template="gui/menu/Panel.tx" x="40" y="117" width="112" height="90"/>
-    <object id="102" name="START" type="Gui.Button" x="84" y="126" width="64" height="18">
+    <object id="102" template="gui/menu/Button.tx" name="START" x="84" y="126" width="64" height="18">
      <properties>
       <property name="action" value="restartStage"/>
      </properties>
      <text fontfamily="Unifont" wrap="1" color="#ffffff">START</text>
     </object>
-    <object id="104" name="OPTIONS" type="Gui.Button" x="84" y="153" width="64" height="18">
+    <object id="104" template="gui/menu/Button.tx" name="OPTIONS" x="84" y="153" width="64" height="18">
      <properties>
       <property name="action" value="openMenu"/>
       <property name="guipath" value="options.simple"/>
      </properties>
      <text fontfamily="Unifont" wrap="1" color="#ffffff">OPTIONS</text>
     </object>
-    <object id="105" name="QUIT" type="Gui.Button" x="84" y="180" width="64" height="18">
+    <object id="105" template="gui/menu/Button.tx" name="QUIT" x="84" y="180" width="64" height="18">
      <properties>
       <property name="action" value="quitGame"/>
      </properties>
@@ -550,58 +550,7 @@ to clear lost enemies</text>
    <properties>
     <property name="backaction" value="closeMenu"/>
    </properties>
-   <object id="107" template="gui/menu/Panel.tx" x="120" y="27" width="240" height="216"/>
-   <object id="109" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="132" y="45"/>
-   <object id="110" template="gui/menu/settings/Slider.tx" name="fullscreen" type="Gui.Slider" x="168" y="36" width="176" height="18">
-    <properties>
-     <property name="configkey" value="fullscreen"/>
-     <property name="label" type="object" value="111"/>
-     <property name="refreshaction" value="refreshFullscreen"/>
-    </properties>
-    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
-   </object>
-   <object id="111" name="Full screen" x="168" y="36" width="144" height="18">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Full screen</text>
-   </object>
-   <object id="139" template="gui/menu/settings/Slider.tx" name="vsync" type="Gui.Slider" x="168" y="63" width="176" height="18">
-    <properties>
-     <property name="configkey" value="vsync"/>
-     <property name="label" type="object" value="138"/>
-     <property name="refreshaction" value="refreshVsync"/>
-    </properties>
-    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
-   </object>
-   <object id="138" name="Vsync" x="168" y="63" width="144" height="18">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Vsync</text>
-   </object>
-   <object id="112" template="gui/menu/settings/Slider.tx" name="soundvolume" type="Gui.Slider" x="168" y="90" width="176" height="18">
-    <properties>
-     <property name="configkey" value="soundvolume"/>
-     <property name="increment" type="float" value="0.125"/>
-     <property name="label" type="object" value="113"/>
-     <property name="max" type="float" value="1"/>
-     <property name="units" propertytype="SliderUnit" value="percent"/>
-    </properties>
-    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">100</text>
-   </object>
-   <object id="113" name="Sound volume" x="168" y="90" width="144" height="18">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Sound volume</text>
-   </object>
-   <object id="114" template="gui/menu/settings/Slider.tx" name="musicvolume" type="Gui.Slider" x="168" y="117" width="176" height="18">
-    <properties>
-     <property name="configkey" value="musicvolume"/>
-     <property name="increment" type="float" value="0.125"/>
-     <property name="label" type="object" value="115"/>
-     <property name="max" type="float" value="1"/>
-     <property name="refreshaction" value="refreshMusicVolume"/>
-     <property name="units" propertytype="SliderUnit" value="percent"/>
-    </properties>
-    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">100</text>
-   </object>
-   <object id="115" name="Music volume" x="168" y="117" width="144" height="18">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Music volume</text>
-   </object>
-   <object id="118" template="gui/menu/settings/Slider.tx" name="soundtrack" type="Gui.Slider" x="168" y="144" width="176" height="18" visible="0">
+   <object id="118" template="gui/menu/settings/Slider.tx" name="soundtrack" type="Gui.Slider" x="120" y="315" width="224" height="18" visible="0">
     <properties>
      <property name="configkey" value="soundtrack"/>
      <property name="label" type="object" value="117"/>
@@ -616,10 +565,10 @@ to clear lost enemies</text>
     </properties>
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="right">Retro Chiptune Guitar</text>
    </object>
-   <object id="117" name="Music" x="168" y="144" width="144" height="18" visible="0">
+   <object id="117" name="Music" x="120" y="315" width="224" height="18" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Music</text>
    </object>
-   <object id="153" template="gui/menu/settings/Slider.tx" name="input_invertgrab" type="Gui.Slider" x="168" y="171" width="176" height="18" visible="0">
+   <object id="153" template="gui/menu/settings/Slider.tx" name="input_invertgrab" type="Gui.Slider" x="120" y="342" width="224" height="18" visible="0">
     <properties>
      <property name="configkey" value="fullscreen"/>
      <property name="disabled" type="bool" value="true"/>
@@ -628,10 +577,94 @@ to clear lost enemies</text>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
    </object>
-   <object id="154" name="Invert grab btn" x="168" y="171" width="144" height="18" visible="0">
+   <object id="154" name="Invert grab btn" x="120" y="342" width="224" height="18" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Invert grab button</text>
    </object>
-   <object id="108" template="gui/menu/Button_closeMenu.tx" type="Gui.Button" x="168" y="216"/>
+   <object id="107" template="gui/menu/Panel.tx" x="112" y="36" width="256" height="198"/>
+   <object id="109" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="96" y="63"/>
+   <object id="110" template="gui/menu/settings/Slider.tx" name="fullscreen" type="Gui.Slider" x="128" y="54" width="224" height="18">
+    <properties>
+     <property name="configkey" value="fullscreen"/>
+     <property name="label" type="object" value="111"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
+   </object>
+   <object id="111" name="Full screen" x="128" y="54" width="224" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Full screen</text>
+   </object>
+   <object id="139" template="gui/menu/settings/Slider.tx" name="vsync" type="Gui.Slider" x="128" y="72" width="224" height="18">
+    <properties>
+     <property name="configkey" value="vsync"/>
+     <property name="label" type="object" value="138"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
+   </object>
+   <object id="138" name="Vsync" x="128" y="72" width="224" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Vsync</text>
+   </object>
+   <object id="173" template="gui/menu/settings/Slider.tx" name="canvasresolution" type="Gui.Slider" x="128" y="90" width="224" height="18">
+    <properties>
+     <property name="configkey" value="canvasresolution"/>
+     <property name="label" type="object" value="172"/>
+     <property name="max" type="float" value="4"/>
+     <property name="min" type="float" value="1"/>
+     <property name="refreshaction" value="resize"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">HIGH</text>
+   </object>
+   <object id="172" name="Resolution" x="128" y="90" width="224" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Resolution</text>
+   </object>
+   <object id="112" template="gui/menu/settings/Slider.tx" name="soundvolume" type="Gui.Slider" x="128" y="144" width="224" height="18">
+    <properties>
+     <property name="configkey" value="soundvolume"/>
+     <property name="increment" type="float" value="0.125"/>
+     <property name="label" type="object" value="113"/>
+     <property name="max" type="float" value="1"/>
+     <property name="units" propertytype="SliderUnit" value="percent"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">100</text>
+   </object>
+   <object id="113" name="Sound volume" x="128" y="144" width="224" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Sound volume</text>
+   </object>
+   <object id="114" template="gui/menu/settings/Slider.tx" name="musicvolume" type="Gui.Slider" x="128" y="162" width="224" height="18">
+    <properties>
+     <property name="configkey" value="musicvolume"/>
+     <property name="increment" type="float" value="0.125"/>
+     <property name="label" type="object" value="115"/>
+     <property name="max" type="float" value="1"/>
+     <property name="refreshaction" value="refreshMusicVolume"/>
+     <property name="units" propertytype="SliderUnit" value="percent"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">100</text>
+   </object>
+   <object id="115" name="Music volume" x="128" y="162" width="224" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Music volume</text>
+   </object>
+   <object id="174" template="gui/menu/settings/Slider.tx" name="canvasscaleint" type="Gui.Slider" x="128" y="108" width="224" height="18">
+    <properties>
+     <property name="configkey" value="canvasscaleint"/>
+     <property name="label" type="object" value="175"/>
+     <property name="refreshaction" value="resize"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
+   </object>
+   <object id="175" name="Integer Scale" x="128" y="108" width="224" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Integer scale</text>
+   </object>
+   <object id="176" template="gui/menu/settings/Slider.tx" name="canvasscalesoft" type="Gui.Slider" x="128" y="126" width="224" height="18">
+    <properties>
+     <property name="configkey" value="canvasscalesoft"/>
+     <property name="label" type="object" value="177"/>
+     <property name="refreshaction" value="resize"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
+   </object>
+   <object id="177" name="Soft Scale" x="128" y="126" width="224" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Soft scale</text>
+   </object>
+   <object id="108" template="gui/menu/Button_closeMenu.tx" type="Gui.Button" x="128" y="198"/>
   </objectgroup>
  </group>
  <group id="8" name="wipe">
