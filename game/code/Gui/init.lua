@@ -221,6 +221,13 @@ function Gui:drawViaOwnCanvas()
     self.canvas:draw()
 end
 
+function Gui:compose(f)
+    self.canvas:drawOn(function ()
+        f()
+        self:draw()
+    end)
+end
+
 Gui.draw = LayerGroup.draw
 
 return Gui
