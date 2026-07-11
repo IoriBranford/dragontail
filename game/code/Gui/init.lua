@@ -91,8 +91,7 @@ end
 ---@param screenheight integer
 ---@param maincanvas Canvas?
 ---@param expand boolean? to show ui outside the gui width/height
-function Gui:resize(screenwidth, screenheight, maincanvas, expand, prescale)
-    prescale = prescale or 1
+function Gui:resize(screenwidth, screenheight, maincanvas, expand)
     -- for i = 1, #self do
     --     self[i]:reanchor(self.width, self.height, screenwidth, screenheight)
     -- end
@@ -102,6 +101,8 @@ function Gui:resize(screenwidth, screenheight, maincanvas, expand, prescale)
     if expand then
         cw, ch = self:getExpandedCanvasSize(screenwidth, screenheight, maincanvas)
     end
+
+    local prescale = Config.canvasresolution
 
     local canvas = self.canvas
     if canvas then

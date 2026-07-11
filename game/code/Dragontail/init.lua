@@ -97,7 +97,7 @@ return {
     defaultconfig = Platform.overrideConfig {
         _version = 4,
 
-        canvasresolution = "HIGH",
+        canvasresolution = 2,
         canvasscaleint = false,
         canvasscalesoft = true,
 

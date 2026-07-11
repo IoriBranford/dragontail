@@ -16,7 +16,6 @@ local GamePhase = {}
 
 local paused
 local pauselocked
-local stagecanvas
 local stagepath = "data/stage_banditcave.lua"
 
 function GamePhase.loadphase(stagepath_, startroom)
@@ -61,21 +60,7 @@ function GamePhase.loadphase(stagepath_, startroom)
 end
 
 function GamePhase.resize(screenwidth, screenheight)
-    local cw, ch, sw, sh, r, int =
-        Stage.CameraWidth, Stage.CameraHeight,
-        screenwidth, screenheight,
-        math.rad(Config.rotation), Config.canvasscaleint
-
-    local prescale = Config.canvasresolution == "HIGH" and
-        Canvas.GetScaleFactor(cw, ch, sw, sh, r, true) or 1
-    if stagecanvas then
-        stagecanvas:resize(cw, ch, prescale)
-    else
-        stagecanvas = Canvas(cw, ch, prescale)
-    end
-    stagecanvas:transformToScreen(screenwidth, screenheight, r, int)
-    stagecanvas:setFiltered(Config.canvasscalesoft)
-    Gui:resize(screenwidth, screenheight, stagecanvas, false, prescale)
+    Gui:resize(screenwidth, screenheight)
 end
 
 function GamePhase.quitphase()
@@ -210,13 +195,11 @@ function GamePhase.debug_drawStageUnzoomed(fixedfrac)
 end
 
 function GamePhase.draw(fixedfrac)
-    love.graphics.clear(.25, .25, .25)
-    stagecanvas:drawOn(function()
+    love.graphics.clear()
+    Gui:compose(function()
         Stage.draw(paused and 0 or fixedfrac)
     end)
-    -- Gui:drawOnCanvas(stagecanvas)
-    stagecanvas:draw()
-    Gui:drawViaOwnCanvas()
+    Gui.canvas:draw()
 end
 
 return GamePhase

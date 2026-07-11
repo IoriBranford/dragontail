@@ -77,13 +77,7 @@ function TitlePhase.pushMainMenu()
 end
 
 function TitlePhase.resize(screenwidth, screenheight)
-    local cw, ch, sw, sh, r =
-        Gui.width, Gui.height,
-        screenwidth, screenheight,
-        math.rad(Config.rotation)
-    local prescale = Config.canvasresolution == "HIGH" and
-        Canvas.GetScaleFactor(cw, ch, sw, sh, r, true) or 1
-    Gui:resize(screenwidth, screenheight, nil, false, prescale)
+    Gui:resize(screenwidth, screenheight)
     -- Wallpaper.reload()
 end
 
@@ -123,9 +117,8 @@ end
 
 function TitlePhase.draw(fixedfrac)
     -- Wallpaper.draw()
-    Gui.canvas:drawOn(function()
+    Gui:compose(function()
         scenemap:draw()
-        Gui:draw()
     end)
     Gui.canvas:draw()
 end
