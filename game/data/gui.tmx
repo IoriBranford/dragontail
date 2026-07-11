@@ -532,6 +532,7 @@ to clear lost enemies</text>
      <properties>
       <property name="action" value="openMenu"/>
       <property name="guipath" value="options.simple"/>
+      <property name="presssound" type="file" value="sounds/combat/firehit.mp3"/>
      </properties>
      <text fontfamily="Unifont" wrap="1" color="#ffffff">OPTIONS</text>
     </object>

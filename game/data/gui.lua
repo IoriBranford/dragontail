@@ -2559,8 +2559,7 @@ return {
                   wrap = true,
                   color = { 255, 255, 255 },
                   properties = {
-                    ["action"] = "restartStage",
-                    ["presssound"] = "sounds/combat/firehit.mp3"
+                    ["action"] = "restartStage"
                   }
                 },
                 {
@@ -2602,8 +2601,7 @@ return {
                   wrap = true,
                   color = { 255, 255, 255 },
                   properties = {
-                    ["action"] = "quitGame",
-                    ["presssound"] = "sounds/combat/firehit.mp3"
+                    ["action"] = "quitGame"
                   }
                 },
                 {
