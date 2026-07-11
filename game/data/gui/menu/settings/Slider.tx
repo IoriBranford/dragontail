@@ -10,6 +10,7 @@
    <property name="min" type="float" value="0"/>
    <property name="refreshaction" value=""/>
    <property name="units" propertytype="SliderUnit" value="none"/>
+   <property name="valuestrings" type="list"/>
   </properties>
   <text fontfamily="Unifont" wrap="1" color="#ffffff">Slider</text>
  </object>
