@@ -127,16 +127,15 @@ function Common:shrinkOut(t)
 end
 
 function Common:dropDefeatItems()
-    -- local items = self.items
-    -- if items then
-    --     for _, id in ipairs(items) do
-    --         local item = Characters.getById(id) -- TODO
-    --         if item then
-    --             self:dropDefeatItem(item)
-    --         end
-    --     end
-    -- else
-    if self.item then
+    local items = self.items
+    if items then
+        for _, id in ipairs(items) do
+            local item = Characters.getById(id) -- TODO
+            if item then
+                self:dropDefeatItem(item)
+            end
+        end
+    elseif self.item then
         self:dropDefeatItem(self.item)
     end
 end
