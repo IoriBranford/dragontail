@@ -10,14 +10,16 @@ local tablepool    = require "tablepool"
 local AttackTarget = require "Dragontail.Character.Component.AttackTarget"
 local Audio        = require "System.Audio"
 local findClosest  = require "findClosest"
+local ihash        = require "ihash"
 
 ---@module 'Dragontail.Stage.Characters'
 local Characters = {}
 
-local players ---@type Character[]
-local enemies ---@type Character[] characters player must beat to advance
-local solids ---@type Character[] characters who should block others' movement
-local allcharacters ---@type Character[]
+local players ---@type ihash<Character>
+local enemies ---@type ihash<Character> characters player must beat to advance
+local solids ---@type ihash<Character> characters who should block others' movement
+local allcharacters ---@type ihash<Character>
+local byid ---@type table<integer,Character>
 local groups
 local scene
 local nextid
@@ -25,7 +27,7 @@ local camera
 local clearlostenemiestimer
 local ClearLostEnemiesAfterTime = 60*5
 
-function Characters.init(scene_, nextid_, camera_)
+function Characters.init(scene_, nextid_, camera_, mapobjects)
     nextid = nextid_ or 1
     clearlostenemiestimer = 0
     allcharacters = {}
@@ -42,6 +44,7 @@ function Characters.init(scene_, nextid_, camera_)
         triggers = {},
     }
     scene = scene_
+    byid = mapobjects
     camera = Characters.spawn(camera_)
 end
 
@@ -57,10 +60,29 @@ function Characters.quit()
     scene = nil
     nextid = 1
     camera = nil
+    byid = nil
+end
+
+function Characters.getById(id)
+    return byid[id]
 end
 
 function Characters.getGroup(group)
     return group == "all" and allcharacters or groups[group]
+end
+
+function Characters.addToGroup(g, c)
+    g = Characters.getGroup(g)
+    if g then
+        ihash.add(g, c)
+    end
+end
+
+function Characters.removeFromGroup(g, c)
+    g = Characters.getGroup(g)
+    if g then
+        ihash.remove(g, c)
+    end
 end
 
 function Characters.spawn(object)
@@ -106,10 +128,7 @@ function Characters.spawn(object)
     if character.bodyinlayers ~= 0 then
         solids[#solids+1] = character
     end
-    local team = groups[character.team]
-    if team then
-        team[#team+1] = character
-    end
+    Characters.addToGroup(character.team, character)
     if character.team == "triggers" then
         local ok, err = character:validateAction()
         if not ok then print(err) end
@@ -118,7 +137,8 @@ function Characters.spawn(object)
         StateMachine.start(character, character.initialai)
     end
     character:addToScene(scene)
-    allcharacters[#allcharacters+1] = character
+    Characters.addToGroup("all", character)
+    byid[character.id] = character
     return character
 end
 local spawn = Characters.spawn
@@ -229,28 +249,14 @@ function Characters.debugDrawOffScreenEnemyPositions()
     end
 end
 
----@param characters Character[]
----@param release boolean
-local function pruneCharacters(characters, release)
-    local n = #characters
-    for i = n, 1, -1 do
-        if characters[i].disappeared then
-            if release then
-                characters[i]:release()
-            end
-            characters[i] = characters[n]
-            characters[n] = nil
-            n = n - 1
-        end
-    end
-end
-
 function Characters.pruneDisappeared()
     scene:prune(Character.hasDisappeared)
-    for _, characters in pairs(groups) do
-        pruneCharacters(characters, false)
+
+    for _, g in pairs(groups) do
+        ihash.prune(g, Character.hasDisappeared)
     end
-    pruneCharacters(allcharacters, true)
+
+    ihash.prune(allcharacters, Character.hasDisappeared, Character.release)
 end
 
 function Characters.update(dsecs, fixedfrac)

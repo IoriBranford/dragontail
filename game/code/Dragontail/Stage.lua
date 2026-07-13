@@ -105,7 +105,7 @@ function Stage.init(startroom)
         Stage.CameraWidth, Stage.CameraHeight,
         0, Stage.CameraHeight
     }
-    Characters.init(scene, map.nextobjectid, camera)
+    Characters.init(scene, map.nextobjectid, camera, map.objects)
 
     local floorandceiling = Character()
     floorandceiling.visible = false
