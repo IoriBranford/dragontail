@@ -177,6 +177,7 @@ function TiledMap.load(mapfile)
     map.tiles = maptiles
     local mapobjects = {}
     map.objects = mapobjects
+    local nextobjectid = map.nextobjectid
 
     local function findObjects(layers)
         for i = 1, #layers do
@@ -185,6 +186,12 @@ function TiledMap.load(mapfile)
                 local objects = layer.objects
                 for i = 1, #objects do
                     local object = objects[i]
+                    if mapobjects[object.id] then
+                        error(mapfile.." has two objects with id "..object.id)
+                    end
+                    if object.id >= nextobjectid then
+                        error(mapfile.." object id "..object.id.." is over the next object id "..nextobjectid)
+                    end
                     mapobjects[object.id] = object
                     if object.rotation then
                         object.rotation = math.rad(object.rotation)
