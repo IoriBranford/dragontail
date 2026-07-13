@@ -434,7 +434,12 @@ end
 function Stage.fixedupdate()
     Stage.updateSequence()
 
-    Characters.fixedupdate()
+    Characters.updateBodies()
+    Characters.updateAttackHits()
+    Characters.updateFloors()
+    Characters.updateStates()
+    Characters.updatePlayersMisc()
+    Characters.predictCollision()
     Characters.pruneDisappeared()
 
     if not winningteam then

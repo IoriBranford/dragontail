@@ -134,7 +134,7 @@ end
 
 local AttackHits = {}
 
-function Characters.fixedupdate()
+function Characters.updateBodies()
     for i = 1, #allcharacters do local character = allcharacters[i]
         character:updateBody()
     end
@@ -145,7 +145,9 @@ function Characters.fixedupdate()
         if hitvely then solid.vely = solid.vely - hitvely end
         if hitvelz then solid.velz = solid.velz - hitvelz end
     end
+end
 
+function Characters.updateAttackHits()
     for i = #AttackHits, 1, -1 do
         AttackHits[i]:_release()
         AttackHits[i] = nil
@@ -163,22 +165,30 @@ function Characters.fixedupdate()
         hit.target:onHitByAttack(hit)
         Attacker.onAttackHit(hit.attacker, hit)
     end
+end
 
+function Characters.updateFloors()
     for i = 1, #allcharacters do local character = allcharacters[i]
         character.floorbody, character.floorz = Characters.getCylinderFloor(
             character.x, character.y, character.z,
             character.bodyradius, character.bodyheight, character.bodyhitslayers)
     end
+end
 
+function Characters.updateStates()
     for i = 1, #allcharacters do local character = allcharacters[i]
         character:fixedupdate()
     end
+end
 
+function Characters.updatePlayersMisc()
     for i = 1, #players do local player = players[i]
         AttackTarget.updateSlots(player)
         Characters.hitTriggers(player)
     end
+end
 
+function Characters.predictCollision()
     for i = 1, #solids do local solid = solids[i]
         local hitvelx, hitvely, hitvelz,
             penex, peney, penez = Body.predictCollisionVelocity(solid)
