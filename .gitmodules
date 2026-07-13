@@ -1,0 +1,3 @@
+[submodule "game/libraries/math123"]
+	path = game/libraries/math123
+	url = https://github.com/ioribranford/math123.git

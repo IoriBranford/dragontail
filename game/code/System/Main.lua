@@ -1,6 +1,7 @@
 class = require "class"
 pooledclass = require "pooledclass"
 require "Math"
+require "math123".goGlobal()
 require "Coroutine"
 local Audio = require "System.Audio"
 local Config = require "System.Config"
