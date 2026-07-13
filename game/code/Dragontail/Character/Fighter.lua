@@ -503,7 +503,7 @@ end
 function Fighter:defeat()
     self:stopAttack() ; self:unassignSelfAsAttacker()
     self.velx, self.vely = 0, 0
-    self:dropDefeatItem()
+    self:dropDefeatItems()
     Audio.play(self.defeatsound)
     yield()
     return "blinkOut", 60

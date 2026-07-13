@@ -126,8 +126,22 @@ function Common:shrinkOut(t)
     self:disappear()
 end
 
-function Common:dropDefeatItem()
-    local item = self.item
+function Common:dropDefeatItems()
+    -- local items = self.items
+    -- if items then
+    --     for _, id in ipairs(items) do
+    --         local item = Characters.getById(id) -- TODO
+    --         if item then
+    --             self:dropDefeatItem(item)
+    --         end
+    --     end
+    -- else
+    if self.item then
+        self:dropDefeatItem(self.item)
+    end
+end
+
+function Common:dropDefeatItem(item)
     local popsout
     if item then
         if item.spawnsmanually then
@@ -158,7 +172,7 @@ end
 function Common:containerBreak()
     Audio.play(self.defeatsound)
     self:changeAnimation("collapse", 1, 0)
-    self:dropDefeatItem()
+    self:dropDefeatItems()
     yield()
     return "blinkOut", 30
 end
