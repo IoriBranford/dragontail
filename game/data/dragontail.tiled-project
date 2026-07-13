@@ -45,6 +45,29 @@
         {
             "color": "#ffa0a0a4",
             "drawFill": true,
+            "id": 17,
+            "members": [
+                {
+                    "name": "propertiestable",
+                    "type": "file",
+                    "value": ""
+                },
+                {
+                    "name": "z",
+                    "type": "float",
+                    "value": 0
+                }
+            ],
+            "name": "Character",
+            "type": "class",
+            "useAs": [
+                "object",
+                "project"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
             "id": 11,
             "members": [
                 {
