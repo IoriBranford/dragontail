@@ -126,7 +126,7 @@ function Characters.spawn(object)
         end
     end
     if character.bodyinlayers ~= 0 then
-        solids[#solids+1] = character
+        Characters.addToGroup("solids", character)
     end
     Characters.addToGroup(character.team, character)
     if character.team == "triggers" then
