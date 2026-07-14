@@ -53,7 +53,13 @@ local function readWeaponTransform(imagedata, cel)
 end
 
 function WeaponInHand:loadHandPositions()
-    local weaponposasefile = self.weaponposasefile
+    local asefile = self.weaponposasefile
+    self.weapontransforms = asefile and
+        Assets.get(asefile.."weapon", asefile)
+end
+
+local loader = {}
+function loader.jaseweapon(assetid, weaponposasefile)
     local weaponposase = weaponposasefile and
         Assets.load(weaponposasefile, true)
     if not weaponposase then return end
@@ -66,8 +72,6 @@ function WeaponInHand:loadHandPositions()
 
     ---@type number[]
     local weapontransforms = {}
-    self.weapontransforms = weapontransforms
-
     for i = 1, #weaponposase do
         local frame = weaponposase[i]
         local cel = frame and frame[1]
@@ -83,7 +87,10 @@ function WeaponInHand:loadHandPositions()
         weapontransforms[#weapontransforms+1] = r
         weapontransforms[#weapontransforms+1] = sy
     end
+    return weapontransforms
 end
+
+Assets.addLoaders(loader)
 
 function WeaponInHand:getHandPosition(frame)
     local weapontransforms = self.weapontransforms
