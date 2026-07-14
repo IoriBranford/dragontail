@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 83,
-  nextobjectid = 878,
+  nextobjectid = 881,
   backgroundcolor = { 64, 64, 64 },
   properties = {
     ["ceilingz"] = 256
@@ -3024,7 +3024,6 @@ return {
               gid = 7236,
               visible = true,
               properties = {
-                ["ammo"] = 10,
                 ["defaultattack"] = "sling-shot-until-empty",
                 ["entrypoint"] = { id = 241 },
                 ["exitpoint"] = { id = 244 },
@@ -3047,7 +3046,6 @@ return {
               gid = 7236,
               visible = true,
               properties = {
-                ["ammo"] = 10,
                 ["defaultattack"] = "sling-shot-until-empty",
                 ["entrypoint"] = { id = 240 },
                 ["exitpoint"] = { id = 243 },
@@ -3426,7 +3424,6 @@ return {
               gid = 7236,
               visible = true,
               properties = {
-                ["ammo"] = 10,
                 ["defaultattack"] = "sling-shot-until-empty",
                 ["entrypoint"] = { id = 242 },
                 ["exitpoint"] = { id = 245 },
@@ -3481,7 +3478,6 @@ return {
               gid = 7236,
               visible = true,
               properties = {
-                ["ammo"] = 10,
                 ["defaultattack"] = "sling-shot-until-empty",
                 ["entrypoint"] = { id = 495 },
                 ["exitpoint"] = { id = 496 },
@@ -3505,7 +3501,6 @@ return {
               gid = 7236,
               visible = true,
               properties = {
-                ["ammo"] = 10,
                 ["defaultattack"] = "sling-shot-until-empty",
                 ["entrypoint"] = { id = 497 },
                 ["exitpoint"] = { id = 499 },
@@ -3946,7 +3941,6 @@ return {
               gid = 7234,
               visible = true,
               properties = {
-                ["ammo"] = 10,
                 ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 658 },
                 ["exitpoint"] = { id = 659 },
@@ -3969,7 +3963,6 @@ return {
               gid = 7234,
               visible = true,
               properties = {
-                ["ammo"] = 10,
                 ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 674 },
                 ["exitpoint"] = { id = 672 },
@@ -3992,7 +3985,6 @@ return {
               gid = 7234,
               visible = true,
               properties = {
-                ["ammo"] = 10,
                 ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 661 },
                 ["exitpoint"] = { id = 660 },
@@ -4015,7 +4007,6 @@ return {
               gid = 7234,
               visible = true,
               properties = {
-                ["ammo"] = 10,
                 ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 664 },
                 ["exitpoint"] = { id = 663 },
@@ -4038,7 +4029,6 @@ return {
               gid = 7234,
               visible = true,
               properties = {
-                ["ammo"] = 10,
                 ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 667 },
                 ["exitpoint"] = { id = 666 },
@@ -4061,7 +4051,6 @@ return {
               gid = 7234,
               visible = true,
               properties = {
-                ["ammo"] = 10,
                 ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 670 },
                 ["exitpoint"] = { id = 669 },
@@ -9212,7 +9201,6 @@ return {
               gid = 7236,
               visible = true,
               properties = {
-                ["ammo"] = 999999999,
                 ["defaultattack"] = "sling-shot-until-empty",
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["recoverai"] = "enterAndAttackUntilEmpty"
@@ -9232,7 +9220,6 @@ return {
               gid = 7236,
               visible = true,
               properties = {
-                ["ammo"] = 999999999,
                 ["defaultattack"] = "sling-shot-until-empty",
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["recoverai"] = "enterAndAttackUntilEmpty"
@@ -9252,7 +9239,6 @@ return {
               gid = 7234,
               visible = true,
               properties = {
-                ["ammo"] = 999999999,
                 ["defaultattack"] = "bow-shot-until-empty",
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["recoverai"] = "enterAndAttackUntilEmpty"
@@ -10405,7 +10391,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2896,
+              x = 2832,
               y = 856,
               width = 64,
               height = 64,
@@ -10414,7 +10400,6 @@ return {
               gid = 7236,
               visible = true,
               properties = {
-                ["ammo"] = 20,
                 ["defaultattack"] = "sling-shot-until-empty",
                 ["entrypoint"] = { id = 404 },
                 ["exitpoint"] = { id = 405 },
@@ -10429,7 +10414,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2984,
+              x = 3024,
               y = 848,
               width = 64,
               height = 64,
@@ -10438,7 +10423,6 @@ return {
               gid = 7236,
               visible = true,
               properties = {
-                ["ammo"] = 20,
                 ["defaultattack"] = "sling-shot-until-empty",
                 ["entrypoint"] = { id = 774 },
                 ["exitpoint"] = { id = 776 },
@@ -10453,7 +10437,7 @@ return {
               name = "",
               type = "",
               shape = "point",
-              x = 2896,
+              x = 2832,
               y = 904,
               width = 0,
               height = 0,
@@ -10469,7 +10453,7 @@ return {
               name = "",
               type = "",
               shape = "point",
-              x = 2984,
+              x = 3024,
               y = 904,
               width = 0,
               height = 0,
@@ -10485,7 +10469,7 @@ return {
               name = "exitpoint",
               type = "",
               shape = "point",
-              x = 2896,
+              x = 2832,
               y = 800,
               width = 0,
               height = 0,
@@ -10499,7 +10483,7 @@ return {
               name = "exitpoint",
               type = "",
               shape = "point",
-              x = 2984,
+              x = 3024,
               y = 800,
               width = 0,
               height = 0,
@@ -10681,8 +10665,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2848,
-              y = 824,
+              x = 2864,
+              y = 848,
               width = 128,
               height = 128,
               rotation = 0,
@@ -10690,12 +10674,11 @@ return {
               gid = 7234,
               visible = true,
               properties = {
-                ["ammo"] = 20,
                 ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 401 },
                 ["exitpoint"] = { id = 402 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "food-fish",
+                ["itemtype"] = "mana-peppers",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -10705,7 +10688,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3040,
+              x = 3056,
               y = 856,
               width = 128,
               height = 128,
@@ -10714,7 +10697,6 @@ return {
               gid = 7234,
               visible = true,
               properties = {
-                ["ammo"] = 20,
                 ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 407 },
                 ["exitpoint"] = { id = 408 },
@@ -10729,7 +10711,7 @@ return {
               name = "",
               type = "",
               shape = "point",
-              x = 2848,
+              x = 2864,
               y = 904,
               width = 0,
               height = 0,
@@ -10745,7 +10727,7 @@ return {
               name = "",
               type = "",
               shape = "point",
-              x = 3040,
+              x = 3056,
               y = 904,
               width = 0,
               height = 0,
@@ -10761,7 +10743,7 @@ return {
               name = "exitpoint",
               type = "",
               shape = "point",
-              x = 2848,
+              x = 2864,
               y = 800,
               width = 0,
               height = 0,
@@ -10775,7 +10757,7 @@ return {
               name = "exitpoint",
               type = "",
               shape = "point",
-              x = 3040,
+              x = 3056,
               y = 800,
               width = 0,
               height = 0,
@@ -11101,7 +11083,6 @@ return {
               gid = 7236,
               visible = true,
               properties = {
-                ["ammo"] = 20,
                 ["defaultattack"] = "sling-shot-until-empty",
                 ["entrypoint"] = { id = 412 },
                 ["exitpoint"] = { id = 415 },
@@ -11125,7 +11106,6 @@ return {
               gid = 7236,
               visible = true,
               properties = {
-                ["ammo"] = 20,
                 ["defaultattack"] = "sling-shot-until-empty",
                 ["entrypoint"] = { id = 414 },
                 ["exitpoint"] = { id = 417 },
@@ -11225,7 +11205,6 @@ return {
               gid = 7234,
               visible = true,
               properties = {
-                ["ammo"] = 10,
                 ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 294 },
                 ["exitpoint"] = { id = 296 },
@@ -11249,7 +11228,6 @@ return {
               gid = 7234,
               visible = true,
               properties = {
-                ["ammo"] = 10,
                 ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 293 },
                 ["exitpoint"] = { id = 295 },
