@@ -380,21 +380,22 @@ function Stage.updateGoingToNextRoom()
     local centerx, centery = camera.x + camhalfw, camera.y + camhalfh
     local centerz = camera.z + camera.bodyheight/2
 
-    local destx, desty, destz = 0, 0, 0
+    local destx, desty = 0, 0
+    local playersx, playersy, playersz = 0, 0, 0
     local players = Characters.getGroup("players")
     for _, player in ipairs(players) do
-        destx = destx + player.x
-        desty = desty + player.y
-        destz = destz + player.z
+        playersx = playersx + player.x + player.velx
+        playersy = playersy + player.y + player.vely
+        playersz = playersz + player.z + player.velz
     end
-    destx = destx/#players
-    desty = desty/#players
-    destz = destz/#players
+    playersx = playersx/#players
+    playersy = playersy/#players
+    playersz = playersz/#players
 
     if camera.lockz then
         camera.velz = 0
     else
-        camera.velz = destz - centerz
+        camera.velz = playersz - centerz
     end
 
     local camerapath = room.camerapath ---@type CameraPath
@@ -402,7 +403,7 @@ function Stage.updateGoingToNextRoom()
 
     if camerapath then
         if cameraboundary then
-            destx, desty = cameraboundary:keepPointInside(destx, desty)
+            destx, desty = cameraboundary:keepPointInside(playersx, playersy)
             local velx, vely = destx - centerx, desty - centery
             local _, _, a, b = camerapath:projectPoint(destx, desty)
             local ax, ay, bx, by = camerapath:getSegment(a, b)
@@ -414,8 +415,18 @@ function Stage.updateGoingToNextRoom()
             end
         else
             local a, b
-            destx, desty, a, b = camerapath:projectPoint(destx, desty)
+            destx, desty, a, b = camerapath:projectPoint(playersx, playersy)
             local ax, ay, bx, by = camerapath:getSegment(a, b)
+
+            local lookahead = 1/6
+            local lax, lay = 0, 0
+            local ab, abx, aby = math2.dist(ax, ay, bx, by)
+            if ab ~= 0 then
+                lookahead = lookahead / ab
+                lax = Stage.CameraWidth  * abx * lookahead
+                lay = Stage.CameraHeight * aby * lookahead
+            end
+            destx, desty = camerapath:projectPoint(playersx + lax, playersy + lay)
             if math.dot(destx-centerx, desty-centery, bx-ax, by-ay) < 0 then
                 destx, desty = camerapath:projectPoint(centerx, centery)
             end
