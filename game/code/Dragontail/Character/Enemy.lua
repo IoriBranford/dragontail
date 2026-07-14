@@ -529,4 +529,12 @@ end
 --     StateMachine.draw(self)
 -- end
 
+function Enemy:debugDrawHealth(fixedfrac)
+    local x, y = self.x - 32, self.y - self.z - self.bodyheight - 32
+    love.graphics.printf(self.health..'\n'..self.maxhealth,
+        x + self.velx*fixedfrac,
+        y + self.vely*fixedfrac,
+        64, "center")
+end
+
 return Enemy
