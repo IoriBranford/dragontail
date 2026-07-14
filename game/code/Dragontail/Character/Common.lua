@@ -168,10 +168,19 @@ function Common:dropDefeatItem(item)
     end
 end
 
+function Common:leaveTeamOnDefeat()
+    local team = Characters.getGroup(self.team)
+    if #team > 1
+    and not self.opensnextroomimmediately then
+        Characters.removeFromGroup(self.team, self)
+    end
+end
+
 function Common:containerBreak()
     Audio.play(self.defeatsound)
     self:changeAnimation("collapse", 1, 0)
     self:dropDefeatItems()
+    self:leaveTeamOnDefeat()
     yield()
     return "blinkOut", 30
 end
