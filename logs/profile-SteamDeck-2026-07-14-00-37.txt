@@ -1,0 +1,47 @@
+16%  Characters.lua:keepCylinderIn
+  -- 65%  Characters.lua:349
+  -- 23%  Characters.lua:347
+  --  7%  Characters.lua:351
+11%  Main.lua:176
+  -- 79%  Main.lua:265
+  -- 13%  Main.lua:180
+  --  3%  Main.lua:269
+ 6%  Object.lua:baseDraw
+  -- 41%  Object.lua:643
+  -- 22%  Object.lua:525
+  -- 20%  Object.lua:629
+ 6%  Body.lua:getCylinderPenetration
+  -- 35%  Body.lua:336
+  -- 17%  Body.lua:306
+  -- 11%  Body.lua:304
+  --  8%  Body.lua:308
+  --  6%  Body.lua:305
+  --  6%  Body.lua:307
+  --  3%  Body.lua:339
+  --  3%  Body.lua:323
+ 6%  Characters.lua:getCylinderFloor
+  -- 74%  Characters.lua:381
+  -- 24%  Characters.lua:380
+ 4%  Math.lua:nearestpolygonpoint
+  -- 21%  Math.lua:306
+  -- 21%  Math.lua:304
+  -- 14%  Math.lua:305
+  --  9%  Math.lua:311
+  --  9%  Math.lua:317
+  --  6%  Math.lua:300
+  --  5%  Math.lua:308
+  --  4%  Math.lua:303
+  --  3%  Math.lua:307
+  --  3%  Math.lua:297
+ 3%  Audio.lua:loader
+  -- 100%  Audio.lua:24
+ 3%  Math.lua:pointinpolygon
+  -- 29%  Math.lua:279
+  -- 15%  Math.lua:281
+  -- 13%  Math.lua:280
+  --  9%  Math.lua:277
+  --  7%  Math.lua:290
+  --  7%  Math.lua:282
+  --  7%  Math.lua:278
+  --  6%  Math.lua:283
+  --  3%  Math.lua:276
