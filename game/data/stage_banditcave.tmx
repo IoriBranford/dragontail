@@ -2439,7 +2439,7 @@ to sprint past archers</text>
      <property name="entrypoint" type="object" value="401"/>
      <property name="exitpoint" type="object" value="402"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
-     <property name="itemtype" value="mana-peppers"/>
+     <property name="itemtype" value="food-fish"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>
@@ -2451,7 +2451,7 @@ to sprint past archers</text>
      <property name="entrypoint" type="object" value="407"/>
      <property name="exitpoint" type="object" value="408"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
-     <property name="itemtype" value="mana-peppers"/>
+     <property name="itemtype" value="food-fish"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
      <property name="z" type="float" value="64"/>
     </properties>

@@ -10695,7 +10695,7 @@ return {
                 ["entrypoint"] = { id = 401 },
                 ["exitpoint"] = { id = 402 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "mana-peppers",
+                ["itemtype"] = "food-fish",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -10719,7 +10719,7 @@ return {
                 ["entrypoint"] = { id = 407 },
                 ["exitpoint"] = { id = 408 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "mana-peppers",
+                ["itemtype"] = "food-fish",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
