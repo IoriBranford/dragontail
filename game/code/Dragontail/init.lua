@@ -50,7 +50,6 @@ function love.load(args)
     Config.drawbodies = args.drawbodies
     Config.drawai = args.drawai
     Config.cuecards = args.cuecards
-    Config.fixedupdaterate = Time.FixedUpdateRate
 
     Config.gamepads = Inputs.configureGamepads(Config.gamepads)
     Config.keys = Inputs.configureKeyboard(Config.keys)
@@ -149,5 +148,6 @@ return {
         musicvolume = 0.25,
         -- soundtrack = "Original",
         soundvolume = 0.75,
+        variableupdate = true,
     }
 }
