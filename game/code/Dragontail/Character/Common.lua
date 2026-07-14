@@ -135,7 +135,7 @@ function Common:dropDefeatItems()
                 self:dropDefeatItem(item)
             end
         end
-    elseif self.item then
+    else
         self:dropDefeatItem(self.item)
     end
 end
@@ -171,7 +171,7 @@ end
 function Common:leaveTeamOnDefeat()
     local team = Characters.getGroup(self.team)
     if #team > 1
-    and not self.opensnextroomimmediately then
+    or self.opensnextroomimmediately then
         Characters.removeFromGroup(self.team, self)
     end
 end
