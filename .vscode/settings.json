@@ -20,5 +20,6 @@
         "class",
         "pooledclass",
         "lfs"
-    ]
+    ],
+    "Lua.workspace.ignoreSubmodules": false
 }
