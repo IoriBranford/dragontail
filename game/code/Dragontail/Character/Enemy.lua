@@ -515,6 +515,10 @@ end
 function Enemy:indicateDefeated()
     if self.health <= 0 then
         Audio.play(self.finalfallsound)
+        local team = Characters.getGroup(self.team)
+        if #team > 1 then
+            Characters.removeFromGroup(self.team, self)
+        end
         self.finalfallsound = false
         local color = Color.asARGBInt(Color.unpack(self.color))
         if color == Color.White then
