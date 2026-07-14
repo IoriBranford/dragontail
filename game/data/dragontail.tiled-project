@@ -20,6 +20,16 @@
             "shortcut": "Shift+F5",
             "showOutput": true,
             "workingDirectory": ""
+        },
+        {
+            "arguments": "%projectpath/.. --stage %exportfile --room %layername --profile",
+            "command": "love",
+            "enabled": true,
+            "name": "Profile selected room",
+            "saveBeforeExecute": true,
+            "shortcut": "Alt+Shift+F5",
+            "showOutput": true,
+            "workingDirectory": ""
         }
     ],
     "extensionsPath": "extensions",
