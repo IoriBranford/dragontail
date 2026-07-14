@@ -11,13 +11,14 @@ local AttackTarget = require "Dragontail.Character.Component.AttackTarget"
 local Audio        = require "System.Audio"
 local findClosest  = require "findClosest"
 local ihash        = require "ihash"
+local BodyLayers   = require "Dragontail.Stage.BodyLayers"
 
 ---@module 'Dragontail.Stage.Characters'
 local Characters = {}
 
 local players ---@type ihash<Character>
 local enemies ---@type ihash<Character> characters player must beat to advance
-local solids ---@type ihash<Character> characters who should block others' movement
+local solids ---@type ihash<Character>
 local allcharacters ---@type ihash<Character>
 local byid ---@type table<integer,Character>
 local groups
@@ -175,8 +176,11 @@ function Characters.updateAttackHits()
 
     for i = 1, #solids do local character = solids[i]
         if character:isAttacking() then
-            for j = 1, #solids do local opponent = solids[j]
-                AttackHits[#AttackHits+1] = Attacker.getAttackHit(character, opponent)
+            local mask = character.attack.hitslayers or 0
+            for _, layer in BodyLayers:eachLayer(mask, 1) do
+                for _, opponent in ipairs(layer) do
+                    AttackHits[#AttackHits+1] = Attacker.getAttackHit(character, opponent)
+                end
             end
         end
     end
@@ -206,6 +210,10 @@ function Characters.updatePlayersMisc()
         AttackTarget.updateSlots(player)
         Characters.hitTriggers(player)
     end
+end
+
+function Characters.updateSolidLayers()
+    BodyLayers:update(solids)
 end
 
 function Characters.predictCollision()
@@ -286,12 +294,14 @@ function Characters.castRay3(raycast, caster)
     raycast.hitdist = nil
     local hitsomething
     local rdx, rdy, rdz = raycast.dx, raycast.dy, raycast.dz
-    for _, character in ipairs(solids) do
-        if character ~= caster and Body.collideWithRaycast3(character, raycast) then
-            raycast.dx = raycast.hitx - raycast.x
-            raycast.dy = raycast.hity - raycast.y
-            raycast.dz = raycast.hitz - raycast.z
-            hitsomething = character
+    for _, layer in BodyLayers:eachLayer(raycast.hitslayers, 1) do
+        for _, character in ipairs(layer) do
+            if character ~= caster and Body.collideWithRaycast3(character, raycast) then
+                raycast.dx = raycast.hitx - raycast.x
+                raycast.dy = raycast.hity - raycast.y
+                raycast.dz = raycast.hitz - raycast.z
+                hitsomething = character
+            end
         end
     end
     raycast.dx = rdx
@@ -319,8 +329,8 @@ end
 
 function Characters.keepCircleIn(x, y, r, solidlayersmask)
     local totalpenex, totalpeney, penex, peney
-    for _, solid in ipairs(solids) do
-        if bit.band(solid.bodyinlayers, solidlayersmask) ~= 0 then
+    for _, layer in BodyLayers:eachLayer(solidlayersmask, 1) do
+        for _, solid in ipairs(layer) do
             penex, peney = Body.getCirclePenetration(solid, x, y, r)
             if penex then
                 x = x - penex
@@ -344,25 +354,25 @@ function Characters.keepCylinderIn(x, y, z, r, h, self, iterations)
     local totalpenex, totalpeney, totalpenez, penex, peney, penez
     for i = 1, iterations do
         local anycollision = false
-        for _, solid in ipairs(solids) do
-            if solid ~= self
-            and bit.band(solid.bodyinlayers, solidlayersmask) ~= 0
-            then
-                penex, peney, penez = Body.getCylinderPenetration(solid, x, y, z, r, h)
-                if penex then
-                    anycollision = true
-                    x = x - penex
-                    totalpenex = (totalpenex or 0) + penex
-                end
-                if peney then
-                    anycollision = true
-                    y = y - peney
-                    totalpeney = (totalpeney or 0) + peney
-                end
-                if penez then
-                    anycollision = true
-                    z = z - penez
-                    totalpenez = (totalpenez or 0) + penez
+        for _, layer in BodyLayers:eachLayer(solidlayersmask, 1) do
+            for _, solid in ipairs(layer) do
+                if solid ~= self then
+                    penex, peney, penez = Body.getCylinderPenetration(solid, x, y, z, r, h)
+                    if penex then
+                        anycollision = true
+                        x = x - penex
+                        totalpenex = (totalpenex or 0) + penex
+                    end
+                    if peney then
+                        anycollision = true
+                        y = y - peney
+                        totalpeney = (totalpeney or 0) + peney
+                    end
+                    if penez then
+                        anycollision = true
+                        z = z - penez
+                        totalpenez = (totalpenez or 0) + penez
+                    end
                 end
             end
         end
@@ -373,12 +383,12 @@ function Characters.keepCylinderIn(x, y, z, r, h, self, iterations)
     return x, y, z, totalpenex, totalpeney, totalpenez
 end
 
-function Characters.getCylinderFloor(x, y, z, r, h, solidlayersmask)
+function Characters.getCylinderFloor(x, y, z, r, h, mask)
     local floorchar
     local floorz = -math.huge
     local floorpenelensq = -math.huge
-    for _, solid in ipairs(solids) do
-        if bit.band(solid.bodyinlayers, solidlayersmask) ~= 0 then
+    for _, layer in BodyLayers:eachLayer(mask, 1) do
+        for _, solid in ipairs(layer) do
             local fz, penex, peney = Body.getCylinderFloorZ(solid, x, y, z, r, h)
             if fz and (penex ~= 0 or peney ~= 0) then
                 local penelensq = penex and peney
