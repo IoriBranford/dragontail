@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="77" nextobjectid="849">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="83" nextobjectid="878">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -2323,7 +2323,7 @@ to sprint past archers</text>
     <properties>
      <property name="extrudeY" type="float" value="-64"/>
     </properties>
-    <polygon points="-32,-160 -32,48 0,80 648,80 648,-160"/>
+    <polygon points="-32,-160 -32,48 0,80 864,80 864,-160"/>
    </object>
    <object id="313" template="mapobjects/OutwardBoundary.tx" x="2656" y="832">
     <properties>
@@ -2358,16 +2358,21 @@ to sprint past archers</text>
     </properties>
    </object>
   </objectgroup>
-  <objectgroup id="72" name="+knives" class="Room">
-   <object id="778" template="mapobjects/bandit/knife.tx" x="2624" y="984"/>
-   <object id="779" template="mapobjects/bandit/knife.tx" x="2624" y="1080"/>
-   <object id="783" template="mapobjects/bandit/knife.tx" x="2592" y="1032"/>
+  <objectgroup id="72" name="help1" class="Room">
+   <object id="778" template="mapobjects/bandit/knife.tx" x="2632" y="1032"/>
+   <object id="849" template="mapobjects/bandit/knife.tx" x="3152" y="1032"/>
+   <object id="779" template="mapobjects/bandit/knife.tx" x="2632" y="1104"/>
+   <object id="850" template="mapobjects/bandit/knife.tx" x="3152" y="1128"/>
   </objectgroup>
-  <objectgroup id="70" name="+spears" class="Room">
-   <object id="777" template="mapobjects/bandit/spear.tx" x="3168" y="992"/>
-   <object id="780" template="mapobjects/bandit/spear.tx" x="3168" y="1120"/>
+  <objectgroup id="80" name="help2">
+   <object id="860" template="mapobjects/bandit/knife.tx" x="2520" y="1000"/>
+   <object id="867" template="mapobjects/bandit/knife.tx" x="2640" y="1032"/>
+   <object id="862" template="mapobjects/bandit/knife.tx" x="3256" y="1024"/>
+   <object id="870" template="mapobjects/bandit/knife.tx" x="3152" y="1064"/>
+   <object id="859" template="mapobjects/bandit/knife.tx" x="2576" y="1056"/>
+   <object id="861" template="mapobjects/bandit/knife.tx" x="3304" y="1112"/>
   </objectgroup>
-  <objectgroup id="69" name="+slingers" class="Room">
+  <objectgroup id="69" name="help3" class="Room">
    <object id="403" gid="7236" x="2896" y="856" width="64" height="64">
     <properties>
      <property name="ammo" type="int" value="20"/>
@@ -2411,11 +2416,22 @@ to sprint past archers</text>
     <point/>
    </object>
   </objectgroup>
-  <objectgroup id="71" name="+shields" class="Room">
-   <object id="781" template="mapobjects/bandit/shield.tx" x="2624" y="1056"/>
-   <object id="782" template="mapobjects/bandit/shield.tx" x="3168" y="1056"/>
+  <objectgroup id="70" name="help4" class="Room">
+   <object id="777" template="mapobjects/bandit/spear.tx" x="3168" y="1032"/>
+   <object id="853" template="mapobjects/bandit/spear.tx" x="2624" y="1072"/>
+   <object id="858" template="mapobjects/bandit/spear.tx" x="2944" y="856">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+   </object>
   </objectgroup>
-  <objectgroup id="37" name="+archers" class="Room">
+  <objectgroup id="82" name="help5" class="Room">
+   <object id="874" template="mapobjects/bandit/spear.tx" x="3376" y="1112"/>
+   <object id="875" template="mapobjects/bandit/spear.tx" x="2640" y="1088"/>
+   <object id="877" template="mapobjects/bandit/spear.tx" x="2432" y="1008"/>
+   <object id="876" template="mapobjects/bandit/spear.tx" x="3160" y="1016"/>
+  </objectgroup>
+  <objectgroup id="37" name="help6" class="Room">
    <object id="400" gid="7234" x="2848" y="824" width="128" height="128">
     <properties>
      <property name="ammo" type="int" value="20"/>
@@ -2459,12 +2475,22 @@ to sprint past archers</text>
     <point/>
    </object>
   </objectgroup>
-  <objectgroup id="58" name="+muscle" class="Room">
+  <objectgroup id="71" name="help7" class="Room">
+   <object id="781" template="mapobjects/bandit/shield.tx" x="2624" y="1080"/>
+   <object id="854" template="mapobjects/bandit/shield.tx" x="2624" y="992"/>
+   <object id="782" template="mapobjects/bandit/shield.tx" x="3168" y="1080"/>
+   <object id="855" template="mapobjects/bandit/shield.tx" x="3168" y="992"/>
+  </objectgroup>
+  <objectgroup id="81" name="help8">
    <object id="580" template="mapobjects/bandit/muscle.tx" x="2944" y="856">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
+  </objectgroup>
+  <objectgroup id="58" name="help9" class="Room">
+   <object id="856" template="mapobjects/bandit/muscle.tx" x="3152" y="1064"/>
+   <object id="857" template="mapobjects/bandit/muscle.tx" x="2632" y="1048"/>
   </objectgroup>
  </group>
  <group id="32" name="unused" visible="0">
