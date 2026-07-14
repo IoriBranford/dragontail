@@ -157,7 +157,7 @@
    eJztjk0Kg0AYQ98B/AKKVq+lWO21Wvy7lp5IhhkQXM1iFl0YCAlZhFcYSdUZ7Fm6v59BblAk4jwMWkvL+bWL8yXvKmQtaARlxOb6nXOQ9zvkKPgI+ojN9TvnIu855CrYBFPE5voj/koni4YapA==
   </chunk>
    <chunk x="80" y="0" width="20" height="12">
-   eJzlkEEKwjAURN+26h9oUVu8lWKteKsWbcVb1Y3gaSTQkI3QCNn5NgNDeBk+/Bc7g1JQCdaCjWCr0PkcV3G+i0EjOAuOglpwUuh85gaFzfseBoPgLrgKboJeofO5NzjY/M53xJ+OdnoXu/MX3M5mmc7XuRsl9D0NXgl9jjFL68sX3/sPWvgVAg==
+   eJzljssKglAURdfczgZFK/wrwxf+VWEp/lUN+5oQutyhN7g4aU82bA7rLPivlAYnwVmQCwrBUX5z/TyE8QaDTtALakEjaOU316lBZtu8xWASzIJRcBc85DfXlcHFtj3fAT/XXL93oZ6/ZPXskni8W2S/V2TenvkAtmsSiQ==
   </chunk>
    <chunk x="0" y="12" width="20" height="12">
    eJzt0MEBQDAUBcF5TQklISVJtOrqzvFPAXtYSilLaGENW77/2MMRztB/6F1hhBnuV+8BcdsFCw==
@@ -237,6 +237,9 @@
    <property name="drawz" type="float" value="1"/>
   </properties>
   <data encoding="base64" compression="zlib">
+   <chunk x="80" y="0" width="20" height="12">
+   eJxjYBgFo2Dogenc1DXvOpXNu8hJXfMEubCLAwCoPgJ6
+  </chunk>
    <chunk x="0" y="24" width="20" height="12">
    eJxjYBhZIJfK5tlQ2bx8Kpu3iIGBYTEVzbvKwMBwjYrmpTIxMPBS0TxzBgYGBwYGBkcqmXeJgYGBmRHiTlYqmDsXat58qFtLGCDmsjCQFw4AajAIuQ==
   </chunk>
@@ -1042,7 +1045,7 @@ body to grapple</text>
     </properties>
     <point/>
    </object>
-   <object id="257" template="mapobjects/bandit/sling.tx" x="3056" y="256">
+   <object id="257" template="mapobjects/bandit/sling.tx" x="3056" y="240">
     <properties>
      <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="258"/>
@@ -1076,7 +1079,7 @@ body to grapple</text>
     </properties>
     <point/>
    </object>
-   <object id="259" name="exitpoint" x="3128" y="280">
+   <object id="259" name="exitpoint" x="3128" y="248">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
@@ -1192,7 +1195,7 @@ and tap    to throw</text>
     </properties>
     <point/>
    </object>
-   <object id="832" template="mapobjects/bandit/sling.tx" x="3056" y="256">
+   <object id="832" template="mapobjects/bandit/sling.tx" x="3056" y="240">
     <properties>
      <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="834"/>
@@ -1226,7 +1229,7 @@ and tap    to throw</text>
     </properties>
     <point/>
    </object>
-   <object id="836" name="exitpoint" x="3128" y="280">
+   <object id="836" name="exitpoint" x="3128" y="240">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>

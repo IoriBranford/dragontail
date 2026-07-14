@@ -542,7 +542,7 @@ return {
         },
         {
           x = 80, y = 0, width = 20, height = 12,
-          data = "eJzlkEEKwjAURN+26h9oUVu8lWKteKsWbcVb1Y3gaSTQkI3QCNn5NgNDeBk+/Bc7g1JQCdaCjWCr0PkcV3G+i0EjOAuOglpwUuh85gaFzfseBoPgLrgKboJeofO5NzjY/M53xJ+OdnoXu/MX3M5mmc7XuRsl9D0NXgl9jjFL68sX3/sPWvgVAg=="
+          data = "eJzljssKglAURdfczgZFK/wrwxf+VWEp/lUN+5oQutyhN7g4aU82bA7rLPivlAYnwVmQCwrBUX5z/TyE8QaDTtALakEjaOU316lBZtu8xWASzIJRcBc85DfXlcHFtj3fAT/XXL93oZ6/ZPXskni8W2S/V2TenvkAtmsSiQ=="
         },
         {
           x = 0, y = 12, width = 20, height = 12,
@@ -689,6 +689,10 @@ return {
       encoding = "base64",
       compression = "zlib",
       chunks = {
+        {
+          x = 80, y = 0, width = 20, height = 12,
+          data = "eJxjYBgFo2Dogenc1DXvOpXNu8hJXfMEubCLAwCoPgJ6"
+        },
         {
           x = 0, y = 24, width = 20, height = 12,
           data = "eJxjYBhZIJfK5tlQ2bx8Kpu3iIGBYTEVzbvKwMBwjYrmpTIxMPBS0TxzBgYGBwYGBkcqmXeJgYGBmRHiTlYqmDsXat58qFtLGCDmsjCQFw4AajAIuQ=="
@@ -4645,7 +4649,7 @@ return {
               type = "bandit-sling",
               shape = "rectangle",
               x = 3056,
-              y = 256,
+              y = 240,
               width = 64,
               height = 64,
               rotation = 0,
@@ -4727,7 +4731,7 @@ return {
               type = "",
               shape = "point",
               x = 3128,
-              y = 280,
+              y = 248,
               width = 0,
               height = 0,
               rotation = 0,
@@ -5144,7 +5148,7 @@ return {
               type = "bandit-sling",
               shape = "rectangle",
               x = 3056,
-              y = 256,
+              y = 240,
               width = 64,
               height = 64,
               rotation = 0,
@@ -5226,7 +5230,7 @@ return {
               type = "",
               shape = "point",
               x = 3128,
-              y = 280,
+              y = 240,
               width = 0,
               height = 0,
               rotation = 0,
