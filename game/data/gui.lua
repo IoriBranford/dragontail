@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 18,
   nextlayerid = 26,
-  nextobjectid = 182,
+  nextobjectid = 186,
   properties = {},
   tilesets = {
     {
@@ -92,7 +92,7 @@ return {
       id = 4,
       name = "gameplay",
       class = "",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -1573,7 +1573,7 @@ return {
           id = 6,
           name = "pausemenu",
           class = "Gui.Menu",
-          visible = true,
+          visible = false,
           opacity = 1,
           offsetx = 0,
           offsety = 0,
@@ -1589,16 +1589,16 @@ return {
               type = "",
               shape = "rectangle",
               x = 136,
-              y = 85.5,
+              y = 45,
               width = 208,
-              height = 144,
+              height = 216,
               rotation = 0,
               opacity = 1,
               visible = true,
               properties = {
                 ["color"] = "#e0641013",
                 ["linecolor"] = "#ffff6161",
-                ["roundcorners"] = 8
+                ["roundcorners"] = 2
               }
             },
             {
@@ -1767,6 +1767,26 @@ return {
                 ["asetag"] = "Spit0",
                 ["movesound"] = "sounds/combat/arrowhit.mp3"
               }
+            },
+            {
+              id = 184,
+              name = "Title",
+              type = "",
+              shape = "text",
+              x = 180,
+              y = 54,
+              width = 120,
+              height = 36,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              text = "PAUSE",
+              fontfamily = "f Firebrand",
+              pixelsize = 32,
+              wrap = true,
+              color = { 224, 33, 33 },
+              halign = "center",
+              properties = {}
             }
           }
         },
@@ -1776,7 +1796,7 @@ return {
           id = 15,
           name = "debugmenu",
           class = "Gui.Menu",
-          visible = false,
+          visible = true,
           opacity = 1,
           offsetx = 0,
           offsety = 0,
@@ -1803,25 +1823,6 @@ return {
                 ["linecolor"] = "#ffff6161",
                 ["roundcorners"] = 0
               }
-            },
-            {
-              id = 83,
-              name = "name",
-              type = "",
-              shape = "text",
-              x = 192,
-              y = 9,
-              width = 96,
-              height = 18,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              text = "DEBUG",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
-              halign = "center",
-              properties = {}
             },
             {
               id = 85,
@@ -2215,6 +2216,26 @@ return {
               gid = 413,
               visible = true,
               properties = {}
+            },
+            {
+              id = 185,
+              name = "Title",
+              type = "",
+              shape = "text",
+              x = 180,
+              y = 9,
+              width = 120,
+              height = 36,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              text = "DEBUG",
+              fontfamily = "f Firebrand",
+              pixelsize = 32,
+              wrap = true,
+              color = { 224, 33, 33 },
+              halign = "center",
+              properties = {}
             }
           }
         },
@@ -2247,7 +2268,7 @@ return {
               properties = {
                 ["color"] = "#e0641013",
                 ["linecolor"] = "#ffff6161",
-                ["roundcorners"] = 8
+                ["roundcorners"] = 2
               }
             },
             {
@@ -2342,7 +2363,7 @@ return {
       id = 17,
       name = "title",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -2392,7 +2413,7 @@ return {
           id = 25,
           name = "pressstart",
           class = "Gui.Menu",
-          visible = false,
+          visible = true,
           opacity = 1,
           offsetx = 0,
           offsety = 0,
@@ -2539,7 +2560,47 @@ return {
                   properties = {
                     ["color"] = "#e0641013",
                     ["linecolor"] = "#ffff6161",
-                    ["roundcorners"] = 8
+                    ["roundcorners"] = 2
+                  }
+                },
+                {
+                  id = 182,
+                  name = "",
+                  type = "Gui.Cursor",
+                  shape = "rectangle",
+                  x = 148,
+                  y = 144,
+                  width = 64,
+                  height = 64,
+                  rotation = 0,
+                  opacity = 1,
+                  gid = 450,
+                  visible = true,
+                  properties = {
+                    ["alignx"] = 0.375,
+                    ["aligny"] = 0,
+                    ["asetag"] = "Spit0",
+                    ["movesound"] = "sounds/combat/arrowhit.mp3"
+                  }
+                },
+                {
+                  id = 183,
+                  name = "",
+                  type = "Gui.Cursor",
+                  shape = "rectangle",
+                  x = 20,
+                  y = 144,
+                  width = 64,
+                  height = 64,
+                  rotation = 0,
+                  opacity = 1,
+                  gid = 450,
+                  visible = true,
+                  properties = {
+                    ["alignx"] = -0.375,
+                    ["aligny"] = 0,
+                    ["asetag"] = "Spit6",
+                    ["movesound"] = "sounds/combat/arrowhit.mp3"
                   }
                 },
                 {
@@ -2549,7 +2610,7 @@ return {
                   shape = "text",
                   x = 56,
                   y = 126,
-                  width = 80,
+                  width = 72,
                   height = 36,
                   rotation = 0,
                   opacity = 1,
@@ -2559,7 +2620,8 @@ return {
                   pixelsize = 32,
                   wrap = true,
                   color = { 224, 33, 33 },
-                  valign = "center",
+                  halign = "center",
+                  valign = "bottom",
                   properties = {
                     ["action"] = "restartStage",
                     ["color2"] = "#ffffd8d8",
@@ -2574,7 +2636,7 @@ return {
                   shape = "text",
                   x = 64,
                   y = 162,
-                  width = 120,
+                  width = 96,
                   height = 36,
                   rotation = 0,
                   opacity = 1,
@@ -2584,7 +2646,8 @@ return {
                   pixelsize = 32,
                   wrap = true,
                   color = { 224, 33, 33 },
-                  valign = "center",
+                  halign = "center",
+                  valign = "bottom",
                   properties = {
                     ["action"] = "openMenu",
                     ["color2"] = "#ffffd8d8",
@@ -2601,7 +2664,7 @@ return {
                   shape = "text",
                   x = 72,
                   y = 198,
-                  width = 120,
+                  width = 52,
                   height = 36,
                   rotation = 0,
                   opacity = 1,
@@ -2611,32 +2674,13 @@ return {
                   pixelsize = 32,
                   wrap = true,
                   color = { 224, 33, 33 },
-                  valign = "center",
+                  halign = "center",
+                  valign = "bottom",
                   properties = {
                     ["action"] = "quitGame",
                     ["color2"] = "#ffffd8d8",
                     ["frequency"] = 30,
                     ["selectanimation"] = "colorCycle"
-                  }
-                },
-                {
-                  id = 103,
-                  name = "",
-                  type = "Gui.Cursor",
-                  shape = "rectangle",
-                  x = 28,
-                  y = 135,
-                  width = 64,
-                  height = 64,
-                  rotation = 0,
-                  opacity = 1,
-                  gid = 450,
-                  visible = true,
-                  properties = {
-                    ["alignx"] = -1,
-                    ["aligny"] = 0,
-                    ["asetag"] = "Spit0",
-                    ["movesound"] = "sounds/combat/arrowhit.mp3"
                   }
                 }
               }
@@ -2778,16 +2822,16 @@ return {
               type = "",
               shape = "rectangle",
               x = 112,
-              y = 18,
+              y = 9,
               width = 256,
-              height = 234,
+              height = 252,
               rotation = 0,
               opacity = 1,
               visible = true,
               properties = {
                 ["color"] = "#e0641013",
                 ["linecolor"] = "#ffff6161",
-                ["roundcorners"] = 8
+                ["roundcorners"] = 2
               }
             },
             {
@@ -3145,7 +3189,7 @@ return {
               type = "Gui.Button",
               shape = "text",
               x = 128,
-              y = 216,
+              y = 225,
               width = 64,
               height = 18,
               rotation = 0,
@@ -3209,20 +3253,21 @@ return {
             },
             {
               id = 181,
-              name = "name",
+              name = "Title",
               type = "",
               shape = "text",
-              x = 192,
-              y = 27,
-              width = 96,
-              height = 18,
+              x = 180,
+              y = 18,
+              width = 120,
+              height = 36,
               rotation = 0,
               opacity = 1,
               visible = true,
               text = "OPTIONS",
-              fontfamily = "Unifont",
+              fontfamily = "f Firebrand",
+              pixelsize = 32,
               wrap = true,
-              color = { 255, 255, 255 },
+              color = { 224, 33, 33 },
               halign = "center",
               properties = {}
             }
