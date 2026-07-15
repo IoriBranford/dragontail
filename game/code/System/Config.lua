@@ -239,6 +239,11 @@ function Config.apply(key)
 	end
 end
 
+function Config.setApply(key, action)
+	apply[key] = action
+	return config[key]
+end
+
 setmetatable(Config, {
 	__index = function(_, k)
 		return config[k]
