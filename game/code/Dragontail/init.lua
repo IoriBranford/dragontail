@@ -10,6 +10,7 @@ local Stage  = require "Dragontail.Stage"
 local Inputs = require "System.Inputs"
 local Time   = require "System.Time"
 local pathlite = require "pl.pathlite"
+local Canvas   = require "System.Canvas"
 local firstphase = "Dragontail.TitlePhase"
 
 local defaultgamepadconfig =  {
@@ -80,7 +81,7 @@ function love.quit()
     Inputs.saveGamepadMappings()
 end
 
-return {
+local Dragontail = {
     cli = [[
         --rotation                              (number default -1)	Screen orientation in degrees clockwise
         --drawbodies                            Draw physical bodies
@@ -151,3 +152,27 @@ return {
         variableupdate = true,
     }
 }
+
+-- local postscalecanvas
+-- function Dragontail.draw(fixedfrac, draw)
+--     if not postscalecanvas then
+--         postscalecanvas = Canvas(Gui.width*3, Gui.height*3)
+--         postscalecanvas:setFiltered(true)
+--     end
+--     postscalecanvas:transformToScreen(love.graphics.getWidth(),
+--                                     love.graphics.getHeight(), 0,
+--                                 Config.canvasscaleint)
+
+--     Gui:compose(function()
+--         Stage.draw(paused and 0 or fixedfrac)
+--     end)
+--     postscalecanvas:drawOn(function ()
+--         Gui.canvas:setFiltered(false)
+--         Gui.canvas:transformToScreen(postscalecanvas.canvas:getWidth(),
+--             postscalecanvas.canvas:getHeight(), 0)
+--         Gui.canvas:draw()
+--     end)
+--     postscalecanvas:draw()
+-- end
+
+return Dragontail
