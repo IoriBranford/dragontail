@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <object name="Title" width="120" height="36">
+  <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center">TITLE</text>
+ </object>
+</template>
