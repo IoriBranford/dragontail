@@ -12,12 +12,14 @@ end
 function Canvas:resize(basewidth, baseheight, inputscale)
     inputscale = inputscale or 1
     basewidth, baseheight = math.floor(basewidth*inputscale), math.floor(baseheight*inputscale)
-    local cw, ch
+    local cw, ch, filtered
     if self.canvas then
         cw, ch = self.canvas:getDimensions()
+        filtered = self.canvas:getFilter() ~= "nearest"
     end
     if cw ~= basewidth or ch ~= baseheight then
         self.canvas = love.graphics.newCanvas(basewidth, baseheight)
+        self:setFiltered(filtered)
     end
     self.rotscale:reset()
     self.transform:reset()
