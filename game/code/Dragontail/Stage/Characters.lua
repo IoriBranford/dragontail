@@ -62,6 +62,7 @@ function Characters.quit()
     nextid = 1
     camera = nil
     byid = nil
+    BodyLayers:clear()
 end
 
 function Characters.getById(id)
@@ -259,11 +260,10 @@ end
 
 function Characters.pruneDisappeared()
     scene:prune(Character.hasDisappeared)
-
     for _, g in pairs(groups) do
         ihash.prune(g, Character.hasDisappeared)
     end
-
+    BodyLayers:prune(Character.hasDisappeared)
     ihash.prune(allcharacters, Character.hasDisappeared, Character.release)
 end
 

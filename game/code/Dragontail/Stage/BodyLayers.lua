@@ -51,4 +51,10 @@ function BodyLayers:update(solids)
     end
 end
 
+function BodyLayers:prune(dead)
+    for _, layer in ipairs(self) do
+        ihash.prune(layer, dead)
+    end
+end
+
 return BodyLayers
