@@ -265,7 +265,6 @@ function love.run()
             love.graphics.present()
         end
 
-        collectgarbage("step", 1)
         if love.timer then
             love.timer.sleep(0.001)
         end
