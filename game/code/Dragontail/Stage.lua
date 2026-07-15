@@ -448,9 +448,9 @@ function Stage.fixedupdate()
     Characters.updateAttackHits()
     Characters.updateFloors()
     Characters.updateStates()
+    Characters.pruneDisappeared()
     Characters.updatePlayersMisc()
     Characters.predictCollision()
-    Characters.pruneDisappeared()
 
     if not winningteam then
         Stage.updateGoingToNextRoom()

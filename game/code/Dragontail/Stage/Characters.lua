@@ -11,13 +11,14 @@ local AttackTarget = require "Dragontail.Character.Component.AttackTarget"
 local Audio        = require "System.Audio"
 local findClosest  = require "findClosest"
 local ihash        = require "ihash"
+local BodyLayers   = require "Dragontail.Stage.BodyLayers"
 
 ---@module 'Dragontail.Stage.Characters'
 local Characters = {}
 
 local players ---@type ihash<Character>
 local enemies ---@type ihash<Character> characters player must beat to advance
-local solids ---@type ihash<Character> characters who should block others' movement
+local solids ---@type ihash<Character>
 local allcharacters ---@type ihash<Character>
 local byid ---@type table<integer,Character>
 local groups
@@ -61,6 +62,7 @@ function Characters.quit()
     nextid = 1
     camera = nil
     byid = nil
+    BodyLayers:clear()
 end
 
 function Characters.getById(id)
@@ -175,8 +177,11 @@ function Characters.updateAttackHits()
 
     for i = 1, #solids do local character = solids[i]
         if character:isAttacking() then
-            for j = 1, #solids do local opponent = solids[j]
-                AttackHits[#AttackHits+1] = Attacker.getAttackHit(character, opponent)
+            local mask = character.attack.hitslayers or 0
+            for _, layer in BodyLayers:eachLayer(mask, 1) do
+                for _, opponent in ipairs(layer) do
+                    AttackHits[#AttackHits+1] = Attacker.getAttackHit(character, opponent)
+                end
             end
         end
     end
@@ -251,11 +256,10 @@ end
 
 function Characters.pruneDisappeared()
     scene:prune(Character.hasDisappeared)
-
     for _, g in pairs(groups) do
         ihash.prune(g, Character.hasDisappeared)
     end
-
+    BodyLayers:prune(Character.hasDisappeared)
     ihash.prune(allcharacters, Character.hasDisappeared, Character.release)
 end
 
@@ -286,12 +290,14 @@ function Characters.castRay3(raycast, caster)
     raycast.hitdist = nil
     local hitsomething
     local rdx, rdy, rdz = raycast.dx, raycast.dy, raycast.dz
-    for _, character in ipairs(solids) do
-        if character ~= caster and Body.collideWithRaycast3(character, raycast) then
-            raycast.dx = raycast.hitx - raycast.x
-            raycast.dy = raycast.hity - raycast.y
-            raycast.dz = raycast.hitz - raycast.z
-            hitsomething = character
+    for _, layer in BodyLayers:eachLayer(raycast.hitslayers, 1) do
+        for _, character in ipairs(layer) do
+            if character ~= caster and Body.collideWithRaycast3(character, raycast) then
+                raycast.dx = raycast.hitx - raycast.x
+                raycast.dy = raycast.hity - raycast.y
+                raycast.dz = raycast.hitz - raycast.z
+                hitsomething = character
+            end
         end
     end
     raycast.dx = rdx
@@ -319,8 +325,8 @@ end
 
 function Characters.keepCircleIn(x, y, r, solidlayersmask)
     local totalpenex, totalpeney, penex, peney
-    for _, solid in ipairs(solids) do
-        if bit.band(solid.bodyinlayers, solidlayersmask) ~= 0 then
+    for _, layer in BodyLayers:eachLayer(solidlayersmask, 1) do
+        for _, solid in ipairs(layer) do
             penex, peney = Body.getCirclePenetration(solid, x, y, r)
             if penex then
                 x = x - penex
@@ -337,59 +343,80 @@ end
 
 function Characters.keepCylinderIn(x, y, z, r, h, self, iterations)
     iterations = iterations or 3
-    local solidlayersmask = self.bodyhitslayers
-    if type(solidlayersmask) == "string" then
-        solidlayersmask = CollisionMask.parse(self.bodyhitslayers)
+    local hitsmask = self.bodyhitslayers
+    if type(hitsmask) == "string" then
+        hitsmask = CollisionMask.parse(self.bodyhitslayers)
     end
     local totalpenex, totalpeney, totalpenez, penex, peney, penez
+    local function collide(solid)
+        if solid == self then return false end
+        local mask = solid.bodyinlayers
+        if bit.band(mask, hitsmask) == 0 then
+            return false
+        end
+
+        local any = false
+        penex, peney, penez = Body.getCylinderPenetration(
+                                    solid, x, y, z, r, h)
+        if penex then
+            any = true
+            x = x - penex
+            totalpenex = (totalpenex or 0) + penex
+        end
+        if peney then
+            any = true
+            y = y - peney
+            totalpeney = (totalpeney or 0) + peney
+        end
+        if penez then
+            any = true
+            z = z - penez
+            totalpenez = (totalpenez or 0) + penez
+        end
+        return any
+    end
     for i = 1, iterations do
-        local anycollision = false
-        for _, solid in ipairs(solids) do
-            if solid ~= self
-            and bit.band(solid.bodyinlayers, solidlayersmask) ~= 0
-            then
-                penex, peney, penez = Body.getCylinderPenetration(solid, x, y, z, r, h)
-                if penex then
-                    anycollision = true
-                    x = x - penex
-                    totalpenex = (totalpenex or 0) + penex
-                end
-                if peney then
-                    anycollision = true
-                    y = y - peney
-                    totalpeney = (totalpeney or 0) + peney
-                end
-                if penez then
-                    anycollision = true
-                    z = z - penez
-                    totalpenez = (totalpenez or 0) + penez
-                end
+        local any = false
+        for _, layer in BodyLayers:eachLayer(hitsmask, 1) do
+            for _, solid in ipairs(layer) do
+                any = collide(solid)
             end
         end
-        if not anycollision then
+        if not any then
             break
         end
     end
     return x, y, z, totalpenex, totalpeney, totalpenez
 end
 
-function Characters.getCylinderFloor(x, y, z, r, h, solidlayersmask)
+function Characters.getCylinderFloor(x, y, z, r, h, hitsmask)
     local floorchar
     local floorz = -math.huge
     local floorpenelensq = -math.huge
-    for _, solid in ipairs(solids) do
-        if bit.band(solid.bodyinlayers, solidlayersmask) ~= 0 then
-            local fz, penex, peney = Body.getCylinderFloorZ(solid, x, y, z, r, h)
-            if fz and (penex ~= 0 or peney ~= 0) then
-                local penelensq = penex and peney
-                    and math.lensq(penex, peney) or -math.huge
-                if fz > floorz
-                or fz == floorz and floorpenelensq < penelensq then
-                    floorchar = solid
-                    floorz = fz
-                    floorpenelensq = penelensq
-                end
-            end
+
+    local function testFloor(solid)
+        local mask = solid.bodyinlayers
+        if bit.band(mask, hitsmask) == 0 then
+            return
+        end
+
+        local fz, penex, peney = Body.getCylinderFloorZ(
+                        solid, x, y, z, r, h)
+        if not fz then return end
+        if not (penex ~= 0 or peney ~= 0) then return end
+        local penelensq = penex and peney
+            and math.lensq(penex, peney) or -math.huge
+        if fz > floorz
+        or fz == floorz and floorpenelensq < penelensq then
+            floorchar = solid
+            floorz = fz
+            floorpenelensq = penelensq
+        end
+    end
+
+    for _, layer in BodyLayers:eachLayer(hitsmask, 1) do
+        for _, solid in ipairs(layer) do
+            testFloor(solid)
         end
     end
     return floorchar, floorz

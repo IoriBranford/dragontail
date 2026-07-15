@@ -1,6 +1,7 @@
 local Movement   = require "Component.Movement"
 local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask"
 local RaycastCollision3D = require "Dragontail.Character.Component.Body.RaycastCollision3D"
+local BodyLayers         = require "Dragontail.Stage.BodyLayers"
 
 ---@class Body:TiledObject
 ---@field z number
@@ -30,6 +31,7 @@ function Body:initLayerMasks()
 
     self.bodyinlayers = self.bodyinlayers or 0
     self.bodyhitslayers = self.bodyhitslayers or 0
+    BodyLayers:add(self)
 end
 
 function Body:init()
