@@ -105,12 +105,15 @@ function Canvas:setFiltered(filtered)
     self.canvas:setFilter(filter, filter)
 end
 
-function Canvas:drawOn(draw)
+function Canvas:drawOn(draw, arg, ...)
+    if type(draw) == "table" and draw.canvas then
+        draw, arg = Canvas.draw, draw
+    end
     local oldcanvas = love.graphics.getCanvas()
     love.graphics.setCanvas(self.canvas)
     love.graphics.push()
     love.graphics.scale(self.inputscale)
-    draw()
+    draw(arg, ...)
     love.graphics.pop()
     love.graphics.setCanvas(oldcanvas)
 end
