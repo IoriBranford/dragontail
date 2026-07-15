@@ -213,10 +213,6 @@ function Characters.updatePlayersMisc()
     end
 end
 
-function Characters.updateSolidLayers()
-    BodyLayers:update(solids)
-end
-
 function Characters.predictCollision()
     for i = 1, #solids do local solid = solids[i]
         local hitvelx, hitvely, hitvelz,

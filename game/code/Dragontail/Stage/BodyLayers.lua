@@ -1,4 +1,3 @@
-local Body = require "Dragontail.Character.Component.Body"
 local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask"
 local ihash         = require "ihash"
 
@@ -34,19 +33,21 @@ function BodyLayers:eachLayer(mask, only)
     return iter
 end
 
-function BodyLayers:update(solids)
+---@param solid Body
+function BodyLayers:add(solid)
+    local mask = solid.bodyinlayers
+    if not mask or mask == 0 then return end
+
     local masks = CollisionMask.getKnownMasks()
     while #self < #masks do
         self[#self+1] = {}
     end
-    for i = 1, #solids do local solid = solids[i]
-        local mask = solid.bodyinlayers or 0
-        for _, layer, bt in self:eachLayer(mask) do
-            if bt then
-                ihash.add(layer, solid)
-            else
-                ihash.remove(layer, solid)
-            end
+
+    for _, layer, bt in self:eachLayer(mask) do
+        if bt then
+            ihash.add(layer, solid)
+        else
+            ihash.remove(layer, solid)
         end
     end
 end
