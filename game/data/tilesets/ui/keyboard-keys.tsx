@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.12.1" name="keyboard-keys" tilewidth="16" tileheight="16" tilecount="272" columns="17">
+<tileset version="1.11" tiledversion="1.12.2" name="keyboard-keys" tilewidth="16" tileheight="16" tilecount="272" columns="17">
  <editorsettings>
   <export target="keyboard-keys.lua" format="lua"/>
  </editorsettings>

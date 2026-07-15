@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.1",
+  tiledversion = "1.12.2",
   name = "gamepad-buttons",
   class = "",
   tilewidth = 16,
@@ -24,7 +24,10 @@ return {
     width = 16,
     height = 16
   },
-  properties = {},
+  properties = {
+    ["blanktilecount"] = 42,
+    ["blanktiles"] = "10,11,12,13,14,15,61,62,63,64,65,66,67,68,69,70,72,73,74,75,76,77,78,79,81,82,83,84,85,86,87,88,89,90,92,93,94,95,96,97,98,99"
+  },
   wangsets = {},
   tilecount = 100,
   tiles = {

@@ -3,6 +3,10 @@
  <editorsettings>
   <export target="tree2A_ss.lua" format="lua"/>
  </editorsettings>
+ <properties>
+  <property name="blanktilecount" type="int" value="86"/>
+  <property name="blanktiles" value="48,51,52,55,56,59,60,63,64,68,72,76,128,131,132,135,136,139,140,143,144,148,152,156,168,169,170,171,172,173,174,175,184,185,186,187,188,189,190,191,200,201,202,203,204,205,206,207,208,211,212,215,216,217,218,219,220,221,222,223,224,228,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255"/>
+ </properties>
  <image source="tree2A_ss.png" width="512" height="512"/>
  <tile id="0">
   <animation>

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.12.1" name="gamepad-buttons" tilewidth="16" tileheight="16" tilecount="100" columns="20">
+<tileset version="1.11" tiledversion="1.12.2" name="gamepad-buttons" tilewidth="16" tileheight="16" tilecount="100" columns="20">
  <editorsettings>
   <export target="gamepad-buttons.lua" format="lua"/>
  </editorsettings>
+ <properties>
+  <property name="blanktilecount" type="int" value="42"/>
+  <property name="blanktiles" value="10,11,12,13,14,15,61,62,63,64,65,66,67,68,69,70,72,73,74,75,76,77,78,79,81,82,83,84,85,86,87,88,89,90,92,93,94,95,96,97,98,99"/>
+ </properties>
  <image source="gamepad-buttons.png" width="320" height="80"/>
  <tile id="9">
   <animation>
