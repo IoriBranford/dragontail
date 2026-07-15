@@ -24,7 +24,10 @@ return {
     width = 32,
     height = 32
   },
-  properties = {},
+  properties = {
+    ["blanktilecount"] = 39,
+    ["blanktiles"] = "0,3,4,7,12,13,14,15,25,26,27,28,29,30,31,40,41,42,43,44,45,46,47,56,57,58,59,60,61,62,63,65,66,69,70,73,74,77,78"
+  },
   wangsets = {},
   tilecount = 128,
   tiles = {

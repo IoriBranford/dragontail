@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.12.1" name="flamegaugefull" tilewidth="40" tileheight="20" tilecount="8" columns="1">
+<tileset version="1.11" tiledversion="1.12.2" name="flamegaugefull" tilewidth="40" tileheight="20" tilecount="8" columns="1">
  <editorsettings>
   <export target="flamegaugefull.lua" format="lua"/>
  </editorsettings>

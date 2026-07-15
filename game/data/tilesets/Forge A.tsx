@@ -3,6 +3,10 @@
  <editorsettings>
   <export target="Forge A.lua" format="lua"/>
  </editorsettings>
+ <properties>
+  <property name="blanktilecount" type="int" value="39"/>
+  <property name="blanktiles" value="0,3,4,7,12,13,14,15,25,26,27,28,29,30,31,40,41,42,43,44,45,46,47,56,57,58,59,60,61,62,63,65,66,69,70,73,74,77,78"/>
+ </properties>
  <image source="Forge A.png" width="512" height="256"/>
  <tile id="88">
   <animation>

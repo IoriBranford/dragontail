@@ -3,6 +3,10 @@
  <editorsettings>
   <export target="vegB3.lua" format="lua"/>
  </editorsettings>
+ <properties>
+  <property name="blanktilecount" type="int" value="12"/>
+  <property name="blanktiles" value="12,13,14,15,28,29,30,31,44,45,46,47"/>
+ </properties>
  <image source="vegB3.png" width="128" height="384"/>
  <tile id="0">
   <animation>
