@@ -46,9 +46,33 @@ function Button:press()
 end
 
 function Button:onSelect()
+    self.animate = self[self.selectanimation]
+    self.color = self.color1 or self.color
 end
 
 function Button:onDeselect()
+    self.animate = self[self.deselectanimation]
+    self.color = self.color1 or self.color
+end
+
+function Button:colorCycle()
+    local t = love.timer.getTime()
+
+    local f = math.max(1, self.frequency or 1)
+    local c = (math.cos(t*f) + 1)/2
+
+    local color1 = self.color1 or self.color or Color.White
+    self.color1 = color1
+    local color2 = self.color2 or Color.Yellow
+
+    local r1, g1, b1, a1 = Color.unpack(color1)
+    local r2, g2, b2, a2 = Color.unpack(color2)
+    self.color = Color.asARGBInt(
+        math1.lerp(c, r1, r2),
+        math1.lerp(c, g1, g2),
+        math1.lerp(c, b1, b2),
+        math1.lerp(c, a1, a2)
+    )
 end
 
 return Button
