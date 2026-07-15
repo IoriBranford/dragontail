@@ -3,6 +3,7 @@ local Config = {}
 local pl_pretty = require "pl.pretty"
 local Platform  = require "System.Platform"
 local ControllerInputNames = require "ControllerInputNames"
+local Window               = require "System.Window"
 
 local filename = "config.lua"
 
@@ -118,72 +119,6 @@ function Config.save()
 	love.filesystem.write(filename, configtext)
 end
 
-function Config.isPortraitRotation()
-	local rotation = math.rad(Config.rotation)
-	return math.abs(math.sin(rotation)) > math.sqrt(2)/2
-end
-
-function Config.isPortraitDimensions()
-	local w, h, flags = love.window.getMode()
-	return w < h
-end
-
-function Config.isVertical()
-    local portraitrotation = Config.isPortraitRotation()
-    local portraitdimensions = Config.isPortraitDimensions()
-    return portraitrotation and not portraitdimensions
-    	or portraitdimensions and not portraitrotation
-end
-
-function Config.calcDisplaySize(basew, baseh)
-	local deskwidth, deskheight = love.window.getDesktopDimensions(Config.fullscreendevice)
-	if Config.fullscreen then
-		return deskwidth, deskheight
-	end
-
-	if Config.isPortraitRotation() then
-		basew, baseh = baseh, basew
-	end
-
-	local maxscale = math.min(deskwidth/basew, deskheight/baseh)
-	maxscale = math.floor(maxscale)
-	return basew*maxscale, baseh*maxscale
-end
-
-function Config.initDisplayMode(basew, baseh)
-	local w, h = Config.calcDisplaySize(basew, baseh)
-
-	-- Config.clamp("fullscreendevice", 1, love.window.getDisplayCount())
-	local flags = {
-		fullscreen = Config.fullscreen,
-		usedpiscale = Config.usedpiscale,
-		vsync = Config.vsync,
-		resizable = Config.resizable,
-		minwidth = basew,
-		minheight = baseh,
-	}
-	Config.setDisplayModeFlag(flags, "fullscreenexclusive", Config.exclusive)
-	Config.setDisplayModeFlag(flags, "fullscreendevice", Config.fullscreendevice)
-	love.window.setMode(w, h, flags)
-end
-
-function Config.setDisplayModeFlag(flags, configkey, value)
-	if configkey == "fullscreenexclusive" then
-		flags.fullscreentype = value and "exclusive" or "desktop"
-	elseif configkey == "fullscreendevice" then
-		flags.display = value
-	else
-		flags[configkey] = value
-	end
-	return flags
-end
-
-function Config.updateDisplayMode(flags)
-	local w, h, currentflags = love.window.getMode()
-	w, h = Config.calcDisplaySize(currentflags.minwidth, currentflags.minheight)
-	love.window.updateMode(w, h, flags)
-end
-
 local function getConfigValueOrInputName(key)
 	local value = config[key]
 	local inputnames = ControllerInputNames[config.joy_namingscheme or "XBOX"]
@@ -196,35 +131,23 @@ function Config.gsub(s)
 end
 
 local apply = {
-	fullscreen = function (fullscreen)
-		local w, h, flags = love.window.getMode()
-		local neww, newh = Config.calcDisplaySize(flags.minwidth, flags.minheight)
-		if w ~= neww or h ~= newh then
-			love.window.updateMode(neww, newh, {fullscreen = fullscreen})
-			love.event.push("resize", neww, newh)
-		end
+	fullscreen = function (fs)
+		love.window.setFullscreen(fs,
+			Config.fullscreenexclusive and "exclusive"
+				or "desktop")
 	end,
+	fullscreendevice = Window.setMonitor,
 	fullscreenexclusive = function (exclusive)
-		love.window.setFullscreen(Config.fullscreen, exclusive and "exclusive" or "desktop")
-	end,
-	fullscreendevice = function(device)
-		device = math.max(1, math.min(device, love.window.getDisplayCount()))
-		local w, h, flags = love.window.getMode()
-		local neww, newh = Config.calcDisplaySize(flags.minwidth, flags.minheight)
-		love.window.updateMode(neww, newh, { display = device })
-		love.event.push("resize", neww, newh)
-		return device
+		love.window.setFullscreen(Config.fullscreen,
+			exclusive and "exclusive" or "desktop")
 	end,
 	vsync = function(v)
 		love.window.setVSync(v and 1 or 0)
 	end,
 	rotation = function()
-		local w, h, flags = love.window.getMode()
-		local neww, newh = Config.calcDisplaySize(flags.minwidth, flags.minheight)
-		if w ~= neww or h ~= newh then
-			love.window.updateMode(neww, newh)
-		end
-		love.event.push("resize", neww, newh)
+    	local _,_, flags = love.window.getMode()
+		local neww, newh = Window.calcDisplaySize(flags.minwidth, flags.minheight)
+		Window.resize(neww, newh)
 	end,
 	musicvolume = function(volume)
 		local Audio                = require "System.Audio"
