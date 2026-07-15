@@ -17,7 +17,8 @@ local pathlite   = require "Tiled.pathlite"
 ---@field tilecount integer The number of tiles in this tileset (since 0.13). Note that there can be tiles with a higher ID than the tile count, in case the tileset is an image collection from which tiles have been removed.
 ---@field columns integer The number of tile columns in the tileset. For image collection tilesets it is editable and is used when displaying the tileset. (since 0.15)
 ---@field objectalignment string Controls the alignment for tile objects. Valid values are unspecified, topleft, top, topright, left, center, right, bottomleft, bottom and bottomright. The default value is unspecified, for compatibility reasons. When unspecified, tile objects use bottomleft in orthogonal mode and bottom in isometric mode. (since 1.4)
----@field numempty integer Number of tiles whose pixels are all fully transparent (alpha = 0)
+---@field blanktiles table<integer,Tile> Tile ids whose pixels are all fully transparent (alpha = 0)
+---@field blanktilecount integer
 ---@field tiles Tile[] Moved to array part of tileset
 ---@field image love.Texture|Aseprite|string
 ---@field imagefile string
@@ -111,44 +112,16 @@ function Tileset:_init(directory)
 
     Properties.resolveAssetPaths(self.properties, directory)
     Properties.moveUp(self)
-    self.numempty = self.numempty or 0
-end
 
-function Tileset:markAndCountEmpty()
-    if self.imagetype == "aseprite" then
-        return -- TODO
-    end
-    local imagedata = Assets.load(self.imagefile, { asimagedata = true })
-    ---@cast imagedata love.ImageData
-
-    local n = self.tilecount
-    local columns = self.columns
-    local tw = self.tilewidth
-    local th = self.tileheight
-    local numempty = n
-    for id = 0, n - 1 do
-        local c = id % columns
-        local r = math.floor(id / columns)
-        local tx = c * tw
-        local ty = r * th
-
-        local empty = true
-        for y = ty, ty+th-1 do
-            for x = tx, tx+tw-1 do
-                local _, _, _, alpha = imagedata:getPixel(x, y)
-                if alpha ~= 0 then
-                    empty = false
-                    numempty = numempty - 1
-                    break
-                end
-            end
-            if not empty then
-                break
-            end
+    local blanks = self.blanktiles
+    if type(blanks) == "string" then
+        local t = {}
+        self.blanktiles = t
+        for s in blanks:gmatch("(%d+)[,$]") do
+            local i = assert(tonumber(s), blanks)
+            t[i] = self[i]
         end
-        self[id].empty = empty
     end
-    self.numempty = numempty
 end
 
 return Tileset

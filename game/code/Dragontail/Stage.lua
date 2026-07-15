@@ -49,7 +49,6 @@ function Stage.load(stagefile)
     map:indexLayersByName()
     map:indexLayerObjectsByName()
     map:indexTilesetTilesByName()
-    map:markAndCountEmptyTiles()
 
     for _, object in pairs(map.objects) do
         if object.type == "CameraPath" then

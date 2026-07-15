@@ -318,11 +318,11 @@ function TileAtlas:addTileset(tileset)
     local canvas = self.canvas
     local width = self.width
     local height = self.height
-
+    local blanktiles = tileset.blanktiles
     for i = 0, tileset.tilecount-1 do
         local tile = tileset[i]
         if tile.image ~= canvas then
-            if tile.empty then
+            if blanktiles and blanktiles[tile.id] then
                 tile.image = canvas
                 tile.quad:setViewport(1, 1, 2, 2, width, height)
             else
