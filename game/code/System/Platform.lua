@@ -84,4 +84,15 @@ function Platform.overrideConfig(config)
     return config
 end
 
+function Platform.disableUnsupportedConfig(config)
+    for k, v in pairs(config) do
+        if not Platform.supports(k) then
+            -- TODO support variety of "disabled" values as needed
+            if type(v) == "boolean" then
+                config[k] = false
+            end
+        end
+    end
+end
+
 return Platform
