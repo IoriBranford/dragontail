@@ -347,59 +347,80 @@ end
 
 function Characters.keepCylinderIn(x, y, z, r, h, self, iterations)
     iterations = iterations or 3
-    local solidlayersmask = self.bodyhitslayers
-    if type(solidlayersmask) == "string" then
-        solidlayersmask = CollisionMask.parse(self.bodyhitslayers)
+    local hitsmask = self.bodyhitslayers
+    if type(hitsmask) == "string" then
+        hitsmask = CollisionMask.parse(self.bodyhitslayers)
     end
     local totalpenex, totalpeney, totalpenez, penex, peney, penez
+    local function collide(solid)
+        if solid == self then return false end
+        local mask = solid.bodyinlayers
+        if bit.band(mask, hitsmask) == 0 then
+            return false
+        end
+
+        local any = false
+        penex, peney, penez = Body.getCylinderPenetration(
+                                    solid, x, y, z, r, h)
+        if penex then
+            any = true
+            x = x - penex
+            totalpenex = (totalpenex or 0) + penex
+        end
+        if peney then
+            any = true
+            y = y - peney
+            totalpeney = (totalpeney or 0) + peney
+        end
+        if penez then
+            any = true
+            z = z - penez
+            totalpenez = (totalpenez or 0) + penez
+        end
+        return any
+    end
     for i = 1, iterations do
-        local anycollision = false
-        for _, layer in BodyLayers:eachLayer(solidlayersmask, 1) do
+        local any = false
+        for _, layer in BodyLayers:eachLayer(hitsmask, 1) do
             for _, solid in ipairs(layer) do
-                if solid ~= self then
-                    penex, peney, penez = Body.getCylinderPenetration(solid, x, y, z, r, h)
-                    if penex then
-                        anycollision = true
-                        x = x - penex
-                        totalpenex = (totalpenex or 0) + penex
-                    end
-                    if peney then
-                        anycollision = true
-                        y = y - peney
-                        totalpeney = (totalpeney or 0) + peney
-                    end
-                    if penez then
-                        anycollision = true
-                        z = z - penez
-                        totalpenez = (totalpenez or 0) + penez
-                    end
-                end
+                any = collide(solid)
             end
         end
-        if not anycollision then
+        if not any then
             break
         end
     end
     return x, y, z, totalpenex, totalpeney, totalpenez
 end
 
-function Characters.getCylinderFloor(x, y, z, r, h, mask)
+function Characters.getCylinderFloor(x, y, z, r, h, hitsmask)
     local floorchar
     local floorz = -math.huge
     local floorpenelensq = -math.huge
-    for _, layer in BodyLayers:eachLayer(mask, 1) do
+
+    local function testFloor(solid)
+        local mask = solid.bodyinlayers
+        if bit.band(mask, hitsmask) == 0 then
+            return
+        end
+
+        local fz, penex, peney = Body.getCylinderFloorZ(
+                        solid, x, y, z, r, h)
+        if not fz then return end
+        if not (penex ~= 0 or peney ~= 0) then return end
+        local penelensq = penex and peney
+            and math.lensq(penex, peney) or -math.huge
+        if fz > floorz
+        or fz == floorz and floorpenelensq < penelensq then
+            floorchar = solid
+            floorz = fz
+            floorpenelensq = penelensq
+        end
+    end
+
+    for _, layer in BodyLayers:eachLayer(hitsmask, 1) do
         for _, solid in ipairs(layer) do
-            local fz, penex, peney = Body.getCylinderFloorZ(solid, x, y, z, r, h)
-            if fz and (penex ~= 0 or peney ~= 0) then
-                local penelensq = penex and peney
-                    and math.lensq(penex, peney) or -math.huge
-                if fz > floorz
-                or fz == floorz and floorpenelensq < penelensq then
-                    floorchar = solid
-                    floorz = fz
-                    floorpenelensq = penelensq
-                end
-            end
+            testFloor(solid)
         end
     end
     return floorchar, floorz
