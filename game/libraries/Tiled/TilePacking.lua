@@ -74,7 +74,7 @@ function TilePacking.pack(tilesets, aseprites)
             maxtileheight = tileheight
         end
         local tilearea = tilewidth*tileheight
-        packarea = packarea + tilearea*(tileset.tilecount - tileset.numempty)
+        packarea = packarea + tilearea*(tileset.tilecount - tileset.blanktilecount or 0)
     end
 
     local asecelsbysrcpos = {}

@@ -125,12 +125,6 @@ function TiledMap:batchLayerTiles()
     end
 end
 
-function TiledMap:markAndCountEmptyTiles()
-    for _, tileset in ipairs(self.tilesets) do
-        tileset:markAndCountEmpty()
-    end
-end
-
 function TiledMap:animate(dt)
     self.layers:animate(dt)
 end
