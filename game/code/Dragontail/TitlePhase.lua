@@ -7,6 +7,7 @@ local Canvas = require "System.Canvas"
 local Tiled  = require "Tiled"
 local Path   = require "Object.Path"
 local Audio  = require "System.Audio"
+local Dragontail = require "Dragontail"
 local TitlePhase = {}
 
 local scenemap ---@type TiledMap
@@ -46,7 +47,6 @@ function TitlePhase.loadphase(startwithmainmenu)
     Assets.packTiles()
     Assets.batchAllMapsLayers()
 
-    TitlePhase.resize(love.graphics.getWidth(), love.graphics.getHeight())
     Gui:showOnlyNamed("title", "options", "wipe")
     Gui:clearMenuStack()
     Gui.title:showOnlyNamed("title")
@@ -74,11 +74,6 @@ function TitlePhase.pushMainMenu()
     Gui.title.mainmenus:showOnlyNamed()
     Gui:pushMenu(Gui.title.mainmenus[menuname])
     Audio.playMusic("data/music/Block Island Sound loop.ogg", nil, true)
-end
-
-function TitlePhase.resize(screenwidth, screenheight)
-    Gui:resize(screenwidth, screenheight)
-    -- Wallpaper.reload()
 end
 
 function TitlePhase.quitphase()
@@ -116,11 +111,10 @@ function TitlePhase.update(dsecs, fixedfrac)
 end
 
 function TitlePhase.draw(fixedfrac)
-    -- Wallpaper.draw()
-    Gui:compose(function()
+    Dragontail.draw(function()
         scenemap:draw()
-    end)
-    Gui.canvas:draw()
+        Gui:draw()
+    end, fixedfrac)
 end
 
 return TitlePhase

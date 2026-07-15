@@ -91,6 +91,7 @@ end
 ---@param screenheight integer
 ---@param maincanvas Canvas?
 ---@param expand boolean? to show ui outside the gui width/height
+---@deprecated
 function Gui:resize(screenwidth, screenheight, maincanvas, expand)
     -- for i = 1, #self do
     --     self[i]:reanchor(self.width, self.height, screenwidth, screenheight)
@@ -102,7 +103,7 @@ function Gui:resize(screenwidth, screenheight, maincanvas, expand)
         cw, ch = self:getExpandedCanvasSize(screenwidth, screenheight, maincanvas)
     end
 
-    local prescale = Config.canvasresolution
+    local prescale = Config.upscale
 
     local canvas = self.canvas
     if canvas then
@@ -115,9 +116,9 @@ function Gui:resize(screenwidth, screenheight, maincanvas, expand)
         canvas:transformToAnotherCanvas(screenwidth, screenheight, maincanvas)
     else
         canvas:transformToScreen(screenwidth, screenheight,
-            math.rad(Config.rotation), Config.canvasscaleint)
+            math.rad(Config.rotation), Config.upscaleinteger)
     end
-    canvas:setFiltered(Config.canvasscalesoft)
+    canvas:setFiltered(Config.linearfilter)
     self.x = (self.canvas:getBaseWidth() - self.width) / 2
     self.y = (self.canvas:getBaseHeight() - self.height) / 2
 end

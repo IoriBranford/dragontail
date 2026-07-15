@@ -21,8 +21,6 @@ function Config.reset()
         fullscreendevice = 1,
         vsync = false,
         usedpiscale = false,
-        canvasscaleint = true,
-        canvasscalesoft = false,
         musicvolume = 0.5,
         soundvolume = 0.5,
         resizable = true,
@@ -30,7 +28,7 @@ function Config.reset()
 		drawgraphicstats = false,
         rotation = 0,
 		variableupdate = false,
-		fixedupdaterate = 60
+		fixedupdaterate = 60,
 	}
 	if defaultconfig then
 		for k,v in pairs(defaultconfig) do

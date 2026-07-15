@@ -10,6 +10,7 @@ local Inputs = require "System.Inputs"
 local Player = require "Dragontail.Character.Player"
 local GameGuiActions = require "Dragontail.GuiActions"
 local Characters     = require "Dragontail.Stage.Characters"
+local Dragontail     = require "Dragontail"
 local isAsset = Assets.isAsset
 local getAsset = Assets.get
 local GamePhase = {}
@@ -51,16 +52,11 @@ function GamePhase.loadphase(stagepath_, startroom)
     Tiled.Assets.batchAllMapsLayers()
 
     Stage.init(startroom)
-    GamePhase.resize(love.graphics.getWidth(), love.graphics.getHeight())
 
     Gui:showOnlyNamed("gameplay", "wipe", "options")
     Gui.gameplay:showOnlyNamed("hud", "input")
     Gui.options:showOnlyNamed()
     Gui:clearMenuStack()
-end
-
-function GamePhase.resize(screenwidth, screenheight)
-    Gui:resize(screenwidth, screenheight)
 end
 
 function GamePhase.quitphase()
@@ -195,11 +191,10 @@ function GamePhase.debug_drawStageUnzoomed(fixedfrac)
 end
 
 function GamePhase.draw(fixedfrac)
-    love.graphics.clear()
-    Gui:compose(function()
+    Dragontail.draw(function()
         Stage.draw(paused and 0 or fixedfrac)
-    end)
-    Gui.canvas:draw()
+        Gui:draw()
+    end, fixedfrac)
 end
 
 return GamePhase
