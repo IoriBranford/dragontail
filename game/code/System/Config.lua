@@ -235,7 +235,8 @@ local apply = {
 function Config.apply(key)
 	if apply[key] then
 		local value = config[key]
-		config[key] = apply[key](value) or value
+		local newvalue = apply[key](value)
+		config[key] = newvalue ~= nil and newvalue or value
 	end
 end
 
