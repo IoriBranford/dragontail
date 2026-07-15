@@ -130,6 +130,7 @@ function Gui:setActiveMenu(menu)
     self.activemenu = menu
 end
 
+---@param menu Menu
 function Gui:pushMenu(menu)
     if not menu then
         return
@@ -151,7 +152,10 @@ function Gui:popMenu()
     menu:setVisible(false)
     menu:doAction(menu.closeaction)
     self.menustack[#self.menustack] = nil
-    self:setActiveMenu(self.menustack[#self.menustack])
+    menu = self.menustack[#self.menustack]
+    self:setActiveMenu(menu)
+    menu:loadConfigValues()
+    menu:selectButton(menu.cursorposition)
 end
 
 function Gui:clearMenuStack()
