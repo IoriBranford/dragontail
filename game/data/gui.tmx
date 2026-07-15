@@ -14,7 +14,7 @@
  <tileset firstgid="413" source="tilesets/ui/Gamepad Spritesheets/Xbox.tsx"/>
  <tileset firstgid="433" source="sprites/ui/go-arrowhead.tsx"/>
  <tileset firstgid="449" source="tilesets/ui/rose-face2.tsx"/>
- <group id="4" name="gameplay">
+ <group id="4" name="gameplay" visible="0">
   <objectgroup draworder="index" id="2" name="hud">
    <object id="4" name="run" type="Gui.Gauge" x="52" y="33" width="100" height="8" visible="0">
     <properties>
@@ -487,7 +487,7 @@ to clear lost enemies</text>
    <object id="81" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="152" y="108"/>
   </objectgroup>
  </group>
- <group id="17" name="title" visible="0">
+ <group id="17" name="title">
   <objectgroup id="7" name="title" locked="1">
    <object id="11" name="copyright" x="36" y="234" width="412" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">© 2026 Iori Branford</text>
@@ -521,32 +521,41 @@ to clear lost enemies</text>
   </objectgroup>
   <group id="24" name="mainmenus">
    <objectgroup id="18" name="normal" class="Gui.Menu">
-    <object id="106" template="gui/menu/Panel.tx" x="40" y="117" width="112" height="90"/>
-    <object id="102" template="gui/menu/Button.tx" name="START" x="84" y="126" width="64" height="18">
+    <object id="106" template="gui/menu/Panel.tx" x="40" y="117" width="112" height="90" visible="0"/>
+    <object id="102" name="START" type="Gui.Button" x="56" y="126" width="80" height="36">
      <properties>
       <property name="action" value="restartStage"/>
+      <property name="color2" type="color" value="#ffffd8d8"/>
+      <property name="frequency" type="float" value="30"/>
+      <property name="selectanimation" value="colorCycle"/>
      </properties>
-     <text fontfamily="Unifont" wrap="1" color="#ffffff">START</text>
+     <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" valign="center">START</text>
     </object>
-    <object id="104" template="gui/menu/Button.tx" name="OPTIONS" x="84" y="153" width="64" height="18">
+    <object id="104" name="OPTIONS" type="Gui.Button" x="64" y="162" width="120" height="36">
      <properties>
       <property name="action" value="openMenu"/>
+      <property name="color2" type="color" value="#ffffd8d8"/>
+      <property name="frequency" type="float" value="30"/>
       <property name="guipath" value="options.simple"/>
       <property name="presssound" type="file" value="sounds/combat/firehit.mp3"/>
+      <property name="selectanimation" value="colorCycle"/>
      </properties>
-     <text fontfamily="Unifont" wrap="1" color="#ffffff">OPTIONS</text>
+     <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" valign="center">OPTIONS</text>
     </object>
-    <object id="105" template="gui/menu/Button.tx" name="QUIT" x="84" y="180" width="64" height="18">
+    <object id="105" name="QUIT" type="Gui.Button" x="72" y="198" width="120" height="36">
      <properties>
       <property name="action" value="quitGame"/>
+      <property name="color2" type="color" value="#ffffd8d8"/>
+      <property name="frequency" type="float" value="30"/>
+      <property name="selectanimation" value="colorCycle"/>
      </properties>
-     <text fontfamily="Unifont" wrap="1" color="#ffffff">QUIT</text>
+     <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" valign="center">QUIT</text>
     </object>
-    <object id="103" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="52" y="135"/>
+    <object id="103" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="28" y="135"/>
    </objectgroup>
   </group>
  </group>
- <group id="20" name="options">
+ <group id="20" name="options" visible="0">
   <objectgroup draworder="index" id="19" name="simple" class="Gui.Menu">
    <properties>
     <property name="backaction" value="closeMenu"/>
@@ -684,7 +693,7 @@ to clear lost enemies</text>
    </object>
   </objectgroup>
  </group>
- <group id="8" name="wipe">
+ <group id="8" name="wipe" visible="0">
   <objectgroup id="9" name="diagonalCurtains" class="Gui.Wipe">
    <properties>
     <property name="closeandopenfunction" value="twoCurtainsCloseAndOpen"/>
