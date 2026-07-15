@@ -5,7 +5,9 @@ local ihash         = require "ihash"
 local BodyLayers = {} ---@type Body[][]
 
 function BodyLayers:clear()
-    BodyLayers = {}
+    for i = #self, 1, -1 do
+        self[i] = nil
+    end
 end
 
 function BodyLayers:eachLayer(mask, only)
