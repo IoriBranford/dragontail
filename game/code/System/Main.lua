@@ -70,7 +70,7 @@ function love.handlers.loadphase(name, ...)
     end
     love.currentphase = nextphase
     for k, v in pairs(blankphase) do
-        love[k] = nextphase[k] or v
+        love[k] = nextphase[k] or game[k] or v
     end
     if love.loadphase then
         love.loadphase(...)
@@ -158,7 +158,9 @@ function love.run()
 		-- lldebugger.off()
 	end
 
-    if love.load then
+    if game.load then
+        game.load(args)--love.arg.parseGameArguments(arg), arg)
+    elseif love.load then
         love.load(args)--love.arg.parseGameArguments(arg), arg)
     end
     collectgarbage()
@@ -179,7 +181,8 @@ function love.run()
             love.event.pump()
             for name, a, b, c, d, e, f in love.event.poll() do
                 if name == "quit" then
-                    if not love.quit or not love.quit() then
+                    if  (not game.quit or not game.quit())
+                    and (not love.quit or not love.quit()) then
                         OnQuit()
                         return a or 0
                     end
