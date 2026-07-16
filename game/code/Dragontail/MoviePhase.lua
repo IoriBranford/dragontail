@@ -51,7 +51,7 @@ function MoviePhase.startMovie(i)
     local movie = moviemap.layers[i]
     if not movie or not Movie.is(movie) then return end
     ---@cast movie Movie
-    movie:start()
+    movie:start(movie, moviemap)
     playingmovie = movie
     pause = false
 end
