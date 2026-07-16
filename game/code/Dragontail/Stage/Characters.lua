@@ -195,7 +195,7 @@ end
 function Characters.spawnDamageNumbers()
     for _, hit in ipairs(AttackHits) do
         local ftr = hit.target
-        local damage = hit.attack.damage
+        local damage = hit.guarded and 0 or hit.attack.damage
         Characters.spawn({
             lifetime = 60,
             x = ftr.x,
