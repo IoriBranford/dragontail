@@ -172,9 +172,11 @@ function GamePhase.setPauseLocked(locked)
     pauselocked = locked
 end
 
-function GamePhase.gameOver()
+function GamePhase.gameOver(won)
     GamePhase.setPauseLocked(true)
-    Gui:pushMenu(Gui.gameplay.gameover)
+    Gui:pushMenu(won
+        and Gui.gameplay.victory
+        or Gui.gameplay.gameover)
 end
 
 function GamePhase.update(dsecs, fixedfrac)

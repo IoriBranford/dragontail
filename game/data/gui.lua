@@ -9,8 +9,8 @@ return {
   height = 15,
   tilewidth = 16,
   tileheight = 18,
-  nextlayerid = 26,
-  nextobjectid = 188,
+  nextlayerid = 27,
+  nextobjectid = 196,
   properties = {},
   tilesets = {
     {
@@ -92,7 +92,7 @@ return {
       id = 4,
       name = "gameplay",
       class = "",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -1796,7 +1796,7 @@ return {
           id = 15,
           name = "debugmenu",
           class = "Gui.Menu",
-          visible = true,
+          visible = false,
           opacity = 1,
           offsetx = 0,
           offsety = 0,
@@ -2355,6 +2355,114 @@ return {
               }
             }
           }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 26,
+          name = "victory",
+          class = "Gui.Menu",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 192,
+              name = "",
+              type = "Gui.Cursor",
+              shape = "rectangle",
+              x = 156,
+              y = 175.5,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 450,
+              visible = true,
+              properties = {
+                ["alignx"] = 0.6,
+                ["aligny"] = 0,
+                ["asetag"] = "Spit0",
+                ["movesound"] = "sounds/combat/arrowhit.mp3"
+              }
+            },
+            {
+              id = 195,
+              name = "",
+              type = "Gui.Cursor",
+              shape = "rectangle",
+              x = 36,
+              y = 175.5,
+              width = 64,
+              height = 64,
+              rotation = 180,
+              opacity = 1,
+              gid = 450,
+              visible = true,
+              properties = {
+                ["alignx"] = -0.6,
+                ["aligny"] = 0,
+                ["asetag"] = "Spit0",
+                ["movesound"] = "sounds/combat/arrowhit.mp3"
+              }
+            },
+            {
+              id = 193,
+              name = "Quit",
+              type = "Gui.Button",
+              shape = "text",
+              x = 48,
+              y = 198,
+              width = 132,
+              height = 36,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              text = "SAVE & QUIT",
+              fontfamily = "f Firebrand",
+              pixelsize = 32,
+              wrap = true,
+              color = { 224, 33, 33 },
+              halign = "center",
+              valign = "bottom",
+              properties = {
+                ["action"] = "returnToTitle",
+                ["color2"] = "#ffffd8d8",
+                ["frequency"] = 30,
+                ["selectanimation"] = "colorCycle"
+              }
+            },
+            {
+              id = 194,
+              name = "Play again",
+              type = "Gui.Button",
+              shape = "text",
+              x = 32,
+              y = 162,
+              width = 124,
+              height = 36,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              text = "PLAY AGAIN",
+              fontfamily = "f Firebrand",
+              pixelsize = 32,
+              wrap = true,
+              color = { 224, 33, 33 },
+              halign = "center",
+              valign = "bottom",
+              properties = {
+                ["action"] = "restartStage",
+                ["color2"] = "#ffffd8d8",
+                ["frequency"] = 30,
+                ["selectanimation"] = "colorCycle"
+              }
+            }
+          }
         }
       }
     },
@@ -2694,7 +2802,7 @@ return {
       id = 20,
       name = "options",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,

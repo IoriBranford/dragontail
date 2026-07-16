@@ -330,7 +330,7 @@ function Stage.openRoom(i)
         end
         Audio.playMusicQueue("data/music/Frisbeat intro.ogg", "data/music/Frisbeat loop half.ogg")
         local GamePhase = require "Dragontail.GamePhase"
-        GamePhase.gameOver()
+        GamePhase.gameOver(true)
     end
 end
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="26" nextobjectid="188">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="27" nextobjectid="196">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -15,7 +15,7 @@
  <tileset firstgid="433" source="sprites/ui/go-arrowhead.tsx"/>
  <tileset firstgid="449" source="tilesets/ui/rose-face2.tsx"/>
  <tileset firstgid="450" source="sprites/ui/firespit.tsx"/>
- <group id="4" name="gameplay" visible="0">
+ <group id="4" name="gameplay">
   <objectgroup draworder="index" id="2" name="hud">
    <object id="4" name="run" type="Gui.Gauge" x="52" y="33" width="100" height="8" visible="0">
     <properties>
@@ -375,7 +375,7 @@ to clear lost enemies</text>
     <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center">PAUSE</text>
    </object>
   </objectgroup>
-  <objectgroup id="15" name="debugmenu" class="Gui.Menu">
+  <objectgroup id="15" name="debugmenu" class="Gui.Menu" visible="0">
    <properties>
     <property name="backaction" value="closeMenu"/>
    </properties>
@@ -490,6 +490,30 @@ to clear lost enemies</text>
    </object>
    <object id="81" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="152" y="108"/>
   </objectgroup>
+  <objectgroup id="26" name="victory" class="Gui.Menu">
+   <object id="192" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="156" y="175.5">
+    <properties>
+     <property name="alignx" type="float" value="0.6"/>
+    </properties>
+   </object>
+   <object id="195" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="36" y="175.5" rotation="180">
+    <properties>
+     <property name="alignx" type="float" value="-0.6"/>
+    </properties>
+   </object>
+   <object id="193" template="gui/menu/mainmenu/Button.tx" name="Quit" x="48" y="198" width="132" height="36">
+    <properties>
+     <property name="action" value="returnToTitle"/>
+    </properties>
+    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">SAVE &amp; QUIT</text>
+   </object>
+   <object id="194" template="gui/menu/mainmenu/Button.tx" name="Play again" x="32" y="162" width="124" height="36">
+    <properties>
+     <property name="action" value="restartStage"/>
+    </properties>
+    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">PLAY AGAIN</text>
+   </object>
+  </objectgroup>
  </group>
  <group id="17" name="title" visible="0">
   <objectgroup id="7" name="title" locked="1">
@@ -537,15 +561,7 @@ to clear lost enemies</text>
       <property name="asetag" value="Spit6"/>
      </properties>
     </object>
-    <object id="102" name="START" type="Gui.Button" x="56" y="126" width="72" height="36">
-     <properties>
-      <property name="action" value="restartStage"/>
-      <property name="color2" type="color" value="#ffffd8d8"/>
-      <property name="frequency" type="float" value="30"/>
-      <property name="selectanimation" value="colorCycle"/>
-     </properties>
-     <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">START</text>
-    </object>
+    <object id="102" template="gui/menu/mainmenu/Button.tx" type="Gui.Button" x="56" y="126"/>
     <object id="104" name="OPTIONS" type="Gui.Button" x="64" y="162" width="96" height="36">
      <properties>
       <property name="action" value="openMenu"/>
@@ -569,7 +585,7 @@ to clear lost enemies</text>
    </objectgroup>
   </group>
  </group>
- <group id="20" name="options">
+ <group id="20" name="options" visible="0">
   <objectgroup draworder="index" id="19" name="simple" class="Gui.Menu">
    <properties>
     <property name="backaction" value="closeMenu"/>
