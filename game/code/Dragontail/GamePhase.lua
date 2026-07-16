@@ -11,6 +11,7 @@ local Player = require "Dragontail.Character.Player"
 local GameGuiActions = require "Dragontail.GuiActions"
 local Characters     = require "Dragontail.Stage.Characters"
 local Dragontail     = require "Dragontail"
+local Color          = require "Tiled.Color"
 local isAsset = Assets.isAsset
 local getAsset = Assets.get
 local GamePhase = {}
@@ -18,6 +19,7 @@ local GamePhase = {}
 local paused
 local pauselocked
 local stagepath = "data/stage_banditcave.lua"
+local playerwon
 
 function GamePhase.loadphase(stagepath_, startroom)
     stagepath = stagepath_ or stagepath
@@ -57,6 +59,8 @@ function GamePhase.loadphase(stagepath_, startroom)
     Gui.gameplay:showOnlyNamed("hud", "input")
     Gui.options:showOnlyNamed()
     Gui:clearMenuStack()
+
+    playerwon = nil
 end
 
 function GamePhase.quitphase()
@@ -159,9 +163,42 @@ local function fixedupdateInputDisplay()
     end
 end
 
+local function victorySweep()
+    local rose = assert(Gui:get("gameplay.victory_Rose"))
+    local path = assert(Gui:get("gameplay.victory.Rosepath"))
+    rose:setVisible(true)
+
+    local points = assert(path.points)
+    local px, py = path.x, path.y
+    local p = #points
+    local x, y = points[p-1], points[p]
+    while p > 2 do
+        x, y, p = math2.walkpolyline(path.points,
+            x, y, p, -30)
+        rose.x = px + x
+        rose.y = py + y
+        coroutine.yield()
+    end
+    local swipe = assert(Gui:get("gameplay.victory_Rose.swipe"))
+    local _,_,_,alpha = Color.unpack(swipe.tintcolor or Color.White)
+    while alpha > 0 do
+        alpha = alpha - 1/64
+        swipe.tintcolor = Color.asARGBInt(1, 1, 1, alpha)
+        coroutine.yield()
+    end
+    return true
+end
+
+local victorySweepCo
+
 function GamePhase.fixedupdate()
     if not paused then
         Stage.fixedupdate()
+    end
+    if victorySweepCo then
+        if victorySweepCo() then
+            victorySweepCo = nil
+        end
     end
     fixedupdateInputDisplay()
     Stage.fixedupdateGui(Gui)
@@ -173,10 +210,14 @@ function GamePhase.setPauseLocked(locked)
 end
 
 function GamePhase.gameOver(won)
+    playerwon = won or false
     GamePhase.setPauseLocked(true)
-    Gui:pushMenu(won
-        and Gui.gameplay.victory
-        or Gui.gameplay.gameover)
+    if won then
+        Gui:pushMenu(Gui.gameplay.victory)
+        victorySweepCo = coroutine.wrap(victorySweep)
+    else
+        Gui:pushMenu(Gui.gameplay.gameover)
+    end
 end
 
 function GamePhase.update(dsecs, fixedfrac)
