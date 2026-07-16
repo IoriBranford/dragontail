@@ -41,7 +41,7 @@ return {
       type = "group",
       id = 7,
       name = "fg",
-      class = "Dragontail.MovieScene",
+      class = "Tiled.Movie",
       visible = true,
       opacity = 1,
       offsetx = 0,

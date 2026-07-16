@@ -7,7 +7,7 @@
  <imagelayer id="2" name="bg">
   <image source="sprites/ui/title/illust/bg.png" width="480" height="270"/>
  </imagelayer>
- <group id="7" name="fg" class="Dragontail.MovieScene">
+ <group id="7" name="fg" class="Tiled.Movie">
   <properties>
    <property name="script" value="Dragontail.Movie.RoseHitEnemy"/>
   </properties>

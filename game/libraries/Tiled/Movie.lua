@@ -1,17 +1,17 @@
 local LayerGroup = require "Tiled.LayerGroup"
 
----@class MovieScene:LayerGroup
+---@class Movie:LayerGroup
 ---@field thread thread
 ---@field func function
 ---@field script string
-local MovieScene = class(LayerGroup)
+local Movie = class(LayerGroup)
 --MovieScene.runphase = "Dragontail.MoviePhase"
 
-function MovieScene:started()
+function Movie:started()
     return self.thread ~= nil
 end
 
-function MovieScene:start(arg, ...)
+function Movie:start(arg, ...)
     local script = self.script
     local _, scriptf = assert(pcall(require, script))
     self.func = scriptf
@@ -22,7 +22,7 @@ function MovieScene:start(arg, ...)
     return self.thread
 end
 
-function MovieScene:play(...)
+function Movie:play(...)
     local thread = self.thread or self:start()
     if coroutine.status(thread) == "dead" then return "dead" end
     local ok, a,b,c,d,e,f,g,h = coroutine.resume(thread, ...)
@@ -30,4 +30,4 @@ function MovieScene:play(...)
     return status, a,b,c,d,e,f,g,h
 end
 
-return MovieScene
+return Movie
