@@ -155,6 +155,7 @@ function Gui:popMenu()
     self.menustack[#self.menustack] = nil
     menu = self.menustack[#self.menustack]
     self:setActiveMenu(menu)
+    if not menu then return end
     menu:loadConfigValues()
     menu:selectButton(menu.cursorposition)
 end
