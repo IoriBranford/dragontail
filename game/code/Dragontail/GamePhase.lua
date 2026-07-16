@@ -180,7 +180,7 @@ local function victorySweep()
         coroutine.yield()
     end
     local swipe = assert(Gui:get("gameplay.victory_Rose.swipe"))
-    local _,_,_,alpha = Color.unpack(swipe.tintcolor or Color.White)
+    local alpha = 1
     while alpha > 0 do
         alpha = alpha - 1/64
         swipe.tintcolor = Color.asARGBInt(1, 1, 1, alpha)
