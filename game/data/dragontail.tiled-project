@@ -2,27 +2,27 @@
     "automappingRulesFile": "",
     "commands": [
         {
-            "arguments": "%projectpath/.. --stage %exportfile",
+            "arguments": "%projectpath/.. --map %exportfile",
             "command": "love",
             "enabled": true,
-            "name": "Play level from start",
+            "name": "Run map",
             "saveBeforeExecute": true,
             "shortcut": "F5",
             "showOutput": true,
             "workingDirectory": ""
         },
         {
-            "arguments": "%projectpath/.. --stage %exportfile --room %layername",
+            "arguments": "%projectpath/.. --map %exportfile --room %layername",
             "command": "love",
             "enabled": true,
-            "name": "Play level from selected room",
+            "name": "Run map at selected room",
             "saveBeforeExecute": true,
             "shortcut": "Shift+F5",
             "showOutput": true,
             "workingDirectory": ""
         },
         {
-            "arguments": "%projectpath/.. --stage %exportfile --room %layername --profile",
+            "arguments": "%projectpath/.. --map %exportfile --room %layername --profile",
             "command": "love",
             "enabled": true,
             "name": "Profile selected room",
@@ -279,24 +279,6 @@
         {
             "color": "#ffa0a0a4",
             "drawFill": true,
-            "id": 18,
-            "members": [
-                {
-                    "name": "script",
-                    "type": "string",
-                    "value": ""
-                }
-            ],
-            "name": "Tiled.Movie",
-            "type": "class",
-            "useAs": [
-                "layer",
-                "project"
-            ]
-        },
-        {
-            "color": "#ffa0a0a4",
-            "drawFill": true,
             "id": 9,
             "members": [
                 {
@@ -348,6 +330,24 @@
                 "percent"
             ],
             "valuesAsFlags": false
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 18,
+            "members": [
+                {
+                    "name": "script",
+                    "type": "string",
+                    "value": ""
+                }
+            ],
+            "name": "Tiled.Movie",
+            "type": "class",
+            "useAs": [
+                "layer",
+                "project"
+            ]
         }
     ]
 }
