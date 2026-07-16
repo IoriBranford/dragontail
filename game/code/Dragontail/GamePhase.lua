@@ -170,11 +170,12 @@ local function victorySweep()
 
     local points = assert(path.points)
     local px, py = path.x, path.y
-    local p = #points
-    local x, y = points[p-1], points[p]
-    while p > 2 do
-        x, y, p = math2.walkpolyline(path.points,
-            x, y, p, -30)
+    local p1, p2 = #points, 2
+    local x, y   = points[p1-1], points[p1]
+    local x2, y2 = points[p2-1] + px, points[p2] + py
+    while rose.x ~= x2 or rose.y ~= y2 do
+        x, y, p1 = math2.walkpolyline(path.points,
+            x, y, p1, -50)
         rose.x = px + x
         rose.y = py + y
         coroutine.yield()
