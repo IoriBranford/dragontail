@@ -11,6 +11,7 @@ local LayerGroup = class(Layer)
 
 function LayerGroup:_init()
     local grouplayers = self.layers ---@type Layer[]
+    if not grouplayers then return end
     for i = 1, #grouplayers do
         local layer = grouplayers[i]
         layer.layer = self
@@ -44,12 +45,11 @@ function LayerGroup:indexLayerObjectsByName()
     end
 end
 
-LayerGroup.showOnlyNamed = require "Tiled.showOnlyNamed"
-
 function LayerGroup:bindClasses()
     class.reqcast(self, self.class)
     for _, layer in ipairs(self) do
         if layer.type == "group" then
+            ---@cast layer LayerGroup
             layer:bindClasses()
         else
             class.reqcast(layer, layer.class)

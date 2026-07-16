@@ -1,4 +1,5 @@
 local class = require "Tiled.class"
+local showOnlyNamed = require "Tiled.showOnlyNamed"
 
 ---@class Layer:Class
 ---@field layer Layer? parent layer
@@ -50,6 +51,8 @@ function Layer:hideChildrenIf(condition)
         child:setVisible(condition(child))
     end
 end
+
+Layer.showOnlyNamed = showOnlyNamed
 
 function Layer:animate(dt)
 end

@@ -23,8 +23,6 @@ function ObjectGroup:_init(map)
     return self
 end
 
-ObjectGroup.showOnlyNamed = require "Tiled.showOnlyNamed"
-
 ObjectGroup.indexObjectsByName = require "Tiled.indexElementsByName"
 
 function ObjectGroup:findObject(f, ...)
