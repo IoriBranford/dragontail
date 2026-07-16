@@ -279,6 +279,24 @@
         {
             "color": "#ffa0a0a4",
             "drawFill": true,
+            "id": 18,
+            "members": [
+                {
+                    "name": "script",
+                    "type": "string",
+                    "value": ""
+                }
+            ],
+            "name": "Dragontail.MovieScene",
+            "type": "class",
+            "useAs": [
+                "layer",
+                "project"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
             "id": 9,
             "members": [
                 {
