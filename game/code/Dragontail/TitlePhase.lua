@@ -11,52 +11,16 @@ local Dragontail = require "Dragontail"
 local TitlePhase = {}
 
 local scenemap ---@type TiledMap
-local sceneco ---@type function
+local playingscene ---@type MovieScene
 local ambientsound ---@type love.Source
-
-local function sceneAnimation()
-    local layers = scenemap.layers
-    local fg = layers.fg
-    local directions = layers.directions
-    layers.logo.visible = false
-    assert(directions and directions.type == "objectgroup")
-    ---@cast directions ObjectGroup
-    local path = directions.path
-    ---@cast path Path
-    Path.cast(path)
-    path:calcLengths()
-    local i, pos = 2, 0
-    repeat
-        i, pos = path:updatePosition1d(i, pos, 50)
-        local x, y = path:getPosition2d(i, pos)
-        fg.x = x + path.x
-        fg.y = y + path.y
-        coroutine.yield()
-    until i > #path.points
-    if ambientsound and Audio.getMusicVolume() > 0 then
-        ambientsound:stop()
-    end
-
-    local menu = assert(Gui.title.mainmenus.normal)
-    local menux, menuy = menu.x, menu.y
-    menu:setVisible(true)
-    local shake = 50
-    local dirx, diry = math2.frompolar(100)
-    while shake > 0 do
-        shake = shake - 1
-        local d = math.cos(love.timer.getTime()*100)*shake
-        menu.x = menux + d*dirx
-        menu.y = menuy + d*diry
-        coroutine.yield()
-    end
-    Gui:pushMenu(menu)
-    return true
-end
 
 function TitlePhase.loadphase(startwithmainmenu)
     scenemap = Tiled.Map.load("data/title_scene.lua")
     scenemap:indexLayersByName()
     scenemap:indexLayerObjectsByName()
+    scenemap:bindClasses()
+    scenemap.layers:showOnlyNamed("bg", "logo")
+
     Assets.uncacheMarked()
     Assets.packTiles()
     Assets.batchAllMapsLayers()
@@ -81,13 +45,18 @@ end
 
 function TitlePhase.pushMainMenu()
     Gui.title.pressstart:setVisible(false)
-    sceneco = coroutine.wrap(sceneAnimation)
+    local menu = assert(Gui.title.mainmenus.normal)
+    playingscene = scenemap.layers.fg
+    playingscene:start(scenemap, menu)
     local menuname = "normal"
     if Config.exhibit then
         menuname = "exhibit"
     end
     Gui.title.mainmenus:setVisible(true)
     Gui.title.mainmenus:showOnlyNamed()
+    if ambientsound then
+        ambientsound:stop()
+    end
     Audio.playMusic("data/music/Block Island Sound loop.ogg", nil, true)
 end
 
@@ -96,7 +65,7 @@ function TitlePhase.quitphase()
     Assets.markAllToUncache()
     Gui:clearMenuStack()
     scenemap = nil
-    sceneco = nil
+    playingscene = nil
     ambientsound = nil
 end
 
@@ -114,9 +83,17 @@ end
 
 function TitlePhase.fixedupdate()
     scenemap:animate(1)
-    if sceneco then
-        if sceneco() then
-            sceneco = nil
+    if playingscene then
+        local menu = assert(Gui.title.mainmenus.normal)
+        local status, err = playingscene:play()
+        if not status then
+            print(err)
+        end
+        if not status or status == "dead" then
+            if Gui.activemenu ~= menu then
+                Gui:pushMenu(menu)
+            end
+            playingscene = nil
         end
     end
     Gui:fixedupdate()
