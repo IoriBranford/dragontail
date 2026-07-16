@@ -77,4 +77,14 @@ function Movement.getVelocityWithJump_speed(x0, y0, z0, x1, y1, z1, velz, speed)
 	return velx, vely
 end
 
+---@param d number direction
+---@param a number amplitude
+---@param f number frequency
+---@param t number time
+function Movement.impactShake(d, a, f, t)
+	local dx, dy = math2.frompolar(d)
+	a = math.max(0, a * (1 - math.cos(t*f)))
+	return dx * a, dy * a
+end
+
 return Movement
