@@ -185,14 +185,20 @@ function GamePhase.victorySweep()
         rose.y = py + y
         coroutine.yield()
     end
+    local menu = assert(Gui.gameplay.victory)
+    local menuy = menu.y
+    menu:setVisible(true)
     local swipe = rose.swipe
     local alpha = 1
     while alpha > 0 do
         alpha = alpha - 1/64
         swipe.tintcolor = Color.asARGBInt(1, 1, 1, alpha)
+        menu.y = menuy + math.cos(love.timer.getTime()*100)*alpha*50
         coroutine.yield()
     end
+    menu.y = menuy
     Audio.play(rose.voice)
+    Gui:pushMenu(menu)
     return true
 end
 
@@ -218,7 +224,6 @@ function GamePhase.gameOver(won)
     playerwon = won or false
     GamePhase.setPauseLocked(true)
     if won then
-        Gui:pushMenu(Gui.gameplay.victory)
         victorySweepCo = coroutine.wrap(GamePhase.victorySweep)
     else
         Gui:pushMenu(Gui.gameplay.gameover)
