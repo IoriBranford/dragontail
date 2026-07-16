@@ -179,10 +179,6 @@ function Dragontail.load(args)
 
     -- Wallpaper.reload()
 
-    local gui = require "Dragontail.Gui"
-    gui.gameplay.pausemenu.Quit:setDisabled(Config.exhibit)
-    gui.gameplay.gameover.Quit:setDisabled(Config.exhibit)
-
     local firstroom = map and args.room
     love.event.loadphase(firstphase, map, firstroom)
 end
