@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="27" nextobjectid="196">
+ <editorsettings>
+  <export format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" source="tilesets/ui/rose-face.tsx"/>
+ <tileset firstgid="5" source="tilesets/ui/keyboard-keys.tsx"/>
+ <tileset firstgid="277" source="tilesets/ui/gamepad-buttons.tsx"/>
+ <tileset firstgid="377" source="tilesets/ui/flamegaugefull.tsx"/>
+ <tileset firstgid="385" source="tilesets/ui/weapon-frame.tsx"/>
+ <tileset firstgid="391" source="sprites/ui/go-arrow-small.tsx"/>
+ <tileset firstgid="400" source="sprites/ui/go-word.tsx"/>
+ <tileset firstgid="409" source="sprites/ui/break-grab.tsx"/>
+ <tileset firstgid="413" source="tilesets/ui/Gamepad Spritesheets/Xbox.tsx"/>
+ <tileset firstgid="433" source="sprites/ui/go-arrowhead.tsx"/>
+ <tileset firstgid="449" source="tilesets/ui/rose-face2.tsx"/>
+ <tileset firstgid="450" source="sprites/ui/firespit.tsx"/>
+ <objectgroup draworder="index" id="2" name="hud">
+  <object id="4" name="run" type="Gui.Gauge" x="52" y="33" width="100" height="8" visible="0">
+   <properties>
+    <property name="color" type="color" value="#ff8080ff"/>
+    <property name="z" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="6" name="runbox" x="52" y="33" width="100" height="8" visible="0">
+   <properties>
+    <property name="color" type="color" value="#00000000"/>
+    <property name="linecolor" type="color" value="#ffc0c0ff"/>
+    <property name="roundcorners" type="float" value="2"/>
+    <property name="z" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="3" name="health" type="Gui.Gauge" x="44" y="12" width="100" height="9">
+   <properties>
+    <property name="color" type="color" value="#ffff1f1f"/>
+    <property name="roundcorners" type="float" value="1"/>
+    <property name="z" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="5" name="healthbox" x="44" y="12" width="100" height="9">
+   <properties>
+    <property name="color" type="color" value="#00000000"/>
+    <property name="linecolor" type="color" value="#ffffffff"/>
+    <property name="roundcorners" type="float" value="2"/>
+    <property name="z" type="float" value="2"/>
+   </properties>
+  </object>
+  <object id="1" name="portrait" gid="449" x="14" y="36" width="60" height="27">
+   <properties>
+    <property name="z" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="2" name="portraitbox" x="-16" y="9" width="60" height="27">
+   <properties>
+    <property name="color" type="color" value="#00000000"/>
+    <property name="linecolor" type="color" value="#ffffffff"/>
+    <property name="roundcorners" type="float" value="2"/>
+    <property name="z" type="float" value="3"/>
+   </properties>
+  </object>
+  <object id="30" name="flame1" type="Gui.Gauge" x="47" y="26" width="30" height="6">
+   <properties>
+    <property name="color" type="color" value="#ffffaa00"/>
+    <property name="fullcolor" type="color" value="#ffffd000"/>
+    <property name="normalcolor" type="color" value="#ffffaa00"/>
+    <property name="z" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="59" name="flamecharge1" type="Gui.Gauge" x="47" y="26" width="30" height="6">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="z" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="31" name="flame2" type="Gui.Gauge" x="80" y="26" width="30" height="6">
+   <properties>
+    <property name="color" type="color" value="#ffffaa00"/>
+    <property name="fullcolor" type="color" value="#ffffd000"/>
+    <property name="normalcolor" type="color" value="#ffffaa00"/>
+    <property name="z" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="58" name="flamecharge2" type="Gui.Gauge" x="80" y="26" width="30" height="6">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="z" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="32" name="flame3" type="Gui.Gauge" x="113" y="26" width="30" height="6">
+   <properties>
+    <property name="color" type="color" value="#ffffaa00"/>
+    <property name="fullcolor" type="color" value="#ffffd000"/>
+    <property name="normalcolor" type="color" value="#ffffaa00"/>
+    <property name="z" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="57" name="flamecharge3" type="Gui.Gauge" x="113" y="26" width="30" height="6">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="z" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="33" name="flamebox" x="47" y="26" width="30" height="6">
+   <properties>
+    <property name="color" type="color" value="#00000000"/>
+    <property name="linecolor" type="color" value="#ffffffff"/>
+    <property name="roundcorners" type="float" value="1"/>
+    <property name="z" type="float" value="2"/>
+   </properties>
+  </object>
+  <object id="34" name="flamebox" x="80" y="26" width="30" height="6">
+   <properties>
+    <property name="color" type="color" value="#00000000"/>
+    <property name="linecolor" type="color" value="#ffffffff"/>
+    <property name="roundcorners" type="float" value="1"/>
+    <property name="z" type="float" value="2"/>
+   </properties>
+  </object>
+  <object id="35" name="flamebox" x="113" y="26" width="30" height="6">
+   <properties>
+    <property name="color" type="color" value="#00000000"/>
+    <property name="linecolor" type="color" value="#ffffffff"/>
+    <property name="roundcorners" type="float" value="1"/>
+    <property name="z" type="float" value="2"/>
+   </properties>
+  </object>
+  <object id="36" name="flamefullcharge1" gid="377" x="42" y="37" width="40" height="20"/>
+  <object id="37" name="flamefullcharge2" gid="377" x="75" y="37" width="40" height="20"/>
+  <object id="38" name="flamefullcharge3" gid="377" x="108" y="37" width="40" height="20"/>
+  <object id="29" name="development ver." x="328" y="225" width="144" height="36">
+   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="right" valign="bottom">DEVELOPMENT VER 2026.1.2
+ALL CONTENT SUBJECT TO CHANGE</text>
+  </object>
+  <object id="137" name="clearenemiesprompt" x="80" y="54" width="320" height="54" visible="0">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">Push SELECT button or DELETE key
+to clear lost enemies</text>
+  </object>
+ </objectgroup>
+ <objectgroup id="16" name="hud_breakgrab">
+  <object id="99" name="gaugex" x="-24" y="-40" width="48" height="4">
+   <properties>
+    <property name="color" type="color" value="#00000000"/>
+    <property name="linecolor" type="color" value="#ffffffff"/>
+   </properties>
+  </object>
+  <object id="100" name="gaugey" x="12" y="-48" width="4" height="48">
+   <properties>
+    <property name="color" type="color" value="#00000000"/>
+    <property name="linecolor" type="color" value="#ffffffff"/>
+   </properties>
+  </object>
+  <object id="95" name="gauger" type="Gui.Gauge" x="0" y="-40" width="24" height="4">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+   </properties>
+  </object>
+  <object id="97" name="gauged" type="Gui.Gauge" x="12" y="-24" width="4" height="24">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="gaugedirection" propertytype="GaugeDirection" value="down"/>
+   </properties>
+  </object>
+  <object id="96" name="gaugel" type="Gui.Gauge" x="-24" y="-40" width="24" height="4">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="gaugedirection" propertytype="GaugeDirection" value="left"/>
+   </properties>
+  </object>
+  <object id="98" name="gaugeu" type="Gui.Gauge" x="12" y="-48" width="4" height="24">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="gaugedirection" propertytype="GaugeDirection" value="up"/>
+   </properties>
+  </object>
+  <object id="94" name="prompt" gid="409" x="0" y="0" width="48" height="48"/>
+ </objectgroup>
+ <objectgroup id="10" name="hud_weapon" visible="0">
+  <object id="15" name="weaponname" x="48" y="45" width="90" height="18">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Weapon</text>
+  </object>
+  <object id="16" name="count" x="48" y="63" width="16" height="9">
+   <text fontfamily="Press Start 2P" pixelsize="8" wrap="1" color="#ffffff" halign="center">99</text>
+  </object>
+  <object id="18" name="/" x="64" y="58.5" width="16" height="18">
+   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">/</text>
+  </object>
+  <object id="17" name="max" x="80" y="63" width="16" height="9">
+   <text fontfamily="Press Start 2P" pixelsize="8" wrap="1" color="#ffffff" halign="center">99</text>
+  </object>
+  <object id="14" name="box" x="8" y="45" width="36" height="27">
+   <properties>
+    <property name="color" type="color" value="#00000000"/>
+    <property name="linecolor" type="color" value="#ffffffff"/>
+    <property name="roundcorners" type="float" value="2"/>
+    <property name="z" type="float" value="3"/>
+   </properties>
+  </object>
+  <object id="20" name="icon" gid="1" x="26" y="59" width="32" height="32">
+   <properties>
+    <property name="z" type="float" value="0"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="22" name="hud_goarrows" visible="0" offsetx="360" offsety="135">
+  <object id="155" gid="433" x="-52" y="0" width="16" height="16"/>
+  <object id="156" gid="434" x="-40" y="0" width="16" height="16"/>
+  <object id="157" gid="435" x="-28" y="0" width="16" height="16"/>
+  <object id="158" gid="436" x="-16" y="0" width="16" height="16"/>
+  <object id="159" gid="437" x="20" y="0" width="16" height="16"/>
+  <object id="160" gid="438" x="32" y="0" width="16" height="16"/>
+  <object id="161" gid="439" x="44" y="0" width="16" height="16"/>
+  <object id="162" gid="440" x="56" y="0" width="16" height="16"/>
+ </objectgroup>
+ <objectgroup draworder="index" id="14" name="hud_go" offsetx="360" offsety="135">
+  <object id="70" name="arrow" gid="391" x="0" y="0" width="100" height="20"/>
+  <object id="71" name="word" gid="400" x="0" y="0" width="48" height="32"/>
+ </objectgroup>
+ <objectgroup id="12" name="hud_weaponslots" offsetx="32" offsety="72">
+  <object id="43" name="fullslot1" gid="385" x="-12" y="-18" width="24" height="24"/>
+  <object id="44" name="fullslot2" gid="387" x="12" y="-18" width="24" height="24"/>
+  <object id="39" name="emptyslot1" gid="388" x="-12" y="-18" width="24" height="24"/>
+  <object id="40" name="emptyslot2" gid="390" x="12" y="-18" width="24" height="24"/>
+  <object id="51" name="2slotweapon1" gid="389" x="0" y="-18" width="24" height="24">
+   <properties>
+    <property name="animationspeed" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="47" name="1slotweapon1" gid="389" x="-12" y="-18" width="24" height="24">
+   <properties>
+    <property name="animationspeed" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="48" name="1slotweapon2" gid="389" x="12" y="-18" width="24" height="24">
+   <properties>
+    <property name="animationspeed" type="float" value="0"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="21" name="hud_4weaponslots" visible="0">
+  <object id="120" name="fullslot1" gid="385" x="20" y="54" width="24" height="24"/>
+  <object id="122" name="fullslot2" gid="386" x="44" y="54" width="24" height="24"/>
+  <object id="124" name="fullslot3" gid="386" x="68" y="54" width="24" height="24"/>
+  <object id="126" name="fullslot4" gid="387" x="92" y="54" width="24" height="24"/>
+  <object id="119" name="emptyslot1" gid="388" x="20" y="54" width="24" height="24"/>
+  <object id="121" name="emptyslot2" gid="389" x="44" y="54" width="24" height="24"/>
+  <object id="123" name="emptyslot3" gid="389" x="68" y="54" width="24" height="24"/>
+  <object id="125" name="emptyslot4" gid="390" x="92" y="54" width="24" height="24"/>
+  <object id="127" name="4slotweapon1" gid="389" x="56" y="54" width="24" height="24">
+   <properties>
+    <property name="animationspeed" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="128" name="3slotweapon1" gid="389" x="44" y="54" width="24" height="24">
+   <properties>
+    <property name="animationspeed" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="129" name="3slotweapon2" gid="389" x="68" y="54" width="24" height="24">
+   <properties>
+    <property name="animationspeed" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="130" name="2slotweapon1" gid="389" x="32" y="54" width="24" height="24">
+   <properties>
+    <property name="animationspeed" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="131" name="2slotweapon2" gid="389" x="56" y="54" width="24" height="24">
+   <properties>
+    <property name="animationspeed" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="132" name="2slotweapon3" gid="389" x="80" y="54" width="24" height="24">
+   <properties>
+    <property name="animationspeed" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="133" name="1slotweapon1" gid="389" x="20" y="54" width="24" height="24">
+   <properties>
+    <property name="animationspeed" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="134" name="1slotweapon2" gid="389" x="44" y="54" width="24" height="24">
+   <properties>
+    <property name="animationspeed" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="135" name="1slotweapon3" gid="389" x="68" y="54" width="24" height="24">
+   <properties>
+    <property name="animationspeed" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="136" name="1slotweapon4" gid="389" x="92" y="54" width="24" height="24">
+   <properties>
+    <property name="animationspeed" type="float" value="0"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup draworder="index" id="13" name="input">
+  <object id="67" name="joystickdirection" x="55" y="243">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+    <property name="linecolor" type="color" value="#ffc0c0c0"/>
+   </properties>
+   <polygon points="0,0 0,-4.5 16,0 0,4.5"/>
+  </object>
+  <object id="60" name="joystick" gid="281" x="48" y="251" width="16" height="16"/>
+  <object id="61" name="attackbutton" gid="417" x="128" y="234" width="14" height="14"/>
+  <object id="145" name="jumpbutton" gid="413" x="144" y="252" width="14" height="14"/>
+  <object id="68" name="attackbuttondown" gid="418" x="128" y="234" width="14" height="14"/>
+  <object id="144" name="jumpbuttondown" gid="414" x="144" y="252" width="14" height="14"/>
+  <object id="62" name="sprintbutton" gid="427" x="144" y="216" width="14" height="14"/>
+  <object id="69" name="sprintbuttondown" gid="428" x="144" y="216" width="14" height="14"/>
+  <object id="63" name="Move" x="80" y="234" width="20" height="18">
+   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">MOVE</text>
+  </object>
+  <object id="64" name="Attack" x="144" y="225" width="64" height="18">
+   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">ATTACK</text>
+  </object>
+  <object id="143" name="Jump" x="160" y="243" width="64" height="18">
+   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">JUMP</text>
+  </object>
+  <object id="65" name="Sprint" x="160" y="207" width="64" height="18">
+   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">SPRINT</text>
+  </object>
+ </objectgroup>
+ <objectgroup draworder="index" id="6" name="pausemenu" class="Gui.Menu" visible="0">
+  <properties>
+   <property name="backaction" value="unpauseGame"/>
+  </properties>
+  <object id="76" template="gui/menu/Panel.tx" x="136" y="45" width="208" height="216"/>
+  <object id="8" name="name" x="192" y="54" width="96" height="18" visible="0">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">PAUSE</text>
+  </object>
+  <object id="72" template="gui/menu/pause/Button.tx" name="Options" type="Gui.Button" x="184" y="121.5">
+   <properties>
+    <property name="action" value="openMenu"/>
+    <property name="guipath" value="options.simple"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Options</text>
+  </object>
+  <object id="116" template="gui/menu/pause/Button.tx" name="Resume" type="Gui.Button" x="184" y="94.5">
+   <properties>
+    <property name="action" value="unpauseGame"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Resume</text>
+  </object>
+  <object id="73" template="gui/menu/pause/Button.tx" name="Restart checkpoint" type="Gui.Button" x="184" y="148.5" width="144" height="18">
+   <properties>
+    <property name="action" value="restartStageCheckpoint"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Restart checkpoint</text>
+  </object>
+  <object id="93" template="gui/menu/pause/Button.tx" name="Restart stage" type="Gui.Button" x="184" y="175.5" width="144" height="18">
+   <properties>
+    <property name="action" value="restartStage"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Restart stage</text>
+  </object>
+  <object id="75" template="gui/menu/pause/Button.tx" name="Quit" type="Gui.Button" x="184" y="202.5" width="144" height="18">
+   <properties>
+    <property name="action" value="returnToTitle"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Quit</text>
+  </object>
+  <object id="86" template="gui/menu/Button_openMenu.tx" name="Debug" type="Gui.Button" x="184" y="229.5">
+   <properties>
+    <property name="guipath" value="gameplay.debugmenu"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Debug</text>
+  </object>
+  <object id="74" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="152" y="103.5"/>
+  <object id="184" template="gui/menu/Title.tx" x="180" y="54">
+   <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center">PAUSE</text>
+  </object>
+ </objectgroup>
+ <objectgroup id="15" name="debugmenu" class="Gui.Menu" visible="0">
+  <properties>
+   <property name="backaction" value="closeMenu"/>
+  </properties>
+  <object id="82" template="gui/menu/Panel.tx" x="112" y="-4.5" width="256" height="279">
+   <properties>
+    <property name="roundcorners" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="85" template="gui/menu/settings/Label.tx" name="Show hitboxes" x="128" y="108" width="176" height="18">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Show hitboxes</text>
+  </object>
+  <object id="147" template="gui/menu/settings/Label.tx" name="Show input" x="128" y="90" width="176" height="18">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Show input</text>
+  </object>
+  <object id="141" template="gui/menu/settings/Label.tx" name="Smooth movement" x="128" y="72" width="176" height="18">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Smooth movement</text>
+  </object>
+  <object id="91" template="gui/menu/settings/Label.tx" name="Game speed" x="128" y="126" width="168" height="18">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Game speed</text>
+  </object>
+  <object id="140" template="gui/menu/settings/Label.tx" name="/60" x="328" y="126" width="24" height="18">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">/60</text>
+  </object>
+  <object id="89" template="gui/menu/settings/Button.tx" name="Refill player" type="Gui.Button" x="128" y="36" width="224" height="18">
+   <properties>
+    <property name="action" value="refillPlayers"/>
+    <property name="presssound" type="file" value="sounds/combat/heal.mp3"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Refill player</text>
+  </object>
+  <object id="171" template="gui/menu/settings/Button.tx" name="Clear enemies" type="Gui.Button" x="128" y="54" width="224" height="18">
+   <properties>
+    <property name="action" value="clearEnemies"/>
+    <property name="presssound" type="file" value="sounds/combat/cut2.mp3"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Clear enemies</text>
+  </object>
+  <object id="149" template="gui/menu/settings/Button.tx" name="Restart at midpoint" type="Gui.Button" x="128" y="144" width="224" height="18">
+   <properties>
+    <property name="action" value="restartStage"/>
+    <property name="checkpoint" value="entryhall"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Restart at midpoint</text>
+  </object>
+  <object id="151" template="gui/menu/settings/Button.tx" name="Restart at boss" type="Gui.Button" x="128" y="162" width="224" height="18">
+   <properties>
+    <property name="action" value="restartStage"/>
+    <property name="checkpoint" value="boss"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Restart at boss</text>
+  </object>
+  <object id="84" template="gui/menu/settings/Slider.tx" name="drawbodies" type="Gui.Slider" x="128" y="108" width="224" height="18">
+   <properties>
+    <property name="configkey" value="drawbodies"/>
+    <property name="label" type="object" value="85"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
+  </object>
+  <object id="146" template="gui/menu/settings/Slider.tx" name="drawinput" type="Gui.Slider" x="128" y="90" width="224" height="18">
+   <properties>
+    <property name="configkey" value="drawinput"/>
+    <property name="label" type="object" value="147"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
+  </object>
+  <object id="142" template="gui/menu/settings/Slider.tx" name="variableupdate" type="Gui.Slider" x="128" y="72" width="224" height="18">
+   <properties>
+    <property name="configkey" value="variableupdate"/>
+    <property name="label" type="object" value="141"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
+  </object>
+  <object id="90" template="gui/menu/settings/Slider.tx" name="fixedupdaterate" type="Gui.Slider" x="128" y="126" width="200" height="18">
+   <properties>
+    <property name="configkey" value="fixedupdaterate"/>
+    <property name="increment" type="float" value="5"/>
+    <property name="label" type="object" value="91"/>
+    <property name="max" type="float" value="100"/>
+    <property name="min" type="float" value="10"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">60</text>
+  </object>
+  <object id="87" template="gui/menu/Button_closeMenu.tx" type="Gui.Button" x="128" y="243"/>
+  <object id="88" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="100" y="63"/>
+  <object id="148" gid="413" x="344" y="45" width="14" height="14"/>
+  <object id="170" gid="413" x="344" y="63" width="14" height="14"/>
+  <object id="150" gid="413" x="344" y="153" width="14" height="14"/>
+  <object id="152" gid="413" x="344" y="171" width="14" height="14"/>
+  <object id="185" template="gui/menu/Title.tx" x="180" y="9">
+   <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center">DEBUG</text>
+  </object>
+ </objectgroup>
+ <objectgroup id="11" name="gameover" class="Gui.Menu" visible="0">
+  <object id="77" template="gui/menu/Panel.tx" x="136" y="90" width="208" height="90"/>
+  <object id="79" template="gui/menu/pause/Button.tx" name="Restart checkpoint" type="Gui.Button" x="184" y="99" width="144" height="18">
+   <properties>
+    <property name="action" value="restartStageCheckpoint"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Restart checkpoint</text>
+  </object>
+  <object id="92" template="gui/menu/pause/Button.tx" name="Restart stage" type="Gui.Button" x="184" y="126" width="144" height="18">
+   <properties>
+    <property name="action" value="restartStage"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Restart stage</text>
+  </object>
+  <object id="80" template="gui/menu/pause/Button.tx" name="Quit" type="Gui.Button" x="184" y="153">
+   <properties>
+    <property name="action" value="returnToTitle"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Quit</text>
+  </object>
+  <object id="81" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="152" y="108"/>
+ </objectgroup>
+ <objectgroup id="26" name="victory" class="Gui.Menu">
+  <object id="192" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="156" y="175.5">
+   <properties>
+    <property name="alignx" type="float" value="0.675"/>
+   </properties>
+  </object>
+  <object id="195" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="36" y="175.5" rotation="180">
+   <properties>
+    <property name="alignx" type="float" value="-0.675"/>
+   </properties>
+  </object>
+  <object id="193" template="gui/menu/mainmenu/Button.tx" name="Quit" x="48" y="198" width="132" height="36">
+   <properties>
+    <property name="action" value="returnToTitle"/>
+   </properties>
+   <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">SAVE &amp; QUIT</text>
+  </object>
+  <object id="194" template="gui/menu/mainmenu/Button.tx" name="Play again" x="32" y="162" width="124" height="36">
+   <properties>
+    <property name="action" value="restartStage"/>
+   </properties>
+   <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">PLAY AGAIN</text>
+  </object>
+ </objectgroup>
+</map>
