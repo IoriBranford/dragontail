@@ -172,8 +172,10 @@ local function victorySweep()
     local px, py = path.x, path.y
     local p1, p2 = #points, 2
     local x, y   = points[p1-1], points[p1]
-    local x2, y2 = points[p2-1] + px, points[p2] + py
-    while rose.x ~= x2 or rose.y ~= y2 do
+    local rx2, ry2 = points[p2-1] + px, points[p2] + py
+
+    rose.x, rose.y = x + px, y + py
+    while rose.x ~= rx2 or rose.y ~= ry2 do
         x, y, p1 = math2.walkpolyline(path.points,
             x, y, p1, -50)
         rose.x = px + x
