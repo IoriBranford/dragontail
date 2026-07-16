@@ -26,6 +26,7 @@ local Dragontail = {
         --stage (optional string)               Name of stage to start
         --test (optional string)                Name of test to start
         --room (optional string)                Name of room to start the stage at
+        --map (optional string)                 Directly specify a map file to run
         --cuecards                              Use title bar as a cue card for video recording
     ]],
     defaultconfig = {
@@ -109,9 +110,23 @@ function Dragontail.load(args)
     local w, h = Dragontail.width, Dragontail.height
 
     love.graphics.setDefaultFilter("nearest", "nearest")
-    local map = args.stage or args.test
+
+    local source = pathlite.normpath(love.filesystem.getSource())
+    local map = args.map
     if map then
-        local source = pathlite.normpath(love.filesystem.getSource())
+        map = string.match(map, source.."/(.+)")
+        if love.filesystem.getInfo(map, "file") then
+            local mapdata = love.filesystem.load(map)()
+            firstphase = mapdata.properties.runphase
+            assert(firstphase,
+                map.." can't be run directly without a runphase")
+        else
+            map = nil
+        end
+    end
+
+    if args.stage or args.test then
+        map = args.stage or args.test
         map = string.match(map, source.."/(.+)") or map
         if not love.filesystem.getInfo(map, "file") then
             map = args.stage and string.format("data/stage_%s.lua", map)
