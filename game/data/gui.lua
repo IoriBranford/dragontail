@@ -2472,7 +2472,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["swipesound"] = "sounds/combat/heavykick1.mp3",
+            ["swipesound"] = "sounds/combat/heavyswingandhit.ogg",
             ["voice"] = "sounds/player/victory2.mp3"
           },
           layers = {
