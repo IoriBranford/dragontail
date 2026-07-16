@@ -446,6 +446,9 @@ function Stage.fixedupdate()
 
     Characters.updateBodies()
     Characters.updateAttackHits()
+    if Config.drawdamage then
+        Characters.spawnDamageNumbers()
+    end
     Characters.updateFloors()
     Characters.updateStates()
     Characters.pruneDisappeared()

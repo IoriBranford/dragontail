@@ -154,7 +154,7 @@ function Characters.spawnArray(characters)
     end
 end
 
-local AttackHits = {}
+local AttackHits = {} ---@type AttackHit[]
 
 function Characters.updateBodies()
     for i = 1, #allcharacters do local character = allcharacters[i]
@@ -189,6 +189,29 @@ function Characters.updateAttackHits()
     for _, hit in ipairs(AttackHits) do
         hit.target:onHitByAttack(hit)
         Attacker.onAttackHit(hit.attacker, hit)
+    end
+end
+
+function Characters.spawnDamageNumbers()
+    for _, hit in ipairs(AttackHits) do
+        local ftr = hit.target
+        local damage = hit.attack.damage
+        Characters.spawn({
+            lifetime = 60,
+            x = ftr.x,
+            y = ftr.y,
+            z = ftr.z + ftr.bodyheight,
+            gravity = .25,
+            velz = 4,
+            alpha = 1,
+            text = tostring(damage),
+            fontfamily = "Unifont",
+            fixedupdate = function(self)
+                if self.velz < -4 then
+                    self:disappear()
+                end
+            end
+        })
     end
 end
 

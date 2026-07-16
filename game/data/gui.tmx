@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="32" nextobjectid="220">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="32" nextobjectid="222">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -398,7 +398,7 @@ to clear lost enemies</text>
    </object>
    <object id="210" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="152" y="108"/>
   </objectgroup>
-  <objectgroup id="15" name="debugmenu" class="Gui.Menu" visible="0">
+  <objectgroup id="15" name="debugmenu" class="Gui.Menu">
    <properties>
     <property name="backaction" value="closeMenu"/>
    </properties>
@@ -410,17 +410,17 @@ to clear lost enemies</text>
    <object id="85" template="gui/menu/settings/Label.tx" name="Show hitboxes" x="128" y="108" width="176" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Show hitboxes</text>
    </object>
+   <object id="221" template="gui/menu/settings/Label.tx" name="Show damage" x="128" y="126" width="176" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Show damage</text>
+   </object>
    <object id="147" template="gui/menu/settings/Label.tx" name="Show input" x="128" y="90" width="176" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Show input</text>
    </object>
    <object id="141" template="gui/menu/settings/Label.tx" name="Smooth movement" x="128" y="72" width="176" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Smooth movement</text>
    </object>
-   <object id="91" template="gui/menu/settings/Label.tx" name="Game speed" x="128" y="126" width="168" height="18">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Game speed</text>
-   </object>
-   <object id="140" template="gui/menu/settings/Label.tx" name="/60" x="328" y="126" width="24" height="18">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">/60</text>
+   <object id="91" template="gui/menu/settings/Label.tx" name="Game speed" x="128" y="144" width="168" height="18">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Game speed (10-100)</text>
    </object>
    <object id="89" template="gui/menu/settings/Button.tx" name="Refill player" type="Gui.Button" x="128" y="36" width="224" height="18">
     <properties>
@@ -436,24 +436,31 @@ to clear lost enemies</text>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Clear enemies</text>
    </object>
-   <object id="149" template="gui/menu/settings/Button.tx" name="Restart at midpoint" type="Gui.Button" x="128" y="144" width="224" height="18">
+   <object id="149" template="gui/menu/settings/Button.tx" name="Go to midpoint" type="Gui.Button" x="128" y="162" width="224" height="18">
     <properties>
      <property name="action" value="restartStage"/>
      <property name="checkpoint" value="entryhall"/>
     </properties>
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Restart at midpoint</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Go to midpoint</text>
    </object>
-   <object id="151" template="gui/menu/settings/Button.tx" name="Restart at boss" type="Gui.Button" x="128" y="162" width="224" height="18">
+   <object id="151" template="gui/menu/settings/Button.tx" name="Go to boss" type="Gui.Button" x="128" y="180" width="224" height="18">
     <properties>
      <property name="action" value="restartStage"/>
      <property name="checkpoint" value="boss"/>
     </properties>
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Restart at boss</text>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Go to boss</text>
    </object>
    <object id="84" template="gui/menu/settings/Slider.tx" name="drawbodies" type="Gui.Slider" x="128" y="108" width="224" height="18">
     <properties>
      <property name="configkey" value="drawbodies"/>
      <property name="label" type="object" value="85"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
+   </object>
+   <object id="220" template="gui/menu/settings/Slider.tx" name="drawdamage" type="Gui.Slider" x="128" y="126" width="224" height="18">
+    <properties>
+     <property name="configkey" value="drawdamage"/>
+     <property name="label" type="object" value="221"/>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
    </object>
@@ -471,7 +478,7 @@ to clear lost enemies</text>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
    </object>
-   <object id="90" template="gui/menu/settings/Slider.tx" name="fixedupdaterate" type="Gui.Slider" x="128" y="126" width="200" height="18">
+   <object id="90" template="gui/menu/settings/Slider.tx" name="fixedupdaterate" type="Gui.Slider" x="128" y="144" width="224" height="18">
     <properties>
      <property name="configkey" value="fixedupdaterate"/>
      <property name="increment" type="float" value="5"/>
@@ -485,8 +492,8 @@ to clear lost enemies</text>
    <object id="88" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="100" y="63"/>
    <object id="148" gid="413" x="344" y="45" width="14" height="14"/>
    <object id="170" gid="413" x="344" y="63" width="14" height="14"/>
-   <object id="150" gid="413" x="344" y="153" width="14" height="14"/>
-   <object id="152" gid="413" x="344" y="171" width="14" height="14"/>
+   <object id="150" gid="413" x="344" y="171" width="14" height="14"/>
+   <object id="152" gid="413" x="344" y="189" width="14" height="14"/>
    <object id="185" template="gui/menu/Title.tx" x="180" y="9">
     <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center">DEBUG</text>
    </object>
@@ -525,7 +532,7 @@ to clear lost enemies</text>
     <image source="sprites/ui/title/illust/10 swipe.png" width="960" height="600"/>
    </imagelayer>
   </group>
-  <objectgroup id="26" name="victory" class="Gui.Menu">
+  <objectgroup id="26" name="victory" class="Gui.Menu" visible="0">
    <object id="192" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="416" y="81">
     <properties>
      <property name="alignx" type="float" value="0.6"/>
@@ -563,7 +570,7 @@ to clear lost enemies</text>
    </object>
   </objectgroup>
  </group>
- <group id="17" name="title">
+ <group id="17" name="title" visible="0">
   <objectgroup id="7" name="title" locked="1">
    <object id="11" name="copyright" x="36" y="234" width="412" height="18">
     <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="right" valign="center">© 2026 Iori Branford</text>

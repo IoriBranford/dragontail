@@ -36,6 +36,7 @@ local Dragontail = {
         upscaleinteger = false,
         linearfilter = "SCREEN",
 
+        drawdamage = false,
         drawinput = false,
         drawbodies = false,
         drawai = false,
