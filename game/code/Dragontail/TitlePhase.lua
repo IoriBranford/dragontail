@@ -36,6 +36,20 @@ local function sceneAnimation()
     if ambientsound and Audio.getMusicVolume() > 0 then
         ambientsound:stop()
     end
+
+    local menu = assert(Gui.title.mainmenus.normal)
+    local menux, menuy = menu.x, menu.y
+    menu:setVisible(true)
+    local shake = 50
+    local dirx, diry = math2.frompolar(100)
+    while shake > 0 do
+        shake = shake - 1
+        local d = math.cos(love.timer.getTime()*100)*shake
+        menu.x = menux + d*dirx
+        menu.y = menuy + d*diry
+        coroutine.yield()
+    end
+    Gui:pushMenu(menu)
     return true
 end
 
@@ -52,6 +66,7 @@ function TitlePhase.loadphase(startwithmainmenu)
     Gui.title:showOnlyNamed("title")
     Gui.options:showOnlyNamed()
     -- Wallpaper.reload()
+    Assets.get("data/music/Block Island Sound loop.ogg")
 
     local wipe = Gui.wipe.diagonalCurtains ---@cast wipe Wipe
     wipe:start("open")
@@ -65,6 +80,7 @@ function TitlePhase.loadphase(startwithmainmenu)
 end
 
 function TitlePhase.pushMainMenu()
+    Gui.title.pressstart:setVisible(false)
     sceneco = coroutine.wrap(sceneAnimation)
     local menuname = "normal"
     if Config.exhibit then
@@ -72,7 +88,6 @@ function TitlePhase.pushMainMenu()
     end
     Gui.title.mainmenus:setVisible(true)
     Gui.title.mainmenus:showOnlyNamed()
-    Gui:pushMenu(Gui.title.mainmenus[menuname])
     Audio.playMusic("data/music/Block Island Sound loop.ogg", nil, true)
 end
 
