@@ -1,0 +1,23 @@
+{
+	"New extension": {
+		"prefix": "tiled",
+		"description": "tiled extension",
+		"scope": "javascript",
+		"body": [
+			"/// <reference types=\"@mapeditor/tiled-api\" />",
+			"",
+			"const ${newAction} = () => {};",
+			"",
+			"tiled.registerAction(\"${newAction}\", ${newAction}).text = \"Action text\";",
+			"",
+			"const menu = undefined;",
+			"const before = undefined;",
+			"",
+			"if (menu)",
+			"  tiled.extendMenu(menu, [",
+			"    { action: \"${newAction}\", before },",
+			"  ]);",
+			""
+		]
+	}
+}
