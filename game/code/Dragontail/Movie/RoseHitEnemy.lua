@@ -26,7 +26,7 @@ local function RoseHitEnemy(scenemap, menu)
     menu:setVisible(true)
     for a = 50, 0, -1 do
         local shx, shy = Movement.impactShake(
-            math.rad(200), a, 100, love.timer.getTime())
+            100, a, 100, love.timer.getTime())
         menu.x = menux + shx
         menu.y = menuy + shy
         coroutine.yield("menushaking")
