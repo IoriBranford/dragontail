@@ -2727,10 +2727,11 @@ return {
               opacity = 1,
               visible = true,
               text = "© 2026 Iori Branford",
-              fontfamily = "Unifont",
+              fontfamily = "Silver",
+              pixelsize = 19,
               wrap = true,
               color = { 255, 255, 255 },
-              halign = "center",
+              halign = "right",
               valign = "center",
               properties = {}
             }

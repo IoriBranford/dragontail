@@ -566,7 +566,7 @@ to clear lost enemies</text>
  <group id="17" name="title">
   <objectgroup id="7" name="title" locked="1">
    <object id="11" name="copyright" x="36" y="234" width="412" height="18">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">© 2026 Iori Branford</text>
+    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="right" valign="center">© 2026 Iori Branford</text>
    </object>
   </objectgroup>
   <objectgroup id="25" name="pressstart" class="Gui.Menu" visible="0">
