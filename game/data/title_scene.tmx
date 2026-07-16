@@ -3,6 +3,9 @@
  <editorsettings>
   <export target="title_scene.lua" format="lua"/>
  </editorsettings>
+ <properties>
+  <property name="runphase" value="Dragontail.MoviePhase"/>
+ </properties>
  <tileset firstgid="1" source="sprites/ui/title.tsx"/>
  <imagelayer id="2" name="bg">
   <image source="sprites/ui/title/illust/bg.png" width="480" height="270"/>

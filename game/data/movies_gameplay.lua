@@ -11,7 +11,9 @@ return {
   tileheight = 18,
   nextlayerid = 6,
   nextobjectid = 2,
-  properties = {},
+  properties = {
+    ["runphase"] = "Dragontail.MoviePhase"
+  },
   tilesets = {},
   layers = {
     {
@@ -27,7 +29,7 @@ return {
       parallaxy = 1,
       tintcolor = { 255, 255, 255 },
       properties = {
-        ["script"] = "Dragontail.Movie.VictorySweep",
+        ["script"] = "Dragontail.Movie.RoseUppercut",
         ["swipesound"] = "sounds/combat/heavyswingandhit.ogg",
         ["voice"] = "sounds/player/victory2.mp3"
       },

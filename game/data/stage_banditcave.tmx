@@ -6,6 +6,7 @@
  </editorsettings>
  <properties>
   <property name="ceilingz" type="float" value="256"/>
+  <property name="runphase" value="Dragontail.GamePhase"/>
  </properties>
  <tileset firstgid="1" source="tilesets/caves/caves.tsx"/>
  <tileset firstgid="2449" source="tilesets/grassland.tsx"/>

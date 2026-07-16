@@ -13,7 +13,8 @@ return {
   nextobjectid = 881,
   backgroundcolor = { 64, 64, 64 },
   properties = {
-    ["ceilingz"] = 256
+    ["ceilingz"] = 256,
+    ["runphase"] = "Dragontail.GamePhase"
   },
   tilesets = {
     {

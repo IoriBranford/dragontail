@@ -11,7 +11,9 @@ return {
   tileheight = 18,
   nextlayerid = 10,
   nextobjectid = 3,
-  properties = {},
+  properties = {
+    ["runphase"] = "Dragontail.MoviePhase"
+  },
   tilesets = {
     {
       name = "title",
