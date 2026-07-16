@@ -87,6 +87,22 @@ function Path:clampPosition1d(pos)
     return pos
 end
 
+function Path:walk(x, y, i, speed, stop)
+    local points = self.points
+    local x0, y0 = self.x, self.y
+
+    i = self:clampIndex(i or 2)
+    x = x or points[i-1]
+    y = y or points[i]
+    x, y = x - x0, y - y0
+    x, y, i = math2.walkpolyline(points, x, y, i, speed, stop)
+    return x0 + x, y0 + y
+end
+
+function Path:isEnd(i)
+    return i >= #self.points-1
+end
+
 function Path:updatePosition1d(i, pos, speed)
     i = Path.clampIndex(self, i)
     pos = pos + speed
@@ -122,16 +138,17 @@ function Path:getPosition2d(i, pos)
     pos = Path.clampPosition1d(self, pos)
     local points = self.points
     local startslengths = self.startslengths
-    local segx1, segy1 = points[i-1], points[i]
-    local segstart, seglength = startslengths[i-1], startslengths[i]
-    if seglength <= 0 then
-        return segx1, segy1
+    local lx1, ly1 = points[i-1], points[i]
+    local ls, ll = startslengths[i-1], startslengths[i]
+    if ll <= 0 then
+        return lx1, ly1
     end
-    local segx2, segy2 = points[i+1] or segx1, points[i+2] or segy1
-    local segdx, segdy = segx2 - segx1, segy2 - segy1
-    local segpos = pos - segstart
-    local dirx, diry = segdx / seglength, segdy / seglength
-    return segx1 + segpos*dirx, segy1 + segpos*diry
+    local lx2, ly2 = points[i+1] or lx1, points[i+2] or ly1
+    local ldx, ldy = lx2 - lx1, ly2 - ly1
+    local lpos = pos - ls
+    local dx, dy = ldx / ll, ldy / ll
+    return self.x + lx1 + lpos*dx,
+        ly1 + lpos*dy
 end
 
 function Path:getTotalLength()
