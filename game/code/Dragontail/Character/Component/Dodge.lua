@@ -13,51 +13,51 @@ local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask
 ---@field dodgesound string?
 local Dodge = {}
 
-function Dodge:getDodgeVector(incoming)
+function Dodge:getDodgeVector(en)
     local dodgewithintime = self.dodgewithintime or 30
-    if not Body.isInTheirWay(self, incoming, dodgewithintime) then
+    if not Body.isInTheirWay(self, en, dodgewithintime) then
         return
     end
-    local oppox, oppoy, oppovelx, oppovely
-    oppox, oppoy = incoming.x, incoming.y
-    oppovelx, oppovely = incoming.velx, incoming.vely
-    local oppovelz = incoming.velz
-    local fromoppoy, fromoppox = self.y - oppoy, self.x - oppox
-    local fromoppoz = incoming.z - self.z
-    local oppospeedsq = math.lensq(oppovelx, oppovely, oppovelz)
-    local dsq = math.lensq(fromoppox, fromoppoy, fromoppoz)
 
-    local dodgespeed = self.dodgespeed
-    local dodgedist = Slide.GetSlideDistance(dodgespeed, self.dodgedecel or 1)
-    local dodgedirx, dodgediry = 1, 0
+    local x, y, centz = self.x, self.y, self.z + self.bodyheight/2
+    local enx, eny = en.x, en.y
+    local envx, envy = en.velx, en.vely
+    local envz = en.velz
+    local fromy, fromx = y - eny, x - enx
+    local fromz = self.z - en.z
+    local enspsq = math.lensq(envx, envy, envz)
+    local dsq = math.lensq(fromx, fromy, fromz)
+
+    local s = self.dodgespeed
+    local d = Slide.GetSlideDistance(s, self.dodgedecel or 1)
+    local dodgex, dodgey = 1, 0
     if dsq > 0 then
-        dodgedirx, dodgediry = math.norm(fromoppox, fromoppoy)
+        dodgex, dodgey = math.norm(fromx, fromy)
     end
-    local dodgespacex, dodgespacey = dodgedirx * dodgedist, dodgediry * dodgedist
-    local raycast = Raycast(self.x, self.y, self.z + self.bodyheight/2,
-        dodgespacex, dodgespacey, 0,
-        1, self.bodyradius/2)
-    raycast.hitslayers = CollisionMask.merge("Object", "Wall", "Camera")
+    dodgex, dodgey = dodgex * d, dodgey * d
+    local rc = Raycast(x, y, centz, dodgex, dodgey, 0, 1, self.bodyradius/2)
+    rc.hitslayers = CollisionMask.merge("Object", "Wall", "Camera")
 
-    if Characters.castRay3(raycast, self) then
+    local dx, dy = rc.dx, rc.dy
+    if Characters.castRay3(rc, self) then
         -- Dodge along wall
-        raycast.dx, raycast.dy = math.rot90(raycast.hitnx, raycast.hitny, 1)
-        raycast.dx = raycast.dx * dodgedist
-        raycast.dy = raycast.dy * dodgedist
-        if math.dot(dodgedirx, dodgediry, raycast.dx, raycast.dy) < 0 then
-            raycast.dx, raycast.dy = -raycast.dx, -raycast.dy
+        dx, dy = math.rot90(rc.hitnx, rc.hitny, 1)
+        dx = dx * d
+        dy = dy * d
+        if math.dot(dodgex, dodgey, dx, dy) < 0 then
+            dx, dy = -dx, -dy
         end
-        if Characters.castRay3(raycast, self) then
-            raycast.dx, raycast.dy = -raycast.dx, -raycast.dy
+        if Characters.castRay3(rc, self) then
+            dx, dy = -dx, -dy
         end
-    elseif oppospeedsq >= dodgespeed*dodgespeed then
-        local rot90dir = math.det(oppovelx, oppovely, fromoppox, fromoppoy)
-        raycast.dx, raycast.dy = math.rot90(raycast.dx, raycast.dy, rot90dir)
-        if Characters.castRay3(raycast, self) then
-            raycast.dx, raycast.dy = -raycast.dx, -raycast.dy
+    elseif enspsq >= s*s then
+        local rot90dir = math.det(envx, envy, fromx, fromy)
+        dx, dy = math.rot90(dx, dy, rot90dir)
+        if Characters.castRay3(rc, self) then
+            dx, dy = -dx, -dy
         end
     end
-    return raycast.dx, raycast.dy
+    return dx, dy
 end
 
 function Dodge:findDodgeAngle()
