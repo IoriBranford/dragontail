@@ -513,7 +513,11 @@ to clear lost enemies</text>
    </object>
    <object id="81" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="152" y="108"/>
   </objectgroup>
-  <group id="31" name="victory_Rose" visible="0" offsetx="-264" offsety="-126">
+  <group id="31" name="victory_Rose" offsetx="-264" offsety="-153">
+   <properties>
+    <property name="swipesound" type="file" value="sounds/combat/heavykick1.mp3"/>
+    <property name="voice" type="file" value="sounds/player/victory2.mp3"/>
+   </properties>
    <imagelayer id="29" name="Rose">
     <image source="sprites/ui/title/illust/09 Rose.png" width="960" height="600"/>
    </imagelayer>
@@ -522,17 +526,17 @@ to clear lost enemies</text>
    </imagelayer>
   </group>
   <objectgroup id="26" name="victory" class="Gui.Menu">
-   <object id="192" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="400" y="81">
+   <object id="192" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="416" y="81">
     <properties>
      <property name="alignx" type="float" value="0.6"/>
     </properties>
    </object>
-   <object id="195" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="280" y="81" rotation="180">
+   <object id="195" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="296" y="81" rotation="180">
     <properties>
      <property name="alignx" type="float" value="-0.6"/>
     </properties>
    </object>
-   <object id="193" template="gui/menu/mainmenu/Button.tx" name="Return title" x="276" y="171" width="156" height="36">
+   <object id="193" template="gui/menu/mainmenu/Button.tx" name="Return title" x="272" y="171" width="156" height="36">
     <properties>
      <property name="action" value="returnToTitle"/>
     </properties>
@@ -545,7 +549,7 @@ to clear lost enemies</text>
     </properties>
     <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">OFFICIAL SITE</text>
    </object>
-   <object id="194" template="gui/menu/mainmenu/Button.tx" name="Play again" x="272" y="67.5" width="128" height="36">
+   <object id="194" template="gui/menu/mainmenu/Button.tx" name="Play again" x="288" y="67.5" width="128" height="36">
     <properties>
      <property name="action" value="restartStage"/>
     </properties>
@@ -554,12 +558,12 @@ to clear lost enemies</text>
    <object id="197" name="Rate &amp; Comment" x="316" y="144" width="87.7188" height="21.7813">
     <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Rate &amp; Comment</text>
    </object>
-   <object id="218" name="Rosepath" x="-296" y="-126">
-    <polyline points="0,0 56,18 100,40.5 132,76.5 152,126 164,184.5 180,310.5"/>
+   <object id="218" name="Rosepath" x="-264" y="-153">
+    <polyline points="0,0 44,36 100,108 148,202.5 180,310.5"/>
    </object>
   </objectgroup>
  </group>
- <group id="17" name="title">
+ <group id="17" name="title" visible="0">
   <objectgroup id="7" name="title" locked="1">
    <object id="11" name="copyright" x="36" y="234" width="412" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">© 2026 Iori Branford</text>

@@ -21,6 +21,8 @@ local pauselocked
 local stagepath = "data/stage_banditcave.lua"
 local playerwon
 
+local victorySweepCo
+
 function GamePhase.loadphase(stagepath_, startroom)
     stagepath = stagepath_ or stagepath
     paused = false
@@ -163,10 +165,11 @@ local function fixedupdateInputDisplay()
     end
 end
 
-local function victorySweep()
+function GamePhase.victorySweep()
     local rose = assert(Gui:get("gameplay.victory_Rose"))
     local path = assert(Gui:get("gameplay.victory.Rosepath"))
     rose:setVisible(true)
+    Audio.play(rose.swipesound)
 
     local points = assert(path.points)
     local px, py = path.x, path.y
@@ -182,17 +185,16 @@ local function victorySweep()
         rose.y = py + y
         coroutine.yield()
     end
-    local swipe = assert(Gui:get("gameplay.victory_Rose.swipe"))
+    local swipe = rose.swipe
     local alpha = 1
     while alpha > 0 do
         alpha = alpha - 1/64
         swipe.tintcolor = Color.asARGBInt(1, 1, 1, alpha)
         coroutine.yield()
     end
+    Audio.play(rose.voice)
     return true
 end
-
-local victorySweepCo
 
 function GamePhase.fixedupdate()
     if not paused then
@@ -217,7 +219,7 @@ function GamePhase.gameOver(won)
     GamePhase.setPauseLocked(true)
     if won then
         Gui:pushMenu(Gui.gameplay.victory)
-        victorySweepCo = coroutine.wrap(victorySweep)
+        victorySweepCo = coroutine.wrap(GamePhase.victorySweep)
     else
         Gui:pushMenu(Gui.gameplay.gameover)
     end
