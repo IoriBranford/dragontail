@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 18,
   nextlayerid = 32,
-  nextobjectid = 219,
+  nextobjectid = 220,
   properties = {},
   tilesets = {
     {
@@ -2589,7 +2589,7 @@ return {
             },
             {
               id = 196,
-              name = "Quit",
+              name = "Site",
               type = "Gui.Button",
               shape = "text",
               x = 288,
@@ -2642,7 +2642,7 @@ return {
             },
             {
               id = 197,
-              name = "",
+              name = "Rate & Comment",
               type = "",
               shape = "text",
               x = 316,
@@ -2938,12 +2938,12 @@ return {
                   shape = "text",
                   x = 48,
                   y = 90,
-                  width = 72,
+                  width = 68,
                   height = 36,
                   rotation = 0,
                   opacity = 1,
                   visible = true,
-                  text = "START",
+                  text = "FIGHT!",
                   fontfamily = "f Firebrand",
                   pixelsize = 32,
                   wrap = true,
@@ -2991,7 +2991,7 @@ return {
                   type = "Gui.Button",
                   shape = "text",
                   x = 72,
-                  y = 198,
+                  y = 207,
                   width = 52,
                   height = 36,
                   rotation = 0,
@@ -3018,7 +3018,7 @@ return {
                   shape = "text",
                   x = 64,
                   y = 162,
-                  width = 108,
+                  width = 100,
                   height = 36,
                   rotation = 0,
                   opacity = 1,
@@ -3037,6 +3037,25 @@ return {
                     ["selectanimation"] = "colorCycle",
                     ["url"] = "https://ioribranford.itch.io/rose-of-dragontail"
                   }
+                },
+                {
+                  id = 219,
+                  name = "Rate & Comment",
+                  type = "",
+                  shape = "text",
+                  x = 72,
+                  y = 189,
+                  width = 88,
+                  height = 18,
+                  rotation = 0,
+                  opacity = 1,
+                  visible = true,
+                  text = "Rate & Comment",
+                  fontfamily = "Silver",
+                  pixelsize = 19,
+                  wrap = true,
+                  color = { 255, 255, 255 },
+                  properties = {}
                 }
               }
             }
