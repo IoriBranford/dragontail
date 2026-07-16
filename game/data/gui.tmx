@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="27" nextobjectid="196">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="27" nextobjectid="198">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -16,7 +16,7 @@
  <tileset firstgid="449" source="tilesets/ui/rose-face2.tsx"/>
  <tileset firstgid="450" source="sprites/ui/firespit.tsx"/>
  <group id="4" name="gameplay">
-  <objectgroup draworder="index" id="2" name="hud">
+  <objectgroup draworder="index" id="2" name="hud" visible="0">
    <object id="4" name="run" type="Gui.Gauge" x="52" y="33" width="100" height="8" visible="0">
     <properties>
      <property name="color" type="color" value="#ff8080ff"/>
@@ -137,7 +137,7 @@ ALL CONTENT SUBJECT TO CHANGE</text>
 to clear lost enemies</text>
    </object>
   </objectgroup>
-  <objectgroup id="16" name="hud_breakgrab">
+  <objectgroup id="16" name="hud_breakgrab" visible="0">
    <object id="99" name="gaugex" x="-24" y="-40" width="48" height="4">
     <properties>
      <property name="color" type="color" value="#00000000"/>
@@ -212,11 +212,11 @@ to clear lost enemies</text>
    <object id="161" gid="439" x="44" y="0" width="16" height="16"/>
    <object id="162" gid="440" x="56" y="0" width="16" height="16"/>
   </objectgroup>
-  <objectgroup draworder="index" id="14" name="hud_go" offsetx="360" offsety="135">
+  <objectgroup draworder="index" id="14" name="hud_go" visible="0" offsetx="360" offsety="135">
    <object id="70" name="arrow" gid="391" x="0" y="0" width="100" height="20"/>
    <object id="71" name="word" gid="400" x="0" y="0" width="48" height="32"/>
   </objectgroup>
-  <objectgroup id="12" name="hud_weaponslots" offsetx="32" offsety="72">
+  <objectgroup id="12" name="hud_weaponslots" visible="0" offsetx="32" offsety="72">
    <object id="43" name="fullslot1" gid="385" x="-12" y="-18" width="24" height="24"/>
    <object id="44" name="fullslot2" gid="387" x="12" y="-18" width="24" height="24"/>
    <object id="39" name="emptyslot1" gid="388" x="-12" y="-18" width="24" height="24"/>
@@ -297,7 +297,7 @@ to clear lost enemies</text>
     </properties>
    </object>
   </objectgroup>
-  <objectgroup draworder="index" id="13" name="input">
+  <objectgroup draworder="index" id="13" name="input" visible="0">
    <object id="67" name="joystickdirection" x="55" y="243">
     <properties>
      <property name="color" type="color" value="#ffffffff"/>
@@ -491,27 +491,37 @@ to clear lost enemies</text>
    <object id="81" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="152" y="108"/>
   </objectgroup>
   <objectgroup id="26" name="victory" class="Gui.Menu">
-   <object id="192" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="156" y="175.5">
+   <object id="192" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="172" y="139.5">
     <properties>
      <property name="alignx" type="float" value="0.6"/>
     </properties>
    </object>
-   <object id="195" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="36" y="175.5" rotation="180">
+   <object id="195" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="52" y="139.5" rotation="180">
     <properties>
      <property name="alignx" type="float" value="-0.6"/>
     </properties>
    </object>
-   <object id="193" template="gui/menu/mainmenu/Button.tx" name="Quit" x="48" y="198" width="132" height="36">
+   <object id="193" template="gui/menu/mainmenu/Button.tx" name="Return title" x="72" y="198" width="156" height="36">
     <properties>
      <property name="action" value="returnToTitle"/>
     </properties>
-    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">SAVE &amp; QUIT</text>
+    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">BACK TO TITLE</text>
    </object>
-   <object id="194" template="gui/menu/mainmenu/Button.tx" name="Play again" x="32" y="162" width="124" height="36">
+   <object id="196" template="gui/menu/mainmenu/Button.tx" name="Quit" x="56" y="162" width="188" height="36">
+    <properties>
+     <property name="action" value="openURL"/>
+     <property name="url" value="https://ioribranford.itch.io/rose-of-dragontail"/>
+    </properties>
+    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">RATE &amp; COMMENT</text>
+   </object>
+   <object id="194" template="gui/menu/mainmenu/Button.tx" name="Play again" x="48" y="126" width="124" height="36">
     <properties>
      <property name="action" value="restartStage"/>
     </properties>
     <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">PLAY AGAIN</text>
+   </object>
+   <object id="197" x="248" y="180" width="87.7188" height="21.7813">
+    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">at itch.io</text>
    </object>
   </objectgroup>
  </group>
