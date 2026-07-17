@@ -39,7 +39,7 @@
    <object id="3" name="Rose of" type="Gui.Button" x="16" y="112.5" width="136" height="49.5">
     <properties>
      <property name="action" value="restartStage"/>
-     <property name="color2" type="color" value="#ffffd8d8"/>
+     <property name="color2" type="color" value="#ffff4141"/>
      <property name="frequency" type="float" value="30"/>
      <property name="selectanimation" value="colorCycle"/>
     </properties>
@@ -48,7 +48,7 @@
    <object id="4" name="Dragontail" type="Gui.Button" x="32" y="162" width="196" height="49.5">
     <properties>
      <property name="action" value="restartStage"/>
-     <property name="color2" type="color" value="#ffffd8d8"/>
+     <property name="color2" type="color" value="#ffff4141"/>
      <property name="frequency" type="float" value="30"/>
      <property name="selectanimation" value="colorCycle"/>
     </properties>
@@ -57,7 +57,7 @@
    <object id="5" name="Rising Tide 4" type="Gui.Button" x="48" y="216" width="144" height="36">
     <properties>
      <property name="action" value="restartStage"/>
-     <property name="color2" type="color" value="#ffffd8d8"/>
+     <property name="color2" type="color" value="#ffff4141"/>
      <property name="frequency" type="float" value="30"/>
      <property name="selectanimation" value="colorCycle"/>
     </properties>
