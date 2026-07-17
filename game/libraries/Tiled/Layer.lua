@@ -22,6 +22,26 @@ function Layer:setVisible(visible)
     self.visible = visible
 end
 
+function Layer:setVisibleDown(visible)
+    self:setVisible(visible)
+    for _, child in ipairs(self) do
+        if self.type == "group"
+        or self.type == "objectgroup" then
+            ---@cast child LayerGroup
+            child:setVisibleDown(visible)
+        else
+            child:setVisible(visible)
+        end
+    end
+end
+
+function Layer:setVisibleUp(visible)
+    self:setVisible(visible)
+    if self.layer then
+        self.layer:setVisibleUp(visible)
+    end
+end
+
 function Layer:getWorldPosition()
     local x, y = self.x, self.y
     local parent = self.layer
