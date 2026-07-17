@@ -25,8 +25,11 @@ end
 function Movie:play(...)
     local thread = self.thread or self:start()
     if coroutine.status(thread) == "dead" then return "dead" end
-    local _, err = coroutine.resume(thread, self, ...)
-    return coroutine.status(thread), err
+    return coroutine.resume(thread, self, ...)
+end
+
+function Movie:ended()
+    return self.thread and coroutine.status(self.thread) == "dead"
 end
 
 return Movie

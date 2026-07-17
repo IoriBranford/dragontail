@@ -31,11 +31,8 @@ end
 function MoviePhase.step()
     if not playingmovie then return end
     time = time + 1
-    local status, err = playingmovie:play()
-    if status == "dead" then
-        playingmovie = nil
-    end
-    if err then
+    local ok, err = playingmovie:play()
+    if not ok then
         movieerror = err
         print(err)
     end
