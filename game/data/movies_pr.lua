@@ -9,8 +9,8 @@ return {
   height = 15,
   tilewidth = 16,
   tileheight = 18,
-  nextlayerid = 17,
-  nextobjectid = 6,
+  nextlayerid = 20,
+  nextobjectid = 13,
   properties = {
     ["runphase"] = "Dragontail.MoviePhase"
   },
@@ -18,116 +18,10 @@ return {
   layers = {
     {
       type = "group",
-      id = 2,
-      name = "RT4end",
-      class = "Tiled.Movie",
-      visible = true,
-      opacity = 1,
-      offsetx = -264,
-      offsety = -153,
-      parallaxx = 1,
-      parallaxy = 1,
-      tintcolor = { 255, 255, 255 },
-      properties = {
-        ["script"] = "Dragontail.Movie.RoseUppercut",
-        ["swipesound"] = "sounds/combat/heavyswingandhit.ogg",
-        ["voice"] = "sounds/player/victory2.mp3"
-      },
-      layers = {
-        {
-          type = "group",
-          id = 6,
-          name = "Rose",
-          class = "",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {},
-          layers = {
-            {
-              type = "imagelayer",
-              image = "sprites/ui/title/illust/09 Rose.png",
-              id = 3,
-              name = "Rose",
-              class = "",
-              visible = true,
-              opacity = 1,
-              offsetx = 0,
-              offsety = 0,
-              parallaxx = 1,
-              parallaxy = 1,
-              tintcolor = { 255, 255, 255 },
-              repeatx = false,
-              repeaty = false,
-              properties = {}
-            },
-            {
-              type = "imagelayer",
-              image = "sprites/ui/title/illust/10 swipe.png",
-              id = 4,
-              name = "swipe",
-              class = "",
-              visible = true,
-              opacity = 1,
-              offsetx = -44,
-              offsety = 9,
-              parallaxx = 1,
-              parallaxy = 1,
-              tintcolor = { 255, 255, 255 },
-              repeatx = false,
-              repeaty = false,
-              properties = {}
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
-          id = 5,
-          name = "direction",
-          class = "",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {},
-          objects = {
-            {
-              id = 1,
-              name = "path",
-              type = "",
-              shape = "polyline",
-              x = 264,
-              y = 153,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              polyline = {
-                { x = 180, y = 310.5 },
-                { x = 148, y = 202.5 },
-                { x = 100, y = 108 },
-                { x = 44, y = 36 },
-                { x = 0, y = 0 }
-              },
-              properties = {}
-            }
-          }
-        }
-      }
-    },
-    {
-      type = "group",
       id = 7,
       name = "RT4start",
       class = "Tiled.Movie",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -383,6 +277,247 @@ return {
                 ["frequency"] = 30,
                 ["selectanimation"] = "colorCycle"
               }
+            }
+          }
+        }
+      }
+    },
+    {
+      type = "group",
+      id = 2,
+      name = "RT4end",
+      class = "Tiled.Movie",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      tintcolor = { 255, 255, 255 },
+      properties = {
+        ["script"] = "Dragontail.Movie.End",
+        ["swipesound"] = "sounds/combat/heavyswingandhit.ogg",
+        ["voice"] = "sounds/player/victory2.mp3"
+      },
+      layers = {
+        {
+          type = "imagelayer",
+          image = "sprites/ui/title/illust/bg.png",
+          id = 18,
+          name = "bg",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          tintcolor = { 255, 255, 255 },
+          repeatx = false,
+          repeaty = false,
+          properties = {}
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 19,
+          name = "misc",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 11,
+              name = "copyright",
+              type = "",
+              shape = "text",
+              x = 36,
+              y = 234,
+              width = 412,
+              height = 18,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              text = "© 2026 Iori Branford",
+              fontfamily = "Silver",
+              pixelsize = 19,
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "right",
+              valign = "center",
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "group",
+          id = 6,
+          name = "Rose",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = -244,
+          offsety = -126,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          layers = {
+            {
+              type = "imagelayer",
+              image = "sprites/ui/title/illust/09 Rose.png",
+              id = 3,
+              name = "Rose",
+              class = "",
+              visible = true,
+              opacity = 1,
+              offsetx = 0,
+              offsety = 0,
+              parallaxx = 1,
+              parallaxy = 1,
+              tintcolor = { 255, 255, 255 },
+              repeatx = false,
+              repeaty = false,
+              properties = {}
+            },
+            {
+              type = "imagelayer",
+              image = "sprites/ui/title/illust/10 swipe.png",
+              id = 4,
+              name = "swipe",
+              class = "",
+              visible = true,
+              opacity = 1,
+              offsetx = -44,
+              offsety = 9,
+              parallaxx = 1,
+              parallaxy = 1,
+              tintcolor = { 255, 255, 255 },
+              repeatx = false,
+              repeaty = false,
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 5,
+          name = "direction",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 1,
+              name = "path",
+              type = "",
+              shape = "polyline",
+              x = 0,
+              y = 0,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polyline = {
+                { x = 180, y = 310.5 },
+                { x = 148, y = 202.5 },
+                { x = 100, y = 108 },
+                { x = 44, y = 36 },
+                { x = 0, y = 0 }
+              },
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 17,
+          name = "callToAction",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 7,
+              name = "PLAY THE DEMO",
+              type = "Gui.Button",
+              shape = "text",
+              x = 276,
+              y = 72,
+              width = 156,
+              height = 108,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              text = "PLAY THE DEMO",
+              fontfamily = "f Firebrand",
+              pixelsize = 48,
+              wrap = true,
+              color = { 224, 33, 33 },
+              halign = "center",
+              valign = "bottom",
+              properties = {
+                ["action"] = "restartStage",
+                ["color2"] = "#ffffd8d8",
+                ["frequency"] = 30,
+                ["selectanimation"] = "colorCycle"
+              }
+            },
+            {
+              id = 12,
+              name = "bar",
+              type = "",
+              shape = "rectangle",
+              x = 272,
+              y = 175.5,
+              width = 160,
+              height = 22.5,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {
+                ["color"] = "#e0641013",
+                ["linecolor"] = "#ffff6161",
+                ["roundcorners"] = 2
+              }
+            },
+            {
+              id = 9,
+              name = "Rate & Comment",
+              type = "",
+              shape = "text",
+              x = 276,
+              y = 180,
+              width = 156,
+              height = 18,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              text = "ioribranford.com/dragontail",
+              fontfamily = "Silver",
+              pixelsize = 19,
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              valign = "center",
+              properties = {}
             }
           }
         }

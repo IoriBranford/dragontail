@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="17" nextobjectid="6">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="20" nextobjectid="13">
  <editorsettings>
   <export target="movies_pr.lua" format="lua"/>
  </editorsettings>
  <properties>
   <property name="runphase" value="Dragontail.MoviePhase"/>
  </properties>
- <group id="7" name="RT4start" class="Tiled.Movie" tintcolor="#ffffff">
+ <group id="7" name="RT4start" class="Tiled.Movie" visible="0" tintcolor="#ffffff">
   <properties>
    <property name="hitsound" type="file" value="sounds/combat/heavyswingandhit.ogg"/>
    <property name="script" value="Dragontail.Movie.Title"/>
@@ -65,13 +65,21 @@
    </object>
   </objectgroup>
  </group>
- <group id="2" name="RT4end" class="Tiled.Movie" tintcolor="#ffffff" offsetx="-264" offsety="-153">
+ <group id="2" name="RT4end" class="Tiled.Movie" tintcolor="#ffffff">
   <properties>
-   <property name="script" value="Dragontail.Movie.RoseUppercut"/>
+   <property name="script" value="Dragontail.Movie.End"/>
    <property name="swipesound" type="file" value="sounds/combat/heavyswingandhit.ogg"/>
    <property name="voice" type="file" value="sounds/player/victory2.mp3"/>
   </properties>
-  <group id="6" name="Rose">
+  <imagelayer id="18" name="bg" tintcolor="#ffffff">
+   <image source="sprites/ui/title/illust/bg.png" width="480" height="270"/>
+  </imagelayer>
+  <objectgroup id="19" name="misc">
+   <object id="11" name="copyright" x="36" y="234" width="412" height="18">
+    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="right" valign="center">© 2026 Iori Branford</text>
+   </object>
+  </objectgroup>
+  <group id="6" name="Rose" offsetx="-244" offsety="-126">
    <imagelayer id="3" name="Rose" tintcolor="#ffffff">
     <image source="sprites/ui/title/illust/09 Rose.png" width="960" height="600"/>
    </imagelayer>
@@ -80,8 +88,23 @@
    </imagelayer>
   </group>
   <objectgroup id="5" name="direction">
-   <object id="1" name="path" x="264" y="153">
+   <object id="1" name="path" x="0" y="0">
     <polyline points="180,310.5 148,202.5 100,108 44,36 0,0"/>
+   </object>
+  </objectgroup>
+  <objectgroup id="17" name="callToAction">
+   <object id="7" name="PLAY THE DEMO" type="Gui.Button" x="276" y="72" width="156" height="108">
+    <properties>
+     <property name="action" value="restartStage"/>
+     <property name="color2" type="color" value="#ffffd8d8"/>
+     <property name="frequency" type="float" value="30"/>
+     <property name="selectanimation" value="colorCycle"/>
+    </properties>
+    <text fontfamily="f Firebrand" pixelsize="48" wrap="1" color="#e02121" halign="center" valign="bottom">PLAY THE DEMO</text>
+   </object>
+   <object id="12" template="gui/menu/Panel.tx" name="bar" x="272" y="175.5" width="160" height="22.5"/>
+   <object id="9" name="Rate &amp; Comment" x="276" y="180" width="156" height="18">
+    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="center" valign="center">ioribranford.com/dragontail</text>
    </object>
   </objectgroup>
  </group>
