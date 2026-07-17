@@ -58,6 +58,7 @@ local function RoseHitEnemy(movie)
                 local word = title[i]
                 local c1 = word.color
                 coFade(word, Color.White, c1, 10)
+                for _=1,10 do yield() end
                 coFade(word, c1, Color.White, 10)
             end
             return true
