@@ -67,10 +67,10 @@ function MoviePhase.startMovie(i)
     moviemap:bindClasses()
     moviemap:indexLayersByName()
     moviemap:indexLayerObjectsByName()
+    Gui:showOnlyNamed()
 
     movie = moviemap.layers[i]
     moviemap.layers:showOnlyNamed(movie.name)
-    movie:start()
     time = 0
     playingmovie = movie
     playingi = i
