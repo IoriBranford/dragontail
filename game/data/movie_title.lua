@@ -36,7 +36,7 @@ return {
       parallaxy = 1,
       properties = {
         ["hitsound"] = "sounds/combat/heavyswingandhit.ogg",
-        ["script"] = "Dragontail.Movie.RoseHitEnemy"
+        ["script"] = "Dragontail.Movie.Title"
       },
       layers = {
         {
@@ -103,51 +103,36 @@ return {
           properties = {},
           layers = {
             {
-              type = "group",
-              id = 13,
+              type = "imagelayer",
+              image = "sprites/ui/title/illust/07 Thug_L.png",
+              id = 3,
               name = "enemy",
               class = "",
               visible = true,
               opacity = 1,
-              offsetx = 0,
-              offsety = 0,
+              offsetx = -20,
+              offsety = -148.5,
               parallaxx = 1,
               parallaxy = 1,
-              properties = {},
-              layers = {
-                {
-                  type = "imagelayer",
-                  image = "sprites/ui/title/illust/07 Thug_L.png",
-                  id = 3,
-                  name = "enemy",
-                  class = "",
-                  visible = true,
-                  opacity = 1,
-                  offsetx = -20,
-                  offsety = -148.5,
-                  parallaxx = 1,
-                  parallaxy = 1,
-                  repeatx = false,
-                  repeaty = false,
-                  properties = {}
-                },
-                {
-                  type = "imagelayer",
-                  image = "sprites/ui/title/illust/08 effects L.png",
-                  id = 5,
-                  name = "hit",
-                  class = "",
-                  visible = true,
-                  opacity = 1,
-                  offsetx = -68,
-                  offsety = -112.5,
-                  parallaxx = 1,
-                  parallaxy = 1,
-                  repeatx = false,
-                  repeaty = false,
-                  properties = {}
-                }
-              }
+              repeatx = false,
+              repeaty = false,
+              properties = {}
+            },
+            {
+              type = "imagelayer",
+              image = "sprites/ui/title/illust/08 effects L.png",
+              id = 5,
+              name = "hit",
+              class = "",
+              visible = true,
+              opacity = 1,
+              offsetx = -68,
+              offsety = -112.5,
+              parallaxx = 1,
+              parallaxy = 1,
+              repeatx = false,
+              repeaty = false,
+              properties = {}
             },
             {
               type = "group",
