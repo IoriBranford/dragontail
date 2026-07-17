@@ -66,6 +66,7 @@ function MoviePhase.startMovie(i)
     playingi = i
     movieerror = nil
     pause = love.keyboard.isDown("lshift")
+        or love.keyboard.isDown("rshift")
 end
 
 function MoviePhase.keypressed(k)
