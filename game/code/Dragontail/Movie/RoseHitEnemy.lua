@@ -1,8 +1,11 @@
 local Movement = require "Component.Movement"
+local Gui      = require "Dragontail.Gui"
+local coRelativePath = require "Dragontail.Movie.coRelativePath"
+local coHitShake     = require "Dragontail.Movie.coHitShake"
 
-local function RoseHitEnemy(scenemap, menu)
-    local layers = scenemap.layers
-    local fg = layers.fg
+local function RoseHitEnemy(movie, moviemap)
+    local layers = moviemap.layers
+    local fg = movie
     local directions = layers.directions
     layers.logo.visible = false
     fg.visible = true
@@ -10,29 +13,11 @@ local function RoseHitEnemy(scenemap, menu)
     ---@cast directions ObjectGroup
 
     local path = assert(directions.path)
-    local pts = assert(path.points)
-    local x, y, i = math2.walkpolyline(pts)
-    local xn, yn = pts[#pts-1], pts[#pts]
-    fg.x, fg.y = math2.vadd(fg.x, fg.y, x - xn, y - yn)
-    repeat
-        coroutine.yield("fgmoving")
-        local x2, y2
-        x2, y2, i = math2.walkpolyline(pts, x, y, i, 50)
-        fg.x, fg.y = math2.vadd(fg.x, fg.y, x2 - x, y2 - y)
-        x, y = x2, y2
-    until x == xn and y == yn
+    coRelativePath(path, fg, 50)
 
-    local menux, menuy = menu.x, menu.y
+    local menu = Gui.title.mainmenus.normal
     menu:setVisible(true)
-    for a = 50, 0, -1 do
-        local shx, shy = Movement.impactShake(
-            100, a, 100, love.timer.getTime())
-        menu.x = menux + shx
-        menu.y = menuy + shy
-        coroutine.yield("menushaking")
-    end
-    menu.x = menux
-    menu.y = menuy
+    coHitShake(menu, 100, 50, 120, 60)
 
     return "done"
 end

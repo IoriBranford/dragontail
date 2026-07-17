@@ -47,7 +47,7 @@ function TitlePhase.pushMainMenu()
     Gui.title.pressstart:setVisible(false)
     local menu = assert(Gui.title.mainmenus.normal)
     playingscene = scenemap.layers.fg
-    playingscene:start(scenemap, menu)
+    playingscene:start(playingscene, scenemap)
     local menuname = "normal"
     if Config.exhibit then
         menuname = "exhibit"
