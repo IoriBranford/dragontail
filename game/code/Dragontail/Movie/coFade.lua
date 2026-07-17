@@ -1,31 +1,31 @@
 local Color = require "Tiled.Color"
 
-local function setColor(obj, a)
-    local color = Color.asARGBInt(1, 1, 1, a)
+local function setColor(obj, r, g, b, a)
+    local color = Color.asARGBInt(r, g, b, a)
     if obj.tintcolor then
         obj.tintcolor = color
     else
         obj.color = color
     end
-    return a
 end
 
-local function coFade(obj, a2, a1, t)
+local function coFade(obj, c2, c1, t)
     t = math.max(1, t)
-    local a = a1
-    if a then
-        setColor(obj, a)
-    else
-        local _
-        _, _, _, a = Color.unpack(obj.tintcolor
-            or obj.color or Color.White)
-    end
-    local da = (a2 - a) / t
+
+    local r1, g1, b1, a1 = Color.unpack(c1
+        or obj.tintcolor or obj.color or Color.White)
+    setColor(obj, r1, g1, b1, a1)
+
+    local r2, g2, b2, a2 = Color.unpack(c2)
     for i = 1, t do
         coroutine.yield()
-        a = setColor(obj, a + da)
+        local time = i/t
+        setColor(obj,
+            math1.lerp(time, r1, r2),
+            math1.lerp(time, g1, g2),
+            math1.lerp(time, b1, b2),
+            math1.lerp(time, a1, a2))
     end
-    a = setColor(obj, a2)
     return true
 end
 
