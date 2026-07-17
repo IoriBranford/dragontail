@@ -63,6 +63,7 @@ function MoviePhase.startMovie(i)
     time = 0
     playingmovie = movie
     playingi = i
+    movieerror = nil
     pause = love.keyboard.isDown("lshift")
 end
 
@@ -83,7 +84,7 @@ function MoviePhase.drawOverlay()
     if not showoverlay then return end
 
     local gw, gh = Dragontail.width, Dragontail.height
-    local font = Assets.getFont("TinyUnicode", 16)
+    local font = Assets.getFont("Unifont", 16)
     ---@cast font love.Font
     local fh = font:getHeight()
 
@@ -104,10 +105,17 @@ function MoviePhase.drawOverlay()
     if pause then
         love.graphics.printf("PAUSE", font, 0, fh, gw, "right")
     end
+end
 
+function MoviePhase.drawError()
+    local gw, gh = Dragontail.width, Dragontail.height
+    local font = Assets.getFont("Silver", 19)
+    ---@cast font love.Font
     if movieerror then
+        love.graphics.setColor(0, 0, 0, .75)
+        love.graphics.rectangle("fill", 8, 8, gw-16, gh-16)
         love.graphics.setColor(1, 0, 0)
-        love.graphics.printf(movieerror, font, gw/4, gh/4, gw/2, "left")
+        love.graphics.printf(movieerror, font, 8, 16, gw-8, "left")
     end
 end
 
@@ -116,6 +124,7 @@ function MoviePhase.draw()
         love.graphics.clear(0, 0, 0)
         moviemap:draw()
         MoviePhase.drawOverlay()
+        MoviePhase.drawError()
     end)
 end
 return MoviePhase
