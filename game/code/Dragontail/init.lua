@@ -114,7 +114,7 @@ function Dragontail.load(args)
     local source = pathlite.normpath(love.filesystem.getSource())
     local map = args.map
     if map then
-        map = string.match(map, source.."/(.+)")
+        map = string.match(map, source.."/(.+)") or map
         if love.filesystem.getInfo(map, "file") then
             local mapdata = love.filesystem.load(map)()
             firstphase = mapdata.properties.runphase
