@@ -23,9 +23,9 @@ local function coFade(obj, a2, a1, t)
     local da = (a2 - a) / t
     for i = 1, t do
         coroutine.yield()
-        a = setColor(a + da)
+        a = setColor(obj, a + da)
     end
-    a = setColor(a2)
+    a = setColor(obj, a2)
     return true
 end
 
