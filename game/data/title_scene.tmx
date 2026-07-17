@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="11" nextobjectid="3">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="10" nextobjectid="3">
  <editorsettings>
   <export target="title_scene.lua" format="lua"/>
  </editorsettings>
@@ -10,6 +10,20 @@
  <imagelayer id="2" name="bg">
   <image source="sprites/ui/title/illust/bg.png" width="480" height="270"/>
  </imagelayer>
+ <group id="7" name="fg" offsetx="-92" offsety="-130.5">
+  <imagelayer id="3" name="enemy" offsetx="68" offsety="-27">
+   <image source="sprites/ui/title/illust/07 Thug_L.png" width="960" height="600"/>
+  </imagelayer>
+  <imagelayer id="5" name="hit" offsetx="20" offsety="9">
+   <image source="sprites/ui/title/illust/08 effects L.png" width="960" height="600"/>
+  </imagelayer>
+  <imagelayer id="4" name="Rose">
+   <image source="sprites/ui/title/illust/09 Rose.png" width="960" height="600"/>
+  </imagelayer>
+  <imagelayer id="6" name="swing" offsetx="-68" offsety="4.5">
+   <image source="sprites/ui/title/illust/10 swipe.png" width="960" height="600"/>
+  </imagelayer>
+ </group>
  <objectgroup id="9" name="logo">
   <object id="2" name="logo" gid="1" x="0" y="0" width="480" height="270">
    <properties>
@@ -17,28 +31,9 @@
    </properties>
   </object>
  </objectgroup>
- <group id="10" name="RoseHitEnemy" class="Tiled.Movie">
-  <properties>
-   <property name="script" value="Dragontail.Movie.RoseHitEnemy"/>
-  </properties>
-  <group id="7" name="fg">
-   <imagelayer id="3" name="enemy" offsetx="-20" offsety="-157.5">
-    <image source="sprites/ui/title/illust/07 Thug_L.png" width="960" height="600"/>
-   </imagelayer>
-   <imagelayer id="5" name="hit" offsetx="-68" offsety="-121.5">
-    <image source="sprites/ui/title/illust/08 effects L.png" width="960" height="600"/>
-   </imagelayer>
-   <imagelayer id="4" name="Rose" offsetx="-88" offsety="-130.5">
-    <image source="sprites/ui/title/illust/09 Rose.png" width="960" height="600"/>
-   </imagelayer>
-   <imagelayer id="6" name="swing" offsetx="-156" offsety="-126">
-    <image source="sprites/ui/title/illust/10 swipe.png" width="960" height="600"/>
-   </imagelayer>
-  </group>
-  <objectgroup id="8" name="directions">
-   <object id="1" name="path" x="520" y="36">
-    <polyline points="0,0 -520,-36"/>
-   </object>
-  </objectgroup>
- </group>
+ <objectgroup id="8" name="directions">
+  <object id="1" name="path" x="520" y="36">
+   <polyline points="0,0 -520,-36"/>
+  </object>
+ </objectgroup>
 </map>

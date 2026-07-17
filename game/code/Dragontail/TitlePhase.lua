@@ -8,11 +8,35 @@ local Tiled  = require "Tiled"
 local Path   = require "Object.Path"
 local Audio  = require "System.Audio"
 local Dragontail = require "Dragontail"
+local coRelativePath = require "Dragontail.Movie.coRelativePath"
+local coHitShake     = require "Dragontail.Movie.coHitShake"
 local TitlePhase = {}
 
 local scenemap ---@type TiledMap
-local movie ---@type Movie
+local sceneco ---@type function
 local ambientsound ---@type love.Source
+
+local function sceneAnimation()
+    local layers = scenemap.layers
+    local fg = layers.fg
+    local directions = layers.directions
+    layers.logo.visible = false
+    assert(directions and directions.type == "objectgroup")
+    ---@cast directions ObjectGroup
+    local path = directions.path
+    ---@cast path Path
+    Path.cast(path)
+    coRelativePath(path, fg, 50)
+    if ambientsound and Audio.getMusicVolume() > 0 then
+        ambientsound:stop()
+    end
+
+    local menu = assert(Gui.title.mainmenus.normal)
+    menu:setVisible(true)
+    coHitShake(menu, 100, 50, 150, 30)
+    Gui:pushMenu(menu)
+    return true
+end
 
 function TitlePhase.loadphase(startwithmainmenu)
     scenemap = Tiled.Map.load("data/title_scene.lua")
@@ -45,17 +69,15 @@ end
 
 function TitlePhase.pushMainMenu()
     Gui.title.pressstart:setVisible(false)
-    movie = scenemap.layers.RoseHitEnemy
-    scenemap.layers.logo.visible = false
+    sceneco = coroutine.wrap(sceneAnimation)
+    sceneco()
+    scenemap.layers:showOnlyNamed("bg", "fg")
     local menuname = "normal"
     if Config.exhibit then
         menuname = "exhibit"
     end
     Gui.title.mainmenus:setVisible(true)
     Gui.title.mainmenus:showOnlyNamed()
-    if ambientsound then
-        ambientsound:stop()
-    end
     Audio.playMusic("data/music/Block Island Sound loop.ogg", nil, true)
 end
 
@@ -64,7 +86,7 @@ function TitlePhase.quitphase()
     Assets.markAllToUncache()
     Gui:clearMenuStack()
     scenemap = nil
-    movie = nil
+    sceneco = nil
     ambientsound = nil
 end
 
@@ -82,15 +104,9 @@ end
 
 function TitlePhase.fixedupdate()
     scenemap:animate(1)
-    if movie then
-        local ok, err = movie:play()
-        if not ok then
-            print(err)
-        end
-        if movie:ended() then
-            local menu = assert(Gui.title.mainmenus.normal)
-            Gui:pushMenu(menu)
-            movie = nil
+    if sceneco then
+        if sceneco() then
+            sceneco = nil
         end
     end
     Gui:fixedupdate()

@@ -9,7 +9,7 @@ return {
   height = 15,
   tilewidth = 16,
   tileheight = 18,
-  nextlayerid = 11,
+  nextlayerid = 10,
   nextobjectid = 3,
   properties = {
     ["runphase"] = "Dragontail.MoviePhase"
@@ -38,6 +38,85 @@ return {
       repeatx = false,
       repeaty = false,
       properties = {}
+    },
+    {
+      type = "group",
+      id = 7,
+      name = "fg",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = -92,
+      offsety = -130.5,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      layers = {
+        {
+          type = "imagelayer",
+          image = "sprites/ui/title/illust/07 Thug_L.png",
+          id = 3,
+          name = "enemy",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 68,
+          offsety = -27,
+          parallaxx = 1,
+          parallaxy = 1,
+          repeatx = false,
+          repeaty = false,
+          properties = {}
+        },
+        {
+          type = "imagelayer",
+          image = "sprites/ui/title/illust/08 effects L.png",
+          id = 5,
+          name = "hit",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 20,
+          offsety = 9,
+          parallaxx = 1,
+          parallaxy = 1,
+          repeatx = false,
+          repeaty = false,
+          properties = {}
+        },
+        {
+          type = "imagelayer",
+          image = "sprites/ui/title/illust/09 Rose.png",
+          id = 4,
+          name = "Rose",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          repeatx = false,
+          repeaty = false,
+          properties = {}
+        },
+        {
+          type = "imagelayer",
+          image = "sprites/ui/title/illust/10 swipe.png",
+          id = 6,
+          name = "swing",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = -68,
+          offsety = 4.5,
+          parallaxx = 1,
+          parallaxy = 1,
+          repeatx = false,
+          repeaty = false,
+          properties = {}
+        }
+      }
     },
     {
       type = "objectgroup",
@@ -73,132 +152,36 @@ return {
       }
     },
     {
-      type = "group",
-      id = 10,
-      name = "RoseHitEnemy",
-      class = "Tiled.Movie",
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 8,
+      name = "directions",
+      class = "",
       visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {
-        ["script"] = "Dragontail.Movie.RoseHitEnemy"
-      },
-      layers = {
+      properties = {},
+      objects = {
         {
-          type = "group",
-          id = 7,
-          name = "fg",
-          class = "",
-          visible = true,
+          id = 1,
+          name = "path",
+          type = "",
+          shape = "polyline",
+          x = 520,
+          y = 36,
+          width = 0,
+          height = 0,
+          rotation = 0,
           opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {},
-          layers = {
-            {
-              type = "imagelayer",
-              image = "sprites/ui/title/illust/07 Thug_L.png",
-              id = 3,
-              name = "enemy",
-              class = "",
-              visible = true,
-              opacity = 1,
-              offsetx = -20,
-              offsety = -157.5,
-              parallaxx = 1,
-              parallaxy = 1,
-              repeatx = false,
-              repeaty = false,
-              properties = {}
-            },
-            {
-              type = "imagelayer",
-              image = "sprites/ui/title/illust/08 effects L.png",
-              id = 5,
-              name = "hit",
-              class = "",
-              visible = true,
-              opacity = 1,
-              offsetx = -68,
-              offsety = -121.5,
-              parallaxx = 1,
-              parallaxy = 1,
-              repeatx = false,
-              repeaty = false,
-              properties = {}
-            },
-            {
-              type = "imagelayer",
-              image = "sprites/ui/title/illust/09 Rose.png",
-              id = 4,
-              name = "Rose",
-              class = "",
-              visible = true,
-              opacity = 1,
-              offsetx = -88,
-              offsety = -130.5,
-              parallaxx = 1,
-              parallaxy = 1,
-              repeatx = false,
-              repeaty = false,
-              properties = {}
-            },
-            {
-              type = "imagelayer",
-              image = "sprites/ui/title/illust/10 swipe.png",
-              id = 6,
-              name = "swing",
-              class = "",
-              visible = true,
-              opacity = 1,
-              offsetx = -156,
-              offsety = -126,
-              parallaxx = 1,
-              parallaxy = 1,
-              repeatx = false,
-              repeaty = false,
-              properties = {}
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
-          id = 8,
-          name = "directions",
-          class = "",
           visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {},
-          objects = {
-            {
-              id = 1,
-              name = "path",
-              type = "",
-              shape = "polyline",
-              x = 520,
-              y = 36,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              polyline = {
-                { x = 0, y = 0 },
-                { x = -520, y = -36 }
-              },
-              properties = {}
-            }
-          }
+          polyline = {
+            { x = 0, y = 0 },
+            { x = -520, y = -36 }
+          },
+          properties = {}
         }
       }
     }
