@@ -37,6 +37,9 @@ function MoviePhase.step()
         movieerror = err
         print(err)
     end
+    if playingmovie:ended() then
+        playingmovie = nil
+    end
 end
 
 local keypressed = {
