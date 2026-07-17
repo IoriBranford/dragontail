@@ -32,12 +32,12 @@ function MoviePhase.step()
     if not playingmovie then return end
     time = time + 1
     local status, err = playingmovie:play()
-    if not status then
+    if status == "dead" then
+        playingmovie = nil
+    end
+    if err then
         movieerror = err
         print(err)
-    end
-    if not status or status == "dead" then
-        playingmovie = nil
     end
 end
 
@@ -59,7 +59,7 @@ function MoviePhase.startMovie(i)
     local movie = moviemap.layers[i]
     if not movie then return end
     ---@cast movie Movie
-    movie:start(movie, moviemap)
+    movie:start()
     time = 0
     playingmovie = movie
     playingi = i
