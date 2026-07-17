@@ -1,6 +1,7 @@
 local Tiled = require "Tiled"
 local Dragontail = require "Dragontail"
 local Assets     = require "Tiled.Assets"
+local Movie      = require "Tiled.Movie"
 local MoviePhase = {}
 
 local moviemap ---@type TiledMap
@@ -54,7 +55,7 @@ local keypressed = {
 
 function MoviePhase.startMovie(i)
     local movie = moviemap.layers[i]
-    if not movie then return end
+    if not movie or not Movie.is(movie) then return end
     ---@cast movie Movie
     movie:start()
     time = 0
@@ -94,10 +95,13 @@ function MoviePhase.drawOverlay()
         local s = string.format("%s %d. %s",
             i == playingi and '>' or ' ',
             i == 10 and 0 or i, movies[i].name)
+        local light = Movie.is(movies[i]) and 1 or .5
+        love.graphics.setColor(0, light, 0)
         love.graphics.printf(s, font, 0, y, gw, "left")
         y = y + fh
     end
 
+    love.graphics.setColor(0, 1, 0)
     love.graphics.printf(tostring(time), font, 0, gh-fh, gw, "left")
     if pause then
         love.graphics.printf("PAUSE", font, 0, fh, gw, "right")
