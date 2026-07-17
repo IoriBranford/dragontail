@@ -1,0 +1,70 @@
+---@class multitask
+---@field [integer] any
+---@field index table<string,integer>
+local multitask = {}
+multitask.__index = multitask
+
+local type = type
+local wrap = coroutine.wrap
+
+setmetatable(multitask, {
+    __call = function()
+        return setmetatable({index = {}}, multitask)
+    end
+})
+
+function multitask:push(func, name)
+    local i = #self+1
+    self[i] = func
+    if name and type(name) ~= "number" then
+        self.index[name] = i
+    end
+end
+
+function multitask:lookup(i)
+    return type(i) ~= "number" and self.index[i] or i
+end
+
+function multitask:run1(i)
+    i = self:lookup(i)
+    if not i then return end
+
+    local task = self[i]
+    if type(task) == "function" then
+        local result = task()
+        if result ~= nil then
+            self[i] = result
+        end
+    end
+end
+
+function multitask:runAll()
+    for i = 1, #self do
+        self:run1(i)
+    end
+end
+
+function multitask:result(i)
+    i = self:lookup(i)
+    if not i then return end
+    local result = self[i]
+    return type(result) ~= "function" and result
+end
+
+function multitask:allDone()
+    for i = 1, #self do
+        if type(self[i]) == "function" then
+            return false
+        end
+    end
+    return true
+end
+
+function multitask:clear()
+    self.index = {}
+    for i = #self, 1, -1 do
+        self[i] = nil
+    end
+end
+
+return multitask
