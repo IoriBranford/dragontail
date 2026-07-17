@@ -5,12 +5,30 @@
     "version": "0.2.0",
     "inputs": [
         {
-            "id": "mapfile",
+            "id": "mapname",
             "type": "promptString",
-            "description": "The map file"
+            "description": "The map file name only, without data/ or .lua"
         }
     ],
     "configurations": [
+        {
+            "name": "Run",
+            "type": "lua-local",
+            "request": "launch",
+            "program": {
+                "command": "love"
+            },
+            "args": ["${workspaceFolder}/game"]
+        },
+        {
+            "name": "Run map...",
+            "type": "lua-local",
+            "request": "launch",
+            "program": {
+                "command": "love"
+            },
+            "args": ["${workspaceFolder}/game", "--map", "data/${input:mapname}.lua"]
+        },
         {
             "name": "Debug",
             "type": "lua-local",
@@ -27,7 +45,7 @@
             "program": {
                 "command": "love"
             },
-            "args": ["${workspaceFolder}/game", "--debug", "--drawstats", "--map", "${input:mapfile}"]
+            "args": ["${workspaceFolder}/game", "--debug", "--drawstats", "--map", "data/${input:mapname}.lua"]
         },
         {
             "name": "Profile",
@@ -39,15 +57,6 @@
             "args": ["${workspaceFolder}/game", "--profile", "--drawstats"]
         },
         {
-            "name": "Release",
-            "type": "lua-local",
-            "request": "launch",
-            "program": {
-                "command": "love"
-            },
-            "args": ["${workspaceFolder}/game"]
-        },
-        {
             "name": "OBS Game Capture",
             "type": "lua-local",
             "request": "launch",
@@ -55,6 +64,15 @@
                 "command": "obs-gamecapture"
             },
             "args": ["love", "${workspaceFolder}/game"]
+        },
+        {
+            "name": "OBS Game Capture map",
+            "type": "lua-local",
+            "request": "launch",
+            "program": {
+                "command": "obs-gamecapture"
+            },
+            "args": ["love", "${workspaceFolder}/game", "--map", "data/${input:mapname}.lua"]
         },
         {
             "name": "With unit tests",
