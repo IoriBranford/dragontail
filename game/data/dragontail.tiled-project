@@ -12,6 +12,16 @@
             "workingDirectory": ""
         },
         {
+            "arguments": "love %projectpath/.. --map %exportfile",
+            "command": "obs-gamecapture",
+            "enabled": false,
+            "name": "Run map for recording",
+            "saveBeforeExecute": true,
+            "shortcut": "F5",
+            "showOutput": true,
+            "workingDirectory": ""
+        },
+        {
             "arguments": "%projectpath/.. --map %exportfile --room %layername",
             "command": "love",
             "enabled": true,
