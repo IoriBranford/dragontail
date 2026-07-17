@@ -14,8 +14,6 @@ local movieerror
 
 function MoviePhase.loadphase(file)
     moviemap = assert(Tiled.Map.load(file))
-    moviemap:indexLayersByName()
-    moviemap:indexLayerObjectsByName()
     moviemap:bindClasses()
 
     Gui:showOnlyNamed()
@@ -62,6 +60,14 @@ function MoviePhase.startMovie(i)
     local movie = moviemap.layers[i]
     if not movie or not Movie.is(movie) then return end
     ---@cast movie Movie
+
+    Assets.maps[moviemap.file] = nil
+    moviemap = assert(Tiled.Map.load(moviemap.file))
+    moviemap:bindClasses()
+    moviemap:indexLayersByName()
+    moviemap:indexLayerObjectsByName()
+
+    movie = moviemap.layers[i]
     movie:start()
     time = 0
     playingmovie = movie
