@@ -36,6 +36,7 @@
             "program": {
                 "command": "love"
             },
+            "scriptRoots": ["${workspaceFolder}/game"],
             "args": ["${workspaceFolder}/game", "--debug", "--drawstats"]
         },
         {
@@ -45,6 +46,7 @@
             "program": {
                 "command": "love"
             },
+            "scriptRoots": ["${workspaceFolder}/game"],
             "args": ["${workspaceFolder}/game", "--debug", "--drawstats", "--map", "data/${input:mapname}.lua"]
         },
         {
@@ -81,6 +83,7 @@
             "program": {
                 "command": "love"
             },
+            "scriptRoots": ["${workspaceFolder}/game"],
             "args": ["${workspaceFolder}/game", "--debug", "--cute"]
         }
     ]
