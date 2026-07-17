@@ -4258,24 +4258,6 @@ return {
               }
             },
             {
-              id = 528,
-              name = "Instruction",
-              type = "",
-              shape = "text",
-              x = 2728,
-              y = 144,
-              width = 136,
-              height = 32,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              text = "Attack the unprotected side!",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
-              properties = {}
-            },
-            {
               id = 529,
               name = "",
               type = "",

@@ -969,9 +969,6 @@ body to grapple</text>
      <property name="itemtype" value="mana-peppers"/>
     </properties>
    </object>
-   <object id="528" name="Instruction" x="2728" y="144" width="136" height="32">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Attack the unprotected side!</text>
-   </object>
    <object id="529" gid="6833" x="2984" y="120" width="16" height="16" visible="0"/>
    <object id="521" name="attackbutton" gid="7244" x="2976" y="160" width="14" height="14" visible="0"/>
    <object id="503" template="mapobjects/bandit/shield.tx" x="2864" y="240">
