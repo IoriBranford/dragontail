@@ -3,6 +3,7 @@ local Dragontail = require "Dragontail"
 local Assets     = require "Tiled.Assets"
 local Movie      = require "Tiled.Movie"
 local Gui        = require "Dragontail.Gui"
+local Color      = require "Tiled.Color"
 local MoviePhase = {}
 
 local moviemap ---@type TiledMap
@@ -135,7 +136,9 @@ end
 
 function MoviePhase.draw()
     Dragontail.draw(function ()
-        love.graphics.clear(0, 0, 0)
+        local bgc = moviemap.backgroundcolor
+        local r,g,b = Color.unpack(bgc or Color.Black)
+        love.graphics.clear(r,g,b)
         moviemap:draw()
         Gui:draw()
         MoviePhase.drawOverlay()
