@@ -1,17 +1,15 @@
 ---@class multitask
----@field [integer] any
+---@field [integer] any function is a task, all others are results
 ---@field index table<string,integer>
 local multitask = {}
 multitask.__index = multitask
 
 local type = type
-local wrap = coroutine.wrap
 
-setmetatable(multitask, {
-    __call = function()
-        return setmetatable({index = {}}, multitask)
-    end
-})
+---@return multitask
+function multitask.new()
+    return setmetatable({index = {}}, multitask)
+end
 
 function multitask:push(func, name)
     local i = #self+1

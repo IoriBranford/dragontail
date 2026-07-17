@@ -65,7 +65,7 @@ local function RoseHitEnemy(movie)
         end
     }
 
-    local mt = multitask()
+    local mt = multitask.new()
     for i = 1, #tasks do
         mt:push(wrap(tasks[i]))
     end
