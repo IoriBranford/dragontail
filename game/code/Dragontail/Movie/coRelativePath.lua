@@ -2,6 +2,10 @@
 ---@param path any
 ---@param obj any
 local function coRelativePath(path, obj, speed)
+    obj.x0 = obj.x0 or obj.x
+    obj.y0 = obj.y0 or obj.y
+    obj.x, obj.y = obj.x0, obj.y0
+
     local pts = assert(path.points)
     local x, y, i = math2.walkpolyline(pts)
     local xn, yn = pts[#pts-1], pts[#pts]
