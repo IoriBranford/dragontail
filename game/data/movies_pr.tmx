@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="17" nextobjectid="6">
+ <editorsettings>
+  <export target="movies_pr.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="runphase" value="Dragontail.MoviePhase"/>
+ </properties>
+ <group id="7" name="RT4start" class="Tiled.Movie" tintcolor="#ffffff">
+  <properties>
+   <property name="hitsound" type="file" value="sounds/combat/heavyswingandhit.ogg"/>
+   <property name="script" value="Dragontail.Movie.Title"/>
+  </properties>
+  <objectgroup id="8" name="directions" tintcolor="#ffffff">
+   <object id="2" name="path" x="520" y="36">
+    <polyline points="0,0 -520,-36"/>
+   </object>
+  </objectgroup>
+  <imagelayer id="9" name="bg" tintcolor="#ffffff">
+   <image source="sprites/ui/title/illust/bg.png" width="480" height="270"/>
+  </imagelayer>
+  <group id="10" name="fg" tintcolor="#ffffff">
+   <imagelayer id="11" name="enemy" tintcolor="#ffffff" offsetx="-20" offsety="-148.5">
+    <image source="sprites/ui/title/illust/07 Thug_L.png" width="960" height="600"/>
+   </imagelayer>
+   <imagelayer id="12" name="hit" tintcolor="#ffffff" offsetx="-68" offsety="-112.5">
+    <image source="sprites/ui/title/illust/08 effects L.png" width="960" height="600"/>
+   </imagelayer>
+   <group id="13" name="Rose" tintcolor="#ffffff">
+    <imagelayer id="14" name="Rose" tintcolor="#ffffff" offsetx="-88" offsety="-121.5">
+     <image source="sprites/ui/title/illust/09 Rose.png" width="960" height="600"/>
+    </imagelayer>
+    <imagelayer id="15" name="swing" tintcolor="#ffffff" offsetx="-156" offsety="-117">
+     <image source="sprites/ui/title/illust/10 swipe.png" width="960" height="600"/>
+    </imagelayer>
+   </group>
+  </group>
+  <objectgroup id="16" name="title" tintcolor="#ffffff">
+   <object id="3" name="Rose of" type="Gui.Button" x="16" y="112.5" width="136" height="49.5">
+    <properties>
+     <property name="action" value="restartStage"/>
+     <property name="color2" type="color" value="#ffffd8d8"/>
+     <property name="frequency" type="float" value="30"/>
+     <property name="selectanimation" value="colorCycle"/>
+    </properties>
+    <text fontfamily="f Firebrand" pixelsize="48" wrap="1" color="#e02121" halign="center" valign="bottom">ROSE of</text>
+   </object>
+   <object id="4" name="Dragontail" type="Gui.Button" x="32" y="162" width="196" height="49.5">
+    <properties>
+     <property name="action" value="restartStage"/>
+     <property name="color2" type="color" value="#ffffd8d8"/>
+     <property name="frequency" type="float" value="30"/>
+     <property name="selectanimation" value="colorCycle"/>
+    </properties>
+    <text fontfamily="f Firebrand" pixelsize="48" wrap="1" color="#e02121" halign="center" valign="bottom">DRAGONTAIL</text>
+   </object>
+   <object id="5" name="Rising Tide 4" type="Gui.Button" x="48" y="216" width="144" height="36">
+    <properties>
+     <property name="action" value="restartStage"/>
+     <property name="color2" type="color" value="#ffffd8d8"/>
+     <property name="frequency" type="float" value="30"/>
+     <property name="selectanimation" value="colorCycle"/>
+    </properties>
+    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">Rising Tide 4</text>
+   </object>
+  </objectgroup>
+ </group>
+ <group id="2" name="RT4end" class="Tiled.Movie" tintcolor="#ffffff" offsetx="-264" offsety="-153">
+  <properties>
+   <property name="script" value="Dragontail.Movie.RoseUppercut"/>
+   <property name="swipesound" type="file" value="sounds/combat/heavyswingandhit.ogg"/>
+   <property name="voice" type="file" value="sounds/player/victory2.mp3"/>
+  </properties>
+  <group id="6" name="Rose">
+   <imagelayer id="3" name="Rose" tintcolor="#ffffff">
+    <image source="sprites/ui/title/illust/09 Rose.png" width="960" height="600"/>
+   </imagelayer>
+   <imagelayer id="4" name="swipe" tintcolor="#ffffff" offsetx="-44" offsety="9">
+    <image source="sprites/ui/title/illust/10 swipe.png" width="960" height="600"/>
+   </imagelayer>
+  </group>
+  <objectgroup id="5" name="direction">
+   <object id="1" name="path" x="264" y="153">
+    <polyline points="180,310.5 148,202.5 100,108 44,36 0,0"/>
+   </object>
+  </objectgroup>
+ </group>
+</map>
