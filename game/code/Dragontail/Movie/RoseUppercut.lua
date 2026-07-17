@@ -8,6 +8,7 @@ local Gui        = require "Dragontail.Gui"
 local function RoseUppercut (movie)
     local rose = (movie.Rose)
     local path = (movie.direction.path)
+    movie.direction.visible = false
     rose:setVisible(true)
     Audio.play(movie.swipesound)
 
@@ -30,8 +31,6 @@ local function RoseUppercut (movie)
     end
 
     Audio.play(movie.voice)
-    Gui:pushMenu(menu)
-    return true
 end
 
 return RoseUppercut
