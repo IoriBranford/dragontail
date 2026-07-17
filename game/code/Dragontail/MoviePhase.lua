@@ -1,13 +1,14 @@
 local Tiled = require "Tiled"
 local Dragontail = require "Dragontail"
-local Movie      = require "Tiled.Movie"
 local Assets     = require "Tiled.Assets"
 local MoviePhase = {}
 
 local moviemap ---@type TiledMap
 local playingmovie ---@type Movie
-local pause
-local instructions
+local playingi
+local time, pause
+local showoverlay
+local movieerror
 
 function MoviePhase.loadphase(file)
     moviemap = assert(Tiled.Map.load(file))
@@ -15,45 +16,54 @@ function MoviePhase.loadphase(file)
     moviemap:indexLayerObjectsByName()
     moviemap:bindClasses()
 
-    local strs = {"Press a number to play"}
-    local movies = moviemap.layers
-
-    for i = 1, math.min(9, #movies) do
-        strs[#strs+1] = string.format("%d. %s", i, movies[i].name)
-    end
-    if movies[10] then
-        strs[#strs+1] = string.format("0. %s", movies[10].name)
-    end
-
-    instructions = table.concat(strs, "\n")
+    showoverlay = true
+    time = 0
+    pause = true
 end
 
 function MoviePhase.fixedupdate()
     moviemap:animate(1)
-    if playingmovie and not pause then
-        local status, err = playingmovie:play()
-        if not status then
-            print(err)
-        end
-        if not status or status == "dead" then
-            playingmovie = nil
-        end
+    if not pause then
+        MoviePhase.step()
+    end
+end
+
+function MoviePhase.step()
+    if not playingmovie then return end
+    time = time + 1
+    local status, err = playingmovie:play()
+    if not status then
+        movieerror = err
+        print(err)
+    end
+    if not status or status == "dead" then
+        playingmovie = nil
     end
 end
 
 local keypressed = {
     space = function ()
         pause = not pause
+    end,
+    f1 = function()
+        showoverlay = not showoverlay
+    end,
+    ['.'] = function()
+        if pause then
+            MoviePhase.step()
+        end
     end
 }
 
 function MoviePhase.startMovie(i)
     local movie = moviemap.layers[i]
-    if not movie or not Movie.is(movie) then return end
+    if not movie then return end
     ---@cast movie Movie
     movie:start(movie, moviemap)
+    time = 0
     playingmovie = movie
-    pause = false
+    playingi = i
+    pause = love.keyboard.isDown("lshift")
 end
 
 function MoviePhase.keypressed(k)
@@ -69,18 +79,43 @@ function MoviePhase.quit()
     moviemap, playingmovie = nil, nil
 end
 
+function MoviePhase.drawOverlay()
+    if not showoverlay then return end
+
+    local gw, gh = Dragontail.width, Dragontail.height
+    local font = Assets.getFont("TinyUnicode", 16)
+    ---@cast font love.Font
+    local fh = font:getHeight()
+
+    love.graphics.setColor(0, 1, 0)
+    love.graphics.printf("Press a number to play", font, 0, 0, gw, "left")
+
+    local movies = moviemap.layers
+    local y = fh
+    for i = 1, math.min(10, #movies) do
+        local s = string.format("%s %d. %s",
+            i == playingi and '>' or ' ',
+            i == 10 and 0 or i, movies[i].name)
+        love.graphics.printf(s, font, 0, y, gw, "left")
+        y = y + fh
+    end
+
+    love.graphics.printf(tostring(time), font, 0, gh-fh, gw, "left")
+    if pause then
+        love.graphics.printf("PAUSE", font, 0, fh, gw, "right")
+    end
+
+    if movieerror then
+        love.graphics.setColor(1, 0, 0)
+        love.graphics.printf(movieerror, font, gw/4, gh/4, gw/2, "left")
+    end
+end
+
 function MoviePhase.draw()
     Dragontail.draw(function ()
+        love.graphics.clear(0, 0, 0)
         moviemap:draw()
-
-        love.graphics.setColor(0, 1, 0)
-        local gw = love.graphics.getWidth()
-        local font = Assets.getFont("TinyUnicode", 16)
-        ---@cast font love.Font
-        love.graphics.printf(instructions, font, 16, 18, gw, "left")
-        if pause then
-            love.graphics.printf("PAUSE", font, gw - 16, 18, gw, "right")
-        end
+        MoviePhase.drawOverlay()
     end)
 end
 return MoviePhase
