@@ -9,7 +9,7 @@ local function RoseUppercut (movie)
     local rose = (movie.Rose)
     local path = (movie.direction.path)
     rose:setVisible(true)
-    Audio.play(rose.swipesound)
+    Audio.play(movie.swipesound)
 
     coRelativePath(path, rose, 30)
     local cowrap = coroutine.wrap
@@ -29,7 +29,7 @@ local function RoseUppercut (movie)
         shake()
     end
 
-    Audio.play(rose.voice)
+    Audio.play(movie.voice)
     Gui:pushMenu(menu)
     return true
 end
