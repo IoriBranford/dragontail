@@ -14,6 +14,7 @@ local ObjectGroup = class(Layer)
 
 function ObjectGroup:_init(map)
     local objects = self.objects
+    if not objects then return end
     for i = 1, #objects do
         local object = objects[i]
         object.layer = self

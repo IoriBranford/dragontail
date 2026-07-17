@@ -25,8 +25,9 @@ local love_graphics_draw = love.graphics.draw
 ---@field shader love.Shader?
 local TileLayer = class(Layer)
 
----@param map TiledMap
+---@param map TiledMap?
 function TileLayer:_init(map)
+    if type(map) ~= "table" or not map.tiledversion then return end
     self.maptiles = map.tiles
     local cellwidth = map.tilewidth
     local cellheight = map.tileheight

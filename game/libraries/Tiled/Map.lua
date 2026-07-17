@@ -104,6 +104,11 @@ function TiledMap:indexLayerObjectsByName()
     self.layers:indexLayerObjectsByName()
 end
 
+function TiledMap:initClasses()
+    class.init_as(self, self.class)
+    self.layers:initClasses()
+end
+
 function TiledMap:bindClasses()
     class.reqcast(self, self.class)
     self.layers:bindClasses()
@@ -145,7 +150,7 @@ Assets.addLoaders {
 
 ---@param mapfile string
 ---@return TiledMap
-function TiledMap.load(mapfile)
+function TiledMap.load(mapfile, options)
     local map = Assets.maps[mapfile]
     if map then
         return map
@@ -257,6 +262,15 @@ function TiledMap.load(mapfile)
     Properties.resolveAssetPaths(map.properties, mapdir)
     Properties.resolveObjectRefs(map.properties, mapobjects)
     Properties.moveUp(map)
+
+    if options then
+        if options.index == "all" then
+            map:indexEverythingByName()
+        end
+        if options.withclasses then
+            map:initClasses()
+        end
+    end
 
     return map
 end

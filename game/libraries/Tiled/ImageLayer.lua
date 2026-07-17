@@ -15,6 +15,7 @@ local ImageLayer = class(Layer)
 
 function ImageLayer:_init(directory)
     local imagefile = self.image
+    if type(imagefile) ~= "string" then return end
     if directory ~= "" then
         imagefile = pathlite.normjoin(directory, imagefile)
     end

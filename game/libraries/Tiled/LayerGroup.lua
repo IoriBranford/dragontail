@@ -60,6 +60,21 @@ function LayerGroup:bindClasses()
     end
 end
 
+function LayerGroup:initClasses()
+    class.init_as(self, self.class)
+    for _, layer in ipairs(self) do
+        if layer.type == "group" then
+            ---@cast layer LayerGroup
+            layer:initClasses()
+        else
+            class.init_as(layer, layer.class)
+            for _, object in ipairs(layer) do
+                class.init_as(object, object.type)
+            end
+        end
+    end
+end
+
 function LayerGroup:animate(dt)
     for _, object in ipairs(self) do
         if object.animate then
