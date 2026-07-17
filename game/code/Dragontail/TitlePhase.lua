@@ -11,7 +11,7 @@ local Dragontail = require "Dragontail"
 local TitlePhase = {}
 
 local scenemap ---@type TiledMap
-local playingscene ---@type MovieScene
+local movie ---@type Movie
 local ambientsound ---@type love.Source
 
 function TitlePhase.loadphase(startwithmainmenu)
@@ -45,9 +45,8 @@ end
 
 function TitlePhase.pushMainMenu()
     Gui.title.pressstart:setVisible(false)
-    local menu = assert(Gui.title.mainmenus.normal)
-    playingscene = scenemap.layers.fg
-    playingscene:start(playingscene, scenemap)
+    movie = scenemap.layers.RoseHitEnemy
+    scenemap.layers.logo.visible = false
     local menuname = "normal"
     if Config.exhibit then
         menuname = "exhibit"
@@ -65,7 +64,7 @@ function TitlePhase.quitphase()
     Assets.markAllToUncache()
     Gui:clearMenuStack()
     scenemap = nil
-    playingscene = nil
+    movie = nil
     ambientsound = nil
 end
 
@@ -83,17 +82,15 @@ end
 
 function TitlePhase.fixedupdate()
     scenemap:animate(1)
-    if playingscene then
-        local menu = assert(Gui.title.mainmenus.normal)
-        local status, err = playingscene:play()
-        if not status then
+    if movie then
+        local ok, err = movie:play()
+        if not ok then
             print(err)
         end
-        if not status or status == "dead" then
-            if Gui.activemenu ~= menu then
-                Gui:pushMenu(menu)
-            end
-            playingscene = nil
+        if movie:ended() then
+            local menu = assert(Gui.title.mainmenus.normal)
+            Gui:pushMenu(menu)
+            movie = nil
         end
     end
     Gui:fixedupdate()
