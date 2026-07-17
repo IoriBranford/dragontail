@@ -9,7 +9,7 @@ return {
   height = 15,
   tilewidth = 16,
   tileheight = 18,
-  nextlayerid = 6,
+  nextlayerid = 7,
   nextobjectid = 2,
   properties = {
     ["runphase"] = "Dragontail.MoviePhase"
@@ -35,9 +35,8 @@ return {
       },
       layers = {
         {
-          type = "imagelayer",
-          image = "sprites/ui/title/illust/09 Rose.png",
-          id = 3,
+          type = "group",
+          id = 6,
           name = "Rose",
           class = "",
           visible = true,
@@ -46,27 +45,43 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          tintcolor = { 255, 255, 255 },
-          repeatx = false,
-          repeaty = false,
-          properties = {}
-        },
-        {
-          type = "imagelayer",
-          image = "sprites/ui/title/illust/10 swipe.png",
-          id = 4,
-          name = "swipe",
-          class = "",
-          visible = true,
-          opacity = 1,
-          offsetx = -44,
-          offsety = 9,
-          parallaxx = 1,
-          parallaxy = 1,
-          tintcolor = { 255, 255, 255 },
-          repeatx = false,
-          repeaty = false,
-          properties = {}
+          properties = {},
+          layers = {
+            {
+              type = "imagelayer",
+              image = "sprites/ui/title/illust/09 Rose.png",
+              id = 3,
+              name = "Rose",
+              class = "",
+              visible = true,
+              opacity = 1,
+              offsetx = 0,
+              offsety = 0,
+              parallaxx = 1,
+              parallaxy = 1,
+              tintcolor = { 255, 255, 255 },
+              repeatx = false,
+              repeaty = false,
+              properties = {}
+            },
+            {
+              type = "imagelayer",
+              image = "sprites/ui/title/illust/10 swipe.png",
+              id = 4,
+              name = "swipe",
+              class = "",
+              visible = true,
+              opacity = 1,
+              offsetx = -44,
+              offsety = 9,
+              parallaxx = 1,
+              parallaxy = 1,
+              tintcolor = { 255, 255, 255 },
+              repeatx = false,
+              repeaty = false,
+              properties = {}
+            }
+          }
         },
         {
           type = "objectgroup",
@@ -84,7 +99,7 @@ return {
           objects = {
             {
               id = 1,
-              name = "Rosepath",
+              name = "path",
               type = "",
               shape = "polyline",
               x = 264,
