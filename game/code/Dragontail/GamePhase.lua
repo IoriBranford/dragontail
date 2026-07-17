@@ -21,7 +21,8 @@ local pauselocked
 local stagepath = "data/stage_banditcave.lua"
 local playerwon
 
-local victorySweepCo
+local moviemap
+local movie ---@type Movie
 
 function GamePhase.loadphase(stagepath_, startroom)
     stagepath = stagepath_ or stagepath
@@ -51,6 +52,11 @@ function GamePhase.loadphase(stagepath_, startroom)
         end
     end)
 
+    moviemap = Tiled.Map.load("data/movies_gameplay.lua")
+    moviemap:indexLayersByName()
+    moviemap:indexLayerObjectsByName()
+    moviemap:bindClasses()
+
     Tiled.Assets.uncacheMarked()
     Tiled.Assets.packTiles()
     Tiled.Assets.batchAllMapsLayers()
@@ -70,6 +76,7 @@ function GamePhase.quitphase()
     Assets.markAllToUncache()
     Database.clear()
     Audio.stop()
+    moviemap, movie = nil, nil
 end
 
 function GamePhase.setPaused(newpaused, withmenu)
@@ -206,9 +213,12 @@ function GamePhase.fixedupdate()
     if not paused then
         Stage.fixedupdate()
     end
-    if victorySweepCo then
-        if victorySweepCo() then
-            victorySweepCo = nil
+    if movie then
+        local ok, err = movie:play()
+        if not ok then print(err) end
+
+        if movie:ended() then
+            Gui:pushMenu(Gui.gameplay.victory)
         end
     end
     fixedupdateInputDisplay()
@@ -224,7 +234,10 @@ function GamePhase.gameOver(won)
     playerwon = won or false
     GamePhase.setPauseLocked(true)
     if won then
-        victorySweepCo = coroutine.wrap(GamePhase.victorySweep)
+        movie = moviemap.layers.victory
+        if not movie then
+            Gui:pushMenu(Gui.gameplay.victory)
+        end
     else
         Gui:pushMenu(Gui.gameplay.gameover)
     end
@@ -246,6 +259,7 @@ end
 function GamePhase.draw(fixedfrac)
     Dragontail.draw(function()
         Stage.draw(paused and 0 or fixedfrac)
+        if movie then moviemap:draw() end
         Gui:draw()
     end, fixedfrac)
 end
