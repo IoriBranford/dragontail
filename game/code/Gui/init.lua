@@ -133,7 +133,7 @@ end
 
 ---@param menu Menu
 function Gui:pushMenu(menu)
-    if not menu then
+    if not menu or menu == self.activemenu then
         return
     end
     for _, m in ipairs(self.menustack) do
