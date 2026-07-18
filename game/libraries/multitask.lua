@@ -21,26 +21,22 @@ function multitask:push(func, name)
     return i
 end
 
-function multitask:lookup(i)
-    return type(i) ~= "number" and self.index[i] or i
-end
-
-function multitask:run1(i)
-    i = self:lookup(i)
+function multitask:run1(i, ...)
+    if type(i) ~= "number" then i = self.index[i] end
     if not i then return end
 
     local task = self[i]
     if type(task) == "function" then
-        local result = task()
+        local result = task(...)
         if result ~= nil then
             self[i] = result
         end
     end
 end
 
-function multitask:runAll()
+function multitask:runAll(...)
     for i = 1, #self do
-        self:run1(i)
+        self:run1(i, ...)
     end
 end
 
