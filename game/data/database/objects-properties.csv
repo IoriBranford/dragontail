@@ -8,8 +8,8 @@ container-barrel,container,15,12,24,Object,Wall,1,true,TRUE,0.5,,,Dragontail.Cha
 container-barrel-infinite,container,15,12,24,Object,Wall,1,true,TRUE,0.5,,closed,Dragontail.Character.Fighter,data/database/objects-states.csv,data/database/objects-attacks.csv,containerIdle,hurt,,containerIdle,container-barrel-infinite,data/sprites/containers/barrelA.jase,4278190080,data/sounds/combat/containerbreak.mp3,,human-thrown
 food-container,container,1,16,16,Object,Wall,1,true,,0.5,,container,Dragontail.Character.Common,data/database/objects-states.csv,data/database/objects-attacks.csv,,containerBreak,,,,data/sprites/containers/food-container.jase,4278190080,data/sounds/combat/containerbreak.mp3,,human-thrown
 forge-fire,,,32,48,Object,,,,,,1.5707963267949,,,data/database/objects-states.csv,data/database/bandits-attacks.csv,staticHazard,,,,,,,,forge-fire,
-spike-small,,,4,1,Object,,,,,,1.5707963267949,,,data/database/objects-states.csv,data/database/objects-attacks.csv,staticHazard,,,,,,,,spike-small,
-spike-medium,,,6,12,Object,,,,,,1.5707963267949,,,data/database/objects-states.csv,data/database/objects-attacks.csv,staticHazard,,,,,,,,spike-medium,
-spike-large,,,12,16,Object,,,,,,1.5707963267949,,,data/database/objects-states.csv,data/database/objects-attacks.csv,staticHazard,,,,,,,,spike-large,
+spike-small,,,4,1,Object,,,,,,1.5707963267949,,Dragontail.Character.Common,data/database/objects-states.csv,data/database/objects-attacks.csv,staticHazard,,,,,,,,spike-small,
+spike-medium,,,6,12,Object,,,,,,1.5707963267949,,Dragontail.Character.Common,data/database/objects-states.csv,data/database/objects-attacks.csv,staticHazard,,,,,,,,spike-medium,
+spike-large,,,12,16,Object,,,,,,1.5707963267949,,Dragontail.Character.Common,data/database/objects-states.csv,data/database/objects-attacks.csv,staticHazard,,,,,,,,spike-large,
 fruit-tree,container,,16,64,Object Wall,,,TRUE,,0,,,Dragontail.Character.Common,data/database/objects-states.csv,data/database/objects-attacks.csv,treeIdle,fruitTreeHurt,,treeIdle,,,4278190080,,,
 pepper-plant,,,,,,Wall,,,,,,ready,Dragontail.Character.Common,data/database/objects-states.csv,data/database/objects-attacks.csv,plantWithFruit,,,,mana-peppers-on-plant,data/sprites/items/pepper-plant.jase,,,,

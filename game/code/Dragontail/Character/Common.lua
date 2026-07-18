@@ -104,7 +104,7 @@ local function updateBlinkOut(t, color)
 end
 
 function Common:blinkOut(t)
-    t = t or 30
+    t = type(t)=="number" and t or 30
     for i = 1, t do
         self.color = updateBlinkOut(i, self.color)
         yield()

@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 83,
-  nextobjectid = 881,
+  nextobjectid = 896,
   backgroundcolor = { 64, 64, 64 },
   properties = {
     ["ceilingz"] = 256,
@@ -559,7 +559,7 @@ return {
         },
         {
           x = 20, y = 24, width = 20, height = 12,
-          data = "eJztjUEKglAURc8FG4nbyZqE29FsELQcLWdtSVxNPP57EB+SpoIHHvwL9/wL2+Hx410IDoI3cBYcBbXgpJTnlf8m4EZyox/uAvSCVtAJrkq59A27cIw6c6MfbiV4CQbBKHh6vviGXThGl7nRD7fxXs7dN4Yvxxj/cHfYFB+hhhvY"
+          data = "eJztjTEKQkEMRN+AVuJ1XG3E67jaCB7nr5ZeSTyNDJvAYvH7Dw6EScK8BJaje1T2K/Xevha8gINgJyiCvfr8nrlnJnNlcO8+wFVwFlTBRX3exA9XslYJJnN1cO+2gqdgEjTBI+Zj/HAla9VgMtcG9+4UuV/d4sc0sFabYf5ikfoCBxkbRw=="
         },
         {
           x = 40, y = 24, width = 20, height = 12,
@@ -5483,7 +5483,7 @@ return {
         },
         {
           type = "objectgroup",
-          draworder = "index",
+          draworder = "topdown",
           id = 22,
           name = "entryhall",
           class = "Room",
@@ -5589,7 +5589,7 @@ return {
               visible = true,
               polyline = {
                 { x = 64, y = 0 },
-                { x = 816, y = 0 }
+                { x = 704, y = 0 }
               },
               properties = {
                 ["shadowcolor"] = "#00000000"
@@ -6042,8 +6042,8 @@ return {
               polygon = {
                 { x = -200, y = 0 },
                 { x = -200, y = 208 },
-                { x = -112, y = 208 },
-                { x = -80, y = 176 },
+                { x = -176, y = 208 },
+                { x = -144, y = 176 },
                 { x = 48, y = 176 },
                 { x = 80, y = 144 },
                 { x = 240, y = 144 },
@@ -6334,6 +6334,24 @@ return {
               }
             },
             {
+              id = 892,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1040,
+              y = 904,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              opacity = 1,
+              gid = 6589,
+              visible = true,
+              properties = {
+                ["itemtype"] = "item-throwing-axe",
+                ["z"] = 32
+              }
+            },
+            {
               id = 300,
               name = "",
               type = "",
@@ -6351,29 +6369,12 @@ return {
               }
             },
             {
-              id = 305,
+              id = 894,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1104,
-              y = 1016,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              opacity = 1,
-              gid = 6589,
-              visible = true,
-              properties = {
-                ["itemtype"] = "food-fish"
-              }
-            },
-            {
-              id = 301,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1176,
-              y = 1016,
+              x = 1016,
+              y = 968,
               width = 32,
               height = 48,
               rotation = 0,
@@ -6389,7 +6390,24 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1064,
+              x = 1056,
+              y = 1016,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              opacity = 1,
+              gid = 6589,
+              visible = true,
+              properties = {
+                ["itemtype"] = "food-fish"
+              }
+            },
+            {
+              id = 893,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1096,
               y = 1024,
               width = 32,
               height = 48,
@@ -6402,12 +6420,12 @@ return {
               }
             },
             {
-              id = 302,
+              id = 891,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1208,
-              y = 976,
+              x = 1040,
+              y = 936,
               width = 32,
               height = 48,
               rotation = 0,
@@ -6416,23 +6434,6 @@ return {
               visible = true,
               properties = {
                 ["itemtype"] = "food-fish"
-              }
-            },
-            {
-              id = 303,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1144,
-              y = 1032,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              opacity = 1,
-              gid = 6589,
-              visible = true,
-              properties = {
-                ["itemtype"] = "item-throwing-axe"
               }
             },
             {
@@ -6710,21 +6711,6 @@ return {
               shape = "rectangle",
               x = 936,
               y = 1048,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              opacity = 1,
-              gid = 7239,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 550,
-              name = "",
-              type = "item-stone",
-              shape = "rectangle",
-              x = 1224,
-              y = 1000,
               width = 16,
               height = 16,
               rotation = 0,
@@ -7906,8 +7892,25 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 1232,
+              x = 1200,
               y = 1056,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 884,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1264,
+              y = 1064,
               width = 64,
               height = 64,
               rotation = 0,
@@ -7923,8 +7926,25 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 1264,
+              x = 1232,
               y = 1120,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 883,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1296,
+              y = 1128,
               width = 64,
               height = 64,
               rotation = 0,
@@ -7940,8 +7960,8 @@ return {
               name = "bandit-muscle",
               type = "bandit-muscle",
               shape = "rectangle",
-              x = 1168,
-              y = 848,
+              x = 1080,
+              y = 832,
               width = 128,
               height = 128,
               rotation = 0,
@@ -7949,17 +7969,104 @@ return {
               gid = 7272,
               visible = true,
               properties = {
+                ["entrypoint"] = { id = 895 },
+                ["initialai"] = "enterAndDropDown",
                 ["propertiestable"] = "database/bandits-properties.csv",
                 ["z"] = 64
               }
             },
             {
-              id = 554,
-              name = "entrypoint",
+              id = 881,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 1168,
+              y = 1136,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 882,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 1144,
+              y = 1072,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 885,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 888,
+              y = 1216,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 887,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 992,
+              y = 1208,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 886,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 768,
+              y = 1216,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 895,
+              name = "",
               type = "",
               shape = "point",
-              x = 1072,
-              y = 944,
+              x = 1080,
+              y = 952,
               width = 0,
               height = 0,
               rotation = 0,
@@ -8046,7 +8153,7 @@ return {
               opacity = 1,
               visible = true,
               polyline = {
-                { x = 16, y = 0 },
+                { x = -96, y = 0 },
                 { x = 288, y = 0 }
               },
               properties = {}
@@ -8235,6 +8342,141 @@ return {
                 ["extrudeY"] = -256,
                 ["linecolor"] = "#80ffffff"
               }
+            },
+            {
+              id = 888,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1160,
+              y = 928,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              opacity = 1,
+              gid = 6589,
+              visible = true,
+              properties = {
+                ["itemtype"] = "item-throwing-axe"
+              }
+            },
+            {
+              id = 889,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1160,
+              y = 896,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              opacity = 1,
+              gid = 6589,
+              visible = true,
+              properties = {
+                ["itemtype"] = "item-throwing-axe",
+                ["z"] = 32
+              }
+            },
+            {
+              id = 305,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1144,
+              y = 1024,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              opacity = 1,
+              gid = 6589,
+              visible = true,
+              properties = {
+                ["itemtype"] = "food-fish"
+              }
+            },
+            {
+              id = 301,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1176,
+              y = 1016,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              opacity = 1,
+              gid = 6589,
+              visible = true,
+              properties = {
+                ["itemtype"] = "mana-peppers"
+              }
+            },
+            {
+              id = 302,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1208,
+              y = 976,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              opacity = 1,
+              gid = 6589,
+              visible = true,
+              properties = {
+                ["itemtype"] = "food-fish"
+              }
+            },
+            {
+              id = 890,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1256,
+              y = 968,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              opacity = 1,
+              gid = 6589,
+              visible = true,
+              properties = {
+                ["itemtype"] = "food-fish"
+              }
+            },
+            {
+              id = 303,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1160,
+              y = 984,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              opacity = 1,
+              gid = 6589,
+              visible = true,
+              properties = {
+                ["itemtype"] = "item-throwing-axe"
+              }
+            },
+            {
+              id = 550,
+              name = "",
+              type = "item-stone",
+              shape = "rectangle",
+              x = 1224,
+              y = 1000,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              opacity = 1,
+              gid = 7239,
+              visible = true,
+              properties = {}
             }
           }
         },

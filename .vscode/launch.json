@@ -8,6 +8,11 @@
             "id": "mapname",
             "type": "promptString",
             "description": "The map file name only, without data/ or .lua"
+        },
+        {
+            "id": "roomname",
+            "type": "promptString",
+            "description": "The room in the map"
         }
     ],
     "configurations": [
@@ -48,6 +53,16 @@
             },
             "scriptRoots": ["${workspaceFolder}/game"],
             "args": ["${workspaceFolder}/game", "--debug", "--drawstats", "--map", "data/${input:mapname}.lua"]
+        },
+        {
+            "name": "Debug room...",
+            "type": "lua-local",
+            "request": "launch",
+            "program": {
+                "command": "love"
+            },
+            "scriptRoots": ["${workspaceFolder}/game"],
+            "args": ["${workspaceFolder}/game", "--debug", "--drawstats", "--map", "data/${input:mapname}.lua", "--room", "${input:roomname}"]
         },
         {
             "name": "Profile",
