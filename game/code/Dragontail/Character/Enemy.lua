@@ -37,6 +37,7 @@ local floor = math.floor
 local mid = math.mid
 
 local yield = coroutine.yield
+local wrap = coroutine.wrap
 
 local lm_random = love.math.random
 
@@ -330,22 +331,34 @@ function Enemy:duringAttackSwing(target)
 end
 
 function Enemy:enterAndDropDown()
-    if self.entrypoint then
-        if self:walkTo(self.entrypoint) then
-            self.entrypoint = nil
-        end
-    end
-    self.gravity = max(self.gravity or 0.25, 0.25)
-    repeat
+    local walk = wrap(function ()
+        self:walkToEntryPoint()
+        return true
+    end)
+
+    while self.velz < 0 do
         yield()
-    until self.z == self.floorz
-    Audio.play(self.jumplandsound)
-    self:changeAnimation("FallRiseFromKnees", 1, 0)
+    end
+    repeat
+        if self.velz < 0 then
+            return "dropDown"
+        end
+        yield()
+    until walk()
+    return self.recoverai or "stand"
+end
+
+function Enemy:checkLanded()
+    self:decelerateXYto0()
+    if self.z == self.floorz and self.velz == 0 then
+        return "land"
+    end
+end
+
+function Enemy:land()
     local dust = Character("spark-land-on-feet-dust",
         self.x, self.y + 1, self.z)
     Characters.spawn(dust)
-    coroutine.wait(9)
-    return "stand", 3
 end
 
 function Enemy:watchForOpponent()
