@@ -10,6 +10,7 @@ local co_resume = coroutine.resume
 local co_status = coroutine.status
 
 ---@class State
+---@field stateenterfunction string?
 ---@field statefunction string?
 ---@field statecoroutine string?
 ---@field statebehavior string?
@@ -205,8 +206,14 @@ function StateMachine.start(self, statename, a,b,c,d,e,f,g)
         elseif type(statecoroutine) == "function" then
             self.statethread = co_create(statecoroutine)
             StateMachine.run(self, a,b,c,d,e,f,g)
-        elseif type(statefunction) == "function" then
-            self.statefunction = statefunction
+        else
+            local enter = self[evalStateVar(self, state, "stateenterfunction")]
+            if type(enter) == "function" then
+                enter(self)
+            end
+            if type(statefunction) == "function" then
+                self.statefunction = statefunction
+            end
         end
     else
         print("W: no state ", statename)
