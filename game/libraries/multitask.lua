@@ -14,9 +14,11 @@ end
 function multitask:push(func, name)
     local i = #self+1
     self[i] = func
-    if name and type(name) ~= "number" then
+    if name and type(name) == "string" then
+        self.index[i] = name
         self.index[name] = i
     end
+    return i
 end
 
 function multitask:lookup(i)
@@ -42,11 +44,25 @@ function multitask:runAll()
     end
 end
 
-function multitask:result(i)
-    i = self:lookup(i)
+function multitask:peek(i)
+    if type(i) ~= "number" then i = self.index[i] end
     if not i then return end
     local result = self[i]
     return type(result) ~= "function" and result
+end
+
+function multitask:take(i)
+    if type(i) ~= "number" then i = self.index[i] end
+    if not i then return end
+    local result = self[i]
+    if type(result) == "function" then return end
+    self[i] = nil
+    local name = self.index[i]
+    if name then
+        self.index[name] = nil
+        self.index[i] = nil
+    end
+    return result
 end
 
 function multitask:allDone()
