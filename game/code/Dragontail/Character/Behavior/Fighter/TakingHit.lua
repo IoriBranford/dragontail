@@ -25,7 +25,7 @@ function TakingHit:start(hit)
     fighter.hurtcolorcycle = attack.hurtcolorcycle
     fighter:makeImpactSpark(attacker, attack.hitspark)
     fighter.health = fighter.health - (attack.damage or 0)
-    fighter.invulntime = attack.mercyinvuln
+    fighter.invulntime = fighter.team == "players" and attack.mercyinvuln or 0
     fighter.velx, fighter.vely = 0, 0
     fighter:stopAttack() ; fighter:unassignSelfAsAttacker()
     Guard.stopGuarding(fighter)
