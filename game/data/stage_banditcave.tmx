@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="88" nextobjectid="940">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="90" nextobjectid="940">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -928,7 +928,7 @@ body to grapple</text>
   </objectgroup>
   <objectgroup draworder="index" id="15" name="meetshields" class="Room">
    <properties>
-    <property name="donewhenenemiesleft" type="int" value="3"/>
+    <property name="donewhenenemiesleft" type="int" value="4"/>
    </properties>
    <object id="65" template="mapobjects/OutwardBoundary.tx" x="2880" y="384" visible="1">
     <properties>
@@ -973,19 +973,19 @@ body to grapple</text>
    </object>
    <object id="529" gid="6833" x="2984" y="120" width="16" height="16" visible="0"/>
    <object id="521" name="attackbutton" gid="7244" x="2976" y="160" width="14" height="14" visible="0"/>
-   <object id="503" template="mapobjects/bandit/shield.tx" x="2864" y="240">
+   <object id="503" template="mapobjects/bandit/shield.tx" x="2896" y="240">
     <properties>
      <property name="facedegrees" type="float" value="180"/>
      <property name="initialai" value="guardForever"/>
     </properties>
    </object>
-   <object id="812" template="mapobjects/bandit/shield.tx" x="2912" y="304">
+   <object id="812" template="mapobjects/bandit/shield.tx" x="2944" y="304">
     <properties>
      <property name="facedegrees" type="float" value="180"/>
      <property name="initialai" value="guardForever"/>
     </properties>
    </object>
-   <object id="308" template="mapobjects/bandit/shield.tx" x="2888" y="272">
+   <object id="308" template="mapobjects/bandit/shield.tx" x="2920" y="272">
     <properties>
      <property name="facedegrees" type="float" value="180"/>
      <property name="initialai" value="guardForever"/>
@@ -1004,13 +1004,61 @@ body to grapple</text>
     </properties>
    </object>
   </objectgroup>
-  <objectgroup id="56" name="+spearsshields" class="Room">
+  <objectgroup id="88" name="meetshields2" class="Room">
    <properties>
-    <property name="donewhenenemiesleft" type="int" value="7"/>
+    <property name="donewhenenemiesleft" type="int" value="5"/>
    </properties>
-   <object id="307" template="mapobjects/bandit/shield.tx" x="2544" y="312"/>
-   <object id="561" template="mapobjects/bandit/spear.tx" x="2240" y="248"/>
-   <object id="813" template="mapobjects/bandit/spear.tx" x="2232" y="352"/>
+   <object id="827" template="mapobjects/bandit/sling.tx" x="2960" y="72">
+    <properties>
+     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="entrypoint" type="object" value="829"/>
+     <property name="exitpoint" type="object" value="831"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
+     <property name="itemtype" value="food-fish"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
+     <property name="z" type="float" value="64"/>
+    </properties>
+   </object>
+   <object id="829" name="entrypoint" x="2952" y="160">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="831" name="exitpoint" x="2960" y="40">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="833" template="mapobjects/bandit/sling.tx" x="3056" y="184">
+    <properties>
+     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="entrypoint" type="object" value="835"/>
+     <property name="exitpoint" type="object" value="837"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
+     <property name="itemtype" value="food-fish"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
+     <property name="z" type="float" value="64"/>
+    </properties>
+   </object>
+   <object id="835" name="entrypoint" x="2976" y="184">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="837" name="exitpoint" x="3128" y="192">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
+   </object>
+  </objectgroup>
+  <objectgroup id="56" name="meetshields3" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="6"/>
+   </properties>
    <object id="562" template="mapobjects/bandit/shield.tx" x="2544" y="272"/>
    <object id="563" template="mapobjects/bandit/shield.tx" x="2544" y="344"/>
    <object id="815" template="mapobjects/bandit/knife.tx" x="2376" y="256"/>
@@ -1018,10 +1066,122 @@ body to grapple</text>
    <object id="817" template="mapobjects/bandit/knife.tx" x="2384" y="320"/>
    <object id="818" template="mapobjects/bandit/knife.tx" x="2408" y="360"/>
   </objectgroup>
-  <objectgroup id="29" name="+shooters" class="Room">
+  <objectgroup id="74" name="meetshields4" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="5"/>
+   </properties>
+   <object id="826" template="mapobjects/bandit/bow.tx" x="2864" y="88">
+    <properties>
+     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="entrypoint" type="object" value="828"/>
+     <property name="exitpoint" type="object" value="830"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
+     <property name="itemtype" value="food-fish"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
+     <property name="z" type="float" value="64"/>
+    </properties>
+   </object>
+   <object id="828" name="entrypoint" x="2912" y="152">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="830" name="exitpoint" x="2864" y="56">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="832" template="mapobjects/bandit/bow.tx" x="3056" y="240">
+    <properties>
+     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="entrypoint" type="object" value="834"/>
+     <property name="exitpoint" type="object" value="836"/>
+     <property name="initialai" value="enterAndAttackUntilEmpty"/>
+     <property name="itemtype" value="food-fish"/>
+     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
+     <property name="z" type="float" value="64"/>
+    </properties>
+   </object>
+   <object id="834" name="entrypoint" x="2992" y="232">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="836" name="exitpoint" x="3128" y="240">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="838" name="Instruction" x="2984" y="144" width="144" height="32" visible="0">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Move into an enemy or barrel to grab</text>
+   </object>
+   <object id="839" gid="6838" x="2960" y="168" width="16" height="16" visible="0"/>
+   <object id="840" gid="6889" x="3008" y="352" width="16" height="16" visible="0">
+    <properties>
+     <property name="drawz" type="float" value="2"/>
+    </properties>
+   </object>
+   <object id="841" name="Instruction" x="2944" y="320" width="224" height="32" visible="0">
+    <properties>
+     <property name="drawz" type="float" value="2"/>
+    </properties>
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Then hold    toward the door
+and tap    to throw</text>
+   </object>
+   <object id="842" gid="6909" x="2936" y="352" width="16" height="16" visible="0">
+    <properties>
+     <property name="drawz" type="float" value="2"/>
+    </properties>
+   </object>
+   <object id="843" gid="7135" x="2960" y="352" width="16" height="16" visible="0"/>
+   <object id="844" gid="7010" x="3008" y="152" width="16" height="16" visible="0"/>
+   <object id="845" gid="7011" x="3024" y="152" width="16" height="16" visible="0"/>
+   <object id="846" gid="7012" x="3040" y="152" width="16" height="16" visible="0"/>
+   <object id="847" gid="7013" x="3056" y="152" width="16" height="16" visible="0"/>
+   <object id="848" gid="6834" x="3024" y="336" width="16" height="16" visible="0">
+    <properties>
+     <property name="drawz" type="float" value="2"/>
+    </properties>
+   </object>
+  </objectgroup>
+  <objectgroup id="89" name="meetshields5" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="1"/>
    </properties>
+   <object id="307" template="mapobjects/bandit/shield.tx" x="2544" y="312"/>
+   <object id="561" template="mapobjects/bandit/spear.tx" x="2504" y="256"/>
+   <object id="813" template="mapobjects/bandit/spear.tx" x="2496" y="360"/>
+  </objectgroup>
+  <objectgroup id="54" name="unlockdoor" class="Room">
+   <properties>
+    <property name="exitdoor" type="object" value="235"/>
+    <property name="sequence" value="unlockDoorToNextArea"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="76" name="meetmuscle" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="1"/>
+   </properties>
+   <object id="704" template="mapobjects/bandit/muscle.tx" x="2928" y="240">
+    <properties>
+     <property name="facedegrees" type="float" value="180"/>
+     <property name="holdstrength" type="int" value="180"/>
+     <property name="initialai" value="muscle-grab2"/>
+    </properties>
+   </object>
+   <object id="825" template="mapobjects/bandit/muscle.tx" x="2960" y="272">
+    <properties>
+     <property name="facedegrees" type="float" value="180"/>
+     <property name="holdstrength" type="int" value="180"/>
+     <property name="initialai" value="muscle-grab2"/>
+    </properties>
+   </object>
+  </objectgroup>
+  <objectgroup id="29" name="meetmuscle2" class="Room">
    <object id="254" template="mapobjects/bandit/sling.tx" x="2864" y="88">
     <properties>
      <property name="defaultattack" value="sling-shot-until-empty"/>
@@ -1056,7 +1216,7 @@ body to grapple</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="819" template="mapobjects/bandit/sling.tx" x="3056" y="160">
+   <object id="819" template="mapobjects/bandit/bow.tx" x="3056" y="160">
     <properties>
      <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="821"/>
@@ -1118,156 +1278,6 @@ and tap    to throw</text>
    <object id="461" gid="7012" x="3040" y="152" width="16" height="16" visible="0"/>
    <object id="462" gid="7013" x="3056" y="152" width="16" height="16" visible="0"/>
    <object id="466" gid="6834" x="3024" y="336" width="16" height="16" visible="0">
-    <properties>
-     <property name="drawz" type="float" value="2"/>
-    </properties>
-   </object>
-  </objectgroup>
-  <objectgroup id="54" name="unlockdoor" class="Room">
-   <properties>
-    <property name="exitdoor" type="object" value="235"/>
-    <property name="sequence" value="unlockDoorToNextArea"/>
-   </properties>
-  </objectgroup>
-  <objectgroup id="76" name="meetmuscle" class="Room">
-   <properties>
-    <property name="donewhenenemiesleft" type="int" value="1"/>
-   </properties>
-   <object id="704" template="mapobjects/bandit/muscle.tx" x="2928" y="240">
-    <properties>
-     <property name="facedegrees" type="float" value="180"/>
-     <property name="holdstrength" type="int" value="180"/>
-     <property name="initialai" value="muscle-grab2"/>
-    </properties>
-   </object>
-   <object id="825" template="mapobjects/bandit/muscle.tx" x="2960" y="272">
-    <properties>
-     <property name="facedegrees" type="float" value="180"/>
-     <property name="holdstrength" type="int" value="180"/>
-     <property name="initialai" value="muscle-grab2"/>
-    </properties>
-   </object>
-  </objectgroup>
-  <objectgroup id="74" name="+shooters" class="Room">
-   <object id="826" template="mapobjects/bandit/sling.tx" x="2864" y="88">
-    <properties>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
-     <property name="entrypoint" type="object" value="828"/>
-     <property name="exitpoint" type="object" value="830"/>
-     <property name="initialai" value="enterAndAttackUntilEmpty"/>
-     <property name="itemtype" value="food-fish"/>
-     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
-    </properties>
-   </object>
-   <object id="827" template="mapobjects/bandit/sling.tx" x="2960" y="72">
-    <properties>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
-     <property name="entrypoint" type="object" value="829"/>
-     <property name="exitpoint" type="object" value="831"/>
-     <property name="initialai" value="enterAndAttackUntilEmpty"/>
-     <property name="itemtype" value="food-fish"/>
-     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
-    </properties>
-   </object>
-   <object id="828" name="entrypoint" x="2912" y="152">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-    <point/>
-   </object>
-   <object id="829" name="entrypoint" x="2952" y="160">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-    <point/>
-   </object>
-   <object id="830" name="exitpoint" x="2864" y="56">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-    <point/>
-   </object>
-   <object id="831" name="exitpoint" x="2960" y="40">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-    <point/>
-   </object>
-   <object id="832" template="mapobjects/bandit/sling.tx" x="3056" y="240">
-    <properties>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
-     <property name="entrypoint" type="object" value="834"/>
-     <property name="exitpoint" type="object" value="836"/>
-     <property name="initialai" value="enterAndAttackUntilEmpty"/>
-     <property name="itemtype" value="food-fish"/>
-     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
-    </properties>
-   </object>
-   <object id="833" template="mapobjects/bandit/sling.tx" x="3056" y="184">
-    <properties>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
-     <property name="entrypoint" type="object" value="835"/>
-     <property name="exitpoint" type="object" value="837"/>
-     <property name="initialai" value="enterAndAttackUntilEmpty"/>
-     <property name="itemtype" value="food-fish"/>
-     <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
-    </properties>
-   </object>
-   <object id="834" name="entrypoint" x="2992" y="232">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-    <point/>
-   </object>
-   <object id="835" name="entrypoint" x="2976" y="184">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-    <point/>
-   </object>
-   <object id="836" name="exitpoint" x="3128" y="240">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-    <point/>
-   </object>
-   <object id="837" name="exitpoint" x="3128" y="192">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-    <point/>
-   </object>
-   <object id="838" name="Instruction" x="2984" y="144" width="144" height="32" visible="0">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Move into an enemy or barrel to grab</text>
-   </object>
-   <object id="839" gid="6838" x="2960" y="168" width="16" height="16" visible="0"/>
-   <object id="840" gid="6889" x="3008" y="352" width="16" height="16" visible="0">
-    <properties>
-     <property name="drawz" type="float" value="2"/>
-    </properties>
-   </object>
-   <object id="841" name="Instruction" x="2944" y="320" width="224" height="32" visible="0">
-    <properties>
-     <property name="drawz" type="float" value="2"/>
-    </properties>
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Then hold    toward the door
-and tap    to throw</text>
-   </object>
-   <object id="842" gid="6909" x="2936" y="352" width="16" height="16" visible="0">
-    <properties>
-     <property name="drawz" type="float" value="2"/>
-    </properties>
-   </object>
-   <object id="843" gid="7135" x="2960" y="352" width="16" height="16" visible="0"/>
-   <object id="844" gid="7010" x="3008" y="152" width="16" height="16" visible="0"/>
-   <object id="845" gid="7011" x="3024" y="152" width="16" height="16" visible="0"/>
-   <object id="846" gid="7012" x="3040" y="152" width="16" height="16" visible="0"/>
-   <object id="847" gid="7013" x="3056" y="152" width="16" height="16" visible="0"/>
-   <object id="848" gid="6834" x="3024" y="336" width="16" height="16" visible="0">
     <properties>
      <property name="drawz" type="float" value="2"/>
     </properties>
@@ -2568,7 +2578,7 @@ to sprint past archers</text>
    <object id="857" template="mapobjects/bandit/muscle.tx" x="2696" y="1048"/>
   </objectgroup>
  </group>
- <group id="32" name="unused" visible="0">
+ <group id="32" name="unused">
   <objectgroup id="41" name="tolearnitems" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="3"/>
@@ -2685,7 +2695,7 @@ to sprint past archers</text>
    </object>
   </objectgroup>
  </group>
- <objectgroup id="3" name="notes" visible="0">
+ <objectgroup id="3" name="notes">
   <object id="1" x="320" y="352" width="480" height="128">
    <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff">Teach basic combat with first low-level enemies</text>
   </object>
