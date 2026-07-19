@@ -223,6 +223,9 @@ function Attacker:checkAttackCollision(target, attack, attackangle)
     attack = attack or self.attack
     if not attack then return end
 
+    local hitlayers = AttackTarget.getAttackHitLayers(target, attack)
+    if 0 == hitlayers then return end
+
     if (target.invulntime or 0) > 0 then return end
     if target.hurtstun > 0 then return end
     if not target.canbeattacked then
@@ -230,14 +233,15 @@ function Attacker:checkAttackCollision(target, attack, attackangle)
             return
         end
     end
-    if target == self then
-        return
-    end
+    if target == self then return end
+
+    -- if player kick threw 2 enemies, let them keep flying
+    local thrwr1, thrwr2 = self.thrower, target.thrower
+    if thrwr1 and thrwr2 and thrwr1 == thrwr2 then return end
+
+    -- 
+    -- to remove if/when attacking while being held becomes a thing
     if HoldOpponent.isHolding(target, self) then
-        return
-    end
-    local hitlayers = AttackTarget.getAttackHitLayers(target, attack)
-    if 0 == hitlayers then
         return
     end
     return Attacker.checkAttackCollision_cylinder(self, target, attack, attackangle)
