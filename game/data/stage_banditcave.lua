@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 87,
-  nextobjectid = 928,
+  nextlayerid = 88,
+  nextobjectid = 932,
   backgroundcolor = { 64, 64, 64 },
   properties = {
     ["ceilingz"] = 256,
@@ -7890,7 +7890,7 @@ return {
           type = "objectgroup",
           draworder = "topdown",
           id = 31,
-          name = "endofentryhall",
+          name = "entryhall2",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -8011,7 +8011,7 @@ return {
           type = "objectgroup",
           draworder = "topdown",
           id = 84,
-          name = "+KnSpSh",
+          name = "entryhall3",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -8131,7 +8131,7 @@ return {
           type = "objectgroup",
           draworder = "topdown",
           id = 83,
-          name = "+knifemuscleshield",
+          name = "entryhall4",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -8251,7 +8251,7 @@ return {
           type = "objectgroup",
           draworder = "topdown",
           id = 86,
-          name = "Object Layer 55",
+          name = "entryhall5",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -8866,7 +8866,8 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 1
+            ["donewhenenemiesleft"] = 2,
+            ["time"] = 5
           },
           objects = {
             {
@@ -8883,7 +8884,7 @@ return {
               visible = true,
               polyline = {
                 { x = 0, y = 0 },
-                { x = 192, y = 0 }
+                { x = 96, y = 0 }
               },
               properties = {}
             },
@@ -8977,7 +8978,7 @@ return {
           type = "objectgroup",
           draworder = "topdown",
           id = 73,
-          name = "armory2",
+          name = "forge2",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -8986,7 +8987,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 2
+            ["donewhenenemiesleft"] = 4
           },
           objects = {
             {
@@ -8994,8 +8995,8 @@ return {
               name = "",
               type = "bandit-shield",
               shape = "rectangle",
-              x = 1728,
-              y = 1048,
+              x = 1616,
+              y = 1016,
               width = 64,
               height = 64,
               rotation = 0,
@@ -9008,35 +9009,17 @@ return {
               }
             },
             {
-              id = 398,
+              id = 928,
               name = "",
-              type = "bandit-dagger",
+              type = "bandit-shield",
               shape = "rectangle",
-              x = 1816,
-              y = 1128,
+              x = 1640,
+              y = 1080,
               width = 64,
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
-              visible = true,
-              properties = {
-                ["facedegrees"] = 180,
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 506,
-              name = "",
-              type = "bandit-dagger",
-              shape = "rectangle",
-              x = 1808,
-              y = 976,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              opacity = 1,
-              gid = 7237,
+              gid = 7274,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -9048,8 +9031,26 @@ return {
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 1864,
-              y = 1048,
+              x = 1832,
+              y = 984,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["facedegrees"] = 180,
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 930,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 1856,
+              y = 1096,
               width = 64,
               height = 64,
               rotation = 0,
@@ -9066,8 +9067,98 @@ return {
         {
           type = "objectgroup",
           draworder = "topdown",
+          id = 87,
+          name = "forge3",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["donewhenenemiesleft"] = 6
+          },
+          objects = {
+            {
+              id = 398,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1144,
+              y = 1200,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["facedegrees"] = 180,
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 931,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1280,
+              y = 1272,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["facedegrees"] = 180,
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 929,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1440,
+              y = 1272,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["facedegrees"] = 180,
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 506,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1560,
+              y = 1192,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["facedegrees"] = 180,
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
           id = 35,
-          name = "+muscle",
+          name = "forge4",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -9084,8 +9175,8 @@ return {
               name = "",
               type = "bandit-shield",
               shape = "rectangle",
-              x = 1176,
-              y = 960,
+              x = 1104,
+              y = 1016,
               width = 64,
               height = 64,
               rotation = 0,
@@ -9101,8 +9192,8 @@ return {
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 1112,
-              y = 1000,
+              x = 1024,
+              y = 1032,
               width = 64,
               height = 64,
               rotation = 0,
@@ -9118,8 +9209,8 @@ return {
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 1080,
-              y = 1088,
+              x = 976,
+              y = 1096,
               width = 64,
               height = 64,
               rotation = 0,
@@ -9135,8 +9226,8 @@ return {
               name = "",
               type = "bandit-shield",
               shape = "rectangle",
-              x = 1152,
-              y = 1128,
+              x = 1064,
+              y = 1096,
               width = 64,
               height = 64,
               rotation = 0,
@@ -9176,7 +9267,7 @@ return {
               opacity = 1,
               visible = true,
               polyline = {
-                { x = 0, y = 0 },
+                { x = -96, y = 0 },
                 { x = 128, y = 0 }
               },
               properties = {}
@@ -10018,7 +10109,7 @@ return {
           type = "objectgroup",
           draworder = "topdown",
           id = 33,
-          name = "+knives",
+          name = "messhall2",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -10104,7 +10195,7 @@ return {
           type = "objectgroup",
           draworder = "topdown",
           id = 45,
-          name = "+MuSpSh",
+          name = "messhall3",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -10174,7 +10265,7 @@ return {
           type = "objectgroup",
           draworder = "topdown",
           id = 44,
-          name = "+MuSpSh",
+          name = "messhall4",
           class = "Room",
           visible = true,
           opacity = 1,

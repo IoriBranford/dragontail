@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="87" nextobjectid="928">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="88" nextobjectid="932">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -1846,7 +1846,7 @@ to sprint past archers</text>
    <object id="553" template="mapobjects/items/stone.tx" x="832" y="952"/>
    <object id="550" template="mapobjects/items/stone.tx" x="808" y="960"/>
   </objectgroup>
-  <objectgroup id="31" name="endofentryhall" class="Room">
+  <objectgroup id="31" name="entryhall2" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="4"/>
     <property name="titlebarcuecard" value="LV2 FIREBALL"/>
@@ -1866,7 +1866,7 @@ to sprint past archers</text>
     <point/>
    </object>
   </objectgroup>
-  <objectgroup id="84" name="+KnSpSh" class="Room">
+  <objectgroup id="84" name="entryhall3" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="5"/>
    </properties>
@@ -1877,7 +1877,7 @@ to sprint past archers</text>
    <object id="881" template="mapobjects/bandit/shield.tx" x="1168" y="1136"/>
    <object id="882" template="mapobjects/bandit/shield.tx" x="1144" y="1072"/>
   </objectgroup>
-  <objectgroup id="83" name="+knifemuscleshield" class="Room">
+  <objectgroup id="83" name="entryhall4" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="5"/>
    </properties>
@@ -1888,7 +1888,7 @@ to sprint past archers</text>
    <object id="903" template="mapobjects/bandit/spear.tx" x="704" y="1320"/>
    <object id="909" template="mapobjects/bandit/knife.tx" x="1160" y="1192"/>
   </objectgroup>
-  <objectgroup id="86" name="Object Layer 55" class="Room">
+  <objectgroup id="86" name="entryhall5" class="Room">
    <object id="913" template="mapobjects/bandit/knife.tx" x="768" y="1344"/>
    <object id="915" template="mapobjects/bandit/knife.tx" x="1352" y="1088"/>
    <object id="911" template="mapobjects/bandit/spear.tx" x="872" y="1264"/>
@@ -1998,10 +1998,11 @@ to sprint past archers</text>
   </objectgroup>
   <objectgroup id="53" name="forge" class="Room">
    <properties>
-    <property name="donewhenenemiesleft" type="int" value="1"/>
+    <property name="donewhenenemiesleft" type="int" value="2"/>
+    <property name="time" type="int" value="5"/>
    </properties>
    <object id="505" template="mapobjects/CameraPath.tx" x="1264" y="1008">
-    <polyline points="0,0 192,0"/>
+    <polyline points="0,0 96,0"/>
    </object>
    <object id="384" template="mapobjects/bandit/muscle.tx" x="1560" y="1048">
     <properties>
@@ -2028,43 +2029,68 @@ to sprint past archers</text>
     </properties>
    </object>
   </objectgroup>
-  <objectgroup id="73" name="armory2" class="Room">
+  <objectgroup id="73" name="forge2" class="Room">
    <properties>
-    <property name="donewhenenemiesleft" type="int" value="2"/>
+    <property name="donewhenenemiesleft" type="int" value="4"/>
    </properties>
-   <object id="397" template="mapobjects/bandit/shield.tx" x="1728" y="1048">
+   <object id="397" template="mapobjects/bandit/shield.tx" x="1616" y="1016">
     <properties>
      <property name="facedegrees" type="float" value="180"/>
     </properties>
    </object>
-   <object id="398" template="mapobjects/bandit/knife.tx" x="1816" y="1128">
+   <object id="928" template="mapobjects/bandit/shield.tx" x="1640" y="1080">
     <properties>
      <property name="facedegrees" type="float" value="180"/>
     </properties>
    </object>
-   <object id="506" template="mapobjects/bandit/knife.tx" x="1808" y="976">
+   <object id="507" template="mapobjects/bandit/spear.tx" x="1832" y="984">
     <properties>
      <property name="facedegrees" type="float" value="180"/>
     </properties>
    </object>
-   <object id="507" template="mapobjects/bandit/spear.tx" x="1864" y="1048">
+   <object id="930" template="mapobjects/bandit/spear.tx" x="1856" y="1096">
     <properties>
      <property name="facedegrees" type="float" value="180"/>
     </properties>
    </object>
   </objectgroup>
-  <objectgroup id="35" name="+muscle" class="Room">
+  <objectgroup id="87" name="forge3" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="6"/>
+   </properties>
+   <object id="398" template="mapobjects/bandit/knife.tx" x="1144" y="1200">
+    <properties>
+     <property name="facedegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="931" template="mapobjects/bandit/knife.tx" x="1280" y="1272">
+    <properties>
+     <property name="facedegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="929" template="mapobjects/bandit/knife.tx" x="1440" y="1272">
+    <properties>
+     <property name="facedegrees" type="float" value="180"/>
+    </properties>
+   </object>
+   <object id="506" template="mapobjects/bandit/knife.tx" x="1560" y="1192">
+    <properties>
+     <property name="facedegrees" type="float" value="180"/>
+    </properties>
+   </object>
+  </objectgroup>
+  <objectgroup id="35" name="forge4" class="Room">
    <properties>
     <property name="titlebarcuecard" value="LV2 REVENGE"/>
    </properties>
-   <object id="610" template="mapobjects/bandit/shield.tx" x="1176" y="960"/>
-   <object id="611" template="mapobjects/bandit/spear.tx" x="1112" y="1000"/>
-   <object id="612" template="mapobjects/bandit/spear.tx" x="1080" y="1088"/>
-   <object id="613" template="mapobjects/bandit/shield.tx" x="1152" y="1128"/>
+   <object id="610" template="mapobjects/bandit/shield.tx" x="1104" y="1016"/>
+   <object id="611" template="mapobjects/bandit/spear.tx" x="1024" y="1032"/>
+   <object id="612" template="mapobjects/bandit/spear.tx" x="976" y="1096"/>
+   <object id="613" template="mapobjects/bandit/shield.tx" x="1064" y="1096"/>
   </objectgroup>
   <objectgroup draworder="index" id="43" name="tomesshall" class="Room">
    <object id="484" template="mapobjects/CameraPath.tx" x="1456" y="1008">
-    <polyline points="0,0 128,0"/>
+    <polyline points="-96,0 128,0"/>
    </object>
    <object id="320" gid="6598" x="1784" y="1072" width="96" height="48">
     <properties>
@@ -2308,7 +2334,7 @@ to sprint past archers</text>
     </properties>
    </object>
   </objectgroup>
-  <objectgroup id="33" name="+knives" class="Room">
+  <objectgroup id="33" name="messhall2" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="4"/>
    </properties>
@@ -2317,7 +2343,7 @@ to sprint past archers</text>
    <object id="340" template="mapobjects/bandit/knife.tx" x="2192" y="1040"/>
    <object id="512" template="mapobjects/bandit/knife.tx" x="2272" y="1000"/>
   </objectgroup>
-  <objectgroup id="45" name="+MuSpSh" class="Room">
+  <objectgroup id="45" name="messhall3" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="4"/>
    </properties>
@@ -2329,7 +2355,7 @@ to sprint past archers</text>
     </properties>
    </object>
   </objectgroup>
-  <objectgroup id="44" name="+MuSpSh" class="Room">
+  <objectgroup id="44" name="messhall4" class="Room">
    <object id="343" template="mapobjects/bandit/muscle.tx" x="2064" y="1176"/>
    <object id="347" template="mapobjects/bandit/shield.tx" x="1680" y="1008"/>
    <object id="341" template="mapobjects/bandit/muscle.tx" x="1784" y="1176"/>
