@@ -31,6 +31,9 @@ function Approach:fixedupdate()
     local enemy = self.character
     enemy:stayOnCameraOnceEntered()
 
+    if enemy.velz < 0 and enemy.floorz < enemy.z then
+        return "dropDown"
+    end
     local destx, desty
     local targetx, targety
     local target = self.target
