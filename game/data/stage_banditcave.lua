@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 88,
-  nextobjectid = 938,
+  nextobjectid = 940,
   backgroundcolor = { 64, 64, 64 },
   properties = {
     ["ceilingz"] = 256,
@@ -571,7 +571,7 @@ return {
         },
         {
           x = 80, y = 24, width = 20, height = 12,
-          data = "eJztzTsKwlAARNEz+GncT4yN+0lM437iZ0mCjcsR4QUeYnpBBwbmNnf4rbRhF5qwDQ9csQp39IXXocUy3D7wIpxwCEPoQh82lXv6qnczw03pOVzC+PKHfeWevurdzXBX+p5j5Z6+6j3O8Fj6j6/KE5BJHsc="
+          data = "eJzt0c0KQXEUBPDfyccCz3OxwPNcbHie62OB5yELvI3UXy65OyllamrmTJ05dfgNzD60pxf0gw22OGCHRnDEGGs0gx7qwf6NrwULTIJpcMI55Rd049FV1lmFzxKXwSpoBe2UdYJxPLrKOq/weeIdg2CYstHt9lJXWRcVvkh8+knK5i/zP3wNVweaIZo="
         }
       }
     },
@@ -708,11 +708,11 @@ return {
         },
         {
           x = 60, y = 24, width = 20, height = 12,
-          data = "eJztzMsJgEAQBNEn+LkY0J40IU1Jc9KEpGFPHsQAtmBg6JkuGo0GzOgxYKz7X97dCSsuFGzJu2/HUh2ZdPN/YMeJu/riijO3BzkVBxs="
+          data = "eJzt0DEKgDAQBdEX0Nh4ICu9j+iV9E7xQrKQIp3YZ+A3CzPF0ul0YMaAsS7/eEvrhjdhQ8ES98T+0VhrIxZuTlw4ceOpvaPpvjpZB00="
         },
         {
           x = 80, y = 24, width = 20, height = 12,
-          data = "eJztzLERgCAQALBQKDbOg3c0zEPrQO7ERAzxVhwZIGzbOg6cyLj/+BIdHxqu4DfwoOBFDX4TezYDZg=="
+          data = "eJxjYBgFo2D4AHYGBgZeKpo3n4GBwYGBgYGNSuaaMzAwFDMwMORAzWWFYnLNBgATxwJ0"
         },
         {
           x = 0, y = 36, width = 20, height = 12,
@@ -720,11 +720,11 @@ return {
         },
         {
           x = 60, y = 36, width = 20, height = 12,
-          data = "eJztyLERABAQALCMhZWw0p+VbKQxgEr1KcObQMHGQMVCR8O8l1LyzQHnrgQ4"
+          data = "eJztzDkNACAQAMFxxWMJNBEs4YgGAVdQ3rSbLDELFQcTDRsD/fUSfKWUfHEBis0EZw=="
         },
         {
           x = 80, y = 36, width = 20, height = 12,
-          data = "eJybx8DAYM7AwMDCyMBwiYGBIY9hFIyCUcAwRAAA0+wCGw=="
+          data = "eJxjYWRguMTAwMDKyMDAwsjAkM0wCkbBKGAYIgAA2lUBTg=="
         }
       }
     },
@@ -10448,8 +10448,10 @@ return {
                 { x = -32, y = -128 },
                 { x = -32, y = 16 },
                 { x = 32, y = 80 },
-                { x = 416, y = 80 },
-                { x = 416, y = -128 }
+                { x = 352, y = 80 },
+                { x = 416, y = 144 },
+                { x = 448, y = 144 },
+                { x = 448, y = -128 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -10472,9 +10474,9 @@ return {
               opacity = 1,
               visible = true,
               polygon = {
-                { x = -32, y = -160 },
-                { x = -32, y = 48 },
-                { x = 0, y = 80 },
+                { x = 0, y = -160 },
+                { x = 0, y = 112 },
+                { x = 32, y = 80 },
                 { x = 864, y = 80 },
                 { x = 864, y = -160 }
               },
@@ -10499,8 +10501,7 @@ return {
               opacity = 1,
               visible = true,
               polygon = {
-                { x = -32, y = -160 },
-                { x = -32, y = 48 },
+                { x = 0, y = -160 },
                 { x = 0, y = 80 },
                 { x = 144, y = 80 },
                 { x = 144, y = -160 }
@@ -10574,9 +10575,11 @@ return {
               polygon = {
                 { x = -32, y = 0 },
                 { x = -32, y = 192 },
-                { x = 448, y = 192 },
-                { x = 448, y = 0 },
-                { x = 384, y = -64 },
+                { x = 416, y = 192 },
+                { x = 416, y = 0 },
+                { x = 384, y = -32 },
+                { x = 352, y = -32 },
+                { x = 320, y = -64 },
                 { x = 160, y = -64 },
                 { x = 128, y = -32 },
                 { x = 0, y = -32 }
@@ -10611,13 +10614,30 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
+              x = 2336,
+              y = 928,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              opacity = 1,
+              gid = 6595,
+              visible = true,
+              properties = {
+                ["z"] = 16
+              }
+            },
+            {
+              id = 939,
+              name = "",
+              type = "",
+              shape = "rectangle",
               x = 2432,
               y = 928,
               width = 32,
               height = 48,
               rotation = 0,
               opacity = 1,
-              gid = 6593,
+              gid = 6594,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -10628,13 +10648,13 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2496,
-              y = 936,
+              x = 2528,
+              y = 920,
               width = 32,
               height = 48,
               rotation = 0,
               opacity = 1,
-              gid = 6593,
+              gid = 6595,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -10646,12 +10666,12 @@ return {
               type = "",
               shape = "rectangle",
               x = 2560,
-              y = 936,
+              y = 928,
               width = 32,
               height = 48,
               rotation = 0,
               opacity = 1,
-              gid = 6593,
+              gid = 6594,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -10662,8 +10682,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2656,
-              y = 936,
+              x = 2592,
+              y = 928,
               width = 32,
               height = 48,
               rotation = 0,

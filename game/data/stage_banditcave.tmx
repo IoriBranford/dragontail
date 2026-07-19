@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="88" nextobjectid="938">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="88" nextobjectid="940">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -179,7 +179,7 @@
    eJztzzsORQAQRuFzWvbjUbAfl8Z+PLYqEo2Jm6AS8VVzuvnh2VqhExrh577vmIRZGITR/50IqZALhVCGO9v6rEqow4a4Z+0r+vDz0Z4Pr7YAJAQUQg==
   </chunk>
    <chunk x="80" y="24" width="20" height="12">
-   eJztzTsKwlAARNEz+GncT4yN+0lM437iZ0mCjcsR4QUeYnpBBwbmNnf4rbRhF5qwDQ9csQp39IXXocUy3D7wIpxwCEPoQh82lXv6qnczw03pOVzC+PKHfeWevurdzXBX+p5j5Z6+6j3O8Fj6j6/KE5BJHsc=
+   eJzt0c0KQXEUBPDfyccCz3OxwPNcbHie62OB5yELvI3UXy65OyllamrmTJ05dfgNzD60pxf0gw22OGCHRnDEGGs0gx7qwf6NrwULTIJpcMI55Rd049FV1lmFzxKXwSpoBe2UdYJxPLrKOq/weeIdg2CYstHt9lJXWRcVvkh8+knK5i/zP3wNVweaIZo=
   </chunk>
   </data>
  </layer>
@@ -251,19 +251,19 @@
    eJztzKsNwDAQRMEBMXP6CfKnHxfrkkwMw47eSMtWj5SSgIoH5e4NtBo6PmwsjNufP/8Da8gCng==
   </chunk>
    <chunk x="60" y="24" width="20" height="12">
-   eJztzMsJgEAQBNEn+LkY0J40IU1Jc9KEpGFPHsQAtmBg6JkuGo0GzOgxYKz7X97dCSsuFGzJu2/HUh2ZdPN/YMeJu/riijO3BzkVBxs=
+   eJzt0DEKgDAQBdEX0Nh4ICu9j+iV9E7xQrKQIp3YZ+A3CzPF0ul0YMaAsS7/eEvrhjdhQ8ES98T+0VhrIxZuTlw4ceOpvaPpvjpZB00=
   </chunk>
    <chunk x="80" y="24" width="20" height="12">
-   eJztzLERgCAQALBQKDbOg3c0zEPrQO7ERAzxVhwZIGzbOg6cyLj/+BIdHxqu4DfwoOBFDX4TezYDZg==
+   eJxjYBgFo2D4AHYGBgZeKpo3n4GBwYGBgYGNSuaaMzAwFDMwMORAzWWFYnLNBgATxwJ0
   </chunk>
    <chunk x="0" y="36" width="20" height="12">
    eJztzsENQEAUQMH5YTmpRxy1oydqWjQkYjtYBwdTwMtLQQoOTMjY0AYLeszq7Z7eiREJQ0Uvl8e1fN/tJuhefP79fNwF5G0H+w==
   </chunk>
    <chunk x="60" y="36" width="20" height="12">
-   eJztyLERABAQALCMhZWw0p+VbKQxgEr1KcObQMHGQMVCR8O8l1LyzQHnrgQ4
+   eJztzDkNACAQAMFxxWMJNBEs4YgGAVdQ3rSbLDELFQcTDRsD/fUSfKWUfHEBis0EZw==
   </chunk>
    <chunk x="80" y="36" width="20" height="12">
-   eJybx8DAYM7AwMDCyMBwiYGBIY9hFIyCUcAwRAAA0+wCGw==
+   eJxjYWRguMTAwMDKyMDAwsjAkM0wCkbBKGAYIgAA2lUBTg==
   </chunk>
   </data>
  </layer>
@@ -2384,20 +2384,20 @@ to sprint past archers</text>
     <properties>
      <property name="extrudeY" type="float" value="-256"/>
     </properties>
-    <polygon points="-32,-128 -32,16 32,80 416,80 416,-128"/>
+    <polygon points="-32,-128 -32,16 32,80 352,80 416,144 448,144 448,-128"/>
    </object>
    <object id="76" template="mapobjects/OutwardBoundary.tx" x="2720" y="896">
     <properties>
      <property name="extrudeY" type="float" value="-64"/>
     </properties>
-    <polygon points="-32,-160 -32,48 0,80 864,80 864,-160"/>
+    <polygon points="0,-160 0,112 32,80 864,80 864,-160"/>
    </object>
    <object id="313" template="mapobjects/OutwardBoundary.tx" x="2720" y="832">
     <properties>
      <property name="extrudeY" type="float" value="-128"/>
      <property name="z" type="float" value="64"/>
     </properties>
-    <polygon points="-32,-160 -32,48 0,80 144,80 144,-160"/>
+    <polygon points="0,-160 0,80 144,80 144,-160"/>
    </object>
    <object id="536" template="mapobjects/OutwardBoundary.tx" x="3152" y="832">
     <properties>
@@ -2413,13 +2413,14 @@ to sprint past archers</text>
     <properties>
      <property name="extrudeY" type="float" value="-64"/>
     </properties>
-    <polygon points="-32,0 -32,192 448,192 448,0 384,-64 160,-64 128,-32 0,-32"/>
+    <polygon points="-32,0 -32,192 416,192 416,0 384,-32 352,-32 320,-64 160,-64 128,-32 0,-32"/>
    </object>
    <object id="933" template="mapobjects/banditcave/wall-torch.tx" x="2368" y="936"/>
-   <object id="934" template="mapobjects/banditcave/wall-torch.tx" x="2432" y="928"/>
-   <object id="935" template="mapobjects/banditcave/wall-torch.tx" x="2496" y="936"/>
-   <object id="936" template="mapobjects/banditcave/wall-torch.tx" x="2560" y="936"/>
-   <object id="937" template="mapobjects/banditcave/wall-torch.tx" x="2656" y="936"/>
+   <object id="934" template="mapobjects/banditcave/wall-torch.tx" gid="6595" x="2336" y="928" width="32" height="48"/>
+   <object id="939" template="mapobjects/banditcave/wall-torch.tx" gid="6594" x="2432" y="928" width="32" height="48"/>
+   <object id="935" template="mapobjects/banditcave/wall-torch.tx" gid="6595" x="2528" y="920" width="32" height="48"/>
+   <object id="936" template="mapobjects/banditcave/wall-torch.tx" gid="6594" x="2560" y="928" width="32" height="48"/>
+   <object id="937" template="mapobjects/banditcave/wall-torch.tx" x="2592" y="928"/>
   </objectgroup>
   <objectgroup id="23" name="boss" class="Room">
    <properties>
