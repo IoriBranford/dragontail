@@ -366,12 +366,16 @@ function Stage.updateGoingToNextRoom()
     if Stage.isInNextRoom() then
         local enemies = Characters.getGroup("enemies")
         local donewhenenemiesleft = room.donewhenenemiesleft or 0
-        if #enemies <= donewhenenemiesleft and not sequencethread then
+
+        if #enemies <= donewhenenemiesleft
+        and not sequencethread
+        and not room.time or room.time == 0 then
             room = Stage.openRoom(roomindex + 1)
             if not room then
                 return
             end
         end
+        if room.time then room.time = max(0, room.time - 1) end
         Characters.fixedupdateLostEnemiesTimer()
     end
 
