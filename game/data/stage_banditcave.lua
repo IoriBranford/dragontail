@@ -6812,6 +6812,7 @@ return {
               gid = 7275,
               visible = true,
               properties = {
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 180,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -6849,7 +6850,7 @@ return {
               gid = 7275,
               visible = true,
               properties = {
-                ["attackdegrees"] = 180,
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 32,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -6887,7 +6888,7 @@ return {
               gid = 7275,
               visible = true,
               properties = {
-                ["attackdegrees"] = 180,
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 32,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -6906,7 +6907,7 @@ return {
               gid = 7278,
               visible = true,
               properties = {
-                ["attackdegrees"] = 180,
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 35,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -6944,7 +6945,7 @@ return {
               gid = 7278,
               visible = true,
               properties = {
-                ["attackdegrees"] = 180,
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 35,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -6982,7 +6983,7 @@ return {
               gid = 7278,
               visible = true,
               properties = {
-                ["attackdegrees"] = 180,
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 35,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -7019,6 +7020,7 @@ return {
               gid = 7279,
               visible = true,
               properties = {
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 36,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -7056,7 +7058,7 @@ return {
               gid = 7279,
               visible = true,
               properties = {
-                ["attackdegrees"] = 180,
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 36,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -7094,7 +7096,7 @@ return {
               gid = 7279,
               visible = true,
               properties = {
-                ["attackdegrees"] = 180,
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 36,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -7131,6 +7133,7 @@ return {
               gid = 7282,
               visible = true,
               properties = {
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 39,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -7168,7 +7171,7 @@ return {
               gid = 7282,
               visible = true,
               properties = {
-                ["attackdegrees"] = 180,
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 39,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -7206,7 +7209,7 @@ return {
               gid = 7282,
               visible = true,
               properties = {
-                ["attackdegrees"] = 180,
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 39,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -7243,6 +7246,7 @@ return {
               gid = 7283,
               visible = true,
               properties = {
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 40,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -7280,7 +7284,7 @@ return {
               gid = 7283,
               visible = true,
               properties = {
-                ["attackdegrees"] = 180,
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 40,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -7318,7 +7322,7 @@ return {
               gid = 7283,
               visible = true,
               properties = {
-                ["attackdegrees"] = 180,
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 40,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -7374,7 +7378,7 @@ return {
               gid = 7303,
               visible = true,
               properties = {
-                ["attackdegrees"] = 180,
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 60,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -7393,7 +7397,7 @@ return {
               gid = 7303,
               visible = true,
               properties = {
-                ["attackdegrees"] = 180,
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 60,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -7431,7 +7435,7 @@ return {
               gid = 7303,
               visible = true,
               properties = {
-                ["attackdegrees"] = 180,
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 60,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -7469,7 +7473,7 @@ return {
               gid = 7303,
               visible = true,
               properties = {
-                ["attackdegrees"] = 180,
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 60,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -7544,7 +7548,7 @@ return {
               gid = 7291,
               visible = true,
               properties = {
-                ["attackdegrees"] = 180,
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 48,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -7582,7 +7586,7 @@ return {
               gid = 7291,
               visible = true,
               properties = {
-                ["attackdegrees"] = 180,
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 48,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
@@ -7638,7 +7642,7 @@ return {
               gid = 7298,
               visible = true,
               properties = {
-                ["attackdegrees"] = 180,
+                ["attackdegrees"] = 0,
                 ["bloodyanimation"] = 55,
                 ["propertiestable"] = "database/objects-properties.csv"
               }
