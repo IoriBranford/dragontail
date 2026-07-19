@@ -158,7 +158,7 @@ function Enemy:afterStand()
 end
 
 function Enemy:stand(duration)
-    duration = duration or 20
+    duration = duration or 10
     self.velx, self.vely = 0, 0
     Guard.stopGuarding(self)
     for _ = 1, duration do
