@@ -336,11 +336,8 @@ function Enemy:enterAndDropDown()
         return true
     end)
 
-    while self.velz < 0 do
-        yield()
-    end
     repeat
-        if self.velz < 0 then
+        if self.velz < 0 and self.z > self.floorz then
             return "dropDown"
         end
         yield()
@@ -357,7 +354,7 @@ end
 
 function Enemy:land()
     local dust = Character("spark-land-on-feet-dust",
-        self.x, self.y + 1, self.z)
+        self.x, self.y, self.z+1)
     Characters.spawn(dust)
 end
 
