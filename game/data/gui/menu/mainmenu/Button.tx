@@ -5,6 +5,7 @@
    <property name="action" value="restartStage"/>
    <property name="color2" type="color" value="#ffffd8d8"/>
    <property name="frequency" type="float" value="30"/>
+   <property name="presssound" type="file" value="../../../sounds/combat/firehit.mp3"/>
    <property name="selectanimation" value="colorCycle"/>
   </properties>
   <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">START</text>

@@ -1665,6 +1665,7 @@ return {
                 ["action"] = "unpauseGame",
                 ["color2"] = "#ffffd8d8",
                 ["frequency"] = 30,
+                ["presssound"] = "sounds/combat/firehit.mp3",
                 ["selectanimation"] = "colorCycle"
               }
             },
@@ -1692,6 +1693,7 @@ return {
                 ["color2"] = "#ffffd8d8",
                 ["frequency"] = 30,
                 ["guipath"] = "options.simple",
+                ["presssound"] = "sounds/combat/firehit.mp3",
                 ["selectanimation"] = "colorCycle"
               }
             },
@@ -1719,6 +1721,7 @@ return {
                 ["color2"] = "#ffffd8d8",
                 ["frequency"] = 30,
                 ["guipath"] = "gameplay.retrymenu",
+                ["presssound"] = "sounds/combat/firehit.mp3",
                 ["selectanimation"] = "colorCycle"
               }
             },
@@ -1745,6 +1748,7 @@ return {
                 ["action"] = "returnToTitle",
                 ["color2"] = "#ffffd8d8",
                 ["frequency"] = 30,
+                ["presssound"] = "sounds/combat/firehit.mp3",
                 ["selectanimation"] = "colorCycle"
               }
             },
@@ -1772,6 +1776,7 @@ return {
                 ["color2"] = "#ffffd8d8",
                 ["frequency"] = 30,
                 ["guipath"] = "gameplay.debugmenu",
+                ["presssound"] = "sounds/combat/firehit.mp3",
                 ["selectanimation"] = "colorCycle"
               }
             }
@@ -2616,6 +2621,7 @@ return {
                 ["action"] = "returnToTitle",
                 ["color2"] = "#ffffd8d8",
                 ["frequency"] = 30,
+                ["presssound"] = "sounds/combat/firehit.mp3",
                 ["selectanimation"] = "colorCycle"
               }
             },
@@ -2642,6 +2648,7 @@ return {
                 ["action"] = "openURL",
                 ["color2"] = "#ffffd8d8",
                 ["frequency"] = 30,
+                ["presssound"] = "sounds/combat/firehit.mp3",
                 ["selectanimation"] = "colorCycle",
                 ["url"] = "https://ioribranford.itch.io/rose-of-dragontail"
               }
@@ -2669,6 +2676,7 @@ return {
                 ["action"] = "restartStage",
                 ["color2"] = "#ffffd8d8",
                 ["frequency"] = 30,
+                ["presssound"] = "sounds/combat/firehit.mp3",
                 ["selectanimation"] = "colorCycle"
               }
             },
@@ -2985,6 +2993,7 @@ return {
                     ["action"] = "restartStage",
                     ["color2"] = "#ffffd8d8",
                     ["frequency"] = 30,
+                    ["presssound"] = "sounds/combat/firehit.mp3",
                     ["selectanimation"] = "colorCycle"
                   }
                 },
@@ -3065,6 +3074,7 @@ return {
                     ["action"] = "openURL",
                     ["color2"] = "#ffffd8d8",
                     ["frequency"] = 30,
+                    ["presssound"] = "sounds/combat/firehit.mp3",
                     ["selectanimation"] = "colorCycle",
                     ["url"] = "https://ioribranford.itch.io/rose-of-dragontail"
                   }
