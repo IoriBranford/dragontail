@@ -57,22 +57,30 @@ function Guard:isPointInGuardArc(x, y)
     return Guard.isUnitVectorAgainstGuardArc(self, dx, dy)
 end
 
-function Guard:pushBackAttacker(attacker)
-    local toattackerx = -self.x + attacker.x
-    local toattackery = -self.y + attacker.y
-    local toattackerdist = math.len(toattackerx, toattackery)
-    if toattackerdist == 0 then
-        local guardangle = self.guardangle
+---@param atkr Attacker
+function Guard:pushBackAttacker(atkr)
+    local d, dx, dy = math2.dist(self.x, self.y, atkr.x, atkr.y)
+    if d == 0 then
+        local a = self.guardangle
             or self.faceangle or 0
-        toattackerx = math.cos(guardangle)
-        toattackery = math.sin(guardangle)
+        dx, dy = math2.frompolar(a)
     else
-        toattackerx = toattackerx / toattackerdist
-        toattackery = toattackery / toattackerdist
+        dx, dy = math2.vdiv(dx, dy, d)
     end
-    local pushbackspeed = math.len(attacker.velx, attacker.vely)*1.5
-    attacker.velx = attacker.velx + pushbackspeed * toattackerx
-    attacker.vely = attacker.vely + pushbackspeed * toattackery
+
+    local atk = atkr.attack
+    local as = atk and atk.launchspeed or 6
+    local afx, afy = math2.vmul(dx, dy, as)
+
+    local vx, vy = self.velx, self.vely
+    local s = atk and atk.guardpushback or (as/4)
+    local fx, fy = math2.vmul(dx, dy, -s)
+    vx, vy = math2.vadd(vx, vy, fx, fy)
+    self.velx, self.vely = vx, vy
+
+    local avx, avy = atkr.velx, atkr.vely
+    avx, avy = math2.vadd(avx, avy, afx, afy)
+    atkr.velx, atkr.vely = avx, avy
 end
 
 function Guard:standardImpact(hit)
