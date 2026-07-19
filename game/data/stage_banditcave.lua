@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 90,
-  nextobjectid = 948,
+  nextobjectid = 956,
   backgroundcolor = { 64, 64, 64 },
   properties = {
     ["ceilingz"] = 256,
@@ -4074,6 +4074,74 @@ return {
               visible = true,
               properties = {
                 ["z"] = 64
+              }
+            },
+            {
+              id = 949,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 2056,
+              y = 360,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 950,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 2232,
+              y = 448,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 953,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 2480,
+              y = 448,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 955,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 2592,
+              y = 272,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7235,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
               }
             }
           }
