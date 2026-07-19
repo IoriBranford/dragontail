@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="90" nextobjectid="956">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="91" nextobjectid="961">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -462,7 +462,8 @@ body to grapple</text>
   </objectgroup>
   <objectgroup id="10" name="learnsprint" class="Room">
    <properties>
-    <property name="donewhenenemiesleft" type="int" value="1"/>
+    <property name="donewhenenemiesleft" type="int" value="2"/>
+    <property name="time" type="int" value="60"/>
    </properties>
    <object id="697" template="mapobjects/bandit/spear.tx" x="1464" y="128"/>
    <object id="803" template="mapobjects/bandit/spear.tx" x="1472" y="240"/>
@@ -488,7 +489,10 @@ body to grapple</text>
     </properties>
    </object>
   </objectgroup>
-  <objectgroup id="66" name="+spears" class="Room">
+  <objectgroup id="66" name="learnsprint2" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="3"/>
+   </properties>
    <object id="32" template="mapobjects/bandit/spear.tx" x="1360" y="-8">
     <properties>
      <property name="z" type="float" value="64"/>
@@ -499,8 +503,27 @@ body to grapple</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
+   <object id="960" template="mapobjects/bandit/spear.tx" x="1200" y="-24">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+   </object>
    <object id="699" template="mapobjects/bandit/spear.tx" x="672" y="176"/>
    <object id="700" template="mapobjects/bandit/spear.tx" x="1688" y="160"/>
+  </objectgroup>
+  <objectgroup id="90" name="learnsprint3" class="Room">
+   <object id="956" template="mapobjects/bandit/spear.tx" x="1464" y="272">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+   </object>
+   <object id="957" template="mapobjects/bandit/spear.tx" x="928" y="272">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+   </object>
+   <object id="958" template="mapobjects/bandit/spear.tx" x="672" y="176"/>
+   <object id="959" template="mapobjects/bandit/spear.tx" x="1688" y="160"/>
   </objectgroup>
   <objectgroup draworder="index" id="9" name="learnitems" class="Room">
    <properties>
