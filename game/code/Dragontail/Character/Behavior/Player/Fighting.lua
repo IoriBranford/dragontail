@@ -32,7 +32,7 @@ function PlayerFighting:fixedupdate()
 
     if player:consumeActionDownAndRecentlyPressed("sprint") then
         Face.faceVector(player, inx, iny)
-        return "run", nil, true
+        return "run", true
     end
 
     local chargedattack, attackangle

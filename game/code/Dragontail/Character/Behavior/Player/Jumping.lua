@@ -42,7 +42,7 @@ function PlayerJumping:fixedupdate()
         player.velz = 0
         if player.sprintbutton.down then
             if heldenemy then
-                return "running-with-enemy", heldenemy, true
+                return "running-with-enemy", true
             end
             return "run"
         end

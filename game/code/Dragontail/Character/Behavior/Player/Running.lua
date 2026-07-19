@@ -15,7 +15,7 @@ local PlayerRunning = pooledclass(Behavior)
 PlayerRunning._nrec = Behavior._nrec + 5
 
 ---@param heldenemy Enemy?
-function PlayerRunning:start(heldenemy, isrunstart)
+function PlayerRunning:start(isrunstart)
     local player = self.character
     if isrunstart then
         player.facedestangle = player.faceangle
@@ -25,8 +25,8 @@ function PlayerRunning:start(heldenemy, isrunstart)
     self.targetvelx = player.velx
     self.targetvely = player.vely
     self.runningtime = 0
+    local heldenemy = player.heldopponent
     if heldenemy then
-        self.heldenemy = heldenemy
         StateMachine.start(heldenemy, player.attack.heldopponentstate or "human-in-spinning-throw", player)
         heldenemy:startAttack(player.faceangle)
     end
@@ -66,7 +66,11 @@ function PlayerRunning:fixedupdate()
 
     local inair = player.gravity == 0
 
-    local heldenemy = self.heldenemy
+    local heldenemy = player.heldopponent
+    if heldenemy and not HoldOpponent.isHolding(player, heldenemy) then
+        HoldOpponent.stopHolding(player, heldenemy)
+        heldenemy = nil
+    end
     local inx, iny = player:getJoystick()
 
     local targetvelx = self.targetvelx

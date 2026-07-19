@@ -71,7 +71,7 @@ function PlayerHoldEnemy:fixedupdate()
     -- player.runenergy = math.min(player.runenergymax, player.runenergy + 1)
     if runpressed then --and player.runenergy >= player.runenergycost then
         Combo.reset(player)
-        return "running-with-enemy", enemy, true
+        return "running-with-enemy", true
     end
     local chargedattackstate = not player.attackbutton.down and player:getChargedAttack(Player.ChargeAttackStates)
     if chargedattackstate then
