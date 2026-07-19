@@ -106,6 +106,7 @@ function PlayerRunning:fixedupdate()
     if heldenemy then
         player.holdangle = player.faceangle
         HoldOpponent.updateVelocities(player)
+        heldenemy.attackangle = player.faceangle
     else
         local caughtprojectile = player:catchProjectileAtJoystick()
         if caughtprojectile then
