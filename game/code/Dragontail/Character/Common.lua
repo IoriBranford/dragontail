@@ -148,11 +148,14 @@ function Common:dropDefeatItem(item)
         else
             popsout = true
         end
-    elseif self.itemtype then
-        item = Character(self.itemtype,
-            self.x, self.y, self.z)
-        Characters.spawn(item)
-        popsout = true
+    else
+        local itype = self.itemtype or ""
+        if itype ~= "" then
+            item = Character(self.itemtype,
+                self.x, self.y, self.z)
+            Characters.spawn(item)
+            popsout = true
+        end
     end
     if item and popsout then
         local popouttime = self.itempopouttime or 15
