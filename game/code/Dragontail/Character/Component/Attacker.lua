@@ -230,9 +230,7 @@ function Attacker:checkAttackCollision(target, attack, attackangle)
             return
         end
     end
-    if target == self or target == self.thrower or target.thrower == self
-    or target.thrower and self.thrower and target.thrower == self.thrower
-    or HoldOpponent.isHolding(target, self) then
+    if target == self then
         return
     end
     local hitlayers = AttackTarget.getAttackHitLayers(target, attack)
