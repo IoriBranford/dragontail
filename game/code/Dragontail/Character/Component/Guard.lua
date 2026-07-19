@@ -79,7 +79,9 @@ function Guard:pushBackAttacker(atkr)
     self.velx, self.vely = vx, vy
 
     local avx, avy = atkr.velx, atkr.vely
-    avx, avy = math2.vadd(avx, avy, afx, afy)
+    if math2.dot(avx, avy, afx, afy) < 0 then
+        avx, avy = math2.vadd(avx, avy, afx, afy)
+    end
     atkr.velx, atkr.vely = avx, avy
 end
 
