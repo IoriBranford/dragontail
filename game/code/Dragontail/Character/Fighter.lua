@@ -225,7 +225,7 @@ function Fighter:knockedBack(thrower, attackangle)
     end
     self.hurtstun = 0
     self:stopAttack() ; self:unassignSelfAsAttacker()
-    self.thrower = thrower
+    -- self.thrower = thrower
     local thrownspeed = thrower.attack.launchspeed or 5
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
     local altitude = self.z - (self.floorz or 0)
@@ -242,12 +242,12 @@ function Fighter:knockedBack(thrower, attackangle)
     --         / math.len(self.velx, self.vely)
     --         / math.len(oobx, ooby)
     -- end
-    self.thrower = nil
+    -- self.thrower = nil
     if oobx and ooby then
         return "wallBump", thrower, oobx, ooby
     end
 
-    return self.aiafterthrown or "fall", thrower
+    return self.aiafterthrown or "fall"
 end
 
 function Fighter:knockedBackOrThrown(thrower, attackangle)
