@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="84" nextobjectid="919">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="84" nextobjectid="926">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -170,7 +170,7 @@
    eJztzjEKAkEUg+HvvUJlD6Ss4oGUVTyQYqNeyevI4EyzsIWdoD+EhJAi/B4dZsk8WSQ33PGo+pQt+mSdbJInVsEy3l5U6Gs3zm3bOGFIDskx6YJ9sKteVBhqN85tO/k3uATn6kWFa+3GuW3/+Dpe7ScTEw==
   </chunk>
    <chunk x="20" y="24" width="20" height="12">
-   eJztjTEKQkEMRN+AVuJ1XG3E67jaCB7nr5ZeSTyNDJvAYvH7Dw6EScK8BJaje1T2K/Xevha8gINgJyiCvfr8nrlnJnNlcO8+wFVwFlTBRX3exA9XslYJJnN1cO+2gqdgEjTBI+Zj/HAla9VgMtcG9+4UuV/d4sc0sFabYf5ikfoCBxkbRw==
+   eJztj0EKwlAMRN+AO+l1bN1Ir/NbN4Ue539deqeepgQTCN26KjgQMszwAoHzaPUJf9Hv9z7AILgL+rQt24CnoAiugptP9OaDNfXOzPpyU9qWdYK3oAoefrek3nywpsmZl3MtbcvG9P/id2vqa2JN7cD8xem1A/mRGUM=
   </chunk>
    <chunk x="40" y="24" width="20" height="12">
    eJztjrsNgDAMRN/VwDp8GmAdAg3MQ2AvpkFIQXGRgjriVbbvTmfInwuYBYugEbSCUjAJnKJm90JQG38X5idXCQ7BafyDYBd4o9m9T/S5kBsVf339m7mlWBN9/kPuh6y4AdynFZI=
@@ -949,19 +949,15 @@ body to grapple</text>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="267" gid="6583" x="2992" y="360" width="32" height="32">
-    <properties>
-     <property name="itemtype" value="food-fish"/>
-    </properties>
-   </object>
+   <object id="267" template="mapobjects/objects/barrelA.tx" x="2992" y="360"/>
    <object id="270" gid="6583" x="2832" y="208" width="32" height="32">
     <properties>
      <property name="itemtype" value="food-fish"/>
     </properties>
    </object>
-   <object id="268" gid="6586" x="2984" y="328" width="32" height="32">
+   <object id="268" template="mapobjects/objects/barrelB.tx" x="2984" y="328">
     <properties>
-     <property name="itemtype" value="mana-peppers"/>
+     <property name="itemtype" value="food-fish"/>
     </properties>
    </object>
    <object id="269" gid="6586" x="2864" y="216" width="32" height="32">
@@ -1404,7 +1400,7 @@ and tap    to throw</text>
     <polygon points="-320,-224 -320,128 0,128 -32,96 -64,96 -96,64 -160,64 -192,32 -224,32 -288,-32 -288,-112 -256,-144 -256,-224"/>
    </object>
    <object id="298" template="mapobjects/OutwardBoundary.tx" x="944" y="768">
-    <polygon points="-200,0 -200,208 -176,208 -144,176 48,176 80,144 240,144 240,0"/>
+    <polygon points="-200,0 -200,208 -176,208 -144,176 48,176 80,144 144,144 176,176 176,0"/>
    </object>
    <object id="105" gid="7234" x="336" y="928" width="128" height="128">
     <properties>
@@ -1484,32 +1480,20 @@ and tap    to throw</text>
      <property name="itemtype" value="food-fish"/>
     </properties>
    </object>
-   <object id="306" gid="6589" x="1040" y="992" width="32" height="48">
-    <properties>
-     <property name="itemtype" value="item-throwing-axe"/>
-    </properties>
-   </object>
+   <object id="306" gid="6589" x="1040" y="992" width="32" height="48"/>
    <object id="892" gid="6589" x="1040" y="904" width="32" height="48">
     <properties>
      <property name="itemtype" value="item-throwing-axe"/>
      <property name="z" type="float" value="32"/>
     </properties>
    </object>
-   <object id="300" gid="6589" x="1008" y="1008" width="32" height="48">
+   <object id="300" template="mapobjects/objects/barrelB.tx" x="1008" y="1008"/>
+   <object id="894" template="mapobjects/objects/barrelB.tx" x="1016" y="968">
     <properties>
      <property name="itemtype" value="mana-peppers"/>
     </properties>
    </object>
-   <object id="894" gid="6589" x="1016" y="968" width="32" height="48">
-    <properties>
-     <property name="itemtype" value="mana-peppers"/>
-    </properties>
-   </object>
-   <object id="304" gid="6589" x="1056" y="1016" width="32" height="48">
-    <properties>
-     <property name="itemtype" value="food-fish"/>
-    </properties>
-   </object>
+   <object id="304" template="mapobjects/objects/barrelB.tx" x="1056" y="1016"/>
    <object id="893" gid="6589" x="1096" y="1024" width="32" height="48">
     <properties>
      <property name="itemtype" value="food-fish"/>
@@ -1517,7 +1501,7 @@ and tap    to throw</text>
    </object>
    <object id="891" gid="6589" x="1040" y="936" width="32" height="48">
     <properties>
-     <property name="itemtype" value="food-fish"/>
+     <property name="itemtype" value="food-big-fish"/>
     </properties>
    </object>
    <object id="310" template="mapobjects/banditcave/wall-torch.tx" x="480" y="960"/>
@@ -1846,7 +1830,7 @@ to sprint past archers</text>
     </properties>
    </object>
    <object id="787" template="mapobjects/OutwardBoundary.tx" x="1184" y="880">
-    <polygon points="0,-112 0,32 32,64 160,64 192,32 192,-112"/>
+    <polygon points="-64,-112 -64,64 160,64 192,32 192,-112"/>
    </object>
    <object id="550" template="mapobjects/items/stone.tx" x="808" y="960"/>
   </objectgroup>
@@ -1895,7 +1879,7 @@ to sprint past archers</text>
    <object id="906" template="mapobjects/bandit/shield.tx" x="1368" y="1080"/>
    <object id="905" template="mapobjects/bandit/shield.tx" x="1328" y="1208"/>
   </objectgroup>
-  <objectgroup id="18" name="toarmory" class="Room">
+  <objectgroup id="18" name="toforge" class="Room">
    <object id="79" template="mapobjects/CameraPath.tx" x="976" y="1008">
     <polyline points="-96,0 288,0"/>
    </object>
@@ -1919,7 +1903,7 @@ to sprint past archers</text>
     </properties>
     <ellipse/>
    </object>
-   <object id="395" gid="6828" x="1312" y="960" width="64" height="64">
+   <object id="395" gid="6828" x="1344" y="944" width="64" height="64">
     <properties>
      <property name="bodyinlayers" value="Wall"/>
      <property name="extrudeY" type="float" value="-48"/>
@@ -1937,57 +1921,75 @@ to sprint past archers</text>
     </properties>
     <polygon points="0,-112 0,32 32,64 192,64 256,0 256,-112"/>
    </object>
-   <object id="888" gid="6589" x="1160" y="928" width="32" height="48">
-    <properties>
-     <property name="itemtype" value="item-throwing-axe"/>
-    </properties>
-   </object>
-   <object id="889" gid="6589" x="1160" y="896" width="32" height="48">
+   <object id="888" template="mapobjects/objects/barrelB.tx" x="1272" y="984"/>
+   <object id="889" gid="6589" x="1296" y="936" width="32" height="48">
     <properties>
      <property name="itemtype" value="item-throwing-axe"/>
      <property name="z" type="float" value="32"/>
     </properties>
    </object>
-   <object id="305" gid="6589" x="1144" y="1024" width="32" height="48">
+   <object id="305" gid="6589" x="1216" y="976" width="32" height="48">
     <properties>
      <property name="itemtype" value="food-fish"/>
     </properties>
    </object>
-   <object id="301" gid="6589" x="1176" y="1016" width="32" height="48">
+   <object id="301" template="mapobjects/objects/barrelB.tx" x="1300" y="992"/>
+   <object id="302" gid="6589" x="1152" y="976" width="32" height="48">
     <properties>
      <property name="itemtype" value="mana-peppers"/>
     </properties>
    </object>
-   <object id="302" gid="6589" x="1208" y="976" width="32" height="48">
+   <object id="890" gid="6589" x="1176" y="984" width="32" height="48">
     <properties>
      <property name="itemtype" value="food-fish"/>
     </properties>
    </object>
-   <object id="890" gid="6589" x="1256" y="968" width="32" height="48">
+   <object id="303" gid="6589" x="1296" y="968" width="32" height="48"/>
+   <object id="921" gid="6589" x="1256" y="968" width="32" height="48"/>
+   <object id="922" type="item-dish" gid="6613" x="1300" y="960" width="32" height="32">
     <properties>
-     <property name="itemtype" value="food-fish"/>
+     <property name="z" type="float" value="34"/>
     </properties>
    </object>
-   <object id="303" gid="6589" x="1160" y="984" width="32" height="48">
+   <object id="923" type="item-dish" gid="6613" x="1272" y="952" width="32" height="32">
     <properties>
-     <property name="itemtype" value="item-throwing-axe"/>
+     <property name="z" type="float" value="34"/>
+    </properties>
+   </object>
+   <object id="924" gid="6622" x="1275" y="952" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="36"/>
+    </properties>
+   </object>
+   <object id="925" gid="6682" x="1296" y="968" width="32" height="32">
+    <properties>
+     <property name="z" type="float" value="36"/>
     </properties>
    </object>
   </objectgroup>
-  <objectgroup id="53" name="armory" class="Room">
+  <objectgroup id="53" name="forge" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="1"/>
    </properties>
    <object id="505" template="mapobjects/CameraPath.tx" x="1264" y="1008">
     <polyline points="0,0 192,0"/>
    </object>
-   <object id="384" template="mapobjects/bandit/muscle.tx" x="1544" y="952">
+   <object id="384" template="mapobjects/bandit/muscle.tx" x="1560" y="1048">
     <properties>
      <property name="entrypoint" type="object" value="784"/>
      <property name="initialai" value="enterAndGetProjectile"/>
     </properties>
    </object>
-   <object id="784" x="1512" y="952">
+   <object id="919" template="mapobjects/bandit/muscle.tx" x="1624" y="984">
+    <properties>
+     <property name="entrypoint" type="object" value="920"/>
+     <property name="initialai" value="enterAndGetProjectile"/>
+    </properties>
+   </object>
+   <object id="784" x="1456" y="976">
+    <point/>
+   </object>
+   <object id="920" x="1520" y="952">
     <point/>
    </object>
    <object id="394" gid="6826" x="1552" y="928" width="64" height="64">

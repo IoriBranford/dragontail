@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 84,
-  nextobjectid = 919,
+  nextobjectid = 926,
   backgroundcolor = { 64, 64, 64 },
   properties = {
     ["ceilingz"] = 256,
@@ -559,7 +559,7 @@ return {
         },
         {
           x = 20, y = 24, width = 20, height = 12,
-          data = "eJztjTEKQkEMRN+AVuJ1XG3E67jaCB7nr5ZeSTyNDJvAYvH7Dw6EScK8BJaje1T2K/Xevha8gINgJyiCvfr8nrlnJnNlcO8+wFVwFlTBRX3exA9XslYJJnN1cO+2gqdgEjTBI+Zj/HAla9VgMtcG9+4UuV/d4sc0sFabYf5ikfoCBxkbRw=="
+          data = "eJztj0EKwlAMRN+AO+l1bN1Ir/NbN4Ue539deqeepgQTCN26KjgQMszwAoHzaPUJf9Hv9z7AILgL+rQt24CnoAiugptP9OaDNfXOzPpyU9qWdYK3oAoefrek3nywpsmZl3MtbcvG9P/id2vqa2JN7cD8xem1A/mRGUM="
         },
         {
           x = 40, y = 24, width = 20, height = 12,
@@ -4203,7 +4203,7 @@ return {
               gid = 6583,
               visible = true,
               properties = {
-                ["itemtype"] = "food-fish"
+                ["itemtype"] = ""
               }
             },
             {
@@ -4237,7 +4237,7 @@ return {
               gid = 6586,
               visible = true,
               properties = {
-                ["itemtype"] = "mana-peppers"
+                ["itemtype"] = "food-fish"
               }
             },
             {
@@ -6046,8 +6046,9 @@ return {
                 { x = -144, y = 176 },
                 { x = 48, y = 176 },
                 { x = 80, y = 144 },
-                { x = 240, y = 144 },
-                { x = 240, y = 0 }
+                { x = 144, y = 144 },
+                { x = 176, y = 176 },
+                { x = 176, y = 0 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -6329,9 +6330,7 @@ return {
               opacity = 1,
               gid = 6589,
               visible = true,
-              properties = {
-                ["itemtype"] = "item-throwing-axe"
-              }
+              properties = {}
             },
             {
               id = 892,
@@ -6359,13 +6358,13 @@ return {
               x = 1008,
               y = 1008,
               width = 32,
-              height = 48,
+              height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6589,
+              gid = 6586,
               visible = true,
               properties = {
-                ["itemtype"] = "mana-peppers"
+                ["itemtype"] = ""
               }
             },
             {
@@ -6376,10 +6375,10 @@ return {
               x = 1016,
               y = 968,
               width = 32,
-              height = 48,
+              height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6589,
+              gid = 6586,
               visible = true,
               properties = {
                 ["itemtype"] = "mana-peppers"
@@ -6393,13 +6392,13 @@ return {
               x = 1056,
               y = 1016,
               width = 32,
-              height = 48,
+              height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6589,
+              gid = 6586,
               visible = true,
               properties = {
-                ["itemtype"] = "food-fish"
+                ["itemtype"] = ""
               }
             },
             {
@@ -6433,7 +6432,7 @@ return {
               gid = 6589,
               visible = true,
               properties = {
-                ["itemtype"] = "food-fish"
+                ["itemtype"] = "food-big-fish"
               }
             },
             {
@@ -7853,9 +7852,8 @@ return {
               opacity = 1,
               visible = true,
               polygon = {
-                { x = 0, y = -112 },
-                { x = 0, y = 32 },
-                { x = 32, y = 64 },
+                { x = -64, y = -112 },
+                { x = -64, y = 64 },
                 { x = 160, y = 64 },
                 { x = 192, y = 32 },
                 { x = 192, y = -112 }
@@ -8417,7 +8415,7 @@ return {
           type = "objectgroup",
           draworder = "topdown",
           id = 18,
-          name = "toarmory",
+          name = "toforge",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -8530,8 +8528,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1312,
-              y = 960,
+              x = 1344,
+              y = 944,
               width = 64,
               height = 64,
               rotation = 0,
@@ -8635,16 +8633,16 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1160,
-              y = 928,
+              x = 1272,
+              y = 984,
               width = 32,
-              height = 48,
+              height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6589,
+              gid = 6586,
               visible = true,
               properties = {
-                ["itemtype"] = "item-throwing-axe"
+                ["itemtype"] = ""
               }
             },
             {
@@ -8652,8 +8650,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1160,
-              y = 896,
+              x = 1296,
+              y = 936,
               width = 32,
               height = 48,
               rotation = 0,
@@ -8670,8 +8668,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1144,
-              y = 1024,
+              x = 1216,
+              y = 976,
               width = 32,
               height = 48,
               rotation = 0,
@@ -8687,8 +8685,25 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1176,
-              y = 1016,
+              x = 1300,
+              y = 992,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 6586,
+              visible = true,
+              properties = {
+                ["itemtype"] = ""
+              }
+            },
+            {
+              id = 302,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1152,
+              y = 976,
               width = 32,
               height = 48,
               rotation = 0,
@@ -8700,29 +8715,12 @@ return {
               }
             },
             {
-              id = 302,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 1208,
-              y = 976,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              opacity = 1,
-              gid = 6589,
-              visible = true,
-              properties = {
-                ["itemtype"] = "food-fish"
-              }
-            },
-            {
               id = 890,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1256,
-              y = 968,
+              x = 1176,
+              y = 984,
               width = 32,
               height = 48,
               rotation = 0,
@@ -8738,16 +8736,97 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1160,
-              y = 984,
+              x = 1296,
+              y = 968,
               width = 32,
               height = 48,
               rotation = 0,
               opacity = 1,
               gid = 6589,
               visible = true,
+              properties = {}
+            },
+            {
+              id = 921,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1256,
+              y = 968,
+              width = 32,
+              height = 48,
+              rotation = 0,
+              opacity = 1,
+              gid = 6589,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 922,
+              name = "",
+              type = "item-dish",
+              shape = "rectangle",
+              x = 1300,
+              y = 960,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 6613,
+              visible = true,
               properties = {
-                ["itemtype"] = "item-throwing-axe"
+                ["z"] = 34
+              }
+            },
+            {
+              id = 923,
+              name = "",
+              type = "item-dish",
+              shape = "rectangle",
+              x = 1272,
+              y = 952,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 6613,
+              visible = true,
+              properties = {
+                ["z"] = 34
+              }
+            },
+            {
+              id = 924,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1275,
+              y = 952,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 6622,
+              visible = true,
+              properties = {
+                ["z"] = 36
+              }
+            },
+            {
+              id = 925,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1296,
+              y = 968,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 6682,
+              visible = true,
+              properties = {
+                ["z"] = 36
               }
             }
           }
@@ -8756,7 +8835,7 @@ return {
           type = "objectgroup",
           draworder = "topdown",
           id = 53,
-          name = "armory",
+          name = "forge",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -8791,8 +8870,8 @@ return {
               name = "bandit-muscle",
               type = "bandit-muscle",
               shape = "rectangle",
-              x = 1544,
-              y = 952,
+              x = 1560,
+              y = 1048,
               width = 128,
               height = 128,
               rotation = 0,
@@ -8806,11 +8885,44 @@ return {
               }
             },
             {
+              id = 919,
+              name = "bandit-muscle",
+              type = "bandit-muscle",
+              shape = "rectangle",
+              x = 1624,
+              y = 984,
+              width = 128,
+              height = 128,
+              rotation = 0,
+              opacity = 1,
+              gid = 7272,
+              visible = true,
+              properties = {
+                ["entrypoint"] = { id = 920 },
+                ["initialai"] = "enterAndGetProjectile",
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
               id = 784,
               name = "",
               type = "",
               shape = "point",
-              x = 1512,
+              x = 1456,
+              y = 976,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 920,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 1520,
               y = 952,
               width = 0,
               height = 0,
