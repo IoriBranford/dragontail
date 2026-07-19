@@ -112,5 +112,5 @@ enterAndGetProjectile,FALSE,getProjectile,,,walkToEntryPoint,,,Walk,1,TRUE,TRUE,
 beforeGroundSlammed,FALSE,groundSlammed,,,,,,FallFlat,0,FALSE,FALSE,FALSE,,,,0,0,,,1,,,,,,,,
 groundSlammed,1,down,,,wallSlammed,,,Down,0,FALSE,FALSE,FALSE,,data/sounds/combat/bodyslam.mp3,,0,0,,,1,,,,,,,,9
 enterAndDropDown,,dropDown,,,enterAndDropDown,,,Walk,1,TRUE,TRUE,TRUE,,,,0,0,,,1,,,,,0.5,,,
-dropDown,,land,,,,,checkLanded,JumpDrop,,TRUE,TRUE,TRUE,,,,0,0,,,0.125,,,,,,,,
+dropDown,,land,,,,,checkLanded,JumpDrop,,TRUE,TRUE,TRUE,,,,0,0,,,0.5,,,,,,,,
 land,10,stand,,,,land,decelerateXYto0,FallRiseFromKnees,0,TRUE,TRUE,FALSE,,data/sounds/combat/landonfeet.mp3,,0,0,,,1,,,,,,,,
