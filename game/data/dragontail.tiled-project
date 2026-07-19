@@ -318,6 +318,11 @@
                     "value": ""
                 },
                 {
+                    "name": "time",
+                    "type": "int",
+                    "value": 0
+                },
+                {
                     "name": "titlebarcuecard",
                     "type": "string",
                     "value": ""
