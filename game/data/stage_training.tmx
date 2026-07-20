@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="32" tileheight="32" infinite="1" nextlayerid="9" nextobjectid="51">
+ <editorsettings>
+  <export target="stage_training.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="runphase" value="Dragontail.GamePhase"/>
+ </properties>
+ <tileset firstgid="1" source="sprites/weapons/tallstone.tsx"/>
+ <tileset firstgid="2" source="sprites/player/rose/rose-main.tsx"/>
+ <tileset firstgid="3" source="tilesets/sandy/desert.tsx"/>
+ <tileset firstgid="2073" source="sprites/grassland/tree2C_ss.tsx"/>
+ <tileset firstgid="2074" source="sprites/grassland/tree2C_ss_leaves.tsx"/>
+ <tileset firstgid="2075" source="sprites/weapons/spikefruit-onground.tsx"/>
+ <tileset firstgid="2076" source="sprites/weapons/spikefruit-hanging.tsx"/>
+ <tileset firstgid="2077" source="sprites/items/peppers-on-plant.tsx"/>
+ <tileset firstgid="2078" source="sprites/items/pepper-plant.tsx"/>
+ <tileset firstgid="2079" source="sprites/sandy/tree1a-crown.tsx"/>
+ <tileset firstgid="2080" source="sprites/sandy/tree1a-trunk.tsx"/>
+ <group id="7" name="tilelayers" offsetx="0" offsety="-16">
+  <layer id="3" name="sand" width="30" height="15">
+   <properties>
+    <property name="z" type="float" value="-5"/>
+   </properties>
+   <data encoding="base64" compression="zlib">
+    <chunk x="-16" y="-16" width="16" height="16">
+   eJxjYBgFo2AUMIww8I2VgWE1GwMDAA6RAa0=
+  </chunk>
+    <chunk x="0" y="-16" width="16" height="16">
+   eJzty7sNAlEMRNET2K8hYqpAtAGdkNMCsBKQkVMA1fBJELL2ISog2ytdjeyxmZiY8Cfuya7xytF949DnR7JNnv3ma93UrvprsgiOwTpZJecYsxzary+rK08962cZzJJ5cgluwSZ5Bx981Rtn
+  </chunk>
+    <chunk x="16" y="-16" width="16" height="16">
+   eJxjYBgFo2AUMJAJVrExMPxiJT/8NrMwMBxmZWCYRaYZrSwQM6aTqR8AuWgFqg==
+  </chunk>
+    <chunk x="-16" y="0" width="16" height="16">
+   eJzNkisOQkEMRY9o70hCwg7Q4NkAnoBGY55AIQmesAY8BscnSCyC3TzBC4hZwXQM15+0vacQy1YwtyAMDAUDr+MnlfyuYv+Z4KUYexI8HbogfzNYGrSFvAskWDvsDRapfPY0Ze+Nw7mwv5Ggl3LvK4dLIf92ODo8DO4Gm4D/saBN0E9wCPi/Cr6e7/hU/N+/5Ae+YBVb
+  </chunk>
+    <chunk x="0" y="0" width="16" height="16">
+   eJytkktL1lEQxn+LubirpG+QBNUnaNGi6z5801pkixalqRUUXXZdCKIgWkaU5RdIy7wkQbgTTch9UBLWMgIzQyyGmbc3WnfgcP4z53nmeWb+Z1DhiMCYwITAuECf5j6tmYs9KbBJ4ZrADYEPAvcUTjrcd+gSOKswUueowIDCc8nvW9LChN6MpubN0guNXs3aY/UdXo4KdEsr38SGtzO1Gw4Ng3WDU5U75vDI0m/EzXPBYMjgocFjg06BhiT2qcGqwU6HTofvBmuWtbd78p5VD8Hpdtiq0F/xE4PDntorxVmoGqE3b7Bbs5/wMiXp62XFwXtg0FVa4Sf4Oxx+GOzy7O96zNLhjiQmNKP2Ns+aPQJzlpxmf9FP1J81OC5wSeGKwguBDs++Ande4a7AW0svy5L9jdR95L4K7HPY7+kl+O/rfcTMYoeP14FTaFNYFDjkcFnhRMzQYY/DdPmNOS5Jzj+4VzU1zikMC9yu+KDDAYfNDsMObwQuaovf5LY7rDlMKnzW5ETcb/BFU3vDYdTgm+bdisNq/PfCfjRYMvikMGjQY7DXYIsldtn4s6YNNhReGfyKNxHzc/jpWWNI8369MFN/cf9d7woX/+KCZm6xzv+9fgPGY4LS
+  </chunk>
+    <chunk x="16" y="0" width="16" height="16">
+   eJzNkr0JAmEQBQfZn1RsQezhmjBRMBMzE7MDQS62BbEGBUODQzAwEiuwAU20gRMRucACvr3EyWff8nh5C9pKmL3ATOEVvDF06DpsDLaW7g8cLgalwEHS/Z7DWGAi0PF0f6FQKNwMqoB/EjgKlAbvQId19lOgH+iu5m7wEFgG/Y/DXGEU9HcKK4VzcD+ZwbrBfqfBv39cG2T/A1+KHRiw
+  </chunk>
+   </data>
+  </layer>
+  <layer id="8" name="grass" width="30" height="15" visible="0">
+   <data encoding="base64" compression="zlib"/>
+  </layer>
+  <layer id="4" name="wall" width="30" height="15">
+   <properties>
+    <property name="z" type="float" value="-3"/>
+   </properties>
+   <data encoding="base64" compression="zlib">
+    <chunk x="0" y="0" width="16" height="16">
+   eJzty7ENglAABuGP/80juAGDiGxAxThWjmPFREZD8gZ4WhKuuVxxa0HoQsKna+tx//As9GEI13BJWy/13wpTuIc53NLWj/q/q3/l9ed3cuJAfAGlFw9o
+  </chunk>
+   </data>
+  </layer>
+ </group>
+ <objectgroup id="6" name="players">
+  <object id="3" template="mapobjects/player/Rose.tx" x="160" y="136">
+   <properties>
+    <property name="facedegrees" type="int" value="90"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <group id="5" name="rooms">
+  <objectgroup id="2" name="training" class="Room">
+   <properties>
+    <property name="donewhenenemiesleft" type="int" value="-1"/>
+    <property name="music" type="list">
+     <item type="file" value="music/Ooolin Poolin Oy intro.ogg"/>
+     <item type="file" value="music/Ooolin Poolin Oy loop.ogg"/>
+    </property>
+   </properties>
+   <object id="17" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="56" y="176">
+    <properties>
+     <property name="respawnpoint" type="object" value="18"/>
+    </properties>
+   </object>
+   <object id="11" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="160" y="240">
+    <properties>
+     <property name="respawnpoint" type="object" value="12"/>
+    </properties>
+   </object>
+   <object id="33" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="168" y="88">
+    <properties>
+     <property name="respawnpoint" type="object" value="35"/>
+    </properties>
+   </object>
+   <object id="13" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="296" y="240">
+    <properties>
+     <property name="respawnpoint" type="object" value="14"/>
+    </properties>
+   </object>
+   <object id="34" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="288" y="88">
+    <properties>
+     <property name="respawnpoint" type="object" value="36"/>
+    </properties>
+   </object>
+   <object id="21" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="416" y="176">
+    <properties>
+     <property name="respawnpoint" type="object" value="22"/>
+    </properties>
+   </object>
+   <object id="18" name="rockrespawnpoint" x="56" y="-48">
+    <properties>
+     <property name="z" type="float" value="240"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="12" name="rockrespawnpoint" x="160" y="16">
+    <properties>
+     <property name="z" type="float" value="240"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="35" name="rockrespawnpoint" x="168" y="-136">
+    <properties>
+     <property name="z" type="float" value="240"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="14" name="rockrespawnpoint" x="296" y="16">
+    <properties>
+     <property name="z" type="float" value="240"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="36" name="rockrespawnpoint" x="288" y="-136">
+    <properties>
+     <property name="z" type="float" value="240"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="22" name="rockrespawnpoint" x="416" y="-48">
+    <properties>
+     <property name="z" type="float" value="240"/>
+    </properties>
+    <point/>
+   </object>
+   <object id="4" template="mapobjects/OutwardBoundary.tx" x="0" y="32">
+    <polygon points="0,0 0,64 32,32 448,32 480,64 480,0"/>
+   </object>
+   <object id="23" template="mapobjects/items/spikefruit-ground.tx" x="48" y="124"/>
+   <object id="24" template="mapobjects/items/spikefruit-ground.tx" x="416" y="96"/>
+   <object id="25" template="mapobjects/items/spikefruit-ground.tx" x="104" y="100"/>
+   <object id="26" template="mapobjects/items/spikefruit-ground.tx" x="368" y="88"/>
+   <object id="27" template="mapobjects/objects/sandy/palm-tree1a-trunk.tx" x="56" y="84">
+    <properties>
+     <property name="fruit1" type="object" value="29"/>
+     <property name="fruit2" type="object" value="30"/>
+     <property name="leaves" type="object" value="28"/>
+    </properties>
+   </object>
+   <object id="43" template="mapobjects/objects/sandy/palm-tree1a-trunk.tx" x="240" y="160">
+    <properties>
+     <property name="leaves" type="object" value="44"/>
+    </properties>
+   </object>
+   <object id="47" template="mapobjects/objects/sandy/palm-tree1b-trunk.tx" x="80" y="224">
+    <properties>
+     <property name="leaves" type="object" value="48"/>
+    </properties>
+   </object>
+   <object id="49" template="mapobjects/objects/sandy/palm-tree1b-trunk.tx" x="392" y="256"/>
+   <object id="28" template="mapobjects/objects/sandy/palm-tree1a-crown.tx" x="56" y="36"/>
+   <object id="44" template="mapobjects/objects/sandy/palm-tree1a-crown.tx" x="240" y="112"/>
+   <object id="48" template="mapobjects/objects/sandy/palm-tree1b-crown.tx" x="80" y="176"/>
+   <object id="50" template="mapobjects/objects/sandy/palm-tree1b-crown.tx" x="392" y="208"/>
+   <object id="29" template="mapobjects/items/spikefruit-hanging.tx" x="40" y="40">
+    <properties>
+     <property name="z" type="float" value="64"/>
+    </properties>
+   </object>
+   <object id="30" template="mapobjects/items/spikefruit-hanging.tx" x="72" y="34">
+    <properties>
+     <property name="z" type="float" value="68"/>
+    </properties>
+   </object>
+   <object id="37" gid="2078" x="216" y="80" width="32" height="32">
+    <properties>
+     <property name="item" type="object" value="38"/>
+     <property name="propertiestable" type="file" value="database/objects-properties.csv"/>
+    </properties>
+   </object>
+   <object id="38" gid="2077" x="216" y="80" width="32" height="32">
+    <properties>
+     <property name="propertiestable" type="file" value="database/items-properties.csv"/>
+     <property name="z" type="float" value="1"/>
+    </properties>
+   </object>
+   <object id="40" template="mapobjects/objects/sandy/palm-tree1b-trunk.tx" x="408" y="80">
+    <properties>
+     <property name="leaves" type="object" value="42"/>
+    </properties>
+   </object>
+   <object id="45" template="mapobjects/objects/sandy/palm-tree1a-trunk.tx" x="440" y="96">
+    <properties>
+     <property name="leaves" type="object" value="46"/>
+    </properties>
+   </object>
+   <object id="42" template="mapobjects/objects/sandy/palm-tree1b-crown.tx" x="408" y="32"/>
+   <object id="46" template="mapobjects/objects/sandy/palm-tree1a-crown.tx" x="440" y="48"/>
+  </objectgroup>
+ </group>
+</map>
