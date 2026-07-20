@@ -5,6 +5,8 @@ local Audio      = require "System.Audio"
 local Face       = require "Dragontail.Character.Component.Face"
 local Body       = require "Dragontail.Character.Component.Body"
 local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask"
+local Attacker      = require "Dragontail.Character.Component.Attacker"
+local AttackTarget  = require "Dragontail.Character.Component.AttackTarget"
 
 ---@class Dodge:Character
 ---@field dodgespeed number?
@@ -65,22 +67,34 @@ function Dodge:findDodgeAngle()
     if not dodgespeed then
         return
     end
-    local opponents = self.opponents
-    local projectiles = Characters.getGroup("projectiles")
+    local solids = Characters.getGroup("solids")
 
     local dodgex, dodgey = 0, 0
-    for i = 1, #opponents do
-        local dx, dy = Dodge.getDodgeVector(self, opponents[i])
-        if dx then
-            dodgex, dodgey = dodgex + dx, dodgey + dy
+    local team = self.team
+    local enemyteam = team == "players" and "enemies" or "players"
+    for _, solid in ipairs(solids) do
+        local solidteam = solid.team
+        if solidteam == enemyteam
+        or Attacker.isAttacking(solid)
+        and AttackTarget.getAttackHitLayers(self, solid.attack) ~= 0 then
+            local dx, dy = Dodge.getDodgeVector(self, solid)
+            if dx then
+                dodgex, dodgey = dodgex + dx, dodgey + dy
+            end
         end
     end
-    for i = 1, #projectiles do
-        local dx, dy = Dodge.getDodgeVector(self, projectiles[i])
-        if dx then
-            dodgex, dodgey = dodgex + dx, dodgey + dy
-        end
-    end
+    -- for i = 1, #opponents do
+    --     local dx, dy = Dodge.getDodgeVector(self, opponents[i])
+    --     if dx then
+    --         dodgex, dodgey = dodgex + dx, dodgey + dy
+    --     end
+    -- end
+    -- for i = 1, #projectiles do
+    --     local dx, dy = Dodge.getDodgeVector(self, projectiles[i])
+    --     if dx then
+    --         dodgex, dodgey = dodgex + dx, dodgey + dy
+    --     end
+    -- end
 
     if dodgex == 0 and dodgey == 0 then
         return
