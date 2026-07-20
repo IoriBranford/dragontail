@@ -30,6 +30,16 @@ function CameraBoundary:keepPointInside(camx, camy, camw, camh)
             x2 + selfx, y2 + selfy
     elseif self.shape == "rectangle" then
         local x, y = self.x, self.y
+        local w, h = self.width - camw, self.height - camh
+        camx = math.max(x, math.min(camx, x + w))
+        camy = math.max(y, math.min(camy, y + h))
+        return camx, camy
+    end
+end
+
+function CameraBoundary:lerpPointInside(camx, camy, camw, camh)
+    if self.shape == "rectangle" then
+        local x, y = self.x, self.y
         local w, h = self.width, self.height
         local tx = (camx - x) / w
         local ty = (camy - y) / h
@@ -38,7 +48,6 @@ function CameraBoundary:keepPointInside(camx, camy, camw, camh)
         camy = math.lerp(ty, y + camhh, y + h - camhh)
         return camx, camy
     end
-    return camx, camy
 end
 
 return CameraBoundary
