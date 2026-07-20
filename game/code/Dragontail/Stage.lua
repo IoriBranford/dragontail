@@ -384,7 +384,6 @@ function Stage.updateGoingToNextRoom()
     local centerx, centery = camera.x + camhalfw, camera.y + camhalfh
     local centerz = camera.z + camera.bodyheight/2
 
-    local destx, desty = 0, 0
     local playersx, playersy, playersz = 0, 0, 0
     local players = Characters.getGroup("players")
     for _, player in ipairs(players) do
@@ -405,38 +404,44 @@ function Stage.updateGoingToNextRoom()
     local camerapath = room.camerapath ---@type CameraPath
     local cameraboundary = room.cameraboundary ---@type CameraBoundary
 
+    local destx, desty = playersx, playersy
     if camerapath then
+        local _, _, a, b = camerapath:projectPoint(destx, desty)
+        local ax, ay, bx, by = camerapath:getSegment(a, b)
+        local dx, dy = bx-ax, by-ay
+
+        local lookahead = 1/6
+        local lax, lay = 0, 0
+        local ab, abx, aby = math2.dist(ax, ay, bx, by)
+        if ab ~= 0 then
+            lookahead = lookahead / ab
+            lax = Stage.CameraWidth  * abx * lookahead
+            lay = Stage.CameraHeight * aby * lookahead
+        end
+
         if cameraboundary then
-            destx, desty = cameraboundary:keepPointInside(playersx, playersy)
+            if cameraboundary.shape == "rectangle" then
+                destx, desty =
+                    cameraboundary:keepXInside(playersx + lax, Stage.CameraWidth),
+                    cameraboundary:lerpYInside(playersy + lay, Stage.CameraHeight)
+            else
+                destx, desty = cameraboundary:keepPointInside(playersx + lax, playersy + lay,
+                    Stage.CameraWidth, Stage.CameraHeight)
+            end
             local velx, vely = destx - centerx, desty - centery
-            local _, _, a, b = camerapath:projectPoint(destx, desty)
-            local ax, ay, bx, by = camerapath:getSegment(a, b)
-            local dx, dy = bx-ax, by-ay
             if math.dot(velx, vely, dx, dy) < 0 then
                 dx, dy = math.rot90(dx, dy, 1)
                 velx, vely = math.projpointline(velx, vely, 0, 0, dx, dy)
                 destx, desty = centerx + velx, centery + vely
             end
         else
-            local a, b
-            destx, desty, a, b = camerapath:projectPoint(playersx, playersy)
-            local ax, ay, bx, by = camerapath:getSegment(a, b)
-
-            local lookahead = 1/6
-            local lax, lay = 0, 0
-            local ab, abx, aby = math2.dist(ax, ay, bx, by)
-            if ab ~= 0 then
-                lookahead = lookahead / ab
-                lax = Stage.CameraWidth  * abx * lookahead
-                lay = Stage.CameraHeight * aby * lookahead
-            end
             destx, desty = camerapath:projectPoint(playersx + lax, playersy + lay)
-            if math.dot(destx-centerx, desty-centery, bx-ax, by-ay) < 0 then
+            if math.dot(destx-centerx, desty-centery, dx, dy) < 0 then
                 destx, desty = camerapath:projectPoint(centerx, centery)
             end
         end
     elseif cameraboundary then
-        destx, desty = cameraboundary:keepPointInside(playersx, playersy,
+        destx, desty = cameraboundary:lerpPointInside(playersx, playersy,
             Stage.CameraWidth, Stage.CameraHeight)
     end
 
