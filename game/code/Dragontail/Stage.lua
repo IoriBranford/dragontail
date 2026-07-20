@@ -177,8 +177,9 @@ function Stage.init(startroom)
         Database.load("data/database/players-properties.csv")
         local player = Character("Rose")
         Characters.spawn(player)
+        Stage.warpCamera(camera.x+camera.width/2, camera.y+camera.height/2)
     end
-    Stage.warpCamera(camera.x+camera.width/2, camera.y+camera.height/2)
+
     local foundbounds = 0
     local foundmusic
     for i = firstroomindex - 1, 1, -1 do
