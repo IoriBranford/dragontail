@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset version="1.11" tiledversion="1.12.2" name="desert" tilewidth="32" tileheight="32" tilecount="2070" columns="46">
+ <editorsettings>
+  <export target="desert.lua" format="lua"/>
+ </editorsettings>
  <image source="desert.png" width="1472" height="1440"/>
  <wangsets>
   <wangset name="desert corner" type="corner" tile="-1">
