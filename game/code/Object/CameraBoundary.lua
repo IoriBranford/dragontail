@@ -50,6 +50,30 @@ function CameraBoundary:lerpPointInside(camx, camy, camw, camh)
         camy = math.lerp(ty, y + camhh, y + h - camhh)
         return camx, camy
     end
+    return camx, camy
+end
+
+function CameraBoundary:keepXInside(camx, camw)
+    if self.shape == "rectangle" then
+        local x = self.x
+        local w = self.width
+        local camhw = camw/2
+        camx = math.max(x + camhw, math.min(camx, x + w - camhw))
+        return camx
+    end
+    return camx
+end
+
+function CameraBoundary:lerpYInside(camy, camh)
+    if self.shape == "rectangle" then
+        local y = self.y
+        local h = self.height
+        local ty = (camy - y) / h
+        local camhh = camh/2
+        camy = math.lerp(ty, y + camhh, y + h - camhh)
+        return camy
+    end
+    return camy
 end
 
 return CameraBoundary
