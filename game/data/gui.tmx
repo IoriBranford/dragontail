@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="32" nextobjectid="222">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="33" nextobjectid="232">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -376,6 +376,56 @@ to clear lost enemies</text>
     <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">...</text>
    </object>
   </objectgroup>
+  <objectgroup draworder="index" id="32" name="trainingmenu" class="Gui.Menu">
+   <properties>
+    <property name="backaction" value="unpauseGame"/>
+   </properties>
+   <object id="224" name="name" x="192" y="54" width="96" height="18" visible="0">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">PAUSE</text>
+   </object>
+   <object id="225" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="96" y="103.5">
+    <properties>
+     <property name="alignx" type="float" value="0.375"/>
+    </properties>
+   </object>
+   <object id="226" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="36" y="103.5" rotation="180">
+    <properties>
+     <property name="alignx" type="float" value="-0.375"/>
+    </properties>
+   </object>
+   <object id="227" template="gui/menu/mainmenu/Button.tx" name="RESUME" x="32" y="90" width="64" height="36">
+    <properties>
+     <property name="action" value="unpauseGame"/>
+    </properties>
+    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">TRAIN</text>
+   </object>
+   <object id="228" template="gui/menu/mainmenu/Button.tx" name="OPTIONS" x="40" y="126" width="96" height="36">
+    <properties>
+     <property name="action" value="openMenu"/>
+     <property name="guipath" value="options.simple"/>
+    </properties>
+    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">OPTIONS</text>
+   </object>
+   <object id="229" template="gui/menu/mainmenu/Button.tx" name="RESET" x="48" y="162" width="72" height="36">
+    <properties>
+     <property name="action" value="clearEnemiesAndUnpause"/>
+    </properties>
+    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">RESET</text>
+   </object>
+   <object id="230" template="gui/menu/mainmenu/Button.tx" name="END GAME" x="56" y="198" width="52" height="36">
+    <properties>
+     <property name="action" value="returnToTitle"/>
+    </properties>
+    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">END</text>
+   </object>
+   <object id="231" template="gui/menu/mainmenu/Button.tx" name="DEBUG" x="64" y="234" width="24" height="36">
+    <properties>
+     <property name="action" value="openMenu"/>
+     <property name="guipath" value="gameplay.debugmenu"/>
+    </properties>
+    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">...</text>
+   </object>
+  </objectgroup>
   <objectgroup id="27" name="retrymenu" class="Gui.Menu" visible="0">
    <object id="206" template="gui/menu/Panel.tx" x="136" y="90" width="208" height="90"/>
    <object id="207" template="gui/menu/pause/Button.tx" name="Restart checkpoint" type="Gui.Button" x="184" y="99" width="144" height="18">
@@ -398,7 +448,7 @@ to clear lost enemies</text>
    </object>
    <object id="210" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="152" y="108"/>
   </objectgroup>
-  <objectgroup id="15" name="debugmenu" class="Gui.Menu">
+  <objectgroup id="15" name="debugmenu" class="Gui.Menu" visible="0">
    <properties>
     <property name="backaction" value="closeMenu"/>
    </properties>
@@ -571,7 +621,7 @@ to clear lost enemies</text>
   </objectgroup>
  </group>
  <group id="17" name="title" visible="0">
-  <objectgroup id="7" name="title" locked="1">
+  <objectgroup id="7" name="title" visible="0" locked="1">
    <object id="11" name="copyright" x="36" y="234" width="412" height="18">
     <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="right" valign="center">© 2026 Iori Branford</text>
    </object>
@@ -605,47 +655,46 @@ to clear lost enemies</text>
   <group id="24" name="mainmenus">
    <objectgroup draworder="index" id="18" name="normal" class="Gui.Menu">
     <object id="106" template="gui/menu/Panel.tx" x="40" y="117" width="112" height="90" visible="0"/>
-    <object id="182" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="100" y="112.5">
+    <object id="182" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="100" y="76.5">
      <properties>
       <property name="alignx" type="float" value="0.375"/>
      </properties>
     </object>
-    <object id="183" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="36" y="112.5" rotation="180">
+    <object id="183" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="36" y="76.5" rotation="180">
      <properties>
       <property name="alignx" type="float" value="-0.375"/>
      </properties>
     </object>
-    <object id="102" template="gui/menu/mainmenu/Button.tx" type="Gui.Button" x="32" y="99" width="68" height="36">
+    <object id="102" template="gui/menu/mainmenu/Button.tx" type="Gui.Button" x="32" y="63" width="68" height="36">
      <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">FIGHT!</text>
     </object>
-    <object id="104" name="OPTIONS" type="Gui.Button" x="40" y="135" width="96" height="36">
+    <object id="223" template="gui/menu/mainmenu/Button.tx" type="Gui.Button" x="40" y="99" width="64" height="36">
+     <properties>
+      <property name="action" value="startTraining"/>
+     </properties>
+     <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">TRAIN</text>
+    </object>
+    <object id="104" template="gui/menu/mainmenu/Button.tx" name="OPTIONS" type="Gui.Button" x="48" y="135" width="96" height="36">
      <properties>
       <property name="action" value="openMenu"/>
-      <property name="color2" type="color" value="#ffffd8d8"/>
-      <property name="frequency" type="float" value="30"/>
       <property name="guipath" value="options.simple"/>
-      <property name="presssound" type="file" value="sounds/combat/firehit.mp3"/>
-      <property name="selectanimation" value="colorCycle"/>
      </properties>
      <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">OPTIONS</text>
     </object>
-    <object id="105" name="QUIT" type="Gui.Button" x="56" y="216" width="52" height="36">
+    <object id="105" template="gui/menu/mainmenu/Button.tx" name="QUIT" type="Gui.Button" x="64" y="216" width="52" height="36">
      <properties>
       <property name="action" value="quitGame"/>
-      <property name="color2" type="color" value="#ffffd8d8"/>
-      <property name="frequency" type="float" value="30"/>
-      <property name="selectanimation" value="colorCycle"/>
      </properties>
      <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">QUIT</text>
     </object>
-    <object id="198" template="gui/menu/mainmenu/Button.tx" name="WEBSITE" x="48" y="171" width="100" height="36">
+    <object id="198" template="gui/menu/mainmenu/Button.tx" name="WEBSITE" x="56" y="171" width="100" height="36">
      <properties>
       <property name="action" value="openURL"/>
       <property name="url" value="https://ioribranford.itch.io/rose-of-dragontail"/>
      </properties>
      <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">WEBSITE</text>
     </object>
-    <object id="219" name="Rate &amp; Comment" x="56" y="198" width="88" height="18">
+    <object id="219" name="Rate &amp; Comment" x="64" y="198" width="88" height="18">
      <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Rate &amp; Comment</text>
     </object>
    </objectgroup>
