@@ -4,6 +4,7 @@
   <export target="stage_training.lua" format="lua"/>
  </editorsettings>
  <properties>
+  <property name="pausemenu" value="gameplay.trainingmenu"/>
   <property name="runphase" value="Dragontail.GamePhase"/>
  </properties>
  <tileset firstgid="1" source="sprites/weapons/tallstone.tsx"/>

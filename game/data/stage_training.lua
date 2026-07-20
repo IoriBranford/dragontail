@@ -12,6 +12,7 @@ return {
   nextlayerid = 9,
   nextobjectid = 51,
   properties = {
+    ["pausemenu"] = "gameplay.trainingmenu",
     ["runphase"] = "Dragontail.GamePhase"
   },
   tilesets = {
