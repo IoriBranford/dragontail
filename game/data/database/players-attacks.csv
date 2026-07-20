@@ -17,9 +17,9 @@ running-with-enemy,TRUE,FALSE,24,0.785398163397448,,,10,12,3,,,,,FALSE,FALSE,,,1
 human-thrown,TRUE,FALSE,24,0.785398163397448,,,15,12,3,,,,,FALSE,FALSE,,,,,knockedBackJuggled,knockedBack,,data/sounds/combat/hit2.mp3,,spark-hit,spark-guard,FALSE,FALSE,0,FALSE,FALSE,Object Enemy Player,TRUE
 spit-fireball,TRUE,FALSE,0,0,8,16,0,0,0,,,,0,FALSE,FALSE,20,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-fireball,60,FALSE,1,Object Enemy,
 spit-fat-fireball,TRUE,FALSE,0,0,8,16,0,0,0,,,,0,FALSE,FALSE,9,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-fat-fireball,120,FALSE,1,Object Enemy,
-fireball-spin-cw,TRUE,FALSE,0,0,8,16,0,0,0,,,,0.628318530717959,FALSE,FALSE,20,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-fireball,120,FALSE,6,Object Enemy,
-fireball-spin-ccw,TRUE,FALSE,0,0,8,16,0,0,0,,,,-0.628318530717959,FALSE,FALSE,20,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-fireball,120,FALSE,6,Object Enemy,
-fireball-storm,TRUE,FALSE,0,0,8,16,0,0,0,,,,0.589048622548086,FALSE,FALSE,60,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-fireball,180,FALSE,60,Object Enemy,
+fireball-spin-cw,TRUE,FALSE,0,0,8,16,0,0,0,,,,0.628318530717959,FALSE,FALSE,20,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-fireball,120,FALSE,10,Object Enemy,
+fireball-spin-ccw,TRUE,FALSE,0,0,8,16,0,0,0,,,,-0.628318530717959,FALSE,FALSE,20,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-fireball,120,FALSE,10,Object Enemy,
+fireball-storm,TRUE,FALSE,0,0,8,16,0,0,0,,,,0.589048622548086,FALSE,FALSE,60,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-firestorm-fireball,180,FALSE,60,Object Enemy,
 spit-multi-fireball,TRUE,FALSE,0,0.785398163397448,8,16,0,0,0,,,,0,FALSE,FALSE,20,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-fireball,120,FALSE,5,Object Enemy,
 spit-3-fireballs,TRUE,FALSE,0,0.785398163397448,8,16,0,0,0,,,,0,FALSE,FALSE,20,0,0,FALSE,FALSE,FALSE,,,,spark-hit,spark-guard,FALSE,Rose-fireball,60,FALSE,3,Object Enemy,
 groundSlam,TRUE,FALSE,24,1.5707963267949,-8,16,10,10,5,,,,,FALSE,FALSE,1000,,6,TRUE,knockedBack,knockedBack,,data/sounds/combat/hit2.mp3,,spark-hit,spark-guard,FALSE,FALSE,0,FALSE,FALSE,Object Enemy,

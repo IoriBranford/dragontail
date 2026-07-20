@@ -23,8 +23,8 @@ spit-multi-fireball,spit-multi-fireball,Dragontail.Character.Behavior.Player.Att
 running-spit-multi-fireball,spit-multi-fireball,Dragontail.Character.Behavior.Player.AttackingStraight,,,walk,,20,.attackasefile,spit,0,FALSE,FALSE,FALSE,,,,0,0,0,,4,1,3.14159265358979
 spit-3-fireballs,spit-3-fireballs,Dragontail.Character.Behavior.Player.AttackingStraight,,,walk,,20,.attackasefile,spit,0,FALSE,FALSE,FALSE,,,,0,0,0,,-6,1,3.14159265358979
 running-spit-3-fireballs,spit-3-fireballs,Dragontail.Character.Behavior.Player.AttackingStraight,,,walk,,20,.attackasefile,spit,0,FALSE,FALSE,FALSE,,,,0,0,0,,4,1,3.14159265358979
-fireball-spin-cw,fireball-spin-cw,Dragontail.Character.Behavior.Player.SpinAttack,,,walk,,6,.attackasefile,attackA,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,,0,0,0,,0,1,1.0471975511966
-fireball-spin-ccw,fireball-spin-ccw,Dragontail.Character.Behavior.Player.SpinAttack,,,walk,,6,.attackasefile,attackB,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,,0,0,0,,0,1,1.0471975511966
+fireball-spin-cw,fireball-spin-cw,Dragontail.Character.Behavior.Player.SpinAttack,,,walk,,30,.attackasefile,attackA,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing3.mp3,,0,0,0,,0,1,1.0471975511966
+fireball-spin-ccw,fireball-spin-ccw,Dragontail.Character.Behavior.Player.SpinAttack,,,walk,,30,.attackasefile,attackB,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing3.mp3,,0,0,0,,0,1,1.0471975511966
 running-fireball-spin-cw,fireball-spin-cw,Dragontail.Character.Behavior.Player.SpinAttack,,,walk,,6,.attackasefile,attackA,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,,0,0,0,,0,1,1.0471975511966
 running-fireball-spin-ccw,fireball-spin-ccw,Dragontail.Character.Behavior.Player.SpinAttack,,,walk,,6,.attackasefile,attackB,1,FALSE,FALSE,FALSE,,data/sounds/combat/swing2.mp3,,0,0,0,,0,1,1.0471975511966
 fireball-storm,fireball-storm,Dragontail.Character.Behavior.Player.SpinAttack,,,walk,,FALSE,.attackasefile,attackA,1,FALSE,FALSE,FALSE,,data/sounds/combat/firestorm.mp3,data/sounds/player/attacksuper.mp3,3,0,0,,0,FALSE,0.589048622548086
