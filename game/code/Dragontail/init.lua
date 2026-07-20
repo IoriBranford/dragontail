@@ -105,6 +105,16 @@ local Dragontail = {
     screencanvas = nil, ---@type Canvas
 }
 
+function Dragontail.loadMap(map, ...)
+    local mapdata = love.filesystem.load(map)()
+    local phase = mapdata.properties.runphase
+    if not phase then
+        print(map.." can't be run directly without a runphase")
+        phase = "Dragontail.TitlePhase"
+    end
+    love.event.loadphase(phase, ...)
+end
+
 function Dragontail.load(args)
     Config = require "System.Config"
     local w, h = Dragontail.width, Dragontail.height
