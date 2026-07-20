@@ -30,12 +30,21 @@ function GameGuiActions.clearEnemies()
     Characters.clearEnemies()
 end
 
+function GameGuiActions.clearEnemiesAndUnpause()
+    Characters.clearEnemies()
+    GameGuiActions.unpauseGame()
+end
+
 function GameGuiActions.restartStageCheckpoint()
     love.event.loadphase("Dragontail.GamePhase")
 end
 
 function GameGuiActions.restartStage(gui, element)
     love.event.loadphase("Dragontail.GamePhase", false, element.checkpoint or false)
+end
+
+function GameGuiActions.startTraining(gui, element)
+    love.event.loadphase("Dragontail.GamePhase", "data/stage_training.lua")
 end
 
 function GameGuiActions.returnToTitle()
