@@ -290,6 +290,16 @@ function Character:heal(amount)
     self.health = min(self.health + amount, self.maxhealth)
 end
 
+function Character:forceDefeat()
+    local HoldOpponent = require "Dragontail.Character.Component.HoldOpponent"
+    if self.health > 0 then
+        self.health = 0
+        HoldOpponent.stopHolding(self, self.heldopponent)
+        HoldOpponent.stopHolding(self.heldby, self)
+        StateMachine.start(self, "fall")
+    end
+end
+
 function Character:setEmote(emotename)
     local emote = self.emote
     if emote then
