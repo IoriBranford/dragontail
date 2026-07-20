@@ -15,18 +15,30 @@ end
 ---@param camy any
 ---@return number newcamx
 ---@return number newcamy
----@return number boundary1x
----@return number boundary1y
----@return number boundary2x
----@return number boundary2y
-function CameraBoundary:keepPointInside(camx, camy)
+---@return number? boundary1x
+---@return number? boundary1y
+---@return number? boundary2x
+---@return number? boundary2y
+function CameraBoundary:keepPointInside(camx, camy, camw, camh)
     local selfx, selfy = self.x, self.y
-    local points = assert(self.points)
-    local x, y, i1, i2 = math.keeppointinpolygon(points, camx - selfx, camy - selfy)
-    local x1, y1, x2, y2 = points[i1-1], points[i1], points[i2-1], points[i2]
-    return x + selfx, y + selfy,
-        x1 + selfx, y1 + selfy,
-        x2 + selfx, y2 + selfy
+    local points = self.points
+    if points then
+        local x, y, i1, i2 = math.keeppointinpolygon(points, camx - selfx, camy - selfy)
+        local x1, y1, x2, y2 = points[i1-1], points[i1], points[i2-1], points[i2]
+        return x + selfx, y + selfy,
+            x1 + selfx, y1 + selfy,
+            x2 + selfx, y2 + selfy
+    elseif self.shape == "rectangle" then
+        local x, y = self.x, self.y
+        local w, h = self.width, self.height
+        local tx = (camx - x) / w
+        local ty = (camy - y) / h
+        local camhw, camhh = camw/2, camh/2
+        camx = math.lerp(tx, x + camhw, x + w - camhw)
+        camy = math.lerp(ty, y + camhh, y + h - camhh)
+        return camx, camy
+    end
+    return camx, camy
 end
 
 return CameraBoundary
