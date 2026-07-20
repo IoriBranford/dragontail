@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 93,
-  nextobjectid = 961,
+  nextobjectid = 977,
   backgroundcolor = { 64, 64, 64 },
   properties = {
     ["ceilingz"] = 256,
@@ -9509,7 +9509,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 3
+            ["donewhenenemiesleft"] = 8
           },
           objects = {
             {
@@ -9612,8 +9612,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2160,
-              y = 1072,
+              x = 2144,
+              y = 1088,
               width = 96,
               height = 48,
               rotation = 0,
@@ -9680,8 +9680,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2096,
-              y = 1104,
+              x = 2080,
+              y = 1120,
               width = 32,
               height = 32,
               rotation = 0,
@@ -9731,8 +9731,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2160,
-              y = 1112,
+              x = 2080,
+              y = 1080,
               width = 32,
               height = 32,
               rotation = 0,
@@ -9748,8 +9748,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2080,
-              y = 912,
+              x = 2088,
+              y = 896,
               width = 32,
               height = 32,
               rotation = 0,
@@ -9814,8 +9814,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1928,
-              y = 912,
+              x = 2160,
+              y = 1080,
               width = 64,
               height = 64,
               rotation = 0,
@@ -9825,7 +9825,8 @@ return {
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
                 ["initialai"] = "enterAndAttackUntilEmpty",
-                ["recoverai"] = "enterAndAttackUntilEmpty"
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 16
               }
             },
             {
@@ -9833,7 +9834,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2048,
+              x = 2064,
               y = 920,
               width = 64,
               height = 64,
@@ -9852,8 +9853,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2160,
-              y = 920,
+              x = 2176,
+              y = 928,
               width = 128,
               height = 128,
               rotation = 0,
@@ -9863,7 +9864,8 @@ return {
               properties = {
                 ["defaultattack"] = "bow-shot-until-empty",
                 ["initialai"] = "enterAndAttackUntilEmpty",
-                ["recoverai"] = "enterAndAttackUntilEmpty"
+                ["recoverai"] = "enterAndAttackUntilEmpty",
+                ["z"] = 16
               }
             },
             {
@@ -9986,28 +9988,11 @@ return {
               }
             },
             {
-              id = 366,
-              name = "",
-              type = "item-dish",
-              shape = "rectangle",
-              x = 2016,
-              y = 928,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              opacity = 1,
-              gid = 6613,
-              visible = true,
-              properties = {
-                ["z"] = 16
-              }
-            },
-            {
               id = 367,
               name = "",
               type = "item-dish",
               shape = "rectangle",
-              x = 2056,
+              x = 2016,
               y = 928,
               width = 32,
               height = 32,
@@ -10041,8 +10026,8 @@ return {
               name = "",
               type = "item-dish",
               shape = "rectangle",
-              x = 2184,
-              y = 928,
+              x = 1920,
+              y = 920,
               width = 32,
               height = 32,
               rotation = 0,
@@ -10058,8 +10043,8 @@ return {
               name = "",
               type = "item-dish",
               shape = "rectangle",
-              x = 2136,
-              y = 1064,
+              x = 2016,
+              y = 1096,
               width = 32,
               height = 32,
               rotation = 0,
@@ -10075,8 +10060,8 @@ return {
               name = "",
               type = "item-dish",
               shape = "rectangle",
-              x = 2176,
-              y = 1064,
+              x = 2124,
+              y = 1080,
               width = 32,
               height = 32,
               rotation = 0,
@@ -10088,28 +10073,11 @@ return {
               }
             },
             {
-              id = 374,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2020,
-              y = 930,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              opacity = 1,
-              gid = 6622,
-              visible = true,
-              properties = {
-                ["z"] = 18
-              }
-            },
-            {
               id = 375,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2056,
+              x = 2016,
               y = 928,
               width = 32,
               height = 32,
@@ -10126,8 +10094,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2192,
-              y = 928,
+              x = 1928,
+              y = 920,
               width = 32,
               height = 32,
               rotation = 0,
@@ -10160,8 +10128,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2136,
-              y = 1064,
+              x = 2016,
+              y = 1096,
               width = 32,
               height = 32,
               rotation = 0,
@@ -10177,8 +10145,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2172,
-              y = 1072,
+              x = 2120,
+              y = 1088,
               width = 32,
               height = 32,
               rotation = 0,
@@ -10221,6 +10189,23 @@ return {
               visible = true,
               properties = {
                 ["extrudeY"] = -16
+              }
+            },
+            {
+              id = 366,
+              name = "",
+              type = "item-dish",
+              shape = "rectangle",
+              x = 1824,
+              y = 1080,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 6613,
+              visible = true,
+              properties = {
+                ["z"] = 16
               }
             },
             {
@@ -10279,7 +10264,7 @@ return {
               name = "",
               type = "item-dish",
               shape = "rectangle",
-              x = 1840,
+              x = 1848,
               y = 1080,
               width = 32,
               height = 32,
@@ -10309,11 +10294,28 @@ return {
               }
             },
             {
+              id = 374,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1828,
+              y = 1082,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 6622,
+              visible = true,
+              properties = {
+                ["z"] = 18
+              }
+            },
+            {
               id = 380,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1842,
+              x = 1850,
               y = 1082,
               width = 32,
               height = 32,
@@ -10352,6 +10354,82 @@ return {
                 ["extrudeY"] = -256,
                 ["linecolor"] = "#80ffffff"
               }
+            },
+            {
+              id = 962,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 2096,
+              y = 968,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["facedegrees"] = 180,
+                ["initialai"] = "guardForever",
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 965,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 2112,
+              y = 1056,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["facedegrees"] = 180,
+                ["initialai"] = "guardForever",
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 963,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 2128,
+              y = 992,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["facedegrees"] = 180,
+                ["initialai"] = "guardForever",
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 966,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 2136,
+              y = 1024,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["facedegrees"] = 180,
+                ["initialai"] = "guardForever",
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
             }
           }
         },
@@ -10368,7 +10446,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 4
+            ["donewhenenemiesleft"] = 5
           },
           objects = {
             {
@@ -10376,8 +10454,25 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 1744,
-              y = 1040,
+              x = 1688,
+              y = 1080,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 968,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1720,
+              y = 1024,
               width = 64,
               height = 64,
               rotation = 0,
@@ -10393,8 +10488,25 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 1672,
-              y = 1080,
+              x = 1640,
+              y = 1048,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 967,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1584,
+              y = 1104,
               width = 64,
               height = 64,
               rotation = 0,
@@ -10408,7 +10520,7 @@ return {
             {
               id = 340,
               name = "",
-              type = "bandit-dagger",
+              type = "bandit-spear",
               shape = "rectangle",
               x = 2256,
               y = 1040,
@@ -10416,7 +10528,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10425,7 +10537,7 @@ return {
             {
               id = 512,
               name = "",
-              type = "bandit-dagger",
+              type = "bandit-spear",
               shape = "rectangle",
               x = 2336,
               y = 1000,
@@ -10433,7 +10545,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7235,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10454,7 +10566,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 4
+            ["donewhenenemiesleft"] = 6
           },
           objects = {
             {
@@ -10463,7 +10575,7 @@ return {
               type = "bandit-muscle",
               shape = "rectangle",
               x = 1984,
-              y = 1176,
+              y = 1192,
               width = 128,
               height = 128,
               rotation = 0,
@@ -10477,10 +10589,80 @@ return {
             {
               id = 348,
               name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 2256,
+              y = 976,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 970,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 1736,
+              y = 1040,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 789,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 2264,
+              y = 1008,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["facedegrees"] = 180,
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 969,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 1720,
+              y = 1072,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7274,
+              visible = true,
+              properties = {
+                ["facedegrees"] = 180,
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 971,
+              name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 2456,
-              y = 1000,
+              x = 1520,
+              y = 1056,
               width = 64,
               height = 64,
               rotation = 0,
@@ -10492,20 +10674,19 @@ return {
               }
             },
             {
-              id = 789,
+              id = 972,
               name = "",
-              type = "bandit-shield",
+              type = "bandit-spear",
               shape = "rectangle",
-              x = 2256,
-              y = 1016,
+              x = 2448,
+              y = 984,
               width = 64,
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7235,
               visible = true,
               properties = {
-                ["facedegrees"] = 180,
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
             }
@@ -10531,7 +10712,7 @@ return {
               type = "bandit-muscle",
               shape = "rectangle",
               x = 2128,
-              y = 1176,
+              y = 1192,
               width = 128,
               height = 128,
               rotation = 0,
@@ -10545,7 +10726,7 @@ return {
             {
               id = 347,
               name = "",
-              type = "bandit-shield",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 1744,
               y = 1056,
@@ -10553,7 +10734,24 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 974,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1696,
+              y = 1032,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10565,7 +10763,7 @@ return {
               type = "bandit-muscle",
               shape = "rectangle",
               x = 1848,
-              y = 1184,
+              y = 1192,
               width = 128,
               height = 128,
               rotation = 0,
@@ -10579,15 +10777,32 @@ return {
             {
               id = 349,
               name = "",
-              type = "bandit-spear",
+              type = "bandit-dagger",
               shape = "rectangle",
-              x = 1584,
-              y = 1048,
+              x = 1712,
+              y = 1088,
               width = 64,
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 973,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1664,
+              y = 1064,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10596,15 +10811,32 @@ return {
             {
               id = 350,
               name = "",
-              type = "bandit-spear",
+              type = "bandit-dagger",
               shape = "rectangle",
-              x = 2424,
-              y = 1000,
+              x = 2304,
+              y = 1056,
               width = 64,
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 975,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2360,
+              y = 1032,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10613,15 +10845,32 @@ return {
             {
               id = 790,
               name = "",
-              type = "bandit-shield",
+              type = "bandit-dagger",
               shape = "rectangle",
-              x = 2288,
-              y = 1008,
+              x = 2264,
+              y = 992,
               width = 64,
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7237,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 976,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2320,
+              y = 968,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7237,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
