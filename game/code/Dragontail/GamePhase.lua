@@ -20,6 +20,7 @@ local paused
 local pauselocked
 local stagepath = "data/stage_banditcave.lua"
 local playerwon
+local pausemenu
 
 local moviemap
 local movie ---@type Movie
@@ -51,6 +52,9 @@ function GamePhase.loadphase(stagepath_, startroom)
             end
         end
     end)
+    local map = Assets.maps[stagepath]
+    pausemenu = map.pausemenu and Gui:get(map.pausemenu)
+        or Gui.gameplay.pausemenu
 
     moviemap = Tiled.Map.load("data/movies_gameplay.lua")
     moviemap:indexLayersByName()
@@ -86,7 +90,7 @@ function GamePhase.setPaused(newpaused, withmenu)
     paused = newpaused
     if paused then
         if withmenu then
-            Gui:pushMenu(Gui.gameplay.pausemenu)
+            Gui:pushMenu(pausemenu)
         end
     else
         Gui:clearMenuStack()
