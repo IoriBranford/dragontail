@@ -198,6 +198,7 @@ function Common:respawn()
     end
     local typ = self.respawntype or self.type
     local new = Character(typ, x, y, z)
+    new.layer = self.layer
     new.respawnpoint = new.respawnpoint or respawnpoint
     Characters.spawn(new)
     return new
