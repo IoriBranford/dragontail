@@ -133,13 +133,9 @@ function Enemy:canDoToTarget(target, actionstate)
         end
     end
 
-    local toopposq = distsq(self.x, self.y, target.x, target.y)
-    local maxtargetdist = state.maxtargetdist
-    if maxtargetdist then
-        local attackrange = maxtargetdist + target.bodyradius
-        return toopposq <= attackrange*attackrange
-    end
-    return true
+    local d = math2.dist(self.x, self.y, target.x, target.y)
+    local dmax = state.maxtargetdist
+    return not dmax or d <= dmax + target.bodyradius
 end
 
 function Enemy:afterStand()
