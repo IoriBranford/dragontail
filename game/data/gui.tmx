@@ -620,10 +620,11 @@ to clear lost enemies</text>
    </object>
   </objectgroup>
  </group>
- <group id="17" name="title" visible="0">
-  <objectgroup id="7" name="title" visible="0" locked="1">
-   <object id="11" name="copyright" x="36" y="234" width="412" height="18">
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="right" valign="center">© 2026 Iori Branford</text>
+ <group id="17" name="title">
+  <objectgroup id="7" name="title">
+   <object id="11" name="copyright" x="52" y="207" width="412" height="45">
+    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="right" valign="bottom">© 2026 Iori Branford
+Music © 2009, 2013 Blue Wave Theory</text>
    </object>
   </objectgroup>
   <objectgroup id="25" name="pressstart" class="Gui.Menu" visible="0">
