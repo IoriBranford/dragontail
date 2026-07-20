@@ -149,7 +149,9 @@ function Character:makeImpactSpark(attacker, sparktype)
     end
 end
 
-function Character:makeAfterImage()
+function Character:makeAfterImage(color, texturealpha)
+    color = color or self.color
+    texturealpha = texturealpha or self.texturealpha
     local afterimage = Character("afterimage", self.x, self.y, self.z)
     afterimage.asefile = self.asefile
     afterimage.color = self.color
@@ -160,9 +162,9 @@ function Character:makeAfterImage()
     return Characters.spawn(afterimage)
 end
 
-function Character:makePeriodicAfterImage(t, interval)
+function Character:makePeriodicAfterImage(t, interval, color, texturealpha)
     if (interval or 0) ~= 0 and t % interval == 0 then
-        self:makeAfterImage()
+        self:makeAfterImage(color, texturealpha)
     end
 end
 
