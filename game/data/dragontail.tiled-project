@@ -292,6 +292,11 @@
             "id": 9,
             "members": [
                 {
+                    "name": "cameraboundary",
+                    "type": "object",
+                    "value": 0
+                },
+                {
                     "name": "checkpoint",
                     "type": "bool",
                     "value": false
