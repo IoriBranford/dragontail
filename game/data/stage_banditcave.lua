@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 91,
-  nextobjectid = 961,
+  nextobjectid = 978,
   backgroundcolor = { 64, 64, 64 },
   properties = {
     ["ceilingz"] = 256,
@@ -1117,6 +1117,20 @@ return {
               gid = 6833,
               visible = true,
               properties = {}
+            },
+            {
+              id = 961,
+              name = "cameraboundary",
+              type = "CameraBoundary",
+              shape = "rectangle",
+              x = 0,
+              y = 0,
+              width = 800,
+              height = 288,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -1133,6 +1147,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["cameraboundary"] = { id = 968 },
             ["donewhenenemiesleft"] = 4,
             ["titlebarcuecard"] = "ATTACK"
           },
@@ -1238,6 +1253,20 @@ return {
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
+            },
+            {
+              id = 968,
+              name = "cameraboundary",
+              type = "CameraBoundary",
+              shape = "rectangle",
+              x = 320,
+              y = 0,
+              width = 480,
+              height = 288,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -1254,6 +1283,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["cameraboundary"] = { id = 968 },
             ["titlebarcuecard"] = "GRAB ATTACK & THROW"
           },
           objects = {
@@ -1679,6 +1709,20 @@ return {
               color = { 255, 255, 255 },
               halign = "center",
               properties = {}
+            },
+            {
+              id = 969,
+              name = "cameraboundary",
+              type = "CameraBoundary",
+              shape = "rectangle",
+              x = 320,
+              y = 0,
+              width = 960,
+              height = 288,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -1865,6 +1909,20 @@ return {
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
+            },
+            {
+              id = 970,
+              name = "cameraboundary",
+              type = "CameraBoundary",
+              shape = "rectangle",
+              x = 800,
+              y = 0,
+              width = 480,
+              height = 288,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -2052,6 +2110,20 @@ return {
                 { x = 160, y = 0 }
               },
               properties = {}
+            },
+            {
+              id = 971,
+              name = "cameraboundary",
+              type = "CameraBoundary",
+              shape = "rectangle",
+              x = 800,
+              y = 0,
+              width = 640,
+              height = 288,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -2068,6 +2140,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["cameraboundary"] = { id = 972 },
             ["donewhenenemiesleft"] = 2,
             ["time"] = 60
           },
@@ -2176,6 +2249,20 @@ return {
               properties = {
                 ["drawz"] = 2
               }
+            },
+            {
+              id = 972,
+              name = "cameraboundary",
+              type = "CameraBoundary",
+              shape = "rectangle",
+              x = 960,
+              y = 0,
+              width = 480,
+              height = 288,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -2192,6 +2279,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["cameraboundary"] = { id = 972 },
             ["donewhenenemiesleft"] = 3
           },
           objects = {
@@ -2297,7 +2385,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["cameraboundary"] = { id = 972 }
+          },
           objects = {
             {
               id = 956,
@@ -2623,6 +2713,20 @@ return {
                 { x = 0, y = 0 },
                 { x = 160, y = 0 }
               },
+              properties = {}
+            },
+            {
+              id = 973,
+              name = "cameraboundary",
+              type = "CameraBoundary",
+              shape = "rectangle",
+              x = 960,
+              y = 0,
+              width = 640,
+              height = 288,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
               properties = {}
             }
           }
@@ -2959,6 +3063,20 @@ return {
                 ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff"
               }
+            },
+            {
+              id = 974,
+              name = "cameraboundary",
+              type = "CameraBoundary",
+              shape = "rectangle",
+              x = 1120,
+              y = 0,
+              width = 960,
+              height = 288,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -2974,7 +3092,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["cameraboundary"] = { id = 975 }
+          },
           objects = {
             {
               id = 58,
@@ -3237,6 +3357,20 @@ return {
               gid = 7244,
               visible = false,
               properties = {}
+            },
+            {
+              id = 975,
+              name = "cameraboundary",
+              type = "CameraBoundary",
+              shape = "rectangle",
+              x = 1600,
+              y = 0,
+              width = 480,
+              height = 288,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -3253,6 +3387,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["cameraboundary"] = { id = 975 },
             ["donewhenenemiesleft"] = 6
           },
           objects = {
@@ -3339,6 +3474,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["cameraboundary"] = { id = 975 },
             ["donewhenenemiesleft"] = 6
           },
           objects = {
@@ -3521,6 +3657,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["cameraboundary"] = { id = 975 },
             ["donewhenenemiesleft"] = 4
           },
           objects = {
@@ -3572,7 +3709,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["cameraboundary"] = { id = 975 }
+          },
           objects = {
             {
               id = 41,
@@ -4562,6 +4701,20 @@ return {
               properties = {
                 ["z"] = 128
               }
+            },
+            {
+              id = 976,
+              name = "cameraboundary",
+              type = "CameraBoundary",
+              shape = "rectangle",
+              x = 2080,
+              y = 96,
+              width = 960,
+              height = 288,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -4692,6 +4845,20 @@ return {
               properties = {
                 ["z"] = 64
               }
+            },
+            {
+              id = 977,
+              name = "cameraboundary",
+              type = "CameraBoundary",
+              shape = "rectangle",
+              x = 2560,
+              y = 96,
+              width = 480,
+              height = 288,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -4708,6 +4875,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["cameraboundary"] = { id = 977 },
             ["donewhenenemiesleft"] = 6
           },
           objects = {
@@ -4828,6 +4996,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["cameraboundary"] = { id = 977 },
             ["donewhenenemiesleft"] = 5
           },
           objects = {
@@ -5137,6 +5306,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["cameraboundary"] = { id = 977 },
             ["donewhenenemiesleft"] = 1
           },
           objects = {
@@ -5206,6 +5376,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["cameraboundary"] = { id = 977 },
             ["exitdoor"] = { id = 235 },
             ["sequence"] = "unlockDoorToNextArea"
           },
@@ -5224,6 +5395,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["cameraboundary"] = { id = 977 },
             ["donewhenenemiesleft"] = 1
           },
           objects = {
@@ -5281,7 +5453,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["cameraboundary"] = { id = 977 }
+          },
           objects = {
             {
               id = 254,
@@ -5645,6 +5819,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["cameraboundary"] = { id = 977 },
             ["donewhenenemiesleft"] = -1
           },
           objects = {

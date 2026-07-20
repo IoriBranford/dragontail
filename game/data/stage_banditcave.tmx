@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="91" nextobjectid="961">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="91" nextobjectid="978">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -344,9 +344,11 @@
 with    direction</text>
    </object>
    <object id="519" name="joystick" gid="6833" x="688" y="80" width="16" height="16"/>
+   <object id="961" name="cameraboundary" type="CameraBoundary" x="0" y="0" width="800" height="288"/>
   </objectgroup>
   <objectgroup id="8" name="learnattack" class="Room">
    <properties>
+    <property name="cameraboundary" type="object" value="968"/>
     <property name="donewhenenemiesleft" type="int" value="4"/>
     <property name="titlebarcuecard" value="ATTACK"/>
    </properties>
@@ -356,9 +358,11 @@ with    direction</text>
    <object id="793" template="mapobjects/bandit/knife.tx" x="920" y="248"/>
    <object id="792" template="mapobjects/bandit/knife.tx" x="96" y="152"/>
    <object id="48" template="mapobjects/bandit/knife.tx" x="72" y="344"/>
+   <object id="968" name="cameraboundary" type="CameraBoundary" x="320" y="0" width="480" height="288"/>
   </objectgroup>
   <objectgroup id="46" name="+knives" class="Room">
    <properties>
+    <property name="cameraboundary" type="object" value="968"/>
     <property name="titlebarcuecard" value="GRAB ATTACK &amp; THROW"/>
    </properties>
    <object id="487" template="mapobjects/bandit/knife.tx" x="416" y="336"/>
@@ -423,6 +427,7 @@ body to grapple</text>
    <object id="688" name="or" x="1096" y="56" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
+   <object id="969" name="cameraboundary" type="CameraBoundary" x="320" y="0" width="960" height="288"/>
   </objectgroup>
   <objectgroup id="61" name="+knives" class="Room">
    <object id="648" template="mapobjects/bandit/knife.tx" x="760" y="208"/>
@@ -435,6 +440,7 @@ body to grapple</text>
    <object id="653" template="mapobjects/bandit/knife.tx" x="736" y="184"/>
    <object id="19" template="mapobjects/bandit/knife.tx" x="784" y="184"/>
    <object id="20" template="mapobjects/bandit/knife.tx" x="736" y="136"/>
+   <object id="970" name="cameraboundary" type="CameraBoundary" x="800" y="0" width="480" height="288"/>
   </objectgroup>
   <objectgroup id="64" name="tolearnsprint" class="Room">
    <object id="515" name="sprintbutton" gid="7254" x="1384" y="56" width="14" height="14"/>
@@ -459,9 +465,11 @@ body to grapple</text>
    <object id="690" template="mapobjects/CameraPath.tx" x="1040" y="144">
     <polyline points="0,0 160,0"/>
    </object>
+   <object id="971" name="cameraboundary" type="CameraBoundary" x="800" y="0" width="640" height="288"/>
   </objectgroup>
   <objectgroup id="10" name="learnsprint" class="Room">
    <properties>
+    <property name="cameraboundary" type="object" value="972"/>
     <property name="donewhenenemiesleft" type="int" value="2"/>
     <property name="time" type="int" value="60"/>
    </properties>
@@ -488,9 +496,11 @@ body to grapple</text>
      <property name="drawz" type="float" value="2"/>
     </properties>
    </object>
+   <object id="972" name="cameraboundary" type="CameraBoundary" x="960" y="0" width="480" height="288"/>
   </objectgroup>
   <objectgroup id="66" name="learnsprint2" class="Room">
    <properties>
+    <property name="cameraboundary" type="object" value="972"/>
     <property name="donewhenenemiesleft" type="int" value="3"/>
    </properties>
    <object id="32" template="mapobjects/bandit/spear.tx" x="1360" y="-8">
@@ -512,6 +522,9 @@ body to grapple</text>
    <object id="700" template="mapobjects/bandit/spear.tx" x="1688" y="160"/>
   </objectgroup>
   <objectgroup id="90" name="learnsprint3" class="Room">
+   <properties>
+    <property name="cameraboundary" type="object" value="972"/>
+   </properties>
    <object id="956" template="mapobjects/bandit/spear.tx" x="1464" y="272">
     <properties>
      <property name="z" type="float" value="64"/>
@@ -568,6 +581,7 @@ body to grapple</text>
    <object id="807" template="mapobjects/CameraPath.tx" x="1200" y="144">
     <polyline points="0,0 160,0"/>
    </object>
+   <object id="973" name="cameraboundary" type="CameraBoundary" x="960" y="0" width="640" height="288"/>
   </objectgroup>
   <objectgroup draworder="index" id="42" name="tolearnthrowingweapons" class="Room">
    <object id="483" template="mapobjects/CameraPath.tx" x="1424" y="336">
@@ -617,8 +631,12 @@ body to grapple</text>
    <object id="785" template="mapobjects/OutwardBoundary.tx" x="2048" y="192">
     <polygon points="0,32 176,32 176,-288 -128,-288 -128,-96"/>
    </object>
+   <object id="974" name="cameraboundary" type="CameraBoundary" x="1120" y="0" width="960" height="288"/>
   </objectgroup>
   <objectgroup id="48" name="learnthrowingweapons" class="Room">
+   <properties>
+    <property name="cameraboundary" type="object" value="975"/>
+   </properties>
    <object id="58" gid="7236" x="2064" y="-24" width="64" height="64">
     <properties>
      <property name="defaultattack" value="sling-shot-until-empty"/>
@@ -675,9 +693,11 @@ body to grapple</text>
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">+</text>
    </object>
    <object id="471" gid="7244" x="2008" y="160" width="14" height="14" visible="0"/>
+   <object id="975" name="cameraboundary" type="CameraBoundary" x="1600" y="0" width="480" height="288"/>
   </objectgroup>
   <objectgroup id="28" name="+knives" class="Room">
    <properties>
+    <property name="cameraboundary" type="object" value="975"/>
     <property name="donewhenenemiesleft" type="int" value="6"/>
    </properties>
    <object id="246" template="mapobjects/bandit/knife.tx" x="1488" y="240"/>
@@ -687,6 +707,7 @@ body to grapple</text>
   </objectgroup>
   <objectgroup id="11" name="+shooter" class="Room">
    <properties>
+    <property name="cameraboundary" type="object" value="975"/>
     <property name="donewhenenemiesleft" type="int" value="6"/>
    </properties>
    <object id="87" gid="7236" x="2104" y="16" width="64" height="64">
@@ -760,12 +781,16 @@ body to grapple</text>
   </objectgroup>
   <objectgroup id="50" name="+spears" class="Room">
    <properties>
+    <property name="cameraboundary" type="object" value="975"/>
     <property name="donewhenenemiesleft" type="int" value="4"/>
    </properties>
    <object id="501" template="mapobjects/bandit/spear.tx" x="2096" y="264"/>
    <object id="810" template="mapobjects/bandit/spear.tx" x="2096" y="264"/>
   </objectgroup>
   <objectgroup id="13" name="+spears" class="Room">
+   <properties>
+    <property name="cameraboundary" type="object" value="975"/>
+   </properties>
    <object id="41" template="mapobjects/bandit/spear.tx" x="1576" y="208"/>
    <object id="62" template="mapobjects/bandit/spear.tx" x="2096" y="280"/>
   </objectgroup>
@@ -1030,6 +1055,7 @@ body to grapple</text>
      <property name="z" type="float" value="128"/>
     </properties>
    </object>
+   <object id="976" name="cameraboundary" type="CameraBoundary" x="2080" y="96" width="960" height="288"/>
   </objectgroup>
   <objectgroup id="88" name="meetshields2" class="Room">
    <properties>
@@ -1081,9 +1107,11 @@ body to grapple</text>
     </properties>
     <point/>
    </object>
+   <object id="977" name="cameraboundary" type="CameraBoundary" x="2560" y="96" width="480" height="288"/>
   </objectgroup>
   <objectgroup id="56" name="meetshields3" class="Room">
    <properties>
+    <property name="cameraboundary" type="object" value="977"/>
     <property name="donewhenenemiesleft" type="int" value="6"/>
    </properties>
    <object id="562" template="mapobjects/bandit/shield.tx" x="2544" y="272"/>
@@ -1095,6 +1123,7 @@ body to grapple</text>
   </objectgroup>
   <objectgroup id="74" name="meetshields4" class="Room">
    <properties>
+    <property name="cameraboundary" type="object" value="977"/>
     <property name="donewhenenemiesleft" type="int" value="5"/>
    </properties>
    <object id="826" template="mapobjects/bandit/bow.tx" x="2864" y="88">
@@ -1177,6 +1206,7 @@ and tap    to throw</text>
   </objectgroup>
   <objectgroup id="89" name="meetshields5" class="Room">
    <properties>
+    <property name="cameraboundary" type="object" value="977"/>
     <property name="donewhenenemiesleft" type="int" value="1"/>
    </properties>
    <object id="307" template="mapobjects/bandit/shield.tx" x="2544" y="312"/>
@@ -1185,12 +1215,14 @@ and tap    to throw</text>
   </objectgroup>
   <objectgroup id="54" name="unlockdoor" class="Room">
    <properties>
+    <property name="cameraboundary" type="object" value="977"/>
     <property name="exitdoor" type="object" value="235"/>
     <property name="sequence" value="unlockDoorToNextArea"/>
    </properties>
   </objectgroup>
   <objectgroup id="76" name="meetmuscle" class="Room">
    <properties>
+    <property name="cameraboundary" type="object" value="977"/>
     <property name="donewhenenemiesleft" type="int" value="1"/>
    </properties>
    <object id="704" template="mapobjects/bandit/muscle.tx" x="2928" y="240">
@@ -1209,6 +1241,9 @@ and tap    to throw</text>
    </object>
   </objectgroup>
   <objectgroup id="29" name="meetmuscle2" class="Room">
+   <properties>
+    <property name="cameraboundary" type="object" value="977"/>
+   </properties>
    <object id="254" template="mapobjects/bandit/sling.tx" x="2864" y="88">
     <properties>
      <property name="defaultattack" value="sling-shot-until-empty"/>
@@ -1312,6 +1347,7 @@ and tap    to throw</text>
   </objectgroup>
   <objectgroup id="68" name="entercave" class="Room">
    <properties>
+    <property name="cameraboundary" type="object" value="977"/>
     <property name="donewhenenemiesleft" type="int" value="-1"/>
    </properties>
    <object id="465" template="mapobjects/trigger/startSequence.tx" name="exittrigger" type="Trigger" x="2912" y="224">
