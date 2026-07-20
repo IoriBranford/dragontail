@@ -30,9 +30,9 @@ function GameGuiActions.clearEnemies()
     Characters.clearEnemies()
 end
 
-function GameGuiActions.clearEnemiesAndUnpause()
-    Characters.clearEnemies()
+function GameGuiActions.resetTraining()
     GameGuiActions.unpauseGame()
+    Characters.resetTraining()
 end
 
 function GameGuiActions.restartStageCheckpoint()

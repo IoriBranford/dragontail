@@ -408,7 +408,7 @@ to clear lost enemies</text>
    </object>
    <object id="229" template="gui/menu/mainmenu/Button.tx" name="RESET" x="48" y="162" width="72" height="36">
     <properties>
-     <property name="action" value="clearEnemiesAndUnpause"/>
+     <property name="action" value="resetTraining"/>
     </properties>
     <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">RESET</text>
    </object>

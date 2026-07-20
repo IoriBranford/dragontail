@@ -1932,7 +1932,7 @@ return {
               halign = "center",
               valign = "bottom",
               properties = {
-                ["action"] = "clearEnemiesAndUnpause",
+                ["action"] = "resetTraining",
                 ["color2"] = "#ffffd8d8",
                 ["frequency"] = 30,
                 ["presssound"] = "sounds/combat/firehit.mp3",
