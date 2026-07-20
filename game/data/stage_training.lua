@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 9,
-  nextobjectid = 51,
+  nextobjectid = 54,
   properties = {
     ["pausemenu"] = "gameplay.trainingmenu",
     ["runphase"] = "Dragontail.GamePhase"
@@ -889,6 +889,20 @@ return {
                 ["asetag"] = "*",
                 ["z"] = 48
               }
+            },
+            {
+              id = 53,
+              name = "cameraboundary",
+              type = "CameraBoundary",
+              shape = "rectangle",
+              x = 0,
+              y = 0,
+              width = 480,
+              height = 288,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {}
             }
           }
         }

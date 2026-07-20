@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="32" tileheight="32" infinite="1" nextlayerid="9" nextobjectid="51">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="32" tileheight="32" infinite="1" nextlayerid="9" nextobjectid="54">
  <editorsettings>
   <export target="stage_training.lua" format="lua"/>
  </editorsettings>
@@ -203,6 +203,7 @@
    </object>
    <object id="42" template="mapobjects/objects/sandy/palm-tree1b-crown.tx" x="408" y="32"/>
    <object id="46" template="mapobjects/objects/sandy/palm-tree1a-crown.tx" x="440" y="48"/>
+   <object id="53" name="cameraboundary" type="CameraBoundary" x="0" y="0" width="480" height="288"/>
   </objectgroup>
  </group>
 </map>
