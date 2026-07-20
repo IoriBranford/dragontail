@@ -80,6 +80,9 @@
             "program": {
                 "command": "obs-gamecapture"
             },
+            "env": {
+                "SDL_VIDEODRIVER": "x11"
+            },
             "args": ["love", "${workspaceFolder}/game"]
         },
         {
@@ -89,7 +92,22 @@
             "program": {
                 "command": "obs-gamecapture"
             },
+            "env": {
+                "SDL_VIDEODRIVER": "x11"
+            },
             "args": ["love", "${workspaceFolder}/game", "--map", "data/${input:mapname}.lua"]
+        },
+        {
+            "name": "OBS Game Capture room",
+            "type": "lua-local",
+            "request": "launch",
+            "program": {
+                "command": "obs-gamecapture"
+            },
+            "env": {
+                "SDL_VIDEODRIVER": "x11"
+            },
+            "args": ["love", "${workspaceFolder}/game", "--map", "data/${input:mapname}.lua", "--room", "${input:roomname}"]
         },
         {
             "name": "With unit tests",
