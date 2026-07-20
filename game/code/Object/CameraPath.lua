@@ -76,8 +76,11 @@ function CameraPath:getGoIndicatorOffset(cameracenterx, cameracentery, godist)
 end
 
 function CameraPath:isEnd(x, y)
-    return x == self.x + self.points[#self.points-1]
-        and y == self.y + self.points[#self.points]
+    local pts = assert(self.points)
+    x, y = x - self.x, y - self.y
+    local bx, by = pts[#pts-3], pts[#pts-2]
+    local ex, ey = pts[#pts-1], pts[#pts]
+    return math2.dot(bx-ex, by-ey, x-ex, y-ey) <= 0
 end
 
 return CameraPath
