@@ -2,6 +2,7 @@ local Face = require "Dragontail.Character.Component.Face"
 local Slide= require "Dragontail.Character.Component.Slide"
 local Body = require "Dragontail.Character.Component.Body"
 local Behavior = require "Dragontail.Character.Behavior"
+local Characters = require "Dragontail.Stage.Characters"
 
 local DodgeLinear = pooledclass(Behavior)
 DodgeLinear._nrec = Behavior._nrec + 3
@@ -20,6 +21,7 @@ function DodgeLinear:start(dodgeangle)
     self.dodgeangle = dodgeangle
     self.speed = fighter.dodgespeed or 1
     self.speed = Slide.updateSlideSpeed(fighter, self.dodgeangle, self.speed, (fighter.accel or 1))
+    fighter.statetime = fighter.statetime or 30
 end
 
 function DodgeLinear:fixedupdate()
@@ -29,6 +31,18 @@ function DodgeLinear:fixedupdate()
         return newstate, a, b, c, d, e, f
     end
     self.speed = Slide.updateSlideSpeed(fighter, self.dodgeangle, self.speed, (fighter.accel or 1))
+    if fighter.floorz == fighter.z
+    and fighter.statetime + 3 >= fighter.state.statetime then
+        local angle = self.dodgeangle
+        local velx, vely = math2.frompolar(angle, -(self.speed or 1))
+        Characters.spawn({
+            type = "spark-slide-dust",
+            x = fighter.x,
+            y = fighter.y,
+            z = fighter.z,
+            velx = velx, vely = vely
+        })
+    end
     if not fighter.statetime then
         if self.speed == 0 then
             return "stand"
