@@ -30,11 +30,13 @@ function CameraBoundary:keepPointInside(camx, camy, camw, camh)
             x2 + selfx, y2 + selfy
     elseif self.shape == "rectangle" then
         local x, y = self.x, self.y
-        local w, h = self.width - camw, self.height - camh
-        camx = math.max(x, math.min(camx, x + w))
-        camy = math.max(y, math.min(camy, y + h))
+        local w, h = self.width, self.height
+        local camhw, camhh = camw/2, camh/2
+        camx = math.max(x + camhw, math.min(camx, x + w - camhw))
+        camy = math.max(y + camhh, math.min(camy, y + h - camhh))
         return camx, camy
     end
+    return camx, camy
 end
 
 function CameraBoundary:lerpPointInside(camx, camy, camw, camh)
