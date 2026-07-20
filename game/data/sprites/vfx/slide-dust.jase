@@ -1,0 +1,52 @@
+{ "frames": {
+   "#1": {
+    "frame": { "x": 19, "y": 16, "w": 12, "h": 14 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 8, "y": 5, "w": 12, "h": 14 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 50
+   },
+   "#2": {
+    "frame": { "x": 1, "y": 17, "w": 11, "h": 12 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 9, "y": 4, "w": 11, "h": 12 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 50
+   },
+   "#3": {
+    "frame": { "x": 19, "y": 1, "w": 13, "h": 13 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 8, "y": 2, "w": 13, "h": 13 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 50
+   },
+   "#4": {
+    "frame": { "x": 1, "y": 1, "w": 16, "h": 14 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 7, "y": 1, "w": 16, "h": 14 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 50
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.3.17.2-x64",
+  "image": "slide-dust.png",
+  "format": "I8",
+  "size": { "w": 33, "h": 31 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "Dust", "from": 4, "to": 7, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Sprite Sheet", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+   { "name": "origin", "color": "#0000ffff", "keys": [{ "frame": 0, "bounds": {"x": 15, "y": 27, "w": 2, "h": 2 }, "pivot": {"x": 1, "y": 1 } }] }
+  ]
+ }
+}
