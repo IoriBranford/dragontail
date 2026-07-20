@@ -436,7 +436,8 @@ function Stage.updateGoingToNextRoom()
             end
         end
     elseif cameraboundary then
-        destx, desty = cameraboundary:keepPointInside(destx, desty)
+        destx, desty = cameraboundary:keepPointInside(playersx, playersy,
+            Stage.CameraWidth, Stage.CameraHeight)
     end
 
     if camerapath or cameraboundary then
