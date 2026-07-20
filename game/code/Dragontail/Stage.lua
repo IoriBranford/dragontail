@@ -612,28 +612,31 @@ function Stage.fixedupdateGui(gui)
 
     local go = gui:get("gameplay.hud_go")
     if go then
-        local camerapath = Stage.getCurrentCameraPath()
-        if Stage.isInNextRoom() or not camerapath then
+        local path = Stage.getCurrentCameraPath()
+        if Stage.isInNextRoom() or not path then
             go.visible = false
         else
-            local cameracenterx, cameracentery =
-                camera.x+camera.width/2,
-                camera.y+camera.height/2
-            local totargetx, totargety =
-                camerapath:getGoIndicatorOffset(
-                    cameracenterx, cameracentery,
-                    camera.width/4)
+            local chw, chh = camera.width/2, camera.height/2
+            -- cam center
+            local ccx, ccy = camera.x+chw, camera.y+chh
+            local pts = assert(path.points)
+            local _, _, p, q =
+                math.nearestpolylinepoint(path.points, ccx, ccy)
+            local px, py = pts[p-1], pts[p]
+            local qx, qy = pts[q-1], pts[q]
+            local dirx, diry = math2.dir(px, py, qx, qy)
 
-            if totargetx ~= 0 or totargety ~= 0 then
-                totargetx, totargety = math.norm(totargetx, totargety)
-                totargetx = totargetx * camera.width/4
-                totargety = totargety * camera.height/4
-                go.visible = true
-                go.x = totargetx + camera.width/2
-                go.y = totargety + camera.height/2
-                go.arrow.rotation = math.atan2(totargety, totargetx)
-            else
+            if px == qx and py == qy or path:isEnd(ccx, ccy) then
                 go.visible = false
+            else
+                go.visible = true
+
+                local dx0, dy0 = math2.dir(chw, chh, go.x, go.y)
+                dirx, diry = math2.rotunitvectortowards(dx0, dy0, dirx, diry, math.pi/30)
+
+                go.x, go.y = math2.vadd(chw, chh,
+                    math2.vmul(dirx, diry, camera.width/4))
+                go.arrow.rotation = math.atan2(diry, dirx)
             end
         end
     end
