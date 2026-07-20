@@ -227,7 +227,6 @@ function Fighter:knockedBack(thrower, attackangle)
     self:stopAttack() ; self:unassignSelfAsAttacker()
     -- self.thrower = thrower
     local thrownspeed = thrower.attack.launchspeed or 5
-    self.canbejuggled = not thrower.attack.canjuggle
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
     local altitude = self.z - (self.floorz or 0)
     self.velz = math.max(0, (thrower.attack.launchspeedz or 4) - altitude)
