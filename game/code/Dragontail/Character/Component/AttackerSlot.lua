@@ -3,6 +3,7 @@ local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask
 
 ---@class AttackerSlot:Raycast
 ---@field target AttackTarget
+---@field attacker Attacker?
 local AttackerSlot = class(Raycast)
 
 function AttackerSlot:_init(target, slottype, x, y, z, dx, dy, dz)
@@ -17,6 +18,17 @@ function AttackerSlot:_init(target, slottype, x, y, z, dx, dy, dz)
     self.dirx = self.dx/self.length
     self.diry = self.dy/self.length
     self.dirz = self.dz/self.length
+end
+
+function AttackerSlot:take(atkr)
+    if not self.attacker then
+        self.attacker = atkr
+    end
+end
+
+
+function AttackerSlot:leave(atkr)
+    if self.attacker == atkr then self.attacker = nil end
 end
 
 function AttackerSlot:hasSpace(space)
