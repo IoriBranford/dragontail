@@ -23,6 +23,12 @@ function PlayerSpinAttack:start(faceangle)
 
     local spintime = player.attack.hittingduration or 1
     player.statetime = player.statetime or spintime
+    local projtype = player.attack.projectiletype
+    local numproj = player.attack.numprojectiles
+    if projtype and numproj then
+        self.projectileinterval = math.max(1, math.floor(player.statetime/numproj))
+    end
+
     self.originalfaceangle = faceangle
 
     local faceangleoffset = player.attack.faceangleoffset or 0
@@ -34,26 +40,26 @@ function PlayerSpinAttack:start(faceangle)
 end
 
 function PlayerSpinAttack:fixedupdate()
-    local player = self.character
+    local plr = self.character
 
-    local faceangle = player.faceangle
-    local offsetfromfaceangle = player.attack.offsetfromfaceangle or 0
-    local attackangle = faceangle + offsetfromfaceangle
+    local fa = plr.faceangle
+    local faoff = plr.attack.offsetfromfaceangle or 0
+    local atka = fa + faoff
 
-    local projectile = player.attack.projectiletype
-    if projectile then
-        local cosangle, sinangle = math.cos(attackangle), math.sin(attackangle)
-        Shoot.launchProjectile(player, "spark-spit-fireball", cosangle, sinangle, 0)
-        Shoot.launchProjectile(player, projectile, cosangle, sinangle, 0)
+    local msl = plr.attack.projectiletype
+    if msl and plr.statetime % self.projectileinterval == 0 then
+        local cosatk, sinatk = math.cos(atka), math.sin(atka)
+        Shoot.launchProjectile(plr, "spark-spit-fireball", cosatk, sinatk, 0)
+        Shoot.launchProjectile(plr, msl, cosatk, sinatk, 0)
     end
 
-    player:decelerateXYto0()
+    plr:decelerateXYto0()
 
-    local spinvel = player.attack.spinspeed or 0
-    faceangle = faceangle + spinvel
-    attackangle = faceangle + offsetfromfaceangle
-    Attacker.startAttack(player, attackangle)
-    Face.faceAngle(player, faceangle, player.state and player.state.animation)
+    local spinvel = plr.attack.spinspeed or 0
+    fa = fa + spinvel
+    atka = fa + faoff
+    Attacker.startAttack(plr, atka)
+    Face.faceAngle(plr, fa, plr.state and plr.state.animation)
 end
 
 function PlayerSpinAttack:interrupt(...)
