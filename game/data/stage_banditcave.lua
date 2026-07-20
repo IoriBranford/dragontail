@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 93,
-  nextobjectid = 977,
+  nextlayerid = 94,
+  nextobjectid = 1053,
   backgroundcolor = { 64, 64, 64 },
   properties = {
     ["ceilingz"] = 256,
@@ -144,236 +144,248 @@ return {
       exportfilename = "sprites/containers/crates.lua"
     },
     {
-      name = "wall-torch",
-      firstgid = 6593,
-      filename = "sprites/banditcave/wall-torch.tsx",
-      exportfilename = "sprites/banditcave/wall-torch.lua"
-    },
-    {
       name = "tables-hori",
-      firstgid = 6596,
+      firstgid = 6593,
       filename = "sprites/banditcave/tables-hori.tsx",
       exportfilename = "sprites/banditcave/tables-hori.lua"
     },
     {
       name = "graffiti-skull-bones",
-      firstgid = 6599,
+      firstgid = 6596,
       filename = "sprites/banditcave/graffiti-skull-bones.tsx",
       exportfilename = "sprites/banditcave/graffiti-skull-bones.lua"
     },
     {
       name = "dish-small",
-      firstgid = 6613,
+      firstgid = 6610,
       filename = "sprites/weapons/dish-small.tsx",
       exportfilename = "sprites/weapons/dish-small.lua"
     },
     {
       name = "Meats A",
-      firstgid = 6614,
+      firstgid = 6611,
       filename = "sprites/items/Meats A.tsx",
       exportfilename = "sprites/items/Meats A.lua"
     },
     {
       name = "Bread A",
-      firstgid = 6669,
+      firstgid = 6666,
       filename = "sprites/items/Bread A.tsx",
       exportfilename = "sprites/items/Bread A.lua"
     },
     {
       name = "Cheese A",
-      firstgid = 6677,
+      firstgid = 6674,
       filename = "sprites/items/Cheese A.tsx",
       exportfilename = "sprites/items/Cheese A.lua"
     },
     {
       name = "Forge A",
-      firstgid = 6695,
+      firstgid = 6692,
       filename = "tilesets/Forge A.tsx",
       exportfilename = "tilesets/Forge A.lua"
     },
     {
       name = "Workbench, Smith",
-      firstgid = 6823,
+      firstgid = 6820,
       filename = "sprites/banditcave/Workbench, Smith.tsx",
       exportfilename = "sprites/banditcave/Workbench, Smith.lua"
     },
     {
       name = "gamepad-buttons",
-      firstgid = 6829,
+      firstgid = 6826,
       filename = "tilesets/ui/gamepad-buttons.tsx",
       exportfilename = "tilesets/ui/gamepad-buttons.lua"
     },
     {
       name = "keyboard-keys",
-      firstgid = 6929,
+      firstgid = 6926,
       filename = "tilesets/ui/keyboard-keys.tsx",
       exportfilename = "tilesets/ui/keyboard-keys.lua"
     },
     {
       name = "Chair, Dining F",
-      firstgid = 7201,
+      firstgid = 7198,
       filename = "sprites/banditcave/Chair, Dining F.tsx",
       exportfilename = "sprites/banditcave/Chair, Dining F.lua"
     },
     {
       name = "flamegaugefull",
-      firstgid = 7217,
+      firstgid = 7214,
       filename = "tilesets/ui/flamegaugefull.tsx",
       exportfilename = "tilesets/ui/flamegaugefull.lua"
     },
     {
       name = "vegetables",
-      firstgid = 7225,
+      firstgid = 7222,
       filename = "sprites/items/vegetables.tsx",
       exportfilename = "sprites/items/vegetables.lua"
     },
     {
       name = "axe",
-      firstgid = 7232,
+      firstgid = 7229,
       filename = "sprites/bandit/axe.tsx",
       exportfilename = "sprites/bandit/axe.lua"
     },
     {
       name = "boss",
-      firstgid = 7233,
+      firstgid = 7230,
       filename = "sprites/bandit/boss.tsx",
       exportfilename = "sprites/bandit/boss.lua"
     },
     {
       name = "bow",
-      firstgid = 7234,
+      firstgid = 7231,
       filename = "sprites/bandit/bow.tsx",
       exportfilename = "sprites/bandit/bow.lua"
     },
     {
       name = "spear",
-      firstgid = 7235,
+      firstgid = 7232,
       filename = "sprites/bandit/spear.tsx",
       exportfilename = "sprites/bandit/spear.lua"
     },
     {
       name = "sling",
-      firstgid = 7236,
+      firstgid = 7233,
       filename = "sprites/bandit/sling.tsx",
       exportfilename = "sprites/bandit/sling.lua"
     },
     {
       name = "knife",
-      firstgid = 7237,
+      firstgid = 7234,
       filename = "sprites/bandit/knife.tsx",
       exportfilename = "sprites/bandit/knife.lua"
     },
     {
       name = "throwing-axe",
-      firstgid = 7238,
+      firstgid = 7235,
       filename = "sprites/weapons/throwing-axe.tsx",
       exportfilename = "sprites/weapons/throwing-axe.lua"
     },
     {
       name = "stone",
-      firstgid = 7239,
+      firstgid = 7236,
       filename = "sprites/weapons/stone.tsx",
       exportfilename = "sprites/weapons/stone.lua"
     },
     {
       name = "Xbox",
-      firstgid = 7240,
+      firstgid = 7237,
       filename = "tilesets/ui/Gamepad Spritesheets/Xbox.tsx",
       exportfilename = "tilesets/ui/Gamepad Spritesheets/Xbox.lua"
     },
     {
       name = "tree2B_ss_leaves",
-      firstgid = 7260,
+      firstgid = 7257,
       filename = "sprites/grassland/tree2B_ss_leaves.tsx",
       exportfilename = "sprites/grassland/tree2B_ss_leaves.lua"
     },
     {
       name = "tree2B_ss_obj",
-      firstgid = 7261,
+      firstgid = 7258,
       filename = "sprites/grassland/tree2B_ss.tsx",
       exportfilename = "sprites/grassland/tree2B_ss.lua"
     },
     {
       name = "tree2C_ss_leaves",
-      firstgid = 7262,
+      firstgid = 7259,
       filename = "sprites/grassland/tree2C_ss_leaves.tsx",
       exportfilename = "sprites/grassland/tree2C_ss_leaves.lua"
     },
     {
       name = "tree2C_ss_obj",
-      firstgid = 7263,
+      firstgid = 7260,
       filename = "sprites/grassland/tree2C_ss.tsx",
       exportfilename = "sprites/grassland/tree2C_ss.lua"
     },
     {
       name = "spikefruit-hanging",
-      firstgid = 7264,
+      firstgid = 7261,
       filename = "sprites/weapons/spikefruit-hanging.tsx",
       exportfilename = "sprites/weapons/spikefruit-hanging.lua"
     },
     {
       name = "spikefruit-onground",
-      firstgid = 7265,
+      firstgid = 7262,
       filename = "sprites/weapons/spikefruit-onground.tsx",
       exportfilename = "sprites/weapons/spikefruit-onground.lua"
     },
     {
       name = "lifefruit-hanging",
-      firstgid = 7266,
+      firstgid = 7263,
       filename = "sprites/items/lifefruit-hanging.tsx",
       exportfilename = "sprites/items/lifefruit-hanging.lua"
     },
     {
       name = "lifefruit",
-      firstgid = 7267,
+      firstgid = 7264,
       filename = "sprites/items/lifefruit.tsx",
       exportfilename = "sprites/items/lifefruit.lua"
     },
     {
       name = "bigstone",
-      firstgid = 7268,
+      firstgid = 7265,
       filename = "sprites/weapons/bigstone.tsx",
       exportfilename = "sprites/weapons/bigstone.lua"
     },
     {
       name = "tallstone",
-      firstgid = 7269,
+      firstgid = 7266,
       filename = "sprites/weapons/tallstone.tsx",
       exportfilename = "sprites/weapons/tallstone.lua"
     },
     {
       name = "pepper-plant",
-      firstgid = 7270,
+      firstgid = 7267,
       filename = "sprites/items/pepper-plant.tsx",
       exportfilename = "sprites/items/pepper-plant.lua"
     },
     {
       name = "peppers-on-plant",
-      firstgid = 7271,
+      firstgid = 7268,
       filename = "sprites/items/peppers-on-plant.tsx",
       exportfilename = "sprites/items/peppers-on-plant.lua"
     },
     {
       name = "muscle",
-      firstgid = 7272,
+      firstgid = 7269,
       filename = "sprites/bandit/muscle-orange.tsx",
       exportfilename = "sprites/bandit/muscle-orange.lua"
     },
     {
       name = "cave-window",
-      firstgid = 7273,
+      firstgid = 7270,
       filename = "tilesets/caves/semiblocked-tunnel.tsx",
       exportfilename = "tilesets/caves/semiblocked-tunnel.lua"
     },
     {
       name = "shield",
-      firstgid = 7274,
+      firstgid = 7271,
       filename = "sprites/bandit/shield.tsx",
       exportfilename = "sprites/bandit/shield.lua"
     },
     {
+      name = "castle_decoratives",
+      firstgid = 7272,
+      filename = "tilesets/castle/castle_decoratives.tsx",
+      exportfilename = "tilesets/castle/castle_decoratives.lua"
+    },
+    {
+      name = "stain",
+      firstgid = 7528,
+      filename = "sprites/vfx/stain.tsx",
+      exportfilename = "sprites/vfx/stain.lua"
+    },
+    {
+      name = "torch",
+      firstgid = 7529,
+      filename = "tilesets/castle/torch.tsx",
+      exportfilename = "tilesets/castle/torch.lua"
+    },
+    {
       name = "crystal-spikes",
-      firstgid = 7275,
+      firstgid = 7537,
       filename = "sprites/banditcave/crystal-spikes.tsx",
       exportfilename = "sprites/banditcave/crystal-spikes.lua"
     }
@@ -562,19 +574,19 @@ return {
         },
         {
           x = 20, y = 24, width = 20, height = 12,
-          data = "eJztj0EKwlAMRN+AO+l1bN1Ir/NbN4Ue539deqeepgQTCN26KjgQMszwAoHzaPUJf9Hv9z7AILgL+rQt24CnoAiugptP9OaDNfXOzPpyU9qWdYK3oAoefrek3nywpsmZl3MtbcvG9P/id2vqa2JN7cD8xem1A/mRGUM="
+          data = "eJztkEEKwkAMRd8HXYnXsdWFeJ22uih4nKl153VEd55G0mYgFHGhK8EPISGf98kMfK4rUAN3oAR6vlPOOgBr4Dbxj155nul93hlogLnGvM2LvIvdbr6gCN12D2AvqAQLwcor+zZn1lQ402jk6tBttxT0giTYem4VfJszO/yHMyfnutBttwvvbz03BT8F1tRNmL/4eT0B/lUgYA=="
         },
         {
           x = 40, y = 24, width = 20, height = 12,
-          data = "eJzt0DkKAlEQhOGvAxN1ruMSuFxHnUTxOC6J6JEUTyOPeQMPRBAN9YcOKqiiuvgN7lgEw2AU9KPRy2AV1IVO1wtOqHHAGFtcNN4q2BX+Wdb74BAcC51uGlxxQyc456zUK3nn0fRs/ZusX7EOurnnIP+Vsqo3vK+Y5J7tDlXR61PWxQ7fZv3xxAPxaBoP"
+          data = "eJztkEkKwkAQRV/hsFBzHaOCw3VM3CgeR40L0es4LBxOI0V+sIkoolsLmvyq7v/yqSVwBGKgbrAnPz7LgJN0F6jqvmKw0szvUx10d5DXtb+pGfSANdCRzzmJvrE4mbSzd0Bbfvdd1ccGHZ+X9Eb/WYlb5PfM7r0B48DTsrxPDFKDSUmfyZkT5fEcc+Vyb2SwCDxD9UvPYJCVdEPMi3JuxfJc7h1Zvr/CM1P/qvpiNu2xF2dFH3jfMQfBXqIg17c1DfbyK+tfPNUdagI0Fw=="
         },
         {
           x = 60, y = 24, width = 20, height = 12,
-          data = "eJztzzsORQAQRuFzWvbjUbAfl8Z+PLYqEo2Jm6AS8VVzuvnh2VqhExrh577vmIRZGITR/50IqZALhVCGO9v6rEqow4a4Z+0r+vDz0Z4Pr7YAJAQUQg=="
+          data = "eJztzj0KAmEMhOEnoI3exz/Q++jaeB93tdADiYUeRxay8PFVClbiwJB3EgjDdzUPFsEyXeeBL7jijlHQ5rzlrp8ddkET7NN1HviBJ1YY55/+Z4Nz7vpbG3TBKV3ngSfBtOpf8izzu1oHm6p/ydvMn+hQ9S/5mPkvP60X5VQiTQ=="
         },
         {
           x = 80, y = 24, width = 20, height = 12,
-          data = "eJzt0c0KQXEUBPDfyccCz3OxwPNcbHie62OB5yELvI3UXy65OyllamrmTJ05dfgNzD60pxf0gw22OGCHRnDEGGs0gx7qwf6NrwULTIJpcMI55Rd049FV1lmFzxKXwSpoBe2UdYJxPLrKOq/weeIdg2CYstHt9lJXWRcVvkh8+knK5i/zP3wNVweaIZo="
+          data = "eJztz0sOAWEQBOCv47HAeTALnMdjw3m8FjgPscBtRPzizySzm1ippJKqrqSrm3oxx7DGfWcUWNa0bxgUwQFHXHBCK7hihj3a8f6jGe8byr4RbF7/BovghnvKHxjEtyvX/QrfT9wGu6ATdFPWC2bx7cr1tMJPEz8YBeOUTV63Z125Xlf4dWKOZcpWpfkffoYncpEjRg=="
         }
       }
     },
@@ -676,15 +688,42 @@ return {
         },
         {
           x = 20, y = 24, width = 20, height = 12,
-          data = "eJxjYBgFlAArJggGAXtGysMylwmCQaCICuaNAoZhDQCmEgIK"
+          data = "eJxjYBjZwEGWgUFFloFBQZY8/VZMEAwC9owMDAGyDAwmsgwMBmSal8sEwSBQxMjAkECmOaOAYUQAAI25BG0="
         },
         {
           x = 40, y = 24, width = 20, height = 12,
-          data = "eJztzDkNgEAARcHR8U2SYABYAxwGOJRSQk22gTDVqx7v0eTq9tZPdaEPQygVfmOYwhyWCr81bGEPR4Xfz+eclJoJFA=="
+          data = "eJztzDkNgEAARcHR8TWSYABYAxwGOKxSQk22gTDVqx7v0eTq9tZPdaEPQygVfmOYwhyWCr81bGEPR4Xfz+ecKs4I6g=="
         },
         {
           x = 80, y = 24, width = 20, height = 12,
           data = "eJzt0MsNQFAARNEzrysE9RAk1EOvGvBp4J3kbmcxVH0Ywhym0BTan7rCmPfv9nCFMyyF9aetcHzsVZUHNzy6CmE="
+        }
+      }
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 200,
+      height = 12,
+      id = 93,
+      name = "bosscurtain",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = -16,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {
+        ["drawz"] = -0.5
+      },
+      encoding = "base64",
+      compression = "zlib",
+      chunks = {
+        {
+          x = 80, y = 24, width = 20, height = 12,
+          data = "eJztzEkNgDAABMARsv41cZW+y6UBD32QkHQEDMMfTWEOS1jDFkrYQ03f2cIRznCFOzyd1+ATL5M7Deo="
         }
       }
     },
@@ -715,7 +754,7 @@ return {
         },
         {
           x = 40, y = 24, width = 20, height = 12,
-          data = "eJxjYBi5IFyKgSFCioEhUoqBIUpqoF0zCkYBA8kAAOtsAcs="
+          data = "eJztz0kNgEAUBcHS8RyAAmAMsBhg8e+DM/cfTlMCOmm+hjBGiSnMYQmtoLmGLezhKOid4Qp3eIqeu86PXgsUBTI="
         }
       }
     },
@@ -974,7 +1013,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6833,
+              gid = 6830,
               visible = true,
               properties = {}
             },
@@ -1007,7 +1046,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7244,
+              gid = 7241,
               visible = true,
               properties = {}
             },
@@ -1022,7 +1061,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7240,
+              gid = 7237,
               visible = true,
               properties = {}
             },
@@ -1074,7 +1113,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7246,
+              gid = 7243,
               visible = true,
               properties = {}
             },
@@ -1089,7 +1128,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7242,
+              gid = 7239,
               visible = true,
               properties = {}
             },
@@ -1160,7 +1199,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6833,
+              gid = 6830,
               visible = true,
               properties = {}
             }
@@ -1194,7 +1233,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1211,7 +1250,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1228,7 +1267,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1245,7 +1284,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1262,7 +1301,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1279,7 +1318,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1314,7 +1353,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1331,7 +1370,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1348,7 +1387,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1365,7 +1404,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1418,7 +1457,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7244,
+              gid = 7241,
               visible = false,
               properties = {}
             },
@@ -1433,7 +1472,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -1451,7 +1490,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -1575,7 +1614,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6833,
+              gid = 6830,
               visible = true,
               properties = {}
             },
@@ -1590,7 +1629,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6833,
+              gid = 6830,
               visible = true,
               properties = {}
             },
@@ -1605,7 +1644,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7244,
+              gid = 7241,
               visible = true,
               properties = {}
             },
@@ -1620,7 +1659,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7246,
+              gid = 7243,
               visible = true,
               properties = {}
             },
@@ -1654,7 +1693,7 @@ return {
               height = 48,
               rotation = 0,
               opacity = 1,
-              gid = 7269,
+              gid = 7266,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/objects-properties.csv",
@@ -1688,7 +1727,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7244,
+              gid = 7241,
               visible = true,
               properties = {}
             },
@@ -1703,7 +1742,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7246,
+              gid = 7243,
               visible = true,
               properties = {}
             },
@@ -1753,7 +1792,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1770,7 +1809,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1787,7 +1826,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1804,7 +1843,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1821,7 +1860,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1838,7 +1877,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1855,7 +1894,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1872,7 +1911,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1889,7 +1928,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1906,7 +1945,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1939,7 +1978,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7254,
+              gid = 7251,
               visible = true,
               properties = {}
             },
@@ -1992,7 +2031,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7250,
+              gid = 7247,
               visible = true,
               properties = {}
             },
@@ -2007,7 +2046,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7244,
+              gid = 7241,
               visible = true,
               properties = {}
             },
@@ -2058,7 +2097,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7246,
+              gid = 7243,
               visible = true,
               properties = {}
             },
@@ -2129,7 +2168,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -2146,7 +2185,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -2183,7 +2222,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6900,
+              gid = 6897,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -2200,7 +2239,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6920,
+              gid = 6917,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -2217,7 +2256,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7136,
+              gid = 7133,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -2252,7 +2291,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -2270,7 +2309,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -2288,7 +2327,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -2306,7 +2345,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -2323,7 +2362,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -2356,7 +2395,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -2374,7 +2413,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -2392,7 +2431,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -2409,7 +2448,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -2463,7 +2502,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6838,
+              gid = 6835,
               visible = false,
               properties = {}
             },
@@ -2504,7 +2543,7 @@ return {
               height = 160,
               rotation = 0,
               opacity = 1,
-              gid = 7261,
+              gid = 7258,
               visible = true,
               properties = {
                 ["asetag"] = "*",
@@ -2525,7 +2564,7 @@ return {
               height = 96,
               rotation = 0,
               opacity = 1,
-              gid = 7260,
+              gid = 7257,
               visible = true,
               properties = {
                 ["asetag"] = "*",
@@ -2543,7 +2582,7 @@ return {
               height = 20,
               rotation = 0,
               opacity = 1,
-              gid = 7266,
+              gid = 7263,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv",
@@ -2561,7 +2600,7 @@ return {
               height = 20,
               rotation = 0,
               opacity = 1,
-              gid = 7266,
+              gid = 7263,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv",
@@ -2597,7 +2636,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6833,
+              gid = 6830,
               visible = false,
               properties = {}
             },
@@ -2630,7 +2669,7 @@ return {
               height = 20,
               rotation = 0,
               opacity = 1,
-              gid = 7267,
+              gid = 7264,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv"
@@ -2647,7 +2686,7 @@ return {
               height = 20,
               rotation = 0,
               opacity = 1,
-              gid = 7267,
+              gid = 7264,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv"
@@ -2745,7 +2784,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7265,
+              gid = 7262,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/projectiles-properties.csv"
@@ -2762,7 +2801,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7265,
+              gid = 7262,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/projectiles-properties.csv"
@@ -2779,7 +2818,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7265,
+              gid = 7262,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/projectiles-properties.csv"
@@ -2796,7 +2835,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7265,
+              gid = 7262,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/projectiles-properties.csv"
@@ -2813,7 +2852,7 @@ return {
               height = 160,
               rotation = 0,
               opacity = 1,
-              gid = 7263,
+              gid = 7260,
               visible = true,
               properties = {
                 ["asetag"] = "*",
@@ -2836,7 +2875,7 @@ return {
               height = 96,
               rotation = 0,
               opacity = 1,
-              gid = 7262,
+              gid = 7259,
               visible = true,
               properties = {
                 ["asetag"] = "*",
@@ -2854,7 +2893,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7264,
+              gid = 7261,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv",
@@ -2872,7 +2911,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7264,
+              gid = 7261,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv",
@@ -2908,7 +2947,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6833,
+              gid = 6830,
               visible = false,
               properties = {}
             },
@@ -2941,7 +2980,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7244,
+              gid = 7241,
               visible = true,
               properties = {}
             },
@@ -2956,7 +2995,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7246,
+              gid = 7243,
               visible = true,
               properties = {}
             },
@@ -3033,7 +3072,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7236,
+              gid = 7233,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -3055,7 +3094,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7236,
+              gid = 7233,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -3141,7 +3180,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7244,
+              gid = 7241,
               visible = false,
               properties = {}
             },
@@ -3156,7 +3195,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6909,
+              gid = 6906,
               visible = false,
               properties = {}
             },
@@ -3171,7 +3210,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7010,
+              gid = 7007,
               visible = false,
               properties = {}
             },
@@ -3186,7 +3225,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7011,
+              gid = 7008,
               visible = false,
               properties = {}
             },
@@ -3201,7 +3240,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7012,
+              gid = 7009,
               visible = false,
               properties = {}
             },
@@ -3216,7 +3255,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7013,
+              gid = 7010,
               visible = false,
               properties = {}
             },
@@ -3231,7 +3270,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7135,
+              gid = 7132,
               visible = false,
               properties = {}
             },
@@ -3246,7 +3285,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7254,
+              gid = 7251,
               visible = false,
               properties = {}
             },
@@ -3280,7 +3319,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7244,
+              gid = 7241,
               visible = false,
               properties = {}
             }
@@ -3313,7 +3352,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -3330,7 +3369,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -3347,7 +3386,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -3364,7 +3403,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -3399,7 +3438,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7236,
+              gid = 7233,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -3453,7 +3492,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7236,
+              gid = 7233,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -3476,7 +3515,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7236,
+              gid = 7233,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -3581,7 +3620,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -3598,7 +3637,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -3631,7 +3670,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -3648,7 +3687,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -3796,7 +3835,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7244,
+              gid = 7241,
               visible = true,
               properties = {}
             },
@@ -3811,7 +3850,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7246,
+              gid = 7243,
               visible = true,
               properties = {}
             },
@@ -3864,7 +3903,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7270,
+              gid = 7267,
               visible = true,
               properties = {
                 ["item"] = { id = 677 },
@@ -3882,7 +3921,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7271,
+              gid = 7268,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv",
@@ -3916,7 +3955,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7234,
+              gid = 7231,
               visible = true,
               properties = {
                 ["defaultattack"] = "bow-shot-until-empty",
@@ -3938,7 +3977,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7234,
+              gid = 7231,
               visible = true,
               properties = {
                 ["defaultattack"] = "bow-shot-until-empty",
@@ -3960,7 +3999,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7234,
+              gid = 7231,
               visible = true,
               properties = {
                 ["defaultattack"] = "bow-shot-until-empty",
@@ -3982,7 +4021,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7234,
+              gid = 7231,
               visible = true,
               properties = {
                 ["defaultattack"] = "bow-shot-until-empty",
@@ -4004,7 +4043,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7234,
+              gid = 7231,
               visible = true,
               properties = {
                 ["defaultattack"] = "bow-shot-until-empty",
@@ -4026,7 +4065,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7234,
+              gid = 7231,
               visible = true,
               properties = {
                 ["defaultattack"] = "bow-shot-until-empty",
@@ -4240,7 +4279,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4257,7 +4296,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4274,7 +4313,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4291,7 +4330,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4497,7 +4536,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6833,
+              gid = 6830,
               visible = false,
               properties = {}
             },
@@ -4512,7 +4551,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7244,
+              gid = 7241,
               visible = false,
               properties = {}
             },
@@ -4527,7 +4566,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -4546,7 +4585,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -4565,7 +4604,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -4584,7 +4623,7 @@ return {
               height = 160,
               rotation = 0,
               opacity = 1,
-              gid = 7261,
+              gid = 7258,
               visible = true,
               properties = {
                 ["leaves"] = { id = 609 },
@@ -4603,7 +4642,7 @@ return {
               height = 96,
               rotation = 0,
               opacity = 1,
-              gid = 7260,
+              gid = 7257,
               visible = true,
               properties = {
                 ["z"] = 128
@@ -4638,7 +4677,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7236,
+              gid = 7233,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -4694,7 +4733,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7236,
+              gid = 7233,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -4768,7 +4807,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4785,7 +4824,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4802,7 +4841,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4819,7 +4858,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4836,7 +4875,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4853,7 +4892,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4888,7 +4927,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7234,
+              gid = 7231,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -4944,7 +4983,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7234,
+              gid = 7231,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -5018,7 +5057,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6838,
+              gid = 6835,
               visible = false,
               properties = {}
             },
@@ -5033,7 +5072,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6889,
+              gid = 6886,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -5070,7 +5109,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6909,
+              gid = 6906,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -5087,7 +5126,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7135,
+              gid = 7132,
               visible = false,
               properties = {}
             },
@@ -5102,7 +5141,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7010,
+              gid = 7007,
               visible = false,
               properties = {}
             },
@@ -5117,7 +5156,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7011,
+              gid = 7008,
               visible = false,
               properties = {}
             },
@@ -5132,7 +5171,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7012,
+              gid = 7009,
               visible = false,
               properties = {}
             },
@@ -5147,7 +5186,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7013,
+              gid = 7010,
               visible = false,
               properties = {}
             },
@@ -5162,7 +5201,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6834,
+              gid = 6831,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -5197,7 +5236,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -5214,7 +5253,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -5231,7 +5270,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -5284,7 +5323,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7272,
+              gid = 7269,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -5304,7 +5343,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7272,
+              gid = 7269,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -5340,7 +5379,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7236,
+              gid = 7233,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -5396,7 +5435,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7236,
+              gid = 7233,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -5420,7 +5459,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7234,
+              gid = 7231,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -5526,7 +5565,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6838,
+              gid = 6835,
               visible = false,
               properties = {}
             },
@@ -5541,7 +5580,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6889,
+              gid = 6886,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -5578,7 +5617,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6909,
+              gid = 6906,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -5595,7 +5634,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7135,
+              gid = 7132,
               visible = false,
               properties = {}
             },
@@ -5610,7 +5649,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7010,
+              gid = 7007,
               visible = false,
               properties = {}
             },
@@ -5625,7 +5664,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7011,
+              gid = 7008,
               visible = false,
               properties = {}
             },
@@ -5640,7 +5679,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7012,
+              gid = 7009,
               visible = false,
               properties = {}
             },
@@ -5655,7 +5694,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7013,
+              gid = 7010,
               visible = false,
               properties = {}
             },
@@ -5670,7 +5709,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6834,
+              gid = 6831,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -5769,7 +5808,7 @@ return {
               height = 112,
               rotation = 0,
               opacity = 1,
-              gid = 7273,
+              gid = 7270,
               visible = true,
               properties = {}
             },
@@ -5784,7 +5823,7 @@ return {
               height = 112,
               rotation = 0,
               opacity = 1,
-              gid = 7273,
+              gid = 7270,
               visible = true,
               properties = {}
             },
@@ -5799,7 +5838,7 @@ return {
               height = 112,
               rotation = 0,
               opacity = 1,
-              gid = 7273,
+              gid = 7270,
               visible = true,
               properties = {}
             },
@@ -5814,7 +5853,7 @@ return {
               height = 112,
               rotation = 0,
               opacity = 1,
-              gid = 7273,
+              gid = 7270,
               visible = true,
               properties = {}
             },
@@ -5829,7 +5868,7 @@ return {
               height = 112,
               rotation = 0,
               opacity = 1,
-              gid = 7273,
+              gid = 7270,
               visible = true,
               properties = {}
             },
@@ -6327,7 +6366,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7234,
+              gid = 7231,
               visible = true,
               properties = {
                 ["ammo"] = 0,
@@ -6336,40 +6375,6 @@ return {
                 ["exitpoint"] = { id = 555 },
                 ["facedegrees"] = 90,
                 ["initialai"] = "enterAndPrepareBowAmbush"
-              }
-            },
-            {
-              id = 271,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 288,
-              y = 960,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              opacity = 1,
-              gid = 6593,
-              visible = true,
-              properties = {
-                ["z"] = 16
-              }
-            },
-            {
-              id = 309,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 384,
-              y = 960,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              opacity = 1,
-              gid = 6593,
-              visible = true,
-              properties = {
-                ["z"] = 16
               }
             },
             {
@@ -6425,7 +6430,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7234,
+              gid = 7231,
               visible = true,
               properties = {
                 ["ammo"] = 0,
@@ -6461,7 +6466,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7234,
+              gid = 7231,
               visible = true,
               properties = {
                 ["ammo"] = 0,
@@ -6483,7 +6488,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7234,
+              gid = 7231,
               visible = true,
               properties = {
                 ["ammo"] = 0,
@@ -6533,7 +6538,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7234,
+              gid = 7231,
               visible = true,
               properties = {
                 ["ammo"] = 0,
@@ -6693,57 +6698,6 @@ return {
               }
             },
             {
-              id = 310,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 480,
-              y = 960,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              opacity = 1,
-              gid = 6593,
-              visible = true,
-              properties = {
-                ["z"] = 16
-              }
-            },
-            {
-              id = 731,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 576,
-              y = 960,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              opacity = 1,
-              gid = 6593,
-              visible = true,
-              properties = {
-                ["z"] = 16
-              }
-            },
-            {
-              id = 732,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 672,
-              y = 960,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              opacity = 1,
-              gid = 6593,
-              visible = true,
-              properties = {
-                ["z"] = 16
-              }
-            },
-            {
               id = 351,
               name = "",
               type = "",
@@ -6754,7 +6708,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6612,
+              gid = 6609,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -6773,7 +6727,7 @@ return {
               height = 16,
               rotation = 345,
               opacity = 1,
-              gid = 6605,
+              gid = 6602,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -6792,7 +6746,7 @@ return {
               height = 16,
               rotation = 15,
               opacity = 1,
-              gid = 6610,
+              gid = 6607,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -6811,7 +6765,7 @@ return {
               height = 16,
               rotation = 15,
               opacity = 1,
-              gid = 6604,
+              gid = 6601,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -6830,7 +6784,7 @@ return {
               height = 16,
               rotation = 45,
               opacity = 1,
-              gid = 6609,
+              gid = 6606,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -6849,7 +6803,7 @@ return {
               height = 16,
               rotation = 45,
               opacity = 1,
-              gid = 6603,
+              gid = 6600,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -6888,7 +6842,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6859,
+              gid = 6856,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -6905,7 +6859,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6879,
+              gid = 6876,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -6922,7 +6876,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7136,
+              gid = 7133,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -6939,7 +6893,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 6834,
+              gid = 6831,
               visible = false,
               properties = {
                 ["drawz"] = 2
@@ -6956,7 +6910,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7239,
+              gid = 7236,
               visible = true,
               properties = {}
             },
@@ -7013,7 +6967,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7275,
+              gid = 7537,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 32,
@@ -7031,7 +6985,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7275,
+              gid = 7537,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 32,
@@ -7049,7 +7003,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7275,
+              gid = 7537,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 180,
@@ -7067,7 +7021,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7275,
+              gid = 7537,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7086,7 +7040,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7275,
+              gid = 7537,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7105,7 +7059,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7275,
+              gid = 7537,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7124,7 +7078,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7275,
+              gid = 7537,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7143,7 +7097,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7275,
+              gid = 7537,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7162,7 +7116,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7278,
+              gid = 7540,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7181,7 +7135,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7278,
+              gid = 7540,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7200,7 +7154,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7278,
+              gid = 7540,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7219,7 +7173,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7278,
+              gid = 7540,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7238,7 +7192,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7278,
+              gid = 7540,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7257,7 +7211,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7279,
+              gid = 7541,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 36,
@@ -7275,7 +7229,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7279,
+              gid = 7541,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7294,7 +7248,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7279,
+              gid = 7541,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7313,7 +7267,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7279,
+              gid = 7541,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7332,7 +7286,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7279,
+              gid = 7541,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7351,7 +7305,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7279,
+              gid = 7541,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7370,7 +7324,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7282,
+              gid = 7544,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 39,
@@ -7388,7 +7342,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7282,
+              gid = 7544,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7407,7 +7361,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7282,
+              gid = 7544,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7426,7 +7380,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7282,
+              gid = 7544,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7445,7 +7399,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7282,
+              gid = 7544,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7464,7 +7418,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7282,
+              gid = 7544,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7483,7 +7437,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7283,
+              gid = 7545,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 40,
@@ -7501,7 +7455,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7283,
+              gid = 7545,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7520,7 +7474,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7283,
+              gid = 7545,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7539,7 +7493,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7283,
+              gid = 7545,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7558,7 +7512,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7283,
+              gid = 7545,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7577,7 +7531,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7283,
+              gid = 7545,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7596,7 +7550,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7303,
+              gid = 7565,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 60,
@@ -7614,7 +7568,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7303,
+              gid = 7565,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7633,7 +7587,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7303,
+              gid = 7565,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7652,7 +7606,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7303,
+              gid = 7565,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7671,7 +7625,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7303,
+              gid = 7565,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7690,7 +7644,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7303,
+              gid = 7565,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7709,7 +7663,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7303,
+              gid = 7565,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7728,7 +7682,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7303,
+              gid = 7565,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7747,7 +7701,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7291,
+              gid = 7553,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 48,
@@ -7765,7 +7719,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7291,
+              gid = 7553,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7784,7 +7738,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7291,
+              gid = 7553,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7803,7 +7757,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7291,
+              gid = 7553,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7822,7 +7776,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7291,
+              gid = 7553,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7841,7 +7795,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7291,
+              gid = 7553,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7860,7 +7814,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7298,
+              gid = 7560,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 55,
@@ -7878,7 +7832,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7298,
+              gid = 7560,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7897,7 +7851,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7298,
+              gid = 7560,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7936,7 +7890,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7240,
+              gid = 7237,
               visible = true,
               properties = {
                 ["drawz"] = 100
@@ -7973,7 +7927,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7242,
+              gid = 7239,
               visible = true,
               properties = {
                 ["drawz"] = 100
@@ -8011,7 +7965,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7254,
+              gid = 7251,
               visible = true,
               properties = {
                 ["drawz"] = 100
@@ -8049,7 +8003,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 7250,
+              gid = 7247,
               visible = true,
               properties = {
                 ["drawz"] = 100
@@ -8093,7 +8047,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7239,
+              gid = 7236,
               visible = true,
               properties = {}
             },
@@ -8108,7 +8062,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7239,
+              gid = 7236,
               visible = true,
               properties = {}
             },
@@ -8123,7 +8077,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7239,
+              gid = 7236,
               visible = true,
               properties = {}
             },
@@ -8138,9 +8092,370 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 7239,
+              gid = 7236,
               visible = true,
               properties = {}
+            },
+            {
+              id = 977,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 888,
+              y = 896,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              opacity = 1,
+              gid = 6609,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 978,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 890,
+              y = 905,
+              width = 16,
+              height = 16,
+              rotation = 345,
+              opacity = 1,
+              gid = 6602,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 979,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 917.66,
+              y = 904,
+              width = 16,
+              height = 16,
+              rotation = 45,
+              opacity = 1,
+              gid = 6606,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 980,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 912,
+              y = 909.66,
+              width = 16,
+              height = 16,
+              rotation = 45,
+              opacity = 1,
+              gid = 6600,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 981,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 946,
+              y = 896,
+              width = 16,
+              height = 16,
+              rotation = 15,
+              opacity = 1,
+              gid = 6607,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 982,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 944,
+              y = 904,
+              width = 16,
+              height = 16,
+              rotation = 15,
+              opacity = 1,
+              gid = 6601,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 984,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 832,
+              y = 944,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7528,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 988,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 840,
+              y = 920,
+              width = 64,
+              height = 64,
+              rotation = 90,
+              opacity = 1,
+              gid = 1073749352,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 989,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 808,
+              y = 944,
+              width = 64,
+              height = 64,
+              rotation = -90,
+              opacity = 1,
+              gid = 7528,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 986,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 816,
+              y = 904,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7528,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 987,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 800,
+              y = 936,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 2147491176,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 990,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 320,
+              y = 1104,
+              width = 64,
+              height = 64,
+              rotation = -90,
+              opacity = 1,
+              gid = 7528,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1031,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 720,
+              y = 1096,
+              width = 64,
+              height = 64,
+              rotation = -90,
+              opacity = 1,
+              gid = 7528,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 991,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 552,
+              y = 992,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7528,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 992,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 424,
+              y = 1016,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7528,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1009,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 344,
+              y = 984,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 1073749352,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 993,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 392,
+              y = 1064,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7528,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1030,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 640,
+              y = 1088,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7528,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 994,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 696,
+              y = 992,
+              width = 64,
+              height = 64,
+              rotation = 90,
+              opacity = 1,
+              gid = 2147491176,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
             }
           }
         },
@@ -8172,7 +8487,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7272,
+              gid = 7269,
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 895 },
@@ -8192,7 +8507,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8209,7 +8524,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8226,7 +8541,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8243,7 +8558,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8292,7 +8607,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8309,7 +8624,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8326,7 +8641,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8343,7 +8658,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8360,7 +8675,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8377,7 +8692,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8412,7 +8727,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8429,7 +8744,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8446,7 +8761,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8463,7 +8778,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8480,7 +8795,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8497,7 +8812,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8530,7 +8845,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8547,7 +8862,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8564,7 +8879,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8581,7 +8896,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8598,7 +8913,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8615,7 +8930,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8632,7 +8947,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8649,7 +8964,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8666,7 +8981,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7272,
+              gid = 7269,
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 927 },
@@ -8814,7 +9129,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 6828,
+              gid = 6825,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -8832,7 +9147,7 @@ return {
               height = 48,
               rotation = 330,
               opacity = 1,
-              gid = 7238,
+              gid = 7235,
               visible = true,
               properties = {}
             },
@@ -8847,7 +9162,7 @@ return {
               height = 48,
               rotation = 270,
               opacity = 1,
-              gid = 7238,
+              gid = 7235,
               visible = true,
               properties = {}
             },
@@ -8862,7 +9177,7 @@ return {
               height = 48,
               rotation = 225,
               opacity = 1,
-              gid = 7238,
+              gid = 7235,
               visible = true,
               properties = {}
             },
@@ -9024,7 +9339,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6613,
+              gid = 6610,
               visible = true,
               properties = {
                 ["z"] = 34
@@ -9041,7 +9356,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6613,
+              gid = 6610,
               visible = true,
               properties = {
                 ["z"] = 34
@@ -9058,7 +9373,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6622,
+              gid = 6619,
               visible = true,
               properties = {
                 ["z"] = 36
@@ -9075,7 +9390,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6682,
+              gid = 6679,
               visible = true,
               properties = {
                 ["z"] = 36
@@ -9129,7 +9444,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7272,
+              gid = 7269,
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 784 },
@@ -9148,7 +9463,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7272,
+              gid = 7269,
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 920 },
@@ -9195,7 +9510,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 6826,
+              gid = 6823,
               visible = true,
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -9257,7 +9572,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -9275,7 +9590,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -9293,7 +9608,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -9305,13 +9620,13 @@ return {
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 1832,
+              x = 1824,
               y = 1112,
               width = 64,
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -9347,7 +9662,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -9365,7 +9680,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -9383,7 +9698,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -9401,7 +9716,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -9437,7 +9752,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -9454,7 +9769,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -9471,7 +9786,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -9488,7 +9803,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -9567,7 +9882,7 @@ return {
               height = 48,
               rotation = 0,
               opacity = 1,
-              gid = 6596,
+              gid = 6593,
               visible = true,
               properties = {
                 ["extrudeY"] = -16
@@ -9584,7 +9899,7 @@ return {
               height = 48,
               rotation = 0,
               opacity = 1,
-              gid = 6598,
+              gid = 6595,
               visible = true,
               properties = {
                 ["extrudeY"] = -16
@@ -9601,7 +9916,7 @@ return {
               height = 48,
               rotation = 0,
               opacity = 1,
-              gid = 6597,
+              gid = 6594,
               visible = true,
               properties = {
                 ["extrudeY"] = -16
@@ -9618,7 +9933,7 @@ return {
               height = 48,
               rotation = 0,
               opacity = 1,
-              gid = 6596,
+              gid = 6593,
               visible = true,
               properties = {
                 ["extrudeY"] = -16
@@ -9635,7 +9950,7 @@ return {
               height = 48,
               rotation = 0,
               opacity = 1,
-              gid = 6597,
+              gid = 6594,
               visible = true,
               properties = {
                 ["extrudeY"] = -16
@@ -9652,7 +9967,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7201,
+              gid = 7198,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -9669,7 +9984,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7205,
+              gid = 7202,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -9686,7 +10001,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7212,
+              gid = 7209,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -9703,7 +10018,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7208,
+              gid = 7205,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -9720,7 +10035,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7204,
+              gid = 7201,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -9737,7 +10052,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7208,
+              gid = 7205,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -9754,7 +10069,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7209,
+              gid = 7206,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -9771,7 +10086,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7201,
+              gid = 7198,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -9788,7 +10103,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7205,
+              gid = 7202,
               visible = true,
               properties = {}
             },
@@ -9803,7 +10118,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7209,
+              gid = 7206,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -9820,7 +10135,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7236,
+              gid = 7233,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -9840,7 +10155,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7236,
+              gid = 7233,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -9859,7 +10174,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7234,
+              gid = 7231,
               visible = true,
               properties = {
                 ["defaultattack"] = "bow-shot-until-empty",
@@ -9879,7 +10194,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6613,
+              gid = 6610,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -9896,7 +10211,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6613,
+              gid = 6610,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -9913,7 +10228,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6613,
+              gid = 6610,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -9930,7 +10245,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6613,
+              gid = 6610,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -9947,7 +10262,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6681,
+              gid = 6678,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -9964,7 +10279,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6674,
+              gid = 6671,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -9981,7 +10296,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6623,
+              gid = 6620,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -9998,7 +10313,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6613,
+              gid = 6610,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -10015,7 +10330,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6613,
+              gid = 6610,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -10032,7 +10347,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6613,
+              gid = 6610,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -10049,7 +10364,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6613,
+              gid = 6610,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -10066,7 +10381,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6613,
+              gid = 6610,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -10083,7 +10398,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7225,
+              gid = 7222,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -10100,7 +10415,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6623,
+              gid = 6620,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -10117,7 +10432,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6674,
+              gid = 6671,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -10134,7 +10449,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7225,
+              gid = 7222,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -10151,7 +10466,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6678,
+              gid = 6675,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -10168,7 +10483,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6682,
+              gid = 6679,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -10185,7 +10500,7 @@ return {
               height = 48,
               rotation = 0,
               opacity = 1,
-              gid = 6598,
+              gid = 6595,
               visible = true,
               properties = {
                 ["extrudeY"] = -16
@@ -10202,7 +10517,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6613,
+              gid = 6610,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -10219,7 +10534,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7204,
+              gid = 7201,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -10236,7 +10551,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7212,
+              gid = 7209,
               visible = true,
               properties = {
                 ["extrudeY"] = -12
@@ -10253,7 +10568,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6613,
+              gid = 6610,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -10270,7 +10585,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6613,
+              gid = 6610,
               visible = true,
               properties = {
                 ["z"] = 16
@@ -10287,7 +10602,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6674,
+              gid = 6671,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -10304,7 +10619,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6622,
+              gid = 6619,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -10321,7 +10636,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7225,
+              gid = 7222,
               visible = true,
               properties = {
                 ["z"] = 18
@@ -10366,7 +10681,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -10385,7 +10700,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -10404,7 +10719,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -10423,13 +10738,185 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
                 ["initialai"] = "guardForever",
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
+            },
+            {
+              id = 1010,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2000,
+              y = 920,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7528,
+              visible = true,
+              properties = {
+                ["color"] = "#80211414",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1011,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1856,
+              y = 1112,
+              width = 64,
+              height = 64,
+              rotation = -90,
+              opacity = 1,
+              gid = 7528,
+              visible = true,
+              properties = {
+                ["color"] = "#80211414",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1015,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2152,
+              y = 1104,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 1073749352,
+              visible = true,
+              properties = {
+                ["color"] = "#80211414",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1041,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2120,
+              y = 928,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 1073749352,
+              visible = true,
+              properties = {
+                ["color"] = "#80211414",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1016,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1992,
+              y = 1128,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7528,
+              visible = true,
+              properties = {
+                ["color"] = "#80293426",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1012,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1728,
+              y = 1080,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 2147491176,
+              visible = true,
+              properties = {
+                ["color"] = "#80293426",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1014,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1864,
+              y = 944,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 2147491176,
+              visible = true,
+              properties = {
+                ["color"] = "#80293426",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1013,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2208,
+              y = 888,
+              width = 64,
+              height = 64,
+              rotation = 90,
+              opacity = 1,
+              gid = 2147491176,
+              visible = true,
+              properties = {
+                ["color"] = "#80293426",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1043,
+              name = "cameraboundary",
+              type = "CameraBoundary",
+              shape = "polygon",
+              x = 2000,
+              y = 1008,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = 0, y = 0 },
+                { x = -640, y = 0 },
+                { x = -304, y = 0 },
+                { x = 0, y = -64 }
+              },
+              properties = {}
             }
           }
         },
@@ -10446,6 +10933,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["cameraboundary"] = { id = 1042 },
             ["donewhenenemiesleft"] = 5
           },
           objects = {
@@ -10460,7 +10948,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10477,7 +10965,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10494,7 +10982,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10511,7 +10999,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10528,7 +11016,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10545,11 +11033,25 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
+            },
+            {
+              id = 1042,
+              name = "",
+              type = "CameraBoundary",
+              shape = "rectangle",
+              x = 1760,
+              y = 800,
+              width = 480,
+              height = 352,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {}
             }
           }
         },
@@ -10566,6 +11068,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["cameraboundary"] = { id = 1042 },
             ["donewhenenemiesleft"] = 6
           },
           objects = {
@@ -10580,7 +11083,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7272,
+              gid = 7269,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10597,7 +11100,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10614,7 +11117,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10631,7 +11134,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -10649,7 +11152,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -10667,7 +11170,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10684,7 +11187,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10704,7 +11207,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["cameraboundary"] = { id = 1042 }
+          },
           objects = {
             {
               id = 343,
@@ -10717,7 +11222,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7272,
+              gid = 7269,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10734,7 +11239,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10751,7 +11256,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10768,7 +11273,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7272,
+              gid = 7269,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10785,7 +11290,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10802,7 +11307,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10819,7 +11324,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10836,7 +11341,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10853,7 +11358,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10870,7 +11375,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10911,108 +11416,6 @@ return {
                 { x = 160, y = 0 }
               },
               properties = {}
-            },
-            {
-              id = 940,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2368,
-              y = 936,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              opacity = 1,
-              gid = 6593,
-              visible = true,
-              properties = {
-                ["z"] = 16
-              }
-            },
-            {
-              id = 941,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2336,
-              y = 928,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              opacity = 1,
-              gid = 6595,
-              visible = true,
-              properties = {
-                ["z"] = 16
-              }
-            },
-            {
-              id = 942,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2432,
-              y = 928,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              opacity = 1,
-              gid = 6594,
-              visible = true,
-              properties = {
-                ["z"] = 16
-              }
-            },
-            {
-              id = 943,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2528,
-              y = 920,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              opacity = 1,
-              gid = 6595,
-              visible = true,
-              properties = {
-                ["z"] = 16
-              }
-            },
-            {
-              id = 944,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2560,
-              y = 928,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              opacity = 1,
-              gid = 6594,
-              visible = true,
-              properties = {
-                ["z"] = 16
-              }
-            },
-            {
-              id = 945,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2592,
-              y = 928,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              opacity = 1,
-              gid = 6593,
-              visible = true,
-              properties = {
-                ["z"] = 16
-              }
             },
             {
               id = 946,
@@ -11073,6 +11476,267 @@ return {
                 ["drawz"] = 0,
                 ["extrudeY"] = -64,
                 ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 995,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2352,
+              y = 896,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 7534,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 996,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2400,
+              y = 912,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 7534,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 997,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2456,
+              y = 904,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 7534,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 998,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2504,
+              y = 896,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 7534,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 999,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2528,
+              y = 904,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 7534,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 1000,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2592,
+              y = 904,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 7534,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 1044,
+              name = "cameraboundary",
+              type = "CameraBoundary",
+              shape = "polygon",
+              x = 2000,
+              y = 1008,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = 0, y = 0 },
+                { x = 480, y = 0 },
+                { x = 0, y = -64 }
+              },
+              properties = {}
+            },
+            {
+              id = 1045,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2328,
+              y = 896,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              opacity = 1,
+              gid = 6609,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1046,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2560,
+              y = 904,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              opacity = 1,
+              gid = 6609,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1047,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2330,
+              y = 905,
+              width = 16,
+              height = 16,
+              rotation = 345,
+              opacity = 1,
+              gid = 6602,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1048,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2562,
+              y = 913,
+              width = 16,
+              height = 16,
+              rotation = 345,
+              opacity = 1,
+              gid = 6602,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1049,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2485.66,
+              y = 896,
+              width = 16,
+              height = 16,
+              rotation = 45,
+              opacity = 1,
+              gid = 6606,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1050,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2480,
+              y = 901.66,
+              width = 16,
+              height = 16,
+              rotation = 45,
+              opacity = 1,
+              gid = 6600,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1051,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2434,
+              y = 904,
+              width = 16,
+              height = 16,
+              rotation = 15,
+              opacity = 1,
+              gid = 6607,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1052,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2432,
+              y = 912,
+              width = 16,
+              height = 16,
+              rotation = 15,
+              opacity = 1,
+              gid = 6601,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
               }
             }
           }
@@ -11255,105 +11919,511 @@ return {
               }
             },
             {
-              id = 933,
+              id = 1001,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2368,
-              y = 936,
+              x = 2352,
+              y = 896,
               width = 32,
-              height = 48,
+              height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6593,
+              gid = 7534,
               visible = true,
-              properties = {
-                ["z"] = 16
-              }
+              properties = {}
             },
             {
-              id = 934,
+              id = 1002,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2336,
-              y = 928,
+              x = 2400,
+              y = 912,
               width = 32,
-              height = 48,
+              height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6595,
+              gid = 7534,
               visible = true,
-              properties = {
-                ["z"] = 16
-              }
+              properties = {}
             },
             {
-              id = 939,
+              id = 1003,
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2432,
-              y = 928,
+              x = 2456,
+              y = 904,
               width = 32,
-              height = 48,
+              height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6594,
+              gid = 7534,
               visible = true,
-              properties = {
-                ["z"] = 16
-              }
+              properties = {}
             },
             {
-              id = 935,
+              id = 1004,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2504,
+              y = 896,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 7534,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 1005,
               name = "",
               type = "",
               shape = "rectangle",
               x = 2528,
-              y = 920,
+              y = 904,
               width = 32,
-              height = 48,
+              height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6595,
+              gid = 7534,
               visible = true,
-              properties = {
-                ["z"] = 16
-              }
+              properties = {}
             },
             {
-              id = 936,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2560,
-              y = 928,
-              width = 32,
-              height = 48,
-              rotation = 0,
-              opacity = 1,
-              gid = 6594,
-              visible = true,
-              properties = {
-                ["z"] = 16
-              }
-            },
-            {
-              id = 937,
+              id = 1006,
               name = "",
               type = "",
               shape = "rectangle",
               x = 2592,
-              y = 928,
+              y = 904,
               width = 32,
-              height = 48,
+              height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6593,
+              gid = 7534,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 1017,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3016,
+              y = 1008,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7528,
               visible = true,
               properties = {
-                ["z"] = 16
+                ["color"] = "#801d0f0f",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1018,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2832,
+              y = 984,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7528,
+              visible = true,
+              properties = {
+                ["color"] = "#80530909",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1019,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3128,
+              y = 1088,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7528,
+              visible = true,
+              properties = {
+                ["color"] = "#80530909",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1032,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2992,
+              y = 1080,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7528,
+              visible = true,
+              properties = {
+                ["color"] = "#80530909",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1020,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2912,
+              y = 1056,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 7528,
+              visible = true,
+              properties = {
+                ["color"] = "#80530909",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1021,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2776,
+              y = 1096,
+              width = 64,
+              height = 64,
+              rotation = -90,
+              opacity = 1,
+              gid = 2147491176,
+              visible = true,
+              properties = {
+                ["color"] = "#801d0f0f",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1022,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3120,
+              y = 968,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3221233000,
+              visible = true,
+              properties = {
+                ["color"] = "#801d0f0f",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1023,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 3248,
+              y = 1000,
+              width = 64,
+              height = 64,
+              rotation = 90,
+              opacity = 1,
+              gid = 2147491176,
+              visible = true,
+              properties = {
+                ["color"] = "#80280000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1024,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2800,
+              y = 936,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              opacity = 1,
+              gid = 6609,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1025,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2802,
+              y = 945,
+              width = 16,
+              height = 16,
+              rotation = 345,
+              opacity = 1,
+              gid = 6602,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1026,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2829.66,
+              y = 936,
+              width = 16,
+              height = 16,
+              rotation = 45,
+              opacity = 1,
+              gid = 6606,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1027,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2824,
+              y = 941.66,
+              width = 16,
+              height = 16,
+              rotation = 45,
+              opacity = 1,
+              gid = 6600,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1028,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2778,
+              y = 928,
+              width = 16,
+              height = 16,
+              rotation = 15,
+              opacity = 1,
+              gid = 6607,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1029,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2776,
+              y = 936,
+              width = 16,
+              height = 16,
+              rotation = 15,
+              opacity = 1,
+              gid = 6601,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1033,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2328,
+              y = 896,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              opacity = 1,
+              gid = 6609,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1039,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2560,
+              y = 904,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              opacity = 1,
+              gid = 6609,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1034,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2330,
+              y = 905,
+              width = 16,
+              height = 16,
+              rotation = 345,
+              opacity = 1,
+              gid = 6602,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1040,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2562,
+              y = 913,
+              width = 16,
+              height = 16,
+              rotation = 345,
+              opacity = 1,
+              gid = 6602,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1035,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2485.66,
+              y = 896,
+              width = 16,
+              height = 16,
+              rotation = 45,
+              opacity = 1,
+              gid = 6606,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1036,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2480,
+              y = 901.66,
+              width = 16,
+              height = 16,
+              rotation = 45,
+              opacity = 1,
+              gid = 6600,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1037,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2434,
+              y = 904,
+              width = 16,
+              height = 16,
+              rotation = 15,
+              opacity = 1,
+              gid = 6607,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 1038,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2432,
+              y = 912,
+              width = 16,
+              height = 16,
+              rotation = 15,
+              opacity = 1,
+              gid = 6601,
+              visible = true,
+              properties = {
+                ["color"] = "#80aa0000",
+                ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
               }
             }
           }
@@ -11389,7 +12459,7 @@ return {
               height = 192,
               rotation = 0,
               opacity = 1,
-              gid = 7233,
+              gid = 7230,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -11424,7 +12494,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11441,7 +12511,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11458,7 +12528,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11475,7 +12545,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11508,7 +12578,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11525,7 +12595,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11542,7 +12612,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11559,7 +12629,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11576,7 +12646,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11593,7 +12663,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11626,7 +12696,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7236,
+              gid = 7233,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -11649,7 +12719,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7236,
+              gid = 7233,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -11748,7 +12818,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11765,7 +12835,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11782,7 +12852,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -11816,7 +12886,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11833,7 +12903,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11850,7 +12920,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11867,7 +12937,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7235,
+              gid = 7232,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11900,7 +12970,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7234,
+              gid = 7231,
               visible = true,
               properties = {
                 ["defaultattack"] = "bow-shot-until-empty",
@@ -11923,7 +12993,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7234,
+              gid = 7231,
               visible = true,
               properties = {
                 ["defaultattack"] = "bow-shot-until-empty",
@@ -12022,7 +13092,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12039,7 +13109,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12056,7 +13126,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12073,7 +13143,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7274,
+              gid = 7271,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12106,7 +13176,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7272,
+              gid = 7269,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -12140,7 +13210,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7272,
+              gid = 7269,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12157,7 +13227,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7272,
+              gid = 7269,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12226,7 +13296,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12243,7 +13313,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12260,7 +13330,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7237,
+              gid = 7234,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12309,7 +13379,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7236,
+              gid = 7233,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -12332,7 +13402,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 7236,
+              gid = 7233,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -12431,7 +13501,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7234,
+              gid = 7231,
               visible = true,
               properties = {
                 ["defaultattack"] = "bow-shot-until-empty",
@@ -12454,7 +13524,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 7234,
+              gid = 7231,
               visible = true,
               properties = {
                 ["defaultattack"] = "bow-shot-until-empty",
