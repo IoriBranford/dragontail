@@ -378,19 +378,19 @@ end
 
 function Player:getup()
     self:shakeOffColor()
-    if self.sprintbutton.down then
-        local inx, iny = self:getJoystick()
-        if inx ~= 0 or iny ~= 0 then
-            Face.faceAngle(self, atan2(iny, inx))
-        end
-        return "run", true
-    end
     if not self.attackbutton.down then
         local chargedattack, angle = self:getReversalChargedAttackState()
         if chargedattack then
             Mana.releaseCharge(self)
             return chargedattack, angle
         end
+    end
+    if self.sprintbutton.down then
+        local inx, iny = self:getJoystick()
+        if inx ~= 0 or iny ~= 0 then
+            Face.faceAngle(self, atan2(iny, inx))
+        end
+        return "run", true
     end
 end
 
