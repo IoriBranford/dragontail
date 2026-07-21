@@ -22,6 +22,20 @@ function DodgeLinear:start(dodgeangle)
     self.speed = ftr.dodgespeed or 1
     self.speed = Slide.updateSlideSpeed(ftr, self.dodgeangle, self.speed, (ftr.accel or 1))
     ftr.statetime = ftr.statetime or 30
+
+    local revangle = self.dodgeangle+math.pi
+    local dust = {
+        type="spark-dodge-dust",
+        x = ftr.x, y = ftr.y, z = ftr.z,
+        velz = 2,
+        faceangle = revangle, accel = 1,
+    }
+    dust.x, dust.y = math2.vadd(dust.x, dust.y,
+        math2.frompolar(self.dodgeangle, self.bodyradius))
+
+    dust.velx, dust.vely = math2.frompolar(revangle, self.speed/4)
+
+    Characters.spawn(dust)
 end
 
 function DodgeLinear:fixedupdate()
@@ -31,23 +45,23 @@ function DodgeLinear:fixedupdate()
         return newstate, a, b, c, d, e, f
     end
     self.speed = Slide.updateSlideSpeed(ftr, self.dodgeangle, self.speed, (ftr.accel or 1))
-    if ftr.z == ftr.floorz
-    and ftr.statetime > 20
-    and ftr.statetime % 3 == 0 then
-        local revangle = self.dodgeangle+math.pi
-        local dust = {
-            type="spark-dodge-dust",
-            x = ftr.x, y = ftr.y, z = ftr.z,
-            velz = 2,
-            faceangle = revangle, accel = 1,
-        }
-        dust.x, dust.y = math2.vadd(dust.x, dust.y,
-            math2.frompolar(self.dodgeangle, self.bodyradius))
+    -- if ftr.z == ftr.floorz
+    -- and ftr.statetime > 20
+    -- and ftr.statetime % 3 == 0 then
+    --     local revangle = self.dodgeangle+math.pi
+    --     local dust = {
+    --         type="spark-dodge-dust",
+    --         x = ftr.x, y = ftr.y, z = ftr.z,
+    --         velz = 2,
+    --         faceangle = revangle, accel = 1,
+    --     }
+    --     dust.x, dust.y = math2.vadd(dust.x, dust.y,
+    --         math2.frompolar(self.dodgeangle, self.bodyradius))
 
-        dust.velx, dust.vely = math2.frompolar(revangle, self.speed/4)
+    --     dust.velx, dust.vely = math2.frompolar(revangle, self.speed/4)
 
-        Characters.spawn(dust)
-    end
+    --     Characters.spawn(dust)
+    -- end
     if not ftr.statetime then
         if self.speed == 0 then
             return "stand"
