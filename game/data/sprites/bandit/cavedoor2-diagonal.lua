@@ -60,8 +60,8 @@ return {
             polygon = {
               { x = 0, y = 0 },
               { x = 64, y = 64 },
-              { x = 62.7484, y = 46.7484 },
-              { x = 16, y = 0 }
+              { x = 64, y = 32 },
+              { x = 32, y = 0 }
             },
             properties = {
               ["collidable"] = true
