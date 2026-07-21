@@ -1080,7 +1080,7 @@ body to grapple</text>
      <property name="z" type="float" value="48"/>
     </properties>
    </object>
-   <object id="829" name="entrypoint" x="2952" y="160">
+   <object id="829" name="entrypoint" x="2936" y="176">
     <properties>
      <property name="z" type="float" value="48"/>
     </properties>
@@ -1103,7 +1103,7 @@ body to grapple</text>
      <property name="z" type="float" value="48"/>
     </properties>
    </object>
-   <object id="835" name="entrypoint" x="2976" y="184">
+   <object id="835" name="entrypoint" x="2960" y="200">
     <properties>
      <property name="z" type="float" value="48"/>
     </properties>
@@ -1294,7 +1294,7 @@ and tap    to throw</text>
     </properties>
     <point/>
    </object>
-   <object id="821" name="entrypoint" x="2960" y="168">
+   <object id="821" name="entrypoint" x="2944" y="184">
     <properties>
      <property name="z" type="float" value="48"/>
     </properties>
