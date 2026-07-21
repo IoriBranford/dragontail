@@ -200,9 +200,8 @@
   "size": { "w": 140, "h": 106 },
   "scale": "1",
   "frameTags": [
-   { "name": "Dust2", "from": 0, "to": 5, "direction": "forward", "color": "#000000ff" },
+   { "name": "Dust1", "from": 0, "to": 5, "direction": "forward", "color": "#000000ff" },
    { "name": "Dust0", "from": 6, "to": 11, "direction": "forward", "color": "#000000ff" },
-   { "name": "Dust1", "from": 12, "to": 17, "direction": "forward", "color": "#000000ff" },
    { "name": "Dust3", "from": 18, "to": 23, "direction": "forward", "color": "#000000ff" }
   ],
   "layers": [

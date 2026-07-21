@@ -5,7 +5,7 @@ spark-guard,data/sprites/vfx/vfx.jase,Dragontail.Character.Common,spark,data/dat
 spark-bighit,data/sprites/vfx/vfx.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,bighit,0,9,,,,,,,,,,,
 spark-fall-down-dust,data/sprites/vfx/dust-on-person-fall.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,Complete,0,24,0.5,,,,,,,,,,
 spark-stone-shatter,data/sprites/weapons/stone.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,Shatter,0,12,,,,,,,,,,,
-spark-dodge-dust,data/sprites/vfx/dodge-dust.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,Dust,0,18,,,,,,,,4,,,
+spark-dodge-dust,data/sprites/vfx/dodge-dust.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,Dust,0,18,,,,,,,,2,,,
 particle-blood,data/sprites/vfx/vfx.jase,Dragontail.Character.Common,shrinkOut,data/database/objects-states.csv,liquid,,30,,3,0.392699081698724,0.125,4290772992,,,,,,
 particle-hit-sweat,data/sprites/vfx/vfx.jase,Dragontail.Character.Common,shrinkOut,data/database/objects-states.csv,liquid,,6,,4,1.0471975511966,,,,,,,,
 particle,data/sprites/vfx/vfx.jase,Dragontail.Character.Common,shrinkOut,data/database/objects-states.csv,liquid,,30,,,,0.125,,,,,,,
