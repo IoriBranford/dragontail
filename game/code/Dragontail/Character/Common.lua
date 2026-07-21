@@ -81,6 +81,9 @@ function Common:spark(time)
         Face.faceAngle(self, self.faceangle, baseanim, self.frame1, self.loopframe)
     end
     time = time or self.lifetime or 30
+    if self.accel then
+        self:decelerateXYto0()
+    end
     wait(time)
     self:disappear()
 end
