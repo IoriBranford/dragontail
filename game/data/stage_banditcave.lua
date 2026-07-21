@@ -9,7 +9,7 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 96,
+  nextlayerid = 97,
   nextobjectid = 1053,
   backgroundcolor = { 64, 64, 64 },
   properties = {
@@ -654,7 +654,7 @@ return {
       id = 92,
       name = "wall",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -725,7 +725,7 @@ return {
         },
         {
           x = 40, y = 0, width = 20, height = 12,
-          data = "eJztzsEJwkAUhOG/GneCGO3HaAcWErWDeNFu9KLd6CUSHsyyGgvwkoFhYHkfbJ1glWDh3QnOgougSdAJTuIncVPb5UbCbBOsveHvgodgn+AquKmYpTduGrvczuaYoPWG7wVv/+kpeKmYjbe3bT8adpzw8+r7bVYVc/COb7KdMoU/ZgBewiko"
+          data = "eJztzsEJwkAUhOG/Gt8EMdpP1A5SSNQO4kW70UvsRi8RWZiwMRbgJQPDwPI+2DJgE7Dy1oKL4CrYBrSCs/hJuinthtY2+4DKm3wneAgOATfBXdmsvZ1tNWprcwpovMn3grf/9BS8lM3O29s2oyY7TfLL4vttUWRz9E5vBjtnDn/MB2E8Kb0="
         },
         {
           x = 60, y = 0, width = 20, height = 12,
@@ -734,6 +734,79 @@ return {
         {
           x = 80, y = 0, width = 20, height = 12,
           data = "eJxjYBhZYKEGA4OuOgTrIWFk/hwN4s07r8HAEK0OwTFIGJl/CmpnLhHm/tVgYOhUh+AuJIzM/wG1c7YGYbdqaxK2U00TYv5JDYhbSfE/PvBdA+JWESqZB3MrNd3IwEAbN1LTPENVBoY0VexyAG07IC8="
+        }
+      }
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 200,
+      height = 12,
+      id = 96,
+      name = "on_desert_wall",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      chunks = {
+        {
+          x = -20, y = -12, width = 20, height = 12,
+          data = "eJxjYBgFo2AUMAwxcFyLgUFVm4EBAAwzAUI="
+        },
+        {
+          x = 0, y = -12, width = 20, height = 12,
+          data = "eJxjYBgFo2AUMNAJqGozMKhrQ2gQVoNimBiIfROKQWIweRAfRN+AskE0iA8AbmsKhA=="
+        },
+        {
+          x = 20, y = -12, width = 20, height = 12,
+          data = "eJztisEJwDAQwzRM00K9/y5pxsgERZBXBsjrBAe2T1AUBQe4Al/gDrTAs85tBPq26Zl1/emY3e3zhR8VeA0I"
+        },
+        {
+          x = 40, y = -12, width = 20, height = 12,
+          data = "eJztkMEJgEAMBKcUEVTMXkF2ZGH68DpQu/DhX0Lu4UewgBtYkuxnIFCpVPhgF/SKeQiGsp+l99kJNvv3wzlFpgRjgixYDFpBI1gNbsFl4XGfe93jed/eP+pZF/E="
+        },
+        {
+          x = 60, y = -12, width = 20, height = 12,
+          data = "eJxjYBgFo2AUMNAJ3NRmYFDVZmBQh2IQG4RB4mpQ9g1tBoYTWsSZBwBpNwYz"
+        },
+        {
+          x = -20, y = 0, width = 20, height = 12,
+          data = "eJztzjERgDAQAMH1ku4/HimxFhFgIgM9FQIYvswKuDn+u4IZjCyIYUv2TvSa3h2cSSv6ex3FvWXx0QP8Lghd"
+        },
+        {
+          x = 0, y = 0, width = 20, height = 12,
+          data = "eJztzMEJgDAQRNHfSYygsNntRixIG9IexDKiVuFZhBxyFXLwkAcDyyzMJDALBIPOYDToDQYDp9AoeIWY7kOhzXqfupiyCKwCW4Az+7+5lM9c2tgDRdyFdqqKH3gAlsAUiw=="
+        },
+        {
+          x = 20, y = 0, width = 20, height = 12,
+          data = "eJy7r83AoKDNwHBPm4HhPpQG4bvaDAyK2gwMSlB5BTSxu1D196FyilB6FIyCUcBANwAALaQNUQ=="
+        },
+        {
+          x = 40, y = 0, width = 20, height = 12,
+          data = "eJztzb0JgEAMhuF3FO+uS7KMOLI/nRsoTqG1iPGwsHCAPBA+SPMmhVVhU2h8D6GaBAaB1mBW6AyKQS+Q9L7sW5RfFm9m36s7vpqP/eMXQqA6AcjRER4="
+        },
+        {
+          x = 60, y = 0, width = 20, height = 12,
+          data = "eJztk1FKglEQhb+dmEbKP2dWk6LLCYLaQYG4iRYRJiI+q1S2haCisIcY5kr/m38vPXlgmDvnwpk7lzM7wYXDg2AuuHboO/QcvpRROQxFI5wI7g0+BEvBUwUTg8sq9aOOc1O9wLulZtfhxuDW4K6C81KPDV4NzgQ9wUqwEXRLXhU+6j2mRXPo8F3eGnPHvHJYCEaePQee9+awE3wq7+Ov6ngUtAVbQaeWo08rZi+xrXHtEsE/q/l/vOgwdwT/hjf79d5a6cXIEcHN7G964aVTpT+vHGbKHQ3Px27u9+cHxNBK1Q=="
+        },
+        {
+          x = 80, y = 0, width = 20, height = 12,
+          data = "eJy9kU1qAkEQhb+bJBKSaL+6iougCJ7FhSYInsYscgZNXEhcqvh3CKPZZBGK7oEh6kJmyIOmuqqpr19Xw//pI8BS8CCoKta+Qsz34XzPQnFlfR7vU1wJmgZTwTyde61lMX8UTP5wbwS3gq1gI6gIdrma70cBng0+BUfBj7MNDoJO8p1pfMF3Xu8h3nUnaFjkObtvp7xrtE5eBwYvgppBvwAvY7rPkJj1gjxXVzBLb38rgefzdI/tgvPL6zXNryzeUPDtf1wSryd4stP/+AVnrzme"
+        },
+        {
+          x = 60, y = 12, width = 20, height = 12,
+          data = "eJztzr0JwlAARtGziU0Qed9bRnAfLdxMMKUDiD9DiGhnkdikMsEyd4DD5ffWYVV5h1N4hWVlEe4ZAaEJ57CrnbOvHArX8CzjrEfprDZseuc24enbNjS9c5nwM+z4J2duzqAPuWYaYg=="
+        },
+        {
+          x = 80, y = 12, width = 20, height = 12,
+          data = "eJxjYCAdqGgzMHzSYmA4rMXA8E2LgWJwTIuBQVGbgeGBNuVmjYJRwDCCAACMGAXA"
         }
       }
     },
