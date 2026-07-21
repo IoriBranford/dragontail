@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="94" nextobjectid="1053">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="96" nextobjectid="1053">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -69,6 +69,9 @@
  <tileset firstgid="7272" source="tilesets/castle/castle_decoratives.tsx"/>
  <tileset firstgid="7528" source="sprites/vfx/stain.tsx"/>
  <tileset firstgid="7529" source="tilesets/castle/torch.tsx"/>
+ <tileset firstgid="7537" source="tilesets/sandy/desert-decorative1.tsx"/>
+ <tileset firstgid="8497" source="tilesets/sandy/desert-decorative2.tsx"/>
+ <tileset firstgid="9521" source="tilesets/sandy/desert.tsx"/>
  <layer id="2" name="cavefloor" width="200" height="12">
   <properties>
    <property name="drawz" type="float" value="-2"/>
@@ -143,6 +146,22 @@
   </chunk>
   </data>
  </layer>
+ <layer id="94" name="sandy" width="200" height="12">
+  <data encoding="base64" compression="zlib">
+   <chunk x="60" y="0" width="20" height="12">
+   eJztkbERQEAURF8vJG5/Mwwz2jHqUYXgdCDQhZERCI4K7gcCW8Cbt7vw5ysp5ceKATYn3vGwTvl03AMMBp3l82rBIqgMLge/ScmtNxgz/d7domAOUGT6NYLW0g+rEvsGZZMWSQ==
+  </chunk>
+   <chunk x="80" y="0" width="20" height="12">
+   eJztkEtKQ1EQRM9eNCa+qq04UAzqWhzELy7NIBqH+tyFiPEPUvQdBdGADr3Q3G5oqroO/L/fvF5wJ3jo/objwLBnuO9gIBg2/b5V5jXBSMvpvQleBLuGHcOBoXPNV4Itw5HhRjBdIsOpYa6qbcNH61eb3kxwbLhQZfiJS7xTU9W/aRgbLpOz3bluGLk8otl/c+uhK28Yrhius6viEL3n+LQ6ceUZNt3bL7i+q/xTE1e2MEz/1LKHQXTjlfzRi3bY7i/oZe9ccNYYJWv2wi597noUqN32qmIR//DeWND7BJplTqA=
+  </chunk>
+   <chunk x="60" y="12" width="20" height="12">
+   eJztzLENQFAARdEzikRIeH8ZpYVVRmAMlUYkJvA7cZrbXd6bwhqOcIa+VMywjLShKwyFufJ320IT9qe/nw+5AE+2CRo=
+  </chunk>
+   <chunk x="80" y="12" width="20" height="12">
+   eJztzssJAmEMReGvE18L8U+qcWM5glOaulAXNuCjCx8LQYYZQacEmQOBcLmc5BnMkkhK8gpW9SSLZJ4sk2nyiKZTJcdgENyKH9aFa3AORsGmcI/Gu2tvHYJJsm8ddX8cbDuumm52at0f/zC4fO3df3p6/DFvurkfKA==
+  </chunk>
+  </data>
+ </layer>
  <layer id="27" name="onfloor" width="200" height="12">
   <properties>
    <property name="drawz" type="float" value="-1.5"/>
@@ -199,6 +218,28 @@
   </chunk>
    <chunk x="80" y="0" width="20" height="12">
    eJzlkEEKwjAURN+26h9oUVu8lWKteKsWbcVb1Y3gaSTQkI3QCNn5NgNDeBk+/Bc7g1JQCdaCjWCr0PkcV3G+i0EjOAuOglpwUuh85gaFzfseBoPgLrgKboJeofO5NzjY/M53xJ+OdnoXu/MX3M5mmc7XuRsl9D0NXgl9jjFL68sX3/sPWvgVAg==
+  </chunk>
+  </data>
+ </layer>
+ <layer id="95" name="desert_wall" width="200" height="12">
+  <data encoding="base64" compression="zlib">
+   <chunk x="40" y="-12" width="20" height="12">
+   eJxjYBgFo2AUMAwgKNZgYCjRYGDQU2dgyNUgTS8AdskCIg==
+  </chunk>
+   <chunk x="0" y="0" width="20" height="12">
+   eJztkEEOAVEQRN9tqkUY4TiMcAA7l2CEA1hxGytuY0Wk0/1jNsLCcmpTlarq1M+HzzgZjAQrC10JhgqvSh6kV7KCtcFYMGl1rgZzwdFC14KZwquTp+mVzHf9/mywECxbnYfBTnCx0I1gq/Ca5E16JfNdv78Z7AWHVqffi7ff7a2/wXf9/mn8Bb/udujgP/ACJSEnzA==
+  </chunk>
+   <chunk x="20" y="0" width="20" height="12">
+   eJzti8sNg0AQQ1818eTApx8CVdAEnxJySjmcUk5OEVrtjjSCCpDwxfazXAtaQSOoBG+D0XJOrC576s7awn1rgr8Eg6AXdILN4GM592FP3dlQePy6z4JVsAgmwc/gazkvYU/d2Vp4/Lof9XjC38781i0uoB1VJyJt
+  </chunk>
+   <chunk x="40" y="0" width="20" height="12">
+   eJztzsEJwkAUhOG/GneCGO3HaAcWErWDeNFu9KLd6CUSHsyyGgvwkoFhYHkfbJ1glWDh3QnOgougSdAJTuIncVPb5UbCbBOsveHvgodgn+AquKmYpTduGrvczuaYoPWG7wVv/+kpeKmYjbe3bT8adpzw8+r7bVYVc/COb7KdMoU/ZgBewiko
+  </chunk>
+   <chunk x="60" y="0" width="20" height="12">
+   eJxjYKAu0FNnYJijQT3zYtQZGE5pUM/MLnUGhh8a1DVTTRNhpr46JAx01SFsEJ2rwcCwECoHEweJlSCJwfSgmxmrDgmDaHUIG0TP1mBgOA+Vg4mDxBYhicH0oLuzWx0SBp3qEDaIPqnBwPBXA8HvhopdQBKD6SEGfNdgYNDWxBT7R8V0MQoYwAAAAkUq8g==
+  </chunk>
+   <chunk x="80" y="0" width="20" height="12">
+   eJxjYBhZYKEGA4OuOgTrIWFk/hwN4s07r8HAEK0OwTFIGJl/CmpnLhHm/tVgYOhUh+AuJIzM/wG1c7YGYbdqaxK2U00TYv5JDYhbSfE/PvBdA+JWapoJcivITBEqmccANZOa5oEANc0zVGVgSFPFLgcAVSogLw==
   </chunk>
   </data>
  </layer>
@@ -3205,318 +3246,4 @@ to sprint past archers</text>
    </object>
   </objectgroup>
  </group>
- <objectgroup id="3" name="notes">
-  <object id="1" x="320" y="352" width="480" height="128">
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff">Teach basic combat with first low-level enemies</text>
-  </object>
-  <object id="2" x="960" y="-160" width="480" height="128">
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Introduce dodging enemy encouraging player to use run in combat</text>
-  </object>
-  <object id="37" x="1600" y="-160" width="480" height="128">
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Teach long-range combat with stones to throw at slingers
-Avoid their stones then pick up and throw them back</text>
-  </object>
-  <object id="3" x="2272" y="-232" width="480" height="128">
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Teach grabbing with guarding enemy and barrier broken only by thrown enemy</text>
-  </object>
-  <object id="4" x="2912" y="-232" width="480" height="128">
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Entry hall with archers shooting from arrow slits</text>
-  </object>
-  <object id="5" x="2816" y="608" width="480" height="128">
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Guard room introducing mace enemies</text>
-  </object>
-  <object id="6" x="3712" y="192" width="480" height="128">
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Armory with mixed enemies and introducing throwable weapons</text>
-  </object>
-  <object id="7" x="4192" y="-288" width="480" height="128">
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Mess hall with food, throwable and breakable furniture, stronger mix of enemies</text>
-  </object>
-  <object id="8" x="4672" y="-288" width="480" height="128">
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Boss arena</text>
-  </object>
-  <object id="9" x="5152" y="-288" width="480" height="128">
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">End room
-
-Holding cells with captured kids</text>
-  </object>
-  <object id="13" x="0" y="-128" width="480" height="128">
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" valign="bottom">Teach movement - walking and running</text>
-  </object>
-  <object id="110" x="192" y="0" width="160" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Vines</text>
-  </object>
-  <object id="113" x="512" y="0" width="128" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Vines</text>
-  </object>
-  <object id="115" x="768" y="0" width="128" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Vines</text>
-  </object>
-  <object id="116" x="1232" y="80" width="128" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Vines</text>
-  </object>
-  <object id="127" x="2080" y="-64" width="160" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Torches</text>
-  </object>
-  <object id="122" x="2016" y="112" width="32" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Stool</text>
-  </object>
-  <object id="124" x="2080" y="192" width="32" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Stool</text>
-  </object>
-  <object id="128" x="3216" y="48" width="160" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Torches</text>
-  </object>
-  <object id="131" x="3168" y="432" width="96" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Table</text>
-  </object>
-  <object id="129" x="2728" y="320" width="512" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Torches between alcoves</text>
-  </object>
-  <object id="130" x="2792" y="0" width="512" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Torches between alcoves</text>
-  </object>
-  <object id="132" x="3168" y="496" width="32" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Stool</text>
-  </object>
-  <object id="133" x="3232" y="496" width="32" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Stool</text>
-  </object>
-  <object id="134" x="3232" y="392" width="32" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Stool</text>
-  </object>
-  <object id="135" x="3168" y="392" width="32" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Stool</text>
-  </object>
-  <object id="136" x="3440" y="432" width="96" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Weapon table</text>
-  </object>
-  <object id="137" x="3920" y="432" width="96" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Weapon table</text>
-  </object>
-  <object id="138" x="4048" y="432" width="96" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Weapon table</text>
-  </object>
-  <object id="139" x="3200" y="384" width="64" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Anvil</text>
-  </object>
-  <object id="145" x="3264" y="384" width="64" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Forge</text>
-  </object>
-  <object id="143" x="3168" y="384" width="32" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Hammer</text>
-  </object>
-  <object id="144" x="3168" y="416" width="32" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center" valign="center">Table</text>
-  </object>
-  <object id="146" x="4256" y="416" width="128" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Table</text>
-  </object>
-  <object id="216" x="4256" y="256" width="128" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Table</text>
-  </object>
-  <object id="222" x="4256" y="96" width="128" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Table</text>
-  </object>
-  <object id="226" x="4256" y="-64" width="128" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Table</text>
-  </object>
-  <object id="211" x="4480" y="544" width="128" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Table</text>
-  </object>
-  <object id="215" x="4480" y="384" width="128" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Table</text>
-  </object>
-  <object id="221" x="4480" y="224" width="128" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Table</text>
-  </object>
-  <object id="229" x="4480" y="64" width="128" height="64">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Table</text>
-  </object>
-  <object id="208" x="4256" y="480" width="128" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
-  </object>
-  <object id="214" x="4256" y="320" width="128" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
-  </object>
-  <object id="220" x="4256" y="160" width="128" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
-  </object>
-  <object id="225" x="4256" y="0" width="128" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
-  </object>
-  <object id="210" x="4480" y="608" width="128" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
-  </object>
-  <object id="213" x="4480" y="448" width="128" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
-  </object>
-  <object id="219" x="4480" y="288" width="128" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
-  </object>
-  <object id="228" x="4480" y="128" width="128" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
-  </object>
-  <object id="209" x="4256" y="384" width="128" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
-  </object>
-  <object id="218" x="4256" y="224" width="128" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
-  </object>
-  <object id="224" x="4256" y="64" width="128" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
-  </object>
-  <object id="227" x="4256" y="-96" width="128" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
-  </object>
-  <object id="212" x="4480" y="512" width="128" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
-  </object>
-  <object id="217" x="4480" y="352" width="128" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
-  </object>
-  <object id="223" x="4480" y="192" width="128" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
-  </object>
-  <object id="230" x="4480" y="32" width="128" height="32">
-   <properties>
-    <property name="bordercolor" type="color" value="#ffffffff"/>
-   </properties>
-   <text fontfamily="Unifont" pixelsize="32" wrap="1" color="#ffffff" halign="center" valign="center">Bench</text>
-  </object>
- </objectgroup>
 </map>
