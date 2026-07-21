@@ -9,8 +9,8 @@ return {
   height = 15,
   tilewidth = 16,
   tileheight = 18,
-  nextlayerid = 33,
-  nextobjectid = 232,
+  nextlayerid = 34,
+  nextobjectid = 235,
   properties = {},
   tilesets = {
     {
@@ -84,6 +84,12 @@ return {
       firstgid = 450,
       filename = "sprites/ui/firespit.tsx",
       exportfilename = "sprites/ui/firespit.lua"
+    },
+    {
+      name = "boss",
+      firstgid = 451,
+      filename = "sprites/bandit/boss.tsx",
+      exportfilename = "sprites/bandit/boss.lua"
     }
   },
   layers = {
@@ -106,7 +112,7 @@ return {
           id = 2,
           name = "hud",
           class = "",
-          visible = false,
+          visible = true,
           opacity = 1,
           offsetx = 0,
           offsety = 0,
@@ -438,18 +444,18 @@ return {
               name = "development ver.",
               type = "",
               shape = "text",
-              x = 328,
-              y = 225,
-              width = 144,
-              height = 36,
+              x = 0,
+              y = 261,
+              width = 480,
+              height = 9,
               rotation = 0,
               opacity = 1,
               visible = true,
-              text = "DEVELOPMENT VER 2026.1.2\nALL CONTENT SUBJECT TO CHANGE",
+              text = "DEVELOPMENT VER 2026.2 - ALL CONTENT SUBJECT TO CHANGE",
               fontfamily = "TinyUnicode",
               wrap = true,
               color = { 255, 255, 255 },
-              halign = "right",
+              halign = "center",
               valign = "bottom",
               properties = {}
             },
@@ -1353,6 +1359,75 @@ return {
         },
         {
           type = "objectgroup",
+          draworder = "topdown",
+          id = 33,
+          name = "hud_boss",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 232,
+              name = "health",
+              type = "Gui.Gauge",
+              shape = "rectangle",
+              x = 180,
+              y = 252,
+              width = 250,
+              height = 9,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {
+                ["color"] = "#ffff1f1f",
+                ["gaugedirection"] = "left",
+                ["roundcorners"] = 1,
+                ["z"] = 0
+              }
+            },
+            {
+              id = 233,
+              name = "healthbox",
+              type = "",
+              shape = "rectangle",
+              x = 180,
+              y = 252,
+              width = 250,
+              height = 9,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {
+                ["color"] = "#00000000",
+                ["linecolor"] = "#ffffffff",
+                ["roundcorners"] = 2,
+                ["z"] = 2
+              }
+            },
+            {
+              id = 234,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 456,
+              y = 279,
+              width = 192,
+              height = 192,
+              rotation = 0,
+              opacity = 1,
+              gid = 2147484099,
+              visible = true,
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
           draworder = "index",
           id = 13,
           name = "input",
@@ -1788,7 +1863,7 @@ return {
           id = 32,
           name = "trainingmenu",
           class = "Gui.Menu",
-          visible = true,
+          visible = false,
           opacity = 1,
           offsetx = 0,
           offsety = 0,
@@ -2943,7 +3018,7 @@ return {
       id = 17,
       name = "title",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
