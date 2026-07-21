@@ -298,7 +298,7 @@ to clear lost enemies</text>
    </object>
   </objectgroup>
   <objectgroup id="33" name="hud_boss">
-   <object id="232" name="health" type="Gui.Gauge" x="180" y="252" width="250" height="9">
+   <object id="232" name="health" type="Gui.Gauge" x="198" y="252" width="250" height="9">
     <properties>
      <property name="color" type="color" value="#ffff1f1f"/>
      <property name="gaugedirection" propertytype="GaugeDirection" value="left"/>
@@ -306,7 +306,7 @@ to clear lost enemies</text>
      <property name="z" type="float" value="0"/>
     </properties>
    </object>
-   <object id="233" name="healthbox" x="180" y="252" width="250" height="9">
+   <object id="233" name="healthbox" x="198" y="252" width="250" height="9">
     <properties>
      <property name="color" type="color" value="#00000000"/>
      <property name="linecolor" type="color" value="#ffffffff"/>
@@ -314,7 +314,7 @@ to clear lost enemies</text>
      <property name="z" type="float" value="2"/>
     </properties>
    </object>
-   <object id="234" gid="2147484099" x="456" y="279" width="192" height="192"/>
+   <object id="234" gid="2147484099" x="464" y="288" width="192" height="192"/>
   </objectgroup>
   <objectgroup draworder="index" id="13" name="input" visible="0">
    <object id="67" name="joystickdirection" x="55" y="243">
