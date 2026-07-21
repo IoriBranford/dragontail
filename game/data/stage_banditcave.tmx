@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="103" nextobjectid="1063">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="103" nextobjectid="1064">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -1063,6 +1063,13 @@ body to grapple</text>
     <properties>
      <property name="z" type="float" value="128"/>
     </properties>
+   </object>
+   <object id="1063" template="mapobjects/OutwardBoundary.tx" x="2904" y="192">
+    <properties>
+     <property name="extrudeY" type="float" value="-16"/>
+     <property name="z" type="int" value="32"/>
+    </properties>
+    <polygon points="40,-16 8,-16 72,48 72,16"/>
    </object>
   </objectgroup>
   <objectgroup id="88" name="meetshields2" class="Room">

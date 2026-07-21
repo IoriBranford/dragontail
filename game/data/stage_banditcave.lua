@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 103,
-  nextobjectid = 1063,
+  nextobjectid = 1064,
   backgroundcolor = { 64, 64, 64 },
   properties = {
     ["ceilingz"] = 256,
@@ -4575,6 +4575,33 @@ return {
               visible = true,
               properties = {
                 ["z"] = 128
+              }
+            },
+            {
+              id = 1063,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 2904,
+              y = 192,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = 40, y = -16 },
+                { x = 8, y = -16 },
+                { x = 72, y = 48 },
+                { x = 72, y = 16 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -16,
+                ["linecolor"] = "#80ffffff",
+                ["z"] = 32
               }
             }
           }
