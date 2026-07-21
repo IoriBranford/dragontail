@@ -9,7 +9,7 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 102,
+  nextlayerid = 103,
   nextobjectid = 1063,
   backgroundcolor = { 64, 64, 64 },
   properties = {
@@ -126,182 +126,170 @@ return {
       exportfilename = "sprites/items/vegetables.lua"
     },
     {
-      name = "axe",
-      firstgid = 3101,
-      filename = "sprites/bandit/axe.tsx",
-      exportfilename = "sprites/bandit/axe.lua"
-    },
-    {
       name = "boss",
-      firstgid = 3102,
+      firstgid = 3101,
       filename = "sprites/bandit/boss.tsx",
       exportfilename = "sprites/bandit/boss.lua"
     },
     {
       name = "bow",
-      firstgid = 3103,
+      firstgid = 3102,
       filename = "sprites/bandit/bow.tsx",
       exportfilename = "sprites/bandit/bow.lua"
     },
     {
       name = "spear",
-      firstgid = 3104,
+      firstgid = 3103,
       filename = "sprites/bandit/spear.tsx",
       exportfilename = "sprites/bandit/spear.lua"
     },
     {
       name = "sling",
-      firstgid = 3105,
+      firstgid = 3104,
       filename = "sprites/bandit/sling.tsx",
       exportfilename = "sprites/bandit/sling.lua"
     },
     {
       name = "knife",
-      firstgid = 3106,
+      firstgid = 3105,
       filename = "sprites/bandit/knife.tsx",
       exportfilename = "sprites/bandit/knife.lua"
     },
     {
       name = "throwing-axe",
-      firstgid = 3107,
+      firstgid = 3106,
       filename = "sprites/weapons/throwing-axe.tsx",
       exportfilename = "sprites/weapons/throwing-axe.lua"
     },
     {
       name = "stone",
-      firstgid = 3108,
+      firstgid = 3107,
       filename = "sprites/weapons/stone.tsx",
       exportfilename = "sprites/weapons/stone.lua"
     },
     {
       name = "Xbox",
-      firstgid = 3109,
+      firstgid = 3108,
       filename = "tilesets/ui/Gamepad Spritesheets/Xbox.tsx",
       exportfilename = "tilesets/ui/Gamepad Spritesheets/Xbox.lua"
     },
     {
       name = "tree2B_ss_leaves",
-      firstgid = 3129,
+      firstgid = 3128,
       filename = "sprites/grassland/tree2B_ss_leaves.tsx",
       exportfilename = "sprites/grassland/tree2B_ss_leaves.lua"
     },
     {
       name = "tree2B_ss_obj",
-      firstgid = 3130,
+      firstgid = 3129,
       filename = "sprites/grassland/tree2B_ss.tsx",
       exportfilename = "sprites/grassland/tree2B_ss.lua"
     },
     {
       name = "tree2C_ss_leaves",
-      firstgid = 3131,
+      firstgid = 3130,
       filename = "sprites/grassland/tree2C_ss_leaves.tsx",
       exportfilename = "sprites/grassland/tree2C_ss_leaves.lua"
     },
     {
       name = "tree2C_ss_obj",
-      firstgid = 3132,
+      firstgid = 3131,
       filename = "sprites/grassland/tree2C_ss.tsx",
       exportfilename = "sprites/grassland/tree2C_ss.lua"
     },
     {
       name = "spikefruit-hanging",
-      firstgid = 3133,
+      firstgid = 3132,
       filename = "sprites/weapons/spikefruit-hanging.tsx",
       exportfilename = "sprites/weapons/spikefruit-hanging.lua"
     },
     {
       name = "spikefruit-onground",
-      firstgid = 3134,
+      firstgid = 3133,
       filename = "sprites/weapons/spikefruit-onground.tsx",
       exportfilename = "sprites/weapons/spikefruit-onground.lua"
     },
     {
       name = "lifefruit-hanging",
-      firstgid = 3135,
+      firstgid = 3134,
       filename = "sprites/items/lifefruit-hanging.tsx",
       exportfilename = "sprites/items/lifefruit-hanging.lua"
     },
     {
       name = "lifefruit",
-      firstgid = 3136,
+      firstgid = 3135,
       filename = "sprites/items/lifefruit.tsx",
       exportfilename = "sprites/items/lifefruit.lua"
     },
     {
-      name = "bigstone",
-      firstgid = 3137,
-      filename = "sprites/weapons/bigstone.tsx",
-      exportfilename = "sprites/weapons/bigstone.lua"
-    },
-    {
       name = "tallstone",
-      firstgid = 3138,
+      firstgid = 3136,
       filename = "sprites/weapons/tallstone.tsx",
       exportfilename = "sprites/weapons/tallstone.lua"
     },
     {
       name = "pepper-plant",
-      firstgid = 3139,
+      firstgid = 3137,
       filename = "sprites/items/pepper-plant.tsx",
       exportfilename = "sprites/items/pepper-plant.lua"
     },
     {
       name = "peppers-on-plant",
-      firstgid = 3140,
+      firstgid = 3138,
       filename = "sprites/items/peppers-on-plant.tsx",
       exportfilename = "sprites/items/peppers-on-plant.lua"
     },
     {
       name = "muscle",
-      firstgid = 3141,
+      firstgid = 3139,
       filename = "sprites/bandit/muscle-orange.tsx",
       exportfilename = "sprites/bandit/muscle-orange.lua"
     },
     {
       name = "cave-window",
-      firstgid = 3142,
+      firstgid = 3140,
       filename = "tilesets/caves/semiblocked-tunnel.tsx",
       exportfilename = "tilesets/caves/semiblocked-tunnel.lua"
     },
     {
       name = "shield",
-      firstgid = 3143,
+      firstgid = 3141,
       filename = "sprites/bandit/shield.tsx",
       exportfilename = "sprites/bandit/shield.lua"
     },
     {
       name = "castle_decoratives",
-      firstgid = 3144,
+      firstgid = 3142,
       filename = "tilesets/castle/castle_decoratives.tsx",
       exportfilename = "tilesets/castle/castle_decoratives.lua"
     },
     {
       name = "stain",
-      firstgid = 3400,
+      firstgid = 3398,
       filename = "sprites/vfx/stain.tsx",
       exportfilename = "sprites/vfx/stain.lua"
     },
     {
       name = "torch",
-      firstgid = 3401,
+      firstgid = 3399,
       filename = "tilesets/castle/torch.tsx",
       exportfilename = "tilesets/castle/torch.lua"
     },
     {
       name = "desert-decorative2",
-      firstgid = 3409,
+      firstgid = 3407,
       filename = "tilesets/sandy/desert-decorative2.tsx",
       exportfilename = "tilesets/sandy/desert-decorative2.lua"
     },
     {
       name = "desert",
-      firstgid = 4433,
+      firstgid = 4431,
       filename = "tilesets/sandy/desert.tsx",
       exportfilename = "tilesets/sandy/desert.lua"
     },
     {
       name = "crystal-spikes",
-      firstgid = 6503,
+      firstgid = 6501,
       filename = "sprites/banditcave/crystal-spikes.tsx",
       exportfilename = "sprites/banditcave/crystal-spikes.lua"
     }
@@ -389,51 +377,51 @@ return {
       chunks = {
         {
           x = 0, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMJABnosxMLiJMzAIi2OK/8Iijq7mhzgDg7s4xAwQLSTOwLBcgoHhO5JekLrf4gwMlVBxV3EGBg+onIs4AwMAT1ENxg=="
+          data = "eJxjYBgFo2AUMJABnooxMLiIMzAIimOK/8Aijq7mmzgDg6s4xAwQLSDOwLBUgoHhK5JekLqf4gwM5VBxZ3EGBjeonJM4AwMAROENmg=="
         },
         {
           x = 20, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMNAAPBdjYPgpzsDwQgwhBuL/EIfQwuKkmXdWnIHBW4KBQVCcgcEVigFCMwiM"
+          data = "eJxjYBgFo2AUMNAAPBVjYPguzsDwTAwhBuJ/E4fQguKkmXdanIHBU4KBgV+cgcEZigE9Kwh0"
         },
         {
           x = 40, y = -12, width = 20, height = 12,
-          data = "eJzt0LsJgEAQhOG/BZ8z2ozJgbZkiVYidiCayKHmioHJDWz6ze5CSsr/KQWboBcU+mYFwS5oDMEwffBuqzXY0EXLMNfnvqtgeOHnguWa24q3x47KMBqy6xdP3AMuXxCC"
+          data = "eJzt0MsNggAQBNDXgR8SZpvxQqItWaKVEDogejGGCHcJBy9Mstc3u8uePf/POTzDNZyyzerCK6ToiscGb7GqaItLeIe+/e47htsK/xiGeRZrun3qaIp7cZh/8Yv7AdaVEkI="
         },
         {
           x = -20, y = 0, width = 20, height = 12,
-          data = "eJxjYBgF5ILnYtQNuwXi1DXvLJXNOzfIzZtPZfOeUTl+aQEAnHgGFQ=="
+          data = "eJxjYBgF5IKnYtQNu3ni1DXvNJXNOzPIzZtLZfOeUDl+aQEAhmAGBw=="
         },
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJzNkVtOAlEQRM8WNEo3CnvxMYyKqyEq4mpAQFiNP27CF+C3MT5SmboJS3CSyXTfW11VXQOwF7AbsEw4TXgN6Lj+CFgH7AR8Bny5nydcJxwmPAU8txoOPY8B9wmZMA04S+glLBKqhHNrLH0m7I0xl9loiUvzlTU30cxOjb9IuE0YJLTN2ff5VcKBv9Jvu9Y+4q1dj7PZZW2PI3NJQ5iW5/reUx7kd5bwEg1HbR7Vq4Cu/Wm3N+USjbeeMeJTdg8Jd85Bmsq7+BR33zjpyps8amZh7rb1Bv5HmlEvzZHxkbDvTLvea+Nc5+aZ2a90K++ifuh7eX4PmPiu3sIr//IPlbP6ibXkT97kaez9xKO3+Fcu6mvf3zrzkecq+y+Zdcw/tMbKmtLWHtrtJ+Ak4Dfg2/WRe9XHW/fClrecl2+Z++/PH9h1dFc="
+          data = "eJzNkVtOAlEQRM8OND7oFvbiYxgVV0NUwNWAgLAaf9yEL8BvY9TEVKZuwhKcZDLd91ZXVdcA7AXsBiwTzhJeA9quPwLWATsBnwFf7ucJNwlHCU8Bz62GQ89jwH1CK2EacJ7QTVgkVAkX1lj6TNhbY66y0RKX5itrbqKZnRp/mTBM6CeEOXs+v05If6UfrrWPeGvX42x2WdvjyFzSEObAcz3vKQ/yO0t4iYajNo/qVUDH/rTbm3KJxlvXGPEpu4eEO+cgTeVdfIq7Z5x05U0eNbMwd1iv73+kGfXSHBl/mLDvTDvea+Nc5+aZ2a90K++ifuB7eX4PmPiu3sIr//IPlbP6ibXkT97kaez9xKO3+Fcu6mvfD535yHOV/ZfM2uYfWGNlTWlrD+32E3Aa8Bvw7frYveqTrXthy1vOy7fM/ffnD3iIcss="
         },
         {
           x = 20, y = 0, width = 20, height = 12,
-          data = "eJzNkWlSAlEMhL8ruECi4F1cUBBPIzAKpxkZVI4G4vbTrVyqi57SIzhVqcl7STrd/ZYBg4RVwEZAL2A74DXg3edFE94CtgI6rnUDPgLKhGbCVcJFwqmjk1AFvLivSBjm7/netc2AyrMPATsJ7YTjhOuEvYRMmCa0jDtJuEwYu+cmYWkuDd+Jz63/Q+No/jFgN2Hm85nrC2nzXtXvAkIajK1omcvA86VzYY98p76R54RxZM4nCX1zK4yjnaV1qK/rWmVOT/Im1tpX3i+Pep6RV8rPrUvztYbC2jTX8L65e8UvHDN71DcfvV3XGCN7q53CkZ8tawjjV/ZA+5/9rnNjKpcflWekpXDv2PukbepdffugudqvnvcLu+0+nYU1MQ9pEm/VDgI+Y/3/chwGfPteoVyx/yev+3RX9wvjv38/Xkl8Sg=="
+          data = "eJzNkWlOAlEQhL8buCB0g3dxQUE8jcAgnAYZVI4G4vbTLWpiKtREj+Aknen3uru6qt4qoJ+wDtgK6AbsBrwGvPu8bMBbwE5A27VOwEfANGEv4SphlHDmaCeUAS/uKxIG+Xu+d207oPTsQ0AktBJOEq4T9hMaCbOEpnEnCZcJY/fcJKzMpeY78bn1f2AczT8GZMLc53PXl9LmvarfBdSlwdiKprn0PT91Luyh79Q39Jwwjs35NKFnboVxtHNqHerruFaa05O8iY32tffLo65n5JXyC+vSfKWhsDbN1bxv4V7xqzvm9qhnPnq7jjGG9lY7hSM/m9ZQN35pD7T/2e+6MKZy+VF6RloK9469T9pm3tWzD5qr/Op6v7Bb7tNZWBPzkCbxVu0w4DM2/y/HUcC37xXKFQd/8qpPd1W/MP779wPv7Xq6"
         },
         {
           x = 40, y = 0, width = 20, height = 12,
-          data = "eJyNk1tOAlEQRM8WNHG6FdyLBgWBtfihiOJqhBFhYyao+Pg0mGhMeYuExA+dZHKHflRXVV/qhOOE14D3gOOA7YBWwm1CJDwGPAScBr+eRQXtgJV764SOMZcBw4RMGCe0E3pZYsLfCugEfPhcefYs4TlK3yjhZAPzMmHf308B84Ruwp57RsZvWpNiS/PaM47iOwlnxgnHx+bXSDh3bJKwm3Cd8OK+Ooo3VcIgS0x6Zu6vzXPoXNMe9rPwVe2V84pdeJ74LaL4pFPzhL/02bVmaep7/pF1zN1TmceNeVw7J80z85pY6+7GbgfmobqpvyufDe/gzvXKC2vgetWsd9Z0XPVTc+5aq3xrGbftvDgL49Leaefrmh3/Vr5jnJ71pntr+yZe2uNBlPfQ75dfxT4D7quCs96P9qB54vZzT6LcL+1Xd+OvZ+w7px75Ka+FrZj2Jx+0I3knrv/Bkz5p1514i6JZvsqz9f9A88T1G5S/e/s="
+          data = "eJyNk0tOQlEQRM8ONBHoFveiQUBgLQ4UQViN8ETcmIkf/AwNJjow5S0SEgf6kpf76E91VfWlSmgnvAa8B7QDdgNaCdcJ9YTHgIeA0+DXc9+ATsDavVVC15irgFFCI2GW0EnoZ4kJfyegG/Dhc+3Zy4TnKH2ThJMtzHHCgb+fAm4Tegnpnonxm9ak2Mq80jiK7yWcGafu+Mz89hPOHZsnRMI04cV9VRRvagnDLDHpWbq/Ms+Rc017OMjCV7WXzit24Xnidx/FJ52aJ/yVz541S9PA84+t49Y9NfO4Mo+pc9K8NK+5tcbWbofmobqFv2s+972DG9crL6yh61Wz2VnTcdUvzLlnrfKtZdyO8+IsjLG90843NXv+rXzXOH3rbbi3sm/ipT0eRnmP/H75Vewz4K5RcDb70R40T9x+7kmU+6X96m789cx859QjP+W1sBXT/uSDdiTvxPU/eNIn7boTb1E0y1d5tvkfaJ64fgM2YnpD"
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJytkktOAkEURe8WjMp7iK5GGwRXg/JdiwNBFJcm4G+qODEndTsSZxo7qXR93ru/qm1IVUirhv7lG6R0ltJeSB1jv4e0H3/DW6TUSuneuC/xjd82fucX+HcpbULqprQKqZ9SldJpSlNzwHkd0oHxP+xh+8MT4zilk5QOU2pY6yQL7iyl55BG1vsZpeYxigb6GMOU5lm0gTdyP/9xSj37fopSt/R503znKbWt/TLLHVA79n7L3iKl1yhz9jr22ve8ac6h+xbmBouMKvtpW+fS+ieunZp7HaWua77ejs+3KHrnO2uyQDf/tfE3zmpmX0vrGOx4bjoXeuF6cIbUH/k+8MY+etFBLZrAQfOtNcBT58wcPN4c9azJp86Zt3LhPOGj/8qa61reFjzwkwVYeEYzOeEFPjSiL81PlmCji56agz7eGDyccbc3KX0B+PNx2g=="
+          data = "eJytkllOQkEQRe8OjBNV6GqUh+BqUMa1+CGI4tIEnH4V/8xJ3xeJfxpe0nk9VN2pexNSK6RlQzv5+imdp7QXUtvYHyHtx//w5ik1U3ow7mv84FfGb/8B/z6ldUidlJYh9VJqpXSW0sQccN6EdGD8T3vY/PLEOEnpNKXDlI6sdZwFd5rSS0hD6/2KUvMURQN9jEFKsyzawBu6n/8opa59P0epW/g8zHeRUmXtV1nugNqR95v2dpzSW5Q5e2177Xke5hy4b25usMioZT+VdS6sf+zaiblXUeo65utu+XyPone2tSYLdPNfGX/trKb2tbCO/pbncC70wvXoDKlP3wfe2EcvOqhFEzhovrMGeOqcmYPHm6OeNfnUOfNWLp0nfPRfW3Ndy9uCB36yAAvPaCYnvMCHRvQ1zE+WYKOLnpqDPt4YPJxxt7cpfQNy3XBI"
         },
         {
           x = 80, y = 0, width = 20, height = 12,
-          data = "eJzlkstKQlEYhb9XENF/mfQ0XqtncZAk2bM00C7Sq6mkDs1Gsdh/IAfEBs46sGHf+NZlH/hf31dAPS7HexLsL8h8EXwIagG9gEHAd8Ahh9f9gOEf9TYBLcFU8CiYC25z7bOx4DUzLJvneQtBM8eD4Drn3eRtA94E6ygZzvUyEeysHcXHvcrep3OmzxvBMDVq2cMpr6vk+F06R+y2Ck/O6zsB7yp5Bsn1v1HttZfa9jBTyeYOPY/M7g7MtZbzm2e2u32u8Lz/+8buyFl9z915bl8NwV16u8ourO++RxXeD0ayQBM="
+          data = "eJzlkbsuRWEQhb9KaMjBnlniQWg5HLyIRkEIGu+gVuAgCo030HgJEYnOJS6lWyeTf+ScHHai0NnJn8zee/5vzVoD/+t5dWj43/E2BS81zGGHphfNOK1f6O4LjgVDeXfW4d3hzeHD4aSCPoMBK7ozDrdWz3t0cMGGYF2wJ5jP9/h3UcFlBVcV9Hdx65hHgtE8q4LxrKeT9+RwZoW5ZXCezJ0a72uC59BzaAuWVb49hLec8ybnHDS4dli0kk/jB+ZdcmIvU13sMRWeCdrRk8zTqjNj+O7dUVPQEswJdgUHmWHUVXqPDIIbWl95Thqs6LvvQ3V2fO/Fa/RFdlHHXCOCBZWso3/bYMJK3ks9vE++ykmX"
         },
         {
           x = 40, y = 12, width = 20, height = 12,
-          data = "eJxjYMAPnokxMDiIMzD8F2dg+CvOwOAIxSD+PyiG8Z3ECRg2CkbBKGCgJgAAm5kJNQ=="
+          data = "eJxjYMAPnogxMNiJMzD8FWdg+C3OwGAPxSD+HyiG8R3ECRg2CkbBKGCgJgAARqkJHQ=="
         },
         {
           x = 60, y = 12, width = 20, height = 12,
-          data = "eJxzEmdgcIDif+IMDE7iDAyOUAzi/4fKOULZMHknqDxML0z9KBgFo4CBbgAArTALUA=="
+          data = "eJxzEGdgsIPiP+IMDA7iDAz2UAzi/4XK2UPZMHkHqDxML0z9KBgFo4CBbgAAHSALKA=="
         },
         {
           x = 80, y = 12, width = 20, height = 12,
-          data = "eJxzEmdg+CfOwOAozsDgBMX/xRkY/kLFQLQDVM0/qLwjkjoxcYZRMApGAcPAAABnagrd"
+          data = "eJztzsEJgDAQRNFfhM5Uo6ZHq7AIES96sAuxCxUkEPBuTkIeLAvDskwwXIbOENLchjNlcbfpZhcMNSyCXtAYKvPZZhgFk2AWrBm/okNv55DZrSj4gQeJShJC"
         }
       }
     },
@@ -533,27 +521,27 @@ return {
       chunks = {
         {
           x = 40, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMAwgmCzCwDBFhIHBT5iBoVeENL0AgTkCUg=="
+          data = "eJxjYBgFo2AUMAwgmCjCwDBJhIHBR5iBoVuENL0Af4kCSg=="
         },
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJztkLENwkAUQ98O/icqWAhBEIwDQTAAHUtAEAxABdtQwQjo69+JNCgZIG5s2f7y6eA/HgYLwcFCV4K5wqsyz7JXsoKjwVKwanXeBlvB3ULXgo3CqzOvs1cy3/X7p8FOsG91xgkugpeFbgRnhddkPmWvZL7r9x+Dq+DW6kxTvH2UfroLvuv3k579LvTdHTDAf+ALCrQl3Q=="
+          data = "eJztkLENwkAUQ98O/lfBQgiCYBwIggHoWAKCYAAq2IYqzIC+/p1Ig5IB4saW7S+fDv7jabAUHC10JVgovCrzPHslKzgZrATrTqc12AkeFroWbBVenXmTvZL5rt+/DPaCQ6czSXAVvC10I7govCbzOXsl812//xjcBPdOZ5bi7Sn9dB981++nA/t9GLo7YoT/wBd3ZiVb"
         },
         {
           x = 20, y = 0, width = 20, height = 12,
-          data = "eJzti8sJw0AQQ18PmoWcUk5u/vST2FW4CX9K8Mnl+JQSwrI7MCQVBKyLpCfUCnpBJ2gEu8FkJWfW1j13Z33lvnXBX4JRMAiegtPgsJKHsOfubKw8ft0XwSZYBbPgluBtJa9hz93ZVnn8un/rkeCefvmlS/yBPhX1I1c="
+          data = "eJzti8sNwkAQQ18PnuVEOdzy6QeSKtJEPiXklHJyoga02h1pBBUgxRfbz3Ir6AWdoBHsBpOVnFlb99yd9ZX71gV/CUbBIHgKToPDSh7CnruzsfL4dV8Em2AVzIJbgreVvIY9d2db5fHr/q1Hgnv65Zcu8Qf6AIAvIts="
         },
         {
           x = 40, y = 0, width = 20, height = 12,
-          data = "eJztzrENwkAQRNHfw+4JEiiHBGHox0AHLgRDByaBbiAxJVgr5nSWKYDEI60mmXe6yuBgsFM3Dg+Hp8PRoHO4Oz+JTSWXr5E5G9Tq8L3Dx6E1eDm8vZi9upetR9fJ3Awu6vCrBOv0/cciwTIVc1LHppXLF3aa8Fu9lbNJxVzV0022c+bwxwzL7CXE"
+          data = "eJztzrENwkAQRNHfw+6SQDkkCEM/xnTgQjB0YBLoBhJTA1oxJyNTAIlHWk0y73SVwd5gq24dbg53h4NB73B1fpKbSq5cK3M0qNXpB4eXQ2fwcHj6aHbqQbb+ul7mYnBSp18GrOLzjwhYxGgadW46uXJpp0m/0Vsl6xjNWT3dFDtnDn/MGzQtJUQ="
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJztkMEJQjEQRF8PO0EvWo4XUQtSS/BmE19L0It2oxctQZYkJAT5F3N0YNhhdhiWhb5YG1zVr29n8FS/zpPBNPTtXITSeRDcBCuL3KRZ+66PKjv/Wc63nRfBS7C1yH2ate/6rrLzn+V8e+dDMAswWOQ5zdp3/VbZ+c9yvsUkwDKM+67nXzJ/8DM+7Hkotw=="
+          data = "eJztkLENQkEMQ98OcWhgHBoEDASM8DuWAEaABraBBmZA0b/TnU6IhiuxZMVyLCsK9MXK4KJ+fVuDh/p1Hg0m3rdz7qVzEFwFSxu5TrP2Q+9VdvGznG87z4KnYGMjd2nWfuibyi5+lvPtnXfB1OFgI09p1n7ol8oufpbzLdxh4d/90LMPmT/4GW/I8igt"
         },
         {
           x = 80, y = 0, width = 20, height = 12,
-          data = "eJxjYBhZ4KAIA4OvMAT7IWFk/h4R4s17L8LAUC0MwTVIGJn/CmpnLxHmyooyMKwUhuBVSBiZLyEKMX+3CGG3eosSttMNaudLEYhbSfE/PiAuCnGrCZXMg7mVmm5kYKCNG6lpXqAgA0ObIHY5AJnpHbA="
+          data = "eJxjYBhZYL8IA4O3MAT7IGF0/i4R4sx7K8LAUCkMwVVIGJ3/QoSBoZsIM6VFGRiWC0PwCiSMzhcTZWDYKULYnZ6ixPnDBaoO5E5i/U4sMKKyedR2o5godd0ICktqmucvyMDQIohdDgDSpxug"
         }
       }
     },
@@ -580,51 +568,51 @@ return {
       chunks = {
         {
           x = -20, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMAwx8FyMgcFVnIEBAAzrAVo="
+          data = "eJxjYBgFo2AUMAwx8FSMgcFZnIEBAAzTAVY="
         },
         {
           x = 0, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMNAJuIozMLiLQ2gQdoNimBiI/ROKQWIweRAfRP+AskE0iA8Al1sLdA=="
+          data = "eJxjYBgFo2AUMNAJOIszMLiKQ2gQdoFimBiI/R2KQWIweRAfRH+DskE0iA8AkMsLTA=="
         },
         {
           x = 20, y = -12, width = 20, height = 12,
-          data = "eJztirENwCAQxDwDzS0EYf9tEipkiSoDUL2ll+7uDUVRcIEe+AJPYATmObcVeH+bnlnXn47Z3d4CGz5vDQU="
+          data = "eJztirENwCAQxDwC3e0DYf9tEkpkiSoDUL2ll+7uDUVRcIEe+AJPYATmObcVeH+bnlnXn47Z3d4CGzc3DNs="
         },
         {
           x = 40, y = -12, width = 20, height = 12,
-          data = "eJztkMEJgEAMBKcFH2ZTjggqdmRHFuY9tAP1JeHu4UewgBtYkuxnIFCpVPjgFIzK8xJMZb9LH3MQ7Pbvh6vnLA6zwyHYDHpBJ0gGrUNTPOELb3gi7zv6Bwi2F2c="
+          data = "eJztkMEJgEAMBKcDH0I21YigYkd2ZGHeQztQnxLuHn4EC7iBJcl+BgKVSoUPTsGoPC/BVPa79DEHwW7/frh6zuIwOxyCzaAXdIJk0Do0xRO+8IYn8r6jfwD2Dxcp"
         },
         {
           x = 60, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMBAALuIMDO7iDAyu4gwMP6H0Dyj9Qoz48IPpFRJnYFgtysBwTIyBgVsMwj4qxsCwRpSB4TsJZgIAWy4MpQ=="
+          data = "eJxjYBgFo2AUMBAATuIMDK7iDAzO4gwM36H0Nyj9TIz48IPpFRBnYFgpysBwRIyBgVMMwj4sxsCwSpSB4SsJZgIATWYMfw=="
         },
         {
           x = -20, y = 0, width = 20, height = 12,
-          data = "eJxjYKAciIgzMAiJMzC8EKeCYQwMDPPFGRiWSzAweElQxzxRcQaGv+IMDM5Uch8M/KGyeaNgFDCQCACpWwXY"
+          data = "eJxjYKAcCIkzMAiIMzA8E6eCYQwMDHPFGRiWSjAweEhQxzxhcQaG3+IMDI5Uch8M/KKyeaNgFDCQCABrgwXE"
         },
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJztzsEJgDAMheF/iTTZplbQg+uIA+lCuoM4RlUKOfQqeBI/eBBeIGQWWAQGg85gMugNRoOo0CgkhezzqdBWffIue1aBTWAPcFX7EozHot84Aq8I5Y/fj2+4AbIjFA0="
+          data = "eJztzsEJgDAMheF/CNtkmVpBD64jDqQL6Q7iGFURIQevigcP/eBBeIGQwcHooFWoFXqFRqFTCAKlQBRINm8C1a2P1iXL5GB2sHjYb/srh/BYsBur5xPFix+yjJ86ASSFFMw="
         },
         {
           x = 20, y = 0, width = 20, height = 12,
-          data = "eJztisEJADAMAm8L10m6/0ppSsFXB+grByJ4tiAEW9DumxKkYNnHs5X/bZfuYRj4xgGPwQ5B"
+          data = "eJztisEJADAMAm8Lt0m6/0ppoBR8dYC+ciCCZwtCsAXtvilBCpZ9PFv533bpHoaBbxz/og4Z"
         },
         {
           x = 40, y = 0, width = 20, height = 12,
-          data = "eJztjcsJgDAQRF8T7qQck1Qkluznlg4URVxEEMS7eTC8y+5MFKyCTdC6TVzMBqNBF6AI+gA5wGAQdSa58+3vjcU3k/vYnex513zsq1T4KTsahRBM"
+          data = "eJztjcsJgDAQRF8Pyk6qMUlFYsl+bnagCCIuIgji3TwY3mV3JgpWwSZo3LW4mAwGgzbALOgC5AC9QdSZ5M63vzcW30zuY3e05131sa9Q4Kfsa54QGg=="
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJztkDGKAlEQRF+usIj87ha9iImoC4rnEb2OmYl4A0FFUK+wy2YrRh5AxF3lMz3MCBOYa8HnV1VQXd11g4nBLMBe4CfAd4CWwMKgKTAwGCtPoa1wEFgKrAU2kmWXJck+KVQU+go9hUuOVwvmBM/sec95yHo23NsJlATGrreu45xzLj/FUbKeK+85NKgZfIXEi/kj1x+u6wZmyQ5Te+x59Z6/Al2Fm2Z/6kf+qQmPt+r4+1P4L9g99pQCP85K/Tx/g5fCHfIsOfk="
+          data = "eJztkE1qAlEQhL+tARGJr7vHi2QjRmGC55HMddy5kdwgoCIYr6C4U1zlACH4A+ExPcwIs8g+KXi8qlpUV3diMDGYBdgI7APsAvQE3g2eBEYGmfIr9BWOAnOBpcBKyuwHybM/FVoKLwqpwneFt2vmPHpm6j3fQtmz696HQEMgc712Hed8VfILnKTsufCeYwM12Ibci/mvrpuuEwOxfIep3fc8e8+DwEDhpuVf+JEPNefxVs/+LgrXmt1jz06NH2cVfpX/gz+FH/jeOUk="
         },
         {
           x = 80, y = 0, width = 20, height = 12,
-          data = "eJy9kU1OAkEQhb87qP1qwV3EEAfwLiyIxsSzsAANCaeBhWfwhwWBpRh/U+maBMfZmJn4kk51Vae/fl0F/6fnBK+CQjBQrh1HfhR5VXvlVd7zeB7xTXBlsBG8xLnXri3nfcE6/eSdCrqCT8GH4EzwdVDz/UOCW4OtIBl0DAqDE4NJxedjhV+np5Tf6gkug+fseQ3vL3oPrwuDO8HQYN6AVzLd50UwRw15rqlgF3+/b4Hn/XSPNw37d6hV9K8t3lKgFuZRaiYY2+95fAOp4TZN"
+          data = "eJy9kU1qAkEQhb8r+DevyF2MiGP0Li5ECeQsLhQRPE2yyBmMuhBdRnFMIAxTA+NoFmGGPGiqq5r6eF0F/6dNACdBKHhSUqt6XvE8r6OSk/bFsePxLBgb7ASf/h7Xni3Ju4JtcM1rCh4FX4KLoCX4ztTS+yqAvaBu8GAQGtQMJjmfHzn+b4oEbcHIeTF7cYf3F0Xuc2kwF/QMFgV4WZ99Zw4K8mJNBQf/+3sJvHWQeHwpOL+s3nx+ZfFeBY0S9pFqJhja7T5+APdZNFQ="
         },
         {
           x = 80, y = 12, width = 20, height = 12,
-          data = "eJxjYCAduIgzMAiJMzA8FmNgEBNnoBg8E2NgcASZI0G5WaNgFDCMIAAAd1YDFw=="
+          data = "eJxjYCAdOIkzMAiIMzA8FGNgEBFnoBg8EWNgsBdnYPhHBbNGwShgGEEAAHjQBAg="
         }
       }
     },
@@ -651,43 +639,43 @@ return {
       chunks = {
         {
           x = -20, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMNABfOSlvpkAVwsA/w=="
+          data = "eJxjYBgFo2AUMNABvOelvpkAVmMA/Q=="
         },
         {
           x = 0, y = -12, width = 20, height = 12,
-          data = "eJzt0KkRgAAMAMGFApIJCMDx9V8jHTAIZLaAE0drzUdDMMY/v/bgCM7gCu6XbhVTMRdLsiZb8gBYEgHu"
+          data = "eJzt0DsVgEAMAMExQEIKjo6ff4/ggEdBmRGwxdJa89E9If75tQV7cARncL10s5iLKpZkJGvyAOJLAtM="
         },
         {
           x = 20, y = -12, width = 20, height = 12,
-          data = "eJztybkNgEAQBMHKYDUc30H+eeIgEQLOltlNa83PjnCGGdZiK/b6foqlGG+7wh0eNpkBog=="
+          data = "eJztybkRgEAAxDB1sCxwPP03SsIMJZCcQptpmvxslKOcZQ1b2PP9hCX0bVe5ywMz4QGM"
         },
         {
           x = 40, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMNAJyAgyMIjwMzCI8jMwiPHjVpfLy8CQx8vAkM/LwFDAi1sdAHE+Aog="
+          data = "eJztyqkRwDAMADAt4PMlLcqKefaHnSC0yMKilOIno9GTJ3nz/mawgh2cuL8Pbd4CeA=="
         },
         {
           x = -20, y = 0, width = 20, height = 12,
-          data = "eJxjYBi8oJOXuuatpLJ5o2AUMAwwAADdowFN"
+          data = "eJxjYBi8oJ2XuuYtp7J5o2AUMAwwAADRswFJ"
         },
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJztzMsNQVEUQNHVwDk3twJawAAj76EQvxEqQSUoUiImJBJzb4139j44BMegSdpkniySZXrqVfrVm0FlWBlVxoVJYVo4BefgEqySdbJJtsnu9ZtVmo/fN9fgFtzjt77T8UceO3cLuQ=="
+          data = "eJztzMsNQVEUQNHVwDk3twBawAAj76EQvxEqQSWoUiImJBJzb4139j44BMegSdpkniySZXrqVfrVm0FlWBlVxoVJYVo4BefgEqySdbJJtsnu9ZtVmo/fN9fgFtzjt77T8UcecggLfw=="
         },
         {
           x = 20, y = 0, width = 20, height = 12,
-          data = "eJztzLsNhFAUQ8HpwLoFQA/8F+i/LxIkxOZkb8Ijy7x1oQ9b8Sv2Yg5LWPPshjCG6W5HcdbfWdM0vnQB/YwDWw=="
+          data = "eJztzLsNhFAUQ8HpwLox9MB/gf4bI0FCbE72JjyyzFsX+rAVv2Iv5rCENc9uCGOY7nYUZ/2dNU3jSxegfANB"
         },
         {
           x = 40, y = 0, width = 20, height = 12,
-          data = "eJztzssNQFAUhOG/gclEYu9RA1YSGrxoxKNEsbDA1cH9lnMyk9Nn0BhaQ2coDKX5CIJJMAsWPW+VoTbkkd5gGCP5KtgEu+B47d2uv5Ik4dcJVuYINw=="
+          data = "eJztzssNQFAUhOG/gcmEvUcNWElo8KIRjxrFwgJXB/dbzslMTp9BY2gNnaEwlOYjCCbBLFj0vFWG2pBHeoNhjOSrYBPsguO1d7v+SpKEXyfLHwgP"
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJzt0TlOQgEYReFvAzd/hYWSwCa0UBJZDEini3CqBPYgQ8WwB6dt2bySvEYq4qlPTnJzO8VZORqXxdUfeqMwDndhknb3Pjy0OI/hKTyHl/Da4r6FaZiFeeOdFxdFt9nzHhZhGVZhfaDXK/rFJmzDLuwb77q4KQZN7yN8hq/wHX4O9G6L4RH/+cdJ8QupSRW0"
+          data = "eJzt0TlOQgEYReFvAzd/gYWSwCa0UBJZDEini3CqBPYgQ8WwB6d92bySvEYq4qlPTnJzO8VZORqXxdUfeqMwDndhknb3Pjy0OI/hKTyHl/Da4r6FaZiFeeOdFxdFt9nzHhZhGVZhfaDXK/rFJmzDLuwb77q4KQZN7yN8hq/wHX4O9G6L4RH/+cdJ8QvCWhVe"
         },
         {
           x = 80, y = 0, width = 20, height = 12,
-          data = "eJzlkrsJgEAUBKeBY3n+Mr8dqLFouZZiWQYGHiIqeJFOtrBMsCz8i9lBbdDYlgdBLii0d0pB5eUrFnffGQXTQ98XMUEkiANt0Ao6QR9w0+MH3uJ/7C2JQWqQnfhWGwMF5Q=="
+          data = "eJxjYBhZYBkvA4OpIAODmSADg7kgA4M0PwODDD/55h3jpabrRsFAAWkK0wE6kBdkYFAQpI5ZQoIMDMKCDAwiWMwDALDXA9M="
         },
         {
           x = 0, y = 12, width = 20, height = 12,
@@ -699,7 +687,7 @@ return {
         },
         {
           x = 80, y = 12, width = 20, height = 12,
-          data = "eJxjYCAdmAgyMJgKMjCYCZKheRSMglHAQC0AAOkzANM="
+          data = "eJxjYCAdGAkyMBgLMjCYCJKheRSMglHAQC0AANQDAM0="
         },
         {
           x = 0, y = 24, width = 20, height = 12,
@@ -707,7 +695,7 @@ return {
         },
         {
           x = 20, y = 24, width = 20, height = 12,
-          data = "eJxjYBjZQIGXgYGFl4GBAYTJAFZMEAwC9owMDAa8DAwivAwMAmSal8sEwSBQxMjA4ECmOaOAYUQAAEF8Ax0="
+          data = "eJxjYBjZQI6XgYGJl4HhHw95+q2YIBgE7BkZGPR4GRiEeBkY+HjJMy+XCYJBoIiRgcGOTHNGAcOIAADTswQO"
         },
         {
           x = 40, y = 24, width = 20, height = 12,
@@ -716,6 +704,33 @@ return {
         {
           x = 80, y = 24, width = 20, height = 12,
           data = "eJzt0MsNQFAARNEzrysE9RAk1EOvGvBp4J3kbmcxVH0Ywhym0BTan7rCmPfv9nCFMyyF9aetcHzsVZUHNzy6CmE="
+        }
+      }
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 200,
+      height = 12,
+      id = 102,
+      name = "desert_wall_decor_infront",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {
+        ["drawz"] = 1
+      },
+      encoding = "base64",
+      compression = "zlib",
+      chunks = {
+        {
+          x = 80, y = 0, width = 20, height = 12,
+          data = "eJxjYBgFo4C2gJ+fgUGAn4FBkJ865unzMzAY8DMwGFLJvKEMAENFARs="
         }
       }
     },
@@ -742,7 +757,7 @@ return {
       chunks = {
         {
           x = 80, y = 24, width = 20, height = 12,
-          data = "eJztzEkNgDAABMARsP61cJW+y6UJD32QkHQEDMMfTWEOS1jDFkrYQ03f2cIRznCFOzyd1+ATL72QC0o="
+          data = "eJztzEkNgDAABMARsP6lcJW+yyUKD32QkHQEDMMfTWEOS1jDFkrYQ03f2cIRznCFOzyd1+ATL4n4Cy4="
         }
       }
     },
@@ -1073,7 +1088,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3113,
+              gid = 3112,
               visible = true,
               properties = {}
             },
@@ -1088,7 +1103,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3109,
+              gid = 3108,
               visible = true,
               properties = {}
             },
@@ -1140,7 +1155,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3115,
+              gid = 3114,
               visible = true,
               properties = {}
             },
@@ -1155,7 +1170,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3111,
+              gid = 3110,
               visible = true,
               properties = {}
             },
@@ -1226,7 +1241,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1243,7 +1258,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1260,7 +1275,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1277,7 +1292,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1294,7 +1309,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1311,7 +1326,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1397,7 +1412,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1414,7 +1429,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1431,7 +1446,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1448,7 +1463,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1501,7 +1516,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3113,
+              gid = 3112,
               visible = false,
               properties = {}
             },
@@ -1516,7 +1531,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -1534,7 +1549,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -1635,7 +1650,7 @@ return {
               height = 48,
               rotation = 0,
               opacity = 1,
-              gid = 3138,
+              gid = 3136,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/objects-properties.csv",
@@ -1738,7 +1753,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3113,
+              gid = 3112,
               visible = true,
               properties = {}
             },
@@ -1753,7 +1768,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3115,
+              gid = 3114,
               visible = true,
               properties = {}
             },
@@ -1787,7 +1802,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3113,
+              gid = 3112,
               visible = true,
               properties = {}
             },
@@ -1802,7 +1817,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3115,
+              gid = 3114,
               visible = true,
               properties = {}
             },
@@ -1852,7 +1867,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1869,7 +1884,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1886,7 +1901,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1903,7 +1918,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1920,7 +1935,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1937,7 +1952,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1954,7 +1969,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1971,7 +1986,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -1988,7 +2003,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -2005,7 +2020,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -2038,7 +2053,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3123,
+              gid = 3122,
               visible = true,
               properties = {}
             },
@@ -2091,7 +2106,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3119,
+              gid = 3118,
               visible = true,
               properties = {}
             },
@@ -2106,7 +2121,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3113,
+              gid = 3112,
               visible = true,
               properties = {}
             },
@@ -2139,7 +2154,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3115,
+              gid = 3114,
               visible = true,
               properties = {}
             },
@@ -2244,7 +2259,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -2261,7 +2276,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -2367,7 +2382,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -2385,7 +2400,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -2403,7 +2418,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -2436,7 +2451,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -2454,7 +2469,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -2472,7 +2487,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -2567,7 +2582,7 @@ return {
               height = 160,
               rotation = 0,
               opacity = 1,
-              gid = 3130,
+              gid = 3129,
               visible = true,
               properties = {
                 ["asetag"] = "*",
@@ -2588,7 +2603,7 @@ return {
               height = 96,
               rotation = 0,
               opacity = 1,
-              gid = 3129,
+              gid = 3128,
               visible = true,
               properties = {
                 ["asetag"] = "*",
@@ -2606,7 +2621,7 @@ return {
               height = 20,
               rotation = 0,
               opacity = 1,
-              gid = 3135,
+              gid = 3134,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv",
@@ -2624,7 +2639,7 @@ return {
               height = 20,
               rotation = 0,
               opacity = 1,
-              gid = 3135,
+              gid = 3134,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv",
@@ -2693,7 +2708,7 @@ return {
               height = 20,
               rotation = 0,
               opacity = 1,
-              gid = 3136,
+              gid = 3135,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv"
@@ -2710,7 +2725,7 @@ return {
               height = 20,
               rotation = 0,
               opacity = 1,
-              gid = 3136,
+              gid = 3135,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv"
@@ -2808,7 +2823,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 3134,
+              gid = 3133,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/projectiles-properties.csv"
@@ -2825,7 +2840,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 3134,
+              gid = 3133,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/projectiles-properties.csv"
@@ -2842,7 +2857,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 3134,
+              gid = 3133,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/projectiles-properties.csv"
@@ -2859,7 +2874,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 3134,
+              gid = 3133,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/projectiles-properties.csv"
@@ -2876,7 +2891,7 @@ return {
               height = 160,
               rotation = 0,
               opacity = 1,
-              gid = 3132,
+              gid = 3131,
               visible = true,
               properties = {
                 ["asetag"] = "*",
@@ -2899,7 +2914,7 @@ return {
               height = 96,
               rotation = 0,
               opacity = 1,
-              gid = 3131,
+              gid = 3130,
               visible = true,
               properties = {
                 ["asetag"] = "*",
@@ -2917,7 +2932,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 3133,
+              gid = 3132,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv",
@@ -2935,7 +2950,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 3133,
+              gid = 3132,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv",
@@ -2986,7 +3001,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3113,
+              gid = 3112,
               visible = true,
               properties = {}
             },
@@ -3001,7 +3016,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3115,
+              gid = 3114,
               visible = true,
               properties = {}
             },
@@ -3081,7 +3096,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3105,
+              gid = 3104,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -3103,7 +3118,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3105,
+              gid = 3104,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -3189,7 +3204,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3113,
+              gid = 3112,
               visible = false,
               properties = {}
             },
@@ -3294,7 +3309,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3123,
+              gid = 3122,
               visible = false,
               properties = {}
             },
@@ -3328,7 +3343,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3113,
+              gid = 3112,
               visible = false,
               properties = {}
             }
@@ -3361,7 +3376,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -3378,7 +3393,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -3395,7 +3410,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -3412,7 +3427,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -3447,7 +3462,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3105,
+              gid = 3104,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -3501,7 +3516,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3105,
+              gid = 3104,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -3524,7 +3539,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3105,
+              gid = 3104,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -3629,7 +3644,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -3646,7 +3661,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -3679,7 +3694,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -3696,7 +3711,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -3849,7 +3864,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3113,
+              gid = 3112,
               visible = true,
               properties = {}
             },
@@ -3864,7 +3879,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3115,
+              gid = 3114,
               visible = true,
               properties = {}
             },
@@ -3917,7 +3932,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 3139,
+              gid = 3137,
               visible = true,
               properties = {
                 ["item"] = { id = 677 },
@@ -3935,7 +3950,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 3140,
+              gid = 3138,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/items-properties.csv",
@@ -3969,7 +3984,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3102,
               visible = true,
               properties = {
                 ["defaultattack"] = "bow-shot-until-empty",
@@ -3991,7 +4006,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3102,
               visible = true,
               properties = {
                 ["defaultattack"] = "bow-shot-until-empty",
@@ -4013,7 +4028,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3102,
               visible = true,
               properties = {
                 ["defaultattack"] = "bow-shot-until-empty",
@@ -4035,7 +4050,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3102,
               visible = true,
               properties = {
                 ["defaultattack"] = "bow-shot-until-empty",
@@ -4185,7 +4200,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4202,7 +4217,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4219,7 +4234,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4236,7 +4251,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4275,8 +4290,7 @@ return {
               polygon = {
                 { x = -288, y = -480 },
                 { x = -288, y = -192 },
-                { x = -32, y = -192 },
-                { x = 0, y = -160 },
+                { x = 0, y = -192 },
                 { x = 32, y = -160 },
                 { x = 64, y = -160 },
                 { x = 96, y = -128 },
@@ -4458,7 +4472,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3113,
+              gid = 3112,
               visible = false,
               properties = {}
             },
@@ -4473,7 +4487,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -4492,7 +4506,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -4511,7 +4525,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -4530,7 +4544,7 @@ return {
               height = 160,
               rotation = 0,
               opacity = 1,
-              gid = 3130,
+              gid = 3129,
               visible = true,
               properties = {
                 ["leaves"] = { id = 609 },
@@ -4549,7 +4563,7 @@ return {
               height = 96,
               rotation = 0,
               opacity = 1,
-              gid = 3129,
+              gid = 3128,
               visible = true,
               properties = {
                 ["z"] = 128
@@ -4584,7 +4598,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3105,
+              gid = 3104,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -4640,7 +4654,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3105,
+              gid = 3104,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -4714,7 +4728,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4731,7 +4745,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4748,7 +4762,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4765,7 +4779,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4782,7 +4796,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4799,7 +4813,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4834,7 +4848,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3102,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -4890,7 +4904,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3102,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -5143,7 +5157,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -5160,7 +5174,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -5177,7 +5191,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -5230,7 +5244,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3141,
+              gid = 3139,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -5250,7 +5264,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3141,
+              gid = 3139,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -5286,7 +5300,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3105,
+              gid = 3104,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -5342,7 +5356,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3105,
+              gid = 3104,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -5366,7 +5380,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3102,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -5646,7 +5660,7 @@ return {
               type = "Trigger",
               shape = "polygon",
               x = 2912,
-              y = 224,
+              y = 216,
               width = 0,
               height = 0,
               rotation = 0,
@@ -5662,7 +5676,7 @@ return {
                 ["action"] = "startSequence",
                 ["color"] = "#80008000",
                 ["drawz"] = -0.125,
-                ["extrudeY"] = -64,
+                ["extrudeY"] = -48,
                 ["initialai"] = "triggerToUse",
                 ["script"] = "Dragontail.Character.Trigger",
                 ["sequence"] = "playerExitToNextArea",
@@ -5715,7 +5729,7 @@ return {
               height = 112,
               rotation = 0,
               opacity = 1,
-              gid = 3142,
+              gid = 3140,
               visible = true,
               properties = {}
             },
@@ -5730,7 +5744,7 @@ return {
               height = 112,
               rotation = 0,
               opacity = 1,
-              gid = 3142,
+              gid = 3140,
               visible = true,
               properties = {}
             },
@@ -5745,7 +5759,7 @@ return {
               height = 112,
               rotation = 0,
               opacity = 1,
-              gid = 3142,
+              gid = 3140,
               visible = true,
               properties = {}
             },
@@ -5760,7 +5774,7 @@ return {
               height = 112,
               rotation = 0,
               opacity = 1,
-              gid = 3142,
+              gid = 3140,
               visible = true,
               properties = {}
             },
@@ -5775,7 +5789,7 @@ return {
               height = 112,
               rotation = 0,
               opacity = 1,
-              gid = 3142,
+              gid = 3140,
               visible = true,
               properties = {}
             },
@@ -6273,7 +6287,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3102,
               visible = true,
               properties = {
                 ["ammo"] = 0,
@@ -6337,7 +6351,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3102,
               visible = true,
               properties = {
                 ["ammo"] = 0,
@@ -6373,7 +6387,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3102,
               visible = true,
               properties = {
                 ["ammo"] = 0,
@@ -6395,7 +6409,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3102,
               visible = true,
               properties = {
                 ["ammo"] = 0,
@@ -6445,7 +6459,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3102,
               visible = true,
               properties = {
                 ["ammo"] = 0,
@@ -6817,7 +6831,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 3108,
+              gid = 3107,
               visible = true,
               properties = {}
             },
@@ -6874,7 +6888,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6503,
+              gid = 6501,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 32,
@@ -6892,7 +6906,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6503,
+              gid = 6501,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 32,
@@ -6910,7 +6924,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6503,
+              gid = 6501,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 180,
@@ -6928,7 +6942,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6503,
+              gid = 6501,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -6947,7 +6961,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6503,
+              gid = 6501,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -6966,7 +6980,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6503,
+              gid = 6501,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -6985,7 +6999,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6503,
+              gid = 6501,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7004,7 +7018,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6503,
+              gid = 6501,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7023,7 +7037,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6506,
+              gid = 6504,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7042,7 +7056,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6506,
+              gid = 6504,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7061,7 +7075,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6506,
+              gid = 6504,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7080,7 +7094,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6506,
+              gid = 6504,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7099,7 +7113,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6506,
+              gid = 6504,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7118,7 +7132,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6507,
+              gid = 6505,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 36,
@@ -7136,7 +7150,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6507,
+              gid = 6505,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7155,7 +7169,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6507,
+              gid = 6505,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7174,7 +7188,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6507,
+              gid = 6505,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7193,7 +7207,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6507,
+              gid = 6505,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7212,7 +7226,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6507,
+              gid = 6505,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7231,7 +7245,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6510,
+              gid = 6508,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 39,
@@ -7249,7 +7263,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6510,
+              gid = 6508,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7268,7 +7282,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6510,
+              gid = 6508,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7287,7 +7301,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6510,
+              gid = 6508,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7306,7 +7320,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6510,
+              gid = 6508,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7325,7 +7339,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6510,
+              gid = 6508,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7344,7 +7358,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6511,
+              gid = 6509,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 40,
@@ -7362,7 +7376,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6511,
+              gid = 6509,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7381,7 +7395,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6511,
+              gid = 6509,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7400,7 +7414,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6511,
+              gid = 6509,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7419,7 +7433,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6511,
+              gid = 6509,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7438,7 +7452,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6511,
+              gid = 6509,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7457,7 +7471,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6531,
+              gid = 6529,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 60,
@@ -7475,7 +7489,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6531,
+              gid = 6529,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7494,7 +7508,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6531,
+              gid = 6529,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7513,7 +7527,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6531,
+              gid = 6529,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7532,7 +7546,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6531,
+              gid = 6529,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7551,7 +7565,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6531,
+              gid = 6529,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7570,7 +7584,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6531,
+              gid = 6529,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7589,7 +7603,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6531,
+              gid = 6529,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7608,7 +7622,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6519,
+              gid = 6517,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 48,
@@ -7626,7 +7640,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6519,
+              gid = 6517,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7645,7 +7659,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6519,
+              gid = 6517,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7664,7 +7678,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6519,
+              gid = 6517,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7683,7 +7697,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6519,
+              gid = 6517,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7702,7 +7716,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6519,
+              gid = 6517,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7721,7 +7735,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6526,
+              gid = 6524,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 55,
@@ -7739,7 +7753,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6526,
+              gid = 6524,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7758,7 +7772,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 6526,
+              gid = 6524,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7797,7 +7811,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3109,
+              gid = 3108,
               visible = true,
               properties = {
                 ["drawz"] = 100
@@ -7834,7 +7848,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3111,
+              gid = 3110,
               visible = true,
               properties = {
                 ["drawz"] = 100
@@ -7872,7 +7886,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3123,
+              gid = 3122,
               visible = true,
               properties = {
                 ["drawz"] = 100
@@ -7910,7 +7924,7 @@ return {
               height = 14,
               rotation = 0,
               opacity = 1,
-              gid = 3119,
+              gid = 3118,
               visible = true,
               properties = {
                 ["drawz"] = 100
@@ -7954,7 +7968,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 3108,
+              gid = 3107,
               visible = true,
               properties = {}
             },
@@ -7969,7 +7983,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 3108,
+              gid = 3107,
               visible = true,
               properties = {}
             },
@@ -7984,7 +7998,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 3108,
+              gid = 3107,
               visible = true,
               properties = {}
             },
@@ -7999,7 +8013,7 @@ return {
               height = 16,
               rotation = 0,
               opacity = 1,
-              gid = 3108,
+              gid = 3107,
               visible = true,
               properties = {}
             },
@@ -8128,7 +8142,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3400,
+              gid = 3398,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -8147,7 +8161,7 @@ return {
               height = 64,
               rotation = 90,
               opacity = 1,
-              gid = 1073745224,
+              gid = 1073745222,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -8166,7 +8180,7 @@ return {
               height = 64,
               rotation = -90,
               opacity = 1,
-              gid = 3400,
+              gid = 3398,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -8185,7 +8199,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3400,
+              gid = 3398,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -8204,7 +8218,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 2147487048,
+              gid = 2147487046,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -8223,7 +8237,7 @@ return {
               height = 64,
               rotation = -90,
               opacity = 1,
-              gid = 3400,
+              gid = 3398,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -8242,7 +8256,7 @@ return {
               height = 64,
               rotation = -90,
               opacity = 1,
-              gid = 3400,
+              gid = 3398,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -8261,7 +8275,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3400,
+              gid = 3398,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -8280,7 +8294,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3400,
+              gid = 3398,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -8299,7 +8313,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 1073745224,
+              gid = 1073745222,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -8318,7 +8332,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3400,
+              gid = 3398,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -8337,7 +8351,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3400,
+              gid = 3398,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -8356,7 +8370,7 @@ return {
               height = 64,
               rotation = 90,
               opacity = 1,
-              gid = 2147487048,
+              gid = 2147487046,
               visible = true,
               properties = {
                 ["color"] = "#80aa0000",
@@ -8394,7 +8408,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3141,
+              gid = 3139,
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 895 },
@@ -8414,7 +8428,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8431,7 +8445,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8448,7 +8462,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8465,7 +8479,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8514,7 +8528,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8531,7 +8545,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8548,7 +8562,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8565,7 +8579,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8582,7 +8596,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8599,7 +8613,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8634,7 +8648,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8651,7 +8665,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8668,7 +8682,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8685,7 +8699,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8702,7 +8716,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8719,7 +8733,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8752,7 +8766,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8769,7 +8783,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8786,7 +8800,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8803,7 +8817,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8820,7 +8834,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8837,7 +8851,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8854,7 +8868,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8871,7 +8885,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8888,7 +8902,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3141,
+              gid = 3139,
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 927 },
@@ -9054,7 +9068,7 @@ return {
               height = 48,
               rotation = 330,
               opacity = 1,
-              gid = 3107,
+              gid = 3106,
               visible = true,
               properties = {}
             },
@@ -9069,7 +9083,7 @@ return {
               height = 48,
               rotation = 270,
               opacity = 1,
-              gid = 3107,
+              gid = 3106,
               visible = true,
               properties = {}
             },
@@ -9084,7 +9098,7 @@ return {
               height = 48,
               rotation = 225,
               opacity = 1,
-              gid = 3107,
+              gid = 3106,
               visible = true,
               properties = {}
             },
@@ -9351,7 +9365,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3141,
+              gid = 3139,
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 784 },
@@ -9370,7 +9384,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3141,
+              gid = 3139,
               visible = true,
               properties = {
                 ["entrypoint"] = { id = 920 },
@@ -9479,7 +9493,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -9497,7 +9511,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -9515,7 +9529,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -9533,7 +9547,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -9569,7 +9583,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -9587,7 +9601,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -9605,7 +9619,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -9623,7 +9637,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -9659,7 +9673,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -9676,7 +9690,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -9693,7 +9707,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -9710,7 +9724,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10042,7 +10056,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3105,
+              gid = 3104,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -10062,7 +10076,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3105,
+              gid = 3104,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -10081,7 +10095,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3102,
               visible = true,
               properties = {
                 ["defaultattack"] = "bow-shot-until-empty",
@@ -10588,7 +10602,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -10607,7 +10621,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -10626,7 +10640,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -10645,7 +10659,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -10664,7 +10678,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3400,
+              gid = 3398,
               visible = true,
               properties = {
                 ["color"] = "#80211414",
@@ -10683,7 +10697,7 @@ return {
               height = 64,
               rotation = -90,
               opacity = 1,
-              gid = 3400,
+              gid = 3398,
               visible = true,
               properties = {
                 ["color"] = "#80211414",
@@ -10702,7 +10716,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 1073745224,
+              gid = 1073745222,
               visible = true,
               properties = {
                 ["color"] = "#80211414",
@@ -10721,7 +10735,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 1073745224,
+              gid = 1073745222,
               visible = true,
               properties = {
                 ["color"] = "#80211414",
@@ -10740,7 +10754,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3400,
+              gid = 3398,
               visible = true,
               properties = {
                 ["color"] = "#80293426",
@@ -10759,7 +10773,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 2147487048,
+              gid = 2147487046,
               visible = true,
               properties = {
                 ["color"] = "#80293426",
@@ -10778,7 +10792,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 2147487048,
+              gid = 2147487046,
               visible = true,
               properties = {
                 ["color"] = "#80293426",
@@ -10797,7 +10811,7 @@ return {
               height = 64,
               rotation = 90,
               opacity = 1,
-              gid = 2147487048,
+              gid = 2147487046,
               visible = true,
               properties = {
                 ["color"] = "#80293426",
@@ -10855,7 +10869,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10872,7 +10886,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10889,7 +10903,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10906,7 +10920,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10923,7 +10937,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10940,7 +10954,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10990,7 +11004,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3141,
+              gid = 3139,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11007,7 +11021,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11024,7 +11038,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11041,7 +11055,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -11059,7 +11073,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -11077,7 +11091,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11094,7 +11108,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11129,7 +11143,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3141,
+              gid = 3139,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11146,7 +11160,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11163,7 +11177,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11180,7 +11194,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3141,
+              gid = 3139,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11197,7 +11211,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11214,7 +11228,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11231,7 +11245,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11248,7 +11262,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11265,7 +11279,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11282,7 +11296,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -11396,7 +11410,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 3406,
+              gid = 3404,
               visible = true,
               properties = {}
             },
@@ -11411,7 +11425,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 3406,
+              gid = 3404,
               visible = true,
               properties = {}
             },
@@ -11426,7 +11440,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 3406,
+              gid = 3404,
               visible = true,
               properties = {}
             },
@@ -11441,7 +11455,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 3406,
+              gid = 3404,
               visible = true,
               properties = {}
             },
@@ -11456,7 +11470,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 3406,
+              gid = 3404,
               visible = true,
               properties = {}
             },
@@ -11471,7 +11485,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 3406,
+              gid = 3404,
               visible = true,
               properties = {}
             },
@@ -11836,7 +11850,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 3406,
+              gid = 3404,
               visible = true,
               properties = {}
             },
@@ -11851,7 +11865,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 3406,
+              gid = 3404,
               visible = true,
               properties = {}
             },
@@ -11866,7 +11880,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 3406,
+              gid = 3404,
               visible = true,
               properties = {}
             },
@@ -11881,7 +11895,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 3406,
+              gid = 3404,
               visible = true,
               properties = {}
             },
@@ -11896,7 +11910,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 3406,
+              gid = 3404,
               visible = true,
               properties = {}
             },
@@ -11911,7 +11925,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 3406,
+              gid = 3404,
               visible = true,
               properties = {}
             },
@@ -11926,7 +11940,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3400,
+              gid = 3398,
               visible = true,
               properties = {
                 ["color"] = "#801d0f0f",
@@ -11945,7 +11959,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3400,
+              gid = 3398,
               visible = true,
               properties = {
                 ["color"] = "#80530909",
@@ -11964,7 +11978,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3400,
+              gid = 3398,
               visible = true,
               properties = {
                 ["color"] = "#80530909",
@@ -11983,7 +11997,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3400,
+              gid = 3398,
               visible = true,
               properties = {
                 ["color"] = "#80530909",
@@ -12002,7 +12016,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3400,
+              gid = 3398,
               visible = true,
               properties = {
                 ["color"] = "#80530909",
@@ -12021,7 +12035,7 @@ return {
               height = 64,
               rotation = -90,
               opacity = 1,
-              gid = 2147487048,
+              gid = 2147487046,
               visible = true,
               properties = {
                 ["color"] = "#801d0f0f",
@@ -12040,7 +12054,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3221228872,
+              gid = 3221228870,
               visible = true,
               properties = {
                 ["color"] = "#801d0f0f",
@@ -12059,7 +12073,7 @@ return {
               height = 64,
               rotation = 90,
               opacity = 1,
-              gid = 2147487048,
+              gid = 2147487046,
               visible = true,
               properties = {
                 ["color"] = "#80280000",
@@ -12366,7 +12380,7 @@ return {
               height = 192,
               rotation = 0,
               opacity = 1,
-              gid = 3102,
+              gid = 3101,
               visible = true,
               properties = {
                 ["facedegrees"] = 180,
@@ -12401,7 +12415,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12418,7 +12432,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12435,7 +12449,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12452,7 +12466,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12485,7 +12499,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12502,7 +12516,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12519,7 +12533,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12536,7 +12550,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12553,7 +12567,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12570,7 +12584,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12603,7 +12617,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3105,
+              gid = 3104,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -12626,7 +12640,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3105,
+              gid = 3104,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -12725,7 +12739,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12742,7 +12756,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12759,7 +12773,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -12793,7 +12807,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12810,7 +12824,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12827,7 +12841,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12844,7 +12858,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3104,
+              gid = 3103,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12877,7 +12891,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3102,
               visible = true,
               properties = {
                 ["defaultattack"] = "bow-shot-until-empty",
@@ -12900,7 +12914,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3102,
               visible = true,
               properties = {
                 ["defaultattack"] = "bow-shot-until-empty",
@@ -12999,7 +13013,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -13016,7 +13030,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -13033,7 +13047,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -13050,7 +13064,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3143,
+              gid = 3141,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -13064,7 +13078,7 @@ return {
           id = 81,
           name = "help8",
           class = "",
-          visible = false,
+          visible = true,
           opacity = 1,
           offsetx = 0,
           offsety = 0,
@@ -13083,7 +13097,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3141,
+              gid = 3139,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
@@ -13117,7 +13131,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3141,
+              gid = 3139,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -13134,7 +13148,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3141,
+              gid = 3139,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -13203,7 +13217,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -13220,7 +13234,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -13237,7 +13251,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3106,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -13286,7 +13300,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3105,
+              gid = 3104,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -13309,7 +13323,7 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3105,
+              gid = 3104,
               visible = true,
               properties = {
                 ["defaultattack"] = "sling-shot-until-empty",
@@ -13408,7 +13422,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3102,
               visible = true,
               properties = {
                 ["defaultattack"] = "bow-shot-until-empty",
@@ -13431,7 +13445,7 @@ return {
               height = 128,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3102,
               visible = true,
               properties = {
                 ["defaultattack"] = "bow-shot-until-empty",

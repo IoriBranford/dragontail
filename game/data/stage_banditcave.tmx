@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="102" nextobjectid="1063">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="200" height="12" tilewidth="32" tileheight="32" infinite="1" backgroundcolor="#404040" nextlayerid="103" nextobjectid="1063">
  <editorsettings>
   <chunksize width="20" height="12"/>
   <export target="stage_banditcave.lua" format="lua"/>
@@ -26,35 +26,33 @@
  <tileset firstgid="3070" source="sprites/banditcave/Chair, Dining F.tsx"/>
  <tileset firstgid="3086" source="tilesets/ui/flamegaugefull.tsx"/>
  <tileset firstgid="3094" source="sprites/items/vegetables.tsx"/>
- <tileset firstgid="3101" source="sprites/bandit/axe.tsx"/>
- <tileset firstgid="3102" source="sprites/bandit/boss.tsx"/>
- <tileset firstgid="3103" source="sprites/bandit/bow.tsx"/>
- <tileset firstgid="3104" source="sprites/bandit/spear.tsx"/>
- <tileset firstgid="3105" source="sprites/bandit/sling.tsx"/>
- <tileset firstgid="3106" source="sprites/bandit/knife.tsx"/>
- <tileset firstgid="3107" source="sprites/weapons/throwing-axe.tsx"/>
- <tileset firstgid="3108" source="sprites/weapons/stone.tsx"/>
- <tileset firstgid="3109" source="tilesets/ui/Gamepad Spritesheets/Xbox.tsx"/>
- <tileset firstgid="3129" source="sprites/grassland/tree2B_ss_leaves.tsx"/>
- <tileset firstgid="3130" source="sprites/grassland/tree2B_ss.tsx"/>
- <tileset firstgid="3131" source="sprites/grassland/tree2C_ss_leaves.tsx"/>
- <tileset firstgid="3132" source="sprites/grassland/tree2C_ss.tsx"/>
- <tileset firstgid="3133" source="sprites/weapons/spikefruit-hanging.tsx"/>
- <tileset firstgid="3134" source="sprites/weapons/spikefruit-onground.tsx"/>
- <tileset firstgid="3135" source="sprites/items/lifefruit-hanging.tsx"/>
- <tileset firstgid="3136" source="sprites/items/lifefruit.tsx"/>
- <tileset firstgid="3137" source="sprites/weapons/bigstone.tsx"/>
- <tileset firstgid="3138" source="sprites/weapons/tallstone.tsx"/>
- <tileset firstgid="3139" source="sprites/items/pepper-plant.tsx"/>
- <tileset firstgid="3140" source="sprites/items/peppers-on-plant.tsx"/>
- <tileset firstgid="3141" source="sprites/bandit/muscle-orange.tsx"/>
- <tileset firstgid="3142" source="tilesets/caves/semiblocked-tunnel.tsx"/>
- <tileset firstgid="3143" source="sprites/bandit/shield.tsx"/>
- <tileset firstgid="3144" source="tilesets/castle/castle_decoratives.tsx"/>
- <tileset firstgid="3400" source="sprites/vfx/stain.tsx"/>
- <tileset firstgid="3401" source="tilesets/castle/torch.tsx"/>
- <tileset firstgid="3409" source="tilesets/sandy/desert-decorative2.tsx"/>
- <tileset firstgid="4433" source="tilesets/sandy/desert.tsx"/>
+ <tileset firstgid="3101" source="sprites/bandit/boss.tsx"/>
+ <tileset firstgid="3102" source="sprites/bandit/bow.tsx"/>
+ <tileset firstgid="3103" source="sprites/bandit/spear.tsx"/>
+ <tileset firstgid="3104" source="sprites/bandit/sling.tsx"/>
+ <tileset firstgid="3105" source="sprites/bandit/knife.tsx"/>
+ <tileset firstgid="3106" source="sprites/weapons/throwing-axe.tsx"/>
+ <tileset firstgid="3107" source="sprites/weapons/stone.tsx"/>
+ <tileset firstgid="3108" source="tilesets/ui/Gamepad Spritesheets/Xbox.tsx"/>
+ <tileset firstgid="3128" source="sprites/grassland/tree2B_ss_leaves.tsx"/>
+ <tileset firstgid="3129" source="sprites/grassland/tree2B_ss.tsx"/>
+ <tileset firstgid="3130" source="sprites/grassland/tree2C_ss_leaves.tsx"/>
+ <tileset firstgid="3131" source="sprites/grassland/tree2C_ss.tsx"/>
+ <tileset firstgid="3132" source="sprites/weapons/spikefruit-hanging.tsx"/>
+ <tileset firstgid="3133" source="sprites/weapons/spikefruit-onground.tsx"/>
+ <tileset firstgid="3134" source="sprites/items/lifefruit-hanging.tsx"/>
+ <tileset firstgid="3135" source="sprites/items/lifefruit.tsx"/>
+ <tileset firstgid="3136" source="sprites/weapons/tallstone.tsx"/>
+ <tileset firstgid="3137" source="sprites/items/pepper-plant.tsx"/>
+ <tileset firstgid="3138" source="sprites/items/peppers-on-plant.tsx"/>
+ <tileset firstgid="3139" source="sprites/bandit/muscle-orange.tsx"/>
+ <tileset firstgid="3140" source="tilesets/caves/semiblocked-tunnel.tsx"/>
+ <tileset firstgid="3141" source="sprites/bandit/shield.tsx"/>
+ <tileset firstgid="3142" source="tilesets/castle/castle_decoratives.tsx"/>
+ <tileset firstgid="3398" source="sprites/vfx/stain.tsx"/>
+ <tileset firstgid="3399" source="tilesets/castle/torch.tsx"/>
+ <tileset firstgid="3407" source="tilesets/sandy/desert-decorative2.tsx"/>
+ <tileset firstgid="4431" source="tilesets/sandy/desert.tsx"/>
  <layer id="2" name="cavefloor" width="200" height="12">
   <properties>
    <property name="drawz" type="float" value="-2"/>
@@ -95,40 +93,40 @@
   </properties>
   <data encoding="base64" compression="zlib">
    <chunk x="0" y="-12" width="20" height="12">
-   eJxjYBgFo2AUMJABnosxMLiJMzAIi2OK/8Iijq7mhzgDg7s4xAwQLSTOwLBcgoHhO5JekLrf4gwMlVBxV3EGBg+onIs4AwMAT1ENxg==
+   eJxjYBgFo2AUMJABnooxMLiIMzAIimOK/8Aijq7mmzgDg6s4xAwQLSDOwLBUgoHhK5JekLqf4gwM5VBxZ3EGBjeonJM4AwMAROENmg==
   </chunk>
    <chunk x="20" y="-12" width="20" height="12">
-   eJxjYBgFo2AUMNAAPBdjYPgpzsDwQgwhBuL/EIfQwuKkmXdWnIHBW4KBQVCcgcEVigFCMwiM
+   eJxjYBgFo2AUMNAAPBVjYPguzsDwTAwhBuJ/E4fQguKkmXdanIHBU4KBgV+cgcEZigE9Kwh0
   </chunk>
    <chunk x="40" y="-12" width="20" height="12">
-   eJzt0LsJgEAQhOG/BZ8z2ozJgbZkiVYidiCayKHmioHJDWz6ze5CSsr/KQWboBcU+mYFwS5oDMEwffBuqzXY0EXLMNfnvqtgeOHnguWa24q3x47KMBqy6xdP3AMuXxCC
+   eJzt0MsNggAQBNDXgR8SZpvxQqItWaKVEDogejGGCHcJBy9Mstc3u8uePf/POTzDNZyyzerCK6ToiscGb7GqaItLeIe+/e47htsK/xiGeRZrun3qaIp7cZh/8Yv7AdaVEkI=
   </chunk>
    <chunk x="-20" y="0" width="20" height="12">
-   eJxjYBgF5ILnYtQNuwXi1DXvLJXNOzfIzZtPZfOeUTl+aQEAnHgGFQ==
+   eJxjYBgF5IKnYtQNu3ni1DXvNJXNOzPIzZtLZfOeUDl+aQEAhmAGBw==
   </chunk>
    <chunk x="0" y="0" width="20" height="12">
-   eJzNkVtOAlEQRM8WNEo3CnvxMYyKqyEq4mpAQFiNP27CF+C3MT5SmboJS3CSyXTfW11VXQOwF7AbsEw4TXgN6Lj+CFgH7AR8Bny5nydcJxwmPAU8txoOPY8B9wmZMA04S+glLBKqhHNrLH0m7I0xl9loiUvzlTU30cxOjb9IuE0YJLTN2ff5VcKBv9Jvu9Y+4q1dj7PZZW2PI3NJQ5iW5/reUx7kd5bwEg1HbR7Vq4Cu/Wm3N+USjbeeMeJTdg8Jd85Bmsq7+BR33zjpyps8amZh7rb1Bv5HmlEvzZHxkbDvTLvea+Nc5+aZ2a90K++ifuh7eX4PmPiu3sIr//IPlbP6ibXkT97kaez9xKO3+Fcu6mvf3zrzkecq+y+Zdcw/tMbKmtLWHtrtJ+Ak4Dfg2/WRe9XHW/fClrecl2+Z++/PH9h1dFc=
+   eJzNkVtOAlEQRM8OND7oFvbiYxgVV0NUwNWAgLAaf9yEL8BvY9TEVKZuwhKcZDLd91ZXVdcA7AXsBiwTzhJeA9quPwLWATsBnwFf7ucJNwlHCU8Bz62GQ89jwH1CK2EacJ7QTVgkVAkX1lj6TNhbY66y0RKX5itrbqKZnRp/mTBM6CeEOXs+v05If6UfrrWPeGvX42x2WdvjyFzSEObAcz3vKQ/yO0t4iYajNo/qVUDH/rTbm3KJxlvXGPEpu4eEO+cgTeVdfIq7Z5x05U0eNbMwd1iv73+kGfXSHBl/mLDvTDvea+Nc5+aZ2a90K++ifuB7eX4PmPiu3sIr//IPlbP6ibXkT97kaez9xKO3+Fcu6mvfD535yHOV/ZfM2uYfWGNlTWlrD+32E3Aa8Bvw7frYveqTrXthy1vOy7fM/ffnD3iIcss=
   </chunk>
    <chunk x="20" y="0" width="20" height="12">
-   eJzNkWlSAlEMhL8ruECi4F1cUBBPIzAKpxkZVI4G4vbTrVyqi57SIzhVqcl7STrd/ZYBg4RVwEZAL2A74DXg3edFE94CtgI6rnUDPgLKhGbCVcJFwqmjk1AFvLivSBjm7/netc2AyrMPATsJ7YTjhOuEvYRMmCa0jDtJuEwYu+cmYWkuDd+Jz63/Q+No/jFgN2Hm85nrC2nzXtXvAkIajK1omcvA86VzYY98p76R54RxZM4nCX1zK4yjnaV1qK/rWmVOT/Im1tpX3i+Pep6RV8rPrUvztYbC2jTX8L65e8UvHDN71DcfvV3XGCN7q53CkZ8tawjjV/ZA+5/9rnNjKpcflWekpXDv2PukbepdffugudqvnvcLu+0+nYU1MQ9pEm/VDgI+Y/3/chwGfPteoVyx/yev+3RX9wvjv38/Xkl8Sg==
+   eJzNkWlOAlEQhL8buCB0g3dxQUE8jcAgnAYZVI4G4vbTLWpiKtREj+Aknen3uru6qt4qoJ+wDtgK6AbsBrwGvPu8bMBbwE5A27VOwEfANGEv4SphlHDmaCeUAS/uKxIG+Xu+d207oPTsQ0AktBJOEq4T9hMaCbOEpnEnCZcJY/fcJKzMpeY78bn1f2AczT8GZMLc53PXl9LmvarfBdSlwdiKprn0PT91Luyh79Q39Jwwjs35NKFnboVxtHNqHerruFaa05O8iY32tffLo65n5JXyC+vSfKWhsDbN1bxv4V7xqzvm9qhnPnq7jjGG9lY7hSM/m9ZQN35pD7T/2e+6MKZy+VF6RloK9469T9pm3tWzD5qr/Op6v7Bb7tNZWBPzkCbxVu0w4DM2/y/HUcC37xXKFQd/8qpPd1W/MP779wPv7Xq6
   </chunk>
    <chunk x="40" y="0" width="20" height="12">
-   eJyNk1tOAlEQRM8WNHG6FdyLBgWBtfihiOJqhBFhYyao+Pg0mGhMeYuExA+dZHKHflRXVV/qhOOE14D3gOOA7YBWwm1CJDwGPAScBr+eRQXtgJV764SOMZcBw4RMGCe0E3pZYsLfCugEfPhcefYs4TlK3yjhZAPzMmHf308B84Ruwp57RsZvWpNiS/PaM47iOwlnxgnHx+bXSDh3bJKwm3Cd8OK+Ooo3VcIgS0x6Zu6vzXPoXNMe9rPwVe2V84pdeJ74LaL4pFPzhL/02bVmaep7/pF1zN1TmceNeVw7J80z85pY6+7GbgfmobqpvyufDe/gzvXKC2vgetWsd9Z0XPVTc+5aq3xrGbftvDgL49Leaefrmh3/Vr5jnJ71pntr+yZe2uNBlPfQ75dfxT4D7quCs96P9qB54vZzT6LcL+1Xd+OvZ+w7px75Ka+FrZj2Jx+0I3knrv/Bkz5p1514i6JZvsqz9f9A88T1G5S/e/s=
+   eJyNk0tOQlEQRM8ONBHoFveiQUBgLQ4UQViN8ETcmIkf/AwNJjow5S0SEgf6kpf76E91VfWlSmgnvAa8B7QDdgNaCdcJ9YTHgIeA0+DXc9+ATsDavVVC15irgFFCI2GW0EnoZ4kJfyegG/Dhc+3Zy4TnKH2ThJMtzHHCgb+fAm4Tegnpnonxm9ak2Mq80jiK7yWcGafu+Mz89hPOHZsnRMI04cV9VRRvagnDLDHpWbq/Ms+Rc017OMjCV7WXzit24Xnidx/FJ52aJ/yVz541S9PA84+t49Y9NfO4Mo+pc9K8NK+5tcbWbofmobqFv2s+972DG9crL6yh61Wz2VnTcdUvzLlnrfKtZdyO8+IsjLG90843NXv+rXzXOH3rbbi3sm/ipT0eRnmP/H75Vewz4K5RcDb70R40T9x+7kmU+6X96m789cx859QjP+W1sBXT/uSDdiTvxPU/eNIn7boTb1E0y1d5tvkfaJ64fgM2YnpD
   </chunk>
    <chunk x="60" y="0" width="20" height="12">
-   eJytkktOAkEURe8WjMp7iK5GGwRXg/JdiwNBFJcm4G+qODEndTsSZxo7qXR93ru/qm1IVUirhv7lG6R0ltJeSB1jv4e0H3/DW6TUSuneuC/xjd82fucX+HcpbULqprQKqZ9SldJpSlNzwHkd0oHxP+xh+8MT4zilk5QOU2pY6yQL7iyl55BG1vsZpeYxigb6GMOU5lm0gTdyP/9xSj37fopSt/R503znKbWt/TLLHVA79n7L3iKl1yhz9jr22ve8ac6h+xbmBouMKvtpW+fS+ieunZp7HaWua77ejs+3KHrnO2uyQDf/tfE3zmpmX0vrGOx4bjoXeuF6cIbUH/k+8MY+etFBLZrAQfOtNcBT58wcPN4c9azJp86Zt3LhPOGj/8qa61reFjzwkwVYeEYzOeEFPjSiL81PlmCji56agz7eGDyccbc3KX0B+PNx2g==
+   eJytkllOQkEQRe8OjBNV6GqUh+BqUMa1+CGI4tIEnH4V/8xJ3xeJfxpe0nk9VN2pexNSK6RlQzv5+imdp7QXUtvYHyHtx//w5ik1U3ow7mv84FfGb/8B/z6ldUidlJYh9VJqpXSW0sQccN6EdGD8T3vY/PLEOEnpNKXDlI6sdZwFd5rSS0hD6/2KUvMURQN9jEFKsyzawBu6n/8opa59P0epW/g8zHeRUmXtV1nugNqR95v2dpzSW5Q5e2177Xke5hy4b25usMioZT+VdS6sf+zaiblXUeo65utu+XyPone2tSYLdPNfGX/trKb2tbCO/pbncC70wvXoDKlP3wfe2EcvOqhFEzhovrMGeOqcmYPHm6OeNfnUOfNWLp0nfPRfW3Ndy9uCB36yAAvPaCYnvMCHRvQ1zE+WYKOLnpqDPt4YPJxxt7cpfQNy3XBI
   </chunk>
    <chunk x="80" y="0" width="20" height="12">
-   eJzlkstKQlEYhb9XENF/mfQ0XqtncZAk2bM00C7Sq6mkDs1Gsdh/IAfEBs46sGHf+NZlH/hf31dAPS7HexLsL8h8EXwIagG9gEHAd8Ahh9f9gOEf9TYBLcFU8CiYC25z7bOx4DUzLJvneQtBM8eD4Drn3eRtA94E6ygZzvUyEeysHcXHvcrep3OmzxvBMDVq2cMpr6vk+F06R+y2Ck/O6zsB7yp5Bsn1v1HttZfa9jBTyeYOPY/M7g7MtZbzm2e2u32u8Lz/+8buyFl9z915bl8NwV16u8ourO++RxXeD0ayQBM=
+   eJzlkbsuRWEQhb9KaMjBnlniQWg5HLyIRkEIGu+gVuAgCo030HgJEYnOJS6lWyeTf+ScHHai0NnJn8zee/5vzVoD/+t5dWj43/E2BS81zGGHphfNOK1f6O4LjgVDeXfW4d3hzeHD4aSCPoMBK7ozDrdWz3t0cMGGYF2wJ5jP9/h3UcFlBVcV9Hdx65hHgtE8q4LxrKeT9+RwZoW5ZXCezJ0a72uC59BzaAuWVb49hLec8ybnHDS4dli0kk/jB+ZdcmIvU13sMRWeCdrRk8zTqjNj+O7dUVPQEswJdgUHmWHUVXqPDIIbWl95Thqs6LvvQ3V2fO/Fa/RFdlHHXCOCBZWso3/bYMJK3ks9vE++ykmX
   </chunk>
    <chunk x="40" y="12" width="20" height="12">
-   eJxjYMAPnokxMDiIMzD8F2dg+CvOwOAIxSD+PyiG8Z3ECRg2CkbBKGCgJgAAm5kJNQ==
+   eJxjYMAPnogxMNiJMzD8FWdg+C3OwGAPxSD+HyiG8R3ECRg2CkbBKGCgJgAARqkJHQ==
   </chunk>
    <chunk x="60" y="12" width="20" height="12">
-   eJxzEmdgcIDif+IMDE7iDAyOUAzi/4fKOULZMHknqDxML0z9KBgFo4CBbgAArTALUA==
+   eJxzEGdgsIPiP+IMDA7iDAz2UAzi/4XK2UPZMHkHqDxML0z9KBgFo4CBbgAAHSALKA==
   </chunk>
    <chunk x="80" y="12" width="20" height="12">
-   eJxzEmdg+CfOwOAozsDgBMX/xRkY/kLFQLQDVM0/qLwjkjoxcYZRMApGAcPAAABnagrd
+   eJztzsEJgDAQRNFfhM5Uo6ZHq7AIES96sAuxCxUkEPBuTkIeLAvDskwwXIbOENLchjNlcbfpZhcMNSyCXtAYKvPZZhgFk2AWrBm/okNv55DZrSj4gQeJShJC
   </chunk>
   </data>
  </layer>
@@ -172,22 +170,22 @@
   </properties>
   <data encoding="base64" compression="zlib">
    <chunk x="40" y="-12" width="20" height="12">
-   eJxjYBgFo2AUMAwgmCzCwDBFhIHBT5iBoVeENL0AgTkCUg==
+   eJxjYBgFo2AUMAwgmCjCwDBJhIHBR5iBoVuENL0Af4kCSg==
   </chunk>
    <chunk x="0" y="0" width="20" height="12">
-   eJztkLENwkAUQ98O/icqWAhBEIwDQTAAHUtAEAxABdtQwQjo69+JNCgZIG5s2f7y6eA/HgYLwcFCV4K5wqsyz7JXsoKjwVKwanXeBlvB3ULXgo3CqzOvs1cy3/X7p8FOsG91xgkugpeFbgRnhddkPmWvZL7r9x+Dq+DW6kxTvH2UfroLvuv3k579LvTdHTDAf+ALCrQl3Q==
+   eJztkLENwkAUQ98O/lfBQgiCYBwIggHoWAKCYAAq2IYqzIC+/p1Ig5IB4saW7S+fDv7jabAUHC10JVgovCrzPHslKzgZrATrTqc12AkeFroWbBVenXmTvZL5rt+/DPaCQ6czSXAVvC10I7govCbzOXsl812//xjcBPdOZ5bi7Sn9dB981++nA/t9GLo7YoT/wBd3ZiVb
   </chunk>
    <chunk x="20" y="0" width="20" height="12">
-   eJzti8sJw0AQQ18PmoWcUk5u/vST2FW4CX9K8Mnl+JQSwrI7MCQVBKyLpCfUCnpBJ2gEu8FkJWfW1j13Z33lvnXBX4JRMAiegtPgsJKHsOfubKw8ft0XwSZYBbPgluBtJa9hz93ZVnn8un/rkeCefvmlS/yBPhX1I1c=
+   eJzti8sNwkAQQ18PnuVEOdzy6QeSKtJEPiXklHJyoga02h1pBBUgxRfbz3Ir6AWdoBHsBpOVnFlb99yd9ZX71gV/CUbBIHgKToPDSh7CnruzsfL4dV8Em2AVzIJbgreVvIY9d2db5fHr/q1Hgnv65Zcu8Qf6AIAvIts=
   </chunk>
    <chunk x="40" y="0" width="20" height="12">
-   eJztzrENwkAQRNHfw+4JEiiHBGHox0AHLgRDByaBbiAxJVgr5nSWKYDEI60mmXe6yuBgsFM3Dg+Hp8PRoHO4Oz+JTSWXr5E5G9Tq8L3Dx6E1eDm8vZi9upetR9fJ3Awu6vCrBOv0/cciwTIVc1LHppXLF3aa8Fu9lbNJxVzV0022c+bwxwzL7CXE
+   eJztzrENwkAQRNHfw+6SQDkkCEM/xnTgQjB0YBLoBhJTA1oxJyNTAIlHWk0y73SVwd5gq24dbg53h4NB73B1fpKbSq5cK3M0qNXpB4eXQ2fwcHj6aHbqQbb+ul7mYnBSp18GrOLzjwhYxGgadW46uXJpp0m/0Vsl6xjNWT3dFDtnDn/MGzQtJUQ=
   </chunk>
    <chunk x="60" y="0" width="20" height="12">
-   eJztkMEJQjEQRF8PO0EvWo4XUQtSS/BmE19L0It2oxctQZYkJAT5F3N0YNhhdhiWhb5YG1zVr29n8FS/zpPBNPTtXITSeRDcBCuL3KRZ+66PKjv/Wc63nRfBS7C1yH2ate/6rrLzn+V8e+dDMAswWOQ5zdp3/VbZ+c9yvsUkwDKM+67nXzJ/8DM+7Hkotw==
+   eJztkLENQkEMQ98OcWhgHBoEDASM8DuWAEaABraBBmZA0b/TnU6IhiuxZMVyLCsK9MXK4KJ+fVuDh/p1Hg0m3rdz7qVzEFwFSxu5TrP2Q+9VdvGznG87z4KnYGMjd2nWfuibyi5+lvPtnXfB1OFgI09p1n7ol8oufpbzLdxh4d/90LMPmT/4GW/I8igt
   </chunk>
    <chunk x="80" y="0" width="20" height="12">
-   eJxjYBhZ4KAIA4OvMAT7IWFk/h4R4s17L8LAUC0MwTVIGJn/CmpnLxHmyooyMKwUhuBVSBiZLyEKMX+3CGG3eosSttMNaudLEYhbSfE/PiAuCnGrCZXMg7mVmm5kYKCNG6lpXqAgA0ObIHY5AJnpHbA=
+   eJxjYBhZYL8IA4O3MAT7IGF0/i4R4sx7K8LAUCkMwVVIGJ3/QoSBoZsIM6VFGRiWC0PwCiSMzhcTZWDYKULYnZ6ixPnDBaoO5E5i/U4sMKKyedR2o5godd0ICktqmucvyMDQIohdDgDSpxug
   </chunk>
   </data>
  </layer>
@@ -197,40 +195,40 @@
   </properties>
   <data encoding="base64" compression="zlib">
    <chunk x="-20" y="-12" width="20" height="12">
-   eJxjYBgFo2AUMAwx8FyMgcFVnIEBAAzrAVo=
+   eJxjYBgFo2AUMAwx8FSMgcFZnIEBAAzTAVY=
   </chunk>
    <chunk x="0" y="-12" width="20" height="12">
-   eJxjYBgFo2AUMNAJuIozMLiLQ2gQdoNimBiI/ROKQWIweRAfRP+AskE0iA8Al1sLdA==
+   eJxjYBgFo2AUMNAJOIszMLiKQ2gQdoFimBiI/R2KQWIweRAfRH+DskE0iA8AkMsLTA==
   </chunk>
    <chunk x="20" y="-12" width="20" height="12">
-   eJztirENwCAQxDwDzS0EYf9tEipkiSoDUL2ll+7uDUVRcIEe+AJPYATmObcVeH+bnlnXn47Z3d4CGz5vDQU=
+   eJztirENwCAQxDwC3e0DYf9tEkpkiSoDUL2ll+7uDUVRcIEe+AJPYATmObcVeH+bnlnXn47Z3d4CGzc3DNs=
   </chunk>
    <chunk x="40" y="-12" width="20" height="12">
-   eJztkMEJgEAMBKcFH2ZTjggqdmRHFuY9tAP1JeHu4UewgBtYkuxnIFCpVPjgFIzK8xJMZb9LH3MQ7Pbvh6vnLA6zwyHYDHpBJ0gGrUNTPOELb3gi7zv6Bwi2F2c=
+   eJztkMEJgEAMBKcDH0I21YigYkd2ZGHeQztQnxLuHn4EC7iBJcl+BgKVSoUPTsGoPC/BVPa79DEHwW7/frh6zuIwOxyCzaAXdIJk0Do0xRO+8IYn8r6jfwD2Dxcp
   </chunk>
    <chunk x="60" y="-12" width="20" height="12">
-   eJxjYBgFo2AUMBAALuIMDO7iDAyu4gwMP6H0Dyj9Qoz48IPpFRJnYFgtysBwTIyBgVsMwj4qxsCwRpSB4TsJZgIAWy4MpQ==
+   eJxjYBgFo2AUMBAATuIMDK7iDAzO4gwM36H0Nyj9TIz48IPpFRBnYFgpysBwRIyBgVMMwj4sxsCwSpSB4SsJZgIATWYMfw==
   </chunk>
    <chunk x="-20" y="0" width="20" height="12">
-   eJxjYKAciIgzMAiJMzC8EKeCYQwMDPPFGRiWSzAweElQxzxRcQaGv+IMDM5Uch8M/KGyeaNgFDCQCACpWwXY
+   eJxjYKAcCIkzMAiIMzA8E6eCYQwMDHPFGRiWSjAweEhQxzxhcQaG3+IMDI5Uch8M/KKyeaNgFDCQCABrgwXE
   </chunk>
    <chunk x="0" y="0" width="20" height="12">
-   eJztzsEJgDAMheF/iTTZplbQg+uIA+lCuoM4RlUKOfQqeBI/eBBeIGQWWAQGg85gMugNRoOo0CgkhezzqdBWffIue1aBTWAPcFX7EozHot84Aq8I5Y/fj2+4AbIjFA0=
+   eJztzsEJgDAMheF/CNtkmVpBD64jDqQL6Q7iGFURIQevigcP/eBBeIGQwcHooFWoFXqFRqFTCAKlQBRINm8C1a2P1iXL5GB2sHjYb/srh/BYsBur5xPFix+yjJ86ASSFFMw=
   </chunk>
    <chunk x="20" y="0" width="20" height="12">
-   eJztisEJADAMAm8L10m6/0ppSsFXB+grByJ4tiAEW9DumxKkYNnHs5X/bZfuYRj4xgGPwQ5B
+   eJztisEJADAMAm8Lt0m6/0ppoBR8dYC+ciCCZwtCsAXtvilBCpZ9PFv533bpHoaBbxz/og4Z
   </chunk>
    <chunk x="40" y="0" width="20" height="12">
-   eJztjcsJgDAQRF8T7qQck1Qkluznlg4URVxEEMS7eTC8y+5MFKyCTdC6TVzMBqNBF6AI+gA5wGAQdSa58+3vjcU3k/vYnex513zsq1T4KTsahRBM
+   eJztjcsJgDAQRF8Pyk6qMUlFYsl+bnagCCIuIgji3TwY3mV3JgpWwSZo3LW4mAwGgzbALOgC5AC9QdSZ5M63vzcW30zuY3e05131sa9Q4Kfsa54QGg==
   </chunk>
    <chunk x="60" y="0" width="20" height="12">
-   eJztkDGKAlEQRF+usIj87ha9iImoC4rnEb2OmYl4A0FFUK+wy2YrRh5AxF3lMz3MCBOYa8HnV1VQXd11g4nBLMBe4CfAd4CWwMKgKTAwGCtPoa1wEFgKrAU2kmWXJck+KVQU+go9hUuOVwvmBM/sec95yHo23NsJlATGrreu45xzLj/FUbKeK+85NKgZfIXEi/kj1x+u6wZmyQ5Te+x59Z6/Al2Fm2Z/6kf+qQmPt+r4+1P4L9g99pQCP85K/Tx/g5fCHfIsOfk=
+   eJztkE1qAlEQhL+tARGJr7vHi2QjRmGC55HMddy5kdwgoCIYr6C4U1zlACH4A+ExPcwIs8g+KXi8qlpUV3diMDGYBdgI7APsAvQE3g2eBEYGmfIr9BWOAnOBpcBKyuwHybM/FVoKLwqpwneFt2vmPHpm6j3fQtmz696HQEMgc712Hed8VfILnKTsufCeYwM12Ibci/mvrpuuEwOxfIep3fc8e8+DwEDhpuVf+JEPNefxVs/+LgrXmt1jz06NH2cVfpX/gz+FH/jeOUk=
   </chunk>
    <chunk x="80" y="0" width="20" height="12">
-   eJy9kU1OAkEQhb87qP1qwV3EEAfwLiyIxsSzsAANCaeBhWfwhwWBpRh/U+maBMfZmJn4kk51Vae/fl0F/6fnBK+CQjBQrh1HfhR5VXvlVd7zeB7xTXBlsBG8xLnXri3nfcE6/eSdCrqCT8GH4EzwdVDz/UOCW4OtIBl0DAqDE4NJxedjhV+np5Tf6gkug+fseQ3vL3oPrwuDO8HQYN6AVzLd50UwRw15rqlgF3+/b4Hn/XSPNw37d6hV9K8t3lKgFuZRaiYY2+95fAOp4TZN
+   eJy9kU1qAkEQhb8r+DevyF2MiGP0Li5ECeQsLhQRPE2yyBmMuhBdRnFMIAxTA+NoFmGGPGiqq5r6eF0F/6dNACdBKHhSUqt6XvE8r6OSk/bFsePxLBgb7ASf/h7Xni3Ju4JtcM1rCh4FX4KLoCX4ztTS+yqAvaBu8GAQGtQMJjmfHzn+b4oEbcHIeTF7cYf3F0Xuc2kwF/QMFgV4WZ99Zw4K8mJNBQf/+3sJvHWQeHwpOL+s3nx+ZfFeBY0S9pFqJhja7T5+APdZNFQ=
   </chunk>
    <chunk x="80" y="12" width="20" height="12">
-   eJxjYCAduIgzMAiJMzA8FmNgEBNnoBg8E2NgcASZI0G5WaNgFDCMIAAAd1YDFw==
+   eJxjYCAdOIkzMAiIMzA8FGNgEBFnoBg8EWNgsBdnYPhHBbNGwShgGEEAAHjQBAg=
   </chunk>
   </data>
  </layer>
@@ -240,34 +238,34 @@
   </properties>
   <data encoding="base64" compression="zlib">
    <chunk x="-20" y="-12" width="20" height="12">
-   eJxjYBgFo2AUMNABfOSlvpkAVwsA/w==
+   eJxjYBgFo2AUMNABvOelvpkAVmMA/Q==
   </chunk>
    <chunk x="0" y="-12" width="20" height="12">
-   eJzt0KkRgAAMAMGFApIJCMDx9V8jHTAIZLaAE0drzUdDMMY/v/bgCM7gCu6XbhVTMRdLsiZb8gBYEgHu
+   eJzt0DsVgEAMAMExQEIKjo6ff4/ggEdBmRGwxdJa89E9If75tQV7cARncL10s5iLKpZkJGvyAOJLAtM=
   </chunk>
    <chunk x="20" y="-12" width="20" height="12">
-   eJztybkNgEAQBMHKYDUc30H+eeIgEQLOltlNa83PjnCGGdZiK/b6foqlGG+7wh0eNpkBog==
+   eJztybkRgEAAxDB1sCxwPP03SsIMJZCcQptpmvxslKOcZQ1b2PP9hCX0bVe5ywMz4QGM
   </chunk>
    <chunk x="40" y="-12" width="20" height="12">
-   eJxjYBgFo2AUMNAJyAgyMIjwMzCI8jMwiPHjVpfLy8CQx8vAkM/LwFDAi1sdAHE+Aog=
+   eJztyqkRwDAMADAt4PMlLcqKefaHnSC0yMKilOIno9GTJ3nz/mawgh2cuL8Pbd4CeA==
   </chunk>
    <chunk x="-20" y="0" width="20" height="12">
-   eJxjYBi8oJOXuuatpLJ5o2AUMAwwAADdowFN
+   eJxjYBi8oJ2XuuYtp7J5o2AUMAwwAADRswFJ
   </chunk>
    <chunk x="0" y="0" width="20" height="12">
-   eJztzMsNQVEUQNHVwDk3twJawAAj76EQvxEqQSUoUiImJBJzb4139j44BMegSdpkniySZXrqVfrVm0FlWBlVxoVJYVo4BefgEqySdbJJtsnu9ZtVmo/fN9fgFtzjt77T8UceO3cLuQ==
+   eJztzMsNQVEUQNHVwDk3twBawAAj76EQvxEqQSWoUiImJBJzb4139j44BMegSdpkniySZXrqVfrVm0FlWBlVxoVJYVo4BefgEqySdbJJtsnu9ZtVmo/fN9fgFtzjt77T8UcecggLfw==
   </chunk>
    <chunk x="20" y="0" width="20" height="12">
-   eJztzLsNhFAUQ8HpwLoFQA/8F+i/LxIkxOZkb8Ijy7x1oQ9b8Sv2Yg5LWPPshjCG6W5HcdbfWdM0vnQB/YwDWw==
+   eJztzLsNhFAUQ8HpwLox9MB/gf4bI0FCbE72JjyyzFsX+rAVv2Iv5rCENc9uCGOY7nYUZ/2dNU3jSxegfANB
   </chunk>
    <chunk x="40" y="0" width="20" height="12">
-   eJztzssNQFAUhOG/gclEYu9RA1YSGrxoxKNEsbDA1cH9lnMyk9Nn0BhaQ2coDKX5CIJJMAsWPW+VoTbkkd5gGCP5KtgEu+B47d2uv5Ik4dcJVuYINw==
+   eJztzssNQFAUhOG/gcmEvUcNWElo8KIRjxrFwgJXB/dbzslMTp9BY2gNnaEwlOYjCCbBLFj0vFWG2pBHeoNhjOSrYBPsguO1d7v+SpKEXyfLHwgP
   </chunk>
    <chunk x="60" y="0" width="20" height="12">
-   eJzt0TlOQgEYReFvAzd/hYWSwCa0UBJZDEini3CqBPYgQ8WwB6dt2bySvEYq4qlPTnJzO8VZORqXxdUfeqMwDndhknb3Pjy0OI/hKTyHl/Da4r6FaZiFeeOdFxdFt9nzHhZhGVZhfaDXK/rFJmzDLuwb77q4KQZN7yN8hq/wHX4O9G6L4RH/+cdJ8QupSRW0
+   eJzt0TlOQgEYReFvAzd/gYWSwCa0UBJZDEini3CqBPYgQ8WwB6d92bySvEYq4qlPTnJzO8VZORqXxdUfeqMwDndhknb3Pjy0OI/hKTyHl/Da4r6FaZiFeeOdFxdFt9nzHhZhGVZhfaDXK/rFJmzDLuwb77q4KQZN7yN8hq/wHX4O9G6L4RH/+cdJ8QvCWhVe
   </chunk>
    <chunk x="80" y="0" width="20" height="12">
-   eJzlkrsJgEAUBKeBY3n+Mr8dqLFouZZiWQYGHiIqeJFOtrBMsCz8i9lBbdDYlgdBLii0d0pB5eUrFnffGQXTQ98XMUEkiANt0Ao6QR9w0+MH3uJ/7C2JQWqQnfhWGwMF5Q==
+   eJxjYBhZYBkvA4OpIAODmSADg7kgA4M0PwODDD/55h3jpabrRsFAAWkK0wE6kBdkYFAQpI5ZQoIMDMKCDAwiWMwDALDXA9M=
   </chunk>
    <chunk x="0" y="12" width="20" height="12">
    eJxjYBgFo4D2gI2JgYEdijmYKDfPkomBwQqKralgXg4TA0MuFOdRwTx6AQBZwgLR
@@ -276,13 +274,13 @@
    eJxjYBgFowACbjEwMFgyMTBYoWFrJvJCiJeRgSGHiYEhFw3nkWmeA+NoTDGgAQCb5wUs
   </chunk>
    <chunk x="80" y="12" width="20" height="12">
-   eJxjYCAdmAgyMJgKMjCYCZKheRSMglHAQC0AAOkzANM=
+   eJxjYCAdGAkyMBgLMjCYCJKheRSMglHAQC0AANQDAM0=
   </chunk>
    <chunk x="0" y="24" width="20" height="12">
    eJxjYBgF9AJWTAwM1kwQtiUThA8CILFsRuLMsGVkYMiB6stlYmDIg7JBYiA+CIDE5hFp3ihgGNIAAHvpBRE=
   </chunk>
    <chunk x="20" y="24" width="20" height="12">
-   eJxjYBjZQIGXgYGFl4GBAYTJAFZMEAwC9owMDAa8DAwivAwMAmSal8sEwSBQxMjA4ECmOaOAYUQAAEF8Ax0=
+   eJxjYBjZQI6XgYGJl4HhHw95+q2YIBgE7BkZGPR4GRiEeBkY+HjJMy+XCYJBoIiRgcGOTHNGAcOIAADTswQO
   </chunk>
    <chunk x="40" y="24" width="20" height="12">
    eJztzKkNgEAARcHRvzYSGgC2AY4GOFpHgiZrIIx66vEeTa5ub/1UF/owhFLhN4YpzGGp8FvDFvZwVPj9fM4JjoUGSg==
@@ -292,13 +290,23 @@
   </chunk>
   </data>
  </layer>
+ <layer id="102" name="desert_wall_decor_infront" width="200" height="12">
+  <properties>
+   <property name="drawz" type="float" value="1"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   <chunk x="80" y="0" width="20" height="12">
+   eJxjYBgFo4C2gJ+fgUGAn4FBkJ865unzMzAY8DMwGFLJvKEMAENFARs=
+  </chunk>
+  </data>
+ </layer>
  <layer id="93" name="bosscurtain" width="200" height="12" offsetx="0" offsety="-16">
   <properties>
    <property name="drawz" type="float" value="-0.5"/>
   </properties>
   <data encoding="base64" compression="zlib">
    <chunk x="80" y="24" width="20" height="12">
-   eJztzEkNgDAABMARsP61cJW+y6UJD32QkHQEDMMfTWEOS1jDFkrYQ03f2cIRznCFOzyd1+ATL72QC0o=
+   eJztzEkNgDAABMARsP6lcJW+yyUKD32QkHQEDMMfTWEOS1jDFkrYQ03f2cIRznCFOzyd1+ATL4n4Cy4=
   </chunk>
   </data>
  </layer>
@@ -391,16 +399,16 @@
    </object>
   </objectgroup>
   <objectgroup id="97" name="attacktutor" class="Room">
-   <object id="1053" name="attackbutton" gid="3113" x="552" y="48" width="14" height="14"/>
-   <object id="1054" name="attackbutton" gid="3109" x="552" y="64" width="14" height="14"/>
+   <object id="1053" name="attackbutton" gid="3112" x="552" y="48" width="14" height="14"/>
+   <object id="1054" name="attackbutton" gid="3108" x="552" y="64" width="14" height="14"/>
    <object id="1055" name="Attack" x="488" y="40" width="48" height="16">
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">Attack</text>
    </object>
    <object id="1056" name="Jump" x="488" y="56" width="48" height="16">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Jump</text>
    </object>
-   <object id="1057" gid="3115" x="584" y="48" width="14" height="14"/>
-   <object id="1058" gid="3111" x="584" y="64" width="14" height="14"/>
+   <object id="1057" gid="3114" x="584" y="48" width="14" height="14"/>
+   <object id="1058" gid="3110" x="584" y="64" width="14" height="14"/>
    <object id="1059" name="or" x="560" y="40" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
@@ -443,7 +451,7 @@ with</text>
    <object id="527" name="Grab" x="584" y="64" width="128" height="32" visible="0">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">DIRECTION + ATTACK to THROW</text>
    </object>
-   <object id="526" name="attackbutton" gid="3113" x="576" y="72" width="14" height="14" visible="0"/>
+   <object id="526" name="attackbutton" gid="3112" x="576" y="72" width="14" height="14" visible="0"/>
    <object id="797" template="mapobjects/bandit/knife.tx" x="408" y="-8">
     <properties>
      <property name="z" type="float" value="48"/>
@@ -489,13 +497,13 @@ body to grapple</text>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Throw         aimed with</text>
    </object>
    <object id="643" name="joystick" gid="2702" x="1232" y="56" width="16" height="16"/>
-   <object id="640" name="attackbutton" gid="3113" x="1096" y="48" width="14" height="14"/>
-   <object id="641" gid="3115" x="1128" y="48" width="14" height="14"/>
+   <object id="640" name="attackbutton" gid="3112" x="1096" y="48" width="14" height="14"/>
+   <object id="641" gid="3114" x="1128" y="48" width="14" height="14"/>
    <object id="642" name="or" x="1104" y="40" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
-   <object id="686" name="attackbutton" gid="3113" x="1096" y="64" width="14" height="14"/>
-   <object id="687" gid="3115" x="1128" y="64" width="14" height="14"/>
+   <object id="686" name="attackbutton" gid="3112" x="1096" y="64" width="14" height="14"/>
+   <object id="687" gid="3114" x="1128" y="64" width="14" height="14"/>
    <object id="688" name="or" x="1104" y="56" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
@@ -513,19 +521,19 @@ body to grapple</text>
    <object id="20" template="mapobjects/bandit/knife.tx" x="736" y="136"/>
   </objectgroup>
   <objectgroup id="100" name="sprinttutor">
-   <object id="515" name="sprintbutton" gid="3123" x="1384" y="48" width="14" height="14"/>
+   <object id="515" name="sprintbutton" gid="3122" x="1384" y="48" width="14" height="14"/>
    <object id="518" name="Run" x="1288" y="40" width="48" height="18">
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">Sprint</text>
    </object>
    <object id="538" name="or" x="1360" y="40" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
-   <object id="537" gid="3119" x="1352" y="48" width="14" height="14"/>
-   <object id="678" name="attackbutton" gid="3113" x="1352" y="64" width="14" height="14"/>
+   <object id="537" gid="3118" x="1352" y="48" width="14" height="14"/>
+   <object id="678" name="attackbutton" gid="3112" x="1352" y="64" width="14" height="14"/>
    <object id="679" name="Attack" x="1288" y="56" width="128" height="16">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Tackle</text>
    </object>
-   <object id="680" gid="3115" x="1384" y="64" width="14" height="14"/>
+   <object id="680" gid="3114" x="1384" y="64" width="14" height="14"/>
    <object id="681" name="or" x="1360" y="56" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
@@ -615,7 +623,7 @@ body to grapple</text>
      <property name="leaves" type="object" value="597"/>
     </properties>
    </object>
-   <object id="597" gid="3129" x="1520" y="40" width="128" height="96">
+   <object id="597" gid="3128" x="1520" y="40" width="128" height="96">
     <properties>
      <property name="asetag" value="*"/>
      <property name="z" type="float" value="64"/>
@@ -676,8 +684,8 @@ body to grapple</text>
    <object id="434" name="Instruction" x="1616" y="72" width="104" height="32">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Throw missile</text>
    </object>
-   <object id="626" name="attackbutton" gid="3113" x="1648" y="96" width="14" height="14"/>
-   <object id="627" gid="3115" x="1680" y="96" width="14" height="14"/>
+   <object id="626" name="attackbutton" gid="3112" x="1648" y="96" width="14" height="14"/>
+   <object id="627" gid="3114" x="1680" y="96" width="14" height="14"/>
    <object id="628" name="or" x="1656" y="88" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
@@ -686,7 +694,7 @@ body to grapple</text>
    </object>
   </objectgroup>
   <objectgroup id="48" name="learnthrowingweapons" class="Room">
-   <object id="58" gid="3105" x="2064" y="-24" width="64" height="64">
+   <object id="58" gid="3104" x="2064" y="-24" width="64" height="64">
     <properties>
      <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="241"/>
@@ -696,7 +704,7 @@ body to grapple</text>
      <property name="z" type="float" value="48"/>
     </properties>
    </object>
-   <object id="59" gid="3105" x="2112" y="24" width="64" height="64">
+   <object id="59" gid="3104" x="2112" y="24" width="64" height="64">
     <properties>
      <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="240"/>
@@ -730,18 +738,18 @@ body to grapple</text>
     </properties>
     <point/>
    </object>
-   <object id="433" gid="3113" x="1912" y="160" width="14" height="14" visible="0"/>
+   <object id="433" gid="3112" x="1912" y="160" width="14" height="14" visible="0"/>
    <object id="435" gid="2778" x="2200" y="260" width="16" height="16" visible="0"/>
    <object id="453" gid="2879" x="2192" y="224" width="16" height="16" visible="0"/>
    <object id="454" gid="2880" x="2208" y="224" width="16" height="16" visible="0"/>
    <object id="455" gid="2881" x="2224" y="224" width="16" height="16" visible="0"/>
    <object id="456" gid="2882" x="2240" y="224" width="16" height="16" visible="0"/>
    <object id="457" gid="3004" x="2232" y="260" width="16" height="16" visible="0"/>
-   <object id="468" gid="3123" x="1984" y="160" width="14" height="14" visible="0"/>
+   <object id="468" gid="3122" x="1984" y="160" width="14" height="14" visible="0"/>
    <object id="470" name="Instruction" x="1976" y="152" width="40" height="16" visible="0">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">+</text>
    </object>
-   <object id="471" gid="3113" x="2008" y="160" width="14" height="14" visible="0"/>
+   <object id="471" gid="3112" x="2008" y="160" width="14" height="14" visible="0"/>
   </objectgroup>
   <objectgroup id="28" name="+knives" class="Room">
    <properties>
@@ -756,7 +764,7 @@ body to grapple</text>
    <properties>
     <property name="donewhenenemiesleft" type="int" value="6"/>
    </properties>
-   <object id="87" gid="3105" x="2104" y="16" width="64" height="64">
+   <object id="87" gid="3104" x="2104" y="16" width="64" height="64">
     <properties>
      <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="242"/>
@@ -778,7 +786,7 @@ body to grapple</text>
     </properties>
     <point/>
    </object>
-   <object id="494" gid="3105" x="2056" y="0" width="64" height="64">
+   <object id="494" gid="3104" x="2056" y="0" width="64" height="64">
     <properties>
      <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="495"/>
@@ -789,7 +797,7 @@ body to grapple</text>
      <property name="z" type="float" value="48"/>
     </properties>
    </object>
-   <object id="498" gid="3105" x="2152" y="32" width="64" height="64">
+   <object id="498" gid="3104" x="2152" y="32" width="64" height="64">
     <properties>
      <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="497"/>
@@ -861,21 +869,21 @@ body to grapple</text>
      <property name="roundcorners" type="float" value="1"/>
     </properties>
    </object>
-   <object id="632" name="attackbutton" gid="3113" x="2296" y="304" width="14" height="14"/>
-   <object id="633" gid="3115" x="2328" y="304" width="14" height="14"/>
+   <object id="632" name="attackbutton" gid="3112" x="2296" y="304" width="14" height="14"/>
+   <object id="633" gid="3114" x="2328" y="304" width="14" height="14"/>
    <object id="634" name="or" x="2304" y="296" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
    <object id="675" template="mapobjects/CameraPath.tx" x="1840" y="144">
     <polyline points="0,0 160,96 480,96"/>
    </object>
-   <object id="676" gid="3139" x="2320" y="248" width="32" height="32">
+   <object id="676" gid="3137" x="2320" y="248" width="32" height="32">
     <properties>
      <property name="item" type="object" value="677"/>
      <property name="propertiestable" type="file" value="database/objects-properties.csv"/>
     </properties>
    </object>
-   <object id="677" gid="3140" x="2320" y="248" width="32" height="32">
+   <object id="677" gid="3138" x="2320" y="248" width="32" height="32">
     <properties>
      <property name="propertiestable" type="file" value="database/items-properties.csv"/>
      <property name="z" type="float" value="1"/>
@@ -883,7 +891,7 @@ body to grapple</text>
    </object>
   </objectgroup>
   <objectgroup id="63" name="learnfireball" class="Room">
-   <object id="662" gid="3103" x="2392" y="88" width="128" height="128">
+   <object id="662" gid="3102" x="2392" y="88" width="128" height="128">
     <properties>
      <property name="defaultattack" value="bow-shot-until-empty"/>
      <property name="entrypoint" type="object" value="661"/>
@@ -893,7 +901,7 @@ body to grapple</text>
      <property name="z" type="float" value="48"/>
     </properties>
    </object>
-   <object id="665" gid="3103" x="2344" y="88" width="128" height="128">
+   <object id="665" gid="3102" x="2344" y="88" width="128" height="128">
     <properties>
      <property name="defaultattack" value="bow-shot-until-empty"/>
      <property name="entrypoint" type="object" value="664"/>
@@ -903,7 +911,7 @@ body to grapple</text>
      <property name="z" type="float" value="48"/>
     </properties>
    </object>
-   <object id="668" gid="3103" x="2296" y="88" width="128" height="128">
+   <object id="668" gid="3102" x="2296" y="88" width="128" height="128">
     <properties>
      <property name="defaultattack" value="bow-shot-until-empty"/>
      <property name="entrypoint" type="object" value="667"/>
@@ -913,7 +921,7 @@ body to grapple</text>
      <property name="z" type="float" value="48"/>
     </properties>
    </object>
-   <object id="671" gid="3103" x="2248" y="88" width="128" height="128">
+   <object id="671" gid="3102" x="2248" y="88" width="128" height="128">
     <properties>
      <property name="defaultattack" value="bow-shot-until-empty"/>
      <property name="entrypoint" type="object" value="670"/>
@@ -984,7 +992,7 @@ body to grapple</text>
     <properties>
      <property name="extrudeY" type="float" value="-48"/>
     </properties>
-    <polygon points="-288,-480 -288,-192 -32,-192 0,-160 32,-160 64,-160 96,-128 96,-64 128,-32 128,16 224,16 224,-480"/>
+    <polygon points="-288,-480 -288,-192 0,-192 32,-160 64,-160 96,-128 96,-64 128,-32 128,16 224,16 224,-480"/>
    </object>
    <object id="66" template="mapobjects/CameraPath.tx" x="2480" y="240">
     <polyline points="-160,0 320,0"/>
@@ -1022,7 +1030,7 @@ body to grapple</text>
     </properties>
    </object>
    <object id="529" gid="2702" x="2984" y="120" width="16" height="16" visible="0"/>
-   <object id="521" name="attackbutton" gid="3113" x="2976" y="160" width="14" height="14" visible="0"/>
+   <object id="521" name="attackbutton" gid="3112" x="2976" y="160" width="14" height="14" visible="0"/>
    <object id="503" template="mapobjects/bandit/shield.tx" x="2896" y="240">
     <properties>
      <property name="facedegrees" type="float" value="180"/>
@@ -1041,14 +1049,14 @@ body to grapple</text>
      <property name="initialai" value="guardForever"/>
     </properties>
    </object>
-   <object id="608" type="fruit-tree" gid="3130" x="3024" y="112" width="128" height="160">
+   <object id="608" type="fruit-tree" gid="3129" x="3024" y="112" width="128" height="160">
     <properties>
      <property name="leaves" type="object" value="609"/>
      <property name="propertiestable" type="file" value="database/objects-properties.csv"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="609" gid="3129" x="3024" y="64" width="128" height="96">
+   <object id="609" gid="3128" x="3024" y="64" width="128" height="96">
     <properties>
      <property name="z" type="float" value="128"/>
     </properties>
@@ -1337,9 +1345,10 @@ and tap    to throw</text>
    <properties>
     <property name="donewhenenemiesleft" type="int" value="-1"/>
    </properties>
-   <object id="465" template="mapobjects/trigger/startSequence.tx" name="exittrigger" type="Trigger" x="2912" y="224">
+   <object id="465" template="mapobjects/trigger/startSequence.tx" name="exittrigger" type="Trigger" x="2912" y="216">
     <properties>
      <property name="drawz" type="float" value="-0.125"/>
+     <property name="extrudeY" type="float" value="-48"/>
      <property name="initialai" value="triggerToUse"/>
      <property name="sequence" value="playerExitToNextArea"/>
     </properties>
@@ -1356,11 +1365,11 @@ and tap    to throw</text>
     <property name="sequence" value="playerEnterArea"/>
     <property name="titlebarcuecard" value="RUN"/>
    </properties>
-   <object id="705" gid="3142" x="336" y="960" width="96" height="112"/>
-   <object id="706" gid="3142" x="432" y="960" width="96" height="112"/>
-   <object id="707" gid="3142" x="528" y="960" width="96" height="112"/>
-   <object id="708" gid="3142" x="624" y="960" width="96" height="112"/>
-   <object id="709" gid="3142" x="720" y="960" width="96" height="112"/>
+   <object id="705" gid="3140" x="336" y="960" width="96" height="112"/>
+   <object id="706" gid="3140" x="432" y="960" width="96" height="112"/>
+   <object id="707" gid="3140" x="528" y="960" width="96" height="112"/>
+   <object id="708" gid="3140" x="624" y="960" width="96" height="112"/>
+   <object id="709" gid="3140" x="720" y="960" width="96" height="112"/>
    <object id="104" template="mapobjects/CameraPath.tx" x="176" y="1008">
     <properties>
      <property name="shadowcolor" type="color" value="#00000000"/>
@@ -1468,7 +1477,7 @@ and tap    to throw</text>
    <object id="298" template="mapobjects/OutwardBoundary.tx" x="944" y="768">
     <polygon points="-200,0 -200,208 -176,208 -144,176 48,176 80,144 144,144 176,176 176,0"/>
    </object>
-   <object id="105" gid="3103" x="336" y="928" width="128" height="128">
+   <object id="105" gid="3102" x="336" y="928" width="128" height="128">
     <properties>
      <property name="ammo" type="int" value="0"/>
      <property name="defaultattack" value="bow-shot-until-empty"/>
@@ -1487,7 +1496,7 @@ and tap    to throw</text>
    <object id="556" name="exitpoint" x="432" y="832">
     <point/>
    </object>
-   <object id="274" gid="3103" x="432" y="920" width="128" height="128">
+   <object id="274" gid="3102" x="432" y="920" width="128" height="128">
     <properties>
      <property name="ammo" type="int" value="0"/>
      <property name="defaultattack" value="bow-shot-until-empty"/>
@@ -1500,7 +1509,7 @@ and tap    to throw</text>
    <object id="275" name="entrypoint" x="432" y="936">
     <point/>
    </object>
-   <object id="280" gid="3103" x="528" y="912" width="128" height="128">
+   <object id="280" gid="3102" x="528" y="912" width="128" height="128">
     <properties>
      <property name="ammo" type="int" value="0"/>
      <property name="defaultattack" value="bow-shot-until-empty"/>
@@ -1510,7 +1519,7 @@ and tap    to throw</text>
      <property name="initialai" value="enterAndPrepareBowAmbush"/>
     </properties>
    </object>
-   <object id="282" gid="3103" x="624" y="904" width="128" height="128">
+   <object id="282" gid="3102" x="624" y="904" width="128" height="128">
     <properties>
      <property name="ammo" type="int" value="0"/>
      <property name="defaultattack" value="bow-shot-until-empty"/>
@@ -1526,7 +1535,7 @@ and tap    to throw</text>
    <object id="283" name="entrypoint" x="624" y="936">
     <point/>
    </object>
-   <object id="286" gid="3103" x="720" y="896" width="128" height="128">
+   <object id="286" gid="3102" x="720" y="896" width="128" height="128">
     <properties>
      <property name="ammo" type="int" value="0"/>
      <property name="defaultattack" value="bow-shot-until-empty"/>
@@ -1861,7 +1870,7 @@ to sprint past archers</text>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">During sprint</text>
    </object>
-   <object id="734" name="attackbutton" gid="3109" x="120" y="1096" width="14" height="14">
+   <object id="734" name="attackbutton" gid="3108" x="120" y="1096" width="14" height="14">
     <properties>
      <property name="drawz" type="float" value="100"/>
     </properties>
@@ -1872,7 +1881,7 @@ to sprint past archers</text>
     </properties>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Long jump</text>
    </object>
-   <object id="736" gid="3111" x="152" y="1096" width="14" height="14">
+   <object id="736" gid="3110" x="152" y="1096" width="14" height="14">
     <properties>
      <property name="drawz" type="float" value="100"/>
     </properties>
@@ -1883,7 +1892,7 @@ to sprint past archers</text>
     </properties>
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
-   <object id="738" name="sprintbutton" gid="3123" x="168" y="1072" width="14" height="14">
+   <object id="738" name="sprintbutton" gid="3122" x="168" y="1072" width="14" height="14">
     <properties>
      <property name="drawz" type="float" value="100"/>
     </properties>
@@ -1894,7 +1903,7 @@ to sprint past archers</text>
     </properties>
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
-   <object id="740" gid="3119" x="136" y="1072" width="14" height="14">
+   <object id="740" gid="3118" x="136" y="1072" width="14" height="14">
     <properties>
      <property name="drawz" type="float" value="100"/>
     </properties>
@@ -1948,91 +1957,91 @@ to sprint past archers</text>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="984" gid="3400" x="832" y="944" width="64" height="64">
+   <object id="984" gid="3398" x="832" y="944" width="64" height="64">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="988" gid="1073745224" x="840" y="920" width="64" height="64" rotation="90">
+   <object id="988" gid="1073745222" x="840" y="920" width="64" height="64" rotation="90">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="989" gid="3400" x="808" y="944" width="64" height="64" rotation="-90">
+   <object id="989" gid="3398" x="808" y="944" width="64" height="64" rotation="-90">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="986" gid="3400" x="816" y="904" width="64" height="64">
+   <object id="986" gid="3398" x="816" y="904" width="64" height="64">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="987" gid="2147487048" x="800" y="936" width="64" height="64">
+   <object id="987" gid="2147487046" x="800" y="936" width="64" height="64">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="990" gid="3400" x="320" y="1104" width="64" height="64" rotation="-90">
+   <object id="990" gid="3398" x="320" y="1104" width="64" height="64" rotation="-90">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="1031" gid="3400" x="720" y="1096" width="64" height="64" rotation="-90">
+   <object id="1031" gid="3398" x="720" y="1096" width="64" height="64" rotation="-90">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="991" gid="3400" x="552" y="992" width="64" height="64">
+   <object id="991" gid="3398" x="552" y="992" width="64" height="64">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="992" gid="3400" x="424" y="1016" width="64" height="64">
+   <object id="992" gid="3398" x="424" y="1016" width="64" height="64">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="1009" gid="1073745224" x="344" y="984" width="64" height="64">
+   <object id="1009" gid="1073745222" x="344" y="984" width="64" height="64">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="993" gid="3400" x="392" y="1064" width="64" height="64">
+   <object id="993" gid="3398" x="392" y="1064" width="64" height="64">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="1030" gid="3400" x="640" y="1088" width="64" height="64">
+   <object id="1030" gid="3398" x="640" y="1088" width="64" height="64">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="994" gid="2147487048" x="696" y="992" width="64" height="64" rotation="90">
+   <object id="994" gid="2147487046" x="696" y="992" width="64" height="64" rotation="90">
     <properties>
      <property name="color" type="color" value="#80aa0000"/>
      <property name="drawz" type="float" value="-0.5"/>
@@ -2363,7 +2372,7 @@ to sprint past archers</text>
      <property name="extrudeY" type="float" value="-12"/>
     </properties>
    </object>
-   <object id="336" gid="3105" x="2160" y="1080" width="64" height="64">
+   <object id="336" gid="3104" x="2160" y="1080" width="64" height="64">
     <properties>
      <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
@@ -2371,14 +2380,14 @@ to sprint past archers</text>
      <property name="z" type="float" value="16"/>
     </properties>
    </object>
-   <object id="337" gid="3105" x="2064" y="920" width="64" height="64">
+   <object id="337" gid="3104" x="2064" y="920" width="64" height="64">
     <properties>
      <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
     </properties>
    </object>
-   <object id="338" gid="3103" x="2176" y="928" width="128" height="128">
+   <object id="338" gid="3102" x="2176" y="928" width="128" height="128">
     <properties>
      <property name="defaultattack" value="bow-shot-until-empty"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
@@ -2551,56 +2560,56 @@ to sprint past archers</text>
      <property name="initialai" value="guardForever"/>
     </properties>
    </object>
-   <object id="1010" gid="3400" x="2000" y="920" width="64" height="64">
+   <object id="1010" gid="3398" x="2000" y="920" width="64" height="64">
     <properties>
      <property name="color" type="color" value="#80211414"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="1011" gid="3400" x="1856" y="1112" width="64" height="64" rotation="-90">
+   <object id="1011" gid="3398" x="1856" y="1112" width="64" height="64" rotation="-90">
     <properties>
      <property name="color" type="color" value="#80211414"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="1015" gid="1073745224" x="2152" y="1104" width="64" height="64">
+   <object id="1015" gid="1073745222" x="2152" y="1104" width="64" height="64">
     <properties>
      <property name="color" type="color" value="#80211414"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="1041" gid="1073745224" x="2120" y="928" width="64" height="64">
+   <object id="1041" gid="1073745222" x="2120" y="928" width="64" height="64">
     <properties>
      <property name="color" type="color" value="#80211414"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="1016" gid="3400" x="1992" y="1128" width="64" height="64">
+   <object id="1016" gid="3398" x="1992" y="1128" width="64" height="64">
     <properties>
      <property name="color" type="color" value="#80293426"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="1012" gid="2147487048" x="1728" y="1080" width="64" height="64">
+   <object id="1012" gid="2147487046" x="1728" y="1080" width="64" height="64">
     <properties>
      <property name="color" type="color" value="#80293426"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="1014" gid="2147487048" x="1864" y="944" width="64" height="64">
+   <object id="1014" gid="2147487046" x="1864" y="944" width="64" height="64">
     <properties>
      <property name="color" type="color" value="#80293426"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="1013" gid="2147487048" x="2208" y="888" width="64" height="64" rotation="90">
+   <object id="1013" gid="2147487046" x="2208" y="888" width="64" height="64" rotation="90">
     <properties>
      <property name="color" type="color" value="#80293426"/>
      <property name="drawz" type="float" value="-0.5"/>
@@ -2679,12 +2688,12 @@ to sprint past archers</text>
     </properties>
     <polygon points="-32,0 -32,192 416,192 416,0 384,-32 352,-32 320,-64 160,-64 128,-32 0,-32"/>
    </object>
-   <object id="995" gid="3406" x="2352" y="896" width="32" height="32"/>
-   <object id="996" gid="3406" x="2400" y="912" width="32" height="32"/>
-   <object id="997" gid="3406" x="2456" y="904" width="32" height="32"/>
-   <object id="998" gid="3406" x="2504" y="896" width="32" height="32"/>
-   <object id="999" gid="3406" x="2528" y="904" width="32" height="32"/>
-   <object id="1000" gid="3406" x="2592" y="904" width="32" height="32"/>
+   <object id="995" gid="3404" x="2352" y="896" width="32" height="32"/>
+   <object id="996" gid="3404" x="2400" y="912" width="32" height="32"/>
+   <object id="997" gid="3404" x="2456" y="904" width="32" height="32"/>
+   <object id="998" gid="3404" x="2504" y="896" width="32" height="32"/>
+   <object id="999" gid="3404" x="2528" y="904" width="32" height="32"/>
+   <object id="1000" gid="3404" x="2592" y="904" width="32" height="32"/>
    <object id="1044" name="cameraboundary" type="CameraBoundary" x="2000" y="1008">
     <polygon points="0,0 480,0 0,-64"/>
    </object>
@@ -2785,62 +2794,62 @@ to sprint past archers</text>
     </properties>
     <polygon points="-32,0 -32,192 416,192 416,0 384,-32 352,-32 320,-64 160,-64 128,-32 0,-32"/>
    </object>
-   <object id="1001" gid="3406" x="2352" y="896" width="32" height="32"/>
-   <object id="1002" gid="3406" x="2400" y="912" width="32" height="32"/>
-   <object id="1003" gid="3406" x="2456" y="904" width="32" height="32"/>
-   <object id="1004" gid="3406" x="2504" y="896" width="32" height="32"/>
-   <object id="1005" gid="3406" x="2528" y="904" width="32" height="32"/>
-   <object id="1006" gid="3406" x="2592" y="904" width="32" height="32"/>
-   <object id="1017" gid="3400" x="3016" y="1008" width="64" height="64">
+   <object id="1001" gid="3404" x="2352" y="896" width="32" height="32"/>
+   <object id="1002" gid="3404" x="2400" y="912" width="32" height="32"/>
+   <object id="1003" gid="3404" x="2456" y="904" width="32" height="32"/>
+   <object id="1004" gid="3404" x="2504" y="896" width="32" height="32"/>
+   <object id="1005" gid="3404" x="2528" y="904" width="32" height="32"/>
+   <object id="1006" gid="3404" x="2592" y="904" width="32" height="32"/>
+   <object id="1017" gid="3398" x="3016" y="1008" width="64" height="64">
     <properties>
      <property name="color" type="color" value="#801d0f0f"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="1018" gid="3400" x="2832" y="984" width="64" height="64">
+   <object id="1018" gid="3398" x="2832" y="984" width="64" height="64">
     <properties>
      <property name="color" type="color" value="#80530909"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="1019" gid="3400" x="3128" y="1088" width="64" height="64">
+   <object id="1019" gid="3398" x="3128" y="1088" width="64" height="64">
     <properties>
      <property name="color" type="color" value="#80530909"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="1032" gid="3400" x="2992" y="1080" width="64" height="64">
+   <object id="1032" gid="3398" x="2992" y="1080" width="64" height="64">
     <properties>
      <property name="color" type="color" value="#80530909"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="1020" gid="3400" x="2912" y="1056" width="64" height="64">
+   <object id="1020" gid="3398" x="2912" y="1056" width="64" height="64">
     <properties>
      <property name="color" type="color" value="#80530909"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="1021" gid="2147487048" x="2776" y="1096" width="64" height="64" rotation="-90">
+   <object id="1021" gid="2147487046" x="2776" y="1096" width="64" height="64" rotation="-90">
     <properties>
      <property name="color" type="color" value="#801d0f0f"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="1022" gid="3221228872" x="3120" y="968" width="64" height="64">
+   <object id="1022" gid="3221228870" x="3120" y="968" width="64" height="64">
     <properties>
      <property name="color" type="color" value="#801d0f0f"/>
      <property name="drawz" type="float" value="-0.5"/>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="1023" gid="2147487048" x="3248" y="1000" width="64" height="64" rotation="90">
+   <object id="1023" gid="2147487046" x="3248" y="1000" width="64" height="64" rotation="90">
     <properties>
      <property name="color" type="color" value="#80280000"/>
      <property name="drawz" type="float" value="-0.5"/>
@@ -2976,7 +2985,7 @@ to sprint past archers</text>
    <object id="861" template="mapobjects/bandit/knife.tx" x="3368" y="1112"/>
   </objectgroup>
   <objectgroup id="69" name="help3" class="Room">
-   <object id="403" gid="3105" x="2896" y="856" width="64" height="64">
+   <object id="403" gid="3104" x="2896" y="856" width="64" height="64">
     <properties>
      <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="404"/>
@@ -2987,7 +2996,7 @@ to sprint past archers</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="775" gid="3105" x="3088" y="848" width="64" height="64">
+   <object id="775" gid="3104" x="3088" y="848" width="64" height="64">
     <properties>
      <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="774"/>
@@ -3033,7 +3042,7 @@ to sprint past archers</text>
    <object id="876" template="mapobjects/bandit/spear.tx" x="3224" y="1016"/>
   </objectgroup>
   <objectgroup id="37" name="help6" class="Room">
-   <object id="400" gid="3103" x="2928" y="848" width="128" height="128">
+   <object id="400" gid="3102" x="2928" y="848" width="128" height="128">
     <properties>
      <property name="defaultattack" value="bow-shot-until-empty"/>
      <property name="entrypoint" type="object" value="401"/>
@@ -3044,7 +3053,7 @@ to sprint past archers</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="406" gid="3103" x="3120" y="856" width="128" height="128">
+   <object id="406" gid="3102" x="3120" y="856" width="128" height="128">
     <properties>
      <property name="defaultattack" value="bow-shot-until-empty"/>
      <property name="entrypoint" type="object" value="407"/>
@@ -3080,7 +3089,7 @@ to sprint past archers</text>
    <object id="782" template="mapobjects/bandit/shield.tx" x="3232" y="1080"/>
    <object id="855" template="mapobjects/bandit/shield.tx" x="3232" y="992"/>
   </objectgroup>
-  <objectgroup id="81" name="help8" visible="0">
+  <objectgroup id="81" name="help8">
    <object id="580" template="mapobjects/bandit/muscle.tx" x="3008" y="856">
     <properties>
      <property name="z" type="float" value="64"/>
@@ -3111,7 +3120,7 @@ to sprint past archers</text>
    </object>
   </objectgroup>
   <objectgroup id="38" name="+slingers" class="Room">
-   <object id="409" gid="3105" x="5040" y="-40" width="64" height="64">
+   <object id="409" gid="3104" x="5040" y="-40" width="64" height="64">
     <properties>
      <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="412"/>
@@ -3122,7 +3131,7 @@ to sprint past archers</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="411" gid="3105" x="5136" y="-8" width="64" height="64">
+   <object id="411" gid="3104" x="5136" y="-8" width="64" height="64">
     <properties>
      <property name="defaultattack" value="sling-shot-until-empty"/>
      <property name="entrypoint" type="object" value="414"/>
@@ -3153,7 +3162,7 @@ to sprint past archers</text>
    </object>
   </objectgroup>
   <objectgroup id="55" name="oldentryhallarchers">
-   <object id="291" gid="3103" x="3264" y="-48" width="128" height="128">
+   <object id="291" gid="3102" x="3264" y="-48" width="128" height="128">
     <properties>
      <property name="defaultattack" value="bow-shot-until-empty"/>
      <property name="entrypoint" type="object" value="294"/>
@@ -3164,7 +3173,7 @@ to sprint past archers</text>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="292" gid="3103" x="3264" y="-16" width="128" height="128">
+   <object id="292" gid="3102" x="3264" y="-16" width="128" height="128">
     <properties>
      <property name="defaultattack" value="bow-shot-until-empty"/>
      <property name="entrypoint" type="object" value="293"/>
