@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="34" nextobjectid="235">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="35" nextobjectid="238">
  <editorsettings>
   <export target="gui.lua" format="lua"/>
  </editorsettings>
@@ -15,6 +15,7 @@
  <tileset firstgid="433" source="sprites/ui/go-arrowhead.tsx"/>
  <tileset firstgid="449" source="tilesets/ui/rose-face2.tsx"/>
  <tileset firstgid="450" source="sprites/ui/firespit.tsx"/>
+ <tileset firstgid="451" source="sprites/bandit/boss.tsx"/>
  <group id="4" name="gameplay">
   <objectgroup draworder="index" id="2" name="hud">
    <object id="4" name="run" type="Gui.Gauge" x="52" y="33" width="100" height="8" visible="0">
@@ -295,6 +296,25 @@ to clear lost enemies</text>
      <property name="animationspeed" type="float" value="0"/>
     </properties>
    </object>
+  </objectgroup>
+  <objectgroup id="34" name="hud_boss">
+   <object id="235" name="health" type="Gui.Gauge" x="188" y="247.5" width="250" height="9">
+    <properties>
+     <property name="color" type="color" value="#ffff1f1f"/>
+     <property name="gaugedirection" propertytype="GaugeDirection" value="left"/>
+     <property name="roundcorners" type="float" value="1"/>
+     <property name="z" type="float" value="0"/>
+    </properties>
+   </object>
+   <object id="236" name="healthbox" x="188" y="247.5" width="250" height="9">
+    <properties>
+     <property name="color" type="color" value="#00000000"/>
+     <property name="linecolor" type="color" value="#ffffffff"/>
+     <property name="roundcorners" type="float" value="2"/>
+     <property name="z" type="float" value="2"/>
+    </properties>
+   </object>
+   <object id="237" name="portrait" gid="2147484099" x="456" y="274.5" width="192" height="192"/>
   </objectgroup>
   <objectgroup draworder="index" id="13" name="input" visible="0">
    <object id="67" name="joystickdirection" x="55" y="243">

@@ -9,8 +9,8 @@ return {
   height = 15,
   tilewidth = 16,
   tileheight = 18,
-  nextlayerid = 34,
-  nextobjectid = 235,
+  nextlayerid = 35,
+  nextobjectid = 238,
   properties = {},
   tilesets = {
     {
@@ -84,6 +84,12 @@ return {
       firstgid = 450,
       filename = "sprites/ui/firespit.tsx",
       exportfilename = "sprites/ui/firespit.lua"
+    },
+    {
+      name = "boss",
+      firstgid = 451,
+      filename = "sprites/bandit/boss.tsx",
+      exportfilename = "sprites/bandit/boss.lua"
     }
   },
   layers = {
@@ -1348,6 +1354,75 @@ return {
               properties = {
                 ["animationspeed"] = 0
               }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 34,
+          name = "hud_boss",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 235,
+              name = "health",
+              type = "Gui.Gauge",
+              shape = "rectangle",
+              x = 188,
+              y = 247.5,
+              width = 250,
+              height = 9,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {
+                ["color"] = "#ffff1f1f",
+                ["gaugedirection"] = "left",
+                ["roundcorners"] = 1,
+                ["z"] = 0
+              }
+            },
+            {
+              id = 236,
+              name = "healthbox",
+              type = "",
+              shape = "rectangle",
+              x = 188,
+              y = 247.5,
+              width = 250,
+              height = 9,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {
+                ["color"] = "#00000000",
+                ["linecolor"] = "#ffffffff",
+                ["roundcorners"] = 2,
+                ["z"] = 2
+              }
+            },
+            {
+              id = 237,
+              name = "portrait",
+              type = "",
+              shape = "rectangle",
+              x = 456,
+              y = 274.5,
+              width = 192,
+              height = 192,
+              rotation = 0,
+              opacity = 1,
+              gid = 2147484099,
+              visible = true,
+              properties = {}
             }
           }
         },
