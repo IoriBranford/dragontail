@@ -697,8 +697,8 @@ Licensed Creative Commons Attribution Share-Alike</text>
      </properties>
      <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">WEBSITE</text>
     </object>
-    <object id="219" name="Rate &amp; Comment" x="64" y="198" width="88" height="18">
-     <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Rate &amp; Comment</text>
+    <object id="219" name="Rate &amp; Comment" x="64" y="198" width="96" height="18">
+     <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">View instructions</text>
     </object>
    </objectgroup>
   </group>
