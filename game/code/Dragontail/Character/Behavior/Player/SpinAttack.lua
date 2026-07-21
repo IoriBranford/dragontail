@@ -26,7 +26,7 @@ function PlayerSpinAttack:start(faceangle)
     local projtype = player.attack.projectiletype
     local numproj = player.attack.numprojectiles
     if projtype and numproj then
-        self.numprojectiles = numproj
+        self.projectileinterval = math.max(1, math.floor(player.statetime/numproj))
     end
 
     self.originalfaceangle = faceangle
@@ -47,13 +47,10 @@ function PlayerSpinAttack:fixedupdate()
     local atka = fa + faoff
 
     local msl = plr.attack.projectiletype
-    if msl and plr.statetime % 6 == 0
-    and (not self.numprojectiles or self.numprojectiles > 0)
-    then
+    if msl and plr.statetime % self.projectileinterval == 0 then
         local cosatk, sinatk = math.cos(atka), math.sin(atka)
         Shoot.launchProjectile(plr, "spark-spit-fireball", cosatk, sinatk, 0)
         Shoot.launchProjectile(plr, msl, cosatk, sinatk, 0)
-        if self.numprojectiles then self.numprojectiles = self.numprojectiles - 1 end
     end
 
     plr:decelerateXYto0()
