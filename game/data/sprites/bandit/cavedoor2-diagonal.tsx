@@ -10,7 +10,7 @@
     <properties>
      <property name="collidable" type="bool" value="true"/>
     </properties>
-    <polygon points="0,0 64,64 80,64 16,0"/>
+    <polygon points="0,0 64,64 62.7484,46.7484 16,0"/>
    </object>
   </objectgroup>
  </tile>
