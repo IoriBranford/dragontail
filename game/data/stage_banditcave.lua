@@ -288,26 +288,20 @@ return {
       exportfilename = "tilesets/castle/torch.lua"
     },
     {
-      name = "desert-decorative1",
-      firstgid = 3409,
-      filename = "tilesets/sandy/desert-decorative1.tsx",
-      exportfilename = "tilesets/sandy/desert-decorative1.lua"
-    },
-    {
       name = "desert-decorative2",
-      firstgid = 4369,
+      firstgid = 3409,
       filename = "tilesets/sandy/desert-decorative2.tsx",
       exportfilename = "tilesets/sandy/desert-decorative2.lua"
     },
     {
       name = "desert",
-      firstgid = 5393,
+      firstgid = 4433,
       filename = "tilesets/sandy/desert.tsx",
       exportfilename = "tilesets/sandy/desert.lua"
     },
     {
       name = "crystal-spikes",
-      firstgid = 7463,
+      firstgid = 6503,
       filename = "sprites/banditcave/crystal-spikes.tsx",
       exportfilename = "sprites/banditcave/crystal-spikes.lua"
     }
@@ -395,51 +389,51 @@ return {
       chunks = {
         {
           x = 0, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMJABlksxMLBJMzBclsIU34VFHF3NDmkGBnZpiBkg+pIUA0O6DAPDdiS9IHW7pRkYLKHirNIMDBzSEDkWaQYGAFChDJo="
+          data = "eJxjYBgFo2AUMJABnosxMLiJMzAIi2OK/8Iijq7mhzgDg7s4xAwQLSTOwLBcgoHhO5JekLrf4gwMlVBxV3EGBg+onIs4AwMAT1ENxg=="
         },
         {
           x = 20, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMNAALJdiYNgpzcCwQgohBuLvkIbQl5HEiQG90gwM3DIMDBelGBhYpSEYAPq2B7o="
+          data = "eJxjYBgFo2AUMNAAPBdjYPgpzsDwQgwhBuL/EIfQwuKkmXdWnIHBW4KBQVCcgcEVigFCMwiM"
         },
         {
           x = 40, y = -12, width = 20, height = 12,
-          data = "eJztz7sJgEAQRdEbLGgN87YRS7QSsQPRxBb8gdqMsrjmioHJXpj0zAykUv83G7SCTDDZN8sJOsEmcB5Kfbd2wSo4DHpBFe9tBPkLfzSodc1thd/DjkVQeBii/cQ9AQ0dFjE="
+          data = "eJzt0LsJgEAQhOG/BZ8z2ozJgbZkiVYidiCayKHmioHJDWz6ze5CSsr/KQWboBcU+mYFwS5oDMEwffBuqzXY0EXLMNfnvqtgeOHnguWa24q3x47KMBqy6xdP3AMuXxCC"
         },
         {
           x = -20, y = 0, width = 20, height = 12,
-          data = "eJxjYBgF5ILlUtQNuwRp6prXS2Xz+ga5efFUNm8ZleOXFgAABW4EcQ=="
+          data = "eJxjYBgF5ILnYtQNuwXi1DXvLJXNOzfIzZtPZfOeUTl+aQEAnHgGFQ=="
         },
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJzNketNAlEQhT8VVsUOmGmC+ACrERGlGv/YhCigv41Ra9D4WpFezMmem1CCm2x25t4zcx4L8N6Fty5MErYSbgJ+o6nvAxYBr114CHh0P044SFgGXAVce4eey4DThO+AUcB2QjvhIqGVsGOOic+EPTRmLxsu7dJ8y5x3qhNGxu8m9BN6CXU0Ozs+30/4ieYr/tq1/Ghv5fokGy8Laxx4lziE+fRcxz6lQXrPEqbOp/Ie1fOAlb3L261ysba2Mdqn7M4Tjp1D7byLTu3uGLe0NmnUzIV3Cyu+nv/R1L04B8Z/BXxEk+nKvuRBuY69R16kV7wte1F/5HtpngUMfVet4ZV/+YfKWf3QXLW1SZPm5G/mt+hXLuor3/ed+cBz0iP9JTNhhtYmjrlnxC0f8vYcsBnwEvDkGveqN9buhS1vOS/fMvffnz8GYGnL"
+          data = "eJzNkVtOAlEQRM8WNEo3CnvxMYyKqyEq4mpAQFiNP27CF+C3MT5SmboJS3CSyXTfW11VXQOwF7AbsEw4TXgN6Lj+CFgH7AR8Bny5nydcJxwmPAU8txoOPY8B9wmZMA04S+glLBKqhHNrLH0m7I0xl9loiUvzlTU30cxOjb9IuE0YJLTN2ff5VcKBv9Jvu9Y+4q1dj7PZZW2PI3NJQ5iW5/reUx7kd5bwEg1HbR7Vq4Cu/Wm3N+USjbeeMeJTdg8Jd85Bmsq7+BR33zjpyps8amZh7rb1Bv5HmlEvzZHxkbDvTLvea+Nc5+aZ2a90K++ifuh7eX4PmPiu3sIr//IPlbP6ibXkT97kaez9xKO3+Fcu6mvf3zrzkecq+y+Zdcw/tMbKmtLWHtrtJ+Ak4Dfg2/WRe9XHW/fClrecl2+Z++/PH9h1dFc="
         },
         {
           x = 20, y = 0, width = 20, height = 12,
-          data = "eJzNkmlSAlEMhD8VBeEGk1xCFoXTIKByNBAXfrqVegZ3cbmL1TU9pUdwqlKT95J0d3pmHtBOWAQ8FNAIeC7gMuA6yvOsgKuApwJqUdbqATcBw4TXgP2E3YRtRy1hHHDhvl5CJ3/PJ649FjD27GnAKuArYDPhIOE74D1glPAZJe4gYS+h757DhLm1vER5Jz1HfneMo/mzgI+AifFars+MLV7VjwPeotQmbMWntcgvzYuvbeyu7+bONSeMDXuxldC0XnkhHHEOvYf66q6Nrelc/N59YX551PDMyvlOlntpvtpBOC3PyRPxTd0rfdpNMbFH0iY9+nZ1Y3TtrTiFIz+lQTtotmWtbfMv/V2nxlQuP9SjGe3Sc2/ffNptZK6mfdBc5VfD/Ev/F12fhTWwDu0k3aqtBdxG+b5zrAfc+16hXMGfvOrTXdUvjP/+/ABm3GxL"
+          data = "eJzNkWlSAlEMhL8ruECi4F1cUBBPIzAKpxkZVI4G4vbTrVyqi57SIzhVqcl7STrd/ZYBg4RVwEZAL2A74DXg3edFE94CtgI6rnUDPgLKhGbCVcJFwqmjk1AFvLivSBjm7/netc2AyrMPATsJ7YTjhOuEvYRMmCa0jDtJuEwYu+cmYWkuDd+Jz63/Q+No/jFgN2Hm85nrC2nzXtXvAkIajK1omcvA86VzYY98p76R54RxZM4nCX1zK4yjnaV1qK/rWmVOT/Im1tpX3i+Pep6RV8rPrUvztYbC2jTX8L65e8UvHDN71DcfvV3XGCN7q53CkZ8tawjjV/ZA+5/9rnNjKpcflWekpXDv2PukbepdffugudqvnvcLu+0+nYU1MQ9pEm/VDgI+Y/3/chwGfPteoVyx/yev+3RX9wvjv38/Xkl8Sg=="
         },
         {
           x = 40, y = 0, width = 20, height = 12,
-          data = "eJyNk11KwlEUxH9hauoOPGcLPZRpuprMrDYWWJn2GAa1h4LSvvYS0x1B6KH+cLlyPubMzLmOEqoJ84C7gGrAcxsqCScJy4CrgMuA3eDXN2lDLWDh3lFC3ZjTgG7CKmCYUEtoZokJ/6kN9YD7KPfCs88SbqL09RN2NjB7CV+alXAdcJ7QSHiP0tM3/mcUTYpNzUs1wlH8JWDPmEvHh+b3EbDvmccJbwGDhJn7RlG8eQ3oZIlJz5n7R+bZde7THray8FXtofOKHWSZJ36TKD7pnhl/6rthzdLU8vztLDrO3aOYeByZx8C5ueM9axpa13q3HfNQ3di/hXVgP7SD0yz1ygur43rVrHcmrYqrfmzODWuVbxXj1pwXZ2H07N1qo0berZyvG6dpvYpPNvYqXtojPls+jz6KPQRctAvOej/ag+aJ2887ifK+tF+9jb++od+ceuSnvBa2YtqffNCO5J24/gdP+qRdb+I2imb5Ks/W/wPNE9dvrApwQw=="
+          data = "eJyNk1tOAlEQRM8WNHG6FdyLBgWBtfihiOJqhBFhYyao+Pg0mGhMeYuExA+dZHKHflRXVV/qhOOE14D3gOOA7YBWwm1CJDwGPAScBr+eRQXtgJV764SOMZcBw4RMGCe0E3pZYsLfCugEfPhcefYs4TlK3yjhZAPzMmHf308B84Ruwp57RsZvWpNiS/PaM47iOwlnxgnHx+bXSDh3bJKwm3Cd8OK+Ooo3VcIgS0x6Zu6vzXPoXNMe9rPwVe2V84pdeJ74LaL4pFPzhL/02bVmaep7/pF1zN1TmceNeVw7J80z85pY6+7GbgfmobqpvyufDe/gzvXKC2vgetWsd9Z0XPVTc+5aq3xrGbftvDgL49Leaefrmh3/Vr5jnJ71pntr+yZe2uNBlPfQ75dfxT4D7quCs96P9qB54vZzT6LcL+1Xd+OvZ+w7px75Ka+FrZj2Jx+0I3knrv/Bkz5p1514i6JZvsqz9f9A88T1G5S/e/s="
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJytkllOAkEURW+i0A474L1NOCCyFj9EUViagNOv4iqMIwp7MSd1K8ZPjZ10uqv6vjt1zUNqhTTp6F+u/ZTWU3rsSI2570J6+iP/MKXPkM7Nex3f/G3zN7/gP0tpFtJmSpOQdlJqpbSWUt8aaB6F9Nwp/PfOMI+fmbiXIa1CegnpNYrXwyy8g5SuQjqw3wdjLqJ4WPnupnSSxdvSeOZ59lLacu7LKLiRvy+st5FS2953s/wDsD3vgyHbW0g3fmevcVa4GvOh2fXc0Npw0VHLedr2iY+V84LtW3saBUfH6MFRc97aLznqmi7wzXNq/pm7GjjXyD7gr5kXUXphFq2xOwT/4XmysY9ffIDFEzx4PrUHdGrPvMPHmQPPmn5qz5yVbfeJHvN79lyxnC100KcLuMiMZ3oiC3p4xN+713QJN76YqRrMccbQ4Rv/9jilLzUbaJg="
+          data = "eJytkktOAkEURe8WjMp7iK5GGwRXg/JdiwNBFJcm4G+qODEndTsSZxo7qXR93ru/qm1IVUirhv7lG6R0ltJeSB1jv4e0H3/DW6TUSuneuC/xjd82fucX+HcpbULqprQKqZ9SldJpSlNzwHkd0oHxP+xh+8MT4zilk5QOU2pY6yQL7iyl55BG1vsZpeYxigb6GMOU5lm0gTdyP/9xSj37fopSt/R503znKbWt/TLLHVA79n7L3iKl1yhz9jr22ve8ac6h+xbmBouMKvtpW+fS+ieunZp7HaWua77ejs+3KHrnO2uyQDf/tfE3zmpmX0vrGOx4bjoXeuF6cIbUH/k+8MY+etFBLZrAQfOtNcBT58wcPN4c9azJp86Zt3LhPOGj/8qa61reFjzwkwVYeEYzOeEFPjSiL81PlmCji56agz7eGDyccbc3KX0B+PNx2g=="
         },
         {
           x = 80, y = 0, width = 20, height = 12,
-          data = "eJzlkktKQ0EQRQ/EfIw7SN0tOFAUk7U4iF/cmhE/Q012EYImUdyLXKoEeQPNIDMfFFR3P07de7vhf30vAYvB9ngjwfMWmeeCG8F8AO2AbsAsYFrldSegF5vxHgLWAUPBieBM0FeufXYouCgPtxt4uBa8RdaR4LP6neI9BlwK7iI9/JXLseDJsyN1HCj37u2zdO4KesoZZk5/0Topju+l9YP9UbyVz6uulH66xfXbaObartnWMFZ6c4bul+XdGZjrWfZvntnO9rTB8/73HTsje/V/zs69db0G7JW298gsPN957zd4X/6/Ous="
+          data = "eJzlkstKQlEYhb9XENF/mfQ0XqtncZAk2bM00C7Sq6mkDs1Gsdh/IAfEBs46sGHf+NZlH/hf31dAPS7HexLsL8h8EXwIagG9gEHAd8Ahh9f9gOEf9TYBLcFU8CiYC25z7bOx4DUzLJvneQtBM8eD4Drn3eRtA94E6ygZzvUyEeysHcXHvcrep3OmzxvBMDVq2cMpr6vk+F06R+y2Ck/O6zsB7yp5Bsn1v1HttZfa9jBTyeYOPY/M7g7MtZbzm2e2u32u8Lz/+8buyFl9z915bl8NwV16u8ourO++RxXeD0ayQBM="
         },
         {
           x = 40, y = 12, width = 20, height = 12,
-          data = "eJxjYMAPlkkxMDBIMzDsl2Zg2CvNwMAIxSD+PiiG8ZmkCRg2CkbBKGCgJgAAprMGZQ=="
+          data = "eJxjYMAPnokxMDiIMzD8F2dg+CvOwOAIxSD+PyiG8Z3ECRg2CkbBKGCgJgAAm5kJNQ=="
         },
         {
           x = 60, y = 12, width = 20, height = 12,
-          data = "eJxjkmZgYIDifdIMDEzSDAyMUAzi74fKMULZMHkmqDxML0z9KBgFo4CBbgAAygEGoA=="
+          data = "eJxzEmdgcIDif+IMDE7iDAyOUAzi/4fKOULZMHknqDxML0z9KBgFo4CBbgAArTALUA=="
         },
         {
           x = 80, y = 12, width = 20, height = 12,
-          data = "eJxjkmZg2CfNwMAozcDABMX7pRkY9kLFQDQDVM0+qDwjkrprUgyjYBSMAoaBAQBxggfg"
+          data = "eJxzEmdg+CfOwOAozsDgBMX/xRkY/kLFQLQDVM0/qLwjkjoxcYZRMApGAcPAAABnagrd"
         }
       }
     },
@@ -539,27 +533,27 @@ return {
       chunks = {
         {
           x = 40, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMAwgCJZgYAiRYGDgE2dg8JUgTS8ATokBYg=="
+          data = "eJxjYBgFo2AUMAwgmCzCwDBFhIHBT5iBoVeENL0AgTkCUg=="
         },
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJztkDEOQWEQhL9eeEIx6yw84QA6l+AJB1BxGxW3UXEW2ez+8RqhUL5pZjIzm/nzw2ecDIaClYWuBAOFVyX30ytZwdpgJBi3OleDueBooWvBTOHVydP0Sua7fn82WAiWrc7DYCe4WOhGsFV4TfImvZL5rt/fDPaCQ6vTm8Tb7/bW3+C7fv80/oJfdzt08B94AVp3G5w="
+          data = "eJztkLENwkAUQ98O/icqWAhBEIwDQTAAHUtAEAxABdtQwQjo69+JNCgZIG5s2f7y6eA/HgYLwcFCV4K5wqsyz7JXsoKjwVKwanXeBlvB3ULXgo3CqzOvs1cy3/X7p8FOsG91xgkugpeFbgRnhddkPmWvZL7r9x+Dq+DW6kxTvH2UfroLvuv3k579LvTdHTDAf+ALCrQl3Q=="
         },
         {
           x = 20, y = 0, width = 20, height = 12,
-          data = "eJzti7sNg1AUQ0+Vjk/nm1kSmIIl+IyQinGoMk6qzIKe3rvSFUyAhBvbx3ItaAWNoBJ8DAbLObG67Kk7awv3rQn+FvSCTvASbAar5dyFPXVnfeHx6z4JFsEsGAU/g6/lPIc9dWdL4fHrftTjCX8781u3uIB2Tw0WzQ=="
+          data = "eJzti8sJw0AQQ18PmoWcUk5u/vST2FW4CX9K8Mnl+JQSwrI7MCQVBKyLpCfUCnpBJ2gEu8FkJWfW1j13Z33lvnXBX4JRMAiegtPgsJKHsOfubKw8ft0XwSZYBbPgluBtJa9hz93ZVnn8un/rkeCefvmlS/yBPhX1I1c="
         },
         {
           x = 40, y = 0, width = 20, height = 12,
-          data = "eJztzsEJwkAUhOH/5EWM3t6klqgdpJCoHcSLdqOX2I1eYi2yMGFjLMBLBoaB5X2wRcAmYOWtBRfBVbANaAVn8ZN0U9gNrW32AZU3+U7wEBwCboK7sll7O9tq1NbmFNB4k+8Fb//pKXgpm523t21GTXaa5Jfl99uizObond4Mds4c/pgPKoIdvQ=="
+          data = "eJztzrENwkAQRNHfw+4JEiiHBGHox0AHLgRDByaBbiAxJVgr5nSWKYDEI60mmXe6yuBgsFM3Dg+Hp8PRoHO4Oz+JTSWXr5E5G9Tq8L3Dx6E1eDm8vZi9upetR9fJ3Awu6vCrBOv0/cciwTIVc1LHppXLF3aa8Fu9lbNJxVzV0022c+bwxwzL7CXE"
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJztkrENQjEQQ19Fg4Dy/GcBRqBjCT4jQAPbQAPbQAOzoFMSEqWguhJL1lm+kxVZgVjMDY6Ky1sZXBWXORo8FZs5GWrmRnASzCxxkWfru96q7ryzct9nHgQ3wdIS13m2vuuz6s47K/f9Oy+Cl2Bnifs8W9/1XXXnnZX7Hg/BdPjtu34H/ok/+OIDNdshgg=="
+          data = "eJztkMEJQjEQRF8PO0EvWo4XUQtSS/BmE19L0It2oxctQZYkJAT5F3N0YNhhdhiWhb5YG1zVr29n8FS/zpPBNPTtXITSeRDcBCuL3KRZ+66PKjv/Wc63nRfBS7C1yH2ate/6rrLzn+V8e+dDMAswWOQ5zdp3/VbZ+c9yvsUkwDKM+67nXzJ/8DM+7Hkotw=="
         },
         {
           x = 80, y = 0, width = 20, height = 12,
-          data = "eJxjYBhZoFGCgYFXHIL5kDAyv0aCePPWSzAwWItDsA0SRuavgtrpS4S5dyUYGDLFITgLCSPzb0DtrJYg7FZuScJ2sklCzF8pAXErKf7HB65LQNz6RZyBagDkVmq6kYGBNm6kpnmCogwMbqLY5QB1Exk8"
+          data = "eJxjYBhZ4KAIA4OvMAT7IWFk/h4R4s17L8LAUC0MwTVIGJn/CmpnLxHmyooyMKwUhuBVSBiZLyEKMX+3CGG3eosSttMNaudLEYhbSfE/PiAuCnGrCZXMg7mVmm5kYKCNG6lpXqAgA0ObIHY5AJnpHbA="
         }
       }
     },
@@ -586,51 +580,51 @@ return {
       chunks = {
         {
           x = -20, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMAwxsFyKgYFVmoEBAAoTAOI="
+          data = "eJxjYBgFo2AUMAwx8FyMgcFVnIEBAAzrAVo="
         },
         {
           x = 0, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMNAJsEozMLBLQ2gQZoNimBiIvROKQWIweRAfRO+AskE0iA8A0hwGxA=="
+          data = "eJxjYBgFo2AUMNAJuIozMLiLQ2gQdoNimBiI/ROKQWIweRAfRP+AskE0iA8Al1sLdA=="
         },
         {
           x = 20, y = -12, width = 20, height = 12,
-          data = "eJztisEJwDAQw/Ro2h3q/XdIM0YmKoK8MkBeJziwfYKiKDjAFfgCd6AFnnVuI9C3Tc+s60/H7G6fL/xpeQkY"
+          data = "eJztirENwCAQxDwDzS0EYf9tEipkiSoDUL2ll+7uDUVRcIEe+AJPYATmObcVeH+bnlnXn47Z3d4CGz5vDQU="
         },
         {
           x = 40, y = -12, width = 20, height = 12,
-          data = "eJztkMEJgEAMBAdBxRayKcSOLEwf2oHahQ/7kXD38CNYQAaWJPsZCCRJwge7oFOZh6Cv+1n7mK1gtX8/nLxkdBgcNsFs0AgQLAa34LLiCV94wxN539E/LfoSIQ=="
+          data = "eJztkMEJgEAMBKcFH2ZTjggqdmRHFuY9tAP1JeHu4UewgBtYkuxnIFCpVPjgFIzK8xJMZb9LH3MQ7Pbvh6vnLA6zwyHYDHpBJ0gGrUNTPOELb3gi7zv6Bwi2F2c="
         },
         {
           x = 60, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMBAALNIMDOzSDAys0gwMO6H0Dii9Qor48IPpvSTFwJAtycDQJsXAcFoSwm6VYmDIkWRg2E6CmQBA4Qov"
+          data = "eJxjYBgFo2AUMBAALuIMDO7iDAyu4gwMP6H0Dyj9Qoz48IPpFRJnYFgtysBwTIyBgVsMwj4qxsCwRpSB4TsJZgIAWy4MpQ=="
         },
         {
           x = -20, y = 0, width = 20, height = 12,
-          data = "eJxjYKAcXJFiYLgkxcCwQpoKhjEwMMRLMzCkyzAwcMlQx7yrUgwMe6UZGJip5D4Y2ENl80bBKGAgEQAAMEMGfQ=="
+          data = "eJxjYKAciIgzMAiJMzC8EKeCYQwMDPPFGRiWSzAweElQxzxRcQaGv+IMDM5Uch8M/KGyeaNgFDCQCACpWwXY"
         },
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJztjsEJgDAQBCeCPuwguetCLEgb0h7EMqJWYTvKYUC/gg8fGVg4drllOw+9h1qhVGgVKoVG4QiAgBOIct2LQCG375IXkwYPo4cpwPrITZv9vcQ2WMdsWz5g/6gnk+EHnHnsEIk="
+          data = "eJztzsEJgDAMheF/iTTZplbQg+uIA+lCuoM4RlUKOfQqeBI/eBBeIGQWWAQGg85gMugNRoOo0CgkhezzqdBWffIue1aBTWAPcFX7EozHot84Aq8I5Y/fj2+4AbIjFA0="
         },
         {
           x = 20, y = 0, width = 20, height = 12,
-          data = "eJztisEJADAMAi9dw/3HSLNaKNhPB+grByJ4lgDBFpT7JAUhWPY8W/pfdnF/wzDwiwaskgmR"
+          data = "eJztisEJADAMAm8L10m6/0ppSsFXB+grByJ4tiAEW9DumxKkYNnHs5X/bZfuYRj4xgGPwQ5B"
         },
         {
           x = 40, y = 0, width = 20, height = 12,
-          data = "eJztzcsJgEAMhOF/d7tI0oRYso+bHShWofXIYlw8eLCAfBAG5pBJCpvCroDnKTSzwCjQGSwKvUExGASS3pc9S/3xw+qb2bPuTq/Nx/HRhRBoLmUxDG4="
+          data = "eJztjcsJgDAQRF8T7qQck1Qkluznlg4URVxEEMS7eTC8y+5MFKyCTdC6TVzMBqNBF6AI+gA5wGAQdSa58+3vjcU3k/vYnex513zsq1T4KTsahRBM"
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJztkE8KgVEUxX8UwgrevXcXhN2YmcgOFDKxBpmRkYwlfzZgYkDERkykr+/qSxkw5tTtdN+r837vXBTqBs0AA4FRgGGAe4C2wS1A3qCifCaFiUBHoCfQlyR759kz/SIPOEicmXXOVkg4rwo1g71ARiGnsFBYKmTdF34e7U9NJeHsOmfJ4KxQtJixavGbZYO5QsHgonDS+L5hr5wr//tYIK2w1Vdf+2zdo65SPtG+edNJxHmUz7v6i5/SA0n/Lfw="
+          data = "eJztkDGKAlEQRF+usIj87ha9iImoC4rnEb2OmYl4A0FFUK+wy2YrRh5AxF3lMz3MCBOYa8HnV1VQXd11g4nBLMBe4CfAd4CWwMKgKTAwGCtPoa1wEFgKrAU2kmWXJck+KVQU+go9hUuOVwvmBM/sec95yHo23NsJlATGrreu45xzLj/FUbKeK+85NKgZfIXEi/kj1x+u6wZmyQ5Te+x59Z6/Al2Fm2Z/6kf+qQmPt+r4+1P4L9g99pQCP85K/Tx/g5fCHfIsOfk="
         },
         {
           x = 80, y = 0, width = 20, height = 12,
-          data = "eJy9kUtqQkEQRY+IGl1C39qCA0kQXEsG+fAgq9GBa9CYQYhDDZpkEflN3Iuh6H748DMI7+GFprqqqdO3q+F8mgV4FTQFF4q1rxDzz3C8Z6m48j6PjRRXgiuDZ8EinXutbzFvCZ72uFvPBe+CN0FN8KFdzfeTAHcGL4IfwcbZBt+C6+Q71/SE76IeQ7yrLri0yHN2Zoe8/2idvD4Y3AvaBlkJXs50n53E7JbkuW4E8/T2cQU8n6d7HJScX1GjNL+qeEPBr/9xRbxbQc8O/+MPqT4r/Q=="
+          data = "eJy9kU1OAkEQhb87qP1qwV3EEAfwLiyIxsSzsAANCaeBhWfwhwWBpRh/U+maBMfZmJn4kk51Vae/fl0F/6fnBK+CQjBQrh1HfhR5VXvlVd7zeB7xTXBlsBG8xLnXri3nfcE6/eSdCrqCT8GH4EzwdVDz/UOCW4OtIBl0DAqDE4NJxedjhV+np5Tf6gkug+fseQ3vL3oPrwuDO8HQYN6AVzLd50UwRw15rqlgF3+/b4Hn/XSPNw37d6hV9K8t3lKgFuZRaiYY2+95fAOp4TZN"
         },
         {
           x = 80, y = 12, width = 20, height = 12,
-          data = "eJxjYCAdsEgzMFySYmBYLMXAcE2KgWKwTIqBgVGageGANOVmjYJRwDCCAAAYTARw"
+          data = "eJxjYCAduIgzMAiJMzA8FmNgEBNnoBg8E2NgcASZI0G5WaNgFDCMIAAAd1YDFw=="
         }
       }
     },
@@ -657,43 +651,43 @@ return {
       chunks = {
         {
           x = -20, y = -12, width = 20, height = 12,
-          data = "eJxjYBgFo2AUMNABbBSkvpkAQ1cAww=="
+          data = "eJxjYBgFo2AUMNABfOSlvpkAVwsA/w=="
         },
         {
           x = 0, y = -12, width = 20, height = 12,
-          data = "eJzt0DkRgEAQAMG2sFfr3ws44AiAjE8IDigCwm0BEwylFB8NwRj//NqDIziDK7hfulPSkzlZGmtjazxU3QvV"
+          data = "eJzt0KkRgAAMAMGFApIJCMDx9V8jHTAIZLaAE0drzUdDMMY/v/bgCM7gCu6XbhVTMRdLsiZb8gBYEgHu"
         },
         {
           x = 20, y = -12, width = 20, height = 12,
-          data = "eJztybkNgEAQBMGKYbT558RzvMngIBECzpbZTWvNz/biKM5iDSNs+f4U5rC87Sru4gE/mwoD"
+          data = "eJztybkNgEAQBMHKYDUc30H+eeIgEQLOltlNa83PjnCGGdZiK/b6foqlGG+7wh0eNpkBog=="
         },
         {
           x = 40, y = -12, width = 20, height = 12,
-          data = "eJztyjERwCAQALBY+D9s0OJfBzAhpgpYO33mUErxk9OYyUp23l8PnuANRtzfBzLJBKQ="
+          data = "eJxjYBgFo2AUMNAJyAgyMIjwMzCI8jMwiPHjVpfLy8CQx8vAkM/LwFDAi1sdAHE+Aog="
         },
         {
           x = -20, y = 0, width = 20, height = 12,
-          data = "eJxjYBi8wFOQuuZlUtm8UTAKGAYYAAB3bADV"
+          data = "eJxjYBi8oJOXuuatpLJ5o2AUMAwwAADdowFN"
         },
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJztzrsRgWEQQNHj0cDurNwrQiWoBD3TAgJEzG8EZAr4TgF37iJYBqtA0kv6ySAZprdjcSo/zsWluBa35J48knWwCbbBOJkk02SWzD+9Z9ca+csu2AeH7q9pGt9e9sEN5A=="
+          data = "eJztzMsNQVEUQNHVwDk3twJawAAj76EQvxEqQSUoUiImJBJzb4139j44BMegSdpkniySZXrqVfrVm0FlWBlVxoVJYVo4BefgEqySdbJJtsnu9ZtVmo/fN9fgFtzjt77T8UceO3cLuQ=="
         },
         {
           x = 20, y = 0, width = 20, height = 12,
-          data = "eJztzLsNhFAUQ8Gpwbr9dwY98F8gIUFCbE72JjyyzFsX+rAVv2Iv5rCENc9uCGOY7nYUZ/2dNU3jSxdxGQ1C"
+          data = "eJztzLsNhFAUQ8HpwLoFQA/8F+i/LxIkxOZkb8Ijy7x1oQ9b8Sv2Yg5LWPPshjCG6W5HcdbfWdM0vnQB/YwDWw=="
         },
         {
           x = 40, y = 0, width = 20, height = 12,
-          data = "eJztzrkNgEAQQ9Hfgg1tcTTCUSw5Rw1AhATagAAWOtgXemRrjhxWw2bYDaNhMpFCUAoqQa3nbTYshuGjd4Ysi/NG0Ao6Qf/au4W/kiTh1wUBOg58"
+          data = "eJztzssNQFAUhOG/gclEYu9RA1YSGrxoxKNEsbDA1cH9lnMyk9Nn0BhaQ2coDKX5CIJJMAsWPW+VoTbkkd5gGCP5KtgEu+B47d2uv5Ik4dcJVuYINw=="
         },
         {
           x = 60, y = 0, width = 20, height = 12,
-          data = "eJztjrcNgEAQBKeFPfqASjCNYCqDajAZNIHJQGQfoBdCRIiJNrid29agM15jNlhe9PkIBZHu3fYGg2dXLEgEqSBznLXTaZy8GmwXvtFgMsgFhaAUVDc3XrGfP4Ln/R8+zQFvGBBI"
+          data = "eJzt0TlOQgEYReFvAzd/hYWSwCa0UBJZDEini3CqBPYgQ8WwB6dt2bySvEYq4qlPTnJzO8VZORqXxdUfeqMwDndhknb3Pjy0OI/hKTyHl/Da4r6FaZiFeeOdFxdFt9nzHhZhGVZhfaDXK/rFJmzDLuwb77q4KQZN7yN8hq/wHX4O9G6L4RH/+cdJ8QupSRW0"
         },
         {
           x = 80, y = 0, width = 20, height = 12,
-          data = "eJzt0jsKwmAQReFvDdf9L0qtTHyBbsCk0jwUEdEihchfWHi6GS6nmDv8NqtQhTqs89rvwv5t/pRzuIQu9GEIY7jeXbNHZhO2X7j/TDMPi7AsdNNTaEJbsKPSnR/CsZBv6v+f3ADfQhsz"
+          data = "eJzlkrsJgEAUBKeBY3n+Mr8dqLFouZZiWQYGHiIqeJFOtrBMsCz8i9lBbdDYlgdBLii0d0pB5eUrFnffGQXTQ98XMUEkiANt0Ao6QR9w0+MH3uJ/7C2JQWqQnfhWGwMF5Q=="
         },
         {
           x = 0, y = 12, width = 20, height = 12,
@@ -705,7 +699,7 @@ return {
         },
         {
           x = 80, y = 12, width = 20, height = 12,
-          data = "eJxjYCAd/BJiYPgtxMDwR4gMzaNgFIwCBmoBACXfAyg="
+          data = "eJxjYCAdmAgyMJgKMjCYCZKheRSMglHAQC0AAOkzANM="
         },
         {
           x = 0, y = 24, width = 20, height = 12,
@@ -3965,50 +3959,6 @@ return {
           properties = {},
           objects = {
             {
-              id = 657,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2440,
-              y = 88,
-              width = 128,
-              height = 128,
-              rotation = 0,
-              opacity = 1,
-              gid = 3103,
-              visible = true,
-              properties = {
-                ["defaultattack"] = "bow-shot-until-empty",
-                ["entrypoint"] = { id = 658 },
-                ["exitpoint"] = { id = 659 },
-                ["initialai"] = "enterAndAttackUntilEmpty",
-                ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 48
-              }
-            },
-            {
-              id = 673,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2488,
-              y = 88,
-              width = 128,
-              height = 128,
-              rotation = 0,
-              opacity = 1,
-              gid = 3103,
-              visible = true,
-              properties = {
-                ["defaultattack"] = "bow-shot-until-empty",
-                ["entrypoint"] = { id = 674 },
-                ["exitpoint"] = { id = 672 },
-                ["initialai"] = "enterAndAttackUntilEmpty",
-                ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 48
-              }
-            },
-            {
               id = 662,
               name = "",
               type = "",
@@ -4097,38 +4047,6 @@ return {
               }
             },
             {
-              id = 658,
-              name = "entrypoint",
-              type = "",
-              shape = "point",
-              x = 2440,
-              y = 152,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              properties = {
-                ["z"] = 48
-              }
-            },
-            {
-              id = 674,
-              name = "entrypoint",
-              type = "",
-              shape = "point",
-              x = 2488,
-              y = 152,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              properties = {
-                ["z"] = 48
-              }
-            },
-            {
               id = 661,
               name = "entrypoint",
               type = "",
@@ -4193,43 +4111,11 @@ return {
               }
             },
             {
-              id = 659,
-              name = "exitpoint",
-              type = "",
-              shape = "point",
-              x = 2472,
-              y = 56,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              properties = {
-                ["z"] = 48
-              }
-            },
-            {
-              id = 672,
-              name = "exitpoint",
-              type = "",
-              shape = "point",
-              x = 2520,
-              y = 56,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              properties = {
-                ["z"] = 48
-              }
-            },
-            {
               id = 660,
               name = "exitpoint",
               type = "",
               shape = "point",
-              x = 2424,
+              x = 2392,
               y = 56,
               width = 0,
               height = 0,
@@ -4245,7 +4131,7 @@ return {
               name = "exitpoint",
               type = "",
               shape = "point",
-              x = 2376,
+              x = 2344,
               y = 56,
               width = 0,
               height = 0,
@@ -4261,7 +4147,7 @@ return {
               name = "exitpoint",
               type = "",
               shape = "point",
-              x = 2328,
+              x = 2296,
               y = 56,
               width = 0,
               height = 0,
@@ -4277,7 +4163,7 @@ return {
               name = "exitpoint",
               type = "",
               shape = "point",
-              x = 2280,
+              x = 2248,
               y = 56,
               width = 0,
               height = 0,
@@ -6988,7 +6874,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7463,
+              gid = 6503,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 32,
@@ -7006,7 +6892,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7463,
+              gid = 6503,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 32,
@@ -7024,7 +6910,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7463,
+              gid = 6503,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 180,
@@ -7042,7 +6928,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7463,
+              gid = 6503,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7061,7 +6947,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7463,
+              gid = 6503,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7080,7 +6966,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7463,
+              gid = 6503,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7099,7 +6985,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7463,
+              gid = 6503,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7118,7 +7004,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7463,
+              gid = 6503,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7137,7 +7023,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7466,
+              gid = 6506,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7156,7 +7042,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7466,
+              gid = 6506,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7175,7 +7061,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7466,
+              gid = 6506,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7194,7 +7080,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7466,
+              gid = 6506,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7213,7 +7099,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7466,
+              gid = 6506,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7232,7 +7118,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7467,
+              gid = 6507,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 36,
@@ -7250,7 +7136,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7467,
+              gid = 6507,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7269,7 +7155,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7467,
+              gid = 6507,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7288,7 +7174,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7467,
+              gid = 6507,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7307,7 +7193,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7467,
+              gid = 6507,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7326,7 +7212,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7467,
+              gid = 6507,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7345,7 +7231,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7470,
+              gid = 6510,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 39,
@@ -7363,7 +7249,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7470,
+              gid = 6510,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7382,7 +7268,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7470,
+              gid = 6510,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7401,7 +7287,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7470,
+              gid = 6510,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7420,7 +7306,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7470,
+              gid = 6510,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7439,7 +7325,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7470,
+              gid = 6510,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7458,7 +7344,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7471,
+              gid = 6511,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 40,
@@ -7476,7 +7362,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7471,
+              gid = 6511,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7495,7 +7381,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7471,
+              gid = 6511,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7514,7 +7400,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7471,
+              gid = 6511,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7533,7 +7419,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7471,
+              gid = 6511,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7552,7 +7438,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7471,
+              gid = 6511,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7571,7 +7457,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7491,
+              gid = 6531,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 60,
@@ -7589,7 +7475,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7491,
+              gid = 6531,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7608,7 +7494,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7491,
+              gid = 6531,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7627,7 +7513,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7491,
+              gid = 6531,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7646,7 +7532,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7491,
+              gid = 6531,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7665,7 +7551,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7491,
+              gid = 6531,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7684,7 +7570,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7491,
+              gid = 6531,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7703,7 +7589,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7491,
+              gid = 6531,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7722,7 +7608,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7479,
+              gid = 6519,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 48,
@@ -7740,7 +7626,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7479,
+              gid = 6519,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7759,7 +7645,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7479,
+              gid = 6519,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7778,7 +7664,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7479,
+              gid = 6519,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7797,7 +7683,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7479,
+              gid = 6519,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7816,7 +7702,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7479,
+              gid = 6519,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7835,7 +7721,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7486,
+              gid = 6526,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 55,
@@ -7853,7 +7739,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7486,
+              gid = 6526,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7872,7 +7758,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7486,
+              gid = 6526,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
