@@ -40,7 +40,7 @@ function GameGuiActions.restartStageCheckpoint()
 end
 
 function GameGuiActions.restartStage(gui, element)
-    love.event.loadphase("Dragontail.GamePhase", false, element.checkpoint or false)
+    love.event.loadphase("Dragontail.GamePhase", "data/stage_banditcave.lua", element.checkpoint or false)
 end
 
 function GameGuiActions.startTraining(gui, element)
