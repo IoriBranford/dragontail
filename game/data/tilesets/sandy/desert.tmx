@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="32" tileheight="32" infinite="1" nextlayerid="5" nextobjectid="1">
+ <tileset firstgid="1" source=":/automap-tiles.tsx"/>
+ <tileset firstgid="6" source="desert.tsx"/>
+ <layer id="1" name="input_desert_wall" width="30" height="15">
+  <data encoding="base64" compression="zlib">
+   <chunk x="0" y="-16" width="16" height="16">
+   eJxjYBgFo2AUMAwQiGOC0PFQOgFKJ0JpWgMAtIgBhw==
+  </chunk>
+   <chunk x="0" y="0" width="16" height="16">
+   eJxjYmIAA2YozQKlWaF0ITMDCnBC4xMD0PWgmzmQ4C2Ufgel30PpDwPknlEwChjoCAC52AVD
+  </chunk>
+   <chunk x="16" y="0" width="16" height="16">
+   eJxjYKAMlDGj8j3R+KNgFIwChkELAOIYAMY=
+  </chunk>
+  </data>
+ </layer>
+ <layer id="2" name="output_desert_wall" width="30" height="15">
+  <data encoding="base64" compression="zlib">
+   <chunk x="0" y="-16" width="16" height="16">
+   eJxjYBgFo2DkAiYmCM0MpVmgNCuUBgEnZlQ9hUh8A6g6QyhtBKWNkfQXoOmfj8YnBOahqT9Lon58AABXgAQk
+  </chunk>
+   <chunk x="16" y="-16" width="16" height="16">
+   eJxjYBgFo2DkgjJmVL4nGp8QWIKmvpxE/ZfQ1C8lUT+lAABJbANk
+  </chunk>
+   <chunk x="0" y="0" width="16" height="16">
+   eJxjYKAMGDBBaEMobQSljaE0IRAHVRcPpROgdCKS/gJmVD3z0fiEwDw09WdJ1H8GTf1vJL40I4SWgdKyUFoOSo+CUcAwiAEAnkgHHg==
+  </chunk>
+   <chunk x="16" y="0" width="16" height="16">
+   eJxjYBhYsIQZlV+OxicELqGpX0qifgYWVO5lUvWPglHAMHQBADzSA3k=
+  </chunk>
+  </data>
+ </layer>
+</map>
