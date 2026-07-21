@@ -2281,24 +2281,6 @@ return {
           },
           objects = {
             {
-              id = 32,
-              name = "",
-              type = "bandit-spear",
-              shape = "rectangle",
-              x = 1360,
-              y = -8,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              opacity = 1,
-              gid = 7232,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv",
-                ["z"] = 64
-              }
-            },
-            {
               id = 261,
               name = "",
               type = "bandit-spear",
@@ -2341,23 +2323,6 @@ return {
               shape = "rectangle",
               x = 672,
               y = 176,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              opacity = 1,
-              gid = 7232,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 700,
-              name = "",
-              type = "bandit-spear",
-              shape = "rectangle",
-              x = 1688,
-              y = 160,
               width = 64,
               height = 64,
               rotation = 0,
@@ -2427,23 +2392,6 @@ return {
               shape = "rectangle",
               x = 672,
               y = 176,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              opacity = 1,
-              gid = 7232,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 959,
-              name = "",
-              type = "bandit-spear",
-              shape = "rectangle",
-              x = 1688,
-              y = 160,
               width = 64,
               height = 64,
               rotation = 0,

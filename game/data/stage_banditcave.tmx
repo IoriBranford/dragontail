@@ -519,11 +519,6 @@ body to grapple</text>
    <properties>
     <property name="donewhenenemiesleft" type="int" value="3"/>
    </properties>
-   <object id="32" template="mapobjects/bandit/spear.tx" x="1360" y="-8">
-    <properties>
-     <property name="z" type="float" value="64"/>
-    </properties>
-   </object>
    <object id="261" template="mapobjects/bandit/spear.tx" x="1040" y="-8">
     <properties>
      <property name="z" type="float" value="64"/>
@@ -535,7 +530,6 @@ body to grapple</text>
     </properties>
    </object>
    <object id="699" template="mapobjects/bandit/spear.tx" x="672" y="176"/>
-   <object id="700" template="mapobjects/bandit/spear.tx" x="1688" y="160"/>
   </objectgroup>
   <objectgroup id="90" name="learnsprint3" class="Room">
    <object id="956" template="mapobjects/bandit/spear.tx" x="1464" y="272">
@@ -549,7 +543,6 @@ body to grapple</text>
     </properties>
    </object>
    <object id="958" template="mapobjects/bandit/spear.tx" x="672" y="176"/>
-   <object id="959" template="mapobjects/bandit/spear.tx" x="1688" y="160"/>
   </objectgroup>
   <objectgroup draworder="index" id="9" name="learnitems" class="Room">
    <properties>
