@@ -69,7 +69,7 @@
   <properties>
    <property name="script" value="Dragontail.Movie.End"/>
    <property name="swipesound" type="file" value="sounds/combat/heavyswingandhit.ogg"/>
-   <property name="voice" type="file" value="sounds/player/victory2.mp3"/>
+   <property name="voice" type="file" value="sounds/player/victory2.ogg"/>
   </properties>
   <imagelayer id="18" name="bg" tintcolor="#ffffff">
    <image source="sprites/ui/title/illust/bg.png" width="480" height="270"/>

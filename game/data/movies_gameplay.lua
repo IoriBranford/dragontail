@@ -31,7 +31,7 @@ return {
       properties = {
         ["script"] = "Dragontail.Movie.RoseUppercut",
         ["swipesound"] = "sounds/combat/heavyswingandhit.ogg",
-        ["voice"] = "sounds/player/victory2.mp3"
+        ["voice"] = "sounds/player/victory2.ogg"
       },
       layers = {
         {

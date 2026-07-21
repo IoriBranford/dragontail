@@ -10,7 +10,7 @@
   <properties>
    <property name="script" value="Dragontail.Movie.RoseUppercut"/>
    <property name="swipesound" type="file" value="sounds/combat/heavyswingandhit.ogg"/>
-   <property name="voice" type="file" value="sounds/player/victory2.mp3"/>
+   <property name="voice" type="file" value="sounds/player/victory2.ogg"/>
   </properties>
   <group id="6" name="Rose">
    <imagelayer id="3" name="Rose" tintcolor="#ffffff">

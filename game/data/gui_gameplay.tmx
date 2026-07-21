@@ -401,14 +401,14 @@ to clear lost enemies</text>
   <object id="89" template="gui/menu/settings/Button.tx" name="Refill player" type="Gui.Button" x="128" y="36" width="224" height="18">
    <properties>
     <property name="action" value="refillPlayers"/>
-    <property name="presssound" type="file" value="sounds/combat/heal.mp3"/>
+    <property name="presssound" type="file" value="sounds/combat/heal.ogg"/>
    </properties>
    <text fontfamily="Unifont" wrap="1" color="#ffffff">Refill player</text>
   </object>
   <object id="171" template="gui/menu/settings/Button.tx" name="Clear enemies" type="Gui.Button" x="128" y="54" width="224" height="18">
    <properties>
     <property name="action" value="clearEnemies"/>
-    <property name="presssound" type="file" value="sounds/combat/cut2.mp3"/>
+    <property name="presssound" type="file" value="sounds/combat/cut2.ogg"/>
    </properties>
    <text fontfamily="Unifont" wrap="1" color="#ffffff">Clear enemies</text>
   </object>

@@ -815,7 +815,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/hit1.mp3</text:p>
+      <text:p>data/sounds/combat/hit1.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -894,7 +894,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/hit3.mp3</text:p>
+      <text:p>data/sounds/combat/hit3.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>spark-hit</text:p>
@@ -972,7 +972,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/hit3.mp3</text:p>
+      <text:p>data/sounds/combat/hit3.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>spark-hit</text:p>
@@ -1047,7 +1047,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/hit1.mp3</text:p>
+      <text:p>data/sounds/combat/hit1.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -1126,7 +1126,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/hit3.mp3</text:p>
+      <text:p>data/sounds/combat/hit3.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>spark-hit</text:p>
@@ -1204,7 +1204,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/hit3.mp3</text:p>
+      <text:p>data/sounds/combat/hit3.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>spark-hit</text:p>
@@ -1285,7 +1285,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/hit3.mp3</text:p>
+      <text:p>data/sounds/combat/hit3.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>spark-hit</text:p>
@@ -1366,7 +1366,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="2" office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/hit3.mp3</text:p>
+      <text:p>data/sounds/combat/hit3.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>spark-hit</text:p>
@@ -1426,7 +1426,7 @@
       <text:p>knockedBack</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/swing3.mp3</text:p>
+      <text:p>data/sounds/combat/swing3.ogg</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -1493,7 +1493,7 @@
       <text:p>knockedBack</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/ignite.mp3</text:p>
+      <text:p>data/sounds/combat/ignite.ogg</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -1567,7 +1567,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/hit2.mp3</text:p>
+      <text:p>data/sounds/combat/hit2.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -1639,7 +1639,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/hit3.mp3</text:p>
+      <text:p>data/sounds/combat/hit3.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -1711,7 +1711,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/hit3.mp3</text:p>
+      <text:p>data/sounds/combat/hit3.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -1788,7 +1788,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/hit1.mp3</text:p>
+      <text:p>data/sounds/combat/hit1.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -1853,7 +1853,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/hit2.mp3</text:p>
+      <text:p>data/sounds/combat/hit2.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -1916,7 +1916,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/hit2.mp3</text:p>
+      <text:p>data/sounds/combat/hit2.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -2471,7 +2471,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/hit2.mp3</text:p>
+      <text:p>data/sounds/combat/hit2.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -2632,7 +2632,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/swing1.mp3</text:p>
+      <text:p>data/sounds/combat/swing1.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -2681,7 +2681,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/swing2.mp3</text:p>
+      <text:p>data/sounds/combat/swing2.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -2730,7 +2730,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/swing2.mp3</text:p>
+      <text:p>data/sounds/combat/swing2.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -2782,7 +2782,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/swing1.mp3</text:p>
+      <text:p>data/sounds/combat/swing1.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -2831,7 +2831,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/swing2.mp3</text:p>
+      <text:p>data/sounds/combat/swing2.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -2880,7 +2880,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/swing2.mp3</text:p>
+      <text:p>data/sounds/combat/swing2.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -2929,7 +2929,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/swing3.mp3</text:p>
+      <text:p>data/sounds/combat/swing3.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -2978,7 +2978,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/swing3.mp3</text:p>
+      <text:p>data/sounds/combat/swing3.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="3" calcext:value-type="float">
@@ -3078,7 +3078,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/swing1.mp3</text:p>
+      <text:p>data/sounds/combat/swing1.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -3127,7 +3127,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/swing1.mp3</text:p>
+      <text:p>data/sounds/combat/swing1.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -3179,7 +3179,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/attack2.mp3</text:p>
+      <text:p>data/sounds/player/attack2.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -3335,7 +3335,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/bodyslam.mp3</text:p>
+      <text:p>data/sounds/combat/bodyslam.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
@@ -6500,7 +6500,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/dash.mp3</text:p>
+      <text:p>data/sounds/combat/dash.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
@@ -6924,7 +6924,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/swing3.mp3</text:p>
+      <text:p>data/sounds/combat/swing3.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -6973,7 +6973,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/swing3.mp3</text:p>
+      <text:p>data/sounds/combat/swing3.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -7025,7 +7025,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/swing3.mp3</text:p>
+      <text:p>data/sounds/combat/swing3.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -7082,7 +7082,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/swing3.mp3</text:p>
+      <text:p>data/sounds/combat/swing3.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -7139,7 +7139,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/swing2.mp3</text:p>
+      <text:p>data/sounds/combat/swing2.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -7191,7 +7191,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/swing2.mp3</text:p>
+      <text:p>data/sounds/combat/swing2.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -7240,10 +7240,10 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/firestorm.mp3</text:p>
+      <text:p>data/sounds/combat/firestorm.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/attacksuper.mp3</text:p>
+      <text:p>data/sounds/player/attacksuper.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="3" calcext:value-type="float">
       <text:p>3</text:p>
@@ -7350,7 +7350,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/dash.mp3</text:p>
+      <text:p>data/sounds/combat/dash.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
@@ -7403,7 +7403,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/slide.mp3</text:p>
+      <text:p>data/sounds/combat/slide.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
@@ -7456,7 +7456,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/grab.mp3</text:p>
+      <text:p>data/sounds/combat/grab.ogg</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="ce4"/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
@@ -7608,7 +7608,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/attack2.mp3</text:p>
+      <text:p>data/sounds/player/attack2.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -7656,7 +7656,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/attack2.mp3</text:p>
+      <text:p>data/sounds/player/attack2.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -7748,7 +7748,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/damage2.mp3</text:p>
+      <text:p>data/sounds/player/damage2.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
@@ -7805,7 +7805,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/damage2.mp3</text:p>
+      <text:p>data/sounds/player/damage2.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
@@ -7862,7 +7862,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/damage3.mp3</text:p>
+      <text:p>data/sounds/player/damage3.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
@@ -7918,7 +7918,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/damage3.mp3</text:p>
+      <text:p>data/sounds/player/damage3.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
@@ -7979,7 +7979,7 @@
       <text:p>4280295456</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/damage3.mp3</text:p>
+      <text:p>data/sounds/player/damage3.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
@@ -8037,7 +8037,7 @@
       <text:p>4280295456</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/damage3.mp3</text:p>
+      <text:p>data/sounds/player/damage3.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
@@ -8093,7 +8093,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/bodybump.mp3</text:p>
+      <text:p>data/sounds/combat/bodybump.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
@@ -8153,10 +8153,10 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/damage3.mp3</text:p>
+      <text:p>data/sounds/player/damage3.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/spin.mp3</text:p>
+      <text:p>data/sounds/combat/spin.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
@@ -8211,7 +8211,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/bodyslam.mp3</text:p>
+      <text:p>data/sounds/combat/bodyslam.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
@@ -8265,7 +8265,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/slide.mp3</text:p>
+      <text:p>data/sounds/combat/slide.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
@@ -8319,7 +8319,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/slap.mp3</text:p>
+      <text:p>data/sounds/combat/slap.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
@@ -8373,10 +8373,10 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/slap.mp3</text:p>
+      <text:p>data/sounds/combat/slap.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/damage2.mp3</text:p>
+      <text:p>data/sounds/player/damage2.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
@@ -8531,7 +8531,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/bodydrop.mp3</text:p>
+      <text:p>data/sounds/combat/bodydrop.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
@@ -8585,7 +8585,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/defeat.mp3</text:p>
+      <text:p>data/sounds/player/defeat.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
@@ -8640,7 +8640,7 @@
       <text:p>4294967295</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/getup.mp3</text:p>
+      <text:p>data/sounds/player/getup.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
@@ -8738,7 +8738,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/shakiin.mp3</text:p>
+      <text:p>data/sounds/combat/shakiin.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
@@ -8792,7 +8792,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/swing2.mp3</text:p>
+      <text:p>data/sounds/combat/swing2.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:number-columns-repeated="3" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -8894,7 +8894,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/swing1a.mp3</text:p>
+      <text:p>data/sounds/combat/swing1a.ogg</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell table:number-columns-repeated="2" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -8946,7 +8946,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/swing1a.mp3</text:p>
+      <text:p>data/sounds/combat/swing1a.ogg</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell table:number-columns-repeated="2" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -9045,7 +9045,7 @@
      </table:table-cell>
      <table:table-cell table:style-name="Default"/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/attack1.mp3</text:p>
+      <text:p>data/sounds/player/attack1.ogg</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell table:number-columns-repeated="2" office:value-type="float" office:value="0" calcext:value-type="float">
@@ -9143,7 +9143,7 @@
       <text:p>4294967295</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/flyup.mp3</text:p>
+      <text:p>data/sounds/player/flyup.ogg</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="float" office:value="3" calcext:value-type="float">
@@ -9530,25 +9530,25 @@
       <text:p>data/sprites/player/rose/main-weapon.jase</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/grab.mp3</text:p>
+      <text:p>data/sounds/combat/grab.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/attack2.mp3</text:p>
+      <text:p>data/sounds/player/attack2.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/slide.mp3</text:p>
+      <text:p>data/sounds/combat/slide.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/landonfeet.mp3</text:p>
+      <text:p>data/sounds/combat/landonfeet.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/chargefull1.mp3</text:p>
+      <text:p>data/sounds/player/chargefull1.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/chargefull2.mp3</text:p>
+      <text:p>data/sounds/player/chargefull2.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/chargefull3.mp3</text:p>
+      <text:p>data/sounds/player/chargefull3.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="120" calcext:value-type="float">
       <text:p>120</text:p>
@@ -9665,25 +9665,25 @@
       <text:p>data/sprites/player/rose/main-weapon.jase</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/grab.mp3</text:p>
+      <text:p>data/sounds/combat/grab.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/attack2.mp3</text:p>
+      <text:p>data/sounds/player/attack2.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/slide.mp3</text:p>
+      <text:p>data/sounds/combat/slide.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/combat/landonfeet.mp3</text:p>
+      <text:p>data/sounds/combat/landonfeet.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/chargefull1.mp3</text:p>
+      <text:p>data/sounds/player/chargefull1.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/chargefull2.mp3</text:p>
+      <text:p>data/sounds/player/chargefull2.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sounds/player/chargefull3.mp3</text:p>
+      <text:p>data/sounds/player/chargefull3.ogg</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="120" calcext:value-type="float">
       <text:p>120</text:p>

@@ -1626,7 +1626,7 @@ return {
           properties = {
             ["action"] = "openMenu",
             ["guipath"] = "options.simple",
-            ["presssound"] = "sounds/combat/firehit.mp3"
+            ["presssound"] = "sounds/combat/firehit.ogg"
           }
         },
         {
@@ -1647,7 +1647,7 @@ return {
           color = { 255, 255, 255 },
           properties = {
             ["action"] = "unpauseGame",
-            ["presssound"] = "sounds/combat/firehit.mp3"
+            ["presssound"] = "sounds/combat/firehit.ogg"
           }
         },
         {
@@ -1668,7 +1668,7 @@ return {
           color = { 255, 255, 255 },
           properties = {
             ["action"] = "restartStageCheckpoint",
-            ["presssound"] = "sounds/combat/firehit.mp3"
+            ["presssound"] = "sounds/combat/firehit.ogg"
           }
         },
         {
@@ -1689,7 +1689,7 @@ return {
           color = { 255, 255, 255 },
           properties = {
             ["action"] = "restartStage",
-            ["presssound"] = "sounds/combat/firehit.mp3"
+            ["presssound"] = "sounds/combat/firehit.ogg"
           }
         },
         {
@@ -1710,7 +1710,7 @@ return {
           color = { 255, 255, 255 },
           properties = {
             ["action"] = "returnToTitle",
-            ["presssound"] = "sounds/combat/firehit.mp3"
+            ["presssound"] = "sounds/combat/firehit.ogg"
           }
         },
         {
@@ -1732,7 +1732,7 @@ return {
           properties = {
             ["action"] = "openMenu",
             ["guipath"] = "gameplay.debugmenu",
-            ["presssound"] = "sounds/combat/firehit.mp3"
+            ["presssound"] = "sounds/combat/firehit.ogg"
           }
         },
         {
@@ -1752,7 +1752,7 @@ return {
             ["alignx"] = -1,
             ["aligny"] = 0,
             ["asetag"] = "Spit0",
-            ["movesound"] = "sounds/combat/arrowhit.mp3"
+            ["movesound"] = "sounds/combat/arrowhit.ogg"
           }
         },
         {
@@ -1919,7 +1919,7 @@ return {
           color = { 255, 255, 255 },
           properties = {
             ["action"] = "refillPlayers",
-            ["presssound"] = "sounds/combat/heal.mp3"
+            ["presssound"] = "sounds/combat/heal.ogg"
           }
         },
         {
@@ -1940,7 +1940,7 @@ return {
           color = { 255, 255, 255 },
           properties = {
             ["action"] = "clearEnemies",
-            ["presssound"] = "sounds/combat/cut2.mp3"
+            ["presssound"] = "sounds/combat/cut2.ogg"
           }
         },
         {
@@ -1962,7 +1962,7 @@ return {
           properties = {
             ["action"] = "restartStage",
             ["checkpoint"] = "entryhall",
-            ["presssound"] = "sounds/combat/firehit.mp3"
+            ["presssound"] = "sounds/combat/firehit.ogg"
           }
         },
         {
@@ -1984,7 +1984,7 @@ return {
           properties = {
             ["action"] = "restartStage",
             ["checkpoint"] = "boss",
-            ["presssound"] = "sounds/combat/firehit.mp3"
+            ["presssound"] = "sounds/combat/firehit.ogg"
           }
         },
         {
@@ -2005,7 +2005,7 @@ return {
           color = { 255, 255, 255 },
           halign = "right",
           properties = {
-            ["changesound"] = "sounds/combat/swing1.mp3",
+            ["changesound"] = "sounds/combat/swing1.ogg",
             ["configkey"] = "drawbodies",
             ["increment"] = 1,
             ["label"] = { id = 85 },
@@ -2034,7 +2034,7 @@ return {
           color = { 255, 255, 255 },
           halign = "right",
           properties = {
-            ["changesound"] = "sounds/combat/swing1.mp3",
+            ["changesound"] = "sounds/combat/swing1.ogg",
             ["configkey"] = "drawinput",
             ["increment"] = 1,
             ["label"] = { id = 147 },
@@ -2063,7 +2063,7 @@ return {
           color = { 255, 255, 255 },
           halign = "right",
           properties = {
-            ["changesound"] = "sounds/combat/swing1.mp3",
+            ["changesound"] = "sounds/combat/swing1.ogg",
             ["configkey"] = "variableupdate",
             ["increment"] = 1,
             ["label"] = { id = 141 },
@@ -2092,7 +2092,7 @@ return {
           color = { 255, 255, 255 },
           halign = "right",
           properties = {
-            ["changesound"] = "sounds/combat/swing1.mp3",
+            ["changesound"] = "sounds/combat/swing1.ogg",
             ["configkey"] = "fixedupdaterate",
             ["increment"] = 5,
             ["label"] = { id = 91 },
@@ -2121,7 +2121,7 @@ return {
           color = { 255, 255, 255 },
           properties = {
             ["action"] = "closeMenu",
-            ["presssound"] = "sounds/combat/knifethrow.mp3"
+            ["presssound"] = "sounds/combat/knifethrow.ogg"
           }
         },
         {
@@ -2141,7 +2141,7 @@ return {
             ["alignx"] = -1,
             ["aligny"] = 0,
             ["asetag"] = "Spit0",
-            ["movesound"] = "sounds/combat/arrowhit.mp3"
+            ["movesound"] = "sounds/combat/arrowhit.ogg"
           }
         },
         {
@@ -2276,7 +2276,7 @@ return {
           color = { 255, 255, 255 },
           properties = {
             ["action"] = "restartStageCheckpoint",
-            ["presssound"] = "sounds/combat/firehit.mp3"
+            ["presssound"] = "sounds/combat/firehit.ogg"
           }
         },
         {
@@ -2297,7 +2297,7 @@ return {
           color = { 255, 255, 255 },
           properties = {
             ["action"] = "restartStage",
-            ["presssound"] = "sounds/combat/firehit.mp3"
+            ["presssound"] = "sounds/combat/firehit.ogg"
           }
         },
         {
@@ -2318,7 +2318,7 @@ return {
           color = { 255, 255, 255 },
           properties = {
             ["action"] = "returnToTitle",
-            ["presssound"] = "sounds/combat/firehit.mp3"
+            ["presssound"] = "sounds/combat/firehit.ogg"
           }
         },
         {
@@ -2338,7 +2338,7 @@ return {
             ["alignx"] = -1,
             ["aligny"] = 0,
             ["asetag"] = "Spit0",
-            ["movesound"] = "sounds/combat/arrowhit.mp3"
+            ["movesound"] = "sounds/combat/arrowhit.ogg"
           }
         }
       }
@@ -2374,7 +2374,7 @@ return {
             ["alignx"] = 0.675,
             ["aligny"] = 0,
             ["asetag"] = "Spit0",
-            ["movesound"] = "sounds/combat/arrowhit.mp3"
+            ["movesound"] = "sounds/combat/arrowhit.ogg"
           }
         },
         {
@@ -2394,7 +2394,7 @@ return {
             ["alignx"] = -0.675,
             ["aligny"] = 0,
             ["asetag"] = "Spit0",
-            ["movesound"] = "sounds/combat/arrowhit.mp3"
+            ["movesound"] = "sounds/combat/arrowhit.ogg"
           }
         },
         {
