@@ -209,6 +209,9 @@
    <chunk x="60" y="-12" width="20" height="12">
    eJxjYBgFo2AUMBAATuIMDK7iDAzO4gwM36H0Nyj9TIz48IPpFRBnYFgpysBwRIyBgVMMwj4sxsCwSpSB4SsJZgIATWYMfw==
   </chunk>
+   <chunk x="80" y="-12" width="20" height="12">
+   eJxjYBgFo2AUMAxC4CTOwOAqzsDgLM7A4CaOXQ0ALfgBbQ==
+  </chunk>
    <chunk x="-20" y="0" width="20" height="12">
    eJxjYKAcCIkzMAiIMzA8E6eCYQwMDHPFGRiWSjAweEhQxzxhcQaG3+IMDI5Uch8M/KKyeaNgFDCQCABrgwXE
   </chunk>
@@ -225,7 +228,7 @@
    eJztkE1qAlEQhL+tARGJr7vHi2QjRmGC55HMddy5kdwgoCIYr6C4U1zlACH4A+ExPcwIs8g+KXi8qlpUV3diMDGYBdgI7APsAvQE3g2eBEYGmfIr9BWOAnOBpcBKyuwHybM/FVoKLwqpwneFt2vmPHpm6j3fQtmz696HQEMgc712Hed8VfILnKTsufCeYwM12Ibci/mvrpuuEwOxfIep3fc8e8+DwEDhpuVf+JEPNefxVs/+LgrXmt1jz06NH2cVfpX/gz+FH/jeOUk=
   </chunk>
    <chunk x="80" y="0" width="20" height="12">
-   eJy9kU1qAkEQhb8r+DevyF2MiGP0Li5ECeQsLhQRPE2yyBmMuhBdRnFMIAxTA+NoFmGGPGiqq5r6eF0F/6dNACdBKHhSUqt6XvE8r6OSk/bFsePxLBgb7ASf/h7Xni3Ju4JtcM1rCh4FX4KLoCX4ztTS+yqAvaBu8GAQGtQMJjmfHzn+b4oEbcHIeTF7cYf3F0Xuc2kwF/QMFgV4WZ99Zw4K8mJNBQf/+3sJvHWQeHwpOL+s3nx+ZfFeBY0S9pFqJhja7T5+APdZNFQ=
+   eJytkr1KA0EUhb8mBhs14Nwzj2JjRNzgm6TQQpSAz5JCC63EZzDBykJ7JaTyrxAsNSQqyDJ3QdZmo3tgmGGY+ebcMxeq60ZwFmDRYFfMrSeDiSDzsSLYMegavAm2BK0S911pFPcmfi6fp4KDCC+C0wgNg3GANQOLsBp/+1wXtAWfgg/BhuDrx16xvje4MFhyf5m/syzouIdngwerVvtMsKnEvAuw534XDJqWMu3NmenMfXacdR5gFGBocGlw9Yc/KnzeBhg4p+25VK21rCPBq2A/pvz/q0dLHg8j9Gvg5cp7e7tG3rUgRDipiXes1DPlfv4Ggj49Qg==
   </chunk>
    <chunk x="80" y="12" width="20" height="12">
    eJxjYCAdOIkzMAiIMzA8FGNgEBFnoBg8EWNgsBdnYPhHBbNGwShgGEEAAHjQBAg=
@@ -259,13 +262,13 @@
    eJztzLsNhFAUQ8HpwLox9MB/gf4bI0FCbE72JjyyzFsX+rAVv2Iv5rCENc9uCGOY7nYUZ/2dNU3jSxegfANB
   </chunk>
    <chunk x="40" y="0" width="20" height="12">
-   eJztzssNQFAUhOG/gcmEvUcNWElo8KIRjxrFwgJXB/dbzslMTp9BY2gNnaEwlOYjCCbBLFj0vFWG2pBHeoNhjOSrYBPsguO1d7v+SpKEXyfLHwgP
+   eJztzsENglAQBNDXwGaRu0INyslEGkRoBLUSizL/4AGiHfx3nM1M9nrgnFySITkmp7TxbpiCezAHS2zvXdIn7a5X3JLxR74Gj+AZvHZ7X+Wvqqr89QHlTAjr
   </chunk>
    <chunk x="60" y="0" width="20" height="12">
    eJzt0TlOQgEYReFvAzd/gYWSwCa0UBJZDEini3CqBPYgQ8WwB6d92bySvEYq4qlPTnJzO8VZORqXxdUfeqMwDndhknb3Pjy0OI/hKTyHl/Da4r6FaZiFeeOdFxdFt9nzHhZhGVZhfaDXK/rFJmzDLuwb77q4KQZN7yN8hq/wHX4O9G6L4RH/+cdJ8QvCWhVe
   </chunk>
    <chunk x="80" y="0" width="20" height="12">
-   eJxjYBhZYBkvA4OpIAODmSADg7kgA4M0PwODDD/55h3jpabrRsFAAWkK0wE6kBdkYFAQpI5ZQoIMDMKCDAwiWMwDALDXA9M=
+   eJzt0r0JgEAAg9FvgSPE3+IEXcK7jR3FuWwsBU+xUPD1CSkC39QKOkGva7klwGxIhmyIgkEwC5IgC6JhcFnfGm7N/71M3H/wlNEwFX7oTGWoDc1B3wYb9gVq
   </chunk>
    <chunk x="0" y="12" width="20" height="12">
    eJxjYBgFo4D2gI2JgYEdijmYKDfPkomBwQqKralgXg4TA0MuFOdRwTx6AQBZwgLR
@@ -1049,14 +1052,14 @@ body to grapple</text>
      <property name="initialai" value="guardForever"/>
     </properties>
    </object>
-   <object id="608" type="fruit-tree" gid="3129" x="3024" y="112" width="128" height="160">
+   <object id="608" type="fruit-tree" gid="3129" x="3176" y="72" width="128" height="160">
     <properties>
      <property name="leaves" type="object" value="609"/>
      <property name="propertiestable" type="file" value="database/objects-properties.csv"/>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="609" gid="3128" x="3024" y="64" width="128" height="96">
+   <object id="609" gid="3128" x="3176" y="24" width="128" height="96">
     <properties>
      <property name="z" type="float" value="128"/>
     </properties>

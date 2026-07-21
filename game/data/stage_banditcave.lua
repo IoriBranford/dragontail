@@ -587,6 +587,10 @@ return {
           data = "eJxjYBgFo2AUMBAATuIMDK7iDAzO4gwM36H0Nyj9TIz48IPpFRBnYFgpysBwRIyBgVMMwj4sxsCwSpSB4SsJZgIATWYMfw=="
         },
         {
+          x = 80, y = -12, width = 20, height = 12,
+          data = "eJxjYBgFo2AUMAxC4CTOwOAqzsDgLM7A4CaOXQ0ALfgBbQ=="
+        },
+        {
           x = -20, y = 0, width = 20, height = 12,
           data = "eJxjYKAcCIkzMAiIMzA8E6eCYQwMDHPFGRiWSjAweEhQxzxhcQaG3+IMDI5Uch8M/KKyeaNgFDCQCABrgwXE"
         },
@@ -608,7 +612,7 @@ return {
         },
         {
           x = 80, y = 0, width = 20, height = 12,
-          data = "eJy9kU1qAkEQhb8r+DevyF2MiGP0Li5ECeQsLhQRPE2yyBmMuhBdRnFMIAxTA+NoFmGGPGiqq5r6eF0F/6dNACdBKHhSUqt6XvE8r6OSk/bFsePxLBgb7ASf/h7Xni3Ju4JtcM1rCh4FX4KLoCX4ztTS+yqAvaBu8GAQGtQMJjmfHzn+b4oEbcHIeTF7cYf3F0Xuc2kwF/QMFgV4WZ99Zw4K8mJNBQf/+3sJvHWQeHwpOL+s3nx+ZfFeBY0S9pFqJhja7T5+APdZNFQ="
+          data = "eJytkr1KA0EUhb8mBhs14Nwzj2JjRNzgm6TQQpSAz5JCC63EZzDBykJ7JaTyrxAsNSQqyDJ3QdZmo3tgmGGY+ebcMxeq60ZwFmDRYFfMrSeDiSDzsSLYMegavAm2BK0S911pFPcmfi6fp4KDCC+C0wgNg3GANQOLsBp/+1wXtAWfgg/BhuDrx16xvje4MFhyf5m/syzouIdngwerVvtMsKnEvAuw534XDJqWMu3NmenMfXacdR5gFGBocGlw9Yc/KnzeBhg4p+25VK21rCPBq2A/pvz/q0dLHg8j9Gvg5cp7e7tG3rUgRDipiXes1DPlfv4Ggj49Qg=="
         },
         {
           x = 80, y = 12, width = 20, height = 12,
@@ -667,7 +671,7 @@ return {
         },
         {
           x = 40, y = 0, width = 20, height = 12,
-          data = "eJztzssNQFAUhOG/gcmEvUcNWElo8KIRjxrFwgJXB/dbzslMTp9BY2gNnaEwlOYjCCbBLFj0vFWG2pBHeoNhjOSrYBPsguO1d7v+SpKEXyfLHwgP"
+          data = "eJztzsENglAQBNDXwGaRu0INyslEGkRoBLUSizL/4AGiHfx3nM1M9nrgnFySITkmp7TxbpiCezAHS2zvXdIn7a5X3JLxR74Gj+AZvHZ7X+Wvqqr89QHlTAjr"
         },
         {
           x = 60, y = 0, width = 20, height = 12,
@@ -675,7 +679,7 @@ return {
         },
         {
           x = 80, y = 0, width = 20, height = 12,
-          data = "eJxjYBhZYBkvA4OpIAODmSADg7kgA4M0PwODDD/55h3jpabrRsFAAWkK0wE6kBdkYFAQpI5ZQoIMDMKCDAwiWMwDALDXA9M="
+          data = "eJzt0r0JgEAAg9FvgSPE3+IEXcK7jR3FuWwsBU+xUPD1CSkC39QKOkGva7klwGxIhmyIgkEwC5IgC6JhcFnfGm7N/71M3H/wlNEwFX7oTGWoDc1B3wYb9gVq"
         },
         {
           x = 0, y = 12, width = 20, height = 12,
@@ -4538,8 +4542,8 @@ return {
               name = "",
               type = "fruit-tree",
               shape = "rectangle",
-              x = 3024,
-              y = 112,
+              x = 3176,
+              y = 72,
               width = 128,
               height = 160,
               rotation = 0,
@@ -4557,8 +4561,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 3024,
-              y = 64,
+              x = 3176,
+              y = 24,
               width = 128,
               height = 96,
               rotation = 0,
