@@ -5,7 +5,7 @@
    <property name="bodyinlayers" value="Wall"/>
    <property name="color" type="color" value="#80808080"/>
    <property name="drawz" type="float" value="0"/>
-   <property name="extrudeY" type="float" value="-64"/>
+   <property name="extrudeY" type="float" value="-48"/>
    <property name="linecolor" type="color" value="#80ffffff"/>
   </properties>
   <polygon points="0,0 0,32 640,32 640,0"/>

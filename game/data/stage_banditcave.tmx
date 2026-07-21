@@ -239,7 +239,7 @@
    eJxjYKAu0FNnYJijQT3zYtQZGE5pUM/MLnUGhh8a1DVTTRNhpr46JAx01SFsEJ2rwcCwECoHEweJlSCJwfSgmxmrDgmDaHUIG0TP1mBgOA+Vg4mDxBYhicH0oLuzWx0SBp3qEDaIPqnBwPBXA8HvhopdQBKD6SEGfNdgYNDWxBT7R8V0MQoYwAAAAkUq8g==
   </chunk>
    <chunk x="80" y="0" width="20" height="12">
-   eJxjYBhZYKEGA4OuOgTrIWFk/hwN4s07r8HAEK0OwTFIGJl/CmpnLhHm/tVgYOhUh+AuJIzM/wG1c7YGYbdqaxK2U00TYv5JDYhbSfE/PvBdA+JWapoJcivITBEqmccANZOa5oEANc0zVGVgSFPFLgcAVSogLw==
+   eJxjYBhZYKEGA4OuOgTrIWFk/hwN4s07r8HAEK0OwTFIGJl/CmpnLhHm/tVgYOhUh+AuJIzM/wG1c7YGYbdqaxK2U00TYv5JDYhbSfE/PvBdA+JWESqZB3MrNd3IwEAbN1LTPENVBoY0VexyAG07IC8=
   </chunk>
   </data>
  </layer>
@@ -373,18 +373,17 @@
     </property>
     <property name="sequence" value="introBanditStage"/>
    </properties>
-   <object id="21" template="mapobjects/OutwardBoundary.tx" x="0" y="0" visible="1">
+   <object id="21" template="mapobjects/OutwardBoundary.tx" x="0" y="-16" visible="1">
     <properties>
      <property name="drawz" type="float" value="-1"/>
-     <property name="extrudeY" type="float" value="-64"/>
     </properties>
-    <polygon points="0,-96 0,288 32,288 32,160 64,128 224,128 256,96 256,-96"/>
+    <polygon points="0,-96 0,304 32,304 32,160 64,160 96,128 224,128 256,96 256,-96"/>
    </object>
    <object id="27" template="mapobjects/CameraPath.tx" x="240" y="144">
     <polyline points="0,0 320,0"/>
    </object>
-   <object id="237" template="mapobjects/OutwardBoundary.tx" x="448" y="32" visible="1">
-    <polygon points="-192,-128 -192,64 1024,64 1056,32 1056,-128"/>
+   <object id="237" template="mapobjects/OutwardBoundary.tx" x="448" y="16" visible="1">
+    <polygon points="-192,-128 -192,64 -160,64 -128,96 -96,64 320,64 352,96 384,64 960,64 992,96 1056,32 1056,-128"/>
    </object>
    <object id="513" name="joystick" gid="6830" x="416" y="80" width="16" height="16"/>
    <object id="516" name="Move" x="376" y="64" width="32" height="18">
@@ -441,12 +440,12 @@ with    direction</text>
    <object id="526" name="attackbutton" gid="7241" x="576" y="72" width="14" height="14" visible="0"/>
    <object id="797" template="mapobjects/bandit/knife.tx" x="408" y="-8">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="798" template="mapobjects/bandit/knife.tx" x="704" y="-8">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
   </objectgroup>
@@ -562,12 +561,12 @@ body to grapple</text>
    </properties>
    <object id="261" template="mapobjects/bandit/spear.tx" x="1040" y="-8">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="960" template="mapobjects/bandit/spear.tx" x="1200" y="-24">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="699" template="mapobjects/bandit/spear.tx" x="672" y="176"/>
@@ -594,7 +593,7 @@ body to grapple</text>
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Steer while sprinting</text>
    </object>
    <object id="429" gid="6835" x="1992" y="240" width="16" height="16" visible="0"/>
-   <object id="239" template="mapobjects/OutwardBoundary.tx" x="1440" y="64" visible="1">
+   <object id="239" template="mapobjects/OutwardBoundary.tx" x="1440" y="48" visible="1">
     <polygon points="64,-160 64,0 96,0 96,-160"/>
    </object>
    <object id="596" template="mapobjects/items/lifefruit-tree.tx" type="fruit-tree" x="1520" y="88">
@@ -633,12 +632,11 @@ body to grapple</text>
    <object id="483" template="mapobjects/CameraPath.tx" x="1424" y="336">
     <polyline points="-64,-192 416,-192"/>
    </object>
-   <object id="38" template="mapobjects/OutwardBoundary.tx" x="1984" y="32" visible="1">
+   <object id="38" template="mapobjects/OutwardBoundary.tx" x="1984" y="16" visible="1">
     <properties>
      <property name="drawz" type="float" value="-1"/>
-     <property name="extrudeY" type="float" value="-64"/>
     </properties>
-    <polygon points="-448,-128 -448,32 -384,96 -256,96 -224,64 -64,64 -64,-128"/>
+    <polygon points="-448,-128 -448,32 -384,96 -256,96 -224,64 -96,64 -96,-128"/>
    </object>
    <object id="530" template="mapobjects/items/spikefruit-ground.tx" x="1776" y="160"/>
    <object id="532" template="mapobjects/items/spikefruit-ground.tx" x="1808" y="152"/>
@@ -674,8 +672,8 @@ body to grapple</text>
    <object id="628" name="or" x="1656" y="96" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
-   <object id="785" template="mapobjects/OutwardBoundary.tx" x="2048" y="192">
-    <polygon points="0,32 176,32 176,-288 -128,-288 -128,-96"/>
+   <object id="785" template="mapobjects/OutwardBoundary.tx" x="2048" y="176">
+    <polygon points="0,32 160,32 160,-288 -160,-288 -160,-96 -128,-64 -96,-64"/>
    </object>
   </objectgroup>
   <objectgroup id="48" name="learnthrowingweapons" class="Room">
@@ -686,7 +684,7 @@ body to grapple</text>
      <property name="exitpoint" type="object" value="244"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="59" gid="7233" x="2112" y="24" width="64" height="64">
@@ -696,30 +694,30 @@ body to grapple</text>
      <property name="exitpoint" type="object" value="243"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="240" name="entrypoint" x="2016" y="120">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="241" name="entrypoint" x="1968" y="72">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="243" name="exitpoint" x="2144" y="-8">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="244" name="exitpoint" x="2064" y="-24">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
@@ -756,18 +754,18 @@ body to grapple</text>
      <property name="exitpoint" type="object" value="245"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="242" name="entrypoint" x="2008" y="112">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="245" name="exitpoint" x="2120" y="0">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
@@ -779,7 +777,7 @@ body to grapple</text>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="498" gid="7233" x="2152" y="32" width="64" height="64">
@@ -790,30 +788,30 @@ body to grapple</text>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="495" name="entrypoint" x="1976" y="80">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="497" name="entrypoint" x="2040" y="144">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="496" name="exitpoint" x="2088" y="-32">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="499" name="exitpoint" x="2152" y="32">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
@@ -830,8 +828,8 @@ body to grapple</text>
    <object id="62" template="mapobjects/bandit/spear.tx" x="2096" y="280"/>
   </objectgroup>
   <objectgroup draworder="index" id="62" name="tolearnfireball" class="Room">
-   <object id="655" template="mapobjects/OutwardBoundary.tx" x="2080" y="128">
-    <polygon points="144,-224 144,96 480,96 512,64 512,-224"/>
+   <object id="655" template="mapobjects/OutwardBoundary.tx" x="2080" y="112">
+    <polygon points="128,-224 128,96 160,128 192,96 288,96 320,128 352,96 480,96 512,64 512,-224"/>
    </object>
    <object id="522" name="Fireball" x="2360" y="176" width="120" height="32">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Costs 1 or more fire meter</text>
@@ -883,7 +881,7 @@ body to grapple</text>
      <property name="exitpoint" type="object" value="659"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="673" gid="7231" x="2552" y="88" width="128" height="128">
@@ -893,7 +891,7 @@ body to grapple</text>
      <property name="exitpoint" type="object" value="672"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="662" gid="7231" x="2456" y="88" width="128" height="128">
@@ -903,7 +901,7 @@ body to grapple</text>
      <property name="exitpoint" type="object" value="660"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="665" gid="7231" x="2408" y="88" width="128" height="128">
@@ -913,7 +911,7 @@ body to grapple</text>
      <property name="exitpoint" type="object" value="663"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="668" gid="7231" x="2360" y="88" width="128" height="128">
@@ -923,7 +921,7 @@ body to grapple</text>
      <property name="exitpoint" type="object" value="666"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="671" gid="7231" x="2312" y="88" width="128" height="128">
@@ -933,78 +931,78 @@ body to grapple</text>
      <property name="exitpoint" type="object" value="669"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="658" name="entrypoint" x="2440" y="152">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="674" name="entrypoint" x="2488" y="152">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="661" name="entrypoint" x="2392" y="152">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="664" name="entrypoint" x="2344" y="152">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="667" name="entrypoint" x="2296" y="152">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="670" name="entrypoint" x="2248" y="152">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="659" name="exitpoint" x="2536" y="56">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="672" name="exitpoint" x="2584" y="56">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="660" name="exitpoint" x="2488" y="56">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="663" name="exitpoint" x="2440" y="56">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="666" name="exitpoint" x="2392" y="56">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="669" name="exitpoint" x="2344" y="56">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
@@ -1017,11 +1015,11 @@ body to grapple</text>
    <properties>
     <property name="donewhenenemiesleft" type="int" value="4"/>
    </properties>
-   <object id="65" template="mapobjects/OutwardBoundary.tx" x="2880" y="384" visible="1">
+   <object id="65" template="mapobjects/OutwardBoundary.tx" x="2880" y="368" visible="1">
     <properties>
-     <property name="extrudeY" type="float" value="-64"/>
+     <property name="extrudeY" type="float" value="-48"/>
     </properties>
-    <polygon points="-288,-480 -288,-192 0,-192 32,-160 64,-160 96,-128 96,-96 128,-64 128,0 224,0 224,-480"/>
+    <polygon points="-288,-480 -288,-192 -32,-192 0,-160 32,-160 64,-160 96,-128 96,-64 128,-32 128,16 224,16 224,-480"/>
    </object>
    <object id="66" template="mapobjects/CameraPath.tx" x="2480" y="240">
     <polyline points="-160,0 320,0"/>
@@ -1042,13 +1040,13 @@ body to grapple</text>
      <property name="shadowcolor" type="color" value="#00000000"/>
     </properties>
    </object>
-   <object id="267" template="mapobjects/objects/barrelA.tx" x="2992" y="360"/>
+   <object id="267" template="mapobjects/objects/barrelA.tx" x="2976" y="352"/>
    <object id="270" gid="6583" x="2832" y="208" width="32" height="32">
     <properties>
      <property name="itemtype" value="food-fish"/>
     </properties>
    </object>
-   <object id="268" template="mapobjects/objects/barrelB.tx" x="2984" y="328">
+   <object id="268" template="mapobjects/objects/barrelB.tx" x="2968" y="320">
     <properties>
      <property name="itemtype" value="food-fish"/>
     </properties>
@@ -1103,18 +1101,18 @@ body to grapple</text>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="829" name="entrypoint" x="2952" y="160">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="831" name="exitpoint" x="2960" y="40">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
@@ -1126,18 +1124,18 @@ body to grapple</text>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="835" name="entrypoint" x="2976" y="184">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="837" name="exitpoint" x="3128" y="192">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
@@ -1165,18 +1163,18 @@ body to grapple</text>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="828" name="entrypoint" x="2912" y="152">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="830" name="exitpoint" x="2864" y="56">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
@@ -1188,18 +1186,18 @@ body to grapple</text>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="834" name="entrypoint" x="2992" y="232">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="836" name="exitpoint" x="3128" y="240">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
@@ -1277,18 +1275,18 @@ and tap    to throw</text>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="255" name="entrypoint" x="2912" y="152">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="256" name="exitpoint" x="2864" y="56">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
@@ -1300,7 +1298,7 @@ and tap    to throw</text>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="819" template="mapobjects/bandit/bow.tx" x="3056" y="160">
@@ -1311,30 +1309,30 @@ and tap    to throw</text>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
      <property name="itemtype" value="food-fish"/>
      <property name="recoverai" value="enterAndAttackUntilEmpty"/>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="258" name="entrypoint" x="2992" y="232">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="821" name="entrypoint" x="2960" y="168">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="259" name="exitpoint" x="3128" y="248">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
    <object id="820" name="exitpoint" x="3128" y="168">
     <properties>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
     <point/>
    </object>
@@ -3117,7 +3115,7 @@ to sprint past archers</text>
    <object id="782" template="mapobjects/bandit/shield.tx" x="3232" y="1080"/>
    <object id="855" template="mapobjects/bandit/shield.tx" x="3232" y="992"/>
   </objectgroup>
-  <objectgroup id="81" name="help8">
+  <objectgroup id="81" name="help8" visible="0">
    <object id="580" template="mapobjects/bandit/muscle.tx" x="3008" y="856">
     <properties>
      <property name="z" type="float" value="64"/>

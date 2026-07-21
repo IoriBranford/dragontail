@@ -9,7 +9,7 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 94,
+  nextlayerid = 96,
   nextobjectid = 1053,
   backgroundcolor = { 64, 64, 64 },
   properties = {
@@ -384,8 +384,26 @@ return {
       exportfilename = "tilesets/castle/torch.lua"
     },
     {
-      name = "crystal-spikes",
+      name = "desert-decorative1",
       firstgid = 7537,
+      filename = "tilesets/sandy/desert-decorative1.tsx",
+      exportfilename = "tilesets/sandy/desert-decorative1.lua"
+    },
+    {
+      name = "desert-decorative2",
+      firstgid = 8497,
+      filename = "tilesets/sandy/desert-decorative2.tsx",
+      exportfilename = "tilesets/sandy/desert-decorative2.lua"
+    },
+    {
+      name = "desert",
+      firstgid = 9521,
+      filename = "tilesets/sandy/desert.tsx",
+      exportfilename = "tilesets/sandy/desert.lua"
+    },
+    {
+      name = "crystal-spikes",
+      firstgid = 11591,
       filename = "sprites/banditcave/crystal-spikes.tsx",
       exportfilename = "sprites/banditcave/crystal-spikes.lua"
     }
@@ -523,6 +541,43 @@ return {
       y = 0,
       width = 200,
       height = 12,
+      id = 94,
+      name = "sandy",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      chunks = {
+        {
+          x = 60, y = 0, width = 20, height = 12,
+          data = "eJztkbERQEAURF8vJG5/Mwwz2jHqUYXgdCDQhZERCI4K7gcCW8Cbt7vw5ysp5ceKATYn3vGwTvl03AMMBp3l82rBIqgMLge/ScmtNxgz/d7domAOUGT6NYLW0g+rEvsGZZMWSQ=="
+        },
+        {
+          x = 80, y = 0, width = 20, height = 12,
+          data = "eJztkEtKQ1EQRM9eNCa+qq04UAzqWhzELy7NIBqH+tyFiPEPUvQdBdGADr3Q3G5oqroO/L/fvF5wJ3jo/objwLBnuO9gIBg2/b5V5jXBSMvpvQleBLuGHcOBoXPNV4Itw5HhRjBdIsOpYa6qbcNH61eb3kxwbLhQZfiJS7xTU9W/aRgbLpOz3bluGLk8otl/c+uhK28Yrhius6viEL3n+LQ6ceUZNt3bL7i+q/xTE1e2MEz/1LKHQXTjlfzRi3bY7i/oZe9ccNYYJWv2wi597noUqN32qmIR//DeWND7BJplTqA="
+        },
+        {
+          x = 60, y = 12, width = 20, height = 12,
+          data = "eJztzLENQFAARdEzikRIeH8ZpYVVRmAMlUYkJvA7cZrbXd6bwhqOcIa+VMywjLShKwyFufJ320IT9qe/nw+5AE+2CRo="
+        },
+        {
+          x = 80, y = 12, width = 20, height = 12,
+          data = "eJztzssJAmEMReGvE18L8U+qcWM5glOaulAXNuCjCx8LQYYZQacEmQOBcLmc5BnMkkhK8gpW9SSLZJ4sk2nyiKZTJcdgENyKH9aFa3AORsGmcI/Gu2tvHYJJsm8ddX8cbDuumm52at0f/zC4fO3df3p6/DFvurkfKA=="
+        }
+      }
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 200,
+      height = 12,
       id = 27,
       name = "onfloor",
       class = "",
@@ -634,6 +689,51 @@ return {
         {
           x = 80, y = 0, width = 20, height = 12,
           data = "eJzlkEEKwjAURN+26h9oUVu8lWKteKsWbcVb1Y3gaSTQkI3QCNn5NgNDeBk+/Bc7g1JQCdaCjWCr0PkcV3G+i0EjOAuOglpwUuh85gaFzfseBoPgLrgKboJeofO5NzjY/M53xJ+OdnoXu/MX3M5mmc7XuRsl9D0NXgl9jjFL68sX3/sPWvgVAg=="
+        }
+      }
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 200,
+      height = 12,
+      id = 95,
+      name = "desert_wall",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      chunks = {
+        {
+          x = 40, y = -12, width = 20, height = 12,
+          data = "eJxjYBgFo2AUMAwgKNZgYCjRYGDQU2dgyNUgTS8AdskCIg=="
+        },
+        {
+          x = 0, y = 0, width = 20, height = 12,
+          data = "eJztkEEOAVEQRN9tqkUY4TiMcAA7l2CEA1hxGytuY0Wk0/1jNsLCcmpTlarq1M+HzzgZjAQrC10JhgqvSh6kV7KCtcFYMGl1rgZzwdFC14KZwquTp+mVzHf9/mywECxbnYfBTnCx0I1gq/Ca5E16JfNdv78Z7AWHVqffi7ff7a2/wXf9/mn8Bb/udujgP/ACJSEnzA=="
+        },
+        {
+          x = 20, y = 0, width = 20, height = 12,
+          data = "eJzti8sNg0AQQ1818eTApx8CVdAEnxJySjmcUk5OEVrtjjSCCpDwxfazXAtaQSOoBG+D0XJOrC576s7awn1rgr8Eg6AXdILN4GM592FP3dlQePy6z4JVsAgmwc/gazkvYU/d2Vp4/Lof9XjC38781i0uoB1VJyJt"
+        },
+        {
+          x = 40, y = 0, width = 20, height = 12,
+          data = "eJztzsEJwkAUhOG/GneCGO3HaAcWErWDeNFu9KLd6CUSHsyyGgvwkoFhYHkfbJ1glWDh3QnOgougSdAJTuIncVPb5UbCbBOsveHvgodgn+AquKmYpTduGrvczuaYoPWG7wVv/+kpeKmYjbe3bT8adpzw8+r7bVYVc/COb7KdMoU/ZgBewiko"
+        },
+        {
+          x = 60, y = 0, width = 20, height = 12,
+          data = "eJxjYKAu0FNnYJijQT3zYtQZGE5pUM/MLnUGhh8a1DVTTRNhpr46JAx01SFsEJ2rwcCwECoHEweJlSCJwfSgmxmrDgmDaHUIG0TP1mBgOA+Vg4mDxBYhicH0oLuzWx0SBp3qEDaIPqnBwPBXA8HvhopdQBKD6SEGfNdgYNDWxBT7R8V0MQoYwAAAAkUq8g=="
+        },
+        {
+          x = 80, y = 0, width = 20, height = 12,
+          data = "eJxjYBhZYKEGA4OuOgTrIWFk/hwN4s07r8HAEK0OwTFIGJl/CmpnLhHm/tVgYOhUh+AuJIzM/wG1c7YGYbdqaxK2U00TYv5JDYhbSfE/PvBdA+JWESqZB3MrNd3IwEAbN1LTPENVBoY0VexyAG07IC8="
         }
       }
     },
@@ -933,7 +1033,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 0,
-              y = 0,
+              y = -16,
               width = 0,
               height = 0,
               rotation = 0,
@@ -941,10 +1041,11 @@ return {
               visible = true,
               polygon = {
                 { x = 0, y = -96 },
-                { x = 0, y = 288 },
-                { x = 32, y = 288 },
+                { x = 0, y = 304 },
+                { x = 32, y = 304 },
                 { x = 32, y = 160 },
-                { x = 64, y = 128 },
+                { x = 64, y = 160 },
+                { x = 96, y = 128 },
                 { x = 224, y = 128 },
                 { x = 256, y = 96 },
                 { x = 256, y = -96 }
@@ -953,7 +1054,7 @@ return {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = -1,
-                ["extrudeY"] = -64,
+                ["extrudeY"] = -48,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -981,7 +1082,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 448,
-              y = 32,
+              y = 16,
               width = 0,
               height = 0,
               rotation = 0,
@@ -990,7 +1091,14 @@ return {
               polygon = {
                 { x = -192, y = -128 },
                 { x = -192, y = 64 },
-                { x = 1024, y = 64 },
+                { x = -160, y = 64 },
+                { x = -128, y = 96 },
+                { x = -96, y = 64 },
+                { x = 320, y = 64 },
+                { x = 352, y = 96 },
+                { x = 384, y = 64 },
+                { x = 960, y = 64 },
+                { x = 992, y = 96 },
                 { x = 1056, y = 32 },
                 { x = 1056, y = -128 }
               },
@@ -998,7 +1106,7 @@ return {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -64,
+                ["extrudeY"] = -48,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -1476,7 +1584,7 @@ return {
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -1494,7 +1602,7 @@ return {
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
-                ["z"] = 64
+                ["z"] = 48
               }
             }
           }
@@ -2295,7 +2403,7 @@ return {
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -2313,7 +2421,7 @@ return {
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -2460,7 +2568,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 1440,
-              y = 64,
+              y = 48,
               width = 0,
               height = 0,
               rotation = 0,
@@ -2476,7 +2584,7 @@ return {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -64,
+                ["extrudeY"] = -48,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -2698,7 +2806,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 1984,
-              y = 32,
+              y = 16,
               width = 0,
               height = 0,
               rotation = 0,
@@ -2710,14 +2818,14 @@ return {
                 { x = -384, y = 96 },
                 { x = -256, y = 96 },
                 { x = -224, y = 64 },
-                { x = -64, y = 64 },
-                { x = -64, y = -128 }
+                { x = -96, y = 64 },
+                { x = -96, y = -128 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = -1,
-                ["extrudeY"] = -64,
+                ["extrudeY"] = -48,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -2972,7 +3080,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 2048,
-              y = 192,
+              y = 176,
               width = 0,
               height = 0,
               rotation = 0,
@@ -2980,16 +3088,18 @@ return {
               visible = true,
               polygon = {
                 { x = 0, y = 32 },
-                { x = 176, y = 32 },
-                { x = 176, y = -288 },
-                { x = -128, y = -288 },
-                { x = -128, y = -96 }
+                { x = 160, y = 32 },
+                { x = 160, y = -288 },
+                { x = -160, y = -288 },
+                { x = -160, y = -96 },
+                { x = -128, y = -64 },
+                { x = -96, y = -64 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -64,
+                ["extrudeY"] = -48,
                 ["linecolor"] = "#80ffffff"
               }
             }
@@ -3028,7 +3138,7 @@ return {
                 ["exitpoint"] = { id = 244 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -3050,7 +3160,7 @@ return {
                 ["exitpoint"] = { id = 243 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -3066,7 +3176,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -3082,7 +3192,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -3098,7 +3208,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -3114,7 +3224,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -3394,7 +3504,7 @@ return {
                 ["exitpoint"] = { id = 245 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -3410,7 +3520,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -3426,7 +3536,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -3449,7 +3559,7 @@ return {
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "food-fish",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -3472,7 +3582,7 @@ return {
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["itemtype"] = "food-fish",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -3488,7 +3598,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -3504,7 +3614,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -3520,7 +3630,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -3536,7 +3646,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             }
           }
@@ -3663,15 +3773,20 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 2080,
-              y = 128,
+              y = 112,
               width = 0,
               height = 0,
               rotation = 0,
               opacity = 1,
               visible = true,
               polygon = {
-                { x = 144, y = -224 },
-                { x = 144, y = 96 },
+                { x = 128, y = -224 },
+                { x = 128, y = 96 },
+                { x = 160, y = 128 },
+                { x = 192, y = 96 },
+                { x = 288, y = 96 },
+                { x = 320, y = 128 },
+                { x = 352, y = 96 },
                 { x = 480, y = 96 },
                 { x = 512, y = 64 },
                 { x = 512, y = -224 }
@@ -3680,7 +3795,7 @@ return {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -64,
+                ["extrudeY"] = -48,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -3911,7 +4026,7 @@ return {
                 ["exitpoint"] = { id = 659 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -3933,7 +4048,7 @@ return {
                 ["exitpoint"] = { id = 672 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -3955,7 +4070,7 @@ return {
                 ["exitpoint"] = { id = 660 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -3977,7 +4092,7 @@ return {
                 ["exitpoint"] = { id = 663 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -3999,7 +4114,7 @@ return {
                 ["exitpoint"] = { id = 666 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4021,7 +4136,7 @@ return {
                 ["exitpoint"] = { id = 669 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4037,7 +4152,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4053,7 +4168,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4069,7 +4184,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4085,7 +4200,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4101,7 +4216,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4117,7 +4232,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4133,7 +4248,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4149,7 +4264,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4165,7 +4280,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4181,7 +4296,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4197,7 +4312,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4213,7 +4328,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4308,7 +4423,7 @@ return {
               type = "Boundary",
               shape = "polygon",
               x = 2880,
-              y = 384,
+              y = 368,
               width = 0,
               height = 0,
               rotation = 0,
@@ -4317,21 +4432,22 @@ return {
               polygon = {
                 { x = -288, y = -480 },
                 { x = -288, y = -192 },
-                { x = 0, y = -192 },
+                { x = -32, y = -192 },
+                { x = 0, y = -160 },
                 { x = 32, y = -160 },
                 { x = 64, y = -160 },
                 { x = 96, y = -128 },
-                { x = 96, y = -96 },
-                { x = 128, y = -64 },
-                { x = 128, y = 0 },
-                { x = 224, y = 0 },
+                { x = 96, y = -64 },
+                { x = 128, y = -32 },
+                { x = 128, y = 16 },
+                { x = 224, y = 16 },
                 { x = 224, y = -480 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -64,
+                ["extrudeY"] = -48,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -4410,8 +4526,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2992,
-              y = 360,
+              x = 2976,
+              y = 352,
               width = 32,
               height = 32,
               rotation = 0,
@@ -4444,8 +4560,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 2984,
-              y = 328,
+              x = 2968,
+              y = 320,
               width = 32,
               height = 32,
               rotation = 0,
@@ -4635,7 +4751,7 @@ return {
                 ["itemtype"] = "food-fish",
                 ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4651,7 +4767,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4667,7 +4783,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4691,7 +4807,7 @@ return {
                 ["itemtype"] = "food-fish",
                 ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4707,7 +4823,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4723,7 +4839,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             }
           }
@@ -4885,7 +5001,7 @@ return {
                 ["itemtype"] = "food-fish",
                 ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4901,7 +5017,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4917,7 +5033,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4941,7 +5057,7 @@ return {
                 ["itemtype"] = "food-fish",
                 ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4957,7 +5073,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -4973,7 +5089,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -5337,7 +5453,7 @@ return {
                 ["itemtype"] = "food-fish",
                 ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -5353,7 +5469,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -5369,7 +5485,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -5393,7 +5509,7 @@ return {
                 ["itemtype"] = "food-fish",
                 ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -5417,7 +5533,7 @@ return {
                 ["itemtype"] = "food-fish",
                 ["propertiestable"] = "database/bandits-properties.csv",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -5433,7 +5549,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -5449,7 +5565,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -5465,7 +5581,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -5481,7 +5597,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -5864,7 +5980,7 @@ return {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -64,
+                ["extrudeY"] = -48,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -6299,7 +6415,7 @@ return {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -64,
+                ["extrudeY"] = -48,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -6915,7 +7031,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7537,
+              gid = 11591,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 32,
@@ -6933,7 +7049,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7537,
+              gid = 11591,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 32,
@@ -6951,7 +7067,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7537,
+              gid = 11591,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 180,
@@ -6969,7 +7085,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7537,
+              gid = 11591,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -6988,7 +7104,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7537,
+              gid = 11591,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7007,7 +7123,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7537,
+              gid = 11591,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7026,7 +7142,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7537,
+              gid = 11591,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7045,7 +7161,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7537,
+              gid = 11591,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7064,7 +7180,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7540,
+              gid = 11594,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7083,7 +7199,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7540,
+              gid = 11594,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7102,7 +7218,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7540,
+              gid = 11594,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7121,7 +7237,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7540,
+              gid = 11594,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7140,7 +7256,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7540,
+              gid = 11594,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7159,7 +7275,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7541,
+              gid = 11595,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 36,
@@ -7177,7 +7293,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7541,
+              gid = 11595,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7196,7 +7312,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7541,
+              gid = 11595,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7215,7 +7331,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7541,
+              gid = 11595,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7234,7 +7350,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7541,
+              gid = 11595,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7253,7 +7369,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7541,
+              gid = 11595,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7272,7 +7388,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7544,
+              gid = 11598,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 39,
@@ -7290,7 +7406,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7544,
+              gid = 11598,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7309,7 +7425,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7544,
+              gid = 11598,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7328,7 +7444,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7544,
+              gid = 11598,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7347,7 +7463,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7544,
+              gid = 11598,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7366,7 +7482,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7544,
+              gid = 11598,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7385,7 +7501,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7545,
+              gid = 11599,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 40,
@@ -7403,7 +7519,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7545,
+              gid = 11599,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7422,7 +7538,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7545,
+              gid = 11599,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7441,7 +7557,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7545,
+              gid = 11599,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7460,7 +7576,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7545,
+              gid = 11599,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7479,7 +7595,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7545,
+              gid = 11599,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7498,7 +7614,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7565,
+              gid = 11619,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 60,
@@ -7516,7 +7632,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7565,
+              gid = 11619,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7535,7 +7651,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7565,
+              gid = 11619,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7554,7 +7670,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7565,
+              gid = 11619,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7573,7 +7689,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7565,
+              gid = 11619,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7592,7 +7708,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7565,
+              gid = 11619,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7611,7 +7727,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7565,
+              gid = 11619,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7630,7 +7746,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7565,
+              gid = 11619,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7649,7 +7765,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7553,
+              gid = 11607,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 48,
@@ -7667,7 +7783,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7553,
+              gid = 11607,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7686,7 +7802,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7553,
+              gid = 11607,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7705,7 +7821,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7553,
+              gid = 11607,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7724,7 +7840,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7553,
+              gid = 11607,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7743,7 +7859,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7553,
+              gid = 11607,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7762,7 +7878,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7560,
+              gid = 11614,
               visible = true,
               properties = {
                 ["bloodyanimation"] = 55,
@@ -7780,7 +7896,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7560,
+              gid = 11614,
               visible = true,
               properties = {
                 ["attackdegrees"] = 180,
@@ -7799,7 +7915,7 @@ return {
               height = 32,
               rotation = 0,
               opacity = 1,
-              gid = 7560,
+              gid = 11614,
               visible = true,
               properties = {
                 ["attackdegrees"] = 0,
@@ -7980,7 +8096,7 @@ return {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -64,
+                ["extrudeY"] = -48,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -9487,7 +9603,7 @@ return {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -64,
+                ["extrudeY"] = -48,
                 ["linecolor"] = "#80ffffff"
               }
             }
@@ -13105,7 +13221,7 @@ return {
           id = 81,
           name = "help8",
           class = "",
-          visible = true,
+          visible = false,
           opacity = 1,
           offsetx = 0,
           offsety = 0,
@@ -13588,7 +13704,7 @@ return {
                 ["bodyinlayers"] = "Wall",
                 ["color"] = "#80808080",
                 ["drawz"] = 0,
-                ["extrudeY"] = -64,
+                ["extrudeY"] = -48,
                 ["linecolor"] = "#80ffffff"
               }
             },
@@ -13612,1289 +13728,6 @@ return {
               },
               properties = {}
             }
-          }
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 3,
-      name = "notes",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
-        {
-          id = 1,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 320,
-          y = 352,
-          width = 480,
-          height = 128,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Teach basic combat with first low-level enemies",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          properties = {}
-        },
-        {
-          id = 2,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 960,
-          y = -160,
-          width = 480,
-          height = 128,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Introduce dodging enemy encouraging player to use run in combat",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          valign = "bottom",
-          properties = {}
-        },
-        {
-          id = 37,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 1600,
-          y = -160,
-          width = 480,
-          height = 128,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Teach long-range combat with stones to throw at slingers\nAvoid their stones then pick up and throw them back",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          valign = "bottom",
-          properties = {}
-        },
-        {
-          id = 3,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 2272,
-          y = -232,
-          width = 480,
-          height = 128,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Teach grabbing with guarding enemy and barrier broken only by thrown enemy",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          valign = "bottom",
-          properties = {}
-        },
-        {
-          id = 4,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 2912,
-          y = -232,
-          width = 480,
-          height = 128,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Entry hall with archers shooting from arrow slits",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          valign = "bottom",
-          properties = {}
-        },
-        {
-          id = 5,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 2816,
-          y = 608,
-          width = 480,
-          height = 128,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Guard room introducing mace enemies",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          valign = "bottom",
-          properties = {}
-        },
-        {
-          id = 6,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 3712,
-          y = 192,
-          width = 480,
-          height = 128,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Armory with mixed enemies and introducing throwable weapons",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          valign = "bottom",
-          properties = {}
-        },
-        {
-          id = 7,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4192,
-          y = -288,
-          width = 480,
-          height = 128,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Mess hall with food, throwable and breakable furniture, stronger mix of enemies",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          valign = "bottom",
-          properties = {}
-        },
-        {
-          id = 8,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4672,
-          y = -288,
-          width = 480,
-          height = 128,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Boss arena",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          valign = "bottom",
-          properties = {}
-        },
-        {
-          id = 9,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 5152,
-          y = -288,
-          width = 480,
-          height = 128,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "End room\n\nHolding cells with captured kids",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          valign = "bottom",
-          properties = {}
-        },
-        {
-          id = 13,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 0,
-          y = -128,
-          width = 480,
-          height = 128,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Teach movement - walking and running",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          valign = "bottom",
-          properties = {}
-        },
-        {
-          id = 110,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 192,
-          y = 0,
-          width = 160,
-          height = 64,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Vines",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 113,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 512,
-          y = 0,
-          width = 128,
-          height = 64,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Vines",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 115,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 768,
-          y = 0,
-          width = 128,
-          height = 64,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Vines",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 116,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 1232,
-          y = 80,
-          width = 128,
-          height = 64,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Vines",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 127,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 2080,
-          y = -64,
-          width = 160,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Torches",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 122,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 2016,
-          y = 112,
-          width = 32,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Stool",
-          fontfamily = "TinyUnicode",
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 124,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 2080,
-          y = 192,
-          width = 32,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Stool",
-          fontfamily = "TinyUnicode",
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 128,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 3216,
-          y = 48,
-          width = 160,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Torches",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 131,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 3168,
-          y = 432,
-          width = 96,
-          height = 64,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Table",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 129,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 2728,
-          y = 320,
-          width = 512,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Torches between alcoves",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 130,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 2792,
-          y = 0,
-          width = 512,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Torches between alcoves",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 132,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 3168,
-          y = 496,
-          width = 32,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Stool",
-          fontfamily = "TinyUnicode",
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 133,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 3232,
-          y = 496,
-          width = 32,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Stool",
-          fontfamily = "TinyUnicode",
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 134,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 3232,
-          y = 392,
-          width = 32,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Stool",
-          fontfamily = "TinyUnicode",
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 135,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 3168,
-          y = 392,
-          width = 32,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Stool",
-          fontfamily = "TinyUnicode",
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 136,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 3440,
-          y = 432,
-          width = 96,
-          height = 64,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Weapon table",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 137,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 3920,
-          y = 432,
-          width = 96,
-          height = 64,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Weapon table",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 138,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4048,
-          y = 432,
-          width = 96,
-          height = 64,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Weapon table",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 139,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 3200,
-          y = 384,
-          width = 64,
-          height = 64,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Anvil",
-          fontfamily = "TinyUnicode",
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 145,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 3264,
-          y = 384,
-          width = 64,
-          height = 64,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Forge",
-          fontfamily = "TinyUnicode",
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 143,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 3168,
-          y = 384,
-          width = 32,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Hammer",
-          fontfamily = "TinyUnicode",
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 144,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 3168,
-          y = 416,
-          width = 32,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Table",
-          fontfamily = "TinyUnicode",
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 146,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4256,
-          y = 416,
-          width = 128,
-          height = 64,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Table",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 216,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4256,
-          y = 256,
-          width = 128,
-          height = 64,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Table",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 222,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4256,
-          y = 96,
-          width = 128,
-          height = 64,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Table",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 226,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4256,
-          y = -64,
-          width = 128,
-          height = 64,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Table",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 211,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4480,
-          y = 544,
-          width = 128,
-          height = 64,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Table",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 215,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4480,
-          y = 384,
-          width = 128,
-          height = 64,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Table",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 221,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4480,
-          y = 224,
-          width = 128,
-          height = 64,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Table",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 229,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4480,
-          y = 64,
-          width = 128,
-          height = 64,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Table",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 208,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4256,
-          y = 480,
-          width = 128,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Bench",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 214,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4256,
-          y = 320,
-          width = 128,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Bench",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 220,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4256,
-          y = 160,
-          width = 128,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Bench",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 225,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4256,
-          y = 0,
-          width = 128,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Bench",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 210,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4480,
-          y = 608,
-          width = 128,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Bench",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 213,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4480,
-          y = 448,
-          width = 128,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Bench",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 219,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4480,
-          y = 288,
-          width = 128,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Bench",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 228,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4480,
-          y = 128,
-          width = 128,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Bench",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 209,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4256,
-          y = 384,
-          width = 128,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Bench",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 218,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4256,
-          y = 224,
-          width = 128,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Bench",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 224,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4256,
-          y = 64,
-          width = 128,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Bench",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 227,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4256,
-          y = -96,
-          width = 128,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Bench",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 212,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4480,
-          y = 512,
-          width = 128,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Bench",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 217,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4480,
-          y = 352,
-          width = 128,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Bench",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 223,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4480,
-          y = 192,
-          width = 128,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Bench",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
-          }
-        },
-        {
-          id = 230,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 4480,
-          y = 32,
-          width = 128,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Bench",
-          fontfamily = "Unifont",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "center",
-          valign = "center",
-          properties = {
-            ["bordercolor"] = "#ffffffff"
           }
         }
       }
