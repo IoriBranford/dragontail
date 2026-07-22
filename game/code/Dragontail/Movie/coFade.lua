@@ -2,11 +2,8 @@ local Color = require "Tiled.Color"
 
 local function setColor(obj, r, g, b, a)
     local color = Color.asARGBInt(r, g, b, a)
-    if obj.tintcolor then
-        obj.tintcolor = color
-    else
-        obj.color = color
-    end
+    obj.tintcolor = color
+    obj.color = color
 end
 
 local function coFade(obj, c2, c1, t)
