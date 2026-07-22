@@ -393,11 +393,11 @@ return {
         },
         {
           x = 0, y = 0, width = 20, height = 12,
-          data = "eJxNkktvzVEUxX8UbVzCvcl+4CsYi1Eb1TYM+kVMhHiMfAUzM9ft6w4Qo1IpQjU19GhH4jEwqLeJRETaIjt7i/9g5+x1/muts/Y5f4COwX6DvsMxhw8GB6v/ZvDFYJ/BT4NfhWcczjoccPhhMFYe65prz0EdpgzGHY477FRYUbgh2e9SGKp6UrXS2IvqGlwXGCzc1N8UuKSwrPBG4JbAQ4U9CnurAi8ptGqNbKcUpAOHO7DQhtfyX98q/SOFxwpnHE7UnF8N5hymHd5b3s9g5ThqMKlwxeCIplfo1w0mav7gh1/c3azDxbpr87zvWF9Jnr3UmCH6l5KaOL9f3M8Gp+uNIk/gjwYXPN9IPDOcdDgUb1EzaGXo1yy9yjXq0C18rr5H5k8G1+rbWIN/vjhz9c6Bg9cTuK8wJZmpW/OFT9S//BPF/S3wR1Lfqz50o4WnBb63YUZgs/hbkv6hibNjjg2BBwpXFVaLuybZLyrc08QoPBfYbfBC4E7h8A9O+Ac/uAsKAwo7FN62YVayb1n6bFO4q/BUYHv1kSnwbU19+IdHfB+O/8bgsqb+mcB88aJ/pzBisGG5bhlsVsVe6Jv7fwFivpUP"
+          data = "eJxNkstvjmEQxX+ulXyEfslcVGJhbS1WRFXDwj9iIxWtlX/Bzk59vX0LpCu0KUJJLV1qJW0tuqhrGysRaYtMZsS7mMyc5z1nnjPzvABtg0MGXYczDp8M+qreMPhmcNDgp8GvwhMOVxwOO/wwGKgea5q546AOYwbnHM467FFYULgrWe9V2FfxsmKhcRYxanBHoKdwU39P4LrCC4UVgWmBpwr7FQ5UBJ5XaFUOb5cUpA3H2zDTC8vyX98q/TOF5wpDDudrznWDKYdxh4+W++kpHycNLircNDih2Sv0awaDNX/wo1/sbtLhWu3aPPcdeUny7vnGDFG/l9TE/d3ifjW4XG8UfgJ/NhjxfCPx9HDB4Ui8Rc2g5aFbs3TKV7/DaOGr9T08fzG4Xd8GGvzh4kzVOwcOXkfgscK2wB9JXV/1ifjnf7C4v4s3XDjqmKW/8LjAUYVjChPFj95jpYm7Y45NgScKtxQWBbYE3knWcwqPNPGKwvfYs8BbgYcKbyR7Byf6Bz+4Mwq7FHYrfOiFScm6ZYDCDoWdjTyr6emVwANNffSPHvH9VPw3Bjc09a8F7hcv6lWF0wablnnbYKsizkLfPP8LzbSUBg=="
         },
         {
           x = 20, y = 0, width = 20, height = 12,
-          data = "eJxVkttujVEUhT8qNEVcsOac4g3EKzjulvIyqsTTKHvv8gbOoSVtLx3vXFJKlFuH9ECmOf50+5ORNQ9jjLkO/5rDTMAXh0MOkw49hx8Ov5Rn/HOknphy+O0wF3Ak4GbAtYAlK+w1WDZYMRg32Kfaiurj4i2rt6S143W9AwbPRvCuwYTBQeWLiheErragetffr966QwQMAo4GPDV4bvDJ4VxAL6r/2aEF9APWvJB8i7qv1M8pPhYwq1ryZqVLj7NRvpMB0wHDgKvyyZnpcT2KN6Veaq8EfHPoO9zS++T8rw7npfGo+HLUuVLfnSF9Lkp3WPPuiJv7a8JAbzet/VzQPnrizWtm+tzWnQ2lTf+NBn9azf/ulW822FI976MvTZ4l97UuXl+8x1brdoNBgzfy2FR+wuCGwUODR1a+/+6llTZ1b6V73eCewZjBfYNdBncNXjU4bjv9PflfOFwyGGr2E4P5BrulT97LBicdtoQzDh8MXrTyf2B1xi7vMKp/b6XrPFaN/76PBqe9sOFwSnGumWec+oxTv+072r+ZyZkV"
+          data = "eJxNkdtK1lEQxX8VlKRRUHOIoIsue4eOZtAT9BShpdUT9Bjmp9YTdKKTFeptaXddhqRiRl11ss9isecf34bFnj0za2b2mvWAiYTNgMMBlwJGA74H/Ky37B8DfmEs4FfAdMKxhLsJUwmL3rDfYclh2WHI4UD5lss/VHlLFVusu8vrYiMOrwfwweCgw6F6vyp7odD5FsrfxYcr9jkgE2YTjie8dHjj8CngYsJotviMwTOH54WetXzPppf402WfSLhRvvVodi9hI+BCtrpXHZ4YhMOawarBH2t1b2XLG0uYLO71hO2AXsBM7Uf9twIuJ9zRzAZHHFYc5g0eq4e3P6jOleIdrbnvJ4zXrFaYrd09cHhY2OPw1lrefPVUnXul2VxxpVG/8NfgSzRofuXezDbrVHH0F82lHezU3/uls+4XDicdTjnMlT5PvcVVP6per9PFWmzX4H1pumLwyGGfwzuDrwbfDK45nJZWFdf/Or56qIb6S8e9xe/yzmiP0TSSX3Fp1Omtnd8uDeUTBvkfHc4H9AtrDr8DzgWcLcgWdgbeuvWWLb5s8XeD/+cf5daZcg=="
         },
         {
           x = 40, y = 0, width = 20, height = 12,
@@ -1652,8 +1652,8 @@ return {
               name = "tall-stone",
               type = "tall-stone",
               shape = "rectangle",
-              x = 1120,
-              y = 152,
+              x = 1168,
+              y = 160,
               width = 48,
               height = 48,
               rotation = 0,
