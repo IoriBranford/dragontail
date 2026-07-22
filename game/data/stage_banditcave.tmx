@@ -857,11 +857,11 @@ body to grapple</text>
    <object id="522" name="Fireball" x="2120" y="168" width="120" height="32">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">With 1 or more fire meter </text>
    </object>
-   <object id="656" name="Fireball" x="2208" y="312" width="136" height="16">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Hold then release</text>
+   <object id="656" name="Fireball" x="2408" y="168" width="136" height="16">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">Hold</text>
    </object>
-   <object id="698" name="Fireball" x="2208" y="296" width="136" height="16">
-    <text fontfamily="Unifont" wrap="1" color="#ffffff">Fireballs</text>
+   <object id="698" name="Fireball" x="2408" y="184" width="128" height="16">
+    <text fontfamily="Unifont" wrap="1" color="#ffffff">then release</text>
    </object>
    <object id="523" name="flame1" x="2208" y="192" width="30" height="6">
     <properties>
@@ -875,9 +875,9 @@ body to grapple</text>
      <property name="roundcorners" type="float" value="1"/>
     </properties>
    </object>
-   <object id="632" name="attackbutton" gid="3112" x="2296" y="304" width="14" height="14"/>
-   <object id="633" gid="3114" x="2328" y="304" width="14" height="14"/>
-   <object id="634" name="or" x="2304" y="296" width="16" height="16">
+   <object id="632" name="attackbutton" gid="3112" x="2456" y="176" width="14" height="14"/>
+   <object id="633" gid="3114" x="2488" y="176" width="14" height="14"/>
+   <object id="634" name="or" x="2464" y="168" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
    <object id="675" template="mapobjects/CameraPath.tx" x="1840" y="144">
