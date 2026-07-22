@@ -71,6 +71,7 @@ local Dragontail = {
             }
         },
 
+        tutorial = true,
         -- game_rules = "ORIGINAL",
         -- game_difficulty = "NORMAL",
         -- game_dialogue = true,

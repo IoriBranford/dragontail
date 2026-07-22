@@ -308,7 +308,14 @@ function Stage.playRoomMusic(room)
 end
 
 function Stage.openRoom(i)
-    local room = map.layers.rooms[i]
+    local rooms = map.layers.rooms
+    if not Config.tutorial then
+        while i <= #rooms and rooms[i].tutorial do
+            i = i + 1
+        end
+    end
+
+    local room = rooms[i]
     if room then
         roomindex = i
         Characters.spawnArray(room.characters)
