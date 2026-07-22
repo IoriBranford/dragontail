@@ -302,6 +302,11 @@
                     "value": false
                 },
                 {
+                    "name": "clearotherroom",
+                    "type": "string",
+                    "value": ""
+                },
+                {
                     "name": "donewhenenemiesleft",
                     "type": "int",
                     "value": 0
@@ -331,6 +336,11 @@
                     "name": "titlebarcuecard",
                     "type": "string",
                     "value": ""
+                },
+                {
+                    "name": "tutorial",
+                    "type": "bool",
+                    "value": false
                 }
             ],
             "name": "Room",
