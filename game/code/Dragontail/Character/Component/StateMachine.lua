@@ -105,10 +105,25 @@ local function evalStateVar(self, state, k)
     return v
 end
 
+function StateMachine.interruptThread(self, statename, a,b,c,d,e,f,g)
+    local stco = self.statethread
+    if stco then
+        local ok, sn2, h,j,k,l,m,n,o
+            = co_resume(stco, statename, a,b,c,d,e,f,g)
+        if ok and sn2 then
+            return sn2, h,j,k,l,m,n,o
+        end
+    end
+    return statename, a,b,c,d,e,f,g
+end
+
 function StateMachine.start(self, statename, a,b,c,d,e,f,g)
+    local stco = self.statethread
     if self.statebehavior then
         statename, a,b,c,d,e,f,g = self.statebehavior:interrupt(statename, a,b,c,d,e,f,g)
         self.statebehavior:_release()
+    elseif stco then
+        statename, a,b,c,d,e,f,g = StateMachine.interruptThread(self, statename, a,b,c,d,e,f,g)
     end
     self.statebehavior = nil
     self.statethread = nil
