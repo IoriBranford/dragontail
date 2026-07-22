@@ -642,11 +642,10 @@ to clear lost enemies</text>
    </object>
   </objectgroup>
  </group>
- <group id="17" name="title" visible="0">
+ <group id="17" name="title">
   <objectgroup id="7" name="title">
    <object id="11" name="copyright" x="52" y="193.5" width="412" height="58.5">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="right" valign="bottom">(C) 2026 IORI BRANFORD
-
 MUSIC (C) 2009, 2013 BLUE WAVE THEORY
 USED UNDER CREATIVE COMMONS ATTRIBUTION SHARE-ALIKE LICENSE</text>
    </object>
