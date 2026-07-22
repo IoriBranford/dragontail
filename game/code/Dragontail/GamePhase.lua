@@ -176,43 +176,6 @@ local function fixedupdateInputDisplay()
     end
 end
 
-function GamePhase.victorySweep()
-    local rose = assert(Gui:get("gameplay.victory_Rose"))
-    local path = assert(Gui:get("gameplay.victory.Rosepath"))
-    rose:setVisible(true)
-    Audio.play(rose.swipesound)
-
-    local points = assert(path.points)
-    local px, py = path.x, path.y
-    local p1, p2 = #points, 2
-    local x, y   = points[p1-1], points[p1]
-    local rx2, ry2 = points[p2-1] + px, points[p2] + py
-
-    rose.x, rose.y = x + px, y + py
-    while rose.x ~= rx2 or rose.y ~= ry2 do
-        x, y, p1 = math2.walkpolyline(path.points,
-            x, y, p1, -50)
-        rose.x = px + x
-        rose.y = py + y
-        coroutine.yield()
-    end
-    local menu = assert(Gui.gameplay.victory)
-    local menuy = menu.y
-    menu:setVisible(true)
-    local swipe = rose.swipe
-    local alpha = 1
-    while alpha > 0 do
-        alpha = alpha - 1/64
-        swipe.tintcolor = Color.asARGBInt(1, 1, 1, alpha)
-        menu.y = menuy + math.cos(love.timer.getTime()*100)*alpha*50
-        coroutine.yield()
-    end
-    menu.y = menuy
-    Audio.play(rose.voice)
-    Gui:pushMenu(menu)
-    return true
-end
-
 function GamePhase.fixedupdate()
     if not paused then
         Stage.fixedupdate()
