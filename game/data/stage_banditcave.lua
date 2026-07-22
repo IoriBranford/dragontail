@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 112,
-  nextobjectid = 1084,
+  nextobjectid = 1109,
   backgroundcolor = { 64, 64, 64 },
   properties = {
     ["ceilingz"] = 256,
@@ -3802,9 +3802,7 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {
-            ["donewhenenemiesleft"] = 4
-          },
+          properties = {},
           objects = {
             {
               id = 501,
@@ -3830,56 +3828,6 @@ return {
               shape = "rectangle",
               x = 2096,
               y = 264,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              opacity = 1,
-              gid = 3103,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
-          id = 13,
-          name = "+spears",
-          class = "Room",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {},
-          objects = {
-            {
-              id = 41,
-              name = "",
-              type = "bandit-spear",
-              shape = "rectangle",
-              x = 1576,
-              y = 208,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              opacity = 1,
-              gid = 3103,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 62,
-              name = "",
-              type = "bandit-spear",
-              shape = "rectangle",
-              x = 2096,
-              y = 280,
               width = 64,
               height = 64,
               rotation = 0,
@@ -5036,24 +4984,7 @@ return {
               type = "bandit-shield",
               shape = "rectangle",
               x = 2544,
-              y = 272,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              opacity = 1,
-              gid = 3141,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 563,
-              name = "",
-              type = "bandit-shield",
-              shape = "rectangle",
-              x = 2544,
-              y = 344,
+              y = 312,
               width = 64,
               height = 64,
               rotation = 0,
@@ -5460,23 +5391,6 @@ return {
           },
           objects = {
             {
-              id = 307,
-              name = "",
-              type = "bandit-shield",
-              shape = "rectangle",
-              x = 2544,
-              y = 312,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              opacity = 1,
-              gid = 3141,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
               id = 561,
               name = "",
               type = "bandit-spear",
@@ -5505,6 +5419,23 @@ return {
               rotation = 0,
               opacity = 1,
               gid = 3103,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1108,
+              name = "",
+              type = "bandit-shield",
+              shape = "rectangle",
+              x = 2544,
+              y = 312,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3141,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -8556,7 +8487,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 4,
+            ["donewhenenemiesleft"] = 3,
             ["titlebarcuecard"] = "LV2 FIREBALL"
           },
           objects = {
@@ -8677,7 +8608,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 5
+            ["donewhenenemiesleft"] = 4
           },
           objects = {
             {
@@ -8749,23 +8680,6 @@ return {
               }
             },
             {
-              id = 881,
-              name = "",
-              type = "bandit-shield",
-              shape = "rectangle",
-              x = 1168,
-              y = 1136,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              opacity = 1,
-              gid = 3141,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
               id = 882,
               name = "",
               type = "bandit-shield",
@@ -8797,7 +8711,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 5
+            ["donewhenenemiesleft"] = 4
           },
           objects = {
             {
@@ -8923,8 +8837,8 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 768,
-              y = 1344,
+              x = 640,
+              y = 1272,
               width = 64,
               height = 64,
               rotation = 0,
@@ -8940,8 +8854,8 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 1352,
-              y = 1088,
+              x = 1264,
+              y = 1016,
               width = 64,
               height = 64,
               rotation = 0,
@@ -8957,8 +8871,8 @@ return {
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 872,
-              y = 1264,
+              x = 1144,
+              y = 1072,
               width = 64,
               height = 64,
               rotation = 0,
@@ -8974,8 +8888,8 @@ return {
               name = "",
               type = "bandit-dagger",
               shape = "rectangle",
-              x = 1272,
-              y = 1272,
+              x = 880,
+              y = 1328,
               width = 64,
               height = 64,
               rotation = 0,
@@ -8989,10 +8903,27 @@ return {
             {
               id = 900,
               name = "",
-              type = "bandit-spear",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 1224,
               y = 1192,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 906,
+              name = "",
+              type = "bandit-spear",
+              shape = "rectangle",
+              x = 744,
+              y = 1224,
               width = 64,
               height = 64,
               rotation = 0,
@@ -9004,45 +8935,11 @@ return {
               }
             },
             {
-              id = 904,
-              name = "",
-              type = "bandit-shield",
-              shape = "rectangle",
-              x = 1072,
-              y = 1192,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              opacity = 1,
-              gid = 3141,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 906,
-              name = "",
-              type = "bandit-shield",
-              shape = "rectangle",
-              x = 1136,
-              y = 1088,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              opacity = 1,
-              gid = 3141,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
               id = 905,
               name = "",
               type = "bandit-shield",
               shape = "rectangle",
-              x = 736,
+              x = 976,
               y = 1200,
               width = 64,
               height = 64,
@@ -9651,25 +9548,7 @@ return {
               type = "bandit-shield",
               shape = "rectangle",
               x = 1616,
-              y = 1016,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              opacity = 1,
-              gid = 3141,
-              visible = true,
-              properties = {
-                ["facedegrees"] = 180,
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 928,
-              name = "",
-              type = "bandit-shield",
-              shape = "rectangle",
-              x = 1640,
-              y = 1080,
+              y = 1040,
               width = 64,
               height = 64,
               rotation = 0,
@@ -9684,36 +9563,68 @@ return {
             {
               id = 507,
               name = "",
-              type = "bandit-spear",
+              type = "bandit-dagger",
               shape = "rectangle",
-              x = 1832,
-              y = 984,
+              x = 1704,
+              y = 1008,
               width = 64,
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3105,
               visible = true,
               properties = {
-                ["facedegrees"] = 180,
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1085,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1648,
+              y = 976,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
+              visible = true,
+              properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
             },
             {
               id = 930,
               name = "",
-              type = "bandit-spear",
+              type = "bandit-dagger",
               shape = "rectangle",
-              x = 1824,
-              y = 1112,
+              x = 1728,
+              y = 1096,
               width = 64,
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3105,
               visible = true,
               properties = {
-                ["facedegrees"] = 180,
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1084,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1680,
+              y = 1072,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
+              visible = true,
+              properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
             }
@@ -9732,7 +9643,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 6
+            ["donewhenenemiesleft"] = 4
           },
           objects = {
             {
@@ -9843,29 +9754,12 @@ return {
               }
             },
             {
-              id = 611,
-              name = "",
-              type = "bandit-spear",
-              shape = "rectangle",
-              x = 1024,
-              y = 1032,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              opacity = 1,
-              gid = 3103,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
               id = 612,
               name = "",
               type = "bandit-spear",
               shape = "rectangle",
-              x = 976,
-              y = 1096,
+              x = 960,
+              y = 1064,
               width = 64,
               height = 64,
               rotation = 0,
@@ -9881,13 +9775,64 @@ return {
               name = "",
               type = "bandit-shield",
               shape = "rectangle",
-              x = 1064,
-              y = 1096,
+              x = 1072,
+              y = 1144,
               width = 64,
               height = 64,
               rotation = 0,
               opacity = 1,
               gid = 3141,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1086,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1016,
+              y = 1016,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1087,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1040,
+              y = 1072,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1088,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 976,
+              y = 1136,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -10797,27 +10742,8 @@ return {
               name = "",
               type = "bandit-shield",
               shape = "rectangle",
-              x = 2128,
-              y = 992,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              opacity = 1,
-              gid = 3141,
-              visible = true,
-              properties = {
-                ["facedegrees"] = 180,
-                ["initialai"] = "guardForever",
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 966,
-              name = "",
-              type = "bandit-shield",
-              shape = "rectangle",
-              x = 2136,
-              y = 1024,
+              x = 2120,
+              y = 1008,
               width = 64,
               height = 64,
               rotation = 0,
@@ -11153,7 +11079,7 @@ return {
           parallaxy = 1,
           properties = {
             ["cameraboundary"] = { id = 1042 },
-            ["donewhenenemiesleft"] = 6
+            ["donewhenenemiesleft"] = 5
           },
           objects = {
             {
@@ -11170,76 +11096,6 @@ return {
               gid = 3139,
               visible = true,
               properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 348,
-              name = "",
-              type = "bandit-shield",
-              shape = "rectangle",
-              x = 2256,
-              y = 976,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              opacity = 1,
-              gid = 3141,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 970,
-              name = "",
-              type = "bandit-shield",
-              shape = "rectangle",
-              x = 1736,
-              y = 1040,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              opacity = 1,
-              gid = 3141,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 789,
-              name = "",
-              type = "bandit-shield",
-              shape = "rectangle",
-              x = 2264,
-              y = 1008,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              opacity = 1,
-              gid = 3141,
-              visible = true,
-              properties = {
-                ["facedegrees"] = 180,
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 969,
-              name = "",
-              type = "bandit-shield",
-              shape = "rectangle",
-              x = 1720,
-              y = 1072,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              opacity = 1,
-              gid = 3141,
-              visible = true,
-              properties = {
-                ["facedegrees"] = 180,
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
             },
@@ -11272,6 +11128,74 @@ return {
               rotation = 0,
               opacity = 1,
               gid = 3103,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1089,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1736,
+              y = 1032,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1090,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 1712,
+              y = 1080,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1091,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2256,
+              y = 992,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1092,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2288,
+              y = 1056,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -12665,6 +12589,7 @@ return {
               gid = 3105,
               visible = true,
               properties = {
+                ["itemtype"] = "food-fish",
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
             },
@@ -12973,23 +12898,7 @@ return {
               gid = 3103,
               visible = true,
               properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 875,
-              name = "",
-              type = "bandit-spear",
-              shape = "rectangle",
-              x = 2704,
-              y = 1088,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              opacity = 1,
-              gid = 3103,
-              visible = true,
-              properties = {
+                ["itemtype"] = "food-fish",
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
             },
@@ -13011,17 +12920,102 @@ return {
               }
             },
             {
-              id = 876,
+              id = 1093,
               name = "",
-              type = "bandit-spear",
+              type = "bandit-dagger",
               shape = "rectangle",
-              x = 3224,
+              x = 2696,
+              y = 1032,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1094,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2664,
+              y = 1080,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1095,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 3216,
               y = 1016,
               width = 64,
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3105,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1096,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 3232,
+              y = 1088,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1097,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 3272,
+              y = 1040,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1099,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2648,
+              y = 1008,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -13061,7 +13055,7 @@ return {
                 ["entrypoint"] = { id = 401 },
                 ["exitpoint"] = { id = 402 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
-                ["itemtype"] = "mana-peppers",
+                ["itemtype"] = "food-bigfish",
                 ["recoverai"] = "enterAndAttackUntilEmpty",
                 ["z"] = 64
               }
@@ -13166,29 +13160,12 @@ return {
           properties = {},
           objects = {
             {
-              id = 781,
-              name = "",
-              type = "bandit-shield",
-              shape = "rectangle",
-              x = 2688,
-              y = 1080,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              opacity = 1,
-              gid = 3141,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
               id = 854,
               name = "",
               type = "bandit-shield",
               shape = "rectangle",
               x = 2688,
-              y = 992,
+              y = 1048,
               width = 64,
               height = 64,
               rotation = 0,
@@ -13196,23 +13173,7 @@ return {
               gid = 3141,
               visible = true,
               properties = {
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
-            {
-              id = 782,
-              name = "",
-              type = "bandit-shield",
-              shape = "rectangle",
-              x = 3232,
-              y = 1080,
-              width = 64,
-              height = 64,
-              rotation = 0,
-              opacity = 1,
-              gid = 3141,
-              visible = true,
-              properties = {
+                ["itemtype"] = "food-fish",
                 ["propertiestable"] = "database/bandits-properties.csv"
               }
             },
@@ -13222,12 +13183,114 @@ return {
               type = "bandit-shield",
               shape = "rectangle",
               x = 3232,
-              y = 992,
+              y = 1048,
               width = 64,
               height = 64,
               rotation = 0,
               opacity = 1,
               gid = 3141,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1101,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2600,
+              y = 1024,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1102,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2656,
+              y = 1000,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1103,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2632,
+              y = 1072,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1105,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 3264,
+              y = 1016,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1106,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 3280,
+              y = 1088,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1107,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 3312,
+              y = 1048,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -13263,6 +13326,7 @@ return {
               gid = 3139,
               visible = true,
               properties = {
+                ["itemtype"] = "food-bigfish",
                 ["propertiestable"] = "database/bandits-properties.csv",
                 ["z"] = 64
               }
