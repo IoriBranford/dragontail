@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="20" nextobjectid="13">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="20" nextobjectid="15">
  <editorsettings>
   <export target="movies_pr.lua" format="lua"/>
  </editorsettings>
  <properties>
   <property name="runphase" value="Dragontail.MoviePhase"/>
  </properties>
- <group id="7" name="RT4start" class="Tiled.Movie" visible="0" tintcolor="#ffffff">
+ <group id="7" name="trailerstart" class="Tiled.Movie" tintcolor="#ffffff">
   <properties>
    <property name="hitsound" type="file" value="sounds/combat/heavyswingandhit.ogg"/>
    <property name="script" value="Dragontail.Movie.Title"/>
@@ -54,18 +54,18 @@
     </properties>
     <text fontfamily="f Firebrand" pixelsize="48" wrap="1" color="#e02121" halign="center" valign="bottom">DRAGONTAIL</text>
    </object>
-   <object id="5" name="Rising Tide 4" type="Gui.Button" x="48" y="216" width="144" height="36">
+   <object id="5" name="Rising Tide 4" type="Gui.Button" x="48" y="211.5" width="144" height="36">
     <properties>
      <property name="action" value="restartStage"/>
      <property name="color2" type="color" value="#ffff4141"/>
      <property name="frequency" type="float" value="30"/>
      <property name="selectanimation" value="colorCycle"/>
     </properties>
-    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">Rising Tide 4</text>
+    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">Demo 2026.2</text>
    </object>
   </objectgroup>
  </group>
- <group id="2" name="RT4end" class="Tiled.Movie" tintcolor="#ffffff">
+ <group id="2" name="trailerend" class="Tiled.Movie" tintcolor="#ffffff">
   <properties>
    <property name="script" value="Dragontail.Movie.End"/>
    <property name="swipesound" type="file" value="sounds/combat/heavyswingandhit.ogg"/>
@@ -74,11 +74,6 @@
   <imagelayer id="18" name="bg" tintcolor="#ffffff">
    <image source="sprites/ui/title/illust/bg.png" width="480" height="270"/>
   </imagelayer>
-  <objectgroup id="19" name="misc">
-   <object id="11" name="copyright" x="36" y="234" width="412" height="18">
-    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="right" valign="center">© 2026 Iori Branford</text>
-   </object>
-  </objectgroup>
   <group id="6" name="Rose" offsetx="-244" offsety="-126">
    <imagelayer id="3" name="Rose" tintcolor="#ffffff">
     <image source="sprites/ui/title/illust/09 Rose.png" width="960" height="600"/>
@@ -93,18 +88,32 @@
    </object>
   </objectgroup>
   <objectgroup id="17" name="callToAction">
-   <object id="7" name="PLAY THE DEMO" type="Gui.Button" x="276" y="72" width="156" height="108">
+   <object id="7" name="PLAY THE DEMO" type="Gui.Button" x="288" y="54" width="156" height="108">
     <properties>
      <property name="action" value="restartStage"/>
      <property name="color2" type="color" value="#ffffd8d8"/>
      <property name="frequency" type="float" value="30"/>
      <property name="selectanimation" value="colorCycle"/>
     </properties>
-    <text fontfamily="f Firebrand" pixelsize="48" wrap="1" color="#e02121" halign="center" valign="bottom">PLAY THE DEMO</text>
+    <text fontfamily="f Firebrand" pixelsize="48" wrap="1" color="#e02121" halign="center" valign="bottom">KICK TAIL WITH TAIL</text>
    </object>
-   <object id="12" template="gui/menu/Panel.tx" name="bar" x="272" y="175.5" width="160" height="22.5"/>
-   <object id="9" name="Rate &amp; Comment" x="276" y="180" width="156" height="18">
+   <object id="12" template="gui/menu/Panel.tx" name="bar" x="280" y="171" width="176" height="27">
+    <properties>
+     <property name="roundcorners" type="float" value="4"/>
+    </properties>
+   </object>
+   <object id="9" name="Rate &amp; Comment" x="292" y="175.5" width="156" height="22.5">
     <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="center" valign="center">ioribranford.com/dragontail</text>
+   </object>
+   <object id="13" name="at" x="292" y="153" width="156" height="18">
+    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff" halign="center">at</text>
+   </object>
+  </objectgroup>
+  <objectgroup id="19" name="copyright">
+   <object id="14" name="copyright" x="44" y="193.5" width="412" height="58.5">
+    <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="right" valign="bottom">(C) 2026 IORI BRANFORD
+MUSIC (C) 2009, 2013 BLUE WAVE THEORY
+USED UNDER CREATIVE COMMONS ATTRIBUTION SHARE-ALIKE LICENSE</text>
    </object>
   </objectgroup>
  </group>
