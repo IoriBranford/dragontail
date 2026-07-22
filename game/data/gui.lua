@@ -2989,24 +2989,6 @@ return {
               properties = {}
             },
             {
-              id = 237,
-              name = "Rate & Comment",
-              type = "",
-              shape = "text",
-              x = 324,
-              y = 153,
-              width = 87.7188,
-              height = 21.7813,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              text = "& donate ._.",
-              fontfamily = "TinyUnicode",
-              wrap = true,
-              color = { 128, 128, 128 },
-              properties = {}
-            },
-            {
               id = 218,
               name = "Rosepath",
               type = "",

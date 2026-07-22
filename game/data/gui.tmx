@@ -634,9 +634,6 @@ to clear lost enemies</text>
    <object id="197" name="Rate &amp; Comment" x="316" y="144" width="87.7188" height="21.7813">
     <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Rate &amp; Comment</text>
    </object>
-   <object id="237" name="Rate &amp; Comment" x="324" y="153" width="87.7188" height="21.7813">
-    <text fontfamily="TinyUnicode" wrap="1" color="#808080">&amp; donate ._.</text>
-   </object>
    <object id="218" name="Rosepath" x="-264" y="-153">
     <polyline points="0,0 44,36 100,108 148,202.5 180,310.5"/>
    </object>
