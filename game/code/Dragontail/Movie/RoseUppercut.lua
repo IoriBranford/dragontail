@@ -4,6 +4,8 @@ local coRelativePath = require "Dragontail.Movie.coRelativePath"
 local coFade     = require "Dragontail.Movie.coFade"
 local Gui        = require "Dragontail.Gui"
 local Color      = require "Tiled.Color"
+local coDrift    = require "Dragontail.Movie.coDrift"
+local multitask  = require "multitask"
 
 ---@param movie Movie
 local function RoseUppercut (movie)
@@ -16,21 +18,25 @@ local function RoseUppercut (movie)
     swipe.tintcolor = Color.White
 
     coRelativePath(path, rose, 30)
-    local cowrap = coroutine.wrap
     local yield = coroutine.yield
 
     local menu = (Gui.gameplay.victory)
     menu:setVisible(true)
 
-    local fade = cowrap(coFade)
-    fade(swipe, 0x00FFFFFF, Color.White, 60)
-    local shake = cowrap(coHitShake)
-    shake(menu, -1.5, 50, 100, 60)
-    for i = 1, 60 do
-        yield()
-        fade()
-        shake()
+    local wrap = coroutine.wrap
+    local mt = multitask.new()
+    local tasks = {
+        function() return coDrift(rose, math.rad(240), .5, 60) end,
+        function() return coFade(swipe, 0x00FFFFFF, Color.White, 60) end,
+        function() return coHitShake(menu, -1.5, 50, 100, 60) end,
+    }
+    for i = 1, #tasks do
+        mt:push(wrap(tasks[i]))
     end
+    repeat
+        mt:runAll()
+        yield()
+    until mt:allDone()
 
     Audio.play(movie.voice)
 end
