@@ -5474,36 +5474,17 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 1
+            ["donewhenenemiesleft"] = 1,
+            ["time"] = 120
           },
           objects = {
-            {
-              id = 704,
-              name = "bandit-muscle",
-              type = "bandit-muscle",
-              shape = "rectangle",
-              x = 2928,
-              y = 240,
-              width = 128,
-              height = 128,
-              rotation = 0,
-              opacity = 1,
-              gid = 3139,
-              visible = true,
-              properties = {
-                ["facedegrees"] = 180,
-                ["holdstrength"] = 180,
-                ["initialai"] = "muscle-grab2",
-                ["propertiestable"] = "database/bandits-properties.csv"
-              }
-            },
             {
               id = 825,
               name = "bandit-muscle",
               type = "bandit-muscle",
               shape = "rectangle",
-              x = 2960,
-              y = 272,
+              x = 2944,
+              y = 256,
               width = 128,
               height = 128,
               rotation = 0,

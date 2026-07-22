@@ -1274,15 +1274,9 @@ and tap    to throw</text>
   <objectgroup id="76" name="meetmuscle" class="Room">
    <properties>
     <property name="donewhenenemiesleft" type="int" value="1"/>
+    <property name="time" type="int" value="120"/>
    </properties>
-   <object id="704" template="mapobjects/bandit/muscle.tx" x="2928" y="240">
-    <properties>
-     <property name="facedegrees" type="float" value="180"/>
-     <property name="holdstrength" type="int" value="180"/>
-     <property name="initialai" value="muscle-grab2"/>
-    </properties>
-   </object>
-   <object id="825" template="mapobjects/bandit/muscle.tx" x="2960" y="272">
+   <object id="825" template="mapobjects/bandit/muscle.tx" x="2944" y="256">
     <properties>
      <property name="facedegrees" type="float" value="180"/>
      <property name="holdstrength" type="int" value="180"/>
