@@ -645,7 +645,7 @@ to clear lost enemies</text>
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="right" valign="bottom">(C) 2026 IORI BRANFORD
 
 MUSIC (C) 2009, 2013 BLUE WAVE THEORY
-LICENSED CREATIVE COMMONS ATTRIBUTION SHARE-ALIKE</text>
+USED UNDER CREATIVE COMMONS ATTRIBUTION SHARE-ALIKE LICENSE</text>
    </object>
   </objectgroup>
   <objectgroup id="25" name="pressstart" class="Gui.Menu" visible="0">

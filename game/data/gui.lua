@@ -3052,7 +3052,7 @@ return {
               rotation = 0,
               opacity = 1,
               visible = true,
-              text = "(C) 2026 IORI BRANFORD\n\nMUSIC (C) 2009, 2013 BLUE WAVE THEORY\nLICENSED CREATIVE COMMONS ATTRIBUTION SHARE-ALIKE",
+              text = "(C) 2026 IORI BRANFORD\n\nMUSIC (C) 2009, 2013 BLUE WAVE THEORY\nUSED UNDER CREATIVE COMMONS ATTRIBUTION SHARE-ALIKE LICENSE",
               fontfamily = "TinyUnicode",
               wrap = true,
               color = { 255, 255, 255 },
