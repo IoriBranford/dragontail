@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 103,
-  nextobjectid = 1064,
+  nextlayerid = 111,
+  nextobjectid = 1079,
   backgroundcolor = { 64, 64, 64 },
   properties = {
     ["ceilingz"] = 256,
@@ -936,9 +936,60 @@ return {
       layers = {
         {
           type = "objectgroup",
+          draworder = "topdown",
+          id = 108,
+          name = "movetutor",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["tutorial"] = true
+          },
+          objects = {
+            {
+              id = 513,
+              name = "joystick",
+              type = "",
+              shape = "rectangle",
+              x = 416,
+              y = 64,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              opacity = 1,
+              gid = 2702,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 516,
+              name = "Move",
+              type = "",
+              shape = "text",
+              x = 376,
+              y = 48,
+              width = 32,
+              height = 18,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              text = "Move",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
           draworder = "index",
           id = 7,
-          name = "learnmovement",
+          name = "start",
           class = "Room",
           visible = true,
           opacity = 1,
@@ -1035,39 +1086,6 @@ return {
                 ["extrudeY"] = -48,
                 ["linecolor"] = "#80ffffff"
               }
-            },
-            {
-              id = 513,
-              name = "joystick",
-              type = "",
-              shape = "rectangle",
-              x = 416,
-              y = 64,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              opacity = 1,
-              gid = 2702,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 516,
-              name = "Move",
-              type = "",
-              shape = "text",
-              x = 376,
-              y = 48,
-              width = 32,
-              height = 18,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              text = "Move",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
-              properties = {}
             }
           }
         },
@@ -1083,7 +1101,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["tutorial"] = true
+          },
           objects = {
             {
               id = 1053,
@@ -1347,7 +1367,7 @@ return {
           draworder = "topdown",
           id = 101,
           name = "attacktutor2",
-          class = "",
+          class = "Room",
           visible = true,
           opacity = 1,
           offsetx = 0,
@@ -1355,7 +1375,8 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 4
+            ["donewhenenemiesleft"] = 4,
+            ["tutorial"] = true
           },
           objects = {
             {
@@ -1578,14 +1599,16 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["tutorial"] = true
+          },
           objects = {
             {
               id = 637,
               name = "Direct",
               type = "",
               shape = "text",
-              x = 864,
+              x = 992,
               y = 40,
               width = 128,
               height = 32,
@@ -1603,7 +1626,7 @@ return {
               name = "joystick",
               type = "",
               shape = "rectangle",
-              x = 840,
+              x = 968,
               y = 56,
               width = 16,
               height = 16,
@@ -1696,7 +1719,8 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["time"] = 60
+            ["time"] = 60,
+            ["tutorial"] = true
           },
           objects = {
             {
@@ -1722,14 +1746,14 @@ return {
               name = "Direct",
               type = "",
               shape = "text",
-              x = 1032,
+              x = 1144,
               y = 40,
-              width = 240,
+              width = 112,
               height = 16,
               rotation = 0,
               opacity = 1,
               visible = true,
-              text = "Throw         aimed with",
+              text = "Throw",
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
@@ -1740,8 +1764,8 @@ return {
               name = "joystick",
               type = "",
               shape = "rectangle",
-              x = 1232,
-              y = 56,
+              x = 1216,
+              y = 72,
               width = 16,
               height = 16,
               rotation = 0,
@@ -1755,7 +1779,7 @@ return {
               name = "attackbutton",
               type = "",
               shape = "rectangle",
-              x = 1096,
+              x = 1208,
               y = 48,
               width = 14,
               height = 14,
@@ -1770,7 +1794,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1128,
+              x = 1240,
               y = 48,
               width = 14,
               height = 14,
@@ -1785,7 +1809,7 @@ return {
               name = "or",
               type = "",
               shape = "text",
-              x = 1104,
+              x = 1216,
               y = 40,
               width = 16,
               height = 16,
@@ -1846,6 +1870,24 @@ return {
               wrap = true,
               color = { 255, 255, 255 },
               halign = "center",
+              properties = {}
+            },
+            {
+              id = 602,
+              name = "Instruction",
+              type = "",
+              shape = "text",
+              x = 1144,
+              y = 56,
+              width = 112,
+              height = 16,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              text = "Aim with",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
               properties = {}
             }
           }
@@ -2039,9 +2081,9 @@ return {
         {
           type = "objectgroup",
           draworder = "topdown",
-          id = 100,
-          name = "sprinttutor",
-          class = "",
+          id = 64,
+          name = "tolearnsprint",
+          class = "Room",
           visible = true,
           opacity = 1,
           offsetx = 0,
@@ -2049,6 +2091,42 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {},
+          objects = {
+            {
+              id = 690,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 1040,
+              y = 144,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polyline = {
+                { x = 0, y = 0 },
+                { x = 160, y = 0 }
+              },
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 100,
+          name = "sprinttutor",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["tutorial"] = true
+          },
           objects = {
             {
               id = 515,
@@ -2183,58 +2261,6 @@ return {
               wrap = true,
               color = { 255, 255, 255 },
               halign = "center",
-              properties = {}
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
-          id = 64,
-          name = "tolearnsprint",
-          class = "Room",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {},
-          objects = {
-            {
-              id = 682,
-              name = "Attack",
-              type = "",
-              shape = "text",
-              x = 1304,
-              y = -32,
-              width = 128,
-              height = 16,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              text = "During sprint",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
-              properties = {}
-            },
-            {
-              id = 690,
-              name = "camerapath",
-              type = "CameraPath",
-              shape = "polyline",
-              x = 1040,
-              y = 144,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              polyline = {
-                { x = 0, y = 0 },
-                { x = 160, y = 0 }
-              },
               properties = {}
             }
           }
@@ -2655,24 +2681,6 @@ return {
               }
             },
             {
-              id = 602,
-              name = "Instruction",
-              type = "",
-              shape = "text",
-              x = 1352,
-              y = -80,
-              width = 112,
-              height = 32,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              text = "Move into item to pick up",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
-              properties = {}
-            },
-            {
               id = 603,
               name = "",
               type = "",
@@ -2981,6 +2989,54 @@ return {
               properties = {}
             },
             {
+              id = 785,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 2048,
+              y = 176,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = 32, y = 64 },
+                { x = 64, y = 32 },
+                { x = 192, y = 32 },
+                { x = 192, y = -288 },
+                { x = -160, y = -288 },
+                { x = -160, y = -96 },
+                { x = -128, y = -64 },
+                { x = -96, y = -64 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -48,
+                ["linecolor"] = "#80ffffff"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 103,
+          name = "projectiletutor",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["tutorial"] = true
+          },
+          objects = {
+            {
               id = 434,
               name = "Instruction",
               type = "",
@@ -3046,36 +3102,6 @@ return {
               color = { 255, 255, 255 },
               halign = "center",
               properties = {}
-            },
-            {
-              id = 785,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 2048,
-              y = 176,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              polygon = {
-                { x = 32, y = 64 },
-                { x = 64, y = 32 },
-                { x = 192, y = 32 },
-                { x = 192, y = -288 },
-                { x = -160, y = -288 },
-                { x = -160, y = -96 },
-                { x = -128, y = -64 },
-                { x = -96, y = -64 }
-              },
-              properties = {
-                ["bodyinlayers"] = "Wall",
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["extrudeY"] = -48,
-                ["linecolor"] = "#80ffffff"
-              }
             }
           }
         },
@@ -3353,6 +3379,111 @@ return {
               opacity = 1,
               gid = 3112,
               visible = false,
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 107,
+          name = "2projectiletutor",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["clearotherroom"] = "projectiletutor",
+            ["tutorial"] = true
+          },
+          objects = {
+            {
+              id = 1073,
+              name = "Instruction",
+              type = "",
+              shape = "text",
+              x = 1608,
+              y = 72,
+              width = 112,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              text = "Throw TWO!",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {}
+            },
+            {
+              id = 1074,
+              name = "attackbutton",
+              type = "",
+              shape = "rectangle",
+              x = 1688,
+              y = 96,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              opacity = 1,
+              gid = 3112,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 1075,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 1720,
+              y = 96,
+              width = 14,
+              height = 14,
+              rotation = 0,
+              opacity = 1,
+              gid = 3114,
+              visible = true,
+              properties = {}
+            },
+            {
+              id = 1076,
+              name = "or",
+              type = "",
+              shape = "text",
+              x = 1696,
+              y = 88,
+              width = 16,
+              height = 16,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              text = "OR",
+              fontfamily = "TinyUnicode",
+              wrap = true,
+              color = { 255, 255, 255 },
+              halign = "center",
+              properties = {}
+            },
+            {
+              id = 1077,
+              name = "",
+              type = "",
+              shape = "text",
+              x = 1608,
+              y = 88,
+              width = 87.7188,
+              height = 21.7813,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              text = "Sprint +",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
               properties = {}
             }
           }
@@ -3742,37 +3873,41 @@ return {
           properties = {},
           objects = {
             {
-              id = 655,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 2080,
-              y = 112,
+              id = 675,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 1840,
+              y = 144,
               width = 0,
               height = 0,
               rotation = 0,
               opacity = 1,
               visible = true,
-              polygon = {
-                { x = 160, y = -224 },
-                { x = 160, y = 96 },
-                { x = 192, y = 128 },
-                { x = 224, y = 96 },
-                { x = 256, y = 96 },
-                { x = 288, y = 128 },
-                { x = 320, y = 96 },
-                { x = 480, y = 96 },
-                { x = 512, y = 64 },
-                { x = 512, y = -224 }
+              polyline = {
+                { x = 0, y = 0 },
+                { x = 160, y = 96 }
               },
-              properties = {
-                ["bodyinlayers"] = "Wall",
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["extrudeY"] = -48,
-                ["linecolor"] = "#80ffffff"
-              }
-            },
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 104,
+          name = "metertutor",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["tutorial"] = true
+          },
+          objects = {
             {
               id = 522,
               name = "Fireball",
@@ -3786,42 +3921,6 @@ return {
               opacity = 1,
               visible = true,
               text = "With 1 or more fire meter ",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
-              properties = {}
-            },
-            {
-              id = 656,
-              name = "Fireball",
-              type = "",
-              shape = "text",
-              x = 2408,
-              y = 168,
-              width = 136,
-              height = 16,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              text = "Hold",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
-              properties = {}
-            },
-            {
-              id = 698,
-              name = "Fireball",
-              type = "",
-              shape = "text",
-              x = 2408,
-              y = 184,
-              width = 128,
-              height = 16,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              text = "then release",
               fontfamily = "Unifont",
               wrap = true,
               color = { 255, 255, 255 },
@@ -3860,6 +3959,162 @@ return {
                 ["linecolor"] = "#ffffffff",
                 ["roundcorners"] = 1
               }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 106,
+          name = "tolearnfireball2",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 1072,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 2000,
+              y = 240,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polyline = {
+                { x = 0, y = 0 },
+                { x = 320, y = 0 }
+              },
+              properties = {}
+            },
+            {
+              id = 676,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2320,
+              y = 248,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 3137,
+              visible = true,
+              properties = {
+                ["item"] = { id = 677 },
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 677,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 2320,
+              y = 248,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 3138,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/items-properties.csv",
+                ["z"] = 1
+              }
+            },
+            {
+              id = 655,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 2080,
+              y = 112,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = 160, y = -224 },
+                { x = 160, y = 96 },
+                { x = 192, y = 128 },
+                { x = 224, y = 96 },
+                { x = 256, y = 96 },
+                { x = 288, y = 128 },
+                { x = 320, y = 96 },
+                { x = 480, y = 96 },
+                { x = 512, y = 64 },
+                { x = 512, y = -224 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -48,
+                ["linecolor"] = "#80ffffff"
+              }
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 105,
+          name = "fireballtutor",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["tutorial"] = true
+          },
+          objects = {
+            {
+              id = 656,
+              name = "Fireball",
+              type = "",
+              shape = "text",
+              x = 2408,
+              y = 168,
+              width = 136,
+              height = 16,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              text = "Hold",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
+            },
+            {
+              id = 698,
+              name = "Fireball",
+              type = "",
+              shape = "text",
+              x = 2408,
+              y = 184,
+              width = 128,
+              height = 16,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              text = "then release",
+              fontfamily = "Unifont",
+              wrap = true,
+              color = { 255, 255, 255 },
+              properties = {}
             },
             {
               id = 632,
@@ -3909,61 +4164,6 @@ return {
               color = { 255, 255, 255 },
               halign = "center",
               properties = {}
-            },
-            {
-              id = 675,
-              name = "camerapath",
-              type = "CameraPath",
-              shape = "polyline",
-              x = 1840,
-              y = 144,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              polyline = {
-                { x = 0, y = 0 },
-                { x = 160, y = 96 },
-                { x = 480, y = 96 }
-              },
-              properties = {}
-            },
-            {
-              id = 676,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2320,
-              y = 248,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              opacity = 1,
-              gid = 3137,
-              visible = true,
-              properties = {
-                ["item"] = { id = 677 },
-                ["propertiestable"] = "database/objects-properties.csv"
-              }
-            },
-            {
-              id = 677,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2320,
-              y = 248,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              opacity = 1,
-              gid = 3138,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/items-properties.csv",
-                ["z"] = 1
-              }
             }
           }
         },
@@ -4200,7 +4400,7 @@ return {
             {
               id = 949,
               name = "",
-              type = "bandit-spear",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 2056,
               y = 360,
@@ -4208,7 +4408,24 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3105,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1066,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2056,
+              y = 360,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4217,7 +4434,7 @@ return {
             {
               id = 950,
               name = "",
-              type = "bandit-spear",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 2232,
               y = 448,
@@ -4225,7 +4442,24 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3105,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1065,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2232,
+              y = 448,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4234,7 +4468,7 @@ return {
             {
               id = 953,
               name = "",
-              type = "bandit-spear",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 2480,
               y = 448,
@@ -4242,7 +4476,24 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3105,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1064,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2480,
+              y = 448,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -4251,7 +4502,7 @@ return {
             {
               id = 955,
               name = "",
-              type = "bandit-spear",
+              type = "bandit-dagger",
               shape = "rectangle",
               x = 2592,
               y = 272,
@@ -4259,7 +4510,24 @@ return {
               height = 64,
               rotation = 0,
               opacity = 1,
-              gid = 3103,
+              gid = 3105,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/bandits-properties.csv"
+              }
+            },
+            {
+              id = 1067,
+              name = "",
+              type = "bandit-dagger",
+              shape = "rectangle",
+              x = 2592,
+              y = 272,
+              width = 64,
+              height = 64,
+              rotation = 0,
+              opacity = 1,
+              gid = 3105,
               visible = true,
               properties = {
                 ["propertiestable"] = "database/bandits-properties.csv"
@@ -5827,26 +6095,6 @@ return {
               gid = 3140,
               visible = true,
               properties = {}
-            },
-            {
-              id = 104,
-              name = "camerapath",
-              type = "CameraPath",
-              shape = "polyline",
-              x = 176,
-              y = 1008,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              polyline = {
-                { x = 64, y = 0 },
-                { x = 704, y = 0 }
-              },
-              properties = {
-                ["shadowcolor"] = "#00000000"
-              }
             },
             {
               id = 67,
@@ -7816,156 +8064,6 @@ return {
               }
             },
             {
-              id = 733,
-              name = "Attack",
-              type = "",
-              shape = "text",
-              x = 16,
-              y = 1064,
-              width = 128,
-              height = 16,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              text = "During sprint",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
-              properties = {
-                ["drawz"] = 100
-              }
-            },
-            {
-              id = 734,
-              name = "attackbutton",
-              type = "",
-              shape = "rectangle",
-              x = 120,
-              y = 1096,
-              width = 14,
-              height = 14,
-              rotation = 0,
-              opacity = 1,
-              gid = 3108,
-              visible = true,
-              properties = {
-                ["drawz"] = 100
-              }
-            },
-            {
-              id = 735,
-              name = "Jump",
-              type = "",
-              shape = "text",
-              x = 32,
-              y = 1088,
-              width = 72,
-              height = 16,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              text = "Long jump",
-              fontfamily = "Unifont",
-              wrap = true,
-              color = { 255, 255, 255 },
-              properties = {
-                ["drawz"] = 100
-              }
-            },
-            {
-              id = 736,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 152,
-              y = 1096,
-              width = 14,
-              height = 14,
-              rotation = 0,
-              opacity = 1,
-              gid = 3110,
-              visible = true,
-              properties = {
-                ["drawz"] = 100
-              }
-            },
-            {
-              id = 737,
-              name = "or",
-              type = "",
-              shape = "text",
-              x = 128,
-              y = 1088,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              text = "OR",
-              fontfamily = "TinyUnicode",
-              wrap = true,
-              color = { 255, 255, 255 },
-              halign = "center",
-              properties = {
-                ["drawz"] = 100
-              }
-            },
-            {
-              id = 738,
-              name = "sprintbutton",
-              type = "",
-              shape = "rectangle",
-              x = 168,
-              y = 1072,
-              width = 14,
-              height = 14,
-              rotation = 0,
-              opacity = 1,
-              gid = 3122,
-              visible = true,
-              properties = {
-                ["drawz"] = 100
-              }
-            },
-            {
-              id = 739,
-              name = "or",
-              type = "",
-              shape = "text",
-              x = 144,
-              y = 1064,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              text = "OR",
-              fontfamily = "TinyUnicode",
-              wrap = true,
-              color = { 255, 255, 255 },
-              halign = "center",
-              properties = {
-                ["drawz"] = 100
-              }
-            },
-            {
-              id = 740,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 136,
-              y = 1072,
-              width = 14,
-              height = 14,
-              rotation = 0,
-              opacity = 1,
-              gid = 3118,
-              visible = true,
-              properties = {
-                ["drawz"] = 100
-              }
-            },
-            {
               id = 787,
               name = "",
               type = "Boundary",
@@ -8410,6 +8508,26 @@ return {
               properties = {
                 ["color"] = "#80aa0000",
                 ["drawz"] = -0.5,
+                ["shadowcolor"] = "#00000000"
+              }
+            },
+            {
+              id = 104,
+              name = "camerapath",
+              type = "CameraPath",
+              shape = "polyline",
+              x = 176,
+              y = 1008,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polyline = {
+                { x = 64, y = 0 },
+                { x = 704, y = 0 }
+              },
+              properties = {
                 ["shadowcolor"] = "#00000000"
               }
             }
@@ -12514,7 +12632,7 @@ return {
           draworder = "topdown",
           id = 80,
           name = "help2",
-          class = "",
+          class = "Room",
           visible = true,
           opacity = 1,
           offsetx = 0,
@@ -13112,7 +13230,7 @@ return {
           draworder = "topdown",
           id = 81,
           name = "help8",
-          class = "",
+          class = "Room",
           visible = true,
           opacity = 1,
           offsetx = 0,
