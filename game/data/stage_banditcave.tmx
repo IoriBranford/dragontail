@@ -487,7 +487,7 @@ body to grapple</text>
    </object>
    <object id="654" name="rockrespawnpoint" x="1040" y="0">
     <properties>
-     <property name="z" type="float" value="176"/>
+     <property name="z" type="float" value="160"/>
     </properties>
     <point/>
    </object>
@@ -496,7 +496,7 @@ body to grapple</text>
    <properties>
     <property name="time" type="int" value="60"/>
    </properties>
-   <object id="639" name="Direct" x="1032" y="56" width="152" height="16">
+   <object id="639" name="Direct" x="1040" y="-40" width="152" height="16">
     <text fontfamily="Unifont" wrap="1" color="#ffffff">Pummel        only</text>
    </object>
    <object id="685" name="Direct" x="1032" y="40" width="240" height="16">
@@ -508,9 +508,9 @@ body to grapple</text>
    <object id="642" name="or" x="1104" y="40" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
-   <object id="686" name="attackbutton" gid="3112" x="1096" y="64" width="14" height="14"/>
-   <object id="687" gid="3114" x="1128" y="64" width="14" height="14"/>
-   <object id="688" name="or" x="1104" y="56" width="16" height="16">
+   <object id="686" name="attackbutton" gid="3112" x="1104" y="-32" width="14" height="14"/>
+   <object id="687" gid="3114" x="1136" y="-32" width="14" height="14"/>
+   <object id="688" name="or" x="1112" y="-40" width="16" height="16">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="center">OR</text>
    </object>
   </objectgroup>

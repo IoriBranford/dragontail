@@ -1678,7 +1678,7 @@ return {
               opacity = 1,
               visible = true,
               properties = {
-                ["z"] = 176
+                ["z"] = 160
               }
             }
           }
@@ -1704,8 +1704,8 @@ return {
               name = "Direct",
               type = "",
               shape = "text",
-              x = 1032,
-              y = 56,
+              x = 1040,
+              y = -40,
               width = 152,
               height = 16,
               rotation = 0,
@@ -1804,8 +1804,8 @@ return {
               name = "attackbutton",
               type = "",
               shape = "rectangle",
-              x = 1096,
-              y = 64,
+              x = 1104,
+              y = -32,
               width = 14,
               height = 14,
               rotation = 0,
@@ -1819,8 +1819,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 1128,
-              y = 64,
+              x = 1136,
+              y = -32,
               width = 14,
               height = 14,
               rotation = 0,
@@ -1834,8 +1834,8 @@ return {
               name = "or",
               type = "",
               shape = "text",
-              x = 1104,
-              y = 56,
+              x = 1112,
+              y = -40,
               width = 16,
               height = 16,
               rotation = 0,
