@@ -123,7 +123,8 @@ function StateMachine.start(self, statename, a,b,c,d,e,f,g)
         statename, a,b,c,d,e,f,g = self.statebehavior:interrupt(statename, a,b,c,d,e,f,g)
         self.statebehavior:_release()
     elseif stco then
-        statename, a,b,c,d,e,f,g = StateMachine.interruptThread(self, statename, a,b,c,d,e,f,g)
+        -- TODO rewrite coroutines to handle interrupt
+        -- statename, a,b,c,d,e,f,g = StateMachine.interruptThread(self, statename, a,b,c,d,e,f,g)
     end
     self.statebehavior = nil
     self.statethread = nil
