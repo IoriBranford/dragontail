@@ -329,6 +329,17 @@ function Stage.openRoom(i)
         if room.checkpoint then
             firstroomname = room.name
         end
+        if room.clearotherroom then
+            local room2 = rooms[room.clearotherroom]
+            if room2 then
+                for _, obj in ipairs(room2) do
+                    if obj.disappear then
+                        ---@cast obj Character
+                        obj:disappear()
+                    end
+                end
+            end
+        end
         Stage.playRoomMusic(room)
         return room
     else
