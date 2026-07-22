@@ -210,6 +210,7 @@ function Fighter:indicateDefeated()
 end
 
 function Fighter:knockedBack(thrower, attackangle)
+    local attack = thrower.attack
     local dirx, diry = self:getLedgeDirection()
     if dirx ~= 0 or diry ~= 0 then
         dirx, diry = norm(dirx, diry)
@@ -226,16 +227,22 @@ function Fighter:knockedBack(thrower, attackangle)
     self.hurtstun = 0
     self:stopAttack() ; self:unassignSelfAsAttacker()
     -- self.thrower = thrower
-    local thrownspeed = thrower.attack.launchspeed or 5
+    local thrownspeed = attack.launchspeed or 5
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
     local altitude = self.z - (self.floorz or 0)
-    self.velz = math.max(0, (thrower.attack.launchspeedz or 4) - altitude)
+    self.velz = math.max(0, (attack.launchspeedz or 4) - altitude)
+    yield()
+
+    local thrownslidetime = attack.thrownslidetime or 1
     local oobx, ooby, oobz
-    repeat
-        yield()
+    while thrownslidetime > 0 and not oobx and not ooby do
         oobx, ooby, oobz = self.penex, self.peney, self.penez
+        if oobz then
+            thrownslidetime = thrownslidetime - 1
+        end
         self:duringKnockedBack()
-    until oobx or ooby or oobz
+        yield()
+    end
     -- local oobdotvel = math.dot(oobx or 0, ooby or 0, self.velx, self.vely)
     -- if oobdotvel > 0 then
     --     oobdotvel = oobdotvel
@@ -244,7 +251,8 @@ function Fighter:knockedBack(thrower, attackangle)
     -- end
     -- self.thrower = nil
     if oobx and ooby then
-        return "wallBump", thrower, oobx, ooby
+        self.health = self.health - (attack.walldamage or 0)
+        return attack.wallhitstate or "wallBump", thrower, oobx, ooby
     end
 
     return self.aiafterthrown or "fall"
