@@ -1049,7 +1049,7 @@ body to grapple</text>
     <property name="donewhenenemiesleft" type="int" value="4"/>
    </properties>
    <object id="65" template="mapobjects/OutwardBoundary.tx" x="2880" y="368" visible="1">
-    <polygon points="-288,-480 -288,-192 0,-192 32,-160 64,-160 96,-128 96,-64 128,-32 128,16 224,16 224,-480"/>
+    <polygon points="-288,-480 -288,-192 0,-192 32,-160 32,-144 56,-144 80,-128 96,-104 96,-80 96,-64 128,-32 128,16 224,16 224,-480"/>
    </object>
    <object id="66" template="mapobjects/CameraPath.tx" x="2480" y="240">
     <polyline points="-160,0 320,0"/>
@@ -1118,13 +1118,6 @@ body to grapple</text>
      <property name="z" type="float" value="128"/>
     </properties>
    </object>
-   <object id="1063" template="mapobjects/OutwardBoundary.tx" x="2904" y="192">
-    <properties>
-     <property name="extrudeY" type="float" value="-16"/>
-     <property name="z" type="int" value="32"/>
-    </properties>
-    <polygon points="40,-16 8,-16 72,48 72,16"/>
-   </object>
   </objectgroup>
   <objectgroup id="88" name="meetshields2" class="Room">
    <properties>
@@ -1141,7 +1134,7 @@ body to grapple</text>
      <property name="z" type="float" value="48"/>
     </properties>
    </object>
-   <object id="829" name="entrypoint" x="2936" y="176">
+   <object id="829" name="entrypoint" x="2944" y="168">
     <properties>
      <property name="z" type="float" value="48"/>
     </properties>
@@ -1164,7 +1157,7 @@ body to grapple</text>
      <property name="z" type="float" value="48"/>
     </properties>
    </object>
-   <object id="835" name="entrypoint" x="2960" y="200">
+   <object id="835" name="entrypoint" x="2976" y="200">
     <properties>
      <property name="z" type="float" value="48"/>
     </properties>
@@ -1355,7 +1348,7 @@ and tap    to throw</text>
     </properties>
     <point/>
    </object>
-   <object id="821" name="entrypoint" x="2944" y="184">
+   <object id="821" name="entrypoint" x="2968" y="184">
     <properties>
      <property name="z" type="float" value="48"/>
     </properties>
@@ -1409,7 +1402,7 @@ and tap    to throw</text>
    <properties>
     <property name="donewhenenemiesleft" type="int" value="-1"/>
    </properties>
-   <object id="465" template="mapobjects/trigger/startSequence.tx" name="exittrigger" type="Trigger" x="2912" y="216">
+   <object id="465" template="mapobjects/trigger/startSequence.tx" name="exittrigger" type="Trigger" x="2912" y="232">
     <properties>
      <property name="drawz" type="float" value="-0.125"/>
      <property name="extrudeY" type="float" value="-48"/>

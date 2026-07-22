@@ -4568,8 +4568,11 @@ return {
                 { x = -288, y = -192 },
                 { x = 0, y = -192 },
                 { x = 32, y = -160 },
-                { x = 64, y = -160 },
-                { x = 96, y = -128 },
+                { x = 32, y = -144 },
+                { x = 56, y = -144 },
+                { x = 80, y = -128 },
+                { x = 96, y = -104 },
+                { x = 96, y = -80 },
                 { x = 96, y = -64 },
                 { x = 128, y = -32 },
                 { x = 128, y = 16 },
@@ -4844,33 +4847,6 @@ return {
               properties = {
                 ["z"] = 128
               }
-            },
-            {
-              id = 1063,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 2904,
-              y = 192,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              polygon = {
-                { x = 40, y = -16 },
-                { x = 8, y = -16 },
-                { x = 72, y = 48 },
-                { x = 72, y = 16 }
-              },
-              properties = {
-                ["bodyinlayers"] = "Wall",
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["extrudeY"] = -16,
-                ["linecolor"] = "#80ffffff",
-                ["z"] = 32
-              }
             }
           }
         },
@@ -4919,8 +4895,8 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 2936,
-              y = 176,
+              x = 2944,
+              y = 168,
               width = 0,
               height = 0,
               rotation = 0,
@@ -4975,7 +4951,7 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 2960,
+              x = 2976,
               y = 200,
               width = 0,
               height = 0,
@@ -5717,7 +5693,7 @@ return {
               name = "entrypoint",
               type = "",
               shape = "point",
-              x = 2944,
+              x = 2968,
               y = 184,
               width = 0,
               height = 0,
@@ -5963,7 +5939,7 @@ return {
               type = "Trigger",
               shape = "polygon",
               x = 2912,
-              y = 216,
+              y = 232,
               width = 0,
               height = 0,
               rotation = 0,
