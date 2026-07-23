@@ -90,27 +90,18 @@ function dispatch:eventDownMut(ev, a, b, c, d, e, f)
     end
 end
 
-local cocreate = coroutine.create
-local coresume = coroutine.resume
-local costatus = coroutine.status
-
-local waiting = {}
+local callbacks = {}
 
 local function eventCB(lsts, ev, i1, i2, di, ...)
     if not lsts then return end
+    local cbs = callbacks
     for i = i1, i2, di do
-        local co = cocreate(lsts[i][ev])
-        local ok, err = coresume(co, ...)
-        assert(ok, err)
-        if costatus(co) ~= "dead" then
-            waiting[#waiting+1] = co
-        end
+        cbs[#cbs+1] = lsts[i][ev]()
     end
-    for i = #waiting, 1, -1 do
-        local co = waiting[i]
-        waiting[#waiting] = nil
-        local ok, err = coresume(co)
-        assert(ok, err)
+    for i = #cbs, 1, -1 do
+        local cb = cbs[i]
+        cbs[#cbs] = nil
+        cb()
     end
 end
 
@@ -127,6 +118,5 @@ function dispatch:eventDownCB(ev, ...)
         eventCB(self[ev], ev, #lsts, 1, -1, ...)
     end
 end
-
 
 return dispatch
