@@ -26,7 +26,7 @@
  <tileset firstgid="3070" source="sprites/banditcave/Chair, Dining F.tsx"/>
  <tileset firstgid="3086" source="tilesets/ui/flamegaugefull.tsx"/>
  <tileset firstgid="3094" source="sprites/items/vegetables.tsx"/>
- <tileset firstgid="3101" source="sprites/bandit/boss.tsx"/>
+ <tileset firstgid="3101" source="cc/sprites/bandit/boss.tsx"/>
  <tileset firstgid="3102" source="sprites/bandit/bow.tsx"/>
  <tileset firstgid="3103" source="sprites/bandit/spear.tsx"/>
  <tileset firstgid="3104" source="sprites/bandit/sling.tsx"/>

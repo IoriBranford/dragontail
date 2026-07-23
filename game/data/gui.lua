@@ -88,8 +88,8 @@ return {
     {
       name = "boss",
       firstgid = 451,
-      filename = "sprites/bandit/boss.tsx",
-      exportfilename = "sprites/bandit/boss.lua"
+      filename = "cc/sprites/bandit/boss.tsx",
+      exportfilename = "cc/sprites/bandit/boss.lua"
     }
   },
   layers = {

@@ -128,8 +128,8 @@ return {
     {
       name = "boss",
       firstgid = 3101,
-      filename = "sprites/bandit/boss.tsx",
-      exportfilename = "sprites/bandit/boss.lua"
+      filename = "cc/sprites/bandit/boss.tsx",
+      exportfilename = "cc/sprites/bandit/boss.lua"
     },
     {
       name = "bow",

@@ -15167,7 +15167,7 @@ return {
       spacing = 0,
       margin = 0,
       columns = 1,
-      image = "sprites/bandit/boss.ase",
+      image = "cc/sprites/bandit/boss.ase",
       imagewidth = 192,
       imageheight = 192,
       objectalignment = "bottom",

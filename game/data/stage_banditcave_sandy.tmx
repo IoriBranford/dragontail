@@ -43,7 +43,7 @@
  <tileset firstgid="7217" source="tilesets/ui/flamegaugefull.tsx"/>
  <tileset firstgid="7225" source="sprites/items/vegetables.tsx"/>
  <tileset firstgid="7232" source="sprites/bandit/axe.tsx"/>
- <tileset firstgid="7233" source="sprites/bandit/boss.tsx"/>
+ <tileset firstgid="7233" source="cc/sprites/bandit/boss.tsx"/>
  <tileset firstgid="7234" source="sprites/bandit/bow.tsx"/>
  <tileset firstgid="7235" source="sprites/bandit/spear.tsx"/>
  <tileset firstgid="7236" source="sprites/bandit/sling.tsx"/>
