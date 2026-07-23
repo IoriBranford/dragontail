@@ -14,10 +14,10 @@
         {
             "arguments": "love %projectpath/.. --map %exportfile",
             "command": "obs-gamecapture",
-            "enabled": false,
+            "enabled": true,
             "name": "Run map for recording",
             "saveBeforeExecute": true,
-            "shortcut": "F5",
+            "shortcut": "Ctrl+Shift+R",
             "showOutput": true,
             "workingDirectory": ""
         },
