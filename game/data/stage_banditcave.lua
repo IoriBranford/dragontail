@@ -242,8 +242,8 @@ return {
     {
       name = "muscle",
       firstgid = 3139,
-      filename = "sprites/bandit/muscle-orange.tsx",
-      exportfilename = "sprites/bandit/muscle-orange.lua"
+      filename = "cc/sprites/bandit/muscle-orange.tsx",
+      exportfilename = "cc/sprites/bandit/muscle-orange.lua"
     },
     {
       name = "cave-window",

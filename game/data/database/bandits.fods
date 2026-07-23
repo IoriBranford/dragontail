@@ -8253,7 +8253,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>data/sprites/bandit/muscle-orange-weapon.jase</text:p>
+      <text:p>data/cc/sprites/bandit/muscle-orange-weapon.jase</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>catchAttack</text:p>
