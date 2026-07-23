@@ -1,0 +1,114 @@
+data/sprites/airforce/air-crossbow.png,UNCREDITED,UNLICENSED
+data/sprites/bandit/arrow.png,UNCREDITED,UNLICENSED
+data/sprites/bandit/axe.png,UNCREDITED,UNLICENSED
+data/cc/sprites/bandit/boss.png,UNCREDITED,CC-BY-SA
+data/sprites/bandit/bow-sheet.png,UNCREDITED,UNLICENSED
+data/sprites/bandit/bow.png,UNCREDITED,UNLICENSED
+data/sprites/bandit/cavedoor.png,UNCREDITED,UNLICENSED
+data/sprites/bandit/cavedoor2-diagonal.png,UNCREDITED,UNLICENSED
+data/sprites/bandit/knife.png,UNCREDITED,UNLICENSED
+data/sprites/bandit/knife1.png,UNCREDITED,UNLICENSED
+data/sprites/bandit/knife2.png,UNCREDITED,UNLICENSED
+data/sprites/bandit/mace.png,UNCREDITED,UNLICENSED
+data/sprites/bandit/muscle-orange-weapon.png,UNCREDITED,CC-BY-SA
+data/sprites/bandit/muscle-orange.png,UNCREDITED,CC-BY-SA
+data/sprites/bandit/shield.png,UNCREDITED,UNLICENSED
+data/sprites/bandit/sling.png,UNCREDITED,UNLICENSED
+data/sprites/bandit/spear-sheet.png,UNCREDITED,UNLICENSED
+data/sprites/bandit/spear.png,UNCREDITED,UNLICENSED
+data/sprites/banditcave/anvil.png,UNCREDITED,UNLICENSED
+"data/sprites/banditcave/Chair, Dining F.png",UNCREDITED,UNLICENSED
+data/sprites/banditcave/crystal-spikes.png,UNCREDITED,UNLICENSED
+data/sprites/banditcave/graffiti-skull-bones.png,UNCREDITED,UNLICENSED
+data/sprites/banditcave/stools.png,UNCREDITED,UNLICENSED
+data/sprites/banditcave/tables-hori.png,UNCREDITED,UNLICENSED
+data/sprites/banditcave/tables-vert.png,UNCREDITED,UNLICENSED
+data/sprites/banditcave/wall-torch.png,UNCREDITED,UNLICENSED
+"data/sprites/banditcave/Workbench, Smith.png",UNCREDITED,UNLICENSED
+data/sprites/containers/barrelA.png,Szadi Art,bought
+data/sprites/containers/barrelB.png,Szadi Art,bought
+data/sprites/containers/crates.png,Szadi Art,bought
+data/sprites/grassland/tree2A_ss_leaves.png,UNCREDITED,UNLICENSED
+data/sprites/grassland/tree2A_ss.png,UNCREDITED,UNLICENSED
+data/sprites/grassland/tree2B_ss_leaves.png,UNCREDITED,UNLICENSED
+data/sprites/grassland/tree2B_ss.png,UNCREDITED,UNLICENSED
+data/sprites/grassland/tree2C_ss_leaves.png,UNCREDITED,UNLICENSED
+data/sprites/grassland/tree2C_ss.png,UNCREDITED,UNLICENSED
+data/sprites/items/Bread A.png,UNCREDITED,UNLICENSED
+data/sprites/items/Cheese A.png,UNCREDITED,UNLICENSED
+data/sprites/items/fish.png,UNCREDITED,UNLICENSED
+data/sprites/items/lifefruit.png,UNCREDITED,UNLICENSED
+data/sprites/items/Meals.png,UNCREDITED,UNLICENSED
+data/sprites/items/Meats A.png,UNCREDITED,UNLICENSED
+data/sprites/items/pepper-plant.png,UNCREDITED,UNLICENSED
+data/sprites/items/peppers-on-plant.png,UNCREDITED,UNLICENSED
+data/sprites/items/vegetables.png,UNCREDITED,UNLICENSED
+data/sprites/pirate/bomb.png,UNCREDITED,UNLICENSED
+data/sprites/pirate/cutlass.png,UNCREDITED,UNLICENSED
+data/sprites/pirate/explosion.png,UNCREDITED,UNLICENSED
+data/sprites/player/rose/attack.png,UNCREDITED,UNLICENSED
+data/sprites/player/rose/face.png,UNCREDITED,UNLICENSED
+data/sprites/player/rose/fireball-fat.png,UNCREDITED,UNLICENSED
+data/sprites/player/rose/fireball.png,UNCREDITED,UNLICENSED
+data/sprites/player/rose/firespit.png,UNCREDITED,UNLICENSED
+data/sprites/player/rose/fly.png,UNCREDITED,UNLICENSED
+data/sprites/player/rose/hold.png,UNCREDITED,UNLICENSED
+data/sprites/player/rose/main-weapon.png,UNCREDITED,UNLICENSED
+data/sprites/player/rose/main.png,UNCREDITED,UNLICENSED
+data/sprites/player/rose/winged-attack.png,UNCREDITED,UNLICENSED
+data/sprites/player/rose/winged-hold.png,UNCREDITED,UNLICENSED
+data/sprites/player/rose/winged-main.png,UNCREDITED,UNLICENSED
+data/sprites/sandy/tree1a-crown.png,UNCREDITED,UNLICENSED
+data/sprites/sandy/tree1a-trunk.png,UNCREDITED,UNLICENSED
+data/sprites/sandy/tree1a.png,UNCREDITED,UNLICENSED
+data/sprites/sandy/tree1b-crown.png,UNCREDITED,UNLICENSED
+data/sprites/sandy/tree1b-trunk.png,UNCREDITED,UNLICENSED
+data/sprites/sandy/tree1b.png,UNCREDITED,UNLICENSED
+data/sprites/sandy/tree2a.png,UNCREDITED,UNLICENSED
+data/sprites/sandy/tree2b.png,UNCREDITED,UNLICENSED
+data/sprites/test/enemy-hurt.png,UNCREDITED,UNLICENSED
+data/sprites/test/enemy.png,UNCREDITED,UNLICENSED
+data/sprites/ui/break-grab.png,UNCREDITED,UNLICENSED
+data/sprites/ui/firespit.png,UNCREDITED,UNLICENSED
+data/sprites/ui/go-arrow-small.png,UNCREDITED,UNLICENSED
+data/sprites/ui/go-arrow.png,UNCREDITED,UNLICENSED
+data/sprites/ui/go-arrowhead.png,UNCREDITED,UNLICENSED
+data/sprites/ui/go-wings.png,UNCREDITED,UNLICENSED
+data/sprites/ui/go-word.png,UNCREDITED,UNLICENSED
+data/sprites/ui/rose-crosshair.png,UNCREDITED,UNLICENSED
+data/sprites/ui/title-illust.png,UNCREDITED,UNLICENSED
+data/sprites/ui/title.png,UNCREDITED,UNLICENSED
+data/sprites/ui/title/illust/07 Thug_L.png,UNCREDITED,UNLICENSED
+data/sprites/ui/title/illust/08 effects L.png,UNCREDITED,UNLICENSED
+data/sprites/ui/title/illust/09 Rose.png,UNCREDITED,UNLICENSED
+data/sprites/ui/title/illust/10 swipe.png,UNCREDITED,UNLICENSED
+data/sprites/ui/title/illust/bg.png,UNCREDITED,UNLICENSED
+data/sprites/vfx/dodge-dust.png,UNCREDITED,UNLICENSED
+data/sprites/vfx/dust-land-on-feet.png,UNCREDITED,UNLICENSED
+data/sprites/vfx/dust-on-person-fall.png,UNCREDITED,UNLICENSED
+data/sprites/vfx/emotes.png,UNCREDITED,UNLICENSED
+data/sprites/vfx/parry.png,UNCREDITED,UNLICENSED
+data/sprites/vfx/stain.png,UNCREDITED,UNLICENSED
+data/sprites/vfx/vfx.png,UNCREDITED,UNLICENSED
+data/sprites/village/boy1.png,UNCREDITED,UNLICENSED
+data/sprites/village/girl1.png,UNCREDITED,UNLICENSED
+data/sprites/village/man1.png,UNCREDITED,UNLICENSED
+data/sprites/village/man2.png,UNCREDITED,UNLICENSED
+data/sprites/village/man3.png,UNCREDITED,UNLICENSED
+data/sprites/village/oldman1.png,UNCREDITED,UNLICENSED
+data/sprites/village/oldwoman1.png,UNCREDITED,UNLICENSED
+data/sprites/village/rose-dad.png,UNCREDITED,UNLICENSED
+data/sprites/village/woman1.png,UNCREDITED,UNLICENSED
+data/sprites/village/woman2.png,UNCREDITED,UNLICENSED
+data/sprites/village/woman3.png,UNCREDITED,UNLICENSED
+data/sprites/weapons/bigstone.png,UNCREDITED,UNLICENSED
+data/sprites/weapons/dish-small.png,UNCREDITED,UNLICENSED
+data/sprites/weapons/Dishes A.png,UNCREDITED,UNLICENSED
+data/sprites/weapons/smith-hammer.png,UNCREDITED,UNLICENSED
+data/sprites/weapons/spikefruit.png,UNCREDITED,UNLICENSED
+data/sprites/weapons/stone.png,UNCREDITED,UNLICENSED
+data/sprites/weapons/tallstone.png,UNCREDITED,UNLICENSED
+data/sprites/weapons/throwing-axe.png,UNCREDITED,UNLICENSED
+data/sprites/weapons/throwingweapons.png,UNCREDITED,UNLICENSED
+path,UNCREDITED,UNLICENSED
+,authors,licenses
