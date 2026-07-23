@@ -267,8 +267,8 @@ return {
           properties = {
             ["donewhenenemiesleft"] = -1,
             ["music"] = {
-              "music/Ooolin Poolin Oy intro.ogg",
-              "music/Ooolin Poolin Oy loop.ogg"
+              "cc/music/Ooolin Poolin Oy intro.ogg",
+              "cc/music/Ooolin Poolin Oy loop.ogg"
             }
           },
           objects = {

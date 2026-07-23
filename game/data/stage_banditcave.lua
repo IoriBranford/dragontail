@@ -999,8 +999,8 @@ return {
           parallaxy = 1,
           properties = {
             ["music"] = {
-              "music/Skyhawk Beach intro.ogg",
-              "music/Skyhawk Beach loop.ogg"
+              "cc/music/Skyhawk Beach intro.ogg",
+              "cc/music/Skyhawk Beach loop.ogg"
             },
             ["sequence"] = "introBanditStage"
           },
@@ -12432,7 +12432,7 @@ return {
           properties = {
             ["music"] = {
               1.2,
-              "music/Jazz Hole loop.ogg"
+              "cc/music/Jazz Hole loop.ogg"
             },
             ["titlebarcuecard"] = "AVOID BOSS ENTRY ATTACK"
           },

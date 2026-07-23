@@ -347,7 +347,7 @@ function Stage.openRoom(i)
         for _, player in ipairs(Characters.getGroup("players")) do
             StateMachine.start(player, "victory")
         end
-        Audio.playMusicQueue("data/music/Frisbeat intro.ogg", "data/music/Frisbeat loop half.ogg")
+        Audio.playMusicQueue("data/cc/music/Frisbeat intro.ogg", "data/cc/music/Frisbeat loop half.ogg")
         local GamePhase = require "Dragontail.GamePhase"
         GamePhase.gameOver(true)
     end

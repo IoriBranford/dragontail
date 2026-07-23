@@ -391,8 +391,8 @@
   <objectgroup draworder="index" id="7" name="start" class="Room">
    <properties>
     <property name="music" type="list">
-     <item type="file" value="music/Skyhawk Beach intro.ogg"/>
-     <item type="file" value="music/Skyhawk Beach loop.ogg"/>
+     <item type="file" value="cc/music/Skyhawk Beach intro.ogg"/>
+     <item type="file" value="cc/music/Skyhawk Beach loop.ogg"/>
     </property>
     <property name="sequence" value="introBanditStage"/>
    </properties>
@@ -2935,7 +2935,7 @@ to sprint past archers</text>
    <properties>
     <property name="music" type="list">
      <item type="float" value="1.2"/>
-     <item type="file" value="music/Jazz Hole loop.ogg"/>
+     <item type="file" value="cc/music/Jazz Hole loop.ogg"/>
     </property>
     <property name="titlebarcuecard" value="AVOID BOSS ENTRY ATTACK"/>
    </properties>
