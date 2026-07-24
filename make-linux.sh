@@ -121,9 +121,9 @@ mkdir -p $OUT_DIR
 if [[ -d $CCDATA ]]
 then
 	cp -r $CCDATA $OUT_DIR
-	cp $GAME_ASSET $OUT_DIR/game
+	cp $GAME_ASSET $OUT_DIR
 	cp $LOVE_APPIMAGE $OUT_DIR/love
-	cp run.sh $OUT_DIR/run.sh
+	cp ${PROJECT}.sh $OUT_DIR/${PROJECT}.sh
 else
 	appimagetool/AppRun ${GAME_APPDIR} $OUT_DIR/${GAME_APPIMAGE}
 fi

@@ -1,1 +1,0 @@
-love --fused game %*

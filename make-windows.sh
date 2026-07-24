@@ -50,8 +50,8 @@ fi
 if [ -d $CCDATA ]
 then
 	cp -r "$CCDATA" game-win
-	cp $GAME_ASSET game-win/game
-	cp $LOVE_EXE run.bat game-win
+	cp $GAME_ASSET game-win
+	cp $LOVE_EXE "${GAME_TITLE}.bat" game-win
 else
 	ICO="appicon/appicon.ico"
 	if ! [ -f "$ICO" ]

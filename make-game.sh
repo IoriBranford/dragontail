@@ -46,5 +46,5 @@ popd
 if [ -d $CCDATA ]
 then
 	GAME_ZIP=${GAME_ZIP:="$GAME_ASSET.zip"}
-	zip -r "$GAME_ZIP" "$GAME_ASSET" "$CCDATA" run.sh run.bat
+	zip -r "$GAME_ZIP" "$GAME_ASSET" "$CCDATA" $PROJECT.sh "${GAME_TITLE}.bat"
 fi
