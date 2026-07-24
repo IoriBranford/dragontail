@@ -3,7 +3,9 @@
     "Lua.workspace.checkThirdParty": false,
     "Lua.workspace.useGitIgnore": false,
     "Lua.workspace.library": [
-        "${3rd}/love2d/library"
+        "${addons}/love2d/module/library",
+        "${addons}/lldebugger/module/library",
+        "${addons}/luafilesystem/module/library"
     ],
     "Lua.runtime.version": "LuaJIT",
     "Lua.runtime.path": [
@@ -21,5 +23,8 @@
         "pooledclass",
         "lfs"
     ],
-    "Lua.workspace.ignoreSubmodules": false
+    "Lua.workspace.ignoreSubmodules": false,
+    "Lua.runtime.special": {
+        "love.filesystem.load": "loadfile"
+    }
 }
