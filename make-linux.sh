@@ -117,7 +117,19 @@ chmod +x $LOVE_EXE
 cd ..
 
 mkdir -p $OUT_DIR
-appimagetool/AppRun ${GAME_APPDIR} $OUT_DIR/${GAME_APPIMAGE}
+
+if [[ -d $CCDATA ]]
+then
+	cp -r $CCDATA $OUT_DIR
+	cp $GAME_ASSET $OUT_DIR/data.love
+	cp $LOVE_APPIMAGE $OUT_DIR/love.$ARCH
+
+	echo "#!/bin/sh" > $OUT_DIR/run.sh
+	echo "./love.$ARCH --fused data.love $*" >> $OUT_DIR/run.sh
+	chmod +x $OUT_DIR/run.sh
+else
+	appimagetool/AppRun ${GAME_APPDIR} $OUT_DIR/${GAME_APPIMAGE}
+fi
 
 STEAM_DLL=linux${ARCH_BITS}/libsteam_api.so
 LUASTEAM_DLL=https://github.com/uspgamedev/luasteam/releases/download/v1.0.4/linux${ARCH_BITS}_luasteam.so
