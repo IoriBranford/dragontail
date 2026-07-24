@@ -26,7 +26,7 @@
  <tileset firstgid="3070" source="sprites/banditcave/Chair, Dining F.tsx"/>
  <tileset firstgid="3086" source="tilesets/ui/flamegaugefull.tsx"/>
  <tileset firstgid="3094" source="sprites/items/vegetables.tsx"/>
- <tileset firstgid="3101" source="cc/sprites/bandit/boss.tsx"/>
+ <tileset firstgid="3101" source="../ccdata/sprites/bandit/boss.tsx"/>
  <tileset firstgid="3102" source="sprites/bandit/bow.tsx"/>
  <tileset firstgid="3103" source="sprites/bandit/spear.tsx"/>
  <tileset firstgid="3104" source="sprites/bandit/sling.tsx"/>
@@ -45,7 +45,7 @@
  <tileset firstgid="3136" source="sprites/weapons/tallstone.tsx"/>
  <tileset firstgid="3137" source="sprites/items/pepper-plant.tsx"/>
  <tileset firstgid="3138" source="sprites/items/peppers-on-plant.tsx"/>
- <tileset firstgid="3139" source="cc/sprites/bandit/muscle-orange.tsx"/>
+ <tileset firstgid="3139" source="../ccdata/sprites/bandit/muscle-orange.tsx"/>
  <tileset firstgid="3140" source="tilesets/caves/semiblocked-tunnel.tsx"/>
  <tileset firstgid="3141" source="sprites/bandit/shield.tsx"/>
  <tileset firstgid="3142" source="tilesets/castle/castle_decoratives.tsx"/>
@@ -391,8 +391,8 @@
   <objectgroup draworder="index" id="7" name="start" class="Room">
    <properties>
     <property name="music" type="list">
-     <item type="file" value="cc/music/Skyhawk Beach intro.ogg"/>
-     <item type="file" value="cc/music/Skyhawk Beach loop.ogg"/>
+     <item type="file" value="../ccdata/music/Skyhawk Beach intro.ogg"/>
+     <item type="file" value="../ccdata/music/Skyhawk Beach loop.ogg"/>
     </property>
     <property name="sequence" value="introBanditStage"/>
    </properties>
@@ -2935,7 +2935,7 @@ to sprint past archers</text>
    <properties>
     <property name="music" type="list">
      <item type="float" value="1.2"/>
-     <item type="file" value="cc/music/Jazz Hole loop.ogg"/>
+     <item type="file" value="../ccdata/music/Jazz Hole loop.ogg"/>
     </property>
     <property name="titlebarcuecard" value="AVOID BOSS ENTRY ATTACK"/>
    </properties>

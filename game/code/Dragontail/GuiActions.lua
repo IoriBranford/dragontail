@@ -11,7 +11,7 @@ function GameGuiActions.openTitleMainMenu()
 end
 
 function GameGuiActions.playSelectedMusic()
-    local music = Audio.playMusic("data/cc/music/"..Config.soundtrack..".ogg")
+    local music = Audio.playMusic("ccdata/music/"..Config.soundtrack..".ogg")
     if music then
         music:setLooping(true)
     end

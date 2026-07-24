@@ -128,8 +128,8 @@ return {
     {
       name = "boss",
       firstgid = 3101,
-      filename = "cc/sprites/bandit/boss.tsx",
-      exportfilename = "cc/sprites/bandit/boss.lua"
+      filename = "../ccdata/sprites/bandit/boss.tsx",
+      exportfilename = "../ccdata/sprites/bandit/boss.lua"
     },
     {
       name = "bow",
@@ -242,8 +242,8 @@ return {
     {
       name = "muscle",
       firstgid = 3139,
-      filename = "cc/sprites/bandit/muscle-orange.tsx",
-      exportfilename = "cc/sprites/bandit/muscle-orange.lua"
+      filename = "../ccdata/sprites/bandit/muscle-orange.tsx",
+      exportfilename = "../ccdata/sprites/bandit/muscle-orange.lua"
     },
     {
       name = "cave-window",
@@ -999,8 +999,8 @@ return {
           parallaxy = 1,
           properties = {
             ["music"] = {
-              "cc/music/Skyhawk Beach intro.ogg",
-              "cc/music/Skyhawk Beach loop.ogg"
+              "../ccdata/music/Skyhawk Beach intro.ogg",
+              "../ccdata/music/Skyhawk Beach loop.ogg"
             },
             ["sequence"] = "introBanditStage"
           },
@@ -12432,7 +12432,7 @@ return {
           properties = {
             ["music"] = {
               1.2,
-              "cc/music/Jazz Hole loop.ogg"
+              "../ccdata/music/Jazz Hole loop.ogg"
             },
             ["titlebarcuecard"] = "AVOID BOSS ENTRY ATTACK"
           },

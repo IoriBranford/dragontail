@@ -5664,7 +5664,7 @@ return {
       spacing = 0,
       margin = 0,
       columns = 1,
-      image = "cc/sprites/bandit/muscle-orange.ase",
+      image = "../ccdata/sprites/bandit/muscle-orange.ase",
       imagewidth = 128,
       imageheight = 128,
       objectalignment = "bottom",

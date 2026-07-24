@@ -95,7 +95,7 @@ function TitlePhase.loadphase(startwithmainmenu)
     Gui.title:showOnlyNamed("title")
     Gui.options:showOnlyNamed()
     -- Wallpaper.reload()
-    Assets.get("data/cc/music/Block Island Sound loop.ogg")
+    Assets.get("ccdata/music/Block Island Sound loop.ogg")
 
     local wipe = Gui.wipe.diagonalCurtains ---@cast wipe Wipe
     wipe:start("open")
@@ -119,7 +119,7 @@ function TitlePhase.pushMainMenu()
     end
     Gui.title.mainmenus:setVisible(true)
     Gui.title.mainmenus:showOnlyNamed()
-    Audio.playMusic("data/cc/music/Block Island Sound loop.ogg", nil, true)
+    Audio.playMusic("ccdata/music/Block Island Sound loop.ogg", nil, true)
 end
 
 function TitlePhase.quitphase()
