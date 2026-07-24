@@ -40,5 +40,5 @@ esac
 
 pushd "$GAME_DIR"
 git describe --tags --always > version
-zip -r "$OUTDIR/${GAME_ASSET}" *
+zip -r "$OUTDIR/${GAME_ASSET}" * -x ccdata "ccdata/*" "ccdata/**/*"
 popd
