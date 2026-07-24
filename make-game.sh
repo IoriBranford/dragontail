@@ -40,5 +40,11 @@ esac
 
 pushd "$GAME_DIR"
 git describe --tags --always > version
-zip -r "$OUTDIR/${GAME_ASSET}" * -x ccdata "ccdata/*" "ccdata/**/*"
+zip -r "$OUTDIR/${GAME_ASSET}" *
 popd
+
+if [ -d $CCDATA ]
+then
+	GAME_ZIP=${GAME_ZIP:="$GAME_ASSET.zip"}
+	zip -r "$GAME_ZIP" "$GAME_ASSET" "$CCDATA" run.sh run.bat
+fi
