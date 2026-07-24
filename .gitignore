@@ -38,6 +38,7 @@ apktool
 appimagetool
 zip/
 *-x86_64/
+Rose of Dragontail/
 
 **/ignore/**/*
 
