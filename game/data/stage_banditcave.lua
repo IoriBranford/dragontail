@@ -134,14 +134,14 @@ return {
     {
       name = "bow",
       firstgid = 3102,
-      filename = "sprites/bandit/bow.tsx",
-      exportfilename = "sprites/bandit/bow.lua"
+      filename = "../ccdata/sprites/bandit/bow.tsx",
+      exportfilename = "../ccdata/sprites/bandit/bow.lua"
     },
     {
       name = "spear",
       firstgid = 3103,
-      filename = "sprites/bandit/spear.tsx",
-      exportfilename = "sprites/bandit/spear.lua"
+      filename = "../ccdata/sprites/bandit/spear.tsx",
+      exportfilename = "../ccdata/sprites/bandit/spear.lua"
     },
     {
       name = "sling",
@@ -152,8 +152,8 @@ return {
     {
       name = "knife",
       firstgid = 3105,
-      filename = "sprites/bandit/knife.tsx",
-      exportfilename = "sprites/bandit/knife.lua"
+      filename = "../ccdata/sprites/bandit/knife.tsx",
+      exportfilename = "../ccdata/sprites/bandit/knife.lua"
     },
     {
       name = "throwing-axe",
@@ -254,8 +254,8 @@ return {
     {
       name = "shield",
       firstgid = 3141,
-      filename = "sprites/bandit/shield.tsx",
-      exportfilename = "sprites/bandit/shield.lua"
+      filename = "../ccdata/sprites/bandit/shield.tsx",
+      exportfilename = "../ccdata/sprites/bandit/shield.lua"
     },
     {
       name = "castle_decoratives",

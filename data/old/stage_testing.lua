@@ -5781,7 +5781,7 @@ return {
       spacing = 0,
       margin = 0,
       columns = 1,
-      image = "sprites/bandit/shield.ase",
+      image = "../ccdata/sprites/bandit/shield.ase",
       imagewidth = 64,
       imageheight = 64,
       objectalignment = "bottom",

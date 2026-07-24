@@ -27,10 +27,10 @@
  <tileset firstgid="3086" source="tilesets/ui/flamegaugefull.tsx"/>
  <tileset firstgid="3094" source="sprites/items/vegetables.tsx"/>
  <tileset firstgid="3101" source="../ccdata/sprites/bandit/boss.tsx"/>
- <tileset firstgid="3102" source="sprites/bandit/bow.tsx"/>
- <tileset firstgid="3103" source="sprites/bandit/spear.tsx"/>
+ <tileset firstgid="3102" source="../ccdata/sprites/bandit/bow.tsx"/>
+ <tileset firstgid="3103" source="../ccdata/sprites/bandit/spear.tsx"/>
  <tileset firstgid="3104" source="sprites/bandit/sling.tsx"/>
- <tileset firstgid="3105" source="sprites/bandit/knife.tsx"/>
+ <tileset firstgid="3105" source="../ccdata/sprites/bandit/knife.tsx"/>
  <tileset firstgid="3106" source="sprites/weapons/throwing-axe.tsx"/>
  <tileset firstgid="3107" source="sprites/weapons/stone.tsx"/>
  <tileset firstgid="3108" source="tilesets/ui/Gamepad Spritesheets/Xbox.tsx"/>
@@ -47,7 +47,7 @@
  <tileset firstgid="3138" source="sprites/items/peppers-on-plant.tsx"/>
  <tileset firstgid="3139" source="../ccdata/sprites/bandit/muscle-orange.tsx"/>
  <tileset firstgid="3140" source="tilesets/caves/semiblocked-tunnel.tsx"/>
- <tileset firstgid="3141" source="sprites/bandit/shield.tsx"/>
+ <tileset firstgid="3141" source="../ccdata/sprites/bandit/shield.tsx"/>
  <tileset firstgid="3142" source="tilesets/castle/castle_decoratives.tsx"/>
  <tileset firstgid="3398" source="sprites/vfx/stain.tsx"/>
  <tileset firstgid="3399" source="tilesets/castle/torch.tsx"/>
