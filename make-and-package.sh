@@ -26,8 +26,8 @@ PLATFORM_CONTENTS["linux"]="$GAME_TITLE_NOSPACE-x86_64"
 PLATFORM_FULL["linux"]="linux-x86_64"
 PLATFORM_CONTENTS["windows"]="$GAME_TITLE"
 PLATFORM_FULL["windows"]="win-64"
-PLATFORM_CONTENTS["game"]=${GAME_ASSET:="$PROJECT.love"}
-PLATFORM_FULL["game"]="data"
+# PLATFORM_CONTENTS["game"]="${GAME_ASSET:="$PROJECT.love"} $CCDATA"
+# PLATFORM_FULL["game"]="data"
 
 for PLATFORM in ${*:2}
 do
