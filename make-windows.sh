@@ -40,7 +40,6 @@ getZip () {
 	unzip -o ${ZIP} -d .
 }
 
-./make-game.sh
 mkdir -p game-win
 
 if ! [ -d ${LOVE_DIR} ]
@@ -48,25 +47,33 @@ then
 	getZip ${LOVE_ZIP} ${LOVE_URL}
 fi
 
-ICO="appicon/appicon.ico"
-if ! [ -f "$ICO" ]
+if [ -d $CCDATA ]
 then
-	ICO="${LOVE_DIR}/game.ico"
-fi
-if ! [ -f ${RCEDIT} ]
-then
-	curl -LkO ${RCEDIT_URL}
-fi
-case $(uname | tr '[:upper:]' '[:lower:]') in
-	windows*|mingw*|msys*|cygwin*)
-		;;
-	*)
-		WINE="wine"
-		;;
-esac
-${WINE} ./${RCEDIT} ${LOVE_EXE} --set-icon "$ICO"
+	cp -r "$CCDATA" game-win
+	cp $GAME_ASSET game-win/game
+	cp $LOVE_EXE run.bat game-win
+else
+	ICO="appicon/appicon.ico"
+	if ! [ -f "$ICO" ]
+	then
+		ICO="${LOVE_DIR}/game.ico"
+	fi
+	if ! [ -f ${RCEDIT} ]
+	then
+		curl -LkO ${RCEDIT_URL}
+	fi
+	case $(uname | tr '[:upper:]' '[:lower:]') in
+		windows*|mingw*|msys*|cygwin*)
+			;;
+		*)
+			WINE="wine"
+			;;
+	esac
+	${WINE} ./${RCEDIT} ${LOVE_EXE} --set-icon "$ICO"
 
-cat ${LOVE_EXE} ${GAME_ASSET} > $GAME_EXE
+	cat ${LOVE_EXE} ${GAME_ASSET} > $GAME_EXE
+fi
+
 cp ${LOVE_DIR}/*.dll game-win
 
 if [ -e gme.dll ]
