@@ -37,6 +37,7 @@ game-apk/
 apktool
 appimagetool
 zip/
+*-x86_64/
 
 **/ignore/**/*
 
