@@ -123,10 +123,7 @@ then
 	cp -r $CCDATA $OUT_DIR
 	cp $GAME_ASSET $OUT_DIR/game
 	cp $LOVE_APPIMAGE $OUT_DIR/love
-
-	echo "#!/bin/sh" > $OUT_DIR/run.sh
-	echo "./love --fused game $*" >> $OUT_DIR/run.sh
-	chmod +x $OUT_DIR/run.sh
+	cp run.sh $OUT_DIR/run.sh
 else
 	appimagetool/AppRun ${GAME_APPDIR} $OUT_DIR/${GAME_APPIMAGE}
 fi
