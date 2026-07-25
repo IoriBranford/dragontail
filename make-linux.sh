@@ -45,8 +45,6 @@ LIBGME_DEB=libgme0_${LIBGME_VERSION}_${DEB_ARCH}.deb
 LIBGME_DEV_DEB=libgme-dev_${LIBGME_VERSION}_${DEB_ARCH}.deb
 LIBGME_URL=http://ftp.debian.org/debian/pool/main/g/game-music-emu
 
-./make-game.sh
-
 download() {
 	URL=$1
 	FILE=$2
