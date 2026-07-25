@@ -8,6 +8,7 @@ GAME_TITLE=${GAME_TITLE:="${PROJECT}${GAME_TYPE}"}
 GAME_TITLE_NOSPACE=${GAME_TITLE_NOSPACE:="$(echo ${GAME_TITLE} | sed -e 's/\s\+/_/g')"}
 GAME_TYPE=${GAME_TYPE:=game}
 GAME_ASSET=${GAME_ASSET:="${GAME_TYPE}.love"}
+GAME_RUN=${GAME_RUN:="$PROJECT.sh"}
 DESCRIPTION=${DESCRIPTION:="No description"}
 
 LOVE_VERSION=${LOVE_VERSION:="11.4"}
@@ -121,9 +122,9 @@ mkdir -p $OUT_DIR
 if [[ -d $CCDATA ]]
 then
 	cp -r $CCDATA $OUT_DIR
-	cp $GAME_ASSET $OUT_DIR
+	cp $GAME_ASSET $OUT_DIR/game
 	cp $LOVE_APPIMAGE $OUT_DIR/love
-	cp ${PROJECT}.sh $OUT_DIR/${PROJECT}.sh
+	cp run.sh "$OUT_DIR/$GAME_RUN"
 else
 	appimagetool/AppRun ${GAME_APPDIR} $OUT_DIR/${GAME_APPIMAGE}
 fi

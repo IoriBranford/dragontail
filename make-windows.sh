@@ -10,7 +10,7 @@ GAME_TYPE=${GAME_TYPE:=game}
 GAME_ASSET=${GAME_ASSET:=${GAME_TYPE}.love}
 GAME_EXE=game-win/${GAME_TITLE}.exe
 #PROJECT_ZIP=${PROJECT}-win${ARCH_BITS}.zip
-
+GAME_RUN=${GAME_RUN:="$GAME_TITLE.bat"}
 ARCH_BITS=${ARCH_BITS:=64}
 if [ ${ARCH_BITS} = 64 ]
 then
@@ -50,8 +50,9 @@ fi
 if [ -d $CCDATA ]
 then
 	cp -r "$CCDATA" game-win
-	cp $GAME_ASSET game-win
-	cp $LOVE_EXE "${GAME_TITLE}.bat" game-win
+	cp "$GAME_ASSET" game-win/game
+	cp run.bat game-win/"$GAME_RUN"
+	cp "$LOVE_EXE" game-win
 else
 	ICO="appicon/appicon.ico"
 	if ! [ -f "$ICO" ]
