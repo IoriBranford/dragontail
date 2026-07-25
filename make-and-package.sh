@@ -27,17 +27,26 @@ PLATFORM_FULL["linux"]="linux-x86_64"
 PLATFORM_CONTENTS["windows"]="$GAME_TITLE"
 PLATFORM_FULL["windows"]="win-64"
 # PLATFORM_CONTENTS["game"]="${GAME_ASSET:="$PROJECT.love"} $CCDATA"
-# PLATFORM_FULL["game"]="data"
+PLATFORM_FULL["game"]="data"
 
 for PLATFORM in ${*:2}
 do
     # echo $PLATFORM
     ./make-${PLATFORM}.sh
-    CONTENTS=${PLATFORM_CONTENTS[$PLATFORM]}
+    
     FULL_PLATFORM=${PLATFORM_FULL[$PLATFORM]}
-    # echo zip -r "$PROJECT-$VERSION-$FULL_PLATFORM.zip" "$CONTENTS"
-    if [[ -e "$CONTENTS" ]]
+    ZIP="$PROJECT-$VERSION-$FULL_PLATFORM.zip"
+
+    if [[ $PLATFORM == "game" ]]
     then
-        zip -r "$PROJECT-$VERSION-$FULL_PLATFORM.zip" "$CONTENTS"
+	    GAME_ZIP=${GAME_ZIP:="$GAME_ASSET.zip"}
+        mv $GAME_ZIP $ZIP
+    else
+        CONTENTS=${PLATFORM_CONTENTS[$PLATFORM]}
+
+        if [[ -e "$CONTENTS" ]]
+        then
+            zip -r "$ZIP" "$CONTENTS"
+        fi
     fi
 done
