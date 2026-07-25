@@ -221,7 +221,7 @@ return {
               valign = "bottom",
               properties = {
                 ["action"] = "restartStage",
-                ["color2"] = "#ffff4141",
+                ["color2"] = "#ffff6b6b",
                 ["frequency"] = 30,
                 ["selectanimation"] = "colorCycle"
               }
@@ -247,7 +247,7 @@ return {
               valign = "bottom",
               properties = {
                 ["action"] = "restartStage",
-                ["color2"] = "#ffff4141",
+                ["color2"] = "#ffff6b6b",
                 ["frequency"] = 30,
                 ["selectanimation"] = "colorCycle"
               }
@@ -273,7 +273,7 @@ return {
               valign = "bottom",
               properties = {
                 ["action"] = "restartStage",
-                ["color2"] = "#ffff4141",
+                ["color2"] = "#ffff6b6b",
                 ["frequency"] = 30,
                 ["selectanimation"] = "colorCycle"
               }
