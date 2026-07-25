@@ -98,7 +98,7 @@ then
 else
 	STEAM_DLL=steam_api.dll
 fi
-LUASTEAM_DLL=https://github.com/uspgamedev/luasteam/releases/download/v1.2.0/win${ARCH_BITS}_luasteam.dll
+LUASTEAM_DLL=https://github.com/uspgamedev/luasteam/releases/download/v5.0.0/win${ARCH_BITS}_luasteam.dll
 
 if [ -e $STEAM_DLL ]
 then
