@@ -62,3 +62,8 @@ else
 	zip -r "$OUTDIR/${GAME_ASSET}" *
 	popd #$GAME_DIR
 fi
+
+if [ -f "appicon/appicon.png" ]
+then
+	zip $GAME_ASSET appicon/appicon.png
+fi
