@@ -136,6 +136,15 @@ function TitlePhase.keypressed(key)
     --     GuiActions.openOptions(Gui)
     --     return
     -- end
+
+    if love.keyboard.isDown("lctrl") and key == 's' then
+        local filename = os.date("screenshot-%Y%m%d-%H%M%S.png")
+        local i = 1
+        while love.filesystem.getInfo(filename) do
+            filename = os.date("screenshot-%Y%m%d-%H%M%S-"..i..".png")
+        end
+        love.graphics.captureScreenshot(filename)
+    end
     Gui:keypressed(key)
 end
 
