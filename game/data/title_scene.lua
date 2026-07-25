@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 18,
   nextlayerid = 10,
-  nextobjectid = 3,
+  nextobjectid = 5,
   properties = {
     ["runphase"] = "Dragontail.MoviePhase"
   },
@@ -133,21 +133,43 @@ return {
       properties = {},
       objects = {
         {
-          id = 2,
-          name = "logo",
+          id = 3,
+          name = "",
           type = "",
-          shape = "rectangle",
-          x = 0,
-          y = 0,
-          width = 480,
-          height = 270,
+          shape = "text",
+          x = 48,
+          y = 36,
+          width = 384,
+          height = 72,
           rotation = 0,
           opacity = 1,
-          gid = 1,
           visible = true,
-          properties = {
-            ["asetag"] = "Flaming"
-          }
+          text = "ROSE of",
+          fontfamily = "The Rumor",
+          pixelsize = 64,
+          wrap = true,
+          color = { 224, 33, 33 },
+          properties = {}
+        },
+        {
+          id = 4,
+          name = "",
+          type = "",
+          shape = "text",
+          x = 48,
+          y = 108,
+          width = 384,
+          height = 72,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          text = "DRAGONTAIL",
+          fontfamily = "The Rumor",
+          pixelsize = 64,
+          wrap = true,
+          color = { 224, 33, 33 },
+          halign = "right",
+          properties = {}
         }
       }
     },

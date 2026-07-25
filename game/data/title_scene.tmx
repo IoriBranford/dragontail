@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="10" nextobjectid="3">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="10" nextobjectid="5">
  <editorsettings>
   <export target="title_scene.lua" format="lua"/>
  </editorsettings>
@@ -25,10 +25,11 @@
   </imagelayer>
  </group>
  <objectgroup id="9" name="logo">
-  <object id="2" name="logo" gid="1" x="0" y="0" width="480" height="270">
-   <properties>
-    <property name="asetag" value="Flaming"/>
-   </properties>
+  <object id="3" x="48" y="36" width="384" height="72">
+   <text fontfamily="The Rumor" pixelsize="64" wrap="1" color="#e02121">ROSE of</text>
+  </object>
+  <object id="4" x="48" y="108" width="384" height="72">
+   <text fontfamily="The Rumor" pixelsize="64" wrap="1" color="#e02121" halign="right">DRAGONTAIL</text>
   </object>
  </objectgroup>
  <objectgroup id="8" name="directions">

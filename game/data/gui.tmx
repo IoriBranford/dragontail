@@ -344,55 +344,55 @@ to clear lost enemies</text>
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff">SPRINT</text>
    </object>
   </objectgroup>
-  <objectgroup draworder="index" id="6" name="pausemenu" class="Gui.Menu" visible="0">
+  <objectgroup draworder="index" id="6" name="pausemenu" class="Gui.Menu">
    <properties>
     <property name="backaction" value="unpauseGame"/>
    </properties>
    <object id="8" name="name" x="192" y="54" width="96" height="18" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">PAUSE</text>
    </object>
-   <object id="74" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="96" y="103.5">
+   <object id="74" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="124" y="108">
     <properties>
-     <property name="alignx" type="float" value="0.375"/>
+     <property name="alignx" type="float" value="0.5"/>
     </properties>
    </object>
-   <object id="216" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="36" y="103.5" rotation="180">
+   <object id="216" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="32" y="108" rotation="180">
     <properties>
-     <property name="alignx" type="float" value="-0.375"/>
+     <property name="alignx" type="float" value="-0.5"/>
     </properties>
    </object>
-   <object id="199" template="gui/menu/mainmenu/Button.tx" name="RESUME" x="32" y="90" width="68" height="36">
+   <object id="199" template="gui/menu/mainmenu/Button.tx" x="32" y="90" width="92" height="36">
     <properties>
      <property name="action" value="unpauseGame"/>
     </properties>
-    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">FIGHT!</text>
+    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">FIGHT!</text>
    </object>
-   <object id="200" template="gui/menu/mainmenu/Button.tx" name="OPTIONS" x="40" y="126" width="96" height="36">
+   <object id="200" template="gui/menu/mainmenu/Button.tx" x="40" y="126" width="108" height="36">
     <properties>
      <property name="action" value="openMenu"/>
      <property name="guipath" value="options.simple"/>
     </properties>
-    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">OPTIONS</text>
+    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">OPTIONS</text>
    </object>
-   <object id="201" template="gui/menu/mainmenu/Button.tx" name="RETRY GAME" x="48" y="162" width="72" height="36">
+   <object id="201" template="gui/menu/mainmenu/Button.tx" x="48" y="162" width="100" height="36">
     <properties>
      <property name="action" value="openMenu"/>
      <property name="guipath" value="gameplay.retrymenu"/>
     </properties>
-    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">RETRY</text>
+    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">RETRY</text>
    </object>
-   <object id="202" template="gui/menu/mainmenu/Button.tx" name="END GAME" x="56" y="198" width="52" height="36">
+   <object id="202" template="gui/menu/mainmenu/Button.tx" x="56" y="198" width="60" height="36">
     <properties>
      <property name="action" value="returnToTitle"/>
     </properties>
-    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">END</text>
+    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">END</text>
    </object>
-   <object id="217" template="gui/menu/mainmenu/Button.tx" name="DEBUG" x="64" y="234" width="24" height="36">
+   <object id="217" template="gui/menu/mainmenu/Button.tx" x="64" y="234" width="24" height="36">
     <properties>
      <property name="action" value="openMenu"/>
      <property name="guipath" value="gameplay.debugmenu"/>
     </properties>
-    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">...</text>
+    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">...</text>
    </object>
   </objectgroup>
   <objectgroup draworder="index" id="32" name="trainingmenu" class="Gui.Menu" visible="0">
@@ -402,47 +402,47 @@ to clear lost enemies</text>
    <object id="224" name="name" x="192" y="54" width="96" height="18" visible="0">
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">PAUSE</text>
    </object>
-   <object id="225" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="96" y="103.5">
+   <object id="225" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="124" y="108">
     <properties>
      <property name="alignx" type="float" value="0.375"/>
     </properties>
    </object>
-   <object id="226" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="36" y="103.5" rotation="180">
+   <object id="226" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="32" y="108" rotation="180">
     <properties>
      <property name="alignx" type="float" value="-0.375"/>
     </properties>
    </object>
-   <object id="227" template="gui/menu/mainmenu/Button.tx" name="RESUME" x="32" y="90" width="64" height="36">
+   <object id="227" template="gui/menu/mainmenu/Button.tx" x="32" y="90" width="92" height="36">
     <properties>
      <property name="action" value="unpauseGame"/>
     </properties>
-    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">TRAIN</text>
+    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">TRAIN!</text>
    </object>
-   <object id="228" template="gui/menu/mainmenu/Button.tx" name="OPTIONS" x="40" y="126" width="96" height="36">
+   <object id="228" template="gui/menu/mainmenu/Button.tx" x="40" y="126" width="108" height="36">
     <properties>
      <property name="action" value="openMenu"/>
      <property name="guipath" value="options.simple"/>
     </properties>
-    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">OPTIONS</text>
+    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">OPTIONS</text>
    </object>
-   <object id="229" template="gui/menu/mainmenu/Button.tx" name="RESET" x="48" y="162" width="72" height="36">
+   <object id="229" template="gui/menu/mainmenu/Button.tx" x="48" y="162" width="100" height="36">
     <properties>
      <property name="action" value="resetTraining"/>
     </properties>
-    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">RESET</text>
+    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">RESET</text>
    </object>
-   <object id="230" template="gui/menu/mainmenu/Button.tx" name="END GAME" x="56" y="198" width="52" height="36">
+   <object id="230" template="gui/menu/mainmenu/Button.tx" x="56" y="198" width="60" height="36">
     <properties>
      <property name="action" value="returnToTitle"/>
     </properties>
-    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">END</text>
+    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">END</text>
    </object>
-   <object id="231" template="gui/menu/mainmenu/Button.tx" name="DEBUG" x="64" y="234" width="24" height="36">
+   <object id="231" template="gui/menu/mainmenu/Button.tx" x="64" y="234" width="24" height="36">
     <properties>
      <property name="action" value="openMenu"/>
      <property name="guipath" value="gameplay.debugmenu"/>
     </properties>
-    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">...</text>
+    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">...</text>
    </object>
   </objectgroup>
   <objectgroup id="27" name="retrymenu" class="Gui.Menu" visible="0">
@@ -563,8 +563,8 @@ to clear lost enemies</text>
    <object id="170" gid="413" x="344" y="63" width="14" height="14"/>
    <object id="150" gid="413" x="344" y="171" width="14" height="14"/>
    <object id="152" gid="413" x="344" y="189" width="14" height="14"/>
-   <object id="185" template="gui/menu/Title.tx" x="180" y="9">
-    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center">DEBUG</text>
+   <object id="185" template="gui/menu/Title.tx" x="180" y="0">
+    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">DEBUG</text>
    </object>
   </objectgroup>
   <objectgroup id="11" name="gameover" class="Gui.Menu" visible="0">
@@ -604,42 +604,42 @@ to clear lost enemies</text>
   <objectgroup id="26" name="victory" class="Gui.Menu">
    <object id="192" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="416" y="81">
     <properties>
-     <property name="alignx" type="float" value="0.6"/>
+     <property name="alignx" type="float" value="0.75"/>
     </properties>
    </object>
-   <object id="195" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="296" y="81" rotation="180">
+   <object id="195" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="248" y="81" rotation="180">
     <properties>
-     <property name="alignx" type="float" value="-0.6"/>
+     <property name="alignx" type="float" value="-0.75"/>
     </properties>
    </object>
-   <object id="193" template="gui/menu/mainmenu/Button.tx" name="Return title" x="272" y="171" width="156" height="36">
+   <object id="193" template="gui/menu/mainmenu/Button.tx" x="248" y="171" width="176" height="36">
     <properties>
      <property name="action" value="returnToTitle"/>
     </properties>
-    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">BACK TO TITLE</text>
+    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">BACK TO TITLE</text>
    </object>
-   <object id="196" template="gui/menu/mainmenu/Button.tx" name="Site" x="288" y="117" width="144" height="36">
+   <object id="196" template="gui/menu/mainmenu/Button.tx" x="256" y="117" width="180" height="36">
     <properties>
      <property name="action" value="openURL"/>
      <property name="url" value="https://ioribranford.itch.io/rose-of-dragontail"/>
     </properties>
-    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">OFFICIAL SITE</text>
+    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">VISIT WEBSITE</text>
    </object>
-   <object id="194" template="gui/menu/mainmenu/Button.tx" name="Play again" x="288" y="67.5" width="128" height="36">
+   <object id="194" template="gui/menu/mainmenu/Button.tx" x="248" y="63" width="168" height="36">
     <properties>
      <property name="action" value="restartStage"/>
     </properties>
-    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">FIGHT AGAIN</text>
+    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">FIGHT AGAIN</text>
    </object>
-   <object id="197" name="Rate &amp; Comment" x="316" y="144" width="87.7188" height="21.7813">
+   <object id="197" name="Rate &amp; Comment" x="308" y="144" width="87.7188" height="21.7813">
     <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">Rate &amp; Comment</text>
    </object>
-   <object id="218" name="Rosepath" x="-264" y="-153">
+   <object id="218" name="Rosepath" x="-260" y="-153">
     <polyline points="0,0 44,36 100,108 148,202.5 180,310.5"/>
    </object>
   </objectgroup>
  </group>
- <group id="17" name="title">
+ <group id="17" name="title" visible="0">
   <objectgroup id="7" name="title">
    <object id="11" name="copyright" x="52" y="193.5" width="412" height="58.5">
     <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="right" valign="bottom">(C) 2026 IORI BRANFORD
@@ -676,44 +676,47 @@ USED UNDER CREATIVE COMMONS ATTRIBUTION SHARE-ALIKE LICENSE</text>
   <group id="24" name="mainmenus">
    <objectgroup draworder="index" id="18" name="normal" class="Gui.Menu">
     <object id="106" template="gui/menu/Panel.tx" x="40" y="117" width="112" height="90" visible="0"/>
-    <object id="182" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="100" y="76.5">
+    <object id="182" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="120" y="81">
      <properties>
-      <property name="alignx" type="float" value="0.375"/>
+      <property name="alignx" type="float" value="0.5"/>
      </properties>
     </object>
-    <object id="183" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="36" y="76.5" rotation="180">
+    <object id="183" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="32" y="81" rotation="180">
      <properties>
-      <property name="alignx" type="float" value="-0.375"/>
+      <property name="alignx" type="float" value="-0.5"/>
      </properties>
     </object>
-    <object id="102" template="gui/menu/mainmenu/Button.tx" type="Gui.Button" x="32" y="63" width="68" height="36">
-     <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">FIGHT!</text>
+    <object id="102" template="gui/menu/mainmenu/Button.tx" type="Gui.Button" x="32" y="63" width="92" height="36">
+     <properties>
+      <property name="action" value="restartStage"/>
+     </properties>
+     <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">FIGHT!</text>
     </object>
-    <object id="223" template="gui/menu/mainmenu/Button.tx" type="Gui.Button" x="40" y="99" width="64" height="36">
+    <object id="223" template="gui/menu/mainmenu/Button.tx" type="Gui.Button" x="40" y="99" width="84" height="36">
      <properties>
       <property name="action" value="startTraining"/>
      </properties>
-     <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">TRAIN</text>
+     <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">TRAIN</text>
     </object>
-    <object id="104" template="gui/menu/mainmenu/Button.tx" name="OPTIONS" type="Gui.Button" x="48" y="135" width="96" height="36">
+    <object id="104" template="gui/menu/mainmenu/Button.tx" type="Gui.Button" x="48" y="135" width="108" height="36">
      <properties>
       <property name="action" value="openMenu"/>
       <property name="guipath" value="options.simple"/>
      </properties>
-     <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">OPTIONS</text>
+     <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">OPTIONS</text>
     </object>
-    <object id="105" template="gui/menu/mainmenu/Button.tx" name="QUIT" type="Gui.Button" x="64" y="216" width="52" height="36">
+    <object id="105" template="gui/menu/mainmenu/Button.tx" type="Gui.Button" x="64" y="216" width="68" height="36">
      <properties>
       <property name="action" value="quitGame"/>
      </properties>
-     <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">QUIT</text>
+     <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">QUIT</text>
     </object>
-    <object id="198" template="gui/menu/mainmenu/Button.tx" name="WEBSITE" x="56" y="171" width="100" height="36">
+    <object id="198" template="gui/menu/mainmenu/Button.tx" x="56" y="171" width="116" height="36">
      <properties>
       <property name="action" value="openURL"/>
       <property name="url" value="https://ioribranford.itch.io/rose-of-dragontail"/>
      </properties>
-     <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">WEBSITE</text>
+     <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">WEBSITE</text>
     </object>
     <object id="219" name="Rate &amp; Comment" x="64" y="198" width="96" height="18">
      <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">View instructions</text>
@@ -721,7 +724,7 @@ USED UNDER CREATIVE COMMONS ATTRIBUTION SHARE-ALIKE LICENSE</text>
    </objectgroup>
   </group>
  </group>
- <group id="20" name="options" visible="0">
+ <group id="20" name="options">
   <objectgroup draworder="index" id="19" name="simple" class="Gui.Menu">
    <properties>
     <property name="backaction" value="closeMenu"/>
@@ -880,8 +883,8 @@ USED UNDER CREATIVE COMMONS ATTRIBUTION SHARE-ALIKE LICENSE</text>
     <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
    </object>
    <object id="108" template="gui/menu/Button_closeMenu.tx" type="Gui.Button" x="128" y="234"/>
-   <object id="181" template="gui/menu/Title.tx" x="180" y="18">
-    <text fontfamily="f Firebrand" pixelsize="32" wrap="1" color="#e02121" halign="center">OPTIONS</text>
+   <object id="181" template="gui/menu/Title.tx" x="180" y="9">
+    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center">OPTIONS</text>
    </object>
   </objectgroup>
  </group>
