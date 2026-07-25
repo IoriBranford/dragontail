@@ -23,7 +23,7 @@
             "program": {
                 "command": "love"
             },
-            "args": ["game", "--fused"]
+            "args": ["--fused", "game"]
         },
         {
             "name": "Run map...",
@@ -32,7 +32,7 @@
             "program": {
                 "command": "love"
             },
-            "args": ["game", "--fused", "--map", "data/${input:mapname}.lua"]
+            "args": ["--fused", "game", "--map", "data/${input:mapname}.lua"]
         },
         {
             "name": "Debug",
@@ -41,8 +41,8 @@
             "program": {
                 "command": "love"
             },
-            "scriptRoots": ["game", "--fused"],
-            "args": ["game", "--fused", "--debug", "--drawstats"]
+            "scriptRoots": ["game"],
+            "args": ["--fused", "game", "--debug", "--drawstats"]
         },
         {
             "name": "Debug map...",
@@ -51,8 +51,8 @@
             "program": {
                 "command": "love"
             },
-            "scriptRoots": ["game", "--fused"],
-            "args": ["game", "--fused", "--debug", "--drawstats", "--map", "data/${input:mapname}.lua"]
+            "scriptRoots": ["game"],
+            "args": ["--fused", "game", "--debug", "--drawstats", "--map", "data/${input:mapname}.lua"]
         },
         {
             "name": "Debug room...",
@@ -61,8 +61,8 @@
             "program": {
                 "command": "love"
             },
-            "scriptRoots": ["game", "--fused"],
-            "args": ["game", "--fused", "--debug", "--drawstats", "--map", "data/${input:mapname}.lua", "--room", "${input:roomname}"]
+            "scriptRoots": ["game"],
+            "args": ["--fused", "game", "--debug", "--drawstats", "--map", "data/${input:mapname}.lua", "--room", "${input:roomname}"]
         },
         {
             "name": "Profile",
@@ -71,7 +71,7 @@
             "program": {
                 "command": "love"
             },
-            "args": ["game", "--fused", "--profile", "--drawstats"]
+            "args": ["--fused", "game", "--profile", "--drawstats"]
         },
         {
             "name": "OBS Game Capture",
@@ -83,7 +83,7 @@
             "env": {
                 "SDL_VIDEODRIVER": "x11"
             },
-            "args": ["love", "game", "--fused"]
+            "args": ["love", "--fused", "game"]
         },
         {
             "name": "OBS Game Capture map",
@@ -95,7 +95,7 @@
             "env": {
                 "SDL_VIDEODRIVER": "x11"
             },
-            "args": ["love", "game", "--fused", "--map", "data/${input:mapname}.lua"]
+            "args": ["love", "--fused", "game", "--map", "data/${input:mapname}.lua"]
         },
         {
             "name": "OBS Game Capture room",
@@ -107,7 +107,7 @@
             "env": {
                 "SDL_VIDEODRIVER": "x11"
             },
-            "args": ["love", "game", "--fused", "--map", "data/${input:mapname}.lua", "--room", "${input:roomname}"]
+            "args": ["love", "--fused", "game", "--map", "data/${input:mapname}.lua", "--room", "${input:roomname}"]
         },
         {
             "name": "With unit tests",
@@ -116,8 +116,8 @@
             "program": {
                 "command": "love"
             },
-            "scriptRoots": ["game", "--fused"],
-            "args": ["game", "--fused", "--debug", "--cute"]
+            "scriptRoots": ["game"],
+            "args": ["--fused", "game", "--debug", "--cute"]
         }
     ]
 }
