@@ -46,5 +46,11 @@ popd
 if [ -d $CCDATA ]
 then
 	GAME_ZIP=${GAME_ZIP:="$GAME_ASSET.zip"}
-	zip -r "$GAME_ZIP" "$GAME_ASSET" "$CCDATA" $PROJECT.sh "${GAME_TITLE}.bat"
+	zip -r "$GAME_ZIP" "$GAME_ASSET" "$CCDATA"
+
+	sed -r -e "s/game/${GAME_ASSET}/" run.bat > /tmp/run.bat
+	sed -r -e "s/game/${GAME_ASSET}/" run.sh > /tmp/run.sh
+	pushd /tmp
+	zip "$OUTDIR/$GAME_ZIP" run.sh run.bat
+	popd
 fi
