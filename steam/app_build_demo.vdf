@@ -1,0 +1,17 @@
+"appbuild"
+{
+	"appid"	"5015530"
+	"desc" "Demo game" // description for this build
+	"buildoutput" "buildoutput" // build output folder for .log, .csm & .csd files, relative to location of this file
+	"contentroot" ".." // root content folder, relative to location of this file
+	"setlive"	"staging" // branch to set live after successful build, non if empty
+			// Note that the 'default' branch can not be set live automatically. That must be done through the App Admin panel.
+	"preview" "0" // to enable preview builds
+	"local"	""	// set to flie path of local content server
+
+	"depots"
+	{
+		"5015531" "depot_build_demo-win-64.vdf"
+		"5015532" "depot_build_demo-linux-x86_64.vdf"
+	}
+}
