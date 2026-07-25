@@ -128,20 +128,20 @@ return {
     {
       name = "boss",
       firstgid = 3101,
-      filename = "../../ccdata/sprites/bandit/boss.tsx",
-      exportfilename = "../../ccdata/sprites/bandit/boss.lua"
+      filename = "../ccdata/sprites/bandit/boss.tsx",
+      exportfilename = "../ccdata/sprites/bandit/boss.lua"
     },
     {
       name = "bow",
       firstgid = 3102,
-      filename = "../../ccdata/sprites/bandit/bow.tsx",
-      exportfilename = "../../ccdata/sprites/bandit/bow.lua"
+      filename = "../ccdata/sprites/bandit/bow.tsx",
+      exportfilename = "../ccdata/sprites/bandit/bow.lua"
     },
     {
       name = "spear",
       firstgid = 3103,
-      filename = "../../ccdata/sprites/bandit/spear.tsx",
-      exportfilename = "../../ccdata/sprites/bandit/spear.lua"
+      filename = "../ccdata/sprites/bandit/spear.tsx",
+      exportfilename = "../ccdata/sprites/bandit/spear.lua"
     },
     {
       name = "sling",
@@ -152,8 +152,8 @@ return {
     {
       name = "knife",
       firstgid = 3105,
-      filename = "../../ccdata/sprites/bandit/knife.tsx",
-      exportfilename = "../../ccdata/sprites/bandit/knife.lua"
+      filename = "../ccdata/sprites/bandit/knife.tsx",
+      exportfilename = "../ccdata/sprites/bandit/knife.lua"
     },
     {
       name = "throwing-axe",
@@ -242,8 +242,8 @@ return {
     {
       name = "muscle",
       firstgid = 3139,
-      filename = "../../ccdata/sprites/bandit/muscle-orange.tsx",
-      exportfilename = "../../ccdata/sprites/bandit/muscle-orange.lua"
+      filename = "../ccdata/sprites/bandit/muscle-orange.tsx",
+      exportfilename = "../ccdata/sprites/bandit/muscle-orange.lua"
     },
     {
       name = "cave-window",
@@ -254,8 +254,8 @@ return {
     {
       name = "shield",
       firstgid = 3141,
-      filename = "../../ccdata/sprites/bandit/shield.tsx",
-      exportfilename = "../../ccdata/sprites/bandit/shield.lua"
+      filename = "../ccdata/sprites/bandit/shield.tsx",
+      exportfilename = "../ccdata/sprites/bandit/shield.lua"
     },
     {
       name = "castle_decoratives",
@@ -999,8 +999,8 @@ return {
           parallaxy = 1,
           properties = {
             ["music"] = {
-              "../../ccdata/music/Skyhawk Beach intro.ogg",
-              "../../ccdata/music/Skyhawk Beach loop.ogg"
+              "../ccdata/music/Skyhawk Beach intro.ogg",
+              "../ccdata/music/Skyhawk Beach loop.ogg"
             },
             ["sequence"] = "introBanditStage"
           },
@@ -12432,7 +12432,7 @@ return {
           properties = {
             ["music"] = {
               1.2,
-              "../../ccdata/music/Jazz Hole loop.ogg"
+              "../ccdata/music/Jazz Hole loop.ogg"
             },
             ["titlebarcuecard"] = "AVOID BOSS ENTRY ATTACK"
           },

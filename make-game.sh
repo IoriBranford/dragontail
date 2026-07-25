@@ -38,19 +38,27 @@ case $(uname | tr '[:upper:]' '[:lower:]') in
 		;;
 esac
 
-pushd "$GAME_DIR"
-git describe --tags --always > version
-zip -r "$OUTDIR/${GAME_ASSET}" *
-popd
+git describe --tags --always > "$GAME_DIR/version"
 
 if [ -d $CCDATA ]
 then
 	GAME_ZIP=${GAME_ZIP:="$GAME_ASSET.zip"}
-	zip -r "$GAME_ZIP" "$GAME_ASSET" "$CCDATA"
+
+	pushd "$GAME_DIR"
+	GAME_CCDATA=$(basename $CCDATA)
+	zip -r "$OUTDIR/$GAME_ASSET" * -x "$GAME_CCDATA" "$GAME_CCDATA/*" "$GAME_CCDATA/**/*"
+	zip -r "$OUTDIR/$GAME_ZIP" "$GAME_CCDATA"
+	popd #$GAME_DIR
+	
+	zip -r "$GAME_ZIP" "$GAME_ASSET"
 
 	sed -r -e "s/game/${GAME_ASSET}/" run.bat > /tmp/run.bat
 	sed -r -e "s/game/${GAME_ASSET}/" run.sh > /tmp/run.sh
 	pushd /tmp
 	zip "$OUTDIR/$GAME_ZIP" run.sh run.bat
 	popd
+else
+	pushd "$GAME_DIR"
+	zip -r "$OUTDIR/${GAME_ASSET}" *
+	popd #$GAME_DIR
 fi
