@@ -36,6 +36,7 @@ APPIMAGETOOL_RELEASE=continuous
 APPIMAGETOOL_URL=https://github.com/AppImage/AppImageKit/releases/download/${APPIMAGETOOL_RELEASE}
 
 GAME_APPDIR=${GAME_TITLE_NOSPACE}.AppDir
+GAME_APPRUN=${GAME_TITLE_NOSPACE}.AppRun
 GAME_DESKTOPFILE=${GAME_TITLE_NOSPACE}.desktop
 OUT_DIR=${OUT_DIR:="${GAME_TITLE_NOSPACE}-${ARCH}"}
 GAME_APPIMAGE=${GAME_APPIMAGE:="${GAME_TITLE_NOSPACE}-${ARCH}.AppImage"}
@@ -92,39 +93,47 @@ set_property() {
 	fi
 }
 
-if [ -f "appicon/appicon.png" ]
-then
-	zip $GAME_ASSET appicon/appicon.png
-	cp appicon/appicon.png $GAME_APPDIR
-fi
-cd ${GAME_APPDIR}
-set_property love.desktop Name "${GAME_TITLE}"
-set_property love.desktop Comment "${DESCRIPTION}"
-set_property love.desktop MimeType ""
-set_property love.desktop Categories "Game;"
-set_property love.desktop NoDisplay "false"
-if [ -f appicon.png ]
-then
-	ln -sf appicon.png .DirIcon
-	set_property love.desktop Icon "appicon"
-fi
-mv love.desktop ${GAME_TITLE_NOSPACE}.desktop
-cat $LOVE_EXE ../${GAME_ASSET} > love-fused
-mv love-fused $LOVE_EXE
-chmod +x $LOVE_EXE
-
-cd ..
-
 mkdir -p $OUT_DIR
+cp -r $GAME_APPDIR/bin $GAME_APPDIR/lib $OUT_DIR
+mkdir -p $OUT_DIR/share
+cp -r $GAME_APPDIR/share/luajit-2.1 $OUT_DIR/share
+cp $GAME_ASSET $OUT_DIR/game
+cp $GAME_APPDIR/AppRun $OUT_DIR/$GAME_APPRUN
+sed -i -r -e "s/^\#FUSE_PATH=.*/FUSE_PATH=game/" $OUT_DIR/$GAME_APPRUN
+
+mkdir -p $OUT_DIR.AppImage
 
 if [[ -d $CCDATA ]]
 then
 	cp -r $CCDATA $OUT_DIR
-	cp $GAME_ASSET $OUT_DIR/game
-	cp $LOVE_APPIMAGE $OUT_DIR/love
-	cp run.sh "$OUT_DIR/$GAME_RUN"
+	cp -r $CCDATA $OUT_DIR.AppImage
+	cp $GAME_ASSET $OUT_DIR.AppImage/game
+	cp $LOVE_APPIMAGE $OUT_DIR.AppImage/love
+	cp run.sh "$OUT_DIR.AppImage/$GAME_RUN"
 else
-	appimagetool/AppRun ${GAME_APPDIR} $OUT_DIR/${GAME_APPIMAGE}
+	if [ -f "appicon/appicon.png" ]
+	then
+		cp appicon/appicon.png $GAME_APPDIR
+	fi
+	cd ${GAME_APPDIR}
+	set_property love.desktop Name "${GAME_TITLE}"
+	set_property love.desktop Comment "${DESCRIPTION}"
+	set_property love.desktop MimeType ""
+	set_property love.desktop Categories "Game;"
+	set_property love.desktop NoDisplay "false"
+	if [ -f appicon.png ]
+	then
+		ln -sf appicon.png .DirIcon
+		set_property love.desktop Icon "appicon"
+	fi
+	mv love.desktop ${GAME_TITLE_NOSPACE}.desktop
+	cat $LOVE_EXE ../${GAME_ASSET} > love-fused
+	mv love-fused $LOVE_EXE
+	chmod +x $LOVE_EXE
+
+	cd ..
+
+	appimagetool/AppRun ${GAME_APPDIR} $OUT_DIR.AppImage/${GAME_APPIMAGE}
 fi
 
 STEAM_DLL=linux${ARCH_BITS}/libsteam_api.so
@@ -132,10 +141,12 @@ LUASTEAM_DLL=https://github.com/uspgamedev/luasteam/releases/download/v5.0.0/lin
 
 if [ -e $STEAM_DLL ]
 then
-	curl -Lk -o $OUT_DIR/luasteam.so $LUASTEAM_DLL
-	cp $STEAM_DLL $OUT_DIR
+	curl -Lk -o luasteam.so $LUASTEAM_DLL
+	cp $STEAM_DLL luasteam.so $OUT_DIR/lib
+	cp $STEAM_DLL luasteam.so $OUT_DIR.AppImage
 fi
 if [ -e steam_appid.txt ]
 then
 	cp steam_appid.txt $OUT_DIR
+	cp steam_appid.txt $OUT_DIR.AppImage
 fi
