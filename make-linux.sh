@@ -128,7 +128,7 @@ else
 fi
 
 STEAM_DLL=linux${ARCH_BITS}/libsteam_api.so
-LUASTEAM_DLL=https://github.com/uspgamedev/luasteam/releases/download/v1.0.4/linux${ARCH_BITS}_luasteam.so
+LUASTEAM_DLL=https://github.com/uspgamedev/luasteam/releases/download/v5.0.0/linux${ARCH_BITS}_luasteam.so
 
 if [ -e $STEAM_DLL ]
 then

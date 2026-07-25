@@ -8,17 +8,17 @@ local SteamAccount = {}
 local initialized
 
 function SteamAccount.init()
-    initialized = luasteam.init()
+    initialized = luasteam.Init()
 end
 
 function SteamAccount.update()
     if not initialized then return end
-    luasteam.runCallbacks()
+    luasteam.RunCallbacks()
 end
 
 function SteamAccount.quit()
     if initialized then
-        luasteam.shutdown()
+        luasteam.Shutdown()
         initialized = nil
     end
 end
