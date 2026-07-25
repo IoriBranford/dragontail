@@ -70,8 +70,8 @@
    <properties>
     <property name="donewhenenemiesleft" type="int" value="-1"/>
     <property name="music" type="list">
-     <item type="file" value="../ccdata/music/Ooolin Poolin Oy intro.ogg"/>
-     <item type="file" value="../ccdata/music/Ooolin Poolin Oy loop.ogg"/>
+     <item type="file" value="../../ccdata/music/Ooolin Poolin Oy intro.ogg"/>
+     <item type="file" value="../../ccdata/music/Ooolin Poolin Oy loop.ogg"/>
     </property>
    </properties>
    <object id="17" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="56" y="176">
