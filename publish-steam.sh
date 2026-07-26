@@ -29,15 +29,14 @@ extract() {
 	fi
 }
 
-extract win-64
-extract linux-x86_64
-extract demo-win-64
-extract demo-linux-x86_64
+# extract win-64
+# extract linux-x86_64
+# extract demo-win-64
+# extract demo-linux-x86_64
 #pending signing+notarization
 #extract osx
 #extract demo-osx
 
 $STEAMCMD +login "$ACCOUNT" \
-	+run_app_build "$PWD/steam/app_build_full.vdf" \
 	+run_app_build "$PWD/steam/app_build_demo.vdf" \
 	+quit
