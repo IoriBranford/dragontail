@@ -9,7 +9,7 @@
   <property name="runphase" value="Dragontail.GamePhase"/>
  </properties>
  <tileset firstgid="1" source="tilesets/caves/caves.tsx"/>
- <tileset firstgid="2449" source="sprites/bandit/cavedoor2-diagonal.tsx"/>
+ <tileset firstgid="2449" source="../ccdata/sprites/bandit/cavedoor2-diagonal.tsx"/>
  <tileset firstgid="2453" source="sprites/containers/barrelA.tsx"/>
  <tileset firstgid="2456" source="sprites/containers/barrelB.tsx"/>
  <tileset firstgid="2459" source="sprites/containers/crates.tsx"/>

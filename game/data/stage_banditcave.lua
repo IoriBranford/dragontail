@@ -26,8 +26,8 @@ return {
     {
       name = "cavedoor2-diagonal",
       firstgid = 2449,
-      filename = "sprites/bandit/cavedoor2-diagonal.tsx",
-      exportfilename = "sprites/bandit/cavedoor2-diagonal.lua"
+      filename = "../ccdata/sprites/bandit/cavedoor2-diagonal.tsx",
+      exportfilename = "../ccdata/sprites/bandit/cavedoor2-diagonal.lua"
     },
     {
       name = "barrelA",
