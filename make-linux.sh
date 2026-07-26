@@ -36,7 +36,6 @@ APPIMAGETOOL_RELEASE=continuous
 APPIMAGETOOL_URL=https://github.com/AppImage/AppImageKit/releases/download/${APPIMAGETOOL_RELEASE}
 
 GAME_APPDIR=${GAME_TITLE_NOSPACE}.AppDir
-GAME_APPRUN=${GAME_TITLE_NOSPACE}.AppRun
 GAME_DESKTOPFILE=${GAME_TITLE_NOSPACE}.desktop
 OUT_DIR=${OUT_DIR:="${GAME_TITLE_NOSPACE}-${ARCH}"}
 GAME_APPIMAGE=${GAME_APPIMAGE:="${GAME_TITLE_NOSPACE}-${ARCH}.AppImage"}
@@ -98,8 +97,8 @@ cp -r $GAME_APPDIR/bin $GAME_APPDIR/lib $OUT_DIR
 mkdir -p $OUT_DIR/share
 cp -r $GAME_APPDIR/share/luajit-2.1 $OUT_DIR/share
 cp $GAME_ASSET $OUT_DIR/game
-cp $GAME_APPDIR/AppRun $OUT_DIR/$GAME_APPRUN
-sed -i -r -e "s/^\#FUSE_PATH=.*/FUSE_PATH=game/" $OUT_DIR/$GAME_APPRUN
+cp $GAME_APPDIR/AppRun $OUT_DIR/$GAME_RUN
+sed -i -r -e "s/^\#FUSE_PATH=.*/FUSE_PATH=game/" $OUT_DIR/$GAME_RUN
 
 mkdir -p $OUT_DIR.AppImage
 
