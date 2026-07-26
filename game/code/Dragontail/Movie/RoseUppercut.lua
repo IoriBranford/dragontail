@@ -27,7 +27,7 @@ local function RoseUppercut (movie)
     local mt = multitask.new()
     local tasks = {
         function() return coDrift(rose, math.rad(240), .5, 60) end,
-        function() return coFade(swipe, 0x00FFFFFF, Color.White, 60) end,
+        function() coroutine.wait(30); return coFade(swipe, 0x80FFFFFF, Color.White, 60) end,
         function() return coHitShake(menu, -1.5, 50, 100, 60) end,
     }
     for i = 1, #tasks do

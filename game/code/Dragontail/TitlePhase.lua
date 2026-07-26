@@ -61,8 +61,8 @@ local function sceneAnimation()
         function() return coDrift(swing, math.rad(210), .5, 60) end,
         function() return coDrift(enemy, math.rad(210), 2, 60) end,
         function() return coDrift(hit, math.rad(210), 1, 60) end,
-        function() return coFade(hit, 0x00ffffff, Color.White, 60) end,
-        function() return coFade(swing, 0x00ffffff, Color.White, 60) end,
+        function() coroutine.wait(30); return coFade(hit, 0x80ffffff, Color.White, 30) end,
+        function() coroutine.wait(30); return coFade(swing, 0x80ffffff, Color.White, 30) end,
         function() return coHitShake(menu, 100, 50, 150, 60) end,
     }
 
