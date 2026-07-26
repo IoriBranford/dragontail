@@ -93,6 +93,7 @@ set_property() {
 }
 
 mkdir -p $OUT_DIR
+rm -rf $OUT_DIR/*
 cp -r $GAME_APPDIR/bin $GAME_APPDIR/lib $OUT_DIR
 mkdir -p $OUT_DIR/share
 cp -r $GAME_APPDIR/share/luajit-2.1 $OUT_DIR/share
