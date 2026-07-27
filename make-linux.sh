@@ -110,6 +110,7 @@ then
 	cp $GAME_ASSET $OUT_DIR.AppImage/game
 	cp $LOVE_APPIMAGE $OUT_DIR.AppImage/love
 	cp run.sh "$OUT_DIR.AppImage/$GAME_RUN"
+	sed -i -r -e "s/^love/\.\/love/" "$OUT_DIR.AppImage/$GAME_RUN"
 else
 	if [ -f "appicon/appicon.png" ]
 	then
