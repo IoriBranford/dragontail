@@ -80,6 +80,7 @@ pushd $GAME_APPDIR
 cat bin/love $GAME_ASSET_PATH > bin/$GAME_EXE
 chmod +x bin/$GAME_EXE
 rm bin/love
+sed -i -r -e "s/^export LUA_PATH=\"/&\$APPDIR\/share\/luajit-2.1\/?.lua;/" AppRun
 sed -i -r -e "s/bin\/love/bin\/$GAME_EXE/" AppRun
 popd
 
