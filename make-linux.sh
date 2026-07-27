@@ -8,6 +8,7 @@ GAME_TITLE=${GAME_TITLE:="${PROJECT}${GAME_TYPE}"}
 GAME_TITLE_NOSPACE=${GAME_TITLE_NOSPACE:="$(echo ${GAME_TITLE} | sed -e 's/\s\+/_/g')"}
 GAME_TYPE=${GAME_TYPE:=game}
 GAME_ASSET=${GAME_ASSET:="${GAME_TYPE}.love"}
+GAME_EXE=${GAME_EXE:=$PROJECT}
 GAME_RUN=${GAME_RUN:="$PROJECT.sh"}
 DESCRIPTION=${DESCRIPTION:="No description"}
 
@@ -30,6 +31,7 @@ else
 fi
 LOVE_APPIMAGE_URL=https://github.com/love2d/love/releases/download/${LOVE_VERSION}
 LOVE_APPIMAGE=love-${LOVE_VERSION}-${ARCH}.AppImage
+LOVE_APPDIR=love-${LOVE_VERSION}-${ARCH}.AppDir
 
 APPIMAGETOOL=appimagetool-${ARCH}.AppImage
 APPIMAGETOOL_RELEASE=continuous
@@ -62,15 +64,24 @@ then
 	mv squashfs-root appimagetool
 fi
 
-download ${LOVE_APPIMAGE_URL} ${LOVE_APPIMAGE}
-chmod a+x ${LOVE_APPIMAGE}
-
-./${LOVE_APPIMAGE} --appimage-extract
-if [ -d ${GAME_APPDIR} ]
+if [ ! -d "love.AppDir" ]
 then
-	rm -rf ${GAME_APPDIR}
+	download ${LOVE_APPIMAGE_URL} ${LOVE_APPIMAGE}
+	chmod a+x ${LOVE_APPIMAGE}
+	./${LOVE_APPIMAGE} --appimage-extract
+	mv squashfs-root love.AppDir
 fi
-mv squashfs-root ${GAME_APPDIR}
+
+rm -rf ${GAME_APPDIR}
+cp -r love.AppDir ${GAME_APPDIR}
+
+GAME_ASSET_PATH=$(pwd)/$GAME_ASSET
+pushd $GAME_APPDIR
+cat bin/love $GAME_ASSET_PATH > bin/$GAME_EXE
+chmod +x bin/$GAME_EXE
+rm bin/love
+sed -i -r -e "s/bin\/love/bin\/$GAME_EXE/" AppRun
+popd
 
 if [ -f gme.dll ]
 then
@@ -92,20 +103,19 @@ set_property() {
 	fi
 }
 
-mkdir -p $OUT_DIR
-rm -rf $OUT_DIR/*
-cp -r $GAME_APPDIR/bin $GAME_APPDIR/lib $OUT_DIR
+rm -rf $OUT_DIR
 mkdir -p $OUT_DIR/share
-cp -r $GAME_APPDIR/share/luajit-2.1 $OUT_DIR/share
-cp $GAME_ASSET $OUT_DIR/game
-cp $GAME_APPDIR/AppRun $OUT_DIR/$GAME_RUN
-sed -i -r -e "s/^\#FUSE_PATH=.*/FUSE_PATH=game/" $OUT_DIR/$GAME_RUN
 
+cp -r $GAME_APPDIR/bin $GAME_APPDIR/lib $OUT_DIR
+cp -r $GAME_APPDIR/share/luajit-2.1 $OUT_DIR/share
+cp $GAME_APPDIR/AppRun $OUT_DIR/$GAME_RUN
+
+rm -rf $OUT_DIR.AppImage
 mkdir -p $OUT_DIR.AppImage
 
 if [[ -d $CCDATA ]]
 then
-	cp -r $CCDATA $OUT_DIR
+	cp -r $CCDATA $OUT_DIR/bin
 	cp -r $CCDATA $OUT_DIR.AppImage
 	cp $GAME_ASSET $OUT_DIR.AppImage/game
 	cp $LOVE_APPIMAGE $OUT_DIR.AppImage/love
@@ -116,6 +126,7 @@ else
 	then
 		cp appicon/appicon.png $GAME_APPDIR
 	fi
+
 	cd ${GAME_APPDIR}
 	set_property love.desktop Name "${GAME_TITLE}"
 	set_property love.desktop Comment "${DESCRIPTION}"
@@ -128,10 +139,6 @@ else
 		set_property love.desktop Icon "appicon"
 	fi
 	mv love.desktop ${GAME_TITLE_NOSPACE}.desktop
-	cat $LOVE_EXE ../${GAME_ASSET} > love-fused
-	mv love-fused $LOVE_EXE
-	chmod +x $LOVE_EXE
-
 	cd ..
 
 	appimagetool/AppRun ${GAME_APPDIR} $OUT_DIR.AppImage/${GAME_APPIMAGE}
