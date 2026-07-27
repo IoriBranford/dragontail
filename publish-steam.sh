@@ -2,13 +2,13 @@
 
 ACCOUNT="iori_branford@hotmail.com"
 
-VERSION=$1
-if [ ! ${VERSION} ]
-then
-	echo "Usage: publish-steam.sh <VERSION>"
-	echo "(after downloading artifacts via download-artifacts.sh)"
-	exit 1
-fi
+# VERSION=$1
+# if [ ! ${VERSION} ]
+# then
+# 	echo "Usage: publish-steam.sh <VERSION>"
+# 	echo "(after downloading artifacts via download-artifacts.sh)"
+# 	exit 1
+# fi
 
 MASTER=$(git branch --all --contains ${VERSION} | grep -c master)
 if [ $MASTER != "0" ]
@@ -38,5 +38,6 @@ extract() {
 #extract demo-osx
 
 $STEAMCMD +login "$ACCOUNT" \
+	+run_app_build "$PWD/steam/app_build_full.vdf" \
 	+run_app_build "$PWD/steam/app_build_demo.vdf" \
 	+quit
