@@ -5095,7 +5095,7 @@ return {
               gid = 3102,
               visible = true,
               properties = {
-                ["defaultattack"] = "sling-shot-until-empty",
+                ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 828 },
                 ["exitpoint"] = { id = 830 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
@@ -5151,7 +5151,7 @@ return {
               gid = 3102,
               visible = true,
               properties = {
-                ["defaultattack"] = "sling-shot-until-empty",
+                ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 834 },
                 ["exitpoint"] = { id = 836 },
                 ["initialai"] = "enterAndAttackUntilEmpty",
@@ -5608,7 +5608,7 @@ return {
               gid = 3102,
               visible = true,
               properties = {
-                ["defaultattack"] = "sling-shot-until-empty",
+                ["defaultattack"] = "bow-shot-until-empty",
                 ["entrypoint"] = { id = 821 },
                 ["exitpoint"] = { id = 820 },
                 ["initialai"] = "enterAndAttackUntilEmpty",

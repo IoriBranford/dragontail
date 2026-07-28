@@ -1181,7 +1181,7 @@ body to grapple</text>
    </properties>
    <object id="826" template="mapobjects/bandit/bow.tx" x="2912" y="88">
     <properties>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="defaultattack" value="bow-shot-until-empty"/>
      <property name="entrypoint" type="object" value="828"/>
      <property name="exitpoint" type="object" value="830"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
@@ -1204,7 +1204,7 @@ body to grapple</text>
    </object>
    <object id="832" template="mapobjects/bandit/bow.tx" x="3056" y="240">
     <properties>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="defaultattack" value="bow-shot-until-empty"/>
      <property name="entrypoint" type="object" value="834"/>
      <property name="exitpoint" type="object" value="836"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
@@ -1321,7 +1321,7 @@ and tap    to throw</text>
    </object>
    <object id="819" template="mapobjects/bandit/bow.tx" x="3056" y="160">
     <properties>
-     <property name="defaultattack" value="sling-shot-until-empty"/>
+     <property name="defaultattack" value="bow-shot-until-empty"/>
      <property name="entrypoint" type="object" value="821"/>
      <property name="exitpoint" type="object" value="820"/>
      <property name="initialai" value="enterAndAttackUntilEmpty"/>
