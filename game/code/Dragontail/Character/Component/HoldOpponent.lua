@@ -64,12 +64,12 @@ end
 
 ---@param opponent HeldByOpponent
 function HoldOpponent:stopHolding(opponent)
-    if self then
+    if self and self.heldopponent == opponent then
         self.heldopponent = nil
         self.holdangle = nil
         self.holdstrength = nil
     end
-    if opponent then
+    if opponent and opponent.heldby == self then
         opponent.heldby = nil
     end
 end
