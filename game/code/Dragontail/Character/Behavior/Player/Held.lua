@@ -25,6 +25,17 @@ function PlayerHeld:fixedupdate()
     local player = self.character
     local holder = player.heldby
 
+    if player.weaponinhand then
+        if player:consumeActionRecentlyPressed("attack") then
+            local attackangle = math2.topolar(holder.x - player.x,
+                holder.y - player.y)
+            player.faceangle = attackangle
+            player.facedestangle = attackangle
+            StateMachine.start(holder, "breakaway", player)
+            return "throwWeapon", attackangle, 1
+        end
+    end
+
     local chargedattack, attackangle
     chargedattack, attackangle = player:getActivatedChargeAttackTowardsJoystick()
     if chargedattack then
