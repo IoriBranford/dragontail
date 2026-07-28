@@ -70,6 +70,7 @@ function PlayerRunning:fixedupdate()
     if heldenemy and not HoldOpponent.isHolding(player, heldenemy) then
         HoldOpponent.stopHolding(player, heldenemy)
         heldenemy = nil
+        return "brokenaway", heldenemy
     end
     local inx, iny = player:getJoystick()
 
