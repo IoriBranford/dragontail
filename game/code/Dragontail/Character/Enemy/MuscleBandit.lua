@@ -7,6 +7,7 @@ local Body                 = require "Dragontail.Character.Component.Body"
 local CollisionMask        = require "Dragontail.Character.Component.Body.CollisionMask"
 local Face                 = require "Dragontail.Character.Component.Face"
 local Slide        = require "Dragontail.Character.Component.Slide"
+local HoldOpponent = require "Dragontail.Character.Component.HoldOpponent"
 
 ---@class MuscleBandit:Enemy
 local MuscleBandit = class(Enemy)
@@ -187,7 +188,11 @@ function MuscleBandit:duringApproach(opponent)
         return "catchReady"
     end
     local persontograb = Characters.search("container", isCloseEnoughToGrab)
-    if persontograb then return "grab", persontograb end
+    if persontograb then
+        if not HoldOpponent.isOpponentHeldByTeammate(self, persontograb) then
+            return "grab", persontograb
+        end
+    end
     local weapon = not self.weaponinhand and
         Characters.search("items", isWeaponItemCloseEnoughToGrab)
     if weapon then return "getProjectile", weapon end
