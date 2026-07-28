@@ -11,7 +11,7 @@ local PlayerGuardHit = pooledclass(Behavior)
 function PlayerGuardHit:start(hit)
     local player = self.character
     Guard.standardImpact(player, hit)
-    local guardangle = assert(hit.guardangle)
+    local guardangle = assert(hit.guardedangle)
     Guard.startGuarding(player, guardangle)
     Face.faceAngle(player, guardangle + math.pi, player.state.animation, player.state.frame1, player.state.loopframe)
     player:makeImpactSpark(hit.attacker, "spark-parry")

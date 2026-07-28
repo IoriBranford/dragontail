@@ -274,7 +274,9 @@ Character.unassignSelfAsAttacker = Attacker.unassignSelfAsAttacker
 ---@param hit AttackHit
 function Character:onHitByAttack(hit)
     if hit.guarded then
-        local guardhitstate = self.guardai
+        local guardhitstate =
+            hit.guardedangle ~= hit.guardangle
+            and self.reverseguardai or self.guardai
         if guardhitstate then
             StateMachine.start(self, guardhitstate, hit)
         else

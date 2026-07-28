@@ -3,6 +3,7 @@ local Color    = require "Tiled.Color"
 ---@class Guard:Body
 ---@field guardai string|"guardHit"
 ---@field guardangle number?
+---@field guardtwoway boolean
 ---@field guardarc number
 ---@field guardradius number?
 ---@field guardcounterstate string?
@@ -27,34 +28,41 @@ function Guard:isGuarding()
 end
 
 ---@param hit AttackHit
----@return boolean
-function Guard:isHitGuarded(hit)
-    if hit.attacker.unguardable then return false end
-    return Guard.isPointInGuardArc(self, hit.attacker.x, hit.attacker.y)
+function Guard:getGuardedAngle(hit)
+    if hit.attacker.unguardable then return end
+    return Guard.getGuardedAngleVsPoint(self, hit.attacker.x, hit.attacker.y)
 end
 
-function Guard:isAttackAgainstGuardArc(attacker)
+function Guard:getGuardedAngleVsAttacker(attacker)
     local attackangle = attacker.attackangle
-    return attackangle and Guard.isAngleAgainstGuardArc(self, attackangle)
+    return attackangle and Guard.getGuardedAngleVsAngle(self, attackangle)
 end
 
-function Guard:isUnitVectorAgainstGuardArc(ux, uy)
+function Guard:getGuardedAngleVsUnitVector(ux, uy)
     local guardangle = self.guardangle
-    if not guardangle then return false end
+    if not guardangle then return end
     local guardarc = self.guardarc or DefaultGuardArc
-    local gx, gy = math.cos(guardangle), math.sin(guardangle)
-    return math.dot(ux, uy, gx, gy) <= -math.cos(guardarc)
+    local gx, gy = math2.frompolar(guardangle)
+    local cosarc = math.cos(guardarc)
+    if math.dot(ux, uy, gx, gy) <= -cosarc then
+        return guardangle
+    end
+    if self.guardtwoway then
+        if math.dot(ux, uy, -gx, -gy) <= -cosarc then
+            return guardangle+math.pi
+        end
+    end
 end
 
-function Guard:isAngleAgainstGuardArc(angle)
-    return Guard.isUnitVectorAgainstGuardArc(self, math.cos(angle), math.sin(angle))
+function Guard:getGuardedAngleVsAngle(angle)
+    return Guard.getGuardedAngleVsUnitVector(self, math.cos(angle), math.sin(angle))
 end
 
-function Guard:isPointInGuardArc(x, y)
+function Guard:getGuardedAngleVsPoint(x, y)
     local dx, dy = self.x - x, self.y - y
-    if dx == 0 and dy == 0 then return false end
+    if dx == 0 and dy == 0 then return end
     dx, dy = math.norm(dx, dy)
-    return Guard.isUnitVectorAgainstGuardArc(self, dx, dy)
+    return Guard.getGuardedAngleVsUnitVector(self, dx, dy)
 end
 
 ---@param atkr Attacker
@@ -93,13 +101,11 @@ function Guard:standardImpact(hit)
     Guard.pushBackAttacker(self, attacker)
 end
 
-function Guard:draw(sidey, fixedfrac)
+function Guard:drawArc(sidey, fixedfrac, angle)
     local guardr, guardg, guardb, guardalpha = Color.unpack(self.guardcolor or 0xFF80FFFF)
     if guardalpha <= 0 then
         return
     end
-    local angle = self.guardangle
-    if not angle then return end
 
     local arc = self.guardarc or DefaultGuardArc
     local a1, a2 = angle - arc, angle + arc
@@ -135,6 +141,15 @@ function Guard:draw(sidey, fixedfrac)
         love.graphics.arc("line", "open", x, y, br, a1, a2)
         t = t - dt
         y = y - 1
+    end
+end
+
+function Guard:draw(sidey, fixedfrac)
+    local angle = self.guardangle
+    if not angle then return end
+    Guard.drawArc(self, sidey, fixedfrac, angle)
+    if self.guardtwoway then
+        Guard.drawArc(self, sidey, fixedfrac, angle + math.pi)
     end
 end
 

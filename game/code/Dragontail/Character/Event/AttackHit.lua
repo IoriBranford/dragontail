@@ -14,7 +14,7 @@ local Guard     = require "Dragontail.Character.Component.Guard"
 ---@field peney number?
 ---@field penez number?
 ---@field guarded boolean
----@field guardangle number?
+---@field guardedangle number?
 local AttackHit = pooledclass()
 AttackHit._nrec = 14
 
@@ -33,8 +33,9 @@ function AttackHit:_init(attacker, target, attack, attackangle, penex, peney, pe
     self.attackz = z or attacker.z
     self.attackr = r or attack.radius
     self.attackh = h or attacker.bodyheight
-    self.guarded = Guard.isHitGuarded(target, self)
+    self.guardedangle = Guard.getGuardedAngle(target, self)
     self.guardangle = target.guardangle
+    self.guarded = self.guardedangle ~= nil
     return self
 end
 

@@ -10,7 +10,7 @@ local EnemyGuardHit = pooledclass(Behavior)
 function EnemyGuardHit:start(hit)
     local enemy = self.character
     Guard.standardImpact(enemy, hit)
-    local guardangle = assert(hit.guardangle)
+    local guardangle = assert(hit.guardedangle)
     Guard.startGuarding(enemy, guardangle)
 
     local guardcounterstate = enemy.guardcounterstate

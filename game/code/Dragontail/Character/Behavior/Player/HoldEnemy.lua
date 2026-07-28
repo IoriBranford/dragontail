@@ -22,7 +22,7 @@ function PlayerHoldEnemy:start(enemy)
         isfrombehind = math.dot(math.cos(enemy.faceangle), math.sin(enemy.faceangle),
             math.cos(player.faceangle), math.sin(player.faceangle)) >= 0
         if isfrombehind then
-        elseif Guard.isPointInGuardArc(enemy, player.x, player.y) then
+        elseif Guard.getGuardedAngleVsPoint(enemy, player.x, player.y) then
         end
         if player.heldopponent ~= enemy then
             HoldOpponent.startHolding(player, enemy, player.holdangle)
