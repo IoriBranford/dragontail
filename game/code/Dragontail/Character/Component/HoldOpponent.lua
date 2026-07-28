@@ -122,6 +122,13 @@ function HoldOpponent:findOpponentToHold(inx, iny)
     end
 end
 
+---comment
+---@param opponent HeldByOpponent
+---@return boolean
+function HoldOpponent:isOpponentHeldByTeammate(opponent)
+    return opponent.heldby ~= nil and opponent.heldby.team == self.team
+end
+
 function HoldOpponent:getDefaultHoldDistance(held)
     return (self.bodyradius + held.bodyradius + 1)
 end
