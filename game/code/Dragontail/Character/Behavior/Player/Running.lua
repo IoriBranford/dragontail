@@ -14,7 +14,6 @@ local Attacker   = require "Dragontail.Character.Component.Attacker"
 local PlayerRunning = pooledclass(Behavior)
 PlayerRunning._nrec = Behavior._nrec + 5
 
----@param heldenemy Enemy?
 function PlayerRunning:start(isrunstart)
     local player = self.character
     if isrunstart then
@@ -30,7 +29,7 @@ function PlayerRunning:start(isrunstart)
         StateMachine.start(heldenemy, player.attack.heldopponentstate or "human-in-spinning-throw", player)
         heldenemy:startAttack(player.faceangle)
     end
-    self.attackpressed = false
+    self.heldenemy = heldenemy
 end
 
 ---@param self Player
@@ -66,10 +65,8 @@ function PlayerRunning:fixedupdate()
 
     local inair = player.gravity == 0
 
-    local heldenemy = player.heldopponent
+    local heldenemy = self.heldenemy
     if heldenemy and not HoldOpponent.isHolding(player, heldenemy) then
-        HoldOpponent.stopHolding(player, heldenemy)
-        heldenemy = nil
         return "brokenaway", heldenemy
     end
     local inx, iny = player:getJoystick()
