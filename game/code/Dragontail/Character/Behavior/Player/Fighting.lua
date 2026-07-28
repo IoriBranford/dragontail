@@ -25,10 +25,6 @@ function PlayerFighting:fixedupdate()
 
     local inx, iny = player:getJoystick()
 
-    local caughtprojectile = player:catchProjectileAtJoystick()
-    if caughtprojectile then
-        return "catchProjectile", caughtprojectile
-    end
 
     if player:consumeActionDownAndRecentlyPressed("sprint") then
         Face.faceVector(player, inx, iny)
