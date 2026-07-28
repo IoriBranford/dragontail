@@ -41,7 +41,7 @@ do
     
     FULL_PLATFORM=${PLATFORM_FULL[$PLATFORM]}
     ZIP="$PROJECT-$VERSION-$FULL_PLATFORM.zip"
-
+    rm $ZIP
     if [[ $PLATFORM == "game" ]]
     then
 	    GAME_ZIP=${GAME_ZIP:="$GAME_ASSET.zip"}
