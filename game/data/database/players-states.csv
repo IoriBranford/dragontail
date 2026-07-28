@@ -68,4 +68,4 @@ groundSlamLand,groundSlam,,,updateGroundSlamLand,jump,,12,.attackasefile,stompLa
 flyStart,,,flyStart,,walk,,FALSE,data/sprites/player/rose/fly.jase,ascend,1,FALSE,FALSE,FALSE,4294967295,data/sounds/player/flyup.mp3,,3,0,0,,4,FALSE,3.14159265358979,
 flyEnd,,,flyEnd,,,,FALSE,data/sprites/player/rose/fly.jase,descend,1,FALSE,FALSE,FALSE,,,,0,0,0,0.25,4,FALSE,3.14159265358979,
 guardHit,,Dragontail.Character.Behavior.Player.GuardHit,,,walk,,9,.mainasefile,guard,0,FALSE,FALSE,FALSE,,,,0,8,0,,0,100000,3.14159265358979,
-catchAttack,,Dragontail.Character.Behavior.Player.CatchAttack,,,,,20,,catch,0,FALSE,FALSE,FALSE,,data/sounds/player/reversal.mp3,,0,,,,,0.25,0.392699081698724,
+catchAttack,,Dragontail.Character.Behavior.Player.CatchAttack,,,,,20,,catch,0,FALSE,FALSE,FALSE,,data/sounds/player/reversalshort.ogg,,0,,,,,0.25,0.392699081698724,
