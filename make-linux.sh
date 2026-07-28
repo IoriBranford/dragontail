@@ -104,6 +104,25 @@ set_property() {
 	fi
 }
 
+if [ -f "appicon/appicon.png" ]
+then
+	cp appicon/appicon.png $GAME_APPDIR
+fi
+
+cd ${GAME_APPDIR}
+set_property love.desktop Name "${GAME_TITLE}"
+set_property love.desktop Comment "${DESCRIPTION}"
+set_property love.desktop MimeType ""
+set_property love.desktop Categories "Game;"
+set_property love.desktop NoDisplay "false"
+if [ -f appicon.png ]
+then
+	ln -sf appicon.png .DirIcon
+	set_property love.desktop Icon "appicon"
+fi
+mv love.desktop ${GAME_TITLE_NOSPACE}.desktop
+cd ..
+
 rm -rf $OUT_DIR
 mkdir -p $OUT_DIR/share
 
@@ -123,25 +142,6 @@ then
 	cp run.sh "$OUT_DIR.AppImage/$GAME_RUN"
 	sed -i -r -e "s/^love/\.\/love/" "$OUT_DIR.AppImage/$GAME_RUN"
 else
-	if [ -f "appicon/appicon.png" ]
-	then
-		cp appicon/appicon.png $GAME_APPDIR
-	fi
-
-	cd ${GAME_APPDIR}
-	set_property love.desktop Name "${GAME_TITLE}"
-	set_property love.desktop Comment "${DESCRIPTION}"
-	set_property love.desktop MimeType ""
-	set_property love.desktop Categories "Game;"
-	set_property love.desktop NoDisplay "false"
-	if [ -f appicon.png ]
-	then
-		ln -sf appicon.png .DirIcon
-		set_property love.desktop Icon "appicon"
-	fi
-	mv love.desktop ${GAME_TITLE_NOSPACE}.desktop
-	cd ..
-
 	appimagetool/AppRun ${GAME_APPDIR} $OUT_DIR.AppImage/${GAME_APPIMAGE}
 fi
 
