@@ -15,16 +15,18 @@ function CatchAttack:start(hit)
 
     Face.faceObject(enemy, attacker,
         enemy.state.animation, enemy.animationframe, enemy.state.loopframe)
+    attacker:stopAttack() ; attacker:unassignSelfAsAttacker()
 
     if attacker.team == "players"
     or attacker.team == "enemies"
     or attacker.team == "container" then
-        if not HoldOpponent.isHolding(enemy, attacker) then
+        ---@cast attacker Fighter
+        if not HoldOpponent.isOpponentHeldByTeammate(enemy, attacker) then
+            HoldOpponent.stopHolding(attacker.heldby, attacker)
             attacker.thrower = nil
             HoldOpponent.startHolding(enemy, attacker)
         end
     elseif attacker.team == "projectiles" then
-        attacker:stopAttack() ; attacker:unassignSelfAsAttacker()
         if enemy:tryToGiveWeapon(attacker.type) then
             attacker:disappear()
         else
@@ -40,6 +42,10 @@ end
 
 function CatchAttack:fixedupdate()
     local enemy = self.character
+    if not enemy.heldopponent and not enemy.weaponinhand then
+        return self:timeout()
+    end
+
     local attacker = self.attacker
 
     local opponent = enemy.opponents[1]
