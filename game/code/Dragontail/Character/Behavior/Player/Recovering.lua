@@ -22,11 +22,6 @@ function Recovering:fixedupdate()
     player:turnTowardsJoystick()
     player:decelerateXYto0()
 
-    local caughtprojectile = player:catchProjectileAtJoystick()
-    if caughtprojectile then
-        return "catchProjectile", caughtprojectile
-    end
-
     local chargedattack = not player.attackbutton.down and player:getChargedAttack(ChargeAttackStates)
     if chargedattack then
         Mana.releaseCharge(player)

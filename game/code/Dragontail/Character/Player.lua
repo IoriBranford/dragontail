@@ -356,6 +356,7 @@ function Player:getTailGuardAngle()
     return atan2(parryy, parryx) + math.pi
 end
 
+---@deprecated
 function Player:catchProjectileAtJoystick()
     local parryx, parryy = self:getParryVector()
     if not (parryx and parryy) then return end
