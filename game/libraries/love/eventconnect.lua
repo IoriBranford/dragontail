@@ -23,9 +23,7 @@ function love.event.reset()
 end
 
 function love.event.resetConnections()
-    for ev in pairs(Conns.events) do
-        Conns:clearev(ev)
-    end
+    Conns:clearallsubs()
     Conns:allsub(love)
 end
 

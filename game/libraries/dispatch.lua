@@ -103,7 +103,7 @@ function dispatch:allunsub(l)
     end
 end
 
-function dispatch:clearev(ev)
+function dispatch:clearsubs(ev)
     local ls = self.events[ev]
     if not ls then return end
     for i = #ls, 1, -1 do
@@ -113,6 +113,13 @@ function dispatch:clearev(ev)
     if not free then return end
     for i = #free, 1, -1 do
         free[i] = nil
+    end
+end
+
+function dispatch:clearallsubs()
+    local clear = self.clearsubs
+    for ev in pairs(self.events) do
+        clear(self, ev)
     end
 end
 
