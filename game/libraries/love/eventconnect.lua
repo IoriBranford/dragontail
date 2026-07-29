@@ -50,8 +50,8 @@ end
 ---Connect all of a table's matching functions to events
 ---@param l listener
 ---@param after boolean?
-function love.event.connectAll(l, after)
-    Conns:allsub(l, after)
+function love.event.connectAll(l, format, after)
+    Conns:allsub(l, format, after)
 end
 
 ---Disconnect from event
@@ -64,8 +64,8 @@ end
 
 ---Disconnect all of a table's matching functions from events
 ---@param l any
-function love.event.disconnectAll(l)
-    Conns:allunsub(l)
+function love.event.disconnectAll(l, format)
+    Conns:allunsub(l, format)
 end
 
 ---Broadcast an event immediately, bypassing love event queue

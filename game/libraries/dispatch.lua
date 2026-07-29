@@ -53,7 +53,7 @@ function dispatch:sub(l, after, ev)
     return i
 end
 
-function dispatch:multisub(l, prefix, after, ...)
+function dispatch:multisub(l, format, after, ...)
     local sub = self.sub
     local sformat = string.format
     local nev = select("#", ...)
@@ -62,36 +62,36 @@ function dispatch:multisub(l, prefix, after, ...)
         local fn = l[ev]
         if type(fn) == "function" then
             local s = sub(self, l, after, ev)
-            if prefix then
-                local k = sformat("%s%s", prefix, ev)
+            if format then
+                local k = sformat(format, ev)
                 l[k] = s
             end
         end
     end
 end
 
-local function allsub(self, l, prefix, after, cond)
+local function allsub(self, l, format, after, cond)
     local sub = self.sub
     local sformat = string.format
     for ev, f in pairs(l) do
         if cond(ev, f) then
             local s = sub(self, l, after, ev)
-            if prefix then
-                local k = sformat("%s%s", prefix, ev)
+            if format then
+                local k = sformat(format, ev)
                 l[k] = s
             end
         end
     end
 end
 
-function dispatch:allsub(l, prefix, after, force)
+function dispatch:allsub(l, format, after, force)
     if force then
-        allsub(self, l, prefix, after, function (ev, f)
+        allsub(self, l, format, after, function (ev, f)
             return type(f) == "function"
         end)
     else
         local evs = self.events
-        allsub(self, l, prefix, after, function (ev, f)
+        allsub(self, l, format, after, function (ev, f)
             return evs[ev] and type(f) == "function"
         end)
     end
@@ -115,11 +115,11 @@ function dispatch:unsub(l, i, ev)
     ls[i] = false
 end
 
-function dispatch:allunsub(l, prefix)
+function dispatch:allunsub(l, format)
     local unsub = self.unsub
     local sformat = string.format
     for ev in pairs(l) do
-        local k = sformat("%s%s", prefix, ev)
+        local k = sformat(format, ev)
         local i = l[k]
         if type(i) == "number" then
             unsub(self, l, i, ev)
