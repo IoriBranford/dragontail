@@ -58,9 +58,7 @@ function love.resize(w, h)
 end
 
 function love.quit()
-    if love.quitphase then
-        love.quitphase()
-    end
+    love.event.send("quitphase")
     if game.quit then
         game.quit()
     end
