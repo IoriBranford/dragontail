@@ -21,6 +21,13 @@ function love.event.reset()
     Conns:send("reset")
 end
 
+function love.event.resetConnections()
+    for ev in pairs(Conns.events) do
+        Conns:clearev(ev)
+    end
+    Conns:allsub(love)
+end
+
 ---Register a new event
 function love.event.newEvent(ev)
     Conns:newevent(ev)
