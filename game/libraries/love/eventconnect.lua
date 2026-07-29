@@ -7,7 +7,7 @@ local LoveEvents = {"audiodisconnected", "directorydropped", "displayrotated", "
     "mousemoved", "mousepressed", "mousereleased", "occluded", "quit", "resize", "sensorupdated", "textedited",
     "textinput", "threaderror", "touchmoved", "touchpressed", "touchreleased", "update", "visible", "wheelmoved"}
 
-local ExtraEvents = {"reload"}
+local ExtraEvents = {"reset"}
 
 local Conns ---@type dispatch
 
@@ -18,7 +18,7 @@ function love.event.reset()
     Conns = dispatch.new(unpack(LoveEvents))
     Conns:newevents(unpack(ExtraEvents))
     Conns:allsub(love)
-    Conns:send("reload")
+    Conns:send("reset")
 end
 
 ---Register a new event
