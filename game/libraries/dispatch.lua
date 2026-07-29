@@ -2,7 +2,9 @@ local tnew = require "table.new"
 
 ---@alias evreq "args"|"stop"
 ---@alias evfunc fun(...):evreq?,...
----@alias listener table<string, evfunc>
+---@class listener
+---@field [string] evfunc
+---@field __evco thread?
 
 ---@class listeners
 ---@field [integer] listener|false
@@ -103,6 +105,73 @@ end
 
 function dispatch:clearev(ev)
     self.events[ev] = nil
+end
+
+local cocreate = coroutine.create
+local coresume = coroutine.resume
+local costatus = coroutine.status
+
+local yielded = {}
+
+local function cosend1(co, l, ev, a, b, c, d, e, f)
+    local ok, req, u, v, w, x, y, z
+        = coresume(co, l, ev, a, b, c, d, e, f)
+    assert(ok, req)
+    if req == "stop" then return req end
+    if req == "args" then
+        if u ~= nil then a = u end
+        if v ~= nil then b = v end
+        if w ~= nil then c = w end
+        if x ~= nil then d = x end
+        if y ~= nil then e = y end
+        if z ~= nil then f = z end
+    end
+    return req, a, b, c, d, e, f
+end
+
+---@param ls listeners
+---@param i1 integer
+---@param i2 integer
+---@param di integer
+---@param cl fun(l:listener, ev:string, ...):...
+---@param ev string
+---@param a any
+---@param b any
+---@param c any
+---@param d any
+---@param e any
+---@param f any
+local function cosend(ls, i1, i2, di, cl, ev, a, b, c, d, e, f)
+    for i = i1, i2, di do
+        local l = ls[i]
+        if l then
+            local co = cocreate(cl)
+            local req
+            req, a, b, c, d, e, f
+                = cosend1(co, l, ev, a, b, c, d, e, f)
+            if req == "stop" then break end
+            if costatus(co) ~= "dead" then
+                l.__evco = co
+                yielded[#yielded+1] = l
+            end
+        end
+    end
+
+    for i = #yielded, 1, -1 do
+        local l = yielded[i]
+        yielded[i] = nil
+        local co = l.__evco
+        l.__evco = nil
+        local req
+        req, a, b, c, d, e, f
+            = cosend1(co, l, ev, a, b, c, d, e, f)
+        if req == "stop" then
+            for i = #yielded, 1, -1 do
+                yielded[i] = nil
+            end
+            break
+        end
+    end
 end
 
 ---comment
