@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="45" nextobjectid="250">
+ <editorsettings>
+  <export target="screen_title.lua" format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" source="../tilesets/ui/Gamepad Spritesheets/Xbox.tsx"/>
+ <tileset firstgid="21" source="../sprites/ui/firespit.tsx"/>
+ <imagelayer id="34" name="bg" tintcolor="#ffffff">
+  <image source="../sprites/ui/title/illust/bg.png" width="480" height="270"/>
+ </imagelayer>
+ <objectgroup id="7" name="etc">
+  <object id="11" name="copyright" x="52" y="193.5" width="412" height="58.5">
+   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="right" valign="bottom">(C) 2026 IORI BRANFORD
+MUSIC (C) 2009, 2013 BLUE WAVE THEORY
+USED UNDER CREATIVE COMMONS ATTRIBUTION SHARE-ALIKE LICENSE</text>
+  </object>
+ </objectgroup>
+ <objectgroup id="25" name="title" class="Gui.Menu">
+  <object id="169" template="menu/Panel.tx" x="-4" y="180" width="488" height="18">
+   <properties>
+    <property name="roundcorners" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="10" template="menu/pause/Button.tx" type="Gui.Button" x="208" y="180" width="64" height="18">
+   <properties>
+    <property name="action" value="openTitleMainMenu"/>
+    <property name="presssound" type="file" value="../sounds/combat/heavyswingandhit.ogg"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">PRESS -</text>
+  </object>
+  <object id="166" template="menu/Cursor.tx" type="Gui.Cursor" x="304" y="189">
+   <properties>
+    <property name="alignx" type="float" value="0.5"/>
+   </properties>
+  </object>
+  <object id="167" template="menu/Cursor.tx" type="Gui.Cursor" x="176" y="189">
+   <properties>
+    <property name="alignx" type="float" value="-0.5"/>
+    <property name="asetag" value="Spit6"/>
+   </properties>
+  </object>
+  <object id="168" gid="1" x="264" y="189" width="14" height="14"/>
+  <object id="238" x="48" y="36" width="384" height="72">
+   <text fontfamily="The Rumor" pixelsize="64" wrap="1" color="#e02121">ROSE of</text>
+  </object>
+  <object id="239" x="48" y="108" width="384" height="72">
+   <text fontfamily="The Rumor" pixelsize="64" wrap="1" color="#e02121" halign="right">DRAGONTAIL</text>
+  </object>
+ </objectgroup>
+ <group id="35" name="TitleHit" tintcolor="#ffffff">
+  <properties>
+   <property name="hitsound" type="file" value="../sounds/combat/heavyswingandhit.ogg"/>
+   <property name="script" value="Dragontail.Movie.Title"/>
+  </properties>
+  <objectgroup id="36" name="directions" tintcolor="#ffffff">
+   <object id="240" name="path" x="520" y="36">
+    <polyline points="0,0 -520,-36"/>
+   </object>
+  </objectgroup>
+  <imagelayer id="37" name="bg" tintcolor="#ffffff">
+   <image source="../sprites/ui/title/illust/bg.png" width="480" height="270"/>
+  </imagelayer>
+  <group id="38" name="fg" tintcolor="#ffffff">
+   <imagelayer id="39" name="enemy" tintcolor="#ffffff" offsetx="-20" offsety="-148.5">
+    <image source="../sprites/ui/title/illust/07 Thug_L.png" width="960" height="600"/>
+   </imagelayer>
+   <imagelayer id="40" name="hit" tintcolor="#ffffff" offsetx="-68" offsety="-112.5">
+    <image source="../sprites/ui/title/illust/08 effects L.png" width="960" height="600"/>
+   </imagelayer>
+   <group id="41" name="Rose" tintcolor="#ffffff">
+    <imagelayer id="42" name="Rose" tintcolor="#ffffff" offsetx="-88" offsety="-121.5">
+     <image source="../sprites/ui/title/illust/09 Rose.png" width="960" height="600"/>
+    </imagelayer>
+    <imagelayer id="43" name="swing" tintcolor="#ffffff" offsetx="-156" offsety="-117">
+     <image source="../sprites/ui/title/illust/10 swipe.png" width="960" height="600"/>
+    </imagelayer>
+   </group>
+  </group>
+ </group>
+ <objectgroup draworder="index" id="44" name="menu" tintcolor="#ffffff">
+  <object id="241" x="40" y="117" width="112" height="90" visible="0"/>
+  <object id="242" type="Gui.Cursor" gid="21" x="120" y="81" width="64" height="64">
+   <properties>
+    <property name="alignx" type="float" value="0.5"/>
+   </properties>
+  </object>
+  <object id="243" type="Gui.Cursor" gid="21" x="32" y="81" width="64" height="64" rotation="180">
+   <properties>
+    <property name="alignx" type="float" value="-0.5"/>
+   </properties>
+  </object>
+  <object id="244" name="START" type="Gui.Button" x="32" y="63" width="92" height="36">
+   <properties>
+    <property name="action" value="restartStage"/>
+   </properties>
+   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">FIGHT!</text>
+  </object>
+  <object id="245" name="START" type="Gui.Button" x="40" y="99" width="84" height="36">
+   <properties>
+    <property name="action" value="startTraining"/>
+   </properties>
+   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">TRAIN</text>
+  </object>
+  <object id="246" name="START" type="Gui.Button" x="48" y="135" width="108" height="36">
+   <properties>
+    <property name="action" value="openMenu"/>
+    <property name="guipath" value="options.simple"/>
+   </properties>
+   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">OPTIONS</text>
+  </object>
+  <object id="247" name="START" type="Gui.Button" x="64" y="216" width="68" height="36">
+   <properties>
+    <property name="action" value="quitGame"/>
+   </properties>
+   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">QUIT</text>
+  </object>
+  <object id="248" name="START" x="56" y="171" width="116" height="36">
+   <properties>
+    <property name="action" value="openURL"/>
+    <property name="url" value="https://ioribranford.itch.io/rose-of-dragontail"/>
+   </properties>
+   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">WEBSITE</text>
+  </object>
+  <object id="249" name="Rate &amp; Comment" x="64" y="198" width="96" height="18">
+   <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">View instructions</text>
+  </object>
+ </objectgroup>
+</map>

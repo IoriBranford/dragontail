@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="34" nextobjectid="238">
+ <editorsettings>
+  <export target="menu_pause_training.lua" format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" source="../sprites/ui/firespit.tsx"/>
+ <objectgroup draworder="index" id="32" name="trainingmenu" class="Gui.Menu" visible="0">
+  <properties>
+   <property name="backaction" value="unpauseGame"/>
+  </properties>
+  <object id="224" name="name" x="192" y="54" width="96" height="18" visible="0">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">PAUSE</text>
+  </object>
+  <object id="225" template="menu/Cursor.tx" type="Gui.Cursor" x="124" y="108">
+   <properties>
+    <property name="alignx" type="float" value="0.375"/>
+   </properties>
+  </object>
+  <object id="226" template="menu/Cursor.tx" type="Gui.Cursor" x="32" y="108" rotation="180">
+   <properties>
+    <property name="alignx" type="float" value="-0.375"/>
+   </properties>
+  </object>
+  <object id="227" template="menu/mainmenu/Button.tx" x="32" y="90" width="92" height="36">
+   <properties>
+    <property name="action" value="unpauseGame"/>
+   </properties>
+   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">TRAIN!</text>
+  </object>
+  <object id="228" template="menu/mainmenu/Button.tx" x="40" y="126" width="108" height="36">
+   <properties>
+    <property name="action" value="openMenu"/>
+    <property name="guipath" value="options.simple"/>
+   </properties>
+   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">OPTIONS</text>
+  </object>
+  <object id="229" template="menu/mainmenu/Button.tx" x="48" y="162" width="100" height="36">
+   <properties>
+    <property name="action" value="resetTraining"/>
+   </properties>
+   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">RESET</text>
+  </object>
+  <object id="230" template="menu/mainmenu/Button.tx" x="56" y="198" width="60" height="36">
+   <properties>
+    <property name="action" value="returnToTitle"/>
+   </properties>
+   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">END</text>
+  </object>
+  <object id="231" template="menu/mainmenu/Button.tx" x="64" y="234" width="24" height="36">
+   <properties>
+    <property name="action" value="openMenu"/>
+    <property name="guipath" value="gameplay.debugmenu"/>
+   </properties>
+   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">...</text>
+  </object>
+ </objectgroup>
+</map>
