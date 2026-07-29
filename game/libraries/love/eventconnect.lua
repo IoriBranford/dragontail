@@ -47,6 +47,17 @@ function love.event.newEvents(...)
     Conns:newevents(...)
 end
 
+---Register multiple new events intended for self
+---@param format string with at least 1 %s for the event name
+---@param ... string
+function love.event.newSelfEvents(format, ...)
+    local sformat = string.format
+    for i = 1, select("#", ...) do
+        local ev = select(i, ...)
+        Conns:newevent(sformat(format, ev))
+    end
+end
+
 ---Connect to event
 ---@param ev string
 ---@param l listener
