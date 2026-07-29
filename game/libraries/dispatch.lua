@@ -37,7 +37,7 @@ end
 ---@param ev string
 ---@param l listener
 ---@return integer i
-function dispatch:sub(ev, l, after)
+function dispatch:sub(l, after, ev)
     assert(type(l[ev]) == "function")
 
     self:newevent(ev)
@@ -61,7 +61,7 @@ function dispatch:multisub(l, prefix, after, ...)
         local ev = select(i, ...)
         local fn = l[ev]
         if type(fn) == "function" then
-            local s = sub(self, ev, l, after)
+            local s = sub(self, l, after, ev)
             if prefix then
                 local k = sformat("%s%s", prefix, ev)
                 l[k] = s
@@ -75,7 +75,7 @@ local function allsub(self, l, prefix, after, cond)
     local sformat = string.format
     for ev, f in pairs(l) do
         if cond(ev, f) then
-            local s = sub(self, ev, l, after)
+            local s = sub(self, l, after, ev)
             if prefix then
                 local k = sformat("%s%s", prefix, ev)
                 l[k] = s
@@ -101,7 +101,7 @@ end
 ---@param ev string
 ---@param i integer
 ---@param l listener?
-function dispatch:unsub(ev, i, l)
+function dispatch:unsub(l, i, ev)
     local ls = self.events[ev]
     if not ls then return end
 
@@ -122,7 +122,7 @@ function dispatch:allunsub(l, prefix)
         local k = sformat("%s%s", prefix, ev)
         local i = l[k]
         if type(i) == "number" then
-            unsub(self, ev, i, l)
+            unsub(self, l, i, ev)
         end
     end
 end
