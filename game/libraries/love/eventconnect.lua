@@ -3,7 +3,7 @@ local dispatch = require "dispatch"
 local LoveEvents = {"audiodisconnected", "directorydropped", "displayrotated", "draw", "dropbegan",
     "dropcompleted", "dropmoved", "exposed", "filedropped", "focus", "gamepadaxis", "gamepadpressed", "gamepadreleased",
     "joystickadded", "joystickaxis", "joystickhat", "joystickpressed", "joystickreleased", "joystickremoved",
-    "joysticksensorupdated", "keypressed", "keyreleased", "load", "localechanged", "lowmemory", "mousefocus",
+    "joysticksensorupdated", "keypressed", "keyreleased", "localechanged", "lowmemory", "mousefocus",
     "mousemoved", "mousepressed", "mousereleased", "occluded", "quit", "resize", "sensorupdated", "textedited",
     "textinput", "threaderror", "touchmoved", "touchpressed", "touchreleased", "update", "visible", "wheelmoved"}
 
@@ -86,7 +86,9 @@ end
 ---@diagnostic disable-next-line: duplicate-set-field
 function love.run()
     Conns:allsub(love)
-    Conns:send("load", love.arg.parseGameArguments(arg), arg)
+    if love.load then
+        love.load(love.arg.parseGameArguments(arg), arg)
+    end
 
     -- We don't want the first frame's dt to include time taken by love.load.
     if love.timer then love.timer.step() end
