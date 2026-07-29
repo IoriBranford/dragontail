@@ -106,6 +106,7 @@ function TitlePhase.loadphase(startwithmainmenu)
         ambientsound = Audio.play("data/sounds/ambient/seaside.ogg")
         if ambientsound then ambientsound:setLooping(true) end
     end
+    love.event.connectAll(Gui)
 end
 
 function TitlePhase.pushMainMenu()
@@ -145,11 +146,11 @@ function TitlePhase.keypressed(key)
         end
         love.graphics.captureScreenshot(filename)
     end
-    Gui:keypressed(key)
+    love.event.sendSelves("keypressed_s", key)
 end
 
 function TitlePhase.gamepadpressed(gamepad, button)
-    Gui:gamepadpressed(gamepad, button)
+    love.event.sendSelves("gamepadpressed_s", gamepad, button)
 end
 
 function TitlePhase.fixedupdate()
@@ -159,7 +160,7 @@ function TitlePhase.fixedupdate()
             sceneco = nil
         end
     end
-    Gui:fixedupdate()
+    love.event.sendSelves("fixedupdate_s")
 end
 
 function TitlePhase.update(dsecs, fixedfrac)
@@ -168,7 +169,7 @@ end
 function TitlePhase.lerpdraw(fixedfrac)
     Dragontail.draw(function()
         scenemap:draw()
-        Gui:draw()
+        love.event.sendSelves("lerpdraw_s", fixedfrac)
     end, fixedfrac)
 end
 

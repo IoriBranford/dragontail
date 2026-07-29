@@ -71,6 +71,7 @@ function GamePhase.loadphase(stagepath_, startroom)
     Gui.gameplay:showOnlyNamed("hud", "input")
     Gui.options:showOnlyNamed()
     Gui:clearMenuStack()
+    love.event.connectAll(Gui)
 
     playerwon = nil
 end
@@ -129,7 +130,7 @@ function GamePhase.gamepadpressed(gamepad, button)
         end
         -- GamePhase.setPaused(not paused, false)
     else
-        Gui:gamepadpressed(gamepad, button)
+        love.event.sendSelves("gamepadpressed_s", gamepad, button)
     end
 end
 
@@ -147,7 +148,7 @@ function GamePhase.keypressed(key)
         end
     end
 
-    Gui:keypressed(key)
+    love.event.sendSelves("keypressed_s", key)
 end
 
 local function fixedupdateInputDisplay()
@@ -190,7 +191,7 @@ function GamePhase.fixedupdate()
     end
     fixedupdateInputDisplay()
     Stage.fixedupdateGui(Gui)
-    Gui:fixedupdate()
+    love.event.sendSelves("fixedupdate_s")
 end
 
 function GamePhase.setPauseLocked(locked)
@@ -227,7 +228,7 @@ function GamePhase.lerpdraw(fixedfrac)
     Dragontail.draw(function()
         Stage.draw(paused and 0 or fixedfrac)
         if movie then moviemap:draw() end
-        Gui:draw()
+        love.event.sendSelves("lerpdraw_s", fixedfrac)
     end, fixedfrac)
 end
 

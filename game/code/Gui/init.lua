@@ -47,7 +47,7 @@ function Gui.new(map, rootpath)
     for _, layer in ipairs(self) do
         init(layer)
     end
-    self:resize(love.graphics.getWidth(), love.graphics.getHeight())
+    self:resize_s(love.graphics.getWidth(), love.graphics.getHeight())
     return self
 end
 
@@ -92,7 +92,7 @@ end
 ---@param maincanvas Canvas?
 ---@param expand boolean? to show ui outside the gui width/height
 ---@deprecated
-function Gui:resize(screenwidth, screenheight, maincanvas, expand)
+function Gui:resize_s(screenwidth, screenheight, maincanvas, expand)
     -- for i = 1, #self do
     --     self[i]:reanchor(self.width, self.height, screenwidth, screenheight)
     -- end
@@ -169,19 +169,19 @@ function Gui:clearMenuStack()
     self:setActiveMenu()
 end
 
-function Gui:keypressed(key)
+function Gui:keypressed_s(key)
     if self.activemenu and self.activemenu.visible then
         self.activemenu:keypressed(key)
     end
 end
 
-function Gui:gamepadpressed(gamepad, button)
+function Gui:gamepadpressed_s(gamepad, button)
     if self.activemenu and self.activemenu.visible then
         self.activemenu:gamepadpressed(gamepad, button)
     end
 end
 
-function Gui:touchpressed(id, x, y)
+function Gui:touchpressed_s(id, x, y)
     x, y = self.canvas:inverseTransformPoint(x, y)
     x, y = x - self.x, y - self.y
     if self.activemenu and self.activemenu.visible then
@@ -189,7 +189,7 @@ function Gui:touchpressed(id, x, y)
     end
 end
 
-function Gui:touchmoved(id, x, y, dx, dy)
+function Gui:touchmoved_s(id, x, y, dx, dy)
     x, y = self.canvas:inverseTransformPoint(x, y)
     x, y = x - self.x, y - self.y
     dx, dy = self.canvas:inverseTransformVector(dx, dy)
@@ -198,7 +198,7 @@ function Gui:touchmoved(id, x, y, dx, dy)
     end
 end
 
-function Gui:touchreleased(id, x, y)
+function Gui:touchreleased_s(id, x, y)
     x, y = self.canvas:inverseTransformPoint(x, y)
     x, y = x - self.x, y - self.y
     if self.activemenu and self.activemenu.visible then
@@ -206,7 +206,7 @@ function Gui:touchreleased(id, x, y)
     end
 end
 
-function Gui:fixedupdate()
+function Gui:fixedupdate_s()
     self:animate(1)
 end
 
@@ -235,6 +235,8 @@ function Gui:compose(f)
     end)
 end
 
-Gui.draw = LayerGroup.draw
+function Gui:lerpdraw_s()
+    LayerGroup.draw(self)
+end
 
 return Gui
