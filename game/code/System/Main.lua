@@ -26,6 +26,7 @@ local game
 local fixedfrac = 0
 
 function love.event.newphase(name, ...)
+    ---@diagnostic disable-next-line: param-type-mismatch
     love.event.push("newphase", name, ...)
 end
 
@@ -43,21 +44,24 @@ function love.newphase(name, ...)
         fixedfrac = 0
     end
 end
-
+---@diagnostic disable-next-line: duplicate-set-field
 function love.keypressed(...)
     cute.keypressed(...)
 end
-
+---@diagnostic disable-next-line: duplicate-set-field
 function love.joystickadded(...)
     Inputs.joystickadded(...)
 end
 
 -- love.resize not triggered when quickly resizing a window
 -- https://github.com/love2d/love/issues/2188
+---@diagnostic disable-next-line: duplicate-set-field
 function love.resize(w, h)
-    return "args", love.graphics.getDimensions()
+    w, h = love.graphics.getDimensions()
+    return "args", w, h
 end
 
+---@diagnostic disable-next-line: duplicate-set-field
 function love.quit()
     love.event.send("quitphase")
     if game.quit then
@@ -72,7 +76,7 @@ function love.quit()
 end
 
 local SystemFont
-
+---@diagnostic disable-next-line: duplicate-set-field
 function love.load(args)
     require("pl.strict").module("_G", _G)
     cute.go(args)
@@ -129,7 +133,7 @@ function love.load(args)
 end
 
 local statsreport = {}
-
+---@diagnostic disable-next-line: duplicate-set-field
 function love.update(dsecs)
     Account.update()
 
@@ -142,7 +146,7 @@ function love.update(dsecs)
         love.event.send("fixedupdate")
     end)
 end
-
+---@diagnostic disable-next-line: duplicate-set-field
 function love.draw()
     local variableupdate = Config.variableupdate
     -- coroutine.yield("args", variableupdate and fixedfrac or 0)
