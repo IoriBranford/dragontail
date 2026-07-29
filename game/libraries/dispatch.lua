@@ -115,11 +115,13 @@ function dispatch:unsub(ev, i, l)
     ls[i] = false
 end
 
-function dispatch:allunsub(l)
+function dispatch:allunsub(l, prefix)
     local unsub = self.unsub
+    local sformat = string.format
     for ev in pairs(l) do
-        local i = l[ev.."sub"]
-        if i then
+        local k = sformat("%s%s", prefix, ev)
+        local i = l[k]
+        if type(i) == "number" then
             unsub(self, ev, i, l)
         end
     end
