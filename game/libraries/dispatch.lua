@@ -53,21 +53,47 @@ function dispatch:sub(ev, l, after)
     return i
 end
 
-function dispatch:allsub(l, after, force)
+function dispatch:multisub(l, prefix, after, ...)
     local sub = self.sub
-    if force then
-        for ev, f in pairs(l) do
-            if type(f) == "function" then
-                sub(self, ev, l, after)
+    local sformat = string.format
+    local nev = select("#", ...)
+    for i = 1, nev do
+        local ev = select(i, ...)
+        local fn = l[ev]
+        if type(fn) == "function" then
+            local s = sub(self, ev, l, after)
+            if prefix then
+                local k = sformat("%s%s", prefix, ev)
+                l[k] = s
             end
         end
+    end
+end
+
+local function allsub(self, l, prefix, after, cond)
+    local sub = self.sub
+    local sformat = string.format
+    for ev, f in pairs(l) do
+        if cond(ev, f) then
+            local s = sub(self, ev, l, after)
+            if prefix then
+                local k = sformat("%s%s", prefix, ev)
+                l[k] = s
+            end
+        end
+    end
+end
+
+function dispatch:allsub(l, prefix, after, force)
+    if force then
+        allsub(self, l, prefix, after, function (ev, f)
+            return type(f) == "function"
+        end)
     else
         local evs = self.events
-        for ev, f in pairs(l) do
-            if evs[ev] and type(f) == "function" then
-                sub(self, ev, l, after)
-            end
-        end
+        allsub(self, l, prefix, after, function (ev, f)
+            return evs[ev] and type(f) == "function"
+        end)
     end
 end
 
