@@ -27,6 +27,15 @@ function love.event.resetConnections()
     Conns:allsub(love)
 end
 
+function love.event.addSelfLoveEvents(format)
+    local sformat = string.format
+    format = format or "%sself"
+    for _, ev in ipairs(LoveEvents) do
+        ev = sformat(format, ev)
+        Conns:newevent(ev)
+    end
+end
+
 ---Register a new event
 function love.event.newEvent(ev)
     Conns:newevent(ev)
