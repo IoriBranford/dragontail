@@ -1,6 +1,8 @@
 local tnew = require "table.new"
 
----@alias listener table
+---@alias evreq "args"|"stop"
+---@alias evfunc fun(...):evreq?,...
+---@alias listener table<string, evfunc>
 
 ---@class listeners
 ---@field [integer] listener|false
@@ -103,38 +105,64 @@ function dispatch:clearev(ev)
     self.events[ev] = nil
 end
 
-local function send(ls, i1, i2, di, ev, ...)
+---comment
+---@param ls listeners
+---@param i1 integer
+---@param i2 integer
+---@param di integer
+---@param cl fun(l:listener, ev:string, ...):...
+---@param ev string
+---@param a any
+---@param b any
+---@param c any
+---@param d any
+---@param e any
+---@param f any
+local function send(ls, i1, i2, di, cl, ev, a, b, c, d, e, f)
     for i = i1, i2, di do
         local l = ls[i]
-        if l then l[ev](...) end
+        if l then
+            local req, u, v, w, x, y, z
+                = cl(l, ev, a, b, c, d, e, f)
+            if req == "stop" then break end
+            if req == "args" then
+                if u ~= nil then a = u end
+                if v ~= nil then b = v end
+                if w ~= nil then c = w end
+                if x ~= nil then d = x end
+                if y ~= nil then e = y end
+                if z ~= nil then f = z end
+            end
+        end
     end
 end
 
-local function sendself(ls, i1, i2, di, ev, ...)
-    for i = i1, i2, di do
-        local l = ls[i]
-        if l then l[ev](l, ...) end
-    end
+local function callself(l, ev, ...)
+    return l[ev](l, ...)
+end
+
+local function call(l, ev, ...)
+    return l[ev](...)
 end
 
 function dispatch:send(ev, ...)
     local ls = self.events[ev]
-    if ls then send(ls, 1, #ls, 1, ev, ...) end
+    if ls then send(ls, 1, #ls, 1, call, ev, ...) end
 end
 
 function dispatch:rsend(ev, ...)
     local ls = self.events[ev]
-    if ls then send(ls, #ls, 1, -1, ev, ...) end
+    if ls then send(ls, #ls, 1, -1, call, ev, ...) end
 end
 
 function dispatch:sendself(ev, ...)
     local ls = self.events[ev]
-    if ls then sendself(ls, 1, #ls, 1, ev, ...) end
+    if ls then send(ls, 1, #ls, 1, callself, ev, ...) end
 end
 
 function dispatch:rsendself(ev, ...)
     local ls = self.events[ev]
-    if ls then sendself(ls, #ls, 1, -1, ev, ...) end
+    if ls then send(ls, #ls, 1, -1, callself, ev, ...) end
 end
 
 function dispatch:sort(ev, cmp)
