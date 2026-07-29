@@ -165,7 +165,7 @@ end
 function TitlePhase.update(dsecs, fixedfrac)
 end
 
-function TitlePhase.draw(fixedfrac)
+function TitlePhase.lerpdraw(fixedfrac)
     Dragontail.draw(function()
         scenemap:draw()
         Gui:draw()

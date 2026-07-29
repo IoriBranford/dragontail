@@ -3,6 +3,10 @@ pooledclass = require "pooledclass"
 require "Math"
 require "math123".goGlobal()
 require "Coroutine"
+
+require "love.eventconnect"
+love.event.newEvents("changephase", "loadphase", "quitphase", "fixedupdate", "lerpdraw")
+
 local Audio = require "System.Audio"
 local Config = require "System.Config"
 local Platform = require "System.Platform"
@@ -11,70 +15,27 @@ local cute = require "cute"
 local haslldebugger, lldebugger = pcall(require, "lldebugger")
 local Account                   = require("System.Account")
 local Inputs                    = require("System.Inputs")
+local fixedupdate               = require("fixedupdate")
 if not haslldebugger then
     lldebugger = nil
 end
 
 local profile
 local game
-local dsecs = 0
-local dfixed = 0
-local numfixed = 0
 local fixedfrac = 0
-local fixedlimit = 1
-local variableupdate = true
-
-local blankphase = {}
-function blankphase.loadphase() end
-function blankphase.fixedupdate() end
-function blankphase.update(dsecs, fixedfrac) end
-function blankphase.draw(fixedfrac) end
-function blankphase.quitphase() end
-
-function blankphase.displayrotated(index, orientation) end
-function blankphase.directorydropped(path) end
-function blankphase.filedropped(file) end
-function blankphase.focus(focus) end
-function blankphase.mousefocus(focus) end
-function blankphase.resize(w, h) end
-function blankphase.visible(visible) end
-
-function blankphase.keypressed(key, scancode, isrepeat) end
-function blankphase.keyreleased(key, scancode) end
-function blankphase.textedited(text, start, length) end
-function blankphase.textinput(text) end
-
-function blankphase.mousemoved(x, y, dx, dy, istouch) end
-function blankphase.mousepressed(x, y, button, istouch, presses) end
-function blankphase.mousereleased(x, y, button, istouch, presses) end
-function blankphase.wheelmoved(x, y) end
-
-function blankphase.joystickadded(joystick) end
-function blankphase.joystickremoved(joystick) end
-function blankphase.gamepadaxis(joystick, axis, value) end
-function blankphase.gamepadpressed(joystick, button) end
-function blankphase.gamepadreleased(joystick, button) end
-
-function blankphase.touchmoved(id, x, y, dx, dy, pressure) end
-function blankphase.touchpressed(id, x, y, dx, dy, pressure) end
-function blankphase.touchreleased(id, x, y, dx, dy, pressure) end
 
 function love.event.loadphase(name, ...)
-    love.event.push("loadphase", name, ...)
+    love.event.push("changephase", name, ...)
 end
 
-function love.handlers.loadphase(name, ...)
+function love.changephase(name, ...)
     local nextphase = require(name)
-    if love.quitphase then
-        love.quitphase()
-    end
+    love.event.send("quitphase")
+
     love.currentphase = nextphase
-    for k, v in pairs(blankphase) do
-        love[k] = nextphase[k] or game[k] or v
-    end
-    if love.loadphase then
-        love.loadphase(...)
-    end
+    love.event.resetConnections()
+    love.event.connectAll(nextphase)
+    love.event.send("loadphase", ...)
     collectgarbage()
     if love.timer then
         love.timer.step()
@@ -82,28 +43,26 @@ function love.handlers.loadphase(name, ...)
     end
 end
 
-local keypressedhandler = love.handlers.keypressed
-function love.handlers.keypressed(...)
-    keypressedhandler(...)
+function love.keypressed(...)
     cute.keypressed(...)
 end
 
-local joystickaddedhandler = love.handlers.joystickadded
-function love.handlers.joystickadded(...)
+function love.joystickadded(...)
     Inputs.joystickadded(...)
-    joystickaddedhandler(...)
 end
 
 -- love.resize not triggered when quickly resizing a window
 -- https://github.com/love2d/love/issues/2188
-local resizehandler = love.handlers.resize
-function love.handlers.resize(_, _)
-    resizehandler(love.graphics.getDimensions())
+function love.resize(w, h)
+    return "args", love.graphics.getDimensions()
 end
 
-local function OnQuit()
+function love.quit()
     if love.quitphase then
         love.quitphase()
+    end
+    if game.quit then
+        game.quit()
     end
     Audio.stop()
     Config.save()
@@ -113,9 +72,11 @@ local function OnQuit()
 	end
 end
 
-function love.run()
+local SystemFont
+
+function love.load(args)
     require("pl.strict").module("_G", _G)
-    cute.go(love.arg.parseGameArguments(arg))
+    cute.go(args)
 
     Config.load(game.defaultconfig)
 
@@ -159,118 +120,64 @@ function love.run()
 	end
 
     if game.load then
-        game.load(args)--love.arg.parseGameArguments(arg), arg)
-    elseif love.load then
-        love.load(args)--love.arg.parseGameArguments(arg), arg)
+        game.load(args)
     end
     collectgarbage()
 
     Account.init()
 
-    local SystemFont = love.graphics.newFont(12)
+    SystemFont = love.graphics.newFont(12)
+end
 
-    -- We don't want the first frame's dsecs to include time taken by love.load.
-    if love.timer then
-        love.timer.step()
+local statsreport = {}
+
+function love.update(dsecs)
+    Account.update()
+
+    Audio.update(dsecs)
+
+    local fixedrate = Config.fixedupdaterate
+    fixedfrac = fixedupdate(fixedrate, fixedfrac, dsecs,
+    function()
+        Inputs.update()
+        love.event.send("fixedupdate")
+    end)
+end
+
+function love.draw()
+    local variableupdate = Config.variableupdate
+    -- coroutine.yield("args", variableupdate and fixedfrac or 0)
+    love.event.send("lerpdraw", variableupdate and fixedfrac or 0)
+
+    love.graphics.setFont(SystemFont)
+    cute.draw()
+
+    if Config.drawstats then
+        statsreport[#statsreport+1] = tostring(love.timer.getFPS()).." fps"
+        statsreport[#statsreport+1] = tostring(math.floor(collectgarbage("count"))).." kb"
     end
 
-    local statsreport = {}
-    local mainloop = function()
-        -- Process events.
-        if love.event then
-            love.event.pump()
-            for name, a, b, c, d, e, f in love.event.poll() do
-                if name == "quit" then
-                    if  (not game.quit or not game.quit())
-                    and (not love.quit or not love.quit()) then
-                        OnQuit()
-                        return a or 0
-                    end
-                else
-                    love.handlers[name](a, b, c, d, e, f)
-                end
-            end
-        end
-
-        Account.update()
-
-        -- Update dsecs, as we'll be passing it to update
-        if love.timer then
-            dsecs = love.timer.step()
-        end
-
-        Audio.update(dsecs)
-
-        variableupdate = Config.variableupdate
-        local fixedrate = Config.fixedupdaterate
-
-        -- Call update and draw
-        if love.fixedupdate then
-            dfixed = dsecs * fixedrate
-            fixedfrac = fixedfrac + dfixed
-            numfixed, fixedfrac = math.modf(fixedfrac)
-            numfixed = math.min(numfixed, fixedlimit)
-            for i = 1, numfixed do
-                Inputs.update()
-                love.fixedupdate()
-            end
-        end
-
-        if love.update then
-            if variableupdate then
-                love.update(dsecs, fixedfrac)
-            elseif numfixed > 0 then
-                love.update(numfixed / fixedrate, 0)
-            end
-        end -- will pass 0 if love.timer is disabled
-
-        if love.graphics and love.graphics.isActive() then
-            love.graphics.origin()
-            love.graphics.clear(love.graphics.getBackgroundColor())
-
-            if love.draw then
-                love.draw(variableupdate and fixedfrac or 0)
-            end
-
-            love.graphics.setFont(SystemFont)
-            cute.draw()
-
-            if Config.drawstats then
-                statsreport[#statsreport+1] = tostring(love.timer.getFPS()).." fps"
-                statsreport[#statsreport+1] = tostring(math.floor(collectgarbage("count"))).." kb"
-            end
-
-            if Config.drawgraphicstats then
-                local gfxstats = love.graphics.getStats()
-                statsreport[#statsreport+1] = tostring(gfxstats.images).." images"
-                statsreport[#statsreport+1] = tostring(gfxstats.canvases).." canvases"
-                statsreport[#statsreport+1] = tostring(gfxstats.fonts).." fonts"
-                statsreport[#statsreport+1] = tostring(gfxstats.texturememory).." bytes vram"
-                statsreport[#statsreport+1] = tostring(gfxstats.drawcalls).." draw calls"
-                statsreport[#statsreport+1] = tostring(gfxstats.drawcallsbatched).." draw calls batched"
-                statsreport[#statsreport+1] = tostring(gfxstats.shaderswitches).." shader switches"
-                statsreport[#statsreport+1] = tostring(gfxstats.canvasswitches).." canvas switches"
-            end
-
-            local y = 0
-            for i = 1, #statsreport do
-                love.graphics.setColor(1,1,1)
-                love.graphics.printf(statsreport[i], 0, y, love.graphics.getWidth(), "right")
-                y = y + SystemFont:getHeight()
-            end
-            for i = #statsreport, 1, -1 do
-                statsreport[i] = nil
-            end
-
-            love.graphics.present()
-        end
-
-        if love.timer then
-            love.timer.sleep(0.001)
-        end
+    if Config.drawgraphicstats then
+        local gfxstats = love.graphics.getStats()
+        statsreport[#statsreport+1] = tostring(gfxstats.images).." images"
+        statsreport[#statsreport+1] = tostring(gfxstats.canvases).." canvases"
+        statsreport[#statsreport+1] = tostring(gfxstats.fonts).." fonts"
+        statsreport[#statsreport+1] = tostring(gfxstats.texturememory).." bytes vram"
+        statsreport[#statsreport+1] = tostring(gfxstats.drawcalls).." draw calls"
+        statsreport[#statsreport+1] = tostring(gfxstats.drawcallsbatched).." draw calls batched"
+        statsreport[#statsreport+1] = tostring(gfxstats.shaderswitches).." shader switches"
+        statsreport[#statsreport+1] = tostring(gfxstats.canvasswitches).." canvas switches"
     end
 
-    return mainloop
+    local y = 0
+    for i = 1, #statsreport do
+        love.graphics.setColor(1,1,1)
+        love.graphics.printf(statsreport[i], 0, y, love.graphics.getWidth(), "right")
+        y = y + SystemFont:getHeight()
+    end
+    for i = #statsreport, 1, -1 do
+        statsreport[i] = nil
+    end
 end
 
 return function(gamename)

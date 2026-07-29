@@ -223,7 +223,7 @@ function GamePhase.debug_drawStageUnzoomed(fixedfrac)
     love.graphics.pop()
 end
 
-function GamePhase.draw(fixedfrac)
+function GamePhase.lerpdraw(fixedfrac)
     Dragontail.draw(function()
         Stage.draw(paused and 0 or fixedfrac)
         if movie then moviemap:draw() end
