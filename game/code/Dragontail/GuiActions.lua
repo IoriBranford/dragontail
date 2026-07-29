@@ -36,19 +36,19 @@ function GameGuiActions.resetTraining()
 end
 
 function GameGuiActions.restartStageCheckpoint()
-    love.event.loadphase("Dragontail.GamePhase")
+    love.event.newphase("Dragontail.GamePhase")
 end
 
 function GameGuiActions.restartStage(gui, element)
-    love.event.loadphase("Dragontail.GamePhase", "data/stage_banditcave.lua", element.checkpoint or false)
+    love.event.newphase("Dragontail.GamePhase", "data/stage_banditcave.lua", element.checkpoint or false)
 end
 
 function GameGuiActions.startTraining(gui, element)
-    love.event.loadphase("Dragontail.GamePhase", "data/stage_training.lua")
+    love.event.newphase("Dragontail.GamePhase", "data/stage_training.lua")
 end
 
 function GameGuiActions.returnToTitle()
-    love.event.loadphase("Dragontail.TitlePhase", true)
+    love.event.newphase("Dragontail.TitlePhase", true)
 end
 
 function GameGuiActions.quit()

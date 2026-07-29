@@ -113,7 +113,7 @@ function Dragontail.loadMap(map, ...)
         print(map.." can't be run directly without a runphase")
         phase = "Dragontail.TitlePhase"
     end
-    love.event.loadphase(phase, ...)
+    love.event.newphase(phase, ...)
 end
 
 function Dragontail.load(args)
@@ -207,7 +207,7 @@ function Dragontail.load(args)
     -- Wallpaper.reload()
 
     local firstroom = map and args.room
-    love.event.loadphase(firstphase, map, firstroom)
+    love.event.newphase(firstphase, map, firstroom)
 end
 
 function Dragontail.quit()

@@ -99,7 +99,7 @@ end
 
 local keypressed = {}
 function keypressed.f2()
-    love.event.loadphase("Dragontail.GamePhase")
+    love.event.newphase("Dragontail.GamePhase")
 end
 
 function keypressed.s()

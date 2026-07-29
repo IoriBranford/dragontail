@@ -5,7 +5,7 @@ require "math123".goGlobal()
 require "Coroutine"
 
 require "love.eventconnect"
-love.event.newEvents("changephase", "loadphase", "quitphase", "fixedupdate", "lerpdraw")
+love.event.newEvents("newphase", "loadphase", "quitphase", "fixedupdate", "lerpdraw")
 
 local Audio = require "System.Audio"
 local Config = require "System.Config"
@@ -24,11 +24,11 @@ local profile
 local game
 local fixedfrac = 0
 
-function love.event.loadphase(name, ...)
-    love.event.push("changephase", name, ...)
+function love.event.newphase(name, ...)
+    love.event.push("newphase", name, ...)
 end
 
-function love.changephase(name, ...)
+function love.newphase(name, ...)
     local nextphase = require(name)
     love.event.send("quitphase")
 
