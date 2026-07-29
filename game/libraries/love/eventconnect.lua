@@ -9,7 +9,8 @@ local LoveEvents = {"audiodisconnected", "directorydropped", "displayrotated", "
 
 local ExtraEvents = {"reset"}
 
-local Conns ---@type dispatch
+local Conns = dispatch.new(unpack(LoveEvents))
+Conns:newevents(unpack(ExtraEvents))
 
 ---@alias conn integer
 
@@ -86,8 +87,6 @@ end
 
 ---@diagnostic disable-next-line: duplicate-set-field
 function love.run()
-    Conns = dispatch.new(unpack(LoveEvents))
-    Conns:newevents(unpack(ExtraEvents))
     Conns:allsub(love)
     Conns:send("load", love.arg.parseGameArguments(arg), arg)
 
