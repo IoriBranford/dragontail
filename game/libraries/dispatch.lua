@@ -1,3 +1,5 @@
+local sformat = string.format
+
 ---@alias evreq "args"|"stop"
 ---@alias evfunc fun(...):evreq?,...
 ---@class listener
@@ -53,48 +55,47 @@ function dispatch:sub(l, after, ev)
     return i
 end
 
+local function writesub(self, l, format, after, ev)
+    if type(l[ev]) ~= "function" then return end
+    local s = self:sub(l, after, ev)
+    if format then
+        local k = sformat(format, ev)
+        l[k] = s
+    end
+end
+
 function dispatch:multisub(l, format, after, ...)
-    local sub = self.sub
-    local sformat = string.format
     local nev = select("#", ...)
     for i = 1, nev do
         local ev = select(i, ...)
-        local fn = l[ev]
-        if type(fn) == "function" then
-            local s = sub(self, l, after, ev)
-            if format then
-                local k = sformat(format, ev)
-                l[k] = s
-            end
-        end
+        writesub(self, l, format, after, ev)
     end
 end
 
 local function allsub(self, l, format, after, cond)
-    local sub = self.sub
-    local sformat = string.format
+    cond = cond or function () return true end
     for ev, f in pairs(l) do
         if cond(ev, f) then
-            local s = sub(self, l, after, ev)
-            if format then
-                local k = sformat(format, ev)
-                l[k] = s
-            end
+            writesub(self, l, format, after, ev)
+        end
+    end
+
+    local mt = getmetatable(l)
+    if not mt then return end
+
+    for ev, f in pairs(mt) do
+        if not rawget(l, ev) and cond(ev, f) then
+            writesub(self, l, format, after, ev)
         end
     end
 end
 
 function dispatch:allsub(l, format, after, force)
-    if force then
-        allsub(self, l, format, after, function (ev, f)
-            return type(f) == "function"
+    local evs = self.events
+    allsub(self, l, format, after, not force and
+        function (ev)
+            return evs[ev]
         end)
-    else
-        local evs = self.events
-        allsub(self, l, format, after, function (ev, f)
-            return evs[ev] and type(f) == "function"
-        end)
-    end
 end
 
 ---Unsubscribe
