@@ -109,6 +109,11 @@ function dispatch:clearev(ev)
     for i = #ls, 1, -1 do
         ls[i] = nil
     end
+    local free = ls.free
+    if not free then return end
+    for i = #free, 1, -1 do
+        free[i] = nil
+    end
 end
 
 local cocreate = coroutine.create
