@@ -5,7 +5,8 @@ require "math123".goGlobal()
 require "Coroutine"
 
 require "love.eventconnect"
-love.event.newEvents("newphase", "loadphase", "quitphase", "fixedupdate", "lerpdraw")
+love.event.addSelfLoveEvents("%s_s")
+love.event.newEvents("newphase", "loadphase", "quitphase", "fixedupdate", "lerpdraw", "fixedupdate_s", "lerpdraw_s")
 
 local Audio = require "System.Audio"
 local Config = require "System.Config"
