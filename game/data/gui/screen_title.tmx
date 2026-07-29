@@ -57,9 +57,6 @@ USED UNDER CREATIVE COMMONS ATTRIBUTION SHARE-ALIKE LICENSE</text>
     <polyline points="0,0 -520,-36"/>
    </object>
   </objectgroup>
-  <imagelayer id="37" name="bg" tintcolor="#ffffff">
-   <image source="../sprites/ui/title/illust/bg.png" width="480" height="270"/>
-  </imagelayer>
   <group id="38" name="fg" tintcolor="#ffffff">
    <imagelayer id="39" name="enemy" tintcolor="#ffffff" offsetx="-20" offsety="-148.5">
     <image source="../sprites/ui/title/illust/07 Thug_L.png" width="960" height="600"/>

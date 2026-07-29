@@ -27,7 +27,7 @@ return {
       id = 27,
       name = "retrymenu",
       class = "Gui.Menu",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,

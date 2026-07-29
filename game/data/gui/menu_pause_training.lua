@@ -27,7 +27,7 @@ return {
       id = 32,
       name = "trainingmenu",
       class = "Gui.Menu",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,

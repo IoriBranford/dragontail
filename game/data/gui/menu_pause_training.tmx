@@ -4,7 +4,7 @@
   <export target="menu_pause_training.lua" format="lua"/>
  </editorsettings>
  <tileset firstgid="1" source="../sprites/ui/firespit.tsx"/>
- <objectgroup draworder="index" id="32" name="trainingmenu" class="Gui.Menu" visible="0">
+ <objectgroup draworder="index" id="32" name="trainingmenu" class="Gui.Menu">
   <properties>
    <property name="backaction" value="unpauseGame"/>
   </properties>

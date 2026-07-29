@@ -4,7 +4,7 @@
   <export target="menu_retry_stage.lua" format="lua"/>
  </editorsettings>
  <tileset firstgid="1" source="../sprites/ui/firespit.tsx"/>
- <objectgroup id="27" name="retrymenu" class="Gui.Menu" visible="0">
+ <objectgroup id="27" name="retrymenu" class="Gui.Menu">
   <object id="206" template="menu/Panel.tx" x="136" y="90" width="208" height="90"/>
   <object id="207" template="menu/pause/Button.tx" name="Restart checkpoint" type="Gui.Button" x="184" y="99" width="144" height="18">
    <properties>

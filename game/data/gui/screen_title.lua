@@ -283,23 +283,6 @@ return {
           }
         },
         {
-          type = "imagelayer",
-          image = "../sprites/ui/title/illust/bg.png",
-          id = 37,
-          name = "bg",
-          class = "",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          tintcolor = { 255, 255, 255 },
-          repeatx = false,
-          repeaty = false,
-          properties = {}
-        },
-        {
           type = "group",
           id = 38,
           name = "fg",
