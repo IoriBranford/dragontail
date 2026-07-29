@@ -1,5 +1,3 @@
-local tnew = require "table.new"
-
 ---@alias evreq "args"|"stop"
 ---@alias evfunc fun(...):evreq?,...
 ---@class listener
@@ -16,8 +14,7 @@ local dispatch = {}
 dispatch.__index = dispatch
 
 function dispatch.new(...)
-    local self = tnew(0, 1) ---@type dispatch
-    self.events = tnew(0, 16)
+    local self = { events = {} } ---@type dispatch
     setmetatable(self, dispatch)
     self:newevents(...)
     return self
@@ -25,7 +22,7 @@ end
 
 function dispatch:newevent(ev)
     if not self.events[ev] then
-        self.events[ev] = tnew(8, 1)
+        self.events[ev] = {}
     end
 end
 
@@ -61,14 +58,14 @@ function dispatch:allsub(l, after, force)
     if force then
         for ev, f in pairs(l) do
             if type(f) == "function" then
-                l[ev.."sub"] = sub(self, ev, l, after)
+                sub(self, ev, l, after)
             end
         end
     else
         local evs = self.events
         for ev, f in pairs(l) do
             if evs[ev] and type(f) == "function" then
-                l[ev.."sub"] = sub(self, ev, l, after)
+                sub(self, ev, l, after)
             end
         end
     end
@@ -86,7 +83,7 @@ function dispatch:unsub(ev, i, l)
 
     if i == #ls then ls[i] = nil return end
 
-    local free = ls.free or tnew(8, 0)
+    local free = ls.free or {}
     ls.free = free
     free[#free+1] = i
     ls[i] = false
@@ -98,7 +95,6 @@ function dispatch:allunsub(l)
         local i = l[ev.."sub"]
         if i then
             unsub(self, ev, i, l)
-            l[ev.."sub"] = nil
         end
     end
 end
