@@ -104,7 +104,11 @@ function dispatch:allunsub(l)
 end
 
 function dispatch:clearev(ev)
-    self.events[ev] = nil
+    local ls = self.events[ev]
+    if not ls then return end
+    for i = #ls, 1, -1 do
+        ls[i] = nil
+    end
 end
 
 local cocreate = coroutine.create
