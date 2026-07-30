@@ -106,6 +106,8 @@ function TitlePhase.loadphase(startwithmainmenu)
         ambientsound = Audio.play("data/sounds/ambient/seaside.ogg")
         if ambientsound then ambientsound:setLooping(true) end
     end
+    scenemap:eventconnect()
+    love.event.connectAll(scenemap)
     love.event.connectAll(Gui)
 end
 
@@ -149,18 +151,11 @@ function TitlePhase.keypressed(key)
 end
 
 function TitlePhase.fixedupdate()
-    scenemap:animate(1)
     if sceneco then
         if sceneco() then
             sceneco = nil
         end
     end
-end
-
-function TitlePhase.draw(fixedfrac)
-    Dragontail.draw(function()
-        scenemap:draw()
-    end, fixedfrac)
 end
 
 return TitlePhase
