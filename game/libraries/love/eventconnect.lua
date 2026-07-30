@@ -60,8 +60,17 @@ local LoveEvents = {
 
 local Conns = dispatch.new()
 local EventDirs = {}
+local SelfMode = false
 
 ---@alias conn integer
+
+function love.event.setSelfMode(selfmode)
+    SelfMode = selfmode
+end
+
+function love.event.setDirection(ev, dir)
+    EventDirs[ev] = dir
+end
 
 ---Register a new event
 function love.event.newEvent(ev, dir)
@@ -84,12 +93,10 @@ love.event.newEvents(LoveEvents)
 function love.event.reset()
     Conns = dispatch.new()
     love.event.newEvents(LoveEvents)
-    Conns:allsub(love)
 end
 
 function love.event.resetConnections()
     Conns:clearallsubs()
-    Conns:allsub(love)
 end
 
 function love.event.addSelfLoveEvents(format)
@@ -132,11 +139,30 @@ function love.event.disconnectAll(l, format)
     Conns:allunsub(l, format)
 end
 
+local function send(lovef, fsend, rsend, ev, a,b,c,d,e,f)
+    if lovef then
+        local req, u, v, w, x, y, z
+            = lovef(a,b,c,d,e,f)
+
+        if req == "stop" then
+            return req
+        end
+        if req == "args" then
+            a,b,c,d,e,f = u, v, w, x, y, z
+        end
+    end
+    if (EventDirs[ev] or 1) < 0 then
+        rsend(Conns, ev, a,b,c,d,e,f)
+    else
+        fsend(Conns, ev, a,b,c,d,e,f)
+    end
+end
+
 ---Broadcast an event immediately, bypassing love event queue
 ---@param ev string
 ---@param ... any
 function love.event.send(ev, ...)
-    Conns:send(ev, ...)
+    send(love[ev], Conns.send, Conns.rsend, ev, ...)
 end
 
 ---Broadcast an event immediately, bypassing love event queue,
@@ -144,12 +170,11 @@ end
 ---@param ev any
 ---@param ... any
 function love.event.sendSelves(ev, ...)
-    Conns:sendself(ev, ...)
+    send(love[ev], Conns.sendself, Conns.rsendself, ev, ...)
 end
 
 ---@diagnostic disable-next-line: duplicate-set-field
 function love.run()
-    Conns:allsub(love)
     if love.load then
         love.load(love.arg.parseGameArguments(arg), arg)
     end
@@ -161,19 +186,24 @@ function love.run()
 
     -- Main loop time.
     return function()
+        local fsend, rsend
+        if SelfMode then
+            fsend, rsend = Conns.sendself, Conns.rsendself
+        else
+            fsend, rsend = Conns.send, Conns.rsend
+        end
+
         -- Process events.
         if love.event then
             love.event.pump()
             for name, a, b, c, d, e, f in love.event.poll() do
                 if name == "quit" then
                     if not love.quit or not love.quit() then
-                        return "quit", a or 0
+                        return a or 0
                     end
-                end
-                if (EventDirs[name] or 1) < 0 then
-                    Conns:rsend(name, a, b, c, d, e, f)
                 else
-                    Conns:send(name, a, b, c, d, e, f)
+                    send(love.handlers[name], fsend, rsend,
+                        name, a,b,c,d,e,f)
                 end
             end
         end
@@ -182,13 +212,13 @@ function love.run()
         if love.timer then dt = love.timer.step() end
 
         -- Call update and draw
-        Conns:send("update", dt) -- will pass 0 if love.timer is disabled
+        send(love.update, fsend, rsend, "update", dt) -- will pass 0 if love.timer is disabled
 
         if love.graphics and love.graphics.isActive() then
             love.graphics.origin()
             love.graphics.clear(love.graphics.getBackgroundColor())
 
-            Conns:send("draw")
+            send(love.draw, fsend, rsend, "draw")
 
             love.graphics.present()
         end
