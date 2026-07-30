@@ -75,7 +75,7 @@ end
 ---Register a new event
 function love.event.newEvent(ev, dir)
     Conns:newevent(ev)
-    EventDirs[ev] = dir
+    EventDirs[ev] = dir or 1
 end
 
 ---Register multiple new events
