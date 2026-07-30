@@ -114,8 +114,8 @@ end
 ---@param l listener
 ---@param after boolean?
 ---@return integer
-function love.event.connect(l, after, ev)
-    return Conns:sub(l, after, ev)
+function love.event.connect(l, ev, after)
+    return Conns:sub(l, ev, after)
 end
 
 ---Connect all of a table's matching functions to events
@@ -129,8 +129,8 @@ end
 ---@param ev string
 ---@param conn conn
 ---@param l listener?
-function love.event.disconnect(l, conn, ev)
-    Conns:unsub(l, conn, ev)
+function love.event.disconnect(l, ev, conn)
+    Conns:unsub(l, ev, conn)
 end
 
 ---Disconnect all of a table's matching functions from events
