@@ -29,7 +29,7 @@ function love.event.newphase(name, ...)
     love.event.push("newphase", name, ...)
 end
 
-function love.newphase(name, ...)
+function love.handlers.newphase(name, ...)
     local nextphase = require(name)
     love.event.send("quitphase")
 
@@ -137,18 +137,6 @@ function love.update(dsecs)
     Account.update()
 
     Audio.update(dsecs)
-
-    local fixedrate = Config.fixedupdaterate
-    fixedfrac = fixedupdate(fixedrate, fixedfrac, dsecs,
-    function()
-        Inputs.update()
-        love.event.send("fixedupdate")
-    end)
-end
----@diagnostic disable-next-line: duplicate-set-field
-function love.draw()
-    local variableupdate = Config.variableupdate
-    return "args", variableupdate and fixedfrac or 0
 end
 
 function love.drawStats()

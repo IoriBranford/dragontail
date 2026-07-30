@@ -3,6 +3,8 @@ local Assets    = require "Tiled.Assets"
 local Audio  = require "System.Audio"
 local Gui            = require "Gui"
 local TitleHit       = require "Dragontail.Movie.TitleHit"
+local fixedupdate    = require "fixedupdate"
+local Config         = require "System.Config"
 local TitlePhase = {}
 
 local scenemap ---@type Gui
@@ -87,6 +89,20 @@ function TitlePhase.fixedupdate()
             sceneco = nil
         end
     end
+end
+
+local fixedfrac = 0
+
+function TitlePhase.update(dsecs)
+    local fixedrate = Config.fixedupdaterate
+    fixedfrac = fixedupdate(fixedrate, fixedfrac, dsecs,
+    function()
+        love.event.send("fixedupdate")
+    end)
+end
+
+function TitlePhase.draw()
+    return "args", fixedfrac
 end
 
 return TitlePhase
