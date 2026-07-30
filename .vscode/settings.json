@@ -1,5 +1,8 @@
 {
     "workbench.colorTheme": "Red",
+    "files.associations": {
+        "*.tsx": "xml"
+    },
     "Lua.workspace.checkThirdParty": false,
     "Lua.workspace.useGitIgnore": false,
     "Lua.workspace.library": [
