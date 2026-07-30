@@ -14,43 +14,6 @@ local Config      = require "System.Config"
 ---@field [integer] Layer
 local Gui = class(LayerGroup)
 
----@param map string|TiledMap Tiled map exported to Lua, either table or filename
----@return Gui
-function Gui.new(map, rootpath)
-    if type(map) == "string" then
-        map = Tiled.Map.load(map)
-        map:indexEverythingByName()
-    end
-    local self = Gui.get(map.layers, rootpath) or map.layers
-    assert(self.type == "group", "GUI root layer must be a group")
-    self.width = map.width*map.tilewidth
-    self.height = map.height*map.tileheight
-    self.class = "Gui"
-    self.visible = true
-    self.menustack = {}
-    self:bindClasses()
-
-    local function init(element)
-        for i = 1, #element do
-            init(element[i])
-        end
-
-        if getmetatable(element) == Object then
-            GuiObject.cast(element)
-        end
-
-        if element.spawn then
-            element:spawn()
-        end
-        element.gui = self
-    end
-    for _, layer in ipairs(self) do
-        init(layer)
-    end
-    self:resize_s(love.graphics.getWidth(), love.graphics.getHeight())
-    return self
-end
-
 ---@param path string separated by '.'
 ---@return GuiObject?
 function Gui:get(path)
@@ -85,42 +48,6 @@ function Gui:getExpandedCanvasSize(screenwidth, screenheight, maincanvas)
     canvaswidth = math.floor(math.abs(canvaswidth)/2)*2
     canvasheight = math.floor(math.abs(canvasheight)/2)*2
     return canvaswidth, canvasheight
-end
-
----@param screenwidth integer
----@param screenheight integer
----@param maincanvas Canvas?
----@param expand boolean? to show ui outside the gui width/height
----@deprecated
-function Gui:resize_s(screenwidth, screenheight, maincanvas, expand)
-    -- for i = 1, #self do
-    --     self[i]:reanchor(self.width, self.height, screenwidth, screenheight)
-    -- end
-
-    local cw, ch = self.width, self.height
-
-    if expand then
-        cw, ch = self:getExpandedCanvasSize(screenwidth, screenheight, maincanvas)
-    end
-
-    local prescale = Config.upscale
-
-    local canvas = self.canvas
-    if canvas then
-        canvas:resize(cw, ch, prescale)
-    else
-        canvas = Canvas(cw, ch, prescale)
-        self.canvas = canvas
-    end
-    if maincanvas then
-        canvas:transformToAnotherCanvas(screenwidth, screenheight, maincanvas)
-    else
-        canvas:transformToScreen(screenwidth, screenheight,
-            math.rad(Config.rotation), Config.upscaleinteger)
-    end
-    canvas:setFiltered(Config.linearfilter)
-    self.x = (self.canvas:getBaseWidth() - self.width) / 2
-    self.y = (self.canvas:getBaseHeight() - self.height) / 2
 end
 
 function Gui:setActiveMenu(menu)
@@ -169,47 +96,6 @@ function Gui:clearMenuStack()
     self:setActiveMenu()
 end
 
-function Gui:keypressed_s(key)
-    if self.activemenu and self.activemenu.visible then
-        self.activemenu:keypressed(key)
-    end
-end
-
-function Gui:gamepadpressed_s(gamepad, button)
-    if self.activemenu and self.activemenu.visible then
-        self.activemenu:gamepadpressed(gamepad, button)
-    end
-end
-
-function Gui:touchpressed_s(id, x, y)
-    x, y = self.canvas:inverseTransformPoint(x, y)
-    x, y = x - self.x, y - self.y
-    if self.activemenu and self.activemenu.visible then
-        self.activemenu:touchpressed(id, x, y)
-    end
-end
-
-function Gui:touchmoved_s(id, x, y, dx, dy)
-    x, y = self.canvas:inverseTransformPoint(x, y)
-    x, y = x - self.x, y - self.y
-    dx, dy = self.canvas:inverseTransformVector(dx, dy)
-    if self.activemenu and self.activemenu.visible then
-        self.activemenu:touchmoved(id, x, y, dx, dy)
-    end
-end
-
-function Gui:touchreleased_s(id, x, y)
-    x, y = self.canvas:inverseTransformPoint(x, y)
-    x, y = x - self.x, y - self.y
-    if self.activemenu and self.activemenu.visible then
-        self.activemenu:touchreleased(id, x, y)
-    end
-end
-
-function Gui:fixedupdate_s()
-    self:animate(1)
-end
-
 function Gui:drawOnOwnCanvas()
     self.canvas:drawOn(function()
         love.graphics.clear()
@@ -235,8 +121,122 @@ function Gui:compose(f)
     end)
 end
 
-function Gui:lerpdraw_s()
-    LayerGroup.draw(self)
+---@param map string|TiledMap Tiled map exported to Lua, either table or filename
+---@return Gui
+function Gui.new(map, rootpath)
+    if type(map) == "string" then
+        map = Tiled.Map.load(map)
+        map:indexEverythingByName()
+    end
+    local self = Gui.get(map.layers, rootpath) or map.layers
+    assert(self.type == "group", "GUI root layer must be a group")
+    self.width = map.width*map.tilewidth
+    self.height = map.height*map.tileheight
+    self.class = "Gui"
+    self.visible = true
+    self.menustack = {}
+    self:bindClasses()
+
+    ---@param screenwidth integer
+    ---@param screenheight integer
+    ---@param maincanvas Canvas?
+    ---@param expand boolean? to show ui outside the gui width/height
+    ---@deprecated
+    function self.resize(screenwidth, screenheight, maincanvas, expand)
+        -- for i = 1, #self do
+        --     self[i]:reanchor(self.width, self.height, screenwidth, screenheight)
+        -- end
+
+        local cw, ch = self.width, self.height
+
+        if expand then
+            cw, ch = self:getExpandedCanvasSize(screenwidth, screenheight, maincanvas)
+        end
+
+        local prescale = Config.upscale
+
+        local canvas = self.canvas
+        if canvas then
+            canvas:resize(cw, ch, prescale)
+        else
+            canvas = Canvas(cw, ch, prescale)
+            self.canvas = canvas
+        end
+        if maincanvas then
+            canvas:transformToAnotherCanvas(screenwidth, screenheight, maincanvas)
+        else
+            canvas:transformToScreen(screenwidth, screenheight,
+                math.rad(Config.rotation), Config.upscaleinteger)
+        end
+        canvas:setFiltered(Config.linearfilter)
+        self.x = (self.canvas:getBaseWidth() - self.width) / 2
+        self.y = (self.canvas:getBaseHeight() - self.height) / 2
+    end
+
+    function self.keypressed(key)
+        if self.activemenu and self.activemenu.visible then
+            self.activemenu:keypressed(key)
+        end
+    end
+
+    function self.gamepadpressed(gamepad, button)
+        if self.activemenu and self.activemenu.visible then
+            self.activemenu:gamepadpressed(gamepad, button)
+        end
+    end
+
+    function self.touchpressed(id, x, y)
+        x, y = self.canvas:inverseTransformPoint(x, y)
+        x, y = x - self.x, y - self.y
+        if self.activemenu and self.activemenu.visible then
+            self.activemenu:touchpressed(id, x, y)
+        end
+    end
+
+    function self.touchmoved(id, x, y, dx, dy)
+        x, y = self.canvas:inverseTransformPoint(x, y)
+        x, y = x - self.x, y - self.y
+        dx, dy = self.canvas:inverseTransformVector(dx, dy)
+        if self.activemenu and self.activemenu.visible then
+            self.activemenu:touchmoved(id, x, y, dx, dy)
+        end
+    end
+
+    function self.touchreleased(id, x, y)
+        x, y = self.canvas:inverseTransformPoint(x, y)
+        x, y = x - self.x, y - self.y
+        if self.activemenu and self.activemenu.visible then
+            self.activemenu:touchreleased(id, x, y)
+        end
+    end
+
+    function self.fixedupdate()
+        self:animate(1)
+    end
+
+    function self.draw(lerp)
+        LayerGroup.draw(self)
+    end
+
+    local function init(element)
+        for i = 1, #element do
+            init(element[i])
+        end
+
+        if getmetatable(element) == Object then
+            GuiObject.cast(element)
+        end
+
+        if element.spawn then
+            element:spawn()
+        end
+        element.gui = self
+    end
+    for _, layer in ipairs(self) do
+        init(layer)
+    end
+    self.resize(love.graphics.getWidth(), love.graphics.getHeight())
+    return self
 end
 
 return Gui

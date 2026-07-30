@@ -124,13 +124,13 @@ end
 function GamePhase.gamepadpressed(gamepad, button)
     if button == "start" then
         GamePhase.setPaused(not paused, true)
+        return "stop"
     elseif button == "back" then
         if Characters.isTimeToClearLostEnemies() then
             Characters.clearEnemies()
         end
         -- GamePhase.setPaused(not paused, false)
-    else
-        love.event.sendSelves("gamepadpressed_s", gamepad, button)
+        return "stop"
     end
 end
 
@@ -138,17 +138,15 @@ function GamePhase.keypressed(key)
     local kp = keypressed[key]
     if kp then
         kp()
-        return
+        return "stop"
     end
 
     if key == "escape" then
         if not paused then
             GamePhase.setPaused(true, true)
-            return
+            return "stop"
         end
     end
-
-    love.event.sendSelves("keypressed_s", key)
 end
 
 local function fixedupdateInputDisplay()
@@ -191,7 +189,6 @@ function GamePhase.fixedupdate()
     end
     fixedupdateInputDisplay()
     Stage.fixedupdateGui(Gui)
-    love.event.sendSelves("fixedupdate_s")
 end
 
 function GamePhase.setPauseLocked(locked)
@@ -224,11 +221,10 @@ function GamePhase.debug_drawStageUnzoomed(fixedfrac)
     love.graphics.pop()
 end
 
-function GamePhase.lerpdraw(fixedfrac)
+function GamePhase.draw(fixedfrac)
     Dragontail.draw(function()
         Stage.draw(paused and 0 or fixedfrac)
         if movie then moviemap:draw() end
-        love.event.sendSelves("lerpdraw_s", fixedfrac)
     end, fixedfrac)
 end
 
