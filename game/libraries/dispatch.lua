@@ -72,12 +72,26 @@ function dispatch:multisub(l, format, after, ...)
     end
 end
 
+local allsub_evs = {}
+
 local function allsub(self, l, format, after, cond)
     cond = cond or function () return true end
+
+    -- not safe to write in a table during pairs loop
+    local evs = allsub_evs
     for ev, f in pairs(l) do
-        if cond(ev, f) then
+        if type(f) == "function" then
+            evs[#evs+1] = ev
+        end
+    end
+    for i = 1, #evs do
+        local ev = evs[i]
+        if cond(ev, l[ev]) then
             writesub(self, l, ev, format, after)
         end
+    end
+    for i = #evs, 1, -1 do
+        evs[i] = nil
     end
 
     local mt = getmetatable(l)
@@ -92,10 +106,9 @@ end
 
 function dispatch:allsub(l, format, after, force)
     local evs = self.events
-    allsub(self, l, format, after, not force and
-        function (ev)
-            return evs[ev]
-        end)
+    local cond = not force and
+        function (ev) return evs[ev] end
+    allsub(self, l, format, after, cond)
 end
 
 ---Unsubscribe
