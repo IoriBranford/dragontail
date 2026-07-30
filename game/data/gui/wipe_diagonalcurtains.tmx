@@ -3,7 +3,7 @@
  <editorsettings>
   <export target="wipe_diagonalcurtains.lua" format="lua"/>
  </editorsettings>
- <objectgroup id="9" name="diagonalCurtains" class="Gui.Wipe">
+ <objectgroup id="9" name="wipe" class="Gui.Wipe">
   <properties>
    <property name="closeandopenfunction" value="twoCurtainsCloseAndOpen"/>
    <property name="closefunction" value="twoCurtainsClose"/>

@@ -18,7 +18,7 @@ return {
       type = "objectgroup",
       draworder = "topdown",
       id = 9,
-      name = "diagonalCurtains",
+      name = "wipe",
       class = "Gui.Wipe",
       visible = true,
       opacity = 1,
