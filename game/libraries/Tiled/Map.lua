@@ -138,6 +138,15 @@ function TiledMap:draw()
     self.layers:draw()
 end
 
+function TiledMap:eventconnect()
+    function self.update(dt)
+        self:animate(dt)
+    end
+    function self.draw()
+        self.layers:draw()
+    end
+end
+
 Assets.addLoaders {
     luatileset = function(tilesetassetid, tilesetfile, tilesetref)
         local tilesetdata = assert(love.filesystem.load(tilesetfile))()
