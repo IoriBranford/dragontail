@@ -1,25 +1,90 @@
 local dispatch = require "dispatch"
 
-local LoveEvents = {"audiodisconnected", "directorydropped", "displayrotated", "draw", "dropbegan",
-    "dropcompleted", "dropmoved", "exposed", "filedropped", "focus", "gamepadaxis", "gamepadpressed", "gamepadreleased",
-    "joystickadded", "joystickaxis", "joystickhat", "joystickpressed", "joystickreleased", "joystickremoved",
-    "joysticksensorupdated", "keypressed", "keyreleased", "localechanged", "lowmemory", "mousefocus",
-    "mousemoved", "mousepressed", "mousereleased", "occluded", "quit", "resize", "sensorupdated", "textedited",
-    "textinput", "threaderror", "touchmoved", "touchpressed", "touchreleased", "update", "visible", "wheelmoved"}
+---@alias evdir integer
 
-local ExtraEvents = {"reset"}
+local LoveEvents = {
+    update = 1,
+    draw = 1,
 
-local Conns = dispatch.new(unpack(LoveEvents))
-Conns:newevents(unpack(ExtraEvents))
+    filedropped = -1,
+    directorydropped = -1,
+    displayrotated = 1,
+    focus = 1,
+    visible = 1,
+    resize = 1,
+
+    joystickadded = 1,
+    joystickremoved = 1,
+
+    gamepadaxis = -1,
+    gamepadpressed = -1,
+    gamepadreleased = -1,
+    joystickaxis = -1,
+    joystickhat = -1,
+    joystickpressed = -1,
+    joystickreleased = -1,
+
+    keypressed = -1,
+    keyreleased = -1,
+
+    lowmemory = 1,
+
+    mousefocus = 1,
+    mousemoved = -1,
+    mousepressed = -1,
+    mousereleased = -1,
+    wheelmoved = -1,
+
+    quit = 1,
+
+    textedited = -1,
+    textinput = -1,
+
+    threaderror = 1,
+
+    touchmoved = -1,
+    touchpressed = -1,
+    touchreleased = -1,
+
+    -- in LOVE 12
+    audiodisconnected = 1,
+    dropbegan = -1,
+    dropcompleted = -1,
+    dropmoved = -1,
+    exposed = 1,
+    joysticksensorupdated = 1,
+    localechanged = 1,
+    occluded = 1,
+    sensorupdated = 1,
+}
+
+local Conns = dispatch.new()
+local EventDirs = {}
 
 ---@alias conn integer
 
+---Register a new event
+function love.event.newEvent(ev, dir)
+    Conns:newevent(ev)
+    EventDirs[ev] = dir
+end
+
+---Register multiple new events
+---@param evs table<string, evdir>
+function love.event.newEvents(evs)
+    local newev = love.event.newEvent
+    for ev, dir in pairs(evs) do
+        newev(ev, dir)
+    end
+end
+
+love.event.newEvents(LoveEvents)
+
 ---Reset the event engine
 function love.event.reset()
-    Conns = dispatch.new(unpack(LoveEvents))
-    Conns:newevents(unpack(ExtraEvents))
+    Conns = dispatch.new()
+    love.event.newEvents(LoveEvents)
     Conns:allsub(love)
-    Conns:send("reset")
 end
 
 function love.event.resetConnections()
@@ -28,33 +93,12 @@ function love.event.resetConnections()
 end
 
 function love.event.addSelfLoveEvents(format)
+    local newev = love.event.newEvent
     local sformat = string.format
     format = format or "%sself"
-    for _, ev in ipairs(LoveEvents) do
+    for ev, dir in pairs(LoveEvents) do
         ev = sformat(format, ev)
-        Conns:newevent(ev)
-    end
-end
-
----Register a new event
-function love.event.newEvent(ev)
-    Conns:newevent(ev)
-end
-
----Register multiple new events
----@param ... string
-function love.event.newEvents(...)
-    Conns:newevents(...)
-end
-
----Register multiple new events intended for self
----@param format string with at least 1 %s for the event name
----@param ... string
-function love.event.newSelfEvents(format, ...)
-    local sformat = string.format
-    for i = 1, select("#", ...) do
-        local ev = select(i, ...)
-        Conns:newevent(sformat(format, ev))
+        newev(ev, dir)
     end
 end
 
@@ -126,7 +170,11 @@ function love.run()
                         return "quit", a or 0
                     end
                 end
-                Conns:send(name, a, b, c, d, e, f)
+                if (EventDirs[name] or 1) < 0 then
+                    Conns:rsend(name, a, b, c, d, e, f)
+                else
+                    Conns:send(name, a, b, c, d, e, f)
+                end
             end
         end
 
