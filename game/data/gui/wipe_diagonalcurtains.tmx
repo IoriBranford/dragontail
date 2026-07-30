@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="34" nextobjectid="238">
+ <editorsettings>
+  <export target="wipe_diagonalcurtains.lua" format="lua"/>
+ </editorsettings>
+ <objectgroup id="9" name="diagonalCurtains" class="Gui.Wipe">
+  <properties>
+   <property name="closeandopenfunction" value="twoCurtainsCloseAndOpen"/>
+   <property name="closefunction" value="twoCurtainsClose"/>
+   <property name="openfunction" value="twoCurtainsOpen"/>
+   <property name="speed" type="float" value="32"/>
+  </properties>
+  <object id="12" name="left" x="0" y="0">
+   <properties>
+    <property name="closedx" type="float" value="360"/>
+    <property name="color" type="color" value="#ff000000"/>
+    <property name="openx" type="float" value="0"/>
+   </properties>
+   <polygon points="0,0 -240,270 -360,270 -360,0"/>
+  </object>
+  <object id="13" name="right" x="480" y="270">
+   <properties>
+    <property name="closedx" type="float" value="120"/>
+    <property name="color" type="color" value="#ff000000"/>
+    <property name="openx" type="float" value="480"/>
+   </properties>
+   <polygon points="0,0 240,-270 360,-270 360,0"/>
+  </object>
+ </objectgroup>
+</map>

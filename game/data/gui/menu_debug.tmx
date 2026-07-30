@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="34" nextobjectid="238">
+ <editorsettings>
+  <export target="menu_debug.lua" format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" source="../tilesets/ui/Gamepad Spritesheets/Xbox.tsx"/>
+ <tileset firstgid="21" source="../sprites/ui/firespit.tsx"/>
+ <objectgroup id="15" name="debugmenu" class="Gui.Menu">
+  <properties>
+   <property name="backaction" value="closeMenu"/>
+  </properties>
+  <object id="82" template="menu/Panel.tx" x="112" y="-4.5" width="256" height="279">
+   <properties>
+    <property name="roundcorners" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="85" template="menu/settings/Label.tx" name="Show hitboxes" x="128" y="108" width="176" height="18">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Show hitboxes</text>
+  </object>
+  <object id="221" template="menu/settings/Label.tx" name="Show damage" x="128" y="126" width="176" height="18">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Show damage</text>
+  </object>
+  <object id="147" template="menu/settings/Label.tx" name="Show input" x="128" y="90" width="176" height="18">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Show input</text>
+  </object>
+  <object id="141" template="menu/settings/Label.tx" name="Smooth movement" x="128" y="72" width="176" height="18">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Smooth movement</text>
+  </object>
+  <object id="91" template="menu/settings/Label.tx" name="Game speed" x="128" y="144" width="168" height="18">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Game speed (10-100)</text>
+  </object>
+  <object id="89" template="menu/settings/Button.tx" name="Refill player" type="Gui.Button" x="128" y="36" width="224" height="18">
+   <properties>
+    <property name="action" value="refillPlayers"/>
+    <property name="presssound" type="file" value="../sounds/combat/heal.mp3"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Refill player</text>
+  </object>
+  <object id="171" template="menu/settings/Button.tx" name="Clear enemies" type="Gui.Button" x="128" y="54" width="224" height="18">
+   <properties>
+    <property name="action" value="clearEnemies"/>
+    <property name="presssound" type="file" value="../sounds/combat/cut2.mp3"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Clear enemies</text>
+  </object>
+  <object id="149" template="menu/settings/Button.tx" name="Go to midpoint" type="Gui.Button" x="128" y="162" width="224" height="18">
+   <properties>
+    <property name="action" value="restartStage"/>
+    <property name="checkpoint" value="entryhall"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Go to midpoint</text>
+  </object>
+  <object id="151" template="menu/settings/Button.tx" name="Go to boss" type="Gui.Button" x="128" y="180" width="224" height="18">
+   <properties>
+    <property name="action" value="restartStage"/>
+    <property name="checkpoint" value="boss"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Go to boss</text>
+  </object>
+  <object id="84" template="menu/settings/Slider.tx" name="drawbodies" type="Gui.Slider" x="128" y="108" width="224" height="18">
+   <properties>
+    <property name="configkey" value="drawbodies"/>
+    <property name="label" type="object" value="85"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
+  </object>
+  <object id="220" template="menu/settings/Slider.tx" name="drawdamage" type="Gui.Slider" x="128" y="126" width="224" height="18">
+   <properties>
+    <property name="configkey" value="drawdamage"/>
+    <property name="label" type="object" value="221"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
+  </object>
+  <object id="146" template="menu/settings/Slider.tx" name="drawinput" type="Gui.Slider" x="128" y="90" width="224" height="18">
+   <properties>
+    <property name="configkey" value="drawinput"/>
+    <property name="label" type="object" value="147"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
+  </object>
+  <object id="142" template="menu/settings/Slider.tx" name="variableupdate" type="Gui.Slider" x="128" y="72" width="224" height="18">
+   <properties>
+    <property name="configkey" value="variableupdate"/>
+    <property name="label" type="object" value="141"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
+  </object>
+  <object id="90" template="menu/settings/Slider.tx" name="fixedupdaterate" type="Gui.Slider" x="128" y="144" width="224" height="18">
+   <properties>
+    <property name="configkey" value="fixedupdaterate"/>
+    <property name="increment" type="float" value="5"/>
+    <property name="label" type="object" value="91"/>
+    <property name="max" type="float" value="100"/>
+    <property name="min" type="float" value="10"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">60</text>
+  </object>
+  <object id="87" template="menu/Button_closeMenu.tx" type="Gui.Button" x="128" y="243"/>
+  <object id="88" template="menu/Cursor.tx" type="Gui.Cursor" x="100" y="63"/>
+  <object id="148" gid="1" x="344" y="45" width="14" height="14"/>
+  <object id="170" gid="1" x="344" y="63" width="14" height="14"/>
+  <object id="150" gid="1" x="344" y="171" width="14" height="14"/>
+  <object id="152" gid="1" x="344" y="189" width="14" height="14"/>
+  <object id="185" template="menu/Title.tx" x="180" y="0">
+   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">DEBUG</text>
+  </object>
+ </objectgroup>
+</map>

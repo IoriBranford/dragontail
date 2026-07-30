@@ -1,0 +1,253 @@
+return {
+  version = "1.11",
+  luaversion = "5.1",
+  tiledversion = "1.12.2",
+  class = "",
+  orientation = "orthogonal",
+  renderorder = "right-down",
+  width = 30,
+  height = 15,
+  tilewidth = 16,
+  tileheight = 18,
+  nextlayerid = 34,
+  nextobjectid = 238,
+  properties = {},
+  tilesets = {
+    {
+      name = "firespit",
+      firstgid = 1,
+      filename = "../sprites/ui/firespit.tsx",
+      exportfilename = "../sprites/ui/firespit.lua"
+    }
+  },
+  layers = {
+    {
+      type = "group",
+      id = 31,
+      name = "victory_Rose",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = -264,
+      offsety = -153,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {
+        ["swipesound"] = "../sounds/combat/heavyswingandhit.ogg",
+        ["voice"] = "../sounds/player/victory2.mp3"
+      },
+      layers = {
+        {
+          type = "imagelayer",
+          image = "../sprites/ui/title/illust/09 Rose.png",
+          id = 29,
+          name = "Rose",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          repeatx = false,
+          repeaty = false,
+          properties = {}
+        },
+        {
+          type = "imagelayer",
+          image = "../sprites/ui/title/illust/10 swipe.png",
+          id = 30,
+          name = "swipe",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = -44,
+          offsety = 9,
+          parallaxx = 1,
+          parallaxy = 1,
+          repeatx = false,
+          repeaty = false,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 26,
+      name = "victory",
+      class = "Gui.Menu",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 192,
+          name = "",
+          type = "Gui.Cursor",
+          shape = "rectangle",
+          x = 416,
+          y = 81,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          opacity = 1,
+          gid = 1,
+          visible = true,
+          properties = {
+            ["alignx"] = 0.75,
+            ["aligny"] = 0,
+            ["asetag"] = "Spit0",
+            ["movesound"] = "../sounds/combat/arrowhit.mp3"
+          }
+        },
+        {
+          id = 195,
+          name = "",
+          type = "Gui.Cursor",
+          shape = "rectangle",
+          x = 248,
+          y = 81,
+          width = 64,
+          height = 64,
+          rotation = 180,
+          opacity = 1,
+          gid = 1,
+          visible = true,
+          properties = {
+            ["alignx"] = -0.75,
+            ["aligny"] = 0,
+            ["asetag"] = "Spit0",
+            ["movesound"] = "../sounds/combat/arrowhit.mp3"
+          }
+        },
+        {
+          id = 193,
+          name = "START",
+          type = "Gui.Button",
+          shape = "text",
+          x = 248,
+          y = 171,
+          width = 176,
+          height = 36,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          text = "BACK TO TITLE",
+          fontfamily = "The Rumor",
+          pixelsize = 32,
+          wrap = true,
+          color = { 224, 33, 33 },
+          halign = "center",
+          valign = "center",
+          properties = {
+            ["action"] = "returnToTitle",
+            ["color2"] = "#ffffd8d8",
+            ["frequency"] = 30,
+            ["presssound"] = "../sounds/combat/firehit.mp3",
+            ["selectanimation"] = "colorCycle"
+          }
+        },
+        {
+          id = 196,
+          name = "START",
+          type = "Gui.Button",
+          shape = "text",
+          x = 256,
+          y = 117,
+          width = 180,
+          height = 36,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          text = "VISIT WEBSITE",
+          fontfamily = "The Rumor",
+          pixelsize = 32,
+          wrap = true,
+          color = { 224, 33, 33 },
+          halign = "center",
+          valign = "center",
+          properties = {
+            ["action"] = "openURL",
+            ["color2"] = "#ffffd8d8",
+            ["frequency"] = 30,
+            ["presssound"] = "../sounds/combat/firehit.mp3",
+            ["selectanimation"] = "colorCycle",
+            ["url"] = "https://ioribranford.itch.io/rose-of-dragontail"
+          }
+        },
+        {
+          id = 194,
+          name = "START",
+          type = "Gui.Button",
+          shape = "text",
+          x = 248,
+          y = 63,
+          width = 168,
+          height = 36,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          text = "FIGHT AGAIN",
+          fontfamily = "The Rumor",
+          pixelsize = 32,
+          wrap = true,
+          color = { 224, 33, 33 },
+          halign = "center",
+          valign = "center",
+          properties = {
+            ["action"] = "restartStage",
+            ["color2"] = "#ffffd8d8",
+            ["frequency"] = 30,
+            ["presssound"] = "../sounds/combat/firehit.mp3",
+            ["selectanimation"] = "colorCycle"
+          }
+        },
+        {
+          id = 197,
+          name = "Rate & Comment",
+          type = "",
+          shape = "text",
+          x = 308,
+          y = 144,
+          width = 87.7188,
+          height = 21.7813,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          text = "Rate & Comment",
+          fontfamily = "Silver",
+          pixelsize = 19,
+          wrap = true,
+          color = { 255, 255, 255 },
+          properties = {}
+        },
+        {
+          id = 218,
+          name = "Rosepath",
+          type = "",
+          shape = "polyline",
+          x = -260,
+          y = -153,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 44, y = 36 },
+            { x = 100, y = 108 },
+            { x = 148, y = 202.5 },
+            { x = 180, y = 310.5 }
+          },
+          properties = {}
+        }
+      }
+    }
+  }
+}

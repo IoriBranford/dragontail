@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="34" nextobjectid="238">
+ <editorsettings>
+  <export target="menu_retry_stage.lua" format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" source="../sprites/ui/firespit.tsx"/>
+ <objectgroup id="27" name="retrymenu" class="Gui.Menu">
+  <object id="206" template="menu/Panel.tx" x="136" y="90" width="208" height="90"/>
+  <object id="207" template="menu/pause/Button.tx" name="Restart checkpoint" type="Gui.Button" x="184" y="99" width="144" height="18">
+   <properties>
+    <property name="action" value="restartStageCheckpoint"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Last checkpoint</text>
+  </object>
+  <object id="208" template="menu/pause/Button.tx" name="Restart stage" type="Gui.Button" x="184" y="126" width="144" height="18">
+   <properties>
+    <property name="action" value="restartStage"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Stage start</text>
+  </object>
+  <object id="209" template="menu/pause/Button.tx" name="Cancel" type="Gui.Button" x="184" y="153">
+   <properties>
+    <property name="action" value="closeMenu"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Cancel</text>
+  </object>
+  <object id="210" template="menu/Cursor.tx" type="Gui.Cursor" x="152" y="108"/>
+ </objectgroup>
+</map>
