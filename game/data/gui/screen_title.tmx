@@ -8,13 +8,6 @@
  <imagelayer id="34" name="bg" tintcolor="#ffffff">
   <image source="../sprites/ui/title/illust/bg.png" width="480" height="270"/>
  </imagelayer>
- <objectgroup id="7" name="etc">
-  <object id="11" name="copyright" x="52" y="193.5" width="412" height="58.5">
-   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="right" valign="bottom">(C) 2026 IORI BRANFORD
-MUSIC (C) 2009, 2013 BLUE WAVE THEORY
-USED UNDER CREATIVE COMMONS ATTRIBUTION SHARE-ALIKE LICENSE</text>
-  </object>
- </objectgroup>
  <objectgroup id="25" name="title" class="Gui.Menu">
   <object id="169" template="menu/Panel.tx" x="-4" y="180" width="488" height="18">
    <properties>
@@ -71,6 +64,13 @@ USED UNDER CREATIVE COMMONS ATTRIBUTION SHARE-ALIKE LICENSE</text>
    </imagelayer>
   </group>
  </group>
+ <objectgroup id="7" name="etc">
+  <object id="11" name="copyright" x="52" y="193.5" width="412" height="58.5">
+   <text fontfamily="TinyUnicode" wrap="1" color="#ffffff" halign="right" valign="bottom">(C) 2026 IORI BRANFORD
+MUSIC (C) 2009, 2013 BLUE WAVE THEORY
+USED UNDER CREATIVE COMMONS ATTRIBUTION SHARE-ALIKE LICENSE</text>
+  </object>
+ </objectgroup>
  <objectgroup draworder="index" id="18" name="menu" class="Gui.Menu">
   <object id="106" template="menu/Panel.tx" x="40" y="117" width="112" height="90" visible="0"/>
   <object id="182" template="menu/Cursor.tx" type="Gui.Cursor" x="120" y="81">

@@ -47,42 +47,6 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 7,
-      name = "etc",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
-        {
-          id = 11,
-          name = "copyright",
-          type = "",
-          shape = "text",
-          x = 52,
-          y = 193.5,
-          width = 412,
-          height = 58.5,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "(C) 2026 IORI BRANFORD\nMUSIC (C) 2009, 2013 BLUE WAVE THEORY\nUSED UNDER CREATIVE COMMONS ATTRIBUTION SHARE-ALIKE LICENSE",
-          fontfamily = "TinyUnicode",
-          wrap = true,
-          color = { 255, 255, 255 },
-          halign = "right",
-          valign = "bottom",
-          properties = {}
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
       id = 25,
       name = "title",
       class = "Gui.Menu",
@@ -375,6 +339,42 @@ return {
               properties = {}
             }
           }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 7,
+      name = "etc",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 11,
+          name = "copyright",
+          type = "",
+          shape = "text",
+          x = 52,
+          y = 193.5,
+          width = 412,
+          height = 58.5,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          text = "(C) 2026 IORI BRANFORD\nMUSIC (C) 2009, 2013 BLUE WAVE THEORY\nUSED UNDER CREATIVE COMMONS ATTRIBUTION SHARE-ALIKE LICENSE",
+          fontfamily = "TinyUnicode",
+          wrap = true,
+          color = { 255, 255, 255 },
+          halign = "right",
+          valign = "bottom",
+          properties = {}
         }
       }
     },
