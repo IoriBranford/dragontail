@@ -293,4 +293,17 @@ function dispatch:sort(ev, cmp)
     ls.free = nil
 end
 
+function dispatch:stats(min)
+    min = min or 0
+    local stats = {}
+    for ev, ls in pairs(self.events) do
+        if #ls >= min then
+            stats[#stats+1] = sformat(
+            "%s: %d sub, %d free", ev, #ls, ls.free and #ls.free or 0)
+            stats[ev] = #ls
+        end
+    end
+    return table.concat(stats, "; ")
+end
+
 return dispatch
