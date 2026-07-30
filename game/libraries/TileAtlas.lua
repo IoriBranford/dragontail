@@ -213,6 +213,7 @@ function TileAtlas:updateCanvas()
     if resized then
         local newcanvas = love.graphics.newCanvas(width, height)
         newcanvas:renderTo(function()
+            love.graphics.setColor(1,1,1,1)
             love.graphics.draw(canvas, 0, 0)
         end)
         canvas = newcanvas
@@ -245,6 +246,7 @@ function TileAtlas:drawNewTilesToCanvas()
     love.graphics.setCanvas(canvas)
 
     local quad = love.graphics.newQuad(0, 0, 1, 1, 1, 1)
+    love.graphics.setColor(1,1,1,1)
     for s = 1, #newtilespaces do
         local space = newtilespaces[s]
         local tile = space.tile
