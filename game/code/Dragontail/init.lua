@@ -206,6 +206,12 @@ function Dragontail.load(args)
 
     -- Wallpaper.reload()
 
+    local GuiObject = require "Gui.GuiObject"
+    local Menu      = require "Gui.Menu"
+
+    GuiObject.actionsmodule = "Dragontail.GuiActions"
+    Menu.actionsmodule = "Dragontail.GuiActions"
+
     local firstroom = map and args.room
     love.event.newphase(firstphase, map, firstroom)
 end
