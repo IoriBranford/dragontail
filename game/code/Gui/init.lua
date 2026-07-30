@@ -177,12 +177,14 @@ function Gui.new(map, rootpath)
     function self.keypressed(key)
         if self.activemenu and self.activemenu.visible then
             self.activemenu:keypressed(key)
+            return "stop"
         end
     end
 
     function self.gamepadpressed(gamepad, button)
         if self.activemenu and self.activemenu.visible then
             self.activemenu:gamepadpressed(gamepad, button)
+            return "stop"
         end
     end
 
@@ -191,6 +193,7 @@ function Gui.new(map, rootpath)
         x, y = x - self.x, y - self.y
         if self.activemenu and self.activemenu.visible then
             self.activemenu:touchpressed(id, x, y)
+            return "stop"
         end
     end
 
@@ -200,6 +203,7 @@ function Gui.new(map, rootpath)
         dx, dy = self.canvas:inverseTransformVector(dx, dy)
         if self.activemenu and self.activemenu.visible then
             self.activemenu:touchmoved(id, x, y, dx, dy)
+            return "stop"
         end
     end
 
@@ -208,6 +212,7 @@ function Gui.new(map, rootpath)
         x, y = x - self.x, y - self.y
         if self.activemenu and self.activemenu.visible then
             self.activemenu:touchreleased(id, x, y)
+            return "stop"
         end
     end
 
