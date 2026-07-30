@@ -89,23 +89,14 @@ end
 
 love.event.newEvents(LoveEvents)
 
----Reset the event engine
-function love.event.reset()
-    Conns = dispatch.new()
-    love.event.newEvents(LoveEvents)
-end
-
-function love.event.resetConnections()
-    Conns:clearallsubs()
-end
-
-function love.event.addSelfLoveEvents(format)
-    local newev = love.event.newEvent
-    local sformat = string.format
-    format = format or "%sself"
-    for ev, dir in pairs(LoveEvents) do
-        ev = sformat(format, ev)
-        newev(ev, dir)
+---Disconnect all listeners from all events, optionally remove all custom events
+---@param hard boolean? true removes custom events
+function love.event.reset(hard)
+    if hard then
+        Conns = dispatch.new()
+        love.event.newEvents(LoveEvents)
+    else
+        Conns:clearallsubs()
     end
 end
 
