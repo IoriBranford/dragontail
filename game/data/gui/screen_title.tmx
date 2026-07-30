@@ -97,8 +97,9 @@ USED UNDER CREATIVE COMMONS ATTRIBUTION SHARE-ALIKE LICENSE</text>
   </object>
   <object id="104" template="menu/mainmenu/Button.tx" type="Gui.Button" x="48" y="135" width="108" height="36">
    <properties>
-    <property name="action" value="openMenu"/>
-    <property name="guipath" value="options.simple"/>
+    <property name="action" value="openMenuMap"/>
+    <property name="mapfile" type="file" value="menu_options_simple.lua"/>
+    <property name="menupath" value="simple"/>
    </properties>
    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">OPTIONS</text>
   </object>
