@@ -28,6 +28,7 @@ local winningteam
 local camera ---@type Camera
 local sequencethread ---@type thread?
 local shader ---@type love.Shader
+local paused
 
 ---@class Boundary:TiledObject
 ---@class Camera:Boundary
@@ -78,6 +79,7 @@ function Stage.load(stagefile)
 end
 
 function Stage.init(startroom)
+    paused = false
     local Character = require "Dragontail.Character"
     scene = Scene()
 
@@ -210,6 +212,14 @@ function Stage.init(startroom)
             StateMachine.start(player, "walk")
         end
     end
+end
+
+function Stage.paused()
+    return paused
+end
+
+function Stage.pause(p)
+    paused = p
 end
 
 function Stage.addToScene(object)
@@ -471,6 +481,8 @@ function Stage.updateGoingToNextRoom()
 end
 
 function Stage.fixedupdate()
+    if paused then return end
+
     Stage.updateSequence()
 
     Characters.updateBodies()
@@ -666,6 +678,7 @@ function Stage.fixedupdateGui(gui)
 end
 
 function Stage.update(dsecs, fixedfrac)
+    if paused then fixedfrac = 0 end
     Characters.update(dsecs, fixedfrac)
 end
 
@@ -676,6 +689,7 @@ function Stage.setUniform(var, ...)
 end
 
 function Stage.draw(fixedfrac)
+    if paused then fixedfrac = 0 end
     love.graphics.setShader(shader)
     if map.backgroundcolor then
         love.graphics.clear(

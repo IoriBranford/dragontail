@@ -16,7 +16,6 @@ local isAsset = Assets.isAsset
 local getAsset = Assets.get
 local GamePhase = {}
 
-local paused
 local pauselocked
 local stagepath = "data/stage_banditcave.lua"
 local playerwon
@@ -27,7 +26,6 @@ local movie ---@type Movie
 
 function GamePhase.loadphase(stagepath_, startroom)
     stagepath = stagepath_ or stagepath
-    paused = false
     pauselocked = false
     local unifont = Assets.getFont("Unifont", 16)
     love.graphics.setFont(unifont)
@@ -71,6 +69,8 @@ function GamePhase.loadphase(stagepath_, startroom)
     Gui.gameplay:showOnlyNamed("hud", "input")
     Gui.options:showOnlyNamed()
     Gui:clearMenuStack()
+
+    love.event.connectAll(Stage)
     love.event.connectAll(Gui)
 
     playerwon = nil
@@ -88,8 +88,8 @@ function GamePhase.setPaused(newpaused, withmenu)
     if pauselocked then
         return
     end
-    paused = newpaused
-    if paused then
+    Stage.pause(newpaused)
+    if Stage.paused() then
         if withmenu then
             Gui:pushMenu(pausemenu)
         end
@@ -123,13 +123,13 @@ end
 ---@param gamepad love.Joystick
 function GamePhase.gamepadpressed(gamepad, button)
     if button == "start" then
-        GamePhase.setPaused(not paused, true)
+        GamePhase.setPaused(not Stage.paused(), true)
         return "stop"
     elseif button == "back" then
         if Characters.isTimeToClearLostEnemies() then
             Characters.clearEnemies()
         end
-        -- GamePhase.setPaused(not paused, false)
+        -- GamePhase.setPaused(not Stage.paused(), false)
         return "stop"
     end
 end
@@ -142,7 +142,7 @@ function GamePhase.keypressed(key)
     end
 
     if key == "escape" then
-        if not paused then
+        if not Stage.paused() then
             GamePhase.setPaused(true, true)
             return "stop"
         end
@@ -176,9 +176,6 @@ local function fixedupdateInputDisplay()
 end
 
 function GamePhase.fixedupdate()
-    if not paused then
-        Stage.fixedupdate()
-    end
     if movie then
         local ok, err = movie:play()
         if not ok then print(err) end
@@ -208,24 +205,5 @@ function GamePhase.gameOver(won)
     end
 end
 
-function GamePhase.update(dsecs, fixedfrac)
-    Stage.update(dsecs, paused and 0 or fixedfrac)
-end
-
-function GamePhase.debug_drawStageUnzoomed(fixedfrac)
-    love.graphics.push()
-    love.graphics.translate(
-        (love.graphics.getWidth()  - Stage.CameraWidth ) / 2,
-        (love.graphics.getHeight() - Stage.CameraHeight) / 2)
-    Stage.draw(paused and 0 or fixedfrac)
-    love.graphics.pop()
-end
-
-function GamePhase.draw(fixedfrac)
-    Dragontail.draw(function()
-        Stage.draw(paused and 0 or fixedfrac)
-        if movie then moviemap:draw() end
-    end, fixedfrac)
-end
 
 return GamePhase
