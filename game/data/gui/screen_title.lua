@@ -9,8 +9,8 @@ return {
   height = 15,
   tilewidth = 16,
   tileheight = 18,
-  nextlayerid = 45,
-  nextobjectid = 250,
+  nextlayerid = 42,
+  nextobjectid = 242,
   properties = {},
   tilesets = {
     {
@@ -232,7 +232,7 @@ return {
     },
     {
       type = "group",
-      id = 35,
+      id = 17,
       name = "TitleHit",
       class = "",
       visible = true,
@@ -241,16 +241,12 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      tintcolor = { 255, 255, 255 },
-      properties = {
-        ["hitsound"] = "../sounds/combat/heavyswingandhit.ogg",
-        ["script"] = "Dragontail.Movie.Title"
-      },
+      properties = {},
       layers = {
         {
           type = "objectgroup",
           draworder = "topdown",
-          id = 36,
+          id = 41,
           name = "directions",
           class = "",
           visible = true,
@@ -279,18 +275,32 @@ return {
                 { x = -520, y = -36 }
               },
               properties = {}
+            },
+            {
+              id = 241,
+              name = "shaking",
+              type = "",
+              shape = "point",
+              x = 0,
+              y = 0,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {}
             }
           }
         },
         {
           type = "group",
-          id = 38,
+          id = 35,
           name = "fg",
           class = "",
           visible = true,
           opacity = 1,
-          offsetx = 0,
-          offsety = 0,
+          offsetx = -92,
+          offsety = -130.5,
           parallaxx = 1,
           parallaxy = 1,
           tintcolor = { 255, 255, 255 },
@@ -299,13 +309,13 @@ return {
             {
               type = "imagelayer",
               image = "../sprites/ui/title/illust/07 Thug_L.png",
-              id = 39,
+              id = 36,
               name = "enemy",
               class = "",
               visible = true,
               opacity = 1,
-              offsetx = -20,
-              offsety = -148.5,
+              offsetx = 68,
+              offsety = -27,
               parallaxx = 1,
               parallaxy = 1,
               tintcolor = { 255, 255, 255 },
@@ -316,13 +326,13 @@ return {
             {
               type = "imagelayer",
               image = "../sprites/ui/title/illust/08 effects L.png",
-              id = 40,
+              id = 37,
               name = "hit",
               class = "",
               visible = true,
               opacity = 1,
-              offsetx = -68,
-              offsety = -112.5,
+              offsetx = 20,
+              offsety = 9,
               parallaxx = 1,
               parallaxy = 1,
               tintcolor = { 255, 255, 255 },
@@ -331,8 +341,9 @@ return {
               properties = {}
             },
             {
-              type = "group",
-              id = 41,
+              type = "imagelayer",
+              image = "../sprites/ui/title/illust/09 Rose.png",
+              id = 38,
               name = "Rose",
               class = "",
               visible = true,
@@ -342,43 +353,26 @@ return {
               parallaxx = 1,
               parallaxy = 1,
               tintcolor = { 255, 255, 255 },
-              properties = {},
-              layers = {
-                {
-                  type = "imagelayer",
-                  image = "../sprites/ui/title/illust/09 Rose.png",
-                  id = 42,
-                  name = "Rose",
-                  class = "",
-                  visible = true,
-                  opacity = 1,
-                  offsetx = -88,
-                  offsety = -121.5,
-                  parallaxx = 1,
-                  parallaxy = 1,
-                  tintcolor = { 255, 255, 255 },
-                  repeatx = false,
-                  repeaty = false,
-                  properties = {}
-                },
-                {
-                  type = "imagelayer",
-                  image = "../sprites/ui/title/illust/10 swipe.png",
-                  id = 43,
-                  name = "swing",
-                  class = "",
-                  visible = true,
-                  opacity = 1,
-                  offsetx = -156,
-                  offsety = -117,
-                  parallaxx = 1,
-                  parallaxy = 1,
-                  tintcolor = { 255, 255, 255 },
-                  repeatx = false,
-                  repeaty = false,
-                  properties = {}
-                }
-              }
+              repeatx = false,
+              repeaty = false,
+              properties = {}
+            },
+            {
+              type = "imagelayer",
+              image = "../sprites/ui/title/illust/10 swipe.png",
+              id = 39,
+              name = "swing",
+              class = "",
+              visible = true,
+              opacity = 1,
+              offsetx = -68,
+              offsety = 4.5,
+              parallaxx = 1,
+              parallaxy = 1,
+              tintcolor = { 255, 255, 255 },
+              repeatx = false,
+              repeaty = false,
+              properties = {}
             }
           }
         }
@@ -387,20 +381,19 @@ return {
     {
       type = "objectgroup",
       draworder = "index",
-      id = 44,
+      id = 18,
       name = "menu",
-      class = "",
+      class = "Gui.Menu",
       visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      tintcolor = { 255, 255, 255 },
       properties = {},
       objects = {
         {
-          id = 241,
+          id = 106,
           name = "",
           type = "",
           shape = "rectangle",
@@ -411,10 +404,14 @@ return {
           rotation = 0,
           opacity = 1,
           visible = false,
-          properties = {}
+          properties = {
+            ["color"] = "#e0641013",
+            ["linecolor"] = "#ffff6161",
+            ["roundcorners"] = 2
+          }
         },
         {
-          id = 242,
+          id = 182,
           name = "",
           type = "Gui.Cursor",
           shape = "rectangle",
@@ -427,11 +424,14 @@ return {
           gid = 21,
           visible = true,
           properties = {
-            ["alignx"] = 0.5
+            ["alignx"] = 0.5,
+            ["aligny"] = 0,
+            ["asetag"] = "Spit0",
+            ["movesound"] = "../sounds/combat/arrowhit.mp3"
           }
         },
         {
-          id = 243,
+          id = 183,
           name = "",
           type = "Gui.Cursor",
           shape = "rectangle",
@@ -444,11 +444,14 @@ return {
           gid = 21,
           visible = true,
           properties = {
-            ["alignx"] = -0.5
+            ["alignx"] = -0.5,
+            ["aligny"] = 0,
+            ["asetag"] = "Spit0",
+            ["movesound"] = "../sounds/combat/arrowhit.mp3"
           }
         },
         {
-          id = 244,
+          id = 102,
           name = "START",
           type = "Gui.Button",
           shape = "text",
@@ -467,11 +470,15 @@ return {
           halign = "center",
           valign = "center",
           properties = {
-            ["action"] = "restartStage"
+            ["action"] = "restartStage",
+            ["color2"] = "#ffffd8d8",
+            ["frequency"] = 30,
+            ["presssound"] = "../sounds/combat/firehit.mp3",
+            ["selectanimation"] = "colorCycle"
           }
         },
         {
-          id = 245,
+          id = 223,
           name = "START",
           type = "Gui.Button",
           shape = "text",
@@ -490,11 +497,15 @@ return {
           halign = "center",
           valign = "center",
           properties = {
-            ["action"] = "startTraining"
+            ["action"] = "startTraining",
+            ["color2"] = "#ffffd8d8",
+            ["frequency"] = 30,
+            ["presssound"] = "../sounds/combat/firehit.mp3",
+            ["selectanimation"] = "colorCycle"
           }
         },
         {
-          id = 246,
+          id = 104,
           name = "START",
           type = "Gui.Button",
           shape = "text",
@@ -514,11 +525,15 @@ return {
           valign = "center",
           properties = {
             ["action"] = "openMenu",
-            ["guipath"] = "options.simple"
+            ["color2"] = "#ffffd8d8",
+            ["frequency"] = 30,
+            ["guipath"] = "options.simple",
+            ["presssound"] = "../sounds/combat/firehit.mp3",
+            ["selectanimation"] = "colorCycle"
           }
         },
         {
-          id = 247,
+          id = 105,
           name = "START",
           type = "Gui.Button",
           shape = "text",
@@ -537,13 +552,17 @@ return {
           halign = "center",
           valign = "center",
           properties = {
-            ["action"] = "quitGame"
+            ["action"] = "quitGame",
+            ["color2"] = "#ffffd8d8",
+            ["frequency"] = 30,
+            ["presssound"] = "../sounds/combat/firehit.mp3",
+            ["selectanimation"] = "colorCycle"
           }
         },
         {
-          id = 248,
+          id = 198,
           name = "START",
-          type = "",
+          type = "Gui.Button",
           shape = "text",
           x = 56,
           y = 171,
@@ -561,11 +580,15 @@ return {
           valign = "center",
           properties = {
             ["action"] = "openURL",
+            ["color2"] = "#ffffd8d8",
+            ["frequency"] = 30,
+            ["presssound"] = "../sounds/combat/firehit.mp3",
+            ["selectanimation"] = "colorCycle",
             ["url"] = "https://ioribranford.itch.io/rose-of-dragontail"
           }
         },
         {
-          id = 249,
+          id = 219,
           name = "Rate & Comment",
           type = "",
           shape = "text",
