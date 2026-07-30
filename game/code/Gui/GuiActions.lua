@@ -2,6 +2,7 @@ local Audio     = require "System.Audio"
 local Platform     = require "System.Platform"
 local Config       = require "System.Config"
 local Window       = require "System.Window"
+local pathlite     = require "pathlite"
 
 ---@module 'GuiActions'
 local GuiActions = class()
@@ -25,8 +26,24 @@ function GuiActions.openMenu(gui, element)
     end
 end
 
+function GuiActions.openMenuMap(gui, element)
+    local Gui          = require "Gui"
+    local menugui = Gui.new(pathlite.normjoin(gui.directory, element.mapfile))
+    local menu = menugui:get(element.menupath)
+    if menu then
+        love.event.connectAll(menugui, "%sconnection")
+        menugui:pushMenu(menu)
+    end
+end
+
+---comment
+---@param gui Gui
+---@param element GuiObject
 function GuiActions.closeMenu(gui, element)
     gui:popMenu()
+    if #gui.menustack <= 0 then
+        love.event.disconnectAll(gui, "%sconnection")
+    end
 end
 
 function GuiActions.quitGame(gui, element)

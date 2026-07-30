@@ -130,6 +130,7 @@ function Gui.new(map, rootpath)
     end
     local self = Gui.get(map.layers, rootpath) or map.layers
     assert(self.type == "group", "GUI root layer must be a group")
+    self.directory = map.directory
     self.width = map.width*map.tilewidth
     self.height = map.height*map.tileheight
     self.class = "Gui"
