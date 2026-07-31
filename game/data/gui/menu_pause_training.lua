@@ -25,7 +25,7 @@ return {
       type = "objectgroup",
       draworder = "index",
       id = 32,
-      name = "trainingmenu",
+      name = "pausemenu",
       class = "Gui.Menu",
       visible = true,
       opacity = 1,

@@ -522,13 +522,13 @@ function Stage.fixedupdate()
     scene:animate(1)
 end
 
----@param gui Gui
-function Stage.fixedupdateGui(gui)
+---@param hudgui Gui
+function Stage.fixedupdateHud(hudgui)
     local players = Characters.getGroup("players") ---@type Player[]
     local player = players[1]
 
     local healthpercent = player.health / player.maxhealth
-    local hud = gui:get("gameplay.hud")
+    local hud = hudgui:get("hud")
     if hud then
         hud.health:setPercent(healthpercent)
 
@@ -556,7 +556,7 @@ function Stage.fixedupdateGui(gui)
         end
     end
 
-    local portrait = gui:get("gameplay.hud.portrait")
+    local portrait = hudgui:get("hud.portrait")
     if portrait then
         portrait.originx = portrait.width/2 + sin(player.hurtstun)
         if winningteam == "players" then
@@ -573,7 +573,7 @@ function Stage.fixedupdateGui(gui)
     -- local runpercent = player.runenergy / player.runenergymax
     -- hud.run:setPercent(runpercent)
 
-    local weaponhud = gui:get("gameplay.hud_weaponslots")
+    local weaponhud = hudgui:get("hud_weaponslots")
     if weaponhud then
         local inventory = player.inventory
         if inventory and #inventory > 0 then
@@ -640,7 +640,7 @@ function Stage.fixedupdateGui(gui)
         end
     end
 
-    local go = gui:get("gameplay.hud_go")
+    local go = hudgui:get("hud_go")
     if go then
         local path = Stage.getCurrentCameraPath()
         if Stage.isInNextRoom() or not path then
@@ -671,7 +671,7 @@ function Stage.fixedupdateGui(gui)
         end
     end
 
-    local clearenemiesprompt = gui:get("gameplay.hud.clearenemiesprompt")
+    local clearenemiesprompt = hudgui:get("hud.clearenemiesprompt")
     if clearenemiesprompt then
         clearenemiesprompt.visible = Characters.isTimeToClearLostEnemies()
     end

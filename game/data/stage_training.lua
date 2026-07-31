@@ -12,7 +12,7 @@ return {
   nextlayerid = 9,
   nextobjectid = 54,
   properties = {
-    ["pausemenu"] = "gameplay.trainingmenu",
+    ["pausemenumap"] = "gui/menu_pause_training.lua",
     ["runphase"] = "Dragontail.GamePhase"
   },
   tilesets = {

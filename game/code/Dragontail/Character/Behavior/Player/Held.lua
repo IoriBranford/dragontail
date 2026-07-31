@@ -1,7 +1,6 @@
 local Behavior = require "Dragontail.Character.Behavior"
 local Guard    = require "Dragontail.Character.Component.Guard"
 local HoldOpponent = require "Dragontail.Character.Component.HoldOpponent"
-local Gui          = require "Dragontail.Gui"
 local StateMachine = require "Dragontail.Character.Component.StateMachine"
 local Mana         = require "Dragontail.Character.Component.Mana"
 
@@ -71,10 +70,13 @@ function PlayerHeld:fixedupdate()
         return "breakaway", holder
     end
 
-    local ui = Gui:get("gameplay.hud_breakgrab")
-    if ui then
+    local axis = math.abs(holddirx) < math.abs(holddiry) and "y" or "x"
+    local initholdstrength = assert(holder.initialholdstrength)
+    local progress = 1 - holdstrength / initholdstrength
+    love.event.send("playerheld", player, holder, axis, progress)
+
+    local function updatePlayerHeldHud(ui)
         ui.visible = true
-        local axis = math.abs(holddirx) < math.abs(holddiry) and "y" or "x"
 
         local camera = player.camera
         local promptover = player--axis == "y" and holddiry > 0 and holder or player
@@ -100,8 +102,6 @@ function PlayerHeld:fixedupdate()
             end
         end
 
-        local initholdstrength = assert(holder.initialholdstrength)
-        local progress = 1 - holdstrength/initholdstrength
         local gaugel, gauger, gaugeu, gauged, gaugex, gaugey =
             ui.gaugel, ui.gauger, ui.gaugeu, ui.gauged, ui.gaugex, ui.gaugey
         if gaugel then
@@ -126,18 +126,12 @@ function PlayerHeld:fixedupdate()
 end
 
 function PlayerHeld:timeout(...)
-    local ui = Gui:get("gameplay.hud_breakgrab")
-    if ui then
-        ui.visible = false
-    end
+    love.event.send("playerunheld")
     return ...
 end
 
 function PlayerHeld:interrupt(...)
-    local ui = Gui:get("gameplay.hud_breakgrab")
-    if ui then
-        ui.visible = false
-    end
+    love.event.send("playerunheld")
     return ...
 end
 

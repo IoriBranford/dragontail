@@ -7,7 +7,6 @@ local DirectionalAnimation = require "Dragontail.Character.Component.Directional
 local Face                 = require "Dragontail.Character.Component.Face"
 local Attacker             = require "Dragontail.Character.Component.Attacker"
 local Body                 = require "Dragontail.Character.Component.Body"
-local Gui                  = require "Dragontail.Gui"
 
 --- Attacks:
 --- - Lance charge
@@ -174,11 +173,13 @@ end
 
 function BanditBoss:fixedupdate()
     Enemy.fixedupdate(self)
-    local hud = Gui:get("gameplay.hud_boss")
-    local health = hud.health
-    ---@cast health Gauge
-    health:setPercent(self.health / self.maxhealth)
-    hud.visible = Audio.isPlayingMusic() and self.health > 0
+    love.event.send("bosshealth", self.health, self.maxhealth)
+    local function updateBossHealth(hud, health, maxhealth)
+        local healthbar = hud.health
+        ---@cast health Gauge
+        healthbar:setPercent(self.health / self.maxhealth)
+        hud.visible = Audio.isPlayingMusic() and self.health > 0
+    end
 end
 
 function BanditBoss:duringPrepareAttack(target)

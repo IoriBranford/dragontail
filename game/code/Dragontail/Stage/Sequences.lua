@@ -18,11 +18,9 @@ function Sequences.playerExitToNextArea()
         StateMachine.start(player, "sequenceWalkTo", player.x, player.y)--, TimeLimit)
     end
 
-    local Gui        = require "Dragontail.Gui"
-    local wipe = Gui.wipe.diagonalCurtains ---@cast wipe Wipe
-    Characters.clearEnemies()
-    wipe:start("close")
-    coroutine.waitfor(function() return wipe:isDone() end)
+    love.event.send("wipeclose")
+    coroutine.wait(30)
+    love.event.send("wipeopen")
 
     local camerawarp = room.camerawarpwhendone
     Stage.warpCamera(camerawarp.x, camerawarp.y)
@@ -32,10 +30,9 @@ end
 function Sequences.playerEnterArea()
     local players = Characters.getGroup("players")
 
-    local Gui        = require "Dragontail.Gui"
-    local wipe = Gui.wipe.diagonalCurtains ---@cast wipe Wipe
-    wipe:start("open")
-    coroutine.waitfor(function() return wipe:isDone() end)
+    love.event.send("wipeclose")
+    coroutine.wait(30)
+    love.event.send("wipeopen")
 
     for _, player in ipairs(players) do
         StateMachine.start(player, "walk")
@@ -76,11 +73,9 @@ function Sequences.playerBreakIntoNextArea()
         end)
     end
 
-    local Gui        = require "Dragontail.Gui"
-    local wipe = Gui.wipe.diagonalCurtains ---@cast wipe Wipe
-    -- Characters.clearEnemies()
-    wipe:start("close")
-    coroutine.waitfor(function() return wipe:isDone() end)
+    love.event.send("wipeclose")
+    coroutine.wait(30)
+    love.event.send("wipeopen")
 
     local camerawarp = room.camerawarpwhendone
     Stage.warpCamera(camerawarp.x, camerawarp.y)

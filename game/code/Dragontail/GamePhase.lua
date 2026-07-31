@@ -4,7 +4,7 @@ local Tiled = require "Tiled"
 local Database= require "Data.Database"
 local Assets= require "Tiled.Assets"
 local Audio = require "System.Audio"
-local Gui = require "Dragontail.Gui"
+local Gui = require "Gui"
 local Config = require "System.Config"
 local Inputs = require "System.Inputs"
 local Player = require "Dragontail.Character.Player"
@@ -13,6 +13,8 @@ local Characters     = require "Dragontail.Stage.Characters"
 local Dragontail     = require "Dragontail"
 local Color          = require "Tiled.Color"
 local fixedupdate    = require "fixedupdate"
+local End            = require "Dragontail.Movie.End"
+local pathlite       = require "pathlite"
 local isAsset = Assets.isAsset
 local getAsset = Assets.get
 local GamePhase = {}
@@ -20,10 +22,11 @@ local GamePhase = {}
 local pauselocked
 local stagepath = "data/stage_banditcave.lua"
 local playerwon
-local pausemenu
+local pausemap ---@type Gui
+local hudmap ---@type Gui
+local wipemap ---@type Gui
 
-local moviemap
-local movie ---@type Movie
+local movie
 
 function GamePhase.loadphase(stagepath_, startroom)
     stagepath = stagepath_ or stagepath
@@ -52,13 +55,13 @@ function GamePhase.loadphase(stagepath_, startroom)
         end
     end)
     local map = Assets.maps[stagepath]
-    pausemenu = map.pausemenu and Gui:get(map.pausemenu)
-        or Gui.gameplay.pausemenu
-
-    moviemap = Tiled.Map.load("data/movies_gameplay.lua")
-    moviemap:indexLayersByName()
-    moviemap:indexLayerObjectsByName()
-    moviemap:bindClasses()
+    local pausemapfile = map.pausemenumap
+    if pausemapfile then
+        pausemapfile = pathlite.normjoin(map.directory, pausemapfile)
+    end
+    pausemap = Gui.new(pausemapfile or "data/gui/menu_pause_combat.lua")
+    pausemap:eventconnect()
+    pausemap:clearMenuStack()
 
     Tiled.Assets.uncacheMarked()
     Tiled.Assets.packTiles()
@@ -66,13 +69,19 @@ function GamePhase.loadphase(stagepath_, startroom)
 
     Stage.init(startroom)
 
-    Gui:showOnlyNamed("gameplay", "wipe", "options")
-    Gui.gameplay:showOnlyNamed("hud", "input")
-    Gui.options:showOnlyNamed()
-    Gui:clearMenuStack()
+    hudmap = Gui.new("data/gui/hud_combat.lua")
+    hudmap:eventconnect()
+    hudmap:clearMenuStack()
+    hudmap:showOnlyNamed("hud")
+
+    wipemap = Gui.new("data/gui/wipe_diagonalcurtains.lua")
+    wipemap:eventconnect()
+    local wipe = wipemap.wipe ---@cast wipe Wipe
+    wipe:start("open")
 
     love.event.connectAll(Stage)
-    love.event.connectAll(Gui)
+    love.event.connectAll(hudmap)
+    love.event.connectAll(wipemap, "%sconnection")
 
     playerwon = nil
 end
@@ -82,7 +91,11 @@ function GamePhase.quitphase()
     Assets.markAllToUncache()
     Database.clear()
     Audio.stop()
-    moviemap, movie = nil, nil
+
+    pausemap = nil
+    hudmap = nil
+    wipemap = nil
+    movie = nil
 end
 
 function GamePhase.setPaused(newpaused, withmenu)
@@ -92,10 +105,13 @@ function GamePhase.setPaused(newpaused, withmenu)
     Stage.pause(newpaused)
     if Stage.paused() then
         if withmenu then
-            Gui:pushMenu(pausemenu)
+            pausemap:showOnlyNamed("pausemenu")
+            pausemap:pushMenu(pausemap.pausemenu)
+            love.event.connectAll(pausemap, "%sconnection")
         end
     else
-        Gui:clearMenuStack()
+        pausemap:clearMenuStack()
+        love.event.disconnectAll(pausemap, "%sconnection")
     end
 end
 
@@ -151,7 +167,7 @@ function GamePhase.keypressed(key)
 end
 
 local function fixedupdateInputDisplay()
-    local input = Gui:get("gameplay.input")
+    local input = hudmap:get("input")
     if input then
         ---@cast input ObjectGroup
         input.visible = Config.drawinput
@@ -178,15 +194,12 @@ end
 
 function GamePhase.fixedupdate()
     if movie then
-        local ok, err = movie:play()
-        if not ok then print(err) end
-
-        if movie:ended() then
-            Gui:pushMenu(Gui.gameplay.victory)
+        if movie() then
+            movie = nil
         end
     end
     fixedupdateInputDisplay()
-    Stage.fixedupdateGui(Gui)
+    Stage.fixedupdateHud(hudmap)
 end
 
 function GamePhase.setPauseLocked(locked)
@@ -197,12 +210,34 @@ function GamePhase.gameOver(won)
     playerwon = won or false
     GamePhase.setPauseLocked(true)
     if won then
-        movie = moviemap.layers.victory
-        if not movie then
-            Gui:pushMenu(Gui.gameplay.victory)
-        end
+        local victorymap = Gui.new("data/gui/menu_stage_clear.lua")
+        victorymap:eventconnect()
+        love.event.connectAll(victorymap)
+
+        movie = coroutine.wrap(function()
+            local menu = victorymap.menu
+            menu.visible = false
+            local shaking = victorymap.movie.direction.shaking
+            local RoseUppercut = coroutine.wrap(End)
+            local ok, status = pcall(RoseUppercut, victorymap.movie)
+            while ok and status ~= true do
+                coroutine.yield()
+                ok, status = pcall(RoseUppercut)
+                if status == "hit" then
+                    menu.visible = true
+                end
+                menu.x, menu.y = shaking.x, shaking.y
+            end
+            if not ok then print(status) end
+            victorymap:pushMenu(menu)
+            return true
+        end)
+        movie()
     else
-        Gui:pushMenu(Gui.gameplay.gameover)
+        local gameovermap = Gui.new("data/gui/menu_game_over.lua")
+        gameovermap:eventconnect()
+        gameovermap:pushMenu(gameovermap.menu)
+        love.event.connectAll(gameovermap)
     end
 end
 
