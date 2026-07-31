@@ -48,7 +48,7 @@ function Gui.new(map, rootpath)
     for _, layer in ipairs(self) do
         init(layer)
     end
-    self:resize(love.graphics.getWidth(), love.graphics.getHeight())
+    Gui.resize(self, love.graphics.getWidth(), love.graphics.getHeight())
     return self
 end
 
