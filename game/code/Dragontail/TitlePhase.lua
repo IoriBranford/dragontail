@@ -42,7 +42,7 @@ function TitlePhase.pushMainMenu()
     scenemap:showOnlyNamed("bg", "etc", "TitleHit")
     sceneco = coroutine.wrap(function ()
         local menu = scenemap.menu
-        local shaking = scenemap.TitleHit.directions.shaking
+        local shaking = scenemap.TitleHit.shaking
         local titlehit = coroutine.wrap(TitleHit)
         local ok, status = pcall(titlehit, scenemap.TitleHit)
         while ok and status ~= true do
