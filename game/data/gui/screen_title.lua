@@ -9,7 +9,7 @@ return {
   height = 15,
   tilewidth = 16,
   tileheight = 18,
-  nextlayerid = 42,
+  nextlayerid = 43,
   nextobjectid = 242,
   properties = {},
   tilesets = {
@@ -239,20 +239,6 @@ return {
                 { x = -520, y = -36 }
               },
               properties = {}
-            },
-            {
-              id = 241,
-              name = "shaking",
-              type = "",
-              shape = "point",
-              x = 0,
-              y = 0,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              properties = {}
             }
           }
         },
@@ -339,6 +325,20 @@ return {
               properties = {}
             }
           }
+        },
+        {
+          type = "group",
+          id = 42,
+          name = "shaking",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          layers = {}
         }
       }
     },

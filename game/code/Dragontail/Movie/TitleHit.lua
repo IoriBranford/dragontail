@@ -13,6 +13,8 @@ local function TitleHit(layers)
     directions.visible = false
     assert(directions and directions.type == "objectgroup")
     ---@cast directions ObjectGroup
+    local shaking = layers.shaking
+    shaking.visible = false
 
     local path = directions.path
     coRelativePath(path, fg, 50)
@@ -31,7 +33,7 @@ local function TitleHit(layers)
 
     yield("hit")
 
-    local shaking = directions.shaking
+    shaking.visible = true
     local rose = fg.Rose
     local swing = fg.swing
     local enemy = fg.enemy

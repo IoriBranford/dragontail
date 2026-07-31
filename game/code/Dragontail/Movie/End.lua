@@ -10,7 +10,7 @@ local coDrift    = require "Dragontail.Movie.coDrift"
 local function RoseUppercut (movie)
     local rose = (movie.Rose)
     local path = (movie.direction.path)
-    local shaking = movie.direction.shaking
+    local shaking = movie.shaking
     shaking.visible = false
     movie.direction.visible = false
     rose:setVisible(true)

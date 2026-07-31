@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="20" nextobjectid="15">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="21" nextobjectid="15">
  <editorsettings>
   <export target="movies_pr.lua" format="lua"/>
  </editorsettings>
@@ -9,7 +9,7 @@
  <group id="7" name="trailerstart" class="Tiled.Movie" tintcolor="#ffffff">
   <properties>
    <property name="hitsound" type="file" value="sounds/combat/heavyswingandhit.ogg"/>
-   <property name="script" value="Dragontail.Movie.Title"/>
+   <property name="script" value="Dragontail.Movie.TitleHit"/>
   </properties>
   <objectgroup id="8" name="directions" tintcolor="#ffffff">
    <object id="2" name="path" x="520" y="36">
@@ -26,44 +26,44 @@
    <imagelayer id="12" name="hit" tintcolor="#ffffff" offsetx="-68" offsety="-112.5">
     <image source="sprites/ui/title/illust/08 effects L.png" width="960" height="600"/>
    </imagelayer>
-   <group id="13" name="Rose" tintcolor="#ffffff">
-    <imagelayer id="14" name="Rose" tintcolor="#ffffff" offsetx="-88" offsety="-121.5">
-     <image source="sprites/ui/title/illust/09 Rose.png" width="960" height="600"/>
-    </imagelayer>
-    <imagelayer id="15" name="swing" tintcolor="#ffffff" offsetx="-156" offsety="-117">
-     <image source="sprites/ui/title/illust/10 swipe.png" width="960" height="600"/>
-    </imagelayer>
-   </group>
+   <imagelayer id="14" name="Rose" tintcolor="#ffffff" offsetx="-88" offsety="-121.5">
+    <image source="sprites/ui/title/illust/09 Rose.png" width="960" height="600"/>
+   </imagelayer>
+   <imagelayer id="15" name="swing" tintcolor="#ffffff" offsetx="-156" offsety="-117">
+    <image source="sprites/ui/title/illust/10 swipe.png" width="960" height="600"/>
+   </imagelayer>
   </group>
-  <objectgroup id="16" name="title" tintcolor="#ffffff">
-   <object id="3" name="Rose of" type="Gui.Button" x="16" y="112.5" width="180" height="49.5">
-    <properties>
-     <property name="action" value="restartStage"/>
-     <property name="color2" type="color" value="#ffff6b6b"/>
-     <property name="frequency" type="float" value="30"/>
-     <property name="selectanimation" value="colorCycle"/>
-    </properties>
-    <text fontfamily="The Rumor" pixelsize="48" wrap="1" color="#e02121" halign="center" valign="bottom">ROSE of</text>
-   </object>
-   <object id="4" name="Dragontail" type="Gui.Button" x="32" y="162" width="244" height="49.5">
-    <properties>
-     <property name="action" value="restartStage"/>
-     <property name="color2" type="color" value="#ffff6b6b"/>
-     <property name="frequency" type="float" value="30"/>
-     <property name="selectanimation" value="colorCycle"/>
-    </properties>
-    <text fontfamily="The Rumor" pixelsize="48" wrap="1" color="#e02121" halign="center" valign="bottom">DRAGONTAIL</text>
-   </object>
-   <object id="5" name="Rising Tide 4" type="Gui.Button" x="48" y="211.5" width="184" height="36">
-    <properties>
-     <property name="action" value="restartStage"/>
-     <property name="color2" type="color" value="#ffff6b6b"/>
-     <property name="frequency" type="float" value="30"/>
-     <property name="selectanimation" value="colorCycle"/>
-    </properties>
-    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">Demo 2026.2</text>
-   </object>
-  </objectgroup>
+  <group id="20" name="shaking">
+   <objectgroup id="16" name="title" tintcolor="#ffffff">
+    <object id="3" name="Rose of" type="Gui.Button" x="16" y="112.5" width="180" height="49.5">
+     <properties>
+      <property name="action" value="restartStage"/>
+      <property name="color2" type="color" value="#ffff6b6b"/>
+      <property name="frequency" type="float" value="30"/>
+      <property name="selectanimation" value="colorCycle"/>
+     </properties>
+     <text fontfamily="The Rumor" pixelsize="48" wrap="1" color="#e02121" halign="center" valign="bottom">ROSE of</text>
+    </object>
+    <object id="4" name="Dragontail" type="Gui.Button" x="32" y="162" width="244" height="49.5">
+     <properties>
+      <property name="action" value="restartStage"/>
+      <property name="color2" type="color" value="#ffff6b6b"/>
+      <property name="frequency" type="float" value="30"/>
+      <property name="selectanimation" value="colorCycle"/>
+     </properties>
+     <text fontfamily="The Rumor" pixelsize="48" wrap="1" color="#e02121" halign="center" valign="bottom">DRAGONTAIL</text>
+    </object>
+    <object id="5" name="Rising Tide 4" type="Gui.Button" x="48" y="211.5" width="184" height="36">
+     <properties>
+      <property name="action" value="restartStage"/>
+      <property name="color2" type="color" value="#ffff6b6b"/>
+      <property name="frequency" type="float" value="30"/>
+      <property name="selectanimation" value="colorCycle"/>
+     </properties>
+     <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">Demo 2026.2</text>
+    </object>
+   </objectgroup>
+  </group>
  </group>
  <group id="2" name="trailerend" class="Tiled.Movie" visible="0" tintcolor="#ffffff">
   <properties>
@@ -74,11 +74,11 @@
   <imagelayer id="18" name="bg" tintcolor="#ffffff">
    <image source="sprites/ui/title/illust/bg.png" width="480" height="270"/>
   </imagelayer>
-  <group id="6" name="Rose" offsetx="-244" offsety="-126">
-   <imagelayer id="3" name="Rose" tintcolor="#ffffff">
+  <group id="6" name="Rose">
+   <imagelayer id="3" name="Rose" tintcolor="#ffffff" offsetx="-276" offsety="-112.5">
     <image source="sprites/ui/title/illust/09 Rose.png" width="960" height="600"/>
    </imagelayer>
-   <imagelayer id="4" name="swipe" tintcolor="#ffffff" offsetx="-44" offsety="9">
+   <imagelayer id="4" name="swipe" tintcolor="#ffffff" offsetx="-320" offsety="-103.5">
     <image source="sprites/ui/title/illust/10 swipe.png" width="960" height="600"/>
    </imagelayer>
   </group>
@@ -87,7 +87,7 @@
     <polyline points="180,310.5 148,202.5 100,108 44,36 0,0"/>
    </object>
   </objectgroup>
-  <objectgroup id="17" name="callToAction">
+  <objectgroup id="17" name="shaking">
    <object id="7" name="PLAY THE DEMO" type="Gui.Button" x="276" y="54" width="180" height="108">
     <properties>
      <property name="action" value="restartStage"/>

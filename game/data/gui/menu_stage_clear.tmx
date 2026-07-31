@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="36" nextobjectid="239">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="37" nextobjectid="239">
  <editorsettings>
   <export target="menu_stage_clear.lua" format="lua"/>
  </editorsettings>
@@ -21,10 +21,8 @@
    <object id="218" name="path" x="0" y="0">
     <polyline points="180,310.5 148,202.5 100,108 44,36 0,0"/>
    </object>
-   <object id="238" name="shaking" x="0" y="0">
-    <point/>
-   </object>
   </objectgroup>
+  <group id="36" name="shaking"/>
  </group>
  <objectgroup id="26" name="menu" class="Gui.Menu">
   <object id="192" template="menu/Cursor.tx" type="Gui.Cursor" x="416" y="81">
