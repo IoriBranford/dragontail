@@ -1,5 +1,4 @@
 local Movement = require "Component.Movement"
-local Gui      = require "Dragontail.Gui"
 local coRelativePath = require "Dragontail.Movie.coRelativePath"
 local coHitShake     = require "Dragontail.Movie.coHitShake"
 local Audio          = require "System.Audio"

@@ -2,7 +2,6 @@ local Tiled = require "Tiled"
 local Dragontail = require "Dragontail"
 local Assets     = require "Tiled.Assets"
 local Movie      = require "Tiled.Movie"
-local Gui        = require "Dragontail.Gui"
 local Color      = require "Tiled.Color"
 local MoviePhase = {}
 
@@ -17,7 +16,6 @@ function MoviePhase.loadphase(file)
     moviemap = assert(Tiled.Map.load(file))
     moviemap:bindClasses()
 
-    Gui:showOnlyNamed()
     showoverlay = true
     time = 0
     pause = true
@@ -67,7 +65,6 @@ function MoviePhase.startMovie(i)
     moviemap:bindClasses()
     moviemap:indexLayersByName()
     moviemap:indexLayerObjectsByName()
-    Gui:showOnlyNamed()
 
     movie = moviemap.layers[i]
     moviemap.layers:showOnlyNamed(movie.name)
@@ -141,7 +138,6 @@ function MoviePhase.draw()
         local r,g,b = Color.unpack(bgc or Color.Black)
         love.graphics.clear(r,g,b)
         moviemap:draw()
-        Gui:draw()
         MoviePhase.drawOverlay()
         MoviePhase.drawError()
     end)
