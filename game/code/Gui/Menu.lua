@@ -136,12 +136,13 @@ function Menu:keypressed(key)
             inputsetter:loadConfigValue()
             self.activeinputsetter = nil
         end
-        return
+    else
+        local action = Menu[Menu.keyconfig[key]]
+        if type(action) == "function" then
+            action(self)
+        end
     end
-    local action = Menu[Menu.keyconfig[key]]
-    if type(action) == "function" then
-        action(self)
-    end
+    return "stop"
 end
 
 function Menu:gamepadpressed(gamepad, button)
@@ -155,12 +156,13 @@ function Menu:gamepadpressed(gamepad, button)
             inputsetter:loadConfigValue()
             self.activeinputsetter = nil
         end
-        return
+    else
+        local action = Menu[Menu.gamepadconfig[button]]
+        if type(action) == "function" then
+            action(self)
+        end
     end
-    local action = Menu[Menu.gamepadconfig[button]]
-    if type(action) == "function" then
-        action(self)
-    end
+    return "stop"
 end
 
 function Menu:itemAtPoint(x, y)
@@ -187,6 +189,7 @@ function Menu:touchpressed(id, x, y)
     end
     self.menutouchid = id
     self:selectButton(i)
+    return "stop"
 end
 
 function Menu:touchmoved(id, x, y, dx, dy)
@@ -197,14 +200,17 @@ function Menu:touchmoved(id, x, y, dx, dy)
     if i ~= self.cursorposition then
         self:selectButton(i)
     end
+    return i and "stop"
 end
 
 function Menu:touchreleased(id, x, y)
     if self.menutouchid ~= id then
         return
     end
-    self:pressSelectedButton()
     self.menutouchid = nil
+    if self:pressSelectedButton() then
+        return "stop"
+    end
 end
 
 function Menu:selectButton(i)
@@ -271,6 +277,7 @@ function Menu:pressSelectedButton()
     local button = self.menuitems[self.cursorposition]
     if button and button.press then
         button:press()
+        return true
     end
 end
 
