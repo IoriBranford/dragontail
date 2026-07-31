@@ -31,6 +31,7 @@ function GuiActions.openMenuMap(gui, element)
     local menugui = Gui.new(pathlite.normjoin(gui.directory, element.mapfile))
     local menu = menugui:get(element.menupath)
     if menu then
+        menugui:eventconnect()
         love.event.connectAll(menugui, "%sconnection")
         menugui:pushMenu(menu)
     end
