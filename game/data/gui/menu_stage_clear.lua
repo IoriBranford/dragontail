@@ -9,8 +9,8 @@ return {
   height = 15,
   tilewidth = 16,
   tileheight = 18,
-  nextlayerid = 34,
-  nextobjectid = 238,
+  nextlayerid = 36,
+  nextobjectid = 239,
   properties = {},
   tilesets = {
     {
@@ -24,12 +24,12 @@ return {
     {
       type = "group",
       id = 31,
-      name = "victory_Rose",
+      name = "movie",
       class = "",
       visible = true,
       opacity = 1,
-      offsetx = -264,
-      offsety = -153,
+      offsetx = 0,
+      offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
       properties = {
@@ -38,10 +38,57 @@ return {
       },
       layers = {
         {
-          type = "imagelayer",
-          image = "../sprites/ui/title/illust/09 Rose.png",
-          id = 29,
+          type = "group",
+          id = 35,
           name = "Rose",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = -276,
+          offsety = -112.5,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          layers = {
+            {
+              type = "imagelayer",
+              image = "../sprites/ui/title/illust/09 Rose.png",
+              id = 29,
+              name = "Rose",
+              class = "",
+              visible = true,
+              opacity = 1,
+              offsetx = 0,
+              offsety = 0,
+              parallaxx = 1,
+              parallaxy = 1,
+              repeatx = false,
+              repeaty = false,
+              properties = {}
+            },
+            {
+              type = "imagelayer",
+              image = "../sprites/ui/title/illust/10 swipe.png",
+              id = 30,
+              name = "swipe",
+              class = "",
+              visible = true,
+              opacity = 1,
+              offsetx = -44,
+              offsety = 9,
+              parallaxx = 1,
+              parallaxy = 1,
+              repeatx = false,
+              repeaty = false,
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 34,
+          name = "direction",
           class = "",
           visible = true,
           opacity = 1,
@@ -49,25 +96,44 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          repeatx = false,
-          repeaty = false,
-          properties = {}
-        },
-        {
-          type = "imagelayer",
-          image = "../sprites/ui/title/illust/10 swipe.png",
-          id = 30,
-          name = "swipe",
-          class = "",
-          visible = true,
-          opacity = 1,
-          offsetx = -44,
-          offsety = 9,
-          parallaxx = 1,
-          parallaxy = 1,
-          repeatx = false,
-          repeaty = false,
-          properties = {}
+          properties = {},
+          objects = {
+            {
+              id = 218,
+              name = "path",
+              type = "",
+              shape = "polyline",
+              x = 0,
+              y = 0,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polyline = {
+                { x = 180, y = 310.5 },
+                { x = 148, y = 202.5 },
+                { x = 100, y = 108 },
+                { x = 44, y = 36 },
+                { x = 0, y = 0 }
+              },
+              properties = {}
+            },
+            {
+              id = 238,
+              name = "shaking",
+              type = "",
+              shape = "point",
+              x = 0,
+              y = 0,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {}
+            }
+          }
         }
       }
     },
@@ -75,7 +141,7 @@ return {
       type = "objectgroup",
       draworder = "topdown",
       id = 26,
-      name = "victory",
+      name = "menu",
       class = "Gui.Menu",
       visible = true,
       opacity = 1,
@@ -224,27 +290,6 @@ return {
           pixelsize = 19,
           wrap = true,
           color = { 255, 255, 255 },
-          properties = {}
-        },
-        {
-          id = 218,
-          name = "Rosepath",
-          type = "",
-          shape = "polyline",
-          x = -260,
-          y = -153,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          polyline = {
-            { x = 0, y = 0 },
-            { x = 44, y = 36 },
-            { x = 100, y = 108 },
-            { x = 148, y = 202.5 },
-            { x = 180, y = 310.5 }
-          },
           properties = {}
         }
       }

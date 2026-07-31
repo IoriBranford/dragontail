@@ -29,8 +29,9 @@
   </object>
   <object id="228" template="menu/mainmenu/Button.tx" x="40" y="126" width="108" height="36">
    <properties>
-    <property name="action" value="openMenu"/>
-    <property name="guipath" value="options.simple"/>
+    <property name="action" value="openMenuMap"/>
+    <property name="mapfile" type="file" value="menu_options_simple.lua"/>
+    <property name="menupath" value="simple"/>
    </properties>
    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">OPTIONS</text>
   </object>
@@ -48,8 +49,9 @@
   </object>
   <object id="231" template="menu/mainmenu/Button.tx" x="64" y="234" width="24" height="36">
    <properties>
-    <property name="action" value="openMenu"/>
-    <property name="guipath" value="gameplay.debugmenu"/>
+    <property name="action" value="openMenuMap"/>
+    <property name="mapfile" type="file" value="menu_debug.lua"/>
+    <property name="menupath" value="debugmenu"/>
    </properties>
    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">...</text>
   </object>

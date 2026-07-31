@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="34" nextobjectid="238">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="35" nextobjectid="243">
  <editorsettings>
   <export target="menu_pause_combat.lua" format="lua"/>
  </editorsettings>
@@ -29,15 +29,16 @@
   </object>
   <object id="200" template="menu/mainmenu/Button.tx" x="40" y="126" width="108" height="36">
    <properties>
-    <property name="action" value="openMenu"/>
-    <property name="guipath" value="options.simple"/>
+    <property name="action" value="openMenuMap"/>
+    <property name="mapfile" type="file" value="menu_options_simple.lua"/>
+    <property name="menupath" value="simple"/>
    </properties>
    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">OPTIONS</text>
   </object>
   <object id="201" template="menu/mainmenu/Button.tx" x="48" y="162" width="100" height="36">
    <properties>
     <property name="action" value="openMenu"/>
-    <property name="guipath" value="gameplay.retrymenu"/>
+    <property name="guipath" value="retrymenu"/>
    </properties>
    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">RETRY</text>
   </object>
@@ -49,10 +50,36 @@
   </object>
   <object id="217" template="menu/mainmenu/Button.tx" x="64" y="234" width="24" height="36">
    <properties>
-    <property name="action" value="openMenu"/>
-    <property name="guipath" value="gameplay.debugmenu"/>
+    <property name="action" value="openMenuMap"/>
+    <property name="mapfile" type="file" value="menu_debug.lua"/>
+    <property name="menupath" value="debugmenu"/>
    </properties>
    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">...</text>
   </object>
+ </objectgroup>
+ <objectgroup id="34" name="retrymenu" class="Gui.Menu">
+  <properties>
+   <property name="backaction" value="closeMenu"/>
+  </properties>
+  <object id="238" template="menu/Panel.tx" x="136" y="90" width="208" height="90"/>
+  <object id="239" template="menu/pause/Button.tx" name="Restart checkpoint" type="Gui.Button" x="184" y="99" width="144" height="18">
+   <properties>
+    <property name="action" value="restartStageCheckpoint"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Last checkpoint</text>
+  </object>
+  <object id="240" template="menu/pause/Button.tx" name="Restart stage" type="Gui.Button" x="184" y="126" width="144" height="18">
+   <properties>
+    <property name="action" value="restartStage"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Stage start</text>
+  </object>
+  <object id="241" template="menu/pause/Button.tx" name="Cancel" type="Gui.Button" x="184" y="153">
+   <properties>
+    <property name="action" value="closeMenu"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Cancel</text>
+  </object>
+  <object id="242" template="menu/Cursor.tx" type="Gui.Cursor" x="152" y="108"/>
  </objectgroup>
 </map>

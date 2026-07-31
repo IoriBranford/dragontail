@@ -143,10 +143,11 @@ return {
           halign = "center",
           valign = "center",
           properties = {
-            ["action"] = "openMenu",
+            ["action"] = "openMenuMap",
             ["color2"] = "#ffffd8d8",
             ["frequency"] = 30,
-            ["guipath"] = "options.simple",
+            ["mapfile"] = "menu_options_simple.lua",
+            ["menupath"] = "simple",
             ["presssound"] = "../sounds/combat/firehit.mp3",
             ["selectanimation"] = "colorCycle"
           }
@@ -225,10 +226,11 @@ return {
           halign = "center",
           valign = "center",
           properties = {
-            ["action"] = "openMenu",
+            ["action"] = "openMenuMap",
             ["color2"] = "#ffffd8d8",
             ["frequency"] = 30,
-            ["guipath"] = "gameplay.debugmenu",
+            ["mapfile"] = "menu_debug.lua",
+            ["menupath"] = "debugmenu",
             ["presssound"] = "../sounds/combat/firehit.mp3",
             ["selectanimation"] = "colorCycle"
           }
