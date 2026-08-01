@@ -173,13 +173,7 @@ end
 
 function BanditBoss:fixedupdate()
     Enemy.fixedupdate(self)
-    love.event.send("bosshealth", self.health, self.maxhealth)
-    local function updateBossHealth(hud, health, maxhealth)
-        local healthbar = hud.health
-        ---@cast health Gauge
-        healthbar:setPercent(self.health / self.maxhealth)
-        hud.visible = Audio.isPlayingMusic() and self.health > 0
-    end
+    love.event.send("bossactive", self)
 end
 
 function BanditBoss:duringPrepareAttack(target)

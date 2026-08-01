@@ -67,62 +67,11 @@ function PlayerHeld:fixedupdate()
     local holdstrength = HoldOpponent.weakenHold(holder, struggle)
     if holdstrength <= 0 then
         StateMachine.start(holder, "brokenaway", player)
+        love.event.send("playerunheld")
         return "breakaway", holder
     end
 
-    local axis = math.abs(holddirx) < math.abs(holddiry) and "y" or "x"
-    local initholdstrength = assert(holder.initialholdstrength)
-    local progress = 1 - holdstrength / initholdstrength
-    love.event.send("playerheld", player, holder, axis, progress)
-
-    local function updatePlayerHeldHud(ui)
-        ui.visible = true
-
-        local camera = player.camera
-        local promptover = player--axis == "y" and holddiry > 0 and holder or player
-        ui.x = promptover.x - camera.x
-        ui.y = promptover.y - promptover.z - promptover.bodyheight - camera.y
-
-        local prompt = ui.prompt
-        if prompt then
-            prompt:changeAnimation(axis)
-
-            local x1, y1, x2, y2 = prompt:getExtents()
-            if ui.x + x1 < 0 then
-                ui.x = - x1
-            end
-            if ui.y + y1 < 0 then
-                ui.y = - y1
-            end
-            if ui.x + x2 > camera.width then
-                ui.x = camera.width - x2
-            end
-            if ui.y + y2 > camera.height then
-                ui.y = camera.height - y2
-            end
-        end
-
-        local gaugel, gauger, gaugeu, gauged, gaugex, gaugey =
-            ui.gaugel, ui.gauger, ui.gaugeu, ui.gauged, ui.gaugex, ui.gaugey
-        if gaugel then
-            gaugel:setPercent(progress)
-            gaugel.visible = axis == "x"
-        end
-        if gauger then
-            gauger:setPercent(progress)
-            gauger.visible = axis == "x"
-        end
-        if gaugeu then
-            gaugeu:setPercent(progress)
-            gaugeu.visible = axis == "y"
-        end
-        if gauged then
-            gauged:setPercent(progress)
-            gauged.visible = axis == "y"
-        end
-        if gaugex then gaugex.visible = axis == "x" end
-        if gaugey then gaugey.visible = axis == "y" end
-    end
+    love.event.send("playerheld", player, holder)
 end
 
 function PlayerHeld:timeout(...)
