@@ -2,7 +2,7 @@ return {
   version = "1.11",
   luaversion = "5.1",
   tiledversion = "1.12.2",
-  class = "",
+  class = "Dragontail.Gui.Hud",
   orientation = "orthogonal",
   renderorder = "right-down",
   width = 30,
@@ -939,7 +939,7 @@ return {
         },
         {
           id = 234,
-          name = "",
+          name = "portrait",
           type = "",
           shape = "rectangle",
           x = 464,

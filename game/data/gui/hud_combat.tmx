@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="34" nextobjectid="238">
+<map version="1.11" tiledversion="1.12.2" class="Dragontail.Gui.Hud" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="34" nextobjectid="238">
  <editorsettings>
   <export target="hud_combat.lua" format="lua"/>
  </editorsettings>
@@ -211,7 +211,7 @@ to clear lost enemies</text>
     <property name="z" type="float" value="2"/>
    </properties>
   </object>
-  <object id="234" gid="2147483826" x="464" y="288" width="192" height="192"/>
+  <object id="234" name="portrait" gid="2147483826" x="464" y="288" width="192" height="192"/>
  </objectgroup>
  <objectgroup draworder="index" id="13" name="input">
   <object id="67" name="joystickdirection" x="55" y="243">
