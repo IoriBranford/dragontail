@@ -222,7 +222,7 @@ function Dragontail.quit()
     Inputs.saveGamepadMappings()
 end
 
-function Dragontail.resize(gw, gh)
+function Dragontail:resize(gw, gh)
     if not gw then
         gw, gh = love.graphics.getDimensions()
     end
@@ -236,15 +236,6 @@ function Dragontail.resize(gw, gh)
     local s = Config.upscale / Config.resolution
     local scw, sch = sc.canvas:getDimensions()
     wc:transformToScreen(scw, sch, 0)
-end
-
-function Dragontail.draw(render, ...)
-    local wc = Dragontail.worldcanvas
-    local sc = Dragontail.screencanvas
-
-    wc:drawOn(render, ...)
-    sc:drawOn(wc)
-    sc:draw()
 end
 
 Dragontail.predraw = {
