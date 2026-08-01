@@ -138,6 +138,10 @@ function TiledMap:draw()
     self.layers:draw()
 end
 
+function TiledMap:showOnlyNamed(...)
+    self.layers:showOnlyNamed(...)
+end
+
 function TiledMap:eventconnect()
     function self.update(dt)
         self:animate(dt)
