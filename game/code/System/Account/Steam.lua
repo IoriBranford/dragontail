@@ -3,7 +3,7 @@ if not hassteam then
 	return false
 end
 
-local SteamAccount = {}
+local SteamAccount = { type = "steam" }
 
 local initialized
 
