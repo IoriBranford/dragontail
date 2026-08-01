@@ -16,8 +16,7 @@ for _, dllname in ipairs(dllnames) do
     end
 end
 if not ok then
-    print(libvgmplayer)
-    return false
+    return false, libvgmplayer
 end
 
 ffi.cdef[[

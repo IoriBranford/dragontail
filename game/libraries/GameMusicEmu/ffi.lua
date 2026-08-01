@@ -15,8 +15,7 @@ for _, gme in ipairs(gmes) do
     end
 end
 if not ok then
-    print(lib)
-    return false
+    return false, lib
 end
 
 ffi.cdef[[
