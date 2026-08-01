@@ -18,9 +18,8 @@ function Sequences.playerExitToNextArea()
         StateMachine.start(player, "sequenceWalkTo", player.x, player.y)--, TimeLimit)
     end
 
-    love.event.send("wipeclose")
+    love.event.send("wipestart", "close")
     coroutine.wait(30)
-    love.event.send("wipeopen")
 
     local camerawarp = room.camerawarpwhendone
     Stage:warpCamera(camerawarp.x, camerawarp.y)
@@ -30,9 +29,8 @@ end
 function Sequences.playerEnterArea()
     local players = Characters.getGroup("players")
 
-    love.event.send("wipeclose")
+    love.event.send("wipestart", "open")
     coroutine.wait(30)
-    love.event.send("wipeopen")
 
     for _, player in ipairs(players) do
         StateMachine.start(player, "walk")
@@ -73,9 +71,8 @@ function Sequences.playerBreakIntoNextArea()
         end)
     end
 
-    love.event.send("wipeclose")
+    love.event.send("wipestart", "close")
     coroutine.wait(30)
-    love.event.send("wipeopen")
 
     local camerawarp = room.camerawarpwhendone
     Stage:warpCamera(camerawarp.x, camerawarp.y)

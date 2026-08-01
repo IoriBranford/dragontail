@@ -1,9 +1,14 @@
-local ObjectGroup = require "Tiled.ObjectGroup"
 local Movement    = require "Component.Movement"
+local Gui         = require "Gui"
 
----@class Wipe:ObjectGroup
+---@class Wipe:Gui
 ---@field wipefunction string
-local Wipe = class(ObjectGroup)
+local Wipe = class(Gui)
+
+love.event.newEvents({
+    wipestart = 1,
+    wipefinished = -1
+})
 
 ---@param direction "close"|"open"|"closeandopen"
 function Wipe:start(direction)
@@ -15,6 +20,8 @@ function Wipe:start(direction)
     end
 end
 
+Wipe.wipestart = Wipe.start
+
 function Wipe:run(dt)
     if self.thread then
         local ok, err = coroutine.resume(self.thread, self, dt)
@@ -23,12 +30,13 @@ function Wipe:run(dt)
             if not ok then
                 print(err)
             end
+            love.event.send("wipefinished")
         end
     end
 end
 
 function Wipe:animate(dt)
-    ObjectGroup.animate(self, dt)
+    Gui.animate(self, dt)
     self:run(dt)
 end
 
@@ -37,8 +45,9 @@ function Wipe:isDone()
 end
 
 function Wipe:twoCurtainsMove(leftstartx, leftdestx, rightstartx, rightdestx)
-    local left = self.left ---@cast left GuiObject
-    local right = self.right ---@cast right GuiObject
+    local wipe = self.wipe
+    local left = wipe.left ---@cast left GuiObject
+    local right = wipe.right ---@cast right GuiObject
     if not left or not right then
         return
     end
@@ -55,8 +64,9 @@ function Wipe:twoCurtainsMove(leftstartx, leftdestx, rightstartx, rightdestx)
 end
 
 function Wipe:twoCurtainsClose()
-    local left = self.left ---@cast left GuiObject
-    local right = self.right ---@cast right GuiObject
+    local wipe = self.wipe
+    local left = wipe.left ---@cast left GuiObject
+    local right = wipe.right ---@cast right GuiObject
     if not left or not right then
         return
     end
@@ -64,8 +74,9 @@ function Wipe:twoCurtainsClose()
 end
 
 function Wipe:twoCurtainsOpen()
-    local left = self.left ---@cast left GuiObject
-    local right = self.right ---@cast right GuiObject
+    local wipe = self.wipe
+    local left = wipe.left ---@cast left GuiObject
+    local right = wipe.right ---@cast right GuiObject
     if not left or not right then
         return
     end

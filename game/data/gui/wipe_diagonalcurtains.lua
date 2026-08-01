@@ -2,7 +2,7 @@ return {
   version = "1.11",
   luaversion = "5.1",
   tiledversion = "1.12.2",
-  class = "",
+  class = "Gui.Wipe",
   orientation = "orthogonal",
   renderorder = "right-down",
   width = 30,
@@ -12,7 +12,11 @@ return {
   nextlayerid = 34,
   nextobjectid = 238,
   properties = {
-    ["draworder"] = 1000
+    ["closeandopenfunction"] = "twoCurtainsCloseAndOpen",
+    ["closefunction"] = "twoCurtainsClose",
+    ["draworder"] = 1000,
+    ["openfunction"] = "twoCurtainsOpen",
+    ["speed"] = 32
   },
   tilesets = {},
   layers = {
@@ -21,19 +25,14 @@ return {
       draworder = "topdown",
       id = 9,
       name = "wipe",
-      class = "Gui.Wipe",
+      class = "",
       visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {
-        ["closeandopenfunction"] = "twoCurtainsCloseAndOpen",
-        ["closefunction"] = "twoCurtainsClose",
-        ["openfunction"] = "twoCurtainsOpen",
-        ["speed"] = 32
-      },
+      properties = {},
       objects = {
         {
           id = 12,

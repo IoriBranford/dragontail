@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="34" nextobjectid="238">
+<map version="1.11" tiledversion="1.12.2" class="Gui.Wipe" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="34" nextobjectid="238">
  <editorsettings>
   <export target="wipe_diagonalcurtains.lua" format="lua"/>
  </editorsettings>
  <properties>
+  <property name="closeandopenfunction" value="twoCurtainsCloseAndOpen"/>
+  <property name="closefunction" value="twoCurtainsClose"/>
   <property name="draworder" type="float" value="1000"/>
+  <property name="openfunction" value="twoCurtainsOpen"/>
+  <property name="speed" type="float" value="32"/>
  </properties>
- <objectgroup id="9" name="wipe" class="Gui.Wipe">
-  <properties>
-   <property name="closeandopenfunction" value="twoCurtainsCloseAndOpen"/>
-   <property name="closefunction" value="twoCurtainsClose"/>
-   <property name="openfunction" value="twoCurtainsOpen"/>
-   <property name="speed" type="float" value="32"/>
-  </properties>
+ <objectgroup id="9" name="wipe">
   <object id="12" name="left" x="0" y="0">
    <properties>
     <property name="closedx" type="float" value="360"/>

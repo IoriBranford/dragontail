@@ -17,8 +17,6 @@ function TitlePhase:loadphase(startwithmainmenu)
     scenemap:showOnlyNamed("bg", "title", "etc")
 
     local wipemap = Gui.new("data/gui/wipe_diagonalcurtains.lua")
-    local wipe = wipemap.wipe ---@cast wipe Wipe
-    wipe:start("open")
 
     Assets.get("ccdata/music/Block Island Sound loop.ogg")
 
@@ -39,6 +37,7 @@ function TitlePhase:loadphase(startwithmainmenu)
     love.event.connect(wipemap)
     love.event.connect(Dragontail.postdraw)
     Dragontail.sortDrawers()
+    love.event.send("wipestart", "open")
 end
 
 function TitlePhase:pushMainMenu()

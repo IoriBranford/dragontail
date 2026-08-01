@@ -73,8 +73,6 @@ function GamePhase:loadphase(stagepath_, startroom)
     hudmap:showOnlyNamed("hud")
 
     wipemap = Gui.new("data/gui/wipe_diagonalcurtains.lua")
-    local wipe = wipemap.wipe ---@cast wipe Wipe
-    wipe:start("open")
 
     love.event.connect(Dragontail.predraw)
     love.event.connect(Stage)
@@ -82,6 +80,7 @@ function GamePhase:loadphase(stagepath_, startroom)
     love.event.connect(wipemap)
     love.event.connect(Dragontail.postdraw)
     Dragontail.sortDrawers()
+    love.event.send("wipestart", "open")
 
     playerwon = nil
 end
