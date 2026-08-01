@@ -97,7 +97,7 @@ end
 ---@param maincanvas Canvas?
 ---@param expand boolean? to show ui outside the gui width/height
 ---@deprecated
-function Gui:resize(screenwidth, screenheight, maincanvas, expand)
+function Gui:_resize(screenwidth, screenheight, maincanvas, expand)
     -- for i = 1, #self do
     --     self[i]:reanchor(self.width, self.height, screenwidth, screenheight)
     -- end
@@ -243,7 +243,7 @@ end
 Gui.draw = LayerGroup.draw
 
 function Gui:eventconnect()
-    function self.resize(...) return Gui.resize(self, ...) end
+    function self._resize(...) return Gui._resize(self, ...) end
     function self.keypressed(...) return Gui.keypressed(self, ...) end
     function self.gamepadpressed(...) return Gui.gamepadpressed(self, ...) end
     function self.touchpressed(...) return Gui.touchpressed(self, ...) end
