@@ -17,10 +17,13 @@ end
 ---@param init function?
 local function createClass(base, init)
     ---@class Class
-    local class = {
-        _init = init,
-        _base = base
-    }
+    local class = {}
+    if base then
+        for k,v in pairs(base) do
+            class[k] = v
+        end
+    end
+
     class.__index = class
 
     function class.cast(t)
@@ -56,10 +59,8 @@ local function createClass(base, init)
         end
     end
 
-    if base then
-        -- metamethods must be copied as they can't be inherited
-        class.__lt = base.__lt
-    end
+    class._init = init or class._init
+    class._base = base
 
     local classmt = {
         __call = createObject,
