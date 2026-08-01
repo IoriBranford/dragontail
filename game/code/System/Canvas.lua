@@ -107,6 +107,17 @@ function Canvas:setFiltered(filtered)
     self.canvas:setFilter(filter, filter)
 end
 
+function Canvas:push()
+    love.graphics.setCanvas(self.canvas)
+    love.graphics.push()
+    love.graphics.scale(self.inputscale)
+end
+
+function Canvas:pop()
+    love.graphics.pop()
+    love.graphics.setCanvas()
+end
+
 function Canvas:drawOn(draw, arg, ...)
     if type(draw) == "table" and draw.canvas then
         draw, arg = Canvas.draw, draw

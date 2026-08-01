@@ -247,4 +247,23 @@ function Dragontail.draw(render, ...)
     sc:draw()
 end
 
+Dragontail.predraw = {
+    z = -0x1000000,
+    draw = function()
+        local wc = Dragontail.worldcanvas
+        wc:push()
+    end
+}
+
+Dragontail.postdraw = {
+    z = 0x1000000,
+    draw = function()
+        local wc = Dragontail.worldcanvas
+        local sc = Dragontail.screencanvas
+        wc:pop()
+        sc:drawOn(wc)
+        sc:draw()
+    end
+}
+
 return Dragontail
