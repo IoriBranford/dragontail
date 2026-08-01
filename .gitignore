@@ -37,8 +37,8 @@ game-apk/
 apktool
 appimagetool
 zip/
-*-x86_64/
-Rose of Dragontail/
+*-x86_64*/
+Rose of Dragontail*/
 
 **/ignore/**/*
 
