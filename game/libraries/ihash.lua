@@ -1,5 +1,5 @@
 ---@class ihash<T>
----@field [integer] T
+---@field [integer] T|false
 ---@field [T] integer
 local ihash = {}
 
@@ -33,6 +33,22 @@ function ihash.remove(h, t)
     return i, u
 end
 
+---remove element preserving order
+---@generic T
+---@param h ihash<T>
+---@param t T
+---@return integer? i
+function ihash.removeordered(h, t)
+    local i = h[t]
+    if i == #h then
+        h[i] = nil
+    elseif i then
+        h[i] = false
+    end
+    h[t] = nil
+    return i
+end
+
 ---prune dead elements
 ---@generic T
 ---@param h ihash<T>
@@ -52,6 +68,57 @@ function ihash.prune(h, tdead, tcleanup)
         end
     end
     return n
+end
+
+---prune dead elements preserving order
+---@generic T
+---@param h ihash<T>
+---@param tdead (fun(t:T):boolean)?
+---@param tcleanup fun(t:T)?
+---@return integer n
+function ihash.pruneordered(h, tdead, tcleanup)
+    tdead = tdead or function() return false end
+    tcleanup = tcleanup or function() end
+    local remove = ihash.removeordered
+    local newi
+    local n = 0
+    for i = 1, #h do
+        local t = h[i]
+        if t and not tdead(t) then
+            if newi then
+                h[i] = false
+                h[newi] = t
+                h[t] = newi
+                newi = i
+            end
+        else
+            if t then
+                tcleanup(t)
+                remove(h, t)
+                n = n + 1
+            end
+            newi = newi or i
+        end
+    end
+    while #h > 0 and not h[#h] do
+        h[#h] = nil
+    end
+    return n
+end
+
+function ihash.sort(h, cmp)
+    table.sort(h, function(a, b)
+        return a and not b
+            or a and b and cmp(a, b)
+    end)
+
+    while #h > 0 and not h[#h] do
+        h[#h] = nil
+    end
+
+    for i = 1, #h do
+        h[h[i]] = i
+    end
 end
 
 return ihash
