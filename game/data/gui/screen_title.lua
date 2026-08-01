@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 18,
   nextlayerid = 43,
-  nextobjectid = 243,
+  nextobjectid = 244,
   properties = {
     ["draworder"] = 1
   },
@@ -564,7 +564,7 @@ return {
         },
         {
           id = 198,
-          name = "WEBSITE",
+          name = "itchWEBSITE",
           type = "Gui.Button",
           shape = "text",
           x = 56,
@@ -592,7 +592,7 @@ return {
         },
         {
           id = 242,
-          name = "STEAM",
+          name = "steamWEBSITE",
           type = "Gui.Button",
           shape = "text",
           x = 56,
@@ -620,7 +620,26 @@ return {
         },
         {
           id = 219,
-          name = "Rate & Comment",
+          name = "itchView Instructions",
+          type = "",
+          shape = "text",
+          x = 52,
+          y = 198,
+          width = 96,
+          height = 18,
+          rotation = 0,
+          opacity = 1,
+          visible = false,
+          text = "View instructions",
+          fontfamily = "Silver",
+          pixelsize = 19,
+          wrap = true,
+          color = { 255, 255, 255 },
+          properties = {}
+        },
+        {
+          id = 243,
+          name = "steamView Instructions",
           type = "",
           shape = "text",
           x = 52,

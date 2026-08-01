@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="43" nextobjectid="243">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="43" nextobjectid="244">
  <editorsettings>
   <export target="screen_title.lua" format="lua"/>
  </editorsettings>
@@ -110,21 +110,24 @@ USED UNDER CREATIVE COMMONS ATTRIBUTION SHARE-ALIKE LICENSE</text>
    </properties>
    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">QUIT</text>
   </object>
-  <object id="198" template="menu/mainmenu/Button.tx" name="WEBSITE" x="56" y="171" width="116" height="36" visible="0">
+  <object id="198" template="menu/mainmenu/Button.tx" name="itchWEBSITE" x="56" y="171" width="116" height="36" visible="0">
    <properties>
     <property name="action" value="openURL"/>
     <property name="url" value="https://ioribranford.itch.io/rose-of-dragontail"/>
    </properties>
    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">WEBSITE</text>
   </object>
-  <object id="242" template="menu/mainmenu/Button.tx" name="STEAM" x="56" y="171" width="88" height="36" visible="0">
+  <object id="242" template="menu/mainmenu/Button.tx" name="steamWEBSITE" x="56" y="171" width="88" height="36" visible="0">
    <properties>
     <property name="action" value="openURL"/>
     <property name="url" value="https://ioribranford.itch.io/rose-of-dragontail"/>
    </properties>
    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">STEAM</text>
   </object>
-  <object id="219" name="Rate &amp; Comment" x="52" y="198" width="96" height="18" visible="0">
+  <object id="219" name="itchView Instructions" x="52" y="198" width="96" height="18" visible="0">
+   <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">View instructions</text>
+  </object>
+  <object id="243" name="steamView Instructions" x="52" y="198" width="96" height="18" visible="0">
    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">View instructions</text>
   </object>
  </objectgroup>
