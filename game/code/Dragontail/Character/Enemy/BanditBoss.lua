@@ -205,7 +205,7 @@ function BanditBoss:onHitByAttack(hit)
         local nextsummon = self.nextsummon or 1
         local summonhealthpct = SummonHealthPercents[nextsummon] or math.huge
         if healthpct <= summonhealthpct then
-            Stage.openNextRoomIfNotLast()
+            Stage:openNextRoomIfNotLast()
             self.nextsummon = nextsummon + 1
         end
     end
@@ -227,7 +227,7 @@ end
 function BanditBoss:defeat(attacker)
     Audio.fadeMusic(1)
     Characters.clearEnemies(self)
-    Stage.setToLastRoom()
+    Stage:setToLastRoom()
     return Enemy.defeat(self, attacker)
 end
 

@@ -28,7 +28,7 @@ local wipemap ---@type Gui
 
 local movie
 
-function GamePhase.loadphase(stagepath_, startroom)
+function GamePhase:loadphase(stagepath_, startroom)
     stagepath = stagepath_ or stagepath
     pauselocked = false
     local unifont = Assets.getFont("Unifont", 16)
@@ -39,7 +39,7 @@ function GamePhase.loadphase(stagepath_, startroom)
     Database.load("data/database/projectiles-properties.csv")
     Database.load("data/database/objects-properties.csv")
     Database.load("data/database/ui-properties.csv")
-    Stage.load(stagepath)
+    Stage:load(stagepath)
 
     Database.forEach(function(_, properties)
         for k,v in pairs(properties) do
@@ -60,22 +60,19 @@ function GamePhase.loadphase(stagepath_, startroom)
         pausemapfile = pathlite.normjoin(map.directory, pausemapfile)
     end
     pausemap = Gui.new(pausemapfile or "data/gui/menu_pause_combat.lua")
-    pausemap:eventconnect()
     pausemap:clearMenuStack()
 
     Tiled.Assets.uncacheMarked()
     Tiled.Assets.packTiles()
     Tiled.Assets.batchAllMapsLayers()
 
-    Stage.init(startroom)
+    Stage:init(startroom)
 
     hudmap = Gui.new("data/gui/hud_combat.lua")
-    hudmap:eventconnect()
     hudmap:clearMenuStack()
     hudmap:showOnlyNamed("hud")
 
     wipemap = Gui.new("data/gui/wipe_diagonalcurtains.lua")
-    wipemap:eventconnect()
     local wipe = wipemap.wipe ---@cast wipe Wipe
     wipe:start("open")
 
@@ -86,8 +83,8 @@ function GamePhase.loadphase(stagepath_, startroom)
     playerwon = nil
 end
 
-function GamePhase.quitphase()
-    Stage.quit()
+function GamePhase:quitphase()
+    Stage:quit()
     Assets.markAllToUncache()
     Database.clear()
     Audio.stop()
@@ -98,12 +95,12 @@ function GamePhase.quitphase()
     movie = nil
 end
 
-function GamePhase.setPaused(newpaused, withmenu)
+function GamePhase:setPaused(newpaused, withmenu)
     if pauselocked then
         return
     end
-    Stage.pause(newpaused)
-    if Stage.paused() then
+    Stage:pause(newpaused)
+    if Stage:paused() then
         if withmenu then
             pausemap:showOnlyNamed("pausemenu")
             pausemap:pushMenu(pausemap.pausemenu)
@@ -138,20 +135,20 @@ function keypressed.delete()
 end
 
 ---@param gamepad love.Joystick
-function GamePhase.gamepadpressed(gamepad, button)
+function GamePhase:gamepadpressed(gamepad, button)
     if button == "start" then
-        GamePhase.setPaused(not Stage.paused(), true)
+        GamePhase:setPaused(not Stage:paused(), true)
         return "stop"
     elseif button == "back" then
         if Characters.isTimeToClearLostEnemies() then
             Characters.clearEnemies()
         end
-        -- GamePhase.setPaused(not Stage.paused(), false)
+        -- GamePhase:setPaused(not Stage:paused(), false)
         return "stop"
     end
 end
 
-function GamePhase.keypressed(key)
+function GamePhase:keypressed(key)
     local kp = keypressed[key]
     if kp then
         kp()
@@ -159,8 +156,8 @@ function GamePhase.keypressed(key)
     end
 
     if key == "escape" then
-        if not Stage.paused() then
-            GamePhase.setPaused(true, true)
+        if not Stage:paused() then
+            GamePhase:setPaused(true, true)
             return "stop"
         end
     end
@@ -192,26 +189,25 @@ local function fixedupdateInputDisplay()
     end
 end
 
-function GamePhase.fixedupdate()
+function GamePhase:fixedupdate()
     if movie then
         if movie() then
             movie = nil
         end
     end
     fixedupdateInputDisplay()
-    Stage.fixedupdateHud(hudmap)
+    Stage:fixedupdateHud(hudmap)
 end
 
-function GamePhase.setPauseLocked(locked)
+function GamePhase:setPauseLocked(locked)
     pauselocked = locked
 end
 
-function GamePhase.gameOver(won)
+function GamePhase:gameOver(won)
     playerwon = won or false
-    GamePhase.setPauseLocked(true)
+    GamePhase:setPauseLocked(true)
     if won then
         local victorymap = Gui.new("data/gui/menu_stage_clear.lua")
-        victorymap:eventconnect()
         love.event.connectAll(victorymap)
 
         movie = coroutine.wrap(function()
@@ -235,7 +231,6 @@ function GamePhase.gameOver(won)
         movie()
     else
         local gameovermap = Gui.new("data/gui/menu_game_over.lua")
-        gameovermap:eventconnect()
         gameovermap:pushMenu(gameovermap.menu)
         love.event.connectAll(gameovermap)
     end
@@ -243,7 +238,7 @@ end
 
 local fixedfrac = 0
 
-function GamePhase.update(dsecs)
+function GamePhase:update(dsecs)
     local fixedrate = Config.fixedupdaterate
     fixedfrac = fixedupdate(fixedrate, fixedfrac, dsecs,
     function()
@@ -252,7 +247,7 @@ function GamePhase.update(dsecs)
     end)
 end
 
-function GamePhase.draw()
+function GamePhase:draw()
     return "args", fixedfrac
 end
 

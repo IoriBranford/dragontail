@@ -33,7 +33,7 @@ local paused
 ---@class Boundary:TiledObject
 ---@class Camera:Boundary
 
-function Stage.quit()
+function Stage:quit()
     scene = nil
     map = nil
     roomindex = nil
@@ -43,7 +43,7 @@ function Stage.quit()
     Characters.quit()
 end
 
-function Stage.load(stagefile)
+function Stage:load(stagefile)
     shader = love.graphics.newShader("shaders/Stage.lslp", "shaders/Stage.lslv")
     map = Tiled.Map.load(stagefile)
     local directory = map.directory
@@ -78,7 +78,7 @@ function Stage.load(stagefile)
     end
 end
 
-function Stage.init(startroom)
+function Stage:init(startroom)
     paused = false
     local Character = require "Dragontail.Character"
     scene = Scene()
@@ -136,7 +136,7 @@ function Stage.init(startroom)
         end
         local draw = layer.draw
         layer.draw = function(self)
-            Stage.setUniform("texRgbFactor", 1)
+            Stage:setUniform("texRgbFactor", 1)
             draw(self)
         end
     end
@@ -155,7 +155,7 @@ function Stage.init(startroom)
             firstroomindex = i
         end
 
-        Stage.loadRoomMusic(room)
+        Stage:loadRoomMusic(room)
     end
     firstroomindex = min(firstroomindex, #rooms)
     local firstroom = rooms[firstroomindex]
@@ -179,7 +179,7 @@ function Stage.init(startroom)
         Database.load("data/database/players-properties.csv")
         local player = Character("Rose")
         Characters.spawn(player)
-        Stage.warpCamera(camera.x+camera.width/2, camera.y+camera.height/2)
+        Stage:warpCamera(camera.x+camera.width/2, camera.y+camera.height/2)
     end
 
     local foundbounds = 0
@@ -188,7 +188,7 @@ function Stage.init(startroom)
         local prevroom = map.layers.rooms[i]
         if not foundmusic then
             foundmusic = prevroom.music
-            Stage.playRoomMusic(prevroom)
+            Stage:playRoomMusic(prevroom)
         end
 
         local characters = prevroom.characters
@@ -204,7 +204,7 @@ function Stage.init(startroom)
             end
         end
     end
-    Stage.openRoom(firstroomindex)
+    Stage:openRoom(firstroomindex)
 
     if not sequencethread then
         local players = Characters.getGroup("players")
@@ -214,15 +214,15 @@ function Stage.init(startroom)
     end
 end
 
-function Stage.paused()
+function Stage:paused()
     return paused
 end
 
-function Stage.pause(p)
+function Stage:pause(p)
     paused = p
 end
 
-function Stage.addToScene(object)
+function Stage:addToScene(object)
     scene:add(object)
 end
 
@@ -250,7 +250,7 @@ local function genDefaultCameraPath(roombounds)
     })
 end
 
-function Stage.warpCamera(warpx, warpy)
+function Stage:warpCamera(warpx, warpy)
     camera.x = warpx - camera.width/2
     camera.y = warpy - camera.height/2
     local players = Characters.getGroup("players")
@@ -264,30 +264,30 @@ function Stage.warpCamera(warpx, warpy)
     end
 end
 
-function Stage.openNextRoom()
-    Stage.openRoom(roomindex + 1)
+function Stage:openNextRoom()
+    Stage:openRoom(roomindex + 1)
 end
 
-function Stage.openNextRoomIfNotLast()
+function Stage:openNextRoomIfNotLast()
     local rooms = map.layers.rooms
     if roomindex < #rooms then
-        Stage.openRoom(roomindex + 1)
+        Stage:openRoom(roomindex + 1)
     end
 end
 
-function Stage.setToLastRoom()
+function Stage:setToLastRoom()
     roomindex = #map.layers.rooms
 end
 
-function Stage.startSequence(name)
+function Stage:startSequence(name)
     local f = Sequences[name]
     if type(f) == "function" then
         sequencethread = coroutine.create(f)
-        Stage.updateSequence()
+        Stage:updateSequence()
     end
 end
 
-function Stage.updateSequence()
+function Stage:updateSequence()
     if sequencethread then
         local ok, err = coroutine.resume(sequencethread)
         if coroutine.status(sequencethread) == "dead" then
@@ -299,7 +299,7 @@ function Stage.updateSequence()
     end
 end
 
-function Stage.loadRoomMusic(room)
+function Stage:loadRoomMusic(room)
     if type(room.music) == "table" then
         return Audio.loadMusicQueue(unpack(room.music))
     elseif type(room.music) == "string" then
@@ -307,7 +307,7 @@ function Stage.loadRoomMusic(room)
     end
 end
 
-function Stage.playRoomMusic(room)
+function Stage:playRoomMusic(room)
     if type(room.music) == "table" then
         return Audio.playMusicQueue(unpack(room.music))
     elseif type(room.music) == "string" then
@@ -317,7 +317,7 @@ function Stage.playRoomMusic(room)
     end
 end
 
-function Stage.openRoom(i)
+function Stage:openRoom(i)
     local rooms = map.layers.rooms
     if not Config.tutorial then
         while i <= #rooms and rooms[i].tutorial do
@@ -329,7 +329,7 @@ function Stage.openRoom(i)
     if room then
         roomindex = i
         Characters.spawnArray(room.characters)
-        Stage.startSequence(room.sequence)
+        Stage:startSequence(room.sequence)
         if Config.cuecards then
             local cuecard = room.titlebarcuecard or ""
             if cuecard ~= "" then
@@ -350,7 +350,7 @@ function Stage.openRoom(i)
                 end
             end
         end
-        Stage.playRoomMusic(room)
+        Stage:playRoomMusic(room)
         return room
     else
         winningteam = "players"
@@ -359,21 +359,21 @@ function Stage.openRoom(i)
         end
         Audio.playMusicQueue("ccdata/music/Frisbeat intro.ogg", "ccdata/music/Frisbeat loop half.ogg")
         local GamePhase = require "Dragontail.GamePhase"
-        GamePhase.gameOver(true)
+        GamePhase:gameOver(true)
     end
 end
 
-function Stage.getCurrentRoom()
+function Stage:getCurrentRoom()
     return map.layers.rooms[roomindex]
 end
 
 ---@return CameraPath
-function Stage.getCurrentCameraPath()
+function Stage:getCurrentCameraPath()
     local room = map.layers.rooms[roomindex]
     return room and room.camerapath
 end
 
-function Stage.isInNextRoom()
+function Stage:isInNextRoom()
     local room = map.layers.rooms[roomindex]
     if not room then
         return false
@@ -387,19 +387,19 @@ function Stage.isInNextRoom()
     return not camerapath or camerapath:isEnd(centerx, centery)
 end
 
-function Stage.updateGoingToNextRoom()
-    local room = Stage.getCurrentRoom()
+function Stage:updateGoingToNextRoom()
+    local room = Stage:getCurrentRoom()
     if not room then
         return
     end
-    if Stage.isInNextRoom() then
+    if Stage:isInNextRoom() then
         local enemies = Characters.getGroup("enemies")
         local donewhenenemiesleft = room.donewhenenemiesleft or 0
 
         if #enemies <= donewhenenemiesleft
         and not sequencethread
         and not room.time or room.time == 0 then
-            room = Stage.openRoom(roomindex + 1)
+            room = Stage:openRoom(roomindex + 1)
             if not room then
                 return
             end
@@ -480,10 +480,10 @@ function Stage.updateGoingToNextRoom()
     end
 end
 
-function Stage.fixedupdate()
+function Stage:fixedupdate()
     if paused then return end
 
-    Stage.updateSequence()
+    Stage:updateSequence()
 
     Characters.updateBodies()
     Characters.updateAttackHits()
@@ -497,7 +497,7 @@ function Stage.fixedupdate()
     Characters.predictCollision()
 
     if not winningteam then
-        Stage.updateGoingToNextRoom()
+        Stage:updateGoingToNextRoom()
     end
 
     local room = map.layers.rooms[roomindex]
@@ -523,7 +523,7 @@ function Stage.fixedupdate()
 end
 
 ---@param hudgui Gui
-function Stage.fixedupdateHud(hudgui)
+function Stage:fixedupdateHud(hudgui)
     local players = Characters.getGroup("players") ---@type Player[]
     local player = players[1]
 
@@ -642,8 +642,8 @@ function Stage.fixedupdateHud(hudgui)
 
     local go = hudgui:get("hud_go")
     if go then
-        local path = Stage.getCurrentCameraPath()
-        if Stage.isInNextRoom() or not path then
+        local path = Stage:getCurrentCameraPath()
+        if Stage:isInNextRoom() or not path then
             go.visible = false
         else
             local chw, chh = camera.width/2, camera.height/2
@@ -677,18 +677,18 @@ function Stage.fixedupdateHud(hudgui)
     end
 end
 
-function Stage.update(dsecs, fixedfrac)
+function Stage:update(dsecs, fixedfrac)
     if paused then fixedfrac = 0 end
     Characters.update(dsecs, fixedfrac)
 end
 
-function Stage.setUniform(var, ...)
+function Stage:setUniform(var, ...)
     if shader:hasUniform(var) then
         shader:send(var, ...)
     end
 end
 
-function Stage.draw(fixedfrac)
+function Stage:draw(fixedfrac)
     if paused then fixedfrac = 0 end
     love.graphics.setShader(shader)
     if map.backgroundcolor then

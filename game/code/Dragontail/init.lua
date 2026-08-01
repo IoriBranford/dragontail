@@ -117,6 +117,8 @@ function Dragontail.loadMap(map, ...)
 end
 
 function Dragontail.load(args)
+    love.event.setSelfMode(true)
+
     Config = require "System.Config"
     local w, h = Dragontail.width, Dragontail.height
 

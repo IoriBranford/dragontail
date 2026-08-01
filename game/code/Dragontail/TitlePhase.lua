@@ -11,16 +11,14 @@ local scenemap ---@type Gui
 local sceneco ---@type function
 local ambientsound ---@type love.Source
 
-function TitlePhase.loadphase(startwithmainmenu)
+function TitlePhase:loadphase(startwithmainmenu)
     scenemap = Gui.new("data/gui/screen_title.lua")
     scenemap:showOnlyNamed("bg", "title", "etc")
-    scenemap:eventconnect()
     love.event.connectAll(scenemap)
 
     local wipemap = Gui.new("data/gui/wipe_diagonalcurtains.lua")
     local wipe = wipemap.wipe ---@cast wipe Wipe
     wipe:start("open")
-    wipemap:eventconnect()
     love.event.connectAll(wipemap)
 
     Assets.get("ccdata/music/Block Island Sound loop.ogg")
@@ -30,7 +28,7 @@ function TitlePhase.loadphase(startwithmainmenu)
     Assets.batchAllMapsLayers()
 
     if startwithmainmenu then
-        TitlePhase.pushMainMenu()
+        TitlePhase:pushMainMenu()
     else
         scenemap:pushMenu(scenemap.title)
         ambientsound = Audio.play("data/sounds/ambient/seaside.ogg")
@@ -38,7 +36,7 @@ function TitlePhase.loadphase(startwithmainmenu)
     end
 end
 
-function TitlePhase.pushMainMenu()
+function TitlePhase:pushMainMenu()
     scenemap:showOnlyNamed("bg", "etc", "TitleHit")
     sceneco = coroutine.wrap(function ()
         local menu = scenemap.menu
@@ -61,7 +59,7 @@ function TitlePhase.pushMainMenu()
     Audio.playMusic("ccdata/music/Block Island Sound loop.ogg", nil, true)
 end
 
-function TitlePhase.quitphase()
+function TitlePhase:quitphase()
     Audio.stop()
     Assets.markAllToUncache()
     scenemap = nil
@@ -69,7 +67,7 @@ function TitlePhase.quitphase()
     ambientsound = nil
 end
 
-function TitlePhase.keypressed(key)
+function TitlePhase:keypressed(key)
     -- if Config.exhibit and key == "f1" then
     --     GuiActions.openOptions(Gui)
     --     return
@@ -85,7 +83,7 @@ function TitlePhase.keypressed(key)
     end
 end
 
-function TitlePhase.fixedupdate()
+function TitlePhase:fixedupdate()
     if sceneco then
         if sceneco() then
             sceneco = nil
@@ -95,7 +93,7 @@ end
 
 local fixedfrac = 0
 
-function TitlePhase.update(dsecs)
+function TitlePhase:update(dsecs)
     local fixedrate = Config.fixedupdaterate
     fixedfrac = fixedupdate(fixedrate, fixedfrac, dsecs,
     function()
@@ -103,7 +101,7 @@ function TitlePhase.update(dsecs)
     end)
 end
 
-function TitlePhase.draw()
+function TitlePhase:draw()
     return "args", fixedfrac
 end
 

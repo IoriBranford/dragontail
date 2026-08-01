@@ -91,7 +91,7 @@ function Character:draw(fixedfrac)
 
     Guard.draw(self, -1, fixedfrac)
     local Stage = require "Dragontail.Stage"
-    Stage.setUniform("texRgbFactor", self.texturealpha or 1)
+    Stage:setUniform("texRgbFactor", self.texturealpha or 1)
     self:baseDraw(fixedfrac)
     Guard.draw(self, 1, fixedfrac)
     love.graphics.pop()

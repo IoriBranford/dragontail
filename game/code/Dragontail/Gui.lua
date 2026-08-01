@@ -19,6 +19,4 @@ if FS.getInfo("version") then
     end
 end
 
-gui:eventconnect()
-
 return gui

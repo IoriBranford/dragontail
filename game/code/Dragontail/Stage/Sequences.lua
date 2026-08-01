@@ -11,7 +11,7 @@ end
 
 function Sequences.playerExitToNextArea()
     local Stage = require "Dragontail.Stage"
-    local room = Stage.getCurrentRoom()
+    local room = Stage:getCurrentRoom()
     assert(room.donewhenenemiesleft < 0, "This sequence depends on the room not ending when cleared of enemies. Set room's donewhenenemiesleft to a negative value to use this sequence.")
     local players = Characters.getGroup("players")
     for _, player in ipairs(players) do
@@ -23,8 +23,8 @@ function Sequences.playerExitToNextArea()
     love.event.send("wipeopen")
 
     local camerawarp = room.camerawarpwhendone
-    Stage.warpCamera(camerawarp.x, camerawarp.y)
-    Stage.openNextRoom()
+    Stage:warpCamera(camerawarp.x, camerawarp.y)
+    Stage:openNextRoom()
 end
 
 function Sequences.playerEnterArea()
@@ -41,7 +41,7 @@ end
 
 function Sequences.playerBreakIntoNextArea()
     local Stage = require "Dragontail.Stage"
-    local room = Stage.getCurrentRoom()
+    local room = Stage:getCurrentRoom()
     if room.donewhenenemiesleft >= 0 then
         room.donewhenenemiesleft = -1
     end
@@ -78,13 +78,13 @@ function Sequences.playerBreakIntoNextArea()
     love.event.send("wipeopen")
 
     local camerawarp = room.camerawarpwhendone
-    Stage.warpCamera(camerawarp.x, camerawarp.y)
-    Stage.openNextRoom()
+    Stage:warpCamera(camerawarp.x, camerawarp.y)
+    Stage:openNextRoom()
 end
 
 function Sequences.unlockDoorToNextArea()
     local Stage = require "Dragontail.Stage"
-    local room = Stage.getCurrentRoom()
+    local room = Stage:getCurrentRoom()
     local door = room.exitdoor
     StateMachine.start(door, "furnitureToBreak")
 end

@@ -7,7 +7,7 @@ local GameGuiActions = class(GuiActions)
 
 function GameGuiActions.openTitleMainMenu()
     local TitlePhase= require "Dragontail.TitlePhase"
-    TitlePhase.pushMainMenu()
+    TitlePhase:pushMainMenu()
 end
 
 function GameGuiActions.playSelectedMusic()
@@ -19,7 +19,7 @@ end
 
 function GameGuiActions.unpauseGame()
     local GamePhase = require "Dragontail.GamePhase"
-    GamePhase.setPaused(false)
+    GamePhase:setPaused(false)
 end
 
 function GameGuiActions.refillPlayers()

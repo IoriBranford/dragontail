@@ -165,7 +165,7 @@ end
 --         return true
 --     end
 --     local Stage = require "Dragontail.Stage"
---     return Stage.isPlayerOnSide(requireplayeronstageside)
+--     return Stage:isPlayerOnSide(requireplayeronstageside)
 -- end
 
 -- function Trigger:spawnCharacters()
@@ -219,12 +219,12 @@ end
 
 -- function Trigger:lerpCameraVelocity()
 --     local Stage = require "Dragontail.Stage"
---     Stage.lerpCameraVelocity(self.cameravely0, self.cameravely, self.height)
+--     Stage:lerpCameraVelocity(self.cameravely0, self.cameravely, self.height)
 -- end
 
 -- function Trigger:stopStageScroll()
 --     local Stage = require "Dragontail.Stage"
---     Stage.setVelY(0)
+--     Stage:setVelY(0)
 -- end
 
 -- function Trigger:addRescuees()
@@ -252,7 +252,7 @@ end
 -- end
 
 function Trigger:startSequence()
-    Stage.startSequence(self.sequence)
+    Stage:startSequence(self.sequence)
 end
 
 function Trigger:pulseAlpha()

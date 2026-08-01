@@ -651,7 +651,7 @@ function Player:defeat()
     self.velx, self.vely = 0, 0
     Audio.play(self.defeatsound)
     local GamePhase            = require "Dragontail.GamePhase"
-    GamePhase.gameOver(false)
+    GamePhase:gameOver(false)
 end
 
 function Player:sequenceWalkTo(destx, desty, timelimit)
