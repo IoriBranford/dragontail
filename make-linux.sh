@@ -124,6 +124,7 @@ mv love.desktop ${GAME_TITLE_NOSPACE}.desktop
 cd ..
 
 rm -rf $OUT_DIR
+mkdir -p $OUT_DIR/lib/lua/5.1
 mkdir -p $OUT_DIR/share
 
 cp -r $GAME_APPDIR/bin $GAME_APPDIR/lib $OUT_DIR
@@ -151,7 +152,8 @@ LUASTEAM_DLL=https://github.com/uspgamedev/luasteam/releases/download/v5.0.0/lin
 if [ -e $STEAM_DLL ]
 then
 	curl -Lk -o luasteam.so $LUASTEAM_DLL
-	cp $STEAM_DLL luasteam.so $OUT_DIR/lib
+	cp $STEAM_DLL $OUT_DIR/lib
+	cp luasteam.so $OUT_DIR/lib/lua/5.1
 	cp $STEAM_DLL luasteam.so $OUT_DIR.AppImage
 fi
 if [ -e steam_appid.txt ]
