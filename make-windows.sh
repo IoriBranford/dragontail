@@ -98,15 +98,19 @@ else
 fi
 LUASTEAM_DLL=https://github.com/uspgamedev/luasteam/releases/download/v5.0.0/win${ARCH_BITS}_luasteam.dll
 
-if [ -e $STEAM_DLL ]
+if [ ! -z "$STEAM" ]
 then
-	curl -Lk -o game-win/luasteam.dll $LUASTEAM_DLL
-	cp $STEAM_DLL game-win
-fi
+	OUT_DIR="$OUT_DIR-steam"
+	if [ -e $STEAM_DLL ]
+	then
+		curl -Lk -o game-win/luasteam.dll $LUASTEAM_DLL
+		cp $STEAM_DLL game-win
+	fi
 
-if [ -e steam_appid.txt ]
-then
-	cp steam_appid.txt game-win
+	if [ -e steam_appid.txt ]
+	then
+		cp steam_appid.txt game-win
+	fi
 fi
 
 if [ -e README.md ]

@@ -40,6 +40,13 @@ do
     fi
     
     FULL_PLATFORM=${PLATFORM_FULL[$PLATFORM]}
+    CONTENTS=${PLATFORM_CONTENTS[$PLATFORM]}
+    if [ ! -z "$STEAM" ]
+    then
+        FULL_PLATFORM="$FULL_PLATFORM-steam"
+        CONTENTS="$CONTENTS-steam"
+    fi
+
     ZIP="$PROJECT-$VERSION-$FULL_PLATFORM.zip"
     rm -f $ZIP
     if [[ $PLATFORM == "game" ]]
@@ -47,7 +54,6 @@ do
 	    GAME_ZIP=${GAME_ZIP:="$GAME_ASSET.zip"}
         mv $GAME_ZIP $ZIP
     else
-        CONTENTS=${PLATFORM_CONTENTS[$PLATFORM]}
 
         if [[ -e "$CONTENTS" ]]
         then

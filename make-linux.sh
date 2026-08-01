@@ -84,6 +84,22 @@ sed -i -r -e "s/^export LUA_PATH=\"/&\$APPDIR\/share\/luajit-2.1\/?.lua;/" AppRu
 sed -i -r -e "s/bin\/love/bin\/$GAME_EXE/" AppRun
 popd
 
+STEAM_DLL=linux${ARCH_BITS}/libsteam_api.so
+LUASTEAM_DLL=https://github.com/uspgamedev/luasteam/releases/download/v5.0.0/linux${ARCH_BITS}_luasteam.so
+
+if [ ! -z "$STEAM" ] 
+then
+	OUT_DIR="$OUT_DIR-steam"
+fi
+if [ ! -z "$STEAM" ] && [ -e $STEAM_DLL ]
+then
+	cp $STEAM_DLL $GAME_APPDIR/lib
+
+	curl -Lk -o luasteam.so $LUASTEAM_DLL
+	mkdir -p $GAME_APPDIR/lib/lua/5.1
+	cp luasteam.so $GAME_APPDIR/lib/lua/5.1
+fi
+
 if [ -f gme.dll ]
 then
 	download ${LIBGME_URL} ${LIBGME_DEB}
@@ -124,7 +140,6 @@ mv love.desktop ${GAME_TITLE_NOSPACE}.desktop
 cd ..
 
 rm -rf $OUT_DIR
-mkdir -p $OUT_DIR/lib/lua/5.1
 mkdir -p $OUT_DIR/share
 
 cp -r $GAME_APPDIR/bin $GAME_APPDIR/lib $OUT_DIR
@@ -146,17 +161,7 @@ else
 	appimagetool/AppRun ${GAME_APPDIR} $OUT_DIR.AppImage/${GAME_APPIMAGE}
 fi
 
-STEAM_DLL=linux${ARCH_BITS}/libsteam_api.so
-LUASTEAM_DLL=https://github.com/uspgamedev/luasteam/releases/download/v5.0.0/linux${ARCH_BITS}_luasteam.so
-
-if [ -e $STEAM_DLL ]
-then
-	curl -Lk -o luasteam.so $LUASTEAM_DLL
-	cp $STEAM_DLL $OUT_DIR/lib
-	cp luasteam.so $OUT_DIR/lib/lua/5.1
-	cp $STEAM_DLL luasteam.so $OUT_DIR.AppImage
-fi
-if [ -e steam_appid.txt ]
+if [ ! -z "$STEAM" ] && [ -e steam_appid.txt ]
 then
 	cp steam_appid.txt $OUT_DIR
 	cp steam_appid.txt $OUT_DIR.AppImage
