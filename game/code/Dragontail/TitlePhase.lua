@@ -14,12 +14,12 @@ local ambientsound ---@type love.Source
 function TitlePhase:loadphase(startwithmainmenu)
     scenemap = Gui.new("data/gui/screen_title.lua")
     scenemap:showOnlyNamed("bg", "title", "etc")
-    love.event.connectAll(scenemap)
+    love.event.connect(scenemap)
 
     local wipemap = Gui.new("data/gui/wipe_diagonalcurtains.lua")
     local wipe = wipemap.wipe ---@cast wipe Wipe
     wipe:start("open")
-    love.event.connectAll(wipemap)
+    love.event.connect(wipemap)
 
     Assets.get("ccdata/music/Block Island Sound loop.ogg")
 

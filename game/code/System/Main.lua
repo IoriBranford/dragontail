@@ -35,7 +35,7 @@ function love.handlers.newphase(name, ...)
 
     love.currentphase = nextphase
     love.event.reset()
-    love.event.connectAll(nextphase)
+    love.event.connect(nextphase)
     love.event.send("loadphase", ...)
     collectgarbage()
     if love.timer then

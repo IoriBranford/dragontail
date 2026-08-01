@@ -76,9 +76,9 @@ function GamePhase:loadphase(stagepath_, startroom)
     local wipe = wipemap.wipe ---@cast wipe Wipe
     wipe:start("open")
 
-    love.event.connectAll(Stage)
-    love.event.connectAll(hudmap)
-    love.event.connectAll(wipemap, "%sconnection")
+    love.event.connect(Stage)
+    love.event.connect(hudmap)
+    love.event.connect(wipemap)
 
     playerwon = nil
 end
@@ -104,11 +104,11 @@ function GamePhase:setPaused(newpaused, withmenu)
         if withmenu then
             pausemap:showOnlyNamed("pausemenu")
             pausemap:pushMenu(pausemap.pausemenu)
-            love.event.connectAll(pausemap, "%sconnection")
+            love.event.connect(pausemap)
         end
     else
         pausemap:clearMenuStack()
-        love.event.disconnectAll(pausemap, "%sconnection")
+        love.event.disconnect(pausemap)
     end
 end
 
@@ -208,7 +208,7 @@ function GamePhase:gameOver(won)
     GamePhase:setPauseLocked(true)
     if won then
         local victorymap = Gui.new("data/gui/menu_stage_clear.lua")
-        love.event.connectAll(victorymap)
+        love.event.connect(victorymap)
 
         movie = coroutine.wrap(function()
             local menu = victorymap.menu
@@ -232,7 +232,7 @@ function GamePhase:gameOver(won)
     else
         local gameovermap = Gui.new("data/gui/menu_game_over.lua")
         gameovermap:pushMenu(gameovermap.menu)
-        love.event.connectAll(gameovermap)
+        love.event.connect(gameovermap)
     end
 end
 

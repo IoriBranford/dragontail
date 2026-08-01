@@ -61,15 +61,15 @@ local LoveEvents = {
 local Conns = dispatch.new()
 local EventDirs = {}
 
-local fsend, rsend = Conns.send, Conns.rsend
+local FSend, RSend = Conns.send, Conns.rsend
 
 ---@alias conn integer
 
 function love.event.setSelfMode(selfmode)
     if selfmode then
-        fsend, rsend = Conns.sendself, Conns.rsendself
+        FSend, RSend = Conns.sendself, Conns.rsendself
     else
-        fsend, rsend = Conns.send, Conns.rsend
+        FSend, RSend = Conns.send, Conns.rsend
     end
 end
 
@@ -106,33 +106,30 @@ function love.event.reset(hard)
 end
 
 ---Connect to event
----@param ev string
 ---@param l listener
----@param after boolean?
+---@param ev string
 ---@return integer
-function love.event.connect(l, ev, after)
-    return Conns:sub(l, ev, after)
+function love.event.connect1(l, ev)
+    return Conns:sub(l, ev)
 end
 
 ---Connect all of a table's matching functions to events
 ---@param l listener
----@param after boolean?
-function love.event.connectAll(l, format, after)
-    Conns:allsub(l, format, after)
+function love.event.connect(l)
+    Conns:allsub(l)
 end
 
 ---Disconnect from event
+---@param l listener
 ---@param ev string
----@param conn conn
----@param l listener?
-function love.event.disconnect(l, ev, conn)
-    Conns:unsub(l, ev, conn)
+function love.event.disconnect1(l, ev)
+    Conns:unsub(l, ev)
 end
 
 ---Disconnect all of a table's matching functions from events
 ---@param l any
-function love.event.disconnectAll(l, format)
-    Conns:allunsub(l, format)
+function love.event.disconnect(l)
+    Conns:allunsub(l)
 end
 
 local function send(lovef, fsend, rsend, ev, a,b,c,d,e,f)
@@ -147,6 +144,7 @@ local function send(lovef, fsend, rsend, ev, a,b,c,d,e,f)
             a,b,c,d,e,f = u, v, w, x, y, z
         end
     end
+    Conns:compact(ev)
     if (EventDirs[ev] or 1) < 0 then
         rsend(Conns, ev, a,b,c,d,e,f)
     else
@@ -159,7 +157,7 @@ end
 ---@param ev string
 ---@param ... any
 function love.event.send(ev, ...)
-    send(love[ev], fsend, rsend, ev, ...)
+    send(love[ev], FSend, RSend, ev, ...)
 end
 
 ---Broadcast an event immediately, bypassing love event queue,
@@ -200,7 +198,7 @@ function love.run()
                         return a or 0
                     end
                 else
-                    send(love.handlers[name], fsend, rsend,
+                    send(love.handlers[name], FSend, RSend,
                         name, a,b,c,d,e,f)
                 end
             end
@@ -210,13 +208,13 @@ function love.run()
         if love.timer then dt = love.timer.step() end
 
         -- Call update and draw
-        send(love.update, fsend, rsend, "update", dt) -- will pass 0 if love.timer is disabled
+        send(love.update, FSend, RSend, "update", dt) -- will pass 0 if love.timer is disabled
 
         if love.graphics and love.graphics.isActive() then
             love.graphics.origin()
             love.graphics.clear(love.graphics.getBackgroundColor())
 
-            send(love.draw, fsend, rsend, "draw")
+            send(love.draw, FSend, RSend, "draw")
 
             love.graphics.present()
         end

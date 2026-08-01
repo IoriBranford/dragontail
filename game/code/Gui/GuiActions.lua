@@ -31,7 +31,7 @@ function GuiActions.openMenuMap(gui, element)
     local menugui = Gui.new(pathlite.normjoin(gui.directory, element.mapfile))
     local menu = menugui:get(element.menupath)
     if menu then
-        love.event.connectAll(menugui, "%sconnection")
+        love.event.connect(menugui)
         menugui:pushMenu(menu)
     end
 end
@@ -42,7 +42,7 @@ end
 function GuiActions.closeMenu(gui, element)
     gui:popMenu()
     if #gui.menustack <= 0 then
-        love.event.disconnectAll(gui, "%sconnection")
+        love.event.disconnect(gui)
     end
 end
 
