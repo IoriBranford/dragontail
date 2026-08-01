@@ -3,6 +3,7 @@ local Platform     = require "System.Platform"
 local Config       = require "System.Config"
 local Window       = require "System.Window"
 local pathlite     = require "pathlite"
+local Dragontail   = require "Dragontail"
 
 ---@module 'GuiActions'
 local GuiActions = class()
@@ -32,6 +33,7 @@ function GuiActions.openMenuMap(gui, element)
     local menu = menugui:get(element.menupath)
     if menu then
         love.event.connect(menugui)
+        Dragontail.sortDrawers()
         menugui:pushMenu(menu)
     end
 end

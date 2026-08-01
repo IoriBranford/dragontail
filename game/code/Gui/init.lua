@@ -24,6 +24,7 @@ function Gui.new(map, rootpath)
     local self = Gui.get(map.layers, rootpath) or map.layers
     assert(self.type == "group", "GUI root layer must be a group")
     self.directory = map.directory
+    self.draworder = map.draworder
     self.width = map.width*map.tilewidth
     self.height = map.height*map.tileheight
     self.class = "Gui"

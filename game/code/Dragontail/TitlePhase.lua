@@ -5,6 +5,7 @@ local Gui            = require "Gui"
 local TitleHit       = require "Dragontail.Movie.TitleHit"
 local fixedupdate    = require "fixedupdate"
 local Config         = require "System.Config"
+local Dragontail     = require "Dragontail"
 local TitlePhase = {}
 
 local scenemap ---@type Gui
@@ -14,12 +15,10 @@ local ambientsound ---@type love.Source
 function TitlePhase:loadphase(startwithmainmenu)
     scenemap = Gui.new("data/gui/screen_title.lua")
     scenemap:showOnlyNamed("bg", "title", "etc")
-    love.event.connect(scenemap)
 
     local wipemap = Gui.new("data/gui/wipe_diagonalcurtains.lua")
     local wipe = wipemap.wipe ---@cast wipe Wipe
     wipe:start("open")
-    love.event.connect(wipemap)
 
     Assets.get("ccdata/music/Block Island Sound loop.ogg")
 
@@ -34,6 +33,12 @@ function TitlePhase:loadphase(startwithmainmenu)
         ambientsound = Audio.play("data/sounds/ambient/seaside.ogg")
         if ambientsound then ambientsound:setLooping(true) end
     end
+
+    love.event.connect(Dragontail.predraw)
+    love.event.connect(scenemap)
+    love.event.connect(wipemap)
+    love.event.connect(Dragontail.postdraw)
+    Dragontail.sortDrawers()
 end
 
 function TitlePhase:pushMainMenu()

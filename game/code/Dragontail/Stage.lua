@@ -688,6 +688,8 @@ function Stage:setUniform(var, ...)
     end
 end
 
+Stage.draworder = 1
+
 function Stage:draw(fixedfrac)
     if paused then fixedfrac = 0 end
     love.graphics.setShader(shader)
