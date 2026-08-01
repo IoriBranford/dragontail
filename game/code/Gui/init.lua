@@ -4,33 +4,36 @@ local LayerGroup= require "Tiled.LayerGroup"
 local Object      = require "Tiled.Object"
 local Canvas      = require "System.Canvas"
 local Config      = require "System.Config"
+local Map         = require "Tiled.Map"
 
----@class Gui:LayerGroup
+---@class Gui:TiledMap
 ---@field width integer
 ---@field height integer
 ---@field activemenu Menu
 ---@field menustack Menu[]
 ---@field canvas Canvas
 ---@field [integer] Layer
-local Gui = class(LayerGroup)
+local Gui = class(Map)
 
 ---@param map string|TiledMap Tiled map exported to Lua, either table or filename
 ---@return Gui
-function Gui.new(map, rootpath)
+function Gui.new(map)
     if type(map) == "string" then
         map = Tiled.Map.load(map)
         map:indexEverythingByName()
     end
-    local self = Gui.get(map.layers, rootpath) or map.layers
-    assert(self.type == "group", "GUI root layer must be a group")
-    self.directory = map.directory
-    self.draworder = map.draworder
-    self.width = map.width*map.tilewidth
-    self.height = map.height*map.tileheight
-    self.class = "Gui"
-    self.visible = true
-    self.menustack = {}
-    self:bindClasses()
+    ---@cast map Gui
+    local layers = map.layers
+    for k, v in pairs(layers) do
+        map[k] = v
+    end
+    map.width = map.width*map.tilewidth
+    map.height = map.height*map.tileheight
+    if map.class == "" then
+        map.class = "Gui"
+    end
+    map.menustack = {}
+    map:bindClasses()
 
     local function init(element)
         for i = 1, #element do
@@ -44,13 +47,13 @@ function Gui.new(map, rootpath)
         if element.spawn then
             element:spawn()
         end
-        element.gui = self
+        element.gui = map
     end
-    for _, layer in ipairs(self) do
+    for _, layer in ipairs(map) do
         init(layer)
     end
-    Gui.resize(self, love.graphics.getWidth(), love.graphics.getHeight())
-    return self
+    -- Gui.resize(map, love.graphics.getWidth(), love.graphics.getHeight())
+    return map
 end
 
 ---@param path string separated by '.'
