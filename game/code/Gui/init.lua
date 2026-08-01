@@ -49,9 +49,7 @@ function Gui.new(map)
         end
         element.gui = map
     end
-    for _, layer in ipairs(map) do
-        init(layer)
-    end
+    init(map)
     -- Gui.resize(map, love.graphics.getWidth(), love.graphics.getHeight())
     return map
 end
