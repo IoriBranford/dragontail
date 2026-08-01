@@ -10,7 +10,14 @@ love.event.newEvents({
 })
 
 function Hud:spawn()
-    self:showOnlyNamed("hud")
+    local FS = love.filesystem
+    if FS.getInfo("version") then
+        local v = FS.read("version"):match("%S+")
+        local ver = self:get("hud.development ver")
+        if ver and ver.text then
+            ver.text = string.gsub(ver.text, "0.0.0", v)
+        end
+    end
 end
 
 function Hud:playerheld(player, holder)
