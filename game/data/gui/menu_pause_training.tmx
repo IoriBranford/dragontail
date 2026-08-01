@@ -3,6 +3,9 @@
  <editorsettings>
   <export target="menu_pause_training.lua" format="lua"/>
  </editorsettings>
+ <properties>
+  <property name="z" type="float" value="100"/>
+ </properties>
  <tileset firstgid="1" source="../sprites/ui/firespit.tsx"/>
  <objectgroup draworder="index" id="32" name="pausemenu" class="Gui.Menu">
   <properties>

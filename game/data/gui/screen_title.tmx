@@ -3,6 +3,9 @@
  <editorsettings>
   <export target="screen_title.lua" format="lua"/>
  </editorsettings>
+ <properties>
+  <property name="z" type="float" value="0"/>
+ </properties>
  <tileset firstgid="1" source="../tilesets/ui/Gamepad Spritesheets/Xbox.tsx"/>
  <tileset firstgid="21" source="../sprites/ui/firespit.tsx"/>
  <imagelayer id="34" name="bg" tintcolor="#ffffff">

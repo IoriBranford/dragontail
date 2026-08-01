@@ -11,7 +11,9 @@ return {
   tileheight = 18,
   nextlayerid = 35,
   nextobjectid = 243,
-  properties = {},
+  properties = {
+    ["z"] = 100
+  },
   tilesets = {
     {
       name = "firespit",
