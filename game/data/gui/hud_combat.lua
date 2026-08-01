@@ -147,8 +147,7 @@ return {
           visible = true,
           properties = {
             ["color"] = "#ffff1f1f",
-            ["roundcorners"] = 1,
-            ["z"] = 0
+            ["roundcorners"] = 1
           }
         },
         {
@@ -166,8 +165,7 @@ return {
           properties = {
             ["color"] = "#00000000",
             ["linecolor"] = "#ffffffff",
-            ["roundcorners"] = 2,
-            ["z"] = 2
+            ["roundcorners"] = 2
           }
         },
         {
@@ -183,9 +181,7 @@ return {
           opacity = 1,
           gid = 177,
           visible = true,
-          properties = {
-            ["z"] = 0
-          }
+          properties = {}
         },
         {
           id = 2,
@@ -202,8 +198,7 @@ return {
           properties = {
             ["color"] = "#00000000",
             ["linecolor"] = "#ffffffff",
-            ["roundcorners"] = 2,
-            ["z"] = 3
+            ["roundcorners"] = 2
           }
         },
         {
@@ -221,8 +216,7 @@ return {
           properties = {
             ["color"] = "#ffffaa00",
             ["fullcolor"] = "#ffffd000",
-            ["normalcolor"] = "#ffffaa00",
-            ["z"] = 0
+            ["normalcolor"] = "#ffffaa00"
           }
         },
         {
@@ -238,8 +232,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["color"] = "#ffffffff",
-            ["z"] = 0
+            ["color"] = "#ffffffff"
           }
         },
         {
@@ -257,8 +250,7 @@ return {
           properties = {
             ["color"] = "#ffffaa00",
             ["fullcolor"] = "#ffffd000",
-            ["normalcolor"] = "#ffffaa00",
-            ["z"] = 0
+            ["normalcolor"] = "#ffffaa00"
           }
         },
         {
@@ -274,8 +266,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["color"] = "#ffffffff",
-            ["z"] = 0
+            ["color"] = "#ffffffff"
           }
         },
         {
@@ -293,8 +284,7 @@ return {
           properties = {
             ["color"] = "#ffffaa00",
             ["fullcolor"] = "#ffffd000",
-            ["normalcolor"] = "#ffffaa00",
-            ["z"] = 0
+            ["normalcolor"] = "#ffffaa00"
           }
         },
         {
@@ -310,8 +300,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["color"] = "#ffffffff",
-            ["z"] = 0
+            ["color"] = "#ffffffff"
           }
         },
         {
@@ -329,8 +318,7 @@ return {
           properties = {
             ["color"] = "#00000000",
             ["linecolor"] = "#ffffffff",
-            ["roundcorners"] = 1,
-            ["z"] = 2
+            ["roundcorners"] = 1
           }
         },
         {
@@ -348,8 +336,7 @@ return {
           properties = {
             ["color"] = "#00000000",
             ["linecolor"] = "#ffffffff",
-            ["roundcorners"] = 1,
-            ["z"] = 2
+            ["roundcorners"] = 1
           }
         },
         {
@@ -367,8 +354,7 @@ return {
           properties = {
             ["color"] = "#00000000",
             ["linecolor"] = "#ffffffff",
-            ["roundcorners"] = 1,
-            ["z"] = 2
+            ["roundcorners"] = 1
           }
         },
         {

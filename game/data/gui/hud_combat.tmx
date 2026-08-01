@@ -36,7 +36,6 @@
    <properties>
     <property name="color" type="color" value="#ffff1f1f"/>
     <property name="roundcorners" type="float" value="1"/>
-    <property name="z" type="float" value="0"/>
    </properties>
   </object>
   <object id="5" name="healthbox" x="44" y="3" width="100" height="9">
@@ -44,20 +43,14 @@
     <property name="color" type="color" value="#00000000"/>
     <property name="linecolor" type="color" value="#ffffffff"/>
     <property name="roundcorners" type="float" value="2"/>
-    <property name="z" type="float" value="2"/>
    </properties>
   </object>
-  <object id="1" name="portrait" gid="177" x="14" y="27" width="60" height="27">
-   <properties>
-    <property name="z" type="float" value="0"/>
-   </properties>
-  </object>
+  <object id="1" name="portrait" gid="177" x="14" y="27" width="60" height="27"/>
   <object id="2" name="portraitbox" x="-16" y="0" width="60" height="27">
    <properties>
     <property name="color" type="color" value="#00000000"/>
     <property name="linecolor" type="color" value="#ffffffff"/>
     <property name="roundcorners" type="float" value="2"/>
-    <property name="z" type="float" value="3"/>
    </properties>
   </object>
   <object id="30" name="flame1" type="Gui.Gauge" x="47" y="17" width="30" height="6">
@@ -65,13 +58,11 @@
     <property name="color" type="color" value="#ffffaa00"/>
     <property name="fullcolor" type="color" value="#ffffd000"/>
     <property name="normalcolor" type="color" value="#ffffaa00"/>
-    <property name="z" type="float" value="0"/>
    </properties>
   </object>
   <object id="59" name="flamecharge1" type="Gui.Gauge" x="47" y="17" width="30" height="6">
    <properties>
     <property name="color" type="color" value="#ffffffff"/>
-    <property name="z" type="float" value="0"/>
    </properties>
   </object>
   <object id="31" name="flame2" type="Gui.Gauge" x="80" y="17" width="30" height="6">
@@ -79,13 +70,11 @@
     <property name="color" type="color" value="#ffffaa00"/>
     <property name="fullcolor" type="color" value="#ffffd000"/>
     <property name="normalcolor" type="color" value="#ffffaa00"/>
-    <property name="z" type="float" value="0"/>
    </properties>
   </object>
   <object id="58" name="flamecharge2" type="Gui.Gauge" x="80" y="17" width="30" height="6">
    <properties>
     <property name="color" type="color" value="#ffffffff"/>
-    <property name="z" type="float" value="0"/>
    </properties>
   </object>
   <object id="32" name="flame3" type="Gui.Gauge" x="113" y="17" width="30" height="6">
@@ -93,13 +82,11 @@
     <property name="color" type="color" value="#ffffaa00"/>
     <property name="fullcolor" type="color" value="#ffffd000"/>
     <property name="normalcolor" type="color" value="#ffffaa00"/>
-    <property name="z" type="float" value="0"/>
    </properties>
   </object>
   <object id="57" name="flamecharge3" type="Gui.Gauge" x="113" y="17" width="30" height="6">
    <properties>
     <property name="color" type="color" value="#ffffffff"/>
-    <property name="z" type="float" value="0"/>
    </properties>
   </object>
   <object id="33" name="flamebox" x="47" y="17" width="30" height="6">
@@ -107,7 +94,6 @@
     <property name="color" type="color" value="#00000000"/>
     <property name="linecolor" type="color" value="#ffffffff"/>
     <property name="roundcorners" type="float" value="1"/>
-    <property name="z" type="float" value="2"/>
    </properties>
   </object>
   <object id="34" name="flamebox" x="80" y="17" width="30" height="6">
@@ -115,7 +101,6 @@
     <property name="color" type="color" value="#00000000"/>
     <property name="linecolor" type="color" value="#ffffffff"/>
     <property name="roundcorners" type="float" value="1"/>
-    <property name="z" type="float" value="2"/>
    </properties>
   </object>
   <object id="35" name="flamebox" x="113" y="17" width="30" height="6">
@@ -123,7 +108,6 @@
     <property name="color" type="color" value="#00000000"/>
     <property name="linecolor" type="color" value="#ffffffff"/>
     <property name="roundcorners" type="float" value="1"/>
-    <property name="z" type="float" value="2"/>
    </properties>
   </object>
   <object id="36" name="flamefullcharge1" gid="105" x="42" y="28" width="40" height="20"/>
