@@ -213,7 +213,7 @@ function GamePhase:gameOver(won)
         movie = coroutine.wrap(function()
             local menu = victorymap.menu
             menu.visible = false
-            local shaking = victorymap.movie.direction.shaking
+            local shaking = victorymap.movie.shaking
             local RoseUppercut = coroutine.wrap(End)
             local ok, status = pcall(RoseUppercut, victorymap.movie)
             while ok and status ~= true do
