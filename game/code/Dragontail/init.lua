@@ -248,7 +248,7 @@ function Dragontail.draw(render, ...)
 end
 
 Dragontail.predraw = {
-    z = -0x1000000,
+    draworder = -0x1000000,
     draw = function()
         local wc = Dragontail.worldcanvas
         wc:push()
@@ -256,7 +256,7 @@ Dragontail.predraw = {
 }
 
 Dragontail.postdraw = {
-    z = 0x1000000,
+    draworder = 0x1000000,
     draw = function()
         local wc = Dragontail.worldcanvas
         local sc = Dragontail.screencanvas
@@ -265,5 +265,11 @@ Dragontail.postdraw = {
         sc:draw()
     end
 }
+
+function Dragontail.sortDrawers()
+    love.event.sortConnected("draw", function(a, b)
+        return (a.draworder or 0) < (b.draworder or 0)
+    end)
+end
 
 return Dragontail

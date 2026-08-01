@@ -12,7 +12,7 @@ return {
   nextlayerid = 34,
   nextobjectid = 238,
   properties = {
-    ["z"] = 100
+    ["draworder"] = 100
   },
   tilesets = {
     {

@@ -4,7 +4,7 @@
   <export target="screen_title.lua" format="lua"/>
  </editorsettings>
  <properties>
-  <property name="z" type="float" value="0"/>
+  <property name="draworder" type="float" value="1"/>
  </properties>
  <tileset firstgid="1" source="../tilesets/ui/Gamepad Spritesheets/Xbox.tsx"/>
  <tileset firstgid="21" source="../sprites/ui/firespit.tsx"/>

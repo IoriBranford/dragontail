@@ -4,7 +4,7 @@
   <export target="menu_options_simple.lua" format="lua"/>
  </editorsettings>
  <properties>
-  <property name="z" type="float" value="500"/>
+  <property name="draworder" type="float" value="500"/>
  </properties>
  <tileset firstgid="1" source="../sprites/ui/firespit.tsx"/>
  <objectgroup draworder="index" id="19" name="simple" class="Gui.Menu">

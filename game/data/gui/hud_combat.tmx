@@ -4,7 +4,7 @@
   <export target="hud_combat.lua" format="lua"/>
  </editorsettings>
  <properties>
-  <property name="z" type="float" value="50"/>
+  <property name="draworder" type="float" value="50"/>
  </properties>
  <tileset firstgid="1" source="../tilesets/ui/rose-face.tsx"/>
  <tileset firstgid="5" source="../tilesets/ui/gamepad-buttons.tsx"/>

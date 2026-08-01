@@ -4,7 +4,7 @@
   <export target="wipe_diagonalcurtains.lua" format="lua"/>
  </editorsettings>
  <properties>
-  <property name="z" type="float" value="1000"/>
+  <property name="draworder" type="float" value="1000"/>
  </properties>
  <objectgroup id="9" name="wipe" class="Gui.Wipe">
   <properties>
