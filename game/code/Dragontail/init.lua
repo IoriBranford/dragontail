@@ -170,13 +170,17 @@ function Dragontail.load(args)
     Config.setApply("resolution", function(res)
         local rc = Dragontail.worldcanvas
         rc:resize(w, h, res)
-        Dragontail.resize()
+        Dragontail:resize()
     end)
 
     Config.setApply("upscale", function(res)
         local sc = Dragontail.screencanvas
         sc:resize(w * res, h * res)
-        Dragontail.resize()
+        Dragontail:resize()
+    end)
+
+    Config.setApply("upscaleinteger", function(res)
+        Dragontail:resize()
     end)
 
     Config.setApply("linearfilter", function(filter)
