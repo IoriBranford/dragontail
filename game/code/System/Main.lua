@@ -35,6 +35,7 @@ function love.handlers.newphase(name, ...)
 
     love.currentphase = nextphase
     love.event.reset()
+    love.event.connect(game)
     love.event.connect(nextphase)
     love.event.send("loadphase", ...)
     collectgarbage()
