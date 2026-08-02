@@ -207,12 +207,7 @@ local function send(ls, i1, i2, di, cl, ev, a, b, c, d, e, f)
                 = cl(l, ev, a, b, c, d, e, f)
             if req == "stop" then break end
             if req == "args" then
-                if u ~= nil then a = u end
-                if v ~= nil then b = v end
-                if w ~= nil then c = w end
-                if x ~= nil then d = x end
-                if y ~= nil then e = y end
-                if z ~= nil then f = z end
+                a,b,c,d,e,f = u,v,w,x,y,z
             end
         end
     end
