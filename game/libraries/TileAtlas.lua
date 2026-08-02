@@ -1,4 +1,4 @@
-local Heap = require "Heap"
+local heap = require "heap"
 
 ---@class AtlasTile
 ---@field image love.Texture
@@ -86,7 +86,7 @@ function TileAtlas.New(width, height)
         image = self.canvas,
         quad = love.graphics.newQuad(1, 1, 2, 2, width, height)
     }
-    self.freespaces = Heap.new()
+    self.freespaces = heap.new()
     self.freespaces:push(newSpace(0, 0, width, height))
     self:takeSpace(4, 4, emptytile)
     self.newtilespaces = {}
