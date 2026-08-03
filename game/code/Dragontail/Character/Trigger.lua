@@ -274,4 +274,8 @@ function Trigger:pulseAlpha()
     end
 end
 
+function Trigger:openRoom()
+    Stage:openRoom(self.room)
+end
+
 return Trigger
