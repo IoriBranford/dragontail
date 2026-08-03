@@ -176,7 +176,6 @@ function Stage:init(startroom)
             Characters.spawn(player)
         end
     else
-        Database.load("data/database/players-properties.csv")
         local player = Character("Rose")
         Characters.spawn(player)
         Stage:warpCamera(camera.x+camera.width/2, camera.y+camera.height/2)

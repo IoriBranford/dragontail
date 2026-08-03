@@ -34,6 +34,7 @@ function GamePhase:loadphase(stagepath_, startroom)
     local unifont = Assets.getFont("Unifont", 16)
     love.graphics.setFont(unifont)
 
+    Database.load("data/database/players-properties.csv")
     Database.load("data/database/vfx-properties.csv")
     Database.load("data/database/items-properties.csv")
     Database.load("data/database/projectiles-properties.csv")
