@@ -380,6 +380,34 @@
                 "layer",
                 "project"
             ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 19,
+            "members": [
+                {
+                    "name": "action",
+                    "type": "string",
+                    "value": ""
+                },
+                {
+                    "name": "color",
+                    "type": "color",
+                    "value": ""
+                },
+                {
+                    "name": "script",
+                    "type": "string",
+                    "value": "Dragontail.Character.Trigger"
+                }
+            ],
+            "name": "Trigger",
+            "type": "class",
+            "useAs": [
+                "object",
+                "project"
+            ]
         }
     ]
 }
