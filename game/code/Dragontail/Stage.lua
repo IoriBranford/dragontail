@@ -171,14 +171,20 @@ function Stage:init(startroom)
     end
 
     local players = map.layers.players
+    local ccx, ccy = 0, 0
     if players and #players > 0 then
         for _, player in ipairs(players) do
             Characters.spawn(player)
+            ccx, ccy = math2.vadd(ccx, ccy, player.x, player.y)
         end
+        ccx, ccy = math2.vdiv(ccx, ccy, #players)
     else
         local player = Character("Rose")
         Characters.spawn(player)
-        Stage:warpCamera(camera.x+camera.width/2, camera.y+camera.height/2)
+        ccx, ccy = player.x, player.y
+    end
+    if not camerapath then
+        Stage:warpCamera(ccx, ccy)
     end
 
     local foundbounds = 0
@@ -252,6 +258,9 @@ end
 function Stage:warpCamera(warpx, warpy)
     camera.x = warpx - camera.width/2
     camera.y = warpy - camera.height/2
+end
+
+function Stage:warpPlayersToCamera()
     local players = Characters.getGroup("players")
     local spacebetween = 64
     local playerx = camera.x + camera.width/4 + spacebetween*(#players - 1)/2

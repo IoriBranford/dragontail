@@ -23,6 +23,7 @@ function Sequences.playerExitToNextArea()
 
     local camerawarp = room.camerawarpwhendone
     Stage:warpCamera(camerawarp.x, camerawarp.y)
+    Stage:warpPlayersToCamera()
     Stage:openNextRoom()
 end
 
@@ -76,6 +77,7 @@ function Sequences.playerBreakIntoNextArea()
 
     local camerawarp = room.camerawarpwhendone
     Stage:warpCamera(camerawarp.x, camerawarp.y)
+    Stage:warpPlayersToCamera()
     Stage:openNextRoom()
 end
 
