@@ -16,65 +16,76 @@ end
 
 local swap = ihash.swap
 
-local function movefwd(h, i, v)
-    local cmp = h.cmp
+function heap:movefwd(v)
+    local i = self[v]
+    if not i then return end
+
+    local cmp = self.cmp
     local fwdi = math.floor(i/2)
     while fwdi > 0 do
-        local fwdv = h[fwdi]
+        local fwdv = self[fwdi]
         if cmp(fwdv, v) then
             break
         end
-        swap(h, i, fwdi)
+        swap(self, i, fwdi)
         i, fwdi = fwdi, math.floor(i/2)
     end
     return i
 end
 
-function heap.push(h, v)
-    local i = ihash.add(h, v)
-    movefwd(h, i, v)
+function heap:push(v)
+    ihash.add(self, v)
+    return self:movefwd(v)
 end
 
-local function moveback(h, i, v)
-    local cmp = h.cmp
-    local last = math.floor(#h/2)
+function heap:moveback(v)
+    local i = self[v]
+    if not i then return end
+
+    local cmp = self.cmp
+    local last = math.floor(#self/2)
     while i <= last do
         local i1 = 2*i
         local i2 = i1+1
-        local v1 = h[i1]
-        local v2 = h[i2]
+        local v1 = self[i1]
+        local v2 = self[i2]
         if cmp(v, v1) then
             if not v2 or cmp(v, v2) then
                 break
             else
-                swap(h, i, i2)
+                swap(self, i, i2)
                 i = i2
             end
         elseif not v2 or cmp(v, v2) or cmp(v1, v2) then
-            swap(h, i, i1)
+            swap(self, i, i1)
             i = i2
         elseif v2 then
-            swap(h, i, i2)
+            swap(self, i, i2)
             i = i2
         end
     end
     return i
 end
 
-function heap.pop(h)
-    local v = h[1]
-    ihash.remove(h, v)
-    moveback(h, 1, h[1])
+function heap:pop()
+    local v = self[1]
+    ihash.remove(self, v)
+    self:moveback(self[1])
     return v
 end
 
-function heap.update(h, v)
-    local i = h[v]
+function heap:update(v)
+    local i = self[v]
     if not i then return end
 
-    local i2 = movefwd(h, i, v)
+    local i2 = self:movefwd(v)
     if i2 ~= i then return i2 end
-    return moveback(h, i, v)
+    return self:moveback(v)
+end
+
+function heap:remove(t)
+    local _, t2 = ihash.remove(self, t)
+    return self:update(t2)
 end
 
 return heap
