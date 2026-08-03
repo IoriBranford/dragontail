@@ -3,44 +3,57 @@ local sformat = string.format
 
 ---@alias evreq "args"|"stop"
 ---@alias evfunc fun(...):evreq?,...
+---@alias lsorder fun(a:listener, b:listener):boolean
+
 ---@class listener
 ---@field [string] evfunc
 ---@field __evco thread?
 
+---@class listeners:ihash<listener>
+---@field order lsorder?
+---@field needsort boolean?
+
 ---@class dispatch
----@field events table<string, ihash<listener>>
+---@field events table<string, listeners>
 local dispatch = {}
 dispatch.__index = dispatch
 
-function dispatch.new(...)
+---Create new dispatch
+---@return dispatch
+function dispatch.new()
     local self = { events = {} } ---@type dispatch
     setmetatable(self, dispatch)
-    self:newevents(...)
     return self
 end
 
-function dispatch:newevent(ev)
+---Register new event
+---@param ev string
+---@param order lsorder?
+function dispatch:newevent(ev, order)
     if not self.events[ev] then
-        self.events[ev] = {}
+        self.events[ev] = {order = order}
     end
 end
 
-function dispatch:newevents(...)
-    for i = 1, select("#", ...) do
-        local ev = select(i, ...)
-        self:newevent(ev)
+function dispatch:lsorder(ev, order)
+    local ls = self.events[ev]
+    if ls then
+        ls.needsort = true
+        ls.order = order
     end
 end
 
 ---Subscribe
----@param ev string
 ---@param l listener
----@return integer i
+---@param ev string
 function dispatch:sub(l, ev)
-    assert(type(l[ev]) == "function")
-    self:newevent(ev)
+    if type(l[ev]) ~= "function" then return end
+
     local ls = self.events[ev]
-    return ihash.add(ls, l)
+    if not ls or ls[l] then return end
+
+    ihash.add(ls, l)
+    ls.needsort = ls.order ~= nil
 end
 
 function dispatch:multisub(l, ...)
@@ -52,34 +65,20 @@ function dispatch:multisub(l, ...)
     end
 end
 
-local function allsub(self, l, cond)
-    cond = cond or function (ev, f)
-        return type(f) == "function"
-    end
-
-    for ev, f in pairs(l) do
-        if cond(ev, f) then
-            self:sub(l, ev)
-        end
+function dispatch:allsub(l)
+    local sub = self.sub
+    for ev in pairs(l) do
+        sub(self, l, ev)
     end
 
     local mt = getmetatable(l)
     if not mt then return end
 
-    for ev, f in pairs(mt) do
-        if not rawget(l, ev) and cond(ev, f) then
-            self:sub(l, ev)
+    for ev in pairs(mt) do
+        if not rawget(l, ev) then
+            sub(self, l, ev)
         end
     end
-end
-
-function dispatch:allsub(l, force)
-    local evs = self.events
-    local cond = not force and
-        function (ev, f)
-            return evs[ev] and type(f) == "function"
-        end
-    allsub(self, l, cond)
 end
 
 ---Unsubscribe
@@ -87,7 +86,10 @@ end
 ---@param ev string
 function dispatch:unsub(l, ev)
     local ls = self.events[ev]
-    return ls and ihash.removeordered(ls, l)
+    if not ls then return end
+
+    ihash.removeordered(ls, l)
+    ls.needsort = #ls > 0 and ls.order ~= nil
 end
 
 function dispatch:allunsub(l)
@@ -106,9 +108,8 @@ end
 
 function dispatch:clearsubs(ev)
     local ls = self.events[ev]
-    if not ls then return end
-    for k in pairs(ls) do
-        ls[k] = nil
+    if ls then
+        self.events[ev] = {order = ls.order}
     end
 end
 
@@ -187,7 +188,7 @@ local function cosend(ls, i1, i2, di, cl, ev, a, b, c, d, e, f)
 end
 
 ---comment
----@param ls ihash<listener>
+---@param ls listeners
 ---@param i1 integer
 ---@param i2 integer
 ---@param di integer
@@ -200,6 +201,10 @@ end
 ---@param e any
 ---@param f any
 local function send(ls, i1, i2, di, cl, ev, a, b, c, d, e, f)
+    if ls.needsort then
+        ls.needsort = false
+        ihash.sort(ls, ls.order)
+    end
     for i = i1, i2, di do
         local l = ls[i]
         if l then
@@ -252,16 +257,6 @@ function dispatch:rsendself(ev, a,b,c,d,e,f)
         a,b,c,d,e,f = send(ls, #ls, 1, -1, callself, ev, a,b,c,d,e,f)
     end
     return a,b,c,d,e,f
-end
-
-function dispatch:sort(ev, cmp)
-    local ls = self.events[ev]
-    if ls then ihash.sort(ls, cmp) end
-end
-
-function dispatch:compact(ev)
-    local ls = self.events[ev]
-    if ls then ihash.pruneordered(ls) end
 end
 
 function dispatch:stats(min)

@@ -79,7 +79,6 @@ function GamePhase:loadphase(stagepath_, startroom)
     love.event.connect(hudmap)
     love.event.connect(wipemap)
     love.event.connect(Dragontail.postdraw)
-    Dragontail.sortDrawers()
     love.event.send("wipestart", "open")
 
     playerwon = nil
@@ -107,7 +106,7 @@ function GamePhase:setPaused(newpaused, withmenu)
             pausemap:showOnlyNamed("pausemenu")
             pausemap:pushMenu(pausemap.pausemenu)
             love.event.connect(pausemap)
-            Dragontail.sortDrawers()
+            
         end
     else
         pausemap:clearMenuStack()
@@ -212,7 +211,7 @@ function GamePhase:gameOver(won)
     if won then
         local victorymap = Gui.new("data/gui/menu_stage_clear.lua")
         love.event.connect(victorymap)
-        Dragontail.sortDrawers()
+        
 
         movie = coroutine.wrap(function()
             local menu = victorymap.menu
@@ -237,7 +236,7 @@ function GamePhase:gameOver(won)
         local gameovermap = Gui.new("data/gui/menu_game_over.lua")
         gameovermap:pushMenu(gameovermap.menu)
         love.event.connect(gameovermap)
-        Dragontail.sortDrawers()
+        
     end
 end
 

@@ -29,7 +29,6 @@ function MoviePhase:loadphase(file)
     love.event.connect(MoviePhase.Overlay)
     love.event.connect(MoviePhase.ErrorOverlay)
     love.event.connect(Dragontail.postdraw)
-    -- Dragontail.sortDrawers()
 end
 
 function MoviePhase:fixedupdate()
@@ -87,7 +86,6 @@ function MoviePhase:startMovie(i)
     moviemap:indexLayersByName()
     moviemap:indexLayerObjectsByName()
     love.event.connect(moviemap)
-    Dragontail.sortDrawers()
 
     movie = moviemap.layers[i]
     moviemap:showOnlyNamed(movie.name)

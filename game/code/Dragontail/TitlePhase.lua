@@ -36,7 +36,6 @@ function TitlePhase:loadphase(startwithmainmenu)
     love.event.connect(scenemap)
     love.event.connect(wipemap)
     love.event.connect(Dragontail.postdraw)
-    Dragontail.sortDrawers()
     love.event.send("wipestart", "open")
 end
 

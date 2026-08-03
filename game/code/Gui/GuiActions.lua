@@ -33,7 +33,6 @@ function GuiActions.openMenuMap(gui, element)
     local menu = menugui:get(element.menupath)
     if menu then
         love.event.connect(menugui)
-        Dragontail.sortDrawers()
         menugui:pushMenu(menu)
     end
 end

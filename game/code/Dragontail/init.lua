@@ -118,6 +118,7 @@ end
 
 function Dragontail.load(args)
     love.event.setSelfMode(true)
+    love.event.orderConnections("draw", Dragontail.drawOrder)
 
     Config = require "System.Config"
     local w, h = Dragontail.width, Dragontail.height
@@ -261,10 +262,8 @@ Dragontail.postdraw = {
     end
 }
 
-function Dragontail.sortDrawers()
-    love.event.sortConnected("draw", function(a, b)
-        return (a.draworder or 0) < (b.draworder or 0)
-    end)
+function Dragontail.drawOrder(a, b)
+    return (a.draworder or 0) < (b.draworder or 0)
 end
 
 return Dragontail
