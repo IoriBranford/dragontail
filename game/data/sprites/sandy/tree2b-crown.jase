@@ -1,0 +1,99 @@
+{ "frames": {
+   "#1": {
+    "frame": { "x": 1, "y": 1, "w": 58, "h": 43 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 5, "w": 58, "h": 43 },
+    "sourceSize": { "w": 64, "h": 48 },
+    "duration": 100
+   },
+   "#2": {
+    "frame": { "x": 61, "y": 1, "w": 58, "h": 43 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 5, "w": 58, "h": 43 },
+    "sourceSize": { "w": 64, "h": 48 },
+    "duration": 100
+   },
+   "#3": {
+    "frame": { "x": 121, "y": 1, "w": 58, "h": 43 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 5, "w": 58, "h": 43 },
+    "sourceSize": { "w": 64, "h": 48 },
+    "duration": 100
+   },
+   "#4": {
+    "frame": { "x": 181, "y": 1, "w": 58, "h": 44 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 4, "w": 58, "h": 44 },
+    "sourceSize": { "w": 64, "h": 48 },
+    "duration": 100
+   },
+   "#5": {
+    "frame": { "x": 241, "y": 1, "w": 58, "h": 44 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 4, "w": 58, "h": 44 },
+    "sourceSize": { "w": 64, "h": 48 },
+    "duration": 100
+   },
+   "#6": {
+    "frame": { "x": 301, "y": 1, "w": 58, "h": 44 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 4, "w": 58, "h": 44 },
+    "sourceSize": { "w": 64, "h": 48 },
+    "duration": 100
+   },
+   "#7": {
+    "frame": { "x": 361, "y": 1, "w": 58, "h": 44 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 4, "w": 58, "h": 44 },
+    "sourceSize": { "w": 64, "h": 48 },
+    "duration": 100
+   },
+   "#8": {
+    "frame": { "x": 421, "y": 1, "w": 58, "h": 43 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 5, "w": 58, "h": 43 },
+    "sourceSize": { "w": 64, "h": 48 },
+    "duration": 100
+   },
+   "#9": {
+    "frame": { "x": 481, "y": 1, "w": 58, "h": 43 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 5, "w": 58, "h": 43 },
+    "sourceSize": { "w": 64, "h": 48 },
+    "duration": 100
+   },
+   "#10": {
+    "frame": { "x": 541, "y": 1, "w": 58, "h": 42 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 6, "w": 58, "h": 42 },
+    "sourceSize": { "w": 64, "h": 48 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.3.18.1-x64",
+  "image": "tree2b-crown.png",
+  "format": "RGBA8888",
+  "size": { "w": 600, "h": 46 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Sprite Sheet", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+   { "name": "origin", "color": "#0000ffff", "keys": [{ "frame": 0, "bounds": {"x": 16, "y": 32, "w": 32, "h": 16 }, "pivot": {"x": 16, "y": 8 } }] }
+  ]
+ }
+}
