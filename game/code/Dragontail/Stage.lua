@@ -705,6 +705,7 @@ function Stage:draw(fixedfrac)
     local z = camera.z + camera.bodyheight/2 + camera.velz*fixedfrac
     love.graphics.translate(-x, z - y)
     scene:draw(fixedfrac, Characters.isDrawnBefore)
+    Stage:setUniform("texRgbFactor", 1)
     if Characters.isTimeToClearLostEnemies() then
         Characters.debugDrawOffScreenEnemyPositions()
     end
