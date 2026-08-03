@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="32" tileheight="32" infinite="1" nextlayerid="9" nextobjectid="54">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="32" tileheight="32" infinite="1" nextlayerid="15" nextobjectid="66">
  <editorsettings>
   <export target="stage_training.lua" format="lua"/>
  </editorsettings>
@@ -18,34 +18,50 @@
  <tileset firstgid="2078" source="sprites/items/pepper-plant.tsx"/>
  <tileset firstgid="2079" source="sprites/sandy/tree1a-crown.tsx"/>
  <tileset firstgid="2080" source="sprites/sandy/tree1a-trunk.tsx"/>
- <group id="7" name="tilelayers" offsetx="0" offsety="-16">
-  <layer id="3" name="sand" width="30" height="15">
+ <tileset firstgid="2081" source="sprites/sandy/tree2b-trunk.tsx"/>
+ <tileset firstgid="2082" source="sprites/sandy/tree2b-crown.tsx"/>
+ <tileset firstgid="2083" source="sprites/sandy/tree2a-crown.tsx"/>
+ <tileset firstgid="2084" source="sprites/sandy/tree2a-trunk.tsx"/>
+ <group id="7" name="tilelayers">
+  <layer id="3" name="desert_ground" width="30" height="15">
    <properties>
     <property name="z" type="float" value="-5"/>
    </properties>
    <data encoding="base64" compression="zlib">
     <chunk x="-16" y="-16" width="16" height="16">
-   eJxjYBgFo2AUMIww8I2VgWE1GwMDAA6RAa0=
+   eJxjYBgFo2AUMAwxcIyVgWEVG2l6vrEyMPxgZWD4zsrAcISVgeEMGwMDAKR/Bgs=
   </chunk>
     <chunk x="0" y="-16" width="16" height="16">
-   eJzty7sNAlEMRNET2K8hYqpAtAGdkNMCsBKQkVMA1fBJELL2ISog2ytdjeyxmZiY8Cfuya7xytF949DnR7JNnv3ma93UrvprsgiOwTpZJecYsxzary+rK08962cZzJJ5cgluwSZ5Bx981Rtn
+   eJztzjtuAkEQhOEvme6TgCVzHCzAR1uLh1MLuAUJEHAbMERoxEgbcoGtpEr9d5eaQYMGeaOucCvcC7t45Ufp+bWwjZ5Xrzt19l/YB6fgN/hOLsFfY3X3UD2YJF/JZzJOVsFPsA42LR+Deb7yo7Fb6683taf2j5JFMkumyTlYBl374yN5AlZ9I5g=
   </chunk>
     <chunk x="16" y="-16" width="16" height="16">
-   eJxjYBgFo2AUMJAJVrExMPxiJT/8NrMwMBxmZWCYRaYZrSwQM6aTqR8AuWgFqg==
+   eJztjjsKgEAMBadJchDRI3k4O0t/pxCt9DyrgiBL1lqw3mleeJDhQSaT4SeHwCV+rwKnwKjQpO6LyqBTGBQmhdogqHfRs3x4SoNboTDY0v+u0KrnLNAnfxDPuPHd9wBqqhUk
   </chunk>
     <chunk x="-16" y="0" width="16" height="16">
-   eJzNkisOQkEMRY9o70hCwg7Q4NkAnoBGY55AIQmesAY8BscnSCyC3TzBC4hZwXQM15+0vacQy1YwtyAMDAUDr+MnlfyuYv+Z4KUYexI8HbogfzNYGrSFvAskWDvsDRapfPY0Ze+Nw7mwv5Ggl3LvK4dLIf92ODo8DO4Gm4D/saBN0E9wCPi/Cr6e7/hU/N+/5Ae+YBVb
+   eJydk1lKg0EQhL+XqT5I4oKexqCip9FTiHHBeAA9hksWPM2foESQpjuQt/RvwbwMU13V1T1Qx0DwIBgaDAxOrQcZuBZcGnSChWCqfvwrwZfgXqH/05M/EvwKDtL74z/0Dw0+FD2si/xlg1WDl/T+qfA+srquZ3VswfUZnFtd/yQ1Pfs9iwy9xkR1/W9FZhcWXs4s6vXJ/VlwZNHHOj3twttWbk+Zg/vo0sMuDHNO/n6ce3OX+zcp6L8KbhrMBe85t32DmeKugtsWNTxD/zur3MFK/9s1ugZLxXHvPsMqxpnjRntz/gBs1z/c
   </chunk>
     <chunk x="0" y="0" width="16" height="16">
-   eJytkktL1lEQxn+LubirpG+QBNUnaNGi6z5801pkixalqRUUXXZdCKIgWkaU5RdIy7wkQbgTTch9UBLWMgIzQyyGmbc3WnfgcP4z53nmeWb+Z1DhiMCYwITAuECf5j6tmYs9KbBJ4ZrADYEPAvcUTjrcd+gSOKswUueowIDCc8nvW9LChN6MpubN0guNXs3aY/UdXo4KdEsr38SGtzO1Gw4Ng3WDU5U75vDI0m/EzXPBYMjgocFjg06BhiT2qcGqwU6HTofvBmuWtbd78p5VD8Hpdtiq0F/xE4PDntorxVmoGqE3b7Bbs5/wMiXp62XFwXtg0FVa4Sf4Oxx+GOzy7O96zNLhjiQmNKP2Ns+aPQJzlpxmf9FP1J81OC5wSeGKwguBDs++Ande4a7AW0svy5L9jdR95L4K7HPY7+kl+O/rfcTMYoeP14FTaFNYFDjkcFnhRMzQYY/DdPmNOS5Jzj+4VzU1zikMC9yu+KDDAYfNDsMObwQuaovf5LY7rDlMKnzW5ETcb/BFU3vDYdTgm+bdisNq/PfCfjRYMvikMGjQY7DXYIsldtn4s6YNNhReGfyKNxHzc/jpWWNI8369MFN/cf9d7woX/+KCZm6xzv+9fgPGY4LS
+   eJxNkstOlEEUhL+J3aeXuuAFjBdEl65Y4MInEBkuLklIjPHG1iXeEn0DRAZ8Au/KwsS4GhlGZ8WjgDoOiSm7/gyrv/v8p+pU1el2wPeAMwV+BcyWer9Y4FyBG/5eKvAyoBcwV+BvwJ+ACwWOAtoBPwM2XNuLyjdVoOtvJ6AfMDT2IGCywCDgMGBkHs3+bS7NV892wGbAesB5z9cMadJZ/V33d9y7G/DDOhZL1bdpXN+aGg+71iP8fBn7GZp3aN/X7Vfnxrv+vYjqo9EsncpMc//7cr5tax16XsfYdeN61iZdI+civ8Jt+77kfPrGbh2btVDqDre8U/EIO+sc5bNn7lfWovrIOR7Zg/Q1vdqHNEyad8NaxH/WGeiNdJ3BwNiBefR9neBehjcJ7ma477M499w/l2rtbRr/f+f7aobTGfaBVgueFXhextziVM+HBJ8SfEywlODxsfujBA+A5QyfC+yUip1PcC3DYoLbufpt6qdUt8+JDJc9Q3y3MlzNcKIFXzNcyTUbeZo238NU+fRubuaq6aRnaGfiXCnwLcMTZ/Q+Vbz6tDf16b01mmZy3ZXe75p1yNsXaj7iUd+dPM5PvE9T1b/gfFX/B6W4kr4=
   </chunk>
     <chunk x="16" y="0" width="16" height="16">
-   eJzNkr0JAmEQBQfZn1RsQezhmjBRMBMzE7MDQS62BbEGBUODQzAwEiuwAU20gRMRucACvr3EyWff8nh5C9pKmL3ATOEVvDF06DpsDLaW7g8cLgalwEHS/Z7DWGAi0PF0f6FQKNwMqoB/EjgKlAbvQId19lOgH+iu5m7wEFgG/Y/DXGEU9HcKK4VzcD+ZwbrBfqfBv39cG2T/A1+KHRiw
+   eJxdk8+OjFEQxX86VXUXRLwDRmtPYGHjASR0m2lWk7ESDBELW4I1YWP+6OmlHSEZ+1kwI3TiDXiHMcyYRE6qOiMWlXtv3apzTp37fVsB3QaDBlcaTAKWA061XPsNdqtm2OBig18BGw5LDica7Af0GnwNWAl4GfApYBxwvMEo8q5bHIqPAa8DtgMGkbk17RvsBfwO+Fk94l8N2AnYjORTj/StVaxWz5+6Xy5uxVLhS+OX0qfYiry71LJfOdVohlFhTApXNdvlx7j6ZkrzyZa6TpcXml286putPvkmDbpbqfxeadB+iqu9Qv7vlB55dab8lyfDwhz+xydczSG/ZussP3XW3MKbaxmvIkO6tEpbt7ik43Pk205qLuH0Sle/ZlP+lsOi5zqwzMsT9Yl3s3BGdRbf7j++H3HoOcwDNwtH8dbgtmcs1nnKsV/ea467HXjh8A14ZLBuMDRwh2vAe4PrDh8MnhXHO0vvZ9rB3ZzBDc/5zzo8dbjXgXOe3jwo3OcO3y3/Ab173+CJwQ/LOn0z5x04lNwPLb8r1V22g5z8kS/iWiAx9WbqP+xw1OGYp0dTjvtkTnOLW+9/x2HcybneWPoknqsOjy1zqrngya0ZpVNvLIy/C3WLQw==
+  </chunk>
+    <chunk x="32" y="0" width="16" height="16">
+   eJxjYKAMHGWlTL8vG2X65SnUH8Y2sO4/zEpZGJ5noywMlNkpC4OzFNqvxU5ZGKqyMzBUU6D/DIXu12ZnYNCgQP9PNsrCP4ydgWElGwPDLzLTEABhgAvq
+  </chunk>
+    <chunk x="-16" y="16" width="16" height="16">
+   eJztzqENg1AARdFj/vuTkI7UcboFDsECbbcgwbBMQaBQeEA2HH+TyzGvMIQu9OFRaerBGEPhV5gLY3hW1jjtHdrCEqYL/f7yCd+L/e3mT2zSfw07
+  </chunk>
+    <chunk x="0" y="16" width="16" height="16">
+   eJztjckJQkEQRN/hT3UiCqLhCMagZmEQ4kFcInA5qCH4FTUYVxAFaWbEk96FX9AUxeuubhgMBJ0MVhk0A7RDdJ9W8mXi7p4XKZcNroK94Jl8LTgIagZjwUiwFVQssoegL7grcv9ft9i1EdzSvXcNBVWL3blgl3LJIjsGOAeYC2aCU4Cp4BI+nd3E38xvfDx/00Rx16f3Y69QIf5YL3GdLSI=
+  </chunk>
+    <chunk x="16" y="16" width="16" height="16">
+   eJztjckJQmEQg7/Dm0wjgliOuGEJvjLsQVxwKcEF1Bpc0FrcBT3I4/9BT94FA2ESEjKpQWrQMJgnb2Z+mcAiMvPNBEoON8FasBXUHQoONYeyoCu4C/aCa+RIodMX5ByegqrDUJB32CnoR8zLHvRFYXMVdfarJxgIDgYTwVjhngyOFnx2LwYbQdGh4tAyOH/kM/EVnbg/jWzb9/4ff/CDeAFAqizO
+  </chunk>
+    <chunk x="32" y="16" width="16" height="16">
+   eJz7ysbAMJ+NgSGMjYEs8JGVgeELKwPDJjL1n2AlT98oGAWjgIFiAAClrQVx
   </chunk>
    </data>
-  </layer>
-  <layer id="8" name="grass" width="30" height="15" visible="0">
-   <data encoding="base64" compression="zlib"/>
   </layer>
   <layer id="4" name="wall" width="30" height="15">
    <properties>
@@ -53,157 +69,214 @@
    </properties>
    <data encoding="base64" compression="zlib">
     <chunk x="0" y="0" width="16" height="16">
-   eJzty7ENglAABuGP/80juAGDiGxAxThWjmPFREZD8gZ4WhKuuVxxa0HoQsKna+tx//As9GEI13BJWy/13wpTuIc53NLWj/q/q3/l9ed3cuJAfAGlFw9o
+   eJztzjFOglEQReGPmfWgxLAGNqESib0NrEOgt9F9CD2NLsfGaCY+khdjTPxL4kledc/c+9bY4gZTrHHb3gJ7LBPBKIjgY8RdMssvr253uGhu5b3/mJwF58EkGAcPySq5x6ZtV1+5lff+S3IVXAfz4DI4JE/tftp2q6/cynv/vf7/jbfkNXnudqvvJ/c3+t3q+ytDd48M3T0ydPcfJ8Enu2kkaA==
+  </chunk>
+    <chunk x="16" y="0" width="16" height="16">
+   eJzti8kJgEAUxTKxHpd+XEqwIiuyIm96GJGPzElvYuAdEngKewKEJHju3qLPFRedUAuN0Jq91KIv4T8JvTAIo9lLLfoa/k/YXv5/fvgIByHWDT4=
+  </chunk>
+   </data>
+  </layer>
+  <layer id="11" name="onwall" width="30" height="15">
+   <properties>
+    <property name="z" type="float" value="-2"/>
+   </properties>
+   <data encoding="base64" compression="zlib">
+    <chunk x="-16" y="-16" width="16" height="16">
+   eJxjYBgFo2AUMAwxsJiVgYGZjXy951gZGJzZGBgARSUCdg==
+  </chunk>
+    <chunk x="0" y="-16" width="16" height="16">
+   eJztzLERQEAURdFj+H+rUq0SUAZ60IcZwUrNyCR7khu9R9M0frImS9YOyRS1X42Fq3AmW7AHc9I9v31yxPv+BouECRk=
+  </chunk>
+    <chunk x="-16" y="0" width="16" height="16">
+   eJztzcENglAUAMG5vGdVGvowsR9sgx4QsApLEGvwDCGhgf/Dkb1PlrK64JXMwTcLMdrkkQzB/1Lu70kf/IJbxX9Ilt1fK/zWM3kHTaX/BGMyVfqzMwe1Ak+UDwA=
+  </chunk>
+    <chunk x="0" y="0" width="16" height="16">
+   eJztz7EJwlAQgOGvuXttiuAoLuBCmcQVxBmsDC5j4Q6CIuEhaYSgSWWRD648/ru2sE26wia5BdegSx7BKziGSffynqZwCPrknDy/7I1OQZvskn2ard5cu7X5S+9T/fGyoDta0lyt/IkBZroR9Q==
   </chunk>
    </data>
   </layer>
  </group>
  <objectgroup id="6" name="players">
-  <object id="3" template="mapobjects/player/Rose.tx" x="160" y="136">
+  <object id="3" template="mapobjects/player/Rose.tx" x="480" y="288">
    <properties>
     <property name="facedegrees" type="int" value="90"/>
    </properties>
   </object>
  </objectgroup>
  <group id="5" name="rooms">
-  <objectgroup id="2" name="training" class="Room">
+  <objectgroup id="10" name="start" class="Room" visible="0">
+   <object id="53" name="cameraboundary" type="CameraBoundary" x="240" y="144" width="480" height="288"/>
+  </objectgroup>
+  <objectgroup id="2" name="trainingobjects" class="Room">
    <properties>
+    <property name="cameraboundary" type="object" value="53"/>
     <property name="donewhenenemiesleft" type="int" value="-1"/>
     <property name="music" type="list">
      <item type="file" value="../ccdata/music/Ooolin Poolin Oy intro.ogg"/>
      <item type="file" value="../ccdata/music/Ooolin Poolin Oy loop.ogg"/>
     </property>
    </properties>
-   <object id="17" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="56" y="176">
+   <object id="17" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="560" y="200">
     <properties>
      <property name="respawnpoint" type="object" value="18"/>
     </properties>
    </object>
-   <object id="11" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="160" y="240">
+   <object id="11" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="656" y="256">
     <properties>
      <property name="respawnpoint" type="object" value="12"/>
     </properties>
    </object>
-   <object id="33" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="168" y="88">
+   <object id="33" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="640" y="136">
     <properties>
      <property name="respawnpoint" type="object" value="35"/>
     </properties>
    </object>
-   <object id="13" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="296" y="240">
+   <object id="13" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="768" y="256">
     <properties>
      <property name="respawnpoint" type="object" value="14"/>
     </properties>
    </object>
-   <object id="34" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="288" y="88">
+   <object id="34" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="744" y="128">
     <properties>
      <property name="respawnpoint" type="object" value="36"/>
     </properties>
    </object>
-   <object id="21" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="416" y="176">
+   <object id="21" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="856" y="192">
     <properties>
      <property name="respawnpoint" type="object" value="22"/>
     </properties>
    </object>
-   <object id="18" name="rockrespawnpoint" x="56" y="-48">
+   <object id="18" name="rockrespawnpoint" x="560" y="-24">
     <properties>
      <property name="z" type="float" value="240"/>
     </properties>
     <point/>
    </object>
-   <object id="12" name="rockrespawnpoint" x="160" y="16">
+   <object id="12" name="rockrespawnpoint" x="656" y="32">
     <properties>
      <property name="z" type="float" value="240"/>
     </properties>
     <point/>
    </object>
-   <object id="35" name="rockrespawnpoint" x="168" y="-136">
+   <object id="35" name="rockrespawnpoint" x="640" y="-88">
     <properties>
      <property name="z" type="float" value="240"/>
     </properties>
     <point/>
    </object>
-   <object id="14" name="rockrespawnpoint" x="296" y="16">
+   <object id="14" name="rockrespawnpoint" x="768" y="32">
     <properties>
      <property name="z" type="float" value="240"/>
     </properties>
     <point/>
    </object>
-   <object id="36" name="rockrespawnpoint" x="288" y="-136">
+   <object id="36" name="rockrespawnpoint" x="744" y="-96">
     <properties>
      <property name="z" type="float" value="240"/>
     </properties>
     <point/>
    </object>
-   <object id="22" name="rockrespawnpoint" x="416" y="-48">
+   <object id="22" name="rockrespawnpoint" x="856" y="-32">
     <properties>
      <property name="z" type="float" value="240"/>
     </properties>
     <point/>
    </object>
    <object id="4" template="mapobjects/OutwardBoundary.tx" x="0" y="32">
-    <polygon points="0,0 0,64 32,32 448,32 480,64 480,0"/>
+    <polygon points="0,-32 0,240 160,80 288,80 320,48 448,48 480,80 512,48 928,48 960,80 960,-32"/>
    </object>
-   <object id="23" template="mapobjects/items/spikefruit-ground.tx" x="48" y="124"/>
-   <object id="24" template="mapobjects/items/spikefruit-ground.tx" x="416" y="96"/>
-   <object id="25" template="mapobjects/items/spikefruit-ground.tx" x="104" y="100"/>
-   <object id="26" template="mapobjects/items/spikefruit-ground.tx" x="368" y="88"/>
-   <object id="27" template="mapobjects/objects/sandy/palm-tree1a-trunk.tx" x="56" y="84">
+   <object id="23" template="mapobjects/items/spikefruit-ground.tx" x="392" y="232"/>
+   <object id="24" template="mapobjects/items/spikefruit-ground.tx" x="368" y="256"/>
+   <object id="25" template="mapobjects/items/spikefruit-ground.tx" x="400" y="264"/>
+   <object id="26" template="mapobjects/items/spikefruit-ground.tx" x="408" y="248"/>
+   <object id="27" template="mapobjects/objects/sandy/palm-tree1a-trunk.tx" x="384" y="250">
     <properties>
      <property name="fruit1" type="object" value="29"/>
      <property name="fruit2" type="object" value="30"/>
      <property name="leaves" type="object" value="28"/>
     </properties>
    </object>
-   <object id="43" template="mapobjects/objects/sandy/palm-tree1a-trunk.tx" x="240" y="160">
+   <object id="43" template="mapobjects/objects/sandy/palm-tree1b-trunk.tx" x="328" y="416">
     <properties>
      <property name="leaves" type="object" value="44"/>
     </properties>
    </object>
-   <object id="47" template="mapobjects/objects/sandy/palm-tree1b-trunk.tx" x="80" y="224">
+   <object id="63" template="mapobjects/objects/sandy/palm-tree1a-trunk.tx" x="512" y="464">
+    <properties>
+     <property name="leaves" type="object" value="62"/>
+    </properties>
+   </object>
+   <object id="47" template="mapobjects/objects/sandy/palm-tree1b-trunk.tx" x="168" y="432">
     <properties>
      <property name="leaves" type="object" value="48"/>
     </properties>
    </object>
-   <object id="49" template="mapobjects/objects/sandy/palm-tree1b-trunk.tx" x="392" y="256"/>
-   <object id="28" template="mapobjects/objects/sandy/palm-tree1a-crown.tx" x="56" y="36"/>
-   <object id="44" template="mapobjects/objects/sandy/palm-tree1a-crown.tx" x="240" y="112"/>
-   <object id="48" template="mapobjects/objects/sandy/palm-tree1b-crown.tx" x="80" y="176"/>
-   <object id="50" template="mapobjects/objects/sandy/palm-tree1b-crown.tx" x="392" y="208"/>
-   <object id="29" template="mapobjects/items/spikefruit-hanging.tx" x="40" y="40">
+   <object id="49" template="mapobjects/objects/sandy/palm-tree1b-trunk.tx" x="808" y="440">
+    <properties>
+     <property name="leaves" type="object" value="50"/>
+    </properties>
+   </object>
+   <object id="28" template="mapobjects/objects/sandy/palm-tree1a-crown.tx" x="384" y="202"/>
+   <object id="44" template="mapobjects/objects/sandy/palm-tree1b-crown.tx" x="328" y="368"/>
+   <object id="62" template="mapobjects/objects/sandy/palm-tree1a-crown.tx" x="512" y="416"/>
+   <object id="48" template="mapobjects/objects/sandy/palm-tree1b-crown.tx" x="168" y="384"/>
+   <object id="50" template="mapobjects/objects/sandy/palm-tree1b-crown.tx" x="808" y="392"/>
+   <object id="29" template="mapobjects/items/spikefruit-hanging.tx" x="368" y="206">
     <properties>
      <property name="z" type="float" value="64"/>
     </properties>
    </object>
-   <object id="30" template="mapobjects/items/spikefruit-hanging.tx" x="72" y="34">
+   <object id="30" template="mapobjects/items/spikefruit-hanging.tx" x="400" y="200">
     <properties>
      <property name="z" type="float" value="68"/>
     </properties>
    </object>
-   <object id="37" gid="2078" x="216" y="80" width="32" height="32">
+   <object id="37" gid="2078" x="520" y="632" width="32" height="32">
     <properties>
      <property name="item" type="object" value="38"/>
      <property name="propertiestable" type="file" value="database/objects-properties.csv"/>
     </properties>
    </object>
-   <object id="38" gid="2077" x="216" y="80" width="32" height="32">
+   <object id="38" gid="2077" x="520" y="632" width="32" height="32">
     <properties>
      <property name="propertiestable" type="file" value="database/items-properties.csv"/>
      <property name="z" type="float" value="1"/>
     </properties>
    </object>
-   <object id="40" template="mapobjects/objects/sandy/palm-tree1b-trunk.tx" x="408" y="80">
+   <object id="40" template="mapobjects/objects/sandy/palm-tree1b-trunk.tx" x="656" y="416">
     <properties>
      <property name="leaves" type="object" value="42"/>
     </properties>
    </object>
-   <object id="45" template="mapobjects/objects/sandy/palm-tree1a-trunk.tx" x="440" y="96">
+   <object id="45" template="mapobjects/objects/sandy/palm-tree1a-trunk.tx" x="640" y="464">
     <properties>
      <property name="leaves" type="object" value="46"/>
     </properties>
    </object>
-   <object id="42" template="mapobjects/objects/sandy/palm-tree1b-crown.tx" x="408" y="32"/>
-   <object id="46" template="mapobjects/objects/sandy/palm-tree1a-crown.tx" x="440" y="48"/>
-   <object id="53" name="cameraboundary" type="CameraBoundary" x="0" y="0" width="480" height="288"/>
+   <object id="42" template="mapobjects/objects/sandy/palm-tree1b-crown.tx" x="656" y="368"/>
+   <object id="46" template="mapobjects/objects/sandy/palm-tree1a-crown.tx" x="640" y="416"/>
+   <object id="60" template="mapobjects/objects/sandy/palm-tree2b-trunk.tx" x="448" y="472">
+    <properties>
+     <property name="leaves" type="object" value="61"/>
+    </properties>
+   </object>
+   <object id="61" template="mapobjects/objects/sandy/palm-tree2b-crown.tx" x="448" y="440"/>
+   <object id="64" template="mapobjects/objects/sandy/palm-tree2a-crown.tx" x="304" y="416"/>
+   <object id="65" template="mapobjects/objects/sandy/palm-tree2a-trunk.tx" x="304" y="448">
+    <properties>
+     <property name="leaves" type="object" value="64"/>
+    </properties>
+   </object>
+  </objectgroup>
+  <objectgroup id="12" name="missilerange">
+   <object id="57" name="cameraboundary" type="CameraBoundary" x="0" y="0" width="480" height="288"/>
+  </objectgroup>
+  <objectgroup id="13" name="rockgarden" class="Room">
+   <object id="58" name="cameraboundary" type="CameraBoundary" x="480" y="0" width="480" height="288"/>
+  </objectgroup>
+  <objectgroup id="14" name="racetrack">
+   <object id="59" name="cameraboundary" type="CameraBoundary" x="0" y="288" width="960" height="288"/>
   </objectgroup>
  </group>
+ <objectgroup id="9" name="notes"/>
 </map>
