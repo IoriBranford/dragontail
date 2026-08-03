@@ -327,13 +327,16 @@ end
 
 function Stage:openRoom(i)
     local rooms = map.layers.rooms
-    if not Config.tutorial then
+    local ti = type(i)
+    if ti == "number" and not Config.tutorial then
         while i <= #rooms and rooms[i].tutorial do
             i = i + 1
         end
     end
 
-    local room = rooms[i]
+    local room =
+        (ti == "number" or ti == "string") and rooms[i]
+        or ti == "table" and i
     if room then
         roomindex = i
         Characters.spawnArray(room.characters)
