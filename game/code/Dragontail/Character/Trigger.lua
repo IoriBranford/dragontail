@@ -45,8 +45,8 @@ function Trigger:checkHit(x, y, prevx, prevy)
     elseif shape == "rectangle" then
         local tx, ty, tw, th = self.x, self.y, self.width, self.height
         if not math.testrects(prevx, prevy, 0, 0, tx, ty, tw, th) then
-            if math.testrects(tx, ty, 0, 0, tx, ty, tw, th) then
-                return tx, ty
+            if math.testrects(x, y, 0, 0, tx, ty, tw, th) then
+                return x, y
             end
         end
     elseif shape == "polyline" then
