@@ -118,7 +118,7 @@ end
 
 function Dragontail.load(args)
     love.event.setSelfMode(true)
-    love.event.orderConnections("draw", Dragontail.drawOrder)
+    love.event.setConnectOrder("draw", Dragontail.drawOrder)
 
     Config = require "System.Config"
     local w, h = Dragontail.width, Dragontail.height
