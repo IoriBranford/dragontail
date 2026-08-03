@@ -10,8 +10,9 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 15,
-  nextobjectid = 66,
+  nextobjectid = 71,
   properties = {
+    ["hudfile"] = "gui/hud_training.lua",
     ["pausemenumap"] = "gui/menu_pause_training.lua",
     ["runphase"] = "Dragontail.GamePhase"
   },
@@ -292,7 +293,7 @@ return {
           type = "Rose",
           shape = "rectangle",
           x = 480,
-          y = 288,
+          y = 272,
           width = 128,
           height = 128,
           rotation = 0,
@@ -322,36 +323,6 @@ return {
         {
           type = "objectgroup",
           draworder = "topdown",
-          id = 10,
-          name = "start",
-          class = "Room",
-          visible = false,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {},
-          objects = {
-            {
-              id = 53,
-              name = "cameraboundary",
-              type = "CameraBoundary",
-              shape = "rectangle",
-              x = 240,
-              y = 144,
-              width = 480,
-              height = 288,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              properties = {}
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
           id = 2,
           name = "trainingobjects",
           class = "Room",
@@ -362,8 +333,6 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["cameraboundary"] = { id = 53 },
-            ["donewhenenemiesleft"] = -1,
             ["music"] = {
               "../ccdata/music/Ooolin Poolin Oy intro.ogg",
               "../ccdata/music/Ooolin Poolin Oy loop.ogg"
@@ -375,8 +344,8 @@ return {
               name = "training-stone",
               type = "training-stone",
               shape = "rectangle",
-              x = 560,
-              y = 200,
+              x = 576,
+              y = 248,
               width = 48,
               height = 48,
               rotation = 0,
@@ -393,8 +362,8 @@ return {
               name = "training-stone",
               type = "training-stone",
               shape = "rectangle",
-              x = 656,
-              y = 256,
+              x = 688,
+              y = 192,
               width = 48,
               height = 48,
               rotation = 0,
@@ -411,7 +380,7 @@ return {
               name = "training-stone",
               type = "training-stone",
               shape = "rectangle",
-              x = 640,
+              x = 568,
               y = 136,
               width = 48,
               height = 48,
@@ -726,7 +695,7 @@ return {
               name = "",
               type = "fruit-tree",
               shape = "rectangle",
-              x = 512,
+              x = 504,
               y = 464,
               width = 64,
               height = 96,
@@ -831,7 +800,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 512,
+              x = 504,
               y = 416,
               width = 64,
               height = 48,
@@ -1039,7 +1008,7 @@ return {
               name = "",
               type = "fruit-tree",
               shape = "rectangle",
-              x = 448,
+              x = 464,
               y = 472,
               width = 64,
               height = 48,
@@ -1062,7 +1031,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 448,
+              x = 464,
               y = 440,
               width = 64,
               height = 48,
@@ -1115,6 +1084,102 @@ return {
                 ["leaves"] = { id = 64 },
                 ["propertiestable"] = "database/objects-properties.csv"
               }
+            },
+            {
+              id = 70,
+              name = "cameraboundary",
+              type = "CameraBoundary",
+              shape = "rectangle",
+              x = 240,
+              y = 152,
+              width = 480,
+              height = 270,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {}
+            }
+          }
+        },
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 10,
+          name = "start",
+          class = "Room",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["cameraboundary"] = { id = 70 },
+            ["donewhenenemiesleft"] = -1
+          },
+          objects = {
+            {
+              id = 66,
+              name = "",
+              type = "Trigger",
+              shape = "ellipse",
+              x = 344,
+              y = 200,
+              width = 80,
+              height = 80,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {
+                ["action"] = "openRoom",
+                ["color"] = "#8000ffff",
+                ["extrudeY"] = -48,
+                ["initialai"] = "triggerToUse",
+                ["room"] = "missilerange",
+                ["script"] = "Dragontail.Character.Trigger"
+              }
+            },
+            {
+              id = 67,
+              name = "",
+              type = "Trigger",
+              shape = "ellipse",
+              x = 536,
+              y = 200,
+              width = 80,
+              height = 80,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {
+                ["action"] = "openRoom",
+                ["color"] = "#8000ffff",
+                ["extrudeY"] = -48,
+                ["initialai"] = "triggerToUse",
+                ["room"] = "rockgarden",
+                ["script"] = "Dragontail.Character.Trigger"
+              }
+            },
+            {
+              id = 69,
+              name = "",
+              type = "Trigger",
+              shape = "ellipse",
+              x = 440,
+              y = 312,
+              width = 80,
+              height = 80,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {
+                ["action"] = "openRoom",
+                ["color"] = "#8000ffff",
+                ["extrudeY"] = -48,
+                ["initialai"] = "triggerToUse",
+                ["room"] = "racetrack",
+                ["script"] = "Dragontail.Character.Trigger"
+              }
             }
           }
         },
@@ -1123,14 +1188,17 @@ return {
           draworder = "topdown",
           id = 12,
           name = "missilerange",
-          class = "",
+          class = "Room",
           visible = true,
           opacity = 1,
           offsetx = 0,
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["clearotherroom"] = "start",
+            ["donewhenenemiesleft"] = -1
+          },
           objects = {
             {
               id = 57,
@@ -1138,9 +1206,9 @@ return {
               type = "CameraBoundary",
               shape = "rectangle",
               x = 0,
-              y = 0,
+              y = 18,
               width = 480,
-              height = 288,
+              height = 270,
               rotation = 0,
               opacity = 1,
               visible = true,
@@ -1160,7 +1228,10 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["clearotherroom"] = "start",
+            ["donewhenenemiesleft"] = -1
+          },
           objects = {
             {
               id = 58,
@@ -1168,9 +1239,9 @@ return {
               type = "CameraBoundary",
               shape = "rectangle",
               x = 480,
-              y = 0,
+              y = 18,
               width = 480,
-              height = 288,
+              height = 270,
               rotation = 0,
               opacity = 1,
               visible = true,
@@ -1183,14 +1254,17 @@ return {
           draworder = "topdown",
           id = 14,
           name = "racetrack",
-          class = "",
+          class = "Room",
           visible = true,
           opacity = 1,
           offsetx = 0,
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["clearotherroom"] = "start",
+            ["donewhenenemiesleft"] = -1
+          },
           objects = {
             {
               id = 59,
@@ -1200,7 +1274,7 @@ return {
               x = 0,
               y = 288,
               width = 960,
-              height = 288,
+              height = 270,
               rotation = 0,
               opacity = 1,
               visible = true,
@@ -1216,7 +1290,7 @@ return {
       id = 9,
       name = "notes",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
