@@ -59,3 +59,5 @@ steamcmd/
 *.log
 
 *.bak
+
+game/fulldata/

@@ -45,7 +45,8 @@
     "extensionsPath": "extensions",
     "folders": [
         ".",
-        "../ccdata"
+        "../ccdata",
+        "../fulldata"
     ],
     "properties": [
     ],
