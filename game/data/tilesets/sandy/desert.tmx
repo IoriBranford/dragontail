@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="32" tileheight="32" infinite="1" nextlayerid="5" nextobjectid="1">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="32" tileheight="32" infinite="1" nextlayerid="7" nextobjectid="1">
  <tileset firstgid="1" source=":/automap-tiles.tsx"/>
  <tileset firstgid="6" source="desert.tsx"/>
+ <layer id="5" name="input_desert_ground" width="30" height="15">
+  <data encoding="base64" compression="zlib">
+   <chunk x="0" y="-16" width="16" height="16">
+   eJxjYBgFlAADRghtCKWNoLQxlDaB0qZQ+jaVgpsLah6lwAZqji2UtoPS9lDaAUo7Qunn1LGWQYxK7h8FDBQBACl4BJc=
+  </chunk>
+   <chunk x="16" y="-16" width="16" height="16">
+   eJxjYBgF1AD3yNTHzTg4wv8VmfrEB4n7RwEDWQAAdHoB7Q==
+  </chunk>
+  </data>
+ </layer>
+ <layer id="6" name="output_desert_ground" width="30" height="15">
+  <data encoding="base64" compression="zlib">
+   <chunk x="0" y="-16" width="16" height="16">
+   eJxjYBgFAwniGCF0PJROgNKJUDoJSidDaU4oTSmwoJI5WVBzsqF0DpTOhdJ5UDofSotSyV4XKpnDMMIBANxWBXk=
+  </chunk>
+   <chunk x="16" y="-16" width="16" height="16">
+   eJxjYBgFgwHwMJKnz5JMfdQGEmS6w3WQuJ9hhAIAOpsApw==
+  </chunk>
+  </data>
+ </layer>
  <layer id="1" name="input_desert_wall" width="30" height="15">
   <data encoding="base64" compression="zlib">
    <chunk x="0" y="-16" width="16" height="16">
