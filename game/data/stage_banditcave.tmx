@@ -6,6 +6,7 @@
  </editorsettings>
  <properties>
   <property name="ceilingz" type="float" value="256"/>
+  <property name="hudfile" type="file" value="gui/hud_combat.tmx"/>
   <property name="runphase" value="Dragontail.GamePhase"/>
  </properties>
  <tileset firstgid="1" source="tilesets/caves/caves.tsx"/>

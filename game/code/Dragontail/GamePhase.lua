@@ -68,15 +68,18 @@ function GamePhase:loadphase(stagepath_, startroom)
 
     Stage:init(startroom)
 
-    hudmap = Gui.new("data/gui/hud_combat.lua")
-    hudmap:clearMenuStack()
-    hudmap:showOnlyNamed("hud")
+    local hudfile = map.hudfile
+    if hudfile then
+        hudmap = Gui.new("data/gui/hud_combat.lua")
+        hudmap:clearMenuStack()
+        hudmap:showOnlyNamed("hud")
+    end
 
     wipemap = Gui.new("data/gui/wipe_diagonalcurtains.lua")
 
     love.event.connect(Dragontail.predraw)
     love.event.connect(Stage)
-    love.event.connect(hudmap)
+    if hudmap then love.event.connect(hudmap) end
     love.event.connect(wipemap)
     love.event.connect(Dragontail.postdraw)
     love.event.send("wipestart", "open")
@@ -166,7 +169,7 @@ function GamePhase:keypressed(key)
 end
 
 local function fixedupdateInputDisplay()
-    local input = hudmap:get("input")
+    local input = hudmap and hudmap:get("input")
     if input then
         ---@cast input ObjectGroup
         input.visible = Config.drawinput
@@ -198,7 +201,7 @@ function GamePhase:fixedupdate()
         end
     end
     fixedupdateInputDisplay()
-    Stage:fixedupdateHud(hudmap)
+    if hudmap then Stage:fixedupdateHud(hudmap) end
 end
 
 function GamePhase:setPauseLocked(locked)

@@ -14,6 +14,7 @@ return {
   backgroundcolor = { 64, 64, 64 },
   properties = {
     ["ceilingz"] = 256,
+    ["hudfile"] = "gui/hud_combat.tmx",
     ["runphase"] = "Dragontail.GamePhase"
   },
   tilesets = {
