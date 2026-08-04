@@ -287,4 +287,8 @@ function Trigger:openRoom()
     self:disappear()
 end
 
+function Trigger:returnToTitle()
+    love.event.newphase("Dragontail.TitlePhase", true)
+end
+
 return Trigger
