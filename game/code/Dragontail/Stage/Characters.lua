@@ -149,11 +149,19 @@ function Characters.spawn(object)
 end
 local spawn = Characters.spawn
 
-function Characters.spawnArray(characters)
+function Characters.spawnArray(characters, copy)
     if not characters then return end
-    for i = 1, #characters do local object = characters[i]
-        if not object.spawnsmanually then
-            spawn(object)
+    for i = 1, #characters do local o = characters[i]
+        if not o.spawnsmanually then
+            if copy then
+                local c = {}
+                for k,v in pairs(o) do
+                    c[k] = v
+                end
+                setmetatable(c, getmetatable(o))
+                o = c
+            end
+            spawn(o)
         end
     end
 end
