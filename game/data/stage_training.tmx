@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="32" tileheight="32" infinite="1" nextlayerid="15" nextobjectid="71">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="32" tileheight="32" infinite="1" nextlayerid="15" nextobjectid="77">
  <editorsettings>
   <export target="stage_training.lua" format="lua"/>
  </editorsettings>
@@ -112,74 +112,74 @@
      <item type="file" value="../ccdata/music/Ooolin Poolin Oy loop.ogg"/>
     </property>
    </properties>
-   <object id="17" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="576" y="248">
+   <object id="4" template="mapobjects/OutwardBoundary.tx" x="0" y="32">
+    <polygon points="0,-32 0,240 160,80 288,80 320,48 448,48 480,80 512,48 928,48 960,80 960,-32"/>
+   </object>
+   <object id="17" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="576" y="240">
     <properties>
      <property name="respawnpoint" type="object" value="18"/>
     </properties>
    </object>
-   <object id="11" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="688" y="192">
+   <object id="11" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="896" y="192">
     <properties>
      <property name="respawnpoint" type="object" value="12"/>
     </properties>
    </object>
-   <object id="33" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="568" y="136">
+   <object id="33" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="608" y="160">
     <properties>
      <property name="respawnpoint" type="object" value="35"/>
     </properties>
    </object>
-   <object id="13" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="768" y="256">
+   <object id="13" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="800" y="248">
     <properties>
      <property name="respawnpoint" type="object" value="14"/>
     </properties>
    </object>
-   <object id="34" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="744" y="128">
+   <object id="34" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="736" y="144">
     <properties>
      <property name="respawnpoint" type="object" value="36"/>
     </properties>
    </object>
-   <object id="21" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="856" y="192">
+   <object id="21" template="mapobjects/items/tallstone.tx" name="training-stone" type="training-stone" x="680" y="200">
     <properties>
      <property name="respawnpoint" type="object" value="22"/>
     </properties>
    </object>
-   <object id="18" name="rockrespawnpoint" x="560" y="-24">
+   <object id="18" name="rockrespawnpoint" x="576" y="0">
     <properties>
      <property name="z" type="float" value="240"/>
     </properties>
     <point/>
    </object>
-   <object id="12" name="rockrespawnpoint" x="656" y="32">
+   <object id="12" name="rockrespawnpoint" x="896" y="-48">
     <properties>
      <property name="z" type="float" value="240"/>
     </properties>
     <point/>
    </object>
-   <object id="35" name="rockrespawnpoint" x="640" y="-88">
+   <object id="35" name="rockrespawnpoint" x="608" y="-80">
     <properties>
      <property name="z" type="float" value="240"/>
     </properties>
     <point/>
    </object>
-   <object id="14" name="rockrespawnpoint" x="768" y="32">
+   <object id="14" name="rockrespawnpoint" x="800" y="8">
     <properties>
      <property name="z" type="float" value="240"/>
     </properties>
     <point/>
    </object>
-   <object id="36" name="rockrespawnpoint" x="744" y="-96">
+   <object id="36" name="rockrespawnpoint" x="736" y="-96">
     <properties>
      <property name="z" type="float" value="240"/>
     </properties>
     <point/>
    </object>
-   <object id="22" name="rockrespawnpoint" x="856" y="-32">
+   <object id="22" name="rockrespawnpoint" x="680" y="-40">
     <properties>
      <property name="z" type="float" value="240"/>
     </properties>
     <point/>
-   </object>
-   <object id="4" template="mapobjects/OutwardBoundary.tx" x="0" y="32">
-    <polygon points="0,-32 0,240 160,80 288,80 320,48 448,48 480,80 512,48 928,48 960,80 960,-32"/>
    </object>
    <object id="23" template="mapobjects/items/spikefruit-ground.tx" x="392" y="232"/>
    <object id="24" template="mapobjects/items/spikefruit-ground.tx" x="368" y="256"/>
@@ -270,38 +270,35 @@
     <property name="cameraboundary" type="object" value="70"/>
     <property name="donewhenenemiesleft" type="int" value="-1"/>
    </properties>
-   <object id="66" type="Trigger" x="344" y="200" width="80" height="80">
+   <object id="71" name="missileentrance" type="Trigger" x="376" y="208">
     <properties>
      <property name="action" value="openRoom"/>
      <property name="color" type="color" value="#8000ffff"/>
      <property name="extrudeY" type="float" value="-48"/>
      <property name="initialai" value="triggerToUse"/>
      <property name="room" value="missilerange"/>
-     <property name="script" value="Dragontail.Character.Trigger"/>
     </properties>
-    <ellipse/>
+    <polygon points="-16,0 -40,40 -16,80 32,80 56,40 32,0"/>
    </object>
-   <object id="67" type="Trigger" x="536" y="200" width="80" height="80">
+   <object id="72" name="rockentrance" type="Trigger" x="568" y="208">
     <properties>
      <property name="action" value="openRoom"/>
      <property name="color" type="color" value="#8000ffff"/>
      <property name="extrudeY" type="float" value="-48"/>
      <property name="initialai" value="triggerToUse"/>
      <property name="room" value="rockgarden"/>
-     <property name="script" value="Dragontail.Character.Trigger"/>
     </properties>
-    <ellipse/>
+    <polygon points="-16,0 -40,40 -16,80 32,80 56,40 32,0"/>
    </object>
-   <object id="69" type="Trigger" x="440" y="312" width="80" height="80">
+   <object id="73" name="trackentrance" type="Trigger" x="472" y="344">
     <properties>
      <property name="action" value="openRoom"/>
      <property name="color" type="color" value="#8000ffff"/>
      <property name="extrudeY" type="float" value="-48"/>
      <property name="initialai" value="triggerToUse"/>
      <property name="room" value="racetrack"/>
-     <property name="script" value="Dragontail.Character.Trigger"/>
     </properties>
-    <ellipse/>
+    <polygon points="-16,0 -40,40 -16,80 32,80 56,40 32,0"/>
    </object>
   </objectgroup>
   <objectgroup id="12" name="missilerange" class="Room">
@@ -310,6 +307,16 @@
     <property name="donewhenenemiesleft" type="int" value="-1"/>
    </properties>
    <object id="57" name="cameraboundary" type="CameraBoundary" x="0" y="18" width="480" height="270"/>
+   <object id="74" name="backtostart" type="Trigger" x="472" y="232">
+    <properties>
+     <property name="action" value="openRoom"/>
+     <property name="color" type="color" value="#8000ffff"/>
+     <property name="extrudeY" type="float" value="-48"/>
+     <property name="initialai" value="triggerToUse"/>
+     <property name="room" value="start"/>
+    </properties>
+    <polygon points="8,24 -24,56 8,56"/>
+   </object>
   </objectgroup>
   <objectgroup id="13" name="rockgarden" class="Room">
    <properties>
@@ -317,6 +324,16 @@
     <property name="donewhenenemiesleft" type="int" value="-1"/>
    </properties>
    <object id="58" name="cameraboundary" type="CameraBoundary" x="480" y="18" width="480" height="270"/>
+   <object id="75" name="backtostart" type="Trigger" x="504" y="232">
+    <properties>
+     <property name="action" value="openRoom"/>
+     <property name="color" type="color" value="#8000ffff"/>
+     <property name="extrudeY" type="float" value="-48"/>
+     <property name="initialai" value="triggerToUse"/>
+     <property name="room" value="start"/>
+    </properties>
+    <polygon points="8,56 -24,24 -24,56"/>
+   </object>
   </objectgroup>
   <objectgroup id="14" name="racetrack" class="Room">
    <properties>
@@ -324,6 +341,16 @@
     <property name="donewhenenemiesleft" type="int" value="-1"/>
    </properties>
    <object id="59" name="cameraboundary" type="CameraBoundary" x="0" y="288" width="960" height="270"/>
+   <object id="76" name="backtostart" type="Trigger" x="536" y="264">
+    <properties>
+     <property name="action" value="openRoom"/>
+     <property name="color" type="color" value="#8000ffff"/>
+     <property name="extrudeY" type="float" value="-48"/>
+     <property name="initialai" value="triggerToUse"/>
+     <property name="room" value="start"/>
+    </properties>
+    <polygon points="-72,72 -40,72 8,24 -120,24"/>
+   </object>
   </objectgroup>
  </group>
  <objectgroup id="9" name="notes" visible="0"/>

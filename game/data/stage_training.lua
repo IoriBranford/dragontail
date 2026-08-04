@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 15,
-  nextobjectid = 71,
+  nextobjectid = 77,
   properties = {
     ["hudfile"] = "gui/hud_training.lua",
     ["pausemenumap"] = "gui/menu_pause_training.lua",
@@ -340,210 +340,6 @@ return {
           },
           objects = {
             {
-              id = 17,
-              name = "training-stone",
-              type = "training-stone",
-              shape = "rectangle",
-              x = 576,
-              y = 248,
-              width = 48,
-              height = 48,
-              rotation = 0,
-              opacity = 1,
-              gid = 1,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/objects-properties.csv",
-                ["respawnpoint"] = { id = 18 }
-              }
-            },
-            {
-              id = 11,
-              name = "training-stone",
-              type = "training-stone",
-              shape = "rectangle",
-              x = 688,
-              y = 192,
-              width = 48,
-              height = 48,
-              rotation = 0,
-              opacity = 1,
-              gid = 1,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/objects-properties.csv",
-                ["respawnpoint"] = { id = 12 }
-              }
-            },
-            {
-              id = 33,
-              name = "training-stone",
-              type = "training-stone",
-              shape = "rectangle",
-              x = 568,
-              y = 136,
-              width = 48,
-              height = 48,
-              rotation = 0,
-              opacity = 1,
-              gid = 1,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/objects-properties.csv",
-                ["respawnpoint"] = { id = 35 }
-              }
-            },
-            {
-              id = 13,
-              name = "training-stone",
-              type = "training-stone",
-              shape = "rectangle",
-              x = 768,
-              y = 256,
-              width = 48,
-              height = 48,
-              rotation = 0,
-              opacity = 1,
-              gid = 1,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/objects-properties.csv",
-                ["respawnpoint"] = { id = 14 }
-              }
-            },
-            {
-              id = 34,
-              name = "training-stone",
-              type = "training-stone",
-              shape = "rectangle",
-              x = 744,
-              y = 128,
-              width = 48,
-              height = 48,
-              rotation = 0,
-              opacity = 1,
-              gid = 1,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/objects-properties.csv",
-                ["respawnpoint"] = { id = 36 }
-              }
-            },
-            {
-              id = 21,
-              name = "training-stone",
-              type = "training-stone",
-              shape = "rectangle",
-              x = 856,
-              y = 192,
-              width = 48,
-              height = 48,
-              rotation = 0,
-              opacity = 1,
-              gid = 1,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/objects-properties.csv",
-                ["respawnpoint"] = { id = 22 }
-              }
-            },
-            {
-              id = 18,
-              name = "rockrespawnpoint",
-              type = "",
-              shape = "point",
-              x = 560,
-              y = -24,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              properties = {
-                ["z"] = 240
-              }
-            },
-            {
-              id = 12,
-              name = "rockrespawnpoint",
-              type = "",
-              shape = "point",
-              x = 656,
-              y = 32,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              properties = {
-                ["z"] = 240
-              }
-            },
-            {
-              id = 35,
-              name = "rockrespawnpoint",
-              type = "",
-              shape = "point",
-              x = 640,
-              y = -88,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              properties = {
-                ["z"] = 240
-              }
-            },
-            {
-              id = 14,
-              name = "rockrespawnpoint",
-              type = "",
-              shape = "point",
-              x = 768,
-              y = 32,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              properties = {
-                ["z"] = 240
-              }
-            },
-            {
-              id = 36,
-              name = "rockrespawnpoint",
-              type = "",
-              shape = "point",
-              x = 744,
-              y = -96,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              properties = {
-                ["z"] = 240
-              }
-            },
-            {
-              id = 22,
-              name = "rockrespawnpoint",
-              type = "",
-              shape = "point",
-              x = 856,
-              y = -32,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              properties = {
-                ["z"] = 240
-              }
-            },
-            {
               id = 4,
               name = "",
               type = "Boundary",
@@ -574,6 +370,210 @@ return {
                 ["drawz"] = 0,
                 ["extrudeY"] = -48,
                 ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 17,
+              name = "training-stone",
+              type = "training-stone",
+              shape = "rectangle",
+              x = 576,
+              y = 240,
+              width = 48,
+              height = 48,
+              rotation = 0,
+              opacity = 1,
+              gid = 1,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/objects-properties.csv",
+                ["respawnpoint"] = { id = 18 }
+              }
+            },
+            {
+              id = 11,
+              name = "training-stone",
+              type = "training-stone",
+              shape = "rectangle",
+              x = 896,
+              y = 192,
+              width = 48,
+              height = 48,
+              rotation = 0,
+              opacity = 1,
+              gid = 1,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/objects-properties.csv",
+                ["respawnpoint"] = { id = 12 }
+              }
+            },
+            {
+              id = 33,
+              name = "training-stone",
+              type = "training-stone",
+              shape = "rectangle",
+              x = 608,
+              y = 160,
+              width = 48,
+              height = 48,
+              rotation = 0,
+              opacity = 1,
+              gid = 1,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/objects-properties.csv",
+                ["respawnpoint"] = { id = 35 }
+              }
+            },
+            {
+              id = 13,
+              name = "training-stone",
+              type = "training-stone",
+              shape = "rectangle",
+              x = 800,
+              y = 248,
+              width = 48,
+              height = 48,
+              rotation = 0,
+              opacity = 1,
+              gid = 1,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/objects-properties.csv",
+                ["respawnpoint"] = { id = 14 }
+              }
+            },
+            {
+              id = 34,
+              name = "training-stone",
+              type = "training-stone",
+              shape = "rectangle",
+              x = 736,
+              y = 144,
+              width = 48,
+              height = 48,
+              rotation = 0,
+              opacity = 1,
+              gid = 1,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/objects-properties.csv",
+                ["respawnpoint"] = { id = 36 }
+              }
+            },
+            {
+              id = 21,
+              name = "training-stone",
+              type = "training-stone",
+              shape = "rectangle",
+              x = 680,
+              y = 200,
+              width = 48,
+              height = 48,
+              rotation = 0,
+              opacity = 1,
+              gid = 1,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/objects-properties.csv",
+                ["respawnpoint"] = { id = 22 }
+              }
+            },
+            {
+              id = 18,
+              name = "rockrespawnpoint",
+              type = "",
+              shape = "point",
+              x = 576,
+              y = 0,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {
+                ["z"] = 240
+              }
+            },
+            {
+              id = 12,
+              name = "rockrespawnpoint",
+              type = "",
+              shape = "point",
+              x = 896,
+              y = -48,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {
+                ["z"] = 240
+              }
+            },
+            {
+              id = 35,
+              name = "rockrespawnpoint",
+              type = "",
+              shape = "point",
+              x = 608,
+              y = -80,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {
+                ["z"] = 240
+              }
+            },
+            {
+              id = 14,
+              name = "rockrespawnpoint",
+              type = "",
+              shape = "point",
+              x = 800,
+              y = 8,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {
+                ["z"] = 240
+              }
+            },
+            {
+              id = 36,
+              name = "rockrespawnpoint",
+              type = "",
+              shape = "point",
+              x = 736,
+              y = -96,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {
+                ["z"] = 240
+              }
+            },
+            {
+              id = 22,
+              name = "rockrespawnpoint",
+              type = "",
+              shape = "point",
+              x = 680,
+              y = -40,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {
+                ["z"] = 240
               }
             },
             {
@@ -1119,66 +1119,87 @@ return {
           },
           objects = {
             {
-              id = 66,
-              name = "",
+              id = 71,
+              name = "missileentrance",
               type = "Trigger",
-              shape = "ellipse",
-              x = 344,
-              y = 200,
-              width = 80,
-              height = 80,
+              shape = "polygon",
+              x = 376,
+              y = 208,
+              width = 0,
+              height = 0,
               rotation = 0,
               opacity = 1,
               visible = true,
+              polygon = {
+                { x = -16, y = 0 },
+                { x = -40, y = 40 },
+                { x = -16, y = 80 },
+                { x = 32, y = 80 },
+                { x = 56, y = 40 },
+                { x = 32, y = 0 }
+              },
               properties = {
                 ["action"] = "openRoom",
                 ["color"] = "#8000ffff",
                 ["extrudeY"] = -48,
                 ["initialai"] = "triggerToUse",
-                ["room"] = "missilerange",
-                ["script"] = "Dragontail.Character.Trigger"
+                ["room"] = "missilerange"
               }
             },
             {
-              id = 67,
-              name = "",
+              id = 72,
+              name = "rockentrance",
               type = "Trigger",
-              shape = "ellipse",
-              x = 536,
-              y = 200,
-              width = 80,
-              height = 80,
+              shape = "polygon",
+              x = 568,
+              y = 208,
+              width = 0,
+              height = 0,
               rotation = 0,
               opacity = 1,
               visible = true,
+              polygon = {
+                { x = -16, y = 0 },
+                { x = -40, y = 40 },
+                { x = -16, y = 80 },
+                { x = 32, y = 80 },
+                { x = 56, y = 40 },
+                { x = 32, y = 0 }
+              },
               properties = {
                 ["action"] = "openRoom",
                 ["color"] = "#8000ffff",
                 ["extrudeY"] = -48,
                 ["initialai"] = "triggerToUse",
-                ["room"] = "rockgarden",
-                ["script"] = "Dragontail.Character.Trigger"
+                ["room"] = "rockgarden"
               }
             },
             {
-              id = 69,
-              name = "",
+              id = 73,
+              name = "trackentrance",
               type = "Trigger",
-              shape = "ellipse",
-              x = 440,
-              y = 312,
-              width = 80,
-              height = 80,
+              shape = "polygon",
+              x = 472,
+              y = 344,
+              width = 0,
+              height = 0,
               rotation = 0,
               opacity = 1,
               visible = true,
+              polygon = {
+                { x = -16, y = 0 },
+                { x = -40, y = 40 },
+                { x = -16, y = 80 },
+                { x = 32, y = 80 },
+                { x = 56, y = 40 },
+                { x = 32, y = 0 }
+              },
               properties = {
                 ["action"] = "openRoom",
                 ["color"] = "#8000ffff",
                 ["extrudeY"] = -48,
                 ["initialai"] = "triggerToUse",
-                ["room"] = "racetrack",
-                ["script"] = "Dragontail.Character.Trigger"
+                ["room"] = "racetrack"
               }
             }
           }
@@ -1213,6 +1234,31 @@ return {
               opacity = 1,
               visible = true,
               properties = {}
+            },
+            {
+              id = 74,
+              name = "backtostart",
+              type = "Trigger",
+              shape = "polygon",
+              x = 472,
+              y = 232,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = 8, y = 24 },
+                { x = -24, y = 56 },
+                { x = 8, y = 56 }
+              },
+              properties = {
+                ["action"] = "openRoom",
+                ["color"] = "#8000ffff",
+                ["extrudeY"] = -48,
+                ["initialai"] = "triggerToUse",
+                ["room"] = "start"
+              }
             }
           }
         },
@@ -1246,6 +1292,31 @@ return {
               opacity = 1,
               visible = true,
               properties = {}
+            },
+            {
+              id = 75,
+              name = "backtostart",
+              type = "Trigger",
+              shape = "polygon",
+              x = 504,
+              y = 232,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = 8, y = 56 },
+                { x = -24, y = 24 },
+                { x = -24, y = 56 }
+              },
+              properties = {
+                ["action"] = "openRoom",
+                ["color"] = "#8000ffff",
+                ["extrudeY"] = -48,
+                ["initialai"] = "triggerToUse",
+                ["room"] = "start"
+              }
             }
           }
         },
@@ -1279,6 +1350,32 @@ return {
               opacity = 1,
               visible = true,
               properties = {}
+            },
+            {
+              id = 76,
+              name = "backtostart",
+              type = "Trigger",
+              shape = "polygon",
+              x = 536,
+              y = 264,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = -72, y = 72 },
+                { x = -40, y = 72 },
+                { x = 8, y = 24 },
+                { x = -120, y = 24 }
+              },
+              properties = {
+                ["action"] = "openRoom",
+                ["color"] = "#8000ffff",
+                ["extrudeY"] = -48,
+                ["initialai"] = "triggerToUse",
+                ["room"] = "start"
+              }
             }
           }
         }
