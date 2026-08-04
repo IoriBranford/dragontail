@@ -273,32 +273,35 @@
    <object id="71" name="missileentrance" type="Trigger" x="376" y="208">
     <properties>
      <property name="action" value="openRoom"/>
-     <property name="color" type="color" value="#8000ffff"/>
+     <property name="color" type="color" value="#00000000"/>
      <property name="extrudeY" type="float" value="-48"/>
      <property name="initialai" value="triggerToUse"/>
+     <property name="linecolor" type="color" value="#ff55ffff"/>
      <property name="room" value="missilerange"/>
     </properties>
-    <polygon points="-16,0 -40,40 -16,80 32,80 56,40 32,0"/>
+    <polygon points="-568,64 56,64 56,-376 -568,-376"/>
    </object>
    <object id="72" name="rockentrance" type="Trigger" x="568" y="208">
     <properties>
      <property name="action" value="openRoom"/>
-     <property name="color" type="color" value="#8000ffff"/>
+     <property name="color" type="color" value="#00000000"/>
      <property name="extrudeY" type="float" value="-48"/>
      <property name="initialai" value="triggerToUse"/>
+     <property name="linecolor" type="color" value="#ff55ffff"/>
      <property name="room" value="rockgarden"/>
     </properties>
-    <polygon points="-16,0 -40,40 -16,80 32,80 56,40 32,0"/>
+    <polygon points="-40,64 488,64 488,-376 -40,-376"/>
    </object>
    <object id="73" name="trackentrance" type="Trigger" x="472" y="352">
     <properties>
      <property name="action" value="openRoom"/>
-     <property name="color" type="color" value="#8000ffff"/>
+     <property name="color" type="color" value="#00000000"/>
      <property name="extrudeY" type="float" value="-48"/>
      <property name="initialai" value="triggerToUse"/>
+     <property name="linecolor" type="color" value="#ff55ffff"/>
      <property name="room" value="racetrack"/>
     </properties>
-    <polygon points="-16,0 -40,40 -16,80 32,80 56,40 32,0"/>
+    <polygon points="-472,0 -688,352 800,352 488,0"/>
    </object>
   </objectgroup>
   <objectgroup id="12" name="missilerange" class="Room">
@@ -310,9 +313,10 @@
    <object id="74" name="backtostart" type="Trigger" x="472" y="232">
     <properties>
      <property name="action" value="openRoom"/>
-     <property name="color" type="color" value="#8000ffff"/>
+     <property name="color" type="color" value="#00000000"/>
      <property name="extrudeY" type="float" value="-48"/>
      <property name="initialai" value="triggerToUse"/>
+     <property name="linecolor" type="color" value="#ff55ffff"/>
      <property name="room" value="start"/>
     </properties>
     <polygon points="8,24 -24,56 8,56"/>
@@ -323,13 +327,14 @@
     <property name="clearotherroom" value="start"/>
     <property name="donewhenenemiesleft" type="int" value="-1"/>
    </properties>
-   <object id="58" name="cameraboundary" type="CameraBoundary" x="480" y="18" width="480" height="270"/>
+   <object id="58" name="cameraboundary" type="CameraBoundary" x="480" y="18" width="480" height="270" visible="0"/>
    <object id="75" name="backtostart" type="Trigger" x="504" y="232">
     <properties>
      <property name="action" value="openRoom"/>
-     <property name="color" type="color" value="#8000ffff"/>
+     <property name="color" type="color" value="#00000000"/>
      <property name="extrudeY" type="float" value="-48"/>
      <property name="initialai" value="triggerToUse"/>
+     <property name="linecolor" type="color" value="#ff55ffff"/>
      <property name="room" value="start"/>
     </properties>
     <polygon points="8,56 -24,24 -24,56"/>
@@ -344,9 +349,10 @@
    <object id="76" name="backtostart" type="Trigger" x="528" y="264">
     <properties>
      <property name="action" value="openRoom"/>
-     <property name="color" type="color" value="#8000ffff"/>
+     <property name="color" type="color" value="#00000000"/>
      <property name="extrudeY" type="float" value="-48"/>
      <property name="initialai" value="triggerToUse"/>
+     <property name="linecolor" type="color" value="#ff55ffff"/>
      <property name="room" value="start"/>
     </properties>
     <polygon points="-80,80 -16,80 40,24 -136,24"/>

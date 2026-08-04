@@ -1131,18 +1131,17 @@ return {
               opacity = 1,
               visible = true,
               polygon = {
-                { x = -16, y = 0 },
-                { x = -40, y = 40 },
-                { x = -16, y = 80 },
-                { x = 32, y = 80 },
-                { x = 56, y = 40 },
-                { x = 32, y = 0 }
+                { x = -568, y = 64 },
+                { x = 56, y = 64 },
+                { x = 56, y = -376 },
+                { x = -568, y = -376 }
               },
               properties = {
                 ["action"] = "openRoom",
-                ["color"] = "#8000ffff",
+                ["color"] = "#00000000",
                 ["extrudeY"] = -48,
                 ["initialai"] = "triggerToUse",
+                ["linecolor"] = "#ff55ffff",
                 ["room"] = "missilerange"
               }
             },
@@ -1159,18 +1158,17 @@ return {
               opacity = 1,
               visible = true,
               polygon = {
-                { x = -16, y = 0 },
-                { x = -40, y = 40 },
-                { x = -16, y = 80 },
-                { x = 32, y = 80 },
-                { x = 56, y = 40 },
-                { x = 32, y = 0 }
+                { x = -40, y = 64 },
+                { x = 488, y = 64 },
+                { x = 488, y = -376 },
+                { x = -40, y = -376 }
               },
               properties = {
                 ["action"] = "openRoom",
-                ["color"] = "#8000ffff",
+                ["color"] = "#00000000",
                 ["extrudeY"] = -48,
                 ["initialai"] = "triggerToUse",
+                ["linecolor"] = "#ff55ffff",
                 ["room"] = "rockgarden"
               }
             },
@@ -1187,18 +1185,17 @@ return {
               opacity = 1,
               visible = true,
               polygon = {
-                { x = -16, y = 0 },
-                { x = -40, y = 40 },
-                { x = -16, y = 80 },
-                { x = 32, y = 80 },
-                { x = 56, y = 40 },
-                { x = 32, y = 0 }
+                { x = -472, y = 0 },
+                { x = -688, y = 352 },
+                { x = 800, y = 352 },
+                { x = 488, y = 0 }
               },
               properties = {
                 ["action"] = "openRoom",
-                ["color"] = "#8000ffff",
+                ["color"] = "#00000000",
                 ["extrudeY"] = -48,
                 ["initialai"] = "triggerToUse",
+                ["linecolor"] = "#ff55ffff",
                 ["room"] = "racetrack"
               }
             }
@@ -1254,9 +1251,10 @@ return {
               },
               properties = {
                 ["action"] = "openRoom",
-                ["color"] = "#8000ffff",
+                ["color"] = "#00000000",
                 ["extrudeY"] = -48,
                 ["initialai"] = "triggerToUse",
+                ["linecolor"] = "#ff55ffff",
                 ["room"] = "start"
               }
             }
@@ -1290,7 +1288,7 @@ return {
               height = 270,
               rotation = 0,
               opacity = 1,
-              visible = true,
+              visible = false,
               properties = {}
             },
             {
@@ -1312,9 +1310,10 @@ return {
               },
               properties = {
                 ["action"] = "openRoom",
-                ["color"] = "#8000ffff",
+                ["color"] = "#00000000",
                 ["extrudeY"] = -48,
                 ["initialai"] = "triggerToUse",
+                ["linecolor"] = "#ff55ffff",
                 ["room"] = "start"
               }
             }
@@ -1371,9 +1370,10 @@ return {
               },
               properties = {
                 ["action"] = "openRoom",
-                ["color"] = "#8000ffff",
+                ["color"] = "#00000000",
                 ["extrudeY"] = -48,
                 ["initialai"] = "triggerToUse",
+                ["linecolor"] = "#ff55ffff",
                 ["room"] = "start"
               }
             }
