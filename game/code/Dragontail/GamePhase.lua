@@ -119,9 +119,6 @@ function GamePhase:setPaused(newpaused, withmenu)
 end
 
 local keypressed = {}
-function keypressed.f2()
-    love.event.newphase("Dragontail.GamePhase")
-end
 
 function keypressed.s()
     if love.keyboard.isDown("lctrl") then
@@ -134,22 +131,10 @@ function keypressed.s()
     end
 end
 
-function keypressed.delete()
-    if Characters.isTimeToClearLostEnemies() then
-        Characters.clearEnemies()
-    end
-end
-
 ---@param gamepad love.Joystick
 function GamePhase:gamepadpressed(gamepad, button)
     if button == "start" then
         GamePhase:setPaused(not Stage:paused(), true)
-        return "stop"
-    elseif button == "back" then
-        if Characters.isTimeToClearLostEnemies() then
-            Characters.clearEnemies()
-        end
-        -- GamePhase:setPaused(not Stage:paused(), false)
         return "stop"
     end
 end
