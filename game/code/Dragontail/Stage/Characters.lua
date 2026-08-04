@@ -66,7 +66,8 @@ function Characters.quit()
 end
 
 function Characters.getById(id)
-    return byid[id]
+    return type(id) == "table" and byid[id.id]
+        or type(id) == "number" and byid[id]
 end
 
 function Characters.getGroup(group)
