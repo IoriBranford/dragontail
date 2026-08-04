@@ -359,5 +359,9 @@ function path.normjoin(...)
     return path.normpath(path.join(...))
 end
 
+function path.normdir(P)
+    return path.normpath(path.dirname(P))
+end
+
 ---- finis -----
 return path

@@ -17,10 +17,8 @@ local getenv = os.getenv
 local tmpnam = os.tmpname
 local package = package
 local append, concat, remove = table.insert, table.concat, table.remove
-
-local function assert_string(argi, arg)
-    assert(type(arg) == "string", "expected string type for arg "..argi)
-end
+local utils = require 'pl.utils'
+local assert_string,raise = utils.assert_string,utils.raise
 
 local path = {}
 
@@ -28,8 +26,7 @@ local function at(s,i)
     return sub(s,i,i)
 end
 
-local dirsep = _G.package.config:sub(1,1)
-path.is_windows = dirsep == '\\'
+-- path.is_windows = utils.is_windows
 
 local sep, other_sep, seps
 -- constant sep is the directory separator for this platform.
@@ -355,7 +352,7 @@ function path.package_path(mod)
     if res then return res,true end
     res, err2 = package.searchpath(mod,package.cpath)
     if res then return res,false end
-    return nil, ('cannot find module on path\n' .. err1 .. "\n" .. err2)
+    return raise ('cannot find module on path\n' .. err1 .. "\n" .. err2)
 end
 
 function path.normjoin(...)
