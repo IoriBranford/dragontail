@@ -27,6 +27,7 @@ local testcircles = math.testcircles
 
 ---@class Character:DirectionalAnimation,DropAfterimage,Body,Attacker,AttackTarget,Guard,Shadow
 ---@field initialai string
+---@field initvisible boolean?
 ---@field camera Camera
 ---@field opponents Character[]
 ---@field shadowcolor Color?
@@ -56,6 +57,9 @@ function Character:init()
     Characters = Characters or require "Dragontail.Stage.Characters"
     if self.visible == nil then
         self.visible = true
+    end
+    if self.initvisible == false then
+        self.visible = false
     end
     self.health = self.health or 1
     self.maxhealth = self.maxhealth or self.health
