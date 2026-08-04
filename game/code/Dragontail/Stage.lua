@@ -419,7 +419,7 @@ function Stage:updateGoingToNextRoom()
             end
         end
         if room.time then room.time = max(0, room.time - 1) end
-        Characters.fixedupdateLostEnemiesTimer()
+        -- Characters.fixedupdateLostEnemiesTimer()
     end
 
     local camhalfw, camhalfh = camera.width/2, camera.height/2
@@ -722,9 +722,9 @@ function Stage:draw(fixedfrac)
     love.graphics.translate(-x, z - y)
     scene:draw(fixedfrac, Characters.isDrawnBefore)
     Stage:setUniform("texRgbFactor", 1)
-    if Characters.isTimeToClearLostEnemies() then
-        Characters.clearEnemies()
-    end
+    -- if Characters.isTimeToClearLostEnemies() then
+    --     Characters.clearEnemies()
+    -- end
     love.graphics.pop()
     love.graphics.setShader()
 end
