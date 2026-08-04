@@ -183,7 +183,9 @@ function Stage:init(startroom)
         Characters.spawn(player)
         ccx, ccy = player.x, player.y
     end
-    if not camerapath then
+    if camerapath then
+        Stage:warpPlayersToCamera()
+    else
         Stage:warpCamera(ccx, ccy)
     end
 
