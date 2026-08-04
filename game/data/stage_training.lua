@@ -9,8 +9,8 @@ return {
   height = 15,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 15,
-  nextobjectid = 77,
+  nextlayerid = 17,
+  nextobjectid = 104,
   properties = {
     ["hudfile"] = "gui/hud_training.lua",
     ["pausemenumap"] = "gui/menu_pause_training.lua",
@@ -108,14 +108,20 @@ return {
       exportfilename = "sprites/sandy/tree2a-trunk.lua"
     },
     {
-      name = "tree1b-trunk",
+      name = "Dress Form",
       firstgid = 2085,
+      filename = "sprites/training/Dress Form.tsx",
+      exportfilename = "sprites/training/Dress Form.lua"
+    },
+    {
+      name = "tree1b-trunk",
+      firstgid = 2097,
       filename = "sprites/sandy/tree1b-trunk.tsx",
       exportfilename = "sprites/sandy/tree1b-trunk.lua"
     },
     {
       name = "tree1b-crown",
-      firstgid = 2086,
+      firstgid = 2098,
       filename = "sprites/sandy/tree1b-crown.tsx",
       exportfilename = "sprites/sandy/tree1b-crown.lua"
     }
@@ -169,15 +175,15 @@ return {
             },
             {
               x = -16, y = 0, width = 16, height = 16,
-              data = "eJydk1lKg0EQhL+XqT5I4oKexqCip9FTiHHBeAA9hksWPM2foESQpjuQt/RvwbwMU13V1T1Qx0DwIBgaDAxOrQcZuBZcGnSChWCqfvwrwZfgXqH/05M/EvwKDtL74z/0Dw0+FD2si/xlg1WDl/T+qfA+srquZ3VswfUZnFtd/yQ1Pfs9iwy9xkR1/W9FZhcWXs4s6vXJ/VlwZNHHOj3twttWbk+Zg/vo0sMuDHNO/n6ce3OX+zcp6L8KbhrMBe85t32DmeKugtsWNTxD/zur3MFK/9s1ugZLxXHvPsMqxpnjRntz/gBs1z/c"
+              data = "eJydk9lNg0EMhL8HdlxIwiGohggQVEAZUAUiHCIpAOiCHICogDKSCAQSsuxIvOEfS/uy2vGMZ7xQr57gRtA36BkcWAcwcC44MVgIXgVzdcOfCd4E1wr+z474geBbsJ3ab//Bv2MwVczwVcQvG6wa3Kf2mUL7wOq87tWeBdYzOLI6/35yuvebFh56j5Hq/B8Kz44ttBwaPG50830s2LWYw7W/F/BPv3y7Sx9ch/t/2v7G9zMnfz/MvbnK/RsV5n8QXDR4EUwyty2DZ8VdpS5b9HAP/e+scgc9k2p5j0WDpeK4ds+wWsP0cc29Pj8vAUBR"
             },
             {
               x = 0, y = 0, width = 16, height = 16,
-              data = "eJylkjlulEEUhD9Ev9chBNyAxWBOgAQEnADj8UIICbIslpSUJYCQzBiP7RMAZs0Q0eDxmDkN2zCWUNH1C+cErd5e1auq7l7Cl4STFX4kzNW2n61wusJ1z+crvEgYJsxX+J3wK+FshYOEXsLXhHWf7WXjO1dh4LmfMEqYGPstYabCOOF7wtQ86v3TXOqvmq2EjYS1hDPurx7SpLXqB67vu3Y3Yd86lmrTt2HcyJo6D7vWI/xC/ednYt6JfV+zX60777p7ns1Hp1k6lZn6/vXlfHvWOnG/vrFrxg2tTbqmzkV+hdvyftn5jIzdPNRrsbY33PSbikfYOecon0Nzb1uLzqfO8cAepK+r1XtIw4x5161F/P+LP+UM9ccGznBs7Ng8285b+S167oY491w/X+BVgdcF7kZb73it+Xa0te41dkrr8dJ39wLeFnhf4F2B5QKPDu0fFrgP3Ah4UuFpbdiFAlcDlgqsRvPbnR/XuX2eCLgZ8DngQ4WPFa4EHD0CnwIuR8tGni6Y70FpfPp3t6JpkEbpWYlW9yzgYsDjAncC3pR2fizau+tvKL9O06Vob6X//wcFCpfY"
+              data = "eJxNk0tvjWEUhR/svd8goQP/AC01l0jEoL+gOFqGdIC4Dk1dKmEiZSSu/6Atqp2IocsREnMG/oNy0ERW9v5yzuh93/3ty1prr68X8D5gd4NfAUdbvicb7G1wqs4DDR4HfAw43uBvwCBgX4ONgF7A54BHFetH9tvf4F2dTwM+Bfyp2p8BEw2+BKwH/FNvg2WDy57nC4MrDj2DJwEPA8ZrvnKFSfffAYsGtw12ONxzOOhwDXjgcHGkR79wfLMhB/U6YXDL4KTBrMGqwUq971cPYVmy7DXlyX2xalVzw+Cs5ynNZhtcN7hpsNDAHeaAI57zpYnyzztc8NRJ2g9Kj/Xiq5yV6nPaYaZmavZLS06aNdNyh89qp4PajWIThUV8tnpyvVq8lqvPRu1QO/pQGovreNWr7y6HSYedDt8Nnm8ecu/00P4ueWJU3mj9dodtDvOl72tL7vKJvHCosEmTc6WLPCc/iZ90OwN8JXv2R7AuFaf5unf+0Sk8uuv7nQZ3y3vCq2+Kvyo83d6Fo3t32r9xWG2w1oa7n/bUQFi1vy4+pniDPS11m2upvebIX/LQlk3w1tMT0l6cpEGnqfodKw+sWdZqjv5F5cmbh4uzdNceFZfu2rt8KP06TD8s/xl57T+brISp"
             },
             {
               x = 16, y = 0, width = 16, height = 16,
-              data = "eJydkr9OVGEQxX9uvpkv0cRY+AauuuATYKKFbyC7gbVE7IhYaGELUWotZflrYkEH0UQrGgoEo5v4BvIOCwqYmJOZGxNLi8m9M989Z8453z106FToVXhQYegwcLhZ49mtcJrf9Cvcr/DTYc9g2aBd4bfDeIVvDisObxw+O2w6XKuw7nHWyR2qfYcth5FDz2O2ofcKZw6/HI4To/2rDicOBx77hJG+jazVxJzn+SB3q5aTXxq/pj7VocfZZA28ZvpGHtaTY5i8+maUeWwm7kZqvl5D11hmIe/aK9xU4pSbNOhsJednqUHvDa/eVcr/JPUoq1uZvzLpJ2f/n33ilQ/lNZW98lQv3+KbrlFrHiVdekpbJ3dJxxePux2mL/GMp65uetP8f/FN7sp8lFk29yutwp1m386s5HeQc+UgH48NdgrMGzyx6LdLzNQ3pb5XIkftaqeH1xUuGnwHXhT4WKBfwAxmc6b+tsHLAu9LeFXu8vC2FdjpAnMW/icMXhk8a8Edg4UCnwq84y9H89+Le9fgKHnl754BF+BDgcUSGV01eGQwY3DX4p9THtr1EPhR4s6Fv2Rw2eCKRcbdAksFngNPWzHXHYnjD1RBjAE="
+              data = "eJxdk7tqVWEQhb8cZ+YHBbXwEbxbxsZCC5/AeGISSy/g/YJa2B6PWmtpAqKFhZW3E7WKgoUYkYBvoK8gXhIRZDGzSbT4OXvW2f+aNbPWXgzY2WCywdEGSwFzATta/vYbrNQ7Mw0mGvwKeOcw67C1Qd/gWZ3nBk/r+YJnfclXcT1fdHhh8DgSv+xw02De4JXBS4OznueMw2lP/LXBQoMrPTjgqe+PwRuH88U7afBkjR7Vs5GzDQxmDO44fDVYDBhZ9hhacolHeoQPq5Zmae+0LgBfDLa31LGtwaniGAfeFv+gNI9qpmFp/Wb5/+9Inn5xHzGYrjvqK+y25Tt72r985zz9uGGwz+GYw16HW6XRHR70YN1YYt3u1WOTw/3IM7FmL6P/9t/tvqvlz3z1Xg7YpdxY8gwKfx/wMOBjZDaWuvca7G6ZK2VKnhxuOdv3yF3+DPgQ8Cny3krV4pGn6jVX+I+A6QZT5bO813zKXJc/1d3RTjovxSPOZeXCYb3DZzKDml+70P5OFKb6kMO4w3Fyn12u5KnuyrdufvmhjF3rwX5f9e0RcFfHU7e+gYPKU+VFGdV8whhLP+TvvYAtDifLZ/VSX91RL2nSHqfq/gaHjQ6bPXesfClH14GrvcSVV+n9C4E2iHg="
             },
             {
               x = 32, y = 0, width = 16, height = 16,
@@ -189,7 +195,7 @@ return {
             },
             {
               x = 0, y = 16, width = 16, height = 16,
-              data = "eJztzj1KQ2EQheGHMPNdXIaFK7C1trQRUwsiqIhZQwhapwnps4D4A6KViGvQ1kWosQ4f9wYr7YUceGFmzsxhhsEoeMWsxxsug4PgPLkLboOL5CrYTvrBINt5v2EYPAY7yUvyHuwl4+QQRw3HyW6PJ2wkm8lzstXwXdqMh+C+Y1WfJKcddVY5yx/vI/mqvxRuCp/JdWGR7Ddt/qTzV169qdT+N81Lu1uZ/rG31lr+sZaDlyk9"
+              data = "eJztzj1Kg1EQheGHMHM/XIZFdmFtaSNaC0GIIrqGIFprIfYuwKggSSXiGrR1Ef7VcrlfsNJeyIEXZs6ZGWYSHAfPuBrwgpNgKzhI7oLb4DA5Dc6z+UfZ/O2OSTAP1pKn5DXYSM6SHYw6dpP1AQ9YSVaTx2TY8VXajVlw37Oox8leT/Uq+/mTvSUf9ZfCTeE9mRY+k82u3b/o80VWdyq1/03Xpc1WLv+YW2op/1jfQWgpsg=="
             },
             {
               x = 16, y = 16, width = 16, height = 16,
@@ -224,11 +230,11 @@ return {
           chunks = {
             {
               x = 0, y = 0, width = 16, height = 16,
-              data = "eJztzjFOglEQReGPmfWgxLAGNqESib0NrEOgt9F9CD2NLsfGaCY+khdjTPxL4kledc/c+9bY4gZTrHHb3gJ7LBPBKIjgY8RdMssvr253uGhu5b3/mJwF58EkGAcPySq5x6ZtV1+5lff+S3IVXAfz4DI4JE/tftp2q6/cynv/vf7/jbfkNXnudqvvJ/c3+t3q+ytDd48M3T0ydPcfJ8Enu2kkaA=="
+              data = "eJztjzsOQVEQhr87swbLQCLUOptA4lHTsA6v1m3YhcKjpWEXtqC5IZMziVOIkKv0JzenuP/M980UmAMdoApMgb5/XWAP7IAKUPPe3P83NLydqGP9kQICiUBdoeczFe9ZZwJsJLwzZ9u+ewIrhZJAWWAQ7Rrq08+YV5+vOnOsUBQ4K7QE2gLLaFeqwafvHgtg61xjrhWaApkxPcdo10mDj3nY3CHiGvMSzb3KTYNP6jcZ024wbsx8F/M5+U3GLHzAfeVhN2Xunifmniffuv/DT/MARRYz8w=="
             },
             {
               x = 16, y = 0, width = 16, height = 16,
-              data = "eJzti8kJgEAUxTKxHpd+XEqwIiuyIm96GJGPzElvYuAdEngKewKEJHju3qLPFRedUAuN0Jq91KIv4T8JvTAIo9lLLfoa/k/YXv5/fvgIByHWDT4="
+              data = "eJzNkrsNwkAQRJ93W6ANMB1QCJ8AYpxQBxXgxF0gUQFO6IIaSBBog5P3kC+wNmGkCWak0c6d5qSAQCUgjp8q95NuFA4M6BQWArXA0nEuuZ90q3CVIf9Q2AhsBXaOa8n9pHuFp8u/rf8EvBRmEzO/OMfi3IL5Y7D/JZi/63in0ma8XinsC51Km/Ha7tgGxzqVNuO13bENRt7eB//PNvgv+AIjaSKP"
             }
           }
         },
@@ -259,7 +265,7 @@ return {
             },
             {
               x = 0, y = -16, width = 16, height = 16,
-              data = "eJztzLERQEAURdFj+H+rUq0SUAZ60IcZwUrNyCR7khu9R9M0frImS9YOyRS1X42Fq3AmW7AHc9I9v31yxPv+BouECRk="
+              data = "eJztzbkNgDAQRcHh8LoqqoUOgDKgCPpAIrDJyUg80uplf2maxk/2YIvSMZhT6VdT5s5cwZE4E2sw1M23748u6OstiQes2As4"
             },
             {
               x = -16, y = 0, width = 16, height = 16,
@@ -267,7 +273,32 @@ return {
             },
             {
               x = 0, y = 0, width = 16, height = 16,
-              data = "eJztz7EJwlAQgOGvuXttiuAoLuBCmcQVxBmsDC5j4Q6CIuEhaYSgSWWRD648/ru2sE26wia5BdegSx7BKziGSffynqZwCPrknDy/7I1OQZvskn2ard5cu7X5S+9T/fGyoDta0lyt/IkBZroR9Q=="
+              data = "eJztjrsJAlEQRU9y56UGi6WYi/ZgagduJbbgaguCoNiEdmCgWMLC+mN8E4jRYmSwB4a5zOfOFAkGBmWCvsFZcFLWpcFVMDSYRYwNNoJGsBTUKUcvwUKwM9ga3AR3wUNQKfeq8L0IJsabtaAwGBnMo/bNQXBUzu73FExj1v3c22/6P21YCfax33zoX2h7s6ODP+QFTv4fOw=="
+            }
+          }
+        },
+        {
+          type = "tilelayer",
+          x = 0,
+          y = 0,
+          width = 30,
+          height = 15,
+          id = 16,
+          name = "Tile Layer 4",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          encoding = "base64",
+          compression = "zlib",
+          chunks = {
+            {
+              x = 16, y = 0, width = 16, height = 16,
+              data = "eJxjYBgFQw3spkCvOQMDgwUWcS4GBgY2KGZnYGBgQeLDxFihevdSYP8oYBhUAADG1AJf"
             }
           }
         }
@@ -340,7 +371,49 @@ return {
           },
           objects = {
             {
-              id = 4,
+              id = 70,
+              name = "cameraboundary",
+              type = "CameraBoundary",
+              shape = "rectangle",
+              x = 240,
+              y = 152,
+              width = 480,
+              height = 270,
+              rotation = 0,
+              opacity = 1,
+              visible = false,
+              properties = {}
+            },
+            {
+              id = 103,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 96,
+              y = -128,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = -96, y = 128 },
+                { x = -96, y = 464 },
+                { x = -64, y = 432 },
+                { x = -64, y = 368 },
+                { x = 32, y = 272 },
+                { x = 32, y = 128 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -48,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 102,
               name = "",
               type = "Boundary",
               shape = "polygon",
@@ -352,17 +425,154 @@ return {
               opacity = 1,
               visible = true,
               polygon = {
-                { x = 0, y = -32 },
-                { x = 0, y = 240 },
-                { x = 160, y = 80 },
-                { x = 288, y = 80 },
-                { x = 320, y = 48 },
-                { x = 448, y = 48 },
-                { x = 480, y = 80 },
-                { x = 512, y = 48 },
-                { x = 928, y = 48 },
+                { x = 128, y = -32 },
+                { x = 128, y = 112 },
+                { x = 160, y = 112 },
+                { x = 192, y = 80 },
+                { x = 256, y = 80 },
+                { x = 288, y = 112 },
+                { x = 352, y = 112 },
+                { x = 352, y = -32 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -48,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 101,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 0,
+              y = 32,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = 352, y = 112 },
+                { x = 448, y = 208 },
+                { x = 480, y = 208 },
+                { x = 512, y = 176 },
+                { x = 512, y = 80 },
+                { x = 544, y = 48 },
+                { x = 544, y = -32 },
+                { x = 352, y = -32 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -48,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 100,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 0,
+              y = 32,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = 544, y = 48 },
+                { x = 896, y = 48 },
+                { x = 928, y = 80 },
                 { x = 960, y = 80 },
-                { x = 960, y = -32 }
+                { x = 960, y = -32 },
+                { x = 544, y = -32 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -48,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 95,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 0,
+              y = 32,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = 608, y = 256 },
+                { x = 576, y = 288 },
+                { x = 576, y = 304 },
+                { x = 608, y = 336 },
+                { x = 896, y = 336 },
+                { x = 896, y = 256 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -48,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 98,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 320,
+              y = 0,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = 608, y = 256 },
+                { x = 576, y = 288 },
+                { x = 576, y = 368 },
+                { x = 640, y = 432 },
+                { x = 672, y = 432 },
+                { x = 672, y = 256 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -48,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 99,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 320,
+              y = -176,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = 608, y = 288 },
+                { x = 608, y = 432 },
+                { x = 672, y = 432 },
+                { x = 672, y = 288 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -581,7 +791,7 @@ return {
               name = "",
               type = "item-spikefruit",
               shape = "rectangle",
-              x = 392,
+              x = 360,
               y = 232,
               width = 20,
               height = 20,
@@ -598,7 +808,7 @@ return {
               name = "",
               type = "item-spikefruit",
               shape = "rectangle",
-              x = 368,
+              x = 336,
               y = 256,
               width = 20,
               height = 20,
@@ -615,7 +825,7 @@ return {
               name = "",
               type = "item-spikefruit",
               shape = "rectangle",
-              x = 400,
+              x = 368,
               y = 264,
               width = 20,
               height = 20,
@@ -632,7 +842,7 @@ return {
               name = "",
               type = "item-spikefruit",
               shape = "rectangle",
-              x = 408,
+              x = 376,
               y = 248,
               width = 20,
               height = 20,
@@ -649,7 +859,7 @@ return {
               name = "",
               type = "fruit-tree",
               shape = "rectangle",
-              x = 384,
+              x = 352,
               y = 250,
               width = 64,
               height = 96,
@@ -678,7 +888,7 @@ return {
               height = 96,
               rotation = 0,
               opacity = 1,
-              gid = 2085,
+              gid = 2097,
               visible = true,
               properties = {
                 ["asetag"] = "*",
@@ -724,7 +934,7 @@ return {
               height = 96,
               rotation = 0,
               opacity = 1,
-              gid = 2085,
+              gid = 2097,
               visible = true,
               properties = {
                 ["asetag"] = "*",
@@ -747,7 +957,7 @@ return {
               height = 96,
               rotation = 0,
               opacity = 1,
-              gid = 2085,
+              gid = 2097,
               visible = true,
               properties = {
                 ["asetag"] = "*",
@@ -764,7 +974,7 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 384,
+              x = 352,
               y = 202,
               width = 64,
               height = 48,
@@ -788,7 +998,7 @@ return {
               height = 48,
               rotation = 0,
               opacity = 1,
-              gid = 2086,
+              gid = 2098,
               visible = true,
               properties = {
                 ["asetag"] = "*",
@@ -824,7 +1034,7 @@ return {
               height = 48,
               rotation = 0,
               opacity = 1,
-              gid = 2086,
+              gid = 2098,
               visible = true,
               properties = {
                 ["asetag"] = "*",
@@ -842,7 +1052,7 @@ return {
               height = 48,
               rotation = 0,
               opacity = 1,
-              gid = 2086,
+              gid = 2098,
               visible = true,
               properties = {
                 ["asetag"] = "*",
@@ -854,7 +1064,7 @@ return {
               name = "",
               type = "item-spikefruit-hanging",
               shape = "rectangle",
-              x = 368,
+              x = 336,
               y = 206,
               width = 20,
               height = 20,
@@ -872,7 +1082,7 @@ return {
               name = "",
               type = "item-spikefruit-hanging",
               shape = "rectangle",
-              x = 400,
+              x = 368,
               y = 200,
               width = 20,
               height = 20,
@@ -932,7 +1142,7 @@ return {
               height = 96,
               rotation = 0,
               opacity = 1,
-              gid = 2085,
+              gid = 2097,
               visible = true,
               properties = {
                 ["asetag"] = "*",
@@ -978,7 +1188,7 @@ return {
               height = 48,
               rotation = 0,
               opacity = 1,
-              gid = 2086,
+              gid = 2098,
               visible = true,
               properties = {
                 ["asetag"] = "*",
@@ -1084,20 +1294,6 @@ return {
                 ["leaves"] = { id = 64 },
                 ["propertiestable"] = "database/objects-properties.csv"
               }
-            },
-            {
-              id = 70,
-              name = "cameraboundary",
-              type = "CameraBoundary",
-              shape = "rectangle",
-              x = 240,
-              y = 152,
-              width = 480,
-              height = 270,
-              rotation = 0,
-              opacity = 1,
-              visible = false,
-              properties = {}
             }
           }
         },
@@ -1129,7 +1325,7 @@ return {
               height = 0,
               rotation = 0,
               opacity = 1,
-              visible = true,
+              visible = false,
               polygon = {
                 { x = -568, y = 64 },
                 { x = 56, y = 64 },
@@ -1156,7 +1352,7 @@ return {
               height = 0,
               rotation = 0,
               opacity = 1,
-              visible = true,
+              visible = false,
               polygon = {
                 { x = -40, y = 64 },
                 { x = 488, y = 64 },
@@ -1183,7 +1379,7 @@ return {
               height = 0,
               rotation = 0,
               opacity = 1,
-              visible = true,
+              visible = false,
               polygon = {
                 { x = -472, y = 0 },
                 { x = -688, y = 352 },
@@ -1229,7 +1425,7 @@ return {
               height = 270,
               rotation = 0,
               opacity = 1,
-              visible = true,
+              visible = false,
               properties = {}
             },
             {
@@ -1243,7 +1439,7 @@ return {
               height = 0,
               rotation = 0,
               opacity = 1,
-              visible = true,
+              visible = false,
               polygon = {
                 { x = 8, y = 24 },
                 { x = -24, y = 56 },
@@ -1256,6 +1452,361 @@ return {
                 ["initialai"] = "triggerToUse",
                 ["linecolor"] = "#ff55ffff",
                 ["room"] = "start"
+              }
+            },
+            {
+              id = 85,
+              name = "",
+              type = "training-target",
+              shape = "rectangle",
+              x = 64,
+              y = 144,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 2086,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/objects-properties.csv",
+                ["respawnpoint"] = { id = 91 },
+                ["z"] = 48
+              }
+            },
+            {
+              id = 89,
+              name = "",
+              type = "training-target",
+              shape = "rectangle",
+              x = 200,
+              y = 56,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 2086,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/objects-properties.csv",
+                ["respawnpoint"] = { id = 93 },
+                ["z"] = 48
+              }
+            },
+            {
+              id = 87,
+              name = "",
+              type = "training-target",
+              shape = "rectangle",
+              x = 360,
+              y = 88,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 2086,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/objects-properties.csv",
+                ["respawnpoint"] = { id = 96 },
+                ["z"] = 48
+              }
+            },
+            {
+              id = 86,
+              name = "",
+              type = "training-target",
+              shape = "rectangle",
+              x = 120,
+              y = 96,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 2092,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/objects-properties.csv",
+                ["respawnpoint"] = { id = 92 },
+                ["z"] = 48
+              }
+            },
+            {
+              id = 90,
+              name = "",
+              type = "training-target",
+              shape = "rectangle",
+              x = 280,
+              y = 80,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 2092,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/objects-properties.csv",
+                ["respawnpoint"] = { id = 94 },
+                ["z"] = 48
+              }
+            },
+            {
+              id = 88,
+              name = "",
+              type = "training-target",
+              shape = "rectangle",
+              x = 416,
+              y = 144,
+              width = 32,
+              height = 32,
+              rotation = 0,
+              opacity = 1,
+              gid = 2092,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/objects-properties.csv",
+                ["respawnpoint"] = { id = 97 },
+                ["z"] = 48
+              }
+            },
+            {
+              id = 81,
+              name = "",
+              type = "item-spikefruit",
+              shape = "rectangle",
+              x = 232,
+              y = 240,
+              width = 20,
+              height = 20,
+              rotation = 0,
+              opacity = 1,
+              gid = 2075,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/projectiles-properties.csv"
+              }
+            },
+            {
+              id = 78,
+              name = "",
+              type = "item-spikefruit",
+              shape = "rectangle",
+              x = 200,
+              y = 232,
+              width = 20,
+              height = 20,
+              rotation = 0,
+              opacity = 1,
+              gid = 2075,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/projectiles-properties.csv"
+              }
+            },
+            {
+              id = 77,
+              name = "",
+              type = "item-spikefruit",
+              shape = "rectangle",
+              x = 208,
+              y = 256,
+              width = 20,
+              height = 20,
+              rotation = 0,
+              opacity = 1,
+              gid = 2075,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/projectiles-properties.csv"
+              }
+            },
+            {
+              id = 80,
+              name = "",
+              type = "item-spikefruit",
+              shape = "rectangle",
+              x = 224,
+              y = 264,
+              width = 20,
+              height = 20,
+              rotation = 0,
+              opacity = 1,
+              gid = 2075,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/projectiles-properties.csv"
+              }
+            },
+            {
+              id = 79,
+              name = "",
+              type = "fruit-tree",
+              shape = "rectangle",
+              x = 216,
+              y = 242,
+              width = 64,
+              height = 96,
+              rotation = 0,
+              opacity = 1,
+              gid = 2097,
+              visible = true,
+              properties = {
+                ["asetag"] = "*",
+                ["fruit1"] = { id = 82 },
+                ["fruit2"] = { id = 84 },
+                ["fruit3"] = { id = 0 },
+                ["fruit4"] = { id = 0 },
+                ["leaves"] = { id = 83 },
+                ["propertiestable"] = "database/objects-properties.csv"
+              }
+            },
+            {
+              id = 83,
+              name = "",
+              type = "",
+              shape = "rectangle",
+              x = 216,
+              y = 194,
+              width = 64,
+              height = 48,
+              rotation = 0,
+              opacity = 1,
+              gid = 2098,
+              visible = true,
+              properties = {
+                ["asetag"] = "*",
+                ["z"] = 48
+              }
+            },
+            {
+              id = 82,
+              name = "",
+              type = "item-spikefruit-hanging",
+              shape = "rectangle",
+              x = 200,
+              y = 198,
+              width = 20,
+              height = 20,
+              rotation = 0,
+              opacity = 1,
+              gid = 2076,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/items-properties.csv",
+                ["z"] = 64
+              }
+            },
+            {
+              id = 84,
+              name = "",
+              type = "item-spikefruit-hanging",
+              shape = "rectangle",
+              x = 232,
+              y = 192,
+              width = 20,
+              height = 20,
+              rotation = 0,
+              opacity = 1,
+              gid = 2076,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/items-properties.csv",
+                ["z"] = 68
+              }
+            },
+            {
+              id = 91,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 64,
+              y = -112,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {
+                ["z"] = 256
+              }
+            },
+            {
+              id = 92,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 120,
+              y = -160,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {
+                ["z"] = 256
+              }
+            },
+            {
+              id = 93,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 200,
+              y = -200,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {
+                ["z"] = 256
+              }
+            },
+            {
+              id = 94,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 280,
+              y = -176,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {
+                ["z"] = 256
+              }
+            },
+            {
+              id = 96,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 360,
+              y = -168,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {
+                ["z"] = 256
+              }
+            },
+            {
+              id = 97,
+              name = "",
+              type = "",
+              shape = "point",
+              x = 416,
+              y = -112,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              properties = {
+                ["z"] = 256
               }
             }
           }
@@ -1302,7 +1853,7 @@ return {
               height = 0,
               rotation = 0,
               opacity = 1,
-              visible = true,
+              visible = false,
               polygon = {
                 { x = 8, y = 56 },
                 { x = -24, y = 24 },
@@ -1361,7 +1912,7 @@ return {
               height = 0,
               rotation = 0,
               opacity = 1,
-              visible = true,
+              visible = false,
               polygon = {
                 { x = -80, y = 80 },
                 { x = -16, y = 80 },
