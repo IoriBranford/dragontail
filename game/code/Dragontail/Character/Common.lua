@@ -617,6 +617,7 @@ function Common:fruitTreeHurt(hit)
         if fruit == nil then
             break
         end
+        fruit = fruit and Characters.getById(fruit)
         if fruit ~= false then
             StateMachine.start(fruit, "itemWaitForPickup")
             fruit.animationspeed = 0
