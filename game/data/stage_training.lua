@@ -9,8 +9,8 @@ return {
   height = 15,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 17,
-  nextobjectid = 104,
+  nextlayerid = 20,
+  nextobjectid = 114,
   properties = {
     ["hudfile"] = "gui/hud_training.lua",
     ["pausemenumap"] = "gui/menu_pause_training.lua",
@@ -156,7 +156,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["z"] = -5
+            ["drawz"] = -5
           },
           encoding = "base64",
           compression = "zlib",
@@ -179,11 +179,11 @@ return {
             },
             {
               x = 0, y = 0, width = 16, height = 16,
-              data = "eJxNk0tvjWEUhR/svd8goQP/AC01l0jEoL+gOFqGdIC4Dk1dKmEiZSSu/6Atqp2IocsREnMG/oNy0ERW9v5yzuh93/3ty1prr68X8D5gd4NfAUdbvicb7G1wqs4DDR4HfAw43uBvwCBgX4ONgF7A54BHFetH9tvf4F2dTwM+Bfyp2p8BEw2+BKwH/FNvg2WDy57nC4MrDj2DJwEPA8ZrvnKFSfffAYsGtw12ONxzOOhwDXjgcHGkR79wfLMhB/U6YXDL4KTBrMGqwUq971cPYVmy7DXlyX2xalVzw+Cs5ynNZhtcN7hpsNDAHeaAI57zpYnyzztc8NRJ2g9Kj/Xiq5yV6nPaYaZmavZLS06aNdNyh89qp4PajWIThUV8tnpyvVq8lqvPRu1QO/pQGovreNWr7y6HSYedDt8Nnm8ecu/00P4ueWJU3mj9dodtDvOl72tL7vKJvHCosEmTc6WLPCc/iZ90OwN8JXv2R7AuFaf5unf+0Sk8uuv7nQZ3y3vCq2+Kvyo83d6Fo3t32r9xWG2w1oa7n/bUQFi1vy4+pniDPS11m2upvebIX/LQlk3w1tMT0l6cpEGnqfodKw+sWdZqjv5F5cmbh4uzdNceFZfu2rt8KP06TD8s/xl57T+brISp"
+              data = "eJxNk0tvjVEUhh+stXaQYOAfUKXmEokY+AXo0TKsDhDXoalLJUwkjITiH7SltBPp0OU0JOYM/AfloIm8WevLOaO99/r2ftd7WV8v4EPAvga/Ak61PE80GGtwrtbDDZ4FfAqYbPA3YBBwsMFmQC/gc8DTqvUj8Q41eF/r84D1gD/19mfAeIMvARsB/4RtsGRwzXN9ZXDdoWcwH/Ak4ED1111x0v53wILBPYNdDg8djjjcBB47XBnB6BePbzbUIKwzBncNzhpMG6wYvKnzo8IQl0VLrBOe2hfqrd7cNrjgucqz6Qa3DN4W3h2DWeC4Z395ovuXHC57+iTvB+XHRukVznrdFZ+p6qnery016c5UywxfVKaDyka1Xmnd6bDdU+uN0rVUOJuVoTL6WB5LqziMF+5ehwmH3Q7fDV5uHWrv/FB+Vz056t7oe/Xf4TBX/sobadecaBaOFjd5crF80cxpnqRPvp0HvpKY/RGui6Vprvbd/GgVH+31/X6DBzV74qtvqi8Xny538ejOym7G4Z3DSoPVNsz+pKcH4qr8uvoe1Rvsb+nbbEvv1UfzoBnatgXWPGdC3kuTPOg8Fd7pltmvWr5VH/2LuqfZPFaa5btyVF2+K3fNofzrOP2w/Gc0a/8BjQiE7A=="
             },
             {
               x = 16, y = 0, width = 16, height = 16,
-              data = "eJxdk7tqVWEQhb8cZ+YHBbXwEbxbxsZCC5/AeGISSy/g/YJa2B6PWmtpAqKFhZW3E7WKgoUYkYBvoK8gXhIRZDGzSbT4OXvW2f+aNbPWXgzY2WCywdEGSwFzATta/vYbrNQ7Mw0mGvwKeOcw67C1Qd/gWZ3nBk/r+YJnfclXcT1fdHhh8DgSv+xw02De4JXBS4OznueMw2lP/LXBQoMrPTjgqe+PwRuH88U7afBkjR7Vs5GzDQxmDO44fDVYDBhZ9hhacolHeoQPq5Zmae+0LgBfDLa31LGtwaniGAfeFv+gNI9qpmFp/Wb5/+9Inn5xHzGYrjvqK+y25Tt72r985zz9uGGwz+GYw16HW6XRHR70YN1YYt3u1WOTw/3IM7FmL6P/9t/tvqvlz3z1Xg7YpdxY8gwKfx/wMOBjZDaWuvca7G6ZK2VKnhxuOdv3yF3+DPgQ8Cny3krV4pGn6jVX+I+A6QZT5bO813zKXJc/1d3RTjovxSPOZeXCYb3DZzKDml+70P5OFKb6kMO4w3Fyn12u5KnuyrdufvmhjF3rwX5f9e0RcFfHU7e+gYPKU+VFGdV8whhLP+TvvYAtDifLZ/VSX91RL2nSHqfq/gaHjQ6bPXesfClH14GrvcSVV+n9C4E2iHg="
+              data = "eJxdk0tvj1EQxn/ezJwTJFj4CFKXrYhYsJDYurTVlpUi7toGEdvWZd0utYmEILFStGUhFSxERZrwBbDwBcSlFYk8mXnjH4vJOTM5c3ue5ywU2FSht8KhCosFpgpsrHH2VFjONwMVDlT4VeC1w6TDhgo9Bo/SHhtM5/28hz/s/+K6Dzk8MXhQIj7icM1g1uCpwZzBGQ877XDKI/7MYL7ChQZ2ecz3x+CFw7ms22vw0OKufvInS+w2ajBgMO7wxWChwIzBVYNXDluJOgcNvhlsz7rDWWs6Z50HPht01Zjjq+o6TNSY5bDDcYf7wDbi3OewV288aqv/7wLXDW5YvD/hcKkJO5J5e5qwlQ4fgU8WM5/14EP7VIfLxLzjFQaB58CdBjzneOkRvwusdbhVwk52YDvzH/7CvT3nkp/Z7L1UYLN0Y1FnNONvCtwu8K6ENhbbdxW21NCVNCVOumvg+L0Elj8LvC3wvkTecvqqI07VayrjPwr0V+hLrQ0lT9Jcqz/5rY10cKk6qrkkXTiscvhAaFD7C1Phdixj8vdLHw5HCc5aXUk7yu3v2H+HeEgud3pgI3zvARMyj7n1B3ZLT6lHaVT7KcaK4GPM4GaB9ampQY9e6qsc9dJMwrEv81c7rHFY54Gx/qc0dgW42ERcvGvev9CxhwA="
             },
             {
               x = 32, y = 0, width = 16, height = 16,
@@ -213,6 +213,33 @@ return {
           y = 0,
           width = 30,
           height = 15,
+          id = 17,
+          name = "onground",
+          class = "",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {
+            ["drawz"] = -4
+          },
+          encoding = "base64",
+          compression = "zlib",
+          chunks = {
+            {
+              x = 16, y = 0, width = 16, height = 16,
+              data = "eJxjYBgFIKDPzsBgwI4aFv/ZiA+bWHYGhjg0/ejgKhsDwzUsZhqyMzAYIellYscux8zOwMCCxY54dgaGBBx245MbBQwjHgAApzEGjQ=="
+            }
+          }
+        },
+        {
+          type = "tilelayer",
+          x = 0,
+          y = 0,
+          width = 30,
+          height = 15,
           id = 4,
           name = "wall",
           class = "",
@@ -223,18 +250,38 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["z"] = -3
+            ["drawz"] = -3
           },
           encoding = "base64",
           compression = "zlib",
           chunks = {
             {
+              x = -16, y = 0, width = 16, height = 16,
+              data = "eJztz7sNg0AUBdEjXIMbAeN6wO4HA90g8SmHNkheuMFu4IzJJhhdXW5u/k+NBi+04XtB36HHB9/wkn7ADyOm8KXK71dssXmEnwV96v/zkd+n/r/z8+T/GRf+MxMX"
+            },
+            {
               x = 0, y = 0, width = 16, height = 16,
-              data = "eJztjzsOQVEQhr87swbLQCLUOptA4lHTsA6v1m3YhcKjpWEXtqC5IZMziVOIkKv0JzenuP/M980UmAMdoApMgb5/XWAP7IAKUPPe3P83NLydqGP9kQICiUBdoeczFe9ZZwJsJLwzZ9u+ewIrhZJAWWAQ7Rrq08+YV5+vOnOsUBQ4K7QE2gLLaFeqwafvHgtg61xjrhWaApkxPcdo10mDj3nY3CHiGvMSzb3KTYNP6jcZ024wbsx8F/M5+U3GLHzAfeVhN2Xunifmniffuv/DT/MARRYz8w=="
+              data = "eJzNkU1qAkEQhT+rrmCOYQxi1kKEXCI/aFxHDMk5HHVrNvEUcWGy1o05hV7BjUSKqcGCGYOSjQ+apuj309RLgCHQAupAAnT8tIFv4AuoAdfOG/r7raZ3K3CM/6qAQEmgofDkmprzjNMHppLeA882v98SfChcClQFnoNXV/f/s8y16+ue+aZQEVgq3As8CIyD17v7m9+nwAiYea5lThTuBLaW6ZgHr4X7m99K0nz7y9ozf4KuCBv3N7+ywkXgx8xjcKPQPFET0VN4+Yc+QxJ6y3oSyc+23yLE3rKeriQ/236LEHvLenqU/Hxov8sjevsLp/Z2btgBmBo6TQ=="
             },
             {
               x = 16, y = 0, width = 16, height = 16,
-              data = "eJzNkrsNwkAQRJ93W6ANMB1QCJ8AYpxQBxXgxF0gUQFO6IIaSBBog5P3kC+wNmGkCWak0c6d5qSAQCUgjp8q95NuFA4M6BQWArXA0nEuuZ90q3CVIf9Q2AhsBXaOa8n9pHuFp8u/rf8EvBRmEzO/OMfi3IL5Y7D/JZi/63in0ma8XinsC51Km/Ha7tgGxzqVNuO13bENRt7eB//PNvgv+AIjaSKP"
+              data = "eJylkrsNAjEQRN/ttkAb/EVMIXyEIIaEOqABSOgCiWsAErqgBhIEcmDd2sKBzyNtMCuNPGu9vQIClYCY+Vbh3vudwoZGF4WeQF9gYKYr4d77s8JVmvxTYS6wEFiamUm49/6h8DL5j+ufobdCJzMT61AW51aY3xb2PxXm7/q/U4oZ66cKa2AMjKJOKWasd+84BifAKuqUYsZ6945n8Njyds9g3ebzDIP2/lwNo/tz5Rh29/8AZAYoag=="
+            },
+            {
+              x = 32, y = 0, width = 16, height = 16,
+              data = "eJztzzsRgDAABcHVFIIfPn4C+IFgDQ+vYybXb3GMRnkTKmaUwK/YsGMJ/IETF1rgH3S8uAP/9/8PHiUMGw=="
+            },
+            {
+              x = -16, y = 16, width = 16, height = 16,
+              data = "eJzty7sVgCAQAMGpScF6BDuyHj+tkVwB+Exvsg2WORduPHijN/MWrCio0eeHf0dDxxGdUvLLAMKOB2E="
+            },
+            {
+              x = 16, y = 16, width = 16, height = 16,
+              data = "eJxjYCAPxDMwMOxhIB8YMjAwGFGg34KBgSGBgTLQR6H+UTAKGIY4AAAp9wKl"
+            },
+            {
+              x = 32, y = 16, width = 16, height = 16,
+              data = "eJzty0EBgCAQALBlUuij0Ae0j2I1M3hf2X83Bh5cvluRkLEE/o6Cii3wOw6caIE/TX7sBVN1B4k="
             }
           }
         },
@@ -254,7 +301,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["z"] = -2
+            ["drawz"] = -2
           },
           encoding = "base64",
           compression = "zlib",
@@ -269,11 +316,31 @@ return {
             },
             {
               x = -16, y = 0, width = 16, height = 16,
-              data = "eJztzcENglAUAMG5vGdVGvowsR9sgx4QsApLEGvwDCGhgf/Dkb1PlrK64JXMwTcLMdrkkQzB/1Lu70kf/IJbxX9Ilt1fK/zWM3kHTaX/BGMyVfqzMwe1Ak+UDwA="
+              data = "eJzV07EuREEUxvFfc868yBLxDsQzbIRNJN6HXkSERiVoFHbRigiVR8ATKChEQm7u3Wjn3s7XnGb+5//NJEO/nATT5DV4yZ4wdpLtZBZ8lP78VnIVvAWrA/yz5KfjVwbwTXaT22BtIP8cXCc3A/n/ms/gPDnLv1mbg+AieUqWC4fJe9Sx98FdtNy4sFAYFTYq/aNksbBU2Cwcde7LCn7e+ztb73q2O2rd4+Qh2Wv+SzApHCenyVfF/Rv+sTvf9Gjebd5/P/gF+UUrDw=="
             },
             {
               x = 0, y = 0, width = 16, height = 16,
-              data = "eJztjrsJAlEQRU9y56UGi6WYi/ZgagduJbbgaguCoNiEdmCgWMLC+mN8E4jRYmSwB4a5zOfOFAkGBmWCvsFZcFLWpcFVMDSYRYwNNoJGsBTUKUcvwUKwM9ga3AR3wUNQKfeq8L0IJsabtaAwGBnMo/bNQXBUzu73FExj1v3c22/6P21YCfax33zoX2h7s6ODP+QFTv4fOw=="
+              data = "eJztkLsJAkEQhr/kn00NDksxF+3B1A68SizAxNMSFATFJrQDA8UShPPFuBuI0eFm4gfDDLM7/zyKAB2DMkDb4Cg4KMalwVnQNRgl6xusBLVgJriEaK0AU8HGYG1wFdwEd0Gl+FYl3ZNgYLxYCgqDnsE45T7ZCfaK3vUegmH663qu7T19nibMBdtUX7/F39C0568yydx/kXH7P2TzBHlRIJI="
+            },
+            {
+              x = 16, y = 0, width = 16, height = 16,
+              data = "eJztkLsNgFAQw9wka1CwEQvBFAiWgCH4zIWuo84rwb0VK/DzVVZl3i24BL0zfzR0hqHBPwRn2L8ZdsMc+kV9kO4Xi9r2iyn8793wAK0BC2g="
+            },
+            {
+              x = 32, y = 0, width = 16, height = 16,
+              data = "eJxjYBgFQxn8YqVM/0o2BoajFJhxio2BQZ6NfP3a7AwMh1nJ98c5NgaG32wMDGFkuuErGwODKjsDgy+Z+r+zQXALmfpBdsPCYBYZYfCVlYHhLxsDwzc2BoZqMtwAAG/0ENU="
+            },
+            {
+              x = -16, y = 16, width = 16, height = 16,
+              data = "eJztzrEJgDAURdHb/JdVxF3cySWC4gY2Fi4RsXAbG0EQiZWFGGwscppX3c+HZ4NgNSgclA4WgTeYjNdqwS7YFPte0CX0weIP/tpZUIkkrUFjcc8bqf39n/FDn2X8xAHb6hIZ"
+            },
+            {
+              x = 16, y = 16, width = 16, height = 16,
+              data = "eJxjYCAPzGRlYPjJSqZmBgaGGawMDF8p0H+MlYHhCAX6VdgYGLTZKXP/JwrsHwWjgGEQAABQpQa4"
+            },
+            {
+              x = 32, y = 16, width = 16, height = 16,
+              data = "eJw7wsrAMJ+NgWEOGwNDCxsDyWA2GwPDTDYGhkh2BoZqMvSD9J1kY2D4yMrAsIkM/T/YGBhOsZFnNwh8YoVgcuweBaOAYYgDAKQHDI4="
             }
           }
         },
@@ -284,7 +351,7 @@ return {
           width = 30,
           height = 15,
           id = 16,
-          name = "Tile Layer 4",
+          name = "bottomwall",
           class = "",
           visible = true,
           opacity = 1,
@@ -292,13 +359,31 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["drawz"] = 1
+          },
           encoding = "base64",
           compression = "zlib",
           chunks = {
             {
+              x = 0, y = 0, width = 16, height = 16,
+              data = "eJxjYBgFAwmSGBgYLBkYGLjJ1L+PgYFhAtQMKzLtN2JgYDBhYGCYyMDAwA7FrAwMDCxQDGJzkOm+UcAwqAEAgjAD6Q=="
+            },
+            {
               x = 16, y = 0, width = 16, height = 16,
               data = "eJxjYBgFQw3spkCvOQMDgwUWcS4GBgY2KGZnYGBgQeLDxFihevdSYP8oYBhUAADG1AJf"
+            },
+            {
+              x = -16, y = 16, width = 16, height = 16,
+              data = "eJxjYBi6wHKgHTAKRgHD0AYAviQAOg=="
+            },
+            {
+              x = 0, y = 16, width = 16, height = 16,
+              data = "eJxjYBhYYDXA9o+CUcAwggEAzwAAOw=="
+            },
+            {
+              x = 16, y = 16, width = 16, height = 16,
+              data = "eJxjYBh6wHygHTAKRgHD8AAAuVQAOA=="
             }
           }
         }
@@ -398,9 +483,8 @@ return {
               visible = true,
               polygon = {
                 { x = -96, y = 128 },
-                { x = -96, y = 464 },
-                { x = -64, y = 432 },
-                { x = -64, y = 368 },
+                { x = -96, y = 336 },
+                { x = -32, y = 336 },
                 { x = 32, y = 272 },
                 { x = 32, y = 128 }
               },
@@ -456,12 +540,9 @@ return {
               visible = true,
               polygon = {
                 { x = 352, y = 112 },
-                { x = 448, y = 208 },
-                { x = 480, y = 208 },
-                { x = 512, y = 176 },
-                { x = 512, y = 80 },
-                { x = 544, y = 48 },
-                { x = 544, y = -32 },
+                { x = 384, y = 144 },
+                { x = 448, y = 144 },
+                { x = 448, y = -32 },
                 { x = 352, y = -32 }
               },
               properties = {
@@ -490,7 +571,8 @@ return {
                 { x = 928, y = 80 },
                 { x = 960, y = 80 },
                 { x = 960, y = -32 },
-                { x = 544, y = -32 }
+                { x = 512, y = -32 },
+                { x = 512, y = 80 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -545,8 +627,7 @@ return {
                 { x = 576, y = 288 },
                 { x = 576, y = 368 },
                 { x = 640, y = 432 },
-                { x = 672, y = 432 },
-                { x = 672, y = 256 }
+                { x = 640, y = 256 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -587,8 +668,8 @@ return {
               name = "training-stone",
               type = "training-stone",
               shape = "rectangle",
-              x = 576,
-              y = 240,
+              x = 568,
+              y = 224,
               width = 48,
               height = 48,
               rotation = 0,
@@ -605,7 +686,7 @@ return {
               name = "training-stone",
               type = "training-stone",
               shape = "rectangle",
-              x = 896,
+              x = 888,
               y = 192,
               width = 48,
               height = 48,
@@ -641,8 +722,8 @@ return {
               name = "training-stone",
               type = "training-stone",
               shape = "rectangle",
-              x = 800,
-              y = 248,
+              x = 792,
+              y = 216,
               width = 48,
               height = 48,
               rotation = 0,
@@ -659,7 +740,7 @@ return {
               name = "training-stone",
               type = "training-stone",
               shape = "rectangle",
-              x = 736,
+              x = 752,
               y = 144,
               width = 48,
               height = 48,
@@ -677,7 +758,7 @@ return {
               name = "training-stone",
               type = "training-stone",
               shape = "rectangle",
-              x = 680,
+              x = 688,
               y = 200,
               width = 48,
               height = 48,
@@ -695,8 +776,8 @@ return {
               name = "rockrespawnpoint",
               type = "",
               shape = "point",
-              x = 576,
-              y = 0,
+              x = 568,
+              y = -16,
               width = 0,
               height = 0,
               rotation = 0,
@@ -711,7 +792,7 @@ return {
               name = "rockrespawnpoint",
               type = "",
               shape = "point",
-              x = 896,
+              x = 888,
               y = -48,
               width = 0,
               height = 0,
@@ -743,8 +824,8 @@ return {
               name = "rockrespawnpoint",
               type = "",
               shape = "point",
-              x = 800,
-              y = 8,
+              x = 792,
+              y = -24,
               width = 0,
               height = 0,
               rotation = 0,
@@ -759,7 +840,7 @@ return {
               name = "rockrespawnpoint",
               type = "",
               shape = "point",
-              x = 736,
+              x = 752,
               y = -96,
               width = 0,
               height = 0,
@@ -775,7 +856,7 @@ return {
               name = "rockrespawnpoint",
               type = "",
               shape = "point",
-              x = 680,
+              x = 688,
               y = -40,
               width = 0,
               height = 0,
@@ -791,8 +872,8 @@ return {
               name = "",
               type = "item-spikefruit",
               shape = "rectangle",
-              x = 360,
-              y = 232,
+              x = 416,
+              y = 216,
               width = 20,
               height = 20,
               rotation = 0,
@@ -808,8 +889,8 @@ return {
               name = "",
               type = "item-spikefruit",
               shape = "rectangle",
-              x = 336,
-              y = 256,
+              x = 392,
+              y = 240,
               width = 20,
               height = 20,
               rotation = 0,
@@ -825,8 +906,8 @@ return {
               name = "",
               type = "item-spikefruit",
               shape = "rectangle",
-              x = 368,
-              y = 264,
+              x = 424,
+              y = 248,
               width = 20,
               height = 20,
               rotation = 0,
@@ -842,8 +923,8 @@ return {
               name = "",
               type = "item-spikefruit",
               shape = "rectangle",
-              x = 376,
-              y = 248,
+              x = 432,
+              y = 232,
               width = 20,
               height = 20,
               rotation = 0,
@@ -859,8 +940,8 @@ return {
               name = "",
               type = "fruit-tree",
               shape = "rectangle",
-              x = 352,
-              y = 250,
+              x = 408,
+              y = 234,
               width = 64,
               height = 96,
               rotation = 0,
@@ -974,8 +1055,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 352,
-              y = 202,
+              x = 408,
+              y = 186,
               width = 64,
               height = 48,
               rotation = 0,
@@ -1064,8 +1145,8 @@ return {
               name = "",
               type = "item-spikefruit-hanging",
               shape = "rectangle",
-              x = 336,
-              y = 206,
+              x = 392,
+              y = 190,
               width = 20,
               height = 20,
               rotation = 0,
@@ -1082,8 +1163,8 @@ return {
               name = "",
               type = "item-spikefruit-hanging",
               shape = "rectangle",
-              x = 368,
-              y = 200,
+              x = 424,
+              y = 184,
               width = 20,
               height = 20,
               rotation = 0,
@@ -1093,42 +1174,6 @@ return {
               properties = {
                 ["propertiestable"] = "database/items-properties.csv",
                 ["z"] = 68
-              }
-            },
-            {
-              id = 37,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 536,
-              y = 648,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              opacity = 1,
-              gid = 2078,
-              visible = true,
-              properties = {
-                ["item"] = { id = 38 },
-                ["propertiestable"] = "database/objects-properties.csv"
-              }
-            },
-            {
-              id = 38,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 536,
-              y = 648,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              opacity = 1,
-              gid = 2077,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/items-properties.csv",
-                ["z"] = 1
               }
             },
             {
@@ -1294,6 +1339,167 @@ return {
                 ["leaves"] = { id = 64 },
                 ["propertiestable"] = "database/objects-properties.csv"
               }
+            },
+            {
+              id = 104,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 64,
+              y = 208,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = 0, y = 0 },
+                { x = -64, y = 0 },
+                { x = -64, y = 224 },
+                { x = 0, y = 160 },
+                { x = 64, y = 160 },
+                { x = 64, y = 80 },
+                { x = 0, y = 16 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -48,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 106,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = -64,
+              y = 352,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = 64, y = 0 },
+                { x = -64, y = 0 },
+                { x = -64, y = 272 },
+                { x = 64, y = 272 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -48,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 107,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 1024,
+              y = 352,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = -64, y = 272 },
+                { x = 64, y = 272 },
+                { x = 64, y = 0 },
+                { x = -64, y = 0 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -48,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 105,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 192,
+              y = 208,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = 128, y = 80 },
+                { x = -64, y = 80 },
+                { x = -64, y = 160 },
+                { x = 128, y = 160 },
+                { x = 160, y = 128 },
+                { x = 160, y = 112 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -48,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 108,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 448,
+              y = 144,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = 0, y = -144 },
+                { x = 0, y = 96 },
+                { x = 8, y = 96 },
+                { x = 8, y = -144 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -48,
+                ["linecolor"] = "#80ffffff"
+              }
+            },
+            {
+              id = 109,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 504,
+              y = 144,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = 0, y = -144 },
+                { x = 0, y = 96 },
+                { x = 8, y = 96 },
+                { x = 8, y = -144 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -48,
+                ["linecolor"] = "#80ffffff"
+              }
             }
           }
         },
@@ -1393,6 +1599,35 @@ return {
                 ["initialai"] = "triggerToUse",
                 ["linecolor"] = "#ff55ffff",
                 ["room"] = "racetrack"
+              }
+            },
+            {
+              id = 110,
+              name = "backtostart",
+              type = "Trigger",
+              shape = "polygon",
+              x = 472,
+              y = 168,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = 8, y = 24 },
+                { x = -8, y = 40 },
+                { x = 0, y = 40 },
+                { x = 0, y = 56 },
+                { x = 16, y = 56 },
+                { x = 16, y = 40 },
+                { x = 24, y = 40 }
+              },
+              properties = {
+                ["action"] = "returnToTitle",
+                ["color"] = "#00000000",
+                ["extrudeY"] = -48,
+                ["initialai"] = "triggerToUse",
+                ["linecolor"] = "#ffff5555"
               }
             }
           }
@@ -1514,7 +1749,7 @@ return {
             {
               id = 86,
               name = "",
-              type = "training-target",
+              type = "training-target2",
               shape = "rectangle",
               x = 120,
               y = 96,
@@ -1533,7 +1768,7 @@ return {
             {
               id = 90,
               name = "",
-              type = "training-target",
+              type = "training-target2",
               shape = "rectangle",
               x = 280,
               y = 80,
@@ -1552,10 +1787,10 @@ return {
             {
               id = 88,
               name = "",
-              type = "training-target",
+              type = "training-target2",
               shape = "rectangle",
-              x = 416,
-              y = 144,
+              x = 400,
+              y = 120,
               width = 32,
               height = 32,
               rotation = 0,
@@ -1573,8 +1808,25 @@ return {
               name = "",
               type = "item-spikefruit",
               shape = "rectangle",
-              x = 232,
-              y = 240,
+              x = 248,
+              y = 216,
+              width = 20,
+              height = 20,
+              rotation = 0,
+              opacity = 1,
+              gid = 2075,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/projectiles-properties.csv"
+              }
+            },
+            {
+              id = 112,
+              name = "",
+              type = "item-spikefruit",
+              shape = "rectangle",
+              x = 264,
+              y = 224,
               width = 20,
               height = 20,
               rotation = 0,
@@ -1590,8 +1842,25 @@ return {
               name = "",
               type = "item-spikefruit",
               shape = "rectangle",
-              x = 200,
-              y = 232,
+              x = 216,
+              y = 200,
+              width = 20,
+              height = 20,
+              rotation = 0,
+              opacity = 1,
+              gid = 2075,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/projectiles-properties.csv"
+              }
+            },
+            {
+              id = 111,
+              name = "",
+              type = "item-spikefruit",
+              shape = "rectangle",
+              x = 248,
+              y = 192,
               width = 20,
               height = 20,
               rotation = 0,
@@ -1607,8 +1876,8 @@ return {
               name = "",
               type = "item-spikefruit",
               shape = "rectangle",
-              x = 208,
-              y = 256,
+              x = 224,
+              y = 224,
               width = 20,
               height = 20,
               rotation = 0,
@@ -1624,8 +1893,25 @@ return {
               name = "",
               type = "item-spikefruit",
               shape = "rectangle",
-              x = 224,
-              y = 264,
+              x = 240,
+              y = 232,
+              width = 20,
+              height = 20,
+              rotation = 0,
+              opacity = 1,
+              gid = 2075,
+              visible = true,
+              properties = {
+                ["propertiestable"] = "database/projectiles-properties.csv"
+              }
+            },
+            {
+              id = 113,
+              name = "",
+              type = "item-spikefruit",
+              shape = "rectangle",
+              x = 200,
+              y = 224,
               width = 20,
               height = 20,
               rotation = 0,
@@ -1641,8 +1927,8 @@ return {
               name = "",
               type = "fruit-tree",
               shape = "rectangle",
-              x = 216,
-              y = 242,
+              x = 232,
+              y = 210,
               width = 64,
               height = 96,
               rotation = 0,
@@ -1651,8 +1937,8 @@ return {
               visible = true,
               properties = {
                 ["asetag"] = "*",
-                ["fruit1"] = { id = 82 },
-                ["fruit2"] = { id = 84 },
+                ["fruit1"] = { id = 0 },
+                ["fruit2"] = { id = 0 },
                 ["fruit3"] = { id = 0 },
                 ["fruit4"] = { id = 0 },
                 ["leaves"] = { id = 83 },
@@ -1664,8 +1950,8 @@ return {
               name = "",
               type = "",
               shape = "rectangle",
-              x = 216,
-              y = 194,
+              x = 232,
+              y = 162,
               width = 64,
               height = 48,
               rotation = 0,
@@ -1678,48 +1964,12 @@ return {
               }
             },
             {
-              id = 82,
-              name = "",
-              type = "item-spikefruit-hanging",
-              shape = "rectangle",
-              x = 200,
-              y = 198,
-              width = 20,
-              height = 20,
-              rotation = 0,
-              opacity = 1,
-              gid = 2076,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/items-properties.csv",
-                ["z"] = 64
-              }
-            },
-            {
-              id = 84,
-              name = "",
-              type = "item-spikefruit-hanging",
-              shape = "rectangle",
-              x = 232,
-              y = 192,
-              width = 20,
-              height = 20,
-              rotation = 0,
-              opacity = 1,
-              gid = 2076,
-              visible = true,
-              properties = {
-                ["propertiestable"] = "database/items-properties.csv",
-                ["z"] = 68
-              }
-            },
-            {
               id = 91,
               name = "",
               type = "",
               shape = "point",
               x = 64,
-              y = -112,
+              y = -64,
               width = 0,
               height = 0,
               rotation = 0,
@@ -1735,7 +1985,7 @@ return {
               type = "",
               shape = "point",
               x = 120,
-              y = -160,
+              y = -112,
               width = 0,
               height = 0,
               rotation = 0,
@@ -1751,7 +2001,7 @@ return {
               type = "",
               shape = "point",
               x = 200,
-              y = -200,
+              y = -152,
               width = 0,
               height = 0,
               rotation = 0,
@@ -1767,7 +2017,7 @@ return {
               type = "",
               shape = "point",
               x = 280,
-              y = -176,
+              y = -128,
               width = 0,
               height = 0,
               rotation = 0,
@@ -1783,7 +2033,7 @@ return {
               type = "",
               shape = "point",
               x = 360,
-              y = -168,
+              y = -120,
               width = 0,
               height = 0,
               rotation = 0,
@@ -1798,8 +2048,8 @@ return {
               name = "",
               type = "",
               shape = "point",
-              x = 416,
-              y = -112,
+              x = 400,
+              y = -88,
               width = 0,
               height = 0,
               rotation = 0,
@@ -1892,9 +2142,9 @@ return {
               name = "cameraboundary",
               type = "CameraBoundary",
               shape = "rectangle",
-              x = 0,
+              x = -240,
               y = 288,
-              width = 960,
+              width = 1440,
               height = 320,
               rotation = 0,
               opacity = 1,
