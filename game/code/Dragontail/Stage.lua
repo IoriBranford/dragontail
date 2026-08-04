@@ -341,7 +341,7 @@ function Stage:openRoom(i)
         or ti == "table" and i
     if room then
         roomindex = i
-        Characters.spawnArray(room.characters)
+        Characters.spawnArray(room.characters, true)
         Stage:startSequence(room.sequence)
         if Config.cuecards then
             local cuecard = room.titlebarcuecard or ""
