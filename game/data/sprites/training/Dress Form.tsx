@@ -5,4 +5,14 @@
  </editorsettings>
  <tileoffset x="0" y="4"/>
  <image source="Dress Form.png" width="192" height="64"/>
+ <tile id="1">
+  <properties>
+   <property name="name" value="torso-white"/>
+  </properties>
+ </tile>
+ <tile id="7">
+  <properties>
+   <property name="name" value="torso-black"/>
+  </properties>
+ </tile>
 </tileset>

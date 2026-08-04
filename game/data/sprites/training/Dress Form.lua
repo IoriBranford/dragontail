@@ -27,5 +27,18 @@ return {
   properties = {},
   wangsets = {},
   tilecount = 12,
-  tiles = {}
+  tiles = {
+    {
+      id = 1,
+      properties = {
+        ["name"] = "torso-white"
+      }
+    },
+    {
+      id = 7,
+      properties = {
+        ["name"] = "torso-black"
+      }
+    }
+  }
 }
