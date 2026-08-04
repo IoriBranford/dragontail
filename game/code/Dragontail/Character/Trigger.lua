@@ -299,6 +299,7 @@ end
 
 function Trigger:openRoom()
     Stage:openRoom(self.room)
+    self:disappear()
 end
 
 return Trigger
