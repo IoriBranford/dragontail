@@ -15,6 +15,7 @@ return {
   properties = {
     ["ceilingz"] = 256,
     ["hudfile"] = "gui/hud_combat.tmx",
+    ["pruneoffscreen"] = true,
     ["runphase"] = "Dragontail.GamePhase"
   },
   tilesets = {

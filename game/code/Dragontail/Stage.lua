@@ -514,22 +514,24 @@ function Stage:fixedupdate()
         Stage:updateGoingToNextRoom()
     end
 
-    local room = map.layers.rooms[roomindex]
-    local solids = Characters.getGroup("solids")
-    for _, solid in ipairs(solids) do
-        if solid.layer ~= room
-        and CollisionMask.testAny(solid.bodyinlayers, "Object", "Wall") ~= 0 then
-            if not solid:isCylinderOnCamera(camera) then
-                solid:disappear()
+    if map.pruneoffscreen then
+        local room = map.layers.rooms[roomindex]
+        local solids = Characters.getGroup("solids")
+        for _, solid in ipairs(solids) do
+            if solid.layer ~= room
+            and CollisionMask.testAny(solid.bodyinlayers, "Object", "Wall") ~= 0 then
+                if not solid:isCylinderOnCamera(camera) then
+                    solid:disappear()
+                end
             end
         end
-    end
 
-    local items = Characters.getGroup("items")
-    for _, item in ipairs(items) do
-        if item.layer ~= room then
-            if not item:isCylinderOnCamera(camera) then
-                item:disappear()
+        local items = Characters.getGroup("items")
+        for _, item in ipairs(items) do
+            if item.layer ~= room then
+                if not item:isCylinderOnCamera(camera) then
+                    item:disappear()
+                end
             end
         end
     end
