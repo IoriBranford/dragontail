@@ -50,7 +50,8 @@ function Trigger:checkHit(x, y, prevx, prevy)
             end
         end
     elseif shape == "ellipse" then
-        local tx, ty, thw, thh = self.x, self.y, self.width/2, self.height/2
+        local thw, thh = self.width/2, self.height/2
+        local tx, ty = self.x+thw, self.y+thh
         if math2.pointinellipse(tx, ty, thw, thh, prevx, prevy) > 1 then
             if math2.pointinellipse(tx, ty, thw, thh, x, y) <= 1 then
                 return x, y
