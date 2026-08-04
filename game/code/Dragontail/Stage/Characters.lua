@@ -21,6 +21,7 @@ local enemies ---@type ihash<Character> characters player must beat to advance
 local solids ---@type ihash<Character>
 local allcharacters ---@type ihash<Character>
 local byid ---@type table<integer,Character>
+local activebyid ---@type table<integer,Character>
 local groups
 local scene
 local nextid
@@ -46,6 +47,7 @@ function Characters.init(scene_, nextid_, camera_, mapobjects)
     }
     scene = scene_
     byid = mapobjects
+    activebyid = {}
     camera = Characters.spawn(camera_)
 end
 
@@ -62,12 +64,18 @@ function Characters.quit()
     nextid = 1
     camera = nil
     byid = nil
+    activebyid = nil
     BodyLayers:clear()
 end
 
 function Characters.getById(id)
     return type(id) == "table" and byid[id.id]
         or type(id) == "number" and byid[id]
+end
+
+function Characters.getActiveById(id)
+    return type(id) == "table" and activebyid[id.id]
+        or type(id) == "number" and activebyid[id]
 end
 
 function Characters.getGroup(group)
@@ -89,9 +97,15 @@ function Characters.removeFromGroup(g, c)
 end
 
 function Characters.spawn(object)
-    if type(object) == "string" then
+    local tobj = type(object)
+    local id = tobj == "table" and object.id
+    local character = id and activebyid[id]
+    if character then return character end
+
+    if tobj == "string" then
         object = {type = object}
     end
+
     local typ = object.type
     if typ then
         Database.fillBlanks(object, typ)
@@ -116,8 +130,9 @@ function Characters.spawn(object)
         end
     end
     local character = script.cast(object) ---@type Character
-    if not character.id then
-        character.id = nextid
+    if not id then
+        id = nextid
+        character.id = id
         nextid = nextid + 1
     end
     character:init()
@@ -144,7 +159,7 @@ function Characters.spawn(object)
     end
     character:addToScene(scene)
     Characters.addToGroup("all", character)
-    byid[character.id] = character
+    activebyid[id] = character
     return character
 end
 local spawn = Characters.spawn
@@ -295,7 +310,10 @@ function Characters.pruneDisappeared()
         ihash.prune(g, Character.hasDisappeared)
     end
     BodyLayers:prune(Character.hasDisappeared)
-    ihash.prune(allcharacters, Character.hasDisappeared, Character.release)
+    ihash.prune(allcharacters, Character.hasDisappeared, function(ch)
+        ch:release()
+        activebyid[ch.id] = nil
+    end)
 end
 
 function Characters.update(dsecs, fixedfrac)

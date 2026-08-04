@@ -257,7 +257,7 @@ function Enemy:leave(exitx, exity)
 
     self.recoverai = "leave"
     local exitp = self.exitpoint and
-        Characters.getById(self.exitpoint.id)
+        Characters.getActiveById(self.exitpoint.id)
     exitx = exitx or exitp
     if exitx then
         self:walkTo(exitx, exity)

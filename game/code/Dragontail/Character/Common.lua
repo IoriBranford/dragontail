@@ -617,7 +617,7 @@ function Common:fruitTreeHurt(hit)
         if fruit == nil then
             break
         end
-        fruit = fruit and Characters.getById(fruit)
+        fruit = fruit and Characters.getActiveById(fruit)
         if fruit ~= false then
             StateMachine.start(fruit, "itemWaitForPickup")
             fruit.animationspeed = 0
@@ -628,7 +628,7 @@ function Common:fruitTreeHurt(hit)
     self.numfruitsdropped = numfruitsdropped
 
     self.hurtstun = attack.opponentstun
-    local leaves = Characters.getById(self.leaves)
+    local leaves = Characters.getActiveById(self.leaves)
     if leaves then
         leaves.hurtstun = self.hurtstun
     end
@@ -639,7 +639,7 @@ end
 
 function Common:checkFruitPicked()
     local fruit = self.item and
-        Characters.getById(self.item.id)
+        Characters.getActiveById(self.item.id)
     if fruit then
         if fruit:hasDisappeared() then
             self.itemx = fruit.x
