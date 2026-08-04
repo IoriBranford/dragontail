@@ -256,11 +256,13 @@ function Enemy:leave(exitx, exity)
     end
 
     self.recoverai = "leave"
-    exitx = exitx or self.exitpoint
+    local exitp = self.exitpoint and
+        Characters.getById(self.exitpoint.id)
+    exitx = exitx or exitp
     if exitx then
         self:walkTo(exitx, exity)
-        if self.exitpoint then
-            self.exitpoint:disappear()
+        if exitp then
+            exitp:disappear()
         end
     end
     self:disappear()

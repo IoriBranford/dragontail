@@ -84,7 +84,8 @@ end
 function Sequences.unlockDoorToNextArea()
     local Stage = require "Dragontail.Stage"
     local room = Stage:getCurrentRoom()
-    local door = room.exitdoor
+    local door = room.exitdoor and
+        Characters.getById(room.exitdoor.id)
     StateMachine.start(door, "furnitureToBreak")
 end
 

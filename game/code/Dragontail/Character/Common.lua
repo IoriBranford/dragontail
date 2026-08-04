@@ -637,7 +637,8 @@ function Common:fruitTreeHurt(hit)
 end
 
 function Common:checkFruitPicked()
-    local fruit = self.item
+    local fruit = self.item and
+        Characters.getById(self.item.id)
     if fruit then
         if fruit:hasDisappeared() then
             self.itemx = fruit.x

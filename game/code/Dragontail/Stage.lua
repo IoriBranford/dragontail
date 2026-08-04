@@ -356,6 +356,7 @@ function Stage:openRoom(i)
             local room2 = rooms[room.clearotherroom]
             if room2 then
                 for _, obj in ipairs(room2) do
+                    obj = Characters.getById(obj.id)
                     if obj.disappear then
                         ---@cast obj Character
                         obj:disappear()
