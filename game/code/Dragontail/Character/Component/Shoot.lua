@@ -270,8 +270,7 @@ function Shoot.UpdateTrajectoryDots(dots, trajectory, percentfull)
         local z = trajectory[i]
         local dot = dots[i]
         if not dot then
-            dot = Character("projectile-path-point")
-            Characters.spawn(dot)
+            dot = Characters.spawn("projectile-path-point")
             dots[i-2] = dot
             dots[i-1] = dot
             dots[i] = dot
