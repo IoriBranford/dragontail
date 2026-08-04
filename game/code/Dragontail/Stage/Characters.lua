@@ -89,6 +89,9 @@ function Characters.removeFromGroup(g, c)
 end
 
 function Characters.spawn(object)
+    if type(object) == "string" then
+        object = {type = object}
+    end
     local typ = object.type
     if typ then
         Database.fillBlanks(object, typ)
