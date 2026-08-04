@@ -689,7 +689,7 @@ function Stage:fixedupdateHud(hudgui)
 
     local clearenemiesprompt = hudgui:get("hud.clearenemiesprompt")
     if clearenemiesprompt then
-        clearenemiesprompt.visible = Characters.isTimeToClearLostEnemies()
+        clearenemiesprompt.visible = false
     end
 end
 
@@ -723,7 +723,7 @@ function Stage:draw(fixedfrac)
     scene:draw(fixedfrac, Characters.isDrawnBefore)
     Stage:setUniform("texRgbFactor", 1)
     if Characters.isTimeToClearLostEnemies() then
-        Characters.debugDrawOffScreenEnemyPositions()
+        Characters.clearEnemies()
     end
     love.graphics.pop()
     love.graphics.setShader()
