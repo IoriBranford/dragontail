@@ -628,7 +628,7 @@ function Common:fruitTreeHurt(hit)
     self.numfruitsdropped = numfruitsdropped
 
     self.hurtstun = attack.opponentstun
-    local leaves = self.leaves
+    local leaves = Characters.getById(self.leaves)
     if leaves then
         leaves.hurtstun = self.hurtstun
     end
