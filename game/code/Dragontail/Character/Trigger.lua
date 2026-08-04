@@ -10,7 +10,6 @@ local Config     = require "System.Config"
 local Stage      = require "Dragontail.Stage"
 local Character  = require "Dragontail.Character"
 local Color      = require "Tiled.Color"
-local Body       = require "Dragontail.Character.Component.Body"
 
 ---@class Trigger:Character
 ---@field action string Name of the function to call on activation
@@ -268,31 +267,17 @@ function Trigger:pulseAlpha()
     self.visible = true
     local t = 0
     while true do
-        local r, g, b, a = Color.unpack(self.color or Color.White)
-        a = .5 - (t % 60)/240
-        self.color = Color.asARGBInt(r, g, b, a)
-        coroutine.yield()
-        if t % 60 == 0 then
-            Characters.spawn({
-                x = self.x,
-                y = self.y,
-                z = self.z,
-                shape = self.shape,
-                points = self.points,
-                color = Color.asARGBInt(r, g, b, 1),
-                velz = 1/8,
-                fixedupdate = function(self)
-                    local r,g,b,a = Color.unpack(self.color or Color.White)
-                    a = a - 1/60
-                    if a <= 0 then
-                        self:disappear()
-                        return
-                    end
-                    self.color = Color.asARGBInt(r, g, b, a)
-                    Body.updatePosition(self)
-                end
-            })
+        local pa = .5 + .25*math.cos(t*math.pi/30)
+        local lc = self.linecolor
+        if lc then
+            local r, g, b = Color.unpack(lc)
+            self.linecolor = Color.asARGBInt(r, g, b, pa)
+        else
+            local fc = self.color or Color.White
+            local r, g, b = Color.unpack(fc)
+            self.color = Color.asARGBInt(r, g, b, pa)
         end
+        coroutine.yield()
         t = t + 1
     end
 end
