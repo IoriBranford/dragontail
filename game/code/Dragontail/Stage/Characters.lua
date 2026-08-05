@@ -537,6 +537,14 @@ function Characters.refillPlayers()
     end
 end
 
+function Characters.criticallyDamagePlayers()
+    if players then
+        for _, player in ipairs(players) do
+            player.health = 1
+        end
+    end
+end
+
 function Characters.resetTraining()
     for _, solid in ipairs(solids) do
         if solid.respawnpoint then

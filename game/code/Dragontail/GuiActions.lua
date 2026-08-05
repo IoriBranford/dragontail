@@ -26,6 +26,10 @@ function GameGuiActions.refillPlayers()
     Characters.refillPlayers()
 end
 
+function GameGuiActions.criticallyDamagePlayers()
+    Characters.criticallyDamagePlayers()
+end
+
 function GameGuiActions.clearEnemies()
     Characters.clearEnemies()
 end
