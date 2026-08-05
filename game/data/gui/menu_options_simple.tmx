@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="34" nextobjectid="238">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="18" infinite="0" nextlayerid="34" nextobjectid="240">
  <editorsettings>
   <export target="menu_options_simple.lua" format="lua"/>
  </editorsettings>
@@ -43,30 +43,30 @@
   </object>
   <object id="107" template="menu/Panel.tx" x="112" y="-13.5" width="256" height="292.5" visible="1"/>
   <object id="109" template="menu/Cursor.tx" type="Gui.Cursor" x="96" y="54"/>
-  <object id="111" name="Full screen" x="128" y="81" width="224" height="18">
+  <object id="111" name="Full screen" x="128" y="99" width="224" height="18">
    <text fontfamily="Unifont" wrap="1" color="#ffffff">Full screen</text>
   </object>
-  <object id="110" template="menu/settings/Slider.tx" name="fullscreen" type="Gui.Slider" x="128" y="81" width="224" height="18">
+  <object id="110" template="menu/settings/Slider.tx" name="fullscreen" type="Gui.Slider" x="128" y="99" width="224" height="18">
    <properties>
     <property name="configkey" value="fullscreen"/>
     <property name="label" type="object" value="111"/>
    </properties>
    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
   </object>
-  <object id="138" name="Vsync" x="128" y="99" width="224" height="18">
+  <object id="138" name="Vsync" x="128" y="117" width="224" height="18">
    <text fontfamily="Unifont" wrap="1" color="#ffffff">Vsync</text>
   </object>
-  <object id="139" template="menu/settings/Slider.tx" name="vsync" type="Gui.Slider" x="128" y="99" width="224" height="18">
+  <object id="139" template="menu/settings/Slider.tx" name="vsync" type="Gui.Slider" x="128" y="117" width="224" height="18">
    <properties>
     <property name="configkey" value="vsync"/>
     <property name="label" type="object" value="138"/>
    </properties>
    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
   </object>
-  <object id="187" name="Render resolution" x="128" y="117" width="224" height="18">
+  <object id="187" name="Render resolution" x="128" y="135" width="224" height="18">
    <text fontfamily="Unifont" wrap="1" color="#ffffff">World resolution</text>
   </object>
-  <object id="173" template="menu/settings/Slider.tx" name="resolution" type="Gui.Slider" x="128" y="117" width="224" height="18">
+  <object id="173" template="menu/settings/Slider.tx" name="resolution" type="Gui.Slider" x="128" y="135" width="224" height="18">
    <properties>
     <property name="configkey" value="resolution"/>
     <property name="label" type="object" value="172"/>
@@ -75,10 +75,10 @@
    </properties>
    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">1</text>
   </object>
-  <object id="172" name="Upscale" x="128" y="135" width="224" height="18">
+  <object id="172" name="Upscale" x="128" y="153" width="224" height="18">
    <text fontfamily="Unifont" wrap="1" color="#ffffff">Screen scale</text>
   </object>
-  <object id="186" template="menu/settings/Slider.tx" name="upscale" type="Gui.Slider" x="128" y="135" width="224" height="18">
+  <object id="186" template="menu/settings/Slider.tx" name="upscale" type="Gui.Slider" x="128" y="153" width="224" height="18">
    <properties>
     <property name="configkey" value="upscale"/>
     <property name="label" type="object" value="187"/>
@@ -87,10 +87,10 @@
    </properties>
    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">1</text>
   </object>
-  <object id="113" name="Sound volume" x="128" y="189" width="224" height="18">
+  <object id="113" name="Sound volume" x="128" y="207" width="224" height="18">
    <text fontfamily="Unifont" wrap="1" color="#ffffff">Sound volume</text>
   </object>
-  <object id="112" template="menu/settings/Slider.tx" name="soundvolume" type="Gui.Slider" x="128" y="189" width="224" height="18">
+  <object id="112" template="menu/settings/Slider.tx" name="soundvolume" type="Gui.Slider" x="128" y="207" width="224" height="18">
    <properties>
     <property name="configkey" value="soundvolume"/>
     <property name="increment" type="float" value="0.125"/>
@@ -100,10 +100,10 @@
    </properties>
    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">100</text>
   </object>
-  <object id="115" name="Music volume" x="128" y="207" width="224" height="18">
+  <object id="115" name="Music volume" x="128" y="225" width="224" height="18">
    <text fontfamily="Unifont" wrap="1" color="#ffffff">Music volume</text>
   </object>
-  <object id="114" template="menu/settings/Slider.tx" name="musicvolume" type="Gui.Slider" x="128" y="207" width="224" height="18">
+  <object id="114" template="menu/settings/Slider.tx" name="musicvolume" type="Gui.Slider" x="128" y="225" width="224" height="18">
    <properties>
     <property name="configkey" value="musicvolume"/>
     <property name="increment" type="float" value="0.125"/>
@@ -113,20 +113,20 @@
    </properties>
    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">100</text>
   </object>
-  <object id="175" name="Integer Scale" x="128" y="153" width="224" height="18">
+  <object id="175" name="Integer Scale" x="128" y="171" width="224" height="18">
    <text fontfamily="Unifont" wrap="1" color="#ffffff">Integer scale</text>
   </object>
-  <object id="174" template="menu/settings/Slider.tx" name="upscaleinteger" type="Gui.Slider" x="128" y="153" width="224" height="18">
+  <object id="174" template="menu/settings/Slider.tx" name="upscaleinteger" type="Gui.Slider" x="128" y="171" width="224" height="18">
    <properties>
     <property name="configkey" value="upscaleinteger"/>
     <property name="label" type="object" value="175"/>
    </properties>
    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
   </object>
-  <object id="177" name="Soft Scale" x="128" y="171" width="224" height="18">
+  <object id="177" name="Soft Scale" x="128" y="189" width="224" height="18">
    <text fontfamily="Unifont" wrap="1" color="#ffffff">Linear filter</text>
   </object>
-  <object id="176" template="menu/settings/Slider.tx" name="linearfilter" type="Gui.Slider" x="128" y="171" width="224" height="18">
+  <object id="176" template="menu/settings/Slider.tx" name="linearfilter" type="Gui.Slider" x="128" y="189" width="224" height="18">
    <properties>
     <property name="configkey" value="linearfilter"/>
     <property name="label" type="object" value="177"/>
@@ -144,8 +144,11 @@
   <object id="180" template="menu/settings/Label.tx" name="Game speed" x="128" y="45" width="168" height="18">
    <text fontfamily="Unifont" wrap="1" color="#ffffff">Game speed</text>
   </object>
-  <object id="236" template="menu/settings/Label.tx" name="Tutorial" x="128" y="63" width="168" height="18">
+  <object id="236" template="menu/settings/Label.tx" name="Tutorial" x="128" y="81" width="168" height="18">
    <text fontfamily="Unifont" wrap="1" color="#ffffff">Tutorial</text>
+  </object>
+  <object id="239" template="menu/settings/Label.tx" name="Auto revive" x="128" y="63" width="168" height="18">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Auto revive</text>
   </object>
   <object id="179" template="menu/settings/Slider.tx" name="fixedupdaterate" type="Gui.Slider" x="128" y="45" width="224" height="18">
    <properties>
@@ -157,14 +160,21 @@
    </properties>
    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">60</text>
   </object>
-  <object id="235" template="menu/settings/Slider.tx" name="tutorial" type="Gui.Slider" x="128" y="63" width="224" height="18">
+  <object id="235" template="menu/settings/Slider.tx" name="tutorial" type="Gui.Slider" x="128" y="81" width="224" height="18">
    <properties>
     <property name="configkey" value="tutorial"/>
     <property name="label" type="object" value="236"/>
    </properties>
    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
   </object>
-  <object id="108" template="menu/Button_closeMenu.tx" type="Gui.Button" x="128" y="234"/>
+  <object id="238" template="menu/settings/Slider.tx" name="player_autorevive" type="Gui.Slider" x="128" y="63" width="224" height="18">
+   <properties>
+    <property name="configkey" value="player_autorevive"/>
+    <property name="label" type="object" value="239"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">OFF</text>
+  </object>
+  <object id="108" template="menu/Button_closeMenu.tx" type="Gui.Button" x="128" y="243"/>
   <object id="181" template="menu/Title.tx" x="180" y="9">
    <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center">OPTIONS</text>
   </object>
