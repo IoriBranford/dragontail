@@ -48,12 +48,17 @@ local function findSomethingToRunningAttack(self, velx, vely)
     end
 end
 
-local function findWallCollision(self)
+local Cos9By16 = 9 / math2.len(16, 9)
+
+local function ranIntoWall(self)
+    local velx, vely = self.velx, self.vely
     local oobx, ooby = self.penex, self.peney
     oobx, ooby = oobx or 0, ooby or 0
-    if oobx ~= 0 or ooby ~= 0 then
-        return math.norm(oobx, ooby)
-    end
+    if oobx == 0 and ooby == 0 then return false end
+    local oobdotvel = math2.dot(oobx, ooby, velx, vely)
+    local oob = math2.len(oobx, ooby)
+    local speed = math2.len(velx, vely)
+    return oobdotvel >= oob*speed*Cos9By16
 end
 
 local RunningChargeAttackStates = {
@@ -174,12 +179,8 @@ function PlayerRunning:fixedupdate()
             return "running-elbow", velangle
         end
 
-        local oobx, ooby = findWallCollision(player)
-        if oobx or ooby then
-            local oobdotvel = math.dot(oobx, ooby, velx, vely)
-            if oobdotvel > 0 then
-                return player:runIntoWall()
-            end
+        if ranIntoWall(player) then
+            return player:runIntoWall()
         end
     end
 
