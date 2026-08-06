@@ -50,15 +50,16 @@ end
 
 local Cos9By16 = 9 / math2.len(16, 9)
 
-local function ranIntoWall(self)
+local function getRunIntoWall(self)
     local velx, vely = self.velx, self.vely
+    if velx == 0 and vely == 0 then return end
     local oobx, ooby = self.penex, self.peney
     oobx, ooby = oobx or 0, ooby or 0
-    if oobx == 0 and ooby == 0 then return false end
-    local oobdotvel = math2.dot(oobx, ooby, velx, vely)
-    local oob = math2.len(oobx, ooby)
-    local speed = math2.len(velx, vely)
-    return oobdotvel >= oob*speed*Cos9By16
+    if oobx == 0 and ooby == 0 then return end
+
+    return math2.dot(oobx, ooby, velx, vely)
+        / math2.len(oobx, ooby)
+        / math2.len(velx, vely)
 end
 
 local RunningChargeAttackStates = {
@@ -95,9 +96,21 @@ function PlayerRunning:fixedupdate()
     end
 
     Body.forceTowardsVelXY(player, targetvelx, targetvely, player.accel)
+    local velx, vely = player.velx, player.vely
+
+    local runintowall = getRunIntoWall(player)
+    -- if runintowall and runintowall < Cos9By16 then
+    --     local oobx, ooby = player.penex, player.peney
+    --     local rot90 = math2.det(oobx, ooby, velx, vely) < 0 and -1 or 1
+    --     oobx, ooby = math2.rot90(oobx, ooby, rot90)
+    --     local speed = math2.len(velx, vely)
+    --     velx, vely = math2.rescale(oobx, ooby, speed)
+    --     player.velx, player.vely = velx, vely
+    -- end
+
     local fullspeed = player.speed * 63/64
     local isfullspeedahead = fullspeed*fullspeed <=
-        math.dot(player.velx, player.vely, targetvelx, targetvely)
+        math.dot(velx, vely, targetvelx, targetvely)
 
     local animation = heldenemy and "holdrun" or isfullspeedahead and "Run" or "Jog"
     Face.turnTowardsAngle(player, targetvelangle, nil, animation, player.animationframe or 1)
@@ -119,7 +132,6 @@ function PlayerRunning:fixedupdate()
         return heldenemy and "holdJump" or "jump", true
     end
 
-    local velx, vely = player.velx, player.vely
     local velangle = velx == 0 and vely == 0 and player.faceangle or math.atan2(vely, velx)
 
     local chargedattackstate = not player.attackbutton.down and player:getChargedAttack(RunningChargeAttackStates)
@@ -179,7 +191,7 @@ function PlayerRunning:fixedupdate()
             return "running-elbow", velangle
         end
 
-        if ranIntoWall(player) then
+        if runintowall and runintowall >= Cos9By16 then
             return player:runIntoWall()
         end
     end
