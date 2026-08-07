@@ -28,28 +28,28 @@
    <properties>
     <property name="action" value="unpauseGame"/>
    </properties>
-   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">FIGHT!</text>
+   <text fontfamily="Alita Brush" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">FIGHT!</text>
   </object>
-  <object id="200" template="menu/mainmenu/Button.tx" x="40" y="126" width="108" height="36">
+  <object id="200" template="menu/mainmenu/Button.tx" x="40" y="126" width="112" height="36">
    <properties>
     <property name="action" value="openMenuMap"/>
     <property name="mapfile" type="file" value="menu_options_simple.lua"/>
     <property name="menupath" value="simple"/>
    </properties>
-   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">OPTIONS</text>
+   <text fontfamily="Alita Brush" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">OPTIONS</text>
   </object>
   <object id="201" template="menu/mainmenu/Button.tx" x="48" y="162" width="100" height="36">
    <properties>
     <property name="action" value="openMenu"/>
     <property name="guipath" value="retrymenu"/>
    </properties>
-   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">RETRY</text>
+   <text fontfamily="Alita Brush" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">RETRY</text>
   </object>
   <object id="202" template="menu/mainmenu/Button.tx" x="56" y="198" width="60" height="36">
    <properties>
     <property name="action" value="returnToTitle"/>
    </properties>
-   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">END</text>
+   <text fontfamily="Alita Brush" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">END</text>
   </object>
   <object id="217" template="menu/mainmenu/Button.tx" x="64" y="234" width="24" height="36">
    <properties>
@@ -57,7 +57,7 @@
     <property name="mapfile" type="file" value="menu_debug.lua"/>
     <property name="menupath" value="debugmenu"/>
    </properties>
-   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">...</text>
+   <text fontfamily="Alita Brush" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">...</text>
   </object>
  </objectgroup>
  <objectgroup id="34" name="retrymenu" class="Gui.Menu">

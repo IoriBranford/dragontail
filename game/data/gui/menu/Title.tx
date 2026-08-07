@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template>
  <object name="Title" width="120" height="36">
-  <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">TITLE</text>
+  <text fontfamily="Alita Brush" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">TITLE</text>
  </object>
 </template>

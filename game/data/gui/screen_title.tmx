@@ -37,10 +37,10 @@
   </object>
   <object id="168" gid="1" x="264" y="189" width="14" height="14"/>
   <object id="238" x="48" y="36" width="384" height="72">
-   <text fontfamily="The Rumor" pixelsize="64" wrap="1" color="#e02121">ROSE of</text>
+   <text fontfamily="Alita Brush" pixelsize="64" wrap="1" color="#e02121">ROSE of</text>
   </object>
   <object id="239" x="48" y="108" width="384" height="72">
-   <text fontfamily="The Rumor" pixelsize="64" wrap="1" color="#e02121" halign="right">DRAGONTAIL</text>
+   <text fontfamily="Alita Brush" pixelsize="64" wrap="1" color="#e02121" halign="right">DRAGONTAIL</text>
   </object>
  </objectgroup>
  <group id="17" name="TitleHit">
@@ -88,41 +88,41 @@ USED UNDER CREATIVE COMMONS ATTRIBUTION SHARE-ALIKE LICENSE</text>
    <properties>
     <property name="action" value="restartStage"/>
    </properties>
-   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">FIGHT!</text>
+   <text fontfamily="Alita Brush" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">FIGHT!</text>
   </object>
   <object id="223" template="menu/mainmenu/Button.tx" name="TRAIN" type="Gui.Button" x="40" y="144" width="84" height="36">
    <properties>
     <property name="action" value="startTraining"/>
    </properties>
-   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">TRAIN</text>
+   <text fontfamily="Alita Brush" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">TRAIN</text>
   </object>
-  <object id="104" template="menu/mainmenu/Button.tx" name="OPTIONS" type="Gui.Button" x="48" y="180" width="108" height="36">
+  <object id="104" template="menu/mainmenu/Button.tx" name="OPTIONS" type="Gui.Button" x="48" y="180" width="112" height="36">
    <properties>
     <property name="action" value="openMenuMap"/>
     <property name="mapfile" type="file" value="menu_options_simple.lua"/>
     <property name="menupath" value="simple"/>
    </properties>
-   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">OPTIONS</text>
+   <text fontfamily="Alita Brush" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">OPTIONS</text>
   </object>
   <object id="105" template="menu/mainmenu/Button.tx" name="QUIT" type="Gui.Button" x="56" y="216" width="68" height="36">
    <properties>
     <property name="action" value="quitGame"/>
    </properties>
-   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">QUIT</text>
+   <text fontfamily="Alita Brush" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">QUIT</text>
   </object>
   <object id="198" template="menu/mainmenu/Button.tx" name="itchWEBSITE" x="56" y="171" width="116" height="36" visible="0">
    <properties>
     <property name="action" value="openURL"/>
     <property name="url" value="https://ioribranford.itch.io/rose-of-dragontail"/>
    </properties>
-   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">WEBSITE</text>
+   <text fontfamily="Alita Brush" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">WEBSITE</text>
   </object>
   <object id="242" template="menu/mainmenu/Button.tx" name="steamWEBSITE" x="56" y="171" width="88" height="36" visible="0">
    <properties>
     <property name="action" value="openURL"/>
     <property name="url" value="https://ioribranford.itch.io/rose-of-dragontail"/>
    </properties>
-   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">STEAM</text>
+   <text fontfamily="Alita Brush" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">STEAM</text>
   </object>
   <object id="219" name="itchView Instructions" x="52" y="198" width="96" height="18" visible="0">
    <text fontfamily="Silver" pixelsize="19" wrap="1" color="#ffffff">View instructions</text>

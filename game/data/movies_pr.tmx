@@ -42,7 +42,7 @@
       <property name="frequency" type="float" value="30"/>
       <property name="selectanimation" value="colorCycle"/>
      </properties>
-     <text fontfamily="The Rumor" pixelsize="48" wrap="1" color="#e02121" halign="center" valign="bottom">ROSE of</text>
+     <text fontfamily="Alita Brush" pixelsize="48" wrap="1" color="#e02121" halign="center" valign="bottom">ROSE of</text>
     </object>
     <object id="4" name="Dragontail" type="Gui.Button" x="32" y="162" width="244" height="49.5">
      <properties>
@@ -51,7 +51,7 @@
       <property name="frequency" type="float" value="30"/>
       <property name="selectanimation" value="colorCycle"/>
      </properties>
-     <text fontfamily="The Rumor" pixelsize="48" wrap="1" color="#e02121" halign="center" valign="bottom">DRAGONTAIL</text>
+     <text fontfamily="Alita Brush" pixelsize="48" wrap="1" color="#e02121" halign="center" valign="bottom">DRAGONTAIL</text>
     </object>
     <object id="5" name="Rising Tide 4" type="Gui.Button" x="48" y="211.5" width="184" height="36">
      <properties>
@@ -60,7 +60,7 @@
       <property name="frequency" type="float" value="30"/>
       <property name="selectanimation" value="colorCycle"/>
      </properties>
-     <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">Demo 2026.2</text>
+     <text fontfamily="Alita Brush" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">Demo 2026.2</text>
     </object>
    </objectgroup>
   </group>
@@ -88,14 +88,14 @@
    </object>
   </objectgroup>
   <objectgroup id="17" name="shaking">
-   <object id="7" name="PLAY THE DEMO" type="Gui.Button" x="276" y="54" width="180" height="108">
+   <object id="7" name="PLAY THE DEMO" type="Gui.Button" x="264" y="54" width="204" height="108">
     <properties>
      <property name="action" value="restartStage"/>
      <property name="color2" type="color" value="#ffffd8d8"/>
      <property name="frequency" type="float" value="30"/>
      <property name="selectanimation" value="colorCycle"/>
     </properties>
-    <text fontfamily="The Rumor" pixelsize="48" wrap="1" color="#e02121" halign="center" valign="bottom">KICK TAIL WITH TAIL</text>
+    <text fontfamily="Alita Brush" pixelsize="48" wrap="1" color="#e02121" halign="center" valign="bottom">KICK TAIL WITH TAIL</text>
    </object>
    <object id="12" template="gui/menu/Panel.tx" name="bar" x="280" y="171" width="176" height="27">
     <properties>
