@@ -83,7 +83,8 @@ function HoldOpponent:heldBy(holder)
     self:stopAttack() ; self:unassignSelfAsAttacker()
     Guard.stopGuarding(self)
     self.velx, self.vely = 0, 0
-    while HoldOpponent.isHolding(holder, self) do
+    repeat
+        if coroutine.yield() then return end
         local dx, dy = holder.x - self.x, holder.y - self.y
         if dx == 0 and dy == 0 then
             dx = 1
@@ -97,8 +98,7 @@ function HoldOpponent:heldBy(holder)
                 return "breakaway", holder
             end
         end
-        coroutine.yield()
-    end
+    until not HoldOpponent.isHolding(holder, self)
     local recoverai = self.aiafterheld or self.recoverai
     if not recoverai then
         print("No aiafterheld or recoverai for "..self.type)
