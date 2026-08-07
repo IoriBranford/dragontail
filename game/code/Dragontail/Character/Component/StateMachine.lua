@@ -105,11 +105,11 @@ local function evalStateVar(self, state, k)
     return v
 end
 
-function StateMachine.interruptThread(self, statename, a,b,c,d,e,f,g)
+function StateMachine.interruptThread(self, reason, statename, a,b,c,d,e,f,g)
     local stco = self.statethread
     if stco then
         local ok, sn2, h,j,k,l,m,n,o
-            = co_resume(stco, statename, a,b,c,d,e,f,g)
+            = co_resume(stco, reason, statename, a,b,c,d,e,f,g)
         if ok and sn2 then
             return sn2, h,j,k,l,m,n,o
         end
@@ -124,7 +124,7 @@ function StateMachine.start(self, statename, a,b,c,d,e,f,g)
         self.statebehavior:_release()
     elseif stco then
         -- TODO rewrite coroutines to handle interrupt
-        -- statename, a,b,c,d,e,f,g = StateMachine.interruptThread(self, statename, a,b,c,d,e,f,g)
+        statename, a,b,c,d,e,f,g = StateMachine.interruptThread(self, "interrupt", statename, a,b,c,d,e,f,g)
     end
     self.statebehavior = nil
     self.statethread = nil
@@ -221,7 +221,7 @@ function StateMachine.start(self, statename, a,b,c,d,e,f,g)
             end
         elseif type(statecoroutine) == "function" then
             self.statethread = co_create(statecoroutine)
-            StateMachine.run(self, a,b,c,d,e,f,g)
+            StateMachine.run(self, self, a,b,c,d,e,f,g)
         else
             local enter = self[evalStateVar(self, state, "stateenterfunction")]
             if type(enter) == "function" then
@@ -242,7 +242,7 @@ function StateMachine.run(self, ...)
         nextstate, a,b,c,d,e,f,g = self.statebehavior:fixedupdate()
     elseif self.statethread then
         local ok
-        ok, nextstate, a,b,c,d,e,f,g = co_resume(self.statethread, self, ...)
+        ok, nextstate, a,b,c,d,e,f,g = co_resume(self.statethread, ...)
         if not ok then
             error(debug.traceback(self.statethread, nextstate))
         end
@@ -265,6 +265,11 @@ function StateMachine.run(self, ...)
                             self.statebehavior:timeout(nextstate, a,b,c,d,e,f,g)
                         self.statebehavior:_release()
                         self.statebehavior = nil
+                    elseif self.statethread then
+                        nextstate, a,b,c,d,e,f,g =
+                            StateMachine.interruptThread(self,
+                                "timeout", nextstate, a,b,c,d,e,f,g)
+                        self.statethread = nil
                     end
                 else
                     statetime = statetime - 1
