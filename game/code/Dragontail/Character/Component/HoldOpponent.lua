@@ -55,10 +55,13 @@ function HoldOpponent:isHolding(opponent)
 end
 
 function HoldOpponent:weakenHold(strugglestrength)
-    local holdstrength = math.min(
-        self.holdstrength - strugglestrength,
-        self.initialholdstrength)
-    self.holdstrength = holdstrength
+    local holdstrength = self.holdstrength
+    if holdstrength then
+        holdstrength = math.min(
+            holdstrength - strugglestrength,
+            self.initialholdstrength or HoldOpponent.DefaultInitialHoldStrength)
+        self.holdstrength = holdstrength
+    end
     return holdstrength
 end
 
@@ -89,7 +92,7 @@ function HoldOpponent:heldBy(holder)
         local struggle = self.strugglestrength
         if struggle then
             local holdstrength = HoldOpponent.weakenHold(holder, struggle)
-            if holdstrength <= 0 then
+            if holdstrength and holdstrength <= 0 then
                 StateMachine.start(holder, "brokenaway", self)
                 return "breakaway", holder
             end

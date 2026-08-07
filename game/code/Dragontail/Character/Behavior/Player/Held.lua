@@ -65,7 +65,7 @@ function PlayerHeld:fixedupdate()
     end
 
     local holdstrength = HoldOpponent.weakenHold(holder, struggle)
-    if holdstrength <= 0 then
+    if holdstrength and holdstrength <= 0 then
         StateMachine.start(holder, "brokenaway", player)
         love.event.send("playerunheld")
         return "breakaway", holder
