@@ -4,7 +4,6 @@ local Assets     = require "Tiled.Assets"
 local Movie      = require "Tiled.Movie"
 local Color      = require "Tiled.Color"
 local Config     = require "System.Config"
-local fixedupdate= require "fixedupdate"
 local MoviePhase = {}
 
 local moviemap ---@type TiledMap
@@ -36,15 +35,6 @@ function MoviePhase:fixedupdate()
     if not pause then
         MoviePhase:step()
     end
-end
-
-local fixedfrac = 0
-function MoviePhase:update(dsecs)
-    local fixedrate = Config.fixedupdaterate
-    fixedfrac = fixedupdate(fixedrate, fixedfrac, dsecs,
-    function()
-        love.event.send("fixedupdate")
-    end)
 end
 
 function MoviePhase:step()
@@ -158,9 +148,5 @@ MoviePhase.ErrorOverlay = {
         end
     end
 }
-
-function MoviePhase.draw()
-    return "args", fixedfrac
-end
 
 return MoviePhase

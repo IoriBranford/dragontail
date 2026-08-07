@@ -132,14 +132,25 @@ function love.load(args)
     SystemFont = love.graphics.newFont(12)
 end
 
-local statsreport = {}
 ---@diagnostic disable-next-line: duplicate-set-field
 function love.update(dsecs)
     Account.update()
 
     Audio.update(dsecs)
+
+    fixedfrac = fixedupdate(Config.fixedupdaterate, 3,
+        fixedfrac, dsecs, function()
+            Inputs.update()
+            love.event.send("fixedupdate")
+        end)
 end
 
+---@diagnostic disable-next-line: duplicate-set-field
+function love.draw()
+    return "args", fixedfrac
+end
+
+local statsreport = {}
 function love.drawStats()
     love.graphics.setFont(SystemFont)
     cute.draw()

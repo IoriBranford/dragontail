@@ -12,7 +12,6 @@ local GameGuiActions = require "Dragontail.GuiActions"
 local Characters     = require "Dragontail.Stage.Characters"
 local Dragontail     = require "Dragontail"
 local Color          = require "Tiled.Color"
-local fixedupdate    = require "fixedupdate"
 local End            = require "Dragontail.Movie.End"
 local pathlite       = require "pathlite"
 local isAsset = Assets.isAsset
@@ -227,21 +226,6 @@ function GamePhase:gameOver(won)
         love.event.connect(gameovermap)
         
     end
-end
-
-local fixedfrac = 0
-
-function GamePhase:update(dsecs)
-    local fixedrate = Config.fixedupdaterate
-    fixedfrac = fixedupdate(fixedrate, fixedfrac, dsecs,
-    function()
-        Inputs.update()
-        love.event.send("fixedupdate")
-    end)
-end
-
-function GamePhase:draw()
-    return "args", fixedfrac
 end
 
 return GamePhase
