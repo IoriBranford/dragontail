@@ -7,6 +7,6 @@
    <property name="presssound" type="file" value="../../../sounds/combat/firehit.mp3"/>
    <property name="selectanimation" value="colorCycle"/>
   </properties>
-  <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">START</text>
+  <text fontfamily="Alita Brush" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">START</text>
  </object>
 </template>

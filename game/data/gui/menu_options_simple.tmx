@@ -176,7 +176,7 @@
   </object>
   <object id="108" template="menu/Button_closeMenu.tx" type="Gui.Button" x="128" y="243"/>
   <object id="181" template="menu/Title.tx" x="180" y="9">
-   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center">OPTIONS</text>
+   <text fontfamily="Alita Brush" pixelsize="32" wrap="1" color="#e02121" halign="center">OPTIONS</text>
   </object>
  </objectgroup>
 </map>

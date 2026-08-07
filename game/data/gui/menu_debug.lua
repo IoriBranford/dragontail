@@ -534,7 +534,7 @@ return {
           opacity = 1,
           visible = true,
           text = "DEBUG",
-          fontfamily = "The Rumor",
+          fontfamily = "Alita Brush",
           pixelsize = 32,
           wrap = true,
           color = { 224, 33, 33 },

@@ -113,7 +113,7 @@
   <object id="150" gid="1" x="344" y="189" width="14" height="14"/>
   <object id="152" gid="1" x="344" y="207" width="14" height="14"/>
   <object id="185" template="menu/Title.tx" x="180" y="0">
-   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">DEBUG</text>
+   <text fontfamily="Alita Brush" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">DEBUG</text>
   </object>
  </objectgroup>
 </map>

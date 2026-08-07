@@ -371,7 +371,7 @@ to clear lost enemies</text>
   </object>
   <object id="74" template="gui/menu/Cursor.tx" type="Gui.Cursor" x="152" y="103.5"/>
   <object id="184" template="gui/menu/Title.tx" x="180" y="54">
-   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center">PAUSE</text>
+   <text fontfamily="Alita Brush" pixelsize="32" wrap="1" color="#e02121" halign="center">PAUSE</text>
   </object>
  </objectgroup>
  <objectgroup id="15" name="debugmenu" class="Gui.Menu" visible="0">
@@ -464,7 +464,7 @@ to clear lost enemies</text>
   <object id="150" gid="413" x="344" y="153" width="14" height="14"/>
   <object id="152" gid="413" x="344" y="171" width="14" height="14"/>
   <object id="185" template="gui/menu/Title.tx" x="180" y="9">
-   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center">DEBUG</text>
+   <text fontfamily="Alita Brush" pixelsize="32" wrap="1" color="#e02121" halign="center">DEBUG</text>
   </object>
  </objectgroup>
  <objectgroup id="11" name="gameover" class="Gui.Menu" visible="0">
@@ -504,13 +504,13 @@ to clear lost enemies</text>
    <properties>
     <property name="action" value="returnToTitle"/>
    </properties>
-   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">SAVE &amp; QUIT</text>
+   <text fontfamily="Alita Brush" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">SAVE &amp; QUIT</text>
   </object>
   <object id="194" template="gui/menu/mainmenu/Button.tx" name="Play again" x="32" y="162" width="124" height="36">
    <properties>
     <property name="action" value="restartStage"/>
    </properties>
-   <text fontfamily="The Rumor" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">PLAY AGAIN</text>
+   <text fontfamily="Alita Brush" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="bottom">PLAY AGAIN</text>
   </object>
  </objectgroup>
 </map>
