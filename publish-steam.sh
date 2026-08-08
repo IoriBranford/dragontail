@@ -37,7 +37,7 @@ extract() {
 #extract osx
 #extract demo-osx
 
-$STEAMCMD +login "$ACCOUNT" \
+$STEAMCMD $* +login "$ACCOUNT" \
 	+run_app_build "$PWD/steam/app_build_full.vdf" \
 	+run_app_build "$PWD/steam/app_build_demo.vdf" \
 	+quit
