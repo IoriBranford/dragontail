@@ -67,13 +67,14 @@
   <object id="238" template="menu/Panel.tx" x="136" y="90" width="208" height="90"/>
   <object id="239" template="menu/pause/Button.tx" name="Restart checkpoint" type="Gui.Button" x="184" y="99" width="144" height="18">
    <properties>
-    <property name="action" value="restartStageCheckpoint"/>
+    <property name="action" value="restartStage"/>
    </properties>
    <text fontfamily="Unifont" wrap="1" color="#ffffff">Last checkpoint</text>
   </object>
   <object id="240" template="menu/pause/Button.tx" name="Restart stage" type="Gui.Button" x="184" y="126" width="144" height="18">
    <properties>
     <property name="action" value="restartStage"/>
+    <property name="checkpoint" type="bool" value="false"/>
    </properties>
    <text fontfamily="Unifont" wrap="1" color="#ffffff">Stage start</text>
   </object>

@@ -291,7 +291,7 @@ return {
           wrap = true,
           color = { 255, 255, 255 },
           properties = {
-            ["action"] = "restartStageCheckpoint",
+            ["action"] = "restartStage",
             ["presssound"] = "../sounds/combat/firehit.mp3"
           }
         },
@@ -313,6 +313,7 @@ return {
           color = { 255, 255, 255 },
           properties = {
             ["action"] = "restartStage",
+            ["checkpoint"] = false,
             ["presssound"] = "../sounds/combat/firehit.mp3"
           }
         },

@@ -47,6 +47,7 @@
   <object id="194" template="menu/mainmenu/Button.tx" name="AGAIN" x="248" y="63" width="168" height="36">
    <properties>
     <property name="action" value="restartStage"/>
+    <property name="checkpoint" type="bool" value="false"/>
    </properties>
    <text fontfamily="Alita Brush" pixelsize="32" wrap="1" color="#e02121" halign="center" valign="center">FIGHT AGAIN</text>
   </object>

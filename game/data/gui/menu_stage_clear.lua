@@ -241,6 +241,7 @@ return {
           valign = "center",
           properties = {
             ["action"] = "restartStage",
+            ["checkpoint"] = false,
             ["color2"] = "#ffffd8d8",
             ["frequency"] = 30,
             ["presssound"] = "../sounds/combat/firehit.mp3",

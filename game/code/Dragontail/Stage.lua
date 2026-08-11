@@ -78,7 +78,7 @@ function Stage:load(stagefile)
     end
 end
 
-function Stage:init(startroom)
+function Stage:init(exrules, startroom)
     paused = false
     local Character = require "Dragontail.Character"
     scene = Scene()
@@ -212,6 +212,14 @@ function Stage:init(startroom)
         end
     end
     Stage:openRoom(firstroomindex)
+
+    if exrules == "One Hit Wonder" then
+        local players = Characters.getGroup("players")
+        for _, player in ipairs(players) do
+            player.health, player.maxhealth = 1, 1
+        end
+        Characters.setGroupEnabled("recoveryitems", false)
+    end
 
     if not sequencethread then
         local players = Characters.getGroup("players")
@@ -552,6 +560,8 @@ function Stage:fixedupdateHud(hudgui)
     local healthpercent = player.health / player.maxhealth
     local hud = hudgui:get("hud")
     if hud then
+        hud.health.width = player.maxhealth
+        hud.healthbox.width = player.maxhealth
         hud.health:setPercent(healthpercent)
 
         local manastore = player.manastore

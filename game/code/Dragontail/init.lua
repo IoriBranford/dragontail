@@ -220,7 +220,10 @@ function Dragontail.load(args)
     Menu.actionsmodule = "Dragontail.GuiActions"
 
     local firstroom = map and args.room
-    love.event.newphase(firstphase, map, firstroom)
+    local options = {
+        room = firstroom
+    }
+    love.event.newphase(firstphase, map, options)
 end
 
 function Dragontail.quit()
