@@ -19,7 +19,7 @@ local json   = require "Aseprite.json"
 local AseSlice = require "Aseprite.Slice"
 local AseFrame = require "Aseprite.Frame"
 local Animation= require "Aseprite.Animation"
-local pathlite = require "Aseprite.pathlite"
+local pathlite = require "pathlite"
 
 ---@class AseLayer
 ---@field name string

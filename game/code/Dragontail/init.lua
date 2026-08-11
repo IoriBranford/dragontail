@@ -8,7 +8,7 @@ local Assets = require "Tiled.Assets"
 local Window = require "System.Window"
 local Inputs = require "System.Inputs"
 local Time   = require "System.Time"
-local pathlite = require "pl.pathlite"
+local pathlite = require "pathlite"
 local Canvas   = require "System.Canvas"
 local firstphase = "Dragontail.TitlePhase"
 

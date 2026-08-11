@@ -2,7 +2,7 @@ local Properties = {}
 
 local addIfNew = require "Tiled.addIfNew"
 local Assets   = require "Tiled.Assets"
-local pathlite = require "Tiled.pathlite"
+local pathlite = require "pathlite"
 
 function Properties.resolveAssetPaths(properties, directory)
     if (directory or "") == "" then return end

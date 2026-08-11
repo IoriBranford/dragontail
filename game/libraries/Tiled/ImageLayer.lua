@@ -2,7 +2,7 @@ local class = require "Tiled.class"
 local Assets = require "Tiled.Assets"
 local Color  = require "Tiled.Color"
 local Layer  = require "Tiled.Layer"
-local pathlite = require "Tiled.pathlite"
+local pathlite = require "pathlite"
 
 ---@class ImageLayer:Layer
 ---@field type string "imagelayer"

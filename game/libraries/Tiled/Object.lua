@@ -4,7 +4,7 @@ local Assets = require "Tiled.Assets"
 local Properties = require "Tiled.Properties"
 local Color      = require "Tiled.Color"
 local Graphics   = require "Tiled.Graphics"
-local pathlite   = require "Tiled.pathlite"
+local pathlite   = require "pathlite"
 
 ---@class TiledObject:Class
 ---@field id integer Unique ID of the object (defaults to 0, with valid IDs being at least 1). Each object that is placed on a map gets a unique id. Even if an object was deleted, no object gets the same ID. Can not be changed in Tiled. (since Tiled 0.11)

@@ -7,7 +7,7 @@ local LayerGroup  = require "Tiled.LayerGroup"
 local ImageLayer  = require "Tiled.ImageLayer"
 local class = require "Tiled.class"
 local Assets= require "Tiled.Assets"
-local pathlite = require "Tiled.pathlite"
+local pathlite = require "pathlite"
 
 ---@class TiledMap:Class
 ---@field version string The TMX format version. Was “1.0” so far, and will be incremented to match minor Tiled releases.

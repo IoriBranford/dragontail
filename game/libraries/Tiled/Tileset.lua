@@ -2,7 +2,7 @@ local class = require "Tiled.class"
 local Assets = require "Tiled.Assets"
 local Properties = require "Tiled.Properties"
 local Tile       = require "Tiled.Tile"
-local pathlite   = require "Tiled.pathlite"
+local pathlite   = require "pathlite"
 
 ---@class Tileset:Class
 ---@field firstgid integer The first global tile ID of this tileset (this global ID maps to the first tile in this tileset).

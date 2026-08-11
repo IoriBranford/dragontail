@@ -1,6 +1,6 @@
 local TileAtlas             = require("TileAtlas")
 local hasAseprite, Aseprite = pcall(require, "Aseprite")
-local pathlite = require "Tiled.pathlite"
+local pathlite = require "pathlite"
 
 ---@alias Music love.Source|VGMPlayer|GameMusicEmu
 ---@alias Asset Tileset|love.Texture|love.ImageData|love.Font|Aseprite|love.Source|Music
