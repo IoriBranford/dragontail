@@ -22,7 +22,7 @@ local solids ---@type ihash<Character>
 local allcharacters ---@type ihash<Character>
 local byid ---@type table<integer,Character>
 local activebyid ---@type table<integer,Character>
-local groups
+local groups, disabledgroups
 local scene
 local nextid
 local camera
@@ -46,6 +46,7 @@ function Characters.init(scene_, nextid_, camera_, mapobjects)
         solids = solids,
         triggers = {},
     }
+    disabledgroups = {}
     scene = scene_
     byid = mapobjects
     activebyid = {}
@@ -61,6 +62,7 @@ function Characters.quit()
     enemies = nil
     solids = nil
     groups = nil
+    disabledgroups = nil
     scene = nil
     nextid = 1
     camera = nil
@@ -97,17 +99,36 @@ function Characters.removeFromGroup(g, c)
     end
 end
 
+function Characters.setGroupEnabled(g, e)
+    disabledgroups[g] = not e
+end
+
 function Characters.spawn(object)
     local tobj = type(object)
-    local id = tobj == "table" and object.id
+
+    local id, typ
+    if tobj == "string" then
+        typ = object
+    elseif tobj == "table" then
+        id = object.id
+        typ = object.type
+    end
+
     local character = id and activebyid[id]
     if character then return character end
 
-    if tobj == "string" then
-        object = {type = object}
+    local typedata = typ and Database.get(typ)
+    if typedata then
+        if typedata.team and
+        disabledgroups[typedata.team] then
+            return
+        end
     end
 
-    local typ = object.type
+    if tobj == "string" then
+        object = {type = typ}
+    end
+
     if typ then
         Database.fillBlanks(object, typ)
     end
