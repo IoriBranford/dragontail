@@ -637,23 +637,24 @@ function Common:fruitTreeHurt(hit)
     return self.recoverai
 end
 
-function Common:checkFruitPicked()
+function Common:growFruit()
     local fruit = self.item and
         Characters.getActiveById(self.item.id)
-    if fruit then
-        if fruit:hasDisappeared() then
-            self.itemx = fruit.x
-            self.itemy = fruit.y
-            self.itemz = fruit.z
-            self.item = nil
-            return self.nextstate or "plantEmpty"
-        end
-    elseif Database.get(self.itemtype) then
+    if not fruit and Database.get(self.itemtype) then
         local x = self.itemx or self.x
         local y = self.itemy or (self.y + 1)
         local z = self.itemz or (self.z + 1)
         self.item = Characters.spawn(
             Character(self.itemtype, x, y, z))
+    end
+end
+
+function Common:checkFruitPicked()
+    local fruit = self.item and
+        Characters.getActiveById(self.item.id)
+    if not fruit then
+        self.item = nil
+        return self.nextstate or "plantEmpty"
     end
 end
 
