@@ -17,7 +17,7 @@ function GetItem:start(item)
     if not item then
         local itemdsq = math.huge
         local x, y = enemy.x, enemy.y
-        Characters.search("items", function(obj)
+        Characters.search("weaponitems", function(obj)
             local dsq = math.distsq(obj.x, obj.y, x, y)
             if dsq < itemdsq then
                 item = obj

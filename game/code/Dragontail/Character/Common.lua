@@ -362,7 +362,7 @@ function Common:projectileEmbed(opponent, ooby, oobz)
         self:disappear()
     else
         Audio.play(self.bodyslamsound)
-        local items = Characters.getGroup("items")
+        local items = Characters.getGroup("weaponitems")
         local numopponentshit = self.numopponentshit or 0
         if self.itemtype and #items < MaxProjectileItems and numopponentshit <= 0 then
 
@@ -484,7 +484,7 @@ function Common:projectileBounce(opponent, ooby, oobz)
         oobx, ooby, oobz = self.penex, self.peney, self.penez
     until oobz and oobz <= 0
     self.velx, self.vely, self.velz = 0, 0, 0
-    local items = Characters.getGroup("items")
+    local items = Characters.getGroup("weaponitems")
     local numopponentshit = self.numopponentshit or 0
     if not opponent and self.itemtype and #items < MaxProjectileItems and numopponentshit <= 0 then
         self:becomeItem()

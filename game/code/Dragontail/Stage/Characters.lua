@@ -39,7 +39,8 @@ function Characters.init(scene_, nextid_, camera_, mapobjects)
     groups = {
         players = players,
         enemies = enemies,
-        items = {},
+        weaponitems = {},
+        recoveryitems = {},
         projectiles = {},
         container = {},
         solids = solids,

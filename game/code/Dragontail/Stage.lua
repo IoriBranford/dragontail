@@ -526,16 +526,22 @@ function Stage:fixedupdate()
             end
         end
 
-        local items = Characters.getGroup("items")
-        for _, item in ipairs(items) do
-            if item.layer ~= room then
-                if not item:isCylinderOnCamera(camera) then
-                    item:disappear()
-                end
+        Stage:prunePrevRoomObjs("recoveryitems")
+        Stage:prunePrevRoomObjs("weaponitems")
+    end
+    scene:animate(1)
+end
+
+function Stage:prunePrevRoomObjs(group)
+    local room = map.layers.rooms[roomindex]
+    local items = Characters.getGroup(group)
+    for _, item in ipairs(items) do
+        if item.layer ~= room then
+            if not item:isCylinderOnCamera(camera) then
+                item:disappear()
             end
         end
     end
-    scene:animate(1)
 end
 
 ---@param hudgui Gui

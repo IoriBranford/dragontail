@@ -194,7 +194,7 @@ function MuscleBandit:duringApproach(opponent)
         end
     end
     local weapon = not self.weaponinhand and
-        Characters.search("items", isWeaponItemCloseEnoughToGrab)
+        Characters.search("weaponitems", isWeaponItemCloseEnoughToGrab)
     if weapon then return "getProjectile", weapon end
 end
 
