@@ -12,6 +12,7 @@ local Assets      = require "Tiled.Assets"
 local CollisionMask = require "Dragontail.Character.Component.Body.CollisionMask"
 local pathlite = require "pathlite"
 local CameraBoundary = require "Object.CameraBoundary"
+local GameStats      = require "Dragontail.GameStats"
 local Stage = {
     CameraWidth = 480,
     CameraHeight = 270
@@ -560,9 +561,19 @@ function Stage:fixedupdateHud(hudgui)
     local healthpercent = player.health / player.maxhealth
     local hud = hudgui:get("hud")
     if hud then
-        hud.health.width = player.maxhealth
-        hud.healthbox.width = player.maxhealth
+        local suddendeath = player.maxhealth <= 1
+        hud.health.visible = not suddendeath
+        hud.healthbox.visible = not suddendeath
         hud.health:setPercent(healthpercent)
+
+        hud.time.visible = suddendeath
+        hud.deaths.visible = suddendeath
+        hud.timeicon.visible = suddendeath
+        hud.deathsicon.visible = suddendeath
+        hud.time.text = string.format("%02d:%02d",
+            math.min(99, math.floor(GameStats.elapsedtime/3600)),
+            math.floor(GameStats.elapsedtime/60) % 60)
+        hud.deaths.text = tostring(GameStats.deaths)
 
         local manastore = player.manastore
         local manacharge = player.manacharge

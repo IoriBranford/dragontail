@@ -2,6 +2,7 @@ local GuiActions= require "Gui.GuiActions"
 local Characters= require "Dragontail.Stage.Characters"
 local Audio     = require "System.Audio"
 local Config    = require "System.Config"
+local GameStats = require "Dragontail.GameStats"
 
 local GameGuiActions = class(GuiActions)
 
@@ -47,6 +48,7 @@ function GameGuiActions.restartStage(gui, element)
 end
 
 function GameGuiActions.startStage(gui, element)
+    GameStats.reset()
     love.event.newphase("Dragontail.GamePhase", "data/stage_banditcave.lua", {
         exrules = element.challenge or false,
         room = element.checkpoint or false
@@ -54,6 +56,7 @@ function GameGuiActions.startStage(gui, element)
 end
 
 function GameGuiActions.startTraining(gui, element)
+    GameStats.reset()
     love.event.newphase("Dragontail.GamePhase", "data/stage_training.lua", {
         exrules = false,
         room = false

@@ -14,6 +14,7 @@ local Dragontail     = require "Dragontail"
 local Color          = require "Tiled.Color"
 local End            = require "Dragontail.Movie.End"
 local pathlite       = require "pathlite"
+local GameStats      = require "Dragontail.GameStats"
 local isAsset = Assets.isAsset
 local getAsset = Assets.get
 local GamePhase = {}
@@ -185,6 +186,9 @@ local function fixedupdateInputDisplay()
 end
 
 function GamePhase:fixedupdate()
+    if playerwon == nil and not Stage:paused() then
+        GameStats.elapsedtime = GameStats.elapsedtime + 1
+    end
     if movie then
         if movie() then
             movie = nil
@@ -228,6 +232,7 @@ function GamePhase:gameOver(won)
         local gameovermap = Gui.new("data/gui/menu_game_over.lua")
         gameovermap:pushMenu(gameovermap.menu)
         love.event.connect(gameovermap)
+        GameStats.deaths = GameStats.deaths + 1
     end
 end
 

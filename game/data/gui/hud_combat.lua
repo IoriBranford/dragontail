@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 18,
   nextlayerid = 34,
-  nextobjectid = 238,
+  nextobjectid = 242,
   properties = {
     ["draworder"] = 50
   },
@@ -80,6 +80,12 @@ return {
       firstgid = 178,
       filename = "../../ccdata/sprites/bandit/boss.tsx",
       exportfilename = "../../ccdata/sprites/bandit/boss.lua"
+    },
+    {
+      name = "icons16",
+      firstgid = 179,
+      filename = "../sprites/ui/icons16.tsx",
+      exportfilename = "../sprites/ui/icons16.lua"
     }
   },
   layers = {
@@ -200,6 +206,74 @@ return {
             ["linecolor"] = "#ffffffff",
             ["roundcorners"] = 2
           }
+        },
+        {
+          id = 238,
+          name = "time",
+          type = "",
+          shape = "text",
+          x = 60,
+          y = 0,
+          width = 40,
+          height = 18,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          text = "99:99",
+          fontfamily = "Unifont",
+          wrap = true,
+          color = { 255, 255, 255 },
+          halign = "right",
+          properties = {}
+        },
+        {
+          id = 239,
+          name = "deaths",
+          type = "",
+          shape = "text",
+          x = 120,
+          y = 0,
+          width = 24,
+          height = 18,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          text = "999",
+          fontfamily = "Unifont",
+          wrap = true,
+          color = { 255, 255, 255 },
+          halign = "right",
+          properties = {}
+        },
+        {
+          id = 240,
+          name = "timeicon",
+          type = "",
+          shape = "rectangle",
+          x = 52,
+          y = 9,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          opacity = 1,
+          gid = 179,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 241,
+          name = "deathsicon",
+          type = "",
+          shape = "rectangle",
+          x = 112,
+          y = 9,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          opacity = 1,
+          gid = 180,
+          visible = true,
+          properties = {}
         },
         {
           id = 30,
