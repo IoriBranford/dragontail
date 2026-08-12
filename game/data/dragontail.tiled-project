@@ -304,6 +304,11 @@
                     "value": false
                 },
                 {
+                    "name": "checkpoint1h",
+                    "type": "bool",
+                    "value": false
+                },
+                {
                     "name": "clearotherroom",
                     "type": "string",
                     "value": ""

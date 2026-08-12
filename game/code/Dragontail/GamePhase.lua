@@ -21,7 +21,6 @@ local GamePhase = {}
 
 local pauselocked
 local stagepath = "data/stage_banditcave.lua"
-local exrules
 local playerwon
 local pausemap ---@type Gui
 local hudmap ---@type Gui
@@ -31,11 +30,6 @@ local movie
 
 function GamePhase:loadphase(stagepath_, options)
     if stagepath_ ~= nil then stagepath = stagepath_ end
-    local startroom
-    if options then
-        startroom = options.room
-        if options.exrules ~= nil then exrules = options.exrules end
-    end
     pauselocked = false
     local unifont = Assets.getFont("Unifont", 16)
     love.graphics.setFont(unifont)
@@ -73,7 +67,7 @@ function GamePhase:loadphase(stagepath_, options)
     Tiled.Assets.packTiles()
     Tiled.Assets.batchAllMapsLayers()
 
-    Stage:init(exrules, startroom)
+    Stage:init(options)
 
     local hudfile = map.hudfile
     if hudfile then

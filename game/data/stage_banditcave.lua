@@ -1687,7 +1687,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["checkpoint1h"] = true
+          },
           objects = {
             {
               id = 635,
@@ -2154,7 +2156,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["checkpoint1h"] = true
+          },
           objects = {
             {
               id = 690,
@@ -2907,7 +2911,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["checkpoint"] = true
+            ["checkpoint1h"] = true
           },
           objects = {
             {
@@ -3946,7 +3950,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["checkpoint1h"] = true
+          },
           objects = {
             {
               id = 675,
@@ -4624,6 +4630,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["checkpoint1h"] = true,
             ["donewhenenemiesleft"] = 4
           },
           objects = {
@@ -9047,7 +9054,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["checkpoint1h"] = true
+          },
           objects = {
             {
               id = 79,
@@ -9927,7 +9936,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["checkpoint"] = true,
+            ["checkpoint1h"] = true,
             ["donewhenenemiesleft"] = 8
           },
           objects = {

@@ -23,6 +23,7 @@ local min = math.min
 
 local scene ---@type Scene
 local map ---@type TiledMap
+local exrules
 local firstroomname
 local roomindex
 local winningteam
@@ -79,7 +80,7 @@ function Stage:load(stagefile)
     end
 end
 
-function Stage:init(exrules, startroom)
+function Stage:init(options)
     paused = false
     local Character = require "Dragontail.Character"
     scene = Scene()
@@ -148,8 +149,8 @@ function Stage:init(exrules, startroom)
 
     local rooms = map.layers.rooms
     local firstroomindex = 1
-    if startroom ~= nil then
-        firstroomname = startroom
+    if options and options.room ~= nil then
+        firstroomname = options.room
     end
     for i, room in ipairs(rooms) do
         if room.name == firstroomname then
@@ -190,6 +191,9 @@ function Stage:init(exrules, startroom)
         Stage:warpCamera(ccx, ccy)
     end
 
+    if options and options.exrules ~= nil then
+        exrules = options.exrules
+    end
     if exrules == "One Hit Wonder" then
         local players = Characters.getGroup("players")
         for _, player in ipairs(players) do
@@ -198,7 +202,7 @@ function Stage:init(exrules, startroom)
         Characters.setGroupEnabled("recoveryitems", false)
     end
 
-    local precheckpoint = true
+    local foundcheckpoint
     local foundmusic
     for i = firstroomindex - 1, 1, -1 do
         local prevroom = map.layers.rooms[i]
@@ -207,8 +211,7 @@ function Stage:init(exrules, startroom)
             Stage:playRoomMusic(prevroom)
         end
 
-        local characters = precheckpoint
-            and not prevroom.checkpoint
+        local characters = not foundcheckpoint
             and prevroom.characters
         if characters then
             for c = #characters, 1, -1 do
@@ -218,9 +221,9 @@ function Stage:init(exrules, startroom)
                     Characters.spawn(character, true)
                 end
             end
-        elseif prevroom.checkpoint then
-            precheckpoint = false
         end
+        foundcheckpoint = foundcheckpoint
+            or Stage:isRoomCheckpoint(i)
     end
     Stage:openRoom(firstroomindex)
 
@@ -338,6 +341,20 @@ function Stage:playRoomMusic(room)
     end
 end
 
+function Stage:getRoom(i)
+    local rooms = map.layers.rooms
+    local ti = type(i)
+    return (ti == "number" or ti == "string") and rooms[i]
+        or ti == "table" and i
+end
+
+function Stage:isRoomCheckpoint(i)
+    local room = Stage:getRoom(i)
+    return room and
+        (room.checkpoint
+        or exrules == "One Hit Wonder" and room.checkpoint1h)
+end
+
 function Stage:openRoom(i)
     local rooms = map.layers.rooms
     local ti = type(i)
@@ -347,9 +364,7 @@ function Stage:openRoom(i)
         end
     end
 
-    local room =
-        (ti == "number" or ti == "string") and rooms[i]
-        or ti == "table" and i
+    local room = Stage:getRoom(i)
     if room then
         roomindex = i
         Characters.spawnArray(room.characters, true)
@@ -360,7 +375,7 @@ function Stage:openRoom(i)
                 love.window.setTitle(cuecard)
             end
         end
-        if room.checkpoint then
+        if Stage:isRoomCheckpoint(i) then
             firstroomname = room.name
         end
         if room.clearotherroom then

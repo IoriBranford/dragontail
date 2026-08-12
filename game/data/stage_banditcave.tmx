@@ -495,6 +495,9 @@ body to grapple</text>
    <object id="638" name="joystick" gid="2702" x="968" y="56" width="16" height="16"/>
   </objectgroup>
   <objectgroup draworder="index" id="60" name="learngrabandthrow" class="Room">
+   <properties>
+    <property name="checkpoint1h" type="bool" value="true"/>
+   </properties>
    <object id="635" template="mapobjects/CameraPath.tx" x="560" y="144">
     <polyline points="0,0 480,0"/>
    </object>
@@ -552,6 +555,9 @@ body to grapple</text>
    <object id="20" template="mapobjects/bandit/knife.tx" x="736" y="136"/>
   </objectgroup>
   <objectgroup id="64" name="tolearnsprint" class="Room">
+   <properties>
+    <property name="checkpoint1h" type="bool" value="true"/>
+   </properties>
    <object id="690" template="mapobjects/CameraPath.tx" x="1040" y="144">
     <polyline points="0,0 160,0"/>
    </object>
@@ -683,7 +689,7 @@ body to grapple</text>
   </objectgroup>
   <objectgroup draworder="index" id="42" name="tolearnthrowingweapons" class="Room">
    <properties>
-    <property name="checkpoint" type="bool" value="true"/>
+    <property name="checkpoint1h" type="bool" value="true"/>
    </properties>
    <object id="483" template="mapobjects/CameraPath.tx" x="1424" y="336">
     <polyline points="-64,-192 416,-192"/>
@@ -896,6 +902,9 @@ body to grapple</text>
    <object id="810" template="mapobjects/bandit/spear.tx" x="2096" y="264"/>
   </objectgroup>
   <objectgroup draworder="index" id="62" name="tolearnfireball" class="Room">
+   <properties>
+    <property name="checkpoint1h" type="bool" value="true"/>
+   </properties>
    <object id="675" template="mapobjects/CameraPath.tx" x="1840" y="144">
     <polyline points="0,0 160,96"/>
    </object>
@@ -1056,6 +1065,7 @@ body to grapple</text>
   </objectgroup>
   <objectgroup draworder="index" id="15" name="meetshields" class="Room">
    <properties>
+    <property name="checkpoint1h" type="bool" value="true"/>
     <property name="donewhenenemiesleft" type="int" value="4"/>
    </properties>
    <object id="65" template="mapobjects/OutwardBoundary.tx" x="2880" y="368" visible="1">
@@ -2123,6 +2133,9 @@ to sprint past archers</text>
    </object>
   </objectgroup>
   <objectgroup id="18" name="toforge" class="Room">
+   <properties>
+    <property name="checkpoint1h" type="bool" value="true"/>
+   </properties>
    <object id="79" template="mapobjects/CameraPath.tx" x="976" y="1008">
     <polyline points="-96,0 288,0"/>
    </object>
@@ -2294,7 +2307,7 @@ to sprint past archers</text>
   </objectgroup>
   <objectgroup draworder="index" id="19" name="messhall" class="Room">
    <properties>
-    <property name="checkpoint" type="bool" value="true"/>
+    <property name="checkpoint1h" type="bool" value="true"/>
     <property name="donewhenenemiesleft" type="int" value="8"/>
    </properties>
    <object id="81" template="mapobjects/CameraPath.tx" x="1360" y="1008">
