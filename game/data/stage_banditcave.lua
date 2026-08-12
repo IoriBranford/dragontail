@@ -1687,9 +1687,7 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {
-            ["precheckpoint"] = true
-          },
+          properties = {},
           objects = {
             {
               id = 635,
@@ -1785,7 +1783,6 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["precheckpoint"] = true,
             ["time"] = 60,
             ["tutorial"] = true
           },
@@ -1971,9 +1968,7 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {
-            ["precheckpoint"] = true
-          },
+          properties = {},
           objects = {
             {
               id = 648,
@@ -2159,9 +2154,7 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {
-            ["precheckpoint"] = true
-          },
+          properties = {},
           objects = {
             {
               id = 690,
@@ -2196,7 +2189,6 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["precheckpoint"] = true,
             ["tutorial"] = true
           },
           objects = {
@@ -2351,7 +2343,6 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = 2,
-            ["precheckpoint"] = true,
             ["time"] = 60
           },
           objects = {
@@ -2485,8 +2476,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 1,
-            ["precheckpoint"] = true
+            ["donewhenenemiesleft"] = 1
           },
           objects = {
             {
@@ -2522,8 +2512,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 3,
-            ["precheckpoint"] = true
+            ["donewhenenemiesleft"] = 3
           },
           objects = {
             {
@@ -2592,9 +2581,7 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {
-            ["precheckpoint"] = true
-          },
+          properties = {},
           objects = {
             {
               id = 957,
@@ -2681,7 +2668,6 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = 5,
-            ["precheckpoint"] = true,
             ["titlebarcuecard"] = "RUNNING KICK"
           },
           objects = {
@@ -9061,9 +9047,7 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {
-            ["precheckpoint"] = true
-          },
+          properties = {},
           objects = {
             {
               id = 79,
@@ -9483,7 +9467,6 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = 2,
-            ["precheckpoint"] = true,
             ["time"] = 5
           },
           objects = {
@@ -9630,8 +9613,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 4,
-            ["precheckpoint"] = true
+            ["donewhenenemiesleft"] = 4
           },
           objects = {
             {
@@ -9735,8 +9717,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 4,
-            ["precheckpoint"] = true
+            ["donewhenenemiesleft"] = 4
           },
           objects = {
             {
@@ -9826,7 +9807,6 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["precheckpoint"] = true,
             ["titlebarcuecard"] = "LV2 REVENGE"
           },
           objects = {
@@ -11499,8 +11479,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["musicfade"] = 2,
-            ["precheckpoint"] = true
+            ["musicfade"] = 2
           },
           objects = {
             {

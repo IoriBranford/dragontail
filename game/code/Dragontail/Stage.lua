@@ -175,7 +175,7 @@ function Stage:init(exrules, startroom)
     local ccx, ccy = 0, 0
     if players and #players > 0 then
         for _, player in ipairs(players) do
-            Characters.spawn(player)
+            Characters.spawn(player, true)
             ccx, ccy = math2.vadd(ccx, ccy, player.x, player.y)
         end
         ccx, ccy = math2.vdiv(ccx, ccy, #players)
@@ -208,7 +208,7 @@ function Stage:init(exrules, startroom)
         end
 
         local characters = precheckpoint
-            and prevroom.precheckpoint
+            and not prevroom.checkpoint
             and prevroom.characters
         if characters then
             for c = #characters, 1, -1 do
@@ -216,11 +216,9 @@ function Stage:init(exrules, startroom)
                 Database.fillBlanks(character, character.type)
                 if character.team ~= "enemies" then
                     Characters.spawn(character, true)
-                    characters[c] = characters[#characters]
-                    characters[#characters] = nil
                 end
             end
-        elseif not prevroom.precheckpoint then
+        elseif prevroom.checkpoint then
             precheckpoint = false
         end
     end
