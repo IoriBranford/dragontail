@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 113,
-  nextobjectid = 1110,
+  nextobjectid = 1112,
   backgroundcolor = { 64, 64, 64 },
   properties = {
     ["ceilingz"] = 256,
@@ -1063,11 +1063,7 @@ return {
                 { x = -96, y = 64 },
                 { x = 320, y = 64 },
                 { x = 352, y = 96 },
-                { x = 384, y = 64 },
-                { x = 960, y = 64 },
-                { x = 992, y = 96 },
-                { x = 1056, y = 32 },
-                { x = 1056, y = -128 }
+                { x = 352, y = -128 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -1691,7 +1687,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["precheckpoint"] = true
+          },
           objects = {
             {
               id = 635,
@@ -1744,6 +1742,33 @@ return {
               properties = {
                 ["z"] = 160
               }
+            },
+            {
+              id = 1110,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 928,
+              y = 16,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = -128, y = -128 },
+                { x = -128, y = 96 },
+                { x = -96, y = 64 },
+                { x = 352, y = 64 },
+                { x = 352, y = -128 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -48,
+                ["linecolor"] = "#80ffffff"
+              }
             }
           }
         },
@@ -1760,6 +1785,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["precheckpoint"] = true,
             ["time"] = 60,
             ["tutorial"] = true
           },
@@ -1945,7 +1971,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["precheckpoint"] = true
+          },
           objects = {
             {
               id = 648,
@@ -2131,7 +2159,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["precheckpoint"] = true
+          },
           objects = {
             {
               id = 690,
@@ -2166,6 +2196,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["precheckpoint"] = true,
             ["tutorial"] = true
           },
           objects = {
@@ -2320,6 +2351,7 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = 2,
+            ["precheckpoint"] = true,
             ["time"] = 60
           },
           objects = {
@@ -2410,6 +2442,33 @@ return {
               properties = {
                 ["drawz"] = 2
               }
+            },
+            {
+              id = 1111,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 1280,
+              y = 80,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = 0, y = -192 },
+                { x = 0, y = 0 },
+                { x = 128, y = 0 },
+                { x = 160, y = 32 },
+                { x = 160, y = -192 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -48,
+                ["linecolor"] = "#80ffffff"
+              }
             }
           }
         },
@@ -2426,7 +2485,8 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 1
+            ["donewhenenemiesleft"] = 1,
+            ["precheckpoint"] = true
           },
           objects = {
             {
@@ -2462,7 +2522,8 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 3
+            ["donewhenenemiesleft"] = 3,
+            ["precheckpoint"] = true
           },
           objects = {
             {
@@ -2531,7 +2592,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["precheckpoint"] = true
+          },
           objects = {
             {
               id = 957,
@@ -2618,6 +2681,7 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = 5,
+            ["precheckpoint"] = true,
             ["titlebarcuecard"] = "RUNNING KICK"
           },
           objects = {
@@ -2667,10 +2731,12 @@ return {
               opacity = 1,
               visible = true,
               polygon = {
-                { x = 64, y = -160 },
+                { x = 0, y = -160 },
+                { x = 0, y = 64 },
                 { x = 64, y = 0 },
                 { x = 96, y = 0 },
-                { x = 96, y = -160 }
+                { x = 160, y = 64 },
+                { x = 160, y = -160 }
               },
               properties = {
                 ["bodyinlayers"] = "Wall",
@@ -2854,7 +2920,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["checkpoint"] = true
+          },
           objects = {
             {
               id = 483,
@@ -2887,8 +2955,7 @@ return {
               opacity = 1,
               visible = true,
               polygon = {
-                { x = -448, y = -128 },
-                { x = -448, y = 32 },
+                { x = -384, y = -128 },
                 { x = -384, y = 96 },
                 { x = -256, y = 96 },
                 { x = -224, y = 64 },
@@ -8027,33 +8094,6 @@ return {
               }
             },
             {
-              id = 787,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 1184,
-              y = 880,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              polygon = {
-                { x = -64, y = -112 },
-                { x = -64, y = 64 },
-                { x = 160, y = 64 },
-                { x = 192, y = 32 },
-                { x = 192, y = -112 }
-              },
-              properties = {
-                ["bodyinlayers"] = "Wall",
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["extrudeY"] = -48,
-                ["linecolor"] = "#80ffffff"
-              }
-            },
-            {
               id = 548,
               name = "",
               type = "item-stone",
@@ -9021,7 +9061,9 @@ return {
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
-          properties = {},
+          properties = {
+            ["precheckpoint"] = true
+          },
           objects = {
             {
               id = 79,
@@ -9229,8 +9271,7 @@ return {
               gid = 2461,
               visible = true,
               properties = {
-                ["itemtype"] = "item-throwing-axe",
-                ["z"] = 32
+                ["itemtype"] = "item-throwing-axe"
               }
             },
             {
@@ -9398,6 +9439,33 @@ return {
               properties = {
                 ["z"] = 36
               }
+            },
+            {
+              id = 787,
+              name = "",
+              type = "Boundary",
+              shape = "polygon",
+              x = 1184,
+              y = 880,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              opacity = 1,
+              visible = true,
+              polygon = {
+                { x = -64, y = -112 },
+                { x = -64, y = 64 },
+                { x = 160, y = 64 },
+                { x = 192, y = 32 },
+                { x = 192, y = -112 }
+              },
+              properties = {
+                ["bodyinlayers"] = "Wall",
+                ["color"] = "#80808080",
+                ["drawz"] = 0,
+                ["extrudeY"] = -48,
+                ["linecolor"] = "#80ffffff"
+              }
             }
           }
         },
@@ -9415,6 +9483,7 @@ return {
           parallaxy = 1,
           properties = {
             ["donewhenenemiesleft"] = 2,
+            ["precheckpoint"] = true,
             ["time"] = 5
           },
           objects = {
@@ -9561,7 +9630,8 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 4
+            ["donewhenenemiesleft"] = 4,
+            ["precheckpoint"] = true
           },
           objects = {
             {
@@ -9665,7 +9735,8 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["donewhenenemiesleft"] = 4
+            ["donewhenenemiesleft"] = 4,
+            ["precheckpoint"] = true
           },
           objects = {
             {
@@ -9755,6 +9826,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["precheckpoint"] = true,
             ["titlebarcuecard"] = "LV2 REVENGE"
           },
           objects = {
@@ -9875,6 +9947,7 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
+            ["checkpoint"] = true,
             ["donewhenenemiesleft"] = 8
           },
           objects = {
@@ -11426,7 +11499,8 @@ return {
           parallaxx = 1,
           parallaxy = 1,
           properties = {
-            ["musicfade"] = 2
+            ["musicfade"] = 2,
+            ["precheckpoint"] = true
           },
           objects = {
             {
@@ -11789,35 +11863,6 @@ return {
           },
           objects = {
             {
-              id = 702,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 2272,
-              y = 864,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              polygon = {
-                { x = -32, y = -128 },
-                { x = -32, y = 16 },
-                { x = 32, y = 80 },
-                { x = 352, y = 80 },
-                { x = 416, y = 144 },
-                { x = 448, y = 144 },
-                { x = 448, y = -128 }
-              },
-              properties = {
-                ["bodyinlayers"] = "Wall",
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["extrudeY"] = -256,
-                ["linecolor"] = "#80ffffff"
-              }
-            },
-            {
               id = 76,
               name = "",
               type = "Boundary",
@@ -11914,128 +11959,6 @@ return {
                 { x = 160, y = 0 },
                 { x = 640, y = 0 }
               },
-              properties = {}
-            },
-            {
-              id = 77,
-              name = "",
-              type = "Boundary",
-              shape = "polygon",
-              x = 2272,
-              y = 1152,
-              width = 0,
-              height = 0,
-              rotation = 0,
-              opacity = 1,
-              visible = true,
-              polygon = {
-                { x = -32, y = 0 },
-                { x = -32, y = 192 },
-                { x = 416, y = 192 },
-                { x = 416, y = 0 },
-                { x = 384, y = -32 },
-                { x = 352, y = -32 },
-                { x = 320, y = -64 },
-                { x = 160, y = -64 },
-                { x = 128, y = -32 },
-                { x = 0, y = -32 }
-              },
-              properties = {
-                ["bodyinlayers"] = "Wall",
-                ["color"] = "#80808080",
-                ["drawz"] = 0,
-                ["extrudeY"] = -64,
-                ["linecolor"] = "#80ffffff"
-              }
-            },
-            {
-              id = 1001,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2352,
-              y = 896,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              opacity = 1,
-              gid = 3404,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 1002,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2400,
-              y = 912,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              opacity = 1,
-              gid = 3404,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 1003,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2456,
-              y = 904,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              opacity = 1,
-              gid = 3404,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 1004,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2504,
-              y = 896,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              opacity = 1,
-              gid = 3404,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 1005,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2528,
-              y = 904,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              opacity = 1,
-              gid = 3404,
-              visible = true,
-              properties = {}
-            },
-            {
-              id = 1006,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2592,
-              y = 904,
-              width = 32,
-              height = 32,
-              rotation = 0,
-              opacity = 1,
-              gid = 3404,
-              visible = true,
               properties = {}
             },
             {
@@ -12292,158 +12215,6 @@ return {
               shape = "rectangle",
               x = 2776,
               y = 936,
-              width = 16,
-              height = 16,
-              rotation = 15,
-              opacity = 1,
-              gid = 2473,
-              visible = true,
-              properties = {
-                ["color"] = "#80aa0000",
-                ["drawz"] = -0.5,
-                ["shadowcolor"] = "#00000000"
-              }
-            },
-            {
-              id = 1033,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2328,
-              y = 896,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              opacity = 1,
-              gid = 2481,
-              visible = true,
-              properties = {
-                ["color"] = "#80aa0000",
-                ["drawz"] = -0.5,
-                ["shadowcolor"] = "#00000000"
-              }
-            },
-            {
-              id = 1039,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2560,
-              y = 904,
-              width = 16,
-              height = 16,
-              rotation = 0,
-              opacity = 1,
-              gid = 2481,
-              visible = true,
-              properties = {
-                ["color"] = "#80aa0000",
-                ["drawz"] = -0.5,
-                ["shadowcolor"] = "#00000000"
-              }
-            },
-            {
-              id = 1034,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2330,
-              y = 905,
-              width = 16,
-              height = 16,
-              rotation = 345,
-              opacity = 1,
-              gid = 2474,
-              visible = true,
-              properties = {
-                ["color"] = "#80aa0000",
-                ["drawz"] = -0.5,
-                ["shadowcolor"] = "#00000000"
-              }
-            },
-            {
-              id = 1040,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2562,
-              y = 913,
-              width = 16,
-              height = 16,
-              rotation = 345,
-              opacity = 1,
-              gid = 2474,
-              visible = true,
-              properties = {
-                ["color"] = "#80aa0000",
-                ["drawz"] = -0.5,
-                ["shadowcolor"] = "#00000000"
-              }
-            },
-            {
-              id = 1035,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2485.66,
-              y = 896,
-              width = 16,
-              height = 16,
-              rotation = 45,
-              opacity = 1,
-              gid = 2478,
-              visible = true,
-              properties = {
-                ["color"] = "#80aa0000",
-                ["drawz"] = -0.5,
-                ["shadowcolor"] = "#00000000"
-              }
-            },
-            {
-              id = 1036,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2480,
-              y = 901.66,
-              width = 16,
-              height = 16,
-              rotation = 45,
-              opacity = 1,
-              gid = 2472,
-              visible = true,
-              properties = {
-                ["color"] = "#80aa0000",
-                ["drawz"] = -0.5,
-                ["shadowcolor"] = "#00000000"
-              }
-            },
-            {
-              id = 1037,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2434,
-              y = 904,
-              width = 16,
-              height = 16,
-              rotation = 15,
-              opacity = 1,
-              gid = 2479,
-              visible = true,
-              properties = {
-                ["color"] = "#80aa0000",
-                ["drawz"] = -0.5,
-                ["shadowcolor"] = "#00000000"
-              }
-            },
-            {
-              id = 1038,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 2432,
-              y = 912,
               width = 16,
               height = 16,
               rotation = 15,

@@ -190,7 +190,15 @@ function Stage:init(exrules, startroom)
         Stage:warpCamera(ccx, ccy)
     end
 
-    local foundbounds = 0
+    if exrules == "One Hit Wonder" then
+        local players = Characters.getGroup("players")
+        for _, player in ipairs(players) do
+            player.health, player.maxhealth = 1, 1
+        end
+        Characters.setGroupEnabled("recoveryitems", false)
+    end
+
+    local precheckpoint = true
     local foundmusic
     for i = firstroomindex - 1, 1, -1 do
         local prevroom = map.layers.rooms[i]
@@ -199,28 +207,24 @@ function Stage:init(exrules, startroom)
             Stage:playRoomMusic(prevroom)
         end
 
-        local characters = prevroom.characters
-        if characters and foundbounds == 0 then
+        local characters = precheckpoint
+            and prevroom.precheckpoint
+            and prevroom.characters
+        if characters then
             for c = #characters, 1, -1 do
                 local character = characters[c]
-                if character.type == "Boundary" then
-                    Characters.spawn(character)
+                Database.fillBlanks(character, character.type)
+                if character.team ~= "enemies" then
+                    Characters.spawn(character, true)
                     characters[c] = characters[#characters]
                     characters[#characters] = nil
-                    foundbounds = foundbounds + 1
                 end
             end
+        elseif not prevroom.precheckpoint then
+            precheckpoint = false
         end
     end
     Stage:openRoom(firstroomindex)
-
-    if exrules == "One Hit Wonder" then
-        local players = Characters.getGroup("players")
-        for _, player in ipairs(players) do
-            player.health, player.maxhealth = 1, 1
-        end
-        Characters.setGroupEnabled("recoveryitems", false)
-    end
 
     if not sequencethread then
         local players = Characters.getGroup("players")
