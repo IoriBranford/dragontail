@@ -103,7 +103,7 @@ function Characters.setGroupEnabled(g, e)
     disabledgroups[g] = not e
 end
 
-function Characters.spawn(object)
+function Characters.spawn(object, copy)
     local tobj = type(object)
 
     local id, typ
@@ -127,6 +127,15 @@ function Characters.spawn(object)
 
     if tobj == "string" then
         object = {type = typ}
+    elseif tobj == "table" then
+        if copy then
+            local c = {}
+            for k,v in pairs(object) do
+                c[k] = v
+            end
+            setmetatable(c, getmetatable(object))
+            object = c
+        end
     end
 
     if typ then
@@ -190,15 +199,7 @@ function Characters.spawnArray(characters, copy)
     if not characters then return end
     for i = 1, #characters do local o = characters[i]
         if not o.spawnsmanually then
-            if copy then
-                local c = {}
-                for k,v in pairs(o) do
-                    c[k] = v
-                end
-                setmetatable(c, getmetatable(o))
-                o = c
-            end
-            spawn(o)
+            spawn(o, copy)
         end
     end
 end
