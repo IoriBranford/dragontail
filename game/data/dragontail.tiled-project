@@ -325,6 +325,11 @@
                     "value": 0
                 },
                 {
+                    "name": "precheckpoint",
+                    "type": "bool",
+                    "value": false
+                },
+                {
                     "name": "sequence",
                     "type": "string",
                     "value": ""
