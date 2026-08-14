@@ -10,7 +10,7 @@ function PlayerDowned:timeout(nextstate, a, b, c, d, e, f, g)
     if player.health <= 0 then
         local chargedattack, angle = player:getReversalChargedAttackState()
         if chargedattack then
-            player.health = 10
+            player.health = math.min(10, player.maxhealth)
             Mana.releaseCharge(player)
             return chargedattack, angle
         end
