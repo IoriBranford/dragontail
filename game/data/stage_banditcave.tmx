@@ -2081,7 +2081,7 @@ to sprint past archers</text>
     <properties>
      <property name="entrypoint" type="object" value="895"/>
      <property name="initialai" value="enterAndDropDown"/>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="885" template="mapobjects/bandit/spear.tx" x="848" y="1200"/>
@@ -2125,7 +2125,7 @@ to sprint past archers</text>
     <properties>
      <property name="entrypoint" type="object" value="927"/>
      <property name="initialai" value="enterAndDropDown"/>
-     <property name="z" type="float" value="64"/>
+     <property name="z" type="float" value="48"/>
     </properties>
    </object>
    <object id="927" x="832" y="992">

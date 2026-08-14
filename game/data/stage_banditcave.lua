@@ -8563,7 +8563,7 @@ return {
                 ["entrypoint"] = { id = 895 },
                 ["initialai"] = "enterAndDropDown",
                 ["propertiestable"] = "database/bandits-properties.csv",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
@@ -9023,7 +9023,7 @@ return {
                 ["entrypoint"] = { id = 927 },
                 ["initialai"] = "enterAndDropDown",
                 ["propertiestable"] = "database/bandits-properties.csv",
-                ["z"] = 64
+                ["z"] = 48
               }
             },
             {
