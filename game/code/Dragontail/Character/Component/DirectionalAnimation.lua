@@ -7,6 +7,7 @@ function DirectionalAnimation.FromAngle(basename, angle, numanimations)
     if numanimations < 2 then
         return basename
     end
+    basename = basename or ""
     if angle ~= angle then
         return basename..0
     end
