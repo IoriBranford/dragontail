@@ -1,0 +1,83 @@
+{ "frames": {
+   "Layer#1": {
+    "frame": { "x": 55, "y": 35, "w": 8, "h": 8 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 12, "y": 12, "w": 8, "h": 8 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 50
+   },
+   "Layer#2": {
+    "frame": { "x": 23, "y": 35, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 8, "y": 8, "w": 16, "h": 16 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 50
+   },
+   "Layer#3": {
+    "frame": { "x": 69, "y": 33, "w": 28, "h": 28 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 2, "y": 2, "w": 28, "h": 28 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 50
+   },
+   "Layer#4": {
+    "frame": { "x": 69, "y": 1, "w": 30, "h": 30 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 1, "y": 1, "w": 30, "h": 30 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 50
+   },
+   "Layer#5": {
+    "frame": { "x": 1, "y": 1, "w": 32, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 50
+   },
+   "Layer#6": {
+    "frame": { "x": 35, "y": 1, "w": 32, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 50
+   },
+   "Layer#7": {
+    "frame": { "x": 1, "y": 35, "w": 20, "h": 20 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 9, "y": 3, "w": 20, "h": 20 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 50
+   },
+   "Layer#8": {
+    "frame": { "x": 41, "y": 35, "w": 12, "h": 12 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 17, "y": 3, "w": 12, "h": 12 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 50
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.3.18.2-x64",
+  "image": "symmetrical_explosion_001_small_blue.png",
+  "format": "RGBA8888",
+  "size": { "w": 100, "h": 62 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+   { "name": "origin", "keys": [{ "frame": 0, "bounds": {"x": 0, "y": 0, "w": 32, "h": 32 }, "pivot": {"x": 16, "y": 16 } }] }
+  ]
+ }
+}

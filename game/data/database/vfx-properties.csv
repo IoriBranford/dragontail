@@ -1,8 +1,8 @@
 vfx,asefile,script,initialai,statetable,asetag,loopframe,lifetime,velz,speed,conearc,gravity,color,animationspeed,shadowcolor,animationdirections,sound,emptytag,fulltag
 afterimage,,Dragontail.Character.Common,afterimage,data/database/objects-states.csv,,,,,,,,,0,0,,,,
-spark-hit,data/sprites/vfx/vfx.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,hit,0,6,,,,,,,,,,,
-spark-guard,data/sprites/vfx/vfx.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,guard,0,9,,,,,,,,,data/sounds/combat/block.mp3,,
-spark-bighit,data/sprites/vfx/vfx.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,bighit,0,9,,,,,,,,,,,
+spark-hit,data/sprites/vfx/symmetrical_impact_001_small_yellow.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,*,0,21,,,,,,,,,,,
+spark-guard,data/sprites/vfx/symmetrical_explosion_001_small_blue.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,*,0,24,,,,,,,,,data/sounds/combat/block.mp3,,
+spark-bighit,data/sprites/vfx/symmetrical_impact_004_large_yellow.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,*,0,24,,,,,,,,,,,
 spark-fall-down-dust,data/sprites/vfx/dust-on-person-fall.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,Complete,0,24,0.5,,,,,,,,,,
 spark-stone-shatter,data/sprites/weapons/stone.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,Shatter,0,12,,,,,,,,,,,
 spark-dodge-dust,data/sprites/vfx/dodge-dust.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,Dust,0,18,,,,,,,,2,,,
@@ -13,4 +13,4 @@ spark-land-on-feet-dust,data/sprites/vfx/dust-land-on-feet.jase,Dragontail.Chara
 spark-fireball-shatter,data/sprites/player/rose/fireball.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,Shatter,0,15,,,,,,,,,,,
 spark-spit-fireball,data/sprites/player/rose/firespit.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,Spit,0,18,,1,,,,,,12,,,
 projectile-path-point,data/sprites/vfx/vfx.jase,Dragontail.Character.Common,,data/database/objects-states.csv,trajdot-empty,,,,,,,,,0,,,trajdot-empty,trajdot-full
-spark-parry,data/sprites/vfx/parry.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,*,0,12,,,,,,,,,data/sounds/combat/shakiin.mp3,,
+spark-parry,data/sprites/vfx/stylized_impact_001_large_white.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,*,0,27,,,,,,,,,data/sounds/combat/shakiin.mp3,,
