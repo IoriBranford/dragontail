@@ -84,6 +84,9 @@ function Common:spark(time)
     if self.accel then
         self:decelerateXYto0()
     end
+    if self.rotation == "random4" then
+        self.rotation = love.math.random(4) * math.pi/2
+    end
     wait(time)
     self:disappear()
 end
