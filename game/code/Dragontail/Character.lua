@@ -9,6 +9,7 @@ local Body        = require "Dragontail.Character.Component.Body"
 local Shadow      = require "Dragontail.Character.Component.Shadow"
 local Guard       = require "Dragontail.Character.Component.Guard"
 local Jiggler     = require "Dragontail.Character.Component.Jiggler"
+local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
 local Characters
 
 local pi = math.pi
@@ -143,13 +144,21 @@ end
 
 function Character:makeImpactSpark(attacker, sparktype)
     if sparktype then
-        local hitsparkcharacter = Character(sparktype)
-        hitsparkcharacter.x, hitsparkcharacter.y = math.mid(attacker.x, attacker.y, self.x, self.y)
+        local spark = Character(sparktype)
+        spark.x, spark.y = math.mid(attacker.x, attacker.y, self.x, self.y)
         local z1, z2 =
             math.max(self.z, attacker.z),
             math.min(self.z + self.bodyheight, attacker.z + attacker.bodyheight)
-        hitsparkcharacter.z = z1 + (z2-z1)/2
-        return Characters.spawn(hitsparkcharacter)
+        spark.z = z1 + (z2-z1)/2
+        Characters.spawn(spark)
+
+        local dirs = spark.animationdirections or 1
+        if dirs > 1 then
+            local angle = math2.topolar(attacker.x - self.x, attacker.y - self.y)
+            local anim = DirectionalAnimation.FromAngle(spark.asetag, angle, dirs)
+            spark:changeAnimation(anim)
+        end
+        return spark
     end
 end
 
