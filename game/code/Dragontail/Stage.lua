@@ -212,6 +212,7 @@ function Stage:init(options)
         end
 
         local characters = not foundcheckpoint
+            and (Config.tutorial or not prevroom.tutorial)
             and prevroom.characters
         if characters then
             for c = #characters, 1, -1 do
