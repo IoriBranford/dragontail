@@ -40,6 +40,16 @@
             "shortcut": "Alt+Shift+F5",
             "showOutput": true,
             "workingDirectory": ""
+        },
+        {
+            "arguments": "love %projectpath/.. --map %exportfile --room %layername",
+            "command": "obs-gamecapture",
+            "enabled": true,
+            "name": "Run room for recording",
+            "saveBeforeExecute": true,
+            "shortcut": "Ctrl+Alt+Shift+R",
+            "showOutput": true,
+            "workingDirectory": ""
         }
     ],
     "extensionsPath": "extensions",
