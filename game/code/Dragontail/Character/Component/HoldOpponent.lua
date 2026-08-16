@@ -136,7 +136,7 @@ function HoldOpponent:getDefaultHoldDistance(held)
     return (self.bodyradius + held.bodyradius + 1)
 end
 
-function HoldOpponent:updateVelocities()
+function HoldOpponent:updateVelocities(ooballowed)
     local enemy = self.heldopponent
     if not enemy then return end
 
@@ -151,12 +151,14 @@ function HoldOpponent:updateVelocities()
     enemy.velx = self.x + pvelx + ox - enemy.x
     enemy.vely = self.y + pvely + oy - enemy.y
     enemy.velz = self.z + pvelz + oz - enemy.z
-    local pushvelx, pushvely = Body.predictCollisionVelocity(enemy)
-    if pushvelx or pushvely then
-        enemy.velx = enemy.velx + pushvelx
-        enemy.vely = enemy.vely + pushvely
-        self.velx = self.velx + pushvelx
-        self.vely = self.vely + pushvely
+    if not ooballowed then
+        local pushvelx, pushvely = Body.predictCollisionVelocity(enemy)
+        if pushvelx or pushvely then
+            enemy.velx = enemy.velx + pushvelx
+            enemy.vely = enemy.vely + pushvely
+            self.velx = self.velx + pushvelx
+            self.vely = self.vely + pushvely
+        end
     end
 end
 
