@@ -77,12 +77,8 @@ end
 
 local SystemFont
 ---@diagnostic disable-next-line: duplicate-set-field
-function love.load(args)
+function love.load()
     require("pl.strict").module("_G", _G)
-    cute.go(args)
-
-    Config.load(game.defaultconfig)
-
     local cli = love.filesystem.getIdentity()..[[
 
     --console               Output to a console window
@@ -107,6 +103,16 @@ function love.load(args)
 	lapp.slack = true
 	local args = lapp (cli)
 
+    Config.debug = args.debug
+	if args.debug and lldebugger then
+		lldebugger.start()
+		-- lldebugger.off()
+	end
+
+    cute.go(args)
+
+    Config.load(game.defaultconfig)
+
     Platform.setOS(args.os)
 
 	if args.profile then
@@ -114,12 +120,6 @@ function love.load(args)
         profile = require("jit.p")
         local filename = love.filesystem.getSaveDirectory().."/"..os.date("profile_%Y-%m-%d_%H-%M-%S")..".txt"
 		profile.start("Fli1", filename)
-	end
-
-    Config.debug = args.debug
-	if args.debug and lldebugger then
-		lldebugger.start()
-		-- lldebugger.off()
 	end
 
     if game.load then
