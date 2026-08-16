@@ -178,8 +178,8 @@ function Player.getJoystick()
         analogx, analogy = len*analogx, len*analogy
     end
 
-    local digitalx = Inputs.getAction("digitalx").position
-    local digitaly = Inputs.getAction("digitaly").position * 9/16
+    local digitalx = Inputs.getAction("digitalx").position * 16/9
+    local digitaly = Inputs.getAction("digitaly").position
 
     local inx, iny = digitalx + analogx, digitaly + analogy
     if lensq(inx, iny) > 1 then
