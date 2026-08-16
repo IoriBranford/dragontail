@@ -48,20 +48,6 @@ local function findSomethingToRunningAttack(self, velx, vely)
     end
 end
 
-local Cos9By16 = 9 / math2.len(16, 9)
-
-local function getRunIntoWall(self)
-    local velx, vely = self.velx, self.vely
-    if velx == 0 and vely == 0 then return end
-    local oobx, ooby = self.penex, self.peney
-    oobx, ooby = oobx or 0, ooby or 0
-    if oobx == 0 and ooby == 0 then return end
-
-    return math2.dot(oobx, ooby, velx, vely)
-        / math2.len(oobx, ooby)
-        / math2.len(velx, vely)
-end
-
 local RunningChargeAttackStates = {
     "fireball-storm", "running-spit-multi-fireball", "running-spit-fireball"
 }
@@ -98,8 +84,8 @@ function PlayerRunning:fixedupdate()
     Body.forceTowardsVelXY(player, targetvelx, targetvely, player.accel)
     local velx, vely = player.velx, player.vely
 
-    local runintowall = getRunIntoWall(player)
-    -- if runintowall and runintowall < Cos9By16 then
+    local ranintowall = player:ranIntoWall()
+    -- if not ranintowall then
     --     local oobx, ooby = player.penex, player.peney
     --     local rot90 = math2.det(oobx, ooby, velx, vely) < 0 and -1 or 1
     --     oobx, ooby = math2.rot90(oobx, ooby, rot90)
@@ -191,7 +177,7 @@ function PlayerRunning:fixedupdate()
             return "running-elbow", velangle
         end
 
-        if runintowall and runintowall >= Cos9By16 then
+        if ranintowall then
             return player:runIntoWall()
         end
     end

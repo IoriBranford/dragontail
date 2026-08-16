@@ -209,6 +209,21 @@ end
 function Fighter:indicateDefeated()
 end
 
+local Cos9By16 = 9 / math2.len(16, 9)
+
+function Fighter:ranIntoWall(c)
+    c = c or Cos9By16
+    local velx, vely = self.velx, self.vely
+    if velx == 0 and vely == 0 then return end
+    local oobx, ooby = self.penex, self.peney
+    oobx, ooby = oobx or 0, ooby or 0
+    if oobx == 0 and ooby == 0 then return end
+
+    return math2.dot(oobx, ooby, velx, vely)
+        / math2.len(oobx, ooby)
+        / math2.len(velx, vely) >= c
+end
+
 function Fighter:knockedBack(thrower, attackangle)
     local dirx, diry = self:getLedgeDirection()
     if dirx ~= 0 or diry ~= 0 then
@@ -230,21 +245,16 @@ function Fighter:knockedBack(thrower, attackangle)
     self.velx, self.vely = dirx*thrownspeed, diry*thrownspeed
     local altitude = self.z - (self.floorz or 0)
     self.velz = math.max(0, (thrower.attack.launchspeedz or 4) - altitude)
-    local oobx, ooby, oobz
+    local oobz, ranintowall
     repeat
         yield()
-        oobx, ooby, oobz = self.penex, self.peney, self.penez
+        ranintowall = self:ranIntoWall()
+        oobz = self.penez
         self:duringKnockedBack()
-    until oobx or ooby or oobz
-    -- local oobdotvel = math.dot(oobx or 0, ooby or 0, self.velx, self.vely)
-    -- if oobdotvel > 0 then
-    --     oobdotvel = oobdotvel
-    --         / math.len(self.velx, self.vely)
-    --         / math.len(oobx, ooby)
-    -- end
+    until ranintowall or oobz
     -- self.thrower = nil
-    if oobx and ooby then
-        return "wallBump", thrower, oobx, ooby
+    if ranintowall then
+        return "wallBump", thrower, self.penex, self.peney
     end
 
     return self.aiafterthrown or "fall"
@@ -275,26 +285,20 @@ function Fighter:knockedBackOrThrown(thrower, attackangle)
     local thrownsound = self.attack.swingsound and Audio.newSource(self.attack.swingsound)
     if thrownsound then thrownsound:play() end
     local thrownslidetime = self.thrownslidetime or 1
-    local oobx, ooby, oobz
-    local oobdotvel = 0
-    while thrownslidetime > 0 and oobdotvel <= .5 do
+    local oobz, ranintowall
+    while thrownslidetime > 0 and not ranintowall do
         yield()
-        oobx, ooby, oobz = self.penex, self.peney, self.penez
+        ranintowall = self:ranIntoWall()
+        oobz = self.penez
         self:duringKnockedBack()
         if oobz then
             thrownslidetime = thrownslidetime - 1
         end
-        oobdotvel = math.dot(oobx or 0, ooby or 0, self.velx, self.vely)
-        if oobdotvel > 0 then
-            oobdotvel = oobdotvel
-                / math.len(self.velx, self.vely)
-                / math.len(oobx, ooby)
-        end
     end
     if thrownsound then thrownsound:stop() end
     self.thrower = nil
-    if oobdotvel > .5 then
-        return self.knockedintowallstate or "wallBump", thrower, oobx, ooby
+    if ranintowall then
+        return self.knockedintowallstate or "wallBump", thrower, self.penex, self.peney
     end
     if oobz then
         self.velz = 0
@@ -351,27 +355,21 @@ function Fighter:thrown(thrower, attackangle)
     local thrownsound = self.attack.swingsound and Audio.newSource(self.attack.swingsound)
     if thrownsound then thrownsound:play() end
     local thrownslidetime = self.thrownslidetime or 10
-    local oobx, ooby, oobz
-    -- local oobdotvel = 0
-    while thrownslidetime > 0 and not oobx and not ooby do
+    local ranintowall
+    while thrownslidetime > 0 and not ranintowall do
         yield()
-        oobx, ooby, oobz = self.penex, self.peney, self.penez
+        ranintowall = self:ranIntoWall()
+        local oobz = self.penez
         if oobz then
             thrownslidetime = thrownslidetime - 1
         end
-        -- oobdotvel = math.dot(oobx or 0, ooby or 0, self.velx, self.vely)
-        -- if oobdotvel > 0 then
-        --     oobdotvel = oobdotvel
-        --         / math.len(self.velx, self.vely)
-        --         / math.len(oobx, ooby)
-        -- end
     end
     if thrownsound then thrownsound:stop() end
     self.thrower = nil
     self:stopAttack() ; self:unassignSelfAsAttacker()
-    if oobx and ooby then
+    if ranintowall then
         self.health = self.health - (self.wallslamdamage or 10)
-        return "wallSlammed", thrower, oobx, ooby
+        return "wallSlammed", thrower, self.penex, self.peney
     end
 
     return self.aiafterthrown or "fall", thrower
@@ -406,18 +404,19 @@ end
 
 function Fighter:thrownRecover(thrower)
     local recovertime = self.thrownrecovertime or 10
-    local oobx, ooby, oobz
+    local ranintowall, oobz
     repeat
         yield()
-        oobx, ooby, oobz = self.penex, self.peney, self.penez
+        ranintowall = self:ranIntoWall()
+        oobz = self.penez
         self:decelerateXYto0()
         recovertime = recovertime - 1
-    until recovertime <= 0 and oobz or oobx or ooby
+    until recovertime <= 0 and oobz or ranintowall
 
     self:stopAttack() ; self:unassignSelfAsAttacker()
-    if oobx or ooby then
+    if ranintowall then
         self.health = self.health - (self.wallslamdamage or 10)
-        return "wallSlammed", thrower, oobx, ooby
+        return "wallSlammed", thrower, self.penex, self.peney
     end
 
     local recoverai = self.recoverai
