@@ -33,9 +33,10 @@ function SpinAndKickEnemy:fixedupdate()
     local enemy = player.heldopponent
     local holdangle = player.holdangle
 
-    if not enemy or ((enemy.penex or 0) ~= 0) or ((enemy.peney or 0) ~= 0) then
+    local swungenemyintowall = enemy and enemy:ranIntoWall()
+    if not enemy or swungenemyintowall then
         HoldOpponent.stopHolding(player, enemy)
-        if enemy then
+        if swungenemyintowall then
             Attacker.stopAttack(enemy)
             enemy.health = enemy.health - (enemy.wallslamdamage or 10)
             StateMachine.start(enemy, "wallSlammed", player, enemy.penex, enemy.peney)
@@ -81,7 +82,7 @@ function SpinAndKickEnemy:fixedupdate()
     Face.faceAngle(player, holdangle, animation)
 
     player.holdangle = holdangle
-    HoldOpponent.updateVelocities(player)
+    HoldOpponent.updateVelocities(player, true)
 end
 
 return SpinAndKickEnemy

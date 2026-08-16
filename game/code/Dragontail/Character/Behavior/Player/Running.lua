@@ -107,7 +107,7 @@ function PlayerRunning:fixedupdate()
 
     if heldenemy then
         player.holdangle = player.faceangle
-        HoldOpponent.updateVelocities(player)
+        HoldOpponent.updateVelocities(player, true)
         heldenemy.attackangle = player.faceangle
     end
 
@@ -164,11 +164,10 @@ function PlayerRunning:fixedupdate()
     end
 
     if heldenemy then
-        local oobx, ooby = heldenemy.penex, heldenemy.peney
-        if oobx or ooby then
+        if heldenemy:ranIntoWall() then
             HoldOpponent.stopHolding(player, heldenemy)
             heldenemy.health = heldenemy.health - (heldenemy.wallslamdamage or 10)
-            StateMachine.start(heldenemy, "wallSlammed", player, oobx, ooby)
+            StateMachine.start(heldenemy, "wallSlammed", player, heldenemy.penex, heldenemy.peney)
             return "running-elbow", player.faceangle
         end
     else
