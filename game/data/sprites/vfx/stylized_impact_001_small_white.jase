@@ -1,0 +1,91 @@
+{ "frames": {
+   "Layer#1": {
+    "frame": { "x": 119, "y": 127, "w": 27, "h": 9 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 18, "y": 24, "w": 27, "h": 9 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 50
+   },
+   "Layer#2": {
+    "frame": { "x": 1, "y": 126, "w": 46, "h": 32 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 8, "y": 16, "w": 46, "h": 32 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 50
+   },
+   "Layer#3": {
+    "frame": { "x": 64, "y": 121, "w": 53, "h": 46 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 4, "y": 9, "w": 53, "h": 46 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 50
+   },
+   "Layer#4": {
+    "frame": { "x": 64, "y": 66, "w": 58, "h": 53 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 2, "y": 6, "w": 58, "h": 53 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 50
+   },
+   "Layer#5": {
+    "frame": { "x": 1, "y": 66, "w": 61, "h": 58 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 1, "y": 3, "w": 61, "h": 58 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 50
+   },
+   "Layer#6": {
+    "frame": { "x": 131, "y": 1, "w": 63, "h": 61 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 0, "y": 1, "w": 63, "h": 61 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 50
+   },
+   "Layer#7": {
+    "frame": { "x": 1, "y": 1, "w": 63, "h": 63 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 63, "h": 63 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 50
+   },
+   "Layer#8": {
+    "frame": { "x": 66, "y": 1, "w": 63, "h": 63 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 63, "h": 63 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 50
+   },
+   "Layer#9": {
+    "frame": { "x": 131, "y": 64, "w": 62, "h": 61 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 1, "y": 2, "w": 62, "h": 61 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 50
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.3.18.2-x64",
+  "image": "stylized_impact_001_small_white.png",
+  "format": "RGBA8888",
+  "size": { "w": 195, "h": 168 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+   { "name": "origin", "color": "#0000ffff", "keys": [{ "frame": 0, "bounds": {"x": 0, "y": 0, "w": 64, "h": 64 }, "pivot": {"x": 32, "y": 32 } }] }
+  ]
+ }
+}
