@@ -142,10 +142,12 @@ function Character:debugDrawOffScreenPosition()
     love.graphics.pop()
 end
 
-function Character:makeImpactSpark(attacker, sparktype)
+function Character:makeImpactSpark(attacker, sparktype, toattacker)
     if sparktype then
+        toattacker = toattacker or .25
         local spark = Character(sparktype)
-        spark.x, spark.y = math.mid(attacker.x, attacker.y, self.x, self.y)
+        spark.x = math1.lerp(toattacker, self.x, attacker.x)
+        spark.y = math1.lerp(toattacker, self.y, attacker.y)
         local z1, z2 =
             math.max(self.z, attacker.z),
             math.min(self.z + self.bodyheight, attacker.z + attacker.bodyheight)
