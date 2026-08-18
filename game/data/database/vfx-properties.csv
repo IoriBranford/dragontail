@@ -3,7 +3,8 @@ afterimage,,Dragontail.Character.Common,afterimage,data/database/objects-states.
 spark-hit,data/sprites/vfx/symmetrical_impact_001_small_yellow.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,*,0,21,,,,,,,,,,,,random4,
 spark-guard,data/sprites/vfx/symmetrical_explosion_001_small_blue.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,*,0,24,,,,,,,,,data/sounds/combat/block.mp3,,,random4,
 spark-bighit,data/sprites/vfx/symmetrical_impact_004_large_yellow.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,*,0,24,,,,,,,,,,,,random4,
-spark-bloodhit,data/sprites/vfx/burst_splatter_001_large_red.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,,0,30,,,,,,,,,,,,,2
+spark-bloodhit,data/sprites/vfx/8_directional_splatter_small_red.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,,0,21,,,,,,,,,,,,,8
+spark-bigbloodhit,data/sprites/vfx/8_directional_splatter_large_red.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,,0,21,,,,,,,,,,,,,8
 spark-burnhit,data/sprites/vfx/stylized_explosion_001_small_yellow.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,*,0,27,,,,,,,,,,,,random4,
 spark-fall-down-dust,data/sprites/vfx/dust-on-person-fall.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,Complete,0,24,0.5,,,,,,,,,,,,
 spark-stone-shatter,data/sprites/weapons/stone.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,Shatter,0,12,,,,,,,,,,,,,
