@@ -427,6 +427,13 @@ function Fighter:thrownRecover(thrower)
     return recoverai
 end
 
+function Fighter:brokenaway(other)
+    if other then
+        self:makeImpactSpark(other, "spark-brokenaway")
+    end
+    return self:breakaway(other)
+end
+
 function Fighter:breakaway(other)
     local angle = self.holdangle or self.faceangle
     HoldOpponent.stopHolding(other, self)
@@ -434,7 +441,6 @@ function Fighter:breakaway(other)
     local breakspeed = 10
     local dirx, diry = 0, 0
     if other then
-        self:makeImpactSpark(other, "spark-hit")
         dirx, diry = other.x - self.x, other.y - self.y
     end
     if dirx == 0 and diry == 0 then
