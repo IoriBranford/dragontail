@@ -16,7 +16,7 @@ function CatchAttack:start(hit)
 
     Face.faceObject(player, attacker,
         player.state.animation, player.animationframe, player.state.loopframe)
-    player:makeImpactSpark(hit.attacker, "spark-parry")
+    player:makeImpactSpark(hit.attacker, "spark-catch", .5)
 
     if attacker.team == "enemies"
     or attacker.team == "container" then
