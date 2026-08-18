@@ -26,7 +26,7 @@ local HoldOpponent = {}
 HoldOpponent.DefaultInitialHoldStrength = 120
 
 ---@param opponent HeldByOpponent
-function HoldOpponent:startHolding(opponent, holdangle)
+function HoldOpponent:startHolding(opponent, holdangle, spark)
     self.heldopponent = opponent
     opponent:stopAttack() ; opponent:unassignSelfAsAttacker()
     Guard.stopGuarding(opponent)
@@ -36,6 +36,7 @@ function HoldOpponent:startHolding(opponent, holdangle)
     self.initialholdstrength = self.initialholdstrength or HoldOpponent.DefaultInitialHoldStrength
     self.holdstrength = self.initialholdstrength
     StateMachine.start(opponent, opponent.heldai or "held", self)
+    opponent:makeImpactSpark(self, spark or "spark-grab")
     return holdangle
 end
 

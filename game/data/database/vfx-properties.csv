@@ -16,3 +16,4 @@ spark-fireball-shatter,data/sprites/player/rose/fireball.jase,Dragontail.Charact
 spark-spit-fireball,data/sprites/player/rose/firespit.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,Spit,0,18,,1,,,,,,12,,,,,
 projectile-path-point,data/sprites/vfx/vfx.jase,Dragontail.Character.Common,,data/database/objects-states.csv,trajdot-empty,,,,,,,,,0,,,trajdot-empty,trajdot-full,,
 spark-parry,data/sprites/vfx/stylized_impact_001_large_white_short.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,*,0,18,,,,,,,,,data/sounds/combat/shakiin.mp3,,,random4,
+spark-grab,data/sprites/vfx/symmetrical_impact_005_small_white_short_rev.jase,Dragontail.Character.Common,spark,data/database/objects-states.csv,*,0,18,,,,,,,,,data/sounds/combat/grab.mp3,,,random4,
