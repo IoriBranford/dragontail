@@ -5,6 +5,8 @@ local Guard              = require "Dragontail.Character.Component.Guard"
 local Face               = require "Dragontail.Character.Component.Face"
 local DirectionalAnimation = require "Dragontail.Character.Component.DirectionalAnimation"
 
+---@class CatchAttack:Behavior
+---@field character Enemy
 local CatchAttack = pooledclass(Behavior)
 CatchAttack._nrec = Behavior._nrec + 2
 
