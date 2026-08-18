@@ -136,7 +136,7 @@ function HoldOpponent:getDefaultHoldDistance(held)
     return (self.bodyradius + held.bodyradius + 1)
 end
 
-function HoldOpponent:updateVelocities()
+function HoldOpponent:updateVelocities(ooballowed)
     local enemy = self.heldopponent
     if not enemy then return end
 
@@ -151,12 +151,14 @@ function HoldOpponent:updateVelocities()
     enemy.velx = self.x + pvelx + ox - enemy.x
     enemy.vely = self.y + pvely + oy - enemy.y
     enemy.velz = self.z + pvelz + oz - enemy.z
-    local pushvelx, pushvely = Body.predictCollisionVelocity(enemy)
-    if pushvelx or pushvely then
-        enemy.velx = enemy.velx + pushvelx
-        enemy.vely = enemy.vely + pushvely
-        self.velx = self.velx + pushvelx
-        self.vely = self.vely + pushvely
+    if not ooballowed then
+        local pushvelx, pushvely = Body.predictCollisionVelocity(enemy)
+        if pushvelx or pushvely then
+            enemy.velx = enemy.velx + pushvelx
+            enemy.vely = enemy.vely + pushvely
+            self.velx = self.velx + pushvelx
+            self.vely = self.vely + pushvely
+        end
     end
 end
 
@@ -165,27 +167,30 @@ function HoldOpponent:updateOpponentPosition()
     local enemy = self.heldopponent
     if not enemy then return end
 
-    local radii = self.bodyradius + enemy.bodyradius + 1
-    local ox = radii*math.cos(self.holdangle or 0)
-    local oy = radii*math.sin(self.holdangle or 0)
-    local oz = math.max(0, (self.bodyheight - enemy.bodyheight)/2)
-    enemy.velx = self.x + ox - enemy.x
-    enemy.vely = self.y + oy - enemy.y
-    enemy.velz = self.z + oz - enemy.z
+    local holddist = self.holddist or
+        HoldOpponent.getDefaultHoldDistance(self, enemy)
+    holddist = holddist + (enemy.struggleoffset or 0)
+    local ox = holddist*math.cos(self.holdangle or 0)
+    local oy = holddist*math.sin(self.holdangle or 0)
+    local oz = self.holdheight or
+        math.max(0, (self.bodyheight - enemy.bodyheight)/2)
+    local pvelx, pvely, pvelz = self.velx, self.vely, self.velz
+    enemy.velx = self.x + pvelx + ox - enemy.x
+    enemy.vely = self.y + pvely + oy - enemy.y
+    enemy.velz = self.z + pvelz + oz - enemy.z
 end
 
 ---@deprecated
 function HoldOpponent:handleOpponentCollision()
     local enemy = self.heldopponent
     if not enemy then return end
-    local epenex, epeney = enemy.penex, enemy.peney
-    if epenex or epeney then
-        local radii = self.bodyradius + enemy.bodyradius + 1
-        local ox = radii*math.cos(self.holdangle or 0)
-        local oy = radii*math.sin(self.holdangle or 0)
-        self.velx = self.velx + enemy.x - ox - self.x
-        self.vely = self.vely + enemy.y - oy - self.y
-        return epenex, epeney
+
+    local pushvelx, pushvely = Body.predictCollisionVelocity(enemy)
+    if pushvelx or pushvely then
+        enemy.velx = enemy.velx + pushvelx
+        enemy.vely = enemy.vely + pushvely
+        self.velx = self.velx + pushvelx
+        self.vely = self.vely + pushvely
     end
 end
 
