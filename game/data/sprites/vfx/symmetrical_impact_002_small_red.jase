@@ -1,0 +1,83 @@
+{ "frames": {
+   "Layer#1": {
+    "frame": { "x": 51, "y": 99, "w": 36, "h": 30 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 6, "y": 9, "w": 36, "h": 30 },
+    "sourceSize": { "w": 48, "h": 48 },
+    "duration": 50
+   },
+   "Layer#2": {
+    "frame": { "x": 99, "y": 95, "w": 40, "h": 38 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 4, "y": 5, "w": 40, "h": 38 },
+    "sourceSize": { "w": 48, "h": 48 },
+    "duration": 50
+   },
+   "Layer#3": {
+    "frame": { "x": 99, "y": 51, "w": 44, "h": 42 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 2, "y": 3, "w": 44, "h": 42 },
+    "sourceSize": { "w": 48, "h": 48 },
+    "duration": 50
+   },
+   "Layer#4": {
+    "frame": { "x": 51, "y": 51, "w": 46, "h": 46 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 1, "y": 1, "w": 46, "h": 46 },
+    "sourceSize": { "w": 48, "h": 48 },
+    "duration": 50
+   },
+   "Layer#5": {
+    "frame": { "x": 1, "y": 1, "w": 48, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 48, "h": 48 },
+    "sourceSize": { "w": 48, "h": 48 },
+    "duration": 50
+   },
+   "Layer#6": {
+    "frame": { "x": 51, "y": 1, "w": 48, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 48, "h": 48 },
+    "sourceSize": { "w": 48, "h": 48 },
+    "duration": 50
+   },
+   "Layer#7": {
+    "frame": { "x": 101, "y": 1, "w": 48, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 48, "h": 48 },
+    "sourceSize": { "w": 48, "h": 48 },
+    "duration": 50
+   },
+   "Layer#8": {
+    "frame": { "x": 1, "y": 51, "w": 48, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 48, "h": 48 },
+    "sourceSize": { "w": 48, "h": 48 },
+    "duration": 50
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.3.18.2-x64",
+  "image": "symmetrical_impact_002_small_red.png",
+  "format": "RGBA8888",
+  "size": { "w": 150, "h": 134 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+   { "name": "origin", "keys": [{ "frame": 0, "bounds": {"x": 0, "y": 0, "w": 48, "h": 48 }, "pivot": {"x": 24, "y": 24 } }] }
+  ]
+ }
+}
